@@ -62,33 +62,33 @@ function BureauRow({
         onClick={() => hasContent && setExpanded(!expanded)}
         className={`w-full text-left py-3 px-1 transition-colors group ${hasContent ? "hover:bg-[var(--color-parchment)]/30 cursor-pointer" : "cursor-default"}`}
       >
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {hasContent ? (
             expanded ? (
-              <ChevronDown className="w-3.5 h-3.5 text-[var(--color-ink-muted)] flex-shrink-0" />
+              <ChevronDown className="w-3.5 h-3.5 text-[var(--color-ink-muted)] flex-shrink-0 hidden sm:block" />
             ) : (
-              <ChevronRight className="w-3.5 h-3.5 text-[var(--color-ink-muted)] flex-shrink-0" />
+              <ChevronRight className="w-3.5 h-3.5 text-[var(--color-ink-muted)] flex-shrink-0 hidden sm:block" />
             )
           ) : (
-            <span className="w-3.5 flex-shrink-0" />
+            <span className="w-3.5 flex-shrink-0 hidden sm:block" />
           )}
           <span
-            className="w-2.5 h-2.5 rounded-sm flex-shrink-0"
+            className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-sm flex-shrink-0"
             style={{ backgroundColor: color }}
           />
-          <span className="text-[14px] text-[var(--color-ink)] font-medium flex-1 min-w-0 truncate">
+          <span className="text-[13px] sm:text-[14px] text-[var(--color-ink)] font-medium flex-1 min-w-0 truncate">
             {bureau.name}
           </span>
-          <span className="text-[14px] font-mono font-semibold text-[var(--color-ink)] flex-shrink-0 tabular-nums">
+          <span className="text-[13px] sm:text-[14px] font-mono font-semibold text-[var(--color-ink)] flex-shrink-0 tabular-nums">
             {cutPct > 0 ? formatM(afterCut) : formatM(bureau.total)}
           </span>
           {cutPct > 0 && (
-            <span className="text-[12px] font-mono text-red-600 flex-shrink-0 tabular-nums">
+            <span className="text-[11px] sm:text-[12px] font-mono text-red-600 flex-shrink-0 tabular-nums">
               −{formatM(cutAmount)}
             </span>
           )}
         </div>
-        <div className="mt-1.5 ml-10">
+        <div className="mt-1.5 ml-4 sm:ml-10">
           <div className="h-[6px] bg-[var(--color-parchment)]/60 rounded-full overflow-hidden">
             {cutPct > 0 ? (
               <div className="h-full flex">
@@ -123,7 +123,7 @@ function BureauRow({
 
       {/* Expanded: programs + reduction scenario */}
       {expanded && hasContent && (
-        <div className="pl-12 pr-2 pb-4 space-y-3">
+        <div className="pl-4 sm:pl-12 pr-2 pb-4 space-y-3">
           {/* Programs */}
           {bureau.programs.length > 0 && (
             <div className="space-y-1">

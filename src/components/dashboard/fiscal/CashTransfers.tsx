@@ -194,30 +194,30 @@ function TransferRow({
         }`}
       >
         {/* Main row */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-start sm:items-center gap-2 sm:gap-3">
           <span
-            className="w-[5px] h-[5px] rounded-full flex-shrink-0"
+            className="w-[5px] h-[5px] rounded-full flex-shrink-0 mt-1.5 sm:mt-0"
             style={{ backgroundColor: catStyle.color }}
           />
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2">
-              <span className="text-[14px] text-[var(--color-ink)] font-medium truncate">
+            <div className="flex items-center gap-1 sm:gap-2">
+              <span className="text-[13px] sm:text-[14px] text-[var(--color-ink)] font-medium truncate">
                 {transfer.name}
               </span>
               {ctx && (
-                <Info className="w-3 h-3 text-[var(--color-ink-muted)]/50 flex-shrink-0" />
+                <Info className="w-3 h-3 text-[var(--color-ink-muted)]/50 flex-shrink-0 hidden sm:block" />
               )}
             </div>
             {ctx && !open && (
-              <p className="text-[11px] text-[var(--color-ink-muted)] mt-0.5 leading-snug">
+              <p className="text-[11px] text-[var(--color-ink-muted)] mt-0.5 leading-snug hidden sm:block">
                 {ctx.short}
               </p>
             )}
           </div>
-          <span className="text-[12px] font-mono text-[var(--color-ink-muted)] tabular-nums flex-shrink-0">
+          <span className="text-[11px] sm:text-[12px] font-mono text-[var(--color-ink-muted)] tabular-nums flex-shrink-0 hidden sm:block">
             {pct.toFixed(1)}%
           </span>
-          <span className="text-[14px] font-mono font-semibold text-[var(--color-ink)] tabular-nums flex-shrink-0 min-w-[70px] text-right">
+          <span className="text-[13px] sm:text-[14px] font-mono font-semibold text-[var(--color-ink)] tabular-nums flex-shrink-0 text-right">
             {formatM(transfer.amount)}
           </span>
           {ctx && (
@@ -230,7 +230,7 @@ function TransferRow({
         </div>
 
         {/* Proportional bar */}
-        <div className="mt-2 ml-5 h-[4px] bg-[var(--color-parchment)]/50 rounded-full overflow-hidden">
+        <div className="mt-2 ml-3 sm:ml-5 h-[4px] bg-[var(--color-parchment)]/50 rounded-full overflow-hidden">
           <div
             className="h-full rounded-full transition-all duration-500"
             style={{
@@ -244,7 +244,7 @@ function TransferRow({
 
       {/* Expanded detail */}
       {open && ctx && (
-        <div className="px-4 pb-4 ml-5">
+        <div className="px-3 sm:px-4 pb-4 ml-2 sm:ml-5">
           <div
             className="rounded-sm p-4 border-l-[3px]"
             style={{

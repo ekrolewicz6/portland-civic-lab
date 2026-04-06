@@ -60,9 +60,11 @@ export default function BudgetWhatIf({
           step={1}
           value={cutPct}
           onChange={(e) => onCutChange(Number(e.target.value))}
-          className="w-full h-2 rounded-full appearance-none cursor-pointer"
+          className="w-full h-2 rounded-full appearance-none cursor-pointer touch-none"
           style={{
             background: `linear-gradient(to right, #2563eb ${cutPct * 10}%, #e5e7eb ${cutPct * 10}%)`,
+            WebkitAppearance: "none",
+            padding: "8px 0",
           }}
         />
         <div className="flex justify-between mt-1 text-[10px] text-[var(--color-ink-muted)] font-mono">
@@ -74,28 +76,28 @@ export default function BudgetWhatIf({
 
       {/* Impact summary */}
       {cutPct > 0 && (
-        <div className="grid grid-cols-3 gap-3">
-          <div className="bg-red-50 border border-red-200/60 rounded-sm p-3 text-center">
-            <p className="text-[10px] text-red-600 font-semibold uppercase tracking-wider mb-0.5">
+        <div className="grid grid-cols-3 gap-2 sm:gap-3">
+          <div className="bg-red-50 border border-red-200/60 rounded-sm p-2 sm:p-3 text-center">
+            <p className="text-[9px] sm:text-[10px] text-red-600 font-semibold uppercase tracking-wider mb-0.5">
               Total Cut
             </p>
-            <p className="text-[20px] font-mono font-bold text-red-700 leading-none tabular-nums">
+            <p className="text-[16px] sm:text-[20px] font-mono font-bold text-red-700 leading-none tabular-nums">
               {formatM(totalCut)}
             </p>
           </div>
-          <div className="bg-amber-50 border border-amber-200/60 rounded-sm p-3 text-center">
-            <p className="text-[10px] text-amber-600 font-semibold uppercase tracking-wider mb-0.5">
+          <div className="bg-amber-50 border border-amber-200/60 rounded-sm p-2 sm:p-3 text-center">
+            <p className="text-[9px] sm:text-[10px] text-amber-600 font-semibold uppercase tracking-wider mb-0.5">
               Positions at Risk
             </p>
-            <p className="text-[20px] font-mono font-bold text-amber-700 leading-none tabular-nums">
+            <p className="text-[16px] sm:text-[20px] font-mono font-bold text-amber-700 leading-none tabular-nums">
               {totalFTE > 0 ? `${totalFTE}+` : "—"}
             </p>
           </div>
-          <div className="bg-blue-50 border border-blue-200/60 rounded-sm p-3 text-center">
-            <p className="text-[10px] text-blue-600 font-semibold uppercase tracking-wider mb-0.5">
+          <div className="bg-blue-50 border border-blue-200/60 rounded-sm p-2 sm:p-3 text-center">
+            <p className="text-[9px] sm:text-[10px] text-blue-600 font-semibold uppercase tracking-wider mb-0.5">
               GF After Cuts
             </p>
-            <p className="text-[20px] font-mono font-bold text-blue-700 leading-none tabular-nums">
+            <p className="text-[16px] sm:text-[20px] font-mono font-bold text-blue-700 leading-none tabular-nums">
               {formatM(totalAfter)}
             </p>
           </div>

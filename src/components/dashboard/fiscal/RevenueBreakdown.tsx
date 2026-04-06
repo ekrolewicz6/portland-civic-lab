@@ -45,22 +45,22 @@ export default function RevenueBreakdown({
             return (
               <div
                 key={source.name}
-                className="py-3 px-4 border-b border-[var(--color-parchment)]/50 last:border-0"
+                className="py-3 px-3 sm:px-4 border-b border-[var(--color-parchment)]/50 last:border-0"
               >
-                <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center justify-between gap-2 sm:gap-3">
                   <div className="flex items-center gap-2 flex-1 min-w-0">
                     <span
-                      className="w-2.5 h-2.5 rounded-sm flex-shrink-0"
+                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-sm flex-shrink-0"
                       style={{ backgroundColor: color }}
                     />
-                    <span className="text-[14px] text-[var(--color-ink)] font-medium truncate">
+                    <span className="text-[13px] sm:text-[14px] text-[var(--color-ink)] font-medium truncate">
                       {source.name}
                     </span>
                   </div>
-                  <span className="text-[13px] font-mono text-[var(--color-ink-muted)] flex-shrink-0 tabular-nums">
+                  <span className="text-[12px] sm:text-[13px] font-mono text-[var(--color-ink-muted)] flex-shrink-0 tabular-nums hidden sm:block">
                     {pctOfTotal.toFixed(0)}%
                   </span>
-                  <span className="text-[14px] font-mono font-semibold text-[var(--color-ink)] flex-shrink-0 tabular-nums">
+                  <span className="text-[13px] sm:text-[14px] font-mono font-semibold text-[var(--color-ink)] flex-shrink-0 tabular-nums">
                     {formatM(source.amount)}
                   </span>
                 </div>
@@ -79,20 +79,20 @@ export default function RevenueBreakdown({
         </div>
 
         {/* Revenue vs Expenses comparison */}
-        <div className="mt-4 grid grid-cols-2 gap-3">
-          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-4 text-center">
-            <p className="text-[10px] text-[var(--color-ink-muted)] font-semibold uppercase tracking-wider mb-1">
+        <div className="mt-4 grid grid-cols-2 gap-2 sm:gap-3">
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-3 sm:p-4 text-center">
+            <p className="text-[9px] sm:text-[10px] text-[var(--color-ink-muted)] font-semibold uppercase tracking-wider mb-1">
               Total Revenue
             </p>
-            <p className="text-[22px] font-mono font-bold text-[#059669] leading-none tabular-nums">
+            <p className="text-[18px] sm:text-[22px] font-mono font-bold text-[#059669] leading-none tabular-nums">
               {formatM(totalRevenue)}
             </p>
           </div>
-          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-4 text-center">
-            <p className="text-[10px] text-[var(--color-ink-muted)] font-semibold uppercase tracking-wider mb-1">
-              Total Expenses (CSL)
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-3 sm:p-4 text-center">
+            <p className="text-[9px] sm:text-[10px] text-[var(--color-ink-muted)] font-semibold uppercase tracking-wider mb-1">
+              Expenses (CSL)
             </p>
-            <p className="text-[22px] font-mono font-bold text-[#dc2626] leading-none tabular-nums">
+            <p className="text-[18px] sm:text-[22px] font-mono font-bold text-[#dc2626] leading-none tabular-nums">
               {formatM(totalExpenses)}
             </p>
           </div>

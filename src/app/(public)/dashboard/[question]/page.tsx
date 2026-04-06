@@ -62,9 +62,29 @@ export async function generateMetadata({ params }: PageProps) {
   const { question } = await params;
   if (!isValidQuestion(question)) return {};
   const meta = questionMeta[question];
+  const title = `${meta.title} | Portland Civic Dashboard`;
+  const description = meta.description;
+  const url = `https://www.portlandciviclab.org/dashboard/${question}`;
+
   return {
-    title: `${meta.title} | Portland Civic Dashboard`,
-    description: `Deep-dive data and analysis: ${meta.title}`,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Portland Civic Lab",
+      type: "website",
+      locale: "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+    alternates: {
+      canonical: url,
+    },
   };
 }
 
