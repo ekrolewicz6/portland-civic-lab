@@ -58,15 +58,24 @@ export async function generateMetadata({
     return { title: "Report Not Found | Portland Civic Lab" };
   }
 
+  const url = `https://www.portlandciviclab.org/progress-report/${issueId}`;
   return {
-    title: `${report.title} | Portland Civic Lab`,
+    title: report.title,
     description: report.summary ?? "Portland Progress Report",
     openGraph: {
       title: report.title,
       description:
         report.summary ?? "Portland Progress Report — quarterly data analysis",
       type: "article",
+      url,
+      publishedTime: report.issueDate ?? undefined,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: report.title,
+      description: report.summary ?? "Portland Progress Report",
+    },
+    alternates: { canonical: url },
   };
 }
 

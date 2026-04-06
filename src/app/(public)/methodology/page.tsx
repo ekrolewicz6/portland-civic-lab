@@ -3,9 +3,15 @@ import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Methodology & Data Sources — Portland Civic Lab",
+  title: "Methodology & Data Sources",
   description:
     "How we collect, verify, and present Portland's civic data. Every metric is sourced from public records, government APIs, and verified datasets.",
+  openGraph: {
+    title: "Methodology & Data Sources | Portland Civic Lab",
+    description: "Data sources, collection methods, and verification processes behind the Portland Civic Dashboard.",
+    url: "https://www.portlandciviclab.org/methodology",
+  },
+  alternates: { canonical: "https://www.portlandciviclab.org/methodology" },
 };
 
 // ---------------------------------------------------------------------------

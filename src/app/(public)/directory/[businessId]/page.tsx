@@ -256,6 +256,7 @@ export async function generateMetadata({
   const location = [biz.city, biz.state].filter(Boolean).join(", ");
   const humanType = formatEntityType(biz.entity_type);
 
+  const url = `https://www.portlandciviclab.org/directory/${id}`;
   return {
     title: `${name} | Portland Business Directory`,
     description: `${name} is a ${humanType.toLowerCase()} registered in ${location || "Portland, OR"}. View registration details and similar businesses in the Portland Civic Lab directory.`,
@@ -263,7 +264,14 @@ export async function generateMetadata({
       title: `${name} — Portland Business Directory`,
       description: `${humanType} registered in ${location || "Portland, OR"}. Part of the Portland Civic Lab civic platform.`,
       type: "website",
+      url,
     },
+    twitter: {
+      card: "summary",
+      title: name,
+      description: `${humanType} in ${location || "Portland, OR"}`,
+    },
+    alternates: { canonical: url },
   };
 }
 

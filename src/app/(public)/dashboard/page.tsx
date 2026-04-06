@@ -1,8 +1,21 @@
+import type { Metadata } from "next";
 import { headers } from "next/headers";
 import DashboardClient from "./DashboardClient";
 import type { ApiResponse, QuestionData } from "./types";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Civic Dashboard",
+  description:
+    "Portland's civic data dashboard — 10 categories covering housing, safety, budget, homelessness, climate, transportation, education, economy, quality of life, and government accountability.",
+  openGraph: {
+    title: "Portland Civic Dashboard",
+    description: "Ten questions that drive Portland's story, answered with real data from public records.",
+    url: "https://www.portlandciviclab.org/dashboard",
+  },
+  alternates: { canonical: "https://www.portlandciviclab.org/dashboard" },
+};
 
 /** The ten civic dashboard categories in display order */
 const QUESTIONS = [

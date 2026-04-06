@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Benefits Calculator — Portland Civic Lab",
+  title: "Benefits Calculator",
   description:
     "Estimate the total first-year value of Portland Civic Lab Business certification for your business.",
+  openGraph: {
+    title: "Benefits Calculator | Portland Civic Lab",
+    description: "Calculate the value of Portland Civic Lab Business certification for your business.",
+    url: "https://www.portlandciviclab.org/calculator",
+  },
+  alternates: { canonical: "https://www.portlandciviclab.org/calculator" },
 };
 
 export default function CalculatorLayout({

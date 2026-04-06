@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+
+export const metadata: Metadata = {
+  title: "Portland Civic Lab — Open Data for Portland's Recovery",
+  description:
+    "Open civic data dashboard for Portland, Oregon. Real-time metrics on housing, public safety, budget, homelessness, transportation, education, climate, and more.",
+  alternates: { canonical: "https://www.portlandciviclab.org" },
+};
 import {
   ArrowRight,
   BarChart3,

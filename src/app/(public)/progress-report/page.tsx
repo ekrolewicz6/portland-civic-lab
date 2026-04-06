@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { headers } from "next/headers";
 import Link from "next/link";
 import { BookOpen } from "lucide-react";
@@ -6,10 +7,16 @@ import type { ProgressReportSummary } from "@/app/api/progress-report/route";
 
 export const dynamic = "force-dynamic";
 
-export const metadata = {
-  title: "Portland Progress Report — Archive | Portland Civic Lab",
+export const metadata: Metadata = {
+  title: "Portland Progress Report — Archive",
   description:
     "Quarterly publication combining dashboard data with narrative analysis. Portland's unofficial performance review.",
+  openGraph: {
+    title: "Portland Progress Report | Portland Civic Lab",
+    description: "Quarterly data-driven analysis of Portland city government performance.",
+    url: "https://www.portlandciviclab.org/progress-report",
+  },
+  alternates: { canonical: "https://www.portlandciviclab.org/progress-report" },
 };
 
 async function fetchReports(baseUrl: string): Promise<ProgressReportSummary[]> {

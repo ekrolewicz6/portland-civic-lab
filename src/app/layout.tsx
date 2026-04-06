@@ -1,7 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import AuthProvider from "@/components/providers/AuthProvider";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0f2419",
+};
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -16,14 +23,55 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portland Civic Lab Civic Dashboard",
+  metadataBase: new URL("https://www.portlandciviclab.org"),
+  title: {
+    default: "Portland Civic Lab — Open Data for Portland's Recovery",
+    template: "%s | Portland Civic Lab",
+  },
   description:
-    "Real-time data on Portland's recovery — migration, business formation, downtown activity, safety, taxes, and housing.",
+    "Open civic data dashboard for Portland, Oregon. Real-time metrics on housing, public safety, budget, homelessness, transportation, education, climate, and more — sourced from public records and government APIs.",
+  keywords: [
+    "Portland Oregon",
+    "civic dashboard",
+    "city budget",
+    "Portland data",
+    "General Fund",
+    "public safety",
+    "housing",
+    "homelessness",
+    "PCEF",
+    "Portland Civic Lab",
+  ],
+  authors: [{ name: "Portland Civic Lab" }],
+  creator: "Portland Civic Lab",
   openGraph: {
-    title: "Portland Civic Lab Civic Dashboard",
+    title: "Portland Civic Lab — Open Data for Portland's Recovery",
     description:
-      "Seven questions that drive Portland's story, answered with real data.",
+      "Ten questions that drive Portland's story, answered with real data. Housing, safety, budget, climate, and more.",
+    url: "https://www.portlandciviclab.org",
+    siteName: "Portland Civic Lab",
     type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portland Civic Lab — Open Data for Portland's Recovery",
+    description:
+      "Ten questions that drive Portland's story, answered with real data.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.portlandciviclab.org",
   },
 };
 
@@ -49,6 +97,25 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Portland Civic Lab",
+              url: "https://www.portlandciviclab.org",
+              description:
+                "Open civic data dashboard for Portland, Oregon. Real-time metrics on housing, public safety, budget, homelessness, climate, and more.",
+              areaServed: {
+                "@type": "City",
+                name: "Portland",
+                containedInPlace: { "@type": "State", name: "Oregon" },
+              },
+              sameAs: ["https://github.com/ekrolewicz6/portland-dashboard"],
+            }),
+          }}
+        />
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
