@@ -50,6 +50,14 @@ export interface ForecastYear {
   gap: number;
 }
 
+export interface RestrictedFund {
+  name: string;
+  amount: number;
+  restriction: string;
+  legalAuthority: string;
+  category: "utility" | "enterprise" | "voter-mandate" | "state-law" | "federal" | "debt" | "internal-service" | "general-fund";
+}
+
 export interface BudgetData {
   fiscalYear: string;
   totalCityBudget: number;
@@ -62,6 +70,11 @@ export interface BudgetData {
     revenueSources: RevenueSource[];
     bureaus: BureauAllocation[];
     cashTransfers: CashTransfer[];
+  };
+  fullBudget: {
+    totalAllFunds: number;
+    generalFundPct: number;
+    restrictedFunds: RestrictedFund[];
   };
   fiveYearForecast: ForecastYear[];
 }
@@ -852,12 +865,126 @@ const fiveYearForecast: ForecastYear[] = [
   { year: "FY 30-31", revenue: 838.5, expenses: 842.1, gap: -3.6 },
 ];
 
+// ─── Full City Budget — Restricted Funds ─────────────────────────────────────
+// From "All Funds" sheets of FY 2026-27 program offer Excel files
+// Total All Funds: $7,754,790,632
+
+const restrictedFunds: RestrictedFund[] = [
+  {
+    name: "Water Bureau",
+    amount: 2_123_712_247,
+    restriction: "Funds Portland's drinking water system — Bull Run watershed, treatment, pipes, and reservoirs. Rates set to cover costs; cannot be diverted to non-water purposes.",
+    legalAuthority: "Revenue bond covenants, ORS 264 (municipal water), federal Safe Drinking Water Act",
+    category: "utility",
+  },
+  {
+    name: "Bureau of Environmental Services",
+    amount: 1_560_889_561,
+    restriction: "Funds the sewer and stormwater system — wastewater treatment, combined sewer overflow projects, and green infrastructure. Rates are locked to infrastructure by bond covenants.",
+    legalAuthority: "Revenue bond covenants, federal Clean Water Act, EPA NPDES permits",
+    category: "utility",
+  },
+  {
+    name: "Portland Clean Energy Fund (PCEF)",
+    amount: 705_243_457,
+    restriction: "1% surcharge on large retailers, locked to climate action by voter mandate. Funds energy efficiency, green jobs, and environmental justice. Cannot be spent on police, roads, or general operations.",
+    legalAuthority: "Portland City Charter §7-601, Ballot Measure 26-201 (Nov 2018, passed 65%)",
+    category: "voter-mandate",
+  },
+  {
+    name: "Portland Bureau of Transportation",
+    amount: 578_832_933,
+    restriction: "Primarily funded by state gas tax and federal highway funds, both constitutionally restricted to road and transit purposes. Parking revenue restricted to transportation operations.",
+    legalAuthority: "Oregon Constitution Art. IX §3a (highway funds), federal Highway Trust Fund",
+    category: "state-law",
+  },
+  {
+    name: "Portland Parks & Recreation (non-GF)",
+    amount: 428_188_028,
+    restriction: "Parks Levy (voter-approved dedicated property tax), recreation fees, and SDCs restricted to parks capital. The levy funds specific programs voters approved — it cannot backfill General Fund cuts.",
+    legalAuthority: "Parks Levy (voter-approved 2020), ORS 223.297-314 (SDCs restricted to capital expansion)",
+    category: "voter-mandate",
+  },
+  {
+    name: "Fire & Police Disability & Retirement",
+    amount: 354_502_332,
+    restriction: "Pension and disability benefits for sworn police and fire personnel. Oregon's constitution prohibits reducing vested pension benefits — these payments are legally mandatory.",
+    legalAuthority: "Oregon Constitution Art. I §21 (contract obligation), City Charter Chapter 5",
+    category: "debt",
+  },
+  {
+    name: "Fund & Debt Management",
+    amount: 336_923_754,
+    restriction: "Principal and interest payments on city bonds. Defaulting on bond obligations would collapse Portland's credit rating and ability to borrow for infrastructure.",
+    legalAuthority: "Bond covenants, ORS Chapter 287A (municipal debt obligations)",
+    category: "debt",
+  },
+  {
+    name: "Portland Housing Bureau (non-GF)",
+    amount: 293_816_602,
+    restriction: "Tax increment financing (TIF) from urban renewal areas, federal HOME/CDBG grants, and housing bonds — all restricted to affordable housing development and preservation.",
+    legalAuthority: "ORS 457 (urban renewal/TIF), federal Housing Act, Metro housing bond",
+    category: "federal",
+  },
+  {
+    name: "Bureau of Fleet & Facilities",
+    amount: 272_286_777,
+    restriction: "Internal service fund — charges bureaus for vehicles, building maintenance, and facilities management. Revenue comes from interagency rates, not taxes.",
+    legalAuthority: "Internal service fund accounting (GASB standards), interagency agreements",
+    category: "internal-service",
+  },
+  {
+    name: "Bureau of Human Resources",
+    amount: 249_974_683,
+    restriction: "Internal service fund covering health insurance, workers' compensation, and employee benefits across all city bureaus. Funded by premium charges to bureaus.",
+    legalAuthority: "Internal service fund accounting, collective bargaining agreements, state insurance requirements",
+    category: "internal-service",
+  },
+  {
+    name: "Bureau of Technology Services",
+    amount: 162_305_610,
+    restriction: "Internal service fund for citywide IT infrastructure — networks, data centers, enterprise software. Funded by interagency charges to all bureaus.",
+    legalAuthority: "Internal service fund accounting, interagency agreements",
+    category: "internal-service",
+  },
+  {
+    name: "Portland Permitting & Development",
+    amount: 110_173_560,
+    restriction: "Permit and inspection fees that must cover the cost of providing permitting services. State law limits fee use to the regulatory activity that generates them.",
+    legalAuthority: "ORS 294.160 (fee-for-service), ORS 455 (building codes)",
+    category: "enterprise",
+  },
+  {
+    name: "Bureau of Emergency Communications (non-GF)",
+    amount: 16_632_661,
+    restriction: "State 9-1-1 tax revenue and intergovernmental agreements restricted to emergency dispatch operations.",
+    legalAuthority: "ORS 403 (emergency communications), 9-1-1 tax statute",
+    category: "state-law",
+  },
+  {
+    name: "Portland Children's Levy",
+    amount: 33_784_480,
+    restriction: "Dedicated property tax levy for children's services — early childhood, child abuse prevention, mentoring, after-school programs. Voter-approved and restricted by charter.",
+    legalAuthority: "Portland City Charter (voter-approved 2002, renewed 2008, 2013, 2018, 2024)",
+    category: "voter-mandate",
+  },
+  {
+    name: "General Fund (flexible)",
+    amount: 793_122_397,
+    restriction: "The only discretionary spending. Funds police, fire, parks operations, shelter services, and city administration. This is where the $67.8M deficit lives.",
+    legalAuthority: "No legal restriction — allocated annually by City Council through the budget process",
+    category: "general-fund",
+  },
+];
+
 // ─── Export ──────────────────────────────────────────────────────────────────
+
+const totalAllFunds = restrictedFunds.reduce((s, f) => s + f.amount, 0);
 
 export const budgetData: BudgetData = {
   fiscalYear: "FY 2026-27",
-  totalCityBudget: 8_640_000_000,
-  dataSource: "City Budget Office — General Fund Forecast & CAL Tables, March 2026 Update; Budget Scenario Options FY 2026-27",
+  totalCityBudget: totalAllFunds,
+  dataSource: "City Budget Office — General Fund Forecast & CAL Tables, March 2026 Update; Budget Scenario Options FY 2026-27; FY 26-27 Program Offer Data (All Funds)",
   lastVerified: "2026-04-06",
   generalFund: {
     totalRevenue: 725_400_000,
@@ -866,6 +993,11 @@ export const budgetData: BudgetData = {
     revenueSources,
     bureaus,
     cashTransfers,
+  },
+  fullBudget: {
+    totalAllFunds,
+    generalFundPct: (793_122_397 / totalAllFunds) * 100,
+    restrictedFunds,
   },
   fiveYearForecast,
 };

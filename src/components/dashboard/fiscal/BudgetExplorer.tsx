@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { DollarSign, TrendingDown, Building2, Landmark, Scissors } from "lucide-react";
+import { DollarSign, TrendingDown, Building2, Landmark, Scissors, PieChart } from "lucide-react";
 import StatGrid from "@/components/charts/StatGrid";
 import BureauBreakdown from "./BureauBreakdown";
 import BudgetWhatIf from "./BudgetWhatIf";
 import RevenueBreakdown from "./RevenueBreakdown";
 import CashTransfers from "./CashTransfers";
+import CityBudgetOverview from "./CityBudgetOverview";
 import type { BudgetData } from "@/data/general-fund-budget";
 
 const FISCAL_COLOR = "#1e40af";
@@ -38,7 +39,7 @@ function formatM(n: number): string {
 export default function BudgetExplorer() {
   const [data, setData] = useState<BudgetData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [cutPct, setCutPct] = useState(0);
+  const [cutPct, setCutPct] = useState<0 | 3 | 10>(0);
 
   useEffect(() => {
     fetch("/api/dashboard/fiscal/budget")
@@ -70,8 +71,9 @@ export default function BudgetExplorer() {
       </p>
     );
 
-  const { generalFund, fiveYearForecast, totalCityBudget } = data;
-  const gfPctOfTotal = (generalFund.totalExpenses / totalCityBudget) * 100;
+  const { generalFund, fullBudget, fiveYearForecast } = data;
+  const totalCityBudget = fullBudget.totalAllFunds;
+  const gfPctOfTotal = fullBudget.generalFundPct;
 
   // Police % of GF
   const ppb = generalFund.bureaus.find((b) => b.code === "PPB");
@@ -146,7 +148,19 @@ export default function BudgetExplorer() {
         ]}
       />
 
-      {/* What If slider */}
+      {/* Full City Budget */}
+      <section>
+        <SectionHeader icon={PieChart} title="The Full Picture: All City Spending" />
+        <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5 sm:p-6">
+          <CityBudgetOverview
+            totalAllFunds={fullBudget.totalAllFunds}
+            generalFundPct={fullBudget.generalFundPct}
+            restrictedFunds={fullBudget.restrictedFunds}
+          />
+        </div>
+      </section>
+
+      {/* What If scenarios */}
       <section>
         <SectionHeader icon={Scissors} title="What If We Cut?" />
         <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5 sm:p-6">

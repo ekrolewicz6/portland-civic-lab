@@ -9,14 +9,22 @@ function formatM(n: number): string {
   return `$${n.toLocaleString()}`;
 }
 
+type CutLevel = 0 | 3 | 10;
+
+const SCENARIOS: { value: CutLevel; label: string; shortLabel: string; color: string; bgColor: string; borderColor: string }[] = [
+  { value: 0, label: "No Cuts", shortLabel: "0%", color: "text-[var(--color-ink)]", bgColor: "bg-[var(--color-paper-warm)]", borderColor: "border-[var(--color-parchment)]" },
+  { value: 3, label: "3% Reduction", shortLabel: "3%", color: "text-amber-700", bgColor: "bg-amber-50", borderColor: "border-amber-300" },
+  { value: 10, label: "10% Reduction", shortLabel: "10%", color: "text-red-700", bgColor: "bg-red-50", borderColor: "border-red-300" },
+];
+
 export default function BudgetWhatIf({
   cutPct,
   onCutChange,
   bureaus,
   totalExpenses,
 }: {
-  cutPct: number;
-  onCutChange: (pct: number) => void;
+  cutPct: CutLevel;
+  onCutChange: (pct: CutLevel) => void;
   bureaus: BureauAllocation[];
   totalExpenses: number;
 }) {
@@ -26,9 +34,9 @@ export default function BudgetWhatIf({
   // Aggregate FTE impact from matching scenarios
   const totalFTE = bureaus.reduce((sum, b) => {
     const scenario =
-      cutPct >= 10
+      cutPct === 10
         ? b.reductionScenarios.find((s) => s.magnitude === "10%")
-        : cutPct >= 3
+        : cutPct === 3
           ? b.reductionScenarios.find((s) => s.magnitude === "3%")
           : null;
     return sum + (scenario?.fteImpact ?? 0);
@@ -36,43 +44,46 @@ export default function BudgetWhatIf({
 
   // Count bureaus with documented scenarios
   const bureausWithScenarios = bureaus.filter((b) => {
-    if (cutPct >= 10) return b.reductionScenarios.some((s) => s.magnitude === "10%");
-    if (cutPct >= 3) return b.reductionScenarios.some((s) => s.magnitude === "3%");
+    if (cutPct === 10) return b.reductionScenarios.some((s) => s.magnitude === "10%");
+    if (cutPct === 3) return b.reductionScenarios.some((s) => s.magnitude === "3%");
     return false;
   }).length;
 
   return (
     <div className="space-y-4">
-      {/* Slider */}
-      <div>
-        <div className="flex items-end justify-between mb-2">
-          <label className="text-[13px] text-[var(--color-ink-muted)] font-medium">
-            General Fund Reduction
-          </label>
-          <span className="text-[28px] font-mono font-bold text-[var(--color-ink)] leading-none tabular-nums">
-            {cutPct}%
-          </span>
-        </div>
-        <input
-          type="range"
-          min={0}
-          max={10}
-          step={1}
-          value={cutPct}
-          onChange={(e) => onCutChange(Number(e.target.value))}
-          className="w-full h-2 rounded-full appearance-none cursor-pointer touch-none"
-          style={{
-            background: `linear-gradient(to right, #2563eb ${cutPct * 10}%, #e5e7eb ${cutPct * 10}%)`,
-            WebkitAppearance: "none",
-            padding: "8px 0",
-          }}
-        />
-        <div className="flex justify-between mt-1 text-[10px] text-[var(--color-ink-muted)] font-mono">
-          <span>0%</span>
-          <span className="text-amber-600 font-semibold">3% scenario</span>
-          <span className="text-red-600 font-semibold">10% scenario</span>
-        </div>
+      {/* Scenario buttons */}
+      <div className="grid grid-cols-3 gap-2 sm:gap-3">
+        {SCENARIOS.map((s) => {
+          const isActive = cutPct === s.value;
+          return (
+            <button
+              key={s.value}
+              onClick={() => onCutChange(s.value)}
+              className={`relative rounded-sm py-3 sm:py-4 px-2 sm:px-4 text-center transition-all border-2 ${
+                isActive
+                  ? `${s.bgColor} ${s.borderColor} ${s.color} shadow-sm`
+                  : "bg-[var(--color-paper-warm)] border-[var(--color-parchment)] text-[var(--color-ink-muted)] hover:border-[var(--color-ink-muted)]/30"
+              }`}
+            >
+              <p className={`text-[20px] sm:text-[26px] font-mono font-bold leading-none tabular-nums ${isActive ? s.color : ""}`}>
+                {s.shortLabel}
+              </p>
+              <p className={`text-[11px] sm:text-[12px] mt-1 font-medium ${isActive ? s.color : "text-[var(--color-ink-muted)]"}`}>
+                {s.label}
+              </p>
+              {isActive && s.value > 0 && (
+                <div className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-current" />
+              )}
+            </button>
+          );
+        })}
       </div>
+
+      <p className="text-[11px] text-[var(--color-ink-muted)]">
+        Mayor Wilson directed all bureaus to prepare these two reduction
+        scenarios in November 2025. These are the only levels with documented
+        service impacts.
+      </p>
 
       {/* Impact summary */}
       {cutPct > 0 && (
@@ -106,10 +117,10 @@ export default function BudgetWhatIf({
 
       {cutPct > 0 && (
         <p className="text-[11px] text-[var(--color-ink-muted)] italic">
-          Showing {cutPct >= 10 ? "10%" : cutPct >= 3 ? "3%" : "preliminary"}{" "}
-          reduction scenarios from the Mayor&apos;s budget guidance.{" "}
+          Showing the {cutPct}% reduction scenario from the Mayor&apos;s budget
+          guidance.{" "}
           {bureausWithScenarios} of {bureaus.length} bureaus have documented
-          service impact descriptions. Expand bureaus above to see specific cuts.
+          service impact descriptions. Expand bureaus below to see specific cuts.
         </p>
       )}
     </div>
