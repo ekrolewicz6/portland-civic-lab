@@ -166,9 +166,8 @@ export default function BudgetExplorer() {
         <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5 sm:p-6">
           <p className="text-[15px] text-[var(--color-ink-muted)] mb-4">
             Mayor Wilson directed all bureaus to prepare 3% and 10% reduction
-            scenarios. Drag the slider to see documented service impacts at each
-            level — these are the city&apos;s own descriptions of what stops
-            happening.
+            scenarios. Select a scenario to see what the city says would
+            actually stop happening — in their own words.
           </p>
           <BudgetWhatIf
             cutPct={cutPct}
