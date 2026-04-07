@@ -32,13 +32,29 @@ if (explicitOpts) {
   console.log(`[db] Connecting via URL: ${safeUrl}`);
 }
 
+// Serverless-safe connection settings.
+// On Vercel, functions freeze/thaw between invocations. A long-lived connection
+// pool can leave stale sockets that hang on the next request. To stay reliable:
+//   - max: 1            → one connection per function invocation (no pool reuse races)
+//   - idle_timeout: 20  → close idle connections quickly so stale sockets die
+//   - max_lifetime: 60  → recycle connections every minute
+//   - connect_timeout: 10 → fail fast on connect issues instead of hanging
+//   - prepare: false    → required for Supabase transaction-mode pooler
+const SERVERLESS_OPTS = {
+  max: 1,
+  idle_timeout: 20,
+  max_lifetime: 60,
+  connect_timeout: 10,
+  prepare: false,
+  onnotice: () => {}, // suppress NOTICE messages
+};
+
 const sql = explicitOpts
   ? postgres({
       ...explicitOpts,
-      prepare: false,
-      onnotice: () => {}, // suppress NOTICE messages
+      ...SERVERLESS_OPTS,
     })
-  : postgres(databaseUrl);
+  : postgres(databaseUrl, SERVERLESS_OPTS);
 
 export default sql;
 
