@@ -3,96 +3,133 @@ import sql from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
-  try {
-    const [
-      pitCounts, shelterCapacity, housingPlacements, overdoseDeaths,
-      shsFunding, byNameList, contextStats, evictionFilings,
-      shsByType, shsByCounty, affordableVacancy,
-      dataSources, dataDisputes,
-    ] = await Promise.all([
-      sql`
+// All 13 reads collapsed into a single round trip via json_build_object.
+// Previously this route fired 13 queries via Promise.all, which deadlocked
+// on Supabase's transaction-mode pooler when combined with the serverless
+// `max: 1` connection cap. One query = one round trip = ~120ms total.
+const COMBINED_QUERY = `
+  SELECT json_build_object(
+    'pit_counts', (
+      SELECT COALESCE(json_agg(t ORDER BY year), '[]'::json) FROM (
         SELECT year, total_homeless, sheltered, unsheltered,
                chronically_homeless, veterans, families, unaccompanied_youth, source
         FROM homelessness.pit_counts
-        ORDER BY year
-      `.catch(() => []),
-      sql`
+      ) t
+    ),
+    'shelter_capacity', (
+      SELECT COALESCE(json_agg(t ORDER BY quarter), '[]'::json) FROM (
         SELECT quarter, total_beds, county_24hr_beds, city_overnight_beds,
                utilization_pct, source
         FROM homelessness.shelter_capacity
-        ORDER BY quarter
-      `.catch(() => []),
-      sql`
+      ) t
+    ),
+    'housing_placements', (
+      SELECT COALESCE(json_agg(t ORDER BY fiscal_year), '[]'::json) FROM (
         SELECT fiscal_year, total_placements, shs_placements, rapid_rehousing,
                psh_placements, evictions_prevented, source
         FROM homelessness.housing_placements
-        ORDER BY fiscal_year
-      `.catch(() => []),
-      sql`
+      ) t
+    ),
+    'overdose_deaths', (
+      SELECT COALESCE(json_agg(t ORDER BY year), '[]'::json) FROM (
         SELECT year, total_od_deaths_homeless, fentanyl_deaths_homeless,
                total_homeless_deaths, county_wide_opioid_deaths, source
         FROM homelessness.overdose_deaths
-        ORDER BY year
-      `.catch(() => []),
-      sql`
+      ) t
+    ),
+    'shs_funding', (
+      SELECT COALESCE(json_agg(t ORDER BY year), '[]'::json) FROM (
         SELECT year, tax_revenue, spending, psh_units_added,
                psh_units_cumulative, source
         FROM homelessness.shs_funding
-        ORDER BY year
-      `.catch(() => []),
-      sql`
+      ) t
+    ),
+    'by_name_list', (
+      SELECT COALESCE(json_agg(t ORDER BY month), '[]'::json) FROM (
         SELECT month, total_on_list, new_entries, exits_to_housing, source
         FROM homelessness.by_name_list
-        ORDER BY month
-      `.catch(() => []),
-      sql`
+      ) t
+    ),
+    'context_stats', (
+      SELECT COALESCE(json_agg(t ORDER BY metric), '[]'::json) FROM (
         SELECT metric, value, context, source, as_of_date
         FROM homelessness.context_stats
-        ORDER BY metric
-      `.catch(() => []),
-      sql`
+      ) t
+    ),
+    'eviction_filings', (
+      SELECT COALESCE(json_agg(t ORDER BY month, county), '[]'::json) FROM (
         SELECT month, county, filings, filing_rate_per_100, source
         FROM homelessness.eviction_filings
-        ORDER BY month, county
-      `.catch(() => []),
-      sql`
+      ) t
+    ),
+    'shs_spending_by_type', (
+      SELECT COALESCE(json_agg(t ORDER BY fiscal_year, intervention_type), '[]'::json) FROM (
         SELECT fiscal_year, intervention_type, amount, households_served,
                housing_placements, cost_per_placement, source
         FROM homelessness.shs_spending_by_type
-        ORDER BY fiscal_year, intervention_type
-      `.catch(() => []),
-      sql`
+      ) t
+    ),
+    'shs_by_county', (
+      SELECT COALESCE(json_agg(t ORDER BY fiscal_year, county), '[]'::json) FROM (
         SELECT fiscal_year, county, allocation, spent, households_placed, source
         FROM homelessness.shs_by_county
-        ORDER BY fiscal_year, county
-      `.catch(() => []),
-      sql`
+      ) t
+    ),
+    'affordable_housing_vacancy', (
+      SELECT COALESCE(json_agg(t ORDER BY as_of), '[]'::json) FROM (
         SELECT as_of, source, total_units, vacant_units, vacancy_pct,
                avg_days_to_fill, notes
         FROM homelessness.affordable_housing_vacancy
-        ORDER BY as_of
-      `.catch(() => []),
-      sql`
+      ) t
+    ),
+    'data_sources', (
+      SELECT COALESCE(json_agg(t ORDER BY display_name), '[]'::json) FROM (
         SELECT source_key, display_name, agency, methodology, scope,
                what_it_misses, update_frequency, last_updated, next_expected,
                url, used_by
         FROM homelessness.data_sources
-        ORDER BY display_name
-      `.catch(() => []),
-      sql`
+      ) t
+    ),
+    'data_disputes', (
+      SELECT COALESCE(json_agg(t ORDER BY date_surfaced DESC), '[]'::json) FROM (
         SELECT slug, title, date_surfaced, status,
                claim_a_source, claim_a_summary, claim_a_data,
                claim_b_source, claim_b_summary, claim_b_data,
                expert_assessment, expert_source, methodology_difference, news_url
         FROM homelessness.data_disputes
         WHERE status = 'active'
-        ORDER BY date_surfaced DESC
-      `.catch(() => []),
-    ]);
+      ) t
+    )
+  ) AS payload
+`;
+
+type Row = Record<string, unknown>;
+
+const arr = (v: unknown): Row[] => (Array.isArray(v) ? (v as Row[]) : []);
+
+export async function GET() {
+  try {
+    const t0 = Date.now();
+    const result = await sql.unsafe(COMBINED_QUERY);
+    const payload = (result[0]?.payload ?? {}) as Record<string, unknown>;
+    console.log(`[homelessness/detail] combined query: ${Date.now() - t0}ms`);
+
+    const pitCounts = arr(payload.pit_counts);
+    const shelterCapacity = arr(payload.shelter_capacity);
+    const housingPlacements = arr(payload.housing_placements);
+    const overdoseDeaths = arr(payload.overdose_deaths);
+    const shsFunding = arr(payload.shs_funding);
+    const byNameList = arr(payload.by_name_list);
+    const contextStats = arr(payload.context_stats);
+    const evictionFilings = arr(payload.eviction_filings);
+    const shsByType = arr(payload.shs_spending_by_type);
+    const shsByCounty = arr(payload.shs_by_county);
+    const affordableVacancy = arr(payload.affordable_housing_vacancy);
+    const dataSources = arr(payload.data_sources);
+    const dataDisputes = arr(payload.data_disputes);
 
     return NextResponse.json({
-      pitCounts: pitCounts.map((r: Record<string, unknown>) => ({
+      pitCounts: pitCounts.map((r) => ({
         year: Number(r.year),
         totalHomeless: Number(r.total_homeless),
         sheltered: Number(r.sheltered),
@@ -103,14 +140,14 @@ export async function GET() {
         unaccompaniedYouth: Number(r.unaccompanied_youth),
         source: r.source ?? "HUD PIT Count",
       })),
-      shelterCapacity: shelterCapacity.map((r: Record<string, unknown>) => ({
+      shelterCapacity: shelterCapacity.map((r) => ({
         quarter: String(r.quarter),
         totalBeds: Number(r.total_beds),
         county24hrBeds: Number(r.county_24hr_beds),
         cityOvernightBeds: Number(r.city_overnight_beds),
         utilizationPct: Number(r.utilization_pct),
       })),
-      housingPlacements: housingPlacements.map((r: Record<string, unknown>) => ({
+      housingPlacements: housingPlacements.map((r) => ({
         fiscalYear: String(r.fiscal_year),
         totalPlacements: Number(r.total_placements),
         shsPlacements: Number(r.shs_placements ?? 0),
@@ -118,39 +155,39 @@ export async function GET() {
         pshPlacements: Number(r.psh_placements ?? 0),
         evictionsPrevented: Number(r.evictions_prevented ?? 0),
       })),
-      overdoseDeaths: overdoseDeaths.map((r: Record<string, unknown>) => ({
+      overdoseDeaths: overdoseDeaths.map((r) => ({
         year: Number(r.year),
         totalOdDeathsHomeless: Number(r.total_od_deaths_homeless ?? 0),
         fentanylDeathsHomeless: Number(r.fentanyl_deaths_homeless ?? 0),
         totalHomelessDeaths: Number(r.total_homeless_deaths ?? 0),
         countyWideOpioidDeaths: Number(r.county_wide_opioid_deaths ?? 0),
       })),
-      shsFunding: shsFunding.map((r: Record<string, unknown>) => ({
+      shsFunding: shsFunding.map((r) => ({
         year: Number(r.year),
         taxRevenue: Number(r.tax_revenue ?? 0),
         spending: Number(r.spending ?? 0),
         pshUnitsAdded: Number(r.psh_units_added ?? 0),
         pshUnitsCumulative: Number(r.psh_units_cumulative ?? 0),
       })),
-      byNameList: byNameList.map((r: Record<string, unknown>) => ({
+      byNameList: byNameList.map((r) => ({
         month: String(r.month),
         totalOnList: Number(r.total_on_list),
         newEntries: Number(r.new_entries),
         exitsToHousing: Number(r.exits_to_housing),
       })),
       contextStats: Object.fromEntries(
-        (contextStats as Record<string, unknown>[]).map((r) => [
+        contextStats.map((r) => [
           r.metric,
           { value: r.value, context: r.context, source: r.source },
         ]),
       ),
-      evictionFilings: (evictionFilings as Record<string, unknown>[]).map((r) => ({
+      evictionFilings: evictionFilings.map((r) => ({
         month: String(r.month),
         county: String(r.county),
         filings: Number(r.filings),
         filingRatePer100: Number(r.filing_rate_per_100 ?? 0),
       })),
-      shsByType: (shsByType as Record<string, unknown>[]).map((r) => ({
+      shsByType: shsByType.map((r) => ({
         fiscalYear: String(r.fiscal_year),
         interventionType: String(r.intervention_type),
         amount: Number(r.amount ?? 0),
@@ -158,14 +195,14 @@ export async function GET() {
         housingPlacements: Number(r.housing_placements ?? 0),
         costPerPlacement: Number(r.cost_per_placement ?? 0),
       })),
-      shsByCounty: (shsByCounty as Record<string, unknown>[]).map((r) => ({
+      shsByCounty: shsByCounty.map((r) => ({
         fiscalYear: String(r.fiscal_year),
         county: String(r.county),
         allocation: Number(r.allocation ?? 0),
         spent: Number(r.spent ?? 0),
         householdsPlaced: Number(r.households_placed ?? 0),
       })),
-      affordableVacancy: (affordableVacancy as Record<string, unknown>[]).map((r) => ({
+      affordableVacancy: affordableVacancy.map((r) => ({
         asOf: String(r.as_of),
         source: String(r.source),
         totalUnits: Number(r.total_units ?? 0),
@@ -174,7 +211,7 @@ export async function GET() {
         avgDaysToFill: Number(r.avg_days_to_fill ?? 0),
         notes: String(r.notes ?? ""),
       })),
-      dataSources: (dataSources as Record<string, unknown>[]).map((r) => ({
+      dataSources: dataSources.map((r) => ({
         sourceKey: String(r.source_key),
         displayName: String(r.display_name),
         agency: String(r.agency),
@@ -187,7 +224,7 @@ export async function GET() {
         url: String(r.url ?? ""),
         usedBy: (r.used_by as string[]) ?? [],
       })),
-      dataDisputes: (dataDisputes as Record<string, unknown>[]).map((r) => ({
+      dataDisputes: dataDisputes.map((r) => ({
         slug: String(r.slug),
         title: String(r.title),
         dateSurfaced: String(r.date_surfaced),
