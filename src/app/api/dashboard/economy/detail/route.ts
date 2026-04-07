@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
+
+const CACHE_KEY = "economy_detail";
+const CACHE_TTL = 6 * 60 * 60 * 1000; // 6h
 
 interface QuarterlyRow {
   quarter: string;
@@ -38,53 +41,74 @@ interface VacancyRow {
   quarter: string;
 }
 
+// Single round-trip query — see homelessness/detail for rationale.
+const COMBINED_QUERY = `
+  SELECT json_build_object(
+    'total', (
+      SELECT count(DISTINCT registry_number)::int FROM business.oregon_sos_all_active
+    ),
+    'quarterly', (
+      SELECT COALESCE(json_agg(t ORDER BY quarter), '[]'::json) FROM (
+        SELECT date_trunc('quarter', registry_date)::date::text as quarter,
+          count(DISTINCT registry_number)::int as total,
+          count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%limited liability%')::int as llcs,
+          count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%business corporation%')::int as corps,
+          count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%nonprofit%')::int as nonprofits
+        FROM business.oregon_sos_all_active
+        WHERE registry_date >= '2016-01-01' AND registry_date < '2026-04-01'
+        GROUP BY 1
+      ) t
+    ),
+    'entities', (
+      SELECT COALESCE(json_agg(t ORDER BY cnt DESC), '[]'::json) FROM (
+        SELECT entity_type, count(DISTINCT registry_number)::int as cnt
+        FROM business.oregon_sos_all_active
+        GROUP BY 1
+      ) t
+    ),
+    'yearly', (
+      SELECT COALESCE(json_agg(t ORDER BY yr), '[]'::json) FROM (
+        SELECT EXTRACT(YEAR FROM registry_date)::int as yr,
+               count(DISTINCT registry_number)::int as cnt
+        FROM business.oregon_sos_all_active
+        WHERE registry_date >= '2016-01-01'
+        GROUP BY 1
+      ) t
+    ),
+    'unemployment', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        SELECT year, period, period_name, value::numeric as value
+        FROM business.bls_employment_series
+        WHERE series_id = 'LAUMT413890000000003'
+        ORDER BY year DESC, period DESC
+        LIMIT 36
+      ) t
+    ),
+    'employment', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        SELECT year, period, period_name, value::numeric as value
+        FROM business.bls_employment_series
+        WHERE series_id = 'LAUMT413890000000006'
+        ORDER BY year DESC, period DESC
+        LIMIT 36
+      ) t
+    )
+  ) AS payload
+`;
+
 export async function GET() {
   try {
-    const [totalRows, quarterlyRows, entityRows, yearlyRows, unemploymentRows, employmentRows] =
-      await Promise.all([
-        sql<TotalRow[]>`
-          SELECT count(DISTINCT registry_number)::int as total
-          FROM business.oregon_sos_all_active
-        `,
-        sql<QuarterlyRow[]>`
-          SELECT date_trunc('quarter', registry_date)::date::text as quarter,
-            count(DISTINCT registry_number)::int as total,
-            count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%limited liability%')::int as llcs,
-            count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%business corporation%')::int as corps,
-            count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%nonprofit%')::int as nonprofits
-          FROM business.oregon_sos_all_active
-          WHERE registry_date >= '2016-01-01' AND registry_date < '2026-04-01'
-          GROUP BY 1 ORDER BY 1
-        `,
-        sql<EntityRow[]>`
-          SELECT entity_type, count(DISTINCT registry_number)::int as cnt
-          FROM business.oregon_sos_all_active
-          GROUP BY 1 ORDER BY cnt DESC
-        `,
-        sql<YearlyRow[]>`
-          SELECT EXTRACT(YEAR FROM registry_date)::int as yr,
-                 count(DISTINCT registry_number)::int as cnt
-          FROM business.oregon_sos_all_active
-          WHERE registry_date >= '2016-01-01'
-          GROUP BY 1 ORDER BY 1
-        `,
-        sql<BLSRow[]>`
-          SELECT year, period, period_name, value::numeric as value
-          FROM business.bls_employment_series
-          WHERE series_id = 'LAUMT413890000000003'
-          ORDER BY year DESC, period DESC
-          LIMIT 36
-        `,
-        sql<BLSRow[]>`
-          SELECT year, period, period_name, value::numeric as value
-          FROM business.bls_employment_series
-          WHERE series_id = 'LAUMT413890000000006'
-          ORDER BY year DESC, period DESC
-          LIMIT 36
-        `,
-      ]);
+    const cached = await getCachedData<Record<string, unknown>>(CACHE_KEY, CACHE_TTL);
+    if (cached) return NextResponse.json(cached);
 
-    const totalActive = totalRows[0]?.total ?? 0;
+    const result = await sql.unsafe(COMBINED_QUERY);
+    const payload = (result[0]?.payload ?? {}) as Record<string, unknown>;
+    const totalActive = Number(payload.total ?? 0);
+    const quarterlyRows = ((payload.quarterly as QuarterlyRow[]) ?? []);
+    const entityRows = ((payload.entities as EntityRow[]) ?? []);
+    const yearlyRows = ((payload.yearly as YearlyRow[]) ?? []);
+    const unemploymentRows = ((payload.unemployment as BLSRow[]) ?? []);
+    const employmentRows = ((payload.employment as BLSRow[]) ?? []);
 
     // Current quarter registrations
     const currentQuarter =
@@ -423,7 +447,7 @@ export async function GET() {
       // Table may not exist yet
     }
 
-    return NextResponse.json({
+    const responseData = {
       businessStats: {
         totalActive,
         newThisQuarter,
@@ -444,7 +468,9 @@ export async function GET() {
       realWageTrend,
       neighborhoodEconomy,
       dataStatus: "live",
-    });
+    };
+    await setCachedData(CACHE_KEY, responseData);
+    return NextResponse.json(responseData);
   } catch (err) {
     console.error("Economy detail API error:", err);
     return NextResponse.json(

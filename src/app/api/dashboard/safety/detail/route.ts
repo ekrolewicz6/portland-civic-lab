@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
 
 const PORTLAND_POPULATION = 650_000;
+const CACHE_KEY = "safety_detail";
+const CACHE_TTL = 6 * 60 * 60 * 1000; // 6h
 
 interface SafetyDetailResponse {
   // 10-year monthly crime by category (Property / Person / Society)
@@ -54,6 +56,9 @@ interface SafetyDetailResponse {
 
 export async function GET(): Promise<NextResponse<SafetyDetailResponse>> {
   try {
+    const cached = await getCachedData<SafetyDetailResponse>(CACHE_KEY, CACHE_TTL);
+    if (cached) return NextResponse.json(cached);
+
     // 1. Monthly crime by category (10 years) — 613K records
     const monthlyRows = await sql`
       SELECT
@@ -315,6 +320,7 @@ export async function GET(): Promise<NextResponse<SafetyDetailResponse>> {
       totalRecords,
     };
 
+    await setCachedData(CACHE_KEY, result);
     return NextResponse.json(result);
   } catch (error) {
     console.error("[safety/detail] DB query failed:", error);

@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server";
 import type { BusinessData } from "@/lib/types";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
+
+const CACHE_KEY = "business";
+const CACHE_TTL = 6 * 60 * 60 * 1000; // 6h
 
 interface QuarterlyRow {
   quarter: string;
@@ -23,35 +26,55 @@ interface TopEntityRow {
   cnt: number;
 }
 
+// Single round-trip query — see homelessness/detail for rationale.
+const COMBINED_QUERY = `
+  SELECT json_build_object(
+    'total', (
+      SELECT count(DISTINCT registry_number)::int FROM business.oregon_sos_all_active
+    ),
+    'yearly', (
+      SELECT COALESCE(json_agg(t ORDER BY yr), '[]'::json) FROM (
+        SELECT EXTRACT(YEAR FROM registry_date)::int as yr, count(DISTINCT registry_number)::int as cnt
+        FROM business.oregon_sos_all_active
+        WHERE registry_date >= '2016-01-01'
+        GROUP BY 1
+      ) t
+    ),
+    'quarterly', (
+      SELECT COALESCE(json_agg(t ORDER BY quarter), '[]'::json) FROM (
+        SELECT date_trunc('quarter', registry_date)::date::text as quarter, count(DISTINCT registry_number)::int as cnt
+        FROM business.oregon_sos_all_active
+        WHERE registry_date >= '2016-01-01' AND registry_date < '2026-04-01'
+        GROUP BY 1
+      ) t
+    ),
+    'top_entity', (
+      SELECT row_to_json(t) FROM (
+        SELECT entity_type, count(DISTINCT registry_number)::int as cnt
+        FROM business.oregon_sos_all_active
+        GROUP BY 1 ORDER BY cnt DESC LIMIT 1
+      ) t
+    )
+  ) AS payload
+`;
+
 export async function GET(): Promise<
   NextResponse<BusinessData & { dataStatus: string; dataAvailable: boolean }>
 > {
   try {
-    const [totalRows, yearlyRows, quarterlyRows, topEntityRows] =
-      await Promise.all([
-        sql<TotalRow[]>`
-          SELECT count(DISTINCT registry_number)::int as total FROM business.oregon_sos_all_active
-        `,
-        sql<YearlyRow[]>`
-          SELECT EXTRACT(YEAR FROM registry_date)::int as yr, count(DISTINCT registry_number)::int as cnt
-          FROM business.oregon_sos_all_active
-          WHERE registry_date >= '2016-01-01'
-          GROUP BY 1 ORDER BY 1
-        `,
-        sql<QuarterlyRow[]>`
-          SELECT date_trunc('quarter', registry_date)::date::text as quarter, count(DISTINCT registry_number)::int as cnt
-          FROM business.oregon_sos_all_active
-          WHERE registry_date >= '2016-01-01' AND registry_date < '2026-04-01'
-          GROUP BY 1 ORDER BY 1
-        `,
-        sql<TopEntityRow[]>`
-          SELECT entity_type, count(DISTINCT registry_number)::int as cnt
-          FROM business.oregon_sos_all_active
-          GROUP BY 1 ORDER BY cnt DESC LIMIT 1
-        `,
-      ]);
+    const cached = await getCachedData<BusinessData & { dataStatus: string; dataAvailable: boolean }>(CACHE_KEY, CACHE_TTL);
+    if (cached) return NextResponse.json(cached);
 
-    const totalActive = totalRows[0]?.total ?? 0;
+    const result = await sql.unsafe(COMBINED_QUERY);
+    const payload = (result[0]?.payload ?? {}) as Record<string, unknown>;
+    const totalActive2 = Number(payload.total ?? 0);
+    const yearlyRows = ((payload.yearly as YearlyRow[]) ?? []);
+    const quarterlyRows = ((payload.quarterly as QuarterlyRow[]) ?? []);
+    const topEntityRows: TopEntityRow[] = payload.top_entity
+      ? [payload.top_entity as TopEntityRow]
+      : [];
+
+    const totalActive = totalActive2;
     const sortedYears = [...yearlyRows].sort((a, b) => a.yr - b.yr);
     const firstYear = sortedYears.find((y) => y.yr === 2016);
     const lastYear = sortedYears.find((y) => y.yr === 2025);
@@ -102,7 +125,7 @@ export async function GET(): Promise<
       insights.push(`${label} account for ${topPct}% of all registrations.`);
     }
 
-    return NextResponse.json({
+    const responseData = {
       headline: `${totalActive.toLocaleString()} active businesses — up ${growthMultiple}x since 2016`,
       headlineValue: totalActive,
       dataStatus: "live",
@@ -130,7 +153,9 @@ export async function GET(): Promise<
     } as unknown as BusinessData & {
       dataStatus: string;
       dataAvailable: boolean;
-    });
+    };
+    await setCachedData(CACHE_KEY, responseData);
+    return NextResponse.json(responseData);
   } catch (err) {
     console.error("Business API error:", err);
     return NextResponse.json({

@@ -22,22 +22,39 @@ interface DemoRow {
   commute_wfh_pct: number | null;
 }
 
-export async function GET() {
-  try {
-    const [popRows, demoRows] = await Promise.all([
-      sql<PopRow[]>`
+// Single round-trip query — see homelessness/detail for rationale.
+const COMBINED_QUERY = `
+  SELECT json_build_object(
+    'population', (
+      SELECT COALESCE(json_agg(t ORDER BY year), '[]'::json) FROM (
         SELECT year, population, change_from_prev, pct_change, source
         FROM migration.census_population
-        ORDER BY year
-      `.catch(() => [] as PopRow[]),
-      sql<DemoRow[]>`
+      ) t
+    ),
+    'demographics', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
         SELECT year, median_income, median_rent, poverty_rate,
                homeownership_rate, commute_drive_pct, commute_transit_pct, commute_wfh_pct
         FROM migration.census_demographics
         ORDER BY year DESC
         LIMIT 1
-      `.catch(() => [] as DemoRow[]),
-    ]);
+      ) t
+    )
+  ) AS payload
+`;
+
+export async function GET() {
+  try {
+    let popRows: PopRow[] = [];
+    let demoRows: DemoRow[] = [];
+    try {
+      const result = await sql.unsafe(COMBINED_QUERY);
+      const payload = (result[0]?.payload ?? {}) as Record<string, unknown>;
+      popRows = (payload.population as PopRow[]) ?? [];
+      demoRows = (payload.demographics as DemoRow[]) ?? [];
+    } catch {
+      // Tables may not exist; fall through with empty arrays
+    }
 
     // Build population trend from ACS 5-year data (2018-2022)
     // Prefer ACS5 rows, fill in with PEP

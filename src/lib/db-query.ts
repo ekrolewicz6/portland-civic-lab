@@ -77,10 +77,11 @@ export async function getCachedData<T>(question: string, ttlMs: number = 60 * 60
 
     if (updatedAt < cutoff) return null;
 
-    // Validate cached data isn't a poisoned error response
+    // Reject poisoned error responses; accept everything else.
     const cached = row.data as Record<string, unknown>;
-    if (cached && cached.dataStatus === "unavailable") return null;
-    if (cached && !cached.headline && !cached.dataAvailable) return null;
+    if (!cached) return null;
+    if (cached.dataStatus === "unavailable") return null;
+    if (cached.dataStatus === "error") return null;
 
     return cached as T;
   } catch {
@@ -96,17 +97,23 @@ export async function setCachedData(
   question: string,
   data: unknown,
 ): Promise<void> {
-  // Don't cache error responses — they'll poison the cache
+  // Don't cache error responses — they'll poison the cache.
+  // Accept everything else (live, available, partial, etc).
   const d = data as Record<string, unknown> | null;
-  if (!d || d.dataStatus === "unavailable" || (!d.headline && !d.dataAvailable)) {
-    return;
-  }
+  if (!d) return;
+  if (d.dataStatus === "unavailable" || d.dataStatus === "error") return;
   try {
+    // Pass the object directly — postgres.js auto-serializes to JSONB.
+    // Previously this used JSON.stringify(data)::jsonb which caused
+    // double-encoding (data stored as a JSON string scalar instead of object),
+    // making cached.dataStatus reads return undefined and bypassing the cache.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const json = sql.json(d as any);
     await sql`
       INSERT INTO public.dashboard_cache (question, data, updated_at)
-      VALUES (${question}, ${JSON.stringify(data)}::jsonb, NOW())
+      VALUES (${question}, ${json}, NOW())
       ON CONFLICT (question)
-      DO UPDATE SET data = ${JSON.stringify(data)}::jsonb, updated_at = NOW()
+      DO UPDATE SET data = ${json}, updated_at = NOW()
     `;
   } catch {
     // Silently ignore cache write failures

@@ -3,37 +3,58 @@ import sql from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
-  try {
-    // Use QCEW data (the authoritative source) for headline metrics
-    const [qcewLatest, qcewPrior, unemploymentRows] = await Promise.all([
-      // Latest quarter total private sector
-      sql`
+// Single round-trip combined query — see homelessness/detail for rationale.
+// 3 parallel queries via Promise.all deadlocked under serverless `max: 1`.
+const COMBINED_QUERY = `
+  SELECT json_build_object(
+    'qcew_latest', (
+      SELECT row_to_json(t) FROM (
         SELECT year, quarter, establishments, month3_employment, avg_weekly_wage, total_quarterly_wages
         FROM economy.qcew_employment
         WHERE industry_code = '10'
         ORDER BY year DESC, quarter DESC
         LIMIT 1
-      `,
-      // Same quarter previous year (for YoY comparison)
-      sql`
+      ) t
+    ),
+    'qcew_prior', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
         SELECT year, quarter, establishments, month3_employment, avg_weekly_wage
         FROM economy.qcew_employment
         WHERE industry_code = '10'
         ORDER BY year DESC, quarter DESC
         LIMIT 2
-      `,
-      // BLS unemployment rate
-      sql`
+      ) t
+    ),
+    'unemployment', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
         SELECT year, period, period_name, value::numeric as value
         FROM business.bls_employment_series
         WHERE series_id = 'LAUMT413890000000003'
         ORDER BY year DESC, period DESC
         LIMIT 12
-      `,
-    ]);
+      ) t
+    ),
+    'trend', (
+      SELECT COALESCE(json_agg(t ORDER BY year, quarter), '[]'::json) FROM (
+        SELECT year, quarter, establishments
+        FROM economy.qcew_employment
+        WHERE industry_code = '10'
+      ) t
+    )
+  ) AS payload
+`;
 
-    const latest = qcewLatest[0];
+type Row = Record<string, unknown>;
+
+export async function GET() {
+  try {
+    const result = await sql.unsafe(COMBINED_QUERY);
+    const payload = (result[0]?.payload ?? {}) as Record<string, unknown>;
+    const latest = payload.qcew_latest as Row | null;
+    const qcewPrior = (payload.qcew_prior as Row[]) ?? [];
+    const unemploymentRows = (payload.unemployment as Row[]) ?? [];
+    const trendRows = (payload.trend as Row[]) ?? [];
+
     const prior = qcewPrior.length > 1 ? qcewPrior[1] : null;
 
     const establishments = Number(latest?.establishments ?? 0);
@@ -45,7 +66,7 @@ export async function GET() {
     let trendDir: "up" | "down" | "flat" = "flat";
     let trendPct = 0;
     let trendLabel = "no prior data";
-    if (prior) {
+    if (prior && latest) {
       const priorEst = Number(prior.establishments);
       if (priorEst > 0) {
         trendPct = Math.round(((establishments - priorEst) / priorEst) * 1000) / 10;
@@ -58,13 +79,7 @@ export async function GET() {
     const latestUnemp = unemploymentRows.length > 0 ? unemploymentRows[0] : null;
     const unempRate = latestUnemp ? Number(latestUnemp.value) : null;
 
-    // QCEW quarterly trend for chart (establishments over time)
-    const trendRows = await sql`
-      SELECT year, quarter, establishments
-      FROM economy.qcew_employment
-      WHERE industry_code = '10'
-      ORDER BY year, quarter
-    `;
+    // QCEW quarterly trend for chart — included in combined query above
     const chartData = trendRows.map((r) => ({
       date: `${r.year} Q${r.quarter}`,
       value: Number(r.establishments),

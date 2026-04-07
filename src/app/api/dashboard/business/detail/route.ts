@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
+
+const CACHE_KEY = "business_detail";
+const CACHE_TTL = 6 * 60 * 60 * 1000; // 6h
 
 interface QuarterlyRow {
   quarter: string;
@@ -31,42 +34,63 @@ interface TotalRow {
   total: number;
 }
 
+// Single round-trip query — see homelessness/detail for rationale.
+const COMBINED_QUERY = `
+  SELECT json_build_object(
+    'quarterly', (
+      SELECT COALESCE(json_agg(t ORDER BY quarter), '[]'::json) FROM (
+        SELECT date_trunc('quarter', registry_date)::date::text as quarter,
+          count(DISTINCT registry_number)::int as total,
+          count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%limited liability%')::int as llcs,
+          count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%business corporation%')::int as corps,
+          count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%nonprofit%')::int as nonprofits,
+          count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%assumed%')::int as assumed_names
+        FROM business.oregon_sos_all_active
+        WHERE registry_date >= '2016-01-01' AND registry_date < '2026-04-01'
+        GROUP BY 1
+      ) t
+    ),
+    'entities', (
+      SELECT COALESCE(json_agg(t ORDER BY cnt DESC), '[]'::json) FROM (
+        SELECT entity_type, count(DISTINCT registry_number)::int as cnt
+        FROM business.oregon_sos_all_active
+        GROUP BY 1
+      ) t
+    ),
+    'zips', (
+      SELECT COALESCE(json_agg(t ORDER BY cnt DESC), '[]'::json) FROM (
+        SELECT zip, count(DISTINCT registry_number)::int as cnt
+        FROM business.oregon_sos_all_active
+        WHERE zip IS NOT NULL AND zip != ''
+        GROUP BY 1 ORDER BY cnt DESC LIMIT 10
+      ) t
+    ),
+    'yearly', (
+      SELECT COALESCE(json_agg(t ORDER BY yr), '[]'::json) FROM (
+        SELECT EXTRACT(YEAR FROM registry_date)::int as yr, count(DISTINCT registry_number)::int as cnt
+        FROM business.oregon_sos_all_active
+        WHERE registry_date >= '2016-01-01'
+        GROUP BY 1
+      ) t
+    ),
+    'total', (
+      SELECT count(DISTINCT registry_number)::int FROM business.oregon_sos_all_active
+    )
+  ) AS payload
+`;
+
 export async function GET() {
   try {
-    const [quarterlyRows, entityRows, zipRows, yearlyRows, totalRows] =
-      await Promise.all([
-        sql<QuarterlyRow[]>`
-          SELECT date_trunc('quarter', registry_date)::date::text as quarter,
-            count(DISTINCT registry_number)::int as total,
-            count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%limited liability%')::int as llcs,
-            count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%business corporation%')::int as corps,
-            count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%nonprofit%')::int as nonprofits,
-            count(DISTINCT registry_number) FILTER (WHERE entity_type ILIKE '%assumed%')::int as assumed_names
-          FROM business.oregon_sos_all_active
-          WHERE registry_date >= '2016-01-01' AND registry_date < '2026-04-01'
-          GROUP BY 1 ORDER BY 1
-        `,
-        sql<EntityRow[]>`
-          SELECT entity_type, count(DISTINCT registry_number)::int as cnt
-          FROM business.oregon_sos_all_active
-          GROUP BY 1 ORDER BY cnt DESC
-        `,
-        sql<ZipRow[]>`
-          SELECT zip, count(DISTINCT registry_number)::int as cnt
-          FROM business.oregon_sos_all_active
-          WHERE zip IS NOT NULL AND zip != ''
-          GROUP BY 1 ORDER BY cnt DESC LIMIT 10
-        `,
-        sql<YearlyRow[]>`
-          SELECT EXTRACT(YEAR FROM registry_date)::int as yr, count(DISTINCT registry_number)::int as cnt
-          FROM business.oregon_sos_all_active
-          WHERE registry_date >= '2016-01-01'
-          GROUP BY 1 ORDER BY 1
-        `,
-        sql<TotalRow[]>`
-          SELECT count(DISTINCT registry_number)::int as total FROM business.oregon_sos_all_active
-        `,
-      ]);
+    const cached = await getCachedData<Record<string, unknown>>(CACHE_KEY, CACHE_TTL);
+    if (cached) return NextResponse.json(cached);
+
+    const result = await sql.unsafe(COMBINED_QUERY);
+    const payload = (result[0]?.payload ?? {}) as Record<string, unknown>;
+    const quarterlyRows = ((payload.quarterly as QuarterlyRow[]) ?? []);
+    const entityRows = ((payload.entities as EntityRow[]) ?? []);
+    const zipRows = ((payload.zips as ZipRow[]) ?? []);
+    const yearlyRows = ((payload.yearly as YearlyRow[]) ?? []);
+    const totalRows: TotalRow[] = [{ total: Number(payload.total ?? 0) }];
 
     // Compute survival rate analysis
     // Method: use the most recent full year (2025) as ~100% baseline
@@ -170,7 +194,7 @@ export async function GET() {
         ? Math.round((lastFullYear.count / firstFullYear.count) * 10) / 10
         : 0;
 
-    return NextResponse.json({
+    const responseData = {
       quarterlyTrend,
       entityBreakdown,
       topZipCodes,
@@ -186,7 +210,9 @@ export async function GET() {
         lastYear: lastFullYear?.count ?? 0,
       },
       dataStatus: "live",
-    });
+    };
+    await setCachedData(CACHE_KEY, responseData);
+    return NextResponse.json(responseData);
   } catch (err) {
     console.error("Business detail API error:", err);
     return NextResponse.json(
