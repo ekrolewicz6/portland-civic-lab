@@ -6,6 +6,13 @@ import TrendChart from "@/components/charts/TrendChart";
 import BarChart from "@/components/charts/BarChart";
 import DataNeeded from "@/components/dashboard/DataNeeded";
 import NewsContext from "../NewsContext";
+import DataReconciliation, {
+  type DataDispute,
+} from "./DataReconciliation";
+import MethodologyExplainer, {
+  type DataSource,
+} from "./MethodologyExplainer";
+import DataSourceTimeline from "./DataSourceTimeline";
 import {
   AlertTriangle,
   TrendingUp,
@@ -130,6 +137,8 @@ interface HomelessnessDetailData {
   shsByType: SHSByType[];
   shsByCounty: SHSByCounty[];
   affordableVacancy: AffordableVacancy[];
+  dataSources: DataSource[];
+  dataDisputes: DataDispute[];
   dataStatus: string;
 }
 
@@ -256,6 +265,8 @@ export default function HomelessnessDetail() {
     shsByType,
     shsByCounty,
     affordableVacancy,
+    dataSources = [],
+    dataDisputes = [],
   } = data;
 
   // Compute key figures
@@ -327,6 +338,11 @@ export default function HomelessnessDetail() {
   return (
     <div className="space-y-10">
       <NewsContext category="homelessness" />
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          Q0: UNDERSTANDING THE NUMBERS — Data reconciliation
+          ═══════════════════════════════════════════════════════════════════ */}
+      <DataReconciliation disputes={dataDisputes} />
 
       {/* ═══════════════════════════════════════════════════════════════════
           PIPELINE OVERVIEW — The Flow-Through Frame
@@ -1288,6 +1304,16 @@ export default function HomelessnessDetail() {
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          DATA FRESHNESS TIMELINE
+          ═══════════════════════════════════════════════════════════════════ */}
+      <DataSourceTimeline sources={dataSources} />
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          METHODOLOGY EXPLAINER — How these numbers are measured
+          ═══════════════════════════════════════════════════════════════════ */}
+      <MethodologyExplainer sources={dataSources} />
     </div>
   );
 }

@@ -9,6 +9,7 @@ export async function GET() {
       pitCounts, shelterCapacity, housingPlacements, overdoseDeaths,
       shsFunding, byNameList, contextStats, evictionFilings,
       shsByType, shsByCounty, affordableVacancy,
+      dataSources, dataDisputes,
     ] = await Promise.all([
       sql`
         SELECT year, total_homeless, sheltered, unsheltered,
@@ -71,6 +72,22 @@ export async function GET() {
                avg_days_to_fill, notes
         FROM homelessness.affordable_housing_vacancy
         ORDER BY as_of
+      `.catch(() => []),
+      sql`
+        SELECT source_key, display_name, agency, methodology, scope,
+               what_it_misses, update_frequency, last_updated, next_expected,
+               url, used_by
+        FROM homelessness.data_sources
+        ORDER BY display_name
+      `.catch(() => []),
+      sql`
+        SELECT slug, title, date_surfaced, status,
+               claim_a_source, claim_a_summary, claim_a_data,
+               claim_b_source, claim_b_summary, claim_b_data,
+               expert_assessment, expert_source, methodology_difference, news_url
+        FROM homelessness.data_disputes
+        WHERE status = 'active'
+        ORDER BY date_surfaced DESC
       `.catch(() => []),
     ]);
 
@@ -157,6 +174,35 @@ export async function GET() {
         avgDaysToFill: Number(r.avg_days_to_fill ?? 0),
         notes: String(r.notes ?? ""),
       })),
+      dataSources: (dataSources as Record<string, unknown>[]).map((r) => ({
+        sourceKey: String(r.source_key),
+        displayName: String(r.display_name),
+        agency: String(r.agency),
+        methodology: String(r.methodology),
+        scope: String(r.scope),
+        whatItMisses: String(r.what_it_misses ?? ""),
+        updateFrequency: String(r.update_frequency ?? ""),
+        lastUpdated: r.last_updated ? String(r.last_updated) : null,
+        nextExpected: r.next_expected ? String(r.next_expected) : null,
+        url: String(r.url ?? ""),
+        usedBy: (r.used_by as string[]) ?? [],
+      })),
+      dataDisputes: (dataDisputes as Record<string, unknown>[]).map((r) => ({
+        slug: String(r.slug),
+        title: String(r.title),
+        dateSurfaced: String(r.date_surfaced),
+        status: String(r.status),
+        claimASource: String(r.claim_a_source),
+        claimASummary: String(r.claim_a_summary),
+        claimAData: r.claim_a_data ?? null,
+        claimBSource: String(r.claim_b_source),
+        claimBSummary: String(r.claim_b_summary),
+        claimBData: r.claim_b_data ?? null,
+        expertAssessment: String(r.expert_assessment ?? ""),
+        expertSource: String(r.expert_source ?? ""),
+        methodologyDifference: String(r.methodology_difference),
+        newsUrl: String(r.news_url ?? ""),
+      })),
       dataStatus: "live",
     });
   } catch (error) {
@@ -173,6 +219,8 @@ export async function GET() {
       shsByType: [],
       shsByCounty: [],
       affordableVacancy: [],
+      dataSources: [],
+      dataDisputes: [],
       dataStatus: "unavailable",
     });
   }
