@@ -1,0 +1,64 @@
+import { NextRequest, NextResponse } from "next/server";
+import sql from "@/lib/db-query";
+
+export const dynamic = "force-dynamic";
+// Refresh can take a few minutes against 5.9M rows. Vercel Pro allows up to 300s.
+export const maxDuration = 300;
+
+const MATVIEWS = [
+  "mv_permit_phase_summary",
+  "mv_permit_journey_by_type",
+  "mv_permit_journey_trend",
+  "mv_permit_correction_stats",
+  "mv_permit_bottleneck_trend",
+  "mv_permit_slowest_examples",
+];
+
+// Refreshes housing materialized views. Each has a unique index, so
+// CONCURRENTLY avoids locking reads while the refresh runs.
+//
+// Triggered by Vercel cron (see vercel.json) on a daily schedule.
+// Permit data updates infrequently — overnight refresh is enough.
+export async function GET(request: NextRequest) {
+  const authHeader = request.headers.get("authorization");
+  const expected = `Bearer ${process.env.CRON_SECRET}`;
+  if (process.env.CRON_SECRET && authHeader !== expected) {
+    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
+
+  const results: { matview: string; ms: number; ok: boolean; error?: string }[] = [];
+
+  for (const mv of MATVIEWS) {
+    const t0 = Date.now();
+    try {
+      await sql.unsafe(`REFRESH MATERIALIZED VIEW CONCURRENTLY housing.${mv}`);
+      results.push({ matview: mv, ms: Date.now() - t0, ok: true });
+      console.log(`[refresh-matviews] ${mv}: ${Date.now() - t0}ms ✓`);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : String(err);
+      results.push({ matview: mv, ms: Date.now() - t0, ok: false, error: msg });
+      console.error(`[refresh-matviews] ${mv}: FAILED ${msg}`);
+    }
+  }
+
+  // Invalidate the dashboard cache for the affected routes so they
+  // pick up the fresh matview data on the next request.
+  try {
+    await sql`
+      DELETE FROM public.dashboard_cache
+      WHERE question IN ('housing_journey', 'housing_bottleneck', 'housing_detail')
+    `;
+  } catch {
+    // best-effort
+  }
+
+  const totalMs = results.reduce((s, r) => s + r.ms, 0);
+  const allOk = results.every((r) => r.ok);
+
+  return NextResponse.json({
+    ok: allOk,
+    totalMs,
+    refreshed: results,
+    timestamp: new Date().toISOString(),
+  });
+}

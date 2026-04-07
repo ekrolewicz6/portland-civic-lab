@@ -76,7 +76,6 @@ const TYPE_MAP: Record<string, string> = {
   "Residential Bldg/Trade PermitTownhouse (2 Units)New Construction": "Townhouse 2-Unit (New)",
 };
 
-// The key phases of the permit journey, in order
 const KEY_PHASES = [
   "Application",
   "Planning and Zoning",
@@ -92,35 +91,59 @@ const KEY_PHASES = [
   "Final Permit",
 ];
 
+// All four reads collapsed into a single round trip via json_build_object,
+// each pulling from a precomputed materialized view (see
+// scripts/create-housing-matviews.ts). Previously these queries hit
+// housing.permit_activities (5.9M rows) with PERCENTILE_CONT and took
+// 30-60 seconds — well past Vercel's function timeout.
+const COMBINED_QUERY = `
+  SELECT json_build_object(
+    'phases', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        SELECT activity_type, median_day, median_step_duration, permits_affected
+        FROM housing.mv_permit_phase_summary
+      ) t
+    ),
+    'by_type', (
+      SELECT COALESCE(json_agg(t ORDER BY permits DESC), '[]'::json) FROM (
+        SELECT permit_type, permits, structural, life_safety, issuance, building_insp, final_permit
+        FROM housing.mv_permit_journey_by_type
+        ORDER BY permits DESC
+        LIMIT 10
+      ) t
+    ),
+    'trend', (
+      SELECT COALESCE(json_agg(t ORDER BY period), '[]'::json) FROM (
+        SELECT period, permits, structural_days, issuance_days, inspection_days, final_days
+        FROM housing.mv_permit_journey_trend
+      ) t
+    ),
+    'corrections', (
+      SELECT row_to_json(t) FROM (
+        SELECT total_permits, with_corrections, avg_rounds
+        FROM housing.mv_permit_correction_stats
+        WHERE id = 1
+      ) t
+    )
+  ) AS payload
+`;
+
+type Row = Record<string, unknown>;
+
 export async function GET(): Promise<NextResponse<JourneyResponse>> {
   try {
-    // Check cache first (1-hour TTL)
-    // 24-hour TTL — these queries hit 5.9M rows and data changes daily at most
     const cached = await getCachedData<JourneyResponse>(CACHE_KEY, 24 * 60 * 60 * 1000);
     if (cached) return NextResponse.json(cached);
 
-    // 1. Overall journey phases — median arrival day and step duration
-    const phaseRows = await sql`
-      WITH permit_phases AS (
-        SELECT
-          a.detail_id, a.activity_type, a.days_from_setup,
-          a.days_from_setup - LAG(a.days_from_setup) OVER (
-            PARTITION BY a.detail_id ORDER BY a.completed_date, a.days_from_setup
-          ) as step_duration
-        FROM housing.permit_activities a
-        WHERE a.completed_date IS NOT NULL
-          AND a.days_from_setup IS NOT NULL AND a.days_from_setup >= 0
-      )
-      SELECT
-        activity_type,
-        count(DISTINCT detail_id)::int as permits_affected,
-        ROUND((PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY days_from_setup))::numeric)::int as median_day,
-        ROUND((PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY CASE WHEN step_duration > 0 THEN step_duration END))::numeric)::int as median_step_duration
-      FROM permit_phases
-      WHERE activity_type = ANY(${KEY_PHASES})
-      GROUP BY activity_type
-      HAVING count(DISTINCT detail_id) >= 100
-    `;
+    const t0 = Date.now();
+    const result = await sql.unsafe(COMBINED_QUERY);
+    const payload = (result[0]?.payload ?? {}) as Record<string, unknown>;
+    console.log(`[housing/journey] combined matview query: ${Date.now() - t0}ms`);
+
+    const phaseRows = (payload.phases as Row[]) ?? [];
+    const typeRows = (payload.by_type as Row[]) ?? [];
+    const trendRows = (payload.trend as Row[]) ?? [];
+    const corr = (payload.corrections as Row | null) ?? null;
 
     const phases: JourneyPhase[] = KEY_PHASES
       .map((phase) => {
@@ -135,29 +158,10 @@ export async function GET(): Promise<NextResponse<JourneyResponse>> {
       })
       .filter(Boolean) as JourneyPhase[];
 
-    // 2. Journey by permit type — top permit types with milestone days
-    const typeRows = await sql`
-      SELECT
-        d.permit_type,
-        count(DISTINCT a.detail_id)::int as permits,
-        ROUND((PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY a.days_from_setup) FILTER (WHERE a.activity_type = 'Structural'))::numeric)::int as structural,
-        ROUND((PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY a.days_from_setup) FILTER (WHERE a.activity_type = 'Life Safety'))::numeric)::int as life_safety,
-        ROUND((PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY a.days_from_setup) FILTER (WHERE a.activity_type = 'Issuance'))::numeric)::int as issuance,
-        ROUND((PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY a.days_from_setup) FILTER (WHERE a.activity_type = 'Building Inspections'))::numeric)::int as building_insp,
-        ROUND((PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY a.days_from_setup) FILTER (WHERE a.activity_type = 'Final Permit'))::numeric)::int as final_permit
-      FROM housing.permit_activities a
-      JOIN housing.permit_details d ON d.detail_id = a.detail_id
-      WHERE a.completed_date IS NOT NULL AND a.days_from_setup >= 0
-      GROUP BY d.permit_type
-      HAVING count(DISTINCT a.detail_id) >= 200
-      ORDER BY count(DISTINCT a.detail_id) DESC
-      LIMIT 10
-    `;
-
     const byType: JourneyByType[] = typeRows.map((r) => {
       const raw = r.permit_type as string;
       const label = TYPE_MAP[raw] ?? raw.replace(/Residential Bldg\/Trade Permit|Commercial Building Permit/g, "").trim();
-      const phases = [
+      const phasesArr = [
         { phase: "Reviews", median_day: Math.min(Number(r.structural) || 999, Number(r.life_safety) || 999) },
         { phase: "Permit Issued", median_day: Number(r.issuance) || 0 },
         { phase: "Construction", median_day: Number(r.building_insp) || 0 },
@@ -167,28 +171,10 @@ export async function GET(): Promise<NextResponse<JourneyResponse>> {
         permit_type: raw,
         label,
         permits: Number(r.permits),
-        phases,
+        phases: phasesArr,
         total_days: Number(r.final_permit) || Number(r.building_insp) || 0,
       };
     });
-
-    // 3. Trend — how key milestones are changing over time (by half-year)
-    const trendRows = await sql`
-      SELECT
-        TO_CHAR(date_trunc('quarter', d.setup_date), 'YYYY-"Q"Q') as period,
-        count(DISTINCT a.detail_id)::int as permits,
-        ROUND((PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY a.days_from_setup) FILTER (WHERE a.activity_type = 'Structural'))::numeric)::int as structural_days,
-        ROUND((PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY a.days_from_setup) FILTER (WHERE a.activity_type = 'Issuance'))::numeric)::int as issuance_days,
-        ROUND((PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY a.days_from_setup) FILTER (WHERE a.activity_type = 'Building Inspections'))::numeric)::int as inspection_days,
-        ROUND((PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY a.days_from_setup) FILTER (WHERE a.activity_type = 'Final Permit'))::numeric)::int as final_days
-      FROM housing.permit_activities a
-      JOIN housing.permit_details d ON d.detail_id = a.detail_id
-      WHERE a.completed_date IS NOT NULL AND a.days_from_setup >= 0
-        AND d.setup_date >= '2019-01-01'
-      GROUP BY 1
-      HAVING count(DISTINCT a.detail_id) >= 50
-      ORDER BY 1
-    `;
 
     const trend: PhaseTrend[] = trendRows.map((r) => ({
       period: r.period as string,
@@ -198,34 +184,25 @@ export async function GET(): Promise<NextResponse<JourneyResponse>> {
       "Final Permit": Number(r.final_days) || 0,
     }));
 
-    // 4. Correction stats
-    const corrRows = await sql`
-      SELECT
-        count(DISTINCT detail_id)::int as total,
-        count(DISTINCT detail_id) FILTER (WHERE activity_name ILIKE '%correction%') as with_corr
-      FROM housing.permit_activities
-    `;
-    const corrRoundRows = await sql`
-      SELECT ROUND(AVG(rounds)::numeric, 1)::float as avg
-      FROM (SELECT count(*) as rounds FROM housing.permit_activities WHERE activity_name ILIKE '%correction%' GROUP BY detail_id) sub
-    `;
+    const totalPermits = Number(corr?.total_permits ?? 0);
+    const withCorr = Number(corr?.with_corrections ?? 0);
 
-    const result: JourneyResponse = {
+    const responseData: JourneyResponse = {
       phases,
       byType,
       trend,
       correctionStats: {
-        pctWithCorrections: Number(corrRows[0].total) > 0
-          ? Math.round((Number(corrRows[0].with_corr) / Number(corrRows[0].total)) * 1000) / 10
+        pctWithCorrections: totalPermits > 0
+          ? Math.round((withCorr / totalPermits) * 1000) / 10
           : 0,
-        avgRounds: Number(corrRoundRows[0]?.avg ?? 0),
-        totalPermits: Number(corrRows[0].total),
+        avgRounds: Number(corr?.avg_rounds ?? 0),
+        totalPermits,
       },
       dataStatus: "live",
     };
 
-    await setCachedData(CACHE_KEY, result);
-    return NextResponse.json(result);
+    await setCachedData(CACHE_KEY, responseData);
+    return NextResponse.json(responseData);
   } catch (error) {
     console.error("[housing/journey] DB query failed:", error);
     return NextResponse.json({

@@ -42,48 +42,86 @@ interface BottleneckResponse {
   dataStatus: string;
 }
 
+// All reads collapsed into a single round trip via json_build_object,
+// using precomputed materialized views for the slow PERCENTILE_CONT and
+// window-function queries (see scripts/create-housing-matviews.ts).
+const EXCLUDED_TYPES = [
+  'D - Permit Request',
+  'Facilities Final Inspection',
+  'Facilities Process Management',
+  'Under Inspection',
+  'Plat Issuance',
+  'Enforcement',
+  'Permit Expiration',
+  'E - Code Compliance',
+  'Tree Inspections',
+  'Deconstruction Inspections',
+  'Sign Inspections',
+  'City Attorney',
+  'Bond/Insurance PW',
+  'Pre-Issuance PW',
+  'Permit Frontage',
+  'Deconstruction',
+  'Intake',
+  'Home Occupation Permit Issuance',
+  'Revenue',
+  'Multnomah County',
+  'Trade Permits',
+];
+
+const COMBINED_QUERY = `
+  SELECT json_build_object(
+    'ranking', (
+      SELECT COALESCE(json_agg(t ORDER BY avg_days_to_complete DESC), '[]'::json) FROM (
+        SELECT
+          activity_type,
+          avg_days_to_complete::float,
+          median_days_to_complete::float,
+          pct_is_last_review::float,
+          total_permits_reviewed::int,
+          avg_correction_rounds::float
+        FROM housing.permit_bottleneck_analysis
+        WHERE NOT (activity_type = ANY($1::text[]))
+      ) t
+    ),
+    'trend', (
+      SELECT COALESCE(json_agg(t ORDER BY quarter, activity_type), '[]'::json) FROM (
+        SELECT quarter, activity_type, median_days
+        FROM housing.mv_permit_bottleneck_trend
+      ) t
+    ),
+    'slowest', (
+      SELECT COALESCE(json_agg(t ORDER BY activity_type, days_from_setup DESC), '[]'::json) FROM (
+        SELECT detail_id, permit_type, address, days_to_issue, status, activity_type, days_from_setup
+        FROM housing.mv_permit_slowest_examples
+      ) t
+    ),
+    'corrections', (
+      SELECT row_to_json(t) FROM (
+        SELECT total_permits, with_corrections, avg_rounds,
+               earliest_activity as earliest, latest_activity as latest
+        FROM housing.mv_permit_correction_stats WHERE id = 1
+      ) t
+    )
+  ) AS payload
+`;
+
+type Row = Record<string, unknown>;
+
 export async function GET(): Promise<NextResponse<BottleneckResponse>> {
   try {
     const cached = await getCachedData<BottleneckResponse>(CACHE_KEY, 24 * 60 * 60 * 1000);
     if (cached) return NextResponse.json(cached);
 
-    // 1. Get bottleneck ranking — exclude non-review activity types
-    // (D - Permit Request, inspections, process management are not review steps)
-    const EXCLUDED_TYPES = [
-      'D - Permit Request',
-      'Facilities Final Inspection',
-      'Facilities Process Management',
-      'Under Inspection',
-      'Plat Issuance',
-      'Enforcement',
-      'Permit Expiration',
-      'E - Code Compliance',
-      'Tree Inspections',
-      'Deconstruction Inspections',
-      'Sign Inspections',
-      'City Attorney',
-      'Bond/Insurance PW',
-      'Pre-Issuance PW',
-      'Permit Frontage',
-      'Deconstruction',
-      'Intake',
-      'Home Occupation Permit Issuance',
-      'Revenue',
-      'Multnomah County',
-      'Trade Permits',
-    ];
-    const rankingRows = await sql`
-      SELECT
-        activity_type,
-        avg_days_to_complete::float,
-        median_days_to_complete::float,
-        pct_is_last_review::float,
-        total_permits_reviewed::int,
-        avg_correction_rounds::float
-      FROM housing.permit_bottleneck_analysis
-      WHERE activity_type != ALL(${EXCLUDED_TYPES})
-      ORDER BY avg_days_to_complete DESC
-    `;
+    const t0 = Date.now();
+    const result = await sql.unsafe(COMBINED_QUERY, [EXCLUDED_TYPES]);
+    const payload = (result[0]?.payload ?? {}) as Record<string, unknown>;
+    console.log(`[housing/bottleneck] combined matview query: ${Date.now() - t0}ms`);
+
+    const rankingRows = (payload.ranking as Row[]) ?? [];
+    const trendRows = (payload.trend as Row[]) ?? [];
+    const slowestRows = (payload.slowest as Row[]) ?? [];
+    const corr = (payload.corrections as Row | null) ?? null;
 
     const ranking: BottleneckEntry[] = rankingRows.map((r) => ({
       activity_type: r.activity_type as string,
@@ -94,29 +132,7 @@ export async function GET(): Promise<NextResponse<BottleneckResponse>> {
       avg_correction_rounds: Number(r.avg_correction_rounds),
     }));
 
-    // 2. Quarterly trend — median days by activity type over time
-    const TOP_TREND_TYPES = [
-      'Fire Inspections',
-      'Electrical Inspections',
-      'Plumbing Inspections',
-      'Mechanical Inspections',
-      'Plan Review PW',
-    ];
-    const trendRows = await sql`
-      SELECT
-        TO_CHAR(date_trunc('quarter', completed_date), 'YYYY-"Q"Q') as quarter,
-        activity_type,
-        ROUND(PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY days_from_setup))::int as median_days
-      FROM housing.permit_activities
-      WHERE completed_date IS NOT NULL
-        AND days_from_setup IS NOT NULL AND days_from_setup > 0
-        AND activity_type = ANY(${TOP_TREND_TYPES})
-      GROUP BY 1, 2
-      HAVING count(*) >= 5
-      ORDER BY 1, 2
-    `;
-
-    // Pivot into {quarter, "Fire Inspections": 35, "Electrical Inspections": 20, ...}
+    // Pivot trend rows into {quarter, "Fire Inspections": 35, ...}
     const trendMap = new Map<string, Record<string, number>>();
     for (const r of trendRows) {
       const q = r.quarter as string;
@@ -128,45 +144,10 @@ export async function GET(): Promise<NextResponse<BottleneckResponse>> {
       ...types,
     }));
 
-    // 2b. Date range of activity data
-    const dateRangeRows = await sql`
-      SELECT min(last_activity_date)::text as earliest, max(last_activity_date)::text as latest
-      FROM housing.permit_activities WHERE last_activity_date IS NOT NULL
-    `;
     const date_range = {
-      earliest: (dateRangeRows[0]?.earliest as string) ?? "unknown",
-      latest: (dateRangeRows[0]?.latest as string) ?? "unknown",
+      earliest: (corr?.earliest as string) ?? "unknown",
+      latest: (corr?.latest as string) ?? "unknown",
     };
-
-    // 3. Get slowest specific permits for each top review type
-    const slowestRows = await sql`
-      WITH top_types AS (
-        SELECT activity_type
-        FROM housing.permit_bottleneck_analysis
-        ORDER BY avg_days_to_complete DESC
-        LIMIT 5
-      ),
-      ranked_permits AS (
-        SELECT
-          a.detail_id,
-          d.permit_type,
-          d.address,
-          d.days_to_issue,
-          d.status,
-          a.activity_type,
-          a.days_from_setup,
-          ROW_NUMBER() OVER (PARTITION BY a.activity_type ORDER BY a.days_from_setup DESC) as rn
-        FROM housing.permit_activities a
-        JOIN housing.permit_details d ON d.detail_id = a.detail_id
-        JOIN top_types t ON t.activity_type = a.activity_type
-        WHERE a.days_from_setup IS NOT NULL
-          AND a.activity_status IN ('Approved', 'Completed')
-      )
-      SELECT detail_id, permit_type, address, days_to_issue, status, activity_type, days_from_setup
-      FROM ranked_permits
-      WHERE rn <= 3
-      ORDER BY activity_type, days_from_setup DESC
-    `;
 
     const slowest_examples: SlowestPermit[] = slowestRows.map((r) => ({
       detail_id: Number(r.detail_id),
@@ -178,36 +159,18 @@ export async function GET(): Promise<NextResponse<BottleneckResponse>> {
       days_from_setup: Number(r.days_from_setup),
     }));
 
-    // 3. Overall correction stats — query activities directly
-    const corrStats = await sql`
-      SELECT
-        (SELECT count(DISTINCT detail_id)::int FROM housing.permit_activities) as total_permits,
-        count(DISTINCT detail_id)::int as with_corrections
-      FROM housing.permit_activities
-      WHERE activity_name ILIKE '%correction%'
-    `;
+    const totalAnalyzed = Number(corr?.total_permits ?? 0);
+    const withCorr = Number(corr?.with_corrections ?? 0);
+    const avgRounds = Number(corr?.avg_rounds ?? 0);
 
-    const corrRoundRows = await sql`
-      SELECT ROUND(AVG(rounds)::numeric, 2)::float as avg_rounds
-      FROM (
-        SELECT detail_id, count(*)::int as rounds
-        FROM housing.permit_activities
-        WHERE activity_name ILIKE '%correction%'
-        GROUP BY detail_id
-      ) sub
-    `;
-
-    const totalAnalyzed = Number(corrStats[0].total_permits);
-    const withCorr = Number(corrStats[0].with_corrections);
-
-    const result = {
+    const responseData = {
       ranking,
       trend,
       slowest_examples,
       total_permits_analyzed: totalAnalyzed,
       date_range,
       correction_stats: {
-        avg_rounds: Number(corrRoundRows[0]?.avg_rounds ?? 0),
+        avg_rounds: avgRounds,
         pct_with_corrections:
           totalAnalyzed > 0
             ? Math.round((withCorr / totalAnalyzed) * 1000) / 10
@@ -216,8 +179,8 @@ export async function GET(): Promise<NextResponse<BottleneckResponse>> {
       dataStatus: ranking.length > 0 ? "available" : "empty",
     };
 
-    await setCachedData(CACHE_KEY, result);
-    return NextResponse.json(result);
+    await setCachedData(CACHE_KEY, responseData);
+    return NextResponse.json(responseData);
   } catch (error) {
     console.error("[housing/bottleneck] DB query failed:", error);
     return NextResponse.json(
