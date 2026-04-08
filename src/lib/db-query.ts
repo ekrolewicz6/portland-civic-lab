@@ -149,12 +149,27 @@ export async function getCachedData<T>(
 
     if (updatedAt < cutoff) return null;
 
-    const cached = row.data as Record<string, unknown>;
-    if (!cached) return null;
-    if (cached.dataStatus === "unavailable") return null;
-    if (cached.dataStatus === "error") return null;
+    const cached = row.data;
+    // Defensive: poisoned rows from earlier bugs may be string scalars,
+    // arrays, or primitives. Only objects are valid cache payloads.
+    if (
+      cached === null ||
+      cached === undefined ||
+      typeof cached !== "object" ||
+      Array.isArray(cached)
+    ) {
+      // Schedule a background cleanup of the bad row
+      sql`DELETE FROM public.dashboard_cache WHERE question = ${question}`.catch(
+        () => {},
+      );
+      return null;
+    }
 
-    return cached as T;
+    const obj = cached as Record<string, unknown>;
+    if (obj.dataStatus === "unavailable") return null;
+    if (obj.dataStatus === "error") return null;
+
+    return obj as T;
   } catch {
     return null;
   }
@@ -167,9 +182,24 @@ export async function setCachedData(
   question: string,
   data: unknown,
 ): Promise<void> {
-  const d = data as Record<string, unknown> | null;
-  if (!d) return;
+  // Defensive: only objects (not strings, arrays, primitives) are valid
+  // cache payloads. We hit a recurring class of bugs where double-encoded
+  // strings ended up stored as JSON string scalars and broke every read.
+  if (
+    data === null ||
+    data === undefined ||
+    typeof data !== "object" ||
+    Array.isArray(data)
+  ) {
+    console.warn(
+      `[cache] refusing to write ${question}: payload is ${typeof data}, not a plain object`,
+    );
+    return;
+  }
+
+  const d = data as Record<string, unknown>;
   if (d.dataStatus === "unavailable" || d.dataStatus === "error") return;
+
   try {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const json = sql.json(d as any);
@@ -179,7 +209,10 @@ export async function setCachedData(
       ON CONFLICT (question)
       DO UPDATE SET data = ${json}, updated_at = NOW()
     `;
-  } catch {
-    // Silently ignore cache write failures
+  } catch (err) {
+    console.warn(
+      `[cache] write failed for ${question}:`,
+      err instanceof Error ? err.message : err,
+    );
   }
 }
