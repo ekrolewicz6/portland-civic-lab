@@ -100,16 +100,15 @@ function getClient(): SqlClient {
 // `import sql from "@/lib/db-query"` once and never worry about lifecycle.
 // Both tagged-template calls (sql`SELECT 1`) and method calls (sql.unsafe,
 // sql.json, etc.) go through the Proxy and pick up the current client.
+type ProxyTarget = (...args: unknown[]) => unknown;
 const sql = new Proxy(function () {} as unknown as SqlClient, {
   apply(_target, _thisArg, args) {
-    const client = getClient();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (client as any)(...args);
+    const client = getClient() as unknown as ProxyTarget;
+    return client(...args);
   },
   get(_target, prop) {
-    const client = getClient();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const value = (client as any)[prop];
+    const client = getClient() as unknown as Record<string, unknown>;
+    const value = client[prop as string];
     // Bind methods to the underlying client so internal `this` accesses
     // hit the real object instead of recursing through the proxy.
     return typeof value === "function" ? value.bind(client) : value;
@@ -201,8 +200,7 @@ export async function setCachedData(
   if (d.dataStatus === "unavailable" || d.dataStatus === "error") return;
 
   try {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const json = sql.json(d as any);
+    const json = sql.json(d as Parameters<typeof sql.json>[0]);
     await sql`
       INSERT INTO public.dashboard_cache (question, data, updated_at)
       VALUES (${question}, ${json}, NOW())

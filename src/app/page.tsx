@@ -99,11 +99,12 @@ export default async function HomePage() {
                 key={q.id}
                 href={`/dashboard/${q.id}`}
                 className="group relative bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5 sm:p-6 transition-all duration-300 hover:border-[var(--color-sage)] hover:-translate-y-0.5 overflow-hidden animate-fade-up"
-                style={{
-                  animationDelay: `${120 + i * 50}ms`,
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                  ["--accent" as any]: q.color,
-                }}
+                style={
+                  {
+                    animationDelay: `${120 + i * 50}ms`,
+                    "--accent": q.color,
+                  } as React.CSSProperties
+                }
               >
                 {/* Accent rule along the top */}
                 <div
