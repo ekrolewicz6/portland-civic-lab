@@ -13,10 +13,26 @@ import {
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Portland Civic Lab — Civic Dashboard",
+  title: {
+    absolute: "Portland Civic Lab — How is Portland actually doing?",
+  },
   description:
-    "A live civic dashboard for Portland, Oregon. Eight questions, answered with real public data — housing, safety, economy, homelessness, education, climate, quality of life, and government accountability.",
+    "A live civic dashboard for Portland, Oregon. Eight questions held to public record — housing, safety, homelessness, economy, education, climate, quality of life, and accountability. Real data from city APIs and government records. Updated automatically. No spin.",
   alternates: { canonical: "https://www.portlandciviclab.org" },
+  openGraph: {
+    title: "Portland Civic Lab — How is Portland actually doing?",
+    description:
+      "Eight questions held to public record. Real data, updated automatically, no spin.",
+    url: "https://www.portlandciviclab.org",
+    siteName: "Portland Civic Lab",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portland Civic Lab — How is Portland actually doing?",
+    description:
+      "Eight questions held to public record. Real data, updated automatically, no spin.",
+  },
 };
 
 function formatEditionDate(d: Date): string {

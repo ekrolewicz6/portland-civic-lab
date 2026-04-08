@@ -63,24 +63,25 @@ export async function generateMetadata({ params }: PageProps) {
   const { question } = await params;
   if (!isValidQuestion(question)) return {};
   const meta = questionMeta[question];
-  const title = `${meta.title} | Portland Civic Dashboard`;
-  const description = meta.description;
+  // Strong, declarative title: "{Section} — {Question}"
+  const title = `${meta.shortTitle}: ${meta.title}`;
+  const description = `${meta.description} Real public data, updated automatically. Part of the Portland Civic Lab dashboard.`;
   const url = `https://www.portlandciviclab.org/dashboard/${question}`;
 
   return {
     title,
     description,
     openGraph: {
-      title,
+      title: `${title} · Portland Civic Lab`,
       description,
       url,
       siteName: "Portland Civic Lab",
-      type: "website",
+      type: "article",
       locale: "en_US",
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: `${title} · Portland Civic Lab`,
       description,
     },
     alternates: {
