@@ -131,16 +131,16 @@ export default async function HomePage() {
                 {/* Section label */}
                 <div className="flex items-center justify-between mb-3 mt-1">
                   <span
-                    className="text-[9px] font-mono font-semibold uppercase tracking-[0.18em]"
+                    className="text-[11px] sm:text-[12px] font-mono font-bold uppercase tracking-[0.16em]"
                     style={{ color: q.color }}
                   >
                     Section {String(i + 1).padStart(2, "0")}
                   </span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[var(--color-ink-muted)]/30 group-hover:text-[var(--color-ink-muted)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                  <ArrowUpRight className="w-4 h-4 text-[var(--color-ink-muted)]/40 group-hover:text-[var(--color-ink)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
                 </div>
 
                 {/* Question */}
-                <h2 className="font-editorial text-[15px] sm:text-[16px] text-[var(--color-ink)] leading-snug min-h-[44px]">
+                <h2 className="font-editorial text-[16px] sm:text-[17px] lg:text-[18px] text-[var(--color-ink)] leading-snug min-h-[48px]">
                   {q.question}
                 </h2>
 
@@ -150,16 +150,16 @@ export default async function HomePage() {
                 </p>
 
                 {/* Label */}
-                <p className="mt-2 text-[12px] sm:text-[13px] text-[var(--color-ink-muted)] leading-snug line-clamp-2 min-h-[34px]">
+                <p className="mt-2 text-[13px] sm:text-[14px] text-[var(--color-ink-light)] leading-snug line-clamp-2 min-h-[36px]">
                   {label}
                 </p>
 
                 {/* Footer source line */}
-                <div className="mt-4 pt-3 border-t border-[var(--color-parchment)]/70 flex items-center justify-between gap-2">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.12em] text-[var(--color-ink-muted)]/70 truncate">
+                <div className="mt-4 pt-3 border-t border-[var(--color-parchment)] flex items-center justify-between gap-2">
+                  <span className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.1em] text-[var(--color-ink-muted)] truncate">
                     {sourceText}
                   </span>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[var(--color-ink-muted)]/50 group-hover:text-[var(--color-ink)] transition-colors flex-shrink-0">
+                  <span className="text-[11px] sm:text-[12px] font-mono font-semibold uppercase tracking-wider text-[var(--color-canopy)]/70 group-hover:text-[var(--color-canopy)] transition-colors flex-shrink-0">
                     Read →
                   </span>
                 </div>
