@@ -35,8 +35,17 @@ if (explicitOpts) {
 }
 
 // Serverless-safe connection settings.
+//
+// `max` is intentionally > 1: with prepare:false (required for Supabase
+// transaction pooler), there's no prepared-statement reason to enforce
+// a single connection. Allowing a small pool prevents head-of-line blocking
+// when several queries run in parallel — both inside one route handler and
+// across the parallel fetches the homepage server component fires off.
+//
+// `max_lifetime: 30` + the auto-recycling Proxy below still prevents
+// connection accumulation across Lambda freeze/thaw cycles.
 const SERVERLESS_OPTS = {
-  max: 1,
+  max: 8,
   idle_timeout: 10,
   max_lifetime: 30,
   connect_timeout: 10,

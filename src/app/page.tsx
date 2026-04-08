@@ -1,313 +1,238 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import {
+  fetchQuestionData,
+  getBaseUrl,
+  extractHeadlineValue,
+  extractHeadlineLabel,
+} from "@/lib/dashboard-data";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Portland Civic Lab — Open Data for Portland's Recovery",
+  title: "Portland Civic Lab — Civic Dashboard",
   description:
-    "Open civic data dashboard for Portland, Oregon. Real-time metrics on housing, public safety, budget, homelessness, transportation, education, climate, and more.",
+    "A live civic dashboard for Portland, Oregon. Eight questions, answered with real public data — housing, safety, economy, homelessness, education, climate, quality of life, and government accountability.",
   alternates: { canonical: "https://www.portlandciviclab.org" },
 };
-import {
-  ArrowRight,
-  BarChart3,
-  Leaf,
-  Shield,
-  Home,
-  Users,
-  BookOpen,
-  Zap,
-  Sun,
-  Scale,
-} from "lucide-react";
 
-/* ─── Dashboard data views ──────────────────────────────────────────── */
+function formatEditionDate(d: Date): string {
+  return d
+    .toLocaleDateString("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    })
+    .toUpperCase();
+}
 
-const dataViews = [
-  {
-    icon: Leaf,
-    id: "climate",
-    question: "Is Portland Meeting Its Climate Commitments?",
-    stat: "47",
-    statLabel: "CEW actions tracked with bureau accountability",
-    accent: "#2d6a4f",
-  },
-  {
-    icon: Home,
-    id: "housing",
-    question: "Are We Building Enough?",
-    stat: "126,798",
-    statLabel: "permits processed — 1,707 residential in pipeline",
-    accent: "#b85c6a",
-  },
-  {
-    icon: Shield,
-    id: "safety",
-    question: "Are People Safe?",
-    stat: "613K",
-    statLabel: "crime records analyzed (2016–2026)",
-    accent: "#b85c3a",
-  },
-  {
-    icon: Users,
-    id: "homelessness",
-    question: "Are People Getting Housed?",
-    stat: "10,526",
-    statLabel: "people homeless (2025 PIT count)",
-    accent: "#8b6c5c",
-  },
-  {
-    icon: Zap,
-    id: "economy",
-    question: "Can People Make a Living?",
-    stat: "38,197",
-    statLabel: "businesses · 412K jobs · 4.9% unemployment",
-    accent: "#c8956c",
-  },
-  {
-    icon: BookOpen,
-    id: "education",
-    question: "Are Kids Learning?",
-    stat: "42,623",
-    statLabel: "PPS students across 102 schools",
-    accent: "#3d7a5a",
-  },
-  {
-    icon: Sun,
-    id: "quality",
-    question: "Does Portland Work as a Place to Live?",
-    stat: "7",
-    statLabel: "quality dimensions tracked — parks, transit, air, affordability, culture, libraries, digital access",
-    accent: "#6a7f8a",
-  },
-  {
-    icon: Scale,
-    id: "accountability",
-    question: "Who Promised What?",
-    stat: "13",
-    statLabel: "elected officials and their commitments",
-    accent: "#8a5c6a",
-  },
-];
+export default async function HomePage() {
+  const baseUrl = await getBaseUrl();
+  const questions = await fetchQuestionData(baseUrl);
+  const editionDate = formatEditionDate(new Date());
 
-const principles = [
-  {
-    icon: BarChart3,
-    title: "Real Data Only",
-    description:
-      "Every metric is sourced from public records, government APIs, and verified datasets. No projections, no marketing copy.",
-  },
-  {
-    icon: BookOpen,
-    title: "Open Methodology",
-    description:
-      "Open data, open methodology, open books. If we can't show the math, we won't make the claim.",
-  },
-  {
-    icon: Users,
-    title: "Built for Portlanders",
-    description:
-      "Every question on the dashboard is one Portland residents are actually asking. We measure what matters to the people who live here.",
-  },
-];
-
-/* ─── Page ─────────────────────────────────────────────────────────── */
-
-export default function LandingPage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[var(--color-paper)]">
       <Header />
 
-      {/* ── Hero ── */}
-      <section className="relative bg-[var(--color-canopy)] overflow-hidden noise-overlay">
-        {/* Decorative gradient orbs */}
-        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[var(--color-canopy-light)] rounded-full blur-[200px] opacity-30 -translate-y-1/2 translate-x-1/4" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[var(--color-ember)] rounded-full blur-[180px] opacity-[0.07] translate-y-1/3 -translate-x-1/4" />
+      {/* ─── Newspaper Masthead ──────────────────────────────────────── */}
+      <section className="relative bg-[var(--color-canopy)] noise-overlay overflow-hidden">
+        {/* Subtle background atmosphere */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--color-canopy-light)] rounded-full blur-[180px] opacity-25 -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[420px] h-[420px] bg-[var(--color-ember)] rounded-full blur-[160px] opacity-[0.06] translate-y-1/2 -translate-x-1/3 pointer-events-none" />
 
-        <div className="relative z-10 max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 py-24 sm:py-32 lg:py-40">
-          <div className="max-w-3xl">
-            {/* Tagline */}
-            <div className="flex items-center gap-3 mb-8 animate-fade-up">
-              <div className="w-10 h-px bg-[var(--color-ember)]" />
-              <span className="text-[11px] font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em]">
-                Portland civic data, in public
-              </span>
+        <div className="relative z-10 max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 pt-8 pb-10 sm:pt-10 sm:pb-12">
+          {/* Edition rule */}
+          <div className="flex items-center gap-4 text-[10px] font-mono uppercase tracking-[0.22em] text-white/35">
+            <span className="text-[var(--color-ember)]/80">Vol. I &middot; No. 1</span>
+            <div className="flex-1 h-px bg-white/10" />
+            <span>{editionDate}</span>
+          </div>
+
+          {/* Masthead headline */}
+          <div className="mt-5 sm:mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
+            <div className="lg:col-span-8">
+              <h1 className="font-editorial-normal text-[40px] sm:text-[52px] lg:text-[64px] text-white leading-[1.02] tracking-tight animate-fade-up">
+                How is Portland{" "}
+                <span className="font-editorial italic text-[var(--color-ember-bright)]">
+                  actually
+                </span>{" "}
+                doing?
+              </h1>
             </div>
-
-            {/* Main headline */}
-            <h1
-              className="font-editorial-normal text-[48px] sm:text-[64px] lg:text-[80px] text-white leading-[1.02] tracking-tight animate-fade-up"
-              style={{ animationDelay: "100ms" }}
-            >
-              Portland deserves
-              <br />
-              <span className="font-editorial text-[var(--color-ember-bright)]">
-                better answers.
-              </span>
-            </h1>
-
-            {/* Subtitle */}
-            <p
-              className="mt-6 text-[17px] sm:text-[19px] text-white/55 leading-relaxed max-w-xl animate-fade-up"
-              style={{ animationDelay: "200ms" }}
-            >
-              Portland Civic Lab tracks the questions that matter — climate
-              commitments, housing production, public safety, fiscal health —
-              using real data from public records and government APIs. Updated
-              automatically. No spin.
-            </p>
-
-            {/* CTAs */}
-            <div
-              className="mt-10 flex flex-wrap gap-4 animate-fade-up"
-              style={{ animationDelay: "300ms" }}
-            >
-              <Link
-                href="/dashboard"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-ember)] text-[var(--color-canopy)] text-[14px] font-semibold rounded hover:bg-[var(--color-ember-bright)] transition-colors"
+            <div className="lg:col-span-4 lg:pb-2">
+              <p
+                className="text-[14px] sm:text-[15px] text-white/55 leading-relaxed max-w-md lg:border-l lg:border-white/15 lg:pl-5 animate-fade-up"
+                style={{ animationDelay: "100ms" }}
               >
-                Explore the Dashboard
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/progress-report"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white text-[14px] font-medium rounded hover:bg-white/8 transition-colors"
-              >
-                Read the Reports
-              </Link>
+                Eight questions held to public record. Every number sourced
+                from city APIs and government data — updated automatically,
+                no spin.
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* Bottom edge gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[var(--color-paper)] to-transparent" />
-      </section>
-
-      {/* ── Data Views Grid ── */}
-      <section className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 py-20 sm:py-28">
-        <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-8 h-px bg-[var(--color-ember)]" />
-            <span className="text-[11px] font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em]">
-              What We Track
-            </span>
-            <div className="w-8 h-px bg-[var(--color-ember)]" />
-          </div>
-          <h2 className="font-editorial-normal text-[36px] sm:text-[48px] text-[var(--color-ink)] leading-tight">
-            The questions that drive<br />
-            <span className="font-editorial text-[var(--color-canopy)]">
-              Portland&apos;s story
-            </span>
-          </h2>
-          <p className="mt-4 text-[15px] text-[var(--color-ink-muted)] max-w-lg mx-auto leading-relaxed">
-            Each dashboard view is built from live data — automatically updated
-            from public records, city APIs, and government data portals.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {dataViews.map((view, i) => (
-            <Link
-              key={view.id}
-              href={`/dashboard/${view.id}`}
-              className="metric-card text-left w-full group animate-fade-up"
-              style={{ "--accent-color": view.accent, animationDelay: `${400 + i * 60}ms` } as React.CSSProperties}
-            >
-              <div className="flex items-start justify-between gap-3 mb-6">
-                <h2 className="font-editorial text-[20px] lg:text-[22px] 2xl:text-[24px] text-[var(--color-ink)] leading-snug">
-                  {view.question}
-                </h2>
-                <ArrowRight className="w-5 h-5 text-[var(--color-ink-muted)]/20 group-hover:text-[var(--color-ink-muted)] group-hover:translate-x-0.5 transition-all flex-shrink-0 mt-1" />
-              </div>
-
-              <p className="text-[42px] lg:text-[48px] 2xl:text-[54px] font-bold text-[var(--color-ink)] tracking-tight leading-none">
-                {view.stat}
-              </p>
-              <p className="text-[15px] lg:text-[16px] text-[var(--color-ink-muted)] mt-3 leading-snug">
-                {view.statLabel}
-              </p>
-
-              <div className="mt-6 pt-4 border-t border-[var(--color-parchment)] flex items-center justify-between">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--color-ink-muted)] group-hover:text-[var(--color-canopy)] transition-colors">
-                  Explore data
-                </span>
-                <view.icon className="w-5 h-5 text-[var(--color-ink-muted)]/30" />
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        <div className="mt-10 text-center">
-          <Link
-            href="/dashboard"
-            className="inline-flex items-center gap-2 px-7 py-3 bg-[var(--color-canopy)] text-white text-[14px] font-semibold rounded hover:bg-[var(--color-canopy-mid)] transition-colors"
-          >
-            Open the Full Dashboard
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          {/* Bottom rule */}
+          <div className="mt-7 sm:mt-8 h-px bg-gradient-to-r from-[var(--color-ember)]/40 via-white/15 to-transparent" />
         </div>
       </section>
 
-      {/* ── Principles ── */}
-      <section className="bg-[var(--color-canopy)] noise-overlay">
-        <div className="relative z-10 max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 py-20 sm:py-28">
-          <div className="text-center mb-14">
-            <span className="text-[11px] font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em]">
-              Our Principles
-            </span>
-            <h2 className="font-editorial-normal text-[36px] sm:text-[44px] text-white leading-tight mt-3">
-              Built on trust,{" "}
-              <span className="font-editorial text-[var(--color-ember-bright)]">
-                verified by data
-              </span>
-            </h2>
-          </div>
+      {/* ─── 8-Card Dashboard Grid ──────────────────────────────────── */}
+      <section className="relative max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 pt-8 sm:pt-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+          {questions.map((q, i) => {
+            const api = q.apiData;
+            const hasData =
+              api && api.dataStatus !== "unavailable" && api.dataAvailable !== false;
+            const value = hasData ? extractHeadlineValue(api?.headline) : "—";
+            const label = hasData
+              ? extractHeadlineLabel(api?.headline)
+              : "Data collection in progress";
+            const sourceText = hasData ? api?.source : "Pending";
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {principles.map((p) => (
-              <div key={p.title} className="text-center">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-full border border-white/15 flex items-center justify-center">
-                  <p.icon className="w-5 h-5 text-[var(--color-ember)]" />
+            return (
+              <Link
+                key={q.id}
+                href={`/dashboard/${q.id}`}
+                className="group relative bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5 sm:p-6 transition-all duration-300 hover:border-[var(--color-sage)] hover:-translate-y-0.5 overflow-hidden animate-fade-up"
+                style={{
+                  animationDelay: `${120 + i * 50}ms`,
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  ["--accent" as any]: q.color,
+                }}
+              >
+                {/* Accent rule along the top */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-[3px] transition-all duration-300 group-hover:h-[5px]"
+                  style={{ backgroundColor: q.color, opacity: 0.85 }}
+                />
+
+                {/* Section label */}
+                <div className="flex items-center justify-between mb-3 mt-1">
+                  <span
+                    className="text-[9px] font-mono font-semibold uppercase tracking-[0.18em]"
+                    style={{ color: q.color }}
+                  >
+                    Section {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[var(--color-ink-muted)]/30 group-hover:text-[var(--color-ink-muted)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
                 </div>
-                <h3 className="text-[18px] font-semibold text-white mb-2">
-                  {p.title}
-                </h3>
-                <p className="text-[14px] text-white/50 leading-relaxed max-w-xs mx-auto">
-                  {p.description}
+
+                {/* Question */}
+                <h2 className="font-editorial text-[15px] sm:text-[16px] text-[var(--color-ink)] leading-snug min-h-[44px]">
+                  {q.question}
+                </h2>
+
+                {/* Big stat */}
+                <p className="mt-4 text-[34px] sm:text-[38px] lg:text-[42px] font-bold text-[var(--color-ink)] tracking-tight leading-none tabular-nums">
+                  {value}
                 </p>
-              </div>
-            ))}
-          </div>
+
+                {/* Label */}
+                <p className="mt-2 text-[12px] sm:text-[13px] text-[var(--color-ink-muted)] leading-snug line-clamp-2 min-h-[34px]">
+                  {label}
+                </p>
+
+                {/* Footer source line */}
+                <div className="mt-4 pt-3 border-t border-[var(--color-parchment)]/70 flex items-center justify-between gap-2">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.12em] text-[var(--color-ink-muted)]/70 truncate">
+                    {sourceText}
+                  </span>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[var(--color-ink-muted)]/50 group-hover:text-[var(--color-ink)] transition-colors flex-shrink-0">
+                    Read →
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
-      {/* ── CTA Banner ── */}
-      <section className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 py-20 sm:py-28">
-        <div className="relative bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-10 sm:p-14 text-center overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-1 bg-[var(--color-ember)]" />
-          <h2 className="font-editorial-normal text-[32px] sm:text-[40px] text-[var(--color-ink)] leading-tight">
-            Have a question about Portland?
-          </h2>
-          <p className="text-[15px] text-[var(--color-ink-muted)] mt-4 max-w-lg mx-auto leading-relaxed">
-            The Civic Concierge can answer questions about Portland government
-            data, permits, zoning, public services, and more — powered by AI
-            with real city data behind it.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/concierge"
-              className="inline-flex items-center gap-2 px-7 py-3 bg-[var(--color-canopy)] text-white text-[14px] font-semibold rounded hover:bg-[var(--color-canopy-mid)] transition-colors"
-            >
-              Ask the Concierge
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/dashboard"
-              className="inline-flex items-center gap-2 px-7 py-3 border border-[var(--color-parchment)] text-[var(--color-ink)] text-[14px] font-medium rounded hover:bg-[var(--color-paper)] transition-colors"
-            >
-              Explore the Data
-            </Link>
+      {/* ─── Below the fold: editorial note + sources strip ─────────── */}
+      <section className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 mt-16 sm:mt-20 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-px bg-[var(--color-ember)]" />
+              <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+                Editor&apos;s Note
+              </span>
+            </div>
+            <p className="font-editorial text-[20px] sm:text-[22px] lg:text-[24px] leading-snug text-[var(--color-ink)] max-w-2xl">
+              Portland is having a hard conversation with itself about housing,
+              homelessness, public safety, and what kind of city it wants to be.
+              This dashboard exists so that conversation has{" "}
+              <em className="font-editorial italic text-[var(--color-canopy)]">
+                shared facts
+              </em>{" "}
+              instead of competing narratives.
+            </p>
+            <p className="mt-5 text-[14px] text-[var(--color-ink-muted)] leading-relaxed max-w-2xl">
+              Every number above is pulled directly from a public source —
+              the city&apos;s permit database, the county&apos;s by-name list,
+              ODE enrollment files, BLS labor reports — and updated
+              automatically. Click any section to see the underlying data,
+              the methodology, and the gaps we&apos;re still trying to fill.
+            </p>
+          </div>
+
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-8 h-px bg-[var(--color-ember)]" />
+              <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+                Principles
+              </span>
+            </div>
+            <ul className="space-y-3 text-[13px] text-[var(--color-ink-muted)] leading-snug">
+              <li className="flex gap-3">
+                <span className="font-mono text-[var(--color-canopy)]/40 flex-shrink-0">
+                  01
+                </span>
+                <span>
+                  <span className="text-[var(--color-ink)] font-semibold">
+                    Real data only.
+                  </span>{" "}
+                  No projections, no marketing.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-mono text-[var(--color-canopy)]/40 flex-shrink-0">
+                  02
+                </span>
+                <span>
+                  <span className="text-[var(--color-ink)] font-semibold">
+                    Open methodology.
+                  </span>{" "}
+                  If we can&apos;t show the math, we won&apos;t make the claim.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-mono text-[var(--color-canopy)]/40 flex-shrink-0">
+                  03
+                </span>
+                <span>
+                  <span className="text-[var(--color-ink)] font-semibold">
+                    Honest gaps.
+                  </span>{" "}
+                  When the data isn&apos;t there, we say so.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-mono text-[var(--color-canopy)]/40 flex-shrink-0">
+                  04
+                </span>
+                <span>
+                  <span className="text-[var(--color-ink)] font-semibold">
+                    Built for Portlanders.
+                  </span>{" "}
+                  Questions residents are actually asking.
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>

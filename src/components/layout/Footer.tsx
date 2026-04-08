@@ -1,72 +1,139 @@
+import Link from "next/link";
+
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="bg-[var(--color-canopy)] text-white/60 mt-20">
-      {/* Divider accent */}
+      {/* Top accent rule */}
       <div className="h-px bg-gradient-to-r from-transparent via-[var(--color-ember)]/40 to-transparent" />
 
       <div className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 py-14">
+        {/* Newspaper-style colophon */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
-          {/* Brand */}
+          {/* Brand column */}
           <div className="md:col-span-5">
-            <h3 className="font-editorial-normal text-xl text-white mb-3">
-              Portland Civic Lab
-            </h3>
-            <p className="text-[13px] leading-relaxed max-w-sm">
-              Open data for Portland&apos;s recovery. Every metric is sourced
-              from public records, government APIs, and verified datasets.
-              Built to answer the questions Portland is asking.
+            <div className="flex items-baseline gap-3 mb-3">
+              <h3 className="font-editorial-normal text-2xl text-white leading-none">
+                Portland Civic Lab
+              </h3>
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember)]/70">
+                Est. 2026
+              </span>
+            </div>
+            <p className="text-[13px] leading-relaxed max-w-sm text-white/55">
+              A civic dashboard for Portland, Oregon. Eight questions, answered
+              with real public data — automatically pulled from city APIs,
+              government records, and verified sources.
+            </p>
+            <p className="mt-4 text-[12px] leading-relaxed max-w-sm text-white/35 italic font-editorial">
+              &ldquo;Open data, open methodology, open books. If we can&apos;t
+              show the math, we won&apos;t make the claim.&rdquo;
             </p>
           </div>
 
-          {/* Data Sources */}
+          {/* Sections column */}
           <div className="md:col-span-3">
-            <h4 className="text-[11px] font-semibold text-[var(--color-ember)] uppercase tracking-[0.15em] mb-4">
-              Data Sources
+            <h4 className="text-[10px] font-mono font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em] mb-4">
+              Sections
             </h4>
-            <ul className="text-[13px] space-y-2">
-              <li className="hover:text-white/80 transition-colors">Portland Police Bureau</li>
-              <li className="hover:text-white/80 transition-colors">PP&amp;D Permit Data</li>
-              <li className="hover:text-white/80 transition-colors">CivicApps Portland</li>
-              <li className="hover:text-white/80 transition-colors">US Census Bureau</li>
-              <li className="hover:text-white/80 transition-colors">HUD / USPS Vacancy</li>
-              <li className="hover:text-white/80 transition-colors">Bureau of Labor Statistics</li>
+            <ul className="text-[13px] space-y-2 text-white/55">
+              <li>
+                <Link
+                  href="/dashboard/housing"
+                  className="hover:text-white transition-colors"
+                >
+                  Housing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dashboard/safety"
+                  className="hover:text-white transition-colors"
+                >
+                  Public Safety
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dashboard/economy"
+                  className="hover:text-white transition-colors"
+                >
+                  Economy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dashboard/homelessness"
+                  className="hover:text-white transition-colors"
+                >
+                  Homelessness
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dashboard/education"
+                  className="hover:text-white transition-colors"
+                >
+                  Education
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dashboard/climate"
+                  className="hover:text-white transition-colors"
+                >
+                  Climate
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dashboard/quality"
+                  className="hover:text-white transition-colors"
+                >
+                  Quality of Life
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dashboard/accountability"
+                  className="hover:text-white transition-colors"
+                >
+                  Accountability
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* About */}
+          {/* Sources column */}
           <div className="md:col-span-4">
-            <h4 className="text-[11px] font-semibold text-[var(--color-ember)] uppercase tracking-[0.15em] mb-4">
-              About This Dashboard
+            <h4 className="text-[10px] font-mono font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em] mb-4">
+              Data Sources
             </h4>
-            <p className="text-[13px] leading-relaxed mb-4">
-              All aggregate data is freely available for download and embedding.
-              See our{" "}
-              <a
-                href="/methodology"
-                className="text-[var(--color-lichen)] hover:text-white underline underline-offset-2 decoration-white/20 hover:decoration-white/40 transition-all"
-              >
-                methodology
-              </a>{" "}
-              for details on how each metric is calculated.
-            </p>
-            <p className="text-[13px] leading-relaxed">
-              <span className="text-[var(--color-ember)] font-medium">
-                Portland Pulse
-              </span>{" "}
-              — weekly data stories in your inbox.{" "}
-              <span className="text-white/40 italic">Coming soon.</span>
+            <ul className="text-[13px] space-y-2 text-white/55">
+              <li>City of Portland Open Data</li>
+              <li>Multnomah County HSD &amp; Health</li>
+              <li>Oregon Department of Education</li>
+              <li>U.S. Census Bureau (ACS)</li>
+              <li>Bureau of Labor Statistics</li>
+              <li>HUD &amp; HUD-PIT counts</li>
+              <li>Metro SHS Quarterly Reports</li>
+            </ul>
+            <p className="mt-4 text-[11px] leading-relaxed text-white/35">
+              Every metric links back to its source. See methodology notes on
+              each section.
             </p>
           </div>
         </div>
 
-        {/* Bottom bar */}
+        {/* Bottom rule */}
         <div className="mt-12 pt-6 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[12px] text-white/40">
-            &copy; {new Date().getFullYear()} Portland Civic Lab. Data provided
-            as-is from public sources.
+            &copy; {year} Portland Civic Lab &middot; Public data, freely
+            available
           </p>
-          <p className="text-[11px] text-white/25 font-mono">
-            Auto-updated &middot; Zero human intervention
+          <p className="text-[10px] text-white/25 font-mono uppercase tracking-[0.2em]">
+            Auto-updated &middot; No human spin
           </p>
         </div>
       </div>
