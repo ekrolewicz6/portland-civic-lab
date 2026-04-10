@@ -10,7 +10,7 @@ export const QUESTIONS = [
   { id: "economy", question: "Can People Make a Living?", color: "#c8956c" },
   { id: "education", question: "Are Kids Learning?", color: "#3d7a5a" },
   { id: "quality", question: "Does Portland Work as a Place to Live?", color: "#6a7f8a" },
-  { id: "accountability", question: "Who Promised What?", color: "#8a5c6a" },
+  { id: "accountability", question: "What Have Voters Approved?", color: "#8a5c6a" },
 ] as const;
 
 export async function getBaseUrl(): Promise<string> {

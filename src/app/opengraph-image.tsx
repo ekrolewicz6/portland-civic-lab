@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 export const alt =
-  "Portland Civic Lab — How is Portland actually doing? Eight questions held to public record.";
+  "Portland Civic Lab — Portland, by the numbers. Eight questions answered with public data.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -95,12 +95,11 @@ export default async function Image() {
             fontWeight: 400,
           }}
         >
-          <div style={{ display: "flex" }}>How is Portland</div>
+          <div style={{ display: "flex" }}>Portland,</div>
           <div style={{ display: "flex", alignItems: "baseline", gap: "20px" }}>
             <span style={{ fontStyle: "italic", color: "#e8a857" }}>
-              actually
+              by the numbers
             </span>
-            <span>doing?</span>
           </div>
         </div>
 
@@ -139,8 +138,8 @@ export default async function Image() {
                 maxWidth: "780px",
               }}
             >
-              Eight questions held to public record. Real data, updated
-              automatically, no spin.
+              Eight questions about Portland, answered with public data.
+              Updated automatically, every number linked to its source.
             </div>
             <div
               style={{

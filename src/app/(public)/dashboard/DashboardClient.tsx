@@ -119,19 +119,17 @@ export default function DashboardClient({ questions }: DashboardClientProps) {
               className="font-editorial-normal text-[38px] sm:text-[50px] lg:text-[60px] text-white leading-[1.08] tracking-tight animate-fade-up"
               style={{ animationDelay: "80ms" }}
             >
-              How is Portland{" "}
+              Portland,{" "}
               <span className="font-editorial text-[var(--color-ember-bright)]">
-                actually
-              </span>{" "}
-              doing?
+                by the numbers
+              </span>
             </h1>
             <p
               className="mt-4 text-[16px] text-white/50 leading-relaxed max-w-xl animate-fade-up"
               style={{ animationDelay: "160ms" }}
             >
-              Ten questions that hold Portland accountable. Real data where
-              we have it, honest gaps where we don&apos;t. Click any card to
-              explore.
+              Eight questions about Portland, answered with public data.
+              Click any card to explore the underlying sources.
             </p>
           </div>
         </div>

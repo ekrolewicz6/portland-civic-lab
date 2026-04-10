@@ -33,7 +33,7 @@ export async function GET() {
           : `$${totalRevenue.toLocaleString()}`;
 
     const headline =
-      `${measureCount} ballot measures generating ${revenueLabel}/year — ${officialCount} elected officials tracked`;
+      `${measureCount} ballot measures generating ${revenueLabel}/year — ${officialCount} elected officials serving`;
 
     return NextResponse.json({
       headline,
@@ -43,14 +43,14 @@ export async function GET() {
       trend: {
         direction: "flat" as const,
         percentage: 0,
-        label: `${officialCount} officials tracked`,
+        label: `${officialCount} officials serving`,
       },
       chartData: [],
       source: "Multnomah County Elections / Portland.gov",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: [
         `${measureCount} voter-approved measures generating an estimated ${revenueLabel} annually.`,
-        `${officialCount} elected officials currently tracked.`,
+        `${officialCount} elected officials currently serving.`,
         "Campaign finance data available from ORESTAR database (not yet integrated).",
       ],
     });

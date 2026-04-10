@@ -14,24 +14,24 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Portland Civic Lab — How is Portland actually doing?",
+    absolute: "Portland Civic Lab — Portland, by the numbers",
   },
   description:
-    "A live civic dashboard for Portland, Oregon. Eight questions held to public record — housing, safety, homelessness, economy, education, climate, quality of life, and accountability. Real data from city APIs and government records. Updated automatically. No spin.",
+    "A live civic dashboard for Portland, Oregon. Eight questions held to public record — housing, safety, homelessness, economy, education, climate, quality of life, and accountability. Real data from city APIs and government records. Updated automatically. Every number linked to its source.",
   alternates: { canonical: "https://www.portlandciviclab.org" },
   openGraph: {
-    title: "Portland Civic Lab — How is Portland actually doing?",
+    title: "Portland Civic Lab — Portland, by the numbers",
     description:
-      "Eight questions held to public record. Real data, updated automatically, no spin.",
+      "Eight questions held to public record. Real data, updated automatically, every number linked to its source.",
     url: "https://www.portlandciviclab.org",
     siteName: "Portland Civic Lab",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portland Civic Lab — How is Portland actually doing?",
+    title: "Portland Civic Lab — Portland, by the numbers",
     description:
-      "Eight questions held to public record. Real data, updated automatically, no spin.",
+      "Eight questions held to public record. Real data, updated automatically, every number linked to its source.",
   },
 };
 
@@ -73,11 +73,10 @@ export default async function HomePage() {
           <div className="mt-5 sm:mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
             <div className="lg:col-span-8">
               <h1 className="font-editorial-normal text-[40px] sm:text-[52px] lg:text-[64px] text-white leading-[1.02] tracking-tight animate-fade-up">
-                How is Portland{" "}
+                Portland,{" "}
                 <span className="font-editorial italic text-[var(--color-ember-bright)]">
-                  actually
-                </span>{" "}
-                doing?
+                  by the numbers
+                </span>
               </h1>
             </div>
             <div className="lg:col-span-4 lg:pb-2">
@@ -85,9 +84,9 @@ export default async function HomePage() {
                 className="text-[14px] sm:text-[15px] text-white/55 leading-relaxed max-w-md lg:border-l lg:border-white/15 lg:pl-5 animate-fade-up"
                 style={{ animationDelay: "100ms" }}
               >
-                Eight questions held to public record. Every number sourced
-                from city APIs and government data — updated automatically,
-                no spin.
+                Eight questions about Portland, answered with public data.
+                Sourced from city APIs and government records — updated
+                automatically, every number linked to its source.
               </p>
             </div>
           </div>
@@ -180,13 +179,13 @@ export default async function HomePage() {
               </span>
             </div>
             <p className="font-editorial text-[20px] sm:text-[22px] lg:text-[24px] leading-snug text-[var(--color-ink)] max-w-2xl">
-              Portland is having a hard conversation with itself about housing,
-              homelessness, public safety, and what kind of city it wants to be.
-              This dashboard exists so that conversation has{" "}
+              Portland is making important decisions about housing, homelessness,
+              public safety, and the city&apos;s future. Good decisions start with{" "}
               <em className="font-editorial italic text-[var(--color-canopy)]">
-                shared facts
-              </em>{" "}
-              instead of competing narratives.
+                good data
+              </em>
+              . This dashboard puts that data in one place so everyone is
+              working from the same set of facts.
             </p>
             <p className="mt-5 text-[14px] text-[var(--color-ink-muted)] leading-relaxed max-w-2xl">
               Every number above is pulled directly from a public source —
@@ -246,7 +245,7 @@ export default async function HomePage() {
                   <span className="text-[var(--color-ink)] font-semibold">
                     Built for Portlanders.
                   </span>{" "}
-                  Questions residents are actually asking.
+                  Questions that matter to the people who live here.
                 </span>
               </li>
             </ul>

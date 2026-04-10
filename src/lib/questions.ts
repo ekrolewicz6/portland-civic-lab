@@ -29,10 +29,10 @@ export const questionMeta: Record<
   safety: { title: "Are People Safe?", shortTitle: "Public Safety", color: "#b85c3a", description: "Portland crime data, police staffing, response times, and public safety trends." },
   transportation: { title: "Can You Get Around?", shortTitle: "Transportation", color: "#4a7f9e", description: "Portland transit ridership, road conditions, Vision Zero progress, and commute patterns." },
   education: { title: "Are Kids Learning?", shortTitle: "Education", color: "#3d7a5a", description: "Enrollment, graduation rates, attendance, and spending for 6 Portland-area school districts." },
-  fiscal: { title: "Where Does the Money Go?", shortTitle: "Fiscal Health", color: "#7c6f9e", description: "Interactive breakdown of Portland's $793M General Fund: bureau allocations, revenue sources, the $67.8M structural deficit, and what 3% and 10% budget cuts would actually mean for city services." },
+  fiscal: { title: "Where Does the Money Go?", shortTitle: "Fiscal Health", color: "#7c6f9e", description: "Interactive breakdown of Portland's $793M General Fund: bureau allocations, revenue sources, the $67.8M structural deficit, and what 3% and 10% budget cuts would mean for city services." },
   economy: { title: "Can People Make a Living?", shortTitle: "Economy", color: "#c8956c", description: "Portland jobs, wages, unemployment, and economic indicators from BLS and Census data." },
   environment: { title: "Are We Meeting Our Climate Goals?", shortTitle: "Environment", color: "#5a8a6a", description: "Portland greenhouse gas emissions, PCEF spending, air quality, and climate action progress." },
   quality: { title: "Does Portland Work as a Place to Live?", shortTitle: "Quality of Life", color: "#6a7f8a", description: "Parks, libraries, road quality, walkability, and livability metrics across Portland." },
-  accountability: { title: "Who Promised What?", shortTitle: "Accountability", color: "#8a5c6a", description: "City Council votes, auditor findings, campaign finance, and elected official accountability." },
+  accountability: { title: "What Have Voters Approved?", shortTitle: "Accountability", color: "#8a5c6a", description: "Ballot measures, City Council actions, auditor findings, and public commitments." },
   climate: { title: "Is Portland Meeting Its Climate Commitments?", shortTitle: "Climate", color: "#2d6a4f", description: "Climate Emergency Workplan tracker, bureau scorecards, PCEF finance, and emissions trajectory." },
 };

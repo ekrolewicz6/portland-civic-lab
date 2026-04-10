@@ -1003,7 +1003,7 @@ export default function HomelessnessDetail() {
           </p>
           <DataNeeded
             title="Outreach-to-housing pipeline data"
-            description="HSD's outreach teams use Survey 123 to track contacts with unsheltered individuals, but only ~1 quarter of data exists and it may not be published. This would show how many outreach contacts actually lead to shelter or housing placement."
+            description="HSD's outreach teams use Survey 123 to record contacts with unsheltered individuals, but only ~1 quarter of data exists and it may not be published. This would show how many outreach contacts lead to shelter or housing placement."
             actions={[
               {
                 label: "Request outreach contact data from HSD",

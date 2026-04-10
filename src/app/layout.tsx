@@ -32,11 +32,11 @@ const bricolage = Bricolage_Grotesque({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.portlandciviclab.org"),
   title: {
-    default: "Portland Civic Lab — How is Portland actually doing?",
+    default: "Portland Civic Lab — Portland, by the numbers",
     template: "%s · Portland Civic Lab",
   },
   description:
-    "A live civic dashboard for Portland, Oregon. Eight questions, answered with real public data — housing, safety, homelessness, economy, education, climate, quality of life, and government accountability. Sourced from city APIs, county records, and government datasets. Updated automatically. No spin.",
+    "A live civic dashboard for Portland, Oregon. Eight questions, answered with real public data — housing, safety, homelessness, economy, education, climate, quality of life, and government accountability. Sourced from city APIs, county records, and government datasets. Updated automatically. Every number linked to its source.",
   applicationName: "Portland Civic Lab",
   keywords: [
     "Portland Oregon",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   creator: "Portland Civic Lab",
   publisher: "Portland Civic Lab",
   openGraph: {
-    title: "Portland Civic Lab — How is Portland actually doing?",
+    title: "Portland Civic Lab — Portland, by the numbers",
     description:
       "Eight questions held to public record. Housing, safety, homelessness, economy, education, climate, quality of life, and accountability — answered with real public data, updated automatically.",
     url: "https://www.portlandciviclab.org",
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portland Civic Lab — How is Portland actually doing?",
+    title: "Portland Civic Lab — Portland, by the numbers",
     description:
-      "A live civic dashboard for Portland, Oregon. Eight questions, real public data, no spin.",
+      "A live civic dashboard for Portland, Oregon. Eight questions, real public data, every number linked to its source.",
     creator: "@portlandciviclab",
   },
   robots: {

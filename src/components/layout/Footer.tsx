@@ -133,7 +133,7 @@ export default function Footer() {
             available
           </p>
           <p className="text-[10px] text-white/25 font-mono uppercase tracking-[0.2em]">
-            Auto-updated &middot; No human spin
+            Auto-updated &middot; Source-linked data
           </p>
         </div>
       </div>

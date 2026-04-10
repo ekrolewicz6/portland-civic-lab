@@ -165,9 +165,9 @@ export default function BudgetExplorer() {
         <SectionHeader icon={Scissors} title="What If We Cut?" />
         <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5 sm:p-6">
           <p className="text-[15px] text-[var(--color-ink-muted)] mb-4">
-            Mayor Wilson directed all bureaus to prepare 3% and 10% reduction
-            scenarios. Select a scenario to see what the city says would
-            actually stop happening — in their own words.
+            All bureaus prepared 3% and 10% reduction scenarios as part of
+            the budget process. Select a scenario to see the projected service
+            impacts each bureau identified.
           </p>
           <BudgetWhatIf
             cutPct={cutPct}
