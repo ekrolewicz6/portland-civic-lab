@@ -128,7 +128,7 @@ const DATA_DISPUTES = [
       "Marisa Zapata, director of PSU's Homelessness Research & Action Collaborative, called the city's allegations of double-counting \"completely unfounded.\" The county's methodology is consistent with HUD-required HMIS practices.",
     expert_source: "PSU HRAC",
     methodology_difference:
-      "The two numbers are not measuring the same thing. The city tracks nightly occupancy in city-operated shelters only — a snapshot of who is in a city bed tonight. The county tracks the total population known to the regional homeless services system across all providers, which is necessarily larger and includes people who never enter a city shelter. A decline in city shelter unsheltered counts is consistent with a rising countywide unsheltered population if the system as a whole is growing faster than city shelter capacity.",
+      "These two numbers measure different things and can both be accurate at the same time. The city counts how many people are in city-operated shelter beds on a given night. The county counts every person known to the entire regional homeless services system — shelters, outreach, by-name list — across all providers. Because most people experiencing homelessness never enter a city shelter, the county's number will always be much larger. It is entirely possible for city shelters to be filling more beds while the total number of people experiencing homelessness countywide continues to grow.",
     news_url:
       "https://www.opb.org/article/2026/04/01/behind-portlands-homelessness-data-familial-political-fight-emerges/",
   },
