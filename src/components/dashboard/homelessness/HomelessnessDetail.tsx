@@ -267,7 +267,13 @@ export default function HomelessnessDetail() {
     affordableVacancy,
     dataSources = [],
     dataDisputes = [],
-  } = data;
+    statewideByCounty = [],
+    racialDisparities = [],
+    shelterBedInventory = [],
+    studentHomelessness = [],
+    doubledUp = [],
+    unshelteredChange = [],
+  } = data as Record<string, unknown[]> & typeof data;
 
   // Compute key figures
   const latestPit =
@@ -1304,6 +1310,205 @@ export default function HomelessnessDetail() {
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          PORTLAND IN CONTEXT — Statewide comparison
+          ═══════════════════════════════════════════════════════════════════ */}
+      {(statewideByCounty as { county: string; total: number; ratePer1000: number; unshelteredPct: number }[]).length > 0 && (
+        <section>
+          <SectionHeader icon={MapPin} title="Portland in Context" color="#4a7f9e" />
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
+            <p className="text-[13px] text-[var(--color-ink-muted)] mb-5 leading-relaxed">
+              Oregon recorded <strong className="text-[var(--color-ink)]">27,119 people</strong> experiencing
+              homelessness statewide in January 2025 — a 34.9% increase from 2023. Multnomah County
+              accounts for 39% of the state total. Rates below are per 1,000 residents.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-[13px]">
+                <thead>
+                  <tr className="border-b border-[var(--color-parchment)] text-left">
+                    <th className="py-2 pr-4 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)]">County</th>
+                    <th className="py-2 px-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)] text-right">Total</th>
+                    <th className="py-2 px-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)] text-right">Rate/1K</th>
+                    <th className="py-2 px-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)] text-right">Unsheltered %</th>
+                    <th className="py-2 pl-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)]">Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {(statewideByCounty as { county: string; total: number; ratePer1000: number; unshelteredPct: number }[])
+                    .slice(0, 15)
+                    .map((c) => (
+                    <tr
+                      key={c.county}
+                      className={`border-b border-[var(--color-parchment)]/50 ${c.county === "Multnomah" ? "bg-[var(--color-parchment)]/30 font-semibold" : ""}`}
+                    >
+                      <td className="py-2 pr-4 text-[var(--color-ink)]">{c.county}</td>
+                      <td className="py-2 px-3 text-right tabular-nums">{c.total.toLocaleString()}</td>
+                      <td className="py-2 px-3 text-right tabular-nums">{c.ratePer1000}</td>
+                      <td className="py-2 px-3 text-right tabular-nums">{c.unshelteredPct}%</td>
+                      <td className="py-2 pl-3">
+                        <div className="h-2 rounded-sm overflow-hidden bg-[var(--color-parchment)]/60 max-w-[120px]">
+                          <div
+                            className="h-full rounded-sm"
+                            style={{
+                              width: `${Math.min(100, (c.ratePer1000 / 30) * 100)}%`,
+                              backgroundColor: c.county === "Multnomah" ? "#8b6c5c" : "#4a7f9e",
+                            }}
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-[11px] text-[var(--color-ink-muted)] mt-3 font-mono">
+              Source: PSU HRAC 2025 Oregon Statewide Homelessness Estimates (Tables 1-2). Top 15 counties by total count shown.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          RACIAL EQUITY — Disparity multipliers
+          ═══════════════════════════════════════════════════════════════════ */}
+      {(racialDisparities as { raceGroup: string; disparityRatio: number | null; pctOfPopulation: number | null; pctOfPit: number | null }[]).length > 0 && (
+        <section>
+          <SectionHeader icon={Scale} title="Racial Disparities in Homelessness" color="#b85c3a" />
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
+            <p className="text-[13px] text-[var(--color-ink-muted)] mb-5 leading-relaxed">
+              People of color experience homelessness at dramatically higher rates than their share of
+              Oregon&apos;s population. These disparities <strong className="text-[var(--color-ink)]">worsened from 2023 to 2025</strong>.
+              The number below shows how many times more likely each group is to experience homelessness
+              relative to their population share.
+            </p>
+            <div className="space-y-3">
+              {(racialDisparities as { raceGroup: string; disparityRatio: number | null; pctOfPopulation: number | null; pctOfPit: number | null }[])
+                .filter((d) => d.disparityRatio !== null && d.disparityRatio > 0)
+                .map((d) => (
+                  <div key={d.raceGroup} className="flex items-center gap-4">
+                    <span className="text-[13px] text-[var(--color-ink)] w-[260px] flex-shrink-0 truncate">
+                      {d.raceGroup}
+                    </span>
+                    <div className="flex-1 h-6 bg-[var(--color-parchment)]/40 rounded-sm overflow-hidden relative">
+                      <div
+                        className="h-full rounded-sm transition-all"
+                        style={{
+                          width: `${Math.min(100, ((d.disparityRatio ?? 0) / 7) * 100)}%`,
+                          backgroundColor: (d.disparityRatio ?? 0) > 1 ? "#b85c3a" : "#7c8a4c",
+                        }}
+                      />
+                      <span className="absolute inset-y-0 right-2 flex items-center text-[12px] font-bold tabular-nums text-[var(--color-ink)]">
+                        {(d.disparityRatio ?? 0) > 1 ? `${d.disparityRatio}x` : `${d.disparityRatio}x`}
+                      </span>
+                    </div>
+                  </div>
+              ))}
+            </div>
+            <p className="text-[12px] text-[var(--color-ink-muted)] mt-4 leading-relaxed italic border-l-2 border-[#b85c3a]/40 pl-3">
+              A ratio of 1.0x means a group experiences homelessness at the same rate as their population
+              share. A ratio above 1.0x means disproportionate overrepresentation.
+            </p>
+            <p className="text-[11px] text-[var(--color-ink-muted)] mt-3 font-mono">
+              Source: PSU HRAC 2025 Oregon Statewide Homelessness Estimates, Chart 1. Population shares from Census Table B03002.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          SHELTER GAP — Beds vs need
+          ═══════════════════════════════════════════════════════════════════ */}
+      {(shelterBedInventory as { county: string; totalBeds: number; totalHomeless: number; bedsPctOfPit: number }[]).length > 0 && (() => {
+        const multco = (shelterBedInventory as { county: string; totalBeds: number; totalHomeless: number; bedsPctOfPit: number }[]).find((s) => s.county === "Multnomah");
+        const statewideBeds = (shelterBedInventory as { county: string; totalBeds: number; totalHomeless: number; bedsPctOfPit: number }[]).reduce((s, r) => s + r.totalBeds, 0);
+        const statewideHomeless = (shelterBedInventory as { county: string; totalBeds: number; totalHomeless: number; bedsPctOfPit: number }[]).reduce((s, r) => s + r.totalHomeless, 0);
+        return (
+          <section>
+            <SectionHeader icon={BedDouble} title="The Shelter Gap" color="#ef4444" />
+            <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
+              <p className="text-[13px] text-[var(--color-ink-muted)] mb-5 leading-relaxed">
+                No county in Oregon has enough shelter beds for everyone experiencing homelessness.
+                Oregon added <strong className="text-[var(--color-ink)]">3,094 year-round beds</strong> between
+                2023 and 2025 (a 39% increase), but the gap remains large.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5">
+                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
+                  <p className="text-[32px] font-bold text-[var(--color-ink)] leading-none">{multco?.totalBeds.toLocaleString() ?? "—"}</p>
+                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">MultCo shelter beds</p>
+                </div>
+                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
+                  <p className="text-[32px] font-bold text-[#ef4444] leading-none">{multco?.bedsPctOfPit ?? "—"}%</p>
+                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">of MultCo PIT covered</p>
+                </div>
+                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
+                  <p className="text-[32px] font-bold text-[var(--color-ink)] leading-none">{statewideBeds.toLocaleString()}</p>
+                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">statewide beds</p>
+                </div>
+                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
+                  <p className="text-[32px] font-bold text-[#ef4444] leading-none">{statewideHomeless > 0 ? Math.round((statewideBeds / statewideHomeless) * 100) : "—"}%</p>
+                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">of statewide PIT covered</p>
+                </div>
+              </div>
+              <p className="text-[11px] text-[var(--color-ink-muted)] font-mono">
+                Source: PSU HRAC 2025 Oregon Statewide Homelessness Estimates, Table 17 (HIC data).
+              </p>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          HIDDEN HOMELESSNESS — Doubled-up + student counts
+          ═══════════════════════════════════════════════════════════════════ */}
+      {((doubledUp as { county: string; estimate: number }[]).length > 0 || (studentHomelessness as { county: string; count202425: number }[]).length > 0) && (() => {
+        const duStatewide = (doubledUp as { county: string; estimate: number; marginOfError: number }[]).find((d) => d.county === "Statewide");
+        const duMultco = (doubledUp as { county: string; estimate: number; marginOfError: number }[]).find((d) => d.county === "Multnomah");
+        const shMultco = (studentHomelessness as { county: string; count202425: number; numericChange: number }[]).find((s) => s.county === "Multnomah");
+        return (
+          <section>
+            <SectionHeader icon={HelpCircle} title="Hidden Homelessness" color="#c89c4c" />
+            <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
+              <p className="text-[13px] text-[var(--color-ink-muted)] mb-5 leading-relaxed">
+                The PIT count only captures people in shelters or visible on the street on a single night.
+                It misses two large populations: people <strong className="text-[var(--color-ink)]">doubled up</strong> (staying
+                with others out of necessity) and <strong className="text-[var(--color-ink)]">students experiencing
+                homelessness</strong> (a broader federal definition that includes motels, cars, and doubling up).
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5">
+                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
+                  <p className="text-[28px] font-bold text-[var(--color-ink)] leading-none">{duStatewide?.estimate.toLocaleString() ?? "—"}</p>
+                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">doubled up statewide</p>
+                  {duStatewide && <p className="text-[10px] text-[var(--color-ink-muted)]">+/- {duStatewide.marginOfError.toLocaleString()}</p>}
+                </div>
+                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
+                  <p className="text-[28px] font-bold text-[var(--color-ink)] leading-none">{duMultco?.estimate.toLocaleString() ?? "—"}</p>
+                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">doubled up MultCo</p>
+                </div>
+                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
+                  <p className="text-[28px] font-bold text-[var(--color-ink)] leading-none">21,122</p>
+                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">students statewide</p>
+                  <p className="text-[10px] text-[var(--color-ink-muted)]">4.0% of all K-12</p>
+                </div>
+                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
+                  <p className="text-[28px] font-bold text-[var(--color-ink)] leading-none">{shMultco?.count202425.toLocaleString() ?? "—"}</p>
+                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">students MultCo</p>
+                  {shMultco && <p className="text-[10px] text-[var(--color-ink-muted)]">{shMultco.numericChange > 0 ? "+" : ""}{shMultco.numericChange} from prior year</p>}
+                </div>
+              </div>
+              <p className="text-[12px] text-[var(--color-ink-muted)] leading-relaxed italic border-l-2 border-[#c89c4c]/40 pl-3">
+                When you combine the PIT count (27,119), doubled-up estimate (21,542), and the broader
+                student count, homelessness affects more than <strong className="text-[var(--color-ink)]">60,000 Oregonians</strong> — far
+                more than any single measure captures.
+              </p>
+              <p className="text-[11px] text-[var(--color-ink-muted)] mt-3 font-mono">
+                Source: PSU HRAC 2025 Statewide Estimates, Tables 19-20. Doubled-up: ACS 1-year 2024 (Richard et al. method).
+                Students: Oregon Department of Education Statewide Report Card 2024-25.
+              </p>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* ═══════════════════════════════════════════════════════════════════
           DATA FRESHNESS TIMELINE

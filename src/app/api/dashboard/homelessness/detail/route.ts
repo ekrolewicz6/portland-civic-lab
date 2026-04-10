@@ -99,6 +99,44 @@ const COMBINED_QUERY = `
         FROM homelessness.data_disputes
         WHERE status = 'active'
       ) t
+    ),
+    'statewide_by_county', (
+      SELECT COALESCE(json_agg(t ORDER BY total DESC), '[]'::json) FROM (
+        SELECT county, coc, sheltered, unsheltered, total, unsheltered_pct,
+               shelter_beds, rate_per_1000_total
+        FROM homelessness.statewide_pit_by_county
+        WHERE total > 0
+      ) t
+    ),
+    'racial_disparities', (
+      SELECT COALESCE(json_agg(t ORDER BY disparity_ratio DESC NULLS LAST), '[]'::json) FROM (
+        SELECT race_group, pct_of_population, pct_of_pit, disparity_ratio, scope
+        FROM homelessness.racial_disparities
+      ) t
+    ),
+    'shelter_bed_inventory', (
+      SELECT COALESCE(json_agg(t ORDER BY total_homeless DESC), '[]'::json) FROM (
+        SELECT county, year_round, total_beds, total_homeless, beds_pct_of_pit
+        FROM homelessness.shelter_bed_inventory
+      ) t
+    ),
+    'student_homelessness', (
+      SELECT COALESCE(json_agg(t ORDER BY count_2024_25 DESC), '[]'::json) FROM (
+        SELECT county, count_2023_24, count_2024_25, numeric_change, pct_change
+        FROM homelessness.student_homelessness
+      ) t
+    ),
+    'doubled_up', (
+      SELECT COALESCE(json_agg(t ORDER BY estimate DESC NULLS LAST), '[]'::json) FROM (
+        SELECT county, estimate, margin_of_error
+        FROM homelessness.doubled_up
+      ) t
+    ),
+    'unsheltered_change', (
+      SELECT COALESCE(json_agg(t ORDER BY numeric_change DESC), '[]'::json) FROM (
+        SELECT county, count_2023, count_2025, numeric_change, pct_change
+        FROM homelessness.statewide_unsheltered_change
+      ) t
     )
   ) AS payload
 `;
@@ -127,6 +165,12 @@ export async function GET() {
     const affordableVacancy = arr(payload.affordable_housing_vacancy);
     const dataSources = arr(payload.data_sources);
     const dataDisputes = arr(payload.data_disputes);
+    const statewideByCounty = arr(payload.statewide_by_county);
+    const racialDisparities = arr(payload.racial_disparities);
+    const shelterBedInventory = arr(payload.shelter_bed_inventory);
+    const studentHomelessness = arr(payload.student_homelessness);
+    const doubledUp = arr(payload.doubled_up);
+    const unshelteredChange = arr(payload.unsheltered_change);
 
     return NextResponse.json({
       pitCounts: pitCounts.map((r) => ({
@@ -240,6 +284,50 @@ export async function GET() {
         methodologyDifference: String(r.methodology_difference),
         newsUrl: String(r.news_url ?? ""),
       })),
+      // PSU 2025 Statewide data
+      statewideByCounty: statewideByCounty.map((r) => ({
+        county: String(r.county),
+        coc: String(r.coc ?? ""),
+        sheltered: Number(r.sheltered ?? 0),
+        unsheltered: Number(r.unsheltered ?? 0),
+        total: Number(r.total ?? 0),
+        unshelteredPct: Number(r.unsheltered_pct ?? 0),
+        shelterBeds: Number(r.shelter_beds ?? 0),
+        ratePer1000: Number(r.rate_per_1000_total ?? 0),
+      })),
+      racialDisparities: racialDisparities.map((r) => ({
+        raceGroup: String(r.race_group),
+        pctOfPopulation: r.pct_of_population != null ? Number(r.pct_of_population) : null,
+        pctOfPit: r.pct_of_pit != null ? Number(r.pct_of_pit) : null,
+        disparityRatio: r.disparity_ratio != null ? Number(r.disparity_ratio) : null,
+        scope: String(r.scope ?? "statewide"),
+      })),
+      shelterBedInventory: shelterBedInventory.map((r) => ({
+        county: String(r.county),
+        yearRound: Number(r.year_round ?? 0),
+        totalBeds: Number(r.total_beds ?? 0),
+        totalHomeless: Number(r.total_homeless ?? 0),
+        bedsPctOfPit: Number(r.beds_pct_of_pit ?? 0),
+      })),
+      studentHomelessness: studentHomelessness.map((r) => ({
+        county: String(r.county),
+        count202324: Number(r.count_2023_24 ?? 0),
+        count202425: Number(r.count_2024_25 ?? 0),
+        numericChange: Number(r.numeric_change ?? 0),
+        pctChange: Number(r.pct_change ?? 0),
+      })),
+      doubledUp: doubledUp.map((r) => ({
+        county: String(r.county),
+        estimate: Number(r.estimate ?? 0),
+        marginOfError: Number(r.margin_of_error ?? 0),
+      })),
+      unshelteredChange: unshelteredChange.map((r) => ({
+        county: String(r.county),
+        count2023: Number(r.count_2023 ?? 0),
+        count2025: Number(r.count_2025 ?? 0),
+        numericChange: Number(r.numeric_change ?? 0),
+        pctChange: Number(r.pct_change ?? 0),
+      })),
       dataStatus: "live",
     });
   } catch (error) {
@@ -258,6 +346,12 @@ export async function GET() {
       affordableVacancy: [],
       dataSources: [],
       dataDisputes: [],
+      statewideByCounty: [],
+      racialDisparities: [],
+      shelterBedInventory: [],
+      studentHomelessness: [],
+      doubledUp: [],
+      unshelteredChange: [],
       dataStatus: "unavailable",
     });
   }
