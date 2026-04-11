@@ -101,7 +101,7 @@ export async function GET(): Promise<NextResponse<SafetyData & { dataStatus: str
       chartData,
       crimeByCategory,
       responseTime: [],
-      source: "Portland Police Bureau — 613,003 offense records (2016-2026)",
+      source: "Portland Police Bureau · NIBRS Offense Data",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: [
         `${latestMonthTotal.toLocaleString()} reported crimes in ${latestMonth?.date ?? "latest month"} (${ratePer1000} per 1,000 annualized).`,
@@ -124,7 +124,7 @@ export async function GET(): Promise<NextResponse<SafetyData & { dataStatus: str
       chartData: [],
       crimeByCategory: [],
       responseTime: [],
-      source: "Portland Police Bureau / BOEC 911",
+      source: "Portland Police Bureau · NIBRS Offense Data",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: ["Database connection failed. Crime data is temporarily unavailable."],
     } as unknown as SafetyData & { dataStatus: string });

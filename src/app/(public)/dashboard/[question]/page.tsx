@@ -156,32 +156,31 @@ export default async function QuestionPage({ params }: PageProps) {
             {meta.title}
           </h1>
 
-          {data && (
-            <>
-              <p className="mt-4 text-[18px] sm:text-[20px] text-white/70 font-editorial leading-snug max-w-2xl">
-                {data.headline}
-              </p>
+          {data?.headline && (
+            <p className="mt-4 text-[18px] sm:text-[20px] text-white/70 font-editorial leading-snug max-w-2xl">
+              {data.headline}
+            </p>
+          )}
 
-              {/* Trend pill */}
-              <div className="mt-6 flex items-center gap-4">
-                <span
-                  className={`trend-pill ${
-                    data.trend.direction === "up"
-                      ? "trend-positive"
-                      : data.trend.direction === "down"
-                        ? "trend-negative"
-                        : "trend-neutral"
-                  }`}
-                >
-                  {data.trend.direction === "up"
-                    ? "+"
+          {data?.trend && (
+            <div className="mt-6 flex items-center gap-4">
+              <span
+                className={`trend-pill ${
+                  data.trend.direction === "up"
+                    ? "trend-positive"
                     : data.trend.direction === "down"
-                      ? ""
-                      : ""}
-                  {data.trend.percentage}% {data.trend.label}
-                </span>
-              </div>
-            </>
+                      ? "trend-negative"
+                      : "trend-neutral"
+                }`}
+              >
+                {data.trend.direction === "up"
+                  ? "+"
+                  : data.trend.direction === "down"
+                    ? ""
+                    : ""}
+                {data.trend.percentage}% {data.trend.label}
+              </span>
+            </div>
           )}
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[var(--color-paper)] to-transparent" />
@@ -262,24 +261,7 @@ export default async function QuestionPage({ params }: PageProps) {
               </section>
             </div>
 
-            {/* Geographic Breakdown (placeholder) */}
-            <section className="mb-10">
-              <div className="flex items-center gap-2.5 mb-4">
-                <MapPin className="w-4 h-4 text-[var(--color-ink-muted)]" />
-                <h2 className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.15em]">
-                  Geographic Breakdown
-                </h2>
-              </div>
-              <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-8 text-center">
-                <p className="text-[14px] text-[var(--color-ink-muted)]">
-                  Geographic breakdown by neighborhood and ZIP code coming soon.
-                </p>
-                <p className="text-[12px] text-[var(--color-ink-muted)]/60 mt-2">
-                  This section will include an interactive map showing data by
-                  Portland neighborhood.
-                </p>
-              </div>
-            </section>
+            {/* Geographic Breakdown — removed placeholder, will add when data is ready */}
           </>
         )}
 

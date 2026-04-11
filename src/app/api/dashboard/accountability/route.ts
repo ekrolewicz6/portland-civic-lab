@@ -46,7 +46,7 @@ export async function GET() {
         label: `${officialCount} officials serving`,
       },
       chartData: [],
-      source: "Multnomah County Elections / Portland.gov",
+      source: "Multnomah County Elections · Portland.gov",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: [
         `${measureCount} voter-approved measures generating an estimated ${revenueLabel} annually.`,
@@ -63,7 +63,7 @@ export async function GET() {
       dataAvailable: false,
       trend: { direction: "flat" as const, percentage: 0, label: "no data" },
       chartData: [],
-      source: "Multnomah County Elections / Portland.gov",
+      source: "Multnomah County Elections · Portland.gov",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: [
         "Database connection failed. Accountability data is temporarily unavailable.",

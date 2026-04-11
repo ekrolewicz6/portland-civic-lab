@@ -140,7 +140,7 @@ export async function GET() {
       dataSources,
       trend: { direction: "flat", percentage: 0, label: "baseline established" },
       chartData: [],
-      source: "Portland Parks / PBOT / Library / Census / AirNow / TriMet",
+      source: "Portland Parks · PBOT · Multnomah County Library · U.S. Census · AirNow · TriMet",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights,
     });
@@ -154,7 +154,7 @@ export async function GET() {
       dataSources: [],
       trend: { direction: "flat", percentage: 0, label: "error" },
       chartData: [],
-      source: "Portland Parks / PBOT / Library / Census / AirNow / TriMet",
+      source: "Portland Parks · PBOT · Multnomah County Library · U.S. Census · AirNow · TriMet",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: ["Data temporarily unavailable."],
     });

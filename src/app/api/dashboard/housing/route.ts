@@ -31,7 +31,7 @@ export async function GET(): Promise<NextResponse<HousingData & { dataStatus: st
         permitPipeline: [],
         processingDays: [],
         medianRent: [],
-        source: "BDS PermitsNow",
+        source: "Portland Bureau of Development Services · PermitsNow",
         lastUpdated: new Date().toISOString().slice(0, 10),
         insights: ["Permit data is not currently available from the database."],
       } as unknown as HousingData & { dataStatus: string });
@@ -242,7 +242,7 @@ export async function GET(): Promise<NextResponse<HousingData & { dataStatus: st
       pctUnder90Days,
       permitBreakdown,
       monthlyTrend,
-      source: "BDS PermitsNow (34,307 real permits)",
+      source: "Portland Bureau of Development Services · PermitsNow",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: [
         `${totalPermits.toLocaleString()} permits with status Issued or Final in the database.`,
@@ -288,7 +288,7 @@ export async function GET(): Promise<NextResponse<HousingData & { dataStatus: st
       permitPipeline: [],
       processingDays: [],
       medianRent: [],
-      source: "BDS PermitsNow",
+      source: "Portland Bureau of Development Services · PermitsNow",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: ["Database connection failed. Housing data is temporarily unavailable."],
     } as unknown as HousingData & { dataStatus: string });

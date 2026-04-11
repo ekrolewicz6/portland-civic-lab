@@ -21,12 +21,12 @@ export default function Footer() {
                 Est. 2026
               </span>
             </div>
-            <p className="text-[13px] leading-relaxed max-w-sm text-white/55">
+            <p className="text-[13px] leading-relaxed max-w-sm text-white/65">
               A civic dashboard for Portland, Oregon. Eight questions, answered
               with real public data — automatically pulled from city APIs,
               government records, and verified sources.
             </p>
-            <p className="mt-4 text-[12px] leading-relaxed max-w-sm text-white/35 italic font-editorial">
+            <p className="mt-4 text-[12px] leading-relaxed max-w-sm text-white/50 italic font-editorial">
               &ldquo;Open data, open methodology, open books. If we can&apos;t
               show the math, we won&apos;t make the claim.&rdquo;
             </p>
@@ -37,7 +37,7 @@ export default function Footer() {
             <h4 className="text-[10px] font-mono font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em] mb-4">
               Sections
             </h4>
-            <ul className="text-[13px] space-y-2 text-white/55">
+            <ul className="text-[13px] space-y-2 text-white/65">
               <li>
                 <Link
                   href="/dashboard/housing"
@@ -110,7 +110,7 @@ export default function Footer() {
             <h4 className="text-[10px] font-mono font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em] mb-4">
               Data Sources
             </h4>
-            <ul className="text-[13px] space-y-2 text-white/55">
+            <ul className="text-[13px] space-y-2 text-white/65">
               <li>City of Portland Open Data</li>
               <li>Multnomah County HSD &amp; Health</li>
               <li>Oregon Department of Education</li>
@@ -119,7 +119,7 @@ export default function Footer() {
               <li>HUD &amp; HUD-PIT counts</li>
               <li>Metro SHS Quarterly Reports</li>
             </ul>
-            <p className="mt-4 text-[11px] leading-relaxed text-white/35">
+            <p className="mt-4 text-[11px] leading-relaxed text-white/50">
               Every metric links back to its source. See methodology notes on
               each section.
             </p>
@@ -128,11 +128,11 @@ export default function Footer() {
 
         {/* Bottom rule */}
         <div className="mt-12 pt-6 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[12px] text-white/40">
+          <p className="text-[12px] text-white/55">
             &copy; {year} Portland Civic Lab &middot; Public data, freely
             available
           </p>
-          <p className="text-[10px] text-white/25 font-mono uppercase tracking-[0.2em]">
+          <p className="text-[10px] text-white/45 font-mono uppercase tracking-[0.2em]">
             Auto-updated &middot; Source-linked data
           </p>
         </div>
