@@ -1,12 +1,16 @@
 {
   "crons": [
     {
-      "path": "/api/cron/fetch-auditor-news",
-      "schedule": "0 8 * * 1"
+      "path": "/api/cron/sync-permits",
+      "schedule": "0 5 * * *"
     },
     {
       "path": "/api/cron/refresh-housing-matviews",
       "schedule": "0 6 * * *"
+    },
+    {
+      "path": "/api/cron/fetch-auditor-news",
+      "schedule": "0 8 * * 1"
     }
   ]
 }
