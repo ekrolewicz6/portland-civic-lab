@@ -109,7 +109,7 @@ export async function GET(): Promise<NextResponse<HousingData & { dataStatus: st
       avgProcessingDays: Number(r.avg_days || 0),
     }));
 
-    // 7. Monthly permit issuance for the last 24 months
+    // 7. Monthly permit issuance for the last 24 months (exclude future dates)
     const monthlyTrendRows = await sql`
       SELECT
         TO_CHAR(date_trunc('month', issued_date), 'YYYY-MM') as date,
@@ -117,6 +117,7 @@ export async function GET(): Promise<NextResponse<HousingData & { dataStatus: st
       FROM housing.permits
       WHERE issued_date IS NOT NULL
         AND issued_date >= (CURRENT_DATE - INTERVAL '24 months')
+        AND issued_date <= CURRENT_DATE
       GROUP BY date_trunc('month', issued_date)
       ORDER BY date_trunc('month', issued_date)
     `;
@@ -127,13 +128,14 @@ export async function GET(): Promise<NextResponse<HousingData & { dataStatus: st
       label: "Permits issued",
     }));
 
-    // 8. Build full monthly pipeline (all data)
+    // 8. Build full monthly pipeline (all data, exclude future dates)
     const monthlyRows = await sql`
       SELECT
         TO_CHAR(date_trunc('month', issued_date), 'YYYY-MM') as date,
         count(*) as count
       FROM housing.permits
       WHERE issued_date IS NOT NULL
+        AND issued_date <= CURRENT_DATE
       GROUP BY date_trunc('month', issued_date)
       ORDER BY date_trunc('month', issued_date)
     `;
@@ -144,13 +146,16 @@ export async function GET(): Promise<NextResponse<HousingData & { dataStatus: st
       label: "Permits filed",
     }));
 
-    // 9. Build monthly processing days
+    // 9. Build monthly processing days (exclude negative/garbage and future dates)
     const processingRows = await sql`
       SELECT
         TO_CHAR(date_trunc('month', issued_date), 'YYYY-MM') as date,
         avg(processing_days) as avg_days
       FROM housing.permits
-      WHERE issued_date IS NOT NULL AND processing_days IS NOT NULL
+      WHERE issued_date IS NOT NULL
+        AND issued_date <= CURRENT_DATE
+        AND processing_days IS NOT NULL
+        AND processing_days >= 0
       GROUP BY date_trunc('month', issued_date)
       ORDER BY date_trunc('month', issued_date)
     `;

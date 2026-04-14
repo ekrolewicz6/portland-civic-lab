@@ -125,9 +125,20 @@ function featureToRow(f: any): PermitRow | null {
   if (!a.OBJECTID) return null;
 
   const appDate = epochToDateStr(a.INTAKECOMPLETEDATE);
-  const issuedDate = epochToDateStr(a.ISSUED);
+  let issuedDate = epochToDateStr(a.ISSUED);
   const finalDate = epochToDateStr(a.FINALED);
   if (!appDate && !issuedDate) return null;
+
+  // Reject issued_date that predates application_date (ArcGIS garbage)
+  if (appDate && issuedDate && issuedDate < appDate) {
+    issuedDate = null;
+  }
+
+  // Cap issued_date to today — future dates are pre-approvals or garbage
+  const todayStr = new Date().toISOString().slice(0, 10);
+  if (issuedDate && issuedDate > todayStr) {
+    issuedDate = null;
+  }
 
   const address = [a.HOUSE?.trim(), a.DIRECTION, a.PROPSTREET, a.STREETTYPE]
     .filter(Boolean)

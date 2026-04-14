@@ -333,7 +333,7 @@ export async function GET(): Promise<NextResponse<HousingDetailResponse>> {
         MIN(issued_date)::text AS first_permit,
         MAX(issued_date)::text AS last_permit
       FROM housing.permits
-      WHERE issued_date IS NOT NULL AND valuation > 0
+      WHERE issued_date IS NOT NULL AND issued_date <= CURRENT_DATE AND valuation > 0
       GROUP BY EXTRACT(YEAR FROM issued_date)
       ORDER BY yr
     `;
@@ -362,7 +362,7 @@ export async function GET(): Promise<NextResponse<HousingDetailResponse>> {
         count(*) FILTER (WHERE processing_days <= 90)::int AS under_90
       FROM housing.permits
       WHERE processing_days IS NOT NULL
-        AND processing_days > 0
+        AND processing_days >= 0
         AND processing_days <= 365
         AND ${sql.unsafe(BUILDING_PERMIT_FILTER)}
     `;
@@ -430,7 +430,7 @@ export async function GET(): Promise<NextResponse<HousingDetailResponse>> {
         count(DISTINCT CASE WHEN permit_type_mapped = 'Single Family Dwelling' THEN permit_number END)::int as single_family,
         count(DISTINCT CASE WHEN permit_type_mapped = 'Commercial/Multifamily' THEN permit_number END)::int as commercial_multi
       FROM housing.permits
-      WHERE issued_date IS NOT NULL AND issued_date >= '2023-01-01'
+      WHERE issued_date IS NOT NULL AND issued_date >= '2023-01-01' AND issued_date <= CURRENT_DATE
         AND permit_type IN ('Residential 1 & 2 Family Permit', 'Commercial Building Permit', 'Facility Permit')
       GROUP BY 1 ORDER BY 1
     `;
