@@ -84,7 +84,7 @@ function StatusBadge({ status }: { status: string }) {
   const cfg = STATUS_CONFIG[status] ?? STATUS_CONFIG.unverifiable;
   return (
     <span
-      className="text-[10px] font-semibold px-2 py-0.5 rounded-sm uppercase tracking-wide whitespace-nowrap"
+      className="text-[12px] font-semibold px-2.5 py-1 rounded-sm uppercase tracking-wide whitespace-nowrap"
       style={{ backgroundColor: `${cfg.color}15`, color: cfg.color }}
     >
       {cfg.label}
@@ -103,16 +103,16 @@ function MetricComparison({
 }) {
   const suffix = unit ? ` ${unit}` : "";
   return (
-    <div className="mt-3 flex items-center gap-3 text-[12px] font-mono">
-      <div className="flex items-center gap-1.5">
-        <span className="w-2 h-2 rounded-full bg-[#9ca3af]" />
+    <div className="mt-3 flex items-center gap-4 text-[14px] font-mono">
+      <div className="flex items-center gap-2">
+        <span className="w-2.5 h-2.5 rounded-full bg-[#9ca3af]" />
         <span className="text-[var(--color-ink-muted)]">
           Claimed: {target}{suffix}
         </span>
       </div>
-      <div className="flex items-center gap-1.5">
-        <span className="w-2 h-2 rounded-full bg-[#3d7a5a]" />
-        <span className="text-[var(--color-ink)]">
+      <div className="flex items-center gap-2">
+        <span className="w-2.5 h-2.5 rounded-full bg-[#3d7a5a]" />
+        <span className="text-[var(--color-ink)] font-semibold">
           Actual: {actual}{suffix}
         </span>
       </div>
@@ -136,11 +136,11 @@ function ProgressIndicator({
 
   return (
     <div className="mt-3">
-      <div className="flex items-center justify-between text-[11px] text-[var(--color-ink-muted)] mb-1">
+      <div className="flex items-center justify-between text-[13px] text-[var(--color-ink-muted)] mb-1.5">
         <span className="font-mono">Baseline: {baseline}</span>
         <span className="font-mono">Target: {target} by {targetDate}</span>
       </div>
-      <div className="h-1.5 bg-[var(--color-parchment)] rounded-full overflow-hidden">
+      <div className="h-2 bg-[var(--color-parchment)] rounded-full overflow-hidden">
         <div
           className="h-full rounded-full transition-all duration-500"
           style={{ width: `${pct}%`, backgroundColor: "#c8956c" }}
@@ -162,10 +162,10 @@ function PromiseCard({ promise }: { promise: Promise }) {
         style={{ backgroundColor: cfg.color }}
       />
 
-      <div className="p-5">
+      <div className="p-6">
         {/* Header row: category + status badge */}
-        <div className="flex items-start justify-between gap-3 mb-2">
-          <span className="text-[10px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+        <div className="flex items-start justify-between gap-3 mb-3">
+          <span className="text-[13px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
             {CATEGORY_LABELS[promise.category] ?? promise.category}
           </span>
           <StatusBadge status={promise.verificationStatus} />
@@ -173,20 +173,20 @@ function PromiseCard({ promise }: { promise: Promise }) {
 
         {/* Claim text */}
         <div
-          className="border-l-2 pl-3 mb-3"
+          className="border-l-3 pl-4 mb-4"
           style={{ borderColor: `${cfg.color}40` }}
         >
           <p
-            className={`text-[13px] leading-relaxed text-[var(--color-ink)] ${
+            className={`text-[16px] leading-relaxed text-[var(--color-ink)] ${
               promise.isDirectQuote ? "italic" : ""
             }`}
           >
-            {promise.isDirectQuote ? `"${promise.claimText}"` : promise.claimText}
+            {promise.isDirectQuote ? `\u201C${promise.claimText}\u201D` : promise.claimText}
           </p>
         </div>
 
         {/* Source */}
-        <p className="text-[11px] text-[var(--color-ink-muted)] mb-1">
+        <p className="text-[13px] text-[var(--color-ink-muted)] mb-2">
           {promise.speech}, {promise.speechDate ? new Date(promise.speechDate).toLocaleDateString("en-US", { month: "long", year: "numeric" }) : ""}
         </p>
 
@@ -210,9 +210,9 @@ function PromiseCard({ promise }: { promise: Promise }) {
 
         {/* Data needed callout */}
         {promise.dataNeeded && (
-          <div className="mt-3 flex items-start gap-2 bg-[var(--color-parchment)]/30 border border-[var(--color-parchment)] rounded-sm px-3 py-2">
-            <HelpCircle className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-[var(--color-ink-muted)]" />
-            <p className="text-[11px] text-[var(--color-ink-muted)] leading-relaxed">
+          <div className="mt-4 flex items-start gap-2.5 bg-[var(--color-parchment)]/30 border border-[var(--color-parchment)] rounded-sm px-4 py-3">
+            <HelpCircle className="w-4 h-4 mt-0.5 flex-shrink-0 text-[var(--color-ink-muted)]" />
+            <p className="text-[14px] text-[var(--color-ink-muted)] leading-relaxed">
               <span className="font-semibold">Data needed:</span> {promise.dataNeeded}
             </p>
           </div>
@@ -220,20 +220,20 @@ function PromiseCard({ promise }: { promise: Promise }) {
 
         {/* Verification notes (collapsible) */}
         {promise.verificationNotes && (
-          <div className="mt-3">
+          <div className="mt-4">
             <button
               onClick={() => setNotesOpen(!notesOpen)}
-              className="flex items-center gap-1.5 text-[11px] font-medium text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors"
+              className="flex items-center gap-2 text-[13px] font-medium text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors"
             >
               {notesOpen ? (
-                <ChevronUp className="w-3.5 h-3.5" />
+                <ChevronUp className="w-4 h-4" />
               ) : (
-                <ChevronDown className="w-3.5 h-3.5" />
+                <ChevronDown className="w-4 h-4" />
               )}
               Verification notes
             </button>
             {notesOpen && (
-              <p className="mt-1.5 text-[12px] text-[var(--color-ink-light)] leading-relaxed pl-5">
+              <p className="mt-2 text-[14px] text-[var(--color-ink-light)] leading-relaxed pl-6">
                 {promise.verificationNotes}
               </p>
             )}
@@ -242,7 +242,7 @@ function PromiseCard({ promise }: { promise: Promise }) {
 
         {/* Data source attribution */}
         {promise.dataSourceName && (
-          <p className="mt-2 text-[10px] font-mono text-[var(--color-ink-muted)]/60 uppercase tracking-wider">
+          <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 uppercase tracking-wider">
             Source: {promise.dataSourceName}
           </p>
         )}
@@ -314,24 +314,24 @@ export default function PromiseTracker() {
   return (
     <div className="space-y-5">
       {/* Summary stat bar */}
-      <div className="flex flex-wrap gap-2.5">
+      <div className="flex flex-wrap gap-3">
         {statusOrder.map((status) => {
           const cfg = STATUS_CONFIG[status];
           const count = summary[status] ?? 0;
           return (
             <div
               key={status}
-              className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm px-4 py-2.5 flex items-center gap-2.5 min-w-[120px]"
+              className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm px-5 py-3 flex items-center gap-3 min-w-[140px]"
             >
               <span
-                className="w-2 h-2 rounded-full flex-shrink-0"
+                className="w-3 h-3 rounded-full flex-shrink-0"
                 style={{ backgroundColor: cfg.color }}
               />
               <div>
-                <p className="text-[16px] font-semibold font-mono text-[var(--color-ink)]">
+                <p className="text-[20px] font-semibold font-mono text-[var(--color-ink)]">
                   {count}
                 </p>
-                <p className="text-[10px] text-[var(--color-ink-muted)] uppercase tracking-wider">
+                <p className="text-[12px] text-[var(--color-ink-muted)] uppercase tracking-wider">
                   {cfg.label}
                 </p>
               </div>
@@ -341,10 +341,10 @@ export default function PromiseTracker() {
       </div>
 
       {/* Category filter pills */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2.5">
         <button
           onClick={() => setActiveCategory(null)}
-          className={`text-[11px] font-semibold uppercase tracking-[0.1em] px-3 py-1.5 rounded-sm border transition-colors ${
+          className={`text-[13px] font-semibold uppercase tracking-[0.08em] px-4 py-2 rounded-sm border transition-colors ${
             activeCategory === null
               ? "bg-[#8a5c6a] text-white border-[#8a5c6a]"
               : "bg-transparent text-[var(--color-ink-muted)] border-[var(--color-parchment)] hover:border-[#8a5c6a]/40"
@@ -361,7 +361,7 @@ export default function PromiseTracker() {
               onClick={() =>
                 setActiveCategory(activeCategory === cat ? null : cat)
               }
-              className={`text-[11px] font-semibold uppercase tracking-[0.1em] px-3 py-1.5 rounded-sm border transition-colors ${
+              className={`text-[13px] font-semibold uppercase tracking-[0.08em] px-4 py-2 rounded-sm border transition-colors ${
                 activeCategory === cat
                   ? "bg-[#8a5c6a] text-white border-[#8a5c6a]"
                   : "bg-transparent text-[var(--color-ink-muted)] border-[var(--color-parchment)] hover:border-[#8a5c6a]/40"
@@ -375,11 +375,11 @@ export default function PromiseTracker() {
 
       {/* Promise cards grid */}
       {filteredPromises.length === 0 ? (
-        <p className="text-[13px] text-[var(--color-ink-muted)] py-8 text-center">
+        <p className="text-[15px] text-[var(--color-ink-muted)] py-8 text-center">
           No claims in this category.
         </p>
       ) : (
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2">
           {filteredPromises.map((p) => (
             <PromiseCard key={p.promiseId} promise={p} />
           ))}
@@ -387,7 +387,7 @@ export default function PromiseTracker() {
       )}
 
       {/* Footer attribution */}
-      <p className="text-[10px] font-mono text-[var(--color-ink-muted)]/50 uppercase tracking-wider text-right">
+      <p className="text-[12px] font-mono text-[var(--color-ink-muted)]/50 uppercase tracking-wider text-right">
         {data.source} &middot; Updated {data.lastUpdated}
       </p>
     </div>
