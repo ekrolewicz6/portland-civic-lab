@@ -24,6 +24,25 @@ export async function GET() {
 
     const officialCount = Number(officialRows[0].official_count);
 
+    // Count promises by verification status
+    const promiseRows = await sql`
+      SELECT
+        count(*)::int AS total,
+        count(*) FILTER (WHERE verification_status = 'verified')::int AS verified,
+        count(*) FILTER (WHERE verification_status = 'partially_verified')::int AS partially_verified,
+        count(*) FILTER (WHERE verification_status = 'in_progress')::int AS in_progress,
+        count(*) FILTER (WHERE verification_status = 'unverifiable')::int AS unverifiable,
+        count(*) FILTER (WHERE verification_status = 'contradicted')::int AS contradicted
+      FROM accountability.promises
+    `;
+
+    const promiseTotal = Number(promiseRows[0].total);
+    const promiseVerified = Number(promiseRows[0].verified);
+    const promisePartial = Number(promiseRows[0].partially_verified);
+    const promiseInProgress = Number(promiseRows[0].in_progress);
+    const promiseContradicted = Number(promiseRows[0].contradicted);
+    const promiseUnverifiable = Number(promiseRows[0].unverifiable);
+
     // Format revenue as $XXM/year
     const revenueLabel =
       totalRevenue >= 1_000_000_000
@@ -32,8 +51,12 @@ export async function GET() {
           ? `$${Math.round(totalRevenue / 1_000_000)}M`
           : `$${totalRevenue.toLocaleString()}`;
 
+    const promisePhrase = promiseTotal > 0
+      ? ` — ${promiseTotal} promises tracked (${promiseVerified} verified)`
+      : "";
+
     const headline =
-      `${measureCount} ballot measures generating ${revenueLabel}/year — ${officialCount} elected officials serving`;
+      `${measureCount} ballot measures generating ${revenueLabel}/year — ${officialCount} elected officials serving${promisePhrase}`;
 
     return NextResponse.json({
       headline,
@@ -48,9 +71,22 @@ export async function GET() {
       chartData: [],
       source: "Multnomah County Elections · Portland.gov",
       lastUpdated: new Date().toISOString().slice(0, 10),
+      promises: {
+        total: promiseTotal,
+        verified: promiseVerified,
+        partiallyVerified: promisePartial,
+        inProgress: promiseInProgress,
+        unverifiable: promiseUnverifiable,
+        contradicted: promiseContradicted,
+      },
       insights: [
         `${measureCount} voter-approved measures generating an estimated ${revenueLabel} annually.`,
         `${officialCount} elected officials currently serving.`,
+        ...(promiseTotal > 0
+          ? [
+              `${promiseTotal} mayoral promises tracked: ${promiseVerified} verified, ${promiseInProgress} in progress, ${promiseContradicted} contradicted.`,
+            ]
+          : []),
         "Campaign finance data available from ORESTAR database (not yet integrated).",
       ],
     });

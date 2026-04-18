@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import StatGrid from "@/components/charts/StatGrid";
 import DataNeeded from "@/components/dashboard/DataNeeded";
 import NewsContext from "../NewsContext";
-import { Vote, Users, Lightbulb } from "lucide-react";
+import PromiseTracker from "./PromiseTracker";
+import { Vote, Users, Lightbulb, Target } from "lucide-react";
 
 interface BallotMeasure {
   measureNumber: string;
@@ -101,6 +102,12 @@ export default function AccountabilityDetail() {
     <div className="space-y-10">
       {/* News Context */}
       <NewsContext category="accountability" />
+
+      {/* Promise Tracker */}
+      <section>
+        <SectionHeader icon={Target} title="Portland's Promise Tracker" color="#8a5c6a" />
+        <PromiseTracker />
+      </section>
 
       {/* 1. Summary stats */}
       <section>
