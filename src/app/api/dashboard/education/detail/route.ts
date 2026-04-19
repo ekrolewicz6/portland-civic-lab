@@ -61,7 +61,7 @@ const COMBINED_QUERY = `
     ),
     'graduation_rates', (
       SELECT COALESCE(json_agg(t ORDER BY t.district_name, t.school_year), '[]'::json) FROM (
-        SELECT district_name, school_year, rate_4yr, rate_5yr, completers
+        SELECT district_name, school_year, rate_4yr, rate_5yr
         FROM education.graduation_rates
         WHERE district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
       ) t
@@ -123,7 +123,6 @@ export async function GET() {
       year: r.school_year as string,
       rate4yr: r.rate_4yr !== null ? Number(r.rate_4yr) : null,
       rate5yr: r.rate_5yr !== null ? Number(r.rate_5yr) : null,
-      completers: r.completers !== null ? Number(r.completers) : null,
     }));
 
     // Transform test scores
