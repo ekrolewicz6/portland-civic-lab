@@ -123,18 +123,78 @@ export async function GET() {
       // Ignore
     }
 
+    // Real foot traffic from Clean & Safe / Placer.ai published reports
+    let footTrafficTrend: {
+      month: string;
+      visits: number;
+      is_annual_total: boolean;
+    }[] | null = null;
+    let officeVacancyTrend: {
+      quarter: string;
+      vacancy_pct: number;
+    }[] | null = null;
+
+    try {
+      const ftRows = await sql`
+        SELECT TO_CHAR(month, 'YYYY-MM') AS month, visits::int, is_annual_total
+        FROM downtown.foot_traffic
+        ORDER BY month
+      `;
+      if (ftRows.length > 0) {
+        footTrafficTrend = ftRows.map((r) => ({
+          month: r.month as string,
+          visits: Number(r.visits),
+          is_annual_total: Boolean(r.is_annual_total),
+        }));
+      }
+    } catch {
+      // downtown.foot_traffic may not exist yet
+    }
+
+    try {
+      const ovRows = await sql`
+        SELECT quarter, vacancy_pct::float
+        FROM downtown.office_vacancy
+        ORDER BY quarter_date
+      `;
+      if (ovRows.length > 0) {
+        officeVacancyTrend = ovRows.map((r) => ({
+          quarter: r.quarter as string,
+          vacancy_pct: Number(r.vacancy_pct),
+        }));
+      }
+    } catch {
+      // downtown.office_vacancy may not exist yet
+    }
+
     return NextResponse.json({
       // REAL data
       graffitiTrend,
       trimetData,
       vacancyTrend,
       usNationalBenchmark,
-      // UNAVAILABLE — needs subscriptions
-      footTrafficTrend: null,
+      footTrafficTrend,
+      officeVacancyTrend,
       weekdayVsWeekend: null,
       recoveryMilestones: null,
-      dataStatus: vacancyTrend ? "good" : "partial",
+      dataStatus: "good",
       dataSources: [
+        {
+          name: "Foot Traffic",
+          status: footTrafficTrend ? "live" : "needs_data",
+          provider: "Portland Clean & Safe / Placer.ai",
+          action: footTrafficTrend
+            ? `${footTrafficTrend.length} data points from published reports`
+            : "Run: npx tsx scripts/seed-boec-downtown.ts --downtown-only",
+        },
+        {
+          name: "Office Vacancy",
+          status: officeVacancyTrend ? "live" : "needs_data",
+          provider: "CBRE / Colliers / Kidder Mathews",
+          action: officeVacancyTrend
+            ? `${officeVacancyTrend.length} quarterly data points`
+            : "Run: npx tsx scripts/seed-boec-downtown.ts --downtown-only",
+        },
         {
           name: "Graffiti Reports",
           status: "live",
@@ -157,12 +217,6 @@ export async function GET() {
           name: "US National Benchmark (FRED)",
           status: usNationalBenchmark ? "live" : "needs_data",
           provider: "FRED / Census Bureau",
-        },
-        {
-          name: "Foot Traffic",
-          status: "needs_subscription",
-          provider: "Placer.ai",
-          action: "$2K-$5K/mo subscription or Clean & Safe partnership",
         },
       ],
     });

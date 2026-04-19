@@ -128,7 +128,63 @@ export async function GET(): Promise<NextResponse<DowntownData & { dataStatus: s
         `TriMet operates ${trimetSummary.routes} routes across ${trimetSummary.stops.toLocaleString()} stops: ${Object.entries(trimetSummary.routesByType).map(([t, c]) => `${c} ${t}`).join(", ")}.`
       );
     }
-    insights.push("Foot traffic data unavailable — requires Placer.ai subscription ($2-5K/mo) or Clean & Safe partnership.");
+    // Real foot traffic from Clean & Safe / Placer.ai published reports
+    let footTrafficData: { date: string; value: number; label?: string }[] = [];
+    let footTrafficInsight: string | null = null;
+    try {
+      const ftRows = await sql`
+        SELECT TO_CHAR(month, 'YYYY-MM') AS date, visits, is_annual_total
+        FROM downtown.foot_traffic
+        ORDER BY month
+      `;
+      if (ftRows.length > 0) {
+        footTrafficData = ftRows.map((r) => ({
+          date: r.date as string,
+          value: Number(r.visits),
+          label: r.is_annual_total
+            ? `${(Number(r.visits) / 1_000_000).toFixed(0)}M annual total`
+            : `${(Number(r.visits) / 1_000_000).toFixed(1)}M monthly`,
+        }));
+        // Find 2019 annual and latest annual for recovery comparison
+        const annual2019 = ftRows.find((r) => r.is_annual_total && (r.date as string).startsWith("2019"));
+        const latestAnnual = [...ftRows].reverse().find((r) => r.is_annual_total);
+        if (annual2019 && latestAnnual) {
+          const recoveryPct = Math.round((Number(latestAnnual.visits) / Number(annual2019.visits)) * 100);
+          const year = (latestAnnual.date as string).slice(0, 4);
+          footTrafficInsight = `Downtown foot traffic: ${(Number(latestAnnual.visits) / 1_000_000).toFixed(0)}M visits (${year}), ${recoveryPct}% of pre-pandemic 2019 levels (${(Number(annual2019.visits) / 1_000_000).toFixed(0)}M). Saturday recovery: 88.6%.`;
+        }
+      }
+    } catch {
+      // downtown.foot_traffic may not exist yet
+    }
+
+    if (footTrafficInsight) {
+      insights.push(footTrafficInsight);
+    }
+
+    // Real office vacancy from dedicated table
+    let officeVacancyData: { quarter: string; vacancy_pct: number }[] = [];
+    try {
+      const ovRows = await sql`
+        SELECT quarter, vacancy_pct::float
+        FROM downtown.office_vacancy
+        ORDER BY quarter_date
+      `;
+      if (ovRows.length > 0) {
+        officeVacancyData = ovRows.map((r) => ({
+          quarter: r.quarter as string,
+          vacancy_pct: Number(r.vacancy_pct),
+        }));
+        const latest = ovRows[ovRows.length - 1];
+        const peak = ovRows.reduce((max, r) => Number(r.vacancy_pct) > Number(max.vacancy_pct) ? r : max, ovRows[0]);
+        insights.push(
+          `Office vacancy: ${Number(latest.vacancy_pct).toFixed(1)}% (${latest.quarter}). ` +
+          `Peak was ${Number(peak.vacancy_pct).toFixed(1)}% (${peak.quarter}).`
+        );
+      }
+    } catch {
+      // downtown.office_vacancy may not exist yet
+    }
 
     const headlineValue = latestVacancy?.office ?? (trimetSummary
       ? trimetSummary.routes
@@ -167,10 +223,10 @@ export async function GET(): Promise<NextResponse<DowntownData & { dataStatus: s
       dataStatus: latestVacancy ? "good" : "partial",
       trend: trendInfo,
       chartData: vacancyChartData.length > 0 ? vacancyChartData : graffitiChartData,
-      footTraffic: [], // Needs Placer.ai subscription ($2-5K/mo)
+      footTraffic: footTrafficData, // Real data from Clean & Safe / Placer.ai published reports
       vacancyRate: vacancyChartData, // REAL data from CBRE/Colliers/JLL/Kidder Mathews quarterly reports
       dwellTime: [], // Needs Placer.ai subscription
-      source: "CBRE · Colliers · JLL · Kidder Mathews · TriMet GTFS · Portland BPS",
+      source: "Clean & Safe / Placer.ai · CBRE / Colliers / Kidder Mathews · TriMet GTFS · Portland BPS",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights,
     };
@@ -188,7 +244,7 @@ export async function GET(): Promise<NextResponse<DowntownData & { dataStatus: s
       footTraffic: [],
       vacancyRate: [],
       dwellTime: [],
-      source: "CBRE · Colliers · JLL · Kidder Mathews · TriMet GTFS · Portland BPS",
+      source: "Clean & Safe / Placer.ai · CBRE / Colliers / Kidder Mathews · TriMet GTFS · Portland BPS",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: ["Database connection failed. Downtown data is temporarily unavailable."],
     } as unknown as DowntownData & { dataStatus: string });

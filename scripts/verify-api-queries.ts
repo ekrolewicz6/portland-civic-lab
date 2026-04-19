@@ -208,6 +208,24 @@ async function main() {
     SELECT count(*)::int AS cnt FROM environment.ghg_emissions
   `, 1);
 
+  // ── BOEC 911 ───────────────────────────────────────────────────────
+  await test("safety/boec_911_monthly", `
+    SELECT month, pct_answered_15sec FROM safety.boec_911_monthly ORDER BY month
+  `, 10);
+
+  await test("safety/boec_call_volume_annual", `
+    SELECT year, total_calls FROM safety.boec_call_volume_annual ORDER BY year
+  `, 5);
+
+  // ── Downtown (foot traffic + office vacancy) ─────────────────────
+  await test("downtown/foot_traffic", `
+    SELECT month, visits FROM downtown.foot_traffic ORDER BY month
+  `, 10);
+
+  await test("downtown/office_vacancy", `
+    SELECT quarter, vacancy_pct FROM downtown.office_vacancy ORDER BY quarter
+  `, 8);
+
   // ── Fiscal (budget) ──────────────────────────────────────────────
   await test("fiscal/program_offers", `
     SELECT count(*)::int AS cnt FROM fiscal.program_offers

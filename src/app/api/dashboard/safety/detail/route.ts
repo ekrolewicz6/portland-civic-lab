@@ -341,9 +341,27 @@ export async function GET(): Promise<NextResponse<SafetyDetailResponse>> {
       );
     }
 
-    topInsights.push(
-      "911 response times are unavailable — requires public records request to BOEC."
-    );
+    // BOEC 911 performance — real data from Director's Report PDFs
+    try {
+      const boecLatest = await sql`
+        SELECT pct_answered_15sec, avg_wait_seconds, certified_dispatchers, vacancies,
+               TO_CHAR(month, 'Mon YYYY') AS month_label
+        FROM safety.boec_911_monthly
+        ORDER BY month DESC
+        LIMIT 1
+      `;
+      if (boecLatest.length > 0) {
+        const b = boecLatest[0];
+        topInsights.push(
+          `BOEC 911: ${b.pct_answered_15sec}% answered within 15 sec (${b.month_label}), avg wait ${b.avg_wait_seconds}s. ` +
+          `${b.certified_dispatchers} certified dispatchers, ${b.vacancies} vacancies. NENA standard is 90%/15s.`
+        );
+      }
+    } catch {
+      topInsights.push(
+        "911 response times are unavailable — requires public records request to BOEC."
+      );
+    }
 
     const result: SafetyDetailResponse = {
       crimeByCategory,
