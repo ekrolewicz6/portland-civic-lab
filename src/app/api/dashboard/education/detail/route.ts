@@ -93,6 +93,29 @@ const COMBINED_QUERY = `
           AND students_included >= 10
       ) t
     ),
+    'demographics', (
+      SELECT COALESCE(json_agg(t ORDER BY t.district_name, t.total DESC), '[]'::json) FROM (
+        SELECT d.district_name, d.demographic_group,
+               d.demographic_count as total,
+               ROUND((d.demographic_count * 100.0 / NULLIF(e.enrollment, 0))::numeric, 1) as pct
+        FROM education.enrollment d
+        JOIN education.enrollment e
+          ON e.district_name = d.district_name
+          AND e.school_year = d.school_year
+          AND e.grade_level = 'Total'
+          AND e.demographic_group IS NULL
+        WHERE d.grade_level = 'Total' AND d.demographic_group IS NOT NULL
+          AND d.school_year = (SELECT MAX(school_year) FROM education.enrollment)
+          AND d.district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
+      ) t
+    ),
+    'staffing', (
+      SELECT COALESCE(json_agg(t ORDER BY t.district_name, t.school_year), '[]'::json) FROM (
+        SELECT school_year, district_name, enrollment, teachers_fte, pupil_teacher_ratio
+        FROM education.staffing
+        WHERE district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
+      ) t
+    ),
     'latest_year', (
       SELECT MAX(school_year) FROM education.enrollment
     )
@@ -117,6 +140,8 @@ export async function GET() {
     const testScoresRaw = (payload.test_scores as Row[]) ?? [];
     const absenteeismRaw = (payload.absenteeism as Row[]) ?? [];
     const absenteeismEquityRaw = (payload.absenteeism_equity as Row[]) ?? [];
+    const demographicsRaw = (payload.demographics as Row[]) ?? [];
+    const staffingRaw = (payload.staffing as Row[]) ?? [];
     const latestYear = (payload.latest_year as string) ?? null;
 
     // Transform enrollment by district
@@ -172,6 +197,23 @@ export async function GET() {
       group: r.student_group as string,
       chronicPct: r.chronically_absent_pct !== null ? Number(r.chronically_absent_pct) : null,
       n: r.students_included !== null ? Number(r.students_included) : null,
+    }));
+
+    // Transform demographics
+    const demographics = demographicsRaw.map((r) => ({
+      districtName: r.district_name as string,
+      group: r.demographic_group as string,
+      total: r.total !== null ? Number(r.total) : 0,
+      pct: r.pct !== null ? Number(r.pct) : 0,
+    }));
+
+    // Transform staffing
+    const staffing = staffingRaw.map((r) => ({
+      year: r.school_year as string,
+      districtName: r.district_name as string,
+      enrollment: r.enrollment !== null ? Number(r.enrollment) : null,
+      teachersFte: r.teachers_fte !== null ? Number(r.teachers_fte) : null,
+      pupilTeacherRatio: r.pupil_teacher_ratio !== null ? Number(r.pupil_teacher_ratio) : null,
     }));
 
     // Compute hero stats
@@ -289,6 +331,8 @@ export async function GET() {
       testScores,
       absenteeism,
       absenteeismEquity,
+      demographics,
+      staffing,
       heroStats,
       topInsights,
       latestYear,
@@ -309,6 +353,8 @@ export async function GET() {
       testScores: [],
       absenteeism: [],
       absenteeismEquity: [],
+      demographics: [],
+      staffing: [],
       heroStats: null,
       topInsights: [],
       latestYear: null,

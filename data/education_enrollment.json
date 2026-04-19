@@ -1,5 +1,5675 @@
 [
   {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6275,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "K",
+    "enrollment": 2842,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "1",
+    "enrollment": 0.4529083665338,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "2",
+    "enrollment": 381,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "3",
+    "enrollment": 0.0607171314741,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "4",
+    "enrollment": 459,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "5",
+    "enrollment": 440,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "6",
+    "enrollment": 471,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "7",
+    "enrollment": 499,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "8",
+    "enrollment": 463,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "9",
+    "enrollment": 454,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "10",
+    "enrollment": 465,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "11",
+    "enrollment": 512,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "12",
+    "enrollment": 487,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6275,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 3190,
+    "demographic_pct": 0.5083665338645
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6275,
+    "demographic_group": "Asian",
+    "demographic_count": 3085,
+    "demographic_pct": 0.4916334661354
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6275,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 56,
+    "demographic_pct": 0.0089243027888
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6275,
+    "demographic_group": "Black/African American",
+    "demographic_count": 780,
+    "demographic_pct": 0.1243027888446
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6275,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 157,
+    "demographic_pct": 0.0250199203187
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6275,
+    "demographic_group": "White",
+    "demographic_count": 386,
+    "demographic_pct": 0.0615139442231
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6275,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 1673,
+    "demographic_pct": 0.2666135458167
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10616,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "K",
+    "enrollment": 4241,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "1",
+    "enrollment": 0.3994913338357,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "2",
+    "enrollment": 694,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "3",
+    "enrollment": 0.0653730218538,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "4",
+    "enrollment": 768,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "5",
+    "enrollment": 796,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "6",
+    "enrollment": 816,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "7",
+    "enrollment": 866,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "8",
+    "enrollment": 873,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "9",
+    "enrollment": 849,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "10",
+    "enrollment": 785,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "11",
+    "enrollment": 808,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "12",
+    "enrollment": 806,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10616,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 5411,
+    "demographic_pct": 0.5097023360964
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10616,
+    "demographic_group": "Asian",
+    "demographic_count": 5205,
+    "demographic_pct": 0.4902976639035
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10616,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 72,
+    "demographic_pct": 0.0067822155237
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10616,
+    "demographic_group": "Black/African American",
+    "demographic_count": 1635,
+    "demographic_pct": 0.1540128108515
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10616,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 175,
+    "demographic_pct": 0.0164845516201
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10616,
+    "demographic_group": "White",
+    "demographic_count": 1134,
+    "demographic_pct": 0.1068198944988
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10616,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 2665,
+    "demographic_pct": 0.2510361718161
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3238,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "K",
+    "enrollment": 1096,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "1",
+    "enrollment": 0.3384805435453,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "2",
+    "enrollment": 257,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "3",
+    "enrollment": 0.07936998147,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "4",
+    "enrollment": 215,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "5",
+    "enrollment": 222,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "6",
+    "enrollment": 272,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "7",
+    "enrollment": 224,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "8",
+    "enrollment": 254,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "9",
+    "enrollment": 267,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "10",
+    "enrollment": 259,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "11",
+    "enrollment": 261,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "12",
+    "enrollment": 261,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3238,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 1633,
+    "demographic_pct": 0.5043236565781
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3238,
+    "demographic_group": "Asian",
+    "demographic_count": 1605,
+    "demographic_pct": 0.4956763434218
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3238,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 25,
+    "demographic_pct": 0.007720815318
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3238,
+    "demographic_group": "Black/African American",
+    "demographic_count": 417,
+    "demographic_pct": 0.1287831995058
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3238,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 77,
+    "demographic_pct": 0.0237801111797
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3238,
+    "demographic_group": "White",
+    "demographic_count": 475,
+    "demographic_pct": 0.1466954910438
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3238,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 891,
+    "demographic_pct": 0.2751698579369
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48198,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "K",
+    "enrollment": 27253,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "1",
+    "enrollment": 0.5654383999336,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "2",
+    "enrollment": 4568,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "3",
+    "enrollment": 0.0947757168347,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "4",
+    "enrollment": 4071,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "5",
+    "enrollment": 4134,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "6",
+    "enrollment": 4201,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "7",
+    "enrollment": 4153,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "8",
+    "enrollment": 4123,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "9",
+    "enrollment": 3911,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "10",
+    "enrollment": 3567,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "11",
+    "enrollment": 3602,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "12",
+    "enrollment": 3518,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48198,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 24620,
+    "demographic_pct": 0.5108095771608
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48198,
+    "demographic_group": "Asian",
+    "demographic_count": 23578,
+    "demographic_pct": 0.4891904228391
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48198,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 341,
+    "demographic_pct": 0.0070749823644
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48198,
+    "demographic_group": "Black/African American",
+    "demographic_count": 3406,
+    "demographic_pct": 0.0706668326486
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48198,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 382,
+    "demographic_pct": 0.007925640068
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48198,
+    "demographic_group": "White",
+    "demographic_count": 4586,
+    "demographic_pct": 0.0951491763143
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48198,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 7662,
+    "demographic_pct": 0.1589692518361
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11538,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "K",
+    "enrollment": 3945,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "1",
+    "enrollment": 0.341913676547,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "2",
+    "enrollment": 748,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "3",
+    "enrollment": 0.064829259837,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "4",
+    "enrollment": 926,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "5",
+    "enrollment": 1003,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "6",
+    "enrollment": 1014,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "7",
+    "enrollment": 1089,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "8",
+    "enrollment": 957,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "9",
+    "enrollment": 988,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "10",
+    "enrollment": 933,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "11",
+    "enrollment": 827,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "12",
+    "enrollment": 876,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11538,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 6012,
+    "demographic_pct": 0.5210608424336
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11538,
+    "demographic_group": "Asian",
+    "demographic_count": 5526,
+    "demographic_pct": 0.4789391575663
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11538,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 105,
+    "demographic_pct": 0.0091003640145
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11538,
+    "demographic_group": "Black/African American",
+    "demographic_count": 835,
+    "demographic_pct": 0.0723695614491
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11538,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 262,
+    "demographic_pct": 0.0227075749696
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11538,
+    "demographic_group": "White",
+    "demographic_count": 984,
+    "demographic_pct": 0.0852834113364
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11538,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 4659,
+    "demographic_pct": 0.403796151846
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 628,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "K",
+    "enrollment": 530,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "1",
+    "enrollment": 0.8439490445859,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "2",
+    "enrollment": 42,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "3",
+    "enrollment": 0.0668789808917,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "4",
+    "enrollment": 35,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "5",
+    "enrollment": 39,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "6",
+    "enrollment": 45,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "7",
+    "enrollment": 42,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "8",
+    "enrollment": 42,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "9",
+    "enrollment": 42,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "10",
+    "enrollment": 48,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "11",
+    "enrollment": 49,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "12",
+    "enrollment": 48,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 628,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 329,
+    "demographic_pct": 0.5238853503184
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 628,
+    "demographic_group": "Asian",
+    "demographic_count": 299,
+    "demographic_pct": 0.4761146496815
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 628,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 1,
+    "demographic_pct": 0.0015923566878
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 628,
+    "demographic_group": "Black/African American",
+    "demographic_count": 30,
+    "demographic_pct": 0.0477707006369
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 628,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 1,
+    "demographic_pct": 0.0015923566878
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 628,
+    "demographic_group": "White",
+    "demographic_count": 4,
+    "demographic_pct": 0.0063694267515
+  },
+  {
+    "school_year": "2016-17",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 628,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 20,
+    "demographic_pct": 0.0318471337579
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6215,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "K",
+    "enrollment": 2698,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "1",
+    "enrollment": 0.43411102172,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "2",
+    "enrollment": 373,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "3",
+    "enrollment": 0.0600160901,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "4",
+    "enrollment": 428,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "5",
+    "enrollment": 482,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "6",
+    "enrollment": 451,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "7",
+    "enrollment": 462,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "8",
+    "enrollment": 506,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "9",
+    "enrollment": 474,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "10",
+    "enrollment": 448,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "11",
+    "enrollment": 489,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "12",
+    "enrollment": 508,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6215,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 3160,
+    "demographic_pct": 0.5084473049
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6215,
+    "demographic_group": "Asian",
+    "demographic_count": 3055,
+    "demographic_pct": 0.49155269509
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6215,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 52,
+    "demographic_pct": 0.00836685438
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6215,
+    "demographic_group": "Black/African American",
+    "demographic_count": 770,
+    "demographic_pct": 0.1238938053
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6215,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 147,
+    "demographic_pct": 0.02365245374
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6215,
+    "demographic_group": "White",
+    "demographic_count": 417,
+    "demographic_pct": 0.06709573612
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6215,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 1758,
+    "demographic_pct": 0.28286403861
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10420,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "K",
+    "enrollment": 3992,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "1",
+    "enrollment": 0.38310940499,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "2",
+    "enrollment": 692,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "3",
+    "enrollment": 0.06641074856,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "4",
+    "enrollment": 740,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "5",
+    "enrollment": 766,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "6",
+    "enrollment": 780,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "7",
+    "enrollment": 815,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "8",
+    "enrollment": 818,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "9",
+    "enrollment": 859,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "10",
+    "enrollment": 838,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "11",
+    "enrollment": 772,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "12",
+    "enrollment": 816,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10420,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 5239,
+    "demographic_pct": 0.5027831094
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10420,
+    "demographic_group": "Asian",
+    "demographic_count": 5181,
+    "demographic_pct": 0.49721689059
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10420,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 83,
+    "demographic_pct": 0.00796545105
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10420,
+    "demographic_group": "Black/African American",
+    "demographic_count": 1600,
+    "demographic_pct": 0.15355086372
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10420,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 186,
+    "demographic_pct": 0.0178502879
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10420,
+    "demographic_group": "White",
+    "demographic_count": 1240,
+    "demographic_pct": 0.11900191938
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10420,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 2627,
+    "demographic_pct": 0.25211132437
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3198,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "K",
+    "enrollment": 1065,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "1",
+    "enrollment": 0.33302063789,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "2",
+    "enrollment": 281,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "3",
+    "enrollment": 0.08786741713,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "4",
+    "enrollment": 220,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "5",
+    "enrollment": 209,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "6",
+    "enrollment": 224,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "7",
+    "enrollment": 276,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "8",
+    "enrollment": 230,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "9",
+    "enrollment": 258,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "10",
+    "enrollment": 281,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "11",
+    "enrollment": 251,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "12",
+    "enrollment": 248,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3198,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 1585,
+    "demographic_pct": 0.49562226391
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3198,
+    "demographic_group": "Asian",
+    "demographic_count": 1613,
+    "demographic_pct": 0.50437773608
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3198,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 27,
+    "demographic_pct": 0.00844277673
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3198,
+    "demographic_group": "Black/African American",
+    "demographic_count": 403,
+    "demographic_pct": 0.12601626016
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3198,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 99,
+    "demographic_pct": 0.03095684803
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3198,
+    "demographic_group": "White",
+    "demographic_count": 479,
+    "demographic_pct": 0.14978111319
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3198,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 844,
+    "demographic_pct": 0.26391494684
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48650,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "K",
+    "enrollment": 27562,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "1",
+    "enrollment": 0.56653648509,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "2",
+    "enrollment": 4811,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "3",
+    "enrollment": 0.09889003083,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "4",
+    "enrollment": 3946,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "5",
+    "enrollment": 4102,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "6",
+    "enrollment": 4068,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "7",
+    "enrollment": 4130,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "8",
+    "enrollment": 4135,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "9",
+    "enrollment": 4088,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "10",
+    "enrollment": 3704,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "11",
+    "enrollment": 3525,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "12",
+    "enrollment": 3552,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48650,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 24965,
+    "demographic_pct": 0.51315519013
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48650,
+    "demographic_group": "Asian",
+    "demographic_count": 23685,
+    "demographic_pct": 0.48684480986
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48650,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 309,
+    "demographic_pct": 0.00635149023
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48650,
+    "demographic_group": "Black/African American",
+    "demographic_count": 3393,
+    "demographic_pct": 0.06974306269
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48650,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 343,
+    "demographic_pct": 0.00705035971
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48650,
+    "demographic_group": "White",
+    "demographic_count": 4466,
+    "demographic_pct": 0.09179856115
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48650,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 7766,
+    "demographic_pct": 0.15963001027
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11276,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "K",
+    "enrollment": 3746,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "1",
+    "enrollment": 0.33221000354,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "2",
+    "enrollment": 746,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "3",
+    "enrollment": 0.06615821213,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "4",
+    "enrollment": 901,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "5",
+    "enrollment": 913,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "6",
+    "enrollment": 958,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "7",
+    "enrollment": 980,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "8",
+    "enrollment": 1045,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "9",
+    "enrollment": 933,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "10",
+    "enrollment": 940,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "11",
+    "enrollment": 863,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "12",
+    "enrollment": 768,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11276,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 5970,
+    "demographic_pct": 0.52944306491
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11276,
+    "demographic_group": "Asian",
+    "demographic_count": 5306,
+    "demographic_pct": 0.47055693508
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11276,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 92,
+    "demographic_pct": 0.0081589216
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11276,
+    "demographic_group": "Black/African American",
+    "demographic_count": 848,
+    "demographic_pct": 0.07520397304
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11276,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 271,
+    "demographic_pct": 0.02403334515
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11276,
+    "demographic_group": "White",
+    "demographic_count": 970,
+    "demographic_pct": 0.08602341255
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11276,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 4603,
+    "demographic_pct": 0.40821213196
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 639,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "K",
+    "enrollment": 531,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "1",
+    "enrollment": 0.83098591549,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "2",
+    "enrollment": 43,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "3",
+    "enrollment": 0.06729264475,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "4",
+    "enrollment": 30,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "5",
+    "enrollment": 38,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "6",
+    "enrollment": 44,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "7",
+    "enrollment": 47,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "8",
+    "enrollment": 44,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "9",
+    "enrollment": 46,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "10",
+    "enrollment": 49,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "11",
+    "enrollment": 54,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "12",
+    "enrollment": 48,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 639,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 334,
+    "demographic_pct": 0.52269170579
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 639,
+    "demographic_group": "Asian",
+    "demographic_count": 305,
+    "demographic_pct": 0.4773082942
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 639,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 1,
+    "demographic_pct": 0.00156494522
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 639,
+    "demographic_group": "Black/African American",
+    "demographic_count": 28,
+    "demographic_pct": 0.04381846635
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 639,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 1,
+    "demographic_pct": 0.00156494522
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 639,
+    "demographic_group": "White",
+    "demographic_count": 3,
+    "demographic_pct": 0.00469483568
+  },
+  {
+    "school_year": "2017-18",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 639,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 32,
+    "demographic_pct": 0.05007824726
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6184,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "K",
+    "enrollment": 411,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "1",
+    "enrollment": 439,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "2",
+    "enrollment": 497,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "3",
+    "enrollment": 427,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "4",
+    "enrollment": 461,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "5",
+    "enrollment": 512,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "6",
+    "enrollment": 457,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "7",
+    "enrollment": 463,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "8",
+    "enrollment": 492,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "9",
+    "enrollment": 526,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "10",
+    "enrollment": 492,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "11",
+    "enrollment": 473,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "12",
+    "enrollment": 534,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6184,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 44,
+    "demographic_pct": 0.00712
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6184,
+    "demographic_group": "Asian",
+    "demographic_count": 794,
+    "demographic_pct": 0.1284
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6184,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 151,
+    "demographic_pct": 0.02442
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6184,
+    "demographic_group": "Black/African American",
+    "demographic_count": 477,
+    "demographic_pct": 0.07713
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6184,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 1734,
+    "demographic_pct": 0.2804
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6184,
+    "demographic_group": "White",
+    "demographic_count": 2600,
+    "demographic_pct": 0.42044
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6184,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 384,
+    "demographic_pct": 0.0621
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10009,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "K",
+    "enrollment": 729,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "1",
+    "enrollment": 736,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "2",
+    "enrollment": 741,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "3",
+    "enrollment": 782,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "4",
+    "enrollment": 789,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "5",
+    "enrollment": 793,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "6",
+    "enrollment": 846,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "7",
+    "enrollment": 785,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "8",
+    "enrollment": 736,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "9",
+    "enrollment": 777,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "10",
+    "enrollment": 763,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "11",
+    "enrollment": 707,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "12",
+    "enrollment": 825,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10009,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 67,
+    "demographic_pct": 0.00669
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10009,
+    "demographic_group": "Asian",
+    "demographic_count": 1522,
+    "demographic_pct": 0.15206
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10009,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 215,
+    "demographic_pct": 0.02148
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10009,
+    "demographic_group": "Black/African American",
+    "demographic_count": 1195,
+    "demographic_pct": 0.11939
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10009,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 2603,
+    "demographic_pct": 0.26007
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10009,
+    "demographic_group": "White",
+    "demographic_count": 3710,
+    "demographic_pct": 0.37067
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 10009,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 697,
+    "demographic_pct": 0.06964
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3066,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "K",
+    "enrollment": 194,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "1",
+    "enrollment": 219,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "2",
+    "enrollment": 204,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "3",
+    "enrollment": 232,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "4",
+    "enrollment": 263,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "5",
+    "enrollment": 233,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "6",
+    "enrollment": 250,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "7",
+    "enrollment": 262,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "8",
+    "enrollment": 242,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "9",
+    "enrollment": 243,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "10",
+    "enrollment": 254,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "11",
+    "enrollment": 222,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "12",
+    "enrollment": 248,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3066,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 13,
+    "demographic_pct": 0.00424
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3066,
+    "demographic_group": "Asian",
+    "demographic_count": 378,
+    "demographic_pct": 0.12329
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3066,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 76,
+    "demographic_pct": 0.02479
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3066,
+    "demographic_group": "Black/African American",
+    "demographic_count": 435,
+    "demographic_pct": 0.14188
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3066,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 882,
+    "demographic_pct": 0.28767
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3066,
+    "demographic_group": "White",
+    "demographic_count": 1016,
+    "demographic_pct": 0.33138
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3066,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 266,
+    "demographic_pct": 0.08676
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48677,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "K",
+    "enrollment": 3901,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "1",
+    "enrollment": 3914,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "2",
+    "enrollment": 4039,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "3",
+    "enrollment": 4011,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "4",
+    "enrollment": 4050,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "5",
+    "enrollment": 4033,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "6",
+    "enrollment": 3843,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "7",
+    "enrollment": 3620,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "8",
+    "enrollment": 3499,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "9",
+    "enrollment": 3497,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "10",
+    "enrollment": 3351,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "11",
+    "enrollment": 3225,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "12",
+    "enrollment": 3694,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48677,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 295,
+    "demographic_pct": 0.00606
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48677,
+    "demographic_group": "Asian",
+    "demographic_count": 3266,
+    "demographic_pct": 0.0671
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48677,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 360,
+    "demographic_pct": 0.0074
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48677,
+    "demographic_group": "Black/African American",
+    "demographic_count": 4289,
+    "demographic_pct": 0.08811
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48677,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 7798,
+    "demographic_pct": 0.1602
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48677,
+    "demographic_group": "White",
+    "demographic_count": 27659,
+    "demographic_pct": 0.56821
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48677,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 5010,
+    "demographic_pct": 0.10292
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11019,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "K",
+    "enrollment": 887,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "1",
+    "enrollment": 912,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "2",
+    "enrollment": 894,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "3",
+    "enrollment": 916,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "4",
+    "enrollment": 968,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "5",
+    "enrollment": 1013,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "6",
+    "enrollment": 905,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "7",
+    "enrollment": 910,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "8",
+    "enrollment": 807,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "9",
+    "enrollment": 649,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "10",
+    "enrollment": 747,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "11",
+    "enrollment": 672,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "12",
+    "enrollment": 739,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11019,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 82,
+    "demographic_pct": 0.00744
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11019,
+    "demographic_group": "Asian",
+    "demographic_count": 792,
+    "demographic_pct": 0.07188
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11019,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 304,
+    "demographic_pct": 0.02759
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11019,
+    "demographic_group": "Black/African American",
+    "demographic_count": 1000,
+    "demographic_pct": 0.09075
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11019,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 4571,
+    "demographic_pct": 0.41483
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11019,
+    "demographic_group": "White",
+    "demographic_count": 3527,
+    "demographic_pct": 0.32008
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 11019,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 743,
+    "demographic_pct": 0.06743
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 637,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "K",
+    "enrollment": 34,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "1",
+    "enrollment": 30,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "2",
+    "enrollment": 37,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "3",
+    "enrollment": 46,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "4",
+    "enrollment": 48,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "5",
+    "enrollment": 51,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "6",
+    "enrollment": 49,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "7",
+    "enrollment": 51,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "8",
+    "enrollment": 55,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "9",
+    "enrollment": 56,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "10",
+    "enrollment": 66,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "11",
+    "enrollment": 61,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "12",
+    "enrollment": 53,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 637,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 2,
+    "demographic_pct": 0.00314
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 637,
+    "demographic_group": "Asian",
+    "demographic_count": 27,
+    "demographic_pct": 0.04239
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 637,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 1,
+    "demographic_pct": 0.00157
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 637,
+    "demographic_group": "Black/African American",
+    "demographic_count": 3,
+    "demographic_pct": 0.00471
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 637,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 36,
+    "demographic_pct": 0.05651
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 637,
+    "demographic_group": "White",
+    "demographic_count": 523,
+    "demographic_pct": 0.82104
+  },
+  {
+    "school_year": "2018-19",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 637,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 45,
+    "demographic_pct": 0.07064
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6099,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "K",
+    "enrollment": 450,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "1",
+    "enrollment": 444,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "2",
+    "enrollment": 445,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "3",
+    "enrollment": 472,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "4",
+    "enrollment": 418,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "5",
+    "enrollment": 460,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "6",
+    "enrollment": 513,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "7",
+    "enrollment": 458,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "8",
+    "enrollment": 475,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "9",
+    "enrollment": 493,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "10",
+    "enrollment": 501,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "11",
+    "enrollment": 459,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "12",
+    "enrollment": 511,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6099,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 36,
+    "demographic_pct": 0.0059
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6099,
+    "demographic_group": "Asian",
+    "demographic_count": 802,
+    "demographic_pct": 0.1315
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6099,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 156,
+    "demographic_pct": 0.02558
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6099,
+    "demographic_group": "Black/African American",
+    "demographic_count": 461,
+    "demographic_pct": 0.07559
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6099,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 1739,
+    "demographic_pct": 0.28513
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6099,
+    "demographic_group": "White",
+    "demographic_count": 2518,
+    "demographic_pct": 0.41285
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 6099,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 387,
+    "demographic_pct": 0.06345
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9719,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "K",
+    "enrollment": 707,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "1",
+    "enrollment": 724,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "2",
+    "enrollment": 720,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "3",
+    "enrollment": 739,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "4",
+    "enrollment": 773,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "5",
+    "enrollment": 775,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "6",
+    "enrollment": 765,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "7",
+    "enrollment": 813,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "8",
+    "enrollment": 766,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "9",
+    "enrollment": 708,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "10",
+    "enrollment": 754,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "11",
+    "enrollment": 716,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "12",
+    "enrollment": 759,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9719,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 72,
+    "demographic_pct": 0.00741
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9719,
+    "demographic_group": "Asian",
+    "demographic_count": 1456,
+    "demographic_pct": 0.14981
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9719,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 247,
+    "demographic_pct": 0.02541
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9719,
+    "demographic_group": "Black/African American",
+    "demographic_count": 1171,
+    "demographic_pct": 0.12049
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9719,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 2592,
+    "demographic_pct": 0.26669
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9719,
+    "demographic_group": "White",
+    "demographic_count": 3491,
+    "demographic_pct": 0.35919
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9719,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 690,
+    "demographic_pct": 0.07099
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3068,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "K",
+    "enrollment": 222,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "1",
+    "enrollment": 183,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "2",
+    "enrollment": 199,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "3",
+    "enrollment": 210,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "4",
+    "enrollment": 223,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "5",
+    "enrollment": 250,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "6",
+    "enrollment": 238,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "7",
+    "enrollment": 271,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "8",
+    "enrollment": 274,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "9",
+    "enrollment": 264,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "10",
+    "enrollment": 247,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "11",
+    "enrollment": 253,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "12",
+    "enrollment": 234,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3068,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 19,
+    "demographic_pct": 0.00619
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3068,
+    "demographic_group": "Asian",
+    "demographic_count": 355,
+    "demographic_pct": 0.11571
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3068,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 107,
+    "demographic_pct": 0.03488
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3068,
+    "demographic_group": "Black/African American",
+    "demographic_count": 454,
+    "demographic_pct": 0.14798
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3068,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 880,
+    "demographic_pct": 0.28683
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3068,
+    "demographic_group": "White",
+    "demographic_count": 979,
+    "demographic_pct": 0.3191
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 3068,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 274,
+    "demographic_pct": 0.08931
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48559,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "K",
+    "enrollment": 3868,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "1",
+    "enrollment": 3923,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "2",
+    "enrollment": 3856,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "3",
+    "enrollment": 3960,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "4",
+    "enrollment": 3949,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "5",
+    "enrollment": 3957,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "6",
+    "enrollment": 3792,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "7",
+    "enrollment": 3809,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "8",
+    "enrollment": 3525,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "9",
+    "enrollment": 3453,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "10",
+    "enrollment": 3468,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "11",
+    "enrollment": 3296,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "12",
+    "enrollment": 3703,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48559,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 281,
+    "demographic_pct": 0.00579
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48559,
+    "demographic_group": "Asian",
+    "demographic_count": 3106,
+    "demographic_pct": 0.06396
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48559,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 354,
+    "demographic_pct": 0.00729
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48559,
+    "demographic_group": "Black/African American",
+    "demographic_count": 4162,
+    "demographic_pct": 0.08571
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48559,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 7846,
+    "demographic_pct": 0.16158
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48559,
+    "demographic_group": "White",
+    "demographic_count": 27741,
+    "demographic_pct": 0.57128
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 48559,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 5069,
+    "demographic_pct": 0.10439
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10940,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "K",
+    "enrollment": 900,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "1",
+    "enrollment": 872,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "2",
+    "enrollment": 881,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "3",
+    "enrollment": 888,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "4",
+    "enrollment": 909,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "5",
+    "enrollment": 934,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "6",
+    "enrollment": 983,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "7",
+    "enrollment": 842,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "8",
+    "enrollment": 884,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "9",
+    "enrollment": 749,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "10",
+    "enrollment": 650,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "11",
+    "enrollment": 716,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "12",
+    "enrollment": 732,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10940,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 82,
+    "demographic_pct": 0.0075
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10940,
+    "demographic_group": "Asian",
+    "demographic_count": 781,
+    "demographic_pct": 0.07139
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10940,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 339,
+    "demographic_pct": 0.03099
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10940,
+    "demographic_group": "Black/African American",
+    "demographic_count": 996,
+    "demographic_pct": 0.09104
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10940,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 4563,
+    "demographic_pct": 0.41709
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10940,
+    "demographic_group": "White",
+    "demographic_count": 3417,
+    "demographic_pct": 0.31234
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10940,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 762,
+    "demographic_pct": 0.06965
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 648,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "K",
+    "enrollment": 42,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "1",
+    "enrollment": 39,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "2",
+    "enrollment": 39,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "3",
+    "enrollment": 45,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "4",
+    "enrollment": 46,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "5",
+    "enrollment": 51,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "6",
+    "enrollment": 48,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "7",
+    "enrollment": 51,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "8",
+    "enrollment": 53,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "9",
+    "enrollment": 64,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "10",
+    "enrollment": 52,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "11",
+    "enrollment": 61,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "12",
+    "enrollment": 57,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 648,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 1,
+    "demographic_pct": 0.00154
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 648,
+    "demographic_group": "Asian",
+    "demographic_count": 31,
+    "demographic_pct": 0.04784
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 648,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 1,
+    "demographic_pct": 0.00154
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 648,
+    "demographic_group": "Black/African American",
+    "demographic_count": 4,
+    "demographic_pct": 0.00617
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 648,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 39,
+    "demographic_pct": 0.06019
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 648,
+    "demographic_group": "White",
+    "demographic_count": 519,
+    "demographic_pct": 0.80093
+  },
+  {
+    "school_year": "2019-20",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 648,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 53,
+    "demographic_pct": 0.08179
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 5710,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "K",
+    "enrollment": 362,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "1",
+    "enrollment": 424,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "2",
+    "enrollment": 411,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "3",
+    "enrollment": 414,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "4",
+    "enrollment": 458,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "5",
+    "enrollment": 413,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "6",
+    "enrollment": 453,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "7",
+    "enrollment": 499,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "8",
+    "enrollment": 433,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "9",
+    "enrollment": 462,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "10",
+    "enrollment": 453,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "11",
+    "enrollment": 472,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "12",
+    "enrollment": 456,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 5710,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 37,
+    "demographic_pct": 0.00648
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 5710,
+    "demographic_group": "Asian",
+    "demographic_count": 786,
+    "demographic_pct": 0.13765
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 5710,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 160,
+    "demographic_pct": 0.02802
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 5710,
+    "demographic_group": "Black/African American",
+    "demographic_count": 452,
+    "demographic_pct": 0.07916
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 5710,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 1679,
+    "demographic_pct": 0.29405
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 5710,
+    "demographic_group": "White",
+    "demographic_count": 2215,
+    "demographic_pct": 0.38792
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Centennial SD 28J",
+    "grade_level": "Total",
+    "enrollment": 5710,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 381,
+    "demographic_pct": 0.06673
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9209,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "K",
+    "enrollment": 570,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "1",
+    "enrollment": 681,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "2",
+    "enrollment": 688,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "3",
+    "enrollment": 698,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "4",
+    "enrollment": 700,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "5",
+    "enrollment": 718,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "6",
+    "enrollment": 735,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "7",
+    "enrollment": 762,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "8",
+    "enrollment": 774,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "9",
+    "enrollment": 754,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "10",
+    "enrollment": 679,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "11",
+    "enrollment": 705,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "12",
+    "enrollment": 745,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9209,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 72,
+    "demographic_pct": 0.00782
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9209,
+    "demographic_group": "Asian",
+    "demographic_count": 1399,
+    "demographic_pct": 0.15192
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9209,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 233,
+    "demographic_pct": 0.0253
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9209,
+    "demographic_group": "Black/African American",
+    "demographic_count": 1112,
+    "demographic_pct": 0.12075
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9209,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 2524,
+    "demographic_pct": 0.27408
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9209,
+    "demographic_group": "White",
+    "demographic_count": 3196,
+    "demographic_pct": 0.34705
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "David Douglas SD 40",
+    "grade_level": "Total",
+    "enrollment": 9209,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 673,
+    "demographic_pct": 0.07308
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 2977,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "K",
+    "enrollment": 196,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "1",
+    "enrollment": 219,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "2",
+    "enrollment": 180,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "3",
+    "enrollment": 198,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "4",
+    "enrollment": 198,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "5",
+    "enrollment": 212,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "6",
+    "enrollment": 251,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "7",
+    "enrollment": 235,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "8",
+    "enrollment": 260,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "9",
+    "enrollment": 266,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "10",
+    "enrollment": 261,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "11",
+    "enrollment": 228,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "12",
+    "enrollment": 273,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 2977,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 19,
+    "demographic_pct": 0.00638
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 2977,
+    "demographic_group": "Asian",
+    "demographic_count": 344,
+    "demographic_pct": 0.11555
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 2977,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 93,
+    "demographic_pct": 0.03124
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 2977,
+    "demographic_group": "Black/African American",
+    "demographic_count": 480,
+    "demographic_pct": 0.16124
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 2977,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 840,
+    "demographic_pct": 0.28216
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 2977,
+    "demographic_group": "White",
+    "demographic_count": 901,
+    "demographic_pct": 0.30265
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Parkrose SD 3",
+    "grade_level": "Total",
+    "enrollment": 2977,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 300,
+    "demographic_pct": 0.10077
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 46924,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "K",
+    "enrollment": 3251,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "1",
+    "enrollment": 3716,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "2",
+    "enrollment": 3743,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "3",
+    "enrollment": 3654,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "4",
+    "enrollment": 3754,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "5",
+    "enrollment": 3766,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "6",
+    "enrollment": 3610,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "7",
+    "enrollment": 3665,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "8",
+    "enrollment": 3732,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "9",
+    "enrollment": 3437,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "10",
+    "enrollment": 3477,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "11",
+    "enrollment": 3453,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "12",
+    "enrollment": 3666,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 46924,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 240,
+    "demographic_pct": 0.00511
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 46924,
+    "demographic_group": "Asian",
+    "demographic_count": 2881,
+    "demographic_pct": 0.0614
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 46924,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 367,
+    "demographic_pct": 0.00782
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 46924,
+    "demographic_group": "Black/African American",
+    "demographic_count": 4033,
+    "demographic_pct": 0.08595
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 46924,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 7731,
+    "demographic_pct": 0.16476
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 46924,
+    "demographic_group": "White",
+    "demographic_count": 26359,
+    "demographic_pct": 0.56174
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Portland SD 1J",
+    "grade_level": "Total",
+    "enrollment": 46924,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 5313,
+    "demographic_pct": 0.11323
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10443,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "K",
+    "enrollment": 720,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "1",
+    "enrollment": 843,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "2",
+    "enrollment": 837,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "3",
+    "enrollment": 827,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "4",
+    "enrollment": 835,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "5",
+    "enrollment": 891,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "6",
+    "enrollment": 882,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "7",
+    "enrollment": 917,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "8",
+    "enrollment": 801,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "9",
+    "enrollment": 773,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "10",
+    "enrollment": 710,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "11",
+    "enrollment": 641,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "12",
+    "enrollment": 766,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10443,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 73,
+    "demographic_pct": 0.00699
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10443,
+    "demographic_group": "Asian",
+    "demographic_count": 760,
+    "demographic_pct": 0.07278
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10443,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 291,
+    "demographic_pct": 0.02787
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10443,
+    "demographic_group": "Black/African American",
+    "demographic_count": 1014,
+    "demographic_pct": 0.0971
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10443,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 4457,
+    "demographic_pct": 0.42679
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10443,
+    "demographic_group": "White",
+    "demographic_count": 3132,
+    "demographic_pct": 0.29991
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Reynolds SD 7",
+    "grade_level": "Total",
+    "enrollment": 10443,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 716,
+    "demographic_pct": 0.06856
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 601,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "K",
+    "enrollment": 33,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "1",
+    "enrollment": 39,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "2",
+    "enrollment": 39,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "3",
+    "enrollment": 33,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "4",
+    "enrollment": 43,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "5",
+    "enrollment": 43,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "6",
+    "enrollment": 51,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "7",
+    "enrollment": 48,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "8",
+    "enrollment": 50,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "9",
+    "enrollment": 57,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "10",
+    "enrollment": 60,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "11",
+    "enrollment": 46,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "12",
+    "enrollment": 59,
+    "demographic_group": null,
+    "demographic_count": null,
+    "demographic_pct": null
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 601,
+    "demographic_group": "American Indian/Alaska Native",
+    "demographic_count": 1,
+    "demographic_pct": 0.00166
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 601,
+    "demographic_group": "Asian",
+    "demographic_count": 28,
+    "demographic_pct": 0.04659
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 601,
+    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_count": 1,
+    "demographic_pct": 0.00166
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 601,
+    "demographic_group": "Black/African American",
+    "demographic_count": 1,
+    "demographic_pct": 0.00166
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 601,
+    "demographic_group": "Hispanic/Latino",
+    "demographic_count": 36,
+    "demographic_pct": 0.0599
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 601,
+    "demographic_group": "White",
+    "demographic_count": 480,
+    "demographic_pct": 0.79867
+  },
+  {
+    "school_year": "2020-21",
+    "district_name": "Riverdale SD 51J",
+    "grade_level": "Total",
+    "enrollment": 601,
+    "demographic_group": "Multi-Racial",
+    "demographic_count": 54,
+    "demographic_pct": 0.08985
+  },
+  {
     "school_year": "2021-22",
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
@@ -148,7 +5818,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5520,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 162,
     "demographic_pct": 0.02935
   },
@@ -157,7 +5827,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5520,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 423,
     "demographic_pct": 0.07663
   },
@@ -166,7 +5836,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5520,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 1658,
     "demographic_pct": 0.30036
   },
@@ -175,7 +5845,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5520,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 2068,
     "demographic_pct": 0.37464
   },
@@ -184,7 +5854,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5520,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 422,
     "demographic_pct": 0.07645
   },
@@ -337,7 +6007,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8720,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 239,
     "demographic_pct": 0.02741
   },
@@ -346,7 +6016,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8720,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 1085,
     "demographic_pct": 0.12443
   },
@@ -355,7 +6025,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8720,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 2489,
     "demographic_pct": 0.28544
   },
@@ -364,7 +6034,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8720,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 2849,
     "demographic_pct": 0.32672
   },
@@ -373,7 +6043,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8720,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 683,
     "demographic_pct": 0.07833
   },
@@ -526,7 +6196,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2772,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 93,
     "demographic_pct": 0.03355
   },
@@ -535,7 +6205,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2772,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 467,
     "demographic_pct": 0.16847
   },
@@ -544,7 +6214,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2772,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 807,
     "demographic_pct": 0.29113
   },
@@ -553,7 +6223,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2772,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 840,
     "demographic_pct": 0.30303
   },
@@ -562,7 +6232,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2772,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 255,
     "demographic_pct": 0.09199
   },
@@ -715,7 +6385,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 45123,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 323,
     "demographic_pct": 0.00716
   },
@@ -724,7 +6394,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 45123,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 3793,
     "demographic_pct": 0.08406
   },
@@ -733,7 +6403,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 45123,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 7483,
     "demographic_pct": 0.16584
   },
@@ -742,7 +6412,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 45123,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 25388,
     "demographic_pct": 0.56264
   },
@@ -751,7 +6421,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 45123,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 5280,
     "demographic_pct": 0.11701
   },
@@ -904,7 +6574,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9940,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 285,
     "demographic_pct": 0.02867
   },
@@ -913,7 +6583,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9940,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 970,
     "demographic_pct": 0.09759
   },
@@ -922,7 +6592,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9940,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 4373,
     "demographic_pct": 0.43994
   },
@@ -931,7 +6601,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9940,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 2846,
     "demographic_pct": 0.28632
   },
@@ -940,7 +6610,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9940,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 669,
     "demographic_pct": 0.0673
   },
@@ -1093,7 +6763,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 563,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 0,
     "demographic_pct": 0
   },
@@ -1102,7 +6772,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 563,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 2,
     "demographic_pct": 0.00355
   },
@@ -1111,7 +6781,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 563,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 40,
     "demographic_pct": 0.07105
   },
@@ -1120,7 +6790,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 563,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 444,
     "demographic_pct": 0.78863
   },
@@ -1129,7 +6799,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 563,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 53,
     "demographic_pct": 0.09414
   },
@@ -1282,7 +6952,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5487,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 165,
     "demographic_pct": 0.03007
   },
@@ -1291,7 +6961,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5487,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 449,
     "demographic_pct": 0.08183
   },
@@ -1300,7 +6970,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5487,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 1685,
     "demographic_pct": 0.30709
   },
@@ -1309,7 +6979,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5487,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 1975,
     "demographic_pct": 0.35994
   },
@@ -1318,7 +6988,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5487,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 423,
     "demographic_pct": 0.07709
   },
@@ -1471,7 +7141,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8645,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 249,
     "demographic_pct": 0.0288
   },
@@ -1480,7 +7150,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8645,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 1105,
     "demographic_pct": 0.12782
   },
@@ -1489,7 +7159,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8645,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 2493,
     "demographic_pct": 0.28837
   },
@@ -1498,7 +7168,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8645,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 2801,
     "demographic_pct": 0.324
   },
@@ -1507,7 +7177,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8645,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 648,
     "demographic_pct": 0.07496
   },
@@ -1660,7 +7330,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2805,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 110,
     "demographic_pct": 0.03922
   },
@@ -1669,7 +7339,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2805,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 487,
     "demographic_pct": 0.17362
   },
@@ -1678,7 +7348,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2805,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 827,
     "demographic_pct": 0.29483
   },
@@ -1687,7 +7357,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2805,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 825,
     "demographic_pct": 0.29412
   },
@@ -1696,7 +7366,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2805,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 271,
     "demographic_pct": 0.09661
   },
@@ -1849,7 +7519,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 44681,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 332,
     "demographic_pct": 0.00743
   },
@@ -1858,7 +7528,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 44681,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 3632,
     "demographic_pct": 0.08129
   },
@@ -1867,7 +7537,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 44681,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 7596,
     "demographic_pct": 0.17001
   },
@@ -1876,7 +7546,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 44681,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 24929,
     "demographic_pct": 0.55793
   },
@@ -1885,7 +7555,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 44681,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 5423,
     "demographic_pct": 0.12137
   },
@@ -2038,7 +7708,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9807,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 333,
     "demographic_pct": 0.03396
   },
@@ -2047,7 +7717,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9807,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 1019,
     "demographic_pct": 0.10391
   },
@@ -2056,7 +7726,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9807,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 4360,
     "demographic_pct": 0.44458
   },
@@ -2065,7 +7735,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9807,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 2638,
     "demographic_pct": 0.26899
   },
@@ -2074,7 +7744,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9807,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 706,
     "demographic_pct": 0.07199
   },
@@ -2227,7 +7897,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 596,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 0,
     "demographic_pct": 0
   },
@@ -2236,7 +7906,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 596,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 4,
     "demographic_pct": 0.00671
   },
@@ -2245,7 +7915,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 596,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 41,
     "demographic_pct": 0.06879
   },
@@ -2254,7 +7924,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 596,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 463,
     "demographic_pct": 0.77685
   },
@@ -2263,7 +7933,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 596,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 66,
     "demographic_pct": 0.11074
   },
@@ -2416,7 +8086,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5485,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 175,
     "demographic_pct": 0.03191
   },
@@ -2425,7 +8095,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5485,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 449,
     "demographic_pct": 0.08186
   },
@@ -2434,7 +8104,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5485,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 1755,
     "demographic_pct": 0.31996
   },
@@ -2443,7 +8113,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5485,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 1922,
     "demographic_pct": 0.35041
   },
@@ -2452,7 +8122,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5485,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 389,
     "demographic_pct": 0.07092
   },
@@ -2605,7 +8275,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8660,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 259,
     "demographic_pct": 0.02991
   },
@@ -2614,7 +8284,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8660,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 1108,
     "demographic_pct": 0.12794
   },
@@ -2623,7 +8293,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8660,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 2550,
     "demographic_pct": 0.29446
   },
@@ -2632,7 +8302,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8660,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 2680,
     "demographic_pct": 0.30947
   },
@@ -2641,7 +8311,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8660,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 682,
     "demographic_pct": 0.07875
   },
@@ -2794,7 +8464,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2822,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 99,
     "demographic_pct": 0.03508
   },
@@ -2803,7 +8473,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2822,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 523,
     "demographic_pct": 0.18533
   },
@@ -2812,7 +8482,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2822,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 845,
     "demographic_pct": 0.29943
   },
@@ -2821,7 +8491,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2822,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 814,
     "demographic_pct": 0.28845
   },
@@ -2830,7 +8500,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2822,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 272,
     "demographic_pct": 0.09639
   },
@@ -2983,7 +8653,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 43979,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 332,
     "demographic_pct": 0.00755
   },
@@ -2992,7 +8662,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 43979,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 3558,
     "demographic_pct": 0.0809
   },
@@ -3001,7 +8671,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 43979,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 7688,
     "demographic_pct": 0.17481
   },
@@ -3010,7 +8680,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 43979,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 24276,
     "demographic_pct": 0.55199
   },
@@ -3019,7 +8689,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 43979,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 5422,
     "demographic_pct": 0.12329
   },
@@ -3172,7 +8842,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9613,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 328,
     "demographic_pct": 0.03412
   },
@@ -3181,7 +8851,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9613,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 984,
     "demographic_pct": 0.10236
   },
@@ -3190,7 +8860,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9613,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 4229,
     "demographic_pct": 0.43993
   },
@@ -3199,7 +8869,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9613,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 2618,
     "demographic_pct": 0.27234
   },
@@ -3208,7 +8878,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9613,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 693,
     "demographic_pct": 0.07209
   },
@@ -3361,7 +9031,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 564,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 0,
     "demographic_pct": 0
   },
@@ -3370,7 +9040,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 564,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 2,
     "demographic_pct": 0.00355
   },
@@ -3379,7 +9049,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 564,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 44,
     "demographic_pct": 0.07801
   },
@@ -3388,7 +9058,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 564,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 430,
     "demographic_pct": 0.76241
   },
@@ -3397,7 +9067,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 564,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 71,
     "demographic_pct": 0.12589
   },
@@ -3550,7 +9220,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5412,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 168,
     "demographic_pct": 0.03104
   },
@@ -3559,7 +9229,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5412,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 470,
     "demographic_pct": 0.08684
   },
@@ -3568,7 +9238,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5412,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 1789,
     "demographic_pct": 0.33056
   },
@@ -3577,7 +9247,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5412,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 1804,
     "demographic_pct": 0.33333
   },
@@ -3586,7 +9256,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5412,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 402,
     "demographic_pct": 0.07428
   },
@@ -3739,7 +9409,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8728,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 258,
     "demographic_pct": 0.02956
   },
@@ -3748,7 +9418,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8728,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 1107,
     "demographic_pct": 0.12683
   },
@@ -3757,7 +9427,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8728,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 2643,
     "demographic_pct": 0.30282
   },
@@ -3766,7 +9436,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8728,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 2595,
     "demographic_pct": 0.29732
   },
@@ -3775,7 +9445,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8728,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 724,
     "demographic_pct": 0.08295
   },
@@ -3928,7 +9598,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2727,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 79,
     "demographic_pct": 0.02897
   },
@@ -3937,7 +9607,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2727,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 523,
     "demographic_pct": 0.19179
   },
@@ -3946,7 +9616,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2727,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 835,
     "demographic_pct": 0.3062
   },
@@ -3955,7 +9625,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2727,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 786,
     "demographic_pct": 0.28823
   },
@@ -3964,7 +9634,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2727,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 249,
     "demographic_pct": 0.09131
   },
@@ -4117,7 +9787,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 43319,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 295,
     "demographic_pct": 0.00681
   },
@@ -4126,7 +9796,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 43319,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 3554,
     "demographic_pct": 0.08204
   },
@@ -4135,7 +9805,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 43319,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 7899,
     "demographic_pct": 0.18234
   },
@@ -4144,7 +9814,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 43319,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 23574,
     "demographic_pct": 0.5442
   },
@@ -4153,7 +9823,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 43319,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 5417,
     "demographic_pct": 0.12505
   },
@@ -4306,7 +9976,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9700,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 334,
     "demographic_pct": 0.03443
   },
@@ -4315,7 +9985,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9700,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 1037,
     "demographic_pct": 0.10691
   },
@@ -4324,7 +9994,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9700,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 4327,
     "demographic_pct": 0.44608
   },
@@ -4333,7 +10003,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9700,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 2491,
     "demographic_pct": 0.2568
   },
@@ -4342,7 +10012,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9700,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 700,
     "demographic_pct": 0.07216
   },
@@ -4495,7 +10165,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 565,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 0,
     "demographic_pct": 0
   },
@@ -4504,7 +10174,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 565,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 1,
     "demographic_pct": 0.00177
   },
@@ -4513,7 +10183,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 565,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 36,
     "demographic_pct": 0.06372
   },
@@ -4522,7 +10192,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 565,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 439,
     "demographic_pct": 0.77699
   },
@@ -4531,7 +10201,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 565,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 70,
     "demographic_pct": 0.12389
   },
@@ -4684,7 +10354,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5410,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 179,
     "demographic_pct": 0.03309
   },
@@ -4693,7 +10363,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5410,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 483,
     "demographic_pct": 0.08928
   },
@@ -4702,7 +10372,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5410,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 1836,
     "demographic_pct": 0.33937
   },
@@ -4711,7 +10381,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5410,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 1745,
     "demographic_pct": 0.32255
   },
@@ -4720,7 +10390,7 @@
     "district_name": "Centennial SD 28J",
     "grade_level": "Total",
     "enrollment": 5410,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 399,
     "demographic_pct": 0.07375
   },
@@ -4873,7 +10543,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8568,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 296,
     "demographic_pct": 0.03455
   },
@@ -4882,7 +10552,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8568,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 1149,
     "demographic_pct": 0.1341
   },
@@ -4891,7 +10561,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8568,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 2534,
     "demographic_pct": 0.29575
   },
@@ -4900,7 +10570,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8568,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 2459,
     "demographic_pct": 0.287
   },
@@ -4909,7 +10579,7 @@
     "district_name": "David Douglas SD 40",
     "grade_level": "Total",
     "enrollment": 8568,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 726,
     "demographic_pct": 0.08473
   },
@@ -5062,7 +10732,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2728,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 96,
     "demographic_pct": 0.03519
   },
@@ -5071,7 +10741,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2728,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 516,
     "demographic_pct": 0.18915
   },
@@ -5080,7 +10750,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2728,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 817,
     "demographic_pct": 0.29949
   },
@@ -5089,7 +10759,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2728,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 798,
     "demographic_pct": 0.29252
   },
@@ -5098,7 +10768,7 @@
     "district_name": "Parkrose SD 3",
     "grade_level": "Total",
     "enrollment": 2728,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 252,
     "demographic_pct": 0.09238
   },
@@ -5251,7 +10921,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 42623,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 335,
     "demographic_pct": 0.00786
   },
@@ -5260,7 +10930,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 42623,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 3478,
     "demographic_pct": 0.0816
   },
@@ -5269,7 +10939,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 42623,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 7687,
     "demographic_pct": 0.18035
   },
@@ -5278,7 +10948,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 42623,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 23026,
     "demographic_pct": 0.54022
   },
@@ -5287,7 +10957,7 @@
     "district_name": "Portland SD 1J",
     "grade_level": "Total",
     "enrollment": 42623,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 5488,
     "demographic_pct": 0.12876
   },
@@ -5440,7 +11110,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9610,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 340,
     "demographic_pct": 0.03538
   },
@@ -5449,7 +11119,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9610,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 1098,
     "demographic_pct": 0.11426
   },
@@ -5458,7 +11128,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9610,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 4328,
     "demographic_pct": 0.45036
   },
@@ -5467,7 +11137,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9610,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 2357,
     "demographic_pct": 0.24527
   },
@@ -5476,7 +11146,7 @@
     "district_name": "Reynolds SD 7",
     "grade_level": "Total",
     "enrollment": 9610,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 692,
     "demographic_pct": 0.07201
   },
@@ -5629,7 +11299,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 574,
-    "demographic_group": "Black/African American",
+    "demographic_group": "Native Hawaiian/Pacific Islander",
     "demographic_count": 0,
     "demographic_pct": 0
   },
@@ -5638,7 +11308,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 574,
-    "demographic_group": "Hispanic/Latino",
+    "demographic_group": "Black/African American",
     "demographic_count": 5,
     "demographic_pct": 0.00871
   },
@@ -5647,7 +11317,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 574,
-    "demographic_group": "Multiracial",
+    "demographic_group": "Hispanic/Latino",
     "demographic_count": 35,
     "demographic_pct": 0.06098
   },
@@ -5656,7 +11326,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 574,
-    "demographic_group": "Native Hawaiian/Pacific Islander",
+    "demographic_group": "White",
     "demographic_count": 443,
     "demographic_pct": 0.77178
   },
@@ -5665,7 +11335,7 @@
     "district_name": "Riverdale SD 51J",
     "grade_level": "Total",
     "enrollment": 574,
-    "demographic_group": "White",
+    "demographic_group": "Multi-Racial",
     "demographic_count": 72,
     "demographic_pct": 0.12544
   }

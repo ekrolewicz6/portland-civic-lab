@@ -67,11 +67,11 @@ const GRADE_COLUMNS: { col: number; grade: string }[] = [
 const DEMOGRAPHIC_COLUMNS: { countCol: number; pctCol: number; group: string }[] = [
   { countCol: 5, pctCol: 6, group: "American Indian/Alaska Native" },
   { countCol: 7, pctCol: 8, group: "Asian" },
-  { countCol: 9, pctCol: 10, group: "Black/African American" },
-  { countCol: 11, pctCol: 12, group: "Hispanic/Latino" },
-  { countCol: 13, pctCol: 14, group: "Multiracial" },
-  { countCol: 15, pctCol: 16, group: "Native Hawaiian/Pacific Islander" },
-  { countCol: 17, pctCol: 18, group: "White" },
+  { countCol: 9, pctCol: 10, group: "Native Hawaiian/Pacific Islander" },
+  { countCol: 11, pctCol: 12, group: "Black/African American" },
+  { countCol: 13, pctCol: 14, group: "Hispanic/Latino" },
+  { countCol: 15, pctCol: 16, group: "White" },
+  { countCol: 17, pctCol: 18, group: "Multi-Racial" },
 ];
 
 interface EnrollmentRow {
@@ -95,10 +95,21 @@ function findSheetName(workbook: any, sheetYear: string): string | null {
     if (name.includes(sheetYear)) return name;
   }
 
-  // Try matching just the year portion
+  // Try matching just the year portion (e.g. "2016" from "20162017")
   const startYear = sheetYear.slice(0, 4);
   for (const name of workbook.SheetNames) {
     if (name.includes("District") && name.includes(startYear)) return name;
+  }
+
+  // Try short year format (e.g. "16-17" from "20162017") for older files
+  const shortYear = `${sheetYear.slice(2, 4)}-${sheetYear.slice(6, 8)}`;
+  for (const name of workbook.SheetNames) {
+    if (name.includes("District") && name.includes(shortYear)) return name;
+  }
+
+  // Last resort: any sheet with "District" in the name
+  for (const name of workbook.SheetNames) {
+    if (name.toLowerCase().includes("district") && !name.toLowerCase().includes("statewide")) return name;
   }
 
   return null;

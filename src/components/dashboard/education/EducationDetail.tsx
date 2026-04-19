@@ -42,6 +42,16 @@ const DISTRICT_SHORT: Record<string, string> = {
   "Centennial SD 28J": "Centennial",
 };
 
+const DEMO_COLORS = [
+  "#c05621", // AI/AN
+  "#2d7d9a", // Asian
+  "#7c4dba", // NHPI
+  "#3d7a5a", // Black
+  "#b85c8a", // Hispanic
+  "#8b7355", // White
+  "#5a7d3d", // Multi-Racial
+];
+
 // ── Types ────────────────────────────────────────────────────────────────
 
 interface District {
@@ -98,6 +108,21 @@ interface AbsenteeismEquityRow {
   n: number | null;
 }
 
+interface DemographicRow {
+  districtName: string;
+  group: string;
+  total: number;
+  pct: number;
+}
+
+interface StaffingRow {
+  year: string;
+  districtName: string;
+  enrollment: number | null;
+  teachersFte: number | null;
+  pupilTeacherRatio: number | null;
+}
+
 interface HeroStats {
   totalEnrollment: number;
   latestYear: string | null;
@@ -116,6 +141,8 @@ interface EducationDetailData {
   testScores: TestScore[];
   absenteeism: AbsenteeismRow[];
   absenteeismEquity: AbsenteeismEquityRow[];
+  demographics: DemographicRow[];
+  staffing: StaffingRow[];
   heroStats: HeroStats | null;
   topInsights: string[];
   latestYear: string | null;
@@ -383,6 +410,48 @@ export default function EducationDetail() {
         n: e.n ?? 0,
       }));
 
+    // Demographics: pivot to stacked bar chart data (district x race/ethnicity)
+    const demographicGroups = Array.from(
+      new Set((data.demographics ?? []).map((d) => d.group))
+    );
+    const demographicsByDistrict = allDistricts.map((d) => {
+      const distRows = (data.demographics ?? []).filter(
+        (r) => r.districtName === d
+      );
+      const row: Record<string, string | number> = { district: shortName(d) };
+      for (const dr of distRows) {
+        row[dr.group] = dr.pct;
+      }
+      return row;
+    });
+
+    // Staffing: latest year per district, and trend data
+    const staffingLatest = new Map<string, StaffingRow>();
+    for (const d of allDistricts) {
+      const distRows = (data.staffing ?? []).filter(
+        (s) => s.districtName === d && s.pupilTeacherRatio !== null
+      );
+      if (distRows.length > 0) {
+        staffingLatest.set(d, distRows[distRows.length - 1]);
+      }
+    }
+
+    const staffingYears = Array.from(
+      new Set((data.staffing ?? []).map((s) => s.year))
+    ).sort();
+    const staffingChartData = staffingYears.map((year) => {
+      const row: Record<string, string | number> = { year };
+      for (const d of allDistricts) {
+        const match = (data.staffing ?? []).find(
+          (s) => s.districtName === d && s.year === year
+        );
+        if (match?.pupilTeacherRatio !== null && match?.pupilTeacherRatio !== undefined) {
+          row[shortName(d)] = match.pupilTeacherRatio;
+        }
+      }
+      return row;
+    });
+
     return {
       allDistricts,
       latestByDistrict,
@@ -409,6 +478,11 @@ export default function EducationDetail() {
       preCovidAvg,
       latestAbsenteeism,
       equityBars,
+      demographicGroups,
+      demographicsByDistrict,
+      staffingLatest,
+      staffingChartData,
+      staffingYears,
     };
   }, [data]);
 
@@ -459,6 +533,10 @@ export default function EducationDetail() {
     preCovidAvg,
     latestAbsenteeism,
     equityBars,
+    demographicGroups,
+    demographicsByDistrict,
+    staffingLatest,
+    staffingChartData,
   } = derived;
 
   const yoyChange =
@@ -978,33 +1056,211 @@ export default function EducationDetail() {
         </section>
       )}
 
-      {/* 12. DATA STILL NEEDED */}
-      <section className="space-y-4">
-        <DataNeeded
-          title="Student Demographics"
-          description="Race/ethnicity and English learner breakdowns by district."
-          actions={[
-            {
-              label: "View ODE enrollment reports",
-              type: "download",
-              href: "https://www.oregon.gov/ode/reports-and-data/students/Pages/Student-Enrollment-Reports.aspx",
-            },
-          ]}
-          color={ACCENT}
-        />
-        <DataNeeded
-          title="Teacher Staffing Ratios"
-          description="Student-to-teacher ratios across Portland-area districts."
-          actions={[
-            {
-              label: "Download ODE staffing reports",
-              type: "download",
-              href: "https://www.oregon.gov/ode/educator-resources/Pages/default.aspx",
-            },
-          ]}
-          color={ACCENT}
-        />
-      </section>
+      {/* 12. STUDENT DEMOGRAPHICS */}
+      {demographicsByDistrict.length > 0 && demographicGroups.length > 0 && (
+        <section>
+          <SectionHeader icon={Users} title={`Student Demographics by District (${data.latestYear})`} />
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
+            <ComparisonBarChart
+              data={demographicsByDistrict.filter((d) =>
+                activeDistricts.has(
+                  Object.entries(DISTRICT_SHORT).find(
+                    ([, v]) => v === d.district
+                  )?.[0] ?? ""
+                )
+              )}
+              xKey="district"
+              bars={demographicGroups.map((group, i) => ({
+                key: group,
+                label: group,
+                color: DEMO_COLORS[i % DEMO_COLORS.length],
+                stackId: "demo",
+              }))}
+              height={340}
+              valueSuffix="%"
+            />
+            <p className="text-[12px] text-[var(--color-ink-muted)] mt-3 leading-relaxed">
+              Race/ethnicity as a percentage of total enrollment. East Portland districts
+              (David Douglas, Reynolds, Centennial, Parkrose) serve significantly more diverse
+              student populations than PPS or Riverdale.
+            </p>
+          </div>
+          {/* Demographics detail table */}
+          <div className="mt-4 bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-[13px]">
+                <thead>
+                  <tr className="border-b border-[var(--color-parchment)]">
+                    <th className="text-left px-4 py-3 text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+                      District
+                    </th>
+                    {demographicGroups.map((g) => (
+                      <th key={g} className="text-right px-3 py-3 text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+                        {g.replace("American Indian/Alaska Native", "AI/AN")
+                          .replace("Native Hawaiian/Pacific Islander", "NH/PI")
+                          .replace("Black/African American", "Black")
+                          .replace("Hispanic/Latino", "Hispanic")
+                          .replace("Multi-Racial", "Multi")}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {allDistricts
+                    .filter((d) => activeDistricts.has(d))
+                    .map((d) => {
+                      const distDemo = (data.demographics ?? []).filter(
+                        (r) => r.districtName === d
+                      );
+                      return (
+                        <tr
+                          key={d}
+                          className="border-b border-[var(--color-parchment)]/60 last:border-b-0"
+                        >
+                          <td className="px-4 py-2 font-medium text-[var(--color-ink)]">
+                            <div className="flex items-center gap-2">
+                              <div
+                                className="w-2 h-2 rounded-full flex-shrink-0"
+                                style={{ backgroundColor: DISTRICT_COLORS[d] ?? ACCENT }}
+                              />
+                              {shortName(d)}
+                            </div>
+                          </td>
+                          {demographicGroups.map((g) => {
+                            const match = distDemo.find((r) => r.group === g);
+                            return (
+                              <td
+                                key={g}
+                                className="px-3 py-2 text-right font-mono text-[var(--color-ink-light)] tabular-nums"
+                              >
+                                {match ? `${match.pct}%` : "\u2014"}
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      );
+                    })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://www.oregon.gov/ode/reports-and-data/students/Pages/Student-Enrollment-Reports.aspx" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Oregon Dept of Education &middot; Fall Membership Reports</a>
+          </p>
+        </section>
+      )}
+
+      {/* 13. TEACHER STAFFING */}
+      {(data.staffing ?? []).length > 0 && (
+        <section>
+          <SectionHeader icon={School} title="Pupil-Teacher Ratio by District" />
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
+            {staffingChartData.length > 1 && (
+              <MultiLineChart
+                data={staffingChartData}
+                lines={activeDistrictLines}
+                xKey="year"
+                height={300}
+                valueSuffix=":1"
+              />
+            )}
+            {staffingChartData.length <= 1 && (
+              <ComparisonBarChart
+                data={allDistricts
+                  .filter((d) => activeDistricts.has(d))
+                  .map((d) => {
+                    const s = staffingLatest.get(d);
+                    return {
+                      district: shortName(d),
+                      "Pupil-Teacher Ratio": s?.pupilTeacherRatio ?? 0,
+                    };
+                  })
+                  .filter((d) => d["Pupil-Teacher Ratio"] > 0)}
+                xKey="district"
+                bars={[
+                  { key: "Pupil-Teacher Ratio", label: "Students per Teacher", color: ACCENT },
+                ]}
+                height={300}
+                valueSuffix=":1"
+                showLegend={false}
+              />
+            )}
+            <p className="text-[12px] text-[var(--color-ink-muted)] mt-3 leading-relaxed">
+              The pupil-teacher ratio measures the number of students per full-time
+              equivalent (FTE) teacher. Lower ratios generally indicate smaller class sizes,
+              though actual class sizes may vary. Riverdale consistently has the lowest ratio,
+              reflecting its small, well-resourced district.
+            </p>
+          </div>
+          {/* Staffing detail table */}
+          <div className="mt-4 bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-[13px]">
+                <thead>
+                  <tr className="border-b border-[var(--color-parchment)]">
+                    <th className="text-left px-4 py-3 text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+                      District
+                    </th>
+                    <th className="text-right px-4 py-3 text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+                      Year
+                    </th>
+                    <th className="text-right px-4 py-3 text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+                      Enrollment
+                    </th>
+                    <th className="text-right px-4 py-3 text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+                      Teachers (FTE)
+                    </th>
+                    <th className="text-right px-4 py-3 text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+                      PTR
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {allDistricts
+                    .filter((d) => activeDistricts.has(d))
+                    .map((d) => {
+                      const s = staffingLatest.get(d);
+                      if (!s) return null;
+                      return (
+                        <tr
+                          key={d}
+                          className="border-b border-[var(--color-parchment)]/60 last:border-b-0"
+                        >
+                          <td className="px-4 py-2">
+                            <div className="flex items-center gap-2">
+                              <div
+                                className="w-2 h-2 rounded-full flex-shrink-0"
+                                style={{ backgroundColor: DISTRICT_COLORS[d] ?? ACCENT }}
+                              />
+                              <span className="font-medium text-[var(--color-ink)]">
+                                {shortName(d)}
+                              </span>
+                            </div>
+                          </td>
+                          <td className="px-4 py-2 text-right font-mono text-[var(--color-ink-light)] tabular-nums">
+                            {s.year}
+                          </td>
+                          <td className="px-4 py-2 text-right font-mono text-[var(--color-ink-light)] tabular-nums">
+                            {s.enrollment?.toLocaleString() ?? "\u2014"}
+                          </td>
+                          <td className="px-4 py-2 text-right font-mono text-[var(--color-ink-light)] tabular-nums">
+                            {s.teachersFte?.toLocaleString() ?? "\u2014"}
+                          </td>
+                          <td className="px-4 py-2 text-right font-mono text-[var(--color-ink-light)] tabular-nums">
+                            {s.pupilTeacherRatio !== null ? `${s.pupilTeacherRatio}:1` : "\u2014"}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://nces.ed.gov/ccd/districtsearch/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">NCES Common Core of Data via Urban Institute Education Data API</a>
+          </p>
+        </section>
+      )}
 
       {/* 13. METHODOLOGY */}
       <section>
@@ -1040,6 +1296,17 @@ export default function EducationDetail() {
               attend 90% or fewer of their enrolled days. Data for 2019-20 and 2020-21 is not published
               due to COVID-19 disruptions. Rates from 2020-21 onward are not directly comparable to prior
               years per ODE guidance. Groups with fewer than 10 students are suppressed for privacy.
+            </p>
+            <p>
+              <strong className="text-[var(--color-ink-light)]">Student demographics</strong> come from
+              ODE Fall Membership XLSX files, which report race/ethnicity counts and percentages for
+              each district. Percentages shown are computed from headcounts to ensure accuracy.
+            </p>
+            <p>
+              <strong className="text-[var(--color-ink-light)]">Teacher staffing</strong> data comes from
+              the National Center for Education Statistics (NCES) Common Core of Data via the Urban
+              Institute Education Data API. Pupil-teacher ratios reflect total enrollment divided by
+              full-time equivalent (FTE) classroom teachers.
             </p>
           </div>
         </div>

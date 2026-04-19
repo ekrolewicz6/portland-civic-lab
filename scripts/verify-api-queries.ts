@@ -117,9 +117,35 @@ async function main() {
             AND school_year = (SELECT MAX(school_year) FROM education.enrollment)
           LIMIT 5
         ) t
+      ),
+      'demographics', (
+        SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+          SELECT d.district_name, d.demographic_group,
+                 d.demographic_count as total,
+                 ROUND((d.demographic_count * 100.0 / NULLIF(e.enrollment, 0))::numeric, 1) as pct
+          FROM education.enrollment d
+          JOIN education.enrollment e
+            ON e.district_name = d.district_name
+            AND e.school_year = d.school_year
+            AND e.grade_level = 'Total'
+            AND e.demographic_group IS NULL
+          WHERE d.grade_level = 'Total' AND d.demographic_group IS NOT NULL
+            AND d.school_year = (SELECT MAX(school_year) FROM education.enrollment)
+            AND d.district_name = 'Portland SD 1J'
+        ) t
+      ),
+      'staffing', (
+        SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+          SELECT school_year, district_name, enrollment, teachers_fte, pupil_teacher_ratio
+          FROM education.staffing LIMIT 5
+        ) t
       )
     ) AS payload
   `);
+
+  await test("education/staffing", `
+    SELECT count(*)::int AS cnt FROM education.staffing
+  `, 1);
 
   await test("education/chronic_absenteeism", `
     SELECT count(*)::int AS cnt FROM education.chronic_absenteeism
