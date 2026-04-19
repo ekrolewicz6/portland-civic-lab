@@ -59,7 +59,7 @@ export const migrationData: MigrationData = {
     { date: "2024", value: 637890 },
     { date: "2025", value: 641300 },
   ],
-  source: "Portland Water Bureau / U.S. Census Bureau",
+  source: "Portland Water Bureau · U.S. Census Bureau",
   lastUpdated: "2026-03-01",
   insights: [
     "Net water activations turned positive in Q2 2025 for the first time since 2020.",
@@ -94,7 +94,7 @@ export const businessData: BusinessData = {
     value: 42 + Math.round(Math.random() * 15 + i * 2),
     label: "CivicApps licenses",
   })),
-  source: "Revenue Division BLT Registry / CivicApps",
+  source: "Revenue Division · BLT Registry · CivicApps",
   lastUpdated: "2026-03-01",
   insights: [
     "Food & beverage leads new registrations at 18% of total.",
@@ -131,7 +131,7 @@ export const downtownData: DowntownData = {
     value: 38 + Math.round(Math.random() * 8 + i * 0.3),
     label: "Avg dwell (min)",
   })),
-  source: "Placer.ai / CoStar / Portland Business Alliance",
+  source: "Placer.ai · CoStar · Portland Business Alliance",
   lastUpdated: "2026-03-07",
   insights: [
     "Saturday foot traffic has recovered to 89% of 2019, outpacing weekdays at 68%.",
@@ -166,7 +166,7 @@ export const safetyData: SafetyData = {
     value: parseFloat((8.1 - i * 0.08).toFixed(1)),
     label: "Median P1 response (min)",
   })),
-  source: "Portland Police Bureau / BOEC 911",
+  source: "Portland Police Bureau · BOEC 911",
   lastUpdated: "2026-03-01",
   insights: [
     "Vehicle theft is down 14.5% YoY following the catalytic converter task force expansion.",
@@ -241,7 +241,7 @@ export const taxData: TaxData = {
       effectiveRate: 13.1,
     },
   ],
-  source: "Lincoln Institute / OR DOR / WA DOR / City budget offices",
+  source: "Lincoln Institute · OR Dept of Revenue · WA Dept of Revenue · City Budget Offices",
   lastUpdated: "2026-01-15",
   insights: [
     "Portland has the HIGHEST local income tax burden (2.5%) of any comparable Western city — BLT 2.6%, MultCo BIT 2.0%, Metro SHS 1.0%, MultCo PFA 1.5%.",
@@ -277,7 +277,7 @@ export const housingData: HousingData = {
     value: Math.round(1620 + i * 12 + Math.random() * 30),
     label: "Median 1BR rent ($)",
   })),
-  source: "BDS PermitsNow / Zillow ZORI / HUD",
+  source: "Portland Bureau of Development Services · PermitsNow · Zillow ZORI · HUD",
   lastUpdated: "2026-03-01",
   insights: [
     "Permit processing time dropped from 128 to 95 median days after BDS reform.",
@@ -484,5 +484,5 @@ export const vacancyMapData: VacancyMapData = {
     },
   },
   lastUpdated: "2026-03-07",
-  source: "CoStar / LoopNet / Portland BPS",
+  source: "CoStar · LoopNet · Portland Bureau of Planning & Sustainability",
 };

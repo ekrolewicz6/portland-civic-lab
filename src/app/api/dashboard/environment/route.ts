@@ -50,7 +50,7 @@ export async function GET() {
         dataSources: [],
         trend: { direction: "flat", percentage: 0, label: "not yet tracked" },
         chartData: [],
-        source: "EPA AirNow",
+        source: "EPA · AirNow",
         lastUpdated: new Date().toISOString().slice(0, 10),
         insights: ["No AQI data found in the database."],
       });
@@ -91,18 +91,44 @@ export async function GET() {
       }
     }
 
+    // Forecast (tomorrow)
+    let forecastAqi: number | null = null;
+    let forecastCategory: string | null = null;
+    try {
+      const forecastRows = await sql`
+        SELECT aqi::int, category
+        FROM environment.airnow_forecast
+        WHERE pollutant = 'PM2.5'
+          AND date_forecast >= CURRENT_DATE
+        ORDER BY date_forecast ASC
+        LIMIT 1
+      `;
+      if (forecastRows.length > 0) {
+        forecastAqi = Number(forecastRows[0].aqi);
+        forecastCategory = forecastRows[0].category as string;
+      }
+    } catch {
+      // Forecast table may not exist yet — not fatal
+    }
+
     // Insights
     const insights: string[] = [];
     insights.push(
       `Current AQI is ${currentAqi} (${category}) for ${latest.pollutant} in ${latest.reporting_area}.`
     );
 
+    if (forecastAqi !== null && forecastCategory) {
+      insights.push(
+        `Tomorrow's forecast: AQI ${forecastAqi} (${forecastCategory}) for PM2.5.`
+      );
+    }
+
     if (chartData.length > 1) {
       const avg7d = Math.round(
         chartData.reduce((s, d) => s + d.value, 0) / chartData.length
       );
       insights.push(
-        `7-day average PM2.5 AQI is ${avg7d} — ${avg7d <= 50 ? "consistently healthy air" : avg7d <= 100 ? "generally acceptable" : "elevated levels detected"}.`
+        `14-day average PM2.5 AQI is ${avg7d} — ${avg7d <= 50 ? "consistently healthy air" : avg7d <= 100 ? "generally acceptable" : "elevated levels detected"}.`
       );
     }
 
@@ -163,7 +189,7 @@ export async function GET() {
         label: `${Math.abs(trendPercentage)}% ${trendDirection} over 7 days`,
       },
       chartData,
-      source: "EPA AirNow",
+      source: "EPA · AirNow",
       lastUpdated: String(latest.date).slice(0, 10),
       insights,
     });
@@ -177,7 +203,7 @@ export async function GET() {
       dataSources: [],
       trend: { direction: "flat", percentage: 0, label: "not yet tracked" },
       chartData: [],
-      source: "EPA AirNow",
+      source: "EPA · AirNow",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: ["Data temporarily unavailable — check back shortly."],
     });

@@ -87,7 +87,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({
     bureaus,
     bureauActions,
-    source: "Climate Emergency Workplan 2022-2025 / Portland Bureau of Planning & Sustainability",
+    source: "Portland Bureau of Planning & Sustainability · Climate Emergency Workplan",
     lastUpdated: new Date().toISOString().slice(0, 10),
     auditNote: "The February 2026 City Audit found the CSO cannot currently answer which bureaus are accountable for what and whether they are performing. This scorecard directly addresses that gap.",
   });

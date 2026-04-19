@@ -66,7 +66,7 @@ export async function GET() {
       label: "below 1990 emissions baseline",
     },
     chartData: [],
-    source: "Portland Bureau of Planning & Sustainability — Climate Emergency Workplan",
+    source: "Portland Bureau of Planning & Sustainability · Climate Emergency Workplan",
     lastUpdated: new Date().toISOString().slice(0, 10),
     insights: [
       `${achievedActions || 6} of ${totalActions || 43} workplan actions achieved as of the 2025 final progress report.`,

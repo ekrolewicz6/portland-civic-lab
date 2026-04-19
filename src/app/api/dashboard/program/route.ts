@@ -23,7 +23,7 @@ export async function GET(): Promise<NextResponse<ProgramData & { dataStatus: st
     certifiedBusinesses: [],
     survivalRate: [],
     jobsCreated: [],
-    source: "Portland Civic Lab Program Office (not yet live)",
+    source: "Portland Civic Lab · Program Office",
     lastUpdated: new Date().toISOString().slice(0, 10),
     insights: [
       "PCB program metrics will be available once the certification system launches.",

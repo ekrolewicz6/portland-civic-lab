@@ -102,7 +102,7 @@ export async function GET() {
       sectorSummary,
       currentTrajectoryNote: "At the current pace of reduction (~0.12M MTCO2e/year), Portland will reach only ~6.5M MTCO2e by 2030. The 2030 goal requires ~0.42M MTCO2e/year — more than 3× the current rate.",
     },
-    source: "BPS Climate & Energy Dashboard — Multnomah County Community Greenhouse Gas Inventory",
+    source: "Bureau of Planning & Sustainability · Multnomah County Greenhouse Gas Inventory",
     lastUpdated: "2025-08-01",
   });
 }

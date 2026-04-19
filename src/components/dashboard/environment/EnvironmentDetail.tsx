@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import TrendChart from "@/components/charts/TrendChart";
 import {
+  CloudSun,
   Wind,
 } from "lucide-react";
 
@@ -17,10 +18,21 @@ interface AqiReading {
   reporting_area: string;
 }
 
+interface ForecastReading {
+  pollutant: string;
+  aqi: number;
+  category: string;
+  date_forecast: string;
+  action_day: boolean;
+  discussion: string | null;
+}
+
 interface EnvironmentDetailData {
   currentAqi: AqiReading[];
+  forecast: ForecastReading[];
   aqiTrend: { date: string; value: number }[];
   dataStatus: string;
+  lastSynced: string | null;
 }
 
 function aqiColor(aqi: number): string {
@@ -76,6 +88,7 @@ export default function EnvironmentDetail() {
   }, []);
 
   const hasAqi = data?.dataStatus === "live" && (data?.currentAqi?.length ?? 0) > 0;
+  const hasForecast = (data?.forecast?.length ?? 0) > 0;
   const primaryReading =
     data?.currentAqi?.find((r) => r.pollutant === "PM2.5") ?? data?.currentAqi?.[0];
 
@@ -122,6 +135,56 @@ export default function EnvironmentDetail() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Forecast section */}
+      {!loading && hasForecast && data && (
+        <section>
+          <SectionHeader icon={CloudSun} title="AQI Forecast" color={ENV_COLOR} />
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-6">
+            <p className="text-[14px] text-[var(--color-ink-muted)] mb-4">
+              Tomorrow&apos;s forecast from EPA AirNow
+            </p>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+              {data.forecast.map((fc) => (
+                <div
+                  key={`forecast-${fc.pollutant}`}
+                  className="rounded-sm p-4 text-center"
+                  style={{ backgroundColor: aqiBgColor(fc.aqi) }}
+                >
+                  <p
+                    className="text-[28px] lg:text-[32px] font-mono font-bold"
+                    style={{ color: aqiColor(fc.aqi) }}
+                  >
+                    {fc.aqi}
+                  </p>
+                  <p className="text-[14px] font-semibold text-[var(--color-ink)] mt-1">
+                    {fc.pollutant}
+                  </p>
+                  <span
+                    className="inline-block mt-2 text-[12px] font-semibold px-2 py-0.5 rounded-sm"
+                    style={{
+                      color: aqiColor(fc.aqi),
+                      backgroundColor: aqiBgColor(fc.aqi),
+                    }}
+                  >
+                    {fc.category}
+                  </span>
+                  {fc.action_day && (
+                    <p className="mt-2 text-[11px] font-semibold text-[#9f1239]">
+                      ACTION DAY
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+            {data.forecast.some((fc) => fc.discussion) && (
+              <p className="mt-4 text-[13px] text-[var(--color-ink-muted)] italic">
+                {data.forecast.find((fc) => fc.discussion)?.discussion}
+              </p>
+            )}
           </div>
         </section>
       )}

@@ -226,7 +226,7 @@ export async function GET() {
     dataSources,
     trend,
     chartData,
-    source: "TriMet / PBOT / U.S. Census Bureau",
+    source: "TriMet · PBOT · U.S. Census Bureau",
     lastUpdated: new Date().toISOString().slice(0, 10),
     insights,
   });

@@ -170,7 +170,7 @@ export async function GET(): Promise<NextResponse<DowntownData & { dataStatus: s
       footTraffic: [], // Needs Placer.ai subscription ($2-5K/mo)
       vacancyRate: vacancyChartData, // REAL data from CBRE/Colliers/JLL/Kidder Mathews quarterly reports
       dwellTime: [], // Needs Placer.ai subscription
-      source: "CBRE/Colliers/JLL/Kidder Mathews quarterly reports (real) / TriMet GTFS (real) / Portland BPS Graffiti (real)",
+      source: "CBRE · Colliers · JLL · Kidder Mathews · TriMet GTFS · Portland BPS",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights,
     };
@@ -188,7 +188,7 @@ export async function GET(): Promise<NextResponse<DowntownData & { dataStatus: s
       footTraffic: [],
       vacancyRate: [],
       dwellTime: [],
-      source: "Placer.ai / CoStar / Portland BPS",
+      source: "CBRE · Colliers · JLL · Kidder Mathews · TriMet GTFS · Portland BPS",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: ["Database connection failed. Downtown data is temporarily unavailable."],
     } as unknown as DowntownData & { dataStatus: string });

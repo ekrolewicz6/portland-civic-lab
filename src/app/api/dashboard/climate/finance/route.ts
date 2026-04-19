@@ -118,7 +118,7 @@ export async function GET() {
       allocationSplit,
       bureauTotals,
     },
-    source: "PCEF Climate Investment Plan / Portland Bureau of Planning & Sustainability",
+    source: "Portland Clean Energy Fund · Bureau of Planning & Sustainability",
     lastUpdated: new Date().toISOString().slice(0, 10),
     auditNote: "The February 2026 audit found Portland has not been transparent enough about how PCEF funding is used when allocated to bureaus. This tracker makes every dollar visible.",
   });

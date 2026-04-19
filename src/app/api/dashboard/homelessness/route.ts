@@ -74,7 +74,7 @@ export async function GET() {
         dataAvailable: false,
         trend: { direction: "flat", percentage: 0, label: "no data" },
         chartData: [],
-        source: "HUD Point-in-Time Count",
+        source: "HUD Point-in-Time Count · JOHS · Metro SHS · Multnomah County Health",
         lastUpdated: new Date().toISOString().slice(0, 10),
         insights: ["Homelessness data not yet available."],
       });
@@ -146,7 +146,7 @@ export async function GET() {
         label: yoyLabel,
       },
       chartData,
-      source: "HUD PIT Count · JOHS · Metro SHS · Multnomah County Health",
+      source: "HUD Point-in-Time Count · JOHS · Metro SHS · Multnomah County Health",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights,
     });
@@ -159,7 +159,7 @@ export async function GET() {
       dataAvailable: false,
       trend: { direction: "flat" as const, percentage: 0, label: "no data" },
       chartData: [],
-      source: "HUD Point-in-Time Count",
+      source: "HUD Point-in-Time Count · JOHS · Metro SHS · Multnomah County Health",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: [
         "Database connection failed. Homelessness data is temporarily unavailable.",

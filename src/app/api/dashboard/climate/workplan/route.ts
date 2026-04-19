@@ -116,7 +116,7 @@ export async function GET(req: NextRequest) {
       delayedPct: total > 0 ? Math.round((delayed / total) * 100) : 9,
     },
     statusHistory,
-    source: "Climate Emergency Workplan 2022-2025 / Portland Bureau of Planning & Sustainability",
+    source: "Portland Bureau of Planning & Sustainability · Climate Emergency Workplan",
     lastUpdated: "2025-08-01",
   });
 }

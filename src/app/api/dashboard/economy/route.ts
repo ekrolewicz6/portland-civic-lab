@@ -182,7 +182,7 @@ export async function GET() {
         label: trendLabel,
       },
       chartData,
-      source: "Bureau of Labor Statistics · QCEW · LAUS · Census Bureau CBP/SUSB",
+      source: "Bureau of Labor Statistics · QCEW · LAUS · Census Bureau · CBP · SUSB",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights,
     });
@@ -196,7 +196,7 @@ export async function GET() {
       dataSources: [],
       trend: { direction: "flat" as const, percentage: 0, label: "error" },
       chartData: [],
-      source: "Bureau of Labor Statistics · QCEW · LAUS · Census Bureau CBP/SUSB",
+      source: "Bureau of Labor Statistics · QCEW · LAUS · Census Bureau · CBP · SUSB",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: ["Database connection error."],
     });

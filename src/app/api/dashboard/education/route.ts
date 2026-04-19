@@ -84,7 +84,7 @@ export async function GET() {
         ],
         trend: { direction: "flat", percentage: 0, label: "not yet tracked" },
         chartData: [],
-        source: "Oregon Department of Education",
+        source: "Oregon Department of Education · Enrollment · Assessment · Graduation",
         lastUpdated: new Date().toISOString().slice(0, 10),
         insights: ["Run parse-education.ts to load ODE enrollment data"],
       });
@@ -158,7 +158,7 @@ export async function GET() {
         label: `vs ${prior?.school_year ?? "prior year"}`,
       },
       chartData,
-      source: "Oregon Department of Education",
+      source: "Oregon Department of Education · Enrollment · Assessment · Graduation",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights,
     };
@@ -176,7 +176,7 @@ export async function GET() {
       dataSources: [],
       trend: { direction: "flat", percentage: 0, label: "error" },
       chartData: [],
-      source: "Oregon Department of Education",
+      source: "Oregon Department of Education · Enrollment · Assessment · Graduation",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: ["Database connection error — check that PostgreSQL is running"],
     });

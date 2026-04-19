@@ -8,7 +8,7 @@ interface ExportButtonProps {
 
 export default function ExportButton({ question }: ExportButtonProps) {
   const handleExport = () => {
-    window.open(`/api/export/${question}`, "_blank");
+    window.open(`/api/dashboard/${question}/export`, "_blank");
   };
 
   return (

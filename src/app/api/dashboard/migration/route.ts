@@ -44,7 +44,7 @@ export async function GET(): Promise<
         chartData: [],
         netActivations: [],
         censusPopulation: [],
-        source: "No data sources currently connected",
+        source: "U.S. Census Bureau · Population Estimates Program · ACS 5-Year",
         lastUpdated: new Date().toISOString().slice(0, 10),
         insights: [
           "Run: npx tsx scripts/fetch-census.ts to fetch Census population data.",
@@ -143,7 +143,7 @@ export async function GET(): Promise<
       chartData,
       netActivations: [],
       censusPopulation,
-      source: "U.S. Census Bureau (PEP + ACS 5-Year)",
+      source: "U.S. Census Bureau · Population Estimates Program · ACS 5-Year",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights,
     } as unknown as MigrationData & {
@@ -162,7 +162,7 @@ export async function GET(): Promise<
       chartData: [],
       netActivations: [],
       censusPopulation: [],
-      source: "Database query failed",
+      source: "U.S. Census Bureau · Population Estimates Program · ACS 5-Year",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: [
         "Database connection error. Check that PostgreSQL is running and tables are populated.",

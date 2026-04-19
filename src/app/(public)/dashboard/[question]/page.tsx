@@ -4,8 +4,8 @@ import { ArrowLeft, CheckCircle2, BookOpen, MapPin } from "lucide-react";
 import { isValidQuestion, questionMeta } from "@/lib/questions";
 import type { DashboardResponse } from "@/lib/types";
 import TrendChart from "@/components/charts/TrendChart";
-// Export and Embed buttons hidden until functional. See TODO.md
-// import ExportButton from "@/components/dashboard/ExportButton";
+import ExportButton from "@/components/dashboard/ExportButton";
+// Embed button hidden until functional. See TODO.md
 // import EmbedButton from "@/components/dashboard/EmbedButton";
 import SafetyDetail from "@/components/dashboard/safety/SafetyDetail";
 import HousingDetail from "@/components/dashboard/housing/HousingDetail";
@@ -188,13 +188,10 @@ export default async function QuestionPage({ params }: PageProps) {
 
       {/* Content */}
       <div className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 -mt-4 relative z-20">
-        {/* Action buttons — Export & Embed hidden until functional. See TODO.md */}
-        {/*
+        {/* Action buttons */}
         <div className="flex items-center justify-end gap-2 mb-6">
           <ExportButton question={question} />
-          <EmbedButton question={question} />
         </div>
-        */}
 
         {/* Question-specific detail view or generic layout */}
         {DetailComponent && <DetailComponent />}

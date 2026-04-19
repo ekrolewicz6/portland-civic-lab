@@ -147,7 +147,7 @@ export async function GET(): Promise<
       newRegistrations: [],
       cancelledRegistrations: [],
       civicAppsLicenses: [],
-      source: "Oregon Secretary of State via data.oregon.gov",
+      source: "Oregon Secretary of State · Business Registry",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights,
     } as unknown as BusinessData & {
@@ -169,7 +169,7 @@ export async function GET(): Promise<
       newRegistrations: [],
       cancelledRegistrations: [],
       civicAppsLicenses: [],
-      source: "Database query failed",
+      source: "Oregon Secretary of State · Business Registry",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: [
         "Database connection error. Check that PostgreSQL is running and tables are populated.",
