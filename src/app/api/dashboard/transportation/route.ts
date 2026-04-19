@@ -7,28 +7,30 @@ export async function GET() {
   let totalRoutes = 0;
   let totalStops = 0;
   let routeTypes: { route_type: string; count: number }[] = [];
+  let latestRidershipYear = 0;
+  let latestRidershipTotal = 0;
+  let prePandemicTotal = 0;
+  let recoveryPct = 0;
+  let hasRidership = false;
+  let latestFatalities = 0;
+  let latestFatalityYear = 0;
+  let hasCrashes = false;
   let commuteTransitPct: number | null = null;
   let commuteDrivePct: number | null = null;
   let commuteWfhPct: number | null = null;
   let commuteYear: number | null = null;
-  let ridershipData: { month: string; total_boardings: number; recovery_pct: number | null }[] = [];
-  let hasRidership = false;
 
   // 1. TriMet route count
   try {
     const rows = await sql`SELECT count(*)::int AS cnt FROM downtown.trimet_routes`;
     totalRoutes = Number(rows[0].cnt);
-  } catch {
-    // table may not exist
-  }
+  } catch { /* table may not exist */ }
 
   // 2. TriMet stop count
   try {
     const rows = await sql`SELECT count(*)::int AS cnt FROM downtown.trimet_stops`;
     totalStops = Number(rows[0].cnt);
-  } catch {
-    // table may not exist
-  }
+  } catch { /* table may not exist */ }
 
   // 3. Route types breakdown
   try {
@@ -42,80 +44,106 @@ export async function GET() {
       route_type: r.route_type_name as string,
       count: Number(r.cnt),
     }));
-  } catch {
-    // table may not exist
-  }
+  } catch { /* table may not exist */ }
 
-  // 4. Census commute mode share (latest year)
+  // 4. Latest ridership from transportation.ridership
   try {
     const rows = await sql`
-      SELECT year, commute_drive_pct, commute_transit_pct, commute_wfh_pct
-      FROM migration.census_demographics
-      WHERE commute_transit_pct IS NOT NULL
+      SELECT
+        fiscal_year,
+        SUM(boardings)::bigint AS total
+      FROM transportation.ridership
+      GROUP BY fiscal_year
+      ORDER BY fiscal_year DESC
+      LIMIT 2
+    `;
+    if (rows.length > 0) {
+      hasRidership = true;
+      latestRidershipYear = Number(rows[0].fiscal_year);
+      latestRidershipTotal = Number(rows[0].total);
+    }
+    // Get FY2019 as pre-pandemic baseline
+    const baseline = await sql`
+      SELECT SUM(boardings)::bigint AS total
+      FROM transportation.ridership
+      WHERE fiscal_year = 2019
+    `;
+    if (baseline.length > 0 && baseline[0].total) {
+      prePandemicTotal = Number(baseline[0].total);
+      recoveryPct = Math.round((latestRidershipTotal / prePandemicTotal) * 1000) / 10;
+    }
+  } catch { /* table may not exist */ }
+
+  // 5. Latest crash/fatality data
+  try {
+    // Get latest full year (not partial year)
+    const rows = await sql`
+      SELECT year, fatalities
+      FROM transportation.crashes
+      WHERE source NOT LIKE '%partial%'
       ORDER BY year DESC
       LIMIT 1
     `;
     if (rows.length > 0) {
-      commuteTransitPct = Number(rows[0].commute_transit_pct);
-      commuteDrivePct = Number(rows[0].commute_drive_pct);
-      commuteWfhPct = Number(rows[0].commute_wfh_pct);
-      commuteYear = Number(rows[0].year);
+      hasCrashes = true;
+      latestFatalityYear = Number(rows[0].year);
+      latestFatalities = Number(rows[0].fatalities);
     }
-  } catch {
-    // table may not exist
-  }
+  } catch { /* table may not exist */ }
 
-  // 5. TriMet ridership (if populated)
+  // 6. Latest commute data from transportation.commute_mode
   try {
     const rows = await sql`
-      SELECT
-        TO_CHAR(month, 'YYYY-MM') AS month,
-        total_boardings::int,
-        recovery_pct
-      FROM downtown.trimet_ridership
-      ORDER BY month DESC
-      LIMIT 24
+      SELECT year,
+        MAX(CASE WHEN mode = 'Drove Alone' THEN pct END)::numeric AS drive_pct,
+        MAX(CASE WHEN mode = 'Public Transit' THEN pct END)::numeric AS transit_pct,
+        MAX(CASE WHEN mode = 'Work From Home' THEN pct END)::numeric AS wfh_pct
+      FROM transportation.commute_mode
+      GROUP BY year
+      ORDER BY year DESC
+      LIMIT 1
     `;
     if (rows.length > 0) {
-      hasRidership = true;
-      ridershipData = rows.reverse().map((r) => ({
-        month: r.month as string,
-        total_boardings: Number(r.total_boardings),
-        recovery_pct: r.recovery_pct != null ? Number(r.recovery_pct) : null,
-      }));
+      commuteYear = Number(rows[0].year);
+      commuteDrivePct = Number(rows[0].drive_pct);
+      commuteTransitPct = Number(rows[0].transit_pct);
+      commuteWfhPct = Number(rows[0].wfh_pct);
     }
-  } catch {
-    // table may not exist
-  }
+  } catch { /* table may not exist */ }
 
   const hasTrimetData = totalRoutes > 0 || totalStops > 0;
-  const dataAvailable = hasTrimetData;
+  const dataAvailable = hasTrimetData || hasRidership || hasCrashes;
 
   // Build headline
   let headline = "Transportation data not yet available";
   let headlineValue = 0;
-  if (hasTrimetData) {
-    const parts: string[] = [];
-    if (totalRoutes > 0) parts.push(`${totalRoutes.toLocaleString()} TriMet routes`);
-    if (totalStops > 0) parts.push(`${totalStops.toLocaleString()} stops`);
-    if (commuteTransitPct != null) parts.push(`${commuteTransitPct}% transit commute share`);
-    headline = parts.join(" across ");
+  if (hasRidership) {
+    headline = `${(latestRidershipTotal / 1_000_000).toFixed(1)}M transit boardings (FY${latestRidershipYear})`;
+    headlineValue = latestRidershipTotal;
+    if (recoveryPct > 0) {
+      headline += ` — ${recoveryPct}% of pre-pandemic levels`;
+    }
+  } else if (hasTrimetData) {
+    headline = `${totalRoutes} TriMet routes serving ${totalStops.toLocaleString()} stops`;
     headlineValue = totalRoutes;
   }
 
-  // Build chart data from route types for the summary card
-  const chartData = routeTypes.map((rt) => ({
-    date: rt.route_type,
-    value: rt.count,
-  }));
-
-  // If we have ridership, use that as chart data instead
-  if (hasRidership && ridershipData.length > 0) {
-    chartData.length = 0;
-    for (const r of ridershipData) {
-      chartData.push({ date: r.month, value: r.total_boardings });
+  // Chart data — ridership trend for summary card
+  const chartData: { date: string; value: number }[] = [];
+  try {
+    const rows = await sql`
+      SELECT fiscal_year, SUM(boardings)::bigint AS total
+      FROM transportation.ridership
+      GROUP BY fiscal_year
+      ORDER BY fiscal_year ASC
+    `;
+    for (const r of rows) {
+      chartData.push({
+        date: `FY${r.fiscal_year}`,
+        value: Number(r.total),
+      });
     }
-  }
+  } catch { /* table may not exist */ }
 
   // Build data sources
   const dataSources = [
@@ -128,26 +156,28 @@ export async function GET() {
         : "Fetch TriMet GTFS data",
     },
     {
-      name: "TriMet Ridership Data",
+      name: "TriMet & Streetcar Ridership",
       status: hasRidership ? "live" : "needed",
-      provider: "TriMet",
+      provider: "TriMet / Portland Streetcar Inc.",
       action: hasRidership
-        ? `${ridershipData.length} months of ridership data loaded`
-        : "Fetch ridership data from TriMet monthly reports",
+        ? `FY2006-FY${latestRidershipYear} ridership loaded`
+        : "Fetch ridership data from TriMet annual reports",
+    },
+    {
+      name: "Traffic Crash & Fatality Data",
+      status: hasCrashes ? "live" : "needed",
+      provider: "PBOT / City Auditor",
+      action: hasCrashes
+        ? `${latestFatalityYear}: ${latestFatalities} fatalities (Vision Zero tracking)`
+        : "Pull crash data from PBOT Vision Zero reports",
     },
     {
       name: "Census Commute Mode Share",
       status: commuteTransitPct != null ? "live" : "needed",
       provider: "U.S. Census Bureau",
       action: commuteTransitPct != null
-        ? `${commuteYear} ACS commute data loaded`
-        : "Obtain Census API key and fetch ACS commute mode share data",
-    },
-    {
-      name: "PBOT Crash/Fatality Data",
-      status: "needed" as const,
-      provider: "Portland Bureau of Transportation",
-      action: "Pull crash and fatality data from Portland Maps ArcGIS",
+        ? `${commuteYear} ACS: ${commuteTransitPct}% transit, ${commuteWfhPct}% WFH`
+        : "Fetch Census ACS commute mode share data",
     },
   ];
 
@@ -157,41 +187,35 @@ export async function GET() {
     percentage: 0,
     label: "not yet tracked",
   };
-  if (hasRidership && ridershipData.length >= 2) {
-    const latest = ridershipData[ridershipData.length - 1];
-    if (latest.recovery_pct != null) {
-      trend = {
-        direction: latest.recovery_pct >= 100 ? "up" : "down",
-        percentage: Math.abs(Math.round(100 - latest.recovery_pct)),
-        label: `${latest.recovery_pct}% of 2019 ridership`,
-      };
-    }
+  if (hasRidership && recoveryPct > 0) {
+    trend = {
+      direction: recoveryPct >= 100 ? "up" : "down",
+      percentage: Math.abs(Math.round(100 - recoveryPct)),
+      label: `${recoveryPct}% of FY2019 ridership`,
+    };
   }
 
   // Insights
   const insights: string[] = [];
-  if (hasTrimetData) {
+  if (hasRidership) {
     insights.push(
-      `${totalRoutes} TriMet routes serve ${totalStops.toLocaleString()} stops across the Portland metro area.`
+      `FY${latestRidershipYear} total transit boardings: ${latestRidershipTotal.toLocaleString()} ` +
+        `(${recoveryPct}% of pre-pandemic FY2019 levels).`
     );
   }
-  if (routeTypes.length > 0) {
+  if (hasTrimetData) {
     const breakdown = routeTypes.map((rt) => `${rt.count} ${rt.route_type}`).join(", ");
-    insights.push(`Route breakdown: ${breakdown}.`);
+    insights.push(`TriMet operates ${totalRoutes} routes (${breakdown}) across ${totalStops.toLocaleString()} stops.`);
+  }
+  if (hasCrashes) {
+    insights.push(
+      `${latestFatalityYear} traffic fatalities: ${latestFatalities}. Portland adopted Vision Zero in 2015 targeting zero deaths by 2025.`
+    );
   }
   if (commuteTransitPct != null && commuteDrivePct != null && commuteWfhPct != null) {
     insights.push(
-      `Census ${commuteYear}: ${commuteDrivePct}% drive alone, ${commuteWfhPct}% work from home, ${commuteTransitPct}% use public transit.`
+      `Census ${commuteYear}: ${commuteDrivePct}% drive alone, ${commuteWfhPct}% work from home, ${commuteTransitPct}% use transit.`
     );
-  }
-  if (hasRidership) {
-    const latest = ridershipData[ridershipData.length - 1];
-    insights.push(
-      `Latest ridership: ${latest.total_boardings.toLocaleString()} total boardings (${latest.month}).`
-    );
-  }
-  if (!hasRidership) {
-    insights.push("TriMet monthly ridership data not yet loaded — needed to track pandemic recovery.");
   }
 
   return NextResponse.json({
@@ -202,7 +226,7 @@ export async function GET() {
     dataSources,
     trend,
     chartData,
-    source: "TriMet / U.S. Census Bureau / PBOT",
+    source: "TriMet / PBOT / U.S. Census Bureau",
     lastUpdated: new Date().toISOString().slice(0, 10),
     insights,
   });
