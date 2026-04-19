@@ -15,6 +15,8 @@ import {
   DollarSign,
   AlertTriangle,
   MapPin,
+  Factory,
+  Globe,
 } from "lucide-react";
 
 const ACCENT = "#c8956c";
@@ -90,6 +92,19 @@ interface IndustryChange {
   avgSize: number;
 }
 
+interface BusinessFormationRow {
+  year: number;
+  totalEstablishments: number | null;
+  totalEmployment: number | null;
+  annualPayrollThousands: number | null;
+  newMfgFirmsPer10k: number | null;
+  metroRankMfg: number | null;
+  netEstablishmentChange: number | null;
+  entryRate: number | null;
+  exitRate: number | null;
+  notes: string | null;
+}
+
 interface EconomyDetailData {
   businessStats: { totalActive: number; newThisQuarter: number; yoyGrowthMultiple: number };
   quarterlyTrend: { quarter: string; total: number }[];
@@ -110,6 +125,8 @@ interface EconomyDetailData {
     businessCount?: number;
     population?: number;
   }[];
+  msaEmploymentTrend?: { quarter: string; establishments: number; employment: number; avgWage: number }[];
+  businessFormation?: BusinessFormationRow[];
   dataStatus: string;
 }
 
@@ -163,7 +180,7 @@ export default function EconomyDetail() {
     );
   }
 
-  const { unemploymentTrend, qcewEmployment, qcewTrend, detailedIndustryChanges, since2019TopGrowers, realWageTrend, neighborhoodEconomy } = data;
+  const { unemploymentTrend, qcewEmployment, qcewTrend, detailedIndustryChanges, since2019TopGrowers, realWageTrend, neighborhoodEconomy, msaEmploymentTrend, businessFormation } = data;
 
   // Compute key figures from QCEW
   const latestQcew = qcewTrend && qcewTrend.length > 0 ? qcewTrend[qcewTrend.length - 1] : null;
@@ -589,7 +606,151 @@ export default function EconomyDetail() {
         </section>
       )}
 
-      {/* ━━━ 9. DATA STILL NEEDED ━━━ */}
+      {/* ━━━ 9. PORTLAND MSA (METRO-WIDE) EMPLOYMENT ━━━ */}
+      {msaEmploymentTrend && msaEmploymentTrend.length > 0 && (() => {
+        const msaLatest = msaEmploymentTrend[msaEmploymentTrend.length - 1];
+        const msaPeak = msaEmploymentTrend.reduce((max, d) => d.establishments > max.establishments ? d : max, msaEmploymentTrend[0]);
+        const msaPreCovid = msaEmploymentTrend.find((d) => d.quarter === "2019 Q4");
+        const msaEstLoss = msaPeak.establishments - msaLatest.establishments;
+        const msaEmpDiff = msaPreCovid ? msaLatest.employment - msaPreCovid.employment : 0;
+
+        return (
+          <section>
+            <SectionHeader icon={Globe} title="Portland Metro (MSA) — The Bigger Picture" />
+            <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
+              <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
+                The Portland-Vancouver-Hillsboro MSA covers 7 counties across Oregon and Washington.
+                At the metro level, there are <strong>{msaLatest.establishments.toLocaleString()} private establishments</strong> employing{" "}
+                <strong>{msaLatest.employment.toLocaleString()} workers</strong> at an average of ${msaLatest.avgWage.toLocaleString()}/week ({msaLatest.quarter}).
+                {msaEstLoss > 0 && ` The MSA has lost ${msaEstLoss.toLocaleString()} businesses since its peak of ${msaPeak.establishments.toLocaleString()} (${msaPeak.quarter}).`}
+                {msaPreCovid && msaEmpDiff !== 0 && (
+                  msaEmpDiff > 0
+                    ? ` Employment is ${msaEmpDiff.toLocaleString()} above pre-COVID levels.`
+                    : ` Employment is still ${Math.abs(msaEmpDiff).toLocaleString()} below pre-COVID levels.`
+                )}
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+                <div className="bg-[var(--color-parchment)]/40 rounded-sm p-3">
+                  <p className="text-[11px] text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">MSA Establishments</p>
+                  <p className="text-lg font-semibold text-[var(--color-ink)]">{msaLatest.establishments.toLocaleString()}</p>
+                  <p className="text-[11px] text-[var(--color-ink-muted)]">{msaLatest.quarter}</p>
+                </div>
+                <div className="bg-[var(--color-parchment)]/40 rounded-sm p-3">
+                  <p className="text-[11px] text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">MSA Employment</p>
+                  <p className="text-lg font-semibold text-[var(--color-ink)]">{msaLatest.employment.toLocaleString()}</p>
+                  <p className="text-[11px] text-[var(--color-ink-muted)]">{msaLatest.quarter}</p>
+                </div>
+                <div className="bg-[var(--color-parchment)]/40 rounded-sm p-3">
+                  <p className="text-[11px] text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">MSA Avg Weekly Wage</p>
+                  <p className="text-lg font-semibold text-[var(--color-ink)]">${msaLatest.avgWage.toLocaleString()}</p>
+                  <p className="text-[11px] text-[var(--color-ink-muted)]">${Math.round(msaLatest.avgWage * 52).toLocaleString()}/yr</p>
+                </div>
+              </div>
+
+              <TrendChart
+                data={msaEmploymentTrend.map((d) => ({ date: d.quarter, value: d.establishments }))}
+                color="#3d7a5a"
+                height={280}
+              />
+              <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
+                Source: BLS QCEW, Portland-Vancouver-Hillsboro MSA (FIPS C3890), private sector, all industries. Quarterly.
+              </p>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* ━━━ 10. BUSINESS FORMATION ━━━ */}
+      {businessFormation && businessFormation.length > 0 && (() => {
+        const withEstabs = businessFormation.filter((d) => d.totalEstablishments != null);
+        const mfgData = businessFormation.filter((d) => d.newMfgFirmsPer10k != null);
+        const latestMfg = mfgData.length > 0 ? mfgData[mfgData.length - 1] : null;
+
+        return (
+          <section>
+            <SectionHeader icon={Factory} title="Business Formation — Is Portland Creating New Businesses?" />
+            <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
+              {latestMfg && (
+                <div className="bg-[var(--color-canopy)] rounded-sm p-5 mb-5 text-white/90">
+                  <p className="text-[14px] leading-relaxed">
+                    Portland has <strong className="text-white">{latestMfg.newMfgFirmsPer10k} new manufacturing firms per 10,000 population</strong> — the{" "}
+                    <strong className="text-white">#{latestMfg.metroRankMfg} rate among the 50 largest U.S. metros</strong> ({latestMfg.year}).
+                    This reflects Portland&apos;s strength in specialty manufacturing, food/beverage production, and maker culture.
+                  </p>
+                  <p className="text-[11px] text-white/40 mt-2 font-mono">
+                    Source: Census Bureau, Statistics of U.S. Businesses (SUSB)
+                  </p>
+                </div>
+              )}
+
+              <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
+                Annual establishment counts from the Census Bureau&apos;s County Business Patterns (CBP) program.
+                CBP counts all business establishments with paid employees, covering the full Portland MSA.
+                Unlike the quarterly QCEW data (which counts UI-filing units), CBP provides a once-yearly census.
+              </p>
+
+              {withEstabs.length > 0 && (
+                <>
+                  <TrendChart
+                    data={withEstabs.map((d) => ({ date: String(d.year), value: d.totalEstablishments! }))}
+                    color={ACCENT}
+                    height={240}
+                  />
+
+                  <div className="mt-4 overflow-x-auto">
+                    <table className="w-full text-[12px]">
+                      <thead>
+                        <tr className="text-[var(--color-ink-muted)] border-b border-[var(--color-parchment)]">
+                          <th className="text-left py-1.5 pr-3">Year</th>
+                          <th className="text-right py-1.5 px-2">Establishments</th>
+                          <th className="text-right py-1.5 px-2">Employment</th>
+                          <th className="text-right py-1.5 px-2">Net Change</th>
+                          <th className="text-right py-1.5 px-2">Payroll ($B)</th>
+                          {mfgData.length > 0 && <th className="text-right py-1.5 pl-2">Mfg Formation</th>}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {withEstabs.map((row) => (
+                          <tr key={row.year} className="border-b border-[var(--color-parchment)]/50 text-[var(--color-ink)]">
+                            <td className="py-1.5 pr-3 font-mono">{row.year}</td>
+                            <td className="text-right py-1.5 px-2 font-mono">{row.totalEstablishments?.toLocaleString()}</td>
+                            <td className="text-right py-1.5 px-2 font-mono">{row.totalEmployment?.toLocaleString()}</td>
+                            <td className={`text-right py-1.5 px-2 font-mono ${
+                              row.netEstablishmentChange != null && row.netEstablishmentChange > 0 ? "text-green-700" :
+                              row.netEstablishmentChange != null && row.netEstablishmentChange < 0 ? "text-red-600" : ""
+                            }`}>
+                              {row.netEstablishmentChange != null ? (row.netEstablishmentChange > 0 ? "+" : "") + row.netEstablishmentChange.toLocaleString() : "--"}
+                            </td>
+                            <td className="text-right py-1.5 px-2 font-mono">
+                              {row.annualPayrollThousands != null ? `$${(row.annualPayrollThousands / 1_000_000).toFixed(1)}B` : "--"}
+                            </td>
+                            {mfgData.length > 0 && (
+                              <td className="text-right py-1.5 pl-2 font-mono">
+                                {row.newMfgFirmsPer10k != null ? (
+                                  <span className="text-green-700 font-semibold">{row.newMfgFirmsPer10k}/10K <span className="text-[var(--color-ink-muted)] font-normal">(#{row.metroRankMfg})</span></span>
+                                ) : "--"}
+                              </td>
+                            )}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </>
+              )}
+
+              <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
+                Source: Census Bureau County Business Patterns (CBP), Portland MSA (FIPS 38900).
+                Manufacturing formation rate from Census SUSB.
+                CBP data has a ~2 year lag; the latest available year is 2022.
+              </p>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* ━━━ 11. DATA STILL NEEDED ━━━ */}
       <section className="space-y-4">
         <DataNeeded
           title="Commercial Vacancy by District"
@@ -611,7 +772,7 @@ export default function EconomyDetail() {
         />
       </section>
 
-      {/* ━━━ 10. METHODOLOGY ━━━ */}
+      {/* ━━━ 12. METHODOLOGY ━━━ */}
       <section>
         <div className="bg-[var(--color-parchment)]/40 border border-[var(--color-parchment)]/60 rounded-sm p-6">
           <h3 className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.15em] mb-3">
@@ -624,12 +785,20 @@ export default function EconomyDetail() {
               is the number of businesses filing quarterly unemployment insurance reports — the most reliable county-level business count.
             </p>
             <p>
+              <strong>Metro-wide (MSA):</strong> BLS QCEW for the Portland-Vancouver-Hillsboro MSA (FIPS C3890), covering 7 counties
+              across Oregon and Washington. Provides the broader regional context that county-level data misses.
+            </p>
+            <p>
               <strong>Wages:</strong> QCEW average weekly wage, deflated by Portland-Salem CPI (CUURS49BSA0, bimonthly) to compute real wages.
               The CPI adjustment uses the February reading of each year as the annual index.
             </p>
             <p>
               <strong>Unemployment:</strong> BLS LAUS, Portland-Vancouver-Hillsboro MSA, monthly, ~2 month lag. Covers Clackamas, Multnomah,
               Washington, and Clark (WA) counties.
+            </p>
+            <p>
+              <strong>Business formation:</strong> Census Bureau County Business Patterns (CBP) for annual establishment counts (Portland MSA,
+              FIPS 38900). Census Statistics of U.S. Businesses (SUSB) for manufacturing firm formation rates. CBP data lags ~2 years.
             </p>
             <p>
               <strong>Industry changes:</strong> 3-digit NAICS codes, comparing 2023 Q3 (near the establishment peak) to the latest available

@@ -425,6 +425,62 @@ export async function GET() {
       // economy.neighborhood_income may not exist yet — run scripts/fetch-census-tracts.ts
     }
 
+    // Portland MSA employment & wages (QCEW MSA-level data)
+    let msaEmploymentTrend: { quarter: string; establishments: number; employment: number; avgWage: number }[] = [];
+    try {
+      const msaRows = await sql`
+        SELECT year, quarter, establishments, month3_employment, avg_weekly_wage
+        FROM economy.msa_employment_wages
+        ORDER BY year, quarter
+      `;
+      msaEmploymentTrend = msaRows.map((r) => ({
+        quarter: `${r.year} Q${r.quarter}`,
+        establishments: Number(r.establishments),
+        employment: Number(r.month3_employment),
+        avgWage: Number(r.avg_weekly_wage),
+      }));
+    } catch {
+      // economy.msa_employment_wages may not exist yet
+    }
+
+    // Business formation data (Census CBP + SUSB)
+    let businessFormation: {
+      year: number;
+      totalEstablishments: number | null;
+      totalEmployment: number | null;
+      annualPayrollThousands: number | null;
+      newMfgFirmsPer10k: number | null;
+      metroRankMfg: number | null;
+      netEstablishmentChange: number | null;
+      entryRate: number | null;
+      exitRate: number | null;
+      notes: string | null;
+    }[] = [];
+    try {
+      const formationRows = await sql`
+        SELECT year, total_establishments, total_employment,
+               annual_payroll_thousands, new_mfg_firms_per_10k_pop,
+               metro_rank_mfg_formation, net_establishment_change,
+               establishment_entry_rate, establishment_exit_rate, notes
+        FROM economy.business_formation
+        ORDER BY year
+      `;
+      businessFormation = formationRows.map((r) => ({
+        year: Number(r.year),
+        totalEstablishments: r.total_establishments ? Number(r.total_establishments) : null,
+        totalEmployment: r.total_employment ? Number(r.total_employment) : null,
+        annualPayrollThousands: r.annual_payroll_thousands ? Number(r.annual_payroll_thousands) : null,
+        newMfgFirmsPer10k: r.new_mfg_firms_per_10k_pop ? Number(r.new_mfg_firms_per_10k_pop) : null,
+        metroRankMfg: r.metro_rank_mfg_formation ? Number(r.metro_rank_mfg_formation) : null,
+        netEstablishmentChange: r.net_establishment_change ? Number(r.net_establishment_change) : null,
+        entryRate: r.establishment_entry_rate ? Number(r.establishment_entry_rate) : null,
+        exitRate: r.establishment_exit_rate ? Number(r.establishment_exit_rate) : null,
+        notes: r.notes ? String(r.notes) : null,
+      }));
+    } catch {
+      // economy.business_formation may not exist yet
+    }
+
     // Downtown vacancy data (optional table)
     let latestVacancy: { office: number; retail: number; quarter: string } | null = null;
     try {
@@ -467,6 +523,8 @@ export async function GET() {
       since2019TopGrowers,
       realWageTrend,
       neighborhoodEconomy,
+      msaEmploymentTrend,
+      businessFormation,
       dataStatus: "live",
     };
     await setCachedData(CACHE_KEY, responseData);
@@ -494,6 +552,8 @@ export async function GET() {
         since2019TopGrowers: [],
         realWageTrend: [],
         neighborhoodEconomy: [],
+        msaEmploymentTrend: [],
+        businessFormation: [],
         dataStatus: "error",
       },
       { status: 500 }
