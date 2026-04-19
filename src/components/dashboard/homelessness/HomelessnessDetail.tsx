@@ -769,38 +769,49 @@ export default function HomelessnessDetail() {
         <section>
           <SectionHeader icon={Heart} title="Health & Survival" color="#b85c3a" />
           <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-            {/* Key stat callout */}
+            {/* Key stat callout — match the chart metric */}
             {latestOD && (
               <div className="bg-[#b85c3a]/10 border border-[#b85c3a]/20 rounded-sm p-4 mb-5">
                 <p className="text-[16px] font-semibold text-[var(--color-ink)]">
+                  {latestOD.totalOdDeathsHomeless > 0
+                    ? `${latestOD.totalOdDeathsHomeless.toLocaleString()} overdose deaths among unhoused in ${latestOD.year}`
+                    : `Fentanyl deaths among unhoused: ${latestOD.fentanylDeathsHomeless} in ${latestOD.year}`}
+                  {prevOD && latestOD.totalOdDeathsHomeless > 0 && prevOD.totalOdDeathsHomeless > 0
+                    ? ` (${latestOD.totalOdDeathsHomeless < prevOD.totalOdDeathsHomeless ? "down" : "up"} ${Math.abs(Math.round(((latestOD.totalOdDeathsHomeless - prevOD.totalOdDeathsHomeless) / prevOD.totalOdDeathsHomeless) * 100))}% from ${prevOD.year})`
+                    : ""}
                   {latestOD.totalHomelessDeaths > 0
-                    ? `${latestOD.totalHomelessDeaths.toLocaleString()} unhoused deaths in ${latestOD.year}`
-                    : `${latestOD.totalOdDeathsHomeless.toLocaleString()} overdose deaths among unhoused in ${latestOD.year}`}
-                  {prevOD && latestOD.totalHomelessDeaths > 0 && prevOD.totalHomelessDeaths > 0
-                    ? `, ${latestOD.totalHomelessDeaths < prevOD.totalHomelessDeaths ? "down" : "up"} ${Math.abs(Math.round(((latestOD.totalHomelessDeaths - prevOD.totalHomelessDeaths) / prevOD.totalHomelessDeaths) * 100))}% from peak`
+                    ? `. Total unhoused deaths: ${latestOD.totalHomelessDeaths.toLocaleString()}.`
                     : ""}
                 </p>
               </div>
             )}
 
-            {/* MultiLineChart: total OD + fentanyl */}
-            <MultiLineChart
+            {/* Fentanyl trend (2017-2024, 8 points) — shows the full crisis arc */}
+            <h4 className="text-[13px] font-semibold text-[var(--color-ink-muted)] mb-2">
+              Fentanyl Deaths Among Unhoused Portlanders
+            </h4>
+            <TrendChart
               data={overdoseDeaths
-                .filter((d) => d.totalOdDeathsHomeless > 0)
+                .filter((d) => d.fentanylDeathsHomeless > 0)
                 .map((d) => ({
-                  year: String(d.year),
-                  totalOd: d.totalOdDeathsHomeless,
-                  fentanyl: d.fentanylDeathsHomeless,
+                  date: String(d.year),
+                  value: d.fentanylDeathsHomeless,
                 }))}
-              lines={[
-                { key: "totalOd", label: "Total OD Deaths", color: "#b85c3a" },
-                { key: "fentanyl", label: "Fentanyl Deaths", color: "#c8956c", dashed: true },
-              ]}
-              xKey="year"
-              height={300}
+              height={260}
+              color="#b85c3a"
+              yAxisDomain="auto"
             />
-            <p className="text-[11px] text-[var(--color-ink-muted)] mt-3 font-mono">
-              Source: Multnomah County Medical Examiner &middot; Toxicology data.
+            <p className="text-[14px] text-[var(--color-ink-light)] mt-2 leading-relaxed">
+              Fentanyl deaths among unhoused Portlanders surged from near-zero before 2020 to a peak of 251 in 2023, then declined to 183 in 2024 ({Math.round(((183 - 251) / 251) * 100)}%).
+              {latestOD && latestOD.totalOdDeathsHomeless > 0 && (
+                <> Fentanyl was involved in {latestOD.totalOdDeathsHomeless > 0 ? Math.round((latestOD.fentanylDeathsHomeless / latestOD.totalOdDeathsHomeless) * 100) : 0}% of all overdose deaths.</>
+              )}
+            </p>
+            <p className="text-[12px] text-[var(--color-ink-muted)]/60 mt-2 font-mono tracking-wider">
+              Source:{" "}
+              <a href="https://multco.us/file/domicile_unknown_report/download" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">
+                Multnomah County Medical Examiner · Domicile Unknown Report
+              </a>
             </p>
           </div>
         </section>
