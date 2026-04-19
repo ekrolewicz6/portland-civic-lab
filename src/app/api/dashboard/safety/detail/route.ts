@@ -48,6 +48,14 @@ interface SafetyDetailResponse {
   } | null;
   // Graffiti from BPS
   graffitiTrend: { month: string; count: number }[] | null;
+  // Downtown scorecard — YoY comparison for key crime categories
+  downtownScorecard: {
+    category: string;
+    ytdCurrent: number;
+    ytdPrior: number;
+    changePct: number;
+  }[];
+  downtownPeriodLabel: string;
   // Key insights computed from real data
   topInsights: string[];
   dataStatus: string;
@@ -248,7 +256,44 @@ export async function GET(): Promise<NextResponse<SafetyDetailResponse>> {
 
     const yoyChange = yearOverYear ? yearOverYear.change : 0;
 
-    // 9. Generate insights from real data
+    // 9. Downtown scorecard — YoY comparison for key crime categories
+    //    Compares YTD (Jan 1 to today's date) current year vs same period prior year
+    //    for downtown neighborhoods (Downtown, Old Town/Chinatown, Pearl)
+    const dtNeighborhoods = ["Downtown", "Old Town/Chinatown", "Pearl"];
+    const scorecardCategories = [
+      { label: "Burglary", filter: "offense_category = 'Burglary'" },
+      { label: "Shoplifting", filter: "offense_type = 'Shoplifting'" },
+      { label: "Motor Vehicle Theft", filter: "offense_category = 'Motor Vehicle Theft'" },
+      { label: "Assault Offenses", filter: "offense_category = 'Assault Offenses'" },
+      { label: "Robbery", filter: "offense_category = 'Robbery'" },
+      { label: "Drug/Narcotic Offenses", filter: "offense_category = 'Drug/Narcotic Offenses'" },
+      { label: "Homicide Offenses", filter: "offense_category = 'Homicide Offenses'" },
+      { label: "Larceny (All)", filter: "offense_category = 'Larceny Offenses'" },
+      { label: "Vandalism", filter: "offense_category = 'Vandalism'" },
+    ];
+
+    const scorecardRows = await sql.unsafe(`
+      SELECT
+        ${scorecardCategories.map((c, i) =>
+          `COUNT(*) FILTER (WHERE ${c.filter} AND occur_date >= date_trunc('year', CURRENT_DATE))::int AS cur_${i},
+           COUNT(*) FILTER (WHERE ${c.filter} AND occur_date >= date_trunc('year', CURRENT_DATE) - interval '1 year' AND occur_date < date_trunc('year', CURRENT_DATE) + (CURRENT_DATE - date_trunc('year', CURRENT_DATE)) - interval '1 year')::int AS pri_${i}`
+        ).join(",\n")}
+      FROM safety.ppb_offenses
+      WHERE neighborhood IN ('Downtown', 'Old Town/Chinatown', 'Pearl')
+        AND occur_date >= date_trunc('year', CURRENT_DATE) - interval '1 year'
+    `);
+
+    const downtownScorecard = scorecardCategories.map((c, i) => {
+      const cur = Number(scorecardRows[0][`cur_${i}`]);
+      const pri = Number(scorecardRows[0][`pri_${i}`]);
+      const changePct = pri > 0 ? Math.round(((cur - pri) / pri) * 1000) / 10 : 0;
+      return { category: c.label, ytdCurrent: cur, ytdPrior: pri, changePct };
+    });
+
+    const currentMonth = new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" });
+    const downtownPeriodLabel = `Jan 1 \u2013 ${currentMonth}, YoY`;
+
+    // 10. Generate insights from real data
     const topInsights: string[] = [];
 
     topInsights.push(
@@ -315,6 +360,8 @@ export async function GET(): Promise<NextResponse<SafetyDetailResponse>> {
       mvtTrend,
       mvtInsight,
       graffitiTrend,
+      downtownScorecard,
+      downtownPeriodLabel,
       topInsights,
       dataStatus: "live",
       totalRecords,
@@ -339,6 +386,8 @@ export async function GET(): Promise<NextResponse<SafetyDetailResponse>> {
       mvtTrend: [],
       mvtInsight: null,
       graffitiTrend: null,
+      downtownScorecard: [],
+      downtownPeriodLabel: "",
       topInsights: ["Data temporarily unavailable."],
       dataStatus: "unavailable",
       totalRecords: 0,

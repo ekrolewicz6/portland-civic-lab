@@ -207,6 +207,10 @@ export default function SafetyDetail() {
     totalRecords,
   } = data;
 
+  const downtownScorecard: { category: string; ytdCurrent: number; ytdPrior: number; changePct: number }[] =
+    (data as any).downtownScorecard ?? [];
+  const downtownPeriodLabel: string = (data as any).downtownPeriodLabel ?? "";
+
   // Prepare 10-year trend chart data with readable date labels
   const trendChartData = crimeByCategory.map((r) => ({
     month: r.month, // Keep raw YYYY-MM for Recharts
@@ -280,6 +284,78 @@ export default function SafetyDetail() {
           ]}
         />
       </section>
+
+      {/* 2b. Downtown Safety Scorecard */}
+      {downtownScorecard.length > 0 && (
+        <section>
+          <SectionHeader icon={MapPin} title="Downtown Safety Scorecard" color="#2d4a6e" />
+          <p className="text-[14px] text-[var(--color-ink-muted)] mb-4 -mt-2">
+            Year-to-date comparison for Downtown, Old Town/Chinatown, and Pearl District.
+            <span className="ml-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60">
+              {downtownPeriodLabel}
+            </span>
+          </p>
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm overflow-hidden">
+            <table className="w-full text-[14px]">
+              <thead>
+                <tr className="border-b border-[var(--color-parchment)]">
+                  <th className="text-left px-5 py-3 text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.1em]">
+                    Category
+                  </th>
+                  <th className="text-right px-5 py-3 text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.1em]">
+                    Last Year
+                  </th>
+                  <th className="text-right px-5 py-3 text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.1em]">
+                    This Year
+                  </th>
+                  <th className="text-right px-5 py-3 text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.1em]">
+                    Change
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {downtownScorecard.map((row, i) => {
+                  const isDown = row.changePct < 0;
+                  const isUp = row.changePct > 0;
+                  return (
+                    <tr
+                      key={i}
+                      className="border-b border-[var(--color-parchment)]/50 hover:bg-[var(--color-parchment)]/15 transition-colors"
+                    >
+                      <td className="px-5 py-3 font-medium text-[var(--color-ink)]">
+                        {row.category}
+                      </td>
+                      <td className="px-5 py-3 text-right font-mono text-[var(--color-ink-light)]">
+                        {row.ytdPrior.toLocaleString()}
+                      </td>
+                      <td className="px-5 py-3 text-right font-mono font-semibold text-[var(--color-ink)]">
+                        {row.ytdCurrent.toLocaleString()}
+                      </td>
+                      <td className="px-5 py-3 text-right">
+                        <span
+                          className={`inline-flex items-center gap-1 font-mono font-semibold text-[13px] px-2 py-0.5 rounded-sm ${
+                            isDown
+                              ? "text-[#3d7a5a] bg-[#3d7a5a]/10"
+                              : isUp
+                                ? "text-[#b85c3a] bg-[#b85c3a]/10"
+                                : "text-[var(--color-ink-muted)]"
+                          }`}
+                        >
+                          {isDown ? "\u2193" : isUp ? "\u2191" : "\u2014"}{" "}
+                          {Math.abs(row.changePct)}%
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/50 uppercase tracking-wider">
+            Source: Portland Police Bureau &middot; NIBRS Offense Data
+          </p>
+        </section>
+      )}
 
       {/* 3. 10-Year Crime Trend — MultiLineChart */}
       {crimeByCategory.length > 0 && (
