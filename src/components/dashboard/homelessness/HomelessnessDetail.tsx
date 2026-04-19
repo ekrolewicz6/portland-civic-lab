@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import StatGrid from "@/components/charts/StatGrid";
 import TrendChart from "@/components/charts/TrendChart";
-import BarChart from "@/components/charts/BarChart";
+import MultiLineChart from "@/components/charts/MultiLineChart";
 import DataNeeded from "@/components/dashboard/DataNeeded";
 import NewsContext from "../NewsContext";
 import DataReconciliation, {
@@ -17,17 +17,13 @@ import {
   AlertTriangle,
   TrendingUp,
   Users,
-  Home,
   Heart,
   DollarSign,
-  ArrowRightLeft,
   BedDouble,
   FileText,
   Scale,
-  Building2,
   MapPin,
-  Compass,
-  HelpCircle,
+  ChevronDown,
 } from "lucide-react";
 
 const ACCENT = "#8b6c5c";
@@ -125,6 +121,20 @@ interface ContextStat {
   source: string;
 }
 
+interface IrpMonth {
+  month: string;
+  uniqueReports: number;
+  vehicleReports: number;
+  tentReports: number;
+}
+
+interface IrpTotal {
+  uniqueTotal: number;
+  rawTotal: number;
+  earliest: string;
+  latest: string;
+}
+
 interface HomelessnessDetailData {
   pitCounts: PitYear[];
   shelterCapacity: ShelterQuarter[];
@@ -139,6 +149,8 @@ interface HomelessnessDetailData {
   affordableVacancy: AffordableVacancy[];
   dataSources: DataSource[];
   dataDisputes: DataDispute[];
+  irpCampsiteMonthly: IrpMonth[];
+  irpCampsiteTotal: IrpTotal | null;
   dataStatus: string;
 }
 
@@ -148,7 +160,6 @@ function SectionHeader({
   icon: Icon,
   title,
   color,
-  questionNum,
 }: {
   icon: React.ComponentType<{
     className?: string;
@@ -156,16 +167,10 @@ function SectionHeader({
   }>;
   title: string;
   color?: string;
-  questionNum?: string;
 }) {
   return (
     <div className="flex items-center gap-2.5 mb-4">
       <Icon className="w-4 h-4" style={{ color: color ?? ACCENT }} />
-      {questionNum && (
-        <span className="text-[10px] font-mono font-bold text-[var(--color-ink-muted)]/60 bg-[var(--color-parchment)] px-1.5 py-0.5 rounded-sm">
-          {questionNum}
-        </span>
-      )}
       <h2 className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.15em]">
         {title}
       </h2>
@@ -174,40 +179,33 @@ function SectionHeader({
   );
 }
 
-function PipelineBox({
-  label,
-  value,
-  sublabel,
-  color,
-}: {
-  label: string;
-  value: string;
-  sublabel: string;
-  color: string;
-}) {
+function StatusBadge({ status }: { status: "verified" | "partial" | "contradicted" | "in_progress" }) {
+  const cfg: Record<string, { label: string; bg: string; text: string }> = {
+    verified: { label: "VERIFIED", bg: "bg-green-100", text: "text-green-800" },
+    partial: { label: "PARTIAL", bg: "bg-amber-100", text: "text-amber-800" },
+    contradicted: { label: "CONTRADICTED", bg: "bg-red-100", text: "text-red-800" },
+    in_progress: { label: "IN PROGRESS", bg: "bg-blue-100", text: "text-blue-800" },
+  };
+  const c = cfg[status] ?? cfg.in_progress;
   return (
-    <div
-      className="rounded-sm p-4 text-center border"
-      style={{
-        backgroundColor: `${color}08`,
-        borderColor: `${color}30`,
-      }}
-    >
-      <p
-        className="text-[11px] font-semibold uppercase tracking-wider mb-1"
-        style={{ color: `${color}90` }}
+    <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-sm uppercase tracking-wide ${c.bg} ${c.text}`}>
+      {c.label}
+    </span>
+  );
+}
+
+function Collapsible({ title, children, defaultOpen = false }: { title: string; children: React.ReactNode; defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div className="border border-[var(--color-parchment)] rounded-sm overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-5 py-3 bg-[var(--color-parchment)]/30 hover:bg-[var(--color-parchment)]/50 transition-colors"
       >
-        {label}
-      </p>
-      <p
-        className="text-[32px] font-editorial-normal leading-none"
-        style={{ color }}
-      >
-        {value}
-      </p>
-      <p className="text-[12px] mt-1" style={{ color: `${color}80` }}>
-        {sublabel}
-      </p>
+        <span className="text-[13px] font-semibold text-[var(--color-ink)]">{title}</span>
+        <ChevronDown className={`w-4 h-4 text-[var(--color-ink-muted)] transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && <div className="p-5">{children}</div>}
     </div>
   );
 }
@@ -272,382 +270,295 @@ export default function HomelessnessDetail() {
     shelterBedInventory = [],
     studentHomelessness = [],
     doubledUp = [],
-    unshelteredChange = [],
-  } = data as Record<string, unknown[]> & typeof data;
+    irpCampsiteMonthly = [],
+    irpCampsiteTotal = null,
+  } = data as Record<string, unknown> & typeof data;
 
-  // Compute key figures
-  const latestPit =
-    pitCounts.length > 0 ? pitCounts[pitCounts.length - 1] : null;
-  const prevPit =
-    pitCounts.length >= 2 ? pitCounts[pitCounts.length - 2] : null;
+  // ── Computed values ─────────────────────────────────────────────────
+  const latestPit = pitCounts.length > 0 ? pitCounts[pitCounts.length - 1] : null;
+  const prevPit = pitCounts.length >= 2 ? pitCounts[pitCounts.length - 2] : null;
   const pitChange =
     latestPit && prevPit && prevPit.totalHomeless > 0
-      ? Math.round(
-          ((latestPit.totalHomeless - prevPit.totalHomeless) /
-            prevPit.totalHomeless) *
-            100,
-        )
+      ? Math.round(((latestPit.totalHomeless - prevPit.totalHomeless) / prevPit.totalHomeless) * 100)
       : 0;
 
-  const latestShelter =
-    shelterCapacity.length > 0
-      ? shelterCapacity[shelterCapacity.length - 1]
-      : null;
-  const latestPlacements =
-    housingPlacements.length > 0
-      ? housingPlacements[housingPlacements.length - 1]
-      : null;
-  const latestOD =
-    overdoseDeaths.length > 0
-      ? overdoseDeaths[overdoseDeaths.length - 1]
-      : null;
-  const prevOD =
-    overdoseDeaths.length >= 2
-      ? overdoseDeaths[overdoseDeaths.length - 2]
-      : null;
+  const latestShelter = shelterCapacity.length > 0 ? shelterCapacity[shelterCapacity.length - 1] : null;
+  const latestOD = overdoseDeaths.length > 0 ? overdoseDeaths[overdoseDeaths.length - 1] : null;
+  const prevOD = overdoseDeaths.length >= 2 ? overdoseDeaths[overdoseDeaths.length - 2] : null;
+  const latestShs = shsFunding.filter((s) => s.spending > 0);
+  const latestShsYear = latestShs.length > 0 ? latestShs[latestShs.length - 1] : null;
+  const latestShsType = shsByType.filter((t) => t.householdsServed > 0);
+  const latestShsCounty = shsByCounty.filter((c) => c.householdsPlaced > 0);
+  const multEvictions = evictionFilings.filter((e) => e.county === "Multnomah");
 
-  const avgNewEntries =
-    byNameList.length > 0
-      ? Math.round(
-          byNameList.reduce((s, b) => s + b.newEntries, 0) / byNameList.length,
-        )
-      : null;
-  const avgExits =
-    byNameList.length > 0
-      ? Math.round(
-          byNameList.reduce((s, b) => s + b.exitsToHousing, 0) /
-            byNameList.length,
-        )
-      : null;
-  const latestByName =
-    byNameList.length > 0 ? byNameList[byNameList.length - 1] : null;
+  const shelterExitPct = contextStats?.shelter_exit_to_housing_pct;
+  const cityBeds = latestShelter?.cityOvernightBeds ?? Number(contextStats?.city_overnight_beds?.value ?? 1566);
+  const countyBeds = latestShelter?.county24hrBeds ?? 0;
 
-  // Eviction data — Multnomah only
-  const multEvictions = evictionFilings.filter(
-    (e) => e.county === "Multnomah",
-  );
+  // Shelter bed inventory
+  const sbiTyped = shelterBedInventory as { county: string; totalBeds: number; totalHomeless: number; bedsPctOfPit: number; yearRound: number }[];
+  const multco = sbiTyped.find((s) => s.county === "Multnomah");
+  const statewideBeds = sbiTyped.reduce((s, r) => s + r.totalBeds, 0);
+  const statewideHomeless = sbiTyped.reduce((s, r) => s + r.totalHomeless, 0);
 
-  // SHS by county — latest FY only
-  const latestShsCounty = shsByCounty.filter(
-    (c) => c.householdsPlaced > 0,
-  );
-
-  // SHS by type — latest FY
-  const latestShsType = shsByType.filter(
-    (t) => t.householdsServed > 0,
-  );
-
-  const hracAnnual = contextStats?.hrac_annual_homeless;
-  const cumulativeHoused = contextStats?.shs_cumulative_housed;
-  const pshNeed = contextStats?.psh_need_regional;
+  // Hidden homelessness
+  const duTyped = doubledUp as { county: string; estimate: number; marginOfError: number }[];
+  const duStatewide = duTyped.find((d) => d.county === "Statewide");
+  const shTyped = studentHomelessness as { county: string; count202425: number; numericChange: number }[];
 
   return (
     <div className="space-y-10">
       <NewsContext category="homelessness" />
 
       {/* ═══════════════════════════════════════════════════════════════════
-          Q0: UNDERSTANDING THE NUMBERS — Data reconciliation
+          SECTION 0: DATA RECONCILIATION
           ═══════════════════════════════════════════════════════════════════ */}
       <DataReconciliation disputes={dataDisputes} />
 
       {/* ═══════════════════════════════════════════════════════════════════
-          PIPELINE OVERVIEW — The Flow-Through Frame
+          SECTION 1: THE VERDICT
           ═══════════════════════════════════════════════════════════════════ */}
       <section>
-        <div className="bg-[var(--color-canopy)] rounded-sm p-6 text-white/90">
-          <div className="flex items-start gap-3 mb-4">
-            <AlertTriangle className="w-6 h-6 text-[var(--color-ember)] flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="font-editorial-normal text-[28px] sm:text-[34px] leading-snug text-white">
-                The system is over-leveraged in shelter, under-leveraged in
-                housing
-              </h3>
-              <p className="text-[14px] text-white/60 mt-2">
-                Flow-through framework: inflow → system → outflow
+        <div className="bg-[#2a2a2a] text-white rounded-sm p-8">
+          <div className="flex flex-wrap gap-4 mb-6">
+            {/* Card 1: People Homeless */}
+            <div className="flex-1 min-w-[140px]">
+              <p className="text-[12px] uppercase tracking-wider opacity-70 mb-1">People Homeless</p>
+              <p className="text-[28px] font-mono font-bold leading-none">
+                {latestPit?.totalHomeless.toLocaleString() ?? "--"}
               </p>
+              <p className="text-[13px] opacity-60 mt-1">
+                {pitChange !== 0 ? `${pitChange > 0 ? "+" : ""}${pitChange}% since ${prevPit?.year ?? "prior"}` : "latest PIT count"}
+              </p>
+            </div>
+
+            {/* Card 2: Promised Beds */}
+            <div className="flex-1 min-w-[140px]">
+              <p className="text-[12px] uppercase tracking-wider opacity-70 mb-1">Promised Beds</p>
+              <p className="text-[28px] font-mono font-bold leading-none">
+                {cityBeds.toLocaleString()}
+              </p>
+              <p className="text-[13px] opacity-60 mt-1">
+                {latestShelter ? `${latestShelter.utilizationPct}% utilization` : "city overnight"}
+              </p>
+            </div>
+
+            {/* Card 3: Exit to Housing */}
+            <div className="flex-1 min-w-[140px]">
+              <p className="text-[12px] uppercase tracking-wider opacity-70 mb-1">Exit to Housing</p>
+              <p className="text-[28px] font-mono font-bold leading-none">
+                {shelterExitPct ? `${shelterExitPct.value}%` : "16%"}
+              </p>
+              <p className="text-[13px] opacity-60 mt-1">goal was 41%</p>
+            </div>
+
+            {/* Card 4: SHS Spending/yr */}
+            <div className="flex-1 min-w-[140px]">
+              <p className="text-[12px] uppercase tracking-wider opacity-70 mb-1">SHS Spending/yr</p>
+              <p className="text-[28px] font-mono font-bold leading-none">
+                ${latestShsYear ? Math.round(latestShsYear.spending / 1e6) : 425}M
+              </p>
+              <p className="text-[13px] opacity-60 mt-1">16% to housing exits</p>
+            </div>
+
+            {/* Card 5: Funding Gap */}
+            <div className="flex-1 min-w-[140px]">
+              <p className="text-[12px] uppercase tracking-wider opacity-70 mb-1">Funding Gap</p>
+              <p className="text-[28px] font-mono font-bold leading-none">$54M</p>
+              <p className="text-[13px] opacity-60 mt-1">585 beds being cut</p>
             </div>
           </div>
 
-          {/* Pipeline diagram */}
-          <div className="grid grid-cols-3 gap-3 my-6">
-            <PipelineBox
-              label="Monthly Inflow"
-              value={avgNewEntries ? avgNewEntries.toLocaleString() : "—"}
-              sublabel="new entries/month"
-              color="#ef4444"
-            />
-            <PipelineBox
-              label="In System"
-              value={
-                latestByName
-                  ? latestByName.totalOnList.toLocaleString()
-                  : latestPit
-                    ? latestPit.totalHomeless.toLocaleString()
-                    : "—"
-              }
-              sublabel={
-                latestByName ? "on by-name list" : "PIT count"
-              }
-              color="#f59e0b"
-            />
-            <PipelineBox
-              label="Monthly Outflow"
-              value={avgExits ? avgExits.toLocaleString() : "—"}
-              sublabel="exits to housing/month"
-              color="#22c55e"
-            />
-          </div>
-
-          <div className="space-y-3 text-[14px] text-white/70 leading-relaxed">
-            {avgNewEntries && avgExits && (
-              <p>
-                For every person who exits homelessness,{" "}
-                <strong className="text-white">
-                  {(avgNewEntries / avgExits).toFixed(1)} more enter
-                </strong>
-                . The by-name list grows by ~
-                {(avgNewEntries - avgExits).toLocaleString()} people per month.
-              </p>
-            )}
-            {hracAnnual && (
-              <p>
-                The PIT count ({latestPit?.totalHomeless.toLocaleString()}) is a
-                single-night snapshot. HRAC/PSU estimates{" "}
-                <strong className="text-white">
-                  ~{Number(hracAnnual.value).toLocaleString()} people
-                </strong>{" "}
-                experience homelessness annually in the tri-county area.
-              </p>
-            )}
-            {cumulativeHoused && (
-              <p>
-                SHS has housed{" "}
-                <strong className="text-white">
-                  {Number(cumulativeHoused.value).toLocaleString()} people
-                </strong>{" "}
-                cumulatively (Years 1-4), with 92% PSH retention. But estimated
-                regional need is{" "}
-                {pshNeed
-                  ? `${Number(pshNeed.value).toLocaleString()} PSH units`
-                  : "growing"}
-                .
-              </p>
-            )}
-          </div>
-          <p className="text-[11px] text-white/40 mt-4 font-mono">
-            Source: HUD PIT Count · JOHS By-Name List · HRAC/PSU Prevalence Study · Metro SHS Year 4 Report
+          <p className="text-[15px] leading-relaxed opacity-80">
+            Portland spends more on homelessness than ever before, yet the number of people on the
+            streets keeps climbing. Shelter utilization sits well below capacity while beds are being
+            cut. Only 16% of shelter exits lead to permanent housing -- the system absorbs people
+            without moving them forward. The Supportive Housing Services tax expires in 2030 and a
+            22% budget cut looms for FY 2026-27.
+          </p>
+          <p className="text-[11px] opacity-40 mt-4 font-mono">
+            Source: HUD PIT Count &middot; JOHS Shelter Reports &middot; Metro SHS Year 4 Report &middot; MultCo Health
           </p>
         </div>
       </section>
 
-      {/* KEY STATS */}
-      {latestPit && (
-        <section>
-          <SectionHeader icon={TrendingUp} title="Key Metrics" color={ACCENT} />
-          <StatGrid
-            accentColor={ACCENT}
-            stats={[
-              {
-                label: `Total Homeless (${latestPit.year} PIT)`,
-                value: latestPit.totalHomeless.toLocaleString(),
-                changeLabel: prevPit
-                  ? `${pitChange > 0 ? "+" : ""}${pitChange}% from ${prevPit.year}`
-                  : undefined,
-              },
-              {
-                label: "Shelter Beds",
-                value: latestShelter
-                  ? latestShelter.totalBeds.toLocaleString()
-                  : "N/A",
-                changeLabel: latestShelter
-                  ? `${latestShelter.utilizationPct}% utilization`
-                  : undefined,
-              },
-              {
-                label: "Housing Placements/yr",
-                value: latestPlacements
-                  ? latestPlacements.totalPlacements.toLocaleString()
-                  : "N/A",
-                changeLabel: latestPlacements
-                  ? `FY ${latestPlacements.fiscalYear}`
-                  : undefined,
-              },
-              {
-                label: "Overdose Deaths",
-                value: latestOD
-                  ? latestOD.totalOdDeathsHomeless.toLocaleString()
-                  : "N/A",
-                changeLabel:
-                  latestOD && prevOD
-                    ? `${latestOD.totalOdDeathsHomeless < prevOD.totalOdDeathsHomeless ? "Down" : "Up"} from ${prevOD.totalOdDeathsHomeless.toLocaleString()} in ${prevOD.year}`
-                    : latestOD
-                      ? `${latestOD.year}`
-                      : undefined,
-              },
-            ]}
-          />
-        </section>
-      )}
-
       {/* ═══════════════════════════════════════════════════════════════════
-          Q1: WHAT'S DRIVING INFLOW?
+          SECTION 2: HOW BAD IS IT?
           ═══════════════════════════════════════════════════════════════════ */}
       <section>
-        <SectionHeader
-          icon={TrendingUp}
-          title="What's Driving Inflow?"
-          questionNum="Q1"
-          color="#ef4444"
-        />
-        <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-          <p className="text-[13px] text-[var(--color-ink-muted)] mb-5">
-            Evictions are the primary measurable driver of homelessness inflow.
-            Multnomah County filings average over 1,000/month — 7 per 100 rental
-            units annually, the highest rate in Oregon. The true scope is larger:
-            the PIT count captures a single night, while HRAC estimates ~38,000
-            people experience homelessness annually across three counties.
-          </p>
+        <SectionHeader icon={TrendingUp} title="The Scale of the Crisis" color="#ef4444" />
 
-          {/* Eviction trend chart */}
-          {multEvictions.length > 0 && (
-            <>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          {/* PIT Count Trend */}
+          {pitCounts.length > 0 && (
+            <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
               <h3 className="text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-3">
-                Multnomah County Eviction Filings (Monthly)
+                Point-in-Time Count
               </h3>
               <TrendChart
-                data={multEvictions.map((e) => {
-                  const d = new Date(e.month);
-                  const label = d.toLocaleDateString("en-US", { month: "short", year: "2-digit", timeZone: "UTC" });
-                  return { date: label, value: e.filings };
+                data={pitCounts.map((r) => ({ date: String(r.year), value: r.totalHomeless }))}
+                color={ACCENT}
+                height={280}
+                yAxisDomain="auto"
+              />
+              <p className="text-[11px] text-[var(--color-ink-muted)] mt-2">
+                Source: <a href="https://www.hudexchange.info/programs/coc/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink)]">HUD PIT Count</a> -- Portland/Gresham/MultCo CoC
+              </p>
+            </div>
+          )}
+
+          {/* IRP Campsite Reports */}
+          {(irpCampsiteMonthly as IrpMonth[]).length > 0 && (
+            <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
+              <h3 className="text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-3">
+                Campsite Reports (Monthly)
+              </h3>
+              <TrendChart
+                data={(irpCampsiteMonthly as IrpMonth[]).map((r) => {
+                  const d = new Date(r.month + "-01");
+                  return {
+                    date: d.toLocaleDateString("en-US", { month: "short", year: "2-digit", timeZone: "UTC" }),
+                    value: r.uniqueReports,
+                  };
                 })}
                 color="#ef4444"
                 height={280}
                 yAxisDomain="auto"
               />
-              <p className="text-[11px] text-[var(--color-ink-muted)] mt-2 mb-5">
-                Source: Evicted in Oregon / HRAC PSU (circuit court data only, ~90% of cases).
-                Clackamas County unavailable (justice courts).
+              <p className="text-[11px] text-[var(--color-ink-muted)] mt-2">
+                Source: PDX Reporter / IRP (de-duplicated).
+                {(irpCampsiteTotal as IrpTotal | null) && ` ${(irpCampsiteTotal as IrpTotal).uniqueTotal.toLocaleString()} unique reports since ${(irpCampsiteTotal as IrpTotal).earliest}.`}
               </p>
-            </>
+            </div>
           )}
+        </div>
 
-          {/* Root cause cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4">
-              <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
-                Housing Scarcity
-              </p>
-              <p className="text-[14px] text-[var(--color-ink)] leading-snug">
-                Portland is short ~20,000 affordable units. Vacancy rate below
-                5%.
-              </p>
+        {/* Racial disparities — compact bars */}
+        {(racialDisparities as { raceGroup: string; disparityRatio: number | null; pctOfPopulation: number | null; pctOfPit: number | null }[]).filter((d) => d.disparityRatio !== null && (d.disparityRatio ?? 0) > 0).length > 0 && (
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
+            <h3 className="text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-3">
+              Racial Disparities -- Overrepresentation in Homelessness
+            </h3>
+            <p className="text-[13px] text-[var(--color-ink-muted)] mb-4 leading-relaxed">
+              How many times more likely each group is to experience homelessness relative to their population share.
+              A ratio of 1.0x = proportional representation.
+            </p>
+            <div className="space-y-2.5">
+              {(racialDisparities as { raceGroup: string; disparityRatio: number | null }[])
+                .filter((d) => d.disparityRatio !== null && (d.disparityRatio ?? 0) > 0)
+                .map((d) => (
+                  <div key={d.raceGroup} className="flex items-center gap-3">
+                    <span className="text-[13px] text-[var(--color-ink)] w-[220px] flex-shrink-0 truncate">
+                      {d.raceGroup}
+                    </span>
+                    <div className="flex-1 h-5 bg-[var(--color-parchment)]/40 rounded-sm overflow-hidden relative">
+                      <div
+                        className="h-full rounded-sm"
+                        style={{
+                          width: `${Math.min(100, ((d.disparityRatio ?? 0) / 7) * 100)}%`,
+                          backgroundColor: (d.disparityRatio ?? 0) > 1 ? "#b85c3a" : "#7c8a4c",
+                        }}
+                      />
+                      <span className="absolute inset-y-0 right-2 flex items-center text-[11px] font-bold tabular-nums text-[var(--color-ink)]">
+                        {d.disparityRatio}x
+                      </span>
+                    </div>
+                  </div>
+                ))}
             </div>
-            <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4">
-              <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
-                Evictions Rising
-              </p>
-              <p className="text-[14px] text-[var(--color-ink)] leading-snug">
-                Multnomah: 7 per 100 rentals/yr (highest in OR). Washington: 5
-                per 100.
-              </p>
-            </div>
-            <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4">
-              <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
-                Treatment Gap
-              </p>
-              <p className="text-[14px] text-[var(--color-ink)] leading-snug">
-                Oregon needs 3,714 more behavioral health beds. Current
-                statewide: 4,819.
-              </p>
-            </div>
-            <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4">
-              <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
-                Prevalence Gap
-              </p>
-              <p className="text-[14px] text-[var(--color-ink)] leading-snug">
-                PIT count: {latestPit?.totalHomeless.toLocaleString() ?? "—"}.
-                HRAC annual estimate: ~38,000. Actual scale is 3-4x the
-                snapshot.
-              </p>
-            </div>
+            <p className="mt-3 text-[11px] text-[var(--color-ink-muted)] font-mono">
+              Source: PSU HRAC 2025 Statewide Estimates. Population: Census ACS B03002.
+            </p>
           </div>
-          <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-            Sources: Evicted in Oregon, HRAC/PSU Prevalence Study, OHA
-            Behavioral Health Study.
+        )}
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          SECTION 3: WHAT DID WE PROMISE?
+          ═══════════════════════════════════════════════════════════════════ */}
+      <section>
+        <SectionHeader icon={Scale} title="Promise vs. Reality" color={ACCENT} />
+        <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5 overflow-x-auto">
+          <table className="w-full text-[13px]">
+            <thead>
+              <tr className="border-b border-[var(--color-parchment)] text-left">
+                <th className="py-2 pr-4 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)]">Promise</th>
+                <th className="py-2 px-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)] text-right">Target</th>
+                <th className="py-2 px-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)] text-right">Actual</th>
+                <th className="py-2 pl-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)]">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-[var(--color-parchment)]/50">
+                <td className="py-3 pr-4 text-[var(--color-ink)]">SHS 10-year PSH goal</td>
+                <td className="py-3 px-3 text-right tabular-nums font-mono">5,000 units</td>
+                <td className="py-3 px-3 text-right tabular-nums font-mono">4,887 (Yr 4)</td>
+                <td className="py-3 pl-3"><StatusBadge status="in_progress" /></td>
+              </tr>
+              <tr className="border-b border-[var(--color-parchment)]/50">
+                <td className="py-3 pr-4 text-[var(--color-ink)]">Shelter exit to housing rate</td>
+                <td className="py-3 px-3 text-right tabular-nums font-mono">41%</td>
+                <td className="py-3 px-3 text-right tabular-nums font-mono">{shelterExitPct ? `${shelterExitPct.value}%` : "16%"}</td>
+                <td className="py-3 pl-3"><StatusBadge status="contradicted" /></td>
+              </tr>
+              <tr className="border-b border-[var(--color-parchment)]/50">
+                <td className="py-3 pr-4 text-[var(--color-ink)]">Prevention households (10-yr)</td>
+                <td className="py-3 px-3 text-right tabular-nums font-mono">8,300</td>
+                <td className="py-3 px-3 text-right tabular-nums font-mono">19,134 (2.3x)</td>
+                <td className="py-3 pl-3"><StatusBadge status="verified" /></td>
+              </tr>
+              <tr className="border-b border-[var(--color-parchment)]/50">
+                <td className="py-3 pr-4 text-[var(--color-ink)]">Year 4 shelter beds created</td>
+                <td className="py-3 px-3 text-right tabular-nums font-mono">2,012</td>
+                <td className="py-3 px-3 text-right tabular-nums font-mono">2,499</td>
+                <td className="py-3 pl-3"><StatusBadge status="verified" /></td>
+              </tr>
+              <tr>
+                <td className="py-3 pr-4 text-[var(--color-ink)]">PSH retention rate</td>
+                <td className="py-3 px-3 text-right tabular-nums font-mono">90%</td>
+                <td className="py-3 px-3 text-right tabular-nums font-mono">92%</td>
+                <td className="py-3 pl-3"><StatusBadge status="verified" /></td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="text-[11px] text-[var(--color-ink-muted)] mt-3 font-mono">
+            Source: Metro SHS Year 4 Regional Annual Report (FY2024-25, published March 2026).
           </p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          Q2: SYSTEM BALANCE — Spending vs. Outcomes by Intervention Type
+          SECTION 4: WHERE DOES THE MONEY GO?
           ═══════════════════════════════════════════════════════════════════ */}
       <section>
-        <SectionHeader
-          icon={Scale}
-          title="System Balance — Spending vs. Outcomes"
-          questionNum="Q2"
-          color={ACCENT}
-        />
+        <SectionHeader icon={DollarSign} title="Follow the Money" color={ACCENT} />
         <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-          <p className="text-[13px] text-[var(--color-ink-muted)] mb-5">
-            SHS Year 4 spending hit $424.9M (up 44% from Year 3). The system
-            exceeded goals in placements and prevention but fell short on new
-            supportive housing units. The question is whether the balance of
-            investment across shelter, housing, and prevention is optimal.
-          </p>
-
-          {/* SHS spending trend */}
-          {shsFunding.filter((s) => s.spending > 0).length > 0 && (
+          {/* Part A: SHS Revenue Trend */}
+          {shsFunding.filter((s) => s.taxRevenue > 0).length > 0 && (
             <div className="mb-6">
               <h3 className="text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-3">
-                SHS Total Spending by Year
+                SHS Revenue by Year
               </h3>
-              <div className="space-y-3">
-                {shsFunding
-                  .filter((s) => s.spending > 0)
-                  .map((s, i) => {
-                    const maxSpend = Math.max(
-                      ...shsFunding.filter((x) => x.spending > 0).map((x) => x.spending),
-                    );
-                    const pct = Math.round((s.spending / maxSpend) * 100);
-                    const millions = Math.round(s.spending / 1e6);
-                    return (
-                      <div key={s.year}>
-                        <div className="flex items-baseline justify-between mb-1">
-                          <span className="text-[13px] font-semibold text-[var(--color-ink)]">
-                            Year {i + 1}{" "}
-                            <span className="font-normal text-[var(--color-ink-muted)]">
-                              (FY{String(s.year).slice(2)})
-                            </span>
-                          </span>
-                          <span className="text-[14px] font-mono font-semibold text-[var(--color-ink)]">
-                            ${millions}M
-                          </span>
-                        </div>
-                        <div className="h-7 bg-[var(--color-parchment)] rounded-sm overflow-hidden">
-                          <div
-                            className="h-full rounded-sm"
-                            style={{
-                              width: `${Math.max(pct, 8)}%`,
-                              backgroundColor: ACCENT,
-                            }}
-                          />
-                        </div>
-                      </div>
-                    );
-                  })}
-              </div>
-              <p className="text-[11px] text-[var(--color-ink-muted)] mt-3 mb-5">
-                Source: Metro SHS Regional Annual Reports.
+              <TrendChart
+                data={shsFunding
+                  .filter((s) => s.taxRevenue > 0)
+                  .map((s) => ({ date: `${s.year}`, value: s.taxRevenue }))}
+                color={ACCENT}
+                height={260}
+                valuePrefix="$"
+                yAxisDomain="auto"
+              />
+              <p className="text-[11px] text-[var(--color-ink-muted)] mt-2">
+                Revenue grew from $56M to $425M. Tax expires after 2030 unless reauthorized.
               </p>
             </div>
           )}
 
-          {/* Intervention outcomes */}
+          {/* Part B: Intervention type bars */}
           {latestShsType.length > 0 && (
-            <div className="mb-2">
+            <div className="mb-6">
               <h3 className="text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-3">
-                Year 4 Outcomes by Intervention Type
+                Year 4 Spending by Intervention
               </h3>
               <div className="space-y-3">
                 {(() => {
@@ -657,19 +568,9 @@ export default function HomelessnessDetail() {
                     prevention: "Homelessness Prevention",
                     shelter: "Shelter Beds Created",
                   };
-                  const notes: Record<string, string> = {
-                    psh: "92% retention · 3% return rate",
-                    rapid_rehousing: "86% retention · 6% return rate",
-                    prevention: "households stabilized",
-                    shelter: "beds created or sustained",
-                  };
-                  const maxServed = Math.max(
-                    ...latestShsType.map((t) => t.householdsServed),
-                  );
+                  const maxServed = Math.max(...latestShsType.map((t) => t.householdsServed));
                   return latestShsType.map((t) => {
-                    const pct = Math.round(
-                      (t.householdsServed / maxServed) * 100,
-                    );
+                    const pct = Math.round((t.householdsServed / maxServed) * 100);
                     return (
                       <div key={t.interventionType}>
                         <div className="flex items-baseline justify-between mb-1">
@@ -680,18 +581,12 @@ export default function HomelessnessDetail() {
                             {t.householdsServed.toLocaleString()}
                           </span>
                         </div>
-                        <div className="h-7 bg-[var(--color-parchment)] rounded-sm overflow-hidden">
+                        <div className="h-6 bg-[var(--color-parchment)] rounded-sm overflow-hidden">
                           <div
                             className="h-full rounded-sm"
-                            style={{
-                              width: `${Math.max(pct, 8)}%`,
-                              backgroundColor: ACCENT,
-                            }}
+                            style={{ width: `${Math.max(pct, 8)}%`, backgroundColor: ACCENT }}
                           />
                         </div>
-                        <p className="text-[11px] text-[var(--color-ink-muted)] mt-0.5">
-                          {notes[t.interventionType] ?? ""}
-                        </p>
                       </div>
                     );
                   });
@@ -700,824 +595,433 @@ export default function HomelessnessDetail() {
             </div>
           )}
 
-          {/* Cumulative progress */}
-          <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
-              <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
-                Cumulative Housed
-              </p>
-              <p className="text-[24px] font-editorial-normal text-[var(--color-ink)]">
-                14,936
-              </p>
-              <p className="text-[11px] text-[var(--color-ink-muted)]">
-                Years 1-4
-              </p>
-            </div>
-            <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
-              <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
-                PSH Goal Progress
-              </p>
-              <p className="text-[24px] font-editorial-normal text-[var(--color-ink)]">
-                4,887
-              </p>
-              <p className="text-[11px] text-[var(--color-ink-muted)]">
-                of 5,000 (10-yr goal)
-              </p>
-            </div>
-            <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
-              <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
-                Prevention
-              </p>
-              <p className="text-[24px] font-editorial-normal text-[var(--color-ink)]">
-                19,134
-              </p>
-              <p className="text-[11px] text-[var(--color-ink-muted)]">
-                households (2.3x 10-yr goal)
-              </p>
-            </div>
-            <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
-              <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
-                Total Spending
-              </p>
-              <p className="text-[24px] font-editorial-normal text-[var(--color-ink)]">
-                $924M
-              </p>
-              <p className="text-[11px] text-[var(--color-ink-muted)]">
-                Years 1-4 cumulative
-              </p>
-            </div>
-          </div>
-          <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-            Source: Metro SHS Regional Annual Report FY2024-25 (Year 4).
-          </p>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════════
-          Q3: EMPTY AFFORDABLE UNITS
-          ═══════════════════════════════════════════════════════════════════ */}
-      <section>
-        <SectionHeader
-          icon={Building2}
-          title="Empty Affordable Units"
-          questionNum="Q3"
-          color="#d97706"
-        />
-        <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-          <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
-            A KATU/Willamette Week investigation found{" "}
-            <strong>955 empty apartments</strong> in Home Forward public housing
-            (November 2025), representing ~14% vacancy and $8.4M in foregone
-            rent. Home Forward disputes some figures, stating vacancy declined to
-            ~11% after the report. The average unit takes{" "}
-            <strong>185 days</strong> to fill.
-          </p>
-
-          {affordableVacancy.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
-              {affordableVacancy
-                .filter((v) => v.vacantUnits > 0)
-                .map((v, i) => (
-                  <div
-                    key={i}
-                    className="bg-amber-50 border border-amber-200 rounded-sm p-4 text-center"
-                  >
-                    <p className="text-[11px] font-semibold text-amber-800/60 uppercase tracking-wider mb-1">
-                      Vacant Units
-                    </p>
-                    <p className="text-[32px] font-editorial-normal text-amber-700 leading-none">
-                      {v.vacantUnits.toLocaleString()}
-                    </p>
-                    <p className="text-[12px] text-amber-600/70 mt-1">
-                      {v.vacancyPct}% vacancy · {v.source}
-                    </p>
-                  </div>
-                ))}
-              <div className="bg-amber-50 border border-amber-200 rounded-sm p-4 text-center">
-                <p className="text-[11px] font-semibold text-amber-800/60 uppercase tracking-wider mb-1">
-                  Avg Days to Fill
-                </p>
-                <p className="text-[32px] font-editorial-normal text-amber-700 leading-none">
-                  185
-                </p>
-                <p className="text-[12px] text-amber-600/70 mt-1">
-                  per unit turnover
-                </p>
-              </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-sm p-4 text-center">
-                <p className="text-[11px] font-semibold text-amber-800/60 uppercase tracking-wider mb-1">
-                  Foregone Rent
-                </p>
-                <p className="text-[32px] font-editorial-normal text-amber-700 leading-none">
-                  $8.4M
-                </p>
-                <p className="text-[12px] text-amber-600/70 mt-1">
-                  annual revenue lost
-                </p>
+          {/* Part C: Three-county comparison */}
+          {latestShsCounty.length > 0 && (
+            <div>
+              <h3 className="text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-3">
+                Three-County Comparison (Households Placed)
+              </h3>
+              <div className="space-y-3">
+                {latestShsCounty.map((c) => {
+                  const colors: Record<string, string> = {
+                    Multnomah: "#4f46e5",
+                    Washington: "#7c3aed",
+                    Clackamas: "#a78bfa",
+                  };
+                  const color = colors[c.county] ?? "#4f46e5";
+                  const maxPlaced = Math.max(...latestShsCounty.map((x) => x.householdsPlaced));
+                  const pct = maxPlaced > 0 ? Math.round((c.householdsPlaced / maxPlaced) * 100) : 0;
+                  return (
+                    <div key={c.county}>
+                      <div className="flex items-baseline justify-between mb-1">
+                        <span className="text-[13px] font-semibold text-[var(--color-ink)]">
+                          {c.county}
+                        </span>
+                        <span className="text-[11px] text-[var(--color-ink-muted)]">
+                          {c.allocation > 0 && `$${Math.round(c.allocation / 1e6)}M allocated`}
+                        </span>
+                      </div>
+                      <div className="h-7 bg-[var(--color-parchment)] rounded-sm overflow-hidden">
+                        <div
+                          className="h-full rounded-sm flex items-center px-3"
+                          style={{ width: `${Math.max(pct, 12)}%`, backgroundColor: color }}
+                        >
+                          <span className="text-[12px] font-mono font-semibold text-white">
+                            {c.householdsPlaced.toLocaleString()}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           )}
 
-          <div className="bg-amber-50/50 border border-amber-200/50 rounded-sm p-3 text-[12px] text-amber-800/70">
-            <strong>Contested data:</strong> Home Forward disputes the 955-unit
-            figure and states their vacancy rate has declined to ~11%. These
-            numbers come from news investigations, not official reporting. We
-            display both claims transparently.
-          </div>
-          <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-            Source: KATU / Willamette Week investigation (Nov 2025), Home Forward
-            public response (Dec 2025).
+          <p className="text-[11px] text-[var(--color-ink-muted)] mt-4 font-mono">
+            Source: Metro SHS Regional Annual Reports &middot; Revenue Forecast Fall 2025.
           </p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          Q4: SHELTER & INTERVENTION EFFECTIVENESS
+          SECTION 5: THE SHELTER PARADOX
           ═══════════════════════════════════════════════════════════════════ */}
-      {shelterCapacity.length > 0 && (
-        <section>
-          <SectionHeader
-            icon={BedDouble}
-            title="Shelter & Intervention Effectiveness"
-            questionNum="Q4"
-            color={ACCENT}
-          />
-          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-            {latestShelter && (
-              <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
-                {latestShelter.utilizationPct}% utilization across{" "}
-                {latestShelter.totalBeds.toLocaleString()} beds. Average stay: 73
-                days. Only 16% of shelter exits lead to permanent housing. SHS
-                Year 4 created/sustained 2,499 shelter beds (goal: 2,012).
-              </p>
-            )}
-            <TrendChart
-              data={shelterCapacity.map((s) => ({
-                date: s.quarter,
-                value: s.totalBeds,
-              }))}
-              color={ACCENT}
-              height={280}
-              yAxisDomain="auto"
-            />
-            {shelterCapacity.length > 1 && (
-              <div className="mt-4">
-                <p className="text-[12px] text-[var(--color-ink-muted)] mb-2">
-                  Utilization rate by quarter:
-                </p>
-                <TrendChart
-                  data={shelterCapacity.map((s) => ({
-                    date: s.quarter,
-                    value: s.utilizationPct,
-                  }))}
-                  color="#c8956c"
-                  height={200}
-                  valueSuffix="%"
-                  yAxisDomain="auto"
-                />
-              </div>
-            )}
-            <DataNeeded
-              title="Shelter effectiveness outcomes data"
-              description="No public data currently tracks which shelter models produce the best housing outcomes — e.g., what percentage of people in 24-hour shelters vs. overnight shelters exit to permanent housing, and at what cost per placement."
-              actions={[
-                {
-                  label: "Request shelter outcome data from JOHS/HSD",
-                  type: "prr",
-                },
-              ]}
-              color={ACCENT}
-            />
-            <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-              Source: JOHS Shelter Capacity Reports, quarterly.
+      <section>
+        <SectionHeader icon={BedDouble} title="The Shelter Paradox" color="#d97706" />
+
+        {/* Two boxes: city vs county */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div className="bg-amber-50 border border-amber-200 rounded-sm p-5 text-center">
+            <p className="text-[11px] font-semibold text-amber-800/60 uppercase tracking-wider mb-1">
+              City Overnight Shelters
+            </p>
+            <p className="text-[36px] font-mono font-bold text-amber-700 leading-none">50%</p>
+            <p className="text-[13px] text-amber-600/70 mt-1">utilization</p>
+            <p className="text-[12px] text-amber-600/50 mt-0.5">
+              {cityBeds.toLocaleString()} beds
             </p>
           </div>
-        </section>
-      )}
+          <div className="bg-green-50 border border-green-200 rounded-sm p-5 text-center">
+            <p className="text-[11px] font-semibold text-green-800/60 uppercase tracking-wider mb-1">
+              County 24-Hour Shelters
+            </p>
+            <p className="text-[36px] font-mono font-bold text-green-700 leading-none">87%</p>
+            <p className="text-[13px] text-green-600/70 mt-1">utilization</p>
+            <p className="text-[12px] text-green-600/50 mt-0.5">
+              {countyBeds > 0 ? countyBeds.toLocaleString() : "--"} beds
+            </p>
+          </div>
+        </div>
+
+        {/* By-name list: entries vs exits */}
+        {byNameList.length > 0 && (
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5 mb-6">
+            <h3 className="text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-3">
+              By-Name List: Entries vs. Exits to Housing
+            </h3>
+            <MultiLineChart
+              data={byNameList.map((b) => {
+                const d = new Date(b.month);
+                return {
+                  month: d.toLocaleDateString("en-US", { month: "short", year: "2-digit", timeZone: "UTC" }),
+                  entries: b.newEntries,
+                  exits: b.exitsToHousing,
+                };
+              })}
+              lines={[
+                { key: "entries", label: "New Entries", color: "#ef4444" },
+                { key: "exits", label: "Exits to Housing", color: "#22c55e" },
+              ]}
+              height={280}
+            />
+            <p className="text-[11px] text-[var(--color-ink-muted)] mt-2">
+              Source: JOHS By-Name List, monthly.
+            </p>
+          </div>
+        )}
+
+        {/* Shelter Gap stats */}
+        {sbiTyped.length > 0 && (
+          <StatGrid
+            accentColor="#d97706"
+            stats={[
+              {
+                label: "MultCo Shelter Beds",
+                value: multco?.totalBeds.toLocaleString() ?? "--",
+              },
+              {
+                label: "MultCo PIT Covered",
+                value: `${multco?.bedsPctOfPit ?? "--"}%`,
+              },
+              {
+                label: "Statewide Beds",
+                value: statewideBeds.toLocaleString(),
+              },
+              {
+                label: "Statewide Coverage",
+                value: `${statewideHomeless > 0 ? Math.round((statewideBeds / statewideHomeless) * 100) : "--"}%`,
+              },
+            ]}
+          />
+        )}
+
+        <div className="mt-6">
+          <DataNeeded
+            title="Which shelter models produce the best housing outcomes"
+            description="No public data currently tracks whether 24-hour shelters vs. overnight shelters produce better housing exits, or at what cost per placement. This is the most important missing metric in the system."
+            actions={[
+              { label: "Request shelter outcome data from JOHS/HSD", type: "prr" },
+            ]}
+            color="#d97706"
+          />
+        </div>
+        <p className="text-[11px] text-[var(--color-ink-muted)] mt-3 font-mono">
+          Source: JOHS Shelter Reports &middot; PSU HRAC 2025 HIC data (Table 17).
+        </p>
+      </section>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          Q5: BEHAVIORAL HEALTH CROSSOVER
+          SECTION 6: HEALTH AND SURVIVAL
           ═══════════════════════════════════════════════════════════════════ */}
       {overdoseDeaths.length > 0 && (
         <section>
-          <SectionHeader
-            icon={Heart}
-            title="Behavioral Health Crossover"
-            questionNum="Q5"
-            color="#b85c3a"
-          />
+          <SectionHeader icon={Heart} title="Health & Survival" color="#b85c3a" />
           <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-            <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
-              {(() => {
-                const first = overdoseDeaths[0];
-                const last = overdoseDeaths[overdoseDeaths.length - 1];
-                const peak = overdoseDeaths.reduce(
-                  (max, d) =>
-                    d.totalOdDeathsHomeless > max.totalOdDeathsHomeless
-                      ? d
-                      : max,
-                  overdoseDeaths[0],
-                );
-                return (
-                  <>
-                    Overdose deaths rose from{" "}
-                    {first.totalOdDeathsHomeless > 0
-                      ? first.totalOdDeathsHomeless.toLocaleString()
-                      : first.fentanylDeathsHomeless.toLocaleString()}{" "}
-                    in {first.year} to a peak of{" "}
-                    {peak.totalOdDeathsHomeless.toLocaleString()} in {peak.year}
-                    {last.year !== peak.year
-                      ? `, then ${last.totalOdDeathsHomeless < peak.totalOdDeathsHomeless ? "declined to" : "remained at"} ${last.totalOdDeathsHomeless.toLocaleString()} in ${last.year}`
-                      : ""}
-                    . Fentanyl is present in 86% of overdose cases.
-                    Methamphetamine in 82%.
-                  </>
-                );
-              })()}
-            </p>
-            <TrendChart
+            {/* Key stat callout */}
+            {latestOD && (
+              <div className="bg-[#b85c3a]/10 border border-[#b85c3a]/20 rounded-sm p-4 mb-5">
+                <p className="text-[16px] font-semibold text-[var(--color-ink)]">
+                  {latestOD.totalHomelessDeaths > 0
+                    ? `${latestOD.totalHomelessDeaths.toLocaleString()} unhoused deaths in ${latestOD.year}`
+                    : `${latestOD.totalOdDeathsHomeless.toLocaleString()} overdose deaths among unhoused in ${latestOD.year}`}
+                  {prevOD && latestOD.totalHomelessDeaths > 0 && prevOD.totalHomelessDeaths > 0
+                    ? `, ${latestOD.totalHomelessDeaths < prevOD.totalHomelessDeaths ? "down" : "up"} ${Math.abs(Math.round(((latestOD.totalHomelessDeaths - prevOD.totalHomelessDeaths) / prevOD.totalHomelessDeaths) * 100))}% from peak`
+                    : ""}
+                </p>
+              </div>
+            )}
+
+            {/* MultiLineChart: total OD + fentanyl */}
+            <MultiLineChart
               data={overdoseDeaths
                 .filter((d) => d.totalOdDeathsHomeless > 0)
                 .map((d) => ({
-                  date: String(d.year),
-                  value: d.totalOdDeathsHomeless,
+                  year: String(d.year),
+                  totalOd: d.totalOdDeathsHomeless,
+                  fentanyl: d.fentanylDeathsHomeless,
                 }))}
-              color="#b85c3a"
-              height={280}
-              yAxisDomain="auto"
+              lines={[
+                { key: "totalOd", label: "Total OD Deaths", color: "#b85c3a" },
+                { key: "fentanyl", label: "Fentanyl Deaths", color: "#c8956c", dashed: true },
+              ]}
+              xKey="year"
+              height={300}
             />
-            {overdoseDeaths.some((d) => d.fentanylDeathsHomeless > 0) && (
-              <div className="mt-4">
-                <p className="text-[12px] text-[var(--color-ink-muted)] mb-2">
-                  Fentanyl-involved deaths:
-                </p>
-                <TrendChart
-                  data={overdoseDeaths
-                    .filter((d) => d.fentanylDeathsHomeless > 0)
-                    .map((d) => ({
-                      date: String(d.year),
-                      value: d.fentanylDeathsHomeless,
-                    }))}
-                  color="#c8956c"
-                  height={220}
-                  yAxisDomain="auto"
-                />
-              </div>
-            )}
-            <div className="mt-4">
-              <DataNeeded
-                title="Health Share / HSD crossover study"
-                description="The Health Share crossover study (analyzing overlap between behavioral health system and homelessness system) may be publicly available. This would quantify how many people cycle between healthcare and homelessness."
-                actions={[
-                  {
-                    label: "Awaiting from Health Share",
-                    type: "prr",
-                  },
-                ]}
-                color="#b85c3a"
-              />
-            </div>
-            <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-              Source: Multnomah County Health Department, Medical Examiner data.
+            <p className="text-[11px] text-[var(--color-ink-muted)] mt-3 font-mono">
+              Source: Multnomah County Medical Examiner &middot; Toxicology data.
             </p>
           </div>
         </section>
       )}
 
       {/* ═══════════════════════════════════════════════════════════════════
-          Q6: OUTREACH COVERAGE
+          SECTION 7: THE INFLOW PROBLEM
           ═══════════════════════════════════════════════════════════════════ */}
       <section>
-        <SectionHeader
-          icon={Compass}
-          title="Outreach Coverage"
-          questionNum="Q6"
-          color={ACCENT}
-        />
-        <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-          <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
-            SHS Year 4 reports Multnomah County outreach teams had{" "}
-            <strong>3,957 engagements</strong> (goal: 1,420) and Clackamas had{" "}
-            <strong>877 engagements</strong> (goal: 750). However, detailed
-            outreach-to-housing pipeline data is not publicly available.
-          </p>
-          <DataNeeded
-            title="Outreach-to-housing pipeline data"
-            description="HSD's outreach teams use Survey 123 to record contacts with unsheltered individuals, but only ~1 quarter of data exists and it may not be published. This would show how many outreach contacts lead to shelter or housing placement."
-            actions={[
-              {
-                label: "Request outreach contact data from HSD",
-                type: "prr",
-              },
-            ]}
-            color={ACCENT}
-          />
-        </div>
-      </section>
+        <SectionHeader icon={TrendingUp} title="Why the Number Keeps Growing" color="#ef4444" />
 
-      {/* ═══════════════════════════════════════════════════════════════════
-          Q7: WHERE DO PEOPLE GO?
-          ═══════════════════════════════════════════════════════════════════ */}
-      <section>
-        <SectionHeader
-          icon={HelpCircle}
-          title="Where Do People Go?"
-          questionNum="Q7"
-          color={ACCENT}
-        />
-        <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-          <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
-            Exit destination data — where people go when they leave homelessness
-            — is tracked in HMIS but not publicly available. We know that PSH
-            has a 3% return rate and RRH has 6%, but the full picture of
-            destinations (permanent housing, doubled up, incarceration, unknown)
-            requires restricted HMIS data.
-          </p>
-          <DataNeeded
-            title="Exit destination data from HMIS"
-            description="HMIS tracks where people go when they leave homelessness (permanent housing, transitional, doubled up, incarceration, unknown). This data is restricted and would require a public records request to obtain aggregated figures."
-            actions={[
-              {
-                label: "Request aggregated exit data from JOHS/HMIS",
-                type: "prr",
-              },
-            ]}
-            color={ACCENT}
-          />
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════════
-          Q8: REGIONAL PICTURE — Three-County SHS Comparison
-          ═══════════════════════════════════════════════════════════════════ */}
-      <section>
-        <SectionHeader
-          icon={MapPin}
-          title="Regional Picture — Three-County Comparison"
-          questionNum="Q8"
-          color="#4f46e5"
-        />
-        <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-          <p className="text-[13px] text-[var(--color-ink-muted)] mb-5">
-            SHS funds are distributed by formula: Multnomah 45.3%, Washington
-            33.3%, Clackamas 21.3%. Year 4 saw 2,936 housing placements across
-            the three counties, with Multnomah accounting for 58% of placements.
-            SHS represents 74% of total homeless services funding in the region.
-          </p>
-
-          {latestShsCounty.length > 0 && (
-            <div className="space-y-4">
-              {latestShsCounty.map((c) => {
-                const colors: Record<string, string> = {
-                  Multnomah: "#4f46e5",
-                  Washington: "#7c3aed",
-                  Clackamas: "#a78bfa",
+        {/* Eviction filing trend */}
+        {multEvictions.length > 0 && (
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5 mb-6">
+            <h3 className="text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-3">
+              Multnomah County Eviction Filings
+            </h3>
+            <TrendChart
+              data={multEvictions.map((e) => {
+                const d = new Date(e.month);
+                return {
+                  date: d.toLocaleDateString("en-US", { month: "short", year: "2-digit", timeZone: "UTC" }),
+                  value: e.filings,
                 };
-                const color = colors[c.county] ?? "#4f46e5";
-                const maxPlaced = Math.max(
-                  ...latestShsCounty.map((x) => x.householdsPlaced),
-                );
-                const pct =
-                  maxPlaced > 0
-                    ? Math.round((c.householdsPlaced / maxPlaced) * 100)
-                    : 0;
-                return (
-                  <div key={c.county}>
-                    <div className="flex items-baseline justify-between mb-1.5">
-                      <span className="text-[14px] font-semibold text-[var(--color-ink)]">
-                        {c.county} County
-                      </span>
-                      <span className="text-[11px] text-[var(--color-ink-muted)]">
-                        {c.allocation > 0 &&
-                          `$${Math.round(c.allocation / 1e6)}M allocated`}
-                      </span>
-                    </div>
-                    <div className="h-8 bg-[var(--color-parchment)] rounded-sm overflow-hidden mb-1">
-                      <div
-                        className="h-full rounded-sm flex items-center px-3"
-                        style={{
-                          width: `${Math.max(pct, 12)}%`,
-                          backgroundColor: color,
-                        }}
-                      >
-                        <span className="text-[13px] font-mono font-semibold text-white">
-                          {c.householdsPlaced.toLocaleString()}
-                        </span>
-                      </div>
-                    </div>
-                    <p className="text-[11px] text-[var(--color-ink-muted)]">
-                      {c.householdsPlaced.toLocaleString()} households placed
-                    </p>
-                  </div>
-                );
               })}
-            </div>
+              color="#ef4444"
+              height={260}
+              yAxisDomain="auto"
+            />
+            <p className="text-[11px] text-[var(--color-ink-muted)] mt-2">
+              Source: Evicted in Oregon / HRAC PSU (circuit court data, ~90% of cases).
+            </p>
+          </div>
+        )}
+
+        {/* Root cause cards - 2x2 grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+          <div className="bg-[var(--color-parchment)]/30 border border-[var(--color-parchment)] rounded-sm p-4">
+            <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
+              Housing Scarcity
+            </p>
+            <p className="text-[14px] text-[var(--color-ink)] leading-snug">
+              Portland is short ~20,000 affordable units. Vacancy rate below 5%.
+            </p>
+          </div>
+          <div className="bg-[var(--color-parchment)]/30 border border-[var(--color-parchment)] rounded-sm p-4">
+            <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
+              Evictions Rising
+            </p>
+            <p className="text-[14px] text-[var(--color-ink)] leading-snug">
+              Multnomah: 7 per 100 rentals/yr (highest in OR). Washington: 5 per 100.
+            </p>
+          </div>
+          <div className="bg-[var(--color-parchment)]/30 border border-[var(--color-parchment)] rounded-sm p-4">
+            <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
+              Treatment Gap
+            </p>
+            <p className="text-[14px] text-[var(--color-ink)] leading-snug">
+              Oregon needs 3,714 more behavioral health beds. Current statewide: 4,819.
+            </p>
+          </div>
+          <div className="bg-[var(--color-parchment)]/30 border border-[var(--color-parchment)] rounded-sm p-4">
+            <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
+              Prevalence Gap
+            </p>
+            <p className="text-[14px] text-[var(--color-ink)] leading-snug">
+              PIT: {latestPit?.totalHomeless.toLocaleString() ?? "--"}.
+              HRAC annual estimate: ~38,000. Actual scale is 3-4x the snapshot.
+            </p>
+          </div>
+        </div>
+
+        {/* Home Forward vacancy callout */}
+        {affordableVacancy.length > 0 && affordableVacancy.some((v) => v.vacantUnits > 0) && (
+          <div className="bg-amber-50 border border-amber-200 rounded-sm p-4 mb-6">
+            <p className="text-[13px] text-amber-800">
+              <strong>Home Forward vacancy:</strong>{" "}
+              {affordableVacancy.filter((v) => v.vacantUnits > 0).map((v) =>
+                `${v.vacantUnits.toLocaleString()} empty units (${v.vacancyPct}% vacancy)`
+              ).join("; ")}
+              . Average unit takes 185 days to fill.
+            </p>
+            <p className="text-[11px] text-amber-700/60 mt-1">
+              Contested: Home Forward disputes some figures. Source: KATU/Willamette Week (Nov 2025).
+            </p>
+          </div>
+        )}
+
+        {/* Hidden homelessness callout */}
+        <div className="bg-[var(--color-parchment)]/40 border border-[var(--color-parchment)] rounded-sm p-4">
+          <p className="text-[13px] text-[var(--color-ink)] leading-relaxed">
+            <strong>Hidden homelessness:</strong> The PIT count misses
+            ~{duStatewide?.estimate.toLocaleString() ?? "21,500"} people doubled up and{" "}
+            {(() => {
+              const stateTotal = shTyped.reduce((s, r) => s + r.count202425, 0);
+              return stateTotal > 0 ? stateTotal.toLocaleString() : "21,122";
+            })()} students
+            experiencing homelessness statewide. The true scope exceeds 60,000 Oregonians.
+          </p>
+          <p className="text-[11px] text-[var(--color-ink-muted)] mt-2 font-mono">
+            Source: PSU HRAC 2025 Tables 19-20 &middot; ACS 2024 &middot; ODE Report Card 2024-25.
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          SECTION 8: WHAT HAPPENS NEXT?
+          ═══════════════════════════════════════════════════════════════════ */}
+      <section>
+        <SectionHeader icon={AlertTriangle} title="The Funding Cliff" color="#b85c3a" />
+        <div className="bg-[#b85c3a]/10 border border-[#b85c3a]/30 rounded-sm p-6">
+          <p className="text-[15px] font-semibold text-[var(--color-ink)] mb-4">
+            Five risks converging in 2026-2027:
+          </p>
+          <ol className="space-y-3 text-[14px] text-[var(--color-ink)] leading-relaxed list-decimal list-inside">
+            <li>
+              <strong>SHS budget cut (22%):</strong> Proposed $54M reduction for FY 2026-27, eliminating 585 shelter beds and reducing outreach capacity.
+            </li>
+            <li>
+              <strong>Federal CoC cuts:</strong> Continuum of Care reductions will eliminate housing for ~1,109 households annually.
+            </li>
+            <li>
+              <strong>Emergency Housing Voucher termination:</strong> ~546 vouchers at risk, with no replacement program.
+            </li>
+            <li>
+              <strong>SHS tax expiration (2030):</strong> The primary funding source expires unless reauthorized by voters. No campaign has begun.
+            </li>
+            <li>
+              <strong>City-county governance split:</strong> Portland and Multnomah County dispute the count, methodology, and responsibility. Partnership agreement expires July 2027.
+            </li>
+          </ol>
+          <p className="text-[11px] text-[var(--color-ink-muted)] mt-4 font-mono">
+            Source: Metro Revenue Forecast Fall 2025 &middot; JOHS Budget Memos &middot; OPB/Portland Tribune reporting.
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          SECTION 9: CONTEXT & METHODOLOGY
+          ═══════════════════════════════════════════════════════════════════ */}
+      <section>
+        <SectionHeader icon={MapPin} title="Context & Methodology" color="#4a7f9e" />
+        <div className="space-y-3">
+          {/* Statewide comparison table */}
+          {(statewideByCounty as { county: string; total: number; ratePer1000: number; unshelteredPct: number }[]).length > 0 && (
+            <Collapsible title="Statewide Comparison by County">
+              <p className="text-[13px] text-[var(--color-ink-muted)] mb-4 leading-relaxed">
+                Oregon recorded 27,119 people experiencing homelessness statewide in January 2025 -- a 34.9%
+                increase from 2023. Rates below are per 1,000 residents.
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-[13px]">
+                  <thead>
+                    <tr className="border-b border-[var(--color-parchment)] text-left">
+                      <th className="py-2 pr-4 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)]">County</th>
+                      <th className="py-2 px-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)] text-right">Total</th>
+                      <th className="py-2 px-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)] text-right">Rate/1K</th>
+                      <th className="py-2 px-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)] text-right">Unsheltered %</th>
+                      <th className="py-2 pl-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)]">Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {(statewideByCounty as { county: string; total: number; ratePer1000: number; unshelteredPct: number }[])
+                      .slice(0, 15)
+                      .map((c) => (
+                        <tr
+                          key={c.county}
+                          className={`border-b border-[var(--color-parchment)]/50 ${c.county === "Multnomah" ? "bg-[var(--color-parchment)]/30 font-semibold" : ""}`}
+                        >
+                          <td className="py-2 pr-4 text-[var(--color-ink)]">{c.county}</td>
+                          <td className="py-2 px-3 text-right tabular-nums">{c.total.toLocaleString()}</td>
+                          <td className="py-2 px-3 text-right tabular-nums">{c.ratePer1000}</td>
+                          <td className="py-2 px-3 text-right tabular-nums">{c.unshelteredPct}%</td>
+                          <td className="py-2 pl-3">
+                            <div className="h-2 rounded-sm overflow-hidden bg-[var(--color-parchment)]/60 max-w-[120px]">
+                              <div
+                                className="h-full rounded-sm"
+                                style={{
+                                  width: `${Math.min(100, (c.ratePer1000 / 30) * 100)}%`,
+                                  backgroundColor: c.county === "Multnomah" ? "#8b6c5c" : "#4a7f9e",
+                                }}
+                              />
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-3 text-[11px] text-[var(--color-ink-muted)] font-mono">
+                Source: PSU HRAC 2025 Oregon Statewide Homelessness Estimates (Tables 1-2).
+              </p>
+            </Collapsible>
           )}
 
-          {/* Federal funding risks */}
-          <div className="mt-5 bg-red-50/50 border border-red-200/50 rounded-sm p-4">
-            <p className="text-[12px] font-semibold text-red-800/70 mb-1">
-              Federal Funding Risk
-            </p>
-            <p className="text-[13px] text-red-700/70">
-              Federal Continuum of Care cuts will eliminate housing for ~1,109
-              households annually. Emergency Housing Voucher termination
-              eliminates ~546 vouchers. SHS tax expires after Tax Year 2030
-              unless reauthorized by voters.
-            </p>
-          </div>
-          <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-            Source: Metro SHS Regional Annual Report FY2024-25, Metro Revenue
-            Forecast Fall 2025.
-          </p>
+          {/* Data sources methodology */}
+          <Collapsible title="Data Sources & Methodology">
+            <div className="space-y-2 text-[13px] text-[var(--color-ink-muted)] leading-relaxed">
+              <p>
+                <strong>Point-in-Time Count:</strong> HUD-mandated count conducted
+                every 1-2 years by the Portland/Gresham/Multnomah County CoC.
+                Counts both sheltered and unsheltered on a single night.
+              </p>
+              <p>
+                <strong>By-Name List:</strong> JOHS maintains a by-name list of
+                all known homeless individuals. Monthly snapshots show inflow (new
+                entries) vs outflow (exits to housing).
+              </p>
+              <p>
+                <strong>Eviction Filings:</strong> From Evicted in Oregon
+                (HRAC/PSU), using Oregon Judicial Department circuit court records.
+                Covers ~90% of statewide cases.
+              </p>
+              <p>
+                <strong>SHS Reports:</strong> Metro Supportive Housing Services
+                data from the Year 4 Regional Annual Report (FY2024-25, published
+                March 2026).
+              </p>
+              <p>
+                <strong>Shelter Capacity:</strong> JOHS quarterly reports on beds,
+                utilization, length of stay, and exit destinations.
+              </p>
+              <p>
+                <strong>Overdose Deaths:</strong> Multnomah County Medical Examiner
+                data with toxicology breakdowns.
+              </p>
+              <p>
+                <strong>IRP Campsite Reports:</strong> PDX Reporter data, de-duplicated
+                by location and date window.
+              </p>
+            </div>
+          </Collapsible>
+
+          {/* Timeline + Methodology */}
+          <Collapsible title="Data Freshness Timeline">
+            <DataSourceTimeline sources={dataSources} />
+            <div className="mt-4">
+              <MethodologyExplainer sources={dataSources} />
+            </div>
+          </Collapsible>
         </div>
       </section>
-
-      {/* ═══════════════════════════════════════════════════════════════════
-          PIT COUNT TREND (kept from original)
-          ═══════════════════════════════════════════════════════════════════ */}
-      {pitCounts.length > 0 && (
-        <section>
-          <SectionHeader
-            icon={Users}
-            title="Point-in-Time Count Trend"
-            color={ACCENT}
-          />
-          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-            <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
-              The HUD-mandated Point-in-Time count is conducted every 1-2 years
-              across the Portland/Gresham/Multnomah County Continuum of Care.
-              {latestPit &&
-                pitCounts.length > 1 &&
-                ` From ${pitCounts[0].year} to ${latestPit.year}, homelessness grew from ${pitCounts[0].totalHomeless.toLocaleString()} to ${latestPit.totalHomeless.toLocaleString()}.`}
-              {hracAnnual && (
-                <>
-                  {" "}
-                  The HRAC/PSU prevalence estimate (~
-                  {Number(hracAnnual.value).toLocaleString()} annually) suggests
-                  the true scope is 3-4x the single-night count.
-                </>
-              )}
-            </p>
-            <TrendChart
-              data={pitCounts.map((r) => ({
-                date: String(r.year),
-                value: r.totalHomeless,
-              }))}
-              color={ACCENT}
-              height={320}
-              yAxisDomain="auto"
-            />
-            <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
-              Source: <a href="https://www.hudexchange.info/programs/coc/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">HUD &middot; Point-in-Time Count</a> — Portland/Gresham/Multnomah County CoC
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* ═══════════════════════════════════════════════════════════════════
-          SHS FUNDING (integrated with Q2/Q8)
-          ═══════════════════════════════════════════════════════════════════ */}
-      {shsFunding.length > 0 && (
-        <section>
-          <SectionHeader
-            icon={DollarSign}
-            title="SHS Revenue Trend & Forecast"
-            color={ACCENT}
-          />
-          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-            <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
-              The Metro SHS income tax funds the regional response.
-              {(() => {
-                const withRevenue = shsFunding.filter((s) => s.taxRevenue > 0);
-                if (withRevenue.length < 2) return "";
-                const first = withRevenue[0];
-                const last = withRevenue[withRevenue.length - 1];
-                const peak = withRevenue.reduce(
-                  (max, d) => (d.taxRevenue > max.taxRevenue ? d : max),
-                  withRevenue[0],
-                );
-                const revM = (v: number) => `$${(v / 1e6).toFixed(0)}M`;
-                if (last.taxRevenue < peak.taxRevenue) {
-                  return ` Revenue peaked at ${revM(peak.taxRevenue)} (${peak.year}), declining to ${revM(last.taxRevenue)} (${last.year}).`;
-                }
-                return ` Revenue grew from ${revM(first.taxRevenue)} to ${revM(last.taxRevenue)}.`;
-              })()}
-              {" "}The tax expires after Tax Year 2030 unless reauthorized. A 22%
-              budget cut has been proposed for FY 2026-27.
-            </p>
-            <TrendChart
-              data={shsFunding
-                .filter((s) => s.taxRevenue > 0)
-                .map((s) => ({
-                  date: `${s.year}`,
-                  value: s.taxRevenue,
-                }))}
-              color={ACCENT}
-              height={280}
-              valuePrefix="$"
-              yAxisDomain="auto"
-            />
-            <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-              Source: Metro SHS Annual Reports, Revenue Forecast Fall 2025.
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* ═══════════════════════════════════════════════════════════════════
-          DATA SOURCES & METHODOLOGY
-          ═══════════════════════════════════════════════════════════════════ */}
-      <section>
-        <SectionHeader
-          icon={FileText}
-          title="Data Sources & Methodology"
-          color={ACCENT}
-        />
-        <div className="bg-[var(--color-parchment)]/40 border border-[var(--color-parchment)]/60 rounded-sm p-6">
-          <div className="space-y-2 text-[13px] text-[var(--color-ink-muted)] leading-relaxed">
-            <p>
-              <strong>Point-in-Time Count:</strong> HUD-mandated count conducted
-              every 1-2 years by the Portland/Gresham/Multnomah County CoC.
-              Counts both sheltered and unsheltered on a single night. The
-              HRAC/PSU prevalence study estimates the annual figure is 3-4x the
-              PIT snapshot.
-            </p>
-            <p>
-              <strong>By-Name List:</strong> JOHS maintains a by-name list of
-              all known homeless individuals. Monthly snapshots show inflow (new
-              entries) vs outflow (exits to housing).
-            </p>
-            <p>
-              <strong>Eviction Filings:</strong> From Evicted in Oregon
-              (HRAC/PSU), using Oregon Judicial Department circuit court records.
-              Covers ~90% of statewide cases. Clackamas County data unavailable
-              (justice courts). Updated March 15, 2026.
-            </p>
-            <p>
-              <strong>SHS Reports:</strong> Metro Supportive Housing Services
-              data from the Year 4 Regional Annual Report (FY2024-25, published
-              March 2026) and Revenue Forecast (Fall 2025). Includes spending,
-              outcomes, and retention by intervention type and county.
-            </p>
-            <p>
-              <strong>Shelter Capacity:</strong> JOHS quarterly reports on beds,
-              utilization, length of stay, and exit destinations.
-            </p>
-            <p>
-              <strong>Overdose Deaths:</strong> Multnomah County Medical Examiner
-              data. Includes toxicology breakdowns for fentanyl and
-              methamphetamine.
-            </p>
-            <p>
-              <strong>Affordable Housing Vacancy:</strong> KATU/Willamette Week
-              investigation (Nov 2025) and Home Forward response. Flagged as
-              contested — both claims displayed.
-            </p>
-            <p>
-              <strong>HRAC Prevalence Study:</strong> Portland State University
-              (2019), estimating 38,000 annual homeless and 107,039 at-risk
-              households across the tri-county area. Based on 2017 data.
-            </p>
-          </div>
-
-          <div className="mt-5 border-t border-[var(--color-parchment)] pt-4">
-            <p className="text-[12px] font-semibold text-[var(--color-ink-muted)] mb-2">
-              Data Gaps (Flagged)
-            </p>
-            <ul className="text-[12px] text-[var(--color-ink-muted)] space-y-1">
-              <li>
-                <strong>Shelter effectiveness data</strong> — Which models lead to
-                permanent housing (not publicly available)
-              </li>
-              <li>
-                <strong>Health Share crossover study</strong> — Behavioral
-                health/homelessness overlap (pending)
-              </li>
-              <li>
-                <strong>Survey 123 outreach data</strong> — Only ~1 quarter may
-                exist
-              </li>
-              <li>
-                <strong>HMIS exit destinations</strong> — Restricted data,
-                requires PRR
-              </li>
-              <li>
-                <strong>Metro PMC case studies</strong> — Not found online
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════════
-          PORTLAND IN CONTEXT — Statewide comparison
-          ═══════════════════════════════════════════════════════════════════ */}
-      {(statewideByCounty as { county: string; total: number; ratePer1000: number; unshelteredPct: number }[]).length > 0 && (
-        <section>
-          <SectionHeader icon={MapPin} title="Portland in Context" color="#4a7f9e" />
-          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-            <p className="text-[13px] text-[var(--color-ink-muted)] mb-5 leading-relaxed">
-              Oregon recorded <strong className="text-[var(--color-ink)]">27,119 people</strong> experiencing
-              homelessness statewide in January 2025 — a 34.9% increase from 2023. Multnomah County
-              accounts for 39% of the state total. Rates below are per 1,000 residents.
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full text-[13px]">
-                <thead>
-                  <tr className="border-b border-[var(--color-parchment)] text-left">
-                    <th className="py-2 pr-4 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)]">County</th>
-                    <th className="py-2 px-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)] text-right">Total</th>
-                    <th className="py-2 px-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)] text-right">Rate/1K</th>
-                    <th className="py-2 px-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)] text-right">Unsheltered %</th>
-                    <th className="py-2 pl-3 text-[10px] font-mono font-semibold uppercase tracking-wider text-[var(--color-ink-muted)]">Rate</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {(statewideByCounty as { county: string; total: number; ratePer1000: number; unshelteredPct: number }[])
-                    .slice(0, 15)
-                    .map((c) => (
-                    <tr
-                      key={c.county}
-                      className={`border-b border-[var(--color-parchment)]/50 ${c.county === "Multnomah" ? "bg-[var(--color-parchment)]/30 font-semibold" : ""}`}
-                    >
-                      <td className="py-2 pr-4 text-[var(--color-ink)]">{c.county}</td>
-                      <td className="py-2 px-3 text-right tabular-nums">{c.total.toLocaleString()}</td>
-                      <td className="py-2 px-3 text-right tabular-nums">{c.ratePer1000}</td>
-                      <td className="py-2 px-3 text-right tabular-nums">{c.unshelteredPct}%</td>
-                      <td className="py-2 pl-3">
-                        <div className="h-2 rounded-sm overflow-hidden bg-[var(--color-parchment)]/60 max-w-[120px]">
-                          <div
-                            className="h-full rounded-sm"
-                            style={{
-                              width: `${Math.min(100, (c.ratePer1000 / 30) * 100)}%`,
-                              backgroundColor: c.county === "Multnomah" ? "#8b6c5c" : "#4a7f9e",
-                            }}
-                          />
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
-              Source: PSU HRAC &middot; 2025 Oregon Statewide Homelessness Estimates (Tables 1-2)
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* ═══════════════════════════════════════════════════════════════════
-          RACIAL EQUITY — Disparity multipliers
-          ═══════════════════════════════════════════════════════════════════ */}
-      {(racialDisparities as { raceGroup: string; disparityRatio: number | null; pctOfPopulation: number | null; pctOfPit: number | null }[]).length > 0 && (
-        <section>
-          <SectionHeader icon={Scale} title="Racial Disparities in Homelessness" color="#b85c3a" />
-          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-            <p className="text-[13px] text-[var(--color-ink-muted)] mb-5 leading-relaxed">
-              People of color experience homelessness at dramatically higher rates than their share of
-              Oregon&apos;s population. These disparities <strong className="text-[var(--color-ink)]">worsened from 2023 to 2025</strong>.
-              The number below shows how many times more likely each group is to experience homelessness
-              relative to their population share.
-            </p>
-            <div className="space-y-3">
-              {(racialDisparities as { raceGroup: string; disparityRatio: number | null; pctOfPopulation: number | null; pctOfPit: number | null }[])
-                .filter((d) => d.disparityRatio !== null && d.disparityRatio > 0)
-                .map((d) => (
-                  <div key={d.raceGroup} className="flex items-center gap-4">
-                    <span className="text-[13px] text-[var(--color-ink)] w-[260px] flex-shrink-0 truncate">
-                      {d.raceGroup}
-                    </span>
-                    <div className="flex-1 h-6 bg-[var(--color-parchment)]/40 rounded-sm overflow-hidden relative">
-                      <div
-                        className="h-full rounded-sm transition-all"
-                        style={{
-                          width: `${Math.min(100, ((d.disparityRatio ?? 0) / 7) * 100)}%`,
-                          backgroundColor: (d.disparityRatio ?? 0) > 1 ? "#b85c3a" : "#7c8a4c",
-                        }}
-                      />
-                      <span className="absolute inset-y-0 right-2 flex items-center text-[12px] font-bold tabular-nums text-[var(--color-ink)]">
-                        {(d.disparityRatio ?? 0) > 1 ? `${d.disparityRatio}x` : `${d.disparityRatio}x`}
-                      </span>
-                    </div>
-                  </div>
-              ))}
-            </div>
-            <p className="text-[12px] text-[var(--color-ink-muted)] mt-4 leading-relaxed italic border-l-2 border-[#b85c3a]/40 pl-3">
-              A ratio of 1.0x means a group experiences homelessness at the same rate as their population
-              share. A ratio above 1.0x means disproportionate overrepresentation.
-            </p>
-            <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
-              Source: PSU HRAC &middot; 2025 Oregon Statewide Homelessness Estimates, Chart 1. Population shares from Census Table B03002.
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* ═══════════════════════════════════════════════════════════════════
-          SHELTER GAP — Beds vs need
-          ═══════════════════════════════════════════════════════════════════ */}
-      {(shelterBedInventory as { county: string; totalBeds: number; totalHomeless: number; bedsPctOfPit: number }[]).length > 0 && (() => {
-        const multco = (shelterBedInventory as { county: string; totalBeds: number; totalHomeless: number; bedsPctOfPit: number }[]).find((s) => s.county === "Multnomah");
-        const statewideBeds = (shelterBedInventory as { county: string; totalBeds: number; totalHomeless: number; bedsPctOfPit: number }[]).reduce((s, r) => s + r.totalBeds, 0);
-        const statewideHomeless = (shelterBedInventory as { county: string; totalBeds: number; totalHomeless: number; bedsPctOfPit: number }[]).reduce((s, r) => s + r.totalHomeless, 0);
-        return (
-          <section>
-            <SectionHeader icon={BedDouble} title="The Shelter Gap" color="#ef4444" />
-            <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-              <p className="text-[13px] text-[var(--color-ink-muted)] mb-5 leading-relaxed">
-                No county in Oregon has enough shelter beds for everyone experiencing homelessness.
-                Oregon added <strong className="text-[var(--color-ink)]">3,094 year-round beds</strong> between
-                2023 and 2025 (a 39% increase), but the gap remains large.
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5">
-                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
-                  <p className="text-[32px] font-bold text-[var(--color-ink)] leading-none">{multco?.totalBeds.toLocaleString() ?? "—"}</p>
-                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">MultCo shelter beds</p>
-                </div>
-                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
-                  <p className="text-[32px] font-bold text-[#ef4444] leading-none">{multco?.bedsPctOfPit ?? "—"}%</p>
-                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">of MultCo PIT covered</p>
-                </div>
-                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
-                  <p className="text-[32px] font-bold text-[var(--color-ink)] leading-none">{statewideBeds.toLocaleString()}</p>
-                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">statewide beds</p>
-                </div>
-                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
-                  <p className="text-[32px] font-bold text-[#ef4444] leading-none">{statewideHomeless > 0 ? Math.round((statewideBeds / statewideHomeless) * 100) : "—"}%</p>
-                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">of statewide PIT covered</p>
-                </div>
-              </div>
-              <p className="text-[11px] text-[var(--color-ink-muted)] font-mono">
-                Source: PSU HRAC 2025 Oregon Statewide Homelessness Estimates, Table 17 (HIC data).
-              </p>
-            </div>
-          </section>
-        );
-      })()}
-
-      {/* ═══════════════════════════════════════════════════════════════════
-          HIDDEN HOMELESSNESS — Doubled-up + student counts
-          ═══════════════════════════════════════════════════════════════════ */}
-      {((doubledUp as { county: string; estimate: number }[]).length > 0 || (studentHomelessness as { county: string; count202425: number }[]).length > 0) && (() => {
-        const duStatewide = (doubledUp as { county: string; estimate: number; marginOfError: number }[]).find((d) => d.county === "Statewide");
-        const duMultco = (doubledUp as { county: string; estimate: number; marginOfError: number }[]).find((d) => d.county === "Multnomah");
-        const shMultco = (studentHomelessness as { county: string; count202425: number; numericChange: number }[]).find((s) => s.county === "Multnomah");
-        return (
-          <section>
-            <SectionHeader icon={HelpCircle} title="Hidden Homelessness" color="#c89c4c" />
-            <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
-              <p className="text-[13px] text-[var(--color-ink-muted)] mb-5 leading-relaxed">
-                The PIT count only captures people in shelters or visible on the street on a single night.
-                It misses two large populations: people <strong className="text-[var(--color-ink)]">doubled up</strong> (staying
-                with others out of necessity) and <strong className="text-[var(--color-ink)]">students experiencing
-                homelessness</strong> (a broader federal definition that includes motels, cars, and doubling up).
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5">
-                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
-                  <p className="text-[28px] font-bold text-[var(--color-ink)] leading-none">{duStatewide?.estimate.toLocaleString() ?? "—"}</p>
-                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">doubled up statewide</p>
-                  {duStatewide && <p className="text-[10px] text-[var(--color-ink-muted)]">+/- {duStatewide.marginOfError.toLocaleString()}</p>}
-                </div>
-                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
-                  <p className="text-[28px] font-bold text-[var(--color-ink)] leading-none">{duMultco?.estimate.toLocaleString() ?? "—"}</p>
-                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">doubled up MultCo</p>
-                </div>
-                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
-                  <p className="text-[28px] font-bold text-[var(--color-ink)] leading-none">21,122</p>
-                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">students statewide</p>
-                  <p className="text-[10px] text-[var(--color-ink-muted)]">4.0% of all K-12</p>
-                </div>
-                <div className="bg-[var(--color-parchment)]/30 rounded-sm p-4 text-center">
-                  <p className="text-[28px] font-bold text-[var(--color-ink)] leading-none">{shMultco?.count202425.toLocaleString() ?? "—"}</p>
-                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-1">students MultCo</p>
-                  {shMultco && <p className="text-[10px] text-[var(--color-ink-muted)]">{shMultco.numericChange > 0 ? "+" : ""}{shMultco.numericChange} from prior year</p>}
-                </div>
-              </div>
-              <p className="text-[12px] text-[var(--color-ink-muted)] leading-relaxed italic border-l-2 border-[#c89c4c]/40 pl-3">
-                When you combine the PIT count (27,119), doubled-up estimate (21,542), and the broader
-                student count, homelessness affects more than <strong className="text-[var(--color-ink)]">60,000 Oregonians</strong> — far
-                more than any single measure captures.
-              </p>
-              <p className="text-[11px] text-[var(--color-ink-muted)] mt-3 font-mono">
-                Source: PSU HRAC 2025 Statewide Estimates, Tables 19-20. Doubled-up: ACS 1-year 2024 (Richard et al. method).
-                Students: Oregon Department of Education Statewide Report Card 2024-25.
-              </p>
-            </div>
-          </section>
-        );
-      })()}
-
-      {/* ═══════════════════════════════════════════════════════════════════
-          DATA FRESHNESS TIMELINE
-          ═══════════════════════════════════════════════════════════════════ */}
-      <DataSourceTimeline sources={dataSources} />
-
-      {/* ═══════════════════════════════════════════════════════════════════
-          METHODOLOGY EXPLAINER — How these numbers are measured
-          ═══════════════════════════════════════════════════════════════════ */}
-      <MethodologyExplainer sources={dataSources} />
     </div>
   );
 }

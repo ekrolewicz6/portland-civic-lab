@@ -140,6 +140,28 @@ const COMBINED_QUERY = `
         SELECT county, count_2023, count_2025, numeric_change, pct_change
         FROM homelessness.statewide_unsheltered_change
       ) t
+    ),
+    'irp_campsite_monthly', (
+      SELECT COALESCE(json_agg(t ORDER BY month), '[]'::json) FROM (
+        SELECT
+          TO_CHAR(DATE_TRUNC('month', incident_date), 'YYYY-MM') AS month,
+          COUNT(*) FILTER (WHERE NOT is_duplicate)::int AS unique_reports,
+          COUNT(*) FILTER (WHERE NOT is_duplicate AND is_vehicle)::int AS vehicle_reports,
+          COUNT(*) FILTER (WHERE NOT is_duplicate AND NOT is_vehicle)::int AS tent_reports
+        FROM homelessness.irp_campsite_reports
+        WHERE incident_date >= '2025-01-01'
+        GROUP BY 1
+      ) t
+    ),
+    'irp_campsite_total', (
+      SELECT row_to_json(t) FROM (
+        SELECT
+          COUNT(*) FILTER (WHERE NOT is_duplicate)::int AS unique_total,
+          COUNT(*)::int AS raw_total,
+          MIN(incident_date)::date AS earliest,
+          MAX(incident_date)::date AS latest
+        FROM homelessness.irp_campsite_reports
+      ) t
     )
   ) AS payload
 `;
@@ -178,6 +200,8 @@ export async function GET() {
     const studentHomelessness = arr(payload.student_homelessness);
     const doubledUp = arr(payload.doubled_up);
     const unshelteredChange = arr(payload.unsheltered_change);
+    const irpCampsiteMonthly = (payload.irp_campsite_monthly as any[]) ?? [];
+    const irpCampsiteTotal = payload.irp_campsite_total as { unique_total: number; raw_total: number; earliest: string; latest: string } | null;
 
     const responseData = {
       pitCounts: pitCounts.map((r) => ({
@@ -335,6 +359,18 @@ export async function GET() {
         numericChange: Number(r.numeric_change ?? 0),
         pctChange: Number(r.pct_change ?? 0),
       })),
+      irpCampsiteMonthly: irpCampsiteMonthly.map((r: any) => ({
+        month: r.month,
+        uniqueReports: Number(r.unique_reports),
+        vehicleReports: Number(r.vehicle_reports),
+        tentReports: Number(r.tent_reports),
+      })),
+      irpCampsiteTotal: irpCampsiteTotal ? {
+        uniqueTotal: Number(irpCampsiteTotal.unique_total),
+        rawTotal: Number(irpCampsiteTotal.raw_total),
+        earliest: irpCampsiteTotal.earliest,
+        latest: irpCampsiteTotal.latest,
+      } : null,
       dataStatus: "live",
     };
 
@@ -362,6 +398,8 @@ export async function GET() {
       studentHomelessness: [],
       doubledUp: [],
       unshelteredChange: [],
+      irpCampsiteMonthly: [],
+      irpCampsiteTotal: null,
       dataStatus: "unavailable",
     });
   }

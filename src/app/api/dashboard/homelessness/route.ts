@@ -45,6 +45,14 @@ const COMBINED_QUERY = `
         FROM homelessness.shs_funding
         ORDER BY year DESC LIMIT 1
       ) t
+    ),
+    'irp_total', (
+      SELECT row_to_json(t) FROM (
+        SELECT
+          COUNT(*) FILTER (WHERE NOT is_duplicate)::int AS unique_total,
+          MIN(incident_date)::date AS earliest
+        FROM homelessness.irp_campsite_reports
+      ) t
     )
   ) AS payload
 `;
@@ -72,6 +80,7 @@ export async function GET() {
     const placements = payload.placements as Record<string, unknown> | null;
     const overdose = payload.overdose as Record<string, unknown> | null;
     const shs = payload.shs as Record<string, unknown> | null;
+    const irpTotal = payload.irp_total as { unique_total: number; earliest: string } | null;
 
     if (pitRows.length === 0) {
       return NextResponse.json({
@@ -139,6 +148,11 @@ export async function GET() {
     if (shs) {
       insights.push(
         `SHS revenue: $${(Number(shs.tax_revenue) / 1e6).toFixed(0)}M (${shs.year}).`,
+      );
+    }
+    if (irpTotal && irpTotal.unique_total > 0) {
+      insights.push(
+        `${irpTotal.unique_total.toLocaleString()} campsite reports tracked since ${irpTotal.earliest} via IRP.`,
       );
     }
 
