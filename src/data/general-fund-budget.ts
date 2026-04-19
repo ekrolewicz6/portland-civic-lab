@@ -856,6 +856,10 @@ const cashTransfers: CashTransfer[] = [
 
 // ─── Five-Year Forecast ──────────────────────────────────────────────────────
 // From Table 2: Five-Year Balanced General Fund Forecast
+// NOTE: The -67.8 gap is the CAL (Current Allocation Level) figure.
+// The CSL (Current Service Level) gap is -169.3M per Feb 2026 CBO report.
+// CSL includes $53.6M sheltering + $29.5M public safety funded with expiring
+// one-time money. Mayor Wilson cited "~$160M" which is the CSL figure rounded.
 
 const fiveYearForecast: ForecastYear[] = [
   { year: "FY 26-27", revenue: 725.4, expenses: 793.2, gap: -67.8 },
@@ -971,7 +975,7 @@ const restrictedFunds: RestrictedFund[] = [
   {
     name: "General Fund (flexible)",
     amount: 793_122_397,
-    restriction: "The only discretionary spending. Funds police, fire, parks operations, shelter services, and city administration. This is where the $67.8M deficit lives.",
+    restriction: "The only discretionary spending. Funds police, fire, parks operations, shelter services, and city administration. CAL deficit: $67.8M; CSL deficit (including expiring one-time programs): $169.3M.",
     legalAuthority: "No legal restriction — allocated annually by City Council through the budget process",
     category: "general-fund",
   },
@@ -984,8 +988,8 @@ const totalAllFunds = restrictedFunds.reduce((s, f) => s + f.amount, 0);
 export const budgetData: BudgetData = {
   fiscalYear: "FY 2026-27",
   totalCityBudget: totalAllFunds,
-  dataSource: "City Budget Office — General Fund Forecast & CAL Tables, March 2026 Update; Budget Scenario Options FY 2026-27; FY 26-27 Program Offer Data (All Funds)",
-  lastVerified: "2026-04-06",
+  dataSource: "City Budget Office — General Fund Forecast (Dec 2025), CSL Executive Summary (Feb 2026), Budget Scenario Options (Apr 2026), Program Offer Data (All Funds)",
+  lastVerified: "2026-04-18",
   generalFund: {
     totalRevenue: 725_400_000,
     totalExpenses: 793_122_397,
