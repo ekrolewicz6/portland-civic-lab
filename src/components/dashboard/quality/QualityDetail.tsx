@@ -3,17 +3,14 @@
 import { useEffect, useState } from "react";
 import StatGrid from "@/components/charts/StatGrid";
 import TrendChart from "@/components/charts/TrendChart";
-import DataNeeded from "@/components/dashboard/DataNeeded";
+import BarChart from "@/components/charts/BarChart";
+import MultiLineChart from "@/components/charts/MultiLineChart";
 import NewsContext from "../NewsContext";
 import {
   Trees,
   Route,
   BookOpen,
-  DollarSign,
-  Train,
-  Wind,
-  Landmark,
-  Wifi,
+  PlayCircle,
   AlertCircle,
 } from "lucide-react";
 
@@ -36,61 +33,49 @@ interface PavementSummary {
   totalSegments: number;
 }
 
-interface LibraryExtended {
-  fiscalYear: number;
+interface LibraryYear {
+  fiscal_year: number;
   visits: number;
   circulation: number;
   programs: number;
   attendance: number;
-  registeredUsers: number;
-}
-
-interface AffordabilityRow {
-  year: number;
-  metric: string;
-  value: number;
-  source: string;
-}
-
-interface NeighborhoodIncome {
-  neighborhoods: number;
-  avgMedianIncome: number;
-  minIncome: number;
-  maxIncome: number;
-  avgPovertyRate: number;
-}
-
-interface AirQuality {
-  latest: { date: string; aqi: number; category: string; pollutant: string } | null;
-  trend: { date: string; value: number }[];
-  smokeDays: { year: number; days: number }[];
-}
-
-interface TransitRidership {
-  byYear: { year: number; total: number; onTimePct: number | null }[];
-  byMode: Record<string, { year: number; ridership: number }[]>;
-}
-
-interface ContextStat {
-  value: string;
-  context: string;
-  source: string;
-  asOfDate: string | null;
+  registered_borrowers: number;
+  hours_open: number;
+  branches: number;
+  collection_books: number;
+  circ_physical: number;
+  circ_econtent: number;
 }
 
 interface QualityDetailData {
   parkStats: ParkStats;
+  parksByType: { type: string; count: number; acres: number }[];
   pavementSummary: PavementSummary;
-  pavementByYear: { year: number; avgPci: number; count: number }[];
-  libraryTrend: { year: number; visits: number }[];
-  libraryExtended: LibraryExtended | null;
-  affordability: AffordabilityRow[];
-  neighborhoodIncome: NeighborhoodIncome | null;
-  airQuality: AirQuality | null;
-  transitRidership: TransitRidership | null;
-  culturalInstitutions: { name: string; type: string }[];
-  culturalCount: number;
-  contextStats: Record<string, ContextStat>;
+  pavementByClass: { class: string; avgPci: number; segments: number }[];
+  worstStreets: {
+    street_name: string;
+    pci: number;
+    surface_type: string;
+    functional_class: string;
+    length_ft: number;
+  }[];
+  libraryTrend: LibraryYear[];
+  amenitiesSummary: {
+    equipment_type: string;
+    count: number;
+    earliest_install: number | null;
+    latest_install: number | null;
+  }[];
+  amenitiesTotal: number;
+  parksMostAmenities: { park_name: string; amenity_count: number }[];
+  heroStats: {
+    totalParks: number;
+    avgPci: number;
+    pciLabel: string;
+    latestVisits: number;
+    latestFiscalYear: number | null;
+  };
+  topInsights: string[];
   dataStatus: string;
 }
 
@@ -130,28 +115,12 @@ function InfoCard({
   );
 }
 
-/** Format "2026-03-10" → "Mar 10" */
-function shortDate(dateStr: string): string {
-  const d = new Date(dateStr + "T12:00:00");
-  return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
-}
-
 function SourceNote({ source }: { source: string }) {
   return (
     <p className="text-[10px] text-[var(--color-ink-muted)]/50 mt-3 font-mono">
       Source: {source}
     </p>
   );
-}
-
-function getAffordabilityMetric(
-  rows: AffordabilityRow[],
-  metric: string,
-  year?: number
-): AffordabilityRow | undefined {
-  const filtered = rows.filter((r) => r.metric === metric);
-  if (year) return filtered.find((r) => r.year === year);
-  return filtered.sort((a, b) => b.year - a.year)[0]; // latest
 }
 
 // ── Main Component ───────────────────────────────────────────────────────
@@ -190,20 +159,22 @@ export default function QualityDetail() {
 
   const {
     parkStats,
+    parksByType,
     pavementSummary,
+    pavementByClass,
+    worstStreets,
     libraryTrend,
-    libraryExtended,
-    affordability,
-    neighborhoodIncome,
-    airQuality,
-    transitRidership,
-    culturalInstitutions,
-    culturalCount,
-    contextStats,
+    amenitiesSummary,
+    amenitiesTotal,
+    parksMostAmenities,
+    heroStats,
+    topInsights,
   } = data;
 
   // Derived values
   const latestLib = libraryTrend.length > 0 ? libraryTrend[libraryTrend.length - 1] : null;
+  const priorLib = libraryTrend.length >= 2 ? libraryTrend[libraryTrend.length - 2] : null;
+
   const pciLabel =
     pavementSummary.avgPci >= 70
       ? "Good"
@@ -211,50 +182,56 @@ export default function QualityDetail() {
         ? "Fair"
         : "Poor";
 
-  const rentBurden = getAffordabilityMetric(affordability, "rent_burden_pct");
-  const medianRent = getAffordabilityMetric(affordability, "median_rent");
-  const medianIncome = getAffordabilityMetric(affordability, "median_income");
-  const latestCpi = getAffordabilityMetric(affordability, "cpi");
-
-  const treeCanopy = contextStats["tree_canopy_pct"];
-  const broadband = contextStats["broadband_pct"];
-  const broadbandProviders = contextStats["broadband_providers"];
-  const bachelors = contextStats["bachelors_or_higher_pct"];
-  const trailMiles = contextStats["trail_miles"];
-  const bikeMiles = contextStats["bike_lane_miles"];
-
-  // CPI → year-over-year inflation %
-  const cpiRaw = affordability
-    .filter((r) => r.metric === "cpi")
-    .sort((a, b) => a.year - b.year);
-  const inflationTrend = cpiRaw.slice(1).map((r, i) => ({
-    date: String(r.year),
-    value: Math.round(((r.value - cpiRaw[i].value) / cpiRaw[i].value) * 1000) / 10,
-  }));
-
-  // Transit trend data
-  const transitTrend = transitRidership?.byYear.map((r) => ({
-    date: String(r.year),
-    value: Math.round(r.total / 1_000_000),
-  })) ?? [];
-
   // Pavement condition percentages
   const total = pavementSummary.totalSegments || 1;
   const goodPct = Math.round((pavementSummary.good / total) * 100);
   const fairPct = Math.round((pavementSummary.fair / total) * 100);
   const poorPct = Math.round((pavementSummary.poor / total) * 100);
 
-  // Library trend chart data
-  const libChartData = libraryTrend.map((r) => ({
-    date: String(r.year),
+  // Library visit trend chart data
+  const libVisitChartData = libraryTrend.map((r) => ({
+    date: String(r.fiscal_year),
     value: r.visits,
   }));
 
-  // Income inequality ratio
-  const incomeRatio =
-    neighborhoodIncome && neighborhoodIncome.minIncome > 0
-      ? Math.round(neighborhoodIncome.maxIncome / neighborhoodIncome.minIncome)
-      : null;
+  // Library multi-line: visits + circulation
+  const libMultiData = libraryTrend.map((r) => ({
+    year: String(r.fiscal_year),
+    visits: r.visits,
+    circulation: r.circulation,
+  }));
+
+  // Library program attendance trend
+  const libProgramData = libraryTrend
+    .filter((r) => r.programs > 0 || r.attendance > 0)
+    .map((r) => ({
+      year: String(r.fiscal_year),
+      programs: r.programs,
+      attendance: r.attendance,
+    }));
+
+  // E-content vs physical circulation
+  const econtentData = libraryTrend
+    .filter((r) => r.circ_physical > 0 || r.circ_econtent > 0)
+    .map((r) => ({
+      year: String(r.fiscal_year),
+      physical: r.circ_physical,
+      econtent: r.circ_econtent,
+    }));
+
+  // Park type bar chart data
+  const parkTypeBarData = parksByType.slice(0, 8).map((t) => ({
+    name: t.type,
+    value: t.count,
+  }));
+
+  // Visit change
+  let visitChangePct: number | undefined;
+  if (latestLib && priorLib && priorLib.visits > 0) {
+    visitChangePct = Math.round(
+      ((latestLib.visits - priorLib.visits) / priorLib.visits) * 100
+    );
+  }
 
   return (
     <div className="space-y-10">
@@ -265,82 +242,180 @@ export default function QualityDetail() {
       <section>
         <InfoCard>
           <p className="text-[14px] text-[var(--color-ink)] leading-relaxed">
-            Quality of life in Portland spans affordability, mobility, environmental health,
-            parks, culture, learning, and digital access. This dashboard tracks{" "}
-            <strong>real data across 7 dimensions</strong> to answer:{" "}
-            <em>Does Portland work as a place to live?</em>
+            Quality of life in Portland tracked across <strong>three core dimensions</strong>:
+            {" "}{parkStats.totalParks} parks covering {parkStats.totalAcres.toLocaleString()} acres,
+            {" "}{pavementSummary.totalSegments.toLocaleString()} street segments rated for pavement health,
+            and {libraryTrend.length} years of Multnomah County Library data.
           </p>
         </InfoCard>
       </section>
 
-      {/* ── 1. Affordability & Cost of Living ─────────────────────────── */}
+      {/* ── Key Findings ──────────────────────────────────────────────── */}
+      {topInsights.length > 0 && (
+        <section>
+          <SectionHeader icon={AlertCircle} title="Key Findings" />
+          <InfoCard>
+            <ul className="space-y-2">
+              {topInsights.map((insight, i) => (
+                <li key={i} className="flex items-start gap-2.5">
+                  <span
+                    className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2"
+                    style={{ backgroundColor: COLOR }}
+                  />
+                  <span className="text-[13px] text-[var(--color-ink-muted)]">{insight}</span>
+                </li>
+              ))}
+            </ul>
+          </InfoCard>
+        </section>
+      )}
+
+      {/* ── 1. Parks & Recreation ─────────────────────────────────────── */}
       <section>
-        <SectionHeader icon={DollarSign} title="Affordability & Cost of Living" />
+        <SectionHeader icon={Trees} title="Parks & Recreation" />
 
         <StatGrid
-          accentColor="#b85c3a"
+          accentColor="#3d7a5a"
           stats={[
             {
-              label: "Rent-Burdened Households",
-              value: rentBurden ? `${Math.round(rentBurden.value)}%` : "—",
-              subtitle: rentBurden ? `Paying 30%+ of income on rent (${rentBurden.year})` : "Census ACS data pending",
+              label: "Total Parks",
+              value: parkStats.totalParks.toLocaleString(),
             },
             {
-              label: "Median Gross Rent",
-              value: medianRent ? `$${Math.round(medianRent.value).toLocaleString()}` : "—",
-              subtitle: medianRent ? `Per month (${medianRent.year})` : "Census ACS data pending",
+              label: "Total Acreage",
+              value: parkStats.totalAcres.toLocaleString(),
             },
             {
-              label: "Median Household Income",
-              value: medianIncome
-                ? `$${Math.round(medianIncome.value).toLocaleString()}`
-                : neighborhoodIncome
-                  ? `$${neighborhoodIncome.avgMedianIncome.toLocaleString()}`
-                  : "—",
-              subtitle: medianIncome
-                ? `(${medianIncome.year})`
-                : neighborhoodIncome
-                  ? `Avg across ${neighborhoodIncome.neighborhoods} neighborhoods`
-                  : undefined,
+              label: "Avg Park Size",
+              value: `${parkStats.avgAcres}`,
+              suffix: " acres",
             },
             {
-              label: "Income Inequality",
-              value: incomeRatio ? `${incomeRatio}:1` : "—",
-              subtitle: neighborhoodIncome
-                ? `Richest ($${(neighborhoodIncome.maxIncome / 1000).toFixed(0)}K) vs poorest ($${(neighborhoodIncome.minIncome / 1000).toFixed(0)}K) neighborhood`
+              label: "Largest Park",
+              value: parkStats.largestPark
+                ? parkStats.largestPark.name
+                : "\u2014",
+              subtitle: parkStats.largestPark
+                ? `${Math.round(parkStats.largestPark.acres).toLocaleString()} acres`
                 : undefined,
             },
           ]}
         />
 
-        {neighborhoodIncome && (
+        {/* Parks by type */}
+        {parkTypeBarData.length > 0 && (
           <InfoCard className="mt-4">
-            <p className="text-[13px] text-[var(--color-ink-muted)]">
-              Across {neighborhoodIncome.neighborhoods} Portland neighborhoods, median income
-              ranges from ${neighborhoodIncome.minIncome.toLocaleString()} to $
-              {neighborhoodIncome.maxIncome.toLocaleString()}. Average poverty rate:{" "}
-              {neighborhoodIncome.avgPovertyRate}%.
+            <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
+              Parks by type. Portland maintains a diverse mix of park spaces from large natural areas to neighborhood pocket parks.
             </p>
-            <SourceNote source="U.S. Census ACS / economy.neighborhood_income" />
+            <BarChart data={parkTypeBarData} color="#3d7a5a" height={280} />
+            <SourceNote source="Portland Parks & Recreation ArcGIS" />
           </InfoCard>
         )}
 
-        {inflationTrend.length > 1 && (
+        {/* Parks by type table (acreage) */}
+        {parksByType.length > 0 && (
           <InfoCard className="mt-4">
             <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
-              Annual inflation rate for Portland-area metro. Prices rose{" "}
-              {Math.round(((cpiRaw[cpiRaw.length - 1].value - cpiRaw[0].value) / cpiRaw[0].value) * 100)}%
-              {" "}total from {cpiRaw[0].year} to {cpiRaw[cpiRaw.length - 1].year}.
+              Park acreage by type:
             </p>
-            <TrendChart data={inflationTrend} color="#b85c3a" height={220} valueSuffix="%" />
-            <SourceNote source="BLS Consumer Price Index (West Size Class B/C metros)" />
+            <div className="space-y-2">
+              {parksByType.map((t) => {
+                const pct = parkStats.totalAcres > 0
+                  ? Math.round((t.acres / parkStats.totalAcres) * 100)
+                  : 0;
+                return (
+                  <div key={t.type}>
+                    <div className="flex items-baseline justify-between mb-1">
+                      <span className="text-[13px] font-medium text-[var(--color-ink)]">
+                        {t.type}
+                      </span>
+                      <span className="text-[13px] font-mono text-[var(--color-ink-muted)]">
+                        {t.count} parks / {t.acres.toLocaleString()} acres ({pct}%)
+                      </span>
+                    </div>
+                    <div className="h-5 bg-[var(--color-parchment)]/60 rounded-sm overflow-hidden">
+                      <div
+                        className="h-full rounded-sm"
+                        style={{
+                          width: `${Math.max(pct, 1)}%`,
+                          backgroundColor: "#3d7a5a",
+                        }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <SourceNote source="Portland Parks & Recreation ArcGIS" />
+          </InfoCard>
+        )}
+
+        {/* Playground amenities */}
+        {amenitiesTotal > 0 && (
+          <InfoCard className="mt-4">
+            <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
+              <strong>{amenitiesTotal.toLocaleString()}</strong> playground amenities across Portland parks.
+              Top equipment types:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
+              {amenitiesSummary.slice(0, 6).map((a) => (
+                <div
+                  key={a.equipment_type}
+                  className="bg-[var(--color-parchment)]/30 border border-[var(--color-parchment)]/50 rounded-sm px-4 py-3"
+                >
+                  <p className="text-[22px] font-mono font-semibold text-[var(--color-ink)]">
+                    {a.count}
+                  </p>
+                  <p className="text-[12px] text-[var(--color-ink-muted)] mt-0.5">
+                    {a.equipment_type}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Parks with most amenities */}
+            {parksMostAmenities.length > 0 && (
+              <>
+                <p className="text-[13px] text-[var(--color-ink-muted)] mb-3 mt-5">
+                  Parks with the most playground equipment:
+                </p>
+                <div className="space-y-2">
+                  {parksMostAmenities.slice(0, 5).map((park) => {
+                    const maxAmenities = parksMostAmenities[0].amenity_count;
+                    return (
+                      <div key={park.park_name}>
+                        <div className="flex items-baseline justify-between mb-1">
+                          <span className="text-[13px] font-medium text-[var(--color-ink)]">
+                            {park.park_name}
+                          </span>
+                          <span className="text-[13px] font-mono text-[var(--color-ink-muted)]">
+                            {park.amenity_count} pieces
+                          </span>
+                        </div>
+                        <div className="h-5 bg-[var(--color-parchment)]/60 rounded-sm overflow-hidden">
+                          <div
+                            className="h-full rounded-sm"
+                            style={{
+                              width: `${Math.max((park.amenity_count / maxAmenities) * 100, 2)}%`,
+                              backgroundColor: "#3d7a5a",
+                            }}
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+            <SourceNote source="Portland Parks & Recreation ArcGIS — Park Amenities" />
           </InfoCard>
         )}
       </section>
 
-      {/* ── 2. Getting Around ─────────────────────────────────────────── */}
+      {/* ── 2. Pavement Health ────────────────────────────────────────── */}
       <section>
-        <SectionHeader icon={Train} title="Getting Around" />
+        <SectionHeader icon={Route} title="Pavement Health" />
 
         <StatGrid
           accentColor="#4a7c6f"
@@ -348,34 +423,31 @@ export default function QualityDetail() {
             {
               label: "Avg Street PCI",
               value: `${pavementSummary.avgPci}`,
-              subtitle: `${pciLabel} — ${pavementSummary.totalSegments.toLocaleString()} segments`,
+              subtitle: `${pciLabel} condition`,
             },
             {
-              label: "Transit Ridership",
-              value: transitRidership?.byYear.length
-                ? `${(transitRidership.byYear[transitRidership.byYear.length - 1].total / 1_000_000).toFixed(1)}M`
-                : "—",
-              subtitle: transitRidership?.byYear.length
-                ? `Annual rides (${transitRidership.byYear[transitRidership.byYear.length - 1].year})`
-                : "TriMet data pending",
+              label: "Good Condition",
+              value: `${goodPct}%`,
+              subtitle: `${pavementSummary.good.toLocaleString()} segments (PCI > 70)`,
             },
             {
-              label: "Bike Lane Miles",
-              value: bikeMiles ? Math.round(Number(bikeMiles.value)).toLocaleString() : "—",
-              subtitle: "Citywide bike network",
+              label: "Fair Condition",
+              value: `${fairPct}%`,
+              subtitle: `${pavementSummary.fair.toLocaleString()} segments (PCI 40\u201370)`,
             },
             {
-              label: "Trail Miles",
-              value: trailMiles ? Math.round(Number(trailMiles.value)).toLocaleString() : "—",
-              subtitle: "Parks & greenway trails",
+              label: "Poor Condition",
+              value: `${poorPct}%`,
+              subtitle: `${pavementSummary.poor.toLocaleString()} segments (PCI < 40)`,
             },
           ]}
         />
 
-        {/* Pavement Condition Bar */}
+        {/* PCI distribution bar */}
         <InfoCard className="mt-4">
           <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
             {pavementSummary.totalSegments.toLocaleString()} street segments rated by Pavement Condition Index (PCI).
+            A higher PCI indicates better pavement condition.
           </p>
 
           <div className="flex h-10 rounded-sm overflow-hidden mb-4">
@@ -422,222 +494,59 @@ export default function QualityDetail() {
           <SourceNote source="PBOT Pavement Condition Index" />
         </InfoCard>
 
-        {/* Transit Ridership Trend */}
-        {transitTrend.length > 1 && (
+        {/* PCI by functional class */}
+        {pavementByClass.length > 0 && (
           <InfoCard className="mt-4">
             <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
-              Annual TriMet ridership (millions). COVID-19 caused a ~50% drop in 2020; ridership
-              has been recovering but remains below 2019 levels.
+              Average PCI by road functional classification. Higher-traffic arterials often receive
+              more maintenance investment than local streets.
             </p>
-            <TrendChart
-              data={transitTrend}
-              color="#4a7c6f"
+            <BarChart
+              data={pavementByClass.map((c) => ({
+                name: c.class,
+                value: c.avgPci,
+                color: c.avgPci >= 70 ? "#3d7a5a" : c.avgPci >= 40 ? "#c8956c" : "#b85c3a",
+              }))}
               height={240}
-              valueSuffix="M"
             />
-            <SourceNote source="TriMet Annual Performance Reports" />
+            <SourceNote source="PBOT Pavement Condition Index" />
           </InfoCard>
         )}
 
-        {/* Transit mode breakdown for latest year */}
-        {transitRidership && transitRidership.byMode && (() => {
-          const latestYear = transitRidership.byYear[transitRidership.byYear.length - 1]?.year;
-          if (!latestYear) return null;
-          const modes = ["bus", "max", "streetcar", "wes"] as const;
-          const modeLabels: Record<string, string> = {
-            bus: "Bus",
-            max: "MAX Light Rail",
-            streetcar: "Streetcar",
-            wes: "WES Commuter Rail",
-          };
-          const modeData = modes
-            .map((m) => {
-              const entry = transitRidership.byMode[m]?.find((r) => r.year === latestYear);
-              return entry ? { mode: modeLabels[m], ridership: entry.ridership } : null;
-            })
-            .filter((x): x is { mode: string; ridership: number } => x !== null);
-          const maxRidership = Math.max(...modeData.map((d) => d.ridership));
-
-          return (
-            <InfoCard className="mt-4">
-              <p className="text-[13px] text-[var(--color-ink-muted)] mb-5">
-                Annual ridership by mode ({latestYear}).
-              </p>
-              <div className="space-y-3">
-                {modeData.map((d) => (
-                  <div key={d.mode}>
-                    <div className="flex items-baseline justify-between mb-1">
-                      <span className="text-[13px] font-medium text-[var(--color-ink)]">{d.mode}</span>
-                      <span className="text-[13px] font-mono text-[var(--color-ink-muted)]">
-                        {(d.ridership / 1_000_000).toFixed(1)}M rides
-                      </span>
-                    </div>
-                    <div className="h-6 bg-[var(--color-parchment)]/60 rounded-sm overflow-hidden">
-                      <div
-                        className="h-full rounded-sm"
-                        style={{
-                          width: `${Math.max((d.ridership / maxRidership) * 100, 2)}%`,
-                          backgroundColor: "#4a7c6f",
-                        }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <SourceNote source="TriMet Annual Performance Reports" />
-            </InfoCard>
-          );
-        })()}
-      </section>
-
-      {/* ── 3. Air & Environment ──────────────────────────────────────── */}
-      <section>
-        <SectionHeader icon={Wind} title="Air & Environment" />
-
-        <StatGrid
-          accentColor="#5a8a6a"
-          stats={[
-            {
-              label: "Current AQI",
-              value: airQuality?.latest ? String(airQuality.latest.aqi) : "—",
-              subtitle: airQuality?.latest
-                ? `${airQuality.latest.category} (${airQuality.latest.pollutant}, ${airQuality.latest.date})`
-                : "AirNow data pending (needs API key)",
-            },
-            {
-              label: "Tree Canopy",
-              value: treeCanopy ? `${treeCanopy.value}%` : "—",
-              subtitle: treeCanopy?.context || "Metro RLIS data pending",
-            },
-            {
-              label: "Wildfire Smoke Days",
-              value:
-                airQuality?.smokeDays.length
-                  ? String(airQuality.smokeDays[airQuality.smokeDays.length - 1].days)
-                  : "—",
-              subtitle:
-                airQuality?.smokeDays.length
-                  ? `Days with AQI > 100 (${airQuality.smokeDays[airQuality.smokeDays.length - 1].year})`
-                  : "Derived from AirNow historical",
-            },
-            {
-              label: "Community Gardens",
-              value: contextStats["community_gardens"]?.value ?? "—",
-              subtitle: contextStats["community_gardens"]?.context || "Portland Parks data pending",
-            },
-          ]}
-        />
-
-        {airQuality && airQuality.trend.length > 1 && (
+        {/* Worst streets table */}
+        {worstStreets.length > 0 && (
           <InfoCard className="mt-4">
             <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
-              Daily average PM2.5 AQI for Portland. AQI under 50 is Good; 51-100 is Moderate;
-              above 100 is Unhealthy for Sensitive Groups.
+              Streets with the lowest pavement condition scores:
             </p>
-            <TrendChart
-              data={airQuality.trend.map((d) => ({ ...d, date: shortDate(d.date) }))}
-              color="#5a8a6a"
-              height={240}
-            />
-            <SourceNote source="AirNow API (EPA)" />
-          </InfoCard>
-        )}
-
-        {!airQuality && (
-          <DataNeeded
-            title="Air quality monitoring"
-            description="Real-time and historical AQI from the EPA's AirNow API. Tracks PM2.5, ozone, and wildfire smoke days. Already scripted — just needs AIRNOW_API_KEY."
-            actions={[
-              { label: "Get free AirNow API key", type: "api_key", href: "https://docs.airnowapi.org/account/request/" },
-            ]}
-            color={COLOR}
-          />
-        )}
-      </section>
-
-      {/* ── 4. Parks & Recreation ─────────────────────────────────────── */}
-      <section>
-        <SectionHeader icon={Trees} title="Parks & Recreation" />
-
-        <StatGrid
-          accentColor={COLOR}
-          stats={[
-            {
-              label: "Total Parks",
-              value: parkStats.totalParks.toLocaleString(),
-            },
-            {
-              label: "Total Acreage",
-              value: parkStats.totalAcres.toLocaleString(),
-            },
-            {
-              label: "Largest Park",
-              value: parkStats.largestPark
-                ? parkStats.largestPark.name
-                : "—",
-              subtitle: parkStats.largestPark
-                ? `${Math.round(parkStats.largestPark.acres).toLocaleString()} acres`
-                : undefined,
-            },
-            {
-              label: "Heritage Trees",
-              value: contextStats["heritage_trees"]?.value ?? "—",
-              subtitle: contextStats["heritage_trees"]?.context || "ArcGIS Heritage Trees layer",
-            },
-          ]}
-        />
-        <SourceNote source="Portland Parks & Recreation ArcGIS" />
-      </section>
-
-      {/* ── 5. Culture & Arts ─────────────────────────────────────────── */}
-      <section>
-        <SectionHeader icon={Landmark} title="Culture & Arts" />
-
-        <StatGrid
-          accentColor="#7a5c8a"
-          stats={[
-            {
-              label: "Cultural Institutions",
-              value: culturalCount > 0 ? String(culturalCount) : "—",
-              subtitle: "Museums, theaters, galleries, venues",
-            },
-            {
-              label: "Museums",
-              value: culturalInstitutions.filter((c) => c.type === "museum" || c.type === "science" || c.type === "historical").length || "—",
-            },
-            {
-              label: "Performing Arts",
-              value: culturalInstitutions.filter((c) => c.type === "theater" || c.type === "music_venue" || c.type === "dance").length || "—",
-            },
-            {
-              label: "Galleries & Literary",
-              value: culturalInstitutions.filter((c) => c.type === "gallery" || c.type === "literary").length || "—",
-            },
-          ]}
-        />
-
-        {culturalInstitutions.length > 0 && (
-          <InfoCard className="mt-4">
-            <p className="text-[13px] text-[var(--color-ink-muted)] mb-3">
-              Major cultural institutions in Portland:
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1.5">
-              {culturalInstitutions.map((inst) => (
-                <div key={inst.name} className="flex items-baseline gap-2 py-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5" style={{ backgroundColor: "#7a5c8a" }} />
-                  <span className="text-[13px] text-[var(--color-ink)]">{inst.name}</span>
-                  <span className="text-[11px] text-[var(--color-ink-muted)]">
-                    {inst.type?.replace("_", " ")}
-                  </span>
-                </div>
-              ))}
+            <div className="overflow-x-auto">
+              <table className="w-full text-[13px]">
+                <thead>
+                  <tr className="border-b border-[var(--color-parchment)]">
+                    <th className="text-left py-2 pr-4 text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider">Street</th>
+                    <th className="text-right py-2 px-3 text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider">PCI</th>
+                    <th className="text-left py-2 px-3 text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider">Surface</th>
+                    <th className="text-left py-2 pl-3 text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider">Class</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {worstStreets.map((s, i) => (
+                    <tr key={i} className="border-b border-[var(--color-parchment)]/50">
+                      <td className="py-2 pr-4 font-medium text-[var(--color-ink)]">{s.street_name}</td>
+                      <td className="py-2 px-3 text-right font-mono" style={{ color: "#b85c3a" }}>{s.pci}</td>
+                      <td className="py-2 px-3 text-[var(--color-ink-muted)]">{s.surface_type || "\u2014"}</td>
+                      <td className="py-2 pl-3 text-[var(--color-ink-muted)]">{s.functional_class || "\u2014"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-            <SourceNote source="Portland Civic Lab compiled list" />
+            <SourceNote source="PBOT Pavement Condition Index" />
           </InfoCard>
         )}
       </section>
 
-      {/* ── 6. Libraries & Learning ───────────────────────────────────── */}
+      {/* ── 3. Libraries & Learning ───────────────────────────────────── */}
       <section>
         <SectionHeader icon={BookOpen} title="Libraries & Learning" />
 
@@ -645,92 +554,132 @@ export default function QualityDetail() {
           accentColor="#5a7a8a"
           stats={[
             {
-              label: latestLib ? `Library Visits (FY${latestLib.year})` : "Library Visits",
-              value: latestLib ? latestLib.visits.toLocaleString() : "—",
+              label: latestLib ? `Library Visits (FY${latestLib.fiscal_year})` : "Library Visits",
+              value: latestLib ? latestLib.visits.toLocaleString() : "\u2014",
+              change: visitChangePct,
+              changeLabel: priorLib ? `vs FY${priorLib.fiscal_year}` : undefined,
             },
             {
-              label: "Circulation",
-              value: libraryExtended ? libraryExtended.circulation.toLocaleString() : "—",
-              subtitle: libraryExtended ? `FY${libraryExtended.fiscalYear}` : undefined,
+              label: "Items Circulated",
+              value: latestLib ? latestLib.circulation.toLocaleString() : "\u2014",
+              subtitle: latestLib ? `FY${latestLib.fiscal_year}` : undefined,
             },
             {
               label: "Programs Offered",
-              value: libraryExtended ? libraryExtended.programs.toLocaleString() : "—",
-              subtitle: libraryExtended
-                ? `${libraryExtended.attendance.toLocaleString()} attendees`
+              value: latestLib ? latestLib.programs.toLocaleString() : "\u2014",
+              subtitle: latestLib
+                ? `${latestLib.attendance.toLocaleString()} attendees`
                 : undefined,
             },
             {
-              label: "Bachelor's Degree+",
-              value: bachelors ? `${bachelors.value}%` : "—",
-              subtitle: bachelors ? `Adults 25+ (${bachelors.source})` : "Census ACS data pending",
+              label: "Branches",
+              value: latestLib ? String(latestLib.branches) : "\u2014",
+              subtitle: latestLib ? `${latestLib.registered_borrowers.toLocaleString()} registered borrowers` : undefined,
             },
           ]}
         />
 
-        {libChartData.length > 0 && (
+        {/* Library visits trend */}
+        {libVisitChartData.length > 1 && (
           <InfoCard className="mt-4">
             <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
               Total visits across all Multnomah County Library branches by fiscal year.
+              {libraryTrend.length >= 2 && (() => {
+                const firstYear = libraryTrend[0];
+                const peakYear = libraryTrend.reduce((a, b) => (b.visits > a.visits ? b : a));
+                return ` Peak visitation was FY${peakYear.fiscal_year} with ${peakYear.visits.toLocaleString()} visits.`;
+              })()}
             </p>
-            <TrendChart data={libChartData} color="#5a7a8a" height={280} />
+            <TrendChart data={libVisitChartData} color="#5a7a8a" height={280} />
+            <SourceNote source="Multnomah County Library" />
+          </InfoCard>
+        )}
+
+        {/* Visits + Circulation multi-line */}
+        {libMultiData.length > 1 && (
+          <InfoCard className="mt-4">
+            <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
+              Library visits versus total circulation (physical + e-content) over time.
+            </p>
+            <MultiLineChart
+              data={libMultiData}
+              xKey="year"
+              lines={[
+                { key: "visits", label: "Visits", color: "#5a7a8a" },
+                { key: "circulation", label: "Circulation", color: "#7a5c8a" },
+              ]}
+              height={300}
+            />
+            <SourceNote source="Multnomah County Library" />
+          </InfoCard>
+        )}
+
+        {/* E-content vs physical */}
+        {econtentData.length > 1 && econtentData.some((r) => r.econtent > 0) && (
+          <InfoCard className="mt-4">
+            <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
+              Physical vs. e-content circulation. Digital lending has grown steadily, reflecting
+              changing borrower preferences.
+            </p>
+            <MultiLineChart
+              data={econtentData}
+              xKey="year"
+              lines={[
+                { key: "physical", label: "Physical", color: "#5a7a8a" },
+                { key: "econtent", label: "E-Content", color: "#b85c3a" },
+              ]}
+              height={280}
+            />
+            <SourceNote source="Multnomah County Library" />
+          </InfoCard>
+        )}
+
+        {/* Program attendance */}
+        {libProgramData.length > 1 && (
+          <InfoCard className="mt-4">
+            <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
+              Library programming: total programs offered and attendance by fiscal year.
+            </p>
+            <MultiLineChart
+              data={libProgramData}
+              xKey="year"
+              lines={[
+                { key: "attendance", label: "Attendance", color: "#4a7c6f" },
+                { key: "programs", label: "Programs", color: "#c8956c" },
+              ]}
+              height={280}
+            />
             <SourceNote source="Multnomah County Library" />
           </InfoCard>
         )}
       </section>
 
-      {/* ── 7. Digital Access ─────────────────────────────────────────── */}
+      {/* ── 4. Data Gaps ──────────────────────────────────────────────── */}
       <section>
-        <SectionHeader icon={Wifi} title="Digital Access" />
-
-        <StatGrid
-          accentColor="#5a6a8a"
-          stats={[
-            {
-              label: "Broadband Access",
-              value: broadband ? `${broadband.value}%` : "—",
-              subtitle: broadband?.context || "FCC Broadband Map data pending",
-            },
-            {
-              label: "Internet Providers",
-              value: broadbandProviders?.value ?? "—",
-              subtitle: broadbandProviders?.context || undefined,
-            },
-          ]}
-        />
-        {broadband && <SourceNote source={broadband.source} />}
-      </section>
-
-      {/* ── 8. Data Gaps (Honest) ─────────────────────────────────────── */}
-      <section>
-        <SectionHeader icon={AlertCircle} title="Data Gaps" />
+        <SectionHeader icon={PlayCircle} title="Data Gaps" />
 
         <InfoCard>
           <p className="text-[13px] text-[var(--color-ink-muted)] mb-4">
             Portland Civic Lab is committed to transparency. The following quality-of-life
-            dimensions are important but not yet available in our dashboard:
+            dimensions are important but not yet tracked:
           </p>
           <div className="space-y-3">
             {[
               {
+                title: "Air Quality / AQI",
+                desc: "Real-time and historical AQI from the EPA's AirNow API. Already scripted -- needs AIRNOW_API_KEY.",
+              },
+              {
+                title: "TriMet Ridership",
+                desc: "Annual ridership by mode (bus, MAX, streetcar, WES). Published in TriMet annual reports.",
+              },
+              {
                 title: "311 / PDX Reporter",
-                desc: "Service requests (potholes, graffiti, abandoned vehicles). No public export — Zendesk backend requires Public Records Request.",
-                action: "prr" as const,
+                desc: "Service requests (potholes, graffiti, abandoned vehicles). No public export -- Zendesk backend requires Public Records Request.",
               },
               {
                 title: "Walk Score / Bike Score",
                 desc: "Walkability and bikeability indices by neighborhood. Commercial API, not free.",
-                action: "subscription" as const,
-              },
-              {
-                title: "Food access / food deserts",
-                desc: "USDA Food Access Research Atlas available but complex to integrate at census tract level.",
-                action: "download" as const,
-              },
-              {
-                title: "Noise complaints",
-                desc: "No public dataset for noise complaints in Portland.",
-                action: "prr" as const,
               },
             ].map((gap) => (
               <div

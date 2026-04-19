@@ -1,323 +1,385 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+const CACHE_KEY = "quality_detail";
+const CACHE_TTL = 6 * 60 * 60 * 1000; // 6h
+
+// Single round-trip: json_build_object avoids pooler deadlocks.
+const COMBINED_QUERY = `
+  SELECT json_build_object(
+    -- Parks summary
+    'park_summary', (
+      SELECT row_to_json(t) FROM (
+        SELECT count(*)::int AS total_parks,
+               COALESCE(round(sum(acres)::numeric, 0), 0)::int AS total_acres,
+               COALESCE(round(avg(acres)::numeric, 1), 0) AS avg_acres
+        FROM quality.parks
+      ) t
+    ),
+    -- Largest park
+    'largest_park', (
+      SELECT row_to_json(t) FROM (
+        SELECT name, acres
+        FROM quality.parks
+        ORDER BY acres DESC NULLS LAST
+        LIMIT 1
+      ) t
+    ),
+    -- Parks by type
+    'parks_by_type', (
+      SELECT COALESCE(json_agg(t ORDER BY t.count DESC), '[]'::json) FROM (
+        SELECT park_type AS type, count(*)::int AS count,
+               COALESCE(round(sum(acres)::numeric, 0), 0)::int AS acres
+        FROM quality.parks
+        WHERE park_type IS NOT NULL AND park_type != ''
+        GROUP BY park_type
+      ) t
+    ),
+    -- Pavement summary
+    'pavement_summary', (
+      SELECT row_to_json(t) FROM (
+        SELECT
+          round(avg(pci)::numeric, 0)::int AS avg_pci,
+          COALESCE(count(*) FILTER (WHERE pci > 70), 0)::int AS good,
+          COALESCE(count(*) FILTER (WHERE pci >= 40 AND pci <= 70), 0)::int AS fair,
+          COALESCE(count(*) FILTER (WHERE pci < 40), 0)::int AS poor,
+          count(*)::int AS total_segments
+        FROM quality.pavement_condition
+      ) t
+    ),
+    -- Pavement by functional class
+    'pavement_by_class', (
+      SELECT COALESCE(json_agg(t ORDER BY t.avg_pci), '[]'::json) FROM (
+        SELECT functional_class AS class,
+               round(avg(pci)::numeric, 0)::int AS avg_pci,
+               count(*)::int AS segments
+        FROM quality.pavement_condition
+        WHERE functional_class IS NOT NULL AND functional_class != ''
+        GROUP BY functional_class
+      ) t
+    ),
+    -- Worst streets (lowest PCI, at least some length)
+    'worst_streets', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        SELECT street_name, pci, surface_type, functional_class,
+               round(length::numeric, 0)::int AS length_ft
+        FROM quality.pavement_condition
+        WHERE pci IS NOT NULL AND street_name IS NOT NULL AND street_name != ''
+        ORDER BY pci ASC
+        LIMIT 10
+      ) t
+    ),
+    -- Library trend (all years)
+    'library_trend', (
+      SELECT COALESCE(json_agg(t ORDER BY t.fiscal_year), '[]'::json) FROM (
+        SELECT fiscal_year,
+               visits::int AS visits,
+               circ_total::int AS circulation,
+               programs_total::int AS programs,
+               program_attendance_total::int AS attendance,
+               registered_borrowers::int AS registered_borrowers,
+               hours_open_year::int AS hours_open,
+               branches::int AS branches,
+               collection_books::int AS collection_books,
+               circ_physical::int AS circ_physical,
+               circ_econtent::int AS circ_econtent
+        FROM quality.library_stats
+        ORDER BY fiscal_year
+      ) t
+    ),
+    -- Park amenities summary
+    'amenities_summary', (
+      SELECT COALESCE(json_agg(t ORDER BY t.count DESC), '[]'::json) FROM (
+        SELECT equipment_type, count(*)::int AS count,
+               min(install_year) AS earliest_install,
+               max(install_year) AS latest_install
+        FROM quality.park_amenities
+        WHERE equipment_type IS NOT NULL AND equipment_type != ''
+        GROUP BY equipment_type
+      ) t
+    ),
+    -- Total amenities
+    'amenities_total', (
+      SELECT count(*)::int FROM quality.park_amenities
+    ),
+    -- Parks with most amenities
+    'parks_most_amenities', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        SELECT park_name, count(*)::int AS amenity_count
+        FROM quality.park_amenities
+        WHERE park_name IS NOT NULL AND park_name != ''
+        GROUP BY park_name
+        ORDER BY amenity_count DESC
+        LIMIT 10
+      ) t
+    )
+  ) AS payload
+`;
+
+interface QualityDetailResponse {
+  parkStats: {
+    totalParks: number;
+    totalAcres: number;
+    avgAcres: number;
+    largestPark: { name: string; acres: number } | null;
+  };
+  parksByType: { type: string; count: number; acres: number }[];
+  pavementSummary: {
+    avgPci: number;
+    good: number;
+    fair: number;
+    poor: number;
+    totalSegments: number;
+  };
+  pavementByClass: { class: string; avgPci: number; segments: number }[];
+  worstStreets: {
+    street_name: string;
+    pci: number;
+    surface_type: string;
+    functional_class: string;
+    length_ft: number;
+  }[];
+  libraryTrend: {
+    fiscal_year: number;
+    visits: number;
+    circulation: number;
+    programs: number;
+    attendance: number;
+    registered_borrowers: number;
+    hours_open: number;
+    branches: number;
+    collection_books: number;
+    circ_physical: number;
+    circ_econtent: number;
+  }[];
+  amenitiesSummary: {
+    equipment_type: string;
+    count: number;
+    earliest_install: number | null;
+    latest_install: number | null;
+  }[];
+  amenitiesTotal: number;
+  parksMostAmenities: { park_name: string; amenity_count: number }[];
+  heroStats: {
+    totalParks: number;
+    avgPci: number;
+    pciLabel: string;
+    latestVisits: number;
+    latestFiscalYear: number | null;
+  };
+  topInsights: string[];
+  dataStatus: string;
+}
+
+export async function GET(): Promise<NextResponse<QualityDetailResponse>> {
   try {
+    const cached = await getCachedData<QualityDetailResponse>(CACHE_KEY, CACHE_TTL);
+    if (cached) return NextResponse.json(cached);
+
+    const result = await sql.unsafe(COMBINED_QUERY);
+    const p = (result[0]?.payload ?? {}) as Record<string, unknown>;
+
     // --- Parks ---
-    const parkRows = await sql`
-      SELECT
-        count(*)::int AS total_parks,
-        COALESCE(round(sum(acres)::numeric, 0), 0)::int AS total_acres,
-        COALESCE(round(avg(acres)::numeric, 1), 0) AS avg_acres
-      FROM quality.parks
-    `;
-    const largestParkRow = await sql`
-      SELECT name, acres
-      FROM quality.parks
-      ORDER BY acres DESC NULLS LAST
-      LIMIT 1
-    `;
+    const parkSummary = (p.park_summary as { total_parks: number; total_acres: number; avg_acres: number }) ?? {
+      total_parks: 0,
+      total_acres: 0,
+      avg_acres: 0,
+    };
+    const largestParkRaw = p.largest_park as { name: string; acres: number } | null;
 
     const parkStats = {
-      totalParks: Number(parkRows[0].total_parks),
-      totalAcres: Number(parkRows[0].total_acres),
-      avgAcres: Number(parkRows[0].avg_acres),
-      largestPark: largestParkRow.length > 0
-        ? { name: largestParkRow[0].name as string, acres: Number(largestParkRow[0].acres) }
+      totalParks: Number(parkSummary.total_parks),
+      totalAcres: Number(parkSummary.total_acres),
+      avgAcres: Number(parkSummary.avg_acres),
+      largestPark: largestParkRaw
+        ? { name: largestParkRaw.name, acres: Number(largestParkRaw.acres) }
         : null,
     };
 
-    // --- Pavement ---
-    const pavementRows = await sql`
-      SELECT
-        round(avg(pci)::numeric, 0)::int AS avg_pci,
-        COALESCE(count(*) FILTER (WHERE pci > 70), 0)::int AS good,
-        COALESCE(count(*) FILTER (WHERE pci >= 40 AND pci <= 70), 0)::int AS fair,
-        COALESCE(count(*) FILTER (WHERE pci < 40), 0)::int AS poor,
-        count(*)::int AS total_segments
-      FROM quality.pavement_condition
-    `;
+    const parksByType = (
+      (p.parks_by_type as { type: string; count: number; acres: number }[]) ?? []
+    ).map((r) => ({
+      type: r.type,
+      count: Number(r.count),
+      acres: Number(r.acres),
+    }));
 
+    // --- Pavement ---
+    const pavRaw = (p.pavement_summary as Record<string, number>) ?? {};
     const pavementSummary = {
-      avgPci: Number(pavementRows[0].avg_pci),
-      good: Number(pavementRows[0].good),
-      fair: Number(pavementRows[0].fair),
-      poor: Number(pavementRows[0].poor),
-      totalSegments: Number(pavementRows[0].total_segments),
+      avgPci: Number(pavRaw.avg_pci ?? 0),
+      good: Number(pavRaw.good ?? 0),
+      fair: Number(pavRaw.fair ?? 0),
+      poor: Number(pavRaw.poor ?? 0),
+      totalSegments: Number(pavRaw.total_segments ?? 0),
     };
 
-    // Pavement by inspection year
-    const pavementYearRows = await sql`
-      SELECT
-        inspection_year AS year,
-        round(avg(pci)::numeric, 0)::int AS avg_pci,
-        count(*)::int AS count
-      FROM quality.pavement_condition
-      WHERE inspection_year IS NOT NULL
-      GROUP BY inspection_year
-      ORDER BY inspection_year
-    `;
-
-    const pavementByYear = pavementYearRows.map((r) => ({
-      year: Number(r.year),
+    const pavementByClass = (
+      (p.pavement_by_class as { class: string; avg_pci: number; segments: number }[]) ?? []
+    ).map((r) => ({
+      class: r.class,
       avgPci: Number(r.avg_pci),
+      segments: Number(r.segments),
+    }));
+
+    const worstStreets = (
+      (p.worst_streets as {
+        street_name: string;
+        pci: number;
+        surface_type: string;
+        functional_class: string;
+        length_ft: number;
+      }[]) ?? []
+    ).map((r) => ({
+      street_name: r.street_name,
+      pci: Number(r.pci),
+      surface_type: r.surface_type ?? "",
+      functional_class: r.functional_class ?? "",
+      length_ft: Number(r.length_ft),
+    }));
+
+    // --- Library ---
+    const libraryTrend = (
+      (p.library_trend as Record<string, number>[]) ?? []
+    ).map((r) => ({
+      fiscal_year: Number(r.fiscal_year),
+      visits: Number(r.visits ?? 0),
+      circulation: Number(r.circulation ?? 0),
+      programs: Number(r.programs ?? 0),
+      attendance: Number(r.attendance ?? 0),
+      registered_borrowers: Number(r.registered_borrowers ?? 0),
+      hours_open: Number(r.hours_open ?? 0),
+      branches: Number(r.branches ?? 0),
+      collection_books: Number(r.collection_books ?? 0),
+      circ_physical: Number(r.circ_physical ?? 0),
+      circ_econtent: Number(r.circ_econtent ?? 0),
+    }));
+
+    // --- Amenities ---
+    const amenitiesSummary = (
+      (p.amenities_summary as {
+        equipment_type: string;
+        count: number;
+        earliest_install: number | null;
+        latest_install: number | null;
+      }[]) ?? []
+    ).map((r) => ({
+      equipment_type: r.equipment_type,
       count: Number(r.count),
+      earliest_install: r.earliest_install ? Number(r.earliest_install) : null,
+      latest_install: r.latest_install ? Number(r.latest_install) : null,
     }));
 
-    // --- Library visits trend ---
-    const libTrendRows = await sql`
-      SELECT
-        fiscal_year AS year,
-        sum(visits)::int AS visits
-      FROM quality.library_stats
-      GROUP BY fiscal_year
-      ORDER BY fiscal_year
-    `;
+    const amenitiesTotal = Number(p.amenities_total ?? 0);
 
-    const libraryTrend = libTrendRows.map((r) => ({
-      year: Number(r.year),
-      visits: Number(r.visits),
+    const parksMostAmenities = (
+      (p.parks_most_amenities as { park_name: string; amenity_count: number }[]) ?? []
+    ).map((r) => ({
+      park_name: r.park_name,
+      amenity_count: Number(r.amenity_count),
     }));
 
-    // --- Library extended stats (latest year) ---
-    let libraryExtended = null;
-    try {
-      const libExtRows = await sql`
-        SELECT
-          fiscal_year,
-          sum(visits)::int AS visits,
-          sum(circulation)::int AS circulation,
-          sum(programs_offered)::int AS programs,
-          sum(program_attendance)::int AS attendance,
-          sum(registered_users)::int AS registered_users
-        FROM quality.library_stats
-        GROUP BY fiscal_year
-        ORDER BY fiscal_year DESC
-        LIMIT 1
-      `;
-      if (libExtRows.length > 0) {
-        libraryExtended = {
-          fiscalYear: Number(libExtRows[0].fiscal_year),
-          visits: Number(libExtRows[0].visits),
-          circulation: Number(libExtRows[0].circulation),
-          programs: Number(libExtRows[0].programs),
-          attendance: Number(libExtRows[0].attendance),
-          registeredUsers: Number(libExtRows[0].registered_users),
-        };
-      }
-    } catch {
-      // columns may not exist yet
+    // --- Hero stats ---
+    const pciLabel =
+      pavementSummary.avgPci >= 70
+        ? "Good"
+        : pavementSummary.avgPci >= 40
+          ? "Fair"
+          : "Poor";
+
+    const latestLib = libraryTrend.length > 0 ? libraryTrend[libraryTrend.length - 1] : null;
+
+    const heroStats = {
+      totalParks: parkStats.totalParks,
+      avgPci: pavementSummary.avgPci,
+      pciLabel,
+      latestVisits: latestLib ? latestLib.visits : 0,
+      latestFiscalYear: latestLib ? latestLib.fiscal_year : null,
+    };
+
+    // --- Insights ---
+    const topInsights: string[] = [];
+
+    topInsights.push(
+      `${parkStats.totalParks} parks totaling ${parkStats.totalAcres.toLocaleString()} acres across Portland.`
+    );
+
+    if (parkStats.largestPark) {
+      topInsights.push(
+        `Largest park: ${parkStats.largestPark.name} at ${Math.round(parkStats.largestPark.acres).toLocaleString()} acres.`
+      );
     }
 
-    // --- Affordability ---
-    let affordability: { year: number; metric: string; value: number; source: string }[] = [];
-    try {
-      const affRows = await sql`
-        SELECT year, metric, value::float AS value, COALESCE(source, '') AS source
-        FROM quality.affordability
-        ORDER BY year, metric
-      `;
-      affordability = affRows.map((r) => ({
-        year: Number(r.year),
-        metric: r.metric as string,
-        value: Number(r.value),
-        source: r.source as string,
-      }));
-    } catch {
-      // table may not exist yet
+    topInsights.push(
+      `Average pavement condition index is ${pavementSummary.avgPci} (${pciLabel}) across ${pavementSummary.totalSegments.toLocaleString()} street segments.`
+    );
+
+    const total = pavementSummary.totalSegments || 1;
+    const poorPct = Math.round((pavementSummary.poor / total) * 100);
+    if (poorPct > 0) {
+      topInsights.push(
+        `${poorPct}% of street segments (${pavementSummary.poor.toLocaleString()}) are rated Poor (PCI < 40).`
+      );
     }
 
-    // --- Neighborhood income (from economy schema) ---
-    let neighborhoodIncome = null;
-    try {
-      const incRows = await sql`
-        SELECT
-          count(*)::int AS neighborhoods,
-          round(avg(median_income)::numeric, 0)::int AS avg_median_income,
-          min(median_income)::int AS min_income,
-          max(median_income)::int AS max_income,
-          round(avg(poverty_rate)::numeric, 1) AS avg_poverty_rate
-        FROM economy.neighborhood_income
-      `;
-      if (incRows.length > 0 && Number(incRows[0].neighborhoods) > 0) {
-        neighborhoodIncome = {
-          neighborhoods: Number(incRows[0].neighborhoods),
-          avgMedianIncome: Number(incRows[0].avg_median_income),
-          minIncome: Number(incRows[0].min_income),
-          maxIncome: Number(incRows[0].max_income),
-          avgPovertyRate: Number(incRows[0].avg_poverty_rate),
-        };
-      }
-    } catch {
-      // table may not exist
-    }
+    if (latestLib) {
+      topInsights.push(
+        `${latestLib.visits.toLocaleString()} library visits in FY${latestLib.fiscal_year} with ${latestLib.circulation.toLocaleString()} items circulated.`
+      );
 
-    // --- Air Quality (from environment schema) ---
-    let airQuality = null;
-    try {
-      // Latest reading
-      const latestAqi = await sql`
-        SELECT date, aqi, category, pollutant
-        FROM environment.airnow_aqi
-        WHERE pollutant = 'PM2.5' OR pollutant = 'O3'
-        ORDER BY date DESC, hour DESC
-        LIMIT 1
-      `;
-      // Daily averages for trend
-      const aqiTrend = await sql`
-        SELECT date::text, round(avg(aqi))::int AS avg_aqi
-        FROM environment.airnow_aqi
-        WHERE pollutant = 'PM2.5'
-        GROUP BY date
-        ORDER BY date
-      `;
-      // Smoke days (AQI > 100) per year
-      const smokeDays = await sql`
-        SELECT
-          EXTRACT(YEAR FROM date)::int AS year,
-          count(DISTINCT date)::int AS smoke_days
-        FROM environment.airnow_aqi
-        WHERE aqi > 100
-        GROUP BY EXTRACT(YEAR FROM date)
-        ORDER BY year
-      `;
-
-      airQuality = {
-        latest: latestAqi.length > 0
-          ? {
-              date: latestAqi[0].date as string,
-              aqi: Number(latestAqi[0].aqi),
-              category: latestAqi[0].category as string,
-              pollutant: latestAqi[0].pollutant as string,
-            }
-          : null,
-        trend: aqiTrend.map((r) => ({
-          date: r.date as string,
-          value: Number(r.avg_aqi),
-        })),
-        smokeDays: smokeDays.map((r) => ({
-          year: Number(r.year),
-          days: Number(r.smoke_days),
-        })),
-      };
-    } catch {
-      // table may not exist
-    }
-
-    // --- Transit Ridership ---
-    let transitRidership = null;
-    try {
-      const transitRows = await sql`
-        SELECT
-          EXTRACT(YEAR FROM month)::int AS year,
-          mode,
-          ridership,
-          on_time_pct
-        FROM quality.transit_ridership
-        ORDER BY month, mode
-      `;
-
-      if (transitRows.length > 0) {
-        // Group by year for the total line
-        const byYear: Record<number, { total: number; onTime: number | null }> = {};
-        const byMode: Record<string, { year: number; ridership: number }[]> = {};
-
-        for (const r of transitRows) {
-          const year = Number(r.year);
-          const mode = r.mode as string;
-          const ridership = Number(r.ridership);
-
-          if (mode === "total") {
-            byYear[year] = {
-              total: ridership,
-              onTime: r.on_time_pct ? Number(r.on_time_pct) : null,
-            };
-          }
-
-          if (!byMode[mode]) byMode[mode] = [];
-          byMode[mode].push({ year, ridership });
+      if (libraryTrend.length >= 2) {
+        const priorLib = libraryTrend[libraryTrend.length - 2];
+        if (priorLib.visits > 0) {
+          const visitChange = Math.round(
+            ((latestLib.visits - priorLib.visits) / priorLib.visits) * 100
+          );
+          const dir = visitChange > 0 ? "up" : "down";
+          topInsights.push(
+            `Library visits ${dir} ${Math.abs(visitChange)}% from FY${priorLib.fiscal_year}.`
+          );
         }
-
-        transitRidership = {
-          byYear: Object.entries(byYear)
-            .map(([y, d]) => ({ year: Number(y), total: d.total, onTimePct: d.onTime }))
-            .sort((a, b) => a.year - b.year),
-          byMode,
-        };
       }
-    } catch {
-      // table may not exist
     }
 
-    // --- Cultural Institutions ---
-    let culturalInstitutions: { name: string; type: string }[] = [];
-    let culturalCount = 0;
-    try {
-      const cultRows = await sql`
-        SELECT name, type
-        FROM quality.cultural_institutions
-        ORDER BY type, name
-      `;
-      culturalInstitutions = cultRows.map((r) => ({
-        name: r.name as string,
-        type: r.type as string,
-      }));
-      culturalCount = culturalInstitutions.length;
-    } catch {
-      // table may not exist
+    if (amenitiesTotal > 0) {
+      topInsights.push(
+        `${amenitiesTotal.toLocaleString()} playground amenities tracked across Portland parks.`
+      );
     }
 
-    // --- Context Stats ---
-    let contextStats: Record<string, { value: string; context: string; source: string; asOfDate: string | null }> = {};
-    try {
-      const ctxRows = await sql`
-        SELECT metric, value, context, source, as_of_date::text
-        FROM quality.context_stats
-      `;
-      for (const r of ctxRows) {
-        contextStats[r.metric as string] = {
-          value: r.value as string,
-          context: (r.context ?? "") as string,
-          source: (r.source ?? "") as string,
-          asOfDate: (r.as_of_date ?? null) as string | null,
-        };
-      }
-    } catch {
-      // table may not exist
-    }
-
-    return NextResponse.json({
+    const responseData: QualityDetailResponse = {
       parkStats,
+      parksByType,
       pavementSummary,
-      pavementByYear,
+      pavementByClass,
+      worstStreets,
       libraryTrend,
-      libraryExtended,
-      affordability,
-      neighborhoodIncome,
-      airQuality,
-      transitRidership,
-      culturalInstitutions,
-      culturalCount,
-      contextStats,
+      amenitiesSummary,
+      amenitiesTotal,
+      parksMostAmenities,
+      heroStats,
+      topInsights,
       dataStatus: "live",
-    });
+    };
+
+    await setCachedData(CACHE_KEY, responseData);
+    return NextResponse.json(responseData);
   } catch (error) {
     console.error("[quality/detail] DB query failed:", error);
     return NextResponse.json({
       parkStats: { totalParks: 0, totalAcres: 0, avgAcres: 0, largestPark: null },
+      parksByType: [],
       pavementSummary: { avgPci: 0, good: 0, fair: 0, poor: 0, totalSegments: 0 },
-      pavementByYear: [],
+      pavementByClass: [],
+      worstStreets: [],
       libraryTrend: [],
-      libraryExtended: null,
-      affordability: [],
-      neighborhoodIncome: null,
-      airQuality: null,
-      transitRidership: null,
-      culturalInstitutions: [],
-      culturalCount: 0,
-      contextStats: {},
+      amenitiesSummary: [],
+      amenitiesTotal: 0,
+      parksMostAmenities: [],
+      heroStats: { totalParks: 0, avgPci: 0, pciLabel: "N/A", latestVisits: 0, latestFiscalYear: null },
+      topInsights: ["Data temporarily unavailable."],
       dataStatus: "unavailable",
     });
   }
