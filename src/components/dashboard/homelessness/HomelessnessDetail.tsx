@@ -674,29 +674,50 @@ export default function HomelessnessDetail() {
           </div>
         </div>
 
-        {/* By-name list: entries vs exits */}
+        {/* By-name list: total on list + net monthly change */}
         {byNameList.length > 0 && (
           <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5 mb-6">
             <h3 className="text-[12px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-3">
-              By-Name List: Entries vs. Exits to Housing
+              By-Name List: People Experiencing Homelessness Over Time
             </h3>
-            <MultiLineChart
-              data={byNameList.map((b) => {
-                const d = new Date(b.month);
-                return {
-                  month: d.toLocaleDateString("en-US", { month: "short", year: "2-digit", timeZone: "UTC" }),
-                  entries: b.newEntries,
-                  exits: b.exitsToHousing,
-                };
-              })}
-              lines={[
-                { key: "entries", label: "New Entries", color: "#ef4444" },
-                { key: "exits", label: "Exits to Housing", color: "#22c55e" },
-              ]}
+            <TrendChart
+              data={byNameList
+                .filter((b) => b.totalOnList > 0)
+                .map((b) => {
+                  const d = new Date(b.month);
+                  return {
+                    date: d.toLocaleDateString("en-US", { month: "short", year: "2-digit", timeZone: "UTC" }),
+                    value: b.totalOnList,
+                  };
+                })}
               height={280}
+              color="#b85c3a"
+              yAxisDomain="auto"
             />
-            <p className="text-[11px] text-[var(--color-ink-muted)] mt-2">
-              Source: JOHS By-Name List, monthly.
+            {(() => {
+              const sorted = byNameList.filter((b) => b.totalOnList > 0).sort((a, b) => new Date(a.month).getTime() - new Date(b.month).getTime());
+              if (sorted.length >= 2) {
+                const first = sorted[0];
+                const last = sorted[sorted.length - 1];
+                const netChange = last.totalOnList - first.totalOnList;
+                const months = sorted.length - 1;
+                const avgMonthly = months > 0 ? Math.round(netChange / months) : 0;
+                return (
+                  <p className="text-[14px] text-[var(--color-ink-light)] mt-3">
+                    The by-name list grew from {first.totalOnList.toLocaleString()} to{" "}
+                    {last.totalOnList.toLocaleString()} — a net increase of{" "}
+                    <strong>{netChange.toLocaleString()}</strong> people over {months} months
+                    (~{avgMonthly.toLocaleString()}/month).
+                  </p>
+                );
+              }
+              return null;
+            })()}
+            <p className="text-[12px] text-[var(--color-ink-muted)]/60 mt-2">
+              Source:{" "}
+              <a href="https://www.multco.us/johs" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">
+                JOHS By-Name List
+              </a>, monthly.
             </p>
           </div>
         )}
