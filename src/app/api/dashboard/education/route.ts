@@ -12,7 +12,8 @@ const COMBINED_QUERY = `
       SELECT COALESCE(json_agg(t), '[]'::json) FROM (
         SELECT school_year, SUM(enrollment)::int AS enrollment
         FROM education.enrollment
-        WHERE grade = 'Total'
+        WHERE grade_level = 'Total'
+          AND demographic_group IS NULL
           AND district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
         GROUP BY school_year
         ORDER BY school_year DESC
@@ -23,7 +24,8 @@ const COMBINED_QUERY = `
       SELECT COALESCE(json_agg(t ORDER BY t.school_year), '[]'::json) FROM (
         SELECT school_year, SUM(enrollment)::int AS enrollment
         FROM education.enrollment
-        WHERE grade = 'Total'
+        WHERE grade_level = 'Total'
+          AND demographic_group IS NULL
           AND district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
         GROUP BY school_year
       ) t
