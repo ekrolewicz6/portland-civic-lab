@@ -195,6 +195,24 @@ async function main() {
     SELECT count(*)::int AS cnt FROM accountability.elected_officials
   `, 1);
 
+  // ── Environment (trees, GHG) ──────────────────────────────────────
+  await test("environment/trees (inventory)", `
+    SELECT count(*)::int AS cnt FROM environment.tree_inventory
+  `, 1);
+
+  await test("environment/trees (canopy)", `
+    SELECT count(*)::int AS cnt FROM environment.tree_canopy
+  `, 1);
+
+  await test("environment/ghg_emissions", `
+    SELECT count(*)::int AS cnt FROM environment.ghg_emissions
+  `, 1);
+
+  // ── Fiscal (budget) ──────────────────────────────────────────────
+  await test("fiscal/program_offers", `
+    SELECT count(*)::int AS cnt FROM fiscal.program_offers
+  `, 1);
+
   // ── Print results ─────────────────────────────────────────────────
   console.log("Results:\n");
   let failures = 0;
