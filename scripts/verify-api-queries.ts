@@ -164,6 +164,22 @@ async function main() {
     ) AS payload
   `);
 
+  await testJsonBuild("quality/detail (full query)", `
+    SELECT json_build_object(
+      'park_summary', (SELECT row_to_json(t) FROM (SELECT count(*)::int AS total_parks FROM quality.parks) t),
+      'pavement_summary', (SELECT row_to_json(t) FROM (SELECT round(avg(pci)::numeric,0)::int AS avg_pci FROM quality.pavement_condition) t),
+      'library_trend', (SELECT COALESCE(json_agg(t ORDER BY t.fiscal_year), '[]'::json) FROM (
+        SELECT fiscal_year, visits::int AS visits, circ_total::int AS circulation,
+               programs_total::int AS programs, program_attendance_total::int AS attendance,
+               registered_users::int AS registered_borrowers, hours_open_year::int AS hours_open,
+               branches::int AS branches, collection_books::int AS collection_books,
+               circ_physical::int AS circ_physical, circ_econtent::int AS circ_econtent
+        FROM quality.library_stats LIMIT 3
+      ) t),
+      'amenities_total', (SELECT count(*)::int FROM quality.park_amenities)
+    ) AS payload
+  `);
+
   // ── Transportation ────────────────────────────────────────────────
   await test("transportation/route (ridership)", `
     SELECT count(*)::int AS cnt FROM transportation.ridership

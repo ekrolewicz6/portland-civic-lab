@@ -79,7 +79,7 @@ const COMBINED_QUERY = `
                circ_total::int AS circulation,
                programs_total::int AS programs,
                program_attendance_total::int AS attendance,
-               registered_borrowers::int AS registered_borrowers,
+               registered_users::int AS registered_borrowers,
                hours_open_year::int AS hours_open,
                branches::int AS branches,
                collection_books::int AS collection_books,
