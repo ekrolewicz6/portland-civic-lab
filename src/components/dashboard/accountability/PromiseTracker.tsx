@@ -103,7 +103,7 @@ function MetricComparison({
 }) {
   const suffix = unit ? ` ${unit}` : "";
   return (
-    <div className="mt-3 flex items-center gap-4 text-[14px] font-mono">
+    <div className="mt-3 flex flex-wrap items-center gap-4 text-[14px] font-mono">
       <div className="flex items-center gap-2">
         <span className="w-2.5 h-2.5 rounded-full bg-[#9ca3af]" />
         <span className="text-[var(--color-ink-muted)]">
@@ -136,7 +136,7 @@ function ProgressIndicator({
 
   return (
     <div className="mt-3">
-      <div className="flex items-center justify-between text-[13px] text-[var(--color-ink-muted)] mb-1.5">
+      <div className="flex flex-wrap items-center justify-between gap-1 text-[13px] text-[var(--color-ink-muted)] mb-1.5">
         <span className="font-mono">Baseline: {baseline}</span>
         <span className="font-mono">Target: {target} by {targetDate}</span>
       </div>

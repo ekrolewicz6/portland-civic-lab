@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
+
+const CACHE_KEY = "homelessness_detail";
+const CACHE_TTL = 6 * 60 * 60 * 1000; // 6h
 
 // All 13 reads collapsed into a single round trip via json_build_object.
 // Previously this route fired 13 queries via Promise.all, which deadlocked
@@ -147,6 +150,10 @@ const arr = (v: unknown): Row[] => (Array.isArray(v) ? (v as Row[]) : []);
 
 export async function GET() {
   try {
+    // Check cache first
+    const cached = await getCachedData<Record<string, unknown>>(CACHE_KEY, CACHE_TTL);
+    if (cached) return NextResponse.json(cached);
+
     const t0 = Date.now();
     const result = await sql.unsafe(COMBINED_QUERY);
     const payload = (result[0]?.payload ?? {}) as Record<string, unknown>;
@@ -172,7 +179,7 @@ export async function GET() {
     const doubledUp = arr(payload.doubled_up);
     const unshelteredChange = arr(payload.unsheltered_change);
 
-    return NextResponse.json({
+    const responseData = {
       pitCounts: pitCounts.map((r) => ({
         year: Number(r.year),
         totalHomeless: Number(r.total_homeless),
@@ -329,7 +336,10 @@ export async function GET() {
         pctChange: Number(r.pct_change ?? 0),
       })),
       dataStatus: "live",
-    });
+    };
+
+    await setCachedData(CACHE_KEY, responseData);
+    return NextResponse.json(responseData);
   } catch (error) {
     console.error("[homelessness/detail] DB query failed:", error);
     return NextResponse.json({

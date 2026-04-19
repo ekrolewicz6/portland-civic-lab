@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
+
+const CACHE_KEY = "environment";
+const CACHE_TTL = 60 * 60 * 1000; // 1h (AQI updates hourly)
 
 function aqiCategory(aqi: number): string {
   if (aqi <= 50) return "Good";
@@ -33,6 +36,10 @@ function aqiHeadline(aqi: number, category: string): string {
 
 export async function GET() {
   try {
+    // Check cache first
+    const cached = await getCachedData<Record<string, unknown>>(CACHE_KEY, CACHE_TTL);
+    if (cached) return NextResponse.json(cached);
+
     // Latest AQI reading
     const latestRows = await sql`
       SELECT date::text AS date, hour, aqi, category, pollutant, reporting_area
@@ -146,7 +153,7 @@ export async function GET() {
       );
     }
 
-    return NextResponse.json({
+    const responseData = {
       headline: aqiHeadline(currentAqi, category),
       headlineValue: currentAqi,
       dataStatus: "live",
@@ -192,7 +199,10 @@ export async function GET() {
       source: "EPA · AirNow",
       lastUpdated: String(latest.date).slice(0, 10),
       insights,
-    });
+    };
+
+    await setCachedData(CACHE_KEY, responseData);
+    return NextResponse.json(responseData);
   } catch (error) {
     console.error("[environment] DB query failed:", error);
     return NextResponse.json({

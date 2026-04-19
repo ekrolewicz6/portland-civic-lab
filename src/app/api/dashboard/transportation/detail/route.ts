@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
+
+const CACHE_KEY = "transportation_detail";
+const CACHE_TTL = 6 * 60 * 60 * 1000; // 6h
 
 // ── Types ─────────────────────────────────────────────────────────────
 
@@ -80,6 +83,10 @@ interface TransportationDetailResponse {
 }
 
 export async function GET(): Promise<NextResponse<TransportationDetailResponse>> {
+  // Check cache first
+  const cached = await getCachedData<TransportationDetailResponse>(CACHE_KEY, CACHE_TTL);
+  if (cached) return NextResponse.json(cached);
+
   let routesByType: RouteByType[] = [];
   let sampleRoutes: SampleRoute[] = [];
   let totalRoutes = 0;
@@ -260,7 +267,7 @@ export async function GET(): Promise<NextResponse<TransportationDetailResponse>>
   const hasCommute = commuteModeTrend.length > 0;
   const dataAvailable = hasTrimetData || hasRidership || hasCrashes || hasCommute;
 
-  return NextResponse.json({
+  const responseData: TransportationDetailResponse = {
     dataStatus: dataAvailable ? "live" : "unavailable",
     dataAvailable,
     routesByType,
@@ -272,5 +279,10 @@ export async function GET(): Promise<NextResponse<TransportationDetailResponse>>
     commuteModeTrend,
     ridershipRecovery,
     visionZeroSummary,
-  });
+  };
+
+  if (dataAvailable) {
+    await setCachedData(CACHE_KEY, responseData);
+  }
+  return NextResponse.json(responseData);
 }

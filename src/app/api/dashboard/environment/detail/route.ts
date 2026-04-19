@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
+
+const CACHE_KEY = "environment_detail";
+const CACHE_TTL = 60 * 60 * 1000; // 1h (AQI updates hourly)
 
 interface AqiReading {
   pollutant: string;
@@ -31,6 +34,10 @@ interface EnvironmentDetailResponse {
 
 export async function GET(): Promise<NextResponse<EnvironmentDetailResponse>> {
   try {
+    // Check cache first
+    const cached = await getCachedData<EnvironmentDetailResponse>(CACHE_KEY, CACHE_TTL);
+    if (cached) return NextResponse.json(cached);
+
     // Latest reading per pollutant
     const currentRows = await sql`
       SELECT DISTINCT ON (pollutant)
@@ -91,13 +98,18 @@ export async function GET(): Promise<NextResponse<EnvironmentDetailResponse>> {
     `;
     const lastSynced = (syncCheck[0]?.last_synced as string) || null;
 
-    return NextResponse.json({
+    const responseData: EnvironmentDetailResponse = {
       currentAqi,
       forecast,
       aqiTrend,
       dataStatus: currentAqi.length > 0 ? "live" : "unavailable",
       lastSynced,
-    });
+    };
+
+    if (currentAqi.length > 0) {
+      await setCachedData(CACHE_KEY, responseData);
+    }
+    return NextResponse.json(responseData);
   } catch (error) {
     console.error("[environment/detail] DB query failed:", error);
     return NextResponse.json({

@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
+
+const CACHE_KEY = "economy";
+const CACHE_TTL = 60 * 60 * 1000; // 1h
 
 // Single round-trip combined query — see homelessness/detail for rationale.
 // 3 parallel queries via Promise.all deadlocked under serverless `max: 1`.
@@ -65,6 +68,10 @@ type Row = Record<string, unknown>;
 
 export async function GET() {
   try {
+    // Check cache first
+    const cached = await getCachedData<Record<string, unknown>>(CACHE_KEY, CACHE_TTL);
+    if (cached) return NextResponse.json(cached);
+
     const result = await sql.unsafe(COMBINED_QUERY);
     const payload = (result[0]?.payload ?? {}) as Record<string, unknown>;
     const latest = payload.qcew_latest as Row | null;
@@ -145,7 +152,7 @@ export async function GET() {
       );
     }
 
-    return NextResponse.json({
+    const responseData = {
       headline,
       headlineValue: establishments,
       dataStatus: "live",
@@ -185,7 +192,10 @@ export async function GET() {
       source: "Bureau of Labor Statistics · QCEW · LAUS · Census Bureau · CBP · SUSB",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights,
-    });
+    };
+
+    await setCachedData(CACHE_KEY, responseData);
+    return NextResponse.json(responseData);
   } catch (err) {
     console.error("Economy API error:", err);
     return NextResponse.json({

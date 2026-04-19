@@ -296,6 +296,7 @@ export default function SafetyDetail() {
             </span>
           </p>
           <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm overflow-hidden">
+            <div className="overflow-x-auto">
             <table className="w-full text-[14px]">
               <thead>
                 <tr className="border-b border-[var(--color-parchment)]">
@@ -350,6 +351,7 @@ export default function SafetyDetail() {
                 })}
               </tbody>
             </table>
+            </div>
           </div>
           <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/50 uppercase tracking-wider">
             Source: Portland Police Bureau &middot; NIBRS Offense Data

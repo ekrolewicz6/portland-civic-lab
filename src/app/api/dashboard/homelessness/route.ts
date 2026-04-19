@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
+
+const CACHE_KEY = "homelessness";
+const CACHE_TTL = 60 * 60 * 1000; // 1h
 
 // Single round-trip query — see detail/route.ts for the rationale.
 // Previously this fired 5 parallel queries, several of which referenced
@@ -55,6 +58,10 @@ type PitRow = {
 
 export async function GET() {
   try {
+    // Check cache first
+    const cached = await getCachedData<Record<string, unknown>>(CACHE_KEY, CACHE_TTL);
+    if (cached) return NextResponse.json(cached);
+
     const t0 = Date.now();
     const result = await sql.unsafe(COMBINED_QUERY);
     const payload = (result[0]?.payload ?? {}) as Record<string, unknown>;
@@ -135,7 +142,7 @@ export async function GET() {
       );
     }
 
-    return NextResponse.json({
+    const responseData = {
       headline,
       headlineValue: latestTotal,
       dataStatus: "live",
@@ -149,7 +156,10 @@ export async function GET() {
       source: "HUD Point-in-Time Count · JOHS · Metro SHS · Multnomah County Health",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights,
-    });
+    };
+
+    await setCachedData(CACHE_KEY, responseData);
+    return NextResponse.json(responseData);
   } catch (error) {
     console.error("[homelessness] DB query failed:", error);
     return NextResponse.json({

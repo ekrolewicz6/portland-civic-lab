@@ -228,6 +228,24 @@ export async function GET(): Promise<NextResponse<HousingData & { dataStatus: st
     const yoyPct = Number(trendRows[0].yoy_pct || 0);
     const trendDirection = yoyPct > 0 ? "up" : yoyPct < 0 ? "down" : "flat";
 
+    // 12. Zillow ZORI rent data
+    let zoriData: ChartPoint[] = [];
+    try {
+      const zoriRows = await sql`
+        SELECT month::text as date, zori::float as value
+        FROM public.housing_rents
+        WHERE zori IS NOT NULL
+        ORDER BY month
+      `;
+      zoriData = zoriRows.map((r) => ({
+        date: (r.date as string).slice(0, 10),
+        value: Math.round(Number(r.value)),
+        label: "Median Rent (ZORI)",
+      }));
+    } catch {
+      // Table may not exist yet
+    }
+
     const result: HousingData & { dataStatus: string } = {
       headline: `${totalPermits.toLocaleString()} permits processed, avg ${avgDays} days | ${unitsInPipeline} residential in pipeline`,
       headlineValue: totalPermits,
@@ -240,7 +258,7 @@ export async function GET(): Promise<NextResponse<HousingData & { dataStatus: st
       chartData: chartData.length > 0 ? chartData : [],
       permitPipeline: permitPipeline.length > 0 ? permitPipeline : [],
       processingDays: processingDays.length > 0 ? processingDays : [],
-      medianRent: hpiData.length > 0 ? hpiData : [], // FRED House Price Index (rent data needs Zillow ZORI)
+      medianRent: zoriData.length > 0 ? zoriData : hpiData.length > 0 ? hpiData : [],
       unitsInPipeline,
       avgProcessingTime,
       totalConstructionValuation,
@@ -276,7 +294,9 @@ export async function GET(): Promise<NextResponse<HousingData & { dataStatus: st
           } catch {}
           return [];
         })()),
-        "Median rent data unavailable -- download Zillow ZORI CSV from zillow.com/research/data/.",
+        ...(zoriData.length >= 2
+          ? [`Portland median rent (Zillow ZORI): $${zoriData[zoriData.length - 1].value.toLocaleString()}/month (${zoriData[zoriData.length - 1].date.slice(0, 7)}). ${zoriData.length} monthly data points since ${zoriData[0].date.slice(0, 7)}.`]
+          : ["Median rent data unavailable -- run: npx tsx scripts/fetch-zillow-rents.ts"]),
       ],
     };
 

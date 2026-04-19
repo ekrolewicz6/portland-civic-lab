@@ -1,10 +1,16 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
 
+const CACHE_KEY = "accountability";
+const CACHE_TTL = 6 * 60 * 60 * 1000; // 6h
+
 export async function GET() {
   try {
+    // Check cache first
+    const cached = await getCachedData<Record<string, unknown>>(CACHE_KEY, CACHE_TTL);
+    if (cached) return NextResponse.json(cached);
     // Count ballot measures and sum annual revenue
     const measureRows = await sql`
       SELECT
@@ -58,7 +64,7 @@ export async function GET() {
     const headline =
       `${measureCount} ballot measures generating ${revenueLabel}/year — ${officialCount} elected officials serving${promisePhrase}`;
 
-    return NextResponse.json({
+    const responseData = {
       headline,
       headlineValue: measureCount,
       dataStatus: "live",
@@ -89,7 +95,10 @@ export async function GET() {
           : []),
         "Campaign finance data available from ORESTAR database (not yet integrated).",
       ],
-    });
+    };
+
+    await setCachedData(CACHE_KEY, responseData);
+    return NextResponse.json(responseData);
   } catch (error) {
     console.error("[accountability] DB query failed:", error);
     return NextResponse.json({

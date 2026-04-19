@@ -1,9 +1,16 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
 
+const CACHE_KEY = "transportation";
+const CACHE_TTL = 6 * 60 * 60 * 1000; // 6h
+
 export async function GET() {
+  // Check cache first
+  const cached = await getCachedData<Record<string, unknown>>(CACHE_KEY, CACHE_TTL);
+  if (cached) return NextResponse.json(cached);
+
   let totalRoutes = 0;
   let totalStops = 0;
   let routeTypes: { route_type: string; count: number }[] = [];
@@ -218,7 +225,7 @@ export async function GET() {
     );
   }
 
-  return NextResponse.json({
+  const responseData = {
     headline,
     headlineValue,
     dataStatus: dataAvailable ? "live" : "unavailable",
@@ -229,5 +236,10 @@ export async function GET() {
     source: "TriMet · PBOT · U.S. Census Bureau",
     lastUpdated: new Date().toISOString().slice(0, 10),
     insights,
-  });
+  };
+
+  if (dataAvailable) {
+    await setCachedData(CACHE_KEY, responseData);
+  }
+  return NextResponse.json(responseData);
 }
