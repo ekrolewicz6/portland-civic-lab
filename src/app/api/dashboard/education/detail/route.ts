@@ -45,14 +45,16 @@ const COMBINED_QUERY = `
     ),
     'enrollment_by_grade', (
       SELECT COALESCE(json_agg(t ORDER BY t.district_name, t.sort_order), '[]'::json) FROM (
-        SELECT district_name, grade, enrollment,
-          CASE grade
+        SELECT district_name, grade_level, enrollment,
+          CASE grade_level
+            WHEN 'K' THEN 0
             WHEN 'KG' THEN 0
             WHEN 'Total' THEN 99
-            ELSE NULLIF(regexp_replace(grade, '[^0-9]', '', 'g'), '')::int
+            ELSE NULLIF(regexp_replace(grade_level, '[^0-9]', '', 'g'), '')::int
           END AS sort_order
         FROM education.enrollment
-        WHERE grade != 'Total'
+        WHERE grade_level != 'Total'
+          AND demographic_group IS NULL
           AND district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
           AND school_year = (SELECT MAX(school_year) FROM education.enrollment)
       ) t
@@ -111,7 +113,7 @@ export async function GET() {
     // Transform enrollment by grade
     const enrollmentByGrade = enrollmentByGradeRaw.map((r) => ({
       districtName: r.district_name as string,
-      grade: r.grade === "KG" ? "K" : String(r.grade),
+      grade: r.grade_level === "KG" ? "K" : String(r.grade_level),
       count: Number(r.enrollment),
     }));
 
