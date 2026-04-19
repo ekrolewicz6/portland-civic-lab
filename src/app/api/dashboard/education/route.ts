@@ -1,32 +1,74 @@
 import { NextResponse } from "next/server";
-import sql from "@/lib/db-query";
+import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 
 export const dynamic = "force-dynamic";
 
-const PORTLAND_DISTRICTS = [
-  'Portland SD 1J',
-  'Parkrose SD 3',
-  'David Douglas SD 40',
-  'Riverdale SD 51J',
-  'Reynolds SD 7',
-  'Centennial SD 28J',
-];
+const CACHE_KEY = "education";
+
+// Single round-trip query using json_build_object to avoid pooler deadlocks.
+const COMBINED_QUERY = `
+  SELECT json_build_object(
+    'enrollment_latest', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        SELECT school_year, SUM(enrollment)::int AS enrollment
+        FROM education.enrollment
+        WHERE grade = 'Total'
+          AND district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
+        GROUP BY school_year
+        ORDER BY school_year DESC
+        LIMIT 2
+      ) t
+    ),
+    'enrollment_trend', (
+      SELECT COALESCE(json_agg(t ORDER BY t.school_year), '[]'::json) FROM (
+        SELECT school_year, SUM(enrollment)::int AS enrollment
+        FROM education.enrollment
+        WHERE grade = 'Total'
+          AND district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
+        GROUP BY school_year
+      ) t
+    ),
+    'avg_grad_rate', (
+      SELECT row_to_json(t) FROM (
+        SELECT school_year, ROUND(AVG(rate_4yr)::numeric, 1) AS avg_rate
+        FROM education.graduation_rates
+        WHERE district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
+          AND rate_4yr IS NOT NULL
+        GROUP BY school_year
+        ORDER BY school_year DESC
+        LIMIT 1
+      ) t
+    ),
+    'avg_proficiency', (
+      SELECT row_to_json(t) FROM (
+        SELECT school_year,
+          ROUND(AVG(proficiency_pct)::numeric, 1) AS avg_proficiency
+        FROM education.test_scores
+        WHERE district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
+          AND proficiency_pct IS NOT NULL
+        GROUP BY school_year
+        ORDER BY school_year DESC
+        LIMIT 1
+      ) t
+    )
+  ) AS payload
+`;
 
 export async function GET() {
   try {
-    // Get latest two years of total enrollment across all 6 Portland-area districts
-    const latestRows = await sql`
-      SELECT school_year, SUM(enrollment)::int AS enrollment
-      FROM education.enrollment
-      WHERE grade_level = 'Total'
-        AND demographic_group IS NULL
-        AND district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
-      GROUP BY school_year
-      ORDER BY school_year DESC
-      LIMIT 2
-    `;
+    // Check cache first
+    const cached = await getCachedData<Record<string, unknown>>(CACHE_KEY);
+    if (cached) return NextResponse.json(cached);
 
-    if (latestRows.length === 0) {
+    const result = await sql.unsafe(COMBINED_QUERY);
+    const payload = (result[0]?.payload ?? {}) as Record<string, unknown>;
+
+    const enrollmentLatest = (payload.enrollment_latest as { school_year: string; enrollment: number }[]) ?? [];
+    const enrollmentTrend = (payload.enrollment_trend as { school_year: string; enrollment: number }[]) ?? [];
+    const avgGradRate = payload.avg_grad_rate as { school_year: string; avg_rate: number } | null;
+    const avgProficiency = payload.avg_proficiency as { school_year: string; avg_proficiency: number } | null;
+
+    if (enrollmentLatest.length === 0) {
       return NextResponse.json({
         headline: "Education data not yet available",
         headlineValue: 0,
@@ -48,8 +90,8 @@ export async function GET() {
       });
     }
 
-    const latest = latestRows[0];
-    const prior = latestRows.length > 1 ? latestRows[1] : null;
+    const latest = enrollmentLatest[0];
+    const prior = enrollmentLatest.length > 1 ? enrollmentLatest[1] : null;
 
     const totalEnrollment = Number(latest.enrollment);
     const priorEnrollment = prior ? Number(prior.enrollment) : null;
@@ -61,29 +103,12 @@ export async function GET() {
     const direction = yoyChange > 0 ? "up" : yoyChange < 0 ? "down" : "flat";
     const absChange = Math.abs(yoyChange);
 
-    // Chart data: combined enrollment totals across years for all 6 districts
-    const chartRows = await sql`
-      SELECT school_year, SUM(enrollment)::int AS enrollment
-      FROM education.enrollment
-      WHERE grade_level = 'Total'
-        AND demographic_group IS NULL
-        AND district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
-      GROUP BY school_year
-      ORDER BY school_year ASC
-    `;
-
-    const chartData = chartRows.map((r: any) => ({
+    const chartData = enrollmentTrend.map((r) => ({
       date: r.school_year,
       value: Number(r.enrollment),
     }));
 
-    // Get graduation rate for insight
-    const gradRows = await sql`
-      SELECT rate_4yr FROM education.graduation_rates
-      ORDER BY school_year DESC LIMIT 1
-    `;
-    const latestGradRate = gradRows.length > 0 ? Number(gradRows[0].rate_4yr) : null;
-
+    // Build insights from real data
     const insights: string[] = [];
     insights.push(
       `${totalEnrollment.toLocaleString()} students across 6 Portland-area districts (${latest.school_year})`
@@ -93,13 +118,16 @@ export async function GET() {
         `${direction === "down" ? "Declined" : "Grew"} ${absChange.toFixed(1)}% from ${priorEnrollment.toLocaleString()} (${prior!.school_year})`
       );
     }
-    if (latestGradRate !== null) {
-      insights.push(`4-year graduation rate: ${latestGradRate}%`);
+    if (avgGradRate) {
+      insights.push(`Average 4-year graduation rate: ${avgGradRate.avg_rate}% (${avgGradRate.school_year})`);
+    }
+    if (avgProficiency) {
+      insights.push(`Average proficiency rate: ${avgProficiency.avg_proficiency}% (${avgProficiency.school_year})`);
     }
 
     const headline = `${totalEnrollment.toLocaleString()} Portland-area students — ${direction} ${absChange.toFixed(1)}% from last year`;
 
-    return NextResponse.json({
+    const responseData = {
       headline,
       headlineValue: totalEnrollment,
       dataStatus: "live",
@@ -117,6 +145,12 @@ export async function GET() {
           provider: "Oregon Department of Education",
           action: "Published ODE values",
         },
+        {
+          name: "ODE Test Scores",
+          status: "connected",
+          provider: "Oregon Department of Education",
+          action: "Smarter Balanced Assessment data",
+        },
       ],
       trend: {
         direction,
@@ -127,9 +161,13 @@ export async function GET() {
       source: "Oregon Department of Education",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights,
-    });
-  } catch (err: any) {
-    console.error("Education API error:", err.message);
+    };
+
+    await setCachedData(CACHE_KEY, responseData);
+    return NextResponse.json(responseData);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("Education API error:", message);
     return NextResponse.json({
       headline: "Education data temporarily unavailable",
       headlineValue: 0,
