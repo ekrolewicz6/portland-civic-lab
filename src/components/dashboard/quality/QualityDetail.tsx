@@ -115,10 +115,12 @@ function InfoCard({
   );
 }
 
-function SourceNote({ source }: { source: string }) {
+function SourceNote({ source, href }: { source: string; href?: string }) {
   return (
-    <p className="text-[10px] text-[var(--color-ink-muted)]/50 mt-3 font-mono">
-      Source: {source}
+    <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+      Source: {href ? (
+        <a href={href} target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">{source}</a>
+      ) : source}
     </p>
   );
 }
@@ -309,7 +311,7 @@ export default function QualityDetail() {
               Parks by type. Portland maintains a diverse mix of park spaces from large natural areas to neighborhood pocket parks.
             </p>
             <BarChart data={parkTypeBarData} color="#3d7a5a" height={280} />
-            <SourceNote source="Portland Parks & Recreation ArcGIS" />
+            <SourceNote source="Portland Parks & Recreation &middot; ArcGIS" href="https://gis-pdx.opendata.arcgis.com/datasets/PDX::parks/about" />
           </InfoCard>
         )}
 
@@ -347,7 +349,7 @@ export default function QualityDetail() {
                 );
               })}
             </div>
-            <SourceNote source="Portland Parks & Recreation ArcGIS" />
+            <SourceNote source="Portland Parks & Recreation &middot; ArcGIS" href="https://gis-pdx.opendata.arcgis.com/datasets/PDX::parks/about" />
           </InfoCard>
         )}
 
@@ -408,7 +410,7 @@ export default function QualityDetail() {
                 </div>
               </>
             )}
-            <SourceNote source="Portland Parks & Recreation ArcGIS — Park Amenities" />
+            <SourceNote source="Portland Parks & Recreation &middot; Park Amenities" href="https://gis-pdx.opendata.arcgis.com/datasets/PDX::parks/about" />
           </InfoCard>
         )}
       </section>
@@ -491,7 +493,7 @@ export default function QualityDetail() {
               Poor (&lt;40): {pavementSummary.poor.toLocaleString()}
             </span>
           </div>
-          <SourceNote source="PBOT Pavement Condition Index" />
+          <SourceNote source="PBOT &middot; Pavement Condition Index" href="https://gis-pdx.opendata.arcgis.com/" />
         </InfoCard>
 
         {/* PCI by functional class */}
@@ -509,7 +511,7 @@ export default function QualityDetail() {
               }))}
               height={240}
             />
-            <SourceNote source="PBOT Pavement Condition Index" />
+            <SourceNote source="PBOT &middot; Pavement Condition Index" href="https://gis-pdx.opendata.arcgis.com/" />
           </InfoCard>
         )}
 
@@ -541,7 +543,7 @@ export default function QualityDetail() {
                 </tbody>
               </table>
             </div>
-            <SourceNote source="PBOT Pavement Condition Index" />
+            <SourceNote source="PBOT &middot; Pavement Condition Index" href="https://gis-pdx.opendata.arcgis.com/" />
           </InfoCard>
         )}
       </section>
@@ -591,7 +593,7 @@ export default function QualityDetail() {
               })()}
             </p>
             <TrendChart data={libVisitChartData} color="#5a7a8a" height={280} />
-            <SourceNote source="Multnomah County Library" />
+            <SourceNote source="Oregon State Library &middot; Public Library Statistics" href="https://data.oregon.gov/d/8zw7-zgjw" />
           </InfoCard>
         )}
 
@@ -610,7 +612,7 @@ export default function QualityDetail() {
               ]}
               height={300}
             />
-            <SourceNote source="Multnomah County Library" />
+            <SourceNote source="Oregon State Library &middot; Public Library Statistics" href="https://data.oregon.gov/d/8zw7-zgjw" />
           </InfoCard>
         )}
 
@@ -630,7 +632,7 @@ export default function QualityDetail() {
               ]}
               height={280}
             />
-            <SourceNote source="Multnomah County Library" />
+            <SourceNote source="Oregon State Library &middot; Public Library Statistics" href="https://data.oregon.gov/d/8zw7-zgjw" />
           </InfoCard>
         )}
 
@@ -649,7 +651,7 @@ export default function QualityDetail() {
               ]}
               height={280}
             />
-            <SourceNote source="Multnomah County Library" />
+            <SourceNote source="Oregon State Library &middot; Public Library Statistics" href="https://data.oregon.gov/d/8zw7-zgjw" />
           </InfoCard>
         )}
       </section>

@@ -281,8 +281,8 @@ export default function EconomyDetail() {
               color="#b85c3a"
               height={320}
             />
-            <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-              Source: BLS QCEW, Multnomah County (FIPS 41051), private sector, all industries.
+            <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+              Source: <a href="https://data.bls.gov/cew/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Bureau of Labor Statistics &middot; QCEW</a> — Multnomah County, private sector
             </p>
           </div>
         </section>
@@ -390,8 +390,8 @@ export default function EconomyDetail() {
                 );
               })}
             </div>
-            <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-              Source: BLS QCEW, 3-digit NAICS, Multnomah County, private sector.
+            <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+              Source: <a href="https://data.bls.gov/cew/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Bureau of Labor Statistics &middot; QCEW</a> — 3-digit NAICS, Multnomah County
             </p>
           </div>
         </section>
@@ -578,8 +578,8 @@ export default function EconomyDetail() {
                 height={300}
                 valuePrefix="$"
               />
-              <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-                Source: BLS QCEW wages deflated by Portland-Salem CPI (CUURS49BSA0).
+              <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+                Source: <a href="https://data.bls.gov/cew/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Bureau of Labor Statistics &middot; QCEW</a> — wages deflated by Portland-Salem CPI
               </p>
             </div>
           </section>
@@ -653,8 +653,8 @@ export default function EconomyDetail() {
                 color="#3d7a5a"
                 height={280}
               />
-              <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-                Source: BLS QCEW, Portland-Vancouver-Hillsboro MSA (FIPS C3890), private sector, all industries. Quarterly.
+              <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+                Source: <a href="https://data.bls.gov/cew/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Bureau of Labor Statistics &middot; QCEW</a> — Portland MSA, private sector, quarterly
               </p>
             </div>
           </section>
@@ -678,8 +678,8 @@ export default function EconomyDetail() {
                     <strong className="text-white">#{latestMfg.metroRankMfg} rate among the 50 largest U.S. metros</strong> ({latestMfg.year}).
                     This reflects Portland&apos;s strength in specialty manufacturing, food/beverage production, and maker culture.
                   </p>
-                  <p className="text-[11px] text-white/40 mt-2 font-mono">
-                    Source: Census Bureau, Statistics of U.S. Businesses (SUSB)
+                  <p className="mt-2 text-[12px] font-mono text-white/40 tracking-wider">
+                    Source: <a href="https://www.census.gov/programs-surveys/cbp.html" target="_blank" rel="noopener" className="underline hover:text-white/60">U.S. Census Bureau &middot; County Business Patterns</a>
                   </p>
                 </div>
               )}
@@ -740,10 +740,8 @@ export default function EconomyDetail() {
                 </>
               )}
 
-              <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-                Source: Census Bureau County Business Patterns (CBP), Portland MSA (FIPS 38900).
-                Manufacturing formation rate from Census SUSB.
-                CBP data has a ~2 year lag; the latest available year is 2022.
+              <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+                Source: <a href="https://www.census.gov/programs-surveys/cbp.html" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">U.S. Census Bureau &middot; County Business Patterns</a> — Portland MSA. ~2 year lag.
               </p>
             </div>
           </section>

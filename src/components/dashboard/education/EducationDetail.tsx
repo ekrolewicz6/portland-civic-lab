@@ -545,8 +545,8 @@ export default function EducationDetail() {
               predominantly immigrant communities face entirely different challenges.
             </p>
           </div>
-          <p className="text-[11px] text-white/40 mt-4 font-mono">
-            Source: Oregon Department of Education enrollment, assessment &amp; graduation data
+          <p className="mt-4 text-[12px] font-mono text-white/40 tracking-wider">
+            Source: <a href="https://www.oregon.gov/ode/reports-and-data/students/Pages/Enrollment-Reports.aspx" target="_blank" rel="noopener" className="underline hover:text-white/60">Oregon Dept of Education &middot; Report Cards</a>
           </p>
         </div>
       </section>
@@ -633,6 +633,9 @@ export default function EducationDetail() {
               yAxisDomain="auto"
             />
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://www.oregon.gov/ode/reports-and-data/students/Pages/Enrollment-Reports.aspx" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Oregon Dept of Education &middot; Report Cards</a>
+          </p>
         </section>
       )}
 
@@ -648,6 +651,9 @@ export default function EducationDetail() {
               height={320}
             />
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://www.oregon.gov/ode/reports-and-data/students/Pages/Enrollment-Reports.aspx" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Oregon Dept of Education &middot; Report Cards</a>
+          </p>
         </section>
       )}
 
@@ -730,6 +736,9 @@ export default function EducationDetail() {
               valueSuffix="%"
             />
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://www.oregon.gov/ode/reports-and-data/students/Pages/Enrollment-Reports.aspx" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Oregon Dept of Education &middot; Report Cards</a>
+          </p>
         </section>
       ) : (
         <DataNeeded
@@ -766,6 +775,9 @@ export default function EducationDetail() {
               Smarter Balanced Assessment. Averaged across all tested grade levels.
             </p>
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://www.oregon.gov/ode/educator-resources/assessment/Pages/Assessment-Group-Reports.aspx" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Oregon Dept of Education &middot; Assessment Reports</a>
+          </p>
         </section>
       ) : (
         <DataNeeded
@@ -908,6 +920,9 @@ export default function EducationDetail() {
               disrupted reporting during remote learning.
             </p>
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://www.oregon.gov/ode/reports-and-data/students/pages/attendance-and-absenteeism.aspx" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Oregon Dept of Education &middot; Attendance Reports</a>
+          </p>
         </section>
       )}
 
@@ -956,8 +971,8 @@ export default function EducationDetail() {
                 );
               })}
             </div>
-            <p className="text-[11px] text-[var(--color-ink-muted)] mt-4 font-mono">
-              Source: Oregon Department of Education, Regular Attenders report. Groups with fewer than 10 students excluded.
+            <p className="mt-4 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+              Source: <a href="https://www.oregon.gov/ode/reports-and-data/students/pages/attendance-and-absenteeism.aspx" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Oregon Dept of Education &middot; Attendance Reports</a>. Groups with fewer than 10 students excluded.
             </p>
           </div>
         </section>

@@ -1168,9 +1168,8 @@ export default function HomelessnessDetail() {
               height={320}
               yAxisDomain="auto"
             />
-            <p className="text-[11px] text-[var(--color-ink-muted)] mt-3">
-              Source: HUD Point-in-Time Count,
-              Portland/Gresham/Multnomah County CoC.
+            <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+              Source: <a href="https://www.hudexchange.info/programs/coc/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">HUD &middot; Point-in-Time Count</a> — Portland/Gresham/Multnomah County CoC
             </p>
           </div>
         </section>
@@ -1362,8 +1361,8 @@ export default function HomelessnessDetail() {
                 </tbody>
               </table>
             </div>
-            <p className="text-[11px] text-[var(--color-ink-muted)] mt-3 font-mono">
-              Source: PSU HRAC 2025 Oregon Statewide Homelessness Estimates (Tables 1-2). Top 15 counties by total count shown.
+            <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+              Source: PSU HRAC &middot; 2025 Oregon Statewide Homelessness Estimates (Tables 1-2)
             </p>
           </div>
         </section>
@@ -1409,8 +1408,8 @@ export default function HomelessnessDetail() {
               A ratio of 1.0x means a group experiences homelessness at the same rate as their population
               share. A ratio above 1.0x means disproportionate overrepresentation.
             </p>
-            <p className="text-[11px] text-[var(--color-ink-muted)] mt-3 font-mono">
-              Source: PSU HRAC 2025 Oregon Statewide Homelessness Estimates, Chart 1. Population shares from Census Table B03002.
+            <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+              Source: PSU HRAC &middot; 2025 Oregon Statewide Homelessness Estimates, Chart 1. Population shares from Census Table B03002.
             </p>
           </div>
         </section>

@@ -4,6 +4,41 @@ All notable changes to the Portland Civic Lab Dashboard are documented here.
 
 ---
 
+## [2026-04-19] — Aggressive Data Sourcing & Automation
+
+### New Data (197K+ rows from public sources)
+- **ODOT Crash Records**: 59,365 individual crashes (2017-2022, Multnomah County) from ODOT ArcGIS — fatalities INCREASED 58→88 while total crashes dropped
+- **ODE Chronic Absenteeism**: 33,251 rows (10 years, 6 districts, 36 demographic groups) — PPS doubled from 17% to 37% post-COVID
+- **TriMet Monthly Ridership**: 834 rows (Jan 2002 - Feb 2026) from NTD Socrata — 68.3M boardings in FY2025, 74% of pre-pandemic
+- **Census Demographics**: 99 rows (2015-2023) — population, income, poverty, race, age, housing tenure
+- **Street Tree Inventory**: 253K trees aggregated to 96 neighborhoods from Portland ArcGIS
+- **GHG Emissions**: 78 rows (1990-2023 by sector) — 29% reduction from 1990 baseline
+- **Budget Program Offers**: 538 rows (6 service areas, bureau-level detail) from CBO Excel files
+- **BOEC 911 Performance**: 13 months of call answering rates (64%→79%), wait times, staffing
+- **Downtown Foot Traffic**: 14 rows from Clean & Safe / Placer.ai — recovering to 82% of 2019
+- **Office Vacancy**: 11 quarters — peaked at 34.7% (Q4 2024)
+
+### Automated Pipeline
+- **Unified periodic refresh cron** (`/api/cron/refresh-data`): single monthly job handles BLS QCEW, TriMet ridership, Zillow rent (monthly), Census demographics (quarterly), ODOT crashes + tree inventory (annual)
+- Complete pipeline now: 8 daily/hourly crons + 1 monthly unified cron covering all automatable sources
+- Manual sources documented with exact `npx tsx` commands for annual updates
+
+### Source Attribution Links
+- Added clickable source links below every chart/table across all 8 detail components (42 total attributions)
+- Links go directly to the source data portal (ODE, Census, BLS, ArcGIS, NTD, etc.)
+
+### Pre-Push Verification Hook
+- `scripts/verify-api-queries.ts` runs 24 database checks before every `git push`
+- Catches column mismatches, missing tables, and broken SQL before they reach prod
+- Wired as Claude Code PreToolUse hook on `Bash(git push *)`
+
+### Data Pipeline Memory
+- New memory file `feedback_data_pipelines.md`: rule that every data source MUST be saved as repeatable script + automated refresh
+- New memory file `reference_verified_data_sources.md`: complete URL registry for every data source with auth, frequency, script, and DB table
+- Updated `feedback_data_integrity.md` with "always exhaust public data sources" rule
+
+---
+
 ## [2026-04-18] — Major Data Integration & Promise Tracker
 
 ### Promise Tracker (Accountability)

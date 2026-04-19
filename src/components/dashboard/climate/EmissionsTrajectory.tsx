@@ -227,8 +227,8 @@ export default function EmissionsTrajectory() {
               />
             </LineChart>
           </ResponsiveContainer>
-          <p className="mt-3 text-[10px] text-[var(--color-ink-muted)]">
-            Source: BPS Climate & Energy Dashboard — Multnomah County Community GHG Inventory. 2023 data is latest available.
+          <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://www.portland.gov/bps/climate-action/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">BPS &middot; Multnomah County GHG Inventory</a>
           </p>
         </div>
       )}

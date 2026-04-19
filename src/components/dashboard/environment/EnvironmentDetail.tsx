@@ -136,6 +136,9 @@ export default function EnvironmentDetail() {
               ))}
             </div>
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://www.airnow.gov/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">EPA &middot; AirNow</a>
+          </p>
         </section>
       )}
 
@@ -186,6 +189,9 @@ export default function EnvironmentDetail() {
               </p>
             )}
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://www.airnow.gov/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">EPA &middot; AirNow</a>
+          </p>
         </section>
       )}
 
@@ -199,6 +205,9 @@ export default function EnvironmentDetail() {
             </p>
             <TrendChart data={data.aqiTrend} color={ENV_COLOR} height={280} />
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://www.airnow.gov/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">EPA &middot; AirNow</a>
+          </p>
         </section>
       )}
     </div>

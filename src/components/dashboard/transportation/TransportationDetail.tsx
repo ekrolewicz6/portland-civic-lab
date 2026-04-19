@@ -466,6 +466,9 @@ export default function TransportationDetail() {
               </div>
             )}
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://datahub.transportation.gov/resource/8bui-9xvu" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">TriMet &middot; National Transit Database</a>
+          </p>
         </section>
       )}
 
@@ -554,6 +557,9 @@ export default function TransportationDetail() {
               </p>
             )}
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://services.arcgis.com/gfpXnknjcY6QHKhU/arcgis/rest/services/Crash_ODOT/FeatureServer" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">ODOT &middot; Crash Data</a>
+          </p>
         </section>
       )}
 
@@ -644,6 +650,9 @@ export default function TransportationDetail() {
               </table>
             </div>
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://data.census.gov/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">U.S. Census Bureau &middot; ACS Table B08301</a>
+          </p>
         </section>
       )}
 

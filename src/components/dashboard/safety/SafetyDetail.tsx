@@ -353,8 +353,8 @@ export default function SafetyDetail() {
             </table>
             </div>
           </div>
-          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/50 uppercase tracking-wider">
-            Source: Portland Police Bureau &middot; NIBRS Offense Data
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://public.tableau.com/app/profile/portlandpolicebureau/viz/PPBOpenDataDownloads" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Portland Police Bureau &middot; NIBRS Offense Data</a>
           </p>
         </section>
       )}
@@ -384,6 +384,9 @@ export default function SafetyDetail() {
               <strong>Society</strong> = drug offenses, weapons, prostitution, gambling (FBI NIBRS categories)
             </p>
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://public.tableau.com/app/profile/portlandpolicebureau/viz/PPBOpenDataDownloads" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Portland Police Bureau &middot; NIBRS Offense Data</a>
+          </p>
         </section>
       )}
 
@@ -392,6 +395,9 @@ export default function SafetyDetail() {
         <section>
           <SectionHeader icon={Shield} title={`Top Offense Categories (${new Date().getFullYear()})`} color="#b85c3a" />
           <HorizontalBars items={topOffenseCategories} color="#b85c3a" />
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://public.tableau.com/app/profile/portlandpolicebureau/viz/PPBOpenDataDownloads" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Portland Police Bureau &middot; NIBRS Offense Data</a>
+          </p>
         </section>
       )}
 
@@ -423,6 +429,9 @@ export default function SafetyDetail() {
             )}
             <TrendChart data={mvtChartData} color="#d97706" height={280} />
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://public.tableau.com/app/profile/portlandpolicebureau/viz/PPBOpenDataDownloads" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Portland Police Bureau &middot; NIBRS Offense Data</a>
+          </p>
         </section>
       )}
 
@@ -477,6 +486,9 @@ export default function SafetyDetail() {
               </div>
             )}
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://public.tableau.com/app/profile/portlandpolicebureau/viz/PPBOpenDataDownloads" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Portland Police Bureau &middot; NIBRS Offense Data</a>
+          </p>
         </section>
       )}
 
@@ -499,6 +511,9 @@ export default function SafetyDetail() {
               </p>
             </div>
           </div>
+          <p className="mt-2 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: Portland BPS &middot; Graffiti Reports
+          </p>
         </section>
       )}
 
@@ -573,18 +588,10 @@ export default function SafetyDetail() {
             <span>Right column = avg wait (seconds)</span>
           </div>
 
-          <div className="mt-4 pt-3 border-t border-[var(--color-parchment)] flex flex-wrap items-center justify-between gap-2">
-            <p className="text-[12px] text-[var(--color-ink-muted)]">
-              Source: BOEC Director&apos;s Report, Feb 2026. Staffing: 113 of 122 needed (13 in training).
+          <div className="mt-4 pt-3 border-t border-[var(--color-parchment)]">
+            <p className="text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+              Source: <a href="https://www.portland.gov/911/documents" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">Bureau of Emergency Communications &middot; Director&apos;s Reports</a>
             </p>
-            <a
-              href="https://www.portland.gov/911/documents/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[12px] font-medium text-[var(--color-river)] hover:text-[var(--color-river-deep)] underline underline-offset-2"
-            >
-              View all BOEC reports &rarr;
-            </a>
           </div>
         </div>
       </section>

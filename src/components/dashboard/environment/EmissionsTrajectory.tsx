@@ -156,6 +156,9 @@ export default function EmissionsTrajectory() {
               ...(target2030 ? [{ y: target2030.target, label: `2030 Target: ${(target2030.target / 1_000_000).toFixed(1)}M`, color: "#dc2626" }] : []),
             ]}
           />
+          <p className="mt-3 text-[12px] font-mono text-[var(--color-ink-muted)]/60 tracking-wider">
+            Source: <a href="https://www.portland.gov/bps/climate-action/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">BPS &middot; Multnomah County GHG Inventory</a>
+          </p>
         </div>
       </section>
 
