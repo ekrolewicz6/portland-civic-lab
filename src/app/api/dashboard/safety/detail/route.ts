@@ -68,7 +68,7 @@ export async function GET(): Promise<NextResponse<SafetyDetailResponse>> {
         COALESCE(count(*) FILTER (WHERE crime_against = 'Society'), 0)::int AS society,
         count(*)::int AS total
       FROM safety.ppb_offenses
-      WHERE occur_date >= '2016-01-01' AND occur_date < '2026-02-01'
+      WHERE occur_date >= '2016-01-01' AND occur_date <= CURRENT_DATE
       GROUP BY 1
       ORDER BY 1
     `;

@@ -19,7 +19,7 @@ export async function GET(): Promise<NextResponse<SafetyData & { dataStatus: str
         TO_CHAR(date_trunc('month', occur_date), 'YYYY-MM') AS date,
         count(*)::int AS value
       FROM safety.ppb_offenses
-      WHERE occur_date >= '2016-01-01' AND occur_date < '2026-02-01'
+      WHERE occur_date >= '2016-01-01' AND occur_date <= CURRENT_DATE
       GROUP BY 1
       ORDER BY 1
     `;
