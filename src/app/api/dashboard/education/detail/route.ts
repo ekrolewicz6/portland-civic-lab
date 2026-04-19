@@ -73,6 +73,26 @@ const COMBINED_QUERY = `
         WHERE district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
       ) t
     ),
+    'absenteeism', (
+      SELECT COALESCE(json_agg(t ORDER BY t.school_year, t.district_name), '[]'::json) FROM (
+        SELECT school_year, district_name, student_group, chronically_absent_pct, students_included
+        FROM education.chronic_absenteeism
+        WHERE institution_type = 'District'
+          AND student_group = 'Total'
+          AND district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
+      ) t
+    ),
+    'absenteeism_equity', (
+      SELECT COALESCE(json_agg(t ORDER BY t.chronically_absent_pct DESC), '[]'::json) FROM (
+        SELECT student_group, chronically_absent_pct, students_included
+        FROM education.chronic_absenteeism
+        WHERE institution_type = 'District'
+          AND district_name = 'Portland SD 1J'
+          AND school_year = (SELECT MAX(school_year) FROM education.chronic_absenteeism)
+          AND student_group NOT IN ('Total')
+          AND students_included >= 10
+      ) t
+    ),
     'latest_year', (
       SELECT MAX(school_year) FROM education.enrollment
     )
@@ -95,6 +115,8 @@ export async function GET() {
     const enrollmentByGradeRaw = (payload.enrollment_by_grade as Row[]) ?? [];
     const graduationRatesRaw = (payload.graduation_rates as Row[]) ?? [];
     const testScoresRaw = (payload.test_scores as Row[]) ?? [];
+    const absenteeismRaw = (payload.absenteeism as Row[]) ?? [];
+    const absenteeismEquityRaw = (payload.absenteeism_equity as Row[]) ?? [];
     const latestYear = (payload.latest_year as string) ?? null;
 
     // Transform enrollment by district
@@ -134,6 +156,22 @@ export async function GET() {
       proficiency: r.proficiency_pct !== null ? Number(r.proficiency_pct) : null,
       participationPct: r.participation_pct !== null ? Number(r.participation_pct) : null,
       nTested: r.n_tested !== null ? Number(r.n_tested) : null,
+    }));
+
+    // Transform absenteeism trend
+    const absenteeism = absenteeismRaw.map((r) => ({
+      year: r.school_year as string,
+      districtName: r.district_name as string,
+      group: r.student_group as string,
+      chronicPct: r.chronically_absent_pct !== null ? Number(r.chronically_absent_pct) : null,
+      n: r.students_included !== null ? Number(r.students_included) : null,
+    }));
+
+    // Transform absenteeism equity breakdown
+    const absenteeismEquity = absenteeismEquityRaw.map((r) => ({
+      group: r.student_group as string,
+      chronicPct: r.chronically_absent_pct !== null ? Number(r.chronically_absent_pct) : null,
+      n: r.students_included !== null ? Number(r.students_included) : null,
     }));
 
     // Compute hero stats
@@ -216,6 +254,20 @@ export async function GET() {
       }
     }
 
+    // Absenteeism insight
+    const ppsAbsenteeism = absenteeism.filter((a) => a.districtName === "Portland SD 1J");
+    if (ppsAbsenteeism.length >= 2) {
+      const preCovidRows = ppsAbsenteeism.filter((a) => a.year <= "2018-19" && a.chronicPct !== null);
+      const postCovidRows = ppsAbsenteeism.filter((a) => a.year >= "2021-22" && a.chronicPct !== null);
+      if (preCovidRows.length > 0 && postCovidRows.length > 0) {
+        const preCovid = Math.round(preCovidRows.reduce((s, a) => s + (a.chronicPct ?? 0), 0) / preCovidRows.length * 10) / 10;
+        const latestAbsenteeism = ppsAbsenteeism[ppsAbsenteeism.length - 1];
+        topInsights.push(
+          `PPS chronic absenteeism averaged ${preCovid}% pre-COVID, reaching ${latestAbsenteeism.chronicPct}% in ${latestAbsenteeism.year}`
+        );
+      }
+    }
+
     const heroStats = {
       totalEnrollment,
       latestYear,
@@ -235,6 +287,8 @@ export async function GET() {
       enrollmentByGrade,
       graduationRates,
       testScores,
+      absenteeism,
+      absenteeismEquity,
       heroStats,
       topInsights,
       latestYear,
@@ -253,6 +307,8 @@ export async function GET() {
       enrollmentByGrade: [],
       graduationRates: [],
       testScores: [],
+      absenteeism: [],
+      absenteeismEquity: [],
       heroStats: null,
       topInsights: [],
       latestYear: null,

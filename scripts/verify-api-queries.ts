@@ -121,6 +121,11 @@ async function main() {
     ) AS payload
   `);
 
+  await test("education/chronic_absenteeism", `
+    SELECT count(*)::int AS cnt FROM education.chronic_absenteeism
+    WHERE institution_type = 'District' AND student_group = 'Total'
+  `, 1);
+
   // ── Safety ────────────────────────────────────────────────────────
   await test("safety/route", `
     SELECT count(*)::int AS total FROM safety.ppb_offenses WHERE occur_date <= CURRENT_DATE

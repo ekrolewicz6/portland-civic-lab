@@ -17,6 +17,7 @@ import {
   FileText,
   School,
   MapPin,
+  AlertTriangle,
 } from "lucide-react";
 
 // ── Constants ────────────────────────────────────────────────────────────
@@ -83,6 +84,20 @@ interface TestScore {
   nTested: number | null;
 }
 
+interface AbsenteeismRow {
+  year: string;
+  districtName: string;
+  group: string;
+  chronicPct: number | null;
+  n: number | null;
+}
+
+interface AbsenteeismEquityRow {
+  group: string;
+  chronicPct: number | null;
+  n: number | null;
+}
+
 interface HeroStats {
   totalEnrollment: number;
   latestYear: string | null;
@@ -99,6 +114,8 @@ interface EducationDetailData {
   enrollmentByGrade: GradeEnrollment[];
   graduationRates: GraduationRate[];
   testScores: TestScore[];
+  absenteeism: AbsenteeismRow[];
+  absenteeismEquity: AbsenteeismEquityRow[];
   heroStats: HeroStats | null;
   topInsights: string[];
   latestYear: string | null;
@@ -320,6 +337,52 @@ export default function EducationDetail() {
       };
     }).sort((a, b) => (b.enrollment ?? 0) - (a.enrollment ?? 0));
 
+    // Absenteeism trend data for MultiLineChart
+    const absenteeismYears = Array.from(
+      new Set((data.absenteeism ?? []).map((a) => a.year))
+    ).sort();
+    const absenteeismChartData = absenteeismYears.map((year) => {
+      const row: Record<string, string | number> = { year };
+      for (const d of allDistricts) {
+        const match = (data.absenteeism ?? []).find(
+          (a) => a.districtName === d && a.year === year
+        );
+        if (match?.chronicPct !== null && match?.chronicPct !== undefined) {
+          row[shortName(d)] = match.chronicPct;
+        }
+      }
+      return row;
+    });
+
+    // Absenteeism callout stats
+    const ppsAbsenteeism = (data.absenteeism ?? []).filter(
+      (a) => a.districtName === "Portland SD 1J"
+    );
+    const preCovidAbsenteeism = ppsAbsenteeism.filter(
+      (a) => a.year <= "2018-19" && a.chronicPct !== null
+    );
+    const preCovidAvg =
+      preCovidAbsenteeism.length > 0
+        ? Math.round(
+            (preCovidAbsenteeism.reduce((s, a) => s + (a.chronicPct ?? 0), 0) /
+              preCovidAbsenteeism.length) *
+              10
+          ) / 10
+        : null;
+    const latestAbsenteeism =
+      ppsAbsenteeism.length > 0
+        ? ppsAbsenteeism[ppsAbsenteeism.length - 1]
+        : null;
+
+    // Equity horizontal bar data
+    const equityBars = (data.absenteeismEquity ?? [])
+      .filter((e) => e.chronicPct !== null && (e.n ?? 0) >= 10)
+      .map((e) => ({
+        name: e.group,
+        value: e.chronicPct!,
+        n: e.n ?? 0,
+      }));
+
     return {
       allDistricts,
       latestByDistrict,
@@ -341,6 +404,11 @@ export default function EducationDetail() {
       latestTestYear,
       latestTestScores,
       testScoreByDistrictSubject,
+      absenteeismChartData,
+      absenteeismYears,
+      preCovidAvg,
+      latestAbsenteeism,
+      equityBars,
     };
   }, [data]);
 
@@ -387,6 +455,10 @@ export default function EducationDetail() {
     latestTestYear,
     latestTestScores,
     testScoreByDistrictSubject,
+    absenteeismChartData,
+    preCovidAvg,
+    latestAbsenteeism,
+    equityBars,
   } = derived;
 
   const yoyChange =
@@ -794,7 +866,104 @@ export default function EducationDetail() {
         );
       })()}
 
-      {/* 10. DATA STILL NEEDED */}
+      {/* 10. CHRONIC ABSENTEEISM CRISIS */}
+      {absenteeismChartData.length > 0 && activeDistrictLines.length > 0 && (
+        <section>
+          <SectionHeader icon={AlertTriangle} title="Chronic Absenteeism Crisis" />
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
+            {preCovidAvg !== null && latestAbsenteeism !== null && latestAbsenteeism.chronicPct !== null && (
+              <div className="flex flex-wrap gap-4 mb-5">
+                <div className="bg-[var(--color-parchment)]/50 rounded-sm px-4 py-3 flex-1 min-w-[160px]">
+                  <div className="text-[11px] text-[var(--color-ink-muted)] uppercase tracking-wide mb-1">
+                    Pre-COVID avg (PPS)
+                  </div>
+                  <div className="text-[22px] font-editorial-normal text-[var(--color-ink)]">
+                    {preCovidAvg}%
+                  </div>
+                </div>
+                <div className="flex items-center text-[var(--color-ink-muted)] text-lg px-2">
+                  &rarr;
+                </div>
+                <div className="bg-[#b85c3a]/10 border border-[#b85c3a]/20 rounded-sm px-4 py-3 flex-1 min-w-[160px]">
+                  <div className="text-[11px] text-[#b85c3a] uppercase tracking-wide mb-1">
+                    {latestAbsenteeism.year} (PPS)
+                  </div>
+                  <div className="text-[22px] font-editorial-normal text-[#b85c3a]">
+                    {latestAbsenteeism.chronicPct}%
+                  </div>
+                </div>
+              </div>
+            )}
+            <MultiLineChart
+              data={absenteeismChartData}
+              lines={activeDistrictLines}
+              xKey="year"
+              height={300}
+              valueSuffix="%"
+            />
+            <p className="text-[12px] text-[var(--color-ink-muted)] mt-3 leading-relaxed">
+              Students attending 90% or fewer of enrolled days are chronically absent.
+              The COVID-19 pandemic nearly doubled chronic absenteeism rates across all
+              Portland districts, and recovery has been slow. Gap years (2019-20, 2020-21) reflect
+              disrupted reporting during remote learning.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* 11. WHO'S MISSING SCHOOL — Equity Breakdown */}
+      {equityBars.length > 0 && (
+        <section>
+          <SectionHeader icon={Users} title="Who's Missing School?" />
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-6">
+            <p className="text-[13px] text-[var(--color-ink-light)] mb-5 leading-relaxed">
+              Chronic absenteeism rates by student group in PPS (
+              {(data.absenteeism ?? []).length > 0
+                ? (data.absenteeism ?? [])[(data.absenteeism ?? []).length - 1]?.year
+                : ""}
+              ). Students experiencing homelessness, American Indian/Alaska Native students,
+              and Native Hawaiian/Pacific Islander students face the widest gaps.
+            </p>
+            <div className="space-y-2.5">
+              {equityBars.map((item, i) => {
+                const maxVal = equityBars[0]?.value ?? 1;
+                const pct = Math.round((item.value / maxVal) * 100);
+                const isHigh = item.value >= 50;
+                const barColor = isHigh ? "#b85c3a" : ACCENT;
+                return (
+                  <div key={i} className="flex items-center gap-3">
+                    <span className="text-[12px] text-[var(--color-ink-light)] w-[200px] text-right flex-shrink-0 truncate">
+                      {item.name}
+                    </span>
+                    <div className="flex-1 h-7 bg-[var(--color-parchment)]/50 rounded-sm overflow-hidden">
+                      <div
+                        className="h-full rounded-sm transition-all duration-700"
+                        style={{
+                          width: `${pct}%`,
+                          backgroundColor: barColor,
+                          opacity: 0.65 + 0.35 * (1 - i / equityBars.length),
+                        }}
+                      />
+                    </div>
+                    <span className="text-[12px] font-mono font-semibold w-[50px] text-right tabular-nums"
+                      style={{ color: isHigh ? "#b85c3a" : "var(--color-ink)" }}>
+                      {item.value}%
+                    </span>
+                    <span className="text-[11px] text-[var(--color-ink-muted)] w-[65px] text-right tabular-nums font-mono">
+                      n={item.n.toLocaleString()}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+            <p className="text-[11px] text-[var(--color-ink-muted)] mt-4 font-mono">
+              Source: Oregon Department of Education, Regular Attenders report. Groups with fewer than 10 students excluded.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* 12. DATA STILL NEEDED */}
       <section className="space-y-4">
         <DataNeeded
           title="Student Demographics"
@@ -820,21 +989,9 @@ export default function EducationDetail() {
           ]}
           color={ACCENT}
         />
-        <DataNeeded
-          title="Chronic Absenteeism Rate"
-          description="Percentage of students missing 10%+ of school days by district."
-          actions={[
-            {
-              label: "View ODE chronic absenteeism data",
-              type: "download",
-              href: "https://www.oregon.gov/ode/reports-and-data/students/Pages/Chronic-Absenteeism.aspx",
-            },
-          ]}
-          color={ACCENT}
-        />
       </section>
 
-      {/* 11. METHODOLOGY */}
+      {/* 13. METHODOLOGY */}
       <section>
         <SectionHeader icon={FileText} title="Methodology" />
         <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
@@ -861,6 +1018,13 @@ export default function EducationDetail() {
               <strong className="text-[var(--color-ink-light)]">Test scores</strong> are Smarter Balanced
               Assessment results published by ODE. Proficiency rates shown are the percentage of students
               meeting or exceeding grade-level standards.
+            </p>
+            <p>
+              <strong className="text-[var(--color-ink-light)]">Chronic absenteeism</strong> uses ODE&apos;s
+              Regular Attenders reports (2014-15 through 2024-25). A student is chronically absent if they
+              attend 90% or fewer of their enrolled days. Data for 2019-20 and 2020-21 is not published
+              due to COVID-19 disruptions. Rates from 2020-21 onward are not directly comparable to prior
+              years per ODE guidance. Groups with fewer than 10 students are suppressed for privacy.
             </p>
           </div>
         </div>
