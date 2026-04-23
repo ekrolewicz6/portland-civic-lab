@@ -1,139 +1,106 @@
 import Link from "next/link";
+import { PERMITS_URL } from "@/lib/site";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="bg-[var(--color-canopy)] text-white/60 mt-20">
-      {/* Top accent rule */}
       <div className="h-px bg-gradient-to-r from-transparent via-[var(--color-ember)]/40 to-transparent" />
 
       <div className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 py-14">
-        {/* Newspaper-style colophon */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
-          {/* Brand column */}
           <div className="md:col-span-5">
             <div className="flex items-baseline gap-3 mb-3">
               <h3 className="font-editorial-normal text-2xl text-white leading-none">
-                Portland Civic Lab
+                Portland Civic Labs
               </h3>
               <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember)]/70">
                 Est. 2026
               </span>
             </div>
             <p className="text-[13px] leading-relaxed max-w-sm text-white/65">
-              A civic dashboard for Portland, Oregon. Eight questions, answered
-              with real public data — automatically pulled from city APIs,
-              government records, and verified sources.
+              An independent initiative focused on improving how Portland&apos;s
+              systems work in practice. We build permitting tools first, then
+              connect them to city data that helps people understand what is
+              happening around them.
             </p>
             <p className="mt-4 text-[12px] leading-relaxed max-w-sm text-white/50 italic font-editorial">
-              &ldquo;Open data, open methodology, open books. If we can&apos;t
-              show the math, we won&apos;t make the claim.&rdquo;
+              &ldquo;Practical tools, real workflows, clear public data.&rdquo;
             </p>
           </div>
 
-          {/* Sections column */}
           <div className="md:col-span-3">
             <h4 className="text-[10px] font-mono font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em] mb-4">
-              Sections
+              Tools
             </h4>
             <ul className="text-[13px] space-y-2 text-white/65">
               <li>
-                <Link
-                  href="/dashboard/housing"
+                <a href={PERMITS_URL} className="hover:text-white transition-colors">
+                  Portland Permits
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${PERMITS_URL}/zoning`}
                   className="hover:text-white transition-colors"
                 >
-                  Housing
+                  Zoning Check
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${PERMITS_URL}/fees`}
+                  className="hover:text-white transition-colors"
+                >
+                  Fee Calculator
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${PERMITS_URL}/timeline`}
+                  className="hover:text-white transition-colors"
+                >
+                  Timeline Estimator
+                </a>
+              </li>
+              <li>
+                <Link href="/dashboard" className="hover:text-white transition-colors">
+                  Live Dashboard
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/dashboard/safety"
-                  className="hover:text-white transition-colors"
-                >
-                  Public Safety
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/dashboard/economy"
-                  className="hover:text-white transition-colors"
-                >
-                  Economy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/dashboard/homelessness"
-                  className="hover:text-white transition-colors"
-                >
-                  Homelessness
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/dashboard/education"
-                  className="hover:text-white transition-colors"
-                >
-                  Education
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/dashboard/climate"
-                  className="hover:text-white transition-colors"
-                >
-                  Climate
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/dashboard/quality"
-                  className="hover:text-white transition-colors"
-                >
-                  Quality of Life
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/dashboard/accountability"
-                  className="hover:text-white transition-colors"
-                >
-                  Accountability
+                <Link href="/methodology" className="hover:text-white transition-colors">
+                  Methodology
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Sources column */}
           <div className="md:col-span-4">
             <h4 className="text-[10px] font-mono font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em] mb-4">
-              Data Sources
+              Focus
             </h4>
             <ul className="text-[13px] space-y-2 text-white/65">
-              <li>City of Portland Open Data</li>
-              <li>Multnomah County HSD &amp; Health</li>
-              <li>Oregon Department of Education</li>
-              <li>U.S. Census Bureau (ACS)</li>
-              <li>Bureau of Labor Statistics</li>
-              <li>HUD &amp; HUD-PIT counts</li>
-              <li>Metro SHS Quarterly Reports</li>
+              <li>Permitting and zoning workflows</li>
+              <li>Property-level clarity before people apply</li>
+              <li>Real city data connected to real decisions</li>
+              <li>Tools that reduce delays and repeated errors</li>
             </ul>
             <p className="mt-4 text-[11px] leading-relaxed text-white/50">
-              Every metric links back to its source. See methodology notes on
-              each section.
+              The dashboard remains part of the platform, but as a secondary tool
+              that helps residents and decision-makers understand performance in
+              housing, safety, infrastructure, and city systems.
             </p>
           </div>
         </div>
 
-        {/* Bottom rule */}
         <div className="mt-12 pt-6 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[12px] text-white/55">
-            &copy; {year} Portland Civic Lab &middot; Public data, freely
-            available
+            &copy; {year} Portland Civic Labs &middot; Public data, freely available
           </p>
           <p className="text-[10px] text-white/45 font-mono uppercase tracking-[0.2em]">
-            Auto-updated &middot; Source-linked data
+            Practical tools &middot; Clear public data
           </p>
         </div>
       </div>

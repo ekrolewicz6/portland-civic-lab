@@ -1,11 +1,11 @@
 import Link from "next/link";
+import { PERMITS_URL } from "@/lib/site";
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-[var(--color-canopy)] text-white">
       <div className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-14">
-          {/* Logo & wordmark */}
           <Link href="/" className="flex items-center gap-3 group">
             <svg
               width="28"
@@ -31,19 +31,27 @@ export default function Header() {
             </svg>
             <div className="flex items-baseline gap-2">
               <span className="text-[15px] font-semibold tracking-tight">
-                Portland Civic Lab
+                Portland Civic Labs
               </span>
               <span className="hidden sm:inline text-[11px] font-medium text-[var(--color-sage)] uppercase tracking-[0.15em]">
-                Civic Dashboard
+                Permits & Data Tools
               </span>
             </div>
           </Link>
 
-          {/* Edition marker — mimics a newspaper masthead instead of a nav bar */}
-          <div className="hidden sm:flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.2em] text-white/40">
-            <span>Vol. I</span>
-            <span className="w-px h-3 bg-white/15" />
-            <span>Daily Edition</span>
+          <div className="flex items-center gap-5 text-[11px] font-mono uppercase tracking-[0.16em]">
+            <a
+              href={PERMITS_URL}
+              className="hidden sm:inline text-[var(--color-sage)] hover:text-white transition-colors"
+            >
+              Portland Permits
+            </a>
+            <Link
+              href="/dashboard"
+              className="text-white/55 hover:text-white transition-colors"
+            >
+              Dashboard
+            </Link>
           </div>
         </div>
       </div>

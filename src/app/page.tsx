@@ -1,254 +1,262 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BarChart3, Calculator, Clock3, MapPinned } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import {
-  fetchQuestionData,
-  getBaseUrl,
-  extractHeadlineValue,
-  extractHeadlineLabel,
-} from "@/lib/dashboard-data";
-
-export const dynamic = "force-dynamic";
+import { PERMITS_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Portland Civic Lab — Portland, by the numbers",
+    absolute: "Portland Civic Labs — Practical tools for permits and city systems",
   },
   description:
-    "A live civic dashboard for Portland, Oregon. Eight questions held to public record — housing, safety, homelessness, economy, education, climate, quality of life, and accountability. Real data from city APIs and government records. Updated automatically. Every number linked to its source.",
+    "Portland Civic Labs builds practical tools that simplify permitting, surface real city data, and help Portlanders navigate how the city actually works.",
   alternates: { canonical: "https://www.portlandciviclab.org" },
   openGraph: {
-    title: "Portland Civic Lab — Portland, by the numbers",
-    description:
-      "Eight questions held to public record. Real data, updated automatically, every number linked to its source.",
+    title: "Portland Civic Labs — Practical tools for permits and city systems",
+    description: "Tools that simplify permitting and make Portland's city data easier to use.",
     url: "https://www.portlandciviclab.org",
-    siteName: "Portland Civic Lab",
+    siteName: "Portland Civic Labs",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portland Civic Lab — Portland, by the numbers",
-    description:
-      "Eight questions held to public record. Real data, updated automatically, every number linked to its source.",
+    title: "Portland Civic Labs — Practical tools for permits and city systems",
+    description: "Tools that simplify permitting and make Portland's city data easier to use.",
   },
 };
 
-function formatEditionDate(d: Date): string {
-  return d
-    .toLocaleDateString("en-US", {
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    })
-    .toUpperCase();
-}
+const permitTools = [
+  {
+    title: "Zoning Check",
+    description: "Understand what is allowed on your property.",
+    href: `${PERMITS_URL}/zoning`,
+    icon: MapPinned,
+  },
+  {
+    title: "Fee Calculator",
+    description: "Estimate costs before submitting anything.",
+    href: `${PERMITS_URL}/fees`,
+    icon: Calculator,
+  },
+  {
+    title: "Timeline Estimator",
+    description: "See how long approvals typically take.",
+    href: `${PERMITS_URL}/timeline`,
+    icon: Clock3,
+  },
+];
 
-export default async function HomePage() {
-  const baseUrl = await getBaseUrl();
-  const questions = await fetchQuestionData(baseUrl);
-  const editionDate = formatEditionDate(new Date());
-
+export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--color-paper)]">
       <Header />
 
-      {/* ─── Newspaper Masthead ──────────────────────────────────────── */}
       <section className="relative bg-[var(--color-canopy)] noise-overlay overflow-hidden">
-        {/* Subtle background atmosphere */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--color-canopy-light)] rounded-full blur-[180px] opacity-25 -translate-y-1/2 translate-x-1/4 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[420px] h-[420px] bg-[var(--color-ember)] rounded-full blur-[160px] opacity-[0.06] translate-y-1/2 -translate-x-1/3 pointer-events-none" />
 
-        <div className="relative z-10 max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 pt-8 pb-10 sm:pt-10 sm:pb-12">
-          {/* Edition rule */}
-          <div className="flex items-center gap-4 text-[10px] font-mono uppercase tracking-[0.22em] text-white/35">
-            <span className="text-[var(--color-ember)]/80">Vol. I &middot; No. 1</span>
-            <div className="flex-1 h-px bg-white/10" />
-            <span>{editionDate}</span>
-          </div>
-
-          {/* Masthead headline */}
-          <div className="mt-5 sm:mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
-            <div className="lg:col-span-8">
-              <h1 className="font-editorial-normal text-[40px] sm:text-[52px] lg:text-[64px] text-white leading-[1.02] tracking-tight animate-fade-up">
-                Portland,{" "}
-                <span className="font-editorial italic text-[var(--color-ember-bright)]">
-                  by the numbers
-                </span>
-              </h1>
+        <div className="relative z-10 max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 py-14 sm:py-18 lg:py-22">
+          <div className="max-w-4xl">
+            <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]/85 animate-fade-up">
+              <span>Portland Civic Labs</span>
+              <div className="w-8 h-px bg-[var(--color-ember)]/60" />
+              <span>Portland, Oregon</span>
             </div>
-            <div className="lg:col-span-4 lg:pb-2">
-              <p
-                className="text-[14px] sm:text-[15px] text-white/55 leading-relaxed max-w-md lg:border-l lg:border-white/15 lg:pl-5 animate-fade-up"
-                style={{ animationDelay: "100ms" }}
+
+            <h1 className="mt-6 font-editorial-normal text-[42px] sm:text-[54px] lg:text-[72px] text-white leading-[1.02] tracking-tight animate-fade-up">
+              Make Portland&apos;s systems easier to understand
+              <span className="font-editorial italic text-[var(--color-ember-bright)]">
+                {" "}and easier to use
+              </span>
+            </h1>
+
+            <p
+              className="mt-6 max-w-2xl text-[16px] sm:text-[18px] text-white/68 leading-relaxed animate-fade-up"
+              style={{ animationDelay: "100ms" }}
+            >
+              Portland Civic Labs builds practical tools that simplify permitting,
+              surface real city data, and help Portlanders navigate how the city
+              actually works.
+            </p>
+
+            <div
+              className="mt-8 flex flex-col sm:flex-row gap-3 animate-fade-up"
+              style={{ animationDelay: "180ms" }}
+            >
+              <a
+                href={PERMITS_URL}
+                className="inline-flex items-center justify-center gap-2 rounded-sm bg-[var(--color-ember)] px-5 py-3 text-[15px] font-semibold text-[var(--color-canopy)] transition-colors hover:bg-[var(--color-ember-bright)]"
               >
-                Eight questions about Portland, answered with public data.
-                Sourced from city APIs and government records — updated
-                automatically, every number linked to its source.
-              </p>
-            </div>
-          </div>
-
-          {/* Bottom rule */}
-          <div className="mt-7 sm:mt-8 h-px bg-gradient-to-r from-[var(--color-ember)]/40 via-white/15 to-transparent" />
-        </div>
-      </section>
-
-      {/* ─── 8-Card Dashboard Grid ──────────────────────────────────── */}
-      <section className="relative max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 pt-8 sm:pt-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
-          {questions.map((q, i) => {
-            const api = q.apiData;
-            const hasData =
-              api && api.dataStatus !== "unavailable" && api.dataAvailable !== false;
-            const value = hasData ? extractHeadlineValue(api?.headline) : "—";
-            const label = hasData
-              ? extractHeadlineLabel(api?.headline)
-              : "Data collection in progress";
-            const sourceText = hasData ? api?.source : "Pending";
-
-            return (
+                Explore Portland Permits
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
               <Link
-                key={q.id}
-                href={`/dashboard/${q.id}`}
-                className="group relative bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5 sm:p-6 transition-all duration-300 hover:border-[var(--color-sage)] hover:-translate-y-0.5 overflow-hidden animate-fade-up"
-                style={
-                  {
-                    animationDelay: `${120 + i * 50}ms`,
-                    "--accent": q.color,
-                  } as React.CSSProperties
-                }
+                href="/dashboard"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/15 bg-white/6 px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
               >
-                {/* Accent rule along the top */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px] transition-all duration-300 group-hover:h-[5px]"
-                  style={{ backgroundColor: q.color, opacity: 0.85 }}
-                />
-
-                {/* Section label */}
-                <div className="flex items-center justify-between mb-3 mt-1">
-                  <span
-                    className="text-[11px] sm:text-[12px] font-mono font-bold uppercase tracking-[0.16em]"
-                    style={{ color: q.color }}
-                  >
-                    Section {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <ArrowUpRight className="w-4 h-4 text-[var(--color-ink-muted)]/40 group-hover:text-[var(--color-ink)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
-                </div>
-
-                {/* Question */}
-                <h2 className="font-editorial text-[16px] sm:text-[17px] lg:text-[18px] text-[var(--color-ink)] leading-snug min-h-[48px]">
-                  {q.question}
-                </h2>
-
-                {/* Big stat */}
-                <p className="mt-4 text-[34px] sm:text-[38px] lg:text-[42px] font-bold text-[var(--color-ink)] tracking-tight leading-none tabular-nums">
-                  {value}
-                </p>
-
-                {/* Label */}
-                <p className="mt-2 text-[13px] sm:text-[14px] text-[var(--color-ink-light)] leading-snug line-clamp-2 min-h-[36px]">
-                  {label}
-                </p>
-
-                {/* Footer source line */}
-                <div className="mt-4 pt-3 border-t border-[var(--color-parchment)] flex items-center justify-between gap-2">
-                  <span className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.1em] text-[var(--color-ink-muted)] truncate">
-                    {sourceText}
-                  </span>
-                  <span className="text-[11px] sm:text-[12px] font-mono font-semibold uppercase tracking-wider text-[var(--color-canopy)]/70 group-hover:text-[var(--color-canopy)] transition-colors flex-shrink-0">
-                    Read →
-                  </span>
-                </div>
+                View Live Dashboard
+                <BarChart3 className="w-4 h-4" />
               </Link>
-            );
-          })}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ─── Below the fold: editorial note + sources strip ─────────── */}
-      <section className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 mt-16 sm:mt-20 mb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-8 h-px bg-[var(--color-ember)]" />
-              <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
-                Editor&apos;s Note
-              </span>
-            </div>
-            <p className="font-editorial text-[20px] sm:text-[22px] lg:text-[24px] leading-snug text-[var(--color-ink)] max-w-2xl">
-              Portland is making important decisions about housing, homelessness,
-              public safety, and the city&apos;s future. Good decisions start with{" "}
-              <em className="font-editorial italic text-[var(--color-canopy)]">
-                good data
-              </em>
-              . This dashboard puts that data in one place so everyone is
-              working from the same set of facts.
-            </p>
-            <p className="mt-5 text-[14px] text-[var(--color-ink-muted)] leading-relaxed max-w-2xl">
-              Every number above is pulled directly from a public source —
-              the city&apos;s permit database, the county&apos;s by-name list,
-              ODE enrollment files, BLS labor reports — and updated
-              automatically. Click any section to see the underlying data,
-              the methodology, and the gaps we&apos;re still trying to fill.
-            </p>
+      <section className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 py-16 sm:py-20">
+        <div className="max-w-3xl">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-8 h-px bg-[var(--color-ember)]" />
+            <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+              Start Here
+            </span>
           </div>
+          <h2 className="font-editorial text-[30px] sm:text-[38px] lg:text-[46px] text-[var(--color-ink)] leading-tight">
+            Start with what people need most: permits
+          </h2>
+          <p className="mt-4 max-w-2xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
+            Permitting is one of the most complex parts of interacting with the
+            city. We built a simpler way to understand what you can build, what
+            it will cost, and how long it will take before you even apply.
+          </p>
+        </div>
 
-          <div>
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+          {permitTools.map((tool, index) => (
+            <a
+              key={tool.title}
+              href={tool.href}
+              className="group relative bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-6 transition-all duration-300 hover:border-[var(--color-sage)] hover:-translate-y-0.5 overflow-hidden animate-fade-up"
+              style={{ animationDelay: `${index * 70}ms` }}
+            >
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-[var(--color-canopy)]/80 transition-all duration-300 group-hover:h-[5px]" />
+              <div className="w-11 h-11 rounded-sm bg-[var(--color-canopy)]/7 text-[var(--color-canopy)] flex items-center justify-center">
+                <tool.icon className="w-5 h-5" />
+              </div>
+              <h3 className="mt-5 font-editorial text-[22px] text-[var(--color-ink)]">
+                {tool.title}
+              </h3>
+              <p className="mt-3 text-[14px] text-[var(--color-ink-light)] leading-relaxed">
+                {tool.description}
+              </p>
+              <div className="mt-6 inline-flex items-center gap-2 text-[12px] font-mono uppercase tracking-[0.14em] text-[var(--color-canopy)]">
+                Open tool
+                <ArrowUpRight className="w-4 h-4" />
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-8">
+          <a
+            href={PERMITS_URL}
+            className="inline-flex items-center gap-2 text-[14px] font-semibold text-[var(--color-canopy)] hover:text-[var(--color-canopy-mid)] transition-colors"
+          >
+            Open Portland Permits
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </section>
+
+      <section className="bg-[var(--color-paper-warm)] border-y border-[var(--color-parchment)]">
+        <div className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 py-16 sm:py-18">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-px bg-[var(--color-ember)]" />
+                <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+                  The Problem
+                </span>
+              </div>
+              <h2 className="font-editorial text-[28px] sm:text-[34px] text-[var(--color-ink)] leading-tight">
+                The system works, but it creates unnecessary friction
+              </h2>
+              <p className="mt-4 text-[15px] text-[var(--color-ink-light)] leading-relaxed max-w-xl">
+                Most city processes were not designed to be easy to navigate.
+                Applications are often incomplete, reviews happen step-by-step,
+                and small issues can delay projects for weeks.
+              </p>
+              <ul className="mt-6 space-y-3 text-[14px] text-[var(--color-ink-light)]">
+                <li className="flex gap-3"><span className="font-mono text-[var(--color-ember)]">01</span><span>Requirements are hard to understand upfront</span></li>
+                <li className="flex gap-3"><span className="font-mono text-[var(--color-ember)]">02</span><span>Reviews do not happen at the same time</span></li>
+                <li className="flex gap-3"><span className="font-mono text-[var(--color-ember)]">03</span><span>Small errors cause repeated delays</span></li>
+                <li className="flex gap-3"><span className="font-mono text-[var(--color-ember)]">04</span><span>Timelines are often unpredictable</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-px bg-[var(--color-ember)]" />
+                <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+                  What We Built
+                </span>
+              </div>
+              <h2 className="font-editorial text-[28px] sm:text-[34px] text-[var(--color-ink)] leading-tight">
+                A better way for systems to work
+              </h2>
+              <p className="mt-4 text-[15px] text-[var(--color-ink-light)] leading-relaxed max-w-xl">
+                Instead of changing the rules, we improve how the process works.
+              </p>
+              <div className="mt-8 space-y-5">
+                <div className="bg-white/70 border border-[var(--color-parchment)] rounded-sm p-5">
+                  <h3 className="font-semibold text-[var(--color-ink)]">Catch issues early</h3>
+                  <p className="mt-2 text-[14px] text-[var(--color-ink-light)]">Identify missing information before submission.</p>
+                </div>
+                <div className="bg-white/70 border border-[var(--color-parchment)] rounded-sm p-5">
+                  <h3 className="font-semibold text-[var(--color-ink)]">Review in parallel</h3>
+                  <p className="mt-2 text-[14px] text-[var(--color-ink-light)]">Reduce delays caused by sequential workflows.</p>
+                </div>
+                <div className="bg-white/70 border border-[var(--color-parchment)] rounded-sm p-5">
+                  <h3 className="font-semibold text-[var(--color-ink)]">Make progress visible</h3>
+                  <p className="mt-2 text-[14px] text-[var(--color-ink-light)]">Clear timelines and next steps for everyone.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 py-16 sm:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+          <div className="lg:col-span-7">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-8 h-px bg-[var(--color-ember)]" />
               <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
-                Principles
+                Dashboard
               </span>
             </div>
-            <ul className="space-y-3 text-[13px] text-[var(--color-ink-muted)] leading-snug">
-              <li className="flex gap-3">
-                <span className="font-mono text-[var(--color-canopy)]/40 flex-shrink-0">
-                  01
-                </span>
-                <span>
-                  <span className="text-[var(--color-ink)] font-semibold">
-                    Real data only.
-                  </span>{" "}
-                  No projections, no marketing.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="font-mono text-[var(--color-canopy)]/40 flex-shrink-0">
-                  02
-                </span>
-                <span>
-                  <span className="text-[var(--color-ink)] font-semibold">
-                    Open methodology.
-                  </span>{" "}
-                  If we can&apos;t show the math, we won&apos;t make the claim.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="font-mono text-[var(--color-canopy)]/40 flex-shrink-0">
-                  03
-                </span>
-                <span>
-                  <span className="text-[var(--color-ink)] font-semibold">
-                    Honest gaps.
-                  </span>{" "}
-                  When the data isn&apos;t there, we say so.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="font-mono text-[var(--color-canopy)]/40 flex-shrink-0">
-                  04
-                </span>
-                <span>
-                  <span className="text-[var(--color-ink)] font-semibold">
-                    Built for Portlanders.
-                  </span>{" "}
-                  Questions that matter to the people who live here.
-                </span>
-              </li>
-            </ul>
+            <h2 className="font-editorial text-[30px] sm:text-[38px] lg:text-[44px] text-[var(--color-ink)] leading-tight">
+              Understand how the city is performing
+            </h2>
+            <p className="mt-4 max-w-2xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
+              We built a live dashboard to make city data easier to explore, so
+              residents and decision-makers can see what is happening in housing,
+              safety, and infrastructure.
+            </p>
+            <div className="mt-7">
+              <Link
+                href="/dashboard"
+                className="inline-flex items-center gap-2 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] px-5 py-3 text-[15px] font-semibold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-paper)]"
+              >
+                View the dashboard
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+          <div className="lg:col-span-5 bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-6">
+            <h3 className="font-editorial text-[24px] text-[var(--color-ink)]">Built for Portland</h3>
+            <p className="mt-3 text-[14px] text-[var(--color-ink-light)] leading-relaxed">
+              Our tools are designed using Portland&apos;s zoning rules,
+              permitting processes, and real-world workflows. We focus on
+              practical improvements that reduce delays and make systems easier
+              to use.
+            </p>
+            <h4 className="mt-6 font-semibold text-[var(--color-ink)]">Looking ahead</h4>
+            <p className="mt-2 text-[14px] text-[var(--color-ink-light)] leading-relaxed">
+              We are starting with permitting, with the goal of improving how
+              city systems work more broadly, making them more predictable,
+              accessible, and easier for everyone to navigate.
+            </p>
           </div>
         </div>
       </section>
