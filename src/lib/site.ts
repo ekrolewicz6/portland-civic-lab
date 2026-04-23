@@ -1,1 +1,1 @@
-export const PERMITS_URL = "https://portland-civic-labs.vercel.app";
+export const PERMITS_URL = "https://www.portlandpermits.org";
