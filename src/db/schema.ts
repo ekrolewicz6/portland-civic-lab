@@ -291,6 +291,38 @@ export const metroBusinessFormationQuarterly = pgTable("metro_business_formation
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
 });
 
+// Annual MSA-level business applications, aggregated from Census BFS county XLSX
+// (https://www.census.gov/econ/bfs/xlsx/bfs_county_apps_annual.xlsx).
+export const metroBusinessApplicationsAnnual = pgTable("metro_business_applications_annual", {
+  metroCode: text("metro_code").notNull(),
+  year: integer("year").notNull(),
+  applicationsTotal: integer("applications_total").notNull(),
+  countiesIncluded: integer("counties_included").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
+// Annual MSA-level ACS 1-year economic indicators (B23025 employment status,
+// B19013 median household income). Census API, no key required.
+export const metroAcsAnnual = pgTable("metro_acs_annual", {
+  metroCode: text("metro_code").notNull(),
+  year: integer("year").notNull(),
+  population16Plus: integer("population_16_plus"),
+  laborForce: integer("labor_force"),
+  unemployedAcs: integer("unemployed_acs"),
+  medianHouseholdIncome: integer("median_household_income"),
+  lfpRate: numeric("lfp_rate", { precision: 5, scale: 2 }),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
+// Monthly MSA-level Zillow ZHVI (typical home value), all-homes tier, smoothed/SA.
+export const metroZhviMonthly = pgTable("metro_zhvi_monthly", {
+  metroCode: text("metro_code").notNull(),
+  year: integer("year").notNull(),
+  month: integer("month").notNull(),
+  zhvi: numeric("zhvi", { precision: 12, scale: 2 }),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
 // ── PBJ Public Records (Portland Business Journal weekly scrape) ────────
 // Source: intelligence/bizjournals-records/insights/output/*.json
 // Loaded by ingest/sync-pbj-records.ts. See plans/purrfect-snuggling-island.md.

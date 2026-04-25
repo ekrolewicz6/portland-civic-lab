@@ -16,7 +16,13 @@
  * Pure function. No DB calls — caller assembles the inputs from queries.
  */
 
-export type IndicatorKey = "unemployment" | "employment" | "wageGrowth";
+export type IndicatorKey =
+  | "unemployment"
+  | "employment"
+  | "wageGrowth"
+  | "businessFormation"
+  | "laborForceParticipation"
+  | "affordability";
 
 /** A single observation for one metro at one point in time. */
 export interface MetroObservation {
@@ -86,10 +92,17 @@ export interface EmpiricalHealthResult {
   missing: IndicatorKey[];
 }
 
+// Six indicators, each ~17%, sum to 1.0. Composite reflects:
+//   - Labor health: unemployment + LFP (people working)
+//   - Job dynamism: employment YoY + business formation (firms growing)
+//   - Earnings & affordability: wage growth + housing affordability
 const RAW_WEIGHTS: Record<IndicatorKey, number> = {
-  unemployment: 0.35,
-  employment: 0.35,
-  wageGrowth: 0.3,
+  unemployment: 0.17,
+  employment: 0.17,
+  wageGrowth: 0.17,
+  laborForceParticipation: 0.17,
+  businessFormation: 0.16,
+  affordability: 0.16,
 };
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
@@ -180,17 +193,24 @@ export interface EmpiricalInputs {
   unemployment: EmpiricalIndicatorInput | null;
   employment: EmpiricalIndicatorInput | null;
   wageGrowth: EmpiricalIndicatorInput | null;
+  laborForceParticipation: EmpiricalIndicatorInput | null;
+  businessFormation: EmpiricalIndicatorInput | null;
+  affordability: EmpiricalIndicatorInput | null;
 }
 
 export function computeEmpiricalHealth(inputs: EmpiricalInputs): EmpiricalHealthResult {
-  const raw: Array<{ key: IndicatorKey; sub: EmpiricalSubScore | null }> = [
-    { key: "unemployment", sub: inputs.unemployment ? scoreOne("unemployment", inputs.unemployment) : null },
-    { key: "employment", sub: inputs.employment ? scoreOne("employment", inputs.employment) : null },
-    {
-      key: "wageGrowth",
-      sub: inputs.wageGrowth ? scoreOne("wageGrowth", inputs.wageGrowth) : null,
-    },
+  const keys: IndicatorKey[] = [
+    "unemployment",
+    "employment",
+    "wageGrowth",
+    "laborForceParticipation",
+    "businessFormation",
+    "affordability",
   ];
+  const raw: Array<{ key: IndicatorKey; sub: EmpiricalSubScore | null }> = keys.map((k) => ({
+    key: k,
+    sub: inputs[k] ? scoreOne(k, inputs[k]!) : null,
+  }));
 
   const present = raw.filter((r) => r.sub !== null) as Array<{
     key: IndicatorKey;

@@ -104,6 +104,64 @@ const COMBINED_QUERY = `
         WHERE curr.metro_code = '${PORTLAND_METRO_CODE}' AND curr.avg_weekly_wage IS NOT NULL
       ) t
     ),
+    'lfpSnapshot', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        WITH latest AS (SELECT metro_code, MAX(year) AS y FROM metro_acs_annual WHERE lfp_rate IS NOT NULL GROUP BY metro_code),
+             anchored AS (SELECT MIN(y) AS common_y FROM latest)
+        SELECT a.metro_code, a.lfp_rate FROM metro_acs_annual a JOIN anchored ON a.year = anchored.common_y WHERE a.lfp_rate IS NOT NULL
+      ) t
+    ),
+    'lfpPortlandHistory', (
+      SELECT COALESCE(json_agg(lfp_rate ORDER BY year), '[]'::json)
+      FROM metro_acs_annual
+      WHERE metro_code = '${PORTLAND_METRO_CODE}' AND lfp_rate IS NOT NULL
+    ),
+    'bfaSnapshot', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        WITH common_year AS (
+          SELECT MIN(y) AS y FROM (
+            SELECT b.metro_code, MAX(b.year) AS y FROM metro_business_applications_annual b
+            JOIN metro_acs_annual a USING (metro_code, year) WHERE a.population_16_plus > 0 GROUP BY b.metro_code
+          ) latest
+        )
+        SELECT b.metro_code, (b.applications_total::numeric / NULLIF(a.population_16_plus, 0)) * 100000 AS apps_per_100k
+        FROM metro_business_applications_annual b
+        JOIN metro_acs_annual a USING (metro_code, year)
+        JOIN common_year cy ON b.year = cy.y WHERE a.population_16_plus > 0
+      ) t
+    ),
+    'bfaPortlandHistory', (
+      SELECT COALESCE(json_agg(rate ORDER BY year), '[]'::json) FROM (
+        SELECT b.year, (b.applications_total::numeric / NULLIF(a.population_16_plus, 0)) * 100000 AS rate
+        FROM metro_business_applications_annual b
+        JOIN metro_acs_annual a USING (metro_code, year)
+        WHERE b.metro_code = '${PORTLAND_METRO_CODE}' AND a.population_16_plus > 0
+      ) t
+    ),
+    'affSnapshot', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        WITH common_year AS (
+          SELECT MIN(y) AS y FROM (
+            SELECT z.metro_code, MAX(z.year) AS y FROM metro_zhvi_monthly z
+            JOIN metro_acs_annual a ON a.metro_code = z.metro_code AND a.year = z.year
+            WHERE z.month = 12 AND a.median_household_income > 0 GROUP BY z.metro_code
+          ) latest
+        )
+        SELECT z.metro_code, z.zhvi / NULLIF(a.median_household_income, 0) AS price_to_income
+        FROM metro_zhvi_monthly z
+        JOIN metro_acs_annual a ON a.metro_code = z.metro_code AND a.year = z.year
+        JOIN common_year cy ON z.year = cy.y
+        WHERE z.month = 12 AND a.median_household_income > 0
+      ) t
+    ),
+    'affPortlandHistory', (
+      SELECT COALESCE(json_agg(ratio ORDER BY year), '[]'::json) FROM (
+        SELECT z.year, z.zhvi / NULLIF(a.median_household_income, 0) AS ratio
+        FROM metro_zhvi_monthly z
+        JOIN metro_acs_annual a ON a.metro_code = z.metro_code AND a.year = z.year
+        WHERE z.metro_code = '${PORTLAND_METRO_CODE}' AND z.month = 12 AND a.median_household_income > 0
+      ) t
+    ),
     'pbjAsOf', (SELECT to_char(MAX(month),'YYYY-MM-DD') FROM pbj_business_monthly),
     'businessTrend12mo', (
       SELECT json_build_object('curr', curr, 'prior', prior) FROM (
@@ -185,7 +243,41 @@ export async function GET() {
       population: number | null;
     }>) ?? [];
 
+    const lfpInput = buildSnapshotInput({
+      metros,
+      snapshot: (p.lfpSnapshot as Row[]) ?? [],
+      valueKey: "lfp_rate",
+      inverted: false,
+      label: "Labor force participation",
+      description: "Civilian labor force / pop 16+. Census ACS B23025.",
+      source: "Census ACS",
+      portlandHistory: ((p.lfpPortlandHistory as unknown[]) ?? []).map((v) => Number(v)).filter((v) => Number.isFinite(v)),
+    });
+    const bfaInput = buildSnapshotInput({
+      metros,
+      snapshot: (p.bfaSnapshot as Row[]) ?? [],
+      valueKey: "apps_per_100k",
+      inverted: false,
+      label: "Business applications / 100k",
+      description: "Census BFS county roll-up / ACS pop 16+.",
+      source: "Census BFS + ACS",
+      portlandHistory: ((p.bfaPortlandHistory as unknown[]) ?? []).map((v) => Number(v)).filter((v) => Number.isFinite(v)),
+    });
+    const affInput = buildSnapshotInput({
+      metros,
+      snapshot: (p.affSnapshot as Row[]) ?? [],
+      valueKey: "price_to_income",
+      inverted: true,
+      label: "Home price-to-income",
+      description: "Zillow ZHVI / ACS median income. Lower = more affordable.",
+      source: "Zillow + Census ACS",
+      portlandHistory: ((p.affPortlandHistory as unknown[]) ?? []).map((v) => Number(v)).filter((v) => Number.isFinite(v)),
+    });
+
     const composite = computeEmpiricalHealth({
+      laborForceParticipation: lfpInput,
+      businessFormation: bfaInput,
+      affordability: affInput,
       unemployment: buildSnapshotInput({
         metros,
         snapshot: (p.unemploymentSnapshot as Row[]) ?? [],
