@@ -17,7 +17,7 @@ const COMBINED_QUERY = `
   SELECT json_build_object(
     'metros', (
       SELECT COALESCE(json_agg(t ORDER BY t.display_order), '[]'::json) FROM (
-        SELECT metro_code, short_name, is_portland, population
+        SELECT metro_code, short_name, is_portland, population, display_order
         FROM metro_metadata ORDER BY display_order
       ) t
     ),
