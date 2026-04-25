@@ -198,7 +198,10 @@ const COMBINED_QUERY = `
          AND prior.year = curr.year - 1
          AND prior.quarter = curr.quarter
         WHERE curr.industry_code <> '10'
-          AND length(curr.industry_code) = 3
+          -- length 4 = the 11 NAICS supersectors (1011..1029).
+          -- length 3 only has 2 broad rollups (101 Goods, 102 Services) which would
+          -- produce the same row in both gainers and losers — exactly the bug we hit.
+          AND length(curr.industry_code) = 4
           AND curr.year = (SELECT MAX(year) FROM economy.qcew_employment WHERE industry_code='10')
           AND curr.quarter = (SELECT MAX(quarter) FROM economy.qcew_employment WHERE industry_code='10' AND year = (SELECT MAX(year) FROM economy.qcew_employment WHERE industry_code='10'))
           AND curr.month3_employment > 1000
@@ -257,6 +260,34 @@ type Row = Record<string, unknown>;
 function num(v: unknown): number {
   const n = Number(v);
   return Number.isFinite(n) ? n : 0;
+}
+
+/**
+ * Authoritative entity classifier. The upstream Python pipeline's regex
+ * (`\bCo\.\b`) has a known bug — it fails on names ending in "Co." because
+ * `\.\b` requires a word boundary AFTER the period, which doesn't exist when
+ * the period is followed by a space. We re-derive here so PGE / similar names
+ * classify correctly without re-running the ingest.
+ *
+ * Patterns:
+ *   - Standard suffixes: LLC, LLP, INC, CORP, CORPORATION, LTD, LP, PLLC,
+ *     COMPANY, CO. (with trailing period or word boundary), PC.
+ *   - Trust patterns: "<Name> Trust", "<Name> Property Trust"
+ *   - Government / public agencies: "Metro" (Portland regional gov), "City of",
+ *     "County of", "Port of", and explicit Metro housing entities.
+ */
+function classifyBuyer(name: string | null | undefined): "entity" | "person" {
+  if (!name) return "person";
+  const n = name.trim();
+  if (!n) return "person";
+  // Common entity suffixes with robust trailing matchers.
+  const suffixRe =
+    /\b(LLC|L\.L\.C\.?|LLP|INC\.?|CORP\.?|CORPORATION|LTD\.?|LP|PLLC|PC\.?|COMPANY|CO\.|TRUST|HOLDINGS?)\b/i;
+  if (suffixRe.test(n)) return "entity";
+  // Government / public agencies are entities, not persons.
+  const govRe = /\b(METRO|CITY OF|COUNTY OF|PORT OF|HOMES? FORWARD|HOUSING AUTHORITY)\b/i;
+  if (govRe.test(n)) return "entity";
+  return "person";
 }
 
 function buildSnapshotInput(args: {
@@ -374,12 +405,18 @@ export async function GET() {
     // Industry gainers / losers (still from QCEW NAICS detail).
     const industryYoY = (p.industryYoY as Row[]) ?? [];
     const sortedByPct = [...industryYoY].sort((a, b) => num(b.pct) - num(a.pct));
-    const industryGainers = sortedByPct.slice(0, 3).map((r) => ({
+    // Guard against overlap when fewer than 6 sectors come back: split the
+    // sorted list in half so the same sector never shows in both gainers and
+    // losers. Only true gainers (pct >= 0) appear as gainers; only losers <0.
+    const half = Math.floor(sortedByPct.length / 2);
+    const gainersPool = sortedByPct.slice(0, Math.max(half, 3)).filter((r) => num(r.pct) >= 0);
+    const losersPool = sortedByPct.slice(half).filter((r) => num(r.pct) < 0);
+    const industryGainers = gainersPool.slice(0, 3).map((r) => ({
       sector: String(r.industry_title ?? r.industry_code),
       jobs_delta: num(r.jobs_delta),
       pct: num(r.pct),
     }));
-    const industryLosers = sortedByPct
+    const industryLosers = losersPool
       .slice(-3)
       .reverse()
       .map((r) => ({
@@ -398,7 +435,12 @@ export async function GET() {
       // Tier-2 (descriptive only, NOT in the score).
       businessSeries: (p.businessSeries as Row[]) ?? [],
       reSeries: (p.reSeries as Row[]) ?? [],
-      serialBuyers: (p.serialBuyers as Row[]) ?? [],
+      serialBuyers: ((p.serialBuyers as Row[]) ?? []).map((b) => ({
+        ...b,
+        // Override the upstream-stored buyer_type with our authoritative classifier
+        // (fixes "Portland General Electric Co." being labeled "person", etc.).
+        buyer_type: classifyBuyer(b.buyer_name as string | null),
+      })),
       distressEntities: (p.distressEntities as Row[]) ?? [],
       topLawsuits: (p.topLawsuits as Row[]) ?? [],
       zipInvestment: (p.zipInvestment as Row[]) ?? [],

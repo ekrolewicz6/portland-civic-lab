@@ -559,20 +559,36 @@ export default function EconomicHealthDetail() {
             </div>
             <div>
               <h3 className="text-[14px] font-semibold text-[var(--color-ink)] mb-3">
-                Top ZIPs by total investment
+                Top ZIPs by total investment (permits + real estate)
               </h3>
               {data.zipInvestment.length > 0 ? (
-                <BarChart
-                  height={Math.min(280, 28 * data.zipInvestment.slice(0, 5).length + 60)}
-                  layout="vertical"
-                  color={ACCENT}
-                  valuePrefix="$"
-                  data={data.zipInvestment.slice(0, 5).map((z) => ({
-                    name: z.zip_code,
-                    value: Math.round(Number(z.total_investment_usd) / 1_000_000),
-                  }))}
-                  valueSuffix="M"
-                />
+                <div className="space-y-2">
+                  {data.zipInvestment.slice(0, 5).map((z, i, arr) => {
+                    const maxVal = Number(arr[0].total_investment_usd) || 1;
+                    const v = Number(z.total_investment_usd);
+                    const pct = Math.max(2, Math.round((v / maxVal) * 100));
+                    return (
+                      <div key={z.zip_code} className="flex items-center gap-3">
+                        <span className="text-[14px] font-mono text-[var(--color-ink)] w-[60px] text-right flex-shrink-0">
+                          {z.zip_code}
+                        </span>
+                        <div className="flex-1 h-6 bg-[var(--color-parchment)]/50 rounded-sm overflow-hidden">
+                          <div
+                            className="h-full rounded-sm transition-all duration-500"
+                            style={{
+                              width: `${pct}%`,
+                              backgroundColor: ACCENT,
+                              opacity: 0.65 + 0.35 * (1 - i / Math.max(1, arr.length - 1)),
+                            }}
+                          />
+                        </div>
+                        <span className="text-[14px] font-mono font-semibold text-[var(--color-ink)] w-[80px] text-right flex-shrink-0">
+                          {fmtUsd(v)}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               ) : (
                 <p className="text-[14px] text-[var(--color-ink-muted)]">No ZIP data.</p>
               )}
