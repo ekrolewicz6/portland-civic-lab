@@ -259,65 +259,15 @@ function ScoreBar({ s }: { s: SubScore }) {
         </span>
       </div>
 
-      {/* Distribution ribbon (p10-p90 of Portland history + min-max range) */}
-      <div className="relative w-full h-7" title={`Portland 10y history range: ${hist.min.toFixed(1)}–${hist.max.toFixed(1)}`}>
-        {/* Portland historical full range (faint) */}
-        <div className="absolute top-1/2 -translate-y-1/2 h-1 bg-[var(--color-parchment)] rounded-sm"
-             style={{ left: `${pos(hist.min)}%`, width: `${Math.max(2, pos(hist.max) - pos(hist.min))}%` }} />
-        {/* Portland p25-p75 (bolder) */}
-        <div className="absolute top-1/2 -translate-y-1/2 h-2 bg-[#d8c8a8] rounded-sm"
-             style={{ left: `${pos(hist.p25)}%`, width: `${Math.max(2, pos(hist.p75) - pos(hist.p25))}%` }} />
-        {/* Portland historical median tick */}
-        <div className="absolute top-1/2 -translate-y-1/2 w-px h-4 bg-[#a8956c]"
-             style={{ left: `${pos(hist.median)}%` }}
-             title={`Portland 10y median: ${hist.median.toFixed(1)}`} />
-
-        {/* Peer ticks (small dots, blue) */}
-        {peers
-          .filter((p) => !p.isPortland)
-          .map((p) => (
-            <div
-              key={p.metroCode}
-              className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#7c9bb0] opacity-80"
-              style={{ left: `calc(${pos(p.current)}% - 3px)` }}
-              title={`${p.shortName}: ${p.current.toFixed(1)}`}
-            />
-          ))}
-
-        {/* Portland current value (big circle in score color) */}
-        <div
-          className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 border-[var(--color-paper-warm)]"
-          style={{
-            left: `calc(${pos(s.portlandCurrent!)}% - 7px)`,
-            backgroundColor: scoreColor,
-            boxShadow: "0 1px 2px rgba(0,0,0,0.18)",
-          }}
-          title={`Portland today: ${fmtVal(s)}`}
-        />
-      </div>
-
-      {/* Caption row: Portland today, vs Portland history, vs peers */}
-      <div className="flex flex-wrap gap-x-4 gap-y-0.5 text-[13px] text-[var(--color-ink-muted)]">
-        <span>
-          <strong className="text-[var(--color-ink)]">Portland</strong> {fmtVal(s)} ·
-        </span>
-        <span>
-          vs Portland history:{" "}
-          <strong className="text-[var(--color-ink)]">{s.portlandHistoricalPercentile}p</strong>
-          <span className="opacity-70">
-            {" "}
-            (median {hist.median.toFixed(1)})
-          </span>
-        </span>
-        <span>
-          vs peers today:{" "}
-          <strong className="text-[var(--color-ink)]">{s.peerPercentile}p</strong>
-          <span className="opacity-70">
-            {" "}
-            (peer median {(s.peerMedian ?? 0).toFixed(1)})
-          </span>
-        </span>
-      </div>
+      {/* Editorial-almanac ribbon: 64px tall, three lanes (peer pills / track / caption) */}
+      <RibbonChart
+        s={s}
+        scoreColor={scoreColor}
+        pos={pos}
+        peers={peers}
+        portlandPeer={portlandPeer}
+        hist={hist}
+      />
 
       <p className="text-[13px] text-[var(--color-ink-muted)] leading-snug">
         {s.description} <span className="opacity-70">Source: {s.source ?? "—"}.</span>
@@ -326,25 +276,247 @@ function ScoreBar({ s }: { s: SubScore }) {
   );
 }
 
-function PeerLegend() {
+const PEER_CODES: Record<string, string> = {
+  Seattle: "SEA",
+  Denver: "DEN",
+  Austin: "AUS",
+  "San Francisco": "SFO",
+  Minneapolis: "MIN",
+  Phoenix: "PHX",
+  Portland: "PDX",
+};
+
+const peerCode = (name: string): string =>
+  PEER_CODES[name] ?? name.slice(0, 3).toUpperCase();
+
+/**
+ * Format a peer's value with the same convention as the Portland marker.
+ * Pulls hint from the indicator label so we know whether to suffix with %.
+ */
+function fmtPeerValue(value: number, label: string): string {
+  const isPercent =
+    label.toLowerCase().includes("rate") || label.toLowerCase().includes("growth");
+  return isPercent ? `${value.toFixed(1)}%` : Math.round(value).toLocaleString();
+}
+
+/**
+ * Detect collisions between peer pills (and Portland) and nudge upper-row pills
+ * by ±10px so 3-letter codes don't visually overlap. Returns a map of
+ * metroCode → horizontal offset in px (added on top of the percentage `left`).
+ */
+function jitterOffsets(
+  peers: PeerObservation[],
+  pos: (v: number) => number,
+  trackWidthPx = 700, // approximate; the percentage-based positions get px-jittered
+): Record<string, number> {
+  const PILL_WIDTH = 36; // 3-letter code + padding
+  const sorted = [...peers].sort((a, b) => a.current - b.current);
+  const offsets: Record<string, number> = {};
+  for (let i = 1; i < sorted.length; i++) {
+    const prev = sorted[i - 1];
+    const curr = sorted[i];
+    const prevX = (pos(prev.current) / 100) * trackWidthPx + (offsets[prev.metroCode] ?? 0);
+    const currX = (pos(curr.current) / 100) * trackWidthPx;
+    if (currX - prevX < PILL_WIDTH) {
+      offsets[curr.metroCode] = PILL_WIDTH - (currX - prevX);
+    }
+  }
+  return offsets;
+}
+
+interface RibbonChartProps {
+  s: SubScore;
+  scoreColor: string;
+  pos: (v: number) => number;
+  peers: PeerObservation[];
+  portlandPeer: PeerObservation | undefined;
+  hist: NonNullable<SubScore["portlandHistory"]>;
+}
+
+function RibbonChart({ s, scoreColor, pos, peers, portlandPeer, hist }: RibbonChartProps) {
+  const offsets = jitterOffsets(peers, pos);
+
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-[var(--color-ink-muted)] pt-1">
-      <span className="inline-flex items-center gap-1.5">
-        <span className="inline-block w-3.5 h-3.5 rounded-full" style={{ backgroundColor: "#5c8b9c", border: "2px solid var(--color-paper-warm)" }} />
-        Portland today
-      </span>
-      <span className="inline-flex items-center gap-1.5">
-        <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#7c9bb0]" />
-        Peer metros today
-      </span>
-      <span className="inline-flex items-center gap-1.5">
-        <span className="inline-block w-3 h-2 bg-[#d8c8a8] rounded-sm" />
-        Portland p25–p75 (10y)
-      </span>
-      <span className="inline-flex items-center gap-1.5">
-        <span className="inline-block w-px h-3 bg-[#a8956c]" />
-        Portland 10y median
-      </span>
+    <div className="relative w-full" style={{ height: 104 }}>
+      {/* ── Lane 1 (top, ~24px): peer pills + drop-lines ───────────────── */}
+      {peers
+        .filter((p) => !p.isPortland)
+        .map((p) => {
+          const leftPct = pos(p.current);
+          const offsetPx = offsets[p.metroCode] ?? 0;
+          return (
+            <div
+              key={p.metroCode}
+              className="group absolute top-0"
+              style={{
+                left: `calc(${leftPct}% + ${offsetPx}px)`,
+                transform: "translateX(-50%)",
+                zIndex: 5,
+              }}
+            >
+              {/* The pill (always visible 3-letter code) — also the hover hit target */}
+              <div
+                className="relative inline-flex items-center justify-center cursor-pointer select-none
+                           h-[22px] px-2 rounded-full border border-[#7c9bb0]/60 bg-transparent
+                           text-[11px] font-mono tracking-[0.06em] uppercase text-[#5a7a8a]
+                           transition-all duration-150 ease-out
+                           hover:bg-[var(--color-canopy)] hover:text-white hover:border-[var(--color-canopy)]
+                           hover:shadow-[0_1px_4px_rgba(15,36,25,0.18)]"
+                style={{ minWidth: 36 }}
+              >
+                {peerCode(p.shortName)}
+                {/* Custom CSS-only tooltip */}
+                <span
+                  className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-[calc(100%+4px)]
+                             whitespace-nowrap rounded-sm bg-[var(--color-canopy)] text-white
+                             px-2 py-1 text-[12px] font-mono leading-none
+                             opacity-0 group-hover:opacity-100 transition-opacity duration-100
+                             shadow-[0_4px_16px_rgba(15,36,25,0.22)] z-20"
+                >
+                  {p.shortName} • {fmtPeerValue(p.current, s.label)}
+                </span>
+              </div>
+
+              {/* Drop-line from pill down to track (thickens on hover) */}
+              <div
+                className="absolute left-1/2 -translate-x-1/2 top-[22px] w-px h-[16px]
+                           bg-[#7c9bb0]/50 transition-all duration-150
+                           group-hover:bg-[var(--color-canopy)] group-hover:w-[2px]"
+              />
+            </div>
+          );
+        })}
+
+      {/* ── Lane 2 (middle, the track) ─────────────────────────────────── */}
+      <div className="absolute left-0 right-0" style={{ top: 44 }}>
+        {/* Faint Portland historical full range */}
+        <div
+          className="absolute h-px bg-[var(--color-parchment)]"
+          style={{
+            left: `${pos(hist.min)}%`,
+            width: `${Math.max(0.5, pos(hist.max) - pos(hist.min))}%`,
+            top: 4,
+          }}
+        />
+        {/* Portland historical p25-p75 band */}
+        <div
+          className="absolute h-2 rounded-sm"
+          style={{
+            left: `${pos(hist.p25)}%`,
+            width: `${Math.max(2, pos(hist.p75) - pos(hist.p25))}%`,
+            top: 0,
+            backgroundColor: "#d8c8a8",
+            opacity: 0.55,
+          }}
+        />
+        {/* Portland 10-year median tick */}
+        <div
+          className="absolute w-px h-4 bg-[#a8956c]"
+          style={{ left: `${pos(hist.median)}%`, top: -4 }}
+          aria-label={`Portland 10y median: ${hist.median.toFixed(1)}`}
+        />
+
+        {/* Portland current marker — the dominant element */}
+        <div
+          className="absolute rounded-full"
+          style={{
+            left: `calc(${pos(s.portlandCurrent!)}% - 9px)`,
+            top: -5,
+            width: 18,
+            height: 18,
+            backgroundColor: scoreColor,
+            border: "3px solid var(--color-paper-warm)",
+            boxShadow: "0 2px 6px rgba(0,0,0,0.20)",
+            zIndex: 4,
+          }}
+        />
+      </div>
+
+      {/* ── Lane 3 (bottom): Portland caption + percentile readout ───── */}
+      <div
+        className="absolute"
+        style={{
+          left: `${pos(s.portlandCurrent!)}%`,
+          top: 64,
+          transform: "translateX(-50%)",
+          zIndex: 3,
+        }}
+      >
+        <div className="flex flex-col items-center gap-0.5">
+          <div
+            className="text-[12px] font-mono font-bold uppercase tracking-[0.08em] px-1.5 py-0.5 rounded-sm whitespace-nowrap"
+            style={{ color: scoreColor, backgroundColor: "var(--color-paper-warm)" }}
+          >
+            PDX · {fmtVal(s)}
+          </div>
+          <div className="text-[11px] font-mono text-[var(--color-ink-muted)] whitespace-nowrap">
+            <span className="text-[var(--color-ink)] font-semibold">{s.portlandHistoricalPercentile}p</span>
+            {" hist · "}
+            <span className="text-[var(--color-ink)] font-semibold">{s.peerPercentile}p</span>
+            {" peers"}
+          </div>
+        </div>
+      </div>
+      {/* Hidden but available for screen readers — Portland metro context */}
+      {portlandPeer && (
+        <span className="sr-only">
+          Portland today: {fmtVal(s)}. {s.portlandHistoricalPercentile}th percentile vs Portland&apos;s
+          own history. {s.peerPercentile}th percentile vs peer metros.
+        </span>
+      )}
+    </div>
+  );
+}
+
+function PeerLegend() {
+  // Decoded once at the section level — each ribbon below uses the same codes.
+  const peers: Array<[string, string]> = [
+    ["SEA", "Seattle"],
+    ["DEN", "Denver"],
+    ["AUS", "Austin"],
+    ["SFO", "San Francisco"],
+    ["MIN", "Minneapolis"],
+    ["PHX", "Phoenix"],
+  ];
+  return (
+    <div className="space-y-2 pt-1">
+      {/* Code → city map (one row, applies to all three ribbons below) */}
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[13px] text-[var(--color-ink-muted)]">
+        <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-ink-muted)]/80 mr-1">
+          Peer metros
+        </span>
+        {peers.map(([code, name]) => (
+          <span key={code} className="inline-flex items-center gap-1.5">
+            <span
+              className="inline-flex items-center justify-center h-[20px] px-1.5 rounded-full
+                         border border-[#7c9bb0]/60 text-[11px] font-mono uppercase tracking-[0.06em]
+                         text-[#5a7a8a]"
+              style={{ minWidth: 32 }}
+            >
+              {code}
+            </span>
+            <span>{name}</span>
+          </span>
+        ))}
+      </div>
+      {/* Mark legend — Portland's marker, historical band, median tick */}
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-[var(--color-ink-muted)]">
+        <span className="inline-flex items-center gap-1.5">
+          <span
+            className="inline-block w-[14px] h-[14px] rounded-full"
+            style={{ backgroundColor: "#5c8b9c", border: "2px solid var(--color-paper-warm)", boxShadow: "0 1px 3px rgba(0,0,0,0.18)" }}
+          />
+          Portland today (PDX)
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-block w-3 h-2 bg-[#d8c8a8] rounded-sm opacity-55" />
+          Portland p25–p75 (10y range)
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-block w-px h-3 bg-[#a8956c]" />
+          Portland 10y median
+        </span>
+      </div>
     </div>
   );
 }
