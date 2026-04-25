@@ -22,6 +22,14 @@ import ComparisonBarChart from "@/components/charts/ComparisonBarChart";
 
 const ACCENT = "#5c8b9c"; // slate-teal
 
+interface PeerObservation {
+  metroCode: string;
+  shortName: string;
+  isPortland: boolean;
+  current: number;
+  population: number | null;
+}
+
 interface SubScore {
   key: string;
   label: string;
@@ -29,6 +37,25 @@ interface SubScore {
   weight: number;
   rawWeight: number;
   description: string;
+  source?: string;
+  portlandHistoricalPercentile?: number;
+  peerPercentile?: number;
+  portlandCurrent?: number;
+  portlandHistory?: {
+    p10: number;
+    p25: number;
+    median: number;
+    p75: number;
+    p90: number;
+    min: number;
+    max: number;
+    count: number;
+  };
+  peerSnapshot?: PeerObservation[];
+  peerMedian?: number;
+  peerMin?: number;
+  peerMax?: number;
+  inverted?: boolean;
 }
 
 interface BusinessRow {
@@ -170,29 +197,154 @@ function DigDeeper({ href, label }: { href: string; label: string }) {
   );
 }
 
+function fmtVal(s: SubScore): string {
+  if (s.portlandCurrent === undefined) return "—";
+  if (s.label.toLowerCase().includes("rate") || s.label.toLowerCase().includes("growth")) {
+    return `${s.portlandCurrent.toFixed(1)}%`;
+  }
+  return Math.round(s.portlandCurrent).toLocaleString();
+}
+
+/**
+ * Score bar with empirical baseline ribbon + peer-snapshot ticks.
+ * Built around min/max of (Portland history + peer values) so all marks share an axis.
+ */
 function ScoreBar({ s }: { s: SubScore }) {
+  const hasEmpirical =
+    s.portlandHistory && s.peerSnapshot && s.portlandCurrent !== undefined;
+
+  if (!hasEmpirical) {
+    // Fallback to plain bar if empirical context is missing.
+    return (
+      <div className="space-y-1.5">
+        <div className="flex justify-between text-[12px]">
+          <span className="text-[var(--color-ink)]">{s.label}</span>
+          <span className="font-mono text-[var(--color-ink-muted)]">
+            {s.value}
+            <span className="text-[10px] ml-2">w {(s.rawWeight * 100).toFixed(0)}%</span>
+          </span>
+        </div>
+        <div className="w-full h-2 bg-[var(--color-parchment)] rounded-sm overflow-hidden">
+          <div
+            className="h-full rounded-sm"
+            style={{
+              width: `${s.value}%`,
+              backgroundColor: s.value >= 70 ? "#3d7a5a" : s.value >= 40 ? "#c8956c" : "#b85c3a",
+            }}
+          />
+        </div>
+        <p className="text-[10.5px] text-[var(--color-ink-muted)] leading-snug">{s.description}</p>
+      </div>
+    );
+  }
+
+  const hist = s.portlandHistory!;
+  const peers = s.peerSnapshot!;
+  const portlandPeer = peers.find((p) => p.isPortland);
+
+  const allValues = [hist.min, hist.max, ...peers.map((p) => p.current), s.portlandCurrent!];
+  const lo = Math.min(...allValues);
+  const hi = Math.max(...allValues);
+  const span = hi - lo || 1;
+  const pos = (v: number) => ((v - lo) / span) * 100;
+  const scoreColor = s.value >= 70 ? "#3d7a5a" : s.value >= 40 ? "#c8956c" : "#b85c3a";
+
   return (
-    <div className="space-y-1.5">
-      <div className="flex justify-between text-[12px]">
-        <span className="text-[var(--color-ink)]">{s.label}</span>
+    <div className="space-y-2">
+      <div className="flex justify-between items-baseline text-[12px]">
+        <span className="text-[var(--color-ink)] font-semibold">{s.label}</span>
         <span className="font-mono text-[var(--color-ink-muted)]">
-          {s.value}
+          <span className="text-[var(--color-ink)] text-[14px] font-semibold">{s.value}</span>
           <span className="text-[10px] ml-2">w {(s.rawWeight * 100).toFixed(0)}%</span>
         </span>
       </div>
-      <div className="w-full h-2 bg-[var(--color-parchment)] rounded-sm overflow-hidden">
+
+      {/* Distribution ribbon (p10-p90 of Portland history + min-max range) */}
+      <div className="relative w-full h-7" title={`Portland 10y history range: ${hist.min.toFixed(1)}–${hist.max.toFixed(1)}`}>
+        {/* Portland historical full range (faint) */}
+        <div className="absolute top-1/2 -translate-y-1/2 h-1 bg-[var(--color-parchment)] rounded-sm"
+             style={{ left: `${pos(hist.min)}%`, width: `${Math.max(2, pos(hist.max) - pos(hist.min))}%` }} />
+        {/* Portland p25-p75 (bolder) */}
+        <div className="absolute top-1/2 -translate-y-1/2 h-2 bg-[#d8c8a8] rounded-sm"
+             style={{ left: `${pos(hist.p25)}%`, width: `${Math.max(2, pos(hist.p75) - pos(hist.p25))}%` }} />
+        {/* Portland historical median tick */}
+        <div className="absolute top-1/2 -translate-y-1/2 w-px h-4 bg-[#a8956c]"
+             style={{ left: `${pos(hist.median)}%` }}
+             title={`Portland 10y median: ${hist.median.toFixed(1)}`} />
+
+        {/* Peer ticks (small dots, blue) */}
+        {peers
+          .filter((p) => !p.isPortland)
+          .map((p) => (
+            <div
+              key={p.metroCode}
+              className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#7c9bb0] opacity-80"
+              style={{ left: `calc(${pos(p.current)}% - 3px)` }}
+              title={`${p.shortName}: ${p.current.toFixed(1)}`}
+            />
+          ))}
+
+        {/* Portland current value (big circle in score color) */}
         <div
-          className="h-full rounded-sm transition-all duration-500"
+          className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 border-[var(--color-paper-warm)]"
           style={{
-            width: `${s.value}%`,
-            backgroundColor:
-              s.value >= 70 ? "#3d7a5a" : s.value >= 40 ? "#c8956c" : "#b85c3a",
+            left: `calc(${pos(s.portlandCurrent!)}% - 7px)`,
+            backgroundColor: scoreColor,
+            boxShadow: "0 1px 2px rgba(0,0,0,0.18)",
           }}
+          title={`Portland today: ${fmtVal(s)}`}
         />
       </div>
+
+      {/* Caption row: Portland today, vs Portland history, vs peers */}
+      <div className="flex flex-wrap gap-x-4 gap-y-0.5 text-[10.5px] text-[var(--color-ink-muted)]">
+        <span>
+          <strong className="text-[var(--color-ink)]">Portland</strong> {fmtVal(s)} ·
+        </span>
+        <span>
+          vs Portland history:{" "}
+          <strong className="text-[var(--color-ink)]">{s.portlandHistoricalPercentile}p</strong>
+          <span className="opacity-70">
+            {" "}
+            (median {hist.median.toFixed(1)})
+          </span>
+        </span>
+        <span>
+          vs peers today:{" "}
+          <strong className="text-[var(--color-ink)]">{s.peerPercentile}p</strong>
+          <span className="opacity-70">
+            {" "}
+            (peer median {(s.peerMedian ?? 0).toFixed(1)})
+          </span>
+        </span>
+      </div>
+
       <p className="text-[10.5px] text-[var(--color-ink-muted)] leading-snug">
-        {s.description}
+        {s.description} <span className="opacity-70">Source: {s.source ?? "—"}.</span>
       </p>
+    </div>
+  );
+}
+
+function PeerLegend() {
+  return (
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[10.5px] text-[var(--color-ink-muted)] pt-1">
+      <span className="inline-flex items-center gap-1.5">
+        <span className="inline-block w-3.5 h-3.5 rounded-full" style={{ backgroundColor: "#5c8b9c", border: "2px solid var(--color-paper-warm)" }} />
+        Portland today
+      </span>
+      <span className="inline-flex items-center gap-1.5">
+        <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#7c9bb0]" />
+        Peer metros today
+      </span>
+      <span className="inline-flex items-center gap-1.5">
+        <span className="inline-block w-3 h-2 bg-[#d8c8a8] rounded-sm" />
+        Portland p25–p75 (10y)
+      </span>
+      <span className="inline-flex items-center gap-1.5">
+        <span className="inline-block w-px h-3 bg-[#a8956c]" />
+        Portland 10y median
+      </span>
     </div>
   );
 }
@@ -297,19 +449,37 @@ export default function EconomicHealthDetail() {
                     {c.label === "Insufficient data" && "Insufficient data to compute a score."}
                   </h3>
                   <p className="text-[13px] text-[var(--color-ink-muted)] leading-relaxed">
-                    A weighted composite of business formation, financial distress, employment,
-                    unemployment, building-permit activity, and real-estate volume. Each sub-score
-                    is on a 0-100 scale; the composite uses the weights shown.
+                    Empirical composite of three indicators with 10+ years of comparable peer-metro
+                    data: <strong className="text-[var(--color-ink)]">unemployment rate</strong>,{" "}
+                    <strong className="text-[var(--color-ink)]">employment growth</strong> (QCEW
+                    establishments YoY), and <strong className="text-[var(--color-ink)]">wage
+                    growth</strong> (QCEW avg weekly wage YoY). Each sub-score is the average of
+                    Portland&apos;s percentile vs its own 10-year history and Portland&apos;s
+                    percentile vs 6 peer metros today — so 50 means &quot;normal for Portland and
+                    average vs peers,&quot; 80+ means &quot;exceptional on both axes,&quot; and
+                    &lt;30 means &quot;below typical and behind peers.&quot;
                   </p>
                 </div>
               </div>
 
               {c.subScores.length > 0 && (
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-5">
-                  {c.subScores.map((s) => (
-                    <ScoreBar key={s.key} s={s} />
-                  ))}
-                </div>
+                <>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-6">
+                    {c.subScores.map((s) => (
+                      <ScoreBar key={s.key} s={s} />
+                    ))}
+                  </div>
+                  <div className="mt-5 pt-4 border-t border-[var(--color-parchment)]">
+                    <PeerLegend />
+                    <p className="text-[10.5px] text-[var(--color-ink-muted)] mt-2 leading-snug">
+                      Each indicator is scored as the average of two empirical percentiles —
+                      Portland&apos;s rank against its own 10-year history, and Portland&apos;s rank
+                      against 6 peer metros (Seattle, Denver, Austin, San Francisco, Minneapolis,
+                      Phoenix) at the most recent comparable period. 50 = exactly average for both
+                      Portland history and peer metros.
+                    </p>
+                  </div>
+                </>
               )}
 
               {c.missing.length > 0 && (

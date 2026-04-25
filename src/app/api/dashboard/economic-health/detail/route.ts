@@ -1,46 +1,143 @@
 import { NextResponse } from "next/server";
 import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 import {
-  computeEconomicHealth,
-  type ScoringInputs,
-} from "@/lib/scoring/economic-health";
+  computeEmpiricalHealth,
+  type EmpiricalIndicatorInput,
+  type MetroObservation,
+} from "@/lib/scoring/empirical-health";
 
 export const dynamic = "force-dynamic";
 
 const CACHE_KEY = "economic-health-detail";
 const CACHE_TTL = 60 * 60 * 1000; // 1h
 
+const PORTLAND_METRO_CODE = "38900";
+
 const COMBINED_QUERY = `
-  WITH
-    biz_window AS (
-      SELECT
-        SUM(new_businesses) FILTER (WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')) AS curr_new,
-        SUM(new_businesses) FILTER (
-          WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '24 months')
-            AND month <  (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
-        ) AS prior_new,
-        SUM(bankruptcies + lawsuits + tax_liens) FILTER (
-          WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
-        ) AS curr_distress,
-        SUM(bankruptcies + lawsuits + tax_liens) FILTER (
-          WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '24 months')
-            AND month <  (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
-        ) AS prior_distress,
-        SUM(bankruptcies) FILTER (WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')) AS curr_bankruptcies
-      FROM pbj_business_monthly
-    ),
-    re_window AS (
-      SELECT
-        SUM(total_volume_usd) FILTER (WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')) AS curr_volume,
-        SUM(total_volume_usd) FILTER (
-          WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '24 months')
-            AND month <  (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
-        ) AS prior_volume,
-        SUM(deal_count) FILTER (WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')) AS curr_deals,
-        SUM(entity_buyers) FILTER (WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')) AS curr_entity_buyers
-      FROM pbj_real_estate_monthly
-    )
   SELECT json_build_object(
+    'metros', (
+      SELECT COALESCE(json_agg(t ORDER BY t.display_order), '[]'::json) FROM (
+        SELECT metro_code, short_name, metro_name, is_portland, population, display_order
+        FROM metro_metadata ORDER BY display_order
+      ) t
+    ),
+    'unemploymentLatestPeriod', (
+      SELECT row_to_json(t) FROM (
+        SELECT MAX(year) AS year,
+               MAX(month) FILTER (WHERE year = (SELECT MAX(year) FROM metro_unemployment_monthly)) AS month
+        FROM metro_unemployment_monthly
+      ) t
+    ),
+    'unemploymentSnapshot', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        WITH latest AS (
+          SELECT metro_code, MAX(year * 100 + month) AS ym
+          FROM metro_unemployment_monthly GROUP BY metro_code
+        ),
+        anchored AS (
+          SELECT MIN(ym) AS common_ym FROM latest
+        )
+        SELECT u.metro_code, u.year, u.month, u.rate
+        FROM metro_unemployment_monthly u
+        JOIN anchored a ON u.year * 100 + u.month = a.common_ym
+      ) t
+    ),
+    'unemploymentPortlandHistory', (
+      SELECT COALESCE(json_agg(rate ORDER BY year, month), '[]'::json)
+      FROM metro_unemployment_monthly
+      WHERE metro_code = '${PORTLAND_METRO_CODE}'
+    ),
+    'employmentLatestPeriod', (
+      SELECT row_to_json(t) FROM (
+        SELECT year, quarter FROM metro_employment_quarterly
+        WHERE establishments IS NOT NULL
+        ORDER BY year DESC, quarter DESC LIMIT 1
+      ) t
+    ),
+    'employmentSnapshot', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        WITH latest AS (
+          SELECT metro_code, MAX(year * 10 + quarter) AS yq
+          FROM metro_employment_quarterly WHERE establishments IS NOT NULL GROUP BY metro_code
+        ),
+        anchored AS (SELECT MIN(yq) AS common_yq FROM latest),
+        priors AS (
+          SELECT metro_code, MIN(year * 10 + quarter) AS yq
+          FROM metro_employment_quarterly
+          WHERE establishments IS NOT NULL
+          GROUP BY metro_code
+        )
+        SELECT e.metro_code, e.year, e.quarter, e.establishments, e.employment, e.avg_weekly_wage,
+               -- Compute YoY growth rate (current vs same quarter prior year, per metro).
+               (
+                 SELECT CASE WHEN prior.establishments > 0
+                              THEN (e.establishments - prior.establishments)::numeric / prior.establishments * 100
+                              ELSE NULL END
+                 FROM metro_employment_quarterly prior
+                 WHERE prior.metro_code = e.metro_code
+                   AND prior.year = e.year - 1
+                   AND prior.quarter = e.quarter
+               ) AS yoy_pct
+        FROM metro_employment_quarterly e
+        JOIN anchored a ON e.year * 10 + e.quarter = a.common_yq
+      ) t
+    ),
+    'employmentPortlandHistory', (
+      -- Portland's QoQ year-over-year %, used as the empirical distribution.
+      SELECT COALESCE(json_agg(yoy ORDER BY year, quarter), '[]'::json) FROM (
+        SELECT curr.year, curr.quarter,
+               (curr.establishments - prior.establishments)::numeric / NULLIF(prior.establishments,0) * 100 AS yoy
+        FROM metro_employment_quarterly curr
+        JOIN metro_employment_quarterly prior
+          ON prior.metro_code = curr.metro_code
+         AND prior.year = curr.year - 1
+         AND prior.quarter = curr.quarter
+        WHERE curr.metro_code = '${PORTLAND_METRO_CODE}'
+          AND curr.establishments IS NOT NULL
+          AND prior.establishments IS NOT NULL
+      ) t
+    ),
+    'wageLatestPeriod', (
+      SELECT row_to_json(t) FROM (
+        SELECT year, quarter FROM metro_employment_quarterly
+        WHERE avg_weekly_wage IS NOT NULL
+        ORDER BY year DESC, quarter DESC LIMIT 1
+      ) t
+    ),
+    'wageSnapshot', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        WITH latest AS (
+          SELECT metro_code, MAX(year * 10 + quarter) AS yq
+          FROM metro_employment_quarterly
+          WHERE avg_weekly_wage IS NOT NULL GROUP BY metro_code
+        ),
+        anchored AS (SELECT MIN(yq) AS common_yq FROM latest)
+        SELECT e.metro_code, e.year, e.quarter, e.avg_weekly_wage,
+               (
+                 SELECT CASE WHEN prior.avg_weekly_wage > 0
+                              THEN (e.avg_weekly_wage - prior.avg_weekly_wage)::numeric / prior.avg_weekly_wage * 100
+                              ELSE NULL END
+                 FROM metro_employment_quarterly prior
+                 WHERE prior.metro_code = e.metro_code
+                   AND prior.year = e.year - 1
+                   AND prior.quarter = e.quarter
+               ) AS wage_yoy_pct
+        FROM metro_employment_quarterly e
+        JOIN anchored a ON e.year * 10 + e.quarter = a.common_yq
+      ) t
+    ),
+    'wagePortlandHistory', (
+      SELECT COALESCE(json_agg(yoy ORDER BY year, quarter), '[]'::json) FROM (
+        SELECT curr.year, curr.quarter,
+               (curr.avg_weekly_wage - prior.avg_weekly_wage)::numeric / NULLIF(prior.avg_weekly_wage,0) * 100 AS yoy
+        FROM metro_employment_quarterly curr
+        JOIN metro_employment_quarterly prior
+          ON prior.metro_code = curr.metro_code
+         AND prior.year = curr.year - 1
+         AND prior.quarter = curr.quarter
+        WHERE curr.metro_code = '${PORTLAND_METRO_CODE}' AND curr.avg_weekly_wage IS NOT NULL
+      ) t
+    ),
     'businessSeries', (
       SELECT COALESCE(json_agg(t ORDER BY t.month), '[]'::json) FROM (
         SELECT to_char(month,'YYYY-MM') AS month, new_businesses, bankruptcies, lawsuits, tax_liens
@@ -60,24 +157,19 @@ const COMBINED_QUERY = `
       SELECT COALESCE(json_agg(t ORDER BY t.deal_count DESC, t.total_volume_usd DESC), '[]'::json) FROM (
         SELECT buyer_name, buyer_type, deal_count, total_volume_usd, zip_count
         FROM pbj_serial_buyer
-        ORDER BY deal_count DESC, total_volume_usd DESC
-        LIMIT 25
+        ORDER BY deal_count DESC, total_volume_usd DESC LIMIT 25
       ) t
     ),
     'distressEntities', (
       SELECT COALESCE(json_agg(t ORDER BY t.category_count DESC), '[]'::json) FROM (
         SELECT entity_name, categories, category_count
-        FROM pbj_distress_entity
-        ORDER BY category_count DESC
-        LIMIT 30
+        FROM pbj_distress_entity ORDER BY category_count DESC LIMIT 30
       ) t
     ),
     'topLawsuits', (
       SELECT COALESCE(json_agg(t ORDER BY t.damages_usd DESC), '[]'::json) FROM (
         SELECT defendant_name, plaintiff_name, suit_type, damages_usd, filed_date
-        FROM pbj_top_lawsuit
-        ORDER BY damages_usd DESC
-        LIMIT 25
+        FROM pbj_top_lawsuit ORDER BY damages_usd DESC LIMIT 25
       ) t
     ),
     'zipInvestment', (
@@ -86,24 +178,7 @@ const COMBINED_QUERY = `
                new_business_count, total_investment_usd
         FROM pbj_zip_investment
         WHERE zip_code LIKE '97%'
-        ORDER BY total_investment_usd DESC
-        LIMIT 30
-      ) t
-    ),
-    'qcewLatest', (
-      SELECT row_to_json(t) FROM (
-        SELECT year, quarter, establishments, month3_employment, avg_weekly_wage
-        FROM economy.qcew_employment
-        WHERE industry_code = '10'
-        ORDER BY year DESC, quarter DESC LIMIT 1
-      ) t
-    ),
-    'qcewYearAgo', (
-      SELECT row_to_json(t) FROM (
-        SELECT year, quarter, establishments, month3_employment
-        FROM economy.qcew_employment
-        WHERE industry_code = '10'
-        ORDER BY year DESC, quarter DESC OFFSET 4 LIMIT 1
+        ORDER BY total_investment_usd DESC LIMIT 30
       ) t
     ),
     'industryYoY', (
@@ -130,14 +205,7 @@ const COMBINED_QUERY = `
           AND prior.month3_employment > 1000
       ) t
     ),
-    'unemployment', (
-      SELECT row_to_json(t) FROM (
-        SELECT value::numeric AS rate, year, period_name
-        FROM business.bls_employment_series
-        WHERE series_id = 'LAUMT413890000000003'
-        ORDER BY year DESC, period DESC LIMIT 1
-      ) t
-    ),
+    'pbjAsOf', (SELECT to_char(MAX(month),'YYYY-MM-DD') FROM pbj_business_monthly),
     'permitsCurr', (
       SELECT COUNT(*)::int FROM housing.permits
       WHERE issued_date >= (CURRENT_DATE - INTERVAL '12 months')
@@ -147,13 +215,39 @@ const COMBINED_QUERY = `
       WHERE issued_date >= (CURRENT_DATE - INTERVAL '24 months')
         AND issued_date <  (CURRENT_DATE - INTERVAL '12 months')
     ),
-    'biz', (SELECT row_to_json(b) FROM biz_window b),
-    're',  (SELECT row_to_json(r) FROM re_window r),
-    'pbjAsOf', (SELECT to_char(MAX(month),'YYYY-MM-DD') FROM pbj_business_monthly),
-    'qcewAsOf', (
-      SELECT MAX(year)::text || ' Q' || MAX(quarter)::text
-      FROM economy.qcew_employment WHERE industry_code='10'
-        AND year = (SELECT MAX(year) FROM economy.qcew_employment WHERE industry_code='10')
+    'pbjBiz', (
+      SELECT row_to_json(t) FROM (
+        SELECT
+          SUM(new_businesses) FILTER (WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')) AS curr_new,
+          SUM(new_businesses) FILTER (
+            WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '24 months')
+              AND month <  (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
+          ) AS prior_new,
+          SUM(bankruptcies) FILTER (WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')) AS curr_bankruptcies,
+          SUM(bankruptcies + lawsuits + tax_liens) FILTER (WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')) AS curr_distress,
+          SUM(bankruptcies + lawsuits + tax_liens) FILTER (
+            WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '24 months')
+              AND month <  (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
+          ) AS prior_distress
+        FROM pbj_business_monthly
+      ) t
+    ),
+    'pbjRe', (
+      SELECT row_to_json(t) FROM (
+        SELECT
+          SUM(total_volume_usd) FILTER (WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')) AS curr_volume,
+          SUM(deal_count) FILTER (WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')) AS curr_deals,
+          SUM(entity_buyers) FILTER (WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')) AS curr_entity_buyers
+        FROM pbj_real_estate_monthly
+      ) t
+    ),
+    'unemploymentLatest', (
+      SELECT row_to_json(t) FROM (
+        SELECT u.year, u.month, u.rate
+        FROM metro_unemployment_monthly u
+        WHERE u.metro_code = '${PORTLAND_METRO_CODE}'
+        ORDER BY u.year DESC, u.month DESC LIMIT 1
+      ) t
     )
   ) AS payload
 `;
@@ -165,6 +259,56 @@ function num(v: unknown): number {
   return Number.isFinite(n) ? n : 0;
 }
 
+function buildSnapshotInput(args: {
+  metros: Array<{ metro_code: string; short_name: string; is_portland: boolean; population: number | null }>;
+  snapshot: Array<Row>;
+  valueKey: string;
+  populationDivide?: boolean;
+  label: string;
+  description: string;
+  source: string;
+  inverted: boolean;
+  portlandHistory: number[];
+}): EmpiricalIndicatorInput | null {
+  const metroById = new Map(args.metros.map((m) => [m.metro_code, m]));
+  const obs: MetroObservation[] = [];
+  for (const s of args.snapshot) {
+    const meta = metroById.get(String(s.metro_code));
+    if (!meta) continue;
+    let v = num(s[args.valueKey]);
+    if (args.populationDivide && meta.population) {
+      v = (v / meta.population) * 100_000;
+    }
+    obs.push({
+      metroCode: meta.metro_code,
+      isPortland: meta.is_portland,
+      shortName: meta.short_name,
+      current: v,
+      population: meta.population,
+    });
+  }
+
+  const portland = obs.find((o) => o.isPortland);
+  if (!portland) return null;
+  if (args.portlandHistory.length < 6) return null;
+
+  let history = args.portlandHistory;
+  if (args.populationDivide) {
+    const pop = portland.population ?? null;
+    if (pop) history = history.map((v) => (v / pop) * 100_000);
+  }
+
+  return {
+    portlandCurrent: portland.current,
+    portlandHistory: history,
+    peerSnapshot: obs,
+    inverted: args.inverted,
+    label: args.label,
+    description: args.description,
+    source: args.source,
+  };
+}
+
 export async function GET() {
   try {
     const cached = await getCachedData<Record<string, unknown>>(CACHE_KEY, CACHE_TTL);
@@ -173,46 +317,63 @@ export async function GET() {
     const result = (await sql.unsafe(COMBINED_QUERY)) as unknown as Array<{ payload: Row }>;
     const p = result[0]?.payload ?? {};
 
-    const biz = (p.biz as Row) ?? {};
-    const re = (p.re as Row) ?? {};
-    const qcewLatest = p.qcewLatest as Row | null;
-    const qcewYearAgo = p.qcewYearAgo as Row | null;
-    const unemp = p.unemployment as Row | null;
-    const permitsCurr = num(p.permitsCurr);
-    const permitsPrior = num(p.permitsPrior);
+    const metros = (p.metros as Array<{
+      metro_code: string;
+      short_name: string;
+      metro_name: string;
+      is_portland: boolean;
+      population: number | null;
+      display_order: number;
+    }>) ?? [];
+
+    // ── Empirical inputs ────────────────────────────────────────────────
+    const unemploymentInput = buildSnapshotInput({
+      metros,
+      snapshot: (p.unemploymentSnapshot as Row[]) ?? [],
+      valueKey: "rate",
+      label: "Unemployment rate",
+      description: "BLS LAUS Portland MSA. Lower is better.",
+      source: "BLS LAUS",
+      inverted: true,
+      portlandHistory: ((p.unemploymentPortlandHistory as unknown[]) ?? []).map((v) => Number(v)),
+    });
+
+    const employmentInput = buildSnapshotInput({
+      metros,
+      snapshot: (p.employmentSnapshot as Row[]) ?? [],
+      valueKey: "yoy_pct",
+      label: "Employment growth (YoY)",
+      description: "QCEW total establishments year-over-year change. Higher is better.",
+      source: "BLS QCEW",
+      inverted: false,
+      portlandHistory: ((p.employmentPortlandHistory as unknown[]) ?? [])
+        .map((v) => Number(v))
+        .filter((v) => Number.isFinite(v)),
+    });
+
+    const wageInput = buildSnapshotInput({
+      metros,
+      snapshot: (p.wageSnapshot as Row[]) ?? [],
+      valueKey: "wage_yoy_pct",
+      label: "Wage growth (YoY %)",
+      description:
+        "QCEW average weekly wage, year-over-year change. Higher is better.",
+      source: "BLS QCEW",
+      inverted: false,
+      portlandHistory: ((p.wagePortlandHistory as unknown[]) ?? [])
+        .map((v) => Number(v))
+        .filter((v) => Number.isFinite(v)),
+    });
+
+    const composite = computeEmpiricalHealth({
+      unemployment: unemploymentInput,
+      employment: employmentInput,
+      wageGrowth: wageInput,
+    });
+
+    // Industry gainers / losers (still from QCEW NAICS detail).
     const industryYoY = (p.industryYoY as Row[]) ?? [];
-
-    // Compose scoring inputs (same shape as the hero so the score matches).
-    const inputs: ScoringInputs = {
-      formation:
-        biz.curr_new !== null && biz.prior_new !== null
-          ? { current: num(biz.curr_new), prior: num(biz.prior_new) }
-          : null,
-      distress:
-        biz.curr_distress !== null && biz.prior_distress !== null
-          ? { current: num(biz.curr_distress), prior: num(biz.prior_distress) }
-          : null,
-      employment:
-        qcewLatest && qcewYearAgo
-          ? {
-              current: num(qcewLatest.establishments),
-              prior: num(qcewYearAgo.establishments),
-            }
-          : null,
-      unemploymentRate: unemp?.rate != null ? num(unemp.rate) : null,
-      permits: permitsCurr || permitsPrior ? { current: permitsCurr, prior: permitsPrior } : null,
-      realEstate:
-        re.curr_volume !== null && re.prior_volume !== null
-          ? { current: num(re.curr_volume), prior: num(re.prior_volume) }
-          : null,
-    };
-
-    const composite = computeEconomicHealth(inputs);
-
-    // Top industry gainers / losers (3 each).
-    const sortedByPct = [...industryYoY].sort(
-      (a, b) => num(b.pct) - num(a.pct),
-    );
+    const sortedByPct = [...industryYoY].sort((a, b) => num(b.pct) - num(a.pct));
     const industryGainers = sortedByPct.slice(0, 3).map((r) => ({
       sector: String(r.industry_title ?? r.industry_code),
       jobs_delta: num(r.jobs_delta),
@@ -234,6 +395,7 @@ export async function GET() {
         subScores: composite.subScores,
         missing: composite.missing,
       },
+      // Tier-2 (descriptive only, NOT in the score).
       businessSeries: (p.businessSeries as Row[]) ?? [],
       reSeries: (p.reSeries as Row[]) ?? [],
       serialBuyers: (p.serialBuyers as Row[]) ?? [],
@@ -242,25 +404,40 @@ export async function GET() {
       zipInvestment: (p.zipInvestment as Row[]) ?? [],
       industryGainers,
       industryLosers,
-      unemployment: {
-        rate: unemp?.rate != null ? num(unemp.rate) : null,
-        period: unemp ? `${unemp.period_name} ${unemp.year}` : null,
-      },
-      windowSummary: {
-        newBiz12mo: num(biz.curr_new),
-        newBizPriorYear: num(biz.prior_new),
-        bankruptcies12mo: num(biz.curr_bankruptcies),
-        distress12mo: num(biz.curr_distress),
-        distressPriorYear: num(biz.prior_distress),
-        reVolume12mo: num(re.curr_volume),
-        reDeals12mo: num(re.curr_deals),
-        entityBuyers12mo: num(re.curr_entity_buyers),
-        permitsCurr,
-        permitsPrior,
-      },
+      windowSummary: (() => {
+        const biz = (p.pbjBiz as Row) ?? {};
+        const re = (p.pbjRe as Row) ?? {};
+        return {
+          newBiz12mo: num(biz.curr_new),
+          newBizPriorYear: num(biz.prior_new),
+          bankruptcies12mo: num(biz.curr_bankruptcies),
+          distress12mo: num(biz.curr_distress),
+          distressPriorYear: num(biz.prior_distress),
+          reVolume12mo: num(re.curr_volume),
+          reDeals12mo: num(re.curr_deals),
+          entityBuyers12mo: num(re.curr_entity_buyers),
+          permitsCurr: num(p.permitsCurr),
+          permitsPrior: num(p.permitsPrior),
+        };
+      })(),
+      unemployment: (() => {
+        const u = p.unemploymentLatest as Row | null;
+        return {
+          rate: u?.rate != null ? num(u.rate) : null,
+          period: u ? `${u.year} M${String(u.month).padStart(2, "0")}` : null,
+        };
+      })(),
       meta: {
         pbjAsOf: (p.pbjAsOf as string | null) ?? null,
-        qcewAsOf: (p.qcewAsOf as string | null) ?? null,
+        unemploymentAsOf: p.unemploymentLatestPeriod
+          ? `${(p.unemploymentLatestPeriod as Row).year} M${String((p.unemploymentLatestPeriod as Row).month).padStart(2, "0")}`
+          : null,
+        employmentAsOf: p.employmentLatestPeriod
+          ? `${(p.employmentLatestPeriod as Row).year} Q${(p.employmentLatestPeriod as Row).quarter}`
+          : null,
+        wageAsOf: p.wageLatestPeriod
+          ? `${(p.wageLatestPeriod as Row).year} Q${(p.wageLatestPeriod as Row).quarter}`
+          : null,
         scoreAsOf: new Date().toISOString().slice(0, 10),
       },
       dataStatus: composite.label === "Insufficient data" ? "partial" : "live",
@@ -280,9 +457,8 @@ export async function GET() {
       zipInvestment: [],
       industryGainers: [],
       industryLosers: [],
-      unemployment: { rate: null, period: null },
       windowSummary: null,
-      meta: { pbjAsOf: null, qcewAsOf: null, scoreAsOf: null },
+      meta: { pbjAsOf: null, unemploymentAsOf: null, employmentAsOf: null, wageAsOf: null, scoreAsOf: null },
       dataStatus: "error",
     });
   }

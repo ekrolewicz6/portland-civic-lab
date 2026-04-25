@@ -249,6 +249,48 @@ export const climateEmissionsTrajectory = pgTable("climate_emissions_trajectory"
   populationThousands: numeric("population_thousands"),
 });
 
+// ── Peer-metro economic indicators (for empirical scoring) ──────────────
+// Portland + 6 peer MSAs. Loaded by ingest/fetch-peer-metros.ts.
+
+export const metroMetadata = pgTable("metro_metadata", {
+  metroCode: text("metro_code").primaryKey(), // BLS area code, e.g. "38900"
+  metroName: text("metro_name").notNull(),
+  shortName: text("short_name").notNull(),
+  stateFips: text("state_fips").notNull(),
+  lausSeriesId: text("laus_series_id"), // BLS LAUS unemployment-rate series
+  qcewAreaCode: text("qcew_area_code"), // BLS QCEW area code, e.g. "C3890"
+  isPortland: boolean("is_portland").default(false),
+  population: integer("population"),
+  displayOrder: integer("display_order"),
+});
+
+export const metroUnemploymentMonthly = pgTable("metro_unemployment_monthly", {
+  metroCode: text("metro_code").notNull(),
+  year: integer("year").notNull(),
+  month: integer("month").notNull(),
+  rate: numeric("rate", { precision: 5, scale: 2 }).notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
+export const metroEmploymentQuarterly = pgTable("metro_employment_quarterly", {
+  metroCode: text("metro_code").notNull(),
+  year: integer("year").notNull(),
+  quarter: integer("quarter").notNull(),
+  establishments: integer("establishments"),
+  employment: integer("employment"),
+  avgWeeklyWage: integer("avg_weekly_wage"),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
+export const metroBusinessFormationQuarterly = pgTable("metro_business_formation_quarterly", {
+  metroCode: text("metro_code").notNull(),
+  year: integer("year").notNull(),
+  quarter: integer("quarter").notNull(),
+  applicationsTotal: integer("applications_total"),
+  applicationsHighPropensity: integer("applications_high_propensity"),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
 // ── PBJ Public Records (Portland Business Journal weekly scrape) ────────
 // Source: intelligence/bizjournals-records/insights/output/*.json
 // Loaded by ingest/sync-pbj-records.ts. See plans/purrfect-snuggling-island.md.

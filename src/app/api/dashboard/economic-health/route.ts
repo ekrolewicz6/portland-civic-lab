@@ -1,105 +1,120 @@
 import { NextResponse } from "next/server";
 import sql, { getCachedData, setCachedData } from "@/lib/db-query";
 import {
-  computeEconomicHealth,
-  formatHealthHeadline,
-  type ScoringInputs,
-} from "@/lib/scoring/economic-health";
+  computeEmpiricalHealth,
+  type EmpiricalIndicatorInput,
+  type MetroObservation,
+} from "@/lib/scoring/empirical-health";
 
 export const dynamic = "force-dynamic";
 
 const CACHE_KEY = "economic-health";
-const CACHE_TTL = 60 * 60 * 1000; // 1h
+const CACHE_TTL = 60 * 60 * 1000;
 
-// All scoring inputs in one round-trip. Mirrors the pattern in
-// economy/route.ts and homelessness/detail/route.ts to avoid the parallel-
-// query deadlock at `max: 1`.
+const PORTLAND_METRO_CODE = "38900";
+
 const COMBINED_QUERY = `
-  WITH
-    biz AS (
-      SELECT
-        SUM(new_businesses) FILTER (
-          WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
-        ) AS curr_new,
-        SUM(new_businesses) FILTER (
-          WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '24 months')
-            AND month <  (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
-        ) AS prior_new,
-        SUM(bankruptcies + lawsuits + tax_liens) FILTER (
-          WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
-        ) AS curr_distress,
-        SUM(bankruptcies + lawsuits + tax_liens) FILTER (
-          WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '24 months')
-            AND month <  (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
-        ) AS prior_distress,
-        SUM(bankruptcies) FILTER (
-          WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
-        ) AS curr_bankruptcies
-      FROM pbj_business_monthly
-    ),
-    re AS (
-      SELECT
-        SUM(total_volume_usd) FILTER (
-          WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
-        ) AS curr_volume,
-        SUM(total_volume_usd) FILTER (
-          WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '24 months')
-            AND month <  (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
-        ) AS prior_volume
-      FROM pbj_real_estate_monthly
-    )
   SELECT json_build_object(
-    'biz',  (SELECT row_to_json(b) FROM biz b),
-    're',   (SELECT row_to_json(r) FROM re r),
-    'qcewLatest', (
-      SELECT row_to_json(t) FROM (
-        SELECT year, quarter, establishments
-        FROM economy.qcew_employment
-        WHERE industry_code = '10'
-        ORDER BY year DESC, quarter DESC
-        LIMIT 1
+    'metros', (
+      SELECT COALESCE(json_agg(t ORDER BY t.display_order), '[]'::json) FROM (
+        SELECT metro_code, short_name, is_portland, population
+        FROM metro_metadata ORDER BY display_order
       ) t
     ),
-    'qcewYearAgo', (
-      SELECT row_to_json(t) FROM (
-        SELECT year, quarter, establishments
-        FROM economy.qcew_employment
-        WHERE industry_code = '10'
-        ORDER BY year DESC, quarter DESC
-        OFFSET 4 LIMIT 1
+    'unemploymentSnapshot', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        WITH latest AS (
+          SELECT metro_code, MAX(year * 100 + month) AS ym
+          FROM metro_unemployment_monthly GROUP BY metro_code
+        ),
+        anchored AS (SELECT MIN(ym) AS common_ym FROM latest)
+        SELECT u.metro_code, u.rate
+        FROM metro_unemployment_monthly u
+        JOIN anchored a ON u.year * 100 + u.month = a.common_ym
       ) t
     ),
-    'unemployment', (
-      SELECT value::numeric AS rate
-      FROM business.bls_employment_series
-      WHERE series_id = 'LAUMT413890000000003'
-      ORDER BY year DESC, period DESC
-      LIMIT 1
+    'unemploymentPortlandHistory', (
+      SELECT COALESCE(json_agg(rate ORDER BY year, month), '[]'::json)
+      FROM metro_unemployment_monthly WHERE metro_code = '${PORTLAND_METRO_CODE}'
     ),
-    'permitsCurr', (
-      SELECT COUNT(*)::int
-      FROM housing.permits
-      WHERE issued_date >= (CURRENT_DATE - INTERVAL '12 months')
+    'employmentSnapshot', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        WITH latest AS (
+          SELECT metro_code, MAX(year * 10 + quarter) AS yq
+          FROM metro_employment_quarterly WHERE establishments IS NOT NULL GROUP BY metro_code
+        ),
+        anchored AS (SELECT MIN(yq) AS common_yq FROM latest)
+        SELECT e.metro_code,
+               (
+                 SELECT CASE WHEN prior.establishments > 0
+                              THEN (e.establishments - prior.establishments)::numeric / prior.establishments * 100
+                              ELSE NULL END
+                 FROM metro_employment_quarterly prior
+                 WHERE prior.metro_code = e.metro_code
+                   AND prior.year = e.year - 1
+                   AND prior.quarter = e.quarter
+               ) AS yoy_pct
+        FROM metro_employment_quarterly e
+        JOIN anchored a ON e.year * 10 + e.quarter = a.common_yq
+      ) t
     ),
-    'permitsPrior', (
-      SELECT COUNT(*)::int
-      FROM housing.permits
-      WHERE issued_date >= (CURRENT_DATE - INTERVAL '24 months')
-        AND issued_date <  (CURRENT_DATE - INTERVAL '12 months')
+    'employmentPortlandHistory', (
+      SELECT COALESCE(json_agg(yoy ORDER BY year, quarter), '[]'::json) FROM (
+        SELECT curr.year, curr.quarter,
+               (curr.establishments - prior.establishments)::numeric / NULLIF(prior.establishments,0) * 100 AS yoy
+        FROM metro_employment_quarterly curr
+        JOIN metro_employment_quarterly prior
+          ON prior.metro_code = curr.metro_code
+         AND prior.year = curr.year - 1
+         AND prior.quarter = curr.quarter
+        WHERE curr.metro_code = '${PORTLAND_METRO_CODE}' AND curr.establishments IS NOT NULL
+      ) t
     ),
-    'chart', (
-      SELECT COALESCE(json_agg(t ORDER BY t.month), '[]'::json) FROM (
+    'wageSnapshot', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        WITH latest AS (
+          SELECT metro_code, MAX(year * 10 + quarter) AS yq
+          FROM metro_employment_quarterly
+          WHERE avg_weekly_wage IS NOT NULL GROUP BY metro_code
+        ),
+        anchored AS (SELECT MIN(yq) AS common_yq FROM latest)
+        SELECT e.metro_code,
+               (
+                 SELECT CASE WHEN prior.avg_weekly_wage > 0
+                              THEN (e.avg_weekly_wage - prior.avg_weekly_wage)::numeric / prior.avg_weekly_wage * 100
+                              ELSE NULL END
+                 FROM metro_employment_quarterly prior
+                 WHERE prior.metro_code = e.metro_code
+                   AND prior.year = e.year - 1
+                   AND prior.quarter = e.quarter
+               ) AS wage_yoy_pct
+        FROM metro_employment_quarterly e
+        JOIN anchored a ON e.year * 10 + e.quarter = a.common_yq
+      ) t
+    ),
+    'wagePortlandHistory', (
+      SELECT COALESCE(json_agg(yoy ORDER BY year, quarter), '[]'::json) FROM (
+        SELECT curr.year, curr.quarter,
+               (curr.avg_weekly_wage - prior.avg_weekly_wage)::numeric / NULLIF(prior.avg_weekly_wage,0) * 100 AS yoy
+        FROM metro_employment_quarterly curr
+        JOIN metro_employment_quarterly prior
+          ON prior.metro_code = curr.metro_code
+         AND prior.year = curr.year - 1
+         AND prior.quarter = curr.quarter
+        WHERE curr.metro_code = '${PORTLAND_METRO_CODE}' AND curr.avg_weekly_wage IS NOT NULL
+      ) t
+    ),
+    'pbjAsOf', (SELECT to_char(MAX(month),'YYYY-MM-DD') FROM pbj_business_monthly),
+    'businessTrend12mo', (
+      SELECT json_build_object('curr', curr, 'prior', prior) FROM (
         SELECT
-          to_char(month, 'YYYY-MM') AS month,
-          new_businesses,
-          (bankruptcies + lawsuits + tax_liens) AS distress
+          SUM(new_businesses) FILTER (WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')) AS curr,
+          SUM(new_businesses) FILTER (
+            WHERE month >= (date_trunc('month', CURRENT_DATE) - INTERVAL '24 months')
+              AND month <  (date_trunc('month', CURRENT_DATE) - INTERVAL '12 months')
+          ) AS prior
         FROM pbj_business_monthly
-        ORDER BY month DESC
-        LIMIT 24
       ) t
-    ),
-    'pbjAsOf', (
-      SELECT to_char(MAX(month), 'YYYY-MM-DD') FROM pbj_business_monthly
     )
   ) AS payload
 `;
@@ -111,146 +126,173 @@ function num(v: unknown): number {
   return Number.isFinite(n) ? n : 0;
 }
 
+function buildSnapshotInput(args: {
+  metros: Array<{ metro_code: string; short_name: string; is_portland: boolean; population: number | null }>;
+  snapshot: Row[];
+  valueKey: string;
+  populationDivide?: boolean;
+  inverted: boolean;
+  label: string;
+  description: string;
+  source: string;
+  portlandHistory: number[];
+}): EmpiricalIndicatorInput | null {
+  const metroById = new Map(args.metros.map((m) => [m.metro_code, m]));
+  const obs: MetroObservation[] = [];
+  for (const s of args.snapshot) {
+    const meta = metroById.get(String(s.metro_code));
+    if (!meta) continue;
+    let v = num(s[args.valueKey]);
+    if (args.populationDivide && meta.population) v = (v / meta.population) * 100_000;
+    obs.push({
+      metroCode: meta.metro_code,
+      isPortland: meta.is_portland,
+      shortName: meta.short_name,
+      current: v,
+      population: meta.population,
+    });
+  }
+  const portland = obs.find((o) => o.isPortland);
+  if (!portland) return null;
+  if (args.portlandHistory.length < 6) return null;
+  let history = args.portlandHistory;
+  if (args.populationDivide && portland.population) {
+    history = history.map((v) => (v / portland.population!) * 100_000);
+  }
+  return {
+    portlandCurrent: portland.current,
+    portlandHistory: history,
+    peerSnapshot: obs,
+    inverted: args.inverted,
+    label: args.label,
+    description: args.description,
+    source: args.source,
+  };
+}
+
 export async function GET() {
   try {
     const cached = await getCachedData<Record<string, unknown>>(CACHE_KEY, CACHE_TTL);
     if (cached) return NextResponse.json(cached);
 
-    const result = (await sql.unsafe(COMBINED_QUERY)) as unknown as Array<{
-      payload: Record<string, unknown>;
-    }>;
+    const result = (await sql.unsafe(COMBINED_QUERY)) as unknown as Array<{ payload: Row }>;
     const p = result[0]?.payload ?? {};
 
-    const biz = (p.biz as Row) ?? {};
-    const re = (p.re as Row) ?? {};
-    const qcewLatest = p.qcewLatest as Row | null;
-    const qcewYearAgo = p.qcewYearAgo as Row | null;
-    const unempRow = p.unemployment as Row | null;
-    const permitsCurr = num(p.permitsCurr);
-    const permitsPrior = num(p.permitsPrior);
-    const chartRows = (p.chart as Row[]) ?? [];
-    const pbjAsOf = (p.pbjAsOf as string | null) ?? null;
+    const metros = (p.metros as Array<{
+      metro_code: string;
+      short_name: string;
+      is_portland: boolean;
+      population: number | null;
+    }>) ?? [];
 
-    const inputs: ScoringInputs = {
-      formation:
-        biz.curr_new !== null && biz.prior_new !== null
-          ? { current: num(biz.curr_new), prior: num(biz.prior_new) }
-          : null,
-      distress:
-        biz.curr_distress !== null && biz.prior_distress !== null
-          ? { current: num(biz.curr_distress), prior: num(biz.prior_distress) }
-          : null,
-      employment:
-        qcewLatest && qcewYearAgo
-          ? {
-              current: num(qcewLatest.establishments),
-              prior: num(qcewYearAgo.establishments),
-            }
-          : null,
-      unemploymentRate: unempRow?.rate != null ? num(unempRow.rate) : null,
-      permits: permitsCurr || permitsPrior ? { current: permitsCurr, prior: permitsPrior } : null,
-      realEstate:
-        re.curr_volume !== null && re.prior_volume !== null
-          ? { current: num(re.curr_volume), prior: num(re.prior_volume) }
-          : null,
-    };
-
-    const result_ = computeEconomicHealth(inputs);
-    const newBiz12mo = num(biz.curr_new);
-    const bankruptciesUp = num(biz.curr_bankruptcies) > 0; // simplified flag
-    const headline = formatHealthHeadline(result_, {
-      newBiz12mo,
-      bankruptciesUp,
-      unemployment: inputs.unemploymentRate ?? undefined,
+    const composite = computeEmpiricalHealth({
+      unemployment: buildSnapshotInput({
+        metros,
+        snapshot: (p.unemploymentSnapshot as Row[]) ?? [],
+        valueKey: "rate",
+        inverted: true,
+        label: "Unemployment rate",
+        description: "BLS LAUS Portland MSA. Lower is better.",
+        source: "BLS LAUS",
+        portlandHistory: ((p.unemploymentPortlandHistory as unknown[]) ?? []).map((v) => Number(v)),
+      }),
+      employment: buildSnapshotInput({
+        metros,
+        snapshot: (p.employmentSnapshot as Row[]) ?? [],
+        valueKey: "yoy_pct",
+        inverted: false,
+        label: "Employment growth (YoY)",
+        description: "QCEW total establishments year-over-year change.",
+        source: "BLS QCEW",
+        portlandHistory: ((p.employmentPortlandHistory as unknown[]) ?? [])
+          .map((v) => Number(v))
+          .filter((v) => Number.isFinite(v)),
+      }),
+      wageGrowth: buildSnapshotInput({
+        metros,
+        snapshot: (p.wageSnapshot as Row[]) ?? [],
+        valueKey: "wage_yoy_pct",
+        inverted: false,
+        label: "Wage growth (YoY %)",
+        description: "QCEW average weekly wage, year-over-year change.",
+        source: "BLS QCEW",
+        portlandHistory: ((p.wagePortlandHistory as unknown[]) ?? [])
+          .map((v) => Number(v))
+          .filter((v) => Number.isFinite(v)),
+      }),
     });
 
-    const trendLabel = pbjAsOf ? `12-month window through ${pbjAsOf}` : "12-month window";
+    const tail = composite.subScores
+      .map(
+        (s) =>
+          `${s.label.toLowerCase()} ${s.value} (Portland ${s.portlandHistoricalPercentile}p, peers ${s.peerPercentile}p)`,
+      )
+      .join("; ");
+    const headline =
+      composite.label === "Insufficient data"
+        ? "Economic Health: data refreshing — partial signal available."
+        : `Economic Health: ${composite.score}/100 (${composite.label}) — ${tail || "see detail"}.`;
+
     const trendDirection: "up" | "down" | "flat" =
-      result_.score >= 60 ? "up" : result_.score >= 40 ? "flat" : "down";
+      composite.score >= 60 ? "up" : composite.score >= 40 ? "flat" : "down";
 
-    // Hero chart: monthly new-business count (drives the "is the economy growing?" question).
-    const chartData = chartRows
-      .slice()
-      .reverse()
-      .map((r) => ({
-        date: String(r.month),
-        value: num(r.new_businesses),
-      }));
+    // Hero chart: monthly new-business count from PBJ — simplest 24-pt series
+    // that signals "is the local economy growing".
+    const businessSeriesQ = `
+      SELECT to_char(month,'YYYY-MM') AS month, new_businesses
+      FROM pbj_business_monthly ORDER BY month
+    `;
+    const series = (await sql.unsafe(businessSeriesQ)) as unknown as Array<{
+      month: string;
+      new_businesses: number;
+    }>;
+    const chartData = series.map((r) => ({ date: r.month, value: num(r.new_businesses) }));
 
-    const insights: string[] = [];
-    if (inputs.formation) {
-      const pct =
-        inputs.formation.prior > 0
-          ? Math.round(((inputs.formation.current - inputs.formation.prior) / inputs.formation.prior) * 1000) / 10
-          : 0;
-      insights.push(
-        `${inputs.formation.current.toLocaleString()} new businesses formed in the last 12 months (${pct >= 0 ? "+" : ""}${pct}% vs prior 12).`,
-      );
-    }
-    if (inputs.distress) {
-      const pct =
-        inputs.distress.prior > 0
-          ? Math.round(((inputs.distress.current - inputs.distress.prior) / inputs.distress.prior) * 1000) / 10
-          : 0;
-      insights.push(
-        `Distress filings (bankruptcies + lawsuits + tax liens): ${inputs.distress.current.toLocaleString()} (${pct >= 0 ? "+" : ""}${pct}% YoY).`,
-      );
-    }
-    if (inputs.unemploymentRate !== null) {
-      insights.push(`Portland MSA unemployment: ${inputs.unemploymentRate.toFixed(1)}%.`);
-    }
-    if (result_.missing.length) {
-      insights.push(
-        `Score computed from ${result_.subScores.length} of 6 indicators (missing: ${result_.missing.join(", ")}).`,
-      );
-    }
+    const insights = composite.subScores.map((s) => {
+      const histDirection = s.inverted
+        ? s.portlandHistoricalPercentile >= 70
+          ? "below"
+          : s.portlandHistoricalPercentile <= 30
+          ? "above"
+          : "near"
+        : s.portlandHistoricalPercentile >= 70
+        ? "above"
+        : s.portlandHistoricalPercentile <= 30
+        ? "below"
+        : "near";
+      const peerDirection = s.peerPercentile >= 60
+        ? "ahead of peer median"
+        : s.peerPercentile <= 40
+        ? "behind peer median"
+        : "near peer median";
+      const valStr = s.label.toLowerCase().includes("rate")
+        ? s.portlandCurrent.toFixed(1) + "%"
+        : s.label.toLowerCase().includes("growth")
+        ? s.portlandCurrent.toFixed(1) + "%"
+        : Math.round(s.portlandCurrent).toLocaleString();
+      return `${s.label}: Portland at ${valStr} — ${histDirection} historical median, ${peerDirection}.`;
+    });
 
     const responseData = {
       headline,
-      headlineValue: result_.score,
-      dataStatus: result_.label === "Insufficient data" ? "partial" : "live",
-      dataAvailable: result_.subScores.length > 0,
+      headlineValue: composite.score,
+      dataStatus: composite.label === "Insufficient data" ? "partial" : "live",
+      dataAvailable: composite.subScores.length > 0,
       composite: {
-        score: result_.score,
-        label: result_.label,
-        subScores: result_.subScores,
-        missing: result_.missing,
+        score: composite.score,
+        label: composite.label,
+        subScores: composite.subScores,
+        missing: composite.missing,
       },
       dataSources: [
-        {
-          name: "PBJ Public Records (weekly)",
-          status: pbjAsOf ? "connected" : "no_data",
-          provider: "Portland Business Journal",
-          action: pbjAsOf ? `data through ${pbjAsOf}` : "no data",
-        },
-        {
-          name: "BLS QCEW (Multnomah)",
-          status: qcewLatest ? "connected" : "no_data",
-          provider: "Bureau of Labor Statistics",
-          action: qcewLatest
-            ? `${num(qcewLatest.establishments).toLocaleString()} establishments`
-            : "no data",
-        },
-        {
-          name: "BLS LAUS (MSA unemployment)",
-          status: unempRow ? "connected" : "no_data",
-          provider: "BLS LAUS",
-          action: unempRow ? `${num(unempRow.rate).toFixed(1)}% rate` : "no data",
-        },
-        {
-          name: "Portland BDS Permits",
-          status: permitsCurr > 0 ? "connected" : "no_data",
-          provider: "Bureau of Development Services",
-          action: permitsCurr > 0 ? `${permitsCurr.toLocaleString()} permits (12mo)` : "no data",
-        },
+        { name: "BLS LAUS (Unemployment, monthly)", status: "connected", provider: "Bureau of Labor Statistics", action: "7 metros, 10y history" },
+        { name: "BLS QCEW (Employment, quarterly)", status: "connected", provider: "Bureau of Labor Statistics", action: "7 metros, 10y history" },
+        { name: "BLS QCEW (Wages, quarterly)", status: "connected", provider: "Bureau of Labor Statistics", action: "7 metros, 10y history" },
+        { name: "PBJ Public Records (descriptive)", status: (p.pbjAsOf as string) ? "connected" : "no_data", provider: "Portland Business Journal", action: (p.pbjAsOf as string) ? `data through ${p.pbjAsOf}` : "no data" },
       ],
-      trend: {
-        direction: trendDirection,
-        percentage: result_.score,
-        label: trendLabel,
-      },
+      trend: { direction: trendDirection, percentage: composite.score, label: "vs Portland history + peer metros" },
       chartData,
-      source: "PBJ Public Records · BLS QCEW · BLS LAUS · Portland BDS",
+      source: "BLS LAUS · BLS QCEW · Census BFS",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights,
     };
@@ -268,7 +310,7 @@ export async function GET() {
       dataSources: [],
       trend: { direction: "flat" as const, percentage: 0, label: "error" },
       chartData: [],
-      source: "PBJ Public Records · BLS QCEW · BLS LAUS · Portland BDS",
+      source: "BLS LAUS · BLS QCEW · Census BFS",
       lastUpdated: new Date().toISOString().slice(0, 10),
       insights: [],
     });
