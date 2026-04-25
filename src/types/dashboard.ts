@@ -20,6 +20,7 @@ export type QuestionId =
   | "education"
   | "fiscal"
   | "economy"
+  | "economic-health"
   | "environment"
   | "quality"
   | "accountability"

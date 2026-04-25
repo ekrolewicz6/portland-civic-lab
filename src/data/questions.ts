@@ -78,6 +78,15 @@ export const QUESTIONS = [
     color: "orange",
   },
   {
+    id: "economic-health",
+    title: "Is the Local Economy Healthy?",
+    shortTitle: "Economic Health",
+    description:
+      "Composite scorecard of business formation, financial distress, employment, real estate, and permit pipeline. Synthesizes leading indicators into a single state-of-the-economy view.",
+    icon: "activity",
+    color: "teal",
+  },
+  {
     id: "environment",
     title: "Are We Meeting Our Climate Goals?",
     shortTitle: "Climate & Environment",

@@ -1,13 +1,14 @@
 import { headers } from "next/headers";
 import type { ApiResponse, QuestionData } from "@/app/(public)/dashboard/types";
 
-/** The eight civic dashboard categories in display order (4×2 grid on the homepage) */
+/** Civic dashboard categories shown on the homepage grid (display order). */
 export const QUESTIONS = [
   { id: "climate", question: "Is Portland Meeting Its Climate Commitments?", color: "#2d6a4f" },
   { id: "housing", question: "Are We Building Enough?", color: "#b85c6a" },
   { id: "safety", question: "Are People Safe?", color: "#b85c3a" },
   { id: "homelessness", question: "Are People Getting Housed?", color: "#8b6c5c" },
   { id: "economy", question: "Can People Make a Living?", color: "#c8956c" },
+  { id: "economic-health", question: "Is the Local Economy Healthy?", color: "#5c8b9c" },
   { id: "education", question: "Are Kids Learning?", color: "#3d7a5a" },
   { id: "quality", question: "Does Portland Work as a Place to Live?", color: "#6a7f8a" },
   { id: "accountability", question: "What Have Voters Approved?", color: "#8a5c6a" },

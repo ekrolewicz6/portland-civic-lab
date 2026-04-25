@@ -10,6 +10,7 @@ import ExportButton from "@/components/dashboard/ExportButton";
 import SafetyDetail from "@/components/dashboard/safety/SafetyDetail";
 import HousingDetail from "@/components/dashboard/housing/HousingDetail";
 import EconomyDetail from "@/components/dashboard/economy/EconomyDetail";
+import EconomicHealthDetail from "@/components/dashboard/economic-health/EconomicHealthDetail";
 import FiscalDetail from "@/components/dashboard/fiscal/FiscalDetail";
 import HomelessnessDetail from "@/components/dashboard/homelessness/HomelessnessDetail";
 import TransportationDetail from "@/components/dashboard/transportation/TransportationDetail";
@@ -52,6 +53,7 @@ export async function generateStaticParams() {
     { question: "education" },
     { question: "fiscal" },
     { question: "economy" },
+    { question: "economic-health" },
     { question: "environment" },
     { question: "quality" },
     { question: "accountability" },
@@ -98,6 +100,7 @@ const detailComponents: Record<string, React.ComponentType> = {
   education: EducationDetail,
   fiscal: FiscalDetail,
   economy: EconomyDetail,
+  "economic-health": EconomicHealthDetail,
   environment: EnvironmentDetail,
   quality: QualityDetail,
   accountability: AccountabilityDetail,

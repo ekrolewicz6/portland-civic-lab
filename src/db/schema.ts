@@ -249,6 +249,68 @@ export const climateEmissionsTrajectory = pgTable("climate_emissions_trajectory"
   populationThousands: numeric("population_thousands"),
 });
 
+// ── PBJ Public Records (Portland Business Journal weekly scrape) ────────
+// Source: intelligence/bizjournals-records/insights/output/*.json
+// Loaded by ingest/sync-pbj-records.ts. See plans/purrfect-snuggling-island.md.
+
+export const pbjBusinessMonthly = pgTable("pbj_business_monthly", {
+  month: date("month").primaryKey(),
+  newBusinesses: integer("new_businesses").notNull().default(0),
+  bankruptcies: integer("bankruptcies").notNull().default(0),
+  lawsuits: integer("lawsuits").notNull().default(0),
+  taxLiens: integer("tax_liens").notNull().default(0),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
+export const pbjRealEstateMonthly = pgTable("pbj_real_estate_monthly", {
+  month: date("month").primaryKey(),
+  entityBuyers: integer("entity_buyers").notNull().default(0),
+  personBuyers: integer("person_buyers").notNull().default(0),
+  totalVolumeUsd: numeric("total_volume_usd", { precision: 14, scale: 2 }).notNull().default("0"),
+  dealCount: integer("deal_count").notNull().default(0),
+  entitySharePct: numeric("entity_share_pct", { precision: 5, scale: 2 }),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
+export const pbjSerialBuyer = pgTable("pbj_serial_buyer", {
+  buyerName: text("buyer_name").primaryKey(),
+  buyerType: text("buyer_type"), // 'entity' | 'person'
+  dealCount: integer("deal_count").notNull(),
+  totalVolumeUsd: numeric("total_volume_usd", { precision: 14, scale: 2 }),
+  zipCount: integer("zip_count"),
+  lastSeenWeek: date("last_seen_week"),
+  ingestedAt: timestamp("ingested_at", { withTimezone: true }).defaultNow(),
+});
+
+export const pbjDistressEntity = pgTable("pbj_distress_entity", {
+  entityName: text("entity_name").primaryKey(),
+  categories: text("categories").array().notNull(),
+  categoryCount: integer("category_count").notNull(),
+  lastSeenWeek: date("last_seen_week"),
+  ingestedAt: timestamp("ingested_at", { withTimezone: true }).defaultNow(),
+});
+
+export const pbjZipInvestment = pgTable("pbj_zip_investment", {
+  zipCode: text("zip_code").primaryKey(),
+  permitCount: integer("permit_count").default(0),
+  permitValueUsd: numeric("permit_value_usd", { precision: 14, scale: 2 }).default("0"),
+  reDealCount: integer("re_deal_count").default(0),
+  reVolumeUsd: numeric("re_volume_usd", { precision: 14, scale: 2 }).default("0"),
+  newBusinessCount: integer("new_business_count").default(0),
+  totalInvestmentUsd: numeric("total_investment_usd", { precision: 14, scale: 2 }).default("0"),
+  ingestedAt: timestamp("ingested_at", { withTimezone: true }).defaultNow(),
+});
+
+export const pbjTopLawsuit = pgTable("pbj_top_lawsuit", {
+  caseId: text("case_id").primaryKey(), // hash(defendant + plaintiff + filed_date + damages)
+  defendantName: text("defendant_name").notNull(),
+  plaintiffName: text("plaintiff_name"),
+  suitType: text("suit_type"),
+  damagesUsd: numeric("damages_usd", { precision: 14, scale: 2 }).notNull(),
+  filedDate: date("filed_date"),
+  ingestedAt: timestamp("ingested_at", { withTimezone: true }).defaultNow(),
+});
+
 // ── Progress Reports ───────────────────────────────────────────────────
 
 import { boolean as pgBoolean, pgSchema } from "drizzle-orm/pg-core";

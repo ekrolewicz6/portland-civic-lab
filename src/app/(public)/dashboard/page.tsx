@@ -82,7 +82,7 @@ export default async function DashboardPage() {
       </section>
 
       <section className="relative max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 pt-8 sm:pt-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
           {questions.map((q, i) => {
             const api = q.apiData;
             const hasData =

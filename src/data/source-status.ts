@@ -315,6 +315,41 @@ export const QUESTION_DATA_STATUS: Record<QuestionId, QuestionDataStatus> = {
     ],
   },
 
+  // ── Economic Health (composite) ──────────────────────────────────────
+  "economic-health": {
+    questionId: "economic-health",
+    overallStatus: "LIVE_PARTIAL",
+    badgeLabel: "Partially live",
+    badgeTooltip:
+      "Composite scorecard. PBJ public-records pipeline + BLS QCEW + LAUS + BDS permits all live. Score weights are tunable.",
+    sources: [
+      {
+        name: "PBJ Public Records (weekly)",
+        status: "LIVE",
+        statusLabel: "Weekly scrape — bankruptcies, lawsuits, liens, real estate, new businesses",
+        provider: "Portland Business Journal (subscription)",
+      },
+      {
+        name: "BLS QCEW Employment (Multnomah)",
+        status: "LIVE",
+        statusLabel: "Quarterly establishment + employment",
+        provider: "Bureau of Labor Statistics QCEW",
+      },
+      {
+        name: "BLS LAUS Unemployment (MSA)",
+        status: "LIVE",
+        statusLabel: "Monthly Portland MSA rate",
+        provider: "Bureau of Labor Statistics LAUS",
+      },
+      {
+        name: "Portland BDS Permits",
+        status: "LIVE",
+        statusLabel: "Permit issuance, last 24 months",
+        provider: "Portland Bureau of Development Services",
+      },
+    ],
+  },
+
   // ── Environment & Climate ─────────────────────────────────────────────
   environment: {
     questionId: "environment",
