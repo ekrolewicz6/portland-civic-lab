@@ -230,8 +230,49 @@ const COMBINED_QUERY = `
         SELECT z.year, z.zhvi / NULLIF(a.median_household_income, 0) AS ratio
         FROM metro_zhvi_monthly z
         JOIN metro_acs_annual a ON a.metro_code = z.metro_code AND a.year = z.year
-        WHERE z.metro_code = '${PORTLAND_METRO_CODE}' AND z.month = 12
-          AND a.median_household_income > 0
+        WHERE z.metro_code = '${PORTLAND_METRO_CODE}' AND z.month = 12 AND a.median_household_income > 0
+      ) t
+    ),
+    -- BEA per-capita personal income (USD per person, level — not growth)
+    'incomeSnapshot', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        WITH latest AS (SELECT metro_code, MAX(year) AS y FROM metro_personal_income_annual WHERE per_capita_income IS NOT NULL GROUP BY metro_code),
+             anchored AS (SELECT MIN(y) AS common_y FROM latest)
+        SELECT i.metro_code, i.year, i.per_capita_income FROM metro_personal_income_annual i JOIN anchored ON i.year = anchored.common_y
+        WHERE i.per_capita_income IS NOT NULL
+      ) t
+    ),
+    'incomePortlandHistory', (
+      SELECT COALESCE(json_agg(per_capita_income ORDER BY year), '[]'::json)
+      FROM metro_personal_income_annual
+      WHERE metro_code = '${PORTLAND_METRO_CODE}' AND per_capita_income IS NOT NULL
+    ),
+    -- Population growth: YoY % change in BEA county-rolled-up population
+    -- (more reliable than ACS pop16+ which is sample-based and noisy YoY).
+    'popGrowthSnapshot', (
+      SELECT COALESCE(json_agg(t), '[]'::json) FROM (
+        WITH paired AS (
+          SELECT curr.metro_code, curr.year, curr.population AS curr_pop, prior.population AS prior_pop
+          FROM metro_personal_income_annual curr
+          JOIN metro_personal_income_annual prior
+            ON prior.metro_code = curr.metro_code AND prior.year = curr.year - 1
+          WHERE curr.population IS NOT NULL AND prior.population IS NOT NULL
+        ),
+        latest AS (SELECT metro_code, MAX(year) AS y FROM paired GROUP BY metro_code),
+        anchored AS (SELECT MIN(y) AS common_y FROM latest)
+        SELECT p.metro_code, p.year,
+               ((p.curr_pop - p.prior_pop)::numeric / NULLIF(p.prior_pop, 0)) * 100 AS yoy_pct
+        FROM paired p JOIN anchored ON p.year = anchored.common_y
+      ) t
+    ),
+    'popGrowthPortlandHistory', (
+      SELECT COALESCE(json_agg(yoy ORDER BY year), '[]'::json) FROM (
+        SELECT curr.year,
+               ((curr.population - prior.population)::numeric / NULLIF(prior.population, 0)) * 100 AS yoy
+        FROM metro_personal_income_annual curr
+        JOIN metro_personal_income_annual prior
+          ON prior.metro_code = curr.metro_code AND prior.year = curr.year - 1
+        WHERE curr.metro_code = '${PORTLAND_METRO_CODE}' AND curr.population IS NOT NULL AND prior.population IS NOT NULL
       ) t
     ),
     'businessSeries', (
@@ -539,6 +580,32 @@ export async function GET() {
         .filter((v) => Number.isFinite(v)),
     });
 
+    const incomeInput = buildSnapshotInput({
+      metros,
+      snapshot: (p.incomeSnapshot as Row[]) ?? [],
+      valueKey: "per_capita_income",
+      label: "Income per capita",
+      description: "BEA personal income per person (county roll-up). Higher is better.",
+      source: "BEA CAINC1",
+      inverted: false,
+      portlandHistory: ((p.incomePortlandHistory as unknown[]) ?? [])
+        .map((v) => Number(v))
+        .filter((v) => Number.isFinite(v)),
+    });
+
+    const popGrowthInput = buildSnapshotInput({
+      metros,
+      snapshot: (p.popGrowthSnapshot as Row[]) ?? [],
+      valueKey: "yoy_pct",
+      label: "Population growth (YoY)",
+      description: "Year-over-year metro population change. Higher = metro is gaining residents.",
+      source: "BEA county roll-up",
+      inverted: false,
+      portlandHistory: ((p.popGrowthPortlandHistory as unknown[]) ?? [])
+        .map((v) => Number(v))
+        .filter((v) => Number.isFinite(v)),
+    });
+
     const composite = computeEmpiricalHealth({
       unemployment: unemploymentInput,
       employment: employmentInput,
@@ -546,6 +613,8 @@ export async function GET() {
       laborForceParticipation: lfpInput,
       businessFormation: bfaInput,
       affordability: affInput,
+      incomePerCapita: incomeInput,
+      populationGrowth: popGrowthInput,
     });
 
     // Industry gainers / losers (still from QCEW NAICS detail).

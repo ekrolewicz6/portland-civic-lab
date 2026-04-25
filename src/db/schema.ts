@@ -314,6 +314,18 @@ export const metroAcsAnnual = pgTable("metro_acs_annual", {
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
 });
 
+// Annual MSA-level personal income (BEA CAINC1 county data rolled up).
+// Total personal income + population + computed per-capita. BEA Regional API.
+export const metroPersonalIncomeAnnual = pgTable("metro_personal_income_annual", {
+  metroCode: text("metro_code").notNull(),
+  year: integer("year").notNull(),
+  personalIncomeThousands: numeric("personal_income_thousands", { precision: 18, scale: 0 }),
+  population: integer("population"),
+  perCapitaIncome: integer("per_capita_income"),
+  countiesIncluded: integer("counties_included"),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+});
+
 // Monthly MSA-level Zillow ZHVI (typical home value), all-homes tier, smoothed/SA.
 export const metroZhviMonthly = pgTable("metro_zhvi_monthly", {
   metroCode: text("metro_code").notNull(),

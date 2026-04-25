@@ -22,7 +22,9 @@ export type IndicatorKey =
   | "wageGrowth"
   | "businessFormation"
   | "laborForceParticipation"
-  | "affordability";
+  | "affordability"
+  | "incomePerCapita"
+  | "populationGrowth";
 
 /** A single observation for one metro at one point in time. */
 export interface MetroObservation {
@@ -92,17 +94,20 @@ export interface EmpiricalHealthResult {
   missing: IndicatorKey[];
 }
 
-// Six indicators, each ~17%, sum to 1.0. Composite reflects:
-//   - Labor health: unemployment + LFP (people working)
-//   - Job dynamism: employment YoY + business formation (firms growing)
-//   - Earnings & affordability: wage growth + housing affordability
+// Eight indicators, each ~12.5%, sum to 1.0. Composite reflects:
+//   - Labor health: unemployment, LFP (people working)
+//   - Job dynamism: employment YoY, business formation (firms growing)
+//   - Earnings: wage growth, income per capita (paychecks)
+//   - Affordability + growth: housing affordability, population growth
 const RAW_WEIGHTS: Record<IndicatorKey, number> = {
-  unemployment: 0.17,
-  employment: 0.17,
-  wageGrowth: 0.17,
-  laborForceParticipation: 0.17,
-  businessFormation: 0.16,
-  affordability: 0.16,
+  unemployment: 0.13,
+  employment: 0.13,
+  wageGrowth: 0.12,
+  laborForceParticipation: 0.13,
+  businessFormation: 0.12,
+  affordability: 0.13,
+  incomePerCapita: 0.12,
+  populationGrowth: 0.12,
 };
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
@@ -196,6 +201,8 @@ export interface EmpiricalInputs {
   laborForceParticipation: EmpiricalIndicatorInput | null;
   businessFormation: EmpiricalIndicatorInput | null;
   affordability: EmpiricalIndicatorInput | null;
+  incomePerCapita: EmpiricalIndicatorInput | null;
+  populationGrowth: EmpiricalIndicatorInput | null;
 }
 
 export function computeEmpiricalHealth(inputs: EmpiricalInputs): EmpiricalHealthResult {
@@ -206,6 +213,8 @@ export function computeEmpiricalHealth(inputs: EmpiricalInputs): EmpiricalHealth
     "laborForceParticipation",
     "businessFormation",
     "affordability",
+    "incomePerCapita",
+    "populationGrowth",
   ];
   const raw: Array<{ key: IndicatorKey; sub: EmpiricalSubScore | null }> = keys.map((k) => ({
     key: k,

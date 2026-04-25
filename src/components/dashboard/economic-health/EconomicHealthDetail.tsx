@@ -199,10 +199,35 @@ function DigDeeper({ href, label }: { href: string; label: string }) {
 
 function fmtVal(s: SubScore): string {
   if (s.portlandCurrent === undefined) return "—";
-  if (s.label.toLowerCase().includes("rate") || s.label.toLowerCase().includes("growth")) {
+  const label = s.label.toLowerCase();
+  if (label.includes("ratio")) {
+    return `${s.portlandCurrent.toFixed(1)}×`;
+  }
+  if (label.includes("rate") || label.includes("growth") || label.includes("participation")) {
     return `${s.portlandCurrent.toFixed(1)}%`;
   }
   return Math.round(s.portlandCurrent).toLocaleString();
+}
+
+/**
+ * Translate the historical percentile (0-100) into a plain-English phrase.
+ * Higher percentile = better. Already accounts for inverted metrics (handled
+ * upstream by the scoring lib).
+ */
+function plainHistoryCaption(pct: number): string {
+  if (pct >= 80) return "Among Portland's strongest in the last decade";
+  if (pct >= 60) return "Better than usual for Portland";
+  if (pct >= 40) return "Roughly typical for Portland";
+  if (pct >= 20) return `Weaker than ${100 - pct}% of the last decade`;
+  return `Among Portland's weakest in the last decade`;
+}
+
+function plainPeerCaption(pct: number): string {
+  if (pct >= 80) return "Beats most peer cities";
+  if (pct >= 60) return "Ahead of peer median";
+  if (pct >= 40) return "Around peer median";
+  if (pct >= 20) return "Behind most peer cities";
+  return "At the bottom of peer cities";
 }
 
 /**
@@ -217,11 +242,11 @@ function ScoreBar({ s }: { s: SubScore }) {
     // Fallback to plain bar if empirical context is missing.
     return (
       <div className="space-y-1.5">
-        <div className="flex justify-between text-[14px]">
-          <span className="text-[var(--color-ink)]">{s.label}</span>
+        <div className="flex justify-between items-baseline text-[14px]">
+          <span className="text-[var(--color-ink)] font-semibold">{s.label}</span>
           <span className="font-mono text-[var(--color-ink-muted)]">
-            {s.value}
-            <span className="text-[12px] ml-2">w {(s.rawWeight * 100).toFixed(0)}%</span>
+            <span className="text-[var(--color-ink)] text-[16px] font-semibold">{s.value}</span>
+            <span className="text-[var(--color-ink-muted)]">/100</span>
           </span>
         </div>
         <div className="w-full h-2 bg-[var(--color-parchment)] rounded-sm overflow-hidden">
@@ -253,9 +278,9 @@ function ScoreBar({ s }: { s: SubScore }) {
     <div className="space-y-2">
       <div className="flex justify-between items-baseline text-[14px]">
         <span className="text-[var(--color-ink)] font-semibold">{s.label}</span>
-        <span className="font-mono text-[var(--color-ink-muted)]">
-          <span className="text-[var(--color-ink)] text-[14px] font-semibold">{s.value}</span>
-          <span className="text-[12px] ml-2">w {(s.rawWeight * 100).toFixed(0)}%</span>
+        <span className="font-mono">
+          <span className="text-[var(--color-ink)] text-[18px] font-semibold">{s.value}</span>
+          <span className="text-[12px] text-[var(--color-ink-muted)]">/100</span>
         </span>
       </div>
 
@@ -467,16 +492,15 @@ function RibbonChart({ s, scoreColor, pos, peers, portlandPeer, hist }: RibbonCh
       >
         <div className="flex flex-col items-center gap-0.5">
           <div
-            className="text-[12px] font-mono font-bold uppercase tracking-[0.08em] px-1.5 py-0.5 rounded-sm whitespace-nowrap"
+            className="text-[13px] font-bold whitespace-nowrap px-2 py-0.5 rounded-sm"
             style={{ color: scoreColor, backgroundColor: "var(--color-paper-warm)" }}
           >
-            PDX · {fmtVal(s)}
+            Portland · {fmtVal(s)}
           </div>
-          <div className="text-[11px] font-mono text-[var(--color-ink-muted)] whitespace-nowrap">
-            <span className="text-[var(--color-ink)] font-semibold">{s.portlandHistoricalPercentile}p</span>
-            {" hist · "}
-            <span className="text-[var(--color-ink)] font-semibold">{s.peerPercentile}p</span>
-            {" peers"}
+          <div className="text-[12px] text-[var(--color-ink-muted)] whitespace-nowrap text-center max-w-[300px]">
+            {plainHistoryCaption(s.portlandHistoricalPercentile ?? 50)}
+            {" · "}
+            {plainPeerCaption(s.peerPercentile ?? 50)}
           </div>
         </div>
       </div>
@@ -644,15 +668,13 @@ export default function EconomicHealthDetail() {
                     {c.label === "Insufficient data" && "Insufficient data to compute a score."}
                   </h3>
                   <p className="text-[15px] text-[var(--color-ink-muted)] leading-relaxed">
-                    Empirical composite of three indicators with 10+ years of comparable peer-metro
-                    data: <strong className="text-[var(--color-ink)]">unemployment rate</strong>,{" "}
-                    <strong className="text-[var(--color-ink)]">employment growth</strong> (QCEW
-                    establishments YoY), and <strong className="text-[var(--color-ink)]">wage
-                    growth</strong> (QCEW avg weekly wage YoY). Each sub-score is the average of
-                    Portland&apos;s percentile vs its own 10-year history and Portland&apos;s
-                    percentile vs 6 peer metros today — so 50 means &quot;normal for Portland and
-                    average vs peers,&quot; 80+ means &quot;exceptional on both axes,&quot; and
-                    &lt;30 means &quot;below typical and behind peers.&quot;
+                    A weighted blend of six economic indicators with 10+ years of comparable peer-metro
+                    data — covering jobs, wages, business dynamism, labor participation, and housing
+                    affordability. Each sub-score asks two empirical questions: <em>How does Portland
+                    compare to its own past?</em> and <em>How does Portland compare to peer cities right
+                    now?</em> The two answers are averaged. <strong className="text-[var(--color-ink)]">A score
+                    near 50 is normal for Portland and average vs peers; 80+ is exceptional; below 30 is
+                    weaker than typical and behind peer cities.</strong>
                   </p>
                 </div>
               </div>
