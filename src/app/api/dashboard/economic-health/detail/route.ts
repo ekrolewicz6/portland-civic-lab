@@ -280,10 +280,15 @@ function classifyBuyer(name: string | null | undefined): "entity" | "person" {
   if (!name) return "person";
   const n = name.trim();
   if (!n) return "person";
-  // Common entity suffixes with robust trailing matchers.
+  // Most entity suffixes — `\b` after the alternation handles word boundaries.
+  // Note: "CO." at end-of-string is a special case because `\.\b` won't match
+  // (no word char follows the period to anchor `\b`), so it gets its own regex.
   const suffixRe =
-    /\b(LLC|L\.L\.C\.?|LLP|INC\.?|CORP\.?|CORPORATION|LTD\.?|LP|PLLC|PC\.?|COMPANY|CO\.|TRUST|HOLDINGS?)\b/i;
+    /\b(LLC|L\.L\.C\.?|LLP|INC\.?|CORP\.?|CORPORATION|LTD\.?|LP|PLLC|PC\.?|COMPANY|TRUST|HOLDINGS?)\b/i;
   if (suffixRe.test(n)) return "entity";
+  // "Co." or "Co" as the last token — Portland General Electric Co.,
+  // Sunshine Dairy Co, etc. Lookahead matches space-or-end.
+  if (/\bCo\.?(?=\s|$)/i.test(n)) return "entity";
   // Government / public agencies are entities, not persons.
   const govRe = /\b(METRO|CITY OF|COUNTY OF|PORT OF|HOMES? FORWARD|HOUSING AUTHORITY)\b/i;
   if (govRe.test(n)) return "entity";
