@@ -300,28 +300,40 @@ function fmtPeerValue(value: number, label: string): string {
 }
 
 /**
- * Detect collisions between peer pills (and Portland) and nudge upper-row pills
- * by ±10px so 3-letter codes don't visually overlap. Returns a map of
- * metroCode → horizontal offset in px (added on top of the percentage `left`).
+ * When peer values cluster (e.g., 5 metros within 2 percentage points), a
+ * single-row layout can't fit pills without overlap. Greedy-assign each peer
+ * to the lowest-numbered row where no prior pill in the same row is within
+ * PILL_WIDTH px. Up to 3 rows. Returns a map of metroCode → row index (0 =
+ * closest to track, 1 = above, 2 = highest).
  */
-function jitterOffsets(
+function rowAssignments(
   peers: PeerObservation[],
   pos: (v: number) => number,
-  trackWidthPx = 700, // approximate; the percentage-based positions get px-jittered
+  trackWidthPx = 700,
 ): Record<string, number> {
-  const PILL_WIDTH = 36; // 3-letter code + padding
-  const sorted = [...peers].sort((a, b) => a.current - b.current);
-  const offsets: Record<string, number> = {};
-  for (let i = 1; i < sorted.length; i++) {
-    const prev = sorted[i - 1];
-    const curr = sorted[i];
-    const prevX = (pos(prev.current) / 100) * trackWidthPx + (offsets[prev.metroCode] ?? 0);
-    const currX = (pos(curr.current) / 100) * trackWidthPx;
-    if (currX - prevX < PILL_WIDTH) {
-      offsets[curr.metroCode] = PILL_WIDTH - (currX - prevX);
+  const PILL_WIDTH = 42; // 3-letter code + padding + 4px buffer
+  const sorted = [...peers]
+    .filter((p) => !p.isPortland)
+    .sort((a, b) => a.current - b.current);
+  const rowLastX: number[] = []; // last assigned X per row
+  const result: Record<string, number> = {};
+  for (const p of sorted) {
+    const x = (pos(p.current) / 100) * trackWidthPx;
+    let row = -1;
+    for (let r = 0; r < rowLastX.length; r++) {
+      if (x - rowLastX[r] >= PILL_WIDTH) {
+        row = r;
+        break;
+      }
     }
+    if (row === -1) {
+      row = rowLastX.length;
+      rowLastX.push(0);
+    }
+    rowLastX[row] = x;
+    result[p.metroCode] = row;
   }
-  return offsets;
+  return result;
 }
 
 interface RibbonChartProps {
@@ -334,22 +346,31 @@ interface RibbonChartProps {
 }
 
 function RibbonChart({ s, scoreColor, pos, peers, portlandPeer, hist }: RibbonChartProps) {
-  const offsets = jitterOffsets(peers, pos);
+  const rows = rowAssignments(peers, pos);
+  const numRows = Math.max(1, ...Object.values(rows).map((r) => r + 1));
+  const ROW_HEIGHT = 26; // pill (22px) + 4px gap
+  const trackTop = numRows * ROW_HEIGHT + 18; // pills + drop-line padding
+  const totalHeight = trackTop + 60; // track + Portland caption
 
   return (
-    <div className="relative w-full" style={{ height: 104 }}>
-      {/* ── Lane 1 (top, ~24px): peer pills + drop-lines ───────────────── */}
+    <div className="relative w-full" style={{ height: totalHeight }}>
+      {/* ── Lane 1 (top): peer pills, possibly stacked across multiple rows ── */}
       {peers
         .filter((p) => !p.isPortland)
         .map((p) => {
           const leftPct = pos(p.current);
-          const offsetPx = offsets[p.metroCode] ?? 0;
+          const row = rows[p.metroCode] ?? 0;
+          // Row 0 is closest to track (lowest visually); higher row indices
+          // sit further above. So `top` decreases with row.
+          const topPx = (numRows - 1 - row) * ROW_HEIGHT;
+          const dropLineHeight = trackTop - topPx - 22; // pill height = 22
           return (
             <div
               key={p.metroCode}
-              className="group absolute top-0"
+              className="group absolute"
               style={{
-                left: `calc(${leftPct}% + ${offsetPx}px)`,
+                top: topPx,
+                left: `${leftPct}%`,
                 transform: "translateX(-50%)",
                 zIndex: 5,
               }}
@@ -357,11 +378,12 @@ function RibbonChart({ s, scoreColor, pos, peers, portlandPeer, hist }: RibbonCh
               {/* The pill (always visible 3-letter code) — also the hover hit target */}
               <div
                 className="relative inline-flex items-center justify-center cursor-pointer select-none
-                           h-[22px] px-2 rounded-full border border-[#7c9bb0]/60 bg-transparent
+                           h-[22px] px-2 rounded-full border border-[#7c9bb0]/60 bg-[var(--color-paper-warm)]
                            text-[11px] font-mono tracking-[0.06em] uppercase text-[#5a7a8a]
                            transition-all duration-150 ease-out
-                           hover:bg-[var(--color-canopy)] hover:text-white hover:border-[var(--color-canopy)]
-                           hover:shadow-[0_1px_4px_rgba(15,36,25,0.18)]"
+                           group-hover:bg-[var(--color-canopy)] group-hover:text-white
+                           group-hover:border-[var(--color-canopy)]
+                           group-hover:shadow-[0_2px_6px_rgba(15,36,25,0.22)]"
                 style={{ minWidth: 36 }}
               >
                 {peerCode(p.shortName)}
@@ -379,16 +401,17 @@ function RibbonChart({ s, scoreColor, pos, peers, portlandPeer, hist }: RibbonCh
 
               {/* Drop-line from pill down to track (thickens on hover) */}
               <div
-                className="absolute left-1/2 -translate-x-1/2 top-[22px] w-px h-[16px]
-                           bg-[#7c9bb0]/50 transition-all duration-150
+                className="absolute left-1/2 -translate-x-1/2 top-[22px] w-px
+                           bg-[#7c9bb0]/45 transition-all duration-150
                            group-hover:bg-[var(--color-canopy)] group-hover:w-[2px]"
+                style={{ height: dropLineHeight }}
               />
             </div>
           );
         })}
 
       {/* ── Lane 2 (middle, the track) ─────────────────────────────────── */}
-      <div className="absolute left-0 right-0" style={{ top: 44 }}>
+      <div className="absolute left-0 right-0" style={{ top: trackTop }}>
         {/* Faint Portland historical full range */}
         <div
           className="absolute h-px bg-[var(--color-parchment)]"
@@ -437,7 +460,7 @@ function RibbonChart({ s, scoreColor, pos, peers, portlandPeer, hist }: RibbonCh
         className="absolute"
         style={{
           left: `${pos(s.portlandCurrent!)}%`,
-          top: 64,
+          top: trackTop + 20, // ~20px below the track baseline
           transform: "translateX(-50%)",
           zIndex: 3,
         }}
