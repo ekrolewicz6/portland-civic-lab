@@ -30,7 +30,7 @@ const TABS: {
     shortLabel: "Taxes",
     Icon: Receipt,
     description:
-      "How Portland's effective tax rate compares to peer cities across income levels.",
+      "Portland's full local fiscal basket from FiSC, plus an income-tax-only calculator across income levels.",
   },
 ];
 

@@ -27,7 +27,7 @@ const questionLabels: Record<string, string> = {
   business: "Is Portland gaining or losing businesses?",
   downtown: "Is downtown coming back?",
   safety: "Is Portland safe?",
-  tax: "Is the tax burden competitive?",
+  tax: "What do Portlanders pay, and what do they get?",
   housing: "Is housing getting built?",
   program: "Is the Portland Civic Lab working?",
 };

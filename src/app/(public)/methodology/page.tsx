@@ -104,13 +104,18 @@ const CATEGORIES: CategoryInfo[] = [
   {
     name: "Fiscal Health",
     description:
-      "Tax burden comparisons, city budget analysis, and pension liability tracking.",
+      "Local fiscal-burden comparisons, income-tax scenario modeling, city budget analysis, and pension liability tracking.",
     sources: [
       {
-        name: "Tax Rate Analysis",
-        provider:
-          "Lincoln Institute / OR DOR / WA DOR / City budgets",
-        frequency: "Annual (published rates)",
+        name: "Lincoln FiSC Local Fiscal Basket",
+        provider: "Lincoln Institute of Land Policy",
+        frequency: "Annual/biennial workbook update",
+        status: "Static",
+      },
+      {
+        name: "Income Tax Calculator",
+        provider: "IRS / OR DOR / WA DOR / state tax agencies",
+        frequency: "Annual (published brackets and rates)",
         status: "Static",
       },
     ],

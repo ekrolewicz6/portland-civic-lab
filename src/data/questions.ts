@@ -64,7 +64,7 @@ export const QUESTIONS = [
     title: "Where Does the Money Go?",
     shortTitle: "Fiscal Health",
     description:
-      "Compares tax burden, tracks city budget trends, revenue sources, capital project completion, and PERS liability.",
+      "Compares Portland's FiSC local fiscal basket, income-tax scenarios, budget trends, service return, and PERS liability.",
     icon: "receipt",
     color: "violet",
   },

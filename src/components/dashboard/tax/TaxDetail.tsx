@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import fiscTaxBurden from "@/data/fisc-tax-burden-2023.json";
 
 interface TaxRow {
   city: string;
@@ -124,6 +125,112 @@ function SectionHeader({ title }: { title: string }) {
   );
 }
 
+type FiscMetric = (typeof fiscTaxBurden.portland.metrics)[number];
+type FiscPeer = (typeof fiscTaxBurden.peers)[number];
+
+const FISC_WORKBOOK_URL =
+  "https://www.lincolninst.edu/app/uploads/2026/01/FiSC-Full-Dataset-2023-Update.xlsx";
+
+function dollars(value: number): string {
+  return `$${Math.round(value).toLocaleString()}`;
+}
+
+function rank(metric: FiscMetric): string {
+  return `#${metric.rankHighToLow} of ${metric.sampleSize}`;
+}
+
+function barWidth(value: number, max: number): string {
+  if (max <= 0) return "0%";
+  return `${Math.max(3, Math.min(100, (value / max) * 100))}%`;
+}
+
+function FiscMetricCard({ metric, emphasis = false }: { metric: FiscMetric; emphasis?: boolean }) {
+  return (
+    <div
+      className={`border rounded-sm p-5 ${
+        emphasis
+          ? "bg-[var(--color-canopy)] text-white/90 border-[var(--color-canopy)]"
+          : "bg-[var(--color-paper-warm)] border-[var(--color-parchment)]"
+      }`}
+    >
+      <p className={`text-[11px] font-semibold uppercase tracking-[0.12em] ${emphasis ? "text-white/65" : "text-[var(--color-ink-muted)]"}`}>
+        {metric.label}
+      </p>
+      <div className="mt-3 flex items-end justify-between gap-4">
+        <p className="text-[28px] font-mono font-bold leading-none">
+          {dollars(metric.valuePerCapita)}
+        </p>
+        <p className={`text-[12px] font-mono ${emphasis ? "text-white/70" : "text-[var(--color-ink-muted)]"}`}>
+          {rank(metric)}
+        </p>
+      </div>
+      <p className={`mt-3 text-[12px] leading-relaxed ${emphasis ? "text-white/65" : "text-[var(--color-ink-muted)]"}`}>
+        Higher than {Math.round(metric.percentileBelow)}% of the top {metric.sampleSize} FiSC cities by population.
+      </p>
+    </div>
+  );
+}
+
+function RevenueBar({
+  label,
+  value,
+  share,
+  max,
+  tone = "canopy",
+}: {
+  label: string;
+  value: number;
+  share: number;
+  max: number;
+  tone?: "canopy" | "clay";
+}) {
+  return (
+    <div>
+      <div className="flex items-baseline justify-between gap-3 text-[12px]">
+        <span className="font-medium text-[var(--color-ink)]">{label}</span>
+        <span className="font-mono text-[var(--color-ink-muted)]">
+          {dollars(value)} · {share}%
+        </span>
+      </div>
+      <div className="mt-1 h-2 bg-[var(--color-parchment)]/60 rounded-full overflow-hidden">
+        <div
+          className={tone === "canopy" ? "h-full bg-[var(--color-canopy)]" : "h-full bg-[var(--color-clay)]"}
+          style={{ width: barWidth(value, max) }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function PeerRow({ peer }: { peer: FiscPeer }) {
+  const isPortland = peer.city === "Portland, OR";
+  return (
+    <tr className={`${isPortland ? "border-t-2 border-b-2 border-[var(--color-canopy)]/40 bg-[var(--color-canopy)]/5" : "border-t border-[var(--color-parchment)]/40"}`}>
+      <td className={`px-3 py-2.5 whitespace-nowrap ${isPortland ? "font-bold text-[var(--color-ink)]" : "text-[var(--color-ink-muted)]"}`}>
+        {peer.city}
+      </td>
+      <td className="px-3 py-2.5 text-right font-mono text-[var(--color-ink)]">
+        {dollars(peer.ownSourceUtilityPerCapita)}
+      </td>
+      <td className="px-3 py-2.5 text-right font-mono text-[var(--color-ink-muted)]">
+        #{peer.ownSourceUtilityRank}
+      </td>
+      <td className="px-3 py-2.5 text-right font-mono text-[var(--color-ink)]">
+        {dollars(peer.taxesPerCapita)}
+      </td>
+      <td className="px-3 py-2.5 text-right font-mono text-[var(--color-ink-muted)]">
+        #{peer.taxesRank}
+      </td>
+      <td className="px-3 py-2.5 text-right font-mono text-[var(--color-ink)]">
+        {dollars(peer.chargesUtilityPerCapita)}
+      </td>
+      <td className="px-3 py-2.5 text-right font-mono text-[var(--color-ink-muted)]">
+        #{peer.chargesUtilityRank}
+      </td>
+    </tr>
+  );
+}
+
 export default function TaxDetail() {
   const [data, setData] = useState<TaxDetailData | null>(null);
   const [error, setError] = useState(false);
@@ -186,10 +293,209 @@ export default function TaxDetail() {
     .filter((r) => incomeLevels.includes(r.income_level))
     .sort((a, b) => a.income_level - b.income_level);
 
+  const fiscMetrics = fiscTaxBurden.portland.metrics;
+  const broadMetric = fiscMetrics.find((m) => m.key === "broad_own_source_plus_utility") ?? fiscMetrics[0];
+  const taxMetric = fiscMetrics.find((m) => m.key === "taxes") ?? fiscMetrics[1];
+  const chargesMetric = fiscMetrics.find((m) => m.key === "charges_plus_utility") ?? fiscMetrics[2];
+  const spendingMetric = fiscMetrics.find((m) => m.key === "spending_total") ?? fiscMetrics[3];
+  const maxRevenueComponent = Math.max(
+    ...fiscTaxBurden.portland.components.map((c) => c.valuePerCapita),
+  );
+  const maxTaxComponent = Math.max(
+    ...fiscTaxBurden.portland.taxComponents.map((c) => c.valuePerCapita),
+  );
+  const maxTrend = Math.max(
+    ...fiscTaxBurden.portland.trend.map((r) => r.ownSourceUtilityPerCapita),
+  );
+  const maxServiceSpending = Math.max(
+    ...fiscTaxBurden.portland.serviceSpending.map((r) => r.valuePerCapita),
+  );
+
   return (
     <div className="space-y-10">
+      {/* ── FiSC full basket context ── */}
+      <section>
+        <SectionHeader title="Full Local Fiscal Basket" />
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          <FiscMetricCard metric={broadMetric} emphasis />
+          <FiscMetricCard metric={taxMetric} />
+          <FiscMetricCard metric={chargesMetric} />
+          <FiscMetricCard metric={spendingMetric} />
+        </div>
+        <div className="mt-4 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-4">
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-5">
+            <p className="text-[14px] text-[var(--color-ink-muted)] leading-relaxed">
+              Income-tax rankings are one perspective. The Lincoln Institute&rsquo;s FiSC data adds a
+              broader local-government perspective: how much revenue is collected from residents
+              and businesses by the city, county, schools, and special districts serving Portland?
+            </p>
+            <p className="text-[14px] text-[var(--color-ink-muted)] leading-relaxed mt-3">
+              From that broader perspective, Portland is still high: {dollars(broadMetric.valuePerCapita)}{" "}
+              per resident in own-source and utility revenue, ranked {rank(broadMetric)} among the{" "}
+              {fiscTaxBurden.sample.comparisonCities} largest FiSC cities. But the composition matters:
+              Portland is much higher on taxes than on charges and utility revenue.
+            </p>
+          </div>
+          <div className="bg-[var(--color-parchment)]/25 border border-[var(--color-parchment)] rounded-sm p-5">
+            <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+              Methodology
+            </p>
+            <ul className="mt-3 space-y-2 text-[12px] text-[var(--color-ink-muted)] leading-relaxed">
+              <li>FiSC values are real per-capita dollars in 2022 dollars.</li>
+              <li>FiSC allocates city, county, school, and special-district finances to central-city residents.</li>
+              <li>Revenue includes residents and businesses. It is not a household tax bill.</li>
+              <li>The sample here is the 150 largest FiSC cities by 2023 population.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Revenue composition ── */}
+      <section>
+        <SectionHeader title="What Portland's Local Revenue Is Made Of" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-6">
+            <p className="text-[13px] text-[var(--color-ink-muted)] mb-5">
+              FiSC own-source plus utility revenue for Portland totals {dollars(broadMetric.valuePerCapita)}{" "}
+              per resident. Taxes make up the bulk of the local fiscal basket.
+            </p>
+            <div className="space-y-4">
+              {fiscTaxBurden.portland.components.map((component) => (
+                <RevenueBar
+                  key={component.key}
+                  label={component.label}
+                  value={component.valuePerCapita}
+                  share={component.shareOfBroad}
+                  max={maxRevenueComponent}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-6">
+            <p className="text-[13px] text-[var(--color-ink-muted)] mb-5">
+              Within local taxes, property taxes dominate. FiSC income-tax revenue captures local
+              income taxes allocated to local governments, not the full Oregon state income-tax bill.
+            </p>
+            <div className="space-y-4">
+              {fiscTaxBurden.portland.taxComponents.map((component) => (
+                <RevenueBar
+                  key={component.key}
+                  label={component.label}
+                  value={component.valuePerCapita}
+                  share={component.shareOfTaxes}
+                  max={maxTaxComponent}
+                  tone="clay"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Peer comparison ── */}
+      <section>
+        <SectionHeader title="Peer Cities: Full Basket, Not Just Rates" />
+        <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm overflow-x-auto">
+          <table className="w-full text-[13px] border-collapse">
+            <thead>
+              <tr className="border-b-2 border-[var(--color-parchment)]">
+                <th className="text-left px-3 py-3 text-[10px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.1em] min-w-[160px]">
+                  City
+                </th>
+                <th className="text-right px-3 py-3 text-[10px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.1em] min-w-[110px]">
+                  Own + Utility
+                </th>
+                <th className="text-right px-3 py-3 text-[10px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.1em]">
+                  Rank
+                </th>
+                <th className="text-right px-3 py-3 text-[10px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.1em] min-w-[100px]">
+                  Taxes
+                </th>
+                <th className="text-right px-3 py-3 text-[10px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.1em]">
+                  Rank
+                </th>
+                <th className="text-right px-3 py-3 text-[10px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.1em] min-w-[120px]">
+                  Charges + Utility
+                </th>
+                <th className="text-right px-3 py-3 text-[10px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.1em]">
+                  Rank
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {fiscTaxBurden.peers.map((peer) => (
+                <PeerRow key={peer.city} peer={peer} />
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-[11px] text-[var(--color-ink-muted)] mt-2 font-mono">
+          Source:{" "}
+          <a
+            href={FISC_WORKBOOK_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2 hover:text-[var(--color-ink)]"
+          >
+            Lincoln Institute FiSC full dataset, 2023 update
+          </a>
+          . Values are real per-capita dollars in 2022 dollars.
+          Ranks are high-to-low among the 150 largest FiSC cities by 2023 population.
+        </p>
+      </section>
+
+      {/* ── Trend ── */}
+      <section>
+        <SectionHeader title="Portland Trend Since 2013" />
+        <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div>
+              <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+                Own-source + utility
+              </p>
+              <p className="text-[24px] font-mono font-bold text-[var(--color-ink)] mt-1">
+                +{fiscTaxBurden.portland.tenYearChange.ownSourceUtilityPct}%
+              </p>
+            </div>
+            <div>
+              <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+                Taxes
+              </p>
+              <p className="text-[24px] font-mono font-bold text-[var(--color-ink)] mt-1">
+                +{fiscTaxBurden.portland.tenYearChange.taxesPct}%
+              </p>
+            </div>
+            <div>
+              <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+                Total spending
+              </p>
+              <p className="text-[24px] font-mono font-bold text-[var(--color-ink)] mt-1">
+                +{fiscTaxBurden.portland.tenYearChange.spendingTotalPct}%
+              </p>
+            </div>
+          </div>
+          <div className="space-y-3">
+            {fiscTaxBurden.portland.trend.map((row) => (
+              <div key={row.year} className="grid grid-cols-[52px_1fr_96px] gap-3 items-center">
+                <span className="text-[12px] font-mono text-[var(--color-ink-muted)]">{row.year}</span>
+                <div className="h-3 bg-[var(--color-parchment)]/60 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-[var(--color-canopy)]"
+                    style={{ width: barWidth(row.ownSourceUtilityPerCapita, maxTrend) }}
+                  />
+                </div>
+                <span className="text-[12px] font-mono text-right text-[var(--color-ink)]">
+                  {dollars(row.ownSourceUtilityPerCapita)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Intro context ── */}
       <section>
+        <SectionHeader title="Income-Tax-Only Calculator" />
         <p className="text-[14px] text-[var(--color-ink-muted)] leading-relaxed max-w-prose">
           Effective income tax rates for a single W-2 employee with standard deduction.
           All rates include federal, state, and local income taxes
@@ -206,7 +512,7 @@ export default function TaxDetail() {
 
       {/* ── Heatmap Table ── */}
       <section>
-        <SectionHeader title="How Portland Compares at Every Income Level" />
+        <SectionHeader title="Personal Income Taxes by W-2 Income" />
         <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm overflow-x-auto">
           <table className="w-full text-[13px] border-collapse">
             <thead>
@@ -293,9 +599,32 @@ export default function TaxDetail() {
         <SectionHeader title="What Do You Get for Those Taxes?" />
         <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-6">
           <p className="text-[13px] text-[var(--color-ink-muted)] mb-5">
-            Portland has the highest income tax burden in this group, but does that translate to better services?
-            Here&rsquo;s how each city stacks up on key public services.
+            Taxes are a tool, not an outcome. FiSC shows what local governments collect and spend;
+            service metrics show whether residents see the return in daily civic life.
           </p>
+          <div className="mb-6 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-5">
+            <div className="bg-[var(--color-parchment)]/25 rounded-sm p-4">
+              <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-[0.12em]">
+                Portland FiSC Spending Mix
+              </p>
+              <p className="text-[13px] text-[var(--color-ink-muted)] leading-relaxed mt-2">
+                Total local spending is {dollars(spendingMetric.valuePerCapita)} per resident.
+                Education, public safety, health/welfare, transportation, and housing/community
+                development are the largest visible service categories.
+              </p>
+            </div>
+            <div className="space-y-3">
+              {fiscTaxBurden.portland.serviceSpending.slice(0, 6).map((row) => (
+                <RevenueBar
+                  key={row.key}
+                  label={row.label}
+                  value={row.valuePerCapita}
+                  share={row.shareOfTotalSpending}
+                  max={maxServiceSpending}
+                />
+              ))}
+            </div>
+          </div>
           <div className="overflow-x-auto">
             <table className="w-full text-[13px] border-collapse">
               <thead>
@@ -375,7 +704,7 @@ export default function TaxDetail() {
           <div className="bg-[var(--color-canopy)] rounded-sm p-6 text-white/90">
             <p className="font-editorial-normal text-[20px] leading-snug">
               At the area median income ($75K), a Portlander pays {portlandMedian.effective_rate}%
-              effective tax vs {vancouverMedian.effective_rate}% across the river in Vancouver &mdash;
+              effective income tax vs {vancouverMedian.effective_rate}% across the river in Vancouver &mdash;
               a {(portlandMedian.effective_rate - vancouverMedian.effective_rate).toFixed(1)} point gap.
             </p>
             <p className="text-[13px] text-white/60 mt-3 font-mono">

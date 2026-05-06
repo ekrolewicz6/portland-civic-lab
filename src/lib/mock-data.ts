@@ -176,18 +176,18 @@ export const safetyData: SafetyData = {
   ],
 };
 
-// ─── 5. Tax Competitiveness ─────────────────────────────────────────────────
+// ─── 5. Local Fiscal Burden ──────────────────────────────────────────────────
 
 export const taxData: TaxData = {
-  headline: "Portland's 12.4% effective rate is 2nd highest among 10 comparable Western cities — only San Francisco is higher",
-  headlineValue: "12.4%",
-  trend: { direction: "flat", percentage: 0, label: "no rate changes this fiscal year" },
+  headline: "7,223 local own-source + utility dollars per resident in FiSC 2023, ranking Portland 24th of the 150 largest cities",
+  headlineValue: "$7.2K",
+  trend: { direction: "up", percentage: 44.0, label: "real per-capita increase since 2013" },
   chartData: [
-    { date: "Portland", value: 100 },
-    { date: "Seattle", value: 92 },
-    { date: "Vancouver WA", value: 71 },
-    { date: "Beaverton", value: 78 },
-    { date: "Lake Oswego", value: 85 },
+    { date: "San Francisco", value: 17023 },
+    { date: "Seattle", value: 10822 },
+    { date: "Denver", value: 10952 },
+    { date: "Portland", value: 7223 },
+    { date: "Austin", value: 7942 },
   ],
   jurisdictions: [
     {
@@ -241,14 +241,14 @@ export const taxData: TaxData = {
       effectiveRate: 13.1,
     },
   ],
-  source: "Lincoln Institute · OR Dept of Revenue · WA Dept of Revenue · City Budget Offices",
-  lastUpdated: "2026-01-15",
+  source: "Lincoln Institute FiSC 2023 · OR DOR · IRS · state tax agencies",
+  lastUpdated: "2026-05-06",
   insights: [
-    "Portland has the HIGHEST local income tax burden (2.5%) of any comparable Western city — BLT 2.6%, MultCo BIT 2.0%, Metro SHS 1.0%, MultCo PFA 1.5%.",
-    "At $200K income, a Portland resident pays $24,800 in total taxes — $5,000 of that is local taxes that don't exist in most other cities.",
-    "Only San Francisco (13.1%) has a higher effective rate than Portland (12.4%), driven by California's 9.3% state income tax.",
-    "No-income-tax states (TX, WA, NV) have effective rates of 6.4-7.3% — a $12,000-$18,000 annual difference from Portland at $200K income.",
-    "Comparison includes: San Francisco, Portland, Bend, Denver, Salt Lake City, Boise, Seattle, Vancouver WA, Austin, and Reno.",
+    "Income-tax-only comparisons are incomplete: FiSC shows Portland collects $7,223 per resident in local own-source plus utility revenue, ranking 24th of the 150 largest FiSC cities.",
+    "Taxes are the high-burden piece: Portland's FiSC tax revenue is $4,970 per resident, ranking 7th of 150, while charges plus utility revenue rank 61st of 150.",
+    "Portland's broad local fiscal basket rose 44% in real per-capita terms from 2013 to 2023; local taxes rose 62% over the same period.",
+    "FiSC revenue includes money collected from residents and businesses by city, county, school, and special districts. It is not a household tax bill.",
+    "The W-2 income-tax calculator remains useful, but it should be read as a narrow scenario alongside the full local fiscal basket.",
   ],
 };
 

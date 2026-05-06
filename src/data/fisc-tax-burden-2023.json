@@ -1,0 +1,449 @@
+{
+  "source": {
+    "title": "Lincoln Institute of Land Policy Fiscally Standardized Cities database, 2023 update",
+    "url": "https://www.lincolninst.edu/data/fiscally-standardized-cities/",
+    "workbookUrl": "https://www.lincolninst.edu/app/uploads/2026/01/FiSC-Full-Dataset-2023-Update.xlsx",
+    "methodologyUrl": "https://www.lincolninst.edu/data/fiscally-standardized-cities/methodology-fiscs/",
+    "localWorkbook": "data/datasets/tax/fisc/FiSC-Full-Dataset-2023-Update.xlsx",
+    "notes": [
+      "All fiscal values are real per-capita dollars in 2022 dollars.",
+      "FiSC totals include allocated city, county, independent school district, and special district revenues and expenditures.",
+      "Revenue figures include money raised from both residents and businesses; they are not household tax bills."
+    ]
+  },
+  "sample": {
+    "year": 2023,
+    "allFiSCCities": 218,
+    "comparisonCities": 150,
+    "definition": "150 largest FiSC central cities by 2023 city population",
+    "populationCutoff": 82776,
+    "units": "real per-capita dollars, $2022"
+  },
+  "portland": {
+    "city": "Portland, OR",
+    "population": 636093,
+    "populationRankAllFiSC": 27,
+    "metrics": [
+      {
+        "key": "broad_own_source_plus_utility",
+        "label": "Own-source + utility revenue",
+        "description": "Taxes, charges, miscellaneous general revenue, and utility revenue collected by all local governments serving Portland residents and businesses.",
+        "valuePerCapita": 7222.81,
+        "rankHighToLow": 24,
+        "sampleSize": 150,
+        "percentileBelow": 84.0
+      },
+      {
+        "key": "taxes",
+        "label": "Taxes",
+        "description": "Property, income, sales/selective sales, licenses, transfer, and miscellaneous tax revenue.",
+        "valuePerCapita": 4969.73,
+        "rankHighToLow": 7,
+        "sampleSize": 150,
+        "percentileBelow": 95.3
+      },
+      {
+        "key": "charges_plus_utility",
+        "label": "Charges + utility revenue",
+        "description": "Service charges plus utility revenue; this is the part closest to flat-fee and user-charge burden.",
+        "valuePerCapita": 1855.51,
+        "rankHighToLow": 61,
+        "sampleSize": 150,
+        "percentileBelow": 59.3
+      },
+      {
+        "key": "spending_total",
+        "label": "Total local spending",
+        "description": "Direct and intergovernmental spending by the FiSC governments serving Portland.",
+        "valuePerCapita": 9647.32,
+        "rankHighToLow": 30,
+        "sampleSize": 150,
+        "percentileBelow": 80.0
+      }
+    ],
+    "components": [
+      {
+        "label": "Taxes",
+        "key": "taxes",
+        "valuePerCapita": 4969.73,
+        "shareOfBroad": 68.8
+      },
+      {
+        "label": "Service charges",
+        "key": "charges",
+        "valuePerCapita": 1424.02,
+        "shareOfBroad": 19.7
+      },
+      {
+        "label": "Misc. general revenue",
+        "key": "misc_general_rev",
+        "valuePerCapita": 397.57,
+        "shareOfBroad": 5.5
+      },
+      {
+        "label": "Utility revenue",
+        "key": "rev_utility",
+        "valuePerCapita": 431.49,
+        "shareOfBroad": 6.0
+      }
+    ],
+    "taxComponents": [
+      {
+        "label": "Property taxes",
+        "key": "tax_property",
+        "valuePerCapita": 2884.34,
+        "shareOfTaxes": 58.0
+      },
+      {
+        "label": "Income taxes",
+        "key": "tax_income",
+        "valuePerCapita": 631.3,
+        "shareOfTaxes": 12.7
+      },
+      {
+        "label": "General sales taxes",
+        "key": "tax_sales_general",
+        "valuePerCapita": 32.8,
+        "shareOfTaxes": 0.7
+      },
+      {
+        "label": "Selective sales taxes",
+        "key": "tax_sales_selectiv",
+        "valuePerCapita": 701.88,
+        "shareOfTaxes": 14.1
+      },
+      {
+        "label": "Licenses",
+        "key": "tax_licenses",
+        "valuePerCapita": 513.36,
+        "shareOfTaxes": 10.3
+      }
+    ],
+    "serviceSpending": [
+      {
+        "label": "Education",
+        "key": "education",
+        "valuePerCapita": 2662.48,
+        "shareOfTotalSpending": 27.6
+      },
+      {
+        "label": "Public safety",
+        "key": "public_safety",
+        "valuePerCapita": 1042.3,
+        "shareOfTotalSpending": 10.8
+      },
+      {
+        "label": "Health and welfare",
+        "key": "health_welfare",
+        "valuePerCapita": 1001.6,
+        "shareOfTotalSpending": 10.4
+      },
+      {
+        "label": "Transportation",
+        "key": "transportation",
+        "valuePerCapita": 836.71,
+        "shareOfTotalSpending": 8.7
+      },
+      {
+        "label": "Housing/community development",
+        "key": "housing_commdevt",
+        "valuePerCapita": 723.32,
+        "shareOfTotalSpending": 7.5
+      },
+      {
+        "label": "Highways",
+        "key": "highways",
+        "valuePerCapita": 549.13,
+        "shareOfTotalSpending": 5.7
+      },
+      {
+        "label": "Police",
+        "key": "police",
+        "valuePerCapita": 443.66,
+        "shareOfTotalSpending": 4.6
+      },
+      {
+        "label": "Parks and recreation",
+        "key": "parks_recreation",
+        "valuePerCapita": 368.08,
+        "shareOfTotalSpending": 3.8
+      },
+      {
+        "label": "Fire",
+        "key": "fire",
+        "valuePerCapita": 273.31,
+        "shareOfTotalSpending": 2.8
+      },
+      {
+        "label": "Libraries",
+        "key": "libraries",
+        "valuePerCapita": 182.77,
+        "shareOfTotalSpending": 1.9
+      }
+    ],
+    "trend": [
+      {
+        "year": 2013,
+        "population": 604521,
+        "ownSourceUtilityPerCapita": 5016.75,
+        "taxesPerCapita": 3067.71,
+        "chargesPerCapita": 1272.31,
+        "utilityPerCapita": 390.11,
+        "spendingTotalPerCapita": 7659.27
+      },
+      {
+        "year": 2018,
+        "population": 648176,
+        "ownSourceUtilityPerCapita": 6237.83,
+        "taxesPerCapita": 3931.8,
+        "chargesPerCapita": 1571.39,
+        "utilityPerCapita": 429.75,
+        "spendingTotalPerCapita": 8234.99
+      },
+      {
+        "year": 2019,
+        "population": 651154,
+        "ownSourceUtilityPerCapita": 6495.11,
+        "taxesPerCapita": 4110.56,
+        "chargesPerCapita": 1585.72,
+        "utilityPerCapita": 428.63,
+        "spendingTotalPerCapita": 8601.36
+      },
+      {
+        "year": 2020,
+        "population": 654378,
+        "ownSourceUtilityPerCapita": 6516.22,
+        "taxesPerCapita": 4261.64,
+        "chargesPerCapita": 1440.6,
+        "utilityPerCapita": 426.11,
+        "spendingTotalPerCapita": 9364.55
+      },
+      {
+        "year": 2021,
+        "population": 656751,
+        "ownSourceUtilityPerCapita": 6053.02,
+        "taxesPerCapita": 4211.56,
+        "chargesPerCapita": 1248.85,
+        "utilityPerCapita": 396.1,
+        "spendingTotalPerCapita": 8960.93
+      },
+      {
+        "year": 2022,
+        "population": 642803,
+        "ownSourceUtilityPerCapita": 6865.94,
+        "taxesPerCapita": 4773.96,
+        "chargesPerCapita": 1411.97,
+        "utilityPerCapita": 405.24,
+        "spendingTotalPerCapita": 9417.08
+      },
+      {
+        "year": 2023,
+        "population": 636093,
+        "ownSourceUtilityPerCapita": 7222.81,
+        "taxesPerCapita": 4969.73,
+        "chargesPerCapita": 1424.02,
+        "utilityPerCapita": 431.49,
+        "spendingTotalPerCapita": 9647.32
+      }
+    ],
+    "tenYearChange": {
+      "ownSourceUtilityPct": 44.0,
+      "taxesPct": 62.0,
+      "spendingTotalPct": 26.0
+    }
+  },
+  "peers": [
+    {
+      "city": "San Francisco, CA",
+      "population": 814176,
+      "ownSourceUtilityPerCapita": 17023.09,
+      "ownSourceUtilityRank": 2,
+      "taxesPerCapita": 8190.14,
+      "taxesRank": 3,
+      "chargesUtilityPerCapita": 7431.78,
+      "chargesUtilityRank": 2,
+      "spendingTotalPerCapita": 27659.79,
+      "spendingTotalRank": 2
+    },
+    {
+      "city": "Denver, CO",
+      "population": 714851,
+      "ownSourceUtilityPerCapita": 10951.62,
+      "ownSourceUtilityRank": 5,
+      "taxesPerCapita": 5159.89,
+      "taxesRank": 5,
+      "chargesUtilityPerCapita": 4859.5,
+      "chargesUtilityRank": 5,
+      "spendingTotalPerCapita": 12752.96,
+      "spendingTotalRank": 9
+    },
+    {
+      "city": "Seattle, WA",
+      "population": 751454,
+      "ownSourceUtilityPerCapita": 10822.35,
+      "ownSourceUtilityRank": 6,
+      "taxesPerCapita": 5446.09,
+      "taxesRank": 4,
+      "chargesUtilityPerCapita": 4669.33,
+      "chargesUtilityRank": 8,
+      "spendingTotalPerCapita": 12021.0,
+      "spendingTotalRank": 11
+    },
+    {
+      "city": "San Jose, CA",
+      "population": 978451,
+      "ownSourceUtilityPerCapita": 9804.14,
+      "ownSourceUtilityRank": 7,
+      "taxesPerCapita": 4459.0,
+      "taxesRank": 9,
+      "chargesUtilityPerCapita": 4780.76,
+      "chargesUtilityRank": 6,
+      "spendingTotalPerCapita": 12804.62,
+      "spendingTotalRank": 8
+    },
+    {
+      "city": "Los Angeles, CA",
+      "population": 3832998,
+      "ownSourceUtilityPerCapita": 9345.36,
+      "ownSourceUtilityRank": 9,
+      "taxesPerCapita": 4142.22,
+      "taxesRank": 16,
+      "chargesUtilityPerCapita": 4574.97,
+      "chargesUtilityRank": 10,
+      "spendingTotalPerCapita": 14193.2,
+      "spendingTotalRank": 4
+    },
+    {
+      "city": "Oakland, CA",
+      "population": 436544,
+      "ownSourceUtilityPerCapita": 9344.09,
+      "ownSourceUtilityRank": 10,
+      "taxesPerCapita": 4452.18,
+      "taxesRank": 10,
+      "chargesUtilityPerCapita": 4192.3,
+      "chargesUtilityRank": 14,
+      "spendingTotalPerCapita": 14016.4,
+      "spendingTotalRank": 5
+    },
+    {
+      "city": "Salt Lake City, UT",
+      "population": 208579,
+      "ownSourceUtilityPerCapita": 7981.76,
+      "ownSourceUtilityRank": 15,
+      "taxesPerCapita": 3643.85,
+      "taxesRank": 27,
+      "chargesUtilityPerCapita": 3311.65,
+      "chargesUtilityRank": 26,
+      "spendingTotalPerCapita": 11059.12,
+      "spendingTotalRank": 18
+    },
+    {
+      "city": "Austin, TX",
+      "population": 979214,
+      "ownSourceUtilityPerCapita": 7942.09,
+      "ownSourceUtilityRank": 16,
+      "taxesPerCapita": 3925.5,
+      "taxesRank": 20,
+      "chargesUtilityPerCapita": 3679.56,
+      "chargesUtilityRank": 19,
+      "spendingTotalPerCapita": 10075.22,
+      "spendingTotalRank": 26
+    },
+    {
+      "city": "Portland, OR",
+      "population": 636093,
+      "ownSourceUtilityPerCapita": 7222.81,
+      "ownSourceUtilityRank": 24,
+      "taxesPerCapita": 4969.73,
+      "taxesRank": 7,
+      "chargesUtilityPerCapita": 1855.51,
+      "chargesUtilityRank": 61,
+      "spendingTotalPerCapita": 9647.32,
+      "spendingTotalRank": 30
+    },
+    {
+      "city": "Sacramento, CA",
+      "population": 526715,
+      "ownSourceUtilityPerCapita": 6921.54,
+      "ownSourceUtilityRank": 28,
+      "taxesPerCapita": 2504.9,
+      "taxesRank": 77,
+      "chargesUtilityPerCapita": 3646.56,
+      "chargesUtilityRank": 20,
+      "spendingTotalPerCapita": 11332.62,
+      "spendingTotalRank": 15
+    },
+    {
+      "city": "San Diego, CA",
+      "population": 1388730,
+      "ownSourceUtilityPerCapita": 6296.35,
+      "ownSourceUtilityRank": 41,
+      "taxesPerCapita": 3329.1,
+      "taxesRank": 38,
+      "chargesUtilityPerCapita": 2265.9,
+      "chargesUtilityRank": 45,
+      "spendingTotalPerCapita": 10120.21,
+      "spendingTotalRank": 23
+    },
+    {
+      "city": "Phoenix, AZ",
+      "population": 1644798,
+      "ownSourceUtilityPerCapita": 4473.24,
+      "ownSourceUtilityRank": 75,
+      "taxesPerCapita": 2127.69,
+      "taxesRank": 106,
+      "chargesUtilityPerCapita": 2010.51,
+      "chargesUtilityRank": 53,
+      "spendingTotalPerCapita": 6334.33,
+      "spendingTotalRank": 106
+    },
+    {
+      "city": "Las Vegas, NV",
+      "population": 656716,
+      "ownSourceUtilityPerCapita": 4286.91,
+      "ownSourceUtilityRank": 86,
+      "taxesPerCapita": 2247.63,
+      "taxesRank": 96,
+      "chargesUtilityPerCapita": 1627.05,
+      "chargesUtilityRank": 72,
+      "spendingTotalPerCapita": 6627.03,
+      "spendingTotalRank": 92
+    },
+    {
+      "city": "Spokane, WA",
+      "population": 230777,
+      "ownSourceUtilityPerCapita": 4197.24,
+      "ownSourceUtilityRank": 88,
+      "taxesPerCapita": 2426.67,
+      "taxesRank": 83,
+      "chargesUtilityPerCapita": 1543.22,
+      "chargesUtilityRank": 76,
+      "spendingTotalPerCapita": 7280.49,
+      "spendingTotalRank": 78
+    },
+    {
+      "city": "Reno, NV",
+      "population": 273249,
+      "ownSourceUtilityPerCapita": 3529.16,
+      "ownSourceUtilityRank": 118,
+      "taxesPerCapita": 1854.81,
+      "taxesRank": 122,
+      "chargesUtilityPerCapita": 1101.04,
+      "chargesUtilityRank": 110,
+      "spendingTotalPerCapita": 6241.48,
+      "spendingTotalRank": 110
+    },
+    {
+      "city": "Boise, ID",
+      "population": 237614,
+      "ownSourceUtilityPerCapita": 3051.09,
+      "ownSourceUtilityRank": 134,
+      "taxesPerCapita": 1780.06,
+      "taxesRank": 127,
+      "chargesUtilityPerCapita": 1173.85,
+      "chargesUtilityRank": 107,
+      "spendingTotalPerCapita": 4745.74,
+      "spendingTotalRank": 143
+    }
+  ]
+}

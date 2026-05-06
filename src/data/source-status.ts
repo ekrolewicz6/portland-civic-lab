@@ -246,15 +246,21 @@ export const QUESTION_DATA_STATUS: Record<QuestionId, QuestionDataStatus> = {
   fiscal: {
     questionId: "fiscal",
     overallStatus: "STATIC",
-    badgeLabel: "Published rates",
+    badgeLabel: "FiSC + rates",
     badgeTooltip:
-      "Tax comparison is computed from published tax rates. Updated annually when new fiscal year begins. Budget and PERS data still needed.",
+      "Tax and fiscal-burden views combine Lincoln FiSC 2023 per-capita local-government finance data with published income-tax rates. Budget and PERS data still need deeper live integration.",
     sources: [
       {
-        name: "Tax Rate Analysis",
+        name: "Lincoln FiSC Local Fiscal Basket",
         status: "STATIC",
-        statusLabel: "Static analysis",
-        provider: "Lincoln Institute / OR DOR / WA DOR / City budgets",
+        statusLabel: "2023 update loaded",
+        provider: "Lincoln Institute of Land Policy",
+      },
+      {
+        name: "Income Tax Calculator",
+        status: "STATIC",
+        statusLabel: "Published-rate model",
+        provider: "IRS / OR DOR / WA DOR / state tax agencies",
       },
       {
         name: "City Budget Data",
@@ -565,15 +571,21 @@ export const QUESTION_DATA_STATUS: Record<QuestionId, QuestionDataStatus> = {
   tax: {
     questionId: "tax",
     overallStatus: "STATIC",
-    badgeLabel: "Published rates",
+    badgeLabel: "FiSC + rates",
     badgeTooltip:
-      "Tax comparison is computed from published tax rates. Updated annually when new fiscal year begins.",
+      "The tax view combines Lincoln FiSC 2023 local-government revenue data with a published-rate income-tax calculator.",
     sources: [
       {
-        name: "Tax Rate Analysis",
+        name: "Lincoln FiSC Local Fiscal Basket",
         status: "STATIC",
-        statusLabel: "Static analysis",
-        provider: "Lincoln Institute / OR DOR / WA DOR / City budgets",
+        statusLabel: "2023 update loaded",
+        provider: "Lincoln Institute of Land Policy",
+      },
+      {
+        name: "Income Tax Calculator",
+        status: "STATIC",
+        statusLabel: "Published-rate model",
+        provider: "IRS / OR DOR / WA DOR / state tax agencies",
       },
     ],
   },
