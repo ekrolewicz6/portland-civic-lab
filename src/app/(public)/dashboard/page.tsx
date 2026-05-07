@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Live Dashboard | Portland Civic Labs",
   description:
-    "A live civic dashboard for Portland, Oregon. Explore housing, safety, homelessness, economy, education, climate, quality of life, and accountability through public data.",
+    "A live civic dashboard for Portland, Oregon. Explore housing, homelessness, safety, fiscal burden, economy, education, climate, quality of life, and accountability through public data.",
 };
 
 function formatEditionDate(d: Date): string {

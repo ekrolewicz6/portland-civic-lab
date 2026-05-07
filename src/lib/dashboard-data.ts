@@ -7,6 +7,7 @@ export const QUESTIONS = [
   { id: "housing", question: "Are We Building Enough?", color: "#b85c6a" },
   { id: "safety", question: "Are People Safe?", color: "#b85c3a" },
   { id: "homelessness", question: "Are People Getting Housed?", color: "#8b6c5c" },
+  { id: "fiscal", question: "What Do Portlanders Pay, and What Do They Get?", color: "#7c6f9e" },
   { id: "economy", question: "Can People Make a Living?", color: "#c8956c" },
   { id: "economic-health", question: "Is the Local Economy Healthy?", color: "#5c8b9c" },
   { id: "education", question: "Are Kids Learning?", color: "#3d7a5a" },
