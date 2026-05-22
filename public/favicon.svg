@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Portland Civic Lab">
+  <rect width="64" height="64" rx="14" fill="#0f2419"/>
+  <path d="M16 44V18h17.5c7.8 0 12.8 4.8 12.8 11.5S41.3 41 33.5 41H25v3h-9Z" fill="#f7f4ea"/>
+  <path d="M25 33h7.7c2.9 0 4.7-1.4 4.7-3.5S35.6 26 32.7 26H25v7Z" fill="#0f2419"/>
+  <path d="M16 49h32" stroke="#d69a68" stroke-width="5" stroke-linecap="round"/>
+  <path d="M49 18v25" stroke="#d69a68" stroke-width="5" stroke-linecap="round"/>
+</svg>

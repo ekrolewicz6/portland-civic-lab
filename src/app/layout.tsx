@@ -41,6 +41,11 @@ export const metadata: Metadata = {
   description:
     "A live civic dashboard for Portland, Oregon. Eight questions, answered with real public data — housing, safety, homelessness, economy, education, climate, quality of life, and government accountability. Sourced from city APIs, county records, and government datasets. Updated automatically. Every number linked to its source.",
   applicationName: "Portland Civic Lab",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: ["/favicon.svg"],
+    apple: [{ url: "/apple-touch-icon.svg", type: "image/svg+xml" }],
+  },
   keywords: [
     "Portland Oregon",
     "Portland civic dashboard",
