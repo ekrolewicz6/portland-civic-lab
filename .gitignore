@@ -54,15 +54,10 @@ etl/venv/
 etl/.env
 
 # data files
-etl/data/raw/*
-!etl/data/raw/.gitkeep
-etl/data/processed/*
-!etl/data/processed/.gitkeep
-data/oregon-all-active-businesses.csv
-data/zillow/Metro_*.csv
-data/zillow_zori_metro.csv
-
-# Permit scrape cache
-data/permit-html/
-data/*.tsv
-data/Permit-Search-Results.csv
+# All working data lives in runtime-data/ (multi-GB, never committed) or in
+# Postgres. `data`, `etl`, and `scripts` are local convenience symlinks.
+# See docs/data-storage.md for the full strategy.
+runtime-data/
+/data
+/etl
+/scripts
