@@ -7,7 +7,7 @@ export const maxDuration = 300;
 
 // ── Types ──────────────────────────────────────────────────────────────────
 
-type Scope = "monthly" | "quarterly" | "annual" | "all";
+type Scope = "monthly" | "quarterly" | "annual" | "all" | "zillow";
 
 interface RefreshResult {
   source: string;
@@ -997,12 +997,19 @@ export async function GET(request: NextRequest) {
   const url = new URL(request.url);
   const scopeParam = url.searchParams.get("scope") as Scope | null;
 
+  // Two Vercel cron entries share this path; the schedule header tells us
+  // which one fired (query strings aren't reliable in cron paths).
+  const WEEKLY_ZILLOW_SCHEDULE = "20 7 * * 4";
+  const cronSchedule = request.headers.get("x-vercel-cron-schedule");
+
   // Determine what to run
   let activeScopes: Scope[];
   if (scopeParam === "all") {
     activeScopes = ["monthly", "quarterly", "annual"];
   } else if (scopeParam) {
     activeScopes = [scopeParam];
+  } else if (cronSchedule === WEEKLY_ZILLOW_SCHEDULE) {
+    activeScopes = ["zillow"];
   } else {
     // Auto-determine from current month
     activeScopes = autoScope();
@@ -1011,6 +1018,24 @@ export async function GET(request: NextRequest) {
   console.log(`[refresh-data] Starting. Scopes: ${activeScopes.join(", ")}`);
 
   const results: RefreshResult[] = [];
+
+  // ── Zillow-only scope (weekly cron) ──────────────────────────────────
+  // Zillow publishes monthly but on its own schedule; a weekly check keeps
+  // the housing headline from going 4-8 weeks stale between monthly runs.
+
+  if (activeScopes.includes("zillow") && !activeScopes.includes("monthly")) {
+    try {
+      const r = await refreshZillowRent();
+      results.push(r);
+      console.log(`[refresh-data] Zillow ZORI (weekly): ${r.status} (${r.ms}ms)`);
+    } catch (err: unknown) {
+      results.push({
+        source: "Zillow ZORI Rent",
+        status: "error",
+        message: err instanceof Error ? err.message : String(err),
+      });
+    }
+  }
 
   // ── Monthly sources ──────────────────────────────────────────────────
 
