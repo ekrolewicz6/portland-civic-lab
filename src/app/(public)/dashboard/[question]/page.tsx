@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, BookOpen, MapPin } from "lucide-react";
 import { isValidQuestion, questionMeta } from "@/lib/questions";
 import { deriveDataAsOf } from "@/lib/data-freshness";
+import { getBaseUrl } from "@/lib/dashboard-data";
 import type { DashboardResponse } from "@/lib/types";
 import TrendChart from "@/components/charts/TrendChart";
 import ExportButton from "@/components/dashboard/ExportButton";
@@ -21,6 +22,10 @@ import QualityDetail from "@/components/dashboard/quality/QualityDetail";
 import AccountabilityDetail from "@/components/dashboard/accountability/AccountabilityDetail";
 import ClimateDetail from "@/components/dashboard/climate/ClimateDetail";
 
+// Reads request headers (getBaseUrl) and fetches with no-store, so render
+// per-request rather than attempting static generation at build time.
+export const dynamic = "force-dynamic";
+
 interface PageProps {
   params: Promise<{ question: string }>;
 }
@@ -28,11 +33,11 @@ interface PageProps {
 async function fetchQuestionData(
   question: string
 ): Promise<DashboardResponse> {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL ||
-    process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "http://localhost:3000";
+  // Resolve the base URL from the incoming request host (same pattern as the
+  // /dashboard hub). The previous VERCEL_URL construction pointed at the
+  // protected deployment alias, so this fetch always failed and the hero +
+  // source citation silently fell back to empty state.
+  const baseUrl = await getBaseUrl();
 
   const res = await fetch(`${baseUrl}/api/dashboard/${question}`, {
     cache: "no-store",
@@ -45,22 +50,6 @@ async function fetchQuestionData(
   return res.json();
 }
 
-export async function generateStaticParams() {
-  return [
-    { question: "housing" },
-    { question: "homelessness" },
-    { question: "safety" },
-    { question: "transportation" },
-    { question: "education" },
-    { question: "fiscal" },
-    { question: "economy" },
-    { question: "economic-health" },
-    { question: "environment" },
-    { question: "quality" },
-    { question: "accountability" },
-    { question: "climate" },
-  ];
-}
 
 export async function generateMetadata({ params }: PageProps) {
   const { question } = await params;
