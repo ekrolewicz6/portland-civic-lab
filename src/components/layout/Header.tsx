@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ASK_PORTLAND_URL, PERMITS_URL } from "@/lib/site";
+import { ASK_PORTLAND_URL, PARKS_URL, PERMITS_URL } from "@/lib/site";
 
 export default function Header() {
   return (
@@ -47,8 +47,14 @@ export default function Header() {
               Dashboards
             </Link>
             <a
-              href={ASK_PORTLAND_URL}
+              href={PARKS_URL}
               className="hidden md:inline text-white/55 hover:text-white transition-colors"
+            >
+              Parks Atlas
+            </a>
+            <a
+              href={ASK_PORTLAND_URL}
+              className="hidden lg:inline text-white/55 hover:text-white transition-colors"
             >
               Ask Portland
             </a>

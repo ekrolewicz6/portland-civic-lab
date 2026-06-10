@@ -10,10 +10,11 @@ import {
   Gauge,
   MapPinned,
   ShieldCheck,
+  Trees,
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { ASK_PORTLAND_URL, PERMITS_URL } from "@/lib/site";
+import { ASK_PORTLAND_URL, PARKS_URL, PERMITS_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -59,6 +60,16 @@ const projects = [
     cta: "Open dashboards",
     icon: BarChart3,
     primary: true,
+  },
+  {
+    eyebrow: "Parks & open space",
+    title: "Portland Parks Atlas",
+    description:
+      "Every one of Portland's 316 parks in one place — conditions, maintenance backlogs, volunteer events, and the partners caring for them, all built from public data.",
+    href: PARKS_URL,
+    cta: "Open the parks atlas",
+    icon: Trees,
+    primary: false,
   },
   {
     eyebrow: "Civic measurement",
@@ -249,16 +260,16 @@ export default function HomePage() {
               </span>
             </div>
             <h2 className="font-editorial text-[32px] sm:text-[42px] text-[var(--color-ink)] leading-tight">
-              Three ways to get a clearer picture of Portland
+              Four ways to get a clearer picture of Portland
             </h2>
             <p className="mt-4 max-w-2xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
-              Dashboards that track how the city is doing, surveys that capture
-              what residents actually think, and permitting tools that make
-              building in Portland less confusing.
+              Dashboards that track how the city is doing, an atlas of every park
+              in Portland, surveys that capture what residents actually think,
+              and permitting tools that make building here less confusing.
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
             {projects.map((project) => (
               <a
                 key={project.title}

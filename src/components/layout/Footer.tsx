@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ASK_PORTLAND_URL, PERMITS_URL } from "@/lib/site";
+import { ASK_PORTLAND_URL, PARKS_URL, PERMITS_URL } from "@/lib/site";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -39,6 +39,11 @@ export default function Footer() {
                 <Link href="/dashboard" className="hover:text-white transition-colors">
                   Live Dashboards
                 </Link>
+              </li>
+              <li>
+                <a href={PARKS_URL} className="hover:text-white transition-colors">
+                  Parks Atlas
+                </a>
               </li>
               <li>
                 <a href={ASK_PORTLAND_URL} className="hover:text-white transition-colors">
