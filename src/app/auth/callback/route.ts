@@ -1,12 +1,13 @@
+import { NextResponse, type NextRequest } from "next/server";
 import { handleAuth } from "@workos-inc/authkit-nextjs";
-import { upsertMemberFromWorkOS } from "@/lib/membership";
+import { isWorkOSConfigured, upsertMemberFromWorkOS } from "@/lib/membership";
 
 /**
  * WorkOS AuthKit callback. After a successful sign-in we mirror the WorkOS
  * user into the local `members` table so the rest of the app can attach
  * roles, interests, and participation to it.
  */
-export const GET = handleAuth({
+const authHandler = handleAuth({
   returnPathname: "/member",
   onSuccess: async ({ user }) => {
     try {
@@ -18,3 +19,10 @@ export const GET = handleAuth({
     }
   },
 });
+
+export async function GET(request: NextRequest) {
+  if (!isWorkOSConfigured()) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
+  return authHandler(request);
+}
