@@ -2,6 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, BookOpen, MapPin } from "lucide-react";
 import { isValidQuestion, questionMeta } from "@/lib/questions";
+import { deriveDataAsOf } from "@/lib/data-freshness";
 import type { DashboardResponse } from "@/lib/types";
 import TrendChart from "@/components/charts/TrendChart";
 import ExportButton from "@/components/dashboard/ExportButton";
@@ -130,6 +131,10 @@ export default async function QuestionPage({ params }: PageProps) {
     // Data unavailable — detail component will show DataNeeded
     data = null;
   }
+
+  // Honest freshness: report the latest period present in the data itself,
+  // not the time we happened to check.
+  const dataAsOf = deriveDataAsOf(data?.chartData);
 
   return (
     <div className="bg-[var(--color-paper)] min-h-screen">
@@ -279,10 +284,12 @@ export default async function QuestionPage({ params }: PageProps) {
               </div>
               <div className="text-right">
                 <p className="text-[11px] font-semibold text-[var(--color-ember)] uppercase tracking-[0.15em] mb-1">
-                  Last Updated
+                  {dataAsOf ? "Data Through" : "Last Checked"}
                 </p>
                 <p className="text-[14px] text-white/80 font-mono">
-                  {data?.lastUpdated ?? new Date().toISOString().slice(0, 10)}
+                  {dataAsOf ??
+                    data?.lastUpdated ??
+                    new Date().toISOString().slice(0, 10)}
                 </p>
               </div>
             </div>
