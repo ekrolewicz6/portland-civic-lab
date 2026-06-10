@@ -154,18 +154,72 @@ async function queryCategory(question: string): Promise<{ rows: QueryResult; not
     }
 
     case "fiscal": {
-      return {
-        rows: [],
-        note: "category,note\nfiscal,\"Budget data is maintained in a static TypeScript file and is not available for CSV export from the database.\"",
-      };
+      // Budget data is verified static data from City Budget Office documents.
+      const { budgetData } = await import("@/data/general-fund-budget");
+      const sections: string[] = [
+        `# Portland General Fund Budget — ${budgetData.fiscalYear}`,
+        `# Source: ${budgetData.dataSource} (verified ${budgetData.lastVerified})`,
+        "\n# Revenue Sources",
+        rowsToCsv(budgetData.generalFund.revenueSources as unknown as QueryResult),
+        "\n# Bureau Allocations",
+        rowsToCsv(budgetData.generalFund.bureaus as unknown as QueryResult),
+        "\n# Cash Transfers",
+        rowsToCsv(budgetData.generalFund.cashTransfers as unknown as QueryResult),
+        "\n# Five-Year Forecast",
+        rowsToCsv(budgetData.fiveYearForecast as unknown as QueryResult),
+        "\n# Restricted Funds (All-Funds Budget)",
+        rowsToCsv(budgetData.fullBudget.restrictedFunds as unknown as QueryResult),
+      ];
+      return { rows: [], note: sections.join("\n") };
     }
 
     case "environment":
     case "climate": {
-      const rows = await sql`
-        SELECT * FROM climate.climate_emissions_trajectory
+      const trajectory = await sql`SELECT * FROM climate_emissions_trajectory`;
+      const actions = await sql`SELECT * FROM climate_workplan_actions`;
+
+      const sections: string[] = [];
+      if (trajectory.length > 0) {
+        sections.push("# Emissions Trajectory (Multnomah County)");
+        sections.push(rowsToCsv(trajectory as unknown as QueryResult));
+      }
+      if (actions.length > 0) {
+        sections.push("\n# Climate Emergency Workplan Actions");
+        sections.push(rowsToCsv(actions as unknown as QueryResult));
+      }
+      return { rows: [], note: sections.join("\n") };
+    }
+
+    case "economic-health": {
+      const metros = await sql`SELECT * FROM metro_metadata`;
+      const unemployment = await sql`
+        SELECT * FROM metro_unemployment_monthly ORDER BY metro_code, year, month LIMIT ${ROW_LIMIT}
       `;
-      return { rows: rows as unknown as QueryResult };
+      const employment = await sql`
+        SELECT * FROM metro_employment_quarterly ORDER BY metro_code, year, quarter LIMIT ${ROW_LIMIT}
+      `;
+      const homeValues = await sql`
+        SELECT * FROM metro_zhvi_monthly ORDER BY metro_code, month LIMIT ${ROW_LIMIT}
+      `;
+
+      const sections: string[] = [];
+      if (metros.length > 0) {
+        sections.push("# Peer Metros");
+        sections.push(rowsToCsv(metros as unknown as QueryResult));
+      }
+      if (unemployment.length > 0) {
+        sections.push("\n# Unemployment (Monthly, BLS LAUS)");
+        sections.push(rowsToCsv(unemployment as unknown as QueryResult));
+      }
+      if (employment.length > 0) {
+        sections.push("\n# Employment & Wages (Quarterly, BLS QCEW)");
+        sections.push(rowsToCsv(employment as unknown as QueryResult));
+      }
+      if (homeValues.length > 0) {
+        sections.push("\n# Home Values (Monthly, Zillow ZHVI)");
+        sections.push(rowsToCsv(homeValues as unknown as QueryResult));
+      }
+      return { rows: [], note: sections.join("\n") };
     }
 
     default:

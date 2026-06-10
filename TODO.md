@@ -5,13 +5,6 @@ includes where it lives so it's easy to find when we come back to it.
 
 ## Hidden / Disabled Features
 
-### Export CSV button
-**Status:** Hidden in UI as of 2026-04-08
-**Why:** Doesn't actually produce a working CSV yet
-**Location:** `src/app/(public)/dashboard/[question]/page.tsx` — `<ExportButton />`
-**To re-enable:** Wire up real CSV generation per question, then remove the
-`hidden` prop / re-add the button to the action bar.
-
 ### Embed button
 **Status:** Hidden in UI as of 2026-04-08
 **Why:** Embed flow / iframe target is not built
