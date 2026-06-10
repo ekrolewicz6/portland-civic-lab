@@ -1,5 +1,5 @@
 {
-  "name": "portland-commons-dashboard",
+  "name": "portland-civic-lab",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,14 +9,14 @@
     "lint": "next lint",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "seed": "npx tsx scripts/seed-real-data.ts",
-    "fetch:external": "npx tsx scripts/fetch-external-sources.ts",
-    "fetch:trimet": "npx tsx scripts/fetch-trimet-gtfs.ts",
-    "fetch:fbi": "npx tsx scripts/fetch-fbi-crime.ts",
-    "fetch:housing": "npx tsx scripts/fetch-housing-data.ts",
-    "fetch:employment": "npx tsx scripts/fetch-oregon-employment.ts",
-    "scrape:permits": "npx tsx scripts/scrape-permit-details.ts",
-    "analyze:bottlenecks": "npx tsx scripts/analyze-permit-bottlenecks.ts"
+    "seed": "npx tsx ingest/seed-real-data.ts",
+    "fetch:external": "npx tsx ingest/fetch-external-sources.ts",
+    "fetch:trimet": "npx tsx ingest/fetch-trimet-gtfs.ts",
+    "fetch:fbi": "npx tsx ingest/fetch-fbi-crime.ts",
+    "fetch:housing": "npx tsx ingest/fetch-housing-data.ts",
+    "fetch:employment": "npx tsx ingest/fetch-oregon-employment.ts",
+    "scrape:permits": "npx tsx ingest/scrape-permit-details.ts",
+    "analyze:bottlenecks": "npx tsx ingest/analyze-permit-bottlenecks.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
@@ -28,6 +28,7 @@
     "mapbox-gl": "^3.10.0",
     "next": "^15.3.3",
     "next-auth": "^4.24.13",
+    "nodemailer": "^7.0.13",
     "pg": "^8.20.0",
     "postgres": "^3.4.8",
     "react": "^19.0.0",
@@ -42,6 +43,7 @@
     "@tailwindcss/postcss": "^4",
     "@types/mapbox-gl": "^3",
     "@types/node": "^22",
+    "@types/nodemailer": "^8.0.0",
     "@types/pg": "^8.18.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -52,5 +54,10 @@
     "postcss": "^8",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekrolewicz6/portland-dashboard.git"
   }
 }

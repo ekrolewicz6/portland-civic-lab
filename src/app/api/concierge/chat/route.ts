@@ -6,22 +6,39 @@
 // ---------------------------------------------------------------------------
 
 import { NextRequest } from "next/server";
+import { z } from "zod";
 import { CONCIERGE_SYSTEM_PROMPT } from "@/lib/concierge/system-prompt";
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
 // ---------------------------------------------------------------------------
-// Types
+// Input validation & abuse limits
 // ---------------------------------------------------------------------------
 
-interface ChatMessage {
-  role: "user" | "assistant";
-  content: string;
-}
+// Caps bound the cost of a single request: at most 20 turns of history,
+// 4k chars per message, 20 requests per IP per hour.
+const ChatRequestSchema = z.object({
+  messages: z
+    .array(
+      z.object({
+        role: z.enum(["user", "assistant"]),
+        content: z.string().trim().min(1).max(4000),
+      })
+    )
+    .min(1)
+    .max(20),
+});
 
-interface ChatRequestBody {
-  messages: ChatMessage[];
+const RATE_LIMIT = 20;
+const RATE_WINDOW_MS = 60 * 60 * 1000;
+
+function jsonError(message: string, status: number): Response {
+  return new Response(JSON.stringify({ error: message }), {
+    status,
+    headers: { "Content-Type": "application/json" },
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -69,15 +86,23 @@ To activate the full AI concierge, add your \`ANTHROPIC_API_KEY\` to the environ
 // ---------------------------------------------------------------------------
 
 export async function POST(request: NextRequest) {
-  const body = (await request.json()) as ChatRequestBody;
-  const { messages } = body;
-
-  if (!messages || !Array.isArray(messages) || messages.length === 0) {
-    return new Response(JSON.stringify({ error: "Messages array is required" }), {
-      status: 400,
-      headers: { "Content-Type": "application/json" },
-    });
+  const ip = getClientIp(request);
+  if (!checkRateLimit(`concierge:${ip}`, RATE_LIMIT, RATE_WINDOW_MS)) {
+    return jsonError("Too many requests. Please try again later.", 429);
   }
+
+  let rawBody: unknown;
+  try {
+    rawBody = await request.json();
+  } catch {
+    return jsonError("Invalid JSON body", 400);
+  }
+
+  const parsed = ChatRequestSchema.safeParse(rawBody);
+  if (!parsed.success) {
+    return jsonError("Invalid request: expected 1-20 messages of at most 4000 characters each.", 400);
+  }
+  const { messages } = parsed.data;
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
 
@@ -145,11 +170,6 @@ export async function POST(request: NextRequest) {
     });
   } catch (error: unknown) {
     console.error("Concierge API error:", error);
-    const message =
-      error instanceof Error ? error.message : "An unexpected error occurred";
-    return new Response(JSON.stringify({ error: message }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    return jsonError("The concierge is temporarily unavailable. Please try again.", 500);
   }
 }

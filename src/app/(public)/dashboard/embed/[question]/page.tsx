@@ -183,7 +183,7 @@ export default async function EmbedPage({ params }: PageProps) {
           {data.source}
         </span>
         <a
-          href="https://portlandcommons.org"
+          href="https://www.portlandciviclab.org"
           target="_blank"
           rel="noopener noreferrer"
           style={{

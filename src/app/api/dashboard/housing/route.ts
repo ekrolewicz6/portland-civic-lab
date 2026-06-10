@@ -5,6 +5,21 @@ import type { HousingData, ChartPoint, PermitBreakdown } from "@/lib/types";
 export const dynamic = "force-dynamic";
 
 const CACHE_KEY = "housing";
+const REDFIN_MAX_AGE_DAYS = 180;
+
+function isFreshSourceDate(value: unknown, maxAgeDays: number): boolean {
+  if (!value) return false;
+  const sourceDate = new Date(String(value));
+  if (isNaN(sourceDate.getTime())) return false;
+  const maxAgeMs = maxAgeDays * 24 * 60 * 60 * 1000;
+  return Date.now() - sourceDate.getTime() <= maxAgeMs;
+}
+
+function toYearMonth(value: unknown): string {
+  const sourceDate = new Date(String(value));
+  if (isNaN(sourceDate.getTime())) return String(value).slice(0, 7);
+  return sourceDate.toISOString().slice(0, 7);
+}
 
 export async function GET(): Promise<NextResponse<HousingData & { dataStatus: string }>> {
   try {
@@ -290,13 +305,21 @@ export async function GET(): Promise<NextResponse<HousingData & { dataStatus: st
         ...(await (async () => {
           try {
             const redfin = await sql`SELECT median_sale_price, days_on_market, period_begin FROM housing.redfin_market ORDER BY period_begin DESC LIMIT 1`;
-            if (redfin.length > 0 && redfin[0].median_sale_price) return [`Portland median sale price: $${Number(redfin[0].median_sale_price).toLocaleString()}, ${redfin[0].days_on_market} days on market (${String(redfin[0].period_begin).slice(0, 7)}).`];
+            if (
+              redfin.length > 0 &&
+              redfin[0].median_sale_price &&
+              isFreshSourceDate(redfin[0].period_begin, REDFIN_MAX_AGE_DAYS)
+            ) {
+              return [
+                `Redfin Portland metro median sale price: $${Number(redfin[0].median_sale_price).toLocaleString()}, ${redfin[0].days_on_market} days on market (${toYearMonth(redfin[0].period_begin)}).`,
+              ];
+            }
           } catch {}
           return [];
         })()),
         ...(zoriData.length >= 2
           ? [`Portland median rent (Zillow ZORI): $${zoriData[zoriData.length - 1].value.toLocaleString()}/month (${zoriData[zoriData.length - 1].date.slice(0, 7)}). ${zoriData.length} monthly data points since ${zoriData[0].date.slice(0, 7)}.`]
-          : ["Median rent data unavailable -- run: npx tsx scripts/fetch-zillow-rents.ts"]),
+          : ["Median rent data unavailable -- run: npx tsx ingest/fetch-zillow-rents.ts"]),
       ],
     };
 

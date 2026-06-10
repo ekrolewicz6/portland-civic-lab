@@ -185,7 +185,7 @@ export async function GET() {
           provider: "Portland Clean & Safe / Placer.ai",
           action: footTrafficTrend
             ? `${footTrafficTrend.length} data points from published reports`
-            : "Run: npx tsx scripts/seed-boec-downtown.ts --downtown-only",
+            : "Run: npx tsx ingest/seed-boec-downtown.ts --downtown-only",
         },
         {
           name: "Office Vacancy",
@@ -193,7 +193,7 @@ export async function GET() {
           provider: "CBRE / Colliers / Kidder Mathews",
           action: officeVacancyTrend
             ? `${officeVacancyTrend.length} quarterly data points`
-            : "Run: npx tsx scripts/seed-boec-downtown.ts --downtown-only",
+            : "Run: npx tsx ingest/seed-boec-downtown.ts --downtown-only",
         },
         {
           name: "Graffiti Reports",
@@ -211,7 +211,7 @@ export async function GET() {
           provider: "CBRE, Colliers, JLL, Kidder Mathews quarterly reports",
           action: vacancyTrend
             ? `${vacancyTrend.length} quarterly data points from published CRE reports`
-            : "Run: npx tsx scripts/fetch-vacancy-real.ts",
+            : "Run: npx tsx ingest/fetch-vacancy-real.ts",
         },
         {
           name: "US National Benchmark (FRED)",

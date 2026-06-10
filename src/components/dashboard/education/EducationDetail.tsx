@@ -506,7 +506,7 @@ export default function EducationDetail() {
       <div className="text-center py-16 text-[var(--color-ink-muted)]">
         <p className="text-sm">Education data temporarily unavailable.</p>
         <p className="text-xs mt-1">
-          Run <code className="font-mono">npx tsx scripts/parse-education.ts</code> to load data.
+          Run <code className="font-mono">npx tsx ingest/parse-education.ts</code> to load data.
         </p>
       </div>
     );

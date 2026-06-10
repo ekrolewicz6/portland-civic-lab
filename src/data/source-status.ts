@@ -154,12 +154,12 @@ export const QUESTION_DATA_STATUS: Record<QuestionId, QuestionDataStatus> = {
     overallStatus: "LIVE",
     badgeLabel: "Live data",
     badgeTooltip:
-      "622K+ PPB NIBRS offense records (2016-2026), daily sync from Tableau Public CSV. Downtown scorecard with live YoY comparison.",
+      "627K+ PPB NIBRS offense records through April 2026, daily sync from Tableau Public CSV. BOEC 911 answer-time trend is seeded from public Director's Reports.",
     sources: [
       {
         name: "PPB NIBRS Offense Data",
         status: "LIVE",
-        statusLabel: "622K+ records, daily sync",
+        statusLabel: "627K+ records through Apr 2026",
         provider: "Portland Police Bureau via Tableau Public CSV",
       },
       {
@@ -170,10 +170,11 @@ export const QUESTION_DATA_STATUS: Record<QuestionId, QuestionDataStatus> = {
       },
       {
         name: "911 Response Times",
-        status: "NEEDS_PRR",
-        statusLabel: "Public records request needed",
+        status: "LIVE_PARTIAL",
+        statusLabel: "Director's Report trend loaded",
         provider: "Bureau of Emergency Communications (BOEC)",
-        blocker: "File PRR to BOEC for monthly Priority 1 response medians",
+        blocker:
+          "Operational dispatch-level response medians still require a public records request.",
       },
     ],
   },

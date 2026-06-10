@@ -45,10 +45,10 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const token = await getToken({
-    req: request,
-    secret: process.env.NEXTAUTH_SECRET ?? "portland-commons-dev-secret",
-  });
+  // Fail closed: without a real secret we cannot verify tokens, so treat
+  // every request to a protected route as unauthenticated.
+  const secret = process.env.NEXTAUTH_SECRET;
+  const token = secret ? await getToken({ req: request, secret }) : null;
 
   if (!token) {
     const loginUrl = new URL("/login", request.url);

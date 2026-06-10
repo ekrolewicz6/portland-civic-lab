@@ -399,7 +399,7 @@ export const pbjTopLawsuit = pgTable("pbj_top_lawsuit", {
 
 // ── Progress Reports ───────────────────────────────────────────────────
 
-import { boolean as pgBoolean, pgSchema } from "drizzle-orm/pg-core";
+import { boolean as pgBoolean, pgSchema, primaryKey } from "drizzle-orm/pg-core";
 
 export const contentSchema = pgSchema("content");
 
@@ -427,4 +427,139 @@ export const reportSections = contentSchema.table("report_sections", {
   sectionType: text("section_type").default("article"), // article, data-summary, profile, recommendation
   dataQuery: text("data_query"),
   dataSnapshot: jsonb("data_snapshot"),
+});
+
+// ── Performance Portland / ClearImpact mirror ──────────────────────────
+
+export const performanceSchema = pgSchema("performance");
+
+export const performanceIngestRuns = performanceSchema.table("ingest_runs", {
+  id: serial("id").primaryKey(),
+  startedAt: timestamp("started_at", { withTimezone: true }).defaultNow().notNull(),
+  finishedAt: timestamp("finished_at", { withTimezone: true }),
+  status: text("status").notNull(),
+  parserVersion: text("parser_version").notNull(),
+  scorecardsRequested: integer("scorecards_requested").default(0),
+  scorecardsLoaded: integer("scorecards_loaded").default(0),
+  measureInstancesLoaded: integer("measure_instances_loaded").default(0),
+  uniqueMeasuresLoaded: integer("unique_measures_loaded").default(0),
+  error: text("error"),
+  metadata: jsonb("metadata"),
+});
+
+export const performanceRawPayloads = performanceSchema.table("raw_payloads", {
+  payloadKey: text("payload_key").primaryKey(),
+  payloadKind: text("payload_kind").notNull(),
+  sourceUrl: text("source_url").notNull(),
+  contentText: text("content_text"),
+  contentJson: jsonb("content_json"),
+  contentHash: text("content_hash").notNull(),
+  fetchedAt: timestamp("fetched_at", { withTimezone: true }).defaultNow().notNull(),
+});
+
+export const performanceScorecards = performanceSchema.table("scorecards", {
+  scorecardId: text("scorecard_id").primaryKey(),
+  title: text("title").notNull(),
+  slug: text("slug").notNull(),
+  sourceUrl: text("source_url").notNull(),
+  rawPayloadKey: text("raw_payload_key"),
+  lastFetchedAt: timestamp("last_fetched_at", { withTimezone: true }).defaultNow().notNull(),
+  metadata: jsonb("metadata"),
+});
+
+export const performanceContainers = performanceSchema.table("containers", {
+  containerId: text("container_id").primaryKey(),
+  scorecardId: text("scorecard_id").notNull(),
+  title: text("title").notNull(),
+  sortOrder: integer("sort_order").notNull().default(0),
+  sourceUrl: text("source_url").notNull(),
+  rawPayloadKey: text("raw_payload_key"),
+  lastFetchedAt: timestamp("last_fetched_at", { withTimezone: true }).defaultNow().notNull(),
+  metadata: jsonb("metadata"),
+});
+
+export const performanceMeasures = performanceSchema.table("measures", {
+  measureId: text("measure_id").primaryKey(),
+  valueId: text("value_id").notNull(),
+  title: text("title").notNull(),
+  metricType: text("metric_type").notNull(),
+  latestPeriod: text("latest_period"),
+  latestActual: text("latest_actual"),
+  latestTrendDirection: text("latest_trend_direction"),
+  latestTrendTone: text("latest_trend_tone"),
+  latestTrendPeriods: integer("latest_trend_periods"),
+  polarity: integer("polarity"),
+  sourceUrl: text("source_url").notNull(),
+  additionalDataUrl: text("additional_data_url").notNull(),
+  chartData: jsonb("chart_data"),
+  files: jsonb("files"),
+  metadata: jsonb("metadata"),
+  latestChangedAt: timestamp("latest_changed_at", { withTimezone: true }),
+  lastFetchedAt: timestamp("last_fetched_at", { withTimezone: true }).defaultNow().notNull(),
+});
+
+export const performanceMeasureInstances = performanceSchema.table(
+  "measure_instances",
+  {
+    scorecardId: text("scorecard_id").notNull(),
+    containerId: text("container_id").notNull(),
+    measureId: text("measure_id").notNull(),
+    sortOrder: integer("sort_order").notNull().default(0),
+  },
+  (table) => ({
+    pk: primaryKey({
+      columns: [table.scorecardId, table.containerId, table.measureId],
+    }),
+  }),
+);
+
+export const performanceMeasureValues = performanceSchema.table("measure_values", {
+  id: serial("id").primaryKey(),
+  measureId: text("measure_id").notNull(),
+  timePeriodId: text("time_period_id"),
+  timePeriod: text("time_period").notNull(),
+  sortOrder: integer("sort_order").notNull().default(0),
+  actualValue: text("actual_value"),
+  targetValue: text("target_value"),
+  forecastValue: text("forecast_value"),
+  varianceFromTarget: text("variance_from_target"),
+  percentage: text("percentage"),
+  percentChangeFromPrior: text("percent_change_from_prior"),
+  baselineChange: text("baseline_change"),
+  currentTrendDirection: integer("current_trend_direction"),
+  currentTrendPeriods: integer("current_trend_periods"),
+  actualValueColor: jsonb("actual_value_color"),
+  rawValue: jsonb("raw_value"),
+});
+
+export const performanceMeasureNotes = performanceSchema.table(
+  "measure_notes",
+  {
+    measureId: text("measure_id").notNull(),
+    noteKey: text("note_key").notNull(),
+    noteTitle: text("note_title").notNull(),
+    noteHtml: text("note_html"),
+    noteText: text("note_text"),
+    links: jsonb("links"),
+    lastFetchedAt: timestamp("last_fetched_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (table) => ({
+    pk: primaryKey({
+      columns: [table.measureId, table.noteKey],
+    }),
+  }),
+);
+
+export const performanceMeasureChanges = performanceSchema.table("measure_changes", {
+  id: serial("id").primaryKey(),
+  runId: integer("run_id"),
+  measureId: text("measure_id").notNull(),
+  scorecardId: text("scorecard_id"),
+  containerId: text("container_id"),
+  changeType: text("change_type").notNull(),
+  previousPeriod: text("previous_period"),
+  previousActual: text("previous_actual"),
+  newPeriod: text("new_period"),
+  newActual: text("new_actual"),
+  changedAt: timestamp("changed_at", { withTimezone: true }).defaultNow().notNull(),
 });

@@ -28,7 +28,7 @@ All notable changes to the Portland Civic Lab Dashboard are documented here.
 - Links go directly to the source data portal (ODE, Census, BLS, ArcGIS, NTD, etc.)
 
 ### Pre-Push Verification Hook
-- `scripts/verify-api-queries.ts` runs 24 database checks before every `git push`
+- `ingest/verify-api-queries.ts` runs 24 database checks before every `git push`
 - Catches column mismatches, missing tables, and broken SQL before they reach prod
 - Wired as Claude Code PreToolUse hook on `Bash(git push *)`
 

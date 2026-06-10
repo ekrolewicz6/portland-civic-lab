@@ -81,7 +81,7 @@ export async function GET() {
             name: "Portland-area Enrollment Data (6 districts)",
             status: "needed",
             provider: "Oregon Department of Education",
-            action: "Run: npx tsx scripts/parse-education.ts",
+            action: "Run: npx tsx ingest/parse-education.ts",
           },
         ],
         trend: { direction: "flat", percentage: 0, label: "not yet tracked" },

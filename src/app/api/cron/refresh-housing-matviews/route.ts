@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import sql from "@/lib/db-query";
+import { isAuthorizedCronRequest } from "@/lib/cron-auth";
 
 export const dynamic = "force-dynamic";
 // Refresh can take a few minutes against 5.9M rows. Vercel Pro allows up to 300s.
@@ -20,9 +21,7 @@ const MATVIEWS = [
 // Triggered by Vercel cron (see vercel.json) on a daily schedule.
 // Permit data updates infrequently — overnight refresh is enough.
 export async function GET(request: NextRequest) {
-  const authHeader = request.headers.get("authorization");
-  const expected = `Bearer ${process.env.CRON_SECRET}`;
-  if (process.env.CRON_SECRET && authHeader !== expected) {
+  if (!isAuthorizedCronRequest(request)) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 

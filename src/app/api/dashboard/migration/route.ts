@@ -37,7 +37,7 @@ export async function GET(): Promise<
             status: "needs_api_key",
             provider: "U.S. Census Bureau",
             action:
-              "Register at api.census.gov/data/key_signup.html, then run: npx tsx scripts/fetch-census.ts",
+              "Register at api.census.gov/data/key_signup.html, then run: npx tsx ingest/fetch-census.ts",
           },
         ],
         trend: { direction: "flat" as const, percentage: 0, label: "no data" },
@@ -47,7 +47,7 @@ export async function GET(): Promise<
         source: "U.S. Census Bureau · Population Estimates Program · ACS 5-Year",
         lastUpdated: new Date().toISOString().slice(0, 10),
         insights: [
-          "Run: npx tsx scripts/fetch-census.ts to fetch Census population data.",
+          "Run: npx tsx ingest/fetch-census.ts to fetch Census population data.",
         ],
       } as unknown as MigrationData & {
         dataStatus: string;

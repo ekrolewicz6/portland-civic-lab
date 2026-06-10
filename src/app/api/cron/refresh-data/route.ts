@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import sql from "@/lib/db-query";
+import { isAuthorizedCronRequest } from "@/lib/cron-auth";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 300;
@@ -19,10 +20,7 @@ interface RefreshResult {
 // ── Auth ───────────────────────────────────────────────────────────────────
 
 function checkAuth(request: NextRequest): boolean {
-  const authHeader = request.headers.get("authorization");
-  const expected = `Bearer ${process.env.CRON_SECRET}`;
-  if (process.env.CRON_SECRET && authHeader !== expected) return false;
-  return true;
+  return isAuthorizedCronRequest(request);
 }
 
 // ── Helpers ────────────────────────────────────────────────────────────────
@@ -430,7 +428,8 @@ async function refreshZillowRent(): Promise<RefreshResult> {
 
   if (inserted > 0) {
     await sql`
-      DELETE FROM public.dashboard_cache WHERE question IN ('housing', 'housing_detail')
+      DELETE FROM public.dashboard_cache
+      WHERE question IN ('housing', 'housing_detail', 'housing_journey', 'housing_bottleneck')
     `.catch(() => {});
   }
 
@@ -955,32 +954,32 @@ function manualSources(): RefreshResult[] {
     {
       source: "BOEC 911 Data",
       status: "manual",
-      message: "Requires manual encoding from BOEC Director's Report PDFs (portland.gov/911). Run: npx tsx scripts/seed-boec-downtown.ts --boec-only",
+      message: "Requires manual encoding from BOEC Director's Report PDFs (portland.gov/911). Run: npx tsx ingest/seed-boec-downtown.ts --boec-only",
     },
     {
       source: "Downtown Foot Traffic",
       status: "manual",
-      message: "Requires manual encoding from Portland Clean & Safe / Placer.ai reports. Run: npx tsx scripts/seed-boec-downtown.ts --downtown-only",
+      message: "Requires manual encoding from Portland Clean & Safe / Placer.ai reports. Run: npx tsx ingest/seed-boec-downtown.ts --downtown-only",
     },
     {
       source: "Downtown Office Vacancy",
       status: "manual",
-      message: "Requires manual encoding from CBRE / Colliers broker reports. Run: npx tsx scripts/seed-boec-downtown.ts --downtown-only",
+      message: "Requires manual encoding from CBRE / Colliers broker reports. Run: npx tsx ingest/seed-boec-downtown.ts --downtown-only",
     },
     {
       source: "ODE Education Data",
       status: "manual",
-      message: "XLSX downloads from oregon.gov/ode (enrollment, graduation, test scores, chronic absenteeism). Run: npx tsx scripts/seed-education-data.ts",
+      message: "XLSX downloads from oregon.gov/ode (enrollment, graduation, test scores, chronic absenteeism). Run: npx tsx ingest/seed-education-data.ts",
     },
     {
       source: "GHG Emissions",
       status: "manual",
-      message: "Requires manual encoding from BPS Multnomah County GHG report. Run: npx tsx scripts/seed-trees-ghg-budget.ts --ghg-only",
+      message: "Requires manual encoding from BPS Multnomah County GHG report. Run: npx tsx ingest/seed-trees-ghg-budget.ts --ghg-only",
     },
     {
       source: "Budget Program Offers",
       status: "manual",
-      message: "Requires downloaded Excel files from portland.gov/budget. Run: npx tsx scripts/seed-trees-ghg-budget.ts --budget-only",
+      message: "Requires downloaded Excel files from portland.gov/budget. Run: npx tsx ingest/seed-trees-ghg-budget.ts --budget-only",
     },
   ];
 }

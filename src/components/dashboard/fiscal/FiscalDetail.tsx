@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Landmark, Receipt } from "lucide-react";
 import TaxDetail from "../tax/TaxDetail";
 import BudgetExplorer from "./BudgetExplorer";
@@ -34,10 +34,35 @@ const TABS: {
   },
 ];
 
+function tabFromHash(hash: string): Tab {
+  const id = hash.replace(/^#/, "");
+  return id === "tax" || id === "budget" ? id : "budget";
+}
+
 export default function FiscalDetail() {
   const [activeTab, setActiveTab] = useState<Tab>("budget");
 
   const ActiveTab = TABS.find((t) => t.id === activeTab)!;
+
+  useEffect(() => {
+    const syncFromHash = () => setActiveTab(tabFromHash(window.location.hash));
+
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+    window.addEventListener("popstate", syncFromHash);
+    return () => {
+      window.removeEventListener("hashchange", syncFromHash);
+      window.removeEventListener("popstate", syncFromHash);
+    };
+  }, []);
+
+  function selectTab(tab: Tab) {
+    setActiveTab(tab);
+    const nextHash = `#${tab}`;
+    if (window.location.hash !== nextHash) {
+      window.history.pushState(null, "", nextHash);
+    }
+  }
 
   return (
     <div className="space-y-8">
@@ -57,8 +82,9 @@ export default function FiscalDetail() {
           {TABS.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => selectTab(tab.id)}
               className="flex items-center gap-2 px-4 py-2 rounded-sm text-[13px] font-medium transition-all"
+              aria-pressed={activeTab === tab.id}
               style={{
                 backgroundColor:
                   activeTab === tab.id

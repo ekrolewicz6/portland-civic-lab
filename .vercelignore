@@ -3,6 +3,7 @@
 /node_modules
 /data
 /etl
+/runtime-data
 /.claude
 /test-results
 /coverage

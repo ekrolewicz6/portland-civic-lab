@@ -1,6 +1,11 @@
-# Portland Commons Civic Dashboard
+# Portland Civic Dashboard
 
-Real-time data on Portland's recovery — seven questions that drive Portland's story, answered with public data.
+Public dashboard, data publishing layer, and Portland Civic Lab shell.
+
+Workspace path: `apps/civic-dashboard/`
+
+See `ARCHITECTURE.md` for folder ownership and shared-data rules. Dashboard data
+source inventory lives in `docs/data-source-inventory.md`.
 
 ## Quick Start
 
@@ -22,7 +27,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 - **Frontend**: Next.js 15 + TypeScript + Tailwind CSS v4 + Recharts
 - **Backend**: Next.js API routes (PostgreSQL-ready, mock data for development)
-- **ETL Pipeline**: Python workers scheduled via cron (see `etl/`)
+- **ETL Pipeline**: Python workers scheduled via cron (see `ingest/legacy/python/`)
 - **Database**: PostgreSQL with PostGIS extension
 - **Maps**: Mapbox GL JS
 - **Hosting**: Vercel (frontend) + Railway/Fly.io (backend/DB/ETL)
@@ -33,14 +38,19 @@ Open [http://localhost:3000](http://localhost:3000).
 2. **Is Portland gaining or losing businesses?** — BLT registrations, CivicApps, SOS filings
 3. **Is downtown coming back?** — Placer.ai foot traffic, vacancy, CoStar
 4. **Is Portland safe?** — PPB crime data, 911 response times, PDX Reporter
-5. **Is the tax burden competitive?** — Comparative rate analysis
+5. **What do Portlanders pay, and what do they get?** — FiSC local fiscal basket, tax scenarios, service return
 6. **Is housing getting built?** — PP&D permits, Zillow rents, PHB pipeline
 7. **Is the Portland Commons working?** — PCB registry metrics
 
-## ETL Pipeline
+## Ingestion
 
 ```bash
-cd etl
+# TypeScript ingestion scripts
+npm run fetch:external
+npm run scrape:permits
+
+# Legacy Python ETL workers
+cd ingest/legacy/python
 pip install -r requirements.txt
 cp .env.example .env
 
@@ -61,7 +71,7 @@ createdb portland_dashboard
 psql portland_dashboard -c "CREATE EXTENSION IF NOT EXISTS postgis;"
 
 # Run schema
-psql portland_dashboard < etl/schema.sql
+psql portland_dashboard < ingest/legacy/python/schema.sql
 ```
 
 ## Deployment
@@ -74,4 +84,4 @@ vercel deploy
 
 ### Railway (Database + ETL)
 
-See `etl/` for worker configurations. Deploy as a background service.
+See `ingest/legacy/python/` for worker configurations. Deploy as a background service.

@@ -12,7 +12,7 @@ import { PERMITS_URL } from "@/lib/site";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Live Dashboard | Portland Civic Labs",
+  title: "Live Dashboard | Portland Civic Lab",
   description:
     "A live civic dashboard for Portland, Oregon. Explore housing, homelessness, safety, fiscal burden, economy, education, climate, quality of life, and accountability through public data.",
 };
@@ -60,9 +60,8 @@ export default async function DashboardPage() {
                 className="text-[14px] sm:text-[15px] text-white/55 leading-relaxed max-w-md lg:border-l lg:border-white/15 lg:pl-5 animate-fade-up"
                 style={{ animationDelay: "100ms" }}
               >
-                A secondary tool in the platform: public data on housing,
-                safety, infrastructure, and city performance, with every number
-                linked to its source.
+                Public data on housing, safety, the economy, and city
+                performance — with every number linked back to its source.
               </p>
             </div>
           </div>
@@ -82,6 +81,33 @@ export default async function DashboardPage() {
       </section>
 
       <section className="relative max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 pt-8 sm:pt-10">
+        {/*
+          Performance Portland mirror promo is intentionally hidden from prod
+          until the performance warehouse and decision cockpits are ready for
+          public launch.
+        <Link
+          href="/dashboard/performance"
+          className="group mb-6 grid gap-4 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-5 transition-all hover:-translate-y-0.5 hover:border-[var(--color-sage)] sm:grid-cols-[1fr_auto] sm:items-center sm:p-6"
+        >
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-canopy)]">
+              New official-metrics warehouse
+            </p>
+            <h2 className="mt-2 font-editorial text-2xl text-[var(--color-ink)] sm:text-3xl">
+              Performance Portland mirror and decision cockpits
+            </h2>
+            <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[var(--color-ink-light)]">
+              Browse all official city scorecards, metric histories, narrative notes,
+              source links, change logs, and the first tool layer for Raymond Lee, DCAs,
+              and City Council.
+            </p>
+          </div>
+          <span className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-canopy)]">
+            Open mirror
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </span>
+        </Link>
+        */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
           {questions.map((q, i) => {
             const api = q.apiData;

@@ -48,6 +48,28 @@ interface SafetyDetailResponse {
   } | null;
   // Graffiti from BPS
   graffitiTrend: { month: string; count: number }[] | null;
+  // 911 call answering performance from BOEC Director's Reports
+  boec911: {
+    latest: {
+      month: string;
+      monthLabel: string;
+      total911Calls: number | null;
+      pctAnswered15Sec: number;
+      pctAnswered20Sec: number | null;
+      avgWaitSeconds: number;
+      authorizedFte: number | null;
+      seniorDispatchers: number | null;
+      vacancies: number | null;
+      source: string | null;
+    } | null;
+    trend: {
+      month: string;
+      monthLabel: string;
+      pctAnswered15Sec: number;
+      pctAnswered20Sec: number | null;
+      avgWaitSeconds: number;
+    }[];
+  };
   // Downtown scorecard — YoY comparison for key crime categories
   downtownScorecard: {
     category: string;
@@ -231,6 +253,74 @@ export async function GET(): Promise<NextResponse<SafetyDetailResponse>> {
       // graffiti table may not exist
     }
 
+    // 6b. BOEC 911 answer performance from Director's Report PDFs.
+    let boecTrend: SafetyDetailResponse["boec911"]["trend"] = [];
+    let boecLatest: SafetyDetailResponse["boec911"]["latest"] = null;
+    try {
+      const boecRows = await sql`
+        SELECT
+          TO_CHAR(month, 'YYYY-MM') AS month,
+          TO_CHAR(month, 'Mon YYYY') AS month_label,
+          total_911_calls,
+          pct_answered_15sec,
+          pct_answered_20sec,
+          avg_wait_seconds,
+          authorized_fte,
+          certified_dispatchers,
+          vacancies,
+          source
+        FROM safety.boec_911_monthly
+        ORDER BY month
+      `;
+
+      boecTrend = boecRows.map((r) => ({
+        month: r.month as string,
+        monthLabel: r.month_label as string,
+        pctAnswered15Sec: Number(r.pct_answered_15sec),
+        pctAnswered20Sec:
+          r.pct_answered_20sec === null || r.pct_answered_20sec === undefined
+            ? null
+            : Number(r.pct_answered_20sec),
+        avgWaitSeconds: Number(r.avg_wait_seconds),
+      }));
+
+      const latestRow = boecRows[boecRows.length - 1];
+      if (latestRow) {
+        boecLatest = {
+          month: latestRow.month as string,
+          monthLabel: latestRow.month_label as string,
+          total911Calls:
+            latestRow.total_911_calls === null || latestRow.total_911_calls === undefined
+              ? null
+              : Number(latestRow.total_911_calls),
+          pctAnswered15Sec: Number(latestRow.pct_answered_15sec),
+          pctAnswered20Sec:
+            latestRow.pct_answered_20sec === null ||
+            latestRow.pct_answered_20sec === undefined
+              ? null
+              : Number(latestRow.pct_answered_20sec),
+          avgWaitSeconds: Number(latestRow.avg_wait_seconds),
+          authorizedFte:
+            latestRow.authorized_fte === null || latestRow.authorized_fte === undefined
+              ? null
+              : Number(latestRow.authorized_fte),
+          seniorDispatchers:
+            latestRow.certified_dispatchers === null ||
+            latestRow.certified_dispatchers === undefined
+              ? null
+              : Number(latestRow.certified_dispatchers),
+          vacancies:
+            latestRow.vacancies === null || latestRow.vacancies === undefined
+              ? null
+              : Number(latestRow.vacancies),
+          source: latestRow.source ? String(latestRow.source) : null,
+        };
+      }
+    } catch {
+      boecTrend = [];
+      boecLatest = null;
+    }
+
     // 7. Total record count
     const countRows = await sql`
       SELECT count(*)::int AS cnt FROM safety.ppb_offenses
@@ -342,24 +432,26 @@ export async function GET(): Promise<NextResponse<SafetyDetailResponse>> {
     }
 
     // BOEC 911 performance — real data from Director's Report PDFs
-    try {
-      const boecLatest = await sql`
-        SELECT pct_answered_15sec, avg_wait_seconds, certified_dispatchers, vacancies,
-               TO_CHAR(month, 'Mon YYYY') AS month_label
-        FROM safety.boec_911_monthly
-        ORDER BY month DESC
-        LIMIT 1
-      `;
-      if (boecLatest.length > 0) {
-        const b = boecLatest[0];
-        topInsights.push(
-          `BOEC 911: ${b.pct_answered_15sec}% answered within 15 sec (${b.month_label}), avg wait ${b.avg_wait_seconds}s. ` +
-          `${b.certified_dispatchers} certified dispatchers, ${b.vacancies} vacancies. NENA standard is 90%/15s.`
-        );
-      }
-    } catch {
+    if (boecLatest) {
+      const pct20 = boecLatest.pctAnswered20Sec
+        ? `; ${boecLatest.pctAnswered20Sec}% within 20 seconds`
+        : "";
+      const staffing =
+        boecLatest.seniorDispatchers || boecLatest.vacancies
+          ? ` Staffing: ${
+              boecLatest.seniorDispatchers
+                ? `${boecLatest.seniorDispatchers} senior dispatchers`
+                : "senior dispatcher count unavailable"
+            }${
+              boecLatest.vacancies ? `, ${boecLatest.vacancies} vacancies` : ""
+            }.`
+          : "";
       topInsights.push(
-        "911 response times are unavailable — requires public records request to BOEC."
+        `BOEC 911: ${boecLatest.pctAnswered15Sec}% answered within 15 seconds (${boecLatest.monthLabel})${pct20}; average wait ${boecLatest.avgWaitSeconds}s.${staffing}`
+      );
+    } else {
+      topInsights.push(
+        "911 response trend is unavailable in the database; BOEC publishes Director's Reports with monthly call-answering metrics."
       );
     }
 
@@ -378,6 +470,10 @@ export async function GET(): Promise<NextResponse<SafetyDetailResponse>> {
       mvtTrend,
       mvtInsight,
       graffitiTrend,
+      boec911: {
+        latest: boecLatest,
+        trend: boecTrend,
+      },
       downtownScorecard,
       downtownPeriodLabel,
       topInsights,
@@ -404,6 +500,10 @@ export async function GET(): Promise<NextResponse<SafetyDetailResponse>> {
       mvtTrend: [],
       mvtInsight: null,
       graffitiTrend: null,
+      boec911: {
+        latest: null,
+        trend: [],
+      },
       downtownScorecard: [],
       downtownPeriodLabel: "",
       topInsights: ["Data temporarily unavailable."],

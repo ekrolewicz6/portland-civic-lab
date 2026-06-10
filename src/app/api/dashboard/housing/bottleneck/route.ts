@@ -44,7 +44,7 @@ interface BottleneckResponse {
 
 // All reads collapsed into a single round trip via json_build_object,
 // using precomputed materialized views for the slow PERCENTILE_CONT and
-// window-function queries (see scripts/create-housing-matviews.ts).
+// window-function queries (see ingest/create-housing-matviews.ts).
 const EXCLUDED_TYPES = [
   'D - Permit Request',
   'Facilities Final Inspection',

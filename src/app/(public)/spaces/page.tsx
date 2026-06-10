@@ -78,7 +78,7 @@ export default function SpacesPage() {
             Preview
           </span>
           <p className="text-[13px] text-[var(--color-clay)]">
-            This page shows sample listings to demonstrate the platform. Real commercial space data is coming soon.
+            These are sample listings to show how the page works. Real commercial space data is coming soon.
           </p>
         </div>
       </div>

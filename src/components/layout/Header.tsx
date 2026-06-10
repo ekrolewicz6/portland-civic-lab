@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PERMITS_URL } from "@/lib/site";
+import { ASK_PORTLAND_URL, PERMITS_URL } from "@/lib/site";
 
 export default function Header() {
   return (
@@ -31,26 +31,38 @@ export default function Header() {
             </svg>
             <div className="flex items-baseline gap-2">
               <span className="text-[15px] font-semibold tracking-tight">
-                Portland Civic Labs
+                Portland Civic Lab
               </span>
               <span className="hidden sm:inline text-[11px] font-medium text-[var(--color-sage)] uppercase tracking-[0.15em]">
-                Permits & Data Tools
+                Dashboards & Civic Tools
               </span>
             </div>
           </Link>
 
           <div className="flex items-center gap-5 text-[11px] font-mono uppercase tracking-[0.16em]">
-            <a
-              href={PERMITS_URL}
-              className="hidden sm:inline text-[var(--color-sage)] hover:text-white transition-colors"
-            >
-              Portland Permits
-            </a>
             <Link
               href="/dashboard"
+              className="text-[var(--color-sage)] hover:text-white transition-colors"
+            >
+              Dashboards
+            </Link>
+            <a
+              href={ASK_PORTLAND_URL}
+              className="hidden md:inline text-white/55 hover:text-white transition-colors"
+            >
+              Ask Portland
+            </a>
+            <a
+              href={PERMITS_URL}
+              className="hidden sm:inline text-white/55 hover:text-white transition-colors"
+            >
+              Permitting
+            </a>
+            <Link
+              href="/contact"
               className="text-white/55 hover:text-white transition-colors"
             >
-              Dashboard
+              Contact
             </Link>
           </div>
         </div>

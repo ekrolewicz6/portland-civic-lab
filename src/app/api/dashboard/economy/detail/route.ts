@@ -422,7 +422,7 @@ export async function GET() {
         population: r.population ? Number(r.population) : undefined,
       }));
     } catch {
-      // economy.neighborhood_income may not exist yet — run scripts/fetch-census-tracts.ts
+      // economy.neighborhood_income may not exist yet — run ingest/fetch-census-tracts.ts
     }
 
     // Portland MSA employment & wages (QCEW MSA-level data)

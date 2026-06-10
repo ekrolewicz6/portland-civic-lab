@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PERMITS_URL } from "@/lib/site";
+import { ASK_PORTLAND_URL, PERMITS_URL } from "@/lib/site";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="md:col-span-5">
             <div className="flex items-baseline gap-3 mb-3">
               <h3 className="font-editorial-normal text-2xl text-white leading-none">
-                Portland Civic Labs
+                Portland Civic Lab
               </h3>
               <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember)]/70">
                 Est. 2026
@@ -21,9 +21,9 @@ export default function Footer() {
             </div>
             <p className="text-[13px] leading-relaxed max-w-sm text-white/65">
               An independent initiative focused on improving how Portland&apos;s
-              systems work in practice. We build permitting tools first, then
-              connect them to city data that helps people understand what is
-              happening around them.
+              systems work in practice. We build public dashboards, civic
+              measurement tools, and workflow products that make local decisions
+              easier to understand.
             </p>
             <p className="mt-4 text-[12px] leading-relaxed max-w-sm text-white/50 italic font-editorial">
               &ldquo;Practical tools, real workflows, clear public data.&rdquo;
@@ -35,6 +35,16 @@ export default function Footer() {
               Tools
             </h4>
             <ul className="text-[13px] space-y-2 text-white/65">
+              <li>
+                <Link href="/dashboard" className="hover:text-white transition-colors">
+                  Live Dashboards
+                </Link>
+              </li>
+              <li>
+                <a href={ASK_PORTLAND_URL} className="hover:text-white transition-colors">
+                  Ask Portland
+                </a>
+              </li>
               <li>
                 <a href={PERMITS_URL} className="hover:text-white transition-colors">
                   Portland Permits
@@ -65,13 +75,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/dashboard" className="hover:text-white transition-colors">
-                  Live Dashboard
+                <Link href="/methodology" className="hover:text-white transition-colors">
+                  Methodology
                 </Link>
               </li>
               <li>
-                <Link href="/methodology" className="hover:text-white transition-colors">
-                  Methodology
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -82,22 +92,21 @@ export default function Footer() {
               Focus
             </h4>
             <ul className="text-[13px] space-y-2 text-white/65">
-              <li>Permitting and zoning workflows</li>
-              <li>Property-level clarity before people apply</li>
-              <li>Real city data connected to real decisions</li>
-              <li>Tools that reduce delays and repeated errors</li>
+              <li>Dashboards that turn public data into a clear picture</li>
+              <li>Surveys that measure what Portlanders actually think</li>
+              <li>Permitting tools that cut the confusion before you apply</li>
+              <li>More tools on the way — suggest one anytime</li>
             </ul>
             <p className="mt-4 text-[11px] leading-relaxed text-white/50">
-              The dashboard remains part of the platform, but as a secondary tool
-              that helps residents and decision-makers understand performance in
-              housing, safety, infrastructure, and city systems.
+              Everything we build is open and public: you can see where the data
+              comes from, how we got the numbers, and use the tools yourself.
             </p>
           </div>
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[12px] text-white/55">
-            &copy; {year} Portland Civic Labs &middot; Public data, freely available
+            &copy; {year} Portland Civic Lab &middot; Public data, freely available
           </p>
           <p className="text-[10px] text-white/45 font-mono uppercase tracking-[0.2em]">
             Practical tools &middot; Clear public data

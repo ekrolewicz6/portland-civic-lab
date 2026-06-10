@@ -1,50 +1,37 @@
 import type { NextAuthOptions } from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
 
 /**
  * NextAuth.js configuration for Portland Civic Lab.
  *
- * Uses a credentials provider (email / password) as the initial auth method.
- * When a Postgres database is available the @auth/pg-adapter can be wired in
- * by setting DATABASE_URL. Until then the adapter is omitted and sessions are
- * JWT-only, which works perfectly for dev and early deploys.
+ * There is currently no way to sign in: the old hard-coded dev credentials
+ * provider was removed for security (the repo is public), and real member
+ * authentication arrives with the WorkOS AuthKit integration. Sessions are
+ * JWT-only; no accounts exist until then.
  */
 
+/**
+ * Resolve the JWT signing secret. In production a missing NEXTAUTH_SECRET is
+ * a fatal misconfiguration — a guessable secret would let anyone forge
+ * sessions, so we refuse to boot rather than fall back.
+ */
+export function requireAuthSecret(): string {
+  const secret = process.env.NEXTAUTH_SECRET;
+  if (secret) return secret;
+  if (process.env.NODE_ENV === "production") {
+    throw new Error(
+      "NEXTAUTH_SECRET is not set. Refusing to start with a guessable JWT secret in production."
+    );
+  }
+  return "insecure-local-dev-only-secret";
+}
+
 export const authOptions: NextAuthOptions = {
-  providers: [
-    CredentialsProvider({
-      name: "Email",
-      credentials: {
-        email: { label: "Email", type: "email", placeholder: "you@example.com" },
-        password: { label: "Password", type: "password" },
-      },
-      async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          return null;
-        }
-
-        // TODO: Replace with real DB lookup once Postgres is connected.
-        // For now accept a hard-coded dev account so the auth flow can be tested.
-        if (
-          credentials.email === "admin@portlandcommons.org" &&
-          credentials.password === "portland2026"
-        ) {
-          return {
-            id: "1",
-            name: "Portland Admin",
-            email: credentials.email,
-            role: "admin",
-          };
-        }
-
-        return null;
-      },
-    }),
-  ],
+  // No providers: sign-in is disabled until WorkOS membership auth lands.
+  providers: [],
 
   session: {
     strategy: "jwt",
-    maxAge: 30 * 24 * 60 * 60, // 30 days
+    maxAge: 7 * 24 * 60 * 60, // 7 days
   },
 
   pages: {
@@ -68,7 +55,7 @@ export const authOptions: NextAuthOptions = {
     },
   },
 
-  secret: process.env.NEXTAUTH_SECRET ?? "portland-commons-dev-secret",
+  secret: requireAuthSecret(),
 };
 
 /** Re-export helpers that other server code may need. */

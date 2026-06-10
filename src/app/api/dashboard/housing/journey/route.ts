@@ -93,7 +93,7 @@ const KEY_PHASES = [
 
 // All four reads collapsed into a single round trip via json_build_object,
 // each pulling from a precomputed materialized view (see
-// scripts/create-housing-matviews.ts). Previously these queries hit
+// ingest/create-housing-matviews.ts). Previously these queries hit
 // housing.permit_activities (5.9M rows) with PERCENTILE_CONT and took
 // 30-60 seconds — well past Vercel's function timeout.
 const COMBINED_QUERY = `

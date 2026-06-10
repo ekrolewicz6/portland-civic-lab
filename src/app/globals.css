@@ -600,3 +600,39 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-sage);
 }
+
+/* Performance dashboard dark-surface contrast.
+   Keep this outside Tailwind layers so it cannot be purged or ordered behind
+   generated utilities in dev/prod builds. */
+.performance-dark-card {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+
+.performance-dark-card-strong {
+  border: 1px solid rgba(224, 168, 112, 0.42);
+  background: rgba(224, 168, 112, 0.12);
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.performance-dark-eyebrow {
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+
+.performance-dark-copy {
+  color: rgba(255, 255, 255, 0.84) !important;
+}
+
+.performance-dark-muted {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.performance-dark-link {
+  color: rgba(255, 255, 255, 0.74) !important;
+  transition: color 0.2s ease;
+}
+
+.performance-dark-link:hover {
+  color: #ffffff !important;
+}
