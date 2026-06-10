@@ -563,3 +563,20 @@ export const performanceMeasureChanges = performanceSchema.table("measure_change
   newActual: text("new_actual"),
   changedAt: timestamp("changed_at", { withTimezone: true }).defaultNow().notNull(),
 });
+
+// ── Membership (WorkOS AuthKit) ─────────────────────────────────────────
+
+export const members = pgTable("members", {
+  id: serial("id").primaryKey(),
+  workosUserId: text("workos_user_id").unique().notNull(),
+  email: text("email").unique().notNull(),
+  firstName: text("first_name"),
+  lastName: text("last_name"),
+  avatarUrl: text("avatar_url"),
+  role: text("role").default("member").notNull(), // member | contributor | steward | admin
+  status: text("status").default("active").notNull(), // active | suspended
+  neighborhood: text("neighborhood"),
+  interests: jsonb("interests"), // string[] of topic interests
+  joinedAt: timestamp("joined_at", { withTimezone: true }).defaultNow().notNull(),
+  lastSeenAt: timestamp("last_seen_at", { withTimezone: true }).defaultNow().notNull(),
+});

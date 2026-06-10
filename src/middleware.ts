@@ -1,71 +1,34 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
-import { getToken } from "next-auth/jwt";
+import type { NextFetchEvent, NextRequest } from "next/server";
+import { authkitMiddleware } from "@workos-inc/authkit-nextjs";
 
 /**
- * Middleware protects authenticated route groups (/member, /landlord, /admin).
- * Everything else is public.
+ * Middleware gates the member area (/member, /admin).
+ *
+ * When WorkOS AuthKit is configured, it manages sessions on those routes and
+ * pages enforce sign-in via `withAuth({ ensureSignedIn: true })`. When it
+ * isn't configured (e.g. a fork without keys), the routes fail closed and
+ * redirect to /login, which explains that sign-in isn't open yet.
  */
 
-const publicPaths = [
-  "/",
-  "/dashboard",
-  "/directory",
-  "/calculator",
-  "/apply",
-  "/progress-report",
-  "/login",
-  "/signup",
-];
+const workosConfigured = Boolean(
+  process.env.WORKOS_API_KEY &&
+    process.env.WORKOS_CLIENT_ID &&
+    process.env.WORKOS_COOKIE_PASSWORD
+);
 
-const publicApiPrefixes = ["/api/dashboard/", "/api/public/", "/api/auth/", "/api/export/"];
+const authkit = workosConfigured ? authkitMiddleware() : null;
 
-const publicPrefixes = ["/dashboard/"];
-
-function isPublicRoute(pathname: string): boolean {
-  if (publicPaths.includes(pathname)) return true;
-  if (publicApiPrefixes.some((prefix) => pathname.startsWith(prefix))) return true;
-  if (publicPrefixes.some((prefix) => pathname.startsWith(prefix))) return true;
-  // Static assets and Next.js internals
-  if (pathname.startsWith("/_next") || pathname.startsWith("/favicon")) return true;
-  return false;
-}
-
-const protectedPrefixes = ["/member", "/landlord", "/admin"];
-
-export async function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-
-  // Only gate protected prefixes
-  const isProtected = protectedPrefixes.some((prefix) =>
-    pathname.startsWith(prefix)
-  );
-
-  if (!isProtected) {
-    return NextResponse.next();
+export async function middleware(request: NextRequest, event: NextFetchEvent) {
+  if (authkit) {
+    return authkit(request, event);
   }
 
-  // Fail closed: without a real secret we cannot verify tokens, so treat
-  // every request to a protected route as unauthenticated.
-  const secret = process.env.NEXTAUTH_SECRET;
-  const token = secret ? await getToken({ req: request, secret }) : null;
-
-  if (!token) {
-    const loginUrl = new URL("/login", request.url);
-    loginUrl.searchParams.set("callbackUrl", pathname);
-    return NextResponse.redirect(loginUrl);
-  }
-
-  // Role-based access
-  const role = token.role as string | undefined;
-
-  if (pathname.startsWith("/admin") && role !== "admin") {
-    return NextResponse.redirect(new URL("/", request.url));
-  }
-
-  return NextResponse.next();
+  const loginUrl = new URL("/login", request.url);
+  loginUrl.searchParams.set("callbackUrl", request.nextUrl.pathname);
+  return NextResponse.redirect(loginUrl);
 }
 
 export const config = {
-  matcher: ["/member/:path*", "/landlord/:path*", "/admin/:path*"],
+  matcher: ["/member/:path*", "/admin/:path*"],
 };

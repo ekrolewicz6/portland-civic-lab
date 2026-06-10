@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { DM_Sans, JetBrains_Mono, Bricolage_Grotesque } from "next/font/google";
-import AuthProvider from "@/components/providers/AuthProvider";
+
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-JRGVM4XLGV";
@@ -144,7 +144,7 @@ export default function RootLayout({
             }),
           }}
         />
-        <AuthProvider>{children}</AuthProvider>
+        {children}
       </body>
     </html>
   );

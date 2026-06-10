@@ -1,10 +1,18 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { getSignUpUrl } from "@workos-inc/authkit-nextjs";
+import { isWorkOSConfigured } from "@/lib/membership";
 
 export const metadata = {
-  title: "Membership coming soon | Portland Civic Lab",
+  title: "Become a member | Portland Civic Lab",
 };
 
-export default function SignupPage() {
+export default async function SignupPage() {
+  // With WorkOS configured, this page is just a doorway to hosted AuthKit.
+  if (isWorkOSConfigured()) {
+    redirect(await getSignUpUrl());
+  }
+
   return (
     <div className="w-full max-w-md text-center">
       <h1 className="font-editorial-normal text-[32px] text-[var(--color-ink)]">
