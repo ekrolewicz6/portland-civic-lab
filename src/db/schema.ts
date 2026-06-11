@@ -595,3 +595,21 @@ export const dataFlags = pgTable("data_flags", {
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
   resolvedAt: timestamp("resolved_at", { withTimezone: true }),
 });
+
+// ── Public records requests (tracked publicly) ──────────────────────────
+
+export const recordsRequests = pgTable("records_requests", {
+  id: serial("id").primaryKey(),
+  title: text("title").unique().notNull(),
+  agency: text("agency").notNull(),
+  description: text("description").notNull(),
+  requestedData: text("requested_data"),
+  status: text("status").default("planned").notNull(), // planned | filed | acknowledged | fulfilled | denied | appealed
+  filedAt: date("filed_at"),
+  dueAt: date("due_at"),
+  resolvedAt: date("resolved_at"),
+  outcomeNote: text("outcome_note"),
+  resultUrl: text("result_url"),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+});
