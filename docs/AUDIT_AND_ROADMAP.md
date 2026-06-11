@@ -21,7 +21,7 @@
 
 ## 1. Security (fix before anything else)
 
-These findings matter more than usual because **the repo is public** (`github.com/ekrolewicz6/portland-dashboard`).
+These findings matter more than usual because **the repo is public** (`github.com/ekrolewicz6/portland-civic-lab`).
 
 ### Critical
 

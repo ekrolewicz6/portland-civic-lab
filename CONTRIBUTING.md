@@ -7,8 +7,8 @@ sourcing, design, writing, and local knowledge all count.
 ## Quick start
 
 ```bash
-git clone https://github.com/ekrolewicz6/portland-dashboard.git
-cd portland-dashboard
+git clone https://github.com/ekrolewicz6/portland-civic-lab.git
+cd portland-civic-lab
 npm install
 cp .env.example .env.local   # fill in what you have; see notes below
 npm run dev

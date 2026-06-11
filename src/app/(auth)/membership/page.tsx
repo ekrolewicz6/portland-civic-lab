@@ -1,39 +1,37 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
-import { getSignInUrl } from "@workos-inc/authkit-nextjs";
-import { isWorkOSConfigured } from "@/lib/membership";
 
 export const metadata = {
-  title: "Sign in | Portland Civic Lab",
+  title: "Membership | Portland Civic Lab",
 };
 
-export default async function LoginPage() {
-  // With WorkOS configured, this page is just a doorway to hosted AuthKit.
-  if (isWorkOSConfigured()) {
-    redirect(await getSignInUrl());
-  }
-
+/**
+ * Shown only when WorkOS isn't configured in the environment (e.g. forks
+ * without keys). With WorkOS configured, /login and /signup redirect
+ * straight to hosted AuthKit and this page is unreachable from the UI.
+ */
+export default function MembershipPage() {
   return (
     <div className="w-full max-w-md text-center">
       <h1 className="font-editorial-normal text-[32px] text-[var(--color-ink)]">
-        Sign-in isn&apos;t open yet
+        Membership is coming soon
       </h1>
       <p className="text-[15px] text-[var(--color-ink-muted)] mt-4 leading-relaxed">
-        Member accounts are on the way. Everything on the site is free and
-        public in the meantime — no account needed.
+        We&apos;re building a membership program where Portlanders can help
+        shape what the Civic Lab tracks and builds. Accounts aren&apos;t open
+        yet — but we&apos;d love to hear from you in the meantime.
       </p>
       <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
         <Link
-          href="/dashboard"
+          href="/contact"
           className="inline-block px-6 py-2.5 bg-[var(--color-canopy)] text-white text-[14px] font-medium rounded hover:bg-[var(--color-canopy-mid)] transition-colors"
         >
-          Explore the dashboards
+          Get in touch
         </Link>
         <Link
-          href="/contact"
+          href="/dashboard"
           className="inline-block px-6 py-2.5 border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] text-[var(--color-ink)] text-[14px] font-medium rounded hover:bg-[var(--color-paper)] transition-colors"
         >
-          Contact us
+          Explore the dashboards
         </Link>
       </div>
     </div>

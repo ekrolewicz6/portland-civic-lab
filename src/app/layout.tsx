@@ -140,7 +140,7 @@ export default function RootLayout({
                 name: "Portland",
                 containedInPlace: { "@type": "State", name: "Oregon" },
               },
-              sameAs: ["https://github.com/ekrolewicz6/portland-dashboard"],
+              sameAs: ["https://github.com/ekrolewicz6/portland-civic-lab"],
             }),
           }}
         />
