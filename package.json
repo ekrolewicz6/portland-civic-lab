@@ -16,7 +16,8 @@
     "fetch:housing": "npx tsx ingest/fetch-housing-data.ts",
     "fetch:employment": "npx tsx ingest/fetch-oregon-employment.ts",
     "scrape:permits": "npx tsx ingest/scrape-permit-details.ts",
-    "analyze:bottlenecks": "npx tsx ingest/analyze-permit-bottlenecks.ts"
+    "analyze:bottlenecks": "npx tsx ingest/analyze-permit-bottlenecks.ts",
+    "test": "playwright test"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
+    "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4",
     "@types/mapbox-gl": "^3",
     "@types/node": "^22",

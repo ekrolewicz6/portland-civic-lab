@@ -61,3 +61,7 @@ runtime-data/
 /data
 /etl
 /scripts
+
+# playwright
+/test-results/
+/playwright-report/
