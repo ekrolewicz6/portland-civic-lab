@@ -1,6 +1,13 @@
 # Portland Civic Lab — Full Audit & Institutional Roadmap
 
-**Date:** June 9, 2026
+**Date:** June 9, 2026 · **Status update June 11, 2026:** Phase 0 and the
+software scope of Phases 1-2 are deployed — security hardening, WorkOS
+membership (test env), CI + smoke tests, CSV export, data freshness labels,
+flag-a-number, topic proposals + voting, the /records PRR tracker,
+/volunteer, /open-data, and privacy/terms naming Portland Civic Lab LLC.
+Remaining: WorkOS production cutover + Sentry (user), and the Phase 3-4
+items (member workbench, first Progress Report, governance mechanisms).
+
 **Scope:** Complete audit of the application (product, security, data, engineering, ops) plus a gap analysis between today's codebase and the goal: a democratically-run civic technology institution where Portlanders become members, participate in civic functions, analyze data, volunteer, file public records requests, and govern the organization itself.
 
 ---

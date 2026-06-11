@@ -1,87 +1,71 @@
-# Portland Civic Dashboard
+# Portland Civic Lab
 
-Public dashboard, data publishing layer, and Portland Civic Lab shell.
+Public dashboards, civic data, and participation tools for Portland, Oregon —
+live at **[portlandciviclab.org](https://www.portlandciviclab.org)**.
 
-Workspace path: `apps/civic-dashboard/`
+Every number links to its public source. Every method is documented. The
+code is open source (AGPL-3.0), and members decide what gets built next.
 
-See `ARCHITECTURE.md` for folder ownership and shared-data rules. Dashboard data
-source inventory lives in `docs/data-source-inventory.md`.
+## What's here
 
-## Quick Start
+- **Dashboards** (`/dashboard`) — ten topics (housing, safety, homelessness,
+  climate, fiscal, economy, education, …) with live data pipelines, honest
+  freshness labels, CSV export, and embeds
+- **Participation** — flag suspect numbers on any chart (`/api/data-flags`),
+  propose and vote on new topics (`/proposals`), track our public records
+  requests (`/records`)
+- **Membership** — WorkOS AuthKit sign-in, member area (`/member`)
+- **Open data** (`/open-data`) — free JSON + CSV endpoints, no key required
+
+## Quick start
 
 ```bash
-# Install dependencies
 npm install
-
-# Set up environment
-cp .env.example .env.local
-# Edit .env.local with your API keys
-
-# Run development server
+cp .env.example .env.local   # fill in what you have
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Without `DATABASE_URL` the app runs in mock-data mode — fine for UI work.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the repo map, data ground rules,
+and how to pick up an issue.
 
-## Architecture
+## Stack
 
-- **Frontend**: Next.js 15 + TypeScript + Tailwind CSS v4 + Recharts
-- **Backend**: Next.js API routes (PostgreSQL-ready, mock data for development)
-- **ETL Pipeline**: Python workers scheduled via cron (see `ingest/legacy/python/`)
-- **Database**: PostgreSQL with PostGIS extension
-- **Maps**: Mapbox GL JS
-- **Hosting**: Vercel (frontend) + Railway/Fly.io (backend/DB/ETL)
+- **App**: Next.js 15 (App Router) + TypeScript + Tailwind v4 + Recharts
+- **Database**: Supabase Postgres (+ PostGIS); Drizzle schema in `src/db/`
+  (`schema.ts` = app-owned tables, `introspected/` = full 177-table snapshot)
+- **Data pipelines**: TypeScript scripts in `ingest/`, scheduled as Vercel
+  crons (`vercel.json`); legacy Python in `ingest/legacy/python/`
+- **Auth**: WorkOS AuthKit
+- **Hosting**: Vercel (auto-deploys from `main`)
+- **CI**: typecheck, lint, build, Playwright smoke tests (`npm test`)
 
-## The Seven Questions
-
-1. **Is Portland gaining or losing people?** — Water bureau activations, Census, IRS migration
-2. **Is Portland gaining or losing businesses?** — BLT registrations, CivicApps, SOS filings
-3. **Is downtown coming back?** — Placer.ai foot traffic, vacancy, CoStar
-4. **Is Portland safe?** — PPB crime data, 911 response times, PDX Reporter
-5. **What do Portlanders pay, and what do they get?** — FiSC local fiscal basket, tax scenarios, service return
-6. **Is housing getting built?** — PP&D permits, Zillow rents, PHB pipeline
-7. **Is the Portland Commons working?** — PCB registry metrics
-
-## Ingestion
+## Commands
 
 ```bash
-# TypeScript ingestion scripts
-npm run fetch:external
-npm run scrape:permits
+npm run dev        # dev server
+npm run build      # production build
+npm test           # Playwright smoke suite (builds first: npm run build)
+npx tsc --noEmit   # typecheck
+npm run lint       # lint
 
-# Legacy Python ETL workers
-cd ingest/legacy/python
-pip install -r requirements.txt
-cp .env.example .env
-
-# Run all workers once
-python scheduler.py --run-now
-
-# Run scheduler (cron-like)
-python scheduler.py
+# apply a SQL migration (idempotent files in drizzle/)
+npx tsx ingest/apply-migration.ts drizzle/0006_topic_proposals.sql
 ```
 
-## Database Setup
+## Key documents
 
-```bash
-# Create database
-createdb portland_dashboard
+- [docs/AUDIT_AND_ROADMAP.md](docs/AUDIT_AND_ROADMAP.md) — full audit and
+  the institutional roadmap (where this project is going)
+- [docs/data-source-inventory.md](docs/data-source-inventory.md) — every
+  data source and its status
+- [docs/data-storage.md](docs/data-storage.md) — where data lives and why
+- [KNOWN_ISSUES.md](KNOWN_ISSUES.md) — data gotchas; read before touching
+  data code
 
-# Enable PostGIS
-psql portland_dashboard -c "CREATE EXTENSION IF NOT EXISTS postgis;"
+## About
 
-# Run schema
-psql portland_dashboard < ingest/legacy/python/schema.sql
-```
-
-## Deployment
-
-### Vercel (Frontend)
-
-```bash
-vercel deploy
-```
-
-### Railway (Database + ETL)
-
-See `ingest/legacy/python/` for worker configurations. Deploy as a background service.
+Operated by Portland Civic Lab LLC, an independent civic technology
+organization. Not affiliated with the City of Portland. See
+[/privacy](https://www.portlandciviclab.org/privacy) and
+[/terms](https://www.portlandciviclab.org/terms).

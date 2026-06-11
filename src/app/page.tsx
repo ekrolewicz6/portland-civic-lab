@@ -387,16 +387,17 @@ export default function HomePage() {
               </h2>
               <p className="mt-3 max-w-3xl text-[15px] text-[var(--color-ink-light)] leading-relaxed">
                 If there&apos;s a local problem you want measured, or public data
-                that&apos;s hard to find and should be easier, tell us. The best
-                ideas for what to build next come from people who live here.
+                that&apos;s hard to find and should be easier, propose it — and
+                vote on what the Lab builds next. The roadmap is decided in
+                public, by members.
               </p>
             </div>
             <div className="lg:col-span-4 lg:text-right">
               <Link
-                href="/contact"
+                href="/proposals"
                 className="inline-flex items-center justify-center gap-2 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] px-5 py-3 text-[15px] font-semibold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-paper)]"
               >
-                Suggest a project
+                Propose &amp; vote
                 <Building2 className="w-4 h-4" />
               </Link>
             </div>

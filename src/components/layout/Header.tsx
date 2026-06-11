@@ -66,9 +66,15 @@ export default function Header() {
             </a>
             <Link
               href="/contact"
-              className="text-white/55 hover:text-white transition-colors"
+              className="hidden sm:inline text-white/55 hover:text-white transition-colors"
             >
               Contact
+            </Link>
+            <Link
+              href="/signup"
+              className="rounded-sm bg-[var(--color-ember)] px-3 py-1.5 font-semibold text-[var(--color-canopy)] hover:bg-[var(--color-ember-bright)] transition-colors"
+            >
+              Join
             </Link>
           </div>
         </div>

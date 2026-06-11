@@ -641,8 +641,9 @@ export default function MethodologyPage() {
                 <strong className="text-[var(--color-ink-light)]">
                   Report a data error:
                 </strong>{" "}
-                Open an issue on our GitHub repository with the category,
-                metric, and the correct value with its source.
+                Use the &ldquo;Flag an issue&rdquo; button on any dashboard
+                topic — every report is tracked and reviewed. (GitHub issues
+                work too.)
               </p>
               <p>
                 <strong className="text-[var(--color-ink-light)]">
