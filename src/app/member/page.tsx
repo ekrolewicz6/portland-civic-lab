@@ -75,13 +75,31 @@ export default async function MemberPage() {
 
           <div className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-6">
             <h2 className="font-editorial text-[22px] text-[var(--color-ink)]">
-              Coming soon
+              Things you can do now
             </h2>
             <ul className="mt-4 space-y-2 text-[14px] text-[var(--color-ink-light)] leading-relaxed">
-              <li>Flag and annotate dashboard data</li>
-              <li>Propose and vote on new dashboard topics</li>
-              <li>Track public records requests</li>
-              <li>Volunteer opportunities matched to your skills</li>
+              <li>
+                <Link href="/proposals" className="text-[var(--color-canopy)] hover:underline">
+                  Propose and vote on dashboard topics →
+                </Link>
+              </li>
+              <li>
+                Flag suspect numbers on any{" "}
+                <Link href="/dashboard" className="text-[var(--color-canopy)] hover:underline">
+                  dashboard
+                </Link>
+              </li>
+              <li>
+                Follow our{" "}
+                <Link href="/records" className="text-[var(--color-canopy)] hover:underline">
+                  public records requests
+                </Link>
+              </li>
+              <li>
+                <Link href="/volunteer" className="text-[var(--color-canopy)] hover:underline">
+                  Volunteer your skills →
+                </Link>
+              </li>
             </ul>
           </div>
 

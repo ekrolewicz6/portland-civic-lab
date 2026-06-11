@@ -25,7 +25,7 @@ const authkit = workosConfigured
   ? authkitMiddleware({
       middlewareAuth: {
         enabled: true,
-        unauthenticatedPaths: ["/api/data-flags"],
+        unauthenticatedPaths: ["/api/data-flags", "/api/proposals", "/api/proposals/(.*)"],
       },
     })
   : null;
@@ -46,5 +46,11 @@ export async function middleware(request: NextRequest, event: NextFetchEvent) {
 }
 
 export const config = {
-  matcher: ["/member/:path*", "/admin/:path*", "/api/data-flags"],
+  matcher: [
+    "/member/:path*",
+    "/admin/:path*",
+    "/api/data-flags",
+    "/api/proposals/:path*",
+    "/api/proposals",
+  ],
 };

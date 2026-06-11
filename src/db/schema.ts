@@ -613,3 +613,32 @@ export const recordsRequests = pgTable("records_requests", {
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
   updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
 });
+
+// ── Topic proposals & voting (member democracy v1) ──────────────────────
+
+export const topicProposals = pgTable("topic_proposals", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  description: text("description").notNull(),
+  memberId: integer("member_id")
+    .references(() => members.id)
+    .notNull(),
+  status: text("status").default("open").notNull(), // open | planned | built | declined
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+});
+
+export const proposalVotes = pgTable(
+  "proposal_votes",
+  {
+    proposalId: integer("proposal_id")
+      .references(() => topicProposals.id, { onDelete: "cascade" })
+      .notNull(),
+    memberId: integer("member_id")
+      .references(() => members.id)
+      .notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (table) => ({
+    pk: primaryKey({ columns: [table.proposalId, table.memberId] }),
+  })
+);
