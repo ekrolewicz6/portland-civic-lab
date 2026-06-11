@@ -3,12 +3,16 @@ import type { NextFetchEvent, NextRequest } from "next/server";
 import { authkitMiddleware } from "@workos-inc/authkit-nextjs";
 
 /**
- * Middleware gates the member area (/member, /admin).
+ * Middleware gates the member area (/member, /admin) and provides optional
+ * session context to participation APIs.
  *
- * When WorkOS AuthKit is configured, it manages sessions on those routes and
- * pages enforce sign-in via `withAuth({ ensureSignedIn: true })`. When it
- * isn't configured (e.g. a fork without keys), the routes fail closed and
- * redirect to /login, which explains that sign-in isn't open yet.
+ * middlewareAuth: matched routes require a session and the MIDDLEWARE
+ * performs the AuthKit redirect. (Page-level withAuth({ ensureSignedIn })
+ * can't redirect on Next 15 — it would write the PKCE cookie during render,
+ * which Next forbids outside route handlers/server actions.)
+ * Paths in unauthenticatedPaths still get session context when one exists,
+ * but anonymous requests pass through — used by /api/data-flags so both
+ * members and anonymous visitors can report data issues.
  */
 
 const workosConfigured = Boolean(
@@ -17,13 +21,12 @@ const workosConfigured = Boolean(
     process.env.WORKOS_COOKIE_PASSWORD
 );
 
-// middlewareAuth: every matched route requires a session, and the MIDDLEWARE
-// performs the AuthKit redirect. (Page-level withAuth({ ensureSignedIn })
-// can't redirect on Next 15 — it would write the PKCE cookie during render,
-// which Next forbids outside route handlers/server actions.)
 const authkit = workosConfigured
   ? authkitMiddleware({
-      middlewareAuth: { enabled: true, unauthenticatedPaths: [] },
+      middlewareAuth: {
+        enabled: true,
+        unauthenticatedPaths: ["/api/data-flags"],
+      },
     })
   : null;
 
@@ -32,11 +35,16 @@ export async function middleware(request: NextRequest, event: NextFetchEvent) {
     return authkit(request, event);
   }
 
+  // WorkOS not configured (forks/CI): APIs stay reachable anonymously,
+  // member pages fail closed to the sign-in explainer.
+  if (request.nextUrl.pathname.startsWith("/api/")) {
+    return NextResponse.next();
+  }
   const loginUrl = new URL("/login", request.url);
   loginUrl.searchParams.set("callbackUrl", request.nextUrl.pathname);
   return NextResponse.redirect(loginUrl);
 }
 
 export const config = {
-  matcher: ["/member/:path*", "/admin/:path*"],
+  matcher: ["/member/:path*", "/admin/:path*", "/api/data-flags"],
 };

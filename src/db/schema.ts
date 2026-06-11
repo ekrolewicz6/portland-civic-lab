@@ -580,3 +580,18 @@ export const members = pgTable("members", {
   joinedAt: timestamp("joined_at", { withTimezone: true }).defaultNow().notNull(),
   lastSeenAt: timestamp("last_seen_at", { withTimezone: true }).defaultNow().notNull(),
 });
+
+// ── Data flags (member/public data feedback) ────────────────────────────
+
+export const dataFlags = pgTable("data_flags", {
+  id: serial("id").primaryKey(),
+  question: text("question").notNull(),
+  metric: text("metric"),
+  message: text("message").notNull(),
+  reporterEmail: text("reporter_email"),
+  memberId: integer("member_id").references(() => members.id),
+  status: text("status").default("new").notNull(), // new | reviewing | resolved | dismissed
+  resolutionNote: text("resolution_note"),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  resolvedAt: timestamp("resolved_at", { withTimezone: true }),
+});

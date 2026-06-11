@@ -8,6 +8,7 @@ import type { DashboardResponse } from "@/lib/types";
 import TrendChart from "@/components/charts/TrendChart";
 import ExportButton from "@/components/dashboard/ExportButton";
 import EmbedButton from "@/components/dashboard/EmbedButton";
+import FlagDataButton from "@/components/dashboard/FlagDataButton";
 import SafetyDetail from "@/components/dashboard/safety/SafetyDetail";
 import HousingDetail from "@/components/dashboard/housing/HousingDetail";
 import EconomyDetail from "@/components/dashboard/economy/EconomyDetail";
@@ -186,6 +187,7 @@ export default async function QuestionPage({ params }: PageProps) {
       <div className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 -mt-4 relative z-20">
         {/* Action buttons */}
         <div className="flex items-center justify-end gap-2 mb-6">
+          <FlagDataButton question={question} />
           <EmbedButton question={question} />
           <ExportButton question={question} />
         </div>
