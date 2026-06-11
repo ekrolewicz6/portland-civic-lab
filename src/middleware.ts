@@ -17,7 +17,15 @@ const workosConfigured = Boolean(
     process.env.WORKOS_COOKIE_PASSWORD
 );
 
-const authkit = workosConfigured ? authkitMiddleware() : null;
+// middlewareAuth: every matched route requires a session, and the MIDDLEWARE
+// performs the AuthKit redirect. (Page-level withAuth({ ensureSignedIn })
+// can't redirect on Next 15 — it would write the PKCE cookie during render,
+// which Next forbids outside route handlers/server actions.)
+const authkit = workosConfigured
+  ? authkitMiddleware({
+      middlewareAuth: { enabled: true, unauthenticatedPaths: [] },
+    })
+  : null;
 
 export async function middleware(request: NextRequest, event: NextFetchEvent) {
   if (authkit) {

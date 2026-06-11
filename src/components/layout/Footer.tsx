@@ -113,9 +113,14 @@ export default function Footer() {
           <p className="text-[12px] text-white/55">
             &copy; {year} Portland Civic Lab &middot; Public data, freely available
           </p>
-          <p className="text-[10px] text-white/45 font-mono uppercase tracking-[0.2em]">
-            Practical tools &middot; Clear public data
-          </p>
+          <div className="flex items-center gap-4 text-[12px] text-white/55">
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
