@@ -39,25 +39,39 @@ export interface Member {
   joined_at: string;
 }
 
+/** Emails granted the admin role on sign-in (comma-separated env var). */
+function isAdminEmail(email: string): boolean {
+  return (process.env.ADMIN_EMAILS ?? "")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean)
+    .includes(email.toLowerCase());
+}
+
 /**
  * Create or refresh the local member row after a successful WorkOS sign-in.
- * Idempotent: keyed on the WorkOS user id.
+ * Idempotent: keyed on the WorkOS user id. Role is re-derived from
+ * ADMIN_EMAILS on every sign-in, so adding the env var later promotes the
+ * account at its next sign-in (and removal demotes it).
  */
 export async function upsertMemberFromWorkOS(user: WorkOSUserLike): Promise<void> {
+  const role = isAdminEmail(user.email) ? "admin" : "member";
   await sql`
-    INSERT INTO members (workos_user_id, email, first_name, last_name, avatar_url)
+    INSERT INTO members (workos_user_id, email, first_name, last_name, avatar_url, role)
     VALUES (
       ${user.id},
       ${user.email},
       ${user.firstName ?? null},
       ${user.lastName ?? null},
-      ${user.profilePictureUrl ?? null}
+      ${user.profilePictureUrl ?? null},
+      ${role}
     )
     ON CONFLICT (workos_user_id) DO UPDATE SET
       email = EXCLUDED.email,
       first_name = EXCLUDED.first_name,
       last_name = EXCLUDED.last_name,
       avatar_url = EXCLUDED.avatar_url,
+      role = EXCLUDED.role,
       last_seen_at = now()
   `;
 }

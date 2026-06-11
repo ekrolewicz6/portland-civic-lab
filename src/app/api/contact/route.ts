@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -14,35 +15,6 @@ const contactSchema = z.object({
 
 type ContactPayload = z.infer<typeof contactSchema>;
 type DeliveryMode = "resend" | "smtp" | "database" | "local-file";
-
-type RateLimitEntry = {
-  count: number;
-  resetAt: number;
-};
-
-const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
-const RATE_LIMIT_MAX = 5;
-const rateLimit = new Map<string, RateLimitEntry>();
-
-function getClientKey(request: Request) {
-  const forwardedFor = request.headers.get("x-forwarded-for");
-  if (forwardedFor) return forwardedFor.split(",")[0]?.trim() || "unknown";
-
-  return request.headers.get("x-real-ip") || "unknown";
-}
-
-function isRateLimited(key: string) {
-  const now = Date.now();
-  const current = rateLimit.get(key);
-
-  if (!current || current.resetAt <= now) {
-    rateLimit.set(key, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
-    return false;
-  }
-
-  current.count += 1;
-  return current.count > RATE_LIMIT_MAX;
-}
 
 function htmlEscape(value: string) {
   return value
@@ -185,27 +157,7 @@ async function storeDatabaseFallback(payload: ContactPayload, request: Request) 
   const id = crypto.randomUUID();
   const submittedAt = new Date().toISOString();
 
-  await sql`
-    create table if not exists contact_submissions (
-      id uuid primary key,
-      submitted_at timestamptz not null default now(),
-      delivery text not null,
-      name text not null,
-      email text not null,
-      organization text,
-      topic text,
-      message text not null,
-      client_ip text,
-      user_agent text,
-      raw_payload jsonb not null
-    )
-  `;
-
-  await sql`
-    create index if not exists contact_submissions_submitted_at_idx
-    on contact_submissions (submitted_at desc)
-  `;
-
+  // Table lives in drizzle/0007_contact_submissions.sql
   await sql`
     insert into contact_submissions (
       id,
@@ -229,7 +181,7 @@ async function storeDatabaseFallback(payload: ContactPayload, request: Request) 
       ${payload.organization || null},
       ${payload.topic || null},
       ${payload.message},
-      ${getClientKey(request)},
+      ${getClientIp(request)},
       ${request.headers.get("user-agent") || "Unknown"},
       ${sql.json({
         name: payload.name,
@@ -273,7 +225,7 @@ async function storeLocalFallback(payload: ContactPayload, request: Request) {
       submittedAt: new Date().toISOString(),
       delivery: "local-file",
       client: {
-        ip: getClientKey(request),
+        ip: getClientIp(request),
         userAgent: request.headers.get("user-agent") || "Unknown",
       },
       payload: {
@@ -291,7 +243,7 @@ async function storeLocalFallback(payload: ContactPayload, request: Request) {
 }
 
 export async function POST(request: Request) {
-  if (isRateLimited(getClientKey(request))) {
+  if (!checkRateLimit(`contact:${getClientIp(request)}`, 5, 60 * 60 * 1000)) {
     return NextResponse.json(
       { ok: false, error: "Too many messages. Please try again later." },
       { status: 429 }

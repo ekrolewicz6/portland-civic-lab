@@ -120,6 +120,17 @@ export default async function MemberPage() {
           </div>
         </div>
 
+        {member?.role === "admin" && (
+          <p className="mt-8 text-[14px]">
+            <Link
+              href="/admin/flags"
+              className="font-semibold text-[var(--color-canopy)] hover:underline"
+            >
+              Admin: review data flags →
+            </Link>
+          </p>
+        )}
+
         <form action={handleSignOut} className="mt-10">
           <button
             type="submit"
