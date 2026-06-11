@@ -109,6 +109,7 @@ export default function ContactForm() {
             <option value="General note">General note</option>
             <option value="Data correction">Data correction</option>
             <option value="Partnership">Partnership</option>
+            <option value="Volunteering">Volunteering</option>
             <option value="Permitting tools">Permitting tools</option>
             <option value="Dashboard or analysis request">
               Dashboard or analysis request

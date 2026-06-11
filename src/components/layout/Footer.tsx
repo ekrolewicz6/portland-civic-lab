@@ -85,6 +85,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/open-data" className="hover:text-white transition-colors">
+                  Open Data &amp; API
+                </Link>
+              </li>
+              <li>
+                <Link href="/volunteer" className="hover:text-white transition-colors">
+                  Volunteer
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-white transition-colors">
                   Contact
                 </Link>
