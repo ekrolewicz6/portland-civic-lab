@@ -2,19 +2,20 @@ import { notFound } from "next/navigation";
 import { isValidQuestion, questionMeta } from "@/lib/questions";
 import type { DashboardResponse } from "@/lib/types";
 import Sparkline from "@/components/charts/Sparkline";
+import { getBaseUrl } from "@/lib/dashboard-data";
 
 interface PageProps {
   params: Promise<{ question: string }>;
 }
 
+// Render per-request: the data fetch resolves the base URL from request
+// headers, and embeds must always show current numbers.
+export const dynamic = "force-dynamic";
+
 async function fetchQuestionData(
   question: string
 ): Promise<DashboardResponse> {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL ||
-    process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "http://localhost:3000";
+  const baseUrl = await getBaseUrl();
 
   const res = await fetch(`${baseUrl}/api/dashboard/${question}`, {
     cache: "no-store",
@@ -25,22 +26,6 @@ async function fetchQuestionData(
   }
 
   return res.json();
-}
-
-export async function generateStaticParams() {
-  return [
-    { question: "housing" },
-    { question: "homelessness" },
-    { question: "safety" },
-    { question: "transportation" },
-    { question: "education" },
-    { question: "fiscal" },
-    { question: "economy" },
-    { question: "environment" },
-    { question: "quality" },
-    { question: "accountability" },
-    { question: "climate" },
-  ];
 }
 
 export default async function EmbedPage({ params }: PageProps) {
@@ -56,24 +41,32 @@ export default async function EmbedPage({ params }: PageProps) {
   try {
     data = await fetchQuestionData(question);
   } catch {
-    const mockModule = await import("@/lib/mock-data");
-    const dataMap: Record<string, DashboardResponse> = {
-      housing: mockModule.housingData,
-      safety: mockModule.safetyData,
-      economy: mockModule.businessData,
-      fiscal: mockModule.taxData,
-      // Legacy
-      migration: mockModule.migrationData,
-      business: mockModule.businessData,
-      downtown: mockModule.downtownData,
-      tax: mockModule.taxData,
-      program: mockModule.programData,
-    };
-    data = dataMap[question];
-    if (!data) {
-      // New categories without mock data
-      notFound();
-    }
+    // Never substitute mock data for real numbers (see KNOWN_ISSUES.md).
+    // An embed with no data says so honestly.
+    return (
+      <div
+        style={{
+          minHeight: "100vh",
+          backgroundColor: "#ffffff",
+          fontFamily: "'DM Sans', system-ui, sans-serif",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: 24,
+        }}
+      >
+        <p style={{ fontSize: 13, color: "#78716c", textAlign: "center" }}>
+          {meta.title} — data temporarily unavailable.
+        </p>
+        <a
+          href={`https://www.portlandciviclab.org/dashboard/${question}`}
+          style={{ fontSize: 11, color: "#c8956c", fontWeight: 600 }}
+        >
+          View on Portland Civic Lab
+        </a>
+      </div>
+    );
   }
 
   const sparklineData = data.chartData.map((d) => ({ value: d.value }));

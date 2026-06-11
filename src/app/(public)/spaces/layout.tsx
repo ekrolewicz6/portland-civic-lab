@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  // Demo surface with sample data — keep out of search until real listings ship.
+  robots: { index: false, follow: false },
   title: "Commercial Real Estate Listings",
   description:
     "Browse available commercial spaces in Portland, Oregon. Office, retail, industrial, and flex spaces with vacancy data, pricing, and neighborhood context.",

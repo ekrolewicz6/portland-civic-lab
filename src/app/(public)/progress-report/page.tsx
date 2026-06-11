@@ -8,6 +8,8 @@ import type { ProgressReportSummary } from "@/app/api/progress-report/route";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
+  // Empty shell until the first report publishes — keep out of search.
+  robots: { index: false, follow: false },
   title: "Portland Progress Report — Archive",
   description:
     "Quarterly publication combining dashboard data with narrative analysis. Portland's unofficial performance review.",
