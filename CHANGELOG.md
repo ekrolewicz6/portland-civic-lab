@@ -4,6 +4,163 @@ All notable changes to the Portland Civic Lab Dashboard are documented here.
 
 ---
 
+## [2026-06-14] — Portland City Org Chart System
+
+A new feature area: an interactive, fully-sourced map of City of Portland
+government — structure, headcount, salary cost, department budgets, and the
+full job-classification breakdown — plus dedicated per-bureau analysis pages.
+Built iteratively over a single session; each step below was driven by a
+specific request or a gap surfaced by the previous step. Read top-to-bottom for
+the order it actually happened.
+
+**Why this exists:** the founder wanted to understand budget-per-employee by
+department using public salary data. Research showed (a) the data exists but is
+PDF-trapped (budget) and PRR-gated (individual names), and (b) Portland
+*rebuilt its government* on Jan 1 2025 (charter reform) — so "department" had to
+be modeled against the new four-service-area structure, not the old bureaus.
+
+### Build order & rationale
+
+1. **Structure, API, plan** (`faf9e88`). Fanned out parallel research on
+   Portland salary/budget/org-structure sources, then built the canonical org
+   tree in `src/data/org-structure.ts` (4 service areas under City Administrator
+   Raymond C. Lee III, every bureau/office, electeds), a read-only JSON API
+   (`/api/org`), the interactive page `/org-chart`, and the sourced build plan
+   `docs/org-chart-plan.md`. Adversarial verification caught that the current
+   structure is **four** service areas (consolidated Mar 2025), not the six the
+   older budget docs still show. *Why:* needed a correct, citable backbone
+   before attaching any numbers.
+
+2. **Authorized headcount** (`ed51198`). Parsed the FY2025-26 budget **Table 8**
+   for authorized FTE per bureau; attached + rolled up to the citywide
+   **7,284**, with a headcount-by-service-area bar. *Why:* the structural chart
+   "looked incomplete" — it showed boxes but not the ~7,000-person scale.
+   Operating-unit FTE sums to 7,281.31; the 3.00 gap is Special Appropriations
+   (a budget construct, excluded) — reconciles exactly to Table 8.
+
+3. **Confirm leaders** (`543b5c2`). A six-group research pass confirmed **26
+   bureau leaders** against official portland.gov pages and stripped the
+   "Unconfirmed" tags; genuinely empty seats (Public Safety DCA, OCPA director,
+   PSR manager) marked **Vacant**; two phantom offices (Performance Office,
+   standalone Sustainability) removed as non-existent. *Why:* too many
+   Unconfirmed tags; integrity rule is "confirm or flag, never guess."
+
+4. **Deepest layer — classifications × comp plan** (`be9867d`). Parsed the
+   budget **FTE Summary** tables (every job class with authorized FTE +
+   budgeted $) and joined by **Class ID** to the City's FY2025-26 Compensation
+   Plan (salary band + bargaining unit) → `src/data/org-personnel.ts`. ~1,170
+   classifications across 31 bureaus; **28/31 reconcile exactly** to Table 8.
+   Surfaced as an expandable per-bureau staffing table. *Why:* founder asked to
+   go "as deep as you can go" and to wire in the comp plan they provided. This
+   is the floor of public data — below it is individual employees (PRR).
+
+5. **Redesign + per-bureau pages** (`c251a24`). Replaced the cramped tree +
+   side-panel with a **full-width** tree where bureau names link to dedicated
+   **`/org-chart/[bureau]`** pages (31, statically generated): reporting-chain
+   breadcrumb, key stats (FTE, salary cost, cost/FTE, operating budget),
+   "Where the money goes" department/program budget bars, the full
+   classification staffing+pay table, and a pay-distribution chart. The
+   department breakdown was extracted from the budget's messy "Bureau Programs"
+   pie-chart text by a **31-agent workflow**, with pct recomputed against each
+   bureau's operating total → `src/data/org-analysis.ts`. *Why:* the view was
+   "too constrained / half the page"; founder wanted per-bureau deep analysis
+   and salary cost by department.
+
+6. **Comparison, service-area cost, individual-pay wiring** (`e0122b9`). A
+   sortable **"Compare every bureau"** table (salary cost / FTE / cost-per-FTE /
+   operating budget / classes), a **salary-cost-by-service-area** bar, and the
+   PRR-gated individual-salary layer: schema (`src/data/individual-salaries.ts`),
+   loader (`ingest/load-salary-roster.ts`, with bureau mapping + median-based
+   name suppression), and a guarded bureau-page section — inert until the roster
+   is filed. *Why:* founder said "do all of it" to the offered next steps.
+
+7. **Operating-budget column** (`9678f22`). Added total all-funds operating
+   budget next to salary + FTE on every tree node, with the caveat that it
+   double-counts internal transfers and is dominated by capital/debt/
+   pass-throughs (so it runs far larger than salary). *Why:* founder wanted to
+   see total budget alongside salary and headcount.
+
+8. **Inline notes for folded-in nodes** (`ba8c86d`). Leaf nodes with no data of
+   their own now show their note inline — fixing the confusing blank
+   **Portland Solutions** node (its ~$82M of homelessness programs are folded
+   into the Office of the City Administrator line) and surfacing the three
+   councilors under each district. *Why:* founder asked why Portland Solutions
+   was blank; the answer revealed that the "City Administrator's office" is
+   ~86% homeless services.
+
+### Data & reproducibility
+- Generators live in `ingest/`: `parse-org-personnel.py` (budget FTE Summary →
+  JSON), `build-org-personnel.py` (join comp plan → `org-personnel.ts`),
+  `build-org-finance.py` (departments → `org-analysis.ts`),
+  `load-salary-roster.ts` (PRR roster → `individual-salaries.ts`).
+- Re-run them when a new budget or comp plan drops; the structure file is
+  hand-curated reference data with a citation per node.
+- PRR draft for the named-salary roster: `docs/prr-drafts/city-employee-salary-roster.md`.
+
+### Data analysis delivered (reference, not code)
+Verified against the source budget; framed as *signals*, not verdicts —
+budget structure can't prove mismanagement.
+- **Big budgets ≠ bloat.** Only ~$777M of the ~$8B all-funds total is base
+  salary; the rest is capital, debt, and pass-throughs (Water $2.2B, BES $1.4B,
+  BPS's $685M PCEF, BHR's $184M benefits pool, FPDR's $310M pensions run by 21
+  staff).
+- **Central administration is the fastest-growing, priciest-per-head part** —
+  the City Administrator's own office tripled (14→47 FTE); exec/DCA offices top
+  cost/FTE. Front-line bureaus (Parks $91k, 911 $95k, Police $109k) are cheapest
+  per position.
+- **911/BOEC flat at ~170 FTE for three years** against known answer-time
+  problems — clearest understaffing signal. Parks cut 41 positions.
+- Creative finds: the appointed City Administrator's band ($393k) **doubles the
+  elected Mayor** ($175k); **30% of the workforce is non-union**
+  ("Non-Represented"); utilities employ more people than Fire; **$252M sits in
+  programs labeled "Other."**
+
+---
+
+## [2026-06-11] — Membership, Participation & Civic Infrastructure
+
+Turned the site from a publication into the start of a member-run civic
+organization, with the security and CI foundations to support it. (Preceded the
+org-chart work above; consolidated here as it predates this changelog's gap.)
+
+### Membership & auth
+- Integrated **WorkOS AuthKit** for member sign-in/sign-up (route handlers for
+  `/login` + `/signup`, middleware-gated `/member`, `unauthenticatedPaths` for
+  optional-session APIs — working around AuthKit's PKCE-cookie-during-render
+  restriction). Removed next-auth entirely. `ADMIN_EMAILS` grants the admin role
+  on sign-in; member mirror in `src/lib/membership.ts`.
+
+### Participation features
+- **Flag-a-number** — report suspect data on any dashboard (`/api/data-flags`,
+  Zod + honeypot + rate limit) with an **admin review queue** (`/admin/flags`).
+- **Proposals + member voting** (`/proposals`) — propose and upvote dashboard
+  topics; member-only POST.
+- **Public records tracker** (`/records`) — an Oregon PRR how-to guide plus a
+  live tracker of requests the Lab is filing; two ready-to-send PRR letters
+  drafted (`docs/prr-drafts/`).
+- New public pages: `/volunteer`, `/open-data`, `/privacy`, `/terms`.
+
+### Security hardening
+- Removed hardcoded credentials and weak secret fallbacks; fail-secure cron auth
+  (`src/lib/cron-auth.ts`); shared rate limiter (`src/lib/rate-limit.ts`) on
+  concierge, contact, data-flags, proposals; stopped leaking error messages;
+  moved a runtime `CREATE TABLE` into a proper migration.
+
+### Platform
+- **GitHub Actions CI**: typecheck → lint → build → Playwright smoke tests.
+- **Parks Atlas** featured as a project on the homepage.
+- Introspected 177-table DB schema snapshot (`src/db/introspected/`) for typed
+  access to ingest-owned tables.
+- Homepage/public copy rewritten for users (not builder-spec); CTAs pointed at
+  the participation features.
+- Full audit + roadmap captured in `docs/AUDIT_AND_ROADMAP.md`.
+
+### Still user-gated
+- WorkOS dashboard redirect URI (`/auth/callback`) and optional Sentry DSN.
+- Filing the two drafted PRR letters.
+
+---
+
 ## [2026-04-19] — Aggressive Data Sourcing & Automation
 
 ### New Data (197K+ rows from public sources)
