@@ -12,12 +12,30 @@ import {
   type FundModel,
 } from "@/data/org-structure";
 import { BUREAU_PERSONNEL } from "@/data/org-personnel";
+import { BUREAU_FINANCE } from "@/data/org-analysis";
 
 /** Sum of budgeted personnel (salary) cost over each node's whole subtree. */
 export function salaryCostRollup(): Record<string, number> {
   const map: Record<string, number> = {};
   const walk = (node: OrgUnit): number => {
     let sum = BUREAU_PERSONNEL[node.id]?.totalCost ?? 0;
+    node.children?.forEach((c) => {
+      sum += walk(c);
+    });
+    map[node.id] = sum;
+    return sum;
+  };
+  walk(ORG_TREE);
+  return map;
+}
+
+/** Sum of all-funds operating budget over each node's subtree. NOTE: this is
+ *  all-funds and DOUBLE-COUNTS internal transfers — read it as scale, not a
+ *  true "cost to run". */
+export function operatingBudgetRollup(): Record<string, number> {
+  const map: Record<string, number> = {};
+  const walk = (node: OrgUnit): number => {
+    let sum = BUREAU_FINANCE[node.id]?.operatingTotal ?? 0;
     node.children?.forEach((c) => {
       sum += walk(c);
     });

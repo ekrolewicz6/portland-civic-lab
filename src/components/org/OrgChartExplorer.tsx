@@ -23,7 +23,12 @@ import {
   type FundModel,
 } from "@/data/org-structure";
 import { BUREAU_PERSONNEL } from "@/data/org-personnel";
-import { flattenTree, orgStats, salaryCostRollup } from "@/lib/org/queries";
+import {
+  flattenTree,
+  orgStats,
+  salaryCostRollup,
+  operatingBudgetRollup,
+} from "@/lib/org/queries";
 
 function fmtFte(n: number): string {
   return n.toLocaleString(undefined, { maximumFractionDigits: 2 });
@@ -62,6 +67,7 @@ export default function OrgChartExplorer() {
   const flat = useMemo(() => flattenTree(), []);
   const stats = useMemo(() => orgStats(), []);
   const costRollup = useMemo(() => salaryCostRollup(), []);
+  const budgetRollup = useMemo(() => operatingBudgetRollup(), []);
 
   const [expanded, setExpanded] = useState<Set<string>>(
     () =>
@@ -124,6 +130,7 @@ export default function OrgChartExplorer() {
     const personnel = BUREAU_PERSONNEL[unit.id];
     const isBureauPage = !!personnel;
     const cost = costRollup[unit.id] ?? 0;
+    const budget = budgetRollup[unit.id] ?? 0;
 
     const nameClass = `text-[14px] leading-tight text-[var(--color-ink)] ${
       isMatch || unit.type === "service-area" || unit.type === "administrator"
@@ -198,8 +205,16 @@ export default function OrgChartExplorer() {
             )}
           </div>
 
-          {/* right: salary cost + FTE */}
+          {/* right: operating budget + salary cost + FTE */}
           <div className="flex flex-none items-center gap-4 text-[12px] tabular-nums">
+            {budget > 0 && (
+              <span
+                className="hidden w-24 text-right text-[var(--color-ink)] md:inline"
+                title="Total operating budget, all funds (double-counts internal transfers)"
+              >
+                {money(budget)}
+              </span>
+            )}
             {cost > 0 && (
               <span
                 className="hidden w-20 text-right text-[var(--color-ink-light)] sm:inline"
@@ -243,7 +258,11 @@ export default function OrgChartExplorer() {
           value={money(costRollup[ORG_TREE.id] ?? 0)}
           hint="citywide personnel $"
         />
-        <Stat label="Operating units" value={stats.totalUnits} />
+        <Stat
+          label="Operating budget"
+          value={money(budgetRollup[ORG_TREE.id] ?? 0)}
+          hint="all funds"
+        />
         <Stat label="Bureaus" value={stats.bureaus} />
       </div>
 
@@ -405,6 +424,7 @@ export default function OrgChartExplorer() {
       {/* full-width tree */}
       <div className="mt-5 rounded-sm border border-[var(--color-parchment)] bg-white p-2 sm:p-3">
         <div className="mb-1 flex items-center justify-end gap-4 pr-2 text-[10px] font-mono uppercase tracking-wider text-[var(--color-ink-muted)]">
+          <span className="hidden w-24 text-right md:inline">Budget</span>
           <span className="hidden w-20 text-right sm:inline">Salary $</span>
           <span className="w-16 text-right">FTE</span>
         </div>
@@ -428,7 +448,10 @@ export default function OrgChartExplorer() {
         job-classification breakdown, and pay distribution. Structure as of{" "}
         {ORG_AS_OF}; headcount is authorized FTE and salary $ is budgeted
         personnel cost (FY2025-26 budget), not filled people or actual pay.
-        Vacant seats and 2025 reorg moves are flagged. Full data:{" "}
+        Budget is the all-funds operating total — it double-counts internal
+        transfers and is dominated by capital, debt, and pass-throughs (utility
+        bureaus, grant funds), so it runs far larger than salary cost. Vacant
+        seats and 2025 reorg moves are flagged. Full data:{" "}
         <a
           href="/api/org"
           className="font-semibold text-[var(--color-canopy)] hover:underline"
