@@ -439,7 +439,7 @@ const cityAdminDirectReports: OrgUnit[] = [
     serviceArea: "city-administrator",
     fundModel: "general",
     notes:
-      "Program cluster: Sheltering, Impact Reduction, PEMO, Street Services Coordination Center (SSCC).",
+      "Homelessness-response cluster (sheltering, impact reduction, PEMO, SSCC). Its ~$82M of programs and its staff are counted inside the Office of the City Administrator's budget line, not as a separate bureau — open that page to see them.",
     unconfirmed: true,
     source: ORG_SOURCES.leadership,
   },

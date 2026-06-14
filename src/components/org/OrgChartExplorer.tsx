@@ -203,6 +203,13 @@ export default function OrgChartExplorer() {
                 · {unit.leader}
               </span>
             )}
+            {/* leaf nodes with no data of their own (districts, folded-in
+                programs) surface their note inline so they aren't blank */}
+            {!personnel && !hasChildren && unit.notes && (
+              <span className="basis-full text-[11px] leading-relaxed text-[var(--color-ink-muted)]">
+                {unit.notes}
+              </span>
+            )}
           </div>
 
           {/* right: operating budget + salary cost + FTE */}
