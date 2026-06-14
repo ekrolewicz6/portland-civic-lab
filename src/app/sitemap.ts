@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { bureauIds } from "@/lib/org/bureau";
 
 const BASE_URL = "https://www.portlandciviclab.org";
 
@@ -42,5 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  return [...staticPages, ...dashboardPages];
+  const bureauPages: MetadataRoute.Sitemap = bureauIds().map((id) => ({
+    url: `${BASE_URL}/org-chart/${id}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...dashboardPages, ...bureauPages];
 }

@@ -62,17 +62,27 @@ test("org chart page renders the tree", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("org chart node selection shows leader and staffing detail", async ({
+test("org chart links bureaus to their own pages", async ({ page }) => {
+  await page.goto("/org-chart");
+  const link = page
+    .getByRole("link", { name: /Portland Police Bureau/ })
+    .first();
+  await expect(link).toHaveAttribute("href", "/org-chart/ppb");
+});
+
+test("bureau page shows salary cost, departments, and classifications", async ({
   page,
 }) => {
-  await page.goto("/org-chart");
-  await page
-    .getByRole("button", { name: /Portland Police Bureau/ })
-    .first()
-    .click();
-  await expect(page.getByText(/Bob Day.*Chief of Police/)).toBeVisible();
-  // deepest layer: the classification staffing table
+  await page.goto("/org-chart/ppb");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "Portland Police Bureau",
+  );
+  await expect(page.getByText("Salary cost").first()).toBeVisible();
+  await expect(
+    page.getByText("Salaries by job classification"),
+  ).toBeVisible();
   await expect(page.getByText("Police Officer").first()).toBeVisible();
+  await expect(page.getByText("Where the money goes")).toBeVisible();
 });
 
 test("org API returns the full structure", async ({ request }) => {

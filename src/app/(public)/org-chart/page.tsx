@@ -17,7 +17,7 @@ export default function OrgChartPage() {
     <div className="bg-[var(--color-paper)]">
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
         <div className="absolute right-0 top-0 h-[420px] w-[520px] translate-x-1/4 -translate-y-1/3 rounded-full bg-[var(--color-canopy-light)] opacity-25 blur-[150px]" />
-        <div className="mx-auto max-w-[1400px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12">
+        <div className="mx-auto max-w-[1600px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]/85">
               <span>City government</span>
@@ -40,12 +40,12 @@ export default function OrgChartPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-5 py-10 sm:px-8 sm:py-12 lg:px-12">
+      <section className="mx-auto max-w-[1600px] px-5 py-10 sm:px-8 sm:py-12 lg:px-12">
         <OrgChartExplorer />
       </section>
 
       <section className="border-t border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
-        <div className="mx-auto max-w-[1400px] px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+        <div className="mx-auto max-w-[1600px] px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
           <h2 className="font-editorial text-[26px] sm:text-[32px] text-[var(--color-ink)] leading-tight">
             How this was built
           </h2>

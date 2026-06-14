@@ -11,6 +11,22 @@ import {
   type UnitType,
   type FundModel,
 } from "@/data/org-structure";
+import { BUREAU_PERSONNEL } from "@/data/org-personnel";
+
+/** Sum of budgeted personnel (salary) cost over each node's whole subtree. */
+export function salaryCostRollup(): Record<string, number> {
+  const map: Record<string, number> = {};
+  const walk = (node: OrgUnit): number => {
+    let sum = BUREAU_PERSONNEL[node.id]?.totalCost ?? 0;
+    node.children?.forEach((c) => {
+      sum += walk(c);
+    });
+    map[node.id] = sum;
+    return sum;
+  };
+  walk(ORG_TREE);
+  return map;
+}
 
 export interface FlatUnit extends Omit<OrgUnit, "children"> {
   /** id of the parent node (null for root) */

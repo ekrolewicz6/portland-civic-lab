@@ -1,11 +1,16 @@
 # Portland City Org Chart — Build Plan & Data Sources
 
-**Status:** v1 + v2 shipped — interactive org chart live at `/org-chart`, with
-authorized headcount (FTE) per unit rolled up to the citywide 7,284 (budget
-Table 8), and a per-bureau **classification breakdown** (every job class with
-FTE, salary band, and bargaining unit) parsed from the budget FTE Summary tables
-and joined by Class ID to the City's FY2025-26 Compensation Plan. Generated data
-in `src/data/org-personnel.ts`; 28/31 bureaus reconcile exactly to Table 8.
+**Status:** v1–v3 shipped. `/org-chart` is a full-width navigable tree showing
+the reporting chain, authorized FTE, and budgeted salary cost per unit (citywide
+$777M / 7,284 FTE). Every bureau links to a **dedicated page** `/org-chart/[id]`
+with: reporting chain, key stats (FTE, total salary cost, cost/FTE, operating
+budget), a program/department budget breakdown, the full job-classification
+staffing+pay table, and a pay distribution. Data layers:
+`src/data/org-personnel.ts` (FTE + budgeted cost + pay band + union per job
+class, joined Budget FTE Summary × Compensation Plan; 28/31 bureaus reconcile to
+Table 8) and `src/data/org-analysis.ts` (per-bureau operating total + program
+budget split, extracted from the budget Bureau Programs charts; pct recomputed
+against the operating total). Generators in `ingest/`.
 **As-of date of the structure:** 2026-06-14.
 **Owner:** Portland Civic Lab.
 
