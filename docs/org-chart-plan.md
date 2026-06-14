@@ -1,6 +1,8 @@
 # Portland City Org Chart — Build Plan & Data Sources
 
-**Status:** v1 shipped — interactive structural org chart live at `/org-chart`.
+**Status:** v1 shipped — interactive org chart live at `/org-chart`, with
+authorized headcount (FTE) attached per unit and rolled up to the citywide
+7,284 (budget Table 8).
 **As-of date of the structure:** 2026-06-14.
 **Owner:** Portland Civic Lab.
 
@@ -168,14 +170,17 @@ linked source before being cited as fact:
 
 ## 8. Phasing
 
-- **v1 — shipped.** Structural org chart, fully sourced, interactive. Answers:
-  who runs X, what's under each service area, what moved in the 2025 reorg, how
-  each unit is funded.
-- **v2 — budget + authorized FTE.** Write `ingest/parse-budget-vol1.ts`
-  (`pdftotext -layout` → Table 8/9 + bureau summaries), attach
-  `personnel_services` + `authorized_fte` + object-category composition to each
-  bureau node, with the TSCC cross-check guardrail. Add comp-plan salary-range
-  bands and the exact elected-official salaries.
+- **v1 — shipped.** Structural org chart, fully sourced, interactive, **with
+  authorized FTE per unit** (budget Table 8) rolled up to the citywide 7,284 and
+  shown as a headcount-by-service-area bar. Answers: who runs X, what's under
+  each service area, what moved in the 2025 reorg, how each unit is funded, and
+  how many positions it holds.
+- **v2 — budget dollars.** Extend `ingest/parse-budget-vol1.ts` (the Table 8
+  parse is done; add the per-bureau "Summary of Bureau Budget") to attach
+  `personnel_services` + object-category composition (capital/debt/transfers) to
+  each node, with a TSCC cross-check guardrail. Add comp-plan salary-range bands
+  and the exact elected-official salaries. Lets us compute the honest
+  personnel-cost-per-FTE once dollars sit alongside the FTE we already have.
 - **v3 — individual salaries (PRR-gated).** File the GovQA records request
   (`docs/prr-drafts/city-employee-salary-roster.md`); on return, load the named
   roster, map classification → bureau, and apply a privacy threshold

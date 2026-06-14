@@ -4,6 +4,8 @@
 import {
   ORG_TREE,
   SERVICE_AREAS,
+  TOTAL_AUTHORIZED_FTE,
+  FTE_FISCAL_YEAR,
   type OrgUnit,
   type ServiceAreaSlug,
   type UnitType,
@@ -109,7 +111,15 @@ function tally<T extends string>(
 export interface OrgStats {
   totalUnits: number;
   bureaus: number;
-  byServiceArea: { slug: ServiceAreaSlug; label: string; count: number }[];
+  /** citywide authorized FTE (budget Table 8 total) */
+  totalFte: number;
+  fteFiscalYear: string;
+  byServiceArea: {
+    slug: ServiceAreaSlug;
+    label: string;
+    count: number;
+    fte: number;
+  }[];
   byType: Record<string, number>;
   byFundModel: Record<string, number>;
   unconfirmed: number;
@@ -121,13 +131,23 @@ export interface OrgStats {
 export function orgStats(): OrgStats {
   const units = operatingUnits();
   const saCounts = tally<ServiceAreaSlug>(units, (u) => u.serviceArea);
+  const fteByArea: Record<string, number> = {};
+  for (const u of units) {
+    if (u.fteAuthorized) {
+      fteByArea[u.serviceArea] =
+        (fteByArea[u.serviceArea] ?? 0) + u.fteAuthorized;
+    }
+  }
   return {
     totalUnits: units.length,
     bureaus: units.filter((u) => u.type === "bureau").length,
+    totalFte: TOTAL_AUTHORIZED_FTE,
+    fteFiscalYear: FTE_FISCAL_YEAR,
     byServiceArea: SERVICE_AREAS.map((sa) => ({
       slug: sa.slug,
       label: sa.label,
       count: saCounts[sa.slug] ?? 0,
+      fte: Math.round((fteByArea[sa.slug] ?? 0) * 100) / 100,
     })),
     byType: tally<UnitType>(units, (u) => u.type),
     byFundModel: tally<FundModel>(units, (u) => u.fundModel),

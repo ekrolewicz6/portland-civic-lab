@@ -10,6 +10,7 @@ import {
   AlertTriangle,
   CircleUserRound,
   Building2,
+  Users,
   Expand,
   Minimize2,
 } from "lucide-react";
@@ -19,10 +20,16 @@ import {
   SERVICE_AREAS,
   SERVICE_AREA_BY_SLUG,
   FUND_MODEL_LABELS,
+  FTE_SOURCE,
+  FTE_FISCAL_YEAR,
   type OrgUnit,
   type ServiceAreaSlug,
   type FundModel,
 } from "@/data/org-structure";
+
+function fmtFte(n: number): string {
+  return n.toLocaleString(undefined, { maximumFractionDigits: 2 });
+}
 import { flattenTree, unitPath, orgStats } from "@/lib/org/queries";
 
 const TYPE_LABELS: Record<string, string> = {
@@ -229,6 +236,16 @@ export default function OrgChartExplorer() {
               </span>
             )}
           </button>
+
+          {unit.fteRollup ? (
+            <span
+              className="mt-2 flex flex-none items-center gap-1 pr-1 text-[12px] tabular-nums text-[var(--color-ink-muted)]"
+              title="Authorized FTE (including sub-units)"
+            >
+              <Users className="h-3 w-3 opacity-45" />
+              {fmtFte(unit.fteRollup)}
+            </span>
+          ) : null}
         </div>
 
         {isOpen &&
@@ -242,34 +259,75 @@ export default function OrgChartExplorer() {
     <div>
       {/* stats */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <Stat
+          label="Authorized positions"
+          value={Math.round(stats.totalFte).toLocaleString()}
+          hint={`FTE · ${stats.fteFiscalYear}`}
+        />
         <Stat label="Operating units" value={stats.totalUnits} />
         <Stat label="Bureaus" value={stats.bureaus} />
-        <Stat label="Service areas" value={4} hint="+ electeds & City Admin" />
         <Stat label="Moved in 2025 reorg" value={stats.reorgMoves} />
       </div>
 
-      {/* legend */}
-      <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
-        {SERVICE_AREAS.map((sa) => (
-          <button
-            key={sa.slug}
-            type="button"
-            onClick={() =>
-              setSaFilter((cur) => (cur === sa.slug ? "all" : sa.slug))
-            }
-            className={`flex items-center gap-1.5 text-[12px] transition-opacity ${
-              saFilter !== "all" && saFilter !== sa.slug
-                ? "opacity-35"
-                : "opacity-100"
-            }`}
-          >
-            <span
-              className="h-3 w-3 rounded-sm"
-              style={{ backgroundColor: sa.color }}
-            />
-            <span className="text-[var(--color-ink-light)]">{sa.label}</span>
-          </button>
-        ))}
+      {/* headcount by service area */}
+      <div className="mt-6">
+        <div className="mb-2 flex items-center justify-between text-[11px] font-mono uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+          <span>Authorized headcount by service area</span>
+          <span>{Math.round(stats.totalFte).toLocaleString()} FTE total</span>
+        </div>
+        <div className="flex h-5 w-full overflow-hidden rounded-sm">
+          {stats.byServiceArea
+            .filter((sa) => sa.fte > 0)
+            .map((sa) => {
+              const meta = SERVICE_AREA_BY_SLUG[sa.slug];
+              const pct = (sa.fte / stats.totalFte) * 100;
+              return (
+                <button
+                  key={sa.slug}
+                  type="button"
+                  onClick={() =>
+                    setSaFilter((cur) => (cur === sa.slug ? "all" : sa.slug))
+                  }
+                  title={`${meta.label}: ${fmtFte(sa.fte)} FTE (${pct.toFixed(0)}%)`}
+                  className="h-full transition-opacity hover:opacity-80"
+                  style={{ width: `${pct}%`, backgroundColor: meta.color }}
+                />
+              );
+            })}
+        </div>
+        {/* legend with counts */}
+        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+          {SERVICE_AREAS.map((sa) => {
+            const row = stats.byServiceArea.find((r) => r.slug === sa.slug);
+            return (
+              <button
+                key={sa.slug}
+                type="button"
+                onClick={() =>
+                  setSaFilter((cur) => (cur === sa.slug ? "all" : sa.slug))
+                }
+                className={`flex items-center gap-1.5 text-[12px] transition-opacity ${
+                  saFilter !== "all" && saFilter !== sa.slug
+                    ? "opacity-35"
+                    : "opacity-100"
+                }`}
+              >
+                <span
+                  className="h-3 w-3 rounded-sm"
+                  style={{ backgroundColor: sa.color }}
+                />
+                <span className="text-[var(--color-ink-light)]">
+                  {sa.label}
+                </span>
+                {row && row.fte > 0 && (
+                  <span className="text-[var(--color-ink-muted)]">
+                    {fmtFte(row.fte)}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* controls */}
@@ -391,8 +449,12 @@ export default function OrgChartExplorer() {
         the Summer 2025 city org chart. Items tagged{" "}
         <span className="font-semibold">Unconfirmed</span> were not named on an
         official structural/leadership page and should be verified against the
-        linked source. Budget-aggregation lines (Fund &amp; Debt Management,
-        Special Appropriations) are excluded. Full data:{" "}
+        linked source. Headcount is{" "}
+        <span className="font-semibold">authorized FTE</span> from the FY2025-26
+        budget (Table 8) — budgeted positions, not filled people. Budget-only
+        lines (Fund &amp; Debt Management, Special Appropriations — the latter
+        holding the 3 FTE between the chart total and the citywide 7,284) are
+        excluded. Full data:{" "}
         <a
           href="/api/org"
           className="font-semibold text-[var(--color-canopy)] hover:underline"
@@ -420,7 +482,7 @@ function Stat({
   hint,
 }: {
   label: string;
-  value: number;
+  value: number | string;
   hint?: string;
 }) {
   return (
@@ -512,10 +574,33 @@ function DetailPanel({
           {node.fundModel && (
             <Row label="Funding" value={FUND_MODEL_LABELS[node.fundModel]} />
           )}
+          {node.fteAuthorized ? (
+            <Row label="Authorized FTE" value={fmtFte(node.fteAuthorized)} />
+          ) : null}
+          {node.fteRollup && node.fteRollup !== (node.fteAuthorized ?? 0) ? (
+            <Row
+              label="FTE incl. sub-units"
+              value={fmtFte(node.fteRollup)}
+            />
+          ) : null}
           {node.children?.length ? (
             <Row label="Reports in" value={`${node.children.length} unit${node.children.length === 1 ? "" : "s"}`} />
           ) : null}
         </dl>
+
+        {node.fteRollup ? (
+          <p className="text-[11px] leading-relaxed text-[var(--color-ink-muted)]">
+            Authorized positions ({FTE_FISCAL_YEAR}), not filled headcount.{" "}
+            <a
+              href={FTE_SOURCE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[var(--color-canopy)] hover:underline"
+            >
+              Budget Table 8
+            </a>
+          </p>
+        ) : null}
 
         {node.notes && (
           <p className="leading-relaxed text-[var(--color-ink-light)]">

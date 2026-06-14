@@ -83,6 +83,10 @@ export interface OrgUnit {
   unconfirmed?: boolean;
   /** seat currently vacant */
   vacant?: boolean;
+  /** authorized full-time-equivalent positions for THIS unit (budget Table 8) */
+  fteAuthorized?: number;
+  /** authorized FTE including all sub-units (computed at module load) */
+  fteRollup?: number;
   /** official source URL for this node */
   source?: string;
   children?: OrgUnit[];
@@ -951,3 +955,72 @@ export const ORG_TREE: OrgUnit = {
 // chart: "Fund and Debt Management" (City Administrator) and "Special
 // Appropriations" (City Operations). Independent Police Review (IPR) is omitted
 // as superseded by OCPA/CBPA.
+
+// ─── Authorized headcount (FTE) ──────────────────────────────────────────────
+//
+// Source: FY2025-26 Adopted Budget, Volume 1, Table 8 "Summary of Authorized
+// Positions" — regular permanent + limited-term full- and part-time FTE
+// authorized in each bureau (temporary part-time excluded). These are
+// AUTHORIZED positions, not filled headcount. Transcribed verbatim from the
+// budget PDF; the citywide total below is the table's own Total row.
+export const FTE_FISCAL_YEAR = "FY2025-26 Adopted";
+export const TOTAL_AUTHORIZED_FTE = 7284.31;
+export const FTE_SOURCE =
+  "https://www.portland.gov/budget/documents/fy-2025-26-city-portland-adopted-budget-vol-1-city-summaries-and-bureau-budgets/download";
+
+const AUTHORIZED_FTE: Record<string, number> = {
+  // Elected
+  mayor: 9.0,
+  "city-council": 52.0,
+  "city-auditor": 47.0,
+  // City Administrator office + executive direct reports
+  "office-city-administrator": 47.0,
+  "cfo-office": 204.0,
+  "city-attorney": 80.5,
+  "office-equity": 16.0,
+  "office-government-relations": 10.0,
+  "civic-life": 9.9,
+  // City Operations
+  "office-city-operations": 164.0,
+  bhr: 110.0,
+  bts: 276.0,
+  bff: 150.0,
+  cbo: 18.0,
+  fpdr: 18.0,
+  ocpa: 6.0,
+  // Community & Economic Development
+  "office-ced": 12.0,
+  ppd: 340.9,
+  phb: 90.0,
+  bps: 173.7,
+  "childrens-levy": 7.8,
+  // Public Safety
+  "community-safety": 126.0,
+  ppb: 1215.9,
+  pfr: 782.4,
+  boec: 169.9,
+  pbem: 23.9,
+  // Public Works
+  "office-public-works": 10.0,
+  pbot: 1044.0,
+  water: 624.8,
+  bes: 658.0,
+  parks: 784.61,
+  // Note: Prosper Portland (semi-independent agency), Arts & Culture, Spectator
+  // Venues, Procurement, and Small Donor Elections are not separate lines in
+  // Table 8 — their staff roll up into the parent office's count above.
+};
+
+// Attach own FTE and compute inclusive rollups once, at module load.
+function attachFte(node: OrgUnit): number {
+  const own = AUTHORIZED_FTE[node.id] ?? 0;
+  let childRollup = 0;
+  node.children?.forEach((c) => {
+    childRollup += attachFte(c);
+  });
+  const rollup = own + childRollup;
+  if (own) node.fteAuthorized = own;
+  if (rollup) node.fteRollup = Math.round(rollup * 100) / 100;
+  return rollup;
+}
+attachFte(ORG_TREE);

@@ -30,9 +30,10 @@ export default function OrgChartPage() {
             <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-white/70 sm:text-[18px]">
               Portland rebuilt its government in 2025 — a mayor, a 12-member
               council, a city administrator, and dozens of bureaus regrouped
-              into four service areas. This is the whole structure in one place,
-              every node tied to an official source. Click anything to see who
-              runs it and where it sits.
+              into four service areas, employing some 7,300 people. This is the
+              whole structure in one place, every node tied to an official
+              source and sized by authorized headcount. Click anything to see
+              who runs it, how it&apos;s funded, and how many positions it holds.
             </p>
           </div>
         </div>

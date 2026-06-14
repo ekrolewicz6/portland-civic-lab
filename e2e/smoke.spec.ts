@@ -77,6 +77,8 @@ test("org API returns the full structure", async ({ request }) => {
   const data = await response.json();
   expect(data.stats.totalUnits).toBeGreaterThan(50);
   expect(data.tree.children.length).toBe(2);
+  // headcount attached: citywide authorized FTE ≈ 7,284
+  expect(data.stats.totalFte).toBeGreaterThan(7000);
 });
 
 test("login is a redirect, never a page with a password field", async ({
