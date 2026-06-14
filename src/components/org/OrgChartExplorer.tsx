@@ -27,10 +27,26 @@ import {
   type FundModel,
 } from "@/data/org-structure";
 
+import { flattenTree, unitPath, orgStats } from "@/lib/org/queries";
+import {
+  BUREAU_PERSONNEL,
+  PERSONNEL_SOURCE,
+  PERSONNEL_FY,
+} from "@/data/org-personnel";
+
+const INLINE_CLASSES = 8;
+
 function fmtFte(n: number): string {
   return n.toLocaleString(undefined, { maximumFractionDigits: 2 });
 }
-import { flattenTree, unitPath, orgStats } from "@/lib/org/queries";
+function fmtK(n: number): string {
+  return `$${Math.round(n / 1000)}k`;
+}
+function fmtRange(min: number | null, max: number | null): string {
+  if (!min && !max) return "—";
+  if (min && max && min !== max) return `${fmtK(min)}–${fmtK(max)}`;
+  return fmtK((min || max) as number);
+}
 
 const TYPE_LABELS: Record<string, string> = {
   root: "City",
@@ -147,7 +163,11 @@ export default function OrgChartExplorer() {
   function renderNode(unit: OrgUnit, depth: number) {
     if (keepSet && !keepSet.has(unit.id)) return null;
     const hasChildren = !!unit.children?.length;
+    const personnel = BUREAU_PERSONNEL[unit.id];
+    const expandable = hasChildren || !!personnel;
     const isOpen = isFiltering ? true : expanded.has(unit.id);
+    const showPersonnel =
+      !!personnel && !isFiltering && expanded.has(unit.id);
     const sa = SERVICE_AREA_BY_SLUG[unit.serviceArea];
     const isMatch = q !== "" && matchesQuery(unit, q);
     const isSelected = unit.id === selectedId;
@@ -167,13 +187,13 @@ export default function OrgChartExplorer() {
         >
           <button
             type="button"
-            onClick={() => hasChildren && toggle(unit.id)}
+            onClick={() => expandable && toggle(unit.id)}
             className={`mt-1.5 flex h-5 w-5 flex-none items-center justify-center text-[var(--color-ink-muted)] ${
-              hasChildren ? "hover:text-[var(--color-ink)]" : "opacity-0"
+              expandable ? "hover:text-[var(--color-ink)]" : "opacity-0"
             }`}
             aria-label={isOpen ? "Collapse" : "Expand"}
           >
-            {hasChildren &&
+            {expandable &&
               (isOpen ? (
                 <ChevronDown className="h-4 w-4" />
               ) : (
@@ -188,12 +208,10 @@ export default function OrgChartExplorer() {
           >
             <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <span
-                className={`text-[14px] leading-tight ${
-                  isMatch
-                    ? "font-semibold text-[var(--color-ink)]"
-                    : "text-[var(--color-ink)]"
-                } ${
-                  unit.type === "service-area" || unit.type === "administrator"
+                className={`text-[14px] leading-tight text-[var(--color-ink)] ${
+                  isMatch ||
+                  unit.type === "service-area" ||
+                  unit.type === "administrator"
                     ? "font-semibold"
                     : ""
                 }`}
@@ -215,17 +233,14 @@ export default function OrgChartExplorer() {
                   2025 move
                 </span>
               )}
-              {unit.unconfirmed && (
-                <span
-                  title="Leader or placement not confirmed on an official page"
-                  className="rounded-sm bg-stone-100 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-stone-500"
-                >
-                  Unconfirmed
-                </span>
-              )}
               {hasChildren && (
                 <span className="text-[11px] text-[var(--color-ink-muted)]">
                   {unit.children!.length}
+                </span>
+              )}
+              {personnel && (
+                <span className="rounded-sm bg-[var(--color-canopy)]/10 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-[var(--color-canopy)]">
+                  {personnel.classCount} classes
                 </span>
               )}
             </span>
@@ -251,6 +266,40 @@ export default function OrgChartExplorer() {
         {isOpen &&
           hasChildren &&
           unit.children!.map((child) => renderNode(child, depth + 1))}
+
+        {showPersonnel && personnel && (
+          <div
+            style={{ marginLeft: (depth + 1) * 16 + 8 }}
+            className="my-1 border-l border-dashed border-[var(--color-parchment)] pl-3"
+          >
+            {personnel.classifications
+              .slice(0, INLINE_CLASSES)
+              .map((c, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setSelectedId(unit.id)}
+                  className="flex w-full items-baseline justify-between gap-3 py-0.5 text-left hover:text-[var(--color-canopy)]"
+                >
+                  <span className="truncate text-[12px] text-[var(--color-ink-light)]">
+                    {c.title}
+                  </span>
+                  <span className="flex-none text-[11px] tabular-nums text-[var(--color-ink-muted)]">
+                    {fmtFte(c.fte)} · {fmtRange(c.salaryMin, c.salaryMax)}
+                  </span>
+                </button>
+              ))}
+            {personnel.classCount > INLINE_CLASSES && (
+              <button
+                type="button"
+                onClick={() => setSelectedId(unit.id)}
+                className="mt-0.5 text-[11px] font-semibold text-[var(--color-canopy)] hover:underline"
+              >
+                + {personnel.classCount - INLINE_CLASSES} more job classes →
+              </button>
+            )}
+          </div>
+        )}
       </div>
     );
   }
@@ -436,8 +485,8 @@ export default function OrgChartExplorer() {
             <div className="rounded-sm border border-dashed border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-6 text-center">
               <Building2 className="mx-auto h-6 w-6 text-[var(--color-ink-muted)]" />
               <p className="mt-3 text-[14px] text-[var(--color-ink-light)]">
-                Select any bureau or office to see its leader, funding, where it
-                sits, and the source.
+                Select any bureau to see its leader, funding, where it sits, and
+                its full staffing — every job class with headcount and pay band.
               </p>
             </div>
           )}
@@ -451,10 +500,11 @@ export default function OrgChartExplorer() {
         official structural/leadership page and should be verified against the
         linked source. Headcount is{" "}
         <span className="font-semibold">authorized FTE</span> from the FY2025-26
-        budget (Table 8) — budgeted positions, not filled people. Budget-only
-        lines (Fund &amp; Debt Management, Special Appropriations — the latter
-        holding the 3 FTE between the chart total and the citywide 7,284) are
-        excluded. Full data:{" "}
+        budget (Table 8) — budgeted positions, not filled people. Expand any
+        bureau to drill into its job classifications, with pay bands from the
+        City compensation plan. Budget-only lines (Fund &amp; Debt Management,
+        Special Appropriations — the latter holding the 3 FTE between the chart
+        total and the citywide 7,284) are excluded. Full data:{" "}
         <a
           href="/api/org"
           className="font-semibold text-[var(--color-canopy)] hover:underline"
@@ -512,6 +562,7 @@ function DetailPanel({
   onSelect: (id: string) => void;
 }) {
   const sa = SERVICE_AREA_BY_SLUG[node.serviceArea];
+  const personnel = BUREAU_PERSONNEL[node.id];
   return (
     <div className="rounded-sm border border-[var(--color-parchment)] bg-white">
       <div
@@ -644,6 +695,50 @@ function DetailPanel({
             </ul>
           </div>
         ) : null}
+
+        {personnel && (
+          <div>
+            <div className="mb-1.5 flex items-center justify-between text-[11px] font-mono uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+              <span>Staffing &amp; pay</span>
+              <span>
+                {personnel.classCount} classes · {fmtFte(personnel.totalFte)}{" "}
+                FTE
+              </span>
+            </div>
+            <div className="max-h-[360px] divide-y divide-[var(--color-parchment)] overflow-y-auto rounded-sm border border-[var(--color-parchment)]">
+              {personnel.classifications.map((c, i) => (
+                <div key={i} className="px-2.5 py-1.5">
+                  <div className="flex items-baseline justify-between gap-2">
+                    <span className="text-[12.5px] text-[var(--color-ink)]">
+                      {c.title}
+                    </span>
+                    <span className="flex-none text-[12px] tabular-nums text-[var(--color-ink-light)]">
+                      {fmtFte(c.fte)} FTE
+                    </span>
+                  </div>
+                  <div className="mt-0.5 flex items-center justify-between gap-2 text-[11px] text-[var(--color-ink-muted)]">
+                    <span className="truncate">{c.bargUnit ?? "—"}</span>
+                    <span className="flex-none tabular-nums">
+                      {fmtRange(c.salaryMin, c.salaryMax)}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-1.5 text-[11px] leading-relaxed text-[var(--color-ink-muted)]">
+              Authorized positions by job classification ({PERSONNEL_FY}); pay
+              bands from the City compensation plan.{" "}
+              <a
+                href={PERSONNEL_SOURCE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[var(--color-canopy)] hover:underline"
+              >
+                Budget FTE Summary
+              </a>
+            </p>
+          </div>
+        )}
 
         {node.source && (
           <a

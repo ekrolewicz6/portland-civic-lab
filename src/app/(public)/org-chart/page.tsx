@@ -33,7 +33,8 @@ export default function OrgChartPage() {
               into four service areas, employing some 7,300 people. This is the
               whole structure in one place, every node tied to an official
               source and sized by authorized headcount. Click anything to see
-              who runs it, how it&apos;s funded, and how many positions it holds.
+              who runs it, how it&apos;s funded, and how many positions it holds
+              — down to the job classification and its pay band.
             </p>
           </div>
         </div>
@@ -78,9 +79,9 @@ export default function OrgChartPage() {
                 What comes next
               </h3>
               <p className="mt-3 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-                Budget, authorized headcount, and individual salaries attach to
-                these nodes in later phases — the salary roster is being pursued
-                through a{" "}
+                Authorized headcount and pay bands are now attached down to the
+                job-classification level. Next is the named individual-salary
+                roster, pursued through a{" "}
                 <Link
                   href="/records"
                   className="font-semibold text-[var(--color-canopy)] hover:underline"

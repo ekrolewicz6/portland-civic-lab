@@ -7,6 +7,11 @@ import {
   SERVICE_AREAS,
 } from "@/data/org-structure";
 import {
+  BUREAU_PERSONNEL,
+  PERSONNEL_FY,
+  PERSONNEL_SOURCE,
+} from "@/data/org-personnel";
+import {
   flattenTree,
   operatingUnits,
   orgStats,
@@ -33,6 +38,15 @@ export async function GET(request: NextRequest) {
 
     if (view === "reorg") {
       return NextResponse.json({ ...base, reorgMoves: reorgMoves() });
+    }
+
+    if (view === "personnel") {
+      return NextResponse.json({
+        ...base,
+        personnelFiscalYear: PERSONNEL_FY,
+        personnelSource: PERSONNEL_SOURCE,
+        personnel: BUREAU_PERSONNEL,
+      });
     }
 
     const payload =

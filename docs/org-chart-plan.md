@@ -1,8 +1,11 @@
 # Portland City Org Chart — Build Plan & Data Sources
 
-**Status:** v1 shipped — interactive org chart live at `/org-chart`, with
-authorized headcount (FTE) attached per unit and rolled up to the citywide
-7,284 (budget Table 8).
+**Status:** v1 + v2 shipped — interactive org chart live at `/org-chart`, with
+authorized headcount (FTE) per unit rolled up to the citywide 7,284 (budget
+Table 8), and a per-bureau **classification breakdown** (every job class with
+FTE, salary band, and bargaining unit) parsed from the budget FTE Summary tables
+and joined by Class ID to the City's FY2025-26 Compensation Plan. Generated data
+in `src/data/org-personnel.ts`; 28/31 bureaus reconcile exactly to Table 8.
 **As-of date of the structure:** 2026-06-14.
 **Owner:** Portland Civic Lab.
 
@@ -180,12 +183,17 @@ summaries once adopted (~June 2026) before treating any dollar figure as final.
   shown as a headcount-by-service-area bar. Answers: who runs X, what's under
   each service area, what moved in the 2025 reorg, how each unit is funded, and
   how many positions it holds.
-- **v2 — budget dollars.** Extend `ingest/parse-budget-vol1.ts` (the Table 8
-  parse is done; add the per-bureau "Summary of Bureau Budget") to attach
-  `personnel_services` + object-category composition (capital/debt/transfers) to
-  each node, with a TSCC cross-check guardrail. Add comp-plan salary-range bands
-  and the exact elected-official salaries. Lets us compute the honest
-  personnel-cost-per-FTE once dollars sit alongside the FTE we already have.
+- **v2 — classification depth + comp plan — shipped.** Parsed the budget Vol 1
+  per-bureau FTE Summary tables (job class → authorized FTE + budgeted $) and
+  joined them by Class ID to the FY2025-26 Compensation Plan (salary band +
+  bargaining unit). Surfaced as an expandable per-bureau staffing table and
+  inline tree drill-down; exposed at `/api/org?view=personnel`. Parsers:
+  `ingest/parse-org-personnel.py` (budget FTE Summary → JSON) +
+  `ingest/build-org-personnel.py` (join comp plan → `org-personnel.ts`);
+  regenerate when a new budget/comp plan drops. Still open: object-category $
+  composition
+  (capital/debt/transfers) per bureau for an honest personnel-cost-per-FTE, and
+  the exact elected-official salaries.
 - **v3 — individual salaries (PRR-gated).** File the GovQA records request
   (`docs/prr-drafts/city-employee-salary-roster.md`); on return, load the named
   roster, map classification → bureau, and apply a privacy threshold

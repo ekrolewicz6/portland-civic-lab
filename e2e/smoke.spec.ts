@@ -62,13 +62,17 @@ test("org chart page renders the tree", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("org chart node selection shows leader detail", async ({ page }) => {
+test("org chart node selection shows leader and staffing detail", async ({
+  page,
+}) => {
   await page.goto("/org-chart");
   await page
     .getByRole("button", { name: /Portland Police Bureau/ })
     .first()
     .click();
-  await expect(page.getByText("Chief of Police")).toBeVisible();
+  await expect(page.getByText(/Bob Day.*Chief of Police/)).toBeVisible();
+  // deepest layer: the classification staffing table
+  await expect(page.getByText("Police Officer").first()).toBeVisible();
 });
 
 test("org API returns the full structure", async ({ request }) => {
@@ -79,6 +83,14 @@ test("org API returns the full structure", async ({ request }) => {
   expect(data.tree.children.length).toBe(2);
   // headcount attached: citywide authorized FTE ≈ 7,284
   expect(data.stats.totalFte).toBeGreaterThan(7000);
+});
+
+test("org personnel API exposes classification detail", async ({ request }) => {
+  const response = await request.get("/api/org?view=personnel");
+  expect(response.status()).toBe(200);
+  const data = await response.json();
+  expect(data.personnel.ppb.classCount).toBeGreaterThan(10);
+  expect(data.personnel.ppb.classifications[0]).toHaveProperty("salaryMin");
 });
 
 test("login is a redirect, never a page with a password field", async ({
