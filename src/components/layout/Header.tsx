@@ -46,9 +46,15 @@ export default function Header() {
             >
               Dashboards
             </Link>
+            <Link
+              href="/org-chart"
+              className="hidden md:inline text-[var(--color-sage)] hover:text-white transition-colors"
+            >
+              Org Chart
+            </Link>
             <a
               href={PARKS_URL}
-              className="hidden md:inline text-white/55 hover:text-white transition-colors"
+              className="hidden lg:inline text-white/55 hover:text-white transition-colors"
             >
               Parks Atlas
             </a>

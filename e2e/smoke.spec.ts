@@ -52,6 +52,33 @@ test("records page renders the guide", async ({ page }) => {
   );
 });
 
+test("org chart page renders the tree", async ({ page }) => {
+  await page.goto("/org-chart");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "The Portland org chart"
+  );
+  await expect(
+    page.getByText("Office of the City Administrator").first()
+  ).toBeVisible();
+});
+
+test("org chart node selection shows leader detail", async ({ page }) => {
+  await page.goto("/org-chart");
+  await page
+    .getByRole("button", { name: /Portland Police Bureau/ })
+    .first()
+    .click();
+  await expect(page.getByText("Chief of Police")).toBeVisible();
+});
+
+test("org API returns the full structure", async ({ request }) => {
+  const response = await request.get("/api/org");
+  expect(response.status()).toBe(200);
+  const data = await response.json();
+  expect(data.stats.totalUnits).toBeGreaterThan(50);
+  expect(data.tree.children.length).toBe(2);
+});
+
 test("login is a redirect, never a page with a password field", async ({
   request,
 }) => {
