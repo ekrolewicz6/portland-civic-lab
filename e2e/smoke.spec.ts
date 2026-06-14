@@ -52,13 +52,25 @@ test("records page renders the guide", async ({ page }) => {
   );
 });
 
-test("org chart page renders the tree", async ({ page }) => {
+test("org chart page renders the tree, cost bar, and comparison", async ({
+  page,
+}) => {
   await page.goto("/org-chart");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     "The Portland org chart"
   );
   await expect(
     page.getByText("Office of the City Administrator").first()
+  ).toBeVisible();
+  await expect(
+    page.getByText("Budgeted salary cost by service area")
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Compare every bureau" })
+  ).toBeVisible();
+  // comparison table links rows to bureau pages
+  await expect(
+    page.getByRole("link", { name: /Portland Police Bureau/ }).first()
   ).toBeVisible();
 });
 

@@ -9,10 +9,52 @@ import {
   type BureauPersonnel,
 } from "@/data/org-personnel";
 import { BUREAU_FINANCE, type BureauFinance } from "@/data/org-analysis";
+import { SERVICE_AREA_BY_SLUG } from "@/data/org-structure";
 import type { FlatUnit } from "./queries";
 
 export function bureauIds(): string[] {
   return Object.keys(BUREAU_PERSONNEL);
+}
+
+export interface BureauRow {
+  id: string;
+  name: string;
+  abbr?: string;
+  serviceArea: string;
+  serviceAreaLabel: string;
+  color: string;
+  fte: number;
+  salaryCost: number;
+  costPerFte: number;
+  operatingTotal: number | null;
+  classCount: number;
+}
+
+/** One row per staffed unit, for the citywide comparison table. */
+export function bureauComparison(): BureauRow[] {
+  const flat = flattenTree();
+  const rows: BureauRow[] = [];
+  for (const id of bureauIds()) {
+    const node = flat.find((u) => u.id === id);
+    const p = BUREAU_PERSONNEL[id];
+    if (!node || !p) continue;
+    const sa = SERVICE_AREA_BY_SLUG[node.serviceArea];
+    rows.push({
+      id,
+      name: node.name,
+      abbr: node.abbr,
+      serviceArea: node.serviceArea,
+      serviceAreaLabel: sa.label,
+      color: sa.color,
+      fte: p.totalFte,
+      salaryCost: p.totalCost,
+      costPerFte: p.totalFte ? p.totalCost / p.totalFte : 0,
+      operatingTotal: BUREAU_FINANCE[id]?.operatingTotal ?? null,
+      classCount: p.classCount,
+    });
+  }
+  rows.sort((a, b) => b.salaryCost - a.salaryCost);
+  return rows;
 }
 
 export interface PayBucket {

@@ -9,6 +9,11 @@ import {
 } from "@/data/org-structure";
 import { PERSONNEL_FY, PERSONNEL_SOURCE } from "@/data/org-personnel";
 import { FINANCE_FY, FINANCE_SOURCE } from "@/data/org-analysis";
+import {
+  INDIVIDUAL_SALARIES,
+  INDIVIDUAL_SALARIES_AVAILABLE,
+  INDIVIDUAL_SALARIES_FY,
+} from "@/data/individual-salaries";
 
 export const dynamicParams = false;
 
@@ -297,6 +302,55 @@ export default async function BureauPage({
             </div>
           </aside>
         </div>
+
+        {/* individual salaries (v3 — appears once the PRR roster is loaded) */}
+        {INDIVIDUAL_SALARIES_AVAILABLE &&
+          (INDIVIDUAL_SALARIES[bureauId]?.length ?? 0) > 0 && (
+            <section className="mt-12">
+              <h2 className="font-editorial text-[24px] text-[var(--color-ink)]">
+                Individual salaries
+              </h2>
+              <p className="mt-1 text-[13px] text-[var(--color-ink-light)]">
+                {INDIVIDUAL_SALARIES_FY} · obtained via public records request.
+                Names below the citywide median are suppressed.
+              </p>
+              <div className="mt-5 overflow-x-auto">
+                <table className="w-full text-[13px]">
+                  <thead>
+                    <tr className="border-b border-[var(--color-parchment)] text-left text-[11px] font-mono uppercase tracking-wider text-[var(--color-ink-muted)]">
+                      <th className="py-2 pr-3 font-semibold">Name</th>
+                      <th className="py-2 px-2 font-semibold">Classification</th>
+                      <th className="py-2 pl-2 text-right font-semibold">
+                        Total pay
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {INDIVIDUAL_SALARIES[bureauId].slice(0, 300).map((e, i) => (
+                      <tr
+                        key={i}
+                        className="border-b border-[var(--color-parchment)]/60"
+                      >
+                        <td className="py-1.5 pr-3 text-[var(--color-ink)]">
+                          {e.name ?? (
+                            <span className="text-[var(--color-ink-muted)]">
+                              (suppressed)
+                            </span>
+                          )}
+                        </td>
+                        <td className="py-1.5 px-2 text-[var(--color-ink-light)]">
+                          {e.classification}
+                        </td>
+                        <td className="py-1.5 pl-2 text-right tabular-nums text-[var(--color-ink-light)]">
+                          {full(e.regularGross + e.overtime + e.otherEarnings)}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          )}
 
         {/* sources */}
         <div className="mt-12 border-t border-[var(--color-parchment)] pt-5 text-[12px] leading-relaxed text-[var(--color-ink-muted)]">

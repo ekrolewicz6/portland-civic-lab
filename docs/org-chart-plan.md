@@ -199,9 +199,17 @@ summaries once adopted (~June 2026) before treating any dollar figure as final.
   composition
   (capital/debt/transfers) per bureau for an honest personnel-cost-per-FTE, and
   the exact elected-official salaries.
-- **v3 — individual salaries (PRR-gated).** File the GovQA records request
-  (`docs/prr-drafts/city-employee-salary-roster.md`); on return, load the named
-  roster, map classification → bureau, and apply a privacy threshold
-  (recommended: name individuals above median + all elected/appointed officials;
-  aggregate the rest). Enables budgeted-vs-actual and per-bureau pay
-  distributions.
+- **v3 — individual salaries (PRR-gated, wiring in place).** The schema
+  (`src/data/individual-salaries.ts`), the loader
+  (`ingest/load-salary-roster.ts`, with bureau mapping + median-based name
+  suppression), and the bureau-page rendering (guarded by
+  `INDIVIDUAL_SALARIES_AVAILABLE`, currently inert) are all built. To activate:
+  file the GovQA records request
+  (`docs/prr-drafts/city-employee-salary-roster.md`); when the roster arrives,
+  confirm the CSV columns in the loader and run
+  `npx tsx ingest/load-salary-roster.ts <file.csv> FY2024-25`. That flips the
+  flag and the named roster appears under each bureau.
+
+Also shipped: a citywide **comparison table** (`/org-chart`, sortable by salary
+cost / FTE / cost-per-FTE / operating budget / classes) and a **salary-cost-by-
+service-area** bar alongside the headcount bar.

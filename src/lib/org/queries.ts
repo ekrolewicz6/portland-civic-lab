@@ -130,11 +130,14 @@ export interface OrgStats {
   /** citywide authorized FTE (budget Table 8 total) */
   totalFte: number;
   fteFiscalYear: string;
+  /** citywide budgeted personnel (salary) cost */
+  totalCost: number;
   byServiceArea: {
     slug: ServiceAreaSlug;
     label: string;
     count: number;
     fte: number;
+    cost: number;
   }[];
   byType: Record<string, number>;
   byFundModel: Record<string, number>;
@@ -148,10 +151,17 @@ export function orgStats(): OrgStats {
   const units = operatingUnits();
   const saCounts = tally<ServiceAreaSlug>(units, (u) => u.serviceArea);
   const fteByArea: Record<string, number> = {};
+  const costByArea: Record<string, number> = {};
+  let totalCost = 0;
   for (const u of units) {
     if (u.fteAuthorized) {
       fteByArea[u.serviceArea] =
         (fteByArea[u.serviceArea] ?? 0) + u.fteAuthorized;
+    }
+    const cost = BUREAU_PERSONNEL[u.id]?.totalCost ?? 0;
+    if (cost) {
+      costByArea[u.serviceArea] = (costByArea[u.serviceArea] ?? 0) + cost;
+      totalCost += cost;
     }
   }
   return {
@@ -159,11 +169,13 @@ export function orgStats(): OrgStats {
     bureaus: units.filter((u) => u.type === "bureau").length,
     totalFte: TOTAL_AUTHORIZED_FTE,
     fteFiscalYear: FTE_FISCAL_YEAR,
+    totalCost,
     byServiceArea: SERVICE_AREAS.map((sa) => ({
       slug: sa.slug,
       label: sa.label,
       count: saCounts[sa.slug] ?? 0,
       fte: Math.round((fteByArea[sa.slug] ?? 0) * 100) / 100,
+      cost: costByArea[sa.slug] ?? 0,
     })),
     byType: tally<UnitType>(units, (u) => u.type),
     byFundModel: tally<FundModel>(units, (u) => u.fundModel),

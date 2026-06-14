@@ -307,6 +307,34 @@ export default function OrgChartExplorer() {
         </div>
       </div>
 
+      {/* salary cost by service area */}
+      <div className="mt-5">
+        <div className="mb-2 flex items-center justify-between text-[11px] font-mono uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+          <span>Budgeted salary cost by service area</span>
+          <span>{money(stats.totalCost)} total</span>
+        </div>
+        <div className="flex h-5 w-full overflow-hidden rounded-sm">
+          {stats.byServiceArea
+            .filter((sa) => sa.cost > 0)
+            .map((sa) => {
+              const meta = SERVICE_AREA_BY_SLUG[sa.slug];
+              const pct = (sa.cost / stats.totalCost) * 100;
+              return (
+                <button
+                  key={sa.slug}
+                  type="button"
+                  onClick={() =>
+                    setSaFilter((cur) => (cur === sa.slug ? "all" : sa.slug))
+                  }
+                  title={`${meta.label}: ${money(sa.cost)} (${pct.toFixed(0)}%)`}
+                  className="h-full transition-opacity hover:opacity-80"
+                  style={{ width: `${pct}%`, backgroundColor: meta.color }}
+                />
+              );
+            })}
+        </div>
+      </div>
+
       {/* controls */}
       <div className="mt-5 flex flex-col gap-3 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-3 sm:flex-row sm:flex-wrap sm:items-center">
         <div className="relative min-w-[200px] flex-1">

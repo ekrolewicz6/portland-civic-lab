@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import OrgChartExplorer from "@/components/org/OrgChartExplorer";
+import BureauComparison from "@/components/org/BureauComparison";
 import { ORG_AS_OF } from "@/data/org-structure";
 
 export const metadata: Metadata = {
@@ -42,6 +43,23 @@ export default function OrgChartPage() {
 
       <section className="mx-auto max-w-[1600px] px-5 py-10 sm:px-8 sm:py-12 lg:px-12">
         <OrgChartExplorer />
+      </section>
+
+      <section className="border-t border-[var(--color-parchment)]">
+        <div className="mx-auto max-w-[1600px] px-5 py-12 sm:px-8 sm:py-14 lg:px-12">
+          <h2 className="font-editorial text-[26px] sm:text-[32px] text-[var(--color-ink)] leading-tight">
+            Compare every bureau
+          </h2>
+          <p className="mt-2 max-w-2xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+            Sort by salary cost, headcount, cost per position, operating budget,
+            or number of job classes. Click any row for the full breakdown. Note
+            that operating budget is all-funds (capital, debt, and pass-throughs
+            included), so for utilities it dwarfs salary cost.
+          </p>
+          <div className="mt-6">
+            <BureauComparison />
+          </div>
+        </div>
       </section>
 
       <section className="border-t border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
