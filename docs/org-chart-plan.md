@@ -151,22 +151,27 @@ Reconcile `org.units.slug` with the existing `PERFORMANCE_SERVICE_AREAS` slugs
 (`src/lib/performance/product-layers.ts`) and `environment.bureaus.abbreviation`
 so the org chart, performance dashboard, and fiscal explorer share one key.
 
-## 7. Open verification items
+## 7. Verification status
 
-These nodes were tagged `unconfirmed` in v1 and should be resolved against the
-linked source before being cited as fact:
+Leadership was confirmed against official portland.gov pages in a June 2026 pass
+(see `LEADER_CONFIRMATIONS` in `src/data/org-structure.ts`). The `unconfirmed`
+tag is now reserved for genuine structural uncertainty and is currently empty;
+26 bureau/office leaders are named with sources. Resolved: City Operations DCA =
+Tracy Warren (Sara Morrissey left Oct 2025); Communications sits in the City
+Operations DCA portfolio; the "Performance Office" and a standalone
+"Sustainability" office do **not** exist as units (their functions live in CBO
+and BPS) and were removed rather than shown as phantom boxes.
 
-- **City Operations DCA incumbent** — Tracy Warren (live leadership page) vs.
-  Sara Morrissey (FY2025-26 budget docs).
-- **Communications placement** — City Administrator office vs. City Operations
-  DCA portfolio.
-- **Performance Office** — emerging; not yet its own budget bureau.
-- **Bureau directors** not named on official pages: BTS, BFF, FPDR, PBOT, Water,
-  BES, PP&R, PF&R, PBEM, OCPA, OVP, PSR, Children's Levy, and all Auditor
-  sub-offices.
-- **Public Safety DCA** — seat vacant; confirm when filled.
-- **FY2026-27 Adopted Budget** — verify final service-area summaries once
-  adopted (~June 2026) before treating any roster/dollar figure as final.
+Genuinely open — marked `vacant` in the tree, not guessed:
+- **Public Safety DCA** — vacant since May 18, 2026; City Administrator Lee
+  overseeing during the national search.
+- **OCPA director** — vacant / in active recruitment (June 2026).
+- **Portland Street Response manager** — in active recruitment.
+
+Lower-confidence (named, but worth watching): **Parks** (Sonia Schmanski is
+interim; official Parks pages are silent) and **Archives** (name from a 2024
+hire notice). Also verify the **FY2026-27 Adopted Budget** service-area
+summaries once adopted (~June 2026) before treating any dollar figure as final.
 
 ## 8. Phasing
 

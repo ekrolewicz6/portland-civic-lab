@@ -432,17 +432,6 @@ const cityAdminDirectReports: OrgUnit[] = [
     source: "https://www.portland.gov/transition/city-organization",
   },
   {
-    id: "sustainability-fn",
-    name: "Sustainability",
-    type: "program",
-    branch: "administration",
-    serviceArea: "city-administrator",
-    fundModel: "general",
-    notes: "A function, not a standalone bureau.",
-    unconfirmed: true,
-    source: ORG_SOURCES.leadership,
-  },
-  {
     id: "portland-solutions",
     name: "Portland Solutions",
     type: "program",
@@ -453,29 +442,6 @@ const cityAdminDirectReports: OrgUnit[] = [
       "Program cluster: Sheltering, Impact Reduction, PEMO, Street Services Coordination Center (SSCC).",
     unconfirmed: true,
     source: ORG_SOURCES.leadership,
-  },
-  {
-    id: "communications",
-    name: "Communications",
-    type: "program",
-    branch: "administration",
-    serviceArea: "city-administrator",
-    fundModel: "general",
-    notes:
-      "Enterprise communications function; placement between the City Administrator office and the City Operations DCA portfolio is unconfirmed.",
-    unconfirmed: true,
-    source: "https://www.portland.gov/transition/city-organization",
-  },
-  {
-    id: "performance-office",
-    name: "Performance Office",
-    type: "office",
-    branch: "administration",
-    serviceArea: "city-administrator",
-    fundModel: "general",
-    notes: "Emerging unit; not yet its own budget bureau.",
-    unconfirmed: true,
-    source: ORG_SOURCES.budget,
   },
 ];
 
@@ -488,8 +454,7 @@ const cityOperations: OrgUnit = {
   leader: "Tracy Warren",
   leaderTitle: "Deputy City Administrator (also Chief HR Officer)",
   notes:
-    "Internal-services service area. DCA incumbent is unconfirmed — the live leadership page shows Tracy Warren; FY2025-26 budget documents show Sara Morrissey.",
-  unconfirmed: true,
+    "Internal-services service area. Tracy Warren is the Deputy City Administrator (and Chief Human Resources Officer); predecessor Sara Morrissey left in October 2025.",
   source: "https://www.portland.gov/service-areas/city-operations",
   children: [
     {
@@ -607,11 +572,12 @@ const cityOperations: OrgUnit = {
       branch: "administration",
       serviceArea: "city-operations",
       fundModel: "general",
+      vacant: true,
       notes:
-        "Plus the 21-member volunteer Community Board for Police Accountability (CBPA, first appointed Jun 2025). Charter-rooted independence; administratively in City Operations, NOT Public Safety.",
+        "Director seat vacant / in active recruitment (June 2026). Includes the 21-member volunteer Community Board for Police Accountability (CBPA, first appointed Jun 2025). Charter-rooted independence; administratively in City Operations, NOT Public Safety.",
       reorg2025: "Replaces the sunset Independent Police Review (IPR).",
-      unconfirmed: true,
-      source: "https://www.portland.gov/ocpa",
+      source:
+        "https://www.portland.gov/ocpa/news/2026/6/2/office-community-based-police-accountability-director-recruitment",
     },
     {
       id: "procurement",
@@ -634,6 +600,17 @@ const cityOperations: OrgUnit = {
       notes: "Quasi-independent public campaign-financing program.",
       unconfirmed: true,
       source: "https://www.portland.gov/smalldonorelections",
+    },
+    {
+      id: "communications",
+      name: "Communications",
+      type: "office",
+      branch: "administration",
+      serviceArea: "city-operations",
+      fundModel: "general",
+      notes:
+        "Enterprise communications, consolidated citywide in the 2025 reorg; sits in the City Operations DCA portfolio.",
+      source: ORG_SOURCES.leadership,
     },
   ],
 };
@@ -791,8 +768,9 @@ const publicSafety: OrgUnit = {
           branch: "administration",
           serviceArea: "public-safety",
           fundModel: "general",
+          notes: "Program manager position in active recruitment as of mid-2026.",
           reorg2025: "Moved here out of Portland Fire & Rescue in Jan 2025.",
-          unconfirmed: true,
+          vacant: true,
           source: "https://www.portland.gov/streetresponse",
         },
       ],
@@ -1024,3 +1002,86 @@ function attachFte(node: OrgUnit): number {
   return rollup;
 }
 attachFte(ORG_TREE);
+
+// ─── Confirmed leadership (mid-2026) ─────────────────────────────────────────
+//
+// Each leader below was verified on the cited official portland.gov page (a few
+// via official city news releases). Applied at module load: sets the leader and
+// clears the "unconfirmed" tag. Two are medium-confidence: Parks (Schmanski is
+// interim; official Parks leadership pages are silent, name from city news) and
+// Archives (name from a 2024 hire announcement). Genuinely vacant seats — the
+// Public Safety DCA, OCPA director, and PSR program manager — are marked vacant
+// in the tree above, not here.
+function findById(node: OrgUnit, id: string): OrgUnit | undefined {
+  if (node.id === id) return node;
+  for (const child of node.children ?? []) {
+    const found = findById(child, id);
+    if (found) return found;
+  }
+  return undefined;
+}
+
+const LEADER_CONFIRMATIONS: Record<
+  string,
+  { leader: string; leaderTitle: string; source: string }
+> = {
+  "city-attorney": { leader: "Robert L. Taylor", leaderTitle: "City Attorney", source: "https://www.portland.gov/attorney/general-information-and-staff" },
+  "office-equity": { leader: "Latricia Tillman", leaderTitle: "Chief Equity Officer", source: "https://www.portland.gov/hello/news/2026/4/29/diversity-champion-be-portlands-first-chief-equity-officer" },
+  "office-government-relations": { leader: "Sam Chase", leaderTitle: "Director", source: "https://www.portland.gov/ogr/meet-staff" },
+  "portland-solutions": { leader: "Skyler Brocker-Knapp", leaderTitle: "Director", source: "https://www.portland.gov/shelter-services/about-portland-solutions" },
+  bts: { leader: "Elyse Rosenberg", leaderTitle: "Chief Information Officer", source: "https://www.portland.gov/bts/news/2025/7/18/city-portland-names-elyse-rosenberg-new-chief-information-officer" },
+  bff: { leader: "Maty Sauter", leaderTitle: "Director", source: "https://www.portland.gov/fleet-and-facilities" },
+  fpdr: { leader: "Sam Hutchison", leaderTitle: "Director & Fund Administrator", source: "https://www.portland.gov/fpdr" },
+  "small-donor-elections": { leader: "Susan Mottet", leaderTitle: "Director", source: "https://www.portland.gov/smalldonorelections" },
+  "community-safety": { leader: "Stephanie Howard", leaderTitle: "Director of Community Safety", source: "https://www.portland.gov/community-safety" },
+  ovp: { leader: "Jamie Evans-Butler", leaderTitle: "Program Manager", source: "https://www.portland.gov/community-safety/ovp/ovp-team" },
+  pfr: { leader: "Lauren Johnson", leaderTitle: "Fire Chief", source: "https://www.portland.gov/fire/organization-portland-fire-rescue" },
+  pbem: { leader: "Elisabeth Perez", leaderTitle: "Interim Director", source: "https://www.portland.gov/community-safety/news/2026/2/9/city-portland-announces-leadership-transition-emergency-management" },
+  pbot: { leader: "Millicent D. Williams", leaderTitle: "Director", source: "https://www.portland.gov/transportation/director" },
+  water: { leader: "Ting Lu", leaderTitle: "Director of Public Utilities", source: "https://www.portland.gov/water/about-us" },
+  bes: { leader: "Ting Lu", leaderTitle: "Director of Public Utilities", source: "https://www.portland.gov/bes/about" },
+  parks: { leader: "Sonia Schmanski", leaderTitle: "Interim Director", source: "https://www.portland.gov/parks" },
+  "childrens-levy": { leader: "Meg McElroy", leaderTitle: "Interim Director", source: "https://portlandchildrenslevy.org/about/staff/" },
+  phb: { leader: "Quisha Light", leaderTitle: "Interim Bureau Director", source: "https://www.portland.gov/phb/about/executive-team" },
+  ppd: { leader: "Eric Kutch", leaderTitle: "Director", source: "https://www.portland.gov/ppd/about-portland-permitting-development" },
+  "audit-services": { leader: "KC Jones", leaderTitle: "Director, Audit Services", source: "https://www.portland.gov/auditor/audit-services/about-us/meet-staff" },
+  ombudsman: { leader: "Jennifer Croft", leaderTitle: "City Ombudsman", source: "https://www.portland.gov/auditor/ombudsman/about-us" },
+  "elections-division": { leader: "Deborah Scroggin", leaderTitle: "Elections Division Manager", source: "https://www.portland.gov/auditor/elections/about-us" },
+  "council-clerk": { leader: "Keelan McClymont", leaderTitle: "Council Clerk", source: "https://www.portland.gov/council" },
+  "hearings-office": { leader: "Charles Koutras", leaderTitle: "Chief Hearings Officer", source: "https://www.portland.gov/auditor/news/2025/8/5/portland-city-auditor-hires-new-chief-hearings-officer" },
+  "archives-records": { leader: "Madeline Moya", leaderTitle: "City Archivist", source: "https://www.portland.gov/auditor/news/2024/1/8/city-portland-auditor-hires-new-city-archivist" },
+};
+
+for (const [id, c] of Object.entries(LEADER_CONFIRMATIONS)) {
+  const node = findById(ORG_TREE, id);
+  if (node) {
+    node.leader = c.leader;
+    node.leaderTitle = c.leaderTitle;
+    node.source = c.source;
+    delete node.unconfirmed;
+  }
+}
+
+// Units whose placement is certain but which have no published individual lead
+// (or whose lead role is administered elsewhere): clear the "unconfirmed" tag.
+// It should signal structural uncertainty, not merely a missing name.
+const CLEAR_UNCONFIRMED: Record<string, string | null> = {
+  accounting: null,
+  "public-finance-treasury": null,
+  "risk-management": null,
+  cgis: null,
+  "printing-distribution": null,
+  "facilities-services": null,
+  "fraud-hotline":
+    "Administered by Audit Services (Director KC Jones); no separate hotline lead.",
+  "civic-life":
+    "Leadership in transition (2026); no director currently named on portland.gov.",
+};
+
+for (const [id, note] of Object.entries(CLEAR_UNCONFIRMED)) {
+  const node = findById(ORG_TREE, id);
+  if (node) {
+    delete node.unconfirmed;
+    if (note) node.notes = note;
+  }
+}

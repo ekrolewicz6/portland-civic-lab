@@ -65,11 +65,12 @@ export default function OrgChartPage() {
                 Honest about what&apos;s uncertain
               </h3>
               <p className="mt-3 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-                Leaders and placements we couldn&apos;t confirm on an official
-                page are tagged{" "}
-                <span className="font-semibold">Unconfirmed</span> rather than
-                guessed. The 2025 reorganization moved many bureaus; those moves
-                are flagged so you can see what changed.
+                Bureau leaders are confirmed against official portland.gov
+                pages. Seats the city hasn&apos;t filled — the Public Safety
+                DCA, the OCPA director, the Street Response manager — are marked{" "}
+                <span className="font-semibold">Vacant</span>, and the 2025
+                reorg moves are flagged, so the chart shows what&apos;s settled
+                and what isn&apos;t.
               </p>
             </div>
             <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-6">
