@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   TreePine,
   Trees,
+  Users,
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -356,8 +357,16 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="mt-10 grid md:grid-cols-2 gap-5">
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {[
+            {
+              href: "/deep-dives/homelessness",
+              icon: Users,
+              eyebrow: "Homelessness",
+              title: "Why Portland can't end homelessness",
+              blurb:
+                "Spending is up and it keeps growing. The math that explains why — an inflow/outflow simulator, who's actually homeless, the true cost of doing nothing, and what would actually work.",
+            },
             {
               href: "/deep-dives/fpdr",
               icon: Landmark,

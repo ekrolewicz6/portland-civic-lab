@@ -4,6 +4,41 @@ All notable changes to the Portland Civic Lab Dashboard are documented here.
 
 ---
 
+## [2026-06-15] — Homelessness deep-dive
+
+Third Policy Deep-Dive (`/deep-dives/homelessness`): a by-the-numbers,
+honest-broker explainer on why Portland's homelessness keeps growing despite
+record spending. Built on the founder's existing "homelessness operating
+system" research (`~/Code/Active/portland/homeless` + `housing-research/
+KEY-IDEAS.md`), whose data spine was already sourced — so the build mostly
+ported verified models and ran a focused citation pass for the national/gap
+claims.
+
+**Interactive pieces** (`src/lib/homeless/engine.ts`, ported from the founder's
+cockpit): a **flow simulator** (stocks-and-flows on the by-name list — close the
+~412/month inflow-minus-outflow gap and growth stops before housing anyone new;
+sliders for eviction prevention, discharge ban, treatment beds + staffing,
+master-leased units); a **cost-of-inaction calculator** ($40k/yr on the street
+vs ~$20k housed, with the honest "savings are mostly federal" caveat); a
+**triage tool** (the three populations and their matched fixes/costs); and a
+**bed-visibility ladder** (licensed → funded → staffed → occupied → open-tonight,
+where Oregon only tracks the top two).
+
+**Citation pass corrections** (applied): the $50k street cost is upper-typical,
+not a median (central ~$35k–$50k; NAEH $35,578, Economic Roundtable LA −79%,
+Utah −91%); PSH ≈ $20,115 and RRH ≈ $8,486/household/yr (NAEH 2025); the SHS tax
+has raised ~$1.3B since 2021 with a balance that peaked near $431M unspent (not
+$500M+); the treatment-bed gap is ~3,714 (OHA/PCG June 2024); the 90-day
+pre-release Medicaid benefit is authorized but paused; HRSN housing doesn't cover
+move-in costs. Plus the full sourced data spine (by-name list, PIT, evictions,
+Domicile Unknown deaths, OBCC).
+
+Added to the `/deep-dives` index and the homepage band (now three cards).
+Verified end-to-end (desktop + mobile): all four interactives produce correct
+numbers; typecheck and lint clean.
+
+---
+
 ## [2026-06-15] — Responsive layout for the deep-dives
 
 The deep-dive pages were capped at `max-w-[1080px]` and looked cramped on large

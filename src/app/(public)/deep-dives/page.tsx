@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Landmark, TreePine } from "lucide-react";
+import { ArrowRight, Landmark, TreePine, Users } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
@@ -43,6 +43,17 @@ const DIVES: DeepDive[] = [
     stat: "491,347",
     statLabel: "homes Oregon needs in 20 years",
     icon: TreePine,
+    available: true,
+  },
+  {
+    href: "/deep-dives/homelessness",
+    eyebrow: "Homelessness",
+    title: "Why Portland can't end homelessness",
+    blurb:
+      "Portland spends more than ever and it keeps growing. The math that explains why — the inflow/outflow simulator, who's actually homeless, the true cost of doing nothing, why nobody can see the beds, and what would actually work.",
+    stat: "+~400",
+    statLabel: "net added to the list every month",
+    icon: Users,
     available: true,
   },
 ];
