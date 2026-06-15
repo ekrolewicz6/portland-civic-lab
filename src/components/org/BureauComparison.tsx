@@ -92,8 +92,65 @@ export default function BureauComparison() {
   }
 
   return (
-    <div className="overflow-x-auto rounded-sm border border-[var(--color-parchment)] bg-white">
-      <table className="w-full min-w-[720px] text-[13px]">
+    <div>
+      {/* mobile: sort control + cards (the table needs too many columns for a phone) */}
+      <div className="md:hidden">
+        <div className="mb-3 flex items-center gap-2">
+          <label className="text-[12px] text-[var(--color-ink-muted)]">
+            Sort by
+          </label>
+          <select
+            value={sortKey}
+            onChange={(e) => {
+              const k = e.target.value as SortKey;
+              setSortKey(k);
+              setDir(k === "name" ? "asc" : "desc");
+            }}
+            className="flex-1 rounded-sm border border-[var(--color-parchment)] bg-white px-2.5 py-2 text-[13px] outline-none focus:border-[var(--color-sage)]"
+          >
+            <option value="salaryCost">Salary cost</option>
+            <option value="fte">Headcount (FTE)</option>
+            <option value="costPerFte">Cost per FTE</option>
+            <option value="operatingTotal">Operating budget</option>
+            <option value="classCount">Job classes</option>
+            <option value="name">Name (A–Z)</option>
+          </select>
+        </div>
+        <div className="space-y-2">
+          {sorted.map((r) => (
+            <Link
+              key={r.id}
+              href={`/org-chart/${r.id}`}
+              className="block rounded-sm border border-[var(--color-parchment)] bg-white p-3 transition-colors hover:border-[var(--color-sage)]"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <span className="flex min-w-0 items-center gap-2">
+                  <span
+                    className="h-2.5 w-2.5 flex-none rounded-sm"
+                    style={{ backgroundColor: r.color }}
+                  />
+                  <span className="truncate font-medium text-[var(--color-ink)]">
+                    {r.name}
+                  </span>
+                </span>
+                <span className="flex-none text-[14px] font-semibold tabular-nums text-[var(--color-ink)]">
+                  {money(r.salaryCost)}
+                </span>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-[12px] text-[var(--color-ink-light)]">
+                <span className="tabular-nums">{fmtFte(r.fte)} FTE</span>
+                <span className="tabular-nums">{money(r.costPerFte)} / FTE</span>
+                <span className="tabular-nums">{money(r.operatingTotal)} budget</span>
+                <span className="tabular-nums">{r.classCount} classes</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* desktop: sortable table */}
+      <div className="hidden overflow-x-auto rounded-sm border border-[var(--color-parchment)] bg-white md:block">
+        <table className="w-full min-w-[720px] text-[13px]">
         <thead>
           <tr className="border-b border-[var(--color-parchment)] text-left text-[11px] font-mono uppercase tracking-wider text-[var(--color-ink-muted)]">
             {COLUMNS.map((c) => (
@@ -166,6 +223,7 @@ export default function BureauComparison() {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

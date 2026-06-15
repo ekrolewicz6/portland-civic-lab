@@ -142,7 +142,7 @@ export default function OrgChartExplorer() {
       <div key={unit.id}>
         <div
           className="group flex items-center gap-1.5 rounded-sm border-l-[3px] pr-2 hover:bg-[var(--color-paper-warm)]"
-          style={{ borderLeftColor: sa.color, marginLeft: depth * 18 }}
+          style={{ borderLeftColor: sa.color, marginLeft: depth * 15 }}
         >
           <button
             type="button"
@@ -212,23 +212,27 @@ export default function OrgChartExplorer() {
             )}
           </div>
 
-          {/* right: operating budget + salary cost + FTE */}
-          <div className="flex flex-none items-center gap-4 text-[12px] tabular-nums">
-            {budget > 0 && (
+          {/* right metrics — desktop columns (budget · salary · FTE) */}
+          <div className="hidden flex-none items-center gap-4 text-[12px] tabular-nums sm:flex">
+            {budget > 0 ? (
               <span
                 className="hidden w-24 text-right text-[var(--color-ink)] md:inline"
                 title="Total operating budget, all funds (double-counts internal transfers)"
               >
                 {money(budget)}
               </span>
+            ) : (
+              <span className="hidden w-24 md:inline" />
             )}
-            {cost > 0 && (
+            {cost > 0 ? (
               <span
-                className="hidden w-20 text-right text-[var(--color-ink-light)] sm:inline"
+                className="w-20 text-right text-[var(--color-ink-light)]"
                 title="Budgeted personnel (salary) cost"
               >
                 {money(cost)}
               </span>
+            ) : (
+              <span className="w-20" />
             )}
             {unit.fteRollup ? (
               <span
@@ -241,6 +245,19 @@ export default function OrgChartExplorer() {
             ) : (
               <span className="w-16" />
             )}
+          </div>
+          {/* right metrics — mobile stacked (salary over FTE) */}
+          <div className="flex flex-none flex-col items-end leading-tight tabular-nums sm:hidden">
+            {cost > 0 && (
+              <span className="text-[12px] text-[var(--color-ink)]">
+                {money(cost)}
+              </span>
+            )}
+            {unit.fteRollup ? (
+              <span className="text-[11px] text-[var(--color-ink-muted)]">
+                {fmtFte(unit.fteRollup)} FTE
+              </span>
+            ) : null}
           </div>
         </div>
 
@@ -430,9 +447,9 @@ export default function OrgChartExplorer() {
 
       {/* full-width tree */}
       <div className="mt-5 rounded-sm border border-[var(--color-parchment)] bg-white p-2 sm:p-3">
-        <div className="mb-1 flex items-center justify-end gap-4 pr-2 text-[10px] font-mono uppercase tracking-wider text-[var(--color-ink-muted)]">
+        <div className="mb-1 hidden items-center justify-end gap-4 pr-2 text-[10px] font-mono uppercase tracking-wider text-[var(--color-ink-muted)] sm:flex">
           <span className="hidden w-24 text-right md:inline">Budget</span>
-          <span className="hidden w-20 text-right sm:inline">Salary $</span>
+          <span className="w-20 text-right">Salary $</span>
           <span className="w-16 text-right">FTE</span>
         </div>
         {keepSet && keepSet.size === 0 ? (

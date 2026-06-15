@@ -218,7 +218,9 @@ export default async function BureauPage({
                     <th className="py-2 px-2 text-right font-semibold">FTE</th>
                     <th className="py-2 px-2 text-right font-semibold">Budgeted</th>
                     <th className="py-2 px-2 text-right font-semibold">Pay band</th>
-                    <th className="py-2 pl-2 font-semibold">Union</th>
+                    <th className="hidden py-2 pl-2 font-semibold sm:table-cell">
+                      Union
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -246,10 +248,10 @@ export default async function BureauPage({
                       <td className="py-1.5 px-2 text-right tabular-nums text-[var(--color-ink-light)]">
                         {money(c.cost)}
                       </td>
-                      <td className="py-1.5 px-2 text-right tabular-nums text-[var(--color-ink-muted)]">
+                      <td className="whitespace-nowrap py-1.5 px-2 text-right tabular-nums text-[var(--color-ink-muted)]">
                         {band(c.salaryMin, c.salaryMax)}
                       </td>
-                      <td className="py-1.5 pl-2 text-[var(--color-ink-muted)]">
+                      <td className="hidden py-1.5 pl-2 text-[var(--color-ink-muted)] sm:table-cell">
                         {c.bargUnit ?? "—"}
                       </td>
                     </tr>
