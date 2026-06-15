@@ -255,7 +255,7 @@ export default function HomelessnessDeepDive() {
 
         {/* We're building the fix */}
         <a
-          href="https://portland-bed-finder.vercel.app/"
+          href="https://beds.portlandciviclab.org/"
           target="_blank"
           rel="noopener noreferrer"
           className="group mt-5 block rounded-sm bg-[var(--color-canopy)] text-white p-6 sm:p-7 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(15,36,25,0.18)]"
