@@ -141,7 +141,10 @@ export function simulate(levers: Levers): SimResult {
   const prevention =
     preventions * UNIT_COST.evictionPrevention + redirected * UNIT_COST.dischargePlacement;
   const housing = levers.masterLeased * UNIT_COST.masterLeasePerYear;
-  const treatment = levers.treatmentBeds * UNIT_COST.treatmentBedPerYear;
+  // Per-bed operating cost is dominated by 24/7 clinical staffing, so the cost
+  // tracks the beds you actually STAFF (treatmentBeds × workforceFill), not the
+  // ones you merely build. Understaffing lowers both effectiveness and cost.
+  const treatment = levers.treatmentBeds * levers.workforceFill * UNIT_COST.treatmentBedPerYear;
   const cost: ScenarioCost = {
     prevention: Math.round(prevention),
     housing: Math.round(housing),
