@@ -4,6 +4,45 @@ All notable changes to the Portland Civic Lab Dashboard are documented here.
 
 ---
 
+## [2026-06-15] — Mass Timber deep-dive
+
+Second entry in the **Policy Deep-Dives** section: an interactive explainer on
+**mass timber & housing in Oregon** (`/deep-dives/mass-timber`), built from a
+founder-supplied briefing (a Google Doc synthesizing adversarially-verified
+research and a custom utilization cost model).
+
+**Approach:** the briefing carried certainty labels but no source URLs, and the
+ask was for a credibly-cited public page. So a 10-agent citation workflow
+re-sourced every load-bearing claim to a primary/credible URL and confirmed the
+figures — which **corrected several** before publication: the circulating
+"1,223 Portland permits / lowest since 2010" figure was refuted (OPB: ~1,400
+total in 2025; "lowest since 2010" applies to multifamily only); the Framework
+$6M was not from the 2016 bond; L&G's £279M is a cumulative life-of-business
+loss; lumber is ~40% (not 50%+) of CLT cost; Hacienda isn't a formal coalition
+member. All corrections are reflected in `src/lib/mass-timber/data.ts`.
+
+**What was built:**
+- **Engine** (`src/lib/mass-timber/engine.ts`): three models, all matching the
+  briefing's numbers — a factory **utilization cost model** (cost/home = marginal
+  + fixed/output; parity ≈265 homes/yr, viable ≈490, −10% at full capacity), a
+  **housing-scale model** (5,000 units → ~$1.7B, ~$550M public, 5–8 yrs), and a
+  **project-fit scorer** (light-frame wins low-rise; mass timber's edge is
+  repetitive mid-rise in high-labor markets).
+- **The page**: visuals-first sections — what mass timber is (CLT/glulam/MPP,
+  panelized vs modular), an interactive **project-fit tool**, the honest
+  myth-vs-reality economics, the interactive **factory-utilization calculator**
+  (the "missing math"), a **build-at-scale calculator** with the funding stack,
+  the Oregon assets timeline (success stories), the **graveyard** of factory
+  failures (Framework, Katerra, Ilke, L&G, Urban Splash), the demand-aggregation
+  fix, climate (both sides) and jobs, the verdict, and a fully-sourced methodology.
+- **Components** in `src/components/deep-dives/mass-timber/`; added to the
+  `/deep-dives` index and the homepage deep-dives band (now two cards).
+
+Verified end-to-end (desktop + mobile): all three calculators produce
+report-matching numbers; typecheck and lint clean.
+
+---
+
 ## [2026-06-15] — Policy Deep-Dives + FPDR explainer
 
 A new public section, **Policy Deep-Dives** (`/deep-dives`), for in-depth,

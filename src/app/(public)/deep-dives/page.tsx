@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Landmark } from "lucide-react";
+import { ArrowRight, Landmark, TreePine } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 
@@ -31,6 +31,17 @@ const DIVES: DeepDive[] = [
     stat: fmtMoney(HEADLINE.liability),
     statLabel: "promised, less than 1% saved",
     icon: Landmark,
+    available: true,
+  },
+  {
+    href: "/deep-dives/mass-timber",
+    eyebrow: "Housing & industry",
+    title: "Mass timber: Oregon's big housing bet",
+    blurb:
+      "Can building homes out of wood in factories help fix the housing shortage? What mass timber is, what it's good for, how much housing it can provide and at what cost — with a factory-cost calculator, the success stories, and the long graveyard of failures.",
+    stat: "491,347",
+    statLabel: "homes Oregon needs in 20 years",
+    icon: TreePine,
     available: true,
   },
 ];
