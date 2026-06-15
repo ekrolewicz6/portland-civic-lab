@@ -8,6 +8,7 @@ import {
   ClipboardList,
   Database,
   Gauge,
+  Landmark,
   MapPinned,
   ShieldCheck,
   Trees,
@@ -335,7 +336,67 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Policy Deep-Dives */}
       <section className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 py-16 sm:py-20">
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-8 h-px bg-[var(--color-ember)]" />
+          <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+            New · Policy Deep-Dives
+          </span>
+        </div>
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+          <div className="lg:col-span-5">
+            <h2 className="font-editorial text-[32px] sm:text-[42px] text-[var(--color-ink)] leading-tight">
+              The big issues, explained for everyone
+            </h2>
+            <p className="mt-4 max-w-xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
+              Some of Portland&apos;s most consequential policy questions are buried
+              in actuarial reports and budget footnotes. We pull them into the
+              open — visuals first, plain language, and interactive tools anyone
+              can use.
+            </p>
+            <Link
+              href="/deep-dives"
+              className="mt-6 inline-flex items-center gap-2 text-[13px] font-mono uppercase tracking-[0.14em] text-[var(--color-canopy)] hover:text-[var(--color-fern)] transition-colors"
+            >
+              See all deep-dives
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <Link
+            href="/deep-dives/fpdr"
+            className="group lg:col-span-7 relative overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-white p-7 sm:p-8 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--color-sage)] hover:shadow-[0_8px_32px_rgba(15,36,25,0.06)]"
+          >
+            <div className="absolute left-0 right-0 top-0 h-[3px] bg-[var(--color-ember)]" />
+            <div className="flex items-start gap-5">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-sm bg-[var(--color-canopy)]/7 text-[var(--color-canopy)]">
+                <Landmark className="h-5 w-5" />
+              </div>
+              <div className="min-w-0">
+                <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember)]">
+                  Budgets &amp; pensions
+                </div>
+                <h3 className="mt-2 font-editorial text-[26px] sm:text-[30px] leading-tight text-[var(--color-ink)] group-hover:text-[var(--color-canopy)] transition-colors">
+                  The pension hiding on your property tax bill
+                </h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+                  Portland owes <strong>$3.9 billion</strong> in police and fire
+                  pensions and saved almost none of it. See what FPDR costs you,
+                  who receives it, and try fixing it yourself with an interactive
+                  reform simulator.
+                </p>
+                <div className="mt-5 inline-flex items-center gap-2 text-[12px] font-mono uppercase tracking-[0.14em] text-[var(--color-canopy)]">
+                  Read the deep-dive
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      <section className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 py-16 sm:py-20 border-t border-[var(--color-parchment)]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-5">

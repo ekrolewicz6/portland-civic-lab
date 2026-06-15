@@ -62,6 +62,36 @@ export default function OrgChartPage() {
         </div>
       </section>
 
+      <section className="border-t border-[var(--color-parchment)]">
+        <div className="mx-auto max-w-[1600px] px-5 py-12 sm:px-8 sm:py-14 lg:px-12">
+          <Link
+            href="/deep-dives/fpdr"
+            className="group block rounded-sm border border-[var(--color-parchment)] bg-[var(--color-canopy)] p-7 sm:p-8 text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(15,36,25,0.12)]"
+          >
+            <div className="grid gap-5 sm:grid-cols-[1fr_auto] sm:items-center">
+              <div>
+                <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember)]">
+                  Related deep-dive
+                </div>
+                <h2 className="mt-2 font-editorial text-[24px] sm:text-[30px] leading-tight">
+                  The salary numbers above leave out a $250M-a-year cost
+                </h2>
+                <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-white/70">
+                  Police and fire pensions don&apos;t show up as bureau salary —
+                  they&apos;re paid through FPDR, a separate property-tax levy with a
+                  $3.9 billion unfunded liability. See what it costs you and how it
+                  could be fixed.
+                </p>
+              </div>
+              <div className="inline-flex items-center gap-2 whitespace-nowrap text-[12px] font-mono uppercase tracking-[0.14em] text-[var(--color-ember)]">
+                Read the FPDR deep-dive
+                <span className="transition-transform group-hover:translate-x-0.5">&rarr;</span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       <section className="border-t border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
         <div className="mx-auto max-w-[1600px] px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
           <h2 className="font-editorial text-[26px] sm:text-[32px] text-[var(--color-ink)] leading-tight">

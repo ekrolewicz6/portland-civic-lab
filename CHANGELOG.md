@@ -4,6 +4,51 @@ All notable changes to the Portland Civic Lab Dashboard are documented here.
 
 ---
 
+## [2026-06-15] — Policy Deep-Dives + FPDR explainer
+
+A new public section, **Policy Deep-Dives** (`/deep-dives`), for in-depth,
+plain-language explainers of complex Portland policy issues — visuals-first,
+written for a general audience, with interactive tools. Launched with its first
+deep-dive: **FPDR**, the city's pay-as-you-go police & fire pension and its
+property-tax burden (`/deep-dives/fpdr`).
+
+**Why this exists:** the founder wanted to take a deeply-researched, heavily-
+sourced topic (FPDR's $3.9B unfunded liability, the pay-go funding mechanism,
+the 2006 reform, the legal barriers, and the reform options) and make it
+understandable to anyone with a ~10th-grade reading level — explaining how it
+affects them personally and laying out the trade-offs of every possible fix.
+
+### What was built
+
+- **Research first.** A multi-agent workflow produced a verified dossier (figures
+  cross-checked against the Milliman June 30 2024 valuation, Multnomah County tax
+  certifications, City budget/charter docs), plus a focused pass on beneficiary
+  demographics. All headline numbers were adversarially re-sourced.
+- **Data + engine** (`src/lib/fpdr/`). `data.ts` holds every figure with an inline
+  source; `engine.ts` has two models: a personal-cost calculator (off the verified
+  FY2025-26 rate) and an illustrative reform simulator. The simulator is a sound
+  funding model — it funds post-transition benefits to a target then draws the
+  trust to ~zero — tuned so lifetime savings land on the cited ~¼ (steady) and ~⅓
+  (front-loaded) at a 7% return, and correctly collapse to 0% at a 0% return
+  (the only real saving from pre-funding is investment returns).
+- **The page** (`src/app/(public)/deep-dives/fpdr/`). Visuals-first sections:
+  pay-go vs pre-funded explainer, "where the money goes" breakdown, an interactive
+  **personal-cost calculator** (home-value slider → your annual FPDR tax), a levy
+  growth chart, a **"who gets it"** section (2,014 retirees/survivors, ~$78k avg
+  pension, the 95+ surviving spouses, the 27-pay-period spiking) with a police/fire
+  toggle, four reasons it's politically stuck, an interactive **reform simulator**
+  (strategy + return sliders → "worse before better" curve with break-even
+  shading and household-scaled savings), a full reform-options menu with trade-offs,
+  and a sourced methodology section.
+- **Components** in `src/components/deep-dives/fpdr/`; new "Deep-Dives" header nav
+  link and a `/deep-dives` section index.
+
+Verified end-to-end in the browser (desktop + mobile): calculator, simulator
+(both strategies, return + home-value sliders), and the who-benefits toggle all
+produce correct numbers; typecheck and lint clean.
+
+---
+
 ## [2026-06-14] — Portland City Org Chart System
 
 A new feature area: an interactive, fully-sourced map of City of Portland

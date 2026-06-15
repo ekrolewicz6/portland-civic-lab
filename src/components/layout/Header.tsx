@@ -52,6 +52,12 @@ export default function Header() {
             >
               Org Chart
             </Link>
+            <Link
+              href="/deep-dives"
+              className="hidden md:inline text-[var(--color-sage)] hover:text-white transition-colors"
+            >
+              Deep-Dives
+            </Link>
             <a
               href={PARKS_URL}
               className="hidden lg:inline text-white/55 hover:text-white transition-colors"
