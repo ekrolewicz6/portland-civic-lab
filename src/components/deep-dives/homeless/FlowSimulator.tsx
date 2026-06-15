@@ -83,9 +83,10 @@ export default function FlowSimulator() {
 
   return (
     <div className="rounded-sm border border-[var(--color-parchment)] bg-white overflow-hidden">
-      {/* Levers */}
-      <div className="p-5 sm:p-7 border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
-        <div className="grid md:grid-cols-2 gap-x-8 gap-y-5">
+      <div className="lg:grid lg:grid-cols-[minmax(0,340px)_1fr]">
+        {/* Levers — control rail (left) */}
+        <div className="p-5 sm:p-6 border-b lg:border-b-0 lg:border-r border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
+          <div className="space-y-6">
           <div className="space-y-4">
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-clay)]">
               Close the inflow (cheapest)
@@ -114,7 +115,7 @@ export default function FlowSimulator() {
               value={masterLeased} min={0} max={3000} step={50}
               onChange={setMl} accent="#3d7a5a"
               display={fmtNum(masterLeased)}
-              hint="Lease existing apartments now, with a landlord-guarantee fund — units this year, not construction-years."
+              hint="Lease existing apartments now — homes this year, not construction-years."
             />
             <Slider
               label="New staffed treatment beds"
@@ -131,18 +132,19 @@ export default function FlowSimulator() {
               hint="Workforce is the real rate-limiter — a bed you can't staff is a press release."
             />
           </div>
+          </div>
         </div>
-      </div>
 
-      {/* Chart */}
-      <div className="p-5 sm:p-7">
+        {/* Result — chart + outcomes (right) */}
+        <div className="min-w-0">
+          <div className="p-5 sm:p-7">
         <p className="text-[13px] text-[var(--color-ink-light)] mb-3 leading-relaxed">
           People on Multnomah County&apos;s by-name list, projected 4 years out.{" "}
           <span className="text-[var(--color-storm)] font-semibold">Do nothing</span> and it climbs by
           ~{FLOW.inflow - FLOW.outflow}/month. Move the sliders and watch the{" "}
           <span className="text-[var(--color-canopy)] font-semibold">scenario</span> bend.
         </p>
-        <div style={{ width: "100%", height: 300 }}>
+        <div style={{ width: "100%", height: 270 }}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data} margin={{ top: 8, right: 12, left: 8, bottom: 0 }}>
               <CartesianGrid strokeDasharray="2 6" stroke="#d6d3d1" strokeOpacity={0.5} vertical={false} />
@@ -225,8 +227,10 @@ export default function FlowSimulator() {
           </p>
         </div>
       </div>
+        </div>
+      </div>
 
-      {/* Cost of the scenario */}
+      {/* Cost of the scenario — full width below */}
       <div className="border-t border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-5 sm:p-7">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
           <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-light)]">

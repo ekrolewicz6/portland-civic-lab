@@ -165,9 +165,9 @@ export default function HomelessnessDeepDive() {
       >
         <FlowSimulator />
         <p className="text-[12px] text-[var(--color-ink-muted)] mt-4 max-w-2xl leading-relaxed">
-          A simplified model ported from the founder&apos;s homelessness-system cockpit. The behavioral
-          assumptions (how much of inflow is eviction- vs. discharge-driven, how many people each
-          treatment bed durably houses) are deliberately visible and contestable. The net flow varies
+          A simplified stocks-and-flows model with deliberately visible, contestable assumptions — how
+          much of inflow is eviction- vs. discharge-driven, and how many people each treatment bed
+          durably houses. The net flow varies
           month to month; the ~{STATS.netMonthly}/month figure is from January 2025 (<Src id="byNameRelease" />).
           The cost panel uses rough but sourced unit costs — eviction prevention ~$2,500/household
           (<Src id="naehTriageCost" />), shelter and master-leasing from Multnomah County&apos;s own cost

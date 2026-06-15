@@ -1,10 +1,9 @@
 /**
  * Homelessness deep-dive data.
  *
- * Headline figures come from the founder's already-verified data spine
- * (bed-finder/src/data/spine — each read from a fetched primary source). The
- * qualitative framing (triage, the plan, the myths) is distilled from
- * housing-research/KEY-IDEAS.md. A focused citation pass (June 2026) sourced the
+ * Headline figures come from an already-verified data spine (each read from a
+ * fetched primary source). The qualitative framing (triage, the plan, the myths)
+ * is distilled from a research synthesis. A focused citation pass (June 2026) sourced the
  * remaining national/gap claims and corrected several before publication — e.g.
  * the per-person street cost is an upper-typical figure, not a median; the SHS
  * "unspent" balance peaked near $431M (not $500M+); the pre-release Medicaid

@@ -1,8 +1,7 @@
 /**
  * Homelessness deep-dive calculation engine.
  *
- * The two central models are ported directly from the founder's "homelessness
- * operating system" cockpit (bed-finder/src/app/cockpit/simulate + lib/spine):
+ * Two central models, ported from an operational homelessness-system cockpit:
  *
  *  1. simulate()       — a stocks-and-flows model of Multnomah County's by-name
  *     list. The lesson it makes visceral: homelessness grows because monthly
