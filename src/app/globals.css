@@ -77,7 +77,8 @@
     [class*="text-\[19px\]"] { font-size: 22px !important; }
   }
 
-  @media (min-width: 1920px) {
+  /* Bridge the 1280→1920 gap so text doesn't lag the fluid base on 1600px+ monitors. */
+  @media (min-width: 1600px) {
     [class*="text-\[10px\]"] { font-size: 14px !important; }
     [class*="text-\[11px\]"] { font-size: 15px !important; }
     [class*="text-\[12px\]"] { font-size: 16px !important; }
@@ -88,6 +89,44 @@
     [class*="text-\[17px\]"] { font-size: 22px !important; }
     [class*="text-\[18px\]"] { font-size: 23px !important; }
     [class*="text-\[19px\]"] { font-size: 24px !important; }
+  }
+
+  @media (min-width: 1920px) {
+    [class*="text-\[10px\]"] { font-size: 16px !important; }
+    [class*="text-\[11px\]"] { font-size: 17px !important; }
+    [class*="text-\[12px\]"] { font-size: 18px !important; }
+    [class*="text-\[13px\]"] { font-size: 19px !important; }
+    [class*="text-\[14px\]"] { font-size: 20px !important; }
+    [class*="text-\[15px\]"] { font-size: 22px !important; }
+    [class*="text-\[16px\]"] { font-size: 23px !important; }
+    [class*="text-\[17px\]"] { font-size: 24px !important; }
+    [class*="text-\[18px\]"] { font-size: 25px !important; }
+    [class*="text-\[19px\]"] { font-size: 26px !important; }
+  }
+
+  /* Very-high-resolution monitors (≥2304px) — keep tracking the fluid base. */
+  @media (min-width: 2304px) {
+    [class*="text-\[10px\]"] { font-size: 17px !important; }
+    [class*="text-\[11px\]"] { font-size: 18px !important; }
+    [class*="text-\[12px\]"] { font-size: 19px !important; }
+    [class*="text-\[13px\]"] { font-size: 20px !important; }
+    [class*="text-\[14px\]"] { font-size: 21px !important; }
+    [class*="text-\[15px\]"] { font-size: 23px !important; }
+    [class*="text-\[16px\]"] { font-size: 24px !important; }
+    [class*="text-\[17px\]"] { font-size: 25px !important; }
+    [class*="text-\[18px\]"] { font-size: 26px !important; }
+    [class*="text-\[19px\]"] { font-size: 27px !important; }
+  }
+
+  @media (min-width: 2560px) {
+    [class*="text-\[12px\]"] { font-size: 20px !important; }
+    [class*="text-\[13px\]"] { font-size: 21px !important; }
+    [class*="text-\[14px\]"] { font-size: 22px !important; }
+    [class*="text-\[15px\]"] { font-size: 24px !important; }
+    [class*="text-\[16px\]"] { font-size: 25px !important; }
+    [class*="text-\[17px\]"] { font-size: 26px !important; }
+    [class*="text-\[18px\]"] { font-size: 27px !important; }
+    [class*="text-\[19px\]"] { font-size: 28px !important; }
   }
 
   ::selection {
