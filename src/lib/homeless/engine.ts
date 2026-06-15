@@ -57,6 +57,34 @@ export interface Levers {
   masterLeased: number;
 }
 
+/**
+ * Per-unit annual program costs. Rough but sourced unit costs — the cost model
+ * is a teaching tool like the flow model, with every assumption visible:
+ *  - eviction prevention ≈ $2,500/household one-time (NAEH; Boulder ~$2,095)
+ *  - discharge placement ≈ a several-month shelter/transitional bridge
+ *    (Multnomah congregate shelter runs ~$37k/bed/yr; we use a partial-year bridge)
+ *  - master-leasing ≈ $22k/unit/yr all-in (Multnomah JOHS NOFA: $12.6k–$22.7k lease
+ *    + ~$10k services; overlaps NAEH's $20,115 PSH figure)
+ *  - staffed residential SUD treatment ≈ $55k/bed/yr operating (French et al. 2008,
+ *    ~$31–48k in 2006 dollars, inflated ~1.5×; capital to add a bed is extra)
+ */
+export const UNIT_COST = {
+  evictionPrevention: 2_500,
+  dischargePlacement: 12_000,
+  masterLeasePerYear: 22_000,
+  treatmentBedPerYear: 55_000,
+} as const;
+
+export interface ScenarioCost {
+  /** Closing the inflow — eviction prevention + redirected discharges (the economic group). */
+  prevention: number;
+  /** Master-leased housing (the economic / episodic groups). */
+  housing: number;
+  /** Staffed treatment beds (the chronic / severe group). */
+  treatment: number;
+  total: number;
+}
+
 export interface SimResult {
   rows: { month: number; baseline: number; scenario: number }[];
   /** First month the scenario's monthly inflow drops to or below outflow (growth stops). */
@@ -65,6 +93,8 @@ export interface SimResult {
   scenarioEnd: number;
   /** Net monthly change under the scenario at steady state (negative = shrinking). */
   scenarioNetMonthly: number;
+  /** Annual program cost of the chosen levers, broken out by cohort/intervention. */
+  cost: ScenarioCost;
 }
 
 export function simulate(levers: Levers): SimResult {
@@ -106,12 +136,27 @@ export function simulate(levers: Levers): SimResult {
     rows.push({ month: m, baseline: Math.round(baseline), scenario: Math.round(scenario) });
   }
 
+  // Annual program cost of the chosen levers.
+  const preventions = SIM.evictionShareOfInflow * inflow0 * 12 * levers.evictionPrevention;
+  const redirected = SIM.dischargeShareOfInflow * inflow0 * 12 * levers.dischargeBan;
+  const prevention =
+    preventions * UNIT_COST.evictionPrevention + redirected * UNIT_COST.dischargePlacement;
+  const housing = levers.masterLeased * UNIT_COST.masterLeasePerYear;
+  const treatment = levers.treatmentBeds * UNIT_COST.treatmentBedPerYear;
+  const cost: ScenarioCost = {
+    prevention: Math.round(prevention),
+    housing: Math.round(housing),
+    treatment: Math.round(treatment),
+    total: Math.round(prevention + housing + treatment),
+  };
+
   return {
     rows,
     crossover,
     baselineEnd: rows[rows.length - 1].baseline,
     scenarioEnd: rows[rows.length - 1].scenario,
     scenarioNetMonthly: Math.round(lastInflow - lastOutflow),
+    cost,
   };
 }
 

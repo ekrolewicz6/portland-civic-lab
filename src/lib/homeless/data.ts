@@ -53,6 +53,11 @@ export const SOURCES: Record<string, Source> = {
   // Medicaid 1115
   medicaidHousing: { id: "medicaidHousing", title: "OHP Health-Related Social Needs — housing benefits", org: "Oregon Health Authority", url: "https://www.oregon.gov/oha/hsd/ohp/pages/housing.aspx", kind: "primary" },
   medicaidOpb: { id: "medicaidOpb", title: "Oregon launches Medicaid program to help pay rent", org: "OPB", url: "https://www.opb.org/article/2024/10/28/oregon-health-authority-rental-assistance-program-medicaid-housing/", kind: "news" },
+
+  // Intervention unit costs (for the cost model)
+  shelterReview: { id: "shelterReview", title: "Adult Shelter Review FY25 (per-bed shelter costs)", org: "Multnomah County HSD", url: "https://hsd.multco.us/wp-content/uploads/2026/01/Adult-Shelter-Review-FY25.pdf", kind: "primary" },
+  masterLeaseNofa: { id: "masterLeaseNofa", title: "Master Leasing & Landlord Engagement NOFA (per-unit cost)", org: "Multnomah County JOHS", url: "https://multco.us/file/master_leasing_and_landlord_engagement_nofa_announcement/download", kind: "primary" },
+  treatmentCost: { id: "treatmentCost", title: "Cost of residential substance-abuse treatment (per week)", org: "French, Popovici & Tapsell, J. Subst. Abuse Treat. (2008)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2614666/", kind: "research" },
 };
 
 // ── Headline figures (verified) ───────────────────────────────────

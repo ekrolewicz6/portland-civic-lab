@@ -12,7 +12,14 @@ import {
   ReferenceLine,
   Legend,
 } from "recharts";
-import { simulate, FLOW, fmtNum } from "@/lib/homeless/engine";
+import { simulate, FLOW, fmtNum, fmtMoney } from "@/lib/homeless/engine";
+import { STATS } from "@/lib/homeless/data";
+
+const COST_SEGMENTS = [
+  { key: "prevention", label: "Prevention", cohort: "keeps the economic group from falling in", color: "var(--color-clay)" },
+  { key: "housing", label: "Housing", cohort: "rehouses the economic & episodic groups", color: "var(--color-fern)" },
+  { key: "treatment", label: "Treatment beds", cohort: "for the chronic & severe group", color: "var(--color-river)" },
+] as const;
 
 function Slider({
   label,
@@ -217,6 +224,75 @@ export default function FlowSimulator() {
               : `still +${sim.scenarioNetMonthly}/month`}
           </p>
         </div>
+      </div>
+
+      {/* Cost of the scenario */}
+      <div className="border-t border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-5 sm:p-7">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-light)]">
+            What this scenario costs to run, per year
+          </p>
+          <p className="font-mono text-[26px] font-bold text-[var(--color-canopy)] tabular-nums leading-none">
+            {fmtMoney(sim.cost.total)}
+            <span className="text-[13px] font-normal text-[var(--color-ink-muted)]">/yr</span>
+          </p>
+        </div>
+
+        {/* Stacked bar */}
+        <div className="mt-3 flex h-8 w-full overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-white">
+          {sim.cost.total > 0 ? (
+            COST_SEGMENTS.map((seg) => {
+              const val = sim.cost[seg.key];
+              if (val <= 0) return null;
+              return (
+                <div
+                  key={seg.key}
+                  style={{ width: `${(val / sim.cost.total) * 100}%`, backgroundColor: seg.color }}
+                  title={`${seg.label}: ${fmtMoney(val)}/yr`}
+                />
+              );
+            })
+          ) : (
+            <div className="flex w-full items-center justify-center text-[11px] text-[var(--color-ink-muted)]">
+              move a lever to spend something
+            </div>
+          )}
+        </div>
+
+        {/* Legend */}
+        <div className="mt-3 grid sm:grid-cols-3 gap-x-5 gap-y-2">
+          {COST_SEGMENTS.map((seg) => (
+            <div key={seg.key} className="flex items-start gap-2">
+              <span className="mt-1 h-3 w-3 flex-shrink-0 rounded-[2px]" style={{ backgroundColor: seg.color }} />
+              <div className="min-w-0">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-[13px] font-semibold text-[var(--color-ink)]">{seg.label}</span>
+                  <span className="font-mono text-[13px] text-[var(--color-ink-light)] tabular-nums">
+                    {fmtMoney(sim.cost[seg.key])}
+                  </span>
+                </div>
+                <p className="text-[11px] text-[var(--color-ink-muted)] leading-snug">{seg.cohort}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-4 text-[12px] text-[var(--color-ink-muted)] leading-relaxed border-t border-[var(--color-parchment)] pt-3">
+          {sim.cost.total > 0 ? (
+            <>
+              For scale, the regional homeless-services tax already raises ~
+              {fmtMoney(STATS.shsCollectedFY25)}/year — this scenario is about{" "}
+              <strong className="text-[var(--color-ink-light)]">
+                {Math.round((sim.cost.total / STATS.shsCollectedFY25) * 100)}%
+              </strong>{" "}
+              of that. And it&apos;s set against the cost of <em>not</em> acting: every person kept off
+              the street runs ~$40k/year in ER, jail, and EMS (see the next section).
+            </>
+          ) : (
+            <>Doing nothing has a $0 program cost — and the list grows to {fmtNum(sim.baselineEnd)}. The
+            street those people stay on is the most expensive option of all.</>
+          )}
+        </p>
       </div>
     </div>
   );

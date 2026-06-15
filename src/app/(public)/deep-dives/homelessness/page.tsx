@@ -169,8 +169,12 @@ export default function HomelessnessDeepDive() {
           assumptions (how much of inflow is eviction- vs. discharge-driven, how many people each
           treatment bed durably houses) are deliberately visible and contestable. The net flow varies
           month to month; the ~{STATS.netMonthly}/month figure is from January 2025 (<Src id="byNameRelease" />).
-          The big lesson is structural: <strong>you can flip the trajectory by closing the inflow alone —
-          before building a single new unit.</strong>
+          The cost panel uses rough but sourced unit costs — eviction prevention ~$2,500/household
+          (<Src id="naehTriageCost" />), shelter and master-leasing from Multnomah County&apos;s own cost
+          studies (<Src id="shelterReview" />, <Src id="masterLeaseNofa" />), and staffed treatment at
+          ~$55k/bed/year (<Src id="treatmentCost" />). The big lesson is structural:{" "}
+          <strong>you can flip the trajectory by closing the inflow alone — before building a single
+          new unit.</strong>
         </p>
       </Section>
 
