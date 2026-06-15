@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Landmark, TreePine } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
+import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
 
 export const metadata: Metadata = {
   title: "Policy Deep-Dives | Portland Civic Lab",
@@ -52,7 +53,7 @@ export default function DeepDivesIndex() {
       {/* Hero */}
       <section className="relative bg-[var(--color-canopy)] text-white noise-overlay overflow-hidden">
         <div className="absolute top-0 right-0 w-[560px] h-[560px] bg-[var(--color-canopy-light)] rounded-full blur-[180px] opacity-25 -translate-y-1/3 translate-x-1/4 pointer-events-none" />
-        <div className="relative z-10 max-w-[1080px] mx-auto px-5 sm:px-8 py-16 sm:py-20">
+        <div className={`relative z-10 ${DIVE_CONTAINER} py-16 sm:py-20`}>
           <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]/90">
             <span>Portland Civic Lab</span>
             <div className="w-8 h-px bg-[var(--color-ember)]/50" />
@@ -73,7 +74,7 @@ export default function DeepDivesIndex() {
       </section>
 
       {/* Dives */}
-      <section className="max-w-[1080px] mx-auto px-5 sm:px-8 py-14 sm:py-18">
+      <section className={`${DIVE_CONTAINER} py-14 sm:py-18`}>
         <div className="grid gap-6">
           {DIVES.map((d) => (
             <Link

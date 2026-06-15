@@ -4,6 +4,21 @@ All notable changes to the Portland Civic Lab Dashboard are documented here.
 
 ---
 
+## [2026-06-15] — Responsive layout for the deep-dives
+
+The deep-dive pages were capped at `max-w-[1080px]` and looked cramped on large
+monitors. Introduced a shared layout module (`src/components/deep-dives/shared.tsx`)
+with a responsive container (1400 → 1760 at 3xl, matching the rest of the site)
+and an editorial **two-column `Section`**: a heading rail on the left and a wide
+body column for visuals/calculators on `xl+`, collapsing to a single column
+below. Prose stays capped for line-length at any width. Both deep-dive pages
+(FPDR, Mass Timber) and the `/deep-dives` index were refactored onto it, and the
+heroes gained an "at a glance" aside that uses the width on large screens.
+Verified across mobile (stacks, no overflow) and a 1920px monitor (rail 472px +
+body 1051px, calculators filling the body column).
+
+---
+
 ## [2026-06-15] — Mass Timber deep-dive
 
 Second entry in the **Policy Deep-Dives** section: an interactive explainer on
