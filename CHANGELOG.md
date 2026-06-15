@@ -37,6 +37,11 @@ Added to the `/deep-dives` index and the homepage band (now three cards).
 Verified end-to-end (desktop + mobile): all four interactives produce correct
 numbers; typecheck and lint clean.
 
+Follow-up: the "Nobody can see the beds" section now ends with a "We're building
+the fix" CTA linking to the live Portland Bed Finder prototype
+(portland-bed-finder.vercel.app) — turning the diagnosis into a pointer at the
+tool being built to solve it.
+
 ---
 
 ## [2026-06-15] — Responsive layout for the deep-dives

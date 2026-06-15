@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Wrench } from "lucide-react";
 import { SOURCES, STATS, PLAN, MYTHS } from "@/lib/homeless/data";
 import { fmtMoney, fmtNum } from "@/lib/homeless/engine";
 import { DIVE_CONTAINER, Section } from "@/components/deep-dives/shared";
@@ -247,6 +247,38 @@ export default function HomelessnessDeepDive() {
         }
       >
         <BedReality />
+
+        {/* We're building the fix */}
+        <a
+          href="https://portland-bed-finder.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group mt-5 block rounded-sm bg-[var(--color-canopy)] text-white p-6 sm:p-7 transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(15,36,25,0.18)]"
+        >
+          <div className="grid sm:grid-cols-[auto_1fr_auto] items-center gap-x-5 gap-y-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-white/10 text-[var(--color-ember-bright)]">
+              <Wrench className="h-5 w-5" />
+            </div>
+            <div>
+              <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember-bright)]">
+                We&apos;re building the fix
+              </div>
+              <h3 className="mt-1 font-editorial-normal text-[22px] sm:text-[24px] leading-tight">
+                Portland Bed Finder — a working prototype
+              </h3>
+              <p className="mt-2 text-[14px] text-white/70 leading-relaxed max-w-2xl">
+                We didn&apos;t just write this down. Bed Finder is a live tool that answers
+                &ldquo;where can someone go right now?&rdquo; — matching a specific person to the beds
+                they&apos;re actually eligible for, with facilities self-reporting real openings. It&apos;s
+                the coordination layer Oregon doesn&apos;t have, built to prove it can exist.
+              </p>
+            </div>
+            <span className="inline-flex items-center gap-2 text-[12px] font-mono uppercase tracking-[0.14em] text-[var(--color-ember-bright)] whitespace-nowrap">
+              Try the prototype
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
+          </div>
+        </a>
       </Section>
 
       {/* ── What works ── */}
