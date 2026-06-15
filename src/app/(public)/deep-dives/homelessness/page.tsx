@@ -153,12 +153,13 @@ export default function HomelessnessDeepDive() {
         title="It's a flow problem, not a stock problem"
         lead={
           <>
-            Picture a bathtub. Homelessness is the water level; what matters is the{" "}
-            <strong>faucet</strong> (people falling in) versus the <strong>drain</strong> (people
-            getting out). In Multnomah County about <strong>{fmtNum(STATS.monthlyInflow)} people</strong>{" "}
+            Homelessness behaves a lot like unemployment: the number isn&apos;t fixed — it rises and
+            falls with two flows beneath it. Every month some people lose their housing and others
+            find their way back into it, and the total only grows when more are falling out than
+            climbing back in. In Multnomah County about <strong>{fmtNum(STATS.monthlyInflow)} people</strong>{" "}
             are added to the by-name list each month, and only about{" "}
-            <strong>{fmtNum(STATS.monthlyOutflow)}</strong> exit (<Src id="byNameRelease" />). That gap
-            is why it grows. Try closing it:
+            <strong>{fmtNum(STATS.monthlyOutflow)}</strong> find their way out (<Src id="byNameRelease" />).
+            That gap — not the total — is why it grows. Try closing it:
           </>
         }
       >
