@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { ArrowRight, Landmark, TreePine, Users } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
 
-export const metadata: Metadata = {
-  title: "Policy Deep-Dives | Portland Civic Lab",
+export const metadata: Metadata = pageMeta({
+  title: "Policy Deep-Dives",
   description:
     "In-depth, plain-language explainers of the Portland policy issues that matter most — with the numbers, the people, and the trade-offs laid out so anyone can understand them.",
-};
+  path: "/deep-dives",
+});
 
 interface DeepDive {
   href: string;

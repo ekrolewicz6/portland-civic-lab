@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, Users } from "lucide-react";
 import { getBureauDetail, bureauIds } from "@/lib/org/bureau";
+import { pageMeta } from "@/lib/page-meta";
 import {
   SERVICE_AREA_BY_SLUG,
   FUND_MODEL_LABELS,
@@ -29,13 +30,12 @@ export async function generateMetadata({
   const { bureauId } = await params;
   const d = getBureauDetail(bureauId);
   if (!d) return { title: "Bureau not found" };
-  return {
-    title: `${d.node.name} | Portland Org Chart`,
+  return pageMeta({
+    title: `${d.node.name} — Portland Org Chart`,
     description: `Headcount, salary cost, departments, and pay for the ${d.node.name} — City of Portland (${PERSONNEL_FY}).`,
-    alternates: {
-      canonical: `https://www.portlandciviclab.org/org-chart/${bureauId}`,
-    },
-  };
+    path: `/org-chart/${bureauId}`,
+    type: "article",
+  });
 }
 
 function money(n: number): string {

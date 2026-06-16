@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMeta } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Open Data & API",
   description:
     "Portland Civic Lab's data is free to use: JSON endpoints and CSV downloads for every dashboard topic, no API key required.",
-  alternates: { canonical: "https://www.portlandciviclab.org/open-data" },
-};
+  path: "/open-data",
+});
 
 const TOPICS = [
   "climate",

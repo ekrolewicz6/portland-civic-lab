@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Code2, PenLine, Database, Users } from "lucide-react";
+import { pageMeta } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Volunteer",
   description:
     "Help build Portland Civic Lab — code, data sourcing, writing, design, and local knowledge all move the project forward.",
-  alternates: { canonical: "https://www.portlandciviclab.org/volunteer" },
-};
+  path: "/volunteer",
+});
 
 const roles = [
   {

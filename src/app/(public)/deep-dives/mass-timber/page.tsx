@@ -10,12 +10,15 @@ import UtilizationCalculator from "@/components/deep-dives/mass-timber/Utilizati
 import HousingScaleCalculator from "@/components/deep-dives/mass-timber/HousingScaleCalculator";
 import OregonAssets from "@/components/deep-dives/mass-timber/OregonAssets";
 import Graveyard from "@/components/deep-dives/mass-timber/Graveyard";
+import { pageMeta } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
-  title: "Mass Timber & Housing: Oregon's Big Bet — Explained | Portland Civic Lab",
+export const metadata: Metadata = pageMeta({
+  title: "Mass Timber: Oregon's Big Housing Bet",
   description:
     "Can building homes out of wood in factories help fix Oregon's housing shortage? A plain-language, interactive deep-dive into mass timber: what it is, what it's good for, how much housing it can provide and at what cost, the success stories, and the failure modes — credibly sourced.",
-};
+  path: "/deep-dives/mass-timber",
+  type: "article",
+});
 
 const NAV = [
   { id: "what", label: "What it is" },

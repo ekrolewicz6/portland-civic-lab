@@ -107,6 +107,25 @@ test("org API returns the full structure", async ({ request }) => {
   expect(data.stats.totalFte).toBeGreaterThan(7000);
 });
 
+test("unique pages have their own OG metadata + image (no root leak)", async ({
+  page,
+}) => {
+  await page.goto("/deep-dives/fpdr");
+  await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
+    "content",
+    /FPDR/,
+  );
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+    "content",
+    /deep-dives\/fpdr\/opengraph-image/,
+  );
+  await page.goto("/org-chart/ppb");
+  await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
+    "content",
+    /Portland Police Bureau/,
+  );
+});
+
 test("org personnel API exposes classification detail", async ({ request }) => {
   const response = await request.get("/api/org?view=personnel");
   expect(response.status()).toBe(200);

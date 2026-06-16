@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import ProposalsBoard from "@/components/proposals/ProposalsBoard";
+import { pageMeta } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Topic Proposals",
   description:
     "Members decide what Portland Civic Lab tracks next. Propose a dashboard topic and vote on what matters most.",
-  alternates: { canonical: "https://www.portlandciviclab.org/proposals" },
-};
+  path: "/proposals",
+});
 
 export default function ProposalsPage() {
   return (

@@ -8,12 +8,15 @@ import FlowSimulator from "@/components/deep-dives/homeless/FlowSimulator";
 import CostOfInactionCalculator from "@/components/deep-dives/homeless/CostOfInactionCalculator";
 import TriageTool from "@/components/deep-dives/homeless/TriageTool";
 import BedReality from "@/components/deep-dives/homeless/BedReality";
+import { pageMeta } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
-  title: "Why Portland Can't End Homelessness — The Math, Explained | Portland Civic Lab",
+export const metadata: Metadata = pageMeta({
+  title: "Why Portland Can't End Homelessness — The Math",
   description:
     "Portland spends more than ever and homelessness keeps growing. A plain-language, interactive deep-dive into why: the inflow/outflow math, who's actually homeless, the true cost of doing nothing, why nobody can see the beds, and what would actually work — credibly sourced.",
-};
+  path: "/deep-dives/homelessness",
+  type: "article",
+});
 
 const NAV = [
   { id: "flow", label: "The math" },

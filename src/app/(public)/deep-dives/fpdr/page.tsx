@@ -10,12 +10,15 @@ import LevyGrowthChart from "@/components/deep-dives/fpdr/LevyGrowthChart";
 import SpendingChart from "@/components/deep-dives/fpdr/SpendingChart";
 import WhoBenefits from "@/components/deep-dives/fpdr/WhoBenefits";
 import ReformMenu from "@/components/deep-dives/fpdr/ReformMenu";
+import { pageMeta } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
-  title: "The Pension on Your Property Tax Bill — FPDR Explained | Portland Civic Lab",
+export const metadata: Metadata = pageMeta({
+  title: "The Pension on Your Property Tax Bill — FPDR, Explained",
   description:
     "Portland owes $3.9 billion in police and fire pensions and has saved almost none of it. A plain-language, interactive deep-dive into FPDR: what it costs you, who gets it, and how it could be fixed.",
-};
+  path: "/deep-dives/fpdr",
+  type: "article",
+});
 
 const NAV = [
   { id: "what", label: "What it is" },

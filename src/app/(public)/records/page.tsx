@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { FileSearch, Send, Scale, CircleDollarSign } from "lucide-react";
 import sql from "@/lib/db-query";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Public Records",
   description:
     "How to file an Oregon public records request, and a public tracker of the requests Portland Civic Lab has filed to fill gaps in the city's data.",
-  alternates: { canonical: "https://www.portlandciviclab.org/records" },
-};
+  path: "/records",
+});
 
 export const dynamic = "force-dynamic";
 

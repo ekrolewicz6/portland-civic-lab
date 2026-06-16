@@ -3,15 +3,14 @@ import Link from "next/link";
 import OrgChartExplorer from "@/components/org/OrgChartExplorer";
 import BureauComparison from "@/components/org/BureauComparison";
 import { ORG_AS_OF } from "@/data/org-structure";
+import { pageMeta } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Portland City Org Chart",
   description:
-    "An interactive, sourced org chart of City of Portland government under the new charter — the Mayor, 12-member Council, Auditor, City Administrator, and every bureau across the four service areas.",
-  alternates: {
-    canonical: "https://www.portlandciviclab.org/org-chart",
-  },
-};
+    "An interactive, sourced org chart of City of Portland government under the new charter — the Mayor, 12-member Council, Auditor, City Administrator, and every bureau across the four service areas, with headcount, salary cost, and budgets.",
+  path: "/org-chart",
+});
 
 export default function OrgChartPage() {
   return (
