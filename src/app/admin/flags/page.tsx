@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import sql from "@/lib/db-query";
 import { getMemberByWorkOSId } from "@/lib/membership";
+import { toHeaderMember } from "@/lib/member-nav";
 
 export const metadata: Metadata = {
   title: "Data flag review | Portland Civic Lab",
@@ -29,7 +30,7 @@ async function requireAdmin() {
   const { user } = await withAuth({ ensureSignedIn: true });
   const member = await getMemberByWorkOSId(user.id);
   if (member?.role !== "admin") redirect("/member");
-  return member;
+  return { user, member };
 }
 
 async function updateFlag(formData: FormData) {
@@ -59,7 +60,7 @@ const STATUS_STYLES: Record<string, string> = {
 };
 
 export default async function AdminFlagsPage() {
-  await requireAdmin();
+  const { user, member } = await requireAdmin();
 
   const flags = (await sql`
     SELECT id, question, metric, message, reporter_email, status, resolution_note, created_at
@@ -70,7 +71,7 @@ export default async function AdminFlagsPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[var(--color-paper)]">
-      <Header />
+      <Header member={toHeaderMember(user, member)} />
       <main className="flex-1 max-w-[1000px] mx-auto w-full px-5 sm:px-8 py-12">
         <div className="flex items-center gap-3 mb-5">
           <div className="w-8 h-px bg-[var(--color-ember)]" />

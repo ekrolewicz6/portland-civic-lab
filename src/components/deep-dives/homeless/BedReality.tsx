@@ -6,9 +6,10 @@ export default function BedReality() {
     <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-6 sm:p-8">
       <p className="text-[14px] text-[var(--color-ink-light)] leading-relaxed mb-6 max-w-2xl">
         To send someone to a treatment or shelter bed tonight, you need to know it&apos;s open tonight.
-        But Oregon only tracks the top two rungs of this ladder. The three that actually matter for a
-        worker in the field — is it <em>staffed</em>, is it <em>occupied</em>, is it <em>open right
-        now</em> — go <strong>unreported.</strong>
+        But the public data mostly tracks reports, dashboards, licensed capacity, or program lists.
+        The three rungs that matter to a worker in the field — is it <em>staffed</em>, is it{" "}
+        <em>occupied</em>, is it <em>open right now</em> for this person — still go{" "}
+        <strong>unreported.</strong>
       </p>
 
       <div className="space-y-2">
@@ -45,10 +46,11 @@ export default function BedReality() {
       </div>
 
       <p className="text-[13px] text-[var(--color-ink-muted)] leading-relaxed mt-6">
-        So a worker in the willingness moment makes phone calls on stale information and loses the
-        person — <strong>even when a suitable bed sits empty.</strong> Beds and waitlists coexist
-        because the matching is broken, not because the beds don&apos;t exist. The cheapest new bed is
-        the empty one you already own but can&apos;t see.
+        City shelter dashboards are useful for participation, utilization, and outcomes, but they
+        are not the same as a universal live placement feed. So a worker in the willingness moment
+        still makes phone calls on stale information and can lose the person — <strong>even when a
+        suitable bed sits empty.</strong> The cheapest new bed is the empty one you already own but
+        can&apos;t see.
       </p>
     </div>
   );

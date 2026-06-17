@@ -4,6 +4,7 @@ import { withAuth, signOut } from "@workos-inc/authkit-nextjs";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { getMemberByWorkOSId } from "@/lib/membership";
+import { toHeaderMember } from "@/lib/member-nav";
 
 export const metadata: Metadata = {
   title: "Member area | Portland Civic Lab",
@@ -26,7 +27,7 @@ export default async function MemberPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[var(--color-paper)]">
-      <Header />
+      <Header member={toHeaderMember(user, member)} />
 
       <main className="flex-1 max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 py-12 sm:py-16">
         <div className="flex items-center gap-3 mb-5">

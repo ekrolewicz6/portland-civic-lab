@@ -8,21 +8,27 @@ import FlowSimulator from "@/components/deep-dives/homeless/FlowSimulator";
 import CostOfInactionCalculator from "@/components/deep-dives/homeless/CostOfInactionCalculator";
 import TriageTool from "@/components/deep-dives/homeless/TriageTool";
 import BedReality from "@/components/deep-dives/homeless/BedReality";
+import StreetTriageFlow from "@/components/deep-dives/homeless/StreetTriageFlow";
+import DeflectionReality from "@/components/deep-dives/homeless/DeflectionReality";
+import ShelterContinuum from "@/components/deep-dives/homeless/ShelterContinuum";
 import { pageMeta } from "@/lib/page-meta";
 
 export const metadata: Metadata = pageMeta({
-  title: "Why Portland Can't End Homelessness — The Math",
+  title: "Why Portland Can't End Homelessness — Field Triage and the Math",
   description:
-    "Portland spends more than ever and homelessness keeps growing. A plain-language, interactive deep-dive into why: the inflow/outflow math, who's actually homeless, the true cost of doing nothing, why nobody can see the beds, and what would actually work — credibly sourced.",
+    "Portland spends more than ever and homelessness keeps growing. A sourced deep-dive into the inflow/outflow math, field triage, deflection outcomes, bed visibility, the missing continuum, and what would actually work.",
   path: "/deep-dives/homelessness",
   type: "article",
 });
 
 const NAV = [
   { id: "flow", label: "The math" },
+  { id: "triage", label: "Field triage" },
   { id: "who", label: "Who" },
   { id: "cost", label: "Cost of nothing" },
+  { id: "deflection", label: "Deflection" },
   { id: "beds", label: "The beds" },
+  { id: "continuum", label: "Continuum" },
   { id: "works", label: "What works" },
   { id: "myths", label: "Myths" },
   { id: "sources", label: "Sources" },
@@ -62,15 +68,15 @@ export default function HomelessnessDeepDive() {
               <h1 className="mt-6 font-editorial-normal text-[38px] sm:text-[54px] lg:text-[64px] 3xl:text-[76px] leading-[1.05] tracking-tight max-w-4xl 3xl:max-w-5xl">
                 Why Portland can&apos;t seem to end homelessness
                 <span className="block font-editorial italic text-[var(--color-ember-bright)]">
-                  — and the math that explains it
+                  — and the street-level system gap behind it
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-[17px] sm:text-[20px] text-white/75 leading-relaxed">
                 Portland spends more on homelessness than ever, and it keeps growing. The reason
-                isn&apos;t a mystery or a lack of compassion — it&apos;s arithmetic the system can&apos;t
-                see. More people fall into homelessness each month than climb out, the &ldquo;beds&rdquo;
-                we count don&apos;t exist the way we think, and the true cost of doing nothing is hidden
-                across a dozen budgets. Here&apos;s the honest version.
+                isn&apos;t a mystery or a lack of compassion — it&apos;s a system that can&apos;t see or move
+                fast enough. More people fall in each month than climb out, a field worker with a
+                willing person cannot see the right bed now, and too many exits from jail, hospital,
+                shelter, or treatment lead back to the street.
               </p>
               <div className="mt-9 flex flex-col sm:flex-row gap-3">
                 <a
@@ -97,8 +103,8 @@ export default function HomelessnessDeepDive() {
                 <dl className="mt-4 space-y-4">
                   {[
                     { t: "It's a flow problem", d: "Homelessness grows because more people enter each month than exit — not mainly because we build too little." },
-                    { t: "The system is blind", d: "Nobody tracks which beds are actually staffed and open tonight, so people are lost even when beds sit empty." },
-                    { t: "The fixes are invisible", d: "The highest-leverage moves — closing the inflow, staffing beds, counting the true cost — aren't the ones we fight about." },
+                    { t: "The yes-now window is tiny", d: "When someone agrees to move, the system needs an answer in minutes, not a future appointment." },
+                    { t: "The continuum is missing", d: "Jail, hospital, shelter, treatment, recovery, and housing are not connected into a real off-ramp." },
                   ].map((r) => (
                     <div key={r.t}>
                       <dt className="text-[13px] font-semibold text-white">{r.t}</dt>
@@ -181,6 +187,26 @@ export default function HomelessnessDeepDive() {
         </p>
       </Section>
 
+      {/* ── Field triage ── */}
+      <Section
+        id="triage"
+        tone="warm"
+        eyebrow="How street triage works"
+        title="The field worker has three doors — and the third one is mostly phone calls"
+        lead={
+          <>
+            At first contact, the decision tree is practical: is there a crime, is there a mental-health
+            hold, or is this a voluntary referral? The third branch is where Portland loses the moment.
+            A person may say yes to shelter or treatment now, but the public system often still means
+            calling lists and hoping the information is current. Official outreach actors include PSR,
+            Portland Solutions, Fire CHAT, and others (<Src id="psr" />, <Src id="portlandSolutionsHome" />,{" "}
+            <Src id="chat" />).
+          </>
+        }
+      >
+        <StreetTriageFlow />
+      </Section>
+
       {/* ── Who ── */}
       <Section
         id="who"
@@ -238,6 +264,31 @@ export default function HomelessnessDeepDive() {
         <CostOfInactionCalculator />
       </Section>
 
+      {/* ── Deflection ── */}
+      <Section
+        id="deflection"
+        tone="warm"
+        eyebrow="Deflection vs. treatment"
+        title="A referral is not a treatment bed"
+        lead={
+          <>
+            Multnomah County&apos;s deflection program sends eligible drug-possession cases to the
+            Coordinated Care Pathway Center at 980 SE Pine (<Src id="deflectionProgram" />). That may be
+            better than a citation-only response, but the outcome definitions matter. The FY26 Q3
+            snapshot reported <strong>{STATS.deflectionQ3LawEnforcementReferrals}</strong> law-enforcement
+            referrals and <strong>{STATS.deflectionQ3Successful90DayCompletions}</strong> successful
+            90-day completions among those who reached the window (<Src id="deflectionQ3" />).
+          </>
+        }
+      >
+        <DeflectionReality />
+        <p className="mt-4 max-w-2xl text-[12px] leading-relaxed text-[var(--color-ink-muted)]">
+          The FY25 annual report used a broader completion definition that could include accessing at
+          least one recommended service (<Src id="deflectionAnnual" />). The January 2026 definition
+          changed, so the Q3 numbers need their own explanation.
+        </p>
+      </Section>
+
       {/* ── The beds ── */}
       <Section
         id="beds"
@@ -287,6 +338,24 @@ export default function HomelessnessDeepDive() {
             </span>
           </div>
         </a>
+      </Section>
+
+      {/* ── Continuum ── */}
+      <Section
+        id="continuum"
+        eyebrow="The missing continuum"
+        title="It can't be jail or street, hospital or street, shelter or apartment"
+        lead={
+          <>
+            Portland needs a fuller ladder. Overnight shelter, 24-hour shelter, villages, treatment,
+            jail-discharge shelters, hospital step-down shelters, structured recovery cohorts, and
+            supportive housing all do different jobs. City shelter dashboards track participation,
+            utilization, and outcomes (<Src id="shelterDashboards" />), but the policy question is
+            whether the models connect into a real path out.
+          </>
+        }
+      >
+        <ShelterContinuum />
       </Section>
 
       {/* ── What works ── */}

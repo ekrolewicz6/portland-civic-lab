@@ -31,6 +31,16 @@ export const SOURCES: Record<string, Source> = {
   evictions: { id: "evictions", title: "Evicted in Oregon — eviction filing data", org: "Portland State University (from OJD records)", url: "https://www.evictedinoregon.com/", kind: "research" },
   domicile: { id: "domicile", title: "Domicile Unknown — deaths of people experiencing homelessness", org: "Multnomah County Health Department / Street Roots", url: "https://multco.us/info/domicile-unknown", kind: "primary" },
   portlandSolutions: { id: "portlandSolutions", title: "Homelessness Assistance Guide", org: "City of Portland (Portland Solutions)", url: "https://www.portland.gov/portland-solutions/homelessness-assistance-guide", kind: "primary" },
+  portlandSolutionsHome: { id: "portlandSolutionsHome", title: "Portland Solutions", org: "City of Portland", url: "https://portland.gov/portland-solutions", kind: "primary" },
+  psr: { id: "psr", title: "Portland Street Response", org: "City of Portland", url: "https://portland.gov/streetresponse", kind: "primary" },
+  chat: { id: "chat", title: "Community Health Assess & Treat (CHAT)", org: "Portland Fire & Rescue", url: "https://portland.gov/fire/community-health/chat", kind: "primary" },
+  nwcc: { id: "nwcc", title: "Northwest Community Conservancy", org: "NWCC", url: "https://nwccpdx.org", kind: "primary" },
+  impactRecovery: { id: "impactRecovery", title: "Recovery Navigation Program", org: "ImpactNW", url: "https://impactnw.org/programs/housing-and-safety-net/recovery-navigation-program", kind: "primary" },
+  shelterDashboards: { id: "shelterDashboards", title: "Shelter Services Data Dashboards", org: "City of Portland", url: "https://portland.gov/shelter-services/shelter-services-data-dashboards", kind: "primary" },
+  bybee: { id: "bybee", title: "Bybee Lakes Hope Center", org: "City of Portland", url: "https://portland.gov/united/bybee-lakes", kind: "primary" },
+  deflectionProgram: { id: "deflectionProgram", title: "Deflection Program", org: "Multnomah County", url: "https://multco.us/info/deflection-program", kind: "primary" },
+  deflectionAnnual: { id: "deflectionAnnual", title: "Deflection Program 2024-2025 Annual Report", org: "Multnomah County", url: "https://multco.us/file/deflection_program_2024-2025_annual_report/download", kind: "primary" },
+  deflectionQ3: { id: "deflectionQ3", title: "Deflection Program FY26 Q3 Data Snapshot", org: "Multnomah County", url: "https://multco.us/file/deflection_program_fy26_q3_data_snapshot_(january_1,_2026_-_march_31,_2026)/download", kind: "primary" },
 
   // Cost of inaction
   naehCost: { id: "naehCost", title: "Ending Chronic Homelessness Saves Taxpayers Money ($35,578/yr)", org: "National Alliance to End Homelessness", url: "https://endhomelessness.org/resources/research-and-analysis/ending-chronic-homelessness-saves-taxpayers-money-2/", kind: "research" },
@@ -103,6 +113,12 @@ export const STATS = {
   overdoseDeaths2024: 214,
   fentanylDeaths2024: 183,
   avgAgeAtDeath: 48,
+  deflectionQ3LawEnforcementReferrals: 79,
+  deflectionQ3Exited90DayWindow: 21,
+  deflectionQ3Successful90DayCompletions: 9,
+  deflectionQ3SuccessfulSUDOnly: 1,
+  deflectionQ3SuccessfulSUDPlusCareCoordination: 7,
+  deflectionQ3SuccessfulCareCoordinationOnly: 1,
 } as const;
 
 // ── Triage: the three populations ─────────────────────────────────
@@ -163,33 +179,127 @@ export const BED_LAYERS = [
   { key: "available", label: "Open tonight", desc: "a worker could place someone in it now", tracked: false },
 ] as const;
 
+// -- Field triage: what a worker can actually do at first contact ----------
+
+export const FIELD_TRIAGE = [
+  {
+    step: "Crime present",
+    route: "Criminal justice route",
+    reality: "Legal authority is clear, but the back end only helps if court, jail, deflection, or treatment creates an actual service path.",
+  },
+  {
+    step: "Mental-health hold threshold",
+    route: "Civil hold / hospital route",
+    reality: "Only available when the person is a danger to self or others or cannot care for themselves. Many visible street crises fall below that threshold.",
+  },
+  {
+    step: "No crime, no hold",
+    route: "Voluntary shelter or treatment referral",
+    reality: "This is the gap Bed Finder targets: if the person says yes now, the worker needs an eligible option, phone confirmation, hold, and transport before the window closes.",
+  },
+] as const;
+
+export const OUTREACH_ACTORS = [
+  { name: "Portland Street Response", source: "psr" },
+  { name: "Portland Solutions", source: "portlandSolutionsHome" },
+  { name: "Portland Fire CHAT", source: "chat" },
+  { name: "Northwest Community Conservancy", source: "nwcc" },
+  { name: "ImpactNW Recovery Navigation", source: "impactRecovery" },
+] as const;
+
+export const DEFLECTION_REALITY = [
+  {
+    label: "Law-enforcement referrals",
+    value: STATS.deflectionQ3LawEnforcementReferrals,
+    note: "FY26 Q3, Jan. 1-Mar. 31, 2026.",
+  },
+  {
+    label: "Reached 90-day completion window",
+    value: STATS.deflectionQ3Exited90DayWindow,
+    note: "The denominator for Q3 90-day completions.",
+  },
+  {
+    label: "Successful 90-day completions",
+    value: STATS.deflectionQ3Successful90DayCompletions,
+    note: "Under the January 2026 completion definition.",
+  },
+  {
+    label: "SUD/recovery only",
+    value: STATS.deflectionQ3SuccessfulSUDOnly,
+    note: "One completion was in the SUD/recovery-only bucket.",
+  },
+  {
+    label: "SUD/recovery + care coordination",
+    value: STATS.deflectionQ3SuccessfulSUDPlusCareCoordination,
+    note: "Seven combined SUD/recovery access with sustained PATH follow-up.",
+  },
+] as const;
+
+export const SHELTER_CONTINUUM = [
+  {
+    model: "Overnight emergency shelter",
+    job: "Immediate bed for the night",
+    gap: "Daytime street exposure remains; live open-bed status is not universal.",
+  },
+  {
+    model: "24-hour congregate shelter",
+    job: "Stability, meals, daytime access, and service connection",
+    gap: "Works best when structured activity and case management are real.",
+  },
+  {
+    model: "Tiny village / alternative shelter",
+    job: "Low-barrier private sleeping space",
+    gap: "Can become a dead end without routine, treatment, work, or exit pathways.",
+  },
+  {
+    model: "Detox / residential SUD / OTP",
+    job: "Treat addiction as the binding constraint",
+    gap: "Provider lists exist, but facility-level open bed counts are not public.",
+  },
+  {
+    model: "Jail-discharge bridge",
+    job: "Reentry, court, treatment, documents, work placement",
+    gap: "Mostly a proposal locally; needs program and records-request validation.",
+  },
+  {
+    model: "Hospital step-down shelter",
+    job: "Safe discharge with medical knowledge on site",
+    gap: "Could reduce street discharge and high-cost skilled nursing overuse; cost claims need verification.",
+  },
+  {
+    model: "Housing First / supportive housing",
+    job: "Stable housing with the right service intensity",
+    gap: "Fails when used as the only answer or when isolated people return to encampment community.",
+  },
+] as const;
+
 // ── The fastest-reduction plan (sequenced by speed) ───────────────
 
 export const PLAN = [
   {
     n: 1,
-    title: "Slam the inflow shut",
-    body: "The cheapest 'reduction' is the person who never becomes homeless. Time-limited eviction prevention (one-time arrears, verified crisis, landlord paid directly) plus a ban on discharging people from jail, hospital, and foster care straight onto the street. Close the inflow/outflow gap and homelessness stops growing before you house anyone new.",
+    title: "Slam the inflow shut, precisely",
+    body: "The cheapest 'reduction' is the person who never becomes homeless. Use time-limited eviction prevention for verified financial crises, paid directly to landlords, while preserving tools to remove dangerous or predatory tenants. Then stop institutions from releasing people from jail, hospital, or foster care straight to the street.",
   },
   {
     n: 2,
-    title: "Pull in the federal money already authorized",
-    body: "Oregon's Medicaid waiver now covers tenancy supports, case management, and addiction treatment, plus up to six months of rent for eligible members (4,490 got help in the first eight months). It's found money that relieves local budgets — though the related 90-day-pre-release-from-jail benefit is authorized but currently paused.",
+    title: "Make field triage immediate",
+    body: "When someone says yes right now, a worker needs an eligible option in minutes: anonymous criteria, live or phone-confirmed availability, name check by phone, hold, transport, and outcome. That is the product gap Bed Finder is built to close.",
   },
   {
     n: 3,
-    title: "Build — and staff — beds, addiction first",
-    body: "Oregon is short roughly 3,700 residential treatment beds. But workforce is the real rate-limiter: a bed you can't staff is a press release, and the state doesn't even publicly report how many beds are actually staffed and occupied. Acquire-and-renovate beats the two-year construction clock; the cheapest bed is often the empty one you already own.",
+    title: "Build the missing continuum",
+    body: "Portland needs more than shelter vs. apartment: overnight beds, 24-hour shelters, detox, residential treatment, opioid treatment, jail-discharge shelters, hospital step-down shelters, structured recovery cohorts, and supportive housing. Each has a different job.",
   },
   {
     n: 4,
-    title: "Fix the coordination failure",
-    body: "The regional tax has raised about $1.3 billion since 2021, with a balance that peaked near $431 million sitting unspent while services were cut — a governance failure, not a funding one. The money is split across Metro, three counties, and the city; pool it against one by-name list so effort flows to the binding constraint, not the visible one.",
+    title: "Measure treatment, not vibes",
+    body: "Deflection, outreach, and shelter programs should report the real funnel: referral, engagement, service type, treatment admission, shelter arrival, housing exit, and retention. A contact is not a placement, and service access is not treatment completion.",
   },
   {
     n: 5,
-    title: "Housing First — with triage and active management",
-    body: "Scattered-site by default, with conduct standards (not sobriety requirements), acuity-matched placement, and the ability to relocate disruptive tenants. Master-lease existing units with a landlord-guarantee fund to get homes now, not in construction-years.",
+    title: "Housing First — where it fits",
+    body: "Scattered-site housing and permanent supportive housing remain essential. But housing is one tier in a continuum, not a substitute for treatment, reentry, hospital step-down care, or structured recovery community.",
   },
 ] as const;
 
@@ -206,10 +316,14 @@ export const MYTHS = [
   },
   {
     myth: "“Just force the addicts into treatment.”",
-    truth: "You can't punish a status, can't force treatment without due process, and can't mandate people into beds that don't exist. The legal, effective version is deflection ('treatment instead of charges'), drug courts, pre-release Medicaid, and narrow civil commitment — all billed to Medicaid. Jail produces sobriety without recovery and spikes overdose deaths on release.",
+    truth: "You can't punish a status, can't force treatment without due process, and can't mandate people into beds that don't exist. The legal, effective version is a real treatment pathway: drug courts, deflection that actually reaches SUD care, pre-release planning, and narrow civil commitment where legally justified.",
   },
   {
     myth: "“We spend over a billion dollars and nothing changes.”",
     truth: "Spending is real — but a balance that peaked near $431 million sat unspent across fragmented budgets while the system couldn't see itself, so effort flowed to the visible lever (units built) instead of the binding one (closing the inflow, staffing beds). The highest-leverage fix is making the machine legible.",
+  },
+  {
+    myth: "“Housing First is either the answer or the problem.”",
+    truth: "Wrong frame. Housing First is a strong tool for people whose binding constraint is housing instability or chronic disability with services. It is not a detox bed, a jail-reentry plan, a hospital step-down unit, or a recovery community.",
   },
 ] as const;

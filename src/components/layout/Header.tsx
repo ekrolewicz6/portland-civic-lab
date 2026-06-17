@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Trees, ClipboardList, MapPinned, ArrowUpRight } from "lucide-react";
 import { ASK_PORTLAND_URL, PARKS_URL, PERMITS_URL } from "@/lib/site";
+import type { HeaderMember } from "@/lib/member-nav";
 
 const PRIMARY = [
   { label: "Dashboards", href: "/dashboard" },
@@ -51,11 +52,43 @@ function NavLink({ label, href, active }: { label: string; href: string; active:
   );
 }
 
-export default function Header() {
+function MemberBadge({ member, compact = false }: { member: HeaderMember; compact?: boolean }) {
+  return (
+    <Link
+      href="/member"
+      className={`group inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] text-white transition-colors hover:border-[var(--color-ember)]/45 hover:bg-white/[0.1] ${
+        compact ? "px-1.5 py-1.5" : "px-2.5 py-1.5"
+      }`}
+      aria-label={`Member area for ${member.name}`}
+    >
+      <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-[var(--color-ember)] text-[10px] font-mono font-bold uppercase tracking-[0.08em] text-[var(--color-canopy)] ring-1 ring-white/15">
+        {member.avatarUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={member.avatarUrl} alt="" className="h-full w-full object-cover" />
+        ) : (
+          member.initials
+        )}
+      </span>
+      {!compact && (
+        <span className="hidden lg:block text-left leading-none">
+          <span className="block max-w-[120px] truncate text-[12px] font-semibold tracking-tight">
+            {member.name}
+          </span>
+          <span className="mt-0.5 block text-[9px] font-mono uppercase tracking-[0.14em] text-[var(--color-sage)]">
+            {member.role === "admin" ? "Admin" : "Member"}
+          </span>
+        </span>
+      )}
+    </Link>
+  );
+}
+
+export default function Header({ member: initialMember = null }: { member?: HeaderMember | null }) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [member, setMember] = useState<HeaderMember | null>(initialMember);
   const toolsRef = useRef<HTMLDivElement>(null);
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
@@ -66,6 +99,20 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (initialMember) return;
+    let cancelled = false;
+    fetch("/api/member/me", { cache: "no-store" })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!cancelled && data?.member) setMember(data.member);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [initialMember]);
 
   // Close menus on route change
   useEffect(() => {
@@ -163,22 +210,30 @@ export default function Header() {
             >
               Contact
             </Link>
-            <Link
-              href="/signup"
-              className="rounded-sm bg-[var(--color-ember)] px-3.5 py-1.5 text-[11px] font-mono font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)] hover:bg-[var(--color-ember-bright)] transition-colors"
-            >
-              Join
-            </Link>
+            {member ? (
+              <MemberBadge member={member} />
+            ) : (
+              <Link
+                href="/signup"
+                className="rounded-sm bg-[var(--color-ember)] px-3.5 py-1.5 text-[11px] font-mono font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)] hover:bg-[var(--color-ember-bright)] transition-colors"
+              >
+                Join
+              </Link>
+            )}
           </nav>
 
           {/* Mobile controls */}
           <div className="flex md:hidden items-center gap-3">
-            <Link
-              href="/signup"
-              className="rounded-sm bg-[var(--color-ember)] px-3 py-1.5 text-[11px] font-mono font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)]"
-            >
-              Join
-            </Link>
+            {member ? (
+              <MemberBadge member={member} compact />
+            ) : (
+              <Link
+                href="/signup"
+                className="rounded-sm bg-[var(--color-ember)] px-3 py-1.5 text-[11px] font-mono font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)]"
+              >
+                Join
+              </Link>
+            )}
             <button
               onClick={() => setMobileOpen((v) => !v)}
               className="flex h-9 w-9 items-center justify-center rounded-sm text-[var(--color-sage)] hover:text-white hover:bg-white/5 transition-colors"
@@ -207,7 +262,16 @@ export default function Header() {
             </MobileGroup>
             <MobileGroup title="Connect">
               <MobileLink href="/contact" label="Contact" active={isActive("/contact")} />
-              <MobileLink href="/signup" label="Join the lab" active={isActive("/signup")} />
+              {member ? (
+                <MobileLink
+                  href="/member"
+                  label={member.name}
+                  desc={member.role === "admin" ? "Admin member area" : "Member area"}
+                  active={isActive("/member")}
+                />
+              ) : (
+                <MobileLink href="/signup" label="Join the lab" active={isActive("/signup")} />
+              )}
             </MobileGroup>
           </div>
         </div>
