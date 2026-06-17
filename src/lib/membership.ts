@@ -50,9 +50,9 @@ function isAdminEmail(email: string): boolean {
 
 /**
  * Create or refresh the local member row after a successful WorkOS sign-in.
- * Idempotent: keyed on the WorkOS user id. Role is re-derived from
- * ADMIN_EMAILS on every sign-in, so adding the env var later promotes the
- * account at its next sign-in (and removal demotes it).
+ * Idempotent: keyed on the WorkOS user id. ADMIN_EMAILS is a bootstrap/promotion
+ * fallback; day-to-day roles are owned by the members table so admins can
+ * promote other members without that role being overwritten on sign-in.
  */
 export async function upsertMemberFromWorkOS(user: WorkOSUserLike): Promise<void> {
   const role = isAdminEmail(user.email) ? "admin" : "member";
@@ -71,7 +71,11 @@ export async function upsertMemberFromWorkOS(user: WorkOSUserLike): Promise<void
       first_name = EXCLUDED.first_name,
       last_name = EXCLUDED.last_name,
       avatar_url = EXCLUDED.avatar_url,
-      role = EXCLUDED.role,
+      role = CASE
+        WHEN members.role = 'admin' THEN members.role
+        WHEN EXCLUDED.role = 'admin' THEN 'admin'
+        ELSE members.role
+      END,
       last_seen_at = now()
   `;
 }

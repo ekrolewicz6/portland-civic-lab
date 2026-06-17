@@ -53,13 +53,16 @@ function NavLink({ label, href, active }: { label: string; href: string; active:
 }
 
 function MemberBadge({ member, compact = false }: { member: HeaderMember; compact?: boolean }) {
+  const href = member.role === "admin" ? "/admin" : "/member";
+  const area = member.role === "admin" ? "Admin portal" : "Member area";
+
   return (
     <Link
-      href="/member"
+      href={href}
       className={`group inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] text-white transition-colors hover:border-[var(--color-ember)]/45 hover:bg-white/[0.1] ${
         compact ? "px-1.5 py-1.5" : "px-2.5 py-1.5"
       }`}
-      aria-label={`Member area for ${member.name}`}
+      aria-label={`${area} for ${member.name}`}
     >
       <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-[var(--color-ember)] text-[10px] font-mono font-bold uppercase tracking-[0.08em] text-[var(--color-canopy)] ring-1 ring-white/15">
         {member.avatarUrl ? (
@@ -264,10 +267,10 @@ export default function Header({ member: initialMember = null }: { member?: Head
               <MobileLink href="/contact" label="Contact" active={isActive("/contact")} />
               {member ? (
                 <MobileLink
-                  href="/member"
+                  href={member.role === "admin" ? "/admin" : "/member"}
                   label={member.name}
-                  desc={member.role === "admin" ? "Admin member area" : "Member area"}
-                  active={isActive("/member")}
+                  desc={member.role === "admin" ? "Admin portal" : "Member area"}
+                  active={member.role === "admin" ? isActive("/admin") : isActive("/member")}
                 />
               ) : (
                 <MobileLink href="/signup" label="Join the lab" active={isActive("/signup")} />

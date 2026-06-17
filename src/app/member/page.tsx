@@ -101,6 +101,13 @@ export default async function MemberPage() {
                   Volunteer your skills →
                 </Link>
               </li>
+              {member?.role === "admin" && (
+                <li>
+                  <Link href="/admin" className="text-[var(--color-canopy)] hover:underline">
+                    Open the admin portal →
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
 
@@ -124,10 +131,10 @@ export default async function MemberPage() {
         {member?.role === "admin" && (
           <p className="mt-8 text-[14px]">
             <Link
-              href="/admin/flags"
+              href="/admin"
               className="font-semibold text-[var(--color-canopy)] hover:underline"
             >
-              Admin: review data flags →
+              Admin portal →
             </Link>
           </p>
         )}

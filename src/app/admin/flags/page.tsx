@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-import { withAuth } from "@workos-inc/authkit-nextjs";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import sql from "@/lib/db-query";
-import { getMemberByWorkOSId } from "@/lib/membership";
+import { requireAdmin } from "@/lib/admin";
 import { toHeaderMember } from "@/lib/member-nav";
 
 export const metadata: Metadata = {
@@ -24,13 +22,6 @@ interface FlagRow {
   status: string;
   resolution_note: string | null;
   created_at: string;
-}
-
-async function requireAdmin() {
-  const { user } = await withAuth({ ensureSignedIn: true });
-  const member = await getMemberByWorkOSId(user.id);
-  if (member?.role !== "admin") redirect("/member");
-  return { user, member };
 }
 
 async function updateFlag(formData: FormData) {
