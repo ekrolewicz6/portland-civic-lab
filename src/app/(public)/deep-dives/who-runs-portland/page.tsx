@@ -19,6 +19,7 @@ import {
   Waypoints,
 } from "lucide-react";
 import { DIVE_CONTAINER, Section } from "@/components/deep-dives/shared";
+import { PowerMapInteractive } from "@/components/deep-dives/power-map/PowerMapInteractive";
 import { pageMeta } from "@/lib/page-meta";
 import {
   governanceActors,
@@ -181,6 +182,52 @@ function PowerTable() {
   );
 }
 
+function HeroPowerGlyph() {
+  const nodes = [
+    { label: "City", detail: "visible streets", style: { left: "6%", top: "20%" } },
+    { label: "County", detail: "services", style: { right: "7%", top: "18%" } },
+    { label: "Metro", detail: "regional money", style: { left: "2%", bottom: "16%" } },
+    { label: "State", detail: "law + Medicaid", style: { right: "4%", bottom: "17%" } },
+    { label: "TriMet", detail: "corridors", style: { left: "36%", top: "1%" } },
+    { label: "Hospitals", detail: "discharge", style: { left: "35%", bottom: "0" } },
+  ];
+
+  return (
+    <div className="overflow-hidden rounded-sm border border-white/15 bg-white/8 p-5 backdrop-blur-sm">
+      <div className="relative h-[285px]">
+        <div className="absolute inset-8 rounded-full border border-white/10" />
+        <div className="absolute inset-16 rounded-full border border-white/10" />
+        <div className="absolute left-1/2 top-1/2 h-px w-[82%] -translate-x-1/2 bg-white/10" />
+        <div className="absolute left-1/2 top-[9%] h-[82%] w-px bg-white/10" />
+        <div className="absolute left-1/2 top-1/2 flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--color-ember)]/60 bg-[var(--color-canopy)] text-center shadow-[0_0_60px_rgba(207,138,82,0.18)]">
+          <div>
+            <p className="text-[10px] font-mono uppercase tracking-[0.18em] text-[var(--color-ember)]">
+              One problem
+            </p>
+            <p className="mt-1 text-[20px] font-semibold leading-none text-white">many owners</p>
+          </div>
+        </div>
+        {nodes.map((node) => (
+          <div
+            key={node.label}
+            className="absolute max-w-[140px] rounded-sm border border-white/15 bg-white/10 px-3 py-2"
+            style={node.style}
+          >
+            <p className="text-[14px] font-semibold text-white">{node.label}</p>
+            <p className="mt-0.5 text-[11px] leading-tight text-white/55">{node.detail}</p>
+          </div>
+        ))}
+      </div>
+      <div className="border-t border-white/10 pt-4">
+        <p className="text-[12px] leading-relaxed text-white/65">
+          Civic failure is often not the absence of power. It is power split into pieces that do
+          not share a live operating picture.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function RelationshipDiagram() {
   const steps = [
     {
@@ -289,15 +336,7 @@ export default function WhoRunsPortlandPage() {
                 systems. A lot of our politics is really coordination failure.
               </p>
             </div>
-            <div className="rounded-sm border border-white/15 bg-white/8 p-5 backdrop-blur-sm">
-              <p className="text-[12px] font-mono uppercase tracking-[0.18em] text-[var(--color-ember)]">
-                Civic Lab thesis
-              </p>
-              <p className="mt-3 text-[22px] font-semibold leading-snug">
-                People blame the layer they can see. The actual levers are spread across the
-                layers that own money, law, contracts, land, treatment, transit, and discharge.
-              </p>
-            </div>
+            <HeroPowerGlyph />
           </div>
         </div>
       </section>
@@ -305,10 +344,11 @@ export default function WhoRunsPortlandPage() {
       <nav className="sticky top-[64px] z-20 border-b border-[var(--color-parchment)] bg-[var(--color-paper)]/95 backdrop-blur">
         <div className={`${DIVE_CONTAINER} flex gap-4 overflow-x-auto py-3 text-[13px] font-semibold text-[var(--color-ink-muted)]`}>
           {[
-            ["Power map", "#power-map"],
-            ["Relationships", "#relationships"],
+            ["Try a problem", "#power-map"],
+            ["Reference map", "#reference-map"],
+            ["Handoffs", "#relationships"],
+            ["Actors", "#actors"],
             ["Street-to-Stability", "#street-to-stability"],
-            ["Wedge MVP", "#wedge"],
             ["Sources", "#sources"],
           ].map(([label, href]) => (
             <a key={href} href={href} className="shrink-0 hover:text-[var(--color-canopy)]">
@@ -320,40 +360,21 @@ export default function WhoRunsPortlandPage() {
 
       <Section
         id="power-map"
-        eyebrow="The layers"
-        title="There are several governments inside the same city."
-        lead="Each layer has its own geography, elected or appointed officials, taxes, budgets, constraints, and constituency. The first civic skill is knowing who owns which lever."
+        eyebrow="Try the map"
+        title="Start with the problem people actually feel."
+        lead="A table tells you the institutions. The useful civic move is seeing how one everyday problem crosses several owners before anything changes."
+      >
+        <PowerMapInteractive />
+      </Section>
+
+      <Section
+        id="reference-map"
+        eyebrow="Reference map"
+        title="The formal layers still matter."
+        lead="After you see the handoff, the institutional reference table becomes useful: it shows the geography, budget signal, and control surface for the main power centers."
+        tone="warm"
       >
         <PowerTable />
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
-            <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ember)]">
-              Budget is not control
-            </p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-ink-light)]">
-              Total budget includes restricted funds, internal transfers, enterprise funds, and
-              pass-through money. Flexible dollars are often much smaller than the headline number.
-            </p>
-          </div>
-          <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
-            <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ember)]">
-              Blame is not authority
-            </p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-ink-light)]">
-              Portland gets blamed for visible street disorder. The county, state, hospitals,
-              courts, and providers often control the service route that determines the outcome.
-            </p>
-          </div>
-          <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
-            <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ember)]">
-              Geography matters
-            </p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-ink-light)]">
-              Metro is tri-county. TriMet is tri-county. Schools are local. Clark County and
-              Vancouver are adjacent but operate under Washington law.
-            </p>
-          </div>
-        </div>
       </Section>
 
       <Section
