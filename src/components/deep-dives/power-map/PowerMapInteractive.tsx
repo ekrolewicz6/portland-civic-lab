@@ -93,11 +93,11 @@ function IssuePicker({
   setActiveIssue: (issue: PowerMapIssue) => void;
 }) {
   return (
-    <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-4">
+    <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-4 lg:sticky lg:top-32 lg:self-start">
       <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
         Pick a resident question
       </p>
-      <div className="mt-4 grid gap-2">
+      <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
         {powerMapIssues.map((issue) => {
           const active = issue.id === activeIssue.id;
           return (
@@ -132,12 +132,14 @@ function IssueStory({
 }) {
   return (
     <div className="overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-white">
-      <div className="bg-[var(--color-canopy)] p-5 text-white">
+      <div className="bg-[var(--color-canopy)] p-5 text-white sm:p-6 xl:p-7">
         <p className="text-[11px] font-mono uppercase tracking-[0.18em] text-[var(--color-ember)]">
           What a resident experiences
         </p>
-        <h3 className="mt-3 text-[26px] font-semibold leading-tight">{issue.residentQuestion}</h3>
-        <div className="mt-5 grid gap-3 2xl:grid-cols-3">
+        <h3 className="mt-3 max-w-4xl text-[26px] font-semibold leading-tight sm:text-[30px]">
+          {issue.residentQuestion}
+        </h3>
+        <div className="mt-5 grid gap-3 md:grid-cols-3">
           <div className="border-t border-white/20 pt-3">
             <p className="text-[11px] uppercase tracking-[0.12em] text-white/45">Visible layer</p>
             <p className="mt-1 text-[14px] font-semibold">{issue.visibleLayer}</p>
@@ -153,7 +155,7 @@ function IssueStory({
         </div>
       </div>
 
-      <div className="p-5">
+      <div className="p-5 sm:p-6 xl:p-7">
         <div className="rounded-sm bg-[var(--color-paper-warm)] p-4">
           <div className="flex items-start gap-3">
             <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-ember)]" />
@@ -168,7 +170,7 @@ function IssueStory({
           <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
             Responsibility path
           </p>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2 2xl:grid-cols-4">
+          <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-3">
             {issue.actualOwners.map((owner, index) => (
               <div key={`${owner.actorId}-${owner.role}`} className="relative rounded-sm border border-[var(--color-parchment)] p-4">
                 <div className="flex items-center justify-between gap-2">
@@ -201,7 +203,7 @@ function AuthorityStack({
   const ownerRank = new Map(issue.actualOwners.map((owner, index) => [owner.actorId, index]));
 
   return (
-    <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
+    <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6 xl:p-7">
       <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
@@ -223,7 +225,7 @@ function AuthorityStack({
           const involved = rank != null;
           const controlScore = involved ? Math.max(34, 100 - rank * 13) : 12;
           return (
-            <div key={actor.id} className={`grid gap-3 rounded-sm border p-3 md:grid-cols-[220px_1fr_1fr] md:items-center ${
+            <div key={actor.id} className={`grid gap-3 rounded-sm border p-3 md:grid-cols-[minmax(200px,260px)_1fr_1fr] md:items-center ${
               involved ? "border-[var(--color-sage)] bg-[var(--color-paper-warm)]" : "border-[var(--color-parchment)]"
             }`}>
               <div className="flex items-center gap-3">
@@ -276,7 +278,7 @@ function RelationshipMap({
   actorsById: Map<string, GovernanceActor>;
 }) {
   return (
-    <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
+    <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6 xl:p-7">
       <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
@@ -292,7 +294,7 @@ function RelationshipMap({
         </p>
       </div>
 
-      <div className="mt-6 grid gap-3 sm:grid-cols-2 2xl:grid-cols-5">
+      <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-3">
         {issue.sequence.map((step, index) => (
           <div key={`${step.actorId}-${step.label}`} className="relative">
             <div className={`h-full rounded-sm border p-4 ${
@@ -333,7 +335,7 @@ export function PowerMapInteractive() {
 
   return (
     <div className="space-y-6">
-      <div className="grid gap-5 xl:grid-cols-[340px_1fr]">
+      <div className="grid gap-5 lg:grid-cols-[minmax(260px,360px)_minmax(0,1fr)] 2xl:grid-cols-[minmax(300px,420px)_minmax(0,1fr)]">
         <IssuePicker
           activeIssue={activeIssue}
           setActiveIssue={(issue) => setActiveId(issue.id)}

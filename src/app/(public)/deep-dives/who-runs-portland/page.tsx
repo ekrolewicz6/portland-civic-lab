@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { ComponentType } from "react";
+import type { ComponentType, ReactNode } from "react";
 import {
   Building2,
   CheckCircle2,
@@ -14,7 +14,7 @@ import {
   ShieldCheck,
   Train,
 } from "lucide-react";
-import { DIVE_CONTAINER, Section } from "@/components/deep-dives/shared";
+import { DIVE_CONTAINER, Eyebrow, H2, Lead } from "@/components/deep-dives/shared";
 import { PowerMapInteractive } from "@/components/deep-dives/power-map/PowerMapInteractive";
 import { pageMeta } from "@/lib/page-meta";
 import {
@@ -68,6 +68,44 @@ const responsibilityRules = [
     body: "The agency that gets blamed may not be the contractor, provider, bureau, or district that actually performs the service.",
   },
 ];
+
+type Tone = "default" | "warm";
+
+const wideSectionTone: Record<Tone, string> = {
+  default: "",
+  warm: "border-y border-[var(--color-parchment)] bg-[var(--color-paper-warm)]",
+};
+
+const WIDE_CONTAINER = "mx-auto w-full max-w-[1760px] px-5 sm:px-8 lg:px-10 2xl:px-12";
+
+function WideSection({
+  id,
+  eyebrow,
+  title,
+  lead,
+  children,
+  tone = "default",
+}: {
+  id?: string;
+  eyebrow: ReactNode;
+  title: ReactNode;
+  lead?: ReactNode;
+  children: ReactNode;
+  tone?: Tone;
+}) {
+  return (
+    <section id={id} className={`py-14 sm:py-16 xl:py-20 ${wideSectionTone[tone]}`}>
+      <div className={WIDE_CONTAINER}>
+        <div className="mb-8 max-w-4xl sm:mb-10">
+          <Eyebrow>{eyebrow}</Eyebrow>
+          <H2>{title}</H2>
+          {lead ? <Lead className="max-w-3xl">{lead}</Lead> : null}
+        </div>
+        {children}
+      </div>
+    </section>
+  );
+}
 
 function SourceLinks({ links }: { links: SourceLink[] }) {
   if (!links.length) {
@@ -305,16 +343,16 @@ export default function WhoRunsPortlandPage() {
         </div>
       </nav>
 
-      <Section
+      <WideSection
         id="power-map"
         eyebrow="Responsibility test"
         title="Start with a resident question."
         lead="The useful civic move is not asking who sounds responsible. It is asking which layer owns the geography, legal authority, money, and operation needed to solve the problem."
       >
         <PowerMapInteractive />
-      </Section>
+      </WideSection>
 
-      <Section
+      <WideSection
         id="reference-map"
         eyebrow="Reference map"
         title="The formal layers."
@@ -322,9 +360,9 @@ export default function WhoRunsPortlandPage() {
         tone="warm"
       >
         <PowerTable />
-      </Section>
+      </WideSection>
 
-      <Section
+      <WideSection
         id="relationships"
         eyebrow="How responsibility splits"
         title="Most civic problems cross at least two layers."
@@ -332,22 +370,22 @@ export default function WhoRunsPortlandPage() {
         tone="warm"
       >
         <RelationshipRules />
-      </Section>
+      </WideSection>
 
-      <Section
+      <WideSection
         id="actors"
         eyebrow="Actors"
         title="The main power centers."
         lead="This is a map of offices, agencies, and institutions first. Individual officeholders matter, but the durable civic lesson is what the institution can actually do."
       >
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2 2xl:grid-cols-3">
           {governanceActors.map((actor) => (
             <ActorCard key={actor.id} actor={actor} />
           ))}
         </div>
-      </Section>
+      </WideSection>
 
-      <Section
+      <WideSection
         id="sources"
         eyebrow="Sources"
         title="Budget and responsibility claims are sourced."
@@ -366,7 +404,7 @@ export default function WhoRunsPortlandPage() {
             </div>
           ))}
         </div>
-      </Section>
+      </WideSection>
     </div>
   );
 }
