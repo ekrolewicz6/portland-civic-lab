@@ -95,7 +95,7 @@ function IssuePicker({
   return (
     <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-4">
       <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
-        Pick a problem
+        Pick a resident question
       </p>
       <div className="mt-4 grid gap-2">
         {powerMapIssues.map((issue) => {
@@ -137,7 +137,7 @@ function IssueStory({
           What a resident experiences
         </p>
         <h3 className="mt-3 text-[26px] font-semibold leading-tight">{issue.residentQuestion}</h3>
-        <div className="mt-5 grid gap-3 md:grid-cols-3">
+        <div className="mt-5 grid gap-3 2xl:grid-cols-3">
           <div className="border-t border-white/20 pt-3">
             <p className="text-[11px] uppercase tracking-[0.12em] text-white/45">Visible layer</p>
             <p className="mt-1 text-[14px] font-semibold">{issue.visibleLayer}</p>
@@ -147,7 +147,7 @@ function IssueStory({
             <p className="mt-1 text-[14px] font-semibold">{issue.usuallyBlamed}</p>
           </div>
           <div className="border-t border-white/20 pt-3">
-            <p className="text-[11px] uppercase tracking-[0.12em] text-white/45">Better question</p>
+            <p className="text-[11px] uppercase tracking-[0.12em] text-white/45">Responsibility question</p>
             <p className="mt-1 text-[14px] font-semibold">{issue.betterQuestion}</p>
           </div>
         </div>
@@ -158,7 +158,7 @@ function IssueStory({
           <div className="flex items-start gap-3">
             <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-ember)]" />
             <p className="text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-              <span className="font-semibold text-[var(--color-ink)]">Where the handoff breaks: </span>
+              <span className="font-semibold text-[var(--color-ink)]">Why it gets confusing: </span>
               {issue.handoffFailure}
             </p>
           </div>
@@ -166,9 +166,9 @@ function IssueStory({
 
         <div className="mt-5">
           <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
-            Actual ownership path
+            Responsibility path
           </p>
-          <div className="mt-4 grid gap-3 lg:grid-cols-5">
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 2xl:grid-cols-4">
             {issue.actualOwners.map((owner, index) => (
               <div key={`${owner.actorId}-${owner.role}`} className="relative rounded-sm border border-[var(--color-parchment)] p-4">
                 <div className="flex items-center justify-between gap-2">
@@ -208,11 +208,11 @@ function AuthorityStack({
             Authority stack
           </p>
           <h3 className="mt-2 text-[24px] font-semibold leading-tight text-[var(--color-ink)]">
-            The visible layer is not always the controlling layer.
+            The visible layer is not always the deciding layer.
           </h3>
         </div>
         <p className="max-w-md text-[13px] leading-relaxed text-[var(--color-ink-muted)]">
-          Left bar: how visible this layer is to residents. Right bar: how much this selected problem
+          Left bar: how visible this layer is to residents. Right bar: how much this selected question
           depends on that layer.
         </p>
       </div>
@@ -250,7 +250,7 @@ function AuthorityStack({
               </div>
               <div>
                 <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
-                  <span>Selected problem</span>
+                  <span>Selected question</span>
                   <span>{involved ? "owns a lever" : "secondary"}</span>
                 </div>
                 <div className="mt-1 h-2 overflow-hidden rounded-full bg-[var(--color-parchment)]">
@@ -268,7 +268,7 @@ function AuthorityStack({
   );
 }
 
-function HandoffMap({
+function RelationshipMap({
   issue,
   actorsById,
 }: {
@@ -280,19 +280,19 @@ function HandoffMap({
       <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
-            Handoff map
+            Relationship map
           </p>
           <h3 className="mt-2 text-[24px] font-semibold leading-tight text-[var(--color-ink)]">
-            The failure usually happens between owners.
+            Responsibility splits as work moves.
           </h3>
         </div>
         <p className="max-w-md text-[13px] leading-relaxed text-[var(--color-ink-muted)]">
-          The product opportunity is a shared workflow that tracks the person, placement, owner,
-          blocker, and outcome through these handoffs.
+          A resident sees one issue. The work often passes through several agencies, each with
+          different authority, money, rules, and operating duties.
         </p>
       </div>
 
-      <div className="mt-6 grid gap-3 lg:grid-cols-5">
+      <div className="mt-6 grid gap-3 sm:grid-cols-2 2xl:grid-cols-5">
         {issue.sequence.map((step, index) => (
           <div key={`${step.actorId}-${step.label}`} className="relative">
             <div className={`h-full rounded-sm border p-4 ${
@@ -341,7 +341,7 @@ export function PowerMapInteractive() {
         <IssueStory issue={activeIssue} actorsById={actorsById} />
       </div>
       <AuthorityStack issue={activeIssue} actorsById={actorsById} />
-      <HandoffMap issue={activeIssue} actorsById={actorsById} />
+      <RelationshipMap issue={activeIssue} actorsById={actorsById} />
       <div className="grid gap-4 md:grid-cols-3">
         <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
           <CircleDollarSign className="h-5 w-5 text-[var(--color-ember)]" />
@@ -366,11 +366,11 @@ export function PowerMapInteractive() {
         <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
           <Network className="h-5 w-5 text-[var(--color-ember)]" />
           <p className="mt-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--color-ink)]">
-            Coordination is a product problem
+            Coordination is an accountability problem
           </p>
           <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-            If no one can see the owner, status, next action, and blocker, the public experiences
-            one problem while institutions experience many separate queues.
+            If no one can see the owner, status, next action, and constraint, the public experiences
+            one issue while institutions experience many separate queues.
           </p>
         </div>
       </div>

@@ -13,17 +13,7 @@ export type GovernanceActor = {
   electedOrAppointed: string;
   moneySources: string[];
   constraints: string[];
-  homelessnessHousingLevers: string[];
   sourceLinks: SourceLink[];
-};
-
-export type StreetToStabilityCohort = {
-  cohort: string;
-  firstPlacement: string;
-  responsibleGovernments: string[];
-  capacityNeeds: string[];
-  deadline: string;
-  metrics: string[];
 };
 
 export type PowerMapIssue = {
@@ -71,13 +61,6 @@ export const governanceActors: GovernanceActor[] = [
       "Federal Medicaid rules",
       "Statutory limits and court standards",
     ],
-    homelessnessHousingLevers: [
-      "Treatment-bed capital and licensing",
-      "Medicaid/OHP payment policy",
-      "Civil commitment and specialty-court law",
-      "Statewide housing and land-use laws",
-      "Transportation capital",
-    ],
     sourceLinks: [
       {
         label: "Oregon LFO 2025-27 Adopted Budget Brief",
@@ -95,7 +78,7 @@ export const governanceActors: GovernanceActor[] = [
     controls: [
       "Health and public health",
       "Behavioral health",
-      "Homeless services contracts",
+      "Human services and homelessness services contracts",
       "County jail and corrections",
       "Elections",
       "Property assessment and tax collection",
@@ -113,13 +96,6 @@ export const governanceActors: GovernanceActor[] = [
       "Service contracts are spread across many providers",
       "Behavioral-health capacity depends on state and provider systems",
       "Jail, courts, hospitals, and housing each have separate rules",
-    ],
-    homelessnessHousingLevers: [
-      "Outreach and shelter contracts",
-      "Behavioral-health and addiction pathways",
-      "Jail release and reentry",
-      "Health-related discharge coordination",
-      "Countywide homelessness strategy",
     ],
     sourceLinks: [
       { label: "FY2026 Adopted Budget", href: "https://multco.us/info/fy-2026-adopted-budget" },
@@ -152,15 +128,9 @@ export const governanceActors: GovernanceActor[] = [
       "Grants and dedicated funds",
     ],
     constraints: [
-      "Works through county implementation partners for many homelessness programs",
+      "Works through county implementation partners for many housing and service programs",
       "Regional politics span three counties",
       "Some dollars are measure-restricted",
-    ],
-    homelessnessHousingLevers: [
-      "Regional housing and homelessness funding",
-      "SHS performance accountability",
-      "Growth boundary and land supply",
-      "Cross-county coordination",
     ],
     sourceLinks: [
       { label: "Oregon Blue Book: Metro", href: "https://sos.oregon.gov/blue-book/Pages/local/other-metro.aspx" },
@@ -197,15 +167,8 @@ export const governanceActors: GovernanceActor[] = [
     ],
     constraints: [
       "Most city dollars are legally restricted",
-      "Homelessness services and behavioral health are not solely city-controlled",
+      "Human services and behavioral health are not solely city-controlled",
       "Permitting, siting, and public-space actions depend on intergovernmental coordination",
-    ],
-    homelessnessHousingLevers: [
-      "Public-space management",
-      "Police, fire, and Portland Street Response coordination",
-      "Shelter siting and permitting",
-      "City-owned land and facilities",
-      "Street services and sanitation",
     ],
     sourceLinks: [
       {
@@ -234,12 +197,6 @@ export const governanceActors: GovernanceActor[] = [
       "Service and capital decisions are tied to regional commute patterns",
       "Transit safety and public-space impacts overlap with city and county responsibilities",
     ],
-    homelessnessHousingLevers: [
-      "Transit access to shelters, treatment, jobs, schools, and hospitals",
-      "Corridor land-use politics",
-      "Transit safety and rider experience",
-      "Regional economic connectivity",
-    ],
     sourceLinks: [{ label: "TriMet FY2027 budget", href: "https://trimet.org/budget/" }],
   },
   {
@@ -256,12 +213,6 @@ export const governanceActors: GovernanceActor[] = [
       "Do not answer to City Hall",
       "Boundaries do not match city or county responsibilities",
       "Education dollars are legally and politically constrained",
-    ],
-    homelessnessHousingLevers: [
-      "Youth and family homelessness identification",
-      "School stability",
-      "Workforce formation",
-      "Early-warning signals for family instability",
     ],
     sourceLinks: [],
   },
@@ -285,12 +236,6 @@ export const governanceActors: GovernanceActor[] = [
       "Narrow missions",
       "Overlapping boundaries",
       "Dedicated revenue restrictions",
-    ],
-    homelessnessHousingLevers: [
-      "Land and facilities",
-      "Infrastructure capacity",
-      "Economic development",
-      "Emergency response and public works",
     ],
     sourceLinks: [],
   },
@@ -318,13 +263,6 @@ export const governanceActors: GovernanceActor[] = [
       "Facility licensing",
       "Payment rules",
     ],
-    homelessnessHousingLevers: [
-      "Medical respite",
-      "Hospital discharge",
-      "Psychiatric stabilization",
-      "SUD treatment",
-      "Medicaid-funded services",
-    ],
     sourceLinks: [],
   },
   {
@@ -333,7 +271,7 @@ export const governanceActors: GovernanceActor[] = [
     geography: "Adjacent Washington metro area",
     budget: "Adjacent note, not v1 build target",
     budgetNote:
-      "The labor market, homelessness geography, and service ecosystem are regional, but Washington law and funding differ.",
+      "The labor market, housing geography, and service ecosystem are regional, but Washington law and funding differ.",
     controls: [
       "Vancouver city services",
       "Clark County services",
@@ -347,294 +285,150 @@ export const governanceActors: GovernanceActor[] = [
       "Different Medicaid and housing systems",
       "Cross-border coordination friction",
     ],
-    homelessnessHousingLevers: [
-      "Regional inflow/outflow context",
-      "Cross-river service geography",
-      "Labor and housing-market relationship",
-    ],
     sourceLinks: [],
-  },
-];
-
-export const streetToStabilityCohorts: StreetToStabilityCohort[] = [
-  {
-    cohort: "Recently homeless / economic shock",
-    firstPlacement: "Motel bridge, prevention payment, landlord mediation, rapid rehousing",
-    responsibleGovernments: ["County", "City", "Metro", "State"],
-    capacityNeeds: ["Flexible rent fund", "Motel bridge rooms", "Landlord guarantees", "Rapid rehousing slots"],
-    deadline: "30-60 days",
-    metrics: ["Days homeless", "Cost per prevention", "Return rate"],
-  },
-  {
-    cohort: "Car/RV homeless / working poor",
-    firstPlacement: "Safe parking plus housing navigation",
-    responsibleGovernments: ["City", "County", "Metro"],
-    capacityNeeds: ["Safe parking sites", "RV disposal/repair fund", "Sanitation", "Credit/legal help"],
-    deadline: "30-90 days",
-    metrics: ["Unmanaged vehicles reduced", "Housing exits", "Sanitation incidents"],
-  },
-  {
-    cohort: "Families with children",
-    firstPlacement: "Family motel or family shelter",
-    responsibleGovernments: ["County", "Schools", "State"],
-    capacityNeeds: ["Family rooms", "Childcare", "School continuity", "Family-sized units"],
-    deadline: "Same day",
-    metrics: ["Unsheltered family nights", "School continuity", "Housing placement"],
-  },
-  {
-    cohort: "Youth and young adults",
-    firstPlacement: "Youth shelter, host home, or transitional living",
-    responsibleGovernments: ["County", "Schools", "State"],
-    capacityNeeds: ["Youth-specific beds", "Host homes", "Transitional housing", "Behavioral-health support"],
-    deadline: "24-72 hours",
-    metrics: ["Adult-system exposure", "School/work path", "Stable exits"],
-  },
-  {
-    cohort: "DV / trafficking survivors",
-    firstPlacement: "Confidential hotel or safe shelter",
-    responsibleGovernments: ["County", "State", "Courts"],
-    capacityNeeds: ["Confidential hotel fund", "DV shelter beds", "Legal aid", "Relocation funds"],
-    deadline: "Same day",
-    metrics: ["Safe placement", "Legal protection", "Confidential housing exits"],
-  },
-  {
-    cohort: "Severe substance use disorder",
-    firstPlacement: "Sobering, withdrawal management, residential SUD, recovery housing",
-    responsibleGovernments: ["County", "OHA/State", "Providers", "Courts"],
-    capacityNeeds: ["Sobering beds", "Withdrawal management", "Residential SUD", "Recovery housing"],
-    deadline: "Same day to 72 hours when willing",
-    metrics: ["Treatment access", "Retention", "Overdose/ER/jail reduction"],
-  },
-  {
-    cohort: "Serious mental illness",
-    firstPlacement: "Crisis stabilization, inpatient/residential psychiatric care, ACT, PSH",
-    responsibleGovernments: ["County", "OHA/State", "Hospitals", "Courts"],
-    capacityNeeds: ["Crisis beds", "Inpatient psych", "Secure residential", "ACT teams"],
-    deadline: "Same day for crisis",
-    metrics: ["Stabilization", "Medication continuity", "Street returns"],
-  },
-  {
-    cohort: "Co-occurring SMI + SUD",
-    firstPlacement: "Dual-diagnosis stabilization and integrated treatment",
-    responsibleGovernments: ["County", "OHA/State", "Hospitals", "Courts"],
-    capacityNeeds: ["Dual-diagnosis beds", "Integrated residential care", "Recovery PSH", "Peer support"],
-    deadline: "Same day to 72 hours",
-    metrics: ["Dual-diagnosis access", "Retention", "Crisis events"],
-  },
-  {
-    cohort: "Medically fragile / elderly / disabled",
-    firstPlacement: "Medical respite, accessible shelter, adult foster/supportive housing",
-    responsibleGovernments: ["Hospitals", "CCOs", "County", "State"],
-    capacityNeeds: ["Medical respite", "Accessible units", "Medicaid coordination", "Adult foster slots"],
-    deadline: "Before discharge",
-    metrics: ["Discharge-to-street avoided", "Readmission", "SNF/respite costs"],
-  },
-  {
-    cohort: "Chronically homeless but relatively stable",
-    firstPlacement: "Low-barrier shelter/village to PSH",
-    responsibleGovernments: ["County", "Metro", "Providers", "Landlords"],
-    capacityNeeds: ["PSH slots", "Low-barrier interim beds", "Landlord pool", "Case managers"],
-    deadline: "90-180 days",
-    metrics: ["PSH placement", "6/12-month retention", "Returns to homelessness"],
-  },
-  {
-    cohort: "Justice-involved / repeat public-safety contacts",
-    firstPlacement: "Specialty court, supervised diversion, jail-release bridge, treatment/housing",
-    responsibleGovernments: ["Courts", "County jail", "DA", "City police", "Providers"],
-    capacityNeeds: ["Jail-release bridge beds", "Specialty court slots", "Treatment beds", "Compliance monitoring"],
-    deadline: "Before release or next court event",
-    metrics: ["Jail-street-jail interruptions", "Treatment access", "Compliance and retention"],
-  },
-  {
-    cohort: "Service-refusing / unsafe encampment",
-    firstPlacement: "Barrier-specific offer, alternative placement, repeat documentation",
-    responsibleGovernments: ["City", "County", "Courts", "Outreach providers"],
-    capacityNeeds: ["Pet/partner/storage options", "Behavioral-health shelter", "Transport", "Legal escalation path"],
-    deadline: "Repeated, documented",
-    metrics: ["Real offers made", "Refusal reasons", "Public-space resolution"],
   },
 ];
 
 export const powerMapIssues: PowerMapIssue[] = [
   {
-    id: "camp-near-business",
-    label: "There is an encampment outside a business",
-    residentQuestion: "Who do I call to make this block usable again?",
-    visibleLayer: "City street / sidewalk",
-    usuallyBlamed: "City Hall, police, and the mayor",
+    id: "pothole-street",
+    label: "My street is falling apart",
+    residentQuestion: "Who is responsible for fixing this road?",
+    visibleLayer: "Street, curb, sidewalk, or bridge",
+    usuallyBlamed: "The City of Portland",
     betterQuestion:
-      "Has the person been offered a real placement, and which layer owns the next missing step?",
+      "Is this a city street, county road, state highway, transit corridor, or privately maintained access point?",
     handoffFailure:
-      "The city may own the sidewalk, but shelter, treatment, outreach contracts, and behavioral health are split across county, Metro, state, and providers.",
+      "Residents see pavement. Government sees jurisdiction, right-of-way ownership, capital funding, utility conflicts, and construction schedules.",
     actualOwners: [
       {
         actorId: "portland",
-        role: "Public space and immediate response",
-        lever: "Right-of-way management, sanitation, fire/police/PSR coordination, city sites",
+        role: "Local streets and right-of-way",
+        lever: "PBOT operations, maintenance prioritization, local transportation revenue, street permits",
       },
       {
-        actorId: "multnomah-county",
-        role: "Services and behavioral health",
-        lever: "Outreach, shelter contracts, addiction and mental-health pathways",
+        actorId: "oregon",
+        role: "State highways and transportation law",
+        lever: "ODOT corridors, state transportation funding, highway safety rules",
       },
       {
         actorId: "metro",
-        role: "Regional homeless-services money",
-        lever: "SHS funding and cross-county accountability",
-      },
-      {
-        actorId: "oregon",
-        role: "Legal and treatment frame",
-        lever: "Treatment capacity, Medicaid/OHP, criminal and civil-commitment rules",
-      },
-      {
-        actorId: "health-systems",
-        role: "Provider delivery",
-        lever: "Actual intake, clinical care, discharge and service handoffs",
-      },
-    ],
-    sequence: [
-      { label: "Complaint hits visible public space", actorId: "portland" },
-      { label: "Outreach/service offer needed", actorId: "multnomah-county" },
-      { label: "Funding/accountability question", actorId: "metro" },
-      { label: "Treatment/legal capacity question", actorId: "oregon" },
-      { label: "Provider intake and outcome", actorId: "health-systems", failure: "No shared live workflow" },
-    ],
-  },
-  {
-    id: "yes-now-treatment",
-    label: "Someone says yes to treatment right now",
-    residentQuestion: "Can we get them somewhere before the window closes?",
-    visibleLayer: "Street outreach / emergency response",
-    usuallyBlamed: "Whoever is standing there with the person",
-    betterQuestion:
-      "Which detox, sobering, residential, or recovery option can confirm a real opening now?",
-    handoffFailure:
-      "The willing moment is short, but availability, eligibility, referral rules, phone confirmation, and transport are not connected in one live system.",
-    actualOwners: [
-      {
-        actorId: "multnomah-county",
-        role: "Treatment pathway coordination",
-        lever: "Behavioral-health contracts, deflection, outreach, recovery navigation",
-      },
-      {
-        actorId: "oregon",
-        role: "Treatment capacity and payment",
-        lever: "OHA licensing, Medicaid/OHP payment, bed expansion",
-      },
-      {
-        actorId: "health-systems",
-        role: "Actual service delivery",
-        lever: "Sobering, withdrawal management, SUD treatment, clinical intake",
-      },
-      {
-        actorId: "portland",
-        role: "Field contact and transport partner",
-        lever: "Fire/CHAT, PSR, police coordination, public-space contact",
-      },
-    ],
-    sequence: [
-      { label: "Person says yes now", actorId: "portland" },
-      { label: "Match treatment type", actorId: "multnomah-county" },
-      { label: "Confirm licensed/staffed bed", actorId: "oregon" },
-      { label: "Provider accepts intake", actorId: "health-systems", failure: "No real-time slot" },
-      { label: "Transport before the window closes", actorId: "portland", failure: "Lost handoff" },
-    ],
-  },
-  {
-    id: "hospital-discharge",
-    label: "A hospital wants to discharge someone with nowhere to go",
-    residentQuestion: "Why is a sick person being released back to the street?",
-    visibleLayer: "Hospital exit / street return",
-    usuallyBlamed: "The hospital, the county, or the city depending on where the person lands",
-    betterQuestion:
-      "Is there a medical respite, accessible shelter, or step-down placement that can accept them before discharge?",
-    handoffFailure:
-      "Hospitals, CCOs, county health systems, Medicaid rules, shelters, and respite providers do not operate as one discharge marketplace.",
-    actualOwners: [
-      {
-        actorId: "health-systems",
-        role: "Clinical discharge and care coordination",
-        lever: "Hospital discharge planning, CCO coordination, respite referrals",
-      },
-      {
-        actorId: "multnomah-county",
-        role: "Public health and shelter coordination",
-        lever: "Health, homelessness services, medical-vulnerability placement",
-      },
-      {
-        actorId: "oregon",
-        role: "Medicaid/OHP and licensing",
-        lever: "Payment rules, care setting rates, behavioral-health and respite capacity",
-      },
-      {
-        actorId: "portland",
-        role: "Visible street impact",
-        lever: "Public-space consequence if the discharge path fails",
-      },
-    ],
-    sequence: [
-      { label: "Patient ready to leave hospital", actorId: "health-systems" },
-      { label: "Needs respite or accessible shelter", actorId: "multnomah-county" },
-      { label: "Payment and licensed capacity", actorId: "oregon" },
-      { label: "If no placement, street receives them", actorId: "portland", failure: "Discharge gap" },
-    ],
-  },
-  {
-    id: "build-shelter-housing",
-    label: "A neighborhood needs more shelter or housing",
-    residentQuestion: "Who can actually make the place exist?",
-    visibleLayer: "A parcel, building, or neighborhood fight",
-    usuallyBlamed: "City Council",
-    betterQuestion:
-      "Who owns the site, who funds operations, who permits it, who contracts services, and who can legally expand supply?",
-    handoffFailure:
-      "Capital, operations, land use, permitting, neighborhood politics, and service contracts are controlled by different institutions.",
-    actualOwners: [
-      {
-        actorId: "portland",
-        role: "Permitting, siting, city land",
-        lever: "Permits, zoning implementation, city-owned sites, bureau coordination",
-      },
-      {
-        actorId: "multnomah-county",
-        role: "Shelter operations and services",
-        lever: "Provider contracts, case management, behavioral-health links",
-      },
-      {
-        actorId: "metro",
-        role: "Regional housing money and growth geography",
-        lever: "Housing bonds, SHS funds, UGB and regional planning",
-      },
-      {
-        actorId: "oregon",
-        role: "Statewide housing law and capital",
-        lever: "Land-use law, housing statutes, capital programs",
+        role: "Regional transportation planning",
+        lever: "Regional transportation plans, project prioritization, growth and corridor strategy",
       },
       {
         actorId: "special-districts",
-        role: "Infrastructure and public facilities",
-        lever: "Utilities, ports, drainage, sanitation, facility constraints",
+        role: "Utilities and infrastructure conflicts",
+        lever: "Water, sewer, drainage, ports, and other infrastructure work that changes timing",
       },
     ],
     sequence: [
-      { label: "Find site or building", actorId: "portland" },
-      { label: "Secure operations", actorId: "multnomah-county" },
-      { label: "Align regional funding", actorId: "metro" },
-      { label: "Fit state rules/capital", actorId: "oregon" },
-      { label: "Solve infrastructure constraints", actorId: "special-districts", failure: "Siting bottleneck" },
+      { label: "Resident reports road condition", actorId: "portland" },
+      { label: "Check jurisdiction and right-of-way", actorId: "oregon" },
+      { label: "Fit regional project priority", actorId: "metro" },
+      { label: "Coordinate utilities and construction", actorId: "special-districts", failure: "Wrong owner or unfunded queue" },
+    ],
+  },
+  {
+    id: "property-tax",
+    label: "My property tax bill went up",
+    residentQuestion: "Who decided I owe this much?",
+    visibleLayer: "Tax bill in the mailbox",
+    usuallyBlamed: "City Hall or whoever is in office now",
+    betterQuestion:
+      "Which line item changed: county assessment, school bond, city levy, Metro measure, urban-renewal district, or special district?",
+    handoffFailure:
+      "The county sends and collects the bill, but the bill combines taxes approved or imposed by many separate governments.",
+    actualOwners: [
+      {
+        actorId: "multnomah-county",
+        role: "Assessment and collection",
+        lever: "Property assessment, tax administration, bill collection and distribution",
+      },
+      {
+        actorId: "schools",
+        role: "School levies and bonds",
+        lever: "Local education taxes, bonds, and district budgets",
+      },
+      {
+        actorId: "portland",
+        role: "City levies and urban services",
+        lever: "City property-tax components, local measures, urban-renewal impacts",
+      },
+      {
+        actorId: "metro",
+        role: "Regional measures",
+        lever: "Regional housing, parks, and other voter-approved measures",
+      },
+      {
+        actorId: "special-districts",
+        role: "District-specific charges",
+        lever: "Fire, water, sanitation, port, library, and other special-district taxes where applicable",
+      },
+    ],
+    sequence: [
+      { label: "County assesses and mails bill", actorId: "multnomah-county" },
+      { label: "School district line items apply", actorId: "schools" },
+      { label: "City and urban service lines apply", actorId: "portland" },
+      { label: "Regional measure lines apply", actorId: "metro" },
+      { label: "Special districts add their lines", actorId: "special-districts", failure: "One bill, many taxing authorities" },
+    ],
+  },
+  {
+    id: "housing-permit",
+    label: "Housing is too expensive",
+    residentQuestion: "Who can make it easier to build homes?",
+    visibleLayer: "Rent, listings, construction sites, vacant lots",
+    usuallyBlamed: "The city planning bureau or City Council",
+    betterQuestion:
+      "Who controls zoning implementation, land supply, state housing law, infrastructure capacity, funding, and school/transportation access?",
+    handoffFailure:
+      "A housing project needs legal permission, land, infrastructure, financing, permits, inspections, and political acceptance from different layers.",
+    actualOwners: [
+      {
+        actorId: "portland",
+        role: "Permitting and local implementation",
+        lever: "Zoning implementation, permits, inspections, city-owned sites, local fees",
+      },
+      {
+        actorId: "metro",
+        role: "Regional growth and housing funds",
+        lever: "Urban Growth Boundary, regional housing bonds, land-use coordination",
+      },
+      {
+        actorId: "oregon",
+        role: "Statewide housing law",
+        lever: "Land-use statutes, housing mandates, capital programs, building-code framework",
+      },
+      {
+        actorId: "special-districts",
+        role: "Infrastructure capacity",
+        lever: "Water, sewer, drainage, roads, ports, and utility constraints",
+      },
+      {
+        actorId: "schools",
+        role: "Facilities and neighborhood capacity",
+        lever: "School boundaries, bonds, facilities planning, student-growth impacts",
+      },
+    ],
+    sequence: [
+      { label: "Project proposed", actorId: "portland" },
+      { label: "Land supply and regional fit", actorId: "metro" },
+      { label: "State housing rules apply", actorId: "oregon" },
+      { label: "Infrastructure capacity checked", actorId: "special-districts" },
+      { label: "Public facilities absorb growth", actorId: "schools", failure: "Many veto points" },
     ],
   },
   {
     id: "transit-safety",
     label: "A MAX stop feels unsafe",
-    residentQuestion: "Is this a transit problem, police problem, or homelessness problem?",
+    residentQuestion: "Is this a transit problem or a public safety problem?",
     visibleLayer: "Station, platform, train, bus stop",
     usuallyBlamed: "TriMet or Portland police",
     betterQuestion:
-      "Is the problem operations, public safety, behavioral health, shelter/treatment access, or corridor land use?",
+      "Is the issue transit operations, adjacent public space, emergency response, behavioral health, or corridor design?",
     handoffFailure:
-      "Transit operations, public safety, behavioral-health outreach, city right-of-way, and regional service geography overlap at the same stop.",
+      "Transit property, city right-of-way, public safety response, health services, and regional corridor planning overlap at the same stop.",
     actualOwners: [
       {
         actorId: "trimet",
@@ -644,12 +438,12 @@ export const powerMapIssues: PowerMapIssue[] = [
       {
         actorId: "portland",
         role: "Adjacent public space and emergency response",
-        lever: "Police/fire response, streets, public right-of-way",
+        lever: "Police/fire response, streets, public right-of-way, local public-space management",
       },
       {
         actorId: "multnomah-county",
-        role: "Behavioral-health and outreach systems",
-        lever: "Outreach, addiction and mental-health pathways, homelessness services",
+        role: "Health and human-service response",
+        lever: "Behavioral health, crisis systems, outreach, county-contracted services",
       },
       {
         actorId: "metro",
@@ -659,48 +453,87 @@ export const powerMapIssues: PowerMapIssue[] = [
     ],
     sequence: [
       { label: "Incident appears on transit property", actorId: "trimet" },
-      { label: "Adjacent public-space response", actorId: "portland" },
-      { label: "Behavioral-health or shelter need", actorId: "multnomah-county" },
+      { label: "Adjacent right-of-way response", actorId: "portland" },
+      { label: "Health or service need", actorId: "multnomah-county" },
       { label: "Corridor growth and access", actorId: "metro", failure: "Jurisdictional blur" },
     ],
   },
   {
-    id: "student-loses-housing",
-    label: "A student loses housing",
-    residentQuestion: "Why is a child still showing up to school without a stable place to sleep?",
-    visibleLayer: "Classroom / family crisis",
-    usuallyBlamed: "The school, the city, or the county",
+    id: "student-support",
+    label: "A student needs help",
+    residentQuestion: "Who is responsible when a child needs more than classroom instruction?",
+    visibleLayer: "Classroom, school office, family crisis",
+    usuallyBlamed: "The school district",
     betterQuestion:
-      "Who can keep school stable while family shelter, benefits, rent help, and housing placement come together?",
+      "Is the need education, food, housing stability, disability services, mental health, child welfare, or transportation?",
     handoffFailure:
-      "Schools may see the family first, but family shelter, benefits, housing, and legal protections sit across county, state, Metro, and providers.",
+      "Schools see many problems first, but health care, benefits, child welfare, transportation, and family support sit outside the school district.",
     actualOwners: [
       {
         actorId: "schools",
-        role: "Identification and continuity",
-        lever: "McKinney-Vento support, school stability, student services",
-      },
-      {
-        actorId: "multnomah-county",
-        role: "Family shelter and services",
-        lever: "Family placement, case management, public health, homelessness services",
+        role: "Education and student services",
+        lever: "Instruction, school stability, special education, counselors, family outreach",
       },
       {
         actorId: "oregon",
-        role: "Education and family-support funding",
-        lever: "State school funding, child welfare, benefits, housing programs",
+        role: "Education funding and statewide rules",
+        lever: "State School Fund, graduation rules, child welfare, disability and education statutes",
       },
       {
-        actorId: "metro",
-        role: "Regional housing resources",
-        lever: "Housing and SHS funds through implementation partners",
+        actorId: "multnomah-county",
+        role: "Public health and family services",
+        lever: "Health, mental health, family support, public health programs",
+      },
+      {
+        actorId: "trimet",
+        role: "Access and transportation",
+        lever: "Student access to school, jobs, services, and activities",
       },
     ],
     sequence: [
-      { label: "School notices instability", actorId: "schools" },
-      { label: "Family shelter or motel bridge", actorId: "multnomah-county" },
-      { label: "Benefits and legal supports", actorId: "oregon" },
-      { label: "Housing resource match", actorId: "metro", failure: "No single family lane" },
+      { label: "School identifies need", actorId: "schools" },
+      { label: "State rules and funding apply", actorId: "oregon" },
+      { label: "Family or health service needed", actorId: "multnomah-county" },
+      { label: "Access depends on transportation", actorId: "trimet", failure: "School cannot solve every non-school barrier" },
+    ],
+  },
+  {
+    id: "hospital-public-health",
+    label: "A health crisis spills into public life",
+    residentQuestion: "Why does a medical or behavioral-health crisis become a public-space problem?",
+    visibleLayer: "Emergency room, street, jail, shelter, transit, business district",
+    usuallyBlamed: "The city, police, hospital, or county depending on where the crisis appears",
+    betterQuestion:
+      "Which layer controls clinical care, insurance payment, crisis response, public health, public safety, and discharge planning?",
+    handoffFailure:
+      "Health systems, Medicaid rules, county health, city emergency response, courts, and providers each own part of the path.",
+    actualOwners: [
+      {
+        actorId: "health-systems",
+        role: "Clinical care and discharge",
+        lever: "Emergency departments, CCO coordination, providers, discharge planning",
+      },
+      {
+        actorId: "oregon",
+        role: "Medicaid and regulatory framework",
+        lever: "OHA, OHP payment policy, licensing, civil commitment and court standards",
+      },
+      {
+        actorId: "multnomah-county",
+        role: "Public health and behavioral health",
+        lever: "County health, crisis systems, behavioral-health contracts, jail health",
+      },
+      {
+        actorId: "portland",
+        role: "Emergency response and public space",
+        lever: "Police, fire, Portland Street Response, public right-of-way impacts",
+      },
+    ],
+    sequence: [
+      { label: "Clinical crisis appears", actorId: "health-systems" },
+      { label: "Payment and legal frame applies", actorId: "oregon" },
+      { label: "County health response needed", actorId: "multnomah-county" },
+      { label: "Visible public-space response", actorId: "portland", failure: "Health problem becomes civic disorder" },
     ],
   },
 ];
