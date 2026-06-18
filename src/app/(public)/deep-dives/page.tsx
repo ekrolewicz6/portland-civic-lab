@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
-import { ArrowRight, Landmark, TreePine, Users } from "lucide-react";
+import { ArrowRight, Landmark, Network, TreePine, Users } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
@@ -25,6 +25,17 @@ interface DeepDive {
 }
 
 const DIVES: DeepDive[] = [
+  {
+    href: "/deep-dives/who-runs-portland",
+    eyebrow: "Power map",
+    title: "Who actually runs Portland?",
+    blurb:
+      "Portland's biggest fights often happen because power is spread across the city, county, Metro, state, transit, schools, hospitals, providers, and funders. This is the map of who owns what - and the Street-to-Stability system Civic Lab is building first.",
+    stat: "9",
+    statLabel: "major layers of civic power",
+    icon: Network,
+    available: true,
+  },
   {
     href: "/deep-dives/fpdr",
     eyebrow: "Budgets & pensions",
