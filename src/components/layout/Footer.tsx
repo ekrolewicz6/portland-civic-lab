@@ -94,6 +94,7 @@ export default function Footer() {
             </p>
             <Link
               href="/signup"
+              prefetch={false}
               className="mt-6 inline-flex items-center gap-2 rounded-sm border border-white/15 bg-white/[0.04] px-4 py-2 text-[12px] font-mono uppercase tracking-[0.14em] text-white hover:bg-white/10 transition-colors"
             >
               Join the lab

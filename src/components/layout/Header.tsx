@@ -218,6 +218,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
             ) : (
               <Link
                 href="/signup"
+                prefetch={false}
                 className="rounded-sm bg-[var(--color-ember)] px-3.5 py-1.5 text-[11px] font-mono font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)] hover:bg-[var(--color-ember-bright)] transition-colors"
               >
                 Join
@@ -232,6 +233,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
             ) : (
               <Link
                 href="/signup"
+                prefetch={false}
                 className="rounded-sm bg-[var(--color-ember)] px-3 py-1.5 text-[11px] font-mono font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)]"
               >
                 Join
@@ -273,7 +275,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
                   active={member.role === "admin" ? isActive("/admin") : isActive("/member")}
                 />
               ) : (
-                <MobileLink href="/signup" label="Join the lab" active={isActive("/signup")} />
+                <MobileLink href="/signup" label="Join the lab" active={isActive("/signup")} prefetch={false} />
               )}
             </MobileGroup>
           </div>
@@ -298,12 +300,14 @@ function MobileLink({
   desc,
   active,
   external,
+  prefetch,
 }: {
   href: string;
   label: string;
   desc?: string;
   active?: boolean;
   external?: boolean;
+  prefetch?: boolean;
 }) {
   const cls = `flex items-center justify-between rounded-sm px-3 py-2.5 transition-colors ${
     active ? "bg-white/[0.06]" : "hover:bg-white/[0.04]"
@@ -322,7 +326,7 @@ function MobileLink({
       {inner}
     </a>
   ) : (
-    <Link href={href} className={cls}>
+    <Link href={href} prefetch={prefetch} className={cls}>
       {inner}
     </Link>
   );
