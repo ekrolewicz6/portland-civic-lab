@@ -203,41 +203,128 @@ function ActorCard({ actor }: { actor: GovernanceActor }) {
 }
 
 function PowerTable() {
+  const primaryActors = governanceActors.slice(0, 6);
+
   return (
-    <div className="overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-white">
-      <div className="overflow-x-auto">
-        <table className="min-w-[900px] text-left text-[13px]">
-          <thead className="bg-[var(--color-canopy)] text-white">
-            <tr>
-              <th className="px-4 py-3 font-semibold">Layer</th>
-              <th className="px-4 py-3 font-semibold">Geography</th>
-              <th className="px-4 py-3 font-semibold">Budget signal</th>
-              <th className="px-4 py-3 font-semibold">Main responsibilities</th>
-              <th className="px-4 py-3 font-semibold">Money sources</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-[var(--color-parchment)]">
-            {governanceActors.slice(0, 6).map((actor) => (
-              <tr key={actor.id} className="align-top">
-                <td className="px-4 py-4 font-semibold text-[var(--color-ink)]">{actor.layer}</td>
-                <td className="px-4 py-4 text-[var(--color-ink-light)]">{actor.geography}</td>
-                <td className="px-4 py-4 text-[var(--color-ink-light)]">
-                  <span className="font-semibold text-[var(--color-canopy)]">{actor.budget}</span>
-                  <span className="mt-1 block text-[12px] leading-snug text-[var(--color-ink-muted)]">
-                    {actor.budgetNote}
-                  </span>
-                </td>
-                <td className="px-4 py-4 text-[var(--color-ink-light)]">
-                  {actor.controls.slice(0, 5).join(", ")}
-                </td>
-                <td className="px-4 py-4 text-[var(--color-ink-light)]">
-                  {actor.moneySources.slice(0, 5).join(", ")}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_360px] 2xl:grid-cols-[minmax(0,1fr)_420px]">
+      <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-3">
+        {primaryActors.map((actor, index) => {
+          const Icon = actorIcons[actor.id] ?? Building2;
+          return (
+            <article
+              key={actor.id}
+              className="flex min-h-[360px] flex-col rounded-sm border border-[var(--color-parchment)] bg-white p-5 shadow-[0_10px_30px_rgba(15,36,25,0.04)]"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.14em] text-[var(--color-ember)]">
+                    Layer {index + 1}
+                  </p>
+                  <h3 className="mt-2 text-[22px] font-semibold leading-tight text-[var(--color-ink)]">
+                    {actor.layer}
+                  </h3>
+                </div>
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-sm bg-[var(--color-canopy)] text-white">
+                  <Icon className="h-5 w-5" />
+                </div>
+              </div>
+
+              <div className="mt-5 grid gap-3">
+                <div className="rounded-sm bg-[var(--color-paper-warm)] p-3">
+                  <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+                    Scope
+                  </p>
+                  <p className="mt-1 text-[14px] font-semibold leading-snug text-[var(--color-ink)]">
+                    {actor.geography}
+                  </p>
+                </div>
+                <div className="rounded-sm border border-[var(--color-parchment)] p-3">
+                  <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+                    Budget signal
+                  </p>
+                  <p className="mt-1 text-[14px] font-semibold leading-snug text-[var(--color-canopy)]">
+                    {actor.budget}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-5">
+                <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.14em] text-[var(--color-ember)]">
+                  What they control
+                </p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {actor.controls.slice(0, 4).map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-[var(--color-parchment)] bg-[var(--color-paper)] px-2.5 py-1 text-[12px] font-medium leading-snug text-[var(--color-ink-light)]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-5 grid gap-3 text-[13px] leading-relaxed">
+                <div>
+                  <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+                    Money comes from
+                  </p>
+                  <p className="mt-1 text-[var(--color-ink-light)]">
+                    {actor.moneySources.slice(0, 4).join(", ")}
+                  </p>
+                </div>
+                <div className="border-t border-[var(--color-parchment)] pt-3">
+                  <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+                    Watch for
+                  </p>
+                  <p className="mt-1 text-[var(--color-ink-light)]">
+                    {actor.constraints[0]}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-auto pt-5">
+                <SourceLinks links={actor.sourceLinks} />
+              </div>
+            </article>
+          );
+        })}
       </div>
+
+      <aside className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-canopy)] p-5 text-white shadow-[0_14px_40px_rgba(15,36,25,0.12)] xl:sticky xl:top-32 xl:self-start">
+        <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
+          How to read it
+        </p>
+        <h3 className="mt-3 text-[26px] font-semibold leading-tight">
+          Budget, geography, and control are different things.
+        </h3>
+        <div className="mt-6 space-y-5">
+          {[
+            {
+              label: "Scope",
+              body: "First ask whether the problem sits inside a city, county, Metro, state, district, or provider boundary.",
+            },
+            {
+              label: "Budget",
+              body: "A big total budget can still be restricted, dedicated, federal, pass-through, or enterprise money.",
+            },
+            {
+              label: "Control",
+              body: "The deciding lever may be law, a contract, a facility license, a board, an operator, or a funding condition.",
+            },
+          ].map((item) => (
+            <div key={item.label} className="border-t border-white/15 pt-4">
+              <p className="text-[12px] font-mono font-semibold uppercase tracking-[0.14em] text-white/55">
+                {item.label}
+              </p>
+              <p className="mt-1 text-[14px] leading-relaxed text-white/72">{item.body}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-6 rounded-sm bg-white/8 p-3 text-[13px] leading-relaxed text-white/75">
+          The detailed actor cards below keep the longer institutional notes and constraints.
+        </p>
+      </aside>
     </div>
   );
 }
