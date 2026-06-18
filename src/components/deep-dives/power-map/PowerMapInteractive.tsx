@@ -3,7 +3,6 @@
 import { useMemo, useState, type ComponentType } from "react";
 import {
   AlertTriangle,
-  ArrowRight,
   Building2,
   CircleDollarSign,
   GitBranch,
@@ -277,50 +276,176 @@ function RelationshipMap({
   issue: PowerMapIssue;
   actorsById: Map<string, GovernanceActor>;
 }) {
-  return (
-    <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6 xl:p-7">
-      <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-        <div>
-          <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
-            Relationship map
-          </p>
-          <h3 className="mt-2 text-[24px] font-semibold leading-tight text-[var(--color-ink)]">
-            Responsibility splits as work moves.
-          </h3>
-        </div>
-        <p className="max-w-md text-[13px] leading-relaxed text-[var(--color-ink-muted)]">
-          A resident sees one issue. The work often passes through several agencies, each with
-          different authority, money, rules, and operating duties.
-        </p>
-      </div>
+  const blocker = issue.sequence.find((step) => step.failure);
 
-      <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-3">
-        {issue.sequence.map((step, index) => (
-          <div key={`${step.actorId}-${step.label}`} className="relative">
-            <div className={`h-full rounded-sm border p-4 ${
-              step.failure
-                ? "border-[var(--color-ember)] bg-[#fff7ed]"
-                : "border-[var(--color-parchment)] bg-[var(--color-paper)]"
-            }`}>
-              <div className="flex items-center justify-between gap-2">
-                <ActorMark actorId={step.actorId} actorsById={actorsById} compact />
-                {index < issue.sequence.length - 1 ? (
-                  <ArrowRight className="hidden h-4 w-4 text-[var(--color-ink-muted)] lg:block" />
-                ) : null}
-              </div>
-              <p className="mt-3 text-[13px] font-semibold leading-snug text-[var(--color-ink)]">{step.label}</p>
-              <p className="mt-2 text-[12px] text-[var(--color-ink-muted)]">
-                {actorName(step.actorId, actorsById)}
+  return (
+    <div className="overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-white">
+      <div className="grid gap-0 xl:grid-cols-[minmax(0,1fr)_420px]">
+        <div className="p-5 sm:p-6 xl:p-7">
+          <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
+                Responsibility route
               </p>
-              {step.failure ? (
-                <p className="mt-3 rounded-sm bg-white px-2 py-1.5 text-[12px] font-semibold text-[var(--color-ember)]">
-                  {step.failure}
-                </p>
-              ) : null}
+              <h3 className="mt-2 text-[24px] font-semibold leading-tight text-[var(--color-ink)]">
+                Follow the question until someone owns the next move.
+              </h3>
+            </div>
+            <p className="max-w-lg text-[13px] leading-relaxed text-[var(--color-ink-muted)]">
+              The point is not to memorize every agency. It is to translate a visible problem into
+              the next responsible layer, rule, fund, or operator.
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-3 lg:grid-cols-3">
+            <div className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-4">
+              <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-[var(--color-ember)]">
+                Resident sees
+              </p>
+              <p className="mt-2 text-[15px] font-semibold leading-snug text-[var(--color-ink)]">
+                {issue.visibleLayer}
+              </p>
+            </div>
+            <div className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-4">
+              <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-[var(--color-ember)]">
+                Often blamed
+              </p>
+              <p className="mt-2 text-[15px] font-semibold leading-snug text-[var(--color-ink)]">
+                {issue.usuallyBlamed}
+              </p>
+            </div>
+            <div className="rounded-sm border border-[var(--color-sage)] bg-[var(--color-paper-warm)] p-4">
+              <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-[var(--color-ember)]">
+                Better question
+              </p>
+              <p className="mt-2 text-[15px] font-semibold leading-snug text-[var(--color-canopy)]">
+                {issue.betterQuestion}
+              </p>
             </div>
           </div>
-        ))}
+
+          <div className="mt-7 space-y-3">
+            {issue.sequence.map((step, index) => (
+              <div
+                key={`${step.actorId}-${step.label}`}
+                className={`grid gap-3 rounded-sm border p-4 md:grid-cols-[72px_minmax(180px,260px)_minmax(0,1fr)] md:items-center ${
+                  step.failure
+                    ? "border-[var(--color-ember)] bg-[#fff7ed]"
+                    : "border-[var(--color-parchment)] bg-white"
+                }`}
+              >
+                <div className="flex items-center gap-3 md:block">
+                  <span className={`flex h-9 w-9 items-center justify-center rounded-full text-[13px] font-bold ${
+                    step.failure
+                      ? "bg-[var(--color-ember)] text-white"
+                      : "bg-[var(--color-canopy)] text-white"
+                  }`}>
+                    {index + 1}
+                  </span>
+                  <span className="text-[11px] font-mono uppercase tracking-[0.12em] text-[var(--color-ink-muted)] md:mt-2 md:block">
+                    Step
+                  </span>
+                </div>
+                <div>
+                  <ActorMark actorId={step.actorId} actorsById={actorsById} />
+                  <p className="mt-2 text-[12px] leading-snug text-[var(--color-ink-muted)]">
+                    {actorName(step.actorId, actorsById)}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[15px] font-semibold leading-snug text-[var(--color-ink)]">
+                    {step.label}
+                  </p>
+                  {step.failure ? (
+                    <p className="mt-2 inline-flex rounded-full bg-white px-3 py-1 text-[12px] font-semibold text-[var(--color-ember)]">
+                      Blocker: {step.failure}
+                    </p>
+                  ) : null}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside className="border-t border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-5 sm:p-6 xl:border-l xl:border-t-0 xl:p-7">
+          <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
+            How to use this
+          </p>
+          <h4 className="mt-2 text-[22px] font-semibold leading-tight text-[var(--color-ink)]">
+            Stop asking only &quot;who is visible?&quot;
+          </h4>
+          <div className="mt-5 space-y-4">
+            <div>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)]">
+                1. Name the visible layer
+              </p>
+              <p className="mt-1 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+                Start where the resident experiences the issue, but do not stop there.
+              </p>
+            </div>
+            <div>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)]">
+                2. Find the controlling lever
+              </p>
+              <p className="mt-1 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+                The answer may be jurisdiction, law, money, contract authority, infrastructure, or operations.
+              </p>
+            </div>
+            <div>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)]">
+                3. Escalate the blocker
+              </p>
+              <p className="mt-1 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+                {blocker?.failure
+                  ? `In this example, the blocker is: ${blocker.failure}.`
+                  : "If the path stalls, identify the exact transfer point instead of blaming every agency at once."}
+              </p>
+            </div>
+          </div>
+        </aside>
       </div>
+    </div>
+  );
+}
+
+function PrincipleCards() {
+  const principles = [
+    {
+      icon: CircleDollarSign,
+      title: "Budget is not control",
+      body:
+        "Total budgets include restricted money, enterprise funds, internal transfers, and pass-through dollars. Flexible control is often much smaller.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Blame is not authority",
+      body:
+        "The layer you see first may only own the visible symptom. The binding lever may sit with a funder, provider, regulator, court, hospital, or regional body.",
+    },
+    {
+      icon: Network,
+      title: "A transfer is not an outcome",
+      body:
+        "A referral, complaint, plan, or funding stream only matters if the next owner accepts it and the work visibly changes.",
+    },
+  ];
+
+  return (
+    <div className="grid gap-4 md:grid-cols-3">
+      {principles.map((principle) => {
+        const Icon = principle.icon;
+        return (
+          <div key={principle.title} className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
+            <Icon className="h-5 w-5 text-[var(--color-ember)]" />
+            <p className="mt-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--color-ink)]">
+              {principle.title}
+            </p>
+            <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+              {principle.body}
+            </p>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -344,38 +469,7 @@ export function PowerMapInteractive() {
       </div>
       <AuthorityStack issue={activeIssue} actorsById={actorsById} />
       <RelationshipMap issue={activeIssue} actorsById={actorsById} />
-      <div className="grid gap-4 md:grid-cols-3">
-        <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
-          <CircleDollarSign className="h-5 w-5 text-[var(--color-ember)]" />
-          <p className="mt-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--color-ink)]">
-            Budget is not control
-          </p>
-          <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-            Total budgets include restricted money, enterprise funds, internal transfers, and
-            pass-through dollars. Flexible control is often much smaller.
-          </p>
-        </div>
-        <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
-          <ShieldCheck className="h-5 w-5 text-[var(--color-ember)]" />
-          <p className="mt-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--color-ink)]">
-            Blame is not authority
-          </p>
-          <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-            The layer you see first may only own the visible symptom. The binding lever may sit
-            with a funder, provider, regulator, court, hospital, or regional body.
-          </p>
-        </div>
-        <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
-          <Network className="h-5 w-5 text-[var(--color-ember)]" />
-          <p className="mt-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--color-ink)]">
-            Coordination is an accountability problem
-          </p>
-          <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-            If no one can see the owner, status, next action, and constraint, the public experiences
-            one issue while institutions experience many separate queues.
-          </p>
-        </div>
-      </div>
+      <PrincipleCards />
     </div>
   );
 }
