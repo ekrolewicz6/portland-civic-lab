@@ -269,7 +269,7 @@ export const governanceActors: GovernanceActor[] = [
     id: "clark-vancouver",
     layer: "Clark County / Vancouver",
     geography: "Adjacent Washington metro area",
-    budget: "Adjacent note, not v1 build target",
+    budget: "Adjacent regional context",
     budgetNote:
       "The labor market, housing geography, and service ecosystem are regional, but Washington law and funding differ.",
     controls: [
