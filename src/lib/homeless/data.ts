@@ -169,6 +169,129 @@ export const TRIAGE: TriageGroup[] = [
   },
 ];
 
+// -- Street-to-stability cohort routing ------------------------------------
+
+export interface PlacementCohort {
+  id: string;
+  cohort: string;
+  deadline: string;
+  firstPlacement: string;
+  capacityNeeded: string[];
+  responsibleOwners: string[];
+  metrics: string[];
+}
+
+export const PLACEMENT_COHORTS: PlacementCohort[] = [
+  {
+    id: "economic-shock",
+    cohort: "Recently homeless / economic shock",
+    deadline: "30-60 days",
+    firstPlacement: "Motel bridge, prevention payment, landlord mediation, rapid rehousing",
+    capacityNeeded: ["Flexible rent fund", "Landlord guarantees", "Rapid rehousing slots", "Motel bridge rooms"],
+    responsibleOwners: ["County", "City", "Metro", "State"],
+    metrics: ["Days homeless", "Cost per prevention", "Return rate"],
+  },
+  {
+    id: "vehicle-homeless",
+    cohort: "Car/RV homeless / working poor",
+    deadline: "30-90 days",
+    firstPlacement: "Safe parking, sanitation, vehicle support, housing navigation",
+    capacityNeeded: ["Safe parking lots", "RV repair/disposal fund", "Housing navigators", "Landlord pool"],
+    responsibleOwners: ["City", "County", "Metro", "Nonprofits"],
+    metrics: ["Unmanaged vehicles reduced", "Housing exits", "Sanitation incidents"],
+  },
+  {
+    id: "families",
+    cohort: "Families with children",
+    deadline: "Same day",
+    firstPlacement: "Family motel or family shelter with school continuity",
+    capacityNeeded: ["Family motel rooms", "Family shelter", "Childcare", "Rent subsidies"],
+    responsibleOwners: ["County", "Schools", "State"],
+    metrics: ["Unsheltered family nights", "School continuity", "Housing placement"],
+  },
+  {
+    id: "youth",
+    cohort: "Youth and young adults",
+    deadline: "24-72 hours",
+    firstPlacement: "Youth shelter, host home, family reunification if safe, transitional living",
+    capacityNeeded: ["Youth-specific beds", "Host homes", "Transitional housing", "Mental health support"],
+    responsibleOwners: ["County", "Schools", "State", "Youth providers"],
+    metrics: ["Adult-system exposure", "School/work path", "Stable exits"],
+  },
+  {
+    id: "dv-trafficking",
+    cohort: "DV / trafficking survivors",
+    deadline: "Same day",
+    firstPlacement: "Confidential hotel, safe shelter, legal protection, relocation if needed",
+    capacityNeeded: ["Confidential hotel fund", "DV shelter beds", "Legal aid", "Relocation fund"],
+    responsibleOwners: ["DV providers", "County", "State", "Courts"],
+    metrics: ["Safe placement", "Legal protection", "Confidential housing exit"],
+  },
+  {
+    id: "sud",
+    cohort: "Severe substance use disorder",
+    deadline: "Same day to 72 hours when willing",
+    firstPlacement: "Sobering, withdrawal management, residential SUD, recovery housing",
+    capacityNeeded: ["Sobering beds", "Detox beds", "Residential SUD beds", "Recovery housing"],
+    responsibleOwners: ["County behavioral health", "OHA/Medicaid", "Treatment providers", "Courts"],
+    metrics: ["Treatment access", "Retention", "Overdose/ER/jail reduction"],
+  },
+  {
+    id: "smi",
+    cohort: "Serious mental illness",
+    deadline: "Same day for crisis",
+    firstPlacement: "Crisis stabilization, psychiatric evaluation, inpatient or residential care, ACT, PSH",
+    capacityNeeded: ["Crisis beds", "Inpatient psych", "Secure residential treatment", "ACT teams"],
+    responsibleOwners: ["County behavioral health", "OHA", "Hospitals", "Courts"],
+    metrics: ["Stabilization", "Medication continuity", "Street returns"],
+  },
+  {
+    id: "dual-diagnosis",
+    cohort: "Co-occurring SMI + SUD",
+    deadline: "Same day to 72 hours",
+    firstPlacement: "Dual-diagnosis stabilization and integrated residential treatment",
+    capacityNeeded: ["Dual-diagnosis beds", "Specialized stabilization shelter", "Secure treatment", "Recovery PSH"],
+    responsibleOwners: ["County", "OHA", "Hospitals", "Providers", "Courts"],
+    metrics: ["Dual-diagnosis access", "Retention", "Crisis events"],
+  },
+  {
+    id: "medical-fragile",
+    cohort: "Medically fragile / elderly / disabled",
+    deadline: "Before discharge",
+    firstPlacement: "Medical respite, accessible shelter, adult foster home, assisted living, supportive housing",
+    capacityNeeded: ["Medical respite beds", "Accessible units", "Medicaid coordination", "Adult foster slots"],
+    responsibleOwners: ["Hospitals", "CCOs", "County health", "Medicaid/OHP"],
+    metrics: ["Discharge-to-street avoided", "Readmissions", "SNF/respite cost"],
+  },
+  {
+    id: "chronic-stable",
+    cohort: "Chronically homeless but relatively stable",
+    deadline: "90-180 days",
+    firstPlacement: "Low-barrier shelter or village while documents, benefits, and PSH match are completed",
+    capacityNeeded: ["PSH units", "Landlord partners", "Case managers", "Lease-up support"],
+    responsibleOwners: ["County", "Metro", "Housing providers", "Landlords"],
+    metrics: ["PSH placement", "6/12-month retention", "Returns to homelessness"],
+  },
+  {
+    id: "justice-involved",
+    cohort: "Justice-involved / repeat public-safety contacts",
+    deadline: "Before release or next court event",
+    firstPlacement: "Specialty court, supervised diversion, jail-release bridge, treatment and housing",
+    capacityNeeded: ["Specialty court slots", "Treatment beds", "Jail-release shelter", "Compliance monitoring"],
+    responsibleOwners: ["Courts", "County jail", "DA/public defense", "City police", "Treatment providers"],
+    metrics: ["Jail-street-jail interruptions", "Compliance", "Treatment/housing retention"],
+  },
+  {
+    id: "service-refusing",
+    cohort: "Service-refusing / unsafe encampment",
+    deadline: "Repeated and documented",
+    firstPlacement: "Barrier-specific offer with pets, partners, storage, alternative models, and legal path if dangerous or incapable",
+    capacityNeeded: ["Credible alternatives", "Pet/partner/storage options", "Outreach capacity", "Court pathway"],
+    responsibleOwners: ["City public space", "County services", "Outreach providers", "Courts"],
+    metrics: ["Real offers made", "Refusal reasons", "Public-space resolution"],
+  },
+];
+
 // ── The bed-visibility problem ────────────────────────────────────
 
 export const BED_LAYERS = [

@@ -11,6 +11,7 @@ import BedReality from "@/components/deep-dives/homeless/BedReality";
 import StreetTriageFlow from "@/components/deep-dives/homeless/StreetTriageFlow";
 import DeflectionReality from "@/components/deep-dives/homeless/DeflectionReality";
 import ShelterContinuum from "@/components/deep-dives/homeless/ShelterContinuum";
+import CohortRouting from "@/components/deep-dives/homeless/CohortRouting";
 import { pageMeta } from "@/lib/page-meta";
 
 export const metadata: Metadata = pageMeta({
@@ -25,6 +26,7 @@ const NAV = [
   { id: "flow", label: "The math" },
   { id: "triage", label: "Field triage" },
   { id: "who", label: "Who" },
+  { id: "cohorts", label: "Cohorts" },
   { id: "cost", label: "Cost of nothing" },
   { id: "deflection", label: "Deflection" },
   { id: "beds", label: "The beds" },
@@ -237,6 +239,24 @@ export default function HomelessnessDeepDive() {
           {Math.round(STATS.chronicSharePct * 100)}% of Multnomah&apos;s homeless population was
           chronically homeless in the 2023 count (<Src id="pit2023" />).
         </p>
+      </Section>
+
+      {/* ── Cohort routing ── */}
+      <Section
+        id="cohorts"
+        eyebrow="Cohorts"
+        title="Different people need different first placements"
+        lead={
+          <>
+            Housing First is a tool for the right population. It is not a substitute for same-day
+            family shelter, youth-specific placement, detox, psychiatric stabilization, medical
+            respite, jail-release bridges, safe parking, or repeated documented offers for unsafe
+            encampments. A 90% reduction plan has to route each cohort to the first placement that
+            actually fits.
+          </>
+        }
+      >
+        <CohortRouting />
       </Section>
 
       {/* ── Cost of nothing ── */}
