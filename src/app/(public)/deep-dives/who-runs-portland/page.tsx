@@ -476,7 +476,7 @@ export default function WhoRunsPortlandPage() {
         id="sources"
         eyebrow="Sources"
         title="Budget and responsibility claims are sourced."
-        lead="Headline budget figures come from official public documents where available. For Metro, this page intentionally avoids a headline dollar figure until the current adopted budget book is pulled directly from Metro."
+        lead="Headline budget figures come from official public documents where available. Metro's figure is from the FY2026-27 proposed budget PDF; adopted-budget language should be updated when Metro publishes the final adopted book."
       >
         <div className="space-y-4">
           {governanceActors.map((actor) => (

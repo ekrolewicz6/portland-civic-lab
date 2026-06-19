@@ -107,9 +107,9 @@ export const governanceActors: GovernanceActor[] = [
     id: "metro",
     layer: "Metro",
     geography: "Multnomah, Washington, and Clackamas counties",
-    budget: "Use current budget book",
+    budget: "$1.63B FY2026-27 proposed total budget",
     budgetNote:
-      "Do not publish a headline Metro dollar figure without pulling it from the current official adopted budget document.",
+      "Metro's FY2026-27 proposed budget lists total resources/requirements of $1,630,516,204, including $804,887,896 in current revenues, $1,459,060,378 in appropriations, and $440,022,390 in Supportive Housing Services fund requirements.",
     controls: [
       "Urban Growth Boundary",
       "Regional planning",
@@ -134,6 +134,10 @@ export const governanceActors: GovernanceActor[] = [
     ],
     sourceLinks: [
       { label: "Oregon Blue Book: Metro", href: "https://sos.oregon.gov/blue-book/Pages/local/other-metro.aspx" },
+      {
+        label: "FY2026-27 proposed budget",
+        href: "https://www.oregonmetro.gov/sites/default/files/2026-04/fy-2026-27-proposed-budget-20260403.pdf",
+      },
       {
         label: "Metro budget page",
         href: "https://www.oregonmetro.gov/about-metro/structure-and-operations/finances-and-funding/metro-budget",
