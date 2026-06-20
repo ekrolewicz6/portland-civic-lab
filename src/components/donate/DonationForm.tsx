@@ -1,0 +1,235 @@
+"use client";
+
+import { useEffect, useMemo, useState, useTransition } from "react";
+import { ArrowUpRight, CheckCircle2, HeartHandshake, Repeat2 } from "lucide-react";
+
+type Frequency = "monthly" | "once";
+
+const MONTHLY_AMOUNTS = [10, 25, 50, 100, 250, 500];
+const ONE_TIME_AMOUNTS = [25, 50, 100, 250, 500, 1000];
+
+function formatCurrency(value: number) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(value);
+}
+
+export default function DonationForm() {
+  const [frequency, setFrequency] = useState<Frequency>("monthly");
+  const [amount, setAmount] = useState(25);
+  const [customAmount, setCustomAmount] = useState("25");
+  const [error, setError] = useState("");
+  const [isConfigured, setIsConfigured] = useState<boolean | null>(null);
+  const [isPending, startTransition] = useTransition();
+
+  const suggestedAmounts = frequency === "monthly" ? MONTHLY_AMOUNTS : ONE_TIME_AMOUNTS;
+  const normalizedAmount = useMemo(() => {
+    const parsed = Number(customAmount);
+    return Number.isFinite(parsed) ? parsed : amount;
+  }, [amount, customAmount]);
+
+  function updateFrequency(next: Frequency) {
+    setFrequency(next);
+    const nextAmount = next === "monthly" ? 25 : 100;
+    setAmount(nextAmount);
+    setCustomAmount(String(nextAmount));
+    setError("");
+  }
+
+  function updateAmount(nextAmount: number) {
+    setAmount(nextAmount);
+    setCustomAmount(String(nextAmount));
+    setError("");
+  }
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/donate/status", { cache: "no-store" })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data: { configured?: boolean } | null) => {
+        if (!cancelled) setIsConfigured(Boolean(data?.configured));
+      })
+      .catch(() => {
+        if (!cancelled) setIsConfigured(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  function submit() {
+    setError("");
+
+    if (!Number.isFinite(normalizedAmount) || normalizedAmount < 1) {
+      setError("Enter at least $1.");
+      return;
+    }
+
+    if (normalizedAmount > 10000) {
+      setError("For donations over $10,000, please contact us first.");
+      return;
+    }
+
+    startTransition(async () => {
+      try {
+        const response = await fetch("/api/donate/checkout", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ amount: normalizedAmount, frequency }),
+        });
+
+        const data = (await response.json()) as { url?: string; error?: string };
+        if (!response.ok || !data.url) {
+          throw new Error(data.error || "Could not start Checkout.");
+        }
+
+        window.location.assign(data.url);
+      } catch (err) {
+        setError(
+          err instanceof Error
+            ? err.message
+            : "Could not start Checkout. Please try again.",
+        );
+      }
+    });
+  }
+
+  return (
+    <div className="mx-auto w-full max-w-[460px] rounded-[2rem] border border-white/15 bg-white/[0.08] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.28)] backdrop-blur-md sm:p-4 lg:sticky lg:top-20 xl:max-w-[540px] 2xl:max-w-[620px]">
+      <div className="rounded-[1.55rem] bg-[var(--color-paper)] p-4 text-[var(--color-ink)] sm:p-5 xl:p-6 2xl:p-7">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]">
+              Donate
+            </p>
+            <h2 className="mt-2 font-editorial text-[30px] leading-none text-[var(--color-ink)] sm:text-[38px] 2xl:text-[46px]">
+              Back the lab
+            </h2>
+          </div>
+          <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-canopy)] text-white 2xl:h-14 2xl:w-14">
+            <HeartHandshake className="h-5 w-5 2xl:h-6 2xl:w-6" />
+          </span>
+        </div>
+
+        <div className="mt-5 grid grid-cols-2 rounded-full bg-[var(--color-paper-warm)] p-1 2xl:mt-6">
+          <button
+            type="button"
+            onClick={() => updateFrequency("monthly")}
+            className={`flex min-w-0 items-center justify-center gap-2 rounded-full px-3 py-3 text-[14px] font-semibold transition sm:px-4 2xl:text-[16px] ${
+              frequency === "monthly"
+                ? "bg-[var(--color-canopy)] text-white shadow-sm"
+                : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]"
+            }`}
+          >
+            <Repeat2 className="h-4 w-4" />
+            Monthly
+          </button>
+          <button
+            type="button"
+            onClick={() => updateFrequency("once")}
+            className={`rounded-full px-3 py-3 text-[14px] font-semibold transition sm:px-4 2xl:text-[16px] ${
+              frequency === "once"
+                ? "bg-[var(--color-canopy)] text-white shadow-sm"
+                : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]"
+            }`}
+          >
+            One-time
+          </button>
+        </div>
+
+        <p className="mt-4 rounded-2xl border border-[var(--color-parchment)] bg-white px-4 py-3 text-[13px] leading-relaxed text-[var(--color-ink-light)] xl:text-[14px] 2xl:px-5">
+          {frequency === "monthly"
+            ? "Monthly support gives us predictable runway to keep dashboards current and launch the next Civic Lab tools."
+            : "One-time donations help fund data updates, public records work, and new tools when a project needs a push."}
+        </p>
+
+        <div className="mt-5 grid grid-cols-[repeat(auto-fit,minmax(82px,1fr))] gap-2 xl:gap-3">
+          {suggestedAmounts.map((suggested) => (
+            <button
+              key={suggested}
+              type="button"
+              onClick={() => updateAmount(suggested)}
+              className={`min-w-0 rounded-2xl border px-3 py-3 text-[16px] font-semibold transition ${
+                amount === suggested && normalizedAmount === suggested
+                  ? "border-[var(--color-canopy)] bg-[var(--color-canopy)] text-white"
+                  : "border-[var(--color-parchment)] bg-white text-[var(--color-ink)] hover:border-[var(--color-sage)]"
+              }`}
+            >
+              {formatCurrency(suggested)}
+            </button>
+          ))}
+        </div>
+
+        <label className="mt-5 block">
+          <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+            Or give any amount
+          </span>
+          <div className="mt-2 flex items-center rounded-2xl border border-[var(--color-parchment)] bg-white px-4 py-3 focus-within:border-[var(--color-canopy)] 2xl:px-5">
+            <span className="text-[22px] font-semibold text-[var(--color-ink-muted)]">$</span>
+            <input
+              value={customAmount}
+              onChange={(event) => {
+                setCustomAmount(event.target.value);
+                setAmount(Number(event.target.value));
+                setError("");
+              }}
+              inputMode="decimal"
+              min="1"
+              max="10000"
+              className="min-w-0 flex-1 border-0 bg-transparent px-3 text-[28px] font-semibold text-[var(--color-ink)] outline-none 2xl:text-[34px]"
+              aria-label="Donation amount in dollars"
+            />
+            <span className="text-[12px] font-mono uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+              USD
+            </span>
+          </div>
+        </label>
+
+        {error && (
+          <p className="mt-4 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] text-red-700">
+            {error}
+          </p>
+        )}
+
+        {isConfigured === false && (
+          <p className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-[13px] leading-relaxed text-amber-800">
+            Online donations are built but not yet enabled. Stripe needs one final
+            server-side key before Checkout can accept live payments.
+          </p>
+        )}
+
+        <button
+          type="button"
+          onClick={submit}
+          disabled={isPending || isConfigured !== true}
+          className="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--color-ember)] px-5 py-4 text-[16px] font-bold text-[var(--color-canopy)] transition hover:bg-[var(--color-ember-bright)] disabled:cursor-not-allowed disabled:opacity-60 2xl:py-5 2xl:text-[18px]"
+        >
+          {isConfigured === null
+            ? "Checking secure Checkout..."
+            : isConfigured === false
+              ? "Stripe Checkout not enabled yet"
+              : isPending
+            ? "Opening secure Checkout..."
+            : `Donate ${formatCurrency(normalizedAmount || amount)}${
+                frequency === "monthly" ? " monthly" : ""
+              }`}
+          <ArrowUpRight className="h-4 w-4" />
+        </button>
+
+        <div className="mt-5 grid gap-2 text-[12px] leading-relaxed text-[var(--color-ink-muted)] 2xl:grid-cols-2 2xl:gap-4">
+          <p className="flex gap-2">
+            <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-canopy)]" />
+            Secure payment is handled by Stripe. Portland Civic Lab does not store card numbers.
+          </p>
+          <p className="flex gap-2">
+            <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-canopy)]" />
+            You can use cards and other payment methods enabled in Stripe Checkout.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -35,6 +35,7 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
   {
     title: "Get involved",
     links: [
+      { label: "Donate", href: "/donate" },
       { label: "Volunteer", href: "/volunteer" },
       { label: "Topic Proposals", href: "/proposals" },
       { label: "Contact", href: "/contact" },
@@ -93,11 +94,10 @@ export default function Footer() {
               to understand — through dashboards, deep-dives, and practical civic tools.
             </p>
             <Link
-              href="/signup"
-              prefetch={false}
+              href="/donate"
               className="mt-6 inline-flex items-center gap-2 rounded-sm border border-white/15 bg-white/[0.04] px-4 py-2 text-[12px] font-mono uppercase tracking-[0.14em] text-white hover:bg-white/10 transition-colors"
             >
-              Join the lab
+              Support the lab
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>

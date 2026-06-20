@@ -163,13 +163,13 @@ export default function HomePage() {
                   Open the dashboards
                   <BarChart3 className="w-4 h-4" />
                 </Link>
-                <a
-                  href={ASK_PORTLAND_URL}
+                <Link
+                  href="/deep-dives"
                   className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/15 bg-white/6 px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
                 >
-                  Visit Ask Portland
+                  Explore deep dives
                   <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
 

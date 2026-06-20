@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
-import { ArrowRight, Landmark, Network, TreePine, Users } from "lucide-react";
+import { ArrowRight, Landmark, Network, Scale, TreePine, Users } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
@@ -25,6 +25,17 @@ interface DeepDive {
 }
 
 const DIVES: DeepDive[] = [
+  {
+    href: "/deep-dives/portland-growth-politics",
+    eyebrow: "Housing & taxes",
+    title: "The hidden contradictions in Portland's growth politics",
+    blurb:
+      "Portland wants affordability, climate infill, stable neighborhoods, tenant protections, progressive taxes, and enough homes for the next generation. This deep dive shows where those goals collide, who benefits, who pays, and what changes when you move the levers.",
+    stat: "120,560",
+    statLabel: "homes Portland must plan for by 2045",
+    icon: Scale,
+    available: true,
+  },
   {
     href: "/deep-dives/who-runs-portland",
     eyebrow: "Power map",

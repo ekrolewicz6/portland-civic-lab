@@ -206,6 +206,16 @@ export default function Header({ member: initialMember = null }: { member?: Head
             <span className="h-4 w-px bg-white/15" />
 
             <Link
+              href="/donate"
+              className={`rounded-sm px-3.5 py-1.5 text-[11px] font-mono font-semibold uppercase tracking-[0.12em] transition-colors ${
+                isActive("/donate")
+                  ? "bg-white text-[var(--color-canopy)]"
+                  : "bg-[var(--color-ember)] text-[var(--color-canopy)] hover:bg-[var(--color-ember-bright)]"
+              }`}
+            >
+              Donate
+            </Link>
+            <Link
               href="/contact"
               className={`text-[11px] font-mono uppercase tracking-[0.16em] transition-colors ${
                 isActive("/contact") ? "text-white" : "text-white/55 hover:text-white"
@@ -266,6 +276,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
               ))}
             </MobileGroup>
             <MobileGroup title="Connect">
+              <MobileLink href="/donate" label="Donate" active={isActive("/donate")} />
               <MobileLink href="/contact" label="Contact" active={isActive("/contact")} />
               {member ? (
                 <MobileLink

@@ -12,9 +12,9 @@ import React from "react";
  * viewport gets.
  */
 
-/** Responsive page gutter — matches the rest of the site (1400 → 1800 at 3xl). */
+/** Responsive page gutter — long-form pages should use real desktop width. */
 export const DIVE_CONTAINER =
-  "mx-auto w-full max-w-[1400px] 3xl:max-w-[1760px] px-5 sm:px-8 lg:px-12";
+  "mx-auto w-full max-w-[1880px] px-4 sm:px-6 lg:px-10 2xl:px-12";
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
@@ -69,7 +69,7 @@ const TONE_BG: Record<Tone, string> = {
 };
 
 /**
- * Editorial section. On xl+ it lays out as [4-col heading rail | 8-col body];
+ * Editorial section. On xl+ it lays out as [compact heading rail | wide body];
  * below xl it stacks. The heading rail sticks while you scroll its body on
  * large screens. `aside` is extra content under the heading (e.g. a source line).
  */
@@ -92,16 +92,16 @@ export function Section({
 }) {
   const isDark = tone === "dark" || tone === "darker";
   return (
-    <section id={id} className={`py-16 sm:py-20 xl:py-24 ${TONE_BG[tone]}`}>
+    <section id={id} className={`scroll-mt-24 py-12 sm:py-14 xl:py-16 ${TONE_BG[tone]}`}>
       <div className={DIVE_CONTAINER}>
-        <div className="grid xl:grid-cols-12 gap-x-12 2xl:gap-x-20 gap-y-8">
-          <div className="xl:col-span-4 xl:self-start xl:sticky xl:top-24">
+        <div className="grid gap-y-8 gap-x-8 xl:grid-cols-[minmax(300px,0.28fr)_minmax(0,1fr)] 2xl:grid-cols-[minmax(360px,0.26fr)_minmax(0,1fr)] 2xl:gap-x-12">
+          <div className="xl:self-start xl:sticky xl:top-24">
             <Eyebrow>{eyebrow}</Eyebrow>
             <H2 tone={isDark ? "dark" : "light"}>{title}</H2>
             {lead ? <Lead tone={isDark ? "dark" : "light"}>{lead}</Lead> : null}
             {aside ? <div className="mt-5">{aside}</div> : null}
           </div>
-          <div className="xl:col-span-8 min-w-0">{children}</div>
+          <div className="min-w-0">{children}</div>
         </div>
       </div>
     </section>
