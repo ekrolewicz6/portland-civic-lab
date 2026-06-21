@@ -137,6 +137,21 @@ export const SOURCES = {
     title: "2025-27 Legislatively Adopted Budget (ORBITS division detail; total funds $2.26B)",
     url: "https://www.oregon.gov/biz/Publications/12300%20-%20Oregon%20Business%20Development%20Department-v4.pdf",
   },
+  obcLetter: {
+    org: "Oregon Business Council",
+    title: "A Moment of Economic Reckoning for Oregon — letter to the Governor's Prosperity Council (March 18, 2026)",
+    url: "https://www.oregon.gov/gov/policies/Documents/20260318_OBC%20Prosperity%20Council%20Letter%20pdf.pdf",
+  },
+  highRoadPaper: {
+    org: "SEIU & Oregon Building Trades (the Council's labor members)",
+    title: "The High Road to Prosperity for All Oregonians (April 7, 2026) — with Joe Cortright and Chuck Sheketoff",
+    url: "https://www.oregon.gov/gov/policies/Documents/Final-Prosperity-Paper-April%207.pdf",
+  },
+  prosperitySurvey: {
+    org: "Governor's Prosperity Council",
+    title: "Statewide engagement survey — 1,039 responses (raw results)",
+    url: "https://www.oregon.gov/gov/policies/Pages/Prosperity-Council.aspx",
+  },
 } as const;
 
 export type SourceKey = keyof typeof SOURCES;
@@ -352,6 +367,88 @@ export const CNBC_RANK: Array<{ metric: string; y2019: number; y2025: number }> 
   { metric: "Economy", y2019: 7, y2025: 41 },
   { metric: "Business friendliness", y2019: 43, y2025: 47 },
 ];
+
+/** The two competing papers the Council received — the business and labor poles. */
+export interface CouncilCamp {
+  author: string;
+  date: string;
+  tone: "business" | "labor";
+  frame: string;
+  asks: string[];
+  evidence: string;
+  source: SourceKey;
+}
+
+export const COUNCIL_CAMPS: CouncilCamp[] = [
+  {
+    author: "Oregon Business Council",
+    date: "March 2026",
+    tone: "business",
+    frame:
+      "Oregon is in “recession-like” conditions and entering an era of population scarcity. Stagnation — not growth — is now the threat.",
+    asks: [
+      "A permanent growth-strategy body: a successor Prosperity Council with a public-private “backbone organization.”",
+      "Land-use reform for 2027 — modernize the urban growth boundary, speed permitting, fund industrial sites.",
+      "Restore “tax competitiveness” — ease the Corporate Activity Tax and Portland's high-income surtaxes.",
+      "Regulatory modernization with hard reduction targets.",
+      "Stronger talent pipelines and K-12 accountability.",
+    ],
+    evidence:
+      "Greater Portland Inc. counted six clean-tech and advanced-manufacturing prospects — about $5.6B of investment — lost to other states; Daimler put a battery plant in Mississippi over the Portland region.",
+    source: "obcLetter",
+  },
+  {
+    author: "SEIU + Building Trades",
+    date: "April 2026",
+    tone: "labor",
+    frame:
+      "The “doom loop” is a myth. Take the high road: raise incomes for working Oregonians instead of chasing business-climate rankings.",
+    asks: [
+      "Target per-capita income and wages for low- and middle-earners — not GDP or job counts.",
+      "Fully fund the 40/40/20 education vision, childcare, and apprenticeships.",
+      "Tie any business tax break to family wages and paid training.",
+      "Protect the Corporate Activity Tax (it funds schools, hits ~5% of firms) and high-income taxes.",
+      "Add the worker-centered AI guardrails the Governor's Roadmap left out.",
+    ],
+    evidence:
+      "Brookings' March 2026 Metro Monitor ranks Portland 10th of large U.S. metros for prosperity (Bend 1st among mid-size); Oregon has net positive firm migration. “Business-climate rankings are barely worth the paper they're printed on.”",
+    source: "highRoadPaper",
+  },
+];
+
+/** Same state, two stories — the evidence each side leans on. */
+export const CONTESTED_EVIDENCE: Array<{ question: string; reform: string; counter: string }> = [
+  {
+    question: "Is Oregon's economy failing?",
+    reform: "CNBC's business rank fell #22 → #39; unemployment is among the nation's highest.",
+    counter: "Brookings ranks Portland 10th of large metros for prosperity; Bend 1st among mid-size.",
+  },
+  {
+    question: "Are businesses fleeing the state?",
+    reform: "Greater Portland Inc. tallied ~$5.6B in clean-tech and manufacturing projects lost to other states.",
+    counter: "BLS firm-migration data put Oregon 11th of 50 states for net inbound business moves (+35).",
+  },
+  {
+    question: "Do tax breaks actually bring jobs?",
+    reform: "“Modernize” incentives so Oregon can compete for the big employers it keeps losing.",
+    counter: "Upjohn's Tim Bartik: 9 of 10 incentives change no decision. Tektronix's own tax director said the same.",
+  },
+];
+
+/** The Council's "statewide engagement" survey, summarized from the raw results. */
+export const SURVEY = {
+  responses: 1039,
+  oregon: 1022,
+  businessShare: 0.43, // "Both" + "Organization/Business" of all respondents
+  topFocus: [
+    { area: "Business climate", n: 507 },
+    { area: "Tools for growth", n: 264 },
+    { area: "Workforce", n: 254 },
+  ],
+  note:
+    "Over 1,000 Oregonians answered. The top-ranked concern was “business climate” — but about 4 in 10 respondents were speaking for a business or organization, so the engagement leans toward employer voices more than a representative public.",
+  source: "prosperitySurvey" as SourceKey,
+};
 
 /* ------------------------------------------------------------------ */
 /* The front door — Oregon vs a product-built peer                     */
@@ -573,6 +670,7 @@ export const NAV = [
   { id: "front-door", label: "The front door" },
   { id: "diagnosis", label: "Structure vs. execution" },
   { id: "peer-states", label: "Other states" },
+  { id: "debate", label: "The real debate" },
   { id: "decide", label: "You decide" },
   { id: "sources", label: "Sources" },
 ];

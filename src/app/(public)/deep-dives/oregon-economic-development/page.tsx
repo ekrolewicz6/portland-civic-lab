@@ -13,6 +13,8 @@ import {
   CAVEATS,
   CNBC_RANK,
   COMMERCE_PROPOSAL,
+  CONTESTED_EVIDENCE,
+  COUNCIL_CAMPS,
   DIAGNOSIS,
   FRONT_DOOR,
   HEADLINE_STATS,
@@ -26,6 +28,7 @@ import {
   SERIOUS_BAR,
   SOURCES,
   STATEWIDE_INCENTIVE,
+  SURVEY,
   TARGETS_CUT,
   TLDR_POINTS,
   TRADEOFFS,
@@ -519,6 +522,101 @@ export default function OregonEconomicDevelopmentPage() {
           <div className="mt-6 -mx-4 border-y border-[var(--color-parchment)] bg-[var(--color-canopy)] p-5 text-white sm:mx-0 sm:rounded-sm sm:border sm:p-6">
             <MiniKicker>The takeaway</MiniKicker>
             <p className="mt-3 max-w-3xl text-[16px] leading-relaxed text-white/85">{PEER_TAKEAWAY}</p>
+          </div>
+        </Section>
+
+        {/* The real debate — competing papers + survey */}
+        <Section
+          id="debate"
+          eyebrow="The real debate"
+          title="The room can't agree on the problem."
+          lead="Before recommending anything, the Council collected competing visions. Two landed as formal papers — one from the business coalition, one from the Council's own labor members — and they disagree on nearly everything, starting with whether Oregon's economy is failing at all."
+          tone="warm"
+        >
+          {/* Survey snapshot */}
+          <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5 xl:p-6">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+                What {SURVEY.responses.toLocaleString()} Oregonians said
+              </p>
+              <p className="font-mono text-[11px] text-[var(--color-ink-muted)]">{SURVEY.oregon.toLocaleString()} in-state responses</p>
+            </div>
+            <div className="mt-4 space-y-2.5">
+              {SURVEY.topFocus.map((f) => (
+                <div key={f.area}>
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-[13px] font-semibold text-[var(--color-ink)] sm:text-[14px]">{f.area}</p>
+                    <p className="font-mono text-[13px] tabular-nums text-[var(--color-ink-light)]">{f.n}</p>
+                  </div>
+                  <div className="mt-1 h-2 w-full overflow-hidden rounded-full bg-[var(--color-parchment)]">
+                    <div
+                      className="h-full rounded-full bg-[var(--color-ember)] motion-safe:transition-all"
+                      style={{ width: `${Math.round((f.n / SURVEY.topFocus[0].n) * 100)}%` }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 max-w-[68ch] text-[13px] leading-relaxed text-[var(--color-ink-light)] sm:text-[14px]">{SURVEY.note}</p>
+            <p className="mt-3 text-[12px]"><SourceLink id={SURVEY.source}>Prosperity Council survey results</SourceLink></p>
+          </div>
+
+          {/* Two camps */}
+          <div className="mt-5 grid gap-5 lg:grid-cols-2">
+            {COUNCIL_CAMPS.map((c) => {
+              const business = c.tone === "business";
+              return (
+                <div
+                  key={c.author}
+                  className={`-mx-4 border-y p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5 xl:p-6 ${business ? "border-[var(--color-ember)]/30 bg-[#fff7f2]" : "border-[var(--color-sage)] bg-[#f5fbf6]"}`}
+                >
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                    <p className={`font-mono text-[11px] font-semibold uppercase tracking-[0.16em] ${business ? "text-[#8c3d25]" : "text-[var(--color-canopy)]"}`}>
+                      {business ? "The business case" : "The labor case"}
+                    </p>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">{c.author} · {c.date}</p>
+                  </div>
+                  <p className="mt-3 text-[15px] font-semibold leading-snug text-[var(--color-ink)] sm:text-[16px] xl:text-[17px]">{c.frame}</p>
+                  <ul className="mt-4 space-y-2">
+                    {c.asks.map((a) => (
+                      <li key={a} className="flex gap-2.5 text-[13px] leading-relaxed text-[var(--color-ink-light)] sm:text-[14px]">
+                        <span className={`mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full ${business ? "bg-[var(--color-ember)]" : "bg-[var(--color-sage)]"}`} />
+                        <span>{a}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-4 border-t border-[var(--color-parchment)] pt-3 text-[12px] leading-relaxed text-[var(--color-ink-muted)]">{c.evidence}</p>
+                  <p className="mt-3 text-[12px]"><SourceLink id={c.source}>{business ? "OBC letter" : "“High Road” paper"}</SourceLink></p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Contested evidence */}
+          <div className="mt-5 -mx-4 border-y border-[var(--color-parchment)] bg-[var(--color-canopy)] p-4 text-white sm:mx-0 sm:rounded-sm sm:border sm:p-6">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember-bright)]">One state, two stories</p>
+            <h3 className="mt-2 font-editorial text-[24px] leading-tight text-white sm:text-[26px]">The same Oregon, read two ways.</h3>
+            <div className="mt-5 space-y-3">
+              {CONTESTED_EVIDENCE.map((e) => (
+                <div key={e.question} className="rounded-sm border border-white/12 bg-white/[0.05] p-4">
+                  <p className="text-[14px] font-bold text-white sm:text-[15px]">{e.question}</p>
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-sm border-l-2 border-[var(--color-ember-bright)] bg-black/15 py-1.5 pl-3">
+                      <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ember-bright)]">The reform case</p>
+                      <p className="mt-1 text-[13px] leading-relaxed text-white/80 sm:text-[14px]">{e.reform}</p>
+                    </div>
+                    <div className="rounded-sm border-l-2 border-[var(--color-sage)] bg-black/15 py-1.5 pl-3">
+                      <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-sage)]">The counter-case</p>
+                      <p className="mt-1 text-[13px] leading-relaxed text-white/80 sm:text-[14px]">{e.counter}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 max-w-[72ch] text-[12px] leading-relaxed text-white/55">
+              The reform case is sourced throughout this piece. The counter-case is the labor members&apos; paper, citing
+              Brookings and BLS. Both are on the record — the Council has to choose which Oregon it&apos;s governing for.
+            </p>
           </div>
         </Section>
 
