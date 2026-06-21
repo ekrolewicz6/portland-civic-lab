@@ -166,12 +166,12 @@ export function reformRevenue(additionalAv: number, taxRate: number = DEFAULTS.t
   return {
     annual,
     allocation: [
-      { name: "Infrastructure / SDC backfill", value: annual * 0.26, fill: "#4a7f9e" },
-      { name: "Tenant Stability Fund", value: annual * 0.22, fill: "#3d7a5a" },
-      { name: "Affordable housing gap funding", value: annual * 0.22, fill: "#c8956c" },
-      { name: "Permit modernization", value: annual * 0.08, fill: "#7fa88e" },
-      { name: "Hardship circuit breaker", value: annual * 0.11, fill: "#64748b" },
-      { name: "Public land housing fund", value: annual * 0.11, fill: "#b85c3a" },
+      { name: "Infrastructure (instead of new-building fees)", value: annual * 0.26, fill: "#4a7f9e" },
+      { name: "Renter stability fund", value: annual * 0.22, fill: "#3d7a5a" },
+      { name: "Affordable housing", value: annual * 0.22, fill: "#c8956c" },
+      { name: "Faster permits", value: annual * 0.08, fill: "#7fa88e" },
+      { name: "Help for owners who can't pay", value: annual * 0.11, fill: "#64748b" },
+      { name: "Homes on public land", value: annual * 0.11, fill: "#b85c3a" },
     ],
   };
 }

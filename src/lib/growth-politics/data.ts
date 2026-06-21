@@ -202,8 +202,8 @@ export const SYSTEM_LAYERS: SystemLayer[] = [
     source: "permitImprovement",
   },
   {
-    title: "SDCs and fees",
-    intent: "Make new development help pay for pipes, parks, streets, and other systems.",
+    title: "Building fees (SDCs)",
+    intent: "Make new development help pay for pipes, parks, streets, and other shared systems. The city calls these System Development Charges, or SDCs.",
     hiddenEffect: "The next home has to pay upfront for systems the whole city uses.",
     winners: "Existing residents if the cost is not spread broadly.",
     losers: "New homes that barely pencil out and the people who would live in them.",
@@ -240,7 +240,7 @@ export const SYSTEM_LAYERS: SystemLayer[] = [
   {
     title: "Income and business taxes",
     intent: "Fund homelessness, preschool, city/county services.",
-    hiddenEffect: "Taxes work and business income while some valuable property gets a lighter property-tax bill.",
+    hiddenEffect: "Taxes paychecks and business income, while some valuable property keeps a lighter property-tax bill.",
     winners: "People with valuable property but lower taxable income.",
     losers: "High-earning renters, founders, firms, working newcomers.",
     icon: Building2,
@@ -276,21 +276,21 @@ export const COHORTS: Cohort[] = [
     kind: "winner",
     scale: "Owners of stock housing ~139,100 renter households",
     mechanism: "They may have lower tax bills while charging rents shaped by a tight housing market.",
-    quantified: "A 10-unit building with a 10% shortage premium can gain about $19,860/year in operating income, worth about $361k at a 5.5% cap rate.",
+    quantified: "A 10-unit building with a 10% shortage markup can gain about $19,860/year in operating income, worth about $361k at a 5.5% cap rate.",
   },
   {
     name: "Renters searching now",
     kind: "loser",
     scale: "Large share of ~139,100 renter households",
     mechanism: "They pay today's rent without an older low tax bill or older rent protections.",
-    quantified: "A 10% shortage premium costs about $1,986/year per household, or about $276M/year across renter households.",
+    quantified: "A 10% shortage markup costs about $1,986/year per household, or about $276M/year across renter households.",
   },
   {
     name: "Future Portlanders",
     kind: "loser",
     scale: "120,560 needed units by 2045",
     mechanism: "Cannot vote, testify, or appeal. They are missing from the process.",
-    quantified: "A 10% shortage premium applied to the needed-unit base equals about $239M/year.",
+    quantified: "A 10% shortage markup applied to the needed-unit base equals about $239M/year.",
   },
   {
     name: "First-time buyers and young families",
@@ -426,7 +426,7 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
       label: "Added tax if below 50% floor",
     },
     annualChange: "About a $4,400/year swing from protected benefit to added tax, before any income-based protection.",
-    calculationNote: "$581,500 home at 35% taxable-value ratio versus 48.1% new-residential ratio, then a one-way 50% minimum floor.",
+    calculationNote: "$581,500 home at 35% taxed share versus 48.1% new-residential ratio, then a one-way 50% minimum floor.",
     currentPosition: "Often protected by low taxable value and helped by scarce housing pushing home values up.",
     packageEffect: "A minimum floor would move very low taxable values closer to market value over time without cutting bills for above-floor parcels.",
     burden: "Likely higher property taxes unless the owner qualifies for income-based deferral.",
@@ -472,7 +472,7 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
       label: "Higher tax after sale reset or floor",
     },
     annualChange: "A buyer loses the annual discount, but the seller may also lose part of the sale-price premium.",
-    calculationNote: "Models an old median-value home bought with a 35% taxable-value ratio and reset toward a one-way 50% floor.",
+    calculationNote: "Models an old median-value home bought with a 35% taxed share and reset toward a one-way 50% floor.",
     currentPosition: "Can buy an old home and inherit a lower taxable value even if they can afford more.",
     packageEffect: "A sale reset or minimum floor would shrink the old tax advantage at purchase.",
     burden: "Higher annual tax bill than under today's no-reset system.",
@@ -495,7 +495,7 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
       label: "Added tax after transfer floor",
     },
     annualChange: "Roughly a $13,000/year swing on a $1M property if a deep discount moves to a 50% floor.",
-    calculationNote: "$1M property at 25% taxable-value ratio versus 48.1% new-residential ratio, then a one-way 50% minimum floor.",
+    calculationNote: "$1M property at 25% taxed share versus 48.1% new-residential ratio, then a one-way 50% minimum floor.",
     currentPosition: "Can keep low taxable values attached to valuable property over generations.",
     packageEffect: "Transfers, conversions to rentals, and inherited high-value properties would move closer to the minimum floor.",
     burden: "Lower inheritance value or higher taxes after transfer.",
@@ -538,10 +538,10 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
     futureAnnual: {
       amount: renterShortage5,
       kind: "benefit",
-      label: "Remaining scarcity premium if cut in half",
+      label: "Remaining shortage markup if cut in half",
     },
     annualChange: "About $993/year less scarcity rent per unit before accounting for higher property taxes.",
-    calculationNote: "Uses median gross rent of $1,655/month and assumes the package cuts a 10% shortage premium to 5%.",
+    calculationNote: "Uses median gross rent of $1,655/month and assumes the package cuts a 10% shortage markup to 5%.",
     currentPosition: "Can benefit from low taxable value plus market rents shaped by scarcity.",
     packageEffect: "Non-owner-occupied property would reset faster, and more supply would reduce scarcity pricing over time.",
     burden: "Higher property taxes and lower scarcity-driven rent upside.",
@@ -579,7 +579,7 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
     currentAnnual: {
       amount: renterShortage10,
       kind: "cost",
-      label: "Modeled shortage premium today",
+      label: "Modeled shortage markup today",
     },
     futureAnnual: {
       amount: renterShortage5,
@@ -587,8 +587,8 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
       label: "Shortage premium if cut in half",
     },
     annualChange: "About $993/year less rent pressure per household in this simple model.",
-    calculationNote: "Uses median gross rent of $1,655/month and compares a 10% shortage premium with a 5% shortage premium.",
-    currentPosition: "Pay today's market rent and absorb the shortage premium directly.",
+    calculationNote: "Uses median gross rent of $1,655/month and compares a 10% shortage markup with a 5% shortage markup.",
+    currentPosition: "Pay today's market rent and absorb the shortage markup directly.",
     packageEffect: "More housing supply, funded tenant stability, and fewer costs loaded onto new buildings should reduce pressure over time.",
     burden: "No major direct new tax burden unless landlords pass through costs.",
     benefit: "More vacancies, less bidding pressure, and more leverage when choosing where to live.",
@@ -602,12 +602,12 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
     currentAnnual: {
       amount: renterShortage10,
       kind: "cost",
-      label: "Modeled exclusion/shortage premium",
+      label: "Modeled exclusion/shortage markup",
     },
     futureAnnual: {
       amount: renterShortage5,
       kind: "cost",
-      label: "Remaining shortage premium if supply improves",
+      label: "Remaining shortage markup if supply improves",
     },
     annualChange: "About $993/year less exclusion cost per future household if scarcity pressure is cut in half.",
     calculationNote: "Applies the same renter shortage-premium model to a future household looking for a home.",
@@ -625,7 +625,7 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
     currentAnnual: {
       amount: buyerScarcity20,
       kind: "cost",
-      label: "Mortgage cost of 20% scarcity premium",
+      label: "Mortgage cost of 20% shortage markup",
     },
     futureAnnual: {
       amount: buyerScarcity10,
@@ -637,7 +637,7 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
     currentPosition: "Compete against scarcity-inflated prices and incumbents with older tax bases.",
     packageEffect: "More small homes, townhomes, condos, and less capitalization of old tax discounts into prices.",
     burden: "Some buyers of old homes may face higher annual taxes than they would today.",
-    benefit: "Lower scarcity premium and more types of homes to buy.",
+    benefit: "Lower shortage markup and more types of homes to buy.",
     honesty: "They do not automatically win if mortgage rates, construction costs, and incomes remain out of line.",
     result: "mixed",
     certainty: "Medium",
@@ -804,8 +804,8 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
     certainty: "Medium",
   },
   {
-    name: "High-income homeowners with low-MAV property",
-    unit: "Per high-income owner of median-value low-MAV home per year",
+    name: "High-income homeowners with low-taxed property",
+    unit: "Per high-income owner of median-value low-taxed home per year",
     currentAnnual: {
       amount: highIncomeLocalTaxExample - medianHome35.annualAdvantageVsCpr,
       kind: "cost",
@@ -924,7 +924,7 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
     currentAnnual: {
       amount: renterShortage10,
       kind: "cost",
-      label: "Modeled shortage premium today",
+      label: "Modeled shortage markup today",
     },
     futureAnnual: {
       amount: renterShortage5,
@@ -947,7 +947,7 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
     currentAnnual: {
       amount: annualValueOfScarcityPremium,
       kind: "benefit",
-      label: "Annualized value of a 10% scarcity premium",
+      label: "Annualized value of a 10% shortage markup",
     },
     futureAnnual: {
       amount: annualValueOfScarcityPremium / 2,
@@ -955,10 +955,10 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
       label: "Remaining annualized premium if cut in half",
     },
     annualChange: "About $1,454/year less scarcity-value benefit in this model.",
-    calculationNote: "Annualizes a 10% scarcity premium on a $581,500 home at a 5% return rate, then cuts the premium in half.",
+    calculationNote: "Annualizes a 10% shortage markup on a $581,500 home at a 5% return rate, then cuts the premium in half.",
     currentPosition: "Can benefit from scarcity, less competition, preserved parking, and more control over neighborhood change.",
     packageEffect: "More by-right housing and a land/property fairness package would reduce their ability to block planned homes.",
-    burden: "Less control over nearby change and less scarcity premium in home value.",
+    burden: "Less control over nearby change and less shortage markup in home value.",
     benefit: "More options for family members, workers, and services to stay in the city.",
     honesty: "This is probably the most politically important loser group.",
     result: "losesAdvantage",
@@ -966,24 +966,123 @@ export const PACKAGE_COHORT_IMPACTS: PackageCohortImpact[] = [
   },
 ];
 
+/**
+ * Signed annual effect: positive means the group comes out ahead under a rule
+ * set, negative means it pays. Used so a "benefit" and a "cost" never get
+ * subtracted as if they were the same sign.
+ */
+export function signedAnnualEffect(effect: AnnualEffect): number {
+  if (effect.kind === "benefit") return effect.amount;
+  if (effect.kind === "neutral") return 0;
+  return -effect.amount;
+}
+
+export type WinnerLoserSide = "winner" | "loser" | "middle";
+
+export interface WinnerLoserGroup {
+  name: string;
+  side: WinnerLoserSide;
+  /** Signed dollars per year, same unit family across the chart: + ahead, - pays. */
+  amount: number;
+  unit: string;
+  persona: string;
+  why: string;
+}
+
+/**
+ * The single, consolidated winners-and-losers picture. Every amount is in the
+ * same unit family (dollars per household or per unit, per year) so the bars are
+ * actually comparable. System-wide effects live in SYSTEM_WIDE_GAP, off this axis.
+ */
+export const WINNERS_LOSERS: WinnerLoserGroup[] = [
+  {
+    name: "Owners of older, lightly taxed homes",
+    side: "winner",
+    amount: Math.round(medianHome35.annualAdvantageVsCpr),
+    unit: "per home, every year",
+    persona: "Bought years ago; the tax bill never caught up.",
+    why: "Taxed as if the home is worth far less than it is — and the discount stays with the house when it sells.",
+  },
+  {
+    name: "Landlords with older buildings",
+    side: "winner",
+    amount: Math.round(renterShortage10),
+    unit: "per rented unit, every year",
+    persona: "Owns a fourplex bought decades ago.",
+    why: "A low, frozen tax bill, plus rents lifted by a citywide shortage.",
+  },
+  {
+    name: "Homeowners who keep new homes out",
+    side: "winner",
+    amount: Math.round(annualValueOfScarcityPremium),
+    unit: "per home, every year",
+    persona: "Fights the apartments proposed down the block.",
+    why: "Scarcity quietly adds to their own home's value, so blocking homes can pay.",
+  },
+  {
+    name: "Renters looking for a place now",
+    side: "loser",
+    amount: -Math.round(renterShortage10),
+    unit: "per household, every year",
+    persona: "New to town, bidding against everyone else.",
+    why: "Pays a shortage markup on rent, with no old tax break to offset it.",
+  },
+  {
+    name: "First-time buyers",
+    side: "loser",
+    amount: -Math.round(buyerScarcity20),
+    unit: "per buyer household, every year",
+    persona: "Trying to buy a first home against inflated prices.",
+    why: "The shortage is baked into the price, so they borrow far more to get in.",
+  },
+  {
+    name: "The next apartment building",
+    side: "loser",
+    amount: -Math.round(multifamilyStackCurrent),
+    unit: "per new home, every year",
+    persona: "A 100-home project deciding whether to break ground.",
+    why: "Pays new-value taxes, city fees, affordable-unit costs, delay, and design rules all at once.",
+  },
+  {
+    name: "Future Portlanders",
+    side: "loser",
+    amount: -Math.round(renterShortage10),
+    unit: "per future household, every year",
+    persona: "The nurse or grad who hasn't moved here yet.",
+    why: "Can't vote or testify here yet, so the shortage gets decided without them.",
+  },
+  {
+    name: "Older neighbors on fixed incomes",
+    side: "middle",
+    amount: 0,
+    unit: "protected, but cash-poor",
+    persona: "Retired, house-rich, living on a fixed check.",
+    why: "The cap can be the difference between staying and being taxed out — real protection worth keeping.",
+  },
+];
+
+export const SYSTEM_WIDE_GAP = {
+  amount: 100_000_000,
+  label: "a year for city services and infrastructure",
+  note: "When property taxes stay capped and new buildings are waved past fees, the money has to come from somewhere — usually fees on the next project, income taxes, or skipped maintenance.",
+};
+
 export const NAV = [
-  { id: "parcel-lookup", label: "My address" },
-  { id: "current-ledger", label: "Today" },
-  { id: "thesis", label: "The thesis" },
-  { id: "measure-50", label: "Measure 50" },
-  { id: "calculator", label: "Calculators" },
-  { id: "stack", label: "Rules pile-up" },
-  { id: "cohorts", label: "Who wins/loses" },
-  { id: "reforms", label: "Reforms" },
-  { id: "package-impact", label: "Who pays" },
+  { id: "measure-50", label: "Why it happens" },
+  { id: "winners-losers", label: "Winners & losers" },
+  { id: "contradictions", label: "Broken promises" },
+  { id: "parcel-lookup", label: "Your address" },
+  { id: "reforms", label: "The fix" },
+  { id: "calculator", label: "Try it yourself" },
+  { id: "take-action", label: "Take action" },
   { id: "sources", label: "Sources" },
 ];
 
 export const HEADLINE_STATS = [
-  { value: "120,560", label: "homes Portland must plan for by 2045" },
-  { value: "55,000", label: "catch-up units needed by 2032" },
-  { value: "48.1%", label: "county ratio used for new residential property" },
-  { value: "$276M", label: "modeled annual renter cost of a 10% shortage premium" },
+  { value: "$2,000+", label: "a year an older home can save vs. a same-value newer one" },
+  { value: "$276M", label: "a year renters pay for Portland's housing shortage" },
+  { value: "120,560", label: "homes the city says it must plan for by 2045" },
+  { value: "55,000", label: "homes Portland is already behind, needed by 2032" },
 ];
 
 export const REFORMS = [

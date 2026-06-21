@@ -1087,7 +1087,7 @@ function currentPolicyImpact({
       unit: "per renting household per year",
       kind: "loss",
       summary: `Under today's housing shortage, this model estimates about ${signedDollarText(renterShortageLoss)} per year in rent pressure for a household paying ${signedDollarText(renterMonthlyRent)} per month.`,
-      howCalculated: `${renterRentSource} x 12 x 10% shortage premium.`,
+      howCalculated: `${renterRentSource} x 12 x 10% shortage markup.`,
       readerMeaning:
         "This is not this unit's tax bill. It is the modeled cost of living in a tight rental market where too few homes are available.",
       confidence: monthlyRent && monthlyRent > 0 ? "Medium" : "Low",
@@ -1121,7 +1121,7 @@ function currentPolicyImpact({
             ? "Estimated current-policy loss"
             : "Estimated current-policy position",
       amount,
-      unit: "per year versus changed-property benchmark",
+      unit: "per year versus new-home benchmark",
       kind,
       summary,
       howCalculated: `Benchmark annual tax minus current modeled annual tax. This address is taxed on ${taxedShareText} of market value. The selected income band is not used in this current-rules comparison.`,
@@ -1155,7 +1155,7 @@ function currentPolicyImpact({
         totalGain === null
           ? "This model cannot estimate the landlord-side current advantage yet."
           : `Today's rules may be worth about ${signedDollarText(totalGain)} per year to the property owner in modeled tax advantage and scarcity rent premium.`,
-      howCalculated: "Positive property-tax advantage versus benchmark, plus a 10% modeled rent-scarcity premium per listed unit.",
+      howCalculated: "Positive property-tax advantage versus benchmark, plus a 10% modeled rent-shortage markup per listed unit.",
       readerMeaning:
         "This is a property-owner-side estimate. It does not prove the owner is overcharging or that a tenant receives or loses this exact amount.",
       confidence: "Low",
@@ -1181,7 +1181,7 @@ function currentPolicyImpact({
         net === null
           ? "This model cannot estimate the buyer position yet."
           : `For a buyer, this model nets any inherited tax discount against an approximate shortage-driven mortgage burden. The result is ${signedDollarText(net)} per year.`,
-      howCalculated: "Modeled inherited annual tax advantage minus annual mortgage cost of a 10% scarcity premium.",
+      howCalculated: "Modeled inherited annual tax advantage minus annual mortgage cost of a 10% shortage markup.",
       readerMeaning:
         "A buyer can benefit from an old low tax bill and still lose overall if scarcity has already raised the purchase price.",
       confidence: "Low",
@@ -1205,7 +1205,7 @@ function currentPolicyImpact({
         taxStepUp === null
           ? "This model cannot estimate the project tax step-up yet."
           : `If the parcel becomes new or heavily changed housing, the first visible current-policy burden is roughly ${signedDollarText(taxStepUp)} per year in tax-basis step-up before adding fees and delay.`,
-      howCalculated: "Current owner tax advantage versus changed-property benchmark, shown as a project-side cost if redevelopment loses the old basis.",
+      howCalculated: "Current owner tax advantage versus new-home benchmark, shown as a project-side cost if redevelopment loses the old basis.",
       readerMeaning:
         "This is only the tax-basis signal. For builders, the larger current-policy losses often come from land cost, fees, delay, financing, and project uncertainty.",
       confidence: "Low",
@@ -1229,12 +1229,12 @@ function currentPolicyImpact({
         amount === null
           ? "This model cannot estimate the commercial current-policy position yet."
           : `This non-residential comparison is directional only: it shows ${signedDollarText(amount)} per year against the residential benchmark.`,
-      howCalculated: "Modeled annual tax difference versus the residential changed-property benchmark.",
+      howCalculated: "Modeled annual tax difference versus the residential new-home benchmark.",
       readerMeaning:
         "Commercial property needs a separate benchmark before this should be treated as a policy conclusion.",
       confidence: "Low",
       whatWouldMakeThisMoreExact: [
-        "Commercial changed-property ratio by property class.",
+        "Commercial new-home ratio by property class.",
         "Whether the business owns or leases the space.",
         "Lease pass-through terms for taxes and operating costs.",
         "Business income-tax exposure.",
@@ -1342,14 +1342,14 @@ function buildImpactBrief({
         "Current rules",
         renterShortageNow,
         "per renting household per year",
-        `Modeled citywide rent-shortage burden using ${renterRentSource} and a 10% scarcity premium.`,
+        `Modeled citywide rent-shortage burden using ${renterRentSource} and a 10% shortage markup.`,
         "cost",
       ),
       future: metric(
         "If the package worked",
         renterShortageFuture,
         "per renting household per year",
-        "Illustrative case where more supply and direct tenant support cut the shortage premium in half.",
+        "Illustrative case where more supply and direct tenant support cut the shortage markup in half.",
         "benefit",
       ),
       change: metric(
@@ -1390,7 +1390,7 @@ function buildImpactBrief({
       eyebrow: "Owner-occupier impact",
       headline:
         hasRawIncrease && !selectedIncome
-          ? "This address is below the minimum-share floor. Choose an income band to see whether the household is protected or exposed."
+          ? "This address is below the minimum-share floor, so a fair-minimum package would raise its tax over time — with hardship protection for low and fixed incomes handled separately."
           : hasRawIncrease && incomeProtection.protected
           ? "This address is below the minimum-share floor, but the selected income band would protect most or all of the cash increase."
           : hasRawIncrease
@@ -1400,21 +1400,21 @@ function buildImpactBrief({
         "For an owner who lives here, the key question is whether the tax system is protecting a household from shock or protecting a property advantage that can outlive the household need. A minimum floor raises low-share parcels, but household-income protection can change how much is paid in cash.",
       now: metric("Current modeled tax", currentAnnualTax, "per year", "Estimated from county real market value and assessed value.", "neutral"),
       future: metric(
-        selectedIncome ? "Modeled cash bill" : "No income band selected",
+        selectedIncome ? "Modeled cash bill" : "Under a fair minimum floor",
         selectedIncome ? modeledFutureTax : corridorAnnualTax,
         "per year",
         selectedIncome
           ? `Applies the selected income-band assumption: ${incomeProtection.thresholdExplanation}`
-          : "Shows the raw minimum-floor package before any household-income protection.",
+          : "The tax if this parcel moved up to a 50% minimum taxed share. Low and fixed-income owners would get separate hardship protection.",
         changeKind,
       ),
       change: metric(
-        selectedIncome ? "Modeled cash increase" : "Raw floor increase",
+        selectedIncome ? "Modeled cash increase" : "Added tax under the floor",
         selectedIncome ? modeledCashIncrease : annualIncreaseToCorridor,
         "per year",
         selectedIncome
           ? `Protected/deferred amount in this model: ${signedDollarText(protectedOrDeferredIncrease)}.`
-          : "Choose an income band to see how much of this floor increase would be protected or paid in cash.",
+          : "The gross increase before relief; hardship and income-based protections would lower the cash bill for owners who qualify.",
         changeKind,
       ),
       addressContext: `${addressName} is taxed on ${taxedShareText} of market value. The county assessed value is ${signedDollarText(assessedValue)} against a market value of ${signedDollarText(marketValue)}. Income assumption: ${incomeProtection.label}.`,
@@ -1433,7 +1433,7 @@ function buildImpactBrief({
       ],
       nextStep: selectedIncome
         ? "Compare the raw parcel floor increase with the modeled cash increase after income protection."
-        : "Choose an income band to see whether this household would be protected, partially exposed, or fully exposed.",
+        : "If you own and live here on a low or fixed income, look into Oregon's senior and disabled property-tax deferral program before assuming this becomes a cash bill.",
     };
   }
 
@@ -1474,14 +1474,14 @@ function buildImpactBrief({
           : "This address does not show a big inherited tax discount, so your bigger cost may be the purchase-price premium from scarce housing.",
       summary:
         "For buyers, the hidden cost shows up two ways: the future tax bill attached to the parcel and the price premium caused by too few homes in the market.",
-      now: metric("Scarcity price burden", buyerScarcityNow, "per year of mortgage cost", "Approximate yearly mortgage cost of a 10% shortage premium on this address's market value.", "cost"),
-      future: metric("If scarcity eased", buyerScarcityFuture, "per year of mortgage cost", "Illustrative case where the shortage premium is cut in half.", "benefit"),
+      now: metric("Scarcity price burden", buyerScarcityNow, "per year of mortgage cost", "Approximate yearly mortgage cost of a 10% shortage markup on this address's market value.", "cost"),
+      future: metric("If scarcity eased", buyerScarcityFuture, "per year of mortgage cost", "Illustrative case where the shortage markup is cut in half.", "benefit"),
       change: metric("Modeled buyer savings", buyerScarcityFuture === null || buyerScarcityNow === null ? null : buyerScarcityFuture - buyerScarcityNow, "per year", "Negative means lower annual mortgage burden from less scarcity.", "benefit"),
       addressContext: `${addressName} is taxed on ${taxedShareText} of market value. The modeled annual tax difference versus the benchmark is ${signedDollarText(advantage)}.`,
       takeaways: [
         "A lower future tax bill can get capitalized into a higher sale price.",
         "A buyer of a newer or heavily changed home may face a higher tax basis than a buyer of an older low-tax property.",
-        "The shortage premium can matter more than the tax difference when few homes are available.",
+        "The shortage markup can matter more than the tax difference when few homes are available.",
       ],
       caveats: ["This does not know your down payment, interest rate, lender terms, exemptions, or actual sale price."],
       nextStep: "Use both numbers: annual tax difference and shortage-driven mortgage premium.",
@@ -1497,7 +1497,7 @@ function buildImpactBrief({
           : "This parcel does not show a large tax step-up by itself, so project feasibility likely turns on fees, delay, financing, and required affordability.",
       summary:
         "For a project sponsor, the address is useful because it shows the starting parcel. The real decision is whether a new project can survive taxes, fees, financing costs, delay, and affordability requirements.",
-      now: metric("Tax step-up signal", redevelopmentTaxStepUp, "per year", "Current tax bill versus the changed-property benchmark before adding fees and delay.", "cost"),
+      now: metric("Tax step-up signal", redevelopmentTaxStepUp, "per year", "Current tax bill versus the new-home benchmark before adding fees and delay.", "cost"),
       future: metric("If backfilled or reduced", redevelopmentTaxFuture, "per year", "Illustrative case where public backfill or reform cuts this burden in half.", "benefit"),
       change: metric("Modeled project relief", redevelopmentTaxFuture === null || redevelopmentTaxStepUp === null ? null : redevelopmentTaxFuture - redevelopmentTaxStepUp, "per year", "Negative means less annual burden on the project.", "benefit"),
       addressContext: `${addressName} is ${propertyType} with ${parcel.units ?? "unknown"} listed unit(s), zone ${parcel.zone ?? "not listed"}, and a taxed share of ${taxedShareText}.`,
@@ -1520,8 +1520,8 @@ function buildImpactBrief({
           : "This commercial parcel does not show a clear tax discount under the residential benchmark comparison.",
       summary:
         "For a business or commercial property owner, the same basic issue can exist: some property pays on much less than market value. Commercial rules need their own model before this should drive policy.",
-      now: metric("Directional tax advantage", advantage, "per year", "Compared with the residential changed-property benchmark, shown only as a rough signal.", advantage !== null && advantage > 0 ? "benefit" : "neutral"),
-      future: metric("Commercial reform case", null, "not modeled yet", "Needs commercial changed-property ratios and parcel-class analysis.", "neutral"),
+      now: metric("Directional tax advantage", advantage, "per year", "Compared with the residential new-home benchmark, shown only as a rough signal.", advantage !== null && advantage > 0 ? "benefit" : "neutral"),
+      future: metric("Commercial reform case", null, "not modeled yet", "Needs commercial new-home ratios and parcel-class analysis.", "neutral"),
       change: metric("Annual change", null, "not modeled yet", "The site should not imply a commercial tax change until the commercial model exists.", "neutral"),
       addressContext: `${addressName} is listed as ${propertyType}. Its taxed share is ${taxedShareText}, but commercial property should not be judged only against the residential benchmark.`,
       takeaways: [
@@ -1529,7 +1529,7 @@ function buildImpactBrief({
         "Business tenants may feel the cost through rent, CAM charges, or location scarcity.",
         "A future version should separate owner-occupied small businesses from passive commercial property ownership.",
       ],
-      caveats: ["Commercial changed-property ratios and lease pass-through terms are not yet modeled."],
+      caveats: ["Commercial new-home ratios and lease pass-through terms are not yet modeled."],
       nextStep: "Use this as a flag, not a conclusion, until the commercial cohort model is added.",
     };
   }
@@ -1541,8 +1541,8 @@ function buildImpactBrief({
         "Your direct bill may not change because of this parcel, but the address shows the financial incentives around neighborhood change.",
       summary:
         "For neighbors, the issue is less this parcel's bill and more whether scarcity, low tax bases, and rising land values reward blocking new homes nearby.",
-      now: metric("Scarcity value signal", scarcityYield, "per year", "Annualized value of a 10% scarcity premium on this address's market value.", "benefit"),
-      future: metric("If scarcity eased", scarcityYieldFuture, "per year", "Illustrative case where added supply cuts that scarcity premium in half.", "cost"),
+      now: metric("Scarcity value signal", scarcityYield, "per year", "Annualized value of a 10% shortage markup on this address's market value.", "benefit"),
+      future: metric("If scarcity eased", scarcityYieldFuture, "per year", "Illustrative case where added supply cuts that shortage markup in half.", "cost"),
       change: metric("Modeled value shift", scarcityYieldFuture === null || scarcityYield === null ? null : scarcityYieldFuture - scarcityYield, "per year", "Negative means less scarcity value attached to nearby property.", "cost"),
       addressContext: `${addressName} is taxed on ${taxedShareText} of market value. The parcel helps show whether local rules are protecting an old tax position, a scarce asset, or both.`,
       takeaways: [
@@ -1599,7 +1599,7 @@ function classifyWithTaxShare({
         ? "Business or commercial parcel with a low taxable-value share"
         : "Business or commercial parcel closer to today's tax base",
       plainEnglish: lowTaxShare
-        ? "This parcel appears non-residential and is being taxed on a relatively small share of market value. That can be a real property advantage, but this page does not yet model commercial changed-property ratios."
+        ? "This parcel appears non-residential and is being taxed on a relatively small share of market value. That can be a real property advantage, but this page does not yet model commercial new-home ratios."
         : "This parcel appears non-residential and does not show the same very low taxable-value share as the strongest Measure 50 advantage examples.",
       relatedCohorts: [
         {
@@ -1654,7 +1654,7 @@ function classifyWithTaxShare({
       relatedCohorts: [
         {
           label: "First-time buyers and move-up buyers",
-          reason: "Sale price, future tax bill, and the shortage premium all matter for a buyer's annual cost.",
+          reason: "Sale price, future tax bill, and the shortage markup all matter for a buyer's annual cost.",
         },
       ],
     };
@@ -1664,11 +1664,11 @@ function classifyWithTaxShare({
     return {
       primaryCohort: "Builder or project sponsor facing today's cost stack",
       plainEnglish:
-        "A parcel lookup can show whether the land is carrying an old tax position, but a new or heavily changed project usually faces today's changed-property ratio, fees, interest, delay, and affordability requirements.",
+        "A parcel lookup can show whether the land is carrying an old tax position, but a new or heavily changed project usually faces today's new-home ratio, fees, interest, delay, and affordability requirements.",
       relatedCohorts: [
         {
           label: multifamily ? "New multifamily projects" : "Small infill builders",
-          reason: "The project cohort depends more on project type, review path, fees, and timing than the current owner's tax bill.",
+          reason: "The project's outlook depends more on project type, review path, fees, and timing than the current owner's tax bill.",
         },
       ],
     };
@@ -1770,9 +1770,9 @@ function classifyParcel({
   const residential = isLikelyResidential(parcel);
   const benchmarkRatio = multifamily ? DEFAULTS.multifamilyCpr : DEFAULTS.residentialCpr;
   const benchmarkLabel = multifamily
-    ? "Multifamily changed-property ratio"
+    ? "Multifamily new-home ratio"
     : residential
-      ? "Residential changed-property ratio"
+      ? "Residential new-home ratio"
       : "Residential benchmark shown for rough comparison";
   const missing: string[] = [];
   const warnings: string[] = [];
@@ -1816,9 +1816,9 @@ function classifyParcel({
       relationship,
       householdIncomeBand,
       incomeProtection,
-      primaryCohort: "One number missing before this can classify the tax cohort",
+      primaryCohort: "One number missing before this can place the address",
       plainEnglish:
-        "PortlandMaps can usually provide parcel facts and market value. To identify the Measure 50 cohort, we also need assessed value because the key number is assessed value divided by market value.",
+        "PortlandMaps can usually provide parcel facts and market value. To place this address against Measure 50, we also need assessed value, because the key number is assessed value divided by market value.",
       currentPolicyImpact: fallbackCurrentPolicyImpact,
       impactBrief: fallbackImpactBrief,
       relatedCohorts: [
@@ -1858,7 +1858,7 @@ function classifyParcel({
   }
 
   if (!residential) {
-    warnings.push("This parcel appears non-residential. The page does not yet model commercial changed-property ratios, so use the tax comparison as a rough signal.");
+    warnings.push("This parcel appears non-residential. The page does not yet model commercial new-home ratios, so use the tax comparison as a rough signal.");
   }
 
   const cohort = classifyWithTaxShare({ parcel, relationship, assessedValue, marketValue });
@@ -2148,6 +2148,6 @@ export async function lookupParcel(input: ParcelLookupInput): Promise<ParcelLook
     privacyNote:
       "This lookup intentionally requests only parcel facts needed for the model. It does not return owner names or owner mailing addresses.",
     methodNote:
-      "Cohort classification uses Multnomah County assessed value when available, the latest county real-market value where available, and a manual assessed-value override only if supplied. It is an educational model, not an official tax estimate.",
+      "This classification uses Multnomah County assessed value when available, the latest county real-market value where available, and a manual assessed-value override only if supplied. It is an educational model, not an official tax estimate.",
   };
 }

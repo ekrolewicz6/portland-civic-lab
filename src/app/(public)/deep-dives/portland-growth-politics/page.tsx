@@ -11,7 +11,9 @@ import {
   ExternalLink,
   Home,
   Landmark,
+  Mail,
   Map,
+  MessageSquare,
   Scale,
   Shield,
   SlidersHorizontal,
@@ -28,7 +30,6 @@ import {
 } from "@/components/deep-dives/growth-politics/GrowthPoliticsCalculators";
 import { ParcelCohortLookup } from "@/components/deep-dives/growth-politics/ParcelCohortLookup";
 import {
-  COHORTS,
   HEADLINE_STATS,
   NAV,
   PACKAGE_COHORT_IMPACTS,
@@ -36,7 +37,11 @@ import {
   SOURCES,
   STAKEHOLDER_BARGAIN,
   SYSTEM_LAYERS,
+  SYSTEM_WIDE_GAP,
+  WINNERS_LOSERS,
+  signedAnnualEffect,
   type SourceKey,
+  type WinnerLoserGroup,
 } from "@/lib/growth-politics/data";
 import { DEFAULTS, annualTax, fmtMoney, fmtPct } from "@/lib/growth-politics/engine";
 import { pageMeta } from "@/lib/page-meta";
@@ -53,9 +58,18 @@ type SourceEntry = (typeof SOURCES)[SourceKey];
 
 const SOURCE_ENTRIES = Object.entries(SOURCES) as Array<[SourceKey, SourceEntry]>;
 
+const TLDR_POINTS = [
+  "Oregon caps how fast a home's taxed value can rise — and the discount stays with the house, even after it sells.",
+  "So two nearly identical homes can owe very different taxes, and the newest homes and apartments pay the most.",
+  "Renters and would-be buyers pay too: blocking new homes keeps housing scarce, and scarcity lets landlords and sellers add a hidden markup to rent and prices.",
+  "Winners: owners of older, lightly taxed property. Losers: renters, newcomers, first-time buyers, and the next home that gets built.",
+  "The fix: raise the most under-taxed property toward a fair minimum, protect people who truly cannot pay, stop hiding costs inside new buildings, and actually build enough homes.",
+];
+
 const CONTRADICTIONS: Array<{
   eyebrow: string;
   title: string;
+  statedGoal: { claim: string; source: SourceKey };
   problem: string;
   whyItPersists: string;
   sources: SourceKey[];
@@ -64,6 +78,10 @@ const CONTRADICTIONS: Array<{
   {
     eyebrow: "Fair taxes",
     title: "Similar homes should get similar tax bills. In Portland, they often do not.",
+    statedGoal: {
+      claim: "Oregon's constitution calls for property to be taxed uniformly and fairly.",
+      source: "lroInequity",
+    },
     problem:
       "Two similar homes can carry very different tax bills because Measure 50 limits how fast taxable value can grow and does not generally make that taxable value catch up when a home sells.",
     whyItPersists:
@@ -74,6 +92,10 @@ const CONTRADICTIONS: Array<{
   {
     eyebrow: "Supply",
     title: "The city says it wants more homes inside Portland, then makes the next home carry the bill.",
+    statedGoal: {
+      claim: "The city's own Housing Needs Analysis says Portland must plan for about 120,560 new homes by 2045.",
+      source: "hna",
+    },
     problem:
       "New housing pays current taxable value, development charges, interest while waiting, affordable-unit costs, design reviews, appeals, and delay risk.",
     whyItPersists:
@@ -84,6 +106,10 @@ const CONTRADICTIONS: Array<{
   {
     eyebrow: "Land use",
     title: "Portland wants a tight urban growth boundary without always accepting urban growth.",
+    statedGoal: {
+      claim: "Metro's Urban Growth Boundary is designed to send growth inward, into the city — not to stop it.",
+      source: "metroUgb",
+    },
     problem:
       "The region limits outward expansion to protect farms, forests, and compact infrastructure, but local politics still often resists apartments, middle housing, and smaller lots in high-demand places.",
     whyItPersists:
@@ -94,6 +120,10 @@ const CONTRADICTIONS: Array<{
   {
     eyebrow: "Affordability",
     title: "Portland wants affordable homes but often hides the cost inside new buildings.",
+    statedGoal: {
+      claim: "Portland's Inclusionary Housing program is meant to add affordable homes — funded openly, not buried in the next building.",
+      source: "inclusionary",
+    },
     problem:
       "Inclusionary housing can create real below-market units, but if the city does not fully pay for that discount, the cost lands on the other units in the same building.",
     whyItPersists:
@@ -104,6 +134,10 @@ const CONTRADICTIONS: Array<{
   {
     eyebrow: "Tenants",
     title: "Protections help tenants already housed but do less for people searching now.",
+    statedGoal: {
+      claim: "Oregon's rent stabilization law is meant to shield renters from sudden, destabilizing rent shocks.",
+      source: "rentCap",
+    },
     problem:
       "Rent caps and relocation assistance reduce shocks for covered households. They do not, by themselves, create enough available homes for people trying to move in, move out, or start over.",
     whyItPersists:
@@ -114,6 +148,10 @@ const CONTRADICTIONS: Array<{
   {
     eyebrow: "Revenue",
     title: "Portland taxes paychecks and businesses more visibly than some property wealth.",
+    statedGoal: {
+      claim: "Portland leans on income and business taxes to pay for homelessness services and preschool.",
+      source: "personalTax",
+    },
     problem:
       "Local income and business taxes are obvious to workers, renters, and firms. Meanwhile, some property that has grown a lot in value still gets taxed on a much smaller value.",
     whyItPersists:
@@ -127,7 +165,7 @@ const PERSONAL_PATHS = [
   {
     title: "If you rent",
     icon: Users,
-    use: "Start with the housing shortage calculator. Change your rent and the shortage premium to see how a tight market turns into yearly cost for your household.",
+    use: "Start with the housing shortage calculator. Change your rent and the shortage markup to see how a tight market turns into yearly cost for your household.",
     question: "How much extra are renters paying because Portland does not have enough homes?",
   },
   {
@@ -150,38 +188,35 @@ const PERSONAL_PATHS = [
   },
 ];
 
-const PAGE_FLOW = [
+const TAKE_ACTION: Array<{
+  icon: ComponentType<{ className?: string }>;
+  title: string;
+  text: string;
+  cta: string;
+  href: string;
+}> = [
   {
-    step: "1",
-    title: "Look up an address",
-    text: "See whether the parcel looks under-taxed, over-burdened, or mostly affected through the housing shortage.",
-    href: "#parcel-lookup",
+    icon: Mail,
+    title: "Tell your councilor",
+    text: "Portland now has district councilors. Look up your address above to find your district, then tell them you want more homes and a property-tax base that is fair to newcomers.",
+    cta: "Find your council office",
+    href: "https://www.portland.gov/council",
   },
   {
-    step: "2",
-    title: "Read the current ledger",
-    text: "See the ranked view of which cohorts appear to gain or lose under today's policies before any reform argument.",
-    href: "#current-ledger",
+    icon: MessageSquare,
+    title: "Weigh in on the housing plan",
+    text: "The city's Housing Needs Analysis and Housing Production Strategy decide how many homes get planned and where. Public comment actually shapes them.",
+    cta: "Read the housing plan",
+    href: "https://www.portland.gov/bps/planning/housing-production/about",
   },
   {
-    step: "3",
-    title: "Understand the rule",
-    text: "Measure 50 separates market value from taxable value. That is the hidden mechanism behind much of the politics.",
-    href: "#measure-50",
+    icon: Users,
+    title: "Show up where homes are decided",
+    text: "Design reviews, appeals, and council hearings are where individual projects live or die — and they are usually dominated by people who already have a home.",
+    cta: "See the city's agenda",
+    href: "https://www.portland.gov/council/agenda",
   },
-  {
-    step: "4",
-    title: "Move the levers",
-    text: "Use the calculators to see how rent, assessed value, delay, fees, and funding choices change the result.",
-    href: "#calculator",
-  },
-  {
-    step: "5",
-    title: "Check the bargain",
-    text: "A serious reform has to show who pays more, who is protected, and what new homes or services people get back.",
-    href: "#package-impact",
-  },
-] as const;
+];
 
 const FORMULAS = [
   {
@@ -201,11 +236,11 @@ const FORMULAS = [
     audience: "Renters, people trying to move, employers, service workers, and families forming households",
     headline: "This estimates the extra rent paid when too few homes are available.",
     plainEnglish:
-      "A tight housing market lets landlords charge more than they could in a looser market. The model treats that as a shortage premium on rent.",
-    code: "Monthly Rent x 12 x Shortage Premium x Renter Households",
+      "A tight housing market lets landlords charge more than they could in a looser market. The model treats that as a shortage markup on rent.",
+    code: "Monthly Rent x 12 x Shortage Markup x Renter Households",
     exampleLabel: "Example renter burden",
     example: `${fmtMoney(DEFAULTS.medianRent)}/month x 12 x 10% = ${fmtMoney(DEFAULTS.medianRent * 12 * 0.1)}/year for one renting household`,
-    readerImpact: `Across ${DEFAULTS.renterHouseholds.toLocaleString()} renter households, that same 10% premium is roughly ${fmtMoney(DEFAULTS.medianRent * 12 * 0.1 * DEFAULTS.renterHouseholds)}/year. This is why renters can be hurt by rules that never appear on their own tax bill.`,
+    readerImpact: `Across ${DEFAULTS.renterHouseholds.toLocaleString()} renter households, that same 10% markup is roughly ${fmtMoney(DEFAULTS.medianRent * 12 * 0.1 * DEFAULTS.renterHouseholds)}/year. This is why renters can be hurt by rules that never appear on their own tax bill.`,
   },
   {
     label: "Value of a lower yearly tax bill",
@@ -221,28 +256,7 @@ const FORMULAS = [
   },
 ];
 
-const CURRENT_POLICY_COHORT_RANKING = PACKAGE_COHORT_IMPACTS.map((impact) => {
-  const signedAmount =
-    impact.currentAnnual.kind === "benefit"
-      ? impact.currentAnnual.amount
-      : impact.currentAnnual.kind === "neutral"
-        ? 0
-        : -impact.currentAnnual.amount;
-
-  return {
-    name: impact.name,
-    amount: Math.round(signedAmount),
-    label: impact.currentAnnual.label,
-    unit: impact.unit,
-    explanation: impact.currentPosition,
-    confidence: impact.certainty,
-  };
-}).sort((a, b) => b.amount - a.amount);
-
-const CURRENT_POLICY_MAX_ABS = Math.max(
-  1,
-  ...CURRENT_POLICY_COHORT_RANKING.map((item) => Math.abs(item.amount)),
-);
+const KEY_LAYER_TITLES = ["Measure 50", "Building fees (SDCs)", "Tenant protections"];
 
 function fmtSignedMoney(value: number): string {
   if (value === 0) return "$0";
@@ -271,7 +285,7 @@ function SourceLink({ id, children, tone = "light" }: { id: SourceKey; children?
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
     <div className="rounded-sm border border-white/12 bg-white/[0.055] p-5 backdrop-blur-sm">
-      <p className="font-mono text-[34px] font-bold leading-none tracking-tight text-white tabular-nums">
+      <p className="break-words font-mono text-[28px] font-bold leading-none tracking-tight text-white tabular-nums [overflow-wrap:anywhere] sm:text-[34px]">
         {value}
       </p>
       <p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-white/58">
@@ -283,7 +297,7 @@ function StatCard({ value, label }: { value: string; label: string }) {
 
 function MiniKicker({ children }: { children: ReactNode }) {
   return (
-    <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-[var(--color-ember)]">
+    <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
       {children}
     </p>
   );
@@ -355,87 +369,112 @@ function FormulaCard({
   );
 }
 
-function CurrentPolicyLedger() {
+function GroupRow({ group, maxAbs }: { group: WinnerLoserGroup; maxAbs: number }) {
+  const isWinner = group.side === "winner";
+  const isLoser = group.side === "loser";
+  const width = Math.max(6, (Math.abs(group.amount) / maxAbs) * 100);
+  const barColor = isWinner ? "bg-[var(--color-sage)]" : isLoser ? "bg-[#c95f3c]" : "bg-[var(--color-ink-muted)]";
+  const amountColor = isWinner
+    ? "text-[var(--color-canopy)]"
+    : isLoser
+      ? "text-[#8c3d25]"
+      : "text-[var(--color-ink)]";
+
   return (
-    <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-6">
-      <div className="grid gap-5 xl:grid-cols-[minmax(340px,0.38fr)_minmax(0,0.62fr)]">
-        <div>
-          <MiniKicker>Current policy ledger</MiniKicker>
-          <h3 className="mt-3 font-editorial text-[33px] leading-tight text-[var(--color-ink)]">
-            Who appears to gain or lose under today&apos;s rules?
-          </h3>
-          <p className="mt-4 text-[15px] leading-relaxed text-[var(--color-ink-light)]">
-            This is the diagnostic view before any reform package. Positive numbers mean the cohort is modeled
-            as receiving a current benefit or protected position. Negative numbers mean the cohort is modeled
-            as carrying a current cost, barrier, or exposure.
+    <div className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-4">
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0">
+          <p className="text-[15px] font-bold leading-snug text-[var(--color-ink)]">{group.name}</p>
+          <p className="mt-1 text-[12px] italic leading-snug text-[var(--color-ink-muted)]">{group.persona}</p>
+        </div>
+        <div className="flex-shrink-0 text-right">
+          <p className={`font-mono text-[20px] font-bold tabular-nums ${amountColor}`}>
+            {group.amount === 0 ? "—" : fmtSignedMoney(group.amount)}
           </p>
-          <div className="mt-5 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-4">
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
-              Method note
-            </p>
-            <p className="mt-2 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
-              Rows use the units shown in each label, so this is a ranked ledger rather than a single
-              household-to-household comparison. Some rows are per household, some per project unit, and one
-              is system-wide. The dollar label is the important number.
-            </p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+            {group.unit}
+          </p>
+        </div>
+      </div>
+      {group.amount !== 0 ? (
+        <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-white">
+          <div className={`h-full rounded-full ${barColor}`} style={{ width: `${width}%` }} />
+        </div>
+      ) : null}
+      <p className="mt-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">{group.why}</p>
+    </div>
+  );
+}
+
+function WinnersLosers() {
+  const winners = WINNERS_LOSERS.filter((g) => g.side === "winner").sort((a, b) => b.amount - a.amount);
+  const losers = WINNERS_LOSERS.filter((g) => g.side === "loser").sort((a, b) => a.amount - b.amount);
+  const middle = WINNERS_LOSERS.filter((g) => g.side === "middle");
+  const maxAbs = Math.max(1, ...WINNERS_LOSERS.map((g) => Math.abs(g.amount)));
+
+  return (
+    <div className="grid gap-5">
+      <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 text-[13px] leading-relaxed text-[var(--color-ink-light)] sm:mx-0 sm:rounded-sm sm:border">
+        Every figure below is in the same unit — dollars per year, per household or per home — so the bars are
+        actually comparable. A plus sign means the group comes out ahead under today&apos;s rules; a minus sign
+        means they pay.
+      </div>
+
+      <div className="grid gap-5 md:grid-cols-2">
+        <div className="-mx-4 border-y border-[var(--color-sage)] bg-[#f5fbf6] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5">
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-canopy)]">
+            Who comes out ahead today
+          </p>
+          <div className="mt-4 grid gap-3">
+            {winners.map((group) => (
+              <GroupRow key={group.name} group={group} maxAbs={maxAbs} />
+            ))}
           </div>
         </div>
-
-        <div className="min-w-0">
-          <div className="mb-3 grid grid-cols-[1fr_1fr] gap-2 text-[11px] font-mono font-semibold uppercase tracking-[0.14em]">
-            <p className="rounded-sm bg-[#f3fbf5] px-3 py-2 text-[var(--color-canopy)]">Current gain / protection</p>
-            <p className="rounded-sm bg-[#fff7f2] px-3 py-2 text-right text-[#8c3d25]">Current cost / exposure</p>
+        <div className="-mx-4 border-y border-[#f0b6a8] bg-[#fff7f3] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5">
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8c3d25]">
+            Who pays today
+          </p>
+          <div className="mt-4 grid gap-3">
+            {losers.map((group) => (
+              <GroupRow key={group.name} group={group} maxAbs={maxAbs} />
+            ))}
           </div>
-          <div className="grid gap-2">
-            {CURRENT_POLICY_COHORT_RANKING.map((item) => {
-              const isGain = item.amount > 0;
-              const isLoss = item.amount < 0;
-              const width = Math.max(3, (Math.abs(item.amount) / CURRENT_POLICY_MAX_ABS) * 100);
+        </div>
+      </div>
 
-              return (
-                <div key={item.name} className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-3">
-                  <div className="grid gap-3 lg:grid-cols-[minmax(220px,0.45fr)_minmax(0,0.55fr)] lg:items-center">
-                    <div className="min-w-0">
-                      <p className="text-[13px] font-bold leading-snug text-[var(--color-ink)]">{item.name}</p>
-                      <p className="mt-1 text-[11px] leading-snug text-[var(--color-ink-muted)]">{item.unit}</p>
-                    </div>
-                    <div className="min-w-0">
-                      <div className="grid grid-cols-[1fr_1fr] items-center gap-0">
-                        <div className="flex justify-end border-r border-[var(--color-parchment)] pr-1">
-                          {isGain ? (
-                            <div
-                              className="h-5 rounded-l-full bg-[var(--color-sage)]"
-                              style={{ width: `${width}%` }}
-                            />
-                          ) : null}
-                        </div>
-                        <div className="pl-1">
-                          {isLoss ? (
-                            <div
-                              className="h-5 rounded-r-full bg-[#c95f3c]"
-                              style={{ width: `${width}%` }}
-                            />
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="mt-2 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                        <p className={`font-mono text-[18px] font-bold tabular-nums ${
-                          isGain ? "text-[var(--color-canopy)]" : isLoss ? "text-[#8c3d25]" : "text-[var(--color-ink)]"
-                        }`}>
-                          {fmtSignedMoney(item.amount)}
-                        </p>
-                        <p className="text-[11px] font-semibold leading-snug text-[var(--color-ink-muted)]">
-                          {item.label} · certainty {item.confidence.toLowerCase()}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="mt-2 text-[12px] leading-relaxed text-[var(--color-ink-light)]">
-                    {item.explanation}
-                  </p>
-                </div>
-              );
-            })}
+      {middle.length > 0 ? (
+        <div className="-mx-4 border-y border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5">
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+            The hard middle
+          </p>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            {middle.map((group) => (
+              <div key={group.name} className="rounded-sm border border-[var(--color-parchment)] bg-white p-4">
+                <p className="text-[15px] font-bold leading-snug text-[var(--color-ink)]">{group.name}</p>
+                <p className="mt-1 text-[12px] italic leading-snug text-[var(--color-ink-muted)]">{group.persona}</p>
+                <p className="mt-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">{group.why}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      <div className="-mx-4 border-y border-[var(--color-parchment)] bg-[var(--color-canopy)] p-4 text-white sm:mx-0 sm:rounded-sm sm:border sm:p-5">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="min-w-0">
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember-bright)]">
+              And everyone, through the city budget
+            </p>
+            <p className="mt-2 max-w-2xl text-[14px] leading-relaxed text-white/80">{SYSTEM_WIDE_GAP.note}</p>
+          </div>
+          <div className="flex-shrink-0 text-left sm:text-right">
+            <p className="break-words font-mono text-[28px] font-bold leading-none tabular-nums text-white [overflow-wrap:anywhere] sm:text-[34px]">
+              ~{fmtMoney(SYSTEM_WIDE_GAP.amount)}
+            </p>
+            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-white/60">
+              {SYSTEM_WIDE_GAP.label}
+            </p>
           </div>
         </div>
       </div>
@@ -462,7 +501,7 @@ function MechanismStep({
           Mechanism
         </p>
       </div>
-      <h3 className="mt-4 font-editorial text-[25px] leading-tight text-[var(--color-ink)]">{title}</h3>
+      <h3 className="mt-4 font-editorial text-[24px] leading-tight text-[var(--color-ink)]">{title}</h3>
       <p className="mt-3 text-[14px] leading-relaxed text-[var(--color-ink-light)]">{text}</p>
     </div>
   );
@@ -471,6 +510,7 @@ function MechanismStep({
 function ContradictionCard({
   eyebrow,
   title,
+  statedGoal,
   problem,
   whyItPersists,
   sources,
@@ -481,16 +521,26 @@ function ContradictionCard({
       <div className="flex items-start justify-between gap-4">
         <div>
           <MiniKicker>{eyebrow}</MiniKicker>
-          <h3 className="mt-3 font-editorial text-[25px] leading-tight text-[var(--color-ink)]">{title}</h3>
+          <h3 className="mt-3 font-editorial text-[24px] leading-tight text-[var(--color-ink)]">{title}</h3>
         </div>
         <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-canopy)] text-white">
           <Icon className="h-5 w-5" />
         </div>
       </div>
-      <div className="mt-5 grid gap-4 md:grid-cols-2">
+
+      <div className="mt-5 rounded-sm border border-[var(--color-sage)]/40 bg-[#f5fbf6] p-3">
+        <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-canopy)]">
+          What Portland says it wants
+        </p>
+        <p className="mt-1 text-[14px] leading-relaxed text-[var(--color-ink)]">
+          {statedGoal.claim} <SourceLink id={statedGoal.source} />
+        </p>
+      </div>
+
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
         <div className="border-l border-[var(--color-ember)]/35 pl-4">
           <p className="text-[11px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
-            The contradiction
+            But the rules do this
           </p>
           <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-ink-light)]">{problem}</p>
         </div>
@@ -529,7 +579,7 @@ function PolicyLayerCard({ layer }: { layer: (typeof SYSTEM_LAYERS)[number] }) {
               </h3>
             </div>
           </div>
-          <ChevronDown className="mt-1 h-5 w-5 flex-shrink-0 text-[var(--color-ink-muted)] transition-transform group-open:rotate-180" />
+          <ChevronDown className="mt-1 h-5 w-5 flex-shrink-0 text-[var(--color-ink-muted)] motion-safe:transition-transform group-open:rotate-180" />
         </div>
         <p className="mt-3 hidden text-[14px] leading-relaxed text-[var(--color-ink-light)] sm:line-clamp-2 sm:block">
           {layer.hiddenEffect}
@@ -577,62 +627,6 @@ function PolicyLayerCard({ layer }: { layer: (typeof SYSTEM_LAYERS)[number] }) {
   );
 }
 
-function CohortCard({ cohort }: { cohort: (typeof COHORTS)[number] }) {
-  const tone =
-    cohort.kind === "winner"
-      ? "border-[var(--color-sage)] bg-[#f5fbf6]"
-      : cohort.kind === "loser"
-        ? "border-[#f0b6a8] bg-[#fff7f3]"
-        : "border-[var(--color-parchment)] bg-white";
-  const label =
-    cohort.kind === "winner" ? "Often benefits" : cohort.kind === "loser" ? "Often pays more" : "Mixed";
-
-  return (
-    <details className={`group -mx-4 border-y sm:mx-0 sm:rounded-sm sm:border ${tone}`}>
-      <summary className="cursor-pointer list-none p-4 outline-none transition-colors hover:bg-white/45 focus-visible:ring-2 focus-visible:ring-[var(--color-ember)] sm:p-5 [&::-webkit-details-marker]:hidden">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-          <h3 className="font-editorial text-[22px] leading-tight text-[var(--color-ink)] sm:text-[23px]">
-            {cohort.name}
-          </h3>
-          <span className="rounded-full border border-black/10 bg-white px-3 py-1 text-[10px] font-mono font-semibold uppercase tracking-[0.12em] text-[var(--color-ink-light)]">
-            {label}
-          </span>
-        </div>
-        <p className="mt-3 text-[11px] font-mono font-semibold uppercase tracking-[0.13em] text-[var(--color-ink-muted)] sm:text-[12px]">
-          {cohort.scale}
-        </p>
-        <p className="mt-3 hidden rounded-sm bg-white/70 p-3 font-mono text-[12px] leading-relaxed text-[var(--color-ink)] sm:block">
-          {cohort.quantified}
-        </p>
-        <div className="mt-3 flex items-center justify-between gap-3 rounded-sm border border-black/10 bg-white/65 px-3 py-2 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-muted)] sm:mt-4">
-          <span className="group-open:hidden">How this cohort is affected</span>
-          <span className="hidden group-open:inline">Hide cohort detail</span>
-          <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
-        </div>
-      </summary>
-
-      <div className="border-t border-black/10 px-4 pb-4 pt-4 sm:px-5 sm:pb-5">
-        <div className="grid gap-4 md:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
-              Key number
-            </p>
-            <p className="mt-2 rounded-sm bg-white/70 p-3 font-mono text-[12px] leading-relaxed text-[var(--color-ink)]">
-              {cohort.quantified}
-            </p>
-          </div>
-          <div>
-            <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
-              Mechanism
-            </p>
-            <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-ink-light)]">{cohort.mechanism}</p>
-          </div>
-        </div>
-      </div>
-    </details>
-  );
-}
-
 function ReformCard({ reform, index }: { reform: string; index: number }) {
   return (
     <div className="-mx-4 flex gap-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border">
@@ -658,30 +652,12 @@ function PersonalPathCard({
   return (
     <div className="-mx-4 border-y border-white/12 bg-white/[0.055] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5">
       <Icon className="h-5 w-5 text-[var(--color-ember-bright)]" />
-      <h3 className="mt-4 font-editorial text-[25px] leading-tight text-white">{title}</h3>
+      <h3 className="mt-4 font-editorial text-[24px] leading-tight text-white">{title}</h3>
       <p className="mt-3 text-[14px] leading-relaxed text-white/70">{use}</p>
       <p className="mt-4 border-l border-[var(--color-ember)] pl-4 text-[13px] font-semibold leading-relaxed text-white/90">
         {question}
       </p>
     </div>
-  );
-}
-
-function FlowCard({ item }: { item: (typeof PAGE_FLOW)[number] }) {
-  return (
-    <a
-      href={item.href}
-      className="group -mx-4 border-y border-[var(--color-parchment)] bg-white p-4 transition-all hover:border-[var(--color-sage)] sm:mx-0 sm:rounded-sm sm:border sm:hover:-translate-y-0.5 sm:hover:shadow-[0_18px_48px_rgba(15,36,25,0.08)]"
-    >
-      <div className="flex items-center justify-between gap-4">
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-canopy)] font-mono text-[13px] font-bold text-white">
-          {item.step}
-        </span>
-        <ArrowRight className="h-4 w-4 text-[var(--color-ember)] transition-transform group-hover:translate-x-0.5" />
-      </div>
-      <p className="mt-4 text-[15px] font-bold leading-tight text-[var(--color-ink)]">{item.title}</p>
-      <p className="mt-2 text-[12px] leading-relaxed text-[var(--color-ink-light)]">{item.text}</p>
-    </a>
   );
 }
 
@@ -737,7 +713,10 @@ function AnnualEffectBox({
 
 function PackageImpactCard({ impact }: { impact: (typeof PACKAGE_COHORT_IMPACTS)[number] }) {
   const style = PACKAGE_RESULT_STYLES[impact.result];
-  const netChange = impact.futureAnnual.amount - impact.currentAnnual.amount;
+  // Signed net: a "benefit" that shrinks and a "cost" that grows both read as the
+  // group losing ground, instead of subtracting two magnitudes of different meaning.
+  const netChange = signedAnnualEffect(impact.futureAnnual) - signedAnnualEffect(impact.currentAnnual);
+  const netLabel = `${netChange > 0 ? "+" : ""}${fmtMoney(netChange)}`;
 
   return (
     <details className="group -mx-4 min-w-0 border-y border-[var(--color-parchment)] bg-white shadow-none sm:mx-0 sm:rounded-sm sm:border sm:shadow-[0_14px_44px_rgba(15,36,25,0.045)]">
@@ -753,19 +732,31 @@ function PackageImpactCard({ impact }: { impact: (typeof PACKAGE_COHORT_IMPACTS)
           </span>
         </div>
 
-        <div className="mt-4 flex items-center justify-between gap-3 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] px-3 py-2 sm:hidden">
-          <div>
-            <p className="text-[9px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
-              Modeled net
-            </p>
-            <p className="mt-1 font-mono text-[20px] font-bold leading-none tabular-nums text-[var(--color-ink)]">
-              {fmtMoney(netChange)}
-            </p>
+        <div className="mt-4 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-3 sm:hidden">
+          <div className="grid grid-cols-3 gap-2 text-center">
+            <div>
+              <p className="font-mono text-[8px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">Now</p>
+              <p className="mt-1 break-words font-mono text-[14px] font-bold leading-none tabular-nums text-[var(--color-ink)] [overflow-wrap:anywhere]">
+                {fmtMoney(impact.currentAnnual.amount)}
+              </p>
+            </div>
+            <div>
+              <p className="font-mono text-[8px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">With fix</p>
+              <p className="mt-1 break-words font-mono text-[14px] font-bold leading-none tabular-nums text-[var(--color-ink)] [overflow-wrap:anywhere]">
+                {fmtMoney(impact.futureAnnual.amount)}
+              </p>
+            </div>
+            <div>
+              <p className="font-mono text-[8px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">Net</p>
+              <p className="mt-1 break-words font-mono text-[14px] font-bold leading-none tabular-nums text-[var(--color-ink)] [overflow-wrap:anywhere]">
+                {netLabel}
+              </p>
+            </div>
           </div>
-          <div className="flex items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+          <div className="mt-2 flex items-center justify-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
             <span className="group-open:hidden">Open details</span>
             <span className="hidden group-open:inline">Close details</span>
-            <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+            <ChevronDown className="h-4 w-4 motion-safe:transition-transform group-open:rotate-180" />
           </div>
         </div>
 
@@ -788,16 +779,16 @@ function PackageImpactCard({ impact }: { impact: (typeof PACKAGE_COHORT_IMPACTS)
           </div>
           <div className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] px-3 py-2">
             <p className="text-[9px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
-              Modeled net
+              Net change / year
             </p>
             <p className="mt-1 font-mono text-[19px] font-bold leading-none tabular-nums text-[var(--color-ink)] sm:text-[21px]">
-              {fmtMoney(netChange)}
+              {netLabel}
             </p>
           </div>
           <div className="flex items-center justify-between gap-3 rounded-sm border border-[var(--color-parchment)] bg-white px-3 py-2 text-[11px] font-mono font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-muted)] sm:min-w-[132px] sm:justify-center sm:self-center">
             <span className="group-open:hidden">Open details</span>
             <span className="hidden group-open:inline">Close details</span>
-            <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+            <ChevronDown className="h-4 w-4 motion-safe:transition-transform group-open:rotate-180" />
           </div>
         </div>
       </summary>
@@ -887,6 +878,33 @@ export default function PortlandGrowthPoliticsPage() {
     },
   );
 
+  const packageOutcomeGroups = [
+    {
+      label: "pay more or give up hidden value",
+      count: packageSummary.paysMore + packageSummary.losesAdvantage,
+      tone: "border-[#df9b86] bg-[#fff7f2] text-[#8c3d25]",
+      examples: PACKAGE_COHORT_IMPACTS.filter((i) => i.result === "paysMore" || i.result === "losesAdvantage")
+        .slice(0, 2)
+        .map((i) => i.name),
+    },
+    {
+      label: "are clear beneficiaries",
+      count: packageSummary.benefits,
+      tone: "border-[var(--color-sage)] bg-[#f3fbf5] text-[var(--color-canopy)]",
+      examples: PACKAGE_COHORT_IMPACTS.filter((i) => i.result === "benefits")
+        .slice(0, 2)
+        .map((i) => i.name),
+    },
+    {
+      label: "are mixed or protected-but-affected",
+      count: packageSummary.mixed + packageSummary.protected,
+      tone: "border-[#9bb6cf] bg-[#f1f7fb] text-[#244d68]",
+      examples: PACKAGE_COHORT_IMPACTS.filter((i) => i.result === "mixed" || i.result === "protected")
+        .slice(0, 2)
+        .map((i) => i.name),
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[var(--color-paper)]">
       <section className="relative overflow-hidden bg-[var(--color-canopy)] text-white noise-overlay">
@@ -923,18 +941,18 @@ export default function PortlandGrowthPoliticsPage() {
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#parcel-lookup"
+                  href="#winners-losers"
                   className="inline-flex items-center justify-center gap-2 rounded-sm bg-[var(--color-ember-bright)] px-5 py-3 text-[14px] font-bold text-[var(--color-canopy)] transition-colors hover:bg-white"
                 >
-                  Start with your address
+                  See who wins and who loses
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="#calculator"
+                  href="#parcel-lookup"
                   className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/18 bg-white/[0.06] px-5 py-3 text-[14px] font-bold text-white transition-colors hover:border-white/40 hover:bg-white/[0.1]"
                 >
-                  Jump to calculators
-                  <Calculator className="h-4 w-4" />
+                  Look up your address
+                  <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
               <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -947,15 +965,15 @@ export default function PortlandGrowthPoliticsPage() {
             <div className="rounded-sm border border-white/12 bg-white/[0.06] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.18)] backdrop-blur-md">
               <div className="flex items-start justify-between gap-5">
                 <div>
-                  <MiniKicker>Quick read</MiniKicker>
+                  <MiniKicker>The story in one picture</MiniKicker>
                   <h2 className="mt-3 font-editorial text-[31px] leading-tight text-white">
-                    Same-value homes can get very different tax bills.
+                    Two houses, same price, very different tax bills.
                   </h2>
                   <p className="mt-3 text-[14px] leading-relaxed text-white/70">
-                    Oregon caps how fast a property&apos;s taxable value can rise. So an older home might
-                    be worth {fmtMoney(DEFAULTS.medianHomeValue)} today but get taxed as if much less
-                    of that value counts. That lower bill stays with the property when it sells. A new
-                    home usually starts closer to today&apos;s value.
+                    Oregon caps how fast a property&apos;s taxed value can rise. So an older home worth{" "}
+                    {fmtMoney(DEFAULTS.medianHomeValue)} today can be taxed as if much less of that value counts —
+                    and the discount stays with the house when it sells. A newer home next door starts near
+                    today&apos;s full value.
                   </p>
                 </div>
                 <Landmark className="h-8 w-8 flex-shrink-0 text-[var(--color-ember-bright)]" />
@@ -963,22 +981,48 @@ export default function PortlandGrowthPoliticsPage() {
               <div className="mt-6">
                 <PropertyTaxMiniChart />
               </div>
-              <p className="mt-4 text-[12px] leading-relaxed text-white/58">
-                Modeled on a {fmtMoney(DEFAULTS.medianHomeValue)} property. The blue bar uses Multnomah
-                County&apos;s 2025-26 ratio for new or heavily changed residential property.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <nav className="sticky top-0 z-30 border-b border-[var(--color-parchment)] bg-[var(--color-paper)]/92 backdrop-blur-md">
+      <section className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
+        <div className={`${DIVE_CONTAINER} py-10 sm:py-12`}>
+          <div className="grid gap-6 lg:grid-cols-[0.32fr_0.68fr] lg:items-start">
+            <div>
+              <MiniKicker>The 60-second version</MiniKicker>
+              <h2 className="mt-3 font-editorial text-[30px] leading-tight text-[var(--color-ink)] sm:text-[36px]">
+                If you read nothing else, read this.
+              </h2>
+              <p className="mt-3 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+                The rest of the page proves each line below, lets you check your own address, and shows what a
+                fairer deal would do.
+              </p>
+            </div>
+            <ol className="grid gap-3">
+              {TLDR_POINTS.map((point, index) => (
+                <li
+                  key={point}
+                  className="-mx-4 flex gap-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border"
+                >
+                  <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-canopy)] font-mono text-[12px] font-bold text-white">
+                    {index + 1}
+                  </span>
+                  <p className="text-[15px] leading-relaxed text-[var(--color-ink)]">{point}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <nav aria-label="Section navigation" className="sticky top-0 z-30 border-b border-[var(--color-parchment)] bg-[var(--color-paper)]/92 backdrop-blur-md">
         <div className={`${DIVE_CONTAINER} flex gap-2 overflow-x-auto py-3`}>
           {NAV.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
-              className="whitespace-nowrap rounded-full border border-[var(--color-parchment)] bg-white px-4 py-2 text-[12px] font-semibold text-[var(--color-ink-light)] transition-colors hover:border-[var(--color-sage)] hover:text-[var(--color-canopy)]"
+              className="whitespace-nowrap rounded-full border border-[var(--color-parchment)] bg-white px-4 py-2 text-[12px] font-semibold text-[var(--color-ink-light)] transition-colors hover:border-[var(--color-sage)] hover:text-[var(--color-canopy)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-paper)]"
             >
               {item.label}
             </a>
@@ -987,50 +1031,109 @@ export default function PortlandGrowthPoliticsPage() {
       </nav>
 
       <main>
-        <section id="parcel-lookup" className="scroll-mt-24 border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)] py-8 sm:py-10">
-          <div className={DIVE_CONTAINER}>
-            <div className="mb-5 grid gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-              <div>
-                <MiniKicker>Start with your address</MiniKicker>
-                <h2 className="mt-2 font-editorial text-[34px] leading-tight text-[var(--color-ink)] sm:text-[42px]">
-                  Put the rest of the page in context.
-                </h2>
-              </div>
-              <p className="max-w-3xl text-[15px] leading-relaxed text-[var(--color-ink-light)]">
-                The same policy system means different things depending on whether you rent, own, might buy,
-                might build, operate a business, or live nearby. Look up an address first; the rest of the page
-                explains the citywide rules behind that result.
-              </p>
-            </div>
-            <ParcelCohortLookup />
-          </div>
-        </section>
-
-        <section className="border-b border-[var(--color-parchment)] bg-white py-6">
-          <div className={DIVE_CONTAINER}>
-            <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
-              {PAGE_FLOW.map((item) => (
-                <FlowCard key={item.step} item={item} />
-              ))}
-            </div>
-          </div>
-        </section>
-
         <Section
-          id="current-ledger"
-          eyebrow="Today, before any reform"
-          title="Before the policy fight, look at who is already winning and losing."
-          lead="Portland's housing politics often start with the next proposal. But the current system is already moving money around. Some people get lower tax bills, protected property value, or scarcity-driven leverage. Others pay through rent, higher purchase prices, project costs, or weaker public services. The address lookup shows one parcel; the ledger below shows the pattern across groups."
+          id="measure-50"
+          eyebrow="Why it happens"
+          title="One tax rule, Measure 50, sits underneath all of it."
+          lead="Measure 50 is an Oregon rule that limits how fast a property's taxed value can rise. That can protect people from sudden tax jumps. It can also mean two similar homes owe very different taxes — and the gap follows the property, not the person."
           tone="warm"
         >
-          <CurrentPolicyLedger />
+          <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(360px,0.42fr)]">
+            <div className="grid items-start gap-4 md:grid-cols-3">
+              <MechanismStep
+                step="1"
+                title="Market value is what the property is worth."
+                text={
+                  <>
+                    This is roughly what the home or building would sell for. The lookup uses the county
+                    or PortlandMaps market value when available.
+                  </>
+                }
+              />
+              <MechanismStep
+                step="2"
+                title="Taxed value is what the tax system counts."
+                text={
+                  <>
+                    Multnomah County says property taxes are based on assessed value, which can be far lower
+                    than market value because of Measure 50.
+                  </>
+                }
+              />
+              <MechanismStep
+                step="3"
+                title="The gap creates winners, losers, and politics."
+                text={
+                  <>
+                    For 2025-26, the county&apos;s new-home ratio is {fmtPct(DEFAULTS.residentialCpr)}
+                    for residential property and {fmtPct(DEFAULTS.multifamilyCpr)} for multifamily property.
+                  </>
+                }
+              />
+            </div>
+
+            <div className="-mx-4 border-y border-[var(--color-parchment)] bg-[var(--color-canopy)] p-4 text-white sm:mx-0 sm:rounded-sm sm:border sm:p-5">
+              <MiniKicker>Why it matters</MiniKicker>
+              <p className="mt-4 font-editorial text-[27px] leading-tight">
+                A lower yearly tax bill can become part of the property&apos;s value.
+              </p>
+              <p className="mt-4 text-[14px] leading-relaxed text-white/72">
+                Buyers value lower future bills. Landlords value extra cash flow. Some neighbors then have
+                a financial reason to resist new homes that would compete with the old deal.
+              </p>
+              <div className="mt-5 rounded-sm border border-white/12 bg-white/[0.055] p-4">
+                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-white/55">
+                  Key distinction
+                </p>
+                <p className="mt-2 text-[15px] leading-relaxed text-white/86">
+                  Protecting someone from being taxed out of a home is different from protecting every
+                  dollar of property advantage forever.
+                </p>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-[13px]">
+                <SourceLink id="multcoAssessment" tone="dark">County assessment FAQs</SourceLink>
+                <SourceLink id="multcoCpr" tone="dark">New-home ratios</SourceLink>
+                <SourceLink id="dorMav" tone="dark">DOR tax manual</SourceLink>
+                <SourceLink id="lroInequity" tone="dark">LRO fairness report</SourceLink>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 grid min-w-0 gap-5 lg:grid-cols-3">
+            {FORMULAS.map((formula) => (
+              <FormulaCard key={formula.label} {...formula} />
+            ))}
+          </div>
         </Section>
 
         <Section
-          id="thesis"
-          eyebrow="The thesis"
-          title="The fight is about who already gets a deal, and who has to pay today's price."
-          lead="This is not just homeowners versus renters, or neighborhood groups versus builders. The real split is between people already helped by old rules and people trying to find a home, buy a first home, build housing, run a business, or fund public services today."
+          id="winners-losers"
+          eyebrow="Who wins and who loses"
+          title="The same rules quietly help some people and charge others."
+          lead="Before arguing about any fix, look at who today's rules already help and who they already cost. These are not moral labels — the same person can win one way and lose another — but the pattern is real, and it is bigger than most tax bills ever show."
+        >
+          <WinnersLosers />
+          <div className="-mx-4 mt-6 flex flex-col gap-3 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:flex-row sm:items-center sm:justify-between sm:rounded-sm sm:border sm:p-5">
+            <p className="max-w-2xl text-[15px] leading-relaxed text-[var(--color-ink-light)]">
+              Where do you land? Most people are in more than one row at once — an owner with kids who rent, a
+              renter who wants to buy. The clearest way to see your own position is your own address.
+            </p>
+            <a
+              href="#parcel-lookup"
+              className="inline-flex w-fit flex-shrink-0 items-center gap-2 rounded-sm bg-[var(--color-canopy)] px-4 py-3 text-[13px] font-bold text-white transition-colors hover:bg-[var(--color-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+            >
+              Look up your address
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </Section>
+
+        <Section
+          id="contradictions"
+          eyebrow="Broken promises"
+          title="Portland's rules keep colliding with Portland's own goals."
+          lead="The goals are real. The problem is that the rules built to serve them often cancel each other out — protecting people already inside the system while charging the people trying to get in."
+          tone="warm"
           aside={
             <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 text-[13px] leading-relaxed text-[var(--color-ink-light)] sm:mx-0 sm:rounded-sm sm:border">
               Source grounding: <SourceLink id="hna">Portland Housing Needs Analysis</SourceLink>,{" "}
@@ -1042,12 +1145,14 @@ export default function PortlandGrowthPoliticsPage() {
           <div className="grid gap-5 lg:grid-cols-[minmax(0,1.25fr)_minmax(300px,0.75fr)] 2xl:grid-cols-[minmax(0,1fr)_minmax(520px,0.8fr)]">
             <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-6">
               <MiniKicker>Plain English</MiniKicker>
-              <h3 className="mt-3 font-editorial text-[32px] leading-tight text-[var(--color-ink)]">
-                Portland protects many people who are already housed, then asks the next home to carry more of the cost.
-              </h3>
+              <div className="mt-4 border-l-2 border-[var(--color-ember)] pl-4 sm:pl-5">
+                <h3 className="font-editorial text-[28px] leading-tight text-[var(--color-ink)] sm:text-[32px]">
+                  Portland protects many people who are already housed, then asks the next home to carry more of the cost.
+                </h3>
+              </div>
               <div className="mt-6 grid gap-5 md:grid-cols-2">
                 <p className="text-[16px] leading-relaxed text-[var(--color-ink-light)]">
-                  A homeowner with a low taxable value can support tenant protections, climate goals, high design
+                  A homeowner with a low taxed value can support tenant protections, climate goals, high design
                   standards, preservation rules, and strict permitting. But many of the costs land somewhere else:
                   on renters, buyers, new buildings, and public-service budgets.
                 </p>
@@ -1083,144 +1188,84 @@ export default function PortlandGrowthPoliticsPage() {
               <ContradictionCard key={item.title} {...item} />
             ))}
           </div>
-        </Section>
 
-        <Section
-          id="measure-50"
-          eyebrow="Measure 50"
-          title="The property-tax rule at the center of this."
-          lead="Measure 50 is an Oregon tax rule that limits how fast a property's taxable value can rise. That can protect people from sudden tax jumps. It can also mean two similar homes owe very different taxes."
-          tone="warm"
-        >
-          <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(360px,0.42fr)]">
-            <div className="grid items-start gap-4 md:grid-cols-3">
-              <MechanismStep
-                step="1"
-                title="Market value is what the property is worth."
-                text={
-                  <>
-                    This is roughly what the home or building would sell for. The lookup uses the county
-                    or PortlandMaps market value when available.
-                  </>
-                }
-              />
-              <MechanismStep
-                step="2"
-                title="Assessed value is what the tax system counts."
-                text={
-                  <>
-                    Multnomah County says property taxes are based on assessed value, which can be far lower
-                    than market value because of Measure 50.
-                  </>
-                }
-              />
-              <MechanismStep
-                step="3"
-                title="The gap creates winners, losers, and politics."
-                text={
-                  <>
-                    For 2025-26, the county&apos;s changed-property ratio is {fmtPct(DEFAULTS.residentialCpr)}
-                    for residential property and {fmtPct(DEFAULTS.multifamilyCpr)} for multifamily property.
-                  </>
-                }
-              />
+          <div className="-mx-4 mt-6 border-y border-[var(--color-ember)]/30 bg-[#fff7f2] p-5 sm:mx-0 sm:rounded-sm sm:border">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
+              The pattern underneath
+            </p>
+            <p className="mt-3 max-w-3xl text-[16px] leading-relaxed text-[var(--color-ink)]">
+              Read every &ldquo;why it survives&rdquo; above and the same shape appears: the people the current
+              rules protect — long-time owners, nearby homeowners, established landlords — are also the people
+              with the time, money, and standing to show up at hearings and block the alternatives. The people
+              who would gain — renters, first-time buyers, the family that hasn&apos;t moved here yet — often
+              cannot vote on it. That is why these contradictions last.
+            </p>
+          </div>
+
+          <div className="mt-6">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+              No single rule is the villain — the burden is how they stack
+            </p>
+            <div className="mt-3 grid gap-3 md:grid-cols-3">
+              {SYSTEM_LAYERS.filter((layer) => KEY_LAYER_TITLES.includes(layer.title)).map((layer) => {
+                const Icon = layer.icon;
+                return (
+                  <div
+                    key={layer.title}
+                    className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-paper-warm)] text-[var(--color-canopy)]">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <p className="font-editorial text-[19px] leading-tight text-[var(--color-ink)]">{layer.title}</p>
+                    </div>
+                    <p className="mt-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">{layer.hiddenEffect}</p>
+                  </div>
+                );
+              })}
             </div>
 
-            <div className="-mx-4 border-y border-[var(--color-parchment)] bg-[var(--color-canopy)] p-4 text-white sm:mx-0 sm:rounded-sm sm:border sm:p-5">
-              <MiniKicker>Why it matters</MiniKicker>
-              <p className="mt-4 font-editorial text-[27px] leading-tight">
-                A lower yearly tax bill can become part of the property&apos;s value.
-              </p>
-              <p className="mt-4 text-[14px] leading-relaxed text-white/72">
-                Buyers value lower future bills. Landlords value extra cash flow. Some neighbors then have
-                a financial reason to resist new homes that would compete with the old deal.
-              </p>
-              <div className="mt-5 rounded-sm border border-white/12 bg-white/[0.055] p-4">
-                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-white/55">
-                  Key distinction
-                </p>
-                <p className="mt-2 text-[15px] leading-relaxed text-white/86">
-                  Protecting someone from being taxed out of a home is different from protecting every
-                  dollar of property advantage forever.
-                </p>
+            <details className="group -mx-4 mt-3 border-y border-[var(--color-parchment)] bg-white sm:mx-0 sm:rounded-sm sm:border">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-4 outline-none transition-colors hover:bg-[var(--color-paper)] focus-visible:ring-2 focus-visible:ring-[var(--color-ember)] sm:p-5 [&::-webkit-details-marker]:hidden">
+                <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+                  See all {SYSTEM_LAYERS.length} rule layers in detail
+                </span>
+                <ChevronDown className="h-5 w-5 flex-shrink-0 text-[var(--color-ink-muted)] motion-safe:transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="border-t border-[var(--color-parchment)] p-4 sm:p-5">
+                <div className="grid gap-5 md:grid-cols-2">
+                  {SYSTEM_LAYERS.map((layer) => (
+                    <PolicyLayerCard key={layer.title} layer={layer} />
+                  ))}
+                </div>
               </div>
-              <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-[13px]">
-                <SourceLink id="multcoAssessment" tone="dark">County assessment FAQs</SourceLink>
-                <SourceLink id="multcoCpr" tone="dark">Changed-property ratios</SourceLink>
-                <SourceLink id="dorMav" tone="dark">DOR tax manual</SourceLink>
-                <SourceLink id="lroInequity" tone="dark">LRO fairness report</SourceLink>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-6 grid min-w-0 gap-5 lg:grid-cols-3">
-            {FORMULAS.map((formula) => (
-              <FormulaCard key={formula.label} {...formula} />
-            ))}
+            </details>
           </div>
         </Section>
 
-        <Section
-          id="calculator"
-          eyebrow="Calculators"
-          title="Change the assumptions and see who pays."
-          lead="These are civic math tools, not official tax advice. They show direction and scale: what happens to renters, buyers, projects, and public budgets when Portland moves one cost from one place to another."
-          aside={
-            <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border">
-              <div className="flex items-center gap-3">
-                <Calculator className="h-5 w-5 text-[var(--color-ember)]" />
-                <p className="text-[13px] font-semibold text-[var(--color-ink)]">Use your own numbers first.</p>
+        <section id="parcel-lookup" className="scroll-mt-24 border-y border-[var(--color-parchment)] bg-[var(--color-paper-warm)] py-12 sm:py-14">
+          <div className={DIVE_CONTAINER}>
+            <div className="mb-5 grid gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+              <div>
+                <MiniKicker>Now make it personal</MiniKicker>
+                <h2 className="mt-2 font-editorial text-[34px] leading-tight text-[var(--color-ink)] sm:text-[42px]">
+                  See what your own address looks like.
+                </h2>
               </div>
-              <p className="mt-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
-                The point is not the default assumption. The point is how fast the result changes when the
-                inputs move.
+              <p className="max-w-3xl text-[15px] leading-relaxed text-[var(--color-ink-light)]">
+                You have seen the pattern. Now check one address. The tool pulls public county and PortlandMaps
+                data and tells you, in plain language, whether that property looks lightly taxed, heavily taxed,
+                or mostly caught in the shortage — and what that means whether you rent, own, might buy, or live nearby.
               </p>
             </div>
-          }
-          tone="dark"
-        >
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {PERSONAL_PATHS.map((path) => (
-              <PersonalPathCard key={path.title} {...path} />
-            ))}
+            <ParcelCohortLookup />
           </div>
-          <div className="mt-8 space-y-8">
-            <Measure50Calculator />
-            <ScarcityTransferCalculator />
-            <ProjectFeasibilityCalculator />
-          </div>
-        </Section>
-
-        <Section
-          id="stack"
-          eyebrow="Rules pile-up"
-          title="The problem is not one rule. It is what happens when the rules pile up."
-          lead="Most Portland housing rules have a good reason behind them. But each one can add cost, delay, or another way to stop a project. The public debate gets confusing when each rule is defended alone and nobody adds up the combined burden."
-        >
-          <div className="grid gap-5 md:grid-cols-2">
-            {SYSTEM_LAYERS.map((layer) => (
-              <PolicyLayerCard key={layer.title} layer={layer} />
-            ))}
-          </div>
-        </Section>
-
-        <Section
-          id="cohorts"
-          eyebrow="Who it affects"
-          title="Who benefits and who pays more?"
-          lead="These are not moral labels. The same person can benefit in one way and be hurt in another: a homeowner with adult children who rent, a renter who supports apartments but fears displacement, or a small builder who supports strong standards but cannot survive a long delay."
-          tone="warm"
-        >
-          <div className="grid gap-5 md:grid-cols-2">
-            {COHORTS.map((cohort) => (
-              <CohortCard key={cohort.name} cohort={cohort} />
-            ))}
-          </div>
-        </Section>
+        </section>
 
         <Section
           id="reforms"
-          eyebrow="Reform package"
+          eyebrow="The fix"
           title="A serious fix has to protect people and build enough homes."
           lead="The goal is not deregulation for its own sake, and it is not a universal tax reset. The goal is a fairer deal: raise deeply under-taxed property toward a minimum share of market value, protect low-income and fixed-income residents directly, stop hiding public costs inside the next new home, and make the city actually deliver the housing it says it needs."
         >
@@ -1243,7 +1288,7 @@ export default function PortlandGrowthPoliticsPage() {
                   <div className="flex w-fit items-center gap-3 rounded-sm border border-[var(--color-parchment)] bg-white px-4 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
                     <span className="group-open:hidden">Open 10-part list</span>
                     <span className="hidden group-open:inline">Close 10-part list</span>
-                    <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+                    <ChevronDown className="h-4 w-4 motion-safe:transition-transform group-open:rotate-180" />
                   </div>
                 </div>
               </summary>
@@ -1283,7 +1328,7 @@ export default function PortlandGrowthPoliticsPage() {
                 </h3>
               </div>
               <p className="max-w-md text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-                The simulator below is intentionally simple. It shows how new taxable value could turn into
+                The simulator below is intentionally simple. It shows how new taxed value could turn into
                 public dollars, and what those dollars could pay for. It assumes new revenue comes from parcels
                 below the floor, not automatic cuts for parcels already above it.
               </p>
@@ -1294,9 +1339,9 @@ export default function PortlandGrowthPoliticsPage() {
 
         <Section
           id="package-impact"
-          eyebrow="Cohort balance sheet"
-          title="Who would actually carry the burden of this package?"
-          lead="A fairer tax base is not free. The revenue-positive version raises deeply under-taxed property toward a minimum share of market value, protects vulnerable households from cash shock, and spends the net new money on renters, future residents, public services, and new homes. The honest version has to say who gives something up."
+          eyebrow="Who pays for the fix"
+          title="A fairer tax base is not free. Here is who would actually carry it."
+          lead="The revenue-positive version raises deeply under-taxed property toward a minimum share of market value, protects vulnerable households from cash shock, and spends the net new money on renters, future residents, public services, and new homes. The honest version has to say who gives something up."
           tone="warm"
           aside={
             <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border">
@@ -1319,8 +1364,8 @@ export default function PortlandGrowthPoliticsPage() {
               <div>
                 <p className="font-editorial text-[27px] leading-tight">The clearest payers are protected property positions.</p>
                 <p className="mt-3 text-[14px] leading-relaxed text-white/70">
-                  Low-tax property below the floor, high-income low-MAV owners, legacy landlords, and underused
-                  urban land would give up some cash flow, tax shelter value, or scarcity value.
+                  Low-tax property below the floor, high-income owners of low-taxed homes, legacy landlords, and
+                  underused urban land would give up some cash flow, tax shelter value, or scarcity value.
                 </p>
               </div>
               <div>
@@ -1348,9 +1393,99 @@ export default function PortlandGrowthPoliticsPage() {
             </div>
           </div>
 
-          <div className="mt-6 grid gap-4">
-            {PACKAGE_COHORT_IMPACTS.map((impact) => (
-              <PackageImpactCard key={impact.name} impact={impact} />
+          <div className="mt-6 grid gap-3 md:grid-cols-3">
+            {packageOutcomeGroups.map((group) => (
+              <div
+                key={group.label}
+                className={`-mx-4 border-y p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5 ${group.tone}`}
+              >
+                <p className="font-mono text-[32px] font-bold leading-none tabular-nums">{group.count}</p>
+                <p className="mt-2 text-[13px] font-semibold leading-snug">groups {group.label}</p>
+                <p className="mt-2 text-[12px] leading-relaxed opacity-80">e.g. {group.examples.join("; ")}</p>
+              </div>
+            ))}
+          </div>
+
+          <details className="group -mx-4 mt-3 border-y border-[var(--color-parchment)] bg-white sm:mx-0 sm:rounded-sm sm:border">
+            <summary className="cursor-pointer list-none p-4 outline-none transition-colors hover:bg-[var(--color-paper)] focus-visible:ring-2 focus-visible:ring-[var(--color-ember)] sm:p-5 [&::-webkit-details-marker]:hidden">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <MiniKicker>The full balance sheet</MiniKicker>
+                  <h3 className="mt-2 font-editorial text-[24px] leading-tight text-[var(--color-ink)]">
+                    Explore all {PACKAGE_COHORT_IMPACTS.length} groups, one by one.
+                  </h3>
+                  <p className="mt-2 max-w-2xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+                    Each card shows today versus the package, a net change, and an honest read of the trade-off.
+                  </p>
+                </div>
+                <ChevronDown className="h-5 w-5 flex-shrink-0 text-[var(--color-ink-muted)] motion-safe:transition-transform group-open:rotate-180" />
+              </div>
+            </summary>
+            <div className="border-t border-[var(--color-parchment)] p-4 sm:p-5">
+              <div className="grid gap-4">
+                {PACKAGE_COHORT_IMPACTS.map((impact) => (
+                  <PackageImpactCard key={impact.name} impact={impact} />
+                ))}
+              </div>
+            </div>
+          </details>
+        </Section>
+
+        <Section
+          id="calculator"
+          eyebrow="Try it yourself"
+          title="Change the assumptions and see who pays."
+          lead="These are civic math tools, not official tax advice. They show direction and scale: what happens to renters, buyers, projects, and public budgets when Portland moves one cost from one place to another."
+          aside={
+            <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border">
+              <div className="flex items-center gap-3">
+                <Calculator className="h-5 w-5 text-[var(--color-ember)]" />
+                <p className="text-[13px] font-semibold text-[var(--color-ink)]">Use your own numbers first.</p>
+              </div>
+              <p className="mt-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
+                The point is not the default assumption. The point is how fast the result changes when the
+                inputs move.
+              </p>
+            </div>
+          }
+          tone="dark"
+        >
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {PERSONAL_PATHS.map((path) => (
+              <PersonalPathCard key={path.title} {...path} />
+            ))}
+          </div>
+          <div className="mt-8 space-y-8">
+            <Measure50Calculator />
+            <ScarcityTransferCalculator />
+            <ProjectFeasibilityCalculator />
+          </div>
+        </Section>
+
+        <Section
+          id="take-action"
+          eyebrow="What you can do"
+          title="None of this changes without people who can see it."
+          lead="Most of these trade-offs never show up on a tax bill or a ballot summary. That is exactly why they last. Here is where one person actually has leverage."
+          tone="darker"
+        >
+          <div className="grid gap-4 md:grid-cols-3">
+            {TAKE_ACTION.map((action) => (
+              <a
+                key={action.title}
+                href={action.href}
+                target={action.href.startsWith("http") ? "_blank" : undefined}
+                rel={action.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="group -mx-4 border-y border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c1410] sm:mx-0 sm:rounded-sm sm:border sm:p-5"
+              >
+                <action.icon className="h-5 w-5 text-[var(--color-ember-bright)]" />
+                <h3 className="mt-4 font-editorial text-[24px] leading-tight text-white">{action.title}</h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-white/70">{action.text}</p>
+                <span className="mt-4 inline-flex items-center gap-2 text-[13px] font-bold text-[var(--color-ember-bright)]">
+                  {action.cta}
+                  <ArrowRight className="h-4 w-4 motion-safe:transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </a>
             ))}
           </div>
         </Section>
@@ -1374,7 +1509,7 @@ export default function PortlandGrowthPoliticsPage() {
                 <div className="flex w-fit items-center gap-3 rounded-sm border border-white/14 bg-white/[0.06] px-4 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-white/72">
                   <span className="group-open:hidden">Open source registry</span>
                   <span className="hidden group-open:inline">Close source registry</span>
-                  <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+                  <ChevronDown className="h-4 w-4 motion-safe:transition-transform group-open:rotate-180" />
                 </div>
               </div>
             </summary>
@@ -1387,7 +1522,7 @@ export default function PortlandGrowthPoliticsPage() {
                     href={source.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group min-w-0 rounded-sm border border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-[var(--color-ember)]/60"
+                    className="group min-w-0 rounded-sm border border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-[var(--color-ember)]/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c1410]"
                   >
                     <p className="break-words font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember-bright)]">
                       {source.org}

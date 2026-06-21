@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import {
   Bar,
   BarChart,
@@ -44,29 +44,34 @@ function Slider({
   display: string;
   tone?: "light" | "dark";
 }) {
-  const labelClass = tone === "dark" ? "text-white/55" : "text-[var(--color-ink-light)]";
+  const reactId = useId();
+  const labelId = `${reactId}-label`;
+  const labelClass = tone === "dark" ? "text-white/60" : "text-[var(--color-ink-light)]";
   const valueClass = tone === "dark" ? "text-[var(--color-ember-bright)]" : "text-[var(--color-canopy)]";
 
   return (
-    <label className="block">
+    <div>
       <div className="flex items-baseline justify-between gap-4">
-        <span className={`text-[11px] font-semibold uppercase tracking-[0.14em] ${labelClass}`}>
+        <span id={labelId} className={`text-[11px] font-semibold uppercase tracking-[0.14em] ${labelClass}`}>
           {label}
         </span>
-        <span className={`font-mono text-[17px] font-bold tabular-nums ${valueClass}`}>
+        <span aria-live="polite" className={`font-mono text-[17px] font-bold tabular-nums ${valueClass}`}>
           {display}
         </span>
       </div>
       <input
         type="range"
+        id={reactId}
+        aria-labelledby={labelId}
+        aria-valuetext={display}
         min={min}
         max={max}
         step={step}
         value={value}
         onChange={(event) => onChange(Number(event.target.value))}
-        className="mt-3 w-full cursor-pointer accent-[var(--color-ember)]"
+        className="mt-2 h-11 w-full cursor-pointer accent-[var(--color-ember)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
       />
-    </label>
+    </div>
   );
 }
 
@@ -79,7 +84,7 @@ function NumberCard({ label, value, note }: { label: string; value: string; note
       <p className="mt-1 font-mono text-[24px] font-bold leading-none tabular-nums text-[var(--color-ink)]">
         {value}
       </p>
-      {note ? <p className="mt-2 text-[12px] leading-snug text-[var(--color-ink-muted)]">{note}</p> : null}
+      {note ? <p className="mt-2 text-[12px] leading-snug text-[var(--color-ink-light)]">{note}</p> : null}
     </div>
   );
 }
@@ -102,35 +107,6 @@ function MoneyTooltip({
           {item.name}: {fmtMoney(Number(item.value ?? 0))}
         </p>
       ))}
-    </div>
-  );
-}
-
-function SameValueTaxTooltip({
-  active,
-  payload,
-  label,
-}: {
-  active?: boolean;
-  payload?: { name?: string; value?: number; payload?: { name?: string; ratio?: string; note?: string } }[];
-  label?: string;
-}) {
-  if (!active || !payload?.length) return null;
-  const first = payload[0]?.payload;
-  return (
-    <div className="max-w-[260px] rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] px-3 py-2 shadow-lg">
-      <p className="font-mono text-[12px] font-semibold text-[var(--color-ink)]">{label}</p>
-      <p className="mt-1 font-mono text-[12px] text-[var(--color-ink-light)]">
-        Modeled annual tax: {fmtMoney(Number(payload[0]?.value ?? 0))}
-      </p>
-      {first?.ratio ? (
-        <p className="mt-2 text-[12px] leading-snug text-[var(--color-ink-light)]">
-          Tax system counts {first.ratio} of the same market value.
-        </p>
-      ) : null}
-      {first?.note ? (
-        <p className="mt-1 text-[12px] leading-snug text-[var(--color-ink-light)]">{first.note}</p>
-      ) : null}
     </div>
   );
 }
@@ -267,7 +243,11 @@ export function Measure50Calculator() {
             ))}
           </div>
 
-          <div className="mt-6 h-[260px] sm:h-[300px]">
+          <div
+            role="img"
+            aria-label={`Bar chart of modeled yearly property tax on the same ${fmtMoney(rmv)} home at four taxed-value levels: older capped home ${fmtMoney(result.legacyTax)}, newer home ${fmtMoney(result.cprTax)}, a minimum-floor scenario, and full value.`}
+            className="mt-6 h-[200px] sm:h-[240px] md:h-[260px] lg:h-[300px]"
+          >
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={result.bars} margin={{ top: 18, right: 8, left: 8, bottom: 28 }}>
                 <CartesianGrid strokeDasharray="2 6" stroke="#ebe5da" vertical={false} />
@@ -295,7 +275,7 @@ export function Measure50Calculator() {
               </BarChart>
             </ResponsiveContainer>
           </div>
-          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
             <NumberCard
               label="Why owners care"
               value={fmtMoney(result.annualAdvantageVsCpr)}
@@ -345,11 +325,12 @@ export function ScarcityTransferCalculator() {
             Housing shortage calculator
           </p>
           <h3 className="mt-2 font-editorial text-[30px] leading-tight text-[var(--color-ink)]">
-            Even a small shortage premium is huge at city scale.
+            How much extra are you paying for the shortage?
           </h3>
           <p className="mt-3 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-            When there are not enough homes, renters bid against each other for the homes that exist.
-            This estimates the extra annual cost if rents are pushed up by a shortage premium.
+            When there are not enough homes, renters bid against each other for whatever exists. Set your own
+            rent and a shortage markup to see what that tight market costs your household every year — money
+            that never shows up as a tax or a fee.
           </p>
           <div className="mt-6 space-y-5">
             <Slider
@@ -362,7 +343,7 @@ export function ScarcityTransferCalculator() {
               display={fmtMoney(monthlyRent)}
             />
             <Slider
-              label="Shortage premium"
+              label="Shortage markup"
               value={premium}
               min={0.02}
               max={0.3}
@@ -383,21 +364,25 @@ export function ScarcityTransferCalculator() {
         </div>
 
         <div>
-          <div className="grid gap-3 sm:grid-cols-3">
-            <NumberCard label="Per renter/year" value={fmtMoney(result.perHousehold)} />
-            <NumberCard label="Aggregate/year" value={fmtMoney(result.aggregate)} />
-            <NumberCard label="Buyer impact" value={fmtMoney(buyer.annual)} note="Extra annual mortgage cost on median home." />
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
+            <NumberCard label="What your household pays" value={fmtMoney(result.perHousehold)} note="Extra rent per year, at your rent and markup." />
+            <NumberCard label="Across all renters" value={fmtMoney(result.aggregate)} note="Every renter household, added up." />
+            <NumberCard label="What a buyer pays" value={fmtMoney(buyer.annual)} note="Extra mortgage per year on a median home." />
           </div>
           <div className="-mx-4 mt-6 border-y border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-4 sm:mx-0 sm:rounded-sm sm:border">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
-              Citywide yearly cost by shortage premium
+              Citywide total across all renters
             </p>
             <p className="mt-2 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
-              The chart shows aggregate renter cost only. The per-household number is shown above because it
-              is much smaller than the citywide total and would disappear on the same axis.
+              The three cards above are one household. This chart is the citywide total — every renter household
+              added up — which is far larger and would dwarf the per-household number on a shared axis.
             </p>
           </div>
-          <div className="mt-4 h-[260px] sm:h-[300px]">
+          <div
+            role="img"
+            aria-label={`Bar chart of the citywide yearly renter cost of the housing shortage at four markup levels, from 5% to 20%. At the current ${fmtPct(premium, 0)} markup it is about ${fmtMoney(result.aggregate)} per year.`}
+            className="mt-4 h-[200px] sm:h-[240px] md:h-[260px] lg:h-[300px]"
+          >
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={result.rows} margin={{ top: 18, right: 10, left: 8, bottom: 12 }}>
                 <CartesianGrid strokeDasharray="2 6" stroke="#ebe5da" vertical={false} />
@@ -435,6 +420,26 @@ export function ProjectFeasibilityCalculator() {
     [annualTaxPerUnit, delayMonths, ihGap, sdcPerUnit],
   );
 
+  const addedRent = result.monthlyThresholdTotal;
+  const verdict =
+    addedRent > 250
+      ? {
+          label: "Likely does not get built",
+          tone: "border-[#df9b86] bg-[#fff7f2] text-[#8c3d25]",
+          text: `This project would need about ${fmtMoney(addedRent)} more rent per home every month just to cover these costs. Above roughly $250 per home each month — more than a tenth of a typical Portland rent — many projects simply stall.`,
+        }
+      : addedRent > 150
+        ? {
+            label: "Right on the edge",
+            tone: "border-[#d6a15f] bg-[#fff8ea] text-[#80511b]",
+            text: `About ${fmtMoney(addedRent)} more rent per home every month is where projects start to pencil out — or not, depending on the market.`,
+          }
+        : {
+            label: "More likely to pencil",
+            tone: "border-[var(--color-sage)] bg-[#f3fbf5] text-[var(--color-canopy)]",
+            text: `At about ${fmtMoney(addedRent)} more rent per home each month, these costs are small enough that the project is more likely to get built.`,
+          };
+
   return (
     <div className="-mx-4 overflow-hidden border-y border-[var(--color-parchment)] bg-white sm:mx-0 sm:rounded-sm sm:border">
       <div className="grid xl:grid-cols-[0.82fr_1.18fr]">
@@ -457,12 +462,21 @@ export function ProjectFeasibilityCalculator() {
           </div>
         </div>
         <div className="p-4 sm:p-7">
-          <div className="grid sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
             <NumberCard label="Delay cost" value={fmtMoney(result.delayCost)} note="Interest/carrying cost while waiting." />
             <NumberCard label="One-time burden / unit" value={fmtMoney(result.oneTimeCostPerUnit)} />
-            <NumberCard label="Added rent needed" value={fmtMoney(result.monthlyThresholdTotal)} note="Monthly amount needed to cover the modeled costs." />
+            <NumberCard label="Added rent / home / mo." value={fmtMoney(result.monthlyThresholdTotal)} note="Per home, each month, to cover the modeled costs." />
           </div>
-          <div className="mt-6 h-[260px] sm:h-[280px]">
+          <div className={`mt-4 rounded-sm border p-4 ${verdict.tone}`}>
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] opacity-70">Does it pencil?</p>
+            <p className="mt-1 text-[18px] font-bold leading-tight">{verdict.label}</p>
+            <p className="mt-2 text-[13px] leading-relaxed opacity-80">{verdict.text}</p>
+          </div>
+          <div
+            role="img"
+            aria-label="Bar chart of the per-home cost stack on a new apartment: delay cost, city building fees (SDC), and the affordable-unit funding gap."
+            className="mt-6 h-[200px] sm:h-[240px] md:h-[260px] lg:h-[280px]"
+          >
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={result.stack} margin={{ top: 18, right: 8, left: 8, bottom: 4 }}>
                 <CartesianGrid strokeDasharray="2 6" stroke="#ebe5da" vertical={false} />
@@ -484,6 +498,16 @@ export function ProjectFeasibilityCalculator() {
 export function ReformLeverSimulator() {
   const [additionalAv, setAdditionalAv] = useState<number>(10_000_000_000);
   const result = useMemo(() => reformRevenue(additionalAv), [additionalAv]);
+
+  const find = (name: string) => result.allocation.find((item) => item.name === name)?.value ?? 0;
+  const homesPerYear = Math.round((find("Affordable housing") + find("Homes on public land")) / 250_000);
+  const ownersHelped = Math.round(find("Help for owners who can't pay") / 2_000);
+  const rentersHelped = Math.round(find("Renter stability fund") / 2_000);
+  const outcomes = [
+    { value: homesPerYear.toLocaleString(), label: "affordable homes funded per year" },
+    { value: ownersHelped.toLocaleString(), label: "lower-income owners helped to stay" },
+    { value: rentersHelped.toLocaleString(), label: "renters stabilized per year" },
+  ];
 
   return (
     <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-7">
@@ -513,10 +537,30 @@ export function ReformLeverSimulator() {
           <div className="mt-5">
             <NumberCard label="Rough yearly public dollars" value={fmtMoney(result.annual, 1)} note="Additional taxable value / 1,000 × tax rate." />
           </div>
+          <div className="-mx-4 mt-4 border-y border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-4 sm:mx-0 sm:rounded-sm sm:border">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
+              What that could buy in a year
+            </p>
+            <div className="mt-3 grid gap-3 sm:grid-cols-3">
+              {outcomes.map((outcome) => (
+                <div key={outcome.label}>
+                  <p className="font-mono text-[22px] font-bold tabular-nums text-[var(--color-canopy)]">~{outcome.value}</p>
+                  <p className="mt-1 text-[12px] leading-snug text-[var(--color-ink-light)]">{outcome.label}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-[11px] leading-relaxed text-[var(--color-ink-muted)]">
+              Rough illustration: affordable homes at about $250k of gap funding each, household help at about $2k each.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-[280px_1fr] gap-6 items-center">
-          <div className="h-[280px]">
+          <div
+            role="img"
+            aria-label={`Donut chart allocating the modeled ${fmtMoney(result.annual, 1)} of new yearly revenue across infrastructure, renter stability, affordable housing, faster permits, hardship help for owners, and homes on public land.`}
+            className="h-[240px] sm:h-[280px]"
+          >
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie data={result.allocation} dataKey="value" nameKey="name" innerRadius="58%" outerRadius="88%" paddingAngle={2}>
@@ -548,94 +592,51 @@ export function ReformLeverSimulator() {
 }
 
 export function PropertyTaxMiniChart() {
-  const data = [
-    {
-      name: "25% counted",
-      tax: Math.round(annualTax(DEFAULTS.medianHomeValue, 0.25)),
-      fill: "#b85c3a",
-      ratio: "25%",
-      note: "Example of a very low taxable basis after many years of capped growth.",
-    },
-    {
-      name: "35% counted",
-      tax: Math.round(annualTax(DEFAULTS.medianHomeValue, 0.35)),
-      fill: "#c8956c",
-      ratio: "35%",
-      note: "Example of an older property with a low, but less extreme, taxable basis.",
-    },
-    {
-      name: "48% new",
-      tax: Math.round(annualTax(DEFAULTS.medianHomeValue, DEFAULTS.residentialCpr)),
-      fill: "#4a7f9e",
-      ratio: "48.1%",
-      note: "Uses Multnomah County's 2025-26 residential changed-property ratio.",
-    },
-    {
-      name: "55% counted",
-      tax: Math.round(annualTax(DEFAULTS.medianHomeValue, 0.55)),
-      fill: "#1a3a2a",
-      ratio: "55%",
-      note: "Example of a property already taxed above the proposed 50% floor.",
-    },
+  const value = DEFAULTS.medianHomeValue;
+  const older = Math.round(annualTax(value, 0.35));
+  const newer = Math.round(annualTax(value, DEFAULTS.residentialCpr));
+  const gap = newer - older;
+  const max = Math.max(older, newer);
+  const houses = [
+    { label: "Older home", sub: "taxed on a fraction of its value", tax: older, fill: "#c8956c" },
+    { label: "Newer home next door", sub: "taxed near today's full value", tax: newer, fill: "#7fa88e" },
   ];
 
   return (
     <div className="rounded-sm border border-white/12 bg-white/[0.05] p-4">
-      <div className="grid gap-3 sm:grid-cols-2">
-        <div className="rounded-sm border border-white/10 bg-black/10 p-3">
-          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
-            Same market value
-          </p>
-          <p className="mt-1 font-mono text-[22px] font-bold text-white">{fmtMoney(DEFAULTS.medianHomeValue)}</p>
-        </div>
-        <div className="rounded-sm border border-white/10 bg-black/10 p-3">
-          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
-            What changes
-          </p>
-          <p className="mt-1 text-[13px] leading-snug text-white/78">
-            Not the home value. Only the taxable share of that value.
-          </p>
-        </div>
-      </div>
-      <div className="mt-3 rounded-sm border border-white/10 bg-black/10 p-3">
+      <div className="flex items-baseline justify-between">
         <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
-          How to read 25% or 35%
+          Same market value
         </p>
-        <p className="mt-2 text-[13px] leading-relaxed text-white/78">
-          These are not the age of the house. They mean the tax system counts only 25% or 35% of the
-          home&apos;s market value. Those first two bars are examples of long-capped properties: the taxable
-          value has lagged behind market value for many years while the annual taxable-value increase was
-          capped, usually at 3%.
-        </p>
+        <p className="font-mono text-[16px] font-bold text-white">{fmtMoney(value)}</p>
       </div>
-      <div className="h-[230px]">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data} margin={{ top: 16, right: 4, left: 0, bottom: 0 }}>
-            <CartesianGrid strokeDasharray="2 6" stroke="rgba(255,255,255,0.13)" vertical={false} />
-            <XAxis
-              dataKey="name"
-              tick={{ fontFamily: "var(--font-mono)", fontSize: 10, fill: "rgba(255,255,255,0.62)" }}
-              tickLine={false}
-              axisLine={false}
-            />
-            <YAxis tickFormatter={(v: number) => fmtMoney(v)} tick={{ fontFamily: "var(--font-mono)", fontSize: 10, fill: "rgba(255,255,255,0.5)" }} tickLine={false} axisLine={false} width={58} />
-            <Tooltip content={<SameValueTaxTooltip />} />
-            <Bar dataKey="tax" name="Modeled annual tax" radius={[4, 4, 0, 0]}>
-              {data.map((entry) => <Cell key={entry.name} fill={entry.fill} />)}
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
+
+      <div className="mt-4 space-y-4">
+        {houses.map((house) => (
+          <div key={house.label}>
+            <div className="flex items-baseline justify-between gap-3">
+              <p className="text-[13px] font-semibold text-white">{house.label}</p>
+              <p className="font-mono text-[18px] font-bold tabular-nums text-white">
+                {fmtMoney(house.tax)}
+                <span className="ml-1 text-[11px] font-normal text-white/50">/yr tax</span>
+              </p>
+            </div>
+            <p className="text-[11px] leading-snug text-white/45">{house.sub}</p>
+            <div className="mt-2 h-3 overflow-hidden rounded-full bg-white/10">
+              <div
+                className="h-full rounded-full"
+                style={{ width: `${(house.tax / max) * 100}%`, backgroundColor: house.fill }}
+              />
+            </div>
+          </div>
+        ))}
       </div>
-      <div className="mt-3 grid gap-2 sm:grid-cols-2">
-        <p className="rounded-sm border border-white/10 bg-black/10 p-3 text-[12px] leading-relaxed text-white/68">
-          <span className="font-semibold text-white">Why “long-capped”?</span> Oregon&apos;s taxable value
-          system dates back to the Measure 50 reset in the 1990s. A house does not have to be owned by
-          the same person the whole time, because a sale usually does not reset the taxable basis.
-        </p>
-        <p className="rounded-sm border border-white/10 bg-black/10 p-3 text-[12px] leading-relaxed text-white/68">
-          <span className="font-semibold text-white">Why compare to new?</span> New or heavily changed
-          housing usually enters the rolls using Multnomah County&apos;s changed-property ratio, so it can
-          start closer to today&apos;s market value than a long-capped property.
+
+      <div className="mt-4 rounded-sm border border-[var(--color-ember)]/40 bg-[var(--color-ember)]/10 p-3">
+        <p className="text-[13px] leading-relaxed text-white/85">
+          The older home pays{" "}
+          <span className="font-mono font-bold text-[var(--color-ember-bright)]">{fmtMoney(gap)}</span> less every
+          year for the same house — and that discount passes to whoever buys it next.
         </p>
       </div>
     </div>
