@@ -78,7 +78,7 @@ function StatCard({ value, label, source }: { value: string; label: string; sour
         {value}
       </p>
       <p className="mt-3 text-[12px] leading-snug text-white/62">{label}</p>
-      <a href={SOURCES[source].url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block font-mono text-[9px] uppercase tracking-[0.14em] text-white/40 underline-offset-2 hover:text-[var(--color-ember-bright)] hover:underline">
+      <a href={SOURCES[source].url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block font-mono text-[10px] uppercase tracking-[0.14em] text-white/40 underline-offset-2 hover:text-[var(--color-ember-bright)] hover:underline">
         {SOURCES[source].org}
       </a>
     </div>
@@ -441,43 +441,43 @@ export default function OregonEconomicDevelopmentPage() {
             <p className="mt-3 text-[12px]"><SourceLink id="cnbc">CNBC, via Business Oregon&apos;s own legislative deck</SourceLink></p>
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
-            <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5">
-              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-canopy)]">Structural — about the system</p>
-              <div className="mt-4 grid gap-3">
+            <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5 xl:p-6 2xl:p-7">
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-canopy)] xl:text-[12px] 2xl:text-[13px]">Structural — about the system</p>
+              <div className="mt-4 grid gap-3 xl:mt-5 xl:gap-4">
                 {structural.map((d) => {
                   const Icon = d.icon;
                   const tone = FIX_TONE[d.fixedByReorg];
                   return (
-                    <div key={d.problem} className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-4">
-                      <div className="flex items-start gap-3">
-                        <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-paper-warm)] text-[var(--color-canopy)]"><Icon className="h-5 w-5" /></span>
+                    <div key={d.problem} className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-4 xl:p-5 2xl:p-6">
+                      <div className="flex items-start gap-3 xl:gap-4">
+                        <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-paper-warm)] text-[var(--color-canopy)] xl:h-11 xl:w-11"><Icon className="h-5 w-5 xl:h-[22px] xl:w-[22px]" /></span>
                         <div className="min-w-0">
-                          <p className="text-[14px] font-bold leading-snug text-[var(--color-ink)]">{d.problem}</p>
-                          <p className="mt-1 text-[12.5px] leading-relaxed text-[var(--color-ink-light)]">{d.detail}</p>
+                          <p className="text-[15px] font-bold leading-snug text-[var(--color-ink)] sm:text-[16px] xl:text-[17px] 2xl:text-[18px]">{d.problem}</p>
+                          <p className="mt-1.5 max-w-[68ch] text-[13px] leading-relaxed text-[var(--color-ink-light)] sm:text-[14px] xl:text-[15px] 2xl:text-[16px]">{d.detail}</p>
                         </div>
                       </div>
-                      <span className={`mt-3 inline-flex rounded-full border px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-[0.1em] ${tone.className}`}>{tone.label}</span>
+                      <span className={`mt-3 inline-flex rounded-full border px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-[0.1em] xl:mt-4 xl:px-3 xl:py-1.5 xl:text-[11px] ${tone.className}`}>{tone.label}</span>
                     </div>
                   );
                 })}
               </div>
             </div>
-            <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5">
-              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8c3d25]">Execution — about the doing</p>
-              <div className="mt-4 grid gap-3">
+            <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5 xl:p-6 2xl:p-7">
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8c3d25] xl:text-[12px] 2xl:text-[13px]">Execution — about the doing</p>
+              <div className="mt-4 grid gap-3 xl:mt-5 xl:gap-4">
                 {execution.map((d) => {
                   const Icon = d.icon;
                   const tone = FIX_TONE[d.fixedByReorg];
                   return (
-                    <div key={d.problem} className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-4">
-                      <div className="flex items-start gap-3">
-                        <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-paper-warm)] text-[#8c3d25]"><Icon className="h-5 w-5" /></span>
+                    <div key={d.problem} className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-4 xl:p-5 2xl:p-6">
+                      <div className="flex items-start gap-3 xl:gap-4">
+                        <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-paper-warm)] text-[#8c3d25] xl:h-11 xl:w-11"><Icon className="h-5 w-5 xl:h-[22px] xl:w-[22px]" /></span>
                         <div className="min-w-0">
-                          <p className="text-[14px] font-bold leading-snug text-[var(--color-ink)]">{d.problem}</p>
-                          <p className="mt-1 text-[12.5px] leading-relaxed text-[var(--color-ink-light)]">{d.detail}</p>
+                          <p className="text-[15px] font-bold leading-snug text-[var(--color-ink)] sm:text-[16px] xl:text-[17px] 2xl:text-[18px]">{d.problem}</p>
+                          <p className="mt-1.5 max-w-[68ch] text-[13px] leading-relaxed text-[var(--color-ink-light)] sm:text-[14px] xl:text-[15px] 2xl:text-[16px]">{d.detail}</p>
                         </div>
                       </div>
-                      <span className={`mt-3 inline-flex rounded-full border px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-[0.1em] ${tone.className}`}>{tone.label}</span>
+                      <span className={`mt-3 inline-flex rounded-full border px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-[0.1em] xl:mt-4 xl:px-3 xl:py-1.5 xl:text-[11px] ${tone.className}`}>{tone.label}</span>
                     </div>
                   );
                 })}
@@ -508,7 +508,7 @@ export default function OregonEconomicDevelopmentPage() {
                   </div>
                   <p className="mt-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">{p.model}</p>
                   <p className="mt-3 border-l-2 border-[var(--color-sage)] pl-3 text-[13px] font-semibold leading-relaxed text-[var(--color-ink)]">{p.outcome}</p>
-                  <p className="mt-3 border-l-2 border-[var(--color-ember)] pl-3 text-[12.5px] leading-relaxed text-[var(--color-ink-light)]">
+                  <p className="mt-3 border-l-2 border-[var(--color-ember)] pl-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
                     <span className="font-semibold text-[#8c3d25]">But: </span>{p.caution}
                   </p>
                   <p className="mt-3 text-[12px]"><SourceLink id={p.source}>Source</SourceLink></p>
