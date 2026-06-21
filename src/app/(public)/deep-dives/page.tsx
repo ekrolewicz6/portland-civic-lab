@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
-import { ArrowRight, Landmark, Network, Scale, TreePine, Users } from "lucide-react";
+import { ArrowRight, Building2, Landmark, Network, Scale, TreePine, Users } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
@@ -25,6 +25,17 @@ interface DeepDive {
 }
 
 const DIVES: DeepDive[] = [
+  {
+    href: "/deep-dives/oregon-economic-development",
+    eyebrow: "Economy & government",
+    title: "Is Oregon serious about its own economy?",
+    blurb:
+      "Governor Kotek's Prosperity Council wants to blow up Business Oregon and build a Department of Commerce. The case against the agency — and the asterisks the headline numbers hide — with the scorecard, the $1B decoded, the front door no CEO would use, and a four-state field test on whether a reorg actually works.",
+    stat: "1,200 → 800",
+    statLabel: "where the job target moved after years of missing it",
+    icon: Building2,
+    available: true,
+  },
   {
     href: "/deep-dives/portland-growth-politics",
     eyebrow: "Housing & taxes",
