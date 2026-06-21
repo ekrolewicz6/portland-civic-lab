@@ -112,6 +112,31 @@ export const SOURCES = {
     title: "Oregon Business & Industry — statewide employer association",
     url: "https://oregonbusinessindustry.com/",
   },
+  appr2025: {
+    org: "Business Oregon",
+    title: "Annual Performance Progress Report, reporting year 2025 (KPM #1: 808 jobs vs the lowered 800 target)",
+    url: "https://www.oregon.gov/biz/Publications/APPR_OBDD_2025-10-01.pdf",
+  },
+  dorTaxExp: {
+    org: "Oregon Department of Revenue",
+    title: "2025-27 Tax Expenditure Report (SIP + enterprise-zone revenue loss, state + local)",
+    url: "https://www.oregon.gov/dor/gov-research/pages/tax_expenditure_report.aspx",
+  },
+  cnbc: {
+    org: "CNBC / Business Oregon legislative deck",
+    title: "America's Top States for Business — Oregon 2019 vs 2025 rankings",
+    url: "https://olis.oregonlegislature.gov/liz/2025I1/Downloads/CommitteeMeetingDocument/311398",
+  },
+  ipreCommissioned: {
+    org: "Business Oregon / IPRE",
+    title: "External Business Recruitment (UO/IPRE, commissioned by Business Oregon with an OBI/OBC advisory committee)",
+    url: "https://www.oregon.gov/biz/Publications/Biz_Recruitment.pdf",
+  },
+  lab2527: {
+    org: "Business Oregon",
+    title: "2025-27 Legislatively Adopted Budget (ORBITS division detail; total funds $2.26B)",
+    url: "https://www.oregon.gov/biz/Publications/12300%20-%20Oregon%20Business%20Development%20Department-v4.pdf",
+  },
 } as const;
 
 export type SourceKey = keyof typeof SOURCES;
@@ -121,18 +146,18 @@ export type SourceKey = keyof typeof SOURCES;
 /* ------------------------------------------------------------------ */
 
 export const HEADLINE_STATS: Array<{ value: string; label: string; source: SourceKey }> = [
-  { value: "490", label: "jobs the agency takes credit for last year — against a goal it had already cut", source: "appr2024" },
-  { value: "1,200 → 800", label: "where the job-creation target moved after years of missing it", source: "appr2024" },
-  { value: "$30.7M", label: "the agency's actual operations budget — far from the “$1 billion a year” headline", source: "lfoBudget" },
-  { value: "$275M", label: "in business property-tax breaks Oregon schools gave up in a single year", source: "goodJobsFirst" },
+  { value: "808 vs 800", label: "the agency's 2025 “win” — beating a goal it had cut from 1,200, the year Oregon lost jobs", source: "appr2025" },
+  { value: "1,200 → 800", label: "where it moved the job target after years of missing it", source: "appr2025" },
+  { value: "$617M", label: "a year Oregon gives up in business property-tax breaks — outside the agency's scorecard", source: "dorTaxExp" },
+  { value: "$31M", label: "the agency's actual operations budget — far from the “$1 billion a year” headline", source: "lab2527" },
 ];
 
 export const TLDR_POINTS = [
-  "A confidential draft from Governor Kotek's Prosperity Council says Oregon's economic-development agency, Business Oregon, is “underperforming relative to peer states” and should become a “Department of Commerce.” The final report is due June 30, 2026.",
+  "A confidential draft from Governor Kotek's Prosperity Council says Oregon's economic-development agency, Business Oregon, is “underperforming relative to peer states” and should become a “Department of Commerce.” The final report is scheduled to be unveiled June 25, 2026, ahead of its June 30 deadline.",
   "The damning detail: the agency missed its job-creation goal for years, so the goal was lowered from 1,200 to 800 — and the latest public report still shows a miss (490 jobs).",
   "But the headline numbers are slipperier than they look: the agency changed how it counts jobs in 2024, its biggest tools (the Intel and data-center tax breaks) aren't even in that scorecard, and “$1 billion a year” is mostly pass-through infrastructure money, not money the agency actually runs.",
   "You can also just look at the front door: Business Oregon's website is built like an org chart, not like a product a CEO deciding where to expand would ever use.",
-  "Some of this is structural (Oregon never made economic development a real priority) and some is execution (missed targets, an unusable website). A reorg fixes the first. Whether it touches the second is the real question for June 30.",
+  "Some of this is structural (Oregon never made economic development a real priority) and some is execution (missed targets, an unusable website). A reorg fixes the first. Whether it touches the second is the real question for June 25.",
 ];
 
 /* ------------------------------------------------------------------ */
@@ -145,14 +170,19 @@ export interface JobsYear {
   target: number;
 }
 
-/** KPM #1 "jobs created", actual vs LFO target, reporting years 2020-2024. */
+/** KPM #1 "jobs created", actual vs LFO target, reporting years 2020-2025. */
 export const JOBS_KPM: JobsYear[] = [
   { year: "2020", actual: 811, target: 1200 },
   { year: "2021", actual: 504, target: 1300 },
   { year: "2022", actual: 378, target: 1200 },
   { year: "2023", actual: 541, target: 1200 },
   { year: "2024", actual: 490, target: 800 },
+  { year: "2025", actual: 808, target: 800 },
 ];
+
+/** The confirmed FY2025 twist (from the reporting-year-2025 APPR). */
+export const FY2025_TWIST =
+  "In 2025 the agency finally cleared the bar — by eight jobs (808 vs 800). But it was the bar it had cut from 1,200, and it declared “100% of targets met” in a year Oregon's private sector lost roughly 6,500 jobs.";
 
 /** Pre-2024 FTE-methodology history (NOT comparable to post-2024 counts). */
 export const JOBS_FTE_HISTORY: JobsYear[] = [
@@ -167,39 +197,47 @@ export const SCOREBOARD_NOTE =
 /* The other KPMs — the "honest read" the failure framing leaves out. */
 export interface OtherKpm {
   name: string;
-  fy2024: string;
+  value: string;
   verdict: "beat" | "miss" | "mixed";
   note: string;
 }
 
+/** FY2025 values, from the reporting-year-2025 APPR. */
 export const OTHER_KPMS: OtherKpm[] = [
   {
     name: "Jobs retained (KPM #2)",
-    fy2024: "10,318 vs 3,000 target",
+    value: "9,640 vs 3,000 target",
     verdict: "beat",
-    note: "Far above target — but the agency notes about 92% came from two one-time COVID grant programs that phase out after 2025.",
+    note: "Far above target — but 93.5% came from two one-time COVID grant programs that are winding down.",
   },
   {
-    name: "Personal income tax generated (KPM #3)",
-    fy2024: "$17.7M vs $20.5M target",
+    name: "Personal income tax (KPM #3)",
+    value: "$20.6M vs $21.0M target",
     verdict: "miss",
-    note: "Tracks the jobs measures; missed by ~14% in 2024 after barely beating target in 2023.",
-  },
-  {
-    name: "Jobs via property-tax abatement (KPM #6)",
-    fy2024: "2,402 vs 750 target",
-    verdict: "beat",
-    note: "The enterprise-zone and SIP jobs — counted separately from the headline KPM #1 the agency is judged on.",
+    note: "Missed again — the agency's own note calls it the 6th miss in 7 years, even as the jobs it credits rose.",
   },
   {
     name: "Customer satisfaction (KPM #10)",
-    fy2024: "85% vs 90% target",
-    verdict: "miss",
-    note: "Has never hit its 90% target in any year, 2020-2024. The 2024 survey of 7,800 recipients drew 353 responses — a 5% reply rate.",
+    value: "95% vs an 85% target",
+    verdict: "beat",
+    note: "A record high — but the target was cut from 90% to 85%, and the survey drew a 6% response rate (340 of 5,300 sent).",
+  },
+  {
+    name: "Abatement jobs (KPM #6)",
+    value: "1,560 vs 750 target",
+    verdict: "beat",
+    note: "The Intel/enterprise-zone jobs — counted separately from the KPM #1 the agency is graded on, and down from 2,402 in 2024.",
   },
 ];
 
-export const SCORECARD_COLORS = { fy2024Green: 0.6364, yellow: 0.2727, red: 0.0909 };
+/** In FY2025 the agency declared all 11 KPMs "green" — after cutting several targets. */
+export const TARGETS_CUT: Array<{ kpm: string; from: string; to: string }> = [
+  { kpm: "Jobs created", from: "1,200", to: "800" },
+  { kpm: "Customer satisfaction", from: "90%", to: "85%" },
+  { kpm: "Federal contract value", from: "$76M", to: "$50M" },
+];
+
+export const FY2025_GREEN = "100% of targets met";
 
 /* ------------------------------------------------------------------ */
 /* The methodology asterisk                                            */
@@ -232,29 +270,30 @@ export interface FundSlice {
   note: string;
 }
 
-/** 2025-27 Legislatively Adopted Budget, total funds $2.079B (biennium). */
+/** 2025-27 Legislatively Adopted Budget by division, total funds $2.26B (biennium). */
 export const BUDGET_FUNDS: FundSlice[] = [
-  { name: "Other Funds — infrastructure finance", millions: 1125.3, kind: "passthrough", note: "Lottery/GO/Bond Bank bond proceeds and loan repayments, recycled into community water, sewer, and broadband projects." },
-  { name: "Other Funds — non-limited", millions: 447.2, kind: "passthrough", note: "Bond debt service and pass-through capital." },
-  { name: "General Fund", millions: 212.4, kind: "operating", note: "State tax dollars the Legislature appropriates directly." },
-  { name: "Lottery Funds", millions: 200.2, kind: "operating", note: "Lottery dollars for grants and operations." },
-  { name: "Federal Funds", millions: 94.3, kind: "passthrough", note: "Mostly federal pass-through grants." },
+  { name: "Infrastructure Financing", millions: 1744.4, kind: "passthrough", note: "Bonded capital — lottery/GO/Bond Bank proceeds and loan repayments recycled into community water, sewer, seismic, and broadband loans. About 77% of the agency." },
+  { name: "Business, Innovation & Trade", millions: 249.8, kind: "operating", note: "The actual economic-development work: business retention, recruitment, CHIPS, the Strategic Reserve Fund, innovation, and exports. The largest staff division." },
+  { name: "Lottery & bond debt service", millions: 186.7, kind: "passthrough", note: "Pure debt service — paying off bonds. Zero staff." },
+  { name: "Arts Commission & Cultural Trust", millions: 47.2, kind: "operating", note: "Arts and heritage grants." },
+  { name: "Operations", millions: 31.2, kind: "operating", note: "Central administration — director's office, IT, fiscal, HR, comms. 73 positions. The part that actually runs the agency." },
+  { name: "Film & Video Office", millions: 1.5, kind: "passthrough", note: "Lottery pass-through to a semi-independent office." },
 ];
 
 export const BUDGET_BIENNIA: Array<{ period: string; millions: number; note: string }> = [
   { period: "2021-23 (actual)", millions: 1019.8, note: "~$510M/yr" },
   { period: "2023-25 (adopted)", millions: 2272.9, note: "one-time + federal money" },
-  { period: "2025-27 (adopted)", millions: 2079.5, note: "~$1.04B/yr total funds" },
+  { period: "2025-27 (adopted)", millions: 2260.8, note: "~$1.13B/yr total funds" },
   { period: "2025-27 base", millions: 1151.2, note: "recurring “current service level” — ~$600M/yr" },
 ];
 
 export const BUDGET_OPERATIONS = {
-  operationsDivisionMillions: 30.7,
-  operationsDivisionPositions: 71,
-  totalPositions: 204,
-  fte: 205.19,
+  operationsDivisionMillions: 31.2,
+  operationsDivisionPositions: 73,
+  totalPositions: 206,
+  fte: 201.4,
   takeaway:
-    "“Business Oregon spends more than $1 billion a year” is the most repeated number about the agency, and it's misleading. The figure is biennial total funds, and most of it is bonded infrastructure finance that passes through the agency to water and sewer projects. The division that actually runs the agency is about $30.7 million for the two years.",
+    "“Business Oregon spends more than $1 billion a year” is the most repeated number about the agency, and it's misleading. The figure is biennial total funds ($2.26 billion for two years), and most of it is bonded infrastructure finance that passes through the agency to water and sewer projects. The division that actually runs the agency is about $31 million for the two years.",
 };
 
 /* ------------------------------------------------------------------ */
@@ -291,8 +330,28 @@ export const INTEL_SIP = {
   investment: "up to ~$100B over 30 years",
   taxBreak: "~$2B property-tax break (machinery & equipment only)",
   mechanic:
-    "The Strategic Investment Program exempts investment above a threshold (about $154M in urban counties) from property tax for 15 years. Intel still pays on land and buildings, plus fees estimated near $350M over the life of the deal.",
+    "The Strategic Investment Program lets a company exempt the value of an investment above a set floor from property tax for 15 years. To qualify in an urban county, a company must invest at least about $154M (rising to ~$163M in mid-2026). Intel still pays tax on land and buildings, plus fees estimated near $350M over the life of the deal.",
+  context:
+    "And the state's flagship incentive is riding on a company in retreat: Intel cut more than 3,000 Oregon jobs in 2025, its foundry business lost roughly $10B, and in August 2025 the U.S. government took an ownership stake of about 10%. The Council's co-chair, Renée James, is a former Intel president.",
 };
+
+/** Statewide (state + all local) property-tax revenue forgone, per the DOR Tax Expenditure Report. */
+export const STATEWIDE_INCENTIVE = {
+  perYear: 617,
+  sip: 327,
+  ruralEz: 194.5,
+  standardEz: 95,
+  dataCentersAllPrograms: 457,
+  note:
+    "Counting all taxing districts — state and local — Oregon forgoes about $617M a year in property tax to the Strategic Investment Program plus all enterprise zones, per the Department of Revenue. The $275M schools give up is a subset. Intel's SIP alone is ~$327M/yr; the rural enterprise zone that covers eastern-Oregon data centers is ~$194M/yr.",
+};
+
+/** CNBC "America's Top States for Business" — Oregon's rank, 2019 vs 2025. */
+export const CNBC_RANK: Array<{ metric: string; y2019: number; y2025: number }> = [
+  { metric: "Overall", y2019: 22, y2025: 39 },
+  { metric: "Economy", y2019: 7, y2025: 41 },
+  { metric: "Business friendliness", y2019: 43, y2025: 47 },
+];
 
 /* ------------------------------------------------------------------ */
 /* The front door — Oregon vs a product-built peer                     */
@@ -468,7 +527,7 @@ export const COMMERCE_PROPOSAL = {
   what: "Convert Business Oregon into a “Department of Commerce” that consolidates economic-development functions now split across multiple agencies.",
   changes: "The structure: one consolidated home, a clearer line to the governor, and (potentially) more scale and influence over peer agencies.",
   doesntChange: "The execution and the will: whether the state actually prioritizes growth, whether the agency answers the phone, whether the front door is rebuilt, and whether the metrics become honest.",
-  status: "This comes from a confidential draft obtained by reporters. The Governor's official Prosperity Council page does not mention Business Oregon or a Department of Commerce. The final report is due June 30, 2026.",
+  status: "This comes from a confidential draft obtained by reporters. The Governor's official Prosperity Council page does not mention Business Oregon or a Department of Commerce. The final report is scheduled for June 25, 2026 (charter deadline June 30).",
 };
 
 export const SERIOUS_BAR: Array<{ title: string; detail: string; icon: LucideIcon }> = [
@@ -497,12 +556,13 @@ export const TRADEOFFS: Array<{ tension: string; left: string; right: string }> 
 ];
 
 export const CAVEATS = [
-  "The “beat the target by eight jobs last year” figure can't be confirmed from any published source. The most recent public report (reporting year 2024) shows a miss — 490 jobs against an 800 target. The eight-job figure is the article's own forthcoming/draft number; treat it as reporting, not a published record.",
+  "The “beat the target by eight jobs” figure is now confirmed: Business Oregon's reporting-year-2025 report shows 808 jobs created against the lowered 800 target. The catch is that the target had been cut from 1,200, and the agency declared “100% of targets met” in a year Oregon's private sector lost jobs.",
   "The “missed nine of ten years” line is directionally fair for recent years but mixes two measurement methods: the agency changed how it counts jobs in 2024 (FTE → QCEW), so a clean ten-year comparison isn't possible.",
   "“More than $1 billion a year” is biennial total funds, and most of it is bonded infrastructure finance that passes through the agency. The agency's operating footprint is far smaller.",
-  "“Higher unemployment than all but four states” is about right but imprecise: Oregon's 5.2% (April 2026) sat behind D.C. and a few states, with ties at 5.3% making the exact rank rounding-sensitive.",
-  "The “Department of Commerce” recommendation comes from a confidential draft and could change before the June 30, 2026 final report. It is not enacted policy.",
-  "Several peer-state and incentive figures come from advocacy groups (Mackinac Center, Good Jobs First) or the agency's own studies; each is labeled where it appears.",
+  "On unemployment: Oregon's 5.2% (April 2026) was higher than all but three states — California, Delaware, and Nevada, each 5.3%. D.C. (6.2%) is a federal district, not a state, and Oregon was tied with Washington state. “All but four states” overcounts D.C. as a state.",
+  "The two studies most cited to argue Oregon must “centralize” its economic development — the UO/IPRE report and ECONorthwest's work — were commissioned and steered by Business Oregon and the business lobby (Oregon Business & Industry, the Oregon Business Council). The data is real; the prescription is also the funders' policy preference.",
+  "The “Department of Commerce” recommendation comes from a confidential draft and could change before the final report (scheduled June 25, 2026; charter deadline June 30). It is not enacted policy.",
+  "Several peer-state and incentive figures come from advocacy groups (Mackinac Center, Good Jobs First, Tax Fairness Oregon) or the agency's own studies; each is labeled where it appears.",
 ];
 
 export const NAV = [

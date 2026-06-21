@@ -11,6 +11,7 @@ import {
 } from "@/components/deep-dives/oregon-economy/Charts";
 import {
   CAVEATS,
+  CNBC_RANK,
   COMMERCE_PROPOSAL,
   DIAGNOSIS,
   FRONT_DOOR,
@@ -24,6 +25,8 @@ import {
   SCOREBOARD_NOTE,
   SERIOUS_BAR,
   SOURCES,
+  STATEWIDE_INCENTIVE,
+  TARGETS_CUT,
   TLDR_POINTS,
   TRADEOFFS,
   type SourceKey,
@@ -126,7 +129,8 @@ export default function OregonEconomicDevelopmentPage() {
               <p className="mt-7 max-w-3xl text-[18px] leading-relaxed text-white/76 sm:text-[20px]">
                 Governor Kotek&apos;s Prosperity Council is poised to recommend blowing up Business Oregon and
                 building a &ldquo;Department of Commerce.&rdquo; The case against the agency is real. So are the
-                asterisks the headline numbers hide. This is the evidence — you be the judge before June 30.
+                asterisks the headline numbers hide. This is the evidence — you be the judge before the
+                recommendations land on June 25.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a href="#scorecard" className="inline-flex items-center justify-center gap-2 rounded-sm bg-[var(--color-ember-bright)] px-5 py-3 text-[14px] font-bold text-[var(--color-canopy)] transition-colors hover:bg-white">
@@ -148,7 +152,7 @@ export default function OregonEconomicDevelopmentPage() {
             <div className="rounded-sm border border-white/12 bg-white/[0.06] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.18)] backdrop-blur-md">
               <MiniKicker>The story in one number</MiniKicker>
               <h2 className="mt-3 font-editorial text-[28px] leading-tight text-white">
-                They missed the goal for years. So they moved the goal.
+                They missed the goal for years. So they moved the goal — then cleared it by eight jobs.
               </h2>
               <div className="mt-5 space-y-3">
                 <div className="flex items-center justify-between gap-3 rounded-sm border border-white/10 bg-black/10 p-3">
@@ -156,17 +160,18 @@ export default function OregonEconomicDevelopmentPage() {
                   <p className="font-mono text-[20px] font-bold text-white/90 tabular-nums">~1,200</p>
                 </div>
                 <div className="flex items-center justify-between gap-3 rounded-sm border border-[var(--color-ember)]/30 bg-[var(--color-ember)]/10 p-3">
-                  <p className="text-[13px] text-white/80">Job goal, 2024 (cut)</p>
+                  <p className="text-[13px] text-white/80">Goal after the cut</p>
                   <p className="font-mono text-[20px] font-bold text-[var(--color-ember-bright)] tabular-nums">800</p>
                 </div>
                 <div className="flex items-center justify-between gap-3 rounded-sm border border-white/10 bg-black/10 p-3">
-                  <p className="text-[13px] text-white/70">Jobs actually created</p>
-                  <p className="font-mono text-[20px] font-bold text-white tabular-nums">490</p>
+                  <p className="text-[13px] text-white/70">Jobs created, 2025</p>
+                  <p className="font-mono text-[20px] font-bold text-white tabular-nums">808</p>
                 </div>
               </div>
               <p className="mt-4 text-[12px] leading-relaxed text-white/55">
-                Even against the lowered bar, the latest public report is a miss. Source:{" "}
-                <SourceLink id="appr2024" tone="dark">Business Oregon / LFO performance report</SourceLink>.
+                A &ldquo;win&rdquo; by eight jobs — against a bar cut by a third — the year Oregon&apos;s private
+                sector lost ~6,500 jobs. Source:{" "}
+                <SourceLink id="appr2025" tone="dark">Business Oregon performance report</SourceLink>.
               </p>
             </div>
           </div>
@@ -225,14 +230,42 @@ export default function OregonEconomicDevelopmentPage() {
           tone="warm"
         >
           <ScorecardChart />
-          <div className="mt-6 -mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-6">
+
+          {/* It wasn't just the jobs goal — multiple targets were cut before the "100% green" year */}
+          <div className="mt-6 -mx-4 border-y border-[var(--color-ember)]/30 bg-[#fff7f2] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-6">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
+              It wasn&apos;t just the jobs goal
+            </p>
+            <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-[var(--color-ink)]">
+              Heading into the year it declared{" "}
+              <span className="font-semibold">&ldquo;100% of targets met,&rdquo;</span> Business Oregon had quietly
+              lowered at least three of those targets:
+            </p>
+            <div className="mt-4 grid gap-2 sm:grid-cols-3 sm:gap-3">
+              {TARGETS_CUT.map((t) => (
+                <div key={t.kpm} className="rounded-sm border border-[var(--color-ember)]/25 bg-white p-3">
+                  <p className="text-[13px] font-semibold leading-snug text-[var(--color-ink)]">{t.kpm}</p>
+                  <p className="mt-1.5 font-mono text-[16px] font-bold tabular-nums">
+                    <span className="text-[var(--color-ink-muted)]">{t.from}</span>
+                    <span className="px-1 text-[var(--color-ink-muted)]">→</span>
+                    <span className="text-[#8c3d25]">{t.to}</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-[12px]">
+              <SourceLink id="appr2025">FY2025 performance report</SourceLink>
+            </p>
+          </div>
+
+          <div className="mt-5 -mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-6">
             <MiniKicker>The honest read</MiniKicker>
             <h3 className="mt-2 font-editorial text-[24px] leading-tight text-[var(--color-ink)]">
-              The agency isn&apos;t failing at everything — and that matters.
+              In 2025 it hit &ldquo;100% of targets.&rdquo; Read the asterisks.
             </h3>
             <p className="mt-3 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-              The jobs number is the one reformers quote. But the agency has ten performance measures, and it
-              beats several of them. A fair verdict has to hold both.
+              A fair verdict has to hold both sides. The agency does beat most of its ten measures — but several of
+              those wins lean on one-time COVID money, a separate scorecard, or a target that was quietly lowered.
             </p>
             <div className="mt-5 grid gap-3 md:grid-cols-2">
               {OTHER_KPMS.map((k) => (
@@ -243,7 +276,7 @@ export default function OregonEconomicDevelopmentPage() {
                       {k.verdict === "beat" ? "Beat" : "Missed"}
                     </span>
                   </div>
-                  <p className="mt-2 font-mono text-[14px] font-bold text-[var(--color-ink)]">{k.fy2024}</p>
+                  <p className="mt-2 font-mono text-[14px] font-bold text-[var(--color-ink)]">{k.value}</p>
                   <p className="mt-2 text-[12px] leading-relaxed text-[var(--color-ink-light)]">{k.note}</p>
                 </div>
               ))}
@@ -273,10 +306,12 @@ export default function OregonEconomicDevelopmentPage() {
           <div className="-mx-4 border-y border-[var(--color-parchment)] bg-[var(--color-canopy)] p-4 text-white sm:mx-0 sm:rounded-sm sm:border sm:p-6">
             <div className="grid gap-5 lg:grid-cols-3">
               <div>
-                <p className="font-mono text-[34px] font-bold leading-none tabular-nums text-white">{fmtUSD(SCHOOL_COST.y2024)}</p>
+                <p className="font-mono text-[34px] font-bold leading-none tabular-nums text-white">
+                  ~{fmtUSD(STATEWIDE_INCENTIVE.perYear)}<span className="text-[16px] font-normal text-white/55">/yr</span>
+                </p>
                 <p className="mt-2 text-[14px] leading-relaxed text-white/72">
-                  in property tax Oregon schools gave up to business tax breaks in one year — more than double the{" "}
-                  {fmtUSD(SCHOOL_COST.y2019)} of five years earlier.
+                  in property tax Oregon gives up to the Intel SIP and enterprise zones — counting state and all
+                  local districts. Schools alone forgo {fmtUSD(SCHOOL_COST.y2024)} of it.
                 </p>
               </div>
               <div>
@@ -293,7 +328,11 @@ export default function OregonEconomicDevelopmentPage() {
                 </p>
               </div>
             </div>
+            <div className="mt-4 rounded-sm border border-white/12 bg-black/15 p-3.5">
+              <p className="text-[13px] leading-relaxed text-white/75">{INTEL_SIP.context}</p>
+            </div>
             <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-[13px]">
+              <SourceLink id="dorTaxExp" tone="dark">DOR tax-expenditure report</SourceLink>
               <SourceLink id="goodJobsFirst" tone="dark">School tax-break study</SourceLink>
               <SourceLink id="opbDataCenters" tone="dark">Data-center breaks</SourceLink>
               <SourceLink id="intelSip" tone="dark">Intel SIP agreement</SourceLink>
@@ -385,6 +424,22 @@ export default function OregonEconomicDevelopmentPage() {
           title="Is this a structure problem or an execution problem?"
           lead="A reorganization can fix a broken org chart. It cannot, by itself, make an agency answer the phone, rebuild its website, or set an honest target. So it's worth sorting Business Oregon's problems into the ones a “Department of Commerce” would actually touch — and the ones it wouldn't."
         >
+          <div className="-mx-4 mb-5 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+              The decline is real, too — Oregon&apos;s business rank fell hard (CNBC, 2019 → 2025)
+            </p>
+            <div className="mt-3 grid grid-cols-3 gap-2 sm:gap-3">
+              {CNBC_RANK.map((r) => (
+                <div key={r.metric} className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-3 text-center">
+                  <p className="font-mono text-[16px] font-bold tabular-nums text-[var(--color-ink)] sm:text-[18px]">
+                    #{r.y2019} → <span className="text-[#8c3d25]">#{r.y2025}</span>
+                  </p>
+                  <p className="mt-1 text-[11px] leading-snug text-[var(--color-ink-light)]">{r.metric}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-[12px]"><SourceLink id="cnbc">CNBC, via Business Oregon&apos;s own legislative deck</SourceLink></p>
+          </div>
           <div className="grid gap-5 lg:grid-cols-2">
             <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5">
               <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-canopy)]">Structural — about the system</p>
@@ -472,7 +527,7 @@ export default function OregonEconomicDevelopmentPage() {
           id="decide"
           eyebrow="You decide"
           title="What would actually make Oregon serious?"
-          lead="The Prosperity Council's final report lands June 30. Here is the proposal, the trade-offs it forces, and the bar a real fix would have to clear — so you can weigh it yourself."
+          lead="The Prosperity Council's final report is scheduled to land June 25 (its charter deadline is June 30). Here is the proposal, the trade-offs it forces, and the bar a real fix would have to clear — so you can weigh it yourself."
         >
           <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-6">
             <MiniKicker>The proposal on the table</MiniKicker>
@@ -526,7 +581,7 @@ export default function OregonEconomicDevelopmentPage() {
         <Section
           id="take-action"
           eyebrow="What you can do"
-          title="June 30 is a decision point — not a spectator sport."
+          title="June 25 is a decision point — not a spectator sport."
           lead="The final report is a recommendation; what happens next runs through the Legislature and the governor. Here is how to follow it and weigh in."
           tone="darker"
         >
@@ -534,7 +589,7 @@ export default function OregonEconomicDevelopmentPage() {
             <a href="https://www.oregon.gov/gov/policies/Pages/Prosperity-Council.aspx" target="_blank" rel="noopener noreferrer" className="group -mx-4 border-y border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c1410] sm:mx-0 sm:rounded-sm sm:border sm:p-5">
               <MessageSquare className="h-5 w-5 text-[var(--color-ember-bright)]" />
               <h3 className="mt-4 font-editorial text-[24px] leading-tight text-white">Read the report</h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-white/70">Watch the Governor&apos;s Prosperity Council page for the final recommendations due June 30, 2026.</p>
+              <p className="mt-3 text-[14px] leading-relaxed text-white/70">Watch the Governor&apos;s Prosperity Council page for the final recommendations, scheduled for June 25, 2026 (charter deadline June 30).</p>
               <span className="mt-4 inline-flex items-center gap-2 text-[13px] font-bold text-[var(--color-ember-bright)]">Prosperity Council<ArrowRight className="h-4 w-4 motion-safe:transition-transform group-hover:translate-x-0.5" /></span>
             </a>
             <a href="https://www.oregonlegislature.gov/citizen_engagement" target="_blank" rel="noopener noreferrer" className="group -mx-4 border-y border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c1410] sm:mx-0 sm:rounded-sm sm:border sm:p-5">

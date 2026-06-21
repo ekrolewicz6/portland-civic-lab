@@ -78,13 +78,13 @@ export function ScorecardChart() {
       </h3>
       <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
         Each bar is the jobs Business Oregon takes credit for that year. The dashed line is the goal it was
-        measured against. In 2024, after years of missing, the goal dropped from 1,200 to 800 — and the agency
-        still came up short.
+        measured against. After years of missing, the goal dropped from 1,200 to 800 in 2024 — and in 2025 the
+        agency finally cleared it, by eight jobs, in a year Oregon&apos;s private sector lost about 6,500.
       </p>
 
       <div
         role="img"
-        aria-label="Grouped chart of Business Oregon jobs created versus its target, fiscal years 2020 to 2024. Actuals 811, 504, 378, 541, 490 against targets 1,200, 1,300, 1,200, 1,200, and a lowered 800 in 2024."
+        aria-label="Chart of Business Oregon jobs created versus its target, fiscal years 2020 to 2025. Actuals 811, 504, 378, 541, 490, 808 against targets 1,200, 1,300, 1,200, 1,200, 800, 800 — the target was lowered to 800 in 2024 and first cleared in 2025 by eight jobs."
         className="mt-5 h-[260px] sm:h-[320px]"
       >
         <ResponsiveContainer width="100%" height="100%">
@@ -115,10 +115,10 @@ export function ScorecardChart() {
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
-        <NumberCard label="2024 jobs" value="490" note="What the agency takes credit for." />
-        <NumberCard label="2024 goal" value="800" note="Already cut from 1,200." />
-        <NumberCard label="Years met (2020-24)" value="0" note="On a strict actual-vs-target basis." />
-        <NumberCard label="Old goal (2014-15)" value="2,000" note="Back when counts ran in the thousands." />
+        <NumberCard label="2025 jobs" value="808" note="Finally cleared the cut bar — by 8." />
+        <NumberCard label="The goal, cut" value="800" note="Down from 1,200 — a 33% reduction." />
+        <NumberCard label="Years it cleared it" value="1 of 6" note="Only 2025, after lowering the bar." />
+        <NumberCard label="Oregon jobs in 2025" value="−6,500" note="Private-sector jobs the state lost that year." />
       </div>
     </div>
   );
@@ -226,14 +226,14 @@ export function BudgetChart() {
 
       <div
         role="img"
-        aria-label={`Bar chart of Business Oregon's 2025-27 budget by fund source: infrastructure finance $1,125M and non-limited other funds $447M (pass-through) dwarf General Fund $212M and Lottery $200M (operating) and Federal $94M.`}
+        aria-label={`Bar chart of Business Oregon's 2025-27 budget by division: Infrastructure Financing $1.74B and bond debt service $187M (bonded pass-through) dwarf the Business, Innovation & Trade division $250M, Arts $47M, and Operations $31M.`}
         className="mt-5 h-[230px] sm:h-[260px]"
       >
         <ResponsiveContainer width="100%" height="100%">
           <BarChart layout="vertical" data={sorted} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
             <CartesianGrid strokeDasharray="2 6" stroke="#ebe5da" horizontal={false} />
             <XAxis type="number" tickFormatter={(v: number) => fmtUSD(v)} tick={{ fontFamily: "var(--font-mono)", fontSize: 11, fill: "#78716c" }} tickLine={false} axisLine={{ stroke: "#ebe5da" }} />
-            <YAxis type="category" dataKey="name" width={120} tick={{ fontFamily: "var(--font-mono)", fontSize: 10, fill: "#57534e" }} tickLine={false} axisLine={false} tickFormatter={(v: string) => (v.length > 22 ? v.slice(0, 21) + "…" : v)} />
+            <YAxis type="category" dataKey="name" width={134} tick={{ fontFamily: "var(--font-mono)", fontSize: 10, fill: "#57534e" }} tickLine={false} axisLine={false} tickFormatter={(v: string) => (v.length > 24 ? v.slice(0, 23) + "…" : v)} />
             <Tooltip content={<BudgetTooltip />} cursor={{ fill: "rgba(0,0,0,0.03)" }} />
             <Bar dataKey="millions" radius={[0, 4, 4, 0]} maxBarSize={26}>
               {sorted.map((f) => (
@@ -245,8 +245,8 @@ export function BudgetChart() {
       </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-[var(--color-ink-light)]">
-        <span className="inline-flex items-center gap-2"><span className="h-3 w-3 rounded-[2px] bg-[#1a3a2a]" />Operating ({fmtUSD(operating)})</span>
-        <span className="inline-flex items-center gap-2"><span className="h-3 w-3 rounded-[2px] bg-[#d8cfc0]" />Pass-through capital</span>
+        <span className="inline-flex items-center gap-2"><span className="h-3 w-3 rounded-[2px] bg-[#1a3a2a]" />Agency programs &amp; overhead ({fmtUSD(operating)})</span>
+        <span className="inline-flex items-center gap-2"><span className="h-3 w-3 rounded-[2px] bg-[#d8cfc0]" />Bonded capital &amp; debt</span>
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
