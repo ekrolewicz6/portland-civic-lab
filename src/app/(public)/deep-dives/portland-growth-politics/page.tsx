@@ -382,20 +382,16 @@ function GroupRow({ group, maxAbs }: { group: WinnerLoserGroup; maxAbs: number }
 
   return (
     <div className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-4">
-      <div className="flex items-start justify-between gap-4">
-        <div className="min-w-0">
-          <p className="text-[15px] font-bold leading-snug text-[var(--color-ink)]">{group.name}</p>
-          <p className="mt-1 text-[12px] italic leading-snug text-[var(--color-ink-muted)]">{group.persona}</p>
-        </div>
-        <div className="flex-shrink-0 text-right">
-          <p className={`font-mono text-[20px] font-bold tabular-nums ${amountColor}`}>
-            {group.amount === 0 ? "—" : fmtSignedMoney(group.amount)}
-          </p>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
-            {group.unit}
-          </p>
-        </div>
+      <div className="flex items-baseline justify-between gap-3">
+        <p className="min-w-0 flex-1 text-[15px] font-bold leading-snug text-[var(--color-ink)]">{group.name}</p>
+        <p className={`flex-shrink-0 font-mono text-[20px] font-bold tabular-nums ${amountColor}`}>
+          {group.amount === 0 ? "—" : fmtSignedMoney(group.amount)}
+        </p>
       </div>
+      <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">
+        {group.unit}
+      </p>
+      <p className="mt-2 text-[12px] italic leading-snug text-[var(--color-ink-muted)]">{group.persona}</p>
       {group.amount !== 0 ? (
         <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-white">
           <div className={`h-full rounded-full ${barColor}`} style={{ width: `${width}%` }} />
