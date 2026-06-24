@@ -101,7 +101,8 @@ export default function DonatePage() {
           </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[var(--color-ink-light)]">
             You choose the amount and frequency here, then Stripe handles the secure payment page.
-            We never store card information on Portland Civic Lab servers.
+            We never store card information on Portland Civic Lab servers. Monthly support can be
+            canceled anytime — just email us and we&apos;ll stop the next charge.
           </p>
           <Link
             href="/contact"
