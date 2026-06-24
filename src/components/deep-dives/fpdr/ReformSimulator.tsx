@@ -13,63 +13,73 @@ import {
   ReferenceLine,
   Legend,
 } from "recharts";
-import { simulateReform, personalCost, fmtMillions, fmtMoney, fmtPct, type Strategy } from "@/lib/fpdr/engine";
+import {
+  simulateFundingPolicy,
+  personalCost,
+  fmtMillions,
+  fmtMoney,
+  fmtPct,
+} from "@/lib/fpdr/engine";
 
-const STRATEGIES: { id: Strategy; label: string; blurb: string }[] = [
-  { id: "level", label: "Pre-fund (steady)", blurb: "Save a steady amount every year" },
-  { id: "frontloaded", label: "Pre-fund (front-loaded)", blurb: "Save aggressively early" },
+const POB_OPTIONS: { id: number; label: string; blurb: string }[] = [
+  { id: 0, label: "No bond", blurb: "Fund it entirely from the levy" },
+  { id: 200, label: "$200M bond", blurb: "Borrow $200M to soften the bump" },
 ];
 
 function deltaLabel(reform: number, payGo: number) {
   const d = reform - payGo;
-  const pct = (d / payGo) * 100;
+  const pct = payGo > 0 ? (d / payGo) * 100 : 0;
   return `${d >= 0 ? "+" : "−"}${fmtMillions(Math.abs(d))} (${d >= 0 ? "+" : "−"}${Math.abs(pct).toFixed(0)}%)`;
 }
 
 export default function ReformSimulator() {
-  const [strategy, setStrategy] = useState<Strategy>("level");
+  const [pob, setPob] = useState(0);
   const [ret, setRet] = useState(0.07);
   const [homeValue, setHomeValue] = useState(350_000);
 
-  const sim = useMemo(() => simulateReform(strategy, ret), [strategy, ret]);
+  const sim = useMemo(() => simulateFundingPolicy(ret, pob), [ret, pob]);
   const share = personalCost(homeValue).shareOfLevy;
 
-  const chartData = sim.rows
-    .filter((r) => r.year % 1 === 0)
-    .map((r) => ({ year: r.year, payGo: +r.payGo.toFixed(1), reform: +r.reform.toFixed(1) }));
+  const chartData = sim.rows.map((r) => ({
+    year: r.year,
+    payGo: +r.payGo.toFixed(1),
+    reform: +r.reform.toFixed(1),
+  }));
 
   const savingsPositive = sim.lifetimeSavings > 0;
+  const peakPayGoThatYear =
+    sim.rows.find((r) => r.year === sim.peakReformYear)?.payGo ?? 0;
 
   return (
     <div className="rounded-sm border border-[var(--color-parchment)] bg-white overflow-hidden">
       {/* ── Controls ── */}
       <div className="p-5 sm:p-7 border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
         <div className="grid md:grid-cols-[1.4fr_1fr] gap-6">
-          {/* Strategy */}
+          {/* Pension-obligation bond */}
           <div>
             <label className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-light)]">
-              Pick a fix
+              Add a pension-obligation bond?
             </label>
             <div className="mt-2 grid grid-cols-2 gap-2">
-              {STRATEGIES.map((s) => (
+              {POB_OPTIONS.map((o) => (
                 <button
-                  key={s.id}
-                  onClick={() => setStrategy(s.id)}
+                  key={o.id}
+                  onClick={() => setPob(o.id)}
                   className={`rounded-sm border px-3 py-2.5 text-left transition-colors ${
-                    strategy === s.id
+                    pob === o.id
                       ? "border-[var(--color-canopy)] bg-white shadow-sm"
                       : "border-[var(--color-parchment)] bg-white/40 hover:border-[var(--color-sage)]"
                   }`}
                 >
                   <span
                     className={`block text-[13px] font-semibold ${
-                      strategy === s.id ? "text-[var(--color-canopy)]" : "text-[var(--color-ink-light)]"
+                      pob === o.id ? "text-[var(--color-canopy)]" : "text-[var(--color-ink-light)]"
                     }`}
                   >
-                    {s.label}
+                    {o.label}
                   </span>
                   <span className="block text-[11px] text-[var(--color-ink-muted)] mt-0.5">
-                    {s.blurb}
+                    {o.blurb}
                   </span>
                 </button>
               ))}
@@ -109,11 +119,14 @@ export default function ReformSimulator() {
       <div className="p-5 sm:p-7">
         <p className="text-[13px] text-[var(--color-ink-light)] mb-3 leading-relaxed">
           The yearly property-tax bill for police &amp; fire pensions, in millions.
-          The fix costs <span className="text-[var(--color-clay)] font-semibold">more for a while</span>{" "}
+          A real funding policy costs{" "}
+          <span className="text-[var(--color-clay)] font-semibold">more at first</span>
           {sim.crossoverYear && (
             <>
-              (until <span className="font-mono">{sim.crossoverYear}</span>) — then much{" "}
-              <span className="text-[var(--color-fern)] font-semibold">less</span> for decades.
+              {" "}(until <span className="font-mono">{sim.crossoverYear}</span>), then{" "}
+              <span className="text-[var(--color-fern)] font-semibold">less every year</span> — and
+              falls away once the liability is paid off in{" "}
+              <span className="font-mono">{sim.fundedYear}</span>.
             </>
           )}
         </p>
@@ -136,6 +149,13 @@ export default function ReformSimulator() {
                   label={{ value: "break-even", position: "insideTopRight", fontSize: 11, fill: "#78716c" }}
                 />
               ) : null}
+              <ReferenceLine
+                x={sim.fundedYear}
+                stroke="#3d7a5a"
+                strokeDasharray="3 4"
+                strokeOpacity={0.6}
+                label={{ value: "paid off", position: "insideTopRight", fontSize: 11, fill: "#3d7a5a" }}
+              />
               <XAxis
                 dataKey="year"
                 type="number"
@@ -220,13 +240,13 @@ export default function ReformSimulator() {
         </div>
         <div className="p-5 sm:p-6">
           <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
-            The near-term hump
+            The near-term bump
           </p>
           <p className="mt-1 font-mono text-3xl font-bold text-[var(--color-clay)] tabular-nums">
-            {deltaLabel(sim.peakReform, sim.peakPayGo)}
+            {deltaLabel(sim.peakReform, peakPayGoThatYear)}
           </p>
           <p className="text-[12px] text-[var(--color-ink-muted)] mt-1 leading-snug">
-            higher at the worst point (around {sim.peakReformYear}) — the transition &ldquo;hump&rdquo;
+            higher at the start (around {sim.peakReformYear}), then it declines every year
           </p>
         </div>
         <div className="p-5 sm:p-6">

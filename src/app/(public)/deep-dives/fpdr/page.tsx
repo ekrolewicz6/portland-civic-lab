@@ -193,7 +193,10 @@ export default function FpdrDeepDivePage() {
               Portland saves <strong>essentially nothing</strong>. Each year, property taxes are
               collected to cover that year&apos;s retiree checks — and that&apos;s it. There&apos;s no
               invested piggy bank doing the work, so taxpayers are on the hook for the whole thing,
-              forever. Analysts say only Portland and Puerto Rico still run a public pension this way.
+              forever. Worse, with nothing set aside the unfunded balance keeps growing instead of being
+              paid down — the city falls further behind each year, the opposite of what accepted funding
+              guidelines call for. Analysts say only Portland and Puerto Rico still run a public pension
+              this way.
             </p>
           </div>
         </div>
@@ -337,19 +340,23 @@ export default function FpdrDeepDivePage() {
         title="Could saving up actually be cheaper?"
         lead={
           <>
-            Pick a way to start pre-funding and choose how well the investments do. Watch the bill go{" "}
-            <span className="text-[var(--color-ember-bright)] font-semibold">up first</span>, then drop
-            below the do-nothing path for decades. Set the return to 0% and the savings vanish.
+            Here&apos;s what a real funding policy looks like: fully fund the pension over 30 years, with
+            the bill set to{" "}
+            <span className="text-[var(--color-ember-bright)] font-semibold">decline every year</span>{" "}
+            and fall away once the debt is paid off. Add a bond to soften the early bump, or set the
+            return to 0% to watch the savings vanish.
           </>
         }
       >
         <ReformSimulator />
         <p className="text-[12px] text-white/50 mt-4 max-w-2xl leading-relaxed">
-          This is a simplified teaching model, not an official forecast. It&apos;s anchored to real
-          figures — the {fmtMillions(8469)} lifetime pay-go cost and the mid-2030s peak from the{" "}
-          <Src id="milliman2024" /> projections — and the savings percentages match what analysts like
-          Kevin Machiz estimate (<Src id="machizDeck" />). The future bill is shown in plain (not
-          inflation-adjusted) dollars.
+          This is a simplified teaching model, not an official forecast. It applies a real
+          funding-policy structure — a declining-dollar amortization of the unfunded liability over 30
+          years at a 7% return, the kind of policy analysts like Kevin Machiz recommend
+          (<Src id="machizDeck" />) — to the city actuary&apos;s own benefit projections (the{" "}
+          {fmtMillions(8469)} lifetime pay-go cost, peaking in the mid-2030s; <Src id="milliman2024" />).
+          A real policy would phase in the first year or two more gently than shown, and the future bill
+          is in plain (not inflation-adjusted) dollars.
         </p>
       </Section>
 

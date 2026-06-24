@@ -118,7 +118,7 @@ export default function PersonalCostCalculator() {
           <p className="mt-5 text-[12px] text-[var(--color-ink-muted)] leading-relaxed border-t border-[var(--color-parchment)] pt-4">
             This is a separate line on your Multnomah County tax bill, labeled{" "}
             <span className="font-mono text-[var(--color-ink-light)]">
-              &ldquo;Fire &amp; Police Disability/Retirement.&rdquo;
+              &ldquo;Portland Fire/Police Pension.&rdquo;
             </span>{" "}
             Every property inside Portland city limits pays it.
           </p>
