@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { DM_Sans, JetBrains_Mono, Bricolage_Grotesque } from "next/font/google";
 
+import { LEGAL_ENTITY, TAGLINE } from "@/lib/site";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-JRGVM4XLGV";
@@ -132,6 +133,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Portland Civic Lab",
+              legalName: LEGAL_ENTITY,
+              slogan: TAGLINE,
               url: "https://www.portlandciviclab.org",
               description:
                 "Open civic data dashboard for Portland, Oregon. Real-time metrics on housing, public safety, budget, homelessness, climate, and more.",

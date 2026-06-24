@@ -7,8 +7,8 @@ export const runtime = "nodejs";
 const checkoutSchema = z.object({
   amount: z.coerce
     .number()
-    .min(1, "Minimum donation is $1")
-    .max(10000, "Maximum online donation is $10,000"),
+    .min(1, "Minimum support amount is $1")
+    .max(10000, "Maximum online support amount is $10,000"),
   frequency: z.enum(["monthly", "once"]),
 });
 
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "Stripe donations are not fully configured. Add STRIPE_SECRET_KEY on the server.",
+          "Stripe support payments are not fully configured. Add STRIPE_SECRET_KEY on the server.",
       },
       { status: 503 },
     );
@@ -49,7 +49,7 @@ export async function POST(request: Request) {
   const parsed = checkoutSchema.safeParse(json);
   if (!parsed.success) {
     return NextResponse.json(
-      { error: parsed.error.issues[0]?.message ?? "Invalid donation request." },
+      { error: parsed.error.issues[0]?.message ?? "Invalid support request." },
       { status: 400 },
     );
   }
@@ -61,7 +61,7 @@ export async function POST(request: Request) {
 
   const session = await stripe.checkout.sessions.create({
     mode: isMonthly ? "subscription" : "payment",
-    submit_type: "donate",
+    submit_type: isMonthly ? undefined : "pay",
     billing_address_collection: "auto",
     allow_promotion_codes: false,
     customer_creation: isMonthly ? undefined : "if_required",

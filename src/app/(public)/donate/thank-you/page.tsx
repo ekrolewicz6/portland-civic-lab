@@ -15,7 +15,7 @@ export default function DonateThankYouPage() {
           <CheckCircle2 className="h-8 w-8" />
         </div>
         <p className="mt-8 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]">
-          Donation received
+          Support received
         </p>
         <h1 className="mt-4 font-editorial text-[48px] leading-none text-[var(--color-ink)] sm:text-[72px]">
           Thank you for backing the work.

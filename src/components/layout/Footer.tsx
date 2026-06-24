@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { ASK_PORTLAND_URL, PARKS_URL, PERMITS_URL } from "@/lib/site";
+import { ASK_PORTLAND_URL, LEGAL_ENTITY, PARKS_URL, PERMITS_URL } from "@/lib/site";
 
 type FooterLink = { label: string; href: string; external?: boolean };
 
@@ -35,7 +35,7 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
   {
     title: "Get involved",
     links: [
-      { label: "Donate", href: "/donate" },
+      { label: "Support the work", href: "/donate" },
       { label: "Volunteer", href: "/volunteer" },
       { label: "Topic Proposals", href: "/proposals" },
       { label: "Contact", href: "/contact" },
@@ -90,8 +90,9 @@ export default function Footer() {
               <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember)]/70">Est. 2026</span>
             </div>
             <p className="mt-4 text-[13px] leading-relaxed max-w-sm text-white/55">
-              An independent initiative making Portland&apos;s public data, budgets, and systems easier
-              to understand — through dashboards, deep-dives, and practical civic tools.
+              A company that builds free, public tools to help Portlanders understand their
+              city — dashboards, deep-dives, the parks atlas, and practical civic tools, all
+              free to use and built from primary public data.
             </p>
             <Link
               href="/donate"
@@ -119,8 +120,9 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-14 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <p className="text-[12px] text-white/45">
-            &copy; {year} Portland Civic Lab &middot; Open & public — see the data, check the numbers, use the tools.
+          <p className="text-[12px] text-white/45 max-w-2xl">
+            &copy; {year} {LEGAL_ENTITY} &middot; Free, public civic tools — independent and not
+            affiliated with the City of Portland or any government agency.
           </p>
           <div className="flex items-center gap-5 text-[12px] text-white/45">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>

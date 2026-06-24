@@ -213,7 +213,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
                   : "bg-[var(--color-ember)] text-[var(--color-canopy)] hover:bg-[var(--color-ember-bright)]"
               }`}
             >
-              Donate
+              Support
             </Link>
             <Link
               href="/contact"
@@ -276,7 +276,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
               ))}
             </MobileGroup>
             <MobileGroup title="Connect">
-              <MobileLink href="/donate" label="Donate" active={isActive("/donate")} />
+              <MobileLink href="/donate" label="Support the work" active={isActive("/donate")} />
               <MobileLink href="/contact" label="Contact" active={isActive("/contact")} />
               {member ? (
                 <MobileLink

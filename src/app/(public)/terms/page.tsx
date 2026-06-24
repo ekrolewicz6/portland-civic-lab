@@ -74,7 +74,7 @@ export default function TermsPage() {
               We are not the City of Portland
             </h2>
             <p>
-              Portland Civic Lab is an independent organization. We are not
+              Portland Civic Lab is an independent company. We are not
               affiliated with, endorsed by, or speaking for the City of
               Portland, Multnomah County, or any government agency. Tools like
               the permitting guides are practical aids, not official advice —
@@ -100,6 +100,25 @@ export default function TermsPage() {
                 privacy policy
               </Link>{" "}
               for how we handle your information.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-editorial text-[24px] text-[var(--color-ink)] mb-3">
+              Supporting the Lab
+            </h2>
+            <p>
+              The tools are free; support is voluntary. Portland Civic Lab LLC
+              is a for-profit company, so contributions are not tax-deductible
+              charitable donations — you&apos;re backing a company that gives its
+              work away free. Payments are processed by Stripe; we never store
+              your card details. You can cancel monthly support anytime through
+              the{" "}
+              <Link href="/contact" className="text-[var(--color-canopy)] underline">
+                contact form
+              </Link>
+              , which stops any future charges, and if you ever want a recent
+              one-time contribution back, just ask and we&apos;ll refund it.
             </p>
           </section>
 

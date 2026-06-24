@@ -4,9 +4,9 @@ import { ArrowRight, BarChart3, ClipboardList, Database, ShieldCheck } from "luc
 import DonationForm from "@/components/donate/DonationForm";
 
 export const metadata: Metadata = {
-  title: "Donate — Portland Civic Lab",
+  title: "Support the work — Portland Civic Lab",
   description:
-    "Support Portland Civic Lab with a monthly or one-time donation through secure Stripe Checkout.",
+    "Back Portland Civic Lab — we give all our civic tools away free, and support helps keep them that way. Monthly or one-time through secure Stripe Checkout. Contributions aren't tax-deductible charitable donations.",
   alternates: { canonical: "https://www.portlandciviclab.org/donate" },
 };
 
@@ -39,17 +39,24 @@ export default function DonatePage() {
         <div className="relative mx-auto grid w-full max-w-[1760px] grid-cols-1 items-start gap-8 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-12 lg:gap-10 lg:px-12 lg:py-14 xl:gap-12 xl:px-16 2xl:px-20 2xl:py-12 3xl:max-w-[2200px]">
           <div className="lg:col-span-7 xl:col-span-7 2xl:col-span-7">
             <div className="flex flex-wrap items-center gap-3 text-[10px] font-mono uppercase tracking-[0.24em] text-[var(--color-ember)]">
-              <span>Independent civic infrastructure</span>
+              <span>Free tools, for everyone</span>
               <span className="h-px w-10 bg-[var(--color-ember)]/60" />
-              <span>Fund the next build</span>
+              <span>Back the next build</span>
             </div>
             <h1 className="mt-7 max-w-4xl font-editorial text-[46px] leading-[0.98] tracking-tight sm:text-[68px] lg:text-[76px] xl:text-[88px] 2xl:max-w-5xl 2xl:text-[112px] 3xl:text-[124px]">
               Help make Portland legible.
             </h1>
             <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-white/72 sm:text-[20px] xl:max-w-3xl 2xl:text-[22px]">
-              Portland Civic Lab builds public dashboards, civic surveys, and practical tools
-              that help residents, staff, journalists, advocates, and decision-makers see what is
-              happening and what should happen next.
+              Portland Civic Lab builds public dashboards, civic surveys, and practical tools —
+              and gives them all away free. Backing the Lab helps keep them free, current, and
+              independent, and funds what we build next.
+            </p>
+
+            <p className="mt-6 max-w-2xl rounded-2xl border border-white/12 bg-white/[0.06] px-5 py-4 text-[14px] leading-relaxed text-white/72 backdrop-blur xl:max-w-3xl 2xl:text-[15px]">
+              One thing up front: because the Lab is a company that gives its work away —
+              not a charity — your support isn&apos;t a tax-deductible donation. You&apos;re
+              backing free, public tools, eyes open. We think that&apos;s a better deal than a
+              write-off, and we&apos;d rather say so plainly.
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-3 xl:gap-4 2xl:max-w-6xl 2xl:grid-cols-3">
@@ -94,13 +101,14 @@ export default function DonatePage() {
           </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[var(--color-ink-light)]">
             You choose the amount and frequency here, then Stripe handles the secure payment page.
-            We never store card information on Portland Civic Lab servers.
+            We never store card information on Portland Civic Lab servers. Monthly support can be
+            canceled anytime — just email us and we&apos;ll stop the next charge.
           </p>
           <Link
             href="/contact"
             className="mt-6 inline-flex items-center gap-2 text-[13px] font-mono uppercase tracking-[0.14em] text-[var(--color-canopy)]"
           >
-            Questions before donating
+            Questions before supporting
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
