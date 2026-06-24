@@ -226,7 +226,7 @@ export default function ReformSimulator() {
             {deltaLabel(sim.peakReform, sim.peakPayGo)}
           </p>
           <p className="text-[12px] text-[var(--color-ink-muted)] mt-1 leading-snug">
-            higher at the worst point (around {sim.peakReformYear}) — this is the &ldquo;pay twice&rdquo; cost
+            higher at the worst point (around {sim.peakReformYear}) — the transition &ldquo;hump&rdquo;
           </p>
         </div>
         <div className="p-5 sm:p-6">

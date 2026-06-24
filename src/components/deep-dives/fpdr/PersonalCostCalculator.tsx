@@ -2,19 +2,23 @@
 
 import { useState } from "react";
 import { Home } from "lucide-react";
-import { personalCost, fmtMoney, fmtPct } from "@/lib/fpdr/engine";
+import { personalCost, projectedCost, fmtMoney, fmtPct } from "@/lib/fpdr/engine";
 import { HEADLINE } from "@/lib/fpdr/data";
 
+// Assessed-value bands. In Oregon, Measure 50 decoupled assessed value from
+// market value, so these are NOT proxies for home size or quality — two similar
+// homes can sit in very different bands.
 const PRESETS = [
-  { label: "Modest condo", value: 200_000 },
-  { label: "Typical home", value: 350_000 },
-  { label: "Nicer home", value: 550_000 },
-  { label: "High-end", value: 850_000 },
+  { label: "Low", value: 200_000 },
+  { label: "Typical", value: 350_000 },
+  { label: "High", value: 550_000 },
+  { label: "Very high", value: 850_000 },
 ];
 
 export default function PersonalCostCalculator() {
   const [av, setAv] = useState(350_000);
   const cost = personalCost(av);
+  const proj = projectedCost(av);
 
   return (
     <div className="rounded-sm border border-[var(--color-parchment)] bg-white overflow-hidden">
@@ -95,11 +99,7 @@ export default function PersonalCostCalculator() {
           <div className="mt-6 grid grid-cols-2 gap-px bg-[var(--color-parchment)] rounded-sm overflow-hidden">
             <div className="bg-white p-4">
               <p className="font-mono text-[22px] font-bold text-[var(--color-ink)] tabular-nums">
-                {fmtPct(
-                  HEADLINE.ratePer1000AV_FY26 /
-                    7.5644 /* combined city-of-portland rate */,
-                  0
-                )}
+                {fmtPct(HEADLINE.shareOfCityLine, 0)}
               </p>
               <p className="text-[11px] text-[var(--color-ink-muted)] leading-snug mt-1">
                 of your City of Portland property taxes
@@ -107,10 +107,10 @@ export default function PersonalCostCalculator() {
             </div>
             <div className="bg-white p-4">
               <p className="font-mono text-[22px] font-bold text-[var(--color-ink)] tabular-nums">
-                {fmtMoney(cost.tenYear)}
+                {fmtMoney(proj.total)}
               </p>
               <p className="text-[11px] text-[var(--color-ink-muted)] leading-snug mt-1">
-                over 10 years, at today&apos;s rate
+                projected over FY26–FY31, as the rate climbs
               </p>
             </div>
           </div>

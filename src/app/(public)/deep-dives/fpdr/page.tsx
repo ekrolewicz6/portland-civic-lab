@@ -237,9 +237,11 @@ export default function FpdrDeepDivePage() {
         <PersonalCostCalculator />
         <p className="text-[12px] text-[var(--color-ink-muted)] mt-4 max-w-2xl leading-relaxed">
           Based on the FY2025-26 FPDR rate of ${HEADLINE.ratePer1000AV_FY26.toFixed(4)} per $1,000 of
-          assessed value (<Src id="county2526" />). In Oregon, a home&apos;s assessed value is usually
-          well below its market value, so your real-world bill tracks the assessed number, not the sale
-          price.
+          assessed value (<Src id="county2526" />). The multi-year figure grows assessed value by the
+          city&apos;s assumed ~3%/year and applies its published rate forecast through FY31
+          (<Src id="fiveYearPlan2731" />), since both the rate and the assessed base keep rising. In
+          Oregon, Measure 50 caps assessed-value growth and decoupled it from market value — so assessed
+          value tracks neither a home&apos;s sale price nor how &ldquo;nice&rdquo; it is.
         </p>
       </Section>
 
@@ -301,14 +303,17 @@ export default function FpdrDeepDivePage() {
           <ReasonRow n={1} icon={<Scale className="w-5 h-5" />} title="You can't cut the benefits">
             Oregon courts treat an earned pension as a binding promise. In a line of cases ending with{" "}
             <em>Moro v. State</em> (<Src id="moro" />), the Oregon Supreme Court ruled that benefits
-            already earned can&apos;t be reduced. So reform can&apos;t shrink the{" "}
-            {fmtMoney(HEADLINE.liability)} that&apos;s owed — it can only change <em>how it&apos;s paid for.</em>
+            already earned can&apos;t be reduced. So reform can&apos;t cut the benefits retirees were
+            promised — it can only change <em>how they&apos;re paid for</em>, and how much they
+            ultimately cost taxpayers.
           </ReasonRow>
-          <ReasonRow n={2} icon={<Repeat className="w-5 h-5" />} title="Fixing it means paying twice for a while">
-            To start saving properly, Portland would have to keep paying today&apos;s retirees{" "}
-            <strong>and</strong> set aside new money for the future at the same time. That &ldquo;pay
-            twice&rdquo; hump is the single hardest part — it raises taxes now to lower them much more
-            later. The payoff is real, but it arrives decades after today&apos;s officials are gone.
+          <ReasonRow n={2} icon={<Repeat className="w-5 h-5" />} title="Fixing it means funding two things at once for a while">
+            To start saving properly, Portland would keep paying today&apos;s retirees{" "}
+            <strong>and</strong> set aside new money for the future at the same time. That transition is
+            the single hardest part — it raises taxes now to lower them much more later. It isn&apos;t
+            exotic: amortizing an unfunded liability this way is how nearly every other public pension in
+            the country is funded. The catch is political — the payoff is real, but it arrives decades
+            after today&apos;s officials are gone.
           </ReasonRow>
           <ReasonRow n={3} icon={<EyeOff className="w-5 h-5" />} title="Almost nobody knows it's there">
             The cost is buried in a line item most people never read, set by a separate board, and it
@@ -368,13 +373,13 @@ export default function FpdrDeepDivePage() {
         aside={
           <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
             <h3 className="font-editorial-normal text-[18px] text-[var(--color-canopy)]">
-              A note on the &ldquo;pay twice&rdquo; debate
+              A note on the funding debate
             </h3>
             <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed mt-2">
               Analysts like Kevin Machiz and Marc Poris argue Portland should start pre-funding, because
               over the life of the plan it could save a quarter to a third of the cost. The city counters
-              that the upfront &ldquo;pay twice&rdquo; cost is enormous and arrives when budgets are
-              tightest. Both are right — which is what makes it genuinely hard rather than obvious.
+              that the upfront transition cost is enormous and arrives when budgets are tightest. Both
+              are right — which is what makes it genuinely hard rather than obvious.
             </p>
           </div>
         }

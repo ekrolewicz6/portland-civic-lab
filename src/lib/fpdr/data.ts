@@ -119,6 +119,20 @@ export const SOURCES: Record<string, Source> = {
     url: "https://www.portland.gov/wheeler/news/2024/3/13/city-portland-retains-aaa-credit-rating",
     kind: "news",
   },
+  spGlobal2026: {
+    id: "spGlobal2026",
+    title: "Portland, OR 2026A/B Limited Tax Bonds — 'AA' Rating, Stable Outlook",
+    org: "S&P Global Ratings",
+    url: "https://www.portland.gov/debt/documents/sp-global-ratings-most-recent-credit-opinion/download",
+    kind: "primary",
+  },
+  fiveYearPlan2731: {
+    id: "fiveYearPlan2731",
+    title: "FPDR FYE 2027–31 Five-Year Plan (levy-rate & assessed-value forecast)",
+    org: "City of Portland",
+    url: "https://efiles.portlandoregon.gov/record/17862793/file/document",
+    kind: "primary",
+  },
 };
 
 // ── Headline figures (verified) ───────────────────────────────────
@@ -139,8 +153,15 @@ export const HEADLINE = {
   ratePer1000AV_FY26: 2.9874,
   /** Charter cap, per $1,000 of *real market* value. */
   capPer1000RMV: 2.8,
-  /** FPDR's share of the City-of-Portland portion of a tax bill. */
-  shareOfCityLine: 0.395,
+  /**
+   * FPDR's share of the City of Portland's total property-tax levy.
+   * FY2026-27: FPDR levy $279.2M / total City levy ~$868.5M ≈ 0.32–0.34 depending
+   * on the denominator (gross levy, ex-debt, or net collections). Uses the
+   * "Taxes Necessary to Balance" basis. Source: FY26-27 City tax levy ordinance.
+   * (Earlier the page used 0.395 = FPDR rate / permanent+FPDR rate only, which
+   * omits the Parks, Children's and GO-bond levies and overstates FPDR's slice.)
+   */
+  shareOfCityLine: 0.34,
   /** 2006 reform vote — share voting YES. */
   measure2686YesPct: 0.8161,
   measure2686Yes: 160_230,
@@ -157,6 +178,22 @@ export const HEADLINE = {
   /** GASB discount rate used in the 2024 valuation. */
   discountRate2024: 0.0393,
 } as const;
+
+// ── Published FPDR levy-rate forecast (per $1,000 of assessed value) ──
+// The City publishes projected FPDR tax rates AND an assessed-value (AV) growth
+// assumption. Used to estimate a household's multi-year cost properly — by
+// growing AV ~3%/yr and applying each year's published rate — instead of
+// multiplying today's bill by N (which ignores both the rising rate and the
+// rising base). Source: FPDR FYE 2027-31 Five-Year Plan. AV growth per the City
+// Economist: 3.9% in FY27, then 3.0%/yr (Measure 50 caps growth at 3%).
+export const FPDR_RATE_FORECAST: { fy: string; ratePer1000AV: number; avGrowth: number }[] = [
+  { fy: "FY26", ratePer1000AV: 2.9874, avGrowth: 0 }, // base year — current assessed value
+  { fy: "FY27", ratePer1000AV: 3.1906, avGrowth: 0.039 },
+  { fy: "FY28", ratePer1000AV: 3.28, avGrowth: 0.03 },
+  { fy: "FY29", ratePer1000AV: 3.3897, avGrowth: 0.03 },
+  { fy: "FY30", ratePer1000AV: 3.503, avGrowth: 0.03 },
+  { fy: "FY31", ratePer1000AV: 3.6082, avGrowth: 0.03 },
+];
 
 // ── Annual levy history (levy credited, $ millions) ───────────────
 // Verified anchor years. Not every intervening year is shown.
@@ -179,14 +216,14 @@ export const SPENDING_FY26: { key: string; label: string; amount: number; color:
   [
     {
       key: "pension",
-      label: "Pensions for pre-2007 retirees",
+      label: "Pensions for pre-2007 hires",
       amount: 163.2,
       color: "var(--color-canopy)",
       note: "Monthly checks to FPDR One & Two retirees and their survivors",
     },
     {
       key: "pers",
-      label: "PERS for today's officers & firefighters",
+      label: "PERS for newly hired officers & firefighters",
       amount: 59.87,
       color: "var(--color-river)",
       note: "Pre-funded retirement contributions for everyone hired since 2007",
@@ -258,13 +295,14 @@ export const REFORM_OPTIONS: ReformOption[] = [
     lifetime: "same",
     pros: [
       "No upfront cost — nothing changes",
-      "Predictable, voter-locked revenue (credit-rating agencies like it)",
+      "Predictable, voter-locked revenue (a stream rating agencies value)",
       "Requires no charter vote or political fight",
     ],
     cons: [
       "Most expensive option over the life of the plan",
       "Passes the bill to future taxpayers for work done decades ago",
       "The rising levy quietly squeezes other city services through tax 'compression'",
+      "Weighs on the city's credit — S&P rates Portland two notches below Moody's, partly over this unfunded liability",
     ],
     simulated: true,
   },
@@ -281,7 +319,7 @@ export const REFORM_OPTIONS: ReformOption[] = [
       "Aligns Portland with how nearly every other pension is funded",
     ],
     cons: [
-      "You 'pay twice' for a stretch — today's checks AND new savings",
+      "You fund two things at once for a stretch — today's checks AND new savings",
       "Needs a citywide charter vote",
       "Savings arrive decades later, after most current officials are gone",
     ],
@@ -314,7 +352,7 @@ export const REFORM_OPTIONS: ReformOption[] = [
     nearTerm: "higher",
     lifetime: "lower",
     pros: [
-      "Avoids 'paying twice' out of taxes — the bond does the upfront funding",
+      "Funds the trust up front without a multi-year tax surcharge",
       "Can lock in savings if markets cooperate",
       "Used by other governments to jump-start funding",
     ],
@@ -366,8 +404,12 @@ export const BENEFICIARIES = {
   /** Active members hired since 2007, in Oregon PERS (FPDR covers only disability). */
   activeFpdrThree: 853,
   activeTotal: 1405,
-  /** Average pension (actuarial), $/year. */
+  /** Average pension (actuarial), $/year — all retirees & beneficiaries (Milliman 6/30/24, Appendix A). */
   avgAnnualPension: 78_000,
+  /** Same all-retiree average, split by force ($6,318/mo police, $6,813/mo fire × 12). */
+  avgAnnualPensionPolice: 75_800,
+  avgAnnualPensionFire: 81_800,
+  /** FPDR Two tier only (the larger closed tier) — kept for reference, not shown. */
   avgAnnualPensionFireTwo: 87_000,
   avgAnnualPensionPoliceTwo: 79_000,
   /** Typical retirement profile. */

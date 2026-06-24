@@ -17,6 +17,7 @@
 
 import {
   HEADLINE,
+  FPDR_RATE_FORECAST,
   PAYGO_ANCHORS,
   SIM_START_YEAR,
   SIM_END_YEAR,
@@ -46,6 +47,34 @@ export function personalCost(assessedValue: number): PersonalCost {
     tenYear: annual * 10,
     shareOfLevy: annual / HEADLINE.annualLevyFY26,
   };
+}
+
+export interface ProjectedCost {
+  /** Number of fiscal years in the published forecast window. */
+  years: number;
+  /** Cumulative FPDR cost across that window ($). */
+  total: number;
+  /** The household's FPDR bill in the final forecast year ($). */
+  finalAnnual: number;
+}
+
+/**
+ * Projected cumulative FPDR cost for a household over the City's published
+ * rate-forecast window (FY26–FY31). Grows assessed value by the City's assumed
+ * AV growth each year and applies that year's published rate. This is the right
+ * way to estimate a multi-year bill: both the rate and the assessed base rise,
+ * so multiplying today's bill by N materially understates the real total.
+ */
+export function projectedCost(assessedValue: number): ProjectedCost {
+  let av = assessedValue;
+  let total = 0;
+  let finalAnnual = 0;
+  for (const yr of FPDR_RATE_FORECAST) {
+    av = av * (1 + yr.avGrowth);
+    finalAnnual = (av / 1000) * yr.ratePer1000AV;
+    total += finalAnnual;
+  }
+  return { years: FPDR_RATE_FORECAST.length, total, finalAnnual };
 }
 
 // ── Pay-as-you-go projection (interpolated from anchors) ──────────

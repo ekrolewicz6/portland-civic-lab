@@ -18,6 +18,12 @@ export default function WhoBenefits() {
       : group === "fire"
         ? B.activeFpdrTwoFire
         : B.activeFpdrTwo;
+  const avgPension =
+    group === "police"
+      ? B.avgAnnualPensionPolice
+      : group === "fire"
+        ? B.avgAnnualPensionFire
+        : B.avgAnnualPension;
 
   return (
     <div className="space-y-6">
@@ -60,7 +66,7 @@ export default function WhoBenefits() {
         </div>
         <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
           <p className="font-mono text-4xl font-bold text-[var(--color-canopy)] tabular-nums leading-none">
-            {fmtMoney(B.avgAnnualPension)}
+            {fmtMoney(avgPension)}
           </p>
           <p className="text-[13px] font-semibold text-[var(--color-ink)] mt-2">
             average pension, per year
