@@ -24,12 +24,12 @@ export const metadata: Metadata = {
     absolute: "Portland Civic Lab — Dashboards and civic tools for Portland",
   },
   description:
-    "Portland Civic Lab builds public dashboards, civic measurement tools, and practical products that help Portlanders understand how the city is doing and what residents actually think.",
+    "Portland Civic Lab builds free, public tools to help Portlanders understand their city — dashboards, deep-dives, a parks atlas, surveys, and permitting tools, all free and built from primary public data.",
   alternates: { canonical: "https://www.portlandciviclab.org" },
   openGraph: {
     title: "Portland Civic Lab — Dashboards and civic tools for Portland",
     description:
-      "Public dashboards, civic measurement, and practical tools for understanding Portland.",
+      "Free, public tools to help Portlanders understand their city — dashboards, deep-dives, surveys, and practical civic tools, all free.",
     url: "https://www.portlandciviclab.org",
     siteName: "Portland Civic Lab",
     type: "website",
@@ -484,6 +484,81 @@ export default function HomePage() {
                 Propose &amp; vote
                 <Building2 className="w-4 h-4" />
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section
+        id="about"
+        className="bg-[var(--color-paper-warm)] border-t border-[var(--color-parchment)]"
+      >
+        <div className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto w-full px-5 sm:px-8 lg:px-12 py-16 sm:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div className="lg:col-span-5">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-px bg-[var(--color-ember)]" />
+                <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+                  About
+                </span>
+              </div>
+              <h2 className="font-editorial text-[32px] sm:text-[42px] lg:text-[48px] text-[var(--color-ink)] leading-tight">
+                A company that gives its civic work away
+              </h2>
+              <p className="mt-5 max-w-xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
+                Everything Portland Civic Lab publishes is free. Every dashboard,
+                deep-dive, the parks atlas, and the permitting tools are open to any
+                resident — no paywall, no account required, no charge. That&apos;s the
+                heart of the project.
+              </p>
+              <p className="mt-4 max-w-xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
+                Portland Civic Lab is a for-profit company, and we&apos;re testing a
+                simple idea: that a private company can do genuine public-interest work —
+                building tools that make a city more legible to the people who live in it,
+                and giving them away. We see that as a bridge between people who believe
+                in private initiative and people who believe in strong public goods. We
+                don&apos;t think the two have to be opposed.
+              </p>
+              <p className="mt-4 max-w-xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
+                We build from primary public data, label every source, and show the gaps
+                honestly instead of inventing figures. We&apos;re independent and not
+                affiliated with the City of Portland or any government agency.
+              </p>
+            </div>
+
+            <div className="lg:col-span-7 lg:pl-4">
+              <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-6 sm:p-8">
+                <div className="flex items-center gap-2 text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-[var(--color-ember)]">
+                  <ShieldCheck className="h-4 w-4" />
+                  How this works
+                </div>
+                <p className="mt-4 text-[15px] text-[var(--color-ink-light)] leading-relaxed">
+                  Portland Civic Lab LLC is a for-profit company. The public tools are
+                  free and stay free — we cover the cost of building and maintaining them,
+                  with help from supporters who value the work and chip in to keep it free
+                  and fund what&apos;s next. When you support the Lab, you&apos;re backing a
+                  small company that gives its work away, not a charity, so contributions
+                  aren&apos;t tax-deductible donations. We&apos;d rather be plain about that
+                  than leave it unsaid.
+                </p>
+                <div className="mt-7 flex flex-col sm:flex-row gap-3">
+                  <Link
+                    href="/donate"
+                    className="inline-flex items-center justify-center gap-2 rounded-sm bg-[var(--color-canopy)] px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[var(--color-canopy-mid)]"
+                  >
+                    Support the work
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/methodology"
+                    className="inline-flex items-center justify-center gap-2 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] px-5 py-3 text-[15px] font-semibold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-paper)]"
+                  >
+                    How we source the data
+                    <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>

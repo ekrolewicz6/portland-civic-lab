@@ -69,7 +69,7 @@ export default function DonationForm() {
     }
 
     if (normalizedAmount > 10000) {
-      setError("For donations over $10,000, please contact us first.");
+      setError("For support over $10,000, please contact us first.");
       return;
     }
 
@@ -103,7 +103,7 @@ export default function DonationForm() {
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]">
-              Donate
+              Support
             </p>
             <h2 className="mt-2 font-editorial text-[30px] leading-none text-[var(--color-ink)] sm:text-[38px] 2xl:text-[46px]">
               Back the lab
@@ -180,7 +180,7 @@ export default function DonationForm() {
               min="1"
               max="10000"
               className="min-w-0 flex-1 border-0 bg-transparent px-3 text-[28px] font-semibold text-[var(--color-ink)] outline-none 2xl:text-[34px]"
-              aria-label="Donation amount in dollars"
+              aria-label="Support amount in dollars"
             />
             <span className="text-[12px] font-mono uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
               USD
@@ -196,7 +196,7 @@ export default function DonationForm() {
 
         {isConfigured === false && (
           <p className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-[13px] leading-relaxed text-amber-800">
-            Online donations are built but not yet enabled. Stripe needs one final
+            Online support is built but not yet enabled. Stripe needs one final
             server-side key before Checkout can accept live payments.
           </p>
         )}
@@ -213,7 +213,7 @@ export default function DonationForm() {
               ? "Stripe Checkout not enabled yet"
               : isPending
             ? "Opening secure Checkout..."
-            : `Donate ${formatCurrency(normalizedAmount || amount)}${
+            : `Support with ${formatCurrency(normalizedAmount || amount)}${
                 frequency === "monthly" ? " monthly" : ""
               }`}
           <ArrowUpRight className="h-4 w-4" />
@@ -227,6 +227,12 @@ export default function DonationForm() {
           <p className="flex gap-2">
             <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-canopy)]" />
             You can use cards and other payment methods enabled in Stripe Checkout.
+          </p>
+          <p className="flex gap-2 2xl:col-span-2">
+            <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-canopy)]" />
+            Portland Civic Lab is a for-profit company, so your support is not a
+            tax-deductible charitable donation — you&apos;re backing a company that gives its
+            tools away free.
           </p>
         </div>
       </div>
