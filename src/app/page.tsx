@@ -534,13 +534,11 @@ export default function HomePage() {
                   How this works
                 </div>
                 <p className="mt-4 text-[15px] text-[var(--color-ink-light)] leading-relaxed">
-                  Portland Civic Lab LLC is a for-profit company. The public tools are
-                  free and stay free — we cover the cost of building and maintaining them,
-                  with help from supporters who value the work and chip in to keep it free
-                  and fund what&apos;s next. When you support the Lab, you&apos;re backing a
-                  small company that gives its work away, not a charity, so contributions
-                  aren&apos;t tax-deductible donations. We&apos;d rather be plain about that
-                  than leave it unsaid.
+                  The public tools are free and stay free — we cover the cost of building
+                  and maintaining them, with help from supporters who value the work and
+                  chip in to keep it free and fund what&apos;s next. Because the Lab is a
+                  company rather than a charity, contributions aren&apos;t tax-deductible
+                  donations — we&apos;d rather be plain about that than leave it unsaid.
                 </p>
                 <div className="mt-7 flex flex-col sm:flex-row gap-3">
                   <Link

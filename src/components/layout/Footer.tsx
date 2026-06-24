@@ -121,9 +121,8 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-14 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <p className="text-[12px] text-white/45 max-w-2xl">
-            &copy; {year} {LEGAL_ENTITY}, a for-profit company building free, public civic
-            tools. Independent and not affiliated with the City of Portland or any government
-            agency.
+            &copy; {year} {LEGAL_ENTITY} &middot; Free, public civic tools — independent and not
+            affiliated with the City of Portland or any government agency.
           </p>
           <div className="flex items-center gap-5 text-[12px] text-white/45">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>

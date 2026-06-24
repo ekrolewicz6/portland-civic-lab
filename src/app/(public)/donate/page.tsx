@@ -6,7 +6,7 @@ import DonationForm from "@/components/donate/DonationForm";
 export const metadata: Metadata = {
   title: "Support the work — Portland Civic Lab",
   description:
-    "Back Portland Civic Lab — a for-profit company that gives all its civic tools away free. Monthly or one-time support through secure Stripe Checkout. Not a tax-deductible charitable donation.",
+    "Back Portland Civic Lab — we give all our civic tools away free, and support helps keep them that way. Monthly or one-time through secure Stripe Checkout. Contributions aren't tax-deductible charitable donations.",
   alternates: { canonical: "https://www.portlandciviclab.org/donate" },
 };
 
@@ -53,10 +53,10 @@ export default function DonatePage() {
             </p>
 
             <p className="mt-6 max-w-2xl rounded-2xl border border-white/12 bg-white/[0.06] px-5 py-4 text-[14px] leading-relaxed text-white/72 backdrop-blur xl:max-w-3xl 2xl:text-[15px]">
-              One thing up front: Portland Civic Lab is a for-profit company, so your support
-              is not a tax-deductible charitable donation. You&apos;re backing a small company
-              that gives its work away free — eyes open, exactly what it looks like. We think
-              that&apos;s a better deal than a write-off, and we&apos;d rather say so plainly.
+              One thing up front: because the Lab is a company that gives its work away —
+              not a charity — your support isn&apos;t a tax-deductible donation. You&apos;re
+              backing free, public tools, eyes open. We think that&apos;s a better deal than a
+              write-off, and we&apos;d rather say so plainly.
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-3 xl:gap-4 2xl:max-w-6xl 2xl:grid-cols-3">

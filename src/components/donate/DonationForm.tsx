@@ -230,9 +230,8 @@ export default function DonationForm() {
           </p>
           <p className="flex gap-2 2xl:col-span-2">
             <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-canopy)]" />
-            Portland Civic Lab is a for-profit company, so your support is not a
-            tax-deductible charitable donation — you&apos;re backing a company that gives its
-            tools away free.
+            Your support isn&apos;t a tax-deductible charitable donation — you&apos;re backing
+            a company that gives its tools away free.
           </p>
         </div>
       </div>
