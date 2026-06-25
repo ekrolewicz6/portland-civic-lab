@@ -76,6 +76,22 @@ export default function FpdrDeepDivePage() {
                 none of it. Instead, the bill lands on your property taxes, a little more every year.
                 Here&apos;s how it works, what it costs you, and how it could be fixed.
               </p>
+              <div className="mt-7 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[13px] text-white/70">
+                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-ember)]/90">
+                  Co-authored by
+                </span>
+                <span className="text-white/85">
+                  Portland Civic Lab and{" "}
+                  <a
+                    href={SOURCES.machizOpEd.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-white underline decoration-[var(--color-ember)]/50 underline-offset-2 hover:decoration-[var(--color-ember)]"
+                  >
+                    Kevin Machiz, CFA, FRM
+                  </a>
+                </span>
+              </div>
               <div className="mt-9 flex flex-col sm:flex-row gap-3">
                 <a
                   href="#cost"
