@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
-import { ArrowRight, Building2, Landmark, Network, Scale, TreePine, Users } from "lucide-react";
+import { ArrowRight, Building2, Landmark, Network, Scale, Store, TreePine, Users } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
@@ -25,6 +25,17 @@ interface DeepDive {
 }
 
 const DIVES: DeepDive[] = [
+  {
+    href: "/deep-dives/lloyd",
+    eyebrow: "Housing & redevelopment",
+    title: "Lloyd Center: demolished on a promise",
+    blurb:
+      "Portland's dead mall is coming down for up to 5,141 homes — but the approval requires zero affordable units and no ice rink, and the city is building fewer homes than any year since 2009. Both sides, the fine print, and an interactive look at whether the homes actually get built.",
+    stat: "5,141",
+    statLabel: "homes promised — zero of them required",
+    icon: Store,
+    available: true,
+  },
   {
     href: "/deep-dives/oregon-economic-development",
     eyebrow: "Economy & government",
