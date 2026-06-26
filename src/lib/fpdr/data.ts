@@ -414,8 +414,6 @@ export const BENEFICIARIES = {
 export const FACTS = {
   cityFY26ShortfallLow: 160_000_000,
   cityFY26ShortfallHigh: 172_000_000,
-  compressionLossCityLineFY26: 33_800_000,
-  compressionLossFpdrShareFY26: 13_300_000,
   /** Combined City-of-Portland rate per $1,000 AV (permanent + FPDR), FY2025-26. */
   cityComboRatePer1000AV: 7.5644,
   /** City permanent rate per $1,000 AV. */

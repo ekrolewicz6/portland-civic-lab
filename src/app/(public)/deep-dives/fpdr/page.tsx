@@ -288,8 +288,6 @@ export default function FpdrDeepDivePage() {
           <InfoCard icon={<Scale className="w-5 h-5 text-[var(--color-ember)]" />} title="It quietly squeezes other services">
             Oregon caps how much property tax can be charged. As FPDR&apos;s slice grows, it pushes the
             city toward that cap — and when the cap is hit, other levies get cut (&ldquo;compression&rdquo;).
-            In FY2025-26 the City&apos;s tax line lost about {fmtMoney(FACTS.compressionLossCityLineFY26)}{" "}
-            this way, money that could have funded parks, police, or libraries.
           </InfoCard>
           <InfoCard icon={<Landmark className="w-5 h-5 text-[var(--color-ember)]" />} title="But it probably won't hit its ceiling">
             The fund has a legal cap of ${HEADLINE.capPer1000RMV.toFixed(2)} per $1,000 of market value.
