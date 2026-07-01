@@ -272,8 +272,8 @@ export default function FpdrDeepDivePage() {
         lead={
           <>
             Because Portland never saved up, the yearly tax bill grows as more officers and
-            firefighters retire. It has gone from about $169 million a few years ago to{" "}
-            {fmtMoney(HEADLINE.annualLevyFY27)} just approved for next year.
+            firefighters retire. It has gone from about $169 million in FY2019-20 to the{" "}
+            {fmtMoney(HEADLINE.annualLevyFY27)} approved for FY2026-27.
           </>
         }
       >

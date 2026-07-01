@@ -182,6 +182,7 @@ export default function ReformSimulator() {
                   boxShadow: "0 4px 16px rgba(15,36,25,0.1)",
                   padding: "8px 12px",
                 }}
+                labelStyle={{ color: "#1a3a2a", fontWeight: 700, marginBottom: "2px" }}
                 labelFormatter={(l) => `Year ${l}`}
                 formatter={(value: number, name: string) => [
                   fmtMillions(value),
