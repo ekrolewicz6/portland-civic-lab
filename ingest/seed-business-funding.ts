@@ -196,6 +196,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
       "Project grants for arts and culture programming in the Portland metro area. Bold's author readings, writing workshops, and open mics centering diverse voices are exactly the kind of programming RACC funds — typically via a sponsored project or partnership.",
     eligibility: {
       geography: "Multnomah, Washington, Clackamas counties",
+      missionTags: ["arts_culture", "community_events", "literacy", "youth"],
       notes:
         "Usually requires an individual artist or nonprofit applicant; the business can host/partner.",
     },
@@ -547,6 +548,13 @@ const OPPORTUNITIES: OpportunitySeed[] = [
       "Bold already produces the programming — author readings, banned-books events, workshops centering marginalized voices — and currently absorbs the cost. Local employers, hospital systems, universities, and their employee resource groups have budgets for exactly this kind of community and literacy sponsorship. PCL packages the event series into a sponsorship prospectus and pitches it.",
     eligibility: {
       geography: "Portland metro",
+      missionTags: [
+        "arts_culture",
+        "community_events",
+        "literacy",
+        "youth",
+        "safe_space",
+      ],
       notes:
         "Not an application form — a prospectus plus outreach. Recurring annual sponsorships are the goal, not one-off gifts.",
     },

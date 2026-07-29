@@ -121,6 +121,17 @@ export default async function BusinessDashboard({
     (m) => m.verification_status !== "verified"
   ).length;
 
+  async function handleRescan() {
+    "use server";
+    const { user: u } = await withAuth({ ensureSignedIn: true });
+    const m = await getMemberByWorkOSId(u.id);
+    if (!m || !(await isBusinessMember(business.id, m.id))) redirect("/member");
+
+    const { generateMatchesForBusiness } = await import("@/lib/funding/match");
+    await generateMatchesForBusiness(business.id);
+    revalidatePath(`/member/business/${business.slug}`);
+  }
+
   async function handleInvite(formData: FormData) {
     "use server";
     const { user: u } = await withAuth({ ensureSignedIn: true });
@@ -261,6 +272,29 @@ export default async function BusinessDashboard({
             weighted by how likely it is and discounted by how much work it
             takes. Not by how big the headline number looks.
           </p>
+
+          {ranked.length === 0 && (
+            <div className="mt-6 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-6">
+              <h3 className="font-editorial text-[20px] text-[var(--color-ink)]">
+                Nothing matched yet
+              </h3>
+              <p className="mt-2 max-w-2xl text-[14px] text-[var(--color-ink-light)] leading-relaxed">
+                Our catalog didn&apos;t turn up programs for this profile. That
+                usually means the profile is thin rather than that the money
+                isn&apos;t there — ownership details, employee count, and what
+                you do for the neighborhood are what unlock most programs. Fill
+                those in and search again.
+              </p>
+              <form action={handleRescan} className="mt-5">
+                <button
+                  type="submit"
+                  className="rounded-sm bg-[var(--color-canopy)] px-5 py-2.5 text-[14px] font-semibold text-[var(--color-paper)] hover:bg-[var(--color-canopy-light)] transition-colors"
+                >
+                  Search the catalog again
+                </button>
+              </form>
+            </div>
+          )}
 
           <div className="mt-6 space-y-4">
             {ranked.map((m) => (

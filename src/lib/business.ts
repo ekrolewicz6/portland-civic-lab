@@ -107,6 +107,7 @@ export interface OpportunityEligibility {
   geography?: string;
   businessTypes?: string[];
   ownershipAttributes?: string[];
+  missionTags?: string[];
   maxEmployees?: number;
   notes?: string;
 }
@@ -226,6 +227,13 @@ export async function createBusiness(
     VALUES (${rows[0].id}, ${memberId}, 'owner', 'Owner')
     ON CONFLICT DO NOTHING
   `;
+
+  // Search the catalog immediately — an owner who just filled out a profile
+  // should never land on an empty dashboard. Imported lazily to keep the
+  // matcher out of modules that only read businesses.
+  const { generateMatchesForBusiness } = await import("@/lib/funding/match");
+  await generateMatchesForBusiness(rows[0].id);
+
   return rows[0];
 }
 
