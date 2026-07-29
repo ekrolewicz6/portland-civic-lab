@@ -11,6 +11,7 @@ const PRIMARY = [
   { label: "Dashboards", href: "/dashboard" },
   { label: "Deep-Dives", href: "/deep-dives" },
   { label: "Org Chart", href: "/org-chart" },
+  { label: "For Business", href: "/business" },
 ];
 
 const TOOLS = [

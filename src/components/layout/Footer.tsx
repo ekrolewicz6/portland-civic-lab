@@ -25,11 +25,22 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
     ],
   },
   {
+    title: "For business",
+    links: [
+      { label: "Funding finder", href: "/business" },
+      { label: "PCB Certification", href: "/apply" },
+      { label: "Benefits Calculator", href: "/calculator" },
+      { label: "Business Directory", href: "/directory" },
+      { label: "Commercial Spaces", href: "/spaces" },
+    ],
+  },
+  {
     title: "Data & docs",
     links: [
       { label: "Open Data & API", href: "/open-data" },
       { label: "Methodology", href: "/methodology" },
       { label: "Public Records", href: "/records" },
+      { label: "Civic Concierge", href: "/concierge" },
     ],
   },
   {

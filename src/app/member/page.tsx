@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { withAuth, signOut } from "@workos-inc/authkit-nextjs";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { getMemberByWorkOSId } from "@/lib/membership";
 import { toHeaderMember } from "@/lib/member-nav";
+import {
+  canClaimPreparedBusinesses,
+  claimBusiness,
+  getBusinessesForMember,
+  getUnclaimedBusinesses,
+} from "@/lib/business";
 
 export const metadata: Metadata = {
   title: "Member area | Portland Civic Lab",
@@ -20,9 +27,33 @@ export default async function MemberPage() {
   const displayName =
     [user.firstName, user.lastName].filter(Boolean).join(" ") || user.email;
 
+  const myBusinesses = member ? await getBusinessesForMember(member.id) : [];
+  // Claiming has no self-service undo, so only invited owners are offered a
+  // pre-researched profile — not every member who happens to sign in.
+  const claimable =
+    member &&
+    myBusinesses.length === 0 &&
+    canClaimPreparedBusinesses(member.email)
+      ? await getUnclaimedBusinesses()
+      : [];
+
   async function handleSignOut() {
     "use server";
     await signOut({ returnTo: "/" });
+  }
+
+  async function handleClaim(formData: FormData) {
+    "use server";
+    const { user: u } = await withAuth({ ensureSignedIn: true });
+    const m = await getMemberByWorkOSId(u.id);
+    if (!m || m.status !== "active") redirect("/member");
+
+    const businessId = Number(formData.get("businessId"));
+    const slug = String(formData.get("slug") ?? "");
+    if (!Number.isFinite(businessId) || !slug) redirect("/member");
+
+    const claimed = await claimBusiness(businessId, m.id);
+    redirect(claimed ? `/member/business/${slug}` : "/member");
   }
 
   return (
@@ -45,6 +76,95 @@ export default async function MemberPage() {
           Member features are rolling out in stages — here&apos;s what&apos;s
           coming and how to get involved today.
         </p>
+
+        <section className="mt-10">
+          <h2 className="font-editorial text-[26px] text-[var(--color-ink)]">
+            Your business
+          </h2>
+
+          {myBusinesses.length > 0 ? (
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-5">
+              {myBusinesses.map((b) => (
+                <Link
+                  key={b.id}
+                  href={`/member/business/${b.slug}`}
+                  className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-6 hover:border-[var(--color-sage)] transition-colors"
+                >
+                  <h3 className="font-editorial text-[22px] text-[var(--color-ink)]">
+                    {b.name}
+                  </h3>
+                  <p className="mt-1 text-[13px] text-[var(--color-ink-muted)]">
+                    {b.neighborhood ?? b.address_city ?? "Portland"} ·{" "}
+                    <span className="capitalize">
+                      {b.member_role.replace("_", "-")}
+                    </span>
+                  </p>
+                  <p className="mt-3 text-[14px] font-semibold text-[var(--color-canopy)]">
+                    Open funding dashboard →
+                  </p>
+                </Link>
+              ))}
+            </div>
+          ) : claimable.length > 0 ? (
+            <div className="mt-4 space-y-4">
+              {claimable.map((b) => (
+                <div
+                  key={b.id}
+                  className="rounded-sm border border-[var(--color-ember)] bg-[var(--color-paper-warm)] p-6"
+                >
+                  <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+                    Is this your business?
+                  </span>
+                  <h3 className="mt-2 font-editorial text-[24px] text-[var(--color-ink)]">
+                    {b.name}
+                  </h3>
+                  <p className="mt-1 text-[13px] text-[var(--color-ink-muted)]">
+                    {[b.address_street, b.neighborhood].filter(Boolean).join(" · ")}
+                  </p>
+                  <p className="mt-3 max-w-2xl text-[14px] text-[var(--color-ink-light)] leading-relaxed">
+                    Portland Civic Lab has already built a funding profile for
+                    this business and matched it against programs it looks
+                    eligible for. Claim it to see what we found.
+                  </p>
+                  <form action={handleClaim} className="mt-4">
+                    <input type="hidden" name="businessId" value={b.id} />
+                    <input type="hidden" name="slug" value={b.slug} />
+                    <button
+                      type="submit"
+                      className="rounded-sm bg-[var(--color-canopy)] px-5 py-2.5 text-[14px] font-semibold text-[var(--color-paper)] hover:bg-[var(--color-canopy-light)] transition-colors"
+                    >
+                      Claim this business
+                    </button>
+                  </form>
+                </div>
+              ))}
+              <p className="text-[13px] text-[var(--color-ink-muted)]">
+                Not yours?{" "}
+                <Link
+                  href="/member/business/new"
+                  className="text-[var(--color-canopy)] hover:underline"
+                >
+                  Register a different business →
+                </Link>
+              </p>
+            </div>
+          ) : (
+            <div className="mt-4 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-6">
+              <p className="max-w-2xl text-[14px] text-[var(--color-ink-light)] leading-relaxed">
+                Register your business once and Portland Civic Lab goes looking
+                for money on your behalf — grants, tax credits, rebates, and
+                subsidies across city, county, state, federal, and private
+                sources. We prepare the applications; you review and submit.
+              </p>
+              <Link
+                href="/member/business/new"
+                className="mt-4 inline-block rounded-sm bg-[var(--color-canopy)] px-5 py-2.5 text-[14px] font-semibold text-[var(--color-paper)] hover:bg-[var(--color-canopy-light)] transition-colors"
+              >
+                Register your business
+              </Link>
+            </div>
+          )}
+        </section>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
           <div className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-6">

@@ -642,3 +642,121 @@ export const proposalVotes = pgTable(
     pk: primaryKey({ columns: [table.proposalId, table.memberId] }),
   })
 );
+
+// ── Business funding finder ─────────────────────────────────────────────
+//
+// Members register (or claim) a business, add co-owners, and PCL matches
+// the business against a curated catalog of funding opportunities. PCL
+// prepares applications; the owner reviews and submits. No EIN/SSN/bank
+// data is stored — identity-sensitive fields stay out until submissions
+// actually require them.
+
+export const businesses = pgTable("businesses", {
+  id: serial("id").primaryKey(),
+  slug: text("slug").unique().notNull(),
+  name: text("name").notNull(),
+  legalName: text("legal_name"),
+  entityType: text("entity_type"), // sole_prop | partnership | llc | s_corp | c_corp | nonprofit
+  naicsCode: text("naics_code"),
+  description: text("description"),
+  addressStreet: text("address_street"),
+  addressCity: text("address_city").default("Portland"),
+  addressState: text("address_state").default("OR"),
+  addressZip: text("address_zip"),
+  neighborhood: text("neighborhood"),
+  website: text("website"),
+  yearFounded: integer("year_founded"),
+  employeeCount: integer("employee_count"),
+  revenueBand: text("revenue_band"), // under_100k | 100k_500k | 500k_1m | 1m_5m | over_5m
+  ownershipAttributes: jsonb("ownership_attributes"), // string[]: woman_owned, minority_owned, veteran_owned, lgbtq_owned, immigrant_owned
+  certifications: jsonb("certifications"), // string[]: cobid_wbe, cobid_mbe, cobid_esb, b_corp
+  missionTags: jsonb("mission_tags"), // string[]: community_events, arts_culture, youth, sustainability
+  claimed: boolean("claimed").default(false).notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+});
+
+export const businessMembers = pgTable(
+  "business_members",
+  {
+    businessId: integer("business_id")
+      .references(() => businesses.id, { onDelete: "cascade" })
+      .notNull(),
+    memberId: integer("member_id")
+      .references(() => members.id)
+      .notNull(),
+    role: text("role").default("owner").notNull(), // owner | co_owner | manager
+    title: text("title"), // display title, e.g. "Co-owner"
+    createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (table) => ({
+    pk: primaryKey({ columns: [table.businessId, table.memberId] }),
+  })
+);
+
+export const businessInvites = pgTable("business_invites", {
+  id: serial("id").primaryKey(),
+  businessId: integer("business_id")
+    .references(() => businesses.id, { onDelete: "cascade" })
+    .notNull(),
+  email: text("email").notNull(),
+  role: text("role").default("co_owner").notNull(),
+  token: text("token").unique().notNull(),
+  invitedByMemberId: integer("invited_by_member_id")
+    .references(() => members.id)
+    .notNull(),
+  status: text("status").default("pending").notNull(), // pending | accepted | revoked | expired
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  acceptedAt: timestamp("accepted_at", { withTimezone: true }),
+  expiresAt: timestamp("expires_at", { withTimezone: true }),
+});
+
+export const fundingOpportunities = pgTable("funding_opportunities", {
+  id: serial("id").primaryKey(),
+  slug: text("slug").unique().notNull(),
+  name: text("name").notNull(),
+  funder: text("funder").notNull(),
+  level: text("level").notNull(), // city | county | state | federal | private
+  category: text("category").default("grant").notNull(), // grant | incentive | contest | tax_credit | technical_assistance
+  amountMin: integer("amount_min"),
+  amountMax: integer("amount_max"),
+  // Benefits Navigator value model: recurring savings beat one-time grants.
+  // one_time: a single check. recurring_annual: amount repeats every year
+  // (rebates, credits, co-op funds). per_unit: amount applies per unit_label
+  // (e.g. "per eligible hire" for WOTC).
+  valueType: text("value_type").default("one_time").notNull(), // one_time | recurring_annual | per_unit
+  unitLabel: text("unit_label"), // for per_unit, e.g. "per eligible hire"
+  effortLevel: integer("effort_level"), // 1 (an afternoon) – 5 (major application)
+  successProbability: text("success_probability"), // low | medium | high
+  deadline: date("deadline"),
+  rolling: boolean("rolling").default(false).notNull(), // no fixed deadline; applications accepted on an ongoing basis
+  url: text("url"),
+  description: text("description"),
+  eligibility: jsonb("eligibility"), // structured criteria: { geography, businessTypes, ownershipAttributes, maxEmployees, notes }
+  // Every entry starts unverified; an admin confirms amounts/deadlines against
+  // the live source before the opportunity is shown as verified. A stale
+  // deadline shown to an owner destroys trust instantly.
+  verificationStatus: text("verification_status").default("needs_verification").notNull(), // verified | needs_verification | stale
+  sourceNote: text("source_note"),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+});
+
+export const opportunityMatches = pgTable("opportunity_matches", {
+  id: serial("id").primaryKey(),
+  businessId: integer("business_id")
+    .references(() => businesses.id, { onDelete: "cascade" })
+    .notNull(),
+  opportunityId: integer("opportunity_id")
+    .references(() => fundingOpportunities.id, { onDelete: "cascade" })
+    .notNull(),
+  fitScore: integer("fit_score"), // 0–100
+  fitRationale: text("fit_rationale"),
+  status: text("status").default("identified").notNull(), // identified | qualified | in_prep | ready_for_review | submitted | awarded | declined | dismissed
+  statusNote: text("status_note"),
+  amountRequested: integer("amount_requested"),
+  amountAwarded: integer("amount_awarded"),
+  applicationDraft: jsonb("application_draft"), // { questions: [{ question, answer, source }] } — prefilled from the profile, owner reviews before submit
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+});
