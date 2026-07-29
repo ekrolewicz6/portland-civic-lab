@@ -122,7 +122,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     rolling: false,
     url: "https://ventureportland.org/",
     description:
-      "Grants for events, marketing, and district vitality projects. Funds flow through neighborhood business district associations — a bookstore-café that already hosts author readings and open mics is a natural anchor for a district application.",
+      "Grants for events, marketing, and district vitality projects. Funds flow through neighborhood business district associations rather than to businesses directly, so applications are strongest when a business anchors or co-hosts the activity.",
     eligibility: {
       geography: "Portland business districts",
       notes:
@@ -146,7 +146,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     rolling: true,
     url: "https://www.portland.gov/bps/cleanenergy",
     description:
-      "PCEF funds nonprofit-led programs that pay for energy efficiency and clean energy upgrades in small commercial spaces — HVAC, refrigeration, lighting, heat pumps. A café's refrigeration and espresso equipment load makes this worth screening.",
+      "PCEF funds nonprofit-led programs that pay for energy efficiency and clean energy upgrades in small commercial spaces — HVAC, refrigeration, lighting, and heat pumps. Worth screening for any business with a significant equipment or heating load.",
     eligibility: {
       geography: "City of Portland",
       notes: "Access is through funded partner programs, not direct application.",
@@ -170,7 +170,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     rolling: true,
     url: "https://www.energytrust.org/commercial/",
     description:
-      "Cash incentives for energy-efficient lighting, refrigeration, food service equipment, HVAC, and water heating in commercial spaces. Café equipment (espresso machines, refrigeration, dishwashers) frequently qualifies.",
+      "Cash incentives for energy-efficient lighting, refrigeration, food service equipment, HVAC, and water heating in commercial spaces. Starts with a free walkthrough that identifies which of your existing equipment qualifies.",
     eligibility: {
       geography: "PGE/Pacific Power/NW Natural service territory",
       notes: "Incentive size depends on equipment; free walkthrough available.",
@@ -193,7 +193,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     rolling: false,
     url: "https://racc.org/grants/",
     description:
-      "Project grants for arts and culture programming in the Portland metro area. Bold's author readings, writing workshops, and open mics centering diverse voices are exactly the kind of programming RACC funds — typically via a sponsored project or partnership.",
+      "Project grants for arts and culture programming in the Portland metro area — readings, workshops, performances, and exhibitions. Typically awarded via a sponsored project or partnership, with the business as venue and organizer.",
     eligibility: {
       geography: "Multnomah, Washington, Clackamas counties",
       missionTags: ["arts_culture", "community_events", "literacy", "youth"],
@@ -219,7 +219,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     rolling: true,
     url: "https://www.oregon.gov/biz/programs/COBID/",
     description:
-      "State certification as a Woman Business Enterprise and/or Emerging Small Business. Not money itself — it unlocks set-aside contracts (catering for public agencies and events) and priority in several state and city programs.",
+      "State certification as a Woman Business Enterprise and/or Emerging Small Business. Not money itself — it unlocks set-aside contracts with public agencies and priority in several state and city programs.",
     eligibility: {
       geography: "Oregon",
       ownershipAttributes: ["woman_owned"],
@@ -311,7 +311,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     rolling: true,
     url: "https://www.irs.gov/forms-pubs/about-form-8826",
     description:
-      "Federal tax credit covering 50% of accessibility expenditures between $250 and $10,250 per year (up to $5,000/yr) for small businesses. Bold already invests in ADA accessibility — future accessibility spending may be half-covered.",
+      "Federal tax credit covering 50% of accessibility expenditures between $250 and $10,250 per year (up to $5,000/yr) for small businesses. Ramps, door hardware, accessible restrooms, signage, and website accessibility work all commonly qualify.",
     eligibility: {
       notes: "Small businesses: ≤$1M revenue or ≤30 full-time employees.",
       maxEmployees: 30,
@@ -334,7 +334,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     rolling: true,
     url: "https://www.sba.gov/federal-contracting/contracting-assistance-programs/women-owned-small-business-federal-contract-program",
     description:
-      "Free federal certification that opens set-aside contracting (e.g. catering for federal offices and events downtown). Pairs with COBID at the state level.",
+      "Free federal certification that opens set-aside contracting with federal agencies. Pairs with COBID at the state level.",
     eligibility: {
       ownershipAttributes: ["woman_owned"],
       notes: "51%+ woman-owned and controlled.",
@@ -358,7 +358,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     rolling: true,
     url: "https://ambergrantsforwomen.com/",
     description:
-      "$10,000 awarded monthly to a woman-owned business, with monthly winners eligible for a $25,000 year-end award. Short application: describe the business and what the money would do. Ali's 20 years of book industry experience plus the community mission is a strong story.",
+      "$10,000 awarded monthly to a woman-owned business, with monthly winners eligible for a $25,000 year-end award. The application is short — describe the business and what the money would do — so the deciding factor is the strength of the story.",
     eligibility: {
       ownershipAttributes: ["woman_owned"],
       notes: "Woman-owned or co-owned; $15 application fee; monthly cycles.",
@@ -448,7 +448,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     rolling: true,
     url: "https://www.irs.gov/forms-pubs/about-form-8846",
     description:
-      "Employers pay the 7.65% employer share of FICA on employee tips; this credit hands most of it back every year. For a café with meaningful tip volume it is pure recurring money, and it is one of the most commonly missed credits in food service — it only requires Form 8846 at tax time.",
+      "Employers pay the 7.65% employer share of FICA on employee tips; this credit hands most of it back every year. For any business with meaningful tip volume it is pure recurring money, and it is one of the most commonly missed credits in food service — it only requires Form 8846 at tax time.",
     eligibility: {
       businessTypes: ["food_service"],
       notes:
@@ -520,7 +520,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     rolling: true,
     url: "https://www.bookweb.org/",
     description:
-      "Publishers reimburse bookstores for advertising, author events, displays, and newsletter placement featuring their titles — money that already exists for stores that ask and file the paperwork. Most independents leave the majority of it unclaimed. Bold's existing author readings and book clubs are exactly the qualifying activity.",
+      "Publishers reimburse bookstores for advertising, author events, displays, and newsletter placement featuring their titles — money that already exists for stores that ask and file the paperwork. Most independents leave the majority of it unclaimed.",
     eligibility: {
       businessTypes: ["bookstore"],
       notes:
@@ -545,7 +545,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     rolling: true,
     url: null,
     description:
-      "Bold already produces the programming — author readings, banned-books events, workshops centering marginalized voices — and currently absorbs the cost. Local employers, hospital systems, universities, and their employee resource groups have budgets for exactly this kind of community and literacy sponsorship. PCL packages the event series into a sponsorship prospectus and pitches it.",
+      "Local employers, hospital systems, universities, and their employee resource groups hold real budgets for community, literacy, and cultural sponsorship. For a business already producing that programming and absorbing the cost, PCL packages the event series into a sponsorship prospectus and pitches it — the events don't change, someone else pays for them.",
     eligibility: {
       geography: "Portland metro",
       missionTags: [
@@ -796,7 +796,29 @@ const MATCHES: MatchSeed[] = [
 
 // ── Seed ────────────────────────────────────────────────────────────────
 
+/**
+ * Opportunity rows are shared by every business, so their descriptions must
+ * describe the *program* only. Anything about a particular business belongs
+ * in that business's fit_rationale. (An early version of this seed described
+ * several programs in terms of Bold Coffee & Books, which then showed up on
+ * an unrelated business's dashboard.)
+ */
+function assertDescriptionsAreBusinessAgnostic() {
+  const named = /\b(bold|ali'?s|tim'?s)\b/i;
+  const offenders = OPPORTUNITIES.filter(
+    (o) => named.test(o.description) || named.test(o.name)
+  );
+  if (offenders.length > 0) {
+    throw new Error(
+      `Opportunity descriptions must not name a specific business. Fix: ${offenders
+        .map((o) => o.slug)
+        .join(", ")}`
+    );
+  }
+}
+
 async function main() {
+  assertDescriptionsAreBusinessAgnostic();
   console.log(`Seeding ${OPPORTUNITIES.length} funding opportunities...`);
   for (const o of OPPORTUNITIES) {
     await sql`
