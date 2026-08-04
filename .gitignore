@@ -65,3 +65,4 @@ runtime-data/
 # playwright
 /test-results/
 /playwright-report/
+.env*

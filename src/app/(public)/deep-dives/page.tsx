@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
-import { ArrowRight, Building2, Landmark, Network, Scale, Store, TreePine, Users } from "lucide-react";
+import { ArrowRight, Building2, Landmark, Network, Scale, Server, Store, TreePine, Users } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
@@ -25,6 +25,17 @@ interface DeepDive {
 }
 
 const DIVES: DeepDive[] = [
+  {
+    href: "/deep-dives/data-centers",
+    eyebrow: "Energy, water & taxes",
+    title: "Oregon built the cloud. Was it worth the bill?",
+    blurb:
+      "Roughly 125 data centers, $450M+ a year in tax breaks, surging power demand, secretive water deals — and a state that just hit pause. The strongest case for the deals, the strongest case against, and an honest six-condition test of when a data center is truly a win-win.",
+    stat: "$450M+",
+    statLabel: "a year in tax breaks — and the state just hit pause",
+    icon: Server,
+    available: true,
+  },
   {
     href: "/deep-dives/lloyd",
     eyebrow: "Housing & redevelopment",
