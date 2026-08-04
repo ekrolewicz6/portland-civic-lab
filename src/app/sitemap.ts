@@ -33,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/donate`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/deep-dives`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     {
+      url: `${BASE_URL}/deep-dives/data-centers`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/deep-dives/portland-growth-politics`,
       lastModified: now,
       changeFrequency: "monthly",
