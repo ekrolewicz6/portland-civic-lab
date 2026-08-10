@@ -65,7 +65,11 @@ export default function FlowDiagram({ data }: { data: BudgetDataset }) {
   // Label gutters grow with the viewport: at 1400px+ there is room to show a
   // bureau's full name instead of truncating it.
   const narrow = width < 700;
-  const labelW = width >= 1650 ? 240 : width >= 1400 ? 200 : width >= 1050 ? 155 : 120;
+  // The Section grid gives the diagram ~1180px even on a 1800px monitor, so the
+  // breakpoints are tuned to the width the diagram actually gets, not the
+  // viewport. labelW is reserved as outer margin on both sides.
+  const labelW =
+    width >= 1500 ? 230 : width >= 1250 ? 205 : width >= 1050 ? 185 : width >= 860 ? 150 : 120;
 
   const layout = useMemo(
     () =>
