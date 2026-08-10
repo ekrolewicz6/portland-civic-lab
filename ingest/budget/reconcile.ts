@@ -31,6 +31,8 @@ export interface Finding {
 export const PUBLISHED = {
   totalAllFunds2627: 8_546_060_062,
   totalAllFunds2526: 9_039_269_833,
+  /** The book's own citywide FUND summary table, a different basis to Figure 6/7. */
+  fundSummary2526: 9_090_927_679,
   changeYoY: -493_209_771,
   programExpenses2627: 4_480_000_000, // stated as "$4.48 billion"
   generalFundDiscretionary: 803_400_000, // stated as "$803.4 million"
@@ -125,20 +127,20 @@ export function reconcile(
   });
 
   const total2526 = sum(funds, (x) => x.expenseGrandTotal[2] ?? 0);
-  // The prior-year column is a snapshot of a budget that kept being revised, so
-  // the fund pages and the citywide summary were compiled at slightly different
-  // moments. The variance is reported rather than smoothed over; the site quotes
-  // the City's own published prior-year total, not this sum.
+  // Two different prior-year totals are published in the same book: Figure 6/7
+  // says $9,039,269,833, while the citywide fund summary table says
+  // $9,090,927,679. Our fund-by-fund parse reproduces the fund summary exactly,
+  // which is the right comparison for a sum of fund pages.
   f.push({
     id: "A3.2",
-    severity: "warn",
-    title: "Prior-year fund sum vs the published prior-year total",
-    expected: money(PUBLISHED.totalAllFunds2526),
+    severity: "error",
+    title: "Prior-year fund sum matches the book's own fund summary table",
+    expected: money(PUBLISHED.fundSummary2526),
     actual: money(total2526),
-    delta: `${money(total2526 - PUBLISHED.totalAllFunds2526)} (${(((total2526 - PUBLISHED.totalAllFunds2526) / PUBLISHED.totalAllFunds2526) * 100).toFixed(2)}%)`,
-    passed: Math.abs(total2526 - PUBLISHED.totalAllFunds2526) / PUBLISHED.totalAllFunds2526 < 0.01,
+    delta: money(total2526 - PUBLISHED.fundSummary2526),
+    passed: total2526 === PUBLISHED.fundSummary2526,
     detail:
-      "FY2025-26 is a revised budget that moved during the year. The page cites the City's published figure for prior-year comparisons.",
+      "Figure 6/7 states a different prior-year total ($9,039,269,833) on a different basis; both are published by the City.",
   });
 
   const prog = sum(programs, (p) => p.expenseGrandTotal[3] ?? 0);

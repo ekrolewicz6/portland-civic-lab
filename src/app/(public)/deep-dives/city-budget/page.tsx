@@ -7,6 +7,8 @@ import FlowDiagram from "@/components/deep-dives/city-budget/FlowDiagram";
 import Reconciliation from "@/components/deep-dives/city-budget/Reconciliation";
 import MoneyLadder from "@/components/deep-dives/city-budget/MoneyLadder";
 import Priorities from "@/components/deep-dives/city-budget/Priorities";
+import PeerCities from "@/components/deep-dives/city-budget/PeerCities";
+import { COMPETING_TOTALS } from "@/lib/city-budget/comparisons";
 import {
   GROSS_TOTAL,
   GROSS_TOTAL_PRIOR,
@@ -38,6 +40,7 @@ const NAV = [
   { id: "honest", label: "Three totals" },
   { id: "choices", label: "What we choose" },
   { id: "why", label: "Why so big" },
+  { id: "peers", label: "Vs other cities" },
   { id: "cuts", label: "What changed" },
   { id: "everything", label: "Every program" },
   { id: "method", label: "Method" },
@@ -131,8 +134,9 @@ export default function CityBudgetPage() {
                 <div>
                   <dt className="text-[13px] font-semibold text-white">The direction</dt>
                   <dd className="text-[14px] leading-relaxed text-white/70">
-                    Down {fmtMoney(Math.abs(YOY_CHANGE))} ({Math.abs(YOY_PCT).toFixed(1)}%) from
-                    last year. This is a shrinking budget.
+                    Down {fmtMoney(Math.abs(YOY_CHANGE))} ({Math.abs(YOY_PCT).toFixed(1)}%)
+                    against last year&apos;s <em>revised</em> budget — the City&apos;s own
+                    comparison. Adopted-to-adopted it is about 1%. Either way, it is shrinking.
                   </dd>
                 </div>
               </dl>
@@ -332,6 +336,31 @@ export default function CityBudgetPage() {
         </div>
       </Section>
 
+      {/* ── peers ── */}
+      <Section
+        id="peers"
+        eyebrow="Against other cities"
+        title="Portland spends about what Seattle spends, for 150,000 fewer people"
+        lead={
+          <>
+            Every per-capita comparison of city budgets is a trap, because cities draw their
+            boundaries in different places. But once you control for that, one comparison survives:
+            Seattle&apos;s budget is the same size as Portland&apos;s while serving a quarter more
+            residents — and Seattle&apos;s number includes a municipal electric utility
+            Portland doesn&apos;t own.
+          </>
+        }
+        aside={
+          <p className="text-[12px] leading-relaxed text-[var(--color-ink-muted)]">
+            Peer figures are adopted or proposed budgets from each city&apos;s own published
+            documents, with populations from the Census Bureau&apos;s 2025 estimates. Sources are
+            linked in the method section.
+          </p>
+        }
+      >
+        <PeerCities />
+      </Section>
+
       {/* ── what changed ── */}
       <Section
         id="cuts"
@@ -340,7 +369,11 @@ export default function CityBudgetPage() {
         lead={
           <>
             From {fmtExact(GROSS_TOTAL_PRIOR)} revised last year to {fmtExact(GROSS_TOTAL)}{" "}
-            adopted — a fall of {fmtExact(Math.abs(YOY_CHANGE))}. Which bureaus absorbed it:
+            adopted — a fall of {fmtExact(Math.abs(YOY_CHANGE))}. That is the City&apos;s own
+            framing, and it compares against a <em>revised</em> figure that grew during the year;
+            measured adopted-against-adopted the drop is closer to 1%. The cuts underneath are
+            real either way — Council closed a $171.6&nbsp;million gap, and about 100 people lost
+            their jobs. Which bureaus absorbed it:
           </>
         }
       >
@@ -474,6 +507,31 @@ export default function CityBudgetPage() {
           </div>
 
           <div className="mt-6 border-t border-[var(--color-parchment)] pt-5">
+            <h3 className="mb-2 text-[14px] font-semibold text-[var(--color-ink)]">
+              The City publishes three different totals for this budget
+            </h3>
+            <p className="mb-3 max-w-3xl text-[12.5px] leading-relaxed text-[var(--color-ink-light)]">
+              They differ by up to $9.2 million. None is wrong; they are drawn at different moments
+              and on slightly different bases. We use the second because our independently parsed
+              fund detail reproduces it to the dollar — but a reader quoting the ordinance is also
+              quoting an official figure, and should not be told they are mistaken.
+            </p>
+            <ul className="mb-5 space-y-2">
+              {COMPETING_TOTALS.map((t) => (
+                <li key={t.label} className="text-[12.5px] leading-relaxed">
+                  <a
+                    href={t.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono font-semibold tabular-nums text-[var(--color-river-deep)] underline decoration-[var(--color-river)]/40 underline-offset-2 hover:decoration-[var(--color-river)]"
+                  >
+                    {fmtExact(t.value)}
+                  </a>
+                  <span className="text-[var(--color-ink-light)]"> — {t.label}. {t.what}</span>
+                </li>
+              ))}
+            </ul>
+
             <h3 className="mb-2 text-[14px] font-semibold text-[var(--color-ink)]">
               What this does not claim
             </h3>
