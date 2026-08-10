@@ -10,6 +10,7 @@ import Priorities from "@/components/deep-dives/city-budget/Priorities";
 import PeerCities from "@/components/deep-dives/city-budget/PeerCities";
 import RevenueShift from "@/components/deep-dives/city-budget/RevenueShift";
 import GeneralFundBridge from "@/components/deep-dives/city-budget/GeneralFundBridge";
+import RevenueStructure from "@/components/deep-dives/city-budget/RevenueStructure";
 import { COMPETING_TOTALS } from "@/lib/city-budget/comparisons";
 import {
   GROSS_TOTAL,
@@ -43,6 +44,7 @@ const NAV = [
   { id: "choices", label: "What we choose" },
   { id: "why", label: "Why so big" },
   { id: "peers", label: "Vs other cities" },
+  { id: "revenue", label: "How we raise it" },
   { id: "shrinking", label: "Why it shrank" },
   { id: "cuts", label: "What changed" },
   { id: "everything", label: "Every program" },
@@ -374,6 +376,32 @@ export default function CityBudgetPage() {
         }
       >
         <PeerCities />
+      </Section>
+
+      {/* ── revenue structure ── */}
+      <Section
+        id="revenue"
+        tone="warm"
+        eyebrow="The revenue side"
+        title="Portland taxes profits because it isn't allowed to tax purchases"
+        lead={
+          <>
+            The biggest structural difference between Portland and its peers isn&apos;t what it
+            spends money on — it&apos;s where the money comes from. Oregon bars sales taxes at both
+            the state and local level, so the instrument Denver uses for more than half its general
+            fund simply doesn&apos;t exist here. What Portland leans on instead is far more
+            volatile.
+          </>
+        }
+        aside={
+          <p className="text-[12px] leading-relaxed text-[var(--color-ink-muted)]">
+            Peer sales-tax shares come from each city&apos;s own budget documents; Portland&apos;s
+            business-tax and property-tax figures come from the City Budget Office forecast and
+            Multnomah County&apos;s assessment summary. All linked inline.
+          </p>
+        }
+      >
+        <RevenueStructure />
       </Section>
 
       {/* ── why it shrank ── */}
