@@ -65,7 +65,7 @@ export default function FlowDiagram({ data }: { data: BudgetDataset }) {
   // Label gutters grow with the viewport: at 1400px+ there is room to show a
   // bureau's full name instead of truncating it.
   const narrow = width < 700;
-  const labelW = width >= 1400 ? 190 : width >= 1050 ? 150 : 120;
+  const labelW = width >= 1650 ? 240 : width >= 1400 ? 200 : width >= 1050 ? 155 : 120;
 
   const layout = useMemo(
     () =>
@@ -270,11 +270,18 @@ export default function FlowDiagram({ data }: { data: BudgetDataset }) {
           <li className="text-[12px] text-[var(--color-ink-muted)]">
             Band thickness = dollars, one scale across the whole diagram
           </li>
+          <li className="text-[12px] text-[var(--color-ink-muted)]">
+            Click a band to pin its exact figure · click a bureau to open its programs
+          </li>
         </ul>
       </div>
 
       {/* ── diagram + inspector ── */}
-      <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_290px]">
+      <div
+        className={`grid gap-5 ${
+          selected ? "lg:grid-cols-[minmax(0,1fr)_300px]" : "grid-cols-1"
+        }`}
+      >
         <div ref={wrapRef} className="relative min-w-0">
           {/* Column headings, anchored to their column and hidden when the
               viewport is too narrow for them to sit apart. */}
@@ -381,7 +388,7 @@ export default function FlowDiagram({ data }: { data: BudgetDataset }) {
                     // translucent backing — without it, text on a dense
                     // crossing is unreadable.
                     <span
-                      className={`block truncate rounded-[2px] bg-[var(--color-paper)]/80 px-1 text-[11px] leading-tight backdrop-blur-[1px] ${
+                      className={`line-clamp-2 block rounded-[2px] bg-[var(--color-paper)]/80 px-1 text-[11px] leading-tight backdrop-blur-[1px] ${
                         n.labelSide === "left" ? "text-right" : ""
                       } ${focus === n.id ? "font-semibold text-[var(--color-canopy)]" : "text-[var(--color-ink-light)]"}`}
                     >
@@ -412,8 +419,8 @@ export default function FlowDiagram({ data }: { data: BudgetDataset }) {
         </div>
 
         {/* ── inspector ── */}
-        <aside className="lg:sticky lg:top-24 lg:self-start">
-          {selected ? (
+        {selected && (
+          <aside className="lg:sticky lg:top-24 lg:self-start">
             <NodeCard
               node={selected}
               total={graph.total}
@@ -421,13 +428,8 @@ export default function FlowDiagram({ data }: { data: BudgetDataset }) {
               year={year}
               onClose={() => setFocus(null)}
             />
-          ) : (
-            <div className="rounded-sm border border-dashed border-[var(--color-parchment)] p-5 text-[12px] leading-relaxed text-[var(--color-ink-muted)]">
-              Click any band to pin it and read its exact figure. Clicking a bureau also opens its
-              programs in place, so the column keeps showing the whole city.
-            </div>
-          )}
-        </aside>
+          </aside>
+        )}
       </div>
     </div>
   );

@@ -8,6 +8,8 @@ import Reconciliation from "@/components/deep-dives/city-budget/Reconciliation";
 import MoneyLadder from "@/components/deep-dives/city-budget/MoneyLadder";
 import Priorities from "@/components/deep-dives/city-budget/Priorities";
 import PeerCities from "@/components/deep-dives/city-budget/PeerCities";
+import RevenueShift from "@/components/deep-dives/city-budget/RevenueShift";
+import GeneralFundBridge from "@/components/deep-dives/city-budget/GeneralFundBridge";
 import { COMPETING_TOTALS } from "@/lib/city-budget/comparisons";
 import {
   GROSS_TOTAL,
@@ -41,6 +43,7 @@ const NAV = [
   { id: "choices", label: "What we choose" },
   { id: "why", label: "Why so big" },
   { id: "peers", label: "Vs other cities" },
+  { id: "shrinking", label: "Why it shrank" },
   { id: "cuts", label: "What changed" },
   { id: "everything", label: "Every program" },
   { id: "method", label: "Method" },
@@ -148,7 +151,7 @@ export default function CityBudgetPage() {
               { k: "Total budget", v: fmtMoney(GROSS_TOTAL) },
               { k: "Programs traced", v: String(PROGRAM_COUNT) },
               { k: "Bureaus", v: String(BUREAU_COUNT) },
-              { k: "Positions funded", v: Number(TOTAL_FTE).toLocaleString("en-US") },
+              { k: "Full-time equivalents", v: Number(TOTAL_FTE).toLocaleString("en-US") },
             ].map((s) => (
               <div key={s.k} className="bg-[var(--color-canopy)] p-5">
                 <dd className="font-mono text-[26px] font-bold tabular-nums text-white sm:text-[30px]">
@@ -160,6 +163,13 @@ export default function CityBudgetPage() {
               </div>
             ))}
           </dl>
+
+          <p className="mt-3 max-w-3xl text-[12px] leading-relaxed text-white/45">
+            Positions are counted in full-time equivalents, which is why the total isn&apos;t a
+            whole number: a half-time job counts as 0.5, and a person split across two programs is
+            counted in fractions against each. {Number(TOTAL_FTE).toLocaleString("en-US")} FTE is
+            therefore a measure of funded working hours, not a headcount of people.
+          </p>
         </div>
       </header>
 
@@ -256,6 +266,10 @@ export default function CityBudgetPage() {
         }
       >
         <Priorities />
+
+        <div className="mt-8">
+          <GeneralFundBridge />
+        </div>
       </Section>
 
       {/* ── structure ── */}
@@ -360,6 +374,31 @@ export default function CityBudgetPage() {
         }
       >
         <PeerCities />
+      </Section>
+
+      {/* ── why it shrank ── */}
+      <Section
+        id="shrinking"
+        eyebrow="Where the money went"
+        title="The tax base didn't collapse. The federal money ran out."
+        lead={
+          <>
+            A budget falling 5.5% sounds like a city in decline. The revenue table says something
+            more specific: everything Portland raises itself went <em>up</em>. What disappeared was
+            intergovernmental aid — the pandemic-era federal money that had been quietly paying for
+            ongoing programs — landing at the same moment the City stopped covering the gap out of
+            savings.
+          </>
+        }
+        aside={
+          <p className="text-[12px] leading-relaxed text-[var(--color-ink-muted)]">
+            Both columns are the City&apos;s own resources table, FY2025-26 revised against
+            FY2026-27 adopted. Internal money is separated out because it moves the headline total
+            without being revenue gained or lost.
+          </p>
+        }
+      >
+        <RevenueShift />
       </Section>
 
       {/* ── what changed ── */}
