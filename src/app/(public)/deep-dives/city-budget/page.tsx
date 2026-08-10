@@ -340,14 +340,15 @@ export default function CityBudgetPage() {
       <Section
         id="peers"
         eyebrow="Against other cities"
-        title="Portland spends about what Seattle spends, for 150,000 fewer people"
+        title="Portland spends more per resident than Seattle — which owns a power company"
         lead={
           <>
             Every per-capita comparison of city budgets is a trap, because cities draw their
-            boundaries in different places. But once you control for that, one comparison survives:
-            Seattle&apos;s budget is the same size as Portland&apos;s while serving a quarter more
-            residents — and Seattle&apos;s number includes a municipal electric utility
-            Portland doesn&apos;t own.
+            boundaries in different places. But one comparison survives the caveats: Portland
+            budgets about $13,500 per resident against Seattle&apos;s $11,400 — and Seattle&apos;s
+            number carries a $1.8&nbsp;billion municipal electric utility that Portland
+            doesn&apos;t own at all. Owning the water pipes explains why Portland outspends Denver
+            or Boston. It does not explain Seattle.
           </>
         }
         aside={

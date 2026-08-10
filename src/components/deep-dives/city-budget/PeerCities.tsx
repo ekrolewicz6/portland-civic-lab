@@ -1,5 +1,5 @@
 import { fmtMoney } from "@/lib/city-budget/types";
-import { PEERS, POLICE_SHARE, LINCOLN_FISC } from "@/lib/city-budget/comparisons";
+import { PEERS, POLICE_SHARE, LINCOLN_FISC, CENSUS_POP } from "@/lib/city-budget/comparisons";
 
 /**
  * Peer comparison, built to resist its own misuse.
@@ -35,6 +35,21 @@ export default function PeerCities() {
             Lincoln Institute&apos;s standardized city database
           </a>{" "}
           is the reference for that.
+        </p>
+        <p className="mt-2 max-w-3xl text-[12px] leading-relaxed text-[var(--color-ink-muted)]">
+          Every total below is an <strong>adopted</strong> budget read from that city&apos;s own
+          budget document, and every population is a{" "}
+          <a
+            href={CENSUS_POP}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-[var(--color-parchment)] underline-offset-2 hover:decoration-[var(--color-river)]"
+          >
+            Census Bureau 2025 estimate
+          </a>
+          , so the denominator is consistent even where a city&apos;s own book counts differently.
+          Netting conventions still differ: Austin and Denver publish totals net of internal
+          duplication, Seattle and Minneapolis do not.
         </p>
       </div>
 
@@ -94,7 +109,9 @@ export default function PeerCities() {
                   className={`rounded-sm px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wide ${
                     s.v === "in"
                       ? "bg-[#e3efe7] text-[var(--color-fern)]"
-                      : "bg-[#f0eeec] text-[var(--color-ink-muted)]"
+                      : s.v === "partial"
+                        ? "bg-[#f6ecd9] text-[var(--color-ember)]"
+                        : "bg-[#f0eeec] text-[var(--color-ink-muted)]"
                   }`}
                 >
                   {s.k} {s.v}
@@ -150,16 +167,24 @@ export default function PeerCities() {
                 </div>
                 <p className="mt-0.5 font-mono text-[10px] text-[var(--color-ink-muted)]">
                   {fmtMoney(p.police)} of {fmtMoney(p.generalFund)} · {p.denominator}
+                  {p.published ? " · city's own figure" : " · our computation"}
                 </p>
+                {p.note && (
+                  <p className="mt-0.5 text-[11px] leading-snug text-[var(--color-ink-muted)]">
+                    {p.note}
+                  </p>
+                )}
               </div>
             );
           })}
         </div>
 
         <p className="mt-4 border-t border-[var(--color-parchment)] pt-3 text-[12.5px] leading-relaxed text-[var(--color-ink-light)]">
-          Among the four comparable cities Portland sits with Sacramento and Austin, above Seattle.
-          Portland&apos;s figure is a share of <em>discretionary</em> general fund — a deliberately
-          narrow slice — which is why it looks high next to cities quoting a whole general fund.
+          Among the four structurally comparable cities, Portland sits between Austin and
+          Minneapolis and well above Seattle. But Portland&apos;s figure is a share of{" "}
+          <em>discretionary</em> general fund — a narrower slice than any peer quotes — so if
+          anything it understates how comparable the three are. Only Austin publishes its own
+          percentage; the rest are ours.
         </p>
       </div>
     </div>
