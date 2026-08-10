@@ -17,7 +17,12 @@
     "fetch:employment": "npx tsx ingest/fetch-oregon-employment.ts",
     "scrape:permits": "npx tsx ingest/scrape-permit-details.ts",
     "analyze:bottlenecks": "npx tsx ingest/analyze-permit-bottlenecks.ts",
-    "test": "playwright test"
+    "test": "playwright test",
+    "budget:fetch": "npx tsx ingest/budget/fetch-books.ts",
+    "budget:inspect": "npx tsx ingest/budget/inspect-pages.ts",
+    "budget:parse": "npx tsx ingest/budget/parse-vol1-funds.ts && npx tsx ingest/budget/parse-vol2-programs.ts && npx tsx ingest/budget/parse-citywide.ts",
+    "budget:verify": "npx tsx ingest/budget/reconcile.ts",
+    "budget:build": "npm run budget:fetch && npm run budget:parse && npm run budget:verify && npx tsx ingest/budget/build-dataset.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",

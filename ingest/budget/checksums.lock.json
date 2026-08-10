@@ -1,0 +1,34 @@
+{
+  "fy": "2026-27",
+  "lockedAt": "2026-08-10",
+  "files": {
+    "vol1": {
+      "sha256": "30127f3948a6771e33ed5ac0af2ab758648778856ee9c63413c9182ca4f2b2b2",
+      "bytes": 27713173,
+      "pages": 388,
+      "pdfCreated": "Wed Aug  5 16:49:50 2026 PDT",
+      "url": "https://www.portland.gov/budget/2026-2027-budget/documents/fy-26-27-adopted-budget-book-volume-1-0/download"
+    },
+    "vol2": {
+      "sha256": "3b50ad08a2a31c732fd4921a72cd9d3f706c3b24990041d261a837dccf1a6846",
+      "bytes": 67284463,
+      "pages": 1090,
+      "pdfCreated": "Mon Aug  3 20:10:07 2026 PDT",
+      "url": "https://www.portland.gov/budget/2026-2027-budget/documents/fy-26-27-adopted-budget-book-volume-2/download"
+    },
+    "amendments": {
+      "sha256": "1878f2a35b5628e223a9a8eb1cefbe5946402219ff3544a7183fdc19629d7228",
+      "bytes": 501458,
+      "pages": 34,
+      "pdfCreated": "Thu Jul  2 16:40:45 2026 PDT",
+      "url": "https://www.portland.gov/budget/2026-2027-budget/documents/fy-26-27-budget-amendments-only-passed-amendments/download"
+    },
+    "supplemental": {
+      "sha256": "7596e4d02bbec47667e88593917006fd4461e48973c87b0d256dea5fc222bab5",
+      "bytes": 116959,
+      "pages": 1,
+      "pdfCreated": "Mon Aug  3 14:56:59 2026 PDT",
+      "url": "https://www.portland.gov/budget/2026-2027-budget/documents/july-2026-supplemental-budget/download"
+    }
+  }
+}

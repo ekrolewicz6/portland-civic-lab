@@ -26,6 +26,17 @@ interface DeepDive {
 
 const DIVES: DeepDive[] = [
   {
+    href: "/deep-dives/city-budget",
+    eyebrow: "City finances",
+    title: "Portland's $8.5 billion, line by line",
+    blurb:
+      "Every fund, every bureau, every program in the FY 2026-27 adopted budget — parsed from 1,478 pages of PDF and reconciled to the dollar. Trace where the money comes from, what it buys, and which 9% Council actually controls.",
+    stat: "$8.55B",
+    statLabel: "traced to the dollar",
+    icon: Landmark,
+    available: true,
+  },
+  {
     href: "/deep-dives/data-centers",
     eyebrow: "Energy, water & taxes",
     title: "Oregon built the cloud. Was it worth the bill?",
