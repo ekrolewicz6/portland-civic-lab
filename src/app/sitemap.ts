@@ -33,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/donate`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/deep-dives`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     {
+      url: `${BASE_URL}/deep-dives/i-5-rose-quarter`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/deep-dives/city-budget`,
       lastModified: now,
       changeFrequency: "monthly",

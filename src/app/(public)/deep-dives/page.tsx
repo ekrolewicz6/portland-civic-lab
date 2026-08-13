@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
-import { ArrowRight, Building2, Landmark, Network, Scale, Server, Store, TreePine, Users } from "lucide-react";
+import { ArrowRight, Building2, Landmark, Network, Scale, Server, Store, TreePine, Users, Route } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
@@ -25,6 +25,17 @@ interface DeepDive {
 }
 
 const DIVES: DeepDive[] = [
+  {
+    href: "/deep-dives/i-5-rose-quarter",
+    eyebrow: "Freeways",
+    title: "Portland is about to run the experiment by accident",
+    blurb:
+      "On September 11 southbound I-5 closes for five weeks and the traffic goes to I-405 and I-205 — nearly what freeway-removal advocates propose permanently. Both sides' predictions, and the test that decides them, published before the closure begins.",
+    stat: "$2.1B",
+    statLabel: "for 1.8 miles, up from $450M promised in 2017",
+    icon: Route,
+    available: true,
+  },
   {
     href: "/deep-dives/city-budget",
     eyebrow: "City finances",
