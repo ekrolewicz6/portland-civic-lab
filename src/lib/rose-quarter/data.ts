@@ -3,8 +3,9 @@
  *
  * Compiled 2026-08-13 from ODOT's own project library, court filings, agency
  * documents and contemporaneous reporting. Time-sensitive items to re-check:
- *   - the cost figure (ODOT's published number and the draft internal
- *     estimates diverge sharply as of August 2026)
+ *   - the cost figure: the estimate presented to the Transportation Commission
+ *     in August 2026 is about $3.5B, while ODOT's public project pages still
+ *     show an older $1.96-2.08B range
  *   - the state comprehensive-plan case, which has no public docket record
  *     after the January 2026 trial date
  *   - the September closure, which begins 2026-09-11
@@ -174,6 +175,13 @@ export const SOURCES = {
     url: "https://www.opb.org/article/2025/05/09/odot-criticized-for-credibility-problem-as-rose-quarter-projects-price-tag-expected-to-top-2b/",
     kind: "news",
   },
+  otcAug2026: {
+    id: "otcAug2026",
+    title: "August 2026 Oregon Transportation Commission support materials",
+    org: "Oregon Transportation Commission",
+    url: "https://www.oregon.gov/odot/Get-Involved/Pages/August-OTC-Support-Materials.aspx",
+    kind: "primary",
+  },
   draftCost2026: {
     id: "draftCost2026",
     title: "Price tag jumps past $3B as the funding gap balloons, records show",
@@ -275,9 +283,12 @@ export const HEADLINE = {
   /** ODOT's published estimate as of August 2026. */
   costOfficialLow: 1_960_000_000,
   costOfficialHigh: 2_080_000_000,
-  /** Draft internal estimates reported August 2026. Not an official figure. */
-  costDraftLow: 3_200_000_000,
-  costDraftHigh: 3_600_000_000,
+  /** Presented to the Oregon Transportation Commission, August 2026. */
+  costCurrentLow: 3_200_000_000,
+  costCurrentHigh: 3_600_000_000,
+  costCurrentAbout: 3_500_000_000,
+  /** Spent or committed in Phases 1A and 1B. The rest is unfunded. */
+  committedToDate: 400_000_000,
   costOriginal2017: 450_000_000,
   /** ODOT's project length, in miles. Critics use 1.5 for the widening itself. */
   lengthMiles: 1.8,
@@ -399,7 +410,7 @@ export const COST_HISTORY: CostPoint[] = [
   { date: "Sept 2021", value: 1_450_000_000, label: "Hybrid 3 adopted, with the buildable cover", sourceId: "otcDec2025" },
   { date: "May 2024", value: 1_900_000_000, label: "At the time of the lawsuits", sourceId: "compPlanSuit" },
   { date: "May 2025", value: 2_080_000_000, label: "Risk-based re-estimate", sourceId: "credibility" },
-  { date: "Aug 2026", value: 3_600_000_000, label: "Draft internal estimate", sourceId: "draftCost2026", draft: true },
+  { date: "Aug 2026", value: 3_500_000_000, label: "Presented to the Transportation Commission", sourceId: "otcAug2026" },
 ];
 
 // ── the legal fight ─────────────────────────────────────────────────

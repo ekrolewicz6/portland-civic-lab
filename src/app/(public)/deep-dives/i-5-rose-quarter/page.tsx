@@ -16,7 +16,7 @@ import {
 } from "@/components/deep-dives/rose-quarter/Sections";
 
 export const metadata: Metadata = pageMeta({
-  title: "The Rose Quarter Experiment — a $2 billion freeway fight, about to be tested",
+  title: "The Rose Quarter Experiment — a $3.5 billion freeway fight, about to be tested",
   description:
     "On September 11 Portland closes southbound I-5 and sends the traffic to I-405 and I-205 — nearly what removal advocates propose permanently. Both sides' predictions, published before the closure, with the test written down in advance.",
   path: "/deep-dives/i-5-rose-quarter",
@@ -120,8 +120,8 @@ export default function RoseQuarterPage() {
                 <div>
                   <dt className="text-[14px] font-semibold text-white">What they don&apos;t</dt>
                   <dd className="mt-1 text-[14px] leading-relaxed text-white/65">
-                    Whether covering the freeway requires widening it. That is the whole fight, and
-                    it is narrower than the public argument suggests.
+                    Two fights, tangled together: whether to widen at all, and whether the covers
+                    require the widening. Freight and labour want the lanes on their own merits.
                   </dd>
                 </div>
                 <div>
@@ -137,7 +137,7 @@ export default function RoseQuarterPage() {
 
           <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-white/10 bg-white/10 sm:grid-cols-4">
             {[
-              { k: "Cost today", v: "$2.1B" },
+              { k: "Cost today", v: "$3.5B" },
               { k: "Miles", v: String(HEADLINE.lengthMiles) },
               { k: "Promised in 2017", v: "$450M" },
               { k: "Closure begins", v: "Sept 11" },
@@ -153,9 +153,8 @@ export default function RoseQuarterPage() {
             ))}
           </dl>
           <p className="mt-3 max-w-3xl text-[12px] leading-relaxed text-white/45">
-            $2.1B is ODOT&apos;s published estimate. Draft internal records reported in August 2026
-            put it between $3.2B and $3.6B, with roughly $3 billion unfunded. Both figures appear on
-            this page, labelled.
+About $400M has been spent or committed. The rest — roughly $3&nbsp;billion — is
+            essentially unfunded. ODOT&apos;s own website still shows an older $1.96–2.08B figure.
           </p>
         </div>
       </header>
@@ -265,6 +264,26 @@ export default function RoseQuarterPage() {
             </p>
           </div>
 
+          <div className="rounded-sm border-l-2 border-[var(--color-ember)] bg-[var(--color-paper-warm)] p-5 sm:p-6">
+            <h3 className="text-[16px] font-semibold text-[var(--color-ink)]">
+              &ldquo;Highest crash rate&rdquo; is doing a lot of work in that sentence
+            </h3>
+            <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+              ODOT&apos;s crash statistic is a <em>rate</em>, and the crashes behind it are
+              overwhelmingly low-speed property damage — the rear-enders congestion produces, not the
+              collisions that kill people. That distinction matters because ODOT&apos;s own safety
+              policy prioritises fatal and serious-injury crashes, the standard most agencies now
+              work to.
+            </p>
+            <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+              By that measure the state&apos;s deadliest facilities are not interstates at all. They
+              are the old &ldquo;orphan highways&rdquo; that predate the interstate era and now run
+              as arterials through neighbourhoods while still being managed like highways — TV
+              Highway, 82nd Avenue, Powell, Barbur. Those roads have the fatalities. The Rose Quarter
+              has the fender-benders and the headline.
+            </p>
+          </div>
+
           <div>
             <h3 className="mb-3 font-editorial-normal text-[22px] text-[var(--color-canopy)]">
               The rest of what comes with it
@@ -311,9 +330,12 @@ export default function RoseQuarterPage() {
                 <em>increase</em> crashes by about 13%.
               </p>
               <p className="mt-2 text-[12.5px] leading-relaxed text-[var(--color-ink-muted)]">
-                We can document that the objection came first and the flyover came after. We could
-                not find a source in which ODOT says the objection caused it, so we do not claim
-                that.
+                One correction to the obvious story: testimony in the comprehensive-plan case
+                indicates the flyover was proposed by the <em>City</em> — the Portland Bureau of
+                Transportation — rather than invented by ODOT to appease the arena. Who benefits and
+                who suggested it are different questions, and the documented sequence supports the
+                first more than the second. We have not been able to read the transcript ourselves,
+                so this is flagged as unverified.
               </p>
             </div>
           </div>
@@ -409,6 +431,25 @@ export default function RoseQuarterPage() {
               table by the Governor, while ODOT&apos;s environmental review said it had not been
               considered. Whatever you think should be built here, that is not how a $2 billion
               decision is supposed to get made.
+            </p>
+          </div>
+
+          <div className="rounded-sm border border-white/15 bg-white/[0.05] p-6 backdrop-blur">
+            <h3 className="text-[16px] font-semibold text-white">
+              And a second alternative that was never analysed either
+            </h3>
+            <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-white/70">
+              Pricing is the alternative everyone argues about. But there is another one that has
+              never been costed in any published document: <strong className="text-white">build the
+              covers without widening the freeway.</strong> If the goal is reconnecting Albina, that
+              is the option that delivers it most directly — and no environmental review, no design
+              report and no funding request has ever priced it.
+            </p>
+            <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-white/70">
+              Its mirror image finally got asked out loud at the August 2026 Transportation
+              Commission meeting, where a commissioner asked what the project would cost{" "}
+              <em>without</em> the covers. That the question is only being raised now, nine years and
+              $400 million in, is its own answer about how this project was scoped.
             </p>
           </div>
 
@@ -549,10 +590,17 @@ export default function RoseQuarterPage() {
             </h3>
             <ul className="mt-3 space-y-2 text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
               <li>
-                <strong>The status of both lawsuits.</strong> The public record stops after the state
-                trial was reset to January 2026. We found no reporting on what happened at or after
-                that date, and no docket is publicly searchable. Treat every status on this page as
-                current to the last verifiable filing, not to today.
+                <strong>The status of both lawsuits.</strong> Press coverage stops after the state
+                trial was reset to January 2026, and we have not yet been able to pull the docket. A
+                trial appears to have been held; until we can read the record we are not going to
+                describe its outcome. Treat every status on this page as current to the last
+                verifiable filing, not to today. This is the biggest gap on the page and the one we
+                are working on first.
+              </li>
+              <li>
+                <strong>Who originated the flyover.</strong> Testimony in the state case reportedly
+                attributes the proposal to the City rather than to ODOT. We have not read the
+                transcript.
               </li>
               <li>
                 <strong>An itemised cost for the flyover ramp.</strong> Only a bundled ~$170M package
@@ -570,6 +618,12 @@ export default function RoseQuarterPage() {
                 <strong>&ldquo;Most expensive highway project per mile in the US.&rdquo;</strong> The
                 arithmetic supports something close to it, but no ranking body certifies this. We do
                 not assert it.
+              </li>
+              <li>
+                <strong>The August 2026 Transportation Commission figures.</strong> The ~$3.5B
+                estimate and the ~$400M committed-to-date figure were presented at a meeting held
+                the same day this page was written. We link the Commission&apos;s materials page;
+                the individual documents were not yet indexed when we published.
               </li>
             </ul>
           </div>

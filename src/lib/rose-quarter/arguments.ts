@@ -9,10 +9,12 @@
  *
  * Two things make this fight unusual and both belong in the framing:
  *
- *   1. Almost nobody disputes the history. ODOT, Albina Vision Trust and No
- *      More Freeways all agree a Black neighbourhood was destroyed to build
- *      this freeway and that something is owed. The disagreement is narrower:
- *      does covering the freeway require widening it?
+ *   1. Almost nobody disputes the history. ODOT, Albina Vision Trust and the
+ *      opposition all agree a Black neighbourhood was destroyed to build this
+ *      freeway and that something is owed. What is contested is really two
+ *      questions tangled together: whether to widen the freeway at all — freight
+ *      and labour want the lanes on their own merits — and whether the covers
+ *      can be had without the widening.
  *   2. The strongest evidence against the widening is not from advocates. It
  *      is from ODOT's own consultant, ODOT's own safety analysis, and the
  *      Eisenhower administration's own public works planner.
@@ -307,9 +309,9 @@ export const CASE_AGAINST: Argument[] = [
     n: "03",
     claim: "The safety case does not survive ODOT's own safety analysis",
     body:
-      "The crashes here are overwhelmingly low-speed, non-injury rear-enders — the signature of congestion, not of geometry. Metro has said the state has not shown this section is unusually dangerous for serious crashes, and other ODOT facilities, including 82nd Avenue and Powell, have worse records and actual fatalities. More pointedly, ODOT's own modelling concedes the relocated ramp fails Highway Safety Manual standards and raises crashes.",
+      "ODOT quotes a crash RATE, and the crashes behind it are overwhelmingly low-speed property damage — the rear-enders congestion produces, not the collisions that kill people. ODOT's own safety policy prioritises fatal and serious-injury crashes, and by that measure the state's deadliest roads are the old orphan highways that predate the interstate era and now run through neighbourhoods while still being managed like highways: TV Highway, 82nd, Powell, Barbur. Metro has said the state never showed this section is unusually dangerous for serious crashes. More pointedly, ODOT's own modelling concedes the relocated ramp fails Highway Safety Manual standards and raises crashes.",
     evidence:
-      "ODOT's August 2022 safety technical report projects roughly a 13% crash increase from the new ramp configuration versus no-build.",
+      "ODOT's August 2022 safety technical report projects roughly a 13% crash increase from the new ramp configuration versus no-build. Spending $3.5 billion at the state's fender-bender capital while its fatality corridors wait is a choice, not a safety programme.",
     sourceId: "odotCrashRamp",
   },
   {
@@ -336,7 +338,7 @@ export const CASE_AGAINST: Argument[] = [
     body:
       "This is the crux, and it is the reason the two sides are not actually arguing about the same thing. Nothing in the engineering requires the caps and the auxiliary lanes to be one project. They are bundled because bundling is what made the money available — which means the neighbourhood's restoration is being used as the political vehicle for the lane expansion, and the caps are the hostage.",
     evidence:
-      "Opponents note there is no binding obligation compelling ODOT to build the covers once the lanes are widened. AVT's counter is that the covers cannot be built without the highway work.",
+      "Opponents note there is no binding obligation compelling ODOT to build the covers once the lanes are widened. AVT's counter is that the covers cannot be built without the highway work. Notably, no published document has ever priced the covers-without-widening option — it has never been analysed at all.",
     sourceId: "advocatesSpar",
   },
 ];

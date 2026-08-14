@@ -25,7 +25,7 @@ export default function ExperimentTracker({ now = new Date() }: { now?: Date }) 
   const before = days > 0;
 
   const odot = PREDICTIONS.filter((p) => p.side === "odot");
-  const opp = PREDICTIONS.filter((p) => p.side === "opposition");
+  const opp = PREDICTIONS.filter((p) => p.side === "hypothesis");
   const stationCount =
     CORRIDORS.reduce((n, c) => n + c.stations.length, 0) + CORDON.southbound.length;
 
@@ -60,9 +60,9 @@ export default function ExperimentTracker({ now = new Date() }: { now?: Date }) 
           items={odot}
         />
         <PredictionColumn
-          title="What the opposing hypothesis expects"
+          title="What the research literature predicts"
           tone="clay"
-          note="Stated from published positions — see the sourcing note below."
+          note="A hypothesis with a long pedigree — not any organisation's forecast. See below."
           items={opp}
         />
       </div>
@@ -71,20 +71,19 @@ export default function ExperimentTracker({ now = new Date() }: { now?: Date }) 
       <div className="rounded-sm border border-[var(--color-ember)]/40 bg-[#f6ecd9]/40 p-5">
         <h4 className="flex items-center gap-2 text-[14px] font-semibold text-[var(--color-ink)]">
           <AlertTriangle className="h-4 w-4 text-[var(--color-ember)]" />
-          One side has a quotable number. The other does not, yet.
+          Only one side has made a prediction, and that is worth saying plainly.
         </h4>
         <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-[var(--color-ink-light)]">
-          ODOT published a figure with a date, so we can quote it. We could not find an equivalent
-          public, dated prediction from opponents specific to this closure — so rather than
-          attribute a number to anyone who has not stated one, we have pre-registered the
-          reduced-demand hypothesis from published positions and the research literature, and
-          marked it as our formulation.
+          ODOT published a figure with a date because it had to — it is running the closure and the
+          public is being asked to plan around it. No organisation opposing the widening has
+          forecast what will happen; their public posture is that this is a necessary maintenance
+          activity, not a test of anything. So we have not put words in anyone&apos;s mouth.
         </p>
         <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-[var(--color-ink-light)]">
-          There is also a real asymmetry worth naming: ODOT is a public agency whose forecast is an
-          official document the public is being asked to plan around. No More Freeways is an
-          advocacy coalition. Holding both to an identical scoring standard without saying that
-          would itself be a distortion.
+          What is pre-registered on the other side is the reduced-demand hypothesis as it appears in
+          the research literature, attributed there and nowhere else. It is a different kind of
+          claim from an agency forecast, and scoring the two as though they were equivalent would
+          itself be a distortion.
         </p>
         <div className="mt-3 border-t border-[var(--color-ember)]/30 pt-3">
           <p className="text-[13px] font-semibold text-[var(--color-ink)]">{INVITATION.heading}</p>
@@ -140,7 +139,7 @@ export default function ExperimentTracker({ now = new Date() }: { now?: Date }) 
       {/* ── how we tell diversion from evaporation ── */}
       <div className="rounded-sm bg-[var(--color-paper-warm)] p-5 sm:p-6">
         <h4 className="text-[15px] font-semibold text-[var(--color-ink)]">
-          The one measurement that actually decides the argument
+          Telling diversion from evaporation — and why it is hard here
         </h4>
         <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
           If traffic simply moves to I-405 and I-205, that tells us the road network has slack — it
@@ -149,15 +148,31 @@ export default function ExperimentTracker({ now = new Date() }: { now?: Date }) 
           impossible, because traffic can leak onto streets nobody counts.
         </p>
         <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-          Here it is possible, because of an accident of geography.{" "}
+          One clean instrument exists, thanks to geography.{" "}
           <strong className="text-[var(--color-ink)]">
             There are exactly two road crossings of the Columbia River in the metro area, and both
             are metered.
           </strong>{" "}
-          Nothing can slip around them; the next bridge is forty miles east. So for traffic coming
-          south out of Washington, the count across those two bridges is a direct measure of trips
-          taken — not a proxy for it.
+          Nothing can slip around them; the next bridge is forty miles east. For traffic coming south
+          out of Washington, the count across those two bridges is a direct measure of trips taken.
         </p>
+        <div className="mt-3 max-w-3xl rounded-sm border-l-2 border-[var(--color-clay)] bg-white p-4">
+          <p className="text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+            <strong className="text-[var(--color-ink)]">But that instrument is narrower than it
+            looks,</strong> and we would rather say so now than discover it in October. The cordon
+            only sees trips that cross the river. A large share of southbound traffic at the Rose
+            Quarter never does — it enters from North and Northeast Portland, south of both bridges,
+            and the cordon is blind to all of it. Our own detector data shows volume changing
+            substantially between the river and the Rose Quarter, which means local traffic is a
+            major component, not a rounding error.
+          </p>
+          <p className="mt-2 text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+            So the cordon is a strong test of one clearly-defined slice of the problem, not a verdict
+            on the whole of it. We will also report a screenline between the river and the Rose
+            Quarter to size the local share directly, and where the arterial counts needed to close
+            the gap do not exist, the page will say so rather than quietly narrowing the claim.
+          </p>
+        </div>
         <div className="mt-4 grid gap-3 sm:grid-cols-3">
           <Rule
             v={`≥ ${THRESHOLDS.diversionRatio}`}

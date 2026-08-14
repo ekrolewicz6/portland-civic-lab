@@ -2,27 +2,30 @@
  * The predictions on record, before the closure.
  *
  * ODOT's forecast is quoted verbatim from its own public notice, with a date
- * and a link. That is the standard every prediction on this page has to meet.
+ * and a link. That is the standard every prediction here has to meet.
  *
- * The opposing prediction does not yet meet it, and we say so rather than
- * quietly paraphrasing. The reduced-demand hypothesis is well established in
- * the literature and is No More Freeways' consistent public position, so it is
- * pre-registered here attributed to the ORGANISATION and the literature — not
- * to any individual, and not as a quotation nobody can check. Both sides have
- * an open invitation to put a specific, dated number on the record before
- * September 11, and if they do it gets added here with its source.
+ * NOTHING ON THE OTHER SIDE MEETS IT, and that is a finding rather than a gap
+ * to paper over. No advocacy organisation has made a public prediction about
+ * this closure. Freeway-opposition groups' public posture is that the closure
+ * is a necessary maintenance activity, not a test of anything — so attributing
+ * a forecast to them would misrepresent their position.
+ *
+ * What we pre-register instead is the reduced-demand hypothesis as it appears
+ * in the transportation research literature, attributed to that literature and
+ * to nobody else. It is a real, testable claim with a long pedigree, and this
+ * closure bears on it. It is not any Portland organisation's stated forecast.
  *
  * The asymmetry is stated on the page too: ODOT is a public agency whose
- * forecast is an official planning document that people are being asked to
- * plan around. No More Freeways is an advocacy group. Scoring them by an
- * identical standard without noting that difference would itself distort.
+ * forecast is an official document the public is asked to plan around. A
+ * hypothesis from the literature is not the same kind of object, and scoring
+ * them as though they were would itself distort.
  */
 
 export type Verdict = "borne-out" | "partly" | "not-borne-out" | "not-testable" | "too-early";
 
 export interface Prediction {
   id: string;
-  side: "odot" | "opposition";
+  side: "odot" | "hypothesis";
   who: string;
   role: string;
   /** Verbatim where we have it; null where we are stating a hypothesis instead. */
@@ -79,15 +82,15 @@ export const PREDICTIONS: Prediction[] = [
   },
   {
     id: "N2",
-    side: "opposition",
-    who: "No More Freeways",
-    role: "The coalition opposing the widening",
+    side: "hypothesis",
+    who: "The reduced-demand hypothesis",
+    role: "From the research literature — not any organisation's forecast",
     quote: null,
     claim:
-      "After an initial shock of a few days, traffic will redistribute and conditions will settle close to normal — because some trips will not be made at all. This is the reduced-demand hypothesis: the mirror image of induced demand, and the reason advocates argue the corridor does not need more lanes.",
-    sourceTitle: "No More Freeways — published position on induced and reduced demand",
-    sourceUrl: "https://nomorefreewayspdx.com/",
-    publishedOn: null,
+      "After an initial shock of a few days, traffic redistributes and conditions settle close to normal, because some trips are not made at all. This is the mirror image of induced demand, formalised by Anthony Downs in 1962 and repeatedly observed after unplanned closures elsewhere.",
+    sourceTitle: "Downs, The Law of Peak-Hour Expressway Congestion, Traffic Quarterly",
+    sourceUrl: "https://trid.trb.org/View/697530",
+    publishedOn: "1962",
     retrievedOn: "2026-08-13",
     isParaphrase: true,
     rule: "Borne out if peak travel time on the realistic path is within 1.25× the matched baseline on at least 4 of 5 weekdays in week 3. Partly, if 1.25–1.5×.",
@@ -95,15 +98,15 @@ export const PREDICTIONS: Prediction[] = [
   },
   {
     id: "N3",
-    side: "opposition",
-    who: "No More Freeways",
-    role: "The coalition opposing the widening",
+    side: "hypothesis",
+    who: "Reduced demand, the strong form",
+    role: "From the research literature — not any organisation's forecast",
     quote: null,
     claim:
-      "Some trips will disappear rather than move. This is the claim that actually bears on the $2 billion question, and it is the one we designed the measurement around.",
-    sourceTitle: "The case against the I-5 Rose Quarter widening",
-    sourceUrl: "https://cityobservatory.org/case_against_rose_quarter/",
-    publishedOn: null,
+      "Some trips disappear rather than move. This is the claim that actually bears on whether the corridor needs more lanes, and the hardest one to measure — which is why the method below spends most of its effort on it.",
+    sourceTitle: "Melo, Graham & Canavan, Effects of Road Investments on Induced Travel Demand",
+    sourceUrl: "https://doi.org/10.3141/2297-20",
+    publishedOn: "2012",
     retrievedOn: "2026-08-13",
     isParaphrase: true,
     rule: "Demonstrated if southbound volume across the two Columbia River crossings in week 3 falls to 0.95 or less of the matched baseline, and the drop exceeds two standard deviations of normal day-to-day variation. At 0.98 or above, traffic merely diverted.",
@@ -121,9 +124,9 @@ export const TEMPORARY_CAVEAT = {
   ],
 } as const;
 
-/** The open invitation, published before the closure. */
+/** Why only one side has a number, and an invitation to change that. */
 export const INVITATION = {
-  heading: "An open invitation, before September 11",
-  body: "ODOT has put a number on the record. We have pre-registered the opposing hypothesis from published positions rather than attributing a figure to anyone who has not stated one. If you speak for ODOT, for No More Freeways, for Albina Vision Trust, or for anyone else with a stake here, and you want a specific prediction scored against this method, send it with a date and we will publish it alongside the others — before the closure begins, not after.",
+  heading: "Only one side has made a prediction. That is worth saying plainly.",
+  body: "ODOT put a figure on the record because it had to — it is the agency running the closure and the public is being asked to plan around it. No organisation opposing the widening has forecast what will happen; their public posture is that this is a necessary maintenance activity, not a test of anything. So we have not attributed a forecast to anyone who has not made one. What is pre-registered on the other side is a hypothesis from the research literature, which is a different kind of claim and is labelled as one. If any party wants a specific, dated prediction scored against this method, send it before September 11 and it goes up alongside the rest — before the closure, not after.",
   contact: "/contact",
 } as const;

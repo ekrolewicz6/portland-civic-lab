@@ -15,20 +15,19 @@ const fmt = (n: number) =>
 export default function CostEscalation() {
   const max = Math.max(...COST_HISTORY.map((c) => c.value));
   const first = COST_HISTORY.find((c) => c.date === "2017")!;
-  const official = HEADLINE.costOfficialHigh;
+  const official = HEADLINE.costCurrentAbout;
   const multipleOfficial = official / first.value;
-  const multipleDraft = HEADLINE.costDraftHigh / first.value;
+  const multipleDraft = HEADLINE.costCurrentHigh / first.value;
 
   return (
     <div className="space-y-6">
       <div className="grid gap-4 sm:grid-cols-3">
         <Stat k={fmt(first.value)} t="promised in 2017" d="The figure legislators voted for when they raised transportation taxes." />
-        <Stat k={fmt(official)} t="ODOT's published estimate today" d={`${multipleOfficial.toFixed(1)}× the 2017 number, for 1.8 miles.`} />
+        <Stat k={fmt(official)} t="the estimate as of August 2026" d={`About ${multipleOfficial.toFixed(1)}× the 2017 number, for 1.8 miles.`} />
         <Stat
-          k={fmt(HEADLINE.costDraftHigh)}
-          t="draft internal estimate, Aug 2026"
-          d={`${multipleDraft.toFixed(1)}× — reported from records, not published by ODOT. Roughly $3B of it unfunded.`}
-          tone="draft"
+          k={fmt(HEADLINE.committedToDate)}
+          t="actually spent or committed"
+          d="Phases 1A and 1B. Everything after that — the widening and the covers — is roughly $3B, and essentially unfunded."
         />
       </div>
 
@@ -71,8 +70,9 @@ export default function CostEscalation() {
           Not all of that growth is waste. The 2017 figure bought a lane project; the current one
           includes a buildable cover that did not exist in the original scope, and Oregon has since
           lost roughly $388 million of federal money that was meant to pay for exactly that piece.
-          But the chair of the Oregon Transportation Commission put the underlying problem plainly
-          in 2025:{" "}
+          But the gap is now larger than the entire original project: about {fmt(HEADLINE.committedToDate)}{" "}
+          has been spent or committed, and the remainder is unfunded. The chair of the Oregon
+          Transportation Commission put the underlying problem plainly in 2025:{" "}
           <a
             href={SOURCES.credibility.url}
             target="_blank"
