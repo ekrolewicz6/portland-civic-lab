@@ -238,6 +238,34 @@ export const SOURCES = {
     url: "https://www.kgw.com/article/news/community/portland-city-council-increases-albina-settlement-displaced-black-families/283-c7b3fb40-e5fa-4d26-919b-4d039307aaf8",
     kind: "news",
   },
+  avtPosition: {
+    id: "avtPosition",
+    title: "Transportation and the highway cover — published position",
+    org: "Albina Vision Trust",
+    url: "https://www.albinavisioninc.com/transportation",
+    kind: "primary",
+  },
+  avtWithdrawal2020: {
+    id: "avtWithdrawal2020",
+    title: "Albina Vision Trust withdraws support for the I-5 Rose Quarter project",
+    org: "Willamette Week",
+    url: "https://www.wweek.com/news/state/2020/06/30/racial-justice-group-albina-vision-trust-now-wont-support-i-5-rose-quarter-project/",
+    kind: "news",
+  },
+  avtEis2019: {
+    id: "avtEis2019",
+    title: "Albina Vision Trust adds its voice to calls for a full environmental impact statement",
+    org: "BikePortland",
+    url: "https://bikeportland.org/2019/03/29/albina-vision-trust-adds-voice-to-growing-concerns-over-odots-i-5-project-with-call-for-full-eis-297794",
+    kind: "news",
+  },
+  portlandRejoins2022: {
+    id: "portlandRejoins2022",
+    title: "After a two-year stoppage, Portland rejoins the project — with conditions",
+    org: "BikePortland",
+    url: "https://bikeportland.org/2022/06/23/after-two-year-stoppage-portland-ready-to-work-on-i-5-rose-quarter-project-357624",
+    kind: "news",
+  },
   avtLand: {
     id: "avtLand",
     title: "Portland councilors advance a land plan with Albina Vision Trust near the Moda Center",
@@ -389,7 +417,7 @@ export const DESIGN_ERAS: DesignEra[] = [
     flint: "Flint restored as a neighbourhood street on the cover",
     covers: "One continuous buildable cover, ~7 acres",
     ramps: "Southbound off-ramp moved south to Wheeler, plus a new flyover to Weidler",
-    note: "Redesigned to satisfy Albina Vision Trust. The flyover followed the Trail Blazers' objection.",
+    note: "Redesign followed the community trust's 2020 walkout and its two public demands: make amends, and make the covers buildable. The flyover came later, after the Blazers objected.",
   },
 ];
 
@@ -490,6 +518,11 @@ export const WHATS_NEXT: NextEvent[] = [
     when: "2027",
     what: "$167.5M of Phase 1B construction",
     why: "The first money that starts building the contested configuration. Stakeholders reached alignment on the scope in March 2026.",
+  },
+  {
+    when: "2027 session",
+    what: "The Legislature decides the project's fate",
+    why: "About $400M is spent or committed; the remaining ~$3B is unfunded. The covers' federal grant — the largest its program ever made — was rescinded, and restoring it would take a different federal administration. The state decides whether to carry the project until that question is answered.",
   },
   {
     when: "Unscheduled",

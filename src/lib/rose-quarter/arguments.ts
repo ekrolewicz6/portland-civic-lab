@@ -161,6 +161,14 @@ export const ARG_SOURCES = {
     url: "https://www.i5rosequarter.org/media/0lfj1gnm/i5rq_fs_gr-01-future_07242026_remediated.pdf",
     kind: "primary",
   },
+  avtWithdrawal2020: {
+    id: "avtWithdrawal2020",
+    title: "Albina Vision Trust withdraws support for the I-5 Rose Quarter project",
+    org: "Willamette Week",
+    url: "https://www.wweek.com/news/state/2020/06/30/racial-justice-group-albina-vision-trust-now-wont-support-i-5-rose-quarter-project/",
+    kind: "news",
+    year: 2020,
+  },
   avtTransportation: {
     id: "avtTransportation",
     title: "Albina Vision Trust on transportation and the highway cover",
@@ -236,12 +244,12 @@ export interface Argument {
 export const CASE_FOR: Argument[] = [
   {
     n: "01",
-    claim: "The cover is the only realistic way Albina gets its land back",
+    claim: "The cap is the mitigation the freeway never paid",
     body:
-      "Albina Vision Trust does not argue that freeways are good. It argues that the freeway is already there, that the land above it is the only place left to rebuild the neighbourhood, and that a cover engineered to carry buildings is the difference between a park and a place people can live. On this reading, opposing the project means opposing the one mechanism that puts developable land back in Black Portlanders' hands — after six years of community process.",
+      "The community position on this project has never been a vote for the lanes — and, less noticed, never a vote against them either. It is deliberately agnostic on the widening, with one narrower demand: if the state runs a project through this neighbourhood, it must tunnel the freeway. Environmental review already forces mitigation of air and noise; the deeper injury is structural. A freeway trench organises an entire district around moving cars through it, and a walkable neighbourhood is close to impossible beside one. On this view the cap is not an amenity. It is remediation of the original harm, owed the same way air-quality mitigation is owed.",
     evidence:
-      "Under the current design the cover creates roughly 7 acres of new surface, about 4 of it buildable, supporting three storeys in the north and up to six in the south.",
-    sourceId: "capExplainer",
+      "When those terms weren't met, the trust walked out — its 2020 withdrawal demanded amends and covers engineered to carry buildings, and the project stalled for two years until it got them. The rebuilding of Albina is proceeding on acquired land regardless; the cap decides whether it happens beside an open trench or on top of a healed street grid.",
+    sourceId: "avtWithdrawal2020",
   },
   {
     n: "02",
@@ -336,7 +344,7 @@ export const CASE_AGAINST: Argument[] = [
     n: "06",
     claim: "You can cover a freeway without widening it",
     body:
-      "This is the crux, and it is the reason the two sides are not actually arguing about the same thing. Nothing in the engineering requires the caps and the auxiliary lanes to be one project. They are bundled because bundling is what made the money available — which means the neighbourhood's restoration is being used as the political vehicle for the lane expansion, and the caps are the hostage.",
+      "This is the crux, and the bundle has two origin stories that are both true. The state's interest was always the freight bottleneck — the lane is the point, the neighbourhood incidental. The caps entered the project as the local price of permission, when the city, the county and Metro made clear the widening would never be permitted without them. Since then the marriage has been forced in both directions: either both things happen or neither does, which means opposing the lanes is made to look like opposing the neighbourhood, and defending the neighbourhood means carrying the lanes.",
     evidence:
       "Opponents note there is no binding obligation compelling ODOT to build the covers once the lanes are widened. AVT's counter is that the covers cannot be built without the highway work. Notably, no published document has ever priced the covers-without-widening option — it has never been analysed at all.",
     sourceId: "advocatesSpar",

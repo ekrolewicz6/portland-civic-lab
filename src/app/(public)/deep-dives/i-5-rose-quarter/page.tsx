@@ -218,7 +218,21 @@ About $400M has been spent or committed. The rest — roughly $3&nbsp;billion �
           </p>
         }
       >
-        <AlbinaWaves />
+        <div className="space-y-6">
+          <AlbinaWaves />
+          <div className="rounded-sm border-l-2 border-[var(--color-ember-bright)] bg-white/[0.05] p-5 backdrop-blur sm:p-6">
+            <p className="max-w-3xl text-[15px] leading-relaxed text-white/85">
+              That history explains the one position in this fight that confuses outsiders. The
+              organisation that carries Albina&apos;s interests is not for the freeway and not
+              against it — it is deliberately agnostic on the lanes (<Src id="avtPosition" />
+              ). Every other actor in these rooms is solving for something else: freight throughput,
+              climate, congestion, an arena. &ldquo;Is this good for the neighbourhood?&rdquo; is
+              the question that has historically landed at the bottom of the list — that is how the
+              neighbourhood was destroyed the first time — and holding it first, to the exclusion of
+              every other cause, is the entire strategy.
+            </p>
+          </div>
+        </div>
       </Section>
 
       {/* ── the project ── */}
@@ -457,15 +471,24 @@ About $400M has been spent or committed. The rest — roughly $3&nbsp;billion �
             <h3 className="text-[16px] font-semibold text-white">The question nobody will put to a vote</h3>
             <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-white/70">
               Nothing in the engineering requires the covers and the extra lanes to be one project.
-              They are bundled because bundling is what unlocked the money. Which means Albina&apos;s
-              restoration is the political vehicle for the lane expansion — and if you oppose the
-              lanes, you are made to look like you oppose the neighbourhood.
+              The bundle is political, and it was tied from both ends. In Salem the project has
+              always been about freight — the lane is the point, the neighbourhood incidental.
+              Locally, the caps became the price of permission: the community trust walked out in
+              2020 demanding amends and buildable covers (<Src id="avtWithdrawal2020" />
+              ), the city withdrew the same day, and Portland only rejoined two years later with the
+              covers as a condition (<Src id="portlandRejoins2022" />
+              ).
             </p>
             <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-white/70">
-              Albina Vision Trust&apos;s answer is that the cover cannot be built without the highway
-              work, and that six years of community process should count for something. No More
-              Freeways&apos; answer is that nothing legally obliges ODOT to build the covers once the
-              lanes are in. Both are right about the thing they are pointing at.
+              So the forced marriage cuts both ways: either both things happen or neither does.
+              Opposing the lanes is made to look like opposing the neighbourhood; defending the
+              neighbourhood means carrying the lanes. One camp answers that nothing legally obliges
+              ODOT to build the covers once the lanes are in; the other, that the covers cannot be
+              built without the highway work and that six years of community process should count
+              for something. Both are right about the thing they are pointing at — and the camps are
+              closer than the public sparring suggests: in 2019 they were jointly demanding a full
+              environmental review (<Src id="avtEis2019" />
+              ).
             </p>
           </div>
         </div>
