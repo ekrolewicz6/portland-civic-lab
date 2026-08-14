@@ -1,4 +1,4 @@
-import { CalendarClock, FlaskConical, AlertTriangle } from "lucide-react";
+import { CalendarClock, FlaskConical } from "lucide-react";
 import { PREDICTIONS, TEMPORARY_CAVEAT, INVITATION } from "@/lib/rose-quarter/predictions";
 import { CORRIDORS, CORDON, PERIODS, THRESHOLDS, PREREGISTERED_AT, corridorLength } from "@/lib/rose-quarter/prereg";
 
@@ -62,35 +62,19 @@ export default function ExperimentTracker({ now = new Date() }: { now?: Date }) 
         <PredictionColumn
           title="What the research literature predicts"
           tone="clay"
-          note="A hypothesis with a long pedigree — not any organisation's forecast. See below."
+          note="The reduced-demand hypothesis, from the transportation literature."
           items={opp}
         />
       </div>
 
-      {/* ── sourcing honesty ── */}
-      <div className="rounded-sm border border-[var(--color-ember)]/40 bg-[#f6ecd9]/40 p-5">
-        <h4 className="flex items-center gap-2 text-[14px] font-semibold text-[var(--color-ink)]">
-          <AlertTriangle className="h-4 w-4 text-[var(--color-ember)]" />
-          Only one side has made a prediction, and that is worth saying plainly.
-        </h4>
-        <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-[var(--color-ink-light)]">
-          ODOT published a figure with a date because it had to — it is running the closure and the
-          public is being asked to plan around it. No organisation opposing the widening has
-          forecast what will happen; their public posture is that this is a necessary maintenance
-          activity, not a test of anything. So we have not put words in anyone&apos;s mouth.
+      {/* ── provenance ── */}
+      <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
+        <p className="max-w-3xl text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+          ODOT&apos;s forecast is quoted verbatim, with a date. The other column is the
+          reduced-demand hypothesis from the transportation literature — well documented after
+          closures elsewhere, though no Portland organisation has forecast this one.{" "}
+          {INVITATION.body}
         </p>
-        <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-[var(--color-ink-light)]">
-          What is pre-registered on the other side is the reduced-demand hypothesis as it appears in
-          the research literature, attributed there and nowhere else. It is a different kind of
-          claim from an agency forecast, and scoring the two as though they were equivalent would
-          itself be a distortion.
-        </p>
-        <div className="mt-3 border-t border-[var(--color-ember)]/30 pt-3">
-          <p className="text-[13px] font-semibold text-[var(--color-ink)]">{INVITATION.heading}</p>
-          <p className="mt-1 max-w-3xl text-[13px] leading-relaxed text-[var(--color-ink-light)]">
-            {INVITATION.body}
-          </p>
-        </div>
       </div>
 
       {/* ── the frozen test ── */}
@@ -247,7 +231,7 @@ function PredictionColumn({
               <p className="text-[14px] leading-relaxed text-[var(--color-ink)]">{p.claim}</p>
             )}
             <p className="mt-1.5 text-[11.5px] text-[var(--color-ink-muted)]">
-              {p.isParaphrase ? "Our statement of the position · " : ""}
+              {p.isParaphrase ? "Our formulation · " : ""}
               <a
                 href={p.sourceUrl}
                 target="_blank"

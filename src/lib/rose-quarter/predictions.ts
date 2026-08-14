@@ -84,7 +84,7 @@ export const PREDICTIONS: Prediction[] = [
     id: "N2",
     side: "hypothesis",
     who: "The reduced-demand hypothesis",
-    role: "From the research literature — not any organisation's forecast",
+    role: "From the transportation literature",
     quote: null,
     claim:
       "After an initial shock of a few days, traffic redistributes and conditions settle close to normal, because some trips are not made at all. This is the mirror image of induced demand, formalised by Anthony Downs in 1962 and repeatedly observed after unplanned closures elsewhere.",
@@ -100,7 +100,7 @@ export const PREDICTIONS: Prediction[] = [
     id: "N3",
     side: "hypothesis",
     who: "Reduced demand, the strong form",
-    role: "From the research literature — not any organisation's forecast",
+    role: "From the transportation literature",
     quote: null,
     claim:
       "Some trips disappear rather than move. This is the claim that actually bears on whether the corridor needs more lanes, and the hardest one to measure — which is why the method below spends most of its effort on it.",
@@ -124,9 +124,8 @@ export const TEMPORARY_CAVEAT = {
   ],
 } as const;
 
-/** Why only one side has a number, and an invitation to change that. */
+/** The standing invitation. */
 export const INVITATION = {
-  heading: "Only one side has made a prediction. That is worth saying plainly.",
-  body: "ODOT put a figure on the record because it had to — it is the agency running the closure and the public is being asked to plan around it. No organisation opposing the widening has forecast what will happen; their public posture is that this is a necessary maintenance activity, not a test of anything. So we have not attributed a forecast to anyone who has not made one. What is pre-registered on the other side is a hypothesis from the research literature, which is a different kind of claim and is labelled as one. If any party wants a specific, dated prediction scored against this method, send it before September 11 and it goes up alongside the rest — before the closure, not after.",
+  body: "If anyone with a stake here wants a specific, dated prediction scored against this method, send it before September 11 and it goes up alongside the rest.",
   contact: "/contact",
 } as const;
