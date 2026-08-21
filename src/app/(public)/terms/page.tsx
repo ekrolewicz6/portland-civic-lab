@@ -13,14 +13,14 @@ const EFFECTIVE_DATE = "June 10, 2026";
 export default function TermsPage() {
   return (
     <div className="bg-[var(--color-paper)]">
-      <section className="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-18">
+      <section className="mx-auto max-w-[900px] px-5 py-14 sm:px-8 sm:py-18">
         <div className="flex items-center gap-3 mb-5">
           <div className="w-8 h-px bg-[var(--color-ember)]" />
           <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
             Terms
           </span>
         </div>
-        <h1 className="font-editorial-normal text-[36px] sm:text-[44px] text-[var(--color-ink)] leading-tight">
+        <h1 className="font-editorial-normal text-[40px] sm:text-[48px] text-[var(--color-ink)] leading-[1.08] tracking-tight">
           Terms of Use
         </h1>
         <p className="mt-2 text-[13px] text-[var(--color-ink-muted)]">

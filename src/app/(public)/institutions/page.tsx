@@ -130,6 +130,12 @@ export default function InstitutionsPage() {
       {/* What we do */}
       <section className="border-y border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
         <div className="max-w-[1100px] mx-auto w-full px-5 sm:px-8 lg:px-12 py-14 sm:py-16">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-8 h-px bg-[var(--color-ember)]" />
+            <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+              What we do
+            </span>
+          </div>
           <h2 className="font-editorial text-[28px] sm:text-[36px] text-[var(--color-ink)] leading-tight max-w-2xl">
             Four things we do for institutions
           </h2>
@@ -281,6 +287,12 @@ export default function InstitutionsPage() {
 
       {/* Proof */}
       <section className="max-w-[1100px] mx-auto w-full px-5 sm:px-8 lg:px-12 py-14 sm:py-16">
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-8 h-px bg-[var(--color-ember)]" />
+          <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+            Proof
+          </span>
+        </div>
         <h2 className="font-editorial text-[28px] sm:text-[36px] text-[var(--color-ink)] leading-tight max-w-2xl">
           The demo is already public
         </h2>

@@ -64,7 +64,7 @@ export default function DirectorySearch({
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search Portland businesses by name..."
-          className="w-full pl-12 pr-4 py-3.5 bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm text-[14px] text-[var(--color-ink)] placeholder:text-[var(--color-ink-muted)]/60 focus:outline-none focus:border-[var(--color-sage)] focus:ring-1 focus:ring-[var(--color-sage)]/30 transition-all duration-200"
+          className="w-full pl-12 pr-4 py-3.5 bg-white border border-[var(--color-parchment)] rounded-sm text-[15px] text-[var(--color-ink)] placeholder:text-[var(--color-ink-muted)] focus:outline-none focus:border-[var(--color-canopy)] focus:ring-1 focus:ring-[var(--color-canopy)] transition-all duration-200"
         />
         {search && (
           <button

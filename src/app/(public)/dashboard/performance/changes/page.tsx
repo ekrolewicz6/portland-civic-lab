@@ -25,9 +25,9 @@ export default async function PerformanceChangeLogPage() {
   const weakMetrics = decisionSuite.staleOrWeakMetrics;
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,#fffdf8_0,#f7f3ed_42%,#efe8dc_100%)]">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,var(--color-paper-warm)_0,var(--color-paper)_42%,var(--color-parchment)_100%)]">
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(224,168,112,0.18),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,color-mix(in_srgb,var(--color-ember-bright)_18%,transparent),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
         <div className="mx-auto max-w-[1300px] px-5 py-10 sm:px-8 lg:px-12">
           <Link
             href="/dashboard/performance"

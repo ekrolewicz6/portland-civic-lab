@@ -48,7 +48,7 @@ export default function ReportCard({
             </div>
 
             {/* Title */}
-            <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.15] mb-4 group-hover:text-[var(--color-lichen)] transition-colors duration-300" style={{ fontFamily: "var(--font-display)" }}>
+            <h2 className="font-editorial text-[28px] sm:text-[36px] lg:text-[42px] leading-tight mb-4 group-hover:text-[var(--color-lichen)] transition-colors duration-300">
               {report.title}
             </h2>
 
@@ -96,7 +96,7 @@ export default function ReportCard({
           </span>
 
           {/* Title */}
-          <h3 className="text-xl sm:text-2xl leading-snug mb-3 group-hover:text-[var(--color-canopy-light)] transition-colors duration-300" style={{ fontFamily: "var(--font-display)" }}>
+          <h3 className="font-editorial text-[22px] sm:text-[24px] leading-snug mb-3 group-hover:text-[var(--color-canopy-light)] transition-colors duration-300">
             {report.title}
           </h3>
 

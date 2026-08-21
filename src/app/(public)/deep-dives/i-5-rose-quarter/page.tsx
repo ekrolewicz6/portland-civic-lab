@@ -93,7 +93,7 @@ export default function RoseQuarterPage() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="#experiment"
-                  className="rounded-sm bg-[var(--color-ember)] px-5 py-3 text-[14px] font-semibold text-[#241a10] hover:bg-[var(--color-ember-bright)]"
+                  className="rounded-sm bg-[var(--color-ember)] px-5 py-3 text-[15px] font-semibold text-[var(--color-canopy)] hover:bg-[var(--color-ember-bright)]"
                 >
                   See the pre-registered test
                 </a>
@@ -167,7 +167,7 @@ About $400M has been spent or committed. The rest â€” roughly $3&nbsp;billion â€
               <a
                 key={n.id}
                 href={`#${n.id}`}
-                className="whitespace-nowrap rounded-sm px-3 py-1.5 text-[var(--color-ink-light)] hover:bg-[var(--color-paper-warm)] hover:text-[var(--color-canopy)]"
+                className="flex min-h-[44px] items-center whitespace-nowrap rounded-sm px-3 py-3 text-[var(--color-ink-light)] hover:bg-[var(--color-paper-warm)] hover:text-[var(--color-canopy)]"
               >
                 {n.label}
               </a>

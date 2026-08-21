@@ -361,7 +361,7 @@ export default async function MetricDetailPage({ params }: MetricDetailPageProps
   const titleParts = splitMetricTitle(metric.title);
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,#fffdf8_0,#f7f3ed_42%,#efe8dc_100%)]">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,var(--color-paper-warm)_0,var(--color-paper)_42%,var(--color-parchment)_100%)]">
       <style>{`
         .performance-detail-shell {
           width: 100%;
@@ -451,7 +451,7 @@ export default async function MetricDetailPage({ params }: MetricDetailPageProps
 
       `}</style>
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_18%,rgba(224,168,112,0.18),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_18%,color-mix(in_srgb,var(--color-ember-bright)_18%,transparent),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
         <div className="absolute right-[-12%] top-[-45%] h-[520px] w-[520px] rounded-full bg-[var(--color-sage)]/20 blur-[150px]" />
         <div className="absolute bottom-[-40%] left-[-15%] h-[420px] w-[420px] rounded-full bg-[var(--color-ember)]/10 blur-[140px]" />
         <div className="performance-detail-shell relative py-8 lg:py-12">

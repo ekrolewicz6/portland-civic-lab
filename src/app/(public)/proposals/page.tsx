@@ -14,7 +14,7 @@ export default function ProposalsPage() {
     <div className="bg-[var(--color-paper)]">
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
         <div className="absolute right-0 top-0 h-[420px] w-[520px] translate-x-1/4 -translate-y-1/3 rounded-full bg-[var(--color-canopy-light)] opacity-25 blur-[150px]" />
-        <div className="mx-auto max-w-[1400px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12">
+        <div className="mx-auto max-w-[1400px] 3xl:max-w-[1800px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]/85">
               <span>Proposals</span>
@@ -33,7 +33,7 @@ export default function ProposalsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-5 py-12 sm:px-8 sm:py-16">
+      <section className="mx-auto max-w-[900px] px-5 py-12 sm:px-8 sm:py-16">
         <ProposalsBoard />
       </section>
     </div>

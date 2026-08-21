@@ -62,7 +62,7 @@ function MemberBadge({ member, compact = false }: { member: HeaderMember; compac
     <Link
       href={href}
       className={`group inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] text-white transition-colors hover:border-[var(--color-ember)]/45 hover:bg-white/[0.1] ${
-        compact ? "px-1.5 py-1.5" : "px-2.5 py-1.5"
+        compact ? "p-2" : "px-2.5 py-1.5"
       }`}
       aria-label={`${area} for ${member.name}`}
     >
@@ -246,14 +246,14 @@ export default function Header({ member: initialMember = null }: { member?: Head
               <Link
                 href="/signup"
                 prefetch={false}
-                className="rounded-sm bg-[var(--color-ember)] px-3 py-1.5 text-[11px] font-mono font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)]"
+                className="inline-flex min-h-[44px] items-center rounded-sm bg-[var(--color-ember)] px-4 py-2.5 text-[11px] font-mono font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)]"
               >
                 Join
               </Link>
             )}
             <button
               onClick={() => setMobileOpen((v) => !v)}
-              className="flex h-9 w-9 items-center justify-center rounded-sm text-[var(--color-sage)] hover:text-white hover:bg-white/5 transition-colors"
+              className="flex h-11 w-11 items-center justify-center rounded-sm text-[var(--color-sage)] hover:text-white hover:bg-white/5 transition-colors"
               aria-label="Menu"
               aria-expanded={mobileOpen}
             >
@@ -266,7 +266,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="xl:hidden border-t border-white/10 bg-[var(--color-canopy)] animate-slide-down">
-          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 py-5 space-y-6">
+          <div className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 py-5 space-y-6">
             <MobileGroup title="Explore">
               {PRIMARY.map((l) => (
                 <MobileLink key={l.href} href={l.href} label={l.label} active={isActive(l.href)} />

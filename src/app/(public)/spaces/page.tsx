@@ -99,16 +99,14 @@ export default function SpacesPage() {
 
         <div className="relative max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-[var(--color-ember)]/20 flex items-center justify-center">
-                <Building2 className="w-5 h-5 text-[var(--color-ember)]" />
-              </div>
-              <span className="text-[11px] font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em]">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-px bg-[var(--color-ember)]" />
+              <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
                 Portland Civic Lab Real Estate
               </span>
             </div>
 
-            <h1 className="font-editorial-normal text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-5">
+            <h1 className="font-editorial-normal text-[40px] sm:text-[56px] lg:text-[64px] leading-[1.05] mb-5">
               Find Your Space
               <br />
               <span className="text-[var(--color-sage)]">in Portland</span>
@@ -204,7 +202,7 @@ export default function SpacesPage() {
           <div className="flex items-center bg-white border border-[var(--color-parchment)] rounded-sm overflow-hidden">
             <button
               onClick={() => setView("grid")}
-              className={`px-4 py-2 text-[12px] font-semibold uppercase tracking-wider transition-colors ${
+              className={`px-5 py-3 text-[12px] font-semibold uppercase tracking-wider transition-colors ${
                 view === "grid"
                   ? "bg-[var(--color-canopy)] text-white"
                   : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]"
@@ -214,7 +212,7 @@ export default function SpacesPage() {
             </button>
             <button
               onClick={() => setView("map")}
-              className={`px-4 py-2 text-[12px] font-semibold uppercase tracking-wider transition-colors ${
+              className={`px-5 py-3 text-[12px] font-semibold uppercase tracking-wider transition-colors ${
                 view === "map"
                   ? "bg-[var(--color-canopy)] text-white"
                   : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]"
@@ -262,7 +260,7 @@ export default function SpacesPage() {
             </p>
             <button
               onClick={() => setFilters({})}
-              className="px-5 py-2.5 bg-[var(--color-canopy)] text-white text-[13px] font-semibold rounded-sm hover:bg-[var(--color-canopy-mid)] transition-colors"
+              className="px-5 py-3 bg-[var(--color-canopy)] text-white text-[15px] font-semibold rounded-sm hover:bg-[var(--color-canopy-mid)] transition-colors"
             >
               Clear All Filters
             </button>
@@ -290,7 +288,7 @@ export default function SpacesPage() {
               <div className="mt-6">
                 <Link
                   href="/apply"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-ember)] text-[var(--color-canopy)] text-[14px] font-semibold rounded-sm hover:bg-[var(--color-ember-bright)] transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-ember)] text-[var(--color-canopy)] text-[15px] font-semibold rounded-sm hover:bg-[var(--color-ember-bright)] transition-colors"
                 >
                   Get PCB Certified for Space Access
                   <ArrowRight className="w-4 h-4" />

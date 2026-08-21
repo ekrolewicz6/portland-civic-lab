@@ -84,9 +84,9 @@ function trendIcon(metric: PerformanceMetric): LucideIcon {
 }
 
 function trendClass(metric: PerformanceMetric): string {
-  if (metric.trend.tone === "positive") return "border-emerald-300 bg-emerald-50 text-emerald-800";
+  if (metric.trend.tone === "positive") return "border-[var(--color-sage)] bg-[var(--color-sage)]/15 text-[var(--color-fern)]";
   if (metric.trend.tone === "negative") return "border-red-300 bg-red-50 text-red-800";
-  return "border-stone-300 bg-white text-stone-700";
+  return "border-[var(--color-parchment)] bg-white text-[var(--color-ink-light)]";
 }
 
 function toolAudienceLabel(tool: PerformanceDecisionTool): string {
@@ -258,11 +258,11 @@ export default function PerformanceDashboardClient({
   ].filter((tool): tool is PerformanceDecisionTool => Boolean(tool));
 
   return (
-    <div className="bg-[radial-gradient(circle_at_top_left,#fffdf8_0,#f7f3ed_38%,#efe8dc_100%)]">
+    <div className="bg-[radial-gradient(circle_at_top_left,var(--color-paper-warm)_0,var(--color-paper)_38%,var(--color-parchment)_100%)]">
       <style>{`
         .performance-index-shell {
           width: 100%;
-          max-width: 1680px;
+          max-width: 1400px;
           margin-inline: auto;
           padding-inline: 20px;
         }
@@ -338,10 +338,6 @@ export default function PerformanceDashboardClient({
         }
 
         @media (min-width: 1536px) {
-          .performance-index-shell {
-            padding-inline: 64px;
-          }
-
           .performance-index-hero-grid {
             grid-template-columns: minmax(0, 1fr) 440px;
           }
@@ -354,9 +350,15 @@ export default function PerformanceDashboardClient({
             grid-template-columns: repeat(4, minmax(0, 1fr));
           }
         }
+
+        @media (min-width: 1920px) {
+          .performance-index-shell {
+            max-width: 1800px;
+          }
+        }
       `}</style>
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_0,transparent_34%),radial-gradient(circle_at_72%_16%,rgba(224,168,112,0.18),transparent_34%),radial-gradient(circle_at_12%_86%,rgba(127,168,142,0.20),transparent_32%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_0,transparent_34%),radial-gradient(circle_at_72%_16%,color-mix(in_srgb,var(--color-ember-bright)_18%,transparent),transparent_34%),radial-gradient(circle_at_12%_86%,color-mix(in_srgb,var(--color-sage)_20%,transparent),transparent_32%)]" />
         <div className="absolute right-[-10%] top-[-30%] h-[560px] w-[560px] rounded-full bg-[var(--color-sage)]/25 blur-[150px]" />
         <div className="absolute bottom-[-35%] left-[-10%] h-[480px] w-[480px] rounded-full bg-[var(--color-ember)]/12 blur-[140px]" />
         <div className="performance-index-shell relative py-10 lg:py-14">
@@ -367,7 +369,7 @@ export default function PerformanceDashboardClient({
           </div>
           <div className="performance-index-hero-grid mt-7">
             <div>
-              <h1 className="max-w-5xl font-editorial-normal text-[46px] leading-[0.98] tracking-tight text-white sm:text-[66px] lg:text-[88px]">
+              <h1 className="max-w-5xl font-editorial-normal text-[40px] leading-[1.02] tracking-tight text-white sm:text-[56px] lg:text-[72px]">
                 The operating layer above Portland’s official performance data.
               </h1>
               <p className="performance-dark-copy mt-5 max-w-3xl text-base leading-relaxed sm:text-lg">
@@ -487,7 +489,7 @@ export default function PerformanceDashboardClient({
                   Decision layer
                 </p>
               </div>
-              <h2 className="mt-3 font-editorial text-4xl leading-tight text-[var(--color-ink)]">
+              <h2 className="mt-3 font-editorial text-[28px] sm:text-[36px] leading-tight text-[var(--color-ink)]">
                 Start with the work product, then open the source packet.
               </h2>
               <p className="mt-3 max-w-4xl text-sm leading-relaxed text-[var(--color-ink-light)]">
@@ -537,7 +539,7 @@ export default function PerformanceDashboardClient({
             </div>
             <Link
               href="/api/performance/export"
-              className="inline-flex items-center justify-center gap-2 rounded-sm bg-white px-4 py-2 text-sm font-semibold text-[var(--color-canopy)]"
+              className="inline-flex items-center justify-center gap-2 rounded-sm bg-white px-5 py-3 text-[15px] font-semibold text-[var(--color-canopy)]"
             >
               <FileDown className="h-4 w-4" />
               Export CSV
@@ -570,10 +572,10 @@ export default function PerformanceDashboardClient({
       </section>
 
       <section className="performance-index-shell pb-12">
-        <div className="sticky top-0 z-10 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)]/95 p-5 shadow-[0_18px_70px_rgba(15,36,25,0.08)] backdrop-blur sm:p-6">
+        <div className="lg:sticky lg:top-14 z-10 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)]/95 p-5 shadow-[0_18px_70px_rgba(15,36,25,0.08)] backdrop-blur sm:p-6">
           <div className="grid gap-4 lg:grid-cols-[1fr_360px] lg:items-end">
             <div>
-              <h2 className="font-editorial text-4xl text-[var(--color-ink)]">
+              <h2 className="font-editorial text-[28px] sm:text-[36px] leading-tight text-[var(--color-ink)]">
                 All Scorecards
               </h2>
               <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--color-ink-light)]">
@@ -645,7 +647,7 @@ export default function PerformanceDashboardClient({
                   <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-canopy)]">
                     Scorecard #{scorecard.scorecardId}
                   </p>
-                  <h3 className="mt-2 font-editorial text-3xl text-[var(--color-ink)]">
+                  <h3 className="mt-2 font-editorial text-[24px] sm:text-[30px] text-[var(--color-ink)]">
                     {scorecard.title}
                   </h3>
                 </div>

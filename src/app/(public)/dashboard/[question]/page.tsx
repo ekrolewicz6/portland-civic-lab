@@ -144,12 +144,13 @@ export default async function QuestionPage({ params }: PageProps) {
           </Link>
 
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-[11px] font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em]">
+            <div className="w-8 h-px bg-[var(--color-ember)]" />
+            <span className="text-[10px] font-mono font-semibold text-[var(--color-ember)] uppercase tracking-[0.22em]">
               {meta.shortTitle}
             </span>
           </div>
 
-          <h1 className="font-editorial-normal text-[36px] sm:text-[48px] lg:text-[56px] text-white leading-[1.1] tracking-tight max-w-3xl">
+          <h1 className="font-editorial-normal text-[40px] sm:text-[56px] lg:text-[64px] text-white leading-[1.1] tracking-tight max-w-3xl">
             {meta.title}
           </h1>
 

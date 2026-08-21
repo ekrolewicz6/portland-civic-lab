@@ -75,7 +75,7 @@ export default async function RecordsPage() {
     <div className="bg-[var(--color-paper)]">
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
         <div className="absolute right-0 top-0 h-[420px] w-[520px] translate-x-1/4 -translate-y-1/3 rounded-full bg-[var(--color-canopy-light)] opacity-25 blur-[150px]" />
-        <div className="mx-auto max-w-[1400px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12">
+        <div className="mx-auto max-w-[1400px] 3xl:max-w-[1800px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]/85">
               <span>Public records</span>
@@ -95,7 +95,7 @@ export default async function RecordsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+      <section className="mx-auto max-w-[1400px] 3xl:max-w-[1800px] px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
         <h2 className="font-editorial text-[28px] sm:text-[34px] text-[var(--color-ink)] leading-tight">
           How to file a request
         </h2>
@@ -124,7 +124,7 @@ export default async function RecordsPage() {
       </section>
 
       <section className="border-y border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
-        <div className="mx-auto max-w-[1400px] px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+        <div className="mx-auto max-w-[1400px] 3xl:max-w-[1800px] px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
           <h2 className="font-editorial text-[28px] sm:text-[34px] text-[var(--color-ink)] leading-tight">
             What we&apos;re requesting
           </h2>

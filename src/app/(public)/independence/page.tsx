@@ -82,6 +82,12 @@ export default function IndependencePage() {
       {/* The rules */}
       <section className="border-y border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
         <div className="max-w-[1100px] mx-auto w-full px-5 sm:px-8 lg:px-12 py-14 sm:py-16">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-8 h-px bg-[var(--color-ember)]" />
+            <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+              The rules
+            </span>
+          </div>
           <h2 className="font-editorial text-[28px] sm:text-[36px] text-[var(--color-ink)] leading-tight max-w-2xl">
             The rules we operate under
           </h2>
@@ -141,6 +147,12 @@ export default function IndependencePage() {
       {/* Funding */}
       <section className="border-y border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
         <div className="max-w-[1100px] mx-auto w-full px-5 sm:px-8 lg:px-12 py-14 sm:py-16">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-8 h-px bg-[var(--color-ember)]" />
+            <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+              Funding
+            </span>
+          </div>
           <h2 className="font-editorial text-[28px] sm:text-[36px] text-[var(--color-ink)] leading-tight max-w-2xl">
             How the Lab is funded today
           </h2>

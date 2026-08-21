@@ -152,7 +152,7 @@ export default function ListingDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            <h1 className="font-editorial-normal text-3xl sm:text-4xl lg:text-5xl leading-[1.1] mb-4">
+            <h1 className="font-editorial-normal text-[40px] sm:text-[48px] lg:text-[56px] leading-[1.05] mb-4">
               {listing.title}
             </h1>
 

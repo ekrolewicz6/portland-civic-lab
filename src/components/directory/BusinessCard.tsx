@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Building2, Calendar, MapPin } from "lucide-react";
+import { formatEntityType, entityBadgeColor } from "@/lib/directory-format";
 
 interface BusinessCardProps {
   id: number;
@@ -11,50 +12,6 @@ interface BusinessCardProps {
   state: string | null;
   zip: string | null;
   index?: number;
-}
-
-/** Map entity types to tier-like badge colors */
-function entityBadgeColor(entityType: string): {
-  bg: string;
-  text: string;
-  border: string;
-} {
-  const t = entityType.toUpperCase();
-  if (t.includes("DOMESTIC") && t.includes("LIMITED LIABILITY"))
-    return {
-      bg: "bg-[var(--color-canopy)]/8",
-      text: "text-[var(--color-canopy)]",
-      border: "border-[var(--color-canopy)]/20",
-    };
-  if (t.includes("DOMESTIC") && t.includes("BUSINESS CORPORATION"))
-    return {
-      bg: "bg-[var(--color-river)]/8",
-      text: "text-[var(--color-river-deep)]",
-      border: "border-[var(--color-river)]/20",
-    };
-  if (t.includes("FOREIGN"))
-    return {
-      bg: "bg-[var(--color-violet-mist)]/8",
-      text: "text-[var(--color-violet-mist)]",
-      border: "border-[var(--color-violet-mist)]/20",
-    };
-  if (t.includes("NONPROFIT"))
-    return {
-      bg: "bg-[var(--color-fern)]/8",
-      text: "text-[var(--color-fern)]",
-      border: "border-[var(--color-fern)]/20",
-    };
-  if (t.includes("ASSUMED"))
-    return {
-      bg: "bg-[var(--color-ember)]/8",
-      text: "text-[var(--color-clay)]",
-      border: "border-[var(--color-ember)]/20",
-    };
-  return {
-    bg: "bg-[var(--color-storm)]/8",
-    text: "text-[var(--color-storm)]",
-    border: "border-[var(--color-storm)]/20",
-  };
 }
 
 function formatDate(dateStr: string | null): string {
@@ -123,7 +80,7 @@ export default function BusinessCard({
           <span
             className={`inline-flex items-center px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] rounded-sm border ${badge.bg} ${badge.text} ${badge.border}`}
           >
-            {entityType}
+            {formatEntityType(entityType)}
           </span>
         </div>
 

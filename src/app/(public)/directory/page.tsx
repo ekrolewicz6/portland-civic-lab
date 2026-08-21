@@ -99,22 +99,20 @@ export default function DirectoryPage() {
         }} />
         <div className="relative max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 py-16 lg:py-20">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-sm bg-white/10 flex items-center justify-center">
-              <Building2 className="w-5 h-5 text-[var(--color-ember)]" />
-            </div>
-            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--color-ember)]">
+            <div className="w-8 h-px bg-[var(--color-ember)]" />
+            <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
               Portland Civic Lab
             </span>
           </div>
-          <h1 className="font-[family-name:var(--font-display)] text-4xl lg:text-5xl xl:text-[3.5rem] italic leading-[1.15] mb-4">
+          <h1 className="font-editorial-normal text-[40px] sm:text-[56px] lg:text-[64px] leading-[1.05] mb-4">
             Portland Business Directory
           </h1>
-          <p className="text-[18px] lg:text-[20px] text-white/70 max-w-2xl leading-relaxed">
+          <p className="text-[17px] sm:text-[19px] text-white/70 max-w-2xl leading-relaxed">
             Explore the businesses that power Portland&apos;s economy. Real data from the
             Oregon Secretary of State business registry, covering recent registrations
             across all entity types.
           </p>
-          {pagination && !loading && (
+          {pagination && (
             <div className="mt-6 flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <span className="font-mono text-2xl font-bold text-[var(--color-ember)]">
@@ -183,7 +181,7 @@ export default function DirectoryPage() {
                   <button
                     disabled={page === 1}
                     onClick={() => setPage(page - 1)}
-                    className="p-2 rounded-sm border border-[var(--color-parchment)] text-[var(--color-ink-muted)] hover:border-[var(--color-sage)] hover:text-[var(--color-ink)] disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+                    className="w-11 h-11 flex items-center justify-center rounded-sm border border-[var(--color-parchment)] text-[var(--color-ink-muted)] hover:border-[var(--color-sage)] hover:text-[var(--color-ink)] disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </button>
@@ -200,7 +198,7 @@ export default function DirectoryPage() {
                       <button
                         key={pn}
                         onClick={() => setPage(pn)}
-                        className={`min-w-[36px] h-9 rounded-sm text-[13px] font-medium transition-all duration-200 ${
+                        className={`min-w-[44px] h-11 rounded-sm text-[13px] font-medium transition-all duration-200 ${
                           page === pn
                             ? "bg-[var(--color-canopy)] text-white"
                             : "border border-[var(--color-parchment)] text-[var(--color-ink-muted)] hover:border-[var(--color-sage)] hover:text-[var(--color-ink)]"
@@ -214,7 +212,7 @@ export default function DirectoryPage() {
                   <button
                     disabled={page === totalPages}
                     onClick={() => setPage(page + 1)}
-                    className="p-2 rounded-sm border border-[var(--color-parchment)] text-[var(--color-ink-muted)] hover:border-[var(--color-sage)] hover:text-[var(--color-ink)] disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+                    className="w-11 h-11 flex items-center justify-center rounded-sm border border-[var(--color-parchment)] text-[var(--color-ink-muted)] hover:border-[var(--color-sage)] hover:text-[var(--color-ink)] disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
                   >
                     <ChevronRight className="w-4 h-4" />
                   </button>

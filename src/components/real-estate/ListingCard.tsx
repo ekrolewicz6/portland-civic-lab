@@ -26,14 +26,14 @@ const SPACE_TYPE_COLORS: Record<string, string> = {
 };
 
 const CONDITION_DOTS: Record<string, string> = {
-  "move-in ready": "bg-green-500",
-  "gallery ready": "bg-green-500",
-  "built-out stall": "bg-green-500",
-  "white box": "bg-yellow-500",
-  "previous restaurant": "bg-yellow-500",
-  "partially renovated": "bg-orange-500",
-  "industrial shell": "bg-orange-500",
-  "needs renovation": "bg-red-400",
+  "move-in ready": "bg-[var(--color-fern)]",
+  "gallery ready": "bg-[var(--color-fern)]",
+  "built-out stall": "bg-[var(--color-fern)]",
+  "white box": "bg-[var(--color-ember)]",
+  "previous restaurant": "bg-[var(--color-ember)]",
+  "partially renovated": "bg-[var(--color-clay)]",
+  "industrial shell": "bg-[var(--color-clay)]",
+  "needs renovation": "bg-[var(--color-rose-hip)]",
 };
 
 export default function ListingCard({ listing, index = 0 }: ListingCardProps) {
@@ -56,7 +56,7 @@ export default function ListingCard({ listing, index = 0 }: ListingCardProps) {
           </span>
           <div className="flex items-center gap-1.5">
             <span
-              className={`w-2 h-2 rounded-full ${CONDITION_DOTS[listing.condition] || "bg-gray-400"}`}
+              className={`w-2 h-2 rounded-full ${CONDITION_DOTS[listing.condition] || "bg-[var(--color-storm)]"}`}
             />
             <span className="text-[11px] text-[var(--color-ink-muted)] capitalize">
               {listing.condition}

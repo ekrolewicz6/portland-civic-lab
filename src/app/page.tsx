@@ -220,7 +220,7 @@ export default function HomePage() {
                 The dashboards
               </span>
             </div>
-            <h2 className="font-editorial text-[32px] sm:text-[42px] lg:text-[54px] text-[var(--color-ink)] leading-tight">
+            <h2 className="font-editorial text-[32px] sm:text-[42px] text-[var(--color-ink)] leading-tight">
               See how Portland is actually doing
             </h2>
             <p className="mt-5 max-w-xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
@@ -514,7 +514,7 @@ export default function HomePage() {
                   About
                 </span>
               </div>
-              <h2 className="font-editorial text-[32px] sm:text-[42px] lg:text-[48px] text-[var(--color-ink)] leading-tight">
+              <h2 className="font-editorial text-[32px] sm:text-[42px] text-[var(--color-ink)] leading-tight">
                 A company that gives its civic work away
               </h2>
               <p className="mt-5 max-w-xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">

@@ -46,7 +46,7 @@ export default function VolunteerPage() {
     <div className="bg-[var(--color-paper)]">
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
         <div className="absolute right-0 top-0 h-[420px] w-[520px] translate-x-1/4 -translate-y-1/3 rounded-full bg-[var(--color-canopy-light)] opacity-25 blur-[150px]" />
-        <div className="mx-auto max-w-[1400px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12">
+        <div className="mx-auto max-w-[1400px] 3xl:max-w-[1800px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]/85">
               <span>Volunteer</span>
@@ -66,7 +66,7 @@ export default function VolunteerPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+      <section className="mx-auto max-w-[1400px] 3xl:max-w-[1800px] px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {roles.map((role) => (
             <div

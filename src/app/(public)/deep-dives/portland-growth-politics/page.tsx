@@ -373,11 +373,11 @@ function GroupRow({ group, maxAbs }: { group: WinnerLoserGroup; maxAbs: number }
   const isWinner = group.side === "winner";
   const isLoser = group.side === "loser";
   const width = Math.max(6, (Math.abs(group.amount) / maxAbs) * 100);
-  const barColor = isWinner ? "bg-[var(--color-sage)]" : isLoser ? "bg-[#c95f3c]" : "bg-[var(--color-ink-muted)]";
+  const barColor = isWinner ? "bg-[var(--color-sage)]" : isLoser ? "bg-[var(--color-clay)]" : "bg-[var(--color-ink-muted)]";
   const amountColor = isWinner
     ? "text-[var(--color-canopy)]"
     : isLoser
-      ? "text-[#8c3d25]"
+      ? "text-[var(--color-clay)]"
       : "text-[var(--color-ink)]";
 
   return (
@@ -418,7 +418,7 @@ function WinnersLosers() {
       </div>
 
       <div className="grid gap-5 md:grid-cols-2">
-        <div className="-mx-4 border-y border-[var(--color-sage)] bg-[#f5fbf6] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5">
+        <div className="-mx-4 border-y border-[var(--color-sage)] bg-[var(--color-sage-tint)] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5">
           <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-canopy)]">
             Who comes out ahead today
           </p>
@@ -428,8 +428,8 @@ function WinnersLosers() {
             ))}
           </div>
         </div>
-        <div className="-mx-4 border-y border-[#f0b6a8] bg-[#fff7f3] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5">
-          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8c3d25]">
+        <div className="-mx-4 border-y border-[#f0b6a8] bg-[var(--color-clay-tint)] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5">
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-clay)]">
             Who pays today
           </p>
           <div className="mt-4 grid gap-3">
@@ -525,7 +525,7 @@ function ContradictionCard({
         </div>
       </div>
 
-      <div className="mt-5 rounded-sm border border-[var(--color-sage)]/40 bg-[#f5fbf6] p-3">
+      <div className="mt-5 rounded-sm border border-[var(--color-sage)]/40 bg-[var(--color-sage-tint)] p-3">
         <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-canopy)]">
           What Portland says it wants
         </p>
@@ -661,7 +661,7 @@ function PersonalPathCard({
 const PACKAGE_RESULT_STYLES = {
   paysMore: {
     label: "Likely pays more",
-    className: "border-[#df9b86] bg-[#fff7f2] text-[#8c3d25]",
+    className: "border-[#df9b86] bg-[var(--color-clay-tint)] text-[var(--color-clay)]",
   },
   losesAdvantage: {
     label: "Gives up hidden value",
@@ -669,7 +669,7 @@ const PACKAGE_RESULT_STYLES = {
   },
   benefits: {
     label: "Likely benefits",
-    className: "border-[var(--color-sage)] bg-[#f3fbf5] text-[var(--color-canopy)]",
+    className: "border-[var(--color-sage)] bg-[var(--color-sage-tint)] text-[var(--color-canopy)]",
   },
   protected: {
     label: "Protected, but affected",
@@ -682,8 +682,8 @@ const PACKAGE_RESULT_STYLES = {
 } as const;
 
 const ANNUAL_EFFECT_STYLES = {
-  cost: "border-[#df9b86] bg-[#fff7f2] text-[#8c3d25]",
-  benefit: "border-[var(--color-sage)] bg-[#f3fbf5] text-[var(--color-canopy)]",
+  cost: "border-[#df9b86] bg-[var(--color-clay-tint)] text-[var(--color-clay)]",
+  benefit: "border-[var(--color-sage)] bg-[var(--color-sage-tint)] text-[var(--color-canopy)]",
   exposure: "border-[#d6a15f] bg-[#fff8ea] text-[#80511b]",
   neutral: "border-[var(--color-parchment)] bg-[var(--color-paper)] text-[var(--color-ink-light)]",
 } as const;
@@ -732,19 +732,19 @@ function PackageImpactCard({ impact }: { impact: (typeof PACKAGE_COHORT_IMPACTS)
         <div className="mt-4 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-3 sm:hidden">
           <div className="grid grid-cols-3 gap-2 text-center">
             <div>
-              <p className="font-mono text-[8px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">Now</p>
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">Now</p>
               <p className="mt-1 break-words font-mono text-[14px] font-bold leading-none tabular-nums text-[var(--color-ink)] [overflow-wrap:anywhere]">
                 {fmtMoney(impact.currentAnnual.amount)}
               </p>
             </div>
             <div>
-              <p className="font-mono text-[8px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">With fix</p>
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">With fix</p>
               <p className="mt-1 break-words font-mono text-[14px] font-bold leading-none tabular-nums text-[var(--color-ink)] [overflow-wrap:anywhere]">
                 {fmtMoney(impact.futureAnnual.amount)}
               </p>
             </div>
             <div>
-              <p className="font-mono text-[8px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">Net</p>
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--color-ink-muted)]">Net</p>
               <p className="mt-1 break-words font-mono text-[14px] font-bold leading-none tabular-nums text-[var(--color-ink)] [overflow-wrap:anywhere]">
                 {netLabel}
               </p>
@@ -759,7 +759,7 @@ function PackageImpactCard({ impact }: { impact: (typeof PACKAGE_COHORT_IMPACTS)
 
         <div className="mt-4 hidden gap-2 sm:grid sm:grid-cols-[0.7fr_0.7fr_0.7fr_auto] sm:items-center">
           <div className={`rounded-sm border px-3 py-2 ${ANNUAL_EFFECT_STYLES[impact.currentAnnual.kind]}`}>
-            <p className="text-[9px] font-mono font-semibold uppercase tracking-[0.16em] opacity-70">
+            <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.16em] opacity-70">
               Current rules
             </p>
             <p className="mt-1 font-mono text-[19px] font-bold leading-none tabular-nums sm:text-[21px]">
@@ -767,7 +767,7 @@ function PackageImpactCard({ impact }: { impact: (typeof PACKAGE_COHORT_IMPACTS)
             </p>
           </div>
           <div className={`rounded-sm border px-3 py-2 ${ANNUAL_EFFECT_STYLES[impact.futureAnnual.kind]}`}>
-            <p className="text-[9px] font-mono font-semibold uppercase tracking-[0.16em] opacity-70">
+            <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.16em] opacity-70">
               With package
             </p>
             <p className="mt-1 font-mono text-[19px] font-bold leading-none tabular-nums sm:text-[21px]">
@@ -775,7 +775,7 @@ function PackageImpactCard({ impact }: { impact: (typeof PACKAGE_COHORT_IMPACTS)
             </p>
           </div>
           <div className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] px-3 py-2">
-            <p className="text-[9px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+            <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
               Net change / year
             </p>
             <p className="mt-1 font-mono text-[19px] font-bold leading-none tabular-nums text-[var(--color-ink)] sm:text-[21px]">
@@ -879,7 +879,7 @@ export default function PortlandGrowthPoliticsPage() {
     {
       label: "pay more or give up hidden value",
       count: packageSummary.paysMore + packageSummary.losesAdvantage,
-      tone: "border-[#df9b86] bg-[#fff7f2] text-[#8c3d25]",
+      tone: "border-[#df9b86] bg-[var(--color-clay-tint)] text-[var(--color-clay)]",
       examples: PACKAGE_COHORT_IMPACTS.filter((i) => i.result === "paysMore" || i.result === "losesAdvantage")
         .slice(0, 2)
         .map((i) => i.name),
@@ -887,7 +887,7 @@ export default function PortlandGrowthPoliticsPage() {
     {
       label: "are clear beneficiaries",
       count: packageSummary.benefits,
-      tone: "border-[var(--color-sage)] bg-[#f3fbf5] text-[var(--color-canopy)]",
+      tone: "border-[var(--color-sage)] bg-[var(--color-sage-tint)] text-[var(--color-canopy)]",
       examples: PACKAGE_COHORT_IMPACTS.filter((i) => i.result === "benefits")
         .slice(0, 2)
         .map((i) => i.name),
@@ -925,7 +925,7 @@ export default function PortlandGrowthPoliticsPage() {
                 <span className="h-px w-8 bg-[var(--color-ember)]/60" />
                 <span>Growth politics</span>
               </div>
-              <h1 className="mt-7 max-w-5xl font-editorial-normal text-[46px] leading-[0.98] tracking-tight sm:text-[64px] lg:text-[82px] 2xl:text-[96px]">
+              <h1 className="mt-7 max-w-5xl font-editorial-normal text-[46px] leading-[1.0] tracking-tight sm:text-[60px] lg:text-[76px]">
                 The hidden contradictions in{" "}
                 <span className="font-editorial italic text-[var(--color-ember-bright)]">
                   Portland&apos;s growth politics
@@ -1013,7 +1013,7 @@ export default function PortlandGrowthPoliticsPage() {
         </div>
       </section>
 
-      <nav aria-label="Section navigation" className="sticky top-0 z-30 border-b border-[var(--color-parchment)] bg-[var(--color-paper)]/92 backdrop-blur-md">
+      <nav aria-label="Section navigation" className="sticky top-14 z-40 border-b border-[var(--color-parchment)] bg-[var(--color-paper)]/92 backdrop-blur-md">
         <div className={`${DIVE_CONTAINER} flex gap-2 overflow-x-auto py-3`}>
           {NAV.map((item) => (
             <a
@@ -1186,7 +1186,7 @@ export default function PortlandGrowthPoliticsPage() {
             ))}
           </div>
 
-          <div className="-mx-4 mt-6 border-y border-[var(--color-ember)]/30 bg-[#fff7f2] p-5 sm:mx-0 sm:rounded-sm sm:border">
+          <div className="-mx-4 mt-6 border-y border-[var(--color-ember)]/30 bg-[var(--color-clay-tint)] p-5 sm:mx-0 sm:rounded-sm sm:border">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
               The pattern underneath
             </p>
@@ -1473,7 +1473,7 @@ export default function PortlandGrowthPoliticsPage() {
                 href={action.href}
                 target={action.href.startsWith("http") ? "_blank" : undefined}
                 rel={action.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="group -mx-4 border-y border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c1410] sm:mx-0 sm:rounded-sm sm:border sm:p-5"
+                className="group -mx-4 border-y border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-canopy-deep)] sm:mx-0 sm:rounded-sm sm:border sm:p-5"
               >
                 <action.icon className="h-5 w-5 text-[var(--color-ember-bright)]" />
                 <h3 className="mt-4 font-editorial text-[24px] leading-tight text-white">{action.title}</h3>
@@ -1519,7 +1519,7 @@ export default function PortlandGrowthPoliticsPage() {
                     href={source.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group min-w-0 rounded-sm border border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-[var(--color-ember)]/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c1410]"
+                    className="group min-w-0 rounded-sm border border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-[var(--color-ember)]/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-canopy-deep)]"
                   >
                     <p className="break-words font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember-bright)]">
                       {source.org}

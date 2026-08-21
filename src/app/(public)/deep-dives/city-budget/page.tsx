@@ -103,7 +103,7 @@ export default function CityBudgetPage() {
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-ember-bright)]">
                 Policy deep-dive ——— City finances
               </p>
-              <h1 className="mt-5 font-editorial text-[44px] leading-[1.05] sm:text-[60px] xl:text-[72px]">
+              <h1 className="mt-5 font-editorial-normal text-[40px] leading-[1.05] sm:text-[56px] xl:text-[64px]">
                 Portland&apos;s $8.5 billion.
                 <span className="block italic text-[var(--color-ember-bright)]">
                   Line by line.
@@ -183,7 +183,7 @@ export default function CityBudgetPage() {
               <a
                 key={n.id}
                 href={`#${n.id}`}
-                className="whitespace-nowrap rounded-sm px-3 py-1.5 text-[var(--color-ink-light)] hover:bg-[var(--color-paper-warm)] hover:text-[var(--color-canopy)]"
+                className="flex min-h-[44px] items-center whitespace-nowrap rounded-sm px-3 py-3 text-[var(--color-ink-light)] hover:bg-[var(--color-paper-warm)] hover:text-[var(--color-canopy)]"
               >
                 {n.label}
               </a>

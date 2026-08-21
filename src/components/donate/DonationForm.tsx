@@ -98,27 +98,27 @@ export default function DonationForm() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-[460px] rounded-[2rem] border border-white/15 bg-white/[0.08] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.28)] backdrop-blur-md sm:p-4 lg:sticky lg:top-20 xl:max-w-[540px] 2xl:max-w-[620px]">
-      <div className="rounded-[1.55rem] bg-[var(--color-paper)] p-4 text-[var(--color-ink)] sm:p-5 xl:p-6 2xl:p-7">
+    <div className="mx-auto w-full max-w-[440px] rounded-sm border border-white/15 bg-white/[0.08] p-2.5 shadow-[0_30px_90px_rgba(0,0,0,0.28)] backdrop-blur-md lg:sticky lg:top-20">
+      <div className="rounded-sm bg-[var(--color-paper)] p-4 text-[var(--color-ink)] sm:p-5">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]">
               Support
             </p>
-            <h2 className="mt-2 font-editorial text-[30px] leading-none text-[var(--color-ink)] sm:text-[38px] 2xl:text-[46px]">
+            <h2 className="mt-2 font-editorial text-[26px] leading-none text-[var(--color-ink)] sm:text-[30px]">
               Back the lab
             </h2>
           </div>
-          <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-canopy)] text-white 2xl:h-14 2xl:w-14">
-            <HeartHandshake className="h-5 w-5 2xl:h-6 2xl:w-6" />
+          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-canopy)] text-white">
+            <HeartHandshake className="h-5 w-5" />
           </span>
         </div>
 
-        <div className="mt-5 grid grid-cols-2 rounded-full bg-[var(--color-paper-warm)] p-1 2xl:mt-6">
+        <div className="mt-4 grid grid-cols-2 rounded-full bg-[var(--color-paper-warm)] p-1">
           <button
             type="button"
             onClick={() => updateFrequency("monthly")}
-            className={`flex min-w-0 items-center justify-center gap-2 rounded-full px-3 py-3 text-[14px] font-semibold transition sm:px-4 2xl:text-[16px] ${
+            className={`flex min-w-0 items-center justify-center gap-2 rounded-full px-3 py-2.5 text-[14px] font-semibold transition sm:px-4 ${
               frequency === "monthly"
                 ? "bg-[var(--color-canopy)] text-white shadow-sm"
                 : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]"
@@ -130,7 +130,7 @@ export default function DonationForm() {
           <button
             type="button"
             onClick={() => updateFrequency("once")}
-            className={`rounded-full px-3 py-3 text-[14px] font-semibold transition sm:px-4 2xl:text-[16px] ${
+            className={`rounded-full px-3 py-2.5 text-[14px] font-semibold transition sm:px-4 ${
               frequency === "once"
                 ? "bg-[var(--color-canopy)] text-white shadow-sm"
                 : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]"
@@ -140,19 +140,19 @@ export default function DonationForm() {
           </button>
         </div>
 
-        <p className="mt-4 rounded-2xl border border-[var(--color-parchment)] bg-white px-4 py-3 text-[13px] leading-relaxed text-[var(--color-ink-light)] xl:text-[14px] 2xl:px-5">
+        <p className="mt-3 rounded-sm border border-[var(--color-parchment)] bg-white px-4 py-2.5 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
           {frequency === "monthly"
             ? "Monthly support gives us predictable runway to keep dashboards current and launch the next Civic Lab tools."
             : "One-time donations help fund data updates, public records work, and new tools when a project needs a push."}
         </p>
 
-        <div className="mt-5 grid grid-cols-[repeat(auto-fit,minmax(82px,1fr))] gap-2 xl:gap-3">
+        <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(82px,1fr))] gap-2">
           {suggestedAmounts.map((suggested) => (
             <button
               key={suggested}
               type="button"
               onClick={() => updateAmount(suggested)}
-              className={`min-w-0 rounded-2xl border px-3 py-3 text-[16px] font-semibold transition ${
+              className={`min-w-0 rounded-sm border px-3 py-2.5 text-[15px] font-semibold transition ${
                 amount === suggested && normalizedAmount === suggested
                   ? "border-[var(--color-canopy)] bg-[var(--color-canopy)] text-white"
                   : "border-[var(--color-parchment)] bg-white text-[var(--color-ink)] hover:border-[var(--color-sage)]"
@@ -163,12 +163,12 @@ export default function DonationForm() {
           ))}
         </div>
 
-        <label className="mt-5 block">
+        <label className="mt-4 block">
           <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
             Or give any amount
           </span>
-          <div className="mt-2 flex items-center rounded-2xl border border-[var(--color-parchment)] bg-white px-4 py-3 focus-within:border-[var(--color-canopy)] 2xl:px-5">
-            <span className="text-[22px] font-semibold text-[var(--color-ink-muted)]">$</span>
+          <div className="mt-2 flex items-center rounded-sm border border-[var(--color-parchment)] bg-white px-4 py-2.5 focus-within:border-[var(--color-canopy)]">
+            <span className="text-[18px] font-semibold text-[var(--color-ink-muted)]">$</span>
             <input
               value={customAmount}
               onChange={(event) => {
@@ -179,7 +179,7 @@ export default function DonationForm() {
               inputMode="decimal"
               min="1"
               max="10000"
-              className="min-w-0 flex-1 border-0 bg-transparent px-3 text-[28px] font-semibold text-[var(--color-ink)] outline-none 2xl:text-[34px]"
+              className="min-w-0 flex-1 border-0 bg-transparent px-3 text-[24px] font-semibold text-[var(--color-ink)] outline-none"
               aria-label="Support amount in dollars"
             />
             <span className="text-[12px] font-mono uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
@@ -189,13 +189,13 @@ export default function DonationForm() {
         </label>
 
         {error && (
-          <p className="mt-4 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] text-red-700">
+          <p className="mt-3 rounded-sm border border-red-200 bg-red-50 px-4 py-2.5 text-[13px] text-red-700">
             {error}
           </p>
         )}
 
         {isConfigured === false && (
-          <p className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-[13px] leading-relaxed text-amber-800">
+          <p className="mt-3 rounded-sm border border-amber-200 bg-amber-50 px-4 py-2.5 text-[13px] leading-relaxed text-amber-800">
             Online support is built but not yet enabled. Stripe needs one final
             server-side key before Checkout can accept live payments.
           </p>
@@ -205,7 +205,7 @@ export default function DonationForm() {
           type="button"
           onClick={submit}
           disabled={isPending || isConfigured !== true}
-          className="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--color-ember)] px-5 py-4 text-[16px] font-bold text-[var(--color-canopy)] transition hover:bg-[var(--color-ember-bright)] disabled:cursor-not-allowed disabled:opacity-60 2xl:py-5 2xl:text-[18px]"
+          className="mt-4 flex w-full items-center justify-center gap-2 rounded-sm bg-[var(--color-ember)] px-5 py-3.5 text-[15px] font-semibold text-[var(--color-canopy)] transition hover:bg-[var(--color-ember-bright)] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isConfigured === null
             ? "Checking secure Checkout..."
@@ -219,21 +219,12 @@ export default function DonationForm() {
           <ArrowUpRight className="h-4 w-4" />
         </button>
 
-        <div className="mt-5 grid gap-2 text-[12px] leading-relaxed text-[var(--color-ink-muted)] 2xl:grid-cols-2 2xl:gap-4">
-          <p className="flex gap-2">
-            <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-canopy)]" />
-            Secure payment is handled by Stripe. Portland Civic Lab does not store card numbers.
-          </p>
-          <p className="flex gap-2">
-            <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-canopy)]" />
-            You can use cards and other payment methods enabled in Stripe Checkout.
-          </p>
-          <p className="flex gap-2 2xl:col-span-2">
-            <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-canopy)]" />
-            Your support isn&apos;t a tax-deductible charitable donation — you&apos;re backing
-            a company that gives its tools away free.
-          </p>
-        </div>
+        <p className="mt-4 flex gap-2 text-[12px] leading-relaxed text-[var(--color-ink-muted)]">
+          <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-canopy)]" />
+          Secure payment runs through Stripe Checkout — we never store card numbers.
+          Your support isn&apos;t a tax-deductible donation; you&apos;re backing a company
+          that gives its tools away free.
+        </p>
       </div>
     </div>
   );

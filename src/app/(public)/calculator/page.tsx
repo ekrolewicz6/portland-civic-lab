@@ -139,10 +139,13 @@ export default function CalculatorPage() {
       {/* Hero */}
       <section className="bg-[var(--color-canopy)] text-white py-16 sm:py-20">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
-          <p className="text-[11px] font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em] mb-4">
-            PCB Benefits Calculator
-          </p>
-          <h1 className="font-editorial-normal text-3xl sm:text-4xl lg:text-5xl leading-[1.15] mb-4">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-8 h-px bg-[var(--color-ember)]" />
+            <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+              PCB Benefits Calculator
+            </span>
+          </div>
+          <h1 className="font-editorial-normal text-[36px] sm:text-[44px] lg:text-[48px] leading-[1.1] mb-4">
             What Is Certification Worth to Your Business?
           </h1>
           <p className="text-white/60 text-[15px] max-w-xl mx-auto leading-relaxed">
@@ -302,7 +305,7 @@ export default function CalculatorPage() {
               <button
                 disabled={!formValid}
                 onClick={handleCalculate}
-                className="flex items-center gap-2 px-8 py-3 bg-[var(--color-ember)] text-[var(--color-canopy)] text-[14px] font-semibold rounded-sm hover:bg-[var(--color-ember-bright)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 px-6 py-3 bg-[var(--color-ember)] text-[var(--color-canopy)] text-[15px] font-semibold rounded-sm hover:bg-[var(--color-ember-bright)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 Calculate My Savings
                 <ArrowRight className="w-4 h-4" />
@@ -409,14 +412,14 @@ export default function CalculatorPage() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   href="/apply"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-[var(--color-ember)] text-[var(--color-canopy)] text-[14px] font-semibold rounded-sm hover:bg-[var(--color-ember-bright)] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[var(--color-ember)] text-[var(--color-canopy)] text-[15px] font-semibold rounded-sm hover:bg-[var(--color-ember-bright)] transition-colors"
                 >
                   Apply for PCB Certification
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <button
                   onClick={handleReset}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-[var(--color-parchment)] text-[var(--color-ink-light)] text-[14px] font-medium rounded-sm hover:border-[var(--color-sage)] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-[var(--color-parchment)] text-[var(--color-ink-light)] text-[15px] font-medium rounded-sm hover:border-[var(--color-sage)] transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   Recalculate

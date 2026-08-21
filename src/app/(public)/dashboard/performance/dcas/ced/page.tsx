@@ -43,9 +43,9 @@ export default async function CedCockpitPage() {
   );
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,#fffdf8_0,#f7f3ed_42%,#efe8dc_100%)]">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,var(--color-paper-warm)_0,var(--color-paper)_42%,var(--color-parchment)_100%)]">
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(224,168,112,0.18),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,color-mix(in_srgb,var(--color-ember-bright)_18%,transparent),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
         <div className="mx-auto max-w-[1400px] px-5 py-10 sm:px-8 lg:px-12">
           <Link
             href="/dashboard/performance/dcas"
@@ -108,7 +108,7 @@ export default async function CedCockpitPage() {
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-ember-bright)]">
                 May 7 CEDSA hearing map
               </p>
-              <h2 className="mt-3 max-w-4xl font-editorial-normal text-[38px] leading-[1.04] tracking-tight text-white sm:text-[52px]">
+              <h2 className="mt-3 max-w-4xl font-editorial text-[28px] leading-tight tracking-tight text-white sm:text-[36px]">
                 CED questions Council actually asked
               </h2>
               <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/74">
@@ -126,7 +126,7 @@ export default async function CedCockpitPage() {
               </p>
               <Link
                 href="/dashboard/performance/council"
-                className="mt-5 inline-flex items-center gap-2 rounded-sm bg-white px-4 py-2 text-sm font-semibold text-[var(--color-canopy)]"
+                className="mt-5 inline-flex items-center gap-2 rounded-sm bg-white px-5 py-3 text-[15px] font-semibold text-[var(--color-canopy)]"
               >
                 Open full council issue map
                 <ArrowUpRight className="h-4 w-4" />
@@ -267,7 +267,7 @@ export default async function CedCockpitPage() {
           </p>
           <Link
             href="/dashboard/performance/council"
-            className="mt-4 inline-flex items-center gap-2 rounded-sm bg-white px-4 py-2 text-sm font-semibold text-[var(--color-canopy)]"
+            className="mt-4 inline-flex items-center gap-2 rounded-sm bg-white px-5 py-3 text-[15px] font-semibold text-[var(--color-canopy)]"
           >
             Convert this into council questions
             <ArrowUpRight className="h-4 w-4" />

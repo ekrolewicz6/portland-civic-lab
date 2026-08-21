@@ -114,7 +114,7 @@ export default function CedPortfolio() {
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-ember-bright)]">
           Public-source demonstration
         </p>
-        <h2 className="mt-3 max-w-4xl font-editorial-normal text-[38px] leading-[1.04] tracking-tight sm:text-[52px]">
+        <h2 className="mt-3 max-w-4xl font-editorial text-[28px] leading-tight tracking-tight sm:text-[36px]">
           The CED portfolio, as one picture
         </h2>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/74">

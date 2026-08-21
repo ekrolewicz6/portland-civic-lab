@@ -40,7 +40,7 @@ export default async function PerformanceDashboardPage() {
           </p>
           <Link
             href="/dashboard"
-            className="mt-6 inline-flex rounded-sm bg-[var(--color-canopy)] px-4 py-2 text-sm font-semibold text-white"
+            className="mt-6 inline-flex rounded-sm bg-[var(--color-canopy)] px-5 py-3 text-[15px] font-semibold text-white"
           >
             Back to dashboard
           </Link>

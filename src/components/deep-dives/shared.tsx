@@ -14,13 +14,13 @@ import React from "react";
 
 /** Responsive page gutter — long-form pages should use real desktop width. */
 export const DIVE_CONTAINER =
-  "mx-auto w-full max-w-[1880px] px-4 sm:px-6 lg:px-10 2xl:px-12";
+  "mx-auto w-full max-w-[1400px] 3xl:max-w-[1800px] px-5 sm:px-8 lg:px-12";
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-3 mb-4">
       <div className="w-8 h-px bg-[var(--color-ember)]" />
-      <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
+      <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
         {children}
       </span>
     </div>
@@ -65,7 +65,7 @@ const TONE_BG: Record<Tone, string> = {
   default: "",
   warm: "bg-[var(--color-paper-warm)] border-y border-[var(--color-parchment)]",
   dark: "bg-[var(--color-canopy)] text-white",
-  darker: "bg-[#1c1410] text-white",
+  darker: "bg-[var(--color-canopy-deep)] text-white",
 };
 
 /**

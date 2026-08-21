@@ -118,12 +118,12 @@ function trendIcon(metric: PerformanceMetric): LucideIcon {
 
 function trendBadgeClass(metric: PerformanceMetric): string {
   if (metric.trend.tone === "positive") {
-    return "border-emerald-300 bg-emerald-50 text-emerald-800";
+    return "border-[var(--color-sage)] bg-[var(--color-sage)]/15 text-[var(--color-fern)]";
   }
   if (metric.trend.tone === "negative") {
     return "border-red-300 bg-red-50 text-red-800";
   }
-  return "border-stone-300 bg-white text-stone-700";
+  return "border-[var(--color-parchment)] bg-white text-[var(--color-ink-light)]";
 }
 
 export function EvidenceMetricCard({

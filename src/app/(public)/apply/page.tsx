@@ -213,13 +213,13 @@ export default function ApplyPage() {
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/calculator"
-              className="px-6 py-3 bg-[var(--color-ember)] text-[var(--color-canopy)] text-[14px] font-semibold rounded-sm hover:bg-[var(--color-ember-bright)] transition-colors"
+              className="px-6 py-3 bg-[var(--color-ember)] text-[var(--color-canopy)] text-[15px] font-semibold rounded-sm hover:bg-[var(--color-ember-bright)] transition-colors"
             >
               Estimate Your Benefits
             </Link>
             <Link
               href="/"
-              className="px-6 py-3 border border-[var(--color-parchment)] text-[var(--color-ink-light)] text-[14px] font-medium rounded-sm hover:border-[var(--color-sage)] transition-colors"
+              className="px-5 py-3 border border-[var(--color-parchment)] text-[var(--color-ink-light)] text-[15px] font-medium rounded-sm hover:border-[var(--color-sage)] transition-colors"
             >
               Back to Dashboard
             </Link>
@@ -235,10 +235,13 @@ export default function ApplyPage() {
       {/* Hero */}
       <section className="bg-[var(--color-canopy)] text-white py-16 sm:py-20">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
-          <p className="text-[11px] font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em] mb-4">
-            Portland Civic Lab Business
-          </p>
-          <h1 className="font-editorial-normal text-3xl sm:text-4xl lg:text-5xl leading-[1.15] mb-4">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-8 h-px bg-[var(--color-ember)]" />
+            <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+              Portland Civic Lab Business
+            </span>
+          </div>
+          <h1 className="font-editorial-normal text-[36px] sm:text-[44px] lg:text-[48px] leading-[1.1] mb-4">
             Apply for Portland Civic Lab Certification
           </h1>
           <p className="text-white/60 text-[15px] max-w-xl mx-auto leading-relaxed">
@@ -445,7 +448,7 @@ export default function ApplyPage() {
               <button
                 disabled={!step1Valid}
                 onClick={() => setStep(2)}
-                className="flex items-center gap-2 px-6 py-3 bg-[var(--color-canopy)] text-white text-[14px] font-semibold rounded-sm hover:bg-[var(--color-canopy-mid)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 px-5 py-3 bg-[var(--color-canopy)] text-white text-[15px] font-semibold rounded-sm hover:bg-[var(--color-canopy-mid)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 Continue
                 <ArrowRight className="w-4 h-4" />
@@ -518,7 +521,7 @@ export default function ApplyPage() {
             <div className="flex justify-between pt-4">
               <button
                 onClick={() => setStep(1)}
-                className="flex items-center gap-2 px-5 py-3 text-[14px] font-medium text-[var(--color-ink-light)] hover:text-[var(--color-ink)] transition-colors"
+                className="flex items-center gap-2 px-5 py-3 text-[15px] font-medium text-[var(--color-ink-light)] hover:text-[var(--color-ink)] transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back
@@ -526,7 +529,7 @@ export default function ApplyPage() {
               <button
                 disabled={!allEligible}
                 onClick={() => setStep(3)}
-                className="flex items-center gap-2 px-6 py-3 bg-[var(--color-canopy)] text-white text-[14px] font-semibold rounded-sm hover:bg-[var(--color-canopy-mid)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 px-5 py-3 bg-[var(--color-canopy)] text-white text-[15px] font-semibold rounded-sm hover:bg-[var(--color-canopy-mid)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 Continue
                 <ArrowRight className="w-4 h-4" />
@@ -622,7 +625,7 @@ export default function ApplyPage() {
             <div className="flex justify-between pt-4">
               <button
                 onClick={() => setStep(2)}
-                className="flex items-center gap-2 px-5 py-3 text-[14px] font-medium text-[var(--color-ink-light)] hover:text-[var(--color-ink)] transition-colors"
+                className="flex items-center gap-2 px-5 py-3 text-[15px] font-medium text-[var(--color-ink-light)] hover:text-[var(--color-ink)] transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back
@@ -630,7 +633,7 @@ export default function ApplyPage() {
               <button
                 disabled={submitting}
                 onClick={handleSubmit}
-                className="flex items-center gap-2 px-8 py-3 bg-[var(--color-ember)] text-[var(--color-canopy)] text-[14px] font-semibold rounded-sm hover:bg-[var(--color-ember-bright)] transition-colors disabled:opacity-60"
+                className="flex items-center gap-2 px-6 py-3 bg-[var(--color-ember)] text-[var(--color-canopy)] text-[15px] font-semibold rounded-sm hover:bg-[var(--color-ember-bright)] transition-colors disabled:opacity-60"
               >
                 {submitting ? (
                   <>

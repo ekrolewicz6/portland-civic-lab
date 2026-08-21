@@ -17,12 +17,17 @@ export default function ConciergePage() {
   return (
     <div className="bg-[var(--color-paper)] min-h-[80vh] flex flex-col">
       {/* Hero strip */}
-      <section className="bg-[var(--color-canopy)] text-white py-10 sm:py-14">
-        <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
-          <p className="text-[11px] font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em] mb-3">
-            AI Civic Concierge
-          </p>
-          <h1 className="font-editorial-normal text-3xl sm:text-4xl leading-[1.15] mb-3">
+      <section className="relative overflow-hidden noise-overlay bg-[var(--color-canopy)] text-white py-10 sm:py-14">
+        <div className="absolute right-0 top-0 h-[420px] w-[520px] translate-x-1/4 -translate-y-1/3 rounded-full bg-[var(--color-canopy-light)] opacity-25 blur-[150px]" />
+        <div className="relative max-w-3xl mx-auto px-5 sm:px-8 text-center">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <div className="w-8 h-px bg-[var(--color-ember)]" />
+            <span className="text-[10px] font-mono font-semibold text-[var(--color-ember)] uppercase tracking-[0.22em]">
+              AI Civic Concierge
+            </span>
+            <div className="w-8 h-px bg-[var(--color-ember)]" />
+          </div>
+          <h1 className="font-editorial-normal text-[36px] sm:text-[48px] leading-[1.08] tracking-tight mb-3">
             Ask Anything About Portland
           </h1>
           <p className="text-white/60 text-[14px] max-w-lg mx-auto leading-relaxed">

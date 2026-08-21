@@ -27,7 +27,7 @@ export default function OpenDataPage() {
     <div className="bg-[var(--color-paper)]">
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
         <div className="absolute right-0 top-0 h-[420px] w-[520px] translate-x-1/4 -translate-y-1/3 rounded-full bg-[var(--color-canopy-light)] opacity-25 blur-[150px]" />
-        <div className="mx-auto max-w-[1400px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12">
+        <div className="mx-auto max-w-[1400px] 3xl:max-w-[1800px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]/85">
               <span>Open data</span>
@@ -46,10 +46,10 @@ export default function OpenDataPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-5 py-12 sm:px-8 sm:py-16">
+      <section className="mx-auto max-w-[900px] px-5 py-12 sm:px-8 sm:py-16">
         <div className="space-y-10 text-[15px] leading-relaxed text-[var(--color-ink-light)]">
           <div>
-            <h2 className="font-editorial text-[26px] text-[var(--color-ink)] mb-3">
+            <h2 className="font-editorial text-[28px] sm:text-[34px] leading-tight text-[var(--color-ink)] mb-3">
               JSON endpoints
             </h2>
             <p className="mb-4">
@@ -82,7 +82,7 @@ export default function OpenDataPage() {
           </div>
 
           <div>
-            <h2 className="font-editorial text-[26px] text-[var(--color-ink)] mb-3">
+            <h2 className="font-editorial text-[28px] sm:text-[34px] leading-tight text-[var(--color-ink)] mb-3">
               CSV downloads
             </h2>
             <p>
@@ -96,7 +96,7 @@ export default function OpenDataPage() {
           </div>
 
           <div>
-            <h2 className="font-editorial text-[26px] text-[var(--color-ink)] mb-3">
+            <h2 className="font-editorial text-[28px] sm:text-[34px] leading-tight text-[var(--color-ink)] mb-3">
               Ground rules
             </h2>
             <ul className="list-disc space-y-2 pl-5">
@@ -128,7 +128,7 @@ export default function OpenDataPage() {
           </div>
 
           <div>
-            <h2 className="font-editorial text-[26px] text-[var(--color-ink)] mb-3">
+            <h2 className="font-editorial text-[28px] sm:text-[34px] leading-tight text-[var(--color-ink)] mb-3">
               Want the raw pipelines?
             </h2>
             <p>

@@ -170,9 +170,9 @@ export default async function CityAdministratorCockpitPage() {
   );
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,#fffdf8_0,#f7f3ed_42%,#efe8dc_100%)]">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,var(--color-paper-warm)_0,var(--color-paper)_42%,var(--color-parchment)_100%)]">
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(224,168,112,0.18),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,color-mix(in_srgb,var(--color-ember-bright)_18%,transparent),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
         <div className="mx-auto max-w-[1400px] px-5 py-10 sm:px-8 lg:px-12">
           <Link
             href="/dashboard/performance"
@@ -227,7 +227,7 @@ export default async function CityAdministratorCockpitPage() {
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ember-bright)]">
                 Live Executive Brief
               </p>
-              <h2 className="mt-2 max-w-4xl font-editorial text-[42px] leading-[1.02] tracking-tight text-white sm:text-[56px]">
+              <h2 className="mt-2 max-w-4xl font-editorial text-[28px] leading-tight tracking-tight text-white sm:text-[42px]">
                 Ready for the next City Administrator / DCA operating check-in
               </h2>
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/72">
@@ -239,14 +239,14 @@ export default async function CityAdministratorCockpitPage() {
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   href="/dashboard/performance/changes"
-                  className="inline-flex items-center gap-2 rounded-sm bg-white px-4 py-2 text-sm font-semibold text-[var(--color-canopy)]"
+                  className="inline-flex items-center gap-2 rounded-sm bg-white px-5 py-3 text-[15px] font-semibold text-[var(--color-canopy)]"
                 >
                   Open change log
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/api/performance/export"
-                  className="inline-flex items-center gap-2 rounded-sm border border-white/16 bg-white/[0.08] px-4 py-2 text-sm font-semibold text-white"
+                  className="inline-flex items-center gap-2 rounded-sm border border-white/16 bg-white/[0.08] px-5 py-3 text-[15px] font-semibold text-white"
                 >
                   Export source data
                   <FileArchive className="h-4 w-4" />
@@ -413,7 +413,7 @@ export default async function CityAdministratorCockpitPage() {
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ember-bright)]">
                 Council-Ready Issue Queue
               </p>
-              <h2 className="mt-3 font-editorial text-[38px] leading-[1.04] text-white">
+              <h2 className="mt-3 font-editorial text-[28px] leading-[1.04] text-white sm:text-[38px]">
                 Questions likely to become management follow-up
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-white/72">
@@ -422,7 +422,7 @@ export default async function CityAdministratorCockpitPage() {
               </p>
               <Link
                 href="/dashboard/performance/council"
-                className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/[0.08] px-4 py-2 text-sm font-semibold text-white"
+                className="mt-5 inline-flex items-center gap-2 rounded-sm border border-white/18 bg-white/[0.08] px-5 py-3 text-[15px] font-semibold text-white"
               >
                 Open full council issue map
                 <ArrowUpRight className="h-4 w-4" />

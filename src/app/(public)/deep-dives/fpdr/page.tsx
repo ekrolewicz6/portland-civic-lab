@@ -64,7 +64,7 @@ export default function FpdrDeepDivePage() {
                 <div className="w-8 h-px bg-[var(--color-ember)]/50" />
                 <span>Portland budgets</span>
               </div>
-              <h1 className="mt-6 font-editorial-normal text-[40px] sm:text-[58px] lg:text-[70px] 3xl:text-[82px] leading-[1.04] tracking-tight max-w-4xl 3xl:max-w-5xl">
+              <h1 className="mt-6 font-editorial-normal text-[40px] sm:text-[58px] lg:text-[70px] leading-[1.04] tracking-tight max-w-4xl 3xl:max-w-5xl">
                 The pension hiding on your
                 <span className="block font-editorial italic text-[var(--color-ember-bright)]">
                   property tax bill
@@ -142,7 +142,7 @@ export default function FpdrDeepDivePage() {
             { v: fmtPct(HEADLINE.shareOfCityLine, 0), l: "of your city tax line", s: "goes to this one fund" },
           ].map((s) => (
             <div key={s.l}>
-              <p className="font-mono text-[30px] sm:text-[38px] 3xl:text-[46px] font-bold tabular-nums leading-none text-[var(--color-ember-bright)]">
+              <p className="font-mono text-[30px] sm:text-[38px] font-bold tabular-nums leading-none text-[var(--color-ember-bright)]">
                 {s.v}
               </p>
               <p className="text-[13px] font-semibold mt-2 leading-snug">{s.l}</p>
@@ -160,7 +160,7 @@ export default function FpdrDeepDivePage() {
               <a
                 key={n.id}
                 href={`#${n.id}`}
-                className="whitespace-nowrap rounded-sm px-3 py-1.5 text-[var(--color-ink-muted)] hover:bg-[var(--color-paper-warm)] hover:text-[var(--color-canopy)] transition-colors"
+                className="flex min-h-[44px] items-center whitespace-nowrap rounded-sm px-3 py-3 text-[var(--color-ink-muted)] hover:bg-[var(--color-paper-warm)] hover:text-[var(--color-canopy)] transition-colors"
               >
                 {n.label}
               </a>

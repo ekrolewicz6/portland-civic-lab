@@ -51,9 +51,9 @@ export default async function DcaCockpitsPage() {
   const dcaAreas = PERFORMANCE_SERVICE_AREAS.filter((area) => area.slug !== "city-administrator");
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,#fffdf8_0,#f7f3ed_42%,#efe8dc_100%)]">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,var(--color-paper-warm)_0,var(--color-paper)_42%,var(--color-parchment)_100%)]">
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(224,168,112,0.18),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,color-mix(in_srgb,var(--color-ember-bright)_18%,transparent),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%)]" />
         <div className="mx-auto max-w-[1400px] px-5 py-10 sm:px-8 lg:px-12">
           <Link
             href="/dashboard/performance"
@@ -86,7 +86,7 @@ export default async function DcaCockpitsPage() {
       </section>
 
       <section className="mx-auto max-w-[1400px] px-5 py-8 sm:px-8 lg:px-12">
-        <div className="grid gap-4 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {DCA_TOOLS.map((tool) => {
             const Icon = tool.icon;
             return (
@@ -165,7 +165,7 @@ export default async function DcaCockpitsPage() {
                     )}
                     <Link
                       href={isCed ? "/dashboard/performance/dcas/ced" : "/dashboard/performance/service-areas"}
-                      className={`inline-flex items-center gap-2 rounded-sm px-4 py-2 text-sm font-semibold ${
+                      className={`inline-flex items-center gap-2 rounded-sm px-5 py-3 text-[15px] font-semibold ${
                         isCed
                           ? "bg-[var(--color-canopy)] text-white"
                           : "bg-[var(--color-paper-warm)] text-[var(--color-canopy)]"

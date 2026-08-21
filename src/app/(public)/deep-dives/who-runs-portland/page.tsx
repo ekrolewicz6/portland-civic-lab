@@ -76,7 +76,7 @@ const wideSectionTone: Record<Tone, string> = {
   warm: "border-y border-[var(--color-parchment)] bg-[var(--color-paper-warm)]",
 };
 
-const WIDE_CONTAINER = "mx-auto w-full max-w-[1760px] px-5 sm:px-8 lg:px-10 2xl:px-12";
+const WIDE_CONTAINER = DIVE_CONTAINER;
 
 function WideSection({
   id,
@@ -399,7 +399,7 @@ export default function WhoRunsPortlandPage() {
           </div>
           <div className="mt-7 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
-              <h1 className="max-w-4xl font-editorial text-[42px] leading-[1.05] tracking-tight sm:text-[60px] lg:text-[74px]">
+              <h1 className="max-w-4xl font-editorial-normal text-[40px] leading-[1.05] tracking-tight sm:text-[56px] lg:text-[64px]">
                 Who actually runs Portland?
               </h1>
               <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-white/75 sm:text-[19px]">
@@ -414,7 +414,7 @@ export default function WhoRunsPortlandPage() {
         </div>
       </section>
 
-      <nav className="sticky top-[64px] z-20 border-b border-[var(--color-parchment)] bg-[var(--color-paper)]/95 backdrop-blur">
+      <nav className="sticky top-14 z-40 border-b border-[var(--color-parchment)] bg-[var(--color-paper)]/95 backdrop-blur">
         <div className={`${DIVE_CONTAINER} flex gap-4 overflow-x-auto py-3 text-[13px] font-semibold text-[var(--color-ink-muted)]`}>
           {[
             ["Responsibility test", "#power-map"],
@@ -423,7 +423,7 @@ export default function WhoRunsPortlandPage() {
             ["Actors", "#actors"],
             ["Sources", "#sources"],
           ].map(([label, href]) => (
-            <a key={href} href={href} className="shrink-0 hover:text-[var(--color-canopy)]">
+            <a key={href} href={href} className="flex min-h-[44px] shrink-0 items-center px-2 py-3 hover:text-[var(--color-canopy)]">
               {label}
             </a>
           ))}

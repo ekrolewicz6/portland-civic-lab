@@ -32,7 +32,7 @@ export default function BriefPage() {
             Weekly · free · public sources only
           </span>
         </div>
-        <h1 className="font-editorial-normal text-[40px] sm:text-[56px] text-[var(--color-ink)] leading-[1.05]">
+        <h1 className="font-editorial-normal text-[40px] sm:text-[56px] lg:text-[64px] text-[var(--color-ink)] leading-[1.05]">
           The Portland Portfolio Brief
         </h1>
         <p className="mt-6 max-w-2xl text-[17px] sm:text-[18px] text-[var(--color-ink-light)] leading-relaxed">

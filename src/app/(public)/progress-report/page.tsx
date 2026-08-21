@@ -46,10 +46,11 @@ export default async function ProgressReportArchivePage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <div className="bg-[var(--color-canopy)] text-white">
-        <div className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 pt-16 pb-20">
+      <div className="relative overflow-hidden noise-overlay bg-[var(--color-canopy)] text-white">
+        <div className="absolute right-0 top-0 h-[420px] w-[520px] translate-x-1/4 -translate-y-1/3 rounded-full bg-[var(--color-canopy-light)] opacity-25 blur-[150px]" />
+        <div className="relative max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 py-14 sm:py-18">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-[11px] font-mono text-white/40 uppercase tracking-[0.15em] mb-8">
+          <div className="flex items-center gap-2 text-[10px] font-mono text-white/40 uppercase tracking-[0.22em] mb-8">
             <Link href="/dashboard" className="hover:text-white/60 transition-colors">
               Dashboard
             </Link>
@@ -62,13 +63,10 @@ export default async function ProgressReportArchivePage() {
               <BookOpen className="w-5 h-5 text-[var(--color-ember)]" />
             </div>
             <div>
-              <h1
-                className="text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.1] mb-4"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
+              <h1 className="font-editorial-normal text-[40px] sm:text-[56px] lg:text-[64px] leading-[1.08] tracking-tight mb-4">
                 Portland Progress Report
               </h1>
-              <p className="text-white/60 text-lg leading-relaxed max-w-2xl" style={{ fontFamily: "var(--font-display)", fontStyle: "italic" }}>
+              <p className="text-[17px] sm:text-[19px] text-white/60 leading-relaxed max-w-2xl">
                 Quarterly publication combining dashboard data with narrative
                 analysis. Portland&apos;s unofficial performance review.
               </p>
@@ -84,10 +82,7 @@ export default async function ProgressReportArchivePage() {
         {reports.length === 0 ? (
           <div className="text-center py-20">
             <BookOpen className="w-12 h-12 text-[var(--color-parchment)] mx-auto mb-4" />
-            <h2
-              className="text-2xl text-[var(--color-ink-muted)] mb-2"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
+            <h2 className="font-editorial-normal text-[28px] text-[var(--color-ink-muted)] mb-2">
               No reports published yet
             </h2>
             <p className="text-[var(--color-ink-muted)] text-[14px]">

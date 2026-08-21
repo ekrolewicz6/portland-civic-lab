@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import sql from "@/lib/db-query";
+import { formatEntityType, entityBadgeColor } from "@/lib/directory-format";
 import {
   Building2,
   Calendar,
@@ -63,24 +64,6 @@ function titleCase(str: string): string {
     .join(" ");
 }
 
-function formatEntityType(raw: string): string {
-  const map: Record<string, string> = {
-    "DOMESTIC LIMITED LIABILITY COMPANY": "Limited Liability Company",
-    "DOMESTIC BUSINESS CORPORATION": "Business Corporation",
-    "DOMESTIC NONPROFIT CORPORATION": "Nonprofit Corporation",
-    "DOMESTIC LIMITED PARTNERSHIP": "Limited Partnership",
-    "DOMESTIC PROFESSIONAL CORPORATION": "Professional Corporation",
-    "FOREIGN LIMITED LIABILITY COMPANY": "Foreign LLC",
-    "FOREIGN BUSINESS CORPORATION": "Foreign Business Corporation",
-    "FOREIGN NONPROFIT CORPORATION": "Foreign Nonprofit",
-    "FOREIGN LIMITED PARTNERSHIP": "Foreign Limited Partnership",
-    "ASSUMED BUSINESS NAME": "Assumed Business Name",
-    "DOMESTIC GENERAL PARTNERSHIP": "General Partnership",
-    "FOREIGN PROFESSIONAL CORPORATION": "Foreign Professional Corporation",
-  };
-  return map[raw.toUpperCase()] ?? titleCase(raw);
-}
-
 function formatDate(dateStr: string | null): string {
   if (!dateStr) return "Unknown";
   try {
@@ -116,49 +99,6 @@ function formatShortDate(dateStr: string | null): string {
 function googleMapsUrl(address: string | null, city: string | null): string {
   const parts = [address, city, "OR"].filter(Boolean).join(", ");
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(parts)}`;
-}
-
-function entityBadgeColor(entityType: string): {
-  bg: string;
-  text: string;
-  border: string;
-} {
-  const t = entityType.toUpperCase();
-  if (t.includes("DOMESTIC") && t.includes("LIMITED LIABILITY"))
-    return {
-      bg: "bg-[var(--color-canopy)]/8",
-      text: "text-[var(--color-canopy)]",
-      border: "border-[var(--color-canopy)]/20",
-    };
-  if (t.includes("DOMESTIC") && t.includes("BUSINESS CORPORATION"))
-    return {
-      bg: "bg-[var(--color-river)]/8",
-      text: "text-[var(--color-river-deep)]",
-      border: "border-[var(--color-river)]/20",
-    };
-  if (t.includes("FOREIGN"))
-    return {
-      bg: "bg-[var(--color-violet-mist)]/8",
-      text: "text-[var(--color-violet-mist)]",
-      border: "border-[var(--color-violet-mist)]/20",
-    };
-  if (t.includes("NONPROFIT"))
-    return {
-      bg: "bg-[var(--color-fern)]/8",
-      text: "text-[var(--color-fern)]",
-      border: "border-[var(--color-fern)]/20",
-    };
-  if (t.includes("ASSUMED"))
-    return {
-      bg: "bg-[var(--color-ember)]/8",
-      text: "text-[var(--color-clay)]",
-      border: "border-[var(--color-ember)]/20",
-    };
-  return {
-    bg: "bg-[var(--color-storm)]/8",
-    text: "text-[var(--color-storm)]",
-    border: "border-[var(--color-storm)]/20",
-  };
 }
 
 /* ── Data fetching ── */
@@ -348,7 +288,7 @@ export default async function BusinessProfilePage({
           </div>
 
           {/* Business name */}
-          <h1 className="font-editorial-normal text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.1] mb-5 max-w-3xl">
+          <h1 className="font-editorial-normal text-[40px] sm:text-[48px] lg:text-[56px] leading-[1.05] mb-5 max-w-3xl">
             {name}
           </h1>
 
@@ -412,7 +352,7 @@ export default async function BusinessProfilePage({
                     href={mapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.08em] bg-white/10 hover:bg-white/20 text-white rounded-sm transition-all duration-200"
+                    className="mt-5 inline-flex items-center gap-2 px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.08em] bg-white/10 hover:bg-white/20 text-white rounded-sm transition-all duration-200"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
                     View on Google Maps
@@ -686,7 +626,7 @@ export default async function BusinessProfilePage({
             <div className="mt-6 text-center">
               <Link
                 href={`/directory?entityType=${encodeURIComponent(business.entity_type)}`}
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.1em] text-[var(--color-canopy)] border border-[var(--color-parchment)] hover:border-[var(--color-sage)] rounded-sm transition-all duration-200"
+                className="inline-flex items-center gap-2 rounded-sm px-5 py-3 text-[15px] font-semibold text-[var(--color-canopy)] border border-[var(--color-parchment)] hover:border-[var(--color-sage)] transition-all duration-200"
               >
                 View all {humanEntityType} businesses
                 <ArrowLeft className="w-3.5 h-3.5 rotate-180" />

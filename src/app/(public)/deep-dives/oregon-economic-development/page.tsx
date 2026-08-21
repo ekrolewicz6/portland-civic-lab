@@ -89,14 +89,14 @@ function StatCard({ value, label, source }: { value: string; label: string; sour
 }
 
 const FIX_TONE = {
-  yes: { label: "A reorg can fix this", className: "border-[var(--color-sage)] bg-[#f3fbf5] text-[var(--color-canopy)]" },
+  yes: { label: "A reorg can fix this", className: "border-[var(--color-sage)] bg-[var(--color-sage-tint)] text-[var(--color-canopy)]" },
   partly: { label: "A reorg might help", className: "border-[#d6a15f] bg-[#fff8ea] text-[#80511b]" },
-  no: { label: "A reorg won't fix this", className: "border-[#df9b86] bg-[#fff7f2] text-[#8c3d25]" },
+  no: { label: "A reorg won't fix this", className: "border-[#df9b86] bg-[var(--color-clay-tint)] text-[var(--color-clay)]" },
 } as const;
 
 const PEER_TONE = {
-  positive: "border-[var(--color-sage)] bg-[#f5fbf6]",
-  caution: "border-[#f0b6a8] bg-[#fff7f3]",
+  positive: "border-[var(--color-sage)] bg-[var(--color-sage-tint)]",
+  caution: "border-[#f0b6a8] bg-[var(--color-clay-tint)]",
   mixed: "border-[var(--color-parchment)] bg-white",
 } as const;
 
@@ -125,7 +125,7 @@ export default function OregonEconomicDevelopmentPage() {
                 <span className="h-px w-8 bg-[var(--color-ember)]/60" />
                 <span>Accountability</span>
               </div>
-              <h1 className="mt-7 max-w-5xl font-editorial-normal text-[44px] leading-[1.0] tracking-tight sm:text-[60px] lg:text-[76px] 2xl:text-[88px]">
+              <h1 className="mt-7 max-w-5xl font-editorial-normal text-[44px] leading-[1.0] tracking-tight sm:text-[60px] lg:text-[76px]">
                 Is Oregon serious about{" "}
                 <span className="font-editorial italic text-[var(--color-ember-bright)]">its own economy?</span>
               </h1>
@@ -209,7 +209,7 @@ export default function OregonEconomicDevelopmentPage() {
         </div>
       </section>
 
-      <nav aria-label="Section navigation" className="sticky top-0 z-30 border-b border-[var(--color-parchment)] bg-[var(--color-paper)]/92 backdrop-blur-md">
+      <nav aria-label="Section navigation" className="sticky top-14 z-40 border-b border-[var(--color-parchment)] bg-[var(--color-paper)]/92 backdrop-blur-md">
         <div className={`${DIVE_CONTAINER} flex gap-2 overflow-x-auto py-3`}>
           {NAV.map((item) => (
             <a
@@ -235,7 +235,7 @@ export default function OregonEconomicDevelopmentPage() {
           <ScorecardChart />
 
           {/* It wasn't just the jobs goal — multiple targets were cut before the "100% green" year */}
-          <div className="mt-6 -mx-4 border-y border-[var(--color-ember)]/30 bg-[#fff7f2] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-6">
+          <div className="mt-6 -mx-4 border-y border-[var(--color-ember)]/30 bg-[var(--color-clay-tint)] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-6">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
               It wasn&apos;t just the jobs goal
             </p>
@@ -251,7 +251,7 @@ export default function OregonEconomicDevelopmentPage() {
                   <p className="mt-1.5 font-mono text-[16px] font-bold tabular-nums">
                     <span className="text-[var(--color-ink-muted)]">{t.from}</span>
                     <span className="px-1 text-[var(--color-ink-muted)]">→</span>
-                    <span className="text-[#8c3d25]">{t.to}</span>
+                    <span className="text-[var(--color-clay)]">{t.to}</span>
                   </p>
                 </div>
               ))}
@@ -275,7 +275,7 @@ export default function OregonEconomicDevelopmentPage() {
                 <div key={k.name} className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-4">
                   <div className="flex items-center justify-between gap-3">
                     <p className="text-[14px] font-bold leading-snug text-[var(--color-ink)]">{k.name}</p>
-                    <span className={`flex-shrink-0 rounded-full border px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-[0.1em] ${k.verdict === "beat" ? "border-[var(--color-sage)] bg-[#f3fbf5] text-[var(--color-canopy)]" : "border-[#df9b86] bg-[#fff7f2] text-[#8c3d25]"}`}>
+                    <span className={`flex-shrink-0 rounded-full border px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-[0.1em] ${k.verdict === "beat" ? "border-[var(--color-sage)] bg-[var(--color-sage-tint)] text-[var(--color-canopy)]" : "border-[#df9b86] bg-[var(--color-clay-tint)] text-[var(--color-clay)]"}`}>
                       {k.verdict === "beat" ? "Beat" : "Missed"}
                     </span>
                   </div>
@@ -353,7 +353,7 @@ export default function OregonEconomicDevelopmentPage() {
                 {SCHOOL_COST.districts.map((d) => (
                   <div key={d.name} className="flex items-center justify-between gap-3 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-3">
                     <p className="text-[14px] font-semibold text-[var(--color-ink)]">{d.name}</p>
-                    <p className="font-mono text-[18px] font-bold tabular-nums text-[#8c3d25]">{fmtUSD(d.millions)}</p>
+                    <p className="font-mono text-[18px] font-bold tabular-nums text-[var(--color-clay)]">{fmtUSD(d.millions)}</p>
                   </div>
                 ))}
               </div>
@@ -384,12 +384,12 @@ export default function OregonEconomicDevelopmentPage() {
           tone="warm"
         >
           <div className="grid gap-5 lg:grid-cols-2">
-            <div className="-mx-4 border-y border-[#f0b6a8] bg-[#fff7f3] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-6">
-              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8c3d25]">Business Oregon</p>
+            <div className="-mx-4 border-y border-[#f0b6a8] bg-[var(--color-clay-tint)] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-6">
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-clay)]">Business Oregon</p>
               <p className="mt-2 font-editorial text-[24px] leading-tight text-[var(--color-ink)]">{FRONT_DOOR.oregonHero}</p>
               <p className="mt-2 text-[13px] italic leading-snug text-[var(--color-ink-muted)]">CTA: &ldquo;{FRONT_DOOR.oregonCta}&rdquo;</p>
             </div>
-            <div className="-mx-4 border-y border-[var(--color-sage)] bg-[#f5fbf6] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-6">
+            <div className="-mx-4 border-y border-[var(--color-sage)] bg-[var(--color-sage-tint)] p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-6">
               <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-canopy)]">JobsOhio (for contrast)</p>
               <p className="mt-2 font-editorial text-[24px] leading-tight text-[var(--color-ink)]">{FRONT_DOOR.ohioHero}</p>
               <p className="mt-2 text-[13px] italic leading-snug text-[var(--color-ink-muted)]">CTA: &ldquo;{FRONT_DOOR.ohioCta}&rdquo;</p>
@@ -403,17 +403,17 @@ export default function OregonEconomicDevelopmentPage() {
                   {row.label}
                 </div>
                 <div className="p-4 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
-                  <span className="mb-1 block font-mono text-[9px] uppercase tracking-[0.14em] text-[#8c3d25] sm:hidden">Oregon</span>
+                  <span className="mb-1 block font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-clay)] sm:hidden">Oregon</span>
                   {row.oregon}
                 </div>
                 <div className="border-t border-[var(--color-parchment)] p-4 text-[13px] leading-relaxed text-[var(--color-ink-light)] sm:border-t-0 sm:border-l">
-                  <span className="mb-1 block font-mono text-[9px] uppercase tracking-[0.14em] text-[var(--color-canopy)] sm:hidden">Ohio</span>
+                  <span className="mb-1 block font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-canopy)] sm:hidden">Ohio</span>
                   {row.ohio}
                 </div>
               </div>
             ))}
           </div>
-          <div className="mt-5 -mx-4 border-y border-[var(--color-ember)]/30 bg-[#fff7f2] p-5 sm:mx-0 sm:rounded-sm sm:border">
+          <div className="mt-5 -mx-4 border-y border-[var(--color-ember)]/30 bg-[var(--color-clay-tint)] p-5 sm:mx-0 sm:rounded-sm sm:border">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">Why the front door is the tell</p>
             <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-[var(--color-ink)]">{FRONT_DOOR.verdict}</p>
             <p className="mt-3 text-[13px]"><SourceLink id="bizOregonSite">See Business Oregon&apos;s site</SourceLink> · <SourceLink id="jobsOhio">See JobsOhio</SourceLink></p>
@@ -435,7 +435,7 @@ export default function OregonEconomicDevelopmentPage() {
               {CNBC_RANK.map((r) => (
                 <div key={r.metric} className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-3 text-center">
                   <p className="font-mono text-[16px] font-bold tabular-nums text-[var(--color-ink)] sm:text-[18px]">
-                    #{r.y2019} → <span className="text-[#8c3d25]">#{r.y2025}</span>
+                    #{r.y2019} → <span className="text-[var(--color-clay)]">#{r.y2025}</span>
                   </p>
                   <p className="mt-1 text-[11px] leading-snug text-[var(--color-ink-light)]">{r.metric}</p>
                 </div>
@@ -466,7 +466,7 @@ export default function OregonEconomicDevelopmentPage() {
               </div>
             </div>
             <div className="-mx-4 border-y border-[var(--color-parchment)] bg-white p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5 xl:p-6 2xl:p-7">
-              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8c3d25] xl:text-[12px] 2xl:text-[13px]">Execution — about the doing</p>
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-clay)] xl:text-[12px] 2xl:text-[13px]">Execution — about the doing</p>
               <div className="mt-4 grid gap-3 xl:mt-5 xl:gap-4">
                 {execution.map((d) => {
                   const Icon = d.icon;
@@ -474,7 +474,7 @@ export default function OregonEconomicDevelopmentPage() {
                   return (
                     <div key={d.problem} className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper)] p-4 xl:p-5 2xl:p-6">
                       <div className="flex items-start gap-3 xl:gap-4">
-                        <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-paper-warm)] text-[#8c3d25] xl:h-11 xl:w-11"><Icon className="h-5 w-5 xl:h-[22px] xl:w-[22px]" /></span>
+                        <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-paper-warm)] text-[var(--color-clay)] xl:h-11 xl:w-11"><Icon className="h-5 w-5 xl:h-[22px] xl:w-[22px]" /></span>
                         <div className="min-w-0">
                           <p className="text-[15px] font-bold leading-snug text-[var(--color-ink)] sm:text-[16px] xl:text-[17px] 2xl:text-[18px]">{d.problem}</p>
                           <p className="mt-1.5 max-w-[68ch] text-[13px] leading-relaxed text-[var(--color-ink-light)] sm:text-[14px] xl:text-[15px] 2xl:text-[16px]">{d.detail}</p>
@@ -512,7 +512,7 @@ export default function OregonEconomicDevelopmentPage() {
                   <p className="mt-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">{p.model}</p>
                   <p className="mt-3 border-l-2 border-[var(--color-sage)] pl-3 text-[13px] font-semibold leading-relaxed text-[var(--color-ink)]">{p.outcome}</p>
                   <p className="mt-3 border-l-2 border-[var(--color-ember)] pl-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
-                    <span className="font-semibold text-[#8c3d25]">But: </span>{p.caution}
+                    <span className="font-semibold text-[var(--color-clay)]">But: </span>{p.caution}
                   </p>
                   <p className="mt-3 text-[12px]"><SourceLink id={p.source}>Source</SourceLink></p>
                 </div>
@@ -568,10 +568,10 @@ export default function OregonEconomicDevelopmentPage() {
               return (
                 <div
                   key={c.author}
-                  className={`-mx-4 border-y p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5 xl:p-6 ${business ? "border-[var(--color-ember)]/30 bg-[#fff7f2]" : "border-[var(--color-sage)] bg-[#f5fbf6]"}`}
+                  className={`-mx-4 border-y p-4 sm:mx-0 sm:rounded-sm sm:border sm:p-5 xl:p-6 ${business ? "border-[var(--color-ember)]/30 bg-[var(--color-clay-tint)]" : "border-[var(--color-sage)] bg-[var(--color-sage-tint)]"}`}
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                    <p className={`font-mono text-[11px] font-semibold uppercase tracking-[0.16em] ${business ? "text-[#8c3d25]" : "text-[var(--color-canopy)]"}`}>
+                    <p className={`font-mono text-[11px] font-semibold uppercase tracking-[0.16em] ${business ? "text-[var(--color-clay)]" : "text-[var(--color-canopy)]"}`}>
                       {business ? "The business case" : "The labor case"}
                     </p>
                     <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">{c.author} · {c.date}</p>
@@ -631,11 +631,11 @@ export default function OregonEconomicDevelopmentPage() {
             <MiniKicker>The proposal on the table</MiniKicker>
             <h3 className="mt-2 font-editorial text-[26px] leading-tight text-[var(--color-ink)]">{COMMERCE_PROPOSAL.what}</h3>
             <div className="mt-5 grid gap-4 md:grid-cols-2">
-              <div className="rounded-sm border-l-2 border-[var(--color-sage)] bg-[#f5fbf6] p-4">
+              <div className="rounded-sm border-l-2 border-[var(--color-sage)] bg-[var(--color-sage-tint)] p-4">
                 <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-canopy)]">What it would change</p>
                 <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-ink-light)]">{COMMERCE_PROPOSAL.changes}</p>
               </div>
-              <div className="rounded-sm border-l-2 border-[var(--color-ember)] bg-[#fff7f2] p-4">
+              <div className="rounded-sm border-l-2 border-[var(--color-ember)] bg-[var(--color-clay-tint)] p-4">
                 <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">What it wouldn&apos;t</p>
                 <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-ink-light)]">{COMMERCE_PROPOSAL.doesntChange}</p>
               </div>
@@ -684,19 +684,19 @@ export default function OregonEconomicDevelopmentPage() {
           tone="darker"
         >
           <div className="grid gap-4 md:grid-cols-3">
-            <a href="https://www.oregon.gov/gov/policies/Pages/Prosperity-Council.aspx" target="_blank" rel="noopener noreferrer" className="group -mx-4 border-y border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c1410] sm:mx-0 sm:rounded-sm sm:border sm:p-5">
+            <a href="https://www.oregon.gov/gov/policies/Pages/Prosperity-Council.aspx" target="_blank" rel="noopener noreferrer" className="group -mx-4 border-y border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-canopy-deep)] sm:mx-0 sm:rounded-sm sm:border sm:p-5">
               <MessageSquare className="h-5 w-5 text-[var(--color-ember-bright)]" />
               <h3 className="mt-4 font-editorial text-[24px] leading-tight text-white">Read the report</h3>
               <p className="mt-3 text-[14px] leading-relaxed text-white/70">Watch the Governor&apos;s Prosperity Council page for the final recommendations, scheduled for June 25, 2026 (charter deadline June 30).</p>
               <span className="mt-4 inline-flex items-center gap-2 text-[13px] font-bold text-[var(--color-ember-bright)]">Prosperity Council<ArrowRight className="h-4 w-4 motion-safe:transition-transform group-hover:translate-x-0.5" /></span>
             </a>
-            <a href="https://www.oregonlegislature.gov/citizen_engagement" target="_blank" rel="noopener noreferrer" className="group -mx-4 border-y border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c1410] sm:mx-0 sm:rounded-sm sm:border sm:p-5">
+            <a href="https://www.oregonlegislature.gov/citizen_engagement" target="_blank" rel="noopener noreferrer" className="group -mx-4 border-y border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-canopy-deep)] sm:mx-0 sm:rounded-sm sm:border sm:p-5">
               <Mail className="h-5 w-5 text-[var(--color-ember-bright)]" />
               <h3 className="mt-4 font-editorial text-[24px] leading-tight text-white">Tell your legislator</h3>
               <p className="mt-3 text-[14px] leading-relaxed text-white/70">A reorg — and the budget and incentive choices behind it — runs through the Legislature. Find yours and weigh in.</p>
               <span className="mt-4 inline-flex items-center gap-2 text-[13px] font-bold text-[var(--color-ember-bright)]">Find your legislator<ArrowRight className="h-4 w-4 motion-safe:transition-transform group-hover:translate-x-0.5" /></span>
             </a>
-            <a href={SOURCES.ojp.url} target="_blank" rel="noopener noreferrer" className="group -mx-4 border-y border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c1410] sm:mx-0 sm:rounded-sm sm:border sm:p-5">
+            <a href={SOURCES.ojp.url} target="_blank" rel="noopener noreferrer" className="group -mx-4 border-y border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-canopy-deep)] sm:mx-0 sm:rounded-sm sm:border sm:p-5">
               <ExternalLink className="h-5 w-5 text-[var(--color-ember-bright)]" />
               <h3 className="mt-4 font-editorial text-[24px] leading-tight text-white">Read the reporting</h3>
               <p className="mt-3 text-[14px] leading-relaxed text-white/70">This deep dive builds on Nigel Jaquiss&apos;s reporting for the Oregon Journalism Project. Start there.</p>
@@ -732,7 +732,7 @@ export default function OregonEconomicDevelopmentPage() {
                 href={source.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group min-w-0 rounded-sm border border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-[var(--color-ember)]/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1c1410]"
+                className="group min-w-0 rounded-sm border border-white/12 bg-white/[0.055] p-4 transition-colors hover:border-[var(--color-ember)]/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ember-bright)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-canopy-deep)]"
               >
                 <p className="break-words font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember-bright)]">{source.org}</p>
                 <p className="mt-2 break-words text-[14px] font-semibold leading-snug text-white group-hover:text-[var(--color-ember-bright)]">{source.title}</p>
