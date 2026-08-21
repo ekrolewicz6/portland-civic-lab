@@ -54,6 +54,8 @@ export function ogFrame({
         display: "flex",
         flexDirection: "column",
         backgroundColor: BG,
+        backgroundImage:
+          "radial-gradient(circle at 86% 4%, rgba(225,134,75,0.16), transparent 52%), radial-gradient(circle at 2% 100%, rgba(120,160,120,0.12), transparent 44%)",
         color: "white",
         padding: "60px 80px",
         fontFamily: "serif",
