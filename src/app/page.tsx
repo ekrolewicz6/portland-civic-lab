@@ -536,6 +536,21 @@ export default function HomePage() {
                 honestly instead of inventing figures. We&apos;re independent and not
                 affiliated with the City of Portland or any government agency.
               </p>
+              <p className="mt-4 max-w-xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
+                Some of our work is paid. Public agencies and institutions can hire the
+                Lab for data products, portfolio analysis, and decision support — and we
+                compete for that work through normal public procurement, with no
+                sole-source deals and no special access. Every government contract we
+                hold is listed on our{" "}
+                <Link
+                  href="/independence"
+                  className="font-semibold text-[var(--color-canopy)] underline decoration-[var(--color-sage)] underline-offset-2 hover:decoration-[var(--color-canopy)]"
+                >
+                  Independence page
+                </Link>
+                , and paid work never buys a conclusion. The public tools stay free
+                either way.
+              </p>
             </div>
 
             <div className="lg:col-span-7 lg:pl-4">

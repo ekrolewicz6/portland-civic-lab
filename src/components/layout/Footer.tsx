@@ -25,8 +25,9 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
     ],
   },
   {
-    title: "For business",
+    title: "Work with us",
     links: [
+      { label: "For Public Institutions", href: "/institutions" },
       { label: "Funding finder", href: "/business" },
       { label: "PCB Certification", href: "/apply" },
       { label: "Benefits Calculator", href: "/calculator" },
@@ -39,6 +40,7 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
     links: [
       { label: "Open Data & API", href: "/open-data" },
       { label: "Methodology", href: "/methodology" },
+      { label: "Independence & Funding", href: "/independence" },
       { label: "Public Records", href: "/records" },
       { label: "Civic Concierge", href: "/concierge" },
     ],
