@@ -21,6 +21,7 @@ import {
   EvidenceMetricCard,
   PageGuide,
 } from "../../_components/PageGuide";
+import CedPortfolio from "./CedPortfolio";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -98,6 +99,8 @@ export default async function CedCockpitPage() {
             />
           ))}
         </div>
+
+        <CedPortfolio />
 
         <section className="mt-6 overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-white shadow-[0_22px_80px_rgba(15,36,25,0.07)]">
           <div className="grid bg-[var(--color-canopy)] text-white lg:grid-cols-[minmax(0,1fr)_360px]">
