@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, Trees, ClipboardList, MapPinned, ArrowUpRight } from "lucide-react";
-import { ASK_PORTLAND_URL, PARKS_URL, PERMITS_URL } from "@/lib/site";
+import { Menu, X, ChevronDown, Trees, ClipboardList, Landmark, MapPinned, ArrowUpRight } from "lucide-react";
+import { ASK_PORTLAND_URL, COUNCIL_URL, PARKS_URL, PERMITS_URL } from "@/lib/site";
 import type { HeaderMember } from "@/lib/member-nav";
 
 const PRIMARY = [
@@ -15,6 +15,7 @@ const PRIMARY = [
 ];
 
 const TOOLS = [
+  { label: "City Council", href: COUNCIL_URL, desc: "An independent guide to Portland City Council", icon: Landmark, external: true },
   { label: "Parks Atlas", href: PARKS_URL, desc: "Every Portland park, mapped", icon: Trees, external: true },
   { label: "Ask Portland", href: ASK_PORTLAND_URL, desc: "Independent civic surveys", icon: ClipboardList, external: true },
   { label: "Permitting", href: PERMITS_URL, desc: "Zoning, fees & timelines", icon: MapPinned, external: true },
@@ -39,7 +40,7 @@ function NavLink({ label, href, active }: { label: string; href: string; active:
   return (
     <Link
       href={href}
-      className={`group relative py-1 text-[11px] font-mono uppercase tracking-[0.16em] transition-colors ${
+      className={`group relative whitespace-nowrap py-1 text-[11px] font-mono uppercase tracking-[0.16em] transition-colors ${
         active ? "text-white" : "text-[var(--color-sage)] hover:text-white"
       }`}
     >
@@ -150,11 +151,11 @@ export default function Header({ member: initialMember = null }: { member?: Head
       }`}
     >
       <div className="max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12">
-        <div className="flex items-center justify-between h-14">
+        <div className="flex items-center justify-between gap-4 h-14">
           <Wordmark />
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="hidden xl:flex items-center gap-4 2xl:gap-7">
             {PRIMARY.map((l) => (
               <NavLink key={l.href} label={l.label} href={l.href} active={isActive(l.href)} />
             ))}
@@ -168,7 +169,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
             >
               <button
                 onClick={() => setToolsOpen((v) => !v)}
-                className="group flex items-center gap-1 py-1 text-[11px] font-mono uppercase tracking-[0.16em] text-[var(--color-sage)] hover:text-white transition-colors"
+                className="group flex items-center gap-1 whitespace-nowrap py-1 text-[11px] font-mono uppercase tracking-[0.16em] text-[var(--color-sage)] hover:text-white transition-colors"
                 aria-expanded={toolsOpen}
               >
                 Tools
@@ -238,7 +239,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
           </nav>
 
           {/* Mobile controls */}
-          <div className="flex md:hidden items-center gap-3">
+          <div className="flex xl:hidden items-center gap-3">
             {member ? (
               <MemberBadge member={member} compact />
             ) : (
@@ -264,7 +265,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-white/10 bg-[var(--color-canopy)] animate-slide-down">
+        <div className="xl:hidden border-t border-white/10 bg-[var(--color-canopy)] animate-slide-down">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 py-5 space-y-6">
             <MobileGroup title="Explore">
               {PRIMARY.map((l) => (

@@ -1,6 +1,7 @@
 export const PERMITS_URL = "https://www.portlandpermits.org";
 export const ASK_PORTLAND_URL = "https://ask.portlandciviclab.org";
 export const PARKS_URL = "https://parks.portlandciviclab.org";
+export const COUNCIL_URL = "https://council.portlandciviclab.org";
 
 /** Legal entity behind every Portland Civic Lab property. */
 export const LEGAL_ENTITY = "Portland Civic Lab LLC";

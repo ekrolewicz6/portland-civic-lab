@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { ASK_PORTLAND_URL, PARKS_URL, PERMITS_URL } from "@/lib/site";
+import { ASK_PORTLAND_URL, COUNCIL_URL, PARKS_URL, PERMITS_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -82,6 +82,16 @@ const projects = [
     href: ASK_PORTLAND_URL,
     cta: "Visit Ask Portland",
     icon: ClipboardList,
+    primary: false,
+  },
+  {
+    eyebrow: "Local government",
+    title: "Portland City Council",
+    description:
+      "An independent guide to Portland City Council — who represents you, how the new district system works, and the decisions shaping the city.",
+    href: COUNCIL_URL,
+    cta: "Explore City Council",
+    icon: Landmark,
     primary: false,
   },
   {
@@ -263,12 +273,13 @@ export default function HomePage() {
               </span>
             </div>
             <h2 className="font-editorial text-[32px] sm:text-[42px] text-[var(--color-ink)] leading-tight">
-              Four ways to get a clearer picture of Portland
+              Five ways to get a clearer picture of Portland
             </h2>
             <p className="mt-4 max-w-2xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
-              Dashboards that track how the city is doing, an atlas of every park
-              in Portland, surveys that capture what residents actually think,
-              and permitting tools that make building here less confusing.
+              Dashboards that track how the city is doing, an independent guide to
+              City Council, an atlas of every park in Portland, surveys that capture
+              what residents actually think, and permitting tools that make building
+              here less confusing.
             </p>
           </div>
 
