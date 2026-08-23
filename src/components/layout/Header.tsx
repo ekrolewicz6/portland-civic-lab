@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Trees, ClipboardList, Landmark, MapPinned, ArrowUpRight } from "lucide-react";
 import { ASK_PORTLAND_URL, COUNCIL_URL, PARKS_URL, PERMITS_URL } from "@/lib/site";
+import { withSsoHint } from "@/components/SsoLink";
 import type { HeaderMember } from "@/lib/member-nav";
 
 const PRIMARY = [
@@ -98,6 +99,13 @@ export default function Header({ member: initialMember = null }: { member?: Head
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
+  // Portland Permits lives on a different domain, so the shared session
+  // cookie can't reach it. Signed-in visitors get an sso=1 hint so Permits
+  // can silently establish its own session on arrival.
+  const tools = member
+    ? TOOLS.map((t) => (t.href === PERMITS_URL ? { ...t, href: withSsoHint(t.href) } : t))
+    : TOOLS;
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -182,7 +190,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
                     <div className="px-4 pt-3 pb-2 text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember)]">
                       Civic tools
                     </div>
-                    {TOOLS.map((t) => (
+                    {tools.map((t) => (
                       <a
                         key={t.label}
                         href={t.href}
@@ -273,7 +281,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
               ))}
             </MobileGroup>
             <MobileGroup title="Civic tools">
-              {TOOLS.map((t) => (
+              {tools.map((t) => (
                 <MobileLink key={t.label} href={t.href} label={t.label} desc={t.desc} external />
               ))}
             </MobileGroup>

@@ -8,6 +8,7 @@ import {
   extractHeadlineLabel,
 } from "@/lib/dashboard-data";
 import { PERMITS_URL } from "@/lib/site";
+import SsoLink from "@/components/SsoLink";
 
 export const dynamic = "force-dynamic";
 
@@ -67,13 +68,13 @@ export default async function DashboardPage() {
           </div>
 
           <div className="mt-6">
-            <a
+            <SsoLink
               href={PERMITS_URL}
               className="inline-flex items-center gap-2 text-[12px] font-mono uppercase tracking-[0.16em] text-[var(--color-sage)] hover:text-white transition-colors"
             >
               Need to act on a property? Start with Portland Permits
               <ArrowUpRight className="w-4 h-4" />
-            </a>
+            </SsoLink>
           </div>
 
           <div className="mt-7 sm:mt-8 h-px bg-gradient-to-r from-[var(--color-ember)]/40 via-white/15 to-transparent" />

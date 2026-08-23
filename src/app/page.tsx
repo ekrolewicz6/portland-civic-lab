@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SsoLink from "@/components/SsoLink";
 import { ASK_PORTLAND_URL, COUNCIL_URL, PARKS_URL, PERMITS_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -103,6 +104,7 @@ const projects = [
     cta: "Open permitting tools",
     icon: MapPinned,
     primary: false,
+    sso: true,
   },
 ];
 
@@ -284,8 +286,10 @@ export default function HomePage() {
           </div>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {projects.map((project) => (
-              <a
+            {projects.map((project) => {
+              const LinkTag = "sso" in project && project.sso ? SsoLink : "a";
+              return (
+              <LinkTag
                 key={project.title}
                 href={project.href}
                 className={`group relative overflow-hidden rounded-sm border p-6 transition-all duration-300 hover:-translate-y-0.5 ${
@@ -343,8 +347,9 @@ export default function HomePage() {
                   {project.cta}
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
-              </a>
-            ))}
+              </LinkTag>
+              );
+            })}
           </div>
         </div>
       </section>

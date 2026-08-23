@@ -42,6 +42,16 @@ export default async function MemberPage() {
     await signOut({ returnTo: "/" });
   }
 
+  async function handleSignOutEverywhere() {
+    "use server";
+    const { user: u } = await withAuth({ ensureSignedIn: true });
+    const { revokeAllSessions } = await import("@/lib/workos-sessions");
+    // Revoke every WorkOS session (other Civic Lab apps notice at their next
+    // token refresh, within ~5 minutes), then clear this app's session too.
+    await revokeAllSessions(u.id).catch(() => 0);
+    await signOut({ returnTo: "/" });
+  }
+
   async function handleClaim(formData: FormData) {
     "use server";
     const { user: u } = await withAuth({ ensureSignedIn: true });
@@ -259,14 +269,25 @@ export default async function MemberPage() {
           </p>
         )}
 
-        <form action={handleSignOut} className="mt-10">
-          <button
-            type="submit"
-            className="text-[13px] text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] underline transition-colors"
-          >
-            Sign out
-          </button>
-        </form>
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2">
+          <form action={handleSignOut}>
+            <button
+              type="submit"
+              className="text-[13px] text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] underline transition-colors"
+            >
+              Sign out
+            </button>
+          </form>
+          <form action={handleSignOutEverywhere}>
+            <button
+              type="submit"
+              className="text-[13px] text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] underline transition-colors"
+              title="Ends your session in every Civic Lab app, on every device. Other apps notice within about five minutes."
+            >
+              Sign out everywhere
+            </button>
+          </form>
+        </div>
       </main>
 
       <Footer />

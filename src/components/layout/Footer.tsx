@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ASK_PORTLAND_URL, LEGAL_ENTITY, PARKS_URL, PERMITS_URL } from "@/lib/site";
+import SsoLink from "@/components/SsoLink";
 
-type FooterLink = { label: string; href: string; external?: boolean };
+type FooterLink = { label: string; href: string; external?: boolean; sso?: boolean };
 
 const COLUMNS: { title: string; links: FooterLink[] }[] = [
   {
@@ -19,10 +20,10 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
     links: [
       { label: "Parks Atlas", href: PARKS_URL, external: true },
       { label: "Ask Portland", href: ASK_PORTLAND_URL, external: true },
-      { label: "Permitting", href: PERMITS_URL, external: true },
-      { label: "Zoning Check", href: `${PERMITS_URL}/zoning`, external: true },
-      { label: "Fee Calculator", href: `${PERMITS_URL}/fees`, external: true },
-      { label: "Timeline Estimator", href: `${PERMITS_URL}/timeline`, external: true },
+      { label: "Permitting", href: PERMITS_URL, external: true, sso: true },
+      { label: "Zoning Check", href: `${PERMITS_URL}/zoning`, external: true, sso: true },
+      { label: "Fee Calculator", href: `${PERMITS_URL}/fees`, external: true, sso: true },
+      { label: "Timeline Estimator", href: `${PERMITS_URL}/timeline`, external: true, sso: true },
     ],
   },
   {
@@ -70,7 +71,11 @@ function FooterLinkItem({ link }: { link: FooterLink }) {
   );
   return (
     <li>
-      {link.external ? (
+      {link.sso ? (
+        <SsoLink href={link.href} className={cls}>
+          {inner}
+        </SsoLink>
+      ) : link.external ? (
         <a href={link.href} className={cls}>
           {inner}
         </a>
