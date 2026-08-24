@@ -1,4 +1,5 @@
 import sql from "@/lib/db-query";
+import { evaluateGeography, type GeoFacts } from "@/lib/business/geo-eligibility";
 import type { Business, OpportunityEligibility } from "@/lib/business";
 
 /**
@@ -59,6 +60,9 @@ function overlaps(required: string[] | undefined, held: string[]): boolean {
 }
 
 export interface MatchDecision {
+  /** Geographic outcome, kept distinct so "unchecked" never reads as "qualifies". */
+  geoStatus?: "eligible" | "ineligible" | "unknown";
+  geoReason?: string;
   eligible: boolean;
   score: number;
   rationale: string;
@@ -66,7 +70,8 @@ export interface MatchDecision {
 
 export function evaluateMatch(
   business: Business,
-  opp: CatalogRow
+  opp: CatalogRow,
+  geo?: GeoFacts | null,
 ): MatchDecision {
   const e = opp.eligibility ?? {};
   const ownership = business.ownership_attributes ?? [];
@@ -89,6 +94,21 @@ export function evaluateMatch(
     return { eligible: false, score: 0, rationale: "" };
   }
 
+  // Geography is evaluated last because it is the only gate that can come back
+  // "we don't know". An unresolved layer must not silently pass as eligible —
+  // that is how an address-blind list ends up promising money the address rules
+  // out. Unknown stays in the list, flagged; ineligible drops out with a reason.
+  const geoVerdict = evaluateGeography(e.geography, geo ?? null);
+  if (geoVerdict.status === "ineligible") {
+    return {
+      eligible: false,
+      score: 0,
+      rationale: "",
+      geoStatus: "ineligible",
+      geoReason: geoVerdict.reason,
+    };
+  }
+
   // Score: targeted programs beat generic ones, then adjust for how likely
   // and how much work it is.
   let score = 50;
@@ -101,7 +121,12 @@ export function evaluateMatch(
   score += (3 - (opp.effort_level ?? 3)) * 3;
   score = Math.max(5, Math.min(100, score));
 
-  return { eligible: true, score, rationale: buildRationale(business, opp, {
+  if (geoVerdict.status === "unknown") score -= 5;
+  score = Math.max(5, Math.min(100, score));
+
+  return { eligible: true, score, geoStatus: geoVerdict.status,
+    geoReason: geoVerdict.reason || undefined,
+    rationale: buildRationale(business, opp, {
     ownershipRequired,
     typeRequired,
     missionRequired,
@@ -190,16 +215,50 @@ export async function generateMatchesForBusiness(
     FROM funding_opportunities
   `) as unknown as CatalogRow[];
 
+  // Resolve the address once, not once per programme. A business whose address
+  // we cannot resolve still gets matched — geographic gates then come back
+  // "unknown" and stay visible with that caveat, rather than being silently
+  // dropped or silently admitted.
+  let geo: GeoFacts | null = null;
+  const street = [business.address_street, business.address_city, business.address_zip]
+    .filter(Boolean)
+    .join(", ");
+  if (street) {
+    try {
+      const { resolveBusinessGeography } = await import("@/lib/business/geography");
+      const g = await resolveBusinessGeography(street);
+      if (!g.error) {
+        geo = {
+          inPortland: g.inPortland,
+          tifDistrict: g.tifDistrict,
+          businessDistricts: g.businessDistricts,
+          censusTract: g.censusTract,
+          unresolved: g.unresolved,
+        };
+      }
+    } catch (err) {
+      // Leave geo null; gated programmes report "unknown" rather than passing.
+      // Log it — a silently swallowed geography failure is indistinguishable
+      // from "this address has no restrictions", which is the exact confusion
+      // this whole module exists to remove.
+      console.warn(
+        `[match] geography unresolved for business ${businessId}:`,
+        err instanceof Error ? err.message : err,
+      );
+    }
+  }
+
   let inserted = 0;
   for (const opp of catalog) {
-    const decision = evaluateMatch(business, opp);
+    const decision = evaluateMatch(business, opp, geo);
     if (!decision.eligible) continue;
 
     const rows = await sql`
       INSERT INTO opportunity_matches (
         business_id, opportunity_id, fit_score, fit_rationale, status
       ) VALUES (
-        ${businessId}, ${opp.id}, ${decision.score}, ${decision.rationale},
+        ${businessId}, ${opp.id}, ${decision.score},
+        ${[decision.rationale, decision.geoReason].filter(Boolean).join(" ")},
         'identified'
       )
       ON CONFLICT (business_id, opportunity_id) DO NOTHING

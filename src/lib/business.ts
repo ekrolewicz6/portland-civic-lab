@@ -1,5 +1,6 @@
 import { randomBytes } from "crypto";
 import sql from "@/lib/db-query";
+import type { GeoPredicate } from "@/lib/business/geo-eligibility";
 
 /**
  * Business funding finder — data access layer.
@@ -104,7 +105,12 @@ export interface ApplicationDraft {
 }
 
 export interface OpportunityEligibility {
-  geography?: string;
+  /**
+   * Structured geographic gate. `label` keeps the human-readable string the
+   * old free-text field carried; the flags are what the matcher actually
+   * evaluates. See src/lib/business/geo-eligibility.ts.
+   */
+  geography?: GeoPredicate;
   businessTypes?: string[];
   ownershipAttributes?: string[];
   missionTags?: string[];

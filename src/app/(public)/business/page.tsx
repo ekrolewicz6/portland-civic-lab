@@ -55,10 +55,22 @@ export default function BusinessPage() {
           and the paperwork. You review what we wrote and click submit.
         </p>
 
+        <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-[var(--color-ink-muted)]">
+          Start with the address. Some of Portland&apos;s largest grants are gated on district
+          boundaries you can&apos;t see from the street — that check takes twenty seconds and
+          needs no account.
+        </p>
+
         <div className="mt-9 flex flex-wrap items-center gap-4">
           <Link
-            href="/member/business/new"
+            href="/business/check"
             className="rounded-sm bg-[var(--color-canopy)] px-7 py-3.5 text-[15px] font-semibold text-[var(--color-paper)] hover:bg-[var(--color-canopy-light)] transition-colors"
+          >
+            Check your address
+          </Link>
+          <Link
+            href="/member/business/new"
+            className="rounded-sm border border-[var(--color-parchment)] px-7 py-3.5 text-[15px] font-semibold text-[var(--color-ink)] transition-colors hover:border-[var(--color-canopy)]"
           >
             Register your business
           </Link>

@@ -77,7 +77,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     description:
       "Reimbursement grants for Portland small businesses repairing storefront damage from vandalism or break-ins (windows, doors, locks, graffiti removal).",
     eligibility: {
-      geography: "City of Portland",
+      geography: { label: "City of Portland", cityOfPortlandOnly: true },
       businessTypes: ["retail", "food_service"],
       notes: "Must document repair costs; funding availability varies by cycle.",
     },
@@ -101,11 +101,40 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     description:
       "Free business advising, industry-specific technical assistance, and access to small grants and flexible capital through partner organizations, prioritizing entrepreneurs from underserved communities.",
     eligibility: {
-      geography: "City of Portland",
+      geography: { label: "City of Portland", cityOfPortlandOnly: true },
       notes: "Intake through partner organizations; no cost to participate.",
     },
     verificationStatus: "needs_verification",
     sourceNote: "Program is long-running; confirm current partner list.",
+  },
+  {
+    slug: "prosper-prosperity-investment",
+    valueType: "one_time",
+    effortLevel: 4,
+    successProbability: "medium",
+    name: "Prosperity Investment Program",
+    funder: "Prosper Portland",
+    level: "city",
+    category: "grant",
+    amountMin: 10000,
+    amountMax: 75000,
+    deadline: null,
+    rolling: true,
+    url: "https://prosperportland.us/",
+    description:
+      "Matching, reimbursable grants for tenant and building improvements — storefronts, signage, lighting, mechanical systems, roofing, architecture and engineering. Covers up to 75% of approved costs against a 25% match. Only available inside a tax increment finance district, which is the whole reason this one has to be checked against the address rather than assumed.",
+    eligibility: {
+      geography: {
+        label: "Tax increment finance districts only",
+        cityOfPortlandOnly: true,
+        requiresTifDistrict: true,
+      },
+      notes:
+        "Work cannot begin before a grant agreement is executed. Landlord participation is usually required for building-wide systems.",
+    },
+    verificationStatus: "needs_verification",
+    sourceNote:
+      "Confirm current district list and match requirements with Prosper Portland before applying.",
   },
   {
     slug: "venture-portland-district-grants",
@@ -113,7 +142,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     effortLevel: 3,
     successProbability: "medium",
     name: "Business District Activation Grants",
-    funder: "Venture Portland (via Goose Hollow district association)",
+    funder: "Venture Portland (via your district association)",
     level: "city",
     category: "grant",
     amountMin: 1000,
@@ -124,12 +153,12 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     description:
       "Grants for events, marketing, and district vitality projects. Funds flow through neighborhood business district associations rather than to businesses directly, so applications are strongest when a business anchors or co-hosts the activity.",
     eligibility: {
-      geography: "Portland business districts",
+      geography: { label: "Portland business districts", cityOfPortlandOnly: true, requiresBusinessDistrict: true, requiresVenturePortlandMember: true },
       notes:
         "Applied for by or with the local business district association, not the business directly.",
     },
     verificationStatus: "needs_verification",
-    sourceNote: "Confirm Goose Hollow's active district association and next grant cycle.",
+    sourceNote: "Which association applies depends on the address; membership decides whether the route is open at all.",
   },
   {
     slug: "pcef-small-business-energy",
@@ -148,7 +177,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     description:
       "PCEF funds nonprofit-led programs that pay for energy efficiency and clean energy upgrades in small commercial spaces — HVAC, refrigeration, lighting, and heat pumps. Worth screening for any business with a significant equipment or heating load.",
     eligibility: {
-      geography: "City of Portland",
+      geography: { label: "City of Portland", cityOfPortlandOnly: true },
       notes: "Access is through funded partner programs, not direct application.",
     },
     verificationStatus: "needs_verification",
@@ -172,7 +201,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     description:
       "Cash incentives for energy-efficient lighting, refrigeration, food service equipment, HVAC, and water heating in commercial spaces. Starts with a free walkthrough that identifies which of your existing equipment qualifies.",
     eligibility: {
-      geography: "PGE/Pacific Power/NW Natural service territory",
+      geography: { label: "PGE/Pacific Power/NW Natural service territory" },
       notes: "Incentive size depends on equipment; free walkthrough available.",
     },
     verificationStatus: "needs_verification",
@@ -195,7 +224,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     description:
       "Project grants for arts and culture programming in the Portland metro area — readings, workshops, performances, and exhibitions. Typically awarded via a sponsored project or partnership, with the business as venue and organizer.",
     eligibility: {
-      geography: "Multnomah, Washington, Clackamas counties",
+      geography: { label: "Multnomah, Washington, Clackamas counties" },
       missionTags: ["arts_culture", "community_events", "literacy", "youth"],
       notes:
         "Usually requires an individual artist or nonprofit applicant; the business can host/partner.",
@@ -221,7 +250,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     description:
       "State certification as a Woman Business Enterprise and/or Emerging Small Business. Not money itself — it unlocks set-aside contracts with public agencies and priority in several state and city programs.",
     eligibility: {
-      geography: "Oregon",
+      geography: { label: "Oregon" },
       ownershipAttributes: ["woman_owned"],
       notes: "WBE requires 51%+ ownership and control by a woman.",
     },
@@ -244,7 +273,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     url: "https://oregonsbdc.org/",
     description:
       "Free one-on-one business advising through Portland Community College's SBDC — financials, expansion planning, and help assembling grant and loan applications.",
-    eligibility: { geography: "Oregon" },
+    eligibility: { geography: { label: "Oregon" } },
     verificationStatus: "verified",
     sourceNote: "Standing SBA-funded program.",
   },
@@ -265,7 +294,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     description:
       "Direct state loans for small and emerging businesses that can't access traditional bank financing, with priority for women- and minority-owned businesses. A financing backstop for expansion (second location, build-out), not free money.",
     eligibility: {
-      geography: "Oregon",
+      geography: { label: "Oregon" },
       ownershipAttributes: ["woman_owned", "minority_owned"],
       notes: "Loan, not a grant; favorable terms for priority applicants.",
     },
@@ -498,7 +527,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     description:
       "Workforce boards reimburse a share of wages (commonly around half) while a new hire is being trained. In effect someone else pays part of payroll — the single biggest controllable expense after rent — for the first months of an employee's tenure. Must be arranged before the hire starts.",
     eligibility: {
-      geography: "Multnomah/Washington County workforce area",
+      geography: { label: "Multnomah/Washington County workforce area" },
       notes:
         "Agreement must be in place BEFORE the employee starts; candidate typically referred through WorkSource.",
     },
@@ -547,7 +576,7 @@ const OPPORTUNITIES: OpportunitySeed[] = [
     description:
       "Local employers, hospital systems, universities, and their employee resource groups hold real budgets for community, literacy, and cultural sponsorship. For a business already producing that programming and absorbing the cost, PCL packages the event series into a sponsorship prospectus and pitches it — the events don't change, someone else pays for them.",
     eligibility: {
-      geography: "Portland metro",
+      geography: { label: "Portland metro" },
       missionTags: [
         "arts_culture",
         "community_events",

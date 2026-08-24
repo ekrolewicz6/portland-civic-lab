@@ -188,10 +188,10 @@ export default async function OpportunityDetail({
               Eligibility
             </h2>
             <ul className="mt-3 space-y-1.5 text-[14px] text-[var(--color-ink-light)]">
-              {eligibility.geography && (
+              {eligibility.geography?.label && (
                 <li>
                   <span className="text-[var(--color-ink-muted)]">Where: </span>
-                  {eligibility.geography}
+                  {eligibility.geography.label}
                 </li>
               )}
               {eligibility.maxEmployees && (
