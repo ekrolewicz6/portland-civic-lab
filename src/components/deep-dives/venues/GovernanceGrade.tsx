@@ -124,6 +124,13 @@ export default function GovernanceGrade() {
             </p>
           </div>
         </div>
+        <p className="mt-5 border-t border-[var(--color-parchment)] pt-4 text-[12.5px] leading-relaxed text-[var(--color-ink-light)]">
+          <span className="font-semibold text-[var(--color-ink)]">Graded from the public
+          record.</span>{" "}
+          These grades reflect what the city publishes and what public records show. The city may
+          hold internal reporting we could not see. If it exists and surfaces, we will update the
+          grades accordingly, and say so.
+        </p>
       </div>
 
       {/* ── (c) What a first-class owner always knows ── */}
