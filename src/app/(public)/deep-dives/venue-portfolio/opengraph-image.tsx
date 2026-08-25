@@ -5,16 +5,16 @@ export const runtime = "edge";
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const alt =
-  "Portland's public entertainment venue portfolio — the $1B+ capital cliff and the doctrine to govern it";
+  "Every big stage in Portland belongs to you. So do the bills — a deep-dive on the city's entertainment venues.";
 
 export default function Image() {
   return new ImageResponse(
     ogFrame({
       eyebrow: "Venues & public assets",
-      headline: "Portland owns the show. It doesn't run it like an owner.",
+      headline: "Every big stage in Portland belongs to you. So do the bills.",
       accent: "#b85c3a",
       description:
-        "One owner strategy, multiple specialized operators, common data, explicit subsidy, funded lifecycle reserves, and portfolio-wide capital allocation.",
+        "The arena, the sold-out stadium, five theaters, the town square — the public owns them all. The repairs could top a billion dollars. Nobody's counting.",
     }),
     { ...OG_SIZE },
   );

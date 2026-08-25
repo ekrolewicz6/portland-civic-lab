@@ -28,11 +28,11 @@ const DIVES: DeepDive[] = [
   {
     href: "/deep-dives/venue-portfolio",
     eyebrow: "Venues & public assets",
-    title: "Portland owns the show. It doesn't run it like an owner.",
+    title: "Every big stage in Portland belongs to you. So do the bills.",
     blurb:
-      "The City bought a major-league arena for $1, runs five theaters, a sold-out stadium, a raceway on a drowned city, and the town square — with no single owner strategy. Every asset graded, every debate steelmanned, and the doctrine an elected official could govern the whole portfolio by.",
+      "The arena, the sold-out stadium, five theaters, the raceway, the town square — the public owns them all. Their repairs could top a billion dollars over the next decade, and City Hall can't say what any of its buildings earn, cost, or need. An accounting of what you own, and a plan for running it well.",
     stat: "$1B+",
-    statLabel: "in overlapping venue capital decisions before 2036",
+    statLabel: "in building bills coming due by 2036",
     icon: Theater,
     available: true,
   },

@@ -31,9 +31,9 @@ import AffordabilityCalculator from "@/components/deep-dives/venues/Affordabilit
 import CapitalScore from "@/components/deep-dives/venues/CapitalScore";
 
 export const metadata: Metadata = pageMeta({
-  title: "Portland owns the show. It doesn't run it like an owner.",
+  title: "Every big stage in Portland belongs to you. So do the bills.",
   description:
-    "Every arena, stadium, theater, raceway, and public square Portland owns — what they earn, what they're worth, the $1B+ capital cliff ahead, and the management doctrine any elected official could govern them by.",
+    "The arena, the sold-out stadium, five theaters, the raceway, the town square — Portlanders own them all. Repairs could top a billion dollars, and City Hall can't say what any of these buildings earns, costs, or needs. An accounting of what you own, and a plan to run it well.",
   path: "/deep-dives/venue-portfolio",
   type: "article",
 });
@@ -243,31 +243,32 @@ export default function VenuePortfolioPage() {
                 <Link href="/deep-dives" className="hover:text-white">Policy deep-dive</Link> ——— Venues &amp; public assets
               </p>
               <h1 className="mt-5 font-editorial-normal text-[40px] leading-[1.05] sm:text-[56px] xl:text-[64px]">
-                Portland owns the show.
+                Every big stage in Portland belongs to you.
                 <span className="block font-editorial italic text-[var(--color-ember-bright)]">
-                  It doesn&apos;t run it like an owner.
+                  So do the bills.
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-white/75">
-                In 2024 the City of Portland bought a major-league arena for one dollar. It already
-                owned the stadium where every soccer match sells out, the concert hall saved from a
-                wrecking ball, the auditorium earning half a theater system&apos;s revenue, a raceway
-                laid over a drowned city, and the square Portlanders paid for brick by brick. What it
-                has never built is the machinery to run them as one portfolio — and the bill for that
-                is arriving all at once.
+                The court the Blazers play on. The stadium where the Timbers sell out. The hall
+                where the symphony plays, the stage the Broadway tours land on, the square with the
+                holiday tree. If Portland gathers there, odds are Portland owns it — you own it.
+                Over the next ten years these buildings need repairs that could top a billion
+                dollars, and nobody at City Hall can tell you what any of them earns, what any of
+                them costs, or which one deserves the next dollar. This is an accounting of what
+                you own, and a plan for running it well.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="#doctrine"
                   className="rounded-sm bg-[var(--color-ember)] px-5 py-3 text-[15px] font-semibold text-[var(--color-canopy)] hover:bg-[var(--color-ember-bright)]"
                 >
-                  The doctrine, for the elected reader
+                  The one-page plan
                 </a>
                 <a
                   href="#cliff"
                   className="rounded-sm border border-white/25 px-5 py-3 text-[14px] font-semibold text-white hover:bg-white/10"
                 >
-                  Start with the capital cliff
+                  See the bills coming due
                 </a>
               </div>
             </div>
@@ -280,22 +281,22 @@ export default function VenuePortfolioPage() {
                 <div>
                   <dt className="text-[14px] font-semibold text-white">The good news</dt>
                   <dd className="mt-1 text-[14px] leading-relaxed text-white/65">
-                    The buildings are full. Demand is not the problem — Moda draws 1.5 million a
-                    year, Providence Park sells out, Keller earns.
+                    The buildings are busy. A million and a half people a year at the arena,
+                    sold-out soccer, packed Broadway runs. Nobody has to invent demand.
                   </dd>
                 </div>
                 <div>
                   <dt className="text-[14px] font-semibold text-white">The problem</dt>
                   <dd className="mt-1 text-[14px] leading-relaxed text-white/65">
-                    The owner can&apos;t produce venue-by-venue books, rights inventories, or capital
-                    forecasts from one system. Institutional-owner grade: C.
+                    Ask City Hall what any one building earns, costs, or needs, and no single office
+                    can answer. We grade how the city manages all of it: C.
                   </dd>
                 </div>
                 <div>
                   <dt className="text-[14px] font-semibold text-white">The stakes</dt>
                   <dd className="mt-1 text-[14px] leading-relaxed text-white/65">
-                    Overlapping capital choices in the high hundreds of millions — potentially past
-                    $1 billion — arriving between now and 2036.
+                    Repair-or-replace decisions worth as much as a billion dollars, all landing
+                    between now and 2036 — decided well, or decided one crisis at a time.
                   </dd>
                 </div>
               </dl>
@@ -304,10 +305,10 @@ export default function VenuePortfolioPage() {
 
           <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-white/10 bg-white/10 sm:grid-cols-4">
             {[
-              { k: "Institutional-owner grade", v: HEADLINE.ownerGrade },
-              { k: "Moda renovation framework", v: fmtMillions(HEADLINE.modaFramework) },
-              { k: "Price the City paid for the arena", v: "$1" },
-              { k: "Portland'5 FY24–25 shortfall", v: fmtMillions(HEADLINE.p5Shortfall) },
+              { k: "People through these venues every year", v: "2M+" },
+              { k: "Bills that could come due by 2036", v: "$1B+" },
+              { k: "The biggest single renovation on the table", v: fmtMillions(HEADLINE.modaFramework) },
+              { k: "Our grade for how it's all managed", v: HEADLINE.ownerGrade },
             ].map((s) => (
               <div key={s.k} className="bg-[var(--color-canopy)] p-5">
                 <dd className="font-mono text-[26px] font-bold tabular-nums text-white sm:text-[30px]">

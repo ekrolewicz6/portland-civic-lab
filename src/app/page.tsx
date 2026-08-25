@@ -395,9 +395,9 @@ export default function HomePage() {
               href: "/deep-dives/venue-portfolio",
               icon: Theater,
               eyebrow: "Venues & public assets",
-              title: "Portland owns the show. It doesn't run it like an owner.",
+              title: "Every big stage in Portland belongs to you. So do the bills.",
               blurb:
-                "The City bought an arena for $1, runs five theaters, a sold-out stadium, and the town square — and faces $1B+ in overlapping capital decisions with no single owner strategy. Every asset graded, every debate steelmanned.",
+                "The arena, the sold-out stadium, five theaters, the raceway, the town square — the public owns them all. Repairs could top a billion dollars, and City Hall can't say what any of its buildings earn, cost, or need. What you own, and how to run it well.",
             },
           ].map((d) => (
             <Link
