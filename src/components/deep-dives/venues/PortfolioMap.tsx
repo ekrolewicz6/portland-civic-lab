@@ -1,4 +1,4 @@
-import { PERIMETER } from "@/lib/venues/data";
+import { PERIMETER, SOURCES } from "@/lib/venues/data";
 import {
   BRIDGE_PATHS,
   COLUMBIA_PATH,
@@ -331,6 +331,53 @@ export default function PortfolioMap() {
               </li>
             ))}
           </ul>
+
+          {/* What we know, and what nobody publishes */}
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            {ring.stats.map((stat) => (
+              <div
+                key={stat.label}
+                className={`rounded-sm border bg-white p-3.5 ${
+                  stat.missing
+                    ? "border-dashed border-[var(--color-clay)]/60"
+                    : "border-[var(--color-parchment)]"
+                }`}
+              >
+                <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+                  {stat.label}
+                </p>
+                <p
+                  className={`mt-1 text-[17px] font-semibold tabular-nums leading-tight ${
+                    stat.missing ? "text-[var(--color-clay)]" : "text-[var(--color-ink)]"
+                  }`}
+                >
+                  {stat.value}
+                </p>
+                <p className="mt-1.5 text-[11.5px] leading-snug text-[var(--color-ink-light)]">
+                  {stat.note}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.12em] text-[var(--color-ink-muted)]">
+            Figures:{" "}
+            {ring.statSourceIds.map((sid, j) => {
+              const src = SOURCES[sid as keyof typeof SOURCES];
+              return (
+                <span key={sid}>
+                  {j > 0 ? " · " : ""}
+                  <a
+                    href={src.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-[var(--color-sage)]/60 underline-offset-2 hover:text-[var(--color-canopy)]"
+                  >
+                    {src.org}
+                  </a>
+                </span>
+              );
+            })}
+          </p>
 
           {ring.note ? (
             <p className="mt-4 border-t border-[var(--color-parchment)] pt-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">

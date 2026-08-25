@@ -245,6 +245,14 @@ export const SOURCES = {
     kind: "primary",
     year: 2024,
   },
+  ord190912: {
+    id: "ord190912",
+    title: "Ordinance 190912: Pioneer Courthouse Square management agreement, 2022\u201325",
+    org: "Portland City Council",
+    url: "https://www.portland.gov/council/documents/ordinance/passed/190912",
+    kind: "primary",
+    year: 2022,
+  },
   svAnnualReport: {
     id: "svAnnualReport",
     title: "Spectator Venues & Visitor Activities 2024–25 annual report",
@@ -389,12 +397,23 @@ export const HEADLINE = {
 
 /* ------------------------------------------------- §2: the perimeter */
 
+export interface RingStat {
+  label: string;
+  value: string;
+  note: string;
+  /** True when the honest answer is that nobody publishes this number. */
+  missing?: boolean;
+}
+
 export interface PerimeterRing {
   id: string;
   title: string;
   oversight: string;
   venues: string[];
   note?: string;
+  stats: RingStat[];
+  /** SOURCES ids backing the stat strip. */
+  statSourceIds: string[];
 }
 
 export const PERIMETER: PerimeterRing[] = [
@@ -409,6 +428,25 @@ export const PERIMETER: PerimeterRing[] = [
       "Rose Quarter garages, plazas & land",
     ],
     note: "Funded by ticket and user fees, Rose Quarter parking, agreement revenues, and allocations from the Multnomah County Visitor Facilities Trust Account (lodging and rental-car taxes).",
+    stats: [
+      {
+        label: "People through them",
+        value: "1.3M+",
+        note: "FY24\u201325, the arena alone (1,339,100). Providence Park's ~150 sold-out event days come on top; no public total exists.",
+      },
+      {
+        label: "What the City clears from them",
+        value: "Not published",
+        note: "No venue-by-venue owner statement exists. That gap is this page's core finding.",
+        missing: true,
+      },
+      {
+        label: "Public money going in now",
+        value: "$56M",
+        note: "The Coliseum renovation underway, with $120M more proposed for the arena.",
+      },
+    ],
+    statSourceIds: ["svAnnualReport"],
   },
   {
     id: "p5",
@@ -422,6 +460,24 @@ export const PERIMETER: PerimeterRing[] = [
       "Brunish Theatre",
     ],
     note: "Management returns to the City on July 1, 2027, the largest operational handoff in the portfolio's history.",
+    stats: [
+      {
+        label: "People through them",
+        value: "798,347",
+        note: "FY24\u201325, across 710 events in the five theaters.",
+      },
+      {
+        label: "What they earned",
+        value: "$21.0M",
+        note: "Charges for services, all five venues, FY24\u201325.",
+      },
+      {
+        label: "What they cost on top",
+        value: "$4.5M",
+        note: "The FY24\u201325 operating and capital shortfall, covered publicly.",
+      },
+    ],
+    statSourceIds: ["p5RevenueDoc", "p5Financials"],
   },
   {
     id: "parks",
@@ -440,6 +496,26 @@ export const PERIMETER: PerimeterRing[] = [
       "Waterfront Park & programmable public spaces",
     ],
     note: "Not all are managed identically, but all belong in the same public asset register. The Oregon Convention Center and Expo Center are Metro assets: comparables and complements, not City holdings.",
+    stats: [
+      {
+        label: "People through them",
+        value: "Not tracked",
+        note: "Nobody counts attendance across these venues as a group.",
+        missing: true,
+      },
+      {
+        label: "What they earn",
+        value: "Not published",
+        note: "Rents and permit fees sit in scattered ledgers, never rolled up.",
+        missing: true,
+      },
+      {
+        label: "What they cost",
+        value: "~$470K+",
+        note: "The City's Pioneer Square contribution alone, per the 2022\u201325 agreement. The rest is unpublished.",
+      },
+    ],
+    statSourceIds: ["ord190912"],
   },
 ];
 
