@@ -15,6 +15,8 @@ interface Programme {
   description: string | null;
   where: string | null;
   verificationStatus: string;
+  verifiedAt: string | null;
+  linkStatus: string | null;
   reason: string | null;
 }
 
@@ -197,6 +199,28 @@ export default function AddressCheck() {
   );
 }
 
+/**
+ * Freshness, stated rather than implied. "Link resolves" and "someone checked
+ * this programme is still open" are different claims and are shown as such —
+ * a green link is not evidence a grant still exists.
+ */
+function Freshness({ verifiedAt, linkStatus }: { verifiedAt: string | null; linkStatus: string | null }) {
+  const problem =
+    linkStatus === "not_found" || linkStatus === "unreachable" || linkStatus === "error";
+  const moved = linkStatus === "redirect";
+  return (
+    <p
+      className={`mt-1 font-mono text-[10.5px] ${
+        verifiedAt && !problem ? "text-[var(--color-ink-muted)]" : "text-[var(--color-clay)]"
+      }`}
+    >
+      {verifiedAt ? `Confirmed with the funder ${verifiedAt}` : "Never confirmed with the funder"}
+      {problem && " · link is currently broken"}
+      {moved && " · the funder's page has moved"}
+    </p>
+  );
+}
+
 function Bucket({
   icon,
   title,
@@ -253,8 +277,8 @@ function Bucket({
               <p className="mt-0.5 text-[12px] text-[var(--color-ink-muted)]">
                 {p.funder}
                 {p.where ? ` · ${p.where}` : ""}
-                {p.verificationStatus !== "verified" && " · not re-verified recently"}
               </p>
+              <Freshness verifiedAt={p.verifiedAt} linkStatus={p.linkStatus} />
               {p.reason && (
                 <p className="mt-2 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
                   {p.reason}

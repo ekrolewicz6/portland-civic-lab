@@ -35,6 +35,8 @@ interface CatalogRow {
   description: string | null;
   eligibility: OpportunityEligibility | null;
   verification_status: string;
+  verified_at: string | null;
+  link_status: string | null;
 }
 
 export async function POST(request: Request) {
@@ -71,7 +73,8 @@ export async function POST(request: Request) {
   try {
     rows = (await sql`
       SELECT slug, name, funder, category, amount_min, amount_max, value_type,
-             url, description, eligibility, verification_status
+             url, description, eligibility, verification_status,
+             verified_at, link_status
       FROM funding_opportunities
       ORDER BY amount_max DESC NULLS LAST
     `) as CatalogRow[];
@@ -101,6 +104,8 @@ export async function POST(request: Request) {
       description: row.description,
       where: row.eligibility?.geography?.label ?? null,
       verificationStatus: row.verification_status,
+      verifiedAt: row.verified_at,
+      linkStatus: row.link_status,
       reason: verdict.reason || null,
     };
     if (verdict.status === "eligible") open.push(entry);

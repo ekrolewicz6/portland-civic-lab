@@ -22,7 +22,9 @@
     "budget:inspect": "npx tsx ingest/budget/inspect-pages.ts",
     "budget:parse": "npx tsx ingest/budget/parse-vol1-funds.ts && npx tsx ingest/budget/parse-vol2-programs.ts && npx tsx ingest/budget/parse-citywide.ts",
     "budget:verify": "npx tsx ingest/budget/reconcile.ts",
-    "budget:build": "npm run budget:fetch && npm run budget:parse && npm run budget:verify && npx tsx ingest/budget/build-dataset.ts"
+    "budget:build": "npm run budget:fetch && npm run budget:parse && npm run budget:verify && npx tsx ingest/budget/build-dataset.ts",
+    "business:verify": "npx tsx --env-file=.env.local ingest/business/verify-catalog.ts",
+    "business:boundaries": "npx tsx ingest/business/fetch-boundaries.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
