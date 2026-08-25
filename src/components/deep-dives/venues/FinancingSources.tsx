@@ -2,7 +2,7 @@ import { FINANCING_SOURCES } from "@/lib/venues/data";
 import type { FinancingSource } from "@/lib/venues/data";
 
 /**
- * §12 — the ten kinds of capital, in order, each with what it is best
+ * §12: the ten kinds of capital, in order, each with what it is best
  * for, what it risks, and the guardrails that make it safe to use.
  * The General Fund closes the grid full-width, because its entire
  * meaning is positional: it is the final source, never the automatic one.
@@ -89,7 +89,7 @@ function SourceCard({ source }: { source: FinancingSource }) {
       {isGeneralFund && (
         <p className="mt-3 max-w-2xl text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
           {
-            "Nine sources come before this one. Reaching the General Fund should be a deliberate, publicly defended choice about what the City is buying — never the path of least resistance."
+            "Nine sources come before this one. Reaching the General Fund should be a deliberate, publicly defended choice about what the City is buying, never the path of least resistance."
           }
         </p>
       )}

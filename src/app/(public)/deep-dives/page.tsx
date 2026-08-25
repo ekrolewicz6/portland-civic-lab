@@ -9,7 +9,7 @@ import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
 export const metadata: Metadata = pageMeta({
   title: "Policy Deep-Dives",
   description:
-    "In-depth, plain-language explainers of the Portland policy issues that matter most — with the numbers, the people, and the trade-offs laid out so anyone can understand them.",
+    "In-depth, plain-language explainers of the Portland policy issues that matter most, with the numbers, the people, and the trade-offs laid out so anyone can understand them.",
   path: "/deep-dives",
 });
 
@@ -30,7 +30,7 @@ const DIVES: DeepDive[] = [
     eyebrow: "Venues & public assets",
     title: "Every big stage in Portland belongs to you. So do the bills.",
     blurb:
-      "The arena, the sold-out stadium, five theaters, the raceway, the town square — the public owns them all. Their repairs could top a billion dollars over the next decade, and City Hall can't say what any of its buildings earn, cost, or need. An accounting of what you own, and a plan for running it well.",
+      "The arena, the sold-out stadium, five theaters, the raceway, the town square. The public owns them all. Their repairs could top a billion dollars over the next decade, and City Hall can't say what any of its buildings earn, cost, or need. An accounting of what you own, and a plan for running it well.",
     stat: "$1B+",
     statLabel: "in building bills coming due by 2036",
     icon: Theater,
@@ -41,7 +41,7 @@ const DIVES: DeepDive[] = [
     eyebrow: "Freeways",
     title: "Portland is about to run the experiment by accident",
     blurb:
-      "On September 11 southbound I-5 closes for five weeks and the traffic goes to I-405 and I-205 — nearly what freeway-removal advocates propose permanently. Both sides' predictions, and the test that decides them, published before the closure begins.",
+      "On September 11 southbound I-5 closes for five weeks and the traffic goes to I-405 and I-205, nearly what freeway-removal advocates propose permanently. Both sides' predictions, and the test that decides them, published before the closure begins.",
     stat: "$2.1B",
     statLabel: "for 1.8 miles, up from $450M promised in 2017",
     icon: Route,
@@ -52,7 +52,7 @@ const DIVES: DeepDive[] = [
     eyebrow: "City finances",
     title: "Portland's $8.5 billion, line by line",
     blurb:
-      "Every fund, every bureau, every program in the FY 2026-27 adopted budget — parsed from 1,478 pages of PDF and reconciled to the dollar. Trace where the money comes from, what it buys, and which 9% Council actually controls.",
+      "Every fund, every bureau, every program in the FY 2026-27 adopted budget, parsed from 1,478 pages of PDF and reconciled to the dollar. Trace where the money comes from, what it buys, and which 9% Council actually controls.",
     stat: "$8.55B",
     statLabel: "traced to the dollar",
     icon: Landmark,
@@ -63,9 +63,9 @@ const DIVES: DeepDive[] = [
     eyebrow: "Energy, water & taxes",
     title: "Oregon built the cloud. Was it worth the bill?",
     blurb:
-      "Roughly 125 data centers, $450M+ a year in tax breaks, surging power demand, secretive water deals — and a state that just hit pause. The strongest case for the deals, the strongest case against, and an honest six-condition test of when a data center is truly a win-win.",
+      "Roughly 125 data centers, $450M+ a year in tax breaks, surging power demand, secretive water deals, and a state that just hit pause. The strongest case for the deals, the strongest case against, and an honest six-condition test of when a data center is truly a win-win.",
     stat: "$450M+",
-    statLabel: "a year in tax breaks — and the state just hit pause",
+    statLabel: "a year in tax breaks, and the state just hit pause",
     icon: Server,
     available: true,
   },
@@ -74,9 +74,9 @@ const DIVES: DeepDive[] = [
     eyebrow: "Housing & redevelopment",
     title: "Lloyd Center: demolished on a promise",
     blurb:
-      "Portland's dead mall is coming down for up to 5,141 homes — but the approval requires zero affordable units and no ice rink, and the city is building fewer homes than any year since 2009. Both sides, the fine print, and an interactive look at whether the homes actually get built.",
+      "Portland's dead mall is coming down for up to 5,141 homes. But the approval requires zero affordable units and no ice rink, and the city is building fewer homes than any year since 2009. Both sides, the fine print, and an interactive look at whether the homes actually get built.",
     stat: "5,141",
-    statLabel: "homes promised — zero of them required",
+    statLabel: "homes promised, zero of them required",
     icon: Store,
     available: true,
   },
@@ -85,7 +85,7 @@ const DIVES: DeepDive[] = [
     eyebrow: "Economy & government",
     title: "Is Oregon serious about its own economy?",
     blurb:
-      "Governor Kotek's Prosperity Council wants to blow up Business Oregon and build a Department of Commerce. The case against the agency — and the asterisks the headline numbers hide — with the scorecard, the $1B decoded, the front door no CEO would use, and a four-state field test on whether a reorg actually works.",
+      "Governor Kotek's Prosperity Council wants to blow up Business Oregon and build a Department of Commerce. The case against the agency, and the asterisks the headline numbers hide, with the scorecard, the $1B decoded, the front door no CEO would use, and a four-state field test on whether a reorg actually works.",
     stat: "1,200 → 800",
     statLabel: "where the job target moved after years of missing it",
     icon: Building2,
@@ -118,7 +118,7 @@ const DIVES: DeepDive[] = [
     eyebrow: "Budgets & pensions",
     title: "The pension on your property tax bill",
     blurb:
-      "Portland owes billions in police and fire pensions and saved almost none of it. What FPDR costs you, who receives it, and how it could be fixed — with calculators and an interactive reform simulator.",
+      "Portland owes billions in police and fire pensions and saved almost none of it. What FPDR costs you, who receives it, and how it could be fixed, with calculators and an interactive reform simulator.",
     stat: fmtMoney(HEADLINE.liability),
     statLabel: "promised, less than 1% saved",
     icon: Landmark,
@@ -129,7 +129,7 @@ const DIVES: DeepDive[] = [
     eyebrow: "Housing & industry",
     title: "Mass timber: Oregon's big housing bet",
     blurb:
-      "Can building homes out of wood in factories help fix the housing shortage? What mass timber is, what it's good for, how much housing it can provide and at what cost — with a factory-cost calculator, the success stories, and the long graveyard of failures.",
+      "Can building homes out of wood in factories help fix the housing shortage? What mass timber is, what it's good for, how much housing it can provide and at what cost, with a factory-cost calculator, the success stories, and the long graveyard of failures.",
     stat: "491,347",
     statLabel: "homes Oregon needs in 20 years",
     icon: TreePine,
@@ -140,7 +140,7 @@ const DIVES: DeepDive[] = [
     eyebrow: "Homelessness",
     title: "Why Portland can't end homelessness",
     blurb:
-      "Portland spends more than ever and it keeps growing. The math that explains why — the inflow/outflow simulator, who's actually homeless, the true cost of doing nothing, why nobody can see the beds, and what would actually work.",
+      "Portland spends more than ever and it keeps growing. The math that explains why: the inflow/outflow simulator, who's actually homeless, the true cost of doing nothing, why nobody can see the beds, and what would actually work.",
     stat: "+~400",
     statLabel: "net added to the list every month",
     icon: Users,
@@ -168,8 +168,8 @@ export default function DeepDivesIndex() {
           </h1>
           <p className="mt-6 max-w-2xl text-[17px] sm:text-[19px] text-white/75 leading-relaxed">
             Some of Portland&apos;s most important policy questions are buried in actuarial reports and
-            budget footnotes. We pull them into the open — visuals first, plain language, real
-            numbers, and interactive tools — so anyone can understand what&apos;s at stake and why.
+            budget footnotes. We pull them into the open (visuals first, plain language, real
+            numbers, and interactive tools) so anyone can understand what&apos;s at stake and why.
           </p>
         </div>
       </section>
@@ -215,7 +215,7 @@ export default function DeepDivesIndex() {
           {/* Coming soon hint */}
           <div className="rounded-sm border border-dashed border-[var(--color-parchment)] p-7 text-center">
             <p className="text-[14px] text-[var(--color-ink-muted)]">
-              More deep-dives coming — housing, public safety spending, and climate.{" "}
+              More deep-dives coming: housing, public safety spending, and climate.{" "}
               <Link href="/contact" className="text-[var(--color-canopy)] underline underline-offset-2">
                 Suggest a topic
               </Link>

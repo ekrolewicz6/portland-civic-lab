@@ -1,13 +1,13 @@
 import { PERIMETER } from "@/lib/venues/data";
 
 /**
- * §2 — the perimeter of the portfolio, drawn as three rings.
+ * §2: the perimeter of the portfolio, drawn as three rings.
  *
  * Server component. Renders inside a light Section body: three bordered
  * cluster cards, one per ring, each listing its venues as chips with the
  * ring's oversight line above and its qualifying note below. The ring-3
  * note carries the Metro exclusion (Convention Center / Expo are Metro
- * assets, not City holdings) — it renders as a footnote, not a caption,
+ * assets, not City holdings). It renders as a footnote, not a caption,
  * so it reads as part of the definition of the perimeter.
  */
 export default function PortfolioMap() {
@@ -46,7 +46,7 @@ export default function PortfolioMap() {
             ))}
           </ul>
 
-          {/* Footnote — for ring 3 this carries the Metro exclusion */}
+          {/* Footnote: for ring 3 this carries the Metro exclusion */}
           {ring.note ? (
             <p className="mt-4 border-t border-[var(--color-parchment)] pt-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
               {ring.note}

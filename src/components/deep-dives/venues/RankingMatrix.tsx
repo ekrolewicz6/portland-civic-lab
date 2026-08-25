@@ -1,7 +1,7 @@
 import { RANKING, type RankingRow } from "@/lib/venues/assets";
 
 /**
- * §9.1 — The twelve-asset ranking matrix.
+ * §9.1: The twelve-asset ranking matrix.
  *
  * Server component. On lg+ it renders as a five-column table; below lg it
  * stacks into one card per asset so no cell ever has to shrink into

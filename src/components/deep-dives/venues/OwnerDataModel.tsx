@@ -8,7 +8,7 @@ import {
 } from "@/lib/venues/data";
 
 /**
- * §14–16 — the owner's data system: five ledgers, thirteen KPIs, the seven
+ * §14–16. The owner's data system: five ledgers, thirteen KPIs, the seven
  * relational tables, the questions the system unlocks, and the public-records
  * acquisition plan that would let anyone rebuild it from primary sources.
  * Server component; renders inside Section's right column.
@@ -73,13 +73,13 @@ export default function OwnerDataModel() {
           ))}
         </div>
         <p className="mt-4 text-[13px] leading-snug text-[var(--color-ink-light)]">
-          Regional economic impact appears in a separate section — never mixed with owner cash.
+          Regional economic impact appears in a separate section, never mixed with owner cash.
         </p>
       </div>
 
       {/* ── (c) The seven tables ── */}
       <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6">
-        <CardEyebrow>One relational model — seven tables</CardEyebrow>
+        <CardEyebrow>One relational model, seven tables</CardEyebrow>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {DATA_TABLES.map((t) => (
             <div

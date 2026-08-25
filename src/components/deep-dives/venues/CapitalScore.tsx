@@ -11,7 +11,7 @@ import {
 } from "@/lib/venues/engine";
 
 /**
- * §10 — the five-gates / 100-point capital framework, made operable.
+ * §10: the five-gates / 100-point capital framework, made operable.
  * Gates are pass/fail and not tradeable: until every gate is on, the
  * scoring dimensions are physically unreachable. Presets are illustrative
  * Portland Civic Lab analysis, not scores of live proposals.
@@ -89,7 +89,7 @@ export default function CapitalScore() {
       {/* ── Presets ── */}
       <div className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-4 sm:p-5">
         <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
-          Illustrative presets — PCL analysis, not scores of live proposals
+          Illustrative presets: PCL analysis, not scores of live proposals
         </p>
         <div className="mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
           {SCORE_PRESETS.map((p) => {
@@ -122,7 +122,7 @@ export default function CapitalScore() {
       {/* ── Gates ── */}
       <div className="p-5 sm:p-7">
         <h3 className="font-editorial text-[19px] leading-snug text-[var(--color-ink)]">
-          The five gates — pass/fail, not tradeable
+          The five gates: pass/fail, not tradeable
         </h3>
         <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {GATES.map((gate) => {
@@ -134,7 +134,7 @@ export default function CapitalScore() {
                 type="button"
                 onClick={() => toggleGate(gid)}
                 aria-pressed={on}
-                aria-label={`Gate ${gate.n}: ${gate.title} — ${on ? "passing" : "failing"}`}
+                aria-label={`Gate ${gate.n}: ${gate.title}, ${on ? "passing" : "failing"}`}
                 className={`min-h-[44px] rounded-sm border p-3 text-left transition-colors ${
                   on
                     ? "border-[var(--color-fern)] bg-[var(--color-fern)]/10"
@@ -174,11 +174,11 @@ export default function CapitalScore() {
         </div>
       </div>
 
-      {/* ── Dimensions + score — unreachable until every gate passes ── */}
+      {/* ── Dimensions + score: unreachable until every gate passes ── */}
       <div className="relative">
         <div className="border-t border-[var(--color-parchment)] p-5 sm:p-7">
           <h3 className="font-editorial text-[19px] leading-snug text-[var(--color-ink)]">
-            The 100-point score — seven weighted dimensions
+            The 100-point score: seven weighted dimensions
           </h3>
           <div className="mt-4 grid gap-x-8 gap-y-4 sm:grid-cols-2">
             {SCORE_DIMENSIONS.map((d) => (
@@ -198,7 +198,7 @@ export default function CapitalScore() {
                   onChange={(e) => setDim(d.id, Number(e.target.value))}
                   disabled={!result.gatesPassed}
                   className="mt-1.5 w-full accent-[var(--color-canopy)] cursor-pointer disabled:cursor-not-allowed"
-                  aria-label={`${d.label} — points out of ${d.weight}`}
+                  aria-label={`${d.label}: points out of ${d.weight}`}
                 />
               </div>
             ))}
@@ -219,12 +219,12 @@ export default function CapitalScore() {
             </span>
           </div>
           <p className="mt-2 text-[12px] leading-snug text-[var(--color-ink-muted)]">
-            Illustrative bands — the score forces common questions across assets; it does not
+            Illustrative bands: the score forces common questions across assets; it does not
             mechanically make decisions.
           </p>
         </div>
 
-        {/* Gate overlay — dims + score do not exist until the gates pass */}
+        {/* Gate overlay: dims + score do not exist until the gates pass */}
         {!result.gatesPassed ? (
           <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/85 p-6 backdrop-blur-[2px]">
             <div className="max-w-sm rounded-sm border border-[var(--color-parchment)] bg-white p-5 text-center shadow-sm">
@@ -233,7 +233,7 @@ export default function CapitalScore() {
               </p>
               <p className="mt-2 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
                 Gates are pass/fail, not tradeable. A project that fails any gate is redesigned or
-                rejected — never scored into approval.
+                rejected, never scored into approval.
               </p>
             </div>
           </div>

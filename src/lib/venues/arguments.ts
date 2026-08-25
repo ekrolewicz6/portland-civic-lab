@@ -1,7 +1,7 @@
 /**
  * The six contested choices, steelmanned (§7–§13 of the source analysis).
  * Each debate gives both sides their strongest case, then states where the
- * analysis lands and why — adjudications are Portland Civic Lab analysis.
+ * analysis lands and why. Adjudications are Portland Civic Lab analysis.
  */
 
 import type { SourceId } from "./data";
@@ -30,13 +30,13 @@ export const DEBATES: Record<string, Debate> = {
   psuVsKeller: {
     id: "psu-vs-keller",
     title: "Build the PSU hall, or rebuild Keller?",
-    stakes: "Roughly $447–449M for a new hall versus $290M for a renovation — and the risk of paying for both.",
+    stakes: "Roughly $447–449M for a new hall versus $290M for a renovation, and the risk of paying for both.",
     a: {
       label: "Build new at PSU",
       points: [
         {
           claim: "Keller's building is the problem, not its business",
-          body: "The venue fills seats and generates more than half of Portland'5 earned revenue — inside a structure whose long-term physical economics may be unsustainable. A purpose-built hall solves the actual problem instead of pouring $290M into a compromised envelope.",
+          body: "The venue fills seats and generates more than half of Portland'5 earned revenue, inside a structure whose long-term physical economics may be unsustainable. A purpose-built hall solves the actual problem instead of pouring $290M into a compromised envelope.",
         },
         {
           claim: "The state money is real and time-limited",
@@ -66,22 +66,22 @@ export const DEBATES: Record<string, Debate> = {
       ],
     },
     adjudication: {
-      headline: "Replacement, not duplication — and proof before financing.",
-      body: "The analysis lands with the source doctrine: treat the PSU hall as a potential replacement strategy, never an additive entitlement. Maintain Keller as a bridge, demand the complete financing and operating proof before any City-backed construction commitment, and decide Keller's reuse only after a replacement is fully operational. The one outcome the portfolio cannot afford is the middle path — building the new hall and drifting into running both.",
+      headline: "Replacement, not duplication. And proof before financing.",
+      body: "The analysis lands with the source doctrine: treat the PSU hall as a potential replacement strategy, never an additive entitlement. Maintain Keller as a bridge, demand the complete financing and operating proof before any City-backed construction commitment, and decide Keller's reuse only after a replacement is fully operational. The one outcome the portfolio cannot afford is the middle path: building the new hall and drifting into running both.",
     },
     sourceIds: ["res2026270", "flspaProgram", "pclAnalysis"],
   },
 
   modaInvestVsWalk: {
     id: "moda-invest-vs-walk",
-    title: "Invest in Moda under conditions — or refuse the deal?",
+    title: "Invest in Moda under conditions, or refuse the deal?",
     stakes: "$120M City upfront, up to $275M more in City-controlled venue resources over 20 years, against the risk of losing an NBA anchor.",
     a: {
       label: "Invest, with hard protections",
       points: [
         {
           claim: "The City already owns the downside",
-          body: "Since 2024 the arena is City property. Walking away doesn't transfer the aging building's risk to someone else — the owner holds it either way. The question is whether renovation happens with a major tenant locked in or without one.",
+          body: "Since 2024 the arena is City property. Walking away doesn't transfer the aging building's risk to someone else: the owner holds it either way. The question is whether renovation happens with a major tenant locked in or without one.",
         },
         {
           claim: "The leverage window is now",
@@ -89,7 +89,7 @@ export const DEBATES: Record<string, Debate> = {
         },
         {
           claim: "An anchored district beats an empty one",
-          body: "Rose Quarter land value — the portfolio's biggest option — is worth more beside a renovated, occupied arena than a declining or dark one.",
+          body: "Rose Quarter land value (the portfolio's biggest option) is worth more beside a renovated, occupied arena than a declining or dark one.",
         },
       ],
     },
@@ -98,7 +98,7 @@ export const DEBATES: Record<string, Debate> = {
       points: [
         {
           claim: "Public financing keeps drifting from public return",
-          body: "The operator controls important economics. Without audited owner data, capped exposure, and upside participation, the City risks financing improvements whose returns accrue to private parties — the classic arena-deal failure.",
+          body: "The operator controls important economics. Without audited owner data, capped exposure, and upside participation, the City risks financing improvements whose returns accrue to private parties. That is the classic arena-deal failure.",
         },
         {
           claim: "Relocation threats are the strongest card and the least tested",
@@ -111,15 +111,15 @@ export const DEBATES: Record<string, Debate> = {
       ],
     },
     adjudication: {
-      headline: "Conditional yes — and the conditions are the deal.",
-      body: "Invest only with a fixed and auditable exposure cap, private completion and overrun protection, enforceable non-relocation and successor terms, owner data and audit rights, public participation in major commercial upside, a funded lifecycle system — and no quiet conveyance of land or development rights. The December 31, 2026 target must not override deal quality. If the conditions don't survive negotiation, neither should the deal.",
+      headline: "Conditional yes, and the conditions are the deal.",
+      body: "Invest only with a fixed and auditable exposure cap, private completion and overrun protection, enforceable non-relocation and successor terms, owner data and audit rights, public participation in major commercial upside, a funded lifecycle system, and no quiet conveyance of land or development rights. The December 31, 2026 target must not override deal quality. If the conditions don't survive negotiation, neither should the deal.",
     },
     sourceIds: ["modaResolution", "modaTermSheetOpb", "sb1501", "countyModa", "pclAnalysis"],
   },
 
   hatfieldConsolidateVsPreserve: {
     id: "hatfield-consolidate-vs-preserve",
-    title: "Consolidate Hatfield Hall — or preserve all three theaters as they are?",
+    title: "Consolidate Hatfield Hall, or preserve all three theaters as they are?",
     stakes: "A shared building with a serious capital range, housing one strong theater and two weak ones.",
     a: {
       label: "Consolidate and reconfigure",
@@ -130,7 +130,7 @@ export const DEBATES: Record<string, Debate> = {
         },
         {
           claim: "Mission is portable; square footage is not",
-          body: "Community and education programming can survive — even improve — in a more efficient configuration. What can't survive is a capital plan that treats every room as sacred.",
+          body: "Community and education programming can survive, even improve, in a more efficient configuration. What can't survive is a capital plan that treats every room as sacred.",
         },
       ],
     },
@@ -156,7 +156,7 @@ export const DEBATES: Record<string, Debate> = {
 
   garagesParkVsRedevelop: {
     id: "garages-park-vs-redevelop",
-    title: "Rebuild the Rose Quarter garages as parking — or redevelop the land?",
+    title: "Rebuild the Rose Quarter garages as parking, or redevelop the land?",
     stakes: "Material parking revenue today versus the district's largest long-term development option.",
     a: {
       label: "Preserve parking capacity",
@@ -185,7 +185,7 @@ export const DEBATES: Record<string, Debate> = {
       ],
     },
     adjudication: {
-      headline: "Highest long-term public value — not automatic preservation of current capacity.",
+      headline: "Highest long-term public value, not automatic preservation of current capacity.",
       body: "Complete the district master plan, run the land-use analysis, and let garage renewal or replacement follow from it. No garage reinvestment that assumes indefinite parking demand, and no disposition of development rights without independent valuation, competitive testing, participation rent, deadlines, and reversion.",
     },
     sourceIds: ["rqPartnerResolution", "rqPartnerOpb", "pclAnalysis"],
@@ -194,7 +194,7 @@ export const DEBATES: Record<string, Debate> = {
   subsidyVsCommercial: {
     id: "subsidy-vs-commercial",
     title: "Should cultural venues have to pay their way?",
-    stakes: "The recurring fight underneath every venue vote — resolved only by keeping two ledgers honest at once.",
+    stakes: "The recurring fight underneath every venue vote, resolved only by keeping two ledgers honest at once.",
     a: {
       label: "Commercial discipline",
       points: [
@@ -222,22 +222,22 @@ export const DEBATES: Record<string, Debate> = {
       ],
     },
     adjudication: {
-      headline: "Explicit subsidy — never hidden cross-subsidy.",
-      body: "Both sides are right about the other's failure mode. The resolution is structural: every venue gets an owner-financial scorecard and a public-value scorecard. Commercial assets must demonstrate public financial return and risk transfer. Cultural assets must demonstrate measured public outcomes and affordable lifecycle plans. What no asset gets is the middle fog — where a deficit is neither a priced purchase nor a fixable failure, just a number nobody owns.",
+      headline: "Explicit subsidy, never hidden cross-subsidy.",
+      body: "Both sides are right about the other's failure mode. The resolution is structural: every venue gets an owner-financial scorecard and a public-value scorecard. Commercial assets must demonstrate public financial return and risk transfer. Cultural assets must demonstrate measured public outcomes and affordable lifecycle plans. What no asset gets is the middle fog, where a deficit is neither a priced purchase nor a fixable failure, just a number nobody owns.",
     },
     sourceIds: ["pclAnalysis"],
   },
 
   integratedVsFragmented: {
     id: "integrated-vs-fragmented",
-    title: "One Portland'5 operator — or specialized operators per venue?",
+    title: "One Portland'5 operator, or specialized operators per venue?",
     stakes: "The 2027 handoff from Metro is the one moment this choice is genuinely open.",
     a: {
       label: "One integrated operator",
       points: [
         {
           claim: "Five venues, one back office",
-          body: "Ticketing, security, stage labor, finance, concessions, customer data, booking coordination, management overhead — fragmenting the system duplicates all eight.",
+          body: "Fragmenting the system duplicates all eight cost centers: ticketing, security, stage labor, finance, concessions, customer data, booking coordination, and management overhead.",
         },
         {
           claim: "Booking is a portfolio game",

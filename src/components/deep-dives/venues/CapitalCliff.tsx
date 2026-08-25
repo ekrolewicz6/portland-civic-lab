@@ -9,7 +9,7 @@ import type { CapitalExposure } from "@/lib/venues/data";
 import { fmtMillions } from "@/lib/venues/engine";
 
 /**
- * §8.1 — every identified capital exposure on one shared dollar scale,
+ * §8.1: every identified capital exposure on one shared dollar scale,
  * drawn so that what is committed, what is framework, what is a range,
  * and what is simply unknown each *look* different. Dark-section
  * component: renders on the canopy background.
@@ -37,7 +37,7 @@ function pct(value: number): string {
 }
 
 function amountLabel(e: CapitalExposure): string {
-  if (e.kind === "unknown") return "—";
+  if (e.kind === "unknown") return "–";
   if (e.kind === "range") {
     const low = e.low ?? 0;
     return `${low === 0 ? "$0" : fmtMillions(low)}–${fmtMillions(e.high ?? 0)}`;
@@ -181,14 +181,14 @@ export default function CapitalCliff() {
 
       {/* ── Overlap map: the figures that must not be added ── */}
       <div>
-        <DarkEyebrow>The overlap map — figures that must not be added</DarkEyebrow>
+        <DarkEyebrow>The overlap map: figures that must not be added</DarkEyebrow>
         <div className="mt-3 grid gap-3 md:grid-cols-3">
           <div className="rounded-sm border border-white/12 bg-white/[0.06] p-4">
             <p className="font-mono text-[11px] font-semibold tabular-nums text-[var(--color-ember-bright)]">
               01
             </p>
             <p className="mt-1.5 text-[13px] leading-relaxed text-white/75">
-              {"PSU ↔ Keller: one replaces the other — never stack the $447–449M and a full Keller rebuild"}
+              {"PSU ↔ Keller: one replaces the other. Never stack the $447–449M and a full Keller rebuild"}
             </p>
           </div>
           <div className="rounded-sm border border-white/12 bg-white/[0.06] p-4">
@@ -196,7 +196,7 @@ export default function CapitalCliff() {
               02
             </p>
             <p className="mt-1.5 text-[13px] leading-relaxed text-white/75">
-              {"The three Portland'5 ranges are the SAME buildings across different horizons — never additive"}
+              {"The three Portland'5 ranges are the SAME buildings across different horizons, never additive"}
             </p>
           </div>
           <div className="rounded-sm border border-white/12 bg-white/[0.06] p-4">
@@ -248,7 +248,7 @@ export default function CapitalCliff() {
 
       {/* ── Footer stat line ── */}
       <p className="border-t border-white/12 pt-5 text-[13.5px] leading-relaxed text-white/70">
-        A capital-allocation problem measured in the high hundreds of millions — potentially
+        A capital-allocation problem measured in the high hundreds of millions, potentially
         exceeding $1 billion across overlapping choices. These figures must not be mechanically
         added.
       </p>

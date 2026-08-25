@@ -6,11 +6,11 @@ import {
 } from "@/lib/venues/data";
 
 /**
- * §3 — who runs what, and how well the system works as an owner.
+ * §3: who runs what, and how well the system works as an owner.
  *
  * Server component, light context. Three blocks:
  *  (a) the seven-row governance table (Asset / Owner / Operator / Oversight),
- *  (b) the report card — dimension grades plus the oversized overall "C",
+ *  (b) the report card: dimension grades plus the oversized overall "C",
  *  (c) the nine things a first-class owner always knows, with the closer.
  */
 
@@ -25,8 +25,32 @@ const TABLE_HEADERS = ["Asset", "Owner", "Operator / manager", "City oversight"]
 export default function GovernanceGrade() {
   return (
     <div className="space-y-5">
-      {/* ── (a) The governance table ── */}
-      <div className="rounded-sm border border-[var(--color-parchment)] bg-white">
+      {/* ── (a) The governance table: stacked cards on phones, table from md up ── */}
+      <div className="space-y-3 md:hidden">
+        {GOVERNANCE_ROWS.map((row) => (
+          <div
+            key={row.asset}
+            className="rounded-sm border border-[var(--color-parchment)] bg-white p-4"
+          >
+            <p className="text-[14px] font-semibold text-[var(--color-ink)]">{row.asset}</p>
+            <dl className="mt-2 space-y-1.5">
+              {[
+                ["Owner", row.owner],
+                ["Operator / manager", row.operator],
+                ["City oversight", row.oversight],
+              ].map(([label, value]) => (
+                <div key={label} className="flex items-baseline justify-between gap-3">
+                  <dt className="shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+                    {label}
+                  </dt>
+                  <dd className="text-right text-[13px] text-[var(--color-ink-light)]">{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        ))}
+      </div>
+      <div className="hidden rounded-sm border border-[var(--color-parchment)] bg-white md:block">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[640px] text-left">
             <thead>
@@ -95,7 +119,7 @@ export default function GovernanceGrade() {
               {HEADLINE.ownerGrade}
             </p>
             <p className="mt-3 text-[12px] leading-relaxed text-[var(--color-ink-light)]">
-              Overall institutional-owner grade — a grade of the system, not a
+              Overall institutional-owner grade: a grade of the system, not a
               claim that individual staff are incompetent.
             </p>
           </div>

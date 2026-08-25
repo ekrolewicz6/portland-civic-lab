@@ -397,7 +397,7 @@ export default function HomePage() {
               eyebrow: "Venues & public assets",
               title: "Every big stage in Portland belongs to you. So do the bills.",
               blurb:
-                "The arena, the sold-out stadium, five theaters, the raceway, the town square — the public owns them all. Repairs could top a billion dollars, and City Hall can't say what any of its buildings earn, cost, or need. What you own, and how to run it well.",
+                "The arena, the sold-out stadium, five theaters, the raceway, the town square: the public owns them all. Repairs could top a billion dollars, and City Hall can't say what any of its buildings earn, cost, or need. What you own, and how to run it well.",
             },
           ].map((d) => (
             <Link

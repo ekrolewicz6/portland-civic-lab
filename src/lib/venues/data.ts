@@ -408,11 +408,11 @@ export const PERIMETER: PerimeterRing[] = [
       "Providence Park",
       "Rose Quarter garages, plazas & land",
     ],
-    note: "Funded by ticket and user fees, Rose Quarter parking, agreement revenues, and allocations from the Multnomah County Visitor Facilities Trust Account — lodging and rental-car taxes.",
+    note: "Funded by ticket and user fees, Rose Quarter parking, agreement revenues, and allocations from the Multnomah County Visitor Facilities Trust Account (lodging and rental-car taxes).",
   },
   {
     id: "p5",
-    title: "Portland'5 — five theaters, three City-owned buildings",
+    title: "Portland'5: five theaters, three City-owned buildings",
     oversight: "Arts & Culture oversight; Metro/MERC operates through June 30, 2027",
     venues: [
       "Keller Auditorium",
@@ -421,7 +421,7 @@ export const PERIMETER: PerimeterRing[] = [
       "Winningstad Theatre",
       "Brunish Theatre",
     ],
-    note: "Management returns to the City on July 1, 2027 — the largest operational handoff in the portfolio's history.",
+    note: "Management returns to the City on July 1, 2027, the largest operational handoff in the portfolio's history.",
   },
   {
     id: "parks",
@@ -439,7 +439,7 @@ export const PERIMETER: PerimeterRing[] = [
       "Multnomah Arts Center",
       "Waterfront Park & programmable public spaces",
     ],
-    note: "Not all managed identically — but all belong in the same public asset register. The Oregon Convention Center and Expo Center are Metro assets: comparables and complements, not City holdings.",
+    note: "Not all are managed identically, but all belong in the same public asset register. The Oregon Convention Center and Expo Center are Metro assets: comparables and complements, not City holdings.",
   },
 ];
 
@@ -501,7 +501,7 @@ export const FOUR_ECONOMICS: EconomicsLayer[] = [
   {
     n: 1,
     title: "Gross venue activity",
-    body: "Tickets, concessions, hotels, restaurants, visitor spending — the big number that shows up in press releases. It measures the party, not who paid for the room.",
+    body: "Tickets, concessions, hotels, restaurants, visitor spending: the big number that shows up in press releases. It measures the party, not who paid for the room.",
   },
   {
     n: 2,
@@ -511,12 +511,12 @@ export const FOUR_ECONOMICS: EconomicsLayer[] = [
   {
     n: 3,
     title: "Public-owner economics",
-    body: "What the City itself receives or pays. A venue can fill every seat and still hand its owner a loss — this is the ledger Portland cannot currently produce building by building.",
+    body: "What the City itself receives or pays. A venue can fill every seat and still hand its owner a loss. This is the ledger Portland cannot currently produce building by building.",
   },
   {
     n: 4,
     title: "Regional economic & fiscal impact",
-    body: "Incremental activity and tax revenue across the region. Real, but never a substitute for the owner's own books — and never to be mixed with them.",
+    body: "Incremental activity and tax revenue across the region. Real, but never a substitute for the owner's own books, and never to be mixed with them.",
   },
 ];
 
@@ -537,8 +537,8 @@ export const THREE_CONDITIONS: PerformanceCondition[] = [
   {
     n: 2,
     title: "Public-service subsidy",
-    body: "An asset that knowingly provides benefits users cannot or should not fully finance. This is a purchase, not a failure — but it must be priced and named.",
-    assets: "The Schnitzer is primarily this. Winningstad and Brunish may be — with a serious question attached.",
+    body: "An asset that knowingly provides benefits users cannot or should not fully finance. This is a purchase, not a failure. But it must be priced and named.",
+    assets: "The Schnitzer is primarily this. Winningstad and Brunish may be, with a serious question attached.",
   },
   {
     n: 3,
@@ -602,7 +602,7 @@ export const CAPITAL_EXPOSURES: CapitalExposure[] = [
     kind: "range",
     low: 0,
     high: 288_600_000,
-    qualification: "Up to $275M City-controlled venue resources plus $13.6M County — some may be funded by venue-generated user fees rather than unrestricted City revenue.",
+    qualification: "Up to $275M City-controlled venue resources plus $13.6M County. Some may be funded by venue-generated user fees rather than unrestricted City revenue.",
     overlapsWith: ["moda-framework"],
   },
   {
@@ -610,7 +610,7 @@ export const CAPITAL_EXPOSURES: CapitalExposure[] = [
     label: "Veterans Memorial Coliseum renovation",
     kind: "committed",
     high: 56_000_000,
-    qualification: "Already substantially financed and underway — a done decision, not a prospective one.",
+    qualification: "Already substantially financed and underway: a done decision, not a prospective one.",
   },
   {
     id: "p5-near",
@@ -636,7 +636,7 @@ export const CAPITAL_EXPOSURES: CapitalExposure[] = [
     kind: "range",
     low: 180_000_000,
     high: 334_500_000,
-    qualification: "Combines different building studies and planning horizons — the same buildings counted across windows.",
+    qualification: "Combines different building studies and planning horizons: the same buildings counted across windows.",
     overlapsWith: ["p5-near", "p5-mid"],
   },
   {
@@ -645,7 +645,7 @@ export const CAPITAL_EXPOSURES: CapitalExposure[] = [
     kind: "range",
     low: 447_000_000,
     high: 449_000_000,
-    qualification: "A potential replacement strategy for Keller — not an additive entitlement. ($449M concept estimate; $447M in Resolution 2026-270 materials.)",
+    qualification: "A potential replacement strategy for Keller, not an additive entitlement. ($449M concept estimate; $447M in Resolution 2026-270 materials.)",
     overlapsWith: ["p5-mid", "p5-all"],
   },
   {
@@ -823,7 +823,7 @@ export const PHASES: StrategyPhase[] = [
     intro: "The most consequential twelve-month period in the portfolio's modern history.",
     workstreams: [
       {
-        heading: "Moda Center — sign only a deal worth signing",
+        heading: "Moda Center: sign only a deal worth signing",
         items: [
           "Fixed and auditable City exposure",
           "Full private construction completion and overrun protection",
@@ -835,7 +835,7 @@ export const PHASES: StrategyPhase[] = [
         ],
       },
       {
-        heading: "Portland'5 transition — a high-risk business migration, not a procurement",
+        heading: "Portland'5 transition: a high-risk business migration, not a procurement",
         items: [
           "Select the successor operating structure",
           "Preserve booking continuity; map every union and workforce obligation",
@@ -846,7 +846,7 @@ export const PHASES: StrategyPhase[] = [
         ],
       },
       {
-        heading: "The portfolio data room — by June 2027",
+        heading: "The portfolio data room (by June 2027)",
         items: [
           "Legal asset register and parcel/ground-lease map",
           "Contract-rights matrix and debt ledger",
@@ -879,7 +879,7 @@ export const PHASES: StrategyPhase[] = [
         ],
       },
       {
-        heading: "Rose Quarter — a district master plan",
+        heading: "Rose Quarter: a district master plan",
         items: [
           "Arenas, garages, City parcels, ground leases, plaza, transit, street connections",
           "Mixed-use development and Albina-related commitments",
@@ -887,7 +887,7 @@ export const PHASES: StrategyPhase[] = [
         ],
       },
       {
-        heading: "Providence Park — start the 2035 clock now",
+        heading: "Providence Park: start the 2035 clock now",
         items: [
           "Complete the facility-condition assessment",
           "Determine annual City and operator obligations; value all commercial rights",
@@ -895,7 +895,7 @@ export const PHASES: StrategyPhase[] = [
         ],
       },
       {
-        heading: "PSU venue — proof before financing",
+        heading: "PSU venue: proof before financing",
         items: [
           "Complete budget, committed capital stack, operator, labor plan",
           "Annual operating model, booking and resident-company agreements",
@@ -912,20 +912,20 @@ export const PHASES: StrategyPhase[] = [
     intro: "By now Portland should know what the PSU project really is, how the new operator performs, and what Moda and VMC improvements actually produced.",
     workstreams: [
       {
-        heading: "Keller — choose",
+        heading: "Keller: choose",
         items: ["Closure and adaptive reuse after PSU opens", "Right-sized conversion", "Redevelopment partnership", "Selective preservation", "Continued operation only if PSU does not proceed"],
       },
       {
-        heading: "Hatfield Hall — choose",
+        heading: "Hatfield Hall: choose",
         items: ["Full preservation", "Newmark-focused modernization", "Physical consolidation", "Institutional partnership", "Partial replacement"],
       },
       {
-        heading: "Schnitzer — commit to a phased plan",
+        heading: "Schnitzer: commit to a phased plan",
         items: ["Historic value, acoustics, accessibility", "Resident-organization participation and philanthropy", "Measured public cultural outcomes"],
       },
       {
         heading: "Rose Quarter garages and land",
-        items: ["Redevelopment or major renewal by highest long-term public value — not automatic preservation of current parking capacity"],
+        items: ["Redevelopment or major renewal by highest long-term public value, not automatic preservation of current parking capacity"],
       },
     ],
   },
@@ -996,7 +996,7 @@ export const FINANCING_SOURCES: FinancingSource[] = [
     n: "12.4",
     name: "Ground leases, air rights, and development value",
     bestFor: ["Rose Quarter infrastructure", "Public-realm improvements", "Garage replacement or conversion", "Capital that unlocks land value"],
-    advantages: ["Potentially Portland's most attractive source — converts underused public real estate into durable value"],
+    advantages: ["Potentially Portland's most attractive source: it converts underused public real estate into durable value"],
     risks: ["Development rights quietly transferred below market inside a larger venue negotiation"],
     guardrails: [
       "Independent appraisal",
@@ -1012,7 +1012,7 @@ export const FINANCING_SOURCES: FinancingSource[] = [
     name: "Naming rights, sponsorship, advertising, premium revenue",
     bestFor: ["Commercial improvements", "Capital reserves"],
     risks: ["Letting an operator retain rights the City never valued"],
-    guardrails: ["Inventory every right — buildings, plazas, entrances, concourses, clubs, garages, transit-facing signage, digital platforms, event series — before allowing anyone to keep them"],
+    guardrails: ["Inventory every right (buildings, plazas, entrances, concourses, clubs, garages, transit-facing signage, digital platforms, event series) before allowing anyone to keep them"],
   },
   {
     id: "visitor",
@@ -1027,7 +1027,7 @@ export const FINANCING_SOURCES: FinancingSource[] = [
     id: "regional",
     n: "12.7",
     name: "State and County funding",
-    bestFor: ["Facilities whose benefits and tax receipts extend beyond Portland — Moda, Providence Park, major performing-arts venues"],
+    bestFor: ["Facilities whose benefits and tax receipts extend beyond Portland: Moda, Providence Park, major performing-arts venues"],
     risks: ["Treating regional facilities as solely municipal obligations"],
     guardrails: ["Regional contribution proportional to geographic attendance, tax benefit, economic exposure, governance, and share of control or public return"],
   },
@@ -1036,7 +1036,7 @@ export const FINANCING_SOURCES: FinancingSource[] = [
     n: "12.8",
     name: "Philanthropy",
     bestFor: ["Cultural capital", "Donor-visible public spaces", "Accessibility, education, historic preservation", "Programming endowments"],
-    risks: ["Donors fund lobbies before they fund chillers, roofs, insurance, and backstage labor — the public model must survive after the campaign ends"],
+    risks: ["Donors fund lobbies before they fund chillers, roofs, insurance, and backstage labor. The public model must survive after the campaign ends"],
   },
   {
     id: "debt",
@@ -1055,7 +1055,7 @@ export const FINANCING_SOURCES: FinancingSource[] = [
   {
     id: "general",
     n: "12.10",
-    name: "General Fund — the final source, never the automatic one",
+    name: "General Fund: the final source, never the automatic one",
     bestFor: ["Life safety and legal accessibility", "Essential public cultural service", "Civic public space", "Broad citywide benefits that cannot fairly be charged to users"],
     risks: ["Becoming the residual payer for private commercial enhancements, avoidable overruns, operator underinvestment, or deals where the public absorbs downside while private parties keep upside"],
   },
@@ -1129,13 +1129,13 @@ export const LEDGERS: Ledger[] = [
   },
   {
     name: "Event ledger",
-    holds: "One row per event — plus holds, lost bookings, cancellations, dark days, rehearsals, conflicts",
+    holds: "One row per event, plus holds, lost bookings, cancellations, dark days, rehearsals, conflicts",
     fields: ["Venue, configuration, promoter, event type, classification", "Capacity, paid tickets, scans, comps, no-shows", "Gross ticket sales, City fees, rent, parking, concessions", "Incremental public-safety cost, labor, utilities", "Owner net contribution"],
   },
   {
     name: "Operating ledger",
     holds: "By asset and month",
-    fields: ["Earned revenue and public subsidy", "Rent, user fees, parking, sponsorship, concessions", "Utilities, insurance, security, cleaning, repairs", "Operator payments and central overhead — allocated by a disclosed formula", "Net owner cash"],
+    fields: ["Earned revenue and public subsidy", "Rent, user fees, parking, sponsorship, concessions", "Utilities, insurance, security, cleaning, repairs", "Operator payments and central overhead, allocated by a disclosed formula", "Net owner cash"],
   },
   {
     name: "Capital ledger",
@@ -1167,7 +1167,7 @@ export const PORTFOLIO_KPIS: string[] = [
 
 export const DATA_TABLES: { table: string; row: string }[] = [
   { table: "assets", row: "One row per building, venue, parcel, garage, plaza, or capital asset" },
-  { table: "contracts", row: "One row per agreement, amendment, side letter, guarantee, or lease — with structured rights" },
+  { table: "contracts", row: "One row per agreement, amendment, side letter, guarantee, or lease, with structured rights" },
   { table: "events", row: "One row per performance, game, rental, rehearsal, or activation" },
   { table: "cash_flows", row: "One row per transaction, linked to asset, event, operator, contract, period, and funding source" },
   { table: "capital_components", row: "One row per roof, chiller, structural element, seating system, or accessibility element" },
@@ -1187,16 +1187,16 @@ export const ANSWERABLE_QUESTIONS: string[] = [
 ];
 
 export const RECORDS_PLAN: { group: string; items: string }[] = [
-  { group: "Financial records (10 fiscal years)", items: "General-ledger and revenue transactions, journal entries, transfers, encumbrances, purchase orders, project and grant codes, cost-center mappings, overhead allocations — as CSV or native exports, not image PDFs" },
+  { group: "Financial records (10 fiscal years)", items: "General-ledger and revenue transactions, journal entries, transfers, encumbrances, purchase orders, project and grant codes, cost-center mappings, overhead allocations (as CSV or native exports, not image PDFs)" },
   { group: "Operator reporting", items: "Monthly statements, annual financials, event settlements, management-fee calculations, compliance reports, budgets, capital reports, and every underlying schedule delivered to the City" },
-  { group: "Contracts and rights", items: "Originals, amendments, side letters, waivers, MOUs, assignment consents, concession/ticketing/resident-company/sponsorship/parking agreements, ground leases, guarantees, default notices — plus a structured rights matrix per contract" },
+  { group: "Contracts and rights", items: "Originals, amendments, side letters, waivers, MOUs, assignment consents, concession/ticketing/resident-company/sponsorship/parking agreements, ground leases, guarantees, and default notices, plus a structured rights matrix per contract" },
   { group: "Event and attendance data", items: "Event-level: title, category, dates, configuration, sellable capacity, sold, scans, comps, gross revenue, cancellations, holds, lost bookings, load-in/out, rehearsals, private events, promoter" },
   { group: "Parking and transportation", items: "Garage transactions, rate schedules, occupancy by event, validations, operator fees, non-event revenue, maintenance, structural assessments, long-range parking assumptions" },
   { group: "Capital and maintenance", items: "Facility-condition assessments, component inventories, CMMS exports, work orders, preventive schedules, inspections, seismic studies, ADA transition plans, utility audits, change orders, claims, closeouts, warranties" },
-  { group: "Debt and public support", items: "Debt schedules, official statements, coverage calculations, reserves, pledged revenue, tax allocations, visitor-facility distributions, General Fund transfers, exemptions, land contributions, guarantees — each converted to nominal and present value" },
+  { group: "Debt and public support", items: "Debt schedules, official statements, coverage calculations, reserves, pledged revenue, tax allocations, visitor-facility distributions, General Fund transfers, exemptions, land contributions, and guarantees, each converted to nominal and present value" },
   { group: "Property and real estate", items: "Title reports, parcel maps, appraisals, environmental assessments, ground leases, easements, development-rights agreements, air-rights studies, highest-and-best-use analyses" },
-  { group: "Workforce (aggregate)", items: "Positions, classifications, vacancies, compensation, union, overtime, event and temporary labor, transition obligations — organizational analysis, not personal detail" },
-  { group: "Recipients", items: "Spectator Venues, Arts & Culture, Parks, City Budget Office, Finance, City Attorney, real-estate/facilities functions, Metro/MERC — each asked to identify responsive data held by contractors, not just on City servers" },
+  { group: "Workforce (aggregate)", items: "Positions, classifications, vacancies, compensation, union, overtime, event and temporary labor, transition obligations (organizational analysis, not personal detail)" },
+  { group: "Recipients", items: "Spectator Venues, Arts & Culture, Parks, City Budget Office, Finance, City Attorney, real-estate/facilities functions, and Metro/MERC, each asked to identify responsive data held by contractors, not just on City servers" },
 ];
 
 /* -------------------------------------------- §18–19: the verdict */
@@ -1210,7 +1210,7 @@ export const VERDICT: { n: number; title: string; body: string }[] = [
   {
     n: 2,
     title: "Capital decisions are driven by lease cliffs and political urgency",
-    body: "VMC, Moda, Keller/PSU, the Portland'5 transition, and Providence Park run through separate processes. That rewards whichever asset has the most urgent deadline, the most powerful operator, the strongest relocation narrative, the most organized constituency, or the most developed funding proposal — not necessarily the highest public return.",
+    body: "VMC, Moda, Keller/PSU, the Portland'5 transition, and Providence Park run through separate processes. That rewards whichever asset has the most urgent deadline, the most powerful operator, the strongest relocation narrative, the most organized constituency, or the most developed funding proposal, not necessarily the highest public return.",
   },
   {
     n: 3,
@@ -1241,4 +1241,4 @@ export const DOCTRINE_POINTS: string[] = [
 ];
 
 export const ANNUAL_QUESTION =
-  "Given the next dollar available, which investment in this portfolio produces the greatest durable public benefit — after accounting for risk, capital cost, operating subsidy, commercial return, cultural value, and the alternatives that dollar displaces?";
+  "Given the next dollar available, which investment in this portfolio produces the greatest durable public benefit, after accounting for risk, capital cost, operating subsidy, commercial return, cultural value, and the alternatives that dollar displaces?";

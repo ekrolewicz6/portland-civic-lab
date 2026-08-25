@@ -5,7 +5,7 @@ import { HEADLINE } from "@/lib/venues/data";
 import { AFFORD_PRESETS, annualDebtService, fmtMillions } from "@/lib/venues/engine";
 
 /**
- * §8.2 — the affordability arithmetic, made physical. Pick any capital
+ * §8.2: the affordability arithmetic, made physical. Pick any capital
  * amount in play (or load one of the live figures) and watch the level
  * annual debt service dwarf everything Portland'5 operations could ever
  * contribute toward it.
@@ -119,7 +119,7 @@ export default function AffordabilityCalculator() {
                 onClick={() => setAmount(p.amount)}
                 title={p.note}
                 aria-pressed={selected}
-                aria-label={`Set amount to ${p.label} — ${p.note}`}
+                aria-label={`Set amount to ${p.label}: ${p.note}`}
                 className={`min-h-[44px] rounded-sm border px-3 py-2 font-mono text-[13px] font-semibold tabular-nums transition-colors ${
                   selected
                     ? "border-[var(--color-canopy)] bg-[var(--color-canopy)] text-white"

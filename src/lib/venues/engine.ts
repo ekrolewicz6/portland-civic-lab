@@ -34,7 +34,7 @@ export interface ScoreDimension {
   weight: number;
 }
 
-/** §10.2 — weights sum to exactly 100. */
+/** §10.2: weights sum to exactly 100. */
 export const SCORE_DIMENSIONS: ScoreDimension[] = [
   { id: "safety", label: "Life safety, legal compliance, ADA, asset protection", weight: 25 },
   { id: "ownerReturn", label: "Owner cash return or avoided lifecycle cost", weight: 20 },
@@ -92,14 +92,14 @@ export interface ScorePreset {
 
 /**
  * Illustrative presets authored by Portland Civic Lab to show how the
- * framework treats §10.3's priority tiers — not scores of live proposals.
+ * framework treats §10.3's priority tiers, not scores of live proposals.
  */
 export const SCORE_PRESETS: ScorePreset[] = [
   {
     id: "moda-protected",
     label: "Arena renovation with full protections",
     rationale:
-      "A Moda-shaped project that passes every gate: capped exposure, private overrun protection, enforceable return. Lands high-conditional — strong on demand and leverage, weaker on direct owner cash.",
+      "A Moda-shaped project that passes every gate: capped exposure, private overrun protection, enforceable return. Lands high-conditional: strong on demand and leverage, weaker on direct owner cash.",
     gates: { necessity: true, ownership: true, portfolio: true, lifecycle: true, downside: true },
     dims: { safety: 14, ownerReturn: 10, demand: 14, mission: 7, leverage: 8, district: 8, optionality: 3 },
   },
@@ -107,7 +107,7 @@ export const SCORE_PRESETS: ScorePreset[] = [
     id: "psu-as-proposed",
     label: "New Broadway hall without a Keller decision",
     rationale:
-      "A new hall proposed while the replacement question stays open fails Gate 3 (portfolio consistency) — the score never runs. Resolving Keller's disposition is what unlocks scoring.",
+      "A new hall proposed while the replacement question stays open fails Gate 3 (portfolio consistency). The score never runs. Resolving Keller's disposition is what unlocks scoring.",
     gates: { necessity: true, ownership: true, portfolio: false, lifecycle: false, downside: true },
     dims: { safety: 10, ownerReturn: 8, demand: 12, mission: 12, leverage: 7, district: 6, optionality: 3 },
   },
@@ -115,7 +115,7 @@ export const SCORE_PRESETS: ScorePreset[] = [
     id: "newmark",
     label: "Newmark modernization",
     rationale:
-      "Mid-sized theater with real utilization and a credible long-term role: passes the gates, scores solidly conditional — strongest on mission and demand.",
+      "Mid-sized theater with real utilization and a credible long-term role: passes the gates and scores solidly conditional, strongest on mission and demand.",
     gates: { necessity: true, ownership: true, portfolio: true, lifecycle: true, downside: true },
     dims: { safety: 16, ownerReturn: 8, demand: 10, mission: 13, leverage: 4, district: 3, optionality: 4 },
   },
@@ -123,7 +123,7 @@ export const SCORE_PRESETS: ScorePreset[] = [
     id: "garage-rebuild",
     label: "Garage rebuilt-in-kind",
     rationale:
-      "Replacing parking capacity one-for-one, with no land-use analysis, assumes indefinite parking demand. Passes the gates only with generous readings, and scores low — redesign before funding.",
+      "Replacing parking capacity one-for-one, with no land-use analysis, assumes indefinite parking demand. Passes the gates only with generous readings, and scores low: redesign before funding.",
     gates: { necessity: true, ownership: true, portfolio: true, lifecycle: true, downside: false },
     dims: { safety: 12, ownerReturn: 6, demand: 6, mission: 2, leverage: 2, district: 3, optionality: 2 },
   },

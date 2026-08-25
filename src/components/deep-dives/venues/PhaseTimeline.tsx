@@ -1,7 +1,7 @@
 import { PHASES } from "@/lib/venues/data";
 
 /**
- * §11 — the four-phase, ten-year strategy as a vertical timeline.
+ * §11: the four-phase, ten-year strategy as a vertical timeline.
  *
  * Server component, light context. Each phase hangs off a continuous left
  * rail (border-l parchment) with a mono date-range marker and a square

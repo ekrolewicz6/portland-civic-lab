@@ -1,7 +1,7 @@
 import { FOUR_ECONOMICS, THREE_CONDITIONS } from "@/lib/venues/data";
 
 /**
- * §4 — Four kinds of money, three kinds of "underperforming."
+ * §4: Four kinds of money, three kinds of "underperforming."
  *
  * Server component. Renders inside the deep-dive Section's right column:
  * (a) the four economics layers as a numbered 2×2 grid, and (b) the three
@@ -71,8 +71,8 @@ export default function FourEconomics() {
         </div>
 
         <p className="mt-4 text-[12px] italic leading-relaxed text-[var(--color-ink-muted)]">
-          Conflating these three — treating them as one undifferentiated problem called
-          &ldquo;losing money&rdquo; — is how venue debates go wrong. Each condition demands a
+          Conflating these three (treating them as one undifferentiated problem called
+          &ldquo;losing money&rdquo;) is how venue debates go wrong. Each condition demands a
           different response: insist on a fair return, price the subsidy explicitly, or question
           the building itself.
         </p>

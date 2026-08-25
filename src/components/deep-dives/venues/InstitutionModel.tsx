@@ -10,7 +10,7 @@ import {
 import { fmtMillions } from "@/lib/venues/engine";
 
 /**
- * §13 — the institution the strategy requires: a centralized owner function
+ * §13. The institution the strategy requires: a centralized owner function
  * (the Portfolio Office), what it should never internalize, and the
  * recommended Portland'5 operating model with its anti-fragmentation rule.
  * Server component; renders inside Section's right column.
@@ -49,14 +49,14 @@ export default function InstitutionModel() {
       <blockquote className="rounded-sm border border-[var(--color-parchment)] border-l-2 border-l-[var(--color-ember)] bg-white p-5 sm:p-7">
         <p className="font-editorial text-[20px] leading-[1.35] text-[var(--color-ink)]">
           A centralized Portland Public Venues Portfolio Office that owns the strategy, data,
-          contracts, capital plan, and public scorecard — while specialized operators continue
+          contracts, capital plan, and public scorecard, while specialized operators continue
           delivering events.
         </p>
       </blockquote>
 
       {/* ── (b) The team ── */}
       <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6">
-        <CardEyebrow>The owner team — ten roles</CardEyebrow>
+        <CardEyebrow>The owner team: ten roles</CardEyebrow>
         <div className="mt-4 grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
           {TEAM_ROLES.map((r) => (
             <div key={r.role}>
@@ -86,8 +86,8 @@ export default function InstitutionModel() {
             {fmtMillions(HEADLINE.onePercentOfModa)}
           </p>
           <p className="mt-3 text-[12px] leading-snug text-[var(--color-ink-muted)]">
-            — more than multiple years of strong owner-side analytical capacity; the office costs
-            low single-digit millions annually.
+            That is more than multiple years of strong owner-side analytical capacity; the office
+            costs low single-digit millions annually.
           </p>
         </div>
 
@@ -147,7 +147,7 @@ export default function InstitutionModel() {
 
       {/* ── (f) Operator incentives ── */}
       <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6">
-        <CardEyebrow>Pay operators for this — not for gross revenue alone</CardEyebrow>
+        <CardEyebrow>Pay operators for this, not for gross revenue alone</CardEyebrow>
         <div className="mt-4 flex flex-wrap gap-2">
           {OPERATOR_INCENTIVES.map((incentive) => (
             <CloudChip key={incentive}>{incentive}</CloudChip>

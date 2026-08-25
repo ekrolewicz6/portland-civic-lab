@@ -12,7 +12,7 @@ import {
  * With a `slug`, renders that one initiative as a compact inline strip
  * (used beside an asset card). With no slug, renders all four venue
  * initiatives as a card grid with links into the cockpit and the weekly
- * Portfolio Brief. Missing slugs are filtered silently — the deep-dive
+ * Portfolio Brief. Missing slugs are filtered silently: the deep-dive
  * must never throw because a registry record was renamed.
  *
  * `compact` tightens the grid cards' padding (the slug strip is already
@@ -135,7 +135,7 @@ export default function LiveStatus({ slug, compact }: { slug?: string; compact?:
 
               {init.lastAction ? (
                 <p className="mt-3.5 border-t border-[var(--color-parchment)] pt-3 text-[12px] leading-snug text-[var(--color-ink-muted)]">
-                  <span className="font-mono tabular-nums">{init.lastAction.date}</span> —{" "}
+                  <span className="font-mono tabular-nums">{init.lastAction.date}</span> ·{" "}
                   {init.lastAction.what}
                 </p>
               ) : null}
@@ -149,7 +149,7 @@ export default function LiveStatus({ slug, compact }: { slug?: string; compact?:
           href={COCKPIT_HREF}
           className="inline-flex min-h-[44px] items-center text-[13px] font-semibold text-[var(--color-canopy)] hover:text-[var(--color-canopy-light)]"
         >
-          The CED cockpit — every initiative, decision, and source →
+          The CED cockpit: every initiative, decision, and source →
         </Link>
         <Link
           href="/brief"

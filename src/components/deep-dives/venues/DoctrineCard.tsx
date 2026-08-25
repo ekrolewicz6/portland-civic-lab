@@ -6,7 +6,7 @@ import {
 } from "@/lib/venues/data";
 
 /**
- * §18–19 — the handable block: the doctrine in one sentence, the ten
+ * §18–19. The handable block: the doctrine in one sentence, the ten
  * commitments, the five gates, and the question Portland should answer
  * in public every year. Designed to survive printing: one card, kept
  * whole across page breaks where the browser can manage it.
