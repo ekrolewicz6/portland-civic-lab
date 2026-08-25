@@ -11,7 +11,7 @@ import {
   Landmark,
   MapPinned,
   ShieldCheck,
-  TreePine,
+  Theater,
   Trees,
   Users,
 } from "lucide-react";
@@ -392,12 +392,12 @@ export default function HomePage() {
                 "Portland owes $3.9 billion in police and fire pensions and saved almost none of it. See what FPDR costs you, who receives it, and try fixing it with an interactive reform simulator.",
             },
             {
-              href: "/deep-dives/mass-timber",
-              icon: TreePine,
-              eyebrow: "Housing & industry",
-              title: "Mass timber: Oregon's big housing bet",
+              href: "/deep-dives/venue-portfolio",
+              icon: Theater,
+              eyebrow: "Venues & public assets",
+              title: "Portland owns the show. It doesn't run it like an owner.",
               blurb:
-                "Can building homes out of wood in factories help fix the housing shortage? What it's good for, how much housing it can provide and at what cost — with a factory-cost calculator and the failure modes.",
+                "The City bought an arena for $1, runs five theaters, a sold-out stadium, and the town square — and faces $1B+ in overlapping capital decisions with no single owner strategy. Every asset graded, every debate steelmanned.",
             },
           ].map((d) => (
             <Link

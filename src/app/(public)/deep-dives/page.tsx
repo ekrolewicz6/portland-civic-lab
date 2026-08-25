@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
-import { ArrowRight, Building2, Landmark, Network, Scale, Server, Store, TreePine, Users, Route } from "lucide-react";
+import { ArrowRight, Building2, Landmark, Network, Scale, Server, Store, Theater, TreePine, Users, Route } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
@@ -25,6 +25,17 @@ interface DeepDive {
 }
 
 const DIVES: DeepDive[] = [
+  {
+    href: "/deep-dives/venue-portfolio",
+    eyebrow: "Venues & public assets",
+    title: "Portland owns the show. It doesn't run it like an owner.",
+    blurb:
+      "The City bought a major-league arena for $1, runs five theaters, a sold-out stadium, a raceway on a drowned city, and the town square — with no single owner strategy. Every asset graded, every debate steelmanned, and the doctrine an elected official could govern the whole portfolio by.",
+    stat: "$1B+",
+    statLabel: "in overlapping venue capital decisions before 2036",
+    icon: Theater,
+    available: true,
+  },
   {
     href: "/deep-dives/i-5-rose-quarter",
     eyebrow: "Freeways",
