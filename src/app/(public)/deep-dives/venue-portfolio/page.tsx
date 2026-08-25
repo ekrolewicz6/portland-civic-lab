@@ -384,7 +384,7 @@ export default function VenuePortfolioPage() {
         tone="warm"
         eyebrow="03 · The accounting problem"
         title="Four kinds of money, routinely blurred together"
-        lead="A venue can generate enormous regional spending and weak owner economics. A cultural hall can lose money while buying exactly what the public wants. Until the ledgers are separated, every venue debate is two people using the same word for different things."
+        lead="An arena can pack downtown restaurants every game night while the city that owns it barely breaks even. A concert hall can lose money on paper and still be exactly what the public wants its money spent on. Until the city keeps these books separately, every venue argument is two people talking past each other: one is counting the region's money, the other is counting the city's."
       >
         <FourEconomics />
         <p className="mt-5 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">

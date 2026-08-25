@@ -93,7 +93,7 @@ function LedgerFigure() {
           viewBox="0 0 100 46"
           className="block h-auto w-full"
           role="img"
-          aria-label="Schematic flow diagram. One sold-out night, drawn as a ticket, splits left to right into three bands of very different thickness: a thick band to operators (teams, promoters, concessionaires), a thin band to the City as owner, and a medium band with dotted edges to the region (hotels, restaurants, taxes). Gross activity is the whole night; the other three ledgers are who keeps it."
+          aria-label="Schematic flow diagram. One sold-out night, drawn as a ticket, splits left to right into three bands of very different thickness: a thick band to operators (teams, promoters, concessionaires), a thin band to the City as owner, and a medium band with dotted edges to the region (hotels, restaurants, taxes). Ledger 1 is everything fans spend that night; the three bands show who actually keeps that money."
         >
           <defs>
             <linearGradient id="fe-band-op">
@@ -192,19 +192,20 @@ function LedgerFigure() {
         ))}
 
         <p
-          className="absolute rounded-sm bg-white/80 pr-1 text-[10px] leading-snug text-[var(--color-ink-light)] sm:text-[12px] sm:leading-normal xl:text-[13px]"
-          style={{ left: "2%", top: "60%", maxWidth: "40%" }}
+          className="absolute rounded-sm bg-white/90 p-1.5 text-[10px] leading-snug text-[var(--color-ink-light)] sm:p-2 sm:text-[12px] sm:leading-normal xl:text-[13px]"
+          style={{ left: "2%", top: "60%", maxWidth: "44%" }}
         >
           <span className="font-semibold text-[var(--color-ink)]">
-            Gross activity is the whole night.
+            Ledger 1 is everything fans spend that night:
           </span>{" "}
-          The other three are who keeps it.
+          tickets, beer, parking, merch. The three ribbons show who actually keeps that money.
         </p>
       </div>
 
       <figcaption className="mt-3 border-t border-[var(--color-parchment)] pt-3 font-mono text-[10px] leading-relaxed text-[var(--color-ink-muted)]">
-        Schematic, not measured shares: the point is that the four ledgers are different, and
-        Portland only publishes the first.
+        Ribbon widths are illustrative, not measured. These are four different sets of books, and
+        the only one Portland publishes is the first: the total spent, which says nothing about
+        who kept it.
       </figcaption>
     </figure>
   );
