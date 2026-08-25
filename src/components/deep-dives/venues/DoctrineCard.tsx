@@ -1,5 +1,6 @@
 import {
   ANNUAL_QUESTION,
+  ANNUAL_QUESTION_SHORT,
   DOCTRINE_POINTS,
   DOCTRINE_SENTENCE,
   GATES,
@@ -41,17 +42,33 @@ export default function DoctrineCard() {
           className="mx-auto mt-5 h-1.5 w-1.5 rotate-45 bg-[var(--color-ember)]"
         />
 
-        {/* ── (a) The doctrine, in one sentence ── */}
+        {/* ── (a) The question everything else serves ── */}
         <p className="mt-7 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ember)]">
-          The doctrine, in one sentence
+          The one question this whole page exists to answer
         </p>
-        <blockquote className="mx-auto mt-4 max-w-3xl text-center font-editorial text-[26px] leading-[1.15] text-[var(--color-ink)] [text-wrap:balance] sm:text-[34px] xl:text-[40px]">
+        <blockquote className="mx-auto mt-4 max-w-3xl text-center font-editorial text-[28px] leading-[1.12] text-[var(--color-ink)] [text-wrap:balance] sm:text-[36px] xl:text-[42px]">
+          {ANNUAL_QUESTION_SHORT}
+        </blockquote>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-[15px] leading-relaxed text-[var(--color-ink-light)] [text-wrap:balance] sm:text-[16px]">
+          Said fully: {ANNUAL_QUESTION}
+        </p>
+
+        <div
+          aria-hidden
+          className="mx-auto mt-9 h-1.5 w-1.5 rotate-45 bg-[var(--color-ember)]"
+        />
+
+        {/* ── (b) The answer, as a way of operating ── */}
+        <p className="mt-7 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ember)]">
+          How a city gets to a good answer, in one sentence
+        </p>
+        <blockquote className="mx-auto mt-3 max-w-3xl text-center font-editorial text-[19px] leading-[1.3] text-[var(--color-ink)] [text-wrap:balance] sm:text-[22px]">
           {DOCTRINE_SENTENCE}
         </blockquote>
 
-        {/* ── (b) Ten commitments, ghost-numbered, filled down each column ── */}
+        {/* ── (c) Ten promises, ghost-numbered, filled down each column ── */}
         <p className="mt-10 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
-          Unpacked into ten commitments
+          Spelled out as ten promises
         </p>
         <ol className="mt-5 grid gap-x-10 gap-y-4 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-5">
           {DOCTRINE_POINTS.map((point, i) => (
@@ -69,9 +86,9 @@ export default function DoctrineCard() {
           ))}
         </ol>
 
-        {/* ── (c) The five gates, as a hairline-ruled strip ── */}
+        {/* ── (d) The five questions, as a hairline-ruled strip ── */}
         <p className="mt-10 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
-          Every proposal passes five gates before it is scored
+          And five questions every project answers before it gets a dollar
         </p>
         <div className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-[var(--color-parchment)] sm:grid-cols-5">
           {GATES.map((gate) => (
@@ -92,13 +109,14 @@ export default function DoctrineCard() {
           ))}
         </div>
 
-        {/* ── (d) The annual question, a full-width band capping the card ── */}
+        {/* ── (e) The closing charge, a full-width band capping the card ── */}
         <div className="-mx-5 -mb-6 mt-10 border-t border-[var(--color-ember)]/50 bg-[var(--color-paper-warm)] px-5 py-7 sm:-mx-9 sm:-mb-9 sm:px-10 sm:py-9">
           <p className="text-center font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ember)]">
-            The question Portland should answer in public, every year
+            Ask it every year, in public
           </p>
           <p className="mx-auto mt-3 max-w-3xl text-center font-editorial text-[19px] leading-snug text-[var(--color-ink)] [text-wrap:balance]">
-            {ANNUAL_QUESTION}
+            Until the city can answer the question at the top of this card, about every dollar, no
+            single venue proposal, however popular, is a complete plan.
           </p>
         </div>
       </div>

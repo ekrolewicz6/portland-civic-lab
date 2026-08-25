@@ -43,12 +43,12 @@ export const VENUE_POINTS: VenuePoint[] = [
   { id: "pir", name: "Portland International Raceway", short: "PIR", x: 29, y: 13, tier: 1, ring: "civic", side: "left", note: "on the site of Vanport" },
   { id: "delta", name: "East Delta fields", short: "East Delta", x: 41, y: 15.5, tier: 3, ring: "civic", side: "right" },
   { id: "ifcc", name: "Interstate Firehouse Cultural Center", short: "IFCC", x: 46.5, y: 38, tier: 3, ring: "arts", side: "left" },
-  { id: "vmc", name: "Veterans Memorial Coliseum", short: "Coliseum", x: 50.5, y: 43.8, tier: 1, ring: "spectator", side: "right" },
-  { id: "moda", name: "Moda Center", short: "Moda Center", x: 53, y: 47, tier: 1, ring: "spectator", side: "right" },
-  { id: "erv", name: "Erv Lind Stadium", short: "Erv Lind", x: 64, y: 42, tier: 3, ring: "civic", side: "right" },
+  { id: "vmc", name: "Veterans Memorial Coliseum", short: "Coliseum", x: 50, y: 43, tier: 1, ring: "spectator", side: "right" },
+  { id: "moda", name: "Moda Center", short: "Moda Center", x: 53.6, y: 47.6, tier: 1, ring: "spectator", side: "right" },
+  { id: "erv", name: "Erv Lind Stadium", short: "Erv Lind", x: 66, y: 40, tier: 3, ring: "civic", side: "right" },
   { id: "providence", name: "Providence Park", short: "Providence Park", x: 37.5, y: 55.5, tier: 1, ring: "spectator", side: "left" },
   { id: "schnitzer", name: "Arlene Schnitzer Concert Hall", short: "Schnitzer", x: 42.8, y: 56.2, tier: 2, ring: "arts", side: "left" },
-  { id: "hatfield", name: "Antoinette Hatfield Hall", short: "Hatfield Hall", x: 43.4, y: 58, tier: 2, ring: "arts", side: "left" },
+  { id: "hatfield", name: "Antoinette Hatfield Hall", short: "Hatfield", x: 43.4, y: 58.4, tier: 2, ring: "arts", side: "left" },
   { id: "pioneer", name: "Pioneer Courthouse Square", short: "Pioneer Square", x: 44.6, y: 54.2, tier: 2, ring: "civic", side: "right" },
   { id: "waterfront", name: "Tom McCall Waterfront Park", short: "Waterfront", x: 46.6, y: 57.2, tier: 3, ring: "civic", side: "right" },
   { id: "keller", name: "Keller Auditorium", short: "Keller", x: 45.4, y: 60.5, tier: 2, ring: "arts", side: "right" },
@@ -57,6 +57,33 @@ export const VENUE_POINTS: VenuePoint[] = [
   { id: "sckavone", name: "Sckavone Stadium", short: "Sckavone", x: 52, y: 77.5, tier: 3, ring: "civic", side: "right" },
   { id: "mac", name: "Multnomah Arts Center", short: "Arts Center", x: 35, y: 82, tier: 3, ring: "arts", side: "left" },
 ];
+
+/** Freeways, drawn faint: recognition, not navigation. */
+export const FREEWAY_PATHS = [
+  { id: "i5", d: "M 56 5 C 55 20, 53.8 34, 53.8 46 C 53.8 58, 55.5 74, 56.5 90 C 57 100, 57.5 110, 58 118", label: "I-5", lx: 57.2, ly: 24 },
+  { id: "i405", d: "M 53.8 49 C 46 50, 39.5 51.5, 38 55 C 36.5 58.5, 39 62.5, 45 63.5 C 49 64.2, 52.5 63.5, 54.3 61.5", label: "", lx: 0, ly: 0 },
+  { id: "i84", d: "M 54.2 47.5 C 65 46.5, 80 45.5, 100 44.5", label: "I-84", lx: 88, ly: 43.6 },
+];
+
+/** The dense downtown cluster gets a magnified inset. */
+export const DOWNTOWN_IDS = new Set([
+  "providence",
+  "schnitzer",
+  "hatfield",
+  "pioneer",
+  "waterfront",
+  "keller",
+]);
+
+export const DOWNTOWN_REGION = { x: 36, y: 52, w: 12.5, h: 10 };
+export const INSET_FRAME = { x: 4, y: 90, w: 34, h: 26 };
+
+export function insetProject(x: number, y: number) {
+  return {
+    x: INSET_FRAME.x + ((x - DOWNTOWN_REGION.x) / DOWNTOWN_REGION.w) * INSET_FRAME.w,
+    y: INSET_FRAME.y + ((y - DOWNTOWN_REGION.y) / DOWNTOWN_REGION.h) * INSET_FRAME.h,
+  };
+}
 
 export const RING_META: Record<VenueRing, { label: string; colorVar: string }> = {
   spectator: { label: "Spectator venues", colorVar: "--color-ember" },

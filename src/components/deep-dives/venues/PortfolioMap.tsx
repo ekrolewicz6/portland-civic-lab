@@ -2,27 +2,81 @@ import { PERIMETER } from "@/lib/venues/data";
 import {
   BRIDGE_PATHS,
   COLUMBIA_PATH,
+  DOWNTOWN_IDS,
+  DOWNTOWN_REGION,
+  FREEWAY_PATHS,
+  INSET_FRAME,
   MAP_VIEWBOX,
   RING_META,
   TIER_RADIUS,
   VENUE_POINTS,
   WILLAMETTE_PATH,
+  insetProject,
 } from "@/lib/venues/map";
 
 /**
  * §2: the portfolio, drawn on the city.
  *
  * The map is the argument: the dots cover the whole town. An abstracted
- * Portland (rivers, bridges, hand-placed venue points on their real
- * relative geography) rendered as inline SVG, followed by the three-ring
- * inventory. Full venue names show inside the map from sm up; on phones
- * the numbered key below the map does that work.
+ * Portland (rivers, bridges, faint freeways, venue points on their real
+ * relative geography) with the dense downtown cluster magnified in a
+ * cartographic inset so nothing overlaps. Full names render from sm up;
+ * on phones the numbered key below the map does that work.
  */
 
-const plot = {
-  x: (x: number) => x,
-  y: (y: number) => y,
+/** Inset label sides, tuned so nothing collides inside the magnified box. */
+const INSET_SIDE: Record<string, "left" | "right"> = {
+  providence: "right",
+  pioneer: "right",
+  keller: "right",
+  schnitzer: "left",
+  hatfield: "left",
+  waterfront: "left",
 };
+
+function VenueLabel({
+  x,
+  y,
+  side,
+  index,
+  text,
+  size = 2.4,
+}: {
+  x: number;
+  y: number;
+  side: "left" | "right";
+  index: number;
+  text: string;
+  size?: number;
+}) {
+  const anchor = side === "left" ? "end" : "start";
+  return (
+    <>
+      <text
+        x={x}
+        y={y}
+        fontSize={size}
+        textAnchor={anchor}
+        className="max-sm:hidden"
+        fill="var(--color-ink)"
+        fontFamily="var(--font-mono, monospace)"
+      >
+        {text}
+      </text>
+      <text
+        x={x}
+        y={y + 0.1}
+        fontSize={size + 0.2}
+        textAnchor={anchor}
+        className="sm:hidden"
+        fill="var(--color-ink-light)"
+        fontFamily="var(--font-mono, monospace)"
+      >
+        {index}
+      </text>
+    </>
+  );
+}
 
 export default function PortfolioMap() {
   return (
@@ -51,10 +105,34 @@ export default function PortfolioMap() {
             viewBox={`0 0 ${MAP_VIEWBOX.w} ${MAP_VIEWBOX.h}`}
             className="h-auto w-full"
             role="img"
-            aria-label="Map of Portland showing every publicly owned venue: the arenas at the Rose Quarter, the stadium and theaters downtown, the raceway at the north edge, and neighborhood venues across the east and southwest"
+            aria-label="Map of Portland showing every publicly owned venue: the arenas at the Rose Quarter, the raceway at the north edge, neighborhood venues across the east side, and a magnified inset of the downtown cluster with the stadium, the theaters, and the town square"
           >
             {/* ground */}
             <rect x="0" y="0" width={MAP_VIEWBOX.w} height={MAP_VIEWBOX.h} fill="var(--color-paper-warm)" />
+
+            {/* ghost city name */}
+            <text
+              x="72"
+              y="102"
+              fontSize="8.5"
+              textAnchor="middle"
+              fill="var(--color-ink)"
+              fillOpacity="0.05"
+              fontFamily="var(--font-mono, monospace)"
+              letterSpacing="2.5"
+            >
+              PORTLAND
+            </text>
+
+            {/* freeways, faint */}
+            {FREEWAY_PATHS.map((f) => (
+              <path key={f.id} d={f.d} fill="none" stroke="var(--color-ink-muted)" strokeOpacity="0.32" strokeWidth="0.45" />
+            ))}
+            {FREEWAY_PATHS.filter((f) => f.label).map((f) => (
+              <text key={`${f.id}-label`} x={f.lx} y={f.ly} fontSize="1.9" fill="var(--color-ink-muted)" fillOpacity="0.7" fontFamily="var(--font-mono, monospace)">
+                {f.label}
+              </text>
+            ))}
 
             {/* rivers */}
             <path d={COLUMBIA_PATH} fill="none" stroke="var(--color-canopy)" strokeOpacity="0.28" strokeWidth="3.2" strokeLinecap="round" />
@@ -64,10 +142,10 @@ export default function PortfolioMap() {
             ))}
 
             {/* river names */}
-            <text x="80" y="4.4" fontSize="2.1" fill="var(--color-ink-muted)" fillOpacity="0.75" fontFamily="var(--font-mono, monospace)" letterSpacing="0.4">
+            <text x="97" y="4.4" fontSize="2.1" textAnchor="end" fill="var(--color-ink-muted)" fillOpacity="0.75" fontFamily="var(--font-mono, monospace)" letterSpacing="0.4">
               COLUMBIA RIVER
             </text>
-            <text x="52.5" y="90" fontSize="2.1" fill="var(--color-ink-muted)" fillOpacity="0.75" fontFamily="var(--font-mono, monospace)" letterSpacing="0.4">
+            <text x="52.5" y="88" fontSize="2.1" fill="var(--color-ink-muted)" fillOpacity="0.75" fontFamily="var(--font-mono, monospace)" letterSpacing="0.4">
               WILLAMETTE
             </text>
 
@@ -78,45 +156,117 @@ export default function PortfolioMap() {
             <path d="M 95.5 15.5 L 95.5 19" stroke="var(--color-ink-muted)" strokeWidth="0.3" />
             <path d="M 95.5 15.2 L 94.6 17 L 96.4 17 Z" fill="var(--color-ink-muted)" />
 
-            {/* venues */}
+            {/* downtown region: outlined on the main map, magnified in the inset */}
+            <rect
+              x={DOWNTOWN_REGION.x}
+              y={DOWNTOWN_REGION.y}
+              width={DOWNTOWN_REGION.w}
+              height={DOWNTOWN_REGION.h}
+              fill="none"
+              stroke="var(--color-ember)"
+              strokeWidth="0.4"
+              strokeDasharray="1.2 1"
+            />
+            <text
+              x={DOWNTOWN_REGION.x}
+              y={DOWNTOWN_REGION.y - 1.2}
+              fontSize="2"
+              fill="var(--color-ember)"
+              fontFamily="var(--font-mono, monospace)"
+              letterSpacing="0.4"
+            >
+              DOWNTOWN
+            </text>
+            {/* leader from region to inset */}
+            <path
+              d={`M ${DOWNTOWN_REGION.x} ${DOWNTOWN_REGION.y + DOWNTOWN_REGION.h} L ${INSET_FRAME.x + INSET_FRAME.w} ${INSET_FRAME.y}`}
+              stroke="var(--color-ember)"
+              strokeOpacity="0.45"
+              strokeWidth="0.3"
+              strokeDasharray="1 1.2"
+            />
+
+            {/* venues outside downtown: full dots and labels */}
             {VENUE_POINTS.map((v, i) => {
+              if (DOWNTOWN_IDS.has(v.id)) {
+                return (
+                  <circle
+                    key={v.id}
+                    cx={v.x}
+                    cy={v.y}
+                    r="0.7"
+                    style={{ fill: `var(${RING_META[v.ring].colorVar})` }}
+                  />
+                );
+              }
               const r = TIER_RADIUS[v.tier];
               const labelX = v.side === "left" ? v.x - r - 1.2 : v.x + r + 1.2;
-              const anchor = v.side === "left" ? "end" : "start";
               return (
                 <g key={v.id}>
                   <circle
-                    cx={plot.x(v.x)}
-                    cy={plot.y(v.y)}
+                    cx={v.x}
+                    cy={v.y}
                     r={r}
                     style={{ fill: `var(${RING_META[v.ring].colorVar})` }}
                     stroke="white"
                     strokeWidth="0.35"
                   />
-                  {/* full name from sm up */}
-                  <text
-                    x={labelX}
-                    y={v.y + 0.8}
-                    fontSize="2.4"
-                    textAnchor={anchor}
-                    className="max-sm:hidden"
-                    fill="var(--color-ink)"
-                    fontFamily="var(--font-mono, monospace)"
-                  >
-                    {v.short}
-                  </text>
-                  {/* numeral on phones */}
-                  <text
-                    x={labelX}
-                    y={v.y + 0.9}
-                    fontSize="2.6"
-                    textAnchor={anchor}
-                    className="sm:hidden"
-                    fill="var(--color-ink-light)"
-                    fontFamily="var(--font-mono, monospace)"
-                  >
-                    {i + 1}
-                  </text>
+                  <VenueLabel x={labelX} y={v.y + 0.8} side={v.side} index={i + 1} text={v.short} />
+                </g>
+              );
+            })}
+
+            {/* ── the downtown inset, magnified ── */}
+            <rect
+              x={INSET_FRAME.x}
+              y={INSET_FRAME.y}
+              width={INSET_FRAME.w}
+              height={INSET_FRAME.h}
+              fill="white"
+              stroke="var(--color-ember)"
+              strokeWidth="0.4"
+            />
+            <text
+              x={INSET_FRAME.x + 1.4}
+              y={INSET_FRAME.y + 2.8}
+              fontSize="2"
+              fill="var(--color-ember)"
+              fontFamily="var(--font-mono, monospace)"
+              letterSpacing="0.4"
+            >
+              DOWNTOWN · MAGNIFIED
+            </text>
+            {/* the river's downtown reach, re-projected into the inset */}
+            <path
+              d={(() => {
+                const a = insetProject(48, 52);
+                const b = insetProject(47.5, 56);
+                const c = insetProject(46.9, 62);
+                return `M ${a.x} ${INSET_FRAME.y} C ${a.x} ${(a.y + b.y) / 2}, ${b.x} ${b.y}, ${c.x} ${INSET_FRAME.y + INSET_FRAME.h}`;
+              })()}
+              fill="none"
+              stroke="var(--color-canopy)"
+              strokeOpacity="0.18"
+              strokeWidth="4.5"
+              strokeLinecap="butt"
+            />
+            {VENUE_POINTS.map((v, i) => {
+              if (!DOWNTOWN_IDS.has(v.id)) return null;
+              const p = insetProject(v.x, v.y);
+              const r = TIER_RADIUS[v.tier] + 0.3;
+              const side = INSET_SIDE[v.id] ?? "right";
+              const labelX = side === "left" ? p.x - r - 1.1 : p.x + r + 1.1;
+              return (
+                <g key={v.id}>
+                  <circle
+                    cx={p.x}
+                    cy={p.y}
+                    r={r}
+                    style={{ fill: `var(${RING_META[v.ring].colorVar})` }}
+                    stroke="white"
+                    strokeWidth="0.35"
+                  />
+                  <VenueLabel x={labelX} y={p.y + 0.8} side={side} index={i + 1} text={v.short} size={2.3} />
                 </g>
               );
             })}
@@ -145,7 +295,7 @@ export default function PortfolioMap() {
             ))}
           </ol>
           <p className="mt-3 border-t border-[var(--color-parchment)] pt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
-            Dots sized by venue scale · positions schematic, geography real
+            Dots sized by venue scale · downtown magnified for legibility · geography real, positions schematic
           </p>
         </div>
       </div>

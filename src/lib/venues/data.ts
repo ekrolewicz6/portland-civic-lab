@@ -699,15 +699,15 @@ export const GATES: Gate[] = [
   {
     id: "necessity",
     n: 1,
-    title: "Legal and structural necessity",
-    question: "Is the project required for continued lawful, safe operation?",
+    title: "Do we have to?",
+    question: "Is this required to keep the building safe, accessible, and legal to operate?",
     items: ["Life safety", "Seismic risk", "ADA compliance", "Code", "Water intrusion", "Insurance", "Critical structural integrity"],
   },
   {
     id: "ownership",
     n: 2,
-    title: "Complete ownership economics",
-    question: "Does the City know exactly who gets what, who pays what, and who eats the downside?",
+    title: "Who gets what?",
+    question: "Before a dollar moves, do we know who earns, who pays, who covers overruns, and who eats the downside?",
     items: [
       "Who owns the improvement",
       "Who receives every revenue stream",
@@ -720,8 +720,8 @@ export const GATES: Gate[] = [
   {
     id: "portfolio",
     n: 3,
-    title: "Portfolio consistency",
-    question: "Does the proposal duplicate another publicly supported facility?",
+    title: "Do we already own one?",
+    question: "Would this duplicate another building the public already pays for?",
     items: [
       "A new Broadway hall cannot be evaluated without Keller",
       "Moda improvements cannot be evaluated without VMC and Rose Quarter land",
@@ -731,8 +731,8 @@ export const GATES: Gate[] = [
   {
     id: "lifecycle",
     n: 4,
-    title: "Funded lifecycle plan",
-    question: "A grand opening is not a capital plan.",
+    title: "Can we keep it up?",
+    question: "A grand opening is not a capital plan: who pays for the next thirty years of upkeep?",
     items: [
       "30-year component replacement",
       "Inflation and operating expense",
@@ -743,8 +743,8 @@ export const GATES: Gate[] = [
   {
     id: "downside",
     n: 5,
-    title: "Independent downside case",
-    question: "Does the project survive the bad year?",
+    title: "What if it goes badly?",
+    question: "Does it still work in a recession, with a cost overrun, in a bad year at the box office?",
     items: [
       "Construction inflation and a 15–20% overrun",
       "Lower attendance and recession",
@@ -1225,20 +1225,23 @@ export const VERDICT: { n: number; title: string; body: string }[] = [
 ];
 
 export const DOCTRINE_SENTENCE =
-  "One owner strategy, multiple specialized operators, common data, explicit subsidy, funded lifecycle reserves, and portfolio-wide capital allocation.";
+  "Act like one owner, let specialists run the shows, keep one set of books, subsidize on purpose and in the open, save for repairs before they come due, and make every project compete for the same public dollar.";
 
 export const DOCTRINE_POINTS: string[] = [
-  "One owner strategy across all venues",
-  "Multiple specialized operators",
-  "Asset-level financial and capital accounting",
-  "Explicit separation of commercial return from public-service subsidy",
-  "Replacement instead of duplicative expansion",
-  "Private funding wherever private upside is created",
-  "Public funding where public goods are genuinely being purchased",
-  "Land and commercial-rights monetization before broad taxes",
-  "Lifecycle reserves before discretionary enhancement",
-  "A transparent ranking of every proposed capital dollar",
+  "Run every venue as one collection, with one strategy",
+  "Let specialists keep running the shows",
+  "Keep a real set of books for every building: what it earns, what it costs, what it needs",
+  "Never blur the venues that should make money with the ones we support on purpose",
+  "When we build new, we replace the old; we don't pay for two of the same thing",
+  "If a project mostly profits a private operator, private money pays for it",
+  "Public money buys public benefits, and we name the benefit we're buying",
+  "Before raising taxes, get fair value from the land, parking, and naming rights we already own",
+  "Fund the roof and the boiler before the nice-to-haves",
+  "Rank every proposed project in public, so everyone can see what beat what",
 ];
 
+export const ANNUAL_QUESTION_SHORT =
+  "Where does the next public dollar do the most lasting good?";
+
 export const ANNUAL_QUESTION =
-  "Given the next dollar available, which investment in this portfolio produces the greatest durable public benefit, after accounting for risk, capital cost, operating subsidy, commercial return, cultural value, and the alternatives that dollar displaces?";
+  "Of everything we could do with the next public dollar, which choice gives Portlanders the most lasting benefit, once you count the risk, the upkeep, the subsidy it will need, the money it can earn, its cultural value, and everything else that dollar could have done instead?";

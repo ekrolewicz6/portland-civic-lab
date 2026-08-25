@@ -77,7 +77,7 @@ function DarkSrc({ id }: { id: keyof typeof SOURCES }) {
   return (
     <a
       href={s.url}
-      target="_blank"
+      target={s.url.startsWith("/") ? undefined : "_blank"}
       rel="noopener noreferrer"
       className="text-white/80 underline decoration-white/40 underline-offset-2 hover:text-white hover:decoration-white"
     >
@@ -353,7 +353,7 @@ export default function VenuePortfolioPage() {
       >
         <DoctrineCard />
         <p className="mt-5 max-w-3xl text-[13.5px] leading-relaxed text-white/60">
-          The framework, grades, and doctrine on this page are <Src id="pclAnalysis" />, our
+          The framework, grades, and doctrine on this page are <DarkSrc id="pclAnalysis" />, our
           synthesis of the public record. Every load-bearing figure links to its source; everything
           we could not verify is listed in the <a href="#method" className="underline decoration-white/40 hover:decoration-white">Method</a> section.
         </p>
