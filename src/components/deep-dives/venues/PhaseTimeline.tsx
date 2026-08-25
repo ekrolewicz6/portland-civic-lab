@@ -4,20 +4,33 @@ import { PHASES } from "@/lib/venues/data";
  * §11: the four-phase, ten-year strategy as a vertical timeline.
  *
  * Server component, light context. Each phase hangs off a continuous left
- * rail (border-l parchment) with a mono date-range marker and a square
- * node on the line; Phase I is pinned with a "You are here" chip (we are
- * inside Aug 2026 – Jun 2027). Phase IV's "2036 test" workstream is
- * lifted out of the phase body and rendered once as the end-cap callout,
- * so the test reads as the destination of the whole timeline rather than
- * as one more workstream card.
+ * rail (border-l parchment) that doubles as a year axis: a small mono year
+ * tick sits on the line at every phase boundary (2026, 2027, 2030, 2033)
+ * with a closing 2036 tick at the end of the rail. Each phase's roman
+ * numeral rides the rail as a filled square node rotated 45 degrees, per
+ * the site's marker convention. Phase I is the current phase (we are
+ * inside Aug 2026 – Jun 2027): it keeps the "You are here" chip and its
+ * rail segment carries a subtle ember accent. Phase IV's "2036 test"
+ * workstream is lifted out of the phase body and rendered once as the
+ * end-cap callout, so the test reads as the destination of the whole
+ * timeline rather than as one more workstream card.
  */
 
 const TEST_2036_HEADING = "The 2036 test";
+
+/** First year in a phase's date range, e.g. "Jul 2027 – Jun 2030" → 2027. */
+function startYear(dates: string): string | undefined {
+  return dates.match(/\d{4}/)?.[0];
+}
+
+const YEAR_TICK =
+  "absolute left-0 -translate-x-1/2 bg-[var(--color-paper)] px-1.5 font-mono text-[10px] font-semibold tabular-nums tracking-[0.08em] text-[var(--color-ink-muted)]";
 
 export default function PhaseTimeline() {
   const test2036 = PHASES.flatMap((p) => p.workstreams).find(
     (w) => w.heading === TEST_2036_HEADING
   )?.items[0];
+  const endYear = PHASES[PHASES.length - 1]?.dates.match(/\d{4}/g)?.pop();
 
   return (
     <div>
@@ -27,33 +40,47 @@ export default function PhaseTimeline() {
             (w) => w.heading !== TEST_2036_HEADING
           );
           const isLast = i === PHASES.length - 1;
+          const isCurrent = phase.id === "phase-1";
           return (
             <li
               key={phase.id}
-              className={`relative border-l border-[var(--color-parchment)] pl-6 sm:pl-8 ${
-                isLast ? "pb-4" : "pb-10 sm:pb-12"
-              }`}
+              className={`relative border-l pl-6 sm:pl-8 ${
+                isCurrent
+                  ? "border-[var(--color-ember)]/45"
+                  : "border-[var(--color-parchment)]"
+              } ${isLast ? "pb-9" : "pb-10 sm:pb-12"}`}
             >
-              {/* Node on the rail */}
-              <span
-                aria-hidden
-                className="absolute -left-[5px] top-[5px] h-[9px] w-[9px] rotate-45 bg-[var(--color-ember)]"
-              />
+              {/* Year tick on the rail at the phase boundary */}
+              <span aria-hidden className={`${YEAR_TICK} top-0`}>
+                {startYear(phase.dates)}
+              </span>
+              {/* Closing tick at the end of the rail */}
+              {isLast && endYear ? (
+                <span aria-hidden className={`${YEAR_TICK} bottom-0`}>
+                  {endYear}
+                </span>
+              ) : null}
 
               {/* Date-range marker */}
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+              <p className="pt-7 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
                 {phase.dates}
               </p>
 
-              {/* Phase heading */}
-              <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-2">
-                <span className="font-editorial text-[28px] leading-none text-[var(--color-ember)]">
-                  {phase.n}
+              {/* Phase heading, its numeral riding the rail as a square node */}
+              <div className="relative mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-2">
+                <span
+                  aria-hidden
+                  className="absolute left-[-24px] top-[14px] h-6 w-6 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-[var(--color-ember)] sm:left-[-32px] lg:h-7 lg:w-7"
+                >
+                  <span className="flex h-full w-full -rotate-45 items-center justify-center font-mono text-[length:10px] font-bold text-[var(--color-canopy)] lg:text-[length:12px]">
+                    {phase.n}
+                  </span>
                 </span>
                 <h3 className="font-editorial text-[24px] leading-tight text-[var(--color-ink)]">
+                  <span className="sr-only">Phase {phase.n}: </span>
                   {phase.title}
                 </h3>
-                {phase.id === "phase-1" ? (
+                {isCurrent ? (
                   <span className="rounded-full bg-[var(--color-ember)] px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-canopy)]">
                     You are here
                   </span>

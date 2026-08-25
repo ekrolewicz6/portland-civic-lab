@@ -8,66 +8,99 @@ import {
 /**
  * §18–19. The handable block: the doctrine in one sentence, the ten
  * commitments, the five gates, and the question Portland should answer
- * in public every year. Designed to survive printing: one card, kept
- * whole across page breaks where the browser can manage it.
+ * in public every year.
+ *
+ * Designed as the page's poster artifact: a certificate-style card with
+ * a double-rule frame (outer parchment rule, inner hairline), a centered
+ * mono masthead, the doctrine sentence as the dominant centered element,
+ * ten commitments in two columns with oversized ghost numerals, the five
+ * gates as a hairline-ruled strip of mini-cells, and the annual question
+ * as a full-width band capping the card. It sits on solid white so it
+ * reads the same inside the dark Section it lives in, and it survives
+ * printing: one card, kept whole across page breaks where the browser
+ * can manage it.
  */
 export default function DoctrineCard() {
   return (
-    <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-6 sm:p-8 print:break-inside-avoid">
-      {/* ── (a) The doctrine, in one sentence ── */}
-      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ember)]">
-        The doctrine, in one sentence
-      </p>
-      <blockquote className="mt-4 border-l-2 border-[var(--color-ember)] pl-5 font-editorial text-[24px] leading-tight text-[var(--color-ink)] sm:text-[30px]">
-        {DOCTRINE_SENTENCE}
-      </blockquote>
-
-      {/* ── (b) Ten commitments ── */}
-      <p className="mt-9 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
-        Unpacked into ten commitments
-      </p>
-      <ol className="mt-3 grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
-        {DOCTRINE_POINTS.map((point, i) => (
-          <li
-            key={point}
-            className="flex gap-3 text-[14px] leading-snug text-[var(--color-ink-light)]"
-          >
-            <span className="shrink-0 font-mono text-[12px] font-semibold tabular-nums text-[var(--color-ember)]">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <span>{point}</span>
-          </li>
-        ))}
-      </ol>
-
-      {/* ── (c) The five gates, one line each ── */}
-      <p className="mt-9 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
-        Every proposal passes five gates before it is scored
-      </p>
-      <div className="mt-3 divide-y divide-[var(--color-parchment)] border-t border-[var(--color-parchment)]">
-        {GATES.map((gate) => (
-          <div key={gate.id} className="flex flex-wrap items-baseline gap-x-2 py-2">
-            <span className="font-mono text-[12px] font-semibold tabular-nums text-[var(--color-ember)]">
-              {gate.n}
-            </span>
-            <span className="text-[13px] font-semibold text-[var(--color-ink)]">
-              {gate.title}.
-            </span>
-            <span className="text-[13px] leading-snug text-[var(--color-ink-light)]">
-              {gate.question}
-            </span>
-          </div>
-        ))}
-      </div>
-
-      {/* ── (d) The annual question ── */}
-      <div className="mt-9 rounded-sm border border-[var(--color-ember)]/50 bg-[var(--color-paper-warm)] p-5">
-        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ember)]">
-          The question Portland should answer in public, every year
+    <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-1.5 print:break-inside-avoid">
+      <div className="overflow-hidden rounded-sm border border-[var(--color-parchment)]/70 px-5 pt-7 pb-6 sm:px-9 sm:pt-9 sm:pb-9">
+        {/* ── Masthead ── */}
+        <p className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-center font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-ink-muted)]">
+          <span>Portland Civic Lab</span>
+          <span aria-hidden className="text-[var(--color-ember)]">
+            ·
+          </span>
+          <span>Venue Portfolio Doctrine</span>
+          <span aria-hidden className="text-[var(--color-ember)]">
+            ·
+          </span>
+          <span className="tabular-nums">2026</span>
         </p>
-        <p className="mt-2 font-editorial text-[19px] leading-snug text-[var(--color-ink)]">
-          {ANNUAL_QUESTION}
+        <div
+          aria-hidden
+          className="mx-auto mt-5 h-1.5 w-1.5 rotate-45 bg-[var(--color-ember)]"
+        />
+
+        {/* ── (a) The doctrine, in one sentence ── */}
+        <p className="mt-7 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ember)]">
+          The doctrine, in one sentence
         </p>
+        <blockquote className="mx-auto mt-4 max-w-3xl text-center font-editorial text-[26px] leading-[1.15] text-[var(--color-ink)] [text-wrap:balance] sm:text-[34px] xl:text-[40px]">
+          {DOCTRINE_SENTENCE}
+        </blockquote>
+
+        {/* ── (b) Ten commitments, ghost-numbered, filled down each column ── */}
+        <p className="mt-10 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+          Unpacked into ten commitments
+        </p>
+        <ol className="mt-5 grid gap-x-10 gap-y-4 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-5">
+          {DOCTRINE_POINTS.map((point, i) => (
+            <li key={point} className="flex items-start gap-3">
+              <span
+                aria-hidden
+                className="w-9 shrink-0 select-none text-right font-mono text-[24px] font-semibold leading-none tabular-nums text-[var(--color-ember)]/30 sm:w-12 sm:text-[30px]"
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="pt-1 text-[14px] leading-snug text-[var(--color-ink-light)]">
+                {point}
+              </span>
+            </li>
+          ))}
+        </ol>
+
+        {/* ── (c) The five gates, as a hairline-ruled strip ── */}
+        <p className="mt-10 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+          Every proposal passes five gates before it is scored
+        </p>
+        <div className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-[var(--color-parchment)] sm:grid-cols-5">
+          {GATES.map((gate) => (
+            <div
+              key={gate.id}
+              className="bg-white p-3 last:col-span-2 sm:p-3.5 sm:last:col-span-1"
+            >
+              <p className="font-mono text-[11px] font-semibold tabular-nums text-[var(--color-ember)]">
+                {String(gate.n).padStart(2, "0")}
+              </p>
+              <p className="mt-1 text-[12px] font-semibold leading-snug text-[var(--color-ink)]">
+                {gate.title}
+              </p>
+              <p className="mt-1.5 text-[11px] leading-snug text-[var(--color-ink-muted)]">
+                {gate.question}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* ── (d) The annual question, a full-width band capping the card ── */}
+        <div className="-mx-5 -mb-6 mt-10 border-t border-[var(--color-ember)]/50 bg-[var(--color-paper-warm)] px-5 py-7 sm:-mx-9 sm:-mb-9 sm:px-10 sm:py-9">
+          <p className="text-center font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ember)]">
+            The question Portland should answer in public, every year
+          </p>
+          <p className="mx-auto mt-3 max-w-3xl text-center font-editorial text-[19px] leading-snug text-[var(--color-ink)] [text-wrap:balance]">
+            {ANNUAL_QUESTION}
+          </p>
+        </div>
       </div>
     </div>
   );

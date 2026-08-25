@@ -28,6 +28,8 @@ import DoctrineCard from "@/components/deep-dives/venues/DoctrineCard";
 import Debate from "@/components/deep-dives/venues/Debate";
 import LiveStatus from "@/components/deep-dives/venues/LiveStatus";
 import AffordabilityCalculator from "@/components/deep-dives/venues/AffordabilityCalculator";
+import PortfolioQuadrant from "@/components/deep-dives/venues/PortfolioQuadrant";
+import ReadingProgress from "@/components/deep-dives/venues/ReadingProgress";
 import CapitalScore from "@/components/deep-dives/venues/CapitalScore";
 
 export const metadata: Metadata = pageMeta({
@@ -325,6 +327,7 @@ export default function VenuePortfolioPage() {
 
       {/* ── nav ── */}
       <nav className="sticky top-14 z-40 border-b border-[var(--color-parchment)] bg-[var(--color-paper)]/95 backdrop-blur print:hidden" aria-label="Section navigation">
+        <ReadingProgress />
         <div className={DIVE_CONTAINER}>
           <div className="scrollbar-hide flex gap-1 overflow-x-auto py-2 font-mono text-[12px] uppercase tracking-[0.08em]">
             {NAV.map((n) => (
@@ -344,7 +347,7 @@ export default function VenuePortfolioPage() {
       <Section
         id="doctrine"
         tone="dark"
-        eyebrow="For the elected reader"
+        eyebrow="01 · For the elected reader"
         title="One page you could govern by"
         lead="Everything below argues for a single management philosophy. Here it is up front: quotable, printable, and short enough to survive a work session."
       >
@@ -359,7 +362,7 @@ export default function VenuePortfolioPage() {
       {/* ── 2 · portfolio ── */}
       <Section
         id="portfolio"
-        eyebrow="The complete perimeter"
+        eyebrow="02 · The complete perimeter"
         title="What Portland owns, and who actually runs it"
         lead="The assets are split across a City program, an arts office, a parks bureau, a regional government, nonprofit managers, and private operators. Fragmentation is why the basic owner questions go unanswered."
       >
@@ -379,7 +382,7 @@ export default function VenuePortfolioPage() {
       <Section
         id="economics"
         tone="warm"
-        eyebrow="The accounting problem"
+        eyebrow="03 · The accounting problem"
         title="Four kinds of money, routinely blurred together"
         lead="A venue can generate enormous regional spending and weak owner economics. A cultural hall can lose money while buying exactly what the public wants. Until the ledgers are separated, every venue debate is two people using the same word for different things."
       >
@@ -396,7 +399,7 @@ export default function VenuePortfolioPage() {
       {/* ── 4 · utilization ── */}
       <Section
         id="utilization"
-        eyebrow="What the buildings actually do"
+        eyebrow="04 · What the buildings actually do"
         title="Event count is not utilization"
         lead="The portfolio is not suffering from lack of demand. It is suffering from an owner who counts events instead of people and dollars."
       >
@@ -435,7 +438,7 @@ export default function VenuePortfolioPage() {
       {/* ── 5 · money ── */}
       <Section
         id="money"
-        eyebrow="The financial architecture"
+        eyebrow="05 · The financial architecture"
         title="A dollar, a fund, and a cross-subsidy"
         lead="Three structures carry the portfolio's money, and each hides something worth seeing."
       >
@@ -508,10 +511,21 @@ export default function VenuePortfolioPage() {
       {/* ── 6 · assets ── */}
       <Section
         id="assets"
-        eyebrow="Asset by asset"
+        eyebrow="06 · Asset by asset"
         title="Eleven verdicts"
         lead="Each asset judged against its mission: commercial assets on owner return and risk transfer, cultural assets on measured outcomes and affordable lifecycle plans. Grades are ours; the facts are sourced."
       >
+        <div className="mb-6 flex flex-wrap gap-1.5">
+          {ASSETS.map((a) => (
+            <a
+              key={a.id}
+              href={`#asset-${a.id}`}
+              className="flex min-h-[36px] items-center rounded-full border border-[var(--color-parchment)] bg-white px-3 py-1.5 font-mono text-[11px] text-[var(--color-ink-light)] transition-colors hover:border-[var(--color-sage)] hover:text-[var(--color-canopy)]"
+            >
+              {a.name}
+            </a>
+          ))}
+        </div>
         <div className="space-y-6">
           <AssetCard asset={ASSETS[0]} />
           <Debate debate={DEBATES.modaInvestVsWalk} />
@@ -534,9 +548,12 @@ export default function VenuePortfolioPage() {
             The portfolio, ranked
           </p>
           <h3 className="mt-1 font-editorial text-[24px] text-[var(--color-ink)]">
-            Twelve assets, four dimensions, one table
+            Twelve assets, two axes, one table
           </h3>
           <div className="mt-4">
+            <PortfolioQuadrant />
+          </div>
+          <div className="mt-5">
             <RankingMatrix />
           </div>
         </div>
@@ -546,7 +563,7 @@ export default function VenuePortfolioPage() {
       <Section
         id="cliff"
         tone="dark"
-        eyebrow="The capital cliff"
+        eyebrow="07 · The capital cliff"
         title="Everything is arriving at once"
         lead="Ten exposures, three of them unknown: different periods, different funding sources, mutually exclusive choices. They must not be mechanically added. They must also not be faced one political emergency at a time."
       >
@@ -564,7 +581,7 @@ export default function VenuePortfolioPage() {
       <Section
         id="afford"
         tone="warm"
-        eyebrow="The affordability test"
+        eyebrow="08 · The affordability test"
         title="Efficiency cannot solve a capital problem"
         lead="Finance the Portland'5 backlog with 30-year debt and see what the annual payment does to a system whose whole FY24–25 shortfall was $4.51 million, and whose food-and-beverage program nets $1.7 million."
       >
@@ -583,7 +600,7 @@ export default function VenuePortfolioPage() {
       {/* ── 9 · framework ── */}
       <Section
         id="framework"
-        eyebrow="The allocation framework"
+        eyebrow="09 · The allocation framework"
         title="Five gates, one hundred points"
         lead="Before any project is scored, it must pass five pass/fail gates. Only then do a hundred weighted points force the same questions across every asset, arena and theater alike. Try it."
       >
@@ -596,7 +613,7 @@ export default function VenuePortfolioPage() {
       {/* ── 10 · strategy ── */}
       <Section
         id="strategy"
-        eyebrow="The ten-year strategy"
+        eyebrow="10 · The ten-year strategy"
         title="August 2026 to June 2036, in four phases"
         lead="Establish owner control. Stabilize and redesign. Make the major physical choices. Then renew, rebid, and rebalance, all of it on evidence."
       >
@@ -619,7 +636,7 @@ export default function VenuePortfolioPage() {
       <Section
         id="financing"
         tone="warm"
-        eyebrow="The financing doctrine"
+        eyebrow="11 · The financing doctrine"
         title="Ten kinds of capital, matched to what each is for"
         lead="Ordered deliberately: private money first where private upside is created, land value before broad taxes, and the General Fund last: the final source, never the automatic one."
       >
@@ -629,7 +646,7 @@ export default function VenuePortfolioPage() {
       {/* ── 12 · institution ── */}
       <Section
         id="institution"
-        eyebrow="The institutional model"
+        eyebrow="12 · The institutional model"
         title="The owner Portland has never built"
         lead="Not a new operating mega-bureau. Eight to ten people who own the strategy, the data, the contracts, and the capital plan, while specialized operators keep delivering events."
       >
@@ -640,7 +657,7 @@ export default function VenuePortfolioPage() {
       {/* ── 13 · data ── */}
       <Section
         id="data"
-        eyebrow="The owner's operating system"
+        eyebrow="13 · The owner's operating system"
         title="Five ledgers, seven tables, eight answers"
         lead="This is not a glossy economic-impact website. It is an owner's operating system, plus the public-records plan to build it from documents the City already holds."
       >
@@ -651,7 +668,7 @@ export default function VenuePortfolioPage() {
       <Section
         id="verdict"
         tone="darker"
-        eyebrow="The management judgment"
+        eyebrow="14 · The management judgment"
         title="The buildings are fine. The owner is missing."
         lead="Portland's venue managers and operators have succeeded at one hard thing: the buildings remain active and relevant. The serious conclusions are about the system above them."
       >
@@ -662,7 +679,7 @@ export default function VenuePortfolioPage() {
       <Section
         id="method"
         tone="warm"
-        eyebrow="Method & sources"
+        eyebrow="15 · Method & sources"
         title="What we could not verify"
         lead="The same rule as every Civic Lab deep-dive: judgments are ours and labeled; facts carry sources; gaps are listed, not papered over."
       >

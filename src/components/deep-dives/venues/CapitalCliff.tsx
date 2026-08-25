@@ -15,7 +15,10 @@ import { fmtMillions } from "@/lib/venues/engine";
  * component: renders on the canopy background.
  *
  * The one thing this chart must not let a reader do is add the bars.
- * The overlap map below it exists to make that impossible to miss.
+ * The rows are grouped by certainty (committed / on the table / studied
+ * ranges / unknown), the overlap map makes the double-counts explicit, and
+ * the cumulative meter at the bottom shows the additive trap head-on:
+ * summed, the headline figures blow past $1B.
  */
 
 /** Shared scale: the full Moda framework is the widest bar. */
@@ -34,6 +37,55 @@ const HATCH =
 
 function pct(value: number): string {
   return `${((value / MAX_SCALE) * 100).toFixed(2)}%`;
+}
+
+/** Percentage share of `part` within `whole`, as a CSS width. */
+function shareOf(part: number, whole: number): string {
+  return `${((part / whole) * 100).toFixed(2)}%`;
+}
+
+/**
+ * Reading order: what is already spent, what is actively proposed, what has
+ * only been studied, and what nobody has priced. Rows are pulled from
+ * CAPITAL_EXPOSURES by id / kind so the data stays in one place.
+ */
+function pickByIds(ids: string[]): CapitalExposure[] {
+  return ids
+    .map((id) => CAPITAL_EXPOSURES.find((e) => e.id === id))
+    .filter((e): e is CapitalExposure => Boolean(e));
+}
+
+const EXPOSURE_GROUPS: { label: string; rows: CapitalExposure[] }[] = [
+  { label: "Committed", rows: pickByIds(["vmc"]) },
+  { label: "On the table", rows: pickByIds(["moda-framework", "moda-eligible", "psu"]) },
+  {
+    label: "Studied ranges",
+    rows: CAPITAL_EXPOSURES.filter((e) => e.kind === "range" && e.id.startsWith("p5-")),
+  },
+  { label: "Unknown", rows: CAPITAL_EXPOSURES.filter((e) => e.kind === "unknown") },
+];
+
+/**
+ * The cumulative meter: what happens if a reader (or a council) adds the
+ * headline numbers anyway. Committed + framework + eligible + the widest
+ * Portland'5 horizon + PSU, stacked end to end past a $1B marker.
+ */
+const METER_TOTAL =
+  HEADLINE.modaFramework +
+  HEADLINE.modaEligible +
+  HEADLINE.vmcRenovation +
+  HEADLINE.p5AllHigh +
+  HEADLINE.psuConcept; // $1,701.1M
+
+const BILLION_LEFT = shareOf(1_000_000_000, METER_TOTAL);
+
+/**
+ * Exact-millions label for the meter legend ($288.6M, not the $289M that
+ * fmtMillions rounds to), so the legend agrees with the 573 + 288.6 + 56 +
+ * 334.5 + 449 sum line above the band.
+ */
+function fmtMeterM(value: number): string {
+  return `$${(value / 1_000_000).toLocaleString("en-US", { maximumFractionDigits: 1 })}M`;
 }
 
 function amountLabel(e: CapitalExposure): string {
@@ -143,6 +195,18 @@ function DarkEyebrow({ children }: { children: ReactNode }) {
   );
 }
 
+/** Mono group header with a hairline rule running to the card edge. */
+function GroupHeader({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex items-center gap-3">
+      <span className="shrink-0 font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-white/50">
+        {children}
+      </span>
+      <span aria-hidden className="h-px min-w-8 flex-1 bg-white/12" />
+    </div>
+  );
+}
+
 export default function CapitalCliff() {
   return (
     <div className="space-y-8">
@@ -172,9 +236,16 @@ export default function CapitalCliff() {
             <span className="font-mono text-[10px] text-white/60">no public figure</span>
           </span>
         </div>
-        <div className="mt-6 space-y-6">
-          {CAPITAL_EXPOSURES.map((e) => (
-            <ExposureRow key={e.id} e={e} />
+        <div className="mt-6 space-y-8">
+          {EXPOSURE_GROUPS.map((group) => (
+            <div key={group.label}>
+              <GroupHeader>{group.label}</GroupHeader>
+              <div className="mt-4 space-y-6">
+                {group.rows.map((e) => (
+                  <ExposureRow key={e.id} e={e} />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -244,6 +315,135 @@ export default function CapitalCliff() {
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* ── Cumulative meter: the additive trap, drawn ── */}
+      <div className="rounded-sm border border-white/12 bg-white/[0.06] p-5 sm:p-6">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <DarkEyebrow>If Portland tried to do everything</DarkEyebrow>
+          <span className="font-mono text-[10px] tabular-nums text-white/50">
+            573 + 288.6 + 56 + 334.5 + 449 = ${(METER_TOTAL / 1e9).toFixed(2)}B
+          </span>
+        </div>
+
+        <div className="relative mt-5 pt-6">
+          <span
+            className="absolute top-0 -translate-x-1/2 font-mono text-[11px] font-semibold tabular-nums text-[var(--color-ember-bright)]"
+            style={{ left: BILLION_LEFT }}
+          >
+            $1B
+          </span>
+          <div className="relative">
+            <div
+              aria-hidden
+              className="absolute -top-1.5 -bottom-1.5 z-10 w-[2px] -translate-x-1/2 bg-[var(--color-ember-bright)]"
+              style={{ left: BILLION_LEFT }}
+            />
+            <div aria-hidden className="flex h-4 w-full overflow-hidden rounded-sm bg-white/8">
+              {/* Moda framework $573M: State / County / City, framework fill */}
+              <div
+                className="flex h-full opacity-70"
+                style={{ width: shareOf(HEADLINE.modaFramework, METER_TOTAL) }}
+              >
+                <div
+                  style={{
+                    width: shareOf(HEADLINE.modaState, HEADLINE.modaFramework),
+                    backgroundColor: SEGMENT_COLORS[0],
+                  }}
+                />
+                <div
+                  style={{
+                    width: shareOf(HEADLINE.modaCounty, HEADLINE.modaFramework),
+                    backgroundColor: SEGMENT_COLORS[1],
+                  }}
+                />
+                <div
+                  style={{
+                    width: shareOf(HEADLINE.modaCity, HEADLINE.modaFramework),
+                    backgroundColor: SEGMENT_COLORS[2],
+                  }}
+                />
+              </div>
+              {/* Moda eligible $288.6M: range from $0, all hatch */}
+              <div
+                className="h-full border-l border-[var(--color-canopy)] opacity-70"
+                style={{
+                  width: shareOf(HEADLINE.modaEligible, METER_TOTAL),
+                  backgroundImage: HATCH,
+                }}
+              />
+              {/* VMC $56M: committed fill */}
+              <div
+                className="h-full border-l border-[var(--color-canopy)] bg-[var(--color-fern)] opacity-70"
+                style={{ width: shareOf(HEADLINE.vmcRenovation, METER_TOTAL) }}
+              />
+              {/* Portland'5 all horizons $334.5M: clay floor plus hatch to ceiling */}
+              <div
+                className="flex h-full border-l border-[var(--color-canopy)] opacity-70"
+                style={{ width: shareOf(HEADLINE.p5AllHigh, METER_TOTAL) }}
+              >
+                <div
+                  className="bg-[var(--color-clay)]"
+                  style={{ width: shareOf(HEADLINE.p5AllLow, HEADLINE.p5AllHigh) }}
+                />
+                <div className="flex-1" style={{ backgroundImage: HATCH }} />
+              </div>
+              {/* PSU $449M: clay floor plus hatch to ceiling */}
+              <div
+                className="flex h-full border-l border-[var(--color-canopy)] opacity-70"
+                style={{ width: shareOf(HEADLINE.psuConcept, METER_TOTAL) }}
+              >
+                <div
+                  className="bg-[var(--color-clay)]"
+                  style={{ width: shareOf(HEADLINE.psuResolution, HEADLINE.psuConcept) }}
+                />
+                <div className="flex-1" style={{ backgroundImage: HATCH }} />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5">
+          <span className="flex items-center gap-1.5">
+            <span aria-hidden className="flex h-2 w-3 overflow-hidden rounded-sm">
+              <span style={{ width: "64%", backgroundColor: SEGMENT_COLORS[0] }} />
+              <span style={{ width: "15%", backgroundColor: SEGMENT_COLORS[1] }} />
+              <span style={{ width: "21%", backgroundColor: SEGMENT_COLORS[2] }} />
+            </span>
+            <span className="font-mono text-[10px] tabular-nums text-white/60">
+              Moda framework {fmtMeterM(HEADLINE.modaFramework)}
+            </span>
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span aria-hidden className="h-2 w-3 rounded-sm" style={{ backgroundImage: HATCH }} />
+            <span className="font-mono text-[10px] tabular-nums text-white/60">
+              Moda eligible {fmtMeterM(HEADLINE.modaEligible)}
+            </span>
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span aria-hidden className="h-2 w-3 rounded-sm bg-[var(--color-fern)]" />
+            <span className="font-mono text-[10px] tabular-nums text-white/60">
+              VMC {fmtMeterM(HEADLINE.vmcRenovation)}
+            </span>
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span aria-hidden className="h-2 w-3 rounded-sm bg-[var(--color-clay)]" />
+            <span className="font-mono text-[10px] tabular-nums text-white/60">
+              Portland&apos;5 all horizons {fmtMeterM(HEADLINE.p5AllHigh)}
+            </span>
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span aria-hidden className="h-2 w-3 rounded-sm bg-[var(--color-clay)]" />
+            <span className="font-mono text-[10px] tabular-nums text-white/60">
+              PSU {fmtMeterM(HEADLINE.psuConcept)}
+            </span>
+          </span>
+        </div>
+
+        <p className="mt-4 text-[13px] leading-relaxed text-white/70">
+          The additive path blows through a billion dollars. That is the scenario the discipline
+          principles exist to prevent.
+        </p>
       </div>
 
       {/* ── Footer stat line ── */}
