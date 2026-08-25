@@ -119,8 +119,8 @@ export default function GovernanceGrade() {
               {HEADLINE.ownerGrade}
             </p>
             <p className="mt-3 text-[12px] leading-relaxed text-[var(--color-ink-light)]">
-              Overall institutional-owner grade: a grade of the system, not a
-              claim that individual staff are incompetent.
+              A grade of the system as an owner, not a claim that any individual
+              staffer is bad at their job.
             </p>
           </div>
         </div>

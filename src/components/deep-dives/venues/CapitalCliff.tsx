@@ -213,7 +213,7 @@ export default function CapitalCliff() {
       {/* ── The bars, one shared scale ── */}
       <div className="rounded-sm border border-white/12 bg-white/[0.06] p-5 sm:p-6">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-          <DarkEyebrow>Every identified exposure, one scale</DarkEyebrow>
+          <DarkEyebrow>Every known bill, one scale</DarkEyebrow>
           <span className="font-mono text-[10px] tabular-nums text-white/50">
             full width = {fmtMillions(MAX_SCALE)}
           </span>
@@ -284,7 +284,7 @@ export default function CapitalCliff() {
       {/* ── The danger scenario ── */}
       <div className="rounded-sm border border-white/12 bg-white/[0.06] p-5 sm:p-6">
         <h3 className="font-editorial text-[20px] leading-snug text-white">
-          The most dangerous scenario: additive accumulation
+          The most dangerous scenario: saying yes to everything
         </h3>
         <ol className="mt-4 space-y-2.5">
           {DANGER_SCENARIO.map((item, i) => (
@@ -441,16 +441,15 @@ export default function CapitalCliff() {
         </div>
 
         <p className="mt-4 text-[13px] leading-relaxed text-white/70">
-          The additive path blows through a billion dollars. That is the scenario the discipline
-          principles exist to prevent.
+          Say yes to everything and the total blows through a billion dollars. That is the
+          scenario the discipline principles exist to prevent.
         </p>
       </div>
 
       {/* ── Footer stat line ── */}
       <p className="border-t border-white/12 pt-5 text-[13.5px] leading-relaxed text-white/70">
-        A capital-allocation problem measured in the high hundreds of millions, potentially
-        exceeding $1 billion across overlapping choices. These figures must not be mechanically
-        added.
+        The decisions ahead run to the high hundreds of millions, possibly past $1 billion, across
+        choices that overlap. The one thing you cannot do with these numbers is add them all up.
       </p>
     </div>
   );

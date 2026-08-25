@@ -79,7 +79,7 @@ export default function OwnerDataModel() {
 
       {/* ── (c) The seven tables ── */}
       <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6">
-        <CardEyebrow>One relational model, seven tables</CardEyebrow>
+        <CardEyebrow>One database, seven tables</CardEyebrow>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {DATA_TABLES.map((t) => (
             <div
@@ -94,7 +94,7 @@ export default function OwnerDataModel() {
           ))}
         </div>
         <p className="mt-3 font-mono text-[11px] text-[var(--color-ink-muted)]">
-          Linked by asset, event, contract, and operator keys.
+          Every table links by asset, event, contract, and operator.
         </p>
       </div>
 
@@ -118,10 +118,10 @@ export default function OwnerDataModel() {
 
       {/* ── (e) The public-records acquisition plan ── */}
       <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6">
-        <CardEyebrow>The public-records acquisition plan</CardEyebrow>
+        <CardEyebrow>The public-records request plan</CardEyebrow>
         <p className="mt-3 text-[13px] leading-snug text-[var(--color-ink-light)]">
-          The deepest defensible analysis cannot be completed from published summaries. These
-          records, in machine-readable form:
+          Published summaries only go so deep. To do this right, we need the records themselves,
+          in machine-readable form:
         </p>
         <div className="mt-4 divide-y divide-[var(--color-parchment)] border-y border-[var(--color-parchment)]">
           {collapsibleGroups.map((group) => (

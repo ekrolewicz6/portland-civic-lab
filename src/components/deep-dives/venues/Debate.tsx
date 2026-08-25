@@ -10,7 +10,7 @@ export default function Debate({ debate }: { debate: DebateModel }) {
     <div id={debate.id} className="mt-8 overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-white">
       <div className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)] px-5 py-4">
         <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ember)]">
-          The debate, steelmanned
+          The debate
         </p>
         <h3 className="mt-1.5 font-editorial text-[22px] leading-tight text-[var(--color-ink)]">
           {debate.title}

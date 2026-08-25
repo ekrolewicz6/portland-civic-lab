@@ -19,7 +19,7 @@ const HEADERS = [
   "Demand & utilization",
   "Owner economics",
   "Physical condition",
-  "Strategic recommendation",
+  "What Portland should do",
 ];
 
 export default function RankingMatrix() {
@@ -89,7 +89,7 @@ export default function RankingMatrix() {
               ))}
               <div>
                 <dt className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
-                  Strategic recommendation
+                  What Portland should do
                 </dt>
                 <dd className="mt-1 border-l-2 border-[var(--color-ember)] pl-3 text-[14px] font-semibold leading-snug text-[var(--color-ink)]">
                   {row.recommendation}

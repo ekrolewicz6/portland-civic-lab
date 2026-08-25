@@ -364,17 +364,17 @@ export default function VenuePortfolioPage() {
         id="portfolio"
         eyebrow="02 · The complete perimeter"
         title="What Portland owns, and who actually runs it"
-        lead="The assets are split across a City program, an arts office, a parks bureau, a regional government, nonprofit managers, and private operators. Fragmentation is why the basic owner questions go unanswered."
+        lead="These venues are split across a City program, an arts office, a parks bureau, a regional government, nonprofit managers, and private operators. That split is why nobody can answer the basic questions an owner should."
       >
         <PortfolioMap />
         <div className="mt-8">
           <GovernanceGrade />
         </div>
         <p className="mt-5 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-          The structural problem is not outsourcing. Specialized operators can outperform government
-          at booking, concessions, and event production. The problem is <strong className="text-[var(--color-ink)]">outsourcing without a
-          sufficiently powerful owner function</strong>: contracts going out the door faster than the
-          capacity to watch them.
+          The problem is not outsourcing. Specialists can beat government at booking, concessions,
+          and event production. The problem is <strong className="text-[var(--color-ink)]">outsourcing with nobody strong
+          on the owner&apos;s side of the table</strong>: contracts going out the door faster than
+          anyone can watch them.
         </p>
       </Section>
 
@@ -388,10 +388,10 @@ export default function VenuePortfolioPage() {
       >
         <FourEconomics />
         <p className="mt-5 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-          Portland&apos;5 exposes the weakness plainly: the performing-arts workgroup had to{" "}
-          <em>model</em> expense allocation across buildings because clean venue-level books were
-          never kept. Every venue needs both an owner-financial scorecard and a public-value
-          scorecard, and the two must never be netted into one number.
+          Portland&apos;5 shows the weakness plainly: the performing-arts workgroup had to{" "}
+          <em>model</em> how costs split across the buildings, because clean books were never kept
+          for any one of them. Every venue needs two scorecards, one for the owner&apos;s money and
+          one for the public value, and the two must never be blended into a single number.
         </p>
         <Debate debate={DEBATES.subsidyVsCommercial} />
       </Section>
@@ -417,7 +417,8 @@ export default function VenuePortfolioPage() {
             <p className="mt-2 font-mono text-[30px] font-bold tabular-nums text-[var(--color-ink)]">1.5M</p>
             <p className="text-[13px] leading-relaxed text-[var(--color-ink-light)]">
               annual visitors through a ~19,000-seat arena that opened in 1995. The question was
-              never demand. It is whether the owner captures enough value under its contracts.{" "}
+              never demand. It is whether the City gets a fair share of the money under its
+              contracts.{" "}
               <Src id="wikiModa" />
             </p>
           </div>
@@ -451,10 +452,10 @@ export default function VenuePortfolioPage() {
               Ticket and user fees, Rose Quarter parking, agreement revenues, and allocations from
               the Multnomah County Visitor Facilities Trust Account (lodging and rental-car taxes)
               flow in; Rose Quarter and Providence Park obligations, debt, capital, and
-              visitor-economy commitments flow out. The strategic mistake would be treating
-              dedicated revenues as economically free because they are not General Fund dollars.{" "}
-              <strong className="text-[var(--color-ink)]">Parking revenue, ticket fees, and visitor taxes are still public resources
-              with opportunity costs.</strong>{" "}
+              visitor-economy commitments flow out. The mistake would be treating this money as
+              free just because it is not General Fund money.{" "}
+              <strong className="text-[var(--color-ink)]">Parking revenue, ticket fees, and visitor taxes are still public money
+              that could be doing something else.</strong>{" "}
               (Fund structure: <Src id="fin358" />; the trust account&apos;s lodging and rental-car
               surcharges: <Src id="multcoTlt" />, <Src id="multcoRental" />.)
             </p>
@@ -496,12 +497,12 @@ export default function VenuePortfolioPage() {
               The Portland&apos;5 cross-subsidy
             </p>
             <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-[var(--color-ink-light)]">
-              Workgroup modeling of FY2023–24 shows Keller with a positive operating contribution,
-              and the Schnitzer and Hatfield Hall carrying substantial earned deficits. The
-              cross-subsidy is not irrational: Keller&apos;s commercial strength supports cultural
-              programming elsewhere. But it means <strong className="text-[var(--color-ink)]">the future of Keller is inseparable from
-              the economics of the entire Portland&apos;5 system</strong>: modest annual operations
-              sitting on top of very large building liabilities.
+              The workgroup&apos;s FY2023–24 modeling shows Keller making money on operations while
+              the Schnitzer and Hatfield Hall lose it. The cross-subsidy is not crazy:
+              Keller&apos;s box-office strength pays for cultural programming elsewhere. But it
+              means <strong className="text-[var(--color-ink)]">Keller&apos;s future and the finances of the whole
+              Portland&apos;5 system rise and fall together</strong>: a modest annual operation
+              sitting on top of very large building repair bills.
             </p>
           </div>
         </div>
@@ -513,7 +514,7 @@ export default function VenuePortfolioPage() {
         id="assets"
         eyebrow="06 · Asset by asset"
         title="Eleven verdicts"
-        lead="Each asset judged against its mission: commercial assets on owner return and risk transfer, cultural assets on measured outcomes and affordable lifecycle plans. Grades are ours; the facts are sourced."
+        lead="Each building is judged against its own job: the moneymakers on what the City earns and who carries the risk, the cultural venues on what the public gets and whether the repair plan is affordable. Grades are ours; the facts are sourced."
       >
         <div className="mb-6 flex flex-wrap gap-1.5">
           {ASSETS.map((a) => (
@@ -565,7 +566,7 @@ export default function VenuePortfolioPage() {
         tone="dark"
         eyebrow="07 · The capital cliff"
         title="Everything is arriving at once"
-        lead="Ten exposures, three of them unknown: different periods, different funding sources, mutually exclusive choices. They must not be mechanically added. They must also not be faced one political emergency at a time."
+        lead="Ten separate bills, three with no price tag yet: they cover different years, draw on different pots of money, and some rule each other out. They must not simply be added up. They also must not be faced one political emergency at a time."
       >
         <CapitalCliff />
         <p className="mt-4 max-w-3xl text-[12.5px] leading-relaxed text-white/50">
@@ -588,10 +589,10 @@ export default function VenuePortfolioPage() {
         <AffordabilityCalculator />
         <p className="mt-5 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
           Better concessions, sponsorship, ticketing, and dark-day programming could plausibly
-          improve results by millions. That is valuable, and nowhere near sufficient. Even an implausibly
-          clean doubling of food-and-beverage adds about {fmtMillions(HEADLINE.p5FnbNet)} before
-          incremental expense. The arithmetic is the argument: the capital program needs capital
-          sources, not operating hopes. (Shortfall and F&amp;B actuals: <Src id="p5Financials" />;
+          improve results by millions. That is valuable, and nowhere near enough. Even an implausibly
+          clean doubling of food-and-beverage adds about {fmtMillions(HEADLINE.p5FnbNet)}, before
+          counting the new costs of doing it. The arithmetic is the argument: repairs this size need
+          real capital, not hoped-for operating savings. (Shortfall and F&amp;B actuals: <Src id="p5Financials" />;
           capital ranges: the February–March 2026 Säzän Group facility-condition assessments,{" "}
           <Src id="sazanFca" />, reported at &ldquo;up to $336 million&rdquo; by <Src id="artswatchFca" />.)
         </p>
@@ -638,7 +639,7 @@ export default function VenuePortfolioPage() {
         tone="warm"
         eyebrow="11 · The financing doctrine"
         title="Ten kinds of capital, matched to what each is for"
-        lead="Ordered deliberately: private money first where private upside is created, land value before broad taxes, and the General Fund last: the final source, never the automatic one."
+        lead="The order is deliberate: private money first where private profit is created, land value before broad taxes, and the General Fund last: the final source, never the automatic one."
       >
         <FinancingSources />
       </Section>
@@ -736,8 +737,8 @@ function VerdictBlocks() {
         </p>
         <p className="mt-3 max-w-3xl font-editorial text-[22px] leading-snug text-white sm:text-[26px]">
           The portfolio has strong demand, valuable brands, important cultural institutions, and
-          exceptional public real estate. Its primary weakness is not the market. It is that the
-          City has never built the institutional machinery to manage these assets as one portfolio.
+          exceptional public real estate. The weakness is not the market. It is that the City has
+          never built itself the machinery to run these buildings as one portfolio.
         </p>
         <ol className="mt-6 grid gap-x-8 gap-y-2 sm:grid-cols-2">
           {DOCTRINE_POINTS.map((p, i) => (
@@ -774,7 +775,7 @@ function MethodBlock() {
         <ul className="mt-3 space-y-2">
           {[
             "A Pioneer Courthouse Square successor management agreement: we searched council records and found no early-2026 authorization. The last verifiable term is the 2022–25 agreement (Ordinance 190912, $470,000/year City contribution), which expired June 30, 2025. The current arrangement's operative terms are an open question.",
-            "Providence Park's current comprehensive facility-condition exposure, publicly unreconciled. Note also a figure discrepancy: the City's own venue page puts the 2019 private expansion at ~$75 million, while independent reporting consistently uses $85 million; we cite the City's figure.",
+            "Providence Park's full repair bill: no comprehensive facility-condition figure has been publicly reconciled. Note also a figure discrepancy: the City's own venue page puts the 2019 private expansion at ~$75 million, while independent reporting consistently uses $85 million; we cite the City's figure.",
             "The Veterans Memorial Coliseum figure: ~$56 million is bond proceeds including earned interest per the Spectator Venues annual report; the bureau page separately says $53 million in bonds.",
             "A complete public lifecycle plan for Portland International Raceway, a known reserve concern without a published plan.",
             "A consolidated condition-and-capital report for the smaller community venues.",

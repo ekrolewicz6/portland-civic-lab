@@ -62,7 +62,7 @@ export default function UtilizationChart() {
       {/* ── Headline callout ── */}
       <div className="rounded-sm border border-[var(--color-parchment)] border-l-[3px] border-l-[var(--color-ember)] bg-white p-5">
         <h3 className="font-editorial text-[20px] leading-snug text-[var(--color-ink)]">
-          Event count is not utilization.
+          A busy calendar is not a full house.
         </h3>
         <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
           Winningstad hosted <span className="font-mono tabular-nums">100</span> events for fewer

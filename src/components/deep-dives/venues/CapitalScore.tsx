@@ -89,7 +89,7 @@ export default function CapitalScore() {
       {/* ── Presets ── */}
       <div className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-4 sm:p-5">
         <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
-          Illustrative presets: PCL analysis, not scores of live proposals
+          Example presets: our analysis, not scores of live proposals
         </p>
         <div className="mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
           {SCORE_PRESETS.map((p) => {
@@ -219,8 +219,8 @@ export default function CapitalScore() {
             </span>
           </div>
           <p className="mt-2 text-[12px] leading-snug text-[var(--color-ink-muted)]">
-            Illustrative bands: the score forces common questions across assets; it does not
-            mechanically make decisions.
+            The bands are illustrative: the score forces the same questions of every project; it
+            does not make the decision by itself.
           </p>
         </div>
 
@@ -229,7 +229,7 @@ export default function CapitalScore() {
           <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/85 p-6 backdrop-blur-[2px]">
             <div className="max-w-sm rounded-sm border border-[var(--color-parchment)] bg-white p-5 text-center shadow-sm">
               <p className="text-[15px] font-semibold text-[var(--color-ink)]">
-                Does not reach scoring
+                Stopped at the gates
               </p>
               <p className="mt-2 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
                 Gates are pass/fail, not tradeable. A project that fails any gate is redesigned or

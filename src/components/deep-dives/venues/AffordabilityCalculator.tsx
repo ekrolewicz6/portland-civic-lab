@@ -175,7 +175,7 @@ export default function AffordabilityCalculator() {
       {/* ── Visual: the scale mismatch ── */}
       <div className="space-y-4 p-5 sm:p-7">
         <Bar
-          label="Annual debt service"
+          label="Annual loan payment"
           value={annual}
           max={barMax}
           fill="var(--color-clay)"
@@ -205,7 +205,7 @@ export default function AffordabilityCalculator() {
               {fmtMillions(annual)}
             </p>
             <p className="mt-1 text-[12px] leading-snug text-[var(--color-ink-muted)]">
-              annual debt service, level payments
+              the yearly payment, level for the whole term
             </p>
           </div>
           <div className="p-5 sm:p-6">
@@ -233,8 +233,8 @@ export default function AffordabilityCalculator() {
         </div>
         <div className="px-5 pb-5 pt-1 sm:px-6 sm:pb-6">
           <p className="border-l-2 border-[var(--color-ember)] pl-4 font-editorial text-[15px] leading-snug text-[var(--color-ink)]">
-            Portland&apos;5 does not have an operating-efficiency problem large enough to
-            solve its capital problem.
+            There is no way to run these theaters efficiently enough to pay their construction
+            bills.
           </p>
         </div>
       </div>

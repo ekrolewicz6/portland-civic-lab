@@ -481,12 +481,12 @@ export const OWNER_QUESTIONS: string[] = [
   "Every revenue right",
   "Every maintenance obligation",
   "Every capital obligation",
-  "Asset-level cash flow",
-  "Event-level utilization",
-  "Operator compliance",
-  "Remaining useful life of major systems",
+  "Each building's cash flow",
+  "Attendance, event by event",
+  "Whether operators hold up their end",
+  "How long the major systems have left",
   "Land and development value",
-  "The opportunity cost of every proposed capital commitment",
+  "What else the money could do, for every project proposed",
 ];
 
 /* ------------------------------------------- §4: four kinds of money */
@@ -530,21 +530,21 @@ export interface PerformanceCondition {
 export const THREE_CONDITIONS: PerformanceCondition[] = [
   {
     n: 1,
-    title: "Commercial underperformance",
-    body: "An asset that should generate cash but fails to. The owner is entitled to insist on a fair return.",
-    assets: "Moda Center and Providence Park live here: they should generate substantial commercial value for their owner.",
+    title: "It should make money, and doesn't",
+    body: "This venue exists to earn. If it isn't earning enough for the public that owns it, the answer is to negotiate like an owner and insist on a fair deal.",
+    assets: "Moda Center and Providence Park. Both should be making real money for their owner.",
   },
   {
     n: 2,
-    title: "Public-service subsidy",
-    body: "An asset that knowingly provides benefits users cannot or should not fully finance. This is a purchase, not a failure. But it must be priced and named.",
-    assets: "The Schnitzer is primarily this. Winningstad and Brunish may be, with a serious question attached.",
+    title: "We're paying for it on purpose",
+    body: "The city is buying something tickets alone can't pay for: symphonies, school shows, community stages. That's a purchase, not a failure. But we should say what it costs and what we get.",
+    assets: "The Schnitzer, on purpose. Winningstad and Brunish maybe, though nobody has ever said what that subsidy buys.",
   },
   {
     n: 3,
-    title: "Capital unsustainability",
-    body: "A valuable operation inside a building whose future cost exceeds the value of preserving that exact physical configuration.",
-    assets: "Keller is the rare pure case: a commercially productive venue in a physically unsustainable building. Hatfield Hall's capital range raises the same question.",
+    title: "Good venue, failing building",
+    body: "The shows are strong; the structure is the problem. Keeping this exact building standing will eventually cost more than it's worth. The operation deserves a future. The building may not.",
+    assets: "Keller is the textbook case: a moneymaker inside a building that's wearing out. Hatfield Hall may be next.",
   },
 ];
 
@@ -594,7 +594,7 @@ export const CAPITAL_EXPOSURES: CapitalExposure[] = [
       { label: "County", amount: 88_000_000 },
       { label: "City", amount: 120_000_000 },
     ],
-    qualification: "Subject to definitive agreements; the term sheet is non-binding.",
+    qualification: "Nothing is signed yet; the term sheet is non-binding.",
   },
   {
     id: "moda-eligible",
@@ -602,7 +602,7 @@ export const CAPITAL_EXPOSURES: CapitalExposure[] = [
     kind: "range",
     low: 0,
     high: 288_600_000,
-    qualification: "Up to $275M City-controlled venue resources plus $13.6M County. Some may be funded by venue-generated user fees rather than unrestricted City revenue.",
+    qualification: "Up to $275M in venue money the City controls, plus $13.6M from the County. Some of it may be paid by ticket and user fees rather than money the City could spend on anything.",
     overlapsWith: ["moda-framework"],
   },
   {
@@ -610,7 +610,7 @@ export const CAPITAL_EXPOSURES: CapitalExposure[] = [
     label: "Veterans Memorial Coliseum renovation",
     kind: "committed",
     high: 56_000_000,
-    qualification: "Already substantially financed and underway: a done decision, not a prospective one.",
+    qualification: "Mostly paid for and already under construction: a decision already made, not one still ahead.",
   },
   {
     id: "p5-near",
@@ -618,7 +618,7 @@ export const CAPITAL_EXPOSURES: CapitalExposure[] = [
     kind: "range",
     low: 29_000_000,
     high: 54_500_000,
-    qualification: "Combined indicative ranges for Keller, Schnitzer, and Hatfield Hall.",
+    qualification: "Rough combined estimates for Keller, Schnitzer, and Hatfield Hall.",
     overlapsWith: ["p5-mid", "p5-all"],
   },
   {
@@ -627,7 +627,7 @@ export const CAPITAL_EXPOSURES: CapitalExposure[] = [
     kind: "range",
     low: 115_000_000,
     high: 214_000_000,
-    qualification: "Not a funded plan; may exclude a comprehensive Keller solution.",
+    qualification: "No money is attached to this yet, and it may not cover a full fix for Keller.",
     overlapsWith: ["p5-near", "p5-all"],
   },
   {
@@ -636,7 +636,7 @@ export const CAPITAL_EXPOSURES: CapitalExposure[] = [
     kind: "range",
     low: 180_000_000,
     high: 334_500_000,
-    qualification: "Combines different building studies and planning horizons: the same buildings counted across windows.",
+    qualification: "Adds up studies that cover different spans of years: the same buildings counted more than once.",
     overlapsWith: ["p5-near", "p5-mid"],
   },
   {
@@ -645,44 +645,44 @@ export const CAPITAL_EXPOSURES: CapitalExposure[] = [
     kind: "range",
     low: 447_000_000,
     high: 449_000_000,
-    qualification: "A potential replacement strategy for Keller, not an additive entitlement. ($449M concept estimate; $447M in Resolution 2026-270 materials.)",
+    qualification: "This would replace Keller, not add to it; never stack the two costs. ($449M concept estimate; $447M in Resolution 2026-270 materials.)",
     overlapsWith: ["p5-mid", "p5-all"],
   },
   {
     id: "providence",
     label: "Providence Park",
     kind: "unknown",
-    qualification: "No current comprehensive facility-condition exposure has been publicly reconciled.",
+    qualification: "No one has published a full tally of what repairs this building needs.",
   },
   {
     id: "pir",
     label: "Portland International Raceway",
     kind: "unknown",
-    qualification: "Known reserve concern; no complete public lifecycle plan located.",
+    qualification: "The reserves are known to be thin; we found no published long-term repair plan.",
   },
   {
     id: "pioneer-smaller",
     label: "Pioneer Square & smaller venues",
     kind: "unknown",
-    qualification: "No consolidated portfolio-level condition and capital report exists.",
+    qualification: "No single report covers what these venues need or what it would cost.",
   },
 ];
 
 export const DANGER_SCENARIO: string[] = [
   "Build a new PSU Broadway hall",
-  "Retain Keller indefinitely as another large-scale performance hall",
-  "Comprehensively rehabilitate all of Schnitzer and Hatfield Hall in place",
+  "Keep Keller running forever as a second big performance hall",
+  "Fully rehab both the Schnitzer and Hatfield Hall right where they stand",
   "Complete the full Moda package and all additional eligible projects",
-  "Absorb an unidentified Providence Park backlog",
-  "Keep funding VMC, PIR, the garages, and smaller facilities with no dedicated lifecycle reserves",
+  "Swallow a Providence Park repair bill nobody has counted",
+  "Keep funding VMC, PIR, the garages, and the smaller venues with nothing saved for their repairs",
 ];
 
 export const DISCIPLINE_PRINCIPLES: string[] = [
-  "Replacement rather than duplication",
-  "Explicit subsidy rather than hidden cross-subsidy",
-  "Private capital for private commercial upside",
-  "Land value for district infrastructure",
-  "Lifecycle preservation before optional enhancement",
+  "Replace buildings; don't duplicate them",
+  "Subsidize in the open, not through hidden cross-subsidy",
+  "Private money pays for private profit",
+  "Land value pays for district infrastructure",
+  "Fix what we have before buying nice-to-haves",
 ];
 
 /* ----------------------------------------------- §10.1: five gates */
@@ -765,35 +765,35 @@ export const PRIORITY_TIERS: PriorityTier[] = [
     title: "High priority",
     tone: "good",
     items: [
-      "Critical structural, accessibility, and water-intrusion work",
-      "Completing already committed VMC construction",
-      "Life-preserving work at Keller until replacement",
-      "Urgent Schnitzer systems",
-      "Providence Park work protecting a heavily used asset",
-      "Asset-management data and condition assessments",
-      "Investments unlocking Rose Quarter land value",
+      "Critical structural repairs, accessibility work, and stopping leaks",
+      "Finishing the VMC work already paid for and underway",
+      "Keeping Keller alive until its replacement opens",
+      "Urgent Schnitzer system repairs",
+      "Providence Park repairs that protect a heavily used stadium",
+      "Basic records of what we own and what condition it's in",
+      "Work that makes the Rose Quarter land worth building on",
     ],
   },
   {
     title: "Conditional priority",
     tone: "warn",
     items: [
-      "Moda renovation elements with private match and enforceable City return",
-      "Revenue-producing Providence Park improvements",
+      "Moda renovation pieces where private money matches ours and the City's return is in writing",
+      "Providence Park improvements that earn money",
       "Newmark modernization",
-      "Rose Quarter public-realm work tied to development value",
-      "PIR work supported by enterprise revenue",
+      "Rose Quarter streets and plazas, where they raise the land's value",
+      "PIR work the raceway's own revenue can pay for",
     ],
   },
   {
     title: "Low priority unless redesigned",
     tone: "bad",
     items: [
-      "Duplicative operation of two Broadway-scale halls",
-      "Full replacement-in-kind of Hatfield Hall without consolidation analysis",
-      "Premium upgrades whose returns accrue principally to private operators",
-      "Garage reinvestment assuming indefinite parking demand, without a land-use analysis",
-      "Projects justified primarily by gross regional economic-impact estimates",
+      "Running two Broadway-size halls that do the same job",
+      "Rebuilding Hatfield Hall as-is without first asking whether to consolidate",
+      "Premium upgrades whose profits mostly flow to private operators",
+      "Garage spending that bets parking demand lasts forever, without studying other uses for the land",
+      "Projects sold mainly on big regional economic-impact numbers",
     ],
   },
 ];
@@ -825,37 +825,37 @@ export const PHASES: StrategyPhase[] = [
       {
         heading: "Moda Center: sign only a deal worth signing",
         items: [
-          "Fixed and auditable City exposure",
-          "Full private construction completion and overrun protection",
-          "Enforceable non-relocation, successor and assignment protections",
+          "A fixed City cost, open to audit",
+          "The private side finishes construction and eats any overruns",
+          "Binding promises that the team stays, and that they survive a sale",
           "Owner data and audit rights",
-          "Public participation in major commercial upside",
-          "A funded lifecycle system",
+          "The public shares in the big commercial wins",
+          "Funded reserves for future repairs",
           "The December 31, 2026 target must not override deal quality",
         ],
       },
       {
-        heading: "Portland'5 transition: a high-risk business migration, not a procurement",
+        heading: "Portland'5 handoff: moving a whole business, not signing a contract",
         items: [
-          "Select the successor operating structure",
-          "Preserve booking continuity; map every union and workforce obligation",
+          "Choose who runs the theaters next, and how",
+          "Keep the shows booked; map every union and staffing obligation",
           "Transfer or replace ticketing, concessions, insurance, finance, IT",
-          "Reconcile event deposits and future bookings; inventory IP and customer data",
-          "Establish opening working capital",
-          "Create an independent City owner function, separate from the operator",
+          "Square up event deposits and future bookings; list the intellectual property and customer data",
+          "Have cash in the bank on day one",
+          "Stand up the City's own owner team, separate from the operator",
         ],
       },
       {
-        heading: "The portfolio data room (by June 2027)",
+        heading: "One complete file on everything we own (by June 2027)",
         items: [
-          "Legal asset register and parcel/ground-lease map",
-          "Contract-rights matrix and debt ledger",
-          "Asset-level historical cash flow and operator-revenue-rights matrix",
-          "Component-level capital plan and current condition assessment for every major asset",
+          "The legal asset register and a map of every parcel and ground lease",
+          "A table of every contract right, plus a debt ledger",
+          "Each building's cash-flow history, and who keeps which revenue stream",
+          "A repair plan and a current condition assessment for every major building, component by component",
         ],
       },
       {
-        heading: "Close the assessment gaps",
+        heading: "Fill the inspection gaps",
         items: [
           "Providence Park", "Rose Quarter garages and plaza", "Remaining VMC systems", "PIR", "Pioneer Courthouse Square", "The smaller community venues",
         ],
@@ -871,11 +871,11 @@ export const PHASES: StrategyPhase[] = [
       {
         heading: "Portland'5 under City control",
         items: [
-          "Separate building P&Ls; track paid attendance and scans",
+          "Separate profit and loss for each building; track paid attendance and scans",
           "Sponsorship and commercial-rights reform; measure dark days and lost bookings",
-          "Implement urgent 2026–30 facility work",
-          "Test whether Newmark can be physically and financially separated from lower-performing Hatfield functions",
-          "Formal capital compacts with major resident organizations",
+          "Do the urgent 2026–30 building repairs",
+          "Test whether the Newmark can be split off, physically and financially, from the weaker parts of Hatfield Hall",
+          "Written agreements on capital costs with the major resident companies",
         ],
       },
       {
@@ -883,23 +883,23 @@ export const PHASES: StrategyPhase[] = [
         items: [
           "Arenas, garages, City parcels, ground leases, plaza, transit, street connections",
           "Mixed-use development and Albina-related commitments",
-          "No irreversible conveyance of development rights without public valuation and a portfolio-level plan",
+          "Don't give away development rights for good until the public knows what the land is worth and how it fits the whole portfolio",
         ],
       },
       {
         heading: "Providence Park: start the 2035 clock now",
         items: [
           "Complete the facility-condition assessment",
-          "Determine annual City and operator obligations; value all commercial rights",
-          "Model extension, rebid, and alternatives; build the lifecycle reserve before urgency arrives",
+          "Pin down what the City and the operator each owe every year; put a value on every commercial right",
+          "Price out extending, rebidding, and the alternatives; start saving for repairs before the deadline forces it",
         ],
       },
       {
         heading: "PSU venue: proof before financing",
         items: [
-          "Complete budget, committed capital stack, operator, labor plan",
-          "Annual operating model, booking and resident-company agreements",
-          "A replacement strategy for Keller and a binding limit on City operating exposure",
+          "A complete budget, money actually committed, an operator, a labor plan",
+          "A yearly operating budget, plus booking and resident-company agreements",
+          "A plan for what replaces Keller, and a hard cap on what the City pays to operate it",
         ],
       },
     ],
@@ -913,7 +913,7 @@ export const PHASES: StrategyPhase[] = [
     workstreams: [
       {
         heading: "Keller: choose",
-        items: ["Closure and adaptive reuse after PSU opens", "Right-sized conversion", "Redevelopment partnership", "Selective preservation", "Continued operation only if PSU does not proceed"],
+        items: ["Close it and give the building a new use once PSU opens", "Shrink it into a smaller hall", "Redevelopment partnership", "Keep only the parts worth keeping", "Keep operating it only if PSU falls through"],
       },
       {
         heading: "Hatfield Hall: choose",
@@ -921,11 +921,11 @@ export const PHASES: StrategyPhase[] = [
       },
       {
         heading: "Schnitzer: commit to a phased plan",
-        items: ["Historic value, acoustics, accessibility", "Resident-organization participation and philanthropy", "Measured public cultural outcomes"],
+        items: ["Historic value, acoustics, accessibility", "Resident companies chip in, and donors help", "Cultural benefits we actually measure"],
       },
       {
         heading: "Rose Quarter garages and land",
-        items: ["Redevelopment or major renewal by highest long-term public value, not automatic preservation of current parking capacity"],
+        items: ["Redevelop or rebuild based on what serves the public most in the long run, not on keeping every parking space by default"],
       },
     ],
   },
@@ -938,17 +938,17 @@ export const PHASES: StrategyPhase[] = [
       {
         heading: "The portfolio runs like a portfolio",
         items: [
-          "Providence Park extension or competitive process",
-          "Assess the new Portland'5 operating model's first years",
-          "Moda performance review; VMC market-position review",
+          "Extend Providence Park's deal, or put it out to bid",
+          "Judge the new Portland'5 setup on its first years",
+          "Review how Moda performed; review where VMC stands in the market",
           "PIR long-term capital renewal; Pioneer Square agreement renewal",
-          "Reassign capital based on measured results",
+          "Shift money toward what measurably works",
         ],
       },
       {
         heading: "The 2036 test",
         items: [
-          "Portland should no longer possess an entertainment-venue portfolio whose economics have to be reconstructed through disconnected public records",
+          "Portland should no longer own a venue portfolio whose finances have to be pieced together from scattered public records",
         ],
       },
     ],
@@ -972,16 +972,16 @@ export const FINANCING_SOURCES: FinancingSource[] = [
     id: "private",
     n: "12.1",
     name: "Private operator and tenant capital",
-    bestFor: ["Tenant-specific improvements", "Premium areas and team facilities", "Concessions, sponsorship-producing improvements, merchandising", "Operator technology"],
-    risks: ["The public financing a revenue-producing improvement while the operator keeps all incremental revenue"],
+    bestFor: ["Improvements a tenant wants for itself", "Premium areas and team facilities", "Concessions, merchandising, and upgrades that sell sponsorships", "Operator technology"],
+    risks: ["The public pays for an upgrade that makes money, and the operator keeps every new dollar"],
   },
   {
     id: "fees",
     n: "12.2",
     name: "Ticket and facility user fees",
-    bestFor: ["Lifecycle reserves", "Customer-facing facility renewal", "Debt tied directly to the venue"],
-    advantages: ["Beneficiary-pays logic", "Direct connection to use", "Predictable collection"],
-    risks: ["Cyclical attendance", "Affordability and price sensitivity", "The temptation to pledge decades of future fees to one asset"],
+    bestFor: ["Savings for future repairs", "Fixing up what customers see and touch", "Debt tied directly to the venue"],
+    advantages: ["The people who use it pay for it", "Direct connection to use", "Predictable collection"],
+    risks: ["Attendance rises and falls", "Higher fees price people out", "The temptation to pledge decades of future fees to one building"],
     guardrails: ["Every fee gets a published forecast: gross collections, exemptions, administration, debt pledge, capital use, and the effect on ticket prices"],
   },
   {
@@ -989,21 +989,21 @@ export const FINANCING_SOURCES: FinancingSource[] = [
     n: "12.3",
     name: "Parking revenue",
     bestFor: ["Garage maintenance", "Transportation and district infrastructure", "Flexible portfolio reserves"],
-    risks: ["Not an eternal growth stream: transit, rideshare, redevelopment, event patterns, and mobility policy can all change long-term demand"],
+    risks: ["Parking money won't grow forever: transit, rideshare, redevelopment, event patterns, and city transportation choices can all shrink demand"],
   },
   {
     id: "land",
     n: "12.4",
     name: "Ground leases, air rights, and development value",
-    bestFor: ["Rose Quarter infrastructure", "Public-realm improvements", "Garage replacement or conversion", "Capital that unlocks land value"],
-    advantages: ["Potentially Portland's most attractive source: it converts underused public real estate into durable value"],
-    risks: ["Development rights quietly transferred below market inside a larger venue negotiation"],
+    bestFor: ["Rose Quarter infrastructure", "Streets, plazas, and public spaces", "Garage replacement or conversion", "Capital that unlocks land value"],
+    advantages: ["Potentially Portland's best source: it turns underused public land into lasting value"],
+    risks: ["Development rights quietly handed over for less than they're worth, buried inside a bigger venue deal"],
     guardrails: [
       "Independent appraisal",
-      "Competitive market testing unless clearly infeasible",
-      "Minimum rent plus participation rent or appreciation sharing",
-      "Development deadlines and reversion",
-      "Public-realm standards and remedies for nonperformance",
+      "Put it out to the market unless that clearly can't work",
+      "A guaranteed minimum rent, plus a share of profits or rising value",
+      "Build-by deadlines, or the land comes back",
+      "Standards for the public spaces, with penalties if they're not met",
     ],
   },
   {
@@ -1012,44 +1012,44 @@ export const FINANCING_SOURCES: FinancingSource[] = [
     name: "Naming rights, sponsorship, advertising, premium revenue",
     bestFor: ["Commercial improvements", "Capital reserves"],
     risks: ["Letting an operator retain rights the City never valued"],
-    guardrails: ["Inventory every right (buildings, plazas, entrances, concourses, clubs, garages, transit-facing signage, digital platforms, event series) before allowing anyone to keep them"],
+    guardrails: ["List every right (buildings, plazas, entrances, concourses, clubs, garages, transit-facing signage, digital platforms, event series) before letting anyone keep them"],
   },
   {
     id: "visitor",
     n: "12.6",
     name: "Visitor and lodging taxes",
-    bestFor: ["Assets and programs that demonstrably attract nonlocal visitors"],
-    advantages: ["Regional beneficiary base", "Nexus to tourism", "Avoids routine General Fund dependence"],
-    risks: ["Economic cyclicality", "Competition among Convention Center, Expo, Travel Portland, arts, and sports", "Treating tourism projections as guaranteed revenue"],
-    guardrails: ["Publish one unified visitor-facilities forecast showing every claim on these revenues under base, recession, and severe-downside cases"],
+    bestFor: ["Venues and programs that provably draw visitors from out of town"],
+    advantages: ["Benefits reach the whole region", "Tied directly to tourism", "Doesn't lean on the General Fund"],
+    risks: ["Falls in every downturn", "Competition among Convention Center, Expo, Travel Portland, arts, and sports", "Treating tourism projections as guaranteed revenue"],
+    guardrails: ["Publish one forecast for all visitor-tax money showing every claim on it in a normal year, a recession, and a worst case"],
   },
   {
     id: "regional",
     n: "12.7",
     name: "State and County funding",
     bestFor: ["Facilities whose benefits and tax receipts extend beyond Portland: Moda, Providence Park, major performing-arts venues"],
-    risks: ["Treating regional facilities as solely municipal obligations"],
-    guardrails: ["Regional contribution proportional to geographic attendance, tax benefit, economic exposure, governance, and share of control or public return"],
+    risks: ["Making Portland pay alone for buildings the whole region uses"],
+    guardrails: ["Each government pays in proportion to who attends, who gains the tax revenue, who bears the risk, and who holds control and return"],
   },
   {
     id: "philanthropy",
     n: "12.8",
     name: "Philanthropy",
-    bestFor: ["Cultural capital", "Donor-visible public spaces", "Accessibility, education, historic preservation", "Programming endowments"],
-    risks: ["Donors fund lobbies before they fund chillers, roofs, insurance, and backstage labor. The public model must survive after the campaign ends"],
+    bestFor: ["Capital projects for the arts", "Public spaces a donor can put a name on", "Accessibility, education, historic preservation", "Programming endowments"],
+    risks: ["Donors fund lobbies before they fund chillers, roofs, insurance, and backstage labor. The finances still have to work after the campaign ends"],
   },
   {
     id: "debt",
     n: "12.9",
     name: "Debt",
-    bestFor: ["Projects matched to durable repayment capacity or an explicit public obligation"],
-    risks: ["Backloaded balloon structures that hide present cost", "Uncapped public overrun exposure"],
+    bestFor: ["Projects with a reliable way to pay the loan back, or a public duty we've named out loud"],
+    risks: ["Payment plans that start small and balloon later, hiding the real cost", "No limit on what overruns cost the public"],
     guardrails: [
-      "Downside debt-service coverage of at least 1.5×",
+      "Even in a bad year, income at least 1.5× the debt payment",
       "Construction contingency of at least 15–20% for complex renovations",
-      "No uncapped public overrun exposure; no balloon structures",
-      "Reserve requirements and full present-value disclosure",
-      "Sensitivity tests for attendance, parking, visitor-tax, interest-rate, and construction risk",
+      "No blank check for overruns; no balloon payment schedules",
+      "Required reserves, and the full cost disclosed in today's dollars",
+      "Stress-test the numbers for attendance, parking, visitor taxes, interest rates, and construction costs",
     ],
   },
   {
@@ -1057,7 +1057,7 @@ export const FINANCING_SOURCES: FinancingSource[] = [
     n: "12.10",
     name: "General Fund: the final source, never the automatic one",
     bestFor: ["Life safety and legal accessibility", "Essential public cultural service", "Civic public space", "Broad citywide benefits that cannot fairly be charged to users"],
-    risks: ["Becoming the residual payer for private commercial enhancements, avoidable overruns, operator underinvestment, or deals where the public absorbs downside while private parties keep upside"],
+    risks: ["Becoming the payer of last resort for private upgrades, avoidable overruns, operators who skimp on upkeep, or deals where the public eats the losses while private parties keep the profits"],
   },
 ];
 
@@ -1130,7 +1130,7 @@ export const LEDGERS: Ledger[] = [
   {
     name: "Event ledger",
     holds: "One row per event, plus holds, lost bookings, cancellations, dark days, rehearsals, conflicts",
-    fields: ["Venue, configuration, promoter, event type, classification", "Capacity, paid tickets, scans, comps, no-shows", "Gross ticket sales, City fees, rent, parking, concessions", "Incremental public-safety cost, labor, utilities", "Owner net contribution"],
+    fields: ["Venue, configuration, promoter, event type, classification", "Capacity, paid tickets, scans, comps, no-shows", "Gross ticket sales, City fees, rent, parking, concessions", "Extra public-safety, labor, and utility costs", "Owner net contribution"],
   },
   {
     name: "Operating ledger",
@@ -1205,7 +1205,7 @@ export const VERDICT: { n: number; title: string; body: string }[] = [
   {
     n: 1,
     title: "The City is not accounting like an owner",
-    body: "A city that cannot readily produce venue-by-venue income statements, complete rights inventories, or component-level capital forecasts is not equipped to allocate hundreds of millions of dollars optimally.",
+    body: "A city that cannot produce an income statement for each venue, a list of the rights it has kept or given away, or a forecast of what each building will need is in no position to spend hundreds of millions of dollars well.",
   },
   {
     n: 2,
@@ -1215,12 +1215,12 @@ export const VERDICT: { n: number; title: string; body: string }[] = [
   {
     n: 3,
     title: "Commercial and cultural assets are judged through incompatible narratives",
-    body: "Commercial proponents cite economic impact without sufficient owner economics. Cultural advocates cite public value without a disciplined capital plan. A mature strategy demands both: commercial assets prove public financial return and risk transfer; cultural assets prove measured outcomes and affordable lifecycle plans.",
+    body: "Boosters of the commercial venues cite economic impact and skip what the owner actually earns. Advocates for the cultural venues cite public value and skip the hard capital plan. A mature strategy demands both: the moneymakers must show a real public return with risk moved off the City, and the cultural venues must show measured benefits and a repair plan they can afford.",
   },
   {
     n: 4,
     title: "The real financing challenge is portfolio sequencing",
-    body: "Portland may be able to finance Moda. It may be able to finance a PSU hall, preserve the Schnitzer and Newmark, renew Providence Park, and develop the Rose Quarter. Whether it can do all of them on their current trajectories, while maintaining basic public assets, has not been demonstrated.",
+    body: "Portland may be able to finance Moda. It may be able to finance a PSU hall, preserve the Schnitzer and Newmark, renew Providence Park, and develop the Rose Quarter. Whether it can do all of them on their current paths, while keeping basic public assets in repair, has never been shown.",
   },
 ];
 

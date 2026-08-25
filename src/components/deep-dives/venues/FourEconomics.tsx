@@ -248,8 +248,12 @@ export default function FourEconomics() {
 
       {/* ── (c) The three conditions ── */}
       <div className="mt-10">
-        <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
-          Three conditions that all get called &ldquo;underperforming&rdquo;
+        <h3 className="font-editorial text-[20px] leading-snug text-[var(--color-ink)] sm:text-[22px]">
+          When someone says a venue is &ldquo;losing money&rdquo;
+        </h3>
+        <p className="mt-2 mb-4 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+          That phrase hides three different situations. They call for three different responses,
+          and mixing them up is how cities make expensive mistakes.
         </p>
 
         <div className="grid gap-4 md:grid-cols-3">
@@ -262,9 +266,9 @@ export default function FourEconomics() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] font-mono text-[14px] font-bold tabular-nums text-[var(--color-canopy)]">
                   {c.n}
                 </span>
-                <h3 className="font-editorial text-[18px] leading-snug text-[var(--color-ink)]">
+                <h4 className="min-w-0 font-editorial text-[18px] leading-snug text-[var(--color-ink)]">
                   {c.title}
-                </h3>
+                </h4>
               </div>
               <p className="mt-3 pb-4 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
                 {c.body}
@@ -278,10 +282,8 @@ export default function FourEconomics() {
         </div>
 
         <p className="mt-4 text-[12px] italic leading-relaxed text-[var(--color-ink-muted)]">
-          Conflating these three (treating them as one undifferentiated problem called
-          &ldquo;losing money&rdquo;) is how venue debates go wrong. Each condition demands a
-          different response: insist on a fair return, price the subsidy explicitly, or question
-          the building itself.
+          One phrase, three responses: drive a harder bargain, name what the subsidy buys, or
+          question the building itself.
         </p>
       </div>
     </div>

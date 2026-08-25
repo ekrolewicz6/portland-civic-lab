@@ -74,7 +74,7 @@ export default function InstitutionModel() {
       {/* ── (c) What capacity costs + (d) what stays outsourced ── */}
       <div className="grid gap-5 md:grid-cols-2">
         <div className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-5 sm:p-6">
-          <CardEyebrow>What owner capacity is worth</CardEyebrow>
+          <CardEyebrow>What a real owner&apos;s office is worth</CardEyebrow>
           <p className="mt-4 text-[13px] text-[var(--color-ink-light)]">
             1% on a{" "}
             <span className="font-mono font-semibold tabular-nums text-[var(--color-ink)]">
@@ -86,22 +86,22 @@ export default function InstitutionModel() {
             {fmtMillions(HEADLINE.onePercentOfModa)}
           </p>
           <p className="mt-3 text-[12px] leading-snug text-[var(--color-ink-muted)]">
-            That is more than multiple years of strong owner-side analytical capacity; the office
-            costs low single-digit millions annually.
+            That is enough to run a strong owner&apos;s office for years; the office itself costs a
+            few million dollars a year.
           </p>
         </div>
 
         <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6">
-          <CardEyebrow>What the City should NOT internalize</CardEyebrow>
+          <CardEyebrow>What the City should NOT take in-house</CardEyebrow>
           <div className="mt-4 flex flex-wrap gap-1.5">
             {NOT_INTERNALIZED.map((item) => (
               <CloudChip key={item}>{item}</CloudChip>
             ))}
           </div>
           <p className="mt-4 text-[13px] leading-snug text-[var(--color-ink-light)]">
-            The failure is not outsourcing; it is outsourcing without standardized data rights,
-            comparative performance, commercial-rights valuation, event-level economics,
-            disciplined reserves, and credible enforcement.
+            The failure is not outsourcing. It is outsourcing without the right to the data, a way
+            to compare operators, a price on every commercial right, real numbers on every event,
+            disciplined savings, and teeth to enforce any of it.
           </p>
         </div>
       </div>
@@ -127,7 +127,7 @@ export default function InstitutionModel() {
         </ul>
 
         <div className="mt-5 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-4 sm:p-5">
-          <CardEyebrow tone="clay">What fragmenting five venues duplicates</CardEyebrow>
+          <CardEyebrow tone="clay">What splitting five venues apart would duplicate</CardEyebrow>
           <div className="mt-3 flex flex-wrap gap-1.5">
             {FRAGMENTATION_COSTS.map((cost) => (
               <span
@@ -139,8 +139,8 @@ export default function InstitutionModel() {
             ))}
           </div>
           <p className="mt-3 text-[12px] leading-snug text-[var(--color-ink-light)]">
-            The rule: proponents of specialized per-venue operators must quantify any claimed
-            specialization benefit against these eight duplicated cost centers.
+            The rule: anyone who wants a separate operator for each venue must show, in numbers,
+            that the benefit beats the cost of duplicating these eight functions.
           </p>
         </div>
       </div>
