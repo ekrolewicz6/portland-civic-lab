@@ -281,9 +281,11 @@ export default function FourEconomics() {
           ))}
         </div>
 
-        <p className="mt-4 text-[12px] italic leading-relaxed text-[var(--color-ink-muted)]">
-          One phrase, three responses: drive a harder bargain, name what the subsidy buys, or
-          question the building itself.
+        <p className="mt-4 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
+          Each box above has its own fix. If a venue should make money and doesn&apos;t, the city
+          should drive a harder bargain. If we&apos;re paying for it on purpose, the city should
+          say what we&apos;re buying. And if the building itself is failing, the question is the
+          building, not the shows inside it.
         </p>
       </div>
     </div>

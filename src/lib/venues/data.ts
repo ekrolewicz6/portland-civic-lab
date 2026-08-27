@@ -253,6 +253,84 @@ export const SOURCES = {
     kind: "primary",
     year: 2022,
   },
+  svvaFiveYr: {
+    id: "svvaFiveYr",
+    title: "Spectator Venues & Visitor Activities Fund five-year plan, FY2024\u201325 to 2028\u201329",
+    org: "City of Portland Budget Office",
+    url: "https://www.portland.gov/budget/2024-2025-budget/documents/spectator-venues-5-yr-fy24-25/download",
+    kind: "primary",
+    year: 2024,
+  },
+  pprFiveYr: {
+    id: "pprFiveYr",
+    title: "Portland Parks & Recreation five-year plan, FY2024\u201325 (PIR cost-of-service table)",
+    org: "City of Portland Budget Office",
+    url: "https://www.portland.gov/budget/2024-2025-budget/documents/portland-parks-recreation-5-yr-fy24-25/download",
+    kind: "primary",
+    year: 2024,
+  },
+  pdxPir: {
+    id: "pdxPir",
+    title: "Portland International Raceway",
+    org: "Portland Parks & Recreation",
+    url: "https://www.portland.gov/parks/portland-international-raceway",
+    kind: "primary",
+  },
+  amsMemo: {
+    id: "amsMemo",
+    title: "Performing arts venues: AMS Planning & Research key findings",
+    org: "City of Portland, Office of Arts & Culture",
+    url: "https://www.portland.gov/arts/documents/performing-arts-venues-summary-ams-key-findings/download",
+    kind: "primary",
+    year: 2025,
+  },
+  metroAudit: {
+    id: "metroAudit",
+    title: "Portland'5 intergovernmental agreement audit",
+    org: "Metro Auditor",
+    url: "https://www.portland.gov/arts/keller/documents/portland5-iga-audit/download",
+    kind: "primary",
+    year: 2022,
+  },
+  chronRecovery: {
+    id: "chronRecovery",
+    title: "Downtown Portland theaters still aren't drawing pre-pandemic crowds",
+    org: "The Oregonian (via The Chronicle)",
+    url: "https://www.chronline.com/stories/downtown-portland-theaters-still-arent-drawing-pre-pandemic-crowds,404400",
+    kind: "news",
+    year: 2026,
+  },
+  psuFunding: {
+    id: "psuFunding",
+    title: "PSU-led Performing Arts and Culture Center builds momentum with $155 million",
+    org: "Portland State University",
+    url: "https://www.pdx.edu/news/psu-led-performing-arts-and-culture-center-builds-momentum-155-million-state-city-and-private",
+    kind: "primary",
+    year: 2025,
+  },
+  opbKellerSeismic: {
+    id: "opbKellerSeismic",
+    title: "Keller Auditorium unlikely to survive a major earthquake, city report finds",
+    org: "OPB",
+    url: "https://www.opb.org/article/2024/10/10/portland-city-council-keller-auditorium-renovation-building-theater/",
+    kind: "news",
+    year: 2024,
+  },
+  hundenStudy: {
+    id: "hundenStudy",
+    title: "Keller Auditorium fate uncertain: Hunden Partners feasibility findings",
+    org: "KOIN (via Yahoo News)",
+    url: "https://www.yahoo.com/news/articles/keller-auditorium-fate-uncertain-report-192455225.html",
+    kind: "news",
+    year: 2026,
+  },
+  wikiPickles: {
+    id: "wikiPickles",
+    title: "Portland Pickles",
+    org: "Wikipedia",
+    url: "https://en.wikipedia.org/wiki/Portland_Pickles",
+    kind: "analysis",
+  },
   svAnnualReport: {
     id: "svAnnualReport",
     title: "Spectator Venues & Visitor Activities 2024–25 annual report",
@@ -621,6 +699,84 @@ export const THREE_CONDITIONS: PerformanceCondition[] = [
     title: "Good venue, failing building",
     body: "The shows are strong; the structure is the problem. Keeping this exact building standing will eventually cost more than it's worth. The operation deserves a future. The building may not.",
     assets: "Keller is the textbook case: a moneymaker inside a building that's wearing out. Hatfield Hall may be next.",
+  },
+];
+
+export interface WideUtilizationRow {
+  venue: string;
+  events: string;
+  people: string;
+  cityTake: string;
+  /** True when the City's take is simply not published. */
+  takeMissing?: boolean;
+  note?: string;
+  sourceIds: string[];
+}
+
+/**
+ * \u00a74: the whole portfolio's utilization, best publicly available year.
+ * Portland'5 rows live in P5_UTILIZATION; these are everyone else.
+ */
+export const WIDE_UTILIZATION: WideUtilizationRow[] = [
+  {
+    venue: "Moda Center",
+    events: "153",
+    people: "1,339,100",
+    cityTake: "Not published",
+    takeMissing: true,
+    note: "FY24\u201325. The City has owned the arena since 2024; no owner statement exists yet.",
+    sourceIds: ["svAnnualReport"],
+  },
+  {
+    venue: "Veterans Memorial Coliseum",
+    events: "96",
+    people: "300,156",
+    cityTake: "Not published",
+    takeMissing: true,
+    note: "FY24\u201325, with the building closed four months for renovation. Reopened October 2025.",
+    sourceIds: ["svAnnualReport"],
+  },
+  {
+    venue: "Providence Park",
+    events: "43",
+    people: "717,910 tickets",
+    cityTake: "Essentially nothing",
+    note: "FY24\u201325 ticketed events; the City counts tickets sold, not people through the gate. License payments to the City ended in 2017, and the City's own plan says stadium revenues will not cover its costs through 2035 while it spends about $600K a year on repairs.",
+    sourceIds: ["svAnnualReport", "svvaFiveYr"],
+  },
+  {
+    venue: "Portland International Raceway",
+    events: "~650",
+    people: "400,000+",
+    cityTake: "Self-supporting",
+    note: "FY22\u201323 actuals: $2.23M revenue against $1.53M expense, 146% direct cost recovery. The rare venue that pays its own way, before long-term repairs.",
+    sourceIds: ["pdxPir", "pprFiveYr"],
+  },
+  {
+    venue: "Pioneer Courthouse Square",
+    events: "300+",
+    people: "\u201c10M+ visitors\u201d",
+    cityTake: "The City pays ~$470K/yr",
+    note: "The visitor figure is the Square's own claim; nobody audits it. Programmed events per year.",
+    sourceIds: ["pdxPioneer", "ord190912"],
+  },
+  {
+    venue: "Walker Stadium (Pickles)",
+    events: "28 home games",
+    people: "99,787",
+    cityTake: "Not published",
+    takeMissing: true,
+    note: "2025 season, second-best attendance in the entire West Coast League.",
+    sourceIds: ["wikiPickles"],
+  },
+  {
+    venue: "Smaller venues & event grounds",
+    events: "Not tracked",
+    people: "Not tracked",
+    cityTake: "Not published",
+    takeMissing: true,
+    note: "Erv Lind, Sckavone, East Delta, the cultural centers, Waterfront Park: no rolled-up count exists anywhere.",
+    sourceIds: ["pclAnalysis"],
   },
 ];
 

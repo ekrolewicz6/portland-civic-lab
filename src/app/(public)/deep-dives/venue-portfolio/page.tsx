@@ -18,6 +18,7 @@ import PortfolioMap from "@/components/deep-dives/venues/PortfolioMap";
 import GovernanceGrade from "@/components/deep-dives/venues/GovernanceGrade";
 import FourEconomics from "@/components/deep-dives/venues/FourEconomics";
 import UtilizationChart from "@/components/deep-dives/venues/UtilizationChart";
+import WideUtilization from "@/components/deep-dives/venues/WideUtilization";
 import CapitalCliff from "@/components/deep-dives/venues/CapitalCliff";
 import RankingMatrix from "@/components/deep-dives/venues/RankingMatrix";
 import PhaseTimeline from "@/components/deep-dives/venues/PhaseTimeline";
@@ -404,6 +405,63 @@ export default function VenuePortfolioPage() {
         lead="The portfolio is not suffering from lack of demand. It is suffering from an owner who counts events instead of people and dollars."
       >
         <UtilizationChart />
+        <WideUtilization />
+
+        {/* ── Why isn't the Schnitzer profitable? ── */}
+        <div className="mt-8 rounded-sm border border-[var(--color-parchment)] border-l-[3px] border-l-[var(--color-clay)] bg-white p-5 sm:p-6">
+          <h3 className="font-editorial text-[20px] sm:text-[22px] leading-snug text-[var(--color-ink)]">
+            Why isn&apos;t the Schnitzer profitable?
+          </h3>
+          <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+            &ldquo;Why aren&apos;t these venues profitable?&rdquo; has a different answer for each
+            building. For the system&apos;s biggest money-loser, the public record lets us be
+            specific. Four causes, in order of size:
+          </p>
+          <ol className="mt-4 max-w-3xl space-y-3">
+            {[
+              <>
+                <strong className="text-[var(--color-ink)]">The business model keeps almost
+                nothing.</strong>{" "}
+                Portland&apos;5 runs as a host: most of the ticket money flows to the groups on
+                stage, not the building. The system collects $21 per available seat against a $59
+                peer average, and runs a 2% margin where peers run 12%. That is a model the city
+                chose, not a failure of the people running it. (<Src id="amsMemo" />)
+              </>,
+              <>
+                <strong className="text-[var(--color-ink)]">Its main tenants pay
+                mission-discounted rent, on purpose.</strong>{" "}
+                The resident companies (the symphony, opera, ballet) get the deepest rent
+                reductions of any user tier. What they actually pay has never been published.
+                (<Src id="metroAudit" />)
+              </>,
+              <>
+                <strong className="text-[var(--color-ink)]">Its audience hasn&apos;t come all the
+                way back.</strong>{" "}
+                The hall is busy (199 events, 294,058 people) but still down 28% from its 2018
+                peak, while Broadway at Keller set all-time highs. Touring musicals recovered;
+                symphony nights did not. (<Src id="chronRecovery" />)
+              </>,
+              <>
+                <strong className="text-[var(--color-ink)]">A 1917 building with rising
+                costs.</strong>{" "}
+                Wages, PERS, and inflation forced twelve position cuts in 2025, and repairs get
+                paid out of operating cash, which peer venues do not do. (<Src id="amsMemo" />)
+              </>,
+            ].map((item, i) => (
+              <li key={i} className="flex gap-3 text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+                <span className="shrink-0 font-mono text-[11px] font-semibold tabular-nums text-[var(--color-clay)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-4 max-w-3xl border-t border-[var(--color-parchment)] pt-3 text-[13.5px] leading-relaxed text-[var(--color-ink)]">
+            So: bad management? Mostly no. Three of those four causes are choices the city made,
+            and they may be the right ones. But choices should be priced and named, and today the
+            subsidy is neither.
+          </p>
+        </div>
         <p className="mt-3 max-w-3xl text-[12.5px] leading-relaxed text-[var(--color-ink-muted)]">
           Venue-level events, attendance, and charges-for-services: <Src id="p5RevenueDoc" />.
           Newmark&apos;s revenue line carries all Hatfield Hall allocated revenues per that
@@ -502,8 +560,125 @@ export default function VenuePortfolioPage() {
               Keller&apos;s box-office strength pays for cultural programming elsewhere. But it
               means <strong className="text-[var(--color-ink)]">Keller&apos;s future and the finances of the whole
               Portland&apos;5 system rise and fall together</strong>: a modest annual operation
-              sitting on top of very large building repair bills.
+              sitting on top of very large building repair bills. Which forces the choice the
+              city is circling right now: build the new hall at PSU, or fix the one it has.
             </p>
+          </div>
+
+          {/* ── The Keller-or-PSU choice, spelled out ── */}
+          <div className="overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-white">
+            <div className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)] px-5 py-4 sm:px-6">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">
+                The Keller-or-PSU choice, spelled out
+              </p>
+              <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+                Here are the numbers on the table, and the honest conditions under which each
+                path wins. Two facts hang over both: a city report found Keller unlikely to
+                survive a major earthquake (<Src id="opbKellerSeismic" />), and the city&apos;s
+                own feasibility study found there isn&apos;t enough demand for two full-scale
+                halls (<Src id="hundenStudy" />). Something happens either way; both never
+                happens.
+              </p>
+            </div>
+
+            <div className="grid gap-px bg-[var(--color-parchment)] p-px sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  k: "A new hall at PSU",
+                  v: "~$447M",
+                  note: "$155M is secured: $137.5M state, $7.6M Prosper Portland, $10.5M pledged. The remaining ~$290M is not.",
+                },
+                {
+                  k: "Fully renovating Keller",
+                  v: "~$290M",
+                  note: "The city\u2019s own plan: \u201cno resources currently identified\u201d for it.",
+                },
+                {
+                  k: "Keeping Keller alive meanwhile",
+                  v: "$6–11M",
+                  note: "Near-term repairs through 2030. Cheap insurance either way.",
+                },
+                {
+                  k: "What Keller earns today",
+                  v: "$10.7M/yr",
+                  note: "179 events, 395,255 people, half the theater system's revenue.",
+                },
+              ].map((cell) => (
+                <div key={cell.k} className="bg-white p-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[var(--color-ink-muted)]">
+                    {cell.k}
+                  </p>
+                  <p className="mt-1 text-[18px] font-semibold tabular-nums text-[var(--color-ink)]">
+                    {cell.v}
+                  </p>
+                  <p className="mt-1 text-[11.5px] leading-snug text-[var(--color-ink-light)]">
+                    {cell.note}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid gap-4 border-t border-[var(--color-parchment)] p-5 sm:grid-cols-2 sm:p-6">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--color-canopy)]">
+                  The PSU hall wins if
+                </p>
+                <ul className="mt-2 space-y-2 text-[13.5px] leading-snug text-[var(--color-ink)]">
+                  {[
+                    "The remaining ~$290M actually gets committed: philanthropy, partners, and any city share, in writing.",
+                    "The operating model is proven before construction money moves: who books it, who staffs it, who covers a bad year.",
+                    "The city values never going dark: a new hall gets built while Keller keeps hosting Broadway, then they trade places. A full Keller renovation closes the only big hall for 19 to 28 months.",
+                    "The state's $137.5M would otherwise walk away. It cannot be redirected to fix Keller.",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="mt-[7px] h-1 w-1 flex-shrink-0 rounded-full bg-[var(--color-fern)]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--color-clay)]">
+                  Fixing Keller wins if
+                </p>
+                <ul className="mt-2 space-y-2 text-[13.5px] leading-snug text-[var(--color-ink)]">
+                  {[
+                    "The PSU money never fully shows up. $137.5M committed against ~$447M is a down payment, not a plan.",
+                    "The new hall's operating numbers don't pencil: a new building that loses money every year is worse than an old one that earns it.",
+                    "Renovation comes in well under the $290M estimate once scoped seriously, narrowing the price gap with new construction.",
+                    "The city decides a proven earner in hand beats a projection: Keller's $10.7M a year is real today.",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="mt-[7px] h-1 w-1 flex-shrink-0 rounded-full bg-[var(--color-clay)]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="border-t border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-5 sm:p-6">
+              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--color-canopy)]">
+                And if the PSU hall gets built, what happens to Keller?
+              </p>
+              <p className="mt-2 max-w-3xl text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+                The honest options, in the order we&apos;d rank them today:{" "}
+                <strong className="text-[var(--color-ink)]">rebuild it as the mid-size hall Portland
+                lacks</strong>{" "}
+                (1,200–1,800 seats, the gap between the Newmark&apos;s 880 and Keller&apos;s
+                2,992, and what the city&apos;s own steering committee recommends studying);{" "}
+                <strong className="text-[var(--color-ink)]">convert or redevelop the block</strong>{" "}
+                (a full downtown block whose sale or ground-lease value gets banked for the other
+                theaters&apos; repair bills, not absorbed into the general fund); or{" "}
+                <strong className="text-[var(--color-ink)]">keep running it</strong>, which only
+                makes sense if the PSU hall never opens. What the city should not do is promise
+                all three at once. The decision point comes after the new hall is open and
+                proven, and not a day before.
+              </p>
+              <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+                Figures: <Src id="res2026270" /> · <Src id="sazanFca" /> · <Src id="p5RevenueDoc" /> · <Src id="psuFunding" /> · <Src id="svvaFiveYr" />
+              </p>
+            </div>
           </div>
         </div>
         <IndependenceNote />
