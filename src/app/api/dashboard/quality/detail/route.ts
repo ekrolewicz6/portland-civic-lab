@@ -64,7 +64,7 @@ const COMBINED_QUERY = `
     'worst_streets', (
       SELECT COALESCE(json_agg(t), '[]'::json) FROM (
         SELECT street_name, pci, surface_type, functional_class,
-               round(length::numeric, 0)::int AS length_ft
+               round(length_ft::numeric, 0)::int AS length_ft
         FROM quality.pavement_condition
         WHERE pci IS NOT NULL AND street_name IS NOT NULL AND street_name != ''
         ORDER BY pci ASC
@@ -92,12 +92,14 @@ const COMBINED_QUERY = `
     -- Park amenities summary
     'amenities_summary', (
       SELECT COALESCE(json_agg(t ORDER BY t.count DESC), '[]'::json) FROM (
-        SELECT equipment_type, count(*)::int AS count,
-               min(install_year) AS earliest_install,
-               max(install_year) AS latest_install
+        -- the table's column is amenity_type; no install-year data exists,
+        -- and the UI treats those fields as nullable
+        SELECT amenity_type AS equipment_type, count(*)::int AS count,
+               NULL::int AS earliest_install,
+               NULL::int AS latest_install
         FROM quality.park_amenities
-        WHERE equipment_type IS NOT NULL AND equipment_type != ''
-        GROUP BY equipment_type
+        WHERE amenity_type IS NOT NULL AND amenity_type != ''
+        GROUP BY amenity_type
       ) t
     ),
     -- Total amenities
