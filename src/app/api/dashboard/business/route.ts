@@ -79,10 +79,15 @@ export async function GET(): Promise<
     const firstYear = sortedYears.find((y) => y.yr === 2016);
     const lastYear = sortedYears.find((y) => y.yr === 2025);
 
-    const growthMultiple =
-      firstYear && lastYear && firstYear.cnt > 0
-        ? Math.round((lastYear.cnt / firstYear.cnt) * 10) / 10
-        : 0;
+    // NOTE on the removed "up 6x since 2016" claim: oregon_sos_all_active is
+    // the Oregon SOS "Active Businesses" snapshot. It contains only businesses
+    // active TODAY, so counting registrations by year measures survivors of
+    // each cohort, not historical registration volume. The 2016 cohort (4,943
+    // still active) has lost a decade of closures that the 2025 cohort
+    // (29,727) has not, which manufactured the "6x growth". No unbiased
+    // historical series exists in this schema (oregon_sos_yearly is the same
+    // active-only data counted by row), so the headline states only what the
+    // snapshot supports.
 
     // Trend: compare latest two full years
     const prev = sortedYears.find((y) => y.yr === 2024);
@@ -94,7 +99,7 @@ export async function GET(): Promise<
       trendPct =
         Math.round(((curr.cnt - prev.cnt) / prev.cnt) * 1000) / 10;
       trendDir = trendPct > 1 ? "up" : trendPct < -1 ? "down" : "flat";
-      trendLabel = `${prev.yr} to ${curr.yr}`;
+      trendLabel = `still-active registrations, ${prev.yr} vs ${curr.yr} cohorts`;
     }
 
     // Chart data: quarterly totals
@@ -111,7 +116,7 @@ export async function GET(): Promise<
     );
     if (firstYear && lastYear) {
       insights.push(
-        `New registrations grew ${growthMultiple}x from ${firstYear.cnt.toLocaleString()} in 2016 to ${lastYear.cnt.toLocaleString()} in 2025.`
+        `Of today's active businesses, ${lastYear.cnt.toLocaleString()} first registered in 2025 versus ${firstYear.cnt.toLocaleString()} surviving from the 2016 cohort. The registry lists only currently active businesses, so older cohorts shrink as businesses close; this reflects survivorship, not registration growth.`
       );
     }
     if (topEntityRows.length > 0) {
@@ -126,7 +131,7 @@ export async function GET(): Promise<
     }
 
     const responseData = {
-      headline: `${totalActive.toLocaleString()} active businesses — up ${growthMultiple}x since 2016`,
+      headline: `${totalActive.toLocaleString()} active businesses registered in Portland`,
       headlineValue: totalActive,
       dataStatus: "live",
       dataAvailable: true,

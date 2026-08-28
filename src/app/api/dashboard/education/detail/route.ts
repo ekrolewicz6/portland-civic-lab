@@ -67,8 +67,11 @@ const COMBINED_QUERY = `
       ) t
     ),
     'test_scores', (
+      -- education.test_scores has no participation_pct or n_tested columns;
+      -- alias NULLs to keep the response shape stable for consumers.
       SELECT COALESCE(json_agg(t ORDER BY t.district_name, t.school_year, t.subject, t.grade_level), '[]'::json) FROM (
-        SELECT district_name, school_year, subject, grade_level, proficiency_pct, participation_pct, n_tested
+        SELECT district_name, school_year, subject, grade_level, proficiency_pct,
+          NULL::numeric AS participation_pct, NULL::integer AS n_tested
         FROM education.test_scores
         WHERE district_name IN ('Portland SD 1J', 'Parkrose SD 3', 'David Douglas SD 40', 'Riverdale SD 51J', 'Reynolds SD 7', 'Centennial SD 28J')
       ) t

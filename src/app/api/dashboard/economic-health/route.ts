@@ -371,25 +371,45 @@ export async function GET() {
       }),
     });
 
+    // Formats a sub-score's raw indicator value (e.g. "5.5%" for the
+    // unemployment rate, "77,843" for income per capita).
+    const formatCurrent = (s: (typeof composite.subScores)[number]) =>
+      s.label.toLowerCase().includes("rate") || s.label.toLowerCase().includes("growth")
+        ? s.portlandCurrent.toFixed(1) + "%"
+        : Math.round(s.portlandCurrent).toLocaleString();
+
+    // Each sub-score `value` is a 0-100 index: the average of two percentile
+    // ranks (Portland vs its own history, Portland vs peer metros). It is NOT
+    // the indicator's raw value. Say so explicitly in the headline; the old
+    // wording "unemployment rate 13" read like a 13% unemployment rate when
+    // the actual rate was ~5%.
     const tail = composite.subScores
       .map(
         (s) =>
-          `${s.label.toLowerCase()} ${s.value} (Portland ${s.portlandHistoricalPercentile}p, peers ${s.peerPercentile}p)`,
+          `${s.label.toLowerCase()} ${formatCurrent(s)} scores ${s.value}/100 (percentile ${s.portlandHistoricalPercentile} in Portland history, ${s.peerPercentile} vs peers)`,
       )
       .join("; ");
     const headline =
       composite.label === "Insufficient data"
-        ? "Economic Health: data refreshing — partial signal available."
-        : `Economic Health: ${composite.score}/100 (${composite.label}) — ${tail || "see detail"}.`;
+        ? "Economic Health: data refreshing, partial signal available."
+        : `Economic Health: ${composite.score}/100 (${composite.label}). ${tail || "See detail"}.`;
 
     const trendDirection: "up" | "down" | "flat" =
       composite.score >= 60 ? "up" : composite.score >= 40 ? "flat" : "down";
 
-    // Hero chart: monthly new-business count from PBJ — simplest 24-pt series
-    // that signals "is the local economy growing".
+    // Hero chart: monthly new-business registrations from the Oregon SOS
+    // active registry (refreshed by ingest/fetch-sos-all-active.ts). Counts
+    // are registrations still active today, so older months read slightly
+    // low; the current partial month is excluded. Replaces pbj_business_monthly,
+    // whose feed died with hard zeros after 2026-02.
     const businessSeriesQ = `
-      SELECT to_char(month,'YYYY-MM') AS month, new_businesses
-      FROM pbj_business_monthly ORDER BY month
+      SELECT to_char(date_trunc('month', registry_date),'YYYY-MM') AS month,
+             count(*)::int AS new_businesses
+      FROM business.oregon_sos_all_active
+      WHERE associated_name_type = 'PRINCIPAL PLACE OF BUSINESS'
+        AND registry_date >= date_trunc('month', now()) - interval '24 months'
+        AND registry_date < date_trunc('month', now())
+      GROUP BY 1 ORDER BY 1
     `;
     const series = (await sql.unsafe(businessSeriesQ)) as unknown as Array<{
       month: string;
@@ -414,11 +434,7 @@ export async function GET() {
         : s.peerPercentile <= 40
         ? "behind peer median"
         : "near peer median";
-      const valStr = s.label.toLowerCase().includes("rate")
-        ? s.portlandCurrent.toFixed(1) + "%"
-        : s.label.toLowerCase().includes("growth")
-        ? s.portlandCurrent.toFixed(1) + "%"
-        : Math.round(s.portlandCurrent).toLocaleString();
+      const valStr = formatCurrent(s);
       return `${s.label}: Portland at ${valStr} — ${histDirection} historical median, ${peerDirection}.`;
     });
 

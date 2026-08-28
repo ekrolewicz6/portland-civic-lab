@@ -162,7 +162,10 @@ async function fetchAllBLS(): Promise<BLSDataPoint[]> {
 
   // Request 1: First batch of employment series (10 series), 2016-2025
   try {
-    const batch1 = await fetchBLSSeries(EMPLOYMENT_SERIES, "2016", "2025");
+    // BLS v1 allows at most 10 years per request; track the current year.
+    const endYear = String(new Date().getFullYear());
+    const startYear = String(new Date().getFullYear() - 9);
+    const batch1 = await fetchBLSSeries(EMPLOYMENT_SERIES, startYear, endYear);
     allData.push(...batch1);
     console.log(`  Batch 1: ${batch1.length} data points`);
   } catch (err: any) {
@@ -175,7 +178,7 @@ async function fetchAllBLS(): Promise<BLSDataPoint[]> {
   // Request 2: Second batch of employment + unemployment (5 series)
   try {
     const batch2Series = [...EMPLOYMENT_SERIES_2, ...UNEMPLOYMENT_SERIES];
-    const batch2 = await fetchBLSSeries(batch2Series, "2016", "2025");
+    const batch2 = await fetchBLSSeries(batch2Series, startYear, endYear);
     allData.push(...batch2);
     console.log(`  Batch 2: ${batch2.length} data points`);
   } catch (err: any) {
@@ -190,7 +193,7 @@ async function fetchAllBLS(): Promise<BLSDataPoint[]> {
       const retry = await fetchBLSSeries(
         [EMPLOYMENT_SERIES[0], ...UNEMPLOYMENT_SERIES],
         "2020",
-        "2025"
+        endYear
       );
       allData.push(...retry);
       console.log(`  Retry: ${retry.length} data points`);

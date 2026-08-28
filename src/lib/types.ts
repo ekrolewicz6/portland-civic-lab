@@ -99,7 +99,13 @@ export interface VacancyFeature {
   };
   properties: {
     address: string;
-    type: "retail" | "office" | "industrial" | "mixed-use";
+    type:
+      | "retail"
+      | "office"
+      | "restaurant"
+      | "industrial"
+      | "flex"
+      | "mixed-use";
     sqft: number;
     vacantSince: string;
     askingRent: number | null;

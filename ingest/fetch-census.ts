@@ -32,7 +32,13 @@ interface CensusPopRow {
   name: string;
 }
 
-async function fetchJson(url: string): Promise<any> {
+function withKey(url: string): string {
+  const key = process.env.CENSUS_API_KEY;
+  return key ? `${url}&key=${key}` : url;
+}
+
+async function fetchJson(rawUrl: string): Promise<any> {
+  const url = withKey(rawUrl);
   console.log(`  Fetching: ${url}`);
   const res = await fetch(url);
   if (!res.ok) {
@@ -59,6 +65,24 @@ async function fetchPEP(): Promise<CensusPopRow[]> {
 
   // Try multiple years and API formats
   const attempts = [
+    // 2025 PEP (Vintage 2025, released May 2026)
+    {
+      url: "https://api.census.gov/data/2025/pep/population?get=POP_2025,NAME&for=place:59000&in=state:41",
+      year: 2025,
+      popField: "POP_2025",
+    },
+    // 2024 PEP (Vintage 2024)
+    {
+      url: "https://api.census.gov/data/2024/pep/population?get=POP_2024,NAME&for=place:59000&in=state:41",
+      year: 2024,
+      popField: "POP_2024",
+    },
+    // Vintage 2025 multi-year pull
+    {
+      url: "https://api.census.gov/data/2025/pep/population?get=POP_2025,POP_2024,POP_2023,POP_2022,POP_2021,POP_2020,NAME&for=place:59000&in=state:41",
+      year: 0, // multiple years
+      popField: "MULTI",
+    },
     // 2023 PEP
     {
       url: "https://api.census.gov/data/2023/pep/population?get=POP_2023,NAME&for=place:59000&in=state:41",
