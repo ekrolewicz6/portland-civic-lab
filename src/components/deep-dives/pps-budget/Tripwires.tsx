@@ -54,6 +54,11 @@ function TripwireRow({
       <p className="mt-1.5 max-w-2xl text-[14px] leading-snug text-[var(--color-ink-light)]">
         {tripwire.tripwire}
       </p>
+      {/* What to do about it, and what a good answer sounds like */}
+      <p className="mt-2 max-w-2xl border-l-2 border-[var(--color-ember)]/50 pl-3 text-[13px] leading-snug text-[var(--color-ink)]">
+        <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ember)]">Your move · </span>
+        {tripwire.action}
+      </p>
     </li>
   );
 }

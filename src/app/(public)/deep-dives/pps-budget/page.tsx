@@ -17,6 +17,7 @@ import PlanDecisions from "@/components/deep-dives/pps-budget/PlanDecisions";
 import CannotKnow from "@/components/deep-dives/pps-budget/CannotKnow";
 import DoctrineCard from "@/components/deep-dives/pps-budget/DoctrineCard";
 import Tripwires from "@/components/deep-dives/pps-budget/Tripwires";
+import FieldKit from "@/components/deep-dives/pps-budget/FieldKit";
 import Debate from "@/components/deep-dives/pps-budget/Debate";
 import ReadingProgress from "@/components/deep-dives/venues/ReadingProgress";
 
@@ -39,7 +40,7 @@ const NAV = [
   { id: "arguments", label: "Four arguments" },
   { id: "cannot-know", label: "What we can't know" },
   { id: "the-plan", label: "The plan" },
-  { id: "watch", label: "What to watch" },
+  { id: "watch", label: "Your move" },
   { id: "doctrine", label: "The doctrine" },
   { id: "method", label: "Method" },
 ];
@@ -216,7 +217,7 @@ export default function PpsBudgetPage() {
 
       <Section
         id="salems-machine"
-        eyebrow="Act II · The rules"
+        eyebrow="Part one · The rules"
         title="Start with the strangest fact in Oregon school finance."
         lead="For operating money, Portland's property wealth mostly buys Portland's schools nothing. That is not a scandal. It is the design."
       >
@@ -251,7 +252,7 @@ export default function PpsBudgetPage() {
 
       <Section
         id="the-levy-leak"
-        eyebrow="Act II · The rules"
+        eyebrow="Part one · The rules"
         title="Voters approved $1.99 for teachers. About $1.51 arrives."
         lead="The leak is not mismanagement. It is the 1990s tax constitution working exactly as written, and it is growing fast."
         tone="warm"
@@ -278,8 +279,9 @@ export default function PpsBudgetPage() {
             renewal mailer: without intervention, PPS could lose nearly one quarter of its
             levy-funded teaching positions (<Src id="cbrcLevy2025" />). A board member who wants
             more teachers per levy dollar has exactly one venue, and it is not the district office.
-            It is the legislature. What that leak costs your own house, at your own assessed
-            value:
+            It is the legislature. And there is one sentence every voter can carry to the 2029
+            renewal campaign: <strong>print the effective rate next to the $1.99.</strong> What
+            the leak costs your own house, at your own assessed value:
           </p>
         </Prose>
         <HomeownerCalculator />
@@ -287,7 +289,7 @@ export default function PpsBudgetPage() {
 
       <Section
         id="the-empty-chair"
-        eyebrow="Act II · The rules"
+        eyebrow="Part one · The rules"
         title="Who reviews the budget? In Portland, the people who wrote it."
         lead="Oregon seats citizens beside the board on nearly every district's budget committee. Portland is the carve-out."
       >
@@ -314,6 +316,16 @@ export default function PpsBudgetPage() {
             set in Salem and the review this thin, what did the district actually do with its
             decade? That story has a shape, and the shape is a cliff.
           </p>
+          <div className="mt-6 rounded-sm border-l-2 border-[var(--color-ember)] bg-[var(--color-paper-warm)] p-4">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">
+              The rule this page reads everything by
+            </p>
+            <p className="mt-1.5 text-[14px] leading-relaxed text-[var(--color-ink)]">
+              Hold the district accountable for the quality of its response to a constraint, never
+              for the constraint itself. And never let Salem become the alibi for choices made on
+              North Dixon Street. Everything below applies both halves.
+            </p>
+          </div>
         </Prose>
       </Section>
 
@@ -321,11 +333,25 @@ export default function PpsBudgetPage() {
 
       <Section
         id="the-decade"
-        eyebrow="Act III · The record"
+        eyebrow="Part two · The record"
         title="Eleven years: money up every year, students down, then the bill."
         lead="Nominal operating money rose without interruption until this year. Purchasing power peaked in 2021-22 and has fallen nine percent since."
       >
         <DecadeSpine />
+        <div className="mt-6 rounded-sm border border-[var(--color-fern)]/40 bg-[var(--color-sage-tint)] p-5">
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-fern)]">
+            Credit where the record supports it
+          </p>
+          <p className="mt-2 max-w-3xl text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+            This is not a failing district. PPS reports reading proficiency of 56.4 percent against
+            a 43.0 percent state average, math at 48.0 against 31.2, and graduation at 82.5 percent
+            (<Src id="academicJourney" />). TSCC certified its last three budgets without a single
+            objection, Lincoln High finished $16.9M under its revised budget, and the quarterly
+            financial reports exist and are public. The problem this page documents is not
+            collapse. It is an institution performing above its state&apos;s average while its
+            structure, its footprint, and its steering fall behind its own trajectory.
+          </p>
+        </div>
         <Prose>
           <p>
             The turn has a date and a cause. Enrollment held near 49,500 for four years, then fell
@@ -357,7 +383,7 @@ export default function PpsBudgetPage() {
 
       <Section
         id="where-it-goes"
-        eyebrow="Act III · The record"
+        eyebrow="Part two · The record"
         title="Where the operating dollar goes, and where the cuts landed."
         lead="Seventy-nine cents of every operating dollar is people. When cuts came, classrooms gave up ground twice as fast as the back office."
         tone="warm"
@@ -396,7 +422,12 @@ export default function PpsBudgetPage() {
               ))}
             </tbody>
           </table>
-          <p className="border-t border-[var(--color-parchment)] px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.12em] text-[var(--color-ink-muted)]">
+          <p className="border-t border-[var(--color-parchment)] px-4 py-2.5 text-[11.5px] leading-snug text-[var(--color-ink-light)]">
+            Special programs grew because special-education caseloads grew, and federal law rightly
+            protects that service. It is the least-cuttable line on this table, not the most
+            bloated.
+          </p>
+          <p className="border-t border-[var(--color-parchment)] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-[var(--color-ink-muted)]">
             PPS FY2025-26 Adopted Budget, FTE by major function
           </p>
         </div>
@@ -417,7 +448,7 @@ export default function PpsBudgetPage() {
 
       <Section
         id="empty-seats"
-        eyebrow="Act III · The record"
+        eyebrow="Part two · The record"
         title="The structure under the deficit: empty seats, full costs."
         lead="Revenue arrives per student. Costs arrive per building. Nobody voted for the gap between them, and it grew for five years before anyone moved."
       >
@@ -448,7 +479,7 @@ export default function PpsBudgetPage() {
 
       <Section
         id="waste"
-        eyebrow="Act IV · The examination"
+        eyebrow="Part three · The examination"
         title="Where is the waste? An honest standard, five verdicts, no fake total."
         lead="A definition first, so the verdicts cannot bend to the argument. Then the largest finding, which is not a line item at all."
         tone="warm"
@@ -466,7 +497,7 @@ export default function PpsBudgetPage() {
 
       <Section
         id="arguments"
-        eyebrow="Act IV · The examination"
+        eyebrow="Part three · The examination"
         title="The four arguments Portland keeps having, adjudicated."
         lead="Each side at full strength, then where the evidence lands. Arithmetic outranks balance: where the numbers settle it, we say so."
       >
@@ -506,9 +537,9 @@ export default function PpsBudgetPage() {
 
       <Section
         id="cannot-know"
-        eyebrow="Act IV · The examination"
+        eyebrow="Part three · The examination"
         title="What the public record cannot answer."
-        lead="Including the one we got wrong ourselves, left visible on purpose."
+        lead="Every row is checkable, and every row could be closed tomorrow by a decision to publish."
         tone="warm"
       >
         <CannotKnow />
@@ -518,7 +549,7 @@ export default function PpsBudgetPage() {
 
       <Section
         id="the-plan"
-        eyebrow="Act V · The plan"
+        eyebrow="Part four · The plan"
         title="Ten decisions, built to be attacked."
         lead="Everything above is diagnosis. This is the treatment: motion-level, sequenced, with the hardest objection we could find printed under each decision, and the answer."
         tone="dark"
@@ -528,16 +559,22 @@ export default function PpsBudgetPage() {
 
       <Section
         id="watch"
-        eyebrow="Act V · The plan"
-        title="Six tripwires for the next two years."
-        lead="You do not need to read 500 pages to hold the district accountable. You need six numbers and the dates they arrive."
+        eyebrow="Part four · Your move"
+        title="What to do with all of this."
+        lead="You do not need to read 500 pages to hold the district accountable. You need six questions, six dates, and the address of the board room."
       >
-        <Tripwires />
+        <FieldKit />
+        <div className="mt-10">
+          <p className="mb-4 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">
+            The calendar: six tripwires, and your move at each
+          </p>
+          <Tripwires />
+        </div>
       </Section>
 
       <Section
         id="doctrine"
-        eyebrow="Act V · The plan"
+        eyebrow="Part four · The plan"
         title="The doctrine of the movable dollar."
         lead="One sentence to govern by, ten commitments that operationalize it, and the question to ask every April."
         tone="warm"
@@ -573,21 +610,6 @@ export default function PpsBudgetPage() {
             conflict, the page says so rather than smoothing it.
           </p>
         </Prose>
-        <div className="mt-6 rounded-sm border border-[var(--color-clay)]/40 bg-[var(--color-clay-tint)] p-5">
-          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-clay)]">
-            Corrections, logged
-          </p>
-          <p className="mt-2 text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
-            <strong>August 30, 2026:</strong> an earlier version of this page claimed PPS publishes
-            no interim financial statements. That was wrong: quarterly reports exist back to
-            FY2023-24 and monthly period reports for FY2025-26, on a finance page our document
-            census missed (<Src id="financeInterim" />). The finding is corrected above to what
-            those reports actually show, a year-end forecast swinging $41M to $18M to $35M inside
-            one year. The same review corrected our claim that the teachers&apos; contract had
-            expired: it runs through June 30, 2027 by a May 2026 board action. We hold PPS to a
-            corrections standard; it applies to us first.
-          </p>
-        </div>
         <IndependenceNote />
         <div className="mt-10">
           <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">

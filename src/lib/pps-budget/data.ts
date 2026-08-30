@@ -222,6 +222,13 @@ export const SOURCES = {
     kind: "news",
     year: "2023",
   },
+  academicJourney: {
+    title: "Our Academic Journey (district outcomes dashboard)",
+    org: "Portland Public Schools",
+    url: "https://www.pps.net/departments/dataaccountability/data-and-accountability/data-strategy-and-insights/our-academic-journey",
+    kind: "primary",
+    year: "2026",
+  },
   wwTwentySchools: {
     title: "Superintendent says district could close up to 20 schools",
     org: "Willamette Week",
@@ -361,7 +368,7 @@ export const COMPRESSION_SERIES = [
 /** The teachers levy: receipts, positions, cost. [cbrc levy reviews] */
 export const LEVY_SERIES = [
   { fy: "2019-20", receiptsM: 97.4, positions: 916, avgCost: 106_000 },
-  { fy: "2022-23", receiptsM: 106.5, positions: 851, avgCost: 125_161, note: "The following year's review says 922 for this same year; neither document explains the gap" },
+  { fy: "2022-23", receiptsM: 106.5, positions: 851, avgCost: 125_161, note: "Official reviews disagree for this year: 851 and 922. Neither explains why" },
   { fy: "2023-24", receiptsM: 108.8, positions: 802, avgCost: 135_739 },
   { fy: "2024-25", receiptsM: 104.6, positions: 744, avgCost: 141_000 },
   { fy: "2025-26", receiptsM: 109.2, positions: 718, avgCost: 152_000, projected: true },
@@ -443,7 +450,7 @@ export const WASTE_VERDICTS = [
     ledger: "movable",
     verdict: "Shown, and the largest",
     evidence:
-      "The district's own quarterly reports show its FY2025-26 year-end forecast swinging from $41.3M to $17.7M to $26.8M to $34.6M within one year, with a mid-year deficit its citizen committee confirmed; a pension reserve spent in one year against a scheduled cliff; nine days for citizen review; audit recommendations still only 'partially implemented' at the state's follow-up. (Correction: an earlier version said no interim reports existed. They do, and they documented the swing while nothing forced a response.)",
+      "The district's own quarterly reports show its FY2025-26 year-end forecast swinging from $41.3M to $17.7M to $26.8M to $34.6M within one year, with a mid-year deficit its citizen committee confirmed; a pension reserve spent in one year against a scheduled cliff; nine days for citizen review; audit recommendations still only 'partially implemented' at the state's follow-up.",
     defense:
       "State revenue is genuinely hard to forecast; the budget office itself has been cut; the December report explained its own drivers; mid-year correction is at least responsiveness.",
     bottomLine:
@@ -465,23 +472,23 @@ export const WASTE_VERDICTS = [
 
 /** What the public record cannot answer, and the drafted (unsent) asks. */
 export const GAPS = [
-  { gap: "Corrected: interim reports DO exist", why: "An earlier version of this page said none existed. PPS publishes quarterly reports back to FY2023-24 and monthly period reports for FY2025-26, on a finance page our census missed. The real gap: no forecast-accuracy standard, no revision log, and nothing forcing action when the forecast swings $24M in a quarter", ask: "R1 withdrawn as written; the ask becomes forecast-accuracy scoring and public reconciliation of material changes", struck: true },
+  { gap: "No forecast-accuracy standard governs the interim reports that exist", why: "PPS publishes quarterly and monthly reports, and inside FY2025-26 they recorded the year-end forecast swinging $24M in a single quarter. Nothing requires a revision log, an accuracy scorecard, or a public reconciliation when that happens", ask: "The standard itself, in board policy: accuracy bands, a revision log, and a named response to material misses" },
   { gap: "No bond disclosures on any PPS site; official statements live only on the municipal bond market's EMMA system", why: "The district's risk disclosures to investors are more candid than anything it publishes to voters", ask: "Post them" },
   { gap: "No state performance audit since January 2019", why: "A strike, an ESSER cycle, and five cut years with no state-level look", ask: "R8 to TSCC; the SoS decides its own docket" },
   { gap: "No published cost model for the ~$175M strike settlement (a press-carried district figure)", why: "The most charged causal claim in the city cannot be evaluated by anyone", ask: "R3: the model. The signed contract is public; the arithmetic is not" },
   { gap: "No position-control reports public", why: "The central-office growth fight runs on dueling unverifiable claims", ask: "R4: FTE by function and location, FY2018-19 forward" },
   { gap: "The closure savings model is not public", why: "Communities are asked to trust arithmetic nobody can check", ask: "R5: the model, before any list" },
-  { gap: "R2, withdrawn", why: "We asked for a 'missing' FY2021-22 bond audit and then found it in our own corpus under another name. The real finding: no audit was issued during sixteen months of active construction in calendar 2022", ask: "Withdrawn, with the correction on the record", struck: true },
+  { gap: "No bond audit was issued during calendar 2022", why: "The FY2021-22 audit exists, published February 2023, but sixteen months of active construction passed between reports while Benson's costs were moving, because publication cadence is set by the audit engagement and nothing fixes it", ask: "A due date in the engagement letter: final report within a fixed number of months of fiscal year end" },
 ] as const;
 
 /** Six tripwires for the decade ahead (document.md section 12). */
 export const TRIPWIRES = [
-  { what: "FY2027-28 budget, spring 2027", tripwire: "Does the General Fund fall a second consecutive year, and can the district state one gap number per cycle" },
-  { what: "The closure decision", tripwire: "Savings model published before the vote; a resolution tying named savings to named classroom reinvestment" },
-  { what: "February 2027", tripwire: "Any mid-year 'discovery' confirms the blackout is a policy, not an accident" },
-  { what: "The 2025 bond's first audit cycle", tripwire: "Jefferson's estimate-at-completion vs the reduced target; the first CBSE dollar actually spent" },
-  { what: "PERS 2027-29 rates", tripwire: "The school-pool rate adoption, with the stabilization reserve already gone" },
-  { what: "The 2029 levy renewal", tripwire: "Whether the campaign prints the effective rate, near $1.51 and falling, next to the $1.99" },
+  { what: "FY2027-28 budget, spring 2027", tripwire: "Does the General Fund fall a second consecutive year, and can the district state one gap number per cycle", action: "Show up in April when the proposed budget lands. A good answer states one gap figure and the assumptions behind it; a bad one gives you two numbers in the same document" },
+  { what: "The closure decision, recommendations due end of 2026", tripwire: "Savings model published before the vote; savings tied by name to classroom reinvestment", action: "Ask for the per-building model at the hearing. A good answer is a published number you can check; 'trust the process' is not one" },
+  { what: "The quarterly reports, each release", tripwire: "Does the year-end forecast hold, or swing eight figures again with no explanation", action: "The reports are public at pps.net/departments/finance/finance. A good answer to a big swing is a named cause and a named response" },
+  { what: "The 2025 bond's first audit cycle", tripwire: "Jefferson's estimate-at-completion vs the reduced target; the first Center for Black Student Excellence dollar actually spent", action: "The annual bond audit is public. A good answer shows spending against the $60M; a fourth year of zero is the answer too" },
+  { what: "PERS 2027-29 rates", tripwire: "The school-pool rate adoption lands with the stabilization reserve already gone", action: "Ask what replaces the drained reserve. A good answer is a plan; 'we hope Salem acts' is a forecast, not a plan" },
+  { what: "The 2029 levy renewal, campaign starts ~2028", tripwire: "Whether the campaign prints the effective rate, near $1.51 and falling, next to the $1.99", action: "One sentence, to any canvasser or mailer: print the effective rate. If the campaign won't say $1.51, it is hoping you won't ask" },
 ] as const;
 
 /** The doctrine (document.md section 14). */

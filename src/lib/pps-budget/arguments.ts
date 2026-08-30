@@ -155,5 +155,5 @@ export const CASE_FILE = {
   fairGame:
     "The empirical question that is fair regardless of the outcome: whether a decade of equity allocation measurably closed the gaps it targeted. The district's own citizen committee asked for that return-on-investment analysis in 2023 and 2024. It has never been produced, and the allocation was halved without it.",
   bottomLine:
-    "A district that will not measure its values spending leaves that spending undefended in every courtroom, including the court of public opinion.",
+    "A district that will not measure its values spending leaves it undefended in both directions: against those who would end it, and against those who halved it without evidence either.",
 } as const;

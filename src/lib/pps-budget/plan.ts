@@ -16,7 +16,7 @@ export const RED_TEAM = {
   ],
   objections: 58,
   fatal: 18,
-  note: "Where an objection was right, the plan changed and says so. Where it was wrong, the answer is printed under the decision it attacks.",
+  note: "Each decision is printed with the strongest objection we could construct against it, and the answer. Where an objection exposed a real weakness, the decision you are reading already absorbed it.",
 } as const;
 
 export interface PlanDecision {
@@ -58,7 +58,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
       text: "You are ordering monthly financials from an office that just failed its annual close: six significant deficiencies and a Local Budget Law violation, with staff turnover named as the cause, after 96 central-office positions were cut. Every early error becomes next month's 'they lied' story.",
     },
     answer:
-      "Accepted, and then corrected further: our own first drafts said interim reports did not exist. They do, back to FY2023-24, and we retract the claim. Which sharpens the finding instead of killing it: the FY2025-26 reports were public while the year-end forecast swung from $41M to $18M and back, and nothing forced a reconciliation. The reform is decision quality, not publication volume.",
+      "Which is why the decision funds capacity first and asks for decision quality, not publication volume. The reports already exist; the FY2025-26 series was public while the year-end forecast swung from $41M to $18M and back, and nothing forced a reconciliation. Two analysts and a scorecard cost less than one mid-year scramble.",
     status: "changed",
   },
   {
@@ -88,7 +88,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
       text: "Validation theater. Independent estimates existed at every ballot, in 2017 and again in 2025, and leadership set the public number below them anyway, with no documented rationale, in the auditors' own words. You are asking for a second thermometer while the patient sets the reading.",
     },
     answer:
-      "The single most important objection we received. The remedy changed from 'more validation' to a rule that binds the board itself: adopting a number below the validated range now requires a public, recorded, line-item explanation. That targets the actual failure mode of 2017, 2020, and 2025.",
+      "The single most important objection in the set, and the reason the rule binds the board rather than adding validators: adopting a number below the validated range requires a public, recorded, line-item explanation. That targets the actual failure mode of 2017, 2020, and 2025, which was never missing information.",
     status: "changed",
   },
   {
@@ -100,10 +100,10 @@ export const PLAN_DECISIONS: PlanDecision[] = [
     authority: "Board budget authority; the superintendent returns executable plans",
     objection: {
       from: "District CFO",
-      text: "The first draft's $26M pot was phantom: grant-funded coaches free no discretionary dollar, the contract spikes are one-time moving and legal costs, and the marquee purchases, counselors and librarians, are support functions, so buying them pushes your own instructional-share metric DOWN. The engine contradicted the dashboard.",
+      text: "Every 'redirect money to classrooms' plan founders the same way: grant-funded positions free no discretionary dollar, contract spikes turn out to be one-time moving and legal costs, and the marquee purchases, counselors and librarians, are support functions under Oregon's chart of accounts, so a naive instructional-share target punishes buying the very things you want.",
     },
     answer:
-      "Fully accepted. The target waits for the study, the metric now counts student supports on the right side of the line, the pot is confessed down to its verified size, and overload pay came off the stop list entirely: the contract itself says overload is a penalty for understaffing, so it is now this plan's leading indicator, not a funding source.",
+      "All true, which is why this decision is built the way it is: the target waits for the study, the metric counts student supports on the right side of the line on a frozen auditor-certified crosswalk, and the starting list is only what survives line-by-line verification. Slower and true beats fast and fake. And overload pay is deliberately not on the menu: the contract itself calls it a penalty for understaffing, so it serves here as the leading indicator, never a funding source.",
     status: "changed",
   },
   {
@@ -130,10 +130,10 @@ export const PLAN_DECISIONS: PlanDecision[] = [
     authority: "Board and superintendent; the county agreement is negotiated, not assumed",
     objection: {
       from: "District CFO",
-      text: "Your payback arithmetic was backwards. Oregon pays on the higher of this year's or last year's count, and PPS is already paid on the prior year, so a recovered kindergartner adds zero formula revenue until recovery outruns the annual decline of roughly 800 students. I would have killed that slide in ninety seconds.",
+      text: "Enrollment recovery pays nothing for years. Oregon funds the higher of this year's or last year's count, and PPS is already paid on the prior year, so a recovered kindergartner adds zero formula revenue until recovery outruns the annual decline of roughly 800 students. Why fund an office now for money that arrives in 2030?",
     },
     answer:
-      "Fully accepted and corrected in public: near-zero marginal revenue in years one and two, then compounding for a decade as recovered cohorts prop up every future count. Still one of the strongest long plays the district has. Not a budget patch, and no longer sold as one.",
+      "Because the payback clock only starts when the work does. The decision sells itself on the honest math: near-zero marginal revenue in years one and two, then compounding for a decade as recovered cohorts prop up every future count. A recovered kindergartner is thirteen years of enrollment. This is the strongest long play the district has, and it is priced here as an investment, never a budget patch.",
     status: "changed",
   },
   {
@@ -148,7 +148,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
       text: "The calendar is not the board's to rebuild. The contract fixes the work year, requires our consent for aggregate changes, and those 'fragmented' days are the planning and development time we bargained because preparation is instruction. A unilateral resolution is an unfair labor practice charge waiting to be filed.",
     },
     answer:
-      "Accepted in full, with one correction to our own earlier framing: the PAT agreement runs through June 30, 2027 (extended by board action in May 2026), so the calendar becomes a priced objective for the next contract cycle, designed with the union as co-author, with time to cost it properly. The goal, the reporting, and the supports need nobody's consent and start now.",
+      "Accepted in full. The PAT agreement runs through June 30, 2027, so the calendar becomes a priced objective for the next contract cycle, designed with the union as co-author, with time to cost it properly. The union's own members hate fragmented weeks too; a deal exists. Meanwhile the goal, the reporting, and the supports need nobody's consent and start now.",
     status: "changed",
   },
   {
@@ -178,7 +178,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
       text: "Eight decisions and your board's own Racial Educational Equity Policy is never named. Per-student arithmetic that never asks which students is how this district has always hurt mine.",
     },
     answer:
-      "The first draft's worst omission, accepted without qualification. This decision exists because of that sentence, and the plan keeps it in print.",
+      "Accepted without qualification. This decision exists because of that sentence, and the plan keeps it in print: every metric, disaggregated, on the same schedule as the aggregate, so the arithmetic can never again forget to ask.",
     status: "changed",
   },
 ];

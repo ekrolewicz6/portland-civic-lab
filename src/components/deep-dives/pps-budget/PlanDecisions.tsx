@@ -28,30 +28,12 @@ function Num({ children }: { children: ReactNode }) {
   );
 }
 
-function StatusChip({ status }: { status: PlanDecision["status"] }) {
-  const changed = status === "changed";
-  return (
-    <span
-      className={`shrink-0 rounded-full border px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] ${
-        changed
-          ? "border-[var(--color-ember)]/50 bg-[var(--color-ember)]/10 text-[var(--color-ember-bright)]"
-          : "border-[var(--color-fern)]/60 bg-[var(--color-fern)]/20 text-[var(--color-sage)]"
-      }`}
-    >
-      {changed ? "changed by the red team" : "defended"}
-    </span>
-  );
-}
-
 function DecisionCard({ d }: { d: PlanDecision }) {
   return (
     <article className="rounded-sm border border-white/15 bg-white/[0.04] p-5 sm:p-7">
-      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember-bright)]">
-          {d.id}
-        </p>
-        <StatusChip status={d.status} />
-      </div>
+      <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember-bright)]">
+        {d.id}
+      </p>
 
       <h3 className="mt-2.5 font-editorial text-[21px] leading-snug text-white sm:text-[24px]">
         {d.title}
@@ -72,20 +54,25 @@ function DecisionCard({ d }: { d: PlanDecision }) {
         </span>
       </p>
 
-      {/* Two-tone objection / answer block */}
-      <div className="mt-5 rounded-sm border border-[var(--color-clay)]/40 bg-[var(--color-clay)]/15 p-4 sm:p-5">
-        <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">
-          The hardest objection · {d.objection.from}
-        </p>
-        <p className="mt-2 text-[13.5px] leading-relaxed text-white/85">{d.objection.text}</p>
-      </div>
-
-      <div className="mt-4 border-l-2 border-[var(--color-sage)]/60 pl-4 sm:pl-5">
-        <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-sage)]">
-          The answer
-        </p>
-        <p className="mt-2 text-[13.5px] leading-relaxed text-white/80">{d.answer}</p>
-      </div>
+      {/* Objection and answer, expandable so the decision leads */}
+      <details className="group mt-5">
+        <summary className="cursor-pointer list-none font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white/50 transition-colors hover:text-[var(--color-ember-bright)]">
+          <span className="mr-2 inline-block transition-transform group-open:rotate-90">▸</span>
+          The hardest objection, and the answer
+        </summary>
+        <div className="mt-3 rounded-sm border border-[var(--color-clay)]/40 bg-[var(--color-clay)]/15 p-4 sm:p-5">
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">
+            The objection · {d.objection.from}
+          </p>
+          <p className="mt-2 text-[13.5px] leading-relaxed text-white/85">{d.objection.text}</p>
+        </div>
+        <div className="mt-4 border-l-2 border-[var(--color-sage)]/60 pl-4 sm:pl-5">
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-sage)]">
+            The answer
+          </p>
+          <p className="mt-2 text-[13.5px] leading-relaxed text-white/80">{d.answer}</p>
+        </div>
+      </details>
     </article>
   );
 }
@@ -93,25 +80,51 @@ function DecisionCard({ d }: { d: PlanDecision }) {
 export default function PlanDecisions() {
   return (
     <div className="space-y-8">
-      {/* ── The credential band: built to be attacked ── */}
-      <div className="rounded-sm border border-white/15 bg-white/[0.04] p-5 sm:p-7">
-        <DarkEyebrow>Built to be attacked</DarkEyebrow>
-        <p className="mt-2.5 max-w-3xl font-editorial text-[22px] leading-[1.35] text-white sm:text-[26px]">
-          <Num>{RED_TEAM.personas.length}</Num> hostile reviewers,{" "}
-          <Num>{RED_TEAM.objections}</Num> objections, <Num>{RED_TEAM.fatal}</Num> fatal to the
-          first draft. What follows survived.
+      {/* ── If you sit on the board: start Monday ── */}
+      <div className="rounded-sm border border-[var(--color-ember)]/50 bg-[var(--color-ember)]/10 p-5 sm:p-7">
+        <DarkEyebrow>If you sit on the board, start here</DarkEyebrow>
+        <p className="mt-2.5 max-w-3xl font-editorial text-[20px] leading-[1.35] text-white sm:text-[23px]">
+          Three motions that cost nearly nothing, need nobody&apos;s permission, and could pass
+          this fall:
         </p>
-        <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-white/60">{RED_TEAM.note}</p>
-        <div className="mt-4 flex flex-wrap gap-1.5">
-          {RED_TEAM.personas.map((persona) => (
-            <span
-              key={persona}
-              className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1 text-[12px] text-white/80"
-            >
-              {persona}
-            </span>
+        <ol className="mt-4 max-w-3xl space-y-2.5 text-[14px] leading-relaxed text-white/85">
+          <li>
+            <span className="font-mono text-[11px] font-semibold text-[var(--color-ember-bright)]">D0+D1 · </span>
+            Publish the one-page budget, and put a forecast-accuracy scorecard on the quarterly
+            reports the district already produces.
+          </li>
+          <li>
+            <span className="font-mono text-[11px] font-semibold text-[var(--color-ember-bright)]">D2 · </span>
+            Give the citizen review committee staged access and answer its recommendations in
+            writing before adoption.
+          </li>
+          <li>
+            <span className="font-mono text-[11px] font-semibold text-[var(--color-ember-bright)]">D3 · </span>
+            Adopt the capital rule: no public number below the validated estimate without a
+            recorded, line-item explanation.
+          </li>
+        </ol>
+      </div>
+
+      {/* ── All ten, at a glance ── */}
+      <div className="rounded-sm border border-white/15 bg-white/[0.04] p-5 sm:p-7">
+        <DarkEyebrow>The ten decisions at a glance</DarkEyebrow>
+        <ol className="mt-4 grid gap-x-8 gap-y-2 text-[13.5px] leading-snug text-white/80 md:grid-cols-2">
+          {PLAN_DECISIONS.map((d) => (
+            <li key={d.id} className="flex gap-2.5">
+              <span className="shrink-0 font-mono text-[11px] font-semibold text-[var(--color-ember-bright)]">
+                {d.id}
+              </span>
+              <span>{d.title}</span>
+            </li>
           ))}
-        </div>
+        </ol>
+        <p className="mt-4 max-w-3xl text-[12.5px] leading-relaxed text-white/55">
+          Method: before publication, this plan was attacked by <Num>{RED_TEAM.personas.length}</Num>{" "}
+          adversarial reviewers in role, a district CFO, a union research director, an equity
+          advocate, a parent organizer, a bond veteran, a general counsel, and a retired deputy
+          superintendent, producing <Num>{RED_TEAM.objections}</Num> objections. {RED_TEAM.note}
+        </p>
       </div>
 
       {/* ── The ten decisions, single column ── */}

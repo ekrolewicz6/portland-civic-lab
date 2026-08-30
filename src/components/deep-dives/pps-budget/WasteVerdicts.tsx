@@ -38,17 +38,28 @@ function Eyebrow({ children, className = "" }: { children: string; className?: s
 
 function StandardBand() {
   return (
-    <div className="rounded-sm border border-[var(--color-canopy)]/40 bg-[var(--color-paper-warm)] p-5 sm:p-6">
-      <Eyebrow>The standard</Eyebrow>
-      <p className="mt-3 max-w-3xl font-editorial text-[18px] leading-relaxed text-[var(--color-ink)] sm:text-[20px]">
-        {
-          "A dollar is wasted only when the district controlled it, a better use in the same ledger was predictable, and the district had, or refused to gather, the information to know at the time."
-        }
-      </p>
-      <p className="mt-4 max-w-3xl border-t border-[var(--color-parchment)] pt-4 text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
-        {
-          "This page never sums a waste headline. Anyone who gives you one number for PPS waste is doing false precision on purpose."
-        }
+    <div>
+      <div className="rounded-sm border border-[var(--color-canopy)]/40 bg-[var(--color-paper-warm)] p-5 sm:p-6">
+        <Eyebrow>The standard</Eyebrow>
+        <p className="mt-3 max-w-3xl font-editorial text-[18px] leading-relaxed text-[var(--color-ink)] sm:text-[20px]">
+          {
+            "A dollar is wasted only when the district controlled it, a better use in the same ledger was predictable, and the district had, or refused to gather, the information to know at the time."
+          }
+        </p>
+        <p className="mt-4 max-w-3xl border-t border-[var(--color-parchment)] pt-4 text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+          {
+            "This page never sums a waste headline. Anyone who gives you one number for PPS waste is doing false precision on purpose."
+          }
+        </p>
+      </div>
+
+      {/* What the examination found, in one breath */}
+      <p className="mt-4 max-w-3xl text-[14.5px] leading-relaxed text-[var(--color-ink)]">
+        <strong>What it finds:</strong> hundreds of millions in controllable bond overruns on the
+        locked ledger, years of paying full costs on emptying buildings, central overhead nobody
+        can benchmark because the numbers were never published, and an institution that steers
+        late. <strong>What it does not find:</strong> a hidden pot. There is none big enough to
+        matter.
       </p>
     </div>
   );

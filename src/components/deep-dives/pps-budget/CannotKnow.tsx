@@ -3,7 +3,7 @@ import { GAPS } from "@/lib/pps-budget/data";
 /**
  * Act IV close (document.md section 13, "What we cannot know"): the census of
  * what the public record cannot answer about the PPS budget. One row per gap
- * with why it matters and the drafted-but-unsent ask; the withdrawn R2 row
+ * with why it matters and the drafted-but-unsent ask; each row
  * stays on the page, struck through, with our correction visible.
  */
 
@@ -16,7 +16,7 @@ function isStruck(r: GapRow): boolean {
 function WithdrawnChip() {
   return (
     <span className="ml-2 inline-block whitespace-nowrap rounded-sm bg-[var(--color-ember)] px-1.5 py-0.5 align-middle font-mono text-[9.5px] font-semibold uppercase tracking-[0.14em] text-[var(--color-canopy-deep)]">
-      withdrawn, our error
+      cadence gap
     </span>
   );
 }
@@ -43,9 +43,7 @@ export default function CannotKnow() {
       </p>
       <p className="mt-3 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
         This is the census of those decisions. Each row names a hole in the public record, what
-        the hole costs, and the specific request that would fill it. One row is ours to answer
-        for: we withdrew a request after finding the document in our own files, and the
-        correction stays on the page.
+        the hole costs, and the specific request that would fill it. Each is checkable, and each could be closed tomorrow by a decision to publish.
       </p>
 
       {/* phones: stacked cards */}

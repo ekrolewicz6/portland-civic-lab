@@ -24,7 +24,7 @@ export default function BondLedger() {
     <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6">
       <div className="space-y-5">
         {BOND_LEDGER.map((row) => {
-          const pct = Math.round((row.latestM / row.ballotM - 1) * 100);
+          const pct = Math.floor((row.latestM / row.ballotM - 1) * 100);
           const unspent = row.status === "unspent";
           const latestColor = overPromise(row.status)
             ? "var(--color-clay)"
@@ -82,7 +82,10 @@ export default function BondLedger() {
         })}
       </div>
 
-      <p className="mt-5 border-t border-[var(--color-parchment)] pt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+      <p className="mt-5 border-t border-[var(--color-parchment)] pt-3 text-[12.5px] font-semibold text-[var(--color-ink)]">
+        None of this money could ever have paid a teacher. The cost is bond capacity, and trust.
+      </p>
+      <p className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
         Source: independent bond performance audits, Sjoberg Evashenk Consulting
       </p>
     </div>
