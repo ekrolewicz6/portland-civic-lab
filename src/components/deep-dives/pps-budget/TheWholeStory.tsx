@@ -162,7 +162,7 @@ export default function TheWholeStory() {
 
         {/* (c) The annual question */}
         <p className="mt-6 text-center font-editorial text-[18px] sm:text-[20px] italic text-[var(--color-ink)]">
-          The question this page exists to arm you to ask: &ldquo;Does the next dollar reach a
+          One question runs through everything below: &ldquo;Does the next dollar reach a
           student, and can you show me?&rdquo;
         </p>
       </div>

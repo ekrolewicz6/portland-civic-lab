@@ -107,7 +107,7 @@ export default function PpsBudgetPage() {
           <div className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(300px,380px)]">
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-ember-bright)]">
-                <Link href="/deep-dives" className="hover:text-white">Policy deep-dive</Link> ——— Schools &amp; public money
+                <Link href="/deep-dives" className="hover:text-white">Policy deep-dive</Link> ——— The Portland Public Schools budget
               </p>
               <h1 className="mt-5 font-editorial-normal text-[40px] leading-[1.05] sm:text-[56px] xl:text-[64px]">
                 Where the next dollar goes.
@@ -115,15 +115,15 @@ export default function PpsBudgetPage() {
                   And the ten decisions that would change it.
                 </span>
               </h1>
-              <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-white/75">
-                Portland Public Schools just eliminated 322 positions, its sixth straight year of
-                cuts, in the same season its headline budget reached $2.77 billion, the largest in
-                its history. Both facts are true, no public document explains how, and every fight
-                in the city runs on the confusion. We read eleven years of budget books, every
-                audit, and the district&apos;s own watchdogs so you don&apos;t have to. Here is
-                what actually decides whether a dollar reaches a student, where money is
-                demonstrably doing less than it could, and the ten decisions, attacked by seven
-                hostile reviewers until they survived, that would change it.
+              <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-white/85">
+                Portland Public Schools just cut 322 positions, its sixth straight year of cuts.
+                Its budget is $2.77 billion, the largest in its history. Both are true, and no
+                public document explains how.
+              </p>
+              <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-white/70">
+                We read eleven years of budget books and every audit so you don&apos;t have to.
+                This page shows what decides whether a dollar reaches a student, where money is
+                doing less than it could, and ten decisions that would change it.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -337,8 +337,7 @@ export default function PpsBudgetPage() {
         title="Eleven years: money up every year, students down, then the bill."
         lead="Nominal operating money rose without interruption until this year. Purchasing power peaked in 2021-22 and has fallen nine percent since."
       >
-        <DecadeSpine />
-        <div className="mt-6 rounded-sm border border-[var(--color-fern)]/40 bg-[var(--color-sage-tint)] p-5">
+        <div className="mb-8 rounded-sm border border-[var(--color-fern)]/40 bg-[var(--color-sage-tint)] p-5">
           <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-fern)]">
             Credit where the record supports it
           </p>
@@ -352,6 +351,7 @@ export default function PpsBudgetPage() {
             structure, its footprint, and its steering fall behind its own trajectory.
           </p>
         </div>
+        <DecadeSpine />
         <Prose>
           <p>
             The turn has a date and a cause. Enrollment held near 49,500 for four years, then fell
