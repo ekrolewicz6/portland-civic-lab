@@ -860,6 +860,104 @@
       "pages": 230,
       "url": "https://www.oregon.gov/ode/schools-and-districts/grants/Documents/2025-26%20State%20School%20Fund/25-26%20ADMw%20Breakout%205-1-26.pdf",
       "fetchedAt": "2026-08-30"
+    },
+    "pps-q1-fy2025-26": {
+      "sha256": "a357c444ed1da8d4d409856c0b63c2928ef23116d345fb9e85f36576098a7fee",
+      "bytes": 4652211,
+      "pages": 18,
+      "url": "https://www.pps.net/fs/resource-manager/view/198fb71d-ff52-4906-9cc3-8e241e59db96",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-q2-fy2025-26": {
+      "sha256": "ec40e7551c4c7905afde1c572c0cb9ab29c639c370cbe113faa7c7abc9540c3e",
+      "bytes": 4686636,
+      "pages": 18,
+      "url": "https://www.pps.net/fs/resource-manager/view/e1f5a22d-4bd1-4811-b7b4-37f6a19007ee",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-q3-fy2025-26": {
+      "sha256": "e8288f0fc986cae8819aa4563f9fedc92afb75770d519ceda16721ad44234951",
+      "bytes": 4150666,
+      "pages": 18,
+      "url": "https://www.pps.net/fs/resource-manager/view/0f941d86-6824-416d-9168-289581dc9e1d",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-p11-fy2025-26": {
+      "sha256": "336fdc0054a062e8ed8b6bb25d468d834fcfb1e07b1a39b3f52f17e60314d170",
+      "bytes": 4182769,
+      "pages": 18,
+      "url": "https://www.pps.net/fs/resource-manager/view/43d46ab6-5967-4346-bd62-3325dff86e07",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-p10-fy2025-26": {
+      "sha256": "001eade2e5a973739ec180d58d117a6ca4e83666ba2cbd3ce81b7bb08c7395e0",
+      "bytes": 4167715,
+      "pages": 18,
+      "url": "https://www.pps.net/fs/resource-manager/view/e4a84fc3-bb0b-4626-9c6c-6d6e0d709e7a",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-p8-fy2025-26": {
+      "sha256": "f44c086a086e4a50103760aac9ee9d298ec2ea780e4e84a414252b2a2d4f5a50",
+      "bytes": 3995398,
+      "pages": 18,
+      "url": "https://www.pps.net/fs/resource-manager/view/77733acf-4433-4afc-add4-fe4b5b9c63af",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-p7-fy2025-26": {
+      "sha256": "a5a96f9299ec7ce9bc4e238989bd6934903bc11e62f5fc2a956223a4319a2f88",
+      "bytes": 4371835,
+      "pages": 18,
+      "url": "https://www.pps.net/fs/resource-manager/view/e7d9fd0f-ce0d-46bc-bd92-56a3a62d1cda",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-q1-fy2024-25": {
+      "sha256": "083cbf1cc34d3a1264cd602aa351e632b35f12b3f0eb279e02c2ce73bfde8426",
+      "bytes": 2300279,
+      "pages": 22,
+      "url": "https://www.pps.net/fs/resource-manager/view/a3b4a99a-4ac2-49a3-9b21-ddb60f7e7152",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-q2-fy2024-25": {
+      "sha256": "45529bc685dc2e48429b0a5cd20f6ca358a4ba987158bce5987661f61cdbb51e",
+      "bytes": 799145,
+      "pages": 18,
+      "url": "https://www.pps.net/fs/resource-manager/view/f49c59f0-dd0b-4191-be48-eca78687efc7",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-q3-fy2024-25": {
+      "sha256": "cc0bfbfbd81a47c1a9e0afa3b8a8644d0f33e0a97efb4cd88ab01cec34938bd3",
+      "bytes": 3638435,
+      "pages": 20,
+      "url": "https://www.pps.net/fs/resource-manager/view/eea8c98a-c241-4503-8373-84b83daedf5f",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-q4-fy2024-25": {
+      "sha256": "ae9ba1118e11894f8e86e830f75e498195b6f50e922e00e8f0b4c41fc029f191",
+      "bytes": 346027,
+      "pages": 12,
+      "url": "https://www.pps.net/fs/resource-manager/view/8b804ed0-1667-46e4-8c99-67ddbe7b04fc",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-q1-fy2023-24": {
+      "sha256": "e261a56680e7898a22e6fde939ab14ed1d5e88678a43e7d1b6845449a02196b4",
+      "bytes": 1192350,
+      "pages": 22,
+      "url": "https://www.pps.net/fs/resource-manager/view/bd833266-c709-438c-9edc-d401b5904491",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-q2-fy2023-24": {
+      "sha256": "3a90f723a659f44636d7d1e896ebd00033c84918ca35e5b231bc96e95c36e7fd",
+      "bytes": 5354853,
+      "pages": 22,
+      "url": "https://www.pps.net/fs/resource-manager/view/733c8a20-038a-4c95-98b3-17b05afc3bfe",
+      "fetchedAt": "2026-08-30"
+    },
+    "pps-q3-fy2023-24": {
+      "sha256": "8085c52d797c45433ee52581523e8f4b89afa53a54d9db4eebd135b0da8ef400",
+      "bytes": 5043438,
+      "pages": 22,
+      "url": "https://www.pps.net/fs/resource-manager/view/481ec03d-e1fb-4b49-b502-2893674067d3",
+      "fetchedAt": "2026-08-30"
     }
   }
 }

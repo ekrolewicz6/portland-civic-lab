@@ -6,7 +6,7 @@ document census and governance research (full detail in the plan archive).
 | # | Gap | Status | Next step |
 |---|---|---|---|
 | G1 | No bond Official Statements / continuing disclosure on any PPS site (EMMA only) | open | Manual EMMA pull, both issuer names |
-| G2 | No public monthly/quarterly interim financials | open | Records request R1 (or the admission none exist) |
+| G2 | ~~No public interim financials~~ | **CORRECTED 2026-08-30, our error** | Quarterly reports exist to FY2023-24 + monthly periods FY2025-26 at pps.net/departments/finance/finance (census missed the page; we checked /financial-reports only). 14 reports now in corpus. Real residual gap: no forecast-accuracy standard or public reconciliation rule. R1 withdrawn as written |
 | G3 | No SoS performance audit of PPS since 2019-01 | documented | Findings section; 7-year oversight gap |
 | G4 | OIPA output minimal; nothing on budgeting/forecasting/position control | documented | Findings section |
 | G5 | ~~Bond audit for 2022 missing~~ | **CLOSED 2026-08-30** | The FY2021-22 audit is the Year 4 report (issued Feb 2023), in corpus. Real finding: no audit was ISSUED in calendar 2022 (16-month publication gap during active construction). R2 withdrawn |

@@ -162,6 +162,13 @@ export const SOURCES = {
     kind: "primary",
     year: "2022",
   },
+  financeInterim: {
+    title: "Quarterly and period financial reports (FY2023-24 to present)",
+    org: "Portland Public Schools",
+    url: "https://www.pps.net/departments/finance/finance",
+    kind: "primary",
+    year: "2026",
+  },
   fy25AuditMemo: {
     title: "FY2025 audit communications (findings memo)",
     org: "Talbot, Korvola & Warwick / PPS",
@@ -436,11 +443,11 @@ export const WASTE_VERDICTS = [
     ledger: "movable",
     verdict: "Shown, and the largest",
     evidence:
-      "No interim financial statements at all; a mid-year deficit its own committee confirmed; a pension reserve spent in one year against a scheduled cliff; nine days for citizen review; audit recommendations still only 'partially implemented' at the state's follow-up.",
+      "The district's own quarterly reports show its FY2025-26 year-end forecast swinging from $41.3M to $17.7M to $26.8M to $34.6M within one year, with a mid-year deficit its citizen committee confirmed; a pension reserve spent in one year against a scheduled cliff; nine days for citizen review; audit recommendations still only 'partially implemented' at the state's follow-up. (Correction: an earlier version said no interim reports existed. They do, and they documented the swing while nothing forced a response.)",
     defense:
-      "State revenue is genuinely hard to forecast; the budget office itself has been cut; mid-year correction is at least responsiveness.",
+      "State revenue is genuinely hard to forecast; the budget office itself has been cut; the December report explained its own drivers; mid-year correction is at least responsiveness.",
     bottomLine:
-      "Lateness has a price. Mid-year cuts buy less per dollar than June cuts, and every other problem on this page got more expensive in the dark. If one thing changes, publish the books.",
+      "The failure is not darkness. It is forecast quality, position control, and follow-through: the reports were public while the forecast whipsawed and staffing assumptions broke. If one thing changes, make the books decision-grade and act on them.",
   },
   {
     id: "W5",
@@ -458,7 +465,7 @@ export const WASTE_VERDICTS = [
 
 /** What the public record cannot answer, and the drafted (unsent) asks. */
 export const GAPS = [
-  { gap: "No monthly or quarterly financial statements exist anywhere in public", why: "The proximate cause of 'discovered' shortfalls; nobody outside the building can see a $2.77B organization's position for up to 18 months", ask: "R1: any internal periodic reports, or a statement none exist. Either answer is a finding" },
+  { gap: "Corrected: interim reports DO exist", why: "An earlier version of this page said none existed. PPS publishes quarterly reports back to FY2023-24 and monthly period reports for FY2025-26, on a finance page our census missed. The real gap: no forecast-accuracy standard, no revision log, and nothing forcing action when the forecast swings $24M in a quarter", ask: "R1 withdrawn as written; the ask becomes forecast-accuracy scoring and public reconciliation of material changes", struck: true },
   { gap: "No bond disclosures on any PPS site; official statements live only on the municipal bond market's EMMA system", why: "The district's risk disclosures to investors are more candid than anything it publishes to voters", ask: "Post them" },
   { gap: "No state performance audit since January 2019", why: "A strike, an ESSER cycle, and five cut years with no state-level look", ask: "R8 to TSCC; the SoS decides its own docket" },
   { gap: "No published cost model for the ~$175M strike settlement (a press-carried district figure)", why: "The most charged causal claim in the city cannot be evaluated by anyone", ask: "R3: the model. The signed contract is public; the arithmetic is not" },
@@ -483,7 +490,7 @@ export const DOCTRINE = {
     "Count every dollar in the open, say plainly which ones can move, and make every dollar that can move prove, in public, every spring, that nothing else it could buy would do more for a student who is here now.",
   annualQuestion: "Does the next dollar reach a student, and can you show me?",
   commitments: [
-    "Publish monthly or quarterly financial statements. No new money required.",
+    "Make the interim statements decision-grade: forecast-accuracy scoring, revision logs, public reconciliation. No new money required.",
     "Publish the one-page budget: operating, capital, debt, side by side.",
     "Publish the trend table in every budget book. The state asked in 2019.",
     "Sort every dollar by ledger before arguing about it.",

@@ -10,3 +10,5 @@
 | T-6 | Admin growth +88% (2000-2019) | WW-reported, secondary; horizon predates ours | Carry as "reported (WW), pending primary verification"; test the recent-decade analog with our FTE series | open |
 
 | T-7 | PPS's audited ACFR (FY2025, statistical section p146) prints enrollment 52,380 for 2022-23 amid 45,497 and 44,771 — an impossible value that survived audit | ACFR vs TSCC series | Derivation drops it as an outlier (DERIVATION_NOTES); flag to PPS finance in the corrections invitation | documented |
+
+| T-8 | Actual October 2025 enrollment | Third-party synthesis reports 43,479 broad headcount (12.1% decline from 2019-20) vs our TSCC-series 42,304 (labeled forecast) and district's 12.2% | Verify against the PPS October 2025 enrollment summary (data hub, JS-rendered; needs browser pull). Different series must be bridged, never mixed | open |

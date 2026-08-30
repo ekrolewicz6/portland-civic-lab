@@ -50,7 +50,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
     id: "D1",
     title: "Publish the books, at the speed the books can bear",
     motion:
-      "Fund 2-3 finance analysts first, exempt from every savings target. Quarterly unaudited statements with seasonal comparators and a revision log; monthly only after one clean audit cycle. The one-page budget and the trend table in every book. Quarterly public reporting on the assumptions that drove the last deficit. Publish the strike-settlement cost model.",
+      "Make the interim reports PPS already publishes decision-grade: fund 2-3 finance analysts first, exempt from every savings target; add seasonal comparators, a revision log, and a public forecast-accuracy scorecard to the existing quarterly and monthly reports; reconcile every material forecast change in public session; publish the one-page budget and the trend table in every book; publish the strike-settlement cost model.",
     cost: "2-3 positions, under half a percent of the deficit",
     authority: "Board policy; none of it touches a contract or statute",
     objection: {
@@ -58,7 +58,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
       text: "You are ordering monthly financials from an office that just failed its annual close: six significant deficiencies and a Local Budget Law violation, with staff turnover named as the cause, after 96 central-office positions were cut. Every early error becomes next month's 'they lied' story.",
     },
     answer:
-      "Accepted almost entirely: capacity first, quarterly before monthly, revision logs by design. But the audit findings are not a reason to stay dark. They are the strongest evidence in the record that nobody, including the board, can currently see the money.",
+      "Accepted, and then corrected further: our own first drafts said interim reports did not exist. They do, back to FY2023-24, and we retract the claim. Which sharpens the finding instead of killing it: the FY2025-26 reports were public while the year-end forecast swung from $41M to $18M and back, and nothing forced a reconciliation. The reform is decision quality, not publication volume.",
     status: "changed",
   },
   {
@@ -145,10 +145,10 @@ export const PLAN_DECISIONS: PlanDecision[] = [
     authority: "Goal and reporting now; calendar at the table",
     objection: {
       from: "Union research director",
-      text: "The calendar is not the board's to rebuild. The contract fixes the work year, requires our consent for aggregate changes, and those 'fragmented' days are the planning and development time we bargained because preparation is instruction. A unilateral resolution during open negotiations is an unfair labor practice charge within the month.",
+      text: "The calendar is not the board's to rebuild. The contract fixes the work year, requires our consent for aggregate changes, and those 'fragmented' days are the planning and development time we bargained because preparation is instruction. A unilateral resolution is an unfair labor practice charge waiting to be filed.",
     },
     answer:
-      "Accepted in full. The calendar moved to the successor table as a priced objective with the union as co-author, and the union's own words, 'our members hate fragmented weeks too,' suggest a deal exists. The goal, the reporting, and the supports need nobody's consent and start now.",
+      "Accepted in full, with one correction to our own earlier framing: the PAT agreement runs through June 30, 2027 (extended by board action in May 2026), so the calendar becomes a priced objective for the next contract cycle, designed with the union as co-author, with time to cost it properly. The goal, the reporting, and the supports need nobody's consent and start now.",
     status: "changed",
   },
   {

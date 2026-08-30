@@ -573,6 +573,21 @@ export default function PpsBudgetPage() {
             conflict, the page says so rather than smoothing it.
           </p>
         </Prose>
+        <div className="mt-6 rounded-sm border border-[var(--color-clay)]/40 bg-[var(--color-clay-tint)] p-5">
+          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-clay)]">
+            Corrections, logged
+          </p>
+          <p className="mt-2 text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+            <strong>August 30, 2026:</strong> an earlier version of this page claimed PPS publishes
+            no interim financial statements. That was wrong: quarterly reports exist back to
+            FY2023-24 and monthly period reports for FY2025-26, on a finance page our document
+            census missed (<Src id="financeInterim" />). The finding is corrected above to what
+            those reports actually show, a year-end forecast swinging $41M to $18M to $35M inside
+            one year. The same review corrected our claim that the teachers&apos; contract had
+            expired: it runs through June 30, 2027 by a May 2026 board action. We hold PPS to a
+            corrections standard; it applies to us first.
+          </p>
+        </div>
         <IndependenceNote />
         <div className="mt-10">
           <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">

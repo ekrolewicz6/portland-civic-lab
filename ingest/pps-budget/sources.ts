@@ -26,6 +26,7 @@ export interface PpsDoc {
     | "acfr"
     | "tscc"
     | "lb1"
+    | "interim"
     | "cbrc"
     | "bond-audit"
     | "cba"
@@ -53,6 +54,22 @@ const RM = "https://www.pps.net/fs/resource-manager/view";
 const TSCC = "https://www.tsccmultco.com/wp-content/uploads";
 
 const EXTRA: PpsDoc[] = [
+  // ── Interim financial reports (found 2026-08-30 via external review; corrects G2) ──
+  { id: "pps-finance-interim-page", series: "interim", title: "PPS Finance: quarterly and period financial reports index", org: "Portland Public Schools", url: "https://www.pps.net/departments/finance/finance", kind: "page", acquisition: "manual-browser", notes: "Quarterly reports to FY2023-24 + monthly periods FY2025-26; the page the original census missed" },
+  { id: "pps-q1-fy2025-26", series: "interim", fy: "2025-26", title: "PPS Q1 FY2025-26 financial report", org: "Portland Public Schools", url: `${RM}/198fb71d-ff52-4906-9cc3-8e241e59db96`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-q2-fy2025-26", series: "interim", fy: "2025-26", title: "PPS Q2 FY2025-26 financial report", org: "Portland Public Schools", url: `${RM}/e1f5a22d-4bd1-4811-b7b4-37f6a19007ee`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-q3-fy2025-26", series: "interim", fy: "2025-26", title: "PPS Q3 FY2025-26 financial report", org: "Portland Public Schools", url: `${RM}/0f941d86-6824-416d-9168-289581dc9e1d`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-p11-fy2025-26", series: "interim", fy: "2025-26", title: "PPS Period 11 (May 2026) FY2025-26 financial report", org: "Portland Public Schools", url: `${RM}/43d46ab6-5967-4346-bd62-3325dff86e07`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-p10-fy2025-26", series: "interim", fy: "2025-26", title: "PPS Period 10 (Apr 2026) FY2025-26 financial report", org: "Portland Public Schools", url: `${RM}/e4a84fc3-bb0b-4626-9c6c-6d6e0d709e7a`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-p8-fy2025-26", series: "interim", fy: "2025-26", title: "PPS Period 8 (Feb 2026) FY2025-26 financial report", org: "Portland Public Schools", url: `${RM}/77733acf-4433-4afc-add4-fe4b5b9c63af`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-p7-fy2025-26", series: "interim", fy: "2025-26", title: "PPS Period 7 (Jan 2026) FY2025-26 financial report", org: "Portland Public Schools", url: `${RM}/e7d9fd0f-ce0d-46bc-bd92-56a3a62d1cda`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-q1-fy2024-25", series: "interim", fy: "2024-25", title: "PPS Q1 FY2024-25 financial report", org: "Portland Public Schools", url: `${RM}/a3b4a99a-4ac2-49a3-9b21-ddb60f7e7152`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-q2-fy2024-25", series: "interim", fy: "2024-25", title: "PPS Q2 FY2024-25 financial report", org: "Portland Public Schools", url: `${RM}/f49c59f0-dd0b-4191-be48-eca78687efc7`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-q3-fy2024-25", series: "interim", fy: "2024-25", title: "PPS Q3 FY2024-25 financial report", org: "Portland Public Schools", url: `${RM}/eea8c98a-c241-4503-8373-84b83daedf5f`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-q4-fy2024-25", series: "interim", fy: "2024-25", title: "PPS Q4 FY2024-25 financial report", org: "Portland Public Schools", url: `${RM}/8b804ed0-1667-46e4-8c99-67ddbe7b04fc`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-q1-fy2023-24", series: "interim", fy: "2023-24", title: "PPS Q1 FY2023-24 financial report", org: "Portland Public Schools", url: `${RM}/bd833266-c709-438c-9edc-d401b5904491`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-q2-fy2023-24", series: "interim", fy: "2023-24", title: "PPS Q2 FY2023-24 financial report", org: "Portland Public Schools", url: `${RM}/733c8a20-038a-4c95-98b3-17b05afc3bfe`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
+  { id: "pps-q3-fy2023-24", series: "interim", fy: "2023-24", title: "PPS Q3 FY2023-24 financial report", org: "Portland Public Schools", url: `${RM}/481ec03d-e1fb-4b49-b502-2893674067d3`, kind: "pdf", acquisition: "scripted", fetchTier: 2 },
   // Missed by the generator's curation pass (present on the ACFR index page):
   { id: "acfr-fy2023", series: "acfr", fy: "2023", title: "PPS ACFR 2023", org: "Portland Public Schools", url: `${RM}/9b1d1b65-3a9f-42e7-85cb-d6b021f33930`, kind: "pdf", acquisition: "scripted", fetchTier: 1 },
 

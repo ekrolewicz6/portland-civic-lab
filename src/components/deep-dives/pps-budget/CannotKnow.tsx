@@ -122,7 +122,7 @@ export default function CannotKnow() {
       </div>
 
       <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
-        Ten records requests are drafted and unsent; the district can moot every one of them by
+        The remaining records requests are drafted and unsent; the district can moot every one of them by
         publishing.
       </p>
       <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">

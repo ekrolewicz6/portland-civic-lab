@@ -62,11 +62,11 @@ const FINDINGS = [
     body: "Voters renewed a $1.99 teachers levy. The 1990s tax constitution delivers about $1.51 of it, the leak is growing fast, and only Salem can fix it.",
   },
   {
-    href: "#the-decade",
-    stat: "0",
-    statLabel: "statements between July and January",
-    title: "The blackout",
-    body: "No financial statements exist between budget adoption and the audit months after the year ends. Mid-year holes get discovered, and late decisions are bought at a premium.",
+    href: "#waste",
+    stat: "$41M→$18M",
+    statLabel: "one year's own forecast",
+    title: "The forecast problem",
+    body: "The district's quarterly reports are public, and inside FY2025-26 they show its own year-end forecast swinging from $41M to $18M and back to $35M. The books exist. The steering does not.",
   },
 ] as const;
 
