@@ -1,0 +1,319 @@
+1. [WRONG] Section 10 W4/W1 context: 'In January 2019 the Secretary of State handed PPS 26 accepted recommendations'
+   cite: [sos-audit-2019-01]
+   The audit made 26 recommendations to ODE and PPS combined ('We made 26 recommendations to help improve return on education investments at ODE and PPS', sos-audit-2019-01 line 76). PPS received 15 of them; the SOS follow-up report (sos-secretary-of-state-sos-recommendation-follow-up-report.txt, header) says 'PPS partially implemented 13 of the 15 recommendations from our 2019 audit... and implement
+
+2. [WRONG] Section 10 W3: 'instruction cut about four times faster in percentage terms than central business support acro
+   cite: echo of section 08 [tscc-review-fy2026 pp11-12]
+   On the document's own figures (section 08, line 258: regular instruction FTE −12.2%, central business support −5.5%, FY2021-22 actuals to FY2025-26 adopted), the ratio is ~2.2x, not ~4x. Section 08 carries the same '(roughly four times') error. Also note the underlying TSCC function-level FTE chart is image-only (per fragments/tscc/fte_by_function.csv notes), so the primary figures cannot be text-
+
+3. [OVERSTATED] Section 10 W4: 'the specific ones about financial legibility, trend data, program-level detail, benchmarking..
+   cite: uncited (follows [sos-audit-2019-01])
+   The SOS follow-up report (March 2022, Report 2022-10) rates the budget-transparency recommendation ('Make its budget more clear and transparent to the public...') and the peer-benchmarking recommendation both 'Partially implemented', and its highlights say PPS 'improved budget transparency (pg.11), benchmarking against in-state districts (pg. 10)'. 'Never implemented' contradicts the state's own s
+
+4. [UNVERIFIABLE] Section 10 W4: 'A mid-year FY2025-26 hole of roughly $10 million disclosed in February 2026, patched with a fu
+   cite: no citation
+   No corpus document supports the $10M amount, the February 2026 disclosure date, or the furloughs-or-layoffs offer (grep for furlough/mid-year across all text files finds nothing for FY2025-26; the only $10M mid-year reduction in the corpus is the FY2023-24 central-office action in cbrc-1-23-25). The CBRC 2026-27 review p5 confirms only that 'the mid-year deficit in the 2025-26 budget' existed. Sam
+
+5. [OVERSTATED] Section 10 W4: 'A preliminary FY2026-27 gap estimate that grew from $50 million in October to $56.3 million by
+   cite: no citation
+   Both figures appear in the same spring CBRC 2026-27 review ('the projected $50 million budget gap', line 234; 'the $56.3 million budget gap that the District identified in its proposed budget', p9), with no dates attached; the document's own section 02 (line 71) treats the pair as an internal contradiction in one report. No corpus source supports the 'October' timing or the growth narrative. Secti
+
+6. [UNVERIFIABLE] Section 11 D1: teachers union analysis holds the district under-forecasts revenue, 'added 149 central office p
+   cite: [pat-funding-memo, advocacy]
+   No file named pat-funding-memo exists in /Users/edankrolewicz/portland-civic-lab/runtime-data/pps-budget/text/ or anywhere in the project; the attributed claims cannot be checked against any corpus document. The document does label it 'advocacy' and lists it in section 15 as pending primary verification, but the citation as printed points to a document the reader cannot retrieve.
+
+7. [PAGE_OFF] Section 10 W1: Benson Year 4 jump decomposed into escalation ($21M), scope ($17M), and a $14M 'budgeting error
+   cite: [bond-audit-bond-performance-audit-year-4 p32]
+   Figures are correct ($21.2M escalation, $17M scope changes, $14M budgeting error) but they are on form-feed page 14 of bond-audit-bond-performance-audit-year-4.txt (printed page 11), not page 32 (which is the Exhibit 12 budget-variance table).
+
+8. [PAGE_OFF] Section 10 W1: Center for Black Student Excellence $60M allocated, zero spent through February 2025, director 
+   cite: [bond-audit-bond-performance-audit-year-6 p19]
+   All substance verifies, but not on p19 (Lincoln section). The $60M/zero-expenses line is Exhibit 7 on p21; the narrative ('OSM has not spent any of the $60 million', footnote 25 'PPS hired a CBSE Director in Fal 2024', flagged in FY21-22 and FY22-23 audits plus this one) is on p33-34 of bond-audit-bond-performance-audit-year-6.txt.
+
+9. [PAGE_OFF] Section 10 W1: Cleveland and Ida B. Wells full-build estimates near $481M and $455M, re-targeted at $360M each
+   cite: [bond-audit-bond-performance-audit-year-6 p22; tscc-measure-26-259-review p8]
+   Figures fully verify in year-6 but on p26-28, not p22 (p22 is Jefferson): Cleveland $481M and $360M target on p27-28, IBW $455M/$360M/$340M on p28, Cleveland $340M on p28. Also note tscc-measure-26-259-review p8 announces a project-cost breakout table whose contents are missing from the text layer, so that cite is unverifiable as support for the dollar figures; year-6 p28 alone carries them.
+
+10. [PAGE_OFF] Section 10 W1: 'The technology program slipped four years'
+   cite: [bond-audit-bond-performance-audit-year-6 p27-29]
+   Verified ('OTIS extended the projected completion date to 2029, reflecting a cumulative four-year delay' from the planned December 2025) but on p32 of bond-audit-bond-performance-audit-year-6.txt (continuing to p33), not p27-29 (which cover Cleveland/IBW).
+
+11. [PAGE_OFF] Section 11 D6: 'small against a $65 million structural gap'
+   cite: [budget-fy2026-27-vol1 p36]
+   P36 has the reserves/General Fund figures but no $65M. The figure is on form-feed page 11 of budget-fy2026-27-vol1.txt: 'we are facing another deficit of more than 65 million dollars for the 27-28 fiscal year' (superintendent's message). Note it is the projected FY2027-28 gap, not the current-year gap ($56.3M); phrasing could make that explicit. Section 12 line 374 repeats the same wrong page.
+
+12. [PAGE_OFF] Section 11 D1: 'the pension reserve is already spent'
+   cite: [budget-fy2026-27-vol1 p133 area; tscc-review-fy2026 p10]
+   Claim verified by tscc-review-fy2026 p10 ('The PERS Rate Stabilization Fund budgeted $22.4 million ending fund balance in FY 2024-25. All of that balance is transferred to the General Fund in FY 2025-26 resulting in no ending fund balance'). But in budget-fy2026-27-vol1.txt the PERS Rate Stabilization Reserve Fund detail is on pages 138-140, not 'p133 area' (p133 is the Grants Fund).
+
+13. [OVERSTATED] Section 10 W3: 'a district claim of 65 central office positions cut in a year when central-function spending f
+   cite: [cbrc-2025-26-cbrc-proposed-budget-review p6]
+   Both numbers are on p6, but the 0.5% ($453.7M to $451.5M) decline is Function 2000, which the CBRC footnote explicitly defines as 'Support Services—representing central AND school-based supports'; the same footnote says Function 26000 (Central Support Services) 'was not clearly presented'. Calling it 'central-function spending' overstates the source; section 08 (line 258) states it correctly as Fu
+
+14. [OVERSTATED] Section 10 W3: MAP subscriptions 'duplicate a free state service' / 'a paid service duplicating a free state-a
+   cite: [cbrc-2026-27-cbrc-proposed-budget-review p10]
+   The $218K/year average is confirmed on p10, but the same page says 'presently ODE can only provide assessments for grades 3-8' and the CBRC proposes keeping MAP for K-2 — i.e., partial, not full, duplication. The 2025-26 review (p6) does recommend full discontinuation, so a fix is to hedge ('largely duplicates') or lean on the 2025-26 cite for the full-replacement framing.
+
+15. [UNVERIFIABLE] Section 10 W3: 'The Procedeo management contract ($61.5M over five years, per reporting)'
+   cite: per reporting (section 15: [news-opb-2026-05-13-contracts])
+   Procedeo appears nowhere in the corpus text files and the press source is not in the corpus. The document does label it 'per reporting', verdict 'Likely, pending one document', and lists it in section 15's pending table — internally honest, but unverifiable against the provided sources.
+
+16. [UNVERIFIABLE] Section 10 W4: district's internal performance audit office 'created in 2019, has produced roughly one report 
+   cite: no citation
+   No internal performance audit reports or any document describing that office exist in the corpus; the report-count, no-findings, and topic-coverage claims cannot be checked. Needs a source list or a request-item label.
+
+17. [UNVERIFIABLE] Section 11 D5: equity staffing set-aside 'Since 2013'
+   cite: uncited (adjacent cite [cbrc-2025-26-cbrc-proposed-budget-review p2] covers only the 8%-to-4% halving)
+   The 8%→4% K-8 halving is confirmed (cbrc-2025-26 p2, footnote 1), but the corpus dates the 8% allocation only to FY16-17 ('has held steady since FY16-17', cbrc-2023-24 line 385 and cbrc-2024-25 line 305). No corpus document supports a 2013 start.
+
+18. [UNVERIFIABLE] Section 11 D5: 'In October 2025 the Center for Individual Rights sued in federal court, alleging racial discri
+   cite: no citation
+   No corpus document mentions the lawsuit or the Center for Individual Rights; the filing date and plaintiff cannot be verified against the provided sources. An external/press citation label (as used for other secondary facts in section 15) is needed.
+
+19. [UNVERIFIABLE] Section 11 D7: 'the settlement added on the order of $58 million a year in ongoing cost'
+   cite: no citation
+   $58M/yr is the $175M-over-three-years press figure divided by 3; the press source [news-opb-2023-11-29-strike-faq] is not in the corpus, and section 15 itself lists the $175M as 'pending primary verification'. D7 presents the derived annual figure as 'what the record supports' without that label. The $830M General Fund comparator is fine (FY2023-24 adopted GF $833.8M per derived gf_series).
+
+20. [OVERSTATED] Section 11 D7: 'the district refused to give its own citizen committee the cost information'
+   cite: [cbrc-2024-25-cbrc-proposed-budget-review p11]
+   Minor: p11 verifies the CBRC 'repeatedly asked' and 'did not receive information sufficient' to advise on contract affordability, but never says the district refused. Section 07 (line 238) paraphrases it accurately; D7's 'refused' attributes intent beyond the source. Low priority.
+
+21. [PAGE_OFF] Sec 12 item 1: "The district projects another roughly $65 million gap [budget-fy2026-27-vol1 p36]"
+   cite: [budget-fy2026-27-vol1 p36]
+   The figure is on form-feed page 11 of budget-fy2026-27-vol1.txt (superintendent's message: "another deficit of more than 65 million dollars for the 27-28 fiscal year"), not page 36. Page 36 instead carries the GF totals ($868.6M -> $862.1M) and the $41.1M contingency. The same wrong p36 cite for the $65M figure is reused at document.md lines 240 and 364 (outside my sections) — fix all three to p11
+
+22. [OVERSTATED] Sec 13 C and Sec 14 #5: "The CBRC gets nine working days (documented in its own reports four years running)" /
+   cite: uncited in my sections; parallel claim at line 322 cites cbrc-2026-27-cbrc-proposed-budget-review
+   The nine-day figure is documented in three cycles, not four: cbrc-2026-27 review line 55 ("nine working days to evaluate a budget of $2.8 billion"), cbrc-2025-26 review lines 664-665 ("just nine days"), and the FY2024-25 draft report cbrc-draft-cbrc-budget-report.txt line 207 ("Nine days to review"). The FY2023-24 review says only "the condensed review time allotted" (line 46) with no day count. F
+
+23. [OVERSTATED] Sec 12 closing: "Oregon has never once funded to its own model"
+   cite: [news-opb-2026-08-12-qem]
+   Contradicted by a primary source in the project's own corpus: jpea-adequacy-report-2025.txt lines 69-78 states the 2025 Legislature provided $13.6B against the QEC's $13.5B need and that this "effectively closes the funding gap and allows for the full implementation of the QEM" for 2025-27. The never-once claim is at best contested (the JPEA and QEC disagree); state it as the commission's position
+
+24. [UNVERIFIABLE] Sec 12 closing: QEM commission said in August 2026 that schooling statewide needs about $2.5 billion more per 
+   cite: [news-opb-2026-08-12-qem]
+   The source is registry-only: sources.md line 192 lists news-opb-2026-08-12-qem as a live OPB URL with status "page" — not fetched or checksummed, no corpus text file exists. The only corpus echo of $2.5B is the registry's own title line ("+$2.5B to stand still"), written by the same project. A load-bearing figure resting on an unfetched source; fetch/archive the article or label the figure press-r
+
+25. [UNVERIFIABLE] Sec 12 closing: "The Education Stability Fund that PPS begged the state to tap in spring 2026, and was refused
+   cite: none
+   The ask is supported (cbrc-2026-27-cbrc-proposed-budget-review.txt lines 445-451: CBRC supports "the district's ongoing advocacy calling on the state to provide one-time dollars from the Education Stability Fund"), but nothing in the corpus documents a refusal. "Was refused" is an uncited factual claim; source it or soften to "was not granted as of this writing."
+
+26. [UNVERIFIABLE] Sec 12 item 2: "Up to 20 schools named, effective 2027-28"
+   cite: none
+   No citation here or at the parallel passage (document.md line 268, "by late August 2026, up to twenty", also uncited). Grep across the entire text corpus finds no document supporting a 20-school count; the only related registry source is ppsdata.info, which sources.md itself marks "never citable." Needs a citable source or an explicit press-reported label like the other pending figures in section 
+
+27. [OVERSTATED] Sec 13 D: "The FY2021-22 bond performance audit is absent from the district's audit index although the auditor
+   cite: none (Ask R2; gaps ledger G5)
+   The corpus already holds this audit: bond-audit-bond-performance-audit-year-4.txt is the "Annual Bond Performance Audit – Fiscal Year 2021/2022", and sources.md line 68 lists it as status "fetched" from a live www.pps.net resource-manager URL — i.e., a district-hosted copy exists and is in hand, which undercuts both "absent" framing and R2's ask for the document itself. The index-page-absence and 
+
+28. [UNVERIFIABLE] Sec 13 A: "No monthly or quarterly financial statements exist anywhere in public [pps.net financial-reports pa
+   cite: [pps.net financial-reports page, verified 2026-08-29]
+   The bracketed cite is a live-web inspection, not a corpus document; the only record is the authors' own gaps ledger (G2). A negative existence claim cannot be checked from the corpus. Consider archiving a dated snapshot of the financial-reports page as evidence for this load-bearing claim.
+
+29. [UNVERIFIABLE] Sec 13 C: OIPA "created in 2019, has published roughly one report a year, none on budgeting, forecasting, posi
+   cite: none
+   All 13 OIPA entries in sources.md (lines 222-240) are status "pending" — none fetched — so the "none on..." characterization rests on titles of unread documents, and one title, "Comprehensive Performance Audit of the Portland Public Schools," could plausibly cover central-office cost. The 2019 creation date and the one-per-year cadence appear nowhere in the corpus (13 registry items over ~7 years 
+
+30. [UNVERIFIABLE] Sec 13 D / Sec 15: "roughly $175 million strike settlement" figure "exists only in press statements"
+   cite: [news-opb-2023-11-29-strike-faq]
+   Source registered (sources.md line 187) as a live OPB URL, status "page", not fetched — the $175M figure appears in no corpus text. The document does label it press-only/pending verification (honest handling), but the cite cannot be checked as given. Low severity; fetch/archive the article. Internally consistent with D7's ~$58M/yr x 3 years.
+
+31. [UNVERIFIABLE] Sec 15: "$61.5 million Procedeo contract value (press [news-opb-2026-05-13-contracts])"
+   cite: [news-opb-2026-05-13-contracts]
+   Source registered (sources.md line 190) but unfetched; its registry title describes the purchased-services +61.9%/$437M story and does not carry $61.5M or Procedeo. The only corpus echo is the project's own records-request note R10 ("$61.5M/5yr"). Labeled pending in the doc; low severity, but the figure currently traces to nothing checkable.
+
+32. [UNVERIFIABLE] Sec 15: "149 added central positions (union analysis [pat-funding-memo])"
+   cite: [pat-funding-memo]
+   sources.md line 53 lists pat-funding-memo as a live pdxteachers.org page, status "page", not fetched; the 149 figure appears in no corpus text. The doc labels it advocacy/pending — honest handling — but the cite cannot be verified as given.
+
+33. [UNVERIFIABLE] Sec 13 D: "the state's copy of its own 2019 PPS audit is currently a dead URL"
+   cite: none
+   The registry logs only pps.net copies of the 2019 audit (sources.md lines 255-256, both "fetched" with live links); no sos.oregon.gov URL appears anywhere in sources.md to substantiate the dead-link claim. Log the state URL (and a Wayback snapshot) or drop the specific.
+
+34. [OVERSTATED] Sec 15: "an audited ACFR printing an impossible 52,380 enrollment for 2022-23... flag it here for the district
+   cite: none in sec 15 (tensions T-7 gives acfr-fy2025 p146)
+   Minor. The 52,380 figure is real and impossible (acfr-fy2025.txt, statistical-section enrollment schedule, 2023 column amid neighbors of 44,771-45,497; the drop is documented in DERIVATION_NOTES.md). But it sits in the ACFR's statistical section, which the independent auditor's opinion does not cover — framing it as having "survived audit" and as a matter for the audit firm overstates the auditor'
+
+35. [WRONG] Front matter: 'In seven years Portland Public Schools lost one student in eight'
+   cite: (uncited; front matter says sourced in sections 01-10)
+   The document's own cited endpoints (section 01 #7: 49,478 in FY2019-20 [acfr-fy2020 p140] to 42,304 forecast FY2025-26 [tscc-review-fy2025 p4]) give a 14.5% loss — one student in seven, over six years not seven. Even on the internally consistent TSCC chart series (48,653 to 42,304, tscc-review-fy2025 p4) the loss is 13.1% over six years; extending to the seven-year FY2026-27 forecast (41,341 on th
+
+36. [OVERSTATED] Front matter: 'began planning to close as many as 20 schools ... (Every figure in that sentence is sourced in 
+   cite: (promised source in sections 01-10)
+   The 20-schools figure appears nowhere in sections 01-10. It surfaces only in section 12 ('Up to 20 schools named, effective 2027-28') with no corpus citation at all. The parenthetical guarantee is false for this figure; either add a citation or drop the guarantee.
+
+37. [PAGE_OFF] Section 01 #4: '79.6% of General Fund requirements is personnel'
+   cite: [tscc-review-fy2026 p10]
+   Not on p10 (p10 discusses all-funds Personnel Services of $821.2M = 42.1% of all expenditures). The 79.6% General Fund statement is on tscc-review-fy2026 p15: 'personnel, which make up over 79.6% of General Fund requirements.' Fix the page to p15.
+
+38. [PAGE_OFF] Section 01 #5: '$53.4M projected ... up from $20.9M in FY2019-20'
+   cite: [budget-fy2026-27-vol1 p28; tscc-annual-report-2024-25-general p50]
+   $53.4M is on vol1 p28, but the $20.9M FY2019-20 figure is on neither cited page: vol1 p28's Measure 5 series starts at 2022-23, and tscc-annual p50 covers only FY2024-25/FY2023-24 local-option compression. The $20.9M ($-20,910,923) is printed at tscc-review-fy2024 p3. Same problem for section 05's compression table rows 2019-20/2020-21/2021-22 (20.9/23.0/24.8): they live at tscc-review-fy2024 p3 a
+
+39. [PAGE_OFF] Section 01 #10: 'About $65M more must come out of the FY2027-28 budget'
+   cite: [budget-fy2026-27-supt-message; budget-fy2026-27-vol1 p36]
+   The supt-message cite is good ('another deficit of more than 65 million dollars for the 27-28 fiscal year'). But vol1 p36 contains no $65M figure — the same sentence appears in vol1 at p11. Note the source says 'more than 65 million'; 'about $65M' slightly softens it. Fix the vol1 page to p11 (section 11's D7/D6 use of the same p36 cite has the identical problem).
+
+40. [OVERSTATED] Section 01 #7 / front matter: pairing '42,304 students forecast for FY2025-26' with 'down from 49,478 in FY201
+   cite: [tscc-review-fy2025 p4; acfr-fy2020 p140]
+   Both figures verify individually, but they are different series: 49,478 is the ACFR October unduplicated headcount including charters (acfr-fy2020 p140), while 42,304 is a point on the TSCC review chart whose own 2019-20 value is 48,653 and whose series definition is unlabeled (the project's own enrollment.csv notes flag that this chart's values differ from both ADMr and headcount across editions)
+
+41. [WRONG] Section 02: 'In total: 115 documents, checksummed'
+   cite: (uncited)
+   The registry (research/pps-budget/sources.md, lock date 2026-08-30) says 'Totals: 116 fetched, 2 archived, 199 registered', and the corpus text directory holds 116 files. Stale count; should be 116 (or 118 with archived).
+
+42. [OVERSTATED] Section 02: 'Twenty-one consecutive annual budget books, FY2006-07 through FY2026-27' presented as documents t
+   cite: [pps.net annual-budgets archive]
+   sources.md lists budget-fy2006-07-book through budget-fy2015-16-book all as status 'pending' — never fetched, never checksummed, absent from the corpus text directory, which starts at budget-fy2016-17-book. Only 11 of the 21 books were actually read. The sentence claims the analysis rests on all 21; it rests on 11 plus links to 10 more.
+
+43. [UNVERIFIABLE] Section 02: 'Audited Annual Comprehensive Financial Reports back to fiscal 2002'
+   cite: (uncited)
+   The registry's earliest ACFR entry is acfr-fy2009, and everything before fy2016 is status 'pending' (not fetched). Nothing in the project substantiates ACFRs 'back to fiscal 2002'. The qualifier 'of which we worked through FY2016 to FY2025' is accurate; the 2002 claim is not supported by the registry.
+
+44. [WRONG] Section 02: 'Thirteen independent bond performance audits spanning the 2012, 2017, and 2020 construction bonds
+   cite: (uncited)
+   The registry's bond-audit group holds 21 fetched documents: 4 construction-program audit volumes, 7 annual performance audits (Year 1 Phase 1 and 2, Years 2-6), and 10 status-of-implementation follow-up reports. No natural grouping yields 13 audits — it is 11 actual audits plus 10 follow-ups, or 21 documents. Recount and restate.
+
+45. [OVERSTATED] Section 02: 'The Portland State University enrollment forecasts' listed among the paper trail the analysis res
+   cite: (uncited)
+   All three PSU forecast entries in sources.md (psu-forecast-2012, psu-forecast-2022, psu-forecast-2024) are status 'pending' — none was fetched and none exists in the corpus. Claiming to have read them overstates the record; section 07's forecast claims should be re-sourced or the listing amended.
+
+46. [PAGE_OFF] Section 04: 'The Legislative Revenue Office states it flatly: if local revenues are high, state aid is low...'
+   cite: [lro-5-24-equalization p7]
+   The sentence 'If local revenues are high, state aid is low. If local revenues are low, state aid is high.' is on lro-5-24-equalization p6, not p7 (p7 has the two identity formulas and the override passage). Off by one page.
+
+47. [UNVERIFIABLE] Section 04: 'The formula even counts revenue a district chooses not to collect against it'
+   cite: [ORS 327.011; lro-5-24-equalization p7]
+   Nothing on lro p7 — or anywhere in the LRO report's text layer — says the formula counts revenue a district chooses not to collect. The nearest statements are that 'local option taxes above limit' count as local revenue (p4) and that 'not each of these revenue sources is actually collected at the local level' (p4, meaning some are state-collected, a different point). Either find the statutory lang
+
+48. [UNVERIFIABLE] Section 04: 'An English language learner adds 0.5. Students in poverty, foster care, and several other categor
+   cite: [lro-5-24-equalization p9-11]
+   The LRO weights table referenced on p9 ('The table below shows the weights') did not survive into the text layer, and the values 0.5 and 0.25 appear nowhere in the file's text. The weights are conventionally correct, but they cannot be verified from the cited pages of this corpus. Also note the disability +1.0 weight is stated on p8, just outside the cited p9-11 range.
+
+49. [PAGE_OFF] Section 04 table: 'GO bond levies | $184.25M levied for debt'
+   cite: [budget-fy2026-27-vol1 p317]
+   $184,250 (thousands) does not appear on p317 (Resolution 7326's recitals page). It appears on p224 (Total Bond Taxes Levied, 2026-27 EST.), p318 (the resolution's continuation), and pp314/323/325. Cite p224 or p318.
+
+50. [PAGE_OFF] Section 04: 'a statewide appropriation of $11.36 billion for the biennium'
+   cite: (uncited)
+   No citation given and the figure is not an echo of anything cited in sections 01-05. It is verifiable at tscc-review-fy2026 p8 ('$11.36 billion state budget for K-12 education funding to be distributed at 49/51% split over two years'). Add that cite.
+
+51. [UNVERIFIABLE] Section 05: bond measures approved 'at 66 percent, 66 percent, 75 percent'
+   cite: [tscc-measure-26-215-review p2] (covers only part of the sentence)
+   66.2% (Nov 2012) and 66.0% (May 2017) verify on the cited p2 election-results table, as does the 668-vote 2011 loss. But that table stops at 2017; the 75% figure for the November 2020 measure (26-215) appears nowhere in the corpus that I could find (real-world result was ~74.8%, so the number is plausible but unsourced). Needs a citation or an 'approximately' with source.
+
+52. [OVERSTATED] Section 05 compression table (2019-20 $20.9M ... 2024-25 $42.6M, 2026-27 $53.4M) presented as the local-option
+   cite: [tscc-annual-report-2024-25-general p50; tscc-review-fy2024 p6; budget-fy2026-27-vol1 p28]
+   Two problems. (1) Metric: every value in the table is the TOTAL Measure 5 loss across all PPS tax lines ('Less Measure 5 Adjustments' / 'Measure 5 Loss'), not local-option-only compression — the document itself shows the levy-only FY2024-25 loss was $34.2M against the table's $42.6M (tscc p6 says roughly 88% of PPS compression hits the levy, i.e., most but not all). Placed inside the levy-leak nar
+
+53. [PAGE_OFF] Section 05: 'the levy will be imposed at $149.9 million and collected at $103.9 million'
+   cite: [budget-fy2026-27-vol1 p28, p224]
+   $149.9M (149,921) is on p224. But $103.9M (103,938) appears on neither cited page — it is on pp33, 37, 91, 94, 102, 108, 111, 118 of the same volume (e.g., p108's General Fund resources, 'Current Year Local Option Property Taxes' 103,938 adopted 2026-27). Add one of those pages.
+
+54. [PAGE_OFF] Section 05: homeowner at $300,000 assessed value pays 'roughly $2,900 a year across all four PPS lines'
+   cite: [tscc-review-fy2026 p8]
+   tscc-review-fy2026 p8 carries only the title 'FY 2025-26 PPS Approved Budget Tax Levies and Impact on Average Homeowner' — the homeowner table itself is an image with no extractable figure, and no $2,9xx value exists in that document's text. The figure verifies at budget-fy2026-27-vol1 p226: $2,932 tax burden on $300,000 average AV at the 2026-27 total rate of $9.7727 (arithmetic checks: 9.7727 x 
+
+55. [WRONG] Section 07: cumulative-reductions claim of "about $115 million and counting"
+   cite: [tscc-review-fy2026 p5]
+   No $115M figure appears anywhere in tscc-review-fy2026.txt (p5 is school-staffing impacts). The only "$115 million" in the corpus is the ESSER total awarded to the District AND its partners (budget-fy2023-24-vol1 line 7228: 'projected overall ESSER funding awarded to the District and its partners is almost $115 million'), which is a different thing entirely. No corpus document states ~$115M in cum
+
+56. [WRONG] Section 08: "Classroom staffing absorbed cuts at roughly four times the percentage rate of central business su
+   cite: (follows from the tscc-review-fy2026 pp11-12 sentence)
+   By the doc's own numbers: regular instruction -12.2% vs central business support -5.5% (verified against budget-fy2025-26-vol1 p231: 2,467.62 to 2,166.69 and 715.45 to 676.15). 12.2/5.5 = 2.2x, not "roughly four times." Should read roughly double/2.2 times.
+
+57. [WRONG] Section 08: "roughly two-thirds of it is bond construction contracting ... about $147 million of the increase 
+   cite: [cbrc-2026-27-cbrc-proposed-budget-review p9]
+   The CBRC report contains NO capital/operational decomposition of the purchased-services increase (searched whole file; only mentions of capital construction are on pp3-4 re: per-pupil transparency, and p9 says 'a significant portion of this increase is to purchase non-classroom or building services'). The doc's two figures also contradict each other: two-thirds of the $167.1M increase (~$111M capi
+
+58. [WRONG] Section 07: "Real General Fund purchasing power hit its all-time peak in 2021-22, the same year enrollment rec
+   cite: (table, derived: gf_series)
+   Contradicts the doc's own table and its own sentence two paragraphs up ('Enrollment dropped 2,164 students in 2020-21 alone'). Steepest single-year drop was into 2020-21 (49,478 to 47,314 = -2,164); 2021-22's drop was 47,314 to 45,497 = -1,817. Real GF peak in 2021-22 is correct; the 'same year ... steepest slide' clause is not.
+
+59. [OVERSTATED] Section 08: "Of the $862.1 million General Fund: 79.6 percent of requirements is personnel"
+   cite: [tscc-review-fy2026 p10]
+   Two problems. (1) The 79.6% figure is on tscc-review-fy2026 p15, not p10. (2) It is TSCC's figure for the FY2025-26 ($868.6M) budget, but the doc attaches it to the FY2026-27 $862.1M GF. The district's own FY2026-27 book states salaries+benefits = $680.5M / 78.9% of GF (budget-fy2026-27-vol1 p107 narrative, per data/gf_requirements_object.csv note). Use 78.9% [budget-fy2026-27-vol1 p107] for FY202
+
+60. [PAGE_OFF] Section 08: "$510.3 million of which remained outstanding at mid-2025" (pension obligation bonds)
+   cite: [tscc-review-fy2026 pp10-11, 16-17]
+   The $510.3M figure is not in tscc-review-fy2026 anywhere (p17 mentions the 2002/2003/2021 pension bonds but no balance). The figure is real: acfr-fy2025 p37 ('limited tax pension and refunding bonds ($510.3 million)') and p122 (limited tax pension bonds payable $510,330K at 6/30/2025). Re-cite to acfr-fy2025 p37 or p122.
+
+61. [PAGE_OFF] Section 07: "The district's own projection for FY2027-28: another roughly $65 million"
+   cite: [budget-fy2026-27-vol1 p36]
+   p36 covers contingency and the GF total; the $65M projection is on budget-fy2026-27-vol1 p11: 'we are facing another deficit of more than 65 million dollars for the 27-28 fiscal year.' Fix page to p11.
+
+62. [PAGE_OFF] Section 07: "FY2026-27: a $56.3 million gap"
+   cite: [budget-fy2026-27-vol1 p92; tscc-review-fy2026 pp1-11]
+   "56.3" appears in neither cited document (searched both files fully). It appears 22 times in budget-book-fy2026-27-proposed-vol1 and in cbrc-2026-27-cbrc-proposed-budget-review p9 ('the $56.3 million budget gap that the District identified in its proposed budget'). The other figures in the sentence (322 positions, 5,513 FTE) ARE on budget-fy2026-27-vol1 p92. Add a cite for the gap figure. Note als
+
+63. [PAGE_OFF] Section 08: FTE-by-function series (regular instruction 2,467.6 to 2,166.7 etc., FY2021-22 actuals to FY2025-2
+   cite: [tscc-review-fy2026 pp11-12]
+   The TSCC review's FTE chart on p11 is image-only in the text layer; none of the doc's numbers are verifiable there. All figures verify exactly against budget-fy2025-26-vol1 p231 (form-feed; printed p224), 'FTE BY MAJOR FUNCTION AND EMPLOYEE TYPE': 2,467.62 to 2,166.69 (-12.2%), special programs 1,059.26 to 1,094.09 (+3.3%), school admin 451.62 to 416.01 (-7.9%), business 715.45 to 676.15 (-5.5%). 
+
+64. [OVERSTATED] Section 07: "As of February 2024, $36.3 million of ESSER III was still unspent, seven months before the federa
+   cite: [tscc-review-fy2024 p7]
+   The cited source is TSCC's June 2023 review of the FY2023-24 budget; p7 says only 'The district estimates $36.3 million available for FY 2023-24.' It contains no February 2024 date, no 'still unspent' status, and no deadline countdown. The doc converts a mid-2023 budget estimate into a February 2024 spending fact. Either find a source for the Feb 2024 status or restate as the FY2023-24 budgeted ES
+
+65. [UNVERIFIABLE] Section 07: "roughly $107.5 million of federal ESSER relief flowed in across three tranches"
+   cite: [pps.net ESSER overview; tscc-review-fy2024 p7]
+   $107.5M appears nowhere in tscc-review-fy2024 (the p7 ESSER chart is image-only in the text layer) nor anywhere else in the corpus as an ESSER total; the only $107.5M in the corpus is an unrelated expense-increase figure (acfr-fy2021 p32). The corpus itself says ESSER awarded to 'the District and its partners' was 'almost $115 million' (budget-fy2023-24-vol1 line 7228, also budget-fy2022-23-vol1).
+
+66. [OVERSTATED] Section 06: "its last three PPS certification letters contained no objections"
+   cite: [tscc-review-fy2026 p17-18]
+   Cited pages support only the FY2025-26 letter ('propose the Certification Letter contain no recommendations or objections', p18). The claim is in fact true across three years, but needs the other two cites: tscc-review-fy2025 p16 and tscc-review-fy2024 p17 contain the equivalent statements. Add them.
+
+67. [OVERSTATED] Section 06: "The committee has asked for more time four years running"
+   cite: (uncited)
+   Explicit requests for more time are documented in three reports: cbrc-2024-25 p4 ('would benefit from additional time... Nine days to review'), cbrc-2025-26 p12, cbrc-2026-27 p2. The cbrc-2023-24 report asks only for 'additional facilitated work sessions that allow for more in depth review' - a related but weaker ask. Say three years, or hedge the fourth.
+
+68. [UNVERIFIABLE] Section 07 strike paragraph: "nearly four instructional weeks", "cumulative 13.8 percent cost-of-living increa
+   cite: (uncited)
+   None of these figures appear in the corpus: no '13.8%' COLA anywhere (searched all CBAs, TSCC reviews, budget books; cba-pat-2023-2026.txt exists but the doc doesn't cite it - the 13.8% could potentially be derived from its salary schedules but is not stated), no '$175 million' settlement cost, no strike-duration figure. These are presented as fact with no citation. Either cite cba-pat-2023-2026 f
+
+69. [UNVERIFIABLE] Sections 07 and 09: kindergarten capture rate "fell from roughly 80 percent to about 70 percent and stayed the
+   cite: (uncited)
+   No kindergarten capture-rate figures exist anywhere in the corpus (searched all files for 'capture rate'/'kindergarten' with percentages; only hit is an unrelated Roosevelt HS capture-rate line in a bond audit). Stated as fact twice with no citation.
+
+70. [UNVERIFIABLE] Section 07: "in February 2026 the district disclosed a roughly $10 million hole in the current year and offere
+   cite: (covered only by the sentence-end cite [budget-fy2026-27-vol1 p92; tscc-review-fy2026 pp1-11], which does not contain it)
+   No $10M mid-year figure, February 2026 date, or furlough offer appears in the corpus ('furlough' appears only in pre-2021 documents and the SEIU CBA). cbrc-2026-27 p5 confirms 'the mid-year deficit in the 2025-26 budget' existed but gives no amount. The specific figures need an external citation.
+
+71. [UNVERIFIABLE] Section 06: FY2026-27 adoption details - roughly six-hour session, one abstention, AI-contracts pause, discret
+   cite: [news-opb-2026-06-25-adoption]
+   The cited doc is not in the corpus (no news files exist in runtime-data/pps-budget/text/). The June 23, 2026 adoption date itself IS corroborated (budget-fy2026-27-calendar-amended: June 23, 2026 TSCC hearing + board adopts budget), but none of the session details, amendments, or the $13.1M figure can be checked against anything on disk.
+
+72. [UNVERIFIABLE] Section 08: FY2026-27 cut package "about $20 million ... to central office against $23 million ... to schools"
+   cite: (uncited; adjacent claims cite CBRC/TSCC)
+   The FY2025-26 half ($17M central / $23M schools) verifies at tscc-review-fy2026 p4, but no corpus document contains a FY2026-27 $20M/$23M split or a 74-FTE central-office figure. The FY2026-27 adopted book instead reports 'Building Supports and Central Office: 142 FTE reduced' and 'Schools & Specialized Programs: 180 FTE reduced' (budget-fy2026-27-vol1 lines 715-721) and '96 Central Office FTE' re
+
+73. [UNVERIFIABLE] Section 09: "forecast by Portland State's demographers to shrink another 12 to 14 percent by the mid-2030s, to
+   cite: (uncited)
+   The corpus confirms PSU PRC supplies the district's projections (budget-fy2026-27-vol1 line 2621) but contains no mid-2030s numbers; the longest corpus forecast is TSCC's chart ending 2028-29 at 39,945 (tscc-review-fy2026 p4, per data/enrollment.csv). The 12-14% / 37,000-39,000 figures cannot be checked against anything on disk (note: they are internally consistent only if the base is the 2024-25 
+
+74. [UNVERIFIABLE] Section 09: rightsizing "initially framed around five to ten schools and, by late August 2026, up to twenty, w
+   cite: (uncited)
+   The corpus confirms consolidation planning exists in general terms (budget-fy2026-27-supt-message: 'We will need to plan for consolidation and closure') but contains no school counts, no five-to-ten or up-to-twenty framing, and no timeline. All specifics are uncited news-level claims.
+
+75. [OVERSTATED] Section 07 table footnote: "Enrollment: ACFR statistical series through 2024-25 [acfr-fy2025 p146]" - specific
+   cite: [acfr-fy2025 p146]
+   acfr-fy2025 p146 actually prints 52,380 for 2023 ('Total All'), an apparent source misprint (elementary rows Irvington/Kelly inflated - see data/derived/DERIVATION_NOTES.md, which says 'possible source typo, flag in document'). The 44,548 shown is from budget-fy2024-25-vol1 p27 / TSCC's FY2025 chart, not the ACFR. The doc neither uses the ACFR number nor discloses the substitution the derivation n
+
+76. [WRONG] Section 09: "shrunk 16 percent from its 2018-19 peak"
+   cite: (echoes section 07 table)
+   Minor: by the doc's own table the enrollment peak was 2017-18 (49,557), not 2018-19 (49,550). The 16% magnitude is fine (49,550 to 41,341 = -16.6%). Change to 2017-18 or 'pre-pandemic peak'.
+
+77. [OVERSTATED] Section 08: GF purchased services "hovering between 12 and 13 percent of the General Fund throughout"
+   cite: [derived: purchased_services_gf]
+   Minor: the derived CSV itself shows 13.3% in FY2023-24 and 13.0% in FY2024-25 (range 12.1-13.3). The endpoints $85.9M/$110.7M verify against the budget books. Say 'between 12 and a bit over 13 percent'.
+
+78. [UNVERIFIABLE] Section 08: "the district put the FY2025-26 impact alone at roughly $32 million" (PERS rate jump)
+   cite: (uncited)
+   No $32M PERS-impact figure exists in the corpus. The only '$32.0 million' in the FY2025-26 books is January 2024 ice-storm damage (budget-fy2025-26-vol1 line 944) - a risky near-collision. The corpus PERS offset figure is the 'just under $24.0 million' stabilization-fund transfer (tscc-review-fy2026 p10). Source the $32M or drop it.
+
+79. [UNVERIFIABLE] Section 06: quote "The Board of Education, sitting as the Budget Committee, reviews and discusses the Proposed
+   cite: [pps.net annual-budgets page]
+   The cited web page is not in the corpus. The budget books contain near-identical wording - 'The Board, sitting as the Budget Committee, reviews and discusses the...' (budget-fy2026-27-vol1) - without 'of Education'. Substance corroborated; the exact quoted wording and source cannot be verified. Consider citing budget-fy2026-27-vol1 instead with the book's exact wording.
+
+80. [UNVERIFIABLE] Section 06 background: "the district's fourth leader in three years", "board seated four new members in July 2
+   cite: (uncited)
+   Corpus corroborates only parts: Armstrong as superintendent (budget-fy2026-27-vol1 p~39), Sandy Husk as Interim Superintendent (acfr-fy2024), Guerrero in earlier ACFRs, and the equity policy's 2011 adoption (Resolution No. 4459, 6-13-11, budget-fy2026-27-vol1 line 4078). Not verifiable anywhere in corpus: 'fourth leader in three years' (corpus shows three: Guerrero, Husk, Armstrong - a fourth/acti
