@@ -36,7 +36,7 @@ document census and governance research (full detail in the plan archive).
 
 ## Archiving status (2026-08-29)
 Wayback Save-Page-Now is rejecting anonymous saves from this IP (429, tiny
-quota). 1 snapshot recorded; the rest are marked FAILED in
+quota). 69 snapshots recorded (as of 2026-08-30); the rest are marked FAILED in
 `ingest/pps-budget/archives.lock.json` and are retryable with
 `npx tsx ingest/pps-budget/archive.ts --retry` once the quota window resets
 (try again after a few hours, or authenticate SPN with an archive.org account
