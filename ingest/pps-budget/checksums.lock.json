@@ -1,0 +1,823 @@
+{
+  "lockedAt": "2026-08-30",
+  "files": {
+    "budget-fy2026-27-vol1": {
+      "sha256": "2fce98f28a029924711deec199804eea8bd3870c6a6184ae97956fa173a08349",
+      "bytes": 32639912,
+      "pages": 326,
+      "url": "https://www.pps.net/fs/resource-manager/view/0defe213-e66e-4416-adaf-97add47ed00f",
+      "waybackUrl": "",
+      "waybackTs": "FAILED",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-book-fy2026-27-proposed-vol2": {
+      "sha256": "884bf6586a993094f57c652638abc538fead9708f1def091ac93cd5421615c6b",
+      "bytes": 5033871,
+      "pages": 178,
+      "url": "https://resources.finalsite.net/images/v1778178861/ppsnet/qkwu0qka1hre112vdb2b/2026-27ProposedBudgetVolume2-Updated20260506.pdf",
+      "waybackUrl": "https://web.archive.org/web/20260813194516/https://resources.finalsite.net/images/v1778178861/ppsnet/qkwu0qka1hre112vdb2b/2026-27ProposedBudgetVolume2-Updated20260506.pdf",
+      "waybackTs": "20260813194516",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2025-26-vol1": {
+      "sha256": "e8577b412124266663fe4a67a707c54e5c17f068e5f2b7b5bf3760d40f9ace29",
+      "bytes": 27123608,
+      "pages": 324,
+      "url": "https://www.pps.net/fs/resource-manager/view/a4e960fb-e321-4297-bd2e-587394969d50",
+      "waybackUrl": "",
+      "waybackTs": "FAILED",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2025-26-vol2": {
+      "sha256": "59e0d6095e37a757b7d68a97195d35a622ad4beaff6b95fc8d1b7f3a2289d20e",
+      "bytes": 4914588,
+      "pages": 176,
+      "url": "https://www.pps.net/fs/resource-manager/view/8a8b05ec-4ba4-4c3f-acbb-fbab70f3b435",
+      "waybackUrl": "",
+      "waybackTs": "FAILED",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2024-25-vol1": {
+      "sha256": "4d68aa2cb525913abefe8b7d90762db153be899462b968f8461b76b00b217f6a",
+      "bytes": 11239683,
+      "pages": 310,
+      "url": "https://www.pps.net/fs/resource-manager/view/38bf7c33-3420-459b-93f4-09e789fa9ed1",
+      "waybackUrl": "",
+      "waybackTs": "FAILED",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2024-25-vol2": {
+      "sha256": "dccf83d866cfb74380b30a70c21dc6173d3986e6730a86c950a5fe2fa77265d8",
+      "bytes": 4259541,
+      "pages": 177,
+      "url": "https://www.pps.net/fs/resource-manager/view/b6c7ffc2-b268-42c3-8537-2528c27878ed",
+      "waybackUrl": "",
+      "waybackTs": "FAILED",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2023-24-vol1": {
+      "sha256": "ffce7f1c9883d461ce5b453173aac83d22e64906358966a35582d32102ad601b",
+      "bytes": 19683978,
+      "pages": 305,
+      "url": "https://www.pps.net/fs/resource-manager/view/27c166f6-c6e0-4ea7-920f-2c2750cbf9e9",
+      "waybackUrl": "",
+      "waybackTs": "FAILED",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2023-24-vol2": {
+      "sha256": "baf08f723cc4048d7077e528af5fe38d625353a52b05421fbcc4a70035977044",
+      "bytes": 3060371,
+      "pages": 180,
+      "url": "https://www.pps.net/fs/resource-manager/view/a7f62c8e-563c-44b8-b42d-34fa7471b297",
+      "waybackUrl": "",
+      "waybackTs": "FAILED",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2022-23-vol1": {
+      "sha256": "9c8e94e4c1cde1da24e27f863a31213c7d37ef0a4971fcc1a6e7460a110e3fb8",
+      "bytes": 26031652,
+      "pages": 364,
+      "url": "https://www.pps.net/fs/resource-manager/view/dfc773b4-7ef2-4ede-8b78-68ce71989e1b",
+      "waybackUrl": "",
+      "waybackTs": "FAILED",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2022-23-vol2": {
+      "sha256": "fdb3a2dbf6d68f836577d50cbec5f3bd2366598249346cd67833ecbea5938ceb",
+      "bytes": 5519717,
+      "pages": 180,
+      "url": "https://www.pps.net/fs/resource-manager/view/fc004c0a-4ce1-4381-810e-e7b7f76f8472",
+      "waybackUrl": "",
+      "waybackTs": "FAILED",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2021-22-vol1": {
+      "sha256": "643bd93f199dfd8b82f83cea4c05a6de2bf99eb322ecd7b7caf727e142132202",
+      "bytes": 17131255,
+      "pages": 381,
+      "url": "https://www.pps.net/fs/resource-manager/view/7e4b175c-db12-421e-b034-82bcff61259b",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2021-22-vol2": {
+      "sha256": "b18269f09f47779ec21ac9da347829617e977ba4ac7d7103aa60b078a2d9ab27",
+      "bytes": 3189636,
+      "pages": 176,
+      "url": "https://www.pps.net/fs/resource-manager/view/f3e11cbc-86ba-4e88-8cda-041114995978",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2020-21-vol1": {
+      "sha256": "3ebf24dc9d5aeb133c94617562331755c1d38fc06307c276afc5fa4d583ddcb4",
+      "bytes": 17589082,
+      "pages": 326,
+      "url": "https://www.pps.net/fs/resource-manager/view/07f9bdbb-f17e-4043-ba96-246f4e14011f",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2020-21-vol2": {
+      "sha256": "688939496acb123012ae57bb264060b025083c293de799e2a34d20cec1efc04a",
+      "bytes": 4582321,
+      "pages": 175,
+      "url": "https://www.pps.net/fs/resource-manager/view/33458ded-caed-4f72-b869-18d5219fbb3e",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2019-20-book": {
+      "sha256": "ac813fc5e2dfda29456e6f60cf2f675e381bc3d3da44662c92e837fe86bf78bb",
+      "bytes": 21995008,
+      "pages": 417,
+      "url": "https://www.pps.net/fs/resource-manager/view/bd231239-df05-45d5-9afb-238f39c9d635",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2018-19-book": {
+      "sha256": "691ee1e85a22959015d8db7921bed30fbe6612a5ff2fbbe2daa253d6169fdc71",
+      "bytes": 6800540,
+      "pages": 213,
+      "url": "https://www.pps.net/fs/resource-manager/view/53406686-6edd-4e08-908b-4068bcc0a666",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2017-18-book": {
+      "sha256": "cf71f810e27c99546c8e00fa004f2bc340178eea2d39093e2ba17096507bc340",
+      "bytes": 5605035,
+      "pages": 213,
+      "url": "https://www.pps.net/fs/resource-manager/view/5cc21719-5d49-4249-acf7-04799fe669b4",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2016-17-book": {
+      "sha256": "8fc36a998f239bb91baec0d7e34bf570995dda36fae57672cd71f203c1a7900d",
+      "bytes": 6032848,
+      "pages": 217,
+      "url": "https://www.pps.net/fs/resource-manager/view/a925b56b-0de4-43e5-974a-daca408b8294",
+      "fetchedAt": "2026-08-30"
+    },
+    "acfr-fy2025": {
+      "sha256": "9fa09ac47c3b904c16cbe4c683e475d140cb611ab01ad2a339d36c99b7c35d8c",
+      "bytes": 24825649,
+      "pages": 170,
+      "url": "https://www.pps.net/fs/resource-manager/view/341b8773-a285-4c2b-ba40-103391aed82b",
+      "fetchedAt": "2026-08-30"
+    },
+    "fy25-acfr-memo-fyundefined": {
+      "sha256": "bc237179a562d8f7c2f717099f922b463c9cc1f89d2249b7c5260c2f448cf176",
+      "bytes": 147404,
+      "pages": 8,
+      "url": "https://www.pps.net/fs/resource-manager/view/11756a72-66a0-4faa-a425-2cc1bbc8bc65",
+      "fetchedAt": "2026-08-30"
+    },
+    "acfr-fy2024": {
+      "sha256": "4644b3670fb7218b4b0f5187f4d770b0c887b9eaa255716658cfc4749f11d50e",
+      "bytes": 19504442,
+      "pages": 161,
+      "url": "https://www.pps.net/fs/resource-manager/view/f1364b25-fc32-42e9-af00-4f6e32d5ea73",
+      "fetchedAt": "2026-08-30"
+    },
+    "acfr-findings-2023-fy2023": {
+      "sha256": "ed9bf94cc2952a1a15357568e60b3afd9dc385717afb328d547ebfbb010edb86",
+      "bytes": 727301,
+      "pages": 2,
+      "url": "https://www.pps.net/fs/resource-manager/view/334678da-cebf-4b99-8d9e-6be8844adf96",
+      "fetchedAt": "2026-08-30"
+    },
+    "acfr-fy2022": {
+      "sha256": "423e9b2ca7b2f1c5284fa18dac81ae3d122cfe9919cb6eaadf3e1ef36d6ef910",
+      "bytes": 5156257,
+      "pages": 149,
+      "url": "https://www.pps.net/fs/resource-manager/view/751d6f23-29f4-45bd-8fd0-b4cbbe9ecc4f",
+      "fetchedAt": "2026-08-30"
+    },
+    "rrfa-2022-fy2022": {
+      "sha256": "0884b2ca62ea7dabd0946da4491a42778267bc4b8c1de8283a072d363cf61345",
+      "bytes": 3143060,
+      "pages": 31,
+      "url": "https://www.pps.net/fs/resource-manager/view/bd5d9ea3-3f33-4bca-92a5-d1449fe6b8fe",
+      "fetchedAt": "2026-08-30"
+    },
+    "acfr-fy2021": {
+      "sha256": "3cc94a109cdac1b2d92cf898131b6456a5e5b51362bc9f471d53d7d23b4de8eb",
+      "bytes": 9830945,
+      "pages": 145,
+      "url": "https://www.pps.net/fs/resource-manager/view/9af64a93-06e5-4623-bdb9-1eefe646847e",
+      "fetchedAt": "2026-08-30"
+    },
+    "rrfa-2021-fy2021": {
+      "sha256": "3d5913819840389de464809d3783196a4dcc6368a712937700f95cb677d7ccc1",
+      "bytes": 9109179,
+      "pages": 29,
+      "url": "https://www.pps.net/fs/resource-manager/view/0776dc6f-4e85-4927-8621-65f8d40b4a21",
+      "fetchedAt": "2026-08-30"
+    },
+    "acfr-fy2020": {
+      "sha256": "bffe074daea01702331b9d323d1c7fc1faf5aec2cbdc32bd868c76df23a2a936",
+      "bytes": 8184446,
+      "pages": 146,
+      "url": "https://www.pps.net/fs/resource-manager/view/d4be7e6c-02b4-448e-97c1-c04f7b73c12f",
+      "fetchedAt": "2026-08-30"
+    },
+    "rrfa-2020-fy2020": {
+      "sha256": "3bbf8f9ca646d0a1ef8594b62b61d3119ffe4f331523e54eed3d8838186524cb",
+      "bytes": 5931381,
+      "pages": 29,
+      "url": "https://www.pps.net/fs/resource-manager/view/ce627fd3-8e2a-40ce-89c2-3601d06155af",
+      "fetchedAt": "2026-08-30"
+    },
+    "acfr-fy2019": {
+      "sha256": "d3f83c8ed968a7596a9a3a23d778bc54259ce0d02ec837fc526507eea7aec0ec",
+      "bytes": 15929160,
+      "pages": 185,
+      "url": "https://www.pps.net/fs/resource-manager/view/02bfa97f-04c2-4ac8-be58-3392985190ea",
+      "fetchedAt": "2026-08-30"
+    },
+    "rrfa-2019-fy2019": {
+      "sha256": "a8f09a773f93a6366a1f59946c2d33082112c434b3dc4b5787082cbfd47042f2",
+      "bytes": 8039146,
+      "pages": 29,
+      "url": "https://www.pps.net/fs/resource-manager/view/b8ac146e-6fd1-4b69-a6b4-b0b3f254ca78",
+      "fetchedAt": "2026-08-30"
+    },
+    "acfr-fy2018": {
+      "sha256": "820af4a477f8e3a601fb2079091b099dbb6f859b3eece7d63a6c13bf1826b122",
+      "bytes": 9197309,
+      "pages": 185,
+      "url": "https://www.pps.net/fs/resource-manager/view/b22fde3c-2106-4816-a453-802030dd52c1",
+      "fetchedAt": "2026-08-30"
+    },
+    "rrfa-2018-fy2018": {
+      "sha256": "818224278ebec80037dbcf36b23e5c4f4b7df4c36813daa9ba925409bded5c07",
+      "bytes": 8267759,
+      "pages": 33,
+      "url": "https://www.pps.net/fs/resource-manager/view/3ed7608a-6e4a-4b43-b3e1-67441d32f194",
+      "fetchedAt": "2026-08-30"
+    },
+    "acfr-fy2017": {
+      "sha256": "c90cf643a65eaa39aefc1748d2d1d6f6f25675de2fa6c0f26d8eee9059040cd7",
+      "bytes": 8041839,
+      "pages": 181,
+      "url": "https://www.pps.net/fs/resource-manager/view/d8bb02ad-7793-474c-82f3-868b14c9446d",
+      "fetchedAt": "2026-08-30"
+    },
+    "a-133-report-2017-fy2017": {
+      "sha256": "30689906ef914da4db4960f47c4b4d287217c574382dd7bc9ae8a2a4f1064ec5",
+      "bytes": 5212148,
+      "pages": 39,
+      "url": "https://www.pps.net/fs/resource-manager/view/700fdaf8-620f-4ae9-bfc1-862ea3d0bc52",
+      "fetchedAt": "2026-08-30"
+    },
+    "corrective-actions-fyundefined": {
+      "sha256": "12c297e69e15eb335129914745f170bed106aac24c88934f49702f844e7f0d62",
+      "bytes": 549155,
+      "pages": 3,
+      "url": "https://www.pps.net/fs/resource-manager/view/d7da7b0c-c272-4306-be64-7a4063ebb56e",
+      "fetchedAt": "2026-08-30"
+    },
+    "acfr-fy2016": {
+      "sha256": "eae4211554795b73bd0a9000e2d8ff7e9951b2456f8eaadcc959e144ba56d63c",
+      "bytes": 4099535,
+      "pages": 177,
+      "url": "https://www.pps.net/fs/resource-manager/view/f2be44e2-7115-4025-9e4b-65c3bae177a0",
+      "fetchedAt": "2026-08-30"
+    },
+    "a-133-report-2016-fy2016": {
+      "sha256": "87be53cdd1642757c0a9c4728ea9d0039aa2a75af4cda44d92ca0aedfbfe6abe",
+      "bytes": 6860266,
+      "pages": 32,
+      "url": "https://www.pps.net/fs/resource-manager/view/e9ebc227-6590-4f33-ac52-7d79cc5ff8f7",
+      "fetchedAt": "2026-08-30"
+    },
+    "a-133-report-2015-fy2015": {
+      "sha256": "6bae2664f903f5a754c82cc8840b9654ef05fea536e15c727790db1573d50326",
+      "bytes": 9929256,
+      "pages": 27,
+      "url": "https://www.pps.net/fs/resource-manager/view/9a82f7a4-509d-4df4-b1fd-660db40dbc1b",
+      "fetchedAt": "2026-08-30"
+    },
+    "a-133-report-2014-fy2014": {
+      "sha256": "cd7a7e7a0f4855e4870bc5578552adc105aad50e38fe8342c0bcdab1c1834a48",
+      "bytes": 8584247,
+      "pages": 28,
+      "url": "https://www.pps.net/fs/resource-manager/view/46ca77c0-08d4-4947-98aa-79228ae25436",
+      "fetchedAt": "2026-08-30"
+    },
+    "a-133-report-2013-fy2013": {
+      "sha256": "a686a7a6e7d27261de0a56a412e4403bd116c035b0707fbead6a2eb04add5056",
+      "bytes": 6623921,
+      "pages": 26,
+      "url": "https://www.pps.net/fs/resource-manager/view/cdd9afc2-cbe2-4cbe-8cd7-55e2455959cc",
+      "fetchedAt": "2026-08-30"
+    },
+    "a-133-report-2012-fy2012": {
+      "sha256": "257d90aaf1a49d37f75b0599c17d9edf804f3dcf6426dc3c42141ec7406881be",
+      "bytes": 3231478,
+      "pages": 24,
+      "url": "https://www.pps.net/fs/resource-manager/view/73654d1b-af5f-4558-8779-3331b86d2c90",
+      "fetchedAt": "2026-08-30"
+    },
+    "a-133-report-2011-fy2011": {
+      "sha256": "996cc256d1dfb585b67f1cd1d3dc475565f83b2125f4b1304743c963c702c56a",
+      "bytes": 1816881,
+      "pages": 24,
+      "url": "https://www.pps.net/fs/resource-manager/view/d37348c8-efef-48c4-9800-69f6f307dd6a",
+      "fetchedAt": "2026-08-30"
+    },
+    "a-133-report-2010-fy2010": {
+      "sha256": "86426265805f417eb9f0fdbac37902dde111ecdec2b36c755175bc00e7ef1111",
+      "bytes": 4296136,
+      "pages": 36,
+      "url": "https://www.pps.net/fs/resource-manager/view/94cbb7e3-3311-4b59-861e-25e634b433bd",
+      "fetchedAt": "2026-08-30"
+    },
+    "a-133-report-2009-fy2009": {
+      "sha256": "2fea630c2e98bf305706e8ea255d4649ed27fdeddfccc534317c445c147e3d29",
+      "bytes": 8526349,
+      "pages": 30,
+      "url": "https://www.pps.net/fs/resource-manager/view/812d4544-7832-4241-b616-8a3fd49dbe4b",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-2025-26-cbrc-proposed-budget-review": {
+      "sha256": "9625eeba7491d9a4cdaa2f7fa7546ef6674e480bd445c4a1a65e590593e67ee1",
+      "bytes": 339448,
+      "pages": 14,
+      "url": "https://www.pps.net/fs/resource-manager/view/23241aa1-3847-4834-8acf-272cd4e67d41",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-2024-25-cbrc-local-option-levy-review": {
+      "sha256": "3789eb531d986d4d906be217ed2c58e10df0d0eed8b5da02bb9743f886339c99",
+      "bytes": 79518,
+      "pages": 2,
+      "url": "https://www.pps.net/fs/resource-manager/view/7531ee3f-8d6a-4ed1-a100-73d66d519d61",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-2024-25-cbrc-proposed-budget-review": {
+      "sha256": "653c2dbac1b4de6b45ab54ffcdc7da3eebc59b39a83f34868b8061ca0902c9b6",
+      "bytes": 294634,
+      "pages": 13,
+      "url": "https://www.pps.net/fs/resource-manager/view/5781c947-8fba-4045-977c-450cf0b4736d",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-2024-25-cbrc-proposed-budget-review-presentation-to-board": {
+      "sha256": "2351e86719d18f92c89abe15a2cb3026e105f2343f319ecffb6edf09ce1b069a",
+      "bytes": 87784,
+      "pages": 23,
+      "url": "https://www.pps.net/fs/resource-manager/view/79338d12-a7f2-47f6-ae8d-f0e9a7088280",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-2023-24-cbrc-local-option-levy-review": {
+      "sha256": "036f94ea6f905c1d4867c71c1ae37441371f0462b2af9e8f3262fa59ff9aa32e",
+      "bytes": 77657,
+      "pages": 2,
+      "url": "https://www.pps.net/fs/resource-manager/view/a1c4276d-a8fa-4373-a2b8-2cd38856efe7",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-co-chair-letter-to-board": {
+      "sha256": "e8a1b955571553d98ec73d70ccd17ee209217bdb80a5be427324dcf7aff21c17",
+      "bytes": 69956,
+      "pages": 2,
+      "url": "https://www.pps.net/fs/resource-manager/view/97623c9c-3ce6-47ef-98a5-0e1626b4590f",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-2023-24-cbrc-proposed-budget-review": {
+      "sha256": "3e0bde3ebc871ae905da8117041d0c6d602396ddf9c46df26dd81a6293c0542e",
+      "bytes": 181866,
+      "pages": 12,
+      "url": "https://www.pps.net/fs/resource-manager/view/35dfd5e7-5661-4385-a132-8a3a55bec4c9",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-2022-23-cbrc-local-option-levy-review": {
+      "sha256": "d9b8077b36d0063828da48607751e263828f27c12a29e6617f7725b0733f9e6e",
+      "bytes": 73111,
+      "pages": 2,
+      "url": "https://www.pps.net/fs/resource-manager/view/d1f4b072-332f-4257-9562-57ba7a4bd006",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-2022-23-cbrc-proposed-budget-review": {
+      "sha256": "48c0ee3d031fe8408ef81b607562cb1be7355edd2075dc5f9638b58b06a91cc0",
+      "bytes": 3383583,
+      "pages": 7,
+      "url": "https://www.pps.net/fs/resource-manager/view/e8e180c3-ecd5-485b-80d9-b41c15237f66",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-2021-22-cbrc-local-option-review": {
+      "sha256": "b033a4e6d141c58f2187667ce52e3dd08eeded05fb802621a66059ebd8b86e16",
+      "bytes": 845042,
+      "pages": 3,
+      "url": "https://www.pps.net/fs/resource-manager/view/9207240c-7ef3-4c4a-86bb-d38216e1813c",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-cbrc-letter-to-oregon-joint-ways-means-committee": {
+      "sha256": "308b9e8154b311fe2fe95d8d47da4e76bacdc7952e60c1a63f2cd4a1a3431188",
+      "bytes": 129096,
+      "pages": 2,
+      "url": "https://www.pps.net/fs/resource-manager/view/007052e9-8ed6-4941-a447-ead598f8f481",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-1-23-25-cbrc-report-review-and-budget-updates": {
+      "sha256": "c575aa0a8f1512ba796cf6bc606d04979f4578c26f3dcaae8bf17ef3ee683a25",
+      "bytes": 1923034,
+      "pages": 29,
+      "url": "https://www.pps.net/fs/resource-manager/view/5a4aefd0-af2b-46fc-8f4d-2fd6a6f58ac9",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-draft-cbrc-budget-report": {
+      "sha256": "cf714440db40dd0ef9805db13b1401edb0954f8dbb37dbb8886602c093db6e85",
+      "bytes": 1070230,
+      "pages": 11,
+      "url": "https://www.pps.net/fs/resource-manager/view/463756ca-adbe-4d1b-bbf9-fdfafb2ae847",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-public-comment-2024-04-equity-funding-has-not-closed-the-rac": {
+      "sha256": "07ba4e6bfc5701185aa8345e6ff3e19c34a919216324e002f2dffd244c191ec5",
+      "bytes": 482571,
+      "pages": 17,
+      "url": "https://www.pps.net/fs/resource-manager/view/272d5553-3dbc-4bdd-b8f5-973e246bc3b0",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-public-comment-reform-pps-funding": {
+      "sha256": "6b86c196598edb516893b12ed4beef5cd2724da8d0b744918d9ea6822dd42714",
+      "bytes": 691456,
+      "pages": 2,
+      "url": "https://www.pps.net/fs/resource-manager/view/7aee06c3-24fe-4188-ac70-29a3c9e84feb",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-cbrc-document-overview-and-report-preparation": {
+      "sha256": "fa5d05a7745a624d498101b51f2e916a6fafbc78999c47fb6ca74fe1f8f70622",
+      "bytes": 1696517,
+      "pages": 10,
+      "url": "https://www.pps.net/fs/resource-manager/view/f0ceedee-f077-4e65-82a3-b1e7e18e6a2f",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-cbrc-updated-budget-amendment-review": {
+      "sha256": "ee4640a3530b80d1ad3002031e0b27312c78fd27129d81981eb6513e16794ce8",
+      "bytes": 56164,
+      "pages": 2,
+      "url": "https://www.pps.net/fs/resource-manager/view/527558d4-93a5-407a-8c46-ab82ca6704d7",
+      "fetchedAt": "2026-08-30"
+    },
+    "cbrc-2026-27-cbrc-proposed-budget-review": {
+      "sha256": "e91dd00d76e5fc78ea85290fb878cccce6d57852dd348f8959347b461ad9ab07",
+      "bytes": 220673,
+      "pages": 14,
+      "url": "https://www.pps.net/fs/resource-manager/view/206a8db4-5c9e-45e8-95d4-4b58c73377ad",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-bond-performance-audit-year-6": {
+      "sha256": "4841b3395aa3c609b0e4c110dc30b40ca286921c3dad75eb258e67613e8b908d",
+      "bytes": 2250847,
+      "pages": 74,
+      "url": "https://www.pps.net/fs/resource-manager/view/360be54d-7d9e-4919-9bbc-50a519481c2c",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-bond-performance-audit-year-5": {
+      "sha256": "09504c838f9af06d490892440c5e58974e90a06e61900bc1da1b7b517546dc97",
+      "bytes": 1440233,
+      "pages": 45,
+      "url": "https://www.pps.net/fs/resource-manager/view/ae95a8fd-3b93-46c2-af67-4e6e55a92b43",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-status-of-implementation-combined": {
+      "sha256": "537f4f4fa9adaa979107ab1a8e2fb9cca581caffc5463d873d5d7ef123aea31b",
+      "bytes": 104811,
+      "pages": 5,
+      "url": "https://www.pps.net/fs/resource-manager/view/9338ef75-0965-4972-a5b4-9fcf4cc345ee",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-bond-performance-audit-year-4": {
+      "sha256": "9cbb7ab47fedfa63ebeef52a0770c4088335a70a07c0d7587e00e81b76541472",
+      "bytes": 2610520,
+      "pages": 59,
+      "url": "https://www.pps.net/fs/resource-manager/view/69866af5-9563-4541-ba81-e11df7a40587",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-status-of-implementation-2023": {
+      "sha256": "822d5d874772d85fcee6af8b081d82c2d7d7d3c581cbb9ba6bb6fcd3fb81d8f0",
+      "bytes": 39821,
+      "pages": 2,
+      "url": "https://www.pps.net/fs/resource-manager/view/2eb77e4b-a89e-4807-833b-7c69ae7edf2d",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-bond-performance-audit-year-3": {
+      "sha256": "2f87ac1691a79c14e9e9f450435d2ad20e72f4741b44f2f0b1b9a0d79dbe3c9e",
+      "bytes": 1380087,
+      "pages": 48,
+      "url": "https://www.pps.net/fs/resource-manager/view/6e2cfcdb-75af-44d5-9968-eba5a27fe06f",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-status-of-implementation-2021": {
+      "sha256": "6be51730a85776935b820d4b3e3ade906a20bbd0f75dd95f3eac17e52468abf4",
+      "bytes": 42580,
+      "pages": 2,
+      "url": "https://www.pps.net/fs/resource-manager/view/51c504f0-e90f-4c3b-8804-dd06832e425c",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-bond-performance-audit-year-2": {
+      "sha256": "f3036a985c0689ad1855bbcc25a7b42b4b4f209cca3289822089d26a72bd88ae",
+      "bytes": 1201488,
+      "pages": 58,
+      "url": "https://www.pps.net/fs/resource-manager/view/a81110d7-84a8-4826-b61b-55556808286f",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-status-of-implementation-2020": {
+      "sha256": "335725d4739b2441978fdc5ceaaf89fd0f90b04144c1869599df235326ee25a4",
+      "bytes": 42238,
+      "pages": 2,
+      "url": "https://www.pps.net/fs/resource-manager/view/adde47cf-efe4-4d3b-9c35-2db760e3d6d7",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-bond-performance-audit-year-1-phase-2": {
+      "sha256": "d6c5769ed40151a1626eb127bba593efe388710fc2d3016783e2d55de4ea8920",
+      "bytes": 1240185,
+      "pages": 46,
+      "url": "https://www.pps.net/fs/resource-manager/view/7b20b9bf-f64e-4c72-9221-587862d990f5",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-status-of-implementation-2019-y1-p2-audit": {
+      "sha256": "7a5491daada945264e98e4bdec5994f7234f49d53d8b56e302e3e4539dda2efd",
+      "bytes": 39944,
+      "pages": 1,
+      "url": "https://www.pps.net/fs/resource-manager/view/f66a909c-3975-47e9-badf-9b1ad7b784c8",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-bond-performance-audit-year-1-phase-1": {
+      "sha256": "b3caa941481892c1901eefb9dd387273b85b6a4d68a532b942fa67d5b03c3ffc",
+      "bytes": 954733,
+      "pages": 35,
+      "url": "https://www.pps.net/fs/resource-manager/view/3bed472c-29a8-4aa8-a084-283f16a34610",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-status-of-implementation-2019-y1-p1-audit": {
+      "sha256": "108b575cf0053b000418bf7b76eb1aefcd02503ea17b56fa0dd8b8f449df754b",
+      "bytes": 36550,
+      "pages": 1,
+      "url": "https://www.pps.net/fs/resource-manager/view/7c980acd-7942-4b0a-bad9-f36f5e038948",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-bond-construction-program-audit-4-of-4": {
+      "sha256": "44a83de2f3191660906d0dac6abe97578f1f241893d8462a912e251d99d9ae3b",
+      "bytes": 10449692,
+      "pages": 94,
+      "url": "https://www.pps.net/fs/resource-manager/view/b8dd42fe-3143-47ba-9959-614de8d9b432",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-status-of-implementation-2017-audit": {
+      "sha256": "960880a82edc08095aff9d86b5ccd52396b1421bb19c6b57bf14043f1eeb0123",
+      "bytes": 40918,
+      "pages": 1,
+      "url": "https://www.pps.net/fs/resource-manager/view/c90bea87-5dbc-4dd2-869f-f78b138b1883",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-bond-construction-program-audit-3-of-4": {
+      "sha256": "10701c6221bb42a7fefed90844673e09872065b1696b33c9fb72d16200d4bfcc",
+      "bytes": 2797897,
+      "pages": 96,
+      "url": "https://www.pps.net/fs/resource-manager/view/d2b6a123-3d81-41a4-9165-308d0d835ad4",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-status-of-implementation-2016-audit": {
+      "sha256": "a6a3dd8e93db57942df37285c576c3f0ea4dd562181d1c251da0c6fec6e4d343",
+      "bytes": 46901,
+      "pages": 1,
+      "url": "https://www.pps.net/fs/resource-manager/view/a9720926-e0ba-4f4c-b9ac-411d875dc7d3",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-bond-construction-program-audit-2-of-4": {
+      "sha256": "261ed141437d55e5cf3c8fe15ba3a026ec6166a9d7231f4c6a7ee6dd81b2458c",
+      "bytes": 9173028,
+      "pages": 143,
+      "url": "https://www.pps.net/fs/resource-manager/view/c4858190-d88c-4df1-8bc8-1ba726a5afe6",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-status-of-implementation-2015-audit": {
+      "sha256": "e7ef1ede44b46ccfb6f8c2fd5fad9d125da1e95999ba79cb332d9f710d2d7f29",
+      "bytes": 40882,
+      "pages": 1,
+      "url": "https://www.pps.net/fs/resource-manager/view/720827a2-7718-4556-8156-bd3ecdb13dd6",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-bond-construction-program-audit-1-of-4": {
+      "sha256": "b03e8b0a2b82a2f3e27843918552a46727059809c2c63a234026dcdb4a67f7c8",
+      "bytes": 4789742,
+      "pages": 122,
+      "url": "https://www.pps.net/fs/resource-manager/view/f79b1446-13a7-477f-8ba1-bce0abd64e61",
+      "fetchedAt": "2026-08-30"
+    },
+    "bond-audit-status-of-implementation-ndash-2014-audit": {
+      "sha256": "7e6ca3fee03bd4de1a593996c5626e06b6aa63db3056b0d26487605698bb4d69",
+      "bytes": 40164,
+      "pages": 1,
+      "url": "https://www.pps.net/fs/resource-manager/view/3501fabb-d738-4f3a-b439-8fd851917d5d",
+      "fetchedAt": "2026-08-30"
+    },
+    "sos-secretary-of-state-sos-audit-report": {
+      "sha256": "525c9c873e1601edcd94c383833e832cfaaab97fdbc30edae3c2a19057e4b24a",
+      "bytes": 3086791,
+      "pages": 98,
+      "url": "https://www.pps.net/fs/resource-manager/view/f1b59ce8-400f-4784-aabb-812676ac0ab3",
+      "fetchedAt": "2026-08-30"
+    },
+    "sos-secretary-of-state-sos-recommendation-follow-up-report": {
+      "sha256": "3b85671c6b216fca1f211dd8b7707e5ca91576c91977a8bae4a99520ba9409f1",
+      "bytes": 937227,
+      "pages": 21,
+      "url": "https://www.pps.net/fs/resource-manager/view/afc593a0-112e-442a-815e-751a32b8197c",
+      "fetchedAt": "2026-08-30"
+    },
+    "cba-atu-2025-2028": {
+      "sha256": "c6980f09569543844af2833feace371c885e5662eea682e11e4fcb8d2454b574",
+      "bytes": 1324583,
+      "pages": 49,
+      "url": "https://www.pps.net/fs/resource-manager/view/572b67d1-e95e-4d24-a3b0-fb6a5bfe6d11",
+      "fetchedAt": "2026-08-30"
+    },
+    "cba-dcu-2026-2027": {
+      "sha256": "4b6c8e5eba918cc26f0af3f03df76c6aa1780dd80ebbbf60e3659d4ed29a4b5d",
+      "bytes": 1267848,
+      "pages": 47,
+      "url": "https://www.pps.net/fs/resource-manager/view/56e467d9-f57d-4eae-9fc6-a1032ae6fb77",
+      "fetchedAt": "2026-08-30"
+    },
+    "cba-pat-2023-2026": {
+      "sha256": "d87cd1ca2a9e2ae177d6b97a42913fb6e3ce21de75ed9dee122cfc4f4d42b4bb",
+      "bytes": 2254267,
+      "pages": 152,
+      "url": "https://www.pps.net/fs/resource-manager/view/70c9aeed-2057-4603-bbef-d0f72360dbee",
+      "fetchedAt": "2026-08-30"
+    },
+    "cba-pat-substitutes-2024-2026": {
+      "sha256": "24edad33f63fa0140b20d742081804c778a067c18f7ac21b1d4259c81d26735f",
+      "bytes": 666458,
+      "pages": 35,
+      "url": "https://www.pps.net/fs/resource-manager/view/63066ef8-c9b5-4903-8087-15eef6e811c1",
+      "fetchedAt": "2026-08-30"
+    },
+    "cba-pfsp-2023-2026": {
+      "sha256": "643be976f851b5493b5b38a8f5dba6bcf0aedd55c9f6bc39373d6fda4cbbbde9",
+      "bytes": 745011,
+      "pages": 67,
+      "url": "https://www.pps.net/fs/resource-manager/view/4ba7c362-5990-4ffb-ab37-b8dd0965c7fc",
+      "fetchedAt": "2026-08-30"
+    },
+    "cba-seiu-2023-2026": {
+      "sha256": "4681353095133d1bd03ab8d434caae4efffc7fb00501a8ac24bf2086877026dc",
+      "bytes": 1910252,
+      "pages": 44,
+      "url": "https://www.pps.net/fs/resource-manager/view/95a786dc-43d3-4202-93a6-82e3abcfdbe0",
+      "fetchedAt": "2026-08-30"
+    },
+    "esser-pps-esser-iii-integrated-planning-tool-year-two-draft": {
+      "sha256": "625d3fbc8613fb48d43b4806e7f55259caf7e1b8bb3009b5508cf6dcefab5cbf",
+      "bytes": 678145,
+      "pages": 1,
+      "url": "https://www.pps.net/fs/resource-manager/view/38bfd4a7-4471-4cc5-9283-e5a91366d760",
+      "fetchedAt": "2026-08-30"
+    },
+    "esser-pps-esser-iii-integrated-planning-tool-year-one": {
+      "sha256": "e99b9bec2b985b28f5d200e7f4befd479815ec1ba6ec82ad493fdb40f3ac8824",
+      "bytes": 389472,
+      "pages": 15,
+      "url": "https://www.pps.net/fs/resource-manager/view/6782bd99-5084-421e-b268-c1453f26078d",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-book-fy2026-27-proposed-vol1": {
+      "sha256": "7c5bd3254258792cf6c96175bfcaaa60af7648ad76640ea5b47ebd54543befb3",
+      "bytes": 13033499,
+      "pages": 288,
+      "url": "https://resources.finalsite.net/images/v1777476167/ppsnet/cjslvvkzotwvwencttvx/2026-27ProposedBudget-Volume1.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2026-27-supt-message": {
+      "sha256": "ecd0d9fa152fe447b94c97476fd3cd8d6ebe3f71f015d067e08b1a84e9ed335f",
+      "bytes": 4779778,
+      "pages": 3,
+      "url": "https://www.pps.net/fs/resource-manager/view/51380314-e6ee-4177-a0e8-b8d5e17964ee",
+      "fetchedAt": "2026-08-30"
+    },
+    "lb1-fy2026-27": {
+      "sha256": "cac0a73e0a83257500e47f328bea4dd78b84e8f437e1f9f0df22955e4cbe140c",
+      "bytes": 189896,
+      "pages": 1,
+      "url": "https://www.pps.net/fs/resource-manager/view/c3920faf-5257-4af4-81f4-78a245a335c1",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2026-27-committee-notice": {
+      "sha256": "8cefca18a0f60a4c4e2f06c9c8556e29aca7b934242b62a98a51055cd9e142f4",
+      "bytes": 64814,
+      "pages": 1,
+      "url": "https://www.pps.net/fs/resource-manager/view/5c455955-32c8-4184-89d7-850210e7cbef",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2026-27-calendar-amended": {
+      "sha256": "4f9c3cef48f15b53be3b186466e69e4bcc5fb17c215cdbf9b47fdf8b1fb8f0fe",
+      "bytes": 120172,
+      "pages": 1,
+      "url": "https://www.pps.net/fs/resource-manager/view/80abecd4-dec9-4383-8c9a-5dee678ae7ed",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2025-26-proposed-vol1": {
+      "sha256": "388ad79b9df52ee01a12605e49cedaea870e12628643712a6b971b5181a7b280",
+      "bytes": 23984087,
+      "pages": 281,
+      "url": "https://www.pps.net/fs/resource-manager/view/59d80019-d7da-4cc2-9bbc-0601814d85a6",
+      "fetchedAt": "2026-08-30"
+    },
+    "budget-fy2025-26-proposed-vol2": {
+      "sha256": "59e0d6095e37a757b7d68a97195d35a622ad4beaff6b95fc8d1b7f3a2289d20e",
+      "bytes": 4914588,
+      "pages": 176,
+      "url": "https://www.pps.net/fs/resource-manager/view/eab55b04-4d27-4b05-85b6-9d8c06ba32a7",
+      "fetchedAt": "2026-08-30"
+    },
+    "lb1-fy2025-26": {
+      "sha256": "6c984f237938df7ea6bdbae06f2b6dc0e6d9c25d9bbbda49b145a29274c9b3d7",
+      "bytes": 92611,
+      "pages": 1,
+      "url": "https://www.pps.net/fs/resource-manager/view/4b439b90-e823-489e-b28c-be4142cd5597",
+      "fetchedAt": "2026-08-30"
+    },
+    "tscc-review-fy2026": {
+      "sha256": "d823145b2570807dffa9e6b8ffc1e0e1ff688c4ed41c62628c78b8a4c0c41c3e",
+      "bytes": 2208269,
+      "pages": 19,
+      "url": "https://www.tsccmultco.com/wp-content/uploads/Portland-Public-School-District-FY-26-Budget-Review.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "tscc-review-fy2025": {
+      "sha256": "9440c7aeb78ca46dff25e85bf80983519a9ac4e3f1fa4c504b40eca57bd665eb",
+      "bytes": 753486,
+      "pages": 19,
+      "url": "https://www.tsccmultco.com/wp-content/uploads/PPS-A-FY25-Budget-Review.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "tscc-review-fy2024": {
+      "sha256": "5d7310594f432ecf306642ff5cc59f5cea024b3f8b35cce3656e1647a96102e9",
+      "bytes": 892039,
+      "pages": 19,
+      "url": "https://www.tsccmultco.com/wp-content/uploads/FY24-Portland-Public-Schools-Budget-Review.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "tscc-measure-26-259-review": {
+      "sha256": "29837a4de2b7213676d883bc37a785bd34e9618ea59404449abe1ed8d82f3675",
+      "bytes": 511195,
+      "pages": 10,
+      "url": "https://www.tsccmultco.com/wp-content/uploads/PPS-Bond-Levy-Review-May-2025.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "tscc-measure-26-215-review": {
+      "sha256": "be29c6e56a3d301a21c906f5bd5a9db1fb882c2ca100dd3771deaf912f9664aa",
+      "bytes": 646068,
+      "pages": 12,
+      "url": "https://www.tsccmultco.com/wp-content/uploads/26-215-PPS-Nov-2020-Property-Tax-Measure-Review.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "tscc-annual-report-2024-25-general": {
+      "sha256": "d0c9b0df85f092fcc42768167d29274ba6a9f5c8d79f3af142c00907bfdca1c1",
+      "bytes": 4924155,
+      "pages": 121,
+      "url": "https://www.tsccmultco.com/wp-content/uploads/2024-25-General-Information-Section-Annual-Report.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "tscc-annual-report-2024-25-summaries": {
+      "sha256": "a1ad2ce0c608e0c8316fb61ec14326856837cc9012f4fb35ee733e36754cfb9a",
+      "bytes": 7466845,
+      "pages": 160,
+      "url": "https://www.tsccmultco.com/wp-content/uploads/2024-25-Budget-Summaries-Section-Annual-Report.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "ode-sia-allocation-25-27": {
+      "sha256": "ecd23f8e34af9c88b4e558aa330071810ff47bce3d024525ff616fd4fc9b485e",
+      "bytes": 602044,
+      "pages": 15,
+      "url": "https://www.oregon.gov/ode/StudentSuccess/Documents/25-27%20SIA%20Allocation.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "ode-hss-allocation-25-27": {
+      "sha256": "5e2d372a332b3ab4d5d55555a7fc525043545612fcfaf8eb97206c340a27dafb",
+      "bytes": 498513,
+      "pages": 12,
+      "url": "https://www.oregon.gov/ode/StudentSuccess/Documents/25-27%20HSS%20Allocation.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "lro-5-24-equalization": {
+      "sha256": "16d48f8692ad822caddaecdd1cec9c07cea7439eccf0b6e3808c77798d00fdf4",
+      "bytes": 469342,
+      "pages": 19,
+      "url": "https://www.oregonlegislature.gov/lro/Documents/K-12%20and%20ESD%20Finance%20RR%20August%2024%20Final.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "dor-local-budgeting-manual": {
+      "sha256": "3c9b98373046129d3d5f411ef95f83ffc96190acff0486f149ebb7140aee5c57",
+      "bytes": 1819206,
+      "pages": 115,
+      "url": "https://www.oregon.gov/dor/programs/property/Documents/Local%20Budgeting%20Manual,%20150-504-420.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "jpea-adequacy-report-2025": {
+      "sha256": "40c2fdb9930c6a27f5cb9554927154aa59ade773d4ebdf258e327beeb08330af",
+      "bytes": 1363527,
+      "pages": 42,
+      "url": "https://www.oregonlegislature.gov/citizen_engagement/Reports/2025JPEAReportontheAdequacyofPublicEducationAppropriations-FINAL.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "pers-2025-27-rate-adoption": {
+      "sha256": "f4d16192fbd8caa6e3bb0055125fad1169aa4091ae492f210d9cb8c91d4523f4",
+      "bytes": 793119,
+      "pages": 30,
+      "url": "https://www.oregon.gov/pers/Documents/Financials/Actuarial/2024/Adoption%20of%202025-2027%20Employer%20Contribution%20Rates.pdf",
+      "fetchedAt": "2026-08-30"
+    }
+  }
+}

@@ -24,7 +24,10 @@
     "budget:verify": "npx tsx ingest/budget/reconcile.ts",
     "budget:build": "npm run budget:fetch && npm run budget:parse && npm run budget:verify && npx tsx ingest/budget/build-dataset.ts",
     "business:verify": "npx tsx --env-file=.env.local ingest/business/verify-catalog.ts",
-    "business:boundaries": "npx tsx ingest/business/fetch-boundaries.ts"
+    "business:boundaries": "npx tsx ingest/business/fetch-boundaries.ts",
+    "pps:harvest": "tsx ingest/pps-budget/harvest-index.ts",
+    "pps:archive": "tsx ingest/pps-budget/archive.ts",
+    "pps:fetch": "tsx ingest/pps-budget/fetch.ts --tier 2"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
