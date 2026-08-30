@@ -1,0 +1,8 @@
+contingency_k,ending_fund_balance_k,fy,basis,doc_id,page,notes
+0,782952,2019-20,actual-budgetary,budget-fy2023-24-vol1,87,"all-funds figures: 6000 Contingencies and 7000 Unappropriated Fund Balance rows of requirements-by-function table; actual-year EFB is actual ending fund balance; 2022-23 column printed as 'Budget'; matches FY2022-23 book adopted total, so basis=adopted"
+0,906725,2020-21,actual-budgetary,budget-fy2023-24-vol1,87,
+0,672720,2021-22,actual-budgetary,budget-fy2023-24-vol1,87,
+56024,46536,2022-23,adopted,budget-fy2023-24-vol1,87,
+48414,26313,2023-24,proposed,budget-fy2023-24-vol1,87,
+48414,26313,2023-24,approved,budget-fy2023-24-vol1,87,
+48414,26313,2023-24,adopted,budget-fy2023-24-vol1,87,General Fund share of contingency 43063 (p95); GF budgets no unappropriated EFB

@@ -1,0 +1,39 @@
+bond,project,original_budget_k,current_estimate_k,spent_k,as_of,doc_id,page,notes
+2012,Franklin HS Modernization,81586,113485,112280,2019-01-01,budget-fy2019-20-book,159,"native unit whole dollars, converted to $1k (rounded); Current Project Budget as of 1/1/2019; Actuals Approved through 1/1/19; FY20 budget column 300,000"
+2012,Grant HS Modernization,88337,151938,92260,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 21,152,032"
+2012,Roosevelt HS Modernization,68419,102073,97211,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 300,000"
+2012,Faubion Replacement,27036,50036,49703,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 100,000"
+2012,Improvement Projects,67742,105103,82084,2019-01-01,budget-fy2019-20-book,159,
+2012,Benson - Master Planning,192,399,399,2019-01-01,budget-fy2019-20-book,159,
+2012,Cleveland - Master Planning,192,0,0,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 60,000"
+2012,Jefferson - Master Planning,192,0,0,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 60,000"
+2012,Lincoln - Master Planning,192,357,357,2019-01-01,budget-fy2019-20-book,159,
+2012,Madison - Master Planning,192,400,324,2019-01-01,budget-fy2019-20-book,159,
+2012,Wilson - Master Planning,192,0,0,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 60,000"
+2012,Swing Sites & Transportation,9550,5235,5235,2019-01-01,budget-fy2019-20-book,159,
+2012,Educational Specification,0,275,275,2019-01-01,budget-fy2019-20-book,159,
+2012,Debt Repayment,45000,45000,45000,2019-01-01,budget-fy2019-20-book,159,
+2012,2012 Bond Program (program costs),93181,42183,24546,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 6,496,745"
+2012,TOTAL 2012 Bond,482000,616483,509673,2019-01-01,budget-fy2019-20-book,159,"current budget rises to 626,482,678 with 10,000,000 'Additional Funding Resource (If/When Needed)'"
+2017,Benson HS Modernization,202000,67884,1069,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 11,125,000"
+2017,Kellogg Replacement,45000,60186,4398,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 34,623,569"
+2017,Lincoln HS Replacement,187000,242879,2663,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 26,000,000"
+2017,Madison HS Modernization,146000,199274,5902,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 86,000,000"
+2017,Cleveland HS Modernization Pre-Design (Pre-Bond),0,100,0,2019-01-01,budget-fy2019-20-book,159,
+2017,Jefferson HS Modernization Pre-Design (Pre-Bond),0,100,0,2019-01-01,budget-fy2019-20-book,159,
+2017,Wilson HS Modernization Pre-Design (Pre-Bond),0,100,0,2019-01-01,budget-fy2019-20-book,159,
+2017,2017 Bond Program: Pre-Design - Pre-Bond,0,81,81,2019-01-01,budget-fy2019-20-book,159,
+2017,2017 Bond Program (program costs),210000,130863,5902,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 11,924,105"
+2017,Hayhurst SRGP,0,2500,0,2019-01-01,budget-fy2019-20-book,159,
+2017,Multiple Sites - 2018-2019 Middle School Conversions,0,32541,29128,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 780,000"
+2017,Environmental Health & Safety - ADA,,,0,2019-01-01,budget-fy2019-20-book,159,"no original/current budget printed; FY20 budget 2,470,530"
+2017,Environmental Health & Safety - Asbestos,,3899,1461,2019-01-01,budget-fy2019-20-book,159,"no original budget printed; FY20 budget 5,099,434"
+2017,Environmental Health & Safety - Fire Alarm & Sprinklers,,9040,880,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 14,132,783"
+2017,Environmental Health & Safety - Lead Based Paint,,11901,1863,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 6,295,140"
+2017,Environmental Health & Safety - Radon,,290,173,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 120,000"
+2017,Environmental Health & Safety - Roofs,,3939,183,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 12,429,697"
+2017,Environmental Health & Safety - Security,,4297,44,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 10,987,000"
+2017,Environmental Health & Safety - Water Quality,,9107,2361,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 10,000,951"
+2017,Contingency,0,0,0,2019-01-01,budget-fy2019-20-book,159,"FY20 budget 42,933,432 (matches Capital Projects fund contingency)"
+2017,TOTAL 2017 Bond,790000,778981,56108,2019-01-01,budget-fy2019-20-book,159,
+combined,TOTAL Capital Improvement Bond Program,1272000,1405463,565782,2019-01-01,budget-fy2019-20-book,159,combined 2012+2017 grand total incl additional funding resource

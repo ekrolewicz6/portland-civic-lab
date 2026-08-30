@@ -1,0 +1,12 @@
+permanent_rate,gap_rate,local_option_rate,bond_rate,av_billions,rmv_billions,compression_loss_k,fy,basis,doc_id,page,notes
+5.28,,1.99,2.44,56.04,140.25,22990,2020-21,actual-budgetary,budget-fy2024-25-vol1,27,"Revenue Factors table; Operations rate 5.28 INCLUDES the 0.5038 gap component; AV is Total Net Assessed Value; compression is the Less Measure 5 Adjustments line printed in whole dollars (22989685) divided by 1000"
+5.28,,1.99,2.33,59.74,147.26,24819,2021-22,actual-budgetary,budget-fy2024-25-vol1,27,"compression printed 24819007"
+5.28,,1.99,2.30,62.49,157.08,25155,2022-23,actual-budgetary,budget-fy2024-25-vol1,27,"compression printed 25154736"
+5.28,,1.99,2.38,69.01,156.67,35762,2023-24,actual-budgetary,budget-fy2024-25-vol1,27,"compression printed 35762128; p212 table prints 2023-24 bond rate as 2.5000 and total 9.7681 - conflicts with this page (2.38 / 9.65)"
+5.28,,1.99,2.50,72.46,155.10,40000,2024-25,adopted,budget-fy2024-25-vol1,27,"projected column in adopted book; compression printed 40000000; total rate printed 9.77"
+4.7743,0.5038,1.9900,2.4017,,,,2020-21,actual-budgetary,budget-fy2024-25-vol1,212,"Budget's Effect on Average Homeowner table; permanent shown here EXCLUDES gap (combined authority 5.2781); total rate 9.6698"
+4.7743,0.5038,1.9900,2.3335,,,,2021-22,actual-budgetary,budget-fy2024-25-vol1,212,"total rate 9.6016"
+4.7743,0.5038,1.9900,2.3000,,,,2022-23,actual-budgetary,budget-fy2024-25-vol1,212,"total rate 9.5681"
+4.7743,0.5038,1.9900,2.5000,,,,2023-24,actual-budgetary,budget-fy2024-25-vol1,212,"total rate 9.7681; conflicts with p27 (bond 2.38, total 9.65)"
+4.7743,0.5038,1.9900,2.5000,,,,2024-25,adopted,budget-fy2024-25-vol1,212,"projected column; total rate 9.7681; actual levy rate determined by county assessors"
+5.2781,,1.9900,,,,,2024-25,adopted,budget-fy2024-25-vol1,307,"Form OR-ED-50 certified rates; permanent rate limit 5.2781 (includes gap component 0.5038 per Resolution 6920 p302); bonded debt certified as a dollar levy of $166,000,000 not a rate; local option authorized through final tax year 2024-25 (Nov 5 2019 measure)"

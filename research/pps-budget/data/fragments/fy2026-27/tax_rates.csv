@@ -1,0 +1,6 @@
+permanent_rate,gap_rate,local_option_rate,bond_rate,av_billions,rmv_billions,compression_loss_k,fy,basis,doc_id,page,notes
+4.7743,0.5038,1.99,2.3,62.49,157.08,25191.648,2022-23,actual-budgetary,budget-fy2026-27-vol1,28;226,"rates from Budget's Effect on Average Homeowner (p.226, printed 219); AV/RMV/compression from Revenue Factors table (p.28, printed 21); rates are per $1,000 AV; compression_loss_k = Measure 5 adjustments in thousands (native unit whole dollars, divided by 1000)"
+4.7743,0.5038,1.99,2.3828,69.0,156.67,35716.191,2023-24,actual-budgetary,budget-fy2026-27-vol1,28;226,
+4.7743,0.5038,1.99,2.3338,71.05,151.42,42563.967,2024-25,actual-budgetary,budget-fy2026-27-vol1,28;226,
+4.7743,0.5038,1.99,2.4835,72.25,150.64,47090.332,2025-26,actual-budgetary,budget-fy2026-27-vol1,28;226,2025-26 labeled Actual in Budget's Effect table; AV/compression are latest ODE/TSCC estimates per Revenue Factors footnote
+4.7743,0.5038,1.99,2.5046,73.56,149.5,53414.0,2026-27,adopted,budget-fy2026-27-vol1,28;226,"projected rates; adopted resolution (RES 7326, p.318) imposes permanent rate levy $5.2781/$1,000 (= 4.7743 permanent + 0.5038 gap portion excluded from urban renewal division of tax), local option $1.9900, bonded debt levy $184,250,000; AV $73.56B from Revenue Factors p.28 (TSCC estimate on p.224 prints $73.698B); compression = 'Less Measure 5 Adjustments' line"

@@ -1,0 +1,50 @@
+function_code,label,amount_k,fy,basis,doc_id,page,notes
+1000,Instruction,324119,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,native unit thousands; Summary of Requirements by Major Function - General Funds
+1000,Instruction,339412,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,
+1000,Instruction,347734,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,
+1000,Instruction,371969,2019-20,revised,budget-fy2020-21-vol1,118,
+1000,Instruction,373928,2020-21,proposed,budget-fy2020-21-vol1,118,
+1000,Instruction,373928,2020-21,approved,budget-fy2020-21-vol1,118,
+1000,Instruction,373928,2020-21,adopted,budget-fy2020-21-vol1,118,
+2000,Support Services,238435,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,
+2000,Support Services,248784,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,
+2000,Support Services,265988,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,
+2000,Support Services,289511,2019-20,revised,budget-fy2020-21-vol1,118,
+2000,Support Services,311832,2020-21,proposed,budget-fy2020-21-vol1,118,
+2000,Support Services,311832,2020-21,approved,budget-fy2020-21-vol1,118,
+2000,Support Services,311832,2020-21,adopted,budget-fy2020-21-vol1,118,
+3000,Enterprise And Community Svcs,1701,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,
+3000,Enterprise And Community Svcs,2160,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,
+3000,Enterprise And Community Svcs,1491,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,
+3000,Enterprise And Community Svcs,1901,2019-20,revised,budget-fy2020-21-vol1,118,
+3000,Enterprise And Community Svcs,1814,2020-21,proposed,budget-fy2020-21-vol1,118,
+3000,Enterprise And Community Svcs,1814,2020-21,approved,budget-fy2020-21-vol1,118,
+3000,Enterprise And Community Svcs,1814,2020-21,adopted,budget-fy2020-21-vol1,118,
+5200,Transfers Of Funds,15941,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,
+5200,Transfers Of Funds,5328,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,
+5200,Transfers Of Funds,5492,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,
+5200,Transfers Of Funds,1704,2019-20,revised,budget-fy2020-21-vol1,118,
+5200,Transfers Of Funds,1134,2020-21,proposed,budget-fy2020-21-vol1,118,
+5200,Transfers Of Funds,1134,2020-21,approved,budget-fy2020-21-vol1,118,
+5200,Transfers Of Funds,1134,2020-21,adopted,budget-fy2020-21-vol1,118,
+6000,Contingencies,0,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,printed as '-'
+6000,Contingencies,0,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,printed as '-'
+6000,Contingencies,0,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,printed as '-'
+6000,Contingencies,26682,2019-20,revised,budget-fy2020-21-vol1,118,
+6000,Contingencies,40946,2020-21,proposed,budget-fy2020-21-vol1,118,
+6000,Contingencies,40946,2020-21,approved,budget-fy2020-21-vol1,118,
+6000,Contingencies,40946,2020-21,adopted,budget-fy2020-21-vol1,118,
+7000,Unappropriated Fund Balance,20104,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,
+7000,Unappropriated Fund Balance,38282,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,
+7000,Unappropriated Fund Balance,39887,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,
+7000,Unappropriated Fund Balance,0,2019-20,revised,budget-fy2020-21-vol1,118,printed as '-'
+7000,Unappropriated Fund Balance,0,2020-21,proposed,budget-fy2020-21-vol1,118,printed as '-'
+7000,Unappropriated Fund Balance,0,2020-21,approved,budget-fy2020-21-vol1,118,printed as '-'
+7000,Unappropriated Fund Balance,0,2020-21,adopted,budget-fy2020-21-vol1,118,printed as '-'
+TOTAL,TOTAL REQUIREMENTS,600301,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,
+TOTAL,TOTAL REQUIREMENTS,633966,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,
+TOTAL,TOTAL REQUIREMENTS,660592,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,
+TOTAL,TOTAL REQUIREMENTS,691767,2019-20,revised,budget-fy2020-21-vol1,118,
+TOTAL,TOTAL REQUIREMENTS,729654,2020-21,proposed,budget-fy2020-21-vol1,118,
+TOTAL,TOTAL REQUIREMENTS,729654,2020-21,approved,budget-fy2020-21-vol1,118,
+TOTAL,TOTAL REQUIREMENTS,729654,2020-21,adopted,budget-fy2020-21-vol1,118,

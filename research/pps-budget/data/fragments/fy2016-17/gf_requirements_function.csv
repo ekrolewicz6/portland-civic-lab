@@ -1,0 +1,43 @@
+function_code,label,amount_k,fy,basis,doc_id,page,notes
+1000,Instruction,271983.576,2013-14,actual-budgetary,budget-fy2016-17-book,79,"native unit whole dollars; function codes assigned per Oregon convention (table prints program-area labels, not codes)"
+1000,Instruction,293299.904,2014-15,actual-budgetary,budget-fy2016-17-book,79,
+1000,Instruction,324822.344,2015-16,revised,budget-fy2016-17-book,79,
+1000,Instruction,332302.527,2016-17,proposed,budget-fy2016-17-book,79,
+1000,Instruction,331766.479,2016-17,approved,budget-fy2016-17-book,79,
+1000,Instruction,332299.184,2016-17,adopted,budget-fy2016-17-book,79,
+2000,Support Services,182354.183,2013-14,actual-budgetary,budget-fy2016-17-book,79,
+2000,Support Services,201248.427,2014-15,actual-budgetary,budget-fy2016-17-book,79,
+2000,Support Services,224906.349,2015-16,revised,budget-fy2016-17-book,79,
+2000,Support Services,236106.438,2016-17,proposed,budget-fy2016-17-book,79,
+2000,Support Services,237379.986,2016-17,approved,budget-fy2016-17-book,79,
+2000,Support Services,237833.986,2016-17,adopted,budget-fy2016-17-book,79,
+3000,Enterprise & Community Services,1621,2013-14,actual-budgetary,budget-fy2016-17-book,79,
+3000,Enterprise & Community Services,1829.764,2014-15,actual-budgetary,budget-fy2016-17-book,79,
+3000,Enterprise & Community Services,1822.701,2015-16,revised,budget-fy2016-17-book,79,
+3000,Enterprise & Community Services,1842.222,2016-17,proposed,budget-fy2016-17-book,79,
+3000,Enterprise & Community Services,1842.222,2016-17,approved,budget-fy2016-17-book,79,
+3000,Enterprise & Community Services,1812.588,2016-17,adopted,budget-fy2016-17-book,79,
+5000,Debt Service & Transfers Out,9013.122,2013-14,actual-budgetary,budget-fy2016-17-book,79,GF debt service & transfers are fund transfers (program 52100) only
+5000,Debt Service & Transfers Out,14409.096,2014-15,actual-budgetary,budget-fy2016-17-book,79,GF debt service & transfers are fund transfers (program 52100) only
+5000,Debt Service & Transfers Out,7407.693,2015-16,revised,budget-fy2016-17-book,79,GF debt service & transfers are fund transfers (program 52100) only
+5000,Debt Service & Transfers Out,6023.205,2016-17,proposed,budget-fy2016-17-book,79,GF debt service & transfers are fund transfers (program 52100) only
+5000,Debt Service & Transfers Out,5420.705,2016-17,approved,budget-fy2016-17-book,79,GF debt service & transfers are fund transfers (program 52100) only
+5000,Debt Service & Transfers Out,5420.705,2016-17,adopted,budget-fy2016-17-book,79,GF debt service & transfers are fund transfers (program 52100) only
+6000,Contingency,0,2013-14,actual-budgetary,budget-fy2016-17-book,79,actual-year columns printed as dash (contingency is never expended)
+6000,Contingency,0,2014-15,actual-budgetary,budget-fy2016-17-book,79,actual-year columns printed as dash (contingency is never expended)
+6000,Contingency,20199.28,2015-16,revised,budget-fy2016-17-book,79,actual-year columns printed as dash (contingency is never expended)
+6000,Contingency,15613.717,2016-17,proposed,budget-fy2016-17-book,79,actual-year columns printed as dash (contingency is never expended)
+6000,Contingency,15633.717,2016-17,approved,budget-fy2016-17-book,79,actual-year columns printed as dash (contingency is never expended)
+6000,Contingency,15233.717,2016-17,adopted,budget-fy2016-17-book,79,actual-year columns printed as dash (contingency is never expended)
+7000,Ending Fund Balance,51673.785,2013-14,actual-budgetary,budget-fy2016-17-book,79,"budget-year columns printed as dash; p94 program detail prints 2013/14 EFB as 51,673,784 (dollar rounding)"
+7000,Ending Fund Balance,34441.54,2014-15,actual-budgetary,budget-fy2016-17-book,79,"budget-year columns printed as dash; p94 program detail prints 2013/14 EFB as 51,673,784 (dollar rounding)"
+7000,Ending Fund Balance,0,2015-16,revised,budget-fy2016-17-book,79,"budget-year columns printed as dash; p94 program detail prints 2013/14 EFB as 51,673,784 (dollar rounding)"
+7000,Ending Fund Balance,0,2016-17,proposed,budget-fy2016-17-book,79,"budget-year columns printed as dash; p94 program detail prints 2013/14 EFB as 51,673,784 (dollar rounding)"
+7000,Ending Fund Balance,0,2016-17,approved,budget-fy2016-17-book,79,"budget-year columns printed as dash; p94 program detail prints 2013/14 EFB as 51,673,784 (dollar rounding)"
+7000,Ending Fund Balance,0,2016-17,adopted,budget-fy2016-17-book,79,"budget-year columns printed as dash; p94 program detail prints 2013/14 EFB as 51,673,784 (dollar rounding)"
+,Total Requirements,516645.666,2013-14,actual-budgetary,budget-fy2016-17-book,79,"p79 prints 2013/14 total 516,645,666; account view p89/p94 prints 516,645,665 (dollar rounding)"
+,Total Requirements,545228.731,2014-15,actual-budgetary,budget-fy2016-17-book,79,"p79 prints 2013/14 total 516,645,666; account view p89/p94 prints 516,645,665 (dollar rounding)"
+,Total Requirements,579158.367,2015-16,revised,budget-fy2016-17-book,79,"p79 prints 2013/14 total 516,645,666; account view p89/p94 prints 516,645,665 (dollar rounding)"
+,Total Requirements,591888.109,2016-17,proposed,budget-fy2016-17-book,79,"p79 prints 2013/14 total 516,645,666; account view p89/p94 prints 516,645,665 (dollar rounding)"
+,Total Requirements,592043.109,2016-17,approved,budget-fy2016-17-book,79,"p79 prints 2013/14 total 516,645,666; account view p89/p94 prints 516,645,665 (dollar rounding)"
+,Total Requirements,592600.18,2016-17,adopted,budget-fy2016-17-book,79,"p79 prints 2013/14 total 516,645,666; account view p89/p94 prints 516,645,665 (dollar rounding)"

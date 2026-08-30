@@ -53,6 +53,9 @@ const RM = "https://www.pps.net/fs/resource-manager/view";
 const TSCC = "https://www.tsccmultco.com/wp-content/uploads";
 
 const EXTRA: PpsDoc[] = [
+  // Missed by the generator's curation pass (present on the ACFR index page):
+  { id: "acfr-fy2023", series: "acfr", fy: "2023", title: "PPS ACFR 2023", org: "Portland Public Schools", url: `${RM}/9b1d1b65-3a9f-42e7-85cb-d6b021f33930`, kind: "pdf", acquisition: "scripted", fetchTier: 1 },
+
   // ── FY2026-27 and FY2025-26 process artifacts (from budget process pages) ──
   { id: "budget-fy2026-27-supt-message", series: "budget-book", fy: "2026-27", title: "Superintendent's FY2026-27 Proposed Budget Message", org: "Portland Public Schools", url: `${RM}/51380314-e6ee-4177-a0e8-b8d5e17964ee`, kind: "pdf", acquisition: "scripted", fetchTier: 1 },
   { id: "lb1-fy2026-27", series: "lb1", fy: "2026-27", title: "FY2026-27 Notice of Budget Hearing & Budget Summary (LB-1)", org: "Portland Public Schools", url: `${RM}/c3920faf-5257-4af4-81f4-78a245a335c1`, kind: "pdf", acquisition: "scripted", fetchTier: 1, notes: "Cleanest one-page adopted fund totals + tax rates" },

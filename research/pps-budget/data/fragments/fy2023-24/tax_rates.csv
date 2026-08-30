@@ -1,0 +1,6 @@
+permanent_rate,gap_rate,local_option_rate,bond_rate,av_billions,rmv_billions,compression_loss_k,fy,basis,doc_id,page,notes
+4.7743,0.5038,1.99,2.4053,53.7,134.59,20911,2019-20,actual-budgetary,budget-fy2023-24-vol1,210,"rates from PDF p210 (per $1000 AV); av_billions/rmv_billions/compression_loss_k from Revenue Factors table PDF p27; compression = Less Measure 5 Adjustments, native whole dollars divided by 1000; p40 prints combined operations permanent rate 5.2781 = permanent 4.7743 + gap 0.5038"
+4.7743,0.5038,1.99,2.4017,56.04,140.25,22990,2020-21,actual-budgetary,budget-fy2023-24-vol1,210,
+4.7743,0.5038,1.99,2.3335,57.28,147.26,24819,2021-22,actual-budgetary,budget-fy2023-24-vol1,210,
+4.7743,0.5038,1.99,2.3,62.6,152.42,23000,2022-23,actual-budgetary,budget-fy2023-24-vol1,210,compression marked projected on p27
+4.7743,0.5038,1.99,2.5,65.61,158.88,27000,2023-24,adopted,budget-fy2023-24-vol1,210,rates and compression printed as Projected in adopted book

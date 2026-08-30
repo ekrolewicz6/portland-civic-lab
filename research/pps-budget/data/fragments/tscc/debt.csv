@@ -1,0 +1,21 @@
+go_outstanding_k,pob_outstanding_k,debt_service_k,fy,basis,doc_id,page,notes
+,,272690,2025-26,approved,tscc-review-fy2026,9,"PPS; debt service by FUNCTION (2025-26 Requirements by Function chart); p.16 narrative: total debt service FY25-26 $272.7M, GO bonds 65.6% of budgeted; by-OBJECT debt service is 308,953 (p.10, incl GASB-87 leases/internal service); total outstanding debt estimated $1.7B as of June 20 2025 (p.16, no exact figure printed)"
+,,259100,2024-25,approved,tscc-review-fy2025,16,"PPS; per district debt schedule ($259.1M); budgeted by-object debt service 296,376 (GASB 87 long-term leases included); GO bonds 65.8% of budgeted; outstanding debt estimated $1.8B 'as of June 20, 2023' (p.15 - date appears stale, likely copied from prior-year review)"
+,,250900,2023-24,approved,tscc-review-fy2024,16,"PPS; per district debt schedule ($250.9M); budgeted by-object 252,744 (GASB 87); GO bonds 65.9% of budgeted; outstanding debt estimated $1.97B as of June 20 2023 (p.15)"
+1270000,,,2024-25,actual-budgetary,tscc-measure-26-259-review,6,"PPS; 'approximately $1.8 billion in debt remains from prior bond issuance; $1.27 billion (over 67%) of this is general obligation debt' (review dated May 2025); cf. annual report: PPS total long-term debt outstanding $1,433,611,215 at 6-30-24 (summaries p.82); $1,434M at 6/30/24, $1,970M at 6/30/23, $588M at 6/30/14 (general p.79, all debt types, $ millions)"
+,,145053,2022-23,actual-budgetary,tscc-review-fy2026,19,"PPS; GO BONDS DEBT SERVICE FUND ONLY (Detail of General Obligation Debt Service Fund, 'Debt Services' row); native whole dollars; excludes pension-bond Debt Service Fund and GASB-87 leases"
+,,165570,2023-24,actual-budgetary,tscc-review-fy2026,19,"PPS; GO fund only; printed 165,570 (FY25 review and annual report print 165,571 for the 2023-24 revised column)"
+,,170535,2024-25,revised,tscc-review-fy2026,19,PPS; GO fund only
+,,178851,2025-26,approved,tscc-review-fy2026,19,"PPS; GO fund only; funded by GO debt property taxes 173,708 + BFB 3,242 + interest 1,901"
+,,140826,2021-22,actual-budgetary,tscc-review-fy2025,19,PPS; GO fund only
+,,145053,2022-23,actual-budgetary,tscc-review-fy2025,19,PPS; GO fund only
+,,165571,2023-24,revised,tscc-review-fy2025,19,PPS; GO fund only
+,,170535,2024-25,approved,tscc-review-fy2025,19,PPS; GO fund only
+,,190588,2020-21,actual-budgetary,tscc-review-fy2024,19,"PPS; GO fund only; 2020-21 includes refunding activity (fund also shows 55,596 debt proceeds that year)"
+,,140826,2021-22,actual-budgetary,tscc-review-fy2024,19,PPS; GO fund only
+,,145053,2022-23,revised,tscc-review-fy2024,19,PPS; GO fund only
+,,165571,2023-24,approved,tscc-review-fy2024,19,PPS; GO fund only
+,,140826,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,PPS; GO fund only; annual report PPS Budget Summary
+,,145053,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,PPS; GO fund only
+,,165571,2023-24,revised,tscc-annual-report-2024-25-summaries,85,PPS; GO fund only
+,,170535,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,PPS; GO fund only

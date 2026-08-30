@@ -1,0 +1,6 @@
+permanent_rate,gap_rate,local_option_rate,bond_rate,av_billions,rmv_billions,compression_loss_k,fy,basis,doc_id,page,notes
+4.7743,0.5038,1.99,1.0623,47.35,106.94,20960,2016-17,actual-budgetary,budget-fy2020-21-vol1,238,rates from Budget's Effect on Average Homeowner p.238; AV/RMV/Measure 5 compression from Revenue Factors p.53; permanent rate 4.7743 excludes the 0.5038 gap portion (combined operations rate 5.2781); compression_loss_k = Measure 5 adjustments
+4.7743,0.5038,1.99,2.4182,49.71,121.65,20506,2017-18,actual-budgetary,budget-fy2020-21-vol1,238,
+4.7743,0.5038,1.99,2.489,51.11,131.74,18830,2018-19,actual-budgetary,budget-fy2020-21-vol1,238,
+4.7743,0.5038,1.99,2.4053,53.7,134.59,20911,2019-20,actual-budgetary,budget-fy2020-21-vol1,238,p.238 labels 2019-20 column Actual
+4.7743,0.5038,1.99,2.45,55.31,138.63,20308,2020-21,adopted,budget-fy2020-21-vol1,238,"2020-21 values projected; AV 55,314,305K estimated p.236; resolution p.319 imposes $5.2781 operations + $1.9900 local option rates and $136,000K bonded debt levy amount"

@@ -1,0 +1,31 @@
+contingency_k,ending_fund_balance_k,fy,basis,doc_id,page,notes
+0,105497,2022-23,actual-budgetary,tscc-review-fy2026,19,General Fund only; from GF detail (Budget Summary); native whole dollars
+0,86078,2023-24,actual-budgetary,tscc-review-fy2026,19,"General Fund only; GF summary table p.15 prints EFB 86,078 for 2023-24 actual (annual report prints 105,497 for 2022-23)"
+40856,0,2024-25,revised,tscc-review-fy2026,19,General Fund only
+41179,0,2025-26,approved,tscc-review-fy2026,19,General Fund only; contingency = 5.2% of GF revenues (p.15 narrative); board policy reserve 5-10% (2019)
+0,98804,2021-22,actual-budgetary,tscc-review-fy2025,18,General Fund only
+0,105497,2022-23,actual-budgetary,tscc-review-fy2025,18,General Fund only
+43063,0,2023-24,revised,tscc-review-fy2025,18,General Fund only
+42656,0,2024-25,approved,tscc-review-fy2025,18,"General Fund only; PRE-amendment; $1.8M moved to instruction at approval reduced reserve to 4.8% of resources (below 5% board policy, p.14); adopted contingency 40,856"
+0,88691,2020-21,actual-budgetary,tscc-review-fy2024,19,General Fund only
+0,98804,2021-22,actual-budgetary,tscc-review-fy2024,19,General Fund only
+50768,0,2022-23,revised,tscc-review-fy2024,19,General Fund only
+43063,0,2023-24,approved,tscc-review-fy2024,19,General Fund only
+43063,0,2023-24,revised,tscc-annual-report-2024-25-summaries,85,General Fund only; annual report PPS Budget Summary
+40856,0,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,General Fund only; post-amendment adopted
+0,895164,2022-23,actual-budgetary,tscc-review-fy2026,18,All funds; contingency+EFB from SUMMARY OF ALL FUNDS (by object rows; EFB row prints on p.19)
+0,624938,2023-24,actual-budgetary,tscc-review-fy2026,18,All funds
+44738,22423,2024-25,revised,tscc-review-fy2026,18,"All funds; FY24-25 Adopted had erroneous $165K contingency in Debt Service Fund, to be fixed by supplemental budget (p.17)"
+41679,0,2025-26,approved,tscc-review-fy2026,18,"All funds; contingency in GF (41,179) + Internal Service (500 per p.10 narrative: $0.5M); no EFB budgeted in any fund (PERS Rate Stabilization balance transferred to GF)"
+0,672720,2021-22,actual-budgetary,tscc-review-fy2025,17,All funds; requirements-by-object rows (contingencies/EFB continue on p.18)
+0,895164,2022-23,actual-budgetary,tscc-review-fy2025,17,All funds
+48414,26313,2023-24,revised,tscc-review-fy2025,18,All funds; by-object rows
+44738,22423,2024-25,approved,tscc-review-fy2025,18,"All funds; by-object rows; NOTE requirements-BY-FUNCTION table p.17 prints contingencies 44,321 for same column (internal conflict)"
+0,906725,2020-21,actual-budgetary,tscc-review-fy2024,18,"All funds; by-object rows; by-function table prints EFB 906,738 for same column (internal conflict)"
+0,672720,2021-22,actual-budgetary,tscc-review-fy2024,18,All funds
+56024,46536,2022-23,revised,tscc-review-fy2024,18,All funds
+48414,26313,2023-24,approved,tscc-review-fy2024,18,All funds
+0,672720,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,84,All funds; annual report by-object rows
+0,895164,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,84,All funds
+48414,26313,2023-24,revised,tscc-annual-report-2024-25-summaries,84,All funds
+44738,22423,2024-25,adopted,tscc-annual-report-2024-25-summaries,84,"All funds; 22,423 EFB = PERS Rate Stabilization Fund balance (per FY26 review p.10)"

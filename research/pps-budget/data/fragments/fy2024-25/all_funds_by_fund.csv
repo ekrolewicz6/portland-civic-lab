@@ -1,0 +1,43 @@
+fund_name,resources_k,requirements_k,fy,basis,doc_id,page,notes
+General Fund (100),744589,744589,2020-21,actual-budgetary,budget-fy2024-25-vol1,99,"native unit thousands; resources p99, requirements total p100; requirements include ending fund balance"
+General Fund (100),1188261,1188261,2021-22,actual-budgetary,budget-fy2024-25-vol1,99,"2021-22 inflated by 2021 pension-bond pass-through (bond proceeds 399390 in resources, 400833 in 5100/5400 requirements)"
+General Fund (100),830038,830038,2022-23,actual-budgetary,budget-fy2024-25-vol1,99,
+General Fund (100),833774,833774,2023-24,adopted,budget-fy2024-25-vol1,99,"book states 2023-24 budget columns are from the 2023-24 Adopted Budget (p78)"
+General Fund (100),853111,853111,2024-25,proposed,budget-fy2024-25-vol1,99,
+General Fund (100),854394,854394,2024-25,approved,budget-fy2024-25-vol1,99,
+General Fund (100),854394,854394,2024-25,adopted,budget-fy2024-25-vol1,99,"also Attachment A p303"
+Special Revenue Funds (200),155931,155931,2020-21,actual-budgetary,budget-fy2024-25-vol1,111,"resources p111, requirements total p113; one overlapped print on p112 shows 155929 (rounding artifact)"
+Special Revenue Funds (200),216693,216693,2021-22,actual-budgetary,budget-fy2024-25-vol1,111,
+Special Revenue Funds (200),249353,249353,2022-23,actual-budgetary,budget-fy2024-25-vol1,111,
+Special Revenue Funds (200),247477,247477,2023-24,adopted,budget-fy2024-25-vol1,111,
+Special Revenue Funds (200),224318,224318,2024-25,proposed,budget-fy2024-25-vol1,111,
+Special Revenue Funds (200),224318,224318,2024-25,approved,budget-fy2024-25-vol1,111,
+Special Revenue Funds (200),224318,224318,2024-25,adopted,budget-fy2024-25-vol1,111,"also Attachment A p303"
+Debt Service Funds (300),258478,258478,2020-21,actual-budgetary,budget-fy2024-25-vol1,139,"resources p139, requirements total p140"
+Debt Service Funds (300),232104,232104,2021-22,actual-budgetary,budget-fy2024-25-vol1,139,
+Debt Service Funds (300),245042,245042,2022-23,actual-budgetary,budget-fy2024-25-vol1,139,
+Debt Service Funds (300),257703,257703,2023-24,adopted,budget-fy2024-25-vol1,139,
+Debt Service Funds (300),259099,259099,2024-25,proposed,budget-fy2024-25-vol1,139,
+Debt Service Funds (300),259264,259264,2024-25,approved,budget-fy2024-25-vol1,139,"approved added 165 contingency (Attachment A p303)"
+Debt Service Funds (300),259264,259264,2024-25,adopted,budget-fy2024-25-vol1,139,"also Attachment A p303"
+Capital Projects Funds (400),1066429,1066429,2020-21,actual-budgetary,budget-fy2024-25-vol1,155,"resources p155, requirements total p156"
+Capital Projects Funds (400),780617,780620,2021-22,actual-budgetary,budget-fy2024-25-vol1,155,"resources total (p155) and requirements total (p156) differ by 3k as printed"
+Capital Projects Funds (400),1020043,1020043,2022-23,actual-budgetary,budget-fy2024-25-vol1,155,
+Capital Projects Funds (400),834106,834106,2023-24,adopted,budget-fy2024-25-vol1,155,
+Capital Projects Funds (400),1030758,1030758,2024-25,proposed,budget-fy2024-25-vol1,155,
+Capital Projects Funds (400),1030393,1030393,2024-25,approved,budget-fy2024-25-vol1,155,
+Capital Projects Funds (400),1030393,1030393,2024-25,adopted,budget-fy2024-25-vol1,155,"also Attachment A p304"
+Internal Service Funds (600),7673,7673,2020-21,actual-budgetary,budget-fy2024-25-vol1,191,"resources p191, requirements total p192"
+Internal Service Funds (600),7693,7693,2021-22,actual-budgetary,budget-fy2024-25-vol1,191,
+Internal Service Funds (600),7494,7494,2022-23,actual-budgetary,budget-fy2024-25-vol1,191,
+Internal Service Funds (600),8998,8997,2023-24,adopted,budget-fy2024-25-vol1,191,"resources total 8998 (p191) vs requirements total 8997 (p192) as printed"
+Internal Service Funds (600),21566,21566,2024-25,proposed,budget-fy2024-25-vol1,191,"jump vs prior years due to new sub-funds 602 Property & Liability Insurance and 603 Unemployment (p24)"
+Internal Service Funds (600),25509,25509,2024-25,approved,budget-fy2024-25-vol1,191,
+Internal Service Funds (600),25509,25509,2024-25,adopted,budget-fy2024-25-vol1,191,"also Attachment A p304"
+Total All Funds,2233099,2233099,2020-21,actual-budgetary,budget-fy2024-25-vol1,91,"resources p91, requirements p92"
+Total All Funds,2425370,2425371,2021-22,actual-budgetary,budget-fy2024-25-vol1,91,"resources table prints 2425370, requirements table prints 2425371"
+Total All Funds,2351970,2351970,2022-23,actual-budgetary,budget-fy2024-25-vol1,91,
+Total All Funds,2182057,2182057,2023-24,adopted,budget-fy2024-25-vol1,91,
+Total All Funds,2388852,2388852,2024-25,proposed,budget-fy2024-25-vol1,91,
+Total All Funds,2393878,2393878,2024-25,approved,budget-fy2024-25-vol1,91,
+Total All Funds,2393878,2393878,2024-25,adopted,budget-fy2024-25-vol1,91,"matches Resolution No. 6920 total $2,393,878,000 (p301) and Attachment A p304"

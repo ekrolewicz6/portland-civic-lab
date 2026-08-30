@@ -1,0 +1,66 @@
+enrollment,admr,admw,fy,basis,doc_id,page,notes
+,44748,53500,2021-22,actual-budgetary,tscc-review-fy2026,4,PPS; General Information table (spans p.3-4); ADMr/ADMw = latest May estimates from ODE
+,44518,53581,2022-23,actual-budgetary,tscc-review-fy2026,4,"PPS; ADMw 53,581 here and in 26-259 p.3 but 53,518 in annual report summaries p.83"
+,43514,52232,2023-24,actual-budgetary,tscc-review-fy2026,4,PPS
+,43302,52114,2024-25,actual-budgetary,tscc-review-fy2026,4,PPS
+,44748,53500,2021-22,actual-budgetary,tscc-measure-26-259-review,3,PPS; chart reproduced from FY24-25 TSCC Annual Report
+,44518,53581,2022-23,actual-budgetary,tscc-measure-26-259-review,3,PPS
+,43514,52232,2023-24,actual-budgetary,tscc-measure-26-259-review,3,PPS
+,43302,52114,2024-25,actual-budgetary,tscc-measure-26-259-review,3,PPS
+,44748,53500,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,83,PPS
+,44518,53518,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,83,"PPS; ADMw printed 53,518 (CONFLICT: 53,581 in tscc-review-fy2026 p.4 and 26-259 p.3; likely transposition)"
+,43514,52232,2023-24,actual-budgetary,tscc-annual-report-2024-25-summaries,83,PPS
+,43302,52114,2024-25,actual-budgetary,tscc-annual-report-2024-25-summaries,83,PPS
+48653,,,2019-20,actual-budgetary,tscc-review-fy2026,4,"PPS; Portland Public Schools Enrollment chart, chart 'Actual'; series definition unlabeled (values differ from ADMr and from the same chart in earlier reviews)"
+46649,,,2020-21,actual-budgetary,tscc-review-fy2026,4,"PPS; Portland Public Schools Enrollment chart, chart 'Actual'"
+44861,,,2021-22,actual-budgetary,tscc-review-fy2026,4,"PPS; Portland Public Schools Enrollment chart, chart 'Actual'"
+44609,,,2022-23,actual-budgetary,tscc-review-fy2026,4,"PPS; Portland Public Schools Enrollment chart, chart 'Actual'"
+44005,,,2023-24,actual-budgetary,tscc-review-fy2026,4,"PPS; Portland Public Schools Enrollment chart, chart 'Actual'"
+43375,,,2024-25,approved,tscc-review-fy2026,4,"PPS; Portland Public Schools Enrollment chart, chart 'Forecast'"
+42471,,,2025-26,approved,tscc-review-fy2026,4,"PPS; Portland Public Schools Enrollment chart, chart 'Forecast' (FY26 budget year)"
+41450,,,2026-27,approved,tscc-review-fy2026,4,"PPS; Portland Public Schools Enrollment chart, chart 'Forecast'"
+40597,,,2027-28,approved,tscc-review-fy2026,4,"PPS; Portland Public Schools Enrollment chart, chart 'Forecast'"
+39945,,,2028-29,approved,tscc-review-fy2026,4,"PPS; Portland Public Schools Enrollment chart, chart 'Forecast'"
+48653,,,2019-20,actual-budgetary,tscc-review-fy2025,4,"PPS; enrollment chart, Actual; NOTE this edition's chart values match ADMr elsewhere (44,747~ADMr 44,748; 43,514/43,302 = ADMr in FY26 review) while FY26 review chart plots a different series"
+46649,,,2020-21,actual-budgetary,tscc-review-fy2025,4,"PPS; enrollment chart, Actual"
+44747,,,2021-22,actual-budgetary,tscc-review-fy2025,4,"PPS; enrollment chart, Actual"
+44548,,,2022-23,actual-budgetary,tscc-review-fy2025,4,"PPS; enrollment chart, Actual"
+43514,,,2023-24,revised,tscc-review-fy2025,4,"PPS; enrollment chart, Forecast"
+43302,,,2024-25,approved,tscc-review-fy2025,4,"PPS; enrollment chart, Forecast (FY25 budget year)"
+42304,,,2025-26,approved,tscc-review-fy2025,4,"PPS; enrollment chart, Forecast"
+41341,,,2026-27,approved,tscc-review-fy2025,4,"PPS; enrollment chart, Forecast"
+48653,,,2019-20,actual-budgetary,tscc-review-fy2024,4,"PPS; enrollment chart, Actual; 2020-21 printed 46,937 (CONFLICT: 46,649 in FY25/FY26 review charts); 2021-22 printed 45,005 (vs 44,747/44,861 in later editions)"
+46937,,,2020-21,actual-budgetary,tscc-review-fy2024,4,"PPS; enrollment chart, Actual"
+45005,,,2021-22,actual-budgetary,tscc-review-fy2024,4,"PPS; enrollment chart, Actual"
+44799,,,2022-23,revised,tscc-review-fy2024,4,"PPS; enrollment chart, Forecast"
+44288,,,2023-24,approved,tscc-review-fy2024,4,"PPS; enrollment chart, Forecast (FY24 budget year)"
+43826,,,2024-25,approved,tscc-review-fy2024,4,"PPS; enrollment chart, Forecast"
+42950,,,2025-26,approved,tscc-review-fy2024,4,"PPS; enrollment chart, Forecast"
+,2728,3445,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,86,district: Parkrose SD 3; latest May estimates from ODE per table footnote
+,2813,3562,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,86,district: Parkrose SD 3
+,2829,3592,2023-24,actual-budgetary,tscc-annual-report-2024-25-summaries,86,district: Parkrose SD 3
+,2761,3500,2024-25,actual-budgetary,tscc-annual-report-2024-25-summaries,86,district: Parkrose SD 3
+,9674,12739,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,90,district: Reynolds SD 7; latest May estimates from ODE per table footnote
+,9656,12827,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,90,district: Reynolds SD 7
+,9370,12546,2023-24,actual-budgetary,tscc-annual-report-2024-25-summaries,90,district: Reynolds SD 7
+,9257,12336,2024-25,actual-budgetary,tscc-annual-report-2024-25-summaries,90,district: Reynolds SD 7
+,11286,13608,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,95,district: Gresham-Barlow SD 10J; latest May estimates from ODE per table footnote; ADMr/ADMw rows print on p.95 (table spans p.94-95)
+,11337,13815,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,95,district: Gresham-Barlow SD 10J
+,11240,13688,2023-24,actual-budgetary,tscc-annual-report-2024-25-summaries,95,district: Gresham-Barlow SD 10J
+,10510,13275,2024-25,actual-budgetary,tscc-annual-report-2024-25-summaries,95,district: Gresham-Barlow SD 10J
+,5480,6945,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,98,district: Centennial SD 28J; latest May estimates from ODE per table footnote; ADMw labeled 'Weighted Enrollment Extended-ADMw'
+,5426,6885,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,98,district: Centennial SD 28J
+,5423,6938,2023-24,actual-budgetary,tscc-annual-report-2024-25-summaries,98,district: Centennial SD 28J
+,5412,6944,2024-25,actual-budgetary,tscc-annual-report-2024-25-summaries,98,district: Centennial SD 28J
+,1033,1210,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,102,district: Corbett SD 39; latest May estimates from ODE per table footnote
+,1031,1220,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,102,district: Corbett SD 39
+,1048,1234,2023-24,actual-budgetary,tscc-annual-report-2024-25-summaries,102,district: Corbett SD 39
+,1065,1252,2024-25,actual-budgetary,tscc-annual-report-2024-25-summaries,102,district: Corbett SD 39
+,8697,11045,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,106,district: David Douglas SD 40; latest May estimates from ODE per table footnote
+,8583,11038,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,106,district: David Douglas SD 40
+,8597,11099,2023-24,actual-budgetary,tscc-annual-report-2024-25-summaries,106,district: David Douglas SD 40
+,8525,11020,2024-25,actual-budgetary,tscc-annual-report-2024-25-summaries,106,district: David Douglas SD 40
+,538,680,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,111,district: Riverdale SD 51J; latest May estimates from ODE per table footnote
+,506,645,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,111,district: Riverdale SD 51J
+,480,623,2023-24,actual-budgetary,tscc-annual-report-2024-25-summaries,111,district: Riverdale SD 51J
+,484,629,2024-25,actual-budgetary,tscc-annual-report-2024-25-summaries,111,district: Riverdale SD 51J

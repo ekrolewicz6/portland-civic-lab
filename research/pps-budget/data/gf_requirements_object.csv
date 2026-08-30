@@ -1,0 +1,985 @@
+object_code,label,amount_k,fy,basis,doc_id,page,notes,fragment
+,Contingency,0,2013-14,actual-budgetary,budget-fy2016-17-book,80,actual-year columns printed as dash,fy2016-17
+,Ending Fund Balance,51673.785,2013-14,actual-budgetary,budget-fy2016-17-book,80,budget-year columns printed as dash,fy2016-17
+,Total Requirements,516645.666,2013-14,actual-budgetary,budget-fy2016-17-book,80,"p80 prints 2013/14 total 516,645,666; account detail p98 prints 516,645,665 (dollar rounding)",fy2016-17
+100,Salaries,246921.093,2013-14,actual-budgetary,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Salaries; overlaps row 100+200 - do not double count,fy2016-17
+100+200,Salaries and Benefits,376576.888,2013-14,actual-budgetary,budget-fy2016-17-book,80,native unit whole dollars; combined category as printed; see rows 100/200 for the split,fy2016-17
+200,Employee Benefits,129655.795,2013-14,actual-budgetary,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Employee Benefits; overlaps row 100+200 - do not double count,fy2016-17
+300+400,Materials and Services,72308.4,2013-14,actual-budgetary,budget-fy2016-17-book,80,combined purchased services + supplies category as printed,fy2016-17
+500,Capital Outlay,3297.504,2013-14,actual-budgetary,budget-fy2016-17-book,80,,fy2016-17
+600,Debt Service & Other,3775.967,2013-14,actual-budgetary,budget-fy2016-17-book,80,"other objects (fiscal charges, dues, insurance, etc.); GF has no bonded debt service",fy2016-17
+700,Fund Transfers,9013.122,2013-14,actual-budgetary,budget-fy2016-17-book,80,,fy2016-17
+,Contingency,0,2014-15,actual-budgetary,budget-fy2016-17-book,80,actual-year columns printed as dash,fy2016-17
+,Ending Fund Balance,34441.54,2014-15,actual-budgetary,budget-fy2016-17-book,80,budget-year columns printed as dash,fy2016-17
+,Total Requirements,545228.731,2014-15,actual-budgetary,budget-fy2016-17-book,80,"p80 prints 2013/14 total 516,645,666; account detail p98 prints 516,645,665 (dollar rounding)",fy2016-17
+100,Salaries (subtotal),271479.428,2014-15,actual-budgetary,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail,fy2017-18
+100,Salaries,271479.428,2014-15,actual-budgetary,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Salaries; overlaps row 100+200 - do not double count,fy2016-17
+100+200,Salaries and Benefits,408398.173,2014-15,actual-budgetary,budget-fy2016-17-book,80,combined category as printed; see rows 100/200 for the split,fy2016-17
+100+200,Salaries and Benefits,408398.173,2014-15,actual-budgetary,budget-fy2017-18-book,79,native unit whole dollars; book combines objects 100/200 and 300/400 at summary level - split rows 100 and 200 provided from detail subtotals,fy2017-18
+200,Employee Benefits (subtotal),136918.746,2014-15,actual-budgetary,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail,fy2017-18
+200,Employee Benefits,136918.746,2014-15,actual-budgetary,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Employee Benefits; overlaps row 100+200 - do not double count,fy2016-17
+300+400,Materials and Services,79196.52,2014-15,actual-budgetary,budget-fy2016-17-book,80,combined purchased services + supplies category as printed,fy2016-17
+300+400,Materials and Services,79196.520,2014-15,actual-budgetary,budget-fy2017-18-book,79,,fy2017-18
+500,Capital Outlay,5558.214,2014-15,actual-budgetary,budget-fy2016-17-book,80,,fy2016-17
+500,Capital Outlay,5558.214,2014-15,actual-budgetary,budget-fy2017-18-book,79,,fy2017-18
+600,Debt Service & Other,3225.187,2014-15,actual-budgetary,budget-fy2016-17-book,80,"other objects (fiscal charges, dues, insurance, etc.); GF has no bonded debt service",fy2016-17
+600,Debt Service & Other,3225.187,2014-15,actual-budgetary,budget-fy2017-18-book,79,,fy2017-18
+700,Fund Transfers,14409.096,2014-15,actual-budgetary,budget-fy2016-17-book,80,,fy2016-17
+700,Fund Transfers,14409.096,2014-15,actual-budgetary,budget-fy2017-18-book,79,,fy2017-18
+810,Contingency,0.000,2014-15,actual-budgetary,budget-fy2017-18-book,79,PPS account 581000 Operating Contingency,fy2017-18
+EFB,Ending Fund Balance,34441.540,2014-15,actual-budgetary,budget-fy2017-18-book,79,PPS account 376520; not an expenditure object,fy2017-18
+TOTAL,Total Requirements,545228.731,2014-15,actual-budgetary,budget-fy2017-18-book,79,,fy2017-18
+,Contingency,20199.28,2015-16,revised,budget-fy2016-17-book,80,actual-year columns printed as dash,fy2016-17
+,Ending Fund Balance,0,2015-16,revised,budget-fy2016-17-book,80,budget-year columns printed as dash,fy2016-17
+,Total Requirements by Account,583731.903,2015-16,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+,Total Requirements,579158.367,2015-16,revised,budget-fy2016-17-book,80,"p80 prints 2013/14 total 516,645,666; account detail p98 prints 516,645,665 (dollar rounding)",fy2016-17
+,Total Requirements,583732,2015-16,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+100,Other Salaries,18458,2015-16,actual-budgetary,budget-fy2019-20-book,84,printed as 'OTHER SALARIES' (residual 100-object salaries),fy2019-20
+100,Salaries (subtotal),303824.963,2015-16,actual-budgetary,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail,fy2017-18
+100,Salaries (subtotal),303824.963,2015-16,actual-budgetary,budget-fy2018-19-book,89,native unit whole dollars; 300-series and 500-series appear only as multiple printed subtotals (no single 300/500 total printed); contingency/EFB carried at printed account codes,fy2018-19
+100,Salaries,307086.945,2015-16,revised,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Salaries; overlaps row 100+200 - do not double count,fy2016-17
+100+200,Salaries and Benefits,445392.054,2015-16,actual-budgetary,budget-fy2017-18-book,79,,fy2017-18
+100+200,Salaries and Benefits,459654.387,2015-16,revised,budget-fy2016-17-book,80,combined category as printed; see rows 100/200 for the split,fy2016-17
+111,Licensed Salaries,197803,2015-16,actual-budgetary,budget-fy2019-20-book,84,native unit thousands; Summary of Requirements by Major Account - General Fund,fy2019-20
+1121,Classified - Represented,43187,2015-16,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+1122,Non-Represented Staff,21309,2015-16,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+113,Administrators,23068,2015-16,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+200,Associated Payroll Costs,141567,2015-16,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+200,Employee Benefits (subtotal),141567.091,2015-16,actual-budgetary,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail,fy2017-18
+200,Employee Benefits (subtotal),141567.091,2015-16,actual-budgetary,budget-fy2018-19-book,89,,fy2018-19
+200,Employee Benefits,152567.442,2015-16,revised,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Employee Benefits; overlaps row 100+200 - do not double count,fy2016-17
+300,Charter Schools (536000),12611.042,2015-16,actual-budgetary,budget-fy2018-19-book,90,,fy2018-19
+300,Communications,3153.466,2015-16,actual-budgetary,budget-fy2018-19-book,90,,fy2018-19
+300,Instructional Prof. & Technical Services,6666.665,2015-16,actual-budgetary,budget-fy2018-19-book,90,,fy2018-19
+300,Non-Instruct. Prof. & Tech. Services,12191.820,2015-16,actual-budgetary,budget-fy2018-19-book,91,,fy2018-19
+300,Property Services,16365.664,2015-16,actual-budgetary,budget-fy2018-19-book,90,,fy2018-19
+300,Purchased Services,73905,2015-16,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+300,Transportation Services,14051.494,2015-16,actual-budgetary,budget-fy2018-19-book,90,,fy2018-19
+300,Travel,1183.728,2015-16,actual-budgetary,budget-fy2018-19-book,90,,fy2018-19
+300,Tuition Payments,7681.196,2015-16,actual-budgetary,budget-fy2018-19-book,91,,fy2018-19
+300+400,Materials and Services,86590.264,2015-16,revised,budget-fy2016-17-book,80,combined purchased services + supplies category as printed,fy2016-17
+300+400,Materials and Services,86807.462,2015-16,actual-budgetary,budget-fy2017-18-book,79,,fy2017-18
+376520,Budgeted Ending Fund Balance,37835,2015-16,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+376520,Ending Fund Balance,37835.045,2015-16,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+400,Supplies & Materials,12902.387,2015-16,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+400,Supplies and Materials,12902,2015-16,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+500,Building Acquisition and Improvements,2.619,2015-16,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+500,Capital Outlay,1713.106,2015-16,revised,budget-fy2016-17-book,80,,fy2016-17
+500,Capital Outlay,2737,2015-16,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+500,Capital Outlay,2737.164,2015-16,actual-budgetary,budget-fy2017-18-book,79,,fy2017-18
+500,Equipment,765.326,2015-16,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+500,Other Capital Outlay,431.272,2015-16,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+500,Technology,1537.947,2015-16,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+581000,Operating Contingency,0,2015-16,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+581000,Operating Contingency,0.000,2015-16,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+600,Debt Service & Other,3552.821,2015-16,actual-budgetary,budget-fy2017-18-book,79,,fy2017-18
+600,Debt Service & Other,3593.637,2015-16,revised,budget-fy2016-17-book,80,"other objects (fiscal charges, dues, insurance, etc.); GF has no bonded debt service",fy2016-17
+600,Other Accounts (subtotal),3552.821,2015-16,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+600,Other Objects,3553,2015-16,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+700,Fund Transfers,7407.357,2015-16,actual-budgetary,budget-fy2017-18-book,79,,fy2017-18
+700,Fund Transfers,7407.693,2015-16,revised,budget-fy2016-17-book,80,,fy2016-17
+700,Transfers to Other Funds (571000),7407.357,2015-16,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+700,Transfers,7407,2015-16,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+810,Contingency,0.000,2015-16,actual-budgetary,budget-fy2017-18-book,79,PPS account 581000 Operating Contingency,fy2017-18
+EFB,Ending Fund Balance,37835.045,2015-16,actual-budgetary,budget-fy2017-18-book,79,PPS account 376520; not an expenditure object,fy2017-18
+TOTAL,Total Requirements,583731.903,2015-16,actual-budgetary,budget-fy2017-18-book,79,,fy2017-18
+,Contingency,15233.717,2016-17,adopted,budget-fy2016-17-book,80,actual-year columns printed as dash,fy2016-17
+,Contingency,15613.717,2016-17,proposed,budget-fy2016-17-book,80,actual-year columns printed as dash,fy2016-17
+,Contingency,15633.717,2016-17,approved,budget-fy2016-17-book,80,actual-year columns printed as dash,fy2016-17
+,Ending Fund Balance,0,2016-17,adopted,budget-fy2016-17-book,80,budget-year columns printed as dash,fy2016-17
+,Ending Fund Balance,0,2016-17,approved,budget-fy2016-17-book,80,budget-year columns printed as dash,fy2016-17
+,Ending Fund Balance,0,2016-17,proposed,budget-fy2016-17-book,80,budget-year columns printed as dash,fy2016-17
+,Total Requirements by Account,600300.820,2016-17,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+,Total Requirements,591888.109,2016-17,proposed,budget-fy2016-17-book,80,"p80 prints 2013/14 total 516,645,666; account detail p98 prints 516,645,665 (dollar rounding)",fy2016-17
+,Total Requirements,592043.109,2016-17,approved,budget-fy2016-17-book,80,"p80 prints 2013/14 total 516,645,666; account detail p98 prints 516,645,665 (dollar rounding)",fy2016-17
+,Total Requirements,592600.18,2016-17,adopted,budget-fy2016-17-book,80,"p80 prints 2013/14 total 516,645,666; account detail p98 prints 516,645,665 (dollar rounding)",fy2016-17
+,Total Requirements,600301,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+100,Other Salaries,20038,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+100,Other Salaries,20038,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,printed as 'Other Salaries' with no code; state object 100 family,fy2020-21
+100,Salaries (subtotal),314778.039,2016-17,actual-budgetary,budget-fy2018-19-book,89,,fy2018-19
+100,Salaries (subtotal),319648.970,2016-17,revised,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail,fy2017-18
+100,Salaries,317050.746,2016-17,approved,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Salaries; overlaps row 100+200 - do not double count,fy2016-17
+100,Salaries,317171.124,2016-17,proposed,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Salaries; overlaps row 100+200 - do not double count,fy2016-17
+100,Salaries,318504.344,2016-17,adopted,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Salaries; overlaps row 100+200 - do not double count,fy2016-17
+100+200,Salaries and Benefits,476850.558,2016-17,proposed,budget-fy2016-17-book,80,combined category as printed; see rows 100/200 for the split,fy2016-17
+100+200,Salaries and Benefits,477126.529,2016-17,approved,budget-fy2016-17-book,80,combined category as printed; see rows 100/200 for the split,fy2016-17
+100+200,Salaries and Benefits,478277.736,2016-17,adopted,budget-fy2016-17-book,80,combined category as printed; see rows 100/200 for the split,fy2016-17
+100+200,Salaries and Benefits,479722.797,2016-17,revised,budget-fy2017-18-book,79,,fy2017-18
+111,Licensed Salaries,201301,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+111,Licensed Salaries,201301,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,"native unit thousands; Summary of Requirements by Major Object - General Funds; salary rows print PPS minor-object codes (111/1121/1122/113); 'Other Salaries' printed without a code, mapped to 100",fy2020-21
+1121,Classified - Represented,44205,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+1121,Classified - Represented,44205,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+1122,Non - Represented Staff,24348,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+1122,Non-Represented Staff,24348,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+113,Administrators,24886,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+113,Administrators,24886,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+200,Associated Payroll Costs,151382,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+200,Associated Payroll Costs,151382,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+200,Employee Benefits (subtotal),151382.402,2016-17,actual-budgetary,budget-fy2018-19-book,89,,fy2018-19
+200,Employee Benefits (subtotal),160073.827,2016-17,revised,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail,fy2017-18
+200,Employee Benefits,159679.434,2016-17,proposed,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Employee Benefits; overlaps row 100+200 - do not double count,fy2016-17
+200,Employee Benefits,159773.392,2016-17,adopted,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Employee Benefits; overlaps row 100+200 - do not double count,fy2016-17
+200,Employee Benefits,160075.783,2016-17,approved,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Employee Benefits; overlaps row 100+200 - do not double count,fy2016-17
+300,Charter Schools (536000),13100.673,2016-17,actual-budgetary,budget-fy2018-19-book,90,,fy2018-19
+300,Communications,2942.088,2016-17,actual-budgetary,budget-fy2018-19-book,90,,fy2018-19
+300,Instructional Prof. & Technical Services,6472.225,2016-17,actual-budgetary,budget-fy2018-19-book,90,,fy2018-19
+300,Non-Instruct. Prof. & Tech. Services,14175.953,2016-17,actual-budgetary,budget-fy2018-19-book,91,,fy2018-19
+300,Property Services,17796.200,2016-17,actual-budgetary,budget-fy2018-19-book,90,,fy2018-19
+300,Purchased Services,78639,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+300,Purchased Services,78639,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+300,Transportation Services,14022.202,2016-17,actual-budgetary,budget-fy2018-19-book,90,,fy2018-19
+300,Travel,1215.242,2016-17,actual-budgetary,budget-fy2018-19-book,90,,fy2018-19
+300,Tuition Payments,8914.610,2016-17,actual-budgetary,budget-fy2018-19-book,91,,fy2018-19
+300+400,Materials and Services,88036.252,2016-17,proposed,budget-fy2016-17-book,80,combined purchased services + supplies category as printed,fy2016-17
+300+400,Materials and Services,88502.225,2016-17,revised,budget-fy2017-18-book,79,,fy2017-18
+300+400,Materials and Services,88774.869,2016-17,approved,budget-fy2016-17-book,80,combined purchased services + supplies category as printed,fy2016-17
+300+400,Materials and Services,88855.781,2016-17,adopted,budget-fy2016-17-book,80,combined purchased services + supplies category as printed,fy2016-17
+376520,Budgeted Ending Fund Balance,20104,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+376520,Budgeted Ending Fund Balance,20104,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+376520,Ending Fund Balance,20104.463,2016-17,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+400,Supplies & Materials,12182.359,2016-17,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+400,Supplies and Materials,12182,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+400,Supplies And Materials,12182,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+500,Building Acquisition and Improvements,61.054,2016-17,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+500,Capital Outlay,1477.306,2016-17,adopted,budget-fy2016-17-book,80,,fy2016-17
+500,Capital Outlay,1743.390,2016-17,revised,budget-fy2017-18-book,79,,fy2017-18
+500,Capital Outlay,1756.991,2016-17,approved,budget-fy2016-17-book,80,,fy2016-17
+500,Capital Outlay,1880.702,2016-17,proposed,budget-fy2016-17-book,80,,fy2016-17
+500,Capital Outlay,3565,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+500,Capital Outlay,3565,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+500,Equipment,1207.284,2016-17,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+500,Other Capital Outlay,439.474,2016-17,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+500,Technology,1856.766,2016-17,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+581000,Operating Contingency,0,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+581000,Operating Contingency,0,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,printed as '-',fy2020-21
+581000,Operating Contingency,0.000,2016-17,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+600,Debt Service & Other,3330.298,2016-17,approved,budget-fy2016-17-book,80,"other objects (fiscal charges, dues, insurance, etc.); GF has no bonded debt service",fy2016-17
+600,Debt Service & Other,3334.935,2016-17,adopted,budget-fy2016-17-book,80,"other objects (fiscal charges, dues, insurance, etc.); GF has no bonded debt service",fy2016-17
+600,Debt Service & Other,3334.935,2016-17,revised,budget-fy2017-18-book,79,,fy2017-18
+600,Debt Service & Other,3483.675,2016-17,proposed,budget-fy2016-17-book,80,"other objects (fiscal charges, dues, insurance, etc.); GF has no bonded debt service",fy2016-17
+600,Other Accounts (subtotal),3707.442,2016-17,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+600,Other Objects,3709,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+600,Other Objects,3709,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+700,Fund Transfers,15956.437,2016-17,revised,budget-fy2017-18-book,79,,fy2017-18
+700,Fund Transfers,5420.705,2016-17,adopted,budget-fy2016-17-book,80,,fy2016-17
+700,Fund Transfers,5420.705,2016-17,approved,budget-fy2016-17-book,80,,fy2016-17
+700,Fund Transfers,6023.205,2016-17,proposed,budget-fy2016-17-book,80,,fy2016-17
+700,Transfers to Other Funds (571000),15941.275,2016-17,actual-budgetary,budget-fy2018-19-book,92,,fy2018-19
+700,Transfers,15941,2016-17,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+700,Transfers,15941,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+810,Contingency,15645.377,2016-17,revised,budget-fy2017-18-book,79,PPS account 581000 Operating Contingency,fy2017-18
+EFB,Ending Fund Balance,0.000,2016-17,revised,budget-fy2017-18-book,79,PPS account 376520; not an expenditure object,fy2017-18
+TOTAL,TOTAL REQUIREMENTS,600301,2016-17,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+TOTAL,Total Requirements,604905.161,2016-17,revised,budget-fy2017-18-book,79,,fy2017-18
+,Other Salaries,20453,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+,Total Requirements by Account,631466.922,2017-18,revised,budget-fy2018-19-book,92,,fy2018-19
+,Total Requirements,633966,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+100,Other Salaries,20453,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+100,Other Salaries,20453,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,printed as 'Other Salaries' with no code; state object 100 family,fy2020-21
+100,Salaries (subtotal),325529.648,2017-18,proposed,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail,fy2017-18
+100,Salaries (subtotal),331878.955,2017-18,adopted,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail,fy2017-18
+100,Salaries (subtotal),332710.902,2017-18,approved,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail,fy2017-18
+100,Salaries (subtotal),336852.402,2017-18,revised,budget-fy2018-19-book,89,,fy2018-19
+100+200,Salaries and Benefits,489584.580,2017-18,proposed,budget-fy2017-18-book,79,,fy2017-18
+100+200,Salaries and Benefits,490916.212,2017-18,approved,budget-fy2017-18-book,79,,fy2017-18
+100+200,Salaries and Benefits,491655.112,2017-18,adopted,budget-fy2017-18-book,79,,fy2017-18
+111,Licensed Salaries,216251,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+111,Licensed Salaries,216251,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+111,Licensed Salaries,216251,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,native unit thousands of dollars; zero rows printed as dash,fy2021-22
+1121,Classified - Represented,44190,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+1121,Classified - Represented,44190,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+1121,Classified - Represented,44190,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+1122,Non - Represented Staff,24439,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+1122,Non - Represented Staff,24439,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+1122,Non-Represented Staff,24439,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+113,Administrators,25257,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+113,Administrators,25257,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+113,Administrators,25257,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+200,Associated Payroll Costs,157828,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+200,Associated Payroll Costs,157828,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+200,Associated Payroll Costs,157828,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+200,Employee Benefits (subtotal),158205.309,2017-18,approved,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail,fy2017-18
+200,Employee Benefits (subtotal),159776.157,2017-18,adopted,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail,fy2017-18
+200,Employee Benefits (subtotal),161522.343,2017-18,revised,budget-fy2018-19-book,89,,fy2018-19
+200,Employee Benefits (subtotal),164054.932,2017-18,proposed,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail,fy2017-18
+300,Charter Schools (536000),13623.321,2017-18,revised,budget-fy2018-19-book,90,,fy2018-19
+300,Communications,2338.147,2017-18,revised,budget-fy2018-19-book,90,,fy2018-19
+300,Instructional Prof. & Technical Services,7302.153,2017-18,revised,budget-fy2018-19-book,90,,fy2018-19
+300,Non-Instruct. Prof. & Tech. Services,7884.336,2017-18,revised,budget-fy2018-19-book,91,,fy2018-19
+300,Property Services,17825.406,2017-18,revised,budget-fy2018-19-book,90,,fy2018-19
+300,Purchased Services,81918,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+300,Purchased Services,81918,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+300,Purchased Services,81918,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+300,Transportation Services,13924.953,2017-18,revised,budget-fy2018-19-book,90,,fy2018-19
+300,Travel,501.995,2017-18,revised,budget-fy2018-19-book,90,,fy2018-19
+300,Tuition Payments,9510.883,2017-18,revised,budget-fy2018-19-book,91,,fy2018-19
+300+400,Materials and Services,89684.843,2017-18,adopted,budget-fy2017-18-book,79,,fy2017-18
+300+400,Materials and Services,90308.081,2017-18,approved,budget-fy2017-18-book,79,,fy2017-18
+300+400,Materials and Services,91237.294,2017-18,proposed,budget-fy2017-18-book,79,,fy2017-18
+376520,Budgeted Ending Fund Balance,38282,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+376520,Budgeted Ending Fund Balance,38282,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+376520,Budgeted Ending Fund Balance,38282,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+376520,Ending Fund Balance,14805.081,2017-18,revised,budget-fy2018-19-book,92,,fy2018-19
+400,Supplies & Materials,13982.181,2017-18,revised,budget-fy2018-19-book,92,,fy2018-19
+400,Supplies and Materials,13042,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+400,Supplies And Materials,13042,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+400,Supplies And Materials,13042,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+500,Building Acquisition and Improvements,0.000,2017-18,revised,budget-fy2018-19-book,92,,fy2018-19
+500,Capital Outlay,1204.499,2017-18,adopted,budget-fy2017-18-book,79,,fy2017-18
+500,Capital Outlay,1316.955,2017-18,proposed,budget-fy2017-18-book,79,,fy2017-18
+500,Capital Outlay,1317.529,2017-18,approved,budget-fy2017-18-book,79,,fy2017-18
+500,Capital Outlay,2595,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+500,Capital Outlay,2595,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+500,Capital Outlay,2595,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+500,Equipment,210.196,2017-18,revised,budget-fy2018-19-book,92,,fy2018-19
+500,Other Capital Outlay,449.934,2017-18,revised,budget-fy2018-19-book,92,,fy2018-19
+500,Technology,677.303,2017-18,revised,budget-fy2018-19-book,92,,fy2018-19
+581000,Operating Contingency,0,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+581000,Operating Contingency,0,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,printed as '-',fy2020-21
+581000,Operating Contingency,0,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+581000,Operating Contingency,19733.094,2017-18,revised,budget-fy2018-19-book,92,,fy2018-19
+600,Debt Service & Other,3333.735,2017-18,proposed,budget-fy2017-18-book,79,,fy2017-18
+600,Debt Service & Other,5312.725,2017-18,adopted,budget-fy2017-18-book,79,,fy2017-18
+600,Debt Service & Other,5315.357,2017-18,approved,budget-fy2017-18-book,79,,fy2017-18
+600,Other Accounts (subtotal),4987.753,2017-18,revised,budget-fy2018-19-book,92,,fy2018-19
+600,Other Objects,4384,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+600,Other Objects,4384,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+600,Other Objects,4384,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+700,Fund Transfers,5895.375,2017-18,proposed,budget-fy2017-18-book,79,,fy2017-18
+700,Fund Transfers,5915.375,2017-18,adopted,budget-fy2017-18-book,79,,fy2017-18
+700,Fund Transfers,5915.375,2017-18,approved,budget-fy2017-18-book,79,,fy2017-18
+700,Transfers to Other Funds (571000),5335.441,2017-18,revised,budget-fy2018-19-book,92,,fy2018-19
+700,Transfers,5328,2017-18,actual-budgetary,budget-fy2019-20-book,84,,fy2019-20
+700,Transfers,5328,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+700,Transfers,5328,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+810,Contingency,23514.287,2017-18,adopted,budget-fy2017-18-book,79,PPS account 581000 Operating Contingency,fy2017-18
+810,Contingency,23514.287,2017-18,approved,budget-fy2017-18-book,79,PPS account 581000 Operating Contingency,fy2017-18
+810,Contingency,24918.902,2017-18,proposed,budget-fy2017-18-book,79,PPS account 581000 Operating Contingency,fy2017-18
+EFB,Ending Fund Balance,0.000,2017-18,adopted,budget-fy2017-18-book,79,PPS account 376520; not an expenditure object,fy2017-18
+EFB,Ending Fund Balance,0.000,2017-18,approved,budget-fy2017-18-book,79,PPS account 376520; not an expenditure object,fy2017-18
+EFB,Ending Fund Balance,0.000,2017-18,proposed,budget-fy2017-18-book,79,PPS account 376520; not an expenditure object,fy2017-18
+TOTAL,Total Requirements,616286.841,2017-18,proposed,budget-fy2017-18-book,79,,fy2017-18
+TOTAL,Total Requirements,617286.841,2017-18,adopted,budget-fy2017-18-book,79,,fy2017-18
+TOTAL,Total Requirements,617286.841,2017-18,approved,budget-fy2017-18-book,79,,fy2017-18
+TOTAL,TOTAL REQUIREMENTS,633966,2017-18,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+TOTAL,TOTAL REQUIREMENTS,633966,2017-18,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+,Other Salaries,23236,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+,Total Requirements by Account,650538.941,2018-19,proposed,budget-fy2018-19-book,92,,fy2018-19
+,Total Requirements by Account,655002.466,2018-19,adopted,budget-fy2018-19-book,92,,fy2018-19
+,Total Requirements by Account,655002.466,2018-19,approved,budget-fy2018-19-book,92,,fy2018-19
+,Total Requirements,655002,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+,TOTAL REQUIREMENTS,660592,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,2019-20 total prints 709091 here vs 709092 in resources/function tables (rounding),fy2022-23
+100,Other Salaries,23236,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,printed as 'Other Salaries' with no code; state object 100 family,fy2020-21
+100,Other Salaries,23236,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+100,Other Salaries,24069,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+100,Salaries (subtotal),343579.017,2018-19,proposed,budget-fy2018-19-book,89,,fy2018-19
+100,Salaries (subtotal),344088.223,2018-19,adopted,budget-fy2018-19-book,89,,fy2018-19
+100,Salaries (subtotal),344088.223,2018-19,approved,budget-fy2018-19-book,89,,fy2018-19
+111,Licensed Salaries,219440,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+111,Licensed Salaries,224724,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+111,Licensed Salaries,224724,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+111,Licensed Salaries,224724,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,"native unit thousands of dollars in source; 2021-22 column printed as 'Budget', recorded as adopted",fy2022-23
+1121,Classified - Represented,45260,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+1121,Classified - Represented,46871,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+1121,Classified - Represented,46871,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+1121,Classified - Represented,46871,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+1122,Non - Represented Staff,23853,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+1122,Non - Represented Staff,23853,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+1122,Non - Represented Staff,23853,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+1122,Non-Represented Staff,28445,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+113,Administrators,26199,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+113,Administrators,26199,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+113,Administrators,26199,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+113,Administrators,26873,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+200,Associated Payroll Costs,159479,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+200,Associated Payroll Costs,159479,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+200,Associated Payroll Costs,159479,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+200,Associated Payroll Costs,171495,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+200,Employee Benefits (subtotal),171494.515,2018-19,adopted,budget-fy2018-19-book,89,,fy2018-19
+200,Employee Benefits (subtotal),171494.515,2018-19,approved,budget-fy2018-19-book,89,,fy2018-19
+200,Employee Benefits (subtotal),173619.033,2018-19,proposed,budget-fy2018-19-book,89,,fy2018-19
+300,Charter Schools (536000),14839.768,2018-19,adopted,budget-fy2018-19-book,90,,fy2018-19
+300,Charter Schools (536000),14839.768,2018-19,approved,budget-fy2018-19-book,90,,fy2018-19
+300,Charter Schools (536000),14839.768,2018-19,proposed,budget-fy2018-19-book,90,,fy2018-19
+300,Communications,3086.593,2018-19,adopted,budget-fy2018-19-book,90,,fy2018-19
+300,Communications,3086.593,2018-19,approved,budget-fy2018-19-book,90,,fy2018-19
+300,Communications,3087.834,2018-19,proposed,budget-fy2018-19-book,90,,fy2018-19
+300,Instructional Prof. & Technical Services,5353.666,2018-19,adopted,budget-fy2018-19-book,90,,fy2018-19
+300,Instructional Prof. & Technical Services,5688.322,2018-19,approved,budget-fy2018-19-book,90,,fy2018-19
+300,Instructional Prof. & Technical Services,6752.024,2018-19,proposed,budget-fy2018-19-book,90,,fy2018-19
+300,Non-Instruct. Prof. & Tech. Services,14629.789,2018-19,proposed,budget-fy2018-19-book,91,,fy2018-19
+300,Non-Instruct. Prof. & Tech. Services,17955.970,2018-19,approved,budget-fy2018-19-book,91,,fy2018-19
+300,Non-Instruct. Prof. & Tech. Services,18272.626,2018-19,adopted,budget-fy2018-19-book,91,,fy2018-19
+300,Property Services,17193.810,2018-19,adopted,budget-fy2018-19-book,90,,fy2018-19
+300,Property Services,17193.810,2018-19,approved,budget-fy2018-19-book,90,,fy2018-19
+300,Property Services,17413.887,2018-19,proposed,budget-fy2018-19-book,90,,fy2018-19
+300,Purchased Services,86464,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+300,Purchased Services,87227,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+300,Purchased Services,87227,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+300,Purchased Services,87227,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+300,Transportation Services,16481.891,2018-19,proposed,budget-fy2018-19-book,90,,fy2018-19
+300,Transportation Services,17557.890,2018-19,adopted,budget-fy2018-19-book,90,,fy2018-19
+300,Transportation Services,17557.890,2018-19,approved,budget-fy2018-19-book,90,,fy2018-19
+300,Travel,520.701,2018-19,proposed,budget-fy2018-19-book,90,,fy2018-19
+300,Travel,566.246,2018-19,adopted,budget-fy2018-19-book,90,,fy2018-19
+300,Travel,566.246,2018-19,approved,budget-fy2018-19-book,90,,fy2018-19
+300,Tuition Payments,9593.889,2018-19,adopted,budget-fy2018-19-book,91,,fy2018-19
+300,Tuition Payments,9593.889,2018-19,approved,budget-fy2018-19-book,91,,fy2018-19
+300,Tuition Payments,9593.889,2018-19,proposed,budget-fy2018-19-book,91,,fy2018-19
+376520,Budgeted Ending Fund Balance,0,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+376520,Budgeted Ending Fund Balance,39887,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+376520,Budgeted Ending Fund Balance,39887,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+376520,Budgeted Ending Fund Balance,39887,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+376520,Ending Fund Balance,0.000,2018-19,adopted,budget-fy2018-19-book,92,,fy2018-19
+376520,Ending Fund Balance,0.000,2018-19,approved,budget-fy2018-19-book,92,,fy2018-19
+376520,Ending Fund Balance,0.000,2018-19,proposed,budget-fy2018-19-book,92,,fy2018-19
+400,Supplies & Materials,12728.905,2018-19,proposed,budget-fy2018-19-book,92,,fy2018-19
+400,Supplies & Materials,14225.118,2018-19,adopted,budget-fy2018-19-book,92,,fy2018-19
+400,Supplies & Materials,14225.118,2018-19,approved,budget-fy2018-19-book,92,,fy2018-19
+400,Supplies and Materials,14225,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+400,Supplies And Materials,16788,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+400,Supplies And Materials,16788,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+400,Supplies And Materials,16788,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+500,Building Acquisition and Improvements,0.000,2018-19,adopted,budget-fy2018-19-book,92,,fy2018-19
+500,Building Acquisition and Improvements,0.000,2018-19,approved,budget-fy2018-19-book,92,,fy2018-19
+500,Building Acquisition and Improvements,0.000,2018-19,proposed,budget-fy2018-19-book,92,,fy2018-19
+500,Capital Outlay,1484,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+500,Capital Outlay,2539,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+500,Capital Outlay,2539,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+500,Capital Outlay,2539,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+500,Equipment,209.547,2018-19,proposed,budget-fy2018-19-book,92,,fy2018-19
+500,Equipment,476.624,2018-19,adopted,budget-fy2018-19-book,92,,fy2018-19
+500,Equipment,476.624,2018-19,approved,budget-fy2018-19-book,92,,fy2018-19
+500,Other Capital Outlay,430.000,2018-19,adopted,budget-fy2018-19-book,92,,fy2018-19
+500,Other Capital Outlay,430.000,2018-19,approved,budget-fy2018-19-book,92,,fy2018-19
+500,Other Capital Outlay,430.000,2018-19,proposed,budget-fy2018-19-book,92,,fy2018-19
+500,Technology,490.255,2018-19,proposed,budget-fy2018-19-book,92,,fy2018-19
+500,Technology,577.255,2018-19,adopted,budget-fy2018-19-book,92,,fy2018-19
+500,Technology,577.255,2018-19,approved,budget-fy2018-19-book,92,,fy2018-19
+581000,Operating Contingency,0,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,printed as '-',fy2020-21
+581000,Operating Contingency,0,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+581000,Operating Contingency,23789.826,2018-19,proposed,budget-fy2018-19-book,92,,fy2018-19
+581000,Operating Contingency,25252,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+581000,Operating Contingency,25252.055,2018-19,adopted,budget-fy2018-19-book,92,,fy2018-19
+581000,Operating Contingency,25252.055,2018-19,approved,budget-fy2018-19-book,92,,fy2018-19
+600,Other Accounts (subtotal),5460.133,2018-19,proposed,budget-fy2018-19-book,92,,fy2018-19
+600,Other Accounts (subtotal),6097.369,2018-19,approved,budget-fy2018-19-book,92,,fy2018-19
+600,Other Accounts (subtotal),6115.369,2018-19,adopted,budget-fy2018-19-book,92,,fy2018-19
+600,Other Objects,4297,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+600,Other Objects,4297,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+600,Other Objects,4297,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+600,Other Objects,6115,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+700,Transfers to Other Funds (571000),5878.818,2018-19,adopted,budget-fy2018-19-book,92,,fy2018-19
+700,Transfers to Other Funds (571000),5878.818,2018-19,approved,budget-fy2018-19-book,92,,fy2018-19
+700,Transfers to Other Funds (571000),6912.441,2018-19,proposed,budget-fy2018-19-book,92,,fy2018-19
+700,Transfers,5492,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+700,Transfers,5492,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+700,Transfers,5492,2018-19,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+700,Transfers,5879,2018-19,revised,budget-fy2019-20-book,84,,fy2019-20
+TOTAL,TOTAL REQUIREMENTS,660592,2018-19,actual-budgetary,budget-fy2020-21-vol1,119,,fy2020-21
+TOTAL,TOTAL REQUIREMENTS,660592,2018-19,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+,Other Salaries,23482,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+,Total Requirements,686647,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+,Total Requirements,691767,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+,Total Requirements,691767,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+,TOTAL REQUIREMENTS,709091,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+,TOTAL REQUIREMENTS,709092,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+100,Other Salaries,23482,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+100,Other Salaries,23482,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,printed without object code; part of 100 Salaries rollup,fy2023-24
+100,Other Salaries,24196,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+100,Other Salaries,25278,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+100,Other Salaries,25278,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+100,Other Salaries,25278,2019-20,revised,budget-fy2020-21-vol1,119,printed as 'Other Salaries' with no code; state object 100 family,fy2020-21
+111,Licensed Salaries,225339,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+111,Licensed Salaries,225339,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+111,Licensed Salaries,225339,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,"native unit thousands of dollars in source; 2022-23 column printed as 'Budget'; matches FY2022-23 book adopted total, so basis=adopted",fy2023-24
+111,Licensed Salaries,229732,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+111,Licensed Salaries,231254,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+111,Licensed Salaries,231254,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+111,Licensed Salaries,231254,2019-20,revised,budget-fy2020-21-vol1,119,,fy2020-21
+1121,Classified - Represented,51293,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+1121,Classified - Represented,51293,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+1121,Classified - Represented,51293,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+1121,Classified - Represented,52488,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+1121,Classified - Represented,52631,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+1121,Classified - Represented,52631,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+1121,Classified - Represented,52631,2019-20,revised,budget-fy2020-21-vol1,119,,fy2020-21
+1122,Non - Represented Staff,26814,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+1122,Non - Represented Staff,26814,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+1122,Non - Represented Staff,26815,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+1122,Non - Represented Staff,29614,2019-20,revised,budget-fy2020-21-vol1,119,,fy2020-21
+1122,Non-Represented Staff,29031,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+1122,Non-Represented Staff,29614,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+1122,Non-Represented Staff,29614,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+113,Administrators,28109,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+113,Administrators,28530,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+113,Administrators,28530,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+113,Administrators,28530,2019-20,revised,budget-fy2020-21-vol1,119,,fy2020-21
+113,Administrators,29247,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+113,Administrators,29247,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+113,Administrators,29247,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+200,Associated Payroll Costs,176456,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+200,Associated Payroll Costs,176456,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+200,Associated Payroll Costs,176456,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+200,Associated Payroll Costs,183312,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+200,Associated Payroll Costs,185058,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+200,Associated Payroll Costs,185058,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+200,Associated Payroll Costs,185058,2019-20,revised,budget-fy2020-21-vol1,119,,fy2020-21
+300,Purchased Services,84559,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+300,Purchased Services,84559,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+300,Purchased Services,84559,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+300,Purchased Services,84775,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+300,Purchased Services,85889,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+300,Purchased Services,85889,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+300,Purchased Services,85889,2019-20,revised,budget-fy2020-21-vol1,119,,fy2020-21
+376520,Budgeted Ending Fund Balance,0,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+376520,Budgeted Ending Fund Balance,0,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+376520,Budgeted Ending Fund Balance,0,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+376520,Budgeted Ending Fund Balance,0,2019-20,revised,budget-fy2020-21-vol1,119,printed as '-',fy2020-21
+376520,Budgeted Ending Fund Balance,64474,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+376520,Budgeted Ending Fund Balance,64474,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+376520,Budgeted Ending Fund Balance,64474,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+400,Supplies and Materials,16744,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+400,Supplies and Materials,17294,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+400,Supplies and Materials,17294,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+400,Supplies And Materials,17294,2019-20,revised,budget-fy2020-21-vol1,119,,fy2020-21
+400,Supplies And Materials,18945,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+400,Supplies And Materials,18945,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+400,Supplies And Materials,18945,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+500,Capital Outlay,1677,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+500,Capital Outlay,1677,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+500,Capital Outlay,1677,2019-20,revised,budget-fy2020-21-vol1,119,,fy2020-21
+500,Capital Outlay,1717,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+500,Capital Outlay,1936,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+500,Capital Outlay,1936,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+500,Capital Outlay,1936,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+581000,Operating Contingency,0,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+581000,Operating Contingency,0,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+581000,Operating Contingency,26682,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+581000,Operating Contingency,26682,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+581000,Operating Contingency,26682,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+581000,Operating Contingency,26682,2019-20,revised,budget-fy2020-21-vol1,119,,fy2020-21
+600,Other Objects,5235,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+600,Other Objects,5235,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+600,Other Objects,5235,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,2021-22 actual includes ~400.8M PERS UAL payment funded by Series 2021 FF&C pension bonds,fy2023-24
+600,Other Objects,6156,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+600,Other Objects,6156,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+600,Other Objects,6156,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+600,Other Objects,6156,2019-20,revised,budget-fy2020-21-vol1,119,,fy2020-21
+700,Transfers,1311,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+700,Transfers,1311,2019-20,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+700,Transfers,1311,2019-20,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+700,Transfers,1704,2019-20,adopted,budget-fy2019-20-book,84,,fy2019-20
+700,Transfers,1704,2019-20,approved,budget-fy2019-20-book,84,,fy2019-20
+700,Transfers,1704,2019-20,revised,budget-fy2020-21-vol1,119,,fy2020-21
+700,Transfers,3704,2019-20,proposed,budget-fy2019-20-book,84,,fy2019-20
+TOTAL,TOTAL REQUIREMENTS,691767,2019-20,revised,budget-fy2020-21-vol1,119,,fy2020-21
+TOTAL,TOTAL REQUIREMENTS,709092,2019-20,actual-budgetary,budget-fy2021-22-vol1,153,,fy2021-22
+,Other Salaries,20919,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+,TOTAL REQUIREMENTS,744589,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+,TOTAL REQUIREMENTS,744589,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+100,Other Salaries,15208,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+100,Other Salaries,15208,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+100,Other Salaries,15208,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,"printed without code as OTHER SALARIES",fy2024-25
+100,Other Salaries,21995,2020-21,adopted,budget-fy2020-21-vol1,119,printed as 'Other Salaries' with no code; state object 100 family,fy2020-21
+100,Other Salaries,21995,2020-21,approved,budget-fy2020-21-vol1,119,printed as 'Other Salaries' with no code; state object 100 family,fy2020-21
+100,Other Salaries,21995,2020-21,proposed,budget-fy2020-21-vol1,119,printed as 'Other Salaries' with no code; state object 100 family,fy2020-21
+111,Licensed Salaries,232786,2020-21,adopted,budget-fy2020-21-vol1,119,,fy2020-21
+111,Licensed Salaries,232786,2020-21,approved,budget-fy2020-21-vol1,119,,fy2020-21
+111,Licensed Salaries,232786,2020-21,proposed,budget-fy2020-21-vol1,119,,fy2020-21
+111,Licensed Salaries,240465,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+111,Licensed Salaries,245595,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+111,Licensed Salaries,245595,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+111,Licensed Salaries,245595,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,"native unit thousands; Summary of Requirements by Major Object - General Funds",fy2024-25
+1121,Classified - Represented,51048,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+1121,Classified - Represented,51048,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+1121,Classified - Represented,51048,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+1121,Classified - Represented,56597,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+1121,Classified - Represented,58207,2020-21,adopted,budget-fy2020-21-vol1,119,,fy2020-21
+1121,Classified - Represented,58207,2020-21,approved,budget-fy2020-21-vol1,119,,fy2020-21
+1121,Classified - Represented,58207,2020-21,proposed,budget-fy2020-21-vol1,119,,fy2020-21
+1122,Non - Represented Staff,28736,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+1122,Non - Represented Staff,28736,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+1122,Non - Represented Staff,33353,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+1122,Non - Represented Staff,33797,2020-21,adopted,budget-fy2020-21-vol1,119,,fy2020-21
+1122,Non - Represented Staff,33797,2020-21,approved,budget-fy2020-21-vol1,119,,fy2020-21
+1122,Non - Represented Staff,33797,2020-21,proposed,budget-fy2020-21-vol1,119,,fy2020-21
+1122,Non-Represented Staff,28736,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+113,Administrators,30738,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+113,Administrators,30738,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+113,Administrators,30738,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+113,Administrators,31391,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+113,Administrators,32360,2020-21,adopted,budget-fy2020-21-vol1,119,,fy2020-21
+113,Administrators,32360,2020-21,approved,budget-fy2020-21-vol1,119,,fy2020-21
+113,Administrators,32360,2020-21,proposed,budget-fy2020-21-vol1,119,,fy2020-21
+200,Associated Payroll Costs,188303,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+200,Associated Payroll Costs,189421,2020-21,adopted,budget-fy2020-21-vol1,119,,fy2020-21
+200,Associated Payroll Costs,189421,2020-21,approved,budget-fy2020-21-vol1,119,,fy2020-21
+200,Associated Payroll Costs,189421,2020-21,proposed,budget-fy2020-21-vol1,119,,fy2020-21
+200,Associated Payroll Costs,189914,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+200,Associated Payroll Costs,189914,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+200,Associated Payroll Costs,189914,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+300,Purchased Services,79002,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+300,Purchased Services,79002,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+300,Purchased Services,79002,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+300,Purchased Services,92322,2020-21,adopted,budget-fy2020-21-vol1,119,,fy2020-21
+300,Purchased Services,92322,2020-21,approved,budget-fy2020-21-vol1,119,,fy2020-21
+300,Purchased Services,92497,2020-21,proposed,budget-fy2020-21-vol1,119,,fy2020-21
+300,Purchased Services,96688,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+376520,Budgeted Ending Fund Balance,0,2020-21,adopted,budget-fy2020-21-vol1,119,printed as '-',fy2020-21
+376520,Budgeted Ending Fund Balance,0,2020-21,approved,budget-fy2020-21-vol1,119,printed as '-',fy2020-21
+376520,Budgeted Ending Fund Balance,0,2020-21,proposed,budget-fy2020-21-vol1,119,printed as '-',fy2020-21
+376520,Budgeted Ending Fund Balance,0,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+376520,Budgeted Ending Fund Balance,88691,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+376520,Budgeted Ending Fund Balance,88691,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+376520,Budgeted Ending Fund Balance,88691,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+400,Supplies And Materials,18489,2020-21,proposed,budget-fy2020-21-vol1,119,,fy2020-21
+400,Supplies And Materials,18664,2020-21,adopted,budget-fy2020-21-vol1,119,,fy2020-21
+400,Supplies And Materials,18664,2020-21,approved,budget-fy2020-21-vol1,119,,fy2020-21
+400,Supplies And Materials,29400,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+400,Supplies And Materials,6908,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+400,Supplies And Materials,6908,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+400,Supplies and Materials,6908,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+500,Capital Outlay,1092,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+500,Capital Outlay,1092,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+500,Capital Outlay,1092,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+500,Capital Outlay,1563,2020-21,adopted,budget-fy2020-21-vol1,119,,fy2020-21
+500,Capital Outlay,1563,2020-21,approved,budget-fy2020-21-vol1,119,,fy2020-21
+500,Capital Outlay,1563,2020-21,proposed,budget-fy2020-21-vol1,119,,fy2020-21
+500,Capital Outlay,1996,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+581000,Operating Contingency,0,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+581000,Operating Contingency,0,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,"printed as dash",fy2024-25
+581000,Operating Contingency,40946,2020-21,adopted,budget-fy2020-21-vol1,119,,fy2020-21
+581000,Operating Contingency,40946,2020-21,approved,budget-fy2020-21-vol1,119,,fy2020-21
+581000,Operating Contingency,40946,2020-21,proposed,budget-fy2020-21-vol1,119,,fy2020-21
+581000,Operating Contingency,40946,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+600,Other Objects,6204,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+600,Other Objects,6458,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+600,Other Objects,6458,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+600,Other Objects,6458,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+600,Other Objects,6458,2020-21,adopted,budget-fy2020-21-vol1,119,,fy2020-21
+600,Other Objects,6458,2020-21,approved,budget-fy2020-21-vol1,119,,fy2020-21
+600,Other Objects,6458,2020-21,proposed,budget-fy2020-21-vol1,119,,fy2020-21
+700,Transfers,1134,2020-21,adopted,budget-fy2020-21-vol1,119,,fy2020-21
+700,Transfers,1134,2020-21,approved,budget-fy2020-21-vol1,119,,fy2020-21
+700,Transfers,1134,2020-21,proposed,budget-fy2020-21-vol1,119,,fy2020-21
+700,Transfers,1198,2020-21,actual-budgetary,budget-fy2022-23-vol1,151,,fy2022-23
+700,Transfers,1198,2020-21,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+700,Transfers,1198,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+700,Transfers,1234,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+TOTAL,TOTAL REQUIREMENTS,729654,2020-21,adopted,budget-fy2020-21-vol1,119,,fy2020-21
+TOTAL,TOTAL REQUIREMENTS,729654,2020-21,approved,budget-fy2020-21-vol1,119,,fy2020-21
+TOTAL,TOTAL REQUIREMENTS,729654,2020-21,proposed,budget-fy2020-21-vol1,119,,fy2020-21
+TOTAL,Total Requirements,744589,2020-21,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+TOTAL,TOTAL REQUIREMENTS,747497,2020-21,revised,budget-fy2021-22-vol1,153,,fy2021-22
+,Other Salaries,21101,2021-22,adopted,budget-fy2021-22-vol1,153,printed without an object code (salary detail line within 100-object group),fy2021-22
+,Other Salaries,21101,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+,Other Salaries,21101,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+,TOTAL REQUIREMENTS,1188261,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+,TOTAL REQUIREMENTS,771963,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+100,Other Salaries,21101,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+100,Other Salaries,27026,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+100,Other Salaries,27026,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+100,Other Salaries,27026,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,printed as 'OTHER SALARIES' with no code; salary object 100 family,fy2025-26
+111,Licensed Salaries,241282,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+111,Licensed Salaries,241282,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+111,Licensed Salaries,241282,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,native unit thousands; Summary of Requirements by Major Object - 100 General Fund,fy2025-26
+111,Licensed Salaries,247667,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+111,Licensed Salaries,247667,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+111,Licensed Salaries,247667,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+111,Licensed Salaries,247667,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+1121,Classified - Represented,55669,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+1121,Classified - Represented,55669,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+1121,Classified - Represented,55669,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+1121,Classified - Represented,59187,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+1121,Classified - Represented,59367,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+1121,Classified - Represented,59367,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+1121,Classified - Represented,59367,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+1122,Non - Represented Staff,31458,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+1122,Non - Represented Staff,34559,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+1122,Non - Represented Staff,34698,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+1122,Non - Represented Staff,34698,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+1122,Non - Represented Staff,34698,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+1122,Non-Represented Staff,31458,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+1122,Non-Represented Staff,31458,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+113,Administrators,32336,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+113,Administrators,32336,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+113,Administrators,32336,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+113,Administrators,33682,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+113,Administrators,33682,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+113,Administrators,33682,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+113,Administrators,33682,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+200,Associated Payroll Costs,185132,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+200,Associated Payroll Costs,185132,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+200,Associated Payroll Costs,185132,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+200,Associated Payroll Costs,192992,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+200,Associated Payroll Costs,193128,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+200,Associated Payroll Costs,193128,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+200,Associated Payroll Costs,193128,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+300,Purchased Services,87698,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+300,Purchased Services,87698,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+300,Purchased Services,87698,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+300,Purchased Services,97641,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+300,Purchased Services,99694,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+300,Purchased Services,99694,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+300,Purchased Services,99694,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+376520,Budgeted Ending Fund Balance,0,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+376520,Budgeted Ending Fund Balance,0,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+376520,Budgeted Ending Fund Balance,0,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+376520,Budgeted Ending Fund Balance,98804,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+376520,Budgeted Ending Fund Balance,98804,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+376520,Budgeted Ending Fund Balance,98804,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+400,Supplies And Materials,16505,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+400,Supplies And Materials,17204,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+400,Supplies And Materials,17204,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+400,Supplies And Materials,17204,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+400,Supplies And Materials,17800,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+400,Supplies and Materials,17800,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+400,Supplies and Materials,17800,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+500,Capital Outlay,1861,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+500,Capital Outlay,1861,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+500,Capital Outlay,1861,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+500,Capital Outlay,2352,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+500,Capital Outlay,3011,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+500,Capital Outlay,3011,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+500,Capital Outlay,3011,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+581000,Operating Contingency,0,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+581000,Operating Contingency,0,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,"printed as dash",fy2024-25
+581000,Operating Contingency,0,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+581000,Operating Contingency,47500,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+581000,Operating Contingency,51896,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+581000,Operating Contingency,51896,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+581000,Operating Contingency,51896,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+600,Other Objects,407988,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+600,Other Objects,407988,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,"2021 pension bond pass-through",fy2024-25
+600,Other Objects,407988,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,includes 2021-22 PERS UAL pension bond payoff,fy2025-26
+600,Other Objects,7378,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+600,Other Objects,9378,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+600,Other Objects,9378,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+600,Other Objects,9378,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+700,Transfers,1136,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+700,Transfers,1136,2021-22,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+700,Transfers,1136,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+700,Transfers,1136,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+700,Transfers,1207,2021-22,actual-budgetary,budget-fy2023-24-vol1,96,,fy2023-24
+700,Transfers,1207,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+700,Transfers,1207,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+TOTAL,Total Requirements,1188261,2021-22,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+total,Total Requirements,1188261,2021-22,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+TOTAL,TOTAL REQUIREMENTS,761700,2021-22,proposed,budget-fy2021-22-vol1,153,,fy2021-22
+TOTAL,TOTAL REQUIREMENTS,771963,2021-22,adopted,budget-fy2021-22-vol1,153,,fy2021-22
+TOTAL,TOTAL REQUIREMENTS,771963,2021-22,approved,budget-fy2021-22-vol1,153,,fy2021-22
+,TOTAL REQUIREMENTS,794585,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+,TOTAL REQUIREMENTS,804062,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+,TOTAL REQUIREMENTS,804062,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+,TOTAL REQUIREMENTS,804062,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+100,Other Salaries,19448,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+100,Other Salaries,20285,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+100,Other Salaries,20285,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+100,Other Salaries,20285,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+100,Other Salaries,28478,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+100,Other Salaries,28478,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+100,Other Salaries,28478,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+111,Licensed Salaries,245309,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+111,Licensed Salaries,245309,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+111,Licensed Salaries,245309,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,native unit thousands; PPS prints salary sub-objects 111/1121/1122/113 plus an uncoded 'OTHER SALARIES' line (recorded as code 100); dashes recorded as 0; salaries+benefits 2026-27 adopted = $680.5M / 78.9% of GF per narrative p.107; Proposed/Approved 2026-27 identical to Adopted,fy2026-27
+111,Licensed Salaries,260343,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+111,Licensed Salaries,263124,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+111,Licensed Salaries,263124,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+111,Licensed Salaries,263124,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+1121,Classified - Represented,58986,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+1121,Classified - Represented,58986,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+1121,Classified - Represented,58986,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+1121,Classified - Represented,63156,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+1121,Classified - Represented,64069,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+1121,Classified - Represented,64069,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+1121,Classified - Represented,64069,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+1122,Non - Represented Staff,37762,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+1122,Non - Represented Staff,37762,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+1122,Non - Represented Staff,37762,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+1122,Non - Represented Staff,37762,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+1122,Non-Represented Staff,34823,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+1122,Non-Represented Staff,34823,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+1122,Non-Represented Staff,34823,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+113,Administrators,33944,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+113,Administrators,33944,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+113,Administrators,33944,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+113,Administrators,33944,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+113,Administrators,34163,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+113,Administrators,34163,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+113,Administrators,34163,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+200,Associated Payroll Costs,188552,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+200,Associated Payroll Costs,188552,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+200,Associated Payroll Costs,188552,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+200,Associated Payroll Costs,205360,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+200,Associated Payroll Costs,207438,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+200,Associated Payroll Costs,207438,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+200,Associated Payroll Costs,207438,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+300,Purchased Services,106798,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+300,Purchased Services,106798,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+300,Purchased Services,106798,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+300,Purchased Services,96956,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+300,Purchased Services,99418,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+300,Purchased Services,99418,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+300,Purchased Services,99418,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+376520,Budgeted Ending Fund Balance,0,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+376520,Budgeted Ending Fund Balance,105497,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+376520,Budgeted Ending Fund Balance,105497,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+376520,Budgeted Ending Fund Balance,105497,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+400,Supplies And Materials,12641,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+400,Supplies And Materials,12939,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+400,Supplies And Materials,12939,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+400,Supplies And Materials,12939,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+400,Supplies and Materials,14633,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+400,Supplies and Materials,14633,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+400,Supplies and Materials,14633,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+500,Capital Outlay,3207,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+500,Capital Outlay,3207,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+500,Capital Outlay,3207,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+500,Capital Outlay,3710,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+500,Capital Outlay,4017,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+500,Capital Outlay,4017,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+500,Capital Outlay,4017,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+581000,Operating Contingency,0,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,"printed as dash",fy2024-25
+581000,Operating Contingency,0,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+581000,Operating Contingency,0,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+581000,Operating Contingency,50768,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+581000,Operating Contingency,50768,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+581000,Operating Contingency,50768,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+581000,Operating Contingency,50967,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+600,Other Objects,8311,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+600,Other Objects,8311,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+600,Other Objects,8311,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+600,Other Objects,8996,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+600,Other Objects,8996,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+600,Other Objects,8996,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+600,Other Objects,8996,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+700,Transfers,1282,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+700,Transfers,1282,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+700,Transfers,1282,2022-23,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+700,Transfers,1302,2022-23,adopted,budget-fy2022-23-vol1,151,,fy2022-23
+700,Transfers,1302,2022-23,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+700,Transfers,1302,2022-23,approved,budget-fy2022-23-vol1,151,,fy2022-23
+700,Transfers,1302,2022-23,proposed,budget-fy2022-23-vol1,151,,fy2022-23
+TOTAL,Total Requirements,830038,2022-23,actual-budgetary,budget-fy2024-25-vol1,101,,fy2024-25
+total,Total Requirements,830038,2022-23,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+,TOTAL REQUIREMENTS,823423,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+,TOTAL REQUIREMENTS,833774,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+,TOTAL REQUIREMENTS,833774,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+100,Other Salaries,24570,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+100,Other Salaries,29665,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+100,Other Salaries,29665,2023-24,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+100,Other Salaries,29665,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+100,Other Salaries,33157,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+100,Other Salaries,33157,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+111,Licensed Salaries,259988,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+111,Licensed Salaries,260283,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+111,Licensed Salaries,260283,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+111,Licensed Salaries,260753,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+111,Licensed Salaries,260753,2023-24,adopted,budget-fy2024-25-vol1,101,"2023-24 budget columns are from the 2023-24 Adopted Budget (p78)",fy2024-25
+111,Licensed Salaries,260753,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+1121,Classified - Represented,61943,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+1121,Classified - Represented,62573,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+1121,Classified - Represented,62573,2023-24,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+1121,Classified - Represented,62573,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+1121,Classified - Represented,64252,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+1121,Classified - Represented,64252,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+1122,Non - Represented Staff,38915,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+1122,Non - Represented Staff,39863,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+1122,Non - Represented Staff,39863,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+1122,Non-Represented Staff,36772,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+1122,Non-Represented Staff,36772,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+1122,Non-Represented Staff,39863,2023-24,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+113,Administrators,37308,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+113,Administrators,37308,2023-24,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+113,Administrators,37308,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+113,Administrators,37308,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+113,Administrators,37512,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+113,Administrators,37512,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+200,Associated Payroll Costs,206210,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+200,Associated Payroll Costs,206210,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+200,Associated Payroll Costs,217977,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+200,Associated Payroll Costs,220866,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+200,Associated Payroll Costs,220866,2023-24,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+200,Associated Payroll Costs,220866,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+300,Purchased Services,110940,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+300,Purchased Services,110940,2023-24,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+300,Purchased Services,110940,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+300,Purchased Services,110980,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+300,Purchased Services,119699,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+300,Purchased Services,119699,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+376520,Budgeted Ending Fund Balance,0,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+376520,Budgeted Ending Fund Balance,0,2023-24,adopted,budget-fy2024-25-vol1,101,"printed as dash",fy2024-25
+376520,Budgeted Ending Fund Balance,0,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+376520,Budgeted Ending Fund Balance,0,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+376520,Budgeted Ending Fund Balance,86078,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+376520,Budgeted Ending Fund Balance,86078,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+400,Supplies And Materials,14140,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+400,Supplies And Materials,14151,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+400,Supplies and Materials,14151,2023-24,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+400,Supplies And Materials,14151,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+400,Supplies and Materials,16856,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+400,Supplies and Materials,16856,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+500,Capital Outlay,1829,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+500,Capital Outlay,1829,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+500,Capital Outlay,3131,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+500,Capital Outlay,3184,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+500,Capital Outlay,3184,2023-24,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+500,Capital Outlay,3184,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+581000,Operating Contingency,0,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+581000,Operating Contingency,0,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+581000,Operating Contingency,43063,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+581000,Operating Contingency,43063,2023-24,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+581000,Operating Contingency,43063,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+581000,Operating Contingency,43063,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+600,Other Objects,10333,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+600,Other Objects,10333,2023-24,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+600,Other Objects,10333,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+600,Other Objects,10333,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+600,Other Objects,9839,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+600,Other Objects,9839,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+700,Transfers,1075,2023-24,adopted,budget-fy2023-24-vol1,96,,fy2023-24
+700,Transfers,1075,2023-24,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+700,Transfers,1075,2023-24,approved,budget-fy2023-24-vol1,96,,fy2023-24
+700,Transfers,1075,2023-24,proposed,budget-fy2023-24-vol1,96,,fy2023-24
+700,Transfers,887,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+700,Transfers,887,2023-24,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+TOTAL,Total Requirements,833774,2023-24,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+total,Total Requirements,873375,2023-24,actual-budgetary,budget-fy2025-26-vol1,100,,fy2025-26
+100,Other Salaries,14955,2024-25,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+100,Other Salaries,14955,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+100,Other Salaries,14955,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+100,Other Salaries,14955,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+100,Other Salaries,33916,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+111,Licensed Salaries,274755,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+111,Licensed Salaries,278943,2024-25,adopted,budget-fy2024-25-vol1,101,"adopted FTE 2945.09",fy2024-25
+111,Licensed Salaries,278943,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+111,Licensed Salaries,278943,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+111,Licensed Salaries,278943,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+1121,Classified - Represented,66903,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+1121,Classified - Represented,68871,2024-25,adopted,budget-fy2024-25-vol1,101,"adopted FTE 1328.73",fy2024-25
+1121,Classified - Represented,68871,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+1121,Classified - Represented,68871,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+1121,Classified - Represented,68871,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+1122,Non-Represented Staff,38493,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+1122,Non-Represented Staff,40803,2024-25,adopted,budget-fy2024-25-vol1,101,"adopted FTE 389.67",fy2024-25
+1122,Non-Represented Staff,40803,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+1122,Non-Represented Staff,40803,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+1122,Non-Represented Staff,40939,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+113,Administrators,38979,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+113,Administrators,39741,2024-25,adopted,budget-fy2024-25-vol1,101,"adopted FTE 248.12",fy2024-25
+113,Administrators,39741,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+113,Administrators,39741,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+113,Administrators,40210,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+200,Associated Payroll Costs,212696,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+200,Associated Payroll Costs,223481,2024-25,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+200,Associated Payroll Costs,223481,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+200,Associated Payroll Costs,223481,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+200,Associated Payroll Costs,223683,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+300,Purchased Services,109389,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+300,Purchased Services,111439,2024-25,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+300,Purchased Services,111439,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+300,Purchased Services,111439,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+300,Purchased Services,117095,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+376520,Budgeted Ending Fund Balance,0,2024-25,adopted,budget-fy2024-25-vol1,101,"printed as dash",fy2024-25
+376520,Budgeted Ending Fund Balance,0,2024-25,approved,budget-fy2024-25-vol1,101,"printed as dash",fy2024-25
+376520,Budgeted Ending Fund Balance,0,2024-25,proposed,budget-fy2024-25-vol1,101,"printed as dash",fy2024-25
+376520,Budgeted Ending Fund Balance,0,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+376520,Budgeted Ending Fund Balance,44323,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+400,Supplies and Materials,13783,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+400,Supplies and Materials,13886,2024-25,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+400,Supplies and Materials,13886,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+400,Supplies and Materials,13886,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+400,Supplies and Materials,14878,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+500,Capital Outlay,3035,2024-25,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+500,Capital Outlay,3035,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+500,Capital Outlay,3035,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+500,Capital Outlay,3035,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+500,Capital Outlay,938,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+581000,Operating Contingency,0,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+581000,Operating Contingency,40856,2024-25,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+581000,Operating Contingency,40856,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+581000,Operating Contingency,40856,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+581000,Operating Contingency,42656,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+600,Other Objects,2214,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+600,Other Objects,2488,2024-25,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+600,Other Objects,2488,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+600,Other Objects,2488,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+600,Other Objects,4730,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+700,Transfers,10643,2024-25,actual-budgetary,budget-fy2026-27-vol1,110,,fy2026-27
+700,Transfers,11918,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+700,Transfers,15896,2024-25,adopted,budget-fy2024-25-vol1,101,,fy2024-25
+700,Transfers,15896,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+700,Transfers,15896,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+TOTAL,Total Requirements,853111,2024-25,proposed,budget-fy2024-25-vol1,101,,fy2024-25
+TOTAL,Total Requirements,854394,2024-25,adopted,budget-fy2024-25-vol1,101,"total adopted GF FTE 4911.60",fy2024-25
+TOTAL,Total Requirements,854394,2024-25,approved,budget-fy2024-25-vol1,101,,fy2024-25
+total,Total Requirements,854394,2024-25,revised,budget-fy2025-26-vol1,100,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+100,Other Salaries,13887,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+100,Other Salaries,13887,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+100,Other Salaries,13887,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+100,Other Salaries,13887,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+111,Licensed Salaries,280529,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+111,Licensed Salaries,280529,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+111,Licensed Salaries,280529,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+111,Licensed Salaries,280529,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+1121,Classified - Represented,69907,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+1121,Classified - Represented,69907,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+1121,Classified - Represented,69907,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+1121,Classified - Represented,69907,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+1122,Non-Represented Staff,39886,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+1122,Non-Represented Staff,39886,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+1122,Non-Represented Staff,39886,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+1122,Non-Represented Staff,39886,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+113,Administrators,38740,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+113,Administrators,38740,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+113,Administrators,38740,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+113,Administrators,38740,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+200,Associated Payroll Costs,248507,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+200,Associated Payroll Costs,248507,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+200,Associated Payroll Costs,248507,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+200,Associated Payroll Costs,248507,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+300,Purchased Services,104835,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+300,Purchased Services,104835,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+300,Purchased Services,104835,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+300,Purchased Services,104835,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+376520,Budgeted Ending Fund Balance,0,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+376520,Budgeted Ending Fund Balance,0,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+376520,Budgeted Ending Fund Balance,0,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+376520,Budgeted Ending Fund Balance,0,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+400,Supplies and Materials,11674,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+400,Supplies and Materials,11674,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+400,Supplies and Materials,11674,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+400,Supplies and Materials,11674,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+500,Capital Outlay,912,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+500,Capital Outlay,912,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+500,Capital Outlay,912,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+500,Capital Outlay,912,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+581000,Operating Contingency,41179,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+581000,Operating Contingency,41179,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+581000,Operating Contingency,41179,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+581000,Operating Contingency,41179,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+600,Other Objects,1349,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+600,Other Objects,1349,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+600,Other Objects,1349,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+600,Other Objects,1349,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+700,Transfers,17176,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+700,Transfers,17176,2025-26,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+700,Transfers,17176,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+700,Transfers,17176,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+total,Total Requirements,868580,2025-26,adopted,budget-fy2025-26-vol1,100,,fy2025-26
+total,Total Requirements,868580,2025-26,approved,budget-fy2025-26-vol1,100,,fy2025-26
+total,Total Requirements,868580,2025-26,proposed,budget-fy2025-26-vol1,100,,fy2025-26
+100,Other Salaries,24531,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+111,Licensed Salaries,276175,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+1121,Classified - Represented,65416,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+1122,Non-Represented Staff,35185,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+113,Administrators,33957,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+200,Associated Payroll Costs,245251,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+300,Purchased Services,110672,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+376520,Budgeted Ending Fund Balance,0,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+400,Supplies and Materials,12736,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+500,Capital Outlay,1047,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+581000,Operating Contingency,41056,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+600,Other Objects,1332,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27
+700,Transfers,14755,2026-27,adopted,budget-fy2026-27-vol1,110,,fy2026-27

@@ -1,0 +1,57 @@
+function_code,label,amount_k,fy,basis,doc_id,page,notes
+1000,Instruction,363865,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,"native unit thousands; Summary of Requirements by Major Function - General Funds"
+2000,Support Services,285720,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,
+3000,Enterprise and Community Services,5115,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,
+5100,Debt Service & PERS UAL (5100+5400),0,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,"printed as dash"
+5200,Transfers of Funds,1198,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,
+6000,Contingencies,0,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,"printed as dash"
+7000,Unappropriated Fund Balance,88691,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,
+TOTAL,Total Requirements,744589,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,
+1000,Instruction,373758,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,
+2000,Support Services,312766,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,
+3000,Enterprise and Community Services,893,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,
+5100,Debt Service & PERS UAL (5100+5400),400833,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,"2021 pension bond pass-through"
+5200,Transfers of Funds,1207,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,
+6000,Contingencies,0,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,"printed as dash"
+7000,Unappropriated Fund Balance,98804,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,
+TOTAL,Total Requirements,1188261,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,
+1000,Instruction,376786,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,
+2000,Support Services,343359,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,
+3000,Enterprise and Community Services,3114,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,
+5100,Debt Service & PERS UAL (5100+5400),0,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,"printed as dash"
+5200,Transfers of Funds,1282,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,
+6000,Contingencies,0,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,"printed as dash"
+7000,Unappropriated Fund Balance,105497,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,
+TOTAL,Total Requirements,830038,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,
+1000,Instruction,416837,2023-24,adopted,budget-fy2024-25-vol1,100,"2023-24 budget columns are from the 2023-24 Adopted Budget (p78)"
+2000,Support Services,367876,2023-24,adopted,budget-fy2024-25-vol1,100,
+3000,Enterprise and Community Services,4194,2023-24,adopted,budget-fy2024-25-vol1,100,
+5100,Debt Service & PERS UAL (5100+5400),728,2023-24,adopted,budget-fy2024-25-vol1,100,
+5200,Transfers of Funds,1075,2023-24,adopted,budget-fy2024-25-vol1,100,
+6000,Contingencies,43063,2023-24,adopted,budget-fy2024-25-vol1,100,
+7000,Unappropriated Fund Balance,0,2023-24,adopted,budget-fy2024-25-vol1,100,"printed as dash"
+TOTAL,Total Requirements,833774,2023-24,adopted,budget-fy2024-25-vol1,100,
+1000,Instruction,437284,2024-25,proposed,budget-fy2024-25-vol1,100,
+2000,Support Services,355802,2024-25,proposed,budget-fy2024-25-vol1,100,
+3000,Enterprise and Community Services,3257,2024-25,proposed,budget-fy2024-25-vol1,100,
+5100,Debt Service & PERS UAL (5100+5400),2194,2024-25,proposed,budget-fy2024-25-vol1,100,
+5200,Transfers of Funds,11918,2024-25,proposed,budget-fy2024-25-vol1,100,
+6000,Contingencies,42656,2024-25,proposed,budget-fy2024-25-vol1,100,
+7000,Unappropriated Fund Balance,0,2024-25,proposed,budget-fy2024-25-vol1,100,"printed as dash"
+TOTAL,Total Requirements,853111,2024-25,proposed,budget-fy2024-25-vol1,100,
+1000,Instruction,439084,2024-25,approved,budget-fy2024-25-vol1,100,
+2000,Support Services,354962,2024-25,approved,budget-fy2024-25-vol1,100,
+3000,Enterprise and Community Services,3257,2024-25,approved,budget-fy2024-25-vol1,100,
+5100,Debt Service & PERS UAL (5100+5400),339,2024-25,approved,budget-fy2024-25-vol1,100,
+5200,Transfers of Funds,15896,2024-25,approved,budget-fy2024-25-vol1,100,
+6000,Contingencies,40856,2024-25,approved,budget-fy2024-25-vol1,100,
+7000,Unappropriated Fund Balance,0,2024-25,approved,budget-fy2024-25-vol1,100,"printed as dash"
+TOTAL,Total Requirements,854394,2024-25,approved,budget-fy2024-25-vol1,100,
+1000,Instruction,439084,2024-25,adopted,budget-fy2024-25-vol1,100,"also Attachment A p303"
+2000,Support Services,354962,2024-25,adopted,budget-fy2024-25-vol1,100,
+3000,Enterprise and Community Services,3257,2024-25,adopted,budget-fy2024-25-vol1,100,
+5100,Debt Service & PERS UAL (5100+5400),339,2024-25,adopted,budget-fy2024-25-vol1,100,
+5200,Transfers of Funds,15896,2024-25,adopted,budget-fy2024-25-vol1,100,"Attachment A (p303) prints 15895 for the same line"
+6000,Contingencies,40856,2024-25,adopted,budget-fy2024-25-vol1,100,
+7000,Unappropriated Fund Balance,0,2024-25,adopted,budget-fy2024-25-vol1,100,"printed as dash; narrative (p98) says ending balance would be 40.9M if contingency goes unspent"
+TOTAL,Total Requirements,854394,2024-25,adopted,budget-fy2024-25-vol1,100,

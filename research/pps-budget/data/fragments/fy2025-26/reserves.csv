@@ -1,0 +1,5 @@
+contingency_k,ending_fund_balance_k,fy,basis,doc_id,page,notes
+40856,0,2024-25,revised,budget-fy2025-26-vol1,99,General Fund only; native unit thousands; column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book); 7000 unappropriated EFB not budgeted in GF 2024-25
+41179,0,2025-26,adopted,budget-fy2025-26-vol1,99,General Fund only; no unappropriated/budgeted EFB; narrative (p.97) projects $41.2M ending balance if contingency unspent (meets 5% minimum)
+42520,22423,2024-25,revised,budget-fy2025-26-vol1,90,All funds; ending_fund_balance is 7000 Unappropriated Fund Balance
+41679,0,2025-26,adopted,budget-fy2025-26-vol1,90,All funds; no EFB budgeted in 2025-26 to account for PERS Rate Stabilization Reserve (Fund 225) utilization

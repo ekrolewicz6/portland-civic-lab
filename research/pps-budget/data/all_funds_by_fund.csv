@@ -1,0 +1,1291 @@
+fund_name,resources_k,requirements_k,fy,basis,doc_id,page,notes,fragment
+101 General Fund,,579158.367,2015-16,revised,budget-fy2016-17-book,66,native unit whole dollars; table prints requirements only (Oregon budgets balance per fund; per-fund resources not tabulated here),fy2016-17
+101 General Fund,583731.903,583731.903,2015-16,actual-budgetary,budget-fy2018-19-book,83,native unit whole dollars; resources_k=requirements_k because each fund detail prints one balanced total (Total Resources by Account = Total Requirements),fy2018-19
+201 Student Body Activity Fund,,12521.725,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+201 Student Body Activity Fund,11926.225,11926.225,2015-16,actual-budgetary,budget-fy2018-19-book,93,,fy2018-19
+202 Cafeteria Fund,,24320.277,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+202 Cafeteria Fund,24507.905,24507.905,2015-16,actual-budgetary,budget-fy2018-19-book,94,,fy2018-19
+205 Grants Fund,,64735.028,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+205 Grants Fund,58568.194,58568.194,2015-16,actual-budgetary,budget-fy2018-19-book,97,,fy2018-19
+225 PERS Rate Stabilization Reserve Fund,,16338.514,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+225 PERS Rate Stabilization Reserve Fund,16396.181,16396.181,2015-16,actual-budgetary,budget-fy2018-19-book,106,,fy2018-19
+299 Dedicated Resource Fund,,17106.653,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+299 Dedicated Resource Fund,15097.013,15097.013,2015-16,actual-budgetary,budget-fy2018-19-book,107,,fy2018-19
+307 IT Projects Debt Service Fund,,2707.98,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+307 IT Projects Debt Service Fund,2707.980,2707.980,2015-16,actual-budgetary,budget-fy2018-19-book,114,,fy2018-19
+308 PERS UAL Debt Service Fund,,43847.574,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+308 PERS UAL Debt Service Fund,42318.303,42318.303,2015-16,actual-budgetary,budget-fy2018-19-book,115,,fy2018-19
+320 Full Faith and Credit Debt Service Fund,,1285.549,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+320 Full Faith and Credit Debt Service Fund,1285.548,1285.548,2015-16,actual-budgetary,budget-fy2018-19-book,116,,fy2018-19
+350 GO Bonds Debt Service Fund,50020.758,50020.758,2015-16,actual-budgetary,budget-fy2018-19-book,117,,fy2018-19
+350 GO Bonds Debt Service Funds,,48711.589,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+404 Construction Excise Fund,,18439.955,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+404 Construction Excise Fund,18917.150,18917.150,2015-16,actual-budgetary,budget-fy2018-19-book,118,,fy2018-19
+407 IT System Project Fund,,5273.251,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+407 IT System Project Fund,5287.020,5287.020,2015-16,actual-budgetary,budget-fy2018-19-book,120,,fy2018-19
+420 Full Faith and Credit Fund,,55.38,2015-16,revised,budget-fy2016-17-book,66,fund winding down; dash (no budget) in all 2016/17 columns,fy2016-17
+420 Full Faith and Credit Fund,55.380,55.380,2015-16,actual-budgetary,budget-fy2018-19-book,122,,fy2018-19
+435 Energy Efficient Schools Fund,,1724.572,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+435 Energy Efficient Schools Fund,1596.717,1596.717,2015-16,actual-budgetary,budget-fy2018-19-book,124,,fy2018-19
+438 Facilities Capital Fund,,7599.094,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+438 Facilities Capital Fund,6319.596,6319.596,2015-16,actual-budgetary,budget-fy2018-19-book,125,,fy2018-19
+445 Capital Asset Renewal Fund,,3247.782,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+445 Capital Asset Renewal Fund,3567.092,3567.092,2015-16,actual-budgetary,budget-fy2018-19-book,127,,fy2018-19
+450 GO Bonds Fund,358462.844,358462.844,2015-16,actual-budgetary,budget-fy2018-19-book,128,,fy2018-19
+450 GO Bonds,,360899.025,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+470 Partnership Funds,,12003.406,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+470 Partnership Funds,3982.973,3982.973,2015-16,actual-budgetary,budget-fy2018-19-book,131,,fy2018-19
+601 Self Insurance Fund,,7174.642,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+601 Self Insurance Fund,7032.331,7032.331,2015-16,actual-budgetary,budget-fy2018-19-book,132,,fy2018-19
+All Funds Total,1211781,1211781,2015-16,actual-budgetary,budget-fy2019-20-book,73,"native unit thousands of dollars; 2018-19 column headed 'Budget' (current-year budget, treated as revised); resources p73, requirements p74; res/req differ by rounding in 2019-20 columns per book's own rounding note",fy2019-20
+Cafeteria Fund (202),24508,24508,2015-16,actual-budgetary,budget-fy2019-20-book,100,requirements totals also printed p101,fy2019-20
+Capital Asset Renewal Fund (445),3567,3567,2015-16,actual-budgetary,budget-fy2019-20-book,151,,fy2019-20
+Capital Projects Funds (400),398189,398189,2015-16,actual-budgetary,budget-fy2019-20-book,134,"resources p134, requirements p135",fy2019-20
+Construction Excise Fund (404),18917,18917,2015-16,actual-budgetary,budget-fy2019-20-book,138,requirements totals also printed p139,fy2019-20
+Debt Service Funds (300),96333,96333,2015-16,actual-budgetary,budget-fy2019-20-book,120,"resources p120, requirements p121",fy2019-20
+Dedicated Resource Fund (299),15097,15097,2015-16,actual-budgetary,budget-fy2019-20-book,112,,fy2019-20
+Energy Efficient Schools Fund (435),1597,1597,2015-16,actual-budgetary,budget-fy2019-20-book,146,,fy2019-20
+Facilities Capital Fund (438),6320,6320,2015-16,actual-budgetary,budget-fy2019-20-book,148,requirements totals also printed p149,fy2019-20
+Full Faith and Credit Debt Service Fund (320),1286,1286,2015-16,actual-budgetary,budget-fy2019-20-book,130,,fy2019-20
+Full Faith and Credit Fund (420),55,55,2015-16,actual-budgetary,budget-fy2019-20-book,143,requirements totals also printed p144,fy2019-20
+General Fund (100),583732,583732,2015-16,actual-budgetary,budget-fy2019-20-book,82,"resources p82, requirements p83; approved/adopted res 691,769 vs req 691,767 is book rounding",fy2019-20
+GO Bonds Debt Service Fund (350),50021,50021,2015-16,actual-budgetary,budget-fy2019-20-book,132,,fy2019-20
+GO Bonds Fund (450),358463,358463,2015-16,actual-budgetary,budget-fy2019-20-book,153,requirements totals also printed p154,fy2019-20
+Grants Fund (205),58568,58568,2015-16,actual-budgetary,budget-fy2019-20-book,103,1k res/req rounding gap in 2019-20 columns,fy2019-20
+Internal Service Funds (600),7032,7032,2015-16,actual-budgetary,budget-fy2019-20-book,162,"resources p162, requirements p163",fy2019-20
+IT Projects Debt Service Fund (307),2708,2708,2015-16,actual-budgetary,budget-fy2019-20-book,126,2019-20 columns printed as dash (fund winding down),fy2019-20
+IT System Project Fund (407),5287,5287,2015-16,actual-budgetary,budget-fy2019-20-book,141,,fy2019-20
+Partnership Funds (470),3983,3983,2015-16,actual-budgetary,budget-fy2019-20-book,156,2018-19 Budget column printed as dash,fy2019-20
+PERS Rate Stabilization Reserve Fund (225),16396,16396,2015-16,actual-budgetary,budget-fy2019-20-book,110,,fy2019-20
+PERS UAL Debt Service Fund (308),42318,42318,2015-16,actual-budgetary,budget-fy2019-20-book,128,,fy2019-20
+Self Insurance Fund (601),7032,7032,2015-16,actual-budgetary,budget-fy2019-20-book,166,identical to 600 summary: Self Insurance is the only Internal Service fund,fy2019-20
+Special Revenue Funds (200),126496,126496,2015-16,actual-budgetary,budget-fy2019-20-book,94,"resources p94, requirements p95; 1k res/req rounding gap in 2019-20 columns",fy2019-20
+Student Body Activity Fund (201),11926,11926,2015-16,actual-budgetary,budget-fy2019-20-book,98,,fy2019-20
+Total District Budget (all funds),1211781.113,1211781.113,2015-16,actual-budgetary,budget-fy2018-19-book,70,district total from Requirements by Major Program (All Funds) table,fy2018-19
+Total District Budget by Fund,,1227150.363,2015-16,revised,budget-fy2016-17-book,66,,fy2016-17
+100 - General Fund,600301,600301,2016-17,actual-budgetary,budget-fy2020-21-vol1,117,"native unit thousands; leaf funds only (fund-group subtotals omitted); per Oregon budget law resources = requirements per fund, both printed identically on each fund's detail pages; GF summary p.117 (resources) / p.118 (requirements)",fy2020-21
+101 General Fund,,591888.109,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+101 General Fund,,592043.109,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+101 General Fund,,592600.18,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+101 General Fund,,604905.161,2016-17,revised,budget-fy2017-18-book,65,native unit whole dollars; table prints requirements only - resources_k left empty (per-fund resources appear only in Fund Detail pages); 2016/17 column headed 'Current',fy2017-18
+101 General Fund,600300.820,600300.820,2016-17,actual-budgetary,budget-fy2018-19-book,83,,fy2018-19
+201 - Student Body Activity Fund,11585,11585,2016-17,actual-budgetary,budget-fy2020-21-vol1,134,,fy2020-21
+201 Student Body Activity Fund,,12521.725,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+201 Student Body Activity Fund,,12521.725,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+201 Student Body Activity Fund,,12521.725,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+201 Student Body Activity Fund,,13095.969,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+201 Student Body Activity Fund,11585.302,11585.302,2016-17,actual-budgetary,budget-fy2018-19-book,93,,fy2018-19
+202 - Cafeteria Fund,24468,24468,2016-17,actual-budgetary,budget-fy2020-21-vol1,137,,fy2020-21
+202 Cafeteria Fund,,24302.556,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+202 Cafeteria Fund,,24302.556,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+202 Cafeteria Fund,,24302.556,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+202 Cafeteria Fund,,26607.599,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+202 Cafeteria Fund,24468.316,24468.316,2016-17,actual-budgetary,budget-fy2018-19-book,94,,fy2018-19
+205 - Grants Fund,59803,59803,2016-17,actual-budgetary,budget-fy2020-21-vol1,141,,fy2020-21
+205 Grants Fund,,69007.282,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+205 Grants Fund,,69007.282,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+205 Grants Fund,,69334.196,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+205 Grants Fund,,69334.196,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+205 Grants Fund,59803.272,59803.272,2016-17,actual-budgetary,budget-fy2018-19-book,97,,fy2018-19
+225 - PERS Rate Stabilization Reserve Fund,16813,16813,2016-17,actual-budgetary,budget-fy2020-21-vol1,151,,fy2020-21
+225 PERS Rate Stabilization Reserve Fund,,16688.299,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+225 PERS Rate Stabilization Reserve Fund,,16688.299,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+225 PERS Rate Stabilization Reserve Fund,,16688.299,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+225 PERS Rate Stabilization Reserve Fund,,16745.967,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+225 PERS Rate Stabilization Reserve Fund,16813.301,16813.301,2016-17,actual-budgetary,budget-fy2018-19-book,106,,fy2018-19
+251 - Student Investment Account Fund,0,0,2016-17,actual-budgetary,budget-fy2020-21-vol1,154,new fund in 2020-21 (Student Success Act / SIA); prior years printed as '-'; printed as '-',fy2020-21
+299 - Dedicated Resource Fund,14809,14809,2016-17,actual-budgetary,budget-fy2020-21-vol1,158,,fy2020-21
+299 Dedicated Resource Fund,,13102.048,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+299 Dedicated Resource Fund,,13102.048,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+299 Dedicated Resource Fund,,13102.048,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+299 Dedicated Resource Fund,,13102.048,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+299 Dedicated Resource Fund,14809.022,14809.022,2016-17,actual-budgetary,budget-fy2018-19-book,107,,fy2018-19
+307 - IT Projects Debt Service Fund,2707,2707,2016-17,actual-budgetary,budget-fy2020-21-vol1,175,2019-20 onward printed as '-' (no remaining budget),fy2020-21
+307 IT Projects Debt Service Fund,,2707.434,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+307 IT Projects Debt Service Fund,,2707.434,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+307 IT Projects Debt Service Fund,,2707.434,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+307 IT Projects Debt Service Fund,,2707.434,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+307 IT Projects Debt Service Fund,2707.434,2707.434,2016-17,actual-budgetary,budget-fy2018-19-book,114,,fy2018-19
+308 - PERS UAL Debt Service Fund,44775,44775,2016-17,actual-budgetary,budget-fy2020-21-vol1,178,,fy2020-21
+308 PERS UAL Debt Service Fund,,44138.307,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+308 PERS UAL Debt Service Fund,,45667.574,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+308 PERS UAL Debt Service Fund,,45667.574,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+308 PERS UAL Debt Service Fund,,45667.574,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+308 PERS UAL Debt Service Fund,44775.447,44775.447,2016-17,actual-budgetary,budget-fy2018-19-book,115,,fy2018-19
+320 - Full Faith and Credit Debt Service Fund,1352,1352,2016-17,actual-budgetary,budget-fy2020-21-vol1,181,,fy2020-21
+320 Full Faith and Credit Debt Service Fund,,1266.926,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+320 Full Faith and Credit Debt Service Fund,,1266.926,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+320 Full Faith and Credit Debt Service Fund,,1266.926,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+320 Full Faith and Credit Debt Service Fund,,1366.926,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+320 Full Faith and Credit Debt Service Fund,1351.617,1351.617,2016-17,actual-budgetary,budget-fy2018-19-book,116,,fy2018-19
+338 Facilities Capital Debt Service Fund,,323.53,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+338 Facilities Capital Debt Service Fund,,323.53,2016-17,approved,budget-fy2016-17-book,66,new fund; first appears at approved stage (dash in Current 2015/16 and Proposed columns),fy2016-17
+350 - GO Bonds Debt Service Fund,52040,52040,2016-17,actual-budgetary,budget-fy2020-21-vol1,184,,fy2020-21
+350 GO Bonds Debt Service Fund,52040.349,52040.349,2016-17,actual-budgetary,budget-fy2018-19-book,117,,fy2018-19
+350 GO Bonds Debt Service Funds,,49718.598,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+350 GO Bonds Debt Service Funds,,49718.598,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+350 GO Bonds Debt Service Funds,,50128.598,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+350 GO Bonds Debt Service Funds,,51027.767,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+404 - Construction Excise Fund,23223,23223,2016-17,actual-budgetary,budget-fy2020-21-vol1,191,,fy2020-21
+404 Construction Excise Fund,,21376.273,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+404 Construction Excise Fund,,21376.273,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+404 Construction Excise Fund,,21376.273,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+404 Construction Excise Fund,,22027.290,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+404 Construction Excise Fund,23223.425,23223.425,2016-17,actual-budgetary,budget-fy2018-19-book,118,,fy2018-19
+407 - IT System Project Fund,1907,1907,2016-17,actual-budgetary,budget-fy2020-21-vol1,195,2020-21 printed as '-',fy2020-21
+407 IT System Project Fund,,1125.061,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+407 IT System Project Fund,,1467.822,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+407 IT System Project Fund,,1467.822,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+407 IT System Project Fund,,1907.028,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+407 IT System Project Fund,1907.256,1907.256,2016-17,actual-budgetary,budget-fy2018-19-book,120,,fy2018-19
+420 - Full Faith and Credit Fund,19281,19281,2016-17,actual-budgetary,budget-fy2020-21-vol1,198,,fy2020-21
+420 Full Faith and Credit Fund,,19300.000,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+420 Full Faith and Credit Fund,19280.737,19280.737,2016-17,actual-budgetary,budget-fy2018-19-book,122,,fy2018-19
+435 - Energy Efficient Schools Fund,2448,2448,2016-17,actual-budgetary,budget-fy2020-21-vol1,202,,fy2020-21
+435 Energy Efficient Schools Fund,,1685.438,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+435 Energy Efficient Schools Fund,,1685.438,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+435 Energy Efficient Schools Fund,,1685.438,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+435 Energy Efficient Schools Fund,,1881.273,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+435 Energy Efficient Schools Fund,2447.840,2447.840,2016-17,actual-budgetary,budget-fy2018-19-book,124,,fy2018-19
+438 - Facilities Capital Fund,4797,4797,2016-17,actual-budgetary,budget-fy2020-21-vol1,205,,fy2020-21
+438 Facilities Capital Fund,,10361.136,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+438 Facilities Capital Fund,,10361.136,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+438 Facilities Capital Fund,,5463.636,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+438 Facilities Capital Fund,,6960.085,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+438 Facilities Capital Fund,4796.616,4796.616,2016-17,actual-budgetary,budget-fy2018-19-book,125,,fy2018-19
+445 - Capital Asset Renewal Fund,4188,4188,2016-17,actual-budgetary,budget-fy2020-21-vol1,209,,fy2020-21
+445 Capital Asset Renewal Fund,,3785.752,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+445 Capital Asset Renewal Fund,,3785.752,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+445 Capital Asset Renewal Fund,,3785.752,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+445 Capital Asset Renewal Fund,,3788.699,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+445 Capital Asset Renewal Fund,4187.830,4187.830,2016-17,actual-budgetary,budget-fy2018-19-book,127,,fy2018-19
+450 - GO Bonds Fund,244242,244242,2016-17,actual-budgetary,budget-fy2020-21-vol1,212,Approved/Adopted include $1.0B placeholder for possible Nov 2020 bond measure,fy2020-21
+450 GO Bonds Fund,244242.350,244242.350,2016-17,actual-budgetary,budget-fy2018-19-book,128,,fy2018-19
+450 GO Bonds,,243180.246,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+450 GO Bonds,,270647.214,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+450 GO Bonds,,270647.214,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+450 GO Bonds,,270647.214,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+470 - Partnership Funds,10594,10594,2016-17,actual-budgetary,budget-fy2020-21-vol1,217,,fy2020-21
+470 Partnership Funds,,11173.531,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+470 Partnership Funds,,11173.531,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+470 Partnership Funds,,11173.531,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+470 Partnership Funds,,11288.784,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+470 Partnership Funds,10594.402,10594.402,2016-17,actual-budgetary,budget-fy2018-19-book,131,,fy2018-19
+601 - Self-Insurance Fund,8017,8017,2016-17,actual-budgetary,budget-fy2020-21-vol1,228,,fy2020-21
+601 Self Insurance Fund,,7174.6,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+601 Self Insurance Fund,,7174.6,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+601 Self Insurance Fund,,7174.6,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+601 Self Insurance Fund,,8110.085,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+601 Self Insurance Fund,8016.601,8016.601,2016-17,actual-budgetary,budget-fy2018-19-book,132,,fy2018-19
+All Funds Total,1147352,1147352,2016-17,actual-budgetary,budget-fy2019-20-book,73,"resources p73, requirements p74; res/req differ by rounding in 2019-20 columns per book's own rounding note",fy2019-20
+Cafeteria Fund (202),24468,24468,2016-17,actual-budgetary,budget-fy2019-20-book,100,requirements totals also printed p101,fy2019-20
+Capital Asset Renewal Fund (445),4188,4188,2016-17,actual-budgetary,budget-fy2019-20-book,151,,fy2019-20
+Capital Projects Funds (400),310680,310680,2016-17,actual-budgetary,budget-fy2019-20-book,134,"resources p134, requirements p135",fy2019-20
+Construction Excise Fund (404),23223,23223,2016-17,actual-budgetary,budget-fy2019-20-book,138,requirements totals also printed p139,fy2019-20
+Debt Service Funds (300),100875,100875,2016-17,actual-budgetary,budget-fy2019-20-book,120,"resources p120, requirements p121",fy2019-20
+Dedicated Resource Fund (299),14809,14809,2016-17,actual-budgetary,budget-fy2019-20-book,112,,fy2019-20
+Energy Efficient Schools Fund (435),2448,2448,2016-17,actual-budgetary,budget-fy2019-20-book,146,,fy2019-20
+Facilities Capital Fund (438),4797,4797,2016-17,actual-budgetary,budget-fy2019-20-book,148,requirements totals also printed p149,fy2019-20
+Full Faith and Credit Debt Service Fund (320),1352,1352,2016-17,actual-budgetary,budget-fy2019-20-book,130,,fy2019-20
+Full Faith and Credit Fund (420),19281,19281,2016-17,actual-budgetary,budget-fy2019-20-book,143,requirements totals also printed p144,fy2019-20
+General Fund (100),600301,600301,2016-17,actual-budgetary,budget-fy2019-20-book,82,"resources p82, requirements p83; approved/adopted res 691,769 vs req 691,767 is book rounding",fy2019-20
+GO Bonds Debt Service Fund (350),52040,52040,2016-17,actual-budgetary,budget-fy2019-20-book,132,,fy2019-20
+GO Bonds Fund (450),244242,244242,2016-17,actual-budgetary,budget-fy2019-20-book,153,requirements totals also printed p154,fy2019-20
+Grants Fund (205),59803,59803,2016-17,actual-budgetary,budget-fy2019-20-book,103,1k res/req rounding gap in 2019-20 columns,fy2019-20
+Internal Service Funds (600),8017,8017,2016-17,actual-budgetary,budget-fy2019-20-book,162,"resources p162, requirements p163",fy2019-20
+IT Projects Debt Service Fund (307),2707,2707,2016-17,actual-budgetary,budget-fy2019-20-book,126,2019-20 columns printed as dash (fund winding down),fy2019-20
+IT System Project Fund (407),1907,1907,2016-17,actual-budgetary,budget-fy2019-20-book,141,,fy2019-20
+Partnership Funds (470),10594,10594,2016-17,actual-budgetary,budget-fy2019-20-book,156,2018-19 Budget column printed as dash,fy2019-20
+PERS Rate Stabilization Reserve Fund (225),16813,16813,2016-17,actual-budgetary,budget-fy2019-20-book,110,,fy2019-20
+PERS UAL Debt Service Fund (308),44775,44775,2016-17,actual-budgetary,budget-fy2019-20-book,128,,fy2019-20
+Self Insurance Fund (601),8017,8017,2016-17,actual-budgetary,budget-fy2019-20-book,166,identical to 600 summary: Self Insurance is the only Internal Service fund,fy2019-20
+Special Revenue Funds (200),127479,127479,2016-17,actual-budgetary,budget-fy2019-20-book,94,"resources p94, requirements p95; 1k res/req rounding gap in 2019-20 columns",fy2019-20
+Student Body Activity Fund (201),11585,11585,2016-17,actual-budgetary,budget-fy2019-20-book,98,,fy2019-20
+Total District Budget (all funds),1147351.937,1147351.937,2016-17,actual-budgetary,budget-fy2018-19-book,70,district total from Requirements by Major Program (All Funds) table,fy2018-19
+Total District Budget by Fund,,1149712.056,2016-17,proposed,budget-fy2016-17-book,66,,fy2016-17
+Total District Budget by Fund,,1155020.847,2016-17,approved,budget-fy2016-17-book,66,,fy2016-17
+Total District Budget by Fund,,1155904.832,2016-17,adopted,budget-fy2016-17-book,66,,fy2016-17
+Total District Budget by Fund,,1161474.864,2016-17,revised,budget-fy2017-18-book,65,,fy2017-18
+100 - General Fund,633966,633966,2017-18,actual-budgetary,budget-fy2020-21-vol1,117,GF summary p.117 (resources) / p.118 (requirements),fy2020-21
+101 General Fund,,616286.841,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+101 General Fund,,617286.841,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+101 General Fund,,617286.841,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+101 General Fund,631466.922,631466.922,2017-18,revised,budget-fy2018-19-book,83,,fy2018-19
+201 - Student Body Activity Fund,11561,11561,2017-18,actual-budgetary,budget-fy2020-21-vol1,134,,fy2020-21
+201 Student Body Activity Fund,,13095.969,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+201 Student Body Activity Fund,,13095.969,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+201 Student Body Activity Fund,,13095.969,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+201 Student Body Activity Fund,13257.383,13257.383,2017-18,revised,budget-fy2018-19-book,93,,fy2018-19
+202 - Cafeteria Fund,23206,23206,2017-18,actual-budgetary,budget-fy2020-21-vol1,137,,fy2020-21
+202 Cafeteria Fund,,22089.840,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+202 Cafeteria Fund,,22089.840,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+202 Cafeteria Fund,,22089.840,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+202 Cafeteria Fund,24116.008,24116.008,2017-18,revised,budget-fy2018-19-book,94,,fy2018-19
+205 - Grants Fund,59778,59778,2017-18,actual-budgetary,budget-fy2020-21-vol1,141,,fy2020-21
+205 Grants Fund,,83496.898,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+205 Grants Fund,,83496.898,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+205 Grants Fund,,83496.898,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+205 Grants Fund,83496.898,83496.898,2017-18,revised,budget-fy2018-19-book,97,,fy2018-19
+225 - PERS Rate Stabilization Reserve Fund,17209,17209,2017-18,actual-budgetary,budget-fy2020-21-vol1,151,,fy2020-21
+225 PERS Rate Stabilization Reserve Fund,,17070.884,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+225 PERS Rate Stabilization Reserve Fund,,17070.884,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+225 PERS Rate Stabilization Reserve Fund,,17070.884,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+225 PERS Rate Stabilization Reserve Fund,17138.218,17138.218,2017-18,revised,budget-fy2018-19-book,106,,fy2018-19
+251 - Student Investment Account Fund,0,0,2017-18,actual-budgetary,budget-fy2020-21-vol1,154,new fund in 2020-21 (Student Success Act / SIA); prior years printed as '-'; printed as '-',fy2020-21
+299 - Dedicated Resource Fund,18858,18858,2017-18,actual-budgetary,budget-fy2020-21-vol1,158,,fy2020-21
+299 Dedicated Resource Fund,,16653.023,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+299 Dedicated Resource Fund,,16653.023,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+299 Dedicated Resource Fund,,16844.643,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+299 Dedicated Resource Fund,16653.023,16653.023,2017-18,revised,budget-fy2018-19-book,107,,fy2018-19
+307 - IT Projects Debt Service Fund,2708,2708,2017-18,actual-budgetary,budget-fy2020-21-vol1,175,2019-20 onward printed as '-' (no remaining budget),fy2020-21
+307 IT Projects Debt Service Fund,,2708.168,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+307 IT Projects Debt Service Fund,,2708.168,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+307 IT Projects Debt Service Fund,,2708.168,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+307 IT Projects Debt Service Fund,2708.168,2708.168,2017-18,revised,budget-fy2018-19-book,114,,fy2018-19
+308 - PERS UAL Debt Service Fund,48782,48782,2017-18,actual-budgetary,budget-fy2020-21-vol1,178,,fy2020-21
+308 PERS UAL Debt Service Fund,,46878.306,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+308 PERS UAL Debt Service Fund,,46878.306,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+308 PERS UAL Debt Service Fund,,46878.306,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+308 PERS UAL Debt Service Fund,47515.450,47515.450,2017-18,revised,budget-fy2018-19-book,115,,fy2018-19
+320 - Full Faith and Credit Debt Service Fund,1860,1860,2017-18,actual-budgetary,budget-fy2020-21-vol1,181,,fy2020-21
+320 Full Faith and Credit Debt Service Fund,,2484.707,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+320 Full Faith and Credit Debt Service Fund,,2484.707,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+320 Full Faith and Credit Debt Service Fund,,2484.707,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+320 Full Faith and Credit Debt Service Fund,1859.707,1859.707,2017-18,revised,budget-fy2018-19-book,116,,fy2018-19
+350 - GO Bonds Debt Service Fund,120259,120259,2017-18,actual-budgetary,budget-fy2020-21-vol1,184,,fy2020-21
+350 GO Bonds Debt Service Fund,119539.530,119539.530,2017-18,revised,budget-fy2018-19-book,117,,fy2018-19
+350 GO Bonds Debt Service Funds,,118526.948,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+350 GO Bonds Debt Service Funds,,118526.948,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+350 GO Bonds Debt Service Funds,,118526.948,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+404 - Construction Excise Fund,27830,27830,2017-18,actual-budgetary,budget-fy2020-21-vol1,191,,fy2020-21
+404 Construction Excise Fund,,23529.981,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+404 Construction Excise Fund,,23529.981,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+404 Construction Excise Fund,,23529.981,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+404 Construction Excise Fund,23529.981,23529.981,2017-18,revised,budget-fy2018-19-book,118,,fy2018-19
+407 - IT System Project Fund,1271,1271,2017-18,actual-budgetary,budget-fy2020-21-vol1,195,2020-21 printed as '-',fy2020-21
+407 IT System Project Fund,,1319.500,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+407 IT System Project Fund,,1319.500,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+407 IT System Project Fund,,1319.500,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+407 IT System Project Fund,1364.566,1364.566,2017-18,revised,budget-fy2018-19-book,120,,fy2018-19
+420 - Full Faith and Credit Fund,10365,10365,2017-18,actual-budgetary,budget-fy2020-21-vol1,198,,fy2020-21
+420 Full Faith and Credit Fund,,3000.000,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+420 Full Faith and Credit Fund,,3000.000,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+420 Full Faith and Credit Fund,,3000.000,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+420 Full Faith and Credit Fund,10364.791,10364.791,2017-18,revised,budget-fy2018-19-book,122,,fy2018-19
+435 - Energy Efficient Schools Fund,3702,3702,2017-18,actual-budgetary,budget-fy2020-21-vol1,202,,fy2020-21
+435 Energy Efficient Schools Fund,,2694.273,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+435 Energy Efficient Schools Fund,,2694.273,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+435 Energy Efficient Schools Fund,,2694.273,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+435 Energy Efficient Schools Fund,2694.273,2694.273,2017-18,revised,budget-fy2018-19-book,124,,fy2018-19
+438 - Facilities Capital Fund,3237,3237,2017-18,actual-budgetary,budget-fy2020-21-vol1,205,,fy2020-21
+438 Facilities Capital Fund,,2818.730,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+438 Facilities Capital Fund,,3002.687,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+438 Facilities Capital Fund,,3002.687,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+438 Facilities Capital Fund,3002.687,3002.687,2017-18,revised,budget-fy2018-19-book,125,,fy2018-19
+445 - Capital Asset Renewal Fund,4916,4916,2017-18,actual-budgetary,budget-fy2020-21-vol1,209,,fy2020-21
+445 Capital Asset Renewal Fund,,4248.699,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+445 Capital Asset Renewal Fund,,4248.699,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+445 Capital Asset Renewal Fund,,4248.699,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+445 Capital Asset Renewal Fund,4248.699,4248.699,2017-18,revised,budget-fy2018-19-book,127,,fy2018-19
+450 - GO Bonds Fund,538505,538505,2017-18,actual-budgetary,budget-fy2020-21-vol1,212,Approved/Adopted include $1.0B placeholder for possible Nov 2020 bond measure,fy2020-21
+450 GO Bonds Fund,596278.655,596278.655,2017-18,revised,budget-fy2018-19-book,128,,fy2018-19
+450 GO Bonds,,596278.655,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+450 GO Bonds,,596278.655,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+450 GO Bonds,,596278.655,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+470 - Partnership Funds,1016,1016,2017-18,actual-budgetary,budget-fy2020-21-vol1,217,,fy2020-21
+470 Partnership Funds,,4263.800,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+470 Partnership Funds,,4263.800,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+470 Partnership Funds,,4263.800,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+470 Partnership Funds,4263.800,4263.800,2017-18,revised,budget-fy2018-19-book,131,,fy2018-19
+601 - Self-Insurance Fund,8580,8580,2017-18,actual-budgetary,budget-fy2020-21-vol1,228,,fy2020-21
+601 Self Insurance Fund,,9125.900,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+601 Self Insurance Fund,,9125.900,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+601 Self Insurance Fund,,9125.900,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+601 Self Insurance Fund,9125.900,9125.900,2017-18,revised,budget-fy2018-19-book,132,,fy2018-19
+All Funds Total,1537607,1537607,2017-18,actual-budgetary,budget-fy2019-20-book,73,"resources p73, requirements p74; res/req differ by rounding in 2019-20 columns per book's own rounding note",fy2019-20
+Cafeteria Fund (202),23206,23206,2017-18,actual-budgetary,budget-fy2019-20-book,100,requirements totals also printed p101,fy2019-20
+Capital Asset Renewal Fund (445),4916,4916,2017-18,actual-budgetary,budget-fy2019-20-book,151,,fy2019-20
+Capital Project Funds (400),590841,590841,2017-18,actual-budgetary,budget-fy2021-22-vol1,227,requirements from PDF p.229 of same doc,fy2021-22
+Capital Projects Funds (400),590841,590841,2017-18,actual-budgetary,budget-fy2019-20-book,134,"resources p134, requirements p135",fy2019-20
+Construction Excise Fund (404),27830,27830,2017-18,actual-budgetary,budget-fy2019-20-book,138,requirements totals also printed p139,fy2019-20
+Debt Service Funds (300),173608,173608,2017-18,actual-budgetary,budget-fy2019-20-book,120,"resources p120, requirements p121",fy2019-20
+Debt Service Funds (300),173608,173608,2017-18,actual-budgetary,budget-fy2021-22-vol1,208,requirements from PDF p.209 of same doc,fy2021-22
+Dedicated Resource Fund (299),18858,18858,2017-18,actual-budgetary,budget-fy2019-20-book,112,,fy2019-20
+Energy Efficient Schools Fund (435),3702,3702,2017-18,actual-budgetary,budget-fy2019-20-book,146,,fy2019-20
+Facilities Capital Fund (438),3237,3237,2017-18,actual-budgetary,budget-fy2019-20-book,148,requirements totals also printed p149,fy2019-20
+Full Faith and Credit Debt Service Fund (320),1860,1860,2017-18,actual-budgetary,budget-fy2019-20-book,130,,fy2019-20
+Full Faith and Credit Fund (420),10365,10365,2017-18,actual-budgetary,budget-fy2019-20-book,143,requirements totals also printed p144,fy2019-20
+General Fund (100),633966,633966,2017-18,actual-budgetary,budget-fy2019-20-book,82,"resources p82, requirements p83; approved/adopted res 691,769 vs req 691,767 is book rounding",fy2019-20
+General Fund (100),633966,633966,2017-18,actual-budgetary,budget-fy2021-22-vol1,151,native unit thousands of dollars; requirements from PDF p.152 of same doc,fy2021-22
+GO Bonds Debt Service Fund (350),120259,120259,2017-18,actual-budgetary,budget-fy2019-20-book,132,,fy2019-20
+GO Bonds Fund (450),538505,538505,2017-18,actual-budgetary,budget-fy2019-20-book,153,requirements totals also printed p154,fy2019-20
+Grants Fund (205),59778,59778,2017-18,actual-budgetary,budget-fy2019-20-book,103,1k res/req rounding gap in 2019-20 columns,fy2019-20
+Internal Service Funds (600),8580,8580,2017-18,actual-budgetary,budget-fy2019-20-book,162,"resources p162, requirements p163",fy2019-20
+Internal Service Funds (600),8580,8580,2017-18,actual-budgetary,budget-fy2021-22-vol1,266,"requirements from PDF p.268 of same doc; by-function summary p.267 (printed 260) still shows approved/adopted 8,552 - not updated for +13k contingency adjustment shown in Attachment A p.375",fy2021-22
+IT Projects Debt Service Fund (307),2708,2708,2017-18,actual-budgetary,budget-fy2019-20-book,126,2019-20 columns printed as dash (fund winding down),fy2019-20
+IT System Project Fund (407),1271,1271,2017-18,actual-budgetary,budget-fy2019-20-book,141,,fy2019-20
+Partnership Funds (470),1016,1016,2017-18,actual-budgetary,budget-fy2019-20-book,156,2018-19 Budget column printed as dash,fy2019-20
+PERS Rate Stabilization Reserve Fund (225),17209,17209,2017-18,actual-budgetary,budget-fy2019-20-book,110,,fy2019-20
+PERS UAL Debt Service Fund (308),48782,48782,2017-18,actual-budgetary,budget-fy2019-20-book,128,,fy2019-20
+Self Insurance Fund (601),8580,8580,2017-18,actual-budgetary,budget-fy2019-20-book,166,identical to 600 summary: Self Insurance is the only Internal Service fund,fy2019-20
+Special Revenue Funds (200),130612,130612,2017-18,actual-budgetary,budget-fy2019-20-book,94,"resources p94, requirements p95; 1k res/req rounding gap in 2019-20 columns",fy2019-20
+Special Revenue Funds (200),130612,130612,2017-18,actual-budgetary,budget-fy2021-22-vol1,165,requirements from PDF p.166 of same doc,fy2021-22
+Student Body Activity Fund (201),11561,11561,2017-18,actual-budgetary,budget-fy2019-20-book,98,,fy2019-20
+TOTAL ALL FUNDS,1537607,1537607,2017-18,actual-budgetary,budget-fy2021-22-vol1,142,"requirements from PDF p.143 of same doc; resolution 6323 (p.373) adopts total budget of $2,058,410,000",fy2021-22
+Total District Budget (all funds),1612624.659,1612624.659,2017-18,revised,budget-fy2018-19-book,62,,fy2018-19
+Total District Budget by Fund,,1586762.742,2017-18,proposed,budget-fy2017-18-book,65,,fy2017-18
+Total District Budget by Fund,,1587755.079,2017-18,adopted,budget-fy2017-18-book,65,,fy2017-18
+Total District Budget by Fund,,1587755.079,2017-18,approved,budget-fy2017-18-book,65,,fy2017-18
+100 - General Fund,660592,660592,2018-19,actual-budgetary,budget-fy2020-21-vol1,117,GF summary p.117 (resources) / p.118 (requirements),fy2020-21
+101 General Fund,650538.941,650538.941,2018-19,proposed,budget-fy2018-19-book,83,,fy2018-19
+101 General Fund,655002.466,655002.466,2018-19,adopted,budget-fy2018-19-book,83,,fy2018-19
+101 General Fund,655002.466,655002.466,2018-19,approved,budget-fy2018-19-book,83,,fy2018-19
+201 - Student Body Activity Fund,11560,11560,2018-19,actual-budgetary,budget-fy2020-21-vol1,134,,fy2020-21
+201 Student Body Activity Fund,13057.383,13057.383,2018-19,adopted,budget-fy2018-19-book,93,,fy2018-19
+201 Student Body Activity Fund,13057.383,13057.383,2018-19,approved,budget-fy2018-19-book,93,,fy2018-19
+201 Student Body Activity Fund,13057.383,13057.383,2018-19,proposed,budget-fy2018-19-book,93,,fy2018-19
+202 - Cafeteria Fund,22244,22244,2018-19,actual-budgetary,budget-fy2020-21-vol1,137,,fy2020-21
+202 Cafeteria Fund,21656.234,21656.234,2018-19,proposed,budget-fy2018-19-book,94,,fy2018-19
+202 Cafeteria Fund,22106.234,22106.234,2018-19,adopted,budget-fy2018-19-book,94,,fy2018-19
+202 Cafeteria Fund,22106.234,22106.234,2018-19,approved,budget-fy2018-19-book,94,,fy2018-19
+205 - Grants Fund,66649,66649,2018-19,actual-budgetary,budget-fy2020-21-vol1,141,,fy2020-21
+205 Grants Fund,66795.838,66795.838,2018-19,adopted,budget-fy2018-19-book,97,,fy2018-19
+205 Grants Fund,66795.838,66795.838,2018-19,approved,budget-fy2018-19-book,97,,fy2018-19
+205 Grants Fund,66795.838,66795.838,2018-19,proposed,budget-fy2018-19-book,97,,fy2018-19
+225 - PERS Rate Stabilization Reserve Fund,17954,17954,2018-19,actual-budgetary,budget-fy2020-21-vol1,151,,fy2020-21
+225 PERS Rate Stabilization Reserve Fund,17453.649,17453.649,2018-19,proposed,budget-fy2018-19-book,106,,fy2018-19
+225 PERS Rate Stabilization Reserve Fund,17520.983,17520.983,2018-19,adopted,budget-fy2018-19-book,106,,fy2018-19
+225 PERS Rate Stabilization Reserve Fund,17520.983,17520.983,2018-19,approved,budget-fy2018-19-book,106,,fy2018-19
+251 - Student Investment Account Fund,0,0,2018-19,actual-budgetary,budget-fy2020-21-vol1,154,new fund in 2020-21 (Student Success Act / SIA); prior years printed as '-'; printed as '-',fy2020-21
+299 - Dedicated Resource Fund,18537,18537,2018-19,actual-budgetary,budget-fy2020-21-vol1,158,,fy2020-21
+299 Dedicated Resource Fund,10778.358,10778.358,2018-19,proposed,budget-fy2018-19-book,107,,fy2018-19
+299 Dedicated Resource Fund,10828.358,10828.358,2018-19,adopted,budget-fy2018-19-book,107,,fy2018-19
+299 Dedicated Resource Fund,10828.358,10828.358,2018-19,approved,budget-fy2018-19-book,107,,fy2018-19
+307 - IT Projects Debt Service Fund,2708,2708,2018-19,actual-budgetary,budget-fy2020-21-vol1,175,2019-20 onward printed as '-' (no remaining budget),fy2020-21
+307 IT Projects Debt Service Fund,2708.046,2708.046,2018-19,adopted,budget-fy2018-19-book,114,,fy2018-19
+307 IT Projects Debt Service Fund,2708.046,2708.046,2018-19,approved,budget-fy2018-19-book,114,,fy2018-19
+307 IT Projects Debt Service Fund,2708.046,2708.046,2018-19,proposed,budget-fy2018-19-book,114,,fy2018-19
+308 - PERS UAL Debt Service Fund,49085,49085,2018-19,actual-budgetary,budget-fy2020-21-vol1,178,,fy2020-21
+308 PERS UAL Debt Service Fund,49495.449,49495.449,2018-19,proposed,budget-fy2018-19-book,115,,fy2018-19
+308 PERS UAL Debt Service Fund,50024.061,50024.061,2018-19,adopted,budget-fy2018-19-book,115,,fy2018-19
+308 PERS UAL Debt Service Fund,50024.061,50024.061,2018-19,approved,budget-fy2018-19-book,115,,fy2018-19
+320 - Full Faith and Credit Debt Service Fund,1847,1847,2018-19,actual-budgetary,budget-fy2020-21-vol1,181,,fy2020-21
+320 Full Faith and Credit Debt Service Fund,1846.785,1846.785,2018-19,adopted,budget-fy2018-19-book,116,,fy2018-19
+320 Full Faith and Credit Debt Service Fund,1846.785,1846.785,2018-19,approved,budget-fy2018-19-book,116,,fy2018-19
+320 Full Faith and Credit Debt Service Fund,2053.659,2053.659,2018-19,proposed,budget-fy2018-19-book,116,,fy2018-19
+350 - GO Bonds Debt Service Fund,130984,130984,2018-19,actual-budgetary,budget-fy2020-21-vol1,184,,fy2020-21
+350 GO Bonds Debt Service Fund,122720.800,122720.800,2018-19,proposed,budget-fy2018-19-book,117,,fy2018-19
+350 GO Bonds Debt Service Fund,123733.382,123733.382,2018-19,adopted,budget-fy2018-19-book,117,,fy2018-19
+350 GO Bonds Debt Service Fund,123733.382,123733.382,2018-19,approved,budget-fy2018-19-book,117,,fy2018-19
+404 - Construction Excise Fund,21902,21902,2018-19,actual-budgetary,budget-fy2020-21-vol1,191,,fy2020-21
+404 Construction Excise Fund,20840.864,20840.864,2018-19,adopted,budget-fy2018-19-book,118,,fy2018-19
+404 Construction Excise Fund,20840.864,20840.864,2018-19,approved,budget-fy2018-19-book,118,,fy2018-19
+404 Construction Excise Fund,20840.864,20840.864,2018-19,proposed,budget-fy2018-19-book,118,,fy2018-19
+407 - IT System Project Fund,788,788,2018-19,actual-budgetary,budget-fy2020-21-vol1,195,2020-21 printed as '-',fy2020-21
+407 IT System Project Fund,774.699,774.699,2018-19,adopted,budget-fy2018-19-book,120,,fy2018-19
+407 IT System Project Fund,774.699,774.699,2018-19,approved,budget-fy2018-19-book,120,,fy2018-19
+407 IT System Project Fund,821.368,821.368,2018-19,proposed,budget-fy2018-19-book,120,,fy2018-19
+420 - Full Faith and Credit Fund,5822,5822,2018-19,actual-budgetary,budget-fy2020-21-vol1,198,,fy2020-21
+420 Full Faith and Credit Fund,4318.975,4318.975,2018-19,adopted,budget-fy2018-19-book,122,,fy2018-19
+420 Full Faith and Credit Fund,4318.975,4318.975,2018-19,approved,budget-fy2018-19-book,122,,fy2018-19
+420 Full Faith and Credit Fund,4318.975,4318.975,2018-19,proposed,budget-fy2018-19-book,122,,fy2018-19
+435 - Energy Efficient Schools Fund,3173,3173,2018-19,actual-budgetary,budget-fy2020-21-vol1,202,,fy2020-21
+435 Energy Efficient Schools Fund,2819.761,2819.761,2018-19,adopted,budget-fy2018-19-book,124,,fy2018-19
+435 Energy Efficient Schools Fund,2819.761,2819.761,2018-19,approved,budget-fy2018-19-book,124,,fy2018-19
+435 Energy Efficient Schools Fund,2819.761,2819.761,2018-19,proposed,budget-fy2018-19-book,124,,fy2018-19
+438 - Facilities Capital Fund,7462,7462,2018-19,actual-budgetary,budget-fy2020-21-vol1,205,,fy2020-21
+438 Facilities Capital Fund,19787.005,19787.005,2018-19,adopted,budget-fy2018-19-book,125,,fy2018-19
+438 Facilities Capital Fund,19787.005,19787.005,2018-19,approved,budget-fy2018-19-book,125,,fy2018-19
+438 Facilities Capital Fund,19787.005,19787.005,2018-19,proposed,budget-fy2018-19-book,125,,fy2018-19
+445 - Capital Asset Renewal Fund,5763,5763,2018-19,actual-budgetary,budget-fy2020-21-vol1,209,,fy2020-21
+445 Capital Asset Renewal Fund,5089.830,5089.830,2018-19,adopted,budget-fy2018-19-book,127,,fy2018-19
+445 Capital Asset Renewal Fund,5089.830,5089.830,2018-19,approved,budget-fy2018-19-book,127,,fy2018-19
+445 Capital Asset Renewal Fund,5089.830,5089.830,2018-19,proposed,budget-fy2018-19-book,127,,fy2018-19
+450 - GO Bonds Fund,453748,453748,2018-19,actual-budgetary,budget-fy2020-21-vol1,212,Approved/Adopted include $1.0B placeholder for possible Nov 2020 bond measure,fy2020-21
+450 GO Bonds Fund,479058.609,479058.609,2018-19,adopted,budget-fy2018-19-book,128,,fy2018-19
+450 GO Bonds Fund,479058.609,479058.609,2018-19,approved,budget-fy2018-19-book,128,,fy2018-19
+450 GO Bonds Fund,479058.609,479058.609,2018-19,proposed,budget-fy2018-19-book,128,,fy2018-19
+470 - Partnership Funds,318,318,2018-19,actual-budgetary,budget-fy2020-21-vol1,217,,fy2020-21
+470 Partnership Funds,0.000,0.000,2018-19,adopted,budget-fy2018-19-book,131,,fy2018-19
+470 Partnership Funds,0.000,0.000,2018-19,approved,budget-fy2018-19-book,131,,fy2018-19
+470 Partnership Funds,0.000,0.000,2018-19,proposed,budget-fy2018-19-book,131,,fy2018-19
+601 - Self-Insurance Fund,9908,9908,2018-19,actual-budgetary,budget-fy2020-21-vol1,228,,fy2020-21
+601 Self Insurance Fund,10653.980,10653.980,2018-19,proposed,budget-fy2018-19-book,132,,fy2018-19
+601 Self Insurance Fund,10678.509,10678.509,2018-19,adopted,budget-fy2018-19-book,132,,fy2018-19
+601 Self Insurance Fund,10678.509,10678.509,2018-19,approved,budget-fy2018-19-book,132,,fy2018-19
+All Funds Total,1506992,1506992,2018-19,revised,budget-fy2019-20-book,73,"resources p73, requirements p74; res/req differ by rounding in 2019-20 columns per book's own rounding note",fy2019-20
+Cafeteria Fund (202),22106,22106,2018-19,revised,budget-fy2019-20-book,100,requirements totals also printed p101,fy2019-20
+Cafeteria Fund (202),22244,22244,2018-19,actual-budgetary,budget-fy2022-23-vol1,169,,fy2022-23
+Capital Asset Renewal Fund (445),5090,5090,2018-19,revised,budget-fy2019-20-book,151,,fy2019-20
+Capital Asset Renewal Fund (445),5763,5763,2018-19,actual-budgetary,budget-fy2022-23-vol1,240,requirements-by-object p241 prints 17110 for 2019-20 (rounding),fy2022-23
+Capital Project Funds (400),498977,498977,2018-19,actual-budgetary,budget-fy2021-22-vol1,227,requirements from PDF p.229 of same doc,fy2021-22
+Capital Projects Funds (400) [group total],498977,498976,2018-19,actual-budgetary,budget-fy2022-23-vol1,220,requirements from PDF p221 of same doc; 2018-19 resources 498977 vs requirements 498976 (rounding); Attachment A p358 prints adopted fund total 516865,fy2022-23
+Capital Projects Funds (400),532690,532690,2018-19,revised,budget-fy2019-20-book,134,"resources p134, requirements p135",fy2019-20
+Construction Excise Fund (404),20841,20841,2018-19,revised,budget-fy2019-20-book,138,requirements totals also printed p139,fy2019-20
+Construction Excise Fund (404),21902,21902,2018-19,actual-budgetary,budget-fy2022-23-vol1,224,2020-21 resources 14679 vs requirements 14678; requirements-by-object p225 prints 21901 for 2018-19 (rounding),fy2022-23
+Debt Service Funds (300) [group total],184625,184625,2018-19,actual-budgetary,budget-fy2022-23-vol1,201,requirements from PDF p202 of same doc; 2019-20 resources total prints 191558 vs requirements 191557 (rounding),fy2022-23
+Debt Service Funds (300),178312,178312,2018-19,revised,budget-fy2019-20-book,120,"resources p120, requirements p121",fy2019-20
+Debt Service Funds (300),184625,184625,2018-19,actual-budgetary,budget-fy2021-22-vol1,208,requirements from PDF p.209 of same doc,fy2021-22
+Dedicated Resource Fund (299),10828,10828,2018-19,revised,budget-fy2019-20-book,112,,fy2019-20
+Dedicated Resource Fund (299),18537,18537,2018-19,actual-budgetary,budget-fy2022-23-vol1,191,requirements from PDF p192 of same doc,fy2022-23
+Energy Efficient Schools Fund (435),2820,2820,2018-19,revised,budget-fy2019-20-book,146,,fy2019-20
+Energy Efficient Schools Fund (435),3173,3173,2018-19,actual-budgetary,budget-fy2022-23-vol1,234,requirements-by-object prints 3174 for 2018-19 (rounding),fy2022-23
+Facilities Capital Fund (438),19787,19787,2018-19,revised,budget-fy2019-20-book,148,requirements totals also printed p149,fy2019-20
+Facilities Capital Fund (438),7462,7462,2018-19,actual-budgetary,budget-fy2022-23-vol1,237,,fy2022-23
+Full Faith and Credit Debt Service Fund (320),1847,1847,2018-19,actual-budgetary,budget-fy2022-23-vol1,214,,fy2022-23
+Full Faith and Credit Debt Service Fund (320),1847,1847,2018-19,revised,budget-fy2019-20-book,130,,fy2019-20
+Full Faith and Credit Fund (420),4319,4319,2018-19,revised,budget-fy2019-20-book,143,requirements totals also printed p144,fy2019-20
+Full Faith and Credit Fund (420),5822,5821,2018-19,actual-budgetary,budget-fy2022-23-vol1,231,2018-19 resources 5822 vs requirements 5821 (rounding),fy2022-23
+General Fund (100),655002,655002,2018-19,revised,budget-fy2019-20-book,82,"resources p82, requirements p83; approved/adopted res 691,769 vs req 691,767 is book rounding",fy2019-20
+General Fund (100),660592,660592,2018-19,actual-budgetary,budget-fy2021-22-vol1,151,requirements from PDF p.152 of same doc,fy2021-22
+General Fund (100),660592,660592,2018-19,actual-budgetary,budget-fy2022-23-vol1,149,"native unit thousands of dollars in source; 2021-22 column printed as 'Budget', recorded as adopted; requirements from PDF p150 of same doc; requirements-by-object table p151 prints 2019-20 total 709091 (rounding)",fy2022-23
+GO Bonds Debt Service Fund (350),123733,123733,2018-19,revised,budget-fy2019-20-book,132,,fy2019-20
+GO Bonds Debt Service Fund (350),130984,130984,2018-19,actual-budgetary,budget-fy2022-23-vol1,217,adopted reduced 4055 from approved via UEFB amendment (Attachment A p358); TSCC letter p362 flags GO bond tax estimate,fy2022-23
+GO Bonds Fund (450),453748,453748,2018-19,actual-budgetary,budget-fy2022-23-vol1,244,,fy2022-23
+GO Bonds Fund (450),479059,479059,2018-19,revised,budget-fy2019-20-book,153,requirements totals also printed p154,fy2019-20
+Grants Fund (205),66649,66649,2018-19,actual-budgetary,budget-fy2022-23-vol1,173,requirements from PDF p174 of same doc; includes ESSER and High School Success / Measure 98 (pre-FY2025-26 sub-fund split),fy2022-23
+Grants Fund (205),66796,66796,2018-19,revised,budget-fy2019-20-book,103,1k res/req rounding gap in 2019-20 columns,fy2019-20
+Internal Service Funds (600) [group total],9908,9908,2018-19,actual-budgetary,budget-fy2022-23-vol1,257,requirements from PDF p258 of same doc; group summary prints 9908/9066 where Fund 601 detail prints 9909/9067 (rounding),fy2022-23
+Internal Service Funds (600),10679,10679,2018-19,revised,budget-fy2019-20-book,162,"resources p162, requirements p163",fy2019-20
+Internal Service Funds (600),9908,9908,2018-19,actual-budgetary,budget-fy2021-22-vol1,266,"requirements from PDF p.268 of same doc; by-function summary p.267 (printed 260) still shows approved/adopted 8,552 - not updated for +13k contingency adjustment shown in Attachment A p.375",fy2021-22
+IT Projects Debt Service Fund (307),2708,2708,2018-19,actual-budgetary,budget-fy2022-23-vol1,208,no activity after 2018-19,fy2022-23
+IT Projects Debt Service Fund (307),2708,2708,2018-19,revised,budget-fy2019-20-book,126,2019-20 columns printed as dash (fund winding down),fy2019-20
+IT System Project Fund (407),775,775,2018-19,revised,budget-fy2019-20-book,141,,fy2019-20
+IT System Project Fund (407),788,788,2018-19,actual-budgetary,budget-fy2022-23-vol1,228,no activity after 2019-20,fy2022-23
+Partnership Funds (470),0,0,2018-19,revised,budget-fy2019-20-book,156,2018-19 Budget column printed as dash,fy2019-20
+Partnership Funds (470),318,318,2018-19,actual-budgetary,budget-fy2022-23-vol1,248,no activity after 2019-20,fy2022-23
+PERS Rate Stabilization Reserve Fund (225),17521,17521,2018-19,revised,budget-fy2019-20-book,110,,fy2019-20
+PERS Rate Stabilization Reserve Fund (225),17954,17954,2018-19,actual-budgetary,budget-fy2022-23-vol1,184,,fy2022-23
+PERS UAL Debt Service Fund (308),49085,49085,2018-19,actual-budgetary,budget-fy2022-23-vol1,211,,fy2022-23
+PERS UAL Debt Service Fund (308),50024,50024,2018-19,revised,budget-fy2019-20-book,128,,fy2019-20
+Self Insurance Fund (601),10679,10679,2018-19,revised,budget-fy2019-20-book,166,identical to 600 summary: Self Insurance is the only Internal Service fund,fy2019-20
+Self Insurance Fund (601),9909,9908,2018-19,actual-budgetary,budget-fy2022-23-vol1,261,resources print 1k higher than requirements in 2018-19 and 2019-20 (rounding),fy2022-23
+Special Revenue Funds (200) [group total],136944,136944,2018-19,actual-budgetary,budget-fy2022-23-vol1,162,requirements from PDF p163 of same doc,fy2022-23
+Special Revenue Funds (200),130309,130309,2018-19,revised,budget-fy2019-20-book,94,"resources p94, requirements p95; 1k res/req rounding gap in 2019-20 columns",fy2019-20
+Special Revenue Funds (200),136944,136944,2018-19,actual-budgetary,budget-fy2021-22-vol1,165,requirements from PDF p.166 of same doc,fy2021-22
+Student Body Activity Fund (201),11560,11560,2018-19,actual-budgetary,budget-fy2022-23-vol1,166,,fy2022-23
+Student Body Activity Fund (201),13057,13057,2018-19,revised,budget-fy2019-20-book,98,,fy2019-20
+TOTAL ALL FUNDS,1491045,1491045,2018-19,actual-budgetary,budget-fy2021-22-vol1,142,"requirements from PDF p.143 of same doc; resolution 6323 (p.373) adopts total budget of $2,058,410,000",fy2021-22
+TOTAL ALL FUNDS,1491046,1491046,2018-19,actual-budgetary,budget-fy2022-23-vol1,140,"requirements from PDF p141 of same doc; 2020-21 resources total prints 2233098 vs requirements 2233100 (rounding); adopted total per Resolution 6520 p356 = $1,883,261,000",fy2022-23
+Total District Budget (all funds),1500648.749,1500648.749,2018-19,proposed,budget-fy2018-19-book,62,,fy2018-19
+Total District Budget (all funds),1506991.788,1506991.788,2018-19,adopted,budget-fy2018-19-book,62,,fy2018-19
+Total District Budget (all funds),1506991.788,1506991.788,2018-19,approved,budget-fy2018-19-book,62,,fy2018-19
+100 - General Fund,691767,691767,2019-20,revised,budget-fy2020-21-vol1,117,GF summary p.117 (resources) / p.118 (requirements),fy2020-21
+201 - Student Body Activity Fund,13819,13819,2019-20,revised,budget-fy2020-21-vol1,134,,fy2020-21
+202 - Cafeteria Fund,21596,21596,2019-20,revised,budget-fy2020-21-vol1,137,,fy2020-21
+205 - Grants Fund,67526,67526,2019-20,revised,budget-fy2020-21-vol1,141,,fy2020-21
+225 - PERS Rate Stabilization Reserve Fund,18275,18275,2019-20,revised,budget-fy2020-21-vol1,151,,fy2020-21
+251 - Student Investment Account Fund,0,0,2019-20,revised,budget-fy2020-21-vol1,154,new fund in 2020-21 (Student Success Act / SIA); prior years printed as '-'; printed as '-',fy2020-21
+299 - Dedicated Resource Fund,16193,16193,2019-20,revised,budget-fy2020-21-vol1,158,,fy2020-21
+307 - IT Projects Debt Service Fund,0,0,2019-20,revised,budget-fy2020-21-vol1,175,2019-20 onward printed as '-' (no remaining budget); printed as '-',fy2020-21
+308 - PERS UAL Debt Service Fund,52997,52997,2019-20,revised,budget-fy2020-21-vol1,178,,fy2020-21
+320 - Full Faith and Credit Debt Service Fund,1828,1828,2019-20,revised,budget-fy2020-21-vol1,181,,fy2020-21
+350 - GO Bonds Debt Service Fund,134057,134057,2019-20,revised,budget-fy2020-21-vol1,184,,fy2020-21
+404 - Construction Excise Fund,19541,19541,2019-20,revised,budget-fy2020-21-vol1,191,,fy2020-21
+407 - IT System Project Fund,8,8,2019-20,revised,budget-fy2020-21-vol1,195,2020-21 printed as '-',fy2020-21
+420 - Full Faith and Credit Fund,3292,3292,2019-20,revised,budget-fy2020-21-vol1,198,,fy2020-21
+435 - Energy Efficient Schools Fund,2705,2705,2019-20,revised,budget-fy2020-21-vol1,202,,fy2020-21
+438 - Facilities Capital Fund,13608,13608,2019-20,revised,budget-fy2020-21-vol1,205,,fy2020-21
+445 - Capital Asset Renewal Fund,6217,6217,2019-20,revised,budget-fy2020-21-vol1,209,,fy2020-21
+450 - GO Bonds Fund,303450,303450,2019-20,revised,budget-fy2020-21-vol1,212,Approved/Adopted include $1.0B placeholder for possible Nov 2020 bond measure,fy2020-21
+470 - Partnership Funds,500,500,2019-20,revised,budget-fy2020-21-vol1,217,,fy2020-21
+601 - Self-Insurance Fund,12078,12078,2019-20,revised,budget-fy2020-21-vol1,228,,fy2020-21
+All Funds Total,1376348,1376347,2019-20,proposed,budget-fy2019-20-book,73,"resources p73, requirements p74; res/req differ by rounding in 2019-20 columns per book's own rounding note",fy2019-20
+All Funds Total,1379458,1379456,2019-20,adopted,budget-fy2019-20-book,73,"resources p73, requirements p74; res/req differ by rounding in 2019-20 columns per book's own rounding note",fy2019-20
+All Funds Total,1379458,1379456,2019-20,approved,budget-fy2019-20-book,73,"resources p73, requirements p74; res/req differ by rounding in 2019-20 columns per book's own rounding note",fy2019-20
+Cafeteria Fund (202),19764,19764,2019-20,actual-budgetary,budget-fy2022-23-vol1,169,,fy2022-23
+Cafeteria Fund (202),19764,19764,2019-20,actual-budgetary,budget-fy2023-24-vol1,113,2021-22 resources 26237 vs requirements 26236 as printed (rounding),fy2023-24
+Cafeteria Fund (202),21596,21596,2019-20,adopted,budget-fy2019-20-book,100,requirements totals also printed p101,fy2019-20
+Cafeteria Fund (202),21596,21596,2019-20,approved,budget-fy2019-20-book,100,requirements totals also printed p101,fy2019-20
+Cafeteria Fund (202),21596,21596,2019-20,proposed,budget-fy2019-20-book,100,requirements totals also printed p101,fy2019-20
+Capital Asset Renewal Fund (445),17111,17110,2019-20,actual-budgetary,budget-fy2023-24-vol1,178,2019-20 resources 17111 vs requirements 17110 as printed (rounding),fy2023-24
+Capital Asset Renewal Fund (445),17111,17111,2019-20,actual-budgetary,budget-fy2022-23-vol1,240,,fy2022-23
+Capital Asset Renewal Fund (445),6217,6217,2019-20,adopted,budget-fy2019-20-book,151,,fy2019-20
+Capital Asset Renewal Fund (445),6217,6217,2019-20,approved,budget-fy2019-20-book,151,,fy2019-20
+Capital Asset Renewal Fund (445),6217,6217,2019-20,proposed,budget-fy2019-20-book,151,,fy2019-20
+Capital Project Funds (400),876613,876613,2019-20,actual-budgetary,budget-fy2021-22-vol1,227,requirements from PDF p.229 of same doc,fy2021-22
+Capital Projects Funds (400) [group total],876613,876613,2019-20,actual-budgetary,budget-fy2022-23-vol1,220,,fy2022-23
+Capital Projects Funds (400) [group total],876613,876613,2019-20,actual-budgetary,budget-fy2023-24-vol1,157,"fund-group total, not additive with member funds below; p158 duplicate prints 2019-20 as 876615 (rounding)",fy2023-24
+Capital Projects Funds (400),349321,349321,2019-20,adopted,budget-fy2019-20-book,134,"resources p134, requirements p135",fy2019-20
+Capital Projects Funds (400),349321,349321,2019-20,approved,budget-fy2019-20-book,134,"resources p134, requirements p135",fy2019-20
+Capital Projects Funds (400),349821,349821,2019-20,proposed,budget-fy2019-20-book,134,"resources p134, requirements p135",fy2019-20
+Construction Excise Fund (404),17423,17423,2019-20,actual-budgetary,budget-fy2022-23-vol1,224,,fy2022-23
+Construction Excise Fund (404),17423,17423,2019-20,actual-budgetary,budget-fy2023-24-vol1,160,,fy2023-24
+Construction Excise Fund (404),19541,19541,2019-20,adopted,budget-fy2019-20-book,138,requirements totals also printed p139,fy2019-20
+Construction Excise Fund (404),19541,19541,2019-20,approved,budget-fy2019-20-book,138,requirements totals also printed p139,fy2019-20
+Construction Excise Fund (404),19541,19541,2019-20,proposed,budget-fy2019-20-book,138,requirements totals also printed p139,fy2019-20
+Debt Service Funds (300) [group total],191557,191557,2019-20,actual-budgetary,budget-fy2023-24-vol1,141,"fund-group total, not additive with member funds below",fy2023-24
+Debt Service Funds (300) [group total],191558,191557,2019-20,actual-budgetary,budget-fy2022-23-vol1,201,,fy2022-23
+Debt Service Funds (300),188882,188882,2019-20,adopted,budget-fy2019-20-book,120,"resources p120, requirements p121",fy2019-20
+Debt Service Funds (300),188882,188882,2019-20,approved,budget-fy2019-20-book,120,"resources p120, requirements p121",fy2019-20
+Debt Service Funds (300),190393,190393,2019-20,proposed,budget-fy2019-20-book,120,"resources p120, requirements p121",fy2019-20
+Debt Service Funds (300),191558,191557,2019-20,actual-budgetary,budget-fy2021-22-vol1,208,requirements from PDF p.209 of same doc,fy2021-22
+Dedicated Resource Fund (299),16193,16193,2019-20,adopted,budget-fy2019-20-book,112,,fy2019-20
+Dedicated Resource Fund (299),16193,16193,2019-20,approved,budget-fy2019-20-book,112,,fy2019-20
+Dedicated Resource Fund (299),16193,16193,2019-20,proposed,budget-fy2019-20-book,112,,fy2019-20
+Dedicated Resource Fund (299),18445,18445,2019-20,actual-budgetary,budget-fy2022-23-vol1,191,,fy2022-23
+Dedicated Resource Fund (299),18446,18445,2019-20,actual-budgetary,budget-fy2023-24-vol1,134,2019-20 resources 18446 vs requirements 18445 as printed (rounding),fy2023-24
+Energy Efficient Schools Fund (435),2705,2705,2019-20,adopted,budget-fy2019-20-book,146,,fy2019-20
+Energy Efficient Schools Fund (435),2705,2705,2019-20,approved,budget-fy2019-20-book,146,,fy2019-20
+Energy Efficient Schools Fund (435),2705,2705,2019-20,proposed,budget-fy2019-20-book,146,,fy2019-20
+Energy Efficient Schools Fund (435),3372,3372,2019-20,actual-budgetary,budget-fy2022-23-vol1,234,,fy2022-23
+Energy Efficient Schools Fund (435),3372,3372,2019-20,actual-budgetary,budget-fy2023-24-vol1,169,2021-22 resources 3631 vs requirements 3632 as printed (rounding),fy2023-24
+Facilities Capital Fund (438),12956,12956,2019-20,actual-budgetary,budget-fy2022-23-vol1,237,,fy2022-23
+Facilities Capital Fund (438),12956,12956,2019-20,actual-budgetary,budget-fy2023-24-vol1,175,,fy2023-24
+Facilities Capital Fund (438),13608,13608,2019-20,adopted,budget-fy2019-20-book,148,requirements totals also printed p149,fy2019-20
+Facilities Capital Fund (438),13608,13608,2019-20,approved,budget-fy2019-20-book,148,requirements totals also printed p149,fy2019-20
+Facilities Capital Fund (438),14108,14108,2019-20,proposed,budget-fy2019-20-book,148,requirements totals also printed p149,fy2019-20
+Full Faith and Credit Debt Service Fund (320),1828,1828,2019-20,actual-budgetary,budget-fy2022-23-vol1,214,,fy2022-23
+Full Faith and Credit Debt Service Fund (320),1828,1828,2019-20,actual-budgetary,budget-fy2023-24-vol1,150,,fy2023-24
+Full Faith and Credit Debt Service Fund (320),1828,1828,2019-20,adopted,budget-fy2019-20-book,130,,fy2019-20
+Full Faith and Credit Debt Service Fund (320),1828,1828,2019-20,approved,budget-fy2019-20-book,130,,fy2019-20
+Full Faith and Credit Debt Service Fund (320),1828,1828,2019-20,proposed,budget-fy2019-20-book,130,,fy2019-20
+Full Faith and Credit Fund (420),3292,3292,2019-20,adopted,budget-fy2019-20-book,143,requirements totals also printed p144,fy2019-20
+Full Faith and Credit Fund (420),3292,3292,2019-20,approved,budget-fy2019-20-book,143,requirements totals also printed p144,fy2019-20
+Full Faith and Credit Fund (420),3292,3292,2019-20,proposed,budget-fy2019-20-book,143,requirements totals also printed p144,fy2019-20
+Full Faith and Credit Fund (420),4173,4173,2019-20,actual-budgetary,budget-fy2022-23-vol1,231,,fy2022-23
+Full Faith and Credit Fund (420),4173,4173,2019-20,actual-budgetary,budget-fy2023-24-vol1,166,,fy2023-24
+General Fund (100),686647,686647,2019-20,proposed,budget-fy2019-20-book,82,"resources p82, requirements p83; approved/adopted res 691,769 vs req 691,767 is book rounding",fy2019-20
+General Fund (100),691769,691767,2019-20,adopted,budget-fy2019-20-book,82,"resources p82, requirements p83; approved/adopted res 691,769 vs req 691,767 is book rounding",fy2019-20
+General Fund (100),691769,691767,2019-20,approved,budget-fy2019-20-book,82,"resources p82, requirements p83; approved/adopted res 691,769 vs req 691,767 is book rounding",fy2019-20
+General Fund (100),709092,709092,2019-20,actual-budgetary,budget-fy2022-23-vol1,149,,fy2022-23
+General Fund (100),709092,709092,2019-20,actual-budgetary,budget-fy2023-24-vol1,98,"native unit thousands of dollars in source; 2022-23 column printed as 'Budget'; matches FY2022-23 book adopted total, so basis=adopted; resources total p98; requirements total p99; summary p94 prints proposed 823424 (rounding)",fy2023-24
+General Fund (100),709093,709092,2019-20,actual-budgetary,budget-fy2021-22-vol1,151,requirements from PDF p.152 of same doc,fy2021-22
+GO Bonds Debt Service Fund (350),134057,134057,2019-20,adopted,budget-fy2019-20-book,132,,fy2019-20
+GO Bonds Debt Service Fund (350),134057,134057,2019-20,approved,budget-fy2019-20-book,132,,fy2019-20
+GO Bonds Debt Service Fund (350),135568,135568,2019-20,proposed,budget-fy2019-20-book,132,,fy2019-20
+GO Bonds Debt Service Fund (350),137615,137615,2019-20,actual-budgetary,budget-fy2022-23-vol1,217,,fy2022-23
+GO Bonds Debt Service Fund (350),137615,137615,2019-20,actual-budgetary,budget-fy2023-24-vol1,153,,fy2023-24
+GO Bonds Fund (450),303450,303450,2019-20,adopted,budget-fy2019-20-book,153,requirements totals also printed p154,fy2019-20
+GO Bonds Fund (450),303450,303450,2019-20,approved,budget-fy2019-20-book,153,requirements totals also printed p154,fy2019-20
+GO Bonds Fund (450),303450,303450,2019-20,proposed,budget-fy2019-20-book,153,requirements totals also printed p154,fy2019-20
+GO Bonds Fund (450),821097,821097,2019-20,actual-budgetary,budget-fy2022-23-vol1,244,,fy2022-23
+GO Bonds Fund (450),821097,821097,2019-20,actual-budgetary,budget-fy2023-24-vol1,182,2021-22 resources 748390 vs requirements 748391 as printed (rounding),fy2023-24
+Grants Fund (205),67526,67525,2019-20,adopted,budget-fy2019-20-book,103,1k res/req rounding gap in 2019-20 columns,fy2019-20
+Grants Fund (205),67526,67525,2019-20,approved,budget-fy2019-20-book,103,1k res/req rounding gap in 2019-20 columns,fy2019-20
+Grants Fund (205),67526,67525,2019-20,proposed,budget-fy2019-20-book,103,1k res/req rounding gap in 2019-20 columns,fy2019-20
+Grants Fund (205),70494,70494,2019-20,actual-budgetary,budget-fy2022-23-vol1,173,,fy2022-23
+Grants Fund (205),70494,70494,2019-20,actual-budgetary,budget-fy2023-24-vol1,117,,fy2023-24
+Harriet Tubman MS Relocation Fund (437),0,0,2019-20,actual-budgetary,budget-fy2023-24-vol1,172,new fund in 2023-24; budgeted as restricted grants/funds (see p194 category table),fy2023-24
+Internal Service Funds (600) [group total],9066,9066,2019-20,actual-budgetary,budget-fy2022-23-vol1,257,,fy2022-23
+Internal Service Funds (600) [group total],9066,9066,2019-20,actual-budgetary,budget-fy2023-24-vol1,196,"fund-group total, not additive with member fund below; 2022-23 resources 8646 vs requirements 8645 as printed",fy2023-24
+Internal Service Funds (600),12078,12078,2019-20,adopted,budget-fy2019-20-book,162,"resources p162, requirements p163",fy2019-20
+Internal Service Funds (600),12078,12078,2019-20,approved,budget-fy2019-20-book,162,"resources p162, requirements p163",fy2019-20
+Internal Service Funds (600),12078,12078,2019-20,proposed,budget-fy2019-20-book,162,"resources p162, requirements p163",fy2019-20
+Internal Service Funds (600),9067,9066,2019-20,actual-budgetary,budget-fy2021-22-vol1,266,"requirements from PDF p.268 of same doc; by-function summary p.267 (printed 260) still shows approved/adopted 8,552 - not updated for +13k contingency adjustment shown in Attachment A p.375",fy2021-22
+IT Projects Debt Service Fund (307),0,0,2019-20,adopted,budget-fy2019-20-book,126,2019-20 columns printed as dash (fund winding down),fy2019-20
+IT Projects Debt Service Fund (307),0,0,2019-20,approved,budget-fy2019-20-book,126,2019-20 columns printed as dash (fund winding down),fy2019-20
+IT Projects Debt Service Fund (307),0,0,2019-20,proposed,budget-fy2019-20-book,126,2019-20 columns printed as dash (fund winding down),fy2019-20
+IT System Project Fund (407),54,54,2019-20,actual-budgetary,budget-fy2022-23-vol1,228,,fy2022-23
+IT System Project Fund (407),54,54,2019-20,actual-budgetary,budget-fy2023-24-vol1,164,dormant fund; no budget after 2019-20,fy2023-24
+IT System Project Fund (407),8,8,2019-20,adopted,budget-fy2019-20-book,141,,fy2019-20
+IT System Project Fund (407),8,8,2019-20,approved,budget-fy2019-20-book,141,,fy2019-20
+IT System Project Fund (407),8,8,2019-20,proposed,budget-fy2019-20-book,141,,fy2019-20
+Partnership Funds (470),428,428,2019-20,actual-budgetary,budget-fy2022-23-vol1,248,,fy2022-23
+Partnership Funds (470),428,428,2019-20,actual-budgetary,budget-fy2023-24-vol1,186,dormant fund; no budget after 2019-20,fy2023-24
+Partnership Funds (470),500,500,2019-20,adopted,budget-fy2019-20-book,156,2018-19 Budget column printed as dash,fy2019-20
+Partnership Funds (470),500,500,2019-20,approved,budget-fy2019-20-book,156,2018-19 Budget column printed as dash,fy2019-20
+Partnership Funds (470),500,500,2019-20,proposed,budget-fy2019-20-book,156,2018-19 Budget column printed as dash,fy2019-20
+PERS Rate Stabilization Reserve Fund (225),18275,18275,2019-20,adopted,budget-fy2019-20-book,110,,fy2019-20
+PERS Rate Stabilization Reserve Fund (225),18275,18275,2019-20,approved,budget-fy2019-20-book,110,,fy2019-20
+PERS Rate Stabilization Reserve Fund (225),18275,18275,2019-20,proposed,budget-fy2019-20-book,110,,fy2019-20
+PERS Rate Stabilization Reserve Fund (225),18666,18666,2019-20,actual-budgetary,budget-fy2022-23-vol1,184,,fy2022-23
+PERS Rate Stabilization Reserve Fund (225),18666,18666,2019-20,actual-budgetary,budget-fy2023-24-vol1,127,,fy2023-24
+PERS UAL Debt Service Fund (308),52114,52114,2019-20,actual-budgetary,budget-fy2022-23-vol1,211,,fy2022-23
+PERS UAL Debt Service Fund (308),52114,52114,2019-20,actual-budgetary,budget-fy2023-24-vol1,147,,fy2023-24
+PERS UAL Debt Service Fund (308),52997,52997,2019-20,adopted,budget-fy2019-20-book,128,,fy2019-20
+PERS UAL Debt Service Fund (308),52997,52997,2019-20,approved,budget-fy2019-20-book,128,,fy2019-20
+PERS UAL Debt Service Fund (308),52997,52997,2019-20,proposed,budget-fy2019-20-book,128,,fy2019-20
+Self Insurance Fund (601),12078,12078,2019-20,adopted,budget-fy2019-20-book,166,identical to 600 summary: Self Insurance is the only Internal Service fund,fy2019-20
+Self Insurance Fund (601),12078,12078,2019-20,approved,budget-fy2019-20-book,166,identical to 600 summary: Self Insurance is the only Internal Service fund,fy2019-20
+Self Insurance Fund (601),12078,12078,2019-20,proposed,budget-fy2019-20-book,166,identical to 600 summary: Self Insurance is the only Internal Service fund,fy2019-20
+Self Insurance Fund (601),9066,9066,2019-20,actual-budgetary,budget-fy2023-24-vol1,200,,fy2023-24
+Self Insurance Fund (601),9067,9066,2019-20,actual-budgetary,budget-fy2022-23-vol1,261,,fy2022-23
+Special Revenue Funds (200) [group total],137252,137252,2019-20,actual-budgetary,budget-fy2022-23-vol1,162,,fy2022-23
+Special Revenue Funds (200) [group total],137252,137252,2019-20,actual-budgetary,budget-fy2023-24-vol1,108,"fund-group total, not additive with member funds below",fy2023-24
+Special Revenue Funds (200),137253,137252,2019-20,actual-budgetary,budget-fy2021-22-vol1,165,requirements from PDF p.166 of same doc,fy2021-22
+Special Revenue Funds (200),137409,137408,2019-20,adopted,budget-fy2019-20-book,94,"resources p94, requirements p95; 1k res/req rounding gap in 2019-20 columns",fy2019-20
+Special Revenue Funds (200),137409,137408,2019-20,approved,budget-fy2019-20-book,94,"resources p94, requirements p95; 1k res/req rounding gap in 2019-20 columns",fy2019-20
+Special Revenue Funds (200),137409,137408,2019-20,proposed,budget-fy2019-20-book,94,"resources p94, requirements p95; 1k res/req rounding gap in 2019-20 columns",fy2019-20
+Student Body Activity Fund (201),13819,13819,2019-20,adopted,budget-fy2019-20-book,98,,fy2019-20
+Student Body Activity Fund (201),13819,13819,2019-20,approved,budget-fy2019-20-book,98,,fy2019-20
+Student Body Activity Fund (201),13819,13819,2019-20,proposed,budget-fy2019-20-book,98,,fy2019-20
+Student Body Activity Fund (201),9882,9882,2019-20,actual-budgetary,budget-fy2022-23-vol1,166,,fy2022-23
+Student Body Activity Fund (201),9882,9882,2019-20,actual-budgetary,budget-fy2023-24-vol1,110,,fy2023-24
+Student Investment Account Fund (251),0,0,2019-20,actual-budgetary,budget-fy2023-24-vol1,130,,fy2023-24
+TOTAL ALL FUNDS,1923579,1923579,2019-20,actual-budgetary,budget-fy2022-23-vol1,140,,fy2022-23
+TOTAL ALL FUNDS,1923579,1923580,2019-20,actual-budgetary,budget-fy2021-22-vol1,142,"requirements from PDF p.143 of same doc; resolution 6323 (p.373) adopts total budget of $2,058,410,000",fy2021-22
+TOTAL ALL FUNDS,1923580,1923580,2019-20,actual-budgetary,budget-fy2023-24-vol1,86,"resources p86, requirements p87 (2021-22 requirements printed 2425371)",fy2023-24
+100 - General Fund,729654,729654,2020-21,adopted,budget-fy2020-21-vol1,117,GF summary p.117 (resources) / p.118 (requirements),fy2020-21
+100 - General Fund,729654,729654,2020-21,approved,budget-fy2020-21-vol1,117,GF summary p.117 (resources) / p.118 (requirements),fy2020-21
+100 - General Fund,729654,729654,2020-21,proposed,budget-fy2020-21-vol1,117,GF summary p.117 (resources) / p.118 (requirements),fy2020-21
+201 - Student Body Activity Fund,13568,13568,2020-21,adopted,budget-fy2020-21-vol1,134,,fy2020-21
+201 - Student Body Activity Fund,13568,13568,2020-21,approved,budget-fy2020-21-vol1,134,,fy2020-21
+201 - Student Body Activity Fund,13568,13568,2020-21,proposed,budget-fy2020-21-vol1,134,,fy2020-21
+202 - Cafeteria Fund,21559,21559,2020-21,adopted,budget-fy2020-21-vol1,137,,fy2020-21
+202 - Cafeteria Fund,21559,21559,2020-21,approved,budget-fy2020-21-vol1,137,,fy2020-21
+202 - Cafeteria Fund,21559,21559,2020-21,proposed,budget-fy2020-21-vol1,137,,fy2020-21
+205 - Grants Fund,80856,80856,2020-21,adopted,budget-fy2020-21-vol1,141,,fy2020-21
+205 - Grants Fund,80856,80856,2020-21,approved,budget-fy2020-21-vol1,141,,fy2020-21
+205 - Grants Fund,80856,80856,2020-21,proposed,budget-fy2020-21-vol1,141,,fy2020-21
+225 - PERS Rate Stabilization Reserve Fund,18940,18940,2020-21,adopted,budget-fy2020-21-vol1,151,,fy2020-21
+225 - PERS Rate Stabilization Reserve Fund,18940,18940,2020-21,approved,budget-fy2020-21-vol1,151,,fy2020-21
+225 - PERS Rate Stabilization Reserve Fund,18940,18940,2020-21,proposed,budget-fy2020-21-vol1,151,,fy2020-21
+251 - Student Investment Account Fund,39162,39162,2020-21,adopted,budget-fy2020-21-vol1,154,new fund in 2020-21 (Student Success Act / SIA); prior years printed as '-',fy2020-21
+251 - Student Investment Account Fund,39162,39162,2020-21,approved,budget-fy2020-21-vol1,154,new fund in 2020-21 (Student Success Act / SIA); prior years printed as '-',fy2020-21
+251 - Student Investment Account Fund,39162,39162,2020-21,proposed,budget-fy2020-21-vol1,154,new fund in 2020-21 (Student Success Act / SIA); prior years printed as '-',fy2020-21
+299 - Dedicated Resource Fund,17749,17749,2020-21,adopted,budget-fy2020-21-vol1,158,,fy2020-21
+299 - Dedicated Resource Fund,17749,17749,2020-21,approved,budget-fy2020-21-vol1,158,,fy2020-21
+299 - Dedicated Resource Fund,17749,17749,2020-21,proposed,budget-fy2020-21-vol1,158,,fy2020-21
+307 - IT Projects Debt Service Fund,0,0,2020-21,adopted,budget-fy2020-21-vol1,175,2019-20 onward printed as '-' (no remaining budget); printed as '-',fy2020-21
+307 - IT Projects Debt Service Fund,0,0,2020-21,approved,budget-fy2020-21-vol1,175,2019-20 onward printed as '-' (no remaining budget); printed as '-',fy2020-21
+307 - IT Projects Debt Service Fund,0,0,2020-21,proposed,budget-fy2020-21-vol1,175,2019-20 onward printed as '-' (no remaining budget); printed as '-',fy2020-21
+308 - PERS UAL Debt Service Fund,54642,54642,2020-21,adopted,budget-fy2020-21-vol1,178,,fy2020-21
+308 - PERS UAL Debt Service Fund,54642,54642,2020-21,approved,budget-fy2020-21-vol1,178,,fy2020-21
+308 - PERS UAL Debt Service Fund,54642,54642,2020-21,proposed,budget-fy2020-21-vol1,178,,fy2020-21
+320 - Full Faith and Credit Debt Service Fund,1805,1805,2020-21,adopted,budget-fy2020-21-vol1,181,,fy2020-21
+320 - Full Faith and Credit Debt Service Fund,1805,1805,2020-21,approved,budget-fy2020-21-vol1,181,,fy2020-21
+320 - Full Faith and Credit Debt Service Fund,1805,1805,2020-21,proposed,budget-fy2020-21-vol1,181,,fy2020-21
+350 - GO Bonds Debt Service Fund,145225,145225,2020-21,adopted,budget-fy2020-21-vol1,184,,fy2020-21
+350 - GO Bonds Debt Service Fund,145225,145225,2020-21,approved,budget-fy2020-21-vol1,184,,fy2020-21
+350 - GO Bonds Debt Service Fund,145225,145225,2020-21,proposed,budget-fy2020-21-vol1,184,,fy2020-21
+404 - Construction Excise Fund,16230,16230,2020-21,adopted,budget-fy2020-21-vol1,191,,fy2020-21
+404 - Construction Excise Fund,16230,16230,2020-21,approved,budget-fy2020-21-vol1,191,,fy2020-21
+404 - Construction Excise Fund,16230,16230,2020-21,proposed,budget-fy2020-21-vol1,191,,fy2020-21
+407 - IT System Project Fund,0,0,2020-21,adopted,budget-fy2020-21-vol1,195,2020-21 printed as '-'; printed as '-',fy2020-21
+407 - IT System Project Fund,0,0,2020-21,approved,budget-fy2020-21-vol1,195,2020-21 printed as '-'; printed as '-',fy2020-21
+407 - IT System Project Fund,0,0,2020-21,proposed,budget-fy2020-21-vol1,195,2020-21 printed as '-'; printed as '-',fy2020-21
+420 - Full Faith and Credit Fund,2183,2183,2020-21,adopted,budget-fy2020-21-vol1,198,,fy2020-21
+420 - Full Faith and Credit Fund,2183,2183,2020-21,approved,budget-fy2020-21-vol1,198,,fy2020-21
+420 - Full Faith and Credit Fund,2183,2183,2020-21,proposed,budget-fy2020-21-vol1,198,,fy2020-21
+435 - Energy Efficient Schools Fund,2588,2588,2020-21,adopted,budget-fy2020-21-vol1,202,,fy2020-21
+435 - Energy Efficient Schools Fund,2588,2588,2020-21,approved,budget-fy2020-21-vol1,202,,fy2020-21
+435 - Energy Efficient Schools Fund,2588,2588,2020-21,proposed,budget-fy2020-21-vol1,202,,fy2020-21
+438 - Facilities Capital Fund,4255,4255,2020-21,adopted,budget-fy2020-21-vol1,205,,fy2020-21
+438 - Facilities Capital Fund,4255,4255,2020-21,approved,budget-fy2020-21-vol1,205,,fy2020-21
+438 - Facilities Capital Fund,4255,4255,2020-21,proposed,budget-fy2020-21-vol1,205,,fy2020-21
+445 - Capital Asset Renewal Fund,16010,16010,2020-21,adopted,budget-fy2020-21-vol1,209,,fy2020-21
+445 - Capital Asset Renewal Fund,16010,16010,2020-21,approved,budget-fy2020-21-vol1,209,,fy2020-21
+445 - Capital Asset Renewal Fund,16010,16010,2020-21,proposed,budget-fy2020-21-vol1,209,,fy2020-21
+450 - GO Bonds Fund,1552542,1552542,2020-21,adopted,budget-fy2020-21-vol1,212,Approved/Adopted include $1.0B placeholder for possible Nov 2020 bond measure,fy2020-21
+450 - GO Bonds Fund,1552542,1552542,2020-21,approved,budget-fy2020-21-vol1,212,Approved/Adopted include $1.0B placeholder for possible Nov 2020 bond measure,fy2020-21
+450 - GO Bonds Fund,552542,552542,2020-21,proposed,budget-fy2020-21-vol1,212,Approved/Adopted include $1.0B placeholder for possible Nov 2020 bond measure,fy2020-21
+470 - Partnership Funds,278,278,2020-21,adopted,budget-fy2020-21-vol1,217,,fy2020-21
+470 - Partnership Funds,278,278,2020-21,approved,budget-fy2020-21-vol1,217,,fy2020-21
+470 - Partnership Funds,278,278,2020-21,proposed,budget-fy2020-21-vol1,217,,fy2020-21
+601 - Self-Insurance Fund,8532,8532,2020-21,adopted,budget-fy2020-21-vol1,228,,fy2020-21
+601 - Self-Insurance Fund,8532,8532,2020-21,approved,budget-fy2020-21-vol1,228,,fy2020-21
+601 - Self-Insurance Fund,8532,8532,2020-21,proposed,budget-fy2020-21-vol1,228,,fy2020-21
+Cafeteria Fund (202),18433,18433,2020-21,actual-budgetary,budget-fy2022-23-vol1,169,,fy2022-23
+Cafeteria Fund (202),18434,18434,2020-21,actual-budgetary,budget-fy2023-24-vol1,113,,fy2023-24
+Capital Asset Renewal Fund (445),14718,14718,2020-21,actual-budgetary,budget-fy2022-23-vol1,240,,fy2022-23
+Capital Asset Renewal Fund (445),14718,14718,2020-21,actual-budgetary,budget-fy2023-24-vol1,178,,fy2023-24
+Capital Project Funds (400),1594085,1594085,2020-21,revised,budget-fy2021-22-vol1,227,requirements from PDF p.229 of same doc,fy2021-22
+Capital Projects Fund,1066674,1066674,2020-21,actual-budgetary,tscc-review-fy2024,18,"2023-24 printed 834,105 (p.15 Other Funds table prints 834,107); FY2023-24 adds Harriet Tubman MS Relocation Fund ($122.5M state grant, p.4)",tscc
+Capital Projects Funds (400) [group total],1066429,1066429,2020-21,actual-budgetary,budget-fy2022-23-vol1,220,,fy2022-23
+Capital Projects Funds (400) [group total],1066429,1066429,2020-21,actual-budgetary,budget-fy2023-24-vol1,157,,fy2023-24
+Capital Projects Funds (400),1066429,1066429,2020-21,actual-budgetary,budget-fy2024-25-vol1,155,"resources p155, requirements total p156",fy2024-25
+Construction Excise Fund (404),14678,14678,2020-21,actual-budgetary,budget-fy2023-24-vol1,160,,fy2023-24
+Construction Excise Fund (404),14679,14678,2020-21,actual-budgetary,budget-fy2022-23-vol1,224,,fy2022-23
+Debt Service Fund,57422,57422,2020-21,actual-budgetary,tscc-review-fy2024,18,"2023-24 printed 86,445 (FY25 review prints 86,446)",tscc
+Debt Service Funds (300) [group total],258478,258478,2020-21,actual-budgetary,budget-fy2022-23-vol1,201,,fy2022-23
+Debt Service Funds (300) [group total],258478,258478,2020-21,actual-budgetary,budget-fy2023-24-vol1,141,,fy2023-24
+Debt Service Funds (300),201671,201672,2020-21,revised,budget-fy2021-22-vol1,208,requirements from PDF p.209 of same doc,fy2021-22
+Debt Service Funds (300),258478,258478,2020-21,actual-budgetary,budget-fy2024-25-vol1,139,"resources p139, requirements total p140",fy2024-25
+Dedicated Resource Fund (299),19508,19508,2020-21,actual-budgetary,budget-fy2022-23-vol1,191,,fy2022-23
+Dedicated Resource Fund (299),19508,19508,2020-21,actual-budgetary,budget-fy2023-24-vol1,134,,fy2023-24
+Energy Efficient Schools Fund (435),3301,3301,2020-21,actual-budgetary,budget-fy2022-23-vol1,234,,fy2022-23
+Energy Efficient Schools Fund (435),3301,3301,2020-21,actual-budgetary,budget-fy2023-24-vol1,169,,fy2023-24
+Facilities Capital Fund (438),944,944,2020-21,actual-budgetary,budget-fy2022-23-vol1,237,,fy2022-23
+Facilities Capital Fund (438),944,944,2020-21,actual-budgetary,budget-fy2023-24-vol1,175,,fy2023-24
+Full Faith and Credit Debt Service Fund (320),1803,1803,2020-21,actual-budgetary,budget-fy2022-23-vol1,214,,fy2022-23
+Full Faith and Credit Debt Service Fund (320),1803,1803,2020-21,actual-budgetary,budget-fy2023-24-vol1,150,,fy2023-24
+Full Faith and Credit Fund (420),1629,1629,2020-21,actual-budgetary,budget-fy2022-23-vol1,231,,fy2022-23
+Full Faith and Credit Fund (420),1629,1629,2020-21,actual-budgetary,budget-fy2023-24-vol1,166,,fy2023-24
+General Fund (100),744589,744589,2020-21,actual-budgetary,budget-fy2022-23-vol1,149,,fy2022-23
+General Fund (100),744589,744589,2020-21,actual-budgetary,budget-fy2023-24-vol1,98,,fy2023-24
+General Fund (100),744589,744589,2020-21,actual-budgetary,budget-fy2024-25-vol1,99,"native unit thousands; resources p99, requirements total p100; requirements include ending fund balance",fy2024-25
+General Fund (100),747497,747497,2020-21,revised,budget-fy2021-22-vol1,151,requirements from PDF p.152 of same doc,fy2021-22
+General Fund,744589,744589,2020-21,actual-budgetary,tscc-review-fy2024,18,SUMMARY OF BUDGET - BY FUND; single total printed per fund (resources=requirements); native whole dollars,tscc
+GO Bonds Debt Service Fund (350),201070,201070,2020-21,actual-budgetary,budget-fy2022-23-vol1,217,,fy2022-23
+GO Bonds Debt Service Fund (350),201070,201070,2020-21,actual-budgetary,budget-fy2023-24-vol1,153,,fy2023-24
+GO Bonds Debt Service Fund,201070,201070,2020-21,actual-budgetary,tscc-review-fy2024,18,,tscc
+GO Bonds Fund (450),1031158,1031158,2020-21,actual-budgetary,budget-fy2022-23-vol1,244,,fy2022-23
+GO Bonds Fund (450),1031158,1031158,2020-21,actual-budgetary,budget-fy2023-24-vol1,182,,fy2023-24
+GRAND TOTAL ALL FUNDS,2233359,2233359,2020-21,actual-budgetary,tscc-review-fy2024,18,"grand total row; 2023-24 printed 2,182,055 here vs 2,182,057 elsewhere in same doc",tscc
+Grants Fund (205),81194,81194,2020-21,actual-budgetary,budget-fy2022-23-vol1,173,,fy2022-23
+Grants Fund (205),81194,81194,2020-21,actual-budgetary,budget-fy2023-24-vol1,117,,fy2023-24
+Harriet Tubman MS Relocation Fund (437),0,0,2020-21,actual-budgetary,budget-fy2023-24-vol1,172,,fy2023-24
+Internal Service Fund,7673,7673,2020-21,actual-budgetary,tscc-review-fy2024,18,,tscc
+Internal Service Funds (600) [group total],7673,7673,2020-21,actual-budgetary,budget-fy2022-23-vol1,257,,fy2022-23
+Internal Service Funds (600) [group total],7673,7673,2020-21,actual-budgetary,budget-fy2023-24-vol1,196,,fy2023-24
+Internal Service Funds (600),7673,7673,2020-21,actual-budgetary,budget-fy2024-25-vol1,191,"resources p191, requirements total p192",fy2024-25
+Internal Service Funds (600),8533,8532,2020-21,revised,budget-fy2021-22-vol1,266,"requirements from PDF p.268 of same doc; by-function summary p.267 (printed 260) still shows approved/adopted 8,552 - not updated for +13k contingency adjustment shown in Attachment A p.375",fy2021-22
+IT System Project Fund (407),0,0,2020-21,actual-budgetary,budget-fy2023-24-vol1,164,,fy2023-24
+Partnership Funds (470),0,0,2020-21,actual-budgetary,budget-fy2023-24-vol1,186,,fy2023-24
+PERS Rate Stabilization Reserve Fund (225),19056,19056,2020-21,actual-budgetary,budget-fy2022-23-vol1,184,,fy2022-23
+PERS Rate Stabilization Reserve Fund (225),19056,19056,2020-21,actual-budgetary,budget-fy2023-24-vol1,127,,fy2023-24
+PERS UAL Debt Service Fund (308),55604,55604,2020-21,actual-budgetary,budget-fy2022-23-vol1,211,,fy2022-23
+PERS UAL Debt Service Fund (308),55604,55604,2020-21,actual-budgetary,budget-fy2023-24-vol1,147,,fy2023-24
+Self Insurance Fund (601),7673,7673,2020-21,actual-budgetary,budget-fy2022-23-vol1,261,,fy2022-23
+Self Insurance Fund (601),7673,7673,2020-21,actual-budgetary,budget-fy2023-24-vol1,200,,fy2023-24
+Special Revenue Fund,155931,155931,2020-21,actual-budgetary,tscc-review-fy2024,18,,tscc
+Special Revenue Funds (200) [group total],155931,155931,2020-21,actual-budgetary,budget-fy2022-23-vol1,162,,fy2022-23
+Special Revenue Funds (200) [group total],155931,155931,2020-21,actual-budgetary,budget-fy2023-24-vol1,108,,fy2023-24
+Special Revenue Funds (200),155931,155931,2020-21,actual-budgetary,budget-fy2024-25-vol1,111,"resources p111, requirements total p113; one overlapped print on p112 shows 155929 (rounding artifact)",fy2024-25
+Special Revenue Funds (200),183795,183795,2020-21,revised,budget-fy2021-22-vol1,165,requirements from PDF p.166 of same doc,fy2021-22
+Student Body Activity Fund (201),6167,6167,2020-21,actual-budgetary,budget-fy2022-23-vol1,166,,fy2022-23
+Student Body Activity Fund (201),6167,6167,2020-21,actual-budgetary,budget-fy2023-24-vol1,110,,fy2023-24
+Student Investment Account Fund (251),11572,11572,2020-21,actual-budgetary,budget-fy2022-23-vol1,187,fund first active in 2020-21 (SIA/HB3427),fy2022-23
+Student Investment Account Fund (251),11572,11572,2020-21,actual-budgetary,budget-fy2023-24-vol1,130,,fy2023-24
+TOTAL ALL FUNDS,2233098,2233100,2020-21,actual-budgetary,budget-fy2022-23-vol1,140,,fy2022-23
+TOTAL ALL FUNDS,2233099,2233099,2020-21,actual-budgetary,budget-fy2023-24-vol1,86,,fy2023-24
+Total All Funds,2233099,2233099,2020-21,actual-budgetary,budget-fy2024-25-vol1,91,"resources p91, requirements p92",fy2024-25
+TOTAL ALL FUNDS,2735581,2735581,2020-21,revised,budget-fy2021-22-vol1,142,"requirements from PDF p.143 of same doc; resolution 6323 (p.373) adopts total budget of $2,058,410,000",fy2021-22
+All Funds total,2425370,2425370,2021-22,actual-budgetary,budget-fy2025-26-vol1,89,requirements total printed on p.90; resources total on cited p.89 (totals equal per column),fy2025-26
+Cafeteria Fund (202),16368,16368,2021-22,adopted,budget-fy2022-23-vol1,169,,fy2022-23
+Cafeteria Fund (202),26237,26236,2021-22,actual-budgetary,budget-fy2023-24-vol1,113,,fy2023-24
+Capital Asset Renewal Fund (445),9475,9475,2021-22,adopted,budget-fy2022-23-vol1,240,,fy2022-23
+Capital Asset Renewal Fund (445),9601,9601,2021-22,actual-budgetary,budget-fy2023-24-vol1,178,,fy2023-24
+Capital Project Funds (400),762605,762605,2021-22,proposed,budget-fy2021-22-vol1,227,requirements from PDF p.229 of same doc,fy2021-22
+Capital Project Funds (400),763758,763758,2021-22,adopted,budget-fy2021-22-vol1,227,requirements from PDF p.229 of same doc,fy2021-22
+Capital Project Funds (400),763758,763758,2021-22,approved,budget-fy2021-22-vol1,227,requirements from PDF p.229 of same doc,fy2021-22
+Capital Projects Fund,780621,780621,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,84,,tscc
+Capital Projects Fund,780621,780621,2021-22,actual-budgetary,tscc-review-fy2024,18,"2023-24 printed 834,105 (p.15 Other Funds table prints 834,107); FY2023-24 adds Harriet Tubman MS Relocation Fund ($122.5M state grant, p.4)",tscc
+Capital Projects Fund,780621,780621,2021-22,actual-budgetary,tscc-review-fy2025,18,,tscc
+Capital Projects Funds (400) [group total],763758,763758,2021-22,adopted,budget-fy2022-23-vol1,220,,fy2022-23
+Capital Projects Funds (400) [group total],780620,780620,2021-22,actual-budgetary,budget-fy2023-24-vol1,157,,fy2023-24
+Capital Projects Funds (400),780617,780620,2021-22,actual-budgetary,budget-fy2024-25-vol1,155,"resources total (p155) and requirements total (p156) differ by 3k as printed",fy2024-25
+Capital Projects Funds (400),780619,780619,2021-22,actual-budgetary,budget-fy2025-26-vol1,164,requirements total printed on p.165; resources total on cited p.164 (totals equal per column),fy2025-26
+Construction Excise Fund (404),14845,14845,2021-22,adopted,budget-fy2022-23-vol1,224,,fy2022-23
+Construction Excise Fund (404),15553,15553,2021-22,actual-budgetary,budget-fy2023-24-vol1,160,,fy2023-24
+Debt Service Fund,79499,79499,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,84,,tscc
+Debt Service Fund,79499,79499,2021-22,actual-budgetary,tscc-review-fy2024,18,"2023-24 printed 86,445 (FY25 review prints 86,446)",tscc
+Debt Service Fund,79499,79499,2021-22,actual-budgetary,tscc-review-fy2025,18,"2022-23 printed 84,467 (FY26 review prints 84,474)",tscc
+Debt Service Funds (300) [group total],210963,210963,2021-22,adopted,budget-fy2022-23-vol1,201,,fy2022-23
+Debt Service Funds (300) [group total],232104,232104,2021-22,actual-budgetary,budget-fy2023-24-vol1,141,,fy2023-24
+Debt Service Funds (300),210963,210963,2021-22,adopted,budget-fy2021-22-vol1,208,requirements from PDF p.209 of same doc,fy2021-22
+Debt Service Funds (300),210963,210963,2021-22,approved,budget-fy2021-22-vol1,208,requirements from PDF p.209 of same doc,fy2021-22
+Debt Service Funds (300),210963,210963,2021-22,proposed,budget-fy2021-22-vol1,208,requirements from PDF p.209 of same doc,fy2021-22
+Debt Service Funds (300),232104,232104,2021-22,actual-budgetary,budget-fy2024-25-vol1,139,,fy2024-25
+Debt Service Funds (300),232104,232104,2021-22,actual-budgetary,budget-fy2025-26-vol1,148,requirements total printed on p.149; resources total on cited p.148 (totals equal per column),fy2025-26
+Dedicated Resource Fund (299),21831,21831,2021-22,adopted,budget-fy2022-23-vol1,191,,fy2022-23
+Dedicated Resource Fund (299),22277,22277,2021-22,actual-budgetary,budget-fy2023-24-vol1,134,,fy2023-24
+Energy Efficient Schools Fund (435),2867,2867,2021-22,adopted,budget-fy2022-23-vol1,234,,fy2022-23
+Energy Efficient Schools Fund (435),3631,3632,2021-22,actual-budgetary,budget-fy2023-24-vol1,169,,fy2023-24
+Facilities Capital Fund (438),2723,2723,2021-22,actual-budgetary,budget-fy2023-24-vol1,175,,fy2023-24
+Facilities Capital Fund (438),6783,6783,2021-22,adopted,budget-fy2022-23-vol1,237,,fy2022-23
+Full Faith and Credit Debt Service Fund (320),1783,1783,2021-22,actual-budgetary,budget-fy2023-24-vol1,150,,fy2023-24
+Full Faith and Credit Debt Service Fund (320),1784,1784,2021-22,adopted,budget-fy2022-23-vol1,214,,fy2022-23
+Full Faith and Credit Fund (420),644,644,2021-22,adopted,budget-fy2022-23-vol1,231,,fy2022-23
+Full Faith and Credit Fund (420),719,719,2021-22,actual-budgetary,budget-fy2023-24-vol1,166,,fy2023-24
+General Fund (100),1188261,1188261,2021-22,actual-budgetary,budget-fy2023-24-vol1,98,,fy2023-24
+General Fund (100),1188261,1188261,2021-22,actual-budgetary,budget-fy2024-25-vol1,99,"2021-22 inflated by 2021 pension-bond pass-through (bond proceeds 399390 in resources, 400833 in 5100/5400 requirements)",fy2024-25
+General Fund (100),1188261,1188261,2021-22,actual-budgetary,budget-fy2025-26-vol1,98,native unit thousands of dollars; requirements total printed on p.99; resources total on cited p.98 (totals equal per column),fy2025-26
+General Fund (100),761700,761700,2021-22,proposed,budget-fy2021-22-vol1,151,requirements from PDF p.152 of same doc,fy2021-22
+General Fund (100),771963,771963,2021-22,adopted,budget-fy2021-22-vol1,151,requirements from PDF p.152 of same doc,fy2021-22
+General Fund (100),771963,771963,2021-22,adopted,budget-fy2022-23-vol1,149,,fy2022-23
+General Fund (100),771963,771963,2021-22,approved,budget-fy2021-22-vol1,151,requirements from PDF p.152 of same doc,fy2021-22
+General Fund,1188261,1188261,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,84,PPS Budget Summary (annual report); SUMMARY OF BUDGET - BY FUND; single total printed per fund (resources=requirements); native whole dollars,tscc
+General Fund,1188261,1188261,2021-22,actual-budgetary,tscc-review-fy2024,18,,tscc
+General Fund,1188261,1188261,2021-22,actual-budgetary,tscc-review-fy2025,18,SUMMARY OF BUDGET - BY FUND; single total printed per fund (resources=requirements); native whole dollars,tscc
+GO Bonds Debt Service Fund (350),151100,151100,2021-22,adopted,budget-fy2022-23-vol1,217,,fy2022-23
+GO Bonds Debt Service Fund (350),152606,152606,2021-22,actual-budgetary,budget-fy2023-24-vol1,153,,fy2023-24
+GO Bonds Debt Service Fund,152606,152606,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,84,,tscc
+GO Bonds Debt Service Fund,152606,152606,2021-22,actual-budgetary,tscc-review-fy2024,18,,tscc
+GO Bonds Debt Service Fund,152606,152606,2021-22,actual-budgetary,tscc-review-fy2025,18,,tscc
+GO Bonds Fund (450),729144,729144,2021-22,adopted,budget-fy2022-23-vol1,244,,fy2022-23
+GO Bonds Fund (450),748390,748391,2021-22,actual-budgetary,budget-fy2023-24-vol1,182,,fy2023-24
+GRAND TOTAL ALL FUNDS,2425373,2425373,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,84,grand total row; PPS Budget Summary in FY24-25 TSCC Annual Report; 2024-25 column labeled Adopted,tscc
+GRAND TOTAL ALL FUNDS,2425373,2425373,2021-22,actual-budgetary,tscc-review-fy2024,18,"grand total row; 2023-24 printed 2,182,055 here vs 2,182,057 elsewhere in same doc",tscc
+GRAND TOTAL ALL FUNDS,2425373,2425373,2021-22,actual-budgetary,tscc-review-fy2025,18,"grand total row; 2022-23 total 2,351,781 conflicts with 2,351,973 (FY26 review) and 2,351,969 (annual report/by-object)",tscc
+Grants Fund (205),102356,102356,2021-22,actual-budgetary,budget-fy2023-24-vol1,117,,fy2023-24
+Grants Fund (205),201081,201081,2021-22,adopted,budget-fy2022-23-vol1,173,,fy2022-23
+Harriet Tubman MS Relocation Fund (437),0,0,2021-22,actual-budgetary,budget-fy2023-24-vol1,172,,fy2023-24
+Internal Service Fund,7693,7693,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,84,,tscc
+Internal Service Fund,7693,7693,2021-22,actual-budgetary,tscc-review-fy2024,18,,tscc
+Internal Service Fund,7693,7693,2021-22,actual-budgetary,tscc-review-fy2025,18,FY2024-25 adds Property & Liability Insurance and Unemployment sub-funds within Internal Service Fund (p.4),tscc
+Internal Service Funds (600) [group total],7693,7693,2021-22,actual-budgetary,budget-fy2023-24-vol1,196,,fy2023-24
+Internal Service Funds (600) [group total],8565,8565,2021-22,adopted,budget-fy2022-23-vol1,257,,fy2022-23
+Internal Service Funds (600),7693,7693,2021-22,actual-budgetary,budget-fy2024-25-vol1,191,,fy2024-25
+Internal Service Funds (600),7693,7693,2021-22,actual-budgetary,budget-fy2025-26-vol1,200,requirements total printed on p.201; resources total on cited p.200 (totals equal per column),fy2025-26
+Internal Service Funds (600),8552,8552,2021-22,proposed,budget-fy2021-22-vol1,266,"requirements from PDF p.268 of same doc; by-function summary p.267 (printed 260) still shows approved/adopted 8,552 - not updated for +13k contingency adjustment shown in Attachment A p.375",fy2021-22
+Internal Service Funds (600),8565,8565,2021-22,adopted,budget-fy2021-22-vol1,266,"requirements from PDF p.268 of same doc; by-function summary p.267 (printed 260) still shows approved/adopted 8,552 - not updated for +13k contingency adjustment shown in Attachment A p.375",fy2021-22
+Internal Service Funds (600),8565,8565,2021-22,approved,budget-fy2021-22-vol1,266,"requirements from PDF p.268 of same doc; by-function summary p.267 (printed 260) still shows approved/adopted 8,552 - not updated for +13k contingency adjustment shown in Attachment A p.375",fy2021-22
+IT System Project Fund (407),0,0,2021-22,actual-budgetary,budget-fy2023-24-vol1,164,,fy2023-24
+Partnership Funds (470),0,0,2021-22,actual-budgetary,budget-fy2023-24-vol1,186,,fy2023-24
+PERS Rate Stabilization Reserve Fund (225),19355,19355,2021-22,adopted,budget-fy2022-23-vol1,184,,fy2022-23
+PERS Rate Stabilization Reserve Fund (225),19390,19390,2021-22,actual-budgetary,budget-fy2023-24-vol1,127,,fy2023-24
+PERS UAL Debt Service Fund (308),58079,58079,2021-22,adopted,budget-fy2022-23-vol1,211,,fy2022-23
+PERS UAL Debt Service Fund (308),77716,77716,2021-22,actual-budgetary,budget-fy2023-24-vol1,147,,fy2023-24
+Self Insurance Fund (601),7693,7693,2021-22,actual-budgetary,budget-fy2023-24-vol1,200,,fy2023-24
+Self Insurance Fund (601),8565,8565,2021-22,adopted,budget-fy2022-23-vol1,261,,fy2022-23
+Special Revenue Fund,216693,216693,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,84,"2022-23 actual printed 249,357 (third variant across docs)",tscc
+Special Revenue Fund,216693,216693,2021-22,actual-budgetary,tscc-review-fy2024,18,,tscc
+Special Revenue Fund,216693,216693,2021-22,actual-budgetary,tscc-review-fy2025,18,"2022-23 actual printed 249,169 (CONFLICT: 249,354 FY26 review; 249,357 annual report)",tscc
+Special Revenue Funds (200) [group total],216693,216693,2021-22,actual-budgetary,budget-fy2023-24-vol1,108,,fy2023-24
+Special Revenue Funds (200) [group total],303161,303161,2021-22,adopted,budget-fy2022-23-vol1,162,,fy2022-23
+Special Revenue Funds (200),216693,216693,2021-22,actual-budgetary,budget-fy2024-25-vol1,111,,fy2024-25
+Special Revenue Funds (200),216693,216693,2021-22,actual-budgetary,budget-fy2025-26-vol1,111,requirements total printed on p.112; resources total on cited p.111 (totals equal per column),fy2025-26
+Special Revenue Funds (200),286245,286245,2021-22,proposed,budget-fy2021-22-vol1,165,requirements from PDF p.166 of same doc,fy2021-22
+Special Revenue Funds (200),303161,303161,2021-22,adopted,budget-fy2021-22-vol1,165,requirements from PDF p.166 of same doc,fy2021-22
+Special Revenue Funds (200),303161,303161,2021-22,approved,budget-fy2021-22-vol1,165,requirements from PDF p.166 of same doc,fy2021-22
+Student Body Activity Fund (201),13000,13000,2021-22,adopted,budget-fy2022-23-vol1,166,,fy2022-23
+Student Body Activity Fund (201),9094,9094,2021-22,actual-budgetary,budget-fy2023-24-vol1,110,,fy2023-24
+Student Investment Account Fund (251),31526,31526,2021-22,adopted,budget-fy2022-23-vol1,187,,fy2022-23
+Student Investment Account Fund (251),37339,37339,2021-22,actual-budgetary,budget-fy2023-24-vol1,130,,fy2023-24
+TOTAL ALL FUNDS,2030065,2030065,2021-22,proposed,budget-fy2021-22-vol1,142,"requirements from PDF p.143 of same doc; resolution 6323 (p.373) adopts total budget of $2,058,410,000",fy2021-22
+TOTAL ALL FUNDS,2058410,2058410,2021-22,adopted,budget-fy2021-22-vol1,142,"requirements from PDF p.143 of same doc; resolution 6323 (p.373) adopts total budget of $2,058,410,000",fy2021-22
+TOTAL ALL FUNDS,2058410,2058410,2021-22,adopted,budget-fy2022-23-vol1,140,,fy2022-23
+TOTAL ALL FUNDS,2058410,2058410,2021-22,approved,budget-fy2021-22-vol1,142,"requirements from PDF p.143 of same doc; resolution 6323 (p.373) adopts total budget of $2,058,410,000",fy2021-22
+TOTAL ALL FUNDS,2425370,2425371,2021-22,actual-budgetary,budget-fy2023-24-vol1,86,,fy2023-24
+Total All Funds,2425370,2425371,2021-22,actual-budgetary,budget-fy2024-25-vol1,91,"resources table prints 2425370, requirements table prints 2425371",fy2024-25
+100 General Fund,830038,830038,2022-23,actual-budgetary,budget-fy2026-27-vol1,108,"native unit thousands of dollars; budget presentation: per-fund resources = requirements, single total emitted in both columns; Proposed 2026-27 and Approved 2026-27 columns are identical to Adopted 2026-27 throughout this book; requirements tables at pages 109-110 print identical fund totals",fy2026-27
+200 Special Revenue Funds (type total),249353,249353,2022-23,actual-budgetary,budget-fy2026-27-vol1,122,,fy2026-27
+201 Student Body Activity Fund,10862,10862,2022-23,actual-budgetary,budget-fy2026-27-vol1,125,,fy2026-27
+202 Cafeteria Fund,26916,26916,2022-23,actual-budgetary,budget-fy2026-27-vol1,128,,fy2026-27
+205 Grants Fund,127533,127533,2022-23,actual-budgetary,budget-fy2026-27-vol1,133,,fy2026-27
+225 PERS Rate Stabilization Reserve Fund,20209,20209,2022-23,actual-budgetary,budget-fy2026-27-vol1,139,fund nearly emptied: 2025-26 adopted transferred $23.962M to General Fund; only $394K remains in 2026-27,fy2026-27
+251 Student Investment Account Fund,37621,37621,2022-23,actual-budgetary,budget-fy2026-27-vol1,142,,fy2026-27
+299 Dedicated Resource Fund,26210,26210,2022-23,actual-budgetary,budget-fy2026-27-vol1,151,,fy2026-27
+300 Debt Service Funds (type total),245042,245042,2022-23,actual-budgetary,budget-fy2026-27-vol1,157,,fy2026-27
+308 PERS UAL Debt Service Fund,83232,83232,2022-23,actual-budgetary,budget-fy2026-27-vol1,164,,fy2026-27
+320 Full Faith and Credit Debt Service Fund,1241,1241,2022-23,actual-budgetary,budget-fy2026-27-vol1,167,,fy2026-27
+350 GO Bonds Debt Service Fund,160569,160569,2022-23,actual-budgetary,budget-fy2026-27-vol1,170,,fy2026-27
+400 Capital Projects Funds (type total),1020043,1020043,2022-23,actual-budgetary,budget-fy2026-27-vol1,173,,fy2026-27
+404 Construction Excise Fund,17297,17297,2022-23,actual-budgetary,budget-fy2026-27-vol1,177,,fy2026-27
+420 Full Faith and Credit Fund,235,235,2022-23,actual-budgetary,budget-fy2026-27-vol1,181,capital-side FF&C fund; dashes printed from 2024-25 on (recorded as 0),fy2026-27
+435 Energy Efficient Schools Fund,4525,4525,2022-23,actual-budgetary,budget-fy2026-27-vol1,183,,fy2026-27
+437 Harriet Tubman MS Relocation Fund,3113,3113,2022-23,actual-budgetary,budget-fy2026-27-vol1,186,large 2026-27 increase; Restricted Grants/Funds $141.5M per Other Capital Projects table p.203,fy2026-27
+438 Facilities Capital Fund,2095,2095,2022-23,actual-budgetary,budget-fy2026-27-vol1,189,,fy2026-27
+445 Capital Asset Renewal Fund,15092,15092,2022-23,actual-budgetary,budget-fy2026-27-vol1,193,,fy2026-27
+450 GO Bonds Fund,977687,977687,2022-23,actual-budgetary,budget-fy2026-27-vol1,197,,fy2026-27
+600 Internal Service Funds (type total),7494,7494,2022-23,actual-budgetary,budget-fy2026-27-vol1,205,,fy2026-27
+601 Workers Compensation Fund,7494,7494,2022-23,actual-budgetary,budget-fy2026-27-vol1,209,,fy2026-27
+602 Property & Liability Insurance Fund,0,0,2022-23,actual-budgetary,budget-fy2026-27-vol1,213,"fund first budgeted in 2024-25 (dashes before, recorded as 0)",fy2026-27
+603 Unemployment Fund,0,0,2022-23,actual-budgetary,budget-fy2026-27-vol1,217,"fund first shows activity in 2024-25 (dashes before, recorded as 0)",fy2026-27
+All Funds total,2351970,2351970,2022-23,actual-budgetary,budget-fy2025-26-vol1,89,requirements total printed on p.90; resources total on cited p.89 (totals equal per column),fy2025-26
+Cafeteria Fund (202),23363,23363,2022-23,adopted,budget-fy2022-23-vol1,169,,fy2022-23
+Cafeteria Fund (202),23363,23363,2022-23,adopted,budget-fy2023-24-vol1,113,,fy2023-24
+Cafeteria Fund (202),23363,23363,2022-23,approved,budget-fy2022-23-vol1,169,,fy2022-23
+Cafeteria Fund (202),23363,23363,2022-23,proposed,budget-fy2022-23-vol1,169,,fy2022-23
+Capital Asset Renewal Fund (445),5663,5663,2022-23,proposed,budget-fy2022-23-vol1,240,,fy2022-23
+Capital Asset Renewal Fund (445),7760,7760,2022-23,adopted,budget-fy2022-23-vol1,240,,fy2022-23
+Capital Asset Renewal Fund (445),7760,7760,2022-23,adopted,budget-fy2023-24-vol1,178,,fy2023-24
+Capital Asset Renewal Fund (445),7760,7760,2022-23,approved,budget-fy2022-23-vol1,240,,fy2022-23
+Capital Projects Fund,1020044,1020044,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,84,,tscc
+Capital Projects Fund,1020044,1020044,2022-23,actual-budgetary,tscc-review-fy2025,18,,tscc
+Capital Projects Fund,1020044,1020044,2022-23,actual-budgetary,tscc-review-fy2026,19,"2025-26 printed 643,773 here but 643,774 in Other Funds table p.16",tscc
+Capital Projects Fund,516864,516864,2022-23,revised,tscc-review-fy2024,18,"2023-24 printed 834,105 (p.15 Other Funds table prints 834,107); FY2023-24 adds Harriet Tubman MS Relocation Fund ($122.5M state grant, p.4)",tscc
+Capital Projects Funds (400) [group total],514233,514233,2022-23,proposed,budget-fy2022-23-vol1,220,,fy2022-23
+Capital Projects Funds (400) [group total],516864,516864,2022-23,adopted,budget-fy2022-23-vol1,220,,fy2022-23
+Capital Projects Funds (400) [group total],516864,516864,2022-23,adopted,budget-fy2023-24-vol1,157,,fy2023-24
+Capital Projects Funds (400) [group total],516864,516864,2022-23,approved,budget-fy2022-23-vol1,220,,fy2022-23
+Capital Projects Funds (400),1020043,1020043,2022-23,actual-budgetary,budget-fy2024-25-vol1,155,,fy2024-25
+Capital Projects Funds (400),1020043,1020043,2022-23,actual-budgetary,budget-fy2025-26-vol1,164,requirements total printed on p.165; resources total on cited p.164 (totals equal per column),fy2025-26
+Construction Excise Fund (404),17015,17015,2022-23,proposed,budget-fy2022-23-vol1,224,,fy2022-23
+Construction Excise Fund (404),17765,17765,2022-23,adopted,budget-fy2022-23-vol1,224,,fy2022-23
+Construction Excise Fund (404),17765,17765,2022-23,adopted,budget-fy2023-24-vol1,160,,fy2023-24
+Construction Excise Fund (404),17765,17765,2022-23,approved,budget-fy2022-23-vol1,224,,fy2022-23
+Debt Service Fund,83047,83047,2022-23,revised,tscc-review-fy2024,18,"2023-24 printed 86,445 (FY25 review prints 86,446)",tscc
+Debt Service Fund,84467,84467,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,84,,tscc
+Debt Service Fund,84467,84467,2022-23,actual-budgetary,tscc-review-fy2025,18,"2022-23 printed 84,467 (FY26 review prints 84,474)",tscc
+Debt Service Fund,84474,84474,2022-23,actual-budgetary,tscc-review-fy2026,19,,tscc
+Debt Service Funds (300) [group total],242410,242410,2022-23,adopted,budget-fy2022-23-vol1,201,,fy2022-23
+Debt Service Funds (300) [group total],242410,242410,2022-23,adopted,budget-fy2023-24-vol1,141,,fy2023-24
+Debt Service Funds (300) [group total],245890,245890,2022-23,proposed,budget-fy2022-23-vol1,201,,fy2022-23
+Debt Service Funds (300) [group total],246465,246465,2022-23,approved,budget-fy2022-23-vol1,201,,fy2022-23
+Debt Service Funds (300),245042,245042,2022-23,actual-budgetary,budget-fy2024-25-vol1,139,,fy2024-25
+Debt Service Funds (300),245042,245042,2022-23,actual-budgetary,budget-fy2025-26-vol1,148,requirements total printed on p.149; resources total on cited p.148 (totals equal per column),fy2025-26
+Dedicated Resource Fund (299),20999,20999,2022-23,adopted,budget-fy2022-23-vol1,191,,fy2022-23
+Dedicated Resource Fund (299),20999,20999,2022-23,adopted,budget-fy2023-24-vol1,134,,fy2023-24
+Dedicated Resource Fund (299),20999,20999,2022-23,approved,budget-fy2022-23-vol1,191,,fy2022-23
+Dedicated Resource Fund (299),20999,20999,2022-23,proposed,budget-fy2022-23-vol1,191,,fy2022-23
+Energy Efficient Schools Fund (435),4306,4306,2022-23,adopted,budget-fy2022-23-vol1,234,,fy2022-23
+Energy Efficient Schools Fund (435),4306,4306,2022-23,adopted,budget-fy2023-24-vol1,169,,fy2023-24
+Energy Efficient Schools Fund (435),4306,4306,2022-23,approved,budget-fy2022-23-vol1,234,,fy2022-23
+Energy Efficient Schools Fund (435),4306,4306,2022-23,proposed,budget-fy2022-23-vol1,234,,fy2022-23
+Facilities Capital Fund (438),8344,8344,2022-23,adopted,budget-fy2022-23-vol1,237,,fy2022-23
+Facilities Capital Fund (438),8344,8344,2022-23,adopted,budget-fy2023-24-vol1,175,,fy2023-24
+Facilities Capital Fund (438),8344,8344,2022-23,approved,budget-fy2022-23-vol1,237,,fy2022-23
+Facilities Capital Fund (438),8344,8344,2022-23,proposed,budget-fy2022-23-vol1,237,,fy2022-23
+Full Faith and Credit Debt Service Fund (320),1244,1244,2022-23,adopted,budget-fy2022-23-vol1,214,,fy2022-23
+Full Faith and Credit Debt Service Fund (320),1244,1244,2022-23,adopted,budget-fy2023-24-vol1,150,,fy2023-24
+Full Faith and Credit Debt Service Fund (320),1244,1244,2022-23,approved,budget-fy2022-23-vol1,214,,fy2022-23
+Full Faith and Credit Debt Service Fund (320),1244,1244,2022-23,proposed,budget-fy2022-23-vol1,214,,fy2022-23
+Full Faith and Credit Fund (420),237,237,2022-23,adopted,budget-fy2022-23-vol1,231,,fy2022-23
+Full Faith and Credit Fund (420),237,237,2022-23,adopted,budget-fy2023-24-vol1,166,,fy2023-24
+Full Faith and Credit Fund (420),237,237,2022-23,approved,budget-fy2022-23-vol1,231,,fy2022-23
+Full Faith and Credit Fund (420),453,453,2022-23,proposed,budget-fy2022-23-vol1,231,,fy2022-23
+General Fund (100),794585,794585,2022-23,proposed,budget-fy2022-23-vol1,149,,fy2022-23
+General Fund (100),804062,804062,2022-23,adopted,budget-fy2022-23-vol1,149,,fy2022-23
+General Fund (100),804062,804062,2022-23,adopted,budget-fy2023-24-vol1,98,,fy2023-24
+General Fund (100),804062,804062,2022-23,approved,budget-fy2022-23-vol1,149,,fy2022-23
+General Fund (100),830038,830038,2022-23,actual-budgetary,budget-fy2024-25-vol1,99,,fy2024-25
+General Fund (100),830038,830038,2022-23,actual-budgetary,budget-fy2025-26-vol1,98,requirements total printed on p.99; resources total on cited p.98 (totals equal per column),fy2025-26
+General Fund,804062,804062,2022-23,revised,tscc-review-fy2024,18,,tscc
+General Fund,830038,830038,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,84,,tscc
+General Fund,830038,830038,2022-23,actual-budgetary,tscc-review-fy2025,18,,tscc
+General Fund,830038,830038,2022-23,actual-budgetary,tscc-review-fy2026,19,SUMMARY OF BUDGET - BY FUND; single total printed per fund (resources=requirements); native whole dollars,tscc
+GO Bonds Debt Service Fund (350),159363,159363,2022-23,adopted,budget-fy2022-23-vol1,217,,fy2022-23
+GO Bonds Debt Service Fund (350),159363,159363,2022-23,adopted,budget-fy2023-24-vol1,153,,fy2023-24
+GO Bonds Debt Service Fund (350),163418,163418,2022-23,approved,budget-fy2022-23-vol1,217,,fy2022-23
+GO Bonds Debt Service Fund (350),163418,163418,2022-23,proposed,budget-fy2022-23-vol1,217,,fy2022-23
+GO Bonds Debt Service Fund,159363,159363,2022-23,revised,tscc-review-fy2024,18,,tscc
+GO Bonds Debt Service Fund,160569,160569,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,84,,tscc
+GO Bonds Debt Service Fund,160569,160569,2022-23,actual-budgetary,tscc-review-fy2025,18,,tscc
+GO Bonds Debt Service Fund,160569,160569,2022-23,actual-budgetary,tscc-review-fy2026,19,,tscc
+GO Bonds Fund (450),478452,478452,2022-23,adopted,budget-fy2022-23-vol1,244,,fy2022-23
+GO Bonds Fund (450),478452,478452,2022-23,adopted,budget-fy2023-24-vol1,182,,fy2023-24
+GO Bonds Fund (450),478452,478452,2022-23,approved,budget-fy2022-23-vol1,244,,fy2022-23
+GO Bonds Fund (450),478452,478452,2022-23,proposed,budget-fy2022-23-vol1,244,,fy2022-23
+GRAND TOTAL ALL FUNDS,1883259,1883259,2022-23,revised,tscc-review-fy2024,18,"grand total row; 2023-24 printed 2,182,055 here vs 2,182,057 elsewhere in same doc",tscc
+GRAND TOTAL ALL FUNDS,2351781,2351781,2022-23,actual-budgetary,tscc-review-fy2025,18,"grand total row; 2022-23 total 2,351,781 conflicts with 2,351,973 (FY26 review) and 2,351,969 (annual report/by-object)",tscc
+GRAND TOTAL ALL FUNDS,2351969,2351969,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,84,grand total row; PPS Budget Summary in FY24-25 TSCC Annual Report; 2024-25 column labeled Adopted,tscc
+GRAND TOTAL ALL FUNDS,2351973,2351973,2022-23,actual-budgetary,tscc-review-fy2026,19,"grand total row; p.6/p.16 print 2,035,118 for 2025-26 (rounding)",tscc
+Grants Fund (205),190824,190824,2022-23,proposed,budget-fy2022-23-vol1,173,,fy2022-23
+Grants Fund (205),196623,196623,2022-23,adopted,budget-fy2023-24-vol1,117,,fy2023-24
+Grants Fund (205),196624,196624,2022-23,adopted,budget-fy2022-23-vol1,173,,fy2022-23
+Grants Fund (205),196624,196624,2022-23,approved,budget-fy2022-23-vol1,173,,fy2022-23
+Harriet Tubman MS Relocation Fund (437),0,0,2022-23,adopted,budget-fy2023-24-vol1,172,,fy2023-24
+Internal Service Fund,7494,7494,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,84,,tscc
+Internal Service Fund,7494,7494,2022-23,actual-budgetary,tscc-review-fy2025,18,FY2024-25 adds Property & Liability Insurance and Unemployment sub-funds within Internal Service Fund (p.4),tscc
+Internal Service Fund,7494,7494,2022-23,actual-budgetary,tscc-review-fy2026,19,,tscc
+Internal Service Fund,8645,8645,2022-23,revised,tscc-review-fy2024,18,,tscc
+Internal Service Funds (600) [group total],8620,8620,2022-23,proposed,budget-fy2022-23-vol1,257,,fy2022-23
+Internal Service Funds (600) [group total],8646,8645,2022-23,adopted,budget-fy2023-24-vol1,196,,fy2023-24
+Internal Service Funds (600) [group total],8646,8646,2022-23,adopted,budget-fy2022-23-vol1,257,,fy2022-23
+Internal Service Funds (600) [group total],8646,8646,2022-23,approved,budget-fy2022-23-vol1,257,,fy2022-23
+Internal Service Funds (600),7494,7494,2022-23,actual-budgetary,budget-fy2024-25-vol1,191,,fy2024-25
+Internal Service Funds (600),7494,7494,2022-23,actual-budgetary,budget-fy2025-26-vol1,200,requirements total printed on p.201; resources total on cited p.200 (totals equal per column),fy2025-26
+IT System Project Fund (407),0,0,2022-23,adopted,budget-fy2023-24-vol1,164,,fy2023-24
+Partnership Funds (470),0,0,2022-23,adopted,budget-fy2023-24-vol1,186,,fy2023-24
+PERS Rate Stabilization Reserve Fund (225),19793,19793,2022-23,adopted,budget-fy2022-23-vol1,184,,fy2022-23
+PERS Rate Stabilization Reserve Fund (225),19793,19793,2022-23,adopted,budget-fy2023-24-vol1,127,,fy2023-24
+PERS Rate Stabilization Reserve Fund (225),19793,19793,2022-23,approved,budget-fy2022-23-vol1,184,,fy2022-23
+PERS Rate Stabilization Reserve Fund (225),19793,19793,2022-23,proposed,budget-fy2022-23-vol1,184,,fy2022-23
+PERS UAL Debt Service Fund (308),81228,81228,2022-23,proposed,budget-fy2022-23-vol1,211,,fy2022-23
+PERS UAL Debt Service Fund (308),81803,81803,2022-23,adopted,budget-fy2022-23-vol1,211,,fy2022-23
+PERS UAL Debt Service Fund (308),81803,81803,2022-23,adopted,budget-fy2023-24-vol1,147,,fy2023-24
+PERS UAL Debt Service Fund (308),81803,81803,2022-23,approved,budget-fy2022-23-vol1,211,,fy2022-23
+Self Insurance Fund (601),8620,8620,2022-23,proposed,budget-fy2022-23-vol1,261,,fy2022-23
+Self Insurance Fund (601),8646,8646,2022-23,adopted,budget-fy2022-23-vol1,261,,fy2022-23
+Self Insurance Fund (601),8646,8646,2022-23,adopted,budget-fy2023-24-vol1,200,,fy2023-24
+Self Insurance Fund (601),8646,8646,2022-23,approved,budget-fy2022-23-vol1,261,,fy2022-23
+Special Revenue Fund,249169,249169,2022-23,actual-budgetary,tscc-review-fy2025,18,"2022-23 actual printed 249,169 (CONFLICT: 249,354 FY26 review; 249,357 annual report)",tscc
+Special Revenue Fund,249354,249354,2022-23,actual-budgetary,tscc-review-fy2026,19,"2022-23 actual printed 249,354 (CONFLICT: 249,169 in FY25 review p.18; 249,357 in annual report p.84); FY2025-26 adds Measure 98: High School Success sub-fund within Special Revenue Fund (p.6)",tscc
+Special Revenue Fund,249357,249357,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,84,"2022-23 actual printed 249,357 (third variant across docs)",tscc
+Special Revenue Fund,311278,311278,2022-23,revised,tscc-review-fy2024,18,,tscc
+Special Revenue Funds (200) [group total],305478,305478,2022-23,proposed,budget-fy2022-23-vol1,162,,fy2022-23
+Special Revenue Funds (200) [group total],311278,311278,2022-23,adopted,budget-fy2022-23-vol1,162,,fy2022-23
+Special Revenue Funds (200) [group total],311278,311278,2022-23,approved,budget-fy2022-23-vol1,162,,fy2022-23
+Special Revenue Funds (200) [group total],311279,311279,2022-23,adopted,budget-fy2023-24-vol1,108,,fy2023-24
+Special Revenue Funds (200),249353,249353,2022-23,actual-budgetary,budget-fy2024-25-vol1,111,,fy2024-25
+Special Revenue Funds (200),249353,249353,2022-23,actual-budgetary,budget-fy2025-26-vol1,111,requirements total printed on p.112; resources total on cited p.111 (totals equal per column),fy2025-26
+Student Body Activity Fund (201),12500,12500,2022-23,adopted,budget-fy2022-23-vol1,166,,fy2022-23
+Student Body Activity Fund (201),12500,12500,2022-23,adopted,budget-fy2023-24-vol1,110,,fy2023-24
+Student Body Activity Fund (201),12500,12500,2022-23,approved,budget-fy2022-23-vol1,166,,fy2022-23
+Student Body Activity Fund (201),12500,12500,2022-23,proposed,budget-fy2022-23-vol1,166,,fy2022-23
+Student Investment Account Fund (251),38000,38000,2022-23,adopted,budget-fy2022-23-vol1,187,,fy2022-23
+Student Investment Account Fund (251),38000,38000,2022-23,adopted,budget-fy2023-24-vol1,130,,fy2023-24
+Student Investment Account Fund (251),38000,38000,2022-23,approved,budget-fy2022-23-vol1,187,,fy2022-23
+Student Investment Account Fund (251),38000,38000,2022-23,proposed,budget-fy2022-23-vol1,187,,fy2022-23
+TOTAL ALL FUNDS,1868806,1868806,2022-23,proposed,budget-fy2022-23-vol1,140,,fy2022-23
+TOTAL ALL FUNDS,1883261,1883261,2022-23,adopted,budget-fy2022-23-vol1,140,,fy2022-23
+TOTAL ALL FUNDS,1883261,1883261,2022-23,adopted,budget-fy2023-24-vol1,86,,fy2023-24
+TOTAL ALL FUNDS,1887316,1887316,2022-23,approved,budget-fy2022-23-vol1,140,,fy2022-23
+Total All Funds,2351970,2351970,2022-23,actual-budgetary,budget-fy2024-25-vol1,91,,fy2024-25
+TOTAL ALL FUNDS,2351970,2351970,2022-23,actual-budgetary,budget-fy2026-27-vol1,91,"requirements totals identical (p.92); adopted resolution total $2,768,590,878 (p.317)",fy2026-27
+100 General Fund,873375,873375,2023-24,actual-budgetary,budget-fy2026-27-vol1,108,,fy2026-27
+200 Special Revenue Funds (type total),247560,247560,2023-24,actual-budgetary,budget-fy2026-27-vol1,122,,fy2026-27
+201 Student Body Activity Fund,11166,11166,2023-24,actual-budgetary,budget-fy2026-27-vol1,125,,fy2026-27
+202 Cafeteria Fund,24206,24206,2023-24,actual-budgetary,budget-fy2026-27-vol1,128,,fy2026-27
+205 Grants Fund,123089,123089,2023-24,actual-budgetary,budget-fy2026-27-vol1,133,,fy2026-27
+225 PERS Rate Stabilization Reserve Fund,21573,21573,2023-24,actual-budgetary,budget-fy2026-27-vol1,139,,fy2026-27
+251 Student Investment Account Fund,40408,40408,2023-24,actual-budgetary,budget-fy2026-27-vol1,142,,fy2026-27
+299 Dedicated Resource Fund,27118,27118,2023-24,actual-budgetary,budget-fy2026-27-vol1,151,,fy2026-27
+300 Debt Service Funds (type total),265585,265585,2023-24,actual-budgetary,budget-fy2026-27-vol1,157,,fy2026-27
+308 PERS UAL Debt Service Fund,86905,86905,2023-24,actual-budgetary,budget-fy2026-27-vol1,164,,fy2026-27
+320 Full Faith and Credit Debt Service Fund,619,619,2023-24,actual-budgetary,budget-fy2026-27-vol1,167,,fy2026-27
+350 GO Bonds Debt Service Fund,178061,178061,2023-24,actual-budgetary,budget-fy2026-27-vol1,170,,fy2026-27
+400 Capital Projects Funds (type total),785500,785500,2023-24,actual-budgetary,budget-fy2026-27-vol1,173,,fy2026-27
+404 Construction Excise Fund,3698,3698,2023-24,actual-budgetary,budget-fy2026-27-vol1,177,,fy2026-27
+420 Full Faith and Credit Fund,98,98,2023-24,actual-budgetary,budget-fy2026-27-vol1,181,,fy2026-27
+435 Energy Efficient Schools Fund,5412,5412,2023-24,actual-budgetary,budget-fy2026-27-vol1,183,,fy2026-27
+437 Harriet Tubman MS Relocation Fund,8366,8366,2023-24,actual-budgetary,budget-fy2026-27-vol1,186,,fy2026-27
+438 Facilities Capital Fund,11951,11951,2023-24,actual-budgetary,budget-fy2026-27-vol1,189,,fy2026-27
+445 Capital Asset Renewal Fund,3385,3385,2023-24,actual-budgetary,budget-fy2026-27-vol1,193,,fy2026-27
+450 GO Bonds Fund,752590,752590,2023-24,actual-budgetary,budget-fy2026-27-vol1,197,,fy2026-27
+600 Internal Service Funds (type total),7683,7683,2023-24,actual-budgetary,budget-fy2026-27-vol1,205,,fy2026-27
+601 Workers Compensation Fund,7683,7683,2023-24,actual-budgetary,budget-fy2026-27-vol1,209,,fy2026-27
+602 Property & Liability Insurance Fund,0,0,2023-24,actual-budgetary,budget-fy2026-27-vol1,213,,fy2026-27
+603 Unemployment Fund,0,0,2023-24,actual-budgetary,budget-fy2026-27-vol1,217,,fy2026-27
+All Funds total,2179703,2179703,2023-24,actual-budgetary,budget-fy2025-26-vol1,89,requirements total printed on p.90; resources total on cited p.89 (totals equal per column),fy2025-26
+Cafeteria Fund (202),24425,24425,2023-24,adopted,budget-fy2023-24-vol1,113,,fy2023-24
+Cafeteria Fund (202),24425,24425,2023-24,approved,budget-fy2023-24-vol1,113,,fy2023-24
+Cafeteria Fund (202),24425,24425,2023-24,proposed,budget-fy2023-24-vol1,113,,fy2023-24
+Capital Asset Renewal Fund (445),2572,2572,2023-24,adopted,budget-fy2023-24-vol1,178,,fy2023-24
+Capital Asset Renewal Fund (445),2572,2572,2023-24,approved,budget-fy2023-24-vol1,178,,fy2023-24
+Capital Asset Renewal Fund (445),2572,2572,2023-24,proposed,budget-fy2023-24-vol1,178,,fy2023-24
+Capital Projects Fund,785500,785500,2023-24,actual-budgetary,tscc-review-fy2026,19,"2025-26 printed 643,773 here but 643,774 in Other Funds table p.16",tscc
+Capital Projects Fund,834105,834105,2023-24,approved,tscc-review-fy2024,18,"2023-24 printed 834,105 (p.15 Other Funds table prints 834,107); FY2023-24 adds Harriet Tubman MS Relocation Fund ($122.5M state grant, p.4)",tscc
+Capital Projects Fund,834106,834106,2023-24,revised,tscc-annual-report-2024-25-summaries,84,,tscc
+Capital Projects Fund,834106,834106,2023-24,revised,tscc-review-fy2025,18,,tscc
+Capital Projects Funds (400) [group total],834106,834106,2023-24,adopted,budget-fy2023-24-vol1,157,,fy2023-24
+Capital Projects Funds (400) [group total],834106,834106,2023-24,approved,budget-fy2023-24-vol1,157,,fy2023-24
+Capital Projects Funds (400) [group total],834106,834106,2023-24,proposed,budget-fy2023-24-vol1,157,,fy2023-24
+Capital Projects Funds (400),785500,785500,2023-24,actual-budgetary,budget-fy2025-26-vol1,164,requirements total printed on p.165; resources total on cited p.164 (totals equal per column),fy2025-26
+Capital Projects Funds (400),834106,834106,2023-24,adopted,budget-fy2024-25-vol1,155,,fy2024-25
+Construction Excise Fund (404),8339,8339,2023-24,adopted,budget-fy2023-24-vol1,160,,fy2023-24
+Construction Excise Fund (404),8339,8339,2023-24,approved,budget-fy2023-24-vol1,160,,fy2023-24
+Construction Excise Fund (404),8339,8339,2023-24,proposed,budget-fy2023-24-vol1,160,,fy2023-24
+Debt Service Fund,86445,86445,2023-24,approved,tscc-review-fy2024,18,"2023-24 printed 86,445 (FY25 review prints 86,446)",tscc
+Debt Service Fund,86446,86446,2023-24,revised,tscc-annual-report-2024-25-summaries,84,,tscc
+Debt Service Fund,86446,86446,2023-24,revised,tscc-review-fy2025,18,"2022-23 printed 84,467 (FY26 review prints 84,474)",tscc
+Debt Service Fund,87524,87524,2023-24,actual-budgetary,tscc-review-fy2026,19,,tscc
+Debt Service Funds (300) [group total],257341,257341,2023-24,proposed,budget-fy2023-24-vol1,141,,fy2023-24
+Debt Service Funds (300) [group total],257703,257703,2023-24,adopted,budget-fy2023-24-vol1,141,,fy2023-24
+Debt Service Funds (300) [group total],257703,257703,2023-24,approved,budget-fy2023-24-vol1,141,,fy2023-24
+Debt Service Funds (300),257703,257703,2023-24,adopted,budget-fy2024-25-vol1,139,,fy2024-25
+Debt Service Funds (300),265585,265585,2023-24,actual-budgetary,budget-fy2025-26-vol1,148,requirements total printed on p.149; resources total on cited p.148 (totals equal per column),fy2025-26
+Dedicated Resource Fund (299),20840,20840,2023-24,adopted,budget-fy2023-24-vol1,134,,fy2023-24
+Dedicated Resource Fund (299),20840,20840,2023-24,approved,budget-fy2023-24-vol1,134,,fy2023-24
+Dedicated Resource Fund (299),20840,20840,2023-24,proposed,budget-fy2023-24-vol1,134,,fy2023-24
+Energy Efficient Schools Fund (435),5723,5723,2023-24,adopted,budget-fy2023-24-vol1,169,,fy2023-24
+Energy Efficient Schools Fund (435),5723,5723,2023-24,approved,budget-fy2023-24-vol1,169,,fy2023-24
+Energy Efficient Schools Fund (435),5723,5723,2023-24,proposed,budget-fy2023-24-vol1,169,,fy2023-24
+Facilities Capital Fund (438),3400,3400,2023-24,adopted,budget-fy2023-24-vol1,175,,fy2023-24
+Facilities Capital Fund (438),3400,3400,2023-24,approved,budget-fy2023-24-vol1,175,,fy2023-24
+Facilities Capital Fund (438),3400,3400,2023-24,proposed,budget-fy2023-24-vol1,175,,fy2023-24
+Full Faith and Credit Debt Service Fund (320),619,619,2023-24,adopted,budget-fy2023-24-vol1,150,,fy2023-24
+Full Faith and Credit Debt Service Fund (320),619,619,2023-24,approved,budget-fy2023-24-vol1,150,,fy2023-24
+Full Faith and Credit Debt Service Fund (320),619,619,2023-24,proposed,budget-fy2023-24-vol1,150,,fy2023-24
+Full Faith and Credit Fund (420),97,97,2023-24,adopted,budget-fy2023-24-vol1,166,,fy2023-24
+Full Faith and Credit Fund (420),97,97,2023-24,approved,budget-fy2023-24-vol1,166,,fy2023-24
+Full Faith and Credit Fund (420),97,97,2023-24,proposed,budget-fy2023-24-vol1,166,,fy2023-24
+General Fund (100),823423,823423,2023-24,proposed,budget-fy2023-24-vol1,98,,fy2023-24
+General Fund (100),833774,833774,2023-24,adopted,budget-fy2023-24-vol1,98,,fy2023-24
+General Fund (100),833774,833774,2023-24,adopted,budget-fy2024-25-vol1,99,"book states 2023-24 budget columns are from the 2023-24 Adopted Budget (p78)",fy2024-25
+General Fund (100),833774,833774,2023-24,approved,budget-fy2023-24-vol1,98,,fy2023-24
+General Fund (100),873375,873375,2023-24,actual-budgetary,budget-fy2025-26-vol1,98,requirements total printed on p.99; resources total on cited p.98 (totals equal per column),fy2025-26
+General Fund,833773,833773,2023-24,approved,tscc-review-fy2024,18,,tscc
+General Fund,833773,833773,2023-24,revised,tscc-annual-report-2024-25-summaries,84,,tscc
+General Fund,833773,833773,2023-24,revised,tscc-review-fy2025,18,,tscc
+General Fund,873375,873375,2023-24,actual-budgetary,tscc-review-fy2026,19,,tscc
+GO Bonds Debt Service Fund (350),171257,171257,2023-24,adopted,budget-fy2023-24-vol1,153,,fy2023-24
+GO Bonds Debt Service Fund (350),171257,171257,2023-24,approved,budget-fy2023-24-vol1,153,,fy2023-24
+GO Bonds Debt Service Fund (350),171257,171257,2023-24,proposed,budget-fy2023-24-vol1,153,,fy2023-24
+GO Bonds Debt Service Fund,171257,171257,2023-24,approved,tscc-review-fy2024,18,,tscc
+GO Bonds Debt Service Fund,171257,171257,2023-24,revised,tscc-annual-report-2024-25-summaries,84,,tscc
+GO Bonds Debt Service Fund,171257,171257,2023-24,revised,tscc-review-fy2025,18,,tscc
+GO Bonds Debt Service Fund,178061,178061,2023-24,actual-budgetary,tscc-review-fy2026,19,,tscc
+GO Bonds Fund (450),691474,691474,2023-24,adopted,budget-fy2023-24-vol1,182,,fy2023-24
+GO Bonds Fund (450),691474,691474,2023-24,approved,budget-fy2023-24-vol1,182,,fy2023-24
+GO Bonds Fund (450),691474,691474,2023-24,proposed,budget-fy2023-24-vol1,182,,fy2023-24
+GRAND TOTAL ALL FUNDS,2179703,2179703,2023-24,actual-budgetary,tscc-review-fy2026,19,"grand total row; p.6/p.16 print 2,035,118 for 2025-26 (rounding)",tscc
+GRAND TOTAL ALL FUNDS,2182055,2182055,2023-24,approved,tscc-review-fy2024,18,"grand total row; 2023-24 printed 2,182,055 here vs 2,182,057 elsewhere in same doc",tscc
+GRAND TOTAL ALL FUNDS,2182057,2182057,2023-24,revised,tscc-annual-report-2024-25-summaries,84,grand total row; PPS Budget Summary in FY24-25 TSCC Annual Report; 2024-25 column labeled Adopted,tscc
+GRAND TOTAL ALL FUNDS,2182057,2182057,2023-24,revised,tscc-review-fy2025,18,"grand total row; 2022-23 total 2,351,781 conflicts with 2,351,973 (FY26 review) and 2,351,969 (annual report/by-object)",tscc
+Grants Fund (205),135154,135154,2023-24,adopted,budget-fy2023-24-vol1,117,,fy2023-24
+Grants Fund (205),135154,135154,2023-24,approved,budget-fy2023-24-vol1,117,,fy2023-24
+Grants Fund (205),135353,135353,2023-24,proposed,budget-fy2023-24-vol1,117,,fy2023-24
+Harriet Tubman MS Relocation Fund (437),122500,122500,2023-24,adopted,budget-fy2023-24-vol1,172,,fy2023-24
+Harriet Tubman MS Relocation Fund (437),122500,122500,2023-24,approved,budget-fy2023-24-vol1,172,,fy2023-24
+Harriet Tubman MS Relocation Fund (437),122500,122500,2023-24,proposed,budget-fy2023-24-vol1,172,,fy2023-24
+Internal Service Fund,7683,7683,2023-24,actual-budgetary,tscc-review-fy2026,19,,tscc
+Internal Service Fund,8998,8998,2023-24,approved,tscc-review-fy2024,18,,tscc
+Internal Service Fund,8998,8998,2023-24,revised,tscc-annual-report-2024-25-summaries,84,,tscc
+Internal Service Fund,8998,8998,2023-24,revised,tscc-review-fy2025,18,FY2024-25 adds Property & Liability Insurance and Unemployment sub-funds within Internal Service Fund (p.4),tscc
+Internal Service Funds (600) [group total],8981,8981,2023-24,proposed,budget-fy2023-24-vol1,196,,fy2023-24
+Internal Service Funds (600) [group total],8998,8998,2023-24,adopted,budget-fy2023-24-vol1,196,,fy2023-24
+Internal Service Funds (600) [group total],8998,8998,2023-24,approved,budget-fy2023-24-vol1,196,,fy2023-24
+Internal Service Funds (600),7683,7683,2023-24,actual-budgetary,budget-fy2025-26-vol1,200,requirements total printed on p.201; resources total on cited p.200 (totals equal per column),fy2025-26
+Internal Service Funds (600),8998,8997,2023-24,adopted,budget-fy2024-25-vol1,191,"resources total 8998 (p191) vs requirements total 8997 (p192) as printed",fy2024-25
+IT System Project Fund (407),0,0,2023-24,adopted,budget-fy2023-24-vol1,164,,fy2023-24
+IT System Project Fund (407),0,0,2023-24,approved,budget-fy2023-24-vol1,164,,fy2023-24
+IT System Project Fund (407),0,0,2023-24,proposed,budget-fy2023-24-vol1,164,,fy2023-24
+Partnership Funds (470),0,0,2023-24,adopted,budget-fy2023-24-vol1,186,,fy2023-24
+Partnership Funds (470),0,0,2023-24,approved,budget-fy2023-24-vol1,186,,fy2023-24
+Partnership Funds (470),0,0,2023-24,proposed,budget-fy2023-24-vol1,186,,fy2023-24
+PERS Rate Stabilization Reserve Fund (225),20627,20627,2023-24,adopted,budget-fy2023-24-vol1,127,,fy2023-24
+PERS Rate Stabilization Reserve Fund (225),20627,20627,2023-24,approved,budget-fy2023-24-vol1,127,,fy2023-24
+PERS Rate Stabilization Reserve Fund (225),20627,20627,2023-24,proposed,budget-fy2023-24-vol1,127,,fy2023-24
+PERS UAL Debt Service Fund (308),85465,85465,2023-24,proposed,budget-fy2023-24-vol1,147,,fy2023-24
+PERS UAL Debt Service Fund (308),85827,85827,2023-24,adopted,budget-fy2023-24-vol1,147,,fy2023-24
+PERS UAL Debt Service Fund (308),85827,85827,2023-24,approved,budget-fy2023-24-vol1,147,,fy2023-24
+Self Insurance Fund (601),8981,8981,2023-24,proposed,budget-fy2023-24-vol1,200,,fy2023-24
+Self Insurance Fund (601),8998,8998,2023-24,adopted,budget-fy2023-24-vol1,200,,fy2023-24
+Self Insurance Fund (601),8998,8998,2023-24,approved,budget-fy2023-24-vol1,200,,fy2023-24
+Special Revenue Fund,247477,247477,2023-24,approved,tscc-review-fy2024,18,,tscc
+Special Revenue Fund,247477,247477,2023-24,revised,tscc-annual-report-2024-25-summaries,84,"2022-23 actual printed 249,357 (third variant across docs)",tscc
+Special Revenue Fund,247477,247477,2023-24,revised,tscc-review-fy2025,18,"2022-23 actual printed 249,169 (CONFLICT: 249,354 FY26 review; 249,357 annual report)",tscc
+Special Revenue Fund,247560,247560,2023-24,actual-budgetary,tscc-review-fy2026,19,"2022-23 actual printed 249,354 (CONFLICT: 249,169 in FY25 review p.18; 249,357 in annual report p.84); FY2025-26 adds Measure 98: High School Success sub-fund within Special Revenue Fund (p.6)",tscc
+Special Revenue Funds (200) [group total],247477,247477,2023-24,adopted,budget-fy2023-24-vol1,108,,fy2023-24
+Special Revenue Funds (200) [group total],247477,247477,2023-24,approved,budget-fy2023-24-vol1,108,,fy2023-24
+Special Revenue Funds (200) [group total],247677,247677,2023-24,proposed,budget-fy2023-24-vol1,108,,fy2023-24
+Special Revenue Funds (200),247477,247477,2023-24,adopted,budget-fy2024-25-vol1,111,,fy2024-25
+Special Revenue Funds (200),247560,247560,2023-24,actual-budgetary,budget-fy2025-26-vol1,111,requirements total printed on p.112; resources total on cited p.111 (totals equal per column),fy2025-26
+Student Body Activity Fund (201),10000,10000,2023-24,adopted,budget-fy2023-24-vol1,110,,fy2023-24
+Student Body Activity Fund (201),10000,10000,2023-24,approved,budget-fy2023-24-vol1,110,,fy2023-24
+Student Body Activity Fund (201),10000,10000,2023-24,proposed,budget-fy2023-24-vol1,110,,fy2023-24
+Student Investment Account Fund (251),36432,36432,2023-24,adopted,budget-fy2023-24-vol1,130,,fy2023-24
+Student Investment Account Fund (251),36432,36432,2023-24,approved,budget-fy2023-24-vol1,130,,fy2023-24
+Student Investment Account Fund (251),36432,36432,2023-24,proposed,budget-fy2023-24-vol1,130,,fy2023-24
+TOTAL ALL FUNDS,2171527,2171527,2023-24,proposed,budget-fy2023-24-vol1,86,,fy2023-24
+TOTAL ALL FUNDS,2179703,2179703,2023-24,actual-budgetary,budget-fy2026-27-vol1,91,,fy2026-27
+TOTAL ALL FUNDS,2182057,2182057,2023-24,adopted,budget-fy2023-24-vol1,86,,fy2023-24
+Total All Funds,2182057,2182057,2023-24,adopted,budget-fy2024-25-vol1,91,,fy2024-25
+TOTAL ALL FUNDS,2182057,2182057,2023-24,approved,budget-fy2023-24-vol1,86,,fy2023-24
+100 General Fund,855834,855834,2024-25,actual-budgetary,budget-fy2026-27-vol1,108,,fy2026-27
+200 Special Revenue Funds (type total),233078,233078,2024-25,actual-budgetary,budget-fy2026-27-vol1,122,,fy2026-27
+201 Student Body Activity Fund,11617,11617,2024-25,actual-budgetary,budget-fy2026-27-vol1,125,,fy2026-27
+202 Cafeteria Fund,25490,25490,2024-25,actual-budgetary,budget-fy2026-27-vol1,128,,fy2026-27
+205 Grants Fund,97573,97573,2024-25,actual-budgetary,budget-fy2026-27-vol1,133,,fy2026-27
+225 PERS Rate Stabilization Reserve Fund,22824,22824,2024-25,actual-budgetary,budget-fy2026-27-vol1,139,,fy2026-27
+251 Student Investment Account Fund,48606,48606,2024-25,actual-budgetary,budget-fy2026-27-vol1,142,,fy2026-27
+299 Dedicated Resource Fund,26968,26968,2024-25,actual-budgetary,budget-fy2026-27-vol1,151,,fy2026-27
+300 Debt Service Funds (type total),266053,266053,2024-25,actual-budgetary,budget-fy2026-27-vol1,157,,fy2026-27
+308 PERS UAL Debt Service Fund,88970,88970,2024-25,actual-budgetary,budget-fy2026-27-vol1,164,,fy2026-27
+320 Full Faith and Credit Debt Service Fund,619,619,2024-25,actual-budgetary,budget-fy2026-27-vol1,167,,fy2026-27
+350 GO Bonds Debt Service Fund,176465,176465,2024-25,actual-budgetary,budget-fy2026-27-vol1,170,,fy2026-27
+400 Capital Projects Funds (type total),603877,603877,2024-25,actual-budgetary,budget-fy2026-27-vol1,173,,fy2026-27
+404 Construction Excise Fund,1752,1752,2024-25,actual-budgetary,budget-fy2026-27-vol1,177,,fy2026-27
+420 Full Faith and Credit Fund,0,0,2024-25,actual-budgetary,budget-fy2026-27-vol1,181,,fy2026-27
+435 Energy Efficient Schools Fund,6750,6750,2024-25,actual-budgetary,budget-fy2026-27-vol1,183,,fy2026-27
+437 Harriet Tubman MS Relocation Fund,15083,15083,2024-25,actual-budgetary,budget-fy2026-27-vol1,186,,fy2026-27
+438 Facilities Capital Fund,17055,17055,2024-25,actual-budgetary,budget-fy2026-27-vol1,189,,fy2026-27
+445 Capital Asset Renewal Fund,1152,1152,2024-25,actual-budgetary,budget-fy2026-27-vol1,193,,fy2026-27
+450 GO Bonds Fund,562085,562085,2024-25,actual-budgetary,budget-fy2026-27-vol1,197,,fy2026-27
+600 Internal Service Funds (type total),15993,15993,2024-25,actual-budgetary,budget-fy2026-27-vol1,205,,fy2026-27
+601 Workers Compensation Fund,5123,5123,2024-25,actual-budgetary,budget-fy2026-27-vol1,209,,fy2026-27
+602 Property & Liability Insurance Fund,10369,10369,2024-25,actual-budgetary,budget-fy2026-27-vol1,213,,fy2026-27
+603 Unemployment Fund,501,501,2024-25,actual-budgetary,budget-fy2026-27-vol1,217,,fy2026-27
+All Funds total,2393878,2393878,2024-25,revised,budget-fy2025-26-vol1,89,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book); requirements total printed on p.90; resources total on cited p.89 (totals equal per column),fy2025-26
+Capital Projects Fund,1030394,1030394,2024-25,adopted,tscc-annual-report-2024-25-summaries,84,,tscc
+Capital Projects Fund,1030394,1030394,2024-25,approved,tscc-review-fy2025,18,,tscc
+Capital Projects Fund,1030394,1030394,2024-25,revised,tscc-review-fy2026,19,"2025-26 printed 643,773 here but 643,774 in Other Funds table p.16",tscc
+Capital Projects Funds (400),1030393,1030393,2024-25,adopted,budget-fy2024-25-vol1,155,"also Attachment A p304",fy2024-25
+Capital Projects Funds (400),1030393,1030393,2024-25,approved,budget-fy2024-25-vol1,155,,fy2024-25
+Capital Projects Funds (400),1030393,1030393,2024-25,revised,budget-fy2025-26-vol1,164,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book); requirements total printed on p.165; resources total on cited p.164 (totals equal per column),fy2025-26
+Capital Projects Funds (400),1030758,1030758,2024-25,proposed,budget-fy2024-25-vol1,155,,fy2024-25
+Debt Service Fund,88729,88729,2024-25,adopted,tscc-annual-report-2024-25-summaries,84,,tscc
+Debt Service Fund,88729,88729,2024-25,approved,tscc-review-fy2025,18,"2022-23 printed 84,467 (FY26 review prints 84,474)",tscc
+Debt Service Fund,88729,88729,2024-25,revised,tscc-review-fy2026,19,,tscc
+Debt Service Funds (300),259099,259099,2024-25,proposed,budget-fy2024-25-vol1,139,,fy2024-25
+Debt Service Funds (300),259264,259264,2024-25,adopted,budget-fy2024-25-vol1,139,"also Attachment A p303",fy2024-25
+Debt Service Funds (300),259264,259264,2024-25,approved,budget-fy2024-25-vol1,139,"approved added 165 contingency (Attachment A p303)",fy2024-25
+Debt Service Funds (300),259264,259264,2024-25,revised,budget-fy2025-26-vol1,148,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book); requirements total printed on p.149; resources total on cited p.148 (totals equal per column),fy2025-26
+General Fund (100),853111,853111,2024-25,proposed,budget-fy2024-25-vol1,99,,fy2024-25
+General Fund (100),854394,854394,2024-25,adopted,budget-fy2024-25-vol1,99,"also Attachment A p303",fy2024-25
+General Fund (100),854394,854394,2024-25,approved,budget-fy2024-25-vol1,99,,fy2024-25
+General Fund (100),854394,854394,2024-25,revised,budget-fy2025-26-vol1,98,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book); requirements total printed on p.99; resources total on cited p.98 (totals equal per column),fy2025-26
+General Fund,854394,854394,2024-25,revised,tscc-review-fy2026,19,,tscc
+General Fund,854395,854395,2024-25,adopted,tscc-annual-report-2024-25-summaries,84,,tscc
+General Fund,854395,854395,2024-25,approved,tscc-review-fy2025,18,,tscc
+GO Bonds Debt Service Fund,170535,170535,2024-25,adopted,tscc-annual-report-2024-25-summaries,84,,tscc
+GO Bonds Debt Service Fund,170535,170535,2024-25,approved,tscc-review-fy2025,18,,tscc
+GO Bonds Debt Service Fund,170535,170535,2024-25,revised,tscc-review-fy2026,19,,tscc
+GRAND TOTAL ALL FUNDS,2393879,2393879,2024-25,adopted,tscc-annual-report-2024-25-summaries,84,grand total row; PPS Budget Summary in FY24-25 TSCC Annual Report; 2024-25 column labeled Adopted,tscc
+GRAND TOTAL ALL FUNDS,2393879,2393879,2024-25,approved,tscc-review-fy2025,18,"grand total row; 2022-23 total 2,351,781 conflicts with 2,351,973 (FY26 review) and 2,351,969 (annual report/by-object)",tscc
+GRAND TOTAL ALL FUNDS,2393879,2393879,2024-25,revised,tscc-review-fy2026,19,"grand total row; p.6/p.16 print 2,035,118 for 2025-26 (rounding)",tscc
+Internal Service Fund,25509,25509,2024-25,adopted,tscc-annual-report-2024-25-summaries,84,,tscc
+Internal Service Fund,25509,25509,2024-25,approved,tscc-review-fy2025,18,FY2024-25 adds Property & Liability Insurance and Unemployment sub-funds within Internal Service Fund (p.4),tscc
+Internal Service Fund,25509,25509,2024-25,revised,tscc-review-fy2026,19,,tscc
+Internal Service Funds (600),21566,21566,2024-25,proposed,budget-fy2024-25-vol1,191,"jump vs prior years due to new sub-funds 602 Property & Liability Insurance and 603 Unemployment (p24)",fy2024-25
+Internal Service Funds (600),25509,25509,2024-25,adopted,budget-fy2024-25-vol1,191,"also Attachment A p304",fy2024-25
+Internal Service Funds (600),25509,25509,2024-25,approved,budget-fy2024-25-vol1,191,,fy2024-25
+Internal Service Funds (600),25509,25509,2024-25,revised,budget-fy2025-26-vol1,200,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book); requirements total printed on p.201; resources total on cited p.200 (totals equal per column),fy2025-26
+Special Revenue Fund,224317,224317,2024-25,adopted,tscc-annual-report-2024-25-summaries,84,"2022-23 actual printed 249,357 (third variant across docs)",tscc
+Special Revenue Fund,224317,224317,2024-25,approved,tscc-review-fy2025,18,"2022-23 actual printed 249,169 (CONFLICT: 249,354 FY26 review; 249,357 annual report)",tscc
+Special Revenue Fund,224318,224318,2024-25,revised,tscc-review-fy2026,19,"2022-23 actual printed 249,354 (CONFLICT: 249,169 in FY25 review p.18; 249,357 in annual report p.84); FY2025-26 adds Measure 98: High School Success sub-fund within Special Revenue Fund (p.6)",tscc
+Special Revenue Funds (200),224318,224318,2024-25,adopted,budget-fy2024-25-vol1,111,"also Attachment A p303",fy2024-25
+Special Revenue Funds (200),224318,224318,2024-25,approved,budget-fy2024-25-vol1,111,,fy2024-25
+Special Revenue Funds (200),224318,224318,2024-25,proposed,budget-fy2024-25-vol1,111,,fy2024-25
+Special Revenue Funds (200),224318,224318,2024-25,revised,budget-fy2025-26-vol1,111,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book); requirements total printed on p.112; resources total on cited p.111 (totals equal per column),fy2025-26
+TOTAL ALL FUNDS,1974836,1974836,2024-25,actual-budgetary,budget-fy2026-27-vol1,91,,fy2026-27
+Total All Funds,2388852,2388852,2024-25,proposed,budget-fy2024-25-vol1,91,,fy2024-25
+Total All Funds,2393878,2393878,2024-25,adopted,budget-fy2024-25-vol1,91,"matches Resolution No. 6920 total $2,393,878,000 (p301) and Attachment A p304",fy2024-25
+Total All Funds,2393878,2393878,2024-25,approved,budget-fy2024-25-vol1,91,,fy2024-25
+100 General Fund,868580,868580,2025-26,adopted,budget-fy2026-27-vol1,108,,fy2026-27
+200 Special Revenue Funds (type total),224805,224805,2025-26,adopted,budget-fy2026-27-vol1,122,,fy2026-27
+201 Student Body Activity Fund,10000,10000,2025-26,adopted,budget-fy2026-27-vol1,125,,fy2026-27
+202 Cafeteria Fund,28638,28638,2025-26,adopted,budget-fy2026-27-vol1,128,,fy2026-27
+205 Grants Fund,87793,87793,2025-26,adopted,budget-fy2026-27-vol1,133,,fy2026-27
+225 PERS Rate Stabilization Reserve Fund,23962,23962,2025-26,adopted,budget-fy2026-27-vol1,139,,fy2026-27
+251 Student Investment Account Fund,45163,45163,2025-26,adopted,budget-fy2026-27-vol1,142,,fy2026-27
+252 Measure 98 - High School Success Fund,13163,13163,2025-26,adopted,budget-fy2026-27-vol1,147,fund formally created in the 2025-26 budget process (M98/HSS split out of other funds); no pre-2025-26 columns printed (dashes),fy2026-27
+299 Dedicated Resource Fund,16086,16086,2025-26,adopted,budget-fy2026-27-vol1,151,,fy2026-27
+300 Debt Service Funds (type total),272690,272690,2025-26,adopted,budget-fy2026-27-vol1,157,,fy2026-27
+308 PERS UAL Debt Service Fund,93220,93220,2025-26,adopted,budget-fy2026-27-vol1,164,,fy2026-27
+320 Full Faith and Credit Debt Service Fund,619,619,2025-26,adopted,budget-fy2026-27-vol1,167,,fy2026-27
+350 GO Bonds Debt Service Fund,178851,178851,2025-26,adopted,budget-fy2026-27-vol1,170,,fy2026-27
+400 Capital Projects Funds (type total),643773,643773,2025-26,adopted,budget-fy2026-27-vol1,173,,fy2026-27
+404 Construction Excise Fund,1500,1500,2025-26,adopted,budget-fy2026-27-vol1,177,,fy2026-27
+420 Full Faith and Credit Fund,0,0,2025-26,adopted,budget-fy2026-27-vol1,181,,fy2026-27
+435 Energy Efficient Schools Fund,6750,6750,2025-26,adopted,budget-fy2026-27-vol1,183,,fy2026-27
+437 Harriet Tubman MS Relocation Fund,13500,13500,2025-26,adopted,budget-fy2026-27-vol1,186,,fy2026-27
+438 Facilities Capital Fund,32091,32091,2025-26,adopted,budget-fy2026-27-vol1,189,,fy2026-27
+445 Capital Asset Renewal Fund,1250,1250,2025-26,adopted,budget-fy2026-27-vol1,193,,fy2026-27
+450 GO Bonds Fund,588682,588682,2025-26,adopted,budget-fy2026-27-vol1,197,,fy2026-27
+600 Internal Service Funds (type total),25269,25269,2025-26,adopted,budget-fy2026-27-vol1,205,,fy2026-27
+601 Workers Compensation Fund,5112,5112,2025-26,adopted,budget-fy2026-27-vol1,209,,fy2026-27
+602 Property & Liability Insurance Fund,14560,14560,2025-26,adopted,budget-fy2026-27-vol1,213,,fy2026-27
+603 Unemployment Fund,5596,5596,2025-26,adopted,budget-fy2026-27-vol1,217,,fy2026-27
+All Funds total,,2035117,2025-26,approved,lb1-fy2025-26,1,"LB-1 Summary of Budget Requirements as Approved; native unit whole dollars, rounded to K; $2,035,116,552 printed",fy2025-26
+All Funds total,2035117,2035117,2025-26,adopted,budget-fy2025-26-vol1,89,requirements total printed on p.90; resources total on cited p.89 (totals equal per column),fy2025-26
+All Funds total,2035117,2035117,2025-26,approved,budget-fy2025-26-vol1,89,requirements total printed on p.90; resources total on cited p.89 (totals equal per column),fy2025-26
+All Funds total,2035117,2035117,2025-26,proposed,budget-fy2025-26-vol1,89,requirements total printed on p.90; resources total on cited p.89 (totals equal per column),fy2025-26
+Capital Project Fund (400),,643773,2025-26,approved,lb1-fy2025-26,1,"LB-1 Summary of Budget Requirements as Approved; native unit whole dollars, rounded to K; $643,773,338 printed",fy2025-26
+Capital Projects Fund,643773,643773,2025-26,approved,tscc-review-fy2026,19,"2025-26 printed 643,773 here but 643,774 in Other Funds table p.16",tscc
+Capital Projects Funds (400),643773,643773,2025-26,adopted,budget-fy2025-26-vol1,164,requirements total printed on p.165; resources total on cited p.164 (totals equal per column),fy2025-26
+Capital Projects Funds (400),643773,643773,2025-26,approved,budget-fy2025-26-vol1,164,requirements total printed on p.165; resources total on cited p.164 (totals equal per column),fy2025-26
+Capital Projects Funds (400),643773,643773,2025-26,proposed,budget-fy2025-26-vol1,164,requirements total printed on p.165; resources total on cited p.164 (totals equal per column),fy2025-26
+Debt Service Fund (300),,272690,2025-26,approved,lb1-fy2025-26,1,"LB-1 Summary of Budget Requirements as Approved; native unit whole dollars, rounded to K; $272,689,626 printed",fy2025-26
+Debt Service Fund,93839,93839,2025-26,approved,tscc-review-fy2026,19,,tscc
+Debt Service Funds (300),272690,272690,2025-26,adopted,budget-fy2025-26-vol1,148,requirements total printed on p.149; resources total on cited p.148 (totals equal per column),fy2025-26
+Debt Service Funds (300),272690,272690,2025-26,approved,budget-fy2025-26-vol1,148,requirements total printed on p.149; resources total on cited p.148 (totals equal per column),fy2025-26
+Debt Service Funds (300),272690,272690,2025-26,proposed,budget-fy2025-26-vol1,148,requirements total printed on p.149; resources total on cited p.148 (totals equal per column),fy2025-26
+General Fund (100),,868580,2025-26,approved,lb1-fy2025-26,1,"LB-1 Summary of Budget Requirements as Approved; native unit whole dollars, rounded to K; $868,580,271 printed",fy2025-26
+General Fund (100),868580,868580,2025-26,adopted,budget-fy2025-26-vol1,98,requirements total printed on p.99; resources total on cited p.98 (totals equal per column),fy2025-26
+General Fund (100),868580,868580,2025-26,approved,budget-fy2025-26-vol1,98,requirements total printed on p.99; resources total on cited p.98 (totals equal per column),fy2025-26
+General Fund (100),868580,868580,2025-26,proposed,budget-fy2025-26-vol1,98,requirements total printed on p.99; resources total on cited p.98 (totals equal per column),fy2025-26
+General Fund,868580,868580,2025-26,approved,tscc-review-fy2026,19,,tscc
+GO Bonds Debt Service Fund,178851,178851,2025-26,approved,tscc-review-fy2026,19,,tscc
+GRAND TOTAL ALL FUNDS,2035117,2035117,2025-26,approved,tscc-review-fy2026,19,"grand total row; p.6/p.16 print 2,035,118 for 2025-26 (rounding)",tscc
+Internal Service Fund (600),,25269,2025-26,approved,lb1-fy2025-26,1,"LB-1 Summary of Budget Requirements as Approved; native unit whole dollars, rounded to K; $25,268,660 printed",fy2025-26
+Internal Service Fund,25269,25269,2025-26,approved,tscc-review-fy2026,19,,tscc
+Internal Service Funds (600),25269,25269,2025-26,adopted,budget-fy2025-26-vol1,200,requirements total printed on p.201; resources total on cited p.200 (totals equal per column),fy2025-26
+Internal Service Funds (600),25269,25269,2025-26,approved,budget-fy2025-26-vol1,200,requirements total printed on p.201; resources total on cited p.200 (totals equal per column),fy2025-26
+Internal Service Funds (600),25269,25269,2025-26,proposed,budget-fy2025-26-vol1,200,requirements total printed on p.201; resources total on cited p.200 (totals equal per column),fy2025-26
+Special Revenue Fund (200),,224805,2025-26,approved,lb1-fy2025-26,1,"LB-1 Summary of Budget Requirements as Approved; native unit whole dollars, rounded to K; $224,804,657 printed",fy2025-26
+Special Revenue Fund,224805,224805,2025-26,approved,tscc-review-fy2026,19,"2022-23 actual printed 249,354 (CONFLICT: 249,169 in FY25 review p.18; 249,357 in annual report p.84); FY2025-26 adds Measure 98: High School Success sub-fund within Special Revenue Fund (p.6)",tscc
+Special Revenue Funds (200),224805,224805,2025-26,adopted,budget-fy2025-26-vol1,111,requirements total printed on p.112; resources total on cited p.111 (totals equal per column),fy2025-26
+Special Revenue Funds (200),224805,224805,2025-26,approved,budget-fy2025-26-vol1,111,requirements total printed on p.112; resources total on cited p.111 (totals equal per column),fy2025-26
+Special Revenue Funds (200),224805,224805,2025-26,proposed,budget-fy2025-26-vol1,111,requirements total printed on p.112; resources total on cited p.111 (totals equal per column),fy2025-26
+TOTAL ALL FUNDS,2035117,2035117,2025-26,adopted,budget-fy2026-27-vol1,91,,fy2026-27
+100 General Fund,862112,862112,2026-27,adopted,budget-fy2026-27-vol1,108,,fy2026-27
+200 Special Revenue Funds (type total),223936,223936,2026-27,adopted,budget-fy2026-27-vol1,122,,fy2026-27
+201 Student Body Activity Fund,10000,10000,2026-27,adopted,budget-fy2026-27-vol1,125,,fy2026-27
+202 Cafeteria Fund,26531,26531,2026-27,adopted,budget-fy2026-27-vol1,128,,fy2026-27
+205 Grants Fund,100112,100112,2026-27,adopted,budget-fy2026-27-vol1,133,,fy2026-27
+225 PERS Rate Stabilization Reserve Fund,394,394,2026-27,adopted,budget-fy2026-27-vol1,139,,fy2026-27
+251 Student Investment Account Fund,45464,45464,2026-27,adopted,budget-fy2026-27-vol1,142,,fy2026-27
+252 Measure 98 - High School Success Fund,13139,13139,2026-27,adopted,budget-fy2026-27-vol1,147,,fy2026-27
+299 Dedicated Resource Fund,28297,28297,2026-27,adopted,budget-fy2026-27-vol1,151,,fy2026-27
+300 Debt Service Funds (type total),278876,278876,2026-27,adopted,budget-fy2026-27-vol1,157,,fy2026-27
+308 PERS UAL Debt Service Fund,96858,96858,2026-27,adopted,budget-fy2026-27-vol1,164,,fy2026-27
+320 Full Faith and Credit Debt Service Fund,618,618,2026-27,adopted,budget-fy2026-27-vol1,167,,fy2026-27
+350 GO Bonds Debt Service Fund,181400,181400,2026-27,adopted,budget-fy2026-27-vol1,170,,fy2026-27
+400 Capital Projects Funds (type total),1382508,1382508,2026-27,adopted,budget-fy2026-27-vol1,173,,fy2026-27
+404 Construction Excise Fund,1500,1500,2026-27,adopted,budget-fy2026-27-vol1,177,,fy2026-27
+420 Full Faith and Credit Fund,0,0,2026-27,adopted,budget-fy2026-27-vol1,181,,fy2026-27
+435 Energy Efficient Schools Fund,7490,7490,2026-27,adopted,budget-fy2026-27-vol1,183,,fy2026-27
+437 Harriet Tubman MS Relocation Fund,141500,141500,2026-27,adopted,budget-fy2026-27-vol1,186,,fy2026-27
+438 Facilities Capital Fund,1258,1258,2026-27,adopted,budget-fy2026-27-vol1,189,,fy2026-27
+445 Capital Asset Renewal Fund,300,300,2026-27,adopted,budget-fy2026-27-vol1,193,,fy2026-27
+450 GO Bonds Fund,1230460,1230460,2026-27,adopted,budget-fy2026-27-vol1,197,,fy2026-27
+600 Internal Service Funds (type total),21159,21159,2026-27,adopted,budget-fy2026-27-vol1,205,,fy2026-27
+601 Workers Compensation Fund,3662,3662,2026-27,adopted,budget-fy2026-27-vol1,209,,fy2026-27
+602 Property & Liability Insurance Fund,14700,14700,2026-27,adopted,budget-fy2026-27-vol1,213,,fy2026-27
+603 Unemployment Fund,2798,2798,2026-27,adopted,budget-fy2026-27-vol1,217,,fy2026-27
+TOTAL ALL FUNDS,2768591,2768591,2026-27,adopted,budget-fy2026-27-vol1,91,,fy2026-27

@@ -1,0 +1,42 @@
+bond,project,original_budget_k,current_estimate_k,spent_k,as_of,doc_id,page,notes
+2012,Franklin HS Modernization,81585.655,113022.229,112872.628,2021-03-11,budget-fy2021-22-vol1,262,"native unit whole dollars, divided by 1000; spent_k = Actuals Approved column; current_estimate_k = Current Budget (3/11/2021) column"
+2012,Grant HS Modernization,88336.829,159460.317,158837.342,2021-03-11,budget-fy2021-22-vol1,262,"Budget FY22 2,921,689"
+2012,Roosevelt HS Modernization,68418.695,108503.379,102330.987,2021-03-11,budget-fy2021-22-vol1,262,"Budget FY22 1,835,921"
+2012,Faubion Replacement,27035.537,50119.665,50028.171,2021-03-11,budget-fy2021-22-vol1,262,
+2012,Improvement Projects,67741.921,85863.137,85180.218,2021-03-11,budget-fy2021-22-vol1,262,
+2012,Swing Sites & Transportation,9550.0,5234.879,5234.879,2021-03-11,budget-fy2021-22-vol1,262,
+2012,Debt Repayment,45000.0,45000.0,45000.0,2021-03-11,budget-fy2021-22-vol1,262,
+2012,2012 Bond Program (program admin),93181.361,33260.855,30868.453,2021-03-11,budget-fy2021-22-vol1,262,"Budget FY22 137,571; master planning and ed-spec lines omitted (each under 400k)"
+2012,2012 Bond TOTAL,482000.0,601819.444,591707.652,2021-03-11,budget-fy2021-22-vol1,262,"current incl. Additional Funding Resource If/When Needed brings current to 611,819,444"
+2017,Benson HS Modernization,202000.0,67322.571,23233.541,2021-03-11,budget-fy2021-22-vol1,262,"Budget FY22 102,798,671; balance of Benson completion funded under 2020 bond"
+2017,Kellogg Replacement,45000.0,59846.15,53064.349,2021-03-11,budget-fy2021-22-vol1,262,"Budget FY22 604,290"
+2017,Lincoln HS Replacement,187000.0,242500.0,65079.843,2021-03-11,budget-fy2021-22-vol1,262,"Budget FY22 88,065,179"
+2017,Madison HS Modernization,146000.0,202540.25,150668.387,2021-03-11,budget-fy2021-22-vol1,262,"Budget FY22 19,577,186; school renamed McDaniel HS (p.259)"
+2017,Modernization subtotal (Benson/Kellogg/Lincoln/Madison),580000.0,572208.971,292046.121,2021-03-11,budget-fy2021-22-vol1,262,
+2017,2017 Bond Program (program admin),210000.0,180783.633,29387.562,2021-03-11,budget-fy2021-22-vol1,262,"Budget FY22 9,611,857; subtotal with pre-design/pre-bond lines: current 182,984,400, actuals 31,475,556"
+2017,Environmental Health & Safety - Asbestos,,5030.43,4330.927,2021-03-11,budget-fy2021-22-vol1,262,EH&S lines carry no original budget
+2017,Environmental Health & Safety - Fire Alarm / Sprinklers,,12994.293,12143.409,2021-03-11,budget-fy2021-22-vol1,262,
+2017,Environmental Health & Safety - Lead Based Paint,,11963.004,2855.913,2021-03-11,budget-fy2021-22-vol1,262,
+2017,Environmental Health & Safety - Radon,,194.2,181.767,2021-03-11,budget-fy2021-22-vol1,262,
+2017,Environmental Health & Safety - Roofs,,79548.887,73399.104,2021-03-11,budget-fy2021-22-vol1,262,"Budget FY22 18,281,267"
+2017,Environmental Health & Safety - Security,,9005.952,7022.054,2021-03-11,budget-fy2021-22-vol1,262,
+2017,Environmental Health & Safety - ADA,,12.855,12.855,2021-03-11,budget-fy2021-22-vol1,262,
+2020,2017 Bond Balance,152000.0,152000.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,2020 bond funding to complete 2017 bond scope
+2020,MPG Building,64000.0,64000.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,"Budget FY22 38,600,000; Multiple Pathways to Graduation building on Benson campus"
+2020,Center for Black Student Excellence,60000.0,60000.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,"Budget FY22 6,352,501"
+2020,Jefferson High School Modernization,311000.0,311000.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,"Budget FY22 2,730,001"
+2020,Roosevelt Phase V,2000.0,2000.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,
+2020,Cleveland High School Modernization - Planning & Design,20000.0,20000.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,
+2020,Wilson High School Modernization - Planning & Design,20000.0,20000.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,school renamed Ida B Wells HS (p.260)
+2020,Capacity,10000.0,10000.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,
+2020,Accessibility - ADA,33800.0,33800.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,"printed 'Accessibitly' (sic); Budget FY22 2,200,380"
+2020,Special Education Improvements,13400.0,13400.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,"Budget FY22 872,340"
+2020,Roofing,65700.0,65700.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,"Budget FY22 3,486,768"
+2020,Mechanical,75000.0,75000.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,"Budget FY22 1,986,768"
+2020,Security,25900.0,25900.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,"Budget FY22 1,604,505"
+2020,Seismic,17200.0,17200.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,"Budget FY22 5,018,583"
+2020,2020 Bond Program (program admin),156356.0,156362.168,4281.333,2021-03-11,budget-fy2021-22-vol1,263,"Budget FY22 9,824,691"
+2020,2020 Technology subtotal,128200.0,128200.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,"Budget FY22 58,804,376; components: Device Replacement 31,006,443; Classroom Modernization 24,780,325; Infrastructure and Security 38,041,500; ERP Replacement Planning 11,107,080; Technology Program Administration 23,264,652"
+2020,2020 Curriculum subtotal,53444.0,53444.0,0.0,2021-03-11,budget-fy2021-22-vol1,263,"Budget FY22 16,604,000; nine subject-area lines printed"
+2020,2020 Bond TOTAL,1208000.0,1208006.168,4281.333,2021-03-11,budget-fy2021-22-vol1,263,actuals approved shown only on program-admin line
+all,Total Bond (2012+2017+2020),2480000.0,2705288.684,1018949.592,2021-03-11,budget-fy2021-22-vol1,263,"Budget FY22 404,720,553"

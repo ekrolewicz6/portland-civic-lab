@@ -1,0 +1,61 @@
+object_code,label,amount_k,fy,basis,doc_id,page,notes
+100+200,Salaries and Benefits,376576.888,2013-14,actual-budgetary,budget-fy2016-17-book,80,native unit whole dollars; combined category as printed; see rows 100/200 for the split
+100+200,Salaries and Benefits,408398.173,2014-15,actual-budgetary,budget-fy2016-17-book,80,combined category as printed; see rows 100/200 for the split
+100+200,Salaries and Benefits,459654.387,2015-16,revised,budget-fy2016-17-book,80,combined category as printed; see rows 100/200 for the split
+100+200,Salaries and Benefits,476850.558,2016-17,proposed,budget-fy2016-17-book,80,combined category as printed; see rows 100/200 for the split
+100+200,Salaries and Benefits,477126.529,2016-17,approved,budget-fy2016-17-book,80,combined category as printed; see rows 100/200 for the split
+100+200,Salaries and Benefits,478277.736,2016-17,adopted,budget-fy2016-17-book,80,combined category as printed; see rows 100/200 for the split
+300+400,Materials and Services,72308.4,2013-14,actual-budgetary,budget-fy2016-17-book,80,combined purchased services + supplies category as printed
+300+400,Materials and Services,79196.52,2014-15,actual-budgetary,budget-fy2016-17-book,80,combined purchased services + supplies category as printed
+300+400,Materials and Services,86590.264,2015-16,revised,budget-fy2016-17-book,80,combined purchased services + supplies category as printed
+300+400,Materials and Services,88036.252,2016-17,proposed,budget-fy2016-17-book,80,combined purchased services + supplies category as printed
+300+400,Materials and Services,88774.869,2016-17,approved,budget-fy2016-17-book,80,combined purchased services + supplies category as printed
+300+400,Materials and Services,88855.781,2016-17,adopted,budget-fy2016-17-book,80,combined purchased services + supplies category as printed
+500,Capital Outlay,3297.504,2013-14,actual-budgetary,budget-fy2016-17-book,80,
+500,Capital Outlay,5558.214,2014-15,actual-budgetary,budget-fy2016-17-book,80,
+500,Capital Outlay,1713.106,2015-16,revised,budget-fy2016-17-book,80,
+500,Capital Outlay,1880.702,2016-17,proposed,budget-fy2016-17-book,80,
+500,Capital Outlay,1756.991,2016-17,approved,budget-fy2016-17-book,80,
+500,Capital Outlay,1477.306,2016-17,adopted,budget-fy2016-17-book,80,
+600,Debt Service & Other,3775.967,2013-14,actual-budgetary,budget-fy2016-17-book,80,"other objects (fiscal charges, dues, insurance, etc.); GF has no bonded debt service"
+600,Debt Service & Other,3225.187,2014-15,actual-budgetary,budget-fy2016-17-book,80,"other objects (fiscal charges, dues, insurance, etc.); GF has no bonded debt service"
+600,Debt Service & Other,3593.637,2015-16,revised,budget-fy2016-17-book,80,"other objects (fiscal charges, dues, insurance, etc.); GF has no bonded debt service"
+600,Debt Service & Other,3483.675,2016-17,proposed,budget-fy2016-17-book,80,"other objects (fiscal charges, dues, insurance, etc.); GF has no bonded debt service"
+600,Debt Service & Other,3330.298,2016-17,approved,budget-fy2016-17-book,80,"other objects (fiscal charges, dues, insurance, etc.); GF has no bonded debt service"
+600,Debt Service & Other,3334.935,2016-17,adopted,budget-fy2016-17-book,80,"other objects (fiscal charges, dues, insurance, etc.); GF has no bonded debt service"
+700,Fund Transfers,9013.122,2013-14,actual-budgetary,budget-fy2016-17-book,80,
+700,Fund Transfers,14409.096,2014-15,actual-budgetary,budget-fy2016-17-book,80,
+700,Fund Transfers,7407.693,2015-16,revised,budget-fy2016-17-book,80,
+700,Fund Transfers,6023.205,2016-17,proposed,budget-fy2016-17-book,80,
+700,Fund Transfers,5420.705,2016-17,approved,budget-fy2016-17-book,80,
+700,Fund Transfers,5420.705,2016-17,adopted,budget-fy2016-17-book,80,
+,Contingency,0,2013-14,actual-budgetary,budget-fy2016-17-book,80,actual-year columns printed as dash
+,Contingency,0,2014-15,actual-budgetary,budget-fy2016-17-book,80,actual-year columns printed as dash
+,Contingency,20199.28,2015-16,revised,budget-fy2016-17-book,80,actual-year columns printed as dash
+,Contingency,15613.717,2016-17,proposed,budget-fy2016-17-book,80,actual-year columns printed as dash
+,Contingency,15633.717,2016-17,approved,budget-fy2016-17-book,80,actual-year columns printed as dash
+,Contingency,15233.717,2016-17,adopted,budget-fy2016-17-book,80,actual-year columns printed as dash
+,Ending Fund Balance,51673.785,2013-14,actual-budgetary,budget-fy2016-17-book,80,budget-year columns printed as dash
+,Ending Fund Balance,34441.54,2014-15,actual-budgetary,budget-fy2016-17-book,80,budget-year columns printed as dash
+,Ending Fund Balance,0,2015-16,revised,budget-fy2016-17-book,80,budget-year columns printed as dash
+,Ending Fund Balance,0,2016-17,proposed,budget-fy2016-17-book,80,budget-year columns printed as dash
+,Ending Fund Balance,0,2016-17,approved,budget-fy2016-17-book,80,budget-year columns printed as dash
+,Ending Fund Balance,0,2016-17,adopted,budget-fy2016-17-book,80,budget-year columns printed as dash
+,Total Requirements,516645.666,2013-14,actual-budgetary,budget-fy2016-17-book,80,"p80 prints 2013/14 total 516,645,666; account detail p98 prints 516,645,665 (dollar rounding)"
+,Total Requirements,545228.731,2014-15,actual-budgetary,budget-fy2016-17-book,80,"p80 prints 2013/14 total 516,645,666; account detail p98 prints 516,645,665 (dollar rounding)"
+,Total Requirements,579158.367,2015-16,revised,budget-fy2016-17-book,80,"p80 prints 2013/14 total 516,645,666; account detail p98 prints 516,645,665 (dollar rounding)"
+,Total Requirements,591888.109,2016-17,proposed,budget-fy2016-17-book,80,"p80 prints 2013/14 total 516,645,666; account detail p98 prints 516,645,665 (dollar rounding)"
+,Total Requirements,592043.109,2016-17,approved,budget-fy2016-17-book,80,"p80 prints 2013/14 total 516,645,666; account detail p98 prints 516,645,665 (dollar rounding)"
+,Total Requirements,592600.18,2016-17,adopted,budget-fy2016-17-book,80,"p80 prints 2013/14 total 516,645,666; account detail p98 prints 516,645,665 (dollar rounding)"
+100,Salaries,246921.093,2013-14,actual-budgetary,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Salaries; overlaps row 100+200 - do not double count
+100,Salaries,271479.428,2014-15,actual-budgetary,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Salaries; overlaps row 100+200 - do not double count
+100,Salaries,307086.945,2015-16,revised,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Salaries; overlaps row 100+200 - do not double count
+100,Salaries,317171.124,2016-17,proposed,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Salaries; overlaps row 100+200 - do not double count
+100,Salaries,317050.746,2016-17,approved,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Salaries; overlaps row 100+200 - do not double count
+100,Salaries,318504.344,2016-17,adopted,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Salaries; overlaps row 100+200 - do not double count
+200,Employee Benefits,129655.795,2013-14,actual-budgetary,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Employee Benefits; overlaps row 100+200 - do not double count
+200,Employee Benefits,136918.746,2014-15,actual-budgetary,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Employee Benefits; overlaps row 100+200 - do not double count
+200,Employee Benefits,152567.442,2015-16,revised,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Employee Benefits; overlaps row 100+200 - do not double count
+200,Employee Benefits,159679.434,2016-17,proposed,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Employee Benefits; overlaps row 100+200 - do not double count
+200,Employee Benefits,160075.783,2016-17,approved,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Employee Benefits; overlaps row 100+200 - do not double count
+200,Employee Benefits,159773.392,2016-17,adopted,budget-fy2016-17-book,95,Fund 101 detail Subtotal - Employee Benefits; overlaps row 100+200 - do not double count

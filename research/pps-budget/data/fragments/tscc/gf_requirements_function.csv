@@ -1,0 +1,129 @@
+function_code,label,amount_k,fy,basis,doc_id,page,notes
+1000,Instruction,376786,2022-23,actual-budgetary,tscc-review-fy2026,19,"DETAIL OF GENERAL FUND - REQUIREMENTS (Budget Summary); native whole dollars; function codes assigned per Oregon chart of accounts (source prints labels only); 2023-24 actual printed 411,710 (budget book prints 411,711)"
+1000,Instruction,411710,2023-24,actual-budgetary,tscc-review-fy2026,19,"2023-24 actual printed 411,710 (budget book prints 411,711)"
+1000,Instruction,439084,2024-25,revised,tscc-review-fy2026,19,"2023-24 actual printed 411,710 (budget book prints 411,711)"
+1000,Instruction,458417,2025-26,approved,tscc-review-fy2026,19,"2023-24 actual printed 411,710 (budget book prints 411,711)"
+2000,Support Services,343359,2022-23,actual-budgetary,tscc-review-fy2026,19,
+2000,Support Services,370577,2023-24,actual-budgetary,tscc-review-fy2026,19,
+2000,Support Services,354961,2024-25,revised,tscc-review-fy2026,19,
+2000,Support Services,347191,2025-26,approved,tscc-review-fy2026,19,
+3000,Enterprises and Community Services,3114,2022-23,actual-budgetary,tscc-review-fy2026,19,
+3000,Enterprises and Community Services,4123,2023-24,actual-budgetary,tscc-review-fy2026,19,
+3000,Enterprises and Community Services,3257,2024-25,revised,tscc-review-fy2026,19,
+3000,Enterprises and Community Services,4617,2025-26,approved,tscc-review-fy2026,19,
+5100/5400,Debt Service,0,2022-23,actual-budgetary,tscc-review-fy2026,19,GF debt service = bus leases under GASB 87
+5100/5400,Debt Service,0,2023-24,actual-budgetary,tscc-review-fy2026,19,GF debt service = bus leases under GASB 87
+5100/5400,Debt Service,339,2024-25,revised,tscc-review-fy2026,19,GF debt service = bus leases under GASB 87
+5100/5400,Debt Service,0,2025-26,approved,tscc-review-fy2026,19,GF debt service = bus leases under GASB 87
+5200,Transfers Out,1282,2022-23,actual-budgetary,tscc-review-fy2026,19,
+5200,Transfers Out,887,2023-24,actual-budgetary,tscc-review-fy2026,19,
+5200,Transfers Out,15897,2024-25,revised,tscc-review-fy2026,19,
+5200,Transfers Out,17176,2025-26,approved,tscc-review-fy2026,19,
+6000,Contingencies,0,2022-23,actual-budgetary,tscc-review-fy2026,19,
+6000,Contingencies,0,2023-24,actual-budgetary,tscc-review-fy2026,19,
+6000,Contingencies,40856,2024-25,revised,tscc-review-fy2026,19,
+6000,Contingencies,41179,2025-26,approved,tscc-review-fy2026,19,
+7000,Ending Fund Balance,105497,2022-23,actual-budgetary,tscc-review-fy2026,19,
+7000,Ending Fund Balance,86078,2023-24,actual-budgetary,tscc-review-fy2026,19,
+7000,Ending Fund Balance,0,2024-25,revised,tscc-review-fy2026,19,
+7000,Ending Fund Balance,0,2025-26,approved,tscc-review-fy2026,19,
+TOTAL,TOTAL FUND REQUIREMENTS,830038,2022-23,actual-budgetary,tscc-review-fy2026,19,
+TOTAL,TOTAL FUND REQUIREMENTS,873375,2023-24,actual-budgetary,tscc-review-fy2026,19,
+TOTAL,TOTAL FUND REQUIREMENTS,854394,2024-25,revised,tscc-review-fy2026,19,
+TOTAL,TOTAL FUND REQUIREMENTS,868580,2025-26,approved,tscc-review-fy2026,19,
+1000,Instruction,373758,2021-22,actual-budgetary,tscc-review-fy2025,18,"DETAIL OF GENERAL FUND - REQUIREMENTS (Budget Summary); native whole dollars; function codes assigned per Oregon chart of accounts (source prints labels only); 2024-25 Approved 437,284 is PRE-amendment; adopted figure 439,084 (annual report p.85) reflects last-minute $1.8M move from contingency to instruction (p.1)"
+1000,Instruction,376786,2022-23,actual-budgetary,tscc-review-fy2025,18,"2024-25 Approved 437,284 is PRE-amendment; adopted figure 439,084 (annual report p.85) reflects last-minute $1.8M move from contingency to instruction (p.1)"
+1000,Instruction,416837,2023-24,revised,tscc-review-fy2025,18,"2024-25 Approved 437,284 is PRE-amendment; adopted figure 439,084 (annual report p.85) reflects last-minute $1.8M move from contingency to instruction (p.1)"
+1000,Instruction,437284,2024-25,approved,tscc-review-fy2025,18,"2024-25 Approved 437,284 is PRE-amendment; adopted figure 439,084 (annual report p.85) reflects last-minute $1.8M move from contingency to instruction (p.1)"
+2000,Support Services,312766,2021-22,actual-budgetary,tscc-review-fy2025,18,
+2000,Support Services,343359,2022-23,actual-budgetary,tscc-review-fy2025,18,
+2000,Support Services,367876,2023-24,revised,tscc-review-fy2025,18,
+2000,Support Services,354962,2024-25,approved,tscc-review-fy2025,18,
+3000,Enterprises and Community Services,893,2021-22,actual-budgetary,tscc-review-fy2025,18,
+3000,Enterprises and Community Services,3114,2022-23,actual-budgetary,tscc-review-fy2025,18,
+3000,Enterprises and Community Services,4194,2023-24,revised,tscc-review-fy2025,18,
+3000,Enterprises and Community Services,3257,2024-25,approved,tscc-review-fy2025,18,
+5100/5400,Debt Service,400833,2021-22,actual-budgetary,tscc-review-fy2025,18,2021-22 = PERS UAL/POB payoff year
+5100/5400,Debt Service,0,2022-23,actual-budgetary,tscc-review-fy2025,18,2021-22 = PERS UAL/POB payoff year
+5100/5400,Debt Service,728,2023-24,revised,tscc-review-fy2025,18,2021-22 = PERS UAL/POB payoff year
+5100/5400,Debt Service,339,2024-25,approved,tscc-review-fy2025,18,2021-22 = PERS UAL/POB payoff year
+5200,Transfers Out,1207,2021-22,actual-budgetary,tscc-review-fy2025,18,
+5200,Transfers Out,1282,2022-23,actual-budgetary,tscc-review-fy2025,18,
+5200,Transfers Out,1075,2023-24,revised,tscc-review-fy2025,18,
+5200,Transfers Out,15897,2024-25,approved,tscc-review-fy2025,18,
+6000,Contingencies,0,2021-22,actual-budgetary,tscc-review-fy2025,18,"2024-25 Approved 42,656 PRE-amendment; adopted 40,856"
+6000,Contingencies,0,2022-23,actual-budgetary,tscc-review-fy2025,18,"2024-25 Approved 42,656 PRE-amendment; adopted 40,856"
+6000,Contingencies,43063,2023-24,revised,tscc-review-fy2025,18,"2024-25 Approved 42,656 PRE-amendment; adopted 40,856"
+6000,Contingencies,42656,2024-25,approved,tscc-review-fy2025,18,"2024-25 Approved 42,656 PRE-amendment; adopted 40,856"
+7000,Ending Fund Balance,98804,2021-22,actual-budgetary,tscc-review-fy2025,18,
+7000,Ending Fund Balance,105497,2022-23,actual-budgetary,tscc-review-fy2025,18,
+7000,Ending Fund Balance,0,2023-24,revised,tscc-review-fy2025,18,
+7000,Ending Fund Balance,0,2024-25,approved,tscc-review-fy2025,18,
+TOTAL,TOTAL FUND REQUIREMENTS,1188261,2021-22,actual-budgetary,tscc-review-fy2025,18,
+TOTAL,TOTAL FUND REQUIREMENTS,830038,2022-23,actual-budgetary,tscc-review-fy2025,18,
+TOTAL,TOTAL FUND REQUIREMENTS,833773,2023-24,revised,tscc-review-fy2025,18,
+TOTAL,TOTAL FUND REQUIREMENTS,854395,2024-25,approved,tscc-review-fy2025,18,
+1000,Instruction,363865,2020-21,actual-budgetary,tscc-review-fy2024,19,DETAIL OF GENERAL FUND - REQUIREMENTS (Budget Summary); native whole dollars; function codes assigned per Oregon chart of accounts (source prints labels only)
+1000,Instruction,373758,2021-22,actual-budgetary,tscc-review-fy2024,19,
+1000,Instruction,406337,2022-23,revised,tscc-review-fy2024,19,
+1000,Instruction,416837,2023-24,approved,tscc-review-fy2024,19,
+2000,Support Services,285720,2020-21,actual-budgetary,tscc-review-fy2024,19,
+2000,Support Services,312766,2021-22,actual-budgetary,tscc-review-fy2024,19,
+2000,Support Services,341772,2022-23,revised,tscc-review-fy2024,19,
+2000,Support Services,367876,2023-24,approved,tscc-review-fy2024,19,
+3000,Enterprises and Community Services,5115,2020-21,actual-budgetary,tscc-review-fy2024,19,
+3000,Enterprises and Community Services,893,2021-22,actual-budgetary,tscc-review-fy2024,19,
+3000,Enterprises and Community Services,3100,2022-23,revised,tscc-review-fy2024,19,
+3000,Enterprises and Community Services,4194,2023-24,approved,tscc-review-fy2024,19,
+5100/5400,Debt Service,0,2020-21,actual-budgetary,tscc-review-fy2024,19,
+5100/5400,Debt Service,400833,2021-22,actual-budgetary,tscc-review-fy2024,19,
+5100/5400,Debt Service,783,2022-23,revised,tscc-review-fy2024,19,
+5100/5400,Debt Service,728,2023-24,approved,tscc-review-fy2024,19,
+5200,Transfers Out,1198,2020-21,actual-budgetary,tscc-review-fy2024,19,
+5200,Transfers Out,1207,2021-22,actual-budgetary,tscc-review-fy2024,19,
+5200,Transfers Out,1302,2022-23,revised,tscc-review-fy2024,19,
+5200,Transfers Out,1075,2023-24,approved,tscc-review-fy2024,19,
+6000,Contingencies,0,2020-21,actual-budgetary,tscc-review-fy2024,19,
+6000,Contingencies,0,2021-22,actual-budgetary,tscc-review-fy2024,19,
+6000,Contingencies,50768,2022-23,revised,tscc-review-fy2024,19,
+6000,Contingencies,43063,2023-24,approved,tscc-review-fy2024,19,
+7000,Ending Fund Balance,88691,2020-21,actual-budgetary,tscc-review-fy2024,19,
+7000,Ending Fund Balance,98804,2021-22,actual-budgetary,tscc-review-fy2024,19,
+7000,Ending Fund Balance,0,2022-23,revised,tscc-review-fy2024,19,
+7000,Ending Fund Balance,0,2023-24,approved,tscc-review-fy2024,19,
+TOTAL,TOTAL FUND REQUIREMENTS,744589,2020-21,actual-budgetary,tscc-review-fy2024,19,
+TOTAL,TOTAL FUND REQUIREMENTS,1188261,2021-22,actual-budgetary,tscc-review-fy2024,19,
+TOTAL,TOTAL FUND REQUIREMENTS,804062,2022-23,revised,tscc-review-fy2024,19,
+TOTAL,TOTAL FUND REQUIREMENTS,833773,2023-24,approved,tscc-review-fy2024,19,
+1000,Instruction,373758,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,PPS Budget Summary (annual report); DETAIL OF GENERAL FUND - REQUIREMENTS (Budget Summary); native whole dollars; function codes assigned per Oregon chart of accounts (source prints labels only); 2024-25 Adopted reflects $1.8M amendment from contingency to instruction
+1000,Instruction,376786,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,2024-25 Adopted reflects $1.8M amendment from contingency to instruction
+1000,Instruction,416837,2023-24,revised,tscc-annual-report-2024-25-summaries,85,2024-25 Adopted reflects $1.8M amendment from contingency to instruction
+1000,Instruction,439084,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,2024-25 Adopted reflects $1.8M amendment from contingency to instruction
+2000,Support Services,312766,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+2000,Support Services,343359,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+2000,Support Services,367876,2023-24,revised,tscc-annual-report-2024-25-summaries,85,
+2000,Support Services,354962,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,
+3000,Enterprises and Community Services,893,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+3000,Enterprises and Community Services,3114,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+3000,Enterprises and Community Services,4194,2023-24,revised,tscc-annual-report-2024-25-summaries,85,
+3000,Enterprises and Community Services,3257,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,
+5100/5400,Debt Service,400833,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+5100/5400,Debt Service,0,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+5100/5400,Debt Service,728,2023-24,revised,tscc-annual-report-2024-25-summaries,85,
+5100/5400,Debt Service,339,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,
+5200,Transfers Out,1207,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+5200,Transfers Out,1282,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+5200,Transfers Out,1075,2023-24,revised,tscc-annual-report-2024-25-summaries,85,
+5200,Transfers Out,15897,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,
+6000,Contingencies,0,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+6000,Contingencies,0,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+6000,Contingencies,43063,2023-24,revised,tscc-annual-report-2024-25-summaries,85,
+6000,Contingencies,40856,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,
+7000,Ending Fund Balance,98804,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+7000,Ending Fund Balance,105497,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+7000,Ending Fund Balance,0,2023-24,revised,tscc-annual-report-2024-25-summaries,85,
+7000,Ending Fund Balance,0,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,
+TOTAL,TOTAL FUND REQUIREMENTS,1188261,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+TOTAL,TOTAL FUND REQUIREMENTS,830038,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,
+TOTAL,TOTAL FUND REQUIREMENTS,833773,2023-24,revised,tscc-annual-report-2024-25-summaries,85,
+TOTAL,TOTAL FUND REQUIREMENTS,854395,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,

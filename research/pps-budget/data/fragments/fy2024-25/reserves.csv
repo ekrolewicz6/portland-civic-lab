@@ -1,0 +1,6 @@
+contingency_k,ending_fund_balance_k,fy,basis,doc_id,page,notes
+48414,26313,2023-24,adopted,budget-fy2024-25-vol1,92,"ALL FUNDS scope; 6000 Contingencies and 7000 Unappropriated Fund Balance rows; 2023-24 columns are from the 2023-24 Adopted Budget (p78)"
+44156,22423,2024-25,proposed,budget-fy2024-25-vol1,92,"ALL FUNDS scope"
+42520,22423,2024-25,adopted,budget-fy2024-25-vol1,92,"ALL FUNDS scope; by-fund contingency components per Attachment A (p303-304): GF 40856 + Debt Service 165 + Internal Service 1500 = 42521 vs printed 42520 (rounding); UEFB 22423 is entirely in Special Revenue Funds"
+40856,0,2024-25,adopted,budget-fy2024-25-vol1,100,"GENERAL FUND scope; budgeted UEFB printed as dash; narrative (p98) states ending GF balance would be 40.9M (meeting 5 percent Board minimum) if contingency remains unspent"
+43063,0,2023-24,adopted,budget-fy2024-25-vol1,100,"GENERAL FUND scope; from 2023-24 Adopted Budget columns"

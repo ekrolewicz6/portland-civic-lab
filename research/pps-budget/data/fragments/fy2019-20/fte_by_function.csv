@@ -1,0 +1,23 @@
+group,fte,fy,basis,doc_id,page,notes
+1000 - Instruction (all funds),3439.77,2019-20,adopted,budget-fy2019-20-book,74,"Budget FTE column, Summary of Requirements by Major Program - All Funds"
+2000 - Support Services (all funds),2222.51,2019-20,adopted,budget-fy2019-20-book,74,
+3000 - Enterprise and Community Svcs (all funds),241.05,2019-20,adopted,budget-fy2019-20-book,74,
+4000 - Facilities Acquisition and Construction (all funds),27.00,2019-20,adopted,budget-fy2019-20-book,74,
+Total (all funds),5930.33,2019-20,adopted,budget-fy2019-20-book,74,
+1000 - Instruction (General Fund),3044.91,2019-20,adopted,budget-fy2019-20-book,83,"Budget FTE column, GF requirements by major program"
+2000 - Support Services (General Fund),2043.46,2019-20,adopted,budget-fy2019-20-book,83,
+3000 - Enterprise and Community Svcs (General Fund),13.38,2019-20,adopted,budget-fy2019-20-book,83,
+Total (General Fund),5101.75,2019-20,adopted,budget-fy2019-20-book,83,
+Fund total - Special Revenue Funds (200),797.30,2019-20,adopted,budget-fy2019-20-book,95,"fund-level FTE, not a function"
+Fund total - Capital Projects Funds (400),29.00,2019-20,adopted,budget-fy2019-20-book,135,fund-level FTE (27.00 in function 4000 + 2.00 in 2000 per p74)
+Fund total - Internal Service Funds (600),2.28,2019-20,adopted,budget-fy2019-20-book,163,"fund-level FTE, not a function"
+Employee type - Administrators (all funds),301.21,2019-20,adopted,budget-fy2019-20-book,183,"2019-20 Budgeted Positions, by employee type not function"
+Employee type - Classified Represented (all funds),1838.55,2019-20,adopted,budget-fy2019-20-book,183,
+Employee type - Licensed Staff (all funds),3397.19,2019-20,adopted,budget-fy2019-20-book,183,
+Employee type - Non-Represented Staff (all funds),393.38,2019-20,adopted,budget-fy2019-20-book,183,
+Grand Total all staff (all funds),5930.33,2019-20,adopted,budget-fy2019-20-book,183,
+District grand total (all employee types),5793.00,2015-16,actual-budgetary,budget-fy2019-20-book,185,"FTE by Major Program and Employee Type table, column '2016 Actual'"
+District grand total (all employee types),5866.10,2016-17,actual-budgetary,budget-fy2019-20-book,185,column '2017 Actual'
+District grand total (all employee types),5775.25,2017-18,actual-budgetary,budget-fy2019-20-book,185,column '2018 Actual'
+District grand total (all employee types),5836.49,2018-19,revised,budget-fy2019-20-book,185,column '2019 Current'
+District grand total (all employee types),5930.33,2019-20,adopted,budget-fy2019-20-book,185,column '2020 Budget'

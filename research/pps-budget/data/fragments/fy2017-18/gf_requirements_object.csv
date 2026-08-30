@@ -1,0 +1,61 @@
+object_code,label,amount_k,fy,basis,doc_id,page,notes
+100+200,Salaries and Benefits,408398.173,2014-15,actual-budgetary,budget-fy2017-18-book,79,native unit whole dollars; book combines objects 100/200 and 300/400 at summary level - split rows 100 and 200 provided from detail subtotals
+100+200,Salaries and Benefits,445392.054,2015-16,actual-budgetary,budget-fy2017-18-book,79,
+100+200,Salaries and Benefits,479722.797,2016-17,revised,budget-fy2017-18-book,79,
+100+200,Salaries and Benefits,489584.580,2017-18,proposed,budget-fy2017-18-book,79,
+100+200,Salaries and Benefits,490916.212,2017-18,approved,budget-fy2017-18-book,79,
+100+200,Salaries and Benefits,491655.112,2017-18,adopted,budget-fy2017-18-book,79,
+300+400,Materials and Services,79196.520,2014-15,actual-budgetary,budget-fy2017-18-book,79,
+300+400,Materials and Services,86807.462,2015-16,actual-budgetary,budget-fy2017-18-book,79,
+300+400,Materials and Services,88502.225,2016-17,revised,budget-fy2017-18-book,79,
+300+400,Materials and Services,91237.294,2017-18,proposed,budget-fy2017-18-book,79,
+300+400,Materials and Services,90308.081,2017-18,approved,budget-fy2017-18-book,79,
+300+400,Materials and Services,89684.843,2017-18,adopted,budget-fy2017-18-book,79,
+500,Capital Outlay,5558.214,2014-15,actual-budgetary,budget-fy2017-18-book,79,
+500,Capital Outlay,2737.164,2015-16,actual-budgetary,budget-fy2017-18-book,79,
+500,Capital Outlay,1743.390,2016-17,revised,budget-fy2017-18-book,79,
+500,Capital Outlay,1316.955,2017-18,proposed,budget-fy2017-18-book,79,
+500,Capital Outlay,1317.529,2017-18,approved,budget-fy2017-18-book,79,
+500,Capital Outlay,1204.499,2017-18,adopted,budget-fy2017-18-book,79,
+600,Debt Service & Other,3225.187,2014-15,actual-budgetary,budget-fy2017-18-book,79,
+600,Debt Service & Other,3552.821,2015-16,actual-budgetary,budget-fy2017-18-book,79,
+600,Debt Service & Other,3334.935,2016-17,revised,budget-fy2017-18-book,79,
+600,Debt Service & Other,3333.735,2017-18,proposed,budget-fy2017-18-book,79,
+600,Debt Service & Other,5315.357,2017-18,approved,budget-fy2017-18-book,79,
+600,Debt Service & Other,5312.725,2017-18,adopted,budget-fy2017-18-book,79,
+700,Fund Transfers,14409.096,2014-15,actual-budgetary,budget-fy2017-18-book,79,
+700,Fund Transfers,7407.357,2015-16,actual-budgetary,budget-fy2017-18-book,79,
+700,Fund Transfers,15956.437,2016-17,revised,budget-fy2017-18-book,79,
+700,Fund Transfers,5895.375,2017-18,proposed,budget-fy2017-18-book,79,
+700,Fund Transfers,5915.375,2017-18,approved,budget-fy2017-18-book,79,
+700,Fund Transfers,5915.375,2017-18,adopted,budget-fy2017-18-book,79,
+810,Contingency,0.000,2014-15,actual-budgetary,budget-fy2017-18-book,79,PPS account 581000 Operating Contingency
+810,Contingency,0.000,2015-16,actual-budgetary,budget-fy2017-18-book,79,PPS account 581000 Operating Contingency
+810,Contingency,15645.377,2016-17,revised,budget-fy2017-18-book,79,PPS account 581000 Operating Contingency
+810,Contingency,24918.902,2017-18,proposed,budget-fy2017-18-book,79,PPS account 581000 Operating Contingency
+810,Contingency,23514.287,2017-18,approved,budget-fy2017-18-book,79,PPS account 581000 Operating Contingency
+810,Contingency,23514.287,2017-18,adopted,budget-fy2017-18-book,79,PPS account 581000 Operating Contingency
+EFB,Ending Fund Balance,34441.540,2014-15,actual-budgetary,budget-fy2017-18-book,79,PPS account 376520; not an expenditure object
+EFB,Ending Fund Balance,37835.045,2015-16,actual-budgetary,budget-fy2017-18-book,79,PPS account 376520; not an expenditure object
+EFB,Ending Fund Balance,0.000,2016-17,revised,budget-fy2017-18-book,79,PPS account 376520; not an expenditure object
+EFB,Ending Fund Balance,0.000,2017-18,proposed,budget-fy2017-18-book,79,PPS account 376520; not an expenditure object
+EFB,Ending Fund Balance,0.000,2017-18,approved,budget-fy2017-18-book,79,PPS account 376520; not an expenditure object
+EFB,Ending Fund Balance,0.000,2017-18,adopted,budget-fy2017-18-book,79,PPS account 376520; not an expenditure object
+TOTAL,Total Requirements,545228.731,2014-15,actual-budgetary,budget-fy2017-18-book,79,
+TOTAL,Total Requirements,583731.903,2015-16,actual-budgetary,budget-fy2017-18-book,79,
+TOTAL,Total Requirements,604905.161,2016-17,revised,budget-fy2017-18-book,79,
+TOTAL,Total Requirements,616286.841,2017-18,proposed,budget-fy2017-18-book,79,
+TOTAL,Total Requirements,617286.841,2017-18,approved,budget-fy2017-18-book,79,
+TOTAL,Total Requirements,617286.841,2017-18,adopted,budget-fy2017-18-book,79,
+100,Salaries (subtotal),271479.428,2014-15,actual-budgetary,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail
+100,Salaries (subtotal),303824.963,2015-16,actual-budgetary,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail
+100,Salaries (subtotal),319648.970,2016-17,revised,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail
+100,Salaries (subtotal),325529.648,2017-18,proposed,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail
+100,Salaries (subtotal),332710.902,2017-18,approved,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail
+100,Salaries (subtotal),331878.955,2017-18,adopted,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail
+200,Employee Benefits (subtotal),136918.746,2014-15,actual-budgetary,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail
+200,Employee Benefits (subtotal),141567.091,2015-16,actual-budgetary,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail
+200,Employee Benefits (subtotal),160073.827,2016-17,revised,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail
+200,Employee Benefits (subtotal),164054.932,2017-18,proposed,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail
+200,Employee Benefits (subtotal),158205.309,2017-18,approved,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail
+200,Employee Benefits (subtotal),159776.157,2017-18,adopted,budget-fy2017-18-book,95,component of 100+200 row; printed subtotal of GF Requirements by Account detail

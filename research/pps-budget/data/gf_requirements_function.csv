@@ -1,0 +1,684 @@
+function_code,label,amount_k,fy,basis,doc_id,page,notes,fragment
+,Total Requirements,516645.666,2013-14,actual-budgetary,budget-fy2016-17-book,79,"p79 prints 2013/14 total 516,645,666; account view p89/p94 prints 516,645,665 (dollar rounding)",fy2016-17
+1000,Instruction,271983.576,2013-14,actual-budgetary,budget-fy2016-17-book,79,"native unit whole dollars; function codes assigned per Oregon convention (table prints program-area labels, not codes)",fy2016-17
+2000,Support Services,182354.183,2013-14,actual-budgetary,budget-fy2016-17-book,79,,fy2016-17
+3000,Enterprise & Community Services,1621,2013-14,actual-budgetary,budget-fy2016-17-book,79,,fy2016-17
+5000,Debt Service & Transfers Out,9013.122,2013-14,actual-budgetary,budget-fy2016-17-book,79,GF debt service & transfers are fund transfers (program 52100) only,fy2016-17
+6000,Contingency,0,2013-14,actual-budgetary,budget-fy2016-17-book,79,actual-year columns printed as dash (contingency is never expended),fy2016-17
+7000,Ending Fund Balance,51673.785,2013-14,actual-budgetary,budget-fy2016-17-book,79,"budget-year columns printed as dash; p94 program detail prints 2013/14 EFB as 51,673,784 (dollar rounding)",fy2016-17
+,Total Requirements,545228.731,2014-15,actual-budgetary,budget-fy2016-17-book,79,"p79 prints 2013/14 total 516,645,666; account view p89/p94 prints 516,645,665 (dollar rounding)",fy2016-17
+1000,Instruction,293299.904,2014-15,actual-budgetary,budget-fy2016-17-book,79,,fy2016-17
+1000,Instruction,293299.904,2014-15,actual-budgetary,budget-fy2017-18-book,78,native unit whole dollars; function codes mapped from PPS major program labels per Oregon PBAM; in GF the 5000 line is fund transfers only (no direct GF debt service function line),fy2017-18
+2000,Support Services,201248.427,2014-15,actual-budgetary,budget-fy2016-17-book,79,,fy2016-17
+2000,Support Services,201248.427,2014-15,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+3000,Enterprise & Community Services,1829.764,2014-15,actual-budgetary,budget-fy2016-17-book,79,,fy2016-17
+3000,Enterprise & Community Services,1829.764,2014-15,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+5000,Debt Service & Transfers Out,14409.096,2014-15,actual-budgetary,budget-fy2016-17-book,79,GF debt service & transfers are fund transfers (program 52100) only,fy2016-17
+5000,Debt Service & Transfers Out,14409.096,2014-15,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+6000,Contingency,0,2014-15,actual-budgetary,budget-fy2016-17-book,79,actual-year columns printed as dash (contingency is never expended),fy2016-17
+6000,Contingency,0.000,2014-15,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+7000,Ending Fund Balance / Unappropriated,34441.540,2014-15,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+7000,Ending Fund Balance,34441.54,2014-15,actual-budgetary,budget-fy2016-17-book,79,"budget-year columns printed as dash; p94 program detail prints 2013/14 EFB as 51,673,784 (dollar rounding)",fy2016-17
+TOTAL,Total Requirements,545228.731,2014-15,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+,Total General Fund Requirements,583731.903,2015-16,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+,Total Requirements,579158.367,2015-16,revised,budget-fy2016-17-book,79,"p79 prints 2013/14 total 516,645,666; account view p89/p94 prints 516,645,665 (dollar rounding)",fy2016-17
+,Total Requirements,583732,2015-16,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+1000,Instruction,316029,2015-16,actual-budgetary,budget-fy2019-20-book,83,"native unit thousands; Summary of Requirements by Major Program - General Fund; appropriations resolution p415 prints 1000=371,970 and 2000=289,512 (rounding)",fy2019-20
+1000,Instruction,316029.450,2015-16,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+1000,Instruction,316029.450,2015-16,actual-budgetary,budget-fy2018-19-book,74,native unit whole dollars,fy2018-19
+1000,Instruction,324822.344,2015-16,revised,budget-fy2016-17-book,79,,fy2016-17
+2000,Support Services,220666,2015-16,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+2000,Support Services,220666.070,2015-16,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+2000,Support Services,220666.070,2015-16,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+2000,Support Services,224906.349,2015-16,revised,budget-fy2016-17-book,79,,fy2016-17
+3000,Enterprise & Community Services,1793.982,2015-16,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+3000,Enterprise & Community Services,1793.982,2015-16,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+3000,Enterprise & Community Services,1822.701,2015-16,revised,budget-fy2016-17-book,79,,fy2016-17
+3000,Enterprise and Community Services,1794,2015-16,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+4000,Facilities Acquisition & Construction,0.000,2015-16,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+5000,Debt Service & Transfers Out,7407.357,2015-16,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+5000,Debt Service & Transfers Out,7407.357,2015-16,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+5000,Debt Service & Transfers Out,7407.693,2015-16,revised,budget-fy2016-17-book,79,GF debt service & transfers are fund transfers (program 52100) only,fy2016-17
+5200,Transfers of Funds,7407,2015-16,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+6000,Contingencies,0,2015-16,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+6000,Contingency,0.000,2015-16,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+6000,Contingency,0.000,2015-16,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+6000,Contingency,20199.28,2015-16,revised,budget-fy2016-17-book,79,actual-year columns printed as dash (contingency is never expended),fy2016-17
+7000,Ending Fund Balance / Unappropriated,37835.045,2015-16,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+7000,Ending Fund Balance,0,2015-16,revised,budget-fy2016-17-book,79,"budget-year columns printed as dash; p94 program detail prints 2013/14 EFB as 51,673,784 (dollar rounding)",fy2016-17
+7000,Ending Fund Balance,37835.045,2015-16,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+7000,Unappropriated Fund Balance,37835,2015-16,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+TOTAL,Total Requirements,583731.903,2015-16,actual-budgetary,budget-fy2017-18-book,78,,fy2017-18
+,Total General Fund Requirements,600300.820,2016-17,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+,Total Requirements,591888.109,2016-17,proposed,budget-fy2016-17-book,79,"p79 prints 2013/14 total 516,645,666; account view p89/p94 prints 516,645,665 (dollar rounding)",fy2016-17
+,Total Requirements,592043.109,2016-17,approved,budget-fy2016-17-book,79,"p79 prints 2013/14 total 516,645,666; account view p89/p94 prints 516,645,665 (dollar rounding)",fy2016-17
+,Total Requirements,592600.18,2016-17,adopted,budget-fy2016-17-book,79,"p79 prints 2013/14 total 516,645,666; account view p89/p94 prints 516,645,665 (dollar rounding)",fy2016-17
+,Total Requirements,600301,2016-17,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+1000,Instruction,324119,2016-17,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+1000,Instruction,324119,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,native unit thousands; Summary of Requirements by Major Function - General Funds,fy2020-21
+1000,Instruction,324119.387,2016-17,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+1000,Instruction,331766.479,2016-17,approved,budget-fy2016-17-book,79,,fy2016-17
+1000,Instruction,332086.443,2016-17,revised,budget-fy2017-18-book,78,,fy2017-18
+1000,Instruction,332299.184,2016-17,adopted,budget-fy2016-17-book,79,,fy2016-17
+1000,Instruction,332302.527,2016-17,proposed,budget-fy2016-17-book,79,,fy2016-17
+2000,Support Services,236106.438,2016-17,proposed,budget-fy2016-17-book,79,,fy2016-17
+2000,Support Services,237379.986,2016-17,approved,budget-fy2016-17-book,79,,fy2016-17
+2000,Support Services,237833.986,2016-17,adopted,budget-fy2016-17-book,79,,fy2016-17
+2000,Support Services,238435,2016-17,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+2000,Support Services,238435,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+2000,Support Services,238435.194,2016-17,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+2000,Support Services,239278.116,2016-17,revised,budget-fy2017-18-book,78,,fy2017-18
+3000,Enterprise & Community Services,1700.501,2016-17,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+3000,Enterprise & Community Services,1812.588,2016-17,adopted,budget-fy2016-17-book,79,,fy2016-17
+3000,Enterprise & Community Services,1842.222,2016-17,approved,budget-fy2016-17-book,79,,fy2016-17
+3000,Enterprise & Community Services,1842.222,2016-17,proposed,budget-fy2016-17-book,79,,fy2016-17
+3000,Enterprise & Community Services,1938.788,2016-17,revised,budget-fy2017-18-book,78,,fy2017-18
+3000,Enterprise and Community Services,1701,2016-17,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+3000,Enterprise And Community Svcs,1701,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+4000,Facilities Acquisition & Construction,0.000,2016-17,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+5000,Debt Service & Transfers Out,15941.275,2016-17,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+5000,Debt Service & Transfers Out,15956.437,2016-17,revised,budget-fy2017-18-book,78,,fy2017-18
+5000,Debt Service & Transfers Out,5420.705,2016-17,adopted,budget-fy2016-17-book,79,GF debt service & transfers are fund transfers (program 52100) only,fy2016-17
+5000,Debt Service & Transfers Out,5420.705,2016-17,approved,budget-fy2016-17-book,79,GF debt service & transfers are fund transfers (program 52100) only,fy2016-17
+5000,Debt Service & Transfers Out,6023.205,2016-17,proposed,budget-fy2016-17-book,79,GF debt service & transfers are fund transfers (program 52100) only,fy2016-17
+5200,Transfers of Funds,15941,2016-17,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+5200,Transfers Of Funds,15941,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+6000,Contingencies,0,2016-17,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+6000,Contingencies,0,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,printed as '-',fy2020-21
+6000,Contingency,0.000,2016-17,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+6000,Contingency,15233.717,2016-17,adopted,budget-fy2016-17-book,79,actual-year columns printed as dash (contingency is never expended),fy2016-17
+6000,Contingency,15613.717,2016-17,proposed,budget-fy2016-17-book,79,actual-year columns printed as dash (contingency is never expended),fy2016-17
+6000,Contingency,15633.717,2016-17,approved,budget-fy2016-17-book,79,actual-year columns printed as dash (contingency is never expended),fy2016-17
+6000,Contingency,15645.377,2016-17,revised,budget-fy2017-18-book,78,,fy2017-18
+7000,Ending Fund Balance / Unappropriated,0.000,2016-17,revised,budget-fy2017-18-book,78,,fy2017-18
+7000,Ending Fund Balance,0,2016-17,adopted,budget-fy2016-17-book,79,"budget-year columns printed as dash; p94 program detail prints 2013/14 EFB as 51,673,784 (dollar rounding)",fy2016-17
+7000,Ending Fund Balance,0,2016-17,approved,budget-fy2016-17-book,79,"budget-year columns printed as dash; p94 program detail prints 2013/14 EFB as 51,673,784 (dollar rounding)",fy2016-17
+7000,Ending Fund Balance,0,2016-17,proposed,budget-fy2016-17-book,79,"budget-year columns printed as dash; p94 program detail prints 2013/14 EFB as 51,673,784 (dollar rounding)",fy2016-17
+7000,Ending Fund Balance,20104.463,2016-17,actual-budgetary,budget-fy2018-19-book,74,,fy2018-19
+7000,Unappropriated Fund Balance,20104,2016-17,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+7000,Unappropriated Fund Balance,20104,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+TOTAL,TOTAL REQUIREMENTS,600301,2016-17,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+TOTAL,Total Requirements,604905.161,2016-17,revised,budget-fy2017-18-book,78,,fy2017-18
+,Instruction - Regular,253291.356,2017-18,revised,budget-fy2018-19-book,73,sub-breakdown within 1000/2000; book prints no single function code for this grouping,fy2018-19
+,Instruction - Special Programs,87021.796,2017-18,revised,budget-fy2018-19-book,73,,fy2018-19
+,Support Services - Central Activities,22205.094,2017-18,revised,budget-fy2018-19-book,73,,fy2018-19
+,Support Services - General Admin,139718.382,2017-18,revised,budget-fy2018-19-book,73,,fy2018-19
+,Support Services - Instructional,87020.579,2017-18,revised,budget-fy2018-19-book,73,,fy2018-19
+,Total General Fund Requirements,631466.922,2017-18,revised,budget-fy2018-19-book,74,,fy2018-19
+,Total Requirements,633966,2017-18,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+1000,Instruction,334250.614,2017-18,adopted,budget-fy2017-18-book,78,,fy2017-18
+1000,Instruction,336304.344,2017-18,approved,budget-fy2017-18-book,78,,fy2017-18
+1000,Instruction,339412,2017-18,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+1000,Instruction,339412,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+1000,Instruction,339412,2017-18,actual-budgetary,budget-fy2021-22-vol1,152,native unit thousands of dollars; zero rows printed as dash,fy2021-22
+1000,Instruction,340313.152,2017-18,revised,budget-fy2018-19-book,74,,fy2018-19
+1000,Instruction,343501.551,2017-18,proposed,budget-fy2017-18-book,78,,fy2017-18
+2000,Support Services,240461.639,2017-18,proposed,budget-fy2017-18-book,78,,fy2017-18
+2000,Support Services,248784,2017-18,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+2000,Support Services,248784,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+2000,Support Services,248784,2017-18,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+2000,Support Services,248944.055,2017-18,revised,budget-fy2018-19-book,74,,fy2018-19
+2000,Support Services,249672.359,2017-18,approved,budget-fy2017-18-book,78,,fy2017-18
+2000,Support Services,251720.466,2017-18,adopted,budget-fy2017-18-book,78,,fy2017-18
+3000,Enterprise & Community Services,1509.374,2017-18,proposed,budget-fy2017-18-book,78,,fy2017-18
+3000,Enterprise & Community Services,1880.476,2017-18,approved,budget-fy2017-18-book,78,,fy2017-18
+3000,Enterprise & Community Services,1886.099,2017-18,adopted,budget-fy2017-18-book,78,,fy2017-18
+3000,Enterprise & Community Services,2336.099,2017-18,revised,budget-fy2018-19-book,74,,fy2018-19
+3000,Enterprise and Community Services,2160,2017-18,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+3000,Enterprise And Community Svcs,2160,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+3000,Enterprise And Community Svcs,2160,2017-18,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+4000,Facilities Acquisition & Construction,0.000,2017-18,revised,budget-fy2018-19-book,74,,fy2018-19
+5000,Debt Service & Transfers Out,5335.441,2017-18,revised,budget-fy2018-19-book,74,,fy2018-19
+5000,Debt Service & Transfers Out,5895.375,2017-18,proposed,budget-fy2017-18-book,78,,fy2017-18
+5000,Debt Service & Transfers Out,5915.375,2017-18,adopted,budget-fy2017-18-book,78,,fy2017-18
+5000,Debt Service & Transfers Out,5915.375,2017-18,approved,budget-fy2017-18-book,78,,fy2017-18
+5100,Debt Service,0,2017-18,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+5200,Transfers of Funds,5328,2017-18,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+5200,Transfers Of Funds,5328,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+5200,Transfers Of Funds,5328,2017-18,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+6000,Contingencies,0,2017-18,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+6000,Contingencies,0,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,printed as '-',fy2020-21
+6000,Contingencies,0,2017-18,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+6000,Contingency,19733.094,2017-18,revised,budget-fy2018-19-book,74,,fy2018-19
+6000,Contingency,23514.287,2017-18,adopted,budget-fy2017-18-book,78,,fy2017-18
+6000,Contingency,23514.287,2017-18,approved,budget-fy2017-18-book,78,,fy2017-18
+6000,Contingency,24918.902,2017-18,proposed,budget-fy2017-18-book,78,,fy2017-18
+7000,Ending Fund Balance / Unappropriated,0.000,2017-18,adopted,budget-fy2017-18-book,78,,fy2017-18
+7000,Ending Fund Balance / Unappropriated,0.000,2017-18,approved,budget-fy2017-18-book,78,,fy2017-18
+7000,Ending Fund Balance / Unappropriated,0.000,2017-18,proposed,budget-fy2017-18-book,78,,fy2017-18
+7000,Ending Fund Balance,14805.081,2017-18,revised,budget-fy2018-19-book,74,,fy2018-19
+7000,Unappropriated Fund Balance,38282,2017-18,actual-budgetary,budget-fy2019-20-book,83,,fy2019-20
+7000,Unappropriated Fund Balance,38282,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+7000,Unappropriated Fund Balance,38282,2017-18,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+TOTAL,Total Requirements,616286.841,2017-18,proposed,budget-fy2017-18-book,78,,fy2017-18
+TOTAL,Total Requirements,617286.841,2017-18,adopted,budget-fy2017-18-book,78,,fy2017-18
+TOTAL,Total Requirements,617286.841,2017-18,approved,budget-fy2017-18-book,78,,fy2017-18
+TOTAL,TOTAL REQUIREMENTS,633966,2017-18,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+TOTAL,TOTAL REQUIREMENTS,633966,2017-18,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+,Instruction - Regular,262153.094,2018-19,adopted,budget-fy2018-19-book,73,,fy2018-19
+,Instruction - Regular,262403.094,2018-19,approved,budget-fy2018-19-book,73,,fy2018-19
+,Instruction - Regular,263464.208,2018-19,proposed,budget-fy2018-19-book,73,,fy2018-19
+,Instruction - Special Programs,87705.568,2018-19,adopted,budget-fy2018-19-book,73,,fy2018-19
+,Instruction - Special Programs,87705.568,2018-19,approved,budget-fy2018-19-book,73,,fy2018-19
+,Instruction - Special Programs,90075.192,2018-19,proposed,budget-fy2018-19-book,73,,fy2018-19
+,Support Services - Central Activities,22698.985,2018-19,proposed,budget-fy2018-19-book,73,,fy2018-19
+,Support Services - Central Activities,23003.103,2018-19,approved,budget-fy2018-19-book,73,,fy2018-19
+,Support Services - Central Activities,23071.903,2018-19,adopted,budget-fy2018-19-book,73,,fy2018-19
+,Support Services - General Admin,146328.263,2018-19,proposed,budget-fy2018-19-book,73,,fy2018-19
+,Support Services - General Admin,150634.956,2018-19,approved,budget-fy2018-19-book,73,,fy2018-19
+,Support Services - General Admin,151071.067,2018-19,adopted,budget-fy2018-19-book,73,,fy2018-19
+,Support Services - Instructional,95856.930,2018-19,proposed,budget-fy2018-19-book,73,,fy2018-19
+,Support Services - Instructional,98354.678,2018-19,adopted,budget-fy2018-19-book,73,,fy2018-19
+,Support Services - Instructional,98609.589,2018-19,approved,budget-fy2018-19-book,73,,fy2018-19
+,Total General Fund Requirements,650538.941,2018-19,proposed,budget-fy2018-19-book,74,,fy2018-19
+,Total General Fund Requirements,655002.466,2018-19,adopted,budget-fy2018-19-book,74,,fy2018-19
+,Total General Fund Requirements,655002.466,2018-19,approved,budget-fy2018-19-book,74,,fy2018-19
+,Total Requirements,655002,2018-19,revised,budget-fy2019-20-book,83,,fy2019-20
+,TOTAL REQUIREMENTS,660592,2018-19,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+1000,Instruction,347734,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+1000,Instruction,347734,2018-19,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+1000,Instruction,347734,2018-19,actual-budgetary,budget-fy2022-23-vol1,150,"native unit thousands of dollars in source; 2021-22 column printed as 'Budget', recorded as adopted",fy2022-23
+1000,Instruction,349858.662,2018-19,adopted,budget-fy2018-19-book,74,,fy2018-19
+1000,Instruction,349859,2018-19,revised,budget-fy2019-20-book,83,,fy2019-20
+1000,Instruction,350108.662,2018-19,approved,budget-fy2018-19-book,74,,fy2018-19
+1000,Instruction,353539.400,2018-19,proposed,budget-fy2018-19-book,74,,fy2018-19
+2000,Support Services,264884.178,2018-19,proposed,budget-fy2018-19-book,74,,fy2018-19
+2000,Support Services,265988,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+2000,Support Services,265988,2018-19,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+2000,Support Services,265988,2018-19,actual-budgetary,budget-fy2022-23-vol1,150,GF detail p153 prints proposed subtotal 337875 vs 339250 here (unexplained 1375 gap in proposed column),fy2022-23
+2000,Support Services,272247.648,2018-19,approved,budget-fy2018-19-book,74,,fy2018-19
+2000,Support Services,272497.648,2018-19,adopted,budget-fy2018-19-book,74,,fy2018-19
+2000,Support Services,272498,2018-19,revised,budget-fy2019-20-book,83,,fy2019-20
+3000,Enterprise & Community Services,1413.095,2018-19,proposed,budget-fy2018-19-book,74,,fy2018-19
+3000,Enterprise & Community Services,1515.284,2018-19,adopted,budget-fy2018-19-book,74,,fy2018-19
+3000,Enterprise & Community Services,1515.284,2018-19,approved,budget-fy2018-19-book,74,,fy2018-19
+3000,Enterprise and Community Services,1515,2018-19,revised,budget-fy2019-20-book,83,,fy2019-20
+3000,Enterprise And Community Svcs,1491,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+3000,Enterprise And Community Svcs,1491,2018-19,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+3000,Enterprise And Community Svcs,1491,2018-19,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+4000,Facilities Acquisition & Construction,0.000,2018-19,adopted,budget-fy2018-19-book,74,,fy2018-19
+4000,Facilities Acquisition & Construction,0.000,2018-19,approved,budget-fy2018-19-book,74,,fy2018-19
+4000,Facilities Acquisition & Construction,0.000,2018-19,proposed,budget-fy2018-19-book,74,,fy2018-19
+5000,Debt Service & Transfers Out,5878.818,2018-19,adopted,budget-fy2018-19-book,74,,fy2018-19
+5000,Debt Service & Transfers Out,5878.818,2018-19,approved,budget-fy2018-19-book,74,,fy2018-19
+5000,Debt Service & Transfers Out,6912.441,2018-19,proposed,budget-fy2018-19-book,74,,fy2018-19
+5100,Debt Service,0,2018-19,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+5200,Transfers Of Funds,5492,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+5200,Transfers Of Funds,5492,2018-19,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+5200,Transfers Of Funds,5492,2018-19,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+5200,Transfers of Funds,5879,2018-19,revised,budget-fy2019-20-book,83,,fy2019-20
+6000,Contingencies,0,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,printed as '-',fy2020-21
+6000,Contingencies,0,2018-19,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+6000,Contingencies,25252,2018-19,revised,budget-fy2019-20-book,83,,fy2019-20
+6000,Contingency,23789.826,2018-19,proposed,budget-fy2018-19-book,74,,fy2018-19
+6000,Contingency,25252.055,2018-19,adopted,budget-fy2018-19-book,74,,fy2018-19
+6000,Contingency,25252.055,2018-19,approved,budget-fy2018-19-book,74,,fy2018-19
+7000,Ending Fund Balance,0.000,2018-19,adopted,budget-fy2018-19-book,74,,fy2018-19
+7000,Ending Fund Balance,0.000,2018-19,approved,budget-fy2018-19-book,74,,fy2018-19
+7000,Ending Fund Balance,0.000,2018-19,proposed,budget-fy2018-19-book,74,,fy2018-19
+7000,Unappropriated Fund Balance,0,2018-19,revised,budget-fy2019-20-book,83,,fy2019-20
+7000,Unappropriated Fund Balance,39887,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+7000,Unappropriated Fund Balance,39887,2018-19,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+7000,Unappropriated Fund Balance,39887,2018-19,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+TOTAL,TOTAL REQUIREMENTS,660592,2018-19,actual-budgetary,budget-fy2020-21-vol1,118,,fy2020-21
+TOTAL,TOTAL REQUIREMENTS,660592,2018-19,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+,Total Requirements,686647,2019-20,proposed,budget-fy2019-20-book,83,,fy2019-20
+,Total Requirements,691767,2019-20,adopted,budget-fy2019-20-book,83,,fy2019-20
+,Total Requirements,691767,2019-20,approved,budget-fy2019-20-book,83,,fy2019-20
+,TOTAL REQUIREMENTS,709092,2019-20,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+,TOTAL REQUIREMENTS,709092,2019-20,actual-budgetary,budget-fy2023-24-vol1,95,"proposed total printed 823422 here, 823423 on detail p99 (rounding)",fy2023-24
+1000,Instruction,359882,2019-20,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+1000,Instruction,359882,2019-20,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+1000,Instruction,359882,2019-20,actual-budgetary,budget-fy2023-24-vol1,95,"native unit thousands of dollars in source; 2022-23 column printed as 'Budget'; matches FY2022-23 book adopted total, so basis=adopted",fy2023-24
+1000,Instruction,370511,2019-20,proposed,budget-fy2019-20-book,83,,fy2019-20
+1000,Instruction,371969,2019-20,adopted,budget-fy2019-20-book,83,,fy2019-20
+1000,Instruction,371969,2019-20,approved,budget-fy2019-20-book,83,,fy2019-20
+1000,Instruction,371969,2019-20,revised,budget-fy2020-21-vol1,118,,fy2020-21
+2000,Support Services,281918,2019-20,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+2000,Support Services,281918,2019-20,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+2000,Support Services,281918,2019-20,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+2000,Support Services,283849,2019-20,proposed,budget-fy2019-20-book,83,,fy2019-20
+2000,Support Services,289511,2019-20,adopted,budget-fy2019-20-book,83,,fy2019-20
+2000,Support Services,289511,2019-20,approved,budget-fy2019-20-book,83,,fy2019-20
+2000,Support Services,289511,2019-20,revised,budget-fy2020-21-vol1,118,,fy2020-21
+3000,Enterprise and Community Services,1901,2019-20,adopted,budget-fy2019-20-book,83,,fy2019-20
+3000,Enterprise and Community Services,1901,2019-20,approved,budget-fy2019-20-book,83,,fy2019-20
+3000,Enterprise and Community Services,1901,2019-20,proposed,budget-fy2019-20-book,83,,fy2019-20
+3000,Enterprise And Community Svcs,1507,2019-20,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+3000,Enterprise And Community Svcs,1507,2019-20,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+3000,Enterprise And Community Svcs,1507,2019-20,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+3000,Enterprise And Community Svcs,1901,2019-20,revised,budget-fy2020-21-vol1,118,,fy2020-21
+5100,Debt Service & 5400 - PERS UAL Programs,0,2019-20,actual-budgetary,budget-fy2023-24-vol1,95,2021-22 actual 400833 is the Series 2021 FF&C pension bond UAL payment (function detail p99 books it under 600 Other Objects),fy2023-24
+5100,Debt Service,0,2019-20,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+5200,Transfers Of Funds,1311,2019-20,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+5200,Transfers Of Funds,1311,2019-20,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+5200,Transfers Of Funds,1311,2019-20,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+5200,Transfers of Funds,1704,2019-20,adopted,budget-fy2019-20-book,83,,fy2019-20
+5200,Transfers of Funds,1704,2019-20,approved,budget-fy2019-20-book,83,,fy2019-20
+5200,Transfers Of Funds,1704,2019-20,revised,budget-fy2020-21-vol1,118,,fy2020-21
+5200,Transfers of Funds,3704,2019-20,proposed,budget-fy2019-20-book,83,,fy2019-20
+6000,Contingencies,0,2019-20,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+6000,Contingencies,0,2019-20,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+6000,Contingencies,26682,2019-20,adopted,budget-fy2019-20-book,83,,fy2019-20
+6000,Contingencies,26682,2019-20,approved,budget-fy2019-20-book,83,,fy2019-20
+6000,Contingencies,26682,2019-20,proposed,budget-fy2019-20-book,83,,fy2019-20
+6000,Contingencies,26682,2019-20,revised,budget-fy2020-21-vol1,118,,fy2020-21
+7000,Unappropriated Fund Balance,0,2019-20,adopted,budget-fy2019-20-book,83,,fy2019-20
+7000,Unappropriated Fund Balance,0,2019-20,approved,budget-fy2019-20-book,83,,fy2019-20
+7000,Unappropriated Fund Balance,0,2019-20,proposed,budget-fy2019-20-book,83,,fy2019-20
+7000,Unappropriated Fund Balance,0,2019-20,revised,budget-fy2020-21-vol1,118,printed as '-',fy2020-21
+7000,Unappropriated Fund Balance,64474,2019-20,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+7000,Unappropriated Fund Balance,64474,2019-20,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+7000,Unappropriated Fund Balance,64474,2019-20,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+TOTAL,TOTAL REQUIREMENTS,691767,2019-20,revised,budget-fy2020-21-vol1,118,,fy2020-21
+TOTAL,TOTAL REQUIREMENTS,709092,2019-20,actual-budgetary,budget-fy2021-22-vol1,152,,fy2021-22
+,TOTAL REQUIREMENTS,744589,2020-21,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+,TOTAL REQUIREMENTS,744589,2020-21,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+1000,Instruction,363865,2020-21,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+1000,Instruction,363865,2020-21,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+1000,Instruction,363865,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,"native unit thousands; Summary of Requirements by Major Function - General Funds",fy2024-25
+1000,Instruction,363865,2020-21,actual-budgetary,tscc-review-fy2024,19,DETAIL OF GENERAL FUND - REQUIREMENTS (Budget Summary); native whole dollars; function codes assigned per Oregon chart of accounts (source prints labels only),tscc
+1000,Instruction,373928,2020-21,adopted,budget-fy2020-21-vol1,118,,fy2020-21
+1000,Instruction,373928,2020-21,approved,budget-fy2020-21-vol1,118,,fy2020-21
+1000,Instruction,373928,2020-21,proposed,budget-fy2020-21-vol1,118,,fy2020-21
+1000,Instruction,386097,2020-21,revised,budget-fy2021-22-vol1,152,,fy2021-22
+2000,Support Services,285720,2020-21,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+2000,Support Services,285720,2020-21,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+2000,Support Services,285720,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+2000,Support Services,285720,2020-21,actual-budgetary,tscc-review-fy2024,19,,tscc
+2000,Support Services,311832,2020-21,adopted,budget-fy2020-21-vol1,118,,fy2020-21
+2000,Support Services,311832,2020-21,approved,budget-fy2020-21-vol1,118,,fy2020-21
+2000,Support Services,311832,2020-21,proposed,budget-fy2020-21-vol1,118,,fy2020-21
+2000,Support Services,317406,2020-21,revised,budget-fy2021-22-vol1,152,,fy2021-22
+3000,Enterprise and Community Services,5115,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+3000,Enterprise And Community Svcs,1814,2020-21,adopted,budget-fy2020-21-vol1,118,,fy2020-21
+3000,Enterprise And Community Svcs,1814,2020-21,approved,budget-fy2020-21-vol1,118,,fy2020-21
+3000,Enterprise And Community Svcs,1814,2020-21,proposed,budget-fy2020-21-vol1,118,,fy2020-21
+3000,Enterprise And Community Svcs,1814,2020-21,revised,budget-fy2021-22-vol1,152,,fy2021-22
+3000,Enterprise And Community Svcs,5115,2020-21,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+3000,Enterprise And Community Svcs,5115,2020-21,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+3000,Enterprises and Community Services,5115,2020-21,actual-budgetary,tscc-review-fy2024,19,,tscc
+5100,Debt Service & 5400 - PERS UAL Programs,0,2020-21,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+5100,Debt Service & PERS UAL (5100+5400),0,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,"printed as dash",fy2024-25
+5100,Debt Service,0,2020-21,revised,budget-fy2021-22-vol1,152,,fy2021-22
+5100/5400,Debt Service,0,2020-21,actual-budgetary,tscc-review-fy2024,19,,tscc
+5200,Transfers Of Funds,1134,2020-21,adopted,budget-fy2020-21-vol1,118,,fy2020-21
+5200,Transfers Of Funds,1134,2020-21,approved,budget-fy2020-21-vol1,118,,fy2020-21
+5200,Transfers Of Funds,1134,2020-21,proposed,budget-fy2020-21-vol1,118,,fy2020-21
+5200,Transfers Of Funds,1198,2020-21,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+5200,Transfers Of Funds,1198,2020-21,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+5200,Transfers of Funds,1198,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+5200,Transfers Of Funds,1234,2020-21,revised,budget-fy2021-22-vol1,152,,fy2021-22
+5200,Transfers Out,1198,2020-21,actual-budgetary,tscc-review-fy2024,19,,tscc
+6000,Contingencies,0,2020-21,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+6000,Contingencies,0,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,"printed as dash",fy2024-25
+6000,Contingencies,0,2020-21,actual-budgetary,tscc-review-fy2024,19,,tscc
+6000,Contingencies,40946,2020-21,adopted,budget-fy2020-21-vol1,118,,fy2020-21
+6000,Contingencies,40946,2020-21,approved,budget-fy2020-21-vol1,118,,fy2020-21
+6000,Contingencies,40946,2020-21,proposed,budget-fy2020-21-vol1,118,,fy2020-21
+6000,Contingencies,40946,2020-21,revised,budget-fy2021-22-vol1,152,,fy2021-22
+7000,Ending Fund Balance,88691,2020-21,actual-budgetary,tscc-review-fy2024,19,,tscc
+7000,Unappropriated Fund Balance,0,2020-21,adopted,budget-fy2020-21-vol1,118,printed as '-',fy2020-21
+7000,Unappropriated Fund Balance,0,2020-21,approved,budget-fy2020-21-vol1,118,printed as '-',fy2020-21
+7000,Unappropriated Fund Balance,0,2020-21,proposed,budget-fy2020-21-vol1,118,printed as '-',fy2020-21
+7000,Unappropriated Fund Balance,0,2020-21,revised,budget-fy2021-22-vol1,152,,fy2021-22
+7000,Unappropriated Fund Balance,88691,2020-21,actual-budgetary,budget-fy2022-23-vol1,150,,fy2022-23
+7000,Unappropriated Fund Balance,88691,2020-21,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+7000,Unappropriated Fund Balance,88691,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+TOTAL,TOTAL FUND REQUIREMENTS,744589,2020-21,actual-budgetary,tscc-review-fy2024,19,,tscc
+TOTAL,TOTAL REQUIREMENTS,729654,2020-21,adopted,budget-fy2020-21-vol1,118,,fy2020-21
+TOTAL,TOTAL REQUIREMENTS,729654,2020-21,approved,budget-fy2020-21-vol1,118,,fy2020-21
+TOTAL,TOTAL REQUIREMENTS,729654,2020-21,proposed,budget-fy2020-21-vol1,118,,fy2020-21
+TOTAL,Total Requirements,744589,2020-21,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+TOTAL,TOTAL REQUIREMENTS,747497,2020-21,revised,budget-fy2021-22-vol1,152,,fy2021-22
+,TOTAL REQUIREMENTS,1188261,2021-22,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+,TOTAL REQUIREMENTS,771963,2021-22,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+1000,Instruction,373758,2021-22,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+1000,Instruction,373758,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+1000,Instruction,373758,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,native unit thousands; Summary of Requirements by Major Function - 100 General Fund,fy2025-26
+1000,Instruction,373758,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,PPS Budget Summary (annual report); DETAIL OF GENERAL FUND - REQUIREMENTS (Budget Summary); native whole dollars; function codes assigned per Oregon chart of accounts (source prints labels only); 2024-25 Adopted reflects $1.8M amendment from contingency to instruction,tscc
+1000,Instruction,373758,2021-22,actual-budgetary,tscc-review-fy2024,19,,tscc
+1000,Instruction,373758,2021-22,actual-budgetary,tscc-review-fy2025,18,"DETAIL OF GENERAL FUND - REQUIREMENTS (Budget Summary); native whole dollars; function codes assigned per Oregon chart of accounts (source prints labels only); 2024-25 Approved 437,284 is PRE-amendment; adopted figure 439,084 (annual report p.85) reflects last-minute $1.8M move from contingency to instruction (p.1)",tscc
+1000,Instruction,385422,2021-22,proposed,budget-fy2021-22-vol1,152,,fy2021-22
+1000,Instruction,386622,2021-22,adopted,budget-fy2021-22-vol1,152,,fy2021-22
+1000,Instruction,386622,2021-22,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+1000,Instruction,386622,2021-22,approved,budget-fy2021-22-vol1,152,,fy2021-22
+2000,Support Services,312766,2021-22,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+2000,Support Services,312766,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+2000,Support Services,312766,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+2000,Support Services,312766,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+2000,Support Services,312766,2021-22,actual-budgetary,tscc-review-fy2024,19,,tscc
+2000,Support Services,312766,2021-22,actual-budgetary,tscc-review-fy2025,18,,tscc
+2000,Support Services,324026,2021-22,proposed,budget-fy2021-22-vol1,152,,fy2021-22
+2000,Support Services,328092,2021-22,adopted,budget-fy2021-22-vol1,152,,fy2021-22
+2000,Support Services,328092,2021-22,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+2000,Support Services,328092,2021-22,approved,budget-fy2021-22-vol1,152,,fy2021-22
+3000,Enterprise and Community Services,893,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+3000,Enterprise and Community Services,893,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+3000,Enterprise And Community Svcs,2393,2021-22,proposed,budget-fy2021-22-vol1,152,"Attachment A p.375 prints proposed 3000 as 2,394 (vs 2,393 here); adopted 2,993 vs 2,994 in Attachment A - rounding",fy2021-22
+3000,Enterprise And Community Svcs,2993,2021-22,adopted,budget-fy2021-22-vol1,152,,fy2021-22
+3000,Enterprise And Community Svcs,2993,2021-22,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+3000,Enterprise And Community Svcs,2993,2021-22,approved,budget-fy2021-22-vol1,152,,fy2021-22
+3000,Enterprise And Community Svcs,893,2021-22,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+3000,Enterprises and Community Services,893,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+3000,Enterprises and Community Services,893,2021-22,actual-budgetary,tscc-review-fy2024,19,,tscc
+3000,Enterprises and Community Services,893,2021-22,actual-budgetary,tscc-review-fy2025,18,,tscc
+5100,Debt Service & 5400 - PERS UAL Programs,400833,2021-22,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+5100,Debt Service & 5400 PERS UAL Programs,1223,2021-22,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+5100,Debt Service & PERS UAL (5100+5400),400833,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,"2021 pension bond pass-through",fy2024-25
+5100,Debt Service,1223,2021-22,adopted,budget-fy2021-22-vol1,152,,fy2021-22
+5100,Debt Service,1223,2021-22,approved,budget-fy2021-22-vol1,152,,fy2021-22
+5100,Debt Service,1223,2021-22,proposed,budget-fy2021-22-vol1,152,,fy2021-22
+5100/5400,Debt Service & PERS UAL Programs,400833,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,all in 5400 PERS UAL (2021 POB payoff year; detail p.104),fy2025-26
+5100/5400,Debt Service,400833,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+5100/5400,Debt Service,400833,2021-22,actual-budgetary,tscc-review-fy2024,19,,tscc
+5100/5400,Debt Service,400833,2021-22,actual-budgetary,tscc-review-fy2025,18,2021-22 = PERS UAL/POB payoff year,tscc
+5200,Transfers Of Funds,1136,2021-22,adopted,budget-fy2021-22-vol1,152,,fy2021-22
+5200,Transfers Of Funds,1136,2021-22,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+5200,Transfers Of Funds,1136,2021-22,approved,budget-fy2021-22-vol1,152,,fy2021-22
+5200,Transfers Of Funds,1136,2021-22,proposed,budget-fy2021-22-vol1,152,,fy2021-22
+5200,Transfers Of Funds,1207,2021-22,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+5200,Transfers of Funds,1207,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+5200,Transfers of Funds,1207,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+5200,Transfers Out,1207,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+5200,Transfers Out,1207,2021-22,actual-budgetary,tscc-review-fy2024,19,,tscc
+5200,Transfers Out,1207,2021-22,actual-budgetary,tscc-review-fy2025,18,,tscc
+6000,Contingencies,0,2021-22,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+6000,Contingencies,0,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,"printed as dash",fy2024-25
+6000,Contingencies,0,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+6000,Contingencies,0,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+6000,Contingencies,0,2021-22,actual-budgetary,tscc-review-fy2024,19,,tscc
+6000,Contingencies,0,2021-22,actual-budgetary,tscc-review-fy2025,18,"2024-25 Approved 42,656 PRE-amendment; adopted 40,856",tscc
+6000,Contingencies,47500,2021-22,proposed,budget-fy2021-22-vol1,152,,fy2021-22
+6000,Contingencies,51896,2021-22,adopted,budget-fy2021-22-vol1,152,,fy2021-22
+6000,Contingencies,51896,2021-22,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+6000,Contingencies,51896,2021-22,approved,budget-fy2021-22-vol1,152,,fy2021-22
+7000,Ending Fund Balance,98804,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+7000,Ending Fund Balance,98804,2021-22,actual-budgetary,tscc-review-fy2024,19,,tscc
+7000,Ending Fund Balance,98804,2021-22,actual-budgetary,tscc-review-fy2025,18,,tscc
+7000,Unappropriated Fund Balance,0,2021-22,adopted,budget-fy2021-22-vol1,152,,fy2021-22
+7000,Unappropriated Fund Balance,0,2021-22,approved,budget-fy2021-22-vol1,152,,fy2021-22
+7000,Unappropriated Fund Balance,0,2021-22,proposed,budget-fy2021-22-vol1,152,,fy2021-22
+7000,Unappropriated Fund Balance,98804,2021-22,actual-budgetary,budget-fy2023-24-vol1,95,,fy2023-24
+7000,Unappropriated Fund Balance,98804,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+7000,Unappropriated Fund Balance,98804,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+TOTAL,TOTAL FUND REQUIREMENTS,1188261,2021-22,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+TOTAL,TOTAL FUND REQUIREMENTS,1188261,2021-22,actual-budgetary,tscc-review-fy2024,19,,tscc
+TOTAL,TOTAL FUND REQUIREMENTS,1188261,2021-22,actual-budgetary,tscc-review-fy2025,18,,tscc
+TOTAL,Total Requirements,1188261,2021-22,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+total,Total Requirements,1188261,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+TOTAL,TOTAL REQUIREMENTS,761700,2021-22,proposed,budget-fy2021-22-vol1,152,,fy2021-22
+TOTAL,TOTAL REQUIREMENTS,771963,2021-22,adopted,budget-fy2021-22-vol1,152,,fy2021-22
+TOTAL,TOTAL REQUIREMENTS,771963,2021-22,approved,budget-fy2021-22-vol1,152,,fy2021-22
+,TOTAL REQUIREMENTS,794585,2022-23,proposed,budget-fy2022-23-vol1,150,,fy2022-23
+,TOTAL REQUIREMENTS,804062,2022-23,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+,TOTAL REQUIREMENTS,804062,2022-23,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+,TOTAL REQUIREMENTS,804062,2022-23,approved,budget-fy2022-23-vol1,150,,fy2022-23
+1000,Instruction,376786,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+1000,Instruction,376786,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+1000,Instruction,376786,2022-23,actual-budgetary,budget-fy2026-27-vol1,109,"native unit thousands; dashes recorded as 0; 4000 adopted 2026-27 prints 1 (i.e. $1K placeholder; column foots to 862,112 only with it); Budget FTE 2025-26 4,817.50 / 2026-27 4,481.34; Proposed/Approved 2026-27 identical to Adopted",fy2026-27
+1000,Instruction,376786,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,2024-25 Adopted reflects $1.8M amendment from contingency to instruction,tscc
+1000,Instruction,376786,2022-23,actual-budgetary,tscc-review-fy2025,18,"2024-25 Approved 437,284 is PRE-amendment; adopted figure 439,084 (annual report p.85) reflects last-minute $1.8M move from contingency to instruction (p.1)",tscc
+1000,Instruction,376786,2022-23,actual-budgetary,tscc-review-fy2026,19,"DETAIL OF GENERAL FUND - REQUIREMENTS (Budget Summary); native whole dollars; function codes assigned per Oregon chart of accounts (source prints labels only); 2023-24 actual printed 411,710 (budget book prints 411,711)",tscc
+1000,Instruction,399183,2022-23,proposed,budget-fy2022-23-vol1,150,,fy2022-23
+1000,Instruction,406337,2022-23,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+1000,Instruction,406337,2022-23,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+1000,Instruction,406337,2022-23,approved,budget-fy2022-23-vol1,150,,fy2022-23
+1000,Instruction,406337,2022-23,revised,tscc-review-fy2024,19,,tscc
+2000,Support Services,339250,2022-23,proposed,budget-fy2022-23-vol1,150,,fy2022-23
+2000,Support Services,341772,2022-23,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+2000,Support Services,341772,2022-23,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+2000,Support Services,341772,2022-23,approved,budget-fy2022-23-vol1,150,,fy2022-23
+2000,Support Services,341772,2022-23,revised,tscc-review-fy2024,19,,tscc
+2000,Support Services,343359,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+2000,Support Services,343359,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+2000,Support Services,343359,2022-23,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+2000,Support Services,343359,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+2000,Support Services,343359,2022-23,actual-budgetary,tscc-review-fy2025,18,,tscc
+2000,Support Services,343359,2022-23,actual-budgetary,tscc-review-fy2026,19,,tscc
+3000,Enterprise and Community Services,3114,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+3000,Enterprise and Community Services,3114,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+3000,Enterprise and Community Services,3114,2022-23,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+3000,Enterprise And Community Svcs,3100,2022-23,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+3000,Enterprise And Community Svcs,3100,2022-23,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+3000,Enterprise And Community Svcs,3100,2022-23,approved,budget-fy2022-23-vol1,150,,fy2022-23
+3000,Enterprise And Community Svcs,3100,2022-23,proposed,budget-fy2022-23-vol1,150,,fy2022-23
+3000,Enterprises and Community Services,3100,2022-23,revised,tscc-review-fy2024,19,,tscc
+3000,Enterprises and Community Services,3114,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+3000,Enterprises and Community Services,3114,2022-23,actual-budgetary,tscc-review-fy2025,18,,tscc
+3000,Enterprises and Community Services,3114,2022-23,actual-budgetary,tscc-review-fy2026,19,,tscc
+4000,Facilities Acquisition and Construction,0,2022-23,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+5100,Debt Service & 5400 - PERS UAL Programs,783,2022-23,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+5100,Debt Service & 5400 PERS UAL Programs,783,2022-23,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+5100,Debt Service & 5400 PERS UAL Programs,783,2022-23,approved,budget-fy2022-23-vol1,150,,fy2022-23
+5100,Debt Service & 5400 PERS UAL Programs,783,2022-23,proposed,budget-fy2022-23-vol1,150,,fy2022-23
+5100,Debt Service & PERS UAL (5100+5400),0,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,"printed as dash",fy2024-25
+5100/5400,Debt Service & PERS UAL Programs,0,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+5100/5400,Debt Service,0,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+5100/5400,Debt Service,0,2022-23,actual-budgetary,tscc-review-fy2025,18,2021-22 = PERS UAL/POB payoff year,tscc
+5100/5400,Debt Service,0,2022-23,actual-budgetary,tscc-review-fy2026,19,GF debt service = bus leases under GASB 87,tscc
+5100/5400,Debt Service,783,2022-23,revised,tscc-review-fy2024,19,,tscc
+5200,Transfers of Funds,1282,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+5200,Transfers of Funds,1282,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+5200,Transfers of Funds,1282,2022-23,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+5200,Transfers Of Funds,1302,2022-23,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+5200,Transfers Of Funds,1302,2022-23,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+5200,Transfers Of Funds,1302,2022-23,approved,budget-fy2022-23-vol1,150,,fy2022-23
+5200,Transfers Of Funds,1302,2022-23,proposed,budget-fy2022-23-vol1,150,,fy2022-23
+5200,Transfers Out,1282,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+5200,Transfers Out,1282,2022-23,actual-budgetary,tscc-review-fy2025,18,,tscc
+5200,Transfers Out,1282,2022-23,actual-budgetary,tscc-review-fy2026,19,,tscc
+5200,Transfers Out,1302,2022-23,revised,tscc-review-fy2024,19,,tscc
+6000,Contingencies,0,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,"printed as dash",fy2024-25
+6000,Contingencies,0,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+6000,Contingencies,0,2022-23,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+6000,Contingencies,0,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+6000,Contingencies,0,2022-23,actual-budgetary,tscc-review-fy2025,18,"2024-25 Approved 42,656 PRE-amendment; adopted 40,856",tscc
+6000,Contingencies,0,2022-23,actual-budgetary,tscc-review-fy2026,19,,tscc
+6000,Contingencies,50768,2022-23,adopted,budget-fy2022-23-vol1,150,,fy2022-23
+6000,Contingencies,50768,2022-23,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+6000,Contingencies,50768,2022-23,approved,budget-fy2022-23-vol1,150,,fy2022-23
+6000,Contingencies,50768,2022-23,revised,tscc-review-fy2024,19,,tscc
+6000,Contingencies,50967,2022-23,proposed,budget-fy2022-23-vol1,150,,fy2022-23
+7000,Ending Fund Balance,0,2022-23,revised,tscc-review-fy2024,19,,tscc
+7000,Ending Fund Balance,105497,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+7000,Ending Fund Balance,105497,2022-23,actual-budgetary,tscc-review-fy2025,18,,tscc
+7000,Ending Fund Balance,105497,2022-23,actual-budgetary,tscc-review-fy2026,19,,tscc
+7000,Unappropriated Fund Balance,0,2022-23,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+7000,Unappropriated Fund Balance,105497,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+7000,Unappropriated Fund Balance,105497,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+7000,Unappropriated Fund Balance,105497,2022-23,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+TOTAL,TOTAL FUND REQUIREMENTS,804062,2022-23,revised,tscc-review-fy2024,19,,tscc
+TOTAL,TOTAL FUND REQUIREMENTS,830038,2022-23,actual-budgetary,tscc-annual-report-2024-25-summaries,85,,tscc
+TOTAL,TOTAL FUND REQUIREMENTS,830038,2022-23,actual-budgetary,tscc-review-fy2025,18,,tscc
+TOTAL,TOTAL FUND REQUIREMENTS,830038,2022-23,actual-budgetary,tscc-review-fy2026,19,,tscc
+TOTAL,Total Requirements,830038,2022-23,actual-budgetary,budget-fy2024-25-vol1,100,,fy2024-25
+total,Total Requirements,830038,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+,TOTAL REQUIREMENTS,823422,2023-24,proposed,budget-fy2023-24-vol1,95,,fy2023-24
+,TOTAL REQUIREMENTS,833774,2023-24,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+,TOTAL REQUIREMENTS,833774,2023-24,approved,budget-fy2023-24-vol1,95,,fy2023-24
+1000,Instruction,411595,2023-24,proposed,budget-fy2023-24-vol1,95,,fy2023-24
+1000,Instruction,411710,2023-24,actual-budgetary,tscc-review-fy2026,19,"2023-24 actual printed 411,710 (budget book prints 411,711)",tscc
+1000,Instruction,411711,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+1000,Instruction,411711,2023-24,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+1000,Instruction,416837,2023-24,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+1000,Instruction,416837,2023-24,adopted,budget-fy2024-25-vol1,100,"2023-24 budget columns are from the 2023-24 Adopted Budget (p78)",fy2024-25
+1000,Instruction,416837,2023-24,approved,budget-fy2023-24-vol1,95,,fy2023-24
+1000,Instruction,416837,2023-24,approved,tscc-review-fy2024,19,,tscc
+1000,Instruction,416837,2023-24,revised,tscc-annual-report-2024-25-summaries,85,2024-25 Adopted reflects $1.8M amendment from contingency to instruction,tscc
+1000,Instruction,416837,2023-24,revised,tscc-review-fy2025,18,"2024-25 Approved 437,284 is PRE-amendment; adopted figure 439,084 (annual report p.85) reflects last-minute $1.8M move from contingency to instruction (p.1)",tscc
+2000,Support Services,362767,2023-24,proposed,budget-fy2023-24-vol1,95,,fy2023-24
+2000,Support Services,367876,2023-24,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+2000,Support Services,367876,2023-24,adopted,budget-fy2024-25-vol1,100,,fy2024-25
+2000,Support Services,367876,2023-24,approved,budget-fy2023-24-vol1,95,,fy2023-24
+2000,Support Services,367876,2023-24,approved,tscc-review-fy2024,19,,tscc
+2000,Support Services,367876,2023-24,revised,tscc-annual-report-2024-25-summaries,85,,tscc
+2000,Support Services,367876,2023-24,revised,tscc-review-fy2025,18,,tscc
+2000,Support Services,370577,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+2000,Support Services,370577,2023-24,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+2000,Support Services,370577,2023-24,actual-budgetary,tscc-review-fy2026,19,,tscc
+3000,Enterprise and Community Services,4123,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+3000,Enterprise and Community Services,4123,2023-24,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+3000,Enterprise and Community Services,4194,2023-24,adopted,budget-fy2024-25-vol1,100,,fy2024-25
+3000,Enterprise And Community Svcs,4194,2023-24,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+3000,Enterprise And Community Svcs,4194,2023-24,approved,budget-fy2023-24-vol1,95,,fy2023-24
+3000,Enterprise And Community Svcs,4194,2023-24,proposed,budget-fy2023-24-vol1,95,,fy2023-24
+3000,Enterprises and Community Services,4123,2023-24,actual-budgetary,tscc-review-fy2026,19,,tscc
+3000,Enterprises and Community Services,4194,2023-24,approved,tscc-review-fy2024,19,,tscc
+3000,Enterprises and Community Services,4194,2023-24,revised,tscc-annual-report-2024-25-summaries,85,,tscc
+3000,Enterprises and Community Services,4194,2023-24,revised,tscc-review-fy2025,18,,tscc
+4000,Facilities Acquisition and Construction,0,2023-24,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+5100,Debt Service & 5400 - PERS UAL Programs,728,2023-24,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+5100,Debt Service & 5400 - PERS UAL Programs,728,2023-24,approved,budget-fy2023-24-vol1,95,,fy2023-24
+5100,Debt Service & 5400 - PERS UAL Programs,728,2023-24,proposed,budget-fy2023-24-vol1,95,,fy2023-24
+5100,Debt Service & PERS UAL (5100+5400),728,2023-24,adopted,budget-fy2024-25-vol1,100,,fy2024-25
+5100/5400,Debt Service & PERS UAL Programs,0,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+5100/5400,Debt Service,0,2023-24,actual-budgetary,tscc-review-fy2026,19,GF debt service = bus leases under GASB 87,tscc
+5100/5400,Debt Service,728,2023-24,approved,tscc-review-fy2024,19,,tscc
+5100/5400,Debt Service,728,2023-24,revised,tscc-annual-report-2024-25-summaries,85,,tscc
+5100/5400,Debt Service,728,2023-24,revised,tscc-review-fy2025,18,2021-22 = PERS UAL/POB payoff year,tscc
+5200,Transfers Of Funds,1075,2023-24,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+5200,Transfers of Funds,1075,2023-24,adopted,budget-fy2024-25-vol1,100,,fy2024-25
+5200,Transfers Of Funds,1075,2023-24,approved,budget-fy2023-24-vol1,95,,fy2023-24
+5200,Transfers Of Funds,1075,2023-24,proposed,budget-fy2023-24-vol1,95,,fy2023-24
+5200,Transfers of Funds,887,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+5200,Transfers of Funds,887,2023-24,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+5200,Transfers Out,1075,2023-24,approved,tscc-review-fy2024,19,,tscc
+5200,Transfers Out,1075,2023-24,revised,tscc-annual-report-2024-25-summaries,85,,tscc
+5200,Transfers Out,1075,2023-24,revised,tscc-review-fy2025,18,,tscc
+5200,Transfers Out,887,2023-24,actual-budgetary,tscc-review-fy2026,19,,tscc
+6000,Contingencies,0,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+6000,Contingencies,0,2023-24,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+6000,Contingencies,0,2023-24,actual-budgetary,tscc-review-fy2026,19,,tscc
+6000,Contingencies,43063,2023-24,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+6000,Contingencies,43063,2023-24,adopted,budget-fy2024-25-vol1,100,,fy2024-25
+6000,Contingencies,43063,2023-24,approved,budget-fy2023-24-vol1,95,,fy2023-24
+6000,Contingencies,43063,2023-24,approved,tscc-review-fy2024,19,,tscc
+6000,Contingencies,43063,2023-24,proposed,budget-fy2023-24-vol1,95,,fy2023-24
+6000,Contingencies,43063,2023-24,revised,tscc-annual-report-2024-25-summaries,85,,tscc
+6000,Contingencies,43063,2023-24,revised,tscc-review-fy2025,18,"2024-25 Approved 42,656 PRE-amendment; adopted 40,856",tscc
+7000,Ending Fund Balance,0,2023-24,approved,tscc-review-fy2024,19,,tscc
+7000,Ending Fund Balance,0,2023-24,revised,tscc-annual-report-2024-25-summaries,85,,tscc
+7000,Ending Fund Balance,0,2023-24,revised,tscc-review-fy2025,18,,tscc
+7000,Ending Fund Balance,86078,2023-24,actual-budgetary,tscc-review-fy2026,19,,tscc
+7000,Unappropriated Fund Balance,0,2023-24,adopted,budget-fy2023-24-vol1,95,,fy2023-24
+7000,Unappropriated Fund Balance,0,2023-24,adopted,budget-fy2024-25-vol1,100,"printed as dash",fy2024-25
+7000,Unappropriated Fund Balance,0,2023-24,approved,budget-fy2023-24-vol1,95,,fy2023-24
+7000,Unappropriated Fund Balance,0,2023-24,proposed,budget-fy2023-24-vol1,95,,fy2023-24
+7000,Unappropriated Fund Balance,86078,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+7000,Unappropriated Fund Balance,86078,2023-24,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+TOTAL,TOTAL FUND REQUIREMENTS,833773,2023-24,approved,tscc-review-fy2024,19,,tscc
+TOTAL,TOTAL FUND REQUIREMENTS,833773,2023-24,revised,tscc-annual-report-2024-25-summaries,85,,tscc
+TOTAL,TOTAL FUND REQUIREMENTS,833773,2023-24,revised,tscc-review-fy2025,18,,tscc
+TOTAL,TOTAL FUND REQUIREMENTS,873375,2023-24,actual-budgetary,tscc-review-fy2026,19,,tscc
+TOTAL,Total Requirements,833774,2023-24,adopted,budget-fy2024-25-vol1,100,,fy2024-25
+total,Total Requirements,873375,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,,fy2025-26
+1000,Instruction,437284,2024-25,approved,tscc-review-fy2025,18,"2024-25 Approved 437,284 is PRE-amendment; adopted figure 439,084 (annual report p.85) reflects last-minute $1.8M move from contingency to instruction (p.1)",tscc
+1000,Instruction,437284,2024-25,proposed,budget-fy2024-25-vol1,100,,fy2024-25
+1000,Instruction,439084,2024-25,adopted,budget-fy2024-25-vol1,100,"also Attachment A p303",fy2024-25
+1000,Instruction,439084,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,2024-25 Adopted reflects $1.8M amendment from contingency to instruction,tscc
+1000,Instruction,439084,2024-25,approved,budget-fy2024-25-vol1,100,,fy2024-25
+1000,Instruction,439084,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+1000,Instruction,439084,2024-25,revised,tscc-review-fy2026,19,"2023-24 actual printed 411,710 (budget book prints 411,711)",tscc
+1000,Instruction,439231,2024-25,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+2000,Support Services,354961,2024-25,revised,tscc-review-fy2026,19,,tscc
+2000,Support Services,354962,2024-25,adopted,budget-fy2024-25-vol1,100,,fy2024-25
+2000,Support Services,354962,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,,tscc
+2000,Support Services,354962,2024-25,approved,budget-fy2024-25-vol1,100,,fy2024-25
+2000,Support Services,354962,2024-25,approved,tscc-review-fy2025,18,,tscc
+2000,Support Services,354962,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+2000,Support Services,355802,2024-25,proposed,budget-fy2024-25-vol1,100,,fy2024-25
+2000,Support Services,356910,2024-25,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+3000,Enterprise and Community Services,3257,2024-25,adopted,budget-fy2024-25-vol1,100,,fy2024-25
+3000,Enterprise and Community Services,3257,2024-25,approved,budget-fy2024-25-vol1,100,,fy2024-25
+3000,Enterprise and Community Services,3257,2024-25,proposed,budget-fy2024-25-vol1,100,,fy2024-25
+3000,Enterprise and Community Services,3257,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+3000,Enterprise and Community Services,4727,2024-25,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+3000,Enterprises and Community Services,3257,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,,tscc
+3000,Enterprises and Community Services,3257,2024-25,approved,tscc-review-fy2025,18,,tscc
+3000,Enterprises and Community Services,3257,2024-25,revised,tscc-review-fy2026,19,,tscc
+4000,Facilities Acquisition and Construction,0,2024-25,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+5100,Debt Service & PERS UAL (5100+5400),2194,2024-25,proposed,budget-fy2024-25-vol1,100,,fy2024-25
+5100,Debt Service & PERS UAL (5100+5400),339,2024-25,adopted,budget-fy2024-25-vol1,100,,fy2024-25
+5100,Debt Service & PERS UAL (5100+5400),339,2024-25,approved,budget-fy2024-25-vol1,100,,fy2024-25
+5100/5400,Debt Service & PERS UAL Programs,339,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book); $339K is 5100 Debt Service (detail p.104),fy2025-26
+5100/5400,Debt Service,339,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,,tscc
+5100/5400,Debt Service,339,2024-25,approved,tscc-review-fy2025,18,2021-22 = PERS UAL/POB payoff year,tscc
+5100/5400,Debt Service,339,2024-25,revised,tscc-review-fy2026,19,GF debt service = bus leases under GASB 87,tscc
+5200,Transfers of Funds,10643,2024-25,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+5200,Transfers of Funds,11918,2024-25,proposed,budget-fy2024-25-vol1,100,,fy2024-25
+5200,Transfers of Funds,15896,2024-25,adopted,budget-fy2024-25-vol1,100,"Attachment A (p303) prints 15895 for the same line",fy2024-25
+5200,Transfers of Funds,15896,2024-25,approved,budget-fy2024-25-vol1,100,,fy2024-25
+5200,Transfers of Funds,15896,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+5200,Transfers Out,15897,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,,tscc
+5200,Transfers Out,15897,2024-25,approved,tscc-review-fy2025,18,,tscc
+5200,Transfers Out,15897,2024-25,revised,tscc-review-fy2026,19,,tscc
+6000,Contingencies,0,2024-25,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+6000,Contingencies,40856,2024-25,adopted,budget-fy2024-25-vol1,100,,fy2024-25
+6000,Contingencies,40856,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,,tscc
+6000,Contingencies,40856,2024-25,approved,budget-fy2024-25-vol1,100,,fy2024-25
+6000,Contingencies,40856,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+6000,Contingencies,40856,2024-25,revised,tscc-review-fy2026,19,,tscc
+6000,Contingencies,42656,2024-25,approved,tscc-review-fy2025,18,"2024-25 Approved 42,656 PRE-amendment; adopted 40,856",tscc
+6000,Contingencies,42656,2024-25,proposed,budget-fy2024-25-vol1,100,,fy2024-25
+7000,Ending Fund Balance,0,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,,tscc
+7000,Ending Fund Balance,0,2024-25,approved,tscc-review-fy2025,18,,tscc
+7000,Ending Fund Balance,0,2024-25,revised,tscc-review-fy2026,19,,tscc
+7000,Unappropriated Fund Balance,0,2024-25,adopted,budget-fy2024-25-vol1,100,"printed as dash; narrative (p98) says ending balance would be 40.9M if contingency goes unspent",fy2024-25
+7000,Unappropriated Fund Balance,0,2024-25,approved,budget-fy2024-25-vol1,100,"printed as dash",fy2024-25
+7000,Unappropriated Fund Balance,0,2024-25,proposed,budget-fy2024-25-vol1,100,"printed as dash",fy2024-25
+7000,Unappropriated Fund Balance,0,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+7000,Unappropriated Fund Balance,44323,2024-25,actual-budgetary,budget-fy2026-27-vol1,109,,fy2026-27
+TOTAL,TOTAL FUND REQUIREMENTS,854394,2024-25,revised,tscc-review-fy2026,19,,tscc
+TOTAL,TOTAL FUND REQUIREMENTS,854395,2024-25,adopted,tscc-annual-report-2024-25-summaries,85,,tscc
+TOTAL,TOTAL FUND REQUIREMENTS,854395,2024-25,approved,tscc-review-fy2025,18,,tscc
+TOTAL,Total Requirements,853111,2024-25,proposed,budget-fy2024-25-vol1,100,,fy2024-25
+TOTAL,Total Requirements,854394,2024-25,adopted,budget-fy2024-25-vol1,100,,fy2024-25
+TOTAL,Total Requirements,854394,2024-25,approved,budget-fy2024-25-vol1,100,,fy2024-25
+total,Total Requirements,854394,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book),fy2025-26
+1000,Instruction,458417,2025-26,adopted,budget-fy2025-26-vol1,99,,fy2025-26
+1000,Instruction,458417,2025-26,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+1000,Instruction,458417,2025-26,approved,budget-fy2025-26-vol1,99,,fy2025-26
+1000,Instruction,458417,2025-26,approved,tscc-review-fy2026,19,"2023-24 actual printed 411,710 (budget book prints 411,711)",tscc
+1000,Instruction,458417,2025-26,proposed,budget-fy2025-26-vol1,99,,fy2025-26
+2000,Support Services,347191,2025-26,adopted,budget-fy2025-26-vol1,99,,fy2025-26
+2000,Support Services,347191,2025-26,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+2000,Support Services,347191,2025-26,approved,budget-fy2025-26-vol1,99,,fy2025-26
+2000,Support Services,347191,2025-26,approved,tscc-review-fy2026,19,,tscc
+2000,Support Services,347191,2025-26,proposed,budget-fy2025-26-vol1,99,,fy2025-26
+3000,Enterprise and Community Services,4617,2025-26,adopted,budget-fy2025-26-vol1,99,,fy2025-26
+3000,Enterprise and Community Services,4617,2025-26,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+3000,Enterprise and Community Services,4617,2025-26,approved,budget-fy2025-26-vol1,99,,fy2025-26
+3000,Enterprise and Community Services,4617,2025-26,proposed,budget-fy2025-26-vol1,99,,fy2025-26
+3000,Enterprises and Community Services,4617,2025-26,approved,tscc-review-fy2026,19,,tscc
+4000,Facilities Acquisition and Construction,0,2025-26,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+5100/5400,Debt Service & PERS UAL Programs,0,2025-26,adopted,budget-fy2025-26-vol1,99,,fy2025-26
+5100/5400,Debt Service & PERS UAL Programs,0,2025-26,approved,budget-fy2025-26-vol1,99,,fy2025-26
+5100/5400,Debt Service & PERS UAL Programs,0,2025-26,proposed,budget-fy2025-26-vol1,99,,fy2025-26
+5100/5400,Debt Service,0,2025-26,approved,tscc-review-fy2026,19,GF debt service = bus leases under GASB 87,tscc
+5200,Transfers of Funds,17176,2025-26,adopted,budget-fy2025-26-vol1,99,,fy2025-26
+5200,Transfers of Funds,17176,2025-26,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+5200,Transfers of Funds,17176,2025-26,approved,budget-fy2025-26-vol1,99,,fy2025-26
+5200,Transfers of Funds,17176,2025-26,proposed,budget-fy2025-26-vol1,99,,fy2025-26
+5200,Transfers Out,17176,2025-26,approved,tscc-review-fy2026,19,,tscc
+6000,Contingencies,41179,2025-26,adopted,budget-fy2025-26-vol1,99,,fy2025-26
+6000,Contingencies,41179,2025-26,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+6000,Contingencies,41179,2025-26,approved,budget-fy2025-26-vol1,99,,fy2025-26
+6000,Contingencies,41179,2025-26,approved,tscc-review-fy2026,19,,tscc
+6000,Contingencies,41179,2025-26,proposed,budget-fy2025-26-vol1,99,,fy2025-26
+7000,Ending Fund Balance,0,2025-26,approved,tscc-review-fy2026,19,,tscc
+7000,Unappropriated Fund Balance,0,2025-26,adopted,budget-fy2025-26-vol1,99,,fy2025-26
+7000,Unappropriated Fund Balance,0,2025-26,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+7000,Unappropriated Fund Balance,0,2025-26,approved,budget-fy2025-26-vol1,99,,fy2025-26
+7000,Unappropriated Fund Balance,0,2025-26,proposed,budget-fy2025-26-vol1,99,,fy2025-26
+TOTAL,TOTAL FUND REQUIREMENTS,868580,2025-26,approved,tscc-review-fy2026,19,,tscc
+total,Total Requirements,868580,2025-26,adopted,budget-fy2025-26-vol1,99,,fy2025-26
+total,Total Requirements,868580,2025-26,approved,budget-fy2025-26-vol1,99,,fy2025-26
+total,Total Requirements,868580,2025-26,proposed,budget-fy2025-26-vol1,99,,fy2025-26
+1000,Instruction,458888,2026-27,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+2000,Support Services,345021,2026-27,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+3000,Enterprise and Community Services,2391,2026-27,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+4000,Facilities Acquisition and Construction,1,2026-27,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+5200,Transfers of Funds,14755,2026-27,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+6000,Contingencies,41056,2026-27,adopted,budget-fy2026-27-vol1,109,,fy2026-27
+7000,Unappropriated Fund Balance,0,2026-27,adopted,budget-fy2026-27-vol1,109,,fy2026-27

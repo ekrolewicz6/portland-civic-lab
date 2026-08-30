@@ -1,0 +1,6 @@
+permanent_rate,gap_rate,local_option_rate,bond_rate,av_billions,rmv_billions,compression_loss_k,fy,basis,doc_id,page,notes
+4.7743,0.5038,1.9900,1.0951,45.575,90.931,24298,2015-16,actual-budgetary,budget-fy2019-20-book,176,"component rates (permanent 4.7743 + gap 0.5038 = 5.2781 combined operations rate) from p176; AV, RMV and Measure 5 adjustment (compression) from p21, M5 printed in whole dollars, here rounded to $1k"
+4.7743,0.5038,1.9900,1.0623,47.345,106.935,20960,2016-17,actual-budgetary,budget-fy2019-20-book,176,
+4.7743,0.5038,1.9900,2.4182,49.706,121.648,20506,2017-18,actual-budgetary,budget-fy2019-20-book,176,
+4.7743,0.5038,1.9900,2.4890,51.112,131.735,18830,2018-19,revised,budget-fy2019-20-book,176,2018-19 shown as estimate on p176
+4.7743,0.5038,1.9900,2.4890,52.645,147.094,19772,2019-20,adopted,budget-fy2019-20-book,176,"2019-20 AV/RMV/M5 marked projected on p21; adopted levy: $5.2781 operations + $1.9900 local option rates and $130,575,000 bonded debt amount per Resolution 5913 p413-414"

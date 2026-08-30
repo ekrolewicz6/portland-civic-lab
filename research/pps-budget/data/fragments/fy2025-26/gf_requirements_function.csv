@@ -1,0 +1,57 @@
+function_code,label,amount_k,fy,basis,doc_id,page,notes
+1000,Instruction,373758,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,native unit thousands; Summary of Requirements by Major Function - 100 General Fund
+1000,Instruction,376786,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,
+1000,Instruction,411711,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,
+1000,Instruction,439084,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book)
+1000,Instruction,458417,2025-26,proposed,budget-fy2025-26-vol1,99,
+1000,Instruction,458417,2025-26,approved,budget-fy2025-26-vol1,99,
+1000,Instruction,458417,2025-26,adopted,budget-fy2025-26-vol1,99,
+2000,Support Services,312766,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,
+2000,Support Services,343359,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,
+2000,Support Services,370577,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,
+2000,Support Services,354962,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book)
+2000,Support Services,347191,2025-26,proposed,budget-fy2025-26-vol1,99,
+2000,Support Services,347191,2025-26,approved,budget-fy2025-26-vol1,99,
+2000,Support Services,347191,2025-26,adopted,budget-fy2025-26-vol1,99,
+3000,Enterprise and Community Services,893,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,
+3000,Enterprise and Community Services,3114,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,
+3000,Enterprise and Community Services,4123,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,
+3000,Enterprise and Community Services,3257,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book)
+3000,Enterprise and Community Services,4617,2025-26,proposed,budget-fy2025-26-vol1,99,
+3000,Enterprise and Community Services,4617,2025-26,approved,budget-fy2025-26-vol1,99,
+3000,Enterprise and Community Services,4617,2025-26,adopted,budget-fy2025-26-vol1,99,
+5100/5400,Debt Service & PERS UAL Programs,400833,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,all in 5400 PERS UAL (2021 POB payoff year; detail p.104)
+5100/5400,Debt Service & PERS UAL Programs,0,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,
+5100/5400,Debt Service & PERS UAL Programs,0,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,
+5100/5400,Debt Service & PERS UAL Programs,339,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book); $339K is 5100 Debt Service (detail p.104)
+5100/5400,Debt Service & PERS UAL Programs,0,2025-26,proposed,budget-fy2025-26-vol1,99,
+5100/5400,Debt Service & PERS UAL Programs,0,2025-26,approved,budget-fy2025-26-vol1,99,
+5100/5400,Debt Service & PERS UAL Programs,0,2025-26,adopted,budget-fy2025-26-vol1,99,
+5200,Transfers of Funds,1207,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,
+5200,Transfers of Funds,1282,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,
+5200,Transfers of Funds,887,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,
+5200,Transfers of Funds,15896,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book)
+5200,Transfers of Funds,17176,2025-26,proposed,budget-fy2025-26-vol1,99,
+5200,Transfers of Funds,17176,2025-26,approved,budget-fy2025-26-vol1,99,
+5200,Transfers of Funds,17176,2025-26,adopted,budget-fy2025-26-vol1,99,
+6000,Contingencies,0,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,
+6000,Contingencies,0,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,
+6000,Contingencies,0,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,
+6000,Contingencies,40856,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book)
+6000,Contingencies,41179,2025-26,proposed,budget-fy2025-26-vol1,99,
+6000,Contingencies,41179,2025-26,approved,budget-fy2025-26-vol1,99,
+6000,Contingencies,41179,2025-26,adopted,budget-fy2025-26-vol1,99,
+7000,Unappropriated Fund Balance,98804,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,
+7000,Unappropriated Fund Balance,105497,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,
+7000,Unappropriated Fund Balance,86078,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,
+7000,Unappropriated Fund Balance,0,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book)
+7000,Unappropriated Fund Balance,0,2025-26,proposed,budget-fy2025-26-vol1,99,
+7000,Unappropriated Fund Balance,0,2025-26,approved,budget-fy2025-26-vol1,99,
+7000,Unappropriated Fund Balance,0,2025-26,adopted,budget-fy2025-26-vol1,99,
+total,Total Requirements,1188261,2021-22,actual-budgetary,budget-fy2025-26-vol1,99,
+total,Total Requirements,830038,2022-23,actual-budgetary,budget-fy2025-26-vol1,99,
+total,Total Requirements,873375,2023-24,actual-budgetary,budget-fy2025-26-vol1,99,
+total,Total Requirements,854394,2024-25,revised,budget-fy2025-26-vol1,99,column header 'Budget 2024-25' (current-year budget as shown in FY2025-26 adopted book)
+total,Total Requirements,868580,2025-26,proposed,budget-fy2025-26-vol1,99,
+total,Total Requirements,868580,2025-26,approved,budget-fy2025-26-vol1,99,
+total,Total Requirements,868580,2025-26,adopted,budget-fy2025-26-vol1,99,

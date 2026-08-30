@@ -1,0 +1,15 @@
+contingency_k,ending_fund_balance_k,fy,basis,doc_id,page,notes
+0,37835,2015-16,actual-budgetary,budget-fy2019-20-book,83,native unit thousands; General Fund scope; contingency not spent as such in actuals; EFB = 7000 unappropriated
+0,20104,2016-17,actual-budgetary,budget-fy2019-20-book,83,General Fund scope
+0,38282,2017-18,actual-budgetary,budget-fy2019-20-book,83,General Fund scope
+25252,0,2018-19,revised,budget-fy2019-20-book,83,General Fund scope
+26682,0,2019-20,proposed,budget-fy2019-20-book,83,General Fund scope
+26682,0,2019-20,approved,budget-fy2019-20-book,83,General Fund scope
+26682,0,2019-20,adopted,budget-fy2019-20-book,83,GF budgets no unappropriated ending fund balance in 2019-20
+0,348085,2015-16,actual-budgetary,budget-fy2019-20-book,74,All Funds scope
+0,221460,2016-17,actual-budgetary,budget-fy2019-20-book,74,All Funds scope
+0,558757,2017-18,actual-budgetary,budget-fy2019-20-book,74,All Funds scope
+326492,27146,2018-19,revised,budget-fy2019-20-book,74,All Funds scope
+77939,42265,2019-20,proposed,budget-fy2019-20-book,74,All Funds scope
+77939,40754,2019-20,approved,budget-fy2019-20-book,74,All Funds scope
+77939,40754,2019-20,adopted,budget-fy2019-20-book,74,"by-account view p75 prints contingency 77,940 (rounding)"

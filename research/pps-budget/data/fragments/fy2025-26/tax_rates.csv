@@ -1,0 +1,12 @@
+permanent_rate,gap_rate,local_option_rate,bond_rate,av_billions,rmv_billions,compression_loss_k,fy,basis,doc_id,page,notes
+4.7743,0.5038,1.9900,2.3335,,,,2021-22,actual-budgetary,budget-fy2025-26-vol1,222,"rates per $1,000 AV; 'Budget's Effect on Average Homeowner' table; total rate 9.6016"
+4.7743,0.5038,1.9900,2.3000,,,,2022-23,actual-budgetary,budget-fy2025-26-vol1,222,total rate 9.5681
+4.7743,0.5038,1.9900,2.3800,,,,2023-24,actual-budgetary,budget-fy2025-26-vol1,222,total rate 9.6481
+4.7743,0.5038,1.9900,2.3363,,,,2024-25,actual-budgetary,budget-fy2025-26-vol1,222,total rate 9.6044
+4.7743,0.5038,1.9900,2.4724,,,,2025-26,adopted,budget-fy2025-26-vol1,222,total rate 9.7405; column labeled Projected; actual levy rate set by county assessors
+,,1.99,2.33,59.61,147.26,24819,2021-22,actual-budgetary,budget-fy2025-26-vol1,27,"Revenue Factors table; compression = 'Less Measure 5 Adjustments' printed in whole dollars, normalized to K; operations rate printed $5.28 = permanent + gap combined so permanent/gap left blank here"
+,,1.99,2.30,62.49,157.08,25192,2022-23,actual-budgetary,budget-fy2025-26-vol1,27,
+,,1.99,2.38,69.00,156.67,35811,2023-24,revised,budget-fy2025-26-vol1,27,marked latest estimate from ODE/TSCC (fn2)
+,,1.99,2.34,71.05,151.42,42631,2024-25,revised,budget-fy2025-26-vol1,27,marked latest estimate from ODE/TSCC (fn2)
+,,1.99,2.47,73.18,153.55,42845,2025-26,adopted,budget-fy2025-26-vol1,27,projected (fn3)
+5.2781,,1.9900,,,,,2025-26,approved,lb1-fy2025-26,1,"permanent rate as certified includes the $0.5038 gap portion (vol1 p.22, p.316); bonded debt levied as amount not rate: $181,000,000 (2024-25: $166,000,000)"

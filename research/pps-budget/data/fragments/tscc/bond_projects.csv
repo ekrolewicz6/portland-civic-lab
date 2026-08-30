@@ -1,0 +1,23 @@
+bond,project,original_budget_k,current_estimate_k,spent_k,as_of,doc_id,page,notes
+2020 (26-215),Total authorization,1208000,,,2020-09,tscc-measure-26-215-review,2,native $ millions; measure seeks up to $1.208 billion; commonly described as '$1.2 billion'; components below from final-configuration table p.6
+2020 (26-215),Educational Improvements,229000,,,2020-09,tscc-measure-26-215-review,6,
+2020 (26-215),Health and Safety Projects,184000,,,2020-09,tscc-measure-26-215-review,6,
+2020 (26-215),Benson Polytechnic HS Completion,152000,,,2020-09,tscc-measure-26-215-review,6,
+2020 (26-215),Jefferson High School Modernization,311000,,,2020-09,tscc-measure-26-215-review,6,
+2020 (26-215),Multiple Pathways to Graduation Program Building,64000,,,2020-09,tscc-measure-26-215-review,6,"later renamed hayu alqi uyxat (Benson campus, opened fall 2024 per tscc-review-fy2026 p.12)"
+2020 (26-215),Design/Pre-construction of 2 High Schools,40000,,,2020-09,tscc-measure-26-215-review,6,Cleveland and Ida B Wells (Wilson)
+2020 (26-215),Other Improvements/Design,12000,,,2020-09,tscc-measure-26-215-review,6,
+2020 (26-215),Center for Black Student Excellence,60000,,,2020-09,tscc-measure-26-215-review,6,26-259 review p.5 notes continued auditor/press scrutiny of slow progress
+2020 (26-215),Management (6%),63000,,,2020-09,tscc-measure-26-215-review,6,
+2020 (26-215),Project Contingency (10%),93000,,,2020-09,tscc-measure-26-215-review,6,excluding curriculum & technology
+2025 (26-259),Total authorization,1830000,,,2025-05,tscc-measure-26-259-review,1,"$1.83 billion GO bonds; avg est tax rate for all PPS bonds continues at $2.50/$1,000 AV; first-year (2025-26) rate for new bonds alone est $1.17/$1,000 assuming $79.6M 2025 issuance (p.7)"
+2025 (26-259),Update/repair aging elementary and middle schools,366000,,,2025-06,tscc-review-fy2026,12,component amounts from FY25-26 review narrative (measure review's own project-cost breakout table is image-only)
+2025 (26-259),"Safety/security, seismic, and high school modernization",974000,,,2025-06,tscc-review-fy2026,12,"narrative groups 'update safety and security systems, update seismic performance, and modernize high schools ($974 million)'"
+2025 (26-259),Curriculum materials,56000,,,2025-06,tscc-review-fy2026,12,
+2025 (26-259),Technology,176000,,,2025-06,tscc-review-fy2026,12,
+2025 (26-259),Physical education,10000,,,2025-06,tscc-review-fy2026,12,
+2025 (26-259),Extracurricular activities,79000,,,2025-06,tscc-review-fy2026,12,
+2025 (26-259),Project contingency (5%),83000,,,2025-05,tscc-measure-26-259-review,8,$83M contingency and $83M administration per Bond Accountability Committee report cited in review
+2025 (26-259),Bond administration,83000,,,2025-05,tscc-measure-26-259-review,8,
+2012 (26-144),Total authorization,482000,,482000,2020-09,tscc-measure-26-215-review,2,"$482M authorized Nov 2012 (66.2% yes); fully issued per issuance table p.2 (2013A 76,265 + 2013B 68,575 + 2015A 30,300 + 2015B 244,700 + 2017B 62,160); tscc-review-fy2026 p.11: all planned work complete, minor funds remain"
+2017 (26-193),Total authorization,790000,,790000,2020-09,tscc-measure-26-215-review,2,"$790M authorized May 2017 (66.0% yes); fully issued (2017A 168,950 + 2017B 179,730 + 2020 441,320); spent_k = par amount fully issued, not project spend"
