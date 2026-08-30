@@ -832,6 +832,34 @@
       "pages": 98,
       "url": "https://www.pps.net/fs/resource-manager/view/f1b59ce8-400f-4784-aabb-812676ac0ab3",
       "fetchedAt": "2026-08-30"
+    },
+    "ode-ssf-estimates-fy2026-27": {
+      "sha256": "ce09685537463796f393a3bdd4a4a6b285ccd47f4bdf048cf348e55ed0b6dfa5",
+      "bytes": 2671227,
+      "pages": 198,
+      "url": "https://www.oregon.gov/ode/schools-and-districts/grants/Documents/2026-27%20State%20School%20Fund/26-27%20SSF%20Estimates%206-15-26%20-%20READY.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "ode-admw-breakout-fy2026-27": {
+      "sha256": "2e85848307fc82953902c44fe1d58cc748d61ff9e4731297eef2e45d8372a9c1",
+      "bytes": 2551163,
+      "pages": 230,
+      "url": "https://www.oregon.gov/ode/schools-and-districts/grants/Documents/2026-27%20State%20School%20Fund/26-27%20ADMw%20breakout%206-15-26%20READY.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "ode-ssf-estimates-fy2025-26": {
+      "sha256": "ffe20283e62ea0e6d95e58b5311f7a55d600294a156727aa51b9b21c8fa7529b",
+      "bytes": 2801936,
+      "pages": 198,
+      "url": "https://www.oregon.gov/ode/schools-and-districts/grants/Documents/2025-26%20State%20School%20Fund/25-26%20Estimates%205-1-26.pdf",
+      "fetchedAt": "2026-08-30"
+    },
+    "ode-admw-breakout-fy2025-26": {
+      "sha256": "2f08fc6fbfb27c4053cd8b4f37ab20b5831840a19dfa3ad96f0abc3db9aadb89",
+      "bytes": 1582753,
+      "pages": 230,
+      "url": "https://www.oregon.gov/ode/schools-and-districts/grants/Documents/2025-26%20State%20School%20Fund/25-26%20ADMw%20Breakout%205-1-26.pdf",
+      "fetchedAt": "2026-08-30"
     }
   }
 }

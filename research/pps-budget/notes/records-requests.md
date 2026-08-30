@@ -12,7 +12,7 @@ ODE asks start informal (their sites invite it).
 | # | To | For | Why |
 |---|---|---|---|
 | R1 | PPS Public Records | Any monthly or quarterly financial reports produced for internal use, FY2023-24 to present; if none exist, a statement to that effect | Either we get the interims or we get the admission; both are findings (G2) |
-| R2 | PPS | The FY2021-22 annual bond performance audit absent from the public index | G5; auditor's own site confirms it exists |
+| ~~R2~~ | ~~PPS~~ | WITHDRAWN 2026-08-30: the FY2021-22 audit is the "Year 4" report (issued Feb 2023) and is already in the corpus; the real finding is the publication-cadence gap (no audit issued in calendar 2022) | closed by fact-check |
 | R3 | PPS | The cost model or fiscal analysis behind the ~$175M three-year strike-settlement figure | T-5 / D7 cannot be adjudicated without it (G9) |
 | R4 | PPS | Position-control or FTE reports by function and location, FY2018-19 to present | Decisive test for the central-office growth claims |
 | R5 | PPS | The school closure/consolidation savings model used in the Rightsizing process | What a closure actually saves vs what people assume |

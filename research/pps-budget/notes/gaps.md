@@ -9,7 +9,7 @@ document census and governance research (full detail in the plan archive).
 | G2 | No public monthly/quarterly interim financials | open | Records request R1 (or the admission none exist) |
 | G3 | No SoS performance audit of PPS since 2019-01 | documented | Findings section; 7-year oversight gap |
 | G4 | OIPA output minimal; nothing on budgeting/forecasting/position control | documented | Findings section |
-| G5 | Bond performance audit for audit-year 2022 missing from PPS index (auditor site confirms it exists) | open | Records request R2 |
+| G5 | ~~Bond audit for 2022 missing~~ | **CLOSED 2026-08-30** | The FY2021-22 audit is the Year 4 report (issued Feb 2023), in corpus. Real finding: no audit was ISSUED in calendar 2022 (16-month publication gap during active construction). R2 withdrawn |
 | G6 | ~~FY2026-27 CBRC report not on the archive page~~ | **CLOSED 2026-08-29** | The report (presented May 12, 2026) is now posted and in the corpus as `cbrc-2026-27-cbrc-proposed-budget-review`. The 463756ca draft is the FY2024-25 cycle |
 | G7 | TSCC FY2026-27 PPS review not located; pre-2011-12 annual reports offline | open | Informal TSCC ask (R8) |
 | G8 | No budget-in-brief / multi-year trend doc (the exact SoS 2019-01 deficiency, unremediated 7 years) | documented | Load-bearing finding; we build the trend series ourselves |
