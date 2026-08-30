@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
-import { ArrowRight, Building2, Landmark, Network, Scale, Server, Store, Theater, TreePine, Users, Route } from "lucide-react";
+import { ArrowRight, Building2, GraduationCap, Landmark, Network, Scale, Server, Store, Theater, TreePine, Users, Route } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
@@ -25,6 +25,17 @@ interface DeepDive {
 }
 
 const DIVES: DeepDive[] = [
+  {
+    href: "/deep-dives/pps-budget",
+    eyebrow: "Schools & public money",
+    title: "Where the next dollar goes.",
+    blurb:
+      "Portland Public Schools cut 322 positions the same year its budget hit $2.77 billion, and both facts are true. Eleven years of budget books, every audit, and the district's own watchdogs, read so you don't have to. What actually decides whether a dollar reaches a student, where money is doing less than it could, and the ten decisions, red-teamed until they survived, that would change it.",
+    stat: "$1.51",
+    statLabel: "what the $1.99 teachers levy actually delivers",
+    icon: GraduationCap,
+    available: true,
+  },
   {
     href: "/deep-dives/venue-portfolio",
     eyebrow: "Venues & public assets",

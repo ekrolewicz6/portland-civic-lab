@@ -14,6 +14,7 @@ import {
   Theater,
   Trees,
   Users,
+  GraduationCap,
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -376,20 +377,20 @@ export default function HomePage() {
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {[
             {
+              href: "/deep-dives/pps-budget",
+              icon: GraduationCap,
+              eyebrow: "Schools & public money",
+              title: "Where the next dollar goes.",
+              blurb:
+                "PPS cut 322 positions the year its budget hit $2.77 billion, and both are true. What decides whether a dollar reaches a student, where money does less than it could, and the ten red-teamed decisions that would change it.",
+            },
+            {
               href: "/deep-dives/homelessness",
               icon: Users,
               eyebrow: "Homelessness",
               title: "Why Portland can't end homelessness",
               blurb:
                 "Spending is up and it keeps growing. The math that explains why — an inflow/outflow simulator, who's actually homeless, the true cost of doing nothing, and what would actually work.",
-            },
-            {
-              href: "/deep-dives/fpdr",
-              icon: Landmark,
-              eyebrow: "Budgets & pensions",
-              title: "The pension hiding on your property tax bill",
-              blurb:
-                "Portland owes $3.9 billion in police and fire pensions and saved almost none of it. See what FPDR costs you, who receives it, and try fixing it with an interactive reform simulator.",
             },
             {
               href: "/deep-dives/venue-portfolio",
