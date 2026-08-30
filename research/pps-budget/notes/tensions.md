@@ -8,3 +8,5 @@
 | T-4 | Maine contamination | portlandschools.org / portlandk12.org figures polluting search results | Domain check on every news-sourced figure; build.ts lint | standing |
 | T-5 | Strike settlement cost | District ~$175M/3yrs (press-only) vs PAT's costing | Records request R3 + our own COLA × salary-base model (analysis pass I) | open |
 | T-6 | Admin growth +88% (2000-2019) | WW-reported, secondary; horizon predates ours | Carry as "reported (WW), pending primary verification"; test the recent-decade analog with our FTE series | open |
+
+| T-7 | PPS's audited ACFR (FY2025, statistical section p146) prints enrollment 52,380 for 2022-23 amid 45,497 and 44,771 — an impossible value that survived audit | ACFR vs TSCC series | Derivation drops it as an outlier (DERIVATION_NOTES); flag to PPS finance in the corrections invitation | documented |

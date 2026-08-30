@@ -54,5 +54,9 @@
   "https://www.pps.net/fs/resource-manager/view/33458ded-caed-4f72-b869-18d5219fbb3e": {
     "waybackUrl": "",
     "waybackTs": "FAILED"
+  },
+  "https://sos.oregon.gov/audits/Documents/2019-01.pdf": {
+    "waybackUrl": "https://web.archive.org/web/20260404191058/https://sos.oregon.gov/audits/Documents/2019-01.pdf",
+    "waybackTs": "20260404191058"
   }
 }
