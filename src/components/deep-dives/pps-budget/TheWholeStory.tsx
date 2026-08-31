@@ -28,7 +28,7 @@ const SEGMENTS = [
     valueK: 223_936,
     display: "$224M",
     detail: "Title I, special education, and similar programs. Congress and the state legislature set the strings; the district spends as directed or gives the money back.",
-    color: "var(--color-canopy-light)",
+    color: "var(--color-clay)",
   },
   {
     label: "Committed",
@@ -51,22 +51,22 @@ const FINDINGS = [
     href: "#the-empty-chair",
     stat: "9",
     statLabel: "working days",
-    title: "The empty chair",
-    body: "Oregon law seats citizens on every big district's budget committee. A carve-out lets Portland's board review its own budget alone; the citizen advisory committee that reviews it instead got nine working days for $2.8 billion.",
+    title: "No one checks the work",
+    body: "In most Oregon districts, the law puts regular citizens on the committee that approves the school budget. Portland is exempt: the board approves its own work, and the volunteer committee that reviews it instead got nine working days. That is how bad assumptions survive to become next year's crisis.",
   },
   {
     href: "#the-levy-leak",
     stat: "$1.51",
     statLabel: "of every $1.99",
-    title: "The levy leak",
-    body: "Voters renewed a $1.99 teachers levy. Tax limits from the 1990s deliver about $1.51 of it, the leak is growing fast, and only the state legislature can fix it.",
+    title: "The teachers levy leaks",
+    body: "Portlanders pay a special tax that exists only to fund teachers. Old state tax limits cancel about a quarter of it before it arrives, and the loss grows every year. The result: the same levy pays for about 200 fewer teachers than in 2019, and only the state legislature can fix it.",
   },
   {
     href: "#waste",
     stat: "$41M→$18M",
-    statLabel: "one year's own forecast",
-    title: "The forecast problem",
-    body: "The district's quarterly reports are public, and inside FY2025-26 they show its own year-end forecast swinging from $41M to $18M and back to $35M. The reports exist. Nobody has to act on them.",
+    statLabel: "the district's guess at its own year-end cash, within 12 months",
+    title: "Forecasts nobody can trust",
+    body: "Four times a year the district publishes how much money it expects to have left. Last year that number swung from $41M down to $18M and back to $35M. A district that cannot predict its own money cuts late and cuts wrong, and that is where the deepest damage on this page comes from.",
   },
 ] as const;
 
