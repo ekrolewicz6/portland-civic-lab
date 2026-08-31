@@ -149,22 +149,22 @@ export default function PpsBudgetPage() {
                 <div>
                   <dt className="text-[14px] font-semibold text-white">First, the rules</dt>
                   <dd className="mt-1 text-[14px] leading-relaxed text-white/65">
-                    Most of what Portlanders blame the district for was decided in Salem in the
-                    1990s. Knowing which is which is the whole game.
+                    Oregon sets most of the rules for school money. We start there, because the
+                    rules explain most of the fights.
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-[14px] font-semibold text-white">Then, the record</dt>
+                  <dt className="text-[14px] font-semibold text-white">Then, what happened</dt>
                   <dd className="mt-1 text-[14px] leading-relaxed text-white/65">
-                    What the district did with its decade: the one-time money, the strike, the
-                    cuts, and the verdicts that survive every excuse.
+                    The last ten years: where the money came from, where it went, what got cut,
+                    and where it was wasted.
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-[14px] font-semibold text-white">Then, the plan</dt>
+                  <dt className="text-[14px] font-semibold text-white">Then, what to do</dt>
                   <dd className="mt-1 text-[14px] leading-relaxed text-white/65">
-                    Ten decisions a board member could move on Monday, printed with the hardest
-                    objections we could find and the answers.
+                    Ten specific things the school board could do, and what you can do yourself:
+                    six questions, six dates, one rule.
                   </dd>
                 </div>
               </dl>
