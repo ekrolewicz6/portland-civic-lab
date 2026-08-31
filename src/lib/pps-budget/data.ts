@@ -558,13 +558,13 @@ export const WASTE_VERDICTS = [
     id: "W5",
     title: "Money lost to slow reactions",
     ledger: "movable",
-    verdict: "The most expensive problem on this page: the district moves late, and late costs more.",
+    verdict: "The district saw this coming. What it lacks is a mechanism that forces action when the numbers move.",
     evidence:
-      "Within one school year, the district's own published forecast of its year-end cash swung from $41 million down to $18 million and back to $35 million, and a deficit opened mid-year anyway. The pension reserve, built for a rate increase the actuaries had scheduled years in advance, was spent in one year. Citizen reviewers got nine days. State audit recommendations were still only 'partially implemented' at the follow-up.",
+      "Within one school year, the district's own published forecast of its year-end cash swung from $41 million down to $18 million and back to $35 million, and a deficit opened mid-year anyway. Its own December report attributed part of the drop to staffing it had added and vacancy savings that never materialized, both internal. Its citizen committee had called the budget's assumptions optimistic at adoption, before any surprise from Salem. Nothing in policy requires the district to explain a swing like that in public, or to do anything when it happens.",
     defense:
-      "State revenue genuinely is hard to predict, the budget office itself has been cut, and correcting course mid-year is at least a response.",
+      "This district did plan ahead. It adopted a reserve policy in 2019 targeting up to 10 percent, built a balance above the floor, and spent it down through the deficit years rather than laying off staff sooner, over a teachers union arguing throughout that the money should be spent faster. That reserve is a real reason Portland avoided mass layoffs two years ago. State revenue is genuinely hard to forecast inside a year, the budget office itself has been cut, and the fixes big enough to close a structural gap are politically brutal in every district that faces them.",
     bottomLine:
-      "The takeaway: every other problem on this page got more expensive because the district saw it late or moved late. The cheapest fix available is to grade its own forecasts in public and act the quarter they move, and it costs almost nothing.",
+      "The takeaway: the failure here is not blindness, it is speed. The district built a cushion for this and then spent it in a single year against a multi-year cliff, in its own FAQ's words a one-year solution to a multi-year challenge. Late decisions buy less than early ones, which is why every other problem on this page cost more than it had to. The cheapest available fix is a rule the district can adopt for itself: grade the forecasts in public, and require a named response the quarter one moves.",
   },
 ] as const;
 

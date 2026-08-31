@@ -377,7 +377,21 @@ export default function PpsBudgetPage() {
             a 43.0 percent state average, math at 48.0 against 31.2, and graduation at 82.5 percent
             (<Src id="academicJourney" />). TSCC certified its last three budgets without a single
             objection, Lincoln High finished $16.9M under its revised budget, and the quarterly
-            financial reports exist and are public. The problem this page documents is not
+            financial reports exist and are public.
+          </p>
+          <p className="mt-3 max-w-3xl text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+            Two more things the record supports, against the way this story usually gets told.
+            The district did see the cliff coming: it adopted a reserve policy in 2019 targeting
+            up to 10 percent, built a balance above the floor, and spent it down through the
+            deficit years instead of laying people off sooner, while the teachers union argued
+            throughout that it was sitting on money it should spend (<Src id="tsccFy26" />). That
+            reserve is a large part of why Portland was not doing mass layoffs two years ago. And
+            during the strike, when its numbers were widely doubted, the district said publicly
+            that a settlement on those terms would force deep cuts. It did. Nothing below should
+            be read as a claim that nobody at PPS was paying attention.
+          </p>
+          <p className="mt-3 max-w-3xl text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+            The problem this page documents is not
             collapse. It is a district that teaches better than its state average while its buildings,
             its finances, and its planning fall behind its own results.
           </p>
@@ -569,8 +583,8 @@ export default function PpsBudgetPage() {
       <Section
         id="empty-seats"
         eyebrow="What happened"
-        title="Fewer students, same buildings, full costs."
-        lead="Revenue arrives per student. Costs arrive per building. Nobody voted for the gap between them, and it grew for five years before anyone moved."
+        title="Fewer students, the same buildings, and a thinner program in each one."
+        lead="Revenue arrives per student. Costs arrive per building. But the sharper problem is not the money: below a certain size, a school cannot offer what a larger one can, and Portland now has a lot of schools below that size."
       >
         <Prose>
           <p>
@@ -578,7 +592,11 @@ export default function PpsBudgetPage() {
             body down about 16 percent from its peak, with the slide forecast to continue toward
             roughly 39,900 by 2028-29 (<Src id="tsccFy26" />). Every year of that divergence pays
             principals, boilers, custodians, and bus routes for seats without students in them,
-            out of the same fund cutting classroom positions. The forecasts were public and
+            out of the same fund cutting classroom positions. That is the money argument, and it
+            is the smaller one. The district&apos;s own case for consolidating is about what a
+            school can offer: a counselor who is there five days instead of two, a librarian, a
+            full slate of electives. Those need a certain number of students to exist at all, and
+            a school of 160 does not get there on any budget. The forecasts were public and
             unambiguous by 2021-22. The consolidation process began in fall 2026, with up to 20
             schools reported on the table (<Src id="wwTwentySchools" />, press). And the public
             can now see the whole footprint school by school, through an open-source compilation
@@ -595,12 +613,15 @@ export default function PpsBudgetPage() {
             Both of these things are true, and the coming debate will tend to ignore one of them.
             Keeping small schools open is something Portland pays extra for on purpose: for
             walkability, for belonging, and out of the memory of what closures did to Black and
-            brown North and Northeast Portland the last time. But nobody has published what that
-            choice costs: the honest per-building savings are modest, roughly one to two million
-            dollars per elementary, and the district&apos;s own savings model is not public.
-            Communities are being asked to trust arithmetic nobody can check. Whether any of this
-            deserves the word everyone reaches for, waste, depends on what the word means. Here is
-            the definition this page uses.
+            brown North and Northeast Portland the last time. The honest way to hold both is to
+            stop pretending this is mainly a savings decision. Per-building savings are modest,
+            roughly one to two million dollars per elementary, which will not close a $65 million
+            gap. What consolidation can actually deliver is a fuller program at the receiving
+            school, and that is the promise nobody has been asked to put in writing. The
+            district&apos;s savings model is not public, and neither is any accounting of what
+            students would gain. Communities are being asked to trust arithmetic nobody can check,
+            in both directions. Whether any of this deserves the word everyone reaches for, waste,
+            depends on what the word means. Here is the definition this page uses.
           </p>
         </Prose>
       </Section>

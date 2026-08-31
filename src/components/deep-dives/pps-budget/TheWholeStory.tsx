@@ -65,8 +65,8 @@ const FINDINGS = [
     href: "#waste",
     stat: "$41M→$18M",
     statLabel: "the district's own guess at its year-end cash, months apart",
-    title: "Forecasts nobody can trust",
-    body: "Four times a year the district publishes how much money it expects to have left. Last year that number swung from $41M down to $18M and back to $35M. A district that cannot predict its own money cuts late and cuts wrong, and that is where the deepest damage on this page comes from.",
+    title: "Big surprises, no required response",
+    body: "Four times a year the district publishes how much money it expects to have left. Last year that number swung from $41M down to $18M and back to $35M, and a deficit opened mid-year anyway. Nothing requires anyone to explain a swing like that in public or act on it, so the district decides late, and late decisions cost more than early ones.",
   },
 ] as const;
 

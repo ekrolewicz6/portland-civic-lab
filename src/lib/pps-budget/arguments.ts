@@ -49,14 +49,14 @@ export const DEBATES: Debate[] = [
           body: "Enrollment down one student in eight, pension rates moving from about 4 percent toward 23 as side accounts expire, and almost $115 million of one-time federal money gone.",
         },
         {
-          claim: "There is no hidden pot.",
-          body: "Reserves sit at the 5 percent policy floor, roughly $41 million against an $862 million fund, and the pension stabilization reserve is already spent.",
+          claim: "There is no hidden pot, and the reserve that existed was already used for this.",
+          body: "Reserves sit at the 5 percent policy floor, roughly $41 million against an $862 million fund, and the pension stabilization reserve is already spent. The district built that cushion deliberately after 2019 and drew it down through the deficit years instead of cutting deeper sooner, which is the main reason Portland was not doing mass layoffs two years ago, and it is the money the union spent those years arguing should be spent faster.",
         },
       ],
     },
     adjudication: {
       headline: "The deficit is real, and the fat-years scrutiny never happened. Both fit in one sentence.",
-      body: "The reserve arithmetic settles the hidden-pot claim: there is none. The central-growth claim is directionally supported but unverifiable without position-control records the district has never published, which is why releasing them is one of this project's drafted records requests. An argument that could be settled by one report has instead run for three years on faith.",
+      body: "The reserve arithmetic settles the hidden-pot claim: there is none, and the cushion that did exist was built on purpose and spent buying time. The central-growth claim is directionally supported but unverifiable without position-control records the district has never published, which is why releasing them is one of this project's drafted records requests. An argument that could be settled by one report has instead run for three years on faith.",
     },
   },
   {
@@ -65,26 +65,34 @@ export const DEBATES: Debate[] = [
     stakes:
       "Up to 20 schools are on the table, and both the case for and the case against are being oversold.",
     a: {
-      label: "Close them, save the money",
+      label: "The district's case for consolidating",
       points: [
         {
-          claim: "Empty seats are a quiet tax on every classroom.",
-          body: "Revenue arrives per student; costs arrive per building. Enrollment is down about 16 percent from peak with the slide forecast to continue, and the district pays full fixed costs on the difference.",
+          claim: "The real argument is what a school can offer, not what closing one saves.",
+          body: "This is the district's own stated reason, and it is not primarily financial: some things a school offers only exist above a certain enrollment. A full-time counselor instead of two days a week. A librarian. Art, music, and a full elective schedule at middle school. Below a certain size a school cannot reach those thresholds at any budget, so students end up with meaningfully different opportunities depending on which building they were assigned to.",
+        },
+        {
+          claim: "Small schools cost more per student, and that premium buys nothing extra.",
+          body: "In this district's own numbers, the fifteen smallest elementaries run about 0.55 support-staff positions per 100 students against 0.39 at the fifteen largest, with essentially the same students-per-teacher ratio. Keeping a small building open is a per-student subsidy, and it is spent holding baseline staffing together rather than on anything a family would notice.",
         },
       ],
     },
     b: {
-      label: "Closures are needless cruelty",
+      label: "The case against closing",
       points: [
         {
           claim: "The savings are overstated and the harm lands unevenly.",
           body: "Teachers move with students; only administration, custodial, and utilities are truly avoidable, roughly $1-2 million net per elementary. Closures have historically landed on Black and brown North and Northeast Portland, and displacement drives families out of the district entirely.",
         },
+        {
+          claim: "A small neighborhood school is worth something the program argument does not count.",
+          body: "Walkability, a school that knows every child by name, and a building families organized their lives around. Ten of the sixteen emptiest schools are Title I, so a list drawn by enrollment alone would again fall hardest on lower-income neighborhoods.",
+        },
       ],
     },
     adjudication: {
-      headline: "Closures fix the building map, not the budget. Anyone selling either extreme is selling something.",
-      body: "Per-building savings are real and small against a gap of more than $65 million; refusing to consolidate prices empty seats at zero, which five years of concurrent classroom cuts disprove. The test that matters: the savings model published and independently validated before any vote, and the savings visibly reinvested where the affected students land.",
+      headline: "Closures will not fix the budget, and the district is not mainly claiming they will. Judge them on program, not savings.",
+      body: "Per-building savings are real and small against a gap of more than $65 million, so anyone selling consolidation as the answer to the deficit is overselling. But that is not the district's central argument, and treating it as the only one makes the case for closing look weaker than it is. The program argument stands on its own: below a certain enrollment a school cannot offer what a larger one can, whatever its budget. One honest complication, from the school-level data: small schools are not starved per student, they are more expensive per student, so the harm is not that those children get less adult attention now. It is that the premium holds baseline staffing together instead of buying program breadth anywhere. The tests that matter, then, are two, not one: publish the savings model before any vote, and publish what students at the receiving schools actually gain, in named programs and positions. A consolidation that cannot show the second is just a closure.",
     },
   },
   {
@@ -112,7 +120,7 @@ export const DEBATES: Debate[] = [
     },
     adjudication: {
       headline: "One of three roughly comparable pressures, stacked on a base that one-time money had been concealing.",
-      body: "The record supports both halves and refutes both extremes. The full decomposition requires the settlement cost model the district has never published, and the committee that asked for cost information during the negotiation wrote, in its official report, that it did not receive enough to advise. Publishing that model is a drafted records request.",
+      body: "The record supports both halves and refutes both extremes. Credit where it is due on a point the district took heavy criticism for at the time: its public top-line during the strike, that a settlement on those terms would force deep cuts, is what happened, on roughly the scale it described. The precise decomposition still requires the settlement cost model the district has never published, and the committee that asked for cost information during the negotiation wrote, in its official report, that it did not receive enough to advise. Those are separate failures from the arithmetic, which held up. Publishing that model is a drafted records request.",
     },
   },
   {
