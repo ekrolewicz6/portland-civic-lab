@@ -20,28 +20,28 @@ const SEGMENTS = [
     label: "Locked",
     valueK: 1_661_384,
     display: "$1.66B",
-    detail: "Bond construction and debt. Spending it on teachers would be illegal.",
+    detail: "Bond money voters approved for specific buildings, plus payments owed on past bonds. Spending it on teachers would break the ballot promise and the law. Only a new bond measure changes what gets locked.",
     color: "var(--color-canopy)",
   },
   {
     label: "Restricted grants",
     valueK: 223_936,
     display: "$224M",
-    detail: "Federal and state money with its purposes attached.",
+    detail: "Title I, special education, and similar programs. Congress and the state legislature set the strings; the district spends as directed or gives the money back.",
     color: "var(--color-canopy-light)",
   },
   {
     label: "Committed",
     valueK: 701_659,
     display: "$702M",
-    detail: "Contracts, pensions, and the people who are the school system.",
+    detail: "Salaries, benefits, and pensions under contracts the district itself signed. Changeable, but at the bargaining table over years, not in one budget vote.",
     color: "var(--color-ember)",
   },
   {
     label: "The movable slice",
     valueK: 181_612,
     display: "$182M",
-    detail: "Where board choices actually bite. Utilities and buses live here too.",
+    detail: "What is left, and the only money this year's board votes actually decide. Utilities and buses live here too.",
     color: "var(--color-fern)",
   },
 ] as const;
@@ -127,7 +127,10 @@ export default function TheWholeStory() {
             loudest claims are about money that cannot legally reach it. The operating fund
             itself fell <span className="font-mono tabular-nums font-semibold text-[var(--color-ink)]">$6.5M</span>{" "}
             this year, the first drop in eleven years, while the headline total grew{" "}
-            <span className="font-mono tabular-nums">$733M</span>. Both are true. That is the story.
+            <span className="font-mono tabular-nums">$733M</span>. Both are true. That is the
+            story. And each lock has an owner: voters locked the bonds, Congress and the
+            legislature locked the grants, past contracts locked the payroll. Only the green
+            slice is this year&apos;s choice.
           </p>
         </div>
 
