@@ -3,17 +3,17 @@ import { WASTE_VERDICTS } from "@/lib/pps-budget/data";
 /**
  * The waste examination, W1 to W5: the Act IV opener (document.md section 10).
  * Opens with the waste standard and the no-total rule in a bordered band, then
- * renders the five examined claims as verdict cards. W4, information waste,
- * closes the grid full-width because it is the largest shown verdict and the
- * one every other problem on the page got more expensive through.
+ * renders the five examined claims as verdict cards. W5, money lost to slow
+ * reactions, closes the grid full-width because it is the biggest problem the
+ * page shows and the one every other problem got more expensive through.
  */
 
 type WasteVerdict = (typeof WASTE_VERDICTS)[number];
 
 const LEDGER_LABELS: Record<WasteVerdict["ledger"], string> = {
-  locked: "Locked ledger",
-  movable: "Movable ledger",
-  committed: "Committed ledger",
+  locked: "Locked money",
+  movable: "Money the board controls",
+  committed: "Committed money",
 };
 
 /** Verdict chip colors: clay for shown, ember for cost of delay,
@@ -22,8 +22,8 @@ const VERDICT_STYLES: Record<WasteVerdict["id"], { bg: string; fg: string }> = {
   W1: { bg: "var(--color-clay)", fg: "#ffffff" },
   W2: { bg: "var(--color-ember)", fg: "var(--color-canopy-deep)" },
   W3: { bg: "var(--color-canopy)", fg: "var(--color-paper)" },
-  W4: { bg: "var(--color-clay)", fg: "#ffffff" },
-  W5: { bg: "var(--color-sage)", fg: "var(--color-canopy-deep)" },
+  W4: { bg: "var(--color-sage)", fg: "var(--color-canopy-deep)" },
+  W5: { bg: "var(--color-clay)", fg: "#ffffff" },
 };
 
 function Eyebrow({ children, className = "" }: { children: string; className?: string }) {
@@ -43,7 +43,7 @@ function StandardBand() {
         <Eyebrow>The standard</Eyebrow>
         <p className="mt-3 max-w-3xl font-editorial text-[18px] leading-relaxed text-[var(--color-ink)] sm:text-[20px]">
           {
-            "A dollar is wasted only when the district controlled it, a better use in the same ledger was predictable, and the district had, or refused to gather, the information to know at the time."
+            "A dollar is wasted only when the district controlled it, a better use of that same money was predictable, and the district had, or refused to gather, the information to know at the time."
           }
         </p>
         <p className="mt-4 max-w-3xl border-t border-[var(--color-parchment)] pt-4 text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
@@ -55,10 +55,9 @@ function StandardBand() {
 
       {/* What the examination found, in one breath */}
       <p className="mt-4 max-w-3xl text-[14.5px] leading-relaxed text-[var(--color-ink)]">
-        <strong>What it finds:</strong> hundreds of millions in controllable bond overruns on the
-        locked ledger, years of paying full costs on emptying buildings, central overhead nobody
-        can benchmark because the numbers were never published, and an institution that steers
-        late. <strong>What it does not find:</strong> a hidden pot. There is none big enough to
+        <strong>What it finds:</strong> hundreds of millions in avoidable bond overruns, years of paying full costs on emptying buildings, central overhead nobody
+        can check because the numbers were never published, and money lost because forecasts
+        were not acted on. <strong>What it does not find:</strong> a hidden pot. There is none big enough to
         matter.
       </p>
     </div>
@@ -66,7 +65,7 @@ function StandardBand() {
 }
 
 function VerdictCard({ v }: { v: WasteVerdict }) {
-  const isLargest = v.id === "W4";
+  const isLargest = v.id === "W5";
   const chip = VERDICT_STYLES[v.id];
 
   return (
@@ -125,10 +124,8 @@ function VerdictCard({ v }: { v: WasteVerdict }) {
 }
 
 export default function WasteVerdicts() {
-  // W4 closes the grid full-width; the id chips keep the W-numbering legible.
-  const ordered = [...WASTE_VERDICTS].sort((a, b) =>
-    a.id === "W4" ? 1 : b.id === "W4" ? -1 : 0
-  );
+  // The data array is already in display order; W5 renders last, full-width.
+  const ordered = WASTE_VERDICTS;
 
   return (
     <div className="space-y-4">

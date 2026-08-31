@@ -412,7 +412,7 @@ export const WASTE_VERDICTS = [
     id: "W1",
     title: "Bond overruns",
     ledger: "locked",
-    verdict: "Shown, on the locked ledger",
+    verdict: "Real waste, but bond money, never classroom money",
     evidence:
       "Benson $202M at ballot to $421M at completion including an auditor-named $14M budgeting error; the 2017 program built by cutting ~$100M from the district's own cost model before the ballot; a $60M commitment to Black Portland unspent for four years.",
     defense:
@@ -422,9 +422,9 @@ export const WASTE_VERDICTS = [
   },
   {
     id: "W2",
-    title: "The carrying cost of the footprint",
+    title: "Paying for empty schools",
     ledger: "movable",
-    verdict: "A cost of delay",
+    verdict: "The waste was the five years of waiting",
     evidence:
       "Enrollment forecasts were public and unambiguous by 2021-22; consolidation began fall 2026; every year between, the General Fund paid full fixed costs on emptying buildings while cutting classroom positions.",
     defense:
@@ -434,9 +434,9 @@ export const WASTE_VERDICTS = [
   },
   {
     id: "W3",
-    title: "Central office and contracts",
+    title: "Central office and outside contracts",
     ledger: "movable",
-    verdict: "Unexplained overhead",
+    verdict: "Cannot be checked, and that is the finding",
     evidence:
       "Instruction FTE cut more than twice as fast as central business support; a paid assessment contract largely duplicating a free state service, flagged three years running, still in the budget; management-services lines up 199% in one proposed year.",
     defense:
@@ -446,21 +446,9 @@ export const WASTE_VERDICTS = [
   },
   {
     id: "W4",
-    title: "Information waste",
-    ledger: "movable",
-    verdict: "Shown, and the largest",
-    evidence:
-      "The district's own quarterly reports show its FY2025-26 year-end forecast swinging from $41.3M to $17.7M to $26.8M to $34.6M within one year, with a mid-year deficit its citizen committee confirmed; a pension reserve spent in one year against a scheduled cliff; nine days for citizen review; audit recommendations still only 'partially implemented' at the state's follow-up.",
-    defense:
-      "State revenue is genuinely hard to forecast; the budget office itself has been cut; the December report explained its own drivers; mid-year correction is at least responsiveness.",
-    bottomLine:
-      "The failure is not darkness. It is forecast quality, position control, and follow-through: the reports were public while the forecast whipsawed and staffing assumptions broke. If one thing changes, make the books decision-grade and act on them.",
-  },
-  {
-    id: "W5",
-    title: "One-time money on ongoing things",
+    title: "One-time money spent as if it were permanent",
     ledger: "committed",
-    verdict: "A choice, not waste; the disclosure failure files under W4",
+    verdict: "A defensible bet, badly disclosed",
     evidence:
       "Almost $115M of ESSER braided into continuing programs; the cut sequence afterward tracks the withdrawal nearly dollar for dollar.",
     defense:
@@ -468,16 +456,28 @@ export const WASTE_VERDICTS = [
     bottomLine:
       "The bet was defensible. Hiding the cliff was not. The citizen committee said the funding was 'hiding the looming shortfall' a full year before the strike.",
   },
+  {
+    id: "W5",
+    title: "Money lost to slow reactions",
+    ledger: "movable",
+    verdict: "The biggest problem on this page",
+    evidence:
+      "The district's own quarterly reports show its FY2025-26 year-end forecast swinging from $41.3M to $17.7M to $26.8M to $34.6M within one year, with a mid-year deficit its citizen committee confirmed; a pension reserve spent in one year against a scheduled cliff; nine days for citizen review; audit recommendations still only 'partially implemented' at the state's follow-up.",
+    defense:
+      "State revenue is genuinely hard to forecast; the budget office itself has been cut; the December report explained its own drivers; mid-year correction is at least responsiveness.",
+    bottomLine:
+      "The reports were public while the forecast swung by tens of millions and staffing assumptions broke. Late decisions cost more than early ones, and every other problem on this page got more expensive because of it. The fix: score the forecasts, explain the misses in public, and act on them.",
+  },
 ] as const;
 
 /** What the public record cannot answer, and the drafted (unsent) asks. */
 export const GAPS = [
   { gap: "No forecast-accuracy standard governs the interim reports that exist", why: "PPS publishes quarterly and monthly reports, and inside FY2025-26 they recorded the year-end forecast swinging $24M in a single quarter. Nothing requires a revision log, an accuracy scorecard, or a public reconciliation when that happens", ask: "The standard itself, in board policy: accuracy bands, a revision log, and a named response to material misses" },
   { gap: "No bond disclosures on any PPS site; official statements live only on the municipal bond market's EMMA system", why: "The district's risk disclosures to investors are more candid than anything it publishes to voters", ask: "Post them" },
-  { gap: "No state performance audit since January 2019", why: "A strike, an ESSER cycle, and five cut years with no state-level look", ask: "R8 to TSCC; the SoS decides its own docket" },
-  { gap: "No published cost model for the ~$175M strike settlement (a press-carried district figure)", why: "The most charged causal claim in the city cannot be evaluated by anyone", ask: "R3: the model. The signed contract is public; the arithmetic is not" },
-  { gap: "No position-control reports public", why: "The central-office growth fight runs on dueling unverifiable claims", ask: "R4: FTE by function and location, FY2018-19 forward" },
-  { gap: "The closure savings model is not public", why: "Communities are asked to trust arithmetic nobody can check", ask: "R5: the model, before any list" },
+  { gap: "No state performance audit since January 2019", why: "A strike, an ESSER cycle, and five cut years with no state-level look", ask: "The state audits division decides its own docket; the public can ask" },
+  { gap: "No published cost model for the ~$175M strike settlement (a press-carried district figure)", why: "The most charged causal claim in the city cannot be evaluated by anyone", ask: "Publish the cost model. The signed contract is public; the arithmetic is not" },
+  { gap: "No position-control reports public", why: "The central-office growth fight runs on dueling unverifiable claims", ask: "Publish staffing counts by role and location, 2018 forward" },
+  { gap: "The closure savings model is not public", why: "Communities are asked to trust arithmetic nobody can check", ask: "Publish the model, before any list" },
   { gap: "No bond audit was issued during calendar 2022", why: "The FY2021-22 audit exists, published February 2023, but sixteen months of active construction passed between reports while Benson's costs were moving, because publication cadence is set by the audit engagement and nothing fixes it", ask: "A due date in the engagement letter: final report within a fixed number of months of fiscal year end" },
 ] as const;
 

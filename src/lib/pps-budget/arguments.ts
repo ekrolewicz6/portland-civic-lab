@@ -83,7 +83,7 @@ export const DEBATES: Debate[] = [
       ],
     },
     adjudication: {
-      headline: "Portfolio hygiene, not deficit strategy. Anyone selling either extreme is selling something.",
+      headline: "Closures fix the building map, not the budget. Anyone selling either extreme is selling something.",
       body: "Per-building savings are real and small against a gap of more than $65 million; refusing to consolidate prices empty seats at zero, which five years of concurrent classroom cuts disprove. The test that matters: the savings model published and independently validated before any vote, and the savings visibly reinvested where the affected students land.",
     },
   },
@@ -147,11 +147,11 @@ export const DEBATES: Debate[] = [
 /** Live litigation: rendered as a case file, no merits verdict. */
 export const CASE_FILE = {
   title: "The equity staffing formula and the federal lawsuit",
-  status: "Live litigation. This page takes no position on the merits and stamps its docket knowledge as of August 2026.",
+  status: "This lawsuit is ongoing. This page takes no position on who should win. Court details here are current as of August 2026.",
   mechanics:
     "Since at least FY2016-17 PPS has set aside a share of school staffing, once 8 percent, halved to 4 percent for K-8 in 2024-25, for schools serving concentrated poverty and historically underserved students, with race among the qualifying categories.",
   allegation:
-    "In October 2025 the Center for Individual Rights sued in federal court, alleging the formula is racially discriminatory (press-reported; docket check pending).",
+    "In October 2025 the Center for Individual Rights sued in federal court, alleging the formula is racially discriminatory (as reported in the press; we have not yet reviewed the court filing itself).",
   fairGame:
     "The empirical question that is fair regardless of the outcome: whether a decade of equity allocation measurably closed the gaps it targeted. The district's own citizen committee asked for that return-on-investment analysis in 2023 and 2024. It has never been produced, and the allocation was halved without it.",
   bottomLine:

@@ -1,7 +1,7 @@
 import { DOCTRINE } from "@/lib/pps-budget/data";
 
 /**
- * §14 (Act V close). The doctrine of the movable dollar, rendered as the
+ * §14 (Act V close). One rule for every budget season, rendered as the
  * page's poster artifact: the whole argument reduced to one sentence, ten
  * commitments, and the question Portland should ask its school district in
  * public every spring.
@@ -24,7 +24,7 @@ export default function DoctrineCard() {
           <span aria-hidden className="text-[var(--color-ember)]">
             ·
           </span>
-          <span>PPS Budget Doctrine</span>
+          <span>The PPS Budget Plan · 2026</span>
           <span aria-hidden className="text-[var(--color-ember)]">
             ·
           </span>
@@ -37,7 +37,7 @@ export default function DoctrineCard() {
 
         {/* ── (a) The doctrine, in one sentence ── */}
         <p className="mt-7 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ember)]">
-          The doctrine of the movable dollar
+          One rule for every budget season
         </p>
         <blockquote className="mx-auto mt-4 max-w-3xl text-center font-editorial text-[22px] leading-[1.25] text-[var(--color-ink)] [text-wrap:balance] sm:text-[27px] xl:text-[30px]">
           {DOCTRINE.sentence}

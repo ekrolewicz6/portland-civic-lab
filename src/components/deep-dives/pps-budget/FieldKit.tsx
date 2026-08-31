@@ -7,7 +7,7 @@
 const QUESTIONS = [
   {
     when: "Any dollar figure",
-    ask: "Which ledger is that: locked, restricted, committed, or movable?",
+    ask: "Which slice is that money in: locked, restricted, committed, or movable?",
     good: "A good answer names the fund. A bad one repeats the total louder.",
   },
   {

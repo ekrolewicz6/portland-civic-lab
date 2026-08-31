@@ -1,7 +1,7 @@
 import { TRIPWIRES } from "@/lib/pps-budget/data";
 
 /**
- * Act V (document.md section 12): what to watch.
+ * What to watch: six dates, one number each, and your move.
  *
  * Server component, light context. Six compact rows hang off a single
  * hairline rail (border-l parchment), one per tripwire in TRIPWIRES. Each
@@ -83,7 +83,7 @@ export default function Tripwires() {
       </ol>
 
       <p className="mt-6 font-mono text-[10px] leading-relaxed text-[var(--color-ink-muted)]">
-        Watch list from section 12 of the deep dive. Dates and figures:
+        Dates and figures:
         Portland Public Schools budget documents, Oregon PERS rate filings,
         and the 2025 bond program. Portland Civic Lab analysis.
       </p>

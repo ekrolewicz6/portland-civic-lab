@@ -39,7 +39,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
     cost: "One policy amendment",
     authority: "The board owns its own governance policies",
     objection: {
-      from: "Retired deputy superintendent",
+      from: "a veteran school administrator",
       text: "Half these motions are operational directives from a board whose governance model forbids exactly that. The two-word veto is 'operational matter.'",
     },
     answer:
@@ -54,7 +54,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
     cost: "2-3 positions, under half a percent of the deficit",
     authority: "Board policy; none of it touches a contract or statute",
     objection: {
-      from: "District CFO",
+      from: "a skeptical budget director",
       text: "You are ordering monthly financials from an office that just failed its annual close: six significant deficiencies and a Local Budget Law violation, with staff turnover named as the cause, after 96 central-office positions were cut. Every early error becomes next month's 'they lied' story.",
     },
     answer:
@@ -69,7 +69,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
     cost: "Calendar discipline",
     authority: "The board created the CBRC; the board sets its terms",
     objection: {
-      from: "District CFO",
+      from: "a skeptical budget director",
       text: "Nine days exists because the state revenue forecast lands in May and adoption is bracketed at June 30. Four weeks earlier means four weeks staler.",
     },
     answer:
@@ -78,13 +78,13 @@ export const PLAN_DECISIONS: PlanDecision[] = [
   },
   {
     id: "D3",
-    title: "Aim the capital-honesty standard at the actor who breaks the chain",
+    title: "Hold the board to honest construction numbers",
     motion:
       "No ballot figure below the validated estimate range without a public line-item reconciliation. Rebaseline the 2025 bond program publicly within six months. Repair the Bond Accountability Committee and route its existing reports to the full board. Publish estimates-at-completion as ranges decomposed against a construction index. Ratify the $60M Center for Black Student Excellence as a floor with a scope decision by June 2027.",
     cost: "Validation fees, a rounding error against $1.83B",
     authority: "Board policy over the Office of School Modernization",
     objection: {
-      from: "Construction bond veteran",
+      from: "a construction industry veteran",
       text: "Validation theater. Independent estimates existed at every ballot, in 2017 and again in 2025, and leadership set the public number below them anyway, with no documented rationale, in the auditors' own words. You are asking for a second thermometer while the patient sets the reading.",
     },
     answer:
@@ -99,7 +99,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
     cost: "Negative, but honestly small at first",
     authority: "Board budget authority; the superintendent returns executable plans",
     objection: {
-      from: "District CFO",
+      from: "a skeptical budget director",
       text: "Every 'redirect money to classrooms' plan founders the same way: grant-funded positions free no discretionary dollar, contract spikes turn out to be one-time moving and legal costs, and the marquee purchases, counselors and librarians, are support functions under Oregon's chart of accounts, so a naive instructional-share target punishes buying the very things you want.",
     },
     answer:
@@ -114,7 +114,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
     cost: "Transition budget named before the vote; net savings honest, likely $1-2M per elementary",
     authority: "The board's alone",
     objection: {
-      from: "Anti-closure parent organizer",
+      from: "a parent fighting closures",
       text: "'Bind by resolution' binds no one. This district's record includes a 10 percent reserve policy pinned at 5, a pension reserve spent in one year, and a promise to the state of a right-sizing process by 2020-21 that is still 'planning' in 2026. You are asking my community to trade its school for the good faith of an institution your own research proves cannot be taken on faith.",
     },
     answer:
@@ -129,7 +129,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
     cost: "Low single-digit millions, honestly scored as an investment",
     authority: "Board and superintendent; the county agreement is negotiated, not assumed",
     objection: {
-      from: "District CFO",
+      from: "a skeptical budget director",
       text: "Enrollment recovery pays nothing for years. Oregon funds the higher of this year's or last year's count, and PPS is already paid on the prior year, so a recovered kindergartner adds zero formula revenue until recovery outruns the annual decline of roughly 800 students. Why fund an office now for money that arrives in 2030?",
     },
     answer:
@@ -144,7 +144,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
     cost: "Small, from Decision 4's verified tranche",
     authority: "Goal and reporting now; calendar at the table",
     objection: {
-      from: "Union research director",
+      from: "a union negotiator",
       text: "The calendar is not the board's to rebuild. The contract fixes the work year, requires our consent for aggregate changes, and those 'fragmented' days are the planning and development time we bargained because preparation is instruction. A unilateral resolution is an unfair labor practice charge waiting to be filed.",
     },
     answer:
@@ -159,7 +159,7 @@ export const PLAN_DECISIONS: PlanDecision[] = [
     cost: "Focus",
     authority: "The board speaks; the legislature and, for compression, the voters dispose",
     objection: {
-      from: "Board general counsel",
+      from: "a school-law attorney",
       text: "Measure 5 compression is in the Oregon Constitution. No bill fixes it, and a board that walks into Salem demanding a statutory fix to a constitutional provision forfeits exactly the credibility this decision was designed to buy.",
     },
     answer:
@@ -168,13 +168,13 @@ export const PLAN_DECISIONS: PlanDecision[] = [
   },
   {
     id: "D9",
-    title: "The equity spine",
+    title: "Equity reporting built into every decision",
     motion:
       "Every metric this plan creates is reported disaggregated by race and school poverty band, on the same schedule as the aggregate. Every implementing resolution carries the equity analysis the board's 2011 policy contemplates. The equity allocation, halved in 2024-25 without the return-on-investment analysis the citizen committee twice requested, gets that analysis before any further change in either direction.",
     cost: "Reporting configuration. The cheapest decision in the plan",
     authority: "Board reporting standards",
     objection: {
-      from: "N/NE Portland equity advocate",
+      from: "a longtime N/NE Portland advocate",
       text: "Eight decisions and your board's own Racial Educational Equity Policy is never named. Per-student arithmetic that never asks which students is how this district has always hurt mine.",
     },
     answer:
@@ -184,4 +184,4 @@ export const PLAN_DECISIONS: PlanDecision[] = [
 ];
 
 export const RECONCILIATION_RULE =
-  "In a cut year, no promise outranks the deficit except the small investments that make every later promise checkable.";
+  "In a year of cuts, closing the deficit comes first. The one exception: the small spending, analysts, scorecards, published models, that lets the public verify everything else.";

@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import type { PlanDecision } from "@/lib/pps-budget/plan";
-import { RED_TEAM, PLAN_DECISIONS, RECONCILIATION_RULE } from "@/lib/pps-budget/plan";
+import { PLAN_DECISIONS, RECONCILIATION_RULE } from "@/lib/pps-budget/plan";
 
 /**
- * Act V: The Movable Dollar Plan. Renders the red-team credential band
+ * The plan section: ten decisions the board could adopt, each with the
  * (seven hostile reviewers, the objection counts, the persona chips),
  * the ten decision cards with motion, cost/authority meta, the hardest
  * objection and its answer, and closes with the reconciliation rule as
@@ -16,15 +16,6 @@ function DarkEyebrow({ children }: { children: ReactNode }) {
     <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember-bright)]">
       {children}
     </p>
-  );
-}
-
-/** Mono numeral inside the editorial credential headline. */
-function Num({ children }: { children: ReactNode }) {
-  return (
-    <span className="font-mono text-[0.88em] font-semibold tabular-nums text-[var(--color-ember-bright)]">
-      {children}
-    </span>
   );
 }
 
@@ -58,11 +49,11 @@ function DecisionCard({ d }: { d: PlanDecision }) {
       <details className="group mt-5">
         <summary className="cursor-pointer list-none font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white/50 transition-colors hover:text-[var(--color-ember-bright)]">
           <span className="mr-2 inline-block transition-transform group-open:rotate-90">▸</span>
-          The hardest objection, and the answer
+          The strongest counterargument, and the answer
         </summary>
         <div className="mt-3 rounded-sm border border-[var(--color-clay)]/40 bg-[var(--color-clay)]/15 p-4 sm:p-5">
           <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">
-            The objection · {d.objection.from}
+            What {d.objection.from} would say
           </p>
           <p className="mt-2 text-[13.5px] leading-relaxed text-white/85">{d.objection.text}</p>
         </div>
@@ -120,10 +111,8 @@ export default function PlanDecisions() {
           ))}
         </ol>
         <p className="mt-4 max-w-3xl text-[12.5px] leading-relaxed text-white/55">
-          Method: before publication, this plan was attacked by <Num>{RED_TEAM.personas.length}</Num>{" "}
-          adversarial reviewers in role, a district CFO, a union research director, an equity
-          advocate, a parent organizer, a bond veteran, a general counsel, and a retired deputy
-          superintendent, producing <Num>{RED_TEAM.objections}</Num> objections. {RED_TEAM.note}
+          Each decision below says what to do, what it costs, and who has the power to do it.
+          Under each one, the strongest counterargument we could find, and the answer.
         </p>
       </div>
 

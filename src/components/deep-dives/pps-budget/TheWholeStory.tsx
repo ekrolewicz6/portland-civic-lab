@@ -52,21 +52,21 @@ const FINDINGS = [
     stat: "9",
     statLabel: "working days",
     title: "The empty chair",
-    body: "Oregon law seats citizens on every big district's budget committee. A carve-out lets Portland's board review its own budget alone; the volunteer substitute got nine working days for $2.8 billion.",
+    body: "Oregon law seats citizens on every big district's budget committee. A carve-out lets Portland's board review its own budget alone; the citizen advisory committee that reviews it instead got nine working days for $2.8 billion.",
   },
   {
     href: "#the-levy-leak",
     stat: "$1.51",
     statLabel: "of every $1.99",
     title: "The levy leak",
-    body: "Voters renewed a $1.99 teachers levy. The 1990s tax constitution delivers about $1.51 of it, the leak is growing fast, and only Salem can fix it.",
+    body: "Voters renewed a $1.99 teachers levy. Tax limits from the 1990s deliver about $1.51 of it, the leak is growing fast, and only the state legislature can fix it.",
   },
   {
     href: "#waste",
     stat: "$41M→$18M",
     statLabel: "one year's own forecast",
     title: "The forecast problem",
-    body: "The district's quarterly reports are public, and inside FY2025-26 they show its own year-end forecast swinging from $41M to $18M and back to $35M. The books exist. The steering does not.",
+    body: "The district's quarterly reports are public, and inside FY2025-26 they show its own year-end forecast swinging from $41M to $18M and back to $35M. The reports exist. Nobody has to act on them.",
   },
 ] as const;
 
@@ -123,7 +123,7 @@ export default function TheWholeStory() {
           </div>
 
           <p className="mt-4 border-t border-[var(--color-parchment)] pt-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
-            Every fight about this budget is a fight about the green sliver, and most of the
+            Every real fight about this budget is a fight about that green $182M slice, and most of the
             loudest claims are about money that cannot legally reach it. The operating fund
             itself fell <span className="font-mono tabular-nums font-semibold text-[var(--color-ink)]">$6.5M</span>{" "}
             this year, the first drop in eleven years, while the headline total grew{" "}

@@ -24,24 +24,24 @@ import ReadingProgress from "@/components/deep-dives/venues/ReadingProgress";
 export const metadata: Metadata = pageMeta({
   title: "Where the next dollar goes: the PPS budget, examined",
   description:
-    "Portland Public Schools cut teachers while its budget hit $2.77 billion, and both facts are true. Eleven years of budget books, every audit, and the district's own watchdogs, read so you don't have to. Plus the ten decisions that would change it, red-teamed until they survived.",
+    "Portland Public Schools cut teachers while its budget hit $2.77 billion, and both facts are true. Eleven years of budget books and every audit, read so you don't have to. What decides whether a dollar reaches a student, where the waste actually is, and ten things the school board could do about it.",
   path: "/deep-dives/pps-budget",
   type: "article",
 });
 
 const NAV = [
-  { id: "salems-machine", label: "Salem's machine" },
+  { id: "salems-machine", label: "How the money works" },
   { id: "the-levy-leak", label: "The levy leak" },
-  { id: "the-empty-chair", label: "The empty chair" },
-  { id: "the-decade", label: "The decade" },
+  { id: "the-empty-chair", label: "Who checks it" },
+  { id: "the-decade", label: "What happened" },
   { id: "where-it-goes", label: "Where it goes" },
-  { id: "empty-seats", label: "Empty seats" },
-  { id: "waste", label: "The waste exam" },
-  { id: "arguments", label: "Four arguments" },
+  { id: "empty-seats", label: "Empty schools" },
+  { id: "waste", label: "The waste" },
+  { id: "arguments", label: "The big fights" },
   { id: "cannot-know", label: "What we can't know" },
   { id: "the-plan", label: "The plan" },
   { id: "watch", label: "Your move" },
-  { id: "doctrine", label: "The doctrine" },
+  { id: "doctrine", label: "One rule" },
   { id: "method", label: "Method" },
 ];
 
@@ -217,14 +217,14 @@ export default function PpsBudgetPage() {
 
       <Section
         id="salems-machine"
-        eyebrow="Part one · The rules"
-        title="Start with the strangest fact in Oregon school finance."
-        lead="For operating money, Portland's property wealth mostly buys Portland's schools nothing. That is not a scandal. It is the design."
+        eyebrow="The rules from Salem"
+        title="Why higher Portland taxes don't buy Portland more school."
+        lead="Oregon's funding formula subtracts local tax dollars from the state's check. That is not a scandal. It is the design, and it explains most of this page."
       >
         <Prose>
           <p>
-            The green sliver above is small because almost everything around it was decided before
-            this board was elected. Since 1991, Oregon has funded schools through an equalization
+            That $182 million slice is small because almost everything around it was decided before
+            this school board was elected. Since 1991, Oregon has funded schools through an equalization
             formula with one governing identity: the state grant equals a district&apos;s formula
             total <em>minus its local property taxes</em>. Every ordinary tax dollar Portland
             collects is subtracted from its state check. If the tax base booms, the check shrinks
@@ -252,9 +252,9 @@ export default function PpsBudgetPage() {
 
       <Section
         id="the-levy-leak"
-        eyebrow="Part one · The rules"
+        eyebrow="The rules from Salem"
         title="Voters approved $1.99 for teachers. About $1.51 arrives."
-        lead="The leak is not mismanagement. It is the 1990s tax constitution working exactly as written, and it is growing fast."
+        lead="The leak is not mismanagement. It comes from tax limits Oregon voters passed in the 1990s, it works exactly as written, and it is growing fast."
         tone="warm"
       >
         <Prose>
@@ -272,7 +272,7 @@ export default function PpsBudgetPage() {
         <LevyLeak />
         <Prose>
           <p>
-            Put people to the arithmetic and it reads like this: roughly flat receipts now buy
+            Translate the arithmetic into teachers and it reads like this: roughly flat receipts now buy
             about a quarter fewer teachers than in 2019, because compression grew 72 percent in
             three years while the average cost of a teacher rose from $106,000 toward $152,000.
             The district&apos;s own levy reviewers wrote the sentence that should be on every 2029
@@ -289,7 +289,7 @@ export default function PpsBudgetPage() {
 
       <Section
         id="the-empty-chair"
-        eyebrow="Part one · The rules"
+        eyebrow="The rules from Salem"
         title="Who reviews the budget? In Portland, the people who wrote it."
         lead="Oregon seats citizens beside the board on nearly every district's budget committee. Portland is the carve-out."
       >
@@ -314,16 +314,16 @@ export default function PpsBudgetPage() {
             certify the budget, TSCC, checks legal form and found no objections in any of the last
             three years (<Src id="tsccFy26" />). Which leaves the obvious question: with the rules
             set in Salem and the review this thin, what did the district actually do with its
-            decade? That story has a shape, and the shape is a cliff.
+            decade? The answer is the next section, and it is not flattering to anyone.
           </p>
           <div className="mt-6 rounded-sm border-l-2 border-[var(--color-ember)] bg-[var(--color-paper-warm)] p-4">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">
               The rule this page reads everything by
             </p>
             <p className="mt-1.5 text-[14px] leading-relaxed text-[var(--color-ink)]">
-              Hold the district accountable for the quality of its response to a constraint, never
-              for the constraint itself. And never let Salem become the alibi for choices made on
-              North Dixon Street. Everything below applies both halves.
+              Judge the district by how it handles the problems it can control. The state created many
+              of these problems, but &ldquo;Salem did it&rdquo; cannot excuse the choices the
+              district makes for itself. Every section below does both.
             </p>
           </div>
         </Prose>
@@ -333,7 +333,7 @@ export default function PpsBudgetPage() {
 
       <Section
         id="the-decade"
-        eyebrow="Part two · The record"
+        eyebrow="What happened"
         title="Eleven years: money up every year, students down, then the bill."
         lead="Nominal operating money rose without interruption until this year. Purchasing power peaked in 2021-22 and has fallen nine percent since."
       >
@@ -347,20 +347,20 @@ export default function PpsBudgetPage() {
             (<Src id="academicJourney" />). TSCC certified its last three budgets without a single
             objection, Lincoln High finished $16.9M under its revised budget, and the quarterly
             financial reports exist and are public. The problem this page documents is not
-            collapse. It is an institution performing above its state&apos;s average while its
-            structure, its footprint, and its steering fall behind its own trajectory.
+            collapse. It is a district that teaches better than its state average while its buildings,
+            its finances, and its planning fall behind its own results.
           </p>
         </div>
         <DecadeSpine />
         <Prose>
           <p>
             The turn has a date and a cause. Enrollment held near 49,500 for four years, then fell
-            off a cliff whose edge was 2019-20: down one student in eight since, by the
-            district&apos;s own count (<Src id="suptMessageFy27" />), concentrated brutally in
+            sharply beginning in 2019-20: down one student in eight since, by the
+            district&apos;s own count (<Src id="suptMessageFy27" />), worst in
             kindergarten, where the share of eligible children enrolling fell from about 80
             percent to about 70 and stayed there. Students who never arrive in kindergarten never
             arrive in any later grade either. Meanwhile the money kept coming: the state check,
-            cushioned by the formula&apos;s lag, and a one-time federal river.
+            cushioned by the formula&apos;s lag, and a flood of one-time federal money.
           </p>
         </Prose>
         <EsserCliff />
@@ -373,7 +373,7 @@ export default function PpsBudgetPage() {
             general public&rdquo; (<Src id="cbrcFy24" />). Then November 2023: the first strike in
             district history, settled at a press-reported cost near $175 million over three years,
             a figure no published cost model has ever supported or refuted, because none exists (
-            <Src id="opbStrikeFaq" />). Then the cliff, then the cuts, in a sequence the chart
+            <Src id="opbStrikeFaq" />). Then the federal money ran out, then the cuts, in a sequence the chart
             above prints: $30 million, $40 million, $56.3 million, with more than $65 million
             already projected for next year (<Src id="budgetFy27Vol1" />). So where inside the
             operating fund did the squeeze actually land?
@@ -383,7 +383,7 @@ export default function PpsBudgetPage() {
 
       <Section
         id="where-it-goes"
-        eyebrow="Part two · The record"
+        eyebrow="What happened"
         title="Where the operating dollar goes, and where the cuts landed."
         lead="Seventy-nine cents of every operating dollar is people. When cuts came, classrooms gave up ground twice as fast as the back office."
         tone="warm"
@@ -448,8 +448,8 @@ export default function PpsBudgetPage() {
 
       <Section
         id="empty-seats"
-        eyebrow="Part two · The record"
-        title="The structure under the deficit: empty seats, full costs."
+        eyebrow="What happened"
+        title="Fewer students, same buildings, full costs."
         lead="Revenue arrives per student. Costs arrive per building. Nobody voted for the gap between them, and it grew for five years before anyone moved."
       >
         <Prose>
@@ -463,14 +463,14 @@ export default function PpsBudgetPage() {
             schools reported on the table (<Src id="wwTwentySchools" />, press).
           </p>
           <p>
-            Hold both truths, because the fight ahead will drop one of them. Small schools are a
-            purchase, not a waste: walkability, belonging, and the memory of what closures did to
-            Black and brown North and Northeast Portland the last time. And the purchase has a
-            price nobody published: the honest per-building savings are modest, roughly one to two
-            million dollars per elementary, and the district&apos;s own savings model is not
-            public. Communities are being asked to trust arithmetic nobody can check. Whether any
-            of this rises to the word everyone reaches for, waste, deserves an actual standard
-            instead of a shout. Here is ours.
+            Both of these things are true, and the coming debate will tend to ignore one of them.
+            Small schools are a purchase, not a waste: walkability, belonging, and the memory of
+            what closures did to Black and brown North and Northeast Portland the last time. And
+            the purchase has a price nobody has published: the honest per-building savings are
+            modest, roughly one to two million dollars per elementary, and the district&apos;s own
+            savings model is not public. Communities are being asked to trust arithmetic nobody
+            can check. Whether any of this deserves the word everyone reaches for, waste, needs a
+            clear definition first. Here is the one this page uses.
           </p>
         </Prose>
       </Section>
@@ -479,9 +479,9 @@ export default function PpsBudgetPage() {
 
       <Section
         id="waste"
-        eyebrow="Part three · The examination"
-        title="Where is the waste? An honest standard, five verdicts, no fake total."
-        lead="A definition first, so the verdicts cannot bend to the argument. Then the largest finding, which is not a line item at all."
+        eyebrow="The judgment calls"
+        title="Where the waste is, and where it isn't."
+        lead="A clear test first, so the answers can't bend to the argument. Then five findings, each with the best case against it."
         tone="warm"
       >
         <WasteVerdicts />
@@ -497,9 +497,9 @@ export default function PpsBudgetPage() {
 
       <Section
         id="arguments"
-        eyebrow="Part three · The examination"
-        title="The four arguments Portland keeps having, adjudicated."
-        lead="Each side at full strength, then where the evidence lands. Arithmetic outranks balance: where the numbers settle it, we say so."
+        eyebrow="The judgment calls"
+        title="The four fights Portland keeps having, and what the numbers say."
+        lead="Each side at full strength, then where the evidence lands. Where the numbers settle it, we say so plainly."
       >
         <div className="space-y-8">
           {DEBATES.map((d) => (
@@ -528,16 +528,16 @@ export default function PpsBudgetPage() {
 
         <Prose>
           <p className="mt-8">
-            Notice what three of these four adjudications have in common: they end at a document
-            the district has never published. The cost model. The position-control records. The
-            benchmarking study. The pattern is the finding, and it deserves its own section.
+            Three of these four fights end the same way: at a document the district has never
+            published. The strike cost model. The staffing records. The benchmarking study. The
+            next section lists every one.
           </p>
         </Prose>
       </Section>
 
       <Section
         id="cannot-know"
-        eyebrow="Part three · The examination"
+        eyebrow="The judgment calls"
         title="What the public record cannot answer."
         lead="Every row is checkable, and every row could be closed tomorrow by a decision to publish."
         tone="warm"
@@ -549,9 +549,9 @@ export default function PpsBudgetPage() {
 
       <Section
         id="the-plan"
-        eyebrow="Part four · The plan"
-        title="Ten decisions, built to be attacked."
-        lead="Everything above is diagnosis. This is the treatment: motion-level, sequenced, with the hardest objection we could find printed under each decision, and the answer."
+        eyebrow="The plan"
+        title="Ten things the school board could actually do."
+        lead="Everything above is diagnosis. This is the treatment: specific enough to vote on, in the order it should happen."
         tone="dark"
       >
         <PlanDecisions />
@@ -559,7 +559,7 @@ export default function PpsBudgetPage() {
 
       <Section
         id="watch"
-        eyebrow="Part four · Your move"
+        eyebrow="Your part"
         title="What to do with all of this."
         lead="You do not need to read 500 pages to hold the district accountable. You need six questions, six dates, and the address of the board room."
       >
@@ -574,9 +574,9 @@ export default function PpsBudgetPage() {
 
       <Section
         id="doctrine"
-        eyebrow="Part four · The plan"
-        title="The doctrine of the movable dollar."
-        lead="One sentence to govern by, ten commitments that operationalize it, and the question to ask every April."
+        eyebrow="The plan"
+        title="One rule to carry out of here."
+        lead="One sentence, ten specific commitments, and the question to ask every April."
         tone="warm"
       >
         <DoctrineCard />
@@ -587,15 +587,17 @@ export default function PpsBudgetPage() {
         id="method"
         eyebrow="Method"
         title="How this page knows what it claims."
-        lead="A corpus of 120 checksummed public documents, two fact-checked analyses, and every correction on the record."
+        lead="Built on 134 public documents, archived with a tamper-evident record, and two fact-checked working papers."
       >
         <Prose>
           <p>
-            This page condenses two published analyses: the research document{" "}
-            <Src id="researchDoc" /> (262 figures verified page-by-page against source documents by
-            an adversarial fact-check that returned 80 corrections, all applied) and the
-            recommendations <Src id="planDoc" /> (58 red-team objections, 18 fatal to the first
-            draft, dispositions preserved). The corpus behind both, 120 documents fetched and
+            This page condenses two longer working papers: the research document{" "}
+            <Src id="researchDoc" /> and the recommendations <Src id="planDoc" />. Every figure was
+            checked page-by-page against the source documents before publication, and the plan was
+            stress-tested against the strongest counterarguments we could construct from seven
+            hostile perspectives, a budget director, a union negotiator, an equity advocate, a
+            parent organizer, a construction veteran, a lawyer, and a veteran administrator, then
+            rewritten until it held. The corpus behind it all, 134 public documents fetched and
             checksummed with every extraction citing its page, is public: <Src id="pclAnalysis" />.
           </p>
           <p>
