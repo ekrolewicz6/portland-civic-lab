@@ -83,7 +83,8 @@ export default function BondLedger() {
       </div>
 
       <p className="mt-5 border-t border-[var(--color-parchment)] pt-3 text-[12.5px] font-semibold text-[var(--color-ink)]">
-        None of this money could ever have paid a teacher. The cost is bond capacity, and trust.
+        None of this money could ever have paid a teacher. What the overruns spent was
+        Portland&apos;s borrowing power, and voters&apos; trust in the next bond ask.
       </p>
       <p className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
         Source: independent bond performance audits, Sjoberg Evashenk Consulting

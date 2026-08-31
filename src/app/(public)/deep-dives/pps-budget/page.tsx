@@ -12,6 +12,7 @@ import HomeownerCalculator from "@/components/deep-dives/pps-budget/HomeownerCal
 import EmptyChair from "@/components/deep-dives/pps-budget/EmptyChair";
 import BondLedger from "@/components/deep-dives/pps-budget/BondLedger";
 import EsserCliff from "@/components/deep-dives/pps-budget/EsserCliff";
+import Benchmarks from "@/components/deep-dives/pps-budget/Benchmarks";
 import WasteVerdicts from "@/components/deep-dives/pps-budget/WasteVerdicts";
 import PlanDecisions from "@/components/deep-dives/pps-budget/PlanDecisions";
 import CannotKnow from "@/components/deep-dives/pps-budget/CannotKnow";
@@ -35,6 +36,7 @@ const NAV = [
   { id: "the-empty-chair", label: "Who checks it" },
   { id: "the-decade", label: "What happened" },
   { id: "where-it-goes", label: "Where it goes" },
+  { id: "the-benchmarks", label: "Is it a lot?" },
   { id: "empty-seats", label: "Empty schools" },
   { id: "waste", label: "The waste" },
   { id: "arguments", label: "The big fights" },
@@ -92,7 +94,7 @@ function IndependenceNote() {
 
 function Prose({ children }: { children: React.ReactNode }) {
   return (
-    <div className="max-w-3xl space-y-4 text-[15px] leading-relaxed text-[var(--color-ink-light)] [&_strong]:text-[var(--color-ink)]">
+    <div className="max-w-3xl space-y-4 text-[15px] leading-relaxed text-[var(--color-ink-light)] [&_strong]:text-[var(--color-ink)] [div+&]:mt-8 [&+div]:mt-8">
       {children}
     </div>
   );
@@ -277,8 +279,8 @@ export default function PpsBudgetPage() {
             funding onto the state. Measure 50, in 1997, froze each home&apos;s assessed value
             below its market value and let it grow just 3 percent a year, and as part of that
             same deal it let districts ask voters for extra money, but only from whatever room
-            the $5 ceiling left over. First in, first cut: the levy is sacrificed first because it
-            was only ever allowed to exist in the gap under the cap. For two decades Portland
+            the $5 ceiling left over. That is why the levy gets cut first: it was only ever
+            allowed to exist in whatever room the ceiling left. For two decades Portland
             home prices rose fast enough that the gap stayed wide. Then prices went flat after
             2022 while assessed values kept ratcheting up 3 percent a year, the two numbers
             converged on thousands of properties at once, and the room the levy lives in started
@@ -316,22 +318,32 @@ export default function PpsBudgetPage() {
             someone. Here is who. For most Oregon districts, state law requires the budget
             committee to be the elected board <em>plus an equal number of appointed citizens</em>,
             ordinary residents with the same seat, the same questions, the same vote on approval (
-            <Src id="ors294414" />). A carve-out for large districts in counties with a tax
-            supervising commission lets the board serve as its own committee instead (
-            <Src id="ors294423" />), and PPS&apos;s board does. The citizen half of the table,
-            standard in Beaverton and Salem-Keizer, is an empty chair here.
+            <Src id="ors294414" />). Portland is exempt, and the exemption has a reason. Multnomah
+            County is the one county in Oregon with a Tax Supervising and Conservation Commission,
+            a Governor-appointed watchdog the legislature created in 1919, and every local budget
+            in the county, PPS included, must survive its public hearing and be certified before
+            adoption (<Src id="tsccFy26" />). So when lawmakers wrote the citizen-committee
+            requirement, they let large districts already under that commission skip it (
+            <Src id="ors294423" />): a county with a professional budget watchdog, the thinking
+            went, did not need citizens at the table too. PPS took the exemption. The citizen half
+            of the table, standard in Beaverton and Salem-Keizer, is an empty chair here.
           </p>
         </Prose>
         <EmptyChair />
         <Prose>
           <p>
-            The volunteer substitute, the Community Budget Review Committee, has asked for more
-            time three years running; its request, in its own words the following year,
-            &ldquo;remains unaddressed&rdquo; (<Src id="cbrcFy26" />). The commission that must
-            certify the budget, TSCC, checks legal form and found no objections in any of the last
-            three years (<Src id="tsccFy26" />). Which leaves the obvious question: with the rules
-            set in Salem and the review this thin, what did the district actually do with its
-            decade? The answer is the next section, and it is not flattering to anyone.
+            So did the 1919 trade work? Judge each reviewer by what it can actually do. The
+            commission checks legal form: rates within limits, hearings held, funds balanced. It
+            has passed PPS on all seven of its checklist items and certified the budget without a
+            single objection in each of the last three years (<Src id="tsccFy26" />), the same
+            three years the deficit compounded and the cuts arrived. Certification asks whether a
+            budget is lawful, never whether it is wise. The judgment half of the review, the half
+            citizen committees do with a vote everywhere else in Oregon, fell to volunteers with
+            nine days and no vote, and the scorecard above shows what that is worth: when advice
+            costs nothing to ignore, most of it gets ignored, year after year, in writing. Which
+            leaves the obvious question: with the rules set in Salem and the review this thin,
+            what did the district actually do with its decade? The answer is the next section, and
+            it is not flattering to anyone.
           </p>
           <div className="mt-6 rounded-sm border-l-2 border-[var(--color-ember)] bg-[var(--color-paper-warm)] p-4">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">
@@ -408,13 +420,67 @@ export default function PpsBudgetPage() {
         <Prose>
           <p>
             Of the $862 million operating fund, 78.9 percent, $680.5 million, is salaries and
-            benefits (<Src id="budgetFy27Vol1" />). The pension system explains more of the squeeze
-            than any headline: PPS bought its way to a roughly 4 percent pension rate with $510
-            million of pension bonds, those credits are now expiring into a rate near 23 percent,
-            and the reserve built for exactly this cliff was spent in a single year, down to its
-            last $394,000 (<Src id="tsccFy26" />).
+            benefits (<Src id="budgetFy27Vol1" />). And the fastest-growing piece of that is not
+            salaries. It is the pension bill, which is about to jump from roughly 4 percent of
+            payroll to nearly 23 (<Src id="cbrcFy27" />). A number that strange needs its own
+            explanation, because nobody at PPS chose it.
           </p>
         </Prose>
+        <div className="mt-8 rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6">
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">
+            The pension bill, explained
+          </p>
+          <div className="mt-4 grid gap-x-8 gap-y-5 md:grid-cols-2">
+            <div>
+              <p className="text-[13.5px] font-semibold text-[var(--color-ink)]">
+                What PERS is
+              </p>
+              <p className="mt-1.5 text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+                The statewide pension system the legislature created in 1945 for every Oregon
+                public employer: teachers, firefighters, city clerks, all of them (
+                <Src id="persOverview" />). The district writes the checks and controls nothing
+                else. Rates are set in Salem by the PERS board, on its actuaries&apos; schedule.
+              </p>
+            </div>
+            <div>
+              <p className="text-[13.5px] font-semibold text-[var(--color-ink)]">
+                Where the hole came from
+              </p>
+              <p className="mt-1.5 text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+                For workers hired before 1996, the state guaranteed their retirement accounts
+                would grow about 8 percent a year, in good markets and bad. The crashes of 2001
+                and 2008 turned those guarantees into debt, and in 2015 the Oregon Supreme Court
+                ruled that benefits already earned cannot be cut. So every public employer in
+                Oregon now pays extra, for years to come, to fill a hole dug decades ago. That
+                surcharge is most of the 23 percent.
+              </p>
+            </div>
+            <div>
+              <p className="text-[13.5px] font-semibold text-[var(--color-ink)]">
+                Why PPS looked immune for twenty years
+              </p>
+              <p className="mt-1.5 text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+                In 2002 and 2003 the district borrowed hundreds of millions through pension
+                bonds, $510.3 million still outstanding (<Src id="acfrFy2025" />), and parked the
+                money with PERS. The investment credits from that deposit paid most of the
+                district&apos;s pension bill for two decades and held its net rate near 4
+                percent. Those credits are running out now, on a schedule the actuaries published
+                years in advance. The jump to 23 was a calendar event, not a surprise.
+              </p>
+            </div>
+            <div>
+              <p className="text-[13.5px] font-semibold text-[var(--color-ink)]">
+                So who is to blame?
+              </p>
+              <p className="mt-1.5 text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+                For the rate itself: legislatures and pension boards from the 1980s and 1990s,
+                and the court rulings that sealed their promises. Nobody now at PPS had a vote.
+                For being unready: the district. It built a reserve for exactly this moment and
+                spent it in a single year, down to its last $394,000 (<Src id="tsccFy26" />).
+              </p>
+            </div>
+          </div>
+        </div>
         <div className="mt-6 overflow-x-auto rounded-sm border border-[var(--color-parchment)] bg-white">
           <table className="w-full min-w-[560px] text-left">
             <thead>
@@ -458,7 +524,42 @@ export default function PpsBudgetPage() {
             ). Per student, the honest paradox: real dollars per student are <em>up</em> 24 percent
             over the decade, because enrollment fell faster than inflation ate the budget, and the
             institution still feels poorer every year, because its fixed footprint never shrank.
-            Which brings us to the buildings.
+            All of which begs the question this page has been dancing around: is any of this
+            actually a lot of money?
+          </p>
+        </Prose>
+      </Section>
+
+      <Section
+        id="the-benchmarks"
+        eyebrow="What happened"
+        title="Yes, it is a lot of money. And no, teacher pay is not why."
+        lead="PPS spends about a quarter more per student than its Oregon peers. Its teachers' salaries, adjusted for Portland prices, are last among six peer cities. Both are true at once. The difference disappears into pensions, benefits, buildings, and overhead before it reaches a classroom."
+        tone="warm"
+      >
+        <Prose>
+          <p>
+            Two fair questions this page has not yet answered: how much <em>should</em> a student
+            cost, and are teachers paid well or badly here? Neither has one true answer, but both
+            have honest comparisons, so here they are, with the ground rules stated. Per-student
+            spending can be counted two ways, Oregon&apos;s way and the federal way, and the two
+            produce different numbers for the same district (<Src id="odeNoe2324" />
+            <Src id="censusFin2024" />). Each panel below compares like with like, and the panels
+            are never mixed.
+          </p>
+        </Prose>
+        <Benchmarks />
+        <Prose>
+          <p>
+            Put the two halves together and the two loudest arguments in town both fail. The
+            claim that PPS is starved of money does not survive the peer comparison; the claim
+            that its teachers are overpaid does not survive the cost-of-living table (
+            <Src id="beaRpp2024" />
+            <Src id="neaPay2025" />). What the numbers show instead is a district that takes in
+            more per student than nearly everyone it can fairly be compared to, and gets less of
+            it into classroom teaching, because pensions, benefits, buildings, and overhead take
+            their cut first. The pension share of that story was told above. The next section
+            tells the one you can see from the street: the buildings.
           </p>
         </Prose>
       </Section>
@@ -481,13 +582,14 @@ export default function PpsBudgetPage() {
           </p>
           <p>
             Both of these things are true, and the coming debate will tend to ignore one of them.
-            Small schools are a purchase, not a waste: walkability, belonging, and the memory of
-            what closures did to Black and brown North and Northeast Portland the last time. And
-            the purchase has a price nobody has published: the honest per-building savings are
-            modest, roughly one to two million dollars per elementary, and the district&apos;s own
-            savings model is not public. Communities are being asked to trust arithmetic nobody
-            can check. Whether any of this deserves the word everyone reaches for, waste, needs a
-            clear definition first. Here is the one this page uses.
+            Keeping small schools open is something Portland pays extra for on purpose: for
+            walkability, for belonging, and out of the memory of what closures did to Black and
+            brown North and Northeast Portland the last time. But nobody has published what that
+            choice costs: the honest per-building savings are modest, roughly one to two million
+            dollars per elementary, and the district&apos;s own savings model is not public.
+            Communities are being asked to trust arithmetic nobody can check. Whether any of this
+            deserves the word everyone reaches for, waste, depends on what the word means. Here is
+            the definition this page uses.
           </p>
         </Prose>
       </Section>
@@ -498,15 +600,15 @@ export default function PpsBudgetPage() {
         id="waste"
         eyebrow="The judgment calls"
         title="Where the waste is, and where it isn't."
-        lead="A clear test first, so the answers can't bend to the argument. Then five findings, each with the best case against it."
+        lead="Before we call anything waste, we say exactly what the word means, and then hold every finding to that definition, with the strongest defense printed next to each one."
         tone="warm"
       >
         <WasteVerdicts />
         <div className="mt-8">
           <p className="max-w-3xl text-[15px] leading-relaxed text-[var(--color-ink-light)]">
-            The capital ledger deserves its own exhibit, because it is where the biggest
-            controllable failures live, and also the proof the machine can perform when it states
-            honest numbers:
+            The construction bonds deserve their own exhibit. They hold the district&apos;s
+            biggest self-inflicted losses, and also its best recent work, the proof that it can
+            deliver on budget when the number voters see is honest to begin with:
           </p>
           <BondLedger />
         </div>
@@ -516,7 +618,7 @@ export default function PpsBudgetPage() {
         id="arguments"
         eyebrow="The judgment calls"
         title="The four fights Portland keeps having, and what the numbers say."
-        lead="Each side at full strength, then where the evidence lands. Where the numbers settle it, we say so plainly."
+        lead="We give each side its best argument, then say which one the evidence supports, and how confident anyone should be."
       >
         <div className="space-y-8">
           {DEBATES.map((d) => (
@@ -556,7 +658,7 @@ export default function PpsBudgetPage() {
         id="cannot-know"
         eyebrow="The judgment calls"
         title="What the public record cannot answer."
-        lead="Every row is checkable, and every row could be closed tomorrow by a decision to publish."
+        lead="Each of these questions has an answer sitting in a district file. Getting it requires no new money, only a decision to publish."
         tone="warm"
       >
         <CannotKnow />

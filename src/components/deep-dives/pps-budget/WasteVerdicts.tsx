@@ -92,14 +92,17 @@ function VerdictCard({ v }: { v: WasteVerdict }) {
         </span>
       </div>
 
-      <p className="mt-3">
-        <span
-          className="inline-block rounded-sm px-2 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.14em]"
-          style={{ backgroundColor: chip.bg, color: chip.fg }}
-        >
+      <div
+        className="mt-3 border-l-[3px] pl-3"
+        style={{ borderColor: chip.bg }}
+      >
+        <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+          The verdict
+        </p>
+        <p className="mt-0.5 text-[15px] font-semibold leading-snug text-[var(--color-ink)]">
           {v.verdict}
-        </span>
-      </p>
+        </p>
+      </div>
 
       <div className={`mt-4 ${isLargest ? "grid gap-6 sm:grid-cols-2" : "space-y-4"}`}>
         <div>

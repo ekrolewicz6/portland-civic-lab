@@ -14,6 +14,59 @@ import { HEADLINE } from "@/lib/pps-budget/data";
 
 const SEATS = [1, 2, 3, 4, 5, 6, 7] as const;
 
+/**
+ * The advice scorecard: what the CBRC asked for across its 2023-2026 reports,
+ * and what happened. Sourced from the reports themselves; the recurring-ask
+ * table lives in research/pps-budget/notes/cbrc-findings.md §2.
+ */
+const SCORECARD = [
+  {
+    ask: "More than nine days to review the budget",
+    asked: "4 straight years",
+    outcome:
+      "Unanswered. The committee's own words a year after first asking: “remains unaddressed.”",
+    acted: false,
+  },
+  {
+    ask: "Drop the paid MAP testing contract; the state offers assessments free",
+    asked: "3 reports since 2023",
+    outcome: "Still paying, about $218,000 a year on average.",
+    acted: false,
+  },
+  {
+    ask: "Publish central-office spending where the public can check it",
+    asked: "3 straight years",
+    outcome: "Not published. The central-office argument still runs on faith.",
+    acted: false,
+  },
+  {
+    ask: "Measure whether the equity allocation works before changing it",
+    asked: "2023 and 2024",
+    outcome: "Never produced. The allocation was halved anyway.",
+    acted: false,
+  },
+  {
+    ask: "Report back on which recommendations were acted on",
+    asked: "2026",
+    outcome: "The ask exists because no such report has ever existed.",
+    acted: false,
+  },
+  {
+    ask: "Adopt a long-term fiscal strategy with milestones",
+    asked: "2025",
+    outcome:
+      "Adopted. The 2026 report commends “a concerted effort” and calls it a first step.",
+    acted: true,
+  },
+  {
+    ask: "Evaluate blended classrooms before expanding them",
+    asked: "2025",
+    outcome:
+      "Done: an outside evaluation arrived for the 2026 review, though it interviewed no families.",
+    acted: true,
+  },
+] as const;
+
 function SeatRow({
   label,
   variant,
@@ -128,11 +181,59 @@ export default function EmptyChair() {
             </p>
           </div>
         </div>
-        <p className="mt-5 border-t border-[var(--color-parchment)] pt-4 font-mono text-[10px] text-[var(--color-ink-muted)]">
-          Sources: Oregon Revised Statutes 294.414 and 294.423; PPS Community
-          Budget Review Committee report to the board, 2026.
+      </div>
+
+      {/* ── The advice scorecard ── */}
+      <div className="overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-white">
+        <div className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)] px-5 py-4">
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">
+            The advice, and what happened to it
+          </p>
+          <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-[var(--color-ink-light)]">
+            Who are these reviewers? Seventeen volunteers the board convenes: parents, staff,
+            community members, and five students. They read the budget, write recommendations,
+            and hand them to the seven people who wrote it. Acting on them belongs to the
+            superintendent and the board, and no law requires either to answer. Here is the
+            running score, from the committee&apos;s own 2023&ndash;2026 reports.
+          </p>
+        </div>
+        <ul className="divide-y divide-[var(--color-parchment)]">
+          {SCORECARD.map((row) => (
+            <li
+              key={row.ask}
+              className="grid gap-x-6 gap-y-1.5 px-5 py-4 md:grid-cols-[minmax(0,5fr)_110px_minmax(0,5fr)]"
+            >
+              <p className="text-[13.5px] font-semibold leading-snug text-[var(--color-ink)]">
+                {row.ask}
+              </p>
+              <p className="font-mono text-[11px] leading-relaxed text-[var(--color-ink-muted)] md:pt-0.5">
+                {row.asked}
+              </p>
+              <p className="text-[13px] leading-relaxed">
+                <span
+                  className={`mr-2 inline-block rounded-sm px-1.5 py-0.5 align-middle font-mono text-[9px] font-semibold uppercase tracking-[0.14em] ${
+                    row.acted
+                      ? "bg-[var(--color-fern)] text-white"
+                      : "bg-[var(--color-clay)] text-white"
+                  }`}
+                >
+                  {row.acted ? "Acted on" : "Unanswered"}
+                </span>
+                <span className="text-[var(--color-ink-light)]">{row.outcome}</span>
+              </p>
+            </li>
+          ))}
+        </ul>
+        <p className="border-t border-[var(--color-parchment)] px-5 py-3 text-[13px] leading-relaxed text-[var(--color-ink)]">
+          The two green rows prove the district can respond when it chooses to. That is what makes
+          the five clay rows a choice.
         </p>
       </div>
+
+      <p className="font-mono text-[10px] leading-relaxed text-[var(--color-ink-muted)]">
+        Sources: Oregon Revised Statutes 294.414 and 294.423; PPS Community Budget Review
+        Committee reports to the board, 2023&ndash;2026; TSCC annual report 2024&ndash;25.
+      </p>
     </div>
   );
 }

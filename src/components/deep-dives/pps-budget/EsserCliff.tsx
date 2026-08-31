@@ -29,6 +29,13 @@ function fmtM(m: number): string {
 const HATCH =
   "repeating-linear-gradient(45deg, rgba(184,92,58,0.75) 0 6px, rgba(184,92,58,0.22) 6px 12px)";
 
+/** Sage hatch for the year the gap was papered over with the last relief. */
+const SAGE_HATCH =
+  "repeating-linear-gradient(45deg, rgba(122,158,126,0.8) 0 6px, rgba(122,158,126,0.25) 6px 12px)";
+
+/** Cuts since the relief ran out, for the takeaway line: 30 + 40 + 56.3. */
+const CUTS_SO_FAR_M = 126;
+
 type Cut = (typeof ESSER_TIMELINE.cuts)[number];
 
 function isProjected(c: Cut): boolean {
@@ -44,12 +51,13 @@ function CutColumn({ cut }: { cut: Cut }) {
         style={{ height: `${PLOT_PX}px` }}
       >
         <span className="mb-1 font-mono text-[10px] font-semibold tabular-nums text-[var(--color-ink-light)]">
-          {cut.gapM === null ? "–" : `${fmtM(cut.gapM)}${projected ? "+" : ""}`}
+          {cut.gapM === null ? "patched" : `${fmtM(cut.gapM)}${projected ? "+" : ""}`}
         </span>
         {cut.gapM === null ? (
-          <div className="flex h-9 w-full max-w-[56px] items-center justify-center rounded-sm border border-dashed border-[var(--color-clay)]/60">
-            <span className="font-mono text-[10px] text-[var(--color-clay)]">?</span>
-          </div>
+          <div
+            className="h-9 w-full max-w-[56px] rounded-sm"
+            style={{ backgroundImage: SAGE_HATCH }}
+          />
         ) : (
           <div
             className="w-full max-w-[56px] rounded-sm"
@@ -82,8 +90,13 @@ export default function EsserCliff() {
           </span>
         </div>
         <h3 className="mt-2 font-editorial text-[20px] leading-snug text-[var(--color-ink)]">
-          Almost $115 million came in. The cuts are still going out.
+          Four years of federal aid hid the deficit. Now it surfaces as cuts, bigger every year.
         </h3>
+        <p className="mt-2 max-w-2xl text-[13.5px] leading-relaxed text-[var(--color-ink-light)]">
+          The green bar is temporary pandemic money, spent on ongoing programs. While it flowed,
+          the district avoided serious cuts and the underlying deficit grew quietly. The clay bars
+          are what happened once it stopped: the same deficit, surfacing one budget at a time.
+        </p>
 
         <div className="mt-6 grid grid-cols-[72px_minmax(0,1fr)] gap-4 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-8">
           {/* Money in: the ESSER award */}
@@ -104,7 +117,7 @@ export default function EsserCliff() {
               />
             </div>
             <p className="mt-1.5 text-[11px] leading-snug text-[var(--color-ink-light)]">
-              one-time federal relief 2020-2024
+              temporary federal relief, 2020-2024, spent on ongoing costs
             </p>
           </div>
 
@@ -132,7 +145,7 @@ export default function EsserCliff() {
           <span className="flex items-center gap-1.5">
             <span aria-hidden className="h-2 w-3 rounded-sm bg-[var(--color-clay)]" />
             <span className="font-mono text-[10px] text-[var(--color-ink-muted)]">
-              budget gap closed by cuts
+              that year&apos;s gap, closed by cuts
             </span>
           </span>
           <span className="flex items-center gap-1.5">
@@ -142,13 +155,22 @@ export default function EsserCliff() {
           <span className="flex items-center gap-1.5">
             <span
               aria-hidden
-              className="h-2 w-3 rounded-sm border border-dashed border-[var(--color-clay)]/60"
+              className="h-2 w-3 rounded-sm"
+              style={{ backgroundImage: SAGE_HATCH }}
             />
             <span className="font-mono text-[10px] text-[var(--color-ink-muted)]">
-              no public gap figure
+              gap patched with the last relief, no public figure
             </span>
           </span>
         </div>
+
+        {/* The takeaway, spelled out */}
+        <p className="mt-4 border-t border-[var(--color-parchment)] pt-4 text-[14.5px] font-semibold leading-relaxed text-[var(--color-ink)]">
+          Read the chart as one sentence: the district used ${ESSER_TIMELINE.esserTotalM} million
+          of temporary money to avoid cutting, the money ran out, and the cuts it delayed arrived
+          larger, more than ${CUTS_SO_FAR_M} million in three years, with next year&apos;s
+          projected to be the biggest bar yet.
+        </p>
       </div>
 
       {/* ── The committee saw it coming ── */}

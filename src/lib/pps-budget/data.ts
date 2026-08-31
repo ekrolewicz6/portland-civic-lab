@@ -257,6 +257,48 @@ export const SOURCES = {
     kind: "analysis",
     year: "2026",
   },
+  persOverview: {
+    title: "PERS: system overview and employer rate information",
+    org: "Oregon Public Employees Retirement System",
+    url: "https://www.oregon.gov/pers/Pages/index.aspx",
+    kind: "primary",
+    year: "2026",
+  },
+  qem2026: {
+    title: "Quality Education Model Report, 2026",
+    org: "Oregon Quality Education Commission",
+    url: "https://www.oregon.gov/ode/reports-and-data/taskcomm/Documents/Quality%20Education%20Commission%20QEM%20Report%202026.pdf",
+    kind: "primary",
+    year: "2026",
+  },
+  odeNoe2324: {
+    title: "Net Operating Expenditures per ADMr by district, 2023-24",
+    org: "Oregon Department of Education, Fiscal Transparency",
+    url: "https://www.oregon.gov/ode/schools-and-districts/FiscalTransparency/Pages/FiscalTransparencyHome.aspx",
+    kind: "primary",
+    year: "2025",
+  },
+  censusFin2024: {
+    title: "Annual Survey of School System Finances, FY2024",
+    org: "U.S. Census Bureau",
+    url: "https://www.census.gov/programs-surveys/school-finances.html",
+    kind: "primary",
+    year: "2026",
+  },
+  beaRpp2024: {
+    title: "Regional Price Parities by metro area, 2024",
+    org: "U.S. Bureau of Economic Analysis",
+    url: "https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area",
+    kind: "primary",
+    year: "2025",
+  },
+  neaPay2025: {
+    title: "Teacher salary rankings and estimates, 2024-25",
+    org: "National Education Association",
+    url: "https://www.nea.org/resource-library/educator-pay-and-student-spending-how-does-your-state-rank/teacher",
+    kind: "analysis",
+    year: "2025",
+  },
 } as const satisfies Record<string, Source>;
 
 export type SourceId = keyof typeof SOURCES;
@@ -412,61 +454,61 @@ export const WASTE_VERDICTS = [
     id: "W1",
     title: "Bond overruns",
     ledger: "locked",
-    verdict: "Real waste, but bond money, never classroom money",
+    verdict: "Real waste, but it could never have paid a teacher.",
     evidence:
-      "Benson $202M at ballot to $421M at completion including an auditor-named $14M budgeting error; the 2017 program built by cutting ~$100M from the district's own cost model before the ballot; a $60M commitment to Black Portland unspent for four years.",
+      "Benson High was pitched to voters at $202 million and finished at $421 million, including a $14 million arithmetic error the auditors named. The 2017 bond fit on the ballot only because roughly $100 million was cut from the district's own cost estimate before voters saw it. And a $60 million pledge to Black Portland sat unspent for four years.",
     defense:
-      "Construction inflation 2020-2023 was violent and national; seismic scope grew for real reasons; Lincoln finished under budget, so the machine can hit honest numbers.",
+      "Construction prices jumped nationwide from 2020 to 2023, earthquake-safety work genuinely grew, and Lincoln High finished under budget, which proves the district can build on budget when the starting number is honest.",
     bottomLine:
-      "The controllable residual is smaller than the headlines and still very large. What it cost was never teachers. It was bond capacity and trust, which is what the next bond runs on.",
+      "The takeaway: hundreds of millions were lost, but bond money can legally buy only buildings, so the loss came out of Portland's borrowing power and its trust in the next bond, not out of classrooms.",
   },
   {
     id: "W2",
     title: "Paying for empty schools",
     ledger: "movable",
-    verdict: "The waste was the five years of waiting",
+    verdict: "The waste was not the small schools. It was five years of not deciding.",
     evidence:
-      "Enrollment forecasts were public and unambiguous by 2021-22; consolidation began fall 2026; every year between, the General Fund paid full fixed costs on emptying buildings while cutting classroom positions.",
+      "The enrollment forecasts were public and clear by 2021. The district did not begin consolidating schools until fall 2026. In every year between, it paid full costs, principal, heat, custodians, on buildings that kept emptying, out of the same fund that was cutting teachers.",
     defense:
-      "Small schools are a purchase, not waste. Communities are allowed to buy walkability and belonging, and closures have historically landed on Black and brown Portland.",
+      "Small schools are something Portland pays extra for on purpose: walkability and belonging. And the last round of closures fell hardest on Black and brown neighborhoods, so the hesitation was not irrational.",
     bottomLine:
-      "The schools are not the waste. The years of drift are, and they were paid for out of classrooms.",
+      "The takeaway: keeping a small school open is a legitimate choice. Taking five years to make the choice, while classrooms paid for the delay, is the waste.",
   },
   {
     id: "W3",
     title: "Central office and outside contracts",
     ledger: "movable",
-    verdict: "Cannot be checked, and that is the finding",
+    verdict: "Nobody outside the building can check it. After seven years of asking, that is the scandal.",
     evidence:
-      "Instruction FTE cut more than twice as fast as central business support; a paid assessment contract largely duplicating a free state service, flagged three years running, still in the budget; management-services lines up 199% in one proposed year.",
+      "Classroom teaching positions were cut more than twice as fast as central business support. A paid testing contract that mostly duplicates a free state service has survived three straight years of the district's own citizen committee asking to cancel it. One proposed budget raised management-services spending 199 percent in a single year.",
     defense:
-      "Mandates grew; some 'support' spending is counselors and coaches; contracting can beat hiring once the pension tail is counted; two-thirds of the contract surge is bond construction.",
+      "Some spending labeled support is counselors and campus safety, not executives. State and federal mandates grew all decade. And two-thirds of the contract surge is bond construction, not overhead.",
     bottomLine:
-      "Not proven waste. But the district publishes no benchmarking that would let anyone check, and the absence of the explanation is itself the finding. The 2019 state audit said exactly this.",
+      "The takeaway: nobody can prove the central office is bloated, and nobody can prove it is not, because the district has never published the numbers that would settle it. The state audit asked for exactly those numbers in 2019. They still do not exist.",
   },
   {
     id: "W4",
     title: "One-time money spent as if it were permanent",
     ledger: "committed",
-    verdict: "A defensible bet, badly disclosed",
+    verdict: "A defensible bet. The failure was not telling the public the bill was coming.",
     evidence:
-      "Almost $115M of ESSER braided into continuing programs; the cut sequence afterward tracks the withdrawal nearly dollar for dollar.",
+      "Almost $115 million of temporary federal relief was spent on continuing programs and the people who run them. When it ran out, the cuts that followed track the missing money almost dollar for dollar.",
     defense:
-      "The money was designed for recovery services, which means people; children in crisis needed help immediately; a district that banked it would have been pilloried.",
+      "The money was meant for pandemic recovery, which means hiring people to help children in crisis, immediately. A district that banked it instead would have been attacked for hoarding aid.",
     bottomLine:
-      "The bet was defensible. Hiding the cliff was not. The citizen committee said the funding was 'hiding the looming shortfall' a full year before the strike.",
+      "The takeaway: spending temporary money on children was a reasonable choice. Letting the public believe that spending level was sustainable was not. The district's own citizen committee said the money was 'hiding the looming shortfall' a year before the strike.",
   },
   {
     id: "W5",
     title: "Money lost to slow reactions",
     ledger: "movable",
-    verdict: "The biggest problem on this page",
+    verdict: "The most expensive problem on this page: the district moves late, and late costs more.",
     evidence:
-      "The district's own quarterly reports show its FY2025-26 year-end forecast swinging from $41.3M to $17.7M to $26.8M to $34.6M within one year, with a mid-year deficit its citizen committee confirmed; a pension reserve spent in one year against a scheduled cliff; nine days for citizen review; audit recommendations still only 'partially implemented' at the state's follow-up.",
+      "Within one school year, the district's own published forecast of its year-end cash swung from $41 million down to $18 million and back to $35 million, and a deficit opened mid-year anyway. The pension reserve, built for a rate increase the actuaries had scheduled years in advance, was spent in one year. Citizen reviewers got nine days. State audit recommendations were still only 'partially implemented' at the follow-up.",
     defense:
-      "State revenue is genuinely hard to forecast; the budget office itself has been cut; the December report explained its own drivers; mid-year correction is at least responsiveness.",
+      "State revenue genuinely is hard to predict, the budget office itself has been cut, and correcting course mid-year is at least a response.",
     bottomLine:
-      "The reports were public while the forecast swung by tens of millions and staffing assumptions broke. Late decisions cost more than early ones, and every other problem on this page got more expensive because of it. The fix: score the forecasts, explain the misses in public, and act on them.",
+      "The takeaway: every other problem on this page got more expensive because the district saw it late or moved late. The cheapest fix available is to grade its own forecasts in public and act the quarter they move, and it costs almost nothing.",
   },
 ] as const;
 
