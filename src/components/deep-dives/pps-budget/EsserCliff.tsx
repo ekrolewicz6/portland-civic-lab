@@ -13,14 +13,6 @@ import { ESSER_TIMELINE } from "@/lib/pps-budget/data";
  * two sides as a pull-quote.
  */
 
-/** Pixel height of the plot area; the $115M ESSER bar sets the scale. */
-const FULL_BAR_PX = 176;
-const PLOT_PX = 200;
-
-function barPx(gapM: number): number {
-  return Math.round((gapM / ESSER_TIMELINE.esserTotalM) * FULL_BAR_PX);
-}
-
 function fmtM(m: number): string {
   return `$${m.toLocaleString("en-US", { maximumFractionDigits: 1 })}M`;
 }
@@ -42,36 +34,63 @@ function isProjected(c: Cut): boolean {
   return "projected" in c && c.projected === true;
 }
 
-function CutColumn({ cut }: { cut: Cut }) {
-  const projected = isProjected(cut);
+/** One horizontal row on the shared $115M scale. */
+function BarRow({
+  label,
+  sub,
+  value,
+  pctWidth,
+  fill,
+  overflow = false,
+  bold = false,
+}: {
+  label: string;
+  sub?: string;
+  value: string;
+  pctWidth: number;
+  fill: { color?: string; hatch?: string };
+  overflow?: boolean;
+  bold?: boolean;
+}) {
   return (
-    <div className="flex min-w-0 flex-1 flex-col items-center">
-      <div
-        className="flex w-full flex-col items-center justify-end"
-        style={{ height: `${PLOT_PX}px` }}
-      >
-        <span className="mb-1 font-mono text-[10px] font-semibold tabular-nums text-[var(--color-ink-light)]">
-          {cut.gapM === null ? "patched" : `${fmtM(cut.gapM)}${projected ? "+" : ""}`}
-        </span>
-        {cut.gapM === null ? (
-          <div
-            className="h-9 w-full max-w-[56px] rounded-sm"
-            style={{ backgroundImage: SAGE_HATCH }}
-          />
-        ) : (
-          <div
-            className="w-full max-w-[56px] rounded-sm"
-            style={{
-              height: `${barPx(cut.gapM)}px`,
-              backgroundColor: projected ? undefined : "var(--color-clay)",
-              backgroundImage: projected ? HATCH : undefined,
-            }}
-          />
+    <div className="grid grid-cols-[76px_minmax(0,1fr)_96px] items-center gap-x-3 sm:grid-cols-[96px_minmax(0,1fr)_110px] sm:gap-x-4">
+      <div className="text-right">
+        <p
+          className={`font-mono text-[11px] tabular-nums leading-tight ${
+            bold ? "font-bold text-[var(--color-ink)]" : "font-semibold text-[var(--color-ink-muted)]"
+          }`}
+        >
+          {label}
+        </p>
+        {sub ? (
+          <p className="font-mono text-[9px] leading-tight text-[var(--color-ink-muted)]">{sub}</p>
+        ) : null}
+      </div>
+      <div className="relative h-5 min-w-0 overflow-hidden rounded-sm bg-[var(--color-paper-warm)]">
+        <div
+          className="h-full rounded-sm"
+          style={{
+            width: `${Math.min(pctWidth, 100)}%`,
+            backgroundColor: fill.color,
+            backgroundImage: fill.hatch,
+          }}
+        />
+        {overflow && (
+          <span
+            aria-hidden
+            className="absolute inset-y-0 right-1 flex items-center font-mono text-[11px] font-bold text-white"
+          >
+            ›››
+          </span>
         )}
       </div>
-      <span className="mt-1.5 font-mono text-[9px] tabular-nums text-[var(--color-ink-muted)] sm:text-[10px]">
-        {cut.fy}
-      </span>
+      <p
+        className={`font-mono text-[11px] tabular-nums leading-tight ${
+          bold ? "font-bold text-[var(--color-ink)]" : "font-semibold text-[var(--color-ink-light)]"
+        }`}
+      >
+        {value}
+      </p>
     </div>
   );
 }
@@ -86,7 +105,7 @@ export default function EsserCliff() {
             One-time money in, cuts out
           </p>
           <span className="font-mono text-[10px] tabular-nums text-[var(--color-ink-muted)]">
-            full bar = {fmtM(ESSER_TIMELINE.esserTotalM)}
+            full width = {fmtM(ESSER_TIMELINE.esserTotalM)} of relief
           </span>
         </div>
         <h3 className="mt-2 font-editorial text-[20px] leading-snug text-[var(--color-ink)]">
@@ -98,39 +117,56 @@ export default function EsserCliff() {
           are what happened once it stopped: the same deficit, surfacing one budget at a time.
         </p>
 
-        <div className="mt-6 grid grid-cols-[72px_minmax(0,1fr)] gap-4 sm:grid-cols-[120px_minmax(0,1fr)] sm:gap-8">
-          {/* Money in: the ESSER award */}
-          <div className="border-r border-[var(--color-parchment)] pr-4 sm:pr-8">
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-fern)]">
-              Money in
-            </p>
-            <div
-              className="mt-3 flex flex-col items-center justify-end"
-              style={{ height: `${PLOT_PX}px` }}
-            >
-              <span className="mb-1 font-mono text-[10px] font-semibold tabular-nums text-[var(--color-ink-light)]">
-                {fmtM(ESSER_TIMELINE.esserTotalM)}
-              </span>
-              <div
-                className="w-full max-w-[72px] rounded-sm bg-[var(--color-sage)]"
-                style={{ height: `${FULL_BAR_PX}px` }}
+        <div className="mt-6 space-y-2.5">
+          {/* The relief, full width: the reference bar */}
+          <BarRow
+            label="2020-24"
+            sub="4 years"
+            value={fmtM(ESSER_TIMELINE.esserTotalM)}
+            pctWidth={100}
+            fill={{ color: "var(--color-sage)" }}
+            bold
+          />
+          <p className="py-1 pl-[88px] font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-clay)] sm:pl-[112px]">
+            The money runs out. The cuts begin. ↓
+          </p>
+          {/* One row per cut year, same scale */}
+          {ESSER_TIMELINE.cuts.map((cut) => {
+            const projected = isProjected(cut);
+            if (cut.gapM === null) {
+              return (
+                <BarRow
+                  key={cut.fy}
+                  label={cut.fy}
+                  value="no figure"
+                  pctWidth={22}
+                  fill={{ hatch: SAGE_HATCH }}
+                  sub="patched"
+                />
+              );
+            }
+            return (
+              <BarRow
+                key={cut.fy}
+                label={cut.fy}
+                sub={projected ? "projected" : undefined}
+                value={`${fmtM(cut.gapM)}${projected ? "+" : ""}`}
+                pctWidth={(cut.gapM / ESSER_TIMELINE.esserTotalM) * 100}
+                fill={projected ? { hatch: HATCH } : { color: "var(--color-clay)" }}
               />
-            </div>
-            <p className="mt-1.5 text-[11px] leading-snug text-[var(--color-ink-light)]">
-              temporary federal relief, 2020-2024, spent on ongoing costs
-            </p>
-          </div>
-
-          {/* Cuts out: the ascending sequence */}
-          <div className="min-w-0">
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-clay)]">
-              Cuts out
-            </p>
-            <div className="mt-3 flex gap-1 sm:gap-3">
-              {ESSER_TIMELINE.cuts.map((cut) => (
-                <CutColumn key={cut.fy} cut={cut} />
-              ))}
-            </div>
+            );
+          })}
+          {/* The cumulative punchline: cuts have already passed the relief */}
+          <div className="border-t border-[var(--color-parchment)] pt-2.5">
+            <BarRow
+              label="Total cut"
+              sub="3 years"
+              value={`$${CUTS_SO_FAR_M}M+`}
+              pctWidth={(CUTS_SO_FAR_M / ESSER_TIMELINE.esserTotalM) * 100}
+              fill={{ color: "var(--color-clay-deep, #8f4023)" }}
+              overflow
+              bold
+            />
           </div>
         </div>
 
@@ -139,7 +175,7 @@ export default function EsserCliff() {
           <span className="flex items-center gap-1.5">
             <span aria-hidden className="h-2 w-3 rounded-sm bg-[var(--color-sage)]" />
             <span className="font-mono text-[10px] text-[var(--color-ink-muted)]">
-              one-time relief
+              temporary federal relief
             </span>
           </span>
           <span className="flex items-center gap-1.5">
