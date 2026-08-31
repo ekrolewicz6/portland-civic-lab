@@ -254,19 +254,36 @@ export default function PpsBudgetPage() {
         id="the-levy-leak"
         eyebrow="The rules from Salem"
         title="Voters approved $1.99 for teachers. About $1.51 arrives."
-        lead="The leak is not mismanagement. It comes from tax limits Oregon voters passed in the 1990s, it works exactly as written, and it is growing fast."
+        lead="The gap between those two numbers is the leak: about 48 cents of every levy dollar, erased by tax limits Oregon voters passed in the 1990s. It is not mismanagement, and nobody at district headquarters can fix it."
         tone="warm"
       >
         <Prose>
           <p>
-            The local option levy is legally restricted to teacher salaries, held in its own
-            sub-account, and audited clean every year (<Src id="cbrcLevy2025" />). It is also the
-            first thing sacrificed when a property&apos;s taxes hit the constitutional ceiling:
-            Measure 5 caps education taxes against <em>market</em> value, Measure 50 grows{" "}
-            <em>assessed</em> value at 3 percent regardless, and when the two collide, the
-            shortfall, called compression, comes out of the levy first, down to zero, before any
-            other line is touched. Portland&apos;s post-2022 market, flat prices on a ratcheting
-            assessment base, is the worst case for that arithmetic.
+            Start with one tax bill. The teachers levy is written as $1.99 per $1,000 of your
+            home&apos;s <em>assessed</em> value. But a 1990 constitutional amendment, Measure 5,
+            says the school taxes on any property cannot exceed $5 per $1,000 of its{" "}
+            <em>market</em> value. When a bill breaks that ceiling, the county does not defer the
+            extra or collect it later. It deletes it. And the constitution names what gets deleted
+            first: add-on levies like the teachers levy, cut all the way to zero if needed, before
+            any other school tax line loses a cent. Averaged across every property in the
+            district, the deleted amount now equals about 48 cents of the $1.99. That is the leak,
+            and tax people call it compression. The dollars that do arrive are clean: restricted
+            to teacher salaries by law, held in their own sub-account, audited every year (
+            <Src id="cbrcLevy2025" />).
+          </p>
+          <p>
+            Why would anyone design a tax to be deleted? Because the levy was born as the
+            overflow. Measure 5 was a 1990 tax revolt: voters capped school taxes to push school
+            funding onto the state. Measure 50, in 1997, froze each home&apos;s assessed value
+            below its market value and let it grow just 3 percent a year, and as part of that
+            same deal it let districts ask voters for extra money, but only from whatever room
+            the $5 ceiling left over. First in, first cut: the levy is sacrificed first because it
+            was only ever allowed to exist in the gap under the cap. For two decades Portland
+            home prices rose fast enough that the gap stayed wide. Then prices went flat after
+            2022 while assessed values kept ratcheting up 3 percent a year, the two numbers
+            converged on thousands of properties at once, and the room the levy lives in started
+            closing. Nobody in 1997 designed that ending. But it works exactly as written, and it
+            is growing fast.
           </p>
         </Prose>
         <LevyLeak />
