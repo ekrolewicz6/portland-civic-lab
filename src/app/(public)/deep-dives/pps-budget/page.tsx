@@ -13,6 +13,7 @@ import EmptyChair from "@/components/deep-dives/pps-budget/EmptyChair";
 import BondLedger from "@/components/deep-dives/pps-budget/BondLedger";
 import EsserCliff from "@/components/deep-dives/pps-budget/EsserCliff";
 import Benchmarks from "@/components/deep-dives/pps-budget/Benchmarks";
+import SchoolUtilization from "@/components/deep-dives/pps-budget/SchoolUtilization";
 import WasteVerdicts from "@/components/deep-dives/pps-budget/WasteVerdicts";
 import OverrunAnatomy from "@/components/deep-dives/pps-budget/OverrunAnatomy";
 import PlanDecisions from "@/components/deep-dives/pps-budget/PlanDecisions";
@@ -579,8 +580,17 @@ export default function PpsBudgetPage() {
             principals, boilers, custodians, and bus routes for seats without students in them,
             out of the same fund cutting classroom positions. The forecasts were public and
             unambiguous by 2021-22. The consolidation process began in fall 2026, with up to 20
-            schools reported on the table (<Src id="wwTwentySchools" />, press).
+            schools reported on the table (<Src id="wwTwentySchools" />, press). And the public
+            can now see the whole footprint school by school, through an open-source compilation
+            of the district&apos;s own numbers (<Src id="ppsdataInfo" />) that we spot-checked
+            against the state&apos;s enrollment file, the district&apos;s facility plan, and the
+            seismic engineers&apos; report before using it here (<Src id="odeFallMembership2526" />
+            <Src id="lrfp2021" />
+            <Src id="holmesSeismic2024" />):
           </p>
+        </Prose>
+        <SchoolUtilization />
+        <Prose>
           <p>
             Both of these things are true, and the coming debate will tend to ignore one of them.
             Keeping small schools open is something Portland pays extra for on purpose: for
