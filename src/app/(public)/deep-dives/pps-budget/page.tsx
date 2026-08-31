@@ -14,6 +14,7 @@ import BondLedger from "@/components/deep-dives/pps-budget/BondLedger";
 import EsserCliff from "@/components/deep-dives/pps-budget/EsserCliff";
 import Benchmarks from "@/components/deep-dives/pps-budget/Benchmarks";
 import WasteVerdicts from "@/components/deep-dives/pps-budget/WasteVerdicts";
+import OverrunAnatomy from "@/components/deep-dives/pps-budget/OverrunAnatomy";
 import PlanDecisions from "@/components/deep-dives/pps-budget/PlanDecisions";
 import CannotKnow from "@/components/deep-dives/pps-budget/CannotKnow";
 import DoctrineCard from "@/components/deep-dives/pps-budget/DoctrineCard";
@@ -611,6 +612,15 @@ export default function PpsBudgetPage() {
             deliver on budget when the number voters see is honest to begin with:
           </p>
           <BondLedger />
+          <p className="mt-8 max-w-3xl text-[15px] leading-relaxed text-[var(--color-ink-light)]">
+            A ledger of overruns raises the natural next question: <em>why</em> do they happen,
+            and how much of it is anyone&apos;s fault? Benson is the one project where the audit
+            trail lets us answer step by step (<Src id="bondAuditY6" />
+            <Src id="opbBondTrim" />
+            <Src id="turnerCostIndex" />
+            <Src id="megaprojectBaseRates" />):
+          </p>
+          <OverrunAnatomy />
         </div>
       </Section>
 
@@ -647,9 +657,13 @@ export default function PpsBudgetPage() {
 
         <Prose>
           <p className="mt-8">
-            Three of these four fights end the same way: at a document the district has never
-            published. The strike cost model. The staffing records. The benchmarking study. The
-            next section lists every one.
+            Notice that three of these four fights stall at the same wall: a document that exists
+            but has never been published. The broke-or-hiding fight would end with the
+            district&apos;s staffing records. The strike fight would end with the settlement cost
+            model the district built to negotiate. The equity question would end with the
+            effectiveness study its own committee asked for twice. All three sit in district
+            files today. The next section names all eight missing documents, what each would
+            settle, and exactly who to ask.
           </p>
         </Prose>
       </Section>

@@ -257,6 +257,27 @@ export const SOURCES = {
     kind: "analysis",
     year: "2026",
   },
+  turnerCostIndex: {
+    title: "Turner Building Cost Index, 2020-2023",
+    org: "Turner Construction",
+    url: "https://www.turnerconstruction.com/cost-index",
+    kind: "primary",
+    year: "2023",
+  },
+  megaprojectBaseRates: {
+    title: "Cost overrun base rates in large public projects (Flyvbjerg et al.)",
+    org: "University of Oxford / arXiv",
+    url: "https://arxiv.org/pdf/1307.2176",
+    kind: "analysis",
+    year: "2013",
+  },
+  opbBondTrim: {
+    title: "PPS lowered its 2017 bond cost estimate before the ballot",
+    org: "Oregon Public Broadcasting",
+    url: "https://www.opb.org/news/article/portland-public-schools-bond-lowered/",
+    kind: "news",
+    year: "2019",
+  },
   persOverview: {
     title: "PERS: system overview and employer rate information",
     org: "Oregon Public Employees Retirement System",
@@ -514,13 +535,68 @@ export const WASTE_VERDICTS = [
 
 /** What the public record cannot answer, and the drafted (unsent) asks. */
 export const GAPS = [
-  { gap: "No forecast-accuracy standard governs the interim reports that exist", why: "PPS publishes quarterly and monthly reports, and inside FY2025-26 they recorded the year-end forecast swinging $24M in a single quarter. Nothing requires a revision log, an accuracy scorecard, or a public reconciliation when that happens", ask: "The standard itself, in board policy: accuracy bands, a revision log, and a named response to material misses" },
-  { gap: "No bond disclosures on any PPS site; official statements live only on the municipal bond market's EMMA system", why: "The district's risk disclosures to investors are more candid than anything it publishes to voters", ask: "Post them" },
-  { gap: "No state performance audit since January 2019", why: "A strike, an ESSER cycle, and five cut years with no state-level look", ask: "The state audits division decides its own docket; the public can ask" },
-  { gap: "No published cost model for the ~$175M strike settlement (a press-carried district figure)", why: "The most charged causal claim in the city cannot be evaluated by anyone", ask: "Publish the cost model. The signed contract is public; the arithmetic is not" },
-  { gap: "No position-control reports public", why: "The central-office growth fight runs on dueling unverifiable claims", ask: "Publish staffing counts by role and location, 2018 forward" },
-  { gap: "The closure savings model is not public", why: "Communities are asked to trust arithmetic nobody can check", ask: "Publish the model, before any list" },
-  { gap: "No bond audit was issued during calendar 2022", why: "The FY2021-22 audit exists, published February 2023, but sixteen months of active construction passed between reports while Benson's costs were moving, because publication cadence is set by the audit engagement and nothing fixes it", ask: "A due date in the engagement letter: final report within a fixed number of months of fiscal year end" },
+  {
+    gap: "The strike settlement cost model",
+    settles:
+      "The most charged claim in Portland: whether the 2023 strike settlement broke the budget, is one of three comparable pressures, or neither. One spreadsheet would end an argument that has run three years on a press-reported number.",
+    holder:
+      "The district's finance office built it to negotiate the contract; it exists internally.",
+    ask: "A one-paragraph records request under ORS 192, or a board vote to publish. The signed contract is already public; only the arithmetic is not.",
+  },
+  {
+    gap: "Position-control staffing reports",
+    settles:
+      "Whether the union's claim that 149 central-office positions were added from 2019 to 2024 is true, false, or partly true. This is the single document the broke-or-hiding fight is missing.",
+    holder:
+      "The district's HR and budget systems generate these counts routinely; every large employer has them.",
+    ask: "Publish staffing counts by role and location, 2018 forward. A records request reaches them; a board member could ask for them Monday.",
+  },
+  {
+    gap: "The closure savings model",
+    settles:
+      "What closing a school actually saves, building by building, before any community is asked to accept a closure. Right now every number in the closure debate, on both sides, is a guess.",
+    holder: "The facilities and finance staff running the consolidation process now underway.",
+    ask: "Publish the model before any closure list, and let someone independent check it. The board can make that a condition of its own vote.",
+  },
+  {
+    gap: "The equity allocation's effectiveness study",
+    settles:
+      "Whether a decade of set-aside staffing for high-poverty schools measurably closed the gaps it targeted. That answer now shapes both a federal lawsuit's public meaning and whether halving the allocation was right.",
+    holder:
+      "Nobody. The citizen committee asked for this analysis in 2023 and again in 2024; it was never produced, and the allocation was halved without it.",
+    ask: "Commission the study. The staffing and outcome data needed to run it sit in district systems today.",
+  },
+  {
+    gap: "A forecast-accuracy standard for the quarterly reports",
+    settles:
+      "Whether the district's mid-year surprises are bad luck or bad practice. Inside FY2025-26 the year-end forecast swung $24M in one quarter; a public scorecard would show how often the forecasts miss, by how much, and what changed in response.",
+    holder:
+      "Nobody. This one is not a hidden document; it does not exist yet.",
+    ask: "One board policy vote: accuracy bands, a revision log, and a named response when a forecast misses badly.",
+  },
+  {
+    gap: "The bond disclosures, on a PPS site",
+    settles:
+      "What the district tells Wall Street about its own risks, under securities law, in plainer terms than anything it mails to voters. The documents exist; they just live where only bond buyers look.",
+    holder:
+      "PPS wrote them. They sit on the municipal bond market's EMMA system today.",
+    ask: "Repost them on pps.net. This is an afternoon of work.",
+  },
+  {
+    gap: "A new state performance audit (none since January 2019)",
+    settles:
+      "An independent answer to the central-office question, from examiners with the power to compel records the public cannot. A strike, the pandemic money, and five cut years have passed since the state last looked.",
+    holder:
+      "The Oregon Secretary of State's Audits Division, which picks its own targets and takes public suggestions.",
+    ask: "Anyone can propose an audit topic to the division. Its own 2022 follow-up found the 2019 recommendations only partially implemented, which is the argument for going back.",
+  },
+  {
+    gap: "A deadline on the annual bond audit",
+    settles:
+      "Whether construction cost problems surface while they can still be fixed. Benson's estimate moved for sixteen months between audit reports, because nothing sets the auditor's publication date.",
+    holder: "The school board's audit committee, which writes the engagement.",
+    ask: "A due date in the engagement letter: final report within a fixed number of months after fiscal year end.",
+  },
 ] as const;
 
 /** Six tripwires for the decade ahead (document.md section 12). */
