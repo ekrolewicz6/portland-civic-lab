@@ -50,21 +50,21 @@ const FINDINGS = [
   {
     href: "#the-empty-chair",
     stat: "9",
-    statLabel: "working days",
+    statLabel: "working days given to citizen reviewers of a $2.8B budget",
     title: "No one checks the work",
     body: "In most Oregon districts, the law puts regular citizens on the committee that approves the school budget. Portland is exempt: the board approves its own work, and the volunteer committee that reviews it instead got nine working days. That is how bad assumptions survive to become next year's crisis.",
   },
   {
     href: "#the-levy-leak",
     stat: "$1.51",
-    statLabel: "of every $1.99",
+    statLabel: "of every $1.99 voters approved actually arrives",
     title: "The teachers levy leaks",
     body: "Portlanders pay a special tax that exists only to fund teachers. Old state tax limits cancel about a quarter of it before it arrives, and the loss grows every year. The result: the same levy pays for about 200 fewer teachers than in 2019, and only the state legislature can fix it.",
   },
   {
     href: "#waste",
     stat: "$41M→$18M",
-    statLabel: "the district's guess at its own year-end cash, within 12 months",
+    statLabel: "the district's own guess at its year-end cash, months apart",
     title: "Forecasts nobody can trust",
     body: "Four times a year the district publishes how much money it expects to have left. Last year that number swung from $41M down to $18M and back to $35M. A district that cannot predict its own money cuts late and cuts wrong, and that is where the deepest damage on this page comes from.",
   },
@@ -108,13 +108,13 @@ export default function TheWholeStory() {
                   style={{ backgroundColor: s.color }}
                 />
                 <div>
-                  <p className="text-[13px] font-semibold leading-tight text-[var(--color-ink)]">
+                  <p className="text-[14px] font-semibold leading-tight text-[var(--color-ink)]">
                     {s.label}{" "}
                     <span className="font-mono tabular-nums text-[var(--color-ink-light)]">
                       {s.display}
                     </span>
                   </p>
-                  <p className="mt-0.5 text-[12px] leading-snug text-[var(--color-ink-light)]">
+                  <p className="mt-1 text-[13px] leading-snug text-[var(--color-ink-light)]">
                     {s.detail}
                   </p>
                 </div>
@@ -122,7 +122,7 @@ export default function TheWholeStory() {
             ))}
           </div>
 
-          <p className="mt-4 border-t border-[var(--color-parchment)] pt-3 text-[13px] leading-relaxed text-[var(--color-ink-light)]">
+          <p className="mt-4 border-t border-[var(--color-parchment)] pt-3 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
             Every real fight about this budget is a fight about that green $182M slice, and most of the
             loudest claims are about money that cannot legally reach it. The operating fund
             itself fell <span className="font-mono tabular-nums font-semibold text-[var(--color-ink)]">$6.5M</span>{" "}
@@ -142,21 +142,19 @@ export default function TheWholeStory() {
               href={f.href}
               className="group rounded-sm border border-[var(--color-parchment)] bg-white p-5 transition-colors hover:border-[var(--color-ember)]"
             >
-              <div className="flex items-baseline gap-2">
-                <span className="font-mono text-[30px] font-semibold tabular-nums leading-none text-[var(--color-clay)]">
-                  {f.stat}
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-[var(--color-ink-muted)]">
-                  {f.statLabel}
-                </span>
-              </div>
-              <p className="mt-2.5 font-editorial text-[17px] leading-tight text-[var(--color-ink)] group-hover:text-[var(--color-canopy)]">
+              <span className="block font-mono text-[30px] font-semibold tabular-nums leading-none text-[var(--color-clay)] sm:text-[34px]">
+                {f.stat}
+              </span>
+              <p className="mt-1.5 text-[13px] leading-snug text-[var(--color-ink-muted)]">
+                {f.statLabel}
+              </p>
+              <p className="mt-3 border-t border-[var(--color-parchment)] pt-3 font-editorial text-[20px] leading-tight text-[var(--color-ink)] group-hover:text-[var(--color-canopy)]">
                 {f.title}
               </p>
-              <p className="mt-1.5 text-[12.5px] leading-relaxed text-[var(--color-ink-light)]">
+              <p className="mt-2 text-[14.5px] leading-relaxed text-[var(--color-ink-light)]">
                 {f.body}
               </p>
-              <p className="mt-2.5 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-ember)]">
+              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-ember)]">
                 Read the evidence ↓
               </p>
             </a>
