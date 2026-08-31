@@ -734,15 +734,22 @@ export default function PpsBudgetPage() {
             checksummed with every extraction citing its page, is public: <Src id="pclAnalysis" />.
           </p>
           <p>
-            Cautions we owe the reader: figures that exist only in press reporting, the strike
-            settlement cost, the closure counts, the kindergarten capture rate, are labeled press
-            wherever they appear. Searching this topic is hazardous: portlandschools.org and
-            portlandk12.org belong to Portland, Maine, whose voter-approved school budget pollutes
-            results; Oregon school budgets never go to a referendum. And the official record
+            Three cautions, each for a different reason. First, some figures on this page exist
+            only in press reporting, never in an official document: the strike settlement cost,
+            the closure counts, the kindergarten capture rate. They are labeled press wherever
+            they appear so you can weigh them accordingly. Second, a warning for anyone
+            fact-checking this page with a search engine: portlandschools.org and portlandk12.org
+            belong to Portland, <em>Maine</em>, whose school budget really does go to a voter
+            referendum every June, so headlines like &ldquo;Portland voters approve school
+            budget&rdquo; are about a different Portland; no Oregon school budget is ever voted
+            on directly. We built a filter into our own pipeline to keep Maine documents out, and
+            your searches deserve the same skepticism. Third, the official Oregon record
             disagrees with itself more than anyone should be comfortable with: our extraction
-            logged nineteen cross-document contradictions in oversight tables and an audited
-            report whose statistical section prints an impossible enrollment figure. Where sources
-            conflict, the page says so rather than smoothing it.
+            logged nineteen contradictions between the oversight bodies&apos; own published
+            tables, the same staffing table printing different totals in different editions, for
+            example, and the district&apos;s audited annual report carries an impossible
+            enrollment figure in its statistical section. Where sources conflict, this page shows
+            the conflict rather than smoothing it over.
           </p>
         </Prose>
         <IndependenceNote />
