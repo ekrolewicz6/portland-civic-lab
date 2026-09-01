@@ -678,3 +678,18 @@
 .performance-dark-link:hover {
   color: #ffffff !important;
 }
+
+/* Leaflet tooltip, restyled to match the site's mono/editorial voice. */
+.mcl-map-tooltip {
+  font-family: var(--font-mono), monospace !important;
+  font-size: 10.5px !important;
+  letter-spacing: 0.02em;
+  background: var(--color-paper-warm) !important;
+  border: 1px solid var(--color-parchment) !important;
+  color: var(--color-ink) !important;
+  padding: 3px 7px !important;
+  box-shadow: none !important;
+}
+.mcl-map-tooltip::before {
+  border-top-color: var(--color-parchment) !important;
+}

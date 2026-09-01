@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
-import { ArrowRight, Building2, GraduationCap, Landmark, Network, Scale, Server, Store, Theater, TreePine, Users, Route } from "lucide-react";
+import { ArrowRight, Building2, GraduationCap, Landmark, Library, Network, Scale, Server, Store, Theater, TreePine, Users, Route } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
@@ -34,6 +34,17 @@ const DIVES: DeepDive[] = [
     stat: "$1.51",
     statLabel: "what the $1.99 teachers levy actually delivers",
     icon: GraduationCap,
+    available: true,
+  },
+  {
+    href: "/deep-dives/libraries",
+    eyebrow: "Libraries & public knowledge infrastructure",
+    title: "Portland just finished rebuilding its libraries. Now what?",
+    blurb:
+      "A $387 million bond finished nineteen locations, culminating in a 95,000-square-foot flagship in Gresham, and checkouts are near record highs. Only 38% of households have an active card, and staff safety collapsed after reopening. The full history back to 1864, the honest gap, a map of every branch, who has to approve what, and a plan to 2040.",
+    stat: "19",
+    statLabel: "locations, and a 38% active-cardholder household rate",
+    icon: Library,
     available: true,
   },
   {
