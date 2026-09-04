@@ -85,7 +85,7 @@ export function Panel({
             {number ? (
               <div className="flex items-baseline gap-3">
                 <span
-                  className={`font-mono text-[34px] font-bold tabular-nums leading-none sm:text-[40px] ${
+                  className={`whitespace-nowrap font-mono text-[30px] font-bold tabular-nums leading-none sm:text-[40px] ${
                     dark ? "text-[var(--color-ember-bright)]" : "text-[var(--color-clay)]"
                   }`}
                 >
@@ -172,7 +172,7 @@ export function Depth({
 export function FormulaStrip() {
   const box =
     "flex-1 rounded-sm border border-[var(--color-parchment)] bg-white px-4 py-3 text-center";
-  const op = "shrink-0 text-center font-mono text-[24px] font-bold text-[var(--color-ink-muted)]";
+  const op = "flex h-9 w-9 shrink-0 items-center justify-center self-center rounded-full border border-[var(--color-parchment)] bg-white font-mono text-[20px] font-bold leading-none text-[var(--color-ink)]";
   return (
     <div className="rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-5 sm:p-6">
       <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">

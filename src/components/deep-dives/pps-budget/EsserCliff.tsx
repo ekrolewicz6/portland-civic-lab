@@ -122,7 +122,7 @@ export default function EsserCliff() {
             fill={{ color: "var(--color-sage)" }}
             bold
           />
-          <p className="py-1 pl-[88px] font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-clay)] sm:pl-[112px]">
+          <p className="py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-clay)] sm:pl-[112px]">
             The money runs out. The cuts begin. ↓
           </p>
           {/* One row per cut year, same scale */}

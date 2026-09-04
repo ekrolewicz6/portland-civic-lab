@@ -159,7 +159,7 @@ export default function LevyLeak() {
       <div>
         <Eyebrow>More money in, fewer teachers out</Eyebrow>
         <div className="mt-4 overflow-x-auto rounded-sm border border-[var(--color-parchment)] bg-white">
-          <table className="w-full min-w-[560px] text-left">
+          <table className="w-full sm:min-w-[560px] text-left">
             <thead>
               <tr className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
                 <th className={TH}>Year</th>

@@ -28,7 +28,7 @@ function Row({ s }: { s: (typeof SCHOOL_UTILIZATION)[number] }) {
   return (
     <div className="grid grid-cols-[minmax(0,128px)_minmax(0,1fr)_40px] items-center gap-x-2">
       <p
-        className={`truncate font-mono text-[10px] leading-[15px] ${
+        className={`truncate font-mono text-[11px] leading-[16px] sm:text-[10px] sm:leading-[15px] ${
           under ? "font-bold text-[var(--color-ink)]" : "text-[var(--color-ink-muted)]"
         }`}
         title={`${s.n} (${levelShort(s.lv)}): ${s.enr} students in a building sized for ${s.cap}${s.t1 ? " · Title I" : ""}${s.urm ? " · unreinforced masonry" : ""}${s.bc ? " · boundary redrawn since 2018" : ""}`}
@@ -46,7 +46,7 @@ function Row({ s }: { s: (typeof SCHOOL_UTILIZATION)[number] }) {
         />
       </div>
       <p
-        className={`text-right font-mono text-[10px] tabular-nums leading-[15px] ${
+        className={`text-right font-mono text-[11px] tabular-nums leading-[16px] sm:text-[10px] sm:leading-[15px] ${
           under ? "font-bold text-[var(--color-clay)]" : "text-[var(--color-ink-muted)]"
         }`}
       >

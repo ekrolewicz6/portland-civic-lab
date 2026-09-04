@@ -174,13 +174,13 @@ export default function Benchmarks() {
           Published 2025-26 schedules, adjusted by each metro&apos;s federal cost-of-living index. Portland is last.
         </p>
         <div className="mt-4 overflow-x-auto rounded-sm border border-[var(--color-parchment)] bg-white">
-          <table className="w-full min-w-[640px] text-left">
+          <table className="w-full sm:min-w-[640px] text-left">
             <thead>
               <tr className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
                 <th className={TH}>District</th>
-                <th className={`${TH} text-right`}>Starting salary</th>
+                <th className={`${TH} hidden text-right sm:table-cell`}>Starting salary</th>
                 <th className={`${TH} text-right`}>Top of scale</th>
-                <th className={`${TH} text-right`}>Cost of living</th>
+                <th className={`${TH} hidden text-right sm:table-cell`}>Cost of living</th>
                 <th className={`${TH} text-right`}>Top, adjusted</th>
               </tr>
             </thead>
@@ -206,9 +206,9 @@ export default function Benchmarks() {
                         </span>
                       ) : null}
                     </td>
-                    <td className={cell}>{fmtK(row.start)}</td>
+                    <td className={`${cell} hidden sm:table-cell`}>{fmtK(row.start)}</td>
                     <td className={cell}>{fmtK(row.top)}</td>
-                    <td className={cell}>{row.rpp.toFixed(1)}</td>
+                    <td className={`${cell} hidden sm:table-cell`}>{row.rpp.toFixed(1)}</td>
                     <td className={cell}>{fmtK(row.adjTop)}</td>
                   </tr>
                 );

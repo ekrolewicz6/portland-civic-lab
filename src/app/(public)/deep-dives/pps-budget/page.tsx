@@ -105,7 +105,9 @@ function CreditStrip() {
 
 export default function PpsBudgetPage() {
   return (
-    <article className="bg-[var(--color-paper)]">
+    <article id="pps-budget" className="bg-[var(--color-paper)]">
+      {/* Below 640px, tracked uppercase eyebrows wrap; loosen them so wrapped lines read cleanly. */}
+      <style>{`@media (max-width: 639px) { #pps-budget .font-mono.uppercase { letter-spacing: 0.08em; } }`}</style>
       {/* ── hero ── */}
       <header className="noise-overlay relative overflow-hidden bg-[var(--color-canopy)] py-16 text-white sm:py-20">
         <div className={`relative z-10 ${DIVE_CONTAINER}`}>
@@ -149,7 +151,7 @@ export default function PpsBudgetPage() {
                 <dd className="font-mono text-[26px] font-bold tabular-nums text-white sm:text-[30px]">
                   {s.v}
                 </dd>
-                <dt className="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-white/50">
+                <dt className="mt-1 text-[12px] leading-snug text-white/60 sm:font-mono sm:text-[10px] sm:uppercase sm:tracking-[0.12em] sm:text-white/50">
                   {s.k}
                 </dt>
               </div>
@@ -347,11 +349,11 @@ export default function PpsBudgetPage() {
       >
         <PensionTimeline />
         <div className="mt-6 overflow-x-auto rounded-sm border border-[var(--color-parchment)] bg-white">
-          <table className="w-full min-w-[560px] text-left">
+          <table className="w-full sm:min-w-[560px] text-left">
             <thead>
               <tr className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
                 {["Where the cuts landed", "FY2021-22", "FY2025-26", "Change"].map((h) => (
-                  <th key={h} className="px-4 py-3 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+                  <th key={h} className="px-2 py-3 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)] sm:px-4">
                     {h}
                   </th>
                 ))}
@@ -360,10 +362,10 @@ export default function PpsBudgetPage() {
             <tbody className="divide-y divide-[var(--color-parchment)]">
               {FTE_BY_FUNCTION.map((r) => (
                 <tr key={r.group}>
-                  <td className="px-4 py-3 text-[14px] font-semibold text-[var(--color-ink)]">{r.group}</td>
-                  <td className="px-4 py-3 font-mono text-[13px] tabular-nums text-[var(--color-ink-light)]">{r.fy22.toLocaleString()}</td>
-                  <td className="px-4 py-3 font-mono text-[13px] tabular-nums text-[var(--color-ink-light)]">{r.fy26.toLocaleString()}</td>
-                  <td className={`px-4 py-3 font-mono text-[14px] font-bold tabular-nums ${r.pct < 0 ? "text-[var(--color-clay)]" : "text-[var(--color-fern)]"}`}>
+                  <td className="px-2 py-3 text-[13px] font-semibold leading-snug text-[var(--color-ink)] sm:px-4 sm:text-[14px]">{r.group}</td>
+                  <td className="px-2 py-3 font-mono text-[12px] tabular-nums text-[var(--color-ink-light)] sm:px-4 sm:text-[13px]">{r.fy22.toLocaleString()}</td>
+                  <td className="px-2 py-3 font-mono text-[12px] tabular-nums text-[var(--color-ink-light)] sm:px-4 sm:text-[13px]">{r.fy26.toLocaleString()}</td>
+                  <td className={`px-2 py-3 font-mono text-[14px] font-bold tabular-nums sm:px-4 ${r.pct < 0 ? "text-[var(--color-clay)]" : "text-[var(--color-fern)]"}`}>
                     {r.pct > 0 ? "+" : ""}{r.pct}%
                   </td>
                 </tr>
