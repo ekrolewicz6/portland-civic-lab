@@ -38,15 +38,6 @@ export default function DecadeSpine() {
           <span className="font-mono tabular-nums">{PCT_DOWN}</span> percent from the{" "}
           {PEAK.fy} peak.
         </h3>
-        <p className="mt-2 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-          The General Fund grew from{" "}
-          <span className="font-mono tabular-nums">{fmtMillionsFromK(DECADE[0].gfK)}</span> to{" "}
-          <span className="font-mono tabular-nums">{fmtMillionsFromK(LAST.gfK)}</span> over the
-          decade. Put every year in 2026 dollars and the fund has been shrinking since{" "}
-          {PEAK.fy}, while enrollment fell from{" "}
-          <span className="font-mono tabular-nums">{fmtCount(DECADE[0].enrollment)}</span> to a
-          forecast <span className="font-mono tabular-nums">{fmtCount(LAST.enrollment)}</span>.
-        </p>
       </div>
 
       {/* ── The decade chart ── */}
