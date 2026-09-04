@@ -85,7 +85,7 @@ function HouseholdGrid() {
       <p className="mt-4 font-mono text-[42px] font-bold leading-none tabular-nums text-[var(--color-ember-bright)]">
         {lit}<span className="text-[24px]">%</span>
       </p>
-      <p className="mt-1.5 text-[13.5px] leading-snug text-white/70">
+      <p className="mt-1.5 text-[15px] leading-snug text-white/70">
         of households have an active library card. The target the county&apos;s own report sets for
         2040 is 70%. Everything on this page is about the other 62.
       </p>
@@ -101,7 +101,7 @@ export default function LibrariesPage() {
         <div className={`relative z-10 ${DIVE_CONTAINER}`}>
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(280px,340px)] lg:items-end">
             <div>
-              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-ember-bright)]">
+              <p className="font-mono text-[13px] uppercase tracking-[0.18em] text-[var(--color-ember-bright)]">
                 <Link href="/deep-dives" className="hover:text-white">Policy deep-dive</Link> ——— Libraries
               </p>
               <h1 className="mt-5 font-editorial-normal text-[38px] leading-[1.06] sm:text-[54px] xl:text-[64px]">
@@ -123,13 +123,13 @@ export default function LibrariesPage() {
                 <a href="#delta" className="rounded-sm bg-[var(--color-ember)] px-5 py-3 text-[15px] font-semibold text-[var(--color-canopy)] hover:bg-[var(--color-ember-bright)]">
                   The delta, in one chart
                 </a>
-                <a href="#action" className="rounded-sm border border-white/25 px-5 py-3 text-[14px] font-semibold text-white hover:bg-white/10">
+                <a href="#action" className="rounded-sm border border-white/25 px-5 py-3 text-[16px] font-semibold text-white hover:bg-white/10">
                   What can be done this year
                 </a>
               </div>
             </div>
             <aside className="rounded-sm border border-white/15 bg-white/[0.04] p-6">
-              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/50">Of every 100 households</p>
+              <p className="font-mono text-[12px] uppercase tracking-[0.16em] text-white/50">Of every 100 households</p>
               <div className="mt-4">
                 <HouseholdGrid />
               </div>
@@ -145,7 +145,7 @@ export default function LibrariesPage() {
             ].map((s) => (
               <div key={s.k} className="bg-[var(--color-canopy)] p-5">
                 <dd className="font-mono text-[26px] font-bold tabular-nums text-white sm:text-[30px]">{s.v}</dd>
-                <dt className="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-white/50">{s.k}</dt>
+                <dt className="mt-1 font-mono text-[12px] uppercase tracking-[0.12em] text-white/50">{s.k}</dt>
               </div>
             ))}
           </dl>
@@ -156,7 +156,7 @@ export default function LibrariesPage() {
       <nav className="sticky top-14 z-40 border-b border-[var(--color-parchment)] bg-[var(--color-paper)]/95 backdrop-blur print:hidden" aria-label="Section navigation">
         <ReadingProgress />
         <div className={DIVE_CONTAINER}>
-          <div className="scrollbar-hide flex gap-1 overflow-x-auto py-2 font-mono text-[12px] uppercase tracking-[0.08em]">
+          <div className="scrollbar-hide flex gap-1 overflow-x-auto py-2 font-mono text-[14px] uppercase tracking-[0.08em]">
             {NAV.map((n) => (
               <a key={n.id} href={`#${n.id}`} className="flex min-h-[44px] items-center whitespace-nowrap rounded-sm px-3 py-3 text-[var(--color-ink-light)] hover:bg-[var(--color-paper-warm)] hover:text-[var(--color-canopy)]">
                 {n.label}
@@ -174,7 +174,7 @@ export default function LibrariesPage() {
         lead="Every number the county's report commits to, next to where that number sits today. The orange bar is the work. Two of six have no baseline at all — which is itself the first finding."
       >
         <DeltaChart />
-        <p className="mt-5 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+        <p className="mt-5 max-w-3xl text-[16px] leading-relaxed text-[var(--color-ink-light)]">
           Read it top to bottom and the shape of the problem is clear: the reach numbers need to nearly
           double, the safety numbers need to triple, and the resilience number starts at zero. None of
           those is a building problem. The buildings are done.
@@ -190,7 +190,7 @@ export default function LibrariesPage() {
         lead="Digital borrowing more than doubled while physical checkouts fell by a third and foot traffic fell by 40%. The pandemic and six years of rolling construction closures explain part of it. The ratio of licenses to books explains the rest of what it costs."
       >
         <TwoDoors />
-        <p className="mt-5 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+        <p className="mt-5 max-w-3xl text-[16px] leading-relaxed text-[var(--color-ink-light)]">
           The strategic meaning is not &ldquo;digital replaces buildings.&rdquo; It is that the library
           now has two front doors and one set of books. Digital convenience reduces transactional visits
           even as rebuilt branches gain value for study, meetings, children&apos;s learning, and trusted
@@ -210,7 +210,7 @@ export default function LibrariesPage() {
         <div className="mt-6">
           <FiscalReality />
         </div>
-        <p className="mt-5 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+        <p className="mt-5 max-w-3xl text-[16px] leading-relaxed text-[var(--color-ink-light)]">
           This is the constraint any plan lives inside. There is no expansion fund. Reserves have a
           policy; the capital fund has claims; the one-time money is assigned. Which is why the only
           honest first step is a plan that assumes{" "}
@@ -228,7 +228,7 @@ export default function LibrariesPage() {
         lead="After reopening, staff met more severe behavioral-health crises, drug use, and weapons concerns than the operating model was built for. The County Auditor put numbers on it."
       >
         <SafetyGrid />
-        <p className="mt-5 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+        <p className="mt-5 max-w-3xl text-[16px] leading-relaxed text-[var(--color-ink-light)]">
           MCL simplified rules, created security leadership, expanded training, and partnered with
           Cascadia social workers; a federal workplace-health assessment at three branches found
           ventilation and protocol issues. The evidence should not stigmatize patrons. It does show that
@@ -265,11 +265,11 @@ export default function LibrariesPage() {
           ].map((s) => (
             <div key={s.k} className="bg-white p-4">
               <p className="font-mono text-[24px] font-bold tabular-nums leading-none text-[var(--color-ink)]">{s.v}</p>
-              <p className="mt-1.5 text-[11.5px] leading-snug text-[var(--color-ink-muted)]">{s.k}</p>
+              <p className="mt-1.5 text-[13.5px] leading-snug text-[var(--color-ink-muted)]">{s.k}</p>
             </div>
           ))}
         </div>
-        <p className="mt-4 max-w-3xl text-[12.5px] leading-relaxed text-[var(--color-ink-muted)]">
+        <p className="mt-4 max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-muted)]">
           Locations and addresses: <Src id="locationsWiki" />, cross-checked against <Src id="mclHistory" />;
           coordinates geocoded from street addresses. Space deficit: <Src id="spaceFramework" />. Building need:{" "}
           <Src id="districtPresentation" />.
@@ -359,7 +359,7 @@ export default function LibrariesPage() {
         lead="Official Multnomah County and MCL histories, budgets, forecasts, audits, and program pages; State Library of Oregon statistics; the 2024 patron survey; international standards and benchmark systems' own reporting."
       >
         <div className="space-y-5">
-          <p className="max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+          <p className="max-w-3xl text-[16px] leading-relaxed text-[var(--color-ink-light)]">
             Derived figures on this page — per-resident and per-checkout costs, reach shares, incident
             share, materials cost per circulation — are simple division on cited numbers; the formula
             for each is in the page&apos;s source code. Historical statistics come from state
@@ -369,7 +369,7 @@ export default function LibrariesPage() {
             north stars requiring a representative baseline, community deliberation, and fiscal analysis
             before adoption — which is exactly what the readiness phase is for.
           </p>
-          <p className="max-w-3xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
+          <p className="max-w-3xl text-[16px] leading-relaxed text-[var(--color-ink-light)]">
             The full report —{" "}
             <a href="/reports/portland-libraries-2026/pdfcheck/Portland_Libraries_Deep_Dive_2026.pdf" target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--color-canopy)] underline decoration-[var(--color-sage)]/60 underline-offset-2 hover:decoration-[var(--color-canopy)]">
               Portland Public Knowledge Commons (PDF)
@@ -377,8 +377,8 @@ export default function LibrariesPage() {
             — carries the full text, every citation, and the claim-source ledger behind this page.
           </p>
           <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6">
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">Sources</p>
-            <ul className="mt-3 columns-1 gap-x-8 text-[12.5px] leading-relaxed text-[var(--color-ink-light)] sm:columns-2">
+            <p className="font-mono text-[12px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">Sources</p>
+            <ul className="mt-3 columns-1 gap-x-8 text-[14px] leading-relaxed text-[var(--color-ink-light)] sm:columns-2">
               {dedupeSources().map((s) => (
                 <li key={s.url} className="break-inside-avoid">
                   <a href={s.url} target={s.url.startsWith("/") ? undefined : "_blank"} rel="noopener noreferrer" className="underline decoration-[var(--color-sage)]/50 underline-offset-2 hover:text-[var(--color-canopy)]">

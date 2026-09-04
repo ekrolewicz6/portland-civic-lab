@@ -19,7 +19,7 @@ export default function RoadmapGantt() {
         {/* axis */}
         <div className="relative h-6 border-b border-[var(--color-parchment)]">
           {[2026, 2028, 2030, 2032, 2034, 2036, 2038, 2040].map((y) => (
-            <span key={y} className="absolute -translate-x-1/2 font-mono text-[10px] tabular-nums text-[var(--color-ink-muted)]" style={{ left: `${pct(y)}%` }}>
+            <span key={y} className="absolute -translate-x-1/2 font-mono text-[12px] tabular-nums text-[var(--color-ink-muted)]" style={{ left: `${pct(y)}%` }}>
               {y}
             </span>
           ))}
@@ -29,7 +29,7 @@ export default function RoadmapGantt() {
           {GATES.map((g, i) => (
             <div key={g.label} className="absolute top-0 -translate-x-1/2" style={{ left: `${pct(g.y)}%` }}>
               <span className="mx-auto block h-2.5 w-2.5 rotate-45 bg-[var(--color-clay)]" />
-              <span className={`block whitespace-nowrap font-mono text-[9.5px] uppercase tracking-[0.1em] text-[var(--color-clay)] ${i % 2 ? "mt-5" : "mt-1"}`}>
+              <span className={`block whitespace-nowrap font-mono text-[11.5px] uppercase tracking-[0.1em] text-[var(--color-clay)] ${i % 2 ? "mt-5" : "mt-1"}`}>
                 {g.label}
               </span>
             </div>
@@ -48,7 +48,7 @@ export default function RoadmapGantt() {
                   <>
                     <div className="absolute inset-y-0 rounded-sm" style={{ left: `${pct(p.start)}%`, width: `${w}%`, background: bg, opacity: i === 2 ? 0.85 : 1 }} />
                     <span
-                      className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap font-mono text-[11px] font-bold uppercase tracking-[0.12em]"
+                      className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap font-mono text-[13px] font-bold uppercase tracking-[0.12em]"
                       style={narrow ? { left: `calc(${pct(p.end)}% + 8px)`, color: bg } : { left: `calc(${pct(p.start)}% + 12px)`, color: "white" }}
                     >
                       {p.title}
@@ -58,8 +58,8 @@ export default function RoadmapGantt() {
               })()}
             </div>
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[var(--color-ink-muted)]">{p.range}</p>
-              <p className="mt-0.5 text-[13px] leading-snug text-[var(--color-ink-light)]">{p.body}</p>
+              <p className="font-mono text-[12px] uppercase tracking-[0.12em] text-[var(--color-ink-muted)]">{p.range}</p>
+              <p className="mt-0.5 text-[15px] leading-snug text-[var(--color-ink-light)]">{p.body}</p>
             </div>
           </li>
         ))}

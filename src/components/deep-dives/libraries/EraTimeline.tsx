@@ -18,7 +18,7 @@ export default function EraTimeline() {
           >
             <div className={`grid gap-6 p-5 sm:p-6 lg:grid-cols-[220px_minmax(0,1fr)] ${dark ? "" : ""}`}>
               <div className="lg:sticky lg:top-28 lg:self-start">
-                <p className={`font-mono text-[10px] font-semibold uppercase tracking-[0.18em] ${dark ? "text-[var(--color-ember-bright)]" : "text-[var(--color-ember)]"}`}>
+                <p className={`font-mono text-[12px] font-semibold uppercase tracking-[0.18em] ${dark ? "text-[var(--color-ember-bright)]" : "text-[var(--color-ember)]"}`}>
                   Era {i + 1}
                 </p>
                 <p className={`mt-1 font-mono text-[26px] font-bold leading-none tracking-tight ${dark ? "text-white" : "text-[var(--color-ink)]"}`}>{era.range}</p>
@@ -27,9 +27,9 @@ export default function EraTimeline() {
               <ol className={`grid gap-x-6 gap-y-4 sm:grid-cols-2 ${events.length > 4 ? "xl:grid-cols-3" : ""}`}>
                 {events.map((e) => (
                   <li key={e.year} className={`border-l-2 pl-3.5 ${dark ? "border-[var(--color-ember)]/60" : "border-[var(--color-parchment)]"}`}>
-                    <p className={`font-mono text-[11px] font-bold tabular-nums ${dark ? "text-[var(--color-ember-bright)]" : "text-[var(--color-clay)]"}`}>{e.year}</p>
-                    <p className={`mt-0.5 text-[14px] font-semibold leading-snug ${dark ? "text-white" : "text-[var(--color-ink)]"}`}>{e.title}</p>
-                    <p className={`mt-1 text-[12.5px] leading-snug ${dark ? "text-white/65" : "text-[var(--color-ink-light)]"}`}>{e.body}</p>
+                    <p className={`font-mono text-[13px] font-bold tabular-nums ${dark ? "text-[var(--color-ember-bright)]" : "text-[var(--color-clay)]"}`}>{e.year}</p>
+                    <p className={`mt-0.5 text-[16px] font-semibold leading-snug ${dark ? "text-white" : "text-[var(--color-ink)]"}`}>{e.title}</p>
+                    <p className={`mt-1 text-[14px] leading-snug ${dark ? "text-white/65" : "text-[var(--color-ink-light)]"}`}>{e.body}</p>
                   </li>
                 ))}
               </ol>

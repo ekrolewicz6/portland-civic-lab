@@ -180,17 +180,17 @@ export const BENCHMARKS: Benchmark[] = [
 ];
 
 export const LAYERS = [
-  { n: 1, title: "The universal digital library", body: "A simple, privacy-protecting account unifying physical and digital borrowing, databases, research help, courses, room and tool reservations, civic information, and personalized — not commercial — recommendations, in the county's major languages." },
-  { n: 2, title: "Nineteen neighborhood commons", body: "Every branch meets a published service guarantee: browsing and children's collections, quiet study, public technology, staffed help, free meeting space, flexible learning/creation capability, clean air and cooling, and locally shaped programs." },
-  { n: 3, title: "Flagships and mobile nodes", body: "Central anchors deep and special collections, public scholarship, and large convenings. East County operates as a full regional flagship. The Operations Center enables systemwide logistics and mobile libraries, pop-ups, and emergency distribution." },
+  { n: 1, title: "The universal digital library", body: "One privacy-protecting account for borrowing, research help, courses, rooms, and civic information — in every major county language, at every hour." },
+  { n: 2, title: "Nineteen neighborhood commons", body: "Every branch meets a published floor: collections, quiet, computers, staffed help, free meeting space, creation, clean air and cooling." },
+  { n: 3, title: "Flagships and mobile nodes", body: "Central and East County carry deep collections, studios, and convening. The Operations Center runs logistics and mobile service to schools, shelters, jails, and elder housing." },
 ];
 
 export const PROTECTED_PURPOSES = [
-  { n: 1, title: "Read freely", body: "Intellectual freedom, patron privacy, deep and plural collections, multilingual abundance, local and Indigenous memory, accessible formats, and the physical pleasure of browsing." },
-  { n: 2, title: "Learn and navigate", body: "Early literacy, homework, adult education, English learning, media and AI literacy, research, and navigation of benefits, government information, jobs, and small-business support." },
-  { n: 3, title: "Make and work", body: "Studios and tools as mentored pathways — a first podcast, a prototype, a repaired object, a published zine, a digitized family history — paired with teaching artists and routes to schools, unions, and employers." },
-  { n: 4, title: "Belong and govern", body: "Places to be alone together, join groups, encounter local culture, and shape library priorities — paid community-curator roles, participatory program funds, and transparent forums." },
-  { n: 5, title: "Prepare and recover", body: "Planned resilience infrastructure: clean air, cooling, charging, and communications everywhere; selected hubs add backup power, supplies, trained staffing, and formal emergency-response integration." },
+  { n: 1, title: "Read freely", body: "Deep, plural, multilingual collections. Privacy. The pleasure of browsing." },
+  { n: 2, title: "Learn and navigate", body: "Literacy, adult learning, media and AI literacy, help finding and judging information." },
+  { n: 3, title: "Make and work", body: "Studios and tools with mentors, and routes to a school, a union, or a job." },
+  { n: 4, title: "Belong and govern", body: "Places to be alone together, meet difference, and shape the library." },
+  { n: 5, title: "Prepare and recover", body: "Clean air, cooling, charging, reliable information. Six hubs with backup power." },
 ];
 
 export const BOUNDARIES = [
@@ -549,12 +549,12 @@ export const DECIDE_NOW = [
 
 /** The six things a readiness phase must produce by September 2027. */
 export const READINESS_DELIVERABLES = [
-  { n: 1, title: "Operating & lifecycle cost model", body: "Ten years, all nineteen locations and the Operations Center: staffing, substitutes, collections, licenses, utilities, security, studios, technology, maintenance, renewal, internal services. Base, recession, and expansion cases.", gate: "No recurring expansion until a funding source and what it displaces are on the record." },
-  { n: 2, title: "Resident & branch baseline", body: "A representative county panel that includes nonusers, plus a branch dashboard: use, reach, travel access, hours, staffing, collections, technology, rooms, safety, satisfaction.", gate: "2030 and 2040 targets are adopted only after the baseline and its method are public." },
-  { n: 3, title: "Workforce & safety agreement", body: "Written response to outstanding audit work, a common incident-severity model, quarterly staff communication, minimum training and coverage, workload and span-of-control review, and a record of how frontline input changed the plan.", gate: "No role expansion before safety analysis, classification review, and bargaining obligations are complete." },
-  { n: 4, title: "Core service & branch standards", body: "A short public floor for hours, staffing, collections, browsing, quiet, computers, accessible technology, youth service, language access, meeting space, creation, and emergency basics — with FY2027 service as the no-regression floor meanwhile.", gate: "Any budget that puts a branch below the floor must name the effect and the alternative in public." },
-  { n: 5, title: "Partner & authority agreements", body: "Draft agreements for anything partner-dependent: responsibility, supervision, funding, data, insurance, training, hours, referrals, evaluation, exit terms.", gate: "Nothing partner-dependent launches without an executed agreement and confirmed resources." },
-  { n: 6, title: "Limited pilots — at most three", body: "One each, at most, from: core access and collections; equitable reach and learning; branch capability with a funded partner. Each publishes its baseline, cost ceiling, privacy rules, end date, and decision rule before launch.", gate: "A pilot ends unless evidence and an approved ongoing funding source support continuing it." },
+  { n: 1, title: "Operating & lifecycle cost model", body: "The ten-year cost of running all nineteen locations — staffing, licenses, utilities, security, maintenance, renewal — in base, recession, and expansion cases.", gate: "No recurring expansion until a funding source and what it displaces are on the record." },
+  { n: 2, title: "Resident & branch baseline", body: "A representative county panel that includes nonusers, plus a branch-by-branch dashboard of use, reach, hours, staffing, collections, and safety.", gate: "2030 and 2040 targets are adopted only after the baseline and its method are public." },
+  { n: 3, title: "Workforce & safety agreement", body: "A common incident-severity model, quarterly staff communication, minimum training and coverage, and a record of how frontline input changed the plan.", gate: "No role expansion before safety analysis, classification review, and bargaining obligations are complete." },
+  { n: 4, title: "Core service & branch standards", body: "A short public floor for hours, staffing, collections, quiet, computers, youth service, language access, and emergency basics. FY2027 service is the floor meanwhile.", gate: "Any budget that puts a branch below the floor must name the effect and the alternative in public." },
+  { n: 5, title: "Partner & authority agreements", body: "Draft terms for anything partner-dependent: responsibility, supervision, funding, data, insurance, evaluation, exit.", gate: "Nothing partner-dependent launches without an executed agreement and confirmed resources." },
+  { n: 6, title: "Limited pilots — at most three", body: "One each, at most, from core access, equitable reach, and branch capability with a funded partner — each with a baseline, cost ceiling, end date, and decision rule.", gate: "A pilot ends unless evidence and an approved ongoing funding source support continuing it." },
 ];
 
 export const NINETY_DAYS = [
