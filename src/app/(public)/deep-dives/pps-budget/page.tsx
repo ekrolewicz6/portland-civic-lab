@@ -118,8 +118,9 @@ export default function PpsBudgetPage() {
             </span>
           </h1>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-white/85 sm:text-[19px]">
-            PPS just cut 322 positions, its sixth straight year of cuts, on a record $2.77 billion
-            budget. Both are true. Twelve pictures explain how, and what to do about it.
+            Portland Public Schools just cut 322 positions, its sixth straight year of cuts, in the
+            same year its budget hit a record $2.77 billion. Both things are true. This page
+            explains how, in twelve pictures, and what could be done about it.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -182,12 +183,14 @@ export default function PpsBudgetPage() {
         id="salems-machine"
         n={1}
         act="The rules from Salem"
-        claim="A record budget and a sixth year of cuts are both true."
+        claim="The budget hit a record, and the district still cut teachers. Both are true."
         sub={
           <>
-            Five kinds of money that legally cannot mix. Construction rose $739M because voters
-            passed a bond. The fund that pays teachers fell $6.5M (<Src id="budgetFy27Vol1" />).
-            And local prosperity cannot refill it, because of the formula below.
+            The $2.77 billion headline mixes five separate pots of money, and the law keeps them
+            apart. The construction pot grew by $739 million this year because voters passed a
+            bond. The pot that pays teachers shrank by $6.5 million (<Src id="budgetFy27Vol1" />).
+            And a booming local tax base cannot refill it, because of how Oregon&apos;s funding
+            formula works.
           </>
         }
         number="$182M"
@@ -218,7 +221,7 @@ export default function PpsBudgetPage() {
         n={2}
         act="The rules from Salem"
         claim="Voters approved $1.99 for teachers. About $1.51 arrives."
-        sub="A 1990 cap on school taxes deletes whatever a bill exceeds, and the teachers levy is deleted first, by design: it was only ever allowed to exist in the room the cap left over."
+        sub="Oregon capped school property taxes back in 1990. When a tax bill goes over the cap, the county simply does not collect the difference, and the law says the teachers levy gets cut first. That was the design from the start: the levy was only ever allowed to exist in whatever room the cap left over."
         tone="warm"
         number="48¢"
         numberLabel="of every levy dollar never reaches a classroom, and the leak grows yearly"
@@ -253,14 +256,14 @@ export default function PpsBudgetPage() {
         id="the-empty-chair"
         n={3}
         act="The rules from Salem"
-        claim="Who reviews the budget? In Portland, the people who wrote it."
+        claim="Who reviews the budget? In Portland, the same people who wrote it."
         sub={
           <>
-            Nearly every Oregon district seats citizens with a vote on its budget committee (
-            <Src id="ors294414" />). Portland is exempt because Multnomah County has a 1919 tax
-            commission that certifies budgets for legality, never for wisdom (
-            <Src id="ors294423" />
-            <Src id="tsccFy26" />).
+            Almost every school district in Oregon has to seat regular citizens on its budget
+            committee, with a real vote (<Src id="ors294414" />). Portland gets an exemption
+            because Multnomah County has had its own tax commission since 1919 (
+            <Src id="ors294423" />). But that commission only checks whether a budget is legal (
+            <Src id="tsccFy26" />). Nobody checks whether it is wise.
           </>
         }
         number="9"
@@ -291,8 +294,8 @@ export default function PpsBudgetPage() {
         id="the-decade"
         n={4}
         act="What happened"
-        claim="Money rose every year. Students fell one in eight. Then the bill came due."
-        sub="Temporary federal relief hid the gap for four years. When it ran out, the same deficit surfaced as cuts, bigger every year."
+        claim="Money went up every year. Students went down. Then the bill came due."
+        sub="For four years, temporary federal pandemic money covered a gap that was growing underneath it. When that money ran out, the gap did not go away. It showed up as cuts, and each year's cut has been bigger than the last."
         number="$126M+"
         numberLabel="cut in three years, already more than the relief that delayed the cuts"
         next={{ href: "#where-it-goes", question: "Where inside the operating fund did the squeeze land?" }}
@@ -324,12 +327,13 @@ export default function PpsBudgetPage() {
         id="where-it-goes"
         n={5}
         act="What happened"
-        claim="Seventy-nine cents of every operating dollar is people. The fastest-growing cost is a pension bill set in Salem."
+        claim="Seventy-nine cents of every operating dollar pays people. The fastest-growing cost is a pension bill nobody at PPS chose."
         sub={
           <>
-            $680.5M of the $862M fund is salaries and benefits (<Src id="budgetFy27Vol1" />). The
-            pension rate is jumping from about 4 percent of payroll to nearly 23 (
-            <Src id="cbrcFy27" />), and nobody at PPS chose it.
+            Of the $862 million operating fund, $680.5 million goes to salaries and benefits (
+            <Src id="budgetFy27Vol1" />). The piece growing fastest is not salaries. It is the
+            district&apos;s pension contribution, which is jumping from about 4 percent of payroll
+            to nearly 23 percent (<Src id="cbrcFy27" />), on a schedule set in Salem years ago.
           </>
         }
         tone="warm"
@@ -386,8 +390,8 @@ export default function PpsBudgetPage() {
         id="the-benchmarks"
         n={6}
         act="What happened"
-        claim="Yes, it is a lot of money. No, teachers are not why."
-        sub="A quarter more per student than Oregon peers; last of six cities in cost-of-living-adjusted teacher pay. The difference disappears into pensions, benefits, buildings, and overhead before it reaches a classroom."
+        claim="Yes, it is a lot of money. And no, teacher pay is not the reason."
+        sub="PPS spends about a quarter more per student than other big Oregon districts. But once you adjust for what it costs to live here, its teachers are paid less than in any of the five peer cities we compared. The money is going somewhere between the tax bill and the classroom: pensions, benefits, buildings, and overhead."
         number="+27%"
         numberLabel="above the Oregon average per student, on the state's own books"
         next={{ href: "#empty-seats", question: "Where does it go instead? Start with the buildings." }}
@@ -409,14 +413,15 @@ export default function PpsBudgetPage() {
         id="empty-seats"
         n={7}
         act="What happened"
-        claim="16,511 empty seats, and the real cost is not the dollars."
+        claim="There are 16,511 empty seats. The real cost is not the dollars."
         sub={
           <>
-            Below a certain size a school cannot offer a full-time counselor, a librarian, or a
-            full slate of electives at any budget. Consolidation began in fall 2026 with up to 20
-            schools reported on the table (<Src id="wwTwentySchools" />, press). Here is every
-            school, from an open-source compilation we verified against the primaries (
-            <Src id="ppsdataInfo" />).
+            A school with 160 students cannot offer what a school with 500 can: a counselor who is
+            there every day, a librarian, a full set of electives. Portland now has a lot of
+            schools on the wrong side of that line. The district began consolidating in fall 2026,
+            with up to 20 schools reported on the table (<Src id="wwTwentySchools" />, press).
+            Here is every school, from an open-source compilation we checked against the original
+            records (<Src id="ppsdataInfo" />).
           </>
         }
         tone="warm"
@@ -448,7 +453,8 @@ export default function PpsBudgetPage() {
         id="waste"
         n={8}
         act="The judgment calls"
-        claim="There is no hidden pot. The waste is overruns, delay, and numbers nobody can check."
+        claim="There is no hidden pot of money. The waste is in overruns, delay, and numbers nobody outside can check."
+        sub="We looked for it. Reserves sit at the legal floor and the pension reserve is already spent. What the record does show is construction projects that cost double their ballot price, five years of not deciding what to do with emptying buildings, and a district that reacts to its own numbers late."
         number="$219M"
         numberLabel="Benson's overrun. Most of it was the ballot number, not construction."
         next={{ href: "#arguments", question: "Who is right in the four fights Portland keeps having?" }}
@@ -473,7 +479,8 @@ export default function PpsBudgetPage() {
         id="arguments"
         n={9}
         act="The judgment calls"
-        claim="Nobody is entirely right. Three of the four fights stall at a document the district holds."
+        claim="Nobody is entirely right in these fights. Three of the four cannot be settled, because the document that would settle them has never been published."
+        sub="We give each side its strongest case, then say where the evidence points. Open any card for the full argument."
         tone="warm"
         number="8"
         numberLabel="missing documents. Four sit in district files today."
@@ -522,7 +529,8 @@ export default function PpsBudgetPage() {
         id="the-plan"
         n={10}
         act="The plan"
-        claim="Ten things the board could do, starting with three that cost nothing."
+        claim="Ten things the school board could actually do, starting with three that cost nothing."
+        sub="Everything above this is diagnosis. These are the decisions, in the order they should happen. The first three are about publishing what the district already has."
         tone="dark"
         number="$0"
         numberLabel="cost of the first three. They are about publishing, not spending."
@@ -535,8 +543,8 @@ export default function PpsBudgetPage() {
         id="watch"
         n={11}
         act="Your part"
-        claim="Six questions, six dates, one rule."
-        sub="You do not need 500 pages to hold the district accountable."
+        claim="Six questions, six dates, and one rule to read every budget by."
+        sub="You do not need to read 500 pages to hold the district accountable. You need to know what to ask, when to show up, and what a good answer sounds like."
         number="6"
         numberLabel="questions that end most school-budget arguments. Use them on anyone, including us."
         next={{ href: "#method", question: "How does this page know what it claims?" }}
@@ -557,7 +565,8 @@ export default function PpsBudgetPage() {
         id="method"
         n={12}
         act="Method"
-        claim="134 public documents, archived with a tamper-evident record, and two fact-checked working papers."
+        claim="How this page knows what it claims."
+        sub="Every number here comes from one of 134 public documents we fetched, checksummed, and archived, or from two working papers that were fact-checked page by page before anything was published."
         tone="warm"
       >
         <div className="grid gap-4 md:grid-cols-3">

@@ -20,28 +20,28 @@ const SEGMENTS = [
     label: "Locked",
     valueK: 1_661_384,
     display: "$1.66B",
-    detail: "Bonds and bond debt. Voters locked it; only a new bond changes it.",
+    detail: "Bond money and bond debt. Voters locked it in, and only a new bond measure can change it.",
     color: "var(--color-canopy)",
   },
   {
     label: "Restricted grants",
     valueK: 223_936,
     display: "$224M",
-    detail: "Title I, special education. Congress and Salem set the strings.",
+    detail: "Title I, special education, and similar grants. Congress and the legislature set the rules.",
     color: "var(--color-clay)",
   },
   {
     label: "Committed",
     valueK: 701_659,
     display: "$702M",
-    detail: "Payroll and pensions under signed contracts. Movable only at the bargaining table.",
+    detail: "Payroll and pensions under contracts already signed. It can move, but only at the bargaining table.",
     color: "var(--color-ember)",
   },
   {
     label: "The movable slice",
     valueK: 181_612,
     display: "$182M",
-    detail: "The only money this year's board votes decide.",
+    detail: "What is left. This is the only money this year's board votes actually decide.",
     color: "var(--color-fern)",
   },
 ] as const;
@@ -59,14 +59,14 @@ const FINDINGS = [
     stat: "$1.51",
     statLabel: "of every $1.99 voters approved actually arrives",
     title: "The teachers levy leaks",
-    body: "1990s tax caps erase a quarter of the teachers levy before it arrives. Same levy, about 200 fewer teachers than in 2019.",
+    body: "Tax caps from the 1990s erase about a quarter of the teachers levy before it arrives. The same levy now pays for about 200 fewer teachers than it did in 2019.",
   },
   {
     href: "#waste",
     stat: "$41M→$18M",
     statLabel: "the district's own guess at its year-end cash, months apart",
     title: "Big surprises, no required response",
-    body: "The year-end forecast swung by $23M inside one year. Nothing requires anyone to explain it or act on it, so decisions come late.",
+    body: "The district's year-end forecast swung by $23 million within a single year. Nothing requires anyone to explain that or act on it, so decisions come late.",
   },
 ] as const;
 
@@ -123,7 +123,7 @@ export default function TheWholeStory() {
           </div>
 
           <p className="mt-4 border-t border-[var(--color-parchment)] pt-3 text-[15px] leading-relaxed text-[var(--color-ink)]">
-            Every real fight about this budget is a fight about the green slice. The operating fund fell <span className="font-mono font-semibold tabular-nums">$6.5M</span> this year while the headline total grew <span className="font-mono tabular-nums">$733M</span>. Both are true.
+            Every real fight about this budget is a fight over the green slice. This year the operating fund fell <span className="font-mono font-semibold tabular-nums">$6.5M</span> while the headline total grew <span className="font-mono tabular-nums">$733M</span>. Both are true.
           </p>
         </div>
 

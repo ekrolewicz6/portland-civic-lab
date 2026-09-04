@@ -21,27 +21,27 @@ const WATERFALL = [
   {
     total: 202,
     label: "May 2017 · the ballot",
-    cause: "What voters saw, ~$100M below the district's own cost model, trimmed with no documented rationale.",
+    cause: "This is the number voters saw. It was about $100 million below the district's own cost model, trimmed before the ballot with no documented reason.",
   },
   {
     total: 330,
     label: "June 2019 · first honest re-estimate",
-    cause: "The biggest jump, before most construction: the real cost surfacing.",
+    cause: "The biggest single jump, and it came before most of the construction. This is the real cost surfacing.",
   },
   {
     total: 357.7,
     label: "January 2020 · the board adds scope",
-    cause: "Board-chosen additions: new programs and a swing site.",
+    cause: "The board added scope here: new programs, and a temporary site for students during construction.",
   },
   {
     total: 410.2,
     label: "March 2022 · the one step auditors decomposed",
-    cause: "$21.2M inflation, $17M scope, $14M arithmetic error, per the audit.",
+    cause: "The one step the auditors broke down: $21.2 million of inflation, $17 million of added scope, and a $14 million arithmetic error.",
   },
   {
     total: 421.2,
     label: "February 2025 · estimate at completion",
-    cause: "+108% over the ballot. Who pays is now in litigation.",
+    cause: "That is 108 percent over the ballot number. Who pays for it is now in litigation.",
   },
 ] as const;
 
@@ -49,27 +49,27 @@ const CAUSES = [
   {
     rank: "1",
     name: "The ballot number itself",
-    body: "Pitched ~$100M below the district's own model. Part of the overrun was an underpriced promise.",
+    body: "The program went to voters about $100 million below the district's own cost model. Part of the overrun was never an overrun; it was an underpriced promise.",
   },
   {
     rank: "2",
     name: "Construction inflation",
-    body: "The industry index rose ~17% in 2020-23: a sixth of Benson's +108%. Lincoln, same market, finished under budget.",
+    body: "The industry cost index rose about 17 percent from 2020 to 2023, which explains roughly a sixth of Benson's overrun. Lincoln High, built in the same market, finished under budget.",
   },
   {
     rank: "3",
     name: "Added scope",
-    body: "Seismic and hazmat surprises, plus programs the board added mid-project. Tens of millions, documented and chosen.",
+    body: "Seismic and hazmat surprises inside century-old buildings, plus programs the board chose to add mid-project. Tens of millions, all documented.",
   },
   {
     rank: "4",
     name: "Plain error",
-    body: "A $14M arithmetic mistake the auditors named.",
+    body: "A $14 million arithmetic mistake inside the budget itself, which the auditors named.",
   },
   {
     rank: "✕",
     name: "Not the teachers union",
-    body: "Bond money cannot legally pay teachers, and no audit ties labor agreements to these overruns.",
+    body: "Bond money cannot legally pay teacher salaries, and no audit or news report ties labor agreements to these overruns.",
   },
 ] as const;
 
@@ -165,7 +165,7 @@ export default function OverrunAnatomy() {
       <div className="overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-white">
         <div className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)] px-5 py-4">
           <Eyebrow tone="ember">So what causes the overruns, and how much each?</Eyebrow>
-          <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-[var(--color-ink-light)]">No public document breaks the overruns into percentages. That absence is a finding. The record does support a ranking:</p>
+          <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-[var(--color-ink-light)]">No public document breaks these overruns down by cause, so nobody can give you clean percentages. That absence is a finding in itself. What the record does support is a ranking:</p>
         </div>
         <ul className="divide-y divide-[var(--color-parchment)]">
           {CAUSES.map((c) => (

@@ -127,14 +127,14 @@ export default function Benchmarks() {
       <div className="grid gap-4 lg:grid-cols-2">
         <BarPanel
           title="Against Oregon, on Oregon's books"
-          basis="Operating spending per student, 2023-24, state accounting."
+          basis="Operating spending per student in 2023-24, using the state's own accounting."
           rows={OREGON_PEERS}
           max={16503}
           footer="Portland spends 27 percent above the state average. Every other large district sits within 2 percent of it."
         />
         <BarPanel
           title="Against big cities, on federal books"
-          basis="Current spending per pupil, FY2024, federal accounting. Never compare across panels."
+          basis="Current spending per pupil in FY2024, using federal accounting. The two panels use different rules and should not be compared with each other."
           rows={NATIONAL_PEERS}
           max={25173}
           footer="26 percent above the national average, in a dead heat with Seattle, below San Francisco and Minneapolis, far above Denver."
