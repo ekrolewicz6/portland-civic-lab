@@ -10,6 +10,7 @@ import {
   Gauge,
   Landmark,
   MapPinned,
+  Scale,
   ShieldCheck,
   Theater,
   Trees,
@@ -19,7 +20,13 @@ import {
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SsoLink from "@/components/SsoLink";
-import { ASK_PORTLAND_URL, COUNCIL_URL, PARKS_URL, PERMITS_URL } from "@/lib/site";
+import {
+  ASK_PORTLAND_URL,
+  COUNCIL_URL,
+  OREGON_GOVERNANCE_URL,
+  PARKS_URL,
+  PERMITS_URL,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -94,6 +101,16 @@ const projects = [
     href: COUNCIL_URL,
     cta: "Explore City Council",
     icon: Landmark,
+    primary: false,
+  },
+  {
+    eyebrow: "State government",
+    title: "Oregon Governance Atlas",
+    description:
+      "A session-by-session account of Oregon government, constitutional change, institutional history, and the decisions that shaped how the state works today.",
+    href: OREGON_GOVERNANCE_URL,
+    cta: "Explore Oregon government",
+    icon: Scale,
     primary: false,
   },
   {
@@ -276,13 +293,14 @@ export default function HomePage() {
               </span>
             </div>
             <h2 className="font-editorial text-[32px] sm:text-[42px] text-[var(--color-ink)] leading-tight">
-              Five ways to get a clearer picture of Portland
+              Six ways to understand the governments shaping Portland
             </h2>
             <p className="mt-4 max-w-2xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
               Dashboards that track how the city is doing, an independent guide to
-              City Council, an atlas of every park in Portland, surveys that capture
-              what residents actually think, and permitting tools that make building
-              here less confusing.
+              City Council, Oregon&apos;s legislative and constitutional history, an
+              atlas of every park in Portland, surveys that capture what residents
+              actually think, and permitting tools that make building here less
+              confusing.
             </p>
           </div>
 
