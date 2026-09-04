@@ -89,7 +89,7 @@ export default function LevyLeak() {
       {/* ── 1. The compression ramp ── */}
       <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-6">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-          <Eyebrow>The compression ramp</Eyebrow>
+          <Eyebrow>Compression, district-wide: the money deleted each year</Eyebrow>
           <span className="font-mono text-[10px] tabular-nums text-[var(--color-ink-muted)]">
             full width = {fmtLoss(MAX_LOSS)}
           </span>
@@ -103,7 +103,7 @@ export default function LevyLeak() {
           <span className="flex items-center gap-1.5">
             <Swatch fill="var(--color-clay)" />
             <span className="font-mono text-[10px] text-[var(--color-ink-muted)]">
-              actual loss
+              deleted before collection
             </span>
           </span>
           <span className="flex items-center gap-1.5">

@@ -16,6 +16,7 @@ import EsserCliff from "@/components/deep-dives/pps-budget/EsserCliff";
 import Benchmarks from "@/components/deep-dives/pps-budget/Benchmarks";
 import SchoolUtilization from "@/components/deep-dives/pps-budget/SchoolUtilization";
 import PensionTimeline from "@/components/deep-dives/pps-budget/PensionTimeline";
+import CompressionExplainer from "@/components/deep-dives/pps-budget/CompressionExplainer";
 import WasteVerdicts from "@/components/deep-dives/pps-budget/WasteVerdicts";
 import OverrunAnatomy from "@/components/deep-dives/pps-budget/OverrunAnatomy";
 import PlanDecisions from "@/components/deep-dives/pps-budget/PlanDecisions";
@@ -221,14 +222,17 @@ export default function PpsBudgetPage() {
         n={2}
         act="The rules from Salem"
         claim="Voters approved $1.99 for teachers. About $1.51 arrives."
-        sub="Oregon capped school property taxes back in 1990. When a tax bill goes over the cap, the county simply does not collect the difference, and the law says the teachers levy gets cut first. That was the design from the start: the levy was only ever allowed to exist in whatever room the cap left over."
+        sub="The gap has a name, compression, and it is simpler than it sounds. Your school taxes are figured on your home's assessed value, but a 1990 cap limits them by its market value. Whatever lands over the cap is deleted, and the teachers levy is deleted first."
         tone="warm"
         number="48¢"
         numberLabel="of every levy dollar never reaches a classroom, and the leak grows yearly"
         next={{ href: "#the-empty-chair", question: "If Salem sets the revenue, who reviews the spending?" }}
       >
-        <LevyLeak />
-        <Depth title="How the leak works, on one tax bill">
+        <CompressionExplainer />
+        <div className="mt-6">
+          <LevyLeak />
+        </div>
+        <Depth title="Why the levy was designed to be cut first">
           <p>
             The levy is written as $1.99 per $1,000 of your home&apos;s <em>assessed</em> value.
             Measure 5, from 1990, caps school taxes at $5 per $1,000 of <em>market</em> value.
