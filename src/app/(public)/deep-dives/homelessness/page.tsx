@@ -12,7 +12,7 @@ import TriageTool from "@/components/deep-dives/homeless/TriageTool";
 import BedReality from "@/components/deep-dives/homeless/BedReality";
 import StreetTriageFlow from "@/components/deep-dives/homeless/StreetTriageFlow";
 import DeflectionReality from "@/components/deep-dives/homeless/DeflectionReality";
-import ShelterContinuum from "@/components/deep-dives/homeless/ShelterContinuum";
+import ContinuumTldr from "@/components/deep-dives/homeless/ContinuumTldr";
 import CohortLadder from "@/components/deep-dives/homeless/CohortLadder";
 import PlanTimeline from "@/components/deep-dives/homeless/PlanTimeline";
 import MythsLedger from "@/components/deep-dives/homeless/MythsLedger";
@@ -35,7 +35,7 @@ const NAV = [
   { id: "cost", label: "05 Cost of nothing" },
   { id: "deflection", label: "06 Deflection" },
   { id: "beds", label: "07 The beds" },
-  { id: "continuum", label: "08 The ladder" },
+  { id: "continuum", label: "08 The continuum" },
   { id: "works", label: "09 The plan" },
   { id: "myths", label: "10 Objections" },
   { id: "sources", label: "Sources" },
@@ -294,15 +294,15 @@ export default function HomelessnessDeepDive() {
         layout="stacked"
         id="continuum"
         tone="warm"
-        eyebrow="08 · The missing ladder"
-        title="It can't be jail or street, hospital or street, shelter or apartment"
+        eyebrow="08 · The continuum"
+        title="Every step from the sidewalk to a lease, defined once"
         lead={
           <>
-            Each rung does a different job, and the policy question is whether they connect into a path out. City dashboards track shelter use and outcomes (<Src id="shelterDashboards" />); they don&apos;t show whether the ladder holds.
+            The region cannot say how many people are at each stage between the street and a lease, or whether they are moving. So we built the continuum: fourteen stages each defined by a number a worker can take this week, twelve evidence-backed pathways, six questions any responder can answer at the scene, and a rule for when Housing First works. None of the fourteen can be fully counted today.
           </>
         }
       >
-        <ShelterContinuum />
+        <ContinuumTldr />
       </Section>
 
       {/* ── 09 The plan ── */}

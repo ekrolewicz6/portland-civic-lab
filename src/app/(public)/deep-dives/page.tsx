@@ -158,6 +158,17 @@ const DIVES: DeepDive[] = [
     available: true,
   },
   {
+    href: "/deep-dives/continuum",
+    eyebrow: "Homelessness · The continuum",
+    title: "Every step from the sidewalk to a lease, defined once.",
+    blurb:
+      "Fourteen stages, twelve kinds of people each with an evidence-backed path, six questions a police officer, paramedic, or outreach worker can answer at 2 a.m., and a rule for when Housing First works and when something has to come first. Plus how to count who is where without a form nobody fills in, and Portland's gap at every stage.",
+    stat: "14",
+    statLabel: "stages, none of which the region can fully count today",
+    icon: Route,
+    available: true,
+  },
+  {
     href: "/deep-dives/homelessness",
     eyebrow: "Homelessness",
     title: "Why Portland can't end homelessness",
