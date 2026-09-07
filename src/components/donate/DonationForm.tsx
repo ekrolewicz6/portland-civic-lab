@@ -81,17 +81,29 @@ export default function DonationForm() {
           body: JSON.stringify({ amount: normalizedAmount, frequency }),
         });
 
-        const data = (await response.json()) as { url?: string; error?: string };
+        // A failing route can answer with an empty body or an HTML error page.
+        // Parsing that blind gave donors the browser's raw parser message.
+        const raw = await response.text();
+        let data: { url?: string; error?: string } = {};
+        try {
+          data = raw ? (JSON.parse(raw) as { url?: string; error?: string }) : {};
+        } catch {
+          data = {};
+        }
+
         if (!response.ok || !data.url) {
-          throw new Error(data.error || "Could not start Checkout.");
+          throw new Error(
+            data.error ||
+              "We couldn't start checkout just now. Please try again, or email us and we'll take your support another way.",
+          );
         }
 
         window.location.assign(data.url);
       } catch (err) {
         setError(
-          err instanceof Error
+          err instanceof Error && err.message
             ? err.message
-            : "Could not start Checkout. Please try again.",
+            : "We couldn't start checkout just now. Please try again in a moment.",
         );
       }
     });

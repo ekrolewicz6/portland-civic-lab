@@ -82,8 +82,21 @@ export async function POST(request: Request) {
 
   const { amount, frequency } = parsed.data;
   const unitAmount = Math.round(amount * 100);
-  const baseUrl = getBaseUrl(request);
   const isMonthly = frequency === "monthly";
+
+  // getBaseUrl throws when the canonical URL is missing in production. Left
+  // uncaught that produced a 500 with an empty body, which the browser
+  // reported to donors as an unreadable parse error.
+  let baseUrl: string;
+  try {
+    baseUrl = getBaseUrl(request);
+  } catch (error) {
+    console.error("[donate/checkout] base URL unavailable:", error);
+    return NextResponse.json(
+      { error: "Support payments are misconfigured on our side. Please email us and we'll sort it out." },
+      { status: 503 },
+    );
+  }
 
   // Stripe can fail for reasons outside our control (network, API outage, a
   // declined key). Uncaught, that surfaced as a generic framework 500 with no
