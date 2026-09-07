@@ -360,12 +360,21 @@ export async function canMemberClaimBusiness(
   businessId: number,
   memberEmail: string
 ): Promise<boolean> {
-  const rows = (await sql`
-    SELECT claimed, claim_email FROM businesses WHERE id = ${businessId} LIMIT 1
-  `) as unknown as { claimed: boolean; claim_email: string | null }[];
-  const business = rows[0];
-  if (!business || business.claimed) return false;
-  return emailMayClaim(memberEmail, business.claim_email);
+  try {
+    const rows = (await sql`
+      SELECT claimed, claim_email FROM businesses WHERE id = ${businessId} LIMIT 1
+    `) as unknown as { claimed: boolean; claim_email: string | null }[];
+    const business = rows[0];
+    if (!business || business.claimed) return false;
+    return emailMayClaim(memberEmail, business.claim_email);
+  } catch (error) {
+    // Fails closed. If the column is missing (drizzle/0011 not yet applied) or
+    // the read fails for any other reason, nobody is shown a claim button —
+    // the wrong answer in that direction only withholds a feature, while the
+    // other direction hands over a business.
+    console.error("[business] claim eligibility check failed:", error);
+    return false;
+  }
 }
 
 /**
@@ -409,12 +418,24 @@ export async function getUnclaimedBusinesses(
     `) as unknown as Business[];
   }
 
-  return (await sql`
-    SELECT * FROM businesses
-    WHERE claimed = false
-      AND lower(claim_email) = ${normalized}
-    ORDER BY name LIMIT 20
-  `) as unknown as Business[];
+  try {
+    return (await sql`
+      SELECT * FROM businesses
+      WHERE claimed = false
+        AND lower(claim_email) = ${normalized}
+      ORDER BY name LIMIT 20
+    `) as unknown as Business[];
+  } catch (error) {
+    // businesses.claim_email arrives in drizzle/0011. This query runs on every
+    // /member load for a member with no businesses, so on a deploy that lands
+    // before the migration it would 500 the whole page. An empty list means
+    // "nothing offered to claim", which is the right answer either way.
+    console.error(
+      "[business] claimable lookup failed (has drizzle/0011 been applied?):",
+      error,
+    );
+    return [];
+  }
 }
 
 export async function getBusinessTeam(

@@ -25,15 +25,14 @@ const checkoutSchema = z.object({
  * only acceptable in local development — in production a spoofed Host would
  * put an attacker's origin into the URL a donor is returned to after paying.
  */
-function getBaseUrl(request: Request) {
+function getBaseUrl(request: Request): string | null {
   const configured = process.env.NEXT_PUBLIC_APP_URL?.trim();
   if (configured) return configured.replace(/\/$/, "");
 
-  if (process.env.NODE_ENV === "production") {
-    throw new Error(
-      "NEXT_PUBLIC_APP_URL must be set in production; refusing to build Stripe redirect URLs from the Host header.",
-    );
-  }
+  // Returns null rather than throwing: the caller turns it into a 503 with a
+  // JSON body the donate form can show. An uncaught throw here reaches the
+  // donor as a bodiless 500 with nothing to act on.
+  if (process.env.NODE_ENV === "production") return null;
 
   const url = new URL(request.url);
   return `${url.protocol}//${url.host}`;
@@ -83,6 +82,15 @@ export async function POST(request: Request) {
   const { amount, frequency } = parsed.data;
   const unitAmount = Math.round(amount * 100);
   const baseUrl = getBaseUrl(request);
+  if (!baseUrl) {
+    console.error(
+      "[donate/checkout] NEXT_PUBLIC_APP_URL is not set. Refusing to build Stripe redirect URLs from the Host header, which a proxy can forward unchanged from the client.",
+    );
+    return NextResponse.json(
+      { error: "Support payments are not fully configured. Please try again later." },
+      { status: 503 },
+    );
+  }
   const isMonthly = frequency === "monthly";
 
   // Stripe can fail for reasons outside our control (network, API outage, a
