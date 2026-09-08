@@ -216,7 +216,7 @@ export default function PropertyPage() {
         <SectionHead
           eyebrow="Proof"
           title="You can try the public version now."
-          lede="The downtown model and the permits tool are free, and they are built from the same records we screen against."
+          lede="The downtown model and the permits tool are free, and they are built from the same records we screen against. They are the inputs, not the deliverable."
         />
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           <div>
@@ -228,16 +228,20 @@ export default function PropertyPage() {
             <p className="mt-3 text-[14px] font-semibold text-[var(--color-ink)]">Zoning, likely permits, fees, and timelines for an address.</p>
           </div>
           <Link
-            href="/deep-dives/lloyd"
+            href="/contact?topic=Property%20screening"
             className="group flex flex-col justify-between rounded-sm bg-[var(--color-canopy)] p-6 text-white transition-colors hover:bg-[var(--color-canopy-mid)]"
           >
             <div>
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-ember-bright)]">Deep-dive · Lloyd Center</p>
-              <p className="mt-3 font-editorial text-[24px] leading-tight">The closest public example of a packet.</p>
-              <p className="mt-2 text-[14px] leading-relaxed text-white/70">One property, with the record pulled together, the open questions listed, and the next moves dated.</p>
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-ember-bright)]">A sample packet</p>
+              <p className="mt-3 font-editorial text-[24px] leading-tight">Not published yet.</p>
+              <p className="mt-2 text-[14px] leading-relaxed text-white/70">
+                Nobody has hired us for a screening yet, so there is no redacted packet to show you.
+                The four parts are at the top of this page, and we will walk you through the format
+                on a call. When a client agrees to it, a sample goes here.
+              </p>
             </div>
             <p className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-semibold">
-              Read it <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              Ask for a walkthrough <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </p>
           </Link>
         </div>
