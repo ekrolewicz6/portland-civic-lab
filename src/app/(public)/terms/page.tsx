@@ -30,7 +30,7 @@ export default function TermsPage() {
         <div className="mt-8 space-y-8 text-[15px] leading-relaxed text-[var(--color-ink-light)]">
           <section>
             <h2 className="font-editorial text-[24px] text-[var(--color-ink)] mb-3">
-              Use the data — that&apos;s why it&apos;s here
+              Use the data. That&apos;s why it&apos;s here
             </h2>
             <p>
               Everything on this site is free to read, cite, link, download,
@@ -60,8 +60,7 @@ export default function TermsPage() {
               </Link>
               . But government data has gaps, lags, and errors, and so will
               this site. Everything is provided as-is, without warranty.
-              Don&apos;t use it as the sole basis for legal, financial, or
-              safety decisions — verify against official sources, and{" "}
+              Don&apos;t use it as the sole basis for legal, financial, or safety decisions. Verify against official sources, and{" "}
               <Link href="/contact" className="text-[var(--color-canopy)] underline">
                 tell us
               </Link>{" "}
@@ -76,10 +75,7 @@ export default function TermsPage() {
             <p>
               Portland Civic Lab is an independent company. We are not
               affiliated with, endorsed by, or speaking for the City of
-              Portland, Multnomah County, or any government agency. Tools like
-              the permitting guides are practical aids, not official advice —
-              the city&apos;s own processes and staff are always the
-              authority.
+              Portland, Multnomah County, or any government agency. Tools like the permitting guides are practical aids, not official advice. The city&apos;s own processes and staff are always the authority.
             </p>
           </section>
 
@@ -109,9 +105,7 @@ export default function TermsPage() {
             </h2>
             <p>
               The tools are free; support is voluntary. Portland Civic Lab LLC
-              is a for-profit company, so contributions are not tax-deductible
-              charitable donations — you&apos;re backing a company that gives its
-              work away free. Payments are processed by Stripe; we never store
+              is a for-profit company, so contributions are not tax-deductible charitable donations. You are backing a company that gives its work away free. Payments are processed by Stripe; we never store
               your card details. You can cancel monthly support anytime through
               the{" "}
               <Link href="/contact" className="text-[var(--color-canopy)] underline">

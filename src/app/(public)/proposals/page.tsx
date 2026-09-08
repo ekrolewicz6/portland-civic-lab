@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/page-meta";
 export const metadata: Metadata = pageMeta({
   title: "Topic Proposals",
   description:
-    "Members decide what Portland Civic Lab tracks next. Propose a dashboard topic and vote on what matters most.",
+    "Propose a topic for Portland Civic Lab to take on, and back the ones you want to see. Votes tell us what people want. What we find when we get there is never put to a vote.",
   path: "/proposals",
 });
 
@@ -19,15 +19,16 @@ export default function ProposalsPage() {
             <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]/85">
               <span>Proposals</span>
               <div className="h-px w-8 bg-[var(--color-ember)]/60" />
-              <span>Members decide what we build</span>
+              <span>Open to anyone</span>
             </div>
             <h1 className="mt-6 font-editorial-normal text-[42px] leading-[1.02] tracking-tight text-white sm:text-[56px]">
-              What should Portland Civic Lab track next?
+              What should the Lab look into next?
             </h1>
             <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-white/70 sm:text-[18px]">
-              This is where the Lab&apos;s roadmap gets decided — in public,
-              by members. Propose a topic, vote on what matters, and watch
-              the most-supported ideas become dashboards.
+              Propose a topic, or back one that is already here. We read every
+              proposal, and the votes tell us what people actually want. We pick
+              what to take on from that list and say why. What we find once we
+              start is never put to a vote.
             </p>
           </div>
         </div>

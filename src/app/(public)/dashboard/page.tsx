@@ -63,8 +63,7 @@ export default async function DashboardPage() {
                 className="text-[14px] sm:text-[15px] text-white/55 leading-relaxed max-w-md lg:border-l lg:border-white/15 lg:pl-5 animate-fade-up"
                 style={{ animationDelay: "100ms" }}
               >
-                Public data on housing, safety, the economy, and city
-                performance — with every number linked back to its source.
+                Public data on housing, safety, the economy, and city performance, with every number linked back to its source.
               </p>
             </div>
           </div>

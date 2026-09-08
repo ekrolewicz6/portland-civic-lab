@@ -78,7 +78,7 @@ export default function PrivacyPage() {
               What we never do
             </h2>
             <ul className="list-disc pl-5 space-y-2">
-              <li>Sell or rent your personal information — to anyone, ever.</li>
+              <li>Sell or rent your personal information, to anyone, ever.</li>
               <li>Use your email for anything other than replying to you or membership communications you&apos;ve opted into.</li>
               <li>Publish anything you submit privately without your permission.</li>
             </ul>
@@ -89,10 +89,7 @@ export default function PrivacyPage() {
               Your choices
             </h2>
             <p>
-              You can browse everything on this site without an account. To
-              see, correct, or delete the information we hold about you —
-              including deleting your member account entirely — send a note
-              through the <Link href="/contact" className="text-[var(--color-canopy)] underline">contact form</Link> and
+              You can browse everything on this site without an account. To see, correct, or delete the information we hold about you, including deleting your member account entirely, send a note through the <Link href="/contact" className="text-[var(--color-canopy)] underline">contact form</Link> and
               we&apos;ll take care of it.
             </p>
           </section>

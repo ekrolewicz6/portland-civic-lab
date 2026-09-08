@@ -12,7 +12,7 @@ const STEPS = [
   {
     n: "02",
     title: "We go looking for money",
-    body: "City, county, state, federal, and private programs — grants, tax credits, rebates, wage subsidies, and industry funds. We check what you actually qualify for and confirm each one is still open before it reaches you.",
+    body: "City, county, state, federal, and private programs: grants, tax credits, rebates, wage subsidies, and industry funds. We check what you actually qualify for and confirm each one is still open before it reaches you.",
   },
   {
     n: "03",
@@ -45,7 +45,7 @@ export default function BusinessPage() {
 
         <p className="mt-7 max-w-2xl text-[17px] sm:text-[19px] text-[var(--color-ink-light)] leading-relaxed">
           Grants, tax credits, energy rebates, hiring subsidies, industry funds.
-          Most of it goes unclaimed every year — not because businesses
+          Most of it goes unclaimed every year. Not because businesses
           don&apos;t qualify, but because finding it is a part-time job and you
           already have a full-time one.
         </p>
@@ -63,7 +63,7 @@ export default function BusinessPage() {
 
         <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-[var(--color-ink-muted)]">
           Start with the address. Some of Portland&apos;s largest grants are gated on district
-          boundaries you can&apos;t see from the street — that check takes twenty seconds and
+          boundaries you can&apos;t see from the street. That check takes twenty seconds and
           needs no account.
         </p>
 
@@ -99,14 +99,11 @@ export default function BusinessPage() {
           <p className="mt-5 max-w-3xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
             A one-time $5,000 grant is good. A rebate that lowers your utility
             bill every month for a decade is better, and almost nobody chases it
-            because it isn&apos;t exciting. A tax credit worth a few thousand
-            dollars a year is invisible money — the IRS simply lets you keep
-            more of what you earned, and most owners never learn it exists.
+            because it isn&apos;t exciting. A tax credit worth a few thousand dollars a year is invisible money. The IRS simply lets you keep more of what you earned, and most owners never learn it exists.
           </p>
           <p className="mt-4 max-w-3xl text-[16px] text-[var(--color-ink-light)] leading-relaxed">
             So we sort by five-year value, weighted by how likely you are to win
-            it and discounted by how much work it takes — not by which program
-            has the biggest headline number.
+            it and discounted by how much work it takes, not by which program has the biggest headline number.
           </p>
         </div>
       </section>
@@ -214,7 +211,7 @@ export default function BusinessPage() {
                 Ask for what we don&apos;t need
               </h3>
               <p className="mt-2.5 text-[15px] text-[var(--color-ink-light)] leading-relaxed">
-                No EIN, SSN, or bank details to get started — and when a
+                No EIN, SSN, or bank details to get started. When a
                 specific application does require them, we tell you which one
                 and why.
               </p>

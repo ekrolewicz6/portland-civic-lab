@@ -257,7 +257,7 @@ const CATEGORIES: CategoryInfo[] = [
   {
     name: "Climate Accountability Platform",
     description:
-      "All 47 Climate Emergency Workplan actions, bureau performance scorecards, PCEF fund tracking, and Multnomah County emissions trajectory vs. 2030/2050 goals. Built in direct response to the February 2026 City Auditor climate justice audit — all five recommendations cross-referenced. Methodology: each workplan action is encoded with structured metadata (sector, category, lead bureaus, fiscal year, resource gap, PCEF funding status, multi-bureau flag, and current status). Bureau scorecards are computed from action assignments. PCEF interest diversions are tracked separately from allocations to surface the ~$25M redirected to the General Fund.",
+      "All 47 Climate Emergency Workplan actions, bureau performance scorecards, PCEF fund tracking, and Multnomah County emissions trajectory vs. 2030/2050 goals. Built in direct response to the February 2026 City Auditor climate justice audit, with all five recommendations cross-referenced. Methodology: each workplan action is encoded with structured metadata (sector, category, lead bureaus, fiscal year, resource gap, PCEF funding status, multi-bureau flag, and current status). Bureau scorecards are computed from action assignments. PCEF interest diversions are tracked separately from allocations to surface the ~$25M redirected to the General Fund.",
     sources: [
       {
         name: "Climate Emergency Workplan 2022–2025",
@@ -292,7 +292,7 @@ const CATEGORIES: CategoryInfo[] = [
       {
         name: "Climate Justice Audit",
         provider: "City Auditor's Office, February 25, 2026",
-        frequency: "One-time — 5 recommendations cross-referenced in platform",
+        frequency: "One-time, 5 recommendations cross-referenced in platform",
         status: "Seeded",
       },
       {
@@ -664,8 +664,7 @@ export default function MethodologyPage() {
                 <strong className="text-[var(--color-ink-light)]">
                   Report a data error:
                 </strong>{" "}
-                Use the &ldquo;Flag an issue&rdquo; button on any dashboard
-                topic — every report is tracked and reviewed. (GitHub issues
+                Use the &ldquo;Flag an issue&rdquo; button on any dashboard topic. Every report is tracked and reviewed. (GitHub issues
                 work too.)
               </p>
               <p>

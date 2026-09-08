@@ -8,7 +8,7 @@ import { pageMeta } from "@/lib/page-meta";
 export const metadata: Metadata = pageMeta({
   title: "Portland City Org Chart",
   description:
-    "An interactive, sourced org chart of City of Portland government under the new charter — the Mayor, 12-member Council, Auditor, City Administrator, and every bureau across the four service areas, with headcount, salary cost, and budgets.",
+    "An interactive, sourced org chart of City of Portland government under the new charter: the Mayor, 12-member Council, Auditor, City Administrator, and every bureau across the four service areas, with headcount, salary cost, and budgets.",
   path: "/org-chart",
 });
 
@@ -28,13 +28,12 @@ export default function OrgChartPage() {
               The Portland org chart
             </h1>
             <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-white/70 sm:text-[18px]">
-              Portland rebuilt its government in 2025 — a mayor, a 12-member
+              Portland rebuilt its government in 2025. A mayor, a 12-member
               council, a city administrator, and dozens of bureaus regrouped
               into four service areas, employing some 7,300 people. This is the
               whole structure in one place, every node tied to an official
               source and sized by authorized headcount. Click anything to see
-              who runs it, how it&apos;s funded, and how many positions it holds
-              — down to the job classification and its pay band.
+              who runs it, how it&apos;s funded, and how many positions it holds, down to the job classification and its pay band.
             </p>
           </div>
         </div>
@@ -76,8 +75,7 @@ export default function OrgChartPage() {
                   The salary numbers above leave out a $250M-a-year cost
                 </h2>
                 <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-white/70">
-                  Police and fire pensions don&apos;t show up as bureau salary —
-                  they&apos;re paid through FPDR, a separate property-tax levy with a
+                  Police and fire pensions don&apos;t show up as bureau salary. They are paid through FPDR, a separate property-tax levy with a
                   $3.9 billion unfunded liability. See what it costs you and how it
                   could be fixed.
                 </p>
@@ -114,11 +112,11 @@ export default function OrgChartPage() {
               </h3>
               <p className="mt-3 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
                 Bureau leaders are confirmed against official portland.gov
-                pages. Seats the city hasn&apos;t filled — the Public Safety
-                DCA, the OCPA director, the Street Response manager — are marked{" "}
-                <span className="font-semibold">Vacant</span>, and the 2025
-                reorg moves are flagged, so the chart shows what&apos;s settled
-                and what isn&apos;t.
+                pages. Seats the city hasn&apos;t filled are marked{" "}
+                <span className="font-semibold">Vacant</span>, including the
+                Public Safety DCA, the OCPA director, and the Street Response
+                manager. The 2025 reorg moves are flagged too, so the chart
+                shows what is settled and what isn&apos;t.
               </p>
             </div>
             <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-6">

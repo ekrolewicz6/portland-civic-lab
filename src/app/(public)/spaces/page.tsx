@@ -113,9 +113,7 @@ export default function SpacesPage() {
             </h1>
 
             <p className="text-white/55 text-[16px] sm:text-[17px] leading-relaxed max-w-xl mb-10">
-              Browse commercial spaces across Portland with PCB-exclusive terms
-              — graduated rent, pop-up availability, and priority access to
-              emerging corridors.
+              Browse commercial spaces across Portland with terms open only to certified businesses: graduated rent, pop-up availability, and early access to emerging corridors.
             </p>
 
             {/* Quick stats */}

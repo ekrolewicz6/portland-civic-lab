@@ -5,7 +5,7 @@ import ContactForm from "@/components/contact/ContactForm";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Portland Civic Lab — flag a data error, request a dashboard, ask about the permitting tools, or suggest a project.",
+    "Get in touch with Portland Civic Lab. Flag a data error, request a dashboard, ask about the permitting tools, or suggest a project.",
   alternates: { canonical: "https://www.portlandciviclab.org/contact" },
 };
 
@@ -67,8 +67,7 @@ export default async function ContactPage({
                 <p>
                   If you&apos;ve flagged a data error, we&apos;ll look into it
                   and fix it. If you&apos;ve asked something that needs a reply,
-                  we&apos;ll use your email to get back to you — and nothing
-                  else.
+                  we&apos;ll use your email to get back to you, and for nothing else.
                 </p>
               </div>
             </div>

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "AI-powered civic data assistant for Portland, Oregon. Ask anything about city government, permits, zoning, public services, climate commitments, housing, and more.",
   openGraph: {
     title: "Civic Concierge | Portland Civic Lab",
-    description: "AI-powered civic data assistant — ask anything about Portland city government.",
+    description: "An assistant for Portland city government data. Ask it anything.",
     url: "https://www.portlandciviclab.org/concierge",
   },
   alternates: { canonical: "https://www.portlandciviclab.org/concierge" },

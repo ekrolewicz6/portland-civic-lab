@@ -149,8 +149,7 @@ export default function CalculatorPage() {
             What Is Certification Worth to Your Business?
           </h1>
           <p className="text-white/60 text-[15px] max-w-xl mx-auto leading-relaxed">
-            Estimate the total first-year value of Portland Civic Lab Business
-            certification — from tax savings to network benefits.
+            Estimate the total first-year value of Portland Civic Lab Business certification, from tax savings to network benefits.
           </p>
         </div>
       </section>
@@ -291,8 +290,8 @@ export default function CalculatorPage() {
                   className="flex gap-4"
                 >
                   {[
-                    { value: true, label: "Yes — new or relocated space" },
-                    { value: false, label: "No — existing space" },
+                    { value: true, label: "Yes, new or relocated space" },
+                    { value: false, label: "No, existing space" },
                   ].map(({ value, label }) => (
                     <label
                       key={String(value)}

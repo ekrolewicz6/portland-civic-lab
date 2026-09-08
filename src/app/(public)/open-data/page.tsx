@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/page-meta";
 export const metadata: Metadata = pageMeta({
   title: "Open Data & API",
   description:
-    "Portland Civic Lab's data is free to use: JSON endpoints and CSV downloads for every dashboard topic, no API key required.",
+    "Portland Civic Lab's data is free to use. JSON endpoints and CSV downloads for every dashboard topic, and no API key to get one.",
   path: "/open-data",
 });
 
@@ -38,9 +38,9 @@ export default function OpenDataPage() {
               Take the data with you
             </h1>
             <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-white/70 sm:text-[18px]">
-              Every number on the dashboard is available as JSON or CSV — free
-              for journalists, researchers, students, and anyone building on
-              Portland&apos;s public data.
+              Every number on the dashboard is available as JSON or CSV, free
+              for journalists, researchers, students, and anyone else building
+              on Portland&apos;s public data.
             </p>
           </div>
         </div>
@@ -86,9 +86,7 @@ export default function OpenDataPage() {
               CSV downloads
             </h2>
             <p>
-              The same topics are downloadable as CSV — the identical files
-              behind the &ldquo;Export CSV&rdquo; button on each dashboard
-              page:
+              The same topics download as CSV. These are the identical files behind the &ldquo;Export CSV&rdquo; button on each dashboard page:
             </p>
             <pre className="mt-4 overflow-x-auto rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-4 text-[13px] text-[var(--color-ink)]">
 {`GET https://www.portlandciviclab.org/api/dashboard/{topic}/export`}
@@ -117,7 +115,7 @@ export default function OpenDataPage() {
                 documents each source&apos;s lag, bias, and known issues.
               </li>
               <li>
-                These endpoints are young — shapes may evolve. If you build
+                These endpoints are young and their shapes may change. If you build
                 something on them,{" "}
                 <Link href="/contact" className="text-[var(--color-canopy)] underline">
                   tell us
@@ -132,8 +130,8 @@ export default function OpenDataPage() {
               Want the raw pipelines?
             </h2>
             <p>
-              The entire platform — ingestion scripts, schema, and site — is
-              open source under AGPL-3.0 at{" "}
+              The ingestion scripts, the schema, and the site are all open
+              source under AGPL-3.0 at{" "}
               <a
                 href="https://github.com/ekrolewicz6/portland-civic-lab"
                 className="text-[var(--color-canopy)] underline"

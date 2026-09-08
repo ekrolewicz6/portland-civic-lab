@@ -7,7 +7,7 @@ import sql from "@/lib/db-query";
 export const metadata: Metadata = pageMeta({
   title: "Public Records",
   description:
-    "How to file an Oregon public records request, and a public tracker of the requests Portland Civic Lab has filed to fill gaps in the city's data.",
+    "How to file an Oregon public records request, and a tracker of the requests Portland Civic Lab has filed to fill gaps in the city's data.",
   path: "/records",
 });
 
@@ -39,7 +39,7 @@ const guideSteps = [
   {
     icon: FileSearch,
     title: "1. Figure out who holds the record",
-    body: "Oregon's Public Records Law (ORS 192.311–192.478) covers every state and local agency — city bureaus, the county, school districts, Metro, TriMet. Ask the agency that actually does the work; portland.gov lists a records contact for each city bureau.",
+    body: "Oregon's Public Records Law (ORS 192.311–192.478) covers every state and local agency: city bureaus, the county, school districts, Metro, TriMet. Ask the agency that actually does the work; portland.gov lists a records contact for each city bureau.",
   },
   {
     icon: Send,
@@ -49,12 +49,12 @@ const guideSteps = [
   {
     icon: CircleDollarSign,
     title: "3. Know the fee rules",
-    body: "Agencies can only charge their actual cost of responding, and they must give you a fee estimate over $25 before doing the work. You can ask for a fee waiver or reduction when disclosure primarily benefits the public — say so explicitly, and explain why.",
+    body: "Agencies can only charge their actual cost of responding, and they must give you a fee estimate over $25 before doing the work. You can ask for a fee waiver or reduction when disclosure primarily benefits the public. Say so explicitly, and explain why.",
   },
   {
     icon: Scale,
     title: "4. Know your deadlines and appeal rights",
-    body: "The agency must acknowledge your request within 5 business days, and complete it as soon as practicable without unreasonable delay — 15 business days is the statutory benchmark. If you're denied, you can petition the District Attorney (local agencies) or Attorney General (state agencies) for review. It's free.",
+    body: "The agency must acknowledge your request within 5 business days, and complete it as soon as practicable without unreasonable delay. Fifteen business days is the statutory benchmark. If you're denied, you can petition the District Attorney (local agencies) or Attorney General (state agencies) for review. It's free.",
   },
 ];
 
@@ -80,14 +80,13 @@ export default async function RecordsPage() {
             <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]/85">
               <span>Public records</span>
               <div className="h-px w-8 bg-[var(--color-ember)]/60" />
-              <span>ORS 192 — your right to know</span>
+              <span>ORS 192 · your right to know</span>
             </div>
             <h1 className="mt-6 font-editorial-normal text-[42px] leading-[1.02] tracking-tight text-white sm:text-[56px]">
               The records belong to you
             </h1>
             <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-white/70 sm:text-[18px]">
-              Oregon law gives every person the right to inspect public
-              records — no reason required. Here&apos;s how to file a request,
+              Oregon law gives every person the right to inspect public records, and you do not have to say why. Here&apos;s how to file a request,
               and a public log of the requests we&apos;re filing to close the
               gaps in Portland&apos;s data.
             </p>
@@ -130,9 +129,7 @@ export default async function RecordsPage() {
           </h2>
           <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[var(--color-ink-light)]">
             When a dashboard says &ldquo;data not available,&rdquo; this is
-            where we do something about it. Every request we file is tracked
-            here, and fulfilled records get published back into the open data
-            commons.
+            where we do something about it. Every request we file is tracked here, and whatever comes back gets published.
           </p>
 
           <div className="mt-8 space-y-5">
@@ -197,8 +194,8 @@ export default async function RecordsPage() {
               Know a record Portland should see?
             </h3>
             <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-[var(--color-ink-light)]">
-              Suggest a records request — or tell us about one you&apos;ve
-              filed — and we&apos;ll add it to the public tracker.
+              Suggest a records request, or tell us about one you&apos;ve filed,
+              and we&apos;ll add it to the tracker.
             </p>
             <Link
               href="/contact"

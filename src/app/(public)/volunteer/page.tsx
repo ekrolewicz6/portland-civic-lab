@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/page-meta";
 export const metadata: Metadata = pageMeta({
   title: "Volunteer",
   description:
-    "Help build Portland Civic Lab — code, data sourcing, writing, design, and local knowledge all move the project forward.",
+    "Help build Portland Civic Lab. Code, data sourcing, writing, design, and knowing your own neighborhood all move the work forward.",
   path: "/volunteer",
 });
 
@@ -29,7 +29,7 @@ const roles = [
     icon: PenLine,
     title: "Writers & researchers",
     description:
-      "Plain-language explanations are half the product. Help write topic explainers, document methods, or draft the first Portland Progress Report.",
+      "Plain explanations are half the product. Help write a topic explainer, document how a source works, or check a deep-dive against its footnotes.",
     cta: { label: "Pitch us", href: "/contact", external: false },
   },
   {
@@ -57,10 +57,7 @@ export default function VolunteerPage() {
               Help build this
             </h1>
             <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-white/70 sm:text-[18px]">
-              Portland Civic Lab is an open project. The dashboards, the parks
-              atlas, the permitting tools — all of it gets better with more
-              hands. You don&apos;t need to be a programmer: data sleuthing,
-              writing, design, and plain local knowledge all count.
+              Portland Civic Lab is an open project, and everything on it gets better with more hands. You don&apos;t need to be a programmer. Data sleuthing, writing, design, and knowing your own neighborhood all count.
             </p>
           </div>
         </div>
@@ -108,9 +105,14 @@ export default function VolunteerPage() {
             Not sure where you fit?
           </h2>
           <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[var(--color-ink-light)]">
-            Tell us what you&apos;re good at and how much time you have — even
-            an hour a month helps. We&apos;ll find something real for you to
-            own.
+            Tell us what you&apos;re good at and how much time you have. An hour
+            a month is enough to be useful, and we&apos;ll find something real for
+            you to own. If you would rather pick the subject yourself, every
+            tool and open question is listed on the{" "}
+            <Link href="/about#topics" className="font-semibold text-[var(--color-canopy)] hover:underline">
+              About page
+            </Link>
+            .
           </p>
           <Link
             href="/contact"
