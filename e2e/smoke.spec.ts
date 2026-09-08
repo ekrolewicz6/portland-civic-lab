@@ -41,7 +41,7 @@ test("contact page renders the form", async ({ page }) => {
 test("proposals page renders the board", async ({ page }) => {
   await page.goto("/proposals");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "What should Portland Civic Lab track next?"
+    "What should the Lab look into next?"
   );
 });
 
