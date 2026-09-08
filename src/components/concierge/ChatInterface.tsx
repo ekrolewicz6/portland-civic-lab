@@ -270,8 +270,7 @@ export default function ChatInterface() {
 
           {/* Footer note */}
           <p className="text-[11px] text-[var(--color-ink-muted)] text-center mt-3 tracking-wide">
-            AI-powered guidance — not a substitute for professional tax or legal
-            advice
+            Guidance from an assistant, not a substitute for professional tax or legal advice
           </p>
         </div>
       </div>

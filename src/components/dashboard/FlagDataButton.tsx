@@ -157,14 +157,13 @@ export default function FlagDataButton({ question }: FlagDataButtonProps) {
               <div className="mt-4 flex items-start gap-2 rounded-sm border border-[var(--color-sage)]/40 bg-[var(--color-sage)]/10 px-4 py-3 text-[14px] text-[var(--color-canopy)]">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
                 <span>
-                  Thanks — we review every report and fix what&apos;s wrong.
+                  Thanks. We review every report and fix what&apos;s wrong.
                 </span>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="mt-4 space-y-4">
                 <p className="text-[13px] leading-relaxed text-[var(--color-ink-light)]">
-                  Tell us which number looks off and why — a link to an
-                  official source helps us fix it fast.
+                  Tell us which number looks off and why. A link to an official source helps us fix it fast.
                 </p>
 
                 <label className="block">

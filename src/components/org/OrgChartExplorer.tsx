@@ -468,12 +468,10 @@ export default function OrgChartExplorer() {
       </div>
 
       <p className="mt-5 text-[12px] leading-relaxed text-[var(--color-ink-muted)]">
-        Click any bureau to open its page — salary cost, departments, the full
-        job-classification breakdown, and pay distribution. Structure as of{" "}
+        Click any bureau to open its page: salary cost, departments, the full job-classification breakdown, and pay distribution. Structure as of{" "}
         {ORG_AS_OF}; headcount is authorized FTE and salary $ is budgeted
         personnel cost (FY2025-26 budget), not filled people or actual pay.
-        Budget is the all-funds operating total — it double-counts internal
-        transfers and is dominated by capital, debt, and pass-throughs (utility
+        Budget is the all-funds operating total. It double-counts internal transfers and is dominated by capital, debt, and pass-throughs (utility
         bureaus, grant funds), so it runs far larger than salary cost. Vacant
         seats and 2025 reorg moves are flagged. Full data:{" "}
         <a

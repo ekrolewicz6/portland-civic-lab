@@ -112,8 +112,7 @@ export default function ProposalsBoard() {
       {!loading && proposals.length === 0 && (
         <div className="mt-8 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-8 text-center">
           <p className="text-[15px] text-[var(--color-ink-light)]">
-            No proposals yet — be the first to suggest what Portland Civic Lab
-            should track.
+            No proposals yet. Be the first to suggest something for the Lab to look into.
           </p>
         </div>
       )}
@@ -165,7 +164,7 @@ export default function ProposalsBoard() {
           <a href="/login" className="text-[var(--color-canopy)] underline">
             Sign in
           </a>{" "}
-          to vote — one member, one vote per topic.
+          to vote. One member, one vote per topic.
         </p>
       )}
 
