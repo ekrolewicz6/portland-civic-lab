@@ -30,7 +30,7 @@ export const SERVICES: Service[] = [
     slug: "funding",
     name: "Funding finder",
     tagline:
-      "Grants, tax credits, rebates, and subsidies you qualify for — found, prepped, and tracked.",
+      "Grants, tax credits, rebates, and subsidies you qualify for, found, prepped, and tracked.",
     valueHint: "Live now",
     status: "active",
     shape: "application",
@@ -66,7 +66,7 @@ export const SERVICES: Service[] = [
     slug: "financing",
     name: "Better capital",
     tagline:
-      "CDFI, Kiva, and SBA options compared against what you're paying now — before a credit card becomes the plan.",
+      "CDFI, Kiva, and SBA options compared against what you're paying now, before a credit card becomes the plan.",
     valueHint: "4–7% instead of 18–28%",
     status: "coming_soon",
     shape: "application",
