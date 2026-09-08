@@ -233,7 +233,7 @@ const CAPABILITIES = [
       "An evidence review before a board, council, or investment vote",
       "An independent evaluation of whether a program worked",
     ],
-    price: "From $5,000 for an evidence review · from $15,000 for a six-week deep-dive",
+    price: "$5,000+ · deep-dives $15,000+",
     cta: { label: "Commission research", href: COMMISSION },
     links: [{ label: "The public version: thirteen deep-dives", href: "/deep-dives" }],
   },
@@ -247,7 +247,7 @@ const CAPABILITIES = [
       "Technical diligence on a project, a vendor, a model, or a plan",
       "One kept record of what a bureau owns, promised, and owes",
     ],
-    price: "From $7,500 for a property · from $15,000 for a diagnostic · pilots $40,000–$90,000",
+    price: "$7,500+ · diagnostics $15,000+",
     cta: { label: "Bring us the decision", href: COMMISSION },
     links: [
       { label: "Owners and developers", href: "/property" },
@@ -264,7 +264,7 @@ const CAPABILITIES = [
       "A working model of a system: a budget, a pipeline, a continuum",
       "A public tool, sponsored by a foundation and free to everyone",
     ],
-    price: "Scoped from the days · maintained from $2,500 a month",
+    price: "Scoped in days · upkeep $2,500+/mo",
     cta: { label: "Scope a build", href: COMMISSION },
     links: [{ label: "The public version: eight tools", href: "#work" }],
   },
@@ -274,20 +274,20 @@ const PROGRAMS = [
   {
     n: "01",
     title: "The homelessness continuum",
-    body: "A map of where the homelessness system breaks down, stage by stage, written so that outreach workers, hospitals, police, and the county are looking at the same page. A year of support pays for checking the details about which doors are open tonight with the people at those doors, reviewing the evidence, and refreshing the figures every quarter.",
+    body: "Where the system breaks, stage by stage, kept current every quarter with the people at each door.",
     href: "/deep-dives/continuum",
   },
   {
     n: "02",
     title: "The Parks Atlas",
-    body: "All 316 parks, with their condition, maintenance backlog, events, and the groups that look after them. A year of support pays for reconciling the records, keeping the events and partner data current, and adding the access analysis the atlas is still missing.",
+    body: "All 316 parks, their condition and backlog, kept current, plus the access analysis the atlas still lacks.",
     href: PARKS_URL,
     external: true,
   },
   {
     n: "03",
     title: "The deep-dive calendar",
-    body: "Thirteen so far, from the school budget to the I-5 Rose Quarter. A year of support pays for the next ones, on questions readers and supporters propose.",
+    body: "Thirteen so far. A year of support pays for the next ones, on questions readers propose.",
     href: "/deep-dives",
   },
 ];
@@ -352,6 +352,16 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
       >
         {children}
       </span>
+    </div>
+  );
+}
+
+function SectionHead({ eyebrow, title, lead, light = false }: { eyebrow: string; title: string; lead?: string; light?: boolean }) {
+  return (
+    <div className="mb-8 max-w-3xl">
+      <Eyebrow light={light}>{eyebrow}</Eyebrow>
+      <h2 className={`font-editorial text-[32px] leading-tight [text-wrap:balance] sm:text-[44px] ${light ? "text-white" : "text-[var(--color-ink)]"}`}>{title}</h2>
+      {lead ? <p className={`mt-4 max-w-2xl text-[16px] leading-relaxed ${light ? "text-white/70" : "text-[var(--color-ink-light)]"}`}>{lead}</p> : null}
     </div>
   );
 }
@@ -487,39 +497,16 @@ export default function HomePage() {
       {/* ── Why now ── */}
       <section className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
         <div className="mx-auto w-full max-w-[1400px] px-5 py-12 sm:px-8 sm:py-14 lg:px-12 3xl:max-w-[1800px]">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-14">
-            <div className="lg:col-span-7">
-              <Eyebrow>Why now</Eyebrow>
-              <h2 className="font-editorial text-[26px] leading-tight text-[var(--color-ink)] sm:text-[34px]">
-                Portland changed its form of government last year. At the same time it is
-                deciding what to do with a half-empty downtown and how much to cut from its
-                schools.
-              </h2>
-            </div>
-            <div className="lg:col-span-5 lg:pt-10">
-              <p className="text-[16px] leading-relaxed text-[var(--color-ink-light)]">
-                All of that gets decided on a public record that most people never manage to
-                read. We want the people making those decisions, and the people who have to live
-                with them, to be looking at the same facts.
-              </p>
-            </div>
-          </div>
+          <Eyebrow>Why now</Eyebrow>
+          <h2 className="max-w-4xl font-editorial text-[26px] leading-tight text-[var(--color-ink)] [text-wrap:balance] sm:text-[34px]">
+            Portland has a new form of government, a half-empty downtown, and a school budget to cut. All three get decided on a public record most people never read.
+          </h2>
         </div>
       </section>
 
       {/* ── Pick your door ── */}
       <section className="mx-auto w-full max-w-[1400px] px-5 pb-16 pt-14 sm:px-8 sm:pb-20 lg:px-12 lg:pt-20 3xl:max-w-[1800px]">
-        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <Eyebrow>Start here</Eyebrow>
-            <h2 className="font-editorial text-[32px] leading-tight text-[var(--color-ink)] sm:text-[44px]">
-              Start here.
-            </h2>
-          </div>
-          <p className="max-w-md text-[14.5px] leading-relaxed text-[var(--color-ink-light)] md:text-right">
-            Tell us who you are and we&apos;ll show you the part that&apos;s for you.
-          </p>
-        </div>
+        <SectionHead eyebrow="Who this is for" title="Start here." />
         <AudienceDoors doors={DOORS} />
       </section>
 
@@ -528,19 +515,11 @@ export default function HomePage() {
         id="work"
         className="mx-auto w-full max-w-[1400px] scroll-mt-20 px-5 pb-16 sm:px-8 sm:pb-20 lg:px-12 3xl:max-w-[1800px]"
       >
-        <div className="flex flex-col gap-6 border-t border-[var(--color-parchment)] pt-14 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-3xl">
-            <Eyebrow>The work · eight public tools</Eyebrow>
-            <h2 className="font-editorial text-[32px] leading-tight text-[var(--color-ink)] sm:text-[44px]">
-              Eight tools, all free, all built from public records.
-            </h2>
-          </div>
-          <p className="max-w-md text-[14.5px] leading-relaxed text-[var(--color-ink-light)] md:text-right">
-            Open any of them. There is nothing to sign up for.
-          </p>
+        <div className="border-t border-[var(--color-parchment)] pt-14">
+          <SectionHead eyebrow="The work · eight public tools" title="Eight tools, all free, all built from public records." />
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-12">
+        <div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-12">
           {TILES.map((t) => (
             <ShowcaseTile key={t.key} t={t} />
           ))}
@@ -571,31 +550,24 @@ export default function HomePage() {
       {/* ── Work with the Lab: research, decisions, builds ── */}
       <section id="work-with-us" className="scroll-mt-20 bg-[var(--color-canopy)] noise-overlay">
         <div className="relative z-10 mx-auto w-full max-w-[1400px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24 3xl:max-w-[1800px]">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <Eyebrow light>Work with the Lab · published prices</Eyebrow>
-              <h2 className="font-editorial text-[32px] leading-tight text-white sm:text-[44px]">
-                Bring us a question, a decision, or a build.
-              </h2>
-            </div>
-            <p className="max-w-md text-[14.5px] leading-relaxed text-white/65 md:text-right">
-              The prices below are starting points. If it can be answered from the public record,
-              or built from it, we can probably do it, and you get the number in writing before
-              anything starts.
-            </p>
-          </div>
+          <SectionHead
+            light
+            eyebrow="Work with the Lab · published prices"
+            title="Bring us a question, a decision, or a build."
+            lead="Every price is public, and you get the number in writing before anything starts."
+          />
 
-          <div className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto_auto]">
             {CAPABILITIES.map((c) => (
               <div
                 key={c.key}
-                className="relative flex flex-col overflow-hidden rounded-sm border border-white/12 bg-white/[0.04] p-7 sm:p-8"
+                className="relative overflow-hidden rounded-sm border border-white/12 bg-white/[0.04] p-7 sm:p-8 lg:row-span-5 lg:grid lg:grid-rows-subgrid"
               >
                 <div className={`absolute left-0 right-0 top-0 h-[3px] ${c.accent}`} />
                 <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-ember-bright)]">
                   {c.eyebrow}
                 </p>
-                <h3 className="mt-3 font-editorial text-[26px] leading-tight text-white sm:text-[28px]">{c.title}</h3>
+                <h3 className="mt-3 font-editorial text-[26px] leading-tight text-white [text-wrap:balance] sm:text-[28px]">{c.title}</h3>
                 <ul className="mt-5 space-y-2.5">
                   {c.examples.map((e) => (
                     <li key={e} className="flex items-start gap-2.5 text-[14.5px] leading-snug text-white/75">
@@ -604,10 +576,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 flex-1" />
-                <p className="min-h-[4.25rem] border-t border-white/12 pt-5 font-mono text-[12.5px] leading-relaxed text-white/60">
-                  {c.price}
-                </p>
+                <p className="mt-7 border-t border-white/12 pt-5 font-mono text-[13px] tabular-nums text-white/70">{c.price}</p>
                 <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
                   <Link
                     href={c.cta.href}
@@ -632,16 +601,10 @@ export default function HomePage() {
             ))}
           </div>
 
-          <p className="mt-8 max-w-3xl text-[15px] leading-relaxed text-white/70">
-            Property owners, public agencies, nonprofits, foundations, consulting teams, and
-            individuals can all hire us. The prices and the rules are the same for everyone, and if
-            you sponsor a piece of research, your name goes on it.
-          </p>
-
           <div className="mt-6 flex flex-col gap-4 rounded-sm border border-white/10 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
             <ul className="flex flex-wrap gap-x-7 gap-y-2 text-[13.5px] text-white/75">
               {[
-                "We compete for public work",
+                "Anyone can hire us",
                 "One side per matter",
                 "Every contract listed in public",
                 "Paid work never buys a conclusion",
@@ -668,23 +631,12 @@ export default function HomePage() {
         <div className="mx-auto w-full max-w-[1400px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24 3xl:max-w-[1800px]">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-5">
-              <Eyebrow>The public program</Eyebrow>
-              <h2 className="font-editorial text-[32px] leading-tight text-[var(--color-ink)] sm:text-[44px]">
-                The tools stay free. Supporters decide what we build next.
-              </h2>
-              <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-[var(--color-ink-light)]">
-                Everything we publish is free. Supporters pay for the upkeep and for whatever comes
-                next. A founding supporter funds one program for a year and is credited on that
-                program&apos;s work. Supporters don&apos;t get a say in what the work concludes.
-              </p>
-              <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[var(--color-ink-light)]">
-                We set the Lab up as a company rather than a nonprofit because a nonprofit lives
-                from grant to grant, and we wanted the free tools to survive on our own earnings.
-                The downside is that support isn&apos;t tax-deductible, which we mention everywhere
-                we ask for it.
-              </p>
-
-              <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <SectionHead
+                eyebrow="The public program"
+                title="The tools stay free. Supporters choose what we build next."
+                lead="A founding supporter funds one program for a year and is named on it. Monthly supporters keep the tools running."
+              />
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <Link
                   href="/contact?topic=Founding%20support"
                   className="group rounded-sm border border-[var(--color-canopy)] bg-[var(--color-canopy)] p-5 text-white transition-colors hover:bg-[var(--color-canopy-mid)]"
@@ -722,51 +674,44 @@ export default function HomePage() {
                   </p>
                 </Link>
               </div>
+              <p className="mt-4 text-[13px] leading-relaxed text-[var(--color-ink-muted)]">
+                Support isn&apos;t tax-deductible.{" "}
+                <Link href="/donate" className="font-semibold text-[var(--color-canopy)] hover:underline">
+                  How support works
+                </Link>
+              </p>
             </div>
 
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 lg:pt-1">
               <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
                 Programs a founding supporter can fund
               </p>
-              <ul className="mt-4 divide-y divide-[var(--color-parchment)] border-y border-[var(--color-parchment)]">
+              <ul className="mt-4 grid gap-3">
                 {PROGRAMS.map((p) => {
                   const inner = (
                     <>
-                      <span className="w-8 shrink-0 font-mono text-[12px] font-bold text-[var(--color-ember)]">
-                        {p.n}
-                      </span>
-                      <span className="flex-1">
-                        <span className="flex items-center gap-2 font-editorial text-[24px] leading-tight text-[var(--color-ink)] transition-colors group-hover:text-[var(--color-canopy)]">
+                      <span className="w-8 shrink-0 pt-1 font-mono text-[12px] font-bold text-[var(--color-ember)]">{p.n}</span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block font-editorial text-[22px] leading-tight text-[var(--color-ink)] transition-colors group-hover:text-[var(--color-canopy)]">
                           {p.title}
-                          {p.external ? (
-                            <ArrowUpRight className="h-4 w-4 text-[var(--color-ink-muted)] opacity-0 transition-opacity group-hover:opacity-100" />
-                          ) : (
-                            <ArrowRight className="h-4 w-4 text-[var(--color-ink-muted)] opacity-0 transition-opacity group-hover:opacity-100" />
-                          )}
                         </span>
-                        <span className="mt-2 block max-w-2xl text-[15px] leading-relaxed text-[var(--color-ink-light)]">
-                          {p.body}
-                        </span>
+                        <span className="mt-1.5 block text-[14.5px] leading-relaxed text-[var(--color-ink-light)]">{p.body}</span>
                       </span>
+                      {p.external ? (
+                        <ArrowUpRight className="mt-1.5 h-4 w-4 shrink-0 text-[var(--color-ink-muted)] transition-colors group-hover:text-[var(--color-canopy)]" />
+                      ) : (
+                        <ArrowRight className="mt-1.5 h-4 w-4 shrink-0 text-[var(--color-ink-muted)] transition-transform group-hover:translate-x-0.5 group-hover:text-[var(--color-canopy)]" />
+                      )}
                     </>
                   );
-                  const cls = "group flex items-start gap-4 py-6";
+                  const cls = "group flex items-start gap-4 rounded-sm border border-[var(--color-parchment)] bg-white p-5 transition-colors hover:border-[var(--color-sage)]";
                   return (
                     <li key={p.n}>
-                      {p.external ? (
-                        <a href={p.href} className={cls}>{inner}</a>
-                      ) : (
-                        <Link href={p.href} className={cls}>{inner}</Link>
-                      )}
+                      {p.external ? <a href={p.href} className={cls}>{inner}</a> : <Link href={p.href} className={cls}>{inner}</Link>}
                     </li>
                   );
                 })}
               </ul>
-              <p className="mt-5 text-[14px] leading-relaxed text-[var(--color-ink-muted)]">
-                Founding supporters are named on the program page, get a short update each
-                quarter, and see a public accounting once a year of what the money went to. They
-                don&apos;t get a say over what the work concludes.
-              </p>
             </div>
           </div>
         </div>
