@@ -160,11 +160,11 @@ const DIVES: DeepDive[] = [
   {
     href: "/deep-dives/continuum",
     eyebrow: "Homelessness · The continuum",
-    title: "Every step from the sidewalk to a lease, defined once.",
+    title: "From a bed to a home: where the system breaks.",
     blurb:
-      "Fourteen stages, twelve kinds of people each with an evidence-backed path, six questions a police officer, paramedic, or outreach worker can answer at 2 a.m., and a rule for when Housing First works and when something has to come first. Plus how to count who is where without a form nobody fills in, and Portland's gap at every stage.",
-    stat: "14",
-    statLabel: "stages, none of which the region can fully count today",
+      "An interactive guide to the barriers between needing help and reaching a home that lasts. Follow three illustrative journeys, compare reported local costs, and see how housing, care and completed handoffs fit together—with the evidence and its limits in view.",
+    stat: "3",
+    statLabel: "illustrative journeys through housing and care",
     icon: Route,
     available: true,
   },

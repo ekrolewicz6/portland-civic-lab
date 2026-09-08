@@ -206,7 +206,7 @@ const DOORS: Door[] = [
     body: "A founding supporter pays for one program for a year and is named on it. Monthly supporters keep the tools running and the archive online.",
     cta: { label: "Back a program", href: "/donate" },
     secondary: { label: "Talk about founding support", href: "/contact?topic=Founding%20support" },
-    img: { src: "/images/home/continuum.jpg", alt: "The homelessness continuum, stage by stage", caption: "The continuum · every figure sourced" },
+    img: { src: "/images/home/continuum.jpg", alt: "The homelessness continuum guide", caption: "The continuum · housing, care and the connections" },
   },
   {
     key: "builders",
@@ -274,7 +274,7 @@ const PROGRAMS = [
   {
     n: "01",
     title: "The homelessness continuum",
-    body: "Where the system breaks, stage by stage, kept current every quarter with the people at each door.",
+    body: "An interactive visual guide to placement barriers, reported local costs, and the connections that help housing last, grounded in public records.",
     href: "/deep-dives/continuum",
   },
   {
@@ -307,8 +307,8 @@ const FINISHED = [
     body: "Every downtown parcel modeled, so a building owner, a lender, and a city planner are looking at the same information about what a block could become.",
   },
   {
-    title: "The continuum in use on the front line",
-    body: "The homelessness system, stage by stage, used by outreach workers, hospitals, police, jails, and the county as the shared page for tonight.",
+    title: "A shared picture of the barriers to housing",
+    body: "An interactive continuum guide that makes housing, care, local costs and completed handoffs understandable, with clear evidence for the next decisions.",
   },
   {
     title: "A second Oregon city",

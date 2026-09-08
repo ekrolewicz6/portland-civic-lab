@@ -443,7 +443,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
             ) : (
               <Link
                 href="/donate"
-                className="inline-flex min-h-[44px] items-center rounded-sm bg-[var(--color-ember)] px-4 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)]"
+                className="inline-flex min-h-[44px] items-center rounded-sm bg-[var(--color-ember)] px-4 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-canopy)] max-[380px]:hidden"
               >
                 Support
               </Link>

@@ -22,7 +22,7 @@ const PROOF = [
 const MOSAIC = [
   { src: "/images/home/downtown.jpg", alt: "Downtown parcel map", label: "Portland Possible", href: DOWNTOWN_URL, external: true },
   { src: "/images/home/parks-b.jpg", alt: "Parks Atlas", label: "Parks Atlas", href: PARKS_URL, external: true, position: "object-top" },
-  { src: "/images/home/continuum.jpg", alt: "The homelessness continuum, stage by stage", label: "The continuum", href: "/deep-dives/continuum", position: "object-top" },
+  { src: "/images/home/continuum.jpg", alt: "The homelessness continuum guide", label: "The continuum", href: "/deep-dives/continuum", position: "object-top" },
   { src: "/images/home/oregon.jpg", alt: "Oregon Governance Atlas", label: "Oregon Atlas", href: OREGON_GOVERNANCE_URL, external: true, position: "object-top" },
 ];
 
@@ -30,9 +30,9 @@ const PROGRAMS = [
   {
     n: "01",
     title: "The homelessness continuum",
-    line: "Every figure checked again each quarter with the people at the door.",
+    line: "Clear visuals, reported local costs and public evidence for the path to lasting housing.",
     href: "/deep-dives/continuum",
-    img: { src: "/images/home/continuum.jpg", alt: "The homelessness continuum page, showing where the system breaks stage by stage", position: "object-top" },
+    img: { src: "/images/home/continuum.jpg", alt: "The homelessness continuum guide to housing and care", position: "object-top" },
   },
   {
     n: "02",

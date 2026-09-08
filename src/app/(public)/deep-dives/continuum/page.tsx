@@ -1,237 +1,128 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, HeartHandshake, Home, ShieldCheck } from "lucide-react";
 import { pageMeta } from "@/lib/page-meta";
-import { DIVE_CONTAINER, Section } from "@/components/deep-dives/shared";
-import ReadingProgress from "@/components/deep-dives/venues/ReadingProgress";
-import { CONTINUUM, PRINCIPLES, SCORECARD } from "@/lib/homeless/continuum";
-import { STATS } from "@/lib/homeless/data";
-import { fmtNum } from "@/lib/homeless/engine";
-import PathwayExplorer from "@/components/deep-dives/homeless/PathwayExplorer";
-import StageExplorer from "@/components/deep-dives/homeless/StageExplorer";
-import LeakChart from "@/components/deep-dives/homeless/LeakChart";
-import SystemBalance from "@/components/deep-dives/homeless/SystemBalance";
-import TriageStepper from "@/components/deep-dives/homeless/TriageStepper";
-import DoorsOpen from "@/components/deep-dives/homeless/DoorsOpen";
-import WhenNo from "@/components/deep-dives/homeless/WhenNo";
-import LanesVisual from "@/components/deep-dives/homeless/LanesVisual";
-import HousingFirstBoard from "@/components/deep-dives/homeless/HousingFirstBoard";
-import CountCompact from "@/components/deep-dives/homeless/CountCompact";
-import FixBoard from "@/components/deep-dives/homeless/FixBoard";
-import HeadlineMetrics from "@/components/deep-dives/homeless/HeadlineMetrics";
-import PublishesMatrix from "@/components/deep-dives/homeless/PublishesMatrix";
-import CostChart from "@/components/deep-dives/homeless/CostChart";
-import FailureLadder from "@/components/deep-dives/homeless/FailureLadder";
-import Critique from "@/components/deep-dives/homeless/Critique";
-import FrontLine from "@/components/deep-dives/homeless/FrontLine";
-import SourcesList from "@/components/deep-dives/homeless/SourcesList";
-import SourceLinks from "@/components/deep-dives/homeless/SourceLinks";
-import { RULES_SHORT } from "@/lib/homeless/continuum-short";
+import SystemMap from "@/components/deep-dives/homeless/story/SystemMap";
+import CapacityDiagnosis from "@/components/deep-dives/homeless/story/CapacityDiagnosis";
+import DiagnosticBoard from "@/components/deep-dives/homeless/story/DiagnosticBoard";
+import InvestigationRequests from "@/components/deep-dives/homeless/story/InvestigationRequests";
+import StoryNavigation from "@/components/deep-dives/homeless/story/StoryNavigation";
+import JourneyExplorer from "@/components/deep-dives/homeless/story/JourneyExplorer";
+import EvidenceFlow from "@/components/deep-dives/homeless/story/EvidenceFlow";
+import CostExplorer from "@/components/deep-dives/homeless/story/CostExplorer";
+import ActionAgenda from "@/components/deep-dives/homeless/story/ActionAgenda";
+import ReferenceAtlas from "@/components/deep-dives/homeless/story/ReferenceAtlas";
+import QuoteButton from "@/components/deep-dives/homeless/story/QuoteButton";
+import styles from "@/components/deep-dives/homeless/story/ContinuumStory.module.css";
 
 export const metadata: Metadata = pageMeta({
-  title: "The continuum: every step from the sidewalk to a lease",
-  description:
-    "The fourteen places a person can be between the street and a home, the thirteen kinds of people who travel them, and the six questions any responder can answer at 2 a.m. Where the system loses people today, what it costs, and what it would take to fix each stage. Every figure links to its source.",
+  title: "Where the path out of homelessness breaks",
+  description: "A visual guide to Portland’s homelessness system: where placements break down, what local services cost, and changes that could help people reach a lasting home. Explore real evidence and clearly labeled example journeys.",
   path: "/deep-dives/continuum",
   type: "article",
 });
 
-const NAV = [
-  { id: "pathways", label: "01 Journey" },
-  { id: "breaks", label: "02 Breaks" },
-  { id: "money", label: "03 Costs" },
-  { id: "fix", label: "04 Fix" },
-  { id: "stages", label: "05 Stages" },
-  { id: "tonight", label: "06 Tonight" },
-  { id: "saying-no", label: "07 No" },
-  { id: "lanes", label: "08 Lanes" },
-  { id: "count", label: "09 Counting" },
-  { id: "risks", label: "10 Risks" },
-  { id: "sources", label: "Sources" },
-];
+const SHELTER_REVIEW = "https://hsd.multco.us/wp-content/uploads/2026/01/Adult-Shelter-Review-FY25.pdf";
+const QUOTE = "The handoff is part of the service.";
 
-function Note({ children }: { children: React.ReactNode }) {
-  return <p className="mt-4 max-w-3xl text-[12px] leading-relaxed text-[var(--color-ink-muted)]">{children}</p>;
+function SectionHeader({ number, label, title, children }: { number: string; label: string; title: string; children?: React.ReactNode }) {
+  return <div className={styles.sectionHeader}><div className={styles.eyebrow}>{number} / {label}</div><h2>{title}</h2>{children && <p>{children}</p>}</div>;
 }
 
 export default function ContinuumPage() {
-  const unknown = CONTINUUM.filter((s) => s.count.status === "unknown").length;
-  const partial = CONTINUUM.filter((s) => s.count.status === "partial").length;
-  const misses = SCORECARD.items.filter((i) => !i.met).length;
-
-  return (
-    <div className="bg-[var(--color-paper)]">
-      {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-[var(--color-canopy)] text-white noise-overlay">
-        <div className="pointer-events-none absolute right-0 top-0 h-[760px] w-[760px] -translate-y-1/3 translate-x-1/4 rounded-full bg-[var(--color-canopy-light)] opacity-25 blur-[190px]" />
-        <div className={`relative z-10 ${DIVE_CONTAINER} py-16 sm:py-24`}>
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-ember)]/90">
-              <Link href="/deep-dives" className="transition-colors hover:text-[var(--color-ember-bright)]">Policy Deep-Dive</Link>
-              <div className="h-px w-8 bg-[var(--color-ember)]/50" />
-              <Link href="/deep-dives/homelessness" className="transition-colors hover:text-[var(--color-ember-bright)]">Homelessness</Link>
-              <div className="h-px w-8 bg-[var(--color-ember)]/50" />
-              <span>The continuum</span>
-            </div>
-            <h1 className="mt-6 max-w-3xl font-editorial-normal text-[38px] leading-[1.06] tracking-tight [text-wrap:balance] sm:text-[52px] lg:text-[58px]">
-              Every step from the sidewalk to a lease,
-              <span className="block font-editorial italic text-[var(--color-ember-bright)]">so that nobody is lost between them.</span>
-            </h1>
-            <p className="mt-7 max-w-3xl text-[18px] leading-relaxed text-white/80 sm:text-[20px]">
-              About seven thousand people in Multnomah County will sleep outside tonight. Most of them will meet the system through someone doing their best with a partial map: an outreach worker, a police officer, a paramedic, a nurse, a jail release desk. Each of those people uses a different one.
-            </p>
-            <p className="mt-4 max-w-3xl text-[17px] leading-relaxed text-white/70 sm:text-[18px]">
-              This page draws a single map they could share. It shows the fourteen places a person can be between the street and a home, who the people are and what each of them needs first, where the system loses them today and what that costs, and what it would take to fix every stage.
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a href="#pathways" className="inline-flex items-center justify-center gap-2 rounded-sm bg-[var(--color-ember)] px-5 py-3 text-[15px] font-semibold text-[var(--color-canopy)] transition-colors hover:bg-[var(--color-ember-bright)]">
-                Follow one person&apos;s path <ArrowRight className="h-4 w-4" />
-              </a>
-              <a href="#breaks" className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/15 bg-white/[0.06] px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-white/10">
-                See where it breaks today
-              </a>
-            </div>
+  return <div className={styles.page}>
+    <section className={styles.hero} aria-labelledby="continuum-title">
+      <div className={styles.container}>
+        <div className={styles.breadcrumb}><Link href="/deep-dives">Policy deep dives</Link><span aria-hidden="true">/</span><Link href="/deep-dives/homelessness">Homelessness</Link><span aria-hidden="true">/</span><span>The continuum</span></div>
+        <div className={styles.heroGrid}>
+          <div>
+            <h1 id="continuum-title">Where the path out of homelessness <em>breaks.</em></h1>
+            <p className={styles.heroLead}>Too few places. Staffing limits. Housing units sitting vacant while people wait. See where the evidence identifies a failure—and the questions we still need answered.</p>
+            <div className={styles.heroActions}><a href="#breaks" className={styles.primaryLink}>See the failure map <ArrowRight size={17} aria-hidden="true" /></a><a href="#capacity" className={styles.secondaryLink}>Is there a bed for everyone? <ArrowRight size={16} aria-hidden="true" /></a></div>
           </div>
+          <figure className={styles.heroDiagram}>
+            <div className={styles.heroDiagramLabel}>What a working system connects</div>
+            <div className={styles.heroStop}><span className={styles.heroStopIcon}><ShieldCheck size={25} strokeWidth={1.5} aria-hidden="true" /></span><div><strong>Safe tonight</strong><small>A place that meets the person’s needs</small></div></div>
+            <div className={styles.heroHandoff}>A suitable home + a funded move</div>
+            <div className={styles.heroStop}><span className={styles.heroStopIcon}><Home size={25} strokeWidth={1.5} aria-hidden="true" /></span><div><strong>A lasting home</strong><small>Rent the household can afford</small></div></div>
+            <div className={styles.heroHandoff}>Care + benefits + tenancy help</div>
+            <div className={styles.heroStop}><span className={styles.heroStopIcon}><HeartHandshake size={25} strokeWidth={1.5} aria-hidden="true" /></span><div><strong>Support that stays</strong><small>Help that follows changing needs</small></div></div>
+            <figcaption className={styles.heroDiagramCaption}>People can go directly into housing. Care and housing help can happen together. Shelter is an option along the way.</figcaption>
+          </figure>
         </div>
-      </section>
-
-      {/* ── The four rules, as a strip ── */}
-      <section className="border-t border-white/10 bg-[var(--color-canopy-mid)] text-white">
-        <div className={`${DIVE_CONTAINER} py-8`}>
-          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">Four rules make it one system instead of fourteen programs</p>
-          <ol className="mt-4 grid gap-x-8 gap-y-4 md:grid-cols-2 xl:grid-cols-4">
-            {PRINCIPLES.map((p, i) => (
-              <li key={p.rule} className="flex gap-3">
-                <span className="font-editorial-normal text-[28px] leading-none text-[var(--color-ember-bright)]">{i + 1}</span>
-                <div>
-                  <p className="text-[15px] font-semibold leading-snug text-white">{p.rule}</p>
-                  <p className="mt-1 text-[13px] leading-snug text-white/65">{RULES_SHORT[i]}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+        <div className={styles.heroFacts}>
+          <div className={styles.heroFact}><div className={styles.heroFactTop}><span className={styles.heroFactNumber}>4,187</span><strong>beds for 10,526 people</strong></div><p>January 2025: year-round shelter and transitional inventory versus people experiencing homelessness in Multnomah County.</p><a href="#capacity">See the matched-date capacity comparison ↓</a></div>
+          <div className={styles.heroFact}><div className={styles.heroFactTop}><span className={styles.heroFactNumber}>~½</span><strong>of exit destinations unknown</strong></div><p>In the County’s FY25 adult shelter review. An unknown destination does not mean a return to the street.</p><a href={SHELTER_REVIEW} target="_blank" rel="noreferrer">County shelter review · FY25 ↗</a></div>
+          <div className={styles.heroFact}><div className={styles.heroFactTop}><span className={styles.heroFactNumber}>−21.7%</span><strong>in the homeless-services operating budget</strong></div><p>FY27 adopted versus FY26 adopted: $242.9m, down $67.3m. Funding reductions and allocation choices affect different parts of the path.</p><a href="#money">See the adopted budgets and local costs ↓</a></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* ── Stat band ── */}
-      <section className="border-t border-white/10 bg-[var(--color-canopy)] text-white">
-        <div className={`${DIVE_CONTAINER} grid grid-cols-2 gap-6 py-9 lg:grid-cols-4`}>
-          {[
-            { v: String(CONTINUUM.length), l: "places a person can be, from the sidewalk to a lease", s: `${partial} partly counted today, ${unknown} not counted at all, none fully`, src: [] as string[] },
-            { v: `${SCORECARD.score}/${SCORECARD.of}`, l: "the county's own score for knowing who is where", s: `${misses} conditions unmet, all about seeing people`, src: ["multco-bfz-scorecard"] },
-            { v: "54%", l: "of people leaving shelter go somewhere nobody recorded", s: "2,800 of 5,213 exits in FY2025", src: ["multco-shelter-review"] },
-            { v: fmtNum(STATS.deaths2024), l: "people died homeless in 2024", s: "the number the whole system is finally judged on", src: ["domicile-unknown"] },
-          ].map((s) => (
-            <div key={s.l}>
-              <p className="font-mono text-[30px] font-bold leading-none tabular-nums text-[var(--color-ember-bright)] sm:text-[36px]">{s.v}</p>
-              <p className="mt-2 text-[13px] font-semibold leading-snug">{s.l}</p>
-              <p className="mt-0.5 text-[12px] text-white/55">{s.s}</p>
-              <SourceLinks ids={s.src} dark />
-            </div>
-          ))}
-        </div>
-      </section>
+    <StoryNavigation />
 
-      {/* ── Sticky nav ── */}
-      <nav className="sticky top-14 z-40 border-b border-[var(--color-parchment)] bg-[var(--color-paper)]/95 backdrop-blur">
-        <div className={`relative ${DIVE_CONTAINER}`}>
-          <div className="scrollbar-hide flex gap-1 overflow-x-auto py-1.5 font-mono text-[11.5px] uppercase tracking-[0.08em]">
-            {NAV.map((n) => (
-              <a key={n.id} href={`#${n.id}`} className="flex min-h-[44px] items-center whitespace-nowrap rounded-sm px-3 text-[var(--color-ink-muted)] transition-colors hover:bg-[var(--color-paper-warm)] hover:text-[var(--color-canopy)]">
-                {n.label}
-              </a>
-            ))}
-          </div>
-          <ReadingProgress />
-        </div>
-      </nav>
+    <section id="capacity" className={styles.section}>
+      <span id="tonight" className={styles.alias} />
+      <div className={styles.container}>
+        <SectionHeader number="01" label="The capacity question" title="Is there a bed for everyone?" />
+        <CapacityDiagnosis />
+      </div>
+    </section>
 
-      {/* 01 · The journey */}
-      <Section layout="stacked" id="pathways" eyebrow="01 · The journey" title="Pick a person, and follow their path." lead="Nobody arrives at the system as a case number. They arrive as a mother with two kids and an eviction notice, a young man in withdrawal, a veteran who has been outside for years. Each kind of person needs a different first door and a different order of steps, and the research is clear about most of them. Pick one and watch the path light up.">
-        <PathwayExplorer />
-      </Section>
+    <section id="breaks" className={styles.section}>
+      <div className={styles.container}>
+        <SectionHeader number="02" label="Locate the failure" title="The failures are not all the same.">A shortage of beds needs a different response from an unfilled shift, a delayed move-in or a contract that is not properly monitored. Here is where each problem shows up.</SectionHeader>
+        <DiagnosticBoard />
+        <details className={styles.conceptDisclosure}><summary>See how these constraints interrupt a placement</summary><SystemMap /></details>
+      </div>
+    </section>
 
-      {/* 02 · Where it breaks */}
-      <Section layout="stacked" id="breaks" tone="warm" eyebrow="02 · Where it breaks today" title="How many people are at each stage, and what is actually there for them" lead="Start with tonight: what exists for the people sleeping outside on an ordinary weeknight. Then walk the fourteen stages and compare the people in each one with the beds, slots, and workers that exist there. Where nobody can say how many people are in a stage, the board says so plainly.">
-        <SystemBalance />
-        <div className="mt-8">
-          <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">At the transitions: what goes in, what comes through</p>
-          <LeakChart />
-        </div>
-      </Section>
+    <section id="pathways" className={`${styles.section} ${styles.warm}`}>
+      <span id="lanes" className={styles.alias} /><span id="saying-no" className={styles.alias} />
+      <div className={styles.container}>
+        <SectionHeader number="03" label="Follow a person" title="Different needs. Different routes home.">A rent crisis, a hospital discharge and an unusable shelter offer need different responses. Explore three illustrative situations and compare the handoffs.</SectionHeader>
+        <p className={styles.journeyEvidence}><strong>98% wanted stable housing</strong> among 350 local survey respondents asked. This is not a countywide estimate. <a href="https://hsd.multco.us/wp-content/uploads/2026/04/Pathways-Survey-Findings-Published-4.9.2026.pdf" target="_blank" rel="noreferrer">PSU Pathways · April 2026 ↗</a></p>
+        <JourneyExplorer />
+        <div className={styles.principleStrip}><div><strong>Ask what the person needs.</strong><span>Housing, care, safety and household needs shape the match.</span></div><div><strong>Verify what the place provides.</strong><span>An available bed may not be a usable placement.</span></div><div><strong>Confirm that the connection happened.</strong><span>One worker’s referral needs another worker’s arrival record.</span></div></div>
+      </div>
+    </section>
 
-      {/* 03 · What it costs */}
-      <Section layout="stacked" id="money" eyebrow="03 · What it costs" title="The money is mostly in the wrong stage" lead="A year in a shelter bed costs the county about three times what a year in supportive housing costs per person, and the inexpensive steps that move people between the two were the ones cut in the last budget. For most stages nobody has ever published what a year or an episode costs.">
-        <CostChart />
-      </Section>
+    <section id="count" className={styles.section}>
+      <div className={styles.container}>
+        <SectionHeader number="04" label="Follow the outcome" title="What happens after someone says yes?">A City report makes a crucial distinction visible: interest, acceptance and using a bed are separate results. Lasting housing requires further follow-up.</SectionHeader>
+        <EvidenceFlow />
+      </div>
+    </section>
 
-      {/* 04 · The fix */}
-      <Section layout="stacked" id="fix" tone="warm" eyebrow="04 · How to fix it" title="Four rules, and one clear thing to do at every stage" lead="The rules are what turn fourteen programs into one system a person can travel through. Under them, each stage gets the plainest possible instruction: the one thing to fund or change in the next budget, the one number to publish so everyone can see whether it worked, and the one office that answers for it.">
-        <FixBoard />
-        <div className="mt-8">
-          <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">When a stage fails, and who enforces it</p>
-          <FailureLadder />
-        </div>
-      </Section>
+    <div id="the-handoff" className={styles.quoteBand}><div className={`${styles.container} ${styles.quoteInner}`}><p>“{QUOTE}”</p><QuoteButton quote={QUOTE} /></div></div>
 
-      {/* 05 · Each stage */}
-      <Section layout="stacked" id="stages" eyebrow="05 · Each stage, in depth" title="Pick a stage, and see everything we know about it" lead="Each stage opens on a short overview: what exists there, where it falls short, what to do now, the number to watch, and who answers. The tabs hold the full definition, what the stage looks like when it works and how it fails the person in it, who does what, what it costs, and Portland\u2019s numbers today.">
-        <StageExplorer />
-      </Section>
+    <section id="money" className={styles.section}>
+      <div className={styles.container}>
+        <SectionHeader number="05" label="Follow the money" title="What does a place actually cost?">Shelter operating costs, rent benchmarks and adopted budgets answer different questions. Choose a view to see the dollars, the year and what they buy.</SectionHeader>
+        <CostExplorer />
+      </div>
+    </section>
 
-      {/* 06 · Tonight */}
-      <Section layout="stacked" id="tonight" tone="warm" eyebrow="06 · Tonight, at the scene" title="Six questions at the scene, then the doors that are actually open" lead="At 2 a.m. an officer, a medic, or an outreach worker has to decide where a person goes next with only what they can see in front of them. These six questions, in this order, get to the right first door. Below them is every door in the county on a 24-hour clock, because most of the system closes at dusk and the hardest hour is the middle of the night.">
-        <TriageStepper />
-        <div className="mt-6">
-          <DoorsOpen />
-        </div>
-      </Section>
+    <section id="fix" className={`${styles.section} ${styles.warm}`}>
+      <div className={styles.container}>
+        <SectionHeader number="06" label="Change the result" title="Fund the connections. Verify the result.">These are proposed priorities built on services already operating locally. Open a change to see who can act and how the public could track progress.</SectionHeader>
+        <ActionAgenda />
+      </div>
+    </section>
 
-      {/* 07 · Saying no */}
-      <Section layout="stacked" id="saying-no" eyebrow="07 · When someone says no" title="When someone says no, find out what kind of no it is" lead="Most people who refuse are turning down a specific offer, or are in no state to accept any offer tonight. The law lets nobody be moved unless they are in danger or incapacitated, so the honest response to a no is a better offer, a return visit by the same worker, and enforcement only as the last step and only on the record.">
-        <WhenNo />
-      </Section>
+    <section id="investigate" className={styles.section}>
+      <div className={styles.container}>
+        <SectionHeader number="07" label="Get the missing evidence" title="Turn a red flag into an investigation.">Choose the question you want answered. Each request names the records that could distinguish a capacity problem, a staffing problem and an execution problem.</SectionHeader>
+        <InvestigationRequests />
+      </div>
+    </section>
 
-      {/* 08 · Lanes and Housing First */}
-      <Section layout="stacked" id="lanes" tone="warm" eyebrow="08 · Three lanes, and when Housing First works" title="Support follows need, and the lease does not wait for treatment" lead="Three lanes decide how much help a person gets, never which doors they may use. Most people need cash and a conversation; a small group needs ongoing support; a tenth of the people, who account for half the shelter nights, need to be stabilized first and then housed with a team. Housing First is the rule for most of them, and thirteen cases say exactly when it works, when it works only with conditions, and when it is not enough on its own.">
-        <LanesVisual />
-        <div className="mt-6">
-          <HousingFirstBoard />
-        </div>
-        <Note>Lane volumes and costs come from Sharon Meieran&apos;s 2026 Multnomah County turnaround proposal, a county-chair campaign document, and are planning assumptions.</Note>
-      </Section>
-
-      {/* 09 · Counting */}
-      <Section layout="stacked" id="count" eyebrow="09 · Counting each bucket" title="Seven fields, nine numbers, and who can say what today" lead="Counting who is where does not need a new form. It needs one living-situation code and one referral result from each contact, entered where the worker already enters the contact, and a rule that when a provider goes quiet the count degrades to unknown instead of pretending people were housed. The matrix at the end shows how little of this the county, the city, or the Sheriff can say right now.">
-        <CountCompact />
-        <div className="mt-6">
-          <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">The nine headline numbers</p>
-          <HeadlineMetrics />
-        </div>
-        <div className="mt-6">
-          <PublishesMatrix />
-        </div>
-      </Section>
-
-      {/* 10 · Risks */}
-      <Section layout="stacked" id="risks" tone="warm" eyebrow="10 · What could go wrong" title="We asked what this plan misses, then fixed what we could" lead="Before publishing, a critic listed everything the design leaves out, and seven people who work the front line at night said what would break in the first week. Most of what they found is now built into the plan, and each finding below says how. What remains is named honestly, with the document or the decision that would settle it.">
-        <Critique />
-        <div className="mt-6">
-          <FrontLine />
-        </div>
-      </Section>
-
-      {/* Sources */}
-      <Section
-        layout="stacked"
-        id="sources"
-        tone="warm"
-        eyebrow="Sources & method"
-        title="Where this comes from"
-        lead="County and city records, Oregon statutes and EMS protocols, national data standards, the trials behind each pathway, and one candidate's proposal, labeled. Three drafts, judged, challenged claim by claim, then read by seven front-line, clinical, and legal reviewers."
-      >
-        <SourcesList />
-      </Section>
-    </div>
-  );
+    <section id="stages" className={styles.section}>
+      <span id="risks" className={styles.alias} /><span id="sources" className={styles.alias} />
+      <div className={styles.container}>
+        <SectionHeader number="08" label="Go deeper" title="The services behind the story.">Definitions, existing local programs and primary sources—available whenever you want to go deeper.</SectionHeader>
+        <ReferenceAtlas />
+        <div className={styles.endNote}><span>Evidence reviewed September 8, 2026. Each figure retains its own reporting period.</span><Link href="/deep-dives/homelessness">Explore the broader homelessness deep dive →</Link></div>
+      </div>
+    </section>
+  </div>;
 }

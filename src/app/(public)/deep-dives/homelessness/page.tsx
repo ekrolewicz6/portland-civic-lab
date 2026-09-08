@@ -295,10 +295,10 @@ export default function HomelessnessDeepDive() {
         id="continuum"
         tone="warm"
         eyebrow="08 · The continuum"
-        title="Pick a person. See every step from the sidewalk to a lease."
+        title="What connects a shelter bed to a home that lasts?"
         lead={
           <>
-            The region cannot say how many people are at each stage between the street and a lease, or whether they are moving. So we built the continuum: fourteen stages, twelve kinds of people, each with an evidence-backed order through them. Pick one below; the stages they pass through light up in order, and the amber circle is the first door that has to exist. The full page defines every stage, gives responders six questions to pick that door, and shows how to count who is where.
+            A placement needs to fit the person, have funding and support, and become an actual arrival. The continuum guide makes those connections visible: three illustrative journeys, documented barriers, reported local costs, and the decisions that could help more people reach lasting housing. Housing work and care can happen together.
           </>
         }
       >
