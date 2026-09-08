@@ -402,13 +402,7 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-[1400px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-24 3xl:max-w-[1800px]">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-start lg:gap-10">
             <div className="lg:col-span-6">
-              <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-ember)]/85 animate-fade-up">
-                <span>Portland Civic Lab</span>
-                <div className="h-px w-8 bg-[var(--color-ember)]/60" />
-                <span>Free, public, source-linked</span>
-              </div>
-
-              <h1 className="mt-6 font-editorial-normal text-[46px] leading-[0.98] tracking-tight text-white animate-fade-up sm:text-[62px] lg:text-[70px] xl:text-[84px]">
+              <h1 className="font-editorial-normal text-[46px] leading-[0.98] tracking-tight text-white animate-fade-up sm:text-[62px] lg:text-[70px] xl:text-[84px]">
                 Portland,
                 <span className="block font-editorial italic text-[var(--color-ember-bright)]">
                   explained.
