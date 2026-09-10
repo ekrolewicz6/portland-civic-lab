@@ -1,3 +1,4 @@
+import logo from "@/lib/og-logo.json";
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
@@ -45,6 +46,8 @@ export default async function Image() {
             fontFamily: "monospace",
           }}
         >
+          {/* Satori requires a native image with embedded data. */}
+          <img src={logo} alt="" width={48} height={48} style={{ objectFit: "contain" }} />
           <span style={{ color: "rgba(225,138,75,0.85)" }}>VOL. I · NO. 1</span>
           <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.15)" }} />
           <span>{editionDate}</span>

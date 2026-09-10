@@ -1,0 +1,49 @@
+{
+  "parcel": {
+    "OBJECTID": 213923,
+    "PROPERTYID": "R246102",
+    "STATE_ID": "1S1E03BC  1000"
+  },
+  "vertices": [
+    13
+  ],
+  "layers": [
+    {
+      "id": "zoning",
+      "status": "queried",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "historic",
+      "status": "queried",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "environmental-conservation",
+      "status": "queried",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "environmental-protection",
+      "status": "queried",
+      "count": 0,
+      "error": null
+    },
+    {
+      "id": "design",
+      "status": "queried",
+      "count": 1,
+      "error": null
+    },
+    {
+      "id": "plan-district",
+      "status": "queried",
+      "count": 1,
+      "error": null
+    }
+  ],
+  "allConstraintsKnown": false
+}

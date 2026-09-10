@@ -1,7 +1,9 @@
+import { BH_SOURCES, BH_CARE_SETTINGS } from "@/lib/homeless/behavioral-health";
 import { DIAGNOSIS_SOURCES } from "./diagnosis-data";
 import styles from "./ReferenceAtlas.module.css";
 
 const SOURCES = {
+  council: { title: BH_SOURCES.slides.title, date: BH_SOURCES.slides.date, url: BH_SOURCES.slides.url, scope: "Council briefing: reported associations and clinical-capacity proposals; not an adopted policy or live vacancy inventory." },
   pathways: {
     title: "PSU Pathways: housing experiences and preferences",
     date: "April 9, 2026 · survey fieldwork in 2025",
@@ -158,7 +160,7 @@ const ADDITIONAL_SOURCES = [
 ];
 
 const BIBLIOGRAPHY = Array.from(
-  new Map([...Object.values(SOURCES), ...ADDITIONAL_SOURCES].map((source) => [source.url, source])).values(),
+  new Map([...Object.values(SOURCES), ...ADDITIONAL_SOURCES, ...Object.values(BH_SOURCES).map((source) => ({ ...source, scope: "September 9 update: see the clinical section for claim-level qualifications and source locations." }))].map((source) => [source.url, source])).values(),
 );
 
 type AtlasFunction = {
@@ -189,12 +191,13 @@ const GROUPS: { title: string; description: string; items: AtlasFunction[] }[] =
   },
   {
     title: "Provide care alongside the housing plan",
-    description: "Crisis support · withdrawal care · treatment · medical respite",
+    description: "Crisis support · psychiatric care · withdrawal and addiction treatment · medical respite",
     items: [
       { name: "Crisis stabilization and sobering", definition: "Different services respond to urgent mental-health needs and intoxication. They have different staffing and admission criteria.", resource: "The County’s sobering program is one specific referral-based, voluntary service; it is not a substitute for emergency care.", source: "sobering", measure: "Appropriate referrals; arrivals; declined admissions by reason; confirmed next connections after discharge." },
       { name: "Withdrawal management", definition: "Clinician-directed support for withdrawal, with ongoing treatment and housing connections planned together.", resource: "Hooper provides inpatient and outpatient care and describes transition planning among its services.", source: "hooper", measure: "Time to suitable care; access barriers; continuity of treatment; the person’s destination after the episode." },
-      { name: "Residential and inpatient treatment", definition: "Care in an appropriate treatment setting when indicated, with a plan for housing and support afterward.", resource: "OHA’s facility study distinguishes psychiatric, residential and withdrawal-care settings and their staffing needs.", source: "facilities", measure: "Staffed and usable capacity by care level; wait time; discharge-ready delays; completed follow-on connections." },
-      { name: "Medical respite and hospital step-down", definition: "A place to recover with support after illness or injury, matched to the person’s actual daily care needs.", resource: "CCC Recuperative Care publishes its referral and independence criteria; people needing more assistance require a different match.", source: "respite", measure: "Referrals accepted or declined and why; time to an appropriate setting; housing and care continuity afterward." },
+      { name: "Residential substance-use treatment", definition: "Care in an appropriate treatment setting when indicated, with a plan for housing and support afterward.", resource: "OHA’s facility study distinguishes psychiatric, residential and withdrawal-care settings and their staffing needs.", source: "facilities", measure: "Staffed and usable capacity by care level; wait time; discharge-ready delays; completed follow-on connections." },
+      ...BH_CARE_SETTINGS.filter((care) => ["inpatient", "subacute", "psychiatric-respite"].includes(care.id)).map((care): AtlasFunction => ({ name: care.name, definition: care.purpose, resource: care.boundary, source: "council", measure: care.measure })),
+      { name: "Medical respite after physical illness or injury", definition: "A place to recover with support after illness or injury, matched to the person’s actual daily care needs.", resource: "CCC Recuperative Care publishes its referral and independence criteria; people needing more assistance require a different match.", source: "respite", measure: "Referrals accepted or declined and why; time to an appropriate setting; housing and care continuity afterward." },
     ],
   },
   {
@@ -233,8 +236,8 @@ export default function ReferenceAtlas() {
   return (
     <div className={styles.atlas}>
       <p className={styles.intro}>
-        Fourteen functions, grouped by what they do. A person can use several at once:
-        living in shelter, looking for a home and receiving care. These are not fourteen
+        Overlapping functions, grouped by what they do. A person can use several at once:
+        living in shelter, looking for a home and receiving care. These are not mandatory
         steps someone must complete.
       </p>
       <div className={styles.groups}>
@@ -247,7 +250,7 @@ export default function ReferenceAtlas() {
                   <h3>{item.name}</h3>
                   <p>{item.definition}</p>
                   <div className={styles.resource}>
-                    <span className={styles.label}>Existing foundation</span>
+                    <span className={styles.label}>Source context and limits</span>
                     <p>{item.resource}</p>
                     <a href={SOURCES[item.source].url}>{SOURCES[item.source].title}</a>
                   </div>
@@ -317,7 +320,9 @@ export default function ReferenceAtlas() {
               </p>
             </div>
             <div className={styles.revision}>
-              <h3>Revised September 8, 2026</h3>
+              <h3>Updated September 9, 2026</h3>
+              <p>Added shared Council evidence, separate psychiatric care settings, a psychiatric-transition example, operating-finance distinctions and five draft evidence requests. Council proposals and unresolved estimates remain explicitly attributed.</p>
+              <h4>September 8 foundation retained</h4>
               <p>
                 Restored a diagnosis for all fourteen overlapping housing and care
                 functions, with dated findings on capacity, staffing, funding, access,

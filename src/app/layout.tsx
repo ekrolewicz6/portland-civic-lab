@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     "Free, public, source-linked tools that show how Portland actually works: dashboards, deep-dives, a parks atlas, a downtown plan, a guide to City Council, an atlas of Oregon government, surveys, and permitting tools. And the lab that property owners and public institutions hire when a decision needs evidence.",
   applicationName: "Portland Civic Lab",
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-    shortcut: ["/favicon.svg"],
-    apple: [{ url: "/apple-touch-icon.svg", type: "image/svg+xml" }],
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    shortcut: ["/favicon.png"],
+    apple: [{ url: "/apple-touch-icon.png", type: "image/png" }],
   },
   keywords: [
     "Portland Oregon",
@@ -134,6 +134,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Portland Civic Lab",
               legalName: LEGAL_ENTITY,
+              logo: "https://www.portlandciviclab.org/images/brand/logo-dark.png",
               slogan: TAGLINE,
               url: "https://www.portlandciviclab.org",
               description:

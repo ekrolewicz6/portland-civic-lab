@@ -204,3 +204,8 @@ Each id is cited in [document.md](document.md) as [id]. Accessed September 4, 20
 - **va-call-center** — U.S. Department of Veterans Affairs, National Call Center for Homeless Veterans, 1-877-424-3838, available 24/7. https://www.va.gov/homeless/nationalcallcenter.asp
 - **odhs-hotline** — Oregon Department of Human Services, Oregon Child Abuse Hotline, 855-503-7233, 24 hours a day, 365 days a year; also takes reports for adults 65 and older and adults with physical or developmental disabilities or a mental health condition. https://www.oregon.gov/odhs/report-abuse/pages/default.aspx
 - **ode-mckinney-vento** — Oregon Department of Education, McKinney-Vento program data: district and statewide dashboard; most recent posted file is the 2023–24 PK-12 data analysis; no 2024–25 statewide count posted as of September 2026. https://www.oregon.gov/ode/schools-and-districts/grants/ESEA/McKinney-Vento/Pages/default.aspx
+
+
+## September 9, 2026 update
+
+The shared [Council evidence register](../behavioral-health-2026-09-09/sources.md) adds the memo and deck, conflicting County/Health Share estimates, the local peer-reviewed study, regional model leads, operating-finance guidance and OSH records. Use the [assessment](../behavioral-health-2026-09-09/assessment.md) for status and limitations. Older entries are retained as research history, not revalidated current guidance.

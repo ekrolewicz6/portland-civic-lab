@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "./ContinuumStory.module.css";
 
 const SECTIONS = [
-  { id: "capacity", label: "Capacity" }, { id: "breaks", label: "Failures" }, { id: "pathways", label: "Journeys" },
+  { id: "capacity", label: "Capacity" }, { id: "breaks", label: "Failures" }, { id: "clinical", label: "Clinical care" }, { id: "pathways", label: "Journeys" },
   { id: "count", label: "Outcomes" }, { id: "money", label: "Costs" },
   { id: "fix", label: "Changes" }, { id: "investigate", label: "Investigate" }, { id: "stages", label: "Reference" },
 ];

@@ -1,3 +1,4 @@
+import logo from "@/lib/og-logo.json";
 import type { ReactElement } from "react";
 
 // Shared Open Graph image frame — the newspaper-masthead look used across the
@@ -87,7 +88,10 @@ export function ogFrame({
           fontFamily: "monospace",
         }}
       >
-        <span style={{ color: "rgba(225,138,75,0.85)" }}>PORTLAND CIVIC LAB</span>
+        {/* Satori requires a native image with embedded data. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logo} alt="" width={48} height={48} style={{ objectFit: "contain" }} />
+          <span style={{ color: "rgba(225,138,75,0.85)" }}>PORTLAND CIVIC LAB</span>
         <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.15)" }} />
         <span>{editionDate}</span>
       </div>

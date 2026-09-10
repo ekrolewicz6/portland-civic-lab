@@ -1,3 +1,5 @@
+import { BH_SOURCES } from "@/lib/homeless/behavioral-health";
+
 export type Dimension = "capacity" | "workforce" | "funding" | "access" | "handoff" | "execution" | "outcomes";
 export type EvidenceStatus = "documented" | "limit" | "question";
 export const DIMENSIONS: { id: Dimension; label: string }[] = [
@@ -8,6 +10,7 @@ export const DIMENSIONS: { id: Dimension; label: string }[] = [
 ];
 
 export const DIAGNOSIS_SOURCES = {
+  council: { label: "Council behavioral-health presentation · September 9, 2026", href: BH_SOURCES.slides.url },
   shelter: { label: "County Adult Shelter Review · FY25", href: "https://hsd.multco.us/wp-content/uploads/2026/01/Adult-Shelter-Review-FY25.pdf" },
   quarter: { label: "County SHS report · FY26 Q4, updated Aug 28, 2026", href: "https://hsd.multco.us/wp-content/uploads/2026/09/Q4-FY26-SHS-Report-FINAL-Updated-8.28.26.pdf" },
   access: { label: "County Coordinated Access policy · November 2025", href: "https://hsd.multco.us/wp-content/uploads/2025/12/1.0_CA_Policies_FINAL_2025.pdf" },
@@ -89,7 +92,25 @@ export const DIAGNOSES: Diagnosis[] = [
     owner: "Withdrawal and treatment providers · OHA · health plans", source: "treatment", locator: "What does the data show?", progress: "CCC’s 74-bed 16 x Burnside center opened in May 2025 and serves adults needing ASAM 3.5 or 3.7 care. Updated transfer outcomes are needed to measure improvement.", progressSource: "burnside",
   },
   {
-    id: "treatment", name: "Find treatment that fits", phase: "Residential / inpatient care", headline: "A family treatment program has stopped new admissions.", period: "Admissions paused July 2026 · closure announced for Oct 31",
+    id: "psychiatric-inpatient", name: "Receive acute psychiatric care", phase: "Inpatient psychiatry", headline: "Preservation and break-even payment are proposed; the operating baseline needs records.", period: "Council briefing · September 9, 2026",
+    status: "question", cells: { capacity: "question", workforce: "question", funding: "question", access: "question" },
+    evidence: "The Council deck proposes preserving inpatient psychiatric capacity and achieving break-even reimbursement. It does not supply a dated facility-level baseline of staffed, accepting capacity or operating margins.",
+    consequence: "A licensed bed can be unavailable because of staffing, payment, eligibility or a blocked onward placement.",
+    question: "Which staffed services are accepting clinically appropriate referrals, and what would keep them operating?",
+    records: "Capacity by status and service; closures; admission waits and denials; discharge-ready days; costs and reimbursement by payer.",
+    owner: "OHA · hospitals · health plans · Legislature", source: "council", locator: "slides 4, 12–14",
+  },
+  {
+    id: "psychiatric-stepdown", name: "Transfer to psychiatric support", phase: "Psychiatric subacute / respite", headline: "Specify the receiving care, then test the bottleneck.", period: "Council briefing · September 9, 2026",
+    status: "question", cells: { capacity: "question", workforce: "question", access: "question", handoff: "question", outcomes: "question" },
+    evidence: "The deck distinguishes subacute psychiatric supervision from psychiatric respite, and proposes expansion. These descriptions do not establish current licensed categories, available places or the number of blocked discharges.",
+    consequence: "Someone ready to leave acute care may still need substantial psychiatric support; medical respite and bridge housing are not interchangeable substitutes.",
+    question: "Which assessed care needs lack an accepting service, and how much delay comes from capacity, authorization or other barriers?",
+    records: "Service definitions; staffed accepting capacity; authorization and receiving-provider decisions; transfer delays; confirmed arrivals; continuing care and housing follow-up.",
+    owner: "Hospital · receiving provider · payer · OHA · County transition and housing teams", source: "council", locator: "slides 12–14",
+  },
+  {
+    id: "treatment", name: "Find treatment that fits", phase: "Residential substance-use treatment", headline: "A family treatment program has stopped new admissions.", period: "Admissions paused July 2026 · closure announced for Oct 31",
     status: "documented", cells: { capacity: "documented", workforce: "documented", funding: "documented", access: "limit", handoff: "question" },
     evidence: "CCC paused Letty Owings admissions in July and announced an October 31 closure. Its September 1 FAQ cites complex care needs, workforce challenges and funding shortfalls.",
     consequence: "CCC’s 16 x Burnside can treat parents, but children and infants cannot live onsite. A treatment place may still leave the family without a suitable arrangement.",

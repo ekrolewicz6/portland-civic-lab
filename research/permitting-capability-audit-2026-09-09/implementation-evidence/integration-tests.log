@@ -1,0 +1,25 @@
+
+> portland-temp@0.1.0 test:integration
+> node tests/compliance/actions.cjs
+
+Pipeline execution error: Error: AUDIT_REDIRECT:/dev-login
+    at redirect (/private/tmp/portland-permits-compliance/tests/compliance/actions.cjs:83:15)
+    at requireAuth (/private/tmp/portland-permits-compliance/src/lib/workos/helpers.ts:107:35)
+    at async executePipeline (/private/tmp/portland-permits-compliance/src/actions/pipeline.ts:63:22)
+    at async main (/private/tmp/portland-permits-compliance/tests/compliance/actions.cjs:248:16)
+PASS anonymous pipeline denied
+PASS other applicant pipeline denied
+PASS incomplete submission returns corrections
+PASS real valid form submission succeeds
+PASS complete intake does not imply approval
+PASS pipeline replay rejected
+PASS duplicate submission rejected
+PASS server rejects false certification
+PASS approved project immutable through draft save
+PASS correction resumes original application
+PASS resubmission replaces active discipline assignments
+PASS stale review assignment cannot approve changed revision
+PASS unresolved requirements prevent overall approval
+PASS empty review set cannot approve
+PASS direct stage bypass denied
+Integration checks: 15 passed; network and notifications disabled; isolated in-memory PostgreSQL.

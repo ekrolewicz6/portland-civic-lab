@@ -49,7 +49,7 @@ export default function DiagnosticBoard() {
     </div>
 
     <div className={styles.boardIntro}>
-      <div><p className={styles.eyebrow}>The operating diagnosis</p><h3>Which part is broken—and in what way?</h3><p>Fourteen functions. Seven possible constraints. Read across a row, then open it for the evidence and the exact question to investigate.</p></div>
+      <div><p className={styles.eyebrow}>The operating diagnosis</p><h3>Which part is broken—and in what way?</h3><p>{DIAGNOSES.length} functions. Seven possible constraints. Read across a row, then open it for the evidence and the exact question to investigate.</p></div>
       <div className={styles.legend} aria-label="Evidence key">
         <span><i className={styles.documented}>!</i>Documented problem</span>
         <span><i className={styles.limit}>↳</i>Access rule / boundary</span>
@@ -60,7 +60,7 @@ export default function DiagnosticBoard() {
     <p className={styles.readingNote}>A red mark identifies a specific reported problem, at the date shown. It does not mean every provider fails. An access rule may be appropriate; the question is whether an alternative exists. A question mark is a research gap, not a verdict.</p>
 
     <div className={styles.filters} role="group" aria-label="Filter diagnosis by type of constraint"><span><Filter size={14} aria-hidden="true" />Focus on</span><button type="button" aria-pressed={filter === "all"} onClick={() => setFilter("all")}>All functions</button>{DIMENSIONS.map(({ id, label }) => <button type="button" key={id} aria-pressed={filter === id} onClick={() => setFilter(id)}>{label}</button>)}</div>
-    <p className={styles.results} role="status">{shown.length} of 14 functions shown{filter !== "all" ? ` · ${DIMENSIONS.find((d) => d.id === filter)?.label}` : " · Open any row"}</p>
+    <p className={styles.results} role="status">{shown.length} of {DIAGNOSES.length} functions shown{filter !== "all" ? ` · ${DIMENSIONS.find((d) => d.id === filter)?.label}` : " · Open any row"}</p>
     <div className={styles.matrix}>
       <div className={styles.matrixHeader} aria-hidden="true"><span>Function</span><span>Issue &amp; evidence period</span>{DIMENSIONS.map(({ id, label }) => <span key={id}>{label}</span>)}<span /></div>
       {shown.map((row) => {

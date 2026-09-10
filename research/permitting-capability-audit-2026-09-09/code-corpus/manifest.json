@@ -1,0 +1,2800 @@
+{
+  "schemaVersion": 1,
+  "collectedAt": "2026-09-10T00:31:55.287495+00:00",
+  "cacheDirectory": "/Users/edankrolewicz/portland-permits-code-corpus/2026-09-09",
+  "scope": "PDFs linked from nine Title 33 group indexes; not a reconciled enactment or requirement inventory",
+  "indexes": [
+    {
+      "url": "https://www.portland.gov/code/33/10s",
+      "sha256": "31b9fe555718d98520d6ff9f37f59d666bfe22b5cfd04c4be247692b583c7016",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://www.portland.gov/code/33/100s",
+      "sha256": "3ff97c771054a10c97151163383161ffa85c16bbb27ad1b77ff0c50edfa81d1f",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://www.portland.gov/code/33/200s",
+      "sha256": "b8ab38fae8699e5dbbd83ab82a708eaa8dd2cfba40bb64a00fe0b66fb6ec487b",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://www.portland.gov/code/33/400s",
+      "sha256": "a96951c8aa77cea1e8f04cf545a664234b9ec70381ef7f256b638af6fcbe9100",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://www.portland.gov/code/33/500s",
+      "sha256": "dd22866657eb6aa95d32fb818714e3068a73eda0d3f12134959d321496a0bf80",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://www.portland.gov/code/33/600s",
+      "sha256": "9178c71a05cc37ca9eef07524a2bd6e07dde2ff21cc1ab2ec46d59061495bbec",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://www.portland.gov/code/33/700s",
+      "sha256": "fd25f9cc89333da0c6a7a2672bcc55ec0d7a160c1e59f4b5407d8ef2c135b4c3",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://www.portland.gov/code/33/800s",
+      "sha256": "41aee7a0f2fe923a306d86541d908025dbb2de5137178025e320ccc4f70d8fd0",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://www.portland.gov/code/33/900s",
+      "sha256": "7c559446d68360cb1eecf02598ec0447fb9528a4dc5c60791a933f645b1b68d9",
+      "status": "downloaded"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/100-os-zone_0.pdf",
+      "groups": [
+        "100s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:36.792938+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "aedbb151c178eb1d99800dc0f7eba88300370408075af2311665bd6459d0c200",
+      "bytes": 170814,
+      "file": "aedbb151c178eb1d99800dc0f7eba88300370408075af2311665bd6459d0c200.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/100-os-zone_0.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/110-sd-zone_2.pdf",
+      "groups": [
+        "100s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:36.793251+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "5818eabec42072bc474cfdedbe041ed11e39c59c6aeede983624c97f1bc3269e",
+      "bytes": 2620204,
+      "file": "5818eabec42072bc474cfdedbe041ed11e39c59c6aeede983624c97f1bc3269e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/110-sd-zone_2.pdf",
+      "pageCount": 52
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/120-md-zones_3.pdf",
+      "groups": [
+        "100s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:36.793412+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "205c6fb4d9ad25e90d2a578355f8476c317f2a171477ac1dfa755cc47a43c7be",
+      "bytes": 2719876,
+      "file": "205c6fb4d9ad25e90d2a578355f8476c317f2a171477ac1dfa755cc47a43c7be.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/120-md-zones_3.pdf",
+      "pageCount": 68
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/130-c-zones_3.pdf",
+      "groups": [
+        "100s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:36.793559+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "0616c9def7251bb369f0334671c037fd187e41e2c16c54e935e078a63b972696",
+      "bytes": 2914463,
+      "file": "0616c9def7251bb369f0334671c037fd187e41e2c16c54e935e078a63b972696.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/130-c-zones_3.pdf",
+      "pageCount": 54
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/140-ind-zones_1.pdf",
+      "groups": [
+        "100s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:37.262953+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "440cf1f598a52f8bc8eb16311567144251dc7e3d12b89287eab3422be7e28107",
+      "bytes": 1629403,
+      "file": "440cf1f598a52f8bc8eb16311567144251dc7e3d12b89287eab3422be7e28107.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/140-ind-zones_1.pdf",
+      "pageCount": 40
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/150-campus-inst-zones_1.pdf",
+      "groups": [
+        "100s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:37.528486+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "0de138e68bdec0d5cdf8b85f3dc364afdec70962fa887a347d609c3383ba320e",
+      "bytes": 1284835,
+      "file": "0de138e68bdec0d5cdf8b85f3dc364afdec70962fa887a347d609c3383ba320e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/150-campus-inst-zones_1.pdf",
+      "pageCount": 32
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/203-acc-home-occu.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:37.594644+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "bcb686aebb943795ce68ad39eda93358343a50a8b7e724a2f6bb70ef6d1468ce",
+      "bytes": 270776,
+      "file": "bcb686aebb943795ce68ad39eda93358343a50a8b7e724a2f6bb70ef6d1468ce.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/203-acc-home-occu.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/205-acc-dwelling-unit_0.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:37.610238+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "dd032db9cea98bb8945a695a946b817d6a15b5f912a8d4aa43a487ccce329bc3",
+      "bytes": 249216,
+      "file": "dd032db9cea98bb8945a695a946b817d6a15b5f912a8d4aa43a487ccce329bc3.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/205-acc-dwelling-unit_0.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/207-accessory-short-term-rentals_3.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:37.865822+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "9ff4d0e33c4646f7c3e4e7b9c1b7991006fb84fb7c514bf1560ff7dd5c4f9bf9",
+      "bytes": 325475,
+      "file": "9ff4d0e33c4646f7c3e4e7b9c1b7991006fb84fb7c514bf1560ff7dd5c4f9bf9.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/207-accessory-short-term-rentals_3.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/218-comm-design-stds_0.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:38.000511+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "a0452965b2034a135e66a727998d66e1dcd3bd3212ded357729d48c0deb51ee7",
+      "bytes": 624260,
+      "file": "a0452965b2034a135e66a727998d66e1dcd3bd3212ded357729d48c0deb51ee7.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/218-comm-design-stds_0.pdf",
+      "pageCount": 34
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/219-conv-store.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:38.001371+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "a3233cfa19306539f388a6c94801ce35406349f76594fc85cf9d99e1a40e57cb",
+      "bytes": 97923,
+      "file": "a3233cfa19306539f388a6c94801ce35406349f76594fc85cf9d99e1a40e57cb.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/219-conv-store.pdf",
+      "pageCount": 1
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/224-drive-thrus.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:38.249319+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "06003c3575f5493b5459fc38d24362569357cce21bcac3a682947fabfdbce48d",
+      "bytes": 147006,
+      "file": "06003c3575f5493b5459fc38d24362569357cce21bcac3a682947fabfdbce48d.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/224-drive-thrus.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/229-elderly.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:38.339995+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "e1eebaf2363d0d06f912ee79d0148b8aecf406b1d5e7db13e306b9753488c9de",
+      "bytes": 125050,
+      "file": "e1eebaf2363d0d06f912ee79d0148b8aecf406b1d5e7db13e306b9753488c9de.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/229-elderly.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/236-floating-structures_0.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:38.485747+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "4b55913f8412d21a0a0bc41c79be8ff8fd2b691b6ea4b255020d0b5b5dce6865",
+      "bytes": 114206,
+      "file": "4b55913f8412d21a0a0bc41c79be8ff8fd2b691b6ea4b255020d0b5b5dce6865.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/236-floating-structures_0.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/237-food-production-distribution_0.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:38.528929+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "324b601ade6e5a994cf8b86f64a54b33053447a2e903d72c931e1c6197e8e32e",
+      "bytes": 222378,
+      "file": "324b601ade6e5a994cf8b86f64a54b33053447a2e903d72c931e1c6197e8e32e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/237-food-production-distribution_0.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/239-group-living_deleted.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:38.680688+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "0bc4190f776f94cb3c07c1ac32623b1946d71a82ec522c8aad95f91dd0780860",
+      "bytes": 92719,
+      "file": "0bc4190f776f94cb3c07c1ac32623b1946d71a82ec522c8aad95f91dd0780860.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/239-group-living_deleted.pdf",
+      "pageCount": 1
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/243-helicopters_0.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:38.783549+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "f978cc2dfce2eb72b1e1f932033ebf5a9dbd01b2a63f4863a0ca3cfa58524c9d",
+      "bytes": 148084,
+      "file": "f978cc2dfce2eb72b1e1f932033ebf5a9dbd01b2a63f4863a0ca3cfa58524c9d.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/243-helicopters_0.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/245-inclusionary-housing_0.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:38.810214+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "bd3cab9ab2b685f17076c53d104146687f69469999835138d0dfb666be9798a8",
+      "bytes": 118918,
+      "file": "bd3cab9ab2b685f17076c53d104146687f69469999835138d0dfb666be9798a8.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/245-inclusionary-housing_0.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/248-landscape.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:38.823439+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "ad9260512a894e31bb979332178c16f3625ab5c1227d022e00896630d1a2c8a1",
+      "bytes": 449358,
+      "file": "ad9260512a894e31bb979332178c16f3625ab5c1227d022e00896630d1a2c8a1.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/248-landscape.pdf",
+      "pageCount": 10
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/251-mfd-homes_1.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:38.905667+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "8a5baf78ac310f46639c0f5557278a48b83ceb8facba85d51b7b01290b567206",
+      "bytes": 248833,
+      "file": "8a5baf78ac310f46639c0f5557278a48b83ceb8facba85d51b7b01290b567206.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/251-mfd-homes_1.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/253-dev-middle-housing-land-division.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:39.092795+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "211bedc2cbe870f5988e7d15e1766832dfcd12ba0227849270b14b1d38c0c852",
+      "bytes": 136289,
+      "file": "211bedc2cbe870f5988e7d15e1766832dfcd12ba0227849270b14b1d38c0c852.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/253-dev-middle-housing-land-division.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/254-miningwaste.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:39.154071+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "24f7596045ecfe30daa7b95107879b0283a8d6a41fda7107f5c619dbf7fa1495",
+      "bytes": 225739,
+      "file": "24f7596045ecfe30daa7b95107879b0283a8d6a41fda7107f5c619dbf7fa1495.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/254-miningwaste.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/258-ncu_1.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:39.157350+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "9d2f43d9daf046a0d53da68019a04a3385a503e65652785be4a0af56b6ab351f",
+      "bytes": 577691,
+      "file": "9d2f43d9daf046a0d53da68019a04a3385a503e65652785be4a0af56b6ab351f.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/258-ncu_1.pdf",
+      "pageCount": 16
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/260-occupied-rvs.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:39.224319+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "08938925db006458aa1957531161262d608a7fbf3d258ddee365a6861c40a76b",
+      "bytes": 108358,
+      "file": "08938925db006458aa1957531161262d608a7fbf3d258ddee365a6861c40a76b.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/260-occupied-rvs.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/262-impacts_0.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:39.399425+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "860a18cec84099fad6474452cc653a2ade8235ea3ceaca146137aa7072d6cdde",
+      "bytes": 119597,
+      "file": "860a18cec84099fad6474452cc653a2ade8235ea3ceaca146137aa7072d6cdde.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/262-impacts_0.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/266-parking_3.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:39.437211+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "94d64632c0b80a482b612d366d836f10a65af16aac2291fb71679f29790eef89",
+      "bytes": 1972519,
+      "file": "94d64632c0b80a482b612d366d836f10a65af16aac2291fb71679f29790eef89.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/266-parking_3.pdf",
+      "pageCount": 40
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/270-planned-development_3.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:39.449007+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "400fb83c9d20e422bd8c1b353451ae5053489d959c855199af082a2ccdd7552a",
+      "bytes": 277089,
+      "file": "400fb83c9d20e422bd8c1b353451ae5053489d959c855199af082a2ccdd7552a.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/270-planned-development_3.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/272-rec-trails.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:39.449986+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "00d52bd68e30d67fb8f2be138c97aaf8487c01f6026f07dee6ea4c57e6cf7ef8",
+      "bytes": 225002,
+      "file": "00d52bd68e30d67fb8f2be138c97aaf8487c01f6026f07dee6ea4c57e6cf7ef8.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/272-rec-trails.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/274-radio-tv-towers_0.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:39.698342+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "d2b6ad2e879d35f93060a2ee7681321e2d35cd73e9c3c4eeccf34263471faaa8",
+      "bytes": 285122,
+      "file": "d2b6ad2e879d35f93060a2ee7681321e2d35cd73e9c3c4eeccf34263471faaa8.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/274-radio-tv-towers_0.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/281-schools_0.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:39.865174+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "aa5051f4eec8eb5bedea420350033b3fc29db26132036f6e301a284852f95acc",
+      "bytes": 224321,
+      "file": "aa5051f4eec8eb5bedea420350033b3fc29db26132036f6e301a284852f95acc.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/281-schools_0.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/284-ss-storage_1.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:39.867344+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "cfff3180a702b0a113bc34a2cdff29daa163ea6f351aa7ffee88c33e02ae4537",
+      "bytes": 123300,
+      "file": "cfff3180a702b0a113bc34a2cdff29daa163ea6f351aa7ffee88c33e02ae4537.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/284-ss-storage_1.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/285-short-term-hsg_1.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:39.880581+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "eb6ee4ff715c7830896233a0f03924ecaa7398282fb417caad5df82a4243f8dc",
+      "bytes": 196395,
+      "file": "eb6ee4ff715c7830896233a0f03924ecaa7398282fb417caad5df82a4243f8dc.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/285-short-term-hsg_1.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/288-setbacks.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.048874+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "855a6ec37468b712a690807748d5fff90259a67c373edd6020993c612bf8ef50",
+      "bytes": 118371,
+      "file": "855a6ec37468b712a690807748d5fff90259a67c373edd6020993c612bf8ef50.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/288-setbacks.pdf",
+      "pageCount": 1
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/296-temp-activ_0.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.121882+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "2cf5fa45b67a6cbc8627bfcb24b9a650d65ead4c093d6ee0f01c435df366ab14",
+      "bytes": 241932,
+      "file": "2cf5fa45b67a6cbc8627bfcb24b9a650d65ead4c093d6ee0f01c435df366ab14.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/296-temp-activ_0.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.209-aviation.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.218915+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "deb07c438b69b78c8cc7aeede440814a46f6fa3cedf2df81f0e346f0ffbe768a",
+      "bytes": 107028,
+      "file": "deb07c438b69b78c8cc7aeede440814a46f6fa3cedf2df81f0e346f0ffbe768a.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.209-aviation.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.212-bed-and-breakfast-facilities.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.219185+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "16b00e45ab3d673327a60201abf7dbdbb0274a80beb1ddbf6ed79feb127fabf1",
+      "bytes": 109762,
+      "file": "16b00e45ab3d673327a60201abf7dbdbb0274a80beb1ddbf6ed79feb127fabf1.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.212-bed-and-breakfast-facilities.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.216-cluster-housing.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.271933+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "ba2f7e941846621b1a928ec3039640e7421b9f1c89541e08e8ea9b981e3721e9",
+      "bytes": 95246,
+      "file": "ba2f7e941846621b1a928ec3039640e7421b9f1c89541e08e8ea9b981e3721e9.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.216-cluster-housing.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.222-demolitions.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.490123+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "6dba1ef3e3c388a32af384f74e44957c9afe94a4ef89615ac51198e0a196465b",
+      "bytes": 92489,
+      "file": "6dba1ef3e3c388a32af384f74e44957c9afe94a4ef89615ac51198e0a196465b.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.222-demolitions.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.232-essential-service-providers.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.497359+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "ab7aa1209059844af01844ed42b57c45cc826fdb1c9af94e3ca9687993709496",
+      "bytes": 95131,
+      "file": "ab7aa1209059844af01844ed42b57c45cc826fdb1c9af94e3ca9687993709496.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.232-essential-service-providers.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.269-planned-unit-developments.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.564723+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "5a13014f1fcb391ce72b5076518942e911a00e7116d2cb442642f289ec6ca596",
+      "bytes": 106308,
+      "file": "5a13014f1fcb391ce72b5076518942e911a00e7116d2cb442642f289ec6ca596.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.269-planned-unit-developments.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.277-residential-flag-lots.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.650920+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "ff5e8a23f3aaf72a74e2d4760659720dd64f8c0d68e9bfc1d7e86acd47f6891e",
+      "bytes": 104139,
+      "file": "ff5e8a23f3aaf72a74e2d4760659720dd64f8c0d68e9bfc1d7e86acd47f6891e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.277-residential-flag-lots.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.278-permit-ready-houses.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.752732+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "70cad122386c6fdb7bd5df6fc00a227c35751fa01aa71ae47ae321fefb7634c8",
+      "bytes": 97271,
+      "file": "70cad122386c6fdb7bd5df6fc00a227c35751fa01aa71ae47ae321fefb7634c8.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.278-permit-ready-houses.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.279-recreational-fields-for-organized-sports.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.802683+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "cf9f4dcd77444f1370355406a800415678e7b2040bbbba67ac448c667d3ba1fe",
+      "bytes": 151638,
+      "file": "cf9f4dcd77444f1370355406a800415678e7b2040bbbba67ac448c667d3ba1fe.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.279-recreational-fields-for-organized-sports.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.286-signs.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.914657+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "7ba5fe2d4281b2035892cb63d15454cbbf9b602c94e4eca6079c1c92f3b6f81e",
+      "bytes": 105334,
+      "file": "7ba5fe2d4281b2035892cb63d15454cbbf9b602c94e4eca6079c1c92f3b6f81e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.286-signs.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.291-substandard-residential-lots.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:40.977063+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "5d28ca0e421d9ae587c76ee08917cb3473a15029901fda2ba104ec7195d0038f",
+      "bytes": 105847,
+      "file": "5d28ca0e421d9ae587c76ee08917cb3473a15029901fda2ba104ec7195d0038f.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.291-substandard-residential-lots.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.293-superblocks.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.031373+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "f748cc8bb7d870210a6378afdfa542cf259c4f9453494bd365d856c11eae90e7",
+      "bytes": 126128,
+      "file": "f748cc8bb7d870210a6378afdfa542cf259c4f9453494bd365d856c11eae90e7.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.293-superblocks.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.295-supplemental-compatibility-standards.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.064502+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "d181b190d3cb8cc1b55d66d0e22127c801e366f3fb0e0e82b7f9dedc44745d03",
+      "bytes": 108174,
+      "file": "d181b190d3cb8cc1b55d66d0e22127c801e366f3fb0e0e82b7f9dedc44745d03.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.295-supplemental-compatibility-standards.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.299-temporary-prohibition-on-the-disturbance-of-forests-repealed-replaced-by-33.453.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.198702+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "cc969c61b4ee5c7faab202471527865c6119625c9eae8d48255edd72a6b80e9d",
+      "bytes": 123572,
+      "file": "cc969c61b4ee5c7faab202471527865c6119625c9eae8d48255edd72a6b80e9d.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.299-temporary-prohibition-on-the-disturbance-of-forests-repealed-replaced-by-33.453.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.299-wind-turbines.pdf",
+      "groups": [
+        "200s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.219997+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "096525f783589e903d2eb151eb3a22c6d8346dd3d25449558bcae4958135eb92",
+      "bytes": 379705,
+      "file": "096525f783589e903d2eb151eb3a22c6d8346dd3d25449558bcae4958135eb92.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.299-wind-turbines.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.400-aircraft-landing-zone.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.361280+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "02117a7394f6abfeba489f6a66d96c80e32c797333207437e3e8d37b6590cc79",
+      "bytes": 271612,
+      "file": "02117a7394f6abfeba489f6a66d96c80e32c797333207437e3e8d37b6590cc79.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.400-aircraft-landing-zone.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.435-future-urban-zone.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.514625+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "75b613e5149d8bd007408d8ce49434957446a78bd2a528a6b105b8e8b8b79cbe",
+      "bytes": 109637,
+      "file": "75b613e5149d8bd007408d8ce49434957446a78bd2a528a6b105b8e8b8b79cbe.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.435-future-urban-zone.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.450-light-rail-transit-station-zone.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.529564+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "11220c398844eb2a249f1aedbb7d4601d8e115548cea927d3d6078f5b9280d69",
+      "bytes": 97446,
+      "file": "11220c398844eb2a249f1aedbb7d4601d8e115548cea927d3d6078f5b9280d69.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.450-light-rail-transit-station-zone.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.453-interim-forest-review.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.535973+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "b4272dbc84175511526256eb7e2e68d1842f72880a26eb9debdbfccd001aae0a",
+      "bytes": 104179,
+      "file": "b4272dbc84175511526256eb7e2e68d1842f72880a26eb9debdbfccd001aae0a.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.453-interim-forest-review.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.455-main-street-node-overlay-zone.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.778663+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "5b2563401864c3954b869cd20c595801c2812ef8a6962745b9c8a5ac4a6dc103",
+      "bytes": 99711,
+      "file": "5b2563401864c3954b869cd20c595801c2812ef8a6962745b9c8a5ac4a6dc103.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.455-main-street-node-overlay-zone.pdf",
+      "pageCount": 1
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.460-main-street-corridor-overlay-zone.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.782756+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "491723a35e7ffcef09caf93dee567b83de688c432723fb84bb88dfc0e70a5f9d",
+      "bytes": 80358,
+      "file": "491723a35e7ffcef09caf93dee567b83de688c432723fb84bb88dfc0e70a5f9d.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.460-main-street-corridor-overlay-zone.pdf",
+      "pageCount": 1
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.470-portland-international-airport-noise-impact-zone.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.810095+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "60e644f3ebdd7d1f96e4120412f96a99f382f796b9f87143071a1d812fcec1e2",
+      "bytes": 151293,
+      "file": "60e644f3ebdd7d1f96e4120412f96a99f382f796b9f87143071a1d812fcec1e2.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.470-portland-international-airport-noise-impact-zone.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.471-prime-industrial-overlay-zone.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.849896+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "e3845ff390f1d81736336120f6b7b75579964fc52439077115f46f21710e1fc5",
+      "bytes": 117583,
+      "file": "e3845ff390f1d81736336120f6b7b75579964fc52439077115f46f21710e1fc5.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.471-prime-industrial-overlay-zone.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.500-plan-districts-in-general.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:41.998065+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "6105b4cdeb0c29bf045f00ff05e38238fc848525e9d494e6d193ea9efded091f",
+      "bytes": 115007,
+      "file": "6105b4cdeb0c29bf045f00ff05e38238fc848525e9d494e6d193ea9efded091f.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.500-plan-districts-in-general.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.505-albina-community-plan-district.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:42.052421+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "69b819d1a56bc250e3a60d95053ed80c01cdd5926e78c68377ef0b9c1e6cb1a7",
+      "bytes": 279953,
+      "file": "69b819d1a56bc250e3a60d95053ed80c01cdd5926e78c68377ef0b9c1e6cb1a7.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.505-albina-community-plan-district.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.533-healy-heights-plan-district.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:42.100910+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "2f938798970942f45bffa0b0983dd4eace1d6de315aee5ad3a50c66ca0205276",
+      "bytes": 269559,
+      "file": "2f938798970942f45bffa0b0983dd4eace1d6de315aee5ad3a50c66ca0205276.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.533-healy-heights-plan-district.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.535-johnson-creek-basin-plan-district-renumbered-see-33.537.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:42.155287+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "182cddc340dfb309741a9f5113c1e096b78e44adc8b8d106e326bb611fc26221",
+      "bytes": 104135,
+      "file": "182cddc340dfb309741a9f5113c1e096b78e44adc8b8d106e326bb611fc26221.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.535-johnson-creek-basin-plan-district-renumbered-see-33.537.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.540-laurelhurst-eastmoreland-plan-district.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:42.329104+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "78fd5fb29700bcf2d5d4036ca764254386976ee6408a54a0223778824197cf53",
+      "bytes": 361056,
+      "file": "78fd5fb29700bcf2d5d4036ca764254386976ee6408a54a0223778824197cf53.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.540-laurelhurst-eastmoreland-plan-district.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.566-portland-international-raceway-plan-district.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:42.351432+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "58d54370be645993084b2dff5f1efaa555148e98a08e1c8ef8d283e5c1409d32",
+      "bytes": 280213,
+      "file": "58d54370be645993084b2dff5f1efaa555148e98a08e1c8ef8d283e5c1409d32.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.566-portland-international-raceway-plan-district.pdf",
+      "pageCount": 10
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.566-removed-powell-butte-mt-scott-plan-district.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:42.387043+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "a3be7ad0b911f31ea7ce7debef1f87abfc5f9e91fea9c6adacfd8a0cc1f89a8d",
+      "bytes": 96404,
+      "file": "a3be7ad0b911f31ea7ce7debef1f87abfc5f9e91fea9c6adacfd8a0cc1f89a8d.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.566-removed-powell-butte-mt-scott-plan-district.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.570-rocky-butte-plan-district.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:42.555681+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "89963c43752867cc7b756d74ea7dcb7cb0fe844d2bc62bb431bbb4605982cc2e",
+      "bytes": 254602,
+      "file": "89963c43752867cc7b756d74ea7dcb7cb0fe844d2bc62bb431bbb4605982cc2e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.570-rocky-butte-plan-district.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.575-sandy-boulevard-plan-district.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:42.694657+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "b0ad8807918f0cbdd9a75ed00d72af9e37b25ea805506c11c9a7eb26d53e3ea0",
+      "bytes": 559135,
+      "file": "b0ad8807918f0cbdd9a75ed00d72af9e37b25ea805506c11c9a7eb26d53e3ea0.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.575-sandy-boulevard-plan-district.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.575-skyline-plan-district-renamed-renumbered-see-33.563.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:42.715889+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "b6458c97d66905b499f28b36a15c788751b5cdaab91039a7cba0957b9629e7e0",
+      "bytes": 97050,
+      "file": "b6458c97d66905b499f28b36a15c788751b5cdaab91039a7cba0957b9629e7e0.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.575-skyline-plan-district-renamed-renumbered-see-33.563.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.585-swan-island-plan-district.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:42.729175+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "3085f6c0e43500914f19a80acd45bdb11c850fa746934f0109da48069a7bcbc6",
+      "bytes": 238349,
+      "file": "3085f6c0e43500914f19a80acd45bdb11c850fa746934f0109da48069a7bcbc6.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.585-swan-island-plan-district.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.605-lots-in-the-open-space-zone.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:42.915691+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "9665bc0c9683929bd567b151ef984cf2d89f92019de7388126833303ccf00755",
+      "bytes": 104022,
+      "file": "9665bc0c9683929bd567b151ef984cf2d89f92019de7388126833303ccf00755.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.605-lots-in-the-open-space-zone.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.613-lots-in-commercial-zones.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:42.964248+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "59799334d4ef96cf830dcd0bc93b2caf7ffd7a3d879e4a53bdba823fca7d4c3b",
+      "bytes": 118943,
+      "file": "59799334d4ef96cf830dcd0bc93b2caf7ffd7a3d879e4a53bdba823fca7d4c3b.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.613-lots-in-commercial-zones.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.642-land-divisions-of-manufactured-dwelling-parks.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.028782+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "91923b429f1e2cafecafd2d7a99fa25d7ddb568d4ea8d050717423556c6ca6ce",
+      "bytes": 119559,
+      "file": "91923b429f1e2cafecafd2d7a99fa25d7ddb568d4ea8d050717423556c6ca6ce.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.642-land-divisions-of-manufactured-dwelling-parks.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.665-planned-development-review.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.167717+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "0773683c31c48b1f36cb06b46c37e92df23c70c3157af779615c4f0e0b895417",
+      "bytes": 98771,
+      "file": "0773683c31c48b1f36cb06b46c37e92df23c70c3157af779615c4f0e0b895417.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.665-planned-development-review.pdf",
+      "pageCount": 1
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.669-review-of-changes-to-an-approved-industrial-park.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.249345+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "46b69132aea12cd1dd48bc41dc40b622dc1f4528a5a88778bb434259ceb1e59d",
+      "bytes": 113586,
+      "file": "46b69132aea12cd1dd48bc41dc40b622dc1f4528a5a88778bb434259ceb1e59d.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.669-review-of-changes-to-an-approved-industrial-park.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.800-general-information-on-land-use-reviews.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.309082+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "da4b0da0e0967ecff9b2cb41106bd00581eaa3c04e0dc3f2ac7449956527ef43",
+      "bytes": 123485,
+      "file": "da4b0da0e0967ecff9b2cb41106bd00581eaa3c04e0dc3f2ac7449956527ef43.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.800-general-information-on-land-use-reviews.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.806-airport-reviews.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.309360+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "a9f0632cb42cb38cbf997e70f27707965e9dca29a20b6f155f627e5e40e8acc9",
+      "bytes": 109757,
+      "file": "a9f0632cb42cb38cbf997e70f27707965e9dca29a20b6f155f627e5e40e8acc9.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.806-airport-reviews.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.807-cascade-station-portland-international-center-transportation-impact-analysis.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.361978+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "b3ea3778747292a3a33d02fe6bb789fd818077c316dd6438e938332b710e491f",
+      "bytes": 124382,
+      "file": "b3ea3778747292a3a33d02fe6bb789fd818077c316dd6438e938332b710e491f.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.807-cascade-station-portland-international-center-transportation-impact-analysis.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.808-central-city-parking-review.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.519629+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "029cf3c7c4f1db648a3d503acd9626ff6e8142fa8626101232aea1149571ed9e",
+      "bytes": 128674,
+      "file": "029cf3c7c4f1db648a3d503acd9626ff6e8142fa8626101232aea1149571ed9e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.808-central-city-parking-review.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.809-comprehensive-natural-resource-plans.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.576095+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "e674e676ef46b8d545f203b82b6d8df8cd9f3886753fabea72dc38f301dab14e",
+      "bytes": 135413,
+      "file": "e674e676ef46b8d545f203b82b6d8df8cd9f3886753fabea72dc38f301dab14e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.809-comprehensive-natural-resource-plans.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.830-excavations-and-fills.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.590778+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "ecea1c88155996c2bc16a91293703e2d31ada6db3923c2775e18820d14be35f9",
+      "bytes": 98810,
+      "file": "ecea1c88155996c2bc16a91293703e2d31ada6db3923c2775e18820d14be35f9.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.830-excavations-and-fills.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.840-greenway-goal-exception.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.701462+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "87e92ae90c30597c07206d8cf28c1a52c20ef4cc71e247b9e4e97e07c997ee1f",
+      "bytes": 113290,
+      "file": "87e92ae90c30597c07206d8cf28c1a52c20ef4cc71e247b9e4e97e07c997ee1f.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.840-greenway-goal-exception.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.840-hazardous-substances-review-deleted.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.900111+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "73c14be47cf95980f5c378db4adaeb883934070c57a8a32512c22112b532718d",
+      "bytes": 96524,
+      "file": "73c14be47cf95980f5c378db4adaeb883934070c57a8a32512c22112b532718d.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.840-hazardous-substances-review-deleted.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.845-historical-landmarks.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.916080+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "30e0e1ebc0407bef016937a18b1cd48d9c0bcd8774365efe5689e3f7ec4d8a23",
+      "bytes": 97184,
+      "file": "30e0e1ebc0407bef016937a18b1cd48d9c0bcd8774365efe5689e3f7ec4d8a23.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.845-historical-landmarks.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/33.854-validation-review-deleted.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.925947+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "fafe81ed3d077920ea98c874453d66f9ecdf772b9d9a76beaeac5cc5023755b7",
+      "bytes": 93878,
+      "file": "fafe81ed3d077920ea98c874453d66f9ecdf772b9d9a76beaeac5cc5023755b7.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/33.854-validation-review-deleted.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/405-add-zone.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:43.952818+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "c3336a128923b9a5179dac1424fd8b0f482a8877a22f102971c5e770a7db01c3",
+      "bytes": 98526,
+      "file": "c3336a128923b9a5179dac1424fd8b0f482a8877a22f102971c5e770a7db01c3.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/405-add-zone.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/410-buffer_0.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:44.156826+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "bf148731885376583a73f313656c5b9b4a8bbf352b655b3c7e1a2fa0b1aee55d",
+      "bytes": 252572,
+      "file": "bf148731885376583a73f313656c5b9b4a8bbf352b655b3c7e1a2fa0b1aee55d.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/410-buffer_0.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/415-centers-main-st-overlay_0.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:44.258721+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "d239786fd7556373bcec62a278b709156b1eb4ea4a46300261890d8f9f8c8da2",
+      "bytes": 293439,
+      "file": "d239786fd7556373bcec62a278b709156b1eb4ea4a46300261890d8f9f8c8da2.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/415-centers-main-st-overlay_0.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/418-constrained_1.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:44.286670+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "059a2856e7154eef87c615d232bb43d87359f618178d7ada0b03dbb4e057e52b",
+      "bytes": 117338,
+      "file": "059a2856e7154eef87c615d232bb43d87359f618178d7ada0b03dbb4e057e52b.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/418-constrained_1.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/420-design_0.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:44.299173+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "a52a24210d3217715488c2b62acb2cf17aea4b30cce071563cbd97c9d469aaa8",
+      "bytes": 1717016,
+      "file": "a52a24210d3217715488c2b62acb2cf17aea4b30cce071563cbd97c9d469aaa8.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/420-design_0.pdf",
+      "pageCount": 42
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/430-envir_0.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:44.494744+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "af43d13a8ce5e02825244ff629eadf3a8a67025918e9444646f7a8908dcf75e7",
+      "bytes": 2017548,
+      "file": "af43d13a8ce5e02825244ff629eadf3a8a67025918e9444646f7a8908dcf75e7.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/430-envir_0.pdf",
+      "pageCount": 62
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/440-greenway.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:44.529018+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "b28e74f30220599c6ad72f5eba44b74c2e66d294ea4d52e9bdfcbfc790790ed2",
+      "bytes": 3012280,
+      "file": "b28e74f30220599c6ad72f5eba44b74c2e66d294ea4d52e9bdfcbfc790790ed2.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/440-greenway.pdf",
+      "pageCount": 26
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/445-historic_1.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:44.549333+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "13a95cdf81f74e42799d1c524b10132e980badeb27bc89de36a4f0be024f2be0",
+      "bytes": 773999,
+      "file": "13a95cdf81f74e42799d1c524b10132e980badeb27bc89de36a4f0be024f2be0.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/445-historic_1.pdf",
+      "pageCount": 46
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/465-pleasant-valley-natural-res-overlay-zone.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:44.733622+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "240ac91cdcba746c2fce0e066636fc985dcd77356d1563aac7b6079c36aa8c6d",
+      "bytes": 531318,
+      "file": "240ac91cdcba746c2fce0e066636fc985dcd77356d1563aac7b6079c36aa8c6d.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/465-pleasant-valley-natural-res-overlay-zone.pdf",
+      "pageCount": 28
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/475-river-overlay-zones_0.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:44.920149+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "1314bb17cca7fb0f5b1688e6b814ac1e488c64682f5b570e4c73888abb96f457",
+      "bytes": 3324074,
+      "file": "1314bb17cca7fb0f5b1688e6b814ac1e488c64682f5b570e4c73888abb96f457.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/475-river-overlay-zones_0.pdf",
+      "pageCount": 62
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/480-scenic.pdf",
+      "groups": [
+        "400s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:44.987989+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "d664ffa1604fee00bb671243d959bbb02933ac45b4f0879ea261baf96f772ee3",
+      "bytes": 498293,
+      "file": "d664ffa1604fee00bb671243d959bbb02933ac45b4f0879ea261baf96f772ee3.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/480-scenic.pdf",
+      "pageCount": 10
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/508-cs-pic.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:45.058496+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "6d46b6b511024f979b4b1db8f58339801fb46293ed6989cebdd6bd7d2063e9a4",
+      "bytes": 2141566,
+      "file": "6d46b6b511024f979b4b1db8f58339801fb46293ed6989cebdd6bd7d2063e9a4.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/508-cs-pic.pdf",
+      "pageCount": 34
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/510-central-city_1.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:45.090745+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "f1640241599f43f7bda273f395040a0997e3169b67fd631e6244ed4d3bed88fb",
+      "bytes": 14842557,
+      "file": "f1640241599f43f7bda273f395040a0997e3169b67fd631e6244ed4d3bed88fb.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/510-central-city_1.pdf",
+      "pageCount": 112
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/515-columbia-ss-pd_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:45.450512+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "8b1464771c67df1acc55d80611419ad2701c9661ba320393b8a765398f1b9541",
+      "bytes": 3207342,
+      "file": "8b1464771c67df1acc55d80611419ad2701c9661ba320393b8a765398f1b9541.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/515-columbia-ss-pd_0.pdf",
+      "pageCount": 52
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/520-division-pd.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:45.594352+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "118ff47d1a4dccba9dba0c59c5a0a27e90172cb2ba64f02d336d7f3e378e918e",
+      "bytes": 238757,
+      "file": "118ff47d1a4dccba9dba0c59c5a0a27e90172cb2ba64f02d336d7f3e378e918e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/520-division-pd.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/521-east-corridor-pd_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:45.719302+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "89431569897f6fdd1eaa5fa77e5d00cff890ff72afddde8cd564bb63f220a35e",
+      "bytes": 1514414,
+      "file": "89431569897f6fdd1eaa5fa77e5d00cff890ff72afddde8cd564bb63f220a35e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/521-east-corridor-pd_0.pdf",
+      "pageCount": 24
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/526-gateway-pd_1.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:46.123544+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "562346878228f6823f011cfdb20f77bd734fe8c3bcbcb1d4a5f9b0285db8507c",
+      "bytes": 961344,
+      "file": "562346878228f6823f011cfdb20f77bd734fe8c3bcbcb1d4a5f9b0285db8507c.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/526-gateway-pd_1.pdf",
+      "pageCount": 24
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/530-glendoveer-pd.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:46.439033+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "fcfd7b380ee68389f3944c9b3dece56002a2d9e6e66a68b1309d227b7b45d3e3",
+      "bytes": 269997,
+      "file": "fcfd7b380ee68389f3944c9b3dece56002a2d9e6e66a68b1309d227b7b45d3e3.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/530-glendoveer-pd.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/531-guilds-lake-pd_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:46.746773+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "270fb01c86c2d2451fefb6e6ac1db5835c13c1e187635512c5de75894db1d9c2",
+      "bytes": 3212852,
+      "file": "270fb01c86c2d2451fefb6e6ac1db5835c13c1e187635512c5de75894db1d9c2.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/531-guilds-lake-pd_0.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/532-hayden-island-pd.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:46.827065+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "034517370b344689fccc13e8e9aa7850e878f2a52f531bc5bc579901a6d8da47",
+      "bytes": 1210692,
+      "file": "034517370b344689fccc13e8e9aa7850e878f2a52f531bc5bc579901a6d8da47.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/532-hayden-island-pd.pdf",
+      "pageCount": 14
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/534-hillsdale-pd_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:47.250693+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "b1321a8fda42fd107bb7ad611d014a5bd26421088cfb133d71b19be7efe5ca62",
+      "bytes": 406380,
+      "file": "b1321a8fda42fd107bb7ad611d014a5bd26421088cfb133d71b19be7efe5ca62.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/534-hillsdale-pd_0.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/536-hollywood-pd_1.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:47.353352+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "1fd14300709cda9e122d041d07e8121be761d7ac77ee1486549beb61fa228db4",
+      "bytes": 863794,
+      "file": "1fd14300709cda9e122d041d07e8121be761d7ac77ee1486549beb61fa228db4.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/536-hollywood-pd_1.pdf",
+      "pageCount": 18
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/537-johnson-creek-basin-pd_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:47.669149+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "05d6b953148e2b42f032ea4823d23cd0f39be30e080959f1b4e89fa5a5943f70",
+      "bytes": 1706519,
+      "file": "05d6b953148e2b42f032ea4823d23cd0f39be30e080959f1b4e89fa5a5943f70.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/537-johnson-creek-basin-pd_0.pdf",
+      "pageCount": 16
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/538-kenton-pd_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:47.692914+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "da2fe617b1529a10ded6475354837f9270aab23be54a1f8ae90d1b45fb30e334",
+      "bytes": 548625,
+      "file": "da2fe617b1529a10ded6475354837f9270aab23be54a1f8ae90d1b45fb30e334.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/538-kenton-pd_0.pdf",
+      "pageCount": 10
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/545-lombard-pd.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:47.859714+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "0eb61d96f27c23efc293199b217cb6c4064730a4b2e3d98087899fe16e81d781",
+      "bytes": 302737,
+      "file": "0eb61d96f27c23efc293199b217cb6c4064730a4b2e3d98087899fe16e81d781.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/545-lombard-pd.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/550-macadam-pd.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:47.984560+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "129a061dd6f9d483671f776762f97a03a995f6be6a431f24e53c5c426862e442",
+      "bytes": 304832,
+      "file": "129a061dd6f9d483671f776762f97a03a995f6be6a431f24e53c5c426862e442.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/550-macadam-pd.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/555-marquam-hill-pd_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:48.125403+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "9a44ab63398def29ab8c30eb6acb6b1af2239c16d7a871056079de03975012bb",
+      "bytes": 419213,
+      "file": "9a44ab63398def29ab8c30eb6acb6b1af2239c16d7a871056079de03975012bb.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/555-marquam-hill-pd_0.pdf",
+      "pageCount": 12
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/560-north-cully-pd.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:48.231637+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "b29da754cc5a67046d51e15f8de2a4f95195a151b45f4df407713c9de87725b7",
+      "bytes": 294906,
+      "file": "b29da754cc5a67046d51e15f8de2a4f95195a151b45f4df407713c9de87725b7.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/560-north-cully-pd.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/561-north-interstate-pd_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:48.270701+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "2b50ce4aae41683f09a1633a3618f3b81777422525aa9f24b9ff2998b7db9ddb",
+      "bytes": 766594,
+      "file": "2b50ce4aae41683f09a1633a3618f3b81777422525aa9f24b9ff2998b7db9ddb.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/561-north-interstate-pd_0.pdf",
+      "pageCount": 12
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/562-northwest-pd_1.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:48.423076+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "cbab600450f656b893926f49de26c68cf6884d8f16091959a0fab32c1f1680f7",
+      "bytes": 3532337,
+      "file": "cbab600450f656b893926f49de26c68cf6884d8f16091959a0fab32c1f1680f7.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/562-northwest-pd_1.pdf",
+      "pageCount": 26
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/563-northwest-hills-pd_1.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:48.595346+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "43db48f40a1db78ac2140a623ea6b9adcc7bc37ee2eab6b2cbd987aea2ffd03a",
+      "bytes": 752054,
+      "file": "43db48f40a1db78ac2140a623ea6b9adcc7bc37ee2eab6b2cbd987aea2ffd03a.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/563-northwest-hills-pd_1.pdf",
+      "pageCount": 12
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/564-pleasant-valley-pd_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:48.606486+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "2d2442574f061a93bade7cd2c4ca35a9492e9d94442552bd7472a7b68361083f",
+      "bytes": 334975,
+      "file": "2d2442574f061a93bade7cd2c4ca35a9492e9d94442552bd7472a7b68361083f.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/564-pleasant-valley-pd_0.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/565-portland-international-airport-pd_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:48.923762+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "c40391738b002be9193a5bad014afeb0a0222efb1233a0c842d4501ebdd9ea90",
+      "bytes": 829972,
+      "file": "c40391738b002be9193a5bad014afeb0a0222efb1233a0c842d4501ebdd9ea90.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/565-portland-international-airport-pd_0.pdf",
+      "pageCount": 22
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/567-powell-boulevard-pd.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:48.978883+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "abdce42b0168db4d5dc71c57e2b3da9ce6723d3e31668d5cf49d94481f687c39",
+      "bytes": 383345,
+      "file": "abdce42b0168db4d5dc71c57e2b3da9ce6723d3e31668d5cf49d94481f687c39.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/567-powell-boulevard-pd.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/580-south-auditorium-pd_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:49.226920+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "f76bcfa98f17d7f7844d933b39380478d1789f9602fcaa7ca6404dd509625a9e",
+      "bytes": 496773,
+      "file": "f76bcfa98f17d7f7844d933b39380478d1789f9602fcaa7ca6404dd509625a9e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/580-south-auditorium-pd_0.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/583-st-johns-pd.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:49.277371+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "9d83245d09fc27c33b613859adeb9fdd3a9a549753516e6e25649ba7b770615e",
+      "bytes": 555134,
+      "file": "9d83245d09fc27c33b613859adeb9fdd3a9a549753516e6e25649ba7b770615e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/583-st-johns-pd.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/595-west-port-multi-pd_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:49.294699+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "a8dbf98cb700dc5e54c9736694158187aab9b53260a0440c3e88d72b6b225c1e",
+      "bytes": 935417,
+      "file": "a8dbf98cb700dc5e54c9736694158187aab9b53260a0440c3e88d72b6b225c1e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/595-west-port-multi-pd_0.pdf",
+      "pageCount": 18
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/597-york-plan-dist_0.pdf",
+      "groups": [
+        "500s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:49.340266+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "a1bfddd41ab891d4856d510b601335571474212b0dea6f488eb94366040e4d66",
+      "bytes": 1342876,
+      "file": "a1bfddd41ab891d4856d510b601335571474212b0dea6f488eb94366040e4d66.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/597-york-plan-dist_0.pdf",
+      "pageCount": 22
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/610-rf-r2.5-lots_0.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:49.694142+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "ca4135fed1a274c01b2f69083cfbab763fe43c4209e03daed3dff76ade37ab9f",
+      "bytes": 197656,
+      "file": "ca4135fed1a274c01b2f69083cfbab763fe43c4209e03daed3dff76ade37ab9f.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/610-rf-r2.5-lots_0.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/611-r25-lots_1.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:49.700598+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "e702b03f446b5b27ecfc7d3d5436208044386eaffb6d5f14591b0625da224d41",
+      "bytes": 107081,
+      "file": "e702b03f446b5b27ecfc7d3d5436208044386eaffb6d5f14591b0625da224d41.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/611-r25-lots_1.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/612-md-lots.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:49.781921+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "98391a91243394c5ea8279222e6d33356c18badee62c7c847863a33368d2353b",
+      "bytes": 161488,
+      "file": "98391a91243394c5ea8279222e6d33356c18badee62c7c847863a33368d2353b.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/612-md-lots.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/614-emp-lots.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.011834+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "e9cc7896674d5657b7d6fd50c5608e1f5ca108ac65467d0438e4036f7915f7e7",
+      "bytes": 131463,
+      "file": "e9cc7896674d5657b7d6fd50c5608e1f5ca108ac65467d0438e4036f7915f7e7.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/614-emp-lots.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/615-ind-lots.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.026266+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "7f8254a023154742fc7660a050b1349e67f309e42d0a2273dbb72f37b56457b4",
+      "bytes": 134061,
+      "file": "7f8254a023154742fc7660a050b1349e67f309e42d0a2273dbb72f37b56457b4.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/615-ind-lots.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/630-tree-preservation_0.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.058835+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "ebaf4156588dae5ec2ce594523c504435e5e09dd2ce33b78d38d0dc5d6252f13",
+      "bytes": 271840,
+      "file": "ebaf4156588dae5ec2ce594523c504435e5e09dd2ce33b78d38d0dc5d6252f13.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/630-tree-preservation_0.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/631-flood-hazard-lots_0.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.080925+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "f0e5eada19f9d559f2e560c09cfac771478129c6a547d66b89ed63871e3d0e4b",
+      "bytes": 130976,
+      "file": "f0e5eada19f9d559f2e560c09cfac771478129c6a547d66b89ed63871e3d0e4b.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/631-flood-hazard-lots_0.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/632-landslide-hazard.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.266681+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "a71f84eb6cc2e2a2fde2425b7c3326b09afb0e9aa4b2deddecde136dd8fba141",
+      "bytes": 383537,
+      "file": "a71f84eb6cc2e2a2fde2425b7c3326b09afb0e9aa4b2deddecde136dd8fba141.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/632-landslide-hazard.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/633-phased-land.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.292016+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "cf961e3a3e1db4762e6fccda2dfae317897c67ae1ac015b44d95b4d857c721d7",
+      "bytes": 119680,
+      "file": "cf961e3a3e1db4762e6fccda2dfae317897c67ae1ac015b44d95b4d857c721d7.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/633-phased-land.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/634-required-recreation_0.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.325196+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "e9a1368a498b9c2ae63c96e3a2e7fd36e0c96e29bcc1737f81f889d85be45eea",
+      "bytes": 131473,
+      "file": "e9a1368a498b9c2ae63c96e3a2e7fd36e0c96e29bcc1737f81f889d85be45eea.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/634-required-recreation_0.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/635-clearing-grading.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.415978+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "cf7ee230f13785f71f48dcaa8e0f1fa991646b940de8ac1fc84d79421c0a991d",
+      "bytes": 152454,
+      "file": "cf7ee230f13785f71f48dcaa8e0f1fa991646b940de8ac1fc84d79421c0a991d.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/635-clearing-grading.pdf",
+      "pageCount": 3
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/636-tracts-easements_0.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.594044+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "58a02c231e164316b70f563e0281664f686adff389c5588096ae9eb3934b670b",
+      "bytes": 117033,
+      "file": "58a02c231e164316b70f563e0281664f686adff389c5588096ae9eb3934b670b.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/636-tracts-easements_0.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/639-solar-access.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.619252+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "feea33de35bd821e3d00cbad6ef612677e6a367de80724d5c28edeabb38d1e97",
+      "bytes": 119161,
+      "file": "feea33de35bd821e3d00cbad6ef612677e6a367de80724d5c28edeabb38d1e97.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/639-solar-access.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/640-streams-springs_0.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.627312+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "6ec0246eb6bdceb82d645fba7080adec1838c1d3b723cfd08ec6614438b5efc0",
+      "bytes": 123789,
+      "file": "6ec0246eb6bdceb82d645fba7080adec1838c1d3b723cfd08ec6614438b5efc0.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/640-streams-springs_0.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/641-trans-impacts.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.774893+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "d38c97a8ef174d246adb35c60534deefe5ad15579c17352c71de332c14315d27",
+      "bytes": 133543,
+      "file": "d38c97a8ef174d246adb35c60534deefe5ad15579c17352c71de332c14315d27.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/641-trans-impacts.pdf",
+      "pageCount": 3
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/644-middle-housing-land-div.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.901304+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "288257948fb00d2395bc0156a7b5f7f0295c26a1747c78bbceffce5d68d1d91a",
+      "bytes": 109252,
+      "file": "288257948fb00d2395bc0156a7b5f7f0295c26a1747c78bbceffce5d68d1d91a.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/644-middle-housing-land-div.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/651-water-service.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.959583+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "1e22d4531bb76422a0ef3dfa47bffdaaf64fd4d5d8c8d2e2727c5fdc284ee757",
+      "bytes": 114873,
+      "file": "1e22d4531bb76422a0ef3dfa47bffdaaf64fd4d5d8c8d2e2727c5fdc284ee757.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/651-water-service.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/652-sanitary-sewer_0.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:50.961735+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "a6dab66dc2cccb22843162d589d2f292eb81043cd0217e8761eb6264134cc830",
+      "bytes": 119189,
+      "file": "a6dab66dc2cccb22843162d589d2f292eb81043cd0217e8761eb6264134cc830.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/652-sanitary-sewer_0.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/653-stormwater.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.079571+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "2a5d8d994dd44a8d1f29ac5e015766a7d8f5084fe14da4901c3c790ed610a5d7",
+      "bytes": 118823,
+      "file": "2a5d8d994dd44a8d1f29ac5e015766a7d8f5084fe14da4901c3c790ed610a5d7.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/653-stormwater.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/654-rights-of-way_0.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.262604+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "f7488d3711dbbb37786a2d3d7525b81ed8055eff43e9f9b2ea3267d1810bce64",
+      "bytes": 435036,
+      "file": "f7488d3711dbbb37786a2d3d7525b81ed8055eff43e9f9b2ea3267d1810bce64.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/654-rights-of-way_0.pdf",
+      "pageCount": 12
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/655-school-dist-capacity.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.321216+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "d23f76196738581b4971160fb3603a485c4d450fdc621a9f7b6ec6dc749257c8",
+      "bytes": 98222,
+      "file": "d23f76196738581b4971160fb3603a485c4d450fdc621a9f7b6ec6dc749257c8.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/655-school-dist-capacity.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/660-os-res-review.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.343945+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "03d864506d0b8d958c1b3268af16b38f586a7212d9e91b9910314cd50655a423",
+      "bytes": 204662,
+      "file": "03d864506d0b8d958c1b3268af16b38f586a7212d9e91b9910314cd50655a423.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/660-os-res-review.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/662-com-emp-ind-review.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.382217+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "ea04bf31b05b7599040832c0d2740a15c39bd6317aa87657c369c24171b46ddc",
+      "bytes": 213439,
+      "file": "ea04bf31b05b7599040832c0d2740a15c39bd6317aa87657c369c24171b46ddc.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/662-com-emp-ind-review.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/663-final-plats_0.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.586266+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "7f2f2eca21cb8b20947d0d41fbc304affa6371f3b2e4f1317da9e39cd8d38dca",
+      "bytes": 106334,
+      "file": "7f2f2eca21cb8b20947d0d41fbc304affa6371f3b2e4f1317da9e39cd8d38dca.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/663-final-plats_0.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/664-large-ind-review_0.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.611705+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "6734119439b21e64ef28c9c9b9c62ff72f815fd26f18119b6cc986c8e85a33b8",
+      "bytes": 205541,
+      "file": "6734119439b21e64ef28c9c9b9c62ff72f815fd26f18119b6cc986c8e85a33b8.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/664-large-ind-review_0.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/667-prop-line-adjust_2.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.666218+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "664499678191a71dc914bbae098c91b48fe32b43f42e6aff74e203666e7edc1c",
+      "bytes": 108380,
+      "file": "664499678191a71dc914bbae098c91b48fe32b43f42e6aff74e203666e7edc1c.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/667-prop-line-adjust_2.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/668-app-planned-unit-dev-review.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.674505+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "5242e6f3a60789de8633df8e60d2e3ce998e7e3b66a7fdf232bb7063b08364d0",
+      "bytes": 126352,
+      "file": "5242e6f3a60789de8633df8e60d2e3ce998e7e3b66a7fdf232bb7063b08364d0.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/668-app-planned-unit-dev-review.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/670-review-lds-mobile-home-parks_0.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.902583+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "cd7a20dcacd3ffd75e9098df225bfbf7a9a0d62fc20f106609dcfc7be99ac44e",
+      "bytes": 171660,
+      "file": "cd7a20dcacd3ffd75e9098df225bfbf7a9a0d62fc20f106609dcfc7be99ac44e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/670-review-lds-mobile-home-parks_0.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/671-review-middle-housing-land-div_1.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.917839+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "785bee188ecf0bd5147e05bc4ccc3279cff620397fb2b9dc712f1d9eda2b6184",
+      "bytes": 153800,
+      "file": "785bee188ecf0bd5147e05bc4ccc3279cff620397fb2b9dc712f1d9eda2b6184.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/671-review-middle-housing-land-div_1.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/673-final-plats.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.937139+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "6a996f1ebf3e7dca2b1539da2890fac685f65d6a9d873ca6c44bd2b4f6f5a271",
+      "bytes": 174940,
+      "file": "6a996f1ebf3e7dca2b1539da2890fac685f65d6a9d873ca6c44bd2b4f6f5a271.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/673-final-plats.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/675-lot-replat.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:51.952353+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "b39f5f2aed73131c54b7e72ce0a0a502105f27fb775932bd3cc867a4d831cbf0",
+      "bytes": 135924,
+      "file": "b39f5f2aed73131c54b7e72ce0a0a502105f27fb775932bd3cc867a4d831cbf0.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/675-lot-replat.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/676-lot-confirm_0.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.181300+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "020ea8add010eac2889e54711bebf6c31e0dd49830a3b46118ac32b40b22b7ef",
+      "bytes": 147422,
+      "file": "020ea8add010eac2889e54711bebf6c31e0dd49830a3b46118ac32b40b22b7ef.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/676-lot-confirm_0.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/677-prop-line-adjust_1.pdf",
+      "groups": [
+        "600s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.193303+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "6ba5baa5e47c8a2873ace7baffa711b6364ae94a9464cabba7dc053e07d7ad1f",
+      "bytes": 474602,
+      "file": "6ba5baa5e47c8a2873ace7baffa711b6364ae94a9464cabba7dc053e07d7ad1f.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/677-prop-line-adjust_1.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/700-admin-enforc_1.pdf",
+      "groups": [
+        "700s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.273158+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "b8d7e726e000dea61e4beb966ed853d4813ab1f04c10a0c66f2cabafab187f93",
+      "bytes": 191154,
+      "file": "b8d7e726e000dea61e4beb966ed853d4813ab1f04c10a0c66f2cabafab187f93.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/700-admin-enforc_1.pdf",
+      "pageCount": 14
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/705-nhood-contact_0.pdf",
+      "groups": [
+        "700s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.317454+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "39dc36d6962981ac7c17440f3d7b795f427cf44869da8ec69826a4c12fa3dbdb",
+      "bytes": 155018,
+      "file": "39dc36d6962981ac7c17440f3d7b795f427cf44869da8ec69826a4c12fa3dbdb.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/705-nhood-contact_0.pdf",
+      "pageCount": 6
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/710-review-bodies_0.pdf",
+      "groups": [
+        "700s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.415627+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "d3d827c9399dfa7318a758702e1104650ec52cb54c9ed8d90006d2216bacee09",
+      "bytes": 189785,
+      "file": "d3d827c9399dfa7318a758702e1104650ec52cb54c9ed8d90006d2216bacee09.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/710-review-bodies_0.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/720-assignment_0.pdf",
+      "groups": [
+        "700s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.504893+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "d2cf2ca876b7580ba57813b279ef5e001e32254563235a3f14efac1f8e209839",
+      "bytes": 124815,
+      "file": "d2cf2ca876b7580ba57813b279ef5e001e32254563235a3f14efac1f8e209839.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/720-assignment_0.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/730-qj-procd_1.pdf",
+      "groups": [
+        "700s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.512485+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "c509f1100bd176496ecf4615739901000352601b8f7793ab56173bc4f1de6bb2",
+      "bytes": 393170,
+      "file": "c509f1100bd176496ecf4615739901000352601b8f7793ab56173bc4f1de6bb2.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/730-qj-procd_1.pdf",
+      "pageCount": 42
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/740-leg-procd_1.pdf",
+      "groups": [
+        "700s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.612845+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "c84d83b62954393f337ae1f89bd204e34406c8881a36398392b69ed2eef9a695",
+      "bytes": 120780,
+      "file": "c84d83b62954393f337ae1f89bd204e34406c8881a36398392b69ed2eef9a695.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/740-leg-procd_1.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/750-fees.pdf",
+      "groups": [
+        "700s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.713257+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "a2d0d17406436eed5e2bc77df996b1e9f0671a49de8157d4829ccd8342a6f252",
+      "bytes": 105567,
+      "file": "a2d0d17406436eed5e2bc77df996b1e9f0671a49de8157d4829ccd8342a6f252.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/750-fees.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/805-adjustments_0.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.835110+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "f6b423ac9fa29ba708b45927367bf5a3beabd445c0f1ca6f094661738c4d4863",
+      "bytes": 120380,
+      "file": "f6b423ac9fa29ba708b45927367bf5a3beabd445c0f1ca6f094661738c4d4863.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/805-adjustments_0.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/810-comp-plan_0.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.847115+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "540d12320bd60a74a3772501f9c4957bc8955706ba5f742499a2f65cc4848249",
+      "bytes": 127236,
+      "file": "540d12320bd60a74a3772501f9c4957bc8955706ba5f742499a2f65cc4848249.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/810-comp-plan_0.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/815-cu_0.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.926448+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "d262bb678c53715b2d8c3c90344954bd347ae2161f18a34441410546d0195b15",
+      "bytes": 367650,
+      "file": "d262bb678c53715b2d8c3c90344954bd347ae2161f18a34441410546d0195b15.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/815-cu_0.pdf",
+      "pageCount": 40
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/820-cu-mp.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:52.980276+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "4068602bd6dedd090ae3f32cefe50fb85fd032f83241bc1b40431acd72571c94",
+      "bytes": 151885,
+      "file": "4068602bd6dedd090ae3f32cefe50fb85fd032f83241bc1b40431acd72571c94.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/820-cu-mp.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/825-design-review_0.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.063833+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "3c0a852f596980baadc65036bf2898af02f0d67ea760fa545b7498c9ce3e98b9",
+      "bytes": 652615,
+      "file": "3c0a852f596980baadc65036bf2898af02f0d67ea760fa545b7498c9ce3e98b9.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/825-design-review_0.pdf",
+      "pageCount": 10
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/830-extensions-lu-reviews.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.157663+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "7569f0f62273e28f8b79691f9e84aec24b1e80303fefb969c8b2e24da69db9b3",
+      "bytes": 113191,
+      "file": "7569f0f62273e28f8b79691f9e84aec24b1e80303fefb969c8b2e24da69db9b3.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/830-extensions-lu-reviews.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/833-gateway-master-plan-review.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.251120+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "04b3ecd32dfc4a011d3ba653f91c8978cdab26e65523406b911761c69c7d6f23",
+      "bytes": 114938,
+      "file": "04b3ecd32dfc4a011d3ba653f91c8978cdab26e65523406b911761c69c7d6f23.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/833-gateway-master-plan-review.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/835-text-amend_0.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.293151+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "40a4bb5c793117912a42c687815717f5986a357ee8491f55fac83fb608f34f02",
+      "bytes": 116055,
+      "file": "40a4bb5c793117912a42c687815717f5986a357ee8491f55fac83fb608f34f02.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/835-text-amend_0.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/846-historic-reviews.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.350736+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "1d12872aa22bafe15ba90a4e0e07498ee1c0b4b1d7b299a6ec5d1a9af19f3f39",
+      "bytes": 422940,
+      "file": "1d12872aa22bafe15ba90a4e0e07498ee1c0b4b1d7b299a6ec5d1a9af19f3f39.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/846-historic-reviews.pdf",
+      "pageCount": 22
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/848-impact-mit-plans_0.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.429320+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "aa22d68a9a21e4e7ddb61c9bbd2f2d627b1124e428a4092705f507f39d5b0807",
+      "bytes": 173392,
+      "file": "aa22d68a9a21e4e7ddb61c9bbd2f2d627b1124e428a4092705f507f39d5b0807.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/848-impact-mit-plans_0.pdf",
+      "pageCount": 10
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/849-marquam-hill-parking.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.553851+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "c77f958825fccb953ba051e3b70955b6bab03c597f99ea94332f25585aaf2ab7",
+      "bytes": 127055,
+      "file": "c77f958825fccb953ba051e3b70955b6bab03c597f99ea94332f25585aaf2ab7.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/849-marquam-hill-parking.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/850-goal-except_0.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.611844+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "985f14d99a8c7a3314cbf41cd1246de6e3aeb9360006ea80ce4762ff0bbada45",
+      "bytes": 111491,
+      "file": "985f14d99a8c7a3314cbf41cd1246de6e3aeb9360006ea80ce4762ff0bbada45.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/850-goal-except_0.pdf",
+      "pageCount": 2
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/851-south-waterfront-greenway-review.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.641275+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "6cd4b01e5c16fd65c19e5b4ac75a185c8c2dadad012d4cb8fd5f907344462ef5",
+      "bytes": 152614,
+      "file": "6cd4b01e5c16fd65c19e5b4ac75a185c8c2dadad012d4cb8fd5f907344462ef5.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/851-south-waterfront-greenway-review.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/852-trans-impact-review_0.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.713207+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "81334627d696177ca0754f95aee656009515e834fa9cc359114f1a4ed17bc55d",
+      "bytes": 136841,
+      "file": "81334627d696177ca0754f95aee656009515e834fa9cc359114f1a4ed17bc55d.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/852-trans-impact-review_0.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/853-tree-review.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.921669+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "16c3c7051c0f7ffc99c383572f8e1aa00d9bf22cd2de04508db05776de101823",
+      "bytes": 132560,
+      "file": "16c3c7051c0f7ffc99c383572f8e1aa00d9bf22cd2de04508db05776de101823.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/853-tree-review.pdf",
+      "pageCount": 4
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/854-planned-dev-review_0.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.941957+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "026543aec1b7052647e41a10ff5293f1bd0e8d68b31b25b30ca72e385415d33c",
+      "bytes": 251752,
+      "file": "026543aec1b7052647e41a10ff5293f1bd0e8d68b31b25b30ca72e385415d33c.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/854-planned-dev-review_0.pdf",
+      "pageCount": 10
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/855-zoning-map-amend_0.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:53.984626+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "b01cd09b2ec517568388ee2060f2d55c0b1ed2f3546bf8ecfe2d2b193a206494",
+      "bytes": 155688,
+      "file": "b01cd09b2ec517568388ee2060f2d55c0b1ed2f3546bf8ecfe2d2b193a206494.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/855-zoning-map-amend_0.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/865-river-review.pdf",
+      "groups": [
+        "800s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:54.000797+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "43fd40d2981ad495424b61885ccc9ac462e3e9738dccd207b921d934e968e79f",
+      "bytes": 241870,
+      "file": "43fd40d2981ad495424b61885ccc9ac462e3e9738dccd207b921d934e968e79f.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/865-river-review.pdf",
+      "pageCount": 16
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/900-list-of-terms_1.pdf",
+      "groups": [
+        "900s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:54.185759+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "133398bff61535cb20a400ef78427984700656b2fe7e95c1822b5e2c75884074",
+      "bytes": 268001,
+      "file": "133398bff61535cb20a400ef78427984700656b2fe7e95c1822b5e2c75884074.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/900-list-of-terms_1.pdf",
+      "pageCount": 8
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/910-definitions_0.pdf",
+      "groups": [
+        "900s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:54.268535+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "061c43fa6990e1aa2aa191c09b8e6bcb07f9a1850a8440d38fcf90be7e9cf1a4",
+      "bytes": 2516345,
+      "file": "061c43fa6990e1aa2aa191c09b8e6bcb07f9a1850a8440d38fcf90be7e9cf1a4.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/910-definitions_0.pdf",
+      "pageCount": 42
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/920-categories_1.pdf",
+      "groups": [
+        "900s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:54.379894+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "42a6fcad1c43f51b8a5ddef04ff6af593541a93ea58b31fd835b4a22cc26ab4e",
+      "bytes": 272217,
+      "file": "42a6fcad1c43f51b8a5ddef04ff6af593541a93ea58b31fd835b4a22cc26ab4e.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/920-categories_1.pdf",
+      "pageCount": 20
+    },
+    {
+      "url": "https://www.portland.gov/sites/default/files/code/930-measurements_0.pdf",
+      "groups": [
+        "900s"
+      ],
+      "retrievedAt": "2026-09-10T00:31:54.394748+00:00",
+      "status": "downloaded",
+      "reviewStatus": "unreviewed",
+      "effectiveDate": null,
+      "sha256": "a60ca0e69b0d0c7b4c16691f783df17977aefcd8476d0d0dd9f14e54acab2c07",
+      "bytes": 1773163,
+      "file": "a60ca0e69b0d0c7b4c16691f783df17977aefcd8476d0d0dd9f14e54acab2c07.pdf",
+      "finalUrl": "https://www.portland.gov/sites/default/files/code/930-measurements_0.pdf",
+      "pageCount": 20
+    }
+  ]
+}

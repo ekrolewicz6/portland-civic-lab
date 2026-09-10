@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
+import { BH_SOURCES } from "@/lib/homeless/behavioral-health";
 import styles from "./JourneyExplorer.module.css";
 
 type RouteStop = { title: string; caption: string };
@@ -11,6 +12,8 @@ type Journey = {
   title: string;
   need: string;
   icon: "home" | "care" | "person";
+  routeLabel?: string;
+  endIcon?: "home" | "care";
   start: RouteStop;
   stuck: { middle: RouteStop; end: RouteStop; support: string[]; explanation: string };
   repair: { middle: RouteStop; end: RouteStop; support: string[]; explanation: string };
@@ -123,6 +126,29 @@ const JOURNEYS: Journey[] = [
       },
     ],
   },
+  {
+    id: "psychiatric", label: "Leaving psychiatric inpatient care", title: "Ready to leave acute care. Still needing psychiatric support.",
+    need: "An illustrative patient no longer needs acute hospitalization but needs an appropriate level of psychiatric support before moving to a less intensive setting.",
+    icon: "care", endIcon: "care", routeLabel: "Clinical transition + housing work",
+    start: { title: "Clinically ready for transfer", caption: "The hospital assesses continuing care needs." },
+    stuck: {
+      middle: { title: "Receiving care unavailable", caption: "A referral has no accepting, staffed service." },
+      end: { title: "Transfer remains blocked", caption: "An acute bed may remain occupied." },
+      support: ["Begin housing planning", "Authorization or capacity unresolved", "Continuing care not secured"],
+      explanation: "Clinical readiness alone cannot complete a discharge. Check whether the obstacle is an appropriate staffed place, payment authorization, entry criteria or the receiving provider’s acceptance. A shelter opening cannot replace required psychiatric care.",
+    },
+    repair: {
+      middle: { title: "An appropriate service accepts", caption: "Confirm care level, authorization and staff." },
+      end: { title: "Arrive with continuing care", caption: "Verify medication, follow-up and housing work." },
+      support: ["Assign a housing navigator", "Secure benefits and a housing resource", "Continue the route to a lasting home"],
+      explanation: "The hospital, payer and receiving provider resolve clinical fit and coverage together; a transition worker confirms transport and arrival. Housing planning starts during hospitalization. Completing treatment is not a general condition of housing eligibility.",
+    },
+    verify: "Was the assessed care authorized and received, how long did each delay last, and what happened to care continuity and housing afterward? Unknown follow-up remains unknown.",
+    sources: [
+      { name: "Council presentation · September 9, 2026", url: BH_SOURCES.slides.url + "#page=12", note: "Slides 12–14 propose preserving inpatient care and developing subacute/respite. This example is conceptual, not a measured local patient pathway or guaranteed service." },
+      { name: "OHA · OHP rate development", url: BH_SOURCES.rates.url, note: "CCO capitation finances covered care; payment, authorization and an accepting provider are distinct parts of a placement." },
+    ],
+  },
 ];
 
 function JourneyIcon({ kind }: { kind: Journey["icon"] }) {
@@ -217,7 +243,7 @@ export default function JourneyExplorer() {
           aria-label={`${journey.label}: ${isRepair ? "a proposed better handoff" : "an illustrative bottleneck"}`}
         >
           <div className={styles.diagramHeading}>
-            <span className={styles.railLabel}>Housing route</span>
+            <span className={styles.railLabel}>{journey.routeLabel ?? "Housing route"}</span>
             <span className={styles.viewLabel}>{isRepair ? "Proposed improvement" : "Illustrative bottleneck"}</span>
           </div>
           <ol className={styles.route}>
@@ -229,7 +255,7 @@ export default function JourneyExplorer() {
                       {isRepair ? <path d="m5 12 4 4L19 6" /> : <path d="M8 5v14M16 5v14" />}
                     </svg>
                   ) : index === 2 ? (
-                    <JourneyIcon kind="home" />
+                    <JourneyIcon kind={journey.endIcon ?? "home"} />
                   ) : (
                     <span />
                   )}

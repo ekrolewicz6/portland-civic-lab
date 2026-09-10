@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-09",
+  "baseline_commit": "23b4670d8d26b9093f6e401bb89d9d6f30d8506d",
+  "unit_tests": 271,
+  "catalog_smoke_tests_included": 180,
+  "integration_checks": 15,
+  "build": "passed",
+  "typecheck": "passed",
+  "changed_files_lint_exit": 0,
+  "full_repository_lint": "5 pre-existing errors; see log",
+  "production_records_modified": false,
+  "external_test_effects": "disabled",
+  "browser_cases": [
+    "fence height threshold and revision invalidation",
+    "synthetic conflicting PDF through browser worker",
+    "ADU 750/751 sq-ft threshold",
+    "homepage capability claims"
+  ],
+  "browser_limit": "Native file-picker automation stalled; same parser verified through built-in synthetic example. No complete real-plan validation."
+}

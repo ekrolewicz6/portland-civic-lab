@@ -1,0 +1,652 @@
+
+--- PDF PAGE 1 ---
+TECHNICAL MEMORANDUM  
+DATE: June 27, 2025 
+TO: Lauren Broudy and Karl Lisle | City of Portland 
+FROM: Garth Appanaitis and Kevin Chewuk | DKS Associates 
+SUBJECT:  Performing Arts Center 
+Summary – Transportation Study Findings 
+This memorandum marks the conclusion of our initial study of the three potential performing arts 
+scenarios, including the renovation of the Keller site, the construction of a new PSU site, and 
+combined uses at both locations.  
+In summary, this study did not identify any fatal flaws for either site but did identify various 
+opportunities and challenges with potential considerations for future site refinement to 
+enable site function.  
+SUMMARY OF FINDINGS  
+1. Both the renovation of the Keller site and the construction of a new PSU site share two
+common benefits:
+a. the traffic activity generally occurs outside of key congestion periods; and
+b. the central location within the region means that patron travel will be spread more evenly
+among regional travel routes.
+Key Takeaway—This decreases the opportunity for significant negative traffic impacts (such as 
+congestion, bottlenecks, closures, etc.). 
+2. We collected information to help us learn how a new performing arts center might affect
+traffic. This includes how many cars are already on nearby roads, how many more car trips
+the center would cause, what time those trips would happen, and which roads people would
+use.
+Key Takeaway— This new data can be used to support detailed traffic analysis for either site.
+3. The Keller site is already in operation and is not expected to add more traffic to the system.
+However, the PSU site would bring new trip activity, either by replacing the Keller site or adding
+to it. Portland City Code 17.88.050 requires traffic studies for development that exceeds 100
+vehicle trips during an hour in the peak direction. This threshold would be triggered if a new
+EXHIBIT A
+
+--- PDF PAGE 2 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY  FINDINGS  • JUNE  202 5 2  
+ 
+ 
+performing arts center is built at PSU – through the details of the traffic study and requirements 
+may depend on whether the Keller site stays open or if the PSU site takes its place. 
+Key takeaway—Additional coordination with PBOT and ODOT staff would be needed to 
+determine the specific requirements of a traffic study that may be needed for the PSU site to 
+address the requirements of Portland City Code 17.88.050. 
+4. A review of traffic volumes on SW 3rd Avenue indicates that the street could be a candidate for a 
+lane reduction to improve pedestrian circulation and safety adjacent to the Keller site.  
+Key takeaway—Reducing traffic to one lane on this portion of SW 3rd Avenue could be a 
+candidate for a pilot project with PBOT. 
+5. As the PSU site plan and design develops, the key traffic element to address will likely be 
+reducing the potential for vehicle queuing on the SW 4th Avenue off ramp.  
+Key takeaway—Focusing on reducing the potential of vehicle queuing on the SW 4th Avenue off-
+ramp through the positioning of the site entry, maintaining traffic flow at site entry, and alerting 
+patrons of other parking opportunities, for example, will be critical to reduce negative traffic 
+impacts on this site. 
+RECOMMENDED NEXT STEPS  
+ 
+1. Lane Reduction Pilot Project at Existing Keller Site—Coordinate with PBOT staff to implement 
+a pilot project that temporarily reduces the number of lanes on SW 3rd Avenue to one travel 
+lane (and additional loading zone) between SW Clay Street and SW Market Street. The 
+duration and implementation of this pilot should be determined by traffic engineers at PBOT. 
+2. Incorporate Traffic Impact Reduction Treatments at PSU Site as Project Design Advances—
+As site design advances, consider incorporating treatments that would reduce the potential 
+for vehicle queuing on the SW 4th Avenue off-ramp. Additional coordination with PBOT and 
+ODOT staff would be needed to determine the specific requirements of a traffic study that may 
+be needed for the PSU site to address the requirements of Portland City Code 17.88.050. 
+ 
+Thank you for this opportunity to advance the understanding of the potential transportation 
+impacts and needs for a Performing Arts Center.  
+
+--- PDF PAGE 3 ---
+ 
+ 
+TECHNICAL MEMORANDUM  
+DATE:  June 27, 2025 
+TO:  Lauren Broudy and Karl Lisle | City of Portland 
+FROM:  Garth Appanaitis and Kevin Chewuk | DKS Associates 
+SUBJECT:  Performing Arts Center 
+Transportation Study 
+ 
+ 
+This document summarizes a high-level transportation study that was conducted to identify key 
+issues and needs for further review and evaluation of three potential Performing Arts Center 
+scenarios in downtown Portland. This high-level analysis is based on readily available data to better 
+understand the transportation system and its current conditions, opportunities, and constraints for 
+the three scenarios.  
+This analysis is not intended to represent a full transportation study for specific uses at any 
+location, and each potential scenario will require more study if it is recommended for further 
+consideration by stakeholders. This study did not identify any fatal flaws for either site but 
+did identify various opportunities and challenges with potential considerations for future 
+site refinement to enable site function. The information summarized in this document may be 
+leveraged to support the future additional transportation study related to site development. 
+The following sections summarize the key analysis findings. Additional technical data is included in 
+the appendix. 
+GENERAL INFORMATION  
+• Scope of Study: Three potential scenarios were considered: 
+• Scenario 1: Renovate the existing Keller Auditorium 
+• Scenario 2: Construct a new venue at Portland State University (PSU) 
+• Scenario 3: Renovate the existing Keller Auditorium (Scenario 1) + Construct a new 
+venue at PSU (Scenario 2) 
+• Data Collected: Data was collected to inform and better understand the impacts and needs 
+of a venue, regardless of specific location. This data is applicable for each scenario, with more 
+information provided in the appendix. 
+• Patron trip generation – Patrons were surveyed upon arriving at a Keller event to 
+determine the type of travel mode and size of their group. This information is important 
+
+--- PDF PAGE 4 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 2  
+ 
+ 
+to estimate the amount of vehicular traffic that could be added to the transportation 
+system for a new venue. The survey of approximately 320 patrons indicated that there 
+is approximately one vehicle added to the system for every 2.6 patrons. This and the 
+related survey data are needed to estimate the trip generation for the site since national 
+data from other sources is limited. 
+• Patron trip distribution – Sales zip codes for an event (SIX - The Musical) were used to 
+estimate where patrons were traveling from. This information is important to understand 
+the potential impact and added traffic on regional roads. This was a non-member event 
+and member event distribution may vary. The information for Six indicated: 
+• 22 percent of patrons travel to/from the north of downtown Portland (e.g., N/NE 
+Portland, Vancouver) 
+• 36 percent to/from the south of downtown Portland (e.g., SW Portland, Tigard, Lake 
+Oswego) 
+• 21 percent to/from the east of downtown Portland (e.g., E/SE Portland, Happy Valley) 
+• 21 percent to/from the west of downtown Portland (e.g., NW Portland, Beaverton, 
+Hillsboro) 
+• Parking Arrival and Duration data – A mix of parking summary and raw data was 
+obtained for several private and public garages in the area. Function of the ticketing 
+systems limits some of the data that is available. However, based on a review of the 200 
+Market event parking data, it appears that approximately 20 percent of parking patrons 
+arrive over an hour before the show time, while the remaining 80 percent arrive within 
+the hour of the show. This data is important to understand the portion of event traffic 
+that is added to the roadway system before a show. 
+• Traffic volumes – Traffic volume data was collected along streets in the vicinity of the 
+Keller Auditorium and proposed PSU venues to better understand current travel 
+patterns. The data included turn movement volumes at intersections and average daily 
+traffic volumes along street segments. 
+• General Use Opportunities: The following benefits are applicable to both locations studied: 
+• Location – Being centrally located within the region in downtown Portland allows traffic 
+to arrive and disperse from a variety of directions and facilities. 
+• Use Type – The typical programming for events and facility use (e.g., weekday 
+evenings) is not during peak traffic system congestion periods.  
+• Future Needs: This high-level transportation study identifies key issues and needs for 
+further review and evaluation.  
+• This is not a full traffic study for any potential scenario. Each potential scenario will 
+require more study if it is recommended for further consideration by stakeholders. 
+SCENARIO 1: RENOVATE THE EXISTING KELLER  AUDITORIUM  
+• The existing Keller Auditorium remains in its current location, bounded by SW 3rd Avenue, 
+SW Market Street, SW 2nd Avenue, and SW Clay Street. 
+• The venue is renovated, although the capacity remains at 3,000 seats. 
+
+--- PDF PAGE 5 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 3  
+ 
+ 
+CURRENT CONDITIONS  
+• The existing trips are already served by the transportation system, and no changes are 
+expected in that estimated demand. 
+• During a sold-out event, the current venue generates an estimated: 
+• 923 pre-event peak and 981 post-event peak motor vehicle trips 
+• 144 pre-event peak and 153 post-event peak transit, walking, or biking trips 
+• The transportation system generally functions adequately with the current arrival and 
+departure patterns for patrons1. 
+• Existing vehicular parking is abundant in the area, with over 3,000 spaces located within a 
+one-block walk and an additional 2,000 spaces within five blocks. 
+KEY ISSU ES 
+• Peak event flows for patrons creates congestion along frontages adjacent to the venue 
+entrances along SW 3rd Avenue and SW Clay Street. 
+• Pedestrians walking from nearby parking garages are frequently using crosswalks on SW 
+Market Street and SW Clay Street at SW 3rd Avenue, and conflicting with vehicular traffic 
+along these streets. With adjacent parking garages located kitty-corner from the Keller 
+venue, pedestrians typically cross two legs of the intersection to arrive at the front door. 
+POTENTIAL OPPORTUNITIES  
+• Changing the configuration of SW 3rd Avenue between SW Clay Street and SW Market Street 
+could be considered to accommodate peak event pedestrian flows.  
+• SW 3rd Avenue currently has two travel lanes and a lane for loading along both the east 
+and west block faces. Potential alternative configurations for SW 3rd Avenue along this 
+segment include: 
+• Option 1: Close SW 3rd Avenue to vehicular traffic permanently 
+• Option 2: Close SW 3rd Avenue to vehicular traffic only during events 
+• Option 3: Narrow SW 3rd Avenue to one travel lane, but always keep one-lane open 
+for vehicular traffic 
+• This block of SW 3rd Avenue is the last block before the street ends at SW Market Street 
+OVERALL FINDINGS  
+• Option 3 (narrow to one travel lane) is recommended for further consideration. It is expected 
+to have a minimal impact on the surrounding transportation system throughout a typical day, 
+and current arrival and departure patterns for patrons during events. 
+ 
+1 Field observations were conducted on Friday, May 2nd, 2025 while events were occurring at both 
+the Keller Auditorium and Arlene Schnitzer Concert Hall. SIX - The Musical was occurring at Keller 
+Auditorium, and had an attendance of 2,817, which was 94 percent of capacity. The Trisha Paytas 
+Tour was occurring at the Arlene Schnitzer Concert Hall, and it was also heavily sold at near 
+capacity. 
+
+--- PDF PAGE 6 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 4  
+ 
+ 
+• Vehicles will continue to have access along this segment of SW 3rd Avenue between SW 
+Clay Street and SW Market Street at all times. 
+• Some added congestion may occur as vehicles maneuver between the travel lane and 
+loading lane and temporarily block the movement of vehicles with a single lane 
+configuration. 
+• A single travel lane would restrict left turn movements onto SW Market Street as a single 
+lane movement. The traffic count showed approximately 100 vehicles during the PM peak 
+hour, and a single lane should be able to provide adequate capacity for this turn. The 
+intersection is controlled by a traffic signal with a simple two-phase control (SW Market 
+Street has green or SW 3rd Avenue has green). This control allows for efficient movement 
+of traffic. Intersections with a single left turn lane often have turn movements much 
+higher than 100 vehicles per hour. In this case, there are no conflicting pedestrian 
+movements, and a single lane should be able to provide adequate capacity for the left 
+turn onto Market Street. If congestion and vehicles queued on SW Market Street limit 
+vehicles turning from SW 3rd Avenue, this phenomenon may occur regardless of SW 3rd 
+Avenue having one or two lanes. 
+• A configuration to pilot test a single lane closure of SW 3rd Avenue could be coordinated 
+with PBOT. 
+• Option 1 has the most impact on the surrounding transportation system, although it will only 
+be slightly more impactful than Option 2. 
+• Vehicles will not have access along this segment of SW 3rd Avenue between SW Clay 
+Street and SW Market Street during events for both Options, and throughout the 
+remainder of the day for Option 1. 
+• Vehicles would have to reroute to adjacent travel routes to reach SW Market Street, such 
+as via SW 5th Avenue or SW 1st Avenue. Although the traffic count data along these 
+routes suggests that this shift would have a minor impact on operations. 
+• Both Options 1 and 2 would require patron drop-off during events to occur elsewhere 
+with the closure of SW 3rd Avenue during events. This could potentially occur along the 
+frontage of SW Clay Street where some of the existing on-street parking could be 
+redesignated to serve as a loading zone.  
+ 
+SCENARIO 2: CONSTRUCT A NEW VENUE AT PSU  
+• Construct a new Performing Arts Center along SW Lincoln Street just east of SW 4th Avenue. 
+• Two venues are proposed with a total capacity of 4,200 seats: 
+• 3,000 seat performing arts center facility  
+• 1,200 seat event venue 
+CURRENT CONDITIONS  
+• Since the use does not currently exist, these venues would add additional traffic 
+• During sold-out events, the proposed venues are expected to generate an estimated: 
+• 1,474 pre-event peak and 1,566 post-event peak motor vehicle trips 
+• 202 pre-event peak and 214 post-event peak transit, walking, or biking trips 
+• Existing traffic volume data at the SW 4th Avenue/SW Lincoln Street intersection during the 
+anticipated pre-event peak hour (i.e., 6:30-7:30 p.m.) indicated that utilization is minimal. 
+
+--- PDF PAGE 7 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 5  
+ 
+ 
+• This included 348 vehicles on the northbound I-405 exit ramp and SW 4th Avenue 
+approach, of which 51 turned right from the I-405 exit ramp to SW Lincoln Street where 
+the proposed venue will add more trips traveling to the new proposed on-site parking 
+garage 
+• Existing observations indicate that the SW 4th Avenue/SW Lincoln Street intersection operates 
+well, with minimal delay observed for vehicles during the anticipated pre-event peak hour. 
+• Existing vehicular parking is available in the area with over 3,000 spaces within a five-block 
+walk. 
+• A MAX station is located adjacent to the site, as well as two pedestrian paths located along 
+the alignment of SW 2nd Avenue and SW 3rd Avenue.  
+KEY ISSUES  
+• Vehicular access will be constrained from SW Lincoln Street to a proposed on-site parking 
+garage with 740 spaces. 
+• MAX platform and tracks on SW Lincoln Street to north 
+• No site access to the east (existing development) or west / south (I-405 exit ramp) 
+• Potential for increased vehicular congestion and queuing at the SW Lincoln Street/SW 4th 
+Avenue intersection and I-405 exit ramp during the peak event arrival and departure periods. 
+Traffic spilling back onto I-405 from the SW 4th Avenue off ramp is likely the most critical 
+traffic issue to be addressed and will require additional study and coordination with ODOT. 
+• Trip distribution data shows that approximately 36% of trips would travel from the south, 
+of which a majority will likely use the I-405 exit ramp (i.e., assumed as 75%) which 
+would potentially add 374 trips to the I-405 ramp during the pre-arrival peak hour. 
+Additional traffic analysis would be required to determine the potential impacts to the 
+ramp and potential for vehicle queues to reach I-405 mainline. 
+• The remainder of these trips from the south (i.e., 25% or 125 pre-arrival peak hour trips) 
+would likely use SW Naito Parkway or S Harbor Drive to reach the proposed PSU venues 
+and nearby parking. 
+• There is potential for conflicts between pedestrians and vehicular traffic at the pedestrian 
+crossing on SW Lincoln Street adjacent to the Lincoln Street/SW 3rd Avenue MAX stop. 
+POTENTIAL OPPORTUNITIES  
+• Various opportunities could be considered to improve vehicle flow to the site and manage the 
+potential for traffic queues on the I-405 off-ramp.  
+• SW Lincoln Street Site Access 
+• Locate the site access as far as possible to the east along the site frontage to 
+maximize queue storage potential 
+• Add an eastbound right turn lane to enter the site and avoid blocking through 
+traffic on SW Lincoln Street 
+• Provide an additional curb loading lane on SW Lincoln Street for drop off 
+
+--- PDF PAGE 8 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 6  
+ 
+ 
+• Consider alternative signal timing and/or turn restrictions at the intersection, 
+including the potential restriction of westbound left turn movements during and 
+before events 
+• Maximize vehicle queue storage and maintain circulation on site to reduce 
+opportunity for vehicles entering the site to spill back to SW Lincoln Street 
+• Consider treatments to manage the conflicts between pedestrians crossing SW 
+Lincoln Street and vehicles entering the site 
+• SW 4th Avenue at Lincoln Street 
+• Consider opportunities to modify the intersection to improve flow for the right 
+turn from SW 4th Avenue to SW Lincoln Street. Currently vehicles cannot turn on 
+red. 
+• Signing and wayfinding to direct some from SW 4th Avenue to park elsewhere and 
+continue straight on SW 4th Avenue rather than turning at SW Lincoln Street. This 
+may include dynamic parking signs that indicate where additional parking 
+supplies exists. 
+OVERALL FINDINGS  
+• Since the use does not currently exist, these venues would add additional traffic. However, 
+traffic would be arriving from multiple directions and locations and could likely be managed. 
+• The SW 4th Avenue off-ramp from I-405 will require additional study and coordination with 
+ODOT to address concerns about potential vehicle queue spillback onto the I-405 mainline. 
+• Opportunities to manage the potential for vehicle queues on the I-405 ramp were identified 
+and could be considered through the site refinement process. The feasibility and effectiveness 
+of each option will likely depend on other site conditions and constraints. 
+  
+
+--- PDF PAGE 9 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 7  
+ 
+ 
+FINDINGS AND NEXT STEPS  
+In summary, this study did not identify any fatal flaws for either site but did identify various 
+opportunities and challenges with potential considerations for future site refinement to 
+enable site function. Based on the transportation study, the following summarizes the overall 
+findings and potential next steps. 
+SUMMARY OF  FINDINGS  
+1. Both the renovation of the Keller site and the construction of a new PSU site share two common 
+benefits: 
+a. the traffic activity generally occurs outside of key congestion periods; and 
+b. the central location within the region means that patron travel will be spread more evenly 
+among regional travel routes.  
+Key Takeaway—This decreases the opportunity for significant negative traffic impacts (such as 
+congestion, bottlenecks, closures, etc.). 
+2. We collected information to help us learn how a new performing arts center might affect 
+traffic. This includes how many cars are already on nearby roads, how many more car trips 
+the center would cause, what time those trips would happen, and which roads people would 
+use.  
+Key Takeaway— This new data can be used to support detailed traffic analysis for either site.  
+3. The Keller site is already in operation and is not expected to add more traffic to the system. 
+However, the PSU site would bring new trip activity, either by replacing the Keller site or adding 
+to it. Portland City Code 17.88.050 requires traffic studies for development that exceeds 100 
+vehicle trips during an hour in the peak direction. This threshold would be triggered if a new 
+performing arts center is built at PSU – through the details of the traffic study and requirements 
+may depend on whether the Keller site stays open or if the PSU site takes its place. 
+Key takeaway—Additional coordination with PBOT and ODOT staff would be needed to 
+determine the specific requirements of a traffic study that may be needed for the PSU site to 
+address the requirements of Portland City Code 17.88.050. 
+4. A review of traffic volumes on SW 3rd Avenue indicates that the street could be a candidate for a 
+lane reduction to improve pedestrian circulation and safety adjacent to the Keller site.  
+Key takeaway—Reducing traffic to one lane on this portion of SW 3rd Avenue could be a 
+candidate for a pilot project with PBOT. 
+5. As the PSU site plan and design develops, the key traffic element to address will likely be 
+reducing the potential for vehicle queuing on the SW 4th Avenue off ramp.  
+Key takeaway—Focusing on reducing the potential of vehicle queuing on the SW 4th Avenue off-
+ramp through the positioning of the site entry, maintaining traffic flow at site entry, and alerting 
+patrons of other parking opportunities, for example, will be critical to reduce negative traffic 
+impacts on this site. 
+ 
+
+--- PDF PAGE 10 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 8  
+ 
+ 
+RECOMMENDED NEXT STEPS  
+1. Lane Reduction Pilot Project at Existing Keller Site—Coordinate with PBOT staff to implement 
+a pilot project that temporarily reduces the number of lanes on SW 3rd Avenue to one travel 
+lane (and additional loading zone) between SW Clay Street and SW Market Street. The 
+duration and implementation of this pilot should be determined by traffic engineers at PBOT. 
+2. Incorporate Traffic Impact Reduction Treatments at PSU Site as Project Design Advances—
+As site design advances, consider incorporating treatments that would reduce the potential 
+for vehicle queuing on the SW 4th Avenue off-ramp. Additional coordination with PBOT and 
+ODOT staff would be needed to determine the specific requirements of a traffic study that may 
+be needed for the PSU site to address the requirements of Portland City Code 17.88.050. 
+ 
+  
+
+--- PDF PAGE 11 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 9  
+ 
+ 
+TECHNICAL APPENDIX  
+ 
+The following sections include additional technical material and detail. 
+POTENTIAL PERFORM ING  ARTS CENTER SCENARIOS  
+High-level transportation opportunities and constraints were evaluated for the following three 
+performing arts center scenarios: 
+1. Renovate the existing Keller Auditorium 
+• Assumes similar venue capacity (3,000 seats), event flows and arrival/departure patterns 
+for patrons as the existing facility 
+2. Build a new Performing Arts Facility along SW Lincoln Street, just east of SW 4th Avenue 
+• New Performing Arts Center along SW Lincoln Street  
+o Two venues proposed: 
+• 3,000 seat performing arts center facility  
+▪ 1,200 seat event venue 
+• New parking garage with 740 parking spaces 
+3. Renovate the existing Keller Auditorium and Build a new Performing Arts Facility at Portland 
+State University 
+• Includes the assumptions listed under Scenarios 1 and 2 
+EXISTING  SITE OBSERVATIONS  
+Field observations were conducted on Friday, May 2nd, 2025 while events were occurring at both 
+the Keller Auditorium and Arlene Schnitzer Concert Hall. Both events were sold to near capacity2, 
+and these observed conditions were assumed to closely represent those that may occur during 
+Scenario 3, when events may occur at both a renovated existing Keller Auditorium and the new 
+Performing Arts Facility at Portland State University. Observations were made during the pre-event 
+arrival period between 5:00 p.m. and 7:30 p.m., with doors opening at 6:30 p.m. and the 
+showtime at 7:30 p.m.  
+ 
+2 SIX - The Musical was occurring at Keller Auditorium, and had an attendance of 2,817, which was 94 percent of capacity. 
+The Trisha Paytas Tour was occurring at the Arlene Schnitzer Concert Hall, and it was also heavily sold at near capacity. 
+
+--- PDF PAGE 12 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 10   
+ 
+ 
+Key observations from these events are summarized below: 
+• Some patrons arrived early for food service at Keller Auditorium between 5:00-6:00 
+p.m., and then most patrons arrived just before showtime between 6:30-7:30 p.m. 
+• Pedestrian queueing occurred at the SW 3rd Avenue and SW Clay Street entrances. 
+• Pedestrians walking from nearby parking garages are frequently using crosswalks on SW 
+Market Street and SW Clay Street at SW 3rd Avenue, and conflicting with vehicular traffic 
+along these streets. With adjacent parking garages located kitty-corner from the Keller 
+venue, pedestrians typically cross two legs of the intersection to arrive at the front door. 
+• Vehicular queueing was observed at nearby parking garage entrances, particularly along 
+SW 3rd Avenue extending from the entry to the Auditorium Garage through the SW 
+Columbia Street and SW Jefferson Street intersections. This was most noteworthy during 
+the pre-event peak hour between 6:30-7:30 p.m. 
+• Some vehicular queuing was observed along SW Clay Street at the SW 1st Avenue 
+intersection around 7:00 p.m., and it was noted that there was minimal traffic on the SW 
+1st Avenue approaches during this time. 
+• Minimal vehicular queuing was observed along SW Market Street during the observation 
+period. 
+TRIP DISTRIBUTION  
+The regional origin/destination of trips for patrons of SIX - The Musical at Keller Auditorium was 
+also obtained. This data for nearly 1,800 account holders was based on home area codes and 
+revealed that about: 
+• 22 percent of patrons travel to/from the north of downtown Portland (e.g., N/NE 
+Portland, Vancouver) 
+• 36 percent to/from the south of downtown Portland (e.g., SW Portland, Tigard, Lake 
+Oswego) 
+• 21 percent to/from the east of downtown Portland (e.g., E/SE Portland, Happy Valley) 
+• 21 percent to/from the west of downtown Portland (e.g., NW Portland, Beaverton, 
+Hillsboro). 
+PARKING  
+Available data from nearby parking garages was also reviewed to estimate arrival times for 
+patrons3. This data is limited in scope but provides a representative view of the number of patrons 
+who may arrive at the nearby parking garages and immediately head to the show and those who 
+may arrive a little earlier and patron nearby businesses before heading to the show. Based on an 
+ 
+3 Parking data from 200 Market Garage, Auditorium Garage, Crown Plaza Garage and Fifth Avenue Building was provided, 
+although time stamped entry data was only available for the 200 Market Garage.  
+
+--- PDF PAGE 13 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 11   
+ 
+ 
+analysis of vehicles entering the garage within four hours of showtime4, 80 percent of patrons are 
+estimated to arrive during the pre-event peak hour before showtime, with the remaining 20 
+percent of patrons estimated to arrive two to three hours before showtime. 
+TRIP ESTIMATES  
+The estimated trips generated by the proposed venue will be based on programming information 
+provided by the venue operators. The following assumptions are proposed to be used to generate 
+vehicle trips from the existing and proposed venues. 
+EVENT CHARACTERISTICS  
+The existing Keller Auditorium and the proposed PSU Performing Arts Center Facility will have a 
+maximum attendance capacity of approximately 3,000 people, while the proposed PSU Event 
+venue will have a maximum attendance capacity of approximately 1,200 people (see Table 1). 
+Events are primarily anticipated to occur during the weekday and weekend evening hours. 
+Typically, the doors for events will open at 6:30 p.m. and the show will start at approximately 7:30 
+p.m. and conclude at approximately 10:00 p.m.  
+TABLE 1: EVENT CHARACTERISTICS OF PERFORMING ARTS CENTER FACILITIES  
+VENUE  ATTENDANCE (MAXIMUM)  
+KELLER AUDITORIUM  3,000 
+PROPOSED PSU PERFORM ING ARTS 
+CENTER FACILITY  3,000 
+PROPOSED PSU EVENT VENUE  1,200 
+TYPICAL  SHOW SCHEDUL E   
+6:30 P.M.  Doors open to the venue 
+7:30 P.M.  Show begins 
+10:00 P.M.  Show ends 
+TOTAL TRIPS GENERATED BY SOLD -OUT EVENTS  
+ 
+4 It was assumed that vehicles entering garages earlier in the day were likely not related to shows occurring in the evening, 
+so only entry data within four hour of the showtime were considered. 
+
+--- PDF PAGE 14 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 12   
+ 
+ 
+The total estimated trips generated by the venues during sold-out events occurring simultaneously 
+at the three venues (i.e., 7,200 total attendees) are shown in Table 2. As shown, the venues are 
+expected to generate 5,760 pre-event peak trips and 6,120 post-event peak trips.  
+Pre-event peak hour attendee arrivals are estimated at 80 percent of total attendee arrivals (i.e., 
+5,760 attendees for a sold-out event), while post-event peak hour attendee departures are 
+estimated at 85 percent of total attendee departures (i.e., 6,120 attendees for a sold-out event)5. 
+TABLE 2: PEAK HOUR PERSON TRIPS FOR SOLD -OUT EVENTS  
+VENUE  
+PRE-EVENT PEAK HOUR            
+(6:30 -7:30  P.M.)  
+POST -EVENT PEAK HOUR  
+(10 P.M. -11 P.M.) 
+IN OUT TOTAL  IN OUT TOTAL  
+KELLER 
+AUDITORIUM  2,400 0 2,400 0 2,550 2,550 
+PROPOSED PSU 
+PERFORMING 
+ARTS CENTER  
+2,400 0 2,400 0 2,550 2,550 
+PROPOSED PSU 
+EVENT VENUE  960 0 960 0 1,020 1,020 
+TOTAL 5,760 0 5,760 0 6,120 6,120 
+Source : Attendee arrival and departure information  based on  sold -out events, 
+with 80 percent of total attendee arrivals  during the pre -event peak hour and 85 
+percent departing during  the post -event peak hour.  
+Mode Choice of Trips 
+A door survey was completed at Keller Auditorium during the pre-event arrival period (i.e., 5:00 to 
+7:30 p.m.) that interviewed 320 groups totaling 787 patrons. This represented nearly 30 percent of 
+the patrons for the show, with the results summarized in Table 3. The surveyed patrons arrived 
+mostly via private vehicle (i.e., 88 percent or 692 people) or drop-off vehicle trips (i.e., 6 percent 
+or 45 people), with the remaining 6 percent using transit (4 percent), walking (2 percent) or biking 
+(less than 1 percent). 
+  
+ 
+5 Arrival patterns are estimated based on parking information provided by the parking garage operators. Departure patterns 
+are estimated    
+
+--- PDF PAGE 15 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 13   
+ 
+ 
+TABLE 3: PRE EVENT TRIPS BY MODE FOR EVENT AT KELLER AUDITORIUM  
+TRAVELER TYPE  
+PRE-EVENT ARRIVAL PERIOD 
+(5:00 -7:30 P.M.)  
+TOTAL PEOPLE  MODE SHARE  
+TOTAL ATTENDEE TRIPS  * 787 100% 
+TRANSIT TRIPS  31 4% 
+WALKING TRIPS  16 2% 
+BIKING TRIPS  3 0% 
+PRIVATE VEHICLE TRIPS  692 88% 
+DROP OFF VEHICLE TRIPS  45 6% 
+Notes : * Estimates  based on door survey of patrons at Keller 
+Auditorium during the pre -event arrival period for  SIX - The 
+Musical  between 5:00 p.m. and 7:30 p.m. on Friday, May 2nd, 
+2025 . 
+As shown in Table 4, the venues are estimated to generate 2,872 pre-event peak and 3,051 post-
+event peak trips, including 346 pre-event peak and 367 post-event peak transit, walking, or biking 
+trips, and 2,526 pre-event peak and 2,684 post-event peak motor vehicle trips. Of these trips, 202 
+pre-event peak and 214 post-event peak transit, walking, or biking trips, and 1,474 pre-event peak 
+and 1,566 post-event peak motor vehicle trips would be traveling to/from the proposed PSU 
+venues, with the remaining trips (i.e., 144 pre-event peak and 153 post-event peak transit, 
+walking, or biking trips, and 1,053 pre-event peak and 1,118 post-event peak motor vehicle trips) 
+traveling to/from the Keller Auditorium as they do today for sold-out events. 
+  
+
+--- PDF PAGE 16 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 14   
+ 
+ 
+TABLE 4: PEAK HOUR TRIPS BY MODE FOR SOLD -OUT EVENTS  
+TRAVELER TYPE  
+PRE-EVENT PEAK HOUR  
+(6:30 -7:30 P.M.)  
+POST -EVENT PEAK HOUR     
+(10 P.M. -11 P.M.)  
+IN OUT TOTAL  IN OUT TOTAL  
+KELLER AUDITORIUM ATTENDEE TRIPS  ** 1,133 63 1,197 67 1,204 1,271 
+TRANSIT TRIPS  (4 PERCENT)  96 0 96 0 102 102 
+WALKING TRIPS  (1.5 PERCENT)  36 0 36 0 38 38 
+BIKING TRIPS  (0.5 PERCENT)  12 0 12 0 13 13 
+PRIVATE VEHICLE TRIPS  (88 PERCENT) *  926 0 926 0 984 984 
+DROP OFF  VEHICLE TRIPS  (6 PERCENT) *  63 63 126 67 67 134 
+PROPOSED PSU P ERFORMING ARTS CENTER  
+ATTENDEE TRIPS  ** 1,133 63 1,197 67 1,204 1,271 
+TRANSIT TRIPS  (4 PERCENT)  96 0 96 0 102 102 
+WALKING TRIPS  (1.5 PERCENT)  36 0 36 0 38 38 
+BIKING TRIPS  (0.5 PERCENT)  12 0 12 0 13 13 
+PRIVATE VEHICLE TRIPS  (88 PERCENT) *  926 0 926 0 984 984 
+DROP OFF  VEHICLE TRIPS  (6 PERCENT) *  63 63 126 67 67 134 
+PROPOSED PSU EVENT VENUE ATTENDEE 
+TRIPS  ** 453 25 479 27 482 509 
+TRANSIT TRIPS  (4 PERCENT)  38 0 38 0 41 41 
+WALKING TRIPS  (1.5 PERCENT)  14 0 14 0 15 15 
+BIKING TRIPS  (0.5 PERCENT)  5 0 5 0 5 5 
+PRIVATE VEHICLE TRIPS  (88 PERCENT) *  371 0 371 0 394 394 
+DROP OFF  VEHICLE TRIPS  (6 PERCENT) *  25 25 51 27 27 54 
+TOTOAL ATTENDEE TRIPS  ** 2,720 152 2,872 161 2,890 3,051 
+TRANSIT TRIPS  (4 PERCENT)  230 0 230 0 245 245 
+WALKING TRIPS  (1.5 PERCENT)  86 0 86 0 92 92 
+BIKING TRIPS  (0.5 PERCENT)  29 0 29 0 31 31 
+PRIVATE VEHICLE TRIPS  (88 PERCENT) *  2,223 0 2,223 0 2,362 2,362 
+DROP OFF  VEHICLE TRIPS  (6 PERCENT) *  152 152 303 161 161 322 
+Notes: * Average vehicle occupancy was estimated at 2. 28 persons  per vehicle for attendees based on a 
+survey of attendees at Keller Auditorium.   
+** Estimates derived from sold out events occurring simultaneously at all three venues.  
+  
+
+--- PDF PAGE 17 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 15   
+ 
+ 
+EXISTING TRAFFIC VOLUMES  
+Traffic volume data was collected along streets in the vicinity of the Keller Auditorium and proposed 
+PSU venues to better understand current travel patterns. The data included turn movement 
+volumes at intersections and average daily traffic volumes along street segments. A summary of 
+the data from a few key locations is provided below: 
+SW 3rd Avenue between SW Clay Street and SW Market Street 
+• Segment adjacent to Keller Auditorium 
+• Average daily traffic volume: 2,537 
+• AM Peak hour volume: 53 
+• PM Peak hour volume: 100 
+ 
+SW Clay Street between SW 3rd Avenue and SW 2nd Avenue 
+• Segment adjacent to Keller Auditorium 
+• Average daily traffic volume: 6,686 
+• AM Peak hour volume: 140 
+• PM Peak hour volume: 146 
+ 
+SW Market Street between SW 4th Avenue and SW 3rd Avenue 
+• Segment approaching Keller Auditorium 
+• Average daily traffic volume: 6,464 
+• AM Peak hour volume: 166 
+• PM Peak hour volume: 186 
+SW 4th Avenue/ SW Lincoln Street 
+• Intersection adjacent to proposed PSU venues 
+• Data collected from 6:00-8:00 p.m. to coincide with the pre-arrival period for evening 
+events 
+• Existing traffic volume data at the SW 4th Avenue/SW Lincoln Street intersection during 
+the anticipated pre-event peak hour (i.e., 6:30-7:30 p.m.) indicated that utilization is 
+minimal. 
+• 348 vehicles on the northbound I-405 exit ramp and SW 4th Avenue approach, of which 
+51 turned right from the I-405 exit ramp to SW Lincoln Street where the proposed venue 
+will add more trips traveling to the new proposed on-site parking garage 
+• 71 vehicles on the eastbound SW Lincoln Street approach 
+• 83 vehicles on the westbound SW Lincoln Street approach 
+ 
+
+--- PDF PAGE 18 ---
+ 
+ PERFORMING ARTS CENTER • TRANSPORTATION STUDY • JUNE  202 5 16   
+ 
+ 
+ 

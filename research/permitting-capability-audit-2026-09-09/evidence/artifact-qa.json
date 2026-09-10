@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "report_has_no_unresolved_citations": true,
+    "no_internal_web_tokens": true,
+    "catalog_180_unique": true,
+    "catalog_nonempty_cells": true,
+    "catalog_matches_verification": true,
+    "category_totals_180": true,
+    "all_source_ids_resolve": true,
+    "backlog_rule_sources_resolve": true,
+    "path_slugs_resolve": true,
+    "no_csv_formula_prefixes": true,
+    "impact_arithmetic": true,
+    "test_count_matches": true,
+    "local_links_exist": true
+  },
+  "csv_rows": {
+    "catalog-reconciliation.csv": 14,
+    "impact-sensitivity.csv": 9,
+    "test-results.csv": 69,
+    "automation-paths.csv": 47,
+    "rules-coverage.csv": 22,
+    "engineering-backlog.csv": 15,
+    "integration-gaps.csv": 18,
+    "claims-verdicts.csv": 16,
+    "catalog-matrix.csv": 180,
+    "effort-models.csv": 4,
+    "compliance-backlog.csv": 11,
+    "sources.csv": 88
+  },
+  "report_words": 9052,
+  "missing_links": []
+}

@@ -1,0 +1,75 @@
+
+> portland-temp@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+(node:14680) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+✓ Compiled successfully in 2.3s
+  Running TypeScript ...
+  Collecting page data using 15 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/25) ...
+  Generating static pages using 15 workers (6/25) 
+  Generating static pages using 15 workers (12/25) 
+  Generating static pages using 15 workers (18/25) 
+✓ Generating static pages using 15 workers (25/25) in 174.7ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ○ /admin
+├ ƒ /admin/applications
+├ ƒ /admin/applications/[id]
+├ ƒ /admin/coordination
+├ ○ /admin/equity
+├ ƒ /api/applications/[id]/pdf
+├ ƒ /api/compliance/parcel
+├ ƒ /api/dev-auth
+├ ƒ /api/download
+├ ƒ /api/permits
+├ ƒ /api/permits/[id]
+├ ƒ /api/permits/search
+├ ƒ /api/upload
+├ ƒ /api/webhooks/stripe
+├ ○ /applications
+├ ƒ /applications/[id]
+├ ƒ /apply/[slug]
+├ ƒ /auth/sign-out
+├ ƒ /callback
+├ ƒ /compliance
+├ ƒ /compliance/coverage
+├ ○ /dashboard
+├ ○ /dev-login
+├ ○ /documents
+├ ƒ /fees
+├ ƒ /forms
+├ ƒ /forms/[category]
+├ ƒ /map
+├ ƒ /map/permits
+├ ƒ /opengraph-image
+├ ○ /payments
+├ ƒ /pilot
+├ ○ /profile
+├ ƒ /property
+├ ƒ /property/[address]
+├ ƒ /property/[address]/brief
+├ ƒ /report
+├ ○ /robots.txt
+├ ƒ /search/permits
+├ ○ /sign-in
+├ ○ /sitemap.xml
+├ ƒ /start
+├ ƒ /timeline
+├ ƒ /twitter-image
+└ ƒ /zoning
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

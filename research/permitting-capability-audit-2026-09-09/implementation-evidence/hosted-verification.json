@@ -1,0 +1,10 @@
+{
+  "commit": "8d8c5e3b8818aef105ca21251fb01422cf358a87",
+  "pr": "https://github.com/ekrolewicz6/portland-civic-labs/pull/1",
+  "draft": true,
+  "vercel_portland_permits": "success",
+  "vercel_permits": "success",
+  "github_actions": "not started: account billing/spending limit",
+  "preview_runtime": "Vercel login required; browser acceptance ran locally",
+  "production_deployed": false
+}

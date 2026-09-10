@@ -1,0 +1,15 @@
+category,actual_entries,registry_present,upload_forms,upload_contract_failures,condition_exceptions,no_default_discipline
+reports,14,14,12,12,0,14
+businesses,19,19,8,8,0,19
+updates,3,3,1,1,0,3
+permits,62,62,44,40,0,47
+transportation,16,16,13,11,0,16
+business-filings,14,14,4,2,0,14
+parks-recreation,8,8,5,0,8,8
+water-sewer,12,12,6,6,0,12
+residents,10,10,5,5,0,10
+grants,5,5,5,5,0,5
+licenses,4,4,4,4,0,4
+claims,5,5,5,5,0,5
+rebates,5,5,4,4,0,5
+loans,3,3,3,2,0,3

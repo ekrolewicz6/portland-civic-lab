@@ -1,0 +1,901 @@
+{
+  "sourceCommit": "23b4670d8d26b9093f6e401bb89d9d6f30d8506d",
+  "runAt": "2026-09-09T22:24:11.750Z",
+  "method": "Original functions + memory PostgreSQL; synthetic cookies; Stripe contract mock, not live Stripe verification; no network",
+  "total": 69,
+  "gaps": 34,
+  "notificationCallsSuppressed": 27,
+  "results": [
+    {
+      "id": "BASE-electrical-permit",
+      "scenario": "Synthetic complete field fixture with catalog upload keys",
+      "expected_safe": "Workflow should consistently interpret its own schema",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "EMPTY-electrical-permit",
+      "scenario": "Empty application",
+      "expected_safe": "Must not auto-approve",
+      "observed": {
+        "autoApproved": false,
+        "stage": "completeness",
+        "disciplines": [],
+        "blockers": [
+          "completeness-firstName",
+          "completeness-lastName",
+          "completeness-email",
+          "completeness-phone",
+          "completeness-propertyAddress",
+          "completeness-propertyOwnerName",
+          "completeness-permitType",
+          "completeness-workDescription",
+          "completeness-performedBy",
+          "completeness-certifyAccurate",
+          "completeness-certifyCode",
+          "completeness-certifyLicense"
+        ],
+        "warnings": []
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "BASE-mechanical-permit",
+      "scenario": "Synthetic complete field fixture with catalog upload keys",
+      "expected_safe": "Workflow should consistently interpret its own schema",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "EMPTY-mechanical-permit",
+      "scenario": "Empty application",
+      "expected_safe": "Must not auto-approve",
+      "observed": {
+        "autoApproved": false,
+        "stage": "completeness",
+        "disciplines": [],
+        "blockers": [
+          "completeness-firstName",
+          "completeness-lastName",
+          "completeness-email",
+          "completeness-phone",
+          "completeness-propertyAddress",
+          "completeness-propertyType",
+          "completeness-workType",
+          "completeness-workDescription",
+          "completeness-equipmentMake",
+          "completeness-equipmentModel",
+          "completeness-btuTonnage",
+          "completeness-fuelType",
+          "completeness-gasPiping",
+          "completeness-performedBy",
+          "completeness-certifyAccurate",
+          "completeness-certifyCode",
+          "completeness-certifyLicense"
+        ],
+        "warnings": []
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "BASE-plumbing-permit",
+      "scenario": "Synthetic complete field fixture with catalog upload keys",
+      "expected_safe": "Workflow should consistently interpret its own schema",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "EMPTY-plumbing-permit",
+      "scenario": "Empty application",
+      "expected_safe": "Must not auto-approve",
+      "observed": {
+        "autoApproved": false,
+        "stage": "completeness",
+        "disciplines": [],
+        "blockers": [
+          "completeness-firstName",
+          "completeness-lastName",
+          "completeness-email",
+          "completeness-phone",
+          "completeness-propertyAddress",
+          "completeness-propertyType",
+          "completeness-workType",
+          "completeness-workDescription",
+          "completeness-waterHeaterType",
+          "completeness-waterHeaterGallons",
+          "completeness-performedBy",
+          "completeness-certifyAccurate",
+          "completeness-certifyCode",
+          "completeness-certifyLicense"
+        ],
+        "warnings": []
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "BASE-field-issuance-remodel",
+      "scenario": "Synthetic complete field fixture with catalog upload keys",
+      "expected_safe": "Workflow should consistently interpret its own schema",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "EMPTY-field-issuance-remodel",
+      "scenario": "Empty application",
+      "expected_safe": "Must not auto-approve",
+      "observed": {
+        "autoApproved": false,
+        "stage": "completeness",
+        "disciplines": [],
+        "blockers": [
+          "completeness-confirmRegistered",
+          "completeness-firstName",
+          "completeness-lastName",
+          "completeness-email",
+          "completeness-phone",
+          "completeness-propertyAddress",
+          "completeness-scopeOfWork",
+          "completeness-confirmEligible",
+          "completeness-workDescription",
+          "completeness-estimatedCost",
+          "completeness-contractorName",
+          "completeness-contractorCcb",
+          "completeness-contractorPhone",
+          "completeness-attestNonStructural",
+          "completeness-certifyAccurate",
+          "completeness-certifyInspections",
+          "completeness-certifyConversion"
+        ],
+        "warnings": []
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "BASE-fence-permit",
+      "scenario": "Synthetic complete field fixture with catalog upload keys",
+      "expected_safe": "Workflow should consistently interpret its own schema",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "EMPTY-fence-permit",
+      "scenario": "Empty application",
+      "expected_safe": "Must not auto-approve",
+      "observed": {
+        "autoApproved": false,
+        "stage": "completeness",
+        "disciplines": [],
+        "blockers": [
+          "completeness-applicantFirstName",
+          "completeness-applicantLastName",
+          "completeness-applicantEmail",
+          "completeness-applicantPhone",
+          "completeness-propertyAddress",
+          "completeness-withinHistoricDistrict",
+          "completeness-fenceType",
+          "completeness-fenceHeight",
+          "completeness-totalLinearFootage",
+          "completeness-fenceLocation",
+          "completeness-inSetbackArea",
+          "completeness-swimmingPoolBarrier",
+          "completeness-inOverlayZone",
+          "completeness-replacingExistingFence",
+          "completeness-estimatedCost",
+          "completeness-certifyAccurate",
+          "completeness-certifyPropertyOwner"
+        ],
+        "warnings": []
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "BASE-solar-permit",
+      "scenario": "Synthetic complete field fixture with catalog upload keys",
+      "expected_safe": "Workflow should consistently interpret its own schema",
+      "observed": {
+        "autoApproved": false,
+        "stage": "human_review",
+        "disciplines": [
+          "structural",
+          "zoning"
+        ],
+        "blockers": [
+          "doc-missing-site_plan",
+          "doc-missing-electrical_diagram"
+        ],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "EMPTY-solar-permit",
+      "scenario": "Empty application",
+      "expected_safe": "Must not auto-approve",
+      "observed": {
+        "autoApproved": false,
+        "stage": "completeness",
+        "disciplines": [],
+        "blockers": [
+          "completeness-applicantFirstName",
+          "completeness-applicantLastName",
+          "completeness-applicantEmail",
+          "completeness-applicantPhone",
+          "completeness-propertyAddress",
+          "completeness-propertyType",
+          "completeness-reviewPath",
+          "completeness-systemSizeKw",
+          "completeness-numberOfPanels",
+          "completeness-panelManufacturer",
+          "completeness-inverterType",
+          "completeness-inverterManufacturerModel",
+          "completeness-mountingType",
+          "completeness-batteryStorage",
+          "completeness-electricalPanelUpgrade",
+          "completeness-installerCompanyName",
+          "completeness-installerCcbNumber",
+          "completeness-estimatedProjectCost",
+          "completeness-certifyAccurate",
+          "completeness-certifyOwnerAuthorization"
+        ],
+        "warnings": []
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "FENCE-MATERIAL",
+      "scenario": "Real catalog field adverse scenario: {\"fenceType\":\"masonry-concrete\",\"fenceHeight\":6,\"swimmingPoolBarrier\":\"no\"}",
+      "expected_safe": "Must not receive unsupported automatic approval",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "FENCE-FRONT",
+      "scenario": "Real catalog field adverse scenario: {\"fenceHeight\":6,\"fenceLocation\":[\"front-yard\"],\"swimmingPoolBarrier\":\"no\"}",
+      "expected_safe": "Must not receive unsupported automatic approval",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "FENCE-CORNER",
+      "scenario": "Real catalog field adverse scenario: {\"fenceHeight\":6,\"fenceLocation\":[\"corner-lot-street-side\"],\"swimmingPoolBarrier\":\"no\"}",
+      "expected_safe": "Must not receive unsupported automatic approval",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "FENCE-HISTORIC",
+      "scenario": "Real catalog field adverse scenario: {\"fenceHeight\":6,\"withinHistoricDistrict\":\"yes\",\"inOverlayZone\":\"yes\",\"swimmingPoolBarrier\":\"no\"}",
+      "expected_safe": "Must not receive unsupported automatic approval",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "FIR-COST",
+      "scenario": "Real catalog field adverse scenario: {\"estimatedCost\":500000}",
+      "expected_safe": "Must not receive unsupported automatic approval",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "FIR-ATTESTATION",
+      "scenario": "Real catalog field adverse scenario: {\"confirmRegistered\":false,\"attestNonStructural\":false}",
+      "expected_safe": "Must not receive unsupported automatic approval",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "MECH-COMMERCIAL",
+      "scenario": "Real catalog field adverse scenario: {\"propertyType\":\"commercial\",\"workType\":[\"hood-vent\"]}",
+      "expected_safe": "Must not receive unsupported automatic approval",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "PLUMB-MEDICAL",
+      "scenario": "Real catalog field adverse scenario: {\"propertyType\":\"commercial\",\"workType\":[\"medical-gas\"]}",
+      "expected_safe": "Must not receive unsupported automatic approval",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "ELECTRIC-LICENSE",
+      "scenario": "Real catalog field adverse scenario: {\"performedBy\":\"contractor\",\"contractorCcb\":\"not-a-license\",\"contractorBcdLicense\":\"invalid\"}",
+      "expected_safe": "Must not receive unsupported automatic approval",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "CERT-FALSE",
+      "scenario": "Real catalog field adverse scenario: {\"certifyAccurate\":false,\"certifyCode\":false,\"certifyLicense\":false}",
+      "expected_safe": "Must not receive unsupported automatic approval",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "BAD-EMAIL",
+      "scenario": "Real catalog field adverse scenario: {\"email\":\"not an email\"}",
+      "expected_safe": "Must not receive unsupported automatic approval",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "FENCE-WOOD-7",
+      "scenario": "Internal approval boundary (engine field names, not UI names)",
+      "expected_safe": "Match encoded threshold, not proof of legal coverage",
+      "observed": {
+        "eligible": true
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "FENCE-WOOD-OVER",
+      "scenario": "Internal approval boundary (engine field names, not UI names)",
+      "expected_safe": "Match encoded threshold, not proof of legal coverage",
+      "observed": {
+        "eligible": false,
+        "reason": "wood fence at 7.01ft exceeds 7ft exempt threshold — requires building permit review"
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "FENCE-MASONRY-4",
+      "scenario": "Internal approval boundary (engine field names, not UI names)",
+      "expected_safe": "Match encoded threshold, not proof of legal coverage",
+      "observed": {
+        "eligible": true
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "FENCE-MASONRY-OVER",
+      "scenario": "Internal approval boundary (engine field names, not UI names)",
+      "expected_safe": "Match encoded threshold, not proof of legal coverage",
+      "observed": {
+        "eligible": false,
+        "reason": "masonry-concrete fence at 4.01ft exceeds 4ft exempt threshold — requires building permit review"
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "FENCE-CHAIN-8",
+      "scenario": "Internal approval boundary (engine field names, not UI names)",
+      "expected_safe": "Match encoded threshold, not proof of legal coverage",
+      "observed": {
+        "eligible": true
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "FENCE-CHAIN-OVER",
+      "scenario": "Internal approval boundary (engine field names, not UI names)",
+      "expected_safe": "Match encoded threshold, not proof of legal coverage",
+      "observed": {
+        "eligible": false,
+        "reason": "chain-link fence at 8.01ft exceeds 8ft exempt threshold — requires building permit review"
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "FENCE-POOL",
+      "scenario": "Internal approval boundary (engine field names, not UI names)",
+      "expected_safe": "Match encoded threshold, not proof of legal coverage",
+      "observed": {
+        "eligible": false,
+        "reason": "Swimming pool barrier — requires permit regardless of height"
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "SOLAR-25",
+      "scenario": "Internal threshold boundary",
+      "expected_safe": "Match encoded criterion only",
+      "observed": {
+        "eligible": true
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "SOLAR-OVER",
+      "scenario": "Internal threshold boundary",
+      "expected_safe": "Match encoded criterion only",
+      "observed": {
+        "eligible": false,
+        "reason": "System size exceeds 25kW — requires engineering review"
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "SOLAR-GROUND-INTERNAL",
+      "scenario": "Internal threshold boundary",
+      "expected_safe": "Match encoded criterion only",
+      "observed": {
+        "eligible": false,
+        "reason": "Ground-mounted solar requires zoning review"
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "FIR-50000",
+      "scenario": "Internal threshold boundary",
+      "expected_safe": "Match encoded criterion only",
+      "observed": {
+        "eligible": true
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "FIR-OVER",
+      "scenario": "Internal threshold boundary",
+      "expected_safe": "Match encoded criterion only",
+      "observed": {
+        "eligible": false,
+        "reason": "Valuation exceeds $50,000 — requires plan review"
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "FIR-STRUCTURAL-INTERNAL",
+      "scenario": "Internal threshold boundary",
+      "expected_safe": "Match encoded criterion only",
+      "observed": {
+        "eligible": false,
+        "reason": "Structural changes require engineering review"
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "SOLAR-ADVERSE",
+      "scenario": "Supply document keys expected by engine, then select ground/engineered/commercial in actual form",
+      "expected_safe": "Must route for appropriate substantive review",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "OVERLAY-DROPPED",
+      "scenario": "Environmental and design warnings on auto-approval candidate",
+      "expected_safe": "Required review must block auto-approval until disposition",
+      "observed": {
+        "autoApproved": true,
+        "stage": "approved",
+        "disciplines": [],
+        "blockers": [],
+        "warnings": [
+          "rules-envzone-audit-fence-permit",
+          "rules-design-overlay-audit-fence-permit"
+        ]
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "DOC-CONTENT",
+      "scenario": "Metadata claims two one-byte PDFs; no bytes available to validator",
+      "expected_safe": "Substantive plan validity cannot be established from metadata",
+      "observed": {
+        "passed": true,
+        "findings": []
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "DOC-EMPTY",
+      "scenario": "Zero-byte required PDF",
+      "expected_safe": "Must block",
+      "observed": [
+        "doc-empty-site_plan",
+        "doc-empty-electrical_diagram"
+      ],
+      "verdict": "control_passed"
+    },
+    {
+      "id": "DOC-MIME",
+      "scenario": "Wrong declared MIME type",
+      "expected_safe": "Must block",
+      "observed": [
+        "doc-type-site_plan",
+        "doc-type-electrical_diagram"
+      ],
+      "verdict": "control_passed"
+    },
+    {
+      "id": "GIS-OUTAGE",
+      "scenario": "All overlay requests fail with network disabled",
+      "expected_safe": "Preserve unknown status instead of clear overlay result",
+      "observed": {
+        "environmentalZones": [],
+        "designOverlay": false
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "JOURNEY-adu-permit",
+      "scenario": "Original submit action with synthetic records and external effects disabled",
+      "expected_safe": "Persist application and explicitly route unresolved work",
+      "observed": {
+        "success": true,
+        "status": "in_review",
+        "stage": "human_review",
+        "reviewCount": 4
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "CORRECTION-RESUME",
+      "scenario": "Open apply route data source after requested correction",
+      "expected_safe": "Load the application requiring corrections",
+      "observed": {
+        "status": "corrections_needed",
+        "returnedDraftId": null,
+        "expectedId": "e873a421-d3c4-49dd-9982-d7a1674ef074"
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "CORRECTION-REVIEW-REPLAY",
+      "scenario": "Resubmit same ADU after a correction request",
+      "expected_safe": "Version review work and supersede previous round explicitly",
+      "observed": {
+        "firstCount": 4,
+        "afterCount": 8,
+        "status": "in_review"
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "JOURNEY-residential-building-permit",
+      "scenario": "Original submit action with synthetic records and external effects disabled",
+      "expected_safe": "Persist application and explicitly route unresolved work",
+      "observed": {
+        "success": true,
+        "status": "in_review",
+        "stage": "human_review",
+        "reviewCount": 7
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "SUBMIT-REPLAY",
+      "scenario": "Repeat original submission with same application and upload objects",
+      "expected_safe": "Deduplicate document links and processing",
+      "observed": {
+        "beforeDocs": 5,
+        "afterDocs": 10
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "JOURNEY-commercial-building-permit",
+      "scenario": "Original submit action with synthetic records and external effects disabled",
+      "expected_safe": "Persist application and explicitly route unresolved work",
+      "observed": {
+        "success": true,
+        "status": "in_review",
+        "stage": "human_review",
+        "reviewCount": 8
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "JOURNEY-demolition-permit",
+      "scenario": "Original submit action with synthetic records and external effects disabled",
+      "expected_safe": "Persist application and explicitly route unresolved work",
+      "observed": {
+        "success": true,
+        "status": "in_review",
+        "stage": "human_review",
+        "reviewCount": 2
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "JOURNEY-land-use-review",
+      "scenario": "Original submit action with synthetic records and external effects disabled",
+      "expected_safe": "Persist application and explicitly route unresolved work",
+      "observed": {
+        "success": true,
+        "status": "in_review",
+        "stage": "human_review",
+        "reviewCount": 5
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "JOURNEY-tenant-improvement",
+      "scenario": "Original submit action with synthetic records and external effects disabled",
+      "expected_safe": "Persist application and explicitly route unresolved work",
+      "observed": {
+        "success": true,
+        "status": "in_review",
+        "stage": "human_review",
+        "reviewCount": 3
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "JOURNEY-sewer-lateral-connection",
+      "scenario": "Original submit action with synthetic records and external effects disabled",
+      "expected_safe": "Persist application and explicitly route unresolved work",
+      "observed": {
+        "success": true,
+        "status": "in_review",
+        "stage": "human_review",
+        "reviewCount": 0
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "REVIEW-PENDING-CONTROL",
+      "scenario": "One of two discipline reviews remains pending",
+      "expected_safe": "Keep application in review",
+      "observed": {
+        "status": "in_review"
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "REVIEW-ROLE-CONTROL",
+      "scenario": "Applicant attempts staff review action",
+      "expected_safe": "Deny",
+      "observed": {
+        "denied": true
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "ACTION-NO-AUTH",
+      "scenario": "Call original exported pipeline action with anonymous cookie context",
+      "expected_safe": "Require authorized caller and allowable prior state",
+      "observed": {
+        "success": true,
+        "status": "approved"
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "MISSING-QUEUE",
+      "scenario": "Persist pipeline result for empty submission",
+      "expected_safe": "Return actionable corrections or assigned triage",
+      "observed": {
+        "status": "in_review",
+        "stage": "completeness",
+        "assignedReviews": 0
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "PIPELINE-REPLAY",
+      "scenario": "Execute same application twice",
+      "expected_safe": "Idempotent processing for same revision",
+      "observed": {
+        "before": 1,
+        "after": 2
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "EDIT-AFTER-APPROVAL",
+      "scenario": "Save draft over an already approved application",
+      "expected_safe": "Invalidate approval or reject edit",
+      "observed": {
+        "success": true,
+        "status": "approved"
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "OWNERSHIP-DRAFT",
+      "scenario": "Another applicant edits original applicant draft",
+      "expected_safe": "Deny",
+      "observed": {
+        "success": false,
+        "error": "Application not found"
+      },
+      "verdict": "control_passed"
+    },
+    {
+      "id": "REVIEW-BLOCKER",
+      "scenario": "Last discipline approves while blocker remains unresolved",
+      "expected_safe": "Do not approve unresolved blockers",
+      "observed": {
+        "status": "approved"
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "REVIEW-NO-ROWS",
+      "scenario": "Complete a nonexistent discipline row when no reviews exist",
+      "expected_safe": "Require actual required-review records",
+      "observed": {
+        "status": "approved"
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "ADMIN-ISSUE-BYPASS",
+      "scenario": "Advance draft directly to issued",
+      "expected_safe": "Require completed reviews, fees and issuing record",
+      "observed": {
+        "result": {
+          "success": true
+        },
+        "status": "issued"
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "PDF-NO-AUTH",
+      "scenario": "Anonymous request handler call for synthetic application",
+      "expected_safe": "Authorize or apply an explicit public-record redaction policy",
+      "observed": {
+        "status": 200,
+        "containsEmail": true,
+        "containsFormData": true
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "PAYMENT-AMOUNT",
+      "scenario": "Create checkout on draft for caller-supplied one cent",
+      "expected_safe": "Use server assessment and eligible payment state",
+      "observed": {
+        "result": {
+          "success": true,
+          "url": "https://example.invalid/local-audit"
+        },
+        "amount": 1,
+        "status": "draft"
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "PAYMENT-METADATA",
+      "scenario": "Inspect original checkout payload",
+      "expected_safe": "Propagate application correlation to PaymentIntent metadata",
+      "observed": {
+        "sessionMetadata": true,
+        "paymentIntentData": null
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "PAYMENT-NORMAL-SEQUENCE",
+      "scenario": "Completed checkout on an approved application followed by PaymentIntent without duplicated session metadata",
+      "expected_safe": "Paid eligible application should reach issuance through a consistent correlation path",
+      "observed": {
+        "status": "approved",
+        "paymentStatus": "paid"
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "PAYMENT-ISSUE-GATE",
+      "scenario": "Successful PaymentIntent with application metadata on draft",
+      "expected_safe": "Payment alone must not bypass reviews",
+      "observed": {
+        "status": "issued"
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "PAYMENT-REPLAY",
+      "scenario": "Deliver same success notification twice",
+      "expected_safe": "Idempotent ledger and status transition",
+      "observed": {
+        "historyBefore": 1,
+        "historyAfter": 2
+      },
+      "verdict": "gap_confirmed"
+    },
+    {
+      "id": "PAYMENT-LATE-FAILURE",
+      "scenario": "Deliver failure after success",
+      "expected_safe": "Reject stale event or preserve reconciled state",
+      "observed": {
+        "status": "issued",
+        "paymentStatus": "failed"
+      },
+      "verdict": "gap_confirmed"
+    }
+  ]
+}

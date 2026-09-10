@@ -16,13 +16,15 @@ import ContinuumTldr from "@/components/deep-dives/homeless/ContinuumTldr";
 import CohortLadder from "@/components/deep-dives/homeless/CohortLadder";
 import PlanTimeline from "@/components/deep-dives/homeless/PlanTimeline";
 import MythsLedger from "@/components/deep-dives/homeless/MythsLedger";
+import BehavioralHealthEvidence, { BhCitation } from "@/components/deep-dives/homeless/BehavioralHealthEvidence";
+import { BH_SOURCES } from "@/lib/homeless/behavioral-health";
 import WhoPays from "@/components/deep-dives/homeless/WhoPays";
 import { pageMeta } from "@/lib/page-meta";
 
 export const metadata: Metadata = pageMeta({
   title: "Why Portland Can't End Homelessness — The Flow, the Beds, and the Plan",
   description:
-    "Portland spends more than ever and homelessness keeps growing. The inflow/outflow math, who is actually on the street, the deflection funnel, the beds nobody can see, and a plan sequenced by speed. Every number sourced.",
+    "Portland’s homelessness response needs suitable housing, clinical care, sustained funding and completed connections. Explore local evidence, the Council’s behavioral-health proposals and an educational flow model.",
   path: "/deep-dives/homelessness",
   type: "article",
 });
@@ -32,6 +34,7 @@ const NAV = [
   { id: "triage", label: "02 First contact" },
   { id: "who", label: "03 Who" },
   { id: "cohorts", label: "04 Cohorts" },
+  { id: "behavioral-health", label: "Behavioral health" },
   { id: "cost", label: "05 Cost of nothing" },
   { id: "deflection", label: "06 Deflection" },
   { id: "beds", label: "07 The beds" },
@@ -76,13 +79,13 @@ export default function HomelessnessDeepDive() {
               <h1 className="mt-6 max-w-4xl font-editorial-normal text-[40px] leading-[1.04] tracking-tight sm:text-[56px] lg:text-[66px]">
                 Why Portland can&apos;t end homelessness
                 <span className="block font-editorial italic text-[var(--color-ember-bright)]">
-                  It&apos;s a flow problem, and the system can&apos;t see itself.
+                  Housing, care, and the connections between them.
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-white/75 sm:text-[19px]">
-                More people fall into homelessness each month than climb out. A worker with a willing
-                person can&apos;t see an open bed. And too many exits from jail, hospital, and treatment
-                lead back to the sidewalk. None of it is a mystery. All of it is fixable, in order.
+                The response needs enough suitable places, workers to deliver care, and funding that keeps
+                services open. It also needs to turn referrals into arrivals and housing into a lasting
+                home. Prevention, clinical capacity and reliable connections work together.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a href="#flow" className="inline-flex items-center justify-center gap-2 rounded-sm bg-[var(--color-ember)] px-5 py-3 text-[15px] font-semibold text-[var(--color-canopy)] transition-colors hover:bg-[var(--color-ember-bright)]">
@@ -137,18 +140,19 @@ export default function HomelessnessDeepDive() {
         layout="stacked"
         id="flow"
         eyebrow="01 · The one insight"
-        title="It's a flow problem, not a stock problem"
+        title="Capacity, access and flow work together"
         lead={
           <>
-            Homelessness behaves like unemployment: a total that rises and falls with two flows
-            underneath. About <strong>{fmtNum(STATS.monthlyInflow)}</strong> people join Multnomah
-            County&apos;s list each month and <strong>{fmtNum(STATS.monthlyOutflow)}</strong> leave it
-            (<Src id="byNameRelease" />). The gap is why it grows. Close the gap and growth stops before
-            you build anything.
+            In January 2025, <strong>{fmtNum(STATS.monthlyInflow)}</strong> people joined Multnomah
+            County&apos;s active by-name list and <strong>{fmtNum(STATS.monthlyOutflow)}</strong> left it
+            (<Src id="byNameRelease" />). Leaving the active list includes housing and inactivity; it
+            is not a count of confirmed housing exits. This historical snapshot illustrates flow.
+            Better prevention and handoffs still need suitable homes, staffed care and sustainable funding.
           </>
         }
       >
         <FlowSimulator />
+        <Note><strong>Educational scenario, not a forecast.</strong> The treatment assumptions below are not validated for acute psychiatry, psychiatric subacute care or respite. A blocked receiving placement can occupy an upstream hospital bed. Faster discharge helps only when appropriate care and continuing housing work are funded.</Note>
         <details className="group mt-3 max-w-3xl">
           <summary className="cursor-pointer select-none font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-ink-muted)] hover:text-[var(--color-canopy)]">
             Assumptions and unit costs
@@ -214,15 +218,20 @@ export default function HomelessnessDeepDive() {
       </Section>
 
       {/* ── 05 Cost of nothing ── */}
+      <Section layout="stacked" id="behavioral-health" eyebrow="September 9 update" title="Housing needs a clinical-capacity plan, too.">
+        <BehavioralHealthEvidence />
+        <Note><Link href="/deep-dives/continuum#clinical" className="underline">Compare psychiatric care, addiction treatment, medical respite and bridge housing →</Link></Note>
+      </Section>
+
       <Section
         layout="stacked"
         id="cost"
         eyebrow="05 · The cost of doing nothing, and who holds it"
-        title="The status quo isn't free, just hidden. And the saving lands on the wrong desk."
-        lead="Fixes look expensive against a baseline of zero. The street isn't zero: it's ER visits, jail nights, ambulance runs, and cleanup, spread across a dozen budgets. Most of the saving from housing someone goes to Medicaid and the health plan, not City Hall. That is not a reason to shrug. It is the map of who to send the bill to."
+        title="Who pays for the current response—and what could change?"
+        lead="Homelessness carries health, emergency-response and public-service costs. Housing and care can change those costs, but spending avoided, capacity freed and cash available for another program are different outcomes. The financing map shows who pays and what would make reinvestment possible."
         aside={
           <p className="text-[12px] leading-relaxed text-[var(--color-ink-muted)]">
-            Street-cost figure is a central estimate; studies range from ~$35k a year (<Src id="naehCost" />) to far higher for the costliest individuals. Match rates: <Src id="kffFmap" />. Payer mechanics: <Src id="shareGuidance" />, <Src id="ohaHousingMedicaid" />. The full analysis is in the Civic Lab research memo &ldquo;Who Pays for the Street.&rdquo;
+            Street-cost figure is a central estimate; studies range from ~$35k a year (<Src id="naehCost" />) to far higher for the costliest individuals. Federal matching rates describe funding shares, not an automatic split of savings. Payer mechanics: <Src id="shareGuidance" />, <Src id="ohaHousingMedicaid" />. The full analysis is in the Civic Lab research memo &ldquo;Who Pays for the Street.&rdquo;
           </p>
         }
       >
@@ -231,7 +240,7 @@ export default function HomelessnessDeepDive() {
           <WhoPays />
         </div>
         <Note>
-          What this does not do: it does not make jail, EMS, or cleanup cheaper unless capacity is actually decommissioned, and it does not fund a building on its own. Those stay local and state costs, and the honest case for them is the 372 deaths and the $1.3B already raised, not payback.
+          Reduced demand may avoid variable costs or free capacity. Larger budget savings require actual changes in spending; they do not follow automatically from fewer visits or calls. Capital and continuing services need their own funding commitments.
         </Note>
       </Section>
 
@@ -259,10 +268,10 @@ export default function HomelessnessDeepDive() {
         layout="stacked"
         id="beds"
         eyebrow="07 · The deepest problem"
-        title="Nobody can see the beds"
+        title="Which beds can someone actually use?"
         lead={
           <>
-            Oregon is short about <strong>{fmtNum(STATS.treatmentBedGap)} treatment beds</strong> (<Src id="pcgBeds" />). It also can&apos;t say how many of the beds it has are open tonight. A multi-million-dollar registry produced a handful of placements (<Src id="obcc" />), because a database is not a coordination system.
+            A June 2024 statewide study estimated a gap of about <strong>{fmtNum(STATS.treatmentBedGap)} behavioral-health residential and related beds</strong> (<Src id="pcgBeds" />). That estimate is not today&apos;s shortage or a live vacancy count. Licensed, funded, staffed and accepting capacity need separate measures. A multi-million-dollar registry produced a handful of placements (<Src id="obcc" />), because a database is not a coordination system.
           </>
         }
       >
@@ -279,7 +288,7 @@ export default function HomelessnessDeepDive() {
               <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-ember-bright)]">We&apos;re building the fix</div>
               <h3 className="mt-1 font-editorial-normal text-[21px] leading-tight sm:text-[23px]">PDX Help, a working prototype</h3>
               <p className="mt-1.5 max-w-2xl text-[13.5px] leading-relaxed text-white/70">
-                Matches a specific person to the beds they are eligible for, with facilities reporting real openings. The coordination layer Oregon doesn&apos;t have, built to prove it can exist.
+                Matches a specific person to the beds they are eligible for, with facilities reporting real openings. The prototype explores a specific placement workflow. Existing regional navigation and coordination programs provide foundations whose coverage and effectiveness still need evaluation.
               </p>
             </div>
             <span className="inline-flex items-center gap-2 whitespace-nowrap font-mono text-[12px] uppercase tracking-[0.14em] text-[var(--color-ember-bright)]">
@@ -298,7 +307,7 @@ export default function HomelessnessDeepDive() {
         title="What connects a shelter bed to a home that lasts?"
         lead={
           <>
-            A placement needs to fit the person, have funding and support, and become an actual arrival. The continuum guide makes those connections visible: three illustrative journeys, documented barriers, reported local costs, and the decisions that could help more people reach lasting housing. Housing work and care can happen together.
+            A placement needs to fit the person, have funding and support, and become an actual arrival. The continuum guide makes those connections visible: four illustrative journeys, documented barriers, reported local costs, and the decisions that could help more people reach lasting housing. Housing work and care can happen together.
           </>
         }
       >
@@ -311,9 +320,10 @@ export default function HomelessnessDeepDive() {
         id="works"
         eyebrow="09 · What would actually work"
         title="Five moves, in order of speed"
-        lead="Cheapest and fastest first. The plan that survives a hostile hearing is the one that stops growth in weeks, fixes visibility in months, and builds the ladder over years, without pretending any step substitutes for the others."
+        lead="Pursue prevention, suitable housing, staffed care and reliable handoffs together. These priorities have different delivery timelines; their effects require measurement. The Council’s proposed 2027 behavioral-health agenda adds state payment, licensing and psychiatric-capacity decisions."
       >
         <PlanTimeline />
+        <Note><Link href="/deep-dives/continuum#legislative-2027" className="underline">See the proposed 2027 agenda, responsible decision-makers and milestones →</Link></Note>
       </Section>
 
       {/* ── 10 Objections ── */}
@@ -337,9 +347,10 @@ export default function HomelessnessDeepDive() {
         id="sources"
         eyebrow="Sources & method"
         title="Where these numbers come from"
-        lead="Headline figures are read from primary sources and were re-checked in June 2026. The flow model is a teaching tool with visible assumptions. Where a popular figure didn't hold up (a $500M+ unspent balance, a flat $50k per person), it was corrected, not repeated."
+        lead="The September 9, 2026 update adds Council materials and related behavioral-health research. Older evidence retains its own date; review dates are not observation periods. The flow model remains educational, and unresolved comparisons stay visible."
       >
         <div className="grid gap-x-8 gap-y-3 sm:grid-cols-2 2xl:grid-cols-3">
+          {Object.keys(BH_SOURCES).map((key) => <BhCitation key={key} source={key as keyof typeof BH_SOURCES} />)}
           {Object.values(SOURCES).map((s) => (
             <a key={s.id} href={s.url} target="_blank" rel="noopener noreferrer" className="group -m-2 flex items-start gap-3 rounded-sm border border-transparent p-2 transition-colors hover:border-[var(--color-parchment)] hover:bg-white">
               <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-fern)]" />

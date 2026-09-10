@@ -1,0 +1,20 @@
+[
+  {
+    "id": "orsc-r310",
+    "url": "https://www.oregon.gov/bcd/codes-stand/Documents/23orsc-R310-amend.pdf",
+    "sha256": "5a59113fa32e0d4f5f04bd3a044760b7ba31e55d13dc7205581d3473b9585e09",
+    "status": "adopted amendment; selected rule implemented"
+  },
+  {
+    "id": "oesc-amendments",
+    "url": "https://www.oregon.gov/bcd/codes-stand/Documents/23oesc-table1-E.pdf",
+    "sha256": "b7444cfe0e3adfdf3e08685361ffde7872038a5a1ad3c4d48a7dd2cd3b9848b6",
+    "status": "redline amendment table; not complete NEC; not executable"
+  },
+  {
+    "id": "solar-pathways",
+    "url": "https://www.oregon.gov/bcd/codes-stand/Documents/techb-solarpv-pathways.pdf",
+    "sha256": "61b383b9bbf6103d3d8abbddaa24c2d4d010532539f5fbfe799528298f17a115",
+    "status": "technical bulletin; illustrative figures; not complete solar code"
+  }
+]

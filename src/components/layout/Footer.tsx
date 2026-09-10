@@ -1,3 +1,4 @@
+import BrandMark from "@/components/BrandMark";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import {
@@ -102,11 +103,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-4 lg:pr-10">
             <div className="flex items-center gap-2.5">
-              <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
-                <path d="M14 2L6 8v12l8 6 8-6V8l-8-6z" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[var(--color-sage)]" />
-                <path d="M14 6l-4 3v8l4 3 4-3v-8l-4-3z" fill="currentColor" className="text-[var(--color-ember)]" opacity="0.85" />
-                <circle cx="14" cy="14" r="2" fill="white" opacity="0.9" />
-              </svg>
+              <BrandMark className="h-8 w-8" />
               <h3 className="font-editorial-normal text-[22px] text-white leading-none">Portland Civic Lab</h3>
               <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember)]/70">Est. 2026</span>
             </div>

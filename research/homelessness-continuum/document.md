@@ -1,5 +1,8 @@
 # The Continuum Portland Can't See
 
+> **Status after September 9, 2026.** This is the earlier research draft, not the current public-page specification. The September 8 rebuild replaced its single-stage framing with overlapping functions and retained uncertainty in exits, staffing and outcomes. The [September 9 Council assessment](../behavioral-health-2026-09-09/assessment.md) now adds psychiatric inpatient, subacute and respite distinctions, operating finance, local linked-data evidence and attributed legislative proposals. Its evidence qualifications supersede conflicting claims below. The claims-defined high-acuity cohort is not the same as a current clinical-needs pathway. Clinical care and housing planning can proceed together.
+
+
 ## What each person needs, in what order, how to count who is where, and where the gaps are
 
 *Portland Civic Lab · September 2026 · Working draft for review*
@@ -20,7 +23,7 @@ The reasons are specific and documented, mostly by the county itself.
 - **The county graded its own list 20 of 29 in October 2024** against the Built for Zero quality standard, and the nine failures are exactly the ones that decide whether stage counts are possible: no mapped outreach coverage, no confidence that 90% of unsheltered people are on the list, fewer than 90% of providers reporting, no way to track people who have not consented, no data-quality protocol with submission timelines, and no homeless/housed status field with the date it last changed [multco-bfz-scorecard].
 - **Shelter exits are mostly unknown.** In the county's FY2025 review of 31 adult shelters, 2,800 of 5,213 exits, 54%, had no recorded destination; 93% of those were from congregate sites [multco-shelter-review].
 - **Outreach is counted outside the system of record.** FY2026 outreach engagements were pulled from a separate mapping tool "because not all providers log engagements in HMIS" [shs-q4-fy26].
-- **The institutions with perfect data are not connected.** Jail publishes no housing status at booking or release destination [mcso-data]; Unity Center publishes no discharge-destination data; the 2018 match of jail, Medicaid, and homeless-services records that found 1,371 people touching all three systems has never been repeated [fuse-multco].
+- **Institutional data linkage is incomplete in the public evidence.** The earlier FUSE analysis linked jail, Medicaid and homeless-services records [fuse-multco]. County KPI materials and the September 9 Council deck establish more recent Health Share–homelessness program linkage. That is not evidence of a comprehensive current three-system linkage, nor proof that no repeat analysis exists. Obtain methods and coverage before judging completeness.
 - **The 2025 count changed method mid-series.** Multnomah added 5,090 people "presumed unsheltered" from its own list to the 1,822 surveyed on the street, which is most of the 61% regional increase [pit-2025].
 
 The result is a system that can report placements and contacts but cannot say whether a given person, or a given thousand people, are stuck, and where. That is Meieran's central charge: the county "measures processes and activities," which "produces false baselines" and "masks failure" [meieran-plan]. Her by-name-list document puts the test in one sentence: "If the number of people living unsheltered is not going down, the system is failing, regardless of how many services are delivered" [meieran-bnl].

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, HeartHandshake, Home, ShieldCheck } from "lucide-react";
 import { pageMeta } from "@/lib/page-meta";
 import SystemMap from "@/components/deep-dives/homeless/story/SystemMap";
+import BehavioralHealthCare from "@/components/deep-dives/homeless/BehavioralHealthCare";
 import CapacityDiagnosis from "@/components/deep-dives/homeless/story/CapacityDiagnosis";
 import DiagnosticBoard from "@/components/deep-dives/homeless/story/DiagnosticBoard";
 import InvestigationRequests from "@/components/deep-dives/homeless/story/InvestigationRequests";
@@ -76,10 +77,17 @@ export default function ContinuumPage() {
       </div>
     </section>
 
+    <section id="clinical" className={styles.section}>
+      <div className={styles.container}>
+        <SectionHeader number="03" label="The clinical gap" title="Different care. Different receiving places.">Psychiatric care, addiction treatment, recovery from physical illness and housing provide different capabilities. The receiving service must match the person’s needs.</SectionHeader>
+        <BehavioralHealthCare />
+      </div>
+    </section>
+
     <section id="pathways" className={`${styles.section} ${styles.warm}`}>
       <span id="lanes" className={styles.alias} /><span id="saying-no" className={styles.alias} />
       <div className={styles.container}>
-        <SectionHeader number="03" label="Follow a person" title="Different needs. Different routes home.">A rent crisis, a hospital discharge and an unusable shelter offer need different responses. Explore three illustrative situations and compare the handoffs.</SectionHeader>
+        <SectionHeader number="04" label="Follow a person" title="Different needs. Different routes home.">A rent crisis, a hospital discharge and an unusable shelter offer need different responses. Explore four illustrative situations and compare the handoffs.</SectionHeader>
         <p className={styles.journeyEvidence}><strong>98% wanted stable housing</strong> among 350 local survey respondents asked. This is not a countywide estimate. <a href="https://hsd.multco.us/wp-content/uploads/2026/04/Pathways-Survey-Findings-Published-4.9.2026.pdf" target="_blank" rel="noreferrer">PSU Pathways · April 2026 ↗</a></p>
         <JourneyExplorer />
         <div className={styles.principleStrip}><div><strong>Ask what the person needs.</strong><span>Housing, care, safety and household needs shape the match.</span></div><div><strong>Verify what the place provides.</strong><span>An available bed may not be a usable placement.</span></div><div><strong>Confirm that the connection happened.</strong><span>One worker’s referral needs another worker’s arrival record.</span></div></div>
@@ -88,7 +96,7 @@ export default function ContinuumPage() {
 
     <section id="count" className={styles.section}>
       <div className={styles.container}>
-        <SectionHeader number="04" label="Follow the outcome" title="What happens after someone says yes?">A City report makes a crucial distinction visible: interest, acceptance and using a bed are separate results. Lasting housing requires further follow-up.</SectionHeader>
+        <SectionHeader number="05" label="Follow the outcome" title="What happens after someone says yes?">A City report makes a crucial distinction visible: interest, acceptance and using a bed are separate results. Lasting housing requires further follow-up.</SectionHeader>
         <EvidenceFlow />
       </div>
     </section>
@@ -97,21 +105,21 @@ export default function ContinuumPage() {
 
     <section id="money" className={styles.section}>
       <div className={styles.container}>
-        <SectionHeader number="05" label="Follow the money" title="What does a place actually cost?">Shelter operating costs, rent benchmarks and adopted budgets answer different questions. Choose a view to see the dollars, the year and what they buy.</SectionHeader>
+        <SectionHeader number="06" label="Follow the money" title="What does a place actually cost?">Shelter operating costs, rent benchmarks and adopted budgets answer different questions. Choose a view to see the dollars, the year and what they buy.</SectionHeader>
         <CostExplorer />
       </div>
     </section>
 
     <section id="fix" className={`${styles.section} ${styles.warm}`}>
       <div className={styles.container}>
-        <SectionHeader number="06" label="Change the result" title="Fund the connections. Verify the result.">These are proposed priorities built on services already operating locally. Open a change to see who can act and how the public could track progress.</SectionHeader>
+        <SectionHeader number="07" label="Change the result" title="Fund the connections. Verify the result.">These are proposed priorities built on services already operating locally. Open a change to see who can act and how the public could track progress.</SectionHeader>
         <ActionAgenda />
       </div>
     </section>
 
     <section id="investigate" className={styles.section}>
       <div className={styles.container}>
-        <SectionHeader number="07" label="Get the missing evidence" title="Turn a red flag into an investigation.">Choose the question you want answered. Each request names the records that could distinguish a capacity problem, a staffing problem and an execution problem.</SectionHeader>
+        <SectionHeader number="08" label="Get the missing evidence" title="Turn a red flag into an investigation.">Choose the question you want answered. Each request names the records that could distinguish a capacity problem, a staffing problem and an execution problem.</SectionHeader>
         <InvestigationRequests />
       </div>
     </section>
@@ -119,9 +127,9 @@ export default function ContinuumPage() {
     <section id="stages" className={styles.section}>
       <span id="risks" className={styles.alias} /><span id="sources" className={styles.alias} />
       <div className={styles.container}>
-        <SectionHeader number="08" label="Go deeper" title="The services behind the story.">Definitions, existing local programs and primary sources—available whenever you want to go deeper.</SectionHeader>
+        <SectionHeader number="09" label="Go deeper" title="The services behind the story.">Definitions, existing local programs and primary sources—available whenever you want to go deeper.</SectionHeader>
         <ReferenceAtlas />
-        <div className={styles.endNote}><span>Evidence reviewed September 8, 2026. Each figure retains its own reporting period.</span><Link href="/deep-dives/homelessness">Explore the broader homelessness deep dive →</Link></div>
+        <div className={styles.endNote}><span>Behavioral-health evidence added September 9, 2026; continuum review September 8, 2026. Each figure retains its own reporting period.</span><Link href="/deep-dives/homelessness">Explore the broader homelessness deep dive →</Link></div>
       </div>
     </section>
   </div>;

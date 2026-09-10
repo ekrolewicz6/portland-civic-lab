@@ -2,16 +2,10 @@
 
 import { useId, useRef, useState } from "react";
 import { Check, Copy } from "lucide-react";
+import { BH_REQUESTS, type EvidenceRequest } from "@/lib/homeless/behavioral-health";
 import styles from "./InvestigationRequests.module.css";
 
-type Investigation = {
-  id: string;
-  label: string;
-  question: string;
-  holder: string;
-  answers: string;
-  records: string[];
-};
+type Investigation = EvidenceRequest;
 
 const REQUESTS: Investigation[] = [
   {
@@ -98,6 +92,7 @@ const REQUESTS: Investigation[] = [
       "For every rate, the numerator, denominator, observation period, reporting coverage and definition of success. Identify whether housing status is positively confirmed or inferred from no recorded return, and how repeated stays and moves are handled.",
     ],
   },
+  ...BH_REQUESTS,
 ];
 
 function requestText(request: Investigation) {
@@ -105,7 +100,7 @@ function requestText(request: Investigation) {
     `Records request: ${request.label.toLowerCase()} in the homelessness response`,
     `Likely records holder: ${request.holder}`,
     "",
-    "Please provide the existing public records described below for September 1, 2025 through August 31, 2026, with the latest available status as of September 8, 2026. Where a specific earlier report or policy is named, please include that record and any revisions needed to interpret it.",
+    "Please provide the existing public records described below for September 1, 2025 through September 9, 2026, with the latest available status as of September 9, 2026. Where a specific earlier report or policy is named, please include that record and any revisions needed to interpret it.",
     "",
     `Question these records would help answer: ${request.question}`,
     "",
@@ -164,7 +159,7 @@ export default function InvestigationRequests() {
             <h4 className={styles.label}>Likely records holder</h4>
             <p>{request.holder}</p>
             <h4 className={styles.label}>Suggested reporting period</h4>
-            <p>September 2025–August 2026, plus the latest available status. The request names older records where needed.</p>
+            <p>September 2025–September 9, 2026, plus the latest available status. The request names older records where needed.</p>
             <p className={styles.scope}>Public aggregates and redacted documents only. No personal records or exact individual locations.</p>
           </aside>
         </div>

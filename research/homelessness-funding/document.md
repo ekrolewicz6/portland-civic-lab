@@ -1,5 +1,7 @@
 # Who Pays for the Street, and How to Move the Bill
 
+> **September 9, 2026 correction.** This earlier working draft contains historical figures and proposals that have not all been refreshed. The current implementation and [Council integration assessment](../behavioral-health-2026-09-09/assessment.md) supersede its payer and savings mechanics. Federal/state matching shares finance Medicaid; they are not the split of savings on an avoided CCO claim. OHA pays predetermined monthly capitation, with financial effects depending on contracts, risk arrangements and later rate-setting. SHARE has financial eligibility and spending conditions, and does not automatically fund the County’s chosen pipeline. Do not use the earlier draft’s estimated reinvestment yields or deadlines without renewed verification. [OHA rate development](https://www.oregon.gov/oha/FOD/Pages/OHP-Rates.aspx), [2026 SHARE guidance](https://www.oregon.gov/oha/HPA/dsi-tc/Documents/SHARE-Initiative-Guidance-Document.pdf).
+
 ## Funding Portland's homelessness response with federal dollars instead of local ones, without losing either
 
 *Portland Civic Lab · September 2026 · Working draft for review*
@@ -12,10 +14,10 @@ The cost-of-inaction section of the homelessness deep dive makes a claim that is
 
 The short answer has four parts.
 
-1. **The federal money is not a pot.** Medicaid pays per claim after the ER visit. Nobody in Washington holds a line item for Portland's avoided ER costs. The only way to "get that money instead" is to make the housing and services that prevent the visit a billable Medicaid service, or to get the entity that captures the saving to fund the prevention.
-2. **In Oregon the saving lands first on the health plan, not the feds.** Coordinated care organizations receive a capitated global budget. When a housed member stops cycling through the ER, the CCO keeps the margin, and state law already forces part of that margin back out as housing investment [share-guidance]. The negotiating partner is Health Share of Oregon, not Congress.
-3. **The doors to federal money are open but narrowing.** Oregon's waiver lets Medicaid pay rent for six months and tenancy services indefinitely, and the state can draw a 58-cent federal match on every local dollar it routes through Medicaid [kff-fmap]. But CMS rescinded its housing-benefit guidance in March 2025 [cms-rescission], the waiver expires September 30, 2027 [oha-waiver], and H.R. 1 will push 100,000 to 200,000 Oregonians off the Oregon Health Plan starting January 2027 [oha-hr1]. Every plan below has to survive those three facts.
-4. **Local dollars should buy what federal dollars legally cannot.** Rent beyond six months, capital, shelter operations, and outreach. Every local dollar currently paying for a Medicaid-billable service is a dollar that should move. That is the honest version of "use the money for the right things."
+1. **Identify the benefit and payer.** Medicaid coverage requires the relevant authority, eligible person, qualified provider and covered service. A locally funded service is not automatically Medicaid-billable, and not every displaced local dollar becomes savings.
+2. **Model capitation and risk correctly.** Federal and state funding reaches OHA; OHA pays predetermined monthly CCO amounts. Lower claims may change plan finances under risk arrangements and later rates. There is no fixed federal/CCO split of each avoided claim.
+3. **Obtain an actual reinvestment commitment.** SHARE designations depend on applicable financial conditions and spending rules, community priorities and partnerships. Housing is a priority; the County’s pipeline is not automatically the beneficiary.
+4. **Fund the complete service.** Construction, licensing, staffing, clinical operations, housing and transition support need separate commitments. The Council’s proposed break-even inpatient reimbursement must specify costs, payment authority, payer and recurring budget.
 
 ## 1. The constraint ledger
 
@@ -26,7 +28,7 @@ Every dollar in the system carries a rule about who can spend it on what. Most o
 | **Medicaid, regular match** | OHA, via CCOs | Clinical services, case management, tenancy supports where a state plan or waiver authorizes them | Rent (outside the waiver), capital, shelter operations | Federal share 58.18% in FY2027 [kff-fmap]. H.R. 1 restricts provider taxes and state-directed payments; OHA projects at least $1B in cuts in 2027–29 [or-hearing] |
 | **Medicaid, expansion adults** | Same | Same | Same | 90% federal share by statute. This is the population work requirements target from January 1, 2027 [oha-federal-changes] |
 | **1115 waiver HRSN housing benefit** | OHA; CareOregon administers for all Health Share members [healthshare-hrsn] | Up to 6 months rent and utilities, one time per household; home modifications; tenancy support | Ongoing rent, capital | Live since November 1, 2024. Waiver ends September 30, 2027. CMS rescinded HRSN guidance March 4, 2025; renewals now case by case [cms-rescission] |
-| **CCO SHARE reinvestment** | Each CCO, under OAR 410-141-3735 | Anything addressing social determinants, **including capital**; a portion must go to housing | Nothing categorical; it is the CCO's own margin | 0% to 20% of three-year average adjusted net income on a sliding scale by risk-based capital, or 10% of dividends, whichever is greater [share-guidance]. CCOs statewide put $104M into housing through SHARE and flexible services 2018–2024 [oha-housing-medicaid] |
+| **CCO SHARE reinvestment** | Each CCO, under OAR 410-141-3735 | Anything addressing social determinants, **including capital**; a portion must go to housing | Must meet SHARE qualifying-expenditure and spending requirements | Historical draft formula, to be checked against 2026 guidance: 0% to 20% of three-year average adjusted net income on a sliding scale by risk-based capital, or 10% of dividends, whichever is greater [share-guidance]. CCOs statewide put $104M into housing through SHARE and flexible services 2018–2024 [oha-housing-medicaid] |
 | **CCO flexible services** | Each CCO | Member-level short-term rent, deposits, AC units, legal help to keep housing; community-level grants | **Capital** [oha-housing-medicaid] | Ongoing; HRSN must be used first if the member is eligible |
 | **HUD Continuum of Care** | Local CoC board; HUD | Permanent supportive housing, rapid rehousing, coordinated entry | Shelter operations at scale, capital | OR-501 received $37.7M in FY2024 [hud-coc-or]. Two successive HUD attempts to cap PSH and divert a third of funds were vacated by a federal court on June 30 and August 7, 2026; FY2026 applications are not being accepted while HUD weighs appeal [naco-fy26]. The President's FY2027 budget proposes eliminating CoC into a $4B ESG block; the House committee bill keeps CoC with a cut [crs-hud-fy27] |
 | **Metro SHS tax** | Metro, allocated to three counties | Services, rent assistance, shelter, outreach; **not capital** under the 2020 measure | Affordable housing construction (Metro wants to change this) | $325M FY2025, forecast $351M FY2026 including a $40M one-time bump, with "pronounced weakness" in Multnomah County's economy behind it [ww-shs-forecast]. Expires 2030. Thresholds now inflation-indexed. Metro dropped a November 2026 ballot measure and is targeting extension to 2050 plus capital eligibility [kgw-metro-measure] |
@@ -56,21 +58,20 @@ North Carolina's Medicaid pilots are the cautionary tale. Over 31,000 people, $1
 
 The lesson for Portland's payer map:
 
-- **Federal Medicaid** captures 58% of avoided OHP costs, 90% for expansion adults. It has no mechanism to reinvest locally except through the waiver and CCO contracts.
-- **The CCO** captures the rest of avoided OHP costs inside its global budget, and is legally required to send part of its margin back out, with housing as the state-designated priority [share-guidance]. This is the payer with both the saving and the obligation.
-- **Hospitals** capture avoided uncompensated care and have a demonstrated willingness to co-invest.
-- **The county** captures jail and health-department costs, but only as cashable savings if capacity is actually decommissioned. A jail dorm that stays open saves nothing.
-- **The city** captures EMS, police, Portland Street Response, and cleanup costs, with the same caveat.
+- **Federal Medicaid and OHA** finance eligible expenditures, including capitation. Budget effects depend on rates, eligible spending and appropriations; an avoided claim does not automatically return its federal matching share.
+- **CCOs and health plans** may experience lower claims under their contractual risk arrangements. SHARE is conditional reinvestment, not a fixed return of savings or an automatic County earmark.
+- **Hospitals** may experience changes to costs, uncompensated care and revenue, which must be analyzed by payer and service.
+- **County and City** may avoid variable costs or free capacity; larger cash savings require actual budget changes. Fewer episodes do not automatically release fixed facility or staffing costs.
 
-So the honest local case is not "housing pays for itself." It is: the largest saving accrues to payers who are legally obligated or institutionally motivated to reinvest it, and the local job is to make them.
+Ask for the service-level operating costs, actual payment, risk arrangements and investment commitment before claiming that housing or clinical care pays for itself.
 
 ## 3. Four doors to federal dollars, ranked by durability
 
-**Door 1. Bill what is billable, and move local dollars off it.** *Most durable. Available now.* Tenancy-sustaining services, case management, peer support, and behavioral health services delivered in supportive housing are Medicaid-reimbursable through CCO contracts and, for eligible members, the HRSN benefit. Every SHS or county dollar paying a provider for those services today is a dollar that could be billed at a 58% to 90% federal match. The freed local dollar then buys what Medicaid cannot: rent past month six, shelter operations, capital. This does not depend on the waiver surviving. It depends on providers being credentialed to bill and on the county contracting for it. Washington's Foundational Community Supports program is the template: 20,000-plus people enrolled since 2018, supportive housing services billed through managed care, with documented reductions in ED and inpatient use [wa-fcs].
+**Door 1. Confirm covered services.** Audit each service against Oregon benefit authority, eligibility, provider qualifications, authorization, rates and actual payments. Washington’s experience is a comparison, not proof of Oregon coverage. Local funds may still be needed for uncovered services, operations and households.
 
-**Door 2. Make the CCO pay for what it saves.** *Durable, because it is in state law and CCO contracts.* Health Share's SHARE obligation is a formula on its own reserves, and housing is the required priority. The ask is not charity; it is a co-funding agreement in which the county's supportive housing pipeline is the CCO's SHARE housing vehicle. SHARE can fund capital, which no other Medicaid dollar can [oha-housing-medicaid]. Statewide, CCOs have moved $104M into housing since 2018; the Portland-area share of that, and whether it is aligned with the county's pipeline or scattered, is a records request (section 8).
+**Door 2. Secure a SHARE commitment.** Request the applicable financial calculations, approved spending plans, community-priority alignment and project commitments. An eligible capital project may qualify, but neither its amount nor the County’s role follows automatically from a health-plan claim reduction.
 
-**Door 3. Use the waiver benefit at full scale before it expires, and fight for its renewal.** *Time-limited.* The six-month rent benefit is exactly the eviction-prevention lever the flow model shows is the cheapest way to stop growth, and the state funded eviction prevention at a fifth of the governor's request. But the rollout was described to the Medicaid Advisory Committee as an "administrative collapse," with 2-to-6-week processing and hundreds of requests a week [lund-hrsn] [oha-hrsn]. Fixing the intake pipe is a near-zero-cost lever with a federal match behind it. Renewal is a 2026–27 fight: OHA anticipated starting the next waiver's development in fall 2025 [oha-waiver], California filed its renewal in May 2026, and CMS is reviewing case by case. Oregon's renewal application, and whether housing survives in it, is the single most important document not yet public.
+**Door 3. Deliver eligible rent benefits.** Budget intake, outreach, documentation and payment follow-through. These activities need workers and operating funds. Measure paid assistance and subsequent housing stability, with unknown follow-up separate. Confirm current waiver eligibility and renewal status when acting.
 
 **Door 4. Defend the CoC and prepare for its loss.** *Least controllable.* The $37.7M OR-501 grant is the region's permanent supportive housing backbone. Two court wins in 2026 preserved it for now. The FY2027 budget request would abolish it. The regional posture should be two-track: participate in the litigation coalition through the state, and model the region's exposure if CoC becomes a smaller ESG block grant that cannot fund PSH subsidies.
 
@@ -109,7 +110,7 @@ Ordered by deadline, not by size.
 - Fix HRSN intake: a single referral workflow from city and county outreach teams into CareOregon's HRSN unit, with case numbers.
 - Records request to OHA for the draft 2027 waiver renewal and any HRSN continuation language.
 
-**January 2027.** Work requirements and six-month renewals begin. People in substance-use treatment and people recently released from incarceration are exempt [orpca-hr1]; outreach and jail-release teams should be enrolling and documenting exemptions, because a person who loses OHP loses every door above.
+**January 2027.** Work requirements and six-month renewals begin. People in substance-use treatment and people recently released from incarceration are exempt [orpca-hr1]; outreach and jail-release teams should be enrolling and documenting exemptions, because coverage loss can interrupt Medicaid supports. HUD and local safety-net eligibility follow separate rules.
 
 **2027 legislative session.** The state ask is not more shelter money. It is (a) eviction prevention restored toward the $173M the governor requested, structured to draw HRSN match where members are eligible, and (b) a statutory backstop for tenancy-support billing if the waiver's HRSN authority lapses, so the services side survives on the state plan.
 
@@ -119,15 +120,13 @@ Ordered by deadline, not by size.
 
 **2030.** SHS expires. If the sequence above holds, the services layer is on Medicaid, capital is on bond and SHARE, and SHS is buying rent and shelter. If it does not, the region is asking voters to renew a tax to pay for services a federal payer would have carried.
 
-## 6. What this does to the local burden
+## 6. What this could change in the local budget
 
-The county's $67M structural gap is roughly the size of a serious Door 1 effort. Statewide, CCOs have put $104M into housing in seven years; a Portland-area SHARE housing designation aligned to the county pipeline is plausibly $10M to $20M a year in a good year and near zero in a bad one, because SHARE tracks the CCO's margin. The LA and Portland evidence says services-in-housing reduce the CCO's medical spend by 12% to 60% depending on the population, which is what makes the CCO's margin exist. That circle only closes if the county stops paying for the services itself.
+No verified local dollar yield is established here. Do not compare an assumed Medicaid billing opportunity or SHARE award with the County’s funding gap as though those are available resources. Obtain eligible spending, reimbursement, authorization, staffing and capital-versus-operating records. Estimate budget effects only after resolving payment and risk arrangements.
 
-What it does not do: it does not make jail, EMS, cleanup, or outreach cheaper unless capacity is decommissioned, and it does not fund a single new building on its own. Those remain local and state costs, and the honest local argument for them is the one the deep dive already makes: 372 deaths in 2024, and $1.3B raised since 2021 that is not producing the outcome.
+## 7. September 9 implementation
 
-## 7. What changes on the site
-
-The cost-of-inaction section becomes three panels: who pays for the street today by payer; who captures the saving when someone is housed; and the four doors, with the closing date on each. The flow simulator's cost strip gains a "federal share" line showing the match on the prevention and treatment levers. The plan's step 1 (close the inflow) cites the HRSN rent benefit and its intake failure as the mechanism and the blocker. The records tracker gets the four requests in section 8.
+The public payer map now explains capitation and separates financing shares from savings. Both deep dives distinguish clinical levels of care, housing work and recurring operations. The educational simulator’s numbers remain unchanged; no psychiatric scenario or federal-share savings line is added. The [five draft requests](../behavioral-health-2026-09-09/evidence-requests.md) seek the evidence needed for a defensible model. They have not been sent.
 
 ## 8. What we could not verify, and the records requests that would settle it
 

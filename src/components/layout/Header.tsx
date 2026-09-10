@@ -1,5 +1,7 @@
 "use client";
 
+import BrandMark from "@/components/BrandMark";
+
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -156,11 +158,7 @@ const MENUS: MenuDef[] = [
 function Wordmark() {
   return (
     <Link href="/" className="group flex shrink-0 items-center gap-2.5">
-      <svg width="26" height="26" viewBox="0 0 28 28" fill="none" className="transition-transform duration-300 group-hover:rotate-[8deg]">
-        <path d="M14 2L6 8v12l8 6 8-6V8l-8-6z" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[var(--color-sage)]" />
-        <path d="M14 6l-4 3v8l4 3 4-3v-8l-4-3z" fill="currentColor" className="text-[var(--color-ember)]" opacity="0.85" />
-        <circle cx="14" cy="14" r="2" fill="white" opacity="0.9" />
-      </svg>
+      <BrandMark className="h-8 w-8" />
       <span className="whitespace-nowrap font-editorial-normal text-[17px] leading-none tracking-tight text-white">
         Portland Civic Lab
       </span>

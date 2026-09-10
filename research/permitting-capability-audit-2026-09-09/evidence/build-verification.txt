@@ -1,0 +1,17 @@
+Audit production-build verification, September 9, 2026
+Source: ekrolewicz6/portland-civic-labs at 23b4670d8d26b9093f6e401bb89d9d6f30d8506d
+Location: /private/tmp/portland-permits-audit-20260909/source
+Command: npm run build (network-enabled retry after restricted Google Fonts fetch failure)
+Final tool result: exit_code 0
+Next.js 16.1.6 (Turbopack)
+Compiled successfully in 2.2s; TypeScript ran; static generation 36/36 completed; route summary emitted.
+
+Material warnings/errors observed during that successful-exit build:
+  module.register() deprecated; use module.registerHooks()
+  Using edge runtime on a page currently disables static generation for that page
+  ExitStatus { name: 'ExitStatus', message: 'Program terminated with exit(1)', status: 1 }
+  Repeated RuntimeError: Aborted(). Build with -sASSERTIONS for more info.
+  RuntimeError: unreachable
+
+This file is an audit transcription/summary of the tool response, not the full stdout stream.
+Do not represent the build as a clean runtime-health test. Production DATABASE_URL and fallback behavior were not verified live.

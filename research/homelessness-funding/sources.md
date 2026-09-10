@@ -54,3 +54,8 @@ Each id is cited in [document.md](document.md) as [id]. Accessed September 4, 20
 - **mn-hss** — Minnesota DHS, "Housing Stabilization Services program ends Oct. 31" and CMS SPA MN-25-0021. First-in-nation 1915(i) housing benefit terminated October 31, 2025 after rapid provider and spending growth drew state and federal investigation. https://content.govdelivery.com/accounts/MNDHS/bulletins/3f9856a
 - **wa-fcs** — Washington State DSHS, "The Foundational Community Supports Program: Preliminary Evaluation Findings," and HCA program page. Launched January 2018; 20,000+ enrolled; supportive housing associated with reduced ED and inpatient use. https://www.hca.wa.gov/about-hca/programs-and-initiatives/medicaid-transformation-project-mtp/foundational-community-supports
 - **calaim** — California DHCS, Section 1115 waivers page and CalAIM renewal materials. Renewal filed May 12, 2026; transitional rent mandatory for plans January 1, 2026. https://www.dhcs.ca.gov/waivers/
+
+
+## September 9, 2026 update
+
+The shared [Council evidence register](../behavioral-health-2026-09-09/sources.md) adds the memo and deck, conflicting County/Health Share estimates, the local peer-reviewed study, regional model leads, operating-finance guidance and OSH records. Use the [assessment](../behavioral-health-2026-09-09/assessment.md) for status and limitations. Older entries are retained as research history, not revalidated current guidance.

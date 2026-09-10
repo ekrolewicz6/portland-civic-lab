@@ -1,0 +1,197 @@
+
+> portland-temp@0.1.0 lint
+> eslint
+
+
+/private/tmp/portland-permits-audit-20260909/source/scripts/seed.ts
+   19:10  warning  'sql' is defined but never used                @typescript-eslint/no-unused-vars
+   34:49  error    Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
+  666:10  warning  'plumbApp' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  691:10  warning  'mechApp' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  767:10  warning  'bizApp' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  787:10  warning  'elecRun' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  988:9   warning  'now' is assigned a value but never used       @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/actions/applications.ts
+  14:30  warning  'inArray' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/actions/bundling.ts
+    5:14  warning  'and' is defined but never used               @typescript-eslint/no-unused-vars
+  148:11  warning  'profile' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/actions/checksheet.ts
+  70:3  warning  '_note' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/actions/coordination.ts
+  5:20  warning  'sql' is defined but never used    @typescript-eslint/no-unused-vars
+  5:25  warning  'and' is defined but never used    @typescript-eslint/no-unused-vars
+  5:30  warning  'ilike' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/actions/documents.ts
+  4:43  warning  'profiles' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/actions/messages.ts
+  5:14  warning  'desc' is defined but never used  @typescript-eslint/no-unused-vars
+  5:25  warning  'or' is defined but never used    @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/actions/sla.ts
+  5:14  warning  'and' is defined but never used             @typescript-eslint/no-unused-vars
+  5:19  warning  'lt' is defined but never used              @typescript-eslint/no-unused-vars
+  7:10  warning  'checkSlaStatus' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(admin)/admin/coordination/coordination-dashboard.tsx
+  17:10  warning  'Button' is defined but never used              @typescript-eslint/no-unused-vars
+  40:10  warning  'isPending' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(admin)/admin/layout.tsx
+  2:8   warning  'Link' is defined but never used             @typescript-eslint/no-unused-vars
+  3:10  warning  'Building2' is defined but never used        @typescript-eslint/no-unused-vars
+  3:21  warning  'LayoutDashboard' is defined but never used  @typescript-eslint/no-unused-vars
+  3:38  warning  'FileText' is defined but never used         @typescript-eslint/no-unused-vars
+  3:48  warning  'Users' is defined but never used            @typescript-eslint/no-unused-vars
+  3:55  warning  'BarChart3' is defined but never used        @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(dashboard)/applications/[id]/page.tsx
+  1:10  warning  'notFound' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(public)/fees/page.tsx
+  68:7  warning  'PROJECT_TIMELINE_MAP' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(public)/forms/[category]/page.tsx
+  6:3  warning  'CardDescription' is defined but never used  @typescript-eslint/no-unused-vars
+  7:3  warning  'CardHeader' is defined but never used       @typescript-eslint/no-unused-vars
+  8:3  warning  'CardTitle' is defined but never used        @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(public)/forms/page.tsx
+  43:10  warning  'Button' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(public)/map/page.tsx
+  102:6  warning  React Hook useEffect has a missing dependency: 'initMap'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(public)/map/permits/page.tsx
+  87:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(public)/pilot/page.tsx
+  2:22  warning  'CheckCircle2' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(public)/property/[address]/brief/page.tsx
+  3:35  warning  'Clock' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(public)/report/page.tsx
+   5:3   warning  'CardDescription' is defined but never used  @typescript-eslint/no-unused-vars
+   6:3   warning  'CardHeader' is defined but never used       @typescript-eslint/no-unused-vars
+   7:3   warning  'CardTitle' is defined but never used        @typescript-eslint/no-unused-vars
+  10:10  warning  'Button' is defined but never used           @typescript-eslint/no-unused-vars
+  19:3   warning  'Construction' is defined but never used     @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(public)/timeline/page.tsx
+  126:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(public)/timeline/page.tsx:126:7
+  124 |   useEffect(() => {
+  125 |     if (categoryParam && allCategories.some((category) => category.value === categoryParam)) {
+> 126 |       setSelectedCategory(categoryParam as PermitCategory);
+      |       ^^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  127 |     }
+  128 |   }, [allCategories, categoryParam]);
+  129 |  react-hooks/set-state-in-effect
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/(public)/zoning/page.tsx
+  72:3  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/dev-login/page.tsx
+  51:9  warning  'router' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+  63:7  error    Error: This value cannot be modified
+
+Modifying a variable defined outside a component or hook is not allowed. Consider using an effect.
+
+/private/tmp/portland-permits-audit-20260909/source/src/app/dev-login/page.tsx:63:7
+  61 |       });
+  62 |       // Hard navigate so the server re-reads the cookie
+> 63 |       window.location.href = persona.route;
+     |       ^^^^^^^^^^^^^^^ value cannot be modified
+  64 |     } catch {
+  65 |       setLoading(null);
+  66 |     }  react-hooks/immutability
+
+/private/tmp/portland-permits-audit-20260909/source/src/components/admin/auto-approval-log.tsx
+  35:3  warning  'autoApproveEligible' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/components/admin/checksheet-panel.tsx
+  23:3  warning  'CheckCircle2' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/components/admin/discipline-review-panel.tsx
+  30:8  warning  'DisciplineReviewStatus' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/components/admin/pipeline-stage-indicator.tsx
+   7:3   warning  'AlertTriangle' is defined but never used       @typescript-eslint/no-unused-vars
+  77:19  warning  'isPending' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/components/forms/field-renderer.tsx
+  492:9  warning  The 'currentFiles' logical expression could make the dependencies of useCallback Hook (at line 542) change on every render. To fix this, wrap the initialization of 'currentFiles' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+/private/tmp/portland-permits-audit-20260909/source/src/components/forms/form-wizard.tsx
+  5:10  warning  'zodResolver' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/components/notifications/notification-bell.tsx
+  68:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/private/tmp/portland-permits-audit-20260909/source/src/components/notifications/notification-bell.tsx:68:5
+  66 |   // Initial fetch of unread count
+  67 |   useEffect(() => {
+> 68 |     fetchUnreadCount();
+     |     ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  69 |   }, [fetchUnreadCount]);
+  70 |
+  71 |   // Poll for unread count every 30 seconds  react-hooks/set-state-in-effect
+  80:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/private/tmp/portland-permits-audit-20260909/source/src/components/notifications/notification-bell.tsx:80:7
+  78 |   useEffect(() => {
+  79 |     if (open) {
+> 80 |       fetchNotifications();
+     |       ^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  81 |     }
+  82 |   }, [open, fetchNotifications]);
+  83 |                                           react-hooks/set-state-in-effect
+
+/private/tmp/portland-permits-audit-20260909/source/src/lib/property/api-client.ts
+  265:16  warning  'queryHazardLayerValue' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/lib/review-pipeline/pipeline.ts
+  22:10  warning  'routeToDisciplines' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/lib/review-pipeline/sla.ts
+   8:41  warning  'SLA_TARGETS' is defined but never used                @typescript-eslint/no-unused-vars
+  65:9   warning  'warningThreshold' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/lib/review-pipeline/stages/rules-engine.ts
+  9:42  warning  'ReviewDiscipline' is defined but never used  @typescript-eslint/no-unused-vars
+
+/private/tmp/portland-permits-audit-20260909/source/src/lib/zoning/rules-engine.ts
+  13:3  warning  'BaseZone' is defined but never used              @typescript-eslint/no-unused-vars
+  16:3  warning  'DevelopmentStandards' is defined but never used  @typescript-eslint/no-unused-vars
+  17:3  warning  'UseAllowance' is defined but never used          @typescript-eslint/no-unused-vars
+  18:3  warning  'AduEligibility' is defined but never used        @typescript-eslint/no-unused-vars
+
+✖ 65 problems (5 errors, 60 warnings)
+  0 errors and 2 warnings potentially fixable with the `--fix` option.
+

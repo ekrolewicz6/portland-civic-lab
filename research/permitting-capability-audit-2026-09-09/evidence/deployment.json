@@ -1,0 +1,27 @@
+{
+  "inspectedAt": "2026-09-09",
+  "id": "dpl_EPWvx2aS1uDcUK1bnRXwV1GVbX4g",
+  "name": "portland-permits",
+  "url": "portland-permits-mnrep2wq3-ekrolewicz6s-projects.vercel.app",
+  "state": "READY",
+  "target": "production",
+  "createdAt": "2026-05-22T07:26:23.410Z",
+  "readyAt": "2026-05-22T07:27:12.602Z",
+  "project": {
+    "id": "prj_eMls7UC5HOM3aFspcGqj4I80Pvjv",
+    "name": "portland-permits",
+    "framework": "nextjs"
+  },
+  "aliases": [
+    "www.portlandpermits.org",
+    "portland-civic-labs.vercel.app",
+    "portland-permits-ekrolewicz6s-projects.vercel.app",
+    "portland-permits-git-main-ekrolewicz6s-projects.vercel.app",
+    "portlandpermits.org"
+  ],
+  "repository": "ekrolewicz6/portland-civic-labs",
+  "commit": "23b4670d8d26b9093f6e401bb89d9d6f30d8506d",
+  "branch": "main",
+  "commitMessage": "Add pilot-ready permit workflow surfaces",
+  "limits": "Deployment metadata verified. Runtime logs and environment connectivity were not verified. Production was inspected read-only."
+}

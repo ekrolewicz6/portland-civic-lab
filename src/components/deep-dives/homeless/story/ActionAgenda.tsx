@@ -1,4 +1,6 @@
 import { ArrowRight, Plus } from "lucide-react";
+import { BH_ACTIONS } from "@/lib/homeless/behavioral-health";
+import { BhCitation } from "../BehavioralHealthEvidence";
 import styles from "./ContinuumStory.module.css";
 
 const ACTIONS = [
@@ -16,6 +18,22 @@ export default function ActionAgenda() {
       {ACTIONS.map((action, index) => <details className={styles.actionCard} key={action.title}>
         <summary><span className={styles.actionIndex}>0{index + 1}</span><div><h3>{action.title}</h3><p>{action.lead}</p></div><Plus size={19} aria-hidden="true" /></summary>
         <div className={styles.actionBody}><p>{action.body}</p><dl><div><dt>Who can act</dt><dd>{action.owner}</dd></div><div><dt>Proposed public measure</dt><dd>{action.measure}</dd></div></dl><a href={action.href} target="_blank" rel="noreferrer">Foundation: {action.source} ↗</a></div>
+      </details>)}
+    </div>
+    <div id="legislative-2027" className={styles.sectionHeader} style={{ scrollMarginTop: "8rem", marginTop: "2.5rem" }}>
+      <span className={styles.eyebrow}>September 9 Council briefing · proposal</span>
+      <h3>A proposed 2027 behavioral-health agenda</h3>
+      <p>The September 4 memo frames a possible focus for the City’s 2027 legislative agenda. The packet does not establish Council endorsement. Expected benefits remain forecasts; these milestones are proposed accountability measures.</p>
+      <BhCitation source="memo" locator="pp. 1–3" /><BhCitation source="slides" locator="slides 12–14" />
+    </div>
+    <div className={styles.actionGrid}>
+      {BH_ACTIONS.map((action) => <details className={styles.actionCard} key={action.title}>
+        <summary><div><h3>{action.title}</h3></div><Plus size={19} aria-hidden="true" /></summary>
+        <div className={styles.actionBody}><p>{action.body}</p><dl>
+          <div><dt>Decision-makers</dt><dd>{action.owner}</dd></div>
+          <div><dt>Evidence still needed</dt><dd>{action.evidence}</dd></div>
+          <div><dt>Proposed milestone and measure</dt><dd>{action.measure}</dd></div>
+        </dl><a href="#investigate">Prepare the evidence request ↓</a></div>
       </details>)}
     </div>
     <div className={styles.opportunity}>
