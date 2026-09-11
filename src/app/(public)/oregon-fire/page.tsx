@@ -4,19 +4,21 @@ import { ArrowDown, ArrowUpRight, Flame, BookOpen } from "lucide-react";
 import FireExplorer from "@/components/oregon-fire/FireExplorer";
 import { coverage } from "@/lib/oregon-fire/query";
 import { WOODPECKER } from "@/lib/oregon-fire/sources";
+import { pageMeta } from "@/lib/page-meta";
+import { FIRE_TITLE, FIRE_DESCRIPTION, FIRE_AUTHORS, fireStructuredData } from "@/lib/oregon-fire/metadata";
 import "./fire.css";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
-  title: "Fire in Oregon",
-  description:
-    "Explore documented prescribed burns, their purposes, and Oregon wildfire history. A public map by Edan Krolewicz, Jenna Knobloch, and Dominic Kuklawood.",
-  alternates: { canonical: "https://www.portlandciviclab.org/oregon-fire" },
+  ...pageMeta({ title: FIRE_TITLE, description: FIRE_DESCRIPTION, path: "/oregon-fire" }),
+  authors: FIRE_AUTHORS.map((name) => ({ name })),
+  keywords: ["Oregon fire map", "Oregon prescribed burns", "prescribed fire", "Oregon wildfire history", "planned burns", "burn treatment records"],
 };
 export default async function OregonFirePage() {
   const sources = await coverage();
   return (
     <article className="fire-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(fireStructuredData).replace(/</g, "\\u003c") }} />
       <header className="fire-hero">
         <div className="fire-hero-top">
           <span className="fire-eyebrow">

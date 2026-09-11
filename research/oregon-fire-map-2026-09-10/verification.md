@@ -50,3 +50,9 @@ Counts are source records, not additive unique-fire totals. Exact import timesta
 - Existing source-record histories are retained, but publisher retention policies remain unconfirmed. A missing planning record is not treated as a cancellation or completion.
 
 Local preview: `http://localhost:3100/oregon-fire`. The previously hosted Claude sourcebook remains a separate, unchanged copy.
+
+## Production release and sharing
+
+The initial release is live at https://www.portlandciviclab.org/oregon-fire (commit `c4a20cc`, Vercel deployment `dpl_JBhPCVhKCg3BLRq3uaedjMTCvKas`). All five focused browser checks passed against that public deployment in 41.9 seconds. The page, homepage and source endpoint returned HTTP 200; the unauthenticated cron request returned 401. Vercel confirmed the six-hour Oregon Fire schedule is enabled.
+
+The follow-up sharing update adds a dedicated 1200 × 630 PNG card, descriptive search/Open Graph/Twitter text, all three authors, and CollectionPage/breadcrumb structured data. The image uses a simplified Census-derived Oregon outline; interior curves are decorative and do not represent terrain or burn locations. Cormorant Garamond and DM Sans fonts are bundled with their OFL licenses, so image rendering needs no external font service. The card was rendered and visually inspected locally, and the crawler-facing metadata was checked before deployment.
