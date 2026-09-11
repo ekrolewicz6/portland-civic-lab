@@ -1,0 +1,575 @@
+<title>Oregon Fire Map Sourcebook</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F3F4F0; --bg-2:#E9EBE5; --ink:#1E2321; --ink-2:#4A524E; --ink-3:#7A827E;
+  --rule:#D3D7D0; --rule-2:#BFC5BC;
+  --moss:#2F6B45; --moss-bg:#DCEBDF; --rust:#9C3F22; --rust-bg:#F1DED5; --slate:#4A5F73; --slate-bg:#DEE5EC;
+  --link:#2E5A78; --card:#FAFAF7; --code-bg:#E9EBE5;
+  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#191C1A; --bg-2:#222623; --ink:#E6E8E3; --ink-2:#B4BAB4; --ink-3:#7F8681;
+    --rule:#343A36; --rule-2:#454C47;
+    --moss:#8FCBA3; --moss-bg:#1F3328; --rust:#E8946F; --rust-bg:#3A2219; --slate:#A9BCCB; --slate-bg:#25313B;
+    --link:#8FB8D6; --card:#20241F; --code-bg:#262B27;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#191C1A; --bg-2:#222623; --ink:#E6E8E3; --ink-2:#B4BAB4; --ink-3:#7F8681;
+  --rule:#343A36; --rule-2:#454C47;
+  --moss:#8FCBA3; --moss-bg:#1F3328; --rust:#E8946F; --rust-bg:#3A2219; --slate:#A9BCCB; --slate-bg:#25313B;
+  --link:#8FB8D6; --card:#20241F; --code-bg:#262B27;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:2px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header.masthead{border-bottom:1px solid var(--rule-2);padding:40px 0 28px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4vw,44px);line-height:1.1;margin:8px 0 12px;text-wrap:balance;letter-spacing:-.01em}
+.lede{font-size:18px;color:var(--ink-2);max-width:68ch;margin:0}
+.byline{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;color:var(--ink-2)}
+.byline b{color:var(--ink);font-weight:600}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;padding:36px 0 80px}
+nav.toc{position:sticky;top:20px;align-self:start;font-size:14px}
+nav.toc .eyebrow{margin-bottom:10px}
+nav.toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--rule-2)}
+nav.toc li a{display:block;padding:5px 0 5px 14px;color:var(--ink-2);text-decoration:none;border-left:2px solid transparent;margin-left:-1px}
+nav.toc li a:hover{color:var(--ink);border-left-color:var(--rule-2)}
+main{min-width:0}
+section{margin:0 0 56px}
+h2{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.15;margin:0 0 6px;text-wrap:balance;letter-spacing:-.005em}
+h2 + .sub{color:var(--ink-3);font-size:14px;margin:0 0 20px;font-family:var(--mono)}
+h3{font-family:var(--serif);font-weight:600;font-size:20px;margin:32px 0 8px;text-wrap:balance}
+h4{font-family:var(--sans);font-weight:600;font-size:15px;margin:22px 0 6px;letter-spacing:.01em}
+p,li{max-width:72ch}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:0 0 6px}
+code,.mono{font-family:var(--mono);font-size:.88em}
+code{background:var(--code-bg);padding:1px 5px;border-radius:3px;color:var(--ink)}
+.summary{background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--ink);padding:22px 26px;margin:0 0 8px}
+.summary ol{padding-left:20px;margin:0}
+.summary li{margin:0 0 12px;max-width:none}
+.summary li:last-child{margin:0}
+.chip{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;padding:2px 8px;border-radius:3px;white-space:nowrap;vertical-align:middle}
+.chip.pub{background:var(--moss-bg);color:var(--moss)}
+.chip.req{background:var(--rust-bg);color:var(--rust)}
+.chip.link{background:var(--slate-bg);color:var(--slate)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13.5px;color:var(--ink-2);margin:0 0 18px}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);background:var(--card);margin:0 0 22px}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.4}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--rule)}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:500;background:var(--bg-2);position:sticky;top:0}
+tbody tr:last-child td{border-bottom:0}
+td .mono,td.mono{font-size:12.5px;word-break:break-all}
+td.num{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;font-size:14.5px;margin:0 0 18px}
+.kv dt{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);padding-top:3px}
+.kv dd{margin:0}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 8px}
+.step{background:var(--card);border:1px solid var(--rule);padding:18px 20px}
+.step h4{margin:0 0 10px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.step ol{margin:0;padding-left:18px}
+.step li{font-size:14.5px;max-width:none}
+.callout{border-left:3px solid var(--rust);padding:4px 0 4px 18px;margin:18px 0 22px;color:var(--ink-2)}
+.callout p{margin:0 0 8px}
+.callout p:last-child{margin:0}
+details.mail{border:1px solid var(--rule);background:var(--card);margin:0 0 12px}
+details.mail summary{cursor:pointer;padding:14px 18px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.mail summary::-webkit-details-marker{display:none}
+details.mail summary::after{content:"+";font-family:var(--mono);color:var(--ink-3);flex:none}
+details.mail[open] summary::after{content:"–"}
+details.mail summary .to{font-weight:400;color:var(--ink-3);font-size:13.5px;font-family:var(--mono)}
+details.mail .body{padding:0 18px 18px;border-top:1px solid var(--rule)}
+details.mail .body p{max-width:72ch}
+.mailhead{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);margin:14px 0 14px;line-height:1.6}
+.sources{columns:2;column-gap:36px;font-size:13.5px}
+.sources ul{padding-left:16px;break-inside:avoid}
+.sources h4{break-after:avoid;margin-top:0}
+.sources li{max-width:none;overflow-wrap:anywhere}
+.roles dt{font-weight:600;margin-top:14px}
+.roles dd{margin:2px 0 0;max-width:72ch;color:var(--ink-2)}
+footer{border-top:1px solid var(--rule-2);padding:20px 0 40px;font-size:13px;color:var(--ink-3)}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr;gap:24px}
+  nav.toc{position:static}
+  nav.toc ol{display:flex;flex-wrap:wrap;gap:4px 14px;border:0}
+  nav.toc li a{padding:2px 0;border:0}
+  .steps{grid-template-columns:1fr}
+  .sources{columns:1}
+}
+@media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
+</style>
+
+<header class="masthead"><div class="wrap">
+  <div class="eyebrow">Research package · September 10, 2026</div>
+  <h1>Oregon Fire Map Sourcebook</h1>
+  <p class="lede">Every data source we found for a public map of prescribed fire and wildfire in Oregon, who holds it, what each record contains, who to talk to, and what to write to them.</p>
+  <div class="byline"><span><b>Edan Krolewicz</b></span><span><b>Jenna Knobloch</b></span><span><b>Dominic Kuklawood</b></span><span>Repo copy: <code>research/oregon-fire-map-2026-09-10/</code></span></div>
+</div></header>
+
+<div class="wrap layout">
+<nav class="toc" aria-label="Sections">
+  <div class="eyebrow">Contents</div>
+  <ol>
+    <li><a href="#summary">The short version</a></li>
+    <li><a href="#plan">What to do first</a></li>
+    <li><a href="#rx">Prescribed fire records</a></li>
+    <li><a href="#wf">Wildfire records</a></li>
+    <li><a href="#context">Context layers</a></li>
+    <li><a href="#gaps">Gaps</a></li>
+    <li><a href="#roles">Who does what</a></li>
+    <li><a href="#contacts">Named contacts</a></li>
+    <li><a href="#cbm">The 23 burn managers</a></li>
+    <li><a href="#drafts">Email drafts</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ol>
+</nav>
+<main>
+
+<section id="summary">
+  <h2>The short version</h2>
+  <p class="sub">Everything below was checked on September 10, 2026. "Queried" means the endpoint was hit and its schema and row counts read.</p>
+  <div class="summary"><ol>
+    <li><b>Prescribed fire on state, private, and most federal forestland in Oregon is registered in one system: ODF's Smoke Data System.</b> Federal units register there too (the 2025 annual report lists Deschutes NF, Mt. Hood NF, BLM districts and Crater Lake NP by name). The record includes latitude and longitude, acres, burn type, a burn reason code, fuel loading, and, after the burn, acres and tons burned, ignition time, fuel moistures, days since rain, and wind. In 2025: 2,946 registered units, 2,717 burned, 179,230 acres. The system needs a login and the public map shows only a rolling one-day and three-day window. <b>An export of the registration and accomplishment tables for all years is the single most valuable request.</b> That email goes first.</li>
+    <li><b>Two federal datasets are fully public and go back decades.</b> BLM Oregon/Washington prescribed fire polygons (36,966 completed burns with a <code>REASON</code> field and a NEPA plan ID) and Forest Service FACTS fuel treatments (20,531 Oregon fire-treatment records with NEPA document names and a purpose code). They can be pulled today.</li>
+    <li><b>Wildfire history is well covered by public feeds.</b> ODF fire occurrence points 1960 to 2024 (69,744 fires with cause and timing); NIFC/IRWIN incident locations and perimeters for all agencies, refreshed every five minutes, with prescribed fire as its own category; NWCC large-fire perimeters since 2000; Oregon Explorer's cleaned perimeter history through 2025; MTBS severity for fires over 1,000 acres.</li>
+    <li><b>The "why this location" answer lives in three places:</b> the NEPA documents behind federal burns (linked by ID from FACTS and BLM records), the burn reason code and comments in ODF's system, and landscape priority layers (ODF's 20-Year Strategy priority geographies, county CWPPs, Forest Service Wildfire Crisis Strategy landscapes). The plain-language version comes from practitioners, which is what the certified burn manager directory and the burn associations are for.</li>
+    <li><b>Two things exist only as records requests:</b> ODA's Willamette Valley field burning program (up to 15,000 acres a year, registered by April 1) and anything historical from ODF's system. Backyard and debris burn permits come from local fire districts and are not centralized; leave them out of version one.</li>
+  </ol></div>
+</section>
+
+<section id="plan">
+  <h2>What to do first</h2>
+  <p class="sub">Order matters because the public feeds are not retained and burning resumes in October.</p>
+  <div class="steps">
+    <div class="step"><h4>This week</h4><ol>
+      <li>Send the ODF data request (draft 1) to Stacy McCarter.</li>
+      <li>Start a daily job that archives ODF's 3-day accomplished layer and the USFS planned Rx layer. Nothing in them is kept by the publisher.</li>
+      <li>Pull BLM burns, USFS FACTS for Oregon, ODF fire occurrence, NIFC locations and perimeters, NWCC and Oregon Explorer histories.</li>
+      <li>Send drafts 4 and 3 to Carrie Berger (OSU Extension) and Kai Sauerbrey (TNC).</li>
+    </ol></div>
+    <div class="step"><h4>Next two weeks</h4><ol>
+      <li>Build a first map from public data: wildfire perimeters and ignitions over time, BLM and USFS burns with stated reason, ODF annual totals by district.</li>
+      <li>Send the practitioner note to the regional hubs and take the calls.</li>
+      <li>Send the ODA, DEQ, PUC and OEM asks in parallel.</li>
+      <li>Follow <code>nepa_doc_name</code> and <code>PLANID</code> for a sample of burns to see how much "why" can be pulled from decision documents automatically.</li>
+    </ol></div>
+    <div class="step"><h4>After the prototype</h4><ol>
+      <li>Tribal program conversations, with a clear statement of how their burns would or would not appear.</li>
+      <li>The note to the whole CBM directory and the Prescribed Fire Council asking people to check and annotate their own burns.</li>
+      <li>FTEM request, to show where a past burn changed a wildfire's behavior.</li>
+    </ol></div>
+  </div>
+  <div class="callout">
+    <p><b>Two product decisions to make early.</b> Names: the ODF feed carries private landowners' names and phone numbers, and the CBM directory carries personal emails. Publish agencies and businesses; aggregate or drop private individuals, and say so in the ODF request. Precision: ODF locations are a township/range/section plus a typed-in lat-long; federal polygons are surveyed units. Decide how a point that means "somewhere in this square mile" is drawn so it does not read as a boundary.</p>
+  </div>
+</section>
+<section id="rx">
+  <h2>Prescribed fire records</h2>
+  <p class="sub">Tier 1. Access status: <span class="chip pub">public</span> queried or downloadable now · <span class="chip req">request</span> login or records request · <span class="chip link">link only</span> confirmed to exist, not exercised</p>
+
+  <h3>ODF Smoke Management Program (the statewide registry)</h3>
+  <p>Oregon's Smoke Management Plan (OAR 629-048) requires anyone burning on forestland to register the unit with ODF and report what was burned. ODF meteorologists issue daily burn instructions. Field offices and federal units enter the data into the Smoke Data System.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>What</th><th>Where</th><th>Status</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Smoke Data System (system of record)</td><td class="mono">apps.odf.oregon.gov/SmokeDataSystem</td><td><span class="chip req">request</span></td><td>Returned HTTP 401. All registrations and accomplishments. Ask for an export.</td></tr>
+      <tr><td>Public prescribed fire map</td><td class="mono"><a href="https://experience.arcgis.com/experience/909972015b8c4bbaa4736d9fdeb55800">experience.arcgis.com/…/909972015b8c…</a></td><td><span class="chip pub">public</span></td><td>Planned and accomplished burns for today and the last three days.</td></tr>
+      <tr><td>Feature service behind it (4 layers: daily planned, daily accomplished, 3-day planned, 3-day accomplished)</td><td class="mono"><a href="https://gis.odf.oregon.gov/odfags/rest/services/Fire/Fire_Smoke_Management/FeatureServer">gis.odf.oregon.gov/odfags/…/Fire_Smoke_Management/FeatureServer</a></td><td><span class="chip pub">public</span></td><td>Queried. Points. Zero rows on Sept 10 because nothing was burning. Archive it daily.</td></tr>
+      <tr><td>Daily plans, daily accomplishments, weekly registrations, weekly accomplishments (PDF)</td><td class="mono"><a href="https://www.oregon.gov/odf/fire/pages/burn.aspx">oregon.gov/odf/fire/pages/burn.aspx</a></td><td><span class="chip pub">public</span></td><td>Same rolling window as PDF.</td></tr>
+      <tr><td>Annual smoke management reports 2020–2025</td><td class="mono"><a href="https://www.oregon.gov/odf/fire/Documents/smr2025.pdf">oregon.gov/odf/fire/Documents/smr2025.pdf</a></td><td><span class="chip pub">public</span></td><td>Change the year in the filename. District, ownership, burn type, month and intrusion tables. No unit-level rows.</td></tr>
+      <tr><td>Registration workbook (defines the record)</td><td class="mono">RegistrationSheets_Interactive.xlsx (linked from the burn page)</td><td><span class="chip pub">public</span></td><td>Field list below.</td></tr>
+      <tr><td>Smoke Sensitive Receptor Areas</td><td class="mono">Hosted/Fire_Smoke_Sensitive_Areas (proxied service in endpoints.csv)</td><td><span class="chip pub">public</span></td><td>Polygons from the Smoke Management Plan.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4>What the public rolling feed carries (3-day accomplished layer)</h4>
+  <p class="mono" style="font-size:13px;line-height:1.7">DistrictName · County · RegistrationNumber · TRS · Elevation · DistanceFromSSRA · Ownership · FirstName · LastName · BusinessName · SaleName · AcresPlanned · Plan_Types · TotalUnitTons · TotalTonsPlanned · TotalTonsBurned · PlannedIgnitionTime · ActualIgnitionTime · BurnType · UnitAcres · LandingAcres · LandingTons · PileAcres · PileTons · BroadcastAcres · BroadcastTons · BurnBossName</p>
+
+  <h4>What the registration form collects for every unit (so, what the export would hold)</h4>
+  <p><b>Registration:</b> date registered, district, ownership code (state/county/municipal, private, BLM, USFS, other federal), sale name, township/range/section, latitude, longitude, county, distance to SSRA, unit acres, cutting date, elevation, slope, burn type, burn reason, unit information, fuel species, broadcast acres, duff depth, landing acres and tons, pile acres and tons, fuel loading by size class (0–¼", ¼–1", 1–3", 3–9", 9–20", 20"+), shrub type and cover, litter type and depth, tons per acre, operator, comments.</p>
+  <p><b>Accomplishment:</b> acres burned; landing, pile and broadcast tons burned; achieved rapid ignition; shrub consumption; duff fuel moisture; 1000-hour fuel moisture code; 10-hour and 100-hour fuel moisture; days since significant rain; wind speed; planned date and time; actual burn date and ignition time.</p>
+  <dl class="kv">
+    <dt>Burn types</dt><dd>Broadcast · Broadcast Natural · Grapple · Handpile · Landing Only · Underburn Natural · Right-of-way · Rangeland · Underburn Activity · Tractor Pile</dd>
+    <dt>Burn reasons</dt><dd>Hazard &amp; Silviculture · Level 2 Regulation, Fee exempt · Forest Health · Hazardous Reduction · Forest Health Maintenance · Silviculture · Wildlife Habitat · Other</dd>
+    <dt>Who registers</dt><dd>The district list in the form includes every ODF district, every Oregon national forest ranger district, BLM districts, Crater Lake NP, Oregon Caves NM and the Columbia Gorge Scenic Area. That is how we know federal burns are in the same registry.</dd>
+    <dt>2025 totals</dt><dd>179,230 acres burned · 2,946 registered units · 2,717 units burned · 3,941 ignitions · 2 intrusions. By district: South Cascade 387 units, Coos 301, Western Lane 267, Douglas FPA 262, Southwest 237, West Oregon 233, Wallowa-Whitman NF 110, Willamette NF 101, Deschutes NF 91.</dd>
+  </dl>
+  <div class="callout"><p><b>Privacy.</b> The feed and the registration carry private landowners' names and phone numbers. Show the business or agency for public units; aggregate or drop names for private ones. Say this in the request; it makes ODF's redaction review faster.</p></div>
+
+  <h3>Forest Service (national forests)</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>What</th><th>Where</th><th>Status</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Pacific Northwest Prescribed Fire Tracker (planned units, OR and WA)</td><td class="mono"><a href="https://experience.arcgis.com/experience/55ce8bfdea4345b6a06ae81d67e7d411">experience.arcgis.com/…/55ce8bfdea43…</a></td><td><span class="chip pub">public</span></td><td>Front end for the layer below.</td></tr>
+      <tr><td>PNW Planned Rx Polygon</td><td class="mono"><a href="https://services1.arcgis.com/gGHDlz6USftL5Pau/arcgis/rest/services/PNW_Planned_Rx_Polygon_Public/FeatureServer/1">services1.arcgis.com/gGHDlz6USftL5Pau/…/PNW_Planned_Rx_Polygon_Public/FeatureServer/1</a></td><td><span class="chip pub">public</span></td><td>Queried. 1,117 polygons. <span class="mono">ACTIVITY_UNIT_NAME BURN_STATUS NBR_UNITS_PLANNED DATE_COMPLETED NBR_UNITS_ACCOMPLISHED DISTRICT_NAME CONTACT_NAME CONTACT_PHONE CONTACT_EMAIL COMMENTS ACTIVITY Season Dateplanned</span>. Every unit carries the ranger district's phone.</td></tr>
+      <tr><td>FACTS Hazardous Fuel Treatments, Fire sublayer</td><td class="mono"><a href="https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_HazardousFuelsTreatments_01/MapServer/3">apps.fs.usda.gov/arcx/…/EDW_HazardousFuelsTreatments_01/MapServer/3</a></td><td><span class="chip pub">public</span></td><td>Queried. 20,531 Oregon records (<span class="mono">state_abbr='OR'</span>). <span class="mono">activity treatment_type date_completed fiscal_year_completed gis_acres nepa_project_id nepa_doc_name purpose_code iswui cwpp implementation_project fund_code method equipment</span>.</td></tr>
+      <tr><td>FACTS download (shapefile/GDB)</td><td class="mono"><a href="https://data-usfs.hub.arcgis.com/datasets/usfs::hazardous-fuel-treatment-reduction-polygon-feature-layer">data-usfs.hub.arcgis.com/…/hazardous-fuel-treatment-reduction-polygon</a></td><td><span class="chip pub">public</span></td><td>Large. Metadata contact SM.FS.data@usda.gov; metadata dated 2026-08-28.</td></tr>
+      <tr><td>National fire occurrence and perimeters (FIRESTAT)</td><td class="mono">apps.fs.usda.gov/arcx/…/EDW_FireOccurrenceAndPerimeter_01/MapServer</td><td><span class="chip link">link only</span></td><td>Fires on national forests.</td></tr>
+      <tr><td>Forest project pages (NEPA documents)</td><td class="mono">fs.usda.gov, each forest's Projects page</td><td><span class="chip pub">public</span></td><td><span class="mono">nepa_doc_name</span> is the key. PALS itself is not public.</td></tr>
+      <tr><td>Central Oregon Fire Info, prescribed fire plans</td><td class="mono"><a href="https://centraloregonfire.org/prescribed-fire-smoke-plans/">centraloregonfire.org/prescribed-fire-smoke-plans</a></td><td><span class="chip pub">public</span></td><td>Per-burn narratives with reasons. The best regional model for what we want statewide.</td></tr>
+      <tr><td>Annual Region 6 fire summaries 2017–2025</td><td class="mono"><a href="https://www.fs.usda.gov/r06/fire/resources">fs.usda.gov/r06/fire/resources</a></td><td><span class="chip pub">public</span></td><td>PDFs.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Bureau of Land Management (Oregon/Washington)</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>What</th><th>Where</th><th>Status</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>BLM OR Prescribed Fire Treatments Polygon</td><td class="mono"><a href="https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_OR_Prescribed_Fire_Treatments_Polygon_Hub/FeatureServer/1">services1.arcgis.com/KbxwQRRfWyEYLgp4/…/BLM_OR_Prescribed_Fire_Treatments_Polygon_Hub/FeatureServer/1</a></td><td><span class="chip pub">public</span></td><td>Queried. 36,966 completed burns, earliest seen FY1979. <span class="mono">TRT_NAME PROJ_NAME UNIT_NUM BURN_TYPE TRT_STATUS TRT_DATE TRT_FY REASON REASON2 INITIATIVE PLANID TRT_ACRES GIS_ACRES CONTRACTOR NFPORS_TRTID BLM_ORG_CD</span>. Updated 2026-09-04.</td></tr>
+      <tr><td>Download page</td><td class="mono"><a href="https://gbp-blm-egis.hub.arcgis.com/datasets/BLM-EGIS::blm-or-prescribed-fire-treatments-polygon-hub">gbp-blm-egis.hub.arcgis.com/…/blm-or-prescribed-fire-treatments-polygon-hub</a></td><td><span class="chip pub">public</span></td><td>Shapefile and GDB. Steward listed as sjeronimo@blm.gov.</td></tr>
+      <tr><td>Planned burns this season</td><td class="mono"><a href="https://www.blm.gov/programs/fire/regional-info/oregon-washington/prescribed-fire">blm.gov/programs/fire/regional-info/oregon-washington/prescribed-fire</a></td><td><span class="chip pub">public</span></td><td>Names, acres and windows by district. Narrative only.</td></tr>
+      <tr><td>NEPA documents</td><td class="mono">eplanning.blm.gov</td><td><span class="chip link">link only</span></td><td><span class="mono">PLANID</span> is the key.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Tribal, NGO and landowner burns</h3>
+  <p>These register with ODF when on forestland, so they should appear in an export, but the reasons and the cultural context will not.</p>
+  <ul>
+    <li><b>Prescribed Fire Liability Program enrollment map</b> (HB 4016, 2024): <a href="https://experience.arcgis.com/experience/79e14d6fbce649c2adbdadc9ef670244/">enrolled prescribed and cultural burns since 2024</a>. <span class="chip link">link only</span></li>
+    <li><b>Certified Burn Manager directory:</b> 23 people as of August 2026, in the table below and in <code>cbm-directory.csv</code>.</li>
+    <li><b>Prescribed burn associations</b> (seven as of January 2026): Rogue Valley, Umpqua, Mt. Adams, Central Oregon Prescribed Burn Co-op, North Valley, Northeast Oregon, Southern Blues. <a href="https://extension.oregonstate.edu/fire-program/prescribed-burn-associations">OSU Extension keeps the list</a> (the page refused automated access; open it in a browser).</li>
+    <li><b>The Nature Conservancy Oregon:</b> Sycan Marsh Preserve (30,000 acres, Klamath Basin) is the state's most studied prescribed fire site. TNC's fire program director is in the CBM directory.</li>
+    <li><b>Klamath Tribes Wildland Fire Program:</b> <a href="https://www.klamathtribesnews.org/2026/04/29/2026-prescribed-burns/">spring 2026 burns</a> and a <a href="https://www.klamathtribesnews.org/2025/09/02/klamath-tribes-wildland-fire-program-report/">2025 program report</a>.</li>
+    <li><b>Grand Ronde, Siletz and Warm Springs</b> are partners in a <a href="https://pacificbirds.org/2024/12/oregon-partners-nfwf-grant/">2024 NFWF-funded ecocultural burning project</a>. Warm Springs traditional fire use is documented in a <a href="https://research.fs.usda.gov/treesearch/59061">USFS research paper</a>.</li>
+    <li><b>Lomakatsi Restoration Project</b> and the <b>Ashland Forest Resiliency</b> partnership (City of Ashland, Lomakatsi, Rogue River-Siskiyou NF, TNC) run the Rogue Basin TREX.</li>
+    <li><b>Willamette Ignitions Network</b> (Eugene) trains burn crews and hosts the September 14–17, 2026 CBM course.</li>
+  </ul>
+
+  <h3>Agricultural field burning (ODA)</h3>
+  <p>Willamette Valley grass seed and cereal residue, up to 15,000 acres a year in the north valley, run by ODA with ODF meteorologists making the daily calls. Every field is registered by April 1. No public dataset was found. <span class="chip req">request</span> Field registrations and daily accomplishments by year. Program line 503-986-4701 (older material) or 503-986-4550 (current page), <span class="mono">info@oda.oregon.gov</span>. Rules: OAR 603-077.</p>
+
+  <h3>Backyard, debris and open burning</h3>
+  <p>Permits come from local fire districts (many use beforeyouburn.com), with air rules from DEQ statewide and LRAPA in Lane County. There is no statewide registry. Leave out of version one; revisit with a records request to a few large districts if the map needs it.</p>
+</section>
+
+<section id="wf">
+  <h2>Wildfire records</h2>
+  <p class="sub">Tier 2. All public. Join on IrwinID where it exists.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Source</th><th>Coverage</th><th>Rows</th><th>Key fields</th><th>Where</th></tr></thead>
+    <tbody>
+      <tr><td>ODF Fire Occurrence <span class="chip pub">public</span></td><td>1960–2024, ODF-protected lands (~16 million acres)</td><td class="num">69,744</td><td>Cause (general, specific, comments, lead investigator, degree of certainty), TRS and lat-long, ignition / discovery / report / attack / control datetimes, size at attack, final acres, size class, fuel, slope, aspect, elevation, protection agency, land class, county. EPSG:2992.</td><td class="mono"><a href="https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/ODF_Fire/FeatureServer/1">services.arcgis.com/uUvqNMGPm7axC2dD/…/ODF_Fire/FeatureServer/1</a>; Socrata <a href="https://data.oregon.gov/Natural-Resources/ODF-Fire-Occurrence-2000-2025/fa7z-shhx">fa7z-shhx</a></td></tr>
+      <tr><td>NIFC WFIGS incident locations (IRWIN) <span class="chip pub">public</span></td><td>All agencies, live; year-to-date and full history</td><td class="num">2026 OR: 1,802 WF, 159 RX</td><td><span class="mono">IncidentTypeCategory</span> (WF / RX / CX), cause, discovery / containment / control / out dates, acres, jurisdiction, protecting unit, TRS, IrwinID.</td><td class="mono"><a href="https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Incident_Locations_YearToDate/FeatureServer/0">…/WFIGS_Incident_Locations_YearToDate/FeatureServer/0</a>; <a href="https://data-nifc.opendata.arcgis.com/">data-nifc.opendata.arcgis.com</a></td></tr>
+      <tr><td>NIFC WFIGS perimeters <span class="chip pub">public</span></td><td>2021–present; history view to 2024</td><td class="num">—</td><td>Polygons keyed by IrwinID. History view includes prescribed burns from WFIGS, NPS and CAL FIRE.</td><td class="mono"><a href="https://data-nifc.opendata.arcgis.com/datasets/nifc::wfigs-interagency-fire-perimeters/about">WFIGS_Interagency_Perimeters</a>; <a href="https://data-nifc.opendata.arcgis.com/datasets/nifc::interagencyfireperimeterhistory-all-years-view/about">InterAgencyFirePerimeterHistory All Years</a></td></tr>
+      <tr><td>NWCC Fire History <span class="chip pub">public</span></td><td>2000–present, OR and WA large fires</td><td class="num">3,045</td><td>Name, year, start date, cause, perimeter and reported acres, containment and control dates, IRWIN ID, fire code.</td><td class="mono"><a href="https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/NWCC_Fire_History/FeatureServer/0">…/NWCC_Fire_History/FeatureServer/0</a></td></tr>
+      <tr><td>Oregon Wildfire Perimeter History <span class="chip pub">public</span></td><td>pre-2000 and 2000–2025</td><td class="num">4,608 recent</td><td>NIFC data cleaned by OSU INR in April 2026. Two layers: recent (2000–2025) and historic (pre-2000).</td><td class="mono"><a href="https://services1.arcgis.com/CD5mKowwN6nIaqd8/arcgis/rest/services/library_env_or_wildfire_perimeter_history/FeatureServer">…/library_env_or_wildfire_perimeter_history/FeatureServer</a></td></tr>
+      <tr><td>FPA FOD v6 <span class="chip pub">public</span></td><td>1992–2020, national</td><td class="num">2.3 M</td><td>The cleanest cross-agency ignition record. Two-year lag; check whether a v7 is scheduled.</td><td class="mono">USFS Research Data Archive RDS-2013-0009</td></tr>
+      <tr><td>MTBS <span class="chip pub">public</span></td><td>1984–2024, fires over 1,000 ac in the West</td><td class="num">—</td><td>Burned area boundaries and severity rasters. Includes prescribed fires over the threshold. Version 12.0, April 2025.</td><td class="mono"><a href="https://www.mtbs.gov/">mtbs.gov</a></td></tr>
+      <tr><td>RAVG <span class="chip link">not verified</span></td><td>Fires over 1,000 ac on NFS land</td><td class="num">—</td><td>Basal area and canopy loss rasters, more timely than MTBS.</td><td class="mono">fs.usda.gov post-fire vegetation condition</td></tr>
+      <tr><td>NASA FIRMS <span class="chip link">not verified</span></td><td>2000–present hotspots</td><td class="num">—</td><td>MODIS and VIIRS detections, including many prescribed burns. API key.</td><td class="mono">firms.modaps.eosdis.nasa.gov</td></tr>
+      <tr><td>OSFM wildfire map <span class="chip pub">public</span></td><td>Fires over 100 ac, current</td><td class="num">—</td><td>Structural response. Sources WFIGS/IRWIN, OEM, NWS, ALERTWest.</td><td class="mono"><a href="https://osfminfo.org/">osfminfo.org</a></td></tr>
+      <tr><td>InciWeb and ICS-209 <span class="chip pub">public</span></td><td>Large fires</td><td class="num">—</td><td>Daily narrative, resources, structures threatened.</td><td class="mono">inciweb.wildfire.gov; NWCC situation reports</td></tr>
+      <tr><td>ALERTWest cameras <span class="chip pub">public</span></td><td>Live plus archive</td><td class="num">70 OR cameras</td><td>Panoramas every two minutes; time-lapse. Control and alert credentials via wildfirehelp@uoregon.edu.</td><td class="mono"><a href="https://www.alertwest.live/">alertwest.live</a></td></tr>
+      <tr><td>ODF 2020 Labor Day Fires <span class="chip pub">public</span></td><td>2020</td><td class="num">—</td><td>Perimeters for the Labor Day fires.</td><td class="mono">…/2020_Oregon_Labor_Day_Fires_View/FeatureServer</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="context">
+  <h2>Context layers</h2>
+  <p class="sub">Tier 3. What makes a burn or a fire legible: smoke, weather, hazard, priorities, evacuation, utilities.</p>
+  <dl class="roles">
+    <dt>Smoke and air quality</dt><dd>DEQ AQI and hourly monitoring at <a href="https://aqi.oregon.gov/">aqi.oregon.gov</a> (history by records request or the EPA AQS API); AirNow fire and smoke map; PurpleAir API; ODF smoke forecasts and the intrusion tables in the annual reports; the interagency blog at <a href="https://www.oregonsmoke.org/">oregonsmoke.org</a>. The smoke sensitive receptor area layer is public.</dd>
+    <dt>Fire weather and danger</dt><dd>ODF's live Fire Danger Level, Industrial Fire Precaution Level, Regulated Use Area and Significant Fire Potential layers (<span class="mono">Hosted</span> folder on <span class="mono">gis.odf.oregon.gov/odfags</span>); NWS fire weather zones (in the ODF web map); Red Flag warnings via the NWS API; RAWS stations via Synoptic; NWCC Predictive Services outlooks.</dd>
+    <dt>Hazard and risk</dt><dd>The 2025 <a href="https://hazardmap.forestry.oregonstate.edu/">Statewide Wildfire Hazard Map</a> was repealed as a regulatory instrument by SB 83 (2025) but the data stands; the <a href="https://oregonexplorer.info/topics/wildfire-risk">Oregon Wildfire Risk Explorer</a> is being rebuilt (expected early 2026; check status); Wildfire Risk to Communities (USFS); LANDFIRE fuels and fire regimes.</dd>
+    <dt>Why-here layers</dt><dd>ODF 20-Year Strategy Priority Geographies (feature service on the ODF hub); county CWPPs via the <a href="https://hub.oregonexplorer.info/content/oregon-cwpp-planning-tool">Oregon CWPP Planning Tool</a>; Forest Service Wildfire Crisis Strategy landscapes; ODF Landscape Resiliency Program projects (<a href="https://www.oregon.gov/odf/fire/Documents/lrp-2023-25-implementation-summary.pdf">2023–25 implementation summary</a>).</dd>
+    <dt>Evacuation and response</dt><dd>Genasys Protect zones (all 36 counties and nine tribes under a state contract); <a href="https://experience.arcgis.com/experience/de78333b0d2544f7a320142174aa20ae">Public RAPTOR</a>; the <a href="https://oregon-oem-geo.hub.arcgis.com/">OEM ArcGIS hub</a>.</dd>
+    <dt>Boundaries</dt><dd>ODF forest protection districts, ownership and land management, wilderness, fire weather zones, PLSS. All on the ODF hub.</dd>
+    <dt>Utilities</dt><dd><a href="https://www.oregon.gov/puc/safety/pages/wildfire-mitigation.aspx">PUC wildfire mitigation plans</a> (UM 2207 Pacific Power, UM 2208 PGE, UM 2209 Idaho Power; rules in OAR 860-300 under AR 638; 2026–2028 plans approved June 2026). Plans contain the utilities' high fire risk zones and ignition histories; PSPS lessons-learned reports are due each December 31. No structured ignition dataset is published; ask PUC safety staff.</dd>
+    <dt>Treatment effectiveness</dt><dd>FTEM records every time a wildfire meets a prior treatment. It lives in IFTDSS behind a NIFC login; public dashboard at <a href="https://fireportal.usda.gov/ftem/">fireportal.usda.gov/ftem</a>. Worth a request once the treatment layers are in, because it answers "did the burn work."</dd>
+    <dt>Policy timeline for captions</dt><dd>SB 762 (2021) created the Certified Burn Manager program, the Landscape Resiliency Program and the hazard map; SB 80 (2023) revised them; HB 4016 (2024) created the Prescribed Fire Liability pilot; SB 83 (2025) repealed the hazard map and its mandates. The Wildfire Programs Advisory Council reports each October (<a href="https://www.oregon.gov/gov/Documents/WPAC%20Report_2025.pdf">2025 report</a>).</dd>
+  </dl>
+</section>
+
+<section id="gaps">
+  <h2>Gaps and what fills them</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Gap</th><th>Fill</th></tr></thead>
+    <tbody>
+      <tr><td>Per-burn history on state and private land (and federal units as registered)</td><td>Smoke Data System export from ODF. Voluntary ask first, records request as the fallback.</td></tr>
+      <tr><td>Reasons for private burns</td><td>Burn reason code in the export; practitioner interviews; PBA and CBM narratives.</td></tr>
+      <tr><td>Reasons for federal burns</td><td>NEPA documents by <span class="mono">nepa_doc_name</span> (USFS) and <span class="mono">PLANID</span> (BLM).</td></tr>
+      <tr><td>Cultural burns</td><td>Direct relationships with tribal fire programs; the liability program enrollment map.</td></tr>
+      <tr><td>Field burning</td><td>ODA records request.</td></tr>
+      <tr><td>Backyard and debris burning</td><td>Not centralized; out of scope for v1.</td></tr>
+      <tr><td>Live per-burn feed</td><td>Poll the four ODF layers and the USFS tracker layer daily and keep every row.</td></tr>
+      <tr><td>Treatment effectiveness</td><td>FTEM request.</td></tr>
+      <tr><td>Structures lost and damage</td><td>OSFM season reports; OEM damage assessments; county assessors.</td></tr>
+    </tbody>
+  </table></div>
+  <h4>Build notes</h4>
+  <ul>
+    <li>Join keys: <span class="mono">IrwinID</span> (NIFC locations to perimeters, and NWCC history), <span class="mono">RegistrationNumber</span> (ODF feed to the export), <span class="mono">nepa_project_id</span> and <span class="mono">PLANID</span> (treatments to documents), <span class="mono">NFPORS_TRTID</span> (BLM to DOI reporting).</li>
+    <li>ODF fire occurrence is in EPSG:2992 (Oregon Lambert, feet). BLM and NIFC are WGS84.</li>
+    <li>ODF and USFS services cap at 2,000 records per request; page with <span class="mono">resultOffset</span>.</li>
+  </ul>
+</section>
+<section id="roles">
+  <h2>Who does what</h2>
+  <p class="sub">What each group actually does, so the asks land with the right people.</p>
+  <dl class="roles">
+    <dt>ODF Smoke Management Program (Salem)</dt><dd>Runs the statewide registry for prescribed burning on forestland. Its meteorologists issue the daily burn instructions that decide whether registered units may ignite. Its staff maintain the Smoke Data System, the daily and weekly PDFs, the public map and the annual report, and run the Certified Burn Manager program and the Prescribed Fire Liability pilot. This is the office that holds the per-burn history.</dd>
+    <dt>ODF district offices</dt><dd>Twelve protection districts do the field work: take registrations from landowners, inspect units, relay burn instructions, enter accomplishments. If Salem says the history is held locally, these are the next stop.</dd>
+    <dt>Forest Service ranger districts (fuels staff)</dt><dd>Plan and run burns on national forests: write the burn plans, carry the NEPA decision, register with ODF, post planned units to the Region 6 tracker. Each unit in the tracker lists its district phone. The Region 6 office in Portland coordinates and publishes the annual fire summaries.</dd>
+    <dt>BLM district fuels programs</dt><dd>Same role on BLM land. The OR/WA state office publishes the prescribed fire polygon dataset and the season's planned burns.</dd>
+    <dt>Certified Burn Managers</dt><dd>People ODF has certified (24 hours of coursework, three training burns, five-year certification) to plan and lead prescribed burns on ODF-protected land. When a landowner uses a CBM and follows the burn plan, both are protected from civil liability (SB 762; OAR 629-042-1000 to 1070). A CBM writes the burn plan (objectives, weather prescription, ignition pattern, holding resources, contingencies), files the smoke registration with the ODF district, waits for the daily instruction, runs the burn as burn boss, and files the accomplishment. They know why each unit was chosen, and they hold the plans and the photos. Directory columns: <i>Insured</i> means they carry their own liability insurance; <i>For hire</i> means they will burn for other landowners; <i>Willing to mentor</i> means they take trainees on burns, which is how new CBMs get their three training fires.</dd>
+    <dt>Prescribed burn associations</dt><dd>Landowner cooperatives that pool equipment, people and know-how to burn each other's land, usually with an OSU Extension fire specialist helping. Seven exist as of January 2026. They are the route to private-land burns and to the landowners' own reasons.</dd>
+    <dt>OSU Extension Fire Program</dt><dd>Regional fire specialists who help PBAs form, teach the CBM course and publish the guides. Neutral, well connected, and used to explaining fire to the public; a natural advisor.</dd>
+    <dt>OSU Institute for Natural Resources / Oregon Explorer</dt><dd>Built the Wildfire Risk Explorer, the CWPP planning tool and the cleaned statewide perimeter history. They have already solved the cleaning problems we will hit.</dd>
+    <dt>The Nature Conservancy Oregon</dt><dd>Runs prescribed fire at Sycan Marsh and elsewhere, hosts research, and employs two of the 23 CBMs including its fire program director. The most experienced non-agency burn program in the state.</dd>
+    <dt>Tribal fire programs</dt><dd>The Klamath Tribes Wildland Fire Program burns on tribal and adjacent federal land. Warm Springs, Grand Ronde and Siletz are restoring ecocultural burning. Approach as partners whose burns may or may not belong on a public map, on their terms.</dd>
+    <dt>NWCC (Portland)</dt><dd>The Northwest Geographic Area Coordination Center. Compiles large fire perimeters and daily situation reports for Oregon and Washington; runs Predictive Services.</dd>
+    <dt>DEQ Air Quality</dt><dd>Co-administers the smoke management plan, designates smoke sensitive receptor areas with ODF, runs the monitoring network. Holds the monitor history.</dd>
+    <dt>ODA Smoke Management Program</dt><dd>Registers and permits Willamette Valley field burning and makes daily calls with ODF meteorologists. Holds field-level registrations and accomplishments that are not published.</dd>
+    <dt>Oregon PUC Safety Division</dt><dd>Reviews the three investor-owned utilities' wildfire mitigation plans and PSPS reports. The route to utility ignition and risk-zone data.</dd>
+    <dt>Oregon Department of Emergency Management</dt><dd>RAPTOR, the OEM hub, and (through ODHS's contract) Genasys evacuation zones for all counties and nine tribes.</dd>
+    <dt>Oregon Hazards Lab (UO)</dt><dd>Operates the Oregon part of the ALERTWest camera network.</dd>
+  </dl>
+</section>
+
+<section id="contacts">
+  <h2>Named contacts</h2>
+  <p class="sub">Read from official pages on September 10, 2026. Role-level rows are where no name was published.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Who</th><th>Role</th><th>Contact</th><th>Ask</th></tr></thead>
+    <tbody>
+      <tr><td><b>Stacy McCarter</b></td><td>ODF Mitigation Program Manager; listed contact for smoke management, the CBM program and the prescribed fire page</td><td class="mono">stacy.mccarter@odf.oregon.gov<br>503-701-0236</td><td>Smoke Data System export (all years); who owns the data; whether burn plans for public units can be shared; introductions to the CBM community</td></tr>
+      <tr><td><b>Shelby Berry</b></td><td>ODF staff to the Smoke Management Advisory Committee</td><td class="mono">shelby.berry@odf.oregon.gov<br>503-949-5181</td><td>SMAC materials, intrusion records, a slot to present the map to SMAC</td></tr>
+      <tr><td>ODF public records</td><td>Portal; first 30 minutes of staff time free</td><td class="mono"><a href="https://apps.odf.oregon.gov/PublicRecords">apps.odf.oregon.gov/PublicRecords</a></td><td>Formal request if the voluntary route stalls</td></tr>
+      <tr><td>ODF general and media</td><td></td><td class="mono">forestryinformation@odf.oregon.gov<br>odf.pio@odf.oregon.gov</td><td>GIS contact for the feature services; permission to cite</td></tr>
+      <tr><td>ODF Prescribed Fire Liability Program</td><td></td><td class="mono">odf.prescribedfireliability@odf.oregon.gov</td><td>Enrollment map data; cultural burn enrollments</td></tr>
+      <tr><td><b>Carrie Berger</b></td><td>Manager, OSU Extension Fire Program</td><td class="mono">carrie.berger@oregonstate.edu<br>541-737-7524</td><td>Advisor; introductions to the regional fire specialists and the seven PBAs</td></tr>
+      <tr><td><b>John Punches</b></td><td>OSU, La Grande; Certified Burn Manager</td><td class="mono">john.punches@oregonstate.ed (as published; likely .edu)<br>541-602-4689</td><td>Northeast Oregon and Southern Blues PBAs; landowner reasons</td></tr>
+      <tr><td><b>Micah Schmidt</b></td><td>OSU Extension, La Grande; CBM; newest directory entry (Aug 2026)</td><td class="mono">micah.schmidt@oregonstate.edu<br>541-787-7325</td><td>Same region; likely the specialist assigned to PBAs</td></tr>
+      <tr><td><b>Kai Sauerbrey</b></td><td>TNC Oregon fire program director; burn boss at Sycan Marsh; CBM</td><td class="mono">kai.sauerbrey@tnc.org<br>541-876-6994</td><td>TNC burn history with objectives; Sycan research; how to show prescribed fire honestly</td></tr>
+      <tr><td><b>Justin Jones</b></td><td>TNC, Wallowa County; CBM</td><td class="mono">jjones@tnc.org<br>850-982-9224</td><td>Northeast Oregon TNC burns</td></tr>
+      <tr><td><b>Brent Ross</b></td><td>McKenzie River Trust; CBM</td><td class="mono">brent@mckenzieriver.org<br>541-953-5968</td><td>Willamette Valley prairie and oak burns; land trust records</td></tr>
+      <tr><td><b>Richard Pasquale</b></td><td>COPBC (read as Central Oregon Prescribed Burn Co-op; confirm); CBM</td><td class="mono">rich.pasquale@gmail.com<br>480-250-1273</td><td>PBA burn records; landowner motivations in Deschutes County</td></tr>
+      <tr><td><b>Daniel Cleveland</b></td><td>Blackline Solutions LLC, Sherwood; contractor, insured, for hire</td><td class="mono">dcleveland@blacklinesllc.com<br>503-580-0304</td><td>What a contractor's burn record looks like; north valley private burns</td></tr>
+      <tr><td><b>Sam Commarto</b></td><td>Cross Contour LLC, Ashland; contractor</td><td class="mono">sam@crosscontourfire.com<br>530-598-6640</td><td>Rogue Valley private burns</td></tr>
+      <tr><td><b>James Salazar</b></td><td>BURNWISE LLC, Jacksonville</td><td class="mono">jsalazar@burnwise.org<br>760-784-1659</td><td>Rogue Valley; likely tied to the Rogue Valley PBA</td></tr>
+      <tr><td>Oregon Prescribed Fire Council</td><td>Statewide practitioner network (Eugene)</td><td class="mono">oregonrxfirecouncil@gmail.com<br><a href="https://www.oregonrxfire.org/">oregonrxfire.org</a></td><td>Announce the project to practitioners; review the map</td></tr>
+      <tr><td>Willamette Ignitions Network</td><td>Training nonprofit (Eugene); hosts the Sept 14–17, 2026 CBM course</td><td class="mono">contact@firewin.org</td><td>Introduce the project to the new CBM cohort</td></tr>
+      <tr><td>BLM OR/WA data steward</td><td>Listed contact on the prescribed fire polygon dataset</td><td class="mono">sjeronimo@blm.gov</td><td>Field definitions, <span class="mono">REASON</span> code list, update cadence</td></tr>
+      <tr><td>USFS Enterprise Data Warehouse</td><td>Listed contact on FACTS metadata</td><td class="mono">SM.FS.data@usda.gov</td><td>FACTS field definitions; how <span class="mono">nepa_doc_name</span> maps to project pages</td></tr>
+      <tr><td>USFS Region 6 fire and fuels</td><td>Regional office, 1220 SW 3rd Ave, Portland</td><td class="mono"><a href="https://www.fs.usda.gov/r06/fire">fs.usda.gov/r06/fire</a></td><td>Tracker data steward; burn plans and NEPA summaries for public units</td></tr>
+      <tr><td>Central Oregon Fire Info</td><td>Deschutes and Ochoco NF, Prineville BLM, ODF joint information</td><td class="mono"><a href="https://centraloregonfire.org/">centraloregonfire.org</a></td><td>Their per-burn narrative format; permission to reuse</td></tr>
+      <tr><td>Klamath Tribes Wildland Fire Program</td><td></td><td class="mono">via klamathtribes.org</td><td>Partnership conversation before any tribal burns appear on the map</td></tr>
+      <tr><td>ODA Smoke Management</td><td>Field burning program</td><td class="mono">503-986-4701 · 503-986-4550<br>info@oda.oregon.gov</td><td>Field registrations and daily accomplishments by year</td></tr>
+      <tr><td>DEQ Air Quality</td><td></td><td class="mono">503-229-5696; public records page</td><td>Monitor history; SSRA designations; smoke intrusion investigations</td></tr>
+      <tr><td>NWCC</td><td>GIS and Predictive Services</td><td class="mono"><a href="https://gacc.nifc.gov/nwcc/predict/gis.aspx">gacc.nifc.gov/nwcc/predict/gis.aspx</a></td><td>Fire history layer documentation</td></tr>
+      <tr><td>Oregon Hazards Lab</td><td>ALERTWest Oregon</td><td class="mono">wildfirehelp@uoregon.edu</td><td>Archive access for ignition-time imagery</td></tr>
+      <tr><td>Oregon PUC Safety</td><td></td><td class="mono">503-378-6600</td><td>Structured ignition and PSPS data behind the WMPs</td></tr>
+      <tr><td>OEM GIS</td><td></td><td class="mono"><a href="https://oregon-oem-geo.hub.arcgis.com/">oregon-oem-geo.hub.arcgis.com</a></td><td>Statewide evacuation zone layer</td></tr>
+      <tr><td>Karen Short</td><td>USFS RMRS; maintains FPA FOD</td><td class="mono">research.fs.usda.gov/about/people/karen.c.short</td><td>Whether a post-2020 edition is scheduled</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Should we email all 23 burn managers?</h3>
+  <p>Not yet, and not with a general "would you like to take part." The directory exists so landowners can hire them, and a cold mass email with no concrete ask will get few replies. Two steps work better:</p>
+  <ol>
+    <li><b>Now: six or seven targeted notes</b> to the people who sit at hubs and would each open a door to many burns: Stacy McCarter (the data), Carrie Berger (Extension and the PBAs), Kai Sauerbrey (TNC and Sycan), John Punches or Micah Schmidt (Northeast Oregon), Richard Pasquale (Central Oregon co-op), Brent Ross (Willamette Valley), and one contractor such as Daniel Cleveland. Ask each for a 20-minute call. Draft 3 below.</li>
+    <li><b>Later, with a prototype:</b> one note to the whole directory and the Prescribed Fire Council list, inviting practitioners to check how their burns appear and add the reason for each unit in their own words. That is a specific ask that respects their time and gets us the narrative layer. Draft 9.</li>
+  </ol>
+  <p>The tribal programs are a separate conversation, in person if possible, before anything of theirs appears on the map.</p>
+
+  <h4>Recommended order</h4>
+  <ol>
+    <li>Stacy McCarter (ODF): the export and the practitioner introductions. Everything else builds on it.</li>
+    <li>Carrie Berger (OSU Extension): advisor and introductions.</li>
+    <li>Kai Sauerbrey (TNC): credibility with practitioners and the Sycan example.</li>
+    <li>BLM and USFS data stewards: field definitions only; the data is already public.</li>
+    <li>Regional hubs: Punches or Schmidt, Pasquale, Ross, Cleveland.</li>
+    <li>ODA, DEQ, PUC, OEM: records and layers, in parallel, low effort.</li>
+    <li>Tribal programs: after there is something to show.</li>
+    <li>The full CBM directory and the Prescribed Fire Council: after the prototype.</li>
+  </ol>
+</section>
+
+<section id="cbm">
+  <h2>The 23 burn managers</h2>
+  <p class="sub">ODF Certified Burn Manager directory as published (Google Sheet linked from the ODF prescribed fire page), pulled September 10, 2026. Entries date from February and August 2026.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Name</th><th>Affiliation</th><th>Location</th><th>Certification</th><th>Insured</th><th>For hire</th><th>Mentors</th><th>Email</th><th>Phone</th></tr></thead>
+    <tbody>
+<tr><td>Jon Koenig</td><td></td><td>Marion County</td><td>Broadcast/understory</td><td>No</td><td>Yes</td><td>Yes</td><td class='mono'>Koenig_jon@yahoo.com</td><td class='mono'>503-319-1320</td></tr>
+<tr><td>John Punches</td><td>Oregon State University</td><td>La Grande, OR</td><td>Broadcast/understory</td><td>No</td><td>No</td><td>Yes</td><td class='mono'>john.punches@oregonstate.ed</td><td class='mono'>541-602-4689</td></tr>
+<tr><td>Rod Bonacker</td><td>Liberty Creek LLC</td><td>Sisters, OR</td><td>Broadcast/understory</td><td>Yes</td><td>Yes</td><td>Yes</td><td class='mono'>blackbuttebooks@gmail.com</td><td class='mono'>541-306-8685</td></tr>
+<tr><td>Bob Bjelland</td><td>Private forest owner</td><td>Dallas</td><td>Pile only</td><td>No</td><td>No</td><td>Yes</td><td class='mono'>e1too6@hotmail.com</td><td class='mono'>208-660-4579</td></tr>
+<tr><td>Jonathan Paul</td><td>Wildland Firefighter</td><td>Ashland</td><td>Broadcast/understory</td><td>No</td><td>Yes</td><td>Yes</td><td class='mono'>Cascadiafire@gmail.com</td><td class='mono'>541-646-1433</td></tr>
+<tr><td>Daniel Cleveland</td><td>Blackline Solutions LLC</td><td>Sherwood</td><td>Broadcast/understory</td><td>Yes</td><td>Yes</td><td>Yes</td><td class='mono'>dcleveland@blacklinesllc.com</td><td class='mono'>503-580-0304</td></tr>
+<tr><td>Eric Farm</td><td>Farm Unlimited</td><td>Coos County</td><td>Pile only</td><td>No</td><td>Yes</td><td>Yes</td><td class='mono'>eric@farm-unlimited.com</td><td class='mono'>541-404-3426</td></tr>
+<tr><td>Sam Commarto</td><td>Cross Contour, LLC</td><td>Ashland</td><td>Broadcast/understory</td><td>Yes</td><td>Yes</td><td>Yes</td><td class='mono'>sam@crosscontourfire.com</td><td class='mono'>530-598-6640</td></tr>
+<tr><td>Justin Jones</td><td>The Nature Conservancy</td><td>Wallowa County</td><td>Broadcast/understory</td><td>Yes</td><td>No</td><td>Yes</td><td class='mono'>jjones@tnc.org</td><td class='mono'>850-982-9224</td></tr>
+<tr><td>Phillip Dye</td><td>Prometheus Fire Consulting LLC</td><td>San Jose, CA</td><td>Broadcast/understory</td><td>Yes</td><td>Yes</td><td>Yes</td><td class='mono'>phil@prometheusfireconsulting.com</td><td class='mono'>408-807-1963</td></tr>
+<tr><td>Shaniko Cowie</td><td>none</td><td>Baker City</td><td>Broadcast/understory</td><td>No</td><td>No</td><td>Yes</td><td class='mono'>sndcowie@gmail.com</td><td class='mono'>406-579-1004</td></tr>
+<tr><td>Richard Pasquale</td><td>COPBC</td><td>Deschutes County</td><td>Broadcast/understory</td><td>Yes</td><td>Yes</td><td>Yes</td><td class='mono'>rich.pasquale@gmail.com</td><td class='mono'>480-250-1273</td></tr>
+<tr><td>Brent Ross</td><td>McKenzie River Trust</td><td>Eugene</td><td>Broadcast/understory</td><td>Yes</td><td>No</td><td>Yes</td><td class='mono'>brent@mckenzieriver.org</td><td class='mono'>541-953-5968</td></tr>
+<tr><td>Owen Williams</td><td>Business name TBD</td><td>Multnomah County</td><td>Broadcast/understory</td><td></td><td>Yes</td><td>Yes</td><td class='mono'>owentwilliams@gmail.com</td><td class='mono'>631-786-0014</td></tr>
+<tr><td>James Salazar</td><td>BURNWISE LLC</td><td>Jacksonville Oregon</td><td>Broadcast/understory</td><td>No</td><td>Yes</td><td>Yes</td><td class='mono'>jsalazar@burnwise.org</td><td class='mono'>760-784-1659</td></tr>
+<tr><td>Jesse Morris</td><td>Lakeview Fire Department</td><td>Lakeview</td><td>Broadcast/understory</td><td>Yes</td><td>Yes</td><td>Yes</td><td class='mono'>Jmfire001@gmail.com</td><td class='mono'>541-219-1671</td></tr>
+<tr><td>John Giller</td><td>Klamath Fire LLC</td><td>Klamath County</td><td>Broadcast/understory</td><td>No</td><td>Yes</td><td>Yes</td><td class='mono'>jgiller13@gmail.com</td><td class='mono'>541-810-4941</td></tr>
+<tr><td>Brian Mulhollen</td><td>Interagency Forestry Specialists, LLC</td><td>Grants Pass</td><td>Broadcast/understory</td><td>Yes</td><td>Yes</td><td>Yes</td><td class='mono'>Projects@interagencyFS.com</td><td class='mono'>541-337-2121</td></tr>
+<tr><td>Patrick Boedigheimer</td><td>Hampton Lumber</td><td>Salem</td><td>Broadcast/understory</td><td></td><td>No</td><td>Yes</td><td class='mono'>Patrickboedigheimer@hamptonlumber.com</td><td class='mono'>971-707-2549</td></tr>
+<tr><td>Steven Hawkins</td><td>Retired USFS</td><td>Baker City</td><td>Broadcast/understory</td><td>No</td><td>Yes</td><td>Yes</td><td class='mono'>steve_hawkins@Myctl.net</td><td class='mono'>5415199169</td></tr>
+<tr><td>Aaron Krikava</td><td></td><td>Jacksonville</td><td>Broadcast/understory</td><td></td><td>Yes</td><td>Yes</td><td class='mono'>aaronkrikava@yahoo.com</td><td class='mono'>541-777-1800</td></tr>
+<tr><td>Kai (Katie) Sauerbrey</td><td>The Nature Conservancy</td><td>Deschutes County</td><td>Broadcast/understory</td><td>Yes</td><td>No</td><td>Yes</td><td class='mono'>kai.sauerbrey@tnc.org</td><td class='mono'>541-876-6994</td></tr>
+<tr><td>Micah Schmidt</td><td>Oregon State University Extension</td><td>La Grande</td><td>Broadcast/understory</td><td>No</td><td>No</td><td>Yes</td><td class='mono'>micah.schmidt@oregonstate.edu</td><td class='mono'>541-787-7325</td></tr>
+    </tbody>
+  </table></div>
+  <p>Read as groups: <b>contractors for hire</b> (Liberty Creek, Blackline Solutions, Cross Contour, Prometheus, BURNWISE, Interagency Forestry Specialists, Farm Unlimited, Klamath Fire, plus several individuals); <b>NGO and land trust</b> (TNC ×2, McKenzie River Trust); <b>burn co-op</b> (COPBC); <b>Extension</b> (two in La Grande); <b>industry</b> (Hampton Lumber); <b>fire department</b> (Lakeview); <b>private landowners</b> (Dallas, Baker City); <b>retired agency</b> (Baker City). Personal emails and phones are here because ODF publishes them; keep them off the public map.</p>
+</section>
+<section id="drafts">
+  <h2>Email drafts</h2>
+  <p class="sub">Nothing has been sent. Fill in the bracketed parts. Keep them short; detail belongs in the call.</p>
+  <div class="callout"><p><b>On the records route.</b> Oregon's Public Records Law (ORS 192.311 to 192.478) covers ODF, ODA, DEQ, PUC and OEM. Agencies may charge fees but can reduce or waive them when release serves the public interest (ORS 192.324(5)). ODF's portal gives the first 30 minutes of staff time free. Ask voluntarily first and say the formal request is available; most program staff would rather hand over an export than process a request. We are not lawyers; check the fee waiver language before relying on it.</p></div>
+
+  <details class="mail" open><summary>1 · ODF Smoke Management: the data request (send first) <span class="to">to Stacy McCarter</span></summary><div class="body">
+    <p class="mailhead">To: stacy.mccarter@odf.oregon.gov<br>Cc: forestryinformation@odf.oregon.gov<br>Subject: Request for Smoke Data System export for a public prescribed fire map</p>
+    <p>Hi Stacy,</p>
+    <p>I'm Edan Krolewicz, working with Jenna Knobloch and Dominic Kuklawood on a public map of fire in Oregon. The goal is to show, in one place, where prescribed burns have happened, why each unit was burned, and how that sits alongside the state's wildfire history. We want people to be able to click on a burn and see the acres, the burn type, the reason, and the conditions on the day.</p>
+    <p>Your program already collects most of this. The prescribed fire map and the daily PDFs show today's units, and the annual reports give the totals, but the history lives in the Smoke Data System. We'd like to ask for an export.</p>
+    <p>Specifically, for every year the system holds (or as far back as is practical):</p>
+    <ol>
+      <li>Registered units: registration number, date registered, district, ownership code, county, township/range/section, latitude, longitude, unit acres, elevation, slope, burn type, burn reason, fuel species, planned acres and tons by burn method, and the unit comments.</li>
+      <li>Accomplishments: registration number, actual burn date and ignition time, acres burned, tons burned by method, fuel moistures, days since significant rain, and wind speed as recorded.</li>
+      <li>The code lists for burn type, burn reason, ownership, and district.</li>
+      <li>The smoke intrusion records that feed Table 2 of the annual report.</li>
+    </ol>
+    <p>A CSV or Excel export of the underlying tables is ideal. For private landowners we do not need names, addresses, or phone numbers; business names for commercial operators and the agency for public units are enough. If it is easier to strip those fields before sending, please do.</p>
+    <p>We understand this may be a public records request under ORS 192.311 and are glad to file it through the portal if that's the right route. If fees apply, we'd ask you to consider a waiver since the map will be free and public, and we'll happily share what we build with the program and with the Smoke Management Advisory Committee.</p>
+    <p>Two smaller questions: is there a GIS contact for the Fire_Smoke_Management feature service, and would you be willing to point us to a few Certified Burn Managers or burn associations who might want to help explain their burns?</p>
+    <p>Thanks for your time. Happy to talk by phone if that's quicker.</p>
+    <p>Edan Krolewicz<br>[phone]<br>[project page, if any]</p>
+  </div></details>
+
+  <details class="mail"><summary>2 · Formal public records request text <span class="to">ODF portal, if needed</span></summary><div class="body">
+    <p class="mailhead">For apps.odf.oregon.gov/PublicRecords/Request/Create</p>
+    <p>Under ORS 192.311 to 192.478, I request electronic copies of the following records held in the Oregon Department of Forestry Smoke Management Program's Smoke Data System, for all years available:</p>
+    <p>(a) the registered unit table, including registration number, registration date, district, ownership code, county, township, range, section, latitude, longitude, unit acres, elevation, slope, burn type, burn reason, fuel species, planned acres and planned tons by method, and comments;<br>(b) the accomplishment table, including registration number, actual burn date, ignition time, acres burned, tons burned by method, fuel moisture values, days since significant rain, and wind speed;<br>(c) the lookup tables for burn type, burn reason, ownership, and district codes;<br>(d) smoke intrusion records for 2016 through 2025.</p>
+    <p>Please provide the records in their native tabular format (CSV, Excel, or database export). I do not request the names, mailing addresses, or telephone numbers of private individuals and ask that those fields be omitted rather than redacted line by line. I request a fee waiver or reduction under ORS 192.324(5) because the records will be used to build a free public map of prescribed fire in Oregon and will not be used for commercial purposes. If fees will exceed $[amount], please provide an estimate before proceeding. Please identify the responsive systems or offices if any portion of the records is held elsewhere.</p>
+  </div></details>
+
+  <details class="mail"><summary>3 · Practitioner note <span class="to">CBMs, PBA leads, land trusts; send individually</span></summary><div class="body">
+    <p class="mailhead">Subject: A public map of prescribed fire in Oregon; 20 minutes of your advice?</p>
+    <p>Hi [name],</p>
+    <p>I found you through ODF's Certified Burn Manager directory [or: through the OSU Extension PBA page / through Stacy McCarter]. I'm working with two collaborators, Jenna Knobloch and Dominic Kuklawood, on a public map of fire in Oregon: every prescribed burn we can document, with the reason it was done, alongside the state's wildfire history. The point is to let people see that good fire is happening, where, and why, instead of only hearing about it when there's smoke.</p>
+    <p>The state and federal records give us the where and the acres. They don't give us the why in plain language, and that's the part the public needs. You've planned and run these burns, so I'd like to ask for 20 minutes on the phone to learn how you'd want your burns shown, what would make the map useful to you, and what would make it wrong. If you keep burn plans or photos you'd be willing to share for units you've led, that would be a bonus, but the conversation is the ask.</p>
+    <p>Would any time in the next two weeks work?</p>
+    <p>Edan Krolewicz<br>[phone]</p>
+  </div></details>
+
+  <details class="mail"><summary>4 · OSU Extension Fire Program <span class="to">to Carrie Berger</span></summary><div class="body">
+    <p class="mailhead">To: carrie.berger@oregonstate.edu<br>Subject: Oregon prescribed fire map: could Extension advise?</p>
+    <p>Hi Carrie,</p>
+    <p>I'm Edan Krolewicz, working with Jenna Knobloch and Dominic Kuklawood on a public map of prescribed fire and wildfire in Oregon. We've asked ODF for a Smoke Data System export and are pulling the BLM and Forest Service treatment records. What we can't get from records is the landowner's side: why a unit was burned, in words a neighbor would understand.</p>
+    <p>The Extension Fire Program sits closest to that. Could we ask you for a short call to get your read on the project, and, if you think it's worthwhile, introductions to the regional fire specialists and the prescribed burn associations? We'd also like to know how you'd want Extension's guides credited or linked from the map.</p>
+    <p>Thanks,<br>Edan Krolewicz<br>[phone]</p>
+  </div></details>
+
+  <details class="mail"><summary>5 · Federal data stewards <span class="to">BLM · USFS EDW</span></summary><div class="body">
+    <p class="mailhead">To: sjeronimo@blm.gov · SM.FS.data@usda.gov<br>Subject: Field definitions for [BLM OR Prescribed Fire Treatments Polygon / FACTS Hazardous Fuel Treatments]</p>
+    <p>Hello,</p>
+    <p>I'm building a public map of prescribed fire in Oregon and using [dataset name] from [hub URL]. Could you point me to the code lists for [REASON, REASON2, INITIATIVE, and BURN_TYPE / purpose_code, treatment_type, and method], and to how [PLANID / nepa_doc_name] can be matched to the planning documents on [ePlanning / forest project pages]? Any notes on update cadence and known gaps would help too. The map will credit the dataset by name.</p>
+    <p>Thanks,<br>Edan Krolewicz</p>
+  </div></details>
+
+  <details class="mail"><summary>6 · ODA field burning <span class="to">to ODA Smoke Management</span></summary><div class="body">
+    <p class="mailhead">To: info@oda.oregon.gov (ask to be routed to the Smoke Management Program, 503-986-4701)<br>Subject: Request for Willamette Valley field burning registration and accomplishment records</p>
+    <p>Hello,</p>
+    <p>I'm working on a public map of fire in Oregon that includes agricultural field burning alongside forestland prescribed fire and wildfire. For the Willamette Valley field burning program, could you provide, for each year available, the registered fields (location, acres, crop or residue type, grower business name) and the daily burn accomplishments (date, fields burned, acres)? Tabular exports are ideal. We do not need individual growers' personal contact information. If this should be filed as a public records request under ORS 192.311, please let me know and I'll do so; we'd ask that fees be waived since the map is free and public.</p>
+    <p>Thanks,<br>Edan Krolewicz<br>[phone]</p>
+  </div></details>
+
+  <details class="mail"><summary>7 · DEQ, PUC, OEM <span class="to">one paragraph each</span></summary><div class="body">
+    <p><b>DEQ Air Quality</b> (public records page or 503-229-5696): request hourly PM2.5 for all Oregon monitors, 2016 to present, and any smoke intrusion investigations tied to prescribed burns. Mention that EPA AQS may already hold the monitor history and ask which is more complete.</p>
+    <p><b>PUC Safety Division</b> (503-378-6600): ask whether the utilities' ignition records and high fire risk zone boundaries filed under UM 2207, 2208 and 2209 and OAR 860-300 exist in structured form, and whether the PSPS annual reports (due December 31) can be provided as data rather than PDF.</p>
+    <p><b>OEM GIS</b> (via oregon-oem-geo.hub.arcgis.com): ask for a statewide Genasys evacuation zone layer and the historical evacuation orders and levels by zone and date, if retained.</p>
+  </div></details>
+
+  <details class="mail"><summary>8 · Tribal fire programs <span class="to">by phone or in person where possible</span></summary><div class="body">
+    <p class="mailhead">Subject: A public map of fire in Oregon; asking how you'd want to be involved, if at all</p>
+    <p>Hello,</p>
+    <p>My name is Edan Krolewicz. With two collaborators I'm building a public map of prescribed and cultural fire and wildfire in Oregon. Before anything about [tribe]'s burning appears on it, we want to ask whether you'd want it there, and if so, how it should be described and credited. If the answer is no, we'll leave it out. If you'd be open to a conversation, we'd be glad to come to you.</p>
+    <p>Respectfully,<br>Edan Krolewicz<br>[phone]</p>
+  </div></details>
+
+  <details class="mail"><summary>9 · Later: the whole CBM directory and the Prescribed Fire Council <span class="to">only once there is a prototype</span></summary><div class="body">
+    <p class="mailhead">Subject: Your burns on Oregon's prescribed fire map; a request to check them</p>
+    <p>Hello,</p>
+    <p>We've published a first version of a public map of prescribed fire in Oregon at [URL]. It draws on ODF's smoke management records and federal treatment data. It shows where burns happened; it mostly can't say why in plain words. If you led any of the burns on the map, could you look up your units and tell us, in a sentence or two each, why the landowner burned and what it was meant to do? There's a form at [URL] and it takes a few minutes per unit. If something is wrong, tell us and we'll fix it.</p>
+    <p>Thank you for the work you do.</p>
+    <p>Edan Krolewicz, Jenna Knobloch, Dominic Kuklawood</p>
+  </div></details>
+</section>
+
+<section id="sources">
+  <h2>Sources</h2>
+  <p class="sub">All accessed September 10, 2026. The full register with every endpoint is in <code>sources.md</code> and <code>endpoints.csv</code>.</p>
+  <div class="sources">
+    <h4>Oregon Department of Forestry</h4>
+    <ul>
+      <li><a href="https://www.oregon.gov/odf/fire/pages/burn.aspx">Burning and smoke management</a></li>
+      <li><a href="https://www.oregon.gov/odf/fire/pages/prescribed-fire.aspx">Prescribed fire (CBM program, liability program, directory)</a></li>
+      <li><a href="https://www.oregon.gov/odf/fire/Documents/smr2025.pdf">2025 Smoke Management Annual Report</a></li>
+      <li><a href="https://www.oregon.gov/odf/fire/pages/firestats.aspx">Fire information and statistics</a></li>
+      <li><a href="https://oregon-department-of-forestry-geo.hub.arcgis.com/">ODF ArcGIS Hub</a></li>
+      <li><a href="https://www.oregon.gov/odf/Board/Pages/SMAC.aspx">Smoke Management Advisory Committee</a></li>
+      <li><a href="https://apps.odf.oregon.gov/PublicRecords">Public records portal</a></li>
+      <li><a href="https://www.oregon.gov/odf/pages/landscape-resiliency-program.aspx">Landscape Resiliency Program</a></li>
+      <li><a href="https://oregon.gov/odf/fire/pages/strategic-plan.aspx">20-Year Landscape Resiliency Strategy</a></li>
+    </ul>
+    <h4>Other Oregon agencies</h4>
+    <ul>
+      <li><a href="https://www.oregon.gov/deq/aq/pages/smoke-management.aspx">DEQ smoke management</a></li>
+      <li><a href="https://www.oregonsmoke.org/p/fires.html">Oregon smoke blog</a></li>
+      <li><a href="https://www.oregon.gov/oda/agriculture-services/smoke-burning/pages/field-burning.aspx">ODA field burning</a></li>
+      <li><a href="https://osfminfo.org/">OSFM wildfire info</a></li>
+      <li><a href="https://www.oregon.gov/puc/safety/pages/wildfire-mitigation.aspx">PUC wildfire mitigation</a></li>
+      <li><a href="https://www.oregon.gov/odhs/emergency-management/pages/evacuation-planning.aspx">ODHS evacuation software (Genasys)</a></li>
+      <li><a href="https://www.oregon.gov/gov/policies/pages/wildfire-programs-council.aspx">Wildfire Programs Advisory Council</a></li>
+      <li><a href="https://www.ballardspahr.com/insights/alerts-and-articles/2025/07/oregon-repeals-statewide-wildfire-hazard-map-and-mitigation-requirements">SB 83 repeal summary</a></li>
+    </ul>
+    <h4>Federal</h4>
+    <ul>
+      <li><a href="https://www.fs.usda.gov/r06/fire/info">USFS Region 6 incident information (Prescribed Fire Tracker)</a></li>
+      <li><a href="https://data-usfs.hub.arcgis.com/datasets/usfs::hazardous-fuel-treatment-reduction-polygon-feature-layer">FACTS hazardous fuel treatments</a></li>
+      <li><a href="https://gbp-blm-egis.hub.arcgis.com/datasets/BLM-EGIS::blm-or-prescribed-fire-treatments-polygon-hub">BLM OR prescribed fire polygons</a></li>
+      <li><a href="https://www.blm.gov/programs/fire/regional-info/oregon-washington/prescribed-fire">BLM OR/WA prescribed fire</a></li>
+      <li><a href="https://data-nifc.opendata.arcgis.com/">NIFC open data</a></li>
+      <li><a href="https://gacc.nifc.gov/nwcc/">NWCC</a></li>
+      <li><a href="https://www.mtbs.gov/">MTBS</a></li>
+      <li><a href="https://fireportal.usda.gov/ftem/">FTEM</a></li>
+      <li><a href="https://www.wildfire.gov/application/nfpors">NFPORS and the IFPRS transition</a></li>
+      <li><a href="https://centraloregonfire.org/prescribed-fire-smoke-plans/">Central Oregon Fire Info</a></li>
+      <li><a href="https://www.klamathtribesnews.org/2026/04/29/2026-prescribed-burns/">Klamath Tribes 2026 burns</a></li>
+    </ul>
+    <h4>Universities and NGOs</h4>
+    <ul>
+      <li><a href="https://extension.oregonstate.edu/fire-program/prescribed-fire">OSU Extension Fire Program</a></li>
+      <li><a href="https://extension.oregonstate.edu/people/carrie-berger">Carrie Berger</a></li>
+      <li><a href="https://oregonexplorer.info/topics/wildfire-risk">Oregon Explorer wildfire</a></li>
+      <li><a href="https://hub.oregonexplorer.info/content/oregon-cwpp-planning-tool">Oregon CWPP planning tool</a></li>
+      <li><a href="https://hazardmap.forestry.oregonstate.edu/">Statewide wildfire hazard map</a></li>
+      <li><a href="https://www.nwfirescience.org/resources/data">Northwest Fire Science Consortium data</a></li>
+      <li><a href="https://ohaz.uoregon.edu/wildfire-cameras/">Oregon Hazards Lab cameras</a></li>
+      <li><a href="https://www.oregonrxfire.org/">Oregon Prescribed Fire Council</a></li>
+      <li><a href="https://www.firewin.org/">Willamette Ignitions Network</a></li>
+      <li><a href="https://www.nature.org/en-us/about-us/where-we-work/united-states/oregon/controlled-burns/">TNC Oregon controlled burns</a></li>
+      <li><a href="https://capitalpress.com/2026/01/08/fight-fire-with-fire-prescribed-burn-associations-gain-momentum-in-oregon/">Capital Press on PBAs, Jan 2026</a></li>
+      <li><a href="https://pacificbirds.org/2024/12/oregon-partners-nfwf-grant/">Ecocultural burning NFWF grant</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+</div>
+<footer><div class="wrap">Compiled September 10, 2026. Endpoints marked "queried" were hit that day and their schemas and counts read. NASA FIRMS, RAVG, EPA AQS, PurpleAir, Synoptic and BLM ePlanning are described from general knowledge and were not exercised.</div></footer>

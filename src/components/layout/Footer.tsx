@@ -20,6 +20,7 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
     links: [
       { label: "Dashboards", href: "/dashboard" },
       { label: "Deep-Dives", href: "/deep-dives" },
+      { label: "Fire in Oregon", href: "/oregon-fire" },
       { label: "Decisions register", href: "/decisions" },
       { label: "Org Chart", href: "/org-chart" },
       { label: "Business Directory", href: "/directory" },

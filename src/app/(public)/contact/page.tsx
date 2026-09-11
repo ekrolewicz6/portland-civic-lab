@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import ContactForm from "@/components/contact/ContactForm";
+import { recordDetail } from "@/lib/oregon-fire/query";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -12,15 +13,30 @@ export const metadata: Metadata = {
 export default async function ContactPage({
   searchParams,
 }: {
-  searchParams: Promise<{ topic?: string | string[]; project?: string | string[] }>;
+  searchParams: Promise<{
+    topic?: string | string[];
+    project?: string | string[];
+    fireRecord?: string | string[];
+  }>;
 }) {
   const params = await searchParams;
   const topic = Array.isArray(params.topic) ? params.topic[0] : params.topic;
-  const rawProject = Array.isArray(params.project) ? params.project[0] : params.project;
+  const rawProject = Array.isArray(params.project)
+    ? params.project[0]
+    : params.project;
   const project = rawProject?.trim().slice(0, 120);
-  const defaultMessage = project
-    ? `I'd like to work on ${project}.\n\nWhat I can do (research, data, code, design, records requests, a professional skill):\n\nHow much time I have:\n`
-    : undefined;
+  const rawFireId = Array.isArray(params.fireRecord)
+    ? params.fireRecord[0]
+    : params.fireRecord;
+  const fire =
+    rawFireId && rawFireId.length <= 150
+      ? await recordDetail(rawFireId).catch(() => null)
+      : null;
+  const defaultMessage = fire
+    ? `Oregon Fire Map contribution\nRecord: ${fire.record.id}\nName: ${fire.record.name}\nSource: ${fire.record.sourceUrl}\n\nProposed correction or explanation:\n\nSupporting evidence (document URLs and page numbers):\n\nMy connection to this burn:\n\nPublication preference (private feedback / publish explanation with agreed attribution):\n\nSubmissions stay private until reviewed; submission does not automatically authorize publication.\n`
+    : project
+      ? `I'd like to work on ${project}.\n\nWhat I can do (research, data, code, design, records requests, a professional skill):\n\nHow much time I have:\n`
+      : undefined;
   return (
     <div className="bg-[var(--color-paper)]">
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
@@ -67,7 +83,8 @@ export default async function ContactPage({
                 <p>
                   If you&apos;ve flagged a data error, we&apos;ll look into it
                   and fix it. If you&apos;ve asked something that needs a reply,
-                  we&apos;ll use your email to get back to you, and for nothing else.
+                  we&apos;ll use your email to get back to you, and for nothing
+                  else.
                 </p>
               </div>
             </div>
@@ -79,7 +96,9 @@ export default async function ContactPage({
               <ul className="mt-4 space-y-3 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
                 <li className="flex gap-3">
                   <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-[var(--color-ember)]" />
-                  <span>Include the dashboard URL if you are flagging data.</span>
+                  <span>
+                    Include the dashboard URL if you are flagging data.
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-[var(--color-ember)]" />

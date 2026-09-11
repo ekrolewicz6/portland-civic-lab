@@ -33,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/proposals`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: `${BASE_URL}/donate`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/deep-dives`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE_URL}/oregon-fire`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     {
       url: `${BASE_URL}/deep-dives/pps-budget`,
       lastModified: now,
