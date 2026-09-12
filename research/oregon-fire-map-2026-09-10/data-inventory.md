@@ -1,6 +1,6 @@
 # Oregon fire map: data inventory
 
-Compiled September 10, 2026 for the Oregon fire map project (Edan Krolewicz, Jenna Knobloch, Dominic Kuklawood). Updated September 11, 2026. Verification depth varies; some entries remain untested leads. The dated audit supersedes the original interpretation. "Queried" means the endpoint was hit and its schema and record count read; "link only" means the page was confirmed to exist but not exercised. Machine-readable versions of the endpoints are in [endpoints.csv](endpoints.csv). Contacts are in [contacts.md](contacts.md), email drafts in [outreach-drafts.md](outreach-drafts.md).
+Compiled September 10, 2026 for the Oregon fire map project (Edan Krolewicz, Dominic Kuklawood). Updated September 11, 2026. Verification depth varies; some entries remain untested leads. The dated audit supersedes the original interpretation. "Queried" means the endpoint was hit and its schema and record count read; "link only" means the page was confirmed to exist but not exercised. Machine-readable versions of the endpoints are in [endpoints.csv](endpoints.csv). Contacts are in [contacts.md](contacts.md), email drafts in [outreach-drafts.md](outreach-drafts.md).
 
 ## The short version
 

@@ -14,7 +14,7 @@ Ask for existing records through the program’s preferred route. Request a fee 
 
 Hi Stacy,
 
-I'm Edan Krolewicz, working with Jenna Knobloch and Dominic Kuklawood on a public map of fire in Oregon. The goal is to show, in one place, where prescribed burns have happened, why each unit was burned, and how that sits alongside the state's wildfire history. We want people to be able to click on a burn and see the acres, the burn type, the reason, and the conditions on the day.
+I'm Edan Krolewicz, working with Dominic Kuklawood on a public map of fire in Oregon. The goal is to show, in one place, where prescribed burns have happened, why each unit was burned, and how that sits alongside the state's wildfire history. We want people to be able to click on a burn and see the acres, the burn type, the reason, and the conditions on the day.
 
 Your program already collects most of this. The prescribed fire map and the daily PDFs show today's units, and the annual reports give the totals, but the history lives in the Smoke Data System. We'd like to ask for an export.
 
@@ -67,7 +67,7 @@ Send individually. Change the first line for each person.
 
 Hi [name],
 
-I found you through ODF's Certified Burn Manager directory [or: through the OSU Extension PBA page / through Stacy McCarter]. I'm working with two collaborators, Jenna Knobloch and Dominic Kuklawood, on a public map of fire in Oregon: every prescribed burn we can document, with the reason it was done, alongside the state's wildfire history. The goal is to help readers understand documented burns, their purposes and outcomes, with uncertainty and source coverage made visible.
+I found you through ODF's Certified Burn Manager directory [or: through the OSU Extension PBA page / through Stacy McCarter]. I'm working with co-author Dominic Kuklawood, on a public map of fire in Oregon: every prescribed burn we can document, with the reason it was done, alongside the state's wildfire history. The goal is to help readers understand documented burns, their purposes and outcomes, with uncertainty and source coverage made visible.
 
 The state and federal records give us the where and the acres. They don't give us the why in plain language, and that's the part the public needs. You've planned and run these burns, so I'd like to ask for 20 minutes on the phone to learn how you'd want your burns shown, what would make the map useful to you, and what would make it wrong. If you keep burn plans or photos you'd be willing to share for units you've led, that would be a bonus, but the conversation is the ask.
 
@@ -85,7 +85,7 @@ Edan Krolewicz
 
 Hi Carrie,
 
-I'm Edan Krolewicz, working with Jenna Knobloch and Dominic Kuklawood on a public map of prescribed fire and wildfire in Oregon. We are preparing a request to ODF for a Smoke Data System export and importing the BLM and Forest Service treatment records. What we can't get from records is the landowner's side: why a unit was burned, in words a neighbor would understand.
+I'm Edan Krolewicz, working with Dominic Kuklawood on a public map of prescribed fire and wildfire in Oregon. We are preparing a request to ODF for a Smoke Data System export and importing the BLM and Forest Service treatment records. What we can't get from records is the landowner's side: why a unit was burned, in words a neighbor would understand.
 
 The Extension Fire Program sits closest to that. Could we ask you for a short call to get your read on the project, and, if you think it's worthwhile, introductions to the regional fire specialists and the prescribed burn associations? We'd also like to know how you'd want Extension's guides credited or linked from the map.
 
@@ -146,7 +146,7 @@ Do this by phone or in person where possible. If email is the first step, keep i
 
 Hello,
 
-My name is Edan Krolewicz. With two collaborators I'm building a public map of prescribed and cultural fire and wildfire in Oregon. Before anything about [tribe]'s burning appears on it, we want to ask whether you'd want it there, and if so, how it should be described and credited. If the answer is no, we'll leave it out. If you'd be open to a conversation, we'd be glad to come to you.
+My name is Edan Krolewicz. With my co-author I'm building a public map of prescribed and cultural fire and wildfire in Oregon. Before anything about [tribe]'s burning appears on it, we want to ask whether you'd want it there, and if so, how it should be described and credited. If the answer is no, we'll leave it out. If you'd be open to a conversation, we'd be glad to come to you.
 
 Respectfully,
 Edan Krolewicz
@@ -166,7 +166,7 @@ A reviewed first version of our public map is available at [URL]. It shows docum
 
 Thank you for the work you do.
 
-Edan Krolewicz, Jenna Knobloch, Dominic Kuklawood
+Edan Krolewicz, Dominic Kuklawood
 
 ---
 
@@ -177,7 +177,7 @@ Edan Krolewicz, Jenna Knobloch, Dominic Kuklawood
 
 Hello,
 
-We’re building a free public map showing documented burns in Oregon, their purposes, and their relationship to wildfire history. I’m working with Jenna Knobloch and Dominic Kuklawood. Could you share the GIS underlying your permitted-unit map and any existing annual permit indexes, applications, unit schedules and actual burn dates/acres? We would keep permitted units separate from confirmed burns. Existing objectives, plans and historical versions would help us explain why particular units were selected. Could someone review two or three examples for accuracy? Please provide a fee estimate before any chargeable work.
+We’re building a free public map showing documented burns in Oregon, their purposes, and their relationship to wildfire history. I’m working with Dominic Kuklawood. Could you share the GIS underlying your permitted-unit map and any existing annual permit indexes, applications, unit schedules and actual burn dates/acres? We would keep permitted units separate from confirmed burns. Existing objectives, plans and historical versions would help us explain why particular units were selected. Could someone review two or three examples for accuracy? Please provide a fee estimate before any chargeable work.
 
 Thanks, Edan Krolewicz
 
@@ -188,7 +188,7 @@ Thanks, Edan Krolewicz
 
 Hi Janine,
 
-With Jenna Knobloch and Dominic Kuklawood, I’m building a public map of documented prescribed burns and wildfire history. We plan to use Oregon Explorer as the historical perimeter baseline, FPA FOD v7 for occurrences, and recent WFIGS for provisional additions. We’ll preserve separate source records and link verified identifiers, rather than sum overlapping datasets. Could we ask for 20 minutes to review this hierarchy, known gaps and opportunities to reuse existing work? We would attribute Oregon Explorer clearly and welcome review of a few examples.
+With Dominic Kuklawood, I’m building a public map of documented prescribed burns and wildfire history. We plan to use Oregon Explorer as the historical perimeter baseline, FPA FOD v7 for occurrences, and recent WFIGS for provisional additions. We’ll preserve separate source records and link verified identifiers, rather than sum overlapping datasets. Could we ask for 20 minutes to review this hierarchy, known gaps and opportunities to reuse existing work? We would attribute Oregon Explorer clearly and welcome review of a few examples.
 
 Thanks, Edan
 
@@ -201,7 +201,7 @@ Hello,
 
 We’re building a free public map of documented burns in Oregon, their purposes and wildfire context. Could your fire-management staff point us to existing unit histories, boundaries, plans, burn dates/acres, objectives and monitoring results for [refuge/park]? We would distinguish planned treatments from completed burns, preserve source accuracy, and attribute explanations. IDs connecting these records to ODF or federal systems would help avoid duplicates. A small sample and review of two or three examples would be a useful starting point. Please provide an estimate before any chargeable work.
 
-Thanks, Edan Krolewicz, with Jenna Knobloch and Dominic Kuklawood
+Thanks, Edan Krolewicz, with Dominic Kuklawood
 
 ## 13. Justin Welty / USGS LTDL
 
@@ -212,7 +212,7 @@ Hi Justin,
 
 We’re building a public map of documented burns in Oregon with source-attributed objectives. We’ve identified the LTDL public release and will start there. Could you point us to its Oregon coverage notes, supporting treatment documents and any stable crosswalk to BLM treatment records? We want to preserve distinct records and avoid treating overlap as evidence of effectiveness. A short review of a few examples would also be helpful.
 
-Thanks, Edan Krolewicz, with Jenna Knobloch and Dominic Kuklawood
+Thanks, Edan Krolewicz, with Dominic Kuklawood
 
 ## Common invitation wording
 

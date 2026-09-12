@@ -56,7 +56,7 @@ export default async function OregonFirePage() {
           </div>
         </div>
         <div className="fire-byline">
-          <span>By Edan Krolewicz, Jenna Knobloch & Dominic Kuklawood</span>
+          <span>By {FIRE_AUTHORS.join(" & ")}</span>
           <span>First edition · Coverage in progress</span>
         </div>
       </header>

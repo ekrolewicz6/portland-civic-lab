@@ -3,7 +3,7 @@ export const FIRE_TITLE = "Oregon Fire Map: Prescribed Burns & Wildfire History"
 export const FIRE_DESCRIPTION =
   "Explore Oregon prescribed burns, planned burn units, and wildfire history. See reported purposes, dates, agencies, and source records on an interactive map.";
 export const FIRE_AUTHORS = [
-  "Edan Krolewicz", "Jenna Knobloch", "Dominic Kuklawood",
+  "Edan Krolewicz", "Dominic Kuklawood",
 ];
 
 export const fireStructuredData = {

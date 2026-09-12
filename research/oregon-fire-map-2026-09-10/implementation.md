@@ -1,6 +1,6 @@
 # Implementation and operating notes
 
-The page lives at `/oregon-fire` in the existing Next.js application. It uses a client-only React Leaflet map, the existing design vocabulary and Postgres connection helper. It is credited to Edan Krolewicz, Jenna Knobloch and Dominic Kuklawood. Edan authorized production deployment on September 11, 2026; see verification.md for release results. The old hosted Claude artifact has not been modified.
+The page lives at `/oregon-fire` in the existing Next.js application. It uses a client-only React Leaflet map, the existing design vocabulary and Postgres connection helper. It is credited to Edan Krolewicz and Dominic Kuklawood. Edan authorized production deployment on September 11, 2026; see verification.md for release results. The old hosted Claude artifact has not been modified.
 
 ## Files and endpoints
 
@@ -52,7 +52,7 @@ An editor reviews evidence, accuracy, permission, attribution and geometry meani
 
 ## Release and operational limits
 
-- Edan authorized release on September 11, 2026. Representative-record review with Jenna and Dominic is outstanding. Inspect examples of pile burns, wildfire-consumed treatments, planned/monitoring units, old occurrence points, perimeters, unknown dates, and the Woodpecker story.
+- Edan authorized release on September 11, 2026. Representative-record review is outstanding. Inspect examples of pile burns, wildfire-consumed treatments, planned/monitoring units, old occurrence points, perimeters, unknown dates, and the Woodpecker story.
 - ODF SDS history, DEQ/LRAPA permits, ODA fields, refuge/park histories and LTDL are acquisition workstreams, not completed imports. No request has been sent.
 - ODF’s rolling feed returned zero rows in the verified snapshots; this does not establish that no Oregon burning occurred.
 - Six-hour archives run only after deployment with the existing cron secret and a hosting plan supporting the configured schedule and 300-second invocation. Large first imports should use the CLI; weekly imports may span scheduled invocations.

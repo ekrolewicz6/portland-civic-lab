@@ -22,7 +22,7 @@ for (const viewport of [
         "Fire in Oregon",
       );
       await expect(
-        page.getByText("By Edan Krolewicz, Jenna Knobloch & Dominic Kuklawood"),
+        page.getByText("By Edan Krolewicz & Dominic Kuklawood"),
       ).toBeVisible();
       await expect(
         page.locator(".fire-explorer").getByRole("alert"),

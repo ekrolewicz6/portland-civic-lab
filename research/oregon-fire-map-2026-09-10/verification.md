@@ -1,6 +1,6 @@
 # Verification — September 11, 2026
 
-Implementation checks passed against the local production build and the actual imported database. Edan authorized production release on September 11, 2026. Representative-record review with Jenna and Dominic remains an editorial follow-up. No outreach emails were sent; the contact submission test was intercepted in Playwright and never reached the server.
+Implementation checks passed against the local production build and the actual imported database. Edan authorized production release on September 11, 2026. Representative-record review remains an editorial follow-up. No outreach emails were sent; the contact submission test was intercepted in Playwright and never reached the server.
 
 ## Checks completed
 
@@ -41,7 +41,7 @@ Counts are source records, not additive unique-fire totals. Exact import timesta
 
 ## Remaining review and acquisition
 
-- Edan authorized production release on September 11, 2026. Jenna and Dominic have not yet reviewed representative records. Production database identity and presence of the production cron secret were verified before deployment; no credentials were included in evidence.
+- Edan authorized production release on September 11, 2026. Detailed review of representative records remains outstanding. Production database identity and presence of the production cron secret were verified before deployment; no credentials were included in evidence.
 - ODF SDS history, actual DEQ/LRAPA/ODA permits and accomplishments, additional refuge/park histories, LTDL and unit-to-plan crosswalks still need acquisition. All outreach remains draft status in the ledger.
 - No steward has confirmed complete jurisdiction coverage or every field interpretation. Generalized-boundary exclusions need particular care around approximate source points and borders.
 - The 2025 occurrence gap between FOD’s final year and the current WFIGS feed remains; Explorer supplies 2025 perimeters, not a complete small-fire occurrence history.

@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import map from "@/lib/oregon-fire/og-map.json";
+import { FIRE_AUTHORS } from "@/lib/oregon-fire/metadata";
 
 export const runtime = "edge";
 export const alt =
@@ -34,8 +35,8 @@ export default async function Image() {
         </div>
         <div style={{ position: "absolute", left: 56, top: 531, width: 530, height: 1, background: "#cbd0bd" }} />
         <div style={{ position: "absolute", left: 56, top: 550, display: "flex", flexDirection: "column", fontSize: 17, lineHeight: 1.4, color: "#52634e" }}>
-          <span>Edan Krolewicz · Jenna Knobloch</span>
-          <span>Dominic Kuklawood</span>
+          <span>Co-authors</span>
+          <span>{FIRE_AUTHORS.join(" · ")}</span>
         </div>
       </div>
       <div style={{ position: "absolute", right: 44, top: 51, display: "flex", fontSize: 14, letterSpacing: "0.18em", color: "#b7c4a1" }}>WHERE IT HAPPENS. WHY IT MATTERS.</div>
