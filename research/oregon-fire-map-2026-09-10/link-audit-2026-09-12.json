@@ -1,0 +1,613 @@
+{
+  "checkedAt": "2026-09-12T23:17:10.286Z",
+  "anchors": [
+    {
+      "href": "#sources",
+      "exists": true
+    },
+    {
+      "href": "#explore",
+      "exists": true
+    },
+    {
+      "href": "#",
+      "exists": false
+    },
+    {
+      "href": "#",
+      "exists": false
+    },
+    {
+      "href": "#sources",
+      "exists": true
+    },
+    {
+      "href": "#sources",
+      "exists": true
+    },
+    {
+      "href": "#sources",
+      "exists": true
+    },
+    {
+      "href": "#sources",
+      "exists": true
+    },
+    {
+      "href": "#sources",
+      "exists": true
+    },
+    {
+      "href": "#sources",
+      "exists": true
+    },
+    {
+      "href": "#sources",
+      "exists": true
+    },
+    {
+      "href": "#sources",
+      "exists": true
+    },
+    {
+      "href": "#sources",
+      "exists": true
+    },
+    {
+      "href": "#sources",
+      "exists": true
+    }
+  ],
+  "results": [
+    {
+      "label": "Portland Civic Lab",
+      "url": "https://www.portlandciviclab.org/",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/",
+      "title": "Portland Civic Lab — Free, source-linked tools for understanding Portland",
+      "headings": "Portland,explained.",
+      "soft404": false
+    },
+    {
+      "label": "Deep-Dives",
+      "url": "https://www.portlandciviclab.org/deep-dives",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/deep-dives",
+      "title": "Policy Deep-Dives · Portland Civic Lab",
+      "headings": "The big issues,explained for everyone",
+      "soft404": false
+    },
+    {
+      "label": "Founding support",
+      "url": "https://www.portlandciviclab.org/donate",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/donate",
+      "title": "Support the work — Portland Civic Lab · Portland Civic Lab",
+      "headings": "Keep Portland&#x27;s numbers checkable.",
+      "soft404": false
+    },
+    {
+      "label": "Dashboards",
+      "url": "https://www.portlandciviclab.org/dashboard",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/dashboard",
+      "title": "Live Dashboard | Portland Civic Lab · Portland Civic Lab",
+      "headings": "Portland, by the numbers",
+      "soft404": false
+    },
+    {
+      "label": "NIFC / IRWIN: available",
+      "url": "https://www.portlandciviclab.org/oregon-fire#sources",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/oregon-fire#sources",
+      "title": "Oregon Fire Map: Prescribed Burns &amp; Wildfire History · Portland Civic Lab",
+      "headings": "Fire in OregonWhere it happens.Why it matters.",
+      "soft404": false
+    },
+    {
+      "label": "Explore the map",
+      "url": "https://www.portlandciviclab.org/oregon-fire#explore",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/oregon-fire#explore",
+      "title": "Oregon Fire Map: Prescribed Burns &amp; Wildfire History · Portland Civic Lab",
+      "headings": "Fire in OregonWhere it happens.Why it matters.",
+      "soft404": false
+    },
+    {
+      "label": "Leaflet",
+      "url": "https://leafletjs.com/",
+      "scope": "map",
+      "status": 200,
+      "finalUrl": "https://leafletjs.com/",
+      "title": "Leaflet - a JavaScript library for interactive maps",
+      "headings": "",
+      "soft404": false
+    },
+    {
+      "label": "−",
+      "url": "https://www.portlandciviclab.org/oregon-fire#",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/oregon-fire#",
+      "title": "Oregon Fire Map: Prescribed Burns &amp; Wildfire History · Portland Civic Lab",
+      "headings": "Fire in OregonWhere it happens.Why it matters.",
+      "soft404": false
+    },
+    {
+      "label": "Join",
+      "url": "https://www.portlandciviclab.org/signup",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://intimate-mind-76.authkit.app/sign-up",
+      "title": "Sign up",
+      "headings": "Sign up",
+      "soft404": false
+    },
+    {
+      "label": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/copyright",
+      "scope": "map",
+      "status": 200,
+      "finalUrl": "https://www.openstreetmap.org/copyright",
+      "title": "Copyright and License | OpenStreetMap",
+      "headings": "OpenStreetMap | Select Language | | Copyright and License",
+      "soft404": false
+    },
+    {
+      "label": "Read the method",
+      "url": "https://www.mtbs.gov/faqs",
+      "scope": "map",
+      "status": 200,
+      "finalUrl": "https://www.mtbs.gov/faqs",
+      "title": "Frequently Asked Questions (FAQ) | MTBS",
+      "headings": "Frequently Asked Questions (FAQ)",
+      "soft404": false
+    },
+    {
+      "label": "Forest Service inventory",
+      "url": "https://research.fs.usda.gov/download/treesearch/70007.pdf",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://research.fs.usda.gov/download/treesearch/70007.pdf",
+      "title": "",
+      "headings": "",
+      "soft404": false
+    },
+    {
+      "label": "Read OSU’s account",
+      "url": "https://www.forestry.oregonstate.edu/news/fire-purpose",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://www.forestry.oregonstate.edu/news/fire-purpose",
+      "title": "Fire on purpose: learning, restoration and the Woodpecker Harvest | News | College of Forestry",
+      "headings": "Fire on purpose: learning, restoration and the Woodpecker Harvest | Fire on purpose: learning, restoration and the Woodpecker Harvest",
+      "soft404": false
+    },
+    {
+      "label": "Open original source",
+      "url": "https://gbp-blm-egis.hub.arcgis.com/datasets/BLM-EGIS::blm-or-prescribed-fire-treatments-polygon-hub",
+      "scope": "detail sample",
+      "status": 200,
+      "finalUrl": "https://gbp-blm-egis.hub.arcgis.com/datasets/BLM-EGIS::blm-or-prescribed-fire-treatments-polygon-hub",
+      "title": "BLM OR Prescribed Fire Treatments Polygon Hub",
+      "headings": "",
+      "soft404": false
+    },
+    {
+      "label": "USFS FACTS fire treatments",
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_HazardousFuelsTreatments_01/MapServer/3",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_HazardousFuelsTreatments_01/MapServer/3",
+      "title": "Layer: Fire (ID: 3)",
+      "headings": "",
+      "soft404": false
+    },
+    {
+      "label": "PNW prescribed fire tracker",
+      "url": "https://experience.arcgis.com/experience/55ce8bfdea4345b6a06ae81d67e7d411",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://experience.arcgis.com/experience/55ce8bfdea4345b6a06ae81d67e7d411",
+      "title": "Experience",
+      "headings": "",
+      "soft404": false
+    },
+    {
+      "label": "ODF Smoke Data System history",
+      "url": "https://www.oregon.gov/odf/fire/pages/burn.aspx",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://www.oregon.gov/odf/fire/pages/burn.aspx",
+      "title": "Oregon Department of Forestry : Burning &amp; smoke management : Fire : State of Oregon",
+      "headings": "tag, as divs are not allowed in 's --> Burning &amp; smoke management",
+      "soft404": false
+    },
+    {
+      "label": "WFIGS recent wildfire perimeters",
+      "url": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters_YearToDate/FeatureServer/0",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters_YearToDate/FeatureServer/0",
+      "title": "Layer: Perimeters (ID:0)",
+      "headings": "",
+      "soft404": false
+    },
+    {
+      "label": "Oregon Explorer early wildfire perimeters",
+      "url": "https://services1.arcgis.com/CD5mKowwN6nIaqd8/arcgis/rest/services/library_env_or_wildfire_perimeter_history/FeatureServer",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://services1.arcgis.com/CD5mKowwN6nIaqd8/arcgis/rest/services/library_env_or_wildfire_perimeter_history/FeatureServer",
+      "title": "library_env_or_wildfire_perimeter_history (FeatureServer)",
+      "headings": "",
+      "soft404": false
+    },
+    {
+      "label": "Fire and different ecosystems",
+      "url": "https://research.fs.usda.gov/psw/fire/behavior",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://research.fs.usda.gov/psw/fire/behavior",
+      "title": "Fire Behavior | US Forest Service Research and Development",
+      "headings": "Fire Behavior",
+      "soft404": false
+    },
+    {
+      "label": "WFIGS recent wildfire occurrences",
+      "url": "https://data-nifc.opendata.arcgis.com/",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://data-nifc.opendata.arcgis.com/",
+      "title": "National Interagency Fire Center",
+      "headings": "",
+      "soft404": false
+    },
+    {
+      "label": "DEQ ecological burn permits",
+      "url": "https://www.oregon.gov/deq/aq/pages/burning-101.aspx",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://www.oregon.gov/deq/aq/pages/burning-101.aspx",
+      "title": "Department of Environmental Quality : Burning 101 : Air Quality : State of Oregon",
+      "headings": "tag, as divs are not allowed in 's --> Burning 101",
+      "soft404": false
+    },
+    {
+      "label": "Export records",
+      "url": "https://www.portlandciviclab.org/api/oregon-fire/export?from=2021&to=2026&kind=prescribed&q=&agency=&method=&purpose=&status=&bbox=-124.9%2C41.8%2C-116.3%2C46.4&zoom=6&cursor=0&scars=1&scarYears=5&scarEnd=2026&scarMode=age&markers=1",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/api/oregon-fire/export?from=2021&to=2026&kind=prescribed&q=&agency=&method=&purpose=&status=&bbox=-124.9%2C41.8%2C-116.3%2C46.4&zoom=6&cursor=0&scars=1&scarYears=5&scarEnd=2026&scarMode=age&markers=1",
+      "title": "",
+      "headings": "",
+      "soft404": false
+    },
+    {
+      "label": "FPA FOD · seventh edition",
+      "url": "https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009.7",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009.7",
+      "title": "Forest Service Research Data Archive",
+      "headings": "",
+      "soft404": false
+    },
+    {
+      "label": "Contribute to the atlas",
+      "url": "https://www.portlandciviclab.org/contact?topic=Work+on+a+topic&project=Oregon+Fire+Map",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/contact?topic=Work+on+a+topic&project=Oregon+Fire+Map",
+      "title": "Contact · Portland Civic Lab",
+      "headings": "Get in touch",
+      "soft404": false
+    },
+    {
+      "label": "Fire in Oregon",
+      "url": "https://www.portlandciviclab.org/oregon-fire",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/oregon-fire",
+      "title": "Oregon Fire Map: Prescribed Burns &amp; Wildfire History · Portland Civic Lab",
+      "headings": "Fire in OregonWhere it happens.Why it matters.",
+      "soft404": false
+    },
+    {
+      "label": "Decisions register",
+      "url": "https://www.portlandciviclab.org/decisions",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/decisions",
+      "title": "Decisions on the record · Portland Civic Lab",
+      "headings": "Every open decision in the City&#x27;s development portfolio.",
+      "soft404": false
+    },
+    {
+      "label": "Org Chart",
+      "url": "https://www.portlandciviclab.org/org-chart",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/org-chart",
+      "title": "Portland City Org Chart · Portland Civic Lab",
+      "headings": "The Portland org chart",
+      "soft404": false
+    },
+    {
+      "label": "Agricultural field burns",
+      "url": "https://www.oregon.gov/oda/agriculture-services/smoke-burning/pages/grower-resources.aspx",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://www.oregon.gov/oda/agriculture-services/smoke-burning/pages/grower-resources.aspx",
+      "title": "ODA : Grower Resources : Smoke and Field Burning : State of Oregon",
+      "headings": "tag, as divs are not allowed in 's --> Grower Resources",
+      "soft404": false
+    },
+    {
+      "label": "Business Directory",
+      "url": "https://www.portlandciviclab.org/directory",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/directory",
+      "title": "Portland Business Directory · Portland Civic Lab",
+      "headings": "Portland Business Directory",
+      "soft404": false
+    },
+    {
+      "label": "Civic Concierge",
+      "url": "https://www.portlandciviclab.org/concierge",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/concierge",
+      "title": "Civic Concierge · Portland Civic Lab",
+      "headings": "Ask Anything About Portland",
+      "soft404": false
+    },
+    {
+      "label": "Portland Possible",
+      "url": "https://downtown.portlandciviclab.org/",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://downtown.portlandciviclab.org/",
+      "title": "Portland Possible — A block-by-block future",
+      "headings": "What if downtownworked for everyone?",
+      "soft404": false
+    },
+    {
+      "label": "Parks Atlas",
+      "url": "https://parks.portlandciviclab.org/",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://parks.portlandciviclab.org/",
+      "title": "Portland Parks Atlas",
+      "headings": "A park is a place where I canlet my kids play.",
+      "soft404": false
+    },
+    {
+      "label": "Oregon Governance Atlas",
+      "url": "https://oregon.portlandciviclab.org/",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://oregon.portlandciviclab.org/",
+      "title": "How power works in Oregon · Oregon Governance Atlas",
+      "headings": "How power works in Oregon.",
+      "soft404": false
+    },
+    {
+      "label": "LRAPA / Rivers to Ridges",
+      "url": "https://www.lrapa-or.gov/air-quality-protection/community-center/prescribed-burns/",
+      "scope": "page",
+      "status": 200,
+      "finalUrl": "https://www.lrapa-or.gov/air-quality-protection/community-center/prescribed-burns/",
+      "title": "Prescribed Burns | Lane Regional Air Protection Agency",
+      "headings": "Prescribed Burning",
+      "soft404": false
+    },
+    {
+      "label": "City Council",
+      "url": "https://council.portlandciviclab.org/",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://council.portlandciviclab.org/",
+      "title": "Portland City Council | Independent Guide by Portland Civic Lab",
+      "headings": "See what Portland City Council will take up next.",
+      "soft404": false
+    },
+    {
+      "label": "Oregon Emergency Management",
+      "url": "https://www.oregon.gov/oem/emops/Pages/RAPTOR.aspx",
+      "scope": "page",
+      "status": 404,
+      "finalUrl": "https://www.oregon.gov/oem/emops/Pages/RAPTOR.aspx",
+      "title": "Oregon Department of Emergency Management : 404 Page Not Found : State of Oregon",
+      "headings": "tag, as divs are not allowed in 's --> 404 Page Not Found",
+      "soft404": true
+    },
+    {
+      "label": "Property owners & developers",
+      "url": "https://www.portlandciviclab.org/property",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/property",
+      "title": "For Property Owners and Developers · Portland Civic Lab",
+      "headings": "Which building deserves the next dollar of diligence?",
+      "soft404": false
+    },
+    {
+      "label": "Public institutions",
+      "url": "https://www.portlandciviclab.org/institutions",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/institutions",
+      "title": "For Public Institutions · Portland Civic Lab",
+      "headings": "The decisions cross bureau lines. The information doesn&#x27;t.",
+      "soft404": false
+    },
+    {
+      "label": "Ask Portland",
+      "url": "https://ask.portlandciviclab.org/",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://ask.portlandciviclab.org/",
+      "title": "Ask Portland — independent civic measurement",
+      "headings": "How does Portland really feel? Let&#x27;s hear it — from Portlanders themselves.",
+      "soft404": false
+    },
+    {
+      "label": "Small businesses",
+      "url": "https://www.portlandciviclab.org/business",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/business",
+      "title": "Funding for Portland small businesses · Portland Civic Lab",
+      "headings": "There is money with your business&#x27;s name on it. Nobody has time to go find it.",
+      "soft404": false
+    },
+    {
+      "label": "Volunteer",
+      "url": "https://www.portlandciviclab.org/volunteer",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/volunteer",
+      "title": "Volunteer · Portland Civic Lab",
+      "headings": "Help build this",
+      "soft404": false
+    },
+    {
+      "label": "Propose a topic",
+      "url": "https://www.portlandciviclab.org/proposals",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/proposals",
+      "title": "Topic Proposals · Portland Civic Lab",
+      "headings": "What should the Lab look into next?",
+      "soft404": false
+    },
+    {
+      "label": "About the Lab",
+      "url": "https://www.portlandciviclab.org/about",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/about",
+      "title": "About the Lab · Portland Civic Lab",
+      "headings": "How the Lab works.",
+      "soft404": false
+    },
+    {
+      "label": "Methodology",
+      "url": "https://www.portlandciviclab.org/methodology",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/methodology",
+      "title": "Methodology &amp; Data Sources · Portland Civic Lab",
+      "headings": "Methodology &amp; Data Sources",
+      "soft404": false
+    },
+    {
+      "label": "Portland Permits",
+      "url": "https://www.portlandpermits.org/",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandpermits.org/",
+      "title": "Portland Permits — Zoning, Fees &amp; Timelines, Instantly",
+      "headings": "Portland Permits, Made Simple",
+      "soft404": false
+    },
+    {
+      "label": "Independence & funding",
+      "url": "https://www.portlandciviclab.org/independence",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/independence",
+      "title": "Independence &amp; Funding · Portland Civic Lab",
+      "headings": "Don&#x27;t take our word for it.",
+      "soft404": false
+    },
+    {
+      "label": "Open data & API",
+      "url": "https://www.portlandciviclab.org/open-data",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/open-data",
+      "title": "Open Data &amp; API · Portland Civic Lab",
+      "headings": "Take the data with you",
+      "soft404": false
+    },
+    {
+      "label": "Public records tracker",
+      "url": "https://www.portlandciviclab.org/records",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/records",
+      "title": "Public Records · Portland Civic Lab",
+      "headings": "The records belong to you",
+      "soft404": false
+    },
+    {
+      "label": "Contact",
+      "url": "https://www.portlandciviclab.org/contact",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/contact",
+      "title": "Contact · Portland Civic Lab",
+      "headings": "Get in touch",
+      "soft404": false
+    },
+    {
+      "label": "USGS / USFS MTBS",
+      "url": "https://www.mtbs.gov/",
+      "scope": "map",
+      "status": 200,
+      "finalUrl": "https://www.mtbs.gov/",
+      "title": "Home | MTBS",
+      "headings": "",
+      "soft404": false
+    },
+    {
+      "label": "Privacy",
+      "url": "https://www.portlandciviclab.org/privacy",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/privacy",
+      "title": "Privacy Policy · Portland Civic Lab",
+      "headings": "Privacy Policy",
+      "soft404": false
+    },
+    {
+      "label": "Terms",
+      "url": "https://www.portlandciviclab.org/terms",
+      "scope": "navigation",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/terms",
+      "title": "Terms of Use · Portland Civic Lab",
+      "headings": "Terms of Use",
+      "soft404": false
+    },
+    {
+      "label": "Explain this burn or suggest a correction",
+      "url": "https://www.portlandciviclab.org/contact?topic=Data+correction&project=Oregon+Fire+Map&fireRecord=blm%3A011976a0e7a817863b9a69c3",
+      "scope": "detail sample",
+      "status": 200,
+      "finalUrl": "https://www.portlandciviclab.org/contact?topic=Data+correction&project=Oregon+Fire+Map&fireRecord=blm%3A011976a0e7a817863b9a69c3",
+      "title": "Contact · Portland Civic Lab",
+      "headings": "Get in touch",
+      "soft404": false
+    },
+    {
+      "label": "Replacement OEM home",
+      "url": "https://www.oregon.gov/oem/Pages/default.aspx",
+      "scope": "replacement",
+      "status": 200,
+      "finalUrl": "https://www.oregon.gov/oem/Pages/default.aspx",
+      "title": "Oregon Department of Emergency Management : Oregon Department of Emergency Management : State of Oregon",
+      "headings": "tag, as divs are not allowed in 's --> Oregon Department of Emergency Management",
+      "soft404": false
+    }
+  ]
+}

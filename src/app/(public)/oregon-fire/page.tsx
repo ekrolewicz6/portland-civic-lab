@@ -230,7 +230,7 @@ export default async function OregonFirePage() {
         <p className="fire-footer-note">
           An educational project from Portland Civic Lab. For current emergency
           information, consult{" "}
-          <a href="https://www.oregon.gov/oem/emops/Pages/RAPTOR.aspx">
+          <a href="https://www.oregon.gov/oem/Pages/default.aspx">
             Oregon Emergency Management
           </a>{" "}
           and your county’s official alerts.
