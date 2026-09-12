@@ -191,3 +191,47 @@ test.describe("Oregon Fire live imported-data checks", () => {
     });
   });
 });
+
+test.describe('Recent fire scars',()=>{
+  test.skip(process.env.OREGON_FIRE_LIVE_CHECK !== '1','Requires imported perimeter sources');
+  test.setTimeout(90_000);
+  test('complete perimeter overlay, window controls, shared links and severity tiles', async ({page,request})=>{
+    const response=await request.get('/api/oregon-fire/landscape?end=2026&years=5');
+    expect(response.ok()).toBeTruthy(); const data=await response.json();
+    expect(data.total).toBe(data.scars.length); expect(data.total).toBeGreaterThan(100);
+    expect(data.years.reduce((sum:number,y:{count:number})=>sum+y.count,0)).toBe(data.total);
+    expect(data.scars.every((r:{year:number;geometry:{type:string}})=>r.year>=2022&&r.year<=2026&&/Polygon/.test(r.geometry.type))).toBeTruthy();
+    expect(data.scars.some((r:{sourceId:string})=>r.sourceId==='wfigs-perimeters')).toBeTruthy();
+    expect((await request.get('/api/oregon-fire/landscape?years=100')).status()).toBe(400);
+    expect((await request.get('/api/oregon-fire/severity?year=2024&z=7&x=999&y=45')).status()).toBe(400);
+    const errors:string[]=[]; page.on('pageerror',e=>errors.push(e.message));
+    await page.goto('/oregon-fire?scarEnd=2024&scarYears=1&markers=0');
+    await expect(page.getByRole('button',{name:'Recent fire scars On',exact:true})).toHaveAttribute('aria-pressed','true');
+    await expect(page.locator('.fire-scar-count strong')).not.toHaveText('…',{timeout:45000});
+    await expect(page.locator('.fire-map canvas').first()).toBeAttached();
+    await page.getByRole('button',{name:'Burn severity',exact:true}).click();
+    await expect(page.getByLabel('Severity fire year')).toHaveValue('2024');
+    await expect(page.getByLabel('Burn severity legend')).toContainText('Moderate');
+    await expect.poll(async()=>page.locator('.fire-severity-state').innerText(),{timeout:45000}).toContain('generally maps');
+    expect(await page.locator('img[src*="/severity?"]').evaluateAll(images=>images.some(i=>(i as HTMLImageElement).naturalWidth===256))).toBeTruthy();
+    await expect(page).toHaveURL(/scarMode=severity/);
+    await page.reload(); await expect(page.getByRole('button',{name:'Burn severity',exact:true})).toHaveAttribute('aria-pressed','true');
+    await page.getByRole('button',{name:'Recent fire scars On',exact:true}).click();
+    await expect(page.locator('img[src*="/severity?"]')).toHaveCount(0);
+    await expect(page.getByRole('img',{name:/49 percent/})).toBeAttached();
+    expect(errors).toEqual([]);
+  });
+  test('mobile controls, forest context and failed assessments remain explicit',async({page})=>{
+    await page.setViewportSize({width:390,height:844});
+    await page.route('**/api/oregon-fire/severity?*',r=>r.fulfill({status:502,json:{error:'Assessment unavailable'}}));
+    await page.goto('/oregon-fire?scarMode=severity&scarEnd=2024&scarYears=1');
+    await expect(page.locator('.fire-severity-state')).toContainText('could not load',{timeout:30000});
+    await expect(page.getByLabel('Severity fire year')).toBeVisible();
+    await page.getByRole('button',{name:'Year of fire',exact:true}).click();
+    await page.getByRole('button',{name:'10 years',exact:true}).click();
+    await expect(page).toHaveURL(/scarYears=10/);
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+    await page.locator('.fire-landscape-controls').scrollIntoViewIfNeeded();
+    await page.screenshot({path:'test-results/fire-scars-mobile.png',fullPage:true});
+  });
+});

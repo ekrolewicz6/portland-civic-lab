@@ -68,7 +68,7 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
       a.ActualIgnitionTime ??
       a.PlannedIgnitionTime ??
       a.Dateplanned ??
-      a.FireDiscoveryDateTime,
+      a.FireDiscoveryDateTime ?? a.attr_FireDiscoveryDateTime,
   );
   let year = date
     ? Number(date.slice(0, 4))
@@ -138,6 +138,11 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
     recordKind = "perimeter";
     status = "Historical perimeter";
   }
+  if (s === "wfigs-perimeters") {
+    kind = "wildfire";
+    recordKind = "perimeter";
+    status = a.attr_FireOutDateTime ? "Reported out — provisional perimeter" : "Provisional perimeter";
+  }
   if (s === "fod" || s === "wfigs") {
     kind = "wildfire";
     recordKind = "occurrence";
@@ -177,6 +182,7 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
         "fire_name",
         "FIRE_NAME",
         "IncidentName",
+        "poly_IncidentName",
       ) ?? "Unnamed record",
     kind,
     recordKind,
@@ -215,7 +221,7 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
         : s === "wfigs"
           ? numberValue(a, "IncidentSize", "DailyAcres")
           : null,
-    polygonAcres: numberValue(a, "GIS_ACRES", "gis_acres"),
+    polygonAcres: numberValue(a, "GIS_ACRES", "gis_acres", "poly_GISAcres"),
     geometryMeaning: point
       ? "Reported location; not a burn boundary"
       : recordKind === "perimeter"
@@ -232,9 +238,9 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
       textValue(a, "PLANID", "nepa_project_id"),
       textValue(a, "nepa_doc_name"),
     ].filter((v): v is string => v !== null),
-    irwinId: cleanIrwin(textValue(a, "IrwinID", "IRWINID", "IRWIN_ID")),
+    irwinId: cleanIrwin(textValue(a, "IrwinID", "IRWINID", "IRWIN_ID", "poly_IRWINID")),
     sourceUpdatedAt: isoDate(
-      a.ModifiedOnDateTime_dt ?? a.etl_modified_date_haz,
+      a.ModifiedOnDateTime_dt ?? a.etl_modified_date_haz ?? a.poly_DateCurrent,
     ),
   };
 }

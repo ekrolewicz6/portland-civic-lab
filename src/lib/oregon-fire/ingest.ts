@@ -189,6 +189,7 @@ export async function syncSource(
         endpoint: source.endpoint,
         where: source.where ?? "1=1",
         outSR: 4326,
+        spatialEnvelope: source.spatialEnvelope ?? null,
         expectedCount: checkpoint.ids.length,
         sourceMetadata: checkpoint.meta,
         completedIds: checkpoint.offset,

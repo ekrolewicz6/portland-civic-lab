@@ -47,6 +47,7 @@ export interface FireSource {
   url: string;
   endpoint?: string;
   where?: string;
+  spatialEnvelope?: [number, number, number, number];
   fields?: string[];
   cadenceHours?: number;
   coverage: string;

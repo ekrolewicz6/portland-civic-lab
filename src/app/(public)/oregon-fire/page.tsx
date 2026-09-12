@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Flame, BookOpen } from "lucide-react";
+import ForestContext from "@/components/oregon-fire/ForestContext";
 import FireExplorer from "@/components/oregon-fire/FireExplorer";
 import { coverage } from "@/lib/oregon-fire/query";
 import { WOODPECKER } from "@/lib/oregon-fire/sources";
@@ -8,16 +10,18 @@ import { pageMeta } from "@/lib/page-meta";
 import { FIRE_TITLE, FIRE_DESCRIPTION, FIRE_AUTHORS, fireStructuredData } from "@/lib/oregon-fire/metadata";
 import "./fire.css";
 
+const editorial = localFont({ src: "../../../lib/oregon-fire/fonts/CormorantGaramond-Medium.ttf", variable: "--font-editorial", weight: "500", display: "swap" });
+
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   ...pageMeta({ title: FIRE_TITLE, description: FIRE_DESCRIPTION, path: "/oregon-fire" }),
   authors: FIRE_AUTHORS.map((name) => ({ name })),
-  keywords: ["Oregon fire map", "Oregon prescribed burns", "prescribed fire", "Oregon wildfire history", "planned burns", "burn treatment records"],
+  keywords: ["Oregon fire map", "Oregon prescribed burns", "prescribed fire", "Oregon wildfire history", "planned burns", "burn treatment records", "recent Oregon fire scars", "burn severity map"],
 };
 export default async function OregonFirePage() {
   const sources = await coverage();
   return (
-    <article className="fire-page">
+    <article className={`fire-page ${editorial.variable}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(fireStructuredData).replace(/</g, "\\u003c") }} />
       <header className="fire-hero">
         <div className="fire-hero-top">
@@ -47,7 +51,7 @@ export default async function OregonFirePage() {
             </p>
             <p>
               Explore prescribed burns, the reasons behind them, and the
-              wildfire history around them. Follow each record back to its
+              wildfire scars around them. Compare years of fire and satellite burn severity. Follow each record back to its
               source—and see what we still need to learn.
             </p>
             <a href="#explore">
@@ -62,6 +66,7 @@ export default async function OregonFirePage() {
       </header>
       <div className="fire-shell">
         <FireExplorer sources={sources} />
+        <ForestContext />
         <section className="fire-reading">
           <div>
             <span className="fire-eyebrow">Reading the landscape</span>

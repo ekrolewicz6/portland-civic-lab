@@ -57,16 +57,19 @@ export type FireFilters = z.infer<typeof filterSchema>;
 // observed status is preserved, never inferred from absence. Full inventories
 // use only their atomically published snapshot.
 function current() {
-  return sql`WITH visible AS NOT MATERIALIZED (
+  return sql`WITH latest_rolling AS (
+    SELECT DISTINCT ON(r.id) r.id,r.run_id,i.completed_at,s.active_run
+    FROM fire.records r JOIN fire.import_runs i ON i.id=r.run_id JOIN fire.sources s ON s.id=r.source_id
+    WHERE i.status='complete' AND r.source_id IN ('pnw','odf-2','odf-3','wfigs','wfigs-perimeters')
+    ORDER BY r.id,i.completed_at DESC
+  ), visible AS NOT MATERIALIZED (
     SELECT r.*,i.completed_at AS observed_at,true AS in_latest_feed
     FROM fire.sources s JOIN fire.records r ON r.run_id=s.active_run
     JOIN fire.import_runs i ON i.id=r.run_id AND i.status='complete'
-    WHERE s.id NOT IN ('pnw','odf-0','odf-1','odf-2','odf-3','wfigs')
+    WHERE s.id NOT IN ('pnw','odf-0','odf-1','odf-2','odf-3','wfigs','wfigs-perimeters')
     UNION ALL
-    (SELECT DISTINCT ON(r.id) r.*,i.completed_at AS observed_at,r.run_id=s.active_run AS in_latest_feed
-    FROM fire.records r JOIN fire.import_runs i ON i.id=r.run_id JOIN fire.sources s ON s.id=r.source_id
-    WHERE i.status='complete' AND r.source_id IN ('pnw','odf-2','odf-3','wfigs')
-    ORDER BY r.id,i.completed_at DESC)
+    SELECT r.*,l.completed_at AS observed_at,r.run_id=l.active_run AS in_latest_feed
+    FROM latest_rolling l JOIN fire.records r ON r.run_id=l.run_id AND r.id=l.id
   ), current AS NOT MATERIALIZED (
     SELECT * FROM visible v WHERE public=true AND NOT (source_id='wfigs' AND EXISTS(
       SELECT 1 FROM fire.records f JOIN fire.sources fs ON fs.id='fod' AND f.run_id=fs.active_run

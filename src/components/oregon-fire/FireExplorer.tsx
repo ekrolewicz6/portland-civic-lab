@@ -17,6 +17,8 @@ import type {
   RecordResult,
   SourceCoverage,
 } from "@/lib/oregon-fire/types";
+import LandscapeControls, { type ScarSettings } from "./LandscapeControls";
+import type { LandscapeResult } from "@/lib/oregon-fire/landscape";
 import { SOURCE_BY_ID } from "@/lib/oregon-fire/sources";
 
 const Map = dynamic(() => import("./FireMap"), {
@@ -51,6 +53,11 @@ const initial = {
   zoom: "6",
   cursor: "0",
   selected: "",
+  scars: "1",
+  scarYears: "5",
+  scarEnd: String(new Date().getFullYear()),
+  scarMode: "age",
+  markers: "1",
 };
 type Filters = typeof initial;
 function when(r: FireRecord) {
@@ -82,17 +89,78 @@ export default function FireExplorer({
     [error, setError] = useState(""),
     [detail, setDetail] = useState<Detail | null>(null),
     [detailError, setDetailError] = useState("");
+  const [landscape, setLandscape] = useState<LandscapeResult | null>(null);
+  const [scarLoading, setScarLoading] = useState(true);
+  const [scarError, setScarError] = useState("");
+  const [severityState, setSeverityState] = useState("loading");
+  const changeScars = useCallback((patch: Partial<ScarSettings>) => {
+    setFilters((f) => ({ ...f, ...patch }));
+    setSeverityState("loading");
+  }, []);
+  useEffect(() => {
+    if (!ready || filters.scars !== "1") return;
+    const c = new AbortController();
+    setScarLoading(true);
+    setScarError("");
+    const p = new URLSearchParams({
+      bbox: filters.bbox,
+      zoom: filters.zoom,
+      years: filters.scarMode === "severity" ? "1" : filters.scarYears,
+      end: filters.scarEnd,
+    });
+    const timer = setTimeout(() => {
+      fetch(`/api/oregon-fire/landscape?${p}`, { signal: c.signal })
+        .then(async (r) => {
+          const d = await r.json();
+          if (!r.ok) throw new Error(d.error);
+          setLandscape(d);
+        })
+        .catch((e) => {
+          if (!c.signal.aborted) {
+            setScarError(e.message);
+            setLandscape(null);
+          }
+        })
+        .finally(() => {
+          if (!c.signal.aborted) setScarLoading(false);
+        });
+    }, 200);
+    return () => {
+      clearTimeout(timer);
+      c.abort();
+    };
+  }, [
+    ready,
+    filters.scars,
+    filters.scarYears,
+    filters.scarEnd,
+    filters.scarMode,
+    filters.bbox,
+    filters.zoom,
+  ]);
   const detailRef = useRef<HTMLDivElement>(null);
   const [mapGeneration, setMapGeneration] = useState(0);
   useEffect(() => {
     const read = () => {
       const p = new URLSearchParams(window.location.search);
-      setFilters({
+      const next = {
         ...initial,
         ...Object.fromEntries(
           [...p.entries()].filter(([key]) => key in initial),
         ),
-      });
+      };
+      next.scars = next.scars === "0" ? "0" : "1";
+      next.markers = next.markers === "0" ? "0" : "1";
+      next.scarMode = next.scarMode === "severity" ? "severity" : "age";
+      if (!["1", "5", "10"].includes(next.scarYears)) next.scarYears = "5";
+      if (
+        !/^\d{4}$/.test(next.scarEnd) ||
+        Number(next.scarEnd) < 2009 ||
+        Number(next.scarEnd) > Number(initial.scarEnd)
+      )
+        next.scarEnd = initial.scarEnd;
+      if (next.scarMode === "severity") next.scarYears = "1";
+      setFilters(next);
       setReady(true);
       setMapGeneration((g) => g + 1);
     };
@@ -100,11 +168,15 @@ export default function FireExplorer({
     window.addEventListener("popstate", read);
     return () => window.removeEventListener("popstate", read);
   }, []);
+  const recordQuery = new URLSearchParams(
+    Object.entries(filters).filter(
+      ([k]) => !k.startsWith("scar") && k !== "selected" && k !== "markers",
+    ),
+  ).toString();
   useEffect(() => {
     if (!ready) return;
     const controller = new AbortController();
-    const p = new URLSearchParams(filters);
-    p.delete("selected");
+    const p = recordQuery;
     const timer = setTimeout(async () => {
       setLoading(true);
       setError("");
@@ -124,6 +196,13 @@ export default function FireExplorer({
         if (!controller.signal.aborted) setLoading(false);
       }
     }, 250);
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
+  }, [recordQuery, ready]);
+  useEffect(() => {
+    if (!ready) return;
     const urlParams = new URLSearchParams(
       Object.entries(filters).filter(
         ([k, v]) => v !== "" && v !== initial[k as keyof Filters],
@@ -134,10 +213,6 @@ export default function FireExplorer({
       "",
       `${window.location.pathname}${urlParams.size ? `?${urlParams}` : ""}#explore`,
     );
-    return () => {
-      clearTimeout(timer);
-      controller.abort();
-    };
   }, [filters, ready]);
   useEffect(() => {
     if (!filters.selected) {
@@ -191,6 +266,14 @@ export default function FireExplorer({
       className="fire-explorer"
       aria-label="Explore Oregon fire records"
     >
+      <LandscapeControls
+        settings={filters}
+        change={changeScars}
+        data={landscape}
+        loading={scarLoading}
+        error={scarError}
+        severityState={severityState}
+      />
       <div className="fire-toolbar">
         <div className="fire-tabs" role="group" aria-label="Record layers">
           {[
@@ -209,6 +292,13 @@ export default function FireExplorer({
             </button>
           ))}
         </div>
+        <button
+          className="fire-markers-toggle"
+          aria-pressed={filters.markers === "1"}
+          onClick={() => change("markers", filters.markers === "1" ? "0" : "1")}
+        >
+          Record markers {filters.markers === "1" ? "on" : "off"}
+        </button>
         <a
           className="fire-export"
           href={`/api/oregon-fire/export?${exportParams}`}
@@ -216,83 +306,115 @@ export default function FireExplorer({
           <ArrowDownToLine size={15} /> Export records
         </a>
       </div>
-      <div className="fire-filters">
-        <label className="fire-search">
-          <span>Search records</span>
-          <div>
-            <Search size={17} />
-            <input
-              aria-label="Search records"
-              placeholder="Burn name, county or agency"
-              value={filters.q}
-              onChange={(e) => change("q", e.target.value)}
-            />
-          </div>
-        </label>
-        <label>
-          <span>From year</span>
-          <input
-            type="number"
-            min="1800"
-            max="2200"
-            value={filters.from}
-            onChange={(e) => change("from", e.target.value)}
-          />
-        </label>
-        <label>
-          <span>Through year</span>
-          <input
-            type="number"
-            min="1800"
-            max="2200"
-            value={filters.to}
-            onChange={(e) => change("to", e.target.value)}
-          />
-        </label>
-        {(["agency", "method", "purpose", "status"] as const).map((key, i) => (
-          <label key={key}>
-            <span>
-              {["Agency", "Burn method", "Reported purpose", "Status"][i]}
-            </span>
-            <select
-              value={filters[key]}
-              onChange={(e) => change(key, e.target.value)}
-            >
-              <option value="">All</option>
-              {(
-                options?.[
-                  (["agencies", "methods", "purposes", "statuses"] as const)[i]
-                ] ?? []
-              )
-                .filter(Boolean)
-                .map((v) => (
-                  <option key={v} value={v}>
-                    {v}
-                  </option>
-                ))}
-            </select>
+      <details
+        className="fire-filter-drawer"
+        open={
+          filters.from !== initial.from ||
+          filters.to !== initial.to ||
+          !!filters.q ||
+          !!filters.agency ||
+          !!filters.method ||
+          !!filters.purpose ||
+          !!filters.status
+        }
+      >
+        <summary>
+          Refine records <span>Dates, agency, method & purpose</span>
+        </summary>
+        <div className="fire-filters">
+          <label className="fire-search">
+            <span>Search records</span>
+            <div>
+              <Search size={17} />
+              <input
+                aria-label="Search records"
+                placeholder="Burn name, county or agency"
+                value={filters.q}
+                onChange={(e) => change("q", e.target.value)}
+              />
+            </div>
           </label>
-        ))}
-        <button
-          className="fire-reset"
-          onClick={() => {
-            setFilters(initial);
-            setMapGeneration((g) => g + 1);
-          }}
-        >
-          Reset
-        </button>
-      </div>
+          <label>
+            <span>From year</span>
+            <input
+              type="number"
+              min="1800"
+              max="2200"
+              value={filters.from}
+              onChange={(e) => change("from", e.target.value)}
+            />
+          </label>
+          <label>
+            <span>Through year</span>
+            <input
+              type="number"
+              min="1800"
+              max="2200"
+              value={filters.to}
+              onChange={(e) => change("to", e.target.value)}
+            />
+          </label>
+          {(["agency", "method", "purpose", "status"] as const).map(
+            (key, i) => (
+              <label key={key}>
+                <span>
+                  {["Agency", "Burn method", "Reported purpose", "Status"][i]}
+                </span>
+                <select
+                  value={filters[key]}
+                  onChange={(e) => change(key, e.target.value)}
+                >
+                  <option value="">All</option>
+                  {(
+                    options?.[
+                      (
+                        ["agencies", "methods", "purposes", "statuses"] as const
+                      )[i]
+                    ] ?? []
+                  )
+                    .filter(Boolean)
+                    .map((v) => (
+                      <option key={v} value={v}>
+                        {v}
+                      </option>
+                    ))}
+                </select>
+              </label>
+            ),
+          )}
+          <button
+            className="fire-reset"
+            onClick={() => {
+              setFilters(initial);
+              setMapGeneration((g) => g + 1);
+            }}
+          >
+            Reset
+          </button>
+        </div>
+      </details>
       <div className="fire-workspace">
         <div className="fire-map-pane">
           {ready && (
             <Map
               key={mapGeneration}
               initialBounds={filters.bbox}
-              items={loading ? [] : (result?.map ?? [])}
+              items={
+                loading || filters.markers === "0" ? [] : (result?.map ?? [])
+              }
               selected={detail?.geometry ?? null}
               onSelect={select}
               onView={onView}
+              scars={
+                filters.scars === "1" && !scarLoading
+                  ? (landscape?.scars ?? [])
+                  : []
+              }
+              scarEnd={Number(filters.scarEnd)}
+              severity={
+                filters.scars === "1" && filters.scarMode === "severity"
+              }
+              onSeverityState={setSeverityState}
             />
           )}
           <div className="fire-map-caption">

@@ -1,17 +1,24 @@
 "use client";
 import "leaflet/dist/leaflet.css";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import {
   CircleMarker,
   GeoJSON,
   MapContainer,
+  Pane,
   TileLayer,
   Tooltip,
   useMap,
   useMapEvents,
 } from "react-leaflet";
-import type { Geometry } from "geojson";
-import { circleMarker, geoJSON, type LatLngBoundsExpression } from "leaflet";
+import type { Geometry, FeatureCollection } from "geojson";
+import {
+  circleMarker,
+  geoJSON,
+  type GeoJSON as LeafletGeoJSON,
+  type LatLngBoundsExpression,
+} from "leaflet";
+import { scarColor, type ScarItem } from "@/lib/oregon-fire/landscape";
 import type { MapItem } from "@/lib/oregon-fire/types";
 
 const colors = {
@@ -127,18 +134,103 @@ function Records({
     </>
   );
 }
+function Severity({
+  year,
+  onState,
+}: {
+  year: number;
+  onState: (state: string) => void;
+}) {
+  const failed = useRef(false);
+  return (
+    <TileLayer
+      key={year}
+      url={`/api/oregon-fire/severity?year=${year}&z={z}&x={x}&y={y}`}
+      opacity={0.86}
+      maxNativeZoom={18}
+      attribution='Burn severity: <a href="https://www.mtbs.gov/">USGS / USFS MTBS</a>'
+      eventHandlers={{
+        loading() {
+          failed.current = false;
+          onState("loading");
+        },
+        tileerror() {
+          failed.current = true;
+          onState("error");
+        },
+        load() {
+          onState(failed.current ? "error" : "ready");
+        },
+      }}
+    />
+  );
+}
+function Scars({
+  items,
+  end,
+  severity,
+  onSelect,
+}: {
+  items: ScarItem[];
+  end: number;
+  severity: boolean;
+  onSelect: (id: string) => void;
+}) {
+  const layerRef = useRef<LeafletGeoJSON>(null);
+  useEffect(() => {
+    const layer = layerRef.current;
+    if (!layer) return;
+    layer.clearLayers();
+    layer.addData({
+      type: "FeatureCollection",
+      features: items.map((i) => ({
+        type: "Feature",
+        geometry: i.geometry,
+        properties: { id: i.id, name: i.name, year: i.year },
+      })),
+    } as FeatureCollection);
+  }, [items, end, severity]);
+  return (
+    <GeoJSON
+      ref={layerRef}
+      key={`${end}:${severity}`}
+      data={{ type: "FeatureCollection", features: [] } as FeatureCollection}
+      style={(f) => ({
+        color: severity ? "#64483b" : scarColor(f?.properties.year, end),
+        weight: severity ? 0.8 : 1.1,
+        fillColor: scarColor(f?.properties.year, end),
+        fillOpacity: severity ? 0 : 0.25,
+      })}
+      onEachFeature={(feature, layer) => {
+        const p = feature.properties;
+        const text = document.createElement("span");
+        text.textContent = `${p.name} · ${p.year} · wildfire perimeter`;
+        layer.bindTooltip(text);
+        layer.on("click", () => onSelect(p.id));
+      }}
+    />
+  );
+}
 export default function FireMap({
   items,
   selected,
   onSelect,
   onView,
   initialBounds,
+  scars,
+  scarEnd,
+  severity,
+  onSeverityState,
 }: {
   items: MapItem[];
   selected: Geometry | null;
   onSelect: (id: string) => void;
   onView: (bounds: string, zoom: number) => void;
   initialBounds: string;
+  scars: ScarItem[];
+  scarEnd: number;
+  severity: boolean;
+  onSeverityState: (state: string) => void;
 }) {
   const b = initialBounds.split(",").map(Number);
   const valid =
@@ -170,7 +262,19 @@ export default function FireMap({
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        className="fire-base-tiles"
       />
+      <Pane name="severity" style={{ zIndex: 350 }}>
+        {severity && <Severity year={scarEnd} onState={onSeverityState} />}
+      </Pane>
+      <Pane name="fire-scars" style={{ zIndex: 380 }}>
+        <Scars
+          items={scars}
+          end={scarEnd}
+          severity={severity}
+          onSelect={onSelect}
+        />
+      </Pane>
       <Events onView={onView} />
       <Selected geometry={selected} />
       <Records items={items} onSelect={onSelect} />

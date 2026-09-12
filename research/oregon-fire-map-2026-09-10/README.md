@@ -28,4 +28,4 @@ Start with [the dated audit](audit-2026-09-11.md) and [implementation notes](imp
 
 No emails have been sent, no fees committed, and no steward has confirmed complete coverage. The old Claude artifact is a separate hosted copy and has not been updated by editing this repository.
 
-[September 12 feedback and next research questions](feedback-2026-09-12.md) records the proposed forest-condition and fire-effects workstream.
+[September 12 feedback and next research questions](feedback-2026-09-12.md) records the forest-condition and fire-effects workstream. See [the September 12 implementation and evidence](recent-fire-release-2026-09-12.md) for the recent-scar overlay, MTBS severity display, verified forest-area estimate, and remaining evidence gaps.

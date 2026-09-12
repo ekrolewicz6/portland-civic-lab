@@ -283,3 +283,25 @@ test("matching row counts cannot hide a server ignoring requested IDs", async ()
     /changed or truncated/,
   );
 });
+
+test("recent perimeter retains discovery year, source date and geometry meaning", () => {
+  const r=normalize(SOURCE_BY_ID['wfigs-perimeters'], {...point, geometry:boundary.geometry,
+    properties:{GlobalID:'perimeter-2026',poly_IncidentName:'Example',poly_GISAcres:125,
+      poly_IRWINID:'{ABC-123}',attr_FireDiscoveryDateTime:Date.UTC(2026,6,4),poly_DateCurrent:Date.UTC(2026,6,8)}});
+  assert.equal(r.kind,'wildfire'); assert.equal(r.recordKind,'perimeter');
+  assert.equal(r.year,2026); assert.equal(r.name,'Example'); assert.equal(r.irwinId,'abc-123');
+  assert.equal(r.polygonAcres,125); assert.equal(r.burnedAcres,null);
+  assert.match(r.geometryMeaning,/may include unburned/);
+  assert.equal(r.sourceUpdatedAt,'2026-07-08T00:00:00.000Z');
+});
+test("perimeter ID inventory requests intersecting geography, not ignition-state filtering", async () => {
+  let query: URL | undefined;
+  globalThis.fetch=async (input)=>{const url=new URL(String(input));
+    if(url.pathname.endsWith('/query')){query=url;return Response.json({objectIds:[7,9]});}
+    return Response.json({objectIdField:'OBJECTID',fields:[{name:'OBJECTID',type:'esriFieldTypeOID'}]});
+  };
+  const {ids}=await inspectLayer(SOURCE_BY_ID['wfigs-perimeters']);
+  assert.deepEqual(ids,[7,9]); assert.equal(query?.searchParams.get('spatialRel'),'esriSpatialRelIntersects');
+  assert.equal(query?.searchParams.get('inSR'),'4326');
+  assert.equal(JSON.parse(query!.searchParams.get('geometry')!).xmin,-124.9);
+});

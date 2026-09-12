@@ -59,6 +59,10 @@ export async function inspectLayer(source: FireSource) {
     meta.objectIdFieldName ??
     meta.fields.find((f) => f.type === "esriFieldTypeOID")?.name;
   if (!oid) throw new Error("Source is missing an object ID field");
+  const spatial: Record<string, string> = source.spatialEnvelope ? {
+    geometry: JSON.stringify({ xmin: source.spatialEnvelope[0], ymin: source.spatialEnvelope[1], xmax: source.spatialEnvelope[2], ymax: source.spatialEnvelope[3], spatialReference: { wkid: 4326 } }),
+    geometryType: "esriGeometryEnvelope", inSR: "4326", spatialRel: "esriSpatialRelIntersects",
+  } : {};
   const ids = await getJson<{
     objectIds: number[] | null;
     exceededTransferLimit?: boolean;
@@ -66,6 +70,7 @@ export async function inspectLayer(source: FireSource) {
     f: "json",
     where: source.where ?? "1=1",
     returnIdsOnly: "true",
+    ...spatial,
   });
   if (ids.exceededTransferLimit)
     throw new Error("Source truncated ID inventory");
