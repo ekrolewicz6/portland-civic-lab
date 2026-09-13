@@ -278,6 +278,10 @@ function FeaturedCard({ f, onNavigate }: { f: Featured; onNavigate: () => void }
 
 export default function Header({ member: initialMember = null }: { member?: HeaderMember | null }) {
   const pathname = usePathname();
+  const isFireAtlas = pathname === "/oregon-fire" || pathname.startsWith("/oregon-fire/");
+  const shellClass = isFireAtlas
+    ? "fire-shell w-full"
+    : "mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12 3xl:max-w-[1800px]";
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -368,17 +372,17 @@ export default function Header({ member: initialMember = null }: { member?: Head
     >
       <div
         ref={shellRef}
-        className="relative mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 3xl:max-w-[1800px]"
+        className={`relative ${shellClass}`}
         onMouseLeave={scheduleClose}
         onMouseEnter={() => {
           if (closeTimer.current) window.clearTimeout(closeTimer.current);
         }}
       >
-        <div className="flex h-14 items-center justify-between gap-4">
+        <div className="flex h-14 items-center justify-between gap-4 xl:gap-10">
           <Wordmark />
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-5 xl:flex 2xl:gap-7" aria-label="Primary">
+          <nav className="ml-auto hidden shrink-0 items-center gap-5 xl:flex 2xl:gap-7" aria-label="Primary">
             {PRIMARY.map((l) => (
               <NavLink key={l.href} label={l.label} href={l.href} active={isActive(l.href)} />
             ))}
@@ -459,7 +463,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
 
         {/* Mega-menu panel: anchored to the page container, never to a trigger */}
         {active && (
-          <div id="site-megamenu" className="absolute inset-x-5 top-full z-50 hidden pt-2 sm:inset-x-8 lg:inset-x-12 xl:block">
+          <div id="site-megamenu" className={`absolute top-full z-50 hidden pt-2 xl:block ${isFireAtlas ? "inset-x-10" : "inset-x-5 sm:inset-x-8 lg:inset-x-12"}`}>
             <div
               className="overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] text-[var(--color-ink)] shadow-[0_24px_64px_rgba(15,36,25,0.28)] animate-fade-up"
               style={{ animationDuration: "0.16s" }}
@@ -497,7 +501,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="border-t border-white/10 bg-[var(--color-canopy)] animate-slide-down xl:hidden">
-          <div className="mx-auto max-w-[1400px] space-y-6 px-5 py-5 sm:px-8 lg:px-12 3xl:max-w-[1800px]">
+          <div className={`${shellClass} space-y-6 py-5`}>
             <MobileGroup title="Explore">
               {PRIMARY.map((l) => (
                 <MobileLink key={l.href} href={l.href} label={l.label} active={isActive(l.href)} />
