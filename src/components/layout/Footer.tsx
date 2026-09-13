@@ -100,13 +100,13 @@ export default function Footer() {
       <div className="h-px bg-gradient-to-r from-transparent via-[var(--color-ember)]/40 to-transparent" />
 
       <div className="relative z-10 max-w-[1400px] 3xl:max-w-[1800px] mx-auto px-5 sm:px-8 lg:px-12 pt-16 pb-10 sm:pt-20">
-        <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-4 lg:grid-cols-12">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-4 xl:grid-cols-[minmax(340px,1.6fr)_repeat(4,minmax(0,1fr))]">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-4 lg:pr-10">
+          <div className="col-span-2 md:col-span-4 xl:col-span-1">
             <div className="flex items-center gap-2.5">
               <BrandMark className="h-8 w-8" />
-              <h3 className="font-editorial-normal text-[22px] text-white leading-none">Portland Civic Lab</h3>
-              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember)]/70">Est. 2026</span>
+              <h3 className="shrink-0 whitespace-nowrap font-editorial-normal text-[18px] min-[380px]:text-[22px] text-white leading-none">Portland Civic Lab</h3>
+              <span className="shrink-0 whitespace-nowrap text-[9px] min-[380px]:text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember)]/70">Est. 2026</span>
             </div>
             <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-white/55">
               Free, source-linked tools for understanding Portland, and paid decision work for
@@ -123,7 +123,7 @@ export default function Footer() {
 
           {/* Link columns */}
           {COLUMNS.map((col) => (
-            <div key={col.title} className="md:col-span-1 lg:col-span-2">
+            <div key={col.title} className="md:col-span-1">
               <h4 className="text-[10px] font-mono font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em] mb-4">
                 {col.title}
               </h4>
