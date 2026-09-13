@@ -10,7 +10,7 @@ const schema = z.object({
   end: z.coerce
     .number()
     .int()
-    .min(2009)
+    .min(2000)
     .max(new Date().getFullYear())
     .default(new Date().getFullYear()),
   zoom: z.coerce.number().min(0).max(20).default(6),
@@ -27,7 +27,7 @@ export async function GET(request: Request) {
       { status: 400 },
     );
   const to = window.data.end,
-    from = to - Number(window.data.years) + 1;
+    from = Math.max(2000, to - Number(window.data.years) + 1);
   const [west, south, east, north] = view.data.bbox;
   const effectiveZoom = Math.min(
     window.data.zoom,

@@ -1,28 +1,68 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, Flame, BookOpen } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  Flame,
+  BookOpen,
+  MapPin,
+  Compass,
+} from "lucide-react";
 import ForestContext from "@/components/oregon-fire/ForestContext";
 import FireExplorer from "@/components/oregon-fire/FireExplorer";
 import { coverage } from "@/lib/oregon-fire/query";
-import { WOODPECKER } from "@/lib/oregon-fire/sources";
+import FireGuide from "@/components/oregon-fire/FireGuide";
+import PlaceFinder from "@/components/oregon-fire/PlaceFinder";
+import FireStories from "@/components/oregon-fire/FireStories";
+import FireComparison from "@/components/oregon-fire/FireComparison";
+import FireDecisions from "@/components/oregon-fire/FireDecisions";
 import { pageMeta } from "@/lib/page-meta";
-import { FIRE_TITLE, FIRE_DESCRIPTION, FIRE_AUTHORS, fireStructuredData } from "@/lib/oregon-fire/metadata";
+import {
+  FIRE_TITLE,
+  FIRE_DESCRIPTION,
+  FIRE_AUTHORS,
+  fireStructuredData,
+} from "@/lib/oregon-fire/metadata";
 import "./fire.css";
+import "./guide.css";
 
-const editorial = localFont({ src: "../../../lib/oregon-fire/fonts/CormorantGaramond-Medium.ttf", variable: "--font-editorial", weight: "500", display: "swap" });
+const editorial = localFont({
+  src: "../../../lib/oregon-fire/fonts/CormorantGaramond-Medium.ttf",
+  variable: "--font-editorial",
+  weight: "500",
+  display: "swap",
+});
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
-  ...pageMeta({ title: FIRE_TITLE, description: FIRE_DESCRIPTION, path: "/oregon-fire" }),
+  ...pageMeta({
+    title: FIRE_TITLE,
+    description: FIRE_DESCRIPTION,
+    path: "/oregon-fire",
+  }),
   authors: FIRE_AUTHORS.map((name) => ({ name })),
-  keywords: ["Oregon fire map", "Oregon prescribed burns", "prescribed fire", "Oregon wildfire history", "planned burns", "burn treatment records", "recent Oregon fire scars", "burn severity map"],
+  keywords: [
+    "Oregon fire map",
+    "Oregon prescribed burns",
+    "prescribed fire",
+    "Oregon wildfire history",
+    "planned burns",
+    "burn treatment records",
+    "recent Oregon fire scars",
+    "burn severity map",
+  ],
 };
 export default async function OregonFirePage() {
   const sources = await coverage();
   return (
     <article className={`fire-page ${editorial.variable}`}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(fireStructuredData).replace(/</g, "\\u003c") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(fireStructuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <header className="fire-hero">
         <div className="fire-hero-top">
           <span className="fire-eyebrow">
@@ -50,9 +90,10 @@ export default async function OregonFirePage() {
               The records tell different stories.
             </p>
             <p>
-              Explore prescribed burns, the reasons behind them, and the
-              wildfire scars around them. Compare years of fire and satellite burn severity. Follow each record back to its
-              source—and see what we still need to learn.
+              Learn how fire shapes different Oregon landscapes. Find a place
+              you know, follow a documented story, or explore prescribed burns
+              and wildfire history. See what happened—and what the evidence
+              can tell us about better choices.
             </p>
             <a href="#explore">
               Explore the map <ArrowDown size={16} />
@@ -65,74 +106,45 @@ export default async function OregonFirePage() {
         </div>
       </header>
       <div className="fire-shell">
+        <nav
+          className="fire-entry-paths"
+          aria-label="Choose your way into the atlas"
+        >
+          <a href="#understand">
+            <BookOpen size={23} />
+            <span>
+              <strong>Understand fire</strong>
+              <small>A short guide to Oregon’s landscapes</small>
+            </span>
+            <ArrowDown size={17} />
+          </a>
+          <a href="#find-place">
+            <MapPin size={23} />
+            <span>
+              <strong>Find a place</strong>
+              <small>Start with a community you know</small>
+            </span>
+            <ArrowDown size={17} />
+          </a>
+          <a href="#explore">
+            <Compass size={23} />
+            <span>
+              <strong>Explore the records</strong>
+              <small>Go straight to the map and sources</small>
+            </span>
+            <ArrowDown size={17} />
+          </a>
+        </nav>
+        <nav className="fire-chapter-nav" aria-label="Field guide chapters">
+          <a href="#understand">Landscapes</a><a href="#find-place">Find a place</a><a href="#explore">Map</a><a href="#fire-stories">Stories</a><a href="#through-time">Through time</a><a href="#burn-windows">Burn windows</a><a href="#what-success-means">What success means</a><a href="#sources">Sources</a>
+        </nav>
+        <FireGuide />
+        <PlaceFinder />
         <FireExplorer sources={sources} />
         <ForestContext />
-        <section className="fire-reading">
-          <div>
-            <span className="fire-eyebrow">Reading the landscape</span>
-            <h2>
-              A burn has a purpose.
-              <br />A place has a history.
-            </h2>
-            <p>
-              A registration, a planned treatment, and a completed burn describe
-              different things. This map keeps them distinct. Even a completed
-              treatment polygon can include ground that did not burn.
-            </p>
-          </div>
-          <div className="fire-principles">
-            <div>
-              <span>01</span>
-              <h3>Follow the evidence</h3>
-              <p>
-                Reported purpose codes appear as reported. Site-specific
-                explanations need a document or an attributed account.
-              </p>
-            </div>
-            <div>
-              <span>02</span>
-              <h3>See the gaps</h3>
-              <p>
-                Federal treatment records are the starting point. State,
-                private, agricultural, and ecological burn histories are still
-                being assembled.
-              </p>
-            </div>
-            <div>
-              <span>03</span>
-              <h3>Keep the distinctions</h3>
-              <p>
-                Records are not unique fires. Treatment acres, reported fire
-                size, and mapped area are different measures. Overlap does not
-                prove effectiveness.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section className="fire-story">
-          <div className="fire-story-label">
-            <BookOpen size={24} />
-            <span className="fire-eyebrow">
-              From the field
-              <br />
-              McDonald-Dunn Research Forest
-            </span>
-          </div>
-          <div>
-            <span className="fire-eyebrow">
-              Documented example · October 2025
-            </span>
-            <h2>{WOODPECKER.title}</h2>
-            <p>{WOODPECKER.body}</p>
-            <a href={WOODPECKER.url}>
-              Read OSU’s account <ArrowUpRight size={16} />
-            </a>
-            <p className="fire-small">
-              {WOODPECKER.attribution}. This story has no map pin until unit
-              geometry is verified.
-            </p>
-          </div>
-        </section>
+        <FireStories />
+        <FireComparison />
+        <FireDecisions />
         <section id="sources" className="fire-sources">
           <div className="fire-section-head">
             <div>

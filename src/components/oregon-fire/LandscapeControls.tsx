@@ -31,7 +31,7 @@ export default function LandscapeControls({
   const enabled = settings.scars === "1",
     severity = settings.scarMode === "severity";
   const end = Number(settings.scarEnd),
-    start = end - Number(settings.scarYears) + 1;
+    start = Math.max(2000, end - Number(settings.scarYears) + 1);
   return (
     <div className="fire-landscape-controls">
       <div className="fire-landscape-heading">
@@ -121,7 +121,7 @@ export default function LandscapeControls({
             onChange={(e) => change({ scarEnd: e.target.value })}
           >
             {Array.from(
-              { length: new Date().getFullYear() - 2008 },
+              { length: new Date().getFullYear() - 1999 },
               (_, i) => new Date().getFullYear() - i,
             )
               .filter((y) => !severity || y <= MTBS_VERIFIED_YEAR)
@@ -168,6 +168,7 @@ export default function LandscapeControls({
               </a>
             </p>
           )}
+          {end - Number(settings.scarYears) + 1 < 2000 && <p>This perimeter overlay begins in 2000; the earlier part of this window is outside its coverage.</p>}
           {loading && <p role="status">Updating wildfire boundaries…</p>}
           {error && <p role="alert">{error}</p>}
           {data && !loading && !error && data.total === 0 && (

@@ -1,7 +1,7 @@
 export const FIRE_URL = "https://www.portlandciviclab.org/oregon-fire";
 export const FIRE_TITLE = "Oregon Fire Map: Prescribed Burns & Wildfire History";
 export const FIRE_DESCRIPTION =
-  "Explore Oregon prescribed burns, recent wildfire scars, and burn severity. Compare fire history, reported purposes, and original records on an interactive map.";
+  "Understand fire in Oregon. Explore local burns, wildfire scars, before-and-after imagery, and evidence about forest management in an interactive public atlas.";
 export const FIRE_AUTHORS = [
   "Edan Krolewicz", "Dominic Kuklawood",
 ];

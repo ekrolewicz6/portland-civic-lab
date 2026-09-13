@@ -1,0 +1,76 @@
+{
+  "retrievedAt": "2026-09-13T05:54:33.138536+00:00",
+  "assets": [
+    {
+      "path": "public/images/oregon-fire/oregon-2020-07-19.webp",
+      "sourceUrl": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?service=WMS&request=GetMap&version=1.1.1&layers=MODIS_Terra_CorrectedReflectance_Bands721&styles=&format=image%2Fjpeg&srs=EPSG%3A4326&bbox=-124.5%2C43.5%2C-120.5%2C46&width=1200&height=1000&time=2020-07-19",
+      "observationDate": "2020-07-19",
+      "credit": "NASA GIBS / Terra MODIS, corrected reflectance bands 7-2-1",
+      "originalDimensions": [
+        1200,
+        1000
+      ],
+      "boundsWgs84": [
+        -124.5,
+        43.5,
+        -120.5,
+        46
+      ],
+      "changes": "Re-encoded as WebP. Interactive layout may crop both images identically.",
+      "sha256": "0de9d45b9be756a292281276ef727723ac26dff72773620336d68b80b468f9d2"
+    },
+    {
+      "path": "public/images/oregon-fire/oregon-2020-09-27.webp",
+      "sourceUrl": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?service=WMS&request=GetMap&version=1.1.1&layers=MODIS_Terra_CorrectedReflectance_Bands721&styles=&format=image%2Fjpeg&srs=EPSG%3A4326&bbox=-124.5%2C43.5%2C-120.5%2C46&width=1200&height=1000&time=2020-09-27",
+      "observationDate": "2020-09-27",
+      "credit": "NASA GIBS / Terra MODIS, corrected reflectance bands 7-2-1",
+      "originalDimensions": [
+        1200,
+        1000
+      ],
+      "boundsWgs84": [
+        -124.5,
+        43.5,
+        -120.5,
+        46
+      ],
+      "changes": "Re-encoded as WebP. Interactive layout may crop both images identically.",
+      "sha256": "b903db76c18e3c88d1532d13dc07ffcaa7088e648926c1fecbe647b2e330576f"
+    },
+    {
+      "path": "public/images/oregon-fire/oregon-2025-09-27.webp",
+      "sourceUrl": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?service=WMS&request=GetMap&version=1.1.1&layers=MODIS_Terra_CorrectedReflectance_Bands721&styles=&format=image%2Fjpeg&srs=EPSG%3A4326&bbox=-124.5%2C43.5%2C-120.5%2C46&width=1200&height=1000&time=2025-09-27",
+      "observationDate": "2025-09-27",
+      "credit": "NASA GIBS / Terra MODIS, corrected reflectance bands 7-2-1",
+      "originalDimensions": [
+        1200,
+        1000
+      ],
+      "boundsWgs84": [
+        -124.5,
+        43.5,
+        -120.5,
+        46
+      ],
+      "changes": "Re-encoded as WebP. Interactive layout may crop both images identically.",
+      "sha256": "290c3ddd7a400f0f4a0baed737ea2ed10182741cf5ae4ba46698486dfc084c64"
+    },
+    {
+      "path": "public/images/oregon-fire/egley-study.webp",
+      "sourceUrl": "https://research.fs.usda.gov/download/treesearch/59149.pdf",
+      "figure": "Figure 1, PDF page 5",
+      "credit": "Dodge et al., Fire Ecology 15:40 (2019)",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "changes": "Image extracted and compressed as WebP; contents and labels unchanged.",
+      "sha256": "86c203e43ca05455408cc0338a851a2a2b3ab952120f2ecdcf7a8de98f01765c"
+    },
+    {
+      "path": "src/lib/oregon-fire/places.json",
+      "sourceUrl": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_gaz_place_41.txt",
+      "credit": "U.S. Census Bureau, 2025 Gazetteer",
+      "records": 426,
+      "sourceSha256": "a65e46a1b23767584a28fb8b5c3bc9f765019fe1c2d183b05de0d0ef485b6595",
+      "sha256": "216772869512110a430ddea37bc05e6c2ce041849674f6fbceb648292a056a49"
+    }
+  ]
+}

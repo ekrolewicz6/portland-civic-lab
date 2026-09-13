@@ -155,7 +155,7 @@ export default function FireExplorer({
       if (!["1", "5", "10"].includes(next.scarYears)) next.scarYears = "5";
       if (
         !/^\d{4}$/.test(next.scarEnd) ||
-        Number(next.scarEnd) < 2009 ||
+        Number(next.scarEnd) < 2000 ||
         Number(next.scarEnd) > Number(initial.scarEnd)
       )
         next.scarEnd = initial.scarEnd;
@@ -203,15 +203,16 @@ export default function FireExplorer({
   }, [recordQuery, ready]);
   useEffect(() => {
     if (!ready) return;
-    const urlParams = new URLSearchParams(
-      Object.entries(filters).filter(
-        ([k, v]) => v !== "" && v !== initial[k as keyof Filters],
-      ),
-    );
+    // Guide/story choices share the URL with map state; preserve them.
+    const urlParams = new URLSearchParams(window.location.search);
+    for (const key of Object.keys(initial)) urlParams.delete(key);
+    for (const [key, value] of Object.entries(filters)) {
+      if (value !== "" && value !== initial[key as keyof Filters]) urlParams.set(key, value);
+    }
     window.history.replaceState(
       null,
       "",
-      `${window.location.pathname}${urlParams.size ? `?${urlParams}` : ""}#explore`,
+      `${window.location.pathname}${urlParams.size ? `?${urlParams}` : ""}${window.location.hash}`,
     );
   }, [filters, ready]);
   useEffect(() => {
@@ -263,6 +264,7 @@ export default function FireExplorer({
   return (
     <section
       id="explore"
+      tabIndex={-1}
       className="fire-explorer"
       aria-label="Explore Oregon fire records"
     >
