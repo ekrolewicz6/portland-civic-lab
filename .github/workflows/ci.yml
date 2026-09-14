@@ -56,6 +56,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Test intake notification storage and delivery
+        run: npm run test:notifications
+
       - name: Load schema and fixtures
         run: npx tsx ingest/ci-seed.ts
 

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { withAuth } from "@workos-inc/authkit-nextjs";
 import sql from "@/lib/db-query";
+import { notifyIntake } from "@/lib/intake-notifications";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 import { getMemberByWorkOSId, isWorkOSConfigured, type Member } from "@/lib/membership";
 
@@ -109,6 +110,7 @@ export async function POST(request: NextRequest) {
       VALUES (${row.id as number}, ${member.id})
       ON CONFLICT DO NOTHING
     `;
+    await notifyIntake("topic_proposals", String(row.id));
     return NextResponse.json({ ok: true, id: row.id });
   } catch (error) {
     console.error("[proposals] insert failed:", error);

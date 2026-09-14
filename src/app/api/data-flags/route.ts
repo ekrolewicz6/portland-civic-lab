@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { withAuth } from "@workos-inc/authkit-nextjs";
 import sql from "@/lib/db-query";
+import { notifyIntake } from "@/lib/intake-notifications";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 import { getMemberByWorkOSId, isWorkOSConfigured } from "@/lib/membership";
 import { isValidQuestion } from "@/lib/questions";
@@ -82,7 +83,7 @@ export async function POST(request: NextRequest) {
   const { question, metric, message, email } = parsed.data;
 
   try {
-    await sql`
+    const [row] = await sql`
       INSERT INTO data_flags (question, metric, message, reporter_email, member_id)
       VALUES (
         ${question},
@@ -91,7 +92,9 @@ export async function POST(request: NextRequest) {
         ${email || null},
         ${memberId}
       )
+      RETURNING id
     `;
+    await notifyIntake("data_flags", String(row.id));
   } catch (error) {
     console.error("[data-flags] insert failed:", error);
     return NextResponse.json(

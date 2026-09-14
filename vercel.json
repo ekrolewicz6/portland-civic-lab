@@ -43,6 +43,10 @@
     {
       "path": "/api/cron/sync-performance",
       "schedule": "0 9 * * 1"
+    },
+    {
+      "path": "/api/cron/retry-notifications",
+      "schedule": "*/5 * * * *"
     }
   ]
 }

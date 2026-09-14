@@ -39,35 +39,41 @@ export default function ContactForm({
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: formData.get("name"),
-        email: formData.get("email"),
-        organization: formData.get("organization"),
-        topic: formData.get("topic"),
-        message: formData.get("message"),
-        website: formData.get("website"),
-      }),
-    });
+    let result: { ok?: boolean; error?: string; delivery?: string } | null;
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          organization: formData.get("organization"),
+          topic: formData.get("topic"),
+          message: formData.get("message"),
+          website: formData.get("website"),
+        }),
+      });
 
-    const result = (await response.json().catch(() => null)) as
-      | { ok?: boolean; error?: string; delivery?: string }
-      | null;
+      result = await response.json().catch(() => null);
 
-    if (!response.ok || !result?.ok) {
+      if (!response.ok || !result?.ok) {
+        setState("error");
+        setError(result?.error || "Unable to send this message right now.");
+        return;
+      }
+
+    } catch {
       setState("error");
-      setError(result?.error || "Unable to send this message right now.");
+      setError("Connection interrupted. Please try again.");
       return;
     }
 
     form.reset();
     setSuccessMessage(
-      result.delivery === "local-file"
+      result?.delivery === "local-file"
         ? "Message received locally. The server saved the submission for review."
-        : result.delivery === "database"
-          ? "Thanks. Your message is saved and we read every one. We'll reply if you've asked something we need to follow up on."
+        : result?.delivery === "queued"
+          ? "Thanks. Your message has been received. We'll reply if you've asked something we need to follow up on."
           : "Thanks. Your message is on its way. We'll reply if you've asked something we need to follow up on."
     );
     setState("success");

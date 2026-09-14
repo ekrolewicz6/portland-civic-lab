@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
+import { notifyIntake } from "@/lib/intake-notifications";
 
 export const runtime = "nodejs";
 
@@ -14,144 +15,8 @@ const contactSchema = z.object({
 });
 
 type ContactPayload = z.infer<typeof contactSchema>;
-type DeliveryMode = "resend" | "smtp" | "database" | "local-file";
-
-function htmlEscape(value: string) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-function buildSubject(payload: ContactPayload) {
-  const topic = payload.topic?.trim();
-  const suffix = topic ? `: ${topic}` : "";
-  return `Portland Civic Lab contact${suffix}`;
-}
-
-function buildTextBody(payload: ContactPayload, request: Request) {
-  return [
-    "New Portland Civic Lab contact form submission",
-    "",
-    `Name: ${payload.name}`,
-    `Email: ${payload.email}`,
-    `Organization: ${payload.organization || "Not provided"}`,
-    `Topic: ${payload.topic || "Not provided"}`,
-    "",
-    "Message:",
-    payload.message,
-    "",
-    `Submitted: ${new Date().toISOString()}`,
-    `User agent: ${request.headers.get("user-agent") || "Unknown"}`,
-  ].join("\n");
-}
-
-function buildHtmlBody(payload: ContactPayload, request: Request) {
-  const fields = [
-    ["Name", payload.name],
-    ["Email", payload.email],
-    ["Organization", payload.organization || "Not provided"],
-    ["Topic", payload.topic || "Not provided"],
-    ["Submitted", new Date().toISOString()],
-    ["User agent", request.headers.get("user-agent") || "Unknown"],
-  ];
-
-  return `
-    <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #172018; line-height: 1.5;">
-      <h1 style="font-size: 20px; margin: 0 0 18px;">New Portland Civic Lab contact form submission</h1>
-      <table style="border-collapse: collapse; margin-bottom: 20px;">
-        <tbody>
-          ${fields
-            .map(
-              ([label, value]) => `
-                <tr>
-                  <th style="text-align: left; vertical-align: top; padding: 6px 14px 6px 0; color: #667161;">${htmlEscape(label)}</th>
-                  <td style="padding: 6px 0;">${htmlEscape(value)}</td>
-                </tr>
-              `
-            )
-            .join("")}
-        </tbody>
-      </table>
-      <div style="border-left: 3px solid #c58542; padding-left: 16px; white-space: pre-wrap;">${htmlEscape(
-        payload.message
-      )}</div>
-    </div>
-  `;
-}
-
-async function sendViaResend(payload: ContactPayload, request: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL;
-  const from = process.env.CONTACT_FROM_EMAIL;
-
-  if (!apiKey || !to || !from) return false;
-
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from,
-      to,
-      reply_to: payload.email,
-      subject: buildSubject(payload),
-      text: buildTextBody(payload, request),
-      html: buildHtmlBody(payload, request),
-    }),
-  });
-
-  if (!response.ok) {
-    const details = await response.text().catch(() => "Unknown Resend error");
-    throw new Error(`Resend delivery failed: ${response.status} ${details}`);
-  }
-
-  return true;
-}
-
-async function sendViaSmtp(payload: ContactPayload, request: Request) {
-  const to = process.env.CONTACT_TO_EMAIL;
-  const host = process.env.SMTP_HOST;
-  const port = Number(process.env.SMTP_PORT || 587);
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const from = process.env.CONTACT_FROM_EMAIL || user;
-
-  if (!to || !host || !from) return false;
-
-  const nodemailer = await import("nodemailer");
-  const transporter = nodemailer.createTransport({
-    host,
-    port,
-    secure: process.env.SMTP_SECURE === "true" || port === 465,
-    auth: user && pass ? { user, pass } : undefined,
-  });
-
-  await transporter.sendMail({
-    to,
-    from,
-    replyTo: payload.email,
-    subject: buildSubject(payload),
-    text: buildTextBody(payload, request),
-    html: buildHtmlBody(payload, request),
-  });
-
-  return true;
-}
-
-function canStoreDatabaseFallback() {
-  return (
-    Boolean(process.env.DATABASE_URL) &&
-    (Boolean(process.env.VERCEL) || process.env.CONTACT_DATABASE_FALLBACK === "true")
-  );
-}
-
-async function storeDatabaseFallback(payload: ContactPayload, request: Request) {
-  if (!canStoreDatabaseFallback()) return false;
+async function storeSubmission(payload: ContactPayload, request: Request) {
+  if (!process.env.DATABASE_URL) return null;
 
   const { default: sql } = await import("@/lib/db-query");
   const id = crypto.randomUUID();
@@ -193,7 +58,7 @@ async function storeDatabaseFallback(payload: ContactPayload, request: Request) 
     )
   `;
 
-  return true;
+  return id;
 }
 
 function canStoreLocalFallback() {
@@ -275,26 +140,18 @@ export async function POST(request: Request) {
   }
 
   try {
-    let delivery: DeliveryMode | null = null;
-
-    if (await sendViaResend(payload, request)) {
-      delivery = "resend";
-    } else if (await sendViaSmtp(payload, request)) {
-      delivery = "smtp";
-    } else if (await storeDatabaseFallback(payload, request)) {
-      delivery = "database";
-    } else if (await storeLocalFallback(payload, request)) {
-      delivery = "local-file";
+    const id = await storeSubmission(payload, request);
+    if (id) {
+      const receipt = await notifyIntake("contact_submissions", id);
+      return NextResponse.json({ ok: true, delivery: receipt?.provider ?? "queued", id });
     }
-
-    if (!delivery) {
-      return NextResponse.json(
-        { ok: false, error: "Contact delivery is not configured yet." },
-        { status: 503 }
-      );
+    if (await storeLocalFallback(payload, request)) {
+      return NextResponse.json({ ok: true, delivery: "local-file" });
     }
-
-    return NextResponse.json({ ok: true, delivery });
+    return NextResponse.json(
+      { ok: false, error: "Contact storage is unavailable. Please try again later." },
+      { status: 503 },
+    );
   } catch (error) {
     console.error("Contact form delivery failed", error);
     return NextResponse.json(

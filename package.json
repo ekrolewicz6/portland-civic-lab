@@ -27,7 +27,8 @@
     "pps:harvest": "tsx ingest/pps-budget/harvest-index.ts",
     "pps:archive": "tsx ingest/pps-budget/archive.ts",
     "pps:fetch": "tsx ingest/pps-budget/fetch.ts --tier 2",
-    "db:migrate": "npx tsx ingest/apply-migration.ts"
+    "db:migrate": "npx tsx ingest/apply-migration.ts",
+    "test:notifications": "vitest run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
@@ -48,6 +49,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
     "@eslint/eslintrc": "^3.3.5",
     "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4",
@@ -63,6 +65,7 @@
     "postcss": "^8",
     "tailwindcss": "^4",
     "typescript": "^5",
+    "vitest": "^5.0.0",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   },
   "license": "AGPL-3.0-only",

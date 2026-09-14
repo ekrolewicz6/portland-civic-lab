@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import sql from "@/lib/db-query";
+import { notifyIntake } from "@/lib/intake-notifications";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
@@ -135,6 +136,8 @@ export async function POST(request: Request) {
       { status: 503 },
     );
   }
+
+  await notifyIntake("pcb_applications", applicationId);
 
   return NextResponse.json({
     success: true,
