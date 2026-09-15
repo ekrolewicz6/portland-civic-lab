@@ -1,0 +1,390 @@
+[
+  {
+    "id": "audit-services",
+    "url": "https://www.portland.gov/auditor/audit-services",
+    "file": "runtime-data/maker-economy/audit-services.html",
+    "sha256": "dd7e5c933d0d5c632af6911b02e0e8f53e978571e51fc2b8b34a0fbdf2a28016",
+    "bytes": 73123,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "audit-index",
+    "url": "https://www.portland.gov/auditor/audit-services/about-us/audit-reports-online",
+    "file": "runtime-data/maker-economy/audit-index.html",
+    "sha256": "7b7a51fc1b2f3539451fc7c8e6c60c7142a25b284790dfa33b38753b00e18f14",
+    "bytes": 157024,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "arts-audit-web",
+    "url": "https://www.portland.gov/auditor/audit-services/news/2026/3/18/arts-tax-city-needs-make-improvements-deliver-voter-approved",
+    "file": "runtime-data/maker-economy/arts-audit-web.html",
+    "sha256": "edcfdbb2ad1fba91e2df453c377149ee30d156a11b32a466fe396e14a4c9ddf8",
+    "bytes": 132111,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "city-arts",
+    "url": "https://www.portland.gov/arts",
+    "file": "runtime-data/maker-economy/city-arts.html",
+    "sha256": "033e8c3aaa77ee449020a5fd80c301720b03c7d5ea1db5fb36d82b815b67c8db",
+    "bytes": 80389,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "ocf-plan",
+    "url": "https://ourcreativefuture.org/",
+    "file": "runtime-data/maker-economy/ocf-plan.html",
+    "sha256": "c155526fd1458f7c8f712fd102b34862642e5865bbec06b8a47d7799a7c47d63",
+    "bytes": 324529,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "ocf-economy",
+    "url": "https://ourcreativefuture.org/wp-content/uploads/2024/03/Tri-County-Creative-Economy-Report-2022.pdf",
+    "file": "runtime-data/maker-economy/ocf-economy.pdf",
+    "sha256": "15d9d6d8e458698df5a802a597a86116c8107a93d56c7860e9ccb8813a657ab5",
+    "bytes": 91774,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "racc-web",
+    "url": "https://racc.org/advocacy-community-engagement/aep6/",
+    "file": "runtime-data/maker-economy/racc-web.html",
+    "sha256": "ec8e8c554eb8a7feb0ace19199a30f5e6a7086c127d0c4713a606f2100532d5c",
+    "bytes": 46877,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "aep6-portland",
+    "url": "https://racc.org/wp-content/uploads/2026/03/OR_CityOfPortland_AEP6_OnePageSummaryOfFindings.pdf",
+    "file": "runtime-data/maker-economy/aep6-portland.pdf",
+    "sha256": "4f3b6f6d041ec4718eaccade2357af837284c7acca363a2e8fd1193bcb998021",
+    "bytes": 145659,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "aep6-multnomah",
+    "url": "https://racc.org/wp-content/uploads/2026/03/OR_MultnomahCounty_AEP6_CustomizedFinalReport.pdf",
+    "file": "runtime-data/maker-economy/aep6-multnomah.pdf",
+    "sha256": "437af209a9cb60cf89ff16ab3081a92e20bf0d8cefe66f279aca4a3042601927",
+    "bytes": 854100,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "bea-status",
+    "url": "https://www.bea.gov/data/special-topics/arts-and-culture",
+    "file": "runtime-data/maker-economy/bea-status.html",
+    "sha256": "d4492ee37bdcf7d16481877a7743f2a969b8cad9c6f670e55f6717cb66c5b778",
+    "bytes": 60362,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "bea2023",
+    "url": "https://www.bea.gov/sites/default/files/2025-03/acpsa0425.pdf",
+    "file": "runtime-data/maker-economy/bea2023.pdf",
+    "sha256": "49662acc538afadf1cbd502798f286fad00a6ec1c321c0a23baaf351d184a0c0",
+    "bytes": 1802737,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "qcew-overview",
+    "url": "https://www.bls.gov/cew/overview.htm",
+    "status": "fetch_failed",
+    "error": "HTTP Error 403: Forbidden",
+    "retrieved_on": "2026-09-15"
+  },
+  {
+    "id": "qcew-codes",
+    "url": "https://www.bls.gov/cew/classifications/industry/industry-titles.htm",
+    "status": "fetch_failed",
+    "error": "HTTP Error 403: Forbidden",
+    "retrieved_on": "2026-09-15"
+  },
+  {
+    "id": "qcew-availability",
+    "url": "https://www.bls.gov/cew/about-data/data-availability.htm",
+    "status": "fetch_failed",
+    "error": "HTTP Error 403: Forbidden",
+    "retrieved_on": "2026-09-15"
+  },
+  {
+    "id": "nes-about",
+    "url": "https://www.census.gov/programs-surveys/nonemployer-statistics.html",
+    "file": "runtime-data/maker-economy/nes-about.html",
+    "sha256": "1196de4e14e4394774bff4c5184d9ab858091f10b64eb979ab5140e0f3f5ca59",
+    "bytes": 329114,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "nes-method",
+    "url": "https://www.census.gov/programs-surveys/nonemployer-statistics/technical-documentation/methodology.html",
+    "file": "runtime-data/maker-economy/nes-method.html",
+    "sha256": "39898d7585b63c2288e7236dc3260da1c22a1218d50cb0853c3c165624b1e132",
+    "bytes": 366508,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "nes2023",
+    "url": "https://www2.census.gov/programs-surveys/nonemployer-statistics/datasets/2023/historical-datasets/nonemp23co.zip",
+    "file": "runtime-data/maker-economy/nes2023.zip",
+    "sha256": "65030a96b0e5542ca7b52aa954c2c66cf1cff0f936e8b2b225375d3d186bac28",
+    "bytes": 4420852,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "nes-download",
+    "url": "https://www.census.gov/data/datasets/2023/econ/nonemployer-statistics/2023-ns.html",
+    "file": "runtime-data/maker-economy/nes-download.html",
+    "sha256": "d8ac3afccd657e3d33fda813c31eef6c35aa7437457558e9bb1456a75135dc1e",
+    "bytes": 328913,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "oed-data",
+    "url": "https://www.qualityinfo.org/data",
+    "file": "runtime-data/maker-economy/oed-data.html",
+    "sha256": "2b45308113cd8468af34d1a176a117d6de60c364906b9bc9ac59829e330ca1f6",
+    "bytes": 247658,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "prosper-ao",
+    "url": "https://prosperportland.us/our-work/athletic-outdoor-industry/",
+    "file": "runtime-data/maker-economy/prosper-ao.html",
+    "sha256": "b928fbe9884376717d42e3e94176158b69be57179e85b8a8a1d16a9459a8cf62",
+    "bytes": 280392,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "past-home",
+    "url": "https://www.pastlives.space/home",
+    "file": "runtime-data/maker-economy/past-home.html",
+    "sha256": "732d29af24e1aa16c3dc4052523b8c891d98f9a2244f085fca7661bee4573cb4",
+    "bytes": 607016,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "past-membership",
+    "url": "https://www.pastlives.space/membership",
+    "file": "runtime-data/maker-economy/past-membership.html",
+    "sha256": "4aded7d4ae718d1821b769e54c9d9ac78cf75a9a709a5b9dcb4ead2adad37fea",
+    "bytes": 502705,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "past-classes",
+    "url": "https://classes.pastlives.space/",
+    "file": "runtime-data/maker-economy/past-classes.html",
+    "sha256": "97fb97a81487f5cbccb84245a9019e4e358d4496c7bd5d0a8fbc881855f9859d",
+    "bytes": 123379,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "adx-studios",
+    "url": "https://artdesignxchange.com/art-studios-portland",
+    "file": "runtime-data/maker-economy/adx-studios.html",
+    "sha256": "a721cba7615f0240f69cbbeb3ca5966c1c37d92e3d465a2727f1ec22ff35d8a6",
+    "bytes": 250325,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "adx-community",
+    "url": "https://artdesignxchange.com/communitymembership",
+    "file": "runtime-data/maker-economy/adx-community.html",
+    "sha256": "96b81334a4e72be3b0396d8d510ea3e1e9e8d9c497aeeeb97796438e476d29ad",
+    "bytes": 226344,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "adx-woodshop",
+    "url": "https://artdesignxchange.com/woodshop-portland",
+    "file": "runtime-data/maker-economy/adx-woodshop.html",
+    "sha256": "2f9ecbbcb47a620e791a19834ec5eccf26089a422cc4b39c56964b488e112f9c",
+    "bytes": 201718,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "adx-about",
+    "url": "https://artdesignxchange.com/about",
+    "file": "runtime-data/maker-economy/adx-about.html",
+    "sha256": "fed354d2423aa6bbf93f88ff2e978e0aa6306fe9a8be46d15386f17583a30065",
+    "bytes": 205311,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "morning-membership",
+    "url": "https://www.morningceramics.com/membership",
+    "file": "runtime-data/maker-economy/morning-membership.html",
+    "sha256": "7d487da43381ec236dfd404929e0e7c2e4fcd836a3b3fbae9810f1f8c7e91815",
+    "bytes": 748213,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "morning-services",
+    "url": "https://www.morningceramics.com/services",
+    "file": "runtime-data/maker-economy/morning-services.html",
+    "sha256": "07aad009b28054a8630a4a1f19579682f8ba33c635383fc8c9bb26f2f6d59a18",
+    "bytes": 723406,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "morning-markets",
+    "url": "https://www.morningceramics.com/markets",
+    "file": "runtime-data/maker-economy/morning-markets.html",
+    "sha256": "45a4d4d7b21d929216cc5348dcb3eaae02b786a79cd9b47557537b860e687d62",
+    "bytes": 910491,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "pdx-home",
+    "url": "https://pdxhackerspace.org/",
+    "file": "runtime-data/maker-economy/pdx-home.html",
+    "sha256": "878d7de5f68ed896caad4a9946cb5e07f4c916c9647f22fd3fbd1fee7b3dd36f",
+    "bytes": 26001,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "pdx-faq",
+    "url": "https://pdxhackerspace.org/FAQ.html",
+    "file": "runtime-data/maker-economy/pdx-faq.html",
+    "sha256": "e191b8777f8816d482c2021fe27e4e7d7ae7cc830f26f0145f7f65e3638f7d18",
+    "bytes": 20055,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "dorkbot",
+    "url": "https://dorkbotpdx.org/",
+    "file": "runtime-data/maker-economy/dorkbot.html",
+    "sha256": "71c624bc246bb2678cdb0e8f70cf966963c525346ab0e09b8c26ada327c9d150",
+    "bytes": 4969,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "eichinger-home",
+    "url": "https://www.eichingersculpture.com/",
+    "file": "runtime-data/maker-economy/eichinger-home.html",
+    "sha256": "d33da750b8eca514700d47104329c6e28e28756cfa4021f9f6bd513028585b48",
+    "bytes": 1684941,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "eichinger-commissions",
+    "url": "https://www.eichingersculpture.com/commission",
+    "file": "runtime-data/maker-economy/eichinger-commissions.html",
+    "sha256": "b33ac16be0e6dd4a0ae0779e777209dece79c05e98d5609e2bb0ebddd75abe9e",
+    "bytes": 1624099,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "rachael-home",
+    "url": "https://www.rachaelpotter.com/",
+    "file": "runtime-data/maker-economy/rachael-home.html",
+    "sha256": "f9ba0ce9d0060563c24047f5293ad6d55e692d9ec005a2fe7aed606a406ee88d",
+    "bytes": 73383,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "saturday-market",
+    "url": "https://www.portlandsaturdaymarket.com/craft-vendors",
+    "file": "runtime-data/maker-economy/saturday-market.html",
+    "sha256": "5f59e30ce2317a6881b97c4677832730995e76eb48e554bdff1e1575322fea68",
+    "bytes": 3432559,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "portland-made",
+    "url": "https://www.portlandmade.com/about-portland-made",
+    "file": "runtime-data/maker-economy/portland-made.html",
+    "sha256": "d787092e204e87ce83c0d8c06d3ccde3ca17da2425f5b9df88371af519f1c121",
+    "bytes": 130627,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "radius",
+    "url": "https://www.radiusstudio.org/",
+    "file": "runtime-data/maker-economy/radius.html",
+    "sha256": "8102dd88a77adf90f2702eacfd004010210f3c85785fd27d0310ad71fa78e0c2",
+    "bytes": 276812,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "soc-definitions",
+    "url": "https://www.bls.gov/soc/2018/soc_2018_definitions.pdf",
+    "status": "fetch_failed",
+    "error": "HTTP Error 403: Forbidden",
+    "retrieved_on": "2026-09-15"
+  },
+  {
+    "id": "qcew2019",
+    "url": "https://data.bls.gov/cew/data/api/2019/a/area/41051.csv",
+    "file": "runtime-data/maker-economy/qcew2019.csv",
+    "sha256": "b7692e311b2744c3e3ad35a3ce205a2b744096a3ddfa9c1500b43957025df142",
+    "bytes": 381137,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "qcew2023",
+    "url": "https://data.bls.gov/cew/data/api/2023/a/area/41051.csv",
+    "file": "runtime-data/maker-economy/qcew2023.csv",
+    "sha256": "9560f517c5b71687dab5b3132c9fdf80a1fe704b3fc9ba1274c6ab4d35136099",
+    "bytes": 387656,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "qcew2025",
+    "url": "https://data.bls.gov/cew/data/api/2025/a/area/41051.csv",
+    "file": "runtime-data/maker-economy/qcew2025.csv",
+    "sha256": "04d3b9a1b4d79c6fec3de32045a0e5c18910ce8f1ed3febd52a3f1acc48a7bbb",
+    "bytes": 382611,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "nes-layout",
+    "url": "https://www2.census.gov/programs-surveys/nonemployer-statistics/technical-documentation/record-layouts/county-record-layout/county_record_layout_2017.txt",
+    "file": "runtime-data/maker-economy/nes-layout.txt",
+    "sha256": "5e85a3f12e75ff57b7d61429351d190dc9c9bac12a66daa9aac964978c6a20d3",
+    "bytes": 2766,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  }
+]

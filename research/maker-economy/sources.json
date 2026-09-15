@@ -1,0 +1,442 @@
+[
+  {
+    "id": "audit-services",
+    "title": "Portland Audit Services",
+    "url": "https://www.portland.gov/auditor/audit-services",
+    "format": "html",
+    "geography": "City of Portland",
+    "period": "current mandate",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "audit-index",
+    "title": "Audit reports by year",
+    "url": "https://www.portland.gov/auditor/audit-services/about-us/audit-reports-online",
+    "format": "html",
+    "geography": "City of Portland",
+    "period": "1994-2026 index",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "arts-audit-web",
+    "title": "Arts Access Fund performance audit",
+    "url": "https://www.portland.gov/auditor/audit-services/news/2026/3/18/arts-tax-city-needs-make-improvements-deliver-voter-approved",
+    "format": "html",
+    "geography": "City of Portland",
+    "period": "2012-October 2025; published March 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "city-arts",
+    "title": "Office of Arts and Culture",
+    "url": "https://www.portland.gov/arts",
+    "format": "html",
+    "geography": "City of Portland",
+    "period": "current",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "ocf-plan",
+    "title": "Our Creative Future regional cultural plan",
+    "url": "https://ourcreativefuture.org/",
+    "format": "html",
+    "geography": "Clackamas; Multnomah; Washington",
+    "period": "2024 plan; current webpage",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "ocf-economy",
+    "title": "WESTAF Creative Vitality Suite regional snapshot",
+    "url": "https://ourcreativefuture.org/wp-content/uploads/2024/03/Tri-County-Creative-Economy-Report-2022.pdf",
+    "format": "pdf",
+    "geography": "Clackamas; Multnomah; Washington",
+    "period": "2022; report created 2023-12-07",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "racc-web",
+    "title": "RACC AEP6 overview (contains unit discrepancy)",
+    "url": "https://racc.org/advocacy-community-engagement/aep6/",
+    "format": "html",
+    "geography": "City of Portland and Multnomah County",
+    "period": "2022; 2023 release",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "aep6-portland",
+    "title": "AEP6 City of Portland summary and methodology",
+    "url": "https://racc.org/wp-content/uploads/2026/03/OR_CityOfPortland_AEP6_OnePageSummaryOfFindings.pdf",
+    "format": "pdf",
+    "geography": "Portland study; Multnomah County model",
+    "period": "FY2022; audiences May 2022-June 2023",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "aep6-multnomah",
+    "title": "AEP6 Multnomah County full report",
+    "url": "https://racc.org/wp-content/uploads/2026/03/OR_MultnomahCounty_AEP6_CustomizedFinalReport.pdf",
+    "format": "pdf",
+    "geography": "Multnomah County",
+    "period": "FY2022",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "bea-status",
+    "title": "BEA arts and culture program status",
+    "url": "https://www.bea.gov/data/special-topics/arts-and-culture",
+    "format": "html",
+    "geography": "US and states",
+    "period": "2023 latest linked account; February 2026 discontinuation notice",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "bea2023",
+    "title": "BEA arts and cultural production release tables",
+    "url": "https://www.bea.gov/sites/default/files/2025-03/acpsa0425.pdf",
+    "format": "pdf",
+    "geography": "US and states",
+    "period": "2023; April 2025 release",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "qcew-overview",
+    "title": "BLS QCEW coverage",
+    "url": "https://www.bls.gov/cew/overview.htm",
+    "format": "html",
+    "geography": "US program",
+    "period": "methodology",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "qcew-codes",
+    "title": "BLS industry titles and NAICS vintages",
+    "url": "https://www.bls.gov/cew/classifications/industry/industry-titles.htm",
+    "format": "html",
+    "geography": "US program",
+    "period": "2017 and 2022 NAICS",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "qcew-availability",
+    "title": "BLS QCEW data availability",
+    "url": "https://www.bls.gov/cew/about-data/data-availability.htm",
+    "format": "html",
+    "geography": "US program",
+    "period": "current",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "nes-about",
+    "title": "Census nonemployer statistics",
+    "url": "https://www.census.gov/programs-surveys/nonemployer-statistics.html",
+    "format": "html",
+    "geography": "US program",
+    "period": "2023 latest listed",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "nes-method",
+    "title": "Census nonemployer methodology",
+    "url": "https://www.census.gov/programs-surveys/nonemployer-statistics/technical-documentation/methodology.html",
+    "format": "html",
+    "geography": "US program",
+    "period": "2022 methodological break",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "nes2023",
+    "title": "Census NES county bulk file",
+    "url": "https://www2.census.gov/programs-surveys/nonemployer-statistics/datasets/2023/historical-datasets/nonemp23co.zip",
+    "format": "zip",
+    "geography": "US counties; extracted Multnomah County",
+    "period": "2023",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "nes-download",
+    "title": "Census NES 2023 download index",
+    "url": "https://www.census.gov/data/datasets/2023/econ/nonemployer-statistics/2023-ns.html",
+    "format": "html",
+    "geography": "US program",
+    "period": "2023",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "oed-data",
+    "title": "Oregon Employment Department data catalog",
+    "url": "https://www.qualityinfo.org/data",
+    "format": "html",
+    "geography": "Oregon; multiple local areas",
+    "period": "2026 catalog",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "prosper-ao",
+    "title": "Prosper Portland Athletic and Outdoor cluster",
+    "url": "https://prosperportland.us/our-work/athletic-outdoor-industry/",
+    "format": "html",
+    "geography": "Portland metro",
+    "period": "statistics reference year unspecified",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "past-home",
+    "title": "Past Lives facilities and reported scale",
+    "url": "https://www.pastlives.space/home",
+    "format": "html",
+    "geography": "2808 SE 9th Avenue; Portland",
+    "period": "undated operator figures; observed 2026-09-15",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "past-membership",
+    "title": "Past Lives membership",
+    "url": "https://www.pastlives.space/membership",
+    "format": "html",
+    "geography": "Portland",
+    "period": "current advertised terms",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "past-classes",
+    "title": "Past Lives public classes",
+    "url": "https://classes.pastlives.space/",
+    "format": "html",
+    "geography": "Portland",
+    "period": "September-October 2026 advertised classes",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "adx-studios",
+    "title": "ADX studios",
+    "url": "https://artdesignxchange.com/art-studios-portland",
+    "format": "html",
+    "geography": "417 SE 11th Avenue; Portland",
+    "period": "undated operator figures; observed 2026-09-15",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "adx-community",
+    "title": "ADX co-making membership",
+    "url": "https://artdesignxchange.com/communitymembership",
+    "format": "html",
+    "geography": "Portland",
+    "period": "current advertised terms",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "adx-woodshop",
+    "title": "ADX shared woodshop",
+    "url": "https://artdesignxchange.com/woodshop-portland",
+    "format": "html",
+    "geography": "Portland",
+    "period": "current advertised terms",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "adx-about",
+    "title": "ADX disciplines and mission",
+    "url": "https://artdesignxchange.com/about",
+    "format": "html",
+    "geography": "Portland",
+    "period": "current",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "morning-membership",
+    "title": "Morning Ceramics studio membership",
+    "url": "https://www.morningceramics.com/membership",
+    "format": "html",
+    "geography": "239 SE 6th Avenue; Portland",
+    "period": "current advertised terms",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "morning-services",
+    "title": "Morning Ceramics outside firing and wheel rental",
+    "url": "https://www.morningceramics.com/services",
+    "format": "html",
+    "geography": "Portland",
+    "period": "current advertised terms",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "morning-markets",
+    "title": "Morning Ceramics market archive",
+    "url": "https://www.morningceramics.com/markets",
+    "format": "html",
+    "geography": "Portland",
+    "period": "2018-2025 documented market listings",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "pdx-home",
+    "title": "PDX Hackerspace facilities",
+    "url": "https://pdxhackerspace.org/",
+    "format": "html",
+    "geography": "7608 N Interstate Avenue; Portland",
+    "period": "current",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "pdx-faq",
+    "title": "PDX Hackerspace membership and contract work",
+    "url": "https://pdxhackerspace.org/FAQ.html",
+    "format": "html",
+    "geography": "Portland",
+    "period": "current advertised terms",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "dorkbot",
+    "title": "DorkbotPDX meetups",
+    "url": "https://dorkbotpdx.org/",
+    "format": "html",
+    "geography": "PDX Hackerspace; Portland",
+    "period": "current; average attendance period unspecified",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "eichinger-home",
+    "title": "Eichinger Sculpture Studio portfolio",
+    "url": "https://www.eichingersculpture.com/",
+    "format": "html",
+    "geography": "2516 SE Division Street; Portland",
+    "period": "current portfolio; production dates unspecified",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "eichinger-commissions",
+    "title": "Eichinger commissions",
+    "url": "https://www.eichingersculpture.com/commission",
+    "format": "html",
+    "geography": "Portland studio; commissions elsewhere",
+    "period": "historical portfolio; dates vary",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "rachael-home",
+    "title": "Rachael Potter Ceramics home studio",
+    "url": "https://www.rachaelpotter.com/",
+    "format": "html",
+    "geography": "Portland self-described; city boundary unverified",
+    "period": "current portfolio",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "saturday-market",
+    "title": "Portland Saturday Market vendor directory",
+    "url": "https://www.portlandsaturdaymarket.com/craft-vendors",
+    "format": "html",
+    "geography": "Portland sales venue; producers across region",
+    "period": "current directory",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "portland-made",
+    "title": "Portland Made network",
+    "url": "https://www.portlandmade.com/about-portland-made",
+    "format": "html",
+    "geography": "Portland metro",
+    "period": "current",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "radius",
+    "title": "Radius Art Studio",
+    "url": "https://www.radiusstudio.org/",
+    "format": "html",
+    "geography": "Portland",
+    "period": "current",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "soc-definitions",
+    "title": "BLS 2018 occupation definitions",
+    "url": "https://www.bls.gov/soc/2018/soc_2018_definitions.pdf",
+    "format": "pdf",
+    "geography": "US classification",
+    "period": "2018 SOC",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "qcew2019",
+    "title": "BLS QCEW Multnomah annual 2019",
+    "url": "https://data.bls.gov/cew/data/api/2019/a/area/41051.csv",
+    "format": "csv",
+    "geography": "Multnomah County FIPS 41051",
+    "period": "2019",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "qcew2023",
+    "title": "BLS QCEW Multnomah annual 2023",
+    "url": "https://data.bls.gov/cew/data/api/2023/a/area/41051.csv",
+    "format": "csv",
+    "geography": "Multnomah County FIPS 41051",
+    "period": "2023",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "qcew2025",
+    "title": "BLS QCEW Multnomah annual 2025",
+    "url": "https://data.bls.gov/cew/data/api/2025/a/area/41051.csv",
+    "format": "csv",
+    "geography": "Multnomah County FIPS 41051",
+    "period": "2025",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "nes-layout",
+    "title": "NES county record layout and disclosure flags",
+    "url": "https://www2.census.gov/programs-surveys/nonemployer-statistics/technical-documentation/record-layouts/county-record-layout/county_record_layout_2017.txt",
+    "format": "txt",
+    "geography": "US counties",
+    "period": "2017-2023 files",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  }
+]

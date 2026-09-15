@@ -16,7 +16,7 @@ const PROOF = [
   { v: "8", k: "free public tools" },
   { v: "316", k: "parks mapped" },
   { v: "5,275", k: "downtown parcels" },
-  { v: "13", k: "deep-dives, every figure sourced" },
+  { v: "15", k: "deep-dives, every figure sourced" },
 ];
 
 const MOSAIC = [

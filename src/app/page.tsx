@@ -235,7 +235,7 @@ const CAPABILITIES = [
     ],
     price: "$5,000+ · deep-dives $15,000+",
     cta: { label: "Commission research", href: COMMISSION },
-    links: [{ label: "The public version: thirteen deep-dives", href: "/deep-dives" }],
+    links: [{ label: "The public version: fifteen deep-dives", href: "/deep-dives" }],
   },
   {
     key: "decisions",

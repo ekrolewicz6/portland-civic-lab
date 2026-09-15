@@ -56,6 +56,11 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Verify maker economy evidence and publication
+        run: |
+          npx tsx ingest/maker-economy/build.ts --check
+          npx tsx ingest/maker-economy/publish.ts --check
+
       - name: Test intake notification storage and delivery
         run: npm run test:notifications
 

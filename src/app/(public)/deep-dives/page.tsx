@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
-import { ArrowRight, Building2, GraduationCap, Landmark, Library, Network, Scale, Server, Store, Theater, TreePine, Users, Route } from "lucide-react";
+import { ArrowRight, Building2, GraduationCap, Hammer, Landmark, Library, Network, Scale, Server, Store, Theater, TreePine, Users, Route } from "lucide-react";
 import { HEADLINE } from "@/lib/fpdr/data";
 import { fmtMoney } from "@/lib/fpdr/engine";
 import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
@@ -25,6 +25,17 @@ interface DeepDive {
 }
 
 const DIVES: DeepDive[] = [
+  {
+    href: "/deep-dives/maker-economy",
+    eyebrow: "Makers & the creative economy",
+    title: "Portland makes things. How much of that economy can we see?",
+    blurb:
+      "What shared workshops and independent producers actually create, whom they support, and what public evidence can tell us about their economic role. Six case studies, county payroll and business data, and a community research kit for the questions the numbers cannot answer yet.",
+    stat: "6",
+    statLabel: "case studies, from shared workshops to a home studio",
+    icon: Hammer,
+    available: true,
+  },
   {
     href: "/deep-dives/pps-budget",
     eyebrow: "Schools & public money",

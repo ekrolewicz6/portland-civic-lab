@@ -1,0 +1,161 @@
+{
+  "qcew": [
+    {
+      "code": "10",
+      "label": "All private industries",
+      "tier": "benchmark"
+    },
+    {
+      "code": "327110",
+      "label": "Pottery, ceramics, and plumbing fixture manufacturing",
+      "tier": "selected-production"
+    },
+    {
+      "code": "337122",
+      "label": "Nonupholstered wood household furniture manufacturing",
+      "tier": "selected-production"
+    },
+    {
+      "code": "337212",
+      "label": "Custom architectural woodwork and millwork manufacturing",
+      "tier": "selected-production"
+    },
+    {
+      "code": "339910",
+      "label": "Jewelry and silverware manufacturing",
+      "tier": "selected-production"
+    },
+    {
+      "code": "339992",
+      "label": "Musical instrument manufacturing",
+      "tier": "selected-production"
+    },
+    {
+      "code": "332323",
+      "label": "Ornamental and architectural metal work manufacturing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "337121",
+      "label": "Upholstered household furniture manufacturing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "323113",
+      "label": "Commercial screen printing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "315",
+      "label": "Apparel manufacturing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "316",
+      "label": "Leather and allied product manufacturing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "811420",
+      "label": "Reupholstery and furniture repair",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "711510",
+      "label": "Independent artists, writers, and performers",
+      "tier": "mixed-creative"
+    },
+    {
+      "code": "541420",
+      "label": "Industrial design services",
+      "tier": "creative-services"
+    },
+    {
+      "code": "541430",
+      "label": "Graphic design services",
+      "tier": "creative-services"
+    },
+    {
+      "code": "541490",
+      "label": "Other specialized design services",
+      "tier": "creative-services"
+    },
+    {
+      "code": "611610",
+      "label": "Fine arts schools",
+      "tier": "infrastructure"
+    }
+  ],
+  "nes": [
+    {
+      "code": "00",
+      "label": "All nonemployer industries",
+      "tier": "benchmark"
+    },
+    {
+      "code": "315",
+      "label": "Apparel manufacturing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "316",
+      "label": "Leather and allied product manufacturing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "321",
+      "label": "Wood product manufacturing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "3231",
+      "label": "Printing and related support activities",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "3271",
+      "label": "Clay product and refractory manufacturing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "3272",
+      "label": "Glass and glass product manufacturing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "332",
+      "label": "Fabricated metal product manufacturing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "337",
+      "label": "Furniture and related product manufacturing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "3399",
+      "label": "Other miscellaneous manufacturing",
+      "tier": "mixed-production"
+    },
+    {
+      "code": "5414",
+      "label": "Specialized design services",
+      "tier": "creative-services"
+    },
+    {
+      "code": "54192",
+      "label": "Photographic services",
+      "tier": "creative-services"
+    },
+    {
+      "code": "7115",
+      "label": "Independent artists, writers, and performers",
+      "tier": "mixed-creative"
+    },
+    {
+      "code": "81142",
+      "label": "Reupholstery and furniture repair",
+      "tier": "mixed-production"
+    }
+  ]
+}
