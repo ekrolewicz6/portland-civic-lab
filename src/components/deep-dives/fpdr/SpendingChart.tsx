@@ -1,47 +1,39 @@
-"use client";
-
-import { SPENDING_FY26 } from "@/lib/fpdr/data";
+import { SPENDING_FY27 } from "@/lib/fpdr/data";
+import { fmtMillions } from "@/lib/fpdr/engine";
+import styles from "./fpdr-tools.module.css";
 
 export default function SpendingChart() {
-  const total = SPENDING_FY26.reduce((s, d) => s + d.amount, 0);
-
+  const total = SPENDING_FY27.reduce((sum, item) => sum + item.amount, 0);
   return (
-    <div className="space-y-5">
-      {/* Single stacked bar */}
-      <div className="flex h-12 w-full overflow-hidden rounded-sm border border-[var(--color-parchment)]">
-        {SPENDING_FY26.map((d) => (
+    <div>
+      <div className={styles.spendingBar} aria-hidden="true">
+        {SPENDING_FY27.map((item) => (
           <div
-            key={d.key}
-            style={{ width: `${(d.amount / total) * 100}%`, backgroundColor: d.color }}
-            className="group relative"
-            title={`${d.label}: $${d.amount}M`}
+            key={item.key}
+            style={{
+              width: `${(item.amount / total) * 100}%`,
+              background: item.color,
+            }}
           />
         ))}
       </div>
-
-      {/* Legend / rows */}
-      <div className="space-y-2.5">
-        {SPENDING_FY26.map((d) => (
-          <div key={d.key} className="flex items-start gap-3">
-            <span
-              className="mt-1 h-3 w-3 flex-shrink-0 rounded-[2px]"
-              style={{ backgroundColor: d.color }}
-            />
-            <div className="flex-1 min-w-0">
-              <div className="flex items-baseline justify-between gap-3">
-                <span className="text-[14px] font-medium text-[var(--color-ink)]">{d.label}</span>
-                <span className="font-mono text-[14px] font-semibold text-[var(--color-ink)] tabular-nums whitespace-nowrap">
-                  ${d.amount}M
-                  <span className="text-[var(--color-ink-muted)] font-normal ml-1.5">
-                    {((d.amount / total) * 100).toFixed(0)}%
-                  </span>
-                </span>
-              </div>
-              <p className="text-[12px] text-[var(--color-ink-muted)] leading-snug">{d.note}</p>
-            </div>
+      <dl className={styles.spendingRows}>
+        {SPENDING_FY27.map((item) => (
+          <div key={item.key}>
+            <dt>
+              <i style={{ background: item.color }} />
+              <span>
+                {item.label}
+                <small>{item.note}</small>
+              </span>
+            </dt>
+            <dd>
+              {fmtMillions(item.amount)}{" "}
+              <small>{((item.amount / total) * 100).toFixed(0)}%</small>
+            </dd>
           </div>
         ))}
-      </div>
+      </dl>
     </div>
   );
 }

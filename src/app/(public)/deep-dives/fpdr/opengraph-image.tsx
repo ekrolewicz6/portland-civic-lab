@@ -13,7 +13,7 @@ export default function Image() {
       headline: "The pension on your property tax bill",
       accent: "#c98a3c",
       description:
-        "What FPDR — the police & fire pension on every Portland property tax bill — costs you, who receives it, and how it could be fixed.",
+        "Your FPDR tax bill, the promise behind it, and the tradeoffs between paying as benefits come due and building an invested reserve.",
     }),
     { ...OG_SIZE },
   );

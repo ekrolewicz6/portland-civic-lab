@@ -151,9 +151,9 @@ const DIVES: DeepDive[] = [
     eyebrow: "Budgets & pensions",
     title: "The pension on your property tax bill",
     blurb:
-      "Portland owes billions in police and fire pensions and saved almost none of it. What FPDR costs you, who receives it, and how it could be fixed, with calculators and an interactive reform simulator.",
+      "What Portland’s police and fire pensions cost you, why the levy is growing, and the competing cases for prefunding and caution—with a household calculator and an interactive funding model.",
     stat: fmtMoney(HEADLINE.liability),
-    statLabel: "promised, less than 1% saved",
+    statLabel: "pension liability at June 2025; 0.82% backed by plan assets",
     icon: Landmark,
     available: true,
   },

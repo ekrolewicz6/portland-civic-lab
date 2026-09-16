@@ -1,9 +1,9 @@
 /**
  * Portland FPDR (Fire & Police Disability and Retirement) deep-dive data.
  *
- * Every figure here is sourced. Numbers were verified against primary sources
- * (Milliman actuarial valuations, Multnomah County tax certifications, City
- * ordinances and budget documents) in June 2026. Where a figure is an estimate,
+ * Every figure here is sourced. Headline and budget figures were rechecked September 16, 2026 against
+ * the FY2024-25 audit, FY2026-27 adopted budget and levy ordinance.
+ * Beneficiary detail remains explicitly dated June 30, 2024. Where a figure is an estimate,
  * a reconstruction, or an illustrative interpolation, it is labeled as such.
  *
  * Plain-language note: this dataset is intentionally written so the explainer
@@ -19,6 +19,48 @@ export interface Source {
 }
 
 export const SOURCES: Record<string, Source> = {
+  audit2025: {
+    id: "audit2025",
+    title: "FPDR FY2024–25 audited financial statements, pp. 10–12 and 25",
+    org: "FPDR / Moss Adams",
+    url: "https://efiles.portlandoregon.gov/record/17529594/file/document",
+    kind: "primary",
+  },
+  adopted2027: {
+    id: "adopted2027",
+    title: "FY2026–27 adopted FPDR budget, program operating expenses",
+    org: "City of Portland",
+    url: "https://efiles.portlandoregon.gov/record/17988007/file/document",
+    kind: "primary",
+  },
+  levy2027: {
+    id: "levy2027",
+    title: "Ordinance 192196: FY2026–27 property-tax levies",
+    org: "Portland City Council",
+    url: "https://www.portland.gov/council/documents/ordinance/passed/192196",
+    kind: "primary",
+  },
+  oregonAssessment: {
+    id: "oregonAssessment",
+    title: "Real property assessment and taxation: AV, MAV and exceptions",
+    org: "Oregon Department of Revenue",
+    url: "https://www.oregon.gov/dor/forms/FormsPubs/real-property-assessment_303-670.pdf",
+    kind: "primary",
+  },
+  gfoaBonds: {
+    id: "gfoaBonds",
+    title: "Pension obligation bonds: recommendation against issuance",
+    org: "Government Finance Officers Association",
+    url: "https://www.gfoa.org/materials/pension-obligation-bonds",
+    kind: "analysis",
+  },
+  charterLevy: {
+    id: "charterLevy",
+    title: "Charter §5-103: how the annual levy is set",
+    org: "City of Portland",
+    url: "https://www.portland.gov/charter/5/1/103",
+    kind: "primary",
+  },
   milliman2024: {
     id: "milliman2024",
     title: "FPDR Pension Actuarial Valuation as of June 30, 2024",
@@ -121,14 +163,16 @@ export const SOURCES: Record<string, Source> = {
   },
   spGlobal2026: {
     id: "spGlobal2026",
-    title: "Portland, OR 2026A/B Limited Tax Bonds — 'AA' Rating, Stable Outlook",
+    title:
+      "Portland, OR 2026A/B Limited Tax Bonds — 'AA' Rating, Stable Outlook",
     org: "S&P Global Ratings",
     url: "https://www.portland.gov/debt/documents/sp-global-ratings-most-recent-credit-opinion/download",
     kind: "primary",
   },
   fiveYearPlan2731: {
     id: "fiveYearPlan2731",
-    title: "FPDR FYE 2027–31 Five-Year Plan (levy-rate & assessed-value forecast)",
+    title:
+      "FPDR FYE 2027–31 Five-Year Plan (levy-rate & assessed-value forecast)",
     org: "City of Portland",
     url: "https://efiles.portlandoregon.gov/record/17862793/file/document",
     kind: "primary",
@@ -139,12 +183,12 @@ export const SOURCES: Record<string, Source> = {
 
 /** The numbers that anchor the whole story. */
 export const HEADLINE = {
-  /** Actuarial accrued liability — what FPDR owes, in today's dollars. */
-  liability: 3_907_867_099,
-  /** Money actually set aside in a trust to pay for it. */
-  assets: 17_917_971,
+  /** GASB total pension liability at June 30, 2025; audit p. 25. */
+  liability: 3_363_287_824,
+  /** Plan fiduciary net position at June 30, 2025; includes operating assets. */
+  assets: 27_686_552,
   /** assets / liability */
-  fundedRatio: 0.0046,
+  fundedRatio: 27_686_552 / 3_363_287_824,
   /** FY2025-26 levy certified by Multnomah County. */
   annualLevyFY26: 251_613_821,
   /** FY2026-27 levy just approved by Council. */
@@ -153,15 +197,10 @@ export const HEADLINE = {
   ratePer1000AV_FY26: 2.9874,
   /** Charter cap, per $1,000 of *real market* value. */
   capPer1000RMV: 2.8,
-  /**
-   * FPDR's share of the City of Portland's total property-tax levy.
-   * FY2026-27: FPDR levy $279.2M / total City levy ~$868.5M ≈ 0.32–0.34 depending
-   * on the denominator (gross levy, ex-debt, or net collections). Uses the
-   * "Taxes Necessary to Balance" basis. Source: FY26-27 City tax levy ordinance.
-   * (Earlier the page used 0.395 = FPDR rate / permanent+FPDR rate only, which
-   * omits the Parks, Children's and GO-bond levies and overstates FPDR's slice.)
-   */
-  shareOfCityLine: 0.34,
+  /** FY2026-27 gross levy share. Ordinance 192196: $279,235,522 / $868,476,000.
+   * City levies only; excludes other taxing districts and urban renewal.
+   * This is not an individual property's share of its full tax bill. */
+  shareOfCityLine: 279_235_522 / 868_476_000,
   /** 2006 reform vote — share voting YES. */
   measure2686YesPct: 0.8161,
   measure2686Yes: 160_230,
@@ -179,70 +218,67 @@ export const HEADLINE = {
   discountRate2024: 0.0393,
 } as const;
 
-// ── Published FPDR levy-rate forecast (per $1,000 of assessed value) ──
-// The City publishes projected FPDR tax rates AND an assessed-value (AV) growth
-// assumption. Used to estimate a household's multi-year cost properly — by
-// growing AV ~3%/yr and applying each year's published rate — instead of
-// multiplying today's bill by N (which ignores both the rising rate and the
-// rising base). Source: FPDR FYE 2027-31 Five-Year Plan. AV growth per the City
-// Economist: 3.9% in FY27, then 3.0%/yr (Measure 50 caps growth at 3%).
-export const FPDR_RATE_FORECAST: { fy: string; ratePer1000AV: number; avGrowth: number }[] = [
-  { fy: "FY26", ratePer1000AV: 2.9874, avGrowth: 0 }, // base year — current assessed value
-  { fy: "FY27", ratePer1000AV: 3.1906, avGrowth: 0.039 },
-  { fy: "FY28", ratePer1000AV: 3.28, avGrowth: 0.03 },
-  { fy: "FY29", ratePer1000AV: 3.3897, avGrowth: 0.03 },
-  { fy: "FY30", ratePer1000AV: 3.503, avGrowth: 0.03 },
-  { fy: "FY31", ratePer1000AV: 3.6082, avGrowth: 0.03 },
-];
+// Certified FY26 rate followed by the City's FYE2027–31 forecast, p. 6.
+// Citywide tax-base growth (3.9% in FY27) is NOT household growth. The engine
+// applies a separate explicit household assumption, default 3%, after FY26.
+export const FPDR_RATE_FORECAST = [
+  { fy: "2025–26", ratePer1000AV: 2.9874, projected: false },
+  { fy: "2026–27", ratePer1000AV: 3.1906, projected: true },
+  { fy: "2027–28", ratePer1000AV: 3.28, projected: true },
+  { fy: "2028–29", ratePer1000AV: 3.3897, projected: true },
+  { fy: "2029–30", ratePer1000AV: 3.503, projected: true },
+  { fy: "2030–31", ratePer1000AV: 3.6082, projected: true },
+] as const;
 
 // ── Annual levy history (levy credited, $ millions) ───────────────
 // Verified anchor years. Not every intervening year is shown.
 
-export const LEVY_HISTORY: { fy: string; year: number; levy: number; projected?: boolean }[] =
-  [
-    { fy: "FY20", year: 2020, levy: 168.8 },
-    { fy: "FY24", year: 2024, levy: 210.0 },
-    { fy: "FY25", year: 2025, levy: 243.4 },
-    { fy: "FY26", year: 2026, levy: 251.6 },
-    { fy: "FY27", year: 2027, levy: 279.2 },
-    { fy: "FY30", year: 2030, levy: 334.7, projected: true },
-  ];
+export const LEVY_HISTORY: {
+  fy: string;
+  year: number;
+  levy: number;
+  projected?: boolean;
+}[] = [
+  { fy: "FY20", year: 2020, levy: 168.8 },
+  { fy: "FY24", year: 2024, levy: 210.0 },
+  { fy: "FY25", year: 2025, levy: 243.4 },
+  { fy: "FY26", year: 2026, levy: 251.6 },
+  { fy: "FY27", year: 2027, levy: 279.2 },
+];
 
-// ── Where the money goes (FY2025-26, $ millions) ──────────────────
-// Program spending. Percentages on the page are computed from these
-// dollar amounts so the math is always internally consistent.
-
-export const SPENDING_FY26: { key: string; label: string; amount: number; color: string; note: string }[] =
-  [
-    {
-      key: "pension",
-      label: "Pensions for pre-2007 hires",
-      amount: 163.2,
-      color: "var(--color-canopy)",
-      note: "Monthly checks to FPDR One & Two retirees and their survivors",
-    },
-    {
-      key: "pers",
-      label: "PERS for newly hired officers & firefighters",
-      amount: 59.87,
-      color: "var(--color-river)",
-      note: "Pre-funded retirement contributions for everyone hired since 2007",
-    },
-    {
-      key: "disability",
-      label: "Disability & death benefits",
-      amount: 8.6,
-      color: "var(--color-ember)",
-      note: "Injury, disability and survivor benefits for sworn members",
-    },
-    {
-      key: "admin",
-      label: "Administration",
-      amount: 5.9,
-      color: "var(--color-storm)",
-      note: "Running the fund, the board, and claims processing",
-    },
-  ];
+// Adopted FY2026–27 Bureau Expense by program, dollars converted to millions.
+// Sum = $258,656,860. Excludes fund expenses (including short-term borrowing
+// repayment and contingency) and unappropriated funds; not a split of gross levy.
+export const SPENDING_FY27 = [
+  {
+    key: "pension",
+    label: "Old-plan pensions",
+    amount: 180.513905,
+    color: "var(--color-canopy)",
+    note: "FPDR One & Two benefits and program operations",
+  },
+  {
+    key: "pers",
+    label: "PERS contributions",
+    amount: 63.94,
+    color: "var(--color-river)",
+    note: "Prefunding retirement for post-2006 hires",
+  },
+  {
+    key: "disability",
+    label: "Disability & death",
+    amount: 10.750612,
+    color: "var(--color-ember)",
+    note: "Benefits and program operations",
+  },
+  {
+    key: "admin",
+    label: "Administration",
+    amount: 3.452343,
+    color: "var(--color-storm)",
+    note: "Administration & Support operating expenses",
+  },
+];
 
 // ── The pay-as-you-go projection (illustrative) ───────────────────
 // Anchor points are from Milliman: FY2024 actual ($160.6M), the nominal
@@ -272,98 +308,57 @@ export const SIM_END_YEAR = 2082;
 
 // ── Reform options (for the trade-off menu) ───────────────────────
 
-export interface ReformOption {
-  id: string;
-  name: string;
-  oneLiner: string;
-  how: string;
-  nearTerm: "lower" | "same" | "higher" | "much-higher";
-  lifetime: "same" | "lower" | "much-lower";
-  pros: string[];
-  cons: string[];
-  /** Shown in the interactive simulator as a selectable curve. */
-  simulated: boolean;
-}
-
-export const REFORM_OPTIONS: ReformOption[] = [
+export const REFORM_OPTIONS = [
   {
     id: "status-quo",
-    name: "Keep pay-as-you-go",
-    oneLiner: "Do nothing. Tax each year for that year's checks.",
-    how: "The status quo. Property taxes cover retirees' benefits as they come due, with no invested savings behind them.",
-    nearTerm: "same",
-    lifetime: "same",
-    pros: [
-      "No upfront cost — nothing changes",
-      "Predictable, voter-locked revenue (a stream rating agencies value)",
-      "Requires no charter vote or political fight",
-    ],
-    cons: [
-      "Most expensive option over the life of the plan",
-      "Passes the bill to future taxpayers for work done decades ago",
-      "The rising levy quietly squeezes other city services through tax 'compression'",
-      "Weighs on the city's credit — S&P rates Portland two notches below Moody's, partly over this unfunded liability",
-    ],
-    simulated: true,
+    name: "Continue pay-as-you-go",
+    tag: "Existing policy",
+    how: "Collect taxes as benefits come due, while continuing PERS contributions for newer hires.",
+    caseFor:
+      "Avoids an additional prefunding transition. The dedicated levy has capacity in most modeled scenarios.",
+    tradeoff:
+      "Future taxpayers keep paying for past service; the old plan builds little investment cushion.",
+    question:
+      "What tax and service pressure is acceptable through the peak years?",
+    source: "fiveYearPlan2731",
   },
   {
     id: "prefund",
-    name: "Pre-fund it on a real funding policy",
-    oneLiner: "Amortize the unfunded liability over 30 years and invest.",
-    how: "Adopt a standard actuarial funding policy: a declining-dollar contribution that fully funds the pension over 30 years, held in an invested trust. Investment returns then cover a large share of the bill, the levy falls every year, and it drops away once the liability is paid off — the cost profile a closed, mature plan should follow.",
-    nearTerm: "higher",
-    lifetime: "much-lower",
-    pros: [
-      "Investment returns cut roughly a quarter to a third of the lifetime cost",
-      "Annual cost declines over time, then falls away once the liability is paid off",
-      "Aligns Portland with how nearly every other public pension is funded",
-    ],
-    cons: [
-      "Costs more up front, for a stretch, before it costs much less",
-      "Needs a citywide charter vote",
-      "The savings arrive decades later, after most current officials are gone",
-    ],
-    simulated: true,
+    name: "Build an invested reserve",
+    tag: "Funding reform",
+    how: "Raise contributions above current benefit needs and invest the difference for future payments.",
+    caseFor:
+      "Investment earnings could reduce future tax contributions and spread the burden differently across generations.",
+    tradeoff:
+      "More money is needed up front. Returns can disappoint, and money committed here cannot fund other priorities.",
+    question: "What contribution path stays affordable under poor returns?",
+    source: "machizDeck",
   },
   {
     id: "pob",
-    name: "Pension obligation bonds",
-    oneLiner: "Borrow money now to seed the trust.",
-    how: "Issue bonds, drop the proceeds into an invested trust, and bet that investment returns beat the interest rate on the bonds. Best used in modest size, one analysis models a ~$200M issuance, as a complement to a real funding policy, not a standalone fix.",
-    nearTerm: "higher",
-    lifetime: "lower",
-    pros: [
-      "Eases the transition hump without a multi-year tax surcharge",
-      "A useful complement to a funding policy, not a replacement for one",
-      "Used by other governments to jump-start funding",
-    ],
-    cons: [
-      "A market bet, not free money — a downturn can leave you worse off",
-      "Tempting to oversell — bonding the whole liability is risky and can backfire publicly if assumptions slip",
-      "Adds debt to the city's books; timing the issuance wrong backfires",
-    ],
-    simulated: false,
+    name: "Borrow to invest",
+    tag: "Additional financial risk",
+    how: "Issue pension-obligation bonds to fund a reserve immediately, then repay the debt from future revenues.",
+    caseFor:
+      "Advocates see a way to soften an initial contribution increase if investments outperform borrowing costs.",
+    tradeoff:
+      "Debt payments remain due after market losses. GFOA recommends against these bonds.",
+    question: "Why take this risk instead of prefunding without debt?",
+    source: "gfoaBonds",
   },
   {
     id: "study",
-    name: "Study & transparency first",
-    oneLiner: "Measure it, publish it, then decide.",
-    how: "Commission an independent actuarial cost-savings analysis, convene a citizens commission, and put the real numbers in front of voters before any big move.",
-    nearTerm: "same",
-    lifetime: "same",
-    pros: [
-      "Cheap and low-risk — the reformers' actual first ask",
-      "Builds the public understanding any charter vote would need",
-      "Surfaces a liability that's currently nearly invisible",
-    ],
-    cons: [
-      "Doesn't fix anything by itself",
-      "A 2023 board motion to even price a study failed — inertia is real",
-      "Can become a way to delay rather than decide",
-    ],
-    simulated: false,
+    name: "Compare before committing",
+    tag: "Decision process",
+    how: "Publish an independent comparison of the status quo, phased prefunding and any proposed borrowing.",
+    caseFor:
+      "Makes costs, downside scenarios and legal requirements visible before a lasting commitment.",
+    tradeoff:
+      "A study does not fund benefits. It needs a deadline, a responsible decision-maker and a public response.",
+    question: "Who will act on the findings, and by when?",
+    source: "charterLevy",
   },
-];
+] as const;
 
 // ── Who receives benefits (Milliman valuation, as of June 30, 2024) ──
 // All figures from the Milliman June 30, 2024 valuation (Appendix A) unless

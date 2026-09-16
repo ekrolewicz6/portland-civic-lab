@@ -1,0 +1,565 @@
+.page {
+  background: var(--color-paper);
+}
+.page section[id] {
+  scroll-margin-top: 8rem;
+}
+.page :global(.fpdr-source) {
+  color: #2d5f7e;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-color: #2d5f7e66;
+}
+.page :global(.fpdr-source):hover {
+  text-decoration-color: currentColor;
+}
+.page :global(a:focus-visible),
+.page :global(button:focus-visible),
+.page :global(input:focus-visible),
+.page summary:focus-visible {
+  outline: 2px solid var(--color-river);
+  outline-offset: 4px;
+}
+.hero {
+  background: #10291e;
+  color: #fff;
+  padding: 3rem 0 1.4rem;
+}
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+.kicker,
+.miniLabel {
+  font: 600 0.65rem/1.5 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.kicker {
+  color: #e0a870;
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 4.3vw, 4.2rem);
+  letter-spacing: -0.045em;
+  line-height: 1.07;
+  font-weight: 550;
+  margin: 1.1rem 0;
+  max-width: 14ch;
+}
+.hero h1 em {
+  display: block;
+  color: #e0a870;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+.heroLead {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #d1dcd4;
+  max-width: 37rem;
+}
+.heroQuestion {
+  margin-top: 1.1rem;
+  font-size: 0.9rem;
+  color: #f4f0e9;
+  line-height: 1.7;
+  max-width: 37rem;
+}
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.2rem;
+  margin-top: 1.6rem;
+  align-items: center;
+}
+.primaryLink,
+.secondaryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  min-height: 2.6rem;
+}
+.primaryLink {
+  padding: 0.6rem 1rem;
+  background: #e0a870;
+  color: #10291e;
+  border-radius: 3px;
+}
+.secondaryLink {
+  color: #e5ede7;
+}
+.byline {
+  font-size: 0.67rem;
+  color: #b6c7bb;
+  line-height: 1.8;
+  margin-top: 1.4rem;
+}
+.hero :global(.fpdr-source) {
+  color: #b8d8c4;
+  text-decoration-color: #b8d8c466;
+}
+.heroAside {
+  border-left: 1px solid #ffffff30;
+  padding-left: 1.7rem;
+}
+.heroAside > div {
+  padding: 1rem 0;
+}
+.heroAside > div + div {
+  border-top: 1px solid #ffffff20;
+}
+.heroAside h3 {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin-bottom: 0.4rem;
+}
+.heroAside p {
+  font-size: 0.83rem;
+  color: #c3d1c7;
+  line-height: 1.65;
+}
+.heroAside .asideFoot {
+  font-size: 0.7rem;
+  border-top: 1px solid #ffffff25;
+  padding-top: 1rem;
+}
+.councilBrief {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.5rem 1.5rem;
+  margin-top: 2rem;
+  padding: 1.2rem 1.4rem;
+  border-left: 3px solid #e0a870;
+  background: #ffffff08;
+}
+.councilBrief h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e0a870;
+}
+.councilBrief p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: #d1dcd4;
+}
+.councilBrief strong {
+  color: #fff;
+}
+.councilBrief a {
+  grid-column: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  min-height: 44px;
+  font-size: 0.75rem;
+  color: #e0a870;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  border-top: 1px solid #ffffff30;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+}
+.heroStats dt {
+  font-size: 0.7rem;
+  color: #c3d1c7;
+}
+.heroStats dd {
+  font: 600 clamp(1.8rem, 3vw, 2.5rem)/1.25 var(--font-mono);
+  letter-spacing: -0.045em;
+  color: #e0a870;
+  margin: 0.45rem 0;
+}
+.heroStats p,
+.heroNote {
+  font-size: 0.7rem;
+  color: #b6c7bb;
+  line-height: 1.6;
+}
+.heroNote {
+  margin-top: 1.2rem;
+  max-width: 52rem;
+}
+.nav {
+  position: sticky;
+  top: 3.5rem;
+  z-index: 40;
+  background: #f7f3edf5;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-parchment);
+}
+.navScroll {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.navScroll a {
+  padding: 0.8rem 0.7rem;
+  min-height: 44px;
+  white-space: nowrap;
+  color: #4e5850;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+.navScroll a:hover {
+  background: #ece9e1;
+  color: #10291e;
+}
+.generation {
+  border-top: 2px solid #1a3a2a;
+}
+.generation > div {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--color-parchment);
+}
+.miniLabel {
+  color: #62685d;
+  display: block;
+  margin-bottom: 0.65rem;
+}
+.generation h3,
+.outlook h3 {
+  font-size: 1.08rem;
+  line-height: 1.3;
+  color: #10291e;
+  margin-bottom: 0.5rem;
+}
+.generation p,
+.outlook p,
+.contextStrip p,
+.disclosure p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #4b514b;
+}
+.sourceNote {
+  font-size: 0.7rem;
+  line-height: 1.65;
+  color: #62665f;
+  margin-top: 0.9rem;
+}
+.chartPanel {
+  background: white;
+  border: 1px solid var(--color-parchment);
+  padding: 1.4rem;
+  margin-top: 1.4rem;
+  border-radius: 3px;
+}
+.panelHeading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 1rem;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+.panelHeading h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.panelHeading > span {
+  font-size: 0.65rem;
+  color: #62665f;
+}
+.contextStrip {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.2rem 0 0;
+  max-width: 58rem;
+}
+.contextStrip svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: #6c7e70;
+}
+.outlook {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.outlook > div {
+  border-top: 2px solid #c8956c;
+  padding-top: 1rem;
+}
+.outlook :global(.fpdr-source) {
+  display: inline-block;
+  font-size: 0.7rem;
+  margin-top: 0.6rem;
+}
+.disclosure {
+  border-top: 1px solid #dcd7cc;
+  margin-top: 1.2rem;
+}
+.disclosure summary {
+  padding: 0.9rem 0;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #263c2e;
+}
+.disclosure p {
+  padding-bottom: 1rem;
+  max-width: 65ch;
+}
+.arguments {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+.arguments article {
+  padding: 1.7rem;
+  border: 1px solid var(--color-parchment);
+  border-top: 3px solid #517c61;
+  background: white;
+}
+.arguments .caseCaution {
+  border-top-color: #af7651;
+}
+.arguments h3 {
+  font-size: clamp(1.4rem, 2.3vw, 1.9rem);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: #10291e;
+  max-width: 20ch;
+  margin-bottom: 1rem;
+}
+.arguments p,
+.arguments li {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: #4b514b;
+}
+.arguments ul {
+  padding: 1.2rem 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.arguments li {
+  padding-left: 0.9rem;
+  border-left: 2px solid #dbe5dc;
+}
+.argumentCatch {
+  border-top: 1px solid var(--color-parchment);
+  padding: 1rem 0;
+}
+.argumentCatch > strong {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #657366;
+}
+.argumentCatch p {
+  margin-top: 0.3rem;
+}
+.arguments :global(.fpdr-source) {
+  font-size: 0.7rem;
+}
+.perspectives {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem;
+  margin-top: 2rem;
+}
+.perspectives span {
+  font-weight: 600;
+  font-size: 0.83rem;
+  color: #1a3a2a;
+}
+.perspectives p {
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: #585e55;
+  margin-top: 0.4rem;
+}
+.decision {
+  margin-top: 2rem;
+  padding-top: 1.7rem;
+  border-top: 2px solid #1a3a2a;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 2rem;
+}
+.decision h3 {
+  font-size: 1.55rem;
+  line-height: 1.25;
+  color: #10291e;
+}
+.decision ol {
+  display: grid;
+  gap: 0.9rem;
+}
+.decision li {
+  display: flex;
+  gap: 1rem;
+}
+.decision li span {
+  font: 0.8rem var(--font-mono);
+  color: #a47251;
+  padding-top: 0.2rem;
+}
+.decision p {
+  font-size: 0.83rem;
+  color: #4b514b;
+  line-height: 1.65;
+}
+.evidenceKey {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.evidenceKey strong {
+  font-size: 0.9rem;
+  color: #1a3a2a;
+}
+.evidenceKey p {
+  font-size: 0.78rem;
+  color: #62665f;
+  margin-top: 0.3rem;
+}
+.sourceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.sourceGrid h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #1a3a2a;
+}
+.sourceGrid a {
+  position: relative;
+  display: block;
+  padding: 0.8rem 1.4rem 0.8rem 0;
+  border-bottom: 1px solid #dfdace;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.sourceGrid a:hover span {
+  text-decoration: underline;
+}
+.sourceGrid small {
+  display: block;
+  font-size: 0.64rem;
+  color: #62665f;
+  margin-top: 0.2rem;
+}
+.sourceGrid svg {
+  position: absolute;
+  right: 0;
+  top: 1rem;
+  color: #59725f;
+}
+@media (min-width: 1280px) {
+  .page :global(.xl\:sticky) {
+    top: 8rem;
+  }
+}
+@media (max-width: 1023px) {
+  .hero {
+    padding-top: 2.5rem;
+  }
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hero h1 {
+    max-width: 18ch;
+  }
+  .heroAside {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 1.5rem;
+    border-left: 0;
+    border-top: 1px solid #ffffff30;
+    padding: 1.3rem 0 0;
+  }
+  .heroAside > .kicker,
+  .asideFoot {
+    grid-column: 1/-1;
+  }
+  .heroAside > div + div {
+    border-top: 0;
+  }
+}
+@media (max-width: 639px) {
+  .heroStats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .heroStats > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 0 1rem;
+  }
+  .heroStats dd {
+    grid-column: 2;
+    grid-row: 1/3;
+    text-align: right;
+    font-size: 1.85rem;
+  }
+  .heroStats p {
+    font-size: 0.65rem;
+  }
+  .heroAside,
+  .arguments,
+  .outlook,
+  .perspectives,
+  .decision,
+  .sourceGrid {
+    grid-template-columns: 1fr;
+  }
+  .heroAside {
+    gap: 0;
+  }
+  .heroAside > div + div {
+    border-top: 1px solid #ffffff20;
+  }
+  .councilBrief {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .councilBrief a {
+    grid-column: 1;
+  }
+  .heroAside > div {
+    padding: 0.8rem 0;
+  }
+  .heroStats {
+    margin-top: 1.5rem;
+  }
+  .arguments article {
+    padding: 1.2rem;
+  }
+  .arguments h3 {
+    max-width: none;
+  }
+  .chartPanel {
+    padding: 1rem;
+  }
+  .evidenceKey {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .perspectives {
+    gap: 1.1rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page * {
+    scroll-behavior: auto;
+  }
+}

@@ -72,12 +72,12 @@ export default function OrgChartPage() {
                   Related deep-dive
                 </div>
                 <h2 className="mt-2 font-editorial text-[24px] sm:text-[30px] leading-tight">
-                  The salary numbers above leave out a $250M-a-year cost
+                  The salary figures leave out pension funding
                 </h2>
                 <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-white/70">
                   Police and fire pensions don&apos;t show up as bureau salary. They are paid through FPDR, a separate property-tax levy with a
-                  $3.9 billion unfunded liability. See what it costs you and how it
-                  could be fixed.
+                  $279.2 million authorized levy for FY2026–27. See what it costs you
+                  and compare the choices for funding it.
                 </p>
               </div>
               <div className="inline-flex items-center gap-2 whitespace-nowrap text-[12px] font-mono uppercase tracking-[0.14em] text-[var(--color-ember)]">

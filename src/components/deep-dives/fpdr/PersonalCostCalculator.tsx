@@ -1,129 +1,234 @@
 "use client";
 
 import { useState } from "react";
-import { Home } from "lucide-react";
-import { personalCost, projectedCost, fmtMoney, fmtPct } from "@/lib/fpdr/engine";
-import { HEADLINE } from "@/lib/fpdr/data";
+import { personalCost, projectedCost, fmtMoney } from "@/lib/fpdr/engine";
+import SourceLink from "./SourceLink";
+import styles from "./fpdr-tools.module.css";
 
-// Assessed-value bands. In Oregon, Measure 50 decoupled assessed value from
-// market value, so these are NOT proxies for home size or quality — two similar
-// homes can sit in very different bands.
-const PRESETS = [
-  { label: "Low", value: 200_000 },
-  { label: "Typical", value: 350_000 },
-  { label: "High", value: 550_000 },
-  { label: "Very high", value: 850_000 },
-];
+const PRESETS = [200_000, 350_000, 550_000, 850_000];
 
 export default function PersonalCostCalculator() {
   const [av, setAv] = useState(350_000);
+  const [draft, setDraft] = useState("350000");
+  const [growth, setGrowth] = useState(0.03);
+  const valid =
+    draft.trim() !== "" &&
+    Number.isFinite(Number(draft)) &&
+    Number(draft) >= 0 &&
+    Number(draft) <= 1_500_000;
   const cost = personalCost(av);
-  const proj = projectedCost(av);
+  const projection = projectedCost(av, growth);
+  const choose = (value: number) => {
+    setAv(value);
+    setDraft(String(value));
+  };
 
   return (
-    <div className="rounded-sm border border-[var(--color-parchment)] bg-white overflow-hidden">
-      <div className="grid lg:grid-cols-2">
-        {/* ── Controls ── */}
-        <div className="p-6 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-[var(--color-parchment)]">
-          <div className="flex items-center gap-2 mb-1">
-            <Home className="w-4 h-4 text-[var(--color-ember)]" />
-            <h3 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-light)]">
-              Your home
-            </h3>
-          </div>
-          <p className="text-[14px] text-[var(--color-ink-muted)] mb-6 leading-relaxed">
-            Drag to your home&apos;s <strong>assessed value</strong> — the number
-            on your county tax statement, usually well below what the home would
-            sell for.
+    <div className={`${styles.tool} ${styles.householdTool}`}>
+      <div className={styles.calculator}>
+        <div className={styles.inputPanel}>
+          <p className={styles.eyebrow}>Your assessed value · FY2025–26</p>
+          <h3 className={styles.toolTitle}>Find the value. See the cost.</h3>
+          <p className={styles.body}>
+            Use the assessed value on your county statement. It can differ
+            substantially from market value—even for similar homes.
           </p>
-
-          <div className="mb-2 flex items-baseline justify-between">
-            <span className="text-[11px] font-mono uppercase tracking-wide text-[var(--color-ink-muted)]">
-              Assessed value
-            </span>
-            <span className="font-mono text-[22px] font-bold text-[var(--color-canopy)] tabular-nums">
-              {fmtMoney(av)}
-            </span>
+          <dl className={styles.liveEstimate} aria-label="Your estimate">
+            <div>
+              <dt>FY2025–26 estimate</dt>
+              <dd>
+                {fmtMoney(cost.annual)}
+                <span> / year</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Six-year estimate</dt>
+              <dd>{fmtMoney(projection.total)}</dd>
+            </div>
+          </dl>
+          <label className={styles.label} htmlFor="fpdr-home-value">
+            Assessed value in dollars
+          </label>
+          <div className={styles.moneyInput}>
+            <span aria-hidden="true">$</span>
+            <input
+              id="fpdr-home-value"
+              type="number"
+              inputMode="numeric"
+              min={0}
+              max={1_500_000}
+              step={1}
+              value={draft}
+              aria-invalid={!valid}
+              aria-describedby="fpdr-value-help"
+              onChange={(event) => {
+                const value = event.target.value;
+                setDraft(value);
+                const number = Number(value);
+                if (
+                  value.trim() &&
+                  Number.isFinite(number) &&
+                  number >= 0 &&
+                  number <= 1_500_000
+                )
+                  setAv(number);
+              }}
+            />
           </div>
+          <p
+            id="fpdr-value-help"
+            className={valid ? styles.hint : styles.error}
+          >
+            {valid
+              ? "Enter an exact amount, or use the slider."
+              : "Enter a value from $0 to $1,500,000. Results retain the last valid value."}
+          </p>
           <input
+            className={styles.range}
             type="range"
-            min={75_000}
+            min={0}
             max={1_500_000}
-            step={5_000}
+            step={1}
             value={av}
-            onChange={(e) => setAv(Number(e.target.value))}
-            className="w-full accent-[var(--color-ember)] cursor-pointer"
+            onChange={(event) => choose(Number(event.target.value))}
             aria-label="Home assessed value"
+            aria-valuetext={`${fmtMoney(av)} assessed value`}
           />
-          <div className="flex justify-between text-[10px] font-mono text-[var(--color-ink-muted)] mt-1">
-            <span>$75K</span>
+          <div className={styles.rangeEnds}>
+            <span>$0</span>
             <span>$1.5M</span>
           </div>
-
-          <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2">
-            {PRESETS.map((p) => (
+          <div
+            className={styles.presets}
+            role="group"
+            aria-label="Example assessed values"
+          >
+            {PRESETS.map((value) => (
               <button
-                key={p.value}
-                onClick={() => setAv(p.value)}
-                className={`rounded-sm border px-2 py-2 text-[11px] font-medium transition-colors ${
-                  av === p.value
-                    ? "border-[var(--color-canopy)] bg-[var(--color-canopy)]/[0.04] text-[var(--color-canopy)]"
-                    : "border-[var(--color-parchment)] text-[var(--color-ink-light)] hover:border-[var(--color-sage)]"
-                }`}
+                type="button"
+                key={value}
+                aria-pressed={av === value}
+                onClick={() => choose(value)}
               >
-                <span className="block font-mono">{fmtMoney(p.value)}</span>
-                <span className="block text-[10px] text-[var(--color-ink-muted)] mt-0.5">
-                  {p.label}
-                </span>
+                {fmtMoney(value)}
               </button>
             ))}
           </div>
-        </div>
-
-        {/* ── Result ── */}
-        <div className="p-6 sm:p-8 lg:p-10 bg-[var(--color-paper-warm)] flex flex-col justify-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
-            You pay FPDR about
+          <label className={styles.label} htmlFor="fpdr-growth">
+            Assumed annual growth after FY2025–26
+          </label>
+          <select
+            id="fpdr-growth"
+            className={styles.select}
+            value={growth}
+            onChange={(event) => setGrowth(Number(event.target.value))}
+          >
+            <option value={0.03}>3% assessed-value growth</option>
+            <option value={0}>No assessed-value growth</option>
+          </select>
+          <p className={styles.hint}>
+            A household scenario, separate from citywide tax-base growth.
+            Property changes and the relationship between market and assessed
+            value can produce different outcomes.
           </p>
-          <p className="mt-2 font-mono text-5xl sm:text-6xl font-bold text-[var(--color-canopy)] tabular-nums leading-none">
+        </div>
+        <div className={styles.resultPanel}>
+          <p className={styles.eyebrow}>Estimated FY2025–26 charge</p>
+          <p className={styles.bigResult} aria-live="polite" aria-atomic="true">
             {fmtMoney(cost.annual)}
           </p>
-          <p className="text-[14px] text-[var(--color-ink-muted)] mt-2">
-            per year — about{" "}
-            <span className="font-semibold text-[var(--color-ink)]">
-              {fmtMoney(cost.monthly)}/month
-            </span>{" "}
-            on this one pension fund
+          <p className={styles.body}>
+            per year · {fmtMoney(cost.monthly)} monthly equivalent
           </p>
-
-          <div className="mt-6 grid grid-cols-2 gap-px bg-[var(--color-parchment)] rounded-sm overflow-hidden">
-            <div className="bg-white p-4">
-              <p className="font-mono text-[22px] font-bold text-[var(--color-ink)] tabular-nums">
-                {fmtPct(HEADLINE.shareOfCityLine, 0)}
-              </p>
-              <p className="text-[11px] text-[var(--color-ink-muted)] leading-snug mt-1">
-                of your City of Portland property taxes
+          <div className={styles.resultFacts}>
+            <div>
+              <span>FY2026–27 forecast</span>
+              <strong>{fmtMoney(projection.rows[1].annual)}</strong>
+              <p>
+                One year of {growth * 100}% growth, then the City&apos;s
+                forecast rate.
               </p>
             </div>
-            <div className="bg-white p-4">
-              <p className="font-mono text-[22px] font-bold text-[var(--color-ink)] tabular-nums">
-                {fmtMoney(proj.total)}
-              </p>
-              <p className="text-[11px] text-[var(--color-ink-muted)] leading-snug mt-1">
-                projected over FY26–FY31, as the rate climbs
-              </p>
+            <div>
+              <span>Six-year total</span>
+              <strong>{fmtMoney(projection.total)}</strong>
+              <p>FY2025–26 through FY2030–31, including the base year.</p>
             </div>
           </div>
-
-          <p className="mt-5 text-[12px] text-[var(--color-ink-muted)] leading-relaxed border-t border-[var(--color-parchment)] pt-4">
-            This is a separate line on your Multnomah County tax bill, labeled{" "}
-            <span className="font-mono text-[var(--color-ink-light)]">
-              &ldquo;Portland Fire/Police Pension.&rdquo;
-            </span>{" "}
-            Every property inside Portland city limits pays it.
+          <div className={styles.projectionBars} aria-hidden="true">
+            {projection.rows.map((row) => (
+              <div key={row.fy}>
+                <div
+                  style={{
+                    height: `${Math.max(3, (row.annual / (projection.finalAnnual || 1)) * 84)}px`,
+                    background: row.projected ? "#9bad98" : "#1a3a2a",
+                  }}
+                />
+                <span>{row.fy.slice(-2)}</span>
+              </div>
+            ))}
+          </div>
+          <p className={styles.hint}>
+            Fiscal year ending · dark = base year; light = forecast
+          </p>
+          <p className={styles.resultNote}>
+            Estimate before tax compression, exemptions and payment discounts.
+            Check the FPDR line on your county statement for the actual charge.
+            Future amounts are scenarios, not a tax quote.
           </p>
         </div>
       </div>
+      <details className={styles.details}>
+        <summary>See the calculation and year-by-year estimates</summary>
+        <p>
+          Assessed value ÷ 1,000 × the FPDR rate. The FY2025–26 rate is $2.9874
+          per $1,000; subsequent rates come from the City&apos;s five-year plan.
+          Only future years apply your selected growth assumption.
+        </p>
+        <div
+          className={styles.tableScroll}
+          tabIndex={0}
+          role="region"
+          aria-label="Year-by-year household estimates"
+        >
+          <table>
+            <caption>
+              Household estimates with {growth * 100}% annual assessed-value
+              growth
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Fiscal year</th>
+                <th scope="col">Assessed value</th>
+                <th scope="col">Rate / $1,000</th>
+                <th scope="col">Estimated charge</th>
+              </tr>
+            </thead>
+            <tbody>
+              {projection.rows.map((row) => (
+                <tr key={row.fy}>
+                  <th scope="row">
+                    {row.fy}
+                    <small>
+                      {row.projected ? "Forecast" : "Certified rate"}
+                    </small>
+                  </th>
+                  <td>{fmtMoney(row.assessedValue)}</td>
+                  <td>${row.rate.toFixed(4)}</td>
+                  <td>{fmtMoney(row.annual)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          <SourceLink id="county2526">County rates</SourceLink> ·{" "}
+          <SourceLink id="fiveYearPlan2731">City forecast, p. 6</SourceLink> ·{" "}
+          <SourceLink id="oregonAssessment">Oregon assessment rules</SourceLink>
+          . The 3% scenario approximates a common unchanged-property case. It is
+          not a universal cap on assessed-value changes or tax bills.
+        </p>
+      </details>
     </div>
   );
 }

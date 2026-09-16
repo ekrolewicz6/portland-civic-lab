@@ -1,24 +1,5 @@
-/**
- * FPDR calculation engine.
- *
- * Three models power the interactive pieces of the deep-dive:
- *
- *  1. personalCost()  — what the FPDR levy costs a single household today.
- *     Straight arithmetic off the verified FY2025-26 tax rate.
- *
- *  2. projectedCost() — the same household's cost over the City's published
- *     rate-forecast window (FY26–FY31), growing assessed value ~3%/yr.
- *
- *  3. simulateFundingPolicy() — an illustrative model of a real funding policy:
- *     a declining-dollar, 30-year amortization of the unfunded liability
- *     (optionally seeded by a pension-obligation bond), calibrated to the
- *     outputs the city's actuary-watchers cite. It is a teaching tool, NOT an
- *     actuarial forecast. The one thing it gets exactly right is the core
- *     economics: the ONLY source of savings from pre-funding is investment
- *     returns, so at a 0% return the savings collapse to zero. The reform levy
- *     declines over the funding window, then drops toward zero once the
- *     liability is paid off — the cost profile a closed, mature plan should
- *     follow.
+/** Household tax estimates and a deterministic educational funding scenario.
+ * The scenario is not a funding valuation or a forecast of the complete levy.
  */
 
 import {
@@ -53,31 +34,52 @@ export function personalCost(assessedValue: number): PersonalCost {
 }
 
 export interface ProjectedCost {
-  /** Number of fiscal years in the published forecast window. */
   years: number;
-  /** Cumulative FPDR cost across that window ($). */
   total: number;
-  /** The household's FPDR bill in the final forecast year ($). */
   finalAnnual: number;
+  rows: {
+    fy: string;
+    assessedValue: number;
+    rate: number;
+    annual: number;
+    projected: boolean;
+  }[];
 }
 
-/**
- * Projected cumulative FPDR cost for a household over the City's published
- * rate-forecast window (FY26–FY31). Grows assessed value by the City's assumed
- * AV growth each year and applies that year's published rate. This is the right
- * way to estimate a multi-year bill: both the rate and the assessed base rise,
- * so multiplying today's bill by N materially understates the real total.
- */
-export function projectedCost(assessedValue: number): ProjectedCost {
-  let av = assessedValue;
-  let total = 0;
-  let finalAnnual = 0;
-  for (const yr of FPDR_RATE_FORECAST) {
-    av = av * (1 + yr.avGrowth);
-    finalAnnual = (av / 1000) * yr.ratePer1000AV;
-    total += finalAnnual;
+/** FY26 input AV is unchanged in the base year. Subsequent years use a separate
+ * household-growth scenario, not the City's aggregate AV forecast. Neither
+ * compression nor discounts/exemptions are modeled. */
+export function projectedCost(
+  assessedValue: number,
+  householdGrowth = 0.03,
+): ProjectedCost {
+  if (
+    !Number.isFinite(assessedValue) ||
+    assessedValue < 0 ||
+    !Number.isFinite(householdGrowth) ||
+    householdGrowth < 0 ||
+    householdGrowth > 0.03
+  ) {
+    throw new RangeError(
+      "Use a non-negative assessed value and household growth between 0% and 3%.",
+    );
   }
-  return { years: FPDR_RATE_FORECAST.length, total, finalAnnual };
+  const rows = FPDR_RATE_FORECAST.map((year, index) => {
+    const av = assessedValue * Math.pow(1 + householdGrowth, index);
+    return {
+      fy: year.fy,
+      assessedValue: av,
+      rate: year.ratePer1000AV,
+      annual: (av / 1000) * year.ratePer1000AV,
+      projected: year.projected,
+    };
+  });
+  return {
+    years: rows.length,
+    total: rows.reduce((sum, row) => sum + row.annual, 0),
+    finalAnnual: rows[rows.length - 1].annual,
+    rows,
+  };
 }
 
 // ── Pay-as-you-go projection (interpolated from anchors) ──────────
@@ -98,25 +100,14 @@ export function payGoAt(year: number): number {
   return a[a.length - 1].payments;
 }
 
-// ── Reform simulation: a real funding policy ──────────────────────
-// Models the alternative funding policy analysts recommend for a closed,
-// mature, underfunded plan: fully amortize the unfunded liability over 30
-// years with a DECLINING-dollar contribution (level-percent-of-payroll is
-// inappropriate for a closed plan), at the NASRA peer-median 7% return. The
-// reform levy IS that contribution — benefits are paid from the invested trust
-//, so it starts above pay-go, declines every year, and drops to ~zero once
-// the liability is retired and contributions cease. Optionally seeded with a
-// pension-obligation bond, whose debt service is added to the levy, so the
-// bond is a leveraged bet that helps only when the trust return beats the bond
-// rate, not free money. The 2%/yr decline is calibrated so that, at 7%, the
-// curve reproduces the cited outputs: a ~$0.4B transition cost, breakeven in
-// the low-20s of years, and ~30% lifetime savings. NOT an actuarial forecast.
-
-const AMORT_YEARS = 30;
-const DECLINE_RATE = 0.02;
-// Pension-obligation bond: taxable rate and term used to model debt service.
-const POB_RATE = 0.055;
-const POB_TERM = 25;
+// The contribution path is solved afresh for each selected constant return,
+// assuming that return is known in advance. It is not a market stress test.
+export const FUNDING_ASSUMPTIONS = {
+  years: 30,
+  contributionDecline: 0.02,
+  bondRate: 0.055,
+  bondYears: 25,
+} as const;
 
 export interface FundingSimYear {
   year: number;
@@ -126,6 +117,8 @@ export interface FundingSimYear {
   reform: number;
   /** Invested trust balance at year-end ($M). */
   trust: number;
+  cumulativePayGo: number;
+  cumulativeReform: number;
 }
 
 export interface FundingSimResult {
@@ -135,9 +128,9 @@ export interface FundingSimResult {
   rows: FundingSimYear[];
   /** Total levied over the whole horizon under pay-go ($M). */
   lifetimePayGo: number;
-  /** Net total cost under the policy, crediting any leftover trust ($M). */
+  /** Total tax contributions under the policy through the modeled horizon ($M). */
   lifetimeReform: number;
-  /** lifetimePayGo - lifetimeReform ($M). Equals total investment returns. */
+  /** lifetimePayGo - lifetimeReform ($M). Includes bond interest costs when applicable. */
   lifetimeSavings: number;
   savingsPct: number;
   /** Highest single-year levy under the policy ($M) — the early "bump". */
@@ -146,27 +139,36 @@ export interface FundingSimResult {
   peakReformYear: number;
   /** First year the policy levy drops below the pay-go levy. */
   crossoverYear: number | null;
-  /** Year the liability is paid off and contributions cease. */
-  fundedYear: number;
+  /** First year cumulative tax contributions are lower than pay-go. */
+  cumulativeCrossoverYear: number | null;
+  /** First year without new trust contributions, not the end of benefit payments. */
+  contributionEndYear: number;
 }
 
-/**
- * Forward-simulate the levy under a declining-dollar, 30-year funding policy.
- *
- * Mechanics: the city levies a contribution that declines a constant percent
- * each year for 30 years, drops it into a trust earning `annualReturn`, and
- * pays benefits from the trust. We solve for the smallest starting contribution
- * that keeps the trust solvent through the entire horizon; any trust left at
- * the end is credited back (it's real money), so net lifetime savings equal
- * exactly the investment returns earned, which is why a 0% return yields $0.
+/** Solves a declining 30-year contribution schedule to cover an illustrative
+ * benefit path through 2082, using a constant net investment return. Existing
+ * assets and benefit payments after the horizon are excluded in both scenarios.
+ * PERS, disability, admin, inflation and market volatility are not modeled.
  */
 export function simulateFundingPolicy(
   annualReturn: number,
-  pobAmount = 0
+  pobAmount = 0,
 ): FundingSimResult {
+  if (
+    !Number.isFinite(annualReturn) ||
+    annualReturn < 0 ||
+    annualReturn > 0.08 ||
+    !Number.isFinite(pobAmount) ||
+    pobAmount < 0 ||
+    pobAmount > 200
+  ) {
+    throw new RangeError(
+      "Scenario supports 0–8% returns and bonds of $0–200M.",
+    );
+  }
   const r = annualReturn;
-  const N = AMORT_YEARS;
-  const d = DECLINE_RATE;
+  const N = FUNDING_ASSUMPTIONS.years;
+  const d = FUNDING_ASSUMPTIONS.contributionDecline;
 
   const years: number[] = [];
   for (let y = SIM_START_YEAR; y <= SIM_END_YEAR; y++) years.push(y);
@@ -199,14 +201,19 @@ export function simulateFundingPolicy(
     else lo = mid;
   }
   const c0 = hi;
-  const { path, end } = run(c0);
+  const { path } = run(c0);
 
   // Level annual debt service to repay the bond over its term (the proceeds were
   // already seeded into the trust inside run()); added to the levy, not the trust.
   const debtService =
     pobAmount === 0
       ? 0
-      : (pobAmount * POB_RATE) / (1 - Math.pow(1 + POB_RATE, -POB_TERM));
+      : (pobAmount * FUNDING_ASSUMPTIONS.bondRate) /
+        (1 -
+          Math.pow(
+            1 + FUNDING_ASSUMPTIONS.bondRate,
+            -FUNDING_ASSUMPTIONS.bondYears,
+          ));
 
   const rows: FundingSimYear[] = [];
   let lifetimePayGo = 0;
@@ -214,10 +221,13 @@ export function simulateFundingPolicy(
   let peakReform = 0;
   let peakReformYear = SIM_START_YEAR;
   let crossoverYear: number | null = null;
+  let cumulativeCrossoverYear: number | null = null;
 
   for (let t = 0; t < H; t++) {
     // Taxpayer levy = funding contribution + any bond debt service that year.
-    const levy = contribution(c0, t) + (t < POB_TERM ? debtService : 0);
+    const levy =
+      contribution(c0, t) +
+      (t < FUNDING_ASSUMPTIONS.bondYears ? debtService : 0);
     lifetimePayGo += benefits[t];
     cumReform += levy;
     if (levy > peakReform) {
@@ -227,16 +237,21 @@ export function simulateFundingPolicy(
     if (crossoverYear === null && t > 0 && levy < benefits[t] - 0.01) {
       crossoverYear = years[t];
     }
+    if (cumulativeCrossoverYear === null && cumReform < lifetimePayGo - 0.01) {
+      cumulativeCrossoverYear = years[t];
+    }
     rows.push({
       year: years[t],
       payGo: benefits[t],
       reform: levy,
       trust: Math.max(0, path[t]),
+      cumulativePayGo: lifetimePayGo,
+      cumulativeReform: cumReform,
     });
   }
 
-  // Credit any trust left at the end (real money) against the policy's cost.
-  const lifetimeReform = cumReform - Math.max(0, end);
+  // Report cash contributions; never net hypothetical residual assets against taxes.
+  const lifetimeReform = cumReform;
   const lifetimeSavings = lifetimePayGo - lifetimeReform;
 
   return {
@@ -250,7 +265,8 @@ export function simulateFundingPolicy(
     peakReform,
     peakReformYear,
     crossoverYear,
-    fundedYear: SIM_START_YEAR + N,
+    cumulativeCrossoverYear,
+    contributionEndYear: SIM_START_YEAR + N,
   };
 }
 
