@@ -90,3 +90,63 @@ See [README](README.md) for commands. Committed CSVs are the inputs to offline c
 The checks validate source IDs, row uniqueness, suppression handling, geographic codes, AEP6 arithmetic, non-nested sensitivity baskets, local links, and generated-output consistency. They do not certify an operator's claims or turn nonrepresentative evidence into a census.
 
 Manual review checks units, dates, industry boundaries, study geography, causal wording, and privacy. Only public commercial addresses enter the inventory; no private survey data or contact-form email addresses are included.
+
+## 6. The expanded discovery register
+
+The September 15 revision extracts **597 source listings**: 103 Portland Open Studios 2025 profiles, 172 entries on an undated Ceramic Showcase directory, 115 Gathering of the Guilds listings dated 2026, and 207 entries on Portland Saturday Market's undated craft-vendor page. The pottery directory's image paths include 2024; that does not establish a complete event-year attribution. Neither undated list is labeled a 2026 participant census.
+
+`extract-directories.py` parses four hash-pinned HTML files using lxml. It captures names, stated media, public profile URLs, source identifiers, periods, and listing locators. It does not extract emails, phone numbers, home addresses, or point locations. The exact source unit is a listing. Joint artists, businesses, individual people, guilds, and organizational booths remain distinguishable from a headcount; the source register has not been resolved into legal entities.
+
+The tour and specialist directories provide physical-media evidence at the listing level. The market directory is retained as **activity needs review** because it includes products outside the physical-maker boundary and often supplies no discipline text. Inclusion in this discovery file is not a claim that every record meets the definition. Searches use source media labels, not an inferred occupational classification.
+
+For browsing, names are normalized to lowercase ASCII alphanumeric strings, with event booth suffixes removed from display names but preserved in locators. Identical normalized names are grouped provisionally. A reviewed link joins Sienna Cenere / Sienna Art Studios because the two directories point to the same artist website. This yields **589 profile groups**, not an estimate of unique people or businesses. Four repeated organizational booth records collapse to one profile. A same-name match can still be wrong; unrecognized aliases can still remain separate.
+
+The committed [link review](data/directory-links.csv) also records holds: Amy Fields / Amy Fields Ceramics needs identity confirmation; a surname alone is not sufficient; two artists sharing a studio domain remain separate. Do not merge all identical website domains. The [raw listing extract](data/directory-listings.csv) remains available so every grouping can be inspected or reversed. A completed deduplication would additionally resolve person-to-business and business-to-worksite relationships and flag closures.
+
+**No capture–recapture estimate is calculated.** Directory overlap is affected by discipline, event participation, web visibility, shared recruitment, geography, and different years. Those conditions undermine the assumptions behind estimating a hidden population from two lists. Small observed overlap is not evidence that an enormous unseen maker population exists.
+
+## 7. A staged estimation model
+
+The current public-source model produces exact counts of source records, selected administrative categories, and a fee-based scenario. It does **not** produce a citywide maker-population point estimate. Here is the estimand and route needed for a defensible next version.
+
+### Frame-based active and paid counts
+
+Fix one calendar year. Resolve the discovery records into separate person and business frames. Within each frame, partition by discipline, location evidence, and business stage; put unknown cases in explicit strata. Review all unusually large firms individually for revenue estimation.
+
+For stratum `h`, let `L_h` be unique candidate entities in the frame and `p_h` be the fraction meeting **all** target conditions: eligible physical production, Portland work location, active in the reference year, and paid activity if measuring earners. With a documented simple random audit sample, estimate:
+
+`N_frame = Σ_h L_h × p_h`.
+
+Estimate a sampling interval for each proportion and propagate it to the frame total using the survey design. Where all selected cases respond, a design-based stratified total variance can use `Σ_h L_h² × (1 − n_h/L_h) × s_h²/n_h`, where `s_h²` is the sample variance of the eligibility indicator. Small samples and proportions near zero or one need appropriate bounded intervals. Do not call nonresponse an ineligible observation. Report a sensitivity interval treating unresolved sampled cases as all eligible versus none eligible, alongside any justified response adjustment. This sensitivity is not a confidence interval.
+
+**These quantities have not been measured here.** Do not insert guessed 50% eligibility or a guessed Portland share into a published total. A random audit of directory entries supports the frame only. It does not measure makers absent from every source.
+
+### Coverage beyond the frame
+
+Recruit independent of prominent spaces: supplier customers, repair networks, neighborhood organizations, and multilingual community groups. Record recruitment channel and whether the respondent was already in the frame. These convenience channels reveal omissions, but their discovery rate is not automatically a population inclusion probability. A representative coverage estimate requires an independent probability-based household or business sampling frame, or another validated design.
+
+Report the observed, verified frame count until such a design exists. If a future independent study supports coverage `c`, a sensitivity calculation `N_total = N_frame / c` must carry uncertainty in both terms and demonstrate comparable target definitions. No value for `c` is assigned in this release.
+
+### Revenue, earnings, and local retention
+
+Estimate revenue by business—not by multiplying a person count by mean sales. Under a probability sample of the business frame, a design-weighted total can use `Σ_i revenue_i / inclusion_probability_i`; handle nonresponse and certainty-selected large firms explicitly. If only voluntary revenue ranges are available, report the range distribution first. Any midpoint calculation must show lower/upper band sensitivity; open-ended bands cannot receive an arbitrary upper bound.
+
+Keep separate totals for gross receipts, wages, owner earnings, and purchases. For a sampled project, record customer geography, final payment, production locations, labor, and purchased inputs. A customer outside the city establishes outside demand; local retention requires the expense and labor records. Payments between Portland producers are links in the account, not extra final demand. No new regional multiplier is applied.
+
+### Administrative cross-checks
+
+The article's nine-category NES basket contains 542 businesses and $25,663,000 in receipts in Multnomah County in 2023. Codes are 315, 316, 321, 3231, 3271, 3272, 332, 337, and 81142. They are disjoint published categories. Adding 3399 changes that basket to 763 businesses / $45,426,000. Both contain out-of-scope activity and miss relevant makers; they are sensitivity cases, not maker bounds. County geographies must not substitute for Portland's parts in any county.
+
+The 2018 Urban Manufacturing Alliance study describes access to city/district QCEW through Portland's Bureau of Planning and Sustainability. Request that route before allocating county employment using population shares. Employer industry data measure jobs at establishments, while resident occupation data answer who lives here. Do not add them.
+
+## 8. Figure and scenario provenance
+
+- **Directory chart and explorer:** `data/directory-listings.csv`, `data/directory-links.csv`; grouped by `build-makers.ts`. Counts refer to the specific archived page extracts, not complete network membership.
+- **Receipts:** `data/nonemployers.csv`; sum the nine codes above. Charts display rounded millions; underlying dollar values stay exact. Mean furniture receipts = $4,457,000 / 101 = $44,128.71.
+- **Payroll chart:** `data/derived/employment-comparison.csv`; same county, private ownership, and annual-average unit in 2019 and 2025. All-private comparison uses code 10. Chart labels abbreviate some categories; exact labels and codes remain in the data.
+- **Historical revenue distribution:** `data/historical-survey.csv`; 84 revenue respondents in the 2015 Portland Made Collective survey, report page 6. 26 + 15 = 41 respondents in the two bands up to $50,000. The six bands sum to 84. The report's separate large-firm addition is $216,405,000 / $316,094,000 = 68.462%; it is not our contemporary impact estimate. Pages 6, 11, and 17 were visually reviewed.
+- **Historical workplace percentages:** report pages 16–17; respondent average share of work by location, not share of makers or firms. No inference that today's home-work share is 41%.
+- **Workspace offers:** named operator pages, September 15 review; different bundles and contract commitments. No dues-times-members revenue calculation.
+- **Ceramic Showcase scenario:** OPA 2026 rules, individual booth, 5 × 10 feet, $275 booth + $20 registration. Marginal commission rates are 17%, 14%, 12%, 10%, 5%, with thresholds $2,000, $3,000, $4,000, $5,500. At $3,500, commission is $540. Sales, entered production costs, other costs, and hours are user assumptions. Starting costs ($1,050 / $250) and hours (80) are illustrative, not estimated typical maker inputs. The remaining $1,365 is before uncounted overhead, dues, and taxes; dividing by entered hours does not turn it into a wage.
+
+All figure inputs are generated from committed extracts. `build-makers.ts --check` detects stale outputs. Commission tests cover each tier boundary, the source's worked example, and negative remainders. The page renders data access, units, dates, geography, and limitations adjacent to the relevant visual.

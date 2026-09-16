@@ -1,35 +1,5 @@
 [
   {
-    "id": "audit-services",
-    "title": "Portland Audit Services",
-    "url": "https://www.portland.gov/auditor/audit-services",
-    "format": "html",
-    "geography": "City of Portland",
-    "period": "current mandate",
-    "reviewed_on": "2026-09-15",
-    "publisher_type": "primary"
-  },
-  {
-    "id": "audit-index",
-    "title": "Audit reports by year",
-    "url": "https://www.portland.gov/auditor/audit-services/about-us/audit-reports-online",
-    "format": "html",
-    "geography": "City of Portland",
-    "period": "1994-2026 index",
-    "reviewed_on": "2026-09-15",
-    "publisher_type": "primary"
-  },
-  {
-    "id": "arts-audit-web",
-    "title": "Arts Access Fund performance audit",
-    "url": "https://www.portland.gov/auditor/audit-services/news/2026/3/18/arts-tax-city-needs-make-improvements-deliver-voter-approved",
-    "format": "html",
-    "geography": "City of Portland",
-    "period": "2012-October 2025; published March 2026",
-    "reviewed_on": "2026-09-15",
-    "publisher_type": "primary"
-  },
-  {
     "id": "city-arts",
     "title": "Office of Arts and Culture",
     "url": "https://www.portland.gov/arts",
@@ -330,26 +300,6 @@
     "publisher_type": "primary"
   },
   {
-    "id": "eichinger-home",
-    "title": "Eichinger Sculpture Studio portfolio",
-    "url": "https://www.eichingersculpture.com/",
-    "format": "html",
-    "geography": "2516 SE Division Street; Portland",
-    "period": "current portfolio; production dates unspecified",
-    "reviewed_on": "2026-09-15",
-    "publisher_type": "primary"
-  },
-  {
-    "id": "eichinger-commissions",
-    "title": "Eichinger commissions",
-    "url": "https://www.eichingersculpture.com/commission",
-    "format": "html",
-    "geography": "Portland studio; commissions elsewhere",
-    "period": "historical portfolio; dates vary",
-    "reviewed_on": "2026-09-15",
-    "publisher_type": "primary"
-  },
-  {
     "id": "rachael-home",
     "title": "Rachael Potter Ceramics home studio",
     "url": "https://www.rachaelpotter.com/",
@@ -436,6 +386,226 @@
     "format": "txt",
     "geography": "US counties",
     "period": "2017-2023 files",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "pmc2015",
+    "title": "Portland Made Collective Survey Results 2015",
+    "url": "https://artisaneconomyinitiative.wordpress.com/wp-content/uploads/2016/05/portland-made-collective-survey-report-2015.pdf",
+    "format": "pdf",
+    "geography": "Portland Made Collective membership; regional",
+    "period": "2015 survey; May 2016 report",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "uma2018",
+    "title": "State of Urban Manufacturing: Portland City Snapshot",
+    "url": "https://archive.urbanmfg.org/wp-content/uploads/2018/06/UMA-State-of-Urban-Manufacturing-Portland-City-Snapshot.pdf",
+    "format": "pdf",
+    "geography": "Portland city and survey respondents; broader manufacturing",
+    "period": "2018 report; historical data and 2017 survey",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "open-studios-2025",
+    "title": "Portland Open Studios 2025 artist directory",
+    "url": "https://portlandopenstudios.com/2025/directory.html",
+    "format": "html",
+    "geography": "Portland-area studio tour; production city not independently verified",
+    "period": "2025",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "potters-directory",
+    "title": "Oregon Potters Ceramic Showcase artist directory",
+    "url": "https://oregonpotters.wildapricot.org/page-18333",
+    "format": "html",
+    "geography": "Regional exhibitors; Portland sales venue",
+    "period": "Undated page; image paths reference 2024; no event-year attribution",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "guilds-2026",
+    "title": "Gathering of the Guilds participating artists",
+    "url": "https://gatheringoftheguilds.com/participating-artists/?orderby=title&order=asc",
+    "format": "html",
+    "geography": "Regional exhibitors; Portland sales venue",
+    "period": "2026 directory",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "market-directory",
+    "title": "Portland Saturday Market craft vendors",
+    "url": "https://www.portlandsaturdaymarket.com/craft-vendors",
+    "format": "html",
+    "geography": "Portland sales venue; producers may work elsewhere",
+    "period": "Undated directory observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "opa-rules-2026",
+    "title": "Ceramic Showcase 2026 participation and sales rules",
+    "url": "https://www.oregonpotters.org/showcase-2026",
+    "format": "html",
+    "geography": "Portland event; regional exhibitors",
+    "period": "2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "radius-membership",
+    "title": "Radius Art Studio membership terms",
+    "url": "https://www.radiusstudio.org/membership/",
+    "format": "html",
+    "geography": "Portland commercial site",
+    "period": "Undated offers observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "hedron",
+    "title": "Hedron Hackerspace",
+    "url": "https://hhacker.space/",
+    "format": "html",
+    "geography": "Portland commercial site",
+    "period": "Undated offers observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "pgf-home",
+    "title": "Portland Garment Factory project portfolio",
+    "url": "https://www.portlandgarmentfactory.com/",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "Undated portfolio or offer; observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "pgf-nike",
+    "title": "Portland Garment Factory: Nike flagship installation",
+    "url": "https://www.portlandgarmentfactory.com/our-work-1/retail-installation-nike-flagship",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "Undated portfolio or offer; observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "joinery-table",
+    "title": "The Joinery: Coming Together on Giving Tuesday",
+    "url": "https://thejoinery.com/blogs/news/brining-oregon-lumber-and-craftsmanship-to-city-team",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "2025-12-02 project",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "orox-workshop",
+    "title": "Orox Leather workshop and retail locations",
+    "url": "https://www.oroxleather.com/pages/visit-us",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "Undated portfolio or offer; observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "nw-marine",
+    "title": "NW Marine Art Works: studio campus",
+    "url": "https://www.nwmarineartworks.com/about",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "Undated portfolio or offer; observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "iprc-studios",
+    "title": "Independent Publishing Resource Center studios",
+    "url": "https://www.iprc.org/the-studios",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "Undated portfolio or offer; observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "bullseye-story",
+    "title": "Bullseye Glass: manufacturing story",
+    "url": "https://www.bullseyeglass.com/bullseye-glass-story/",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "Undated portfolio or offer; observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "wood-guild",
+    "title": "Guild of Oregon Woodworkers membership and purpose",
+    "url": "https://guildoforegonwoodworkers.org/Who-We-Are",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "Undated portfolio or offer; observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "wood-guild-access",
+    "title": "Guild of Oregon Woodworkers shop access",
+    "url": "https://www.guildoforegonwoodworkers.org/About-the-Guild",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "Undated portfolio or offer; observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "wood-guild-dues",
+    "title": "Guild of Oregon Woodworkers dues",
+    "url": "https://guildoforegonwoodworkers.com/page-1863380",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "Undated portfolio or offer; observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "workshop-st-johns",
+    "title": "Workshop St Johns studios",
+    "url": "https://workshopstjohns.com/",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "Undated portfolio or offer; observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "st-johns-clay",
+    "title": "St Johns Clay Collective",
+    "url": "https://www.stjohnsclay.com/",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "Undated portfolio or offer; observed September 2026",
+    "reviewed_on": "2026-09-15",
+    "publisher_type": "primary"
+  },
+  {
+    "id": "sienna",
+    "title": "Sienna Art Studios artist profile",
+    "url": "https://siennaartstudios.com/",
+    "format": "html",
+    "geography": "Portland commercial site; operator account",
+    "period": "Undated portfolio or offer; observed September 2026",
     "reviewed_on": "2026-09-15",
     "publisher_type": "primary"
   }

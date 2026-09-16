@@ -59,6 +59,7 @@ jobs:
       - name: Verify maker economy evidence and publication
         run: |
           npx tsx ingest/maker-economy/build.ts --check
+          npx tsx ingest/maker-economy/build-makers.ts --check
           npx tsx ingest/maker-economy/publish.ts --check
 
       - name: Test intake notification storage and delivery

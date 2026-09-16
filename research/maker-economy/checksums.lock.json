@@ -1,32 +1,5 @@
 [
   {
-    "id": "audit-services",
-    "url": "https://www.portland.gov/auditor/audit-services",
-    "file": "runtime-data/maker-economy/audit-services.html",
-    "sha256": "dd7e5c933d0d5c632af6911b02e0e8f53e978571e51fc2b8b34a0fbdf2a28016",
-    "bytes": 73123,
-    "retrieved_on": "2026-09-15",
-    "status": "archived"
-  },
-  {
-    "id": "audit-index",
-    "url": "https://www.portland.gov/auditor/audit-services/about-us/audit-reports-online",
-    "file": "runtime-data/maker-economy/audit-index.html",
-    "sha256": "7b7a51fc1b2f3539451fc7c8e6c60c7142a25b284790dfa33b38753b00e18f14",
-    "bytes": 157024,
-    "retrieved_on": "2026-09-15",
-    "status": "archived"
-  },
-  {
-    "id": "arts-audit-web",
-    "url": "https://www.portland.gov/auditor/audit-services/news/2026/3/18/arts-tax-city-needs-make-improvements-deliver-voter-approved",
-    "file": "runtime-data/maker-economy/arts-audit-web.html",
-    "sha256": "edcfdbb2ad1fba91e2df453c377149ee30d156a11b32a466fe396e14a4c9ddf8",
-    "bytes": 132111,
-    "retrieved_on": "2026-09-15",
-    "status": "archived"
-  },
-  {
     "id": "city-arts",
     "url": "https://www.portland.gov/arts",
     "file": "runtime-data/maker-economy/city-arts.html",
@@ -291,24 +264,6 @@
     "status": "archived"
   },
   {
-    "id": "eichinger-home",
-    "url": "https://www.eichingersculpture.com/",
-    "file": "runtime-data/maker-economy/eichinger-home.html",
-    "sha256": "d33da750b8eca514700d47104329c6e28e28756cfa4021f9f6bd513028585b48",
-    "bytes": 1684941,
-    "retrieved_on": "2026-09-15",
-    "status": "archived"
-  },
-  {
-    "id": "eichinger-commissions",
-    "url": "https://www.eichingersculpture.com/commission",
-    "file": "runtime-data/maker-economy/eichinger-commissions.html",
-    "sha256": "b33ac16be0e6dd4a0ae0779e777209dece79c05e98d5609e2bb0ebddd75abe9e",
-    "bytes": 1624099,
-    "retrieved_on": "2026-09-15",
-    "status": "archived"
-  },
-  {
     "id": "rachael-home",
     "url": "https://www.rachaelpotter.com/",
     "file": "runtime-data/maker-economy/rachael-home.html",
@@ -384,6 +339,202 @@
     "file": "runtime-data/maker-economy/nes-layout.txt",
     "sha256": "5e85a3f12e75ff57b7d61429351d190dc9c9bac12a66daa9aac964978c6a20d3",
     "bytes": 2766,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "pmc2015",
+    "url": "https://artisaneconomyinitiative.wordpress.com/wp-content/uploads/2016/05/portland-made-collective-survey-report-2015.pdf",
+    "file": "runtime-data/maker-economy/pmc2015.pdf",
+    "sha256": "151bc03bec26950d7419df0ce6ec068874b4862305ed863670640128accb3106",
+    "bytes": 1316949,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "uma2018",
+    "url": "https://archive.urbanmfg.org/wp-content/uploads/2018/06/UMA-State-of-Urban-Manufacturing-Portland-City-Snapshot.pdf",
+    "file": "runtime-data/maker-economy/uma2018.pdf",
+    "sha256": "180b017dca6ef0cd408ecf2022d6235e2370555011527815f715b4e4f60fc808",
+    "bytes": 6795538,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "open-studios-2025",
+    "url": "https://portlandopenstudios.com/2025/directory.html",
+    "file": "runtime-data/maker-economy/pos2025.html",
+    "sha256": "247066dfa41b07ab784125133ec7e924495b46f937c269fbc8956ead063670f6",
+    "bytes": 146393,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "potters-directory",
+    "url": "https://oregonpotters.wildapricot.org/page-18333",
+    "file": "runtime-data/maker-economy/potters2026.html",
+    "sha256": "6a08f109ccd9db606ea8367f998fc997b2cb8a80a44e6e53804cd23b6ea6244f",
+    "bytes": 100419,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "guilds-2026",
+    "url": "https://gatheringoftheguilds.com/participating-artists/?orderby=title&order=asc",
+    "file": "runtime-data/maker-economy/guilds2026.html",
+    "sha256": "3928a4e990466b19a4a7571a8fd6d7313cdecc1d251094d6a91f320c348f4820",
+    "bytes": 374118,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "market-directory",
+    "url": "https://www.portlandsaturdaymarket.com/craft-vendors",
+    "file": "runtime-data/maker-economy/psm-crafts.html",
+    "sha256": "5f59e30ce2317a6881b97c4677832730995e76eb48e554bdff1e1575322fea68",
+    "bytes": 3432559,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "opa-rules-2026",
+    "url": "https://www.oregonpotters.org/showcase-2026",
+    "file": "runtime-data/maker-economy/opa-rules.html",
+    "sha256": "74cad190106e118131a21f3a98bba826f90ecfa1df0b02c370498e1bae1b825a",
+    "bytes": 50350,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "radius-membership",
+    "url": "https://www.radiusstudio.org/membership/",
+    "file": "runtime-data/maker-economy/radius-member.html",
+    "sha256": "85af93563e0d808641b300adedb607b200475f3713e170b01680561e5f1ce34a",
+    "bytes": 218820,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "hedron",
+    "url": "https://hhacker.space/",
+    "file": "runtime-data/maker-economy/hedron.html",
+    "sha256": "bd65db33c23985d944fac75af70853e28ee3d6cd0b9b59f107169094e9dc3ac1",
+    "bytes": 17471,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "pgf-home",
+    "url": "https://www.portlandgarmentfactory.com/",
+    "file": "runtime-data/maker-economy/pgf-home.html",
+    "sha256": "f4c12e152a4bf2cc89a17f77da2a8846fe639cfe30783ab7cbc9d786e17ba086",
+    "bytes": 151921,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "pgf-nike",
+    "url": "https://www.portlandgarmentfactory.com/our-work-1/retail-installation-nike-flagship",
+    "file": "runtime-data/maker-economy/pgf-nike.html",
+    "sha256": "f827b595792f98f820c105e6aee1ffb671f017a70d27f34ce36fed710cfc6a05",
+    "bytes": 142275,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "joinery-table",
+    "url": "https://thejoinery.com/blogs/news/brining-oregon-lumber-and-craftsmanship-to-city-team",
+    "file": "runtime-data/maker-economy/joinery-table.html",
+    "sha256": "85492ec56e74919666cb19180fe5f760447b662d0d2804dc5744afedb49625bd",
+    "bytes": 224128,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "orox-workshop",
+    "url": "https://www.oroxleather.com/pages/visit-us",
+    "file": "runtime-data/maker-economy/orox-workshop.html",
+    "sha256": "3a3a310f76d05f34e9130dc400bc7fc584112d2b3eacc463e37a47867731beb6",
+    "bytes": 330519,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "nw-marine",
+    "url": "https://www.nwmarineartworks.com/about",
+    "file": "runtime-data/maker-economy/nw-marine.html",
+    "sha256": "ca593ab484d4aa6e10fa143bf1248e119ed2e1266f816954fbc5ff361af843fc",
+    "bytes": 175764,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "iprc-studios",
+    "url": "https://www.iprc.org/the-studios",
+    "file": "runtime-data/maker-economy/iprc-studios.html",
+    "sha256": "9ea6b388da966d19d0a7e7147715330c99cd910760d052452400f67d8344ce3c",
+    "bytes": 226241,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "bullseye-story",
+    "url": "https://www.bullseyeglass.com/bullseye-glass-story/",
+    "retrieved_on": "2026-09-15",
+    "status": "fetch_failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "wood-guild",
+    "url": "https://guildoforegonwoodworkers.org/Who-We-Are",
+    "file": "runtime-data/maker-economy/wood-guild.html",
+    "sha256": "9640ab0d8c89c3b949177a3622cad404b3f211aefa434468f5913cafeeed869b",
+    "bytes": 41529,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "wood-guild-access",
+    "url": "https://www.guildoforegonwoodworkers.org/About-the-Guild",
+    "file": "runtime-data/maker-economy/wood-guild-access.html",
+    "sha256": "a896ed1317755a08c7c71d2b517b0264c35676770aa5d929c53709fc2eca304f",
+    "bytes": 47993,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "wood-guild-dues",
+    "url": "https://guildoforegonwoodworkers.com/page-1863380",
+    "file": "runtime-data/maker-economy/wood-guild-dues.html",
+    "sha256": "c8096bc2192fee6f5a9282b1b550b6444ccce3def48926021f48e3371cdd4c87",
+    "bytes": 52386,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "workshop-st-johns",
+    "url": "https://workshopstjohns.com/",
+    "file": "runtime-data/maker-economy/workshop-st-johns.html",
+    "sha256": "8db5892f474440b54941dcc4c3d0b43ff3b475a5060100fe393963186b24e2f5",
+    "bytes": 35550,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "st-johns-clay",
+    "url": "https://www.stjohnsclay.com/",
+    "file": "runtime-data/maker-economy/st-johns-clay.html",
+    "sha256": "77ef69aa63d64ceeff6742d4f626282828d8b228b634688c69e264c459f92a48",
+    "bytes": 874056,
+    "retrieved_on": "2026-09-15",
+    "status": "archived"
+  },
+  {
+    "id": "sienna",
+    "url": "https://siennaartstudios.com/",
+    "file": "runtime-data/maker-economy/sienna.html",
+    "sha256": "0972554ed30412edc8cebc775705a5559829948424b7ed3be5f83098deac6e32",
+    "bytes": 275921,
     "retrieved_on": "2026-09-15",
     "status": "archived"
   }

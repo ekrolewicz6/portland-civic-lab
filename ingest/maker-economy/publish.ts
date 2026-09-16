@@ -7,7 +7,7 @@ const base = '/deep-dives/maker-economy';
 const github = 'https://github.com/ekrolewicz6/portland-civic-lab/blob/main/';
 const pages = [
   { slug: '', file: 'document.md', label: 'The deep dive' },
-  { slug: 'case-studies', file: 'case-studies.md', label: 'Six case studies' },
+  { slug: 'case-studies', file: 'case-studies.md', label: 'Production & places' },
   { slug: 'methodology', file: 'methodology.md', label: 'Methodology' },
   { slug: 'tables', file: 'data/derived/tables.md', label: 'Economic tables' },
   { slug: 'community-research-kit', file: 'community-research-kit.md', label: 'Community research kit' },
@@ -15,7 +15,7 @@ const pages = [
   { slug: 'sources', file: 'sources.md', label: 'Source registry' },
 ];
 const downloads = [
-  'data/qcew.csv', 'data/nonemployers.csv', 'data/observations.csv', 'data/ecosystem.csv',
+  'data/directory-listings.csv', 'data/directory-links.csv', 'data/historical-survey.csv', 'data/qcew.csv', 'data/nonemployers.csv', 'data/observations.csv', 'data/ecosystem.csv',
   'data/derived/employment-comparison.csv', 'data/derived/nonemployer-context.csv',
   'data/derived/definition-sensitivity.csv', 'data/derived/study-checks.csv',
   'sources.json', 'classifications.json', 'checksums.lock.json',

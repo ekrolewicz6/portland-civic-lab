@@ -1,0 +1,13 @@
+series,label,value,unit,period,geography,coverage,doc_id,locator
+revenue-band,$0–20k,26,responding enterprises,2015,Portland Made Collective membership,84 revenue respondents; includes adjacent sectors,pmc2015,page 6 chart 1
+revenue-band,$20–50k,15,responding enterprises,2015,Portland Made Collective membership,84 revenue respondents; includes adjacent sectors,pmc2015,page 6 chart 1
+revenue-band,$50–100k,10,responding enterprises,2015,Portland Made Collective membership,84 revenue respondents; includes adjacent sectors,pmc2015,page 6 chart 1
+revenue-band,$100–500k,24,responding enterprises,2015,Portland Made Collective membership,84 revenue respondents; includes adjacent sectors,pmc2015,page 6 chart 1
+revenue-band,$500k–1m,5,responding enterprises,2015,Portland Made Collective membership,84 revenue respondents; includes adjacent sectors,pmc2015,page 6 chart 1
+revenue-band,$1–5m,4,responding enterprises,2015,Portland Made Collective membership,84 revenue respondents; includes adjacent sectors,pmc2015,page 6 chart 1
+work-location,Home,41,percent of reported work,2015,Portland Made Collective membership,Respondent average work-location allocation; not share of people,pmc2015,pages 16–17 chart 10
+work-location,Commercial / industrial,31,percent of reported work,2015,Portland Made Collective membership,Respondent average work-location allocation; not share of people,pmc2015,pages 16–17 chart 10
+work-location,Office,13,percent of reported work,2015,Portland Made Collective membership,Respondent average work-location allocation; not share of people,pmc2015,pages 16–17 chart 10
+work-location,Third places,7,percent of reported work,2015,Portland Made Collective membership,Respondent average work-location allocation; not share of people,pmc2015,pages 16–17 chart 10
+work-location,Collaborative space,4,percent of reported work,2015,Portland Made Collective membership,Respondent average work-location allocation; not share of people,pmc2015,pages 16–17 chart 10
+work-location,Makerspace,4,percent of reported work,2015,Portland Made Collective membership,Respondent average work-location allocation; not share of people,pmc2015,pages 16–17 chart 10

@@ -27,12 +27,12 @@ interface DeepDive {
 const DIVES: DeepDive[] = [
   {
     href: "/deep-dives/maker-economy",
-    eyebrow: "Makers & the creative economy",
-    title: "Portland makes things. How much of that economy can we see?",
+    eyebrow: "Work & the maker economy",
+    title: "The work behind Portland’s handmade city.",
     blurb:
-      "What shared workshops and independent producers actually create, whom they support, and what public evidence can tell us about their economic role. Six case studies, county payroll and business data, and a community research kit for the questions the numbers cannot answer yet.",
-    stat: "6",
-    statLabel: "case studies, from shared workshops to a home studio",
+      "Follow actual projects, explore 597 public artist and craft listings, and examine the business receipts, payroll jobs, and production costs behind Portland’s maker economy.",
+    stat: "597",
+    statLabel: "public listings across four artist and craft networks",
     icon: Hammer,
     available: true,
   },

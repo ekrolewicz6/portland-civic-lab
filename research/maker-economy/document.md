@@ -1,142 +1,140 @@
-# Portland makes things. How much of that economy can we see?
+# The work behind Portland’s handmade city
 
-*Portland Civic Lab · Evidence reviewed September 15, 2026*
+A jacket built from reclaimed sports jerseys. A ceramic bowl shaped in a home studio. A custom table made from Oregon oak. A prototype assembled with shared tools. These are different products, but the economic questions are the same: **who does the work, who buys it, and how much of the payment becomes a livelihood?**
 
-Portland sculptor Martin Eichinger asked: “Is the entire Portland creative economy measurable? Does the city auditor track this sector of our larger economy?”
+Portland has a visible economy of physical making, connected to household spending, commercial clients, local suppliers, and customers elsewhere. The public record lets us get considerably closer to it than a list of makerspaces. We assembled **597 listings across four artist and craft networks**, examined tax and payroll records, and followed documented projects into workshops and homes. Those sources reveal real businesses and production relationships. They also reveal why a single maker headcount would be misleading without more work.
 
-**Much of the creative economy is measurable, but the available measures do not describe one complete, consistently defined sector. Portland's makers are particularly difficult to count.** Public records establish paid production, business receipts, creative employment, and shared production facilities. They do not yet establish how many unique people make things within Portland, how many earn their living from it, or the total economic value they create.
+*Portland maker Martin Eichinger asked the question that prompted this investigation: can we measure this economy?*
 
-The City Auditor examines government performance. Its recent arts audit concerns the management of arts education and access funding. In the auditor's mandate, report index, and arts audit reviewed for this article, we found no comprehensive, recurring census of Portland's creative or maker economy. That is a finding about the public material examined, not proof that no relevant unpublished work exists. [Audit Services](https://www.portland.gov/auditor/audit-services) · [Report index](https://www.portland.gov/auditor/audit-services/about-us/audit-reports-online) · [March 2026 audit](https://www.portland.gov/auditor/audit-services/news/2026/3/18/arts-tax-city-needs-make-improvements-deliver-voter-approved)
+## What Portland actually makes
 
-The useful next step is to connect existing economic evidence to the actual work of artists, fabricators, and small producers. That can answer considerably more than a search for a single headline number.
+Here, the **maker economy** means physical art, craft, fabrication, furniture, ceramics, textiles, jewelry, printmaking, hardware prototypes, and creative repair. It includes a home business selling a few pieces, a full-time craftsperson, and a small fabrication team. Learning and unpaid making belong in a participation count; paid production belongs in an economic count. We track workshops, instruction, suppliers, and markets as the infrastructure that supports both.
 
-## What are we counting?
+This boundary matters. Including software, performance, food, beverages, or large-scale manufacturing would produce a larger number answering a different question. A Portland brand also needs evidence of Portland production before its sales can describe work done here.
 
-This investigation uses three overlapping lenses:
+Start with a completed object. **Portland Garment Factory’s installation for Nike’s Portland flagship** combined reclaimed jerseys and repurposed soccer balls with garment construction, custom patches, and chainstitching. Its project credits identify designer Britt Howard, the PGF build team, and collaborators Alex Stone and Stephenie Goodwin. One commercial commission brought several kinds of skilled work together. The contract price and division of payment are unpublished. [Project and production credits](https://www.portlandgarmentfactory.com/our-work-1/retail-installation-nike-flagship)
 
-| Lens | What belongs here | What the lens helps explain |
-|---|---|---|
-| Creative economy | Arts, design, media, performance, and related creative production | The larger labor market and business context |
-| Maker economy | Physical art, craft, fabrication, furniture, ceramics, textiles, jewelry, printmaking, hardware prototypes, and creative repair | Who produces tangible work, for whom, and under what conditions |
-| Supporting infrastructure | Workshops, studios, tools, instruction, suppliers, markets, and sales networks | How people gain access to production and customers |
+The company’s wider portfolio includes museum work, uniforms, retail displays, and a collaboration with The Joinery. This is a part of making that a weekend-market count would miss: businesses buying specialist fabrication from other businesses. [PGF portfolio](https://www.portlandgarmentfactory.com/)
 
-These are research definitions, not three official statistical sectors. A sculptor can belong to all three as a producer, studio member, and teacher. A graphic designer belongs in the creative economy but does not automatically belong in the physical-maker count. A furniture factory may appear in a relevant industry table without fitting our focus on independent and small-scale making.
+Other production paths look different:
 
-Paid commissions, side businesses, hobby projects, learning, and volunteering all belong in the participation picture. Only some represent market production or paid employment. Food, beverages, and large-scale manufacturing remain adjacent sectors here.
+- **Orox Leather** connects a Chinatown workshop with an airport storefront. Its public locations show production and multiple sales channels within one enterprise; two storefronts would not mean two separate producers. [Workshop and store](https://www.oroxleather.com/pages/visit-us)
+- **The Joinery** documented a custom modular table built in Portland for CityTeam in 2025, using white oak donated by Willamette Valley supplier Zena Forest Products. This particular project was a donation, so it establishes a material and production relationship, not sales revenue. [Project account](https://thejoinery.com/blogs/news/brining-oregon-lumber-and-craftsmanship-to-city-team)
+- **Rachael Potter Ceramics** describes shaping pottery in a home studio and buying clay and glaze locally. Online sales can connect a home producer to customers without a commercial storefront. Shipping options alone do not tell us how many outside orders were actually filled. [Maker’s account](https://www.rachaelpotter.com/)
+- **Past Lives** presents member work in furniture, steel, painting, and jewelry alongside commissioned fabrication and prototyping services. Its website also carries an industrial customer’s account of prototype support. These are distinct activities; a tool inventory alone would establish neither output nor income. [Member work and commissions](https://www.pastlives.space/home)
 
-We prioritize activity inside Portland city limits. County figures are labeled as county figures; the tri-county region means Multnomah, Washington, and Clackamas. A Portland mailing address, a Portland customer, and a Portland workplace are different geographic facts.
+The expanded [case studies](case-studies.md) follow these production paths and the [ecosystem inventory](data/ecosystem.csv) separates producers, shared facilities, suppliers, and sales networks.
 
-## The broader creative economy already has a measurable presence
+## Counting starts with names
 
-The regional cultural plan's WESTAF snapshot reports **44,704 creative jobs and approximately $5.0 billion in creative-industry earnings in 2022** across the three counties. It includes payroll employment, other employees, and self-employment. Its scope is broad: marketing managers appear among the largest occupations, and software publishing accounts for a reported $1.8 billion of industry earnings. These are useful regional benchmarks, not a count or valuation of Portland makers. Occupation jobs and industry earnings also describe different statistical universes. [Regional snapshot, pages 1–2](https://ourcreativefuture.org/wp-content/uploads/2024/03/Tri-County-Creative-Economy-Report-2022.pdf)
+There is no need to start with an invented percentage of Portland’s population. Artists and craft businesses already appear in studio tours, specialist guilds, markets, and shared-space directories. We extracted names, stated media, public profile links, and source dates from four of those networks.
 
-A separate Portland nonprofit arts study, AEP6, reports **$405.1 million in combined organization and audience expenditures for FY2022** and **6,446 modeled jobs supported**, including indirect and induced effects. The study received financial and attendance information from 184 of 894 eligible organizations and did not expand organization results to cover nonrespondents. Its economic model uses Multnomah County, and its definition of a local attendee is a county resident. These findings establish substantial activity around participating nonprofits; they do not measure the entire creative economy. [Portland AEP6 summary, pages 1–2](https://racc.org/wp-content/uploads/2026/03/OR_CityOfPortland_AEP6_OnePageSummaryOfFindings.pdf)
-
-A source correction matters: RACC's overview labels 4,589,494 as dollars of audience spending. The original table identifies it as **attendances**; estimated audience spending is **$167,314,696**. Our extracts follow the original report. [RACC overview](https://racc.org/advocacy-community-engagement/aep6/)
-
-Do not add these studies together. Their geography, definitions, accounting measures, and covered organizations overlap.
-
-## What makerspaces and independent studios actually create
-
-The public record supports several kinds of output. The accompanying [six case studies](case-studies.md) separate documented work from advertised capabilities and unknown financial results.
-
-- **Past Lives:** a shared production facility whose public materials describe furniture, metalwork, commissions, and industrial prototyping. Its website reports 175 members and 176 completed commissions, but supplies no reporting period for those counters. They establish an operator's description of scale, not current employment or annual output. [Past Lives](https://www.pastlives.space/home)
-- **ADX:** studios, shared woodworking, and exhibition opportunities link independent creative work to workspace and audiences. Its community includes more than physical makers, so its reported community size cannot be treated as a craft workforce. [ADX studios](https://artdesignxchange.com/art-studios-portland)
-- **Morning Ceramics:** studio access, outside firing, and wheel rental serve different production arrangements, including making at home. Its market archive documents opportunities to bring ceramics to buyers; it does not disclose sales proceeds. [Services](https://www.morningceramics.com/services) · [Markets](https://www.morningceramics.com/markets)
-- **PDX Hackerspace:** technical facilities and a process for matching members to contract projects connect learning and experimentation with possible paid work. Public information does not quantify delivered commercial projects. [Project and membership FAQ](https://pdxhackerspace.org/FAQ.html)
-- **Eichinger Sculpture Studio:** a commission portfolio documents bronze sculpture for local institutions and destinations outside Oregon. It demonstrates a route to outside demand, while contract values and the location of subcontracted production remain unknown. [Commissions](https://www.eichingersculpture.com/commission)
-- **Rachael Potter Ceramics:** the operator describes home-studio production and local purchases of clay and glaze. This is evidence of a supply relationship that a makerspace membership census could miss. The business's precise city-boundary location is unverified. [Studio description](https://www.rachaelpotter.com/)
-
-The economic chain to investigate is straightforward:
-
-```mermaid
-flowchart LR
-    A[Materials and equipment] --> B[Making and skilled work]
-    B --> C[Objects, commissions, repair, and instruction]
-    C --> D[Customers and payments]
-    D --> E[Expenses and income retained by producers]
-    F[Shared space and skills] --> B
-    G[Markets and referrals] --> D
+```maker-figure
+directory
 ```
 
-This is an analytical framework, not a measured flow of dollars. A venue's membership receipts, its members' sales, and a supplier's revenue can describe successive transactions in the same chain. Adding them does not produce local value added.
+This is a **discovery register**, not a workforce estimate. The tour lists artists, the market often lists business names, and the guild event includes shared and organizational booths. The networks reach beyond Portland city limits. Two directories are undated. A public listing establishes visibility in that source, not current operation, income, or production inside the city.
 
-## The payroll evidence shows a mixed picture
+The overlaps are instructive. Wayne Harrel appears in the studio tour and guild directory; Studio Gwyneth appears in the pottery and market lists. Sienna Cenere’s tour profile and Sienna Art Studios’ market entry point to the same website. Conversely, two distinct artists can share a studio website. We preserve the original records, group matching names for browsing, and record reviewed links and unresolved aliases. **589 browsing groups is a result of those matching rules, not 589 unique makers.** [Listings](data/directory-listings.csv) · [Link decisions](data/directory-links.csv)
 
-Detailed public payroll data allow us to examine **Multnomah County**, not isolate Portland city makers. The table below reports private-sector annual-average jobs in selected industries. These are all covered jobs in those industries, including work outside the maker definition.
+The register already makes the investigation more useful: readers can find actual practitioners and inspect the evidence behind a count. Its largest blind spots are people who do not exhibit publicly, makers whose business has closed, informal paid work, creative repair, and technical fabrication sold directly to clients. A polished web presence should never become an eligibility requirement for being counted.
 
-| Industry | Jobs, 2019 | Jobs, 2025 | Change |
-|---|---:|---:|---:|
-| Pottery, ceramics, and plumbing fixtures | 41 | 65 | +58.5% |
-| Nonupholstered wood household furniture | 94 | 68 | −27.7% |
-| Custom architectural woodwork and millwork | 46 | 69 | +50.0% |
-| Jewelry and silverware | 106 | 127 | +19.8% |
-| Musical instruments | 51 | 36 | −29.4% |
-| Graphic design services | 1,041 | 566 | −45.6% |
-| All private industries, county benchmark | 447,067 | 415,659 | −7.0% |
+## What the business records already show
 
-Source: BLS Quarterly Census of Employment and Wages (QCEW), [2019](https://data.bls.gov/cew/data/api/2019/a/area/41051.csv) and [2025](https://data.bls.gov/cew/data/api/2025/a/area/41051.csv), private ownership, all establishment sizes. [Full extracts and calculations](data/derived/tables.md)
+A second view comes from businesses reporting receipts to the tax system. In **2023, Multnomah County had 542 nonemployer businesses reporting $25.663 million in receipts across nine selected physical-production and repair categories**. These categories cover apparel, leather, wood products, printing, clay, glass, fabricated metal, furniture, and furniture repair. “Nonemployer” means the business has no paid employees; owners can still be working for income. These are county business records, generally located by mailing address—not a Portland city maker estimate. [Census data and extracted categories](data/nonemployers.csv)
 
-Some small production categories grew while others contracted. Small starting counts also produce large percentage changes. This evidence does not support one growth narrative for the whole maker economy, or establish why an industry changed.
+```maker-figure
+receipts
+```
 
-There are signs of local specialization. In 2025, jewelry and silverware manufacturing's share of county employment was approximately twice its national share: BLS reports a location quotient of 1.98. That comparison concerns an industry, not the artistic quality or profitability of its producers. Its average annual payroll pay was $53,439, compared with $80,983 across the county's private industries. These are nominal averages affected by working hours and job mix; neither measures an independent jeweler's take-home income. [2025 QCEW](https://data.bls.gov/cew/data/api/2025/a/area/41051.csv)
+This evidence answers a narrower but substantial question: **small production businesses generate real commercial receipts, even when they create no payroll job.** The categories also contain industrial and other work outside our definition. Meanwhile, they omit physical artists classified elsewhere and many forms of creative repair. They are neither a minimum nor a maximum for the maker economy.
 
-Several small categories have suppressed employment data, including commercial screen printing. Suppressed means unknown, not zero. Payroll data also exclude proprietors and unincorporated self-employed workers. [QCEW coverage](https://www.bls.gov/cew/overview.htm)
+The definition makes a large difference. Adding “other miscellaneous manufacturing” adds 221 businesses and $19.763 million, taking the selected basket to 763 businesses and $45.426 million. That category can contain relevant craft production alongside unrelated products. We keep it separate instead of making the headline larger. Independent artists, writers, and performers are another mixed category; assigning an arbitrary maker percentage to its 7,472 county businesses would create precision without evidence. [Category definitions and sensitivity rules](methodology.md)
 
-## Businesses without employees are a substantial part of the picture
+Receipts also do not measure take-home income. Furniture manufacturing’s 101 nonemployer businesses reported $4.457 million in aggregate receipts: about $44,129 per business on average, before expenses. That average can conceal part-time enterprises, losses, and larger earners. It is not the typical furniture maker’s salary. A maker may also pay another local maker, so adding all their receipts would count the same final product’s value more than once.
 
-Census Nonemployer Statistics reveal activity that payroll-only analysis misses. The following are **2023 Multnomah County businesses and gross receipts**, not people or profit:
+## The payroll picture is uneven
 
-| Industry category | Nonemployer businesses | Gross receipts |
-|---|---:|---:|
-| Independent artists, writers, and performers | 7,472 | $177.9 million |
-| Specialized design services | 2,051 | $80.6 million |
-| Furniture and related products | 101 | $4.5 million |
-| Apparel manufacturing | 98 | $3.8 million |
-| Clay products and refractories | 30 | $0.8 million |
+Payroll records show another part of the economy: employees of classified businesses. They miss proprietors and much independent work, but provide a consistent comparison with Portland’s wider county economy.
 
-Source: [Census 2023 county file](https://www2.census.gov/programs-surveys/nonemployer-statistics/datasets/2023/historical-datasets/nonemp23co.zip). These categories include non-makers. Receipts incorporate disclosure noise. County assignment usually follows the business mailing address, which may differ from where production occurs. [Census methodology](https://www.census.gov/programs-surveys/nonemployer-statistics/technical-documentation/methodology.html) · [Extracts and additional categories](data/derived/tables.md)
+```maker-figure
+jobs
+```
 
-For the independent-artist category, average gross receipts were approximately **$23,810 per business**. That average is before materials, studio costs, services, and other expenses. It is not the median, a full-time wage, or a measure of household income. Businesses may operate part time, and one person may combine employment with an independent business.
+Jewelry and silverware manufacturing grew from 106 to 127 covered private jobs between 2019 and 2025 in Multnomah County. Wood household furniture fell from 94 to 68; apparel fell from 444 to 363. The county’s total private employment fell 7.0% over the same period. Growth in one discipline cannot stand in for the whole sector. [BLS annual data and calculations](data/derived/employment-comparison.csv)
 
-This gives us a defensible conclusion: registered activity outside payroll establishments is economically consequential and must be included in the investigation. It does not tell us how many of these businesses involve physical making or what share of their owners earn a sustainable living.
+Jewelry manufacturing’s 2025 employment concentration was about twice the national level, according to BLS’s published location quotient of 1.98. But average annual pay was $53,439, compared with $80,983 across the county’s private economy. A distinctive local specialization does not automatically deliver high pay. Hours and the mix of occupations affect those averages; these are not comparable hourly wage rates. [Employment and pay table](data/derived/employment-comparison.csv)
 
-## What can we say about economic importance?
+This is why we need separate accounts of **paid employees, working owners, supplemental earners, and unpaid participants**. Summing the directory, payroll, and tax-business figures would mix units and count overlapping activity repeatedly.
 
-**Production and income are real, even where the aggregate is incomplete.** Public sources document commissions, craft businesses, and payroll in relevant production industries. A maker's economic role can include product sales, teaching, repairs, or subcontracting; focusing only on gallery sales would miss much of it.
+## A maker business can be very small—or much larger
 
-**Shared facilities provide access to productive equipment and space.** The listed services show what is available. Whether that access creates additional businesses, reduces costs, or merely changes where existing work happens requires evidence from users and operators. The right question is what they would do without access—and what actually happened when access changed.
+A Portland Made Collective survey provides a useful historical warning about averages. In 2015, 41 of its 84 revenue respondents reported annual sales in the two bands up to $50,000. The distribution also included much larger firms. The sample covered a broader mix than this investigation, including adjacent sectors; it is not a description of makers today. [Original survey, pages 5–7](https://artisaneconomyinitiative.wordpress.com/wp-content/uploads/2016/05/portland-made-collective-survey-report-2015.pdf)
 
-**Outside customers offer a route for money to enter the local economy.** A documented out-of-state commission demonstrates that route. Measuring its contribution requires the payment amount and the portion of labor and purchasing retained locally. Offering nationwide shipping alone does not establish outside sales.
+```maker-figure
+revenue-bands
+```
 
-**Gross activity and healthy livelihoods are different outcomes.** The existing evidence is stronger on employment and receipts than on profit, working hours, income volatility, or workspace burden. A flourishing market can coexist with financially precarious producers.
+The report’s $316.1 million headline estimate combined a survey-based expansion with $216.4 million attributed to just three large firms using a business database. Those additions account for roughly 68% of the headline. Applying one average business size to every artist or workshop member would repeat that concentration problem. **Count solo producers, employer firms, and occasional earners separately.** [Original calculation, page 11](https://artisaneconomyinitiative.wordpress.com/wp-content/uploads/2016/05/portland-made-collective-survey-report-2015.pdf)
 
-**Cultural importance deserves its own evidence.** Participation, skill sharing, cultural expression, and belonging matter alongside income. Our research should document them without assigning speculative monetary values. This first phase cannot establish that makerspaces cause neighborhood recovery, business formation, or improved social outcomes.
+## Shared workshops make production possible
 
-## What the community can add
+Shared spaces spread the cost of tools, workspace, maintenance, and access across users. That can make a project feasible before its maker could justify a private shop. The economic question is what members actually use and earn—not how much equipment a building contains.
 
-| Missing answer | Information needed | Best contributors |
-|---|---|---|
-| Unique makers in Portland | Consistent activity period, work location, duplicate affiliations, people outside formal venues | Makers, operators, guilds, markets |
-| Making a living versus supplementing income | Hours, income dependence, receipts and expenses, seasonality | Individual makers and business owners |
-| Actual space-enabled production | Completed work, active users, tenant businesses, equipment use | Space operators and users |
-| Dollars entering and staying locally | Customer location, production location, local purchases and subcontracting | Producers, purchasers, suppliers |
-| Ability to remain in Portland | Workspace cost, lease security, closures, moves, unmet space needs | Current and former makers and operators |
+At **Past Lives**, members can combine woodworking, metalwork, textiles, and prototyping. Its website reports 175 members and 55 private studios without specifying a measurement period. At **ADX**, the community includes more than 95 creatives, spanning physical and other disciplines. At **NW Marine Art Works**, the operator describes 80 studios and more than 100 artists and makers. These figures show the scale of shared infrastructure. They cannot be added into a count of active paid makers. [Past Lives](https://www.pastlives.space/home) · [ADX](https://artdesignxchange.com/art-studios-portland) · [NW Marine](https://www.nwmarineartworks.com/about)
 
-The [community research kit](community-research-kit.md) supplies questionnaires and a pilot protocol. It deliberately recruits beyond the best-known spaces. An open survey would describe its respondents; it would not become a citywide estimate merely by receiving many responses.
+Specialist facilities reach beyond their walls. Morning Ceramics offers outside firing and wheel rental; Radius offers at-home wheel rental as well as studio membership. A home producer can therefore depend on a shared kiln without being a regular studio member. IPRC provides print and book-making facilities, while PDX Hackerspace and Hedron provide places for technical experimentation. [Morning services](https://www.morningceramics.com/services) · [Radius](https://www.radiusstudio.org/membership/) · [IPRC](https://www.iprc.org/the-studios) · [PDX Hackerspace](https://pdxhackerspace.org/) · [Hedron](https://hhacker.space/)
 
-Several institutions can help. The Office of Arts & Culture and regional cultural planners address the broader ecosystem; Prosper Portland works with business clusters; Oregon Employment Department supplies employment evidence. The regional plan explicitly calls for stronger economic documentation. BEA's state arts accounts provide another context, but its page now says regular production has ended, so annual updates cannot be assumed. [City arts office](https://www.portland.gov/arts) · [Prosper Portland](https://prosperportland.us/our-work/athletic-outdoor-industry/) · [OED data](https://www.qualityinfo.org/data) · [Regional plan](https://ourcreativefuture.org/) · [BEA status](https://www.bea.gov/data/special-topics/arts-and-culture)
+```maker-figure
+workspace
+```
 
-## The answer to Martin
+The 2015 survey’s reported work allocation put 41% at home and 4% in makerspaces. Those historical percentages measure reported work, not people. They explain a durable research problem: **a makerspace survey alone cannot describe the maker economy.** [Survey, pages 16–17](https://artisaneconomyinitiative.wordpress.com/wp-content/uploads/2016/05/portland-made-collective-survey-report-2015.pdf)
 
-Portland's creative economy can be measured in meaningful parts. Existing work establishes a substantial regional creative workforce and considerable nonprofit and independent-business activity. The auditor's published work addresses the stewardship of public arts funding; a complete maker-economy census is not evident in the material reviewed.
+A useful facility measure would be *productive access*: hours of equipment use, outside-service customers, occupied studios, and completed projects, connected privately to whether that work was commercial. Waiting lists and unused capacity matter too. An inexpensive membership is less useful if the required machine is unavailable when an order must ship.
 
-The immediate research opportunity is to connect those economic measures to the people making objects, earning income, buying supplies, sharing equipment, and selling work. **We can already show that this is productive economic activity. Establishing its complete citywide scale—and how well it sustains the people doing it—requires better local participation and business information.**
+## A sale is only the beginning of an income
 
----
+Markets make work visible, but gross sales are only the first line of a business account. Ceramic Showcase’s published 2026 rules give us an unusually clear example: a central sales system, a registration charge, booth fees, and a commission that changes at specified sales thresholds. These are actual event terms; the maker’s sales and production costs below are adjustable assumptions. [OPA participation and sales rules](https://www.oregonpotters.org/showcase-2026)
 
-### About this research
+```maker-figure
+calculator
+```
 
-This is a public-source investigation, not an operator survey or a census. Current website observations are separated from 2022 studies, 2023 Census data, and 2025 payroll data. The case studies are purposively chosen examples, not a representative sample. Eichinger's studio is included as a publicly documented independent producer; his question prompted the research, and no interview or endorsement is implied. Personal contact details from the original submission are omitted.
+The result is money left to compensate the maker and cover remaining costs. It is not profit or an hourly wage. Time spent making unsold stock, packing, selling, and completing required event work also belongs in the account. Studio rent, tools, insurance, association dues, and taxes may still need to be paid.
 
-Read the [methodology](methodology.md), [source registry](sources.md), [case studies](case-studies.md), and [remaining questions and unsent agency inquiries](notes/gaps-and-requests.md).
+This distinction changes what “supporting makers” should mean. More visitors or higher event sales can help, but the stronger measure is whether producers retain enough after costs to continue working. Likewise, a commission from outside Portland brings money into the city only to the extent that production and earnings are retained here.
+
+## Why this matters to Portland’s economy
+
+The evidence points to several concrete economic roles, with different measures of success.
+
+**Livelihoods and supplemental earnings.** Payroll and tax records document paid production. A household may depend on occasional sales as well as a full-time craft business. The next useful questions concern owner earnings, hours, volatility, and the share of household income supplied by making.
+
+**Specialist work for other industries.** PGF’s documented commercial projects and Past Lives’ prototyping offer connect making to retail, product development, institutions, and industrial clients. These relationships may be more economically significant than a producer’s public-facing shop. Contract values and subcontractor payments would establish their size.
+
+**Local purchasing and production relationships.** Clay, wood, glass, hardware, firing, shipping, and specialist labor connect an individual object to other businesses. Bullseye’s Portland glass production illustrates the supplier side of this network. The Joinery project shows a regional material connection. Measuring actual purchases can identify which dollars stay in Portland, which stay in Oregon, and which leave. [Bullseye’s production story](https://www.bullseyeglass.com/bullseye-glass-story/) · [The Joinery project](https://thejoinery.com/blogs/news/brining-oregon-lumber-and-craftsmanship-to-city-team)
+
+**A lower-cost way to start and keep producing.** Shared facilities let people obtain access without owning every machine. To assess their economic contribution, compare the cost of an actual production task with the maker’s next-best alternative: another shop, outsourcing, buying equipment, or declining the job. That comparison is more informative than assuming every member business exists because of the space.
+
+**Repair and longer use.** Reupholstery and furniture repair already appear in business data, while much custom repair is harder to isolate. Its economic value includes paid skilled work and objects returned to use. We should record completed repairs and payments before trying to estimate avoided purchases or environmental savings.
+
+Cultural identity, learning, and belonging matter alongside these accounts. They need their own evidence—who can participate, who feels welcome, and whose work is visible. Their importance does not depend on attaching an invented dollar multiplier.
+
+## How to get to a credible Portland estimate
+
+The next model should build from observed producers and measured business activity. It should not inflate workshop memberships by a guessed citywide factor.
+
+**First, establish the population.** Use one calendar year and three separate targets: people who made things, people paid to make things, and businesses producing eligible work. Verify where production occurred, including Portland outside Multnomah County. Keep sellers who work elsewhere in a separate account of Portland’s market activity.
+
+**Second, audit the discovery register.** Review each source’s coverage, identify individual-versus-business records, link aliases, and resolve activity and location. Sample within discipline and source rather than letting highly visible ceramics or visual art stand in for repair and technical fabrication. Include independent studios, home producers, closed businesses, and less visible networks. Publish how many records remain unresolved.
+
+**Third, use administrative records to test coverage.** Request city-boundary aggregates for selected industries from Oregon Employment Department and Portland’s economic-development and planning staff. The Urban Manufacturing Alliance’s Portland research obtained city and district QCEW data through the Bureau of Planning and Sustainability—an established route worth revisiting. Census mailing-address business counts remain a separate check. [2018 study, methods pages 7–8](https://archive.urbanmfg.org/wp-content/uploads/2018/06/UMA-State-of-Urban-Manufacturing-Portland-City-Snapshot.pdf)
+
+**Fourth, measure money where records already exist.** OPA requires centralized sales, making an anonymized event-sales extract a better starting point than asking exhibitors to remember a year later. Workshop billing can separate memberships, firing, classes, and commissions. Maker accounts can separate revenue, purchases, subcontracting, and owner earnings. None of those private records has been obtained for this publication.
+
+**Finally, estimate only within a defined frame.** For each audited stratum, the count is its eligible records multiplied by an estimated active-and-paid fraction from a probability sample. Revenue should be estimated separately within business-size groups. Disclose nonresponse and location uncertainty. People missing from every list need an independent coverage study; overlap between self-selected directories cannot reliably tell us how many there are.
+
+The [measurement appendix](methodology.md) specifies the formulas, assumptions, and sensitivity checks. The [community research kit](community-research-kit.md) supplies the operator and maker questions, project interviews, and proposed pilot. These are prepared instruments, not completed fieldwork.
+
+**We can already say something substantial:** Portland supports varied forms of physical production, with visible businesses, paid work, specialist suppliers, shared equipment, and several routes to customers. The immediate opportunity is to connect those pieces into an account of who earns a living, what keeps production here, and where access breaks down. That would give Portland a much better basis for action than either a broad creative-economy headline or a count of makerspace members.
