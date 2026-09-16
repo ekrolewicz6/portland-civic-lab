@@ -127,6 +127,59 @@
   border-top: 1px solid #ffffff25;
   padding-top: 1rem;
 }
+.stakesFlow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.8rem;
+}
+.stakesFlow dt {
+  font: 600 0.6rem var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e0a870;
+  margin-bottom: 0.3rem;
+}
+.stakesFlow dd {
+  color: #d1dcd4;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.stakesFlow > svg {
+  color: #8ca992;
+}
+.financialSnapshot .heroStats {
+  margin: 0.5rem 0 0;
+  border-color: #cbd5c4;
+}
+.financialSnapshot .heroStats dt,
+.financialSnapshot .heroStats p,
+.financialSnapshot .heroNote {
+  color: #52604e;
+}
+.financialSnapshot .heroStats dd {
+  color: #244b34;
+}
+.sourceGroup {
+  border-top: 1px solid #cbd5c4;
+}
+.sourceGroup summary {
+  cursor: pointer;
+  color: #23442d;
+  font-weight: 600;
+  padding: 1.2rem 0;
+  font-size: 0.9rem;
+}
+.sourceGroup summary span {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  margin: 0.35rem 0 0 1.1rem;
+  color: #627158;
+}
+.page details[id] {
+  scroll-margin-top: 8rem;
+}
 .councilBrief {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -562,4 +615,21 @@
   .page * {
     scroll-behavior: auto;
   }
+}
+
+.meetingNote {
+  margin-top: 1.3rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #ffffff25;
+  font-size: 0.72rem;
+  line-height: 1.7;
+  color: #c3d1c7;
+}
+.meetingNote > span {
+  display: block;
+  font: 600 0.65rem/1.7 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #e0a870;
+  margin-bottom: 0.2rem;
 }

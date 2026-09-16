@@ -19,6 +19,53 @@ export interface Source {
 }
 
 export const SOURCES: Record<string, Source> = {
+  councilSeptember2026: {
+    id: "councilSeptember2026",
+    title:
+      "September 16, 2026 FPDR financing discussion (agenda and presentations)",
+    org: "Finance and Governance Committee of the Whole",
+    url: "https://www.portland.gov/council/documents/presentation/fpdr-financing-discussion",
+    kind: "primary",
+  },
+  cityFinancing2026: {
+    id: "cityFinancing2026",
+    title:
+      "FPDR Financing: Structural Overview and Funding Mechanics · September 16, 2026",
+    org: "City of Portland",
+    url: "https://www.portland.gov/sites/default/files/council-documents/2026/9.16.26-FPDR-Financing_COTW-Presentation.pdf",
+    kind: "primary",
+  },
+  pewFunding2026: {
+    id: "pewFunding2026",
+    title:
+      "Public Pension Funding Practices: Considerations for Portland · September 16, 2026",
+    org: "David Draine / The Pew Charitable Trusts",
+    url: "https://www.portland.gov/sites/default/files/council-documents/2026/Public-Pension-Funding-Practices.pdf",
+    kind: "analysis",
+  },
+  legalFunding2026: {
+    id: "legalFunding2026",
+    title:
+      "FPDR Funding: Charter and Legal Overview · September 16, 2026 packet",
+    org: "City of Portland",
+    url: "https://www.portland.gov/sites/default/files/council-documents/2026/Funding-Slides-PDF.pdf",
+    kind: "primary",
+  },
+  millimanPresentation2025: {
+    id: "millimanPresentation2025",
+    title:
+      "Actuarial Valuation & Levy Adequacy Analysis · January 28, 2025 (June 2024 data)",
+    org: "Milliman",
+    url: "https://www.portland.gov/sites/default/files/council-documents/2026/FINAL-Milliman-Board-Presentation---Valuation-and-Levy-Analysis.PDF",
+    kind: "actuarial",
+  },
+  oregonCompression: {
+    id: "oregonCompression",
+    title: "Property assessment and taxation: compression and tax limits",
+    org: "Oregon Department of Revenue",
+    url: "https://www.oregon.gov/dor/programs/property/pages/personal-property.aspx",
+    kind: "primary",
+  },
   audit2025: {
     id: "audit2025",
     title: "FPDR FY2024–25 audited financial statements, pp. 10–12 and 25",
@@ -308,55 +355,66 @@ export const SIM_END_YEAR = 2082;
 
 // ── Reform options (for the trade-off menu) ───────────────────────
 
+/** Milliman January 28, 2025 presentation, printed slides 28 and 30.
+ * Selected annual medians, not a single simulated path or household bill.
+ * Nominal levy dollars in millions; RMV rate per $1,000 market value. */
+export const LEVY_MEDIAN_COMPARISON = [
+  { year: 2033, fy: "2032–33", levy: 374.1, rmvRate: 1.69 },
+  { year: 2041, fy: "2040–41", levy: 412.7, rmvRate: 1.36 },
+] as const;
+
+// Editorial comparison of the status quo and the City's four mechanisms (slide 16).
+// These are policy options, not adopted policies or quantified funding proposals.
 export const REFORM_OPTIONS = [
   {
     id: "status-quo",
-    name: "Continue pay-as-you-go",
-    tag: "Existing policy",
-    how: "Collect taxes as benefits come due, while continuing PERS contributions for newer hires.",
-    caseFor:
-      "Avoids an additional prefunding transition. The dedicated levy has capacity in most modeled scenarios.",
-    tradeoff:
-      "Future taxpayers keep paying for past service; the old plan builds little investment cushion.",
-    question:
-      "What tax and service pressure is acceptable through the peak years?",
-    source: "fiveYearPlan2731",
+    name: "Keep paying year by year",
+    tag: "Current approach",
+    when: "Extra saving would strain households or services, but annual benefit payments remain manageable.",
+    ask: "What would make saving affordable? Set a review date; waiting leaves less time to invest.",
+    now: "No extra contribution to build savings. Existing bills can still rise.",
+    later: "Future taxpayers keep paying benefits from taxes.",
+    risk: "Little investment cushion for the old pension.",
   },
   {
-    id: "prefund",
-    name: "Build an invested reserve",
-    tag: "Funding reform",
-    how: "Raise contributions above current benefit needs and invest the difference for future payments.",
-    caseFor:
-      "Investment earnings could reduce future tax contributions and spread the burden differently across generations.",
-    tradeoff:
-      "More money is needed up front. Returns can disappoint, and money committed here cannot fund other priorities.",
-    question: "What contribution path stays affordable under poor returns?",
-    source: "machizDeck",
+    id: "cash",
+    name: "Use existing cash",
+    tag: "Save a lump sum",
+    when: "A windfall or unrestricted surplus remains after protecting reserves and essential needs.",
+    ask: "What else could this cash fund? Compare the value of those alternatives.",
+    now: "Commit available money that could serve other needs.",
+    later: "Investment earnings could reduce future taxes.",
+    risk: "Less cash for other priorities; returns can disappoint.",
+  },
+  {
+    id: "rapid",
+    name: "Raise taxes quickly",
+    tag: "Build savings sooner",
+    when: "Households can afford the increase and earlier investment justifies the tax and service impacts.",
+    ask: "Who pays more or loses services? Does the plan hold up after early investment losses?",
+    now: "A sharp bill increase; other levies may lose revenue.",
+    later: "More money invested earlier could lower later taxes.",
+    risk: "Abrupt tax increases and pressure on other services.",
+  },
+  {
+    id: "gradual",
+    name: "Raise taxes gradually",
+    tag: "Spread the transition",
+    when: "Modest contributions are sustainable, with manageable tax and service impacts.",
+    ask: "Can contributions survive a recession? Compare starting small now with starting larger later.",
+    now: "Smaller initial increases, spread over more years.",
+    later: "Savings build more slowly; relief could arrive later.",
+    risk: "Still adds tax and service pressure; needs sustained contributions.",
   },
   {
     id: "pob",
     name: "Borrow to invest",
-    tag: "Additional financial risk",
-    how: "Issue pension-obligation bonds to fund a reserve immediately, then repay the debt from future revenues.",
-    caseFor:
-      "Advocates see a way to soften an initial contribution increase if investments outperform borrowing costs.",
-    tradeoff:
-      "Debt payments remain due after market losses. GFOA recommends against these bonds.",
-    question: "Why take this risk instead of prefunding without debt?",
-    source: "gfoaBonds",
-  },
-  {
-    id: "study",
-    name: "Compare before committing",
-    tag: "Decision process",
-    how: "Publish an independent comparison of the status quo, phased prefunding and any proposed borrowing.",
-    caseFor:
-      "Makes costs, downside scenarios and legal requirements visible before a lasting commitment.",
-    tradeoff:
-      "A study does not fund benefits. It needs a deadline, a responsible decision-maker and a public response.",
-    question: "Who will act on the findings, and by when?",
-    source: "charterLevy",
+    tag: "Add debt",
+    when: "Borrowing costs are favorable and the City can repay even after poor investment results.",
+    ask: "Who covers investment losses and debt payments? GFOA recommends against these bonds.",
+    now: "Invest borrowed money and start repaying the loan.",
+    later: "Taxpayers benefit if returns beat interest and fees.",
+    risk: "Debt stays due after losses. GFOA advises against these bonds.",
   },
 ] as const;
 

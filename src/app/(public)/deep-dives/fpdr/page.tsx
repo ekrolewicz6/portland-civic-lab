@@ -10,6 +10,12 @@ import LevyGrowthChart from "@/components/deep-dives/fpdr/LevyGrowthChart";
 import SpendingChart from "@/components/deep-dives/fpdr/SpendingChart";
 import WhoBenefits from "@/components/deep-dives/fpdr/WhoBenefits";
 import ReformMenu from "@/components/deep-dives/fpdr/ReformMenu";
+import {
+  CompressionDiagram,
+  LevyOutlook,
+  FundingTradeoff,
+  CouncilDecision,
+} from "@/components/deep-dives/fpdr/CouncilBriefing";
 import SourceLink from "@/components/deep-dives/fpdr/SourceLink";
 import { pageMeta } from "@/lib/page-meta";
 import styles from "./fpdr.module.css";
@@ -27,8 +33,8 @@ const NAV = [
   ["cost", "Your bill"],
   ["growing", "The outlook"],
   ["hard", "The tradeoff"],
+  ["menu", "Decide"],
   ["fix", "Explore"],
-  ["menu", "Options"],
   ["sources", "Sources"],
 ];
 
@@ -46,14 +52,12 @@ export default function FpdrDeepDivePage() {
                 Pay more now. <em>Pay less later?</em>
               </h1>
               <p className={styles.heroLead}>
-                Portland must pay promised pensions. The choice is whether to
-                put more money aside today so investment earnings could reduce
-                future tax bills.
+                Portland pays older police and fire pensions from each year’s
+                taxes. Should it also build savings to help pay future benefits?
               </p>
               <p className={styles.heroQuestion}>
-                That money has to come from somewhere: higher taxes, other
-                priorities, or borrowing. Future savings are possible—not
-                guaranteed.
+                Saving sooner could lower future costs. Today’s residents bear
+                the extra cost—and taxpayers carry the investment risk.
               </p>
               <div className={styles.heroActions}>
                 <a href="#menu" className={styles.primaryLink}>
@@ -71,33 +75,47 @@ export default function FpdrDeepDivePage() {
               <h2 id="fpdr-stakes-title" className={styles.kicker}>
                 Who benefits. Who carries the cost.
               </h2>
-              <div>
-                <h3>Keep paying year by year</h3>
-                <p>
-                  Today’s taxpayers avoid an extra saving contribution.
-                  Tomorrow’s taxpayers keep paying with little investment income
-                  to help.
-                </p>
-              </div>
-              <div>
-                <h3>Start saving and investing</h3>
-                <p>
-                  Future taxpayers could pay less. Today’s residents fund the
-                  head start through higher taxes or money that could serve
-                  other needs.
-                </p>
-              </div>
-              <div>
-                <h3>Borrow to invest</h3>
-                <p>
-                  Taxpayers could benefit if returns beat borrowing costs. They
-                  still owe the debt if investments lose money.
-                </p>
-              </div>
+              {[
+                {
+                  title: "Keep paying year by year",
+                  now: "No extra saving contribution",
+                  later: "Taxes keep paying benefits",
+                },
+                {
+                  title: "Save and invest",
+                  now: "More tax or cash committed",
+                  later: "Potentially lower taxes",
+                },
+                {
+                  title: "Borrow to invest",
+                  now: "New debt to repay",
+                  later: "Debt remains even after losses",
+                },
+              ].map((choice) => (
+                <div key={choice.title}>
+                  <h3>{choice.title}</h3>
+                  <dl className={styles.stakesFlow}>
+                    <div>
+                      <dt>Now</dt>
+                      <dd>{choice.now}</dd>
+                    </div>
+                    <ArrowRight size={17} aria-hidden="true" />
+                    <div>
+                      <dt>Later</dt>
+                      <dd>{choice.later}</dd>
+                    </div>
+                  </dl>
+                </div>
+              ))}
               <p className={styles.asideFoot}>
-                These funding options leave promised benefits unchanged. The
-                Lab’s summary of the{" "}
-                <SourceLink id="fiveYearPlan2731">City’s outlook</SourceLink>{" "}
+                Promised benefits stay the same. The Lab’s synthesis of{" "}
+                <SourceLink id="pewFunding2026">
+                  Pew’s funding advice
+                </SourceLink>
+                , the{" "}
+                <SourceLink id="cityFinancing2026">
+                  City’s transition concerns
+                </SourceLink>{" "}
                 and <SourceLink id="gfoaBonds">borrowing risks</SourceLink>.
               </p>
             </aside>
@@ -105,42 +123,26 @@ export default function FpdrDeepDivePage() {
           <div className={styles.councilBrief}>
             <h2>Before Council acts</h2>
             <p>
-              <strong>Name who pays more now.</strong> Show the next five years
-              of costs, what that money would otherwise fund, when savings could
-              arrive, and who covers a loss.
+              <strong>Start now, start smaller, or wait?</strong> Compare the
+              costs, protect essential services, and say what evidence would
+              change the decision.
             </p>
             <a href="#menu">
-              What a proposal must answer <ArrowRight size={16} />
+              When to act—and what to ask <ArrowRight size={16} />
             </a>
           </div>
+          <p className={styles.meetingNote}>
+            <span>September 16, 2026 · Council briefing</span>
+            Financing is the focus; benefit changes are outside the scope.{" "}
+            <SourceLink id="councilSeptember2026">
+              Agenda &amp; presentations
+            </SourceLink>
+          </p>
           <p className={styles.byline}>
             Portland Civic Lab · Co-authored with{" "}
             <SourceLink id="machizOpEd">Kevin Machiz, CFA, FRM</SourceLink>
             <br />
             Reviewed September 16, 2026 · Figures dated below
-          </p>
-          <dl className={styles.heroStats}>
-            <div>
-              <dt>Pension liability · June 2025</dt>
-              <dd>{fmtMoney(HEADLINE.liability)}</dd>
-              <p>Present value of earned benefits</p>
-            </div>
-            <div>
-              <dt>Assets / liability · June 2025</dt>
-              <dd>{fmtPct(HEADLINE.fundedRatio, 2)}</dd>
-              <p>{fmtMoney(HEADLINE.assets)} in plan net assets</p>
-            </div>
-            <div>
-              <dt>Authorized levy · FY2026–27</dt>
-              <dd>{fmtMoney(HEADLINE.annualLevyFY27)}</dd>
-              <p>Includes more than the old pension</p>
-            </div>
-          </dl>
-          <p className={styles.heroNote}>
-            The liability is an accounting estimate, not a bill due today.
-            Future tax revenues are not counted as pension assets.{" "}
-            <SourceLink id="audit2025">2025 audit</SourceLink> ·{" "}
-            <SourceLink id="levy2027">2026–27 levy ordinance</SourceLink>
           </p>
         </div>
       </section>
@@ -202,6 +204,42 @@ export default function FpdrDeepDivePage() {
             <SourceLink id="adopted2027">Adopted budget</SourceLink>.
           </p>
         </div>
+        <details className={`${styles.disclosure} ${styles.financialSnapshot}`}>
+          <summary>
+            The financial snapshot: liability, assets and annual levy
+          </summary>
+          <dl className={styles.heroStats}>
+            <div>
+              <dt>Pension liability · June 2025</dt>
+              <dd>{fmtMoney(HEADLINE.liability)}</dd>
+              <p>Present value of earned benefits</p>
+            </div>
+            <div>
+              <dt>Assets / liability · June 2025</dt>
+              <dd>{fmtPct(HEADLINE.fundedRatio, 2)}</dd>
+              <p>{fmtMoney(HEADLINE.assets)} in plan net assets</p>
+            </div>
+            <div>
+              <dt>Authorized levy · FY2026–27</dt>
+              <dd>{fmtMoney(HEADLINE.annualLevyFY27)}</dd>
+              <p>Includes more than the old pension</p>
+            </div>
+          </dl>
+          <p className={styles.heroNote}>
+            The liability is an accounting estimate, not a bill due today.
+            Future tax revenues are not counted as pension assets.{" "}
+            <SourceLink id="audit2025">2025 audit</SourceLink> ·{" "}
+            <SourceLink id="levy2027">2026–27 levy ordinance</SourceLink>
+          </p>
+        </details>
+        <details id="who" className={styles.disclosure}>
+          <summary>Who receives these pensions?</summary>
+          <p>
+            Former public-safety employees and surviving family members. These
+            financing options leave their promised benefits unchanged.
+          </p>
+          <WhoBenefits />
+        </details>
       </Section>
 
       <Section
@@ -209,7 +247,7 @@ export default function FpdrDeepDivePage() {
         layout="stacked"
         tone="warm"
         eyebrow="02 / Your bill"
-        title="Make the tax line tangible."
+        title="What does it cost you?"
         lead="Start with the assessed value on your FY2025–26 statement, not your home's sale price. Reconstruct that year's charge, then explore the City's forecast rates."
       >
         <PersonalCostCalculator />
@@ -226,13 +264,14 @@ export default function FpdrDeepDivePage() {
             <SourceLink id="levy2027">Levy ordinance</SourceLink>.
           </p>
         </div>
+        <CompressionDiagram />
       </Section>
 
       <Section
         id="growing"
         eyebrow="03 / The outlook"
-        title="A rising bill. A long transition."
-        lead="The pressure is real, but “rises forever” is the wrong story. Old-plan costs eventually decline; PERS contributions for the active workforce continue."
+        title="Will the bill keep growing?"
+        lead="Old-pension costs eventually decline. Contributions for newer workers continue. A falling tax rate does not necessarily mean a smaller bill."
       >
         <div className={styles.chartPanel}>
           <div className={styles.panelHeading}>
@@ -247,156 +286,69 @@ export default function FpdrDeepDivePage() {
             <SourceLink id="levy2027">FY27 ordinance</SourceLink>.
           </p>
         </div>
+        <LevyOutlook />
         <div className={styles.outlook}>
           <div>
-            <span className={styles.miniLabel}>The near-term pressure</span>
-            <h3>Two pension systems at once</h3>
+            <span className={styles.miniLabel}>A long transition</span>
+            <h3>The old promises last for decades</h3>
             <p>
-              The City&apos;s plan expects total FPDR expenses to peak around
-              2039 in nominal dollars. Wages, retirements and PERS costs can
-              move that path.
+              Legacy benefit payments are projected to crest in the mid-to-late
+              2030s and then decline gradually. PERS contributions and other
+              fund costs continue.
             </p>
-            <SourceLink id="fiveYearPlan2731">
-              Five-year plan, pp. 1–2
+            <SourceLink id="millimanPresentation2025">
+              Milliman, printed slides 5 and 10–12
             </SourceLink>
           </div>
           <div>
             <span className={styles.miniLabel}>The capacity check</span>
-            <h3>Low modeled risk of hitting the cap</h3>
+            <h3>Below the cap in over 98% of scenarios</h3>
             <p>
-              The actuary found a levy-cap breach in fewer than 2% of 10,000
-              scenarios through FY2043–44. That is a conditional model result,
-              not a guarantee of affordable taxes.
+              Milliman’s model stays within the levy cap through FY2043–44 in
+              over 98% of 10,000 scenarios. That tests payment capacity—not
+              whether taxes are affordable or other services are protected.
             </p>
-            <SourceLink id="millimanLevy2025">
-              Levy adequacy analysis
+            <SourceLink id="millimanPresentation2025">
+              Milliman, printed slide 30
             </SourceLink>
           </div>
         </div>
         <details className={styles.disclosure}>
-          <summary>Why can this affect other public services?</summary>
+          <summary>What the model does—and does not—test</summary>
           <p>
-            Oregon&apos;s property-tax limits can reduce collections on a
-            property when combined levies reach the limit. A larger FPDR levy
-            can increase that “compression.” This is different from saying every
-            FPDR dollar directly removes a dollar from parks or libraries.{" "}
-            <SourceLink id="fiveYearPlan2731">City forecast, p. 4</SourceLink>.
+            The model varies inflation, market values and Oregon PERS investment
+            returns. It does not vary every risk: property-tax law changes,
+            workforce changes, demographic surprises, and market-linked changes
+            in compression or delinquency are among the exclusions. The result
+            covers FY2025–2044, not all future years.
+            <SourceLink id="millimanPresentation2025">
+              {" "}
+              Milliman, printed slides 20–23 and 30
+            </SourceLink>
+            .
           </p>
         </details>
       </Section>
 
       <Section
-        id="who"
-        tone="warm"
-        eyebrow="04 / The promise"
-        title="People, not just liabilities."
-        lead="These pensions support former public-safety employees and surviving family members. Funding reform changes how benefits are financed; it does not make those commitments disappear."
+        id="hard"
+        layout="stacked"
+        eyebrow="04 / The central tradeoff"
+        title="Why not just start saving?"
+        lead="Portland already saves for newer workers. Catching up on older pensions adds a cost today for a possible benefit later."
       >
-        <WhoBenefits />
+        <FundingTradeoff />
       </Section>
 
       <Section
-        id="hard"
+        id="menu"
         layout="stacked"
-        eyebrow="05 / The central tradeoff"
-        title="The strongest case on each side."
-        lead="Both approaches leave taxpayers responsible for the promise. They differ in when taxpayers pay, how much investment risk they take, and what else today's money could do."
+        eyebrow="05 / The choices"
+        title="Which option fits—and when?"
+        lead="Match the approach to what Portland can afford and withstand. Lower interest rates alone are not a reason to act."
       >
-        <div className={styles.arguments}>
-          <article className={styles.caseFor}>
-            <span className={styles.miniLabel}>The case for prefunding</span>
-            <h3>Put time and investment earnings to work.</h3>
-            <p>
-              Building assets can reduce the taxes needed later and stop leaving
-              nearly the entire old-plan bill to future residents.
-            </p>
-            <ul>
-              <li>
-                <strong>Investment income</strong> could pay part of future
-                benefits.
-              </li>
-              <li>
-                <strong>An explicit contribution plan</strong> makes the
-                transition cost visible.
-              </li>
-              <li>
-                <strong>More assets</strong> can reduce reliance on future tax
-                collections.
-              </li>
-            </ul>
-            <div className={styles.argumentCatch}>
-              <strong>The hard question</strong>
-              <p>
-                Where does the extra money come from during the years when
-                budgets are already under pressure?
-              </p>
-            </div>
-            <SourceLink id="machizDeck">
-              Machiz&apos;s argument for funding reform
-            </SourceLink>
-          </article>
-          <article className={styles.caseCaution}>
-            <span className={styles.miniLabel}>The case for caution</span>
-            <h3>Protect today&apos;s capacity to pay.</h3>
-            <p>
-              The existing levy can cover benefits in most tested scenarios.
-              Adding contributions now has a cost, even if it reduces later tax
-              payments.
-            </p>
-            <ul>
-              <li>
-                <strong>Current households</strong> already finance both
-                generations.
-              </li>
-              <li>
-                <strong>Investment returns</strong> are uncertain; benefits
-                still have to be paid.
-              </li>
-              <li>
-                <strong>Earlier contributions</strong> compete with other uses
-                of public money.
-              </li>
-            </ul>
-            <div className={styles.argumentCatch}>
-              <strong>The hard question</strong>
-              <p>
-                How much future tax pressure is worth accepting to avoid a
-                larger transition cost today?
-              </p>
-            </div>
-            <SourceLink id="fiveYearPlan2731">
-              The City&apos;s transition and risk assessment
-            </SourceLink>
-          </article>
-        </div>
-        <div className={styles.perspectives}>
-          <div>
-            <span>For households</span>
-            <p>
-              Show the near-term bill, not just decades of potential savings.
-              Renters may face indirect costs through rents and services;
-              pass-through is not one-for-one.
-            </p>
-          </div>
-          <div>
-            <span>For workers & retirees</span>
-            <p>
-              Keep benefits dependable. A funding debate should distinguish
-              earned compensation from the risks of financing it.
-            </p>
-          </div>
-          <div>
-            <span>For service users</span>
-            <p>
-              Compare the transition against other priorities—and identify who
-              absorbs losses if investments underperform.
-            </p>
-          </div>
-        </div>
-        <p className={styles.sourceNote}>
-          These questions are the Lab&apos;s synthesis of the tradeoffs, not
-          claims that every member of a group takes the same position.
-        </p>
+        <ReformMenu />
+        <CouncilDecision />
       </Section>
 
       <Section
@@ -411,60 +363,12 @@ export default function FpdrDeepDivePage() {
       </Section>
 
       <Section
-        id="menu"
-        layout="stacked"
-        eyebrow="07 / The choices"
-        title="Prefunding and borrowing are different decisions."
-        lead="There is more than one way to change the timing of contributions. A phased transition could be evaluated alongside these options; the simulator is only one illustrative schedule."
-      >
-        <ReformMenu />
-        <div className={styles.decision}>
-          <div>
-            <span className={styles.miniLabel}>
-              What would make a decision ready?
-            </span>
-            <h3>Ask for a comparison the public can test.</h3>
-          </div>
-          <ol>
-            <li>
-              <span>01</span>
-              <p>
-                <strong>Price the transition.</strong> Show annual
-                contributions, distributional effects and the competing uses of
-                that money.
-              </p>
-            </li>
-            <li>
-              <span>02</span>
-              <p>
-                <strong>Test the downside.</strong> Include weak returns, early
-                market losses and adverse wage or tax-base changes.
-              </p>
-            </li>
-            <li>
-              <span>03</span>
-              <p>
-                <strong>Name the authority.</strong> Identify required charter
-                changes, the public vote if needed, and who must act by when.
-              </p>
-            </li>
-          </ol>
-        </div>
-        <p className={styles.sourceNote}>
-          The charter assigns annual funding roles to the FPDR Board and City
-          Council. A different funding structure needs a legal review; not every
-          administrative improvement requires a charter vote.{" "}
-          <SourceLink id="charterLevy">Charter §5-103</SourceLink>.
-        </p>
-      </Section>
-
-      <Section
         id="sources"
         layout="stacked"
         tone="warm"
-        eyebrow="08 / Evidence & method"
+        eyebrow="07 / Evidence & method"
         title="Facts, forecasts and choices—kept distinct."
-        lead="Reviewed September 16, 2026. Source dates vary: audited finances through June 2025, an adopted FY2026–27 budget, and beneficiary detail from the June 2024 valuation."
+        lead="Includes the September 16, 2026 Council packet. The Milliman slides in that packet are dated January 2025 and use June 2024 data. Audited finances run through June 2025."
       >
         <div className={styles.evidenceKey}>
           <div>
@@ -505,11 +409,11 @@ export default function FpdrDeepDivePage() {
           </summary>
           <p>
             Kevin Machiz, a co-author, advocates prefunding. His proposal is
-            labeled as analysis. The City&apos;s assessment of payment capacity
-            and transition costs, and GFOA&apos;s position against
-            pension-obligation bonds, are presented alongside it. The comparison
-            and decision questions are editorial synthesis; this page does not
-            establish that one policy is optimal.
+            labeled as analysis. Pew’s advice to compare funding approaches, the
+            City&apos;s assessment of payment capacity and transition costs, and
+            GFOA&apos;s position against pension-obligation bonds, are presented
+            alongside it. The comparison and decision questions are editorial
+            synthesis; this page does not establish that one policy is optimal.
           </p>
         </details>
         <div className={styles.sourceGrid}>
@@ -527,8 +431,14 @@ export default function FpdrDeepDivePage() {
               ],
             },
             {
-              title: "The rules & competing arguments",
+              title: "Council’s briefing & the policy choices",
               ids: [
+                "councilSeptember2026",
+                "cityFinancing2026",
+                "pewFunding2026",
+                "legalFunding2026",
+                "millimanPresentation2025",
+                "oregonCompression",
                 "charterLevy",
                 "oregonAssessment",
                 "machizDeck",
@@ -536,8 +446,11 @@ export default function FpdrDeepDivePage() {
               ],
             },
           ].map((group) => (
-            <div key={group.title}>
-              <h3>{group.title}</h3>
+            <details key={group.title} className={styles.sourceGroup}>
+              <summary>
+                {group.title}
+                <span>{group.ids.length} sources</span>
+              </summary>
               {group.ids.map((id) => (
                 <a
                   key={id}
@@ -552,7 +465,7 @@ export default function FpdrDeepDivePage() {
                   <ArrowRight size={15} />
                 </a>
               ))}
-            </div>
+            </details>
           ))}
         </div>
       </Section>

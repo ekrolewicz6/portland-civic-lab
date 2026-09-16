@@ -46,7 +46,8 @@ export default function ReformSimulator() {
           Each scenario assumes a constant return known in advance and
           recalculates the required contributions. This shows the mechanics of
           prefunding; it does not predict investment performance or the full
-          FPDR levy.
+          FPDR levy. It excludes tax compression and effects on other services;
+          it cannot replace the comparison Council needs.
         </p>
       </div>
       <div className={styles.simControls}>
