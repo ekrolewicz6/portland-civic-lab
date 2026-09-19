@@ -71,7 +71,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
   function focus() {
     requestAnimationFrame(() => {
       heading.current?.focus({ preventScroll: true });
-      heading.current?.scrollIntoView({ block: "start" });
+      heading.current?.scrollIntoView({ block: "start", behavior: "instant" });
     });
   }
   function toggle(id: string) {
@@ -178,14 +178,13 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
       data-selected={selected.length > 0 && !paired}
       aria-label="Quick candidate comparison"
     >
-      <div className={styles.topline}>Your choice. The evidence at hand.</div>
       <h2 ref={heading} tabIndex={-1}>
-        {paired ? "See their differences." : "Start with what matters to you."}
+        {paired ? "Side by side." : "Compare candidates."}
       </h2>
       <p className={styles.lede}>
         {paired
-          ? "The same topic, two candidates. Switch topics to keep exploring."
-          : "Choose a topic to see what candidates propose. Select two to compare."}
+          ? "Switch topics to compare what they propose."
+          : "Choose a topic. Select two candidates to compare."}
       </p>
       <label className={styles.topicControl}>
         Explore a topic
@@ -194,7 +193,10 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
           onChange={(event) => {
             setTopic(event.target.value as ExplorerTopic);
             requestAnimationFrame(() =>
-              heading.current?.scrollIntoView({ block: "start" }),
+              heading.current?.scrollIntoView({
+                block: "start",
+                behavior: "instant",
+              }),
             );
           }}
         >

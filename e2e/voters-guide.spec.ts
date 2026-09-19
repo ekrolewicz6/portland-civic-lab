@@ -175,7 +175,9 @@ test("mobile comparisons fit the screen and show matched issue cards", async ({
   await page.getByRole("checkbox").nth(1).check();
   await page.getByRole("link", { name: "See comparison ↑" }).click();
   await page.getByRole("button", { name: "Taxes & spending" }).click();
-  const cards = page.getByRole("region", { name: /comparison$/ });
+  const cards = page
+    .locator("#compare")
+    .getByRole("region", { name: /comparison$/ });
   await expect(cards).toHaveCount(2);
   for (const card of await cards.all()) {
     const box = await card.boundingBox();
@@ -254,9 +256,9 @@ test("Portland portrait directory preserves the field, credits and comparison na
     .getByRole("checkbox", { name: "Compare Angelita Morillo", exact: true })
     .check();
   await page.getByRole("link", { name: "See comparison ↑" }).click();
-  await expect(page.getByRole("region", { name: /comparison$/ })).toHaveCount(
-    2,
-  );
+  await expect(
+    page.locator("#compare").getByRole("region", { name: /comparison$/ }),
+  ).toHaveCount(2);
   await directory.getByRole("link", { name: /Darren McCormick/ }).click();
   await expect(page.locator("article")).toHaveCount(21);
   await expect(page).toHaveURL(/#darren-mccormick$/);

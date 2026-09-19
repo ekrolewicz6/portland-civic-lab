@@ -67,11 +67,9 @@ for (const district of [3, 4]) {
       }
       const missing = race.candidates.filter((p) => !hasTopic(p, topic.id));
       if (missing.length) {
-        const gaps = guide
-          .locator("details")
-          .filter({
-            has: page.locator("summary", { hasText: "more candidates" }),
-          });
+        const gaps = guide.locator("details").filter({
+          has: page.locator("summary", { hasText: "more candidates" }),
+        });
         await gaps.locator("summary").click();
         for (const person of missing)
           await expect(
@@ -124,7 +122,7 @@ test("District 4 homelessness leads to real comparisons and carries selections i
   await guide.getByRole("button", { name: "Compare these two →" }).click();
   await expect(guide.locator("[data-candidate]")).toHaveCount(2);
   await expect(
-    guide.getByRole("heading", { name: "See their differences." }),
+    guide.getByRole("heading", { name: "Side by side." }),
   ).toBeInViewport();
   await guide.getByLabel("Explore a topic").selectOption("climate");
   await expect(guide.locator('[data-candidate="olivia-clark"]')).toContainText(
