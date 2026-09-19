@@ -1,12 +1,17 @@
 import type { Candidate, Evidence } from "./types";
+import { councilDecisions } from "./council-decisions";
+import { decisionAccounts } from "./council-record-accounts";
 
-export const discoveryVersion = "2026-09-19.1";
+export const discoveryVersion = "2026-09-19.2";
 export type Issue = "housing" | "safety" | "money" | "climate";
 export type Question = {
   id: string;
   title: string;
   context: string;
   issue: Issue;
+  priority: string;
+  decisionId: string;
+  optional?: boolean;
   options: { id: string; text: string }[];
 };
 export const priorities = [
@@ -41,274 +46,130 @@ export const priorities = [
     detail: "Climate funding and protection from pollution.",
   },
 ] as const;
-export const questions: Question[] = [
+// Ask about the actual decision. A broad campaign goal cannot establish a vote on it.
+const choices = [
+  { id: "yes", text: "Yes — I would support this proposal." },
+  { id: "no", text: "No — I would oppose this proposal." },
   {
-    id: "housing",
-    issue: "housing",
-    title: "Which housing approach would you most like Council to advance?",
-    context:
-      "These tools can work together. Choose the approach you most want to see; choosing it does not mean you oppose the others.",
-    options: [
-      {
-        id: "build",
-        text: "Make it easier to build homes by changing permit rules, fees or other barriers.",
-      },
-      {
-        id: "public",
-        text: "Expand publicly owned or community-owned homes that stay affordable.",
-      },
-      {
-        id: "tenants",
-        text: "Strengthen tenant protections and help people stay in their homes.",
-      },
-    ],
-  },
-  {
-    id: "homelessness",
-    issue: "safety",
-    title: "What would you most like to see in a response to homelessness?",
-    context:
-      "Housing, treatment and rules for public space are different parts of the response. A promise also needs available places and services for people to go to.",
-    options: [
-      {
-        id: "care",
-        text: "Expand housing and voluntary health or addiction services.",
-      },
-      {
-        id: "rules",
-        text: "Pair shelter or services with enforcement of rules for public space.",
-      },
-      {
-        id: "county",
-        text: "Give the County primary responsibility for homelessness services.",
-      },
-    ],
-  },
-  {
-    id: "safety",
-    issue: "safety",
-    title: "Which part of public safety most needs attention?",
-    context:
-      "Police, unarmed responders and health workers have different jobs. Supporting one does not establish opposition to another.",
-    options: [
-      {
-        id: "police",
-        text: "Increase police staffing, investigations or emergency response capacity.",
-      },
-      { id: "unarmed", text: "Expand unarmed responses to people in crisis." },
-      {
-        id: "combined",
-        text: "Develop coordinated police and health-worker responses.",
-      },
-    ],
-  },
-  {
-    id: "services",
-    issue: "money",
-    title: "What change would you most like to see in city spending?",
-    context:
-      "Promises to save money need specific examples. Cutting a cost can also reduce a service, so the details matter.",
-    options: [
-      {
-        id: "scrutiny",
-        text: "Scrutinize costs, contracts and results before making new commitments.",
-      },
-      {
-        id: "maintenance",
-        text: "Put existing services and maintenance ahead of new projects.",
-      },
-      {
-        id: "public",
-        text: "Invest more in public services and publicly owned assets.",
-      },
-    ],
-  },
-  {
-    id: "transport",
-    issue: "climate",
-    title: "Which transportation approach do you want to explore?",
-    context:
-      "Street space and funding are limited. Council can change city streets; transit fares and service also require regional partners.",
-    options: [
-      {
-        id: "active",
-        text: "Make more room for reliable buses, walking and cycling.",
-      },
-      {
-        id: "fares",
-        text: "Work with transit agencies to reduce or remove fares.",
-      },
-      {
-        id: "lanes",
-        text: "Oppose the proposed business-access-and-transit lanes on 82nd Avenue.",
-      },
-    ],
-  },
-  {
-    id: "climate",
-    issue: "climate",
-    title: "Which climate or environmental action matters most to you?",
-    context:
-      "Portland can invest in climate work and set rules for major facilities. The Portland Clean Energy Fund, often called PCEF, is also at the center of debates about paying for city infrastructure. Choose one starting point; the full guide covers the other decisions too.",
-    options: [
-      {
-        id: "protect",
-        text: "Keep spending tied to climate purposes and protect the fund.",
-      },
-      {
-        id: "water",
-        text: "Consider climate-fund money for water infrastructure to reduce pressure on water bills.",
-      },
-      { id: "oil", text: "Oppose expansion of oil-train operations." },
-      { id: "data", text: "Restrict new large data centers." },
-    ],
-  },
-  {
-    id: "funding",
-    issue: "money",
-    title: "How would you prefer to fund city priorities?",
-    context:
-      "These approaches can coexist. This question identifies a preference, not agreement with every tax or every possible cut.",
-    options: [
-      {
-        id: "audit",
-        text: "Look for savings or spending reductions before raising taxes or fees.",
-      },
-      {
-        id: "targeted",
-        text: "Consider additional taxes aimed at large businesses, wealth or vacant property.",
-      },
-      {
-        id: "partners",
-        text: "Seek private partners, philanthropy or sponsorships for public projects.",
-      },
-    ],
-  },
-  {
-    id: "budget",
-    issue: "money",
-    title: "What is your approach to public money for Moda Center?",
-    context:
-      "Keeping the Trail Blazers and agreeing to a particular public subsidy are separate questions. A candidate may support the team while rejecting a proposed deal.",
-    options: [
-      { id: "yes", text: "Support public investment in renovating the arena." },
-      {
-        id: "conditions",
-        text: "Consider a deal only with acceptable public costs and protections.",
-      },
-      {
-        id: "no",
-        text: "Oppose public spending on arena renovations or retaining the team.",
-      },
-    ],
+    id: "depends",
+    text: "It depends — I would need changes or more information.",
   },
 ];
-
-// Authored positive-support mappings. Unlisted choices are UNKNOWN, never inferred opposition.
-// Each mapping uses the exact source and full position from the existing issue brief.
-const rows: Record<string, Partial<Record<string, string[]>>> = {
-  "ali-beaudoin": { services: ["scrutiny"] },
-  "joel-corcoran": { services: ["scrutiny"] },
-  "guy-frankenstein": { funding: ["targeted"] },
-  "matthias-hallett": {
-    housing: ["build"],
-    safety: ["police"],
-    services: ["scrutiny"],
+export const questions: Question[] = [
+  {
+    id: "homebuyer-income",
+    priority: "housing",
+    issue: "housing",
+    decisionId: "homebuyer-income",
+    title:
+      "Would you let higher-income buyers qualify for this housing fee break?",
+    context:
+      "Portland temporarily removed the buyer income limit for certain unsold homes approved before 2026. The homes still have a price limit, and buyers must live in them. Supporters want the homes sold; the question is whether the benefit should stay limited by income.",
+    options: choices,
   },
-  "patrick-hilton": {
-    housing: ["public"],
-    homelessness: ["rules"],
-    funding: ["targeted"],
+  {
+    id: "camp-removal",
+    priority: "homelessness",
+    issue: "safety",
+    decisionId: "camp-removal",
+    title:
+      "Would you move money from camp removals to this package of services?",
+    context:
+      "A 2025 proposal would cut about $4.3 million from the camp-removal program as part of a package supporting housing, food, immigration services and city staff. This meant less money for removals. It would not repeal camping restrictions.",
+    options: choices,
   },
-  "larry-kelly": {
-    housing: ["build"],
-    homelessness: ["care"],
-    safety: ["unarmed"],
+  {
+    id: "oversight-funding",
+    priority: "safety",
+    issue: "safety",
+    decisionId: "oversight-funding",
+    title:
+      "Would you use expected savings in police oversight to fund police and fire services?",
+    context:
+      "Council considered $7.68 million for police support, training and fire services. It would use emergency reserves first, then replace that money with expected unspent funds from the police oversight office. The proposal did not abolish oversight; the savings were not yet certain.",
+    options: choices,
   },
-  "tiffany-koyama-lane": {
-    housing: ["public", "tenants"],
-    services: ["public"],
-    transport: ["active"],
-    climate: ["data"],
+  {
+    id: "water-rates",
+    priority: "services",
+    issue: "money",
+    decisionId: "water-rates",
+    title: "Would you approve this increase in water bills?",
+    context:
+      "The 2026 rate increase raised a typical monthly water charge from $65.57 to $70.89, before sewer and stormwater charges. It provided more revenue for the water system while increasing household costs. Council approved it over objections from some members.",
+    options: choices,
   },
-  "keir-legree": { safety: ["police"] },
-  "esther-leon": {
-    housing: ["public", "build"],
-    homelessness: ["care"],
-    safety: ["unarmed"],
-    funding: ["targeted"],
-    transport: ["active"],
+  {
+    id: "street-fee",
+    priority: "transport",
+    issue: "climate",
+    decisionId: "street-fee",
+    title:
+      "Would you charge households a monthly fee for street repairs and safety?",
+    context:
+      "The approved fee starts in January 2027: $12 a month for a typical single-family home or $8.40 per apartment. Three-quarters goes to street maintenance and one-quarter to safety. It adds funding for streets and another charge for households.",
+    options: choices,
   },
-  "darren-mccormick": { safety: ["police"] },
-  "angelita-morillo": {
-    housing: ["tenants"],
-    safety: ["unarmed"],
-    services: ["public"],
-    transport: ["active"],
-    climate: ["oil", "data"],
+  {
+    id: "zenith-enforcement",
+    priority: "climate",
+    issue: "climate",
+    decisionId: "zenith-enforcement",
+    title:
+      "Would you let residents sue to enforce Zenith’s pipeline agreement?",
+    context:
+      "Council considered giving residents a right to sue over violations of the city’s pipeline agreement as a condition of transferring it to a new owner. That would add a way to enforce the agreement. It would not shut down the terminal or decide its air permit.",
+    options: choices,
   },
-  "steve-novick": {
-    housing: ["build"],
-    homelessness: ["rules"],
-    safety: ["police", "unarmed"],
-    climate: ["water"],
-    budget: ["conditions"],
+  {
+    id: "services-first",
+    priority: "services",
+    issue: "money",
+    decisionId: "services-first",
+    optional: true,
+    title:
+      "Would you use climate-fund interest to help keep other city services running?",
+    context:
+      "A June 2026 proposal would use about $16 million in climate-fund interest, plus other funds, for parks, unarmed police support, fire services and staff. It would preserve services while leaving less of that interest for climate work. Council split evenly, so it failed.",
+    options: choices,
   },
-  "cristal-otero": {
-    housing: ["public", "tenants"],
-    homelessness: ["care"],
-    services: ["scrutiny"],
-    funding: ["targeted"],
-    climate: ["protect"],
+  {
+    id: "moda",
+    priority: "services",
+    issue: "money",
+    decisionId: "moda",
+    optional: true,
+    title:
+      "Would you approve the city’s starting terms for Moda Center negotiations?",
+    context:
+      "Council approved a framework for negotiating a public role in renovating the arena. This opened a path toward a deal with future public costs. It was not the final contract or a vote to pay every renovation cost. Rejecting it did not necessarily mean wanting the team to leave.",
+    options: choices,
   },
-  "terry-parker": {
-    safety: ["police"],
-    services: ["maintenance"],
-    transport: ["lanes"],
+  {
+    id: "psr-framework",
+    priority: "safety",
+    issue: "safety",
+    decisionId: "psr-framework",
+    optional: true,
+    title:
+      "Would you make Portland Street Response a full branch of the emergency system?",
+    context:
+      "The 2025 plan gave the unarmed crisis-response service a place alongside other emergency responders and called for a community advisory committee. It set a direction for expansion, but did not itself pay for round-the-clock service.",
+    options: choices,
   },
-  "heart-free-pham": { services: ["scrutiny"] },
-  "tom-sollitt": { services: ["scrutiny"], funding: ["audit"] },
-  "john-sweeney": {
-    homelessness: ["county"],
-    services: ["maintenance"],
-    budget: ["no"],
-  },
-  "kellie-torres": {
-    housing: ["build"],
-    safety: ["police"],
-    funding: ["partners"],
-  },
-  "kimberly-tucker": { services: ["scrutiny"] },
-  "martin-ward": { housing: ["public"], budget: ["no"] },
-  "eli-arnold": {
-    housing: ["build"],
-    safety: ["police", "combined"],
-    transport: ["fares"],
-  },
-  "olivia-clark": { housing: ["build"], homelessness: ["rules"] },
-  "jamey-evenstar": {
-    housing: ["public"],
-    safety: ["unarmed"],
-    transport: ["active", "fares"],
-  },
-  "mitch-green": {
-    housing: ["public", "tenants"],
-    services: ["public"],
-    climate: ["protect"],
-    transport: ["active"],
-  },
-  "john-mcdonald": { services: ["scrutiny"], budget: ["yes"] },
-  "jeremy-beausoleil-smith": {
-    housing: ["public", "tenants"],
-    safety: ["unarmed"],
-    climate: ["data"],
-  },
-  "eric-zimmerman": {
-    homelessness: ["rules"],
-    safety: ["police", "unarmed"],
-    services: ["maintenance"],
-  },
-};
+];
+export function questionCoverage(people: Candidate[], q: Question) {
+  const positions = people
+    .map((p) => discoveryEvidence(p).positions[q.id])
+    .filter(Boolean);
+  const stances = new Set(positions.flatMap((p) => p.supported));
+  return {
+    known: positions.length,
+    total: people.length,
+    comparable:
+      positions.length >= 2 && stances.has("yes") && stances.has("no"),
+  };
+}
 export const experienceOptions = [
   { id: "delivery", label: "Delivering projects or services" },
   { id: "budgets", label: "Working with budgets" },
@@ -323,6 +184,8 @@ export type PositionEvidence = {
   opposed: string[];
   text: string;
   source: Evidence;
+  limit: string;
+  reason?: { label: string; text: string; source: Evidence };
 };
 export type ExperienceEvidence = {
   id: ExperienceId;
@@ -355,23 +218,20 @@ const experienceRows: Record<string, ExperienceId[]> = {
 export function discoveryEvidence(person: Candidate) {
   const positions: Record<string, PositionEvidence> = {};
   for (const q of questions) {
-    const issue = person.analysis?.issues[q.issue];
-    const supported = rows[person.id]?.[q.id];
-    if (issue && supported)
-      positions[q.id] = {
-        supported,
-        opposed: [],
-        text: issue.position,
-        source: issue.source,
-      };
+    const decision = councilDecisions.find((d) => d.id === q.decisionId);
+    const vote = decision?.votes[person.name];
+    // Absence, no reviewed answer and a general campaign goal are never opposition.
+    if (!decision || (vote !== "Yes" && vote !== "No")) continue;
+    const account = decisionAccounts[decision.id]?.[person.name];
+    positions[q.id] = {
+      supported: [vote.toLowerCase()],
+      opposed: [vote === "Yes" ? "no" : "yes"],
+      text: `Voted ${vote.toLowerCase()} on ${decision.source.date}. ${account?.action ?? decision.summary}`,
+      source: decision.source,
+      limit: decision.limit,
+      reason: account?.reason,
+    };
   }
-  // Explicit rejection, not an assumption that alternative approaches conflict.
-  if (positions.budget?.supported.includes("no"))
-    positions.budget.opposed = ["yes"];
-  if (positions.budget?.supported.includes("yes"))
-    positions.budget.opposed = ["no"];
-  if (positions.transport?.supported.includes("lanes"))
-    positions.transport.opposed = [];
   const experience: ExperienceEvidence[] = (
     experienceRows[person.id] ?? []
   ).map((id) => ({
@@ -387,16 +247,21 @@ export function assess(
   person: Candidate,
   answers: Answers,
   preferences: ExperiencePreference[],
+  field?: Candidate[],
 ) {
   const evidence = discoveryEvidence(person);
   const selected = questions.filter((q) =>
     q.options.some((o) => o.id === answers[q.id]),
   );
-  const aligned = selected.filter((q) =>
-    evidence.positions[q.id]?.supported.includes(answers[q.id]),
+  const aligned = selected.filter(
+    (q) =>
+      (!field || questionCoverage(field, q).comparable) &&
+      evidence.positions[q.id]?.supported.includes(answers[q.id]),
   );
-  const different = selected.filter((q) =>
-    evidence.positions[q.id]?.opposed.includes(answers[q.id]),
+  const different = selected.filter(
+    (q) =>
+      (!field || questionCoverage(field, q).comparable) &&
+      evidence.positions[q.id]?.opposed.includes(answers[q.id]),
   );
   const unknown = selected.filter(
     (q) => !aligned.includes(q) && !different.includes(q),
@@ -433,7 +298,7 @@ export function orderResults(
   preferences: ExperiencePreference[],
 ) {
   return people
-    .map((p) => assess(p, answers, preferences))
+    .map((p) => assess(p, answers, preferences, people))
     .sort(
       (a, b) =>
         a.group - b.group ||

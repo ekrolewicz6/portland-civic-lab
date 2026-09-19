@@ -273,12 +273,19 @@ export default function Methodology() {
           remains available without answering any questions.
         </p>
         <p>
-          We manually map explicit, sourced candidate positions to the choices.
-          Support for one approach does not imply opposition to another. We
-          label unestablished positions as unknown, keep qualifications visible
-          and give every answered question equal treatment. Repeated votes do
-          not add weight. This introductory set is not a complete account of any
-          candidate’s beliefs.
+          The short route asks up to three questions, one per priority, followed
+          by optional experience preferences. Extra questions come after
+          results. We compare answers with votes on the exact proposal, not
+          broad campaign goals. A past vote does not establish a candidate’s
+          complete current position. Challengers’ answers to these exact
+          proposals are not yet established; their campaign positions remain in
+          the full profiles. Each question reports how many candidates have
+          evidence. A question affects groups only when at least two candidates
+          have recorded votes and those votes differ within the race. “It
+          depends,” absence and missing evidence never become agreement or
+          disagreement. Individual explanations and the limits of each vote
+          remain available. Repeated votes add no weight, and there is no
+          overall score.
         </p>
         <p>
           Within each policy group, relevant experience you selected moves a

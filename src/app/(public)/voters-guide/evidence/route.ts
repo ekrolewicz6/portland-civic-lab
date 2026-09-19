@@ -4,6 +4,7 @@ import { councilDecisions } from "@/lib/voters-guide/council-decisions";
 import { councilCoverageAudit } from "@/lib/voters-guide/council-coverage-map";
 import {
   discoveryVersion,
+  questionCoverage,
   questions,
   experienceOptions,
   discoveryEvidence,
@@ -33,11 +34,18 @@ export function GET() {
         version: discoveryVersion,
         questions,
         experienceOptions,
+        coverage: races.map((r) => ({
+          raceId: r.id,
+          questions: questions.map((q) => ({
+            id: q.id,
+            ...questionCoverage(r.candidates, q),
+          })),
+        })),
         candidates: races.flatMap((r) =>
           r.candidates.map((c) => ({ id: c.id, ...discoveryEvidence(c) })),
         ),
         rules:
-          "Explicit support establishes alignment. Only explicit opposition establishes disagreement. All other answers remain unknown. Within policy groups, selected experience preferences precede alphabetical order. Requirements are never silently relaxed. No overall score or ballot ranking.",
+          "Exact recorded votes establish agreement or disagreement with that past proposal, not a complete current position. At least two documented votes and differing positions within the race are required for a question to affect groups. Conditions, absence and missing answers remain unknown. Broad campaign goals are not votes on specific proposals. Within policy groups, selected experience preferences precede alphabetical order. Requirements are never silently relaxed. No overall score or ballot ranking.",
       },
     },
     {

@@ -9,6 +9,7 @@ import {
   orderResults,
   priorities,
   questions,
+  questionCoverage,
   type Answers,
   type ExperiencePreference,
 } from "@/lib/voters-guide/discovery";
@@ -30,7 +31,7 @@ const empty = (): Session => ({
   saved: [],
 });
 const groups = [
-  "Alignment on every answered question",
+  "Agreement on every choice we checked",
   "Some alignment to explore",
   "A documented difference to consider",
   "Not enough evidence to compare your choices",
@@ -38,10 +39,11 @@ const groups = [
 export default function CandidateDiscovery({ race }: { race: Race }) {
   const [state, setState] = useState<Session>(empty);
   const [stage, setStage] = useState("intro");
+  const [extra, setExtra] = useState<string | null>(null);
   const [index, setIndex] = useState(0);
   const [ready, setReady] = useState(false);
   const [storageAvailable, setStorageAvailable] = useState(true);
-  const [compare, setCompare] = useState("housing");
+  const [compare, setCompare] = useState("homebuyer-income");
   const heading = useRef<HTMLHeadingElement>(null);
   const key = `pcl-guide-${race.id}`;
   useEffect(() => {
@@ -106,12 +108,14 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
       heading.current?.scrollIntoView({ block: "start" });
     });
   }
-  const queue = [
-    ...state.priorities.map((id) => questions.find((q) => q.id === id)!),
-    ...questions.filter((q) => ["funding", "budget"].includes(q.id)),
-  ];
+  const queue = state.priorities.map((id) =>
+    questions.find((q) => q.priority === id && !q.optional)!,
+  );
+  const considered = questions.filter(
+    (q) => queue.includes(q) || (q.optional && state.answers[q.id]),
+  );
   const activeAnswers = Object.fromEntries(
-    queue
+    considered
       .filter((q) => state.answers[q.id])
       .map((q) => [q.id, state.answers[q.id]]),
   );
@@ -123,7 +127,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
   const eligible = results.filter((r) => !r.unmet.length);
   const unmet = results.filter((r) => r.unmet.length);
   const shortlist = race.candidates.filter((p) => state.saved.includes(p.id));
-  const current = queue[index];
+  const current = extra ? questions.find((q) => q.id === extra)! : queue[index];
   function save(id: string) {
     setState((s) => ({
       ...s,
@@ -133,6 +137,11 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
     }));
   }
   function nextQuestion() {
+    if (extra) {
+      setExtra(null);
+      go("results");
+      return;
+    }
     if (index < queue.length - 1) {
       setIndex(index + 1);
       focusQuestion();
@@ -140,6 +149,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
   }
   function reset() {
     setState(empty());
+    setExtra(null);
     setIndex(0);
     go("intro");
   }
@@ -161,12 +171,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
         <h5>Where you align</h5>
         <p>
           {aligned.length
-            ? aligned
-                .map(
-                  (q) =>
-                    q.options.find((o) => o.id === activeAnswers[q.id])!.text,
-                )
-                .join(" ")
+            ? aligned.map((q) => evidence.positions[q.id].text).join(" ")
             : "We have not established alignment with your selected approaches. That is not a judgment about this candidate."}
         </p>
         <details>
@@ -176,7 +181,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
             {firstDifference
               ? evidence.positions[firstDifference.id].text
               : unknown.length
-                ? `We cannot yet establish whether they share your choice on ${unknown.map((q) => (q.id === "budget" ? "Moda Center" : q.id === "funding" ? "funding" : priorities.find((p) => p.id === q.id)?.label.toLowerCase())).join(", ")}. Read their full position before deciding.`
+                ? `We cannot yet establish a comparison for ${unknown.map((q) => q.title).join("; ")}. Read their full position before deciding.`
                 : "These answers align, but they do not cover every issue. Their full record may reveal other differences that matter to you."}
           </p>
           <h5>Relevant experience</h5>
@@ -214,12 +219,27 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
             <p>
               <strong>What still needs an answer:</strong> {person.question}
             </p>
-            {queue.map((q) => {
+            {considered.map((q) => {
               const p = evidence.positions[q.id];
               return p && activeAnswers[q.id] ? (
                 <section key={q.id}>
                   <h5>{q.title}</h5>
                   <p>{p.text}</p>
+                  <p className={styles.note}>
+                    {p.limit} This is a past vote, not a complete account of
+                    their current position.
+                  </p>
+                  {p.reason ? (
+                    <p>
+                      <strong>{p.reason.label}:</strong> {p.reason.text}{" "}
+                      <a href={p.reason.source.url}>Source for explanation</a>
+                    </p>
+                  ) : (
+                    <p className={styles.note}>
+                      We have not established their individual reason for this
+                      vote. We do not infer it from the roll call.
+                    </p>
+                  )}
                   <a href={p.source.url}>{p.source.label}</a>
                   <p className={styles.note}>
                     {p.source.kind} · {p.source.date}
@@ -272,7 +292,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
     >
       <div className={styles.topline}>
         <span>Your priorities. Your choice.</span>
-        <span>About 3 minutes</span>
+        <span>Up to 3 policy questions</span>
       </div>
       <h2 ref={heading} tabIndex={-1}>
         {stage === "question" ? current.title : titles[stage]}
@@ -281,7 +301,8 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
         <>
           <p className={styles.lede}>
             Choose what matters to you. Explore candidates’ positions,
-            experience and differences, with the evidence close at hand.
+            experience and differences, with the evidence close at hand. Aim for
+            about two minutes; read further whenever you want.
           </p>
           <button className={styles.primary} onClick={() => go("priorities")}>
             Find candidates to consider →
@@ -298,8 +319,9 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
             </span>
           </div>
           <p className={styles.note}>
-            No scores or suggested ballot order. Your answers stay in this
-            browser tab.
+            Five screens at most before results: priorities, up to three
+            choices, and optional experience. No scores or suggested ballot
+            order. Your answers stay in this browser tab.
           </p>
         </>
       )}
@@ -338,13 +360,11 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               className={styles.primary}
               onClick={() => {
                 setIndex(0);
-                go("question");
+                setExtra(null);
+                go(queue.length ? "question" : "experience");
               }}
             >
-              {state.priorities.length
-                ? "Continue"
-                : "Continue with general questions"}{" "}
-              →
+              {state.priorities.length ? "Continue" : "Skip policy questions"} →
             </button>
           </div>
         </>
@@ -352,9 +372,31 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
       {stage === "question" && (
         <>
           <p className={styles.note}>
-            Question {index + 1} of {queue.length}
+            {extra
+              ? "Optional extra question"
+              : `Question ${index + 1} of ${queue.length}`}
           </p>
           <p className={styles.lede}>{current.context}</p>
+          <details className={styles.preferences}>
+            <summary>What can this question tell me?</summary>
+            <p>
+              We have a recorded vote for{" "}
+              {questionCoverage(race.candidates, current).known} of{" "}
+              {race.candidates.length} candidates. These are past decisions. We
+              do not assume how challengers would have voted from their general
+              promises.
+            </p>
+            {!questionCoverage(race.candidates, current).comparable && (
+              <p>
+                Background only: we do not have enough evidence of different
+                positions in this race to use this answer for comparison.
+              </p>
+            )}
+            <p>
+              “It depends” keeps your conditions open. It does not count as
+              agreement or disagreement. “Not sure” skips this choice.
+            </p>
+          </details>
           <div className={styles.choices}>
             {current.options.map((o) => (
               <button
@@ -384,14 +426,24 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
           </div>
           <div className={styles.actions}>
             <button
-              onClick={() => (index ? setIndex(index - 1) : go("priorities"))}
+              onClick={() => {
+                if (extra) {
+                  setExtra(null);
+                  go("results");
+                } else if (index) {
+                  setIndex(index - 1);
+                  focusQuestion();
+                } else go("priorities");
+              }}
             >
               Back
             </button>
             <button className={styles.primary} onClick={nextQuestion}>
-              {index === queue.length - 1
-                ? "Next: experience"
-                : "Next question"}{" "}
+              {extra
+                ? "Back to results"
+                : index === queue.length - 1
+                  ? "Next: experience"
+                  : "Next question"}{" "}
               →
             </button>
           </div>
@@ -431,6 +483,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
                     <label className={styles.requirement}>
                       <input
                         type="checkbox"
+                        aria-label={`Require evidence: ${e.label}`}
                         checked={selected.requirement}
                         onChange={(event) =>
                           setState((s) => ({
@@ -453,8 +506,8 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
           <div className={styles.actions}>
             <button
               onClick={() => {
-                setIndex(queue.length - 1);
-                go("question");
+                setIndex(Math.max(0, queue.length - 1));
+                go(queue.length ? "question" : "priorities");
               }}
             >
               Back
@@ -471,21 +524,43 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
             A starting point for your decision. These groups describe the
             evidence for your answers, not a ranking of candidates.
           </p>
+          <p className={styles.notice}>
+            This quick comparison currently checks incumbents’ recorded votes.
+            We have not established challengers’ answers to these exact
+            proposals. That research gap is not a disagreement or a reason to
+            rule them out.{" "}
+            <a href="#candidates">
+              Compare the whole field and their campaign proposals.
+            </a>
+          </p>
+          <p className={styles.note}>
+            A few choices cannot establish who would represent you best. Use the
+            profiles to weigh current promises, experience and the reasons
+            behind decisions.
+          </p>
           <details className={styles.preferences}>
             <summary>Your choices &amp; how these results work</summary>
-            {queue.map((q) => (
+            {considered.map((q) => (
               <p key={q.id}>
                 <strong>{q.title}</strong>
                 <br />
                 {q.options.find((o) => o.id === activeAnswers[q.id])?.text ??
                   "No preference selected"}
+                <br />
+                <small>
+                  Recorded votes: {questionCoverage(race.candidates, q).known}/
+                  {race.candidates.length} candidates.{" "}
+                  {!questionCoverage(race.candidates, q).comparable &&
+                    "Background only; not used to group candidates."}
+                </small>
               </p>
             ))}
             <p>
               Only explicit, sourced support counts as alignment. An alternative
-              proposal is not automatically opposition. All answered questions
-              count equally; repeated votes add no weight. Unknown positions
-              stay unknown.
+              proposal is not automatically opposition. Only questions with at
+              least two recorded positions and a documented difference in this
+              race can affect these groups. “It depends” is not scored. Repeated
+              votes add no weight. Unknown positions stay unknown.
             </p>
             <p>
               Within each group, candidates with more of your selected
@@ -518,6 +593,26 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               preferences or explore everyone below.
             </p>
           )}
+          <details className={styles.preferences}>
+            <summary>Want to explore one more choice? (Optional)</summary>
+            <p>
+              Your results are ready. These extra choices are available if you
+              want more detail.
+            </p>
+            {questions
+              .filter((q) => q.optional)
+              .map((q) => (
+                <button
+                  key={q.id}
+                  onClick={() => {
+                    setExtra(q.id);
+                    go("question");
+                  }}
+                >
+                  {q.title}
+                </button>
+              ))}
+          </details>
           {groups.map((label, i) => {
             const group = eligible.filter((r) => r.group === i);
             return group.length ? (
@@ -626,7 +721,7 @@ function ShortlistCard({
   remove: () => void;
 }) {
   const q = questions.find((q) => q.id === topic);
-  const position = q ? person.analysis?.issues[q.issue] : undefined;
+  const position = q ? discoveryEvidence(person).positions[q.id] : undefined;
   const experience = discoveryEvidence(person).experience;
   return (
     <article className={styles.card}>
@@ -641,7 +736,7 @@ function ShortlistCard({
           ? person.background
           : topic === "promises"
             ? person.summary
-            : (position?.position ??
+            : (position?.text ??
               "A specific position has not been established in our reviewed sources.")}
       </p>
       {position && <a href={position.source.url}>{position.source.label}</a>}

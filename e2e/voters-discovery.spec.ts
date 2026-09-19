@@ -12,6 +12,7 @@ import {
   discoveryEvidence,
   orderResults,
   questions,
+  questionCoverage,
 } from "../src/lib/voters-guide/discovery";
 const hash = (value: unknown) =>
   createHash("sha256").update(JSON.stringify(value)).digest("hex");
@@ -30,18 +31,40 @@ test("all existing research and sources are preserved exactly", async () => {
     );
   expect(hash(decisionAccounts)).toBe(baseline.accountsHash);
 });
-test("unknown evidence and alternative tools never become opposition", async () => {
+test("exact votes, conditions, absence and race coverage control comparison", async () => {
   const novick = people.find((p) => p.id === "steve-novick")!;
-  const publicHousing = assess(novick, { housing: "public" }, []);
-  expect(publicHousing.different).toHaveLength(0);
-  expect(publicHousing.unknown).toHaveLength(1);
-  const police = assess(novick, { safety: "police" }, []);
-  const unarmed = assess(novick, { safety: "unarmed" }, []);
-  expect(police.aligned).toHaveLength(1);
-  expect(unarmed.aligned).toHaveLength(1);
-  const sweeney = people.find((p) => p.id === "john-sweeney")!;
-  expect(assess(sweeney, { budget: "yes" }, []).different).toHaveLength(1);
-  expect(assess(novick, { nonsense: "police" }, []).group).toBe(3);
+  const challenger = people.find((p) => p.id === "john-sweeney")!;
+  expect(
+    assess(novick, { "homebuyer-income": "yes" }, []).aligned,
+  ).toHaveLength(1);
+  expect(
+    assess(novick, { "homebuyer-income": "no" }, []).different,
+  ).toHaveLength(1);
+  expect(
+    assess(novick, { "homebuyer-income": "depends" }, []).unknown,
+  ).toHaveLength(1);
+  // An arena opinion does not establish a vote on this specific term sheet.
+  expect(assess(challenger, { moda: "yes" }, []).different).toHaveLength(0);
+  expect(assess(challenger, { moda: "yes" }, []).unknown).toHaveLength(1);
+  const d4 = races.find((r) => r.id.endsWith("4"))!.candidates;
+  const camps = questions.find((q) => q.id === "camp-removal")!;
+  expect(questionCoverage(d4, camps)).toEqual({
+    known: 1,
+    total: 12,
+    comparable: false,
+  });
+  expect(
+    orderResults(d4, { "camp-removal": "yes" }, []).every((r) => r.group === 3),
+  ).toBe(true);
+  const d3 = races.find((r) => r.id.endsWith("3"))!.candidates;
+  // Unanimity is informative but cannot distinguish this field.
+  expect(
+    questionCoverage(
+      d3,
+      questions.find((q) => q.id === "street-fee")!,
+    ).comparable,
+  ).toBe(false);
+  expect(assess(novick, { nonsense: "yes" }, []).group).toBe(3);
 });
 test("evidence mapping is valid and requirements do not invent skills", async () => {
   for (const person of people)
@@ -81,14 +104,12 @@ for (const district of [3, 4])
       .getByRole("button", { name: "Homes people can afford" })
       .click();
     await guide.getByRole("button", { name: /Continue/ }).click();
-    await guide.getByRole("button", { name: /Expand publicly owned/ }).click();
-    await guide.getByRole("button", { name: /Next question/ }).click();
-    await guide.getByRole("button", { name: /Next question/ }).click();
+    await guide.getByRole("button", { name: /Yes —/ }).click();
     await guide.getByRole("button", { name: /Next: experience/ }).click();
     await guide.getByRole("button", { name: "Explore candidates →" }).click();
     await expect(
       guide.getByRole("heading", {
-        name: "Alignment on every answered question",
+        name: "Agreement on every choice we checked",
       }),
     ).toBeVisible();
     await guide
@@ -144,9 +165,7 @@ test("empty requirements, storage failure and zero policy answers remain usable"
   await guide
     .getByRole("button", { name: "Find candidates to consider" })
     .click();
-  await guide.getByRole("button", { name: /Continue with general/ }).click();
-  await guide.getByRole("button", { name: /Next question/ }).click();
-  await guide.getByRole("button", { name: /Next: experience/ }).click();
+  await guide.getByRole("button", { name: /Skip policy questions/ }).click();
   await guide
     .getByRole("button", { name: "Building agreements across groups" })
     .click();
@@ -165,4 +184,59 @@ test("empty requirements, storage failure and zero policy answers remain usable"
     })
     .click();
   await expect(guide.getByRole("article")).toHaveCount(12);
+});
+
+test("three priorities take at most five screens; extra questions are optional", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/voters-guide/portland-district-4");
+  const guide = page.getByRole("region", {
+    name: "Find candidates to consider",
+    exact: true,
+  });
+  await guide
+    .getByRole("button", { name: "Find candidates to consider" })
+    .click();
+  for (const name of [
+    "Homes people can afford",
+    "Public safety",
+    "Climate & environmental health",
+  ])
+    await guide.getByRole("button", { name }).click();
+  await expect(
+    guide.getByRole("button", { name: "Getting around" }),
+  ).toBeDisabled();
+  await guide.getByRole("button", { name: /Continue/ }).click();
+  for (let i = 1; i <= 3; i++) {
+    await expect(
+      guide.getByText(`Question ${i} of 3`, { exact: true }),
+    ).toBeVisible();
+    await guide.getByRole("button", { name: /It depends —/ }).click();
+    await guide
+      .getByRole("button", {
+        name: i === 3 ? /Next: experience/ : /Next question/,
+      })
+      .click();
+  }
+  await expect(
+    guide.getByRole("heading", { name: "What experience matters to you?" }),
+  ).toBeVisible();
+  await guide.getByRole("button", { name: "Explore candidates →" }).click();
+  await expect(guide.getByRole("article")).toHaveCount(12);
+  await expect(
+    guide.getByRole("heading", { name: /Agreement on every/ }),
+  ).toHaveCount(0);
+  await guide
+    .getByText("Want to explore one more choice? (Optional)", { exact: true })
+    .click();
+  await guide.getByRole("button", { name: /starting terms for Moda/ }).click();
+  await expect(
+    guide.getByText("Optional extra question", { exact: true }),
+  ).toBeVisible();
+  await guide.getByRole("button", { name: /No —/ }).click();
+  await guide.getByRole("button", { name: /Back to results/ }).click();
+  await expect(
+    guide.getByRole("heading", { name: "Candidates to explore", exact: true }),
+  ).toBeVisible();
 });
