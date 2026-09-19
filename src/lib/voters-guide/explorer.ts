@@ -10,6 +10,7 @@ export const explorerTopics = [
 ] as const;
 export type ExplorerTopic = (typeof explorerTopics)[number]["id"];
 export const comparisonEvent = "pcl:open-candidate-comparison";
+export const comparisonChangeEvent = "pcl:candidate-comparison-changed";
 export function topicPosition(person: Candidate, topic: ExplorerTopic) {
   if (topic === "overview" || topic === "experience") return undefined;
   return person.analysis?.issues[topic];

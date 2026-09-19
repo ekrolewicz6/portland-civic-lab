@@ -6,7 +6,10 @@ import {
 } from "@/lib/voters-guide/council-topics";
 import { councilDecisions } from "@/lib/voters-guide/council-decisions";
 import { councilDisagreements } from "@/lib/voters-guide/council-record-accounts";
-import { comparisonEvent } from "@/lib/voters-guide/explorer";
+import {
+  comparisonEvent,
+  comparisonChangeEvent,
+} from "@/lib/voters-guide/explorer";
 import CandidatePortrait from "./CandidatePortrait";
 import CouncilDisagreements, {
   CouncilIssuePicker,
@@ -295,17 +298,26 @@ export default function CandidateComparison({ race }: { race: Race }) {
   const count = compared.length;
   const hasPortraits = people.some((p) => p.portrait);
   const currentTopic = comparisonTopics.find((t) => t.id === topic)!;
+  function share(nextSelected: string[] | undefined, nextTopic = topic) {
+    window.dispatchEvent(
+      new CustomEvent(comparisonChangeEvent, {
+        detail: { raceId: race.id, selected: nextSelected, topic: nextTopic },
+      }),
+    );
+  }
   function toggle(id: string) {
-    setSelected((old) => {
-      if (old.includes(id)) return old.map((v) => (v === id ? "" : v));
-      const index = old.indexOf("");
-      if (index < 0) return old;
-      return old.map((v, i) => (i === index ? id : v));
-    });
+    const index = selected.indexOf("");
+    if (!selected.includes(id) && index < 0) return;
+    const next = selected.includes(id)
+      ? selected.map((v) => (v === id ? "" : v))
+      : selected.map((v, i) => (i === index ? id : v));
+    setSelected(next);
+    share(next);
   }
   function clear() {
     setSelected(["", "", ""]);
     setThird(false);
+    share([]);
   }
   function print() {
     const closed = [
@@ -358,11 +370,13 @@ export default function CandidateComparison({ race }: { race: Race }) {
                 <select
                   aria-label={`Candidate ${index + 1}`}
                   value={value}
-                  onChange={(e) =>
-                    setSelected((old) =>
-                      old.map((v, i) => (i === index ? e.target.value : v)),
-                    )
-                  }
+                  onChange={(e) => {
+                    const next = selected.map((v, i) =>
+                      i === index ? e.target.value : v,
+                    );
+                    setSelected(next);
+                    share(next);
+                  }}
                 >
                   <option value="">Choose a candidate</option>
                   {people.map((p) => (
@@ -404,7 +418,10 @@ export default function CandidateComparison({ race }: { race: Race }) {
             <button
               key={t.id}
               aria-pressed={topic === t.id}
-              onClick={() => setTopic(t.id)}
+              onClick={() => {
+                setTopic(t.id);
+                share(undefined, t.id);
+              }}
             >
               {t.label}
             </button>

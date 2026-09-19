@@ -168,9 +168,14 @@ test("District 4 homelessness leads to real comparisons and carries selections i
       .candidates.find((p) => p.id === "eli-arnold")!.background,
   );
   await page
+    .getByRole("combobox", { name: "Candidate 2", exact: true })
+    .selectOption("mitch-green");
+  await page
     .locator("#compare")
     .getByRole("link", { name: "← Back to quick comparison" })
     .click();
+  await expect(guide.locator('[data-candidate="mitch-green"]')).toHaveCount(1);
+  await expect(guide.locator('[data-candidate="olivia-clark"]')).toHaveCount(0);
   await guide.getByLabel("Explore a topic").selectOption("safety");
   expect(new URL(page.url()).search).toBe("");
   await page.reload();

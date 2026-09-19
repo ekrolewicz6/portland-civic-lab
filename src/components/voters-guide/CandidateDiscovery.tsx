@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Candidate, Race } from "@/lib/voters-guide/types";
 import {
   comparisonEvent,
+  comparisonChangeEvent,
   explorerTopics,
   hasTopic,
   topicPosition,
@@ -65,6 +66,27 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
     observer.observe(region.current);
     return () => observer.disconnect();
   }, []);
+  useEffect(() => {
+    function sync(event: Event) {
+      const detail = (event as CustomEvent).detail;
+      if (detail?.raceId !== race.id) return;
+      if (Array.isArray(detail.selected)) {
+        const ids = [
+          ...new Set<string>(
+            detail.selected.filter((id: string) =>
+              race.candidates.some((p) => p.id === id),
+            ),
+          ),
+        ].slice(0, 2);
+        setSelected(ids);
+        setPaired(ids.length === 2);
+      }
+      const nextTopic = detail.topic === "values" ? "overview" : detail.topic;
+      if (explorerTopics.some((t) => t.id === nextTopic)) setTopic(nextTopic);
+    }
+    window.addEventListener(comparisonChangeEvent, sync);
+    return () => window.removeEventListener(comparisonChangeEvent, sync);
+  }, [race.id, race.candidates]);
   const known = people.filter((p) => hasTopic(p, topic));
   const missing = people.filter((p) => !hasTopic(p, topic));
   const chosen = people.filter((p) => selected.includes(p.id));
