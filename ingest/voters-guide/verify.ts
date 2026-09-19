@@ -10,6 +10,8 @@ import {
 } from "../../src/lib/voters-guide";
 import { races as publishedRaces } from "../../src/lib/voters-guide/published";
 import type { Evidence } from "../../src/lib/voters-guide/types";
+import { councilDecisions } from "../../src/lib/voters-guide/council-decisions";
+import { decisionAccounts } from "../../src/lib/voters-guide/council-record-accounts";
 import roster from "../../research/voters-guide-2026/state-roster.json";
 import manifest from "../../research/voters-guide-2026/source-manifest.json";
 
@@ -43,6 +45,21 @@ assert.deepEqual(
   "Unexpected public release scope",
 );
 assert.equal(publishedRaces.flatMap((r) => r.candidates).length, 33);
+for (const decision of councilDecisions) {
+  assert.deepEqual(
+    Object.keys(decisionAccounts[decision.id]).sort(),
+    Object.keys(decision.votes).sort(),
+    `Unequal explanation coverage: ${decision.id}`,
+  );
+  for (const account of Object.values(decisionAccounts[decision.id])) {
+    assert.ok(account.choice && account.action);
+    if (account.actionSource) evidence(account.actionSource);
+    if (account.reason) {
+      assert.ok(account.reason.label && account.reason.text);
+      evidence(account.reason.source);
+    }
+  }
+}
 for (const person of publishedRaces.flatMap((r) => r.candidates)) {
   assert.ok(person.analysis?.tradeoff, `Missing comparison: ${person.name}`);
   person.analysis.sources.forEach(evidence);
@@ -51,7 +68,11 @@ for (const person of publishedRaces.flatMap((r) => r.candidates)) {
     evidence(issue.source);
   });
   if (person.background.startsWith("Incumbent")) {
-    assert.equal(person.record?.length, 4, `Unequal record sample: ${person.name}`);
+    assert.equal(
+      person.record?.length,
+      4,
+      `Unequal record sample: ${person.name}`,
+    );
   }
 }
 assert.equal(

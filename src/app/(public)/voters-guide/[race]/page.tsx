@@ -40,6 +40,9 @@ export default async function RacePage({
         </div>
         <h1>{race.title}</h1>
         <p className={styles.lede}>{race.stakes}</p>
+        <a href="#disagreements" className={styles.meetCandidates}>
+          Where incumbents disagree <span aria-hidden="true">↓</span>
+        </a>
         <a href="#compare" className={styles.meetCandidates}>
           Compare values & issues <span aria-hidden="true">↓</span>
         </a>

@@ -40,7 +40,7 @@ export const comparisonTopics = [
     label: "Recorded decisions",
     question: "What did they do when a decision came to a vote?",
     context:
-      "The same four final actions for all six incumbents: housing regulation, a supplemental budget, Moda negotiations and data-center policy. This is a sample, not a full voting record. A vote alone does not establish motive.",
+      "Four decisions, including the competing budget proposals and Moda amendments. Read what each person did beside their publicly stated reasons. This is a selected sample of their record.",
   },
 ] as const;
 export type ComparisonTopic = (typeof comparisonTopics)[number]["id"];

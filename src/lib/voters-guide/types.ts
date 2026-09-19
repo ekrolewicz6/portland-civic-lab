@@ -39,7 +39,11 @@ export type Candidate = {
   interpretation: string;
   question: string;
   sources: Evidence[];
-  record?: { text: string; source: Evidence }[];
+  record?: {
+    text: string;
+    source: Evidence;
+    decisionId?: string;
+  }[];
   missing?: string;
 };
 export type Race = {

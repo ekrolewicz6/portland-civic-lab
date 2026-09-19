@@ -43,7 +43,10 @@ test("comparison starts neutral, supports direct selection and prevents duplicat
   await expect(page.locator("input:checked")).toHaveCount(0);
   await first.selectOption("steve-novick");
   await second.selectOption("tiffany-koyama-lane");
-  await expect(second.locator('option[value="steve-novick"]')).toHaveJSProperty("disabled", true);
+  await expect(second.locator('option[value="steve-novick"]')).toHaveJSProperty(
+    "disabled",
+    true,
+  );
   await expect(
     page.getByRole("region", { name: "Steve Novick comparison" }),
   ).toContainText("Targeted enforcement");
@@ -81,6 +84,7 @@ test("record comparison preserves absent votes, agreement and legislative limits
     .selectOption("olivia-clark");
   await page.getByRole("button", { name: "Recorded decisions" }).click();
   const rental = page
+    .locator("#compare")
     .locator("section")
     .filter({
       has: page.getByRole("heading", {
@@ -93,6 +97,7 @@ test("record comparison preserves absent votes, agreement and legislative limits
   await expect(rental).toContainText("No");
   await expect(rental).toContainText("Absence is not a vote against");
   const dataCenters = page
+    .locator("#compare")
     .locator("section")
     .filter({
       has: page.getByRole("heading", {
@@ -277,4 +282,72 @@ test("Portland portrait directory preserves the field, credits and comparison na
       () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
+});
+
+test("disagreements explain both budget votes before any selection", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/voters-guide/portland-district-3");
+  const overview = page.getByRole("region", { name: "Where they disagree." });
+  await expect(overview).toBeVisible();
+  await expect(page.locator("input:checked")).toHaveCount(0);
+  const budget = overview.locator("#disagreement-supplemental-budget");
+  await expect(budget).toContainText("Larger plan only");
+  await expect(budget).toContainText("Larger plan, then smaller fallback");
+  await expect(budget).toContainText("Smaller package only");
+  await expect(
+    budget.getByRole("link", { name: /Tiffany Koyama Lane/ }),
+  ).toBeVisible();
+  await overview.getByRole("button", { name: /The Moda deal/ }).click();
+  await expect(budget).not.toBeVisible();
+  const moda = overview.locator("#disagreement-moda");
+  await expect(moda).toContainText("Raised the rent, then approved");
+  await moda
+    .getByText("Read the decisions and reasons", { exact: true })
+    .click();
+  await expect(
+    moda.getByRole("heading", { name: "Her earlier stated concern · July 13" }),
+  ).toBeVisible();
+  await expect(moda).toContainText("Why she said no");
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.emulateMedia({ media: "print" });
+  await expect(budget).toBeVisible();
+  await expect(overview.locator("#disagreement-rental-pricing")).toBeVisible();
+});
+
+test("individual record and export preserve reasons and amendment disagreements", async ({
+  page,
+  request,
+}) => {
+  await page.goto("/voters-guide/portland-district-4");
+  const overview = page.getByRole("region", { name: "Where they disagree." });
+  await overview.getByRole("button", { name: /The Moda deal/ }).click();
+  await expect(overview).toContainText("Rejected the public cost");
+  await expect(
+    overview.getByRole("heading", {
+      name: "Approved; opposed the rent increase",
+    }),
+  ).toHaveCount(2);
+  await expect(overview).toContainText("His earlier stated case · April 30");
+  const green = page.locator("article#mitch-green");
+  await expect(green).toContainText("Why he said no");
+  await expect(green).toContainText("$275 million");
+  await expect(green).not.toContainText("a no vote does not prove opposition");
+  const payload = await (await request.get("/voters-guide/evidence")).json();
+  expect(payload.decisionAccounts.moda["Steve Novick"].reason.source.kind).toBe(
+    "Reporting",
+  );
+  expect(
+    payload.decisionAccounts.moda["Eric Zimmerman"].reason.source.date,
+  ).toBe("April 30, 2026");
+  expect(
+    payload.decisionAccounts["supplemental-budget"]["Tiffany Koyama Lane"]
+      .choice,
+  ).toBe("Larger plan only");
+  expect(payload.councilDisagreements).toHaveLength(3);
 });

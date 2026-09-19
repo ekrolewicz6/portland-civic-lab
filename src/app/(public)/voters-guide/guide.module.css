@@ -4,6 +4,287 @@
   padding: 2.6rem 2rem 5rem;
   color: var(--color-ink);
 }
+.disagreements {
+  scroll-margin-top: 90px;
+  border: 1px solid var(--color-sage);
+  background: #f5f5ee;
+  margin: 1.5rem 0 2.5rem;
+  padding: 2rem;
+}
+.disagreementHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.disagreementHeading h2 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  margin: 0.6rem 0 0;
+}
+.disagreementHeading h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  color: var(--color-canopy);
+}
+.disagreementHeading > p {
+  max-width: 340px;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.disagreementPicker {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: 1px solid var(--color-sage);
+}
+.disagreementPicker button {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-align: left;
+  min-height: 56px;
+  padding: 0.8rem;
+  border-bottom: 3px solid transparent;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.disagreementPicker button span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+.disagreementPicker button[aria-pressed="true"] {
+  border-color: var(--color-canopy);
+  background: #e4eade;
+}
+.disagreementPicker button:hover {
+  background: #e4eade;
+}
+.disagreementContext {
+  padding: 1.5rem 0;
+  max-width: 830px;
+}
+.disagreementPanel[data-active="false"] {
+  display: none;
+}
+.disagreementContext h3 {
+  font-size: 1.35rem;
+  line-height: 1.35;
+  margin-bottom: 0.6rem;
+}
+.disagreementContext > p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+.disagreementGrid,
+.decisionAccounts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.disagreementGrid > .recordAccount,
+.decisionAccounts > .recordAccount {
+  background: #fffefa;
+  border: 1px solid #d7ded2;
+  padding: 1.1rem;
+  min-width: 0;
+}
+.recordIdentity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.recordIdentity > a {
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+.recordPortrait {
+  width: 48px;
+  height: 58px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.recordPortrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.recordVote {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.65rem;
+  font-size: 0.72rem;
+}
+.recordVote > span {
+  color: var(--color-ink-light);
+}
+.recordVote > strong {
+  padding: 0.15rem 0.45rem;
+  border: 1px solid #c4cebe;
+  border-radius: 3px;
+}
+.recordAccount h4 {
+  font-size: 1rem;
+  line-height: 1.45;
+  font-weight: 650;
+  margin-bottom: 0.6rem;
+}
+.recordAccount p {
+  font-size: 0.89rem;
+  line-height: 1.65;
+  margin: 0;
+}
+.statedReason {
+  border-left: 2px solid #afbea5;
+  padding-left: 0.8rem;
+  margin-top: 1rem;
+}
+.statedReason h5 {
+  font-size: 0.71rem;
+  color: var(--color-canopy);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.recordProof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  margin-top: 0.85rem;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: var(--color-canopy);
+}
+.recordProof a {
+  text-decoration: underline;
+}
+.disagreementTakeaway {
+  border-left: 3px solid var(--color-canopy);
+  padding: 0.6rem 1rem;
+  margin-top: 1.2rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.choiceOverview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+.choiceSummary {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid #cbd4c4;
+  background: #fffefa;
+}
+.choiceSummary a {
+  font-size: 0.77rem;
+  color: var(--color-ink-light);
+}
+.choiceSummary h4 {
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.4;
+  margin-top: 0.35rem;
+}
+.disagreementEvidence {
+  margin-top: 1rem;
+}
+.disagreementEvidence > summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.6rem 0;
+  color: var(--color-canopy);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.disagreementEvidence[open] > summary {
+  margin-bottom: 0.75rem;
+}
+.disagreementFootnote {
+  margin-top: 1.1rem;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--color-ink-light);
+}
+.disagreementFootnote a {
+  text-decoration: underline;
+}
+.profileDecision {
+  padding: 1.2rem 0;
+  border-top: 1px solid #d7ded2;
+}
+.profileDecision > h3 {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin: 0.4rem 0 0.8rem;
+}
+.decisionAccounts {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+.decisionAccounts[data-count="3"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 700px) {
+  .disagreements {
+    padding: 1.1rem;
+  }
+  .disagreementHeading {
+    display: block;
+  }
+  .disagreementHeading > p {
+    margin-top: 0.85rem;
+  }
+  .disagreementPicker button {
+    display: block;
+    font-size: 0.74rem;
+    line-height: 1.4;
+    padding: 0.55rem 0.4rem;
+  }
+  .disagreementPicker button span {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .disagreementGrid,
+  .choiceOverview,
+  .decisionAccounts,
+  .decisionAccounts[data-count="3"] {
+    grid-template-columns: 1fr;
+  }
+  .disagreementContext h3 {
+    font-size: 1.2rem;
+  }
+  .disagreementGrid > .recordAccount {
+    padding: 1rem;
+  }
+}
+@media print {
+  .disagreementPicker {
+    display: none;
+  }
+  .disagreementPanel[data-active] {
+    display: block;
+  }
+  .disagreements {
+    background: white;
+    padding: 0;
+    border: 0;
+  }
+  .disagreementGrid {
+    display: block;
+  }
+  .recordAccount {
+    break-inside: avoid;
+  }
+}
 .guide a {
   text-underline-offset: 4px;
 }
@@ -1526,7 +1807,7 @@
 }
 .decisionList {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 .decisionCard {
@@ -1729,4 +2010,8 @@
   .raceContext {
     display: block;
   }
+}
+
+.decisionCard .recordAccount h4 {
+  font-size: 1rem;
 }

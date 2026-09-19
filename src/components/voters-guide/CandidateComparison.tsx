@@ -6,6 +6,7 @@ import {
 } from "@/lib/voters-guide/council-topics";
 import { councilDecisions } from "@/lib/voters-guide/council-decisions";
 import CandidatePortrait from "./CandidatePortrait";
+import CouncilDisagreements, { DecisionExplanation } from "./CouncilRecord";
 import { Printer } from "lucide-react";
 import type { Candidate, Evidence, Race } from "@/lib/voters-guide/types";
 import styles from "@/app/(public)/voters-guide/guide.module.css";
@@ -106,14 +107,25 @@ function Profile({
               })}
           </details>
         )}
-        <h3>Checked against the record</h3>
+        <h3>Decisions &amp; reasons</h3>
         {person.record?.length ? (
-          person.record.map((r, i) => (
-            <div className={styles.record} key={i}>
-              <p>{r.text}</p>
-              <Source source={r.source} />
-            </div>
-          ))
+          person.record.map((r, i) => {
+            const decision = councilDecisions.find(
+              (d) => d.id === r.decisionId,
+            );
+            return decision ? (
+              <section className={styles.profileDecision} key={r.decisionId}>
+                <div className={styles.eyebrow}>{decision.source.date}</div>
+                <h3>{decision.title}</h3>
+                <DecisionExplanation person={person} decision={decision} />
+              </section>
+            ) : (
+              <div className={styles.record} key={i}>
+                <p>{r.text}</p>
+                <Source source={r.source} />
+              </div>
+            );
+          })
         ) : (
           <p>
             Independent record review is not yet complete. The policy summary
@@ -253,6 +265,7 @@ export default function CandidateComparison({ race }: { race: Race }) {
   }
   return (
     <>
+      <CouncilDisagreements people={people} />
       <section
         className={styles.compareStudio}
         id="compare"
@@ -358,14 +371,14 @@ export default function CandidateComparison({ race }: { race: Race }) {
                 </div>
                 <h4>{decision.title}</h4>
                 <p>{decision.summary}</p>
-                <div className={styles.voteList}>
+                <div className={styles.decisionAccounts} data-count={count}>
                   {compared.map((p) => (
-                    <div key={p.id}>
-                      <span>{p.name}</span>
-                      <strong data-vote={decision.votes[p.name] ?? "unknown"}>
-                        {decision.votes[p.name] ?? "No vote in this record"}
-                      </strong>
-                    </div>
+                    <DecisionExplanation
+                      key={p.id}
+                      person={p}
+                      decision={decision}
+                      identity
+                    />
                   ))}
                 </div>
                 <p className={styles.decisionLimit}>{decision.limit}</p>

@@ -1,4 +1,5 @@
 import type { Candidate, Evidence } from "./types";
+import { decisionAccounts } from "./council-record-accounts";
 export type CouncilDecision = {
   id: string;
   title: string;
@@ -105,7 +106,8 @@ export function withCouncilDecisions(person: Candidate): Candidate {
     ...person,
     record: [
       ...decisions.map((d) => ({
-        text: `${d.votes[person.name] === "Absent" ? "Absent from the final vote" : `Voted ${d.votes[person.name].toLowerCase()}`} · ${d.title}. ${d.summary} ${d.limit}`,
+        decisionId: d.id,
+        text: `${d.votes[person.name]} · ${d.title}. ${decisionAccounts[d.id]?.[person.name]?.action ?? d.summary}`,
         source: d.source,
       })),
       ...(person.record ?? []).filter(

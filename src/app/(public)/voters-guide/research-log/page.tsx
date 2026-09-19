@@ -17,6 +17,22 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2>September 18, 2026 · Explain the disagreements</h2>
+        <p>
+          Added an immediate comparison of incumbents on the competing July
+          budget packages, Moda negotiations and rent-setting software. Record
+          entries now distinguish final votes, alternative proposals and
+          amendments. The July comparison shows who supported the larger plan,
+          who supported the smaller package, and who supported both.
+        </p>
+        <p>
+          Added individual explanations from office statements and attributed
+          reporting, including the split over Moda rent and financial
+          safeguards. Earlier statements retain their dates. Where a personal
+          explanation was not established, the entry describes the documented
+          action without inventing a motive. Replaced repeated caveats in
+          incumbent briefs with concise evidence links and shared context.
+        </p>
         <h2>
           September 18, 2026 · Issue comparison and deeper Council research
         </h2>

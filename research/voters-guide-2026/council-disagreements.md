@@ -1,0 +1,18 @@
+# Council decisions and explanations · September 18, 2026
+
+This update keeps the four common final actions, and adds alternatives, amendments and attributed explanations. All six incumbents receive the same decision sample. The opening comparison is explicitly limited to incumbents; the full candidate comparison remains available directly below it.
+
+## Claim checks
+
+- July 22: official Council agenda, items 6 and 7, records both votes. Koyama Lane supported only the larger plan; Morillo and Green supported both; Novick, Clark and Zimmerman supported only the smaller package. The mayor broke the tie against the larger proposal. OPB July 22 reports 55 versus 30 jobs; final budget ordinance 192207 supplies the $12.2 million total. Do not conflate the July proposal with Green's earlier June Services First amendment or describe climate-fund interest as a diversion of already allocated climate projects.
+- Budget explanations: OPB attributes the police-accountability funding warning to Morillo. The July 24 Mercury report attributes the fiscal-responsibility and critical-position arguments to Clark. Other entries describe recorded choices; they do not assign the arguments of Avalos, the mayor or another councilor to an individual.
+- Moda: resolution 37750 records final approval 8–4 and the amendment votes. Novick's higher-rent amendment passed 7–5; all three District 3 incumbents and Green supported it; Clark and Zimmerman opposed. Morillo/Kanal's opportunity-cost report failed 6–6. Green/Avalos's proposal to remove the additional $275 million future-capital commitment failed August 6. The negotiating framework is non-binding; renovation investment and subsequent capital needs are distinct.
+- Moda explanations: Green and Morillo's August 13 office release explains their opposition. WW August 12 attributes the opening-offer explanation to Novick. Mercury August 13 (updated August 14) attributes the matching-investment explanation to Clark. Koyama Lane's July 13 OPB comments and Zimmerman's April 30 newsletter are **earlier stated positions**, not represented as explanations spoken at the August final vote.
+- Rental pricing: ordinance 192122 records final passage 8–2, Novick and Zimmerman absent. Morillo introduced; Green and Koyama Lane co-sponsored. OPB November 19 reports Clark's November 12 objections and revisions/exemptions to the proposal. Morillo's office republishes her November 19 remarks about pursuing tenant protections and housing construction together; the guide labels the office source as a candidate statement.
+- Data centers: final resolution 37753 passed 11–0, all six incumbents yes. The record clearly says the resolution did not itself enact a moratorium. The opening disagreements view excludes this consensus final vote. It remains in each brief and the full record comparison.
+
+Source objects are in `src/lib/voters-guide/council-record-accounts.ts`; the public JSON exports every account, explanation, date and source. New retrieval hashes are in `source-manifest.json`. An attempted historical Mercury rental-story URL returned 404; it is not used as a citation. No automatic transcript is quoted or used to establish an individual's motive.
+
+## Editorial limits
+
+Selected decisions are not an overall effectiveness rating. A documented alternative or amendment is not automatically a personal explanation. Where a reason is not established, the guide reports the action directly rather than filling space with generalized caveats or guessing intent. Source statements about economic benefits, fiscal responsibility and costs displaced elsewhere are attributed arguments, not independently established outcomes.

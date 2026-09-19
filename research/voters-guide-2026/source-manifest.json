@@ -633,6 +633,24 @@
       "sha256": "f71fadb7ca4db950a8f0d1696a2d017a61089a15611e300c7089110cbb7186fd"
     },
     {
+      "url": "https://www.opb.org/article/2025/11/19/portland-city-council-proposal-ban-rent-setting-software/",
+      "representation": "normalized extracted page text",
+      "workingFile": "e2f397e975cd.txt",
+      "sha256": "cc75fbc2a4c6e4170067826c743cfa3d3d74879d6c7a1c4f9c8ab33da84362a7"
+    },
+    {
+      "url": "https://www.opb.org/article/2026/07/13/portland-oregon-moda-center-sports-basketball/",
+      "representation": "normalized extracted page text",
+      "workingFile": "90e426c1e969.txt",
+      "sha256": "6cb10e857bfe553dc47d320bae5f6b19ebc9dbe7362e89d7318bb2a7c0dfa652"
+    },
+    {
+      "url": "https://www.opb.org/article/2026/07/22/portland-city-council-job-cuts-budget/",
+      "representation": "normalized extracted page text",
+      "workingFile": "e4b994334ca9.txt",
+      "sha256": "bacca5475d951ea197f1b2c91216618fd1df84806cc4d1c523f374c9589fef01"
+    },
+    {
       "url": "https://www.opb.org/article/2026/09/17/kotek-oregon-governor-reelection-platform-policies/",
       "representation": "normalized extracted page text",
       "workingFile": "03a54d1c5754.txt",
@@ -663,6 +681,54 @@
       "sha256": "32cd579de69070c7867d186d5be44460239b76d9bd921983295837364c1dda6c"
     },
     {
+      "url": "https://www.portland.gov/council/agenda/2026/7/22",
+      "representation": "normalized extracted page text",
+      "workingFile": "384cd4e572d3.txt",
+      "sha256": "fc7953270bd89418978fe81df51cefb9c9feb68cdc35dc66167f88fdf9217b7c"
+    },
+    {
+      "url": "https://www.portland.gov/council/districts/1/candace-avalos/news/2026/8/17/what-happened-our-moda-term-sheet-why-i-voted-no",
+      "representation": "normalized extracted page text",
+      "workingFile": "6d6848558fd7.txt",
+      "sha256": "e01b6a312fb3d8dfc0dc057b51584021c343c8d74b1bca9281a4e946a92416e4"
+    },
+    {
+      "url": "https://www.portland.gov/council/districts/3/angelita-morillo/morillo-news",
+      "representation": "normalized extracted page text",
+      "workingFile": "0f5447665c60.txt",
+      "sha256": "b67d654f589fe2deb20eff13521b78e99115e930f359fd35a347386c5d06dbf3"
+    },
+    {
+      "url": "https://www.portland.gov/council/districts/3/angelita-morillo/news/2026/7/17/city-council-votes-approve-councilor-angelita",
+      "representation": "normalized extracted page text",
+      "workingFile": "cdbc732314bc.txt",
+      "sha256": "87a0e0645e834c08610a3b892da3b11bf408f87de7771d96d2f8181d9abf742e"
+    },
+    {
+      "url": "https://www.portland.gov/council/districts/4/eric-zimmerman/news/2026/4/30/april-newsletter-budget-season-moda-center",
+      "representation": "normalized extracted page text",
+      "workingFile": "23c0b0567c96.txt",
+      "sha256": "314cdb6297f7c70f96466bd6509651014b84121b1bea13bb881fe838da69520a"
+    },
+    {
+      "url": "https://www.portland.gov/council/districts/4/mitch-green/news/2026/6/2/services-first-budget-amendment",
+      "representation": "normalized extracted page text",
+      "workingFile": "55f272b23aaf.txt",
+      "sha256": "d2cdffdb09854f5c14c4bfa21288bdb7ab8efc40e0a5780c9c722d74b471912f"
+    },
+    {
+      "url": "https://www.portland.gov/council/districts/4/mitch-green/news/2026/8/13/press-release-portland-city-councilors-green-morillo",
+      "representation": "normalized extracted page text",
+      "workingFile": "cc13d9ae5581.txt",
+      "sha256": "b1d898aae410f2ee508e443c91e5f427e4e690ce2b488f872a0ae5b248f889ef"
+    },
+    {
+      "url": "https://www.portland.gov/council/districts/4/mitch-green/news/2026/8/3/city-councilors-green-and-morillo-host-webinar",
+      "representation": "normalized extracted page text",
+      "workingFile": "4842d7500d4f.txt",
+      "sha256": "fc35c29ec11453f2486123190004d2464a8b838b4a0ebd8fc326b5892c10ac48"
+    },
+    {
       "url": "https://www.portland.gov/council/documents/ordinance/passed/192122",
       "representation": "normalized extracted page text",
       "workingFile": "a286ad7a9010.txt",
@@ -687,10 +753,22 @@
       "sha256": "f3030b19dbd8e8cfcb68cb0f2889fbd7beed552587b50db1a967cfdd3bf68cb5"
     },
     {
+      "url": "https://www.portlandmercury.com/news/a-budget-fix-a-mayors-influence-and-the-subtext-of-that-unsavory-banter-among-councilors/",
+      "representation": "normalized extracted page text",
+      "workingFile": "4151fff611ff.txt",
+      "sha256": "633c0b7745817a62586bbf5e80d47fd485b5d4b5ce637079dbb6f2a5d16a90e8"
+    },
+    {
       "url": "https://www.portlandmercury.com/news/meet-the-candidates-for-city-council-district-3/",
       "representation": "normalized extracted page text",
       "workingFile": "77d561a1d079.txt",
       "sha256": "f288a7d9d8a3e4f0a8a9c2ec00a2e43c47c1d3467afa0a0122670dc340a7e57c"
+    },
+    {
+      "url": "https://www.portlandmercury.com/news/portland-offers-blazers-a-fully-funded-arena-renovation-but-will-it-be-enough/",
+      "representation": "normalized extracted page text",
+      "workingFile": "69bee96a6bde.txt",
+      "sha256": "529d4e9ae6b0650b40df082efb16d3bcec3cb2d94badc168f68c22988962b655"
     },
     {
       "url": "https://www.robwagnerfororegon.com/priorities/",
@@ -823,6 +901,12 @@
       "representation": "original download",
       "workingFile": "washington.pdf",
       "sha256": "77dea3ebacc6116bc74fc74641f536e5d83525effcab3ceee942793ff18bead2"
+    },
+    {
+      "url": "https://www.wweek.com/news/city/2026/08/12/council-approves-moda-center-term-sheet-to-kick-off-negotiations-with-blazers/",
+      "representation": "normalized extracted page text",
+      "workingFile": "a6795c84185e.txt",
+      "sha256": "029ffa8182facd4e4aa435d07e7c451917378275325e0dc0ba3b1ea37fe52af6"
     }
   ]
 }

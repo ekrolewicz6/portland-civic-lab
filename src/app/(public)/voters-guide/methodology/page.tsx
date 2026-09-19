@@ -94,6 +94,16 @@ export default function Methodology() {
           disagreement. They are a selected sample, not a complete record review
           or a measure of overall effectiveness. Absence is never coded as a no.
         </p>
+        <p>
+          For the July budget and Moda negotiations, we also compare the
+          alternatives and amendments that explain the final choices. Personal
+          explanations are attributed to the councilor or reporting that
+          identifies the speaker. Earlier statements keep their dates. A
+          documented action is labeled as an action when we have not established
+          an individual explanation; we do not turn a vote into an inferred
+          motive. The opening disagreement view covers incumbents; the issue
+          comparison includes every candidate.
+        </p>
         <h3>Editorial interpretation</h3>
         <p>
           We explain the practical meaning of the supported position: for
