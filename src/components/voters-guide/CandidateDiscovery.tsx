@@ -98,7 +98,13 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
   }, [state, key, ready]);
   function go(next: string) {
     setStage(next);
-    requestAnimationFrame(() => heading.current?.focus());
+    focusQuestion();
+  }
+  function focusQuestion() {
+    requestAnimationFrame(() => {
+      heading.current?.focus({ preventScroll: true });
+      heading.current?.scrollIntoView({ block: "start" });
+    });
   }
   const queue = [
     ...state.priorities.map((id) => questions.find((q) => q.id === id)!),
@@ -129,7 +135,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
   function nextQuestion() {
     if (index < queue.length - 1) {
       setIndex(index + 1);
-      requestAnimationFrame(() => heading.current?.focus());
+      focusQuestion();
     } else go("experience");
   }
   function reset() {
@@ -261,6 +267,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
     <section
       className={styles.discovery}
       id="find-candidates"
+      data-stage={stage}
       aria-label="Find candidates to consider"
     >
       <div className={styles.topline}>

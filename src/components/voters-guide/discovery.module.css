@@ -18,6 +18,7 @@
   margin-bottom: 1.5rem;
 }
 .discovery h2 {
+  scroll-margin-top: 90px;
   font-family: Georgia, serif;
   font-size: clamp(2rem, 4vw, 3.8rem);
   font-weight: 400;
@@ -262,6 +263,10 @@
   border: 0;
 }
 @media (max-width: 700px) {
+  .discovery[data-stage="question"] h2 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
   .cards {
     grid-template-columns: 1fr;
   }
