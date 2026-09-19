@@ -401,7 +401,6 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               </button>
             ))}
             <button
-              aria-pressed={!state.answers[current.id]}
               onClick={() => {
                 setState((s) => ({
                   ...s,
