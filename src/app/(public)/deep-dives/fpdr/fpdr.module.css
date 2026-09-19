@@ -46,7 +46,7 @@
   line-height: 1.07;
   font-weight: 550;
   margin: 1.1rem 0;
-  max-width: 14ch;
+  max-width: 19ch;
 }
 .hero h1 em {
   display: block;
@@ -147,6 +147,11 @@
 }
 .stakesFlow > svg {
   color: #8ca992;
+}
+.stakesDivider {
+  width: 1px;
+  height: 2.5rem;
+  background: #ffffff30;
 }
 .financialSnapshot .heroStats {
   margin: 0.5rem 0 0;

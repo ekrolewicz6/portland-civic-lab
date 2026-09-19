@@ -66,6 +66,16 @@ for (const width of [390, 1440]) {
       page.on("pageerror", (error) => errors.push(error.message));
       await page.goto("/deep-dives/fpdr");
       const simulator = page.locator("#fix");
+      const cases = simulator.getByRole("group", {
+        name: "Investment return illustrations",
+      });
+      await expect(cases.getByRole("button")).toHaveCount(3);
+      await expect(cases.locator('[aria-pressed="true"]')).toHaveCount(0);
+      await expect(simulator.getByRole("img")).toHaveCount(0);
+      await cases
+        .getByRole("button", { name: "7% return", exact: true })
+        .focus();
+      await page.keyboard.press("Enter");
       const returns = simulator.getByRole("slider", {
         name: "Assumed annual investment return",
       });
@@ -78,7 +88,10 @@ for (const width of [390, 1440]) {
       await simulator
         .getByRole("button", { name: "$200M bond", exact: true })
         .click();
-      await expect(outcome).toContainText("Added cash cost");
+      await expect(outcome).toContainText("More cash contributed");
+      await expect(
+        cases.getByRole("button", { name: "0% return", exact: true }),
+      ).toContainText("$172.7M more cash");
       await expect(outcome.locator("p").nth(1)).toHaveText("$172.7M");
       await simulator
         .getByRole("button", { name: "Cumulative", exact: true })
@@ -95,7 +108,7 @@ for (const width of [390, 1440]) {
       await simulator
         .getByRole("button", { name: "7% return", exact: true })
         .click();
-      await expect(outcome).toContainText("Cash contributions saved");
+      await expect(outcome).toContainText("less cash contributed");
       await simulator
         .getByText("Read the chart as a table", { exact: true })
         .click();

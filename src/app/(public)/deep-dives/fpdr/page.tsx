@@ -49,15 +49,16 @@ export default function FpdrDeepDivePage() {
                 Portland’s police &amp; fire pensions
               </Link>
               <h1>
-                Pay more now. <em>Pay less later?</em>
+                How should Portland <em>pay for its pensions?</em>
               </h1>
               <p className={styles.heroLead}>
-                Portland pays older police and fire pensions from each year’s
-                taxes. Should it also build savings to help pay future benefits?
+                Keep paying older pensions from annual taxes, build a partial
+                reserve, or move toward full prefunding? Each approach shifts
+                costs and risks between today’s and tomorrow’s residents.
               </p>
               <p className={styles.heroQuestion}>
-                Saving sooner could lower future costs. Today’s residents bear
-                the extra cost—and taxpayers carry the investment risk.
+                The evidence here explains the choices. It does not establish
+                which funding approach offers Portland the best value.
               </p>
               <div className={styles.heroActions}>
                 <a href="#menu" className={styles.primaryLink}>
@@ -73,22 +74,22 @@ export default function FpdrDeepDivePage() {
               aria-labelledby="fpdr-stakes-title"
             >
               <h2 id="fpdr-stakes-title" className={styles.kicker}>
-                Who benefits. Who carries the cost.
+                The strongest case. The main tradeoff.
               </h2>
               {[
                 {
                   title: "Keep paying year by year",
-                  now: "No extra saving contribution",
-                  later: "Taxes keep paying benefits",
+                  now: "Preserve money for other needs",
+                  later: "Future taxes must cover benefits",
                 },
                 {
                   title: "Save and invest",
-                  now: "More tax or cash committed",
-                  later: "Potentially lower taxes",
+                  now: "Earnings could reduce future taxes",
+                  later: "Pay earlier; accept investment risk",
                 },
                 {
                   title: "Borrow to invest",
-                  now: "New debt to repay",
+                  now: "Potential gains above borrowing costs",
                   later: "Debt remains even after losses",
                 },
               ].map((choice) => (
@@ -96,12 +97,12 @@ export default function FpdrDeepDivePage() {
                   <h3>{choice.title}</h3>
                   <dl className={styles.stakesFlow}>
                     <div>
-                      <dt>Now</dt>
+                      <dt>Case for</dt>
                       <dd>{choice.now}</dd>
                     </div>
-                    <ArrowRight size={17} aria-hidden="true" />
+                    <span className={styles.stakesDivider} aria-hidden="true" />
                     <div>
-                      <dt>Later</dt>
+                      <dt>Tradeoff</dt>
                       <dd>{choice.later}</dd>
                     </div>
                   </dl>
@@ -123,9 +124,9 @@ export default function FpdrDeepDivePage() {
           <div className={styles.councilBrief}>
             <h2>Before Council acts</h2>
             <p>
-              <strong>Start now, start smaller, or wait?</strong> Compare the
-              costs, protect essential services, and say what evidence would
-              change the decision.
+              <strong>Compare all three paths on equal terms.</strong> Keep
+              annual funding, build partial reserves, or fully prefund. Change
+              course only where benefits justify costs and risks.
             </p>
             <a href="#menu">
               When to act—and what to ask <ArrowRight size={16} />
@@ -139,10 +140,13 @@ export default function FpdrDeepDivePage() {
             </SourceLink>
           </p>
           <p className={styles.byline}>
-            Portland Civic Lab · Co-authored with{" "}
-            <SourceLink id="machizOpEd">Kevin Machiz, CFA, FRM</SourceLink>
+            Portland Civic Lab · Reviewed September 16, 2026
             <br />
-            Reviewed September 16, 2026 · Figures dated below
+            Source disclosure:{" "}
+            <SourceLink id="machizOpEd">
+              Kevin Machiz’s published analysis
+            </SourceLink>{" "}
+            advocates prefunding and is one of the sources used here.
           </p>
         </div>
       </section>
@@ -334,8 +338,8 @@ export default function FpdrDeepDivePage() {
         id="hard"
         layout="stacked"
         eyebrow="04 / The central tradeoff"
-        title="Why not just start saving?"
-        lead="Portland already saves for newer workers. Catching up on older pensions adds a cost today for a possible benefit later."
+        title="What does prefunding change?"
+        lead="Portland already prefunds newer workers’ pensions. Moving older pensions to an invested reserve changes when residents pay and which risks they bear."
       >
         <FundingTradeoff />
       </Section>
@@ -356,8 +360,8 @@ export default function FpdrDeepDivePage() {
         layout="stacked"
         tone="dark"
         eyebrow="06 / Explore the tradeoff"
-        title="What changes when you start saving?"
-        lead="Use this teaching model to see how earlier contributions and investment returns interact. It models the old pension only, not your future tax bill or the entire FPDR levy."
+        title="How much do assumptions change the result?"
+        lead="Compare three illustrative return assumptions. These calculations show cash contributions—not which policy delivers the best economic value."
       >
         <ReformSimulator />
       </Section>
@@ -408,12 +412,15 @@ export default function FpdrDeepDivePage() {
             Who contributed, and how the arguments are presented
           </summary>
           <p>
-            Kevin Machiz, a co-author, advocates prefunding. His proposal is
-            labeled as analysis. Pew’s advice to compare funding approaches, the
-            City&apos;s assessment of payment capacity and transition costs, and
-            GFOA&apos;s position against pension-obligation bonds, are presented
-            alongside it. The comparison and decision questions are editorial
-            synthesis; this page does not establish that one policy is optimal.
+            Kevin Machiz’s published analysis advocates prefunding. It is cited
+            as a source; he is not credited as a co-author or independent
+            reviewer of this page. Pew’s advice to compare funding approaches,
+            the City&apos;s assessment of payment capacity and transition costs,
+            and GFOA&apos;s position against pension-obligation bonds, are
+            presented alongside it. The comparison and decision questions are
+            the Lab’s editorial synthesis. No independent actuarial review of
+            this page’s teaching model is claimed. The evidence does not
+            establish one optimal policy.
           </p>
         </details>
         <div className={styles.sourceGrid}>

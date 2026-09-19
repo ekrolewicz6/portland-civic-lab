@@ -370,11 +370,12 @@ export const REFORM_OPTIONS = [
     id: "status-quo",
     name: "Keep paying year by year",
     tag: "Current approach",
-    when: "Extra saving would strain households or services, but annual benefit payments remain manageable.",
-    ask: "What would make saving affordable? Set a review date; waiting leaves less time to invest.",
-    now: "No extra contribution to build savings. Existing bills can still rise.",
-    later: "Future taxpayers keep paying benefits from taxes.",
-    risk: "Little investment cushion for the old pension.",
+    when: "Annual payments remain manageable and keeping money available for other needs offers more value than prefunding.",
+    ask: "Do long-term tax costs and risks compare favorably with prefunding? What evidence would change that conclusion?",
+    now: "Avoid a transition contribution; preserve resources for other priorities.",
+    later:
+      "Future taxes pay benefits as due. Old-plan costs are projected to decline eventually.",
+    risk: "Little investment income or reserve to help cover future payments.",
   },
   {
     id: "cash",
@@ -413,7 +414,7 @@ export const REFORM_OPTIONS = [
     when: "Borrowing costs are favorable and the City can repay even after poor investment results.",
     ask: "Who covers investment losses and debt payments? GFOA recommends against these bonds.",
     now: "Invest borrowed money and start repaying the loan.",
-    later: "Taxpayers benefit if returns beat interest and fees.",
+    later: "Investment gains could exceed the cost of interest and fees.",
     risk: "Debt stays due after losses. GFOA advises against these bonds.",
   },
 ] as const;

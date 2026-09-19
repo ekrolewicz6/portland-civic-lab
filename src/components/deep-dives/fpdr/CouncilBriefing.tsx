@@ -17,7 +17,9 @@ export function CompressionDiagram() {
   return (
     <section className={styles.compression} aria-labelledby="compression-title">
       <div className={styles.heading}>
-        <span className={styles.eyebrow}>The effect beyond your bill</span>
+        <span className={styles.eyebrow}>
+          Conditional effect · size not estimated here
+        </span>
         <h3 id="compression-title">
           More for pensions can mean less for other services.
         </h3>
@@ -28,7 +30,7 @@ export function CompressionDiagram() {
       </div>
       <div className={styles.forkRoot}>
         <Landmark aria-hidden="true" size={22} />
-        <strong>The FPDR levy increases</strong>
+        <strong>If the FPDR levy increases</strong>
       </div>
       <div className={styles.fork}>
         <div>
@@ -49,8 +51,8 @@ export function CompressionDiagram() {
         </div>
       </div>
       <p className={styles.note}>
-        Both effects can occur across Portland. The balance depends on each
-        property’s values and applicable levies.
+        The tax-limit rules are documented. How much a specific proposal would
+        raise bills or reduce other revenue still needs property-level analysis.
       </p>
       <details className={styles.details}>
         <summary>How the tax limit works</summary>
@@ -83,7 +85,9 @@ export function LevyOutlook() {
   return (
     <div className={styles.outlook}>
       <div className={styles.heading}>
-        <span className={styles.eyebrow}>Two measures. Different stories.</span>
+        <span className={styles.eyebrow}>
+          Projected · January 2025 analysis
+        </span>
         <h3>A lower tax rate can still raise more dollars.</h3>
         <p>
           Two years from the same Milliman forecast. Growth in the city’s
@@ -226,27 +230,29 @@ export function FundingTradeoff() {
         <div>
           <Users aria-hidden="true" />
           <span className={styles.eyebrow}>Later</span>
-          <h3>Need less from taxes</h3>
+          <h3>Change future tax costs</h3>
           <p>
-            Future residents could benefit. Today’s contributors may move away
-            first.
+            Future residents could pay less. Poor results could leave them
+            covering a shortfall.
           </p>
-          <strong className={styles.benefit}>A potential future benefit</strong>
+          <strong className={styles.benefit}>
+            The outcome depends on returns
+          </strong>
         </div>
       </div>
       <div className={styles.balance}>
         <div>
-          <h4>Why start saving?</h4>
+          <h4>The case for annual funding</h4>
           <p>
-            Investment income can share the cost and reduce the bill left to
-            future taxpayers.
+            Preserve resources for other priorities and avoid the transition
+            cost of building a reserve for a plan already closed to new hires.
           </p>
         </div>
         <div>
-          <h4>Why move carefully?</h4>
+          <h4>The case for prefunding</h4>
           <p>
-            Residents already fund old pensions and newer workers’ PERS
-            contributions. Catching up adds another demand today.
+            Build invested assets whose earnings could reduce future tax
+            contributions and provide a reserve for future payments.
           </p>
         </div>
       </div>
@@ -270,16 +276,16 @@ export function CouncilDecision() {
         <span className={styles.eyebrow}>
           The Lab’s recommended decision process
         </span>
-        <h3>Prepare now. Commit when the tests are met.</h3>
+        <h3>Compare first. Choose on evidence.</h3>
         <p>
-          Commission a comparison of starting now, starting smaller and starting
-          later. Include continuing current funding. Council should set
-          acceptable costs and risks before choosing a plan.
+          Compare continued annual funding, partial reserves and fuller
+          prefunding. Recommend a change only where expected benefits justify
+          transition costs and risks.
         </p>
       </div>
       <ol className={styles.decisionSteps}>
         <li>
-          <span>01 / Prepare</span>
+          <span>01 / Compare</span>
           <h4>Get ready to choose</h4>
           <p>
             Price the options, identify legal approvals and set limits on
@@ -287,19 +293,19 @@ export function CouncilDecision() {
           </p>
         </li>
         <li>
-          <span>02 / Commit</span>
-          <h4>Act on evidence</h4>
+          <span>02 / Choose</span>
+          <h4>Keep or change course</h4>
           <p>
-            Commit funds only after required approvals and a public comparison
-            against those limits.
+            Retaining annual funding is a valid outcome. Any change needs a
+            stronger case and the required legal approvals.
           </p>
         </li>
         <li>
           <span>03 / Revisit</span>
-          <h4>Give “not yet” a date</h4>
+          <h4>Name what could change</h4>
           <p>
-            If waiting, name the conditions that would change the decision and
-            schedule a review.
+            For any chosen approach, publish review dates and the evidence that
+            would justify reconsidering it.
           </p>
         </li>
       </ol>
@@ -335,15 +341,16 @@ export function CouncilDecision() {
           </div>
           <div>
             <span>04 / Payoff</span>
-            <strong>Is acting now worth the extra cost?</strong>
+            <strong>Which approach offers better value?</strong>
             <p>
-              Compare now, smaller and later using cash totals and today’s value
-              of future payments, after fees.
+              Compare annual funding and reserves using cash totals, payment
+              timing, fees and alternative uses of money.
             </p>
           </div>
         </div>
         <p className={styles.note}>
-          These are proposed decision tests, not adopted thresholds.{" "}
+          Data estimate the consequences. Council decides what burdens and risks
+          are acceptable. These tests are the Lab’s recommendation.{" "}
           <SourceLink id="pewFunding2026">
             Pew recommends comparative analysis, p. 12
           </SourceLink>

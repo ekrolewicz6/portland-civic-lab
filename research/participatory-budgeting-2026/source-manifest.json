@@ -1,0 +1,213 @@
+{
+  "access_date": "2026-09-17",
+  "references": [
+    {
+      "id": "election",
+      "url": "https://www.portland.gov/auditor/elections/2026-november-general-election-petition-and-measure-log",
+      "capture": "sources/reference-election.txt",
+      "bytes": 15641,
+      "status": "captured"
+    },
+    {
+      "id": "ballot",
+      "url": "https://multco.us/file/measure_26-267/download",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "measure",
+      "url": "https://www.portland.gov/auditor/elections/documents/pdx25ol-01-text-proposed-charter-change/download",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "adopted",
+      "url": "https://www.portland.gov/budget/2026-2027-budget/development/adopted",
+      "capture": "sources/reference-adopted.txt",
+      "bytes": 10810,
+      "status": "captured"
+    },
+    {
+      "id": "budgetmemo",
+      "url": "https://www.portland.gov/charter-review-commission/documents/proposal-9-participatory-budgeting-city-budget-office-memo/download",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "june",
+      "url": "https://www.portland.gov/hello/news/2026/6/18/portland-city-council-adopts-final-budget-2026-27",
+      "capture": "sources/reference-june.txt",
+      "bytes": 9302,
+      "status": "captured"
+    },
+    {
+      "id": "supplemental",
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192207",
+      "capture": "sources/reference-supplemental.txt",
+      "bytes": 14553,
+      "status": "captured"
+    },
+    {
+      "id": "forecast",
+      "url": "https://www.portland.gov/budget/2026-2027-budget/documents/fy-2026-27-general-fund-forecast/download",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "budgetdevelopment",
+      "url": "https://www.portland.gov/budget/2026-2027-budget/development",
+      "capture": "sources/reference-budgetdevelopment.txt",
+      "bytes": 33460,
+      "status": "captured"
+    },
+    {
+      "id": "yes",
+      "url": "https://your2centspdx.com/",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "yesfaq",
+      "url": "https://your2centspdx.com/faq/",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "pbfaq",
+      "url": "https://www.pboregon.org/your2centspdx",
+      "capture": "sources/reference-pbfaq.txt",
+      "bytes": 34551,
+      "status": "captured"
+    },
+    {
+      "id": "no",
+      "url": "https://www.protectourcityservices.org/",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "nomeasure",
+      "url": "https://www.protectourcityservices.org/measure",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "nofaq",
+      "url": "https://www.protectourcityservices.org/faq",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "nocost",
+      "url": "https://www.protectourcityservices.org/the-cost",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "coalition",
+      "url": "https://www.protectourcityservices.org/coalition",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "cambridge",
+      "url": "https://www.cambridgema.gov/news/2026/03/city-of-cambridge-announces-winning-projects-for-12th-participatory-budgeting-cycle",
+      "capture": "sources/reference-cambridge.txt",
+      "bytes": 9673,
+      "status": "captured"
+    },
+    {
+      "id": "nyccouncil",
+      "url": "https://council.nyc.gov/press/2025/05/30/2892/",
+      "capture": "sources/reference-nyccouncil.txt",
+      "bytes": 26837,
+      "status": "captured"
+    },
+    {
+      "id": "nyccitywide",
+      "url": "https://www.participate.nyc.gov/processes/Citywidepb2025",
+      "capture": "sources/reference-nyccitywide.txt",
+      "bytes": 10263,
+      "status": "captured"
+    },
+    {
+      "id": "nyccharter",
+      "url": "https://www.nyc.gov/site/charter/news/charter-commission-approves-proposals-relating-to-campaign-finance-community-boards-civic-engagement.page",
+      "capture": "sources/reference-nyccharter.txt",
+      "bytes": 12678,
+      "status": "captured"
+    },
+    {
+      "id": "boston",
+      "url": "https://www.boston.gov/news/mayor-wu-announces-winning-proposals-2026-participatory-budgeting-initiative",
+      "capture": "sources/reference-boston.txt",
+      "bytes": 6241,
+      "status": "captured"
+    },
+    {
+      "id": "seattlevote",
+      "url": "https://ocr.seattle.gov/seattle-announces-27m-in-winning-participatory-budgeting-projects/",
+      "status": "direct capture failed; reviewed through web tool",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "seattleprogram",
+      "url": "https://www.seattle.gov/civilrights/public-participation/community-investments/participatory-budgeting",
+      "capture": "sources/reference-seattleprogram.txt",
+      "bytes": 15257,
+      "status": "captured"
+    },
+    {
+      "id": "metro",
+      "url": "https://www.oregonmetro.gov/stories/26-million-grants",
+      "capture": "sources/reference-metro.txt",
+      "bytes": 24492,
+      "status": "captured"
+    },
+    {
+      "id": "youth",
+      "url": "https://www.pboregon.org/youth-voice-youth-vote-pb",
+      "capture": "sources/reference-youth.txt",
+      "bytes": 4887,
+      "status": "captured"
+    },
+    {
+      "id": "cleveland",
+      "url": "https://boe.cuyahogacounty.gov/elections/GetDocumentById/3816d500-29a7-4bb0-8d92-af9a122c1210/",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "turnoutstudy",
+      "url": "https://researchers.kean.edu/en/publications/testing-the-participation-hypothesis-evidence-from-participatory-/",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "intereststudy",
+      "url": "https://www.cambridge.org/core/journals/state-politics-and-policy-quarterly/article/who-is-interested-in-participating-in-participatory-budgeting/58EF38C9673BC3F4694DE148EE2CDEC2",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "brazil",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0305750X13000156",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "review",
+      "url": "https://journals.sagepub.com/doi/10.1177/00208523221078938",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "urban",
+      "url": "https://www.urban.org/research/publication/best-practices-inclusive-participatory-budgeting",
+      "capture": "sources/reference-urban.txt",
+      "bytes": 7815,
+      "status": "captured"
+    },
+    {
+      "id": "cityclub",
+      "url": "https://www.pdxcityclub.org/wp-content/uploads/2025/05/2025-03-14-Participatory-Budgeting-final.pdf",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "charter",
+      "url": "https://www.portland.gov/charter",
+      "status": "reviewed; see research-notes.md and existing source files"
+    },
+    {
+      "id": "history",
+      "url": "https://www.portland.gov/council/documents/report/accepted/66-2023",
+      "capture": "sources/reference-history.txt",
+      "bytes": 7293,
+      "status": "captured"
+    }
+  ]
+}

@@ -21,9 +21,15 @@ import { SIM_START_YEAR, SIM_END_YEAR } from "@/lib/fpdr/data";
 import SourceLink from "./SourceLink";
 import styles from "./fpdr-tools.module.css";
 
-export default function ReformSimulator() {
-  const [bond, setBond] = useState(0);
-  const [returns, setReturns] = useState(0.07);
+function ScenarioDetail({
+  returns,
+  bond,
+  onReturnChange,
+}: {
+  returns: number;
+  bond: number;
+  onReturnChange: (value: number) => void;
+}) {
   const [view, setView] = useState<"annual" | "cumulative">("annual");
   const sim = useMemo(
     () => simulateFundingPolicy(returns, bond),
@@ -37,97 +43,34 @@ export default function ReformSimulator() {
     view === "annual" ? sim.crossoverYear : sim.cumulativeCrossoverYear;
 
   return (
-    <div className={styles.tool}>
-      <div className={styles.simIntro}>
-        <span className={styles.eyebrow}>
-          Teaching model · {SIM_START_YEAR}–{SIM_END_YEAR} · Old pension only
-        </span>
-        <p>
-          Each scenario assumes a constant return known in advance and
-          recalculates the required contributions. This shows the mechanics of
-          prefunding; it does not predict investment performance or the full
-          FPDR levy. It excludes tax compression and effects on other services;
-          it cannot replace the comparison Council needs.
+    <div id="fpdr-scenario-detail">
+      <div className={styles.detailControls}>
+        <div className={styles.controlHeading}>
+          <label htmlFor="fpdr-return">
+            Adjust this illustration’s constant return
+          </label>
+          <output htmlFor="fpdr-return">{fmtPct(returns, 1)}</output>
+        </div>
+        <input
+          id="fpdr-return"
+          className={styles.range}
+          type="range"
+          min={0}
+          max={0.08}
+          step={0.005}
+          value={returns}
+          onChange={(event) => onReturnChange(Number(event.target.value))}
+          aria-label="Assumed annual investment return"
+          aria-valuetext={`${fmtPct(returns, 1)} per year`}
+        />
+        <div className={styles.rangeEnds}>
+          <span>0%</span>
+          <span>8%</span>
+        </div>
+        <p className={styles.hint}>
+          Contributions are recalculated for each return. This does not test
+          losses after a plan is adopted.
         </p>
-      </div>
-      <div className={styles.simControls}>
-        <div>
-          <div className={styles.controlHeading}>
-            <label htmlFor="fpdr-return">Annual investment return</label>
-            <output htmlFor="fpdr-return">{fmtPct(returns, 1)}</output>
-          </div>
-          <input
-            id="fpdr-return"
-            className={styles.range}
-            type="range"
-            min={0}
-            max={0.08}
-            step={0.005}
-            value={returns}
-            onChange={(event) => setReturns(Number(event.target.value))}
-            aria-label="Assumed annual investment return"
-            aria-valuetext={`${fmtPct(returns, 1)} per year`}
-          />
-          <div className={styles.rangeEnds}>
-            <span>0%</span>
-            <span>8%</span>
-          </div>
-          <div
-            className={styles.segmented}
-            role="group"
-            aria-label="Investment return scenarios"
-          >
-            {[0, 0.04, 0.07].map((rate) => (
-              <button
-                key={rate}
-                type="button"
-                aria-pressed={returns === rate}
-                onClick={() => setReturns(rate)}
-              >
-                {fmtPct(rate)} return
-              </button>
-            ))}
-          </div>
-          <p className={styles.hint}>
-            Try lower returns to see the contribution tradeoff. No scenario here
-            includes market volatility.
-          </p>
-        </div>
-        <div>
-          <p
-            className={styles.label}
-            style={{ marginTop: 0 }}
-            id="fpdr-bond-label"
-          >
-            Seed the reserve with borrowed money?
-          </p>
-          <div
-            className={styles.segmented}
-            role="group"
-            aria-labelledby="fpdr-bond-label"
-          >
-            {[0, 200].map((amount) => (
-              <button
-                key={amount}
-                type="button"
-                aria-pressed={bond === amount}
-                onClick={() => setBond(amount)}
-              >
-                {amount ? "$200M bond" : "No bond"}
-              </button>
-            ))}
-          </div>
-          <p className={styles.hint}>
-            {fmtPct(A.bondRate, 1)} interest, repaid over {A.bondYears} years.
-            Debt service is included in the results.
-          </p>
-          <p className={styles.hint}>
-            <strong>Borrowing adds risk.</strong>{" "}
-            <SourceLink id="gfoaBonds">
-              GFOA recommends against pension-obligation bonds.
-            </SourceLink>
-          </p>
-        </div>
       </div>
       <div className={styles.chart}>
         <div className={styles.chartHeader}>
@@ -230,8 +173,8 @@ export default function ReformSimulator() {
               <Line
                 type="linear"
                 dataKey={view === "annual" ? "payGo" : "cumulativePayGo"}
-                stroke="#8a8177"
-                strokeWidth={2}
+                stroke="#586e85"
+                strokeWidth={2.5}
                 strokeDasharray="5 5"
                 dot={false}
                 isAnimationActive={false}
@@ -256,28 +199,23 @@ export default function ReformSimulator() {
       <div className={styles.simMetrics} aria-live="polite" aria-atomic="true">
         <div data-testid="fpdr-cost-outcome">
           <p className={styles.eyebrow}>
-            {negative ? "Added cash cost" : "Cash contributions saved"} through{" "}
-            {SIM_END_YEAR}
+            Illustrative cash difference through {SIM_END_YEAR}
           </p>
-          <p
-            className={`${styles.metricValue} ${negative ? styles.metricNegative : ""}`}
-          >
-            {fmtMillions(magnitude)}
-          </p>
+          <p className={styles.metricValue}>{fmtMillions(magnitude)}</p>
           <p className={styles.metricText}>
             {negative
-              ? "Borrowing costs outweigh the modeled investment gains."
+              ? "More cash contributed than under annual funding in this illustration."
               : meaningful
-                ? `${fmtPct(sim.savingsPct)} below pay-as-you-go in this scenario.`
+                ? `${fmtPct(sim.savingsPct)} less cash contributed than under annual funding in this illustration.`
                 : "No investment earnings and no bond: contributions just shift earlier."}{" "}
-            Undiscounted; not a household savings forecast.
+            Undiscounted; not a measure of net economic benefit.
           </p>
         </div>
         <div>
           <p className={styles.eyebrow}>
             Extra contribution in {SIM_START_YEAR}
           </p>
-          <p className={`${styles.metricValue} ${styles.metricNegative}`}>
+          <p className={styles.metricValue}>
             {firstYearExtra >= 0 ? "+" : "−"}
             {fmtMillions(Math.abs(firstYearExtra))}
           </p>
@@ -314,9 +252,10 @@ export default function ReformSimulator() {
         </p>
         <p>
           <strong>Not included:</strong> market losses or return sequencing,
-          inflation, a discount rate for comparing dollars across time, PERS,
-          disability and administration costs, existing assets, or benefits
-          after {SIM_END_YEAR}. The benefit path is reconstructed from selected{" "}
+          inflation, a discount rate for comparing dollars across time, tax
+          compression and service effects, PERS, disability and administration
+          costs, existing assets, or benefits after {SIM_END_YEAR}. The benefit
+          path is reconstructed from selected{" "}
           <SourceLink id="milliman2024">2024 actuarial anchors</SourceLink> with
           an illustrative long tail; the intermediate years and total are not a
           published actuarial forecast.
@@ -367,6 +306,135 @@ export default function ReformSimulator() {
           </table>
         </div>
       </details>
+    </div>
+  );
+}
+
+const COMPARISON_RETURNS = [0, 0.04, 0.07] as const;
+
+export default function ReformSimulator() {
+  const [bond, setBond] = useState(0);
+  const [selectedReturn, setSelectedReturn] = useState<number | null>(null);
+  const cases = useMemo(
+    () => COMPARISON_RETURNS.map((rate) => simulateFundingPolicy(rate, bond)),
+    [bond],
+  );
+  return (
+    <div className={styles.tool}>
+      <div className={styles.simIntro}>
+        <span className={styles.eyebrow}>
+          Teaching model · {SIM_START_YEAR}–{SIM_END_YEAR} · Old pension only
+        </span>
+        <h3 className={styles.scenarioTitle}>Illustrative cash differences</h3>
+        <p>
+          Each constant return is assumed known in advance; contributions are
+          recalculated. These are illustrations, not forecasts.
+        </p>
+        <div className={styles.modelLimits}>
+          <span>No market shocks</span>
+          <span>No time-value adjustment</span>
+          <span>No PERS or service effects</span>
+        </div>
+      </div>
+      <div className={styles.scenarioControls}>
+        <div>
+          <p id="fpdr-bond-label" className={styles.label}>
+            Use borrowed money in these illustrations?
+          </p>
+          <div
+            className={styles.segmented}
+            role="group"
+            aria-labelledby="fpdr-bond-label"
+          >
+            {[0, 200].map((amount) => (
+              <button
+                key={amount}
+                type="button"
+                aria-pressed={bond === amount}
+                onClick={() => setBond(amount)}
+              >
+                {amount ? "$200M bond" : "No bond"}
+              </button>
+            ))}
+          </div>
+        </div>
+        <p className={styles.hint}>
+          Bond: {fmtPct(A.bondRate, 1)} over {A.bondYears} years; repayments
+          included.{" "}
+          <SourceLink id="gfoaBonds">
+            GFOA recommends against pension-obligation bonds.
+          </SourceLink>
+        </p>
+      </div>
+      <div className={styles.scenarioComparison}>
+        <p className={styles.label}>
+          Prefunding compared with annual funding · cash through {SIM_END_YEAR}
+        </p>
+        <div
+          className={styles.scenarioCases}
+          role="group"
+          aria-label="Investment return illustrations"
+        >
+          {cases.map((item) => {
+            const same = Math.abs(item.lifetimeSavings) < 0.01;
+            const extra = item.rows[0].reform - item.rows[0].payGo;
+            return (
+              <button
+                key={item.annualReturn}
+                type="button"
+                aria-label={`${fmtPct(item.annualReturn)} return`}
+                aria-describedby={`fpdr-case-${item.annualReturn * 100}`}
+                aria-pressed={selectedReturn === item.annualReturn}
+                aria-controls="fpdr-selected-illustration"
+                onClick={() => setSelectedReturn(item.annualReturn)}
+              >
+                <span className={styles.caseRate}>
+                  {fmtPct(item.annualReturn)}
+                  <span>constant return</span>
+                </span>
+                <span
+                  className={styles.caseNumbers}
+                  id={`fpdr-case-${item.annualReturn * 100}`}
+                >
+                  <strong>
+                    {same
+                      ? "$0 difference"
+                      : `${fmtMillions(Math.abs(item.lifetimeSavings))} ${item.lifetimeSavings > 0 ? "less cash" : "more cash"}`}
+                  </strong>
+                  <span>
+                    First year: {extra >= 0 ? "+" : "−"}
+                    {fmtMillions(Math.abs(extra))} vs. annual funding
+                  </span>
+                  <span className={styles.caseAction}>
+                    {selectedReturn === item.annualReturn
+                      ? "Viewing this illustration"
+                      : "Inspect this illustration →"}
+                  </span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
+        <p className={styles.hint}>
+          <strong>Less cash is not proof of better value.</strong> These totals
+          exclude the opportunity cost of paying earlier. Even 0% is a
+          constant-return illustration, not a stress test.
+        </p>
+      </div>
+      <div id="fpdr-selected-illustration">
+        {selectedReturn === null ? (
+          <p className={styles.scenarioPrompt}>
+            Choose an illustration above to inspect the annual costs and
+            assumptions.
+          </p>
+        ) : (
+          <ScenarioDetail
+            returns={selectedReturn}
+            bond={bond}
+            onReturnChange={setSelectedReturn}
+          />
+        )}
+      </div>
     </div>
   );
 }
