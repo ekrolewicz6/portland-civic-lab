@@ -402,12 +402,13 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
             ))}
             <button
               aria-pressed={!state.answers[current.id]}
-              onClick={() =>
+              onClick={() => {
                 setState((s) => ({
                   ...s,
                   answers: { ...s.answers, [current.id]: "" },
-                }))
-              }
+                }));
+                nextQuestion();
+              }}
             >
               Not sure — skip this question
             </button>

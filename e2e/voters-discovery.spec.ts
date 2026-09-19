@@ -212,6 +212,12 @@ test("three priorities take at most five screens; extra questions are optional",
     await expect(
       guide.getByText(`Question ${i} of 3`, { exact: true }),
     ).toBeVisible();
+    if (i === 2) {
+      await guide
+        .getByRole("button", { name: "Not sure — skip this question" })
+        .click();
+      continue;
+    }
     await guide.getByRole("button", { name: /^It depends$/ }).click();
     await guide
       .getByRole("button", {
