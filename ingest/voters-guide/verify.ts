@@ -11,7 +11,11 @@ import {
 import { races as publishedRaces } from "../../src/lib/voters-guide/published";
 import type { Evidence } from "../../src/lib/voters-guide/types";
 import { councilDecisions } from "../../src/lib/voters-guide/council-decisions";
-import { decisionAccounts } from "../../src/lib/voters-guide/council-record-accounts";
+import {
+  decisionAccounts,
+  councilDisagreements,
+} from "../../src/lib/voters-guide/council-record-accounts";
+import { councilCoverageAudit } from "../../src/lib/voters-guide/council-coverage-map";
 import roster from "../../research/voters-guide-2026/state-roster.json";
 import manifest from "../../research/voters-guide-2026/source-manifest.json";
 
@@ -45,7 +49,34 @@ assert.deepEqual(
   "Unexpected public release scope",
 );
 assert.equal(publishedRaces.flatMap((r) => r.candidates).length, 33);
+unique(
+  councilDecisions.map((item) => item.id),
+  "Council decision IDs",
+);
+unique(
+  councilDisagreements.map((item) => item.id),
+  "Council issue IDs",
+);
+assert.equal(councilCoverageAudit.dossiers.length, 24);
+const coveredDecisions = new Set(
+  councilDisagreements.flatMap((item) => item.decisionIds),
+);
+assert.deepEqual(
+  [...coveredDecisions].sort(),
+  councilDecisions.map((item) => item.id).sort(),
+);
+for (const dossier of councilCoverageAudit.dossiers) {
+  assert.ok(
+    councilDisagreements.some((item) => item.id === dossier.issueId),
+    `Uncovered dossier: ${dossier.dossier}`,
+  );
+}
 for (const decision of councilDecisions) {
+  evidence(decision.source);
+  assert.equal(Object.keys(decision.votes).length, 6);
+  if (Object.values(decision.votes).includes("Not on committee")) {
+    assert.match(decision.voteLabel ?? "", /Committee/);
+  }
   assert.deepEqual(
     Object.keys(decisionAccounts[decision.id]).sort(),
     Object.keys(decision.votes).sort(),

@@ -40,7 +40,7 @@ export const comparisonTopics = [
     label: "Recorded decisions",
     question: "What did they do when a decision came to a vote?",
     context:
-      "Four decisions, including the competing budget proposals and Moda amendments. Read what each person did beside their publicly stated reasons. This is a selected sample of their record.",
+      "Choose a Council issue to compare the same decisions for each candidate. Each entry explains what was proposed, what the vote changed and any individual explanation established in the sources. Committee actions and absences are identified separately.",
   },
 ] as const;
 export type ComparisonTopic = (typeof comparisonTopics)[number]["id"];

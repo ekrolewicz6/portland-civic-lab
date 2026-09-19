@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import {
   councilDecisions,
   type CouncilDecision,
@@ -76,12 +77,59 @@ export function DecisionExplanation({
   );
 }
 
+export function CouncilIssuePicker({
+  value,
+  onChange,
+  label = "Choose a Council issue",
+}: {
+  value: string;
+  onChange: (id: string) => void;
+  label?: string;
+}) {
+  return (
+    <label className={styles.councilIssuePicker}>
+      <span>{label}</span>
+      <select value={value} onChange={(event) => onChange(event.target.value)}>
+        {councilDisagreements.map((item) => (
+          <option key={item.id} value={item.id}>
+            {item.label}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
 export default function CouncilDisagreements({
   people,
 }: {
   people: Candidate[];
 }) {
   const [active, setActive] = useState("supplemental-budget");
+  useEffect(() => {
+    let frame = 0;
+    const restore = () => {
+      const id = window.location.hash.replace("#disagreement-", "");
+      if (councilDisagreements.some((item) => item.id === id)) {
+        setActive(id);
+        // The target starts hidden in server HTML. Scroll after React reveals it.
+        window.cancelAnimationFrame(frame);
+        frame = window.requestAnimationFrame(() => {
+          document.getElementById(`disagreement-${id}`)?.scrollIntoView();
+        });
+      }
+    };
+    restore();
+    window.addEventListener("hashchange", restore);
+    return () => {
+      window.removeEventListener("hashchange", restore);
+      window.cancelAnimationFrame(frame);
+    };
+  }, []);
+  function choose(id: string) {
+    setActive(id);
+    window.history.replaceState(null, "", `#disagreement-${id}`);
+  }
   return (
     <section
       className={styles.disagreements}
@@ -98,26 +146,36 @@ export default function CouncilDisagreements({
           </h2>
         </div>
         <p>
-          Seven topics. Seventeen matched votes since January 2025. See what
-          your district’s incumbents protected, changed and agreed on.
+          {councilDisagreements.length} issues. {councilDecisions.length}{" "}
+          matched decisions since January 2025. Understand the proposal, compare
+          your incumbents’ choices, then read the votes and their explanations.
         </p>
       </div>
-      <div
-        className={styles.disagreementPicker}
-        role="group"
-        aria-label="Council disagreements"
-      >
-        {councilDisagreements.map((item, index) => (
-          <button
-            key={item.id}
-            onClick={() => setActive(item.id)}
-            aria-pressed={active === item.id}
-            aria-controls={`disagreement-${item.id}`}
-          >
-            <span aria-hidden="true">0{index + 1}</span>
-            {item.label}
-          </button>
-        ))}
+      <div className={styles.issueNavigation}>
+        <CouncilIssuePicker value={active} onChange={choose} />
+        <div
+          className={styles.disagreementPicker}
+          role="group"
+          aria-label="Key Council issues"
+        >
+          {["supplemental-budget", "zenith", "water", "transportation"].map(
+            (id) => {
+              const item = councilDisagreements.find(
+                (entry) => entry.id === id,
+              )!;
+              return (
+                <button
+                  key={id}
+                  onClick={() => choose(id)}
+                  aria-pressed={active === id}
+                  aria-controls={`disagreement-${id}`}
+                >
+                  {item.label}
+                </button>
+              );
+            },
+          )}
+        </div>
       </div>
       {councilDisagreements.map((item) => {
         const decisions = item.decisionIds.map((id) =>
@@ -135,7 +193,8 @@ export default function CouncilDisagreements({
           >
             <div className={styles.disagreementContext}>
               <h3 id={`${item.id}-question`}>{item.question}</h3>
-              <p>{item.contrast}</p>
+              <p className={styles.issueContrast}>{item.contrast}</p>
+              <p>{item.context}</p>
             </div>
             {item.readings && (
               <p className={styles.readingLabel}>
@@ -165,7 +224,6 @@ export default function CouncilDisagreements({
             <details className={styles.disagreementEvidence}>
               <summary>Read the decisions and reasons</summary>
               <div className={styles.disagreementContext}>
-                <p>{item.context}</p>
                 <div className={styles.recordProof}>
                   {(item.sources.length ? item.sources : [decision.source]).map(
                     (source) => (
@@ -200,36 +258,34 @@ export default function CouncilDisagreements({
         );
       })}
       <details className={styles.coverageMap}>
-        <summary>What else has this Council taken up?</summary>
+        <summary>Browse all {councilDisagreements.length} issues</summary>
         <p>
-          This comparison covers selected consequential choices, not every major
-          debate. Continue into the source-linked Council dossiers for
-          transportation funding, Street Response, the police-accountability
-          system, arts-tax reform, water infrastructure, labor and governance.
-          Those records are not yet synthesized into matched candidate accounts
-          here.
+          The comparison covers every subject in the Council site’s 24-topic
+          index, plus major decisions on labor, children’s services, policing,
+          campaign finance and other City responsibilities. Select an issue to
+          read its matched accounts here.
         </p>
         <div className={styles.coverageLinks}>
-          {[
-            ["Transportation funding", "transportation-funding"],
-            ["Portland Street Response", "portland-street-response"],
-            ["Police-accountability system", "police-accountability"],
-            ["Arts-tax reform", "arts-tax-reform"],
-            ["Bull Run filtration", "bull-run-filtration"],
-            ["Council governance", "new-council-governance"],
-            ["All 24 topic dossiers", ""],
-          ].map(([label, slug]) => (
+          {councilDisagreements.map((item) => (
             <a
-              key={label}
-              href={`https://council.portlandciviclab.org/topics${slug ? `/${slug}` : ""}`}
+              key={item.id}
+              href={`#disagreement-${item.id}`}
+              onClick={() => setActive(item.id)}
             >
-              {label} ↗
+              {item.label} →
             </a>
           ))}
         </div>
+        <p>
+          <Link href="/voters-guide/methodology#council-coverage">
+            How we checked topic coverage ↗
+          </Link>
+        </p>
       </details>
       <p className={styles.disagreementFootnote}>
-        Recorded choices and stated reasons are labeled separately.{" "}
+        Reviewed through September 18, 2026. A vote, a stated reason and our
+        interpretation are distinct. “Not on committee” means the member had no
+        vote in that committee; “Absent” means they missed that roll call.{" "}
         <a href="#compare">Compare every candidate’s plans below ↓</a>
       </p>
     </section>

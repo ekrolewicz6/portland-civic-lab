@@ -75,10 +75,184 @@
       "sha256": "67e926de760f743307140f4891af7fd7bbdfa12887f25bdfb4042807ae4c4323"
     },
     {
+      "url": "https://council.portlandciviclab.org/coalitions?topic=labor-workforce#topic-record",
+      "representation": "normalized extracted page text",
+      "workingFile": "84e3c8848bba.txt",
+      "sha256": "445a025b71ef80025ae4d052a2bbabe2262b69699bb302ad48b1fccb191f845f"
+    },
+    {
       "url": "https://council.portlandciviclab.org/issues",
       "representation": "normalized extracted page text",
       "workingFile": "4a311394fd2b.txt",
       "sha256": "a3e426b4c00d660303a6820b3f072a287ed88314b8a484fc4c80d4479b2b9bbb"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/008d7c73-773e-4480-b7c0-22de7131cd1e",
+      "representation": "normalized extracted page text",
+      "workingFile": "e79121329660.txt",
+      "sha256": "e02a788aa454ee7eb0f0da17298ae57c3d2a70a792882f12081c362cb7a81f14"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/02e7d157-2f98-4a20-b58e-81ba88082260",
+      "representation": "normalized extracted page text",
+      "workingFile": "0bf48faf1e5f.txt",
+      "sha256": "9157869f93597ddbc1ea8d383ae33279354397d50c44b350aba3364e0ebf96fb"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/04ca6454-cefd-49a0-af3c-e17295e29627",
+      "representation": "normalized extracted page text",
+      "workingFile": "12df32be0a38.txt",
+      "sha256": "8222b6dd1afbc4913a3693989001209b831478e668968262847a66943138d9f0"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/0f413917-83cc-407c-b88d-688d8b818210",
+      "representation": "normalized extracted page text",
+      "workingFile": "7a051420f2b7.txt",
+      "sha256": "5b71b7e7af2199844af4bb0ff350a77946cc93fa79628c3c7519d9901c267755"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/16431033-e797-4d04-a3b1-8d7cbd0933fa",
+      "representation": "normalized extracted page text",
+      "workingFile": "99d0fe0b0030.txt",
+      "sha256": "a8b2d94ee8509cb179107ab0d904ca55b3a4c038cc3a1e4d5f7bf5f5b7ba57fd"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/3f47e346-477e-44c3-92da-093c69370021",
+      "representation": "normalized extracted page text",
+      "workingFile": "1b70135ea437.txt",
+      "sha256": "969abec09d80ec8a01bcca978df7ca951374ca145d8df4b405135d426f21f175"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/521b65e8-e845-47ea-bd23-a9ff24fcc783",
+      "representation": "normalized extracted page text",
+      "workingFile": "66913a0ad16d.txt",
+      "sha256": "ea4960f5f782e2b6cc6557b642da33738cb0f2c0cf36ec96d5aa8b349743f66c"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/5dc81f91-3e4b-4148-83b5-3ae2a4449c87",
+      "representation": "normalized extracted page text",
+      "workingFile": "5525ccac156f.txt",
+      "sha256": "b76b43b6e2d6f944ece13bbfcfc18d722bd4d490de2d9d018ad3f47a6f7a7b0d"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/6a2ab652-2a4d-4b64-91bf-3d06a5d66346",
+      "representation": "normalized extracted page text",
+      "workingFile": "4b72f8cd9da7.txt",
+      "sha256": "c7bf4ded9e5efcef21a5f337ffb201a04aa26a3ec899cc4083e7195095a77442"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/812c88e1-e0f6-42d3-8ebb-4d7feb56b7a7",
+      "representation": "normalized extracted page text",
+      "workingFile": "93892b4771b3.txt",
+      "sha256": "62586340d2533be6ae5a804f0c0cf22da18bdacb008a86c74a85c6981d6a8935"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/8515d5c0-801c-4515-a08c-46ce951e5519",
+      "representation": "normalized extracted page text",
+      "workingFile": "f4f3c28cae85.txt",
+      "sha256": "84b70f1daf65e81de59221ba092a50f2b4b11248807c684935cbc43f152a384f"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/8f6e8ce5-d061-42a1-a007-db233b22f39a",
+      "representation": "normalized extracted page text",
+      "workingFile": "06b1741bf33a.txt",
+      "sha256": "c0ce963a47b4bb0982359d44955cb2a47e080631fb981c9779110f5e8e8cc184"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/9540e300-4657-4ba9-97f2-bdc0260ec35e",
+      "representation": "normalized extracted page text",
+      "workingFile": "616d97d94f3c.txt",
+      "sha256": "a4d5db745466061502c271008120f7a3cc097929c1e5cdaa88da85719c03cf6c"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/958a9767-165b-442e-8faa-c9d06441282e",
+      "representation": "normalized extracted page text",
+      "workingFile": "296bd3472594.txt",
+      "sha256": "527674141ed28c84d4d8feced6290c1c35e86df852e11738ef34565eb1df62b1"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/9c4a85d4-3f65-4a4d-ba56-0fb11d0c2873",
+      "representation": "normalized extracted page text",
+      "workingFile": "513a0fea4f0d.txt",
+      "sha256": "516fda966b1d4ac5ea500b0e263e8d6b08b89485936dee11d8b0bd7bec6a146f"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/a6c5253f-1953-4df6-9461-2a7518da708a",
+      "representation": "normalized extracted page text",
+      "workingFile": "a3194ba4d4ee.txt",
+      "sha256": "5ba55ec92672204a299bfd3cb121b2a0673665f3d00bd9d410de10f6d184dc59"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/aec9767f-0759-40b6-8f6a-f6bc1324a578",
+      "representation": "normalized extracted page text",
+      "workingFile": "9f5f4f398b9d.txt",
+      "sha256": "de7ef6915ff74d22f4f3906e8c855930feab82cf806317ae1ec85317939024f4"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/b4557526-7c3e-40a6-bd16-aa82ccc3908d",
+      "representation": "normalized extracted page text",
+      "workingFile": "883522f0957e.txt",
+      "sha256": "920774f8306fc1c509a47904be224c16de2625662428e2db5e19e3a6c06a55ec"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/b4d56a1f-950e-4701-aac7-0b5ee40929bb",
+      "representation": "normalized extracted page text",
+      "workingFile": "216f6cd12807.txt",
+      "sha256": "5f1c5c6c9d1c5b82896de4675e01548de09dc979fcf8c1bd0b342f042965129d"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/bda7d944-51c6-4793-bfe0-39ce24eb8a7b",
+      "representation": "normalized extracted page text",
+      "workingFile": "83a6ddb3f6e7.txt",
+      "sha256": "9a93593b8760e4da6b6a139a34e92bde5d1c937bdb83d6e026bad4f7fe1579fe"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/be7453dd-b864-4556-9dba-659f4ccf738e",
+      "representation": "normalized extracted page text",
+      "workingFile": "204f1cdb534a.txt",
+      "sha256": "85b285cf182c42c87be67e8ca0e54072a1701713a0988a3906c29f8232bc487c"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/c00f487c-e024-4ea6-ad05-9da99fe0a708",
+      "representation": "normalized extracted page text",
+      "workingFile": "054ab982d034.txt",
+      "sha256": "70fd0ec4ad349b0b33a7135f8e0a12c93a4061290e6bbdd7aacfc6b16079244b"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/c64b979c-b2f8-4f2d-a8a1-0627a25fef65",
+      "representation": "normalized extracted page text",
+      "workingFile": "8fc871966983.txt",
+      "sha256": "4ea2ec2c89ee2df371f78521568d602607955479befeae00af2e2546994e59ad"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/d38c0765-2843-493b-8721-49a28f17815c",
+      "representation": "normalized extracted page text",
+      "workingFile": "7c249de789fb.txt",
+      "sha256": "9f5b5ea35917823a86bc2e0f5e48f6131990fa6c8ac260ce1a85428d08780671"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/d5380a9f-cd27-40fe-8817-831622a17b8e",
+      "representation": "normalized extracted page text",
+      "workingFile": "2ce17baab8a8.txt",
+      "sha256": "2289a19453d0efe41523978db7c99b00ceab8d77154ab77c0d4bfbeb01286d61"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/da33cd27-1d01-49a1-88ff-3cde8f72fa37",
+      "representation": "normalized extracted page text",
+      "workingFile": "1580c5d24c22.txt",
+      "sha256": "bbfdadb49b5c6b85c84c037643ce29fd25df26a5bb3ad21da1da3ea64fac2bf6"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/eb394288-73fe-4951-b7ab-5b0fdfbc2cf2",
+      "representation": "normalized extracted page text",
+      "workingFile": "cd6ce0265de0.txt",
+      "sha256": "76f35c18db2585640778026e56e631d8323a78f56ea29476bd8392c54c479920"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/matters/fd5e4c2f-f3fd-492f-8f91-850a782abde5",
+      "representation": "normalized extracted page text",
+      "workingFile": "237425940d2d.txt",
+      "sha256": "288f467230e31ec6039efafe875549473174fc38ba7928cbf50e9463eb6f42d6"
     },
     {
       "url": "https://council.portlandciviclab.org/people",
@@ -99,10 +273,40 @@
       "sha256": "02820899ab63dbaee206e16a36619fd9cfd4adf1a61da63becd5aa22f8cf2a67"
     },
     {
+      "url": "https://council.portlandciviclab.org/topics/82nd-avenue-transit",
+      "representation": "normalized extracted page text",
+      "workingFile": "0bf481ec9e69.txt",
+      "sha256": "1005e7516be381d6f981b4d81602304d4573ed135e34bcf322e68f5865b7ea9b"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/arts-tax-reform",
+      "representation": "normalized extracted page text",
+      "workingFile": "137e83090f2a.txt",
+      "sha256": "ca249579d80a5a304af8e55f5a3d8a5527bb9d3bbfe1b5de55c653044747dc66"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/bull-run-filtration",
+      "representation": "normalized extracted page text",
+      "workingFile": "02220e74a645.txt",
+      "sha256": "e578ddc841d38abf48a041866720a13ce7d1a5ac3102e63bb6e3204ce5560905"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/campesinos-boulevard-renaming",
+      "representation": "normalized extracted page text",
+      "workingFile": "e796c04a1b0b.txt",
+      "sha256": "93b3e65b00f3f1d597ef9558098f9bd0f4433d9779d24aeddad110bbe1333250"
+    },
+    {
       "url": "https://council.portlandciviclab.org/topics/city-budget-service-cuts",
       "representation": "normalized extracted page text",
       "workingFile": "1bd7d15fef9f.txt",
       "sha256": "9b4751e8b9d04b16ebe4fdbe5ebd94a02d5ec2f5c50e4ad269fe827a74b90d7a"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/city-data-privacy",
+      "representation": "normalized extracted page text",
+      "workingFile": "ebb30fe939a0.txt",
+      "sha256": "1cc5e10384eab658e60d3c16a3a6c32851569fc777c78a5bec44fb33d04f10eb"
     },
     {
       "url": "https://council.portlandciviclab.org/topics/citywide-asset-management",
@@ -111,10 +315,262 @@
       "sha256": "1f5bcf27f85a777264f3aa42061674b09805a19c17e8432bd64dcc626237c153"
     },
     {
+      "url": "https://council.portlandciviclab.org/topics/firearms-in-public-buildings",
+      "representation": "normalized extracted page text",
+      "workingFile": "b4f34e187fb2.txt",
+      "sha256": "23c564c6524feb30b89e71273757aaa4ada8004a355d8bb842c1d3d6c9a59abc"
+    },
+    {
       "url": "https://council.portlandciviclab.org/topics/housing-homelessness-strategy",
       "representation": "normalized extracted page text",
       "workingFile": "f6528aaedd75.txt",
       "sha256": "de8405a50c42041f9421dd6d6d0a100404181a27bc717bba226a9f983af4c115"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/housing-sdc-exemptions",
+      "representation": "normalized extracted page text",
+      "workingFile": "6955f4dbbffa.txt",
+      "sha256": "10970a996171871d74ab15e4d3e976d69ed58cd87559e748fbafab171fccebc0"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/moda-center",
+      "representation": "normalized extracted page text",
+      "workingFile": "63b8e9821400.txt",
+      "sha256": "7e3783529f79c237df1d817863dbcd8ea673df888df28b7f249a2503408c6b29"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/new-council-governance",
+      "representation": "normalized extracted page text",
+      "workingFile": "d15e9553d2de.txt",
+      "sha256": "c3e48c71e0f4da0abbfb53e4f6375c3d4d6f91eef6215c01423c9ffa578fca85"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/parks-levy",
+      "representation": "normalized extracted page text",
+      "workingFile": "dc6ff2884276.txt",
+      "sha256": "76f4e98963b15bcfce216597f894d873972ab1fce6e2035bf887918fb1d85d1d"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/pcef-climate-investments",
+      "representation": "normalized extracted page text",
+      "workingFile": "99ee27cbe08a.txt",
+      "sha256": "565f7e0aeb28ada633e1179a0f3b7fd79cdcb6ae7f1a333c11c3709adc642905"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/performing-arts-venues",
+      "representation": "normalized extracted page text",
+      "workingFile": "2203ad8c43c0.txt",
+      "sha256": "4dcef0b1614e97ac86788cafb2d890191c74f6eed7eeb8ee3cfcaf7c060ce0c5"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/permitting-reform",
+      "representation": "normalized extracted page text",
+      "workingFile": "caeaa47b40c6.txt",
+      "sha256": "846dcdf50d3ce858dc3912445b5c604e6db6f7e5176fbcba9ba37700f359d811"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/police-accountability",
+      "representation": "normalized extracted page text",
+      "workingFile": "c7e202137f0d.txt",
+      "sha256": "07008fb2e34179cfb96e0c7f4987ab381a09b756be0395f856fc1bd0e09b6199"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/portland-street-response",
+      "representation": "normalized extracted page text",
+      "workingFile": "9039e0724d40.txt",
+      "sha256": "3e162038aa6826f0ebf77e3b3c3d0d82776e3510db8c5fc4b3b9ea2e08dff67f"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/protect-portland",
+      "representation": "normalized extracted page text",
+      "workingFile": "fb4f67d00420.txt",
+      "sha256": "c41dfcbbb7e7852a1fa26a89f237020581a349de225191f6e5b96261e089b3ab"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/psychedelic-health-policy",
+      "representation": "normalized extracted page text",
+      "workingFile": "c03f30094902.txt",
+      "sha256": "5ae3cc284454cba23b53bccef411258b1e7629a986b9b38da4a4907c75351066"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/transportation-funding",
+      "representation": "normalized extracted page text",
+      "workingFile": "913b3582f8d8.txt",
+      "sha256": "2786cb3b24c852294a9d253a4b08bb72853d79a8105e6f157ec0e4c05f323d93"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/urban-forest-plan",
+      "representation": "normalized extracted page text",
+      "workingFile": "7af5585a3607.txt",
+      "sha256": "9611d824be20a759cf9d6996e87a3d393fda9d0d3491a9d06325c8b4c61d5d02"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/vision-zero",
+      "representation": "normalized extracted page text",
+      "workingFile": "e4cc117a7a97.txt",
+      "sha256": "0a5a5d1c29cf85911867f467f48ea9864f3dc1d49f184ce3ad2b1af76ba0ab39"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/zenith-energy",
+      "representation": "normalized extracted page text",
+      "workingFile": "6c5c61afed93.txt",
+      "sha256": "00ef2560538d4e080075dab271b2f219ff2dece47a0dfb0c1c97c096b2445bd6"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes",
+      "representation": "normalized extracted page text",
+      "workingFile": "1e220f6badbd.txt",
+      "sha256": "f54b8d90b0c8c5b838cb5e0f43a434045e13f434f6ff90a02269e1ab21a7fe5e"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=1",
+      "representation": "normalized extracted page text",
+      "workingFile": "e9e05a780be2.txt",
+      "sha256": "8138be0464925d1d76766fc50836ff1da09fbd8c3cc06bc5087c32d12c6dc299"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=10",
+      "representation": "normalized extracted page text",
+      "workingFile": "de2b2691de49.txt",
+      "sha256": "50249843d9c4de6ac6f36cbd342573dac4821123a7c795647b012f2fddacd910"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=11",
+      "representation": "normalized extracted page text",
+      "workingFile": "481558bd33da.txt",
+      "sha256": "d2d6604608a15ebc24823f64cb51eb27b2f2cb5ff86584ffdb4ed81f67e5c717"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=12",
+      "representation": "normalized extracted page text",
+      "workingFile": "71cacddb4f1f.txt",
+      "sha256": "7580365af408288b1ce8e2160ad4cd36fc40b65af97f0bb0e3ca389f44340ef3"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=13",
+      "representation": "normalized extracted page text",
+      "workingFile": "b551b9509ba4.txt",
+      "sha256": "00aa54f1f1b774baf9014ffae15cfc9e420ba33716537643ffcc59f23858e96d"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=14",
+      "representation": "normalized extracted page text",
+      "workingFile": "31d4d8ea7ec9.txt",
+      "sha256": "26cc9df66fb0ee3ec0533a32877d399b5ef72ea996cc82301a63a8b4c664ecf0"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=15",
+      "representation": "normalized extracted page text",
+      "workingFile": "e4201a155378.txt",
+      "sha256": "58c03e6f034d89dd98406cae7078abe27f1a3f884946dd415a08fe5e1676594e"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=16",
+      "representation": "normalized extracted page text",
+      "workingFile": "32cb3b42b35c.txt",
+      "sha256": "8eb1198b12b4d6e0fbd99b2e7946b7477cc7cd848e6fe3440ae2c35bd599ca4a"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=17",
+      "representation": "normalized extracted page text",
+      "workingFile": "8674223b1661.txt",
+      "sha256": "888b1f8d757fc8d07650004acae68c1c36636a15a3b1ccac6a43fc622aab5be4"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=18",
+      "representation": "normalized extracted page text",
+      "workingFile": "4d9307ee7d65.txt",
+      "sha256": "81d09445b9a26317fa773daec9e282cac94ac1e6513c66c627386cf16df3d5db"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=19",
+      "representation": "normalized extracted page text",
+      "workingFile": "1f3a35820e51.txt",
+      "sha256": "13c95c403ac387f2689be6855f3561aa8661122343f58eaca1f591ddc9eeb84a"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=2",
+      "representation": "normalized extracted page text",
+      "workingFile": "bbff4a8dc081.txt",
+      "sha256": "e4414141540dd54849f4966d77eed59eb62cd37aa6a8a18b580a2fb2c6d6a97f"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=20",
+      "representation": "normalized extracted page text",
+      "workingFile": "e4da91a4f063.txt",
+      "sha256": "ba79b4177612ea33361a97efafe0e67714f591aea19a310f2f48e6db5cda6213"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=21",
+      "representation": "normalized extracted page text",
+      "workingFile": "f3c607d35c52.txt",
+      "sha256": "cc39ea7dea9b4f24c72347724e67cc37f1ea9f221ced56bea246877317689b24"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=22",
+      "representation": "normalized extracted page text",
+      "workingFile": "c22102dfcb2b.txt",
+      "sha256": "32b6a82ae1de6ac4f05923fed601f9614804c18a40b7c3c39893bbfb7f2bb56d"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=23",
+      "representation": "normalized extracted page text",
+      "workingFile": "1120b4d615cd.txt",
+      "sha256": "14137e3b86a17ec2dfc971c300a4a9fb77e2c5265c28b4ac3f722ab0e5c471ae"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=24",
+      "representation": "normalized extracted page text",
+      "workingFile": "24a45281494e.txt",
+      "sha256": "2d342f517c86ef76c8a6da9db3ecee8a61ba1f02b0ff84f6fa45630448aa00a4"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=25",
+      "representation": "normalized extracted page text",
+      "workingFile": "31d6cb9388c6.txt",
+      "sha256": "ad0595bd491bde6ed51cbb7ff918a5fe1c42e436174cb36508640a51461e9bfc"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=3",
+      "representation": "normalized extracted page text",
+      "workingFile": "438fef42a43b.txt",
+      "sha256": "7279e4fa3bc844f17b80ec98d3ad5225e5074cf77be0b56fb6a14658c71597ed"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=4",
+      "representation": "normalized extracted page text",
+      "workingFile": "389ec3c0ca93.txt",
+      "sha256": "b141bb2f3b74b789cfac59004a7eb57ca14a5b5fc279ef68d10653530402e4b4"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=5",
+      "representation": "normalized extracted page text",
+      "workingFile": "8ee64ce45fbf.txt",
+      "sha256": "0f906f99d66ce6f0165ee50b1168d9c04ec32c0470b7198ee21eac3ee5f5b870"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=6",
+      "representation": "normalized extracted page text",
+      "workingFile": "2b19252fbf99.txt",
+      "sha256": "db087556bbb5161cab7fa68fbcc390d42f21b720f802e8c28c90a3d2988ebc94"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=7",
+      "representation": "normalized extracted page text",
+      "workingFile": "788b9af4c160.txt",
+      "sha256": "8e71ac7313ee497d960078e8ed19a59e65fc90735395ad8f1a6707b45b3ae7d2"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=8",
+      "representation": "normalized extracted page text",
+      "workingFile": "2b590763c2e5.txt",
+      "sha256": "3a7e0df3fd679cd0ecfa2ef19287c0237330f285aff4dca70a143a2723184942"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/votes?page=9",
+      "representation": "normalized extracted page text",
+      "workingFile": "0f3d3896d096.txt",
+      "sha256": "7c120136e33a0d2f0add377472292999ab4635aa0b3331994d00cede009bd809"
     },
     {
       "url": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513",
@@ -301,6 +757,12 @@
       "representation": "normalized extracted page text",
       "workingFile": "93d841c7964c.txt",
       "sha256": "f104e2fb36640a4cac1c84c3ee56f50c52c588b2427e50202e82c72c7bf71aed"
+    },
+    {
+      "url": "https://nwexaminer.com/p/gag-order-leads-to-suit-against-city",
+      "representation": "normalized extracted page text",
+      "workingFile": "b345e360b400.txt",
+      "sha256": "1c635e7cd854fc580050191c17679808088ff36906a4b76201aa383980cb37ea"
     },
     {
       "url": "https://patrickhilton4pdx.org",
@@ -717,6 +1179,18 @@
       "sha256": "1c03f9689624bc29a008e1ede2988ca04c4a038dd28382322456c47b29d707ef"
     },
     {
+      "url": "https://www.opb.org/article/2026/04/24/portland-monthly-street-fee/",
+      "representation": "normalized extracted page text",
+      "workingFile": "d7ba74ddad85.txt",
+      "sha256": "6ba3f178b3059a635fdc6ca8d2e89327e8bbd698361a69a18163032f0f091052"
+    },
+    {
+      "url": "https://www.opb.org/article/2026/05/27/portland-votes-to-increase-arts-tax-allow-fewer-people-to-pay/",
+      "representation": "normalized extracted page text",
+      "workingFile": "aedbb4fc1c95.txt",
+      "sha256": "3d23f72a23c92b00478071c311215b6aef6a110462ffab2918bc317be73b3581"
+    },
+    {
       "url": "https://www.opb.org/article/2026/06/10/portland-oregon-politics-city-council-funding-jobs/",
       "representation": "normalized extracted page text",
       "workingFile": "27565f1276c1.txt",
@@ -819,6 +1293,12 @@
       "sha256": "e01b6a312fb3d8dfc0dc057b51584021c343c8d74b1bca9281a4e946a92416e4"
     },
     {
+      "url": "https://www.portland.gov/council/districts/2/sameer-kanal/news/2025/3/25/statement-councilors-candace-avalos-mitch-green",
+      "representation": "normalized extracted page text",
+      "workingFile": "7e0ad6b71e95.txt",
+      "sha256": "1dc14bc0c12bc732472e4345c54eb6ae559a7a640b550a5d2b9fef7fbf89bd01"
+    },
+    {
       "url": "https://www.portland.gov/council/districts/3/angelita-morillo/morillo-news",
       "representation": "normalized extracted page text",
       "workingFile": "0f5447665c60.txt",
@@ -831,10 +1311,34 @@
       "sha256": "87a0e0645e834c08610a3b892da3b11bf408f87de7771d96d2f8181d9abf742e"
     },
     {
+      "url": "https://www.portland.gov/council/districts/3/steve-novick/news/2026/5/8/novick-newsletter-may-8th",
+      "representation": "normalized extracted page text",
+      "workingFile": "740bf911d2ba.txt",
+      "sha256": "4b26c11c5b2c467463ac7b7e242c42ee67a9479ce1fa5c99390297f93882eace"
+    },
+    {
+      "url": "https://www.portland.gov/council/districts/3/tiffany-koyama-lane/news/2026/5/21/councilor-koyama-lane-delivers-vision-zero",
+      "representation": "normalized extracted page text",
+      "workingFile": "793659541458.txt",
+      "sha256": "872378b71cba43cb68f53d54fcd68b6db9564935b83736ba611b011bc51b0ecb"
+    },
+    {
       "url": "https://www.portland.gov/council/districts/4/eric-zimmerman/news/2026/4/30/april-newsletter-budget-season-moda-center",
       "representation": "normalized extracted page text",
       "workingFile": "23c0b0567c96.txt",
       "sha256": "314cdb6297f7c70f96466bd6509651014b84121b1bea13bb881fe838da69520a"
+    },
+    {
+      "url": "https://www.portland.gov/council/districts/4/eric-zimmerman/news/2026/5/29/may-newsletter-approved-budget-protecting-pemo-nw",
+      "representation": "normalized extracted page text",
+      "workingFile": "0d4c95d39af4.txt",
+      "sha256": "86784c3acafa169c69d05c40e13e3db984d3e88fffc432d6150f5d2a30c8c41a"
+    },
+    {
+      "url": "https://www.portland.gov/council/districts/4/eric-zimmerman/news/2026/6/30/june-newsletter-q2-review",
+      "representation": "normalized extracted page text",
+      "workingFile": "167e51682e4b.txt",
+      "sha256": "e9417d2cc5de9ae29c70e4986ad5a15f6dc22b283ee4c0fa64358d60449deb70"
     },
     {
       "url": "https://www.portland.gov/council/districts/4/mitch-green/news/2025/3/20/portland-city-council-passes-resolution-investigate",
@@ -861,10 +1365,28 @@
       "sha256": "fc35c29ec11453f2486123190004d2464a8b838b4a0ebd8fc326b5892c10ac48"
     },
     {
+      "url": "https://www.portland.gov/council/documents/ordinance/amend-chapter-302",
+      "representation": "normalized extracted page text",
+      "workingFile": "9c0bb276b614.txt",
+      "sha256": "d4939836c81fd1d8faf47a32e8144898486095ab69fa44523ed7664f02f2f88c"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/council-action-see-notes/2025-207",
+      "representation": "normalized extracted page text",
+      "workingFile": "08498ec1e15e.txt",
+      "sha256": "75887a6f942a6cdb16577efbb04441061b2705408694a67c49813d3e13f723ef"
+    },
+    {
       "url": "https://www.portland.gov/council/documents/ordinance/detention-facility-impact-fee-protect-taxpayers",
       "representation": "normalized extracted page text",
       "workingFile": "89e82b6c0476.txt",
       "sha256": "157213dfcc3e98b5fbaa763814aa6ff41dba759958ad4b87e1e060102239e7df"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/failed-pass/2026-222",
+      "representation": "normalized extracted page text",
+      "workingFile": "356f94d8f201.txt",
+      "sha256": "f71882bf3aed54ccc41a27e2bd5b9dc0192dd33cfe541f8bea26bd4623a6ed9e"
     },
     {
       "url": "https://www.portland.gov/council/documents/ordinance/fy-2025-26-fall-supplemental-budget",
@@ -873,10 +1395,76 @@
       "sha256": "0d83d3287f155aaf4c68c554233d577c69bac3bc1598e2e368d7cf46b2e26f8e"
     },
     {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192020",
+      "representation": "normalized extracted page text",
+      "workingFile": "ad73808713b3.txt",
+      "sha256": "b6db1be07436dcc1adf68869c4bfcaf4feff40b957840724e83e2c171bf8d0ef"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192032",
+      "representation": "normalized extracted page text",
+      "workingFile": "9e61729a29fd.txt",
+      "sha256": "c57516ce101b99619055a043c74f252acd4dd6b0fcac8b2b5c1cf1343b0f57e0"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192033",
+      "representation": "normalized extracted page text",
+      "workingFile": "92b0a0e45853.txt",
+      "sha256": "94ad63bd74d8a825240a4bc7aacff64e102528b77cfd73ad09c5a896739cf356"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192048",
+      "representation": "normalized extracted page text",
+      "workingFile": "5c958a9a3264.txt",
+      "sha256": "34c212f0e4fd6b2069c6bd39b353809ab41e1dc7777b805850d59245258e0b88"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192050",
+      "representation": "normalized extracted page text",
+      "workingFile": "51ff2050ce42.txt",
+      "sha256": "c070c9594db362c22f3d45cb08ca9795d626e004b46f83362a834e0d0736ab8c"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192070",
+      "representation": "normalized extracted page text",
+      "workingFile": "c530cb81214b.txt",
+      "sha256": "19146994dfa45bcfe989f88881b6125dd212c8efc5d89a4f3ddd693259f1e049"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192076",
+      "representation": "normalized extracted page text",
+      "workingFile": "6e12e3f315b1.txt",
+      "sha256": "0a92efa65766ee69076143b36bd6e26910dca5f6a5a388f87a95a12c7a38f4fd"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192080",
+      "representation": "normalized extracted page text",
+      "workingFile": "44a92e401e47.txt",
+      "sha256": "160d8d69173447e7622415c45f0425af7398332800e0f16cfbd45c1dc90cb031"
+    },
+    {
       "url": "https://www.portland.gov/council/documents/ordinance/passed/192082",
       "representation": "normalized extracted page text",
       "workingFile": "bd18b33438d1.txt",
       "sha256": "7c7dbb1b697c4b85415673a828ac9f4d8913807e4a5ea0ef6244758f9fda87ce"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192095",
+      "representation": "normalized extracted page text",
+      "workingFile": "ddfa8708ca3e.txt",
+      "sha256": "178a273ee274720049bff11eee94407b0c6198bde1e7386a612f04737578db7a"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192098",
+      "representation": "normalized extracted page text",
+      "workingFile": "5140ee216105.txt",
+      "sha256": "66e44c0147c96f2e40f643f5685c5c5925391590c134293b863c625ec31a9706"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192115",
+      "representation": "normalized extracted page text",
+      "workingFile": "1418c4e02609.txt",
+      "sha256": "1bdb4770c0d11b50bbd9459e8bf6de1db9e78d7dba385262fb05cef49afdee1a"
     },
     {
       "url": "https://www.portland.gov/council/documents/ordinance/passed/192122",
@@ -885,10 +1473,112 @@
       "sha256": "a33cbcc7d7aff4a19d1d32edf7a7b4054befeadf581ffb07b71206c2b18ab47a"
     },
     {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192130",
+      "representation": "normalized extracted page text",
+      "workingFile": "f0008e48462b.txt",
+      "sha256": "a1b9bee1b0ea9a40901011e6e9eb92f7cf559ff92246d2fd33639d1d10877fdb"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192132",
+      "representation": "normalized extracted page text",
+      "workingFile": "9ca4018ffc67.txt",
+      "sha256": "2475de1de4394abc66b23ec6e814cda35d8b4be7485529668ffa3a22a393f6a9"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192140",
+      "representation": "normalized extracted page text",
+      "workingFile": "cd8552008aa8.txt",
+      "sha256": "b9c8712b3a83c74aacb29fdf2ba67ca396f30ad2ec1527ee61cdf1a94d2fef47"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192143",
+      "representation": "normalized extracted page text",
+      "workingFile": "4118ca720e83.txt",
+      "sha256": "8ecc49476d2083cb130dbcf992a408c62496f1b6da8da5da9329b15bc74dbb0a"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192154",
+      "representation": "normalized extracted page text",
+      "workingFile": "4f0c468fd45a.txt",
+      "sha256": "5f1b13f417eb0163702102e56f88879920bce4c23bc3537d78726a235ef336f7"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192156",
+      "representation": "normalized extracted page text",
+      "workingFile": "c0c6eac663fb.txt",
+      "sha256": "1f56b72dfcc15131d97dbcf69fe12ff2c6c7a6f7db0509a9e14efe60a49d0d9d"
+    },
+    {
       "url": "https://www.portland.gov/council/documents/ordinance/passed/192163",
       "representation": "normalized extracted page text",
       "workingFile": "e344bfc7decb.txt",
       "sha256": "f41d06163d7e6b50e553968b5074679a14ee8521eebef368a9214fec1280fa4b"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192168",
+      "representation": "normalized extracted page text",
+      "workingFile": "ce01e369fcd0.txt",
+      "sha256": "323fe49dbae9b9336972b4e45a0fcd79c2444035029859142acbc7a5162f74ac"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192171",
+      "representation": "normalized extracted page text",
+      "workingFile": "d5fde8de5e7a.txt",
+      "sha256": "59bc8c03c561b252567b3a655aaa6309db11e6be85a970a9139c4ced110bce2b"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192173",
+      "representation": "normalized extracted page text",
+      "workingFile": "6e2b70644e7f.txt",
+      "sha256": "32c38b84d6416bec6bae3f030baa95d5173b25901268cd02ee18e7e72bcf54ce"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192177",
+      "representation": "normalized extracted page text",
+      "workingFile": "7cb0e39e97b4.txt",
+      "sha256": "65d205929751c907188e8be6d340b47cd291b91e405d0ba10d135a429ea47bf7"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192179",
+      "representation": "normalized extracted page text",
+      "workingFile": "aa2cb4e4b8dc.txt",
+      "sha256": "cb489c9f30d38ba91a8f5fd797f402f936d5be3bd97d18e3d6a077bdce37c60c"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192181",
+      "representation": "normalized extracted page text",
+      "workingFile": "a94eee6a148c.txt",
+      "sha256": "47a4010c10735d99e62d7b089d74b08e36f4e923296b277b459bc4a1decd6e9b"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192182",
+      "representation": "normalized extracted page text",
+      "workingFile": "1f3966bb793e.txt",
+      "sha256": "cc504048e1a6d120a65ff72bb6ccb9e809033f5bb93dca175a65efe3fe77b3e0"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192183",
+      "representation": "normalized extracted page text",
+      "workingFile": "4fc3975a3ac5.txt",
+      "sha256": "e30e1d50da8f0f2776589a40a8e832892e41bc623a090a6ed334cbe54e6969f4"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192184",
+      "representation": "normalized extracted page text",
+      "workingFile": "a4d2147acd5d.txt",
+      "sha256": "e4081ff36d92912906f64852972f2cf486a2c847afecc05b727cb65c61033024"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192185",
+      "representation": "normalized extracted page text",
+      "workingFile": "d72f02509820.txt",
+      "sha256": "5a26c34973147c1a7983c83ad3f3d185819144ad6f427e45f7b992d6916238f5"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192190",
+      "representation": "normalized extracted page text",
+      "workingFile": "9917a44ad769.txt",
+      "sha256": "75aa19346eda0d753a1a7def424dab855dc86a9737037e10b149dd491b98b023"
     },
     {
       "url": "https://www.portland.gov/council/documents/ordinance/passed/192195",
@@ -903,10 +1593,106 @@
       "sha256": "9d5db3542f991dc2d70fcb7f85e2fcc45d1826ad951953c40e58ad38356028fa"
     },
     {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192210",
+      "representation": "normalized extracted page text",
+      "workingFile": "49ecce978a7b.txt",
+      "sha256": "f0c9af8274d5c62d4dad624bac165fdd1393eeccabf0b550c3cd454965fddedb"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/protecting-public-buildings",
+      "representation": "normalized extracted page text",
+      "workingFile": "62a277b7c0b3.txt",
+      "sha256": "11b33e87a4eba8fba9c4e819ce82fc783e267c9436ac6f242336d6e37a8acd8f"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/psychedelic-health-and-safety-act",
+      "representation": "normalized extracted page text",
+      "workingFile": "78cba865baac.txt",
+      "sha256": "720bf62aa5e1e458fa9d3d374ee5ddfb1d6d9ec07b65195d85f59af7ba77e02a"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/referred/2026-171",
+      "representation": "normalized extracted page text",
+      "workingFile": "430f79c75b49.txt",
+      "sha256": "94f1721934849997b752c6aeb16da2c7e496761b814aa4aa561927968c3d9468"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/renaming-cesar-e-chavez-blvd",
+      "representation": "normalized extracted page text",
+      "workingFile": "344091e8f25c.txt",
+      "sha256": "325d088cd3e1b912098b2cdef5da98c26a7f49b7bcc83ad4cf7ff4a3bd1f34ef"
+    },
+    {
       "url": "https://www.portland.gov/council/documents/ordinance/zenith-franchise-transfer-isq-holdings",
       "representation": "normalized extracted page text",
       "workingFile": "066546d82ba3.txt",
       "sha256": "b78c15ff449b10c747b86d4d0e4053dacabb7119087b3d4ec4e8bb1b8cf8a523"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/presentation/placed-file/2026-188",
+      "representation": "normalized extracted page text",
+      "workingFile": "94cb847d81c9.txt",
+      "sha256": "72a5efe5dbc74f6b2648ea1d49e9f27a2e44deb1497877220f014a71f08eac67"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/presentation/placed-file/2026-211",
+      "representation": "normalized extracted page text",
+      "workingFile": "ad49120bd8da.txt",
+      "sha256": "ca495d4d48333e915dd1614f7006da5e7a9079d7dd9fc17f5ba43cd8f1fb6190"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/presentation/psr",
+      "representation": "normalized extracted page text",
+      "workingFile": "146d14424f40.txt",
+      "sha256": "4faa5fea0aa4aadac20e4a22131643d4a62e71940cbd1ad7b6450893bf361ecc"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/presentation/unified-housing-strategy-progress-report",
+      "representation": "normalized extracted page text",
+      "workingFile": "1ce9581e0584.txt",
+      "sha256": "3a05eeb0900306d5e402a9e6158a4e91a5a166eed6dd489bf8fec87f821c23ca"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/report/accepted/2025-246",
+      "representation": "normalized extracted page text",
+      "workingFile": "b21a5b3519a6.txt",
+      "sha256": "04ff37aa34f3b39a040666b6939d58aff06330628b39bb46c84c7dbb6871b5b8"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/report/accepted/2025-383",
+      "representation": "normalized extracted page text",
+      "workingFile": "e34fc694f7bf.txt",
+      "sha256": "a9d56560f1f97c91960d2d9c8b73c3b7c790843fba8e56d7f830e7ad390cf907"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/report/accepted/2025-486",
+      "representation": "normalized extracted page text",
+      "workingFile": "1d4197b13e47.txt",
+      "sha256": "b5fb7851d0fe4d8847aa436a25e7760e42980bfad92ded8e800cbb5f28e278f2"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/report/accepted/2026-047",
+      "representation": "normalized extracted page text",
+      "workingFile": "fffe7f032f57.txt",
+      "sha256": "0a02d6d23e13545b5814877663491a2fc3dbdfe78bbf54cc6fde6bb9e8b0fde8"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/report/accepted/2026-080",
+      "representation": "normalized extracted page text",
+      "workingFile": "b10d948faaf8.txt",
+      "sha256": "69a89537c01d3a9d12d60e4b3029f998c3fe762c9748167fd999b78736a21a25"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/report/accepted/2026-208",
+      "representation": "normalized extracted page text",
+      "workingFile": "218b025139a0.txt",
+      "sha256": "fbd943c1577d635e24032f14fe2b0beddefa979c60b2231028745931644dd7da"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/report/findings-adopted/2025-161",
+      "representation": "normalized extracted page text",
+      "workingFile": "c6d3cbc3a47b.txt",
+      "sha256": "ddfb2fa8a624f8ab78ef02ace39e00385212b2ca0c5de27ee89c32aea799ef50"
     },
     {
       "url": "https://www.portland.gov/council/documents/report/placed-file/2025-208",
@@ -915,10 +1701,148 @@
       "sha256": "99d315e482b0b97bae41a4a736f8de2d3be6aa80d7827e92742e606a872a4350"
     },
     {
+      "url": "https://www.portland.gov/council/documents/resolution/accept-future-large-scale-performing-arts-recommendations",
+      "representation": "normalized extracted page text",
+      "workingFile": "5c2dc92ca56c.txt",
+      "sha256": "8547db0ff15374c3d76a86c8c98eb73ea55454cdba47c32d22a5d43c54cc4375"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37695",
+      "representation": "normalized extracted page text",
+      "workingFile": "14c971bad693.txt",
+      "sha256": "aa78f971a913db72a34d7bea64af7f06c290548660ddb00b3c80a1ec682e37e1"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37696",
+      "representation": "normalized extracted page text",
+      "workingFile": "454cc07d11c4.txt",
+      "sha256": "048858390c00f5f00ae5c19713afe403e2e505f30c0c3a36a6669275e790f24e"
+    },
+    {
       "url": "https://www.portland.gov/council/documents/resolution/adopted/37702",
       "representation": "normalized extracted page text",
       "workingFile": "3b03289d8bde.txt",
       "sha256": "28056c765977e3cb8a6948685803e367a56fcce2b4389bcbe9448d0467fe052e"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37705",
+      "representation": "normalized extracted page text",
+      "workingFile": "ab52ce9aa630.txt",
+      "sha256": "01be03a754642ca67a287b0be19fb150c4f63e0026a671cc813a4b1d11b07edc"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37706",
+      "representation": "normalized extracted page text",
+      "workingFile": "a500bd264c0c.txt",
+      "sha256": "d134183e512b20a6ec0f6c5e9785b53bc709617e2aa250eafaf4db41d4415787"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37709",
+      "representation": "normalized extracted page text",
+      "workingFile": "f07c1ec8d65c.txt",
+      "sha256": "eccba31d328a41bc2658a9f05716c5996c1d44cd5c9c0629ee8907518a4d21f0"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37710",
+      "representation": "normalized extracted page text",
+      "workingFile": "dd33a12aa293.txt",
+      "sha256": "b860271e19bd795824d9e1f6a97ea07d155934ead0e6aae6dfc9e17d5ab2eb72"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37712",
+      "representation": "normalized extracted page text",
+      "workingFile": "8c50fef256d7.txt",
+      "sha256": "c39e77e691f72ea3cdae915f2c3c2821b51d253c8790c944938a8c897d6de00d"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37714",
+      "representation": "normalized extracted page text",
+      "workingFile": "30d5701cf2f8.txt",
+      "sha256": "9abe7e129388a2f48ca16b411c96297bf7b6ed13dd3c57b7dae5864941e89c4e"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37715",
+      "representation": "normalized extracted page text",
+      "workingFile": "b74ccfec65b4.txt",
+      "sha256": "61abb7298b3302b719e1134bcade58c647a1e3b896785f748b29da4bd528e02f"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37716",
+      "representation": "normalized extracted page text",
+      "workingFile": "85870cc8405b.txt",
+      "sha256": "0bf8dba94900d1098abda125839bb359da3aaaec105a73c6c4f6acf38d866eb5"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37719",
+      "representation": "normalized extracted page text",
+      "workingFile": "7acf2de92026.txt",
+      "sha256": "f7f7ae29de12790fa0028f42157168871cead768e6c33bfc4292e8818e84632d"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37720",
+      "representation": "normalized extracted page text",
+      "workingFile": "8d53fa22170d.txt",
+      "sha256": "193daa401df07f57cbf76b0d12885921b9aa8947b64b96f3a948ffd8d039e354"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37723",
+      "representation": "normalized extracted page text",
+      "workingFile": "14aa4018abfa.txt",
+      "sha256": "6bcf5b0c4a5b8655a2c32c59abafd88174a400077bd6f676ed6c3583657acda7"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37726",
+      "representation": "normalized extracted page text",
+      "workingFile": "78b3dbce69d0.txt",
+      "sha256": "023cb974f02babf073cf5375ee34f32f03a32fc5b600df391d35db4345b48073"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37728",
+      "representation": "normalized extracted page text",
+      "workingFile": "26d48eddd779.txt",
+      "sha256": "dbc91982c223f369dede90d9773823ca23483fe71449d9be98684fab59cab5fe"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37730",
+      "representation": "normalized extracted page text",
+      "workingFile": "3d9dbe4ad0a3.txt",
+      "sha256": "26a513f10f5db9e5f5da6cc5fdec040611719e6a6bb2a16db6190506cf332998"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37734",
+      "representation": "normalized extracted page text",
+      "workingFile": "803674182a2f.txt",
+      "sha256": "0ef99452afe57ef0acc5e46ef0bc010b8c9eccd2de8c19a6913c80b9071857a8"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37736",
+      "representation": "normalized extracted page text",
+      "workingFile": "36e8a58b8bc7.txt",
+      "sha256": "a80d9994c7fe0ea08cb954ef672d4040b5cc6df6042625a06eccfca11d48eb94"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37737",
+      "representation": "normalized extracted page text",
+      "workingFile": "d6e7d7ac38db.txt",
+      "sha256": "7fdceda7741ddefff23f0078d3e975f47853db4f99216bd682137eb8db897aad"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37738",
+      "representation": "normalized extracted page text",
+      "workingFile": "eab9ba5c74ec.txt",
+      "sha256": "2a9eaccf1a3e90ee8203fb3a87cef386fcfe8820292639748fb4b53becba90c0"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37744",
+      "representation": "normalized extracted page text",
+      "workingFile": "b4b1367e2c6a.txt",
+      "sha256": "6f0e6847746b0c88d325744402d2c1dbcf51ee37aabb50ae5924e8fca753f348"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37749",
+      "representation": "normalized extracted page text",
+      "workingFile": "c761856ad242.txt",
+      "sha256": "f7642382931df99e5c2cbdcc8f3fba9b40e08af6985194cd1b2666a4c61fbfcb"
     },
     {
       "url": "https://www.portland.gov/council/documents/resolution/adopted/37750",
@@ -937,6 +1861,30 @@
       "representation": "normalized extracted page text",
       "workingFile": "640bff645c0b.txt",
       "sha256": "f3030b19dbd8e8cfcb68cb0f2889fbd7beed552587b50db1a967cfdd3bf68cb5"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/establish-city-council-committees",
+      "representation": "normalized extracted page text",
+      "workingFile": "e24d3560cf1a.txt",
+      "sha256": "82f6bba34d78aa56873eb920efb19d64a4a8e6379f92253f5af2ecdc4c58ad40"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/placed-file/item-2025-047-placed-file-disposition-report-2026-210",
+      "representation": "normalized extracted page text",
+      "workingFile": "fb2639a1110a.txt",
+      "sha256": "4a49f4d305ebecb232d780377cc172eed1fcb6b95d1a01a18d8fbd7241e0319e"
+    },
+    {
+      "url": "https://www.portland.gov/council/news/2025/7/16/portland-city-council-refers-parks-levy-november-ballot",
+      "representation": "normalized extracted page text",
+      "workingFile": "22ed242202f5.txt",
+      "sha256": "43f8f958bc7595fc71666c03e845bdcba3acbc989918f7fe93d1530cdedde8f4"
+    },
+    {
+      "url": "https://www.portland.gov/council/news/2026/2/19/portland-city-council-adopts-new-committee-structure",
+      "representation": "normalized extracted page text",
+      "workingFile": "a9398853188a.txt",
+      "sha256": "ab6dc7b2fd7a8f21d24bbe0d9c3d2ee95744e9d521e34f8d4e68b1f6c90ba97a"
     },
     {
       "url": "https://www.portland.gov/hello/news/2026/2/19/investigation-zenith-energy-franchise-agreement-finds-city-upheld-law-and",
@@ -967,6 +1915,12 @@
       "representation": "normalized extracted page text",
       "workingFile": "77d561a1d079.txt",
       "sha256": "f288a7d9d8a3e4f0a8a9c2ec00a2e43c47c1d3467afa0a0122670dc340a7e57c"
+    },
+    {
+      "url": "https://www.portlandmercury.com/news/portland-city-council-officially-adopts-transportation-utility-fee/",
+      "representation": "normalized extracted page text",
+      "workingFile": "dea863b6a943.txt",
+      "sha256": "d8de1cc03536cacf7b8ce35aa6cd8da161ea04638bd4501cc8cee66fbbade379"
     },
     {
       "url": "https://www.portlandmercury.com/news/portland-offers-blazers-a-fully-funded-arena-renovation-but-will-it-be-enough/",
@@ -1117,6 +2071,12 @@
       "representation": "normalized extracted page text",
       "workingFile": "18330cbc9f06.txt",
       "sha256": "55544116477d19ae67fe28022cf94bc800599a7b6b9b3c51957e6799747d34b7"
+    },
+    {
+      "url": "https://www.wweek.com/news/city/2026/05/07/council-passes-code-change-aimed-at-quelling-sex-trafficking/",
+      "representation": "normalized extracted page text",
+      "workingFile": "f91dfa3eb6f5.txt",
+      "sha256": "5e029294eaf180f8899636a41593bbd80cc7cda8494adcc8fa5e952531d68c1f"
     },
     {
       "url": "https://www.wweek.com/news/city/2026/08/12/council-approves-moda-center-term-sheet-to-kick-off-negotiations-with-blazers/",

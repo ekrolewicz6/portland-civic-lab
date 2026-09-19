@@ -1,6 +1,7 @@
 import { races } from "@/lib/voters-guide/published";
 import { REVIEW_DATE } from "@/lib/voters-guide/types";
 import { councilDecisions } from "@/lib/voters-guide/council-decisions";
+import { councilCoverageAudit } from "@/lib/voters-guide/council-coverage-map";
 import {
   councilDisagreements,
   decisionAccounts,
@@ -21,6 +22,7 @@ export function GET() {
       councilDecisions,
       decisionAccounts,
       councilDisagreements,
+      councilCoverageAudit,
     },
     {
       headers: {

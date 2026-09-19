@@ -88,12 +88,12 @@ export default function Methodology() {
           motion from a final vote, and an appropriation from an achieved
           outcome. A single vote is not a complete political identity. In this
           edition, all six Portland council incumbents are compared on the same
-          seventeen actions across seven topics: the 2025 and 2026 budgets,
-          Zenith, camp-removal spending, housing rules and development fees,
-          major venues, detention-facility rules and shared ground on business
-          taxes and data centers. Each topic includes the same votes for all six
-          incumbents, including amendments, failures and absences. These are
-          selected consequential decisions, not a complete record or a score.
+          73 decisions across 29 issues. Every subject in the Council site’s
+          current 24-topic index is covered, alongside additional major votes on
+          labor, children’s services, policing, elections and City governance.
+          Each decision includes the same six incumbents, with amendments,
+          absences and committee membership clearly distinguished. This is a
+          comparison of consequential choices, not a score.
         </p>
         <p>
           We follow competing budget proposals and Zenith’s successive stages,
@@ -104,6 +104,25 @@ export default function Methodology() {
           an individual explanation; we do not turn a vote into an inferred
           motive. The opening disagreement view covers incumbents; the issue
           comparison includes every candidate.
+        </p>
+        <h3 id="council-coverage">How we checked Council topic coverage</h3>
+        <p>
+          We reviewed the Council site’s 24 topic dossiers and scanned 339
+          unique final-action entries in its vote index. We then checked
+          selected measures against the City’s official legislation and roll
+          calls, rather than treating topic summaries or index dates as the
+          authoritative record. The downloadable evidence includes a map from
+          every dossier to its issue comparison here.
+        </p>
+        <p>
+          Coverage means that every indexed subject has a matched account; it
+          does not mean every motion, hearing or public statement appears in
+          this guide. Routine transactions are not all reproduced. For pending
+          matters, we describe the latest verified stage: the firearms proposal
+          was tabled in committee, natural-psychedelics legislation awaited full
+          Council consideration, and Zenith reconsideration remained scheduled
+          for September 23. Members outside a committee are marked “Not on
+          committee,” never “Absent” or “No.”
         </p>
         <h3>Editorial interpretation</h3>
         <p>

@@ -1,4 +1,5 @@
 import type { Evidence } from "./types";
+import { additionalAccounts, additionalTopics } from "./council-coverage";
 import {
   historicalAccounts,
   budgetReadings,
@@ -60,6 +61,7 @@ export const decisionAccounts: Record<
   Record<string, DecisionAccount>
 > = {
   ...historicalAccounts,
+  ...additionalAccounts,
   "rental-pricing": {
     "Tiffany Koyama Lane": rentalSponsor,
     "Angelita Morillo": {
@@ -274,10 +276,10 @@ export const councilDisagreements: CouncilDisagreement[] = [
       "supplemental-budget",
     ],
     contrast:
-      "Parks or new police funding? Broad job restorations or selected services? Climate interest, oversight funds or reserves?",
+      "They differed over which services to protect, how many jobs to restore and whether to use climate-fund interest, police-oversight funds or reserves.",
     question: "What did they protect when money ran short?",
     context:
-      "The fights were over both services and the money used to sustain them. Services First included police support and fire rescue as well as parks and core staff. Clark’s alternative used expected police-oversight underspending. Novick proposed a smaller climate-interest package. All three failed in June; Council returned to restorations in July.",
+      "Portland faced service cuts as the cost of maintaining its operations outpaced available revenue. The budget fights were about both what to preserve and how to pay for it. The broad Services First proposal used interest from the voter-created climate fund to restore police support, fire rescue, parks and other staff. Clark offered an alternative using expected police-oversight underspending; Novick offered a smaller climate-interest package. All three failed in June. Council revisited restorations in July and passed a smaller package using one-time funds.",
     takeaway:
       "Our reading: the dividing line was how broadly to restore services and which funds were available—not a simple choice between public safety and other services. Novick’s smaller climate-interest proposal and Koyama Lane’s rejection of July’s fallback are important exceptions.",
     sources: [julyAgenda, julyReporting],
@@ -295,7 +297,7 @@ export const councilDisagreements: CouncilDisagreement[] = [
       "Three distinct choices: investigate the old agreement, add public enforcement, and approve a transfer to the new owner.",
     question: "Who should enforce Zenith’s obligations?",
     context:
-      "Council demanded an investigation in March 2025. In February 2026, City staff and an outside legal review reported no basis to revoke the franchise. Green and Morillo later proposed giving residents a right to sue to enforce its terms. That amendment failed 6–6; the transfer then failed 5–6. Reconsideration remained pending as of September 18.",
+      "Zenith’s Northwest Portland fuel terminal uses pipelines in City streets under a franchise agreement. Council first debated whether the agreement had been properly granted, then whether to transfer it to a new owner and give residents a right to sue to enforce its terms. After the 2025 investigation request, City staff and an outside legal review reported in February 2026 that they found no basis to revoke the franchise. Green and Morillo’s later resident-enforcement amendment failed 6–6; the transfer failed 5–6. As of September 18, reconsideration was scheduled for September 23.",
     takeaway:
       "Our reading: supporting an investigation did not imply supporting citizen-suit enforcement. Clark and Zimmerman voted for the investigation but against that condition. The transfer remains unresolved; this was not a vote to close the terminal.",
     sources: [zenithInvestigationOutcome],
@@ -304,12 +306,12 @@ export const councilDisagreements: CouncilDisagreement[] = [
   {
     id: "camp-removal",
     label: "Homelessness & removals",
-    decisionIds: ["camp-removal"],
+    decisionIds: ["camp-removal", "housing-strategy", "homelessness-plan"],
     contrast:
       "A proposed $4.3 million shift from camp removals to personnel and social-service support.",
     question: "Shift spending away from clearing camps?",
     context:
-      "Morillo’s November 2025 amendment challenged the spending behind the mayor’s approach. Koyama Lane and Green backed it; Novick opposed it. Clark and Zimmerman were absent when the amendment was voted on. It failed with five yes, three no and four absent.",
+      "The City funds both services for people without housing and operations that clear encampments. Morillo’s November 2025 amendment proposed moving $4.3 million from camp removals to personnel and social-service support. Koyama Lane and Green backed it; Novick opposed it; Clark and Zimmerman were absent. The amendment failed. All six nevertheless supported the broader unified housing strategy and the updated City–County homelessness plan, showing that agreement on overall goals did not resolve the choice about removals.",
     takeaway:
       "Our reading: this vote tests the role of camp removals in the homelessness response. Novick’s recorded objection focused on the rushed process and need for a policy debate. An absence supplies no yes/no position.",
     sources: [],
@@ -317,14 +319,14 @@ export const councilDisagreements: CouncilDisagreement[] = [
   {
     id: "rental-pricing",
     label: "Housing & development",
-    decisionIds: ["rental-pricing", "housing-fees"],
+    decisionIds: ["rental-pricing", "housing-fees", "homebuyer-income"],
     contrast:
       "A split over rent-setting regulation, alongside broad support for lowering upfront housing-development costs.",
     question: "Which rules help housing—and which discourage it?",
     context:
-      "The rental-software restriction passed 8–2 in November 2025. Earlier, all five incumbents present supported temporarily waiving infrastructure charges on qualifying new housing; Clark was absent. These votes show that tenant regulation and development incentives are separate choices.",
+      "Council considered several ways to change the housing market: restrict software that coordinates rents, waive upfront infrastructure charges on new construction, and remove a buyer-income test for certain previously permitted homes receiving affordable-housing fee exemptions. These choices affect different people and different costs. The 2026 income-test change drew a new coalition: Morillo, Novick, Green and Clark supported it, while Koyama Lane and Zimmerman opposed it.",
     takeaway:
-      "Our reading: Morillo, Green and Koyama Lane backed both a tenant-market restriction and a construction incentive. Clark opposed the software ban; Novick and Zimmerman were absent on that final vote.",
+      "Our reading: support for building incentives does not predict every housing vote. Morillo and Green joined Koyama Lane on the rent-software ban, but split from her when Council removed the buyer-income test for a defined group of fee-exempt homes.",
     sources: [],
   },
   {
@@ -366,4 +368,5 @@ export const councilDisagreements: CouncilDisagreement[] = [
       "Agreement matters too. These actions do not distinguish the six incumbents on their final votes; differences elsewhere should not erase this shared ground.",
     sources: [],
   },
+  ...additionalTopics,
 ];

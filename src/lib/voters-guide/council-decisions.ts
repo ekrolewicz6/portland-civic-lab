@@ -1,5 +1,6 @@
 import type { Candidate, Evidence } from "./types";
 import { historicalDecisions } from "./council-history";
+import { additionalDecisions } from "./council-coverage";
 import { decisionAccounts } from "./council-record-accounts";
 export type CouncilDecision = {
   id: string;
@@ -8,10 +9,11 @@ export type CouncilDecision = {
   summary: string;
   limit: string;
   source: Evidence;
-  votes: Record<string, "Yes" | "No" | "Absent">;
+  votes: Record<string, "Yes" | "No" | "Absent" | "Not on committee">;
 };
 export const councilDecisions: CouncilDecision[] = [
   ...historicalDecisions,
+  ...additionalDecisions,
   {
     id: "rental-pricing",
     title: "Restrict algorithmic rent coordination",

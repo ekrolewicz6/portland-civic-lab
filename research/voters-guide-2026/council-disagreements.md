@@ -73,3 +73,36 @@ funding, Street Response, police oversight design, arts-tax reform, Bull Run,
 workforce/labor and governance need matched individual accounts. Public coverage
 map links to the source-linked dossiers and states that boundary. No unsupported
 positions were assigned to fill these gaps. No campaign outreach occurred.
+
+
+## September 18 expansion: complete the indexed topic audit
+
+The published comparison now has 73 unique matched decisions across 29 issues.
+`council-coverage-map.ts` maps all 24 Council topic dossiers to an in-guide issue.
+`council-vote-index.json` retains the discovery inventory of 339 unique final-action
+entries. This is not an assertion that the independent index contains every City action.
+The dates and roll calls in published accounts come from official City documents.
+
+Added all previously deferred topic families and additional major issues found
+through the vote-index scan. Personal explanations remain attributed; a vote does
+not establish a motive. Readings explain concrete tradeoffs without manufacturing
+opposition on unanimous decisions. Committee non-members are separate from absences.
+
+Particular verification points:
+- Water bonds (192177): Koyama Lane/Novick/Clark/Zimmerman yes, Morillo/Green no.
+- Water rates (192183): Novick/Green/Clark yes; Koyama Lane/Morillo/Zimmerman no.
+- Sewer rates (192182): Morillo joins the yes side.
+- Firearms: September 15 committee motion was to table, not enact restrictions.
+- Psychedelics: August 4 committee referral; full Council September 23 still pending.
+- Board removals (2026-047): failed Halsey motion and successful Weinstein motion
+  are distinct from the unanimous remainder of the report.
+- Nuisance code: final threshold three incidents in 90 days, not the original two.
+- Police staffing: final directive asks for an assessment, not 400 funded hires.
+- Ethical investment: requests policy options, not a named-company divestment list.
+- Urban forest: final plan unanimous among these six; conditional-wording amendment split.
+- Pending/referred older Campesinos records superseded by the September 9 passage.
+
+The 51 ordinary final votes added in this expansion (excluding explicitly labeled
+committee, amendment and divided-report motions) were programmatically reconciled
+against their cached official Aye/Nay/Absent sections after manual source review.
+The five special-stage records were checked directly against their motion text.

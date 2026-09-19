@@ -5,8 +5,12 @@ import {
   type ComparisonTopic,
 } from "@/lib/voters-guide/council-topics";
 import { councilDecisions } from "@/lib/voters-guide/council-decisions";
+import { councilDisagreements } from "@/lib/voters-guide/council-record-accounts";
 import CandidatePortrait from "./CandidatePortrait";
-import CouncilDisagreements, { DecisionExplanation } from "./CouncilRecord";
+import CouncilDisagreements, {
+  CouncilIssuePicker,
+  DecisionExplanation,
+} from "./CouncilRecord";
 import { Printer } from "lucide-react";
 import type { Candidate, Evidence, Race } from "@/lib/voters-guide/types";
 import styles from "@/app/(public)/voters-guide/guide.module.css";
@@ -28,6 +32,10 @@ function Profile({
   person: Candidate;
   showPortrait: boolean;
 }) {
+  const [recordIssue, setRecordIssue] = useState("supplemental-budget");
+  const selectedDecisions = councilDisagreements.find(
+    (item) => item.id === recordIssue,
+  )!.decisionIds;
   return (
     <article
       className={styles.candidate}
@@ -108,17 +116,29 @@ function Profile({
           </details>
         )}
         <h3>Decisions &amp; reasons</h3>
+        {person.record?.some((entry) => entry.decisionId) && (
+          <CouncilIssuePicker
+            value={recordIssue}
+            onChange={setRecordIssue}
+            label={`Record issue for ${person.name}`}
+          />
+        )}
         {person.record?.length ? (
           person.record.map((r, i) => {
             const decision = councilDecisions.find(
               (d) => d.id === r.decisionId,
             );
             return decision ? (
-              <details className={styles.profileDecision} key={r.decisionId}>
+              <details
+                className={styles.profileDecision}
+                key={r.decisionId}
+                data-active={selectedDecisions.includes(decision.id)}
+              >
                 <summary>
                   {decision.title} <span>· {decision.votes[person.name]}</span>
                 </summary>
                 <div className={styles.eyebrow}>{decision.source.date}</div>
+                <p>{decision.summary}</p>
                 <DecisionExplanation person={person} decision={decision} />
               </details>
             ) : (
@@ -229,6 +249,10 @@ export default function CandidateComparison({ race }: { race: Race }) {
   const [selected, setSelected] = useState<string[]>(["", "", ""]);
   const [third, setThird] = useState(false);
   const [topic, setTopic] = useState<ComparisonTopic>("values");
+  const [recordIssue, setRecordIssue] = useState("supplemental-budget");
+  const recordTopic = councilDisagreements.find(
+    (item) => item.id === recordIssue,
+  )!;
   const people = [...race.candidates].sort((a, b) =>
     a.name.localeCompare(b.name, "en"),
   );
@@ -366,10 +390,21 @@ export default function CandidateComparison({ race }: { race: Race }) {
           </div>
         ) : topic === "record" ? (
           <div className={styles.decisionList}>
+            <CouncilIssuePicker
+              value={recordIssue}
+              onChange={setRecordIssue}
+              label="Recorded decisions issue"
+            />
+            <p>{recordTopic.context}</p>
             {councilDecisions.map((decision) => (
-              <section className={styles.decisionCard} key={decision.id}>
+              <section
+                className={styles.decisionCard}
+                key={decision.id}
+                data-active={recordTopic.decisionIds.includes(decision.id)}
+              >
                 <div className={styles.eyebrow}>
-                  Final action · {decision.source.date}
+                  {decision.voteLabel ?? "Final action"} ·{" "}
+                  {decision.source.date}
                 </div>
                 <h4>{decision.title}</h4>
                 <p>{decision.summary}</p>

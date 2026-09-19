@@ -484,7 +484,7 @@ export const historicalAccounts: Record<
     },
     account(
       "Rejected the spending shift",
-      "Voted no on Morillo 1.",
+      "Voted against Morillo’s proposed $4.3 million shift from camp-removal operations to personnel and social-service support.",
       reason(
         "Objected to making a major policy change with five days to review it; wanted a detailed policy discussion before cutting the program.",
         campReporting,
@@ -512,7 +512,7 @@ export const historicalAccounts: Record<
     },
     account(
       "Opposed the fee precedent",
-      "Voted no on the ordinance.",
+      "Voted against the detention-facility fee and nuisance ordinance.",
       reason(
         "Questioned penalizing landlords for protest-related costs and whether the same rule would be acceptable outside an abortion clinic.",
         detentionReporting,
@@ -597,28 +597,28 @@ export const zenithReadings: Record<string, TopicReading> = Object.fromEntries(
     name,
     [
       reading(
-        "Investigation + resident enforcement",
-        "Backed the 2025 investigation and the 2026 citizen-suit amendment. Rejected the transfer after that amendment failed.",
+        "Supported investigation and a right for residents to enforce the terms",
+        "Voted for investigating the franchise in 2025 and for the 2026 amendment allowing residents to sue to enforce it. After that amendment failed, voted against transferring the franchise to the new owner.",
       ),
       reading(
-        "Co-proposed resident enforcement",
-        "Backed the investigation, co-proposed the citizen-suit condition and rejected the transfer without it.",
+        "Proposed a right for residents to enforce the agreement",
+        "Supported investigating the franchise and co-proposed an amendment giving residents a right to sue to enforce its terms. Voted against the transfer after Council rejected that condition.",
       ),
       reading(
-        "No on investigation; yes on transfer",
+        "Opposed the investigation; supported the ownership transfer",
         "Tried to remove disputed language in 2025, then rejected the investigation resolution. Opposed citizen-suit enforcement and supported the 2026 transfer.",
       ),
       reading(
-        "Co-proposed resident enforcement",
-        "Backed the investigation, co-proposed the citizen-suit condition and rejected the transfer without it.",
+        "Proposed a right for residents to enforce the agreement",
+        "Supported investigating the franchise and co-proposed an amendment giving residents a right to sue to enforce its terms. Voted against the transfer after Council rejected that condition.",
       ),
       reading(
-        "Investigation yes; citizen-suit condition no",
-        "Sought revisions but backed the 2025 investigation. Opposed the resident-enforcement amendment and supported the 2026 transfer.",
+        "Supported investigation, but opposed the resident-lawsuit condition",
+        "Sought changes to the investigation resolution but supported its final passage in 2025. In 2026, opposed adding a resident-lawsuit provision and supported transferring the franchise to the new owner.",
       ),
       reading(
-        "Investigation yes; citizen-suit condition no",
-        "Sought revisions but backed the 2025 investigation. Opposed the resident-enforcement amendment and supported the 2026 transfer.",
+        "Supported investigation, but opposed the resident-lawsuit condition",
+        "Sought changes to the investigation resolution but supported its final passage in 2025. In 2026, opposed adding a resident-lawsuit provision and supported transferring the franchise to the new owner.",
       ),
     ][i],
   ]),

@@ -17,6 +17,32 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2>September 18, 2026 · Complete the Council topic audit</h2>
+        <p>
+          Expanded the comparison to 73 decisions across 29 issues, covering all
+          24 subjects in the Council site’s topic index. Added transportation
+          funding, water borrowing and rates, Street Response, police oversight,
+          arts-tax reform, climate investments, permitting, parks, trees,
+          privacy, infrastructure, governance and the pending firearms and
+          psychedelics proposals. The broader vote-index scan also brought in
+          labor contracts, Children’s Levy grants, officer identification,
+          campaign finance, storefront support and animal welfare.
+        </p>
+        <p>
+          Separated the two contested police-board removal votes from the
+          unanimous remainder of that report. Distinguished Bull Run borrowing
+          from annual water rates, the final three-in-90-days nuisance threshold
+          from the original proposal, and the adopted staffing assessment from a
+          400-officer hiring commitment that it did not enact. Committee
+          non-members are explicitly identified rather than counted as absent.
+        </p>
+        <p>
+          Added an issue selector, direct issue links and filters for individual
+          records and candidate comparisons. Explanations of the proposals now
+          appear before the candidate cards. Rewrote compressed budget and
+          Zenith language, and added readings that show exceptions and changing
+          coalitions rather than forcing candidates into fixed blocs.
+        </p>
         <h2>
           September 18, 2026 · Budget priorities and the broader Council record
         </h2>
