@@ -37,3 +37,23 @@ User testing revealed the core failure: the exact-vote quiz could return only un
 The new introduction immediately displays real candidate research. Six views (overview, four existing issue categories, experience) use the existing sourced candidate fields and alphabetical order. Topic gaps are one compact list linking every remaining candidate, not repeated empty cards. A two-person comparison keeps the topic selected, offers broader-platform fallback where a topic is missing, and carries both names and the topic into the complete record comparison. Profile and record views link back. Session storage saves only the new topic and selections under a new key; the old quiz session is not reinterpreted or deleted.
 
 No original candidate, decision, account or issue-analysis object is changed. Meaningful verification must cover all topics in both districts, useful text and sources for each displayed topic card, the original District 4 homelessness failure, navigation into full research and back, sparse-topic comparison fallback, selection editing, storage failure, reload and phone widths. Do not claim measured completion time or user comprehension from automated checks.
+
+## September 19: section navigation and bounded mobile browsing
+
+Both council race pages now have four persistent navigation destinations:
+Candidates, Compare, Council record, and About. Only the active section is
+visible on screen. Individual profile links open one complete profile, with
+all other profiles retained for printing. Existing candidate and Council issue
+hash links still work, including initial loads and browser Back.
+
+The topic browser shows four candidates per page in unchanged alphabetical
+order, with Previous/Next controls above and below the cards and a complete
+name picker. Topic and comparison selections survive section changes; returning
+from a profile preserves the browser page and restores its scroll position.
+The selection action bar sits above mobile navigation and safe-area insets.
+No substantive candidate, decision, issue, or decision-account data changed.
+
+Verification covers every topic across every candidate page, both race routes,
+selection handoffs, storage failure, profile links, browser Back, print visibility,
+mobile overflow, and exact research preservation. Independent human usability
+and editorial review remain outstanding.

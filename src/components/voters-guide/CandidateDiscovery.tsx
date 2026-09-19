@@ -14,6 +14,7 @@ import CandidatePortrait from "./CandidatePortrait";
 import styles from "./discovery.module.css";
 
 export default function CandidateDiscovery({ race }: { race: Race }) {
+  const [page, setPage] = useState(0);
   const [topic, setTopic] = useState<ExplorerTopic>("overview");
   const [selected, setSelected] = useState<string[]>([]);
   const [paired, setPaired] = useState(false);
@@ -89,6 +90,9 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
   }, [race.id, race.candidates]);
   const known = people.filter((p) => hasTopic(p, topic));
   const missing = people.filter((p) => !hasTopic(p, topic));
+  const browsable = known.length ? known : people;
+  const pageCount = Math.ceil(browsable.length / 4);
+  const currentPage = Math.min(page, pageCount - 1);
   const chosen = people.filter((p) => selected.includes(p.id));
   function focus() {
     requestAnimationFrame(() => {
@@ -105,6 +109,15 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
           : old,
     );
   }
+  useEffect(() => {
+    function shareSelection() {
+      window.dispatchEvent(new CustomEvent(comparisonEvent, { detail: {
+        raceId: race.id, selected, topic: topic === "overview" ? "values" : topic,
+      } }));
+    }
+    window.addEventListener("pcl:request-candidate-comparison", shareSelection);
+    return () => window.removeEventListener("pcl:request-candidate-comparison", shareSelection);
+  }, [race.id, selected, topic]);
   function openRecords() {
     window.dispatchEvent(
       new CustomEvent(comparisonEvent, {
@@ -214,6 +227,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
           value={topic}
           onChange={(event) => {
             setTopic(event.target.value as ExplorerTopic);
+            setPage(0);
             requestAnimationFrame(() =>
               heading.current?.scrollIntoView({
                 block: "start",
@@ -229,6 +243,13 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
           ))}
         </select>
       </label>
+      {!paired && <label className={styles.topicControl}>
+        Go straight to a candidate
+        <select value="" onChange={(event) => { if (event.target.value) window.location.hash = event.target.value; }}>
+          <option value="">Choose a name…</option>
+          {people.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
+        </select>
+      </label>}
       {paired && chosen.length === 2 ? (
         <>
           <div className={styles.viewActions}>
@@ -285,9 +306,19 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               candidates’ broader platforms.
             </p>
           )}
+          <nav className={styles.pagination} aria-label="Candidate pages">
+            <button disabled={currentPage === 0} onClick={() => { setPage(currentPage - 1); focus(); }}>← Previous</button>
+            <span role="status">{currentPage * 4 + 1}–{Math.min(currentPage * 4 + 4, browsable.length)} of {browsable.length}</span>
+            <button disabled={currentPage + 1 >= pageCount} onClick={() => { setPage(currentPage + 1); focus(); }}>Next →</button>
+          </nav>
           <div className={styles.cards}>
-            {(known.length ? known : people).map((person) => card(person))}
+            {browsable.slice(currentPage * 4, currentPage * 4 + 4).map((person) => card(person))}
           </div>
+          <nav className={styles.pagination} aria-label="More candidates">
+            <button disabled={currentPage === 0} onClick={() => { setPage(currentPage - 1); focus(); }}>← Previous</button>
+            <span>{currentPage + 1} / {pageCount}</span>
+            <button disabled={currentPage + 1 >= pageCount} onClick={() => { setPage(currentPage + 1); focus(); }}>Next →</button>
+          </nav>
         </>
       )}
       {!!selected.length && !paired && (

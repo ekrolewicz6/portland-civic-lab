@@ -29,7 +29,7 @@ test("directory searches names with accents and explains coverage", async ({
 test("comparison starts neutral, supports direct selection and prevents duplicates", async ({
   page,
 }) => {
-  await page.goto("/voters-guide/portland-district-3");
+  await page.goto("/voters-guide/portland-district-3#compare");
   const first = page.getByRole("combobox", {
     name: "Candidate 1",
     exact: true,
@@ -55,7 +55,7 @@ test("comparison starts neutral, supports direct selection and prevents duplicat
     .getByRole("combobox", { name: "Candidate 3", exact: true })
     .selectOption("angelita-morillo");
   await expect(
-    page.getByRole("checkbox", { name: "Compare Ali Beaudoin", exact: true }),
+    page.getByRole("checkbox", { name: "Compare Ali Beaudoin", exact: true, includeHidden: true }),
   ).toBeDisabled();
   await page.getByRole("button", { name: "Housing", exact: true }).click();
   await expect(
@@ -75,7 +75,7 @@ test("comparison starts neutral, supports direct selection and prevents duplicat
 test("record comparison preserves absent votes, agreement and legislative limits", async ({
   page,
 }) => {
-  await page.goto("/voters-guide/portland-district-4");
+  await page.goto("/voters-guide/portland-district-4#compare");
   await page
     .getByRole("combobox", { name: "Candidate 1", exact: true })
     .selectOption("eric-zimmerman");
@@ -132,10 +132,10 @@ test("record comparison preserves absent votes, agreement and legislative limits
 test("sources are attributed and printing opens then restores disclosure state", async ({
   page,
 }) => {
-  await page.goto("/voters-guide/portland-district-4");
+  await page.goto("/voters-guide/portland-district-4#eli-arnold");
   await expect(page.locator("details[open]")).toHaveCount(0);
   await page
-    .locator("article details summary")
+    .locator("article:visible details summary")
     .filter({ hasText: "Sources behind this profile" })
     .first()
     .click();
@@ -146,6 +146,7 @@ test("sources are attributed and printing opens then restores disclosure state",
   await page.evaluate(() => {
     window.print = () => {};
   });
+  await page.evaluate(() => { window.location.hash = "candidates"; });
   await page.getByRole("button", { name: "Print this race" }).click();
   expect(await page.locator("details[open]").count()).toBe(
     await page.locator("details").count(),
@@ -170,7 +171,7 @@ test("mobile comparisons fit the screen and show matched issue cards", async ({
       () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
-  await page.goto("/voters-guide/portland-district-4");
+  await page.goto("/voters-guide/portland-district-4#candidates");
   await page.getByRole("checkbox").nth(0).check();
   await page.getByRole("checkbox").nth(1).check();
   await page.getByRole("link", { name: "See comparison ↑" }).click();
@@ -243,7 +244,7 @@ test("unknown race fails closed and research log is reachable", async ({
 test("Portland portrait directory preserves the field, credits and comparison navigation", async ({
   page,
 }) => {
-  await page.goto("/voters-guide/portland-district-3");
+  await page.goto("/voters-guide/portland-district-3#candidates");
   await expect(page.getByRole("checkbox")).toHaveCount(21);
   const directory = page.getByRole("group", { name: "Candidates to compare" });
   await expect(directory.locator("img")).toHaveCount(20);
@@ -259,6 +260,7 @@ test("Portland portrait directory preserves the field, credits and comparison na
   await expect(
     page.locator("#compare").getByRole("region", { name: /comparison$/ }),
   ).toHaveCount(2);
+  await page.evaluate(() => { window.location.hash = "candidates"; });
   await directory.getByRole("link", { name: /Darren McCormick/ }).click();
   await expect(page.locator("article")).toHaveCount(21);
   await expect(page).toHaveURL(/#darren-mccormick$/);
@@ -270,6 +272,8 @@ test("Portland portrait directory preserves the field, credits and comparison na
     "historical, self-reported positions",
   );
   for (const article of await page.locator("article").all()) {
+    await page.evaluate((id) => { window.location.hash = id!; }, await article.getAttribute("id"));
+    await expect(article).toBeVisible();
     const img = article.locator("img");
     if (await img.count()) {
       await img.scrollIntoViewIfNeeded();
@@ -283,7 +287,7 @@ test("Portland portrait directory preserves the field, credits and comparison na
     }
   }
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/voters-guide/portland-district-4");
+  await page.goto("/voters-guide/portland-district-4#candidates");
   await expect(page.getByRole("checkbox")).toHaveCount(12);
   await expect(
     page.getByRole("group", { name: "Candidates to compare" }).locator("img"),
@@ -299,7 +303,7 @@ test("disagreements explain both budget votes before any selection", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/voters-guide/portland-district-3");
+  await page.goto("/voters-guide/portland-district-3#disagreements");
   const overview = page.getByRole("region", { name: "Where they disagree." });
   await expect(overview).toBeVisible();
   await expect(page.locator("input:checked")).toHaveCount(0);
@@ -343,7 +347,7 @@ test("individual record and export preserve reasons and amendment disagreements"
   page,
   request,
 }) => {
-  await page.goto("/voters-guide/portland-district-4");
+  await page.goto("/voters-guide/portland-district-4#disagreements");
   const overview = page.getByRole("region", { name: "Where they disagree." });
   await overview
     .getByRole("combobox", { name: "Choose a Council issue" })
@@ -399,7 +403,7 @@ test("broader history preserves changing coalitions, amendment votes and pending
   expect(new Set(ids).size).toBe(73);
   for (const district of [3, 4]) {
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto(`/voters-guide/portland-district-${district}`);
+    await page.goto(`/voters-guide/portland-district-${district}#disagreements`);
     const overview = page.locator("#disagreements");
     await overview.getByRole("button", { name: /Zenith & climate/ }).click();
     const zenith = page.locator("#disagreement-zenith");
@@ -499,6 +503,7 @@ test("mobile issue navigation shows context, committee limits and direct links",
       1,
     );
   }
+  await page.evaluate(() => { window.location.hash = "mitch-green"; });
   const green = page.locator("article#mitch-green");
   await green
     .getByRole("combobox", { name: "Record issue for Mitch Green" })

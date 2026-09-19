@@ -1,0 +1,22 @@
+.experience { padding-bottom: 100px; }
+.navigation { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; position: sticky; top: 80px; z-index: 45; background: #f8f6ee; border: 1px solid #c9d3c9; border-radius: 14px; padding: 6px; box-shadow: 0 3px 14px #183d3410; }
+.navigation a { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 8px; text-decoration: none; color: #284e42; font-size: .9rem; border-radius: 9px; }
+.navigation a[aria-current] { background: #183d34; color: #fffdf7; }
+.navigation a:focus-visible { outline: 3px solid #a67624; outline-offset: 2px; }
+.experience [data-panel], .experience [data-profile], .experience :global(#find-candidates), .experience :global(#compare), .experience :global(#candidates), .experience :global(#disagreements) { scroll-margin-top: 155px; }
+@media screen {
+  .experience:not([data-view="find-candidates"]) :global(#find-candidates),
+  .experience:not([data-view="compare"]) :global(#compare),
+  .experience:not([data-view="disagreements"]) [data-panel="record"],
+  .experience:not([data-view="candidates"]) :global(#candidates),
+  .experience:not([data-view="about-guide"]) [data-panel="about"],
+  .experience:not([data-view="profile"]) [data-panel="profiles"],
+  .experience [data-profile]:not([data-active="true"]) { display: none; }
+}
+@media (max-width: 700px) {
+  .navigation { position: fixed; top: auto; bottom: 0; left: 0; right: 0; border-radius: 14px 14px 0 0; padding: 5px 6px calc(5px + env(safe-area-inset-bottom, 0px)); }
+  .navigation a { flex-direction: column; gap: 3px; padding: 7px 2px; font-size: .72rem; min-height: 54px; }
+  .experience [data-panel], .experience [data-profile], .experience :global(#find-candidates), .experience :global(#compare), .experience :global(#candidates), .experience :global(#disagreements) { scroll-margin-top: 85px; }
+}
+@media print { .navigation { display: none; } .experience { padding-bottom: 0; } }
+.experience [data-panel="profiles"] { grid-template-columns: minmax(0, 1fr); }

@@ -254,3 +254,12 @@
     display: none;
   }
 }
+.pagination { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin: 1rem 0; font-size: .85rem; }
+@media (min-width: 701px) { .discovery h2 { scroll-margin-top: 155px; } }
+@media (max-width: 700px) { .discovery .floatingActions { bottom: var(--race-navigation-height, calc(70px + env(safe-area-inset-bottom, 0px))); padding-bottom: 12px; } }
+@media screen and (max-width: 700px) {
+  .discovery { margin-top: 1rem; padding: 1rem; }
+  .discovery h2 { font-size: 1.75rem; margin-bottom: .5rem; }
+  .topicControl { margin-top: .8rem; gap: .25rem; }
+  .discovery .lede { font-size: .95rem; }
+}

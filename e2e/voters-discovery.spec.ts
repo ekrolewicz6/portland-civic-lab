@@ -43,13 +43,15 @@ for (const district of [3, 4]) {
       exact: true,
     });
     const cards = guide.locator("[data-candidate]");
-    await expect(cards).toHaveCount(race.candidates.length);
+    await expect(cards).toHaveCount(4);
     for (const topic of explorerTopics) {
       await guide.getByLabel("Explore a topic").selectOption(topic.id);
-      const known = race.candidates.filter((p) => hasTopic(p, topic.id));
+      const known = race.candidates.filter((p) => hasTopic(p, topic.id)).sort((a,b) => a.name.localeCompare(b.name));
       expect(known.length).toBeGreaterThan(1);
-      await expect(cards).toHaveCount(known.length);
-      for (const person of known) {
+      await expect(cards).toHaveCount(Math.min(4, known.length));
+      for (let index = 0; index < known.length; index++) {
+        if (index > 0 && index % 4 === 0) await guide.getByRole("navigation", { name: "Candidate pages", exact: true }).getByRole("button", { name: "Next →" }).click();
+        const person = known[index];
         const card = guide.locator(`[data-candidate="${person.id}"]`);
         const position = topicPosition(person, topic.id);
         await expect(card).toContainText(
@@ -106,16 +108,16 @@ test("District 4 homelessness leads to real comparisons and carries selections i
     exact: true,
   });
   await guide.getByLabel("Explore a topic").selectOption("safety");
-  await expect(guide.locator('[data-candidate="olivia-clark"]')).toContainText(
-    "Pairs removing street camping",
-  );
-  for (const name of ["Eli Arnold", "Olivia Clark"])
+  for (const name of ["Eli Arnold", "Olivia Clark"]) {
+    while (!await guide.getByRole("button", { name: `Select ${name} for quick comparison`, exact: true }).count())
+      await guide.getByRole("navigation", { name: "Candidate pages", exact: true }).getByRole("button", { name: "Next →" }).click();
     await guide
       .getByRole("button", {
         name: `Select ${name} for quick comparison`,
         exact: true,
       })
       .click();
+  }
   await expect(
     guide.getByRole("button", { name: "Compare these two →" }),
   ).toBeInViewport({ ratio: 1 });
@@ -205,13 +207,17 @@ test("a missing topic shows the selected person's broader platform, never an emp
     name: "Quick candidate comparison",
     exact: true,
   });
-  for (const person of [missing, known])
+  for (const person of [missing, known]) {
+    await guide.getByLabel("Explore a topic").selectOption("overview");
+    while (!await guide.getByRole("button", { name: `Select ${person.name} for quick comparison`, exact: true }).count())
+      await guide.getByRole("navigation", { name: "Candidate pages", exact: true }).getByRole("button", { name: "Next →" }).click();
     await guide
       .getByRole("button", {
         name: `Select ${person.name} for quick comparison`,
         exact: true,
       })
       .click();
+  }
   await guide.getByRole("button", { name: "Compare these two →" }).click();
   await guide.getByLabel("Explore a topic").selectOption("safety");
   const card = guide.locator(`[data-candidate="${missing.id}"]`);
@@ -235,7 +241,7 @@ test("storage failure does not block browsing or comparing", async ({
     name: "Quick candidate comparison",
     exact: true,
   });
-  await expect(guide.locator("[data-candidate]")).toHaveCount(12);
+  await expect(guide.locator("[data-candidate]")).toHaveCount(4);
   await guide.getByLabel("Explore a topic").selectOption("safety");
   await guide
     .getByRole("button", { name: /Select .* for quick comparison/ })

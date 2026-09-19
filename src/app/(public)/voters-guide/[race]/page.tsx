@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { findRace, races } from "@/lib/voters-guide/published";
 import { REVIEW_LABEL } from "@/lib/voters-guide/types";
 import CandidateComparison from "@/components/voters-guide/CandidateComparison";
+import RaceNavigation from "@/components/voters-guide/RaceNavigation";
 import CandidateDiscovery from "@/components/voters-guide/CandidateDiscovery";
 import styles from "../guide.module.css";
 export function generateStaticParams() {
@@ -39,7 +40,7 @@ export default async function RacePage({
         <div className={styles.eyebrow}>
           {race.jurisdiction} / November 3, 2026 / {race.method}
         </div>
-        <h1>{race.title}</h1>
+        <h1>{race.title.replace(/District (\d+)/, "District\u00a0$1")}</h1>
         <div className={styles.meta}>
           <span>
             {race.candidates.length} candidates · Reviewed {REVIEW_LABEL}
@@ -49,14 +50,16 @@ export default async function RacePage({
           </Link>
         </div>
       </header>
+      <RaceNavigation race={race}>
       <CandidateDiscovery race={race} />
+      <div id="about-guide" data-panel="about">
       <section aria-label="The complete research guide">
-        <h2>The full guide, whenever you need it</h2>
+        <h2>About this race</h2>
         <p>{race.stakes}</p>
         <p>
           Explore the choices behind the headlines, what each vote changed, and
           what candidates say they would do. Every candidate profile, recorded
-          decision and source remains available below.
+          decision and source is available through the navigation.
         </p>
         <nav aria-label="Full research navigation" className={styles.meta}>
           <a href="#disagreements">Where incumbents disagree</a>
@@ -149,7 +152,9 @@ export default async function RacePage({
           their factual claims are true.
         </div>
       </details>
+      </div>
       <CandidateComparison key={race.id} race={race} />
+      </RaceNavigation>
       <div className={styles.footerNote}>
         <p>
           These are research briefs, not endorsements. Candidates receive the

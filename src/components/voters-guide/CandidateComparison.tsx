@@ -44,6 +44,7 @@ function Profile({
     <article
       className={styles.candidate}
       id={person.id}
+      data-profile={person.id}
       aria-labelledby={`${person.id}-title`}
     >
       <header className={styles.candidateHead}>
@@ -338,7 +339,7 @@ export default function CandidateComparison({ race }: { race: Race }) {
   }
   return (
     <>
-      <CouncilDisagreements people={people} />
+      <div data-panel="record"><CouncilDisagreements people={people} /></div>
       <section
         className={styles.compareStudio}
         id="compare"
@@ -549,7 +550,7 @@ export default function CandidateComparison({ race }: { race: Race }) {
           ))}
         </div>
       </div>
-      <div className={styles.candidateGrid}>
+      <div className={styles.candidateGrid} data-panel="profiles">
         {people.map((person) => (
           <Profile
             person={person}

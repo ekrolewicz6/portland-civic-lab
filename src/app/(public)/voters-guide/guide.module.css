@@ -2202,3 +2202,9 @@
     display: block !important;
   }
 }
+@media screen and (max-width: 700px) {
+  .raceHeader h1 { font-size: 1.85rem; margin: .4rem 0 .6rem; }
+  .raceHeader { padding-bottom: 1rem; }
+  .raceHeader .meta { gap: .35rem; }
+  .raceHeader .eyebrow { font-size: .65rem; }
+}
