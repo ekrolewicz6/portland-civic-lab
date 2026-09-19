@@ -466,8 +466,6 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
           </p>
           <p className={styles.note}>
             A job title shows experience, not how well someone did the job.
-            Check “require” only if you want to filter by evidence of that
-            experience.
           </p>
           <div className={styles.choices}>
             {experienceOptions.map((e) => {
@@ -489,24 +487,30 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
                     {e.label}
                   </button>
                   {selected && (
-                    <label className={styles.requirement}>
-                      <input
-                        type="checkbox"
-                        aria-label={`Require evidence: ${e.label}`}
-                        checked={selected.requirement}
-                        onChange={(event) =>
-                          setState((s) => ({
-                            ...s,
-                            experience: s.experience.map((p) =>
-                              p.id === e.id
-                                ? { ...p, requirement: event.target.checked }
-                                : p,
-                            ),
-                          }))
-                        }
-                      />{" "}
-                      Require evidence of this experience
-                    </label>
+                    <div>
+                      <label className={styles.requirement}>
+                        <input
+                          type="checkbox"
+                          aria-label={`Require evidence: ${e.label}`}
+                          checked={selected.requirement}
+                          onChange={(event) =>
+                            setState((s) => ({
+                              ...s,
+                              experience: s.experience.map((p) =>
+                                p.id === e.id
+                                  ? { ...p, requirement: event.target.checked }
+                                  : p,
+                              ),
+                            }))
+                          }
+                        />{" "}
+                        Require evidence of this experience
+                      </label>
+                      <p className={styles.note}>
+                        If checked, candidates without documented experience
+                        appear in a separate section.
+                      </p>
+                    </div>
                   )}
                 </div>
               );
