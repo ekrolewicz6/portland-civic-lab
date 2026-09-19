@@ -38,6 +38,7 @@ for (const district of [3, 4]) {
     const errors: string[] = [];
     page.on("pageerror", (error) => errors.push(error.message));
     await page.goto(`/voters-guide/portland-district-${district}`);
+    await page.getByRole("button", { name: "Meet all candidates", exact: true }).click();
     const guide = page.getByRole("region", {
       name: "Quick candidate comparison",
       exact: true,
@@ -103,6 +104,7 @@ test("District 4 homelessness leads to real comparisons and carries selections i
 }) => {
   await page.setViewportSize({ width: 390, height: 700 });
   await page.goto("/voters-guide/portland-district-4");
+    await page.getByRole("button", { name: "Meet all candidates", exact: true }).click();
   const guide = page.getByRole("region", {
     name: "Quick candidate comparison",
     exact: true,
@@ -203,6 +205,7 @@ test("a missing topic shows the selected person's broader platform, never an emp
   const missing = race.candidates.find((p) => !hasTopic(p, "safety"))!;
   const known = race.candidates.find((p) => hasTopic(p, "safety"))!;
   await page.goto("/voters-guide/portland-district-4");
+    await page.getByRole("button", { name: "Meet all candidates", exact: true }).click();
   const guide = page.getByRole("region", {
     name: "Quick candidate comparison",
     exact: true,
@@ -237,6 +240,7 @@ test("storage failure does not block browsing or comparing", async ({
     }),
   );
   await page.goto("/voters-guide/portland-district-4");
+    await page.getByRole("button", { name: "Meet all candidates", exact: true }).click();
   const guide = page.getByRole("region", {
     name: "Quick candidate comparison",
     exact: true,

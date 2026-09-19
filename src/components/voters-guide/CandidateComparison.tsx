@@ -10,6 +10,9 @@ import {
   comparisonEvent,
   comparisonChangeEvent,
 } from "@/lib/voters-guide/explorer";
+import ShareGuide from "./ShareGuide";
+import journey from "./journey.module.css";
+import { comparisonFragment, sharedComparison } from "@/lib/voters-guide/journey";
 import CandidatePortrait from "./CandidatePortrait";
 import CouncilDisagreements, {
   CouncilIssuePicker,
@@ -60,6 +63,7 @@ function Profile({
           </h2>
           <p>{person.background}</p>
           <a href="#find-candidates">← Back to quick comparison</a>
+          <ShareGuide title={person.name + " · Portland Civic Lab"} fragment={person.id} label="Share this profile" />
           {person.portrait && (
             <a className={styles.photoCredit} href={person.portrait.sourceUrl}>
               Photo: {person.portrait.credit} ↗
@@ -289,6 +293,23 @@ export default function CandidateComparison({ race }: { race: Race }) {
     return () => window.removeEventListener(comparisonEvent, open);
   }, [race.id, race.candidates]);
 
+  useEffect(() => {
+    function restoreSharedView() {
+      const value = sharedComparison(window.location.hash, race);
+      if (!value) return;
+      setSelected([value.ids[0] ?? "", value.ids[1] ?? "", value.ids[2] ?? ""]);
+      setThird(value.ids.length === 3);
+      setTopic(value.topic);
+      setRecordIssue(value.issue);
+      window.dispatchEvent(new CustomEvent(comparisonChangeEvent, {
+        detail: { raceId: race.id, selected: value.ids, topic: value.topic },
+      }));
+    }
+    restoreSharedView();
+    window.addEventListener("hashchange", restoreSharedView);
+    return () => window.removeEventListener("hashchange", restoreSharedView);
+  }, [race]);
+
   const recordTopic = councilDisagreements.find(
     (item) => item.id === recordIssue,
   )!;
@@ -356,8 +377,8 @@ export default function CandidateComparison({ race }: { race: Race }) {
             </h2>
           </div>
           <p>
-            Choose two candidates. Explore their priorities, the tradeoffs and
-            the evidence behind them. No scores. No suggested ranking.
+            Choose two names, then an issue. Read their answers together and
+            decide which approach fits what matters to you.
           </p>
         </div>
         <div className={styles.pickerGrid}>
@@ -438,8 +459,8 @@ export default function CandidateComparison({ race }: { race: Race }) {
             <span aria-hidden="true">A ↔ B</span>
             <h3>A fair comparison starts with the same question.</h3>
             <p>
-              Select two names above, or use the portraits below. Every
-              candidate is included; missing evidence stays visible.
+              Choose two names above to get started. You can change either
+              candidate or explore another issue at any time.
             </p>
           </div>
         ) : topic === "record" ? (
@@ -493,9 +514,18 @@ export default function CandidateComparison({ race }: { race: Race }) {
           </div>
         )}
         <p className={styles.comparisonPrivacy}>
-          Selections stay in this page’s memory and clear on reload. Names and
-          comparison results appear alphabetically.
+          Candidates appear alphabetically. Sharing includes the selected names
+          and topic, without a score or suggested ranking.
         </p>
+        {count >= 2 && <section className={journey.takeaway} aria-label="Your next step">
+          <h3>What matters most to your choice?</h3>
+          <p>Consider their plans, their experience, and the choices they have made. You can agree on one issue and disagree on another.</p>
+          <div className={journey.actions}>
+            <ShareGuide title={race.title + " · Candidate comparison"} fragment={comparisonFragment(selected, topic, recordIssue)} />
+            <a href="#find-candidates">Explore more candidates →</a>
+          </div>
+          <p>Send someone this same comparison, or keep the link to return to it.</p>
+        </section>}
       </section>
       <div className={styles.compareControls} id="candidates">
         <div className={styles.sectionTop}>

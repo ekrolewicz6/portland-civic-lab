@@ -10,10 +10,15 @@ import {
   topicPosition,
   type ExplorerTopic,
 } from "@/lib/voters-guide/explorer";
+import { House, ShieldCheck, Wallet, Leaf, Users, ArrowRight } from "lucide-react";
+import ShareGuide from "./ShareGuide";
+import journey from "./journey.module.css";
+import { comparisonFragment } from "@/lib/voters-guide/journey";
 import CandidatePortrait from "./CandidatePortrait";
 import styles from "./discovery.module.css";
 
 export default function CandidateDiscovery({ race }: { race: Race }) {
+  const [started, setStarted] = useState(false);
   const [page, setPage] = useState(0);
   const [topic, setTopic] = useState<ExplorerTopic>("overview");
   const [selected, setSelected] = useState<string[]>([]);
@@ -33,6 +38,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
       const raw = sessionStorage.getItem(key);
       if (raw) {
         const value = JSON.parse(raw);
+        if (value.topic !== "overview" || value.selected?.length) setStarted(true);
         if (explorerTopics.some((t) => t.id === value.topic))
           setTopic(value.topic);
         if (Array.isArray(value.selected))
@@ -73,6 +79,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
       const detail = (event as CustomEvent).detail;
       if (detail?.raceId !== race.id) return;
       selectionChanged.current = false;
+      setStarted(true);
       if (Array.isArray(detail.selected)) {
         const ids = [
           ...new Set<string>(
@@ -101,6 +108,13 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
       heading.current?.focus({ preventScroll: true });
       heading.current?.scrollIntoView({ block: "start", behavior: "instant" });
     });
+  }
+  function start(topic: ExplorerTopic) {
+    selectionChanged.current = true;
+    setTopic(topic);
+    setPage(0);
+    setStarted(true);
+    focus();
   }
   function toggle(id: string) {
     selectionChanged.current = true;
@@ -211,6 +225,27 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
       </section>
     );
   }
+  if (!started && !paired) return (
+    <section ref={region} id="find-candidates" className={`${styles.discovery} ${styles.welcome}`} aria-label="Quick candidate comparison">
+      <h2 ref={heading} tabIndex={-1}>Start with what<br /><em>matters to you.</em></h2>
+      <p className={styles.lede}>You don’t need to know every candidate. Pick one topic to see what they would do.</p>
+      <div className={styles.starts} aria-label="Start with an issue">
+        {[
+          { id: "housing", label: "Housing & rent", detail: "Homes people can afford", icon: House },
+          { id: "safety", label: "Homelessness & safety", detail: "Care, housing and public safety", icon: ShieldCheck },
+          { id: "money", label: "Taxes & city services", detail: "What to fund. Who pays.", icon: Wallet },
+          { id: "climate", label: "Climate & getting around", detail: "Cleaner air and better streets", icon: Leaf },
+        ].map(({ id, label, detail, icon: Icon }) => <button key={id} onClick={() => start(id as ExplorerTopic)}>
+          <Icon size={23} aria-hidden="true" /><span><strong>{label}</strong><small>{detail}</small></span><ArrowRight size={18} aria-hidden="true" />
+        </button>)}
+      </div>
+      <div className={styles.startAlternatives}>
+        <button onClick={() => start("overview")}><Users size={18} aria-hidden="true" />Meet all candidates</button>
+        <a href="#disagreements">See how current councilors voted →</a>
+      </div>
+      <p className={styles.startPromise}>Their proposals. Their experience. The record behind them.<br />The choice belongs to you.</p>
+    </section>
+  );
   return (
     <section
       ref={region}
@@ -220,13 +255,15 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
       aria-label="Quick candidate comparison"
     >
       <h2 ref={heading} tabIndex={-1}>
-        {paired ? "Side by side." : "Compare candidates."}
+        {paired ? "Side by side." : topic === "overview" ? "Meet the candidates." : explorerTopics.find((item) => item.id === topic)?.label}
       </h2>
       <p className={styles.lede}>
         {paired
           ? "Switch topics to compare what they propose."
-          : "Choose a topic. Select two candidates to compare."}
+          : "Read what they propose. Choose two to see their ideas together."}
       </p>
+      {!paired && <button className={styles.backToStart} onClick={() => { setStarted(false); focus(); }}>← Choose a starting point</button>}
+      <div className={styles.browseControls} data-paired={paired}>
       <label className={styles.topicControl}>
         Explore a topic
         <select
@@ -251,12 +288,13 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
         </select>
       </label>
       {!paired && <label className={styles.topicControl}>
-        Go straight to a candidate
-        <select value="" onChange={(event) => { if (event.target.value) window.location.hash = event.target.value; }}>
+        Find a candidate
+        <select aria-label="Go straight to a candidate" value="" onChange={(event) => { if (event.target.value) window.location.hash = event.target.value; }}>
           <option value="">Choose a name…</option>
           {people.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
         </select>
       </label>}
+      </div>
       {paired && chosen.length === 2 ? (
         <>
           <div className={styles.viewActions}>
@@ -275,6 +313,16 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
           <div className={`${styles.cards} ${styles.paired}`}>
             {chosen.map((person) => card(person, true))}
           </div>
+          <section className={journey.takeaway} aria-label="Keep exploring">
+            <h3>One issue is a starting point.</h3>
+            <p>See what experience they bring, then look at their other priorities. You don’t have to agree with someone on everything.</p>
+            <div className={styles.nextTopics}>
+              <button onClick={() => start(topic === "experience" ? "overview" : "experience")}>{topic === "experience" ? "Compare priorities →" : "Compare experience →"}</button>
+              <a href="#compare" onClick={openRecords}>Values, choices &amp; the record →</a>
+            </div>
+            <ShareGuide title={race.title + " · Candidate comparison"} fragment={comparisonFragment(selected, topic === "overview" ? "values" : topic)} />
+            <p className={styles.note}>The link opens these candidates and this topic in the full comparison. Share it, or keep it for later.</p>
+          </section>
         </>
       ) : (
         <>
@@ -284,6 +332,20 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               : `${known.length} candidates with a documented position`}{" "}
             · A–Z
           </p>
+          {!known.length && (
+            <p>
+              There are no documented positions on this topic yet. Here are the
+              candidates’ broader platforms.
+            </p>
+          )}
+          <nav className={styles.pagination} aria-label="Candidate pages">
+            <button disabled={currentPage === 0} onClick={() => { setPage(currentPage - 1); focus(); }}>← Previous</button>
+            <span role="status">{currentPage * 4 + 1}–{Math.min(currentPage * 4 + 4, browsable.length)} of {browsable.length}</span>
+            <button disabled={currentPage + 1 >= pageCount} onClick={() => { setPage(currentPage + 1); focus(); }}>Next →</button>
+          </nav>
+          <div className={styles.cards}>
+            {browsable.slice(currentPage * 4, currentPage * 4 + 4).map((person) => card(person))}
+          </div>
           {!!missing.length && (
             <details className={styles.gaps} key={topic}>
               <summary>
@@ -307,20 +369,6 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               </button>
             </details>
           )}
-          {!known.length && (
-            <p>
-              There are no documented positions on this topic yet. Here are the
-              candidates’ broader platforms.
-            </p>
-          )}
-          <nav className={styles.pagination} aria-label="Candidate pages">
-            <button disabled={currentPage === 0} onClick={() => { setPage(currentPage - 1); focus(); }}>← Previous</button>
-            <span role="status">{currentPage * 4 + 1}–{Math.min(currentPage * 4 + 4, browsable.length)} of {browsable.length}</span>
-            <button disabled={currentPage + 1 >= pageCount} onClick={() => { setPage(currentPage + 1); focus(); }}>Next →</button>
-          </nav>
-          <div className={styles.cards}>
-            {browsable.slice(currentPage * 4, currentPage * 4 + 4).map((person) => card(person))}
-          </div>
           <nav className={styles.pagination} aria-label="More candidates">
             <button disabled={currentPage === 0} onClick={() => { setPage(currentPage - 1); focus(); }}>← Previous</button>
             <span>{currentPage + 1} / {pageCount}</span>

@@ -2208,3 +2208,15 @@
   .raceHeader .meta { gap: .35rem; }
   .raceHeader .eyebrow { font-size: .65rem; }
 }
+@media screen {
+  .raceHeader { border-bottom: 0; padding-bottom: .25rem; }
+  .raceHeader h1 { font-size: clamp(1.6rem, 3vw, 2.3rem); margin: .35rem 0 .5rem; }
+  .raceHeader .meta { gap: .4rem 1rem; }
+}
+@media screen and (max-width: 700px) {
+  .guide:has(.raceHeader) { padding-top: .8rem; }
+  .guide:has(.raceHeader) > .back { margin-bottom: .8rem; }
+  .raceHeader .eyebrow { font-size: .6rem; }
+  .raceHeader h1 { font-size: 1.5rem; }
+  .raceHeader .meta { font-size: .68rem; }
+}

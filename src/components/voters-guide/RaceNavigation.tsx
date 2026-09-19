@@ -29,7 +29,7 @@ export default function RaceNavigation({ race, children }: { race: Race; childre
       if (link && root.current?.dataset.view === "find-candidates") browsePosition = window.scrollY;
     }
     function navigate() {
-      const hash = decodeURIComponent(window.location.hash.slice(1));
+      const hash = window.location.hash.slice(1).split("?")[0];
       const profile = race.candidates.some((p) => p.id === hash);
       const next = profile ? "profile" : hash.startsWith("disagreement-") ? "disagreements" : hash === "candidates" ? "candidates" : views.some((v) => v.id === hash) ? hash : "find-candidates";
       setView(next);

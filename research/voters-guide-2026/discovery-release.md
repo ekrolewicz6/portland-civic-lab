@@ -57,3 +57,22 @@ Verification covers every topic across every candidate page, both race routes,
 selection handoffs, storage failure, profile links, browser Back, print visibility,
 mobile overflow, and exact research preservation. Independent human usability
 and editorial review remain outstanding.
+
+## September 19: issue-first journey and shareable comparisons
+
+The opening screen now asks what the reader wants to explore, with four direct
+issue choices and an option to meet everyone. Choosing a topic immediately opens
+sourced candidate proposals; there is no quiz, match score, or mandatory sequence.
+The race header is more compact so the first action appears sooner on mobile.
+Comparisons offer a next step into experience, priorities, and the Council record.
+
+Readers can share a profile or an exact comparison. Comparison fragments contain
+validated, deduplicated candidate IDs belonging to the race, a known topic, and
+an optional known Council issue. Recipients open that view without onboarding or
+saved browser data. Native sharing falls back to clipboard, then manual copying.
+No automatic sending or inferred voter alignment is involved. All substantive
+research objects and the complete print edition remain unchanged.
+
+The storyboard and target times are documented in design/voter-journey.md.
+These times are hypotheses to validate with first-time readers. Browser checks
+verify functionality and source preservation, not comprehension or empowerment.

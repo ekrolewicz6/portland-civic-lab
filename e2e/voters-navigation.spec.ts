@@ -3,6 +3,7 @@ for (const district of [3, 4]) {
   test(`district ${district}: mobile sections, profiles and browser Back keep context`, async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`/voters-guide/portland-district-${district}`);
+    await page.getByRole("button", { name: "Meet all candidates", exact: true }).click();
     const navigation = page.getByRole("navigation", { name: "Race guide sections" });
     await expect(navigation).toBeInViewport({ ratio: 1 });
     await expect(page.locator("#compare")).toBeHidden();
@@ -45,6 +46,7 @@ test("persistent Compare carries selections without browser storage and controls
   await page.setViewportSize({ width: 320, height: 700 });
   await page.addInitScript(() => Object.defineProperty(window, "sessionStorage", { get() { throw new Error("disabled"); } }));
   await page.goto("/voters-guide/portland-district-4");
+    await page.getByRole("button", { name: "Meet all candidates", exact: true }).click();
   const guide = page.locator("#find-candidates");
   await guide.getByRole("button", { name: /Select .* for quick comparison/ }).first().click();
   await guide.getByRole("button", { name: /Select .* for quick comparison/ }).first().click();

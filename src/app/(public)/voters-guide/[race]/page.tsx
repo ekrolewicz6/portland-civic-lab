@@ -37,17 +37,11 @@ export default async function RacePage({
         <ArrowLeft size={16} /> All races
       </Link>
       <header className={styles.raceHeader}>
-        <div className={styles.eyebrow}>
-          {race.jurisdiction} / November 3, 2026 / {race.method}
-        </div>
+        <div className={styles.eyebrow}>November 3, 2026 · {race.method}</div>
         <h1>{race.title.replace(/District (\d+)/, "District\u00a0$1")}</h1>
         <div className={styles.meta}>
-          <span>
-            {race.candidates.length} candidates · Reviewed {REVIEW_LABEL}
-          </span>
-          <Link href="/voters-guide/methodology">
-            How we research and write
-          </Link>
+          <span>{race.candidates.length} candidates · Reviewed {REVIEW_LABEL}</span>
+          <a href="#about-guide">About this guide</a>
         </div>
       </header>
       <RaceNavigation race={race}>

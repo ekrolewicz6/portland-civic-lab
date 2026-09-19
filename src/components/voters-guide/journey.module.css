@@ -1,0 +1,15 @@
+.share { display: grid; gap: .5rem; justify-items: start; }
+.share button { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 48px; padding: .75rem 1rem; border: 1px solid #183d34; border-radius: 9px; background: #183d34; color: #fffdf7; font: inherit; cursor: pointer; }
+.share button:hover { background: #2d594b; }
+.share button:focus-visible, .share input:focus-visible { outline: 3px solid #a67624; outline-offset: 3px; }
+.share span { font-size: .85rem; }
+.share label { display: grid; gap: .5rem; width: 100%; }
+.share input { width: 100%; min-width: 0; box-sizing: border-box; padding: .7rem; font: inherit; }
+.takeaway { margin-top: 1.5rem; padding: clamp(1rem, 3vw, 1.75rem); border-radius: 14px; background: #e9eee2; border: 1px solid #cbd5c5; }
+.takeaway h3 { font: 400 1.6rem/1.2 Georgia, serif; margin: 0 0 .7rem; }
+.takeaway p { max-width: 60ch; line-height: 1.6; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 1rem; }
+.actions a { display: inline-flex; align-items: center; min-height: 44px; }
+@media print { .share, .takeaway { display: none; } }
+.share.share button { background: #183d34; color: #fffdf7; }
+.share.share button:hover { background: #2d594b; }
