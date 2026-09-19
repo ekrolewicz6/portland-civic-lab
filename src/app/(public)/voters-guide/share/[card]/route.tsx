@@ -40,7 +40,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ car
         <div style={{ position: "absolute", top: 28, right: 28, bottom: 28, left: 28, border: "1px solid #56735b", borderRadius: "180px 180px 0 0" }} />
         {data.district ? <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
           <span style={{ marginTop: 110, fontSize: 23, letterSpacing: "0.18em", color: gold }}>DISTRICT</span>
-          <span style={{ fontFamily: "Cormorant", fontSize: 260, lineHeight: 1, marginTop: -42, transform: data.district === "3" ? "translateY(-60px)" : undefined }}>{data.district}</span>
+          <span style={{ fontFamily: "Cormorant", fontSize: 260, lineHeight: 1, marginTop: -42, transform: data.district === "3" ? "translateY(-60px)" : "translateY(0px)" }}>{data.district}</span>
           <span style={{ fontSize: 25, marginTop: 22, color: gold }}>Three seats. Your say.</span>
         </div> : <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
           <svg width="64" height="64" viewBox="0 0 64 64" style={{ marginTop: 106 }}><rect x="5" y="5" width="54" height="54" rx="6" fill="none" stroke={gold} strokeWidth="2"/><path d="M18 31L28 41L47 21" fill="none" stroke={gold} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
