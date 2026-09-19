@@ -1,0 +1,45 @@
+.about { margin: 1.5rem 0 2rem; color: #234438; }
+.hero { padding: clamp(1.6rem, 4vw, 3.2rem); border-radius: 22px; background: #173c30; color: #faf5e9; position: relative; overflow: hidden; }
+.hero::after { content: ""; position: absolute; width: 280px; height: 400px; right: -120px; top: 35px; border: 1px solid #b6be9250; border-radius: 180px 180px 0 0; pointer-events: none; }
+.eyebrow { font-size: .7rem; letter-spacing: .15em; font-weight: 600; }
+.hero .eyebrow { color: #ddbe8f; }
+.hero h2 { font-family: Georgia, serif; font-size: clamp(2.7rem, 5vw, 4.6rem); font-weight: 400; line-height: 1.03; letter-spacing: -.04em; margin: 1.1rem 0; position: relative; z-index: 1; }
+.hero h2 em { color: #dfc49d; font-weight: 400; }
+/* Navigation moves focus here for screen readers; this heading is not a control. */
+.hero h2:focus { outline: none; }
+.hero > p { max-width: 590px; font-size: 1rem; line-height: 1.65; color: #e5e9dc; margin: 0; position: relative; z-index: 1; }
+.facts { display: flex; flex-wrap: wrap; gap: .7rem 1.4rem; margin-top: 1.6rem; border-top: 1px solid #728d7255; padding-top: 1.1rem; }
+.facts span { display: flex; gap: .55rem; align-items: center; font-size: .8rem; }
+.actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; margin: 1rem 0 2rem; }
+.actions a { display: flex; align-items: center; gap: .85rem; background: #fffdf7; border: 1px solid #cbd3c4; border-radius: 13px; padding: 1.1rem; color: #234438; text-decoration: none; transition: background .15s; }
+.actions a:hover { background: #eaf0e3; }
+.actions a > svg { flex: 0 0 20px; width: 20px; }
+.actions a > svg:last-child { margin-left: auto; width: 17px; flex-basis: 17px; }
+.actions strong, .actions small { display: block; }
+.actions strong { font-size: .88rem; line-height: 1.3; }
+.actions small { font-size: .76rem; line-height: 1.5; margin-top: .25rem; color: #5c6a5c; }
+.context { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; margin: 2rem 0; padding: 0 .25rem; }
+.context h3 { font-family: Georgia, serif; font-size: 1.7rem; font-weight: 400; letter-spacing: -.03em; line-height: 1.15; margin: .7rem 0; }
+.context p, .body p { font-size: .92rem; line-height: 1.7; margin: .7rem 0; }
+.voting { padding: 1.4rem; background: #e9eee1; border-radius: 14px; }
+.voting strong { font-size: .95rem; }
+.voting a, .body a { font-size: .87rem; text-decoration: underline; text-underline-offset: 4px; }
+.details { border: 1px solid #ccd3c4; border-radius: 14px; background: #fffdf7; overflow: hidden; }
+.details details + details { border-top: 1px solid #d8decf; }
+.details summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem; cursor: pointer; font-size: .93rem; line-height: 1.4; font-weight: 600; }
+.details summary::-webkit-details-marker { display: none; }
+.details summary svg { flex-shrink: 0; }
+.details details[open] summary svg { transform: rotate(180deg); }
+.body { padding: 0 1.25rem 1.25rem; max-width: 850px; }
+.body h3 { font-size: 1rem; margin: 1.3rem 0 .4rem; font-weight: 600; }
+.body dl { margin: 0; }
+.body dt { margin-top: 1.1rem; font-size: .9rem; }
+.body dd { margin: .3rem 0 0; font-size: .88rem; line-height: 1.65; color: #50604f; }
+.body .caption { font-size: .8rem; color: #62715f; }
+.footer { margin-top: 1.5rem; padding: 1.25rem .25rem; }
+.footer strong { font-size: .87rem; }
+.footer p { font-size: .8rem; line-height: 1.65; color: #5e6b5e; max-width: 700px; margin: .6rem 0; }
+.footer > div { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; font-size: .82rem; text-decoration: underline; text-underline-offset: 4px; }
+.about a:focus-visible, .details summary:focus-visible { outline: 3px solid #9c702e; outline-offset: -3px; border-radius: 8px; }
+@media (max-width: 760px) { .actions, .context { grid-template-columns: 1fr; } .actions { gap: .55rem; } .context { gap: 1.1rem; } .hero { border-radius: 18px; } }
+@media print { .hero { background: white; color: black; border: 1px solid #999; } .hero h2 em, .hero p, .hero .eyebrow { color: black; } .actions { display: none; } .body { display: block; } }

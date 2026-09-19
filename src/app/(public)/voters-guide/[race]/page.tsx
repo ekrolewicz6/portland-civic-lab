@@ -1,3 +1,4 @@
+import RaceAbout from "@/components/voters-guide/RaceAbout";
 import { voterGuideMetadata, type GuideCard } from "@/lib/voters-guide/metadata";
 import GuideStructuredData from "@/components/voters-guide/GuideStructuredData";
 import type { Metadata } from "next";
@@ -47,107 +48,7 @@ export default async function RacePage({
       </header>
       <RaceNavigation race={race}>
       <CandidateDiscovery race={race} />
-      <div id="about-guide" data-panel="about">
-      <section aria-label="The complete research guide">
-        <h2>About this race</h2>
-        <p>{race.stakes}</p>
-        <p>
-          Explore the choices behind the headlines, what each vote changed, and
-          what candidates say they would do. Every candidate profile, recorded
-          decision and source is available through the navigation.
-        </p>
-        <nav aria-label="Full research navigation" className={styles.meta}>
-          <a href="#disagreements">Where incumbents disagree</a>
-          <a href="#compare">Compare values &amp; issues</a>
-          <a href="#candidates">Meet the {race.candidates.length} candidates</a>
-        </nav>
-        <details className={styles.raceContext}>
-          <summary>A few terms that make the record easier to read</summary>
-          <dl>
-            <dt>
-              <strong>Amendment</strong>
-            </dt>
-            <dd>
-              A proposed change to a measure. A vote on one amendment does not
-              establish support for the final package.
-            </dd>
-            <dt>
-              <strong>Supplemental budget</strong>
-            </dt>
-            <dd>
-              A change to a budget after its original adoption, often to respond
-              to new costs or revenue.
-            </dd>
-            <dt>
-              <strong>Appropriation</strong>
-            </dt>
-            <dd>
-              Permission to spend public money for a particular purpose. It does
-              not mean the money has already been spent.
-            </dd>
-            <dt>
-              <strong>PCEF</strong>
-            </dt>
-            <dd>
-              The Portland Clean Energy Fund. Debates involve both what climate
-              work to fund and whether its money should help cover other city
-              costs.
-            </dd>
-            <dt>
-              <strong>Term sheet</strong>
-            </dt>
-            <dd>
-              A document setting out the main terms of a proposed deal. Read the
-              specific vote to see what was approved and what still required
-              agreement.
-            </dd>
-            <dt>
-              <strong>Social housing</strong>
-            </dt>
-            <dd>
-              Housing intended to remain affordable through public or nonprofit
-              ownership. Proposals differ in who qualifies, how rents are set
-              and how construction is paid for.
-            </dd>
-            <dt>
-              <strong>CEI Hub</strong>
-            </dt>
-            <dd>
-              The Critical Energy Infrastructure Hub, an area of fuel storage
-              and related facilities along the Willamette River. The research
-              covers pollution, earthquake risks and proposals affecting
-              individual operators such as Zenith.
-            </dd>
-          </dl>
-        </details>
-      </section>
-      <details className={styles.raceContext}>
-        <summary>
-          About this office, the evidence and this working edition
-        </summary>
-        <div className={styles.raceFacts}>
-          <section>
-            <h2>What this office can do</h2>
-            <p>{race.authority}</p>
-          </section>
-          <section>
-            <h2>
-              Where the choices differ{" "}
-              <span className={styles.eyebrow}> / Editorial synthesis</span>
-            </h2>
-            <p>{race.comparison}</p>
-          </section>
-        </div>
-        <div className={styles.note}>
-          <strong>{race.rosterStatus}.</strong>{" "}
-          <a href={race.rosterSource.url}>{race.rosterSource.label}</a>. This is
-          a working research edition; separate human editorial review remains
-          incomplete. The roster and policy research are separate checks. A
-          candidate’s published statement establishes what they say, not that
-          their factual claims are true.
-        </div>
-      </details>
-      </div>
+      <RaceAbout race={race} />
       <CandidateComparison key={race.id} race={race} />
       </RaceNavigation>
       <div className={styles.footerNote}>

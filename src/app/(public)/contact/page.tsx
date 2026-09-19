@@ -1,14 +1,14 @@
+import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import ContactForm from "@/components/contact/ContactForm";
 import { recordDetail } from "@/lib/oregon-fire/query";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Get in touch with Portland Civic Lab. Flag a data error, request a dashboard, ask about the permitting tools, or suggest a project.",
-  alternates: { canonical: "https://www.portlandciviclab.org/contact" },
-};
+export const metadata: Metadata = pageMeta({
+  title: 'Contact Portland Civic Lab',
+  description: 'Send a question, suggest a correction or discuss a research project with Portland Civic Lab. Help improve the public tools and evidence behind them.',
+  path: "/contact",
+});
 
 export default async function ContactPage({
   searchParams,

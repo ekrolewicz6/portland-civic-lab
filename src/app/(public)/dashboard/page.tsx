@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -14,11 +15,11 @@ import { getQuestionStatusBySlug } from "@/data/source-status";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Live Dashboard | Portland Civic Lab",
-  description:
-    "A live civic dashboard for Portland, Oregon. Explore housing, homelessness, safety, fiscal burden, economy, education, climate, quality of life, and accountability through public data.",
-};
+export const metadata: Metadata = pageMeta({
+  title: 'Portland City Data Dashboard',
+  description: 'Explore Portland housing, homelessness, public safety, transportation, climate and city finances. Public data, explained clearly and linked to its sources.',
+  path: "/dashboard",
+});
 
 function formatEditionDate(d: Date): string {
   return d

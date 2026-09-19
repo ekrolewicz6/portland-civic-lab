@@ -1,12 +1,12 @@
+import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Terms of Use",
-  description:
-    "The terms for using Portland Civic Lab: free public data and tools, provided in good faith, with honest caveats about accuracy.",
-  alternates: { canonical: "https://www.portlandciviclab.org/terms" },
-};
+export const metadata: Metadata = pageMeta({
+  title: 'Terms of Use',
+  description: 'Read the terms for using Portland Civic Lab’s public data, research and tools, including their limitations and source attribution.',
+  path: "/terms",
+});
 
 const EFFECTIVE_DATE = "June 10, 2026";
 

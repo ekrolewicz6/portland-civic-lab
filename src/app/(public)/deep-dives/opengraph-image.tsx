@@ -1,5 +1,4 @@
-import { ImageResponse } from "next/og";
-import { ogFrame, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og-template";
+import { ogImage, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og-template";
 
 export const runtime = "edge";
 export const size = OG_SIZE;
@@ -7,13 +6,10 @@ export const contentType = OG_CONTENT_TYPE;
 export const alt = "Portland Civic Lab — Policy Deep-Dives";
 
 export default function Image() {
-  return new ImageResponse(
-    ogFrame({
-      eyebrow: "Policy deep-dives",
-      headline: "The big issues, explained for everyone",
-      description:
-        "Plain-language explainers of Portland's biggest policy questions — the numbers, the people, and the trade-offs, with interactive tools.",
-    }),
-    { ...OG_SIZE },
-  );
+  return ogImage({
+    eyebrow: "Policy deep-dives",
+    headline: "Portland’s big questions, explained.",
+    description: "Read the evidence, understand the tradeoffs and explore what could change. Free research on the decisions that shape Portland.",
+    motif: "research"
+  });
 }

@@ -41,8 +41,9 @@ export default function RaceNavigation({ race, children }: { race: Race; childre
         if (!target) return;
         if (next === "find-candidates" && browsePosition !== undefined) window.scrollTo({ top: browsePosition, behavior: "instant" });
         else target.scrollIntoView({ block: "start", behavior: "instant" });
-        target.setAttribute("tabindex", "-1");
-        target.focus({ preventScroll: true });
+        const focusTarget = target.querySelector<HTMLElement>("[data-navigation-focus]") ?? target;
+        focusTarget.setAttribute("tabindex", "-1");
+        focusTarget.focus({ preventScroll: true });
       }));
     }
     if (window.location.hash) navigate();

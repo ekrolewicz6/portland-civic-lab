@@ -1,3 +1,5 @@
+import { pageMeta } from "@/lib/page-meta";
+import { HOME_TITLE, HOME_DESCRIPTION } from "@/lib/home-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,26 +19,8 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: {
-    absolute: "Portland Civic Lab — Free, source-linked tools for understanding Portland",
-  },
-  description:
-    "Free, public, source-linked tools that show how Portland actually works, and the lab that property owners and public institutions hire when a decision needs evidence. Dashboards, deep-dives, a parks atlas, a downtown plan, a guide to City Council, an atlas of Oregon government, surveys, and permitting tools.",
-  alternates: { canonical: "https://www.portlandciviclab.org" },
-  openGraph: {
-    title: "Portland Civic Lab — Free, source-linked tools for understanding Portland",
-    description:
-      "How the city actually works: what the numbers say, what residents think, and what could change. Eight free public tools, every figure linked to its source, and paid decision work at published prices.",
-    url: "https://www.portlandciviclab.org",
-    siteName: "Portland Civic Lab",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Portland Civic Lab — Free, source-linked tools for understanding Portland",
-    description:
-      "How the city actually works: what the numbers say, what residents think, and what could change.",
-  },
+  ...pageMeta({ title: HOME_TITLE, description: HOME_DESCRIPTION, path: "" }),
+  title: { absolute: HOME_TITLE },
 };
 
 /**

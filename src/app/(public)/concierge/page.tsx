@@ -1,17 +1,12 @@
+import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import ChatInterface from "@/components/concierge/ChatInterface";
 
-export const metadata: Metadata = {
-  title: "Civic Concierge",
-  description:
-    "AI-powered civic data assistant for Portland, Oregon. Ask anything about city government, permits, zoning, public services, climate commitments, housing, and more.",
-  openGraph: {
-    title: "Civic Concierge | Portland Civic Lab",
-    description: "An assistant for Portland city government data. Ask it anything.",
-    url: "https://www.portlandciviclab.org/concierge",
-  },
-  alternates: { canonical: "https://www.portlandciviclab.org/concierge" },
-};
+export const metadata: Metadata = pageMeta({
+  title: 'Portland Civic Concierge',
+  description: 'Ask questions about Portland services, city government and public data. Find a starting point and links to the information behind the answer.',
+  path: "/concierge",
+});
 
 export default function ConciergePage() {
   return (

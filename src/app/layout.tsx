@@ -1,3 +1,4 @@
+import { HOME_TITLE, HOME_DESCRIPTION } from "@/lib/home-metadata";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { DM_Sans, JetBrains_Mono, Bricolage_Grotesque } from "next/font/google";
@@ -36,11 +37,11 @@ const bricolage = Bricolage_Grotesque({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.portlandciviclab.org"),
   title: {
-    default: "Portland Civic Lab — Free, source-linked tools for understanding Portland",
+    default: HOME_TITLE,
     template: "%s · Portland Civic Lab",
   },
   description:
-    "Free, public, source-linked tools that show how Portland actually works: dashboards, deep-dives, a parks atlas, a downtown plan, a guide to City Council, an atlas of Oregon government, surveys, and permitting tools. And the lab that property owners and public institutions hire when a decision needs evidence.",
+    HOME_DESCRIPTION,
   applicationName: "Portland Civic Lab",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
@@ -48,6 +49,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", type: "image/png" }],
   },
   keywords: [
+    "Portland voter guide",
     "Portland Oregon",
     "Portland civic dashboard",
     "Portland data",
@@ -67,9 +69,9 @@ export const metadata: Metadata = {
   creator: "Portland Civic Lab",
   publisher: "Portland Civic Lab",
   openGraph: {
-    title: "Portland Civic Lab — Free, source-linked tools for understanding Portland",
+    title: HOME_TITLE,
     description:
-      "How the city actually works: what the numbers say, what residents think, and what could change. Eight free public tools, every figure linked to its source, and paid decision work at published prices.",
+      HOME_DESCRIPTION,
     url: "https://www.portlandciviclab.org",
     siteName: "Portland Civic Lab",
     type: "website",
@@ -77,9 +79,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portland Civic Lab — Free, source-linked tools for understanding Portland",
+    title: HOME_TITLE,
     description:
-      "Eight free, source-linked civic tools for Portland, and paid decision work at published prices.",
+      HOME_DESCRIPTION,
     creator: "@portlandciviclab",
   },
   robots: {

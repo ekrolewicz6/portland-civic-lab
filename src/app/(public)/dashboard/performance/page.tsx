@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildPerformanceDecisionSuite } from "@/lib/performance/decision-tools";
@@ -7,11 +8,11 @@ import PerformanceDashboardClient from "./PerformanceDashboardClient";
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-export const metadata: Metadata = {
-  title: "Performance Portland Mirror | Portland Civic Lab",
-  description:
-    "A public mirror of Performance Portland scorecards with official metric history, narrative notes, change logs, and decision tools for Portland leadership.",
-};
+export const metadata: Metadata = pageMeta({
+  title: "Portland City Performance Dashboard",
+  description: "Explore Portland’s official performance measures, trends and explanations. Follow service results, budget context and changes in what the City reports.",
+  path: "/dashboard/performance",
+});
 
 export default async function PerformanceDashboardPage() {
   try {

@@ -1,12 +1,12 @@
+import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "How Portland Civic Lab handles your information: what we collect, why, and what we never do with it.",
-  alternates: { canonical: "https://www.portlandciviclab.org/privacy" },
-};
+export const metadata: Metadata = pageMeta({
+  title: 'Privacy Policy',
+  description: 'Read how Portland Civic Lab handles personal information, site analytics and your privacy when you use our public tools and services.',
+  path: "/privacy",
+});
 
 const EFFECTIVE_DATE = "June 10, 2026";
 

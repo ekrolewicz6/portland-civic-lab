@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -5,12 +6,11 @@ import { ArrowRight, ArrowUpRight, BadgeCheck, Eye, Repeat2, ShieldCheck } from 
 import DonationForm from "@/components/donate/DonationForm";
 import { DOWNTOWN_URL, OREGON_GOVERNANCE_URL, PARKS_URL } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Support the work — Portland Civic Lab",
-  description:
-    "Back Portland Civic Lab. Eight free, source-linked civic tools, kept free by the people who use them. Monthly or one-time through Stripe, or founding support that funds one named program for a year. Contributions aren't tax-deductible.",
-  alternates: { canonical: "https://www.portlandciviclab.org/donate" },
-};
+export const metadata: Metadata = pageMeta({
+  title: 'Support Portland Civic Lab',
+  description: 'Help keep Portland’s voter guides, public data tools and research free to use. Explore monthly, one-time and founding support. Contributions are not tax-deductible.',
+  path: "/donate",
+});
 
 const PROOF = [
   { v: "8", k: "free public tools" },

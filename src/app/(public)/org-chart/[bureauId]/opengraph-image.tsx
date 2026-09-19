@@ -1,5 +1,6 @@
-import { ImageResponse } from "next/og";
-import { ogFrame, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og-template";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { ogImage, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og-template";
 import { getBureauDetail, bureauIds } from "@/lib/org/bureau";
 import { SERVICE_AREA_BY_SLUG } from "@/data/org-structure";
 
@@ -20,21 +21,23 @@ function money(n: number): string {
   return `$${Math.round(n)}`;
 }
 
-export default function Image({
+export default async function Image({
   params,
 }: {
-  params: { bureauId: string };
+  params: Promise<{ bureauId: string }>;
 }) {
-  const d = getBureauDetail(params.bureauId);
+  const { bureauId } = await params;
+  const [serif, sans] = await Promise.all([
+    readFile(join(process.cwd(), "src/lib/oregon-fire/fonts/CormorantGaramond-Medium.ttf")),
+    readFile(join(process.cwd(), "src/lib/oregon-fire/fonts/DMSans-Regular.ttf")),
+  ]);
+  const fonts = [{ name: "Cormorant", data: serif, weight: 500 as const, style: "normal" as const }, { name: "DM Sans", data: sans, weight: 400 as const, style: "normal" as const }];
+  const d = getBureauDetail(bureauId);
   if (!d) {
-    return new ImageResponse(
-      ogFrame({ eyebrow: "City government", headline: "Portland bureau" }),
-      { ...OG_SIZE },
-    );
+    return ogImage({ eyebrow: "City government", headline: "Portland bureau" }, fonts);
   }
   const sa = SERVICE_AREA_BY_SLUG[d.node.serviceArea];
-  return new ImageResponse(
-    ogFrame({
+  return ogImage({
       eyebrow: sa.label,
       headline: d.node.name,
       accent: sa.color,
@@ -51,7 +54,5 @@ export default function Image({
           label: "Operating budget",
         },
       ],
-    }),
-    { ...OG_SIZE },
-  );
+    }, fonts);
 }
