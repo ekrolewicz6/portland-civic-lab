@@ -88,8 +88,11 @@ export default function Methodology() {
           motion from a final vote, and an appropriation from an achieved
           outcome. A single vote is not a complete political identity. In this
           edition, all six Portland council incumbents are compared on the same
-          final Moda term-sheet vote. This comparison is not a complete record
-          review.
+          four final actions: rental-pricing regulation, the July supplemental
+          budget, the Moda term sheet and data-center transparency. These span
+          housing, spending and development, and include agreement as well as
+          disagreement. They are a selected sample, not a complete record review
+          or a measure of overall effectiveness. Absence is never coded as a no.
         </p>
         <h3>Editorial interpretation</h3>
         <p>
@@ -101,6 +104,15 @@ export default function Methodology() {
           expressed.
         </p>
         <h2>Selection, fairness and context</h2>
+        <p>
+          The comparison’s values labels describe priorities supported by the
+          cited materials, not personal virtue, hidden motives or fixed
+          ideological identities. Readers can compare the same issue across
+          candidates without a score or recommendation. An unfilled issue means
+          the reviewed evidence does not establish a position; it does not mean
+          neutrality, opposition or lack of interest. More detailed campaign
+          writing is not itself evidence of stronger performance.
+        </p>
         <ul>
           <li>
             Include every named candidate on the checked roster for a covered
@@ -150,10 +162,10 @@ export default function Methodology() {
         <h2 id="portland-status">Portland Council: what is ready</h2>
         <p>
           Both districts have complete checked rosters: 21 candidates in
-          District 3 and 12 in District 4. Thirty have substantive current
+          District 3 and 12 in District 4. Thirty-one have substantive current
           policy briefs. Darren McCormick has a limited current filing
-          statement; Heart Free Pham has dated historical answers, pending
-          confirmation for 2026; John J Goldsmith has verified current
+          statement; Pham’s current issue pages are now reviewed separately from
+          his historical 2024 answers; John J Goldsmith has verified current
           background but needs additional platform research. Thirty-one Council
           portraits are sourced; photographs for McCormick and Goldsmith remain
           outstanding.
@@ -161,7 +173,7 @@ export default function Methodology() {
         <p>
           This supports an openly labeled initial research edition. It does not
           establish a complete investigation of each candidate’s public record.
-          The six incumbents have one common final roll-call check; additional
+          The six incumbents have four common final roll-call checks; additional
           votes, claims, interviews and independent editorial review remain to
           be completed.
         </p>

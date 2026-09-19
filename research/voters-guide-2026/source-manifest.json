@@ -3,10 +3,52 @@
   "note": "Acquisition inventory, not a claim that every retrieved page supports a published sentence. Working files are ignored; full source files can contain personal information and are not served. Only the narrowed public roster is retained here.",
   "sources": [
     {
+      "url": "https://EliforPortland.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "576971c2d07d.txt",
+      "sha256": "1e7a9b8fb812500aef9be4f41cc1acee97d1e7ea9f1b7f0b919c4925b75050d8"
+    },
+    {
+      "url": "https://EstherForPortland.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "765ee52374b4.txt",
+      "sha256": "13c39869908c4e3ca24e1b0d399f3bb28f01fda435bec24c9fbeb118ff78d62d"
+    },
+    {
       "url": "https://GlennLancaster.com",
       "representation": "normalized extracted page text",
       "workingFile": "5858450d9f3c.txt",
       "sha256": "ec059202a988fe3a6136f5e2beda8b3dfdbd97196037d840297e913b2f148d3f"
+    },
+    {
+      "url": "https://JoshforPortland.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "3a409f74cb47.txt",
+      "sha256": "2ca145763b9586576fb087d4c4f9cb9916d17c8d34e633154459c9f77db90689"
+    },
+    {
+      "url": "https://JoshforPortland.com/priorities",
+      "representation": "normalized extracted page text",
+      "workingFile": "9a055dffcc37.txt",
+      "sha256": "7197406afd8ba6713afce3726173897001616dc5590ff203fd5af6196cb861e3"
+    },
+    {
+      "url": "https://Mattschulte.org",
+      "representation": "normalized extracted page text",
+      "workingFile": "bed3d4483306.txt",
+      "sha256": "629e509fc2af598ad116eb6926374f5a0fca7be305d14f42ed7e9a9ee75d0f07"
+    },
+    {
+      "url": "https://NovickForPortland.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "3f1207e7c744.txt",
+      "sha256": "db31f6f989550af3969fd946f36db17da4830ba503772e770b2fe9d86b743d06"
+    },
+    {
+      "url": "https://TomForPDX.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "af5c93ae1de1.txt",
+      "sha256": "4719f56d6fde0c442bcadc5cefa48a1ef62586125144171f887c09759b738036"
     },
     {
       "url": "https://cliffbentz.com/issues/",
@@ -51,6 +93,54 @@
       "sha256": "43ab678ea022e98215a73afa2868c18317a366556164a8dcddc0882196eb125b"
     },
     {
+      "url": "https://evenstarforportland.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "edd32178a5c8.txt",
+      "sha256": "05d6d93a0c53c8185b2a8fe3360aa9414c8c65cada4718b42fe6e7fb7a88fa35"
+    },
+    {
+      "url": "https://evenstarforportland.com/platform",
+      "representation": "normalized extracted page text",
+      "workingFile": "d2e01a54fcc6.txt",
+      "sha256": "191de30dca3c917326ff6951450f78bc921a5a7d13773d7e3d2ab7123d151946"
+    },
+    {
+      "url": "https://ez4pdx.com/issues/",
+      "representation": "normalized extracted page text",
+      "workingFile": "3c636763abfc.txt",
+      "sha256": "ce2ac1a95363e51098a94930411affdbb60995bcd04b07fb4919d3e50d0271b7"
+    },
+    {
+      "url": "https://fightwithheartpdx.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "85fff91b2650.txt",
+      "sha256": "8263c35e595e2cb04716d060df07a846b0abd111031d2a76c197177372fd2d23"
+    },
+    {
+      "url": "https://fightwithheartpdx.com/economics",
+      "representation": "rendered issue-page body text, Chromium",
+      "workingFile": "pham-economics-rendered.txt",
+      "sha256": "fe987ff8c7925e88ea61b78cd2e1bf363bc6a50051c5a56d4aa9d5c19d4a2982"
+    },
+    {
+      "url": "https://fightwithheartpdx.com/homelessness",
+      "representation": "rendered issue-page body text, Chromium",
+      "workingFile": "pham-homelessness-rendered.txt",
+      "sha256": "63adb0adeec9f9187b38016830a26e71baee48c8339ca6998a6941cd8f1f5e66"
+    },
+    {
+      "url": "https://fightwithheartpdx.com/housing",
+      "representation": "rendered issue-page body text, Chromium",
+      "workingFile": "pham-housing-rendered.txt",
+      "sha256": "528a767d4a7b09b2836590721b8b75bb04fd32a17a31f084962b6847226aeec6"
+    },
+    {
+      "url": "https://fightwithheartpdx.com/public-safety",
+      "representation": "rendered issue-page body text, Chromium",
+      "workingFile": "pham-public-safety-rendered.txt",
+      "sha256": "b3d09aeb28c33e70396958eb5f3d423c0a6485e0a2dbf6fbe71bdd705f77608d"
+    },
+    {
       "url": "https://garydye2020.wordpress.com/",
       "representation": "normalized extracted page text",
       "workingFile": "df103fcbf7fc.txt",
@@ -87,6 +177,12 @@
       "sha256": "feb8baf8f68f4765aca205fa377f6ee23002bb39d0a400a6350c23fca7fce46b"
     },
     {
+      "url": "https://keir4pdx.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "986408e9214f.txt",
+      "sha256": "88ba97884f9c276e86aadb2994a8be801cb320b0954a044f1c7e8ad3a68dc974"
+    },
+    {
       "url": "https://kimberlyforpdxd3.com",
       "representation": "normalized extracted page text",
       "workingFile": "d96cb8a3cd71.txt",
@@ -111,6 +207,18 @@
       "sha256": "e182b870bb823a3f9d51ed78f11783c7c0709065e67905c46462429c2d9e0575"
     },
     {
+      "url": "https://mitch4portland.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "e27142b7e29d.txt",
+      "sha256": "741673982fa0be7cc153b6300659bcbd72a659a22bc45b4b56fcd80db2680c95"
+    },
+    {
+      "url": "https://mitch4portland.com/priorities",
+      "representation": "normalized extracted page text",
+      "workingFile": "8e6451cc1752.txt",
+      "sha256": "016f13b69c78bf3b596c9522cb542ba5a436621afe82e17f21eb127d911d4f9a"
+    },
+    {
       "url": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download",
       "representation": "original download",
       "workingFile": "multnomah.pdf",
@@ -127,6 +235,12 @@
       "representation": "normalized extracted page text",
       "workingFile": "93d841c7964c.txt",
       "sha256": "f104e2fb36640a4cac1c84c3ee56f50c52c588b2427e50202e82c72c7bf71aed"
+    },
+    {
+      "url": "https://patrickhilton4pdx.org",
+      "representation": "normalized extracted page text",
+      "workingFile": "c789cebce3f2.txt",
+      "sha256": "b64b14abaaedbd7baeaaa100ce1895a65a233cbc808bc7ba0aca3e46f04cfa88"
     },
     {
       "url": "https://secure.sos.state.or.us/orestar/CFSearchPage.do",
@@ -171,6 +285,12 @@
       "sha256": "871f3e812c3d8f5f26d86a360202e74c97e08e6f502bc25c3fbe18afbf47304b"
     },
     {
+      "url": "https://teachertiffanyforthepeople.com/policy-track-record/",
+      "representation": "normalized extracted page text",
+      "workingFile": "40c6e6ee257f.txt",
+      "sha256": "d23ddbf96044afc32478b3473257254d5a7c78a69fcf9b0b38dd05a6af5f2815"
+    },
+    {
       "url": "https://voteadambaker.com/",
       "representation": "normalized extracted page text",
       "workingFile": "9f2ad8d2b455.txt",
@@ -195,6 +315,18 @@
       "sha256": "a0e5ca92e1573f08832d2a69cc1620cec3fac2cd17b0ccea0657ce4a4b2ac9e9"
     },
     {
+      "url": "https://www.AngelitaForPortland.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "3f46b5f97578.txt",
+      "sha256": "d05902afb8276f163d279f5649ed40f5464326ce66395d99e9f36154c7da2858"
+    },
+    {
+      "url": "https://www.AngelitaForPortland.com/platform",
+      "representation": "normalized extracted page text",
+      "workingFile": "a69e84f40664.txt",
+      "sha256": "5ef363a123ef52361cdc2b8defd0405941a503fca702fd94771a20f545f22769"
+    },
+    {
       "url": "https://www.CourtneyBangs.com",
       "representation": "normalized extracted page text",
       "workingFile": "727e5caed6f9.txt",
@@ -205,6 +337,36 @@
       "representation": "normalized extracted page text",
       "workingFile": "c2a4257b4c23.txt",
       "sha256": "4ebe8f1b844e04942485316c23344f15f45880e2b994a26f01f6fddffff3c099"
+    },
+    {
+      "url": "https://www.EZ4PDX.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "205ac010eef2.txt",
+      "sha256": "e21e8c55d55c8ba9f2800d606ba6a4d44e8d0d8bd32a3f8e37c1deb5174a8489"
+    },
+    {
+      "url": "https://www.KellieTorresForPortland.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "4e41737fd3e4.txt",
+      "sha256": "c8f9b9531de96959fb650f5820f7bd9af61d4b708c3b1245815ad128ff5b6a85"
+    },
+    {
+      "url": "https://www.KellieTorresForPortland.com/priorities",
+      "representation": "normalized extracted page text",
+      "workingFile": "f4c076b16d7d.txt",
+      "sha256": "7c5141d6a7ccde980aa661ea6675760c1b5381973e5a6fee6daafe71e0adfb0a"
+    },
+    {
+      "url": "https://www.OliviaforPortland.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "44f334963309.txt",
+      "sha256": "9ba7394cacf75bb42e87b1420ae7f46f0fccd877c29267c313a53570981adf25"
+    },
+    {
+      "url": "https://www.OliviaforPortland.com/priorities",
+      "representation": "normalized extracted page text",
+      "workingFile": "6179800fbfa8.txt",
+      "sha256": "fdb7b79d145bf2288e61ceacd73928900f68849e9faa2bf2c8c9fa0fed1d830a"
     },
     {
       "url": "https://www.StephanieForOregon.com",
@@ -267,6 +429,18 @@
       "sha256": "d619a27da58c7ed5dcb0046902bbff82aa2091f8b93adb0aca8794ac477b7611"
     },
     {
+      "url": "https://www.corcoranforportland.org",
+      "representation": "normalized extracted page text",
+      "workingFile": "980a3f2e19c9.txt",
+      "sha256": "2244f2a71ebaa6e6ebab2749a5604d3cafd041e994972f075159cb474a64d688"
+    },
+    {
+      "url": "https://www.corcoranforportland.org/priorities",
+      "representation": "normalized extracted page text",
+      "workingFile": "6dd8af184f9b.txt",
+      "sha256": "f748884c3a894eb3e16dd17715c3e8fe0d1274f3fd8e98eb8b7485c7c873dbcc"
+    },
+    {
       "url": "https://www.courtneyfororegon.com",
       "representation": "normalized extracted page text",
       "workingFile": "d3f3c7d2e2d8.txt",
@@ -277,6 +451,18 @@
       "representation": "normalized extracted page text",
       "workingFile": "594ce6a5d945.txt",
       "sha256": "2bb8ced3c5659114df96aa5877db44029e33de0c29e3faf71fe4f67bac280f6b"
+    },
+    {
+      "url": "https://www.cristalforportland.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "3c9eec59bfb2.txt",
+      "sha256": "1de7f8d28e2ad7366f900bbf232e0b9f05c1690a208288cbf4e3419b62f7738d"
+    },
+    {
+      "url": "https://www.cristalforportland.com/my-platform",
+      "representation": "normalized extracted page text",
+      "workingFile": "71aec0925ca3.txt",
+      "sha256": "b579cb46ae313497f10c0353308ac6040a5cfe801660e909e1ebea9f2ab0850f"
     },
     {
       "url": "https://www.darlameadfororegon.com/",
@@ -301,6 +487,12 @@
       "representation": "normalized extracted page text",
       "workingFile": "e4ff92d88cee.txt",
       "sha256": "4a5bff93ee2b935d36c2e454742fa929d2f12dc3508b454beada89006ac38fd3"
+    },
+    {
+      "url": "https://www.eliforportland.com/issues",
+      "representation": "normalized extracted page text",
+      "workingFile": "4076d9e19ad7.txt",
+      "sha256": "b86fbf16d87c961ca16936bbdfd5fb2755cc5385bc932062c87c0736c566d51a"
     },
     {
       "url": "https://www.greshamoregon.gov/government/elections/",
@@ -411,6 +603,18 @@
       "sha256": "f3679d45e0bb76de247304e4be5a27770968540ee187f20dbd9ceea09a187028"
     },
     {
+      "url": "https://www.matthiashallett.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "7e9df104f476.txt",
+      "sha256": "40a27901f7fa1d30690f21346b2fb31f15ab75dc4cbd68bf4a048c6273d54d2a"
+    },
+    {
+      "url": "https://www.matthiashallett.com/revision",
+      "representation": "normalized extracted page text",
+      "workingFile": "fb9eba24481a.txt",
+      "sha256": "f46b9cec7cd537ff491a9c117c2037a85dacbff138ea5bf3be3b4cdce2d0ecff"
+    },
+    {
       "url": "https://www.maxinefororegon.com/",
       "representation": "normalized extracted page text",
       "workingFile": "4324e27cd353.txt",
@@ -459,10 +663,28 @@
       "sha256": "32cd579de69070c7867d186d5be44460239b76d9bd921983295837364c1dda6c"
     },
     {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192122",
+      "representation": "normalized extracted page text",
+      "workingFile": "a286ad7a9010.txt",
+      "sha256": "a33cbcc7d7aff4a19d1d32edf7a7b4054befeadf581ffb07b71206c2b18ab47a"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192207",
+      "representation": "normalized extracted page text",
+      "workingFile": "61b51226814b.txt",
+      "sha256": "9d5db3542f991dc2d70fcb7f85e2fcc45d1826ad951953c40e58ad38356028fa"
+    },
+    {
       "url": "https://www.portland.gov/council/documents/resolution/adopted/37750",
       "representation": "normalized extracted page text",
       "workingFile": "ebf69ffc6f34.txt",
       "sha256": "d1f2dcb81d1e9e171a8903bdc2f429542e95a40201fdb2b11b24692d06c13395"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37753",
+      "representation": "normalized extracted page text",
+      "workingFile": "640bff645c0b.txt",
+      "sha256": "f3030b19dbd8e8cfcb68cb0f2889fbd7beed552587b50db1a967cfdd3bf68cb5"
     },
     {
       "url": "https://www.portlandmercury.com/news/meet-the-candidates-for-city-council-district-3/",
@@ -511,6 +733,12 @@
       "representation": "normalized extracted page text",
       "workingFile": "3382a1c856f5.txt",
       "sha256": "525b1abb3a5e642e3202e574a441025d52d942e2b7d1576783a9b6e8db729264"
+    },
+    {
+      "url": "https://www.teachertiffanyforthepeople.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "6dfa39b834aa.txt",
+      "sha256": "a9dfbd92dd6fed1d82065640f97b9b06ddd54d14270254651792de80e14f4607"
     },
     {
       "url": "https://www.terrioforus.com/",

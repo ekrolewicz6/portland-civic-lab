@@ -18,6 +18,17 @@ export type CandidatePortrait = {
   reviewed: string;
 };
 export type Candidate = {
+  analysis?: {
+    values: string[];
+    tradeoff: string;
+    issues: Partial<
+      Record<
+        "housing" | "safety" | "money" | "climate",
+        { position: string; source: Evidence }
+      >
+    >;
+    sources: Evidence[];
+  };
   portrait?: CandidatePortrait;
   id: string;
   name: string;

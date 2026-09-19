@@ -1,5 +1,7 @@
 import { portlandRaces } from "./portland";
 import { portraits } from "./portraits";
+import { withCouncilAnalysis } from "./council-analysis";
+import { withCouncilDecisions } from "./council-decisions";
 
 /** Explicit publication boundary. Other researched races remain unpublished. */
 export const races = portlandRaces
@@ -8,10 +10,14 @@ export const races = portlandRaces
   )
   .map((race) => ({
     ...race,
-    candidates: race.candidates.map((person) => ({
-      ...person,
-      portrait: portraits[person.id],
-    })),
+    candidates: race.candidates.map((person) =>
+      withCouncilDecisions(
+        withCouncilAnalysis({
+          ...person,
+          portrait: portraits[person.id],
+        }),
+      ),
+    ),
   }));
 export const candidateCount = races.reduce(
   (n, r) => n + r.candidates.length,

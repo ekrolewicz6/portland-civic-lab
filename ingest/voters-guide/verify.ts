@@ -43,6 +43,17 @@ assert.deepEqual(
   "Unexpected public release scope",
 );
 assert.equal(publishedRaces.flatMap((r) => r.candidates).length, 33);
+for (const person of publishedRaces.flatMap((r) => r.candidates)) {
+  assert.ok(person.analysis?.tradeoff, `Missing comparison: ${person.name}`);
+  person.analysis.sources.forEach(evidence);
+  Object.values(person.analysis.issues).forEach((issue) => {
+    assert.ok(issue.position.length > 10);
+    evidence(issue.source);
+  });
+  if (person.background.startsWith("Incumbent")) {
+    assert.equal(person.record?.length, 4, `Unequal record sample: ${person.name}`);
+  }
+}
 assert.equal(
   publishedRaces.flatMap((r) => r.candidates).filter((c) => c.portrait).length,
   31,

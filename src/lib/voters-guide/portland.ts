@@ -66,7 +66,7 @@ const d3: Candidate[] = [
       "Remove ICE agents from Portland.",
       "Seek larger contributions from billion-dollar companies.",
     ],
-    "His stated approach prioritizes confrontation over coalition-building. The reviewed response does not establish a lawful implementation mechanism or budget.",
+    "His response calls for challenging ICE and corporate power. It does not establish a lawful city implementation mechanism, a budget or how he would assemble support for legislation.",
     "What specific city legislation would implement these goals?",
     [
       {
@@ -358,7 +358,7 @@ const d4: Candidate[] = [
       "Make buses faster and easier to use.",
       "Defend residents against federal overreach and concentrated financial influence.",
     ],
-    "His case rests on policy and implementation experience inside City Hall. His pamphlet does not fully specify the next term’s funding choices.",
+    "Evenstar’s case rests on policy and implementation experience inside City Hall. The platform connects social housing, transit affordability and public participation, while leaving a complete funding plan open.",
     "Which tenant protections and bus improvements would you introduce first?",
     statement(64),
   ),
@@ -583,6 +583,31 @@ pham.record = [
     },
   },
 ];
+pham.summary =
+  "Combines treatment and civil-commitment reform with consequences for refusing available services. Calls for measuring program results and assessing fiscal risks before raising taxes, and promotes hemp-based housing construction.";
+pham.priorities = [
+  "Oppose criminalizing homelessness itself while supporting consequences for refusal of available services and wellness farms with job training.",
+  "Require public outcome measures and cost-benefit accounting before expanding programs or taxes.",
+  "Promote hempblock construction and respond to property crime affecting small businesses.",
+];
+pham.interpretation =
+  "His platform combines support with requirements to accept help and skepticism about current spending. The consequences he proposes and the legal process for imposing them need clarification; his construction and fiscal claims are not independently verified here.";
+pham.question =
+  "What consequences would follow service refusal, who would determine that an appropriate service was available, and which government has authority to act?";
+delete pham.missing;
+for (const [path, label] of [
+  ["homelessness", "Homelessness and recovery"],
+  ["economics", "Tax base and spending"],
+  ["housing", "Housing construction"],
+  ["public-safety", "Public safety"],
+])
+  pham.sources.push({
+    label: `Pham · ${label}`,
+    url: `https://fightwithheartpdx.com/${path}`,
+    kind: "Candidate statement",
+    date: "Current campaign website reviewed September 18, 2026",
+    note: "Read from the rendered issue page. Policy commitments are attributed; economic, crime and construction claims have not been independently established by this guide.",
+  });
 const goldsmith = d4.find((person) => person.name === "John J Goldsmith")!;
 goldsmith.background =
   "His amended 2026 filing lists work as a unionized security officer, earlier Justice Department analysis work, and volunteer gardening and LGBT memorial advocacy.";

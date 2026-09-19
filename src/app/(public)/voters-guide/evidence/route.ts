@@ -1,5 +1,6 @@
 import { races } from "@/lib/voters-guide/published";
 import { REVIEW_DATE } from "@/lib/voters-guide/types";
+import { councilDecisions } from "@/lib/voters-guide/council-decisions";
 
 export const dynamic = "force-static";
 
@@ -13,6 +14,7 @@ export function GET() {
       methodology: "https://www.portlandciviclab.org/voters-guide/methodology",
       note: "Candidate statements, independent records and editorial interpretations are separate fields. Missing research is not evidence of a missing position. This is an editorial snapshot, not a live official ballot.",
       races,
+      councilDecisions,
     },
     {
       headers: {

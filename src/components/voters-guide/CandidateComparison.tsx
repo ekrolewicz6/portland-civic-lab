@@ -1,5 +1,10 @@
 "use client";
 import { useState } from "react";
+import {
+  comparisonTopics,
+  type ComparisonTopic,
+} from "@/lib/voters-guide/council-topics";
+import { councilDecisions } from "@/lib/voters-guide/council-decisions";
 import CandidatePortrait from "./CandidatePortrait";
 import { Printer } from "lucide-react";
 import type { Candidate, Evidence, Race } from "@/lib/voters-guide/types";
@@ -59,9 +64,48 @@ function Profile({
         )}
         {person.missing && <p className={styles.gap}>{person.missing}</p>}
         <div className={styles.interpretation}>
-          <h3>What that means · our interpretation</h3>
-          <p>{person.interpretation}</p>
+          <h3>What guides their choices · our interpretation</h3>
+          {person.analysis?.values.length ? (
+            <div className={styles.valueTags}>
+              {person.analysis.values.map((value) => (
+                <span key={value}>{value}</span>
+              ))}
+            </div>
+          ) : null}
+          <p>{person.analysis?.tradeoff ?? person.interpretation}</p>
+          {person.analysis && (
+            <div className={styles.inlineSources}>
+              {person.analysis.sources.map((source) => (
+                <a key={source.url} href={source.url}>
+                  {source.label} ↗
+                </a>
+              ))}
+            </div>
+          )}
         </div>
+        {person.analysis && (
+          <details className={styles.issueDisclosure}>
+            <summary>Issue-by-issue positions and evidence</summary>
+            {comparisonTopics
+              .filter((t) => t.id !== "values" && t.id !== "record")
+              .map((t) => {
+                const issue =
+                  person.analysis?.issues[
+                    t.id as "housing" | "safety" | "money" | "climate"
+                  ];
+                return (
+                  <div key={t.id} className={styles.record}>
+                    <h3>{t.label}</h3>
+                    <p>
+                      {issue?.position ??
+                        "No specific position established in the reviewed sources. This is a research gap, not evidence of neutrality or opposition."}
+                    </p>
+                    {issue && <Source source={issue.source} />}
+                  </div>
+                );
+              })}
+          </details>
+        )}
         <h3>Checked against the record</h3>
         {person.record?.length ? (
           person.record.map((r, i) => (
@@ -96,23 +140,99 @@ function Profile({
     </article>
   );
 }
+function ComparisonAnswer({
+  person,
+  topic,
+}: {
+  person: Candidate;
+  topic: ComparisonTopic;
+}) {
+  const issue =
+    topic !== "values" && topic !== "record"
+      ? person.analysis?.issues[topic]
+      : undefined;
+  return (
+    <section
+      className={styles.answerCard}
+      aria-label={`${person.name} comparison`}
+    >
+      <header className={styles.answerIdentity}>
+        <div className={styles.answerPortrait}>
+          <CandidatePortrait person={person} />
+        </div>
+        <div>
+          <span className={styles.eyebrow}>
+            {person.background.startsWith("Incumbent")
+              ? "Incumbent"
+              : "Candidate"}
+          </span>
+          <h4>{person.name}</h4>
+          <a href={`#${person.id}`}>Full brief ↗</a>
+        </div>
+      </header>
+      {topic === "values" ? (
+        <>
+          <div className={styles.evidenceLabel}>Our interpretation</div>
+          <div className={styles.valueTags}>
+            {person.analysis?.values.length ? (
+              person.analysis.values.map((v) => <span key={v}>{v}</span>)
+            ) : (
+              <span>Insufficient current evidence</span>
+            )}
+          </div>
+          <p>{person.analysis?.tradeoff ?? person.interpretation}</p>
+          <h5>The question to resolve</h5>
+          <p>{person.question}</p>
+          <div className={styles.answerSources}>
+            {person.analysis?.sources.map((s) => (
+              <Source key={s.url} source={s} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={styles.evidenceLabel}>
+            {issue ? "Stated position" : "Evidence gap"}
+          </div>
+          <p>
+            {issue?.position ??
+              "No specific position established in the reviewed sources. This is not evidence of neutrality or opposition."}
+          </p>
+          {issue ? (
+            <div className={styles.answerSources}>
+              <Source source={issue.source} />
+            </div>
+          ) : (
+            <a href={`#${person.id}`}>Read the available evidence ↗</a>
+          )}
+        </>
+      )}
+    </section>
+  );
+}
+
 export default function CandidateComparison({ race }: { race: Race }) {
-  const [selected, setSelected] = useState<string[]>([]);
-  const [comparing, setComparing] = useState(false);
+  const [selected, setSelected] = useState<string[]>(["", "", ""]);
+  const [third, setThird] = useState(false);
+  const [topic, setTopic] = useState<ComparisonTopic>("values");
   const people = [...race.candidates].sort((a, b) =>
     a.name.localeCompare(b.name, "en"),
   );
-  const hasPortraits = people.some((p) => p.portrait);
   const compared = people.filter((p) => selected.includes(p.id));
+  const count = compared.length;
+  const hasPortraits = people.some((p) => p.portrait);
+  const currentTopic = comparisonTopics.find((t) => t.id === topic)!;
   function toggle(id: string) {
-    setComparing(false);
-    setSelected((old) =>
-      old.includes(id)
-        ? old.filter((x) => x !== id)
-        : old.length < 3
-          ? [...old, id]
-          : old,
-    );
+    setSelected((old) => {
+      if (old.includes(id)) return old.map((v) => (v === id ? "" : v));
+      const index = old.indexOf("");
+      if (index < 0) return old;
+      return old.map((v, i) => (i === index ? id : v));
+    });
+  }
+  function clear() {
+    setSelected(["", "", ""]);
+    setThird(false);
   }
   function print() {
     const closed = [
@@ -133,197 +253,201 @@ export default function CandidateComparison({ race }: { race: Race }) {
   }
   return (
     <>
+      <section
+        className={styles.compareStudio}
+        id="compare"
+        aria-labelledby="compare-heading"
+      >
+        <div className={styles.studioHeading}>
+          <div>
+            <div className={styles.eyebrow}>Your choice. A clearer view.</div>
+            <h2 id="compare-heading">
+              Same issue.
+              <br />
+              <em>Different choices.</em>
+            </h2>
+          </div>
+          <p>
+            Choose two candidates. Explore their priorities, the tradeoffs and
+            the evidence behind them. No scores. No suggested ranking.
+          </p>
+        </div>
+        <div className={styles.pickerGrid}>
+          {selected.map((value, index) =>
+            index < 2 || third || selected[2] ? (
+              <label key={index}>
+                <span>
+                  Candidate {index + 1}
+                  {index === 2 ? " · optional" : ""}
+                </span>
+                <select
+                  aria-label={`Candidate ${index + 1}`}
+                  value={value}
+                  onChange={(e) =>
+                    setSelected((old) =>
+                      old.map((v, i) => (i === index ? e.target.value : v)),
+                    )
+                  }
+                >
+                  <option value="">Choose a candidate</option>
+                  {people.map((p) => (
+                    <option
+                      key={p.id}
+                      value={p.id}
+                      disabled={selected.includes(p.id) && value !== p.id}
+                    >
+                      {p.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            ) : null,
+          )}
+          {!third && !selected[2] && (
+            <button
+              className={styles.addCandidate}
+              onClick={() => setThird(true)}
+            >
+              + Add a third candidate
+            </button>
+          )}
+        </div>
+        <div className={styles.selectionMeta}>
+          <span role="status">
+            {count < 2
+              ? `${count} selected · choose ${2 - count} more to compare`
+              : `Comparing ${compared.map((p) => p.name).join(" and ")}`}
+          </span>
+          {count > 0 && <button onClick={clear}>Clear comparison</button>}
+        </div>
+        <div
+          className={styles.topicPicker}
+          role="group"
+          aria-label="Comparison issue"
+        >
+          {comparisonTopics.map((t) => (
+            <button
+              key={t.id}
+              aria-pressed={topic === t.id}
+              onClick={() => setTopic(t.id)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+        <div className={styles.topicIntroduction}>
+          <div className={styles.eyebrow}>{currentTopic.label}</div>
+          <h3>{currentTopic.question}</h3>
+          <p>{currentTopic.context}</p>
+        </div>
+        {count < 2 ? (
+          <div className={styles.comparisonEmpty}>
+            <span aria-hidden="true">A ↔ B</span>
+            <h3>A fair comparison starts with the same question.</h3>
+            <p>
+              Select two names above, or use the portraits below. Every
+              candidate is included; missing evidence stays visible.
+            </p>
+          </div>
+        ) : topic === "record" ? (
+          <div className={styles.decisionList}>
+            {councilDecisions.map((decision) => (
+              <section className={styles.decisionCard} key={decision.id}>
+                <div className={styles.eyebrow}>
+                  Final action · {decision.source.date}
+                </div>
+                <h4>{decision.title}</h4>
+                <p>{decision.summary}</p>
+                <div className={styles.voteList}>
+                  {compared.map((p) => (
+                    <div key={p.id}>
+                      <span>{p.name}</span>
+                      <strong data-vote={decision.votes[p.name] ?? "unknown"}>
+                        {decision.votes[p.name] ?? "No vote in this record"}
+                      </strong>
+                    </div>
+                  ))}
+                </div>
+                <p className={styles.decisionLimit}>{decision.limit}</p>
+                <div className={styles.answerSources}>
+                  <Source source={decision.source} />
+                </div>
+              </section>
+            ))}
+            <p className={styles.researchBoundary}>
+              A challenger has no vote in these Council roll calls. That is not
+              a judgment about experience or a prediction of how they would
+              vote. Other verified historical statements appear in individual
+              briefs.
+            </p>
+          </div>
+        ) : (
+          <div className={styles.answerGrid} data-count={count}>
+            {compared.map((p) => (
+              <ComparisonAnswer key={p.id} person={p} topic={topic} />
+            ))}
+          </div>
+        )}
+        <p className={styles.comparisonPrivacy}>
+          Selections stay in this page’s memory and clear on reload. Names and
+          comparison results appear alphabetically.
+        </p>
+      </section>
       <div className={styles.compareControls} id="candidates">
         <div className={styles.sectionTop}>
-          <h2>
-            {race.candidates.length > 1
-              ? "Read, then compare."
-              : "Read the candidate’s brief."}
-          </h2>
+          <div>
+            <div className={styles.eyebrow}>The complete field</div>
+            <h2>Meet all {people.length} candidates.</h2>
+          </div>
           <button className={styles.printButton} onClick={print}>
-            <Printer size={16} aria-hidden="true" />{" "}
-            {comparing ? "Print comparison" : "Print this race"}
+            <Printer size={16} aria-hidden="true" /> Print this race
           </button>
         </div>
-        {race.candidates.length > 1 && (
-          <>
-            <p>
-              Select two or three candidates to compare the same questions.
-              Selection is temporary and does not record a vote or preference.
-            </p>
-            <div className={styles.compareActions}>
-              <button
-                disabled={selected.length < 2}
-                onClick={() => setComparing(true)}
-              >
-                Compare selected ({selected.length}/3)
-              </button>
-              <button
-                onClick={() => {
-                  setSelected([]);
-                  setComparing(false);
-                }}
-              >
-                Show all candidates
-              </button>
-              <span className={styles.results} role="status">
-                {comparing
-                  ? `Comparing ${compared.map((c) => c.name).join(", ")}`
-                  : `${selected.length} selected`}
-              </span>
-            </div>
-            {hasPortraits && (
-              <p className={styles.directoryNote}>
-                The complete field, alphabetically. Open a brief or select
-                candidates to compare. Photo credits appear in each brief.
-              </p>
-            )}
-            <div
-              className={
-                hasPortraits
-                  ? styles.portraitDirectory
-                  : styles.candidateChoices
-              }
-              role="group"
-              aria-label="Candidates to compare"
-            >
-              {people.map((p) =>
-                hasPortraits ? (
-                  <div key={p.id} className={styles.directoryPerson}>
-                    <a
-                      className={styles.directoryLink}
-                      href={`#${p.id}`}
-                      onClick={() => setComparing(false)}
-                    >
-                      <CandidatePortrait person={p} />
-                      <span className={styles.directoryName}>{p.name}</span>
-                      <span className={styles.readBrief}>
-                        Read their brief <span aria-hidden="true">↗</span>
-                      </span>
-                    </a>
-                    <label className={styles.portraitChoice}>
-                      <input
-                        type="checkbox"
-                        aria-label={`Compare ${p.name}`}
-                        checked={selected.includes(p.id)}
-                        disabled={
-                          selected.length === 3 && !selected.includes(p.id)
-                        }
-                        onChange={() => toggle(p.id)}
-                      />
-                      Compare<span className={styles.srOnly}> {p.name}</span>
-                    </label>
-                  </div>
-                ) : (
-                  <label key={p.id} className={styles.choice}>
-                    <input
-                      type="checkbox"
-                      checked={selected.includes(p.id)}
-                      disabled={
-                        selected.length === 3 && !selected.includes(p.id)
-                      }
-                      onChange={() => toggle(p.id)}
-                    />
-                    {p.name}
-                  </label>
-                ),
-              )}
-            </div>
-          </>
+        <p className={styles.directoryNote}>
+          Open a brief or choose up to three candidates. Photo credits appear in
+          each brief.
+        </p>
+        {count > 0 && (
+          <div className={styles.directoryCompare}>
+            <span>{count} of 3 selected</span>
+            <a href="#compare">
+              {count >= 2 ? "See comparison ↑" : "Choose another candidate ↑"}
+            </a>
+            <button onClick={clear}>Clear</button>
+          </div>
         )}
-      </div>
-      {comparing && (
         <div
-          className={styles.comparison}
-          tabIndex={0}
-          aria-label="Scrollable candidate comparison"
+          className={
+            hasPortraits ? styles.portraitDirectory : styles.candidateChoices
+          }
+          role="group"
+          aria-label="Candidates to compare"
         >
-          <table>
-            <caption>
-              Same questions, side by side. Policy statements are campaign
-              positions; interpretation is the Lab’s analysis.
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">Compare</th>
-                {compared.map((p) => (
-                  <th key={p.id} scope="col">
-                    {p.name}
-                    <br />
-                    <small>{p.affiliation}</small>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Proposed direction</th>
-                {compared.map((p) => (
-                  <td key={p.id}>{p.summary}</td>
-                ))}
-              </tr>
-              <tr>
-                <th scope="row">Specific commitments</th>
-                {compared.map((p) => (
-                  <td key={p.id}>
-                    {p.priorities.length ? (
-                      <ul>
-                        {p.priorities.map((t) => (
-                          <li key={t}>{t}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      p.missing
-                    )}
-                  </td>
-                ))}
-              </tr>
-              <tr>
-                <th scope="row">Our interpretation</th>
-                {compared.map((p) => (
-                  <td key={p.id}>{p.interpretation}</td>
-                ))}
-              </tr>
-              <tr>
-                <th scope="row">Checked record</th>
-                {compared.map((p) => (
-                  <td key={p.id}>
-                    {p.record?.length
-                      ? p.record.map((r, i) => (
-                          <p key={i}>
-                            {r.text} <a href={r.source.url}>Source</a>
-                          </p>
-                        ))
-                      : "Independent record review not yet complete."}
-                  </td>
-                ))}
-              </tr>
-              <tr>
-                <th scope="row">Open question</th>
-                {compared.map((p) => (
-                  <td key={p.id}>{p.question}</td>
-                ))}
-              </tr>
-              <tr>
-                <th scope="row">Read the sources</th>
-                {compared.map((p) => (
-                  <td key={p.id}>
-                    {p.sources.map((s, i) => (
-                      <p key={i}>
-                        <a href={s.url}>{s.label}</a>
-                        <br />
-                        <small>{s.kind}</small>
-                      </p>
-                    ))}
-                  </td>
-                ))}
-              </tr>
-            </tbody>
-          </table>
+          {people.map((p) => (
+            <div key={p.id} className={styles.directoryPerson}>
+              <a className={styles.directoryLink} href={`#${p.id}`}>
+                <CandidatePortrait person={p} />
+                <span className={styles.directoryName}>{p.name}</span>
+                <span className={styles.readBrief}>
+                  Read their brief <span aria-hidden="true">↗</span>
+                </span>
+              </a>
+              <label className={styles.portraitChoice}>
+                <input
+                  type="checkbox"
+                  aria-label={`Compare ${p.name}`}
+                  checked={selected.includes(p.id)}
+                  disabled={count === 3 && !selected.includes(p.id)}
+                  onChange={() => toggle(p.id)}
+                />
+                Compare<span className={styles.srOnly}> {p.name}</span>
+              </label>
+            </div>
+          ))}
         </div>
-      )}
+      </div>
       <div className={styles.candidateGrid}>
-        {(comparing ? compared : people).map((person) => (
+        {people.map((person) => (
           <Profile
             person={person}
             showPortrait={hasPortraits}

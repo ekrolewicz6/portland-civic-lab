@@ -26,33 +26,93 @@ test("directory searches names with accents and explains coverage", async ({
   await expect(page.getByRole("status")).toHaveText("2 races");
 });
 
-test("comparison starts neutral, caps three and restores the complete field", async ({
+test("comparison starts neutral, supports direct selection and prevents duplicates", async ({
   page,
 }) => {
   await page.goto("/voters-guide/portland-district-3");
-  const boxes = page.getByRole("checkbox");
-  await expect(boxes).toHaveCount(21);
+  const first = page.getByRole("combobox", {
+    name: "Candidate 1",
+    exact: true,
+  });
+  const second = page.getByRole("combobox", {
+    name: "Candidate 2",
+    exact: true,
+  });
+  await expect(first).toHaveValue("");
+  await expect(second).toHaveValue("");
   await expect(page.locator("input:checked")).toHaveCount(0);
-  const names = await boxes.evaluateAll((nodes) =>
-    nodes.map((n) => n.closest("label")?.textContent),
-  );
-  expect(names).toEqual(
-    [...names].sort((a, b) => (a ?? "").localeCompare(b ?? "", "en")),
-  );
-  await boxes.nth(0).check();
-  await boxes.nth(1).check();
-  await boxes.nth(2).check();
-  await expect(boxes.nth(3)).toBeDisabled();
-  await page.getByRole("button", { name: "Compare selected (3/3)" }).click();
-  await expect(page.getByRole("table")).toBeVisible();
-  await expect(page.locator("article")).toHaveCount(3);
+  await first.selectOption("steve-novick");
+  await second.selectOption("tiffany-koyama-lane");
+  await expect(second.locator('option[value="steve-novick"]')).toHaveJSProperty("disabled", true);
   await expect(
-    page.getByRole("rowheader", { name: "Our interpretation" }),
-  ).toBeVisible();
-  await page.getByRole("button", { name: "Show all candidates" }).click();
-  await expect(page.getByRole("table")).toHaveCount(0);
+    page.getByRole("region", { name: "Steve Novick comparison" }),
+  ).toContainText("Targeted enforcement");
+  await page.getByRole("button", { name: "+ Add a third candidate" }).click();
+  await page
+    .getByRole("combobox", { name: "Candidate 3", exact: true })
+    .selectOption("angelita-morillo");
+  await expect(
+    page.getByRole("checkbox", { name: "Compare Ali Beaudoin", exact: true }),
+  ).toBeDisabled();
+  await page.getByRole("button", { name: "Housing", exact: true }).click();
+  await expect(
+    page.getByRole("region", { name: "Steve Novick comparison" }),
+  ).toContainText("faster permitting");
+  await expect(
+    page.getByRole("region", { name: "Tiffany Koyama Lane comparison" }),
+  ).toContainText("publicly owned housing");
   await expect(page.locator("article")).toHaveCount(21);
+  await page
+    .getByRole("button", { name: "Clear comparison", exact: true })
+    .click();
+  await expect(first).toHaveValue("");
   await expect(page.locator("input:checked")).toHaveCount(0);
+});
+
+test("record comparison preserves absent votes, agreement and legislative limits", async ({
+  page,
+}) => {
+  await page.goto("/voters-guide/portland-district-4");
+  await page
+    .getByRole("combobox", { name: "Candidate 1", exact: true })
+    .selectOption("eric-zimmerman");
+  await page
+    .getByRole("combobox", { name: "Candidate 2", exact: true })
+    .selectOption("olivia-clark");
+  await page.getByRole("button", { name: "Recorded decisions" }).click();
+  const rental = page
+    .locator("section")
+    .filter({
+      has: page.getByRole("heading", {
+        name: "Restrict algorithmic rent coordination",
+        exact: true,
+      }),
+    })
+    .last();
+  await expect(rental).toContainText("Absent");
+  await expect(rental).toContainText("No");
+  await expect(rental).toContainText("Absence is not a vote against");
+  const dataCenters = page
+    .locator("section")
+    .filter({
+      has: page.getByRole("heading", {
+        name: "Seek transparency and future data-center restrictions",
+      }),
+    })
+    .last();
+  await expect(dataCenters.locator('strong[data-vote="Yes"]')).toHaveCount(2);
+  await expect(dataCenters).toContainText("did not itself enact a moratorium");
+  await page
+    .getByRole("combobox", { name: "Candidate 1", exact: true })
+    .selectOption("john-j-goldsmith");
+  await expect(rental).toContainText("No vote in this record");
+  await page.getByRole("button", { name: "Housing", exact: true }).click();
+  await expect(
+    page.getByRole("region", { name: "John J Goldsmith comparison" }),
+  ).toContainText("Evidence gap");
+  await expect(
+    page.getByRole("region", { name: "John J Goldsmith comparison" }),
+  ).toContainText("not evidence of neutrality");
 });
 
 test("sources are attributed and printing opens then restores disclosure state", async ({
@@ -60,7 +120,11 @@ test("sources are attributed and printing opens then restores disclosure state",
 }) => {
   await page.goto("/voters-guide/portland-district-4");
   await expect(page.locator("details[open]")).toHaveCount(0);
-  await page.locator("details summary").first().click();
+  await page
+    .locator("article details summary")
+    .filter({ hasText: "Sources behind this profile" })
+    .first()
+    .click();
   await expect(page.locator("details[open]")).toHaveCount(1);
   await expect(page.locator("details[open]")).toContainText(
     "Candidate statement",
@@ -69,7 +133,9 @@ test("sources are attributed and printing opens then restores disclosure state",
     window.print = () => {};
   });
   await page.getByRole("button", { name: "Print this race" }).click();
-  await expect(page.locator("details[open]")).toHaveCount(12);
+  expect(await page.locator("details[open]").count()).toBe(
+    await page.locator("details").count(),
+  );
   await page.evaluate(() => window.dispatchEvent(new Event("afterprint")));
   await expect(page.locator("details[open]")).toHaveCount(1);
   await page.emulateMedia({ media: "print" });
@@ -78,7 +144,7 @@ test("sources are attributed and printing opens then restores disclosure state",
   ).toBeVisible();
 });
 
-test("mobile comparisons scroll locally without overflowing the page", async ({
+test("mobile comparisons fit the screen and show matched issue cards", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
@@ -93,8 +159,16 @@ test("mobile comparisons scroll locally without overflowing the page", async ({
   await page.goto("/voters-guide/portland-district-4");
   await page.getByRole("checkbox").nth(0).check();
   await page.getByRole("checkbox").nth(1).check();
-  await page.getByRole("button", { name: "Compare selected (2/3)" }).click();
-  await expect(page.getByRole("table")).toBeVisible();
+  await page.getByRole("link", { name: "See comparison ↑" }).click();
+  await page.getByRole("button", { name: "Taxes & spending" }).click();
+  const cards = page.getByRole("region", { name: /comparison$/ });
+  await expect(cards).toHaveCount(2);
+  for (const card of await cards.all()) {
+    const box = await card.boundingBox();
+    expect(box!.x).toBeGreaterThanOrEqual(0);
+    expect(box!.x + box!.width).toBeLessThanOrEqual(390);
+  }
+  await expect(page.getByRole("table")).toHaveCount(0);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth,
@@ -112,6 +186,15 @@ test("export preserves evidence, missing research and the full field", async ({
   const payload = await response.json();
   expect(payload.reviewed).toBe("2026-09-18");
   expect(payload.races).toHaveLength(2);
+  expect(payload.councilDecisions).toHaveLength(4);
+  for (const race of payload.races)
+    for (const candidate of race.candidates) {
+      expect(candidate.analysis.tradeoff.length).toBeGreaterThan(30);
+      for (const issue of Object.values(candidate.analysis.issues) as {
+        source: { url: string };
+      }[])
+        expect(issue.source.url).toMatch(/^https:/);
+    }
   const people = payload.races.flatMap(
     (r: { candidates: unknown[] }) => r.candidates,
   );
@@ -156,8 +239,10 @@ test("Portland portrait directory preserves the field, credits and comparison na
   await page
     .getByRole("checkbox", { name: "Compare Angelita Morillo", exact: true })
     .check();
-  await page.getByRole("button", { name: "Compare selected (2/3)" }).click();
-  await expect(page.locator("article")).toHaveCount(2);
+  await page.getByRole("link", { name: "See comparison ↑" }).click();
+  await expect(page.getByRole("region", { name: /comparison$/ })).toHaveCount(
+    2,
+  );
   await directory.getByRole("link", { name: /Darren McCormick/ }).click();
   await expect(page.locator("article")).toHaveCount(21);
   await expect(page).toHaveURL(/#darren-mccormick$/);

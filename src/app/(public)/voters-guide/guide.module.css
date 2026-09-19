@@ -14,6 +14,10 @@
   outline: 3px solid var(--color-river-deep);
   outline-offset: 4px;
 }
+.guide select:focus-visible {
+  outline: 3px solid var(--color-river-deep);
+  outline-offset: 4px;
+}
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -1250,5 +1254,479 @@
   }
   .compareActions .results {
     margin: 0;
+  }
+}
+
+/* The comparison is a reading surface at every width, never a sideways table. */
+.compareStudio {
+  margin: 2rem 0 3.5rem;
+  border: 1px solid #b8c3b4;
+  background: #f4f5ed;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  scroll-margin-top: 90px;
+}
+.studioHeading {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: 2rem;
+}
+.studioHeading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.7vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  margin-top: 0.7rem;
+}
+.studioHeading h2 em {
+  font-family: Georgia, serif;
+  color: var(--color-canopy);
+  font-weight: 400;
+}
+.studioHeading > p {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 32rem;
+}
+.pickerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  align-items: end;
+}
+.pickerGrid label {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+.pickerGrid label > span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+}
+.pickerGrid select {
+  background: #fffef9;
+  color: var(--color-ink);
+  border: 1px solid #879582;
+  border-radius: 3px;
+  padding: 0.75rem 0.5rem;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  font-size: 1rem;
+  text-overflow: ellipsis;
+}
+.addCandidate {
+  min-height: 48px;
+  border: 1px dashed #96a18f;
+  border-radius: 3px;
+  padding: 0.65rem;
+  color: var(--color-canopy);
+  font-size: 0.85rem;
+}
+.addCandidate:hover {
+  background: #e5ebdd;
+}
+.selectionMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  padding: 0.8rem 0 1.2rem;
+}
+.selectionMeta button {
+  text-decoration: underline;
+  min-height: 44px;
+  flex-shrink: 0;
+}
+.topicPicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  border-top: 1px solid #c3cdbd;
+  padding-top: 1.2rem;
+}
+.topicPicker button {
+  padding: 0.65rem 0.85rem;
+  min-height: 44px;
+  border: 1px solid #b4c0aa;
+  background: #fffef9;
+  color: #304a39;
+  font-size: 0.82rem;
+  border-radius: 3px;
+}
+.topicPicker button[aria-pressed="true"] {
+  background: #244936;
+  color: #fffef9;
+  border-color: #244936;
+}
+.topicPicker button:hover {
+  border-color: #244936;
+}
+.topicIntroduction {
+  margin: 1.7rem 0 1.1rem;
+  max-width: 58rem;
+}
+.topicIntroduction h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin: 0.4rem 0 0.7rem;
+}
+.topicIntroduction p {
+  font-size: 0.86rem;
+  line-height: 1.65;
+  color: #495648;
+}
+.comparisonEmpty {
+  text-align: center;
+  padding: 2rem 1rem;
+  border: 1px dashed #b9c5af;
+  background: #fafbf5;
+}
+.comparisonEmpty > span {
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+  color: #64765c;
+  letter-spacing: 0.3rem;
+}
+.comparisonEmpty h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin: 0.7rem auto;
+}
+.comparisonEmpty p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  max-width: 34rem;
+  margin: auto;
+}
+.answerGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+.answerGrid[data-count="3"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.answerCard {
+  min-width: 0;
+  padding: 1.3rem;
+  border: 1px solid #cad0c1;
+  background: #fffef9;
+  box-shadow: 0 3px 0 #e4e8dd;
+}
+.answerIdentity {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e0e4d8;
+}
+.answerPortrait {
+  width: 64px;
+  flex-shrink: 0;
+}
+.answerPortrait .portraitPlaceholder {
+  font-size: 1.3rem;
+}
+.answerPortrait .portraitPlaceholder small {
+  display: none;
+}
+.answerIdentity h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0.15rem 0 0.4rem;
+  overflow-wrap: anywhere;
+}
+.answerIdentity a {
+  font-size: 0.75rem;
+  text-decoration: underline;
+}
+.evidenceLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #5e6956;
+  margin: 0.2rem 0 0.8rem;
+}
+.valueTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.6rem 0 1rem;
+}
+.valueTags span {
+  background: #edf0e4;
+  color: #284b35;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #dae2d0;
+  border-radius: 2px;
+}
+.answerCard > p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+.answerCard h5 {
+  margin-top: 1.2rem;
+  font-size: 0.76rem;
+  font-weight: 650;
+  color: #405443;
+}
+.answerCard h5 + p {
+  font-size: 0.83rem;
+  margin-top: 0.4rem;
+}
+.answerCard > a {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+.answerSources {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1.2rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #e0e4d8;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.answerSources a,
+.inlineSources a {
+  text-decoration: underline;
+  color: #35553c;
+}
+.answerSources small {
+  color: #636c5d;
+  font-size: 0.7rem;
+}
+.answerSources a:not(:first-child) {
+  margin-top: 0.75rem;
+}
+.inlineSources {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  font-size: 0.73rem;
+  margin-top: 0.7rem;
+}
+.decisionList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.decisionCard {
+  border: 1px solid #cad0c1;
+  background: #fffef9;
+  padding: 1.3rem;
+}
+.decisionCard h4 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin: 0.4rem 0 0.8rem;
+}
+.decisionCard > p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.voteList {
+  margin: 1rem 0;
+  border-top: 1px solid #dbe1d2;
+}
+.voteList > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #dbe1d2;
+  font-size: 0.85rem;
+}
+.voteList strong {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: right;
+  border: 1px solid #afbaa6;
+  padding: 0.25rem 0.4rem;
+  min-width: 3.5rem;
+}
+.voteList strong[data-vote="unknown"] {
+  font-family: inherit;
+  border: 0;
+  color: #646c5e;
+  max-width: 10rem;
+}
+.decisionCard > .decisionLimit {
+  font-size: 0.8rem;
+  color: #596550;
+}
+.researchBoundary {
+  grid-column: 1 / -1;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+.comparisonPrivacy {
+  margin-top: 1.25rem;
+  font-size: 0.7rem;
+  color: #64705c;
+  line-height: 1.6;
+}
+.directoryCompare {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 72px;
+  z-index: 10;
+  background: #244936;
+  color: #fff;
+  padding: 0.6rem 0.85rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px #0002;
+  font-size: 0.78rem;
+}
+.directoryCompare a {
+  margin-left: auto;
+  font-weight: 600;
+  padding: 0.6rem 0;
+}
+.directoryCompare button {
+  padding: 0.6rem 0 0.6rem 0.5rem;
+  text-decoration: underline;
+}
+.issueDisclosure {
+  border-top: 1px solid #dbe1d2;
+  border-bottom: 1px solid #dbe1d2;
+  padding: 0.8rem 0;
+  margin: 1.25rem 0;
+}
+.issueDisclosure summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0;
+}
+.raceContext {
+  border-top: 1px solid #c6cbbf;
+  border-bottom: 1px solid #c6cbbf;
+  margin-top: 1.5rem;
+  padding: 0.2rem 0;
+}
+.raceContext > summary {
+  padding: 0.9rem 0;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+@media (max-width: 850px) {
+  .answerGrid[data-count="3"] {
+    grid-template-columns: 1fr;
+  }
+  .pickerGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .addCandidate {
+    grid-column: 1 / -1;
+  }
+  .pickerGrid label:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 600px) {
+  .compareStudio {
+    margin-top: 1.5rem;
+    padding: 1rem;
+  }
+  .studioHeading {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    margin-bottom: 1.4rem;
+  }
+  .studioHeading > p {
+    font-size: 0.9rem;
+  }
+  .pickerGrid {
+    grid-template-columns: 1fr;
+  }
+  .pickerGrid label {
+    gap: 0.3rem;
+  }
+  .addCandidate {
+    min-height: 44px;
+  }
+  .selectionMeta {
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .topicPicker {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .topicPicker button {
+    padding: 0.6rem 0.35rem;
+    font-size: 0.75rem;
+  }
+  .answerGrid,
+  .decisionList {
+    grid-template-columns: 1fr;
+  }
+  .answerCard,
+  .decisionCard {
+    padding: 1rem;
+  }
+  .answerCard > p {
+    font-size: 0.94rem;
+  }
+  .directoryCompare {
+    top: 65px;
+    gap: 0.6rem;
+    font-size: 0.72rem;
+  }
+  .topicIntroduction {
+    margin-top: 1.3rem;
+  }
+}
+@media print {
+  .compareStudio {
+    padding: 0;
+    background: white;
+    border: 0;
+  }
+  .pickerGrid,
+  .selectionMeta,
+  .topicPicker,
+  .comparisonPrivacy,
+  .comparisonEmpty,
+  .directoryCompare {
+    display: none !important;
+  }
+  .answerGrid,
+  .answerGrid[data-count="3"],
+  .decisionList {
+    display: block;
+  }
+  .answerCard,
+  .decisionCard {
+    break-inside: avoid;
+    margin: 1rem 0;
+    box-shadow: none;
+  }
+  .raceContext {
+    display: block;
   }
 }

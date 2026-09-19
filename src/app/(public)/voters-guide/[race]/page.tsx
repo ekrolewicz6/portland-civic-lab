@@ -40,6 +40,9 @@ export default async function RacePage({
         </div>
         <h1>{race.title}</h1>
         <p className={styles.lede}>{race.stakes}</p>
+        <a href="#compare" className={styles.meetCandidates}>
+          Compare values & issues <span aria-hidden="true">↓</span>
+        </a>
         <a href="#candidates" className={styles.meetCandidates}>
           Meet the{" "}
           {race.candidates.length === 1
@@ -56,27 +59,32 @@ export default async function RacePage({
           </Link>
         </div>
       </header>
-      <div className={styles.raceFacts}>
-        <section>
-          <h2>What this office can do</h2>
-          <p>{race.authority}</p>
-        </section>
-        <section>
-          <h2>
-            Where the choices differ{" "}
-            <span className={styles.eyebrow}> / Editorial synthesis</span>
-          </h2>
-          <p>{race.comparison}</p>
-        </section>
-      </div>
-      <div className={styles.note}>
-        <strong>{race.rosterStatus}.</strong>{" "}
-        <a href={race.rosterSource.url}>{race.rosterSource.label}</a>. This is a
-        working research edition; separate human editorial review remains
-        incomplete. The roster and policy research are separate checks. A
-        candidate’s published statement establishes what they say, not that
-        their factual claims are true.
-      </div>
+      <details className={styles.raceContext}>
+        <summary>
+          About this office, the evidence and this working edition
+        </summary>
+        <div className={styles.raceFacts}>
+          <section>
+            <h2>What this office can do</h2>
+            <p>{race.authority}</p>
+          </section>
+          <section>
+            <h2>
+              Where the choices differ{" "}
+              <span className={styles.eyebrow}> / Editorial synthesis</span>
+            </h2>
+            <p>{race.comparison}</p>
+          </section>
+        </div>
+        <div className={styles.note}>
+          <strong>{race.rosterStatus}.</strong>{" "}
+          <a href={race.rosterSource.url}>{race.rosterSource.label}</a>. This is
+          a working research edition; separate human editorial review remains
+          incomplete. The roster and policy research are separate checks. A
+          candidate’s published statement establishes what they say, not that
+          their factual claims are true.
+        </div>
+      </details>
       <CandidateComparison key={race.id} race={race} />
       <div className={styles.footerNote}>
         <p>

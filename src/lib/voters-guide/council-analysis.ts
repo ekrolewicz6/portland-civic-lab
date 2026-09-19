@@ -1,0 +1,569 @@
+import type { Candidate, Evidence } from "./types";
+
+type Issues = Partial<
+  Record<"housing" | "safety" | "money" | "climate", string>
+>;
+type AnalysisRow = [string[], string, Issues];
+
+// Authored comparisons; never inferred from party, missing answers or endorsements.
+const rows: Record<string, AnalysisRow> = {
+  "Ali Beaudoin": [
+    ["Financial discipline", "Small-business growth"],
+    "The test is whether operational changes produce enough savings and investment to support services. The reviewed announcement names neither specific cuts nor a revenue estimate.",
+    {
+      money:
+        "Emphasizes cost analysis, eliminating unnecessary spending and testing whether programs meet their goals. Specific cuts and tax changes are not established in the reviewed announcement.",
+    },
+  ],
+  "Joel Corcoran": [
+    ["Institutional accountability", "Public provision"],
+    "Independent legal and budget capacity could strengthen Council oversight, but creating that capacity also costs money. Contract savings and public utility proposals need separate business cases.",
+    {
+      money:
+        "Proposes independent Council legal and budget offices, monthly budget reviews and contract audits; wants clearer rules for work performed by city employees.",
+      climate:
+        "Supports expanded public utility options. The reviewed pamphlet does not establish an acquisition plan, financing or a rate guarantee.",
+    },
+  ],
+  "Guy Frankenstein": [
+    ["Redistribution", "Opposition to ICE"],
+    "His responses identify who he wants city government to challenge. They do not establish which city powers, budget changes or legal mechanisms would deliver those goals.",
+    {
+      money:
+        "Calls for larger contributions from billion-dollar companies. A particular tax instrument or projected revenue is not established in the reviewed response.",
+    },
+  ],
+  "Matthias Hallett": [
+    ["Police capacity", "Private-sector recovery"],
+    "He links economic recovery to stronger policing and a lighter burden on business. Expanding staffing without new taxes depends on reallocations or growth; the reviewed materials do not reconcile those costs.",
+    {
+      housing:
+        "Favors faster permitting, deadlines and escalation when applications stall.",
+      safety:
+        "Would increase police recruitment, retention and neighborhood presence.",
+      money:
+        "Wants a more competitive business tax structure and recruitment of employers serving markets outside the region.",
+    },
+  ],
+  "Patrick Hilton": [
+    ["Preservation", "Community ownership"],
+    "Adaptive reuse and shared ownership seek to protect people and places from displacement. The unresolved comparison is how quickly those tools would add affordable homes relative to redevelopment.",
+    {
+      housing:
+        "Prioritizes adaptive reuse, community land trusts and co-housing, with pathways to ownership.",
+      safety:
+        "Supports safe-sleeping infrastructure alongside consistent rules for public space.",
+      money:
+        "Proposes taxes on vacant units and polluters, and shifting money away from consultants.",
+    },
+  ],
+  "Larry Kelly": [
+    ["Housing access", "Treatment and support"],
+    "He combines reducing housing barriers with services rather than treating either as sufficient. The statement does not specify which rules change or how much treatment and housing capacity would be funded.",
+    {
+      housing:
+        "Supports expanding housing choices and removing unnecessary barriers; specific code changes are not identified in the reviewed statement.",
+      safety:
+        "Supports Portland Street Response, addiction treatment and permanent housing.",
+      money:
+        "Wants government to be easier for small businesses to work with. Specific tax and spending changes are not established here.",
+    },
+  ],
+  "Tiffany Koyama Lane": [
+    ["Worker and tenant power", "Public investment"],
+    "Public ownership and regulation are central tools in her program. Building homes and sustaining services require recurring funding; voting for a study or regulation is different from demonstrating its eventual results.",
+    {
+      housing: "Supports rental assistance and social housing.",
+      money:
+        "Prioritizes housing and services and demands oversight of the Moda agreement.",
+      climate:
+        "Emphasizes street safety and scrutiny of oil infrastructure and data centers.",
+    },
+  ],
+  "Kenneth (Kent) R Landgraver III": [
+    ["Consensus", "Legislative cooperation"],
+    "Seeking unanimity may build broader buy-in, but can also prolong decisions when interests conflict. His statement does not explain when he would accept a majority decision or which policy compromises he would make.",
+    {
+      money:
+        "Says tax dollars should support public work. Specific budget reallocations or revenue proposals are not established in the reviewed statement.",
+    },
+  ],
+  "Keir Legree": [
+    ["Operational delivery", "Household costs"],
+    "His stated goals connect city performance to safety and utility bills. Lower bills are not yet a financed commitment: the reviewed statement does not identify savings or how to preserve necessary maintenance.",
+    {
+      safety:
+        "Wants more police and 911 dispatchers and a different approach to street homelessness. The reviewed pamphlet does not detail that homelessness plan.",
+      money:
+        "Proposes reducing infrastructure-project costs and utility bills without specifying the reductions in the reviewed pamphlet.",
+    },
+  ],
+  "Esther León": [
+    ["Public provision", "Non-police crisis care"],
+    "She would shift more responsibility for affordability and care into public institutions. That requires funding and implementation across several governments; local proposals and changes to state-controlled systems are not interchangeable.",
+    {
+      housing:
+        "Proposes social housing, simpler zoning and a vacancy tax on corporate landlords.",
+      safety:
+        "Supports 24-hour citywide Street Response and supportive housing with treatment.",
+      money:
+        "Proposes new taxes to support a larger public role in housing and services.",
+      climate:
+        "Supports a data-center moratorium and a transition to public utilities.",
+    },
+  ],
+  "Darren McCormick": [
+    ["Enforcement-led response"],
+    "His filing establishes a preference for more police and detention. It does not specify offenses, detention standards, treatment capacity or costs. A broader account of his priorities remains a research gap.",
+    {
+      safety:
+        "His July 2026 filing calls for additional police and incarceration of people he characterizes as dangerous and affected by drugs. The filing does not explain the legal criteria or treatment component.",
+    },
+  ],
+  "Angelita Morillo": [
+    ["Tenant and civil rights", "Climate investment"],
+    "She favors expanding public alternatives and constraining institutional power. The practical questions are which protections Council can enforce and how to fund housing, transport and services together.",
+    {
+      housing:
+        "Supports stronger tenant rights and shelter design involving unhoused residents.",
+      safety:
+        "Supports Street Response, violence prevention and police accountability.",
+      money:
+        "Prioritizes public investment and opposed the amended Moda term sheet; that vote does not by itself establish opposition to retaining the team.",
+      climate:
+        "Supports transit, bike lanes and sidewalks; opposes oil-train and data-center expansion.",
+    },
+  ],
+  "Steve Novick": [
+    ["Cost-effective services", "Targeted enforcement"],
+    "His agenda combines unarmed response with police investigations and hazardous-camp removal. The distinction is which intervention fits which problem, rather than a simple choice between enforcement and services.",
+    {
+      housing:
+        "Calls for more housing and supportive mental-health and addiction services.",
+      safety:
+        "Supports unarmed welfare checks, red-flag gun-law use and retaining hazardous-camp removal funding.",
+      money:
+        "Wants lower Council office spending and scrutiny of the Moda agreement.",
+    },
+  ],
+  "Cristal Otero": [
+    ["Household affordability", "Worker power"],
+    "She evaluates affordability through wages, ownership and monthly bills together. Shared-equity housing can change who owns an asset, but its financing and resident risk need examination alongside the purchase price.",
+    {
+      housing:
+        "Proposes stable housing for people with intellectual disabilities and brain injuries and paths to resident ownership.",
+      money:
+        "Would evaluate borrowing and infrastructure by the effect on household bills.",
+      climate:
+        "Wants Portland Clean Energy Fund spending to remain tied to climate purposes.",
+    },
+  ],
+  "Terry Parker": [
+    ["Maintenance first", "Driver access"],
+    "He puts upkeep and motor-vehicle access ahead of some new transport projects. That leaves a concrete tradeoff over street space: how to improve bus reliability and safety without the dedicated lanes he opposes.",
+    {
+      safety:
+        "Supports police and fire staffing and long-term support for unhoused people.",
+      money:
+        "Would prioritize maintaining streets and parks before new projects.",
+      climate:
+        "Opposes business-access-and-transit lanes on 82nd Avenue. His predicted traffic effects are campaign claims, not independently established findings in this guide.",
+    },
+  ],
+  "Heart Free Pham": [
+    ["Recovery with requirements", "Fiscal restraint"],
+    "He opposes criminalizing homelessness itself but supports consequences for refusing available services. The distinction turns on what those consequences are, whether suitable care exists and who can lawfully require it. His housing-cost and fiscal claims still need independent verification.",
+    {
+      housing:
+        "Promotes hempblock construction as a way to reduce building and energy costs. His numerical savings and claims about engineering requirements are campaign assertions, not validated findings here.",
+      safety:
+        "Supports civil-commitment reform, wellness farms with job training and consequences for refusing available services, while opposing criminalization of homelessness itself.",
+      money:
+        "Would examine the tax base and migration risks and require cost-benefit accounting before new taxes or spending. His causal and numerical claims are not independently established here.",
+    },
+  ],
+  "Tom Sollitt": [
+    ["Reliable public services", "Community participation"],
+    "His focus is making existing institutions respond and coordinate. That is a governing approach; voters still need to know which spending priorities would prevail when coordination alone cannot close a funding gap.",
+    {
+      money:
+        "Calls for dependable basic services and stronger oversight of bureaus and contractors.",
+    },
+  ],
+  "John Sweeney": [
+    ["Service preservation", "Limits on arena spending"],
+    "He would free resources by rejecting arena spending and revisiting city-county responsibilities. Shifting responsibility does not itself eliminate service costs; a workable transition needs agreements and continuing provision.",
+    {
+      safety:
+        "Wants the County to assume primary responsibility for homelessness services.",
+      money:
+        "Opposes spending to retain the Trail Blazers and prioritizes preserving city services as revenue declines.",
+    },
+  ],
+  "Kellie Torres": [
+    ["Service delivery", "Civic partnerships"],
+    "She treats administrative coordination and partnerships as ways to increase city capacity. Private or philanthropic support can help projects, but it does not establish stable operating revenue or guarantee equal investment across neighborhoods.",
+    {
+      money:
+        "Calls for protecting core services and accountability for spending.",
+      safety:
+        "Emphasizes safe, connected neighborhoods and public-service delivery.",
+    },
+  ],
+  "Kimberly Tucker": [
+    ["Program evaluation", "Spending accountability"],
+    "Her response explains how she would judge programs, but not which policy outcomes she would prioritize when evidence and resources point in competing directions. That distinction remains important for comparing her with detailed platforms.",
+    {
+      money:
+        "Wants stronger cost-benefit analysis and clearer explanations for program funding decisions. Specific programs to expand or cut are not named in the reviewed response.",
+    },
+  ],
+  "Martin Ward": [
+    ["Public housing", "Restrictions on personal conduct"],
+    "His platform combines public provision with restrictions on reproductive care and consensual relationships. Those restrictions are substantive policy commitments; the guide does not adopt his classification of consensual conduct as crime or imply Council can enact all of them.",
+    {
+      housing:
+        "Would test government-owned housing, build permanent shelter and oppose demolition of Lloyd Center.",
+      money:
+        "Rejects Moda renovations and proposes large spending cuts. The reviewed statement does not substantiate the claimed savings.",
+    },
+  ],
+  "Timothy (TJ) Anderson": [
+    ["Lived experience", "Responsive government"],
+    "The statement makes a case for representation informed by homelessness and disability. It does not establish a legislative program, so those experiences should not be used to infer unspoken housing, policing or tax positions.",
+    {},
+  ],
+  "Eli Arnold": [
+    ["Frontline safety", "Tax restraint"],
+    "His program expands safety capacity while pledging no new taxes and promoting fareless transit. Those commitments compete for existing money; a complete funding plan and regional agreements would determine what can be delivered together.",
+    {
+      housing:
+        "Supports moving people from tents into housing, shelter and services.",
+      safety:
+        "Would prioritize police, fire, dispatch and behavioral-health staffing.",
+      money: "Pledges no new taxes.",
+      climate:
+        "Proposes using existing clean-energy resources toward fareless transit, which also requires regional cooperation.",
+    },
+  ],
+  "Olivia Clark": [
+    ["Basic services", "Public-space enforcement"],
+    "She pairs removing camping and public drug use with shelter and treatment. Implementation depends on actual placement capacity; restoring services also requires choosing between reserves, recurring revenue and other spending.",
+    {
+      housing: "Supports reducing barriers to housing production.",
+      safety:
+        "Wants to end street camping and open-air drug use, improve 911 response and protect police and fire funding.",
+      money: "Prioritizes core services and business recovery.",
+      climate: "Supports maintenance of public assets, sidewalks and pavement.",
+    },
+  ],
+  "Jayne Cronlund": [
+    ["Shared public spaces", "Collaborative development"],
+    "Her program emphasizes places and partnerships that support community life and jobs. The reviewed statement leaves the harder funding and housing choices open; collaboration alone does not resolve competing budget claims.",
+    {
+      money:
+        "Supports living-wage jobs, the creative and sustainable economy, and regular reporting on shared government goals.",
+      climate:
+        "Prioritizes parks, trails, natural areas and business districts.",
+    },
+  ],
+  "Jamey Evenstar": [
+    ["Housing stability", "Accessible transportation"],
+    "Evenstar’s platform treats housing and transport costs as linked barriers to staying in Portland. Social housing and improved transit need financing, and city spending cannot alone determine regional fares or service levels.",
+    {
+      housing: "Emphasizes tenant protections and housing access.",
+      climate: "Wants faster, easier-to-use buses.",
+    },
+  ],
+  "John J Goldsmith": [
+    [],
+    "His 2026 filing establishes occupational and civic background. It does not provide enough reviewed policy evidence to characterize his governing priorities; those positions remain unknown in this edition.",
+    {},
+  ],
+  "Mitch Green": [
+    ["Permanent affordability", "Worker and tenant power"],
+    "His approach changes ownership and bargaining power as well as housing supply. Establishing a housing study or tenant protection is an intermediate step; financing, production and long-term operating performance remain separate tests.",
+    {
+      housing:
+        "Supports permanently affordable housing and tenant collective bargaining.",
+      money: "Wants greater contributions from large corporations.",
+      climate:
+        "Would protect climate funding and reduce fossil-fuel activity at the CEI Hub.",
+    },
+  ],
+  "Josh Leake": [
+    ["Housing production", "Economic recovery"],
+    "He emphasizes financing and development as a route to affordability and recovery. The test is which projects have sites, committed money and attainable rents, rather than whether a housing total is ambitious.",
+    {
+      housing:
+        "Would combine public, private and federal resources to develop housing.",
+      safety:
+        "Combines responses to crime and disorder with behavioral-health services and dignity for unhoused people.",
+      money:
+        "Supports creative and technology industries and activating public spaces.",
+    },
+  ],
+  "John McDonald": [
+    ["Major civic investment", "Contract scrutiny"],
+    "He supports large capital commitments while seeking tighter oversight of homelessness spending. Comparing those priorities requires the total public exposure and recurring costs of both, not just the appeal of the projects.",
+    {
+      safety:
+        "Would limit new homelessness contracts and scrutinize existing providers.",
+      money:
+        "Supports modernizing Moda Center and retaining the Trail Blazers.",
+      climate: "Supports continuing the Interstate Bridge Replacement.",
+    },
+  ],
+  "Matt Schulte": [
+    ["Reuse of downtown assets", "Project-led recovery"],
+    "His energy proposal uses existing downtown buildings as an economic resource. Utility participation, engineering feasibility and private ownership arrangements determine whether the idea can become a deliverable city program.",
+    {
+      safety:
+        "Proposes ReBoot, connecting volunteers and professionals to help people navigate services.",
+      money:
+        "Proposes the Grid-Connected Core with downtown building owners to attract economic activity.",
+      climate:
+        "Would reuse downtown buildings and electrical capacity as energy infrastructure.",
+    },
+  ],
+  "Jeremy Beausoleil Smith": [
+    ["Public construction", "Climate and tenant protection"],
+    "He combines social housing with climate infrastructure and regulation. Construction funding is only one requirement: maintenance, staffing and legal implementation are continuing obligations.",
+    {
+      housing:
+        "Supports social housing, a renters’ bill of rights and housing linked to treatment.",
+      safety: "Supports expanded Portland Street Response.",
+      money: "Would protect the Portland Clean Energy Fund.",
+      climate:
+        "Proposes a four-year AI data-center ban, walking and cycling improvements, and action on CEI Hub risks.",
+    },
+  ],
+  "Eric Zimmerman": [
+    ["Services and enforcement", "Tax restraint"],
+    "He would maintain several forms of response while resisting tax and fee increases. The key choice is what to reduce or reallocate if existing revenue cannot sustain police, fire, shelter, unarmed response and maintenance together.",
+    {
+      housing: "Supports housing production and shelter.",
+      safety:
+        "Combines police, Street Response, camp cleanups, enforcement and treatment.",
+      money:
+        "Opposes several tax and fee increases while prioritizing police, fire and maintenance.",
+    },
+  ],
+};
+
+const campaign = (label: string, url: string): Evidence => ({
+  label,
+  url,
+  kind: "Candidate statement",
+  date: "Website reviewed September 18, 2026",
+  note: "Campaign position. Claimed results and numerical premises have not automatically been independently verified.",
+});
+const supplements: Record<string, { source: Evidence; issues: Issues }> = {
+  "Matthias Hallett": {
+    source: campaign(
+      "Hallett · Re-Vision platform",
+      "https://www.matthiashallett.com/revision",
+    ),
+    issues: {
+      safety:
+        "Supports a goal of two police officers per 1,000 residents without raising taxes; emphasizes recruitment and street presence.",
+      money:
+        "Calls for audits and limits on unaccountable spending, lighter burdens on businesses, and an agreement to retain the Blazers. His critique of ranked-choice voting is a campaign position, not evidence the count is unreliable.",
+    },
+  },
+  "Tiffany Koyama Lane": {
+    source: campaign(
+      "Koyama Lane · policy and track record",
+      "https://teachertiffanyforthepeople.com/policy-track-record/",
+    ),
+    issues: {
+      housing:
+        "Supports publicly owned housing as an alternative to for-profit landlords and continued rental assistance.",
+      climate:
+        "Prioritizes Vision Zero, bike and transit infrastructure, tree canopy and a data-center moratorium.",
+      money:
+        "Favors public services, stronger union contracts and regulating corporations while lowering the burden on working families. A fully costed next-term program is not established here.",
+    },
+  },
+  "Steve Novick": {
+    source: campaign(
+      "Novick · second-term priorities",
+      "https://NovickForPortland.com",
+    ),
+    issues: {
+      housing:
+        "Supports faster permitting and attracting housing investment, alongside stronger state and county mental-health and addiction services.",
+      safety:
+        "Would add detectives for property crime and shift welfare checks to unarmed responders; supports removing hazardous camps rather than indiscriminate sweeps.",
+      money:
+        "Wants lower Council office budgets, a financially fair Moda agreement, Medicaid reimbursement for Street Response, and replacing the Arts Tax while preserving arts funding.",
+      climate:
+        "Supports using PCEF for transit and potentially part of the water-filtration project to offset water-rate increases. That differs from reserving the fund for its existing program mix.",
+    },
+  },
+  "Esther León": {
+    source: campaign("León · issue platform", "https://EstherForPortland.com"),
+    issues: {
+      housing:
+        "Would expand social housing and simplify zoning; proposes vacancy taxes aimed at large landlords, with residential proceeds helping formerly unhoused tenants enter rentals.",
+      safety:
+        "Would fund citywide 24/7 Street Response, expand unarmed support specialists and reduce armed responses; opposes sweeps and favors housing with health or addiction support.",
+      money:
+        "Proposes land-value taxation, targeted vacancy taxes and exploration of basic income for artists. These are proposals, not established city revenue authority or costed programs.",
+      climate:
+        "Supports protected bikeways, car-free plazas, later transit service and a regional transit funding mechanism; opposes Waymo. Regional transit changes require cooperation beyond Council.",
+    },
+  },
+  "Cristal Otero": {
+    source: campaign(
+      "Otero · policy platform",
+      "https://www.cristalforportland.com/my-platform",
+    ),
+    issues: {
+      housing:
+        "Supports more housing across incomes, anti-displacement protections, cooperative and shared-equity ownership.",
+      safety:
+        "Supports emergency response alongside prevention, behavioral health and housing stability; the page does not name a police staffing target.",
+      money:
+        "Would test program results and, when more revenue is necessary, favor taxes on the wealthiest households and largest corporations over working households and small businesses.",
+    },
+  },
+  "Tom Sollitt": {
+    source: campaign(
+      "Sollitt · platform and campaign case studies",
+      "https://TomForPDX.com",
+    ),
+    issues: {
+      housing:
+        "Describes supporting adaptive reuse and the Save Lloyd community’s preservation approach. A citywide production target or financing plan is not established in the reviewed page.",
+      safety:
+        "Would tie police staffing to demonstrated needs, particularly investigations, with accountability and a balance across agencies rather than a fixed officer total.",
+      money:
+        "Would scrutinize contracts before raising taxes or fees, strengthen independent audits, and share or transfer responsibilities where another government can deliver them better.",
+    },
+  },
+  "Kellie Torres": {
+    source: campaign(
+      "Torres · priorities",
+      "https://www.KellieTorresForPortland.com/priorities",
+    ),
+    issues: {
+      housing:
+        "Sets a goal of enabling 4,000 homes annually through fewer code barriers, faster permitting and a mix of rental and ownership housing. This is a campaign target, not a forecast.",
+      safety:
+        "Supports police capacity for investigations, faster emergency responses, public-space maintenance and connecting people in crisis with services.",
+      money:
+        "Would expand public-private partnerships, philanthropy and sponsorships; proposes a reimagined Tom McCall Waterfront Bowl. Costs and committed funding are not established on the reviewed page.",
+      climate:
+        "Emphasizes parks, trails, river access and habitat restoration through public and private partnerships.",
+    },
+  },
+  "Jamey Evenstar": {
+    source: campaign(
+      "Evenstar · six-part platform",
+      "https://evenstarforportland.com/platform",
+    ),
+    issues: {
+      housing:
+        "Would establish a foundation for permanently affordable social housing and housing stability.",
+      safety:
+        "Supports expanded unarmed crisis response and stronger state and county mental-health services.",
+      money:
+        "Favors earlier transparent budgets, participatory budgeting, worker-owned businesses and investment across commercial corridors.",
+      climate:
+        "Proposes lower-cost transit for people under 25, buses separated from traffic, more southwest transit options and climate resilience focused on vulnerable residents.",
+    },
+  },
+  "Eli Arnold": {
+    source: campaign(
+      "Arnold · detailed issue platform",
+      "https://www.eliforportland.com/issues",
+    ),
+    issues: {
+      housing:
+        "Proposes faster filling of subsidized vacancies, stronger screening and pre-placement stabilization, incentives for small builders, and deferring development charges until occupancy or sale.",
+      safety:
+        "Would add four police-clinician behavioral-health units, increase detective and traffic staffing, and expand neighborhood response teams, coordinated with Street Response.",
+      money:
+        "Proposes raising the small-business exemption to $150,000 and a three-to-five-year tax holiday for new small businesses. ",
+      climate:
+        "Supports phased fareless transit and incremental CEI Hub safety improvements, including easier decommissioning of unused petroleum tanks.",
+    },
+  },
+  "Olivia Clark": {
+    source: campaign(
+      "Clark · priorities",
+      "https://www.OliviaforPortland.com/priorities",
+    ),
+    issues: {
+      housing:
+        "Would expedite permits, reduce development fees for affordable housing and seek federal resources.",
+      safety:
+        "Pairs removing street camping and public drug use with more shelter, treatment and sobering capacity. Supports matching 911 calls to EMTs, Street Response or police.",
+      climate:
+        "Prioritizes water, sewer and street systems able to withstand heat, drought and extreme weather.",
+    },
+  },
+  "Mitch Green": {
+    source: campaign(
+      "Green · priorities",
+      "https://mitch4portland.com/priorities",
+    ),
+    issues: {
+      housing:
+        "Favors permanently affordable social housing with rents linked to income and tenant unions built into governance.",
+      money:
+        "Favors public dollars invested in public assets and cooperative ownership. Describes preschool and support for working families as economic development.",
+      climate:
+        "Would preserve and expand PCEF for clean energy and transit; opposes its use for Moda renovations and additional policing. Supports walkable, transit-oriented neighborhoods and car-free spaces.",
+    },
+  },
+};
+
+export function withCouncilAnalysis(person: Candidate): Candidate {
+  const row = rows[person.name];
+  if (!row) return person;
+  const baseSource =
+    person.name === "Darren McCormick"
+      ? person.sources.find((s) => s.url.includes("mccormick-darren"))!
+      : person.sources[0];
+  const extra = supplements[person.name];
+  const issues: NonNullable<Candidate["analysis"]>["issues"] = {};
+  for (const [key, position] of Object.entries(row[2])) {
+    issues[key as keyof Issues] = { position, source: baseSource };
+  }
+  for (const [key, position] of Object.entries(extra?.issues ?? {})) {
+    issues[key as keyof Issues] = { position, source: extra!.source };
+  }
+  if (person.name === "Heart Free Pham") {
+    for (const [topic, path] of [
+      ["housing", "housing"],
+      ["safety", "homelessness"],
+      ["money", "economics"],
+    ] as const) {
+      issues[topic] = {
+        position: row[2][topic]!,
+        source: person.sources.find(
+          (source) => source.url === `https://fightwithheartpdx.com/${path}`,
+        )!,
+      };
+    }
+  }
+  return {
+    ...person,
+    sources: extra ? [...person.sources, extra.source] : person.sources,
+    analysis: {
+      values: row[0],
+      tradeoff: row[1],
+      issues,
+      sources:
+        person.name === "Heart Free Pham"
+          ? person.sources.filter((s) =>
+              s.url.includes("fightwithheartpdx.com"),
+            )
+          : extra
+            ? [baseSource, extra.source]
+            : [baseSource],
+    },
+  };
+}

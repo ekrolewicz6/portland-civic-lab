@@ -17,6 +17,26 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2>
+          September 18, 2026 · Issue comparison and deeper Council research
+        </h2>
+        <p>
+          Added direct candidate selectors and mobile reading cards for
+          governing values, housing, safety, money, climate and recorded
+          decisions. Every candidate receives the same issue framework,
+          including visible evidence gaps. Selections are temporary; there are
+          no rankings or match scores.
+        </p>
+        <p>
+          Added issue-level evidence from twelve campaign websites, including
+          Pham’s rendered issue pages, which resolve the previous
+          current-platform retrieval gap. His policy claims remain attributed
+          rather than treated as verified outcomes. Expanded the same record
+          check for all six incumbents from one to four final actions, including
+          the July service-restoration budget and the September data-center
+          resolution. Distinguished enacted rules, temporary funding,
+          negotiating frameworks and statements of future intent.
+        </p>
         <h2>September 18, 2026 · Council publication</h2>
         <p>
           Released the District 3 and District 4 Council guide as a working
@@ -60,9 +80,17 @@ export default function ResearchLog() {
         </p>
         <h2>Corrections</h2>
         <p>
-          No corrections to a previously published edition have been logged.
-          Future entries should identify the original claim, the correction, its
-          supporting source and the date of the change.
+          September 18, 2026: removed unsupported male pronouns from Jamey
+          Evenstar’s interpretation; the text now uses the candidate’s name.
+          Expanded the brief using the{" "}
+          <a href="https://evenstarforportland.com/platform">
+            current platform
+          </a>{" "}
+          and <a href="https://evenstarforportland.com">campaign biography</a>.
+          Also replaced the assertion that Guy Frankenstein prioritizes
+          confrontation over coalition-building: the reviewed questionnaire
+          supports his policy targets but does not establish his approach to
+          assembling a legislative coalition.
         </p>
         <p>
           <Link href="/voters-guide/methodology#corrections">
