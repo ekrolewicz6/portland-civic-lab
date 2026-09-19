@@ -521,22 +521,13 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
       {stage === "results" && (
         <>
           <p className={styles.lede}>
-            A starting point for your decision. These groups describe the
-            evidence for your answers, not a ranking of candidates.
+            Your choices alongside the record. These are comparisons, not
+            endorsements.
           </p>
           <p className={styles.notice}>
-            This quick comparison currently checks incumbents’ recorded votes.
-            We have not established challengers’ answers to these exact
-            proposals. That research gap is not a disagreement or a reason to
-            rule them out.{" "}
-            <a href="#candidates">
-              Compare the whole field and their campaign proposals.
-            </a>
-          </p>
-          <p className={styles.note}>
-            A few choices cannot establish who would represent you best. Use the
-            profiles to weigh current promises, experience and the reasons
-            behind decisions.
+            Recorded votes only. Challengers’ answers to these proposals are
+            still unknown—not disagreements.{" "}
+            <a href="#candidates">Read everyone’s campaign positions.</a>
           </p>
           <details className={styles.preferences}>
             <summary>Your choices &amp; how these results work</summary>
