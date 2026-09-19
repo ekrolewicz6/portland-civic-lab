@@ -1,3 +1,8 @@
+import {
+  explorerVersion,
+  explorerTopics,
+  hasTopic,
+} from "@/lib/voters-guide/explorer";
 import { races } from "@/lib/voters-guide/published";
 import { REVIEW_DATE } from "@/lib/voters-guide/types";
 import { councilDecisions } from "@/lib/voters-guide/council-decisions";
@@ -30,7 +35,26 @@ export function GET() {
       decisionAccounts,
       councilDisagreements,
       councilCoverageAudit,
+      explorer: {
+        version: explorerVersion,
+        topics: explorerTopics,
+        coverage: races.map((race) => ({
+          raceId: race.id,
+          topics: explorerTopics.map((topic) => ({
+            id: topic.id,
+            documented: race.candidates
+              .filter((p) => hasTopic(p, topic.id))
+              .map((p) => p.id),
+            total: race.candidates.length,
+          })),
+        })),
+        rules:
+          "Alphabetical, source-backed topic comparison. No alignment scoring or experience filtering. Missing topic positions are listed separately; all candidates remain available at a glance. Selected candidates without a topic position retain their broader platform, explicitly labeled.",
+      },
       discovery: {
+        status: "Retired; not used by the current guide",
+        retiredReason:
+          "Sparse answers to exact proposals could not produce useful candidate alignment results.",
         version: discoveryVersion,
         questions,
         experienceOptions,

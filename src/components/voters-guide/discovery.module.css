@@ -1,301 +1,210 @@
 .discovery {
   margin: 2rem 0 4rem;
-  padding: clamp(1.2rem, 4vw, 3.5rem);
+  padding: clamp(1rem, 3vw, 2.5rem);
   background: #f4f1e8;
   border: 1px solid #d4d8cb;
-  border-radius: 20px;
+  border-radius: 18px;
   color: #183d34;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 90px;
+}
+.discovery[data-selected="true"] {
+  padding-bottom: 210px;
 }
 .topline {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: #52665a;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .discovery h2 {
+  font:
+    400 clamp(1.9rem, 4vw, 3.3rem)/1.1 Georgia,
+    serif;
+  margin: 0 0 1rem;
   scroll-margin-top: 90px;
-  font-family: Georgia, serif;
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  font-weight: 400;
-  line-height: 1.1;
-  max-width: 800px;
-  margin: 0 0 1.25rem;
-  outline-offset: 8px;
 }
 .discovery p {
-  line-height: 1.65;
+  line-height: 1.6;
   margin: 0.75rem 0;
-  max-width: 76ch;
 }
 .lede {
-  font-size: 1.13rem;
-  color: #365449;
+  font-size: 1.05rem;
+  max-width: 65ch;
 }
 .discovery button,
-.select select {
+.discovery select {
   font: inherit;
-  min-height: 48px;
-  border: 1px solid #a8b8ab;
-  border-radius: 9px;
-  background: #fffdf7;
-  padding: 0.8rem 1rem;
   color: #183d34;
+  background: #fffdf7;
+  border: 1px solid #a8b8ab;
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  min-height: 44px;
   cursor: pointer;
-  text-align: left;
 }
 .discovery button:hover {
-  border-color: #183d34;
   background: #e7eddf;
 }
-.discovery button:focus-visible,
-.discovery a:focus-visible,
-.discovery summary:focus-visible {
-  outline: 3px solid #846018;
-  outline-offset: 4px;
-}
 .discovery button[aria-pressed="true"] {
-  background: #e0ebdc;
+  background: #dfeadb;
   border: 2px solid #285544;
-  padding: calc(0.8rem - 1px) calc(1rem - 1px);
-}
-.discovery button[aria-pressed="true"]::before {
-  content: "✓ ";
-  font-weight: bold;
 }
 .discovery button:disabled {
   opacity: 0.5;
   cursor: default;
 }
+.discovery :is(button, a, select, summary):focus-visible {
+  outline: 3px solid #846018;
+  outline-offset: 3px;
+}
 .discovery .primary {
   background: #183d34;
   color: white;
   border-color: #183d34;
-  padding: 1rem 1.4rem;
 }
-.discovery .primary:hover {
-  background: #285544;
-}
-.steps {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 2rem 0;
-  font-size: 0.9rem;
-}
-.steps b {
-  color: #6e7344;
-  margin-right: 0.5rem;
-  font-size: 0.75rem;
-}
-.choices {
+.topicControl {
   display: grid;
-  gap: 0.7rem;
-  margin: 1.5rem 0;
-  max-width: 800px;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem;
+  max-width: 480px;
 }
-.choices button {
+.topicControl select {
   width: 100%;
-}
-.choices strong,
-.choices span {
-  display: block;
-}
-.choices span {
-  font-size: 0.9rem;
-  color: #536357;
-  margin-top: 0.35rem;
-}
-.actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  max-width: 800px;
-  margin: 2rem 0;
+  font-size: 1rem;
 }
 .note {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: #52665a;
-}
-.footer {
-  border-top: 1px solid #ccd4c8;
-  margin-top: 2rem;
-  padding-top: 1.25rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-  font-size: 0.85rem;
-}
-.discovery a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.footer button {
-  min-height: 44px;
-  padding: 0.5rem 0.7rem;
-}
-.requirement {
-  display: flex;
-  gap: 0.7rem;
-  align-items: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-.requirement input {
-  width: 20px;
-  height: 20px;
-  accent-color: #183d34;
-}
-.preferences {
-  padding: 1rem;
-  margin: 1rem 0;
-  background: #e8eddf;
-  border-radius: 10px;
-}
-.preferences button {
-  margin: 0.5rem 0.5rem 0.5rem 0;
-}
-.discovery summary {
-  cursor: pointer;
-  min-height: 40px;
-  padding: 0.5rem 0;
-  font-weight: 600;
-}
-.group {
-  margin: 2rem 0;
-}
-.group h3 {
-  font-size: 1.35rem;
-  margin-bottom: 1rem;
-}
-.group h3 span {
-  font-weight: 400;
 }
 .cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
-  align-items: start;
+  align-items: stretch;
 }
 .card {
+  padding: 1.2rem;
   background: #fffdf8;
-  padding: 1.3rem;
   border: 1px solid #d2d9ce;
-  border-radius: 13px;
+  border-radius: 12px;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
   overflow-wrap: anywhere;
 }
 .identity {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.4rem;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.identity h3 {
+  font:
+    500 1.35rem/1.2 Georgia,
+    serif;
+  margin: 0;
 }
 .portrait {
-  width: 72px;
+  width: 58px;
   flex-shrink: 0;
 }
-.identity h3,
-.identity h4 {
-  font:
-    500 1.45rem Georgia,
-    serif;
-  margin: 0 0 0.35rem;
+.position {
+  font-size: 0.98rem;
 }
-.identity a {
+.source {
   font-size: 0.8rem;
-}
-.card h5 {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.045em;
-  margin: 1.25rem 0 0.3rem;
-  color: #56715c;
-}
-.card p {
-  font-size: 0.97rem;
-}
-.card .note {
-  font-size: 0.8rem;
+  align-self: flex-start;
 }
 .card details {
   border-top: 1px solid #d2d9ce;
   margin-top: 1rem;
-  padding: 0.5rem 0;
+  padding-top: 0.4rem;
 }
-.card > button {
-  margin-top: 1rem;
-  width: 100%;
-}
-.card section {
-  margin: 1rem 0;
-}
-.notice {
-  background: #fff4dc;
-  padding: 1rem;
-  border-left: 3px solid #9c7629;
-}
-.select {
-  display: block;
-  margin: 1.5rem 0;
+.discovery summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 0.6rem 0;
+  font-size: 0.85rem;
   font-weight: 600;
 }
-.select select {
+.card details p {
+  font-size: 0.9rem;
+}
+.sources {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+.cardActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  padding-top: 1rem;
+  margin-top: auto;
+  font-size: 0.8rem;
+}
+.cardActions button {
+  font-size: 0.85rem;
+}
+.gaps {
+  font-size: 0.85rem;
+  margin: 0.7rem 0 1rem;
+  border-top: 1px solid #ccd4c8;
+  border-bottom: 1px solid #ccd4c8;
+}
+.gaps ul {
+  padding-left: 1.2rem;
+}
+.gaps li {
+  margin: 0.8rem 0;
+}
+.gaps li span {
   display: block;
-  width: 100%;
-  margin-top: 0.5rem;
-  white-space: normal;
+  margin-top: 0.3rem;
+  color: #52665a;
 }
-.sr {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+.viewActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin: 1rem 0;
+  font-size: 0.85rem;
 }
-@media (max-width: 700px) {
-  .discovery[data-stage="question"] h2 {
-    font-size: 1.6rem;
-    line-height: 1.2;
-  }
-  .cards {
-    grid-template-columns: 1fr;
-  }
-  .discovery {
-    border-radius: 12px;
-    padding: 1.1rem;
-  }
-  .topline {
-    font-size: 0.65rem;
-    letter-spacing: 0.05em;
-  }
-  .steps {
-    display: grid;
-    gap: 0.7rem;
-  }
-  .actions {
-    gap: 0.6rem;
-  }
-  .actions button {
-    font-size: 0.9rem;
-  }
-  .card {
-    padding: 1rem;
-  }
+.footer {
+  border-top: 1px solid #ccd4c8;
+  padding-top: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.82rem;
 }
-/* Multi-select screens keep their action reachable without ending selection early. */
-.discovery[data-stage="priorities"],
-.discovery[data-stage="experience"] {
-  padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
+.selectionBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  margin: 1rem 0;
+}
+.selectedNames {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+.selectedNames button {
+  min-height: 32px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.75rem;
 }
 .discovery .floatingActions {
   position: fixed;
@@ -305,7 +214,7 @@
   transform: translateX(-50%);
   box-sizing: border-box;
   width: 100%;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0;
   padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
   background: #f4f1e8;
@@ -313,9 +222,31 @@
   border-radius: 12px 12px 0 0;
   box-shadow: 0 -4px 20px #183d341a;
 }
-.floatingActions .primary {
-  flex: 1;
-  text-align: center;
+@media (max-width: 700px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .paired {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+  .paired .card {
+    padding: 0.7rem;
+  }
+  .paired .identity {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .paired .identity h3 {
+    font-size: 1.12rem;
+  }
+  .paired .position {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+  .selectionBar .primary {
+    width: 100%;
+  }
 }
 @media print {
   .discovery {

@@ -8,12 +8,10 @@ import {
   decisionAccounts,
 } from "../src/lib/voters-guide/council-record-accounts";
 import {
-  assess,
-  discoveryEvidence,
-  orderResults,
-  questions,
-  questionCoverage,
-} from "../src/lib/voters-guide/discovery";
+  explorerTopics,
+  hasTopic,
+  topicPosition,
+} from "../src/lib/voters-guide/explorer";
 const hash = (value: unknown) =>
   createHash("sha256").update(JSON.stringify(value)).digest("hex");
 const people = races.flatMap((r) => r.candidates);
@@ -31,259 +29,203 @@ test("all existing research and sources are preserved exactly", async () => {
     );
   expect(hash(decisionAccounts)).toBe(baseline.accountsHash);
 });
-test("exact votes, conditions, absence and race coverage control comparison", async () => {
-  const novick = people.find((p) => p.id === "steve-novick")!;
-  const challenger = people.find((p) => p.id === "john-sweeney")!;
-  expect(
-    assess(novick, { "homebuyer-income": "yes" }, []).aligned,
-  ).toHaveLength(1);
-  expect(
-    assess(novick, { "homebuyer-income": "no" }, []).different,
-  ).toHaveLength(1);
-  expect(
-    assess(novick, { "homebuyer-income": "depends" }, []).unknown,
-  ).toHaveLength(1);
-  // An arena opinion does not establish a vote on this specific term sheet.
-  expect(assess(challenger, { moda: "yes" }, []).different).toHaveLength(0);
-  expect(assess(challenger, { moda: "yes" }, []).unknown).toHaveLength(1);
-  const d4 = races.find((r) => r.id.endsWith("4"))!.candidates;
-  const camps = questions.find((q) => q.id === "camp-removal")!;
-  expect(questionCoverage(d4, camps)).toEqual({
-    known: 1,
-    total: 12,
-    comparable: false,
-  });
-  expect(
-    orderResults(d4, { "camp-removal": "yes" }, []).every((r) => r.group === 3),
-  ).toBe(true);
-  const d3 = races.find((r) => r.id.endsWith("3"))!.candidates;
-  // Unanimity is informative but cannot distinguish this field.
-  expect(
-    questionCoverage(
-      d3,
-      questions.find((q) => q.id === "street-fee")!,
-    ).comparable,
-  ).toBe(false);
-  expect(assess(novick, { nonsense: "yes" }, []).group).toBe(3);
-});
-test("evidence mapping is valid and requirements do not invent skills", async () => {
-  for (const person of people)
-    for (const [id, p] of Object.entries(discoveryEvidence(person).positions)) {
-      const q = questions.find((q) => q.id === id)!;
-      expect(q).toBeTruthy();
-      expect(p.source.url).toMatch(/^https:\/\//);
-      expect(p.text.length).toBeGreaterThan(20);
-      for (const option of [...p.supported, ...p.opposed])
-        expect(q.options.some((o) => o.id === option)).toBe(true);
-    }
-  const results = orderResults(people, {}, [
-    { id: "agreements", requirement: true },
-  ]);
-  expect(results.every((r) => r.unmet.length === 1)).toBe(true);
-  const candidates = orderResults(people, {}, []);
-  expect(candidates.map((r) => r.person.name)).toEqual(
-    people.map((p) => p.name).sort((a, b) => a.localeCompare(b)),
-  );
-});
-for (const district of [3, 4])
-  test(`district ${district}: mobile flow, shortlist, privacy and preservation`, async ({
+for (const district of [3, 4]) {
+  const race = races.find((r) => r.id.endsWith(String(district)))!;
+  test(`district ${district}: every topic returns sourced positions, not empty match cards`, async ({
     page,
   }) => {
-    await page.setViewportSize({ width: 390, height: 844 });
+    await page.setViewportSize({ width: 390, height: 700 });
     const errors: string[] = [];
-    page.on("pageerror", (e) => errors.push(e.message));
+    page.on("pageerror", (error) => errors.push(error.message));
     await page.goto(`/voters-guide/portland-district-${district}`);
     const guide = page.getByRole("region", {
-      name: "Find candidates to consider",
+      name: "Quick candidate comparison",
       exact: true,
     });
-    await guide
-      .getByRole("button", { name: "Find candidates to consider" })
-      .click();
-    await guide
-      .getByRole("button", { name: "Homes people can afford" })
-      .click();
-    await guide.getByRole("button", { name: /Continue/ }).click();
-    await guide.getByRole("button", { name: /Yes —/ }).click();
-    await guide.getByRole("button", { name: "Explore candidates →" }).click();
-    await expect(
-      guide.getByRole("heading", {
-        name: "Agreement on every choice we checked",
-      }),
-    ).toBeVisible();
-    await guide
-      .getByRole("button", { name: /Save to my shortlist/ })
-      .first()
-      .click();
-    await guide.getByRole("button", { name: "My shortlist (1)" }).click();
-    await guide.getByRole("combobox").selectOption("experience");
-    await expect(
-      guide.getByText("Reported roles, not a rating of successful outcomes."),
-    ).toBeVisible();
-    expect(new URL(page.url()).search).toBe("");
+    const cards = guide.locator("[data-candidate]");
+    await expect(cards).toHaveCount(race.candidates.length);
+    for (const topic of explorerTopics) {
+      await guide.getByLabel("Explore a topic").selectOption(topic.id);
+      const known = race.candidates.filter((p) => hasTopic(p, topic.id));
+      expect(known.length).toBeGreaterThan(1);
+      await expect(cards).toHaveCount(known.length);
+      for (const person of known) {
+        const card = guide.locator(`[data-candidate="${person.id}"]`);
+        const position = topicPosition(person, topic.id);
+        await expect(card).toContainText(
+          topic.id === "experience"
+            ? person.background
+            : (position?.position ?? person.summary),
+        );
+        if (position)
+          await expect(
+            card.getByRole("link", { name: /· source/ }),
+          ).toHaveAttribute("href", position.source.url);
+        await expect(
+          card.getByRole("link", { name: "Full profile & record →" }),
+        ).toHaveAttribute("href", `#${person.id}`);
+      }
+      const missing = race.candidates.filter((p) => !hasTopic(p, topic.id));
+      if (missing.length) {
+        const gaps = guide
+          .locator("details")
+          .filter({
+            has: page.locator("summary", { hasText: "more candidates" }),
+          });
+        await gaps.locator("summary").click();
+        for (const person of missing)
+          await expect(
+            gaps.getByRole("link", { name: person.name, exact: true }),
+          ).toHaveAttribute("href", `#${person.id}`);
+        await gaps.locator("summary").click();
+      }
+      await expect(
+        guide.getByText(/We have not established alignment/),
+      ).toHaveCount(0);
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth,
+        ),
+      ).toBe(true);
+    }
+    await page.setViewportSize({ width: 1365, height: 900 });
     expect(
       await page.evaluate(
-        () => document.documentElement.scrollWidth <= window.innerWidth,
+        () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBe(true);
-    await page.reload();
-    await expect(
-      guide.getByRole("button", { name: "My shortlist (1)" }),
-    ).toBeVisible();
-    await guide.getByRole("button", { name: "My shortlist (1)" }).click();
-    await guide
-      .getByRole("button", { name: "Reset answers & shortlist" })
-      .click();
-    await expect(
-      guide.getByRole("button", { name: "My shortlist (0)" }),
-    ).toBeVisible();
-    for (const c of races.find((r) => r.id.endsWith(String(district)))!
-      .candidates)
-      await expect(page.locator(`article#${c.id}`)).toHaveCount(1);
-    await page.goto(
-      `/voters-guide/portland-district-${district}#disagreement-zenith`,
-    );
-    await expect(page.locator("#disagreements")).toBeVisible();
     expect(errors).toEqual([]);
   });
-test("empty requirements, storage failure and zero policy answers remain usable", async ({
-  page,
-}) => {
-  await page.addInitScript(() => {
-    Object.defineProperty(window, "sessionStorage", {
-      get() {
-        throw new Error("Storage disabled");
-      },
-    });
-  });
-  await page.goto("/voters-guide/portland-district-4");
-  const guide = page.getByRole("region", {
-    name: "Find candidates to consider",
-    exact: true,
-  });
-  await guide
-    .getByRole("button", { name: "Find candidates to consider" })
-    .click();
-  await guide.getByRole("button", { name: /Skip policy questions/ }).click();
-  await guide
-    .getByRole("button", { name: "Building agreements across groups" })
-    .click();
-  await guide.getByRole("checkbox").check();
-  await guide.getByRole("button", { name: "Explore candidates →" }).click();
-  await expect(
-    guide.getByText(/No requirement has been relaxed/),
-  ).toBeVisible();
-  await expect(
-    guide.getByText(/You have not selected a policy approach/),
-  ).toBeVisible();
-  await expect(guide.getByText(/Browser storage is unavailable/)).toBeVisible();
-  await guide
-    .getByText("Experience requirements not established (12 candidates)", {
-      exact: true,
-    })
-    .click();
-  await expect(guide.getByRole("article")).toHaveCount(12);
-});
+}
 
-test("three priorities take at most five screens; extra questions are optional", async ({
-  page,
-}) => {
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/voters-guide/portland-district-4");
-  const guide = page.getByRole("region", {
-    name: "Find candidates to consider",
-    exact: true,
-  });
-  await guide
-    .getByRole("button", { name: "Find candidates to consider" })
-    .click();
-  for (const name of [
-    "Homes people can afford",
-    "Public safety",
-    "Climate & environmental health",
-  ])
-    await guide.getByRole("button", { name }).click();
-  await expect(
-    guide.getByRole("button", { name: "Getting around" }),
-  ).toBeDisabled();
-  await guide.getByRole("button", { name: /Continue/ }).click();
-  for (let i = 1; i <= 3; i++) {
-    await expect(
-      guide.getByText(new RegExp(`Question ${i} of 3`)),
-    ).toBeVisible();
-    if (i === 2) {
-      await guide
-        .getByRole("button", { name: "Not sure — skip this question" })
-        .click();
-      continue;
-    }
-    await guide.getByRole("button", { name: /^It depends$/ }).click();
-  }
-  await expect(
-    guide.getByRole("heading", { name: "What experience matters to you?" }),
-  ).toBeVisible();
-  await guide.getByRole("button", { name: "Explore candidates →" }).click();
-  await expect(guide.getByRole("article")).toHaveCount(12);
-  await expect(
-    guide.getByRole("heading", { name: /Agreement on every/ }),
-  ).toHaveCount(0);
-  await guide
-    .getByText("Want to explore one more choice? (Optional)", { exact: true })
-    .click();
-  await guide
-    .getByRole("button", { name: /starting terms for renovating Moda/ })
-    .click();
-  await expect(guide.getByText(/Optional extra question/)).toBeVisible();
-  await guide.getByRole("button", { name: /No —/ }).click();
-  await expect(
-    guide.getByRole("heading", { name: "Candidates to explore", exact: true }),
-  ).toBeVisible();
-});
-
-test("mobile multi-select actions stay in view and answers advance with Back support", async ({
+test("District 4 homelessness leads to real comparisons and carries selections into full research", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 700 });
   await page.goto("/voters-guide/portland-district-4");
   const guide = page.getByRole("region", {
-    name: "Find candidates to consider",
+    name: "Quick candidate comparison",
     exact: true,
   });
-  await guide
-    .getByRole("button", { name: "Find candidates to consider" })
-    .click();
-  await guide.getByRole("button", { name: "Homes people can afford" }).click();
-  const next = guide.getByRole("button", { name: "Continue with 1 question" });
-  await expect(next).toBeInViewport({ ratio: 1 });
+  await guide.getByLabel("Explore a topic").selectOption("safety");
+  await expect(guide.locator('[data-candidate="olivia-clark"]')).toContainText(
+    "Pairs removing street camping",
+  );
+  for (const name of ["Eli Arnold", "Olivia Clark"])
+    await guide
+      .getByRole("button", {
+        name: `Select ${name} for quick comparison`,
+        exact: true,
+      })
+      .click();
   await expect(
-    guide.getByRole("button", { name: "Homes people can afford" }),
+    guide.getByRole("button", { name: "Compare these two →" }),
+  ).toBeInViewport({ ratio: 1 });
+  await guide.getByRole("button", { name: "Compare these two →" }).click();
+  await expect(guide.locator("[data-candidate]")).toHaveCount(2);
+  await expect(
+    guide.getByRole("heading", { name: "See their differences." }),
+  ).toBeInViewport();
+  await guide.getByLabel("Explore a topic").selectOption("climate");
+  await expect(guide.locator('[data-candidate="olivia-clark"]')).toContainText(
+    "water, sewer and street systems",
+  );
+  await guide.getByLabel("Explore a topic").selectOption("safety");
+  await guide.getByRole("link", { name: "Compare full records →" }).click();
+  await expect(
+    page.getByRole("combobox", { name: "Candidate 1", exact: true }),
+  ).toHaveValue("eli-arnold");
+  await expect(
+    page.getByRole("combobox", { name: "Candidate 2", exact: true }),
+  ).toHaveValue("olivia-clark");
+  await expect(
+    page
+      .getByRole("group", { name: "Comparison issue" })
+      .getByRole("button", { name: "Safety & homelessness" }),
   ).toHaveAttribute("aria-pressed", "true");
-  await next.click();
-  await guide.getByRole("button", { name: /Yes —/ }).click();
-  await expect(
-    guide.getByRole("heading", { name: "What experience matters to you?" }),
-  ).toBeVisible();
-  await expect(
-    guide.getByRole("button", { name: "Explore candidates →" }),
-  ).toBeInViewport({ ratio: 1 });
-  await guide.getByRole("button", { name: "Back", exact: true }).click();
-  await expect(guide.getByRole("button", { name: /Yes —/ })).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
-  await guide.getByRole("button", { name: /No —/ }).click();
-  await guide.getByRole("button", { name: "Working with budgets" }).click();
-  await guide
-    .getByRole("button", { name: "Delivering projects or services" })
+  await page
+    .locator("#compare")
+    .getByRole("link", { name: "← Back to quick comparison" })
     .click();
-  await expect(guide.getByRole("checkbox")).toHaveCount(2);
+  await expect(guide.locator("[data-candidate]")).toHaveCount(2);
+  await guide
+    .locator('[data-candidate="eli-arnold"]')
+    .getByRole("link", { name: "Full profile & record →" })
+    .click();
+  await page
+    .locator("article#eli-arnold")
+    .getByRole("link", { name: "← Back to quick comparison" })
+    .click();
+  await expect(guide.getByLabel("Explore a topic")).toHaveValue("safety");
+  expect(new URL(page.url()).search).toBe("");
+  await page.reload();
+  await expect(guide.getByLabel("Explore a topic")).toHaveValue("safety");
   await expect(
-    guide.getByRole("button", { name: "Explore candidates →" }),
-  ).toBeInViewport({ ratio: 1 });
-  await guide.getByRole("button", { name: "Explore candidates →" }).click();
-  const stored = await page.evaluate(() =>
-    JSON.parse(sessionStorage.getItem("pcl-guide-portland-district-4")!),
+    guide.getByRole("button", {
+      name: "Remove Eli Arnold for quick comparison",
+      exact: true,
+    }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await guide.getByRole("button", { name: "Compare these two →" }).click();
+  await expect(guide.locator("[data-candidate]")).toHaveCount(2);
+  await guide.getByRole("button", { name: "Clear selection" }).click();
+  await expect(
+    guide.getByRole("button", { name: "Compare these two →" }),
+  ).toHaveCount(0);
+});
+
+test("a missing topic shows the selected person's broader platform, never an empty result", async ({
+  page,
+}) => {
+  const race = races.find((r) => r.id.endsWith("4"))!;
+  const missing = race.candidates.find((p) => !hasTopic(p, "safety"))!;
+  const known = race.candidates.find((p) => hasTopic(p, "safety"))!;
+  await page.goto("/voters-guide/portland-district-4");
+  const guide = page.getByRole("region", {
+    name: "Quick candidate comparison",
+    exact: true,
+  });
+  for (const person of [missing, known])
+    await guide
+      .getByRole("button", {
+        name: `Select ${person.name} for quick comparison`,
+        exact: true,
+      })
+      .click();
+  await guide.getByRole("button", { name: "Compare these two →" }).click();
+  await guide.getByLabel("Explore a topic").selectOption("safety");
+  const card = guide.locator(`[data-candidate="${missing.id}"]`);
+  await expect(card).toContainText("Here is their broader platform.");
+  await expect(card).toContainText(missing.summary);
+  await expect(guide.locator("[data-candidate]")).toHaveCount(2);
+});
+
+test("storage failure does not block browsing or comparing", async ({
+  page,
+}) => {
+  await page.addInitScript(() =>
+    Object.defineProperty(window, "sessionStorage", {
+      get() {
+        throw new Error("Storage disabled");
+      },
+    }),
   );
-  expect(stored.answers["homebuyer-income"]).toBe("no");
-  await expect(guide.locator('[class*="floatingActions"]')).toHaveCount(0);
+  await page.goto("/voters-guide/portland-district-4");
+  const guide = page.getByRole("region", {
+    name: "Quick candidate comparison",
+    exact: true,
+  });
+  await expect(guide.locator("[data-candidate]")).toHaveCount(12);
+  await guide.getByLabel("Explore a topic").selectOption("safety");
+  await guide
+    .getByRole("button", { name: /Select .* for quick comparison/ })
+    .first()
+    .click();
+  await guide
+    .getByRole("button", { name: /Select .* for quick comparison/ })
+    .first()
+    .click();
+  await guide.getByRole("button", { name: "Compare these two →" }).click();
+  await expect(guide.locator("[data-candidate]")).toHaveCount(2);
+  await expect(guide.getByText(/this browser cannot save them/)).toBeVisible();
 });

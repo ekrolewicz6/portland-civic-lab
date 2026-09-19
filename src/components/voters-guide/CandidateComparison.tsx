@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   comparisonTopics,
   type ComparisonTopic,
 } from "@/lib/voters-guide/council-topics";
 import { councilDecisions } from "@/lib/voters-guide/council-decisions";
 import { councilDisagreements } from "@/lib/voters-guide/council-record-accounts";
+import { comparisonEvent } from "@/lib/voters-guide/explorer";
 import CandidatePortrait from "./CandidatePortrait";
 import CouncilDisagreements, {
   CouncilIssuePicker,
@@ -54,6 +55,7 @@ function Profile({
             <a href={`#${person.id}`}>{person.name}</a>
           </h2>
           <p>{person.background}</p>
+          <a href="#find-candidates">← Back to quick comparison</a>
           {person.portrait && (
             <a className={styles.photoCredit} href={person.portrait.sourceUrl}>
               Photo: {person.portrait.credit} ↗
@@ -250,6 +252,26 @@ export default function CandidateComparison({ race }: { race: Race }) {
   const [third, setThird] = useState(false);
   const [topic, setTopic] = useState<ComparisonTopic>("values");
   const [recordIssue, setRecordIssue] = useState("supplemental-budget");
+  useEffect(() => {
+    function open(event: Event) {
+      const detail = (event as CustomEvent).detail;
+      if (detail?.raceId !== race.id || !Array.isArray(detail.selected)) return;
+      const ids = [
+        ...new Set<string>(
+          detail.selected.filter((id: string) =>
+            race.candidates.some((p) => p.id === id),
+          ),
+        ),
+      ].slice(0, 3);
+      setSelected([ids[0] ?? "", ids[1] ?? "", ids[2] ?? ""]);
+      setThird(ids.length === 3);
+      if (comparisonTopics.some((t) => t.id === detail.topic))
+        setTopic(detail.topic);
+    }
+    window.addEventListener(comparisonEvent, open);
+    return () => window.removeEventListener(comparisonEvent, open);
+  }, [race.id, race.candidates]);
+
   const recordTopic = councilDisagreements.find(
     (item) => item.id === recordIssue,
   )!;
@@ -297,6 +319,7 @@ export default function CandidateComparison({ race }: { race: Race }) {
         id="compare"
         aria-labelledby="compare-heading"
       >
+        <a href="#find-candidates">← Back to quick comparison</a>
         <div className={styles.studioHeading}>
           <div>
             <div className={styles.eyebrow}>Your choice. A clearer view.</div>

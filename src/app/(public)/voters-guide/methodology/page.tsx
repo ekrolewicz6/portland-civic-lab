@@ -265,43 +265,36 @@ export default function Methodology() {
           response. An open question is our research question, not a claim that
           a candidate refused to answer it.
         </p>
-        <h2 id="guided-comparison">How the guided introduction works</h2>
+        <h2 id="guided-comparison">How the quick comparison works</h2>
         <p>
-          The optional introduction starts with your priorities, concrete policy
-          choices and preferences about relevant experience. It gives no match
-          percentage, endorsement or ballot order. The complete research guide
-          remains available without answering any questions.
+          Choose a topic to read candidates’ documented positions, then select
+          two to compare. Candidates appear alphabetically. There is no quiz,
+          match score or recommendation. Campaign statements and recorded
+          actions are identified by their sources; our interpretation appears
+          under “Background &amp; context.”
         </p>
         <p>
-          The short route asks up to three questions, one per priority, followed
-          by optional experience preferences. Extra questions come after
-          results. We compare answers with votes on the exact proposal, not
-          broad campaign goals. A past vote does not establish a candidate’s
-          complete current position. Challengers’ answers to these exact
-          proposals are not yet established; their campaign positions remain in
-          the full profiles. Each question reports how many candidates have
-          evidence. A question affects groups only when at least two candidates
-          have recorded votes and those votes differ within the race. “It
-          depends,” absence and missing evidence never become agreement or
-          disagreement. Individual explanations and the limits of each vote
-          remain available. Repeated votes add no weight, and there is no
-          overall score.
+          Topic views show the positions established in our research. Candidates
+          without a documented position are listed together, with links to their
+          profiles. “At a glance” and “Experience” include everyone. If a
+          selected candidate lacks a topic position, the comparison says so and
+          shows their broader platform rather than inventing an answer. Reported
+          experience does not establish successful outcomes.
         </p>
         <p>
-          Within each policy group, relevant experience you selected moves a
-          candidate forward; otherwise names appear alphabetically. An
-          experience requirement limits initial results, with everyone else
-          still accessible. Reported roles are labeled and do not establish
-          successful outcomes. A missing example does not establish a lack of
-          ability. The evidence export includes the question bank and candidate
-          mappings.
+          Your topic and two comparison selections stay in this browser tab.
+          They carry into the full comparison when you choose “Compare full
+          records.” Clear selection removes the selected names. The earlier
+          alignment quiz is retired: too few candidates had documented answers
+          to its exact proposals to produce useful comparisons. Its data remains
+          marked as retired in the evidence export; it does not determine the
+          current candidate display.
         </p>
         <p>
-          Your answers and shortlist stay in this browser tab’s session storage.
-          They are not sent to us or placed in the page address. Reset clears
-          your choices. Real first-time-voter usability testing and independent
-          editorial review remain outstanding; technical checks are not a
-          substitute.
+          Every original profile, decision and issue analysis remains available.
+          Technical tests check coverage, navigation and preservation.
+          Independent editorial review and first-time-voter usability testing
+          remain outstanding.
         </p>
         <h2>Sources and reproducibility</h2>
         <p>
