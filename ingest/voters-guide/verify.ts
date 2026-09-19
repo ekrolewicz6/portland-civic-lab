@@ -70,7 +70,7 @@ for (const person of publishedRaces.flatMap((r) => r.candidates)) {
   if (person.background.startsWith("Incumbent")) {
     assert.equal(
       person.record?.length,
-      4,
+      councilDecisions.length,
       `Unequal record sample: ${person.name}`,
     );
   }

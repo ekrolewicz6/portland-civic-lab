@@ -63,6 +63,24 @@
       "sha256": "60e27e1a8a087525ac104d6edaeb8d48a3149a4c63c743eb1fae4057a2031d5c"
     },
     {
+      "url": "https://content.govdelivery.com/accounts/ORPORTLAND_ENT/bulletins/41c8000",
+      "representation": "normalized extracted page text",
+      "workingFile": "1021360bd53e.txt",
+      "sha256": "c4e1a8a055a4d2f3ee5e879d89f2b4b4cfcf44428fe48ad8851051b7717069ad"
+    },
+    {
+      "url": "https://council.portlandciviclab.org",
+      "representation": "normalized extracted page text",
+      "workingFile": "e1cc7d8c0ad5.txt",
+      "sha256": "67e926de760f743307140f4891af7fd7bbdfa12887f25bdfb4042807ae4c4323"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/issues",
+      "representation": "normalized extracted page text",
+      "workingFile": "4a311394fd2b.txt",
+      "sha256": "a3e426b4c00d660303a6820b3f072a287ed88314b8a484fc4c80d4479b2b9bbb"
+    },
+    {
       "url": "https://council.portlandciviclab.org/people",
       "representation": "normalized extracted page text",
       "workingFile": "46a43e75ba67.txt",
@@ -73,6 +91,18 @@
       "representation": "normalized extracted page text",
       "workingFile": "b8afe294182a.txt",
       "sha256": "07b9c2d5f270496cc4d67f2a9376b821759ea256d60e9d9c259321a27e7ea946"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics",
+      "representation": "normalized extracted page text",
+      "workingFile": "e84eea203977.txt",
+      "sha256": "02820899ab63dbaee206e16a36619fd9cfd4adf1a61da63becd5aa22f8cf2a67"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/city-budget-service-cuts",
+      "representation": "normalized extracted page text",
+      "workingFile": "1bd7d15fef9f.txt",
+      "sha256": "9b4751e8b9d04b16ebe4fdbe5ebd94a02d5ec2f5c50e4ad269fe827a74b90d7a"
     },
     {
       "url": "https://council.portlandciviclab.org/topics/citywide-asset-management",
@@ -91,6 +121,42 @@
       "representation": "original download",
       "workingFile": "clackamas.pdf",
       "sha256": "43ab678ea022e98215a73afa2868c18317a366556164a8dcddc0882196eb125b"
+    },
+    {
+      "url": "https://efiles.portlandoregon.gov/record/17392722",
+      "representation": "normalized extracted page text",
+      "workingFile": "8ac341048e90.txt",
+      "sha256": "697ef50e316586734412851c636d7ed2bcdd9ce6301636c52989b6beedbdcb13"
+    },
+    {
+      "url": "https://efiles.portlandoregon.gov/record/17392841/file/document/",
+      "representation": "official archived PDF",
+      "workingFile": "4c806be76197.pdf",
+      "sha256": "7f06a82d7f0323ae2e19e063572bc87e0e44b4b14138368d77d7bfb7a168054a"
+    },
+    {
+      "url": "https://efiles.portlandoregon.gov/record/18024836",
+      "representation": "normalized extracted page text",
+      "workingFile": "6c37f41f8cd9.txt",
+      "sha256": "cc14a18f981660c0678ccbc997fe695bd2e9246c10643e3ef71517f226557b0b"
+    },
+    {
+      "url": "https://efiles.portlandoregon.gov/record/18024844/file/document/",
+      "representation": "official archived PDF",
+      "workingFile": "2d1da788d1c9.pdf",
+      "sha256": "95fd34591bda922ae07994ffe39d9f5903cb09144b00f8881bfe3668f9dd6e63"
+    },
+    {
+      "url": "https://efiles.portlandoregon.gov/record?q=recContainer%3A17392722&sortBy=recCreatedOn&pagesize=20",
+      "representation": "normalized extracted page text",
+      "workingFile": "46bff95cc24c.txt",
+      "sha256": "f5fdf2b11b7f0a3cac2cfb47d913ee747f8f4b27ad590c0f9b297cae391c5547"
+    },
+    {
+      "url": "https://efiles.portlandoregon.gov/record?q=recContainer%3A18024836&sortBy=recCreatedOn&pagesize=20",
+      "representation": "normalized extracted page text",
+      "workingFile": "0f2f3c82fa67.txt",
+      "sha256": "2e187781468f762d208f58a4f9e78dcb0a684616aeb9413d82b5007538dd06aa"
     },
     {
       "url": "https://evenstarforportland.com",
@@ -633,10 +699,28 @@
       "sha256": "f71fadb7ca4db950a8f0d1696a2d017a61089a15611e300c7089110cbb7186fd"
     },
     {
+      "url": "https://www.opb.org/article/2025/11/13/homeless-camp-removal-sweep-portland/",
+      "representation": "normalized extracted page text",
+      "workingFile": "f502a6174e92.txt",
+      "sha256": "a01cc46d99b994018d25b997f6c2d6493a6a99d19a0591ed7cd54e28efcb5af7"
+    },
+    {
       "url": "https://www.opb.org/article/2025/11/19/portland-city-council-proposal-ban-rent-setting-software/",
       "representation": "normalized extracted page text",
       "workingFile": "e2f397e975cd.txt",
       "sha256": "cc75fbc2a4c6e4170067826c743cfa3d3d74879d6c7a1c4f9c8ab33da84362a7"
+    },
+    {
+      "url": "https://www.opb.org/article/2025/12/03/portland-council-sanctions-detention-facilities/",
+      "representation": "normalized extracted page text",
+      "workingFile": "525e7fbf3221.txt",
+      "sha256": "1c03f9689624bc29a008e1ede2988ca04c4a038dd28382322456c47b29d707ef"
+    },
+    {
+      "url": "https://www.opb.org/article/2026/06/10/portland-oregon-politics-city-council-funding-jobs/",
+      "representation": "normalized extracted page text",
+      "workingFile": "27565f1276c1.txt",
+      "sha256": "6fb74230c8c1576ba0dbf0888467773cbc23d0f1a154aabf2e4b681e6919c5e2"
     },
     {
       "url": "https://www.opb.org/article/2026/07/13/portland-oregon-moda-center-sports-basketball/",
@@ -681,10 +765,52 @@
       "sha256": "32cd579de69070c7867d186d5be44460239b76d9bd921983295837364c1dda6c"
     },
     {
+      "url": "https://www.portland.gov/budget/2025-2026-budget/development/approved",
+      "representation": "normalized extracted page text",
+      "workingFile": "4da4545a0e0f.txt",
+      "sha256": "bbc76131d60123f675a9aa61e8cdc0293a9e1149f6a58e4ccb1ceff0c45539e9"
+    },
+    {
+      "url": "https://www.portland.gov/budget/2026-2027-budget/development/adopted",
+      "representation": "normalized extracted page text",
+      "workingFile": "da783ae5855c.txt",
+      "sha256": "76a76fda8bc12e8b891ab7a79706e4b0c18b9434c719c861bc496614c9a39092"
+    },
+    {
+      "url": "https://www.portland.gov/budget/2026-2027-budget/documents/fy-26-27-adopted-budget-hearing-amendments",
+      "representation": "normalized extracted page text",
+      "workingFile": "aed9d5fc9eab.txt",
+      "sha256": "f44197510e61ef696f900d6c0f0549ddc7aff2a822932cc49c120508f893fe05"
+    },
+    {
+      "url": "https://www.portland.gov/council/agenda/2025/5/21",
+      "representation": "normalized extracted page text",
+      "workingFile": "e27125dc6e0b.txt",
+      "sha256": "2bf91c03505eb65526a18b41c69541a1e58a42d51161871fd077a8512c42b38b"
+    },
+    {
+      "url": "https://www.portland.gov/council/agenda/2026/6/10",
+      "representation": "normalized extracted page text",
+      "workingFile": "e658594eeeb7.txt",
+      "sha256": "4bbe06ef3bcea0098ef27468fa0518199fd22e59e31d190cdcfb3fa6faadea7b"
+    },
+    {
       "url": "https://www.portland.gov/council/agenda/2026/7/22",
       "representation": "normalized extracted page text",
       "workingFile": "384cd4e572d3.txt",
       "sha256": "fc7953270bd89418978fe81df51cefb9c9feb68cdc35dc66167f88fdf9217b7c"
+    },
+    {
+      "url": "https://www.portland.gov/council/agenda/2026/9/16",
+      "representation": "normalized extracted page text",
+      "workingFile": "0de6d36867e5.txt",
+      "sha256": "bc38bc618820ae82401f017a783d0e708b526ac71bc8afd8b1989d8eba264d70"
+    },
+    {
+      "url": "https://www.portland.gov/council/agenda/2026/9/9",
+      "representation": "normalized extracted page text",
+      "workingFile": "06faac09366f.txt",
+      "sha256": "d4f5a15c01ee8cdcc4e400b662c53ef175b0cb432443510944d628accd5b1234"
     },
     {
       "url": "https://www.portland.gov/council/districts/1/candace-avalos/news/2026/8/17/what-happened-our-moda-term-sheet-why-i-voted-no",
@@ -711,6 +837,12 @@
       "sha256": "314cdb6297f7c70f96466bd6509651014b84121b1bea13bb881fe838da69520a"
     },
     {
+      "url": "https://www.portland.gov/council/districts/4/mitch-green/news/2025/3/20/portland-city-council-passes-resolution-investigate",
+      "representation": "normalized extracted page text",
+      "workingFile": "bf8ae27a47e0.txt",
+      "sha256": "eeccddd95483ebfa2b1acd7c2561ee73da25e42365bbffcd877115502398f98a"
+    },
+    {
       "url": "https://www.portland.gov/council/districts/4/mitch-green/news/2026/6/2/services-first-budget-amendment",
       "representation": "normalized extracted page text",
       "workingFile": "55f272b23aaf.txt",
@@ -729,10 +861,40 @@
       "sha256": "fc35c29ec11453f2486123190004d2464a8b838b4a0ebd8fc326b5892c10ac48"
     },
     {
+      "url": "https://www.portland.gov/council/documents/ordinance/detention-facility-impact-fee-protect-taxpayers",
+      "representation": "normalized extracted page text",
+      "workingFile": "89e82b6c0476.txt",
+      "sha256": "157213dfcc3e98b5fbaa763814aa6ff41dba759958ad4b87e1e060102239e7df"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/fy-2025-26-fall-supplemental-budget",
+      "representation": "normalized extracted page text",
+      "workingFile": "bf82f1d56665.txt",
+      "sha256": "0d83d3287f155aaf4c68c554233d577c69bac3bc1598e2e368d7cf46b2e26f8e"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192082",
+      "representation": "normalized extracted page text",
+      "workingFile": "bd18b33438d1.txt",
+      "sha256": "7c7dbb1b697c4b85415673a828ac9f4d8913807e4a5ea0ef6244758f9fda87ce"
+    },
+    {
       "url": "https://www.portland.gov/council/documents/ordinance/passed/192122",
       "representation": "normalized extracted page text",
       "workingFile": "a286ad7a9010.txt",
       "sha256": "a33cbcc7d7aff4a19d1d32edf7a7b4054befeadf581ffb07b71206c2b18ab47a"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192163",
+      "representation": "normalized extracted page text",
+      "workingFile": "e344bfc7decb.txt",
+      "sha256": "f41d06163d7e6b50e553968b5074679a14ee8521eebef368a9214fec1280fa4b"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192195",
+      "representation": "normalized extracted page text",
+      "workingFile": "b20a755be7dd.txt",
+      "sha256": "367e49e913e5c41f982fb05bb7230ddfb2cbda6f1756d4bd9d989dc81469502c"
     },
     {
       "url": "https://www.portland.gov/council/documents/ordinance/passed/192207",
@@ -741,10 +903,34 @@
       "sha256": "9d5db3542f991dc2d70fcb7f85e2fcc45d1826ad951953c40e58ad38356028fa"
     },
     {
+      "url": "https://www.portland.gov/council/documents/ordinance/zenith-franchise-transfer-isq-holdings",
+      "representation": "normalized extracted page text",
+      "workingFile": "066546d82ba3.txt",
+      "sha256": "b78c15ff449b10c747b86d4d0e4053dacabb7119087b3d4ec4e8bb1b8cf8a523"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/report/placed-file/2025-208",
+      "representation": "normalized extracted page text",
+      "workingFile": "89d57f0268a1.txt",
+      "sha256": "99d315e482b0b97bae41a4a736f8de2d3be6aa80d7827e92742e606a872a4350"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37702",
+      "representation": "normalized extracted page text",
+      "workingFile": "3b03289d8bde.txt",
+      "sha256": "28056c765977e3cb8a6948685803e367a56fcce2b4389bcbe9448d0467fe052e"
+    },
+    {
       "url": "https://www.portland.gov/council/documents/resolution/adopted/37750",
       "representation": "normalized extracted page text",
       "workingFile": "ebf69ffc6f34.txt",
       "sha256": "d1f2dcb81d1e9e171a8903bdc2f429542e95a40201fdb2b11b24692d06c13395"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37752",
+      "representation": "normalized extracted page text",
+      "workingFile": "99af8ac9e95b.txt",
+      "sha256": "8547db0ff15374c3d76a86c8c98eb73ea55454cdba47c32d22a5d43c54cc4375"
     },
     {
       "url": "https://www.portland.gov/council/documents/resolution/adopted/37753",
@@ -753,10 +939,28 @@
       "sha256": "f3030b19dbd8e8cfcb68cb0f2889fbd7beed552587b50db1a967cfdd3bf68cb5"
     },
     {
+      "url": "https://www.portland.gov/hello/news/2026/2/19/investigation-zenith-energy-franchise-agreement-finds-city-upheld-law-and",
+      "representation": "normalized extracted page text",
+      "workingFile": "aa5be3b4ee3b.txt",
+      "sha256": "aa5ade7ff15492c552a2d29024b2e9c67ea1ae56b4da14e8ee18dca65aebff90"
+    },
+    {
+      "url": "https://www.portland.gov/hello/news/2026/6/12/amendments-council-moves-closer-adopting-final-budget",
+      "representation": "normalized extracted page text",
+      "workingFile": "d8195b6bdf52.txt",
+      "sha256": "54eb2409ab86b0989b09857837edc4f11a5afad033d0b75dbc898e7294378062"
+    },
+    {
       "url": "https://www.portlandmercury.com/news/a-budget-fix-a-mayors-influence-and-the-subtext-of-that-unsavory-banter-among-councilors/",
       "representation": "normalized extracted page text",
       "workingFile": "4151fff611ff.txt",
       "sha256": "633c0b7745817a62586bbf5e80d47fd485b5d4b5ce637079dbb6f2a5d16a90e8"
+    },
+    {
+      "url": "https://www.portlandmercury.com/news/city-council-held-their-noses-and-passed-a-budget-now-they-want-changes/",
+      "representation": "normalized extracted page text",
+      "workingFile": "31e05e2978b3.txt",
+      "sha256": "dd05dffdc1d46784917bd2e6d33f0eee23c05817019c89310ea1389189fec0bc"
     },
     {
       "url": "https://www.portlandmercury.com/news/meet-the-candidates-for-city-council-district-3/",
@@ -787,6 +991,12 @@
       "representation": "normalized extracted page text",
       "workingFile": "bfdd654b4798.txt",
       "sha256": "fe426a580c8ec5a55f9bc5759764b03237317da895f12a348a4c608171e07679"
+    },
+    {
+      "url": "https://www.streetroots.org/news-stories/2025/03/20/city-council-demands-mayor-investigate-zenith-energy-agreement/",
+      "representation": "normalized extracted page text",
+      "workingFile": "723f2606cb9d.txt",
+      "sha256": "737e1cbcddb37b5d37c74aba320723b922cccff0c18501f21c9db4d079993d3d"
     },
     {
       "url": "https://www.sugarfororegon.com/",
@@ -901,6 +1111,12 @@
       "representation": "original download",
       "workingFile": "washington.pdf",
       "sha256": "77dea3ebacc6116bc74fc74641f536e5d83525effcab3ceee942793ff18bead2"
+    },
+    {
+      "url": "https://www.wweek.com/news/city/2025/05/22/just-before-midnight-the-city-council-votes-to-divert-19-million-in-new-funding-from-the-police-bureau-to-parks/",
+      "representation": "normalized extracted page text",
+      "workingFile": "18330cbc9f06.txt",
+      "sha256": "55544116477d19ae67fe28022cf94bc800599a7b6b9b3c51957e6799747d34b7"
     },
     {
       "url": "https://www.wweek.com/news/city/2026/08/12/council-approves-moda-center-term-sheet-to-kick-off-negotiations-with-blazers/",

@@ -191,7 +191,7 @@ test("export preserves evidence, missing research and the full field", async ({
   const payload = await response.json();
   expect(payload.reviewed).toBe("2026-09-18");
   expect(payload.races).toHaveLength(2);
-  expect(payload.councilDecisions).toHaveLength(4);
+  expect(payload.councilDecisions).toHaveLength(17);
   for (const race of payload.races)
     for (const candidate of race.candidates) {
       expect(candidate.analysis.tradeoff.length).toBeGreaterThan(30);
@@ -293,13 +293,19 @@ test("disagreements explain both budget votes before any selection", async ({
   await expect(overview).toBeVisible();
   await expect(page.locator("input:checked")).toHaveCount(0);
   const budget = overview.locator("#disagreement-supplemental-budget");
-  await expect(budget).toContainText("Larger plan only");
-  await expect(budget).toContainText("Larger plan, then smaller fallback");
-  await expect(budget).toContainText("Smaller package only");
+  await expect(budget).toContainText(
+    "Broad service restoration; rejected July’s fallback",
+  );
+  await expect(budget).toContainText(
+    "Broad restorations, with oversight funds protected",
+  );
+  await expect(budget).toContainText(
+    "Different funding routes for selected services",
+  );
   await expect(
     budget.getByRole("link", { name: /Tiffany Koyama Lane/ }),
   ).toBeVisible();
-  await overview.getByRole("button", { name: /The Moda deal/ }).click();
+  await overview.getByRole("button", { name: /Moda & arts venues/ }).click();
   await expect(budget).not.toBeVisible();
   const moda = overview.locator("#disagreement-moda");
   await expect(moda).toContainText("Raised the rent, then approved");
@@ -326,7 +332,7 @@ test("individual record and export preserve reasons and amendment disagreements"
 }) => {
   await page.goto("/voters-guide/portland-district-4");
   const overview = page.getByRole("region", { name: "Where they disagree." });
-  await overview.getByRole("button", { name: /The Moda deal/ }).click();
+  await overview.getByRole("button", { name: /Moda & arts venues/ }).click();
   await expect(overview).toContainText("Rejected the public cost");
   await expect(
     overview.getByRole("heading", {
@@ -349,5 +355,58 @@ test("individual record and export preserve reasons and amendment disagreements"
     payload.decisionAccounts["supplemental-budget"]["Tiffany Koyama Lane"]
       .choice,
   ).toBe("Larger plan only");
-  expect(payload.councilDisagreements).toHaveLength(3);
+  expect(payload.councilDisagreements).toHaveLength(7);
+});
+
+test("broader history preserves changing coalitions, amendment votes and pending Zenith status", async ({
+  page,
+  request,
+}) => {
+  const payload = await (await request.get("/voters-guide/evidence")).json();
+  const decision = (id: string) =>
+    payload.councilDecisions.find((d: { id: string }) => d.id === id);
+  expect(decision("parks-police").votes["Steve Novick"]).toBe("Yes");
+  expect(decision("services-first").votes["Steve Novick"]).toBe("No");
+  expect(decision("novick-restorations").votes["Steve Novick"]).toBe("Yes");
+  expect(decision("novick-restorations").votes["Olivia Clark"]).toBe("No");
+  expect(decision("oversight-funding").summary).toContain("5–6");
+  expect(decision("novick-restorations").summary).toContain("3–8");
+  expect(decision("camp-removal").votes["Olivia Clark"]).toBe("Absent");
+  expect(decision("camp-removal").votes["Eric Zimmerman"]).toBe("Absent");
+  expect(decision("performing-arts").votes["Mitch Green"]).toBe("Yes");
+  expect(decision("moda").votes["Mitch Green"]).toBe("No");
+  expect(decision("zenith-investigation").votes["Olivia Clark"]).toBe("Yes");
+  expect(decision("zenith-enforcement").votes["Olivia Clark"]).toBe("No");
+  expect(decision("zenith-transfer").summary).toContain("reconsider");
+  const ids = payload.councilDisagreements.flatMap(
+    (t: { decisionIds: string[] }) => t.decisionIds,
+  );
+  expect(new Set(ids).size).toBe(17);
+  for (const district of [3, 4]) {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(`/voters-guide/portland-district-${district}`);
+    const overview = page.locator("#disagreements");
+    await overview.getByRole("button", { name: /Zenith & climate/ }).click();
+    const zenith = page.locator("#disagreement-zenith");
+    await expect(zenith).toBeVisible();
+    await zenith
+      .getByText("Read the decisions and reasons", { exact: true })
+      .click();
+    await expect(zenith).toContainText("no basis to revoke");
+    await expect(zenith).toContainText("September 23");
+    await expect(
+      zenith.getByText("Amendment vote", { exact: true }),
+    ).toHaveCount(3);
+    await expect(
+      zenith.getByText("September 16 vote", { exact: true }),
+    ).toHaveCount(3);
+    for (const button of await overview.getByRole("button").all()) {
+      await button.click();
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth,
+        ),
+      ).toBe(true);
+    }
+  }
 });

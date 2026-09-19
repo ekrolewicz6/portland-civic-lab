@@ -177,12 +177,20 @@
   gap: 0.75rem;
 }
 .choiceSummary {
-  display: flex;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.6rem 0.8rem;
   padding: 1rem;
   border: 1px solid #cbd4c4;
   background: #fffefa;
+}
+.choiceSummary > div:last-child {
+  display: contents;
+}
+.choiceSummary h4,
+.choiceSummary p {
+  grid-column: 1 / -1;
 }
 .choiceSummary a {
   font-size: 0.77rem;
@@ -2014,4 +2022,99 @@
 
 .decisionCard .recordAccount h4 {
   font-size: 1rem;
+}
+
+/* Topic summaries stay short; the full chronological record expands below. */
+.readingLabel {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-ink-light);
+  margin: 0 0 0.8rem;
+}
+.choiceSummary p {
+  font-size: 0.84rem;
+  line-height: 1.65;
+  margin-top: 0.65rem;
+  font-weight: 400;
+}
+.decisionTimeline {
+  display: grid;
+  gap: 2rem;
+}
+.timelineDecision {
+  border-top: 1px solid var(--color-sage);
+  padding-top: 1.5rem;
+  min-width: 0;
+}
+.timelineDecision > h4 {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin: 0.65rem 0;
+}
+.timelineDecision > p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin: 0.7rem 0 1rem;
+  max-width: 850px;
+}
+.timelineDecision > .decisionLimit {
+  font-size: 0.8rem;
+  color: var(--color-ink-light);
+}
+.coverageMap {
+  border-top: 1px solid var(--color-sage);
+  margin-top: 1.8rem;
+  padding-top: 1rem;
+}
+.coverageMap summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+.coverageMap p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  max-width: 850px;
+  margin-top: 1rem;
+}
+.coverageLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.4rem;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+}
+.coverageLinks a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.profileDecision > summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding: 0.5rem 0;
+}
+.profileDecision > summary span {
+  color: var(--color-ink-light);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.profileDecision[open] > .eyebrow {
+  margin: 0.8rem 0;
+}
+@media (max-width: 700px) {
+  .disagreementPicker {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .disagreementPicker button {
+    padding: 0.7rem 0.5rem;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    min-height: 64px;
+  }
+  .choiceSummary p {
+    font-size: 0.85rem;
+  }
 }

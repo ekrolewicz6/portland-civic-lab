@@ -16,3 +16,60 @@ Source objects are in `src/lib/voters-guide/council-record-accounts.ts`; the pub
 ## Editorial limits
 
 Selected decisions are not an overall effectiveness rating. A documented alternative or amendment is not automatically a personal explanation. Where a reason is not established, the guide reports the action directly rather than filling space with generalized caveats or guessing intent. Source statements about economic benefits, fiscal responsibility and costs displaced elsewhere are attributed arguments, not independently established outcomes.
+
+## September 18 expansion: seven topics, seventeen actions
+
+The initial three-example comparison omitted major debates. Added a common
+seventeen-action record for all six incumbents, with seven topic summaries and
+individual disclosures for long profile records. Budget and Zenith overviews
+interpret successive actions; they do not infer private motives.
+
+### Primary record checks
+
+- May 21, 2025 Avalos 1: parks/new police allocation, 7–5. Clerk's additional
+  documents: https://efiles.portlandoregon.gov/record/17392841/file/document/.
+  Koyama Lane, Morillo, Novick, Green yes; Clark, Zimmerman no. Preliminary
+  budget amendment, not a claim about final staffing outcomes.
+- June 10, 2026 archived additional documents:
+  https://efiles.portlandoregon.gov/record/18024844/file/document/.
+  PDF page 58 Services First: 6–6; page 59 Clark 2: **5–6, Smith absent**;
+  page 60 Pirtle-Guiney–Novick 4: **3–8, Smith absent**. Read and visually checked
+  all three roll-call sheets. Do not substitute May or earlier draft vote totals.
+  Clark 2 text printed p8/PDF p9: $7.68m anticipated oversight underspending,
+  contingency reimbursement spring 2027. Services First final text uses
+  $16,034,349 PCEF interest, not initial $16.5m announcement. Novick 4 text:
+  $8,423,753 PCEF interest plus other financing. Do not conflate Novick 2
+  (not considered in the compiled disposition) with Novick 4.
+- June 17 annual budget 192195: 9–2, one abstention. Zimmerman no; other five yes.
+  The newsletter https://content.govdelivery.com/accounts/ORPORTLAND_ENT/bulletins/41c8000
+  is **Dan Ryan's**, not Zimmerman's. It is NOT used as Zimmerman's explanation.
+  Secondary Mercury June 23 story says 10–2; official 9–2–1 controls.
+- Zenith 37702 March 19, 2025: 11–1; Novick sole no. Clark and Zimmerman
+  tried to remove disputed recitals but supported the final investigation.
+  February 19, 2026 City investigation/outside counsel found no basis to revoke;
+  included as attributed findings, not endorsement of every terminal practice.
+- Zenith document 2026-263: September 9 resident-enforcement amendment 6–6;
+  September 16 transfer failed 5–6, Smith absent. Motion to reconsider pending,
+  postponed to following week/September 23. Never describe this as final closure,
+  revocation, denial of the state air permit or a completed transfer.
+- November 12, 2025 Morillo 1: 5 yes / 3 no / 4 absent. Clark and Zimmerman
+  absent, despite earlier objections. Green's Ground Score subamendment passed
+  but did not take effect when its parent failed. Not a repeal of camping law.
+- Detention facility December 3, 2025: 9–2, Zimmerman absent; Clark yes, Novick no.
+  OPB attributes Novick's precedent/consistency objection and Morillo's limited
+  local authority argument. Do not characterize no as support for ICE.
+- Housing SDC waiver 192082: 10–0, Clark/Smith absent. Published as a temporary
+  incentive with a 5,000-home policy goal; no causal construction claim.
+- Business exemption 192163: 11–0, all six yes; threshold on gross receipts,
+  $75,000 for tax year 2026 and $100,000 for 2027.
+- Performing arts 37752: 8–4; Green, Novick, Clark, Zimmerman yes;
+  Koyama Lane/Morillo no. Further planning, not full construction appropriation.
+
+### Scope audit
+
+Reviewed the Council site's issues index and 24 topic-dossier inventory as a
+coverage check. The selected comparison is still not exhaustive. Transportation
+funding, Street Response, police oversight design, arts-tax reform, Bull Run,
+workforce/labor and governance need matched individual accounts. Public coverage
+map links to the source-linked dossiers and states that boundary. No unsupported
+positions were assigned to fill these gaps. No campaign outreach occurred.

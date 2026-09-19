@@ -88,15 +88,16 @@ export default function Methodology() {
           motion from a final vote, and an appropriation from an achieved
           outcome. A single vote is not a complete political identity. In this
           edition, all six Portland council incumbents are compared on the same
-          four final actions: rental-pricing regulation, the July supplemental
-          budget, the Moda term sheet and data-center transparency. These span
-          housing, spending and development, and include agreement as well as
-          disagreement. They are a selected sample, not a complete record review
-          or a measure of overall effectiveness. Absence is never coded as a no.
+          seventeen actions across seven topics: the 2025 and 2026 budgets,
+          Zenith, camp-removal spending, housing rules and development fees,
+          major venues, detention-facility rules and shared ground on business
+          taxes and data centers. Each topic includes the same votes for all six
+          incumbents, including amendments, failures and absences. These are
+          selected consequential decisions, not a complete record or a score.
         </p>
         <p>
-          For the July budget and Moda negotiations, we also compare the
-          alternatives and amendments that explain the final choices. Personal
+          We follow competing budget proposals and Zenith’s successive stages,
+          alongside the amendments that shaped the Moda negotiations. Personal
           explanations are attributed to the councilor or reporting that
           identifies the speaker. Earlier statements keep their dates. A
           documented action is labeled as an action when we have not established
@@ -183,9 +184,12 @@ export default function Methodology() {
         <p>
           This supports an openly labeled initial research edition. It does not
           establish a complete investigation of each candidate’s public record.
-          The six incumbents have four common final roll-call checks; additional
-          votes, claims, interviews and independent editorial review remain to
-          be completed.
+          The six incumbents have seventeen common roll-call checks; additional
+          topics such as transportation funding, Street Response, the oversight
+          system’s design, water infrastructure, labor and governance still need
+          matched candidate accounts. The race pages link to the Council
+          dossiers for this wider context. Independent editorial review remains
+          incomplete.
         </p>
         <h2 id="coverage">Coverage, honestly stated</h2>
         <div className={styles.coverage}>

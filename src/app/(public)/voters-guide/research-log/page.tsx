@@ -17,6 +17,31 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2>
+          September 18, 2026 · Budget priorities and the broader Council record
+        </h2>
+        <p>
+          Expanded the opening comparison from three examples to seven topics
+          and seventeen matched roll calls. Added the 2025 parks/police choice,
+          three competing June 2026 restoration amendments, annual budget
+          adoption, Zenith’s investigation and transfer debates, camp-removal
+          funding, detention-facility fees, housing development charges, the
+          small-business exemption and PSU/Keller planning.
+        </p>
+        <p>
+          Checked June amendment votes against the clerk’s archived roll-call
+          sheets. These distinguish Novick’s smaller climate-interest proposal
+          from Services First and Clark’s oversight-funding proposal. Budget
+          summaries describe priorities across successive choices, with the
+          underlying record available in chronological order.
+        </p>
+        <p>
+          Zenith coverage includes the February investigation’s findings and the
+          pending September 23 reconsideration. Absences remain separate from
+          opposition. Shared-ground examples and a wider topic map make the
+          selection’s limits visible. Incumbent record entries now expand
+          individually to keep mobile profiles manageable.
+        </p>
         <h2>September 18, 2026 · Explain the disagreements</h2>
         <p>
           Added an immediate comparison of incumbents on the competing July

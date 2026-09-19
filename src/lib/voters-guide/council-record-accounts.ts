@@ -1,4 +1,11 @@
 import type { Evidence } from "./types";
+import {
+  historicalAccounts,
+  budgetReadings,
+  zenithReadings,
+  zenithInvestigationOutcome,
+  type TopicReading,
+} from "./council-history";
 
 export type DecisionAccount = {
   choice: string;
@@ -52,6 +59,7 @@ export const decisionAccounts: Record<
   string,
   Record<string, DecisionAccount>
 > = {
+  ...historicalAccounts,
   "rental-pricing": {
     "Tiffany Koyama Lane": rentalSponsor,
     "Angelita Morillo": {
@@ -241,40 +249,121 @@ export const decisionAccounts: Record<
   ),
 };
 
-export const councilDisagreements = [
+export type CouncilDisagreement = {
+  id: string;
+  label: string;
+  decisionIds: string[];
+  contrast: string;
+  question: string;
+  context: string;
+  takeaway: string;
+  sources: Evidence[];
+  readings?: Record<string, TopicReading>;
+};
+
+export const councilDisagreements: CouncilDisagreement[] = [
   {
     id: "supplemental-budget",
-    label: "Saving city jobs",
+    label: "Budget priorities",
+    decisionIds: [
+      "parks-police",
+      "services-first",
+      "oversight-funding",
+      "novick-restorations",
+      "annual-budget",
+      "supplemental-budget",
+    ],
     contrast:
-      "A 55-job restoration plan versus a smaller, 30-position package.",
-    question: "How much to restore—and which funding to use?",
+      "Parks or new police funding? Broad job restorations or selected services? Climate interest, oversight funds or reserves?",
+    question: "What did they protect when money ran short?",
     context:
-      "The larger plan would save 55 jobs using climate-fund interest and other money. It failed after the mayor broke a 6–6 tie. A smaller package preserving 30 positions then passed 10–2, using contingency reserves and other funds.",
+      "The fights were over both services and the money used to sustain them. Services First included police support and fire rescue as well as parks and core staff. Clark’s alternative used expected police-oversight underspending. Novick proposed a smaller climate-interest package. All three failed in June; Council returned to restorations in July.",
     takeaway:
-      "The final yes/no hides the choice between the two packages. Read both votes together.",
+      "Our reading: the dividing line was how broadly to restore services and which funds were available—not a simple choice between public safety and other services. Novick’s smaller climate-interest proposal and Koyama Lane’s rejection of July’s fallback are important exceptions.",
     sources: [julyAgenda, julyReporting],
+    readings: budgetReadings,
   },
   {
-    id: "moda",
-    label: "The Moda deal",
+    id: "zenith",
+    label: "Zenith & climate oversight",
+    decisionIds: [
+      "zenith-investigation",
+      "zenith-enforcement",
+      "zenith-transfer",
+    ],
     contrast:
-      "A split over public cost, proposed rent and financial safeguards.",
-    question: "What should Portland demand for its investment?",
+      "Three distinct choices: investigate the old agreement, add public enforcement, and approve a transfer to the new owner.",
+    question: "Who should enforce Zenith’s obligations?",
     context:
-      "Council approved a non-binding negotiating framework: $120 million for renovation plus $275 million for future capital needs over 20 years. The split also ran through amendments on rent and financial oversight.",
+      "Council demanded an investigation in March 2025. In February 2026, City staff and an outside legal review reported no basis to revoke the franchise. Green and Morillo later proposed giving residents a right to sue to enforce its terms. That amendment failed 6–6; the transfer then failed 5–6. Reconsideration remained pending as of September 18.",
     takeaway:
-      "Supporting negotiations did not mean agreeing on the price. Rejecting this framework did not mean wanting the Blazers to leave.",
-    sources: [modaRecord],
+      "Our reading: supporting an investigation did not imply supporting citizen-suit enforcement. Clark and Zimmerman voted for the investigation but against that condition. The transfer remains unresolved; this was not a vote to close the terminal.",
+    sources: [zenithInvestigationOutcome],
+    readings: zenithReadings,
+  },
+  {
+    id: "camp-removal",
+    label: "Homelessness & removals",
+    decisionIds: ["camp-removal"],
+    contrast:
+      "A proposed $4.3 million shift from camp removals to personnel and social-service support.",
+    question: "Shift spending away from clearing camps?",
+    context:
+      "Morillo’s November 2025 amendment challenged the spending behind the mayor’s approach. Koyama Lane and Green backed it; Novick opposed it. Clark and Zimmerman were absent when the amendment was voted on. It failed with five yes, three no and four absent.",
+    takeaway:
+      "Our reading: this vote tests the role of camp removals in the homelessness response. Novick’s recorded objection focused on the rushed process and need for a policy debate. An absence supplies no yes/no position.",
+    sources: [],
   },
   {
     id: "rental-pricing",
-    label: "Rent-setting software",
-    contrast: "A ban on software that coordinates landlords’ rental prices.",
-    question: "Regulate coordinated rent-setting?",
+    label: "Housing & development",
+    decisionIds: ["rental-pricing", "housing-fees"],
+    contrast:
+      "A split over rent-setting regulation, alongside broad support for lowering upfront housing-development costs.",
+    question: "Which rules help housing—and which discourage it?",
     context:
-      "Council restricted software that coordinates rental pricing among landlords. The ordinance passed 8–2 on November 19, 2025. Two councilors were absent.",
+      "The rental-software restriction passed 8–2 in November 2025. Earlier, all five incumbents present supported temporarily waiving infrastructure charges on qualifying new housing; Clark was absent. These votes show that tenant regulation and development incentives are separate choices.",
     takeaway:
-      "This is a split over a specific housing regulation. An absence is shown separately from opposition.",
+      "Our reading: Morillo, Green and Koyama Lane backed both a tenant-market restriction and a construction incentive. Clark opposed the software ban; Novick and Zimmerman were absent on that final vote.",
+    sources: [],
+  },
+  {
+    id: "moda",
+    label: "Moda & arts venues",
+    decisionIds: ["moda", "performing-arts"],
+    contrast:
+      "Different coalitions on the arena negotiating framework and the PSU/Keller planning strategy.",
+    question: "Which big projects—and on what terms?",
+    context:
+      "Council approved the non-binding Moda framework with a $120 million renovation commitment and $275 million for future capital needs over 20 years. A later resolution advanced PSU/Keller planning, without approving a full construction budget. Green opposed the arena framework but backed the arts planning resolution.",
+    takeaway:
+      "Our reading: votes against a particular deal do not establish opposition to all large public projects. Compare the size and stage of the commitment, the proposed rent, and the financial safeguards.",
+    sources: [modaRecord],
+  },
+  {
+    id: "detention-fees",
+    label: "ICE & local authority",
+    decisionIds: ["detention-fees"],
+    contrast:
+      "Clark joined Morillo, Green and Koyama Lane; Novick objected to the precedent; Zimmerman was absent.",
+    question: "Charge detention-facility owners for local impacts?",
+    context:
+      "The ordinance created impact fees and nuisance rules for qualifying privately owned detention facilities. It did not close ICE’s facility. The lease-related fee applies on renewal; the separate nuisance provisions address harms such as chemical contamination.",
+    takeaway:
+      "Our reading: this split concerns which local tools to use against detention-related harms. Novick’s objection was about the precedent for charging landlords for protest impacts, not an endorsement of ICE operations.",
+    sources: [],
+  },
+  {
+    id: "shared-ground",
+    label: "Where they agreed",
+    decisionIds: ["business-tax", "data-centers"],
+    contrast:
+      "All six backed a larger small-business tax exemption and data-center disclosure with a call for future restrictions.",
+    question: "What disappears if we show only conflict?",
+    context:
+      "In April 2026, all six supported expanding the business-license-tax exemption. In September, all six supported the final data-center resolution. The latter expressed intent to pursue restrictions; it did not itself enact a moratorium.",
+    takeaway:
+      "Agreement matters too. These actions do not distinguish the six incumbents on their final votes; differences elsewhere should not erase this shared ground.",
     sources: [],
   },
 ];

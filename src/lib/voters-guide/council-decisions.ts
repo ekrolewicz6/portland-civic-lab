@@ -1,14 +1,17 @@
 import type { Candidate, Evidence } from "./types";
+import { historicalDecisions } from "./council-history";
 import { decisionAccounts } from "./council-record-accounts";
 export type CouncilDecision = {
   id: string;
   title: string;
+  voteLabel?: string;
   summary: string;
   limit: string;
   source: Evidence;
   votes: Record<string, "Yes" | "No" | "Absent">;
 };
 export const councilDecisions: CouncilDecision[] = [
+  ...historicalDecisions,
   {
     id: "rental-pricing",
     title: "Restrict algorithmic rent coordination",

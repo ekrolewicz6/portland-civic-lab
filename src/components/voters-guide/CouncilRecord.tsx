@@ -43,7 +43,7 @@ export function DecisionExplanation({
         </header>
       )}
       <div className={styles.recordVote}>
-        <span>Final vote</span>
+        <span>{decision.voteLabel ?? "Final vote"}</span>
         <strong data-vote={vote ?? "unknown"}>
           {vote ?? "No vote in this record"}
         </strong>
@@ -98,8 +98,8 @@ export default function CouncilDisagreements({
           </h2>
         </div>
         <p>
-          Three decisions. Your district’s incumbents. See the alternatives they
-          backed and the reasons they put on the record.
+          Seven topics. Seventeen matched votes since January 2025. See what
+          your district’s incumbents protected, changed and agreed on.
         </p>
       </div>
       <div
@@ -120,7 +120,10 @@ export default function CouncilDisagreements({
         ))}
       </div>
       {councilDisagreements.map((item) => {
-        const decision = councilDecisions.find((d) => d.id === item.id)!;
+        const decisions = item.decisionIds.map((id) =>
+          councilDecisions.find((d) => d.id === id)!,
+        );
+        const decision = decisions[0];
         const incumbents = people.filter((p) => decision.votes[p.name]);
         return (
           <section
@@ -134,6 +137,11 @@ export default function CouncilDisagreements({
               <h3 id={`${item.id}-question`}>{item.question}</h3>
               <p>{item.contrast}</p>
             </div>
+            {item.readings && (
+              <p className={styles.readingLabel}>
+                What the record shows · our interpretation
+              </p>
+            )}
             <div className={styles.choiceOverview}>
               {incumbents.map((person) => (
                 <div key={person.id} className={styles.choiceSummary}>
@@ -142,7 +150,14 @@ export default function CouncilDisagreements({
                   </div>
                   <div>
                     <a href={`#${person.id}`}>{person.name} ↗</a>
-                    <h4>{decisionAccounts[item.id][person.name].choice}</h4>
+                    <h4>
+                      {item.readings?.[person.name]?.headline ??
+                        decisionAccounts[decision.id][person.name].choice}
+                    </h4>
+                    <p>
+                      {item.readings?.[person.name]?.text ??
+                        decisionAccounts[decision.id][person.name].action}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -159,14 +174,24 @@ export default function CouncilDisagreements({
                   )}
                 </div>
               </div>
-              <div className={styles.disagreementGrid}>
-                {incumbents.map((person) => (
-                  <DecisionExplanation
-                    key={person.id}
-                    person={person}
-                    decision={decision}
-                    identity
-                  />
+              <div className={styles.decisionTimeline}>
+                {decisions.map((entry) => (
+                  <section key={entry.id} className={styles.timelineDecision}>
+                    <div className={styles.eyebrow}>{entry.source.date}</div>
+                    <h4>{entry.title}</h4>
+                    <p>{entry.summary}</p>
+                    <div className={styles.disagreementGrid}>
+                      {incumbents.map((person) => (
+                        <DecisionExplanation
+                          key={person.id}
+                          person={person}
+                          decision={entry}
+                          identity
+                        />
+                      ))}
+                    </div>
+                    <p className={styles.decisionLimit}>{entry.limit}</p>
+                  </section>
                 ))}
               </div>
             </details>
@@ -174,6 +199,35 @@ export default function CouncilDisagreements({
           </section>
         );
       })}
+      <details className={styles.coverageMap}>
+        <summary>What else has this Council taken up?</summary>
+        <p>
+          This comparison covers selected consequential choices, not every major
+          debate. Continue into the source-linked Council dossiers for
+          transportation funding, Street Response, the police-accountability
+          system, arts-tax reform, water infrastructure, labor and governance.
+          Those records are not yet synthesized into matched candidate accounts
+          here.
+        </p>
+        <div className={styles.coverageLinks}>
+          {[
+            ["Transportation funding", "transportation-funding"],
+            ["Portland Street Response", "portland-street-response"],
+            ["Police-accountability system", "police-accountability"],
+            ["Arts-tax reform", "arts-tax-reform"],
+            ["Bull Run filtration", "bull-run-filtration"],
+            ["Council governance", "new-council-governance"],
+            ["All 24 topic dossiers", ""],
+          ].map(([label, slug]) => (
+            <a
+              key={label}
+              href={`https://council.portlandciviclab.org/topics${slug ? `/${slug}` : ""}`}
+            >
+              {label} ↗
+            </a>
+          ))}
+        </div>
+      </details>
       <p className={styles.disagreementFootnote}>
         Recorded choices and stated reasons are labeled separately.{" "}
         <a href="#compare">Compare every candidate’s plans below ↓</a>

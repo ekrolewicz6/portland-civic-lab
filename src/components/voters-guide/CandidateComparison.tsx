@@ -114,11 +114,13 @@ function Profile({
               (d) => d.id === r.decisionId,
             );
             return decision ? (
-              <section className={styles.profileDecision} key={r.decisionId}>
+              <details className={styles.profileDecision} key={r.decisionId}>
+                <summary>
+                  {decision.title} <span>· {decision.votes[person.name]}</span>
+                </summary>
                 <div className={styles.eyebrow}>{decision.source.date}</div>
-                <h3>{decision.title}</h3>
                 <DecisionExplanation person={person} decision={decision} />
-              </section>
+              </details>
             ) : (
               <div className={styles.record} key={i}>
                 <p>{r.text}</p>
