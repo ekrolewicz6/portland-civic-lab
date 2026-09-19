@@ -7,6 +7,13 @@ export const comparisonTopics = [
       "Our interpretation of documented priorities, not a personality assessment. These descriptions are not scores or endorsements.",
   },
   {
+    id: "experience",
+    label: "Experience",
+    question: "What experience would they bring?",
+    context:
+      "Compare their reported roles and work. A role does not, by itself, establish how well someone performed.",
+  },
+  {
     id: "housing",
     label: "Housing",
     question: "How would they make housing more affordable?",

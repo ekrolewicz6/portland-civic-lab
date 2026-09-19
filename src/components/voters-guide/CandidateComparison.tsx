@@ -98,7 +98,12 @@ function Profile({
           <details className={styles.issueDisclosure}>
             <summary>Issue-by-issue positions and evidence</summary>
             {comparisonTopics
-              .filter((t) => t.id !== "values" && t.id !== "record")
+              .filter(
+                (t) =>
+                  t.id !== "values" &&
+                  t.id !== "record" &&
+                  t.id !== "experience",
+              )
               .map((t) => {
                 const issue =
                   person.analysis?.issues[
@@ -184,7 +189,7 @@ function ComparisonAnswer({
   topic: ComparisonTopic;
 }) {
   const issue =
-    topic !== "values" && topic !== "record"
+    topic !== "values" && topic !== "record" && topic !== "experience"
       ? person.analysis?.issues[topic]
       : undefined;
   return (
@@ -206,7 +211,15 @@ function ComparisonAnswer({
           <a href={`#${person.id}`}>Full brief ↗</a>
         </div>
       </header>
-      {topic === "values" ? (
+      {topic === "experience" ? (
+        <>
+          <div className={styles.evidenceLabel}>Reported experience</div>
+          <p>{person.background}</p>
+          <div className={styles.answerSources}>
+            <Source source={person.sources[0]} />
+          </div>
+        </>
+      ) : topic === "values" ? (
         <>
           <div className={styles.evidenceLabel}>Our interpretation</div>
           <div className={styles.valueTags}>

@@ -89,7 +89,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
         detail: {
           raceId: race.id,
           selected,
-          topic: ["overview", "experience"].includes(topic) ? "values" : topic,
+          topic: topic === "overview" ? "values" : topic,
         },
       }),
     );

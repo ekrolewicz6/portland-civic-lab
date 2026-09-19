@@ -238,6 +238,7 @@
     align-items: flex-start;
   }
   .paired .identity h3 {
+    min-height: 2.4em;
     font-size: 1.12rem;
   }
   .paired .position {

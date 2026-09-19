@@ -155,6 +155,23 @@ test("District 4 homelessness leads to real comparisons and carries selections i
     .getByRole("link", { name: "← Back to quick comparison" })
     .click();
   await expect(guide.getByLabel("Explore a topic")).toHaveValue("safety");
+  await guide.getByLabel("Explore a topic").selectOption("experience");
+  await guide.getByRole("link", { name: "Compare full records →" }).click();
+  await expect(
+    page
+      .getByRole("group", { name: "Comparison issue" })
+      .getByRole("button", { name: "Experience", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#compare")).toContainText(
+    races
+      .find((r) => r.id.endsWith("4"))!
+      .candidates.find((p) => p.id === "eli-arnold")!.background,
+  );
+  await page
+    .locator("#compare")
+    .getByRole("link", { name: "← Back to quick comparison" })
+    .click();
+  await guide.getByLabel("Explore a topic").selectOption("safety");
   expect(new URL(page.url()).search).toBe("");
   await page.reload();
   await expect(guide.getByLabel("Explore a topic")).toHaveValue("safety");
