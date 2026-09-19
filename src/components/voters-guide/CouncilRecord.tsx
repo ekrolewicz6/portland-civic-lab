@@ -11,6 +11,7 @@ import {
   decisionAccounts,
 } from "@/lib/voters-guide/council-record-accounts";
 import type { Candidate, Evidence } from "@/lib/voters-guide/types";
+import { councilReaderCopy } from "@/lib/voters-guide/council-reader-copy";
 import CandidatePortrait from "./CandidatePortrait";
 import styles from "@/app/(public)/voters-guide/guide.module.css";
 
@@ -178,6 +179,7 @@ export default function CouncilDisagreements({
         </div>
       </div>
       {councilDisagreements.map((item) => {
+        const copy = councilReaderCopy[item.id];
         const decisions = item.decisionIds.map((id) =>
           councilDecisions.find((d) => d.id === id)!,
         );
@@ -193,30 +195,26 @@ export default function CouncilDisagreements({
           >
             <div className={styles.disagreementContext}>
               <h3 id={`${item.id}-question`}>{item.question}</h3>
-              <p className={styles.issueContrast}>{item.contrast}</p>
-              <p>{item.context}</p>
+              <p className={styles.issueContrast}>{copy.contrast}</p>
+              <p>{copy.context}</p>
             </div>
-            {item.readings && (
+            {copy.readings && (
               <p className={styles.readingLabel}>
                 What the record shows · our interpretation
               </p>
             )}
             <div className={styles.choiceOverview}>
               {incumbents.map((person) => (
-                <div key={person.id} className={styles.choiceSummary}>
+                <div key={person.id} className={styles.choiceSummary} data-reader-candidate={person.id}>
                   <div className={styles.recordPortrait}>
                     <CandidatePortrait person={person} compact />
                   </div>
                   <div>
                     <a href={`#${person.id}`}>{person.name} ↗</a>
                     <h4>
-                      {item.readings?.[person.name]?.headline ??
-                        decisionAccounts[decision.id][person.name].choice}
+                      {copy.readings[person.name].headline}
                     </h4>
-                    <p>
-                      {item.readings?.[person.name]?.text ??
-                        decisionAccounts[decision.id][person.name].action}
-                    </p>
+                    {copy.readings[person.name].text.split("\n\n").map((paragraph, i) => <p key={i}>{paragraph}</p>)}
                   </div>
                 </div>
               ))}
@@ -253,7 +251,7 @@ export default function CouncilDisagreements({
                 ))}
               </div>
             </details>
-            <p className={styles.disagreementTakeaway}>{item.takeaway}</p>
+            <p className={styles.disagreementTakeaway}>{copy.takeaway}</p>
           </section>
         );
       })}
@@ -286,7 +284,7 @@ export default function CouncilDisagreements({
         Reviewed through September 18, 2026. A vote, a stated reason and our
         interpretation are distinct. “Not on committee” means the member had no
         vote in that committee; “Absent” means they missed that roll call.{" "}
-        <a href="#compare">Compare every candidate’s plans below ↓</a>
+        <a href="#compare">Compare every candidate’s plans →</a>
       </p>
     </section>
   );

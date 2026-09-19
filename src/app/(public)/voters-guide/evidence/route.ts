@@ -1,3 +1,4 @@
+import { councilReaderCopy, councilReaderVersion } from "@/lib/voters-guide/council-reader-copy";
 import {
   explorerVersion,
   explorerTopics,
@@ -34,6 +35,8 @@ export function GET() {
       councilDecisions,
       decisionAccounts,
       councilDisagreements,
+      councilReaderVersion,
+      councilReaderCopy,
       councilCoverageAudit,
       explorer: {
         version: explorerVersion,

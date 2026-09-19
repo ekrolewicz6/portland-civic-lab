@@ -309,13 +309,13 @@ test("disagreements explain both budget votes before any selection", async ({
   await expect(page.locator("input:checked")).toHaveCount(0);
   const budget = overview.locator("#disagreement-supplemental-budget");
   await expect(budget).toContainText(
-    "Broad service restoration; rejected July’s fallback",
+    "Favored restoring more services; rejected July’s smaller plan",
   );
   await expect(budget).toContainText(
-    "Broad restorations, with oversight funds protected",
+    "Favored restoring more services while keeping police-oversight money",
   );
   await expect(budget).toContainText(
-    "Different funding routes for selected services",
+    "Supported several ways to pay for a smaller set of services",
   );
   await expect(
     budget.getByRole("link", { name: /Tiffany Koyama Lane/ }),
@@ -325,7 +325,7 @@ test("disagreements explain both budget votes before any selection", async ({
     .selectOption("moda");
   await expect(budget).not.toBeVisible();
   const moda = overview.locator("#disagreement-moda");
-  await expect(moda).toContainText("Raised the rent, then approved");
+  await expect(moda).toContainText("Raised the proposed arena rent, then supported the terms");
   await moda
     .getByText("Read the decisions and reasons", { exact: true })
     .click();
@@ -352,10 +352,10 @@ test("individual record and export preserve reasons and amendment disagreements"
   await overview
     .getByRole("combobox", { name: "Choose a Council issue" })
     .selectOption("moda");
-  await expect(overview).toContainText("Rejected the public cost");
+  await expect(overview).toContainText("Rejected the arena cost; supported performing-arts planning");
   await expect(
     overview.getByRole("heading", {
-      name: "Approved; opposed the rent increase",
+      name: "Supported the arena terms while opposing the higher proposed rent",
     }),
   ).toHaveCount(2);
   await expect(overview).toContainText("His earlier stated case · April 30");
@@ -478,7 +478,7 @@ test("mobile issue navigation shows context, committee limits and direct links",
   await expect(firearms).toContainText("Not a member of this committee");
   await expect(
     firearms.getByRole("heading", {
-      name: "Voted to put the proposal on hold",
+      name: "Voted to put the gun proposal on hold",
     }),
   ).toBeVisible();
   await firearms

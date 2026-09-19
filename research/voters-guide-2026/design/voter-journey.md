@@ -61,3 +61,24 @@ confidence before/after, and whether confidence is supported by understanding.
 Do not record their political choices as analytics. The time targets and the
 claim of empowerment must be tested through comprehension, not inferred from
 passing browser tests.
+
+## Council-record language review — September 19, 2026
+
+All 29 topic introductions and 174 incumbent summaries now have a separate
+plain-language reading layer. The original research, roll calls, stated reasons,
+sources and evidence export remain available. The export also includes the
+versioned reading layer so reviewers can compare it with the underlying record.
+
+Each summary names the actual proposal before referring to it. Budget accounts
+separate 2025 from June and July 2026, explain which services would receive money,
+and distinguish expected savings from money already available. Program names,
+such as Services First and Portland Street Response, come with descriptions.
+Other topics distinguish borrowing from higher bills, sending a tax to voters
+from enacting it, and approving negotiating terms from funding construction.
+
+The browser checks cover every topic in both districts at mobile width, missing
+summaries, overflow and the reported budget example. Existing preservation checks
+verify that the underlying candidate and decision research has not changed.
+These checks do not measure whether a first-time reader understands the text.
+For that, ask readers to explain what was proposed, which money or service was
+affected, and how two councilors differed without opening another card.

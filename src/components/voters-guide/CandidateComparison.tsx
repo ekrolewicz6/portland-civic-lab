@@ -13,6 +13,7 @@ import {
 import ShareGuide from "./ShareGuide";
 import journey from "./journey.module.css";
 import { comparisonFragment, sharedComparison } from "@/lib/voters-guide/journey";
+import { councilReaderCopy } from "@/lib/voters-guide/council-reader-copy";
 import CandidatePortrait from "./CandidatePortrait";
 import CouncilDisagreements, {
   CouncilIssuePicker,
@@ -138,6 +139,7 @@ function Profile({
             label={`Record issue for ${person.name}`}
           />
         )}
+        {person.record?.some((entry) => entry.decisionId) && <p>{councilReaderCopy[recordIssue].context}</p>}
         {person.record?.length ? (
           person.record.map((r, i) => {
             const decision = councilDecisions.find(
@@ -470,7 +472,7 @@ export default function CandidateComparison({ race }: { race: Race }) {
               onChange={setRecordIssue}
               label="Recorded decisions issue"
             />
-            <p>{recordTopic.context}</p>
+            <p>{councilReaderCopy[recordTopic.id].context}</p>
             {councilDecisions.map((decision) => (
               <section
                 className={styles.decisionCard}
