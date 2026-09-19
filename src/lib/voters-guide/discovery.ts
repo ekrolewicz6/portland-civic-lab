@@ -2,12 +2,13 @@ import type { Candidate, Evidence } from "./types";
 import { councilDecisions } from "./council-decisions";
 import { decisionAccounts } from "./council-record-accounts";
 
-export const discoveryVersion = "2026-09-19.2";
+export const discoveryVersion = "2026-09-19.3";
 export type Issue = "housing" | "safety" | "money" | "climate";
 export type Question = {
   id: string;
   title: string;
   context: string;
+  detail: string;
   issue: Issue;
   priority: string;
   decisionId: string;
@@ -18,7 +19,7 @@ export const priorities = [
   {
     id: "housing",
     label: "Homes people can afford",
-    detail: "Building homes, protecting renters and ownership.",
+    detail: "Home prices, rent and building more homes.",
   },
   {
     id: "homelessness",
@@ -43,17 +44,14 @@ export const priorities = [
   {
     id: "climate",
     label: "Climate & environmental health",
-    detail: "Climate funding and protection from pollution.",
+    detail: "Climate change, clean air and clean water.",
   },
 ] as const;
 // Ask about the actual decision. A broad campaign goal cannot establish a vote on it.
-const choices = [
-  { id: "yes", text: "Yes — I would support this proposal." },
-  { id: "no", text: "No — I would oppose this proposal." },
-  {
-    id: "depends",
-    text: "It depends — I would need changes or more information.",
-  },
+const choices = (yes: string, no: string) => [
+  { id: "yes", text: yes },
+  { id: "no", text: no },
+  { id: "depends", text: "It depends" },
 ];
 export const questions: Question[] = [
   {
@@ -61,65 +59,84 @@ export const questions: Question[] = [
     priority: "housing",
     issue: "housing",
     decisionId: "homebuyer-income",
-    title:
-      "Would you let higher-income buyers qualify for this housing fee break?",
+    title: "Should this housing program include higher-income buyers?",
     context:
+      "The city waives building fees for some affordable homes. Usually, buyers must meet an income limit. This change would let higher-income buyers qualify for certain unsold homes, too.",
+    detail:
       "Portland temporarily removed the buyer income limit for certain unsold homes approved before 2026. The homes still have a price limit, and buyers must live in them. Supporters want the homes sold; the question is whether the benefit should stay limited by income.",
-    options: choices,
+    options: choices(
+      "Yes — include higher-income buyers",
+      "No — keep the income limit",
+    ),
   },
   {
     id: "camp-removal",
     priority: "homelessness",
     issue: "safety",
     decisionId: "camp-removal",
-    title:
-      "Would you move money from camp removals to this package of services?",
+    title: "Spend less on clearing camps to fund other services?",
     context:
+      "This proposal would move about $4.3 million from clearing homeless camps to a package supporting housing, food, immigration services and city staff. Camping rules would stay in place.",
+    detail:
       "A 2025 proposal would cut about $4.3 million from the camp-removal program as part of a package supporting housing, food, immigration services and city staff. This meant less money for removals. It would not repeal camping restrictions.",
-    options: choices,
+    options: choices(
+      "Yes — move the money to those services",
+      "No — keep that money for clearing camps",
+    ),
   },
   {
     id: "oversight-funding",
     priority: "safety",
     issue: "safety",
     decisionId: "oversight-funding",
-    title:
-      "Would you use expected savings in police oversight to fund police and fire services?",
+    title: "Use expected savings to help fund police and firefighters?",
     context:
+      "The city expected the office that checks police conduct to have money left over. This proposal would use those expected savings for police and fire services. The savings were not guaranteed.",
+    detail:
       "Council considered $7.68 million for police support, training and fire services. It would use emergency reserves first, then replace that money with expected unspent funds from the police oversight office. The proposal did not abolish oversight; the savings were not yet certain.",
-    options: choices,
+    options: choices(
+      "Yes — use the expected savings",
+      "No — do not rely on those savings",
+    ),
   },
   {
     id: "water-rates",
     priority: "services",
     issue: "money",
     decisionId: "water-rates",
-    title: "Would you approve this increase in water bills?",
+    title: "Raise water bills by about $5 a month?",
     context:
+      "This increase would bring in more money for the water system. A typical monthly water charge would rise from about $66 to $71, before sewer and stormwater charges.",
+    detail:
       "The 2026 rate increase raised a typical monthly water charge from $65.57 to $70.89, before sewer and stormwater charges. It provided more revenue for the water system while increasing household costs. Council approved it over objections from some members.",
-    options: choices,
+    options: choices("Yes — approve the increase", "No — reject the increase"),
   },
   {
     id: "street-fee",
     priority: "transport",
     issue: "climate",
     decisionId: "street-fee",
-    title:
-      "Would you charge households a monthly fee for street repairs and safety?",
+    title: "Add a monthly fee to help repair streets?",
     context:
+      "The fee is $12 for a typical house or $8.40 per apartment. Most of the money goes to street repairs; the rest goes to safety improvements.",
+    detail:
       "The approved fee starts in January 2027: $12 a month for a typical single-family home or $8.40 per apartment. Three-quarters goes to street maintenance and one-quarter to safety. It adds funding for streets and another charge for households.",
-    options: choices,
+    options: choices("Yes — add the street fee", "No — reject the street fee"),
   },
   {
     id: "zenith-enforcement",
     priority: "climate",
     issue: "climate",
     decisionId: "zenith-enforcement",
-    title:
-      "Would you let residents sue to enforce Zenith’s pipeline agreement?",
+    title: "Let residents sue if Zenith breaks its pipeline agreement?",
     context:
+      "Zenith operates an oil terminal in Portland. This proposal would give residents a right to sue over violations of its city pipeline agreement. It would not close the terminal.",
+    detail:
       "Council considered giving residents a right to sue over violations of the city’s pipeline agreement as a condition of transferring it to a new owner. That would add a way to enforce the agreement. It would not shut down the terminal or decide its air permit.",
-    options: choices,
+    options: choices(
+      "Yes — give residents that right",
+      "No — reject that added right to sue",
+    ),
   },
   {
     id: "services-first",
@@ -127,11 +144,15 @@ export const questions: Question[] = [
     issue: "money",
     decisionId: "services-first",
     optional: true,
-    title:
-      "Would you use climate-fund interest to help keep other city services running?",
+    title: "Use climate-fund earnings to help pay for other services?",
     context:
+      "This proposal would use about $16 million earned in interest on the climate fund, plus other money, for parks, fire services and other city services. Less interest would remain for climate work.",
+    detail:
       "A June 2026 proposal would use about $16 million in climate-fund interest, plus other funds, for parks, unarmed police support, fire services and staff. It would preserve services while leaving less of that interest for climate work. Council split evenly, so it failed.",
-    options: choices,
+    options: choices(
+      "Yes — use that interest for city services",
+      "No — reject this use of the interest",
+    ),
   },
   {
     id: "moda",
@@ -139,11 +160,15 @@ export const questions: Question[] = [
     issue: "money",
     decisionId: "moda",
     optional: true,
-    title:
-      "Would you approve the city’s starting terms for Moda Center negotiations?",
+    title: "Back these starting terms for renovating Moda Center?",
     context:
+      "The city proposed $120 million for renovations and $275 million for future building needs over 20 years. This vote approved terms for negotiations, not a final contract.",
+    detail:
       "Council approved a framework for negotiating a public role in renovating the arena. This opened a path toward a deal with future public costs. It was not the final contract or a vote to pay every renovation cost. Rejecting it did not necessarily mean wanting the team to leave.",
-    options: choices,
+    options: choices(
+      "Yes — back these negotiating terms",
+      "No — reject these negotiating terms",
+    ),
   },
   {
     id: "psr-framework",
@@ -151,11 +176,12 @@ export const questions: Question[] = [
     issue: "safety",
     decisionId: "psr-framework",
     optional: true,
-    title:
-      "Would you make Portland Street Response a full branch of the emergency system?",
+    title: "Give unarmed crisis responders a full role in emergency response?",
     context:
+      "Portland Street Response sends unarmed workers to people in crisis. This plan made it a full branch of the emergency system, but did not pay for round-the-clock service.",
+    detail:
       "The 2025 plan gave the unarmed crisis-response service a place alongside other emergency responders and called for a community advisory committee. It set a direction for expansion, but did not itself pay for round-the-clock service.",
-    options: choices,
+    options: choices("Yes — approve that role", "No — reject this plan"),
   },
 ];
 export function questionCoverage(people: Candidate[], q: Question) {

@@ -278,7 +278,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
   }
   const titles: Record<string, string> = {
     intro: "Start with what matters to you.",
-    priorities: "What matters most to you?",
+    priorities: "Where would you like to start?",
     experience: "What experience matters to you?",
     results: "Candidates to explore",
     shortlist: "Your shortlist",
@@ -328,8 +328,8 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
       {stage === "priorities" && (
         <>
           <p>
-            Choose up to three. You can explore the other issues in the full
-            guide at any time.
+            Pick 1–3 topics to start. One is enough. We’ll ask one question per
+            topic; you can explore everything else later.
           </p>
           <div className={styles.choices}>
             {priorities.map((p) => (
@@ -354,6 +354,11 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               </button>
             ))}
           </div>
+          <p className={styles.note} role="status">
+            {state.priorities.length === 3
+              ? "Three topics selected. To swap one, tap a selected topic first."
+              : `${state.priorities.length} of 3 topics selected. You don’t need to fill all three.`}
+          </p>
           <div className={styles.actions}>
             <button onClick={() => go("intro")}>Back</button>
             <button
@@ -364,7 +369,10 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
                 go(queue.length ? "question" : "experience");
               }}
             >
-              {state.priorities.length ? "Continue" : "Skip policy questions"} →
+              {state.priorities.length
+                ? `Continue with ${state.priorities.length} ${state.priorities.length === 1 ? "question" : "questions"}`
+                : "Skip policy questions"}{" "}
+              →
             </button>
           </div>
         </>
@@ -377,26 +385,6 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               : `Question ${index + 1} of ${queue.length}`}
           </p>
           <p className={styles.lede}>{current.context}</p>
-          <details className={styles.preferences}>
-            <summary>What can this question tell me?</summary>
-            <p>
-              We have a recorded vote for{" "}
-              {questionCoverage(race.candidates, current).known} of{" "}
-              {race.candidates.length} candidates. These are past decisions. We
-              do not assume how challengers would have voted from their general
-              promises.
-            </p>
-            {!questionCoverage(race.candidates, current).comparable && (
-              <p>
-                Background only: we do not have enough evidence of different
-                positions in this race to use this answer for comparison.
-              </p>
-            )}
-            <p>
-              “It depends” keeps your conditions open. It does not count as
-              agreement or disagreement. “Not sure” skips this choice.
-            </p>
-          </details>
           <div className={styles.choices}>
             {current.options.map((o) => (
               <button
@@ -421,7 +409,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
                 }))
               }
             >
-              Not sure / no preference
+              Not sure — skip this question
             </button>
           </div>
           <div className={styles.actions}>
@@ -447,18 +435,39 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               →
             </button>
           </div>
+          <details className={styles.preferences} key={current.id}>
+            <summary>More context &amp; the vote we compare</summary>
+            <p>{current.detail}</p>
+            <p>
+              We have a recorded vote for{" "}
+              {questionCoverage(race.candidates, current).known} of{" "}
+              {race.candidates.length} candidates. These are past decisions. We
+              do not assume how challengers would have voted from their general
+              promises.
+            </p>
+            {!questionCoverage(race.candidates, current).comparable && (
+              <p>
+                Background only: we do not have enough evidence of different
+                positions in this race to use this answer for comparison.
+              </p>
+            )}
+            <p>
+              “It depends” keeps your conditions open. It does not count as
+              agreement or disagreement. “Not sure” skips this choice.
+            </p>
+          </details>
         </>
       )}
       {stage === "experience" && (
         <>
           <p>
-            Choose up to two, or skip. A preference brings relevant experience
-            forward within each policy group. A requirement limits the initial
-            results to candidates whose relevant experience we can establish.
+            Pick up to two, or go straight to results. We’ll show candidates
+            with that experience first within each group.
           </p>
           <p className={styles.note}>
-            A role can show relevant experience without proving success. We do
-            not infer an ability to build agreements from a job title.
+            A job title shows experience, not how well someone did the job.
+            Check “require” only if you want to filter by evidence of that
+            experience.
           </p>
           <div className={styles.choices}>
             {experienceOptions.map((e) => {

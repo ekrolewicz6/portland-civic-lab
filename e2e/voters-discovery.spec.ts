@@ -212,7 +212,7 @@ test("three priorities take at most five screens; extra questions are optional",
     await expect(
       guide.getByText(`Question ${i} of 3`, { exact: true }),
     ).toBeVisible();
-    await guide.getByRole("button", { name: /It depends —/ }).click();
+    await guide.getByRole("button", { name: /^It depends$/ }).click();
     await guide
       .getByRole("button", {
         name: i === 3 ? /Next: experience/ : /Next question/,
@@ -230,7 +230,9 @@ test("three priorities take at most five screens; extra questions are optional",
   await guide
     .getByText("Want to explore one more choice? (Optional)", { exact: true })
     .click();
-  await guide.getByRole("button", { name: /starting terms for Moda/ }).click();
+  await guide
+    .getByRole("button", { name: /starting terms for renovating Moda/ })
+    .click();
   await expect(
     guide.getByText("Optional extra question", { exact: true }),
   ).toBeVisible();
