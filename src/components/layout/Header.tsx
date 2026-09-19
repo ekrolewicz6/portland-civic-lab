@@ -158,7 +158,7 @@ const MENUS: MenuDef[] = [
 
 function Wordmark() {
   return (
-    <Link href="/" className="group flex shrink-0 items-center gap-2.5">
+    <Link href="/" className="group flex min-h-[44px] shrink-0 items-center gap-2.5">
       <BrandMark className="h-8 w-8" />
       <span className="whitespace-nowrap font-editorial-normal text-[17px] leading-none tracking-tight text-white">
         Portland Civic Lab
@@ -367,7 +367,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-[var(--color-canopy)]/95 text-white backdrop-blur-sm transition-shadow duration-300 ${
+      className={`sticky top-0 z-50 bg-[var(--color-canopy)]/95 text-white backdrop-blur-sm motion-safe:transition-shadow motion-safe:duration-300 ${
         scrolled || openMenu ? "border-b border-white/10 shadow-[0_1px_24px_rgba(0,0,0,0.25)]" : "border-b border-transparent"
       }`}
     >

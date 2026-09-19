@@ -84,12 +84,10 @@ export const metadata: Metadata = {
       HOME_DESCRIPTION,
     creator: "@portlandciviclab",
   },
+  // index/follow is the default and is not declared, so a route's own
+  // `noindex` (the 404 page, the print edition) is the only robots tag it emits.
   robots: {
-    index: true,
-    follow: true,
     googleBot: {
-      index: true,
-      follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
@@ -107,15 +105,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${jetbrainsMono.variable} ${bricolage.variable}`}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-      </head>
+      {/* next/font self-hosts every family, so no preconnect to Google Fonts is needed. */}
       <body className="min-h-screen">
+        {/* First focusable element on every page: a paper-colored ring on the canopy surface. */}
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[100] focus:rounded-sm focus:bg-[var(--color-canopy)] focus:px-4 focus:py-3 focus:text-[15px] focus:font-medium focus:text-white focus:outline-2 focus:outline-offset-2 focus:outline-[var(--color-paper)]"
+        >
+          Skip to content
+        </a>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
@@ -125,7 +123,9 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){window.dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              page_location: location.href.split('#')[0]
+            });
           `}
         </Script>
         <script

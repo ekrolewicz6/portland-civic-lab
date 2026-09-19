@@ -12,13 +12,14 @@ import {
 } from "@/lib/voters-guide/council-record-accounts";
 import type { Candidate, Evidence } from "@/lib/voters-guide/types";
 import { councilReaderCopy } from "@/lib/voters-guide/council-reader-copy";
-import CandidatePortrait from "./CandidatePortrait";
+import { SrOnly, VotePill } from "@/components/race-sheet/Glyph";
 import styles from "@/app/(public)/voters-guide/guide.module.css";
 
 function Proof({ source }: { source: Evidence }) {
   return (
     <a href={source.url} title={`${source.kind} · ${source.date}`}>
-      {source.label} ↗
+      {source.label} <span aria-hidden="true">↗</span>
+      <SrOnly> (external)</SrOnly>
     </a>
   );
 }
@@ -38,17 +39,18 @@ export function DecisionExplanation({
     <div className={styles.recordAccount}>
       {identity && (
         <header className={styles.recordIdentity}>
-          <div className={styles.recordPortrait}>
-            <CandidatePortrait person={person} compact />
-          </div>
-          <a href={`#${person.id}`}>{person.name} ↗</a>
+          <b>{person.name}</b>
         </header>
       )}
       <div className={styles.recordVote}>
         <span>{decision.voteLabel ?? "Final vote"}</span>
-        <strong data-vote={vote ?? "unknown"}>
-          {vote ?? "No vote in this record"}
-        </strong>
+        {vote ? (
+          <span>
+            <VotePill vote={vote} name={person.name} />
+          </span>
+        ) : (
+          <span>No vote in this record</span>
+        )}
       </div>
       {account ? (
         <>
@@ -206,11 +208,9 @@ export default function CouncilDisagreements({
             <div className={styles.choiceOverview}>
               {incumbents.map((person) => (
                 <div key={person.id} className={styles.choiceSummary} data-reader-candidate={person.id}>
-                  <div className={styles.recordPortrait}>
-                    <CandidatePortrait person={person} compact />
-                  </div>
                   <div>
-                    <a href={`#${person.id}`}>{person.name} ↗</a>
+                    {/* The legacy stylesheet reserves a portrait column; the name spans it. */}
+                    <b style={{ gridColumn: "1 / -1" }}>{person.name}</b>
                     <h4>
                       {copy.readings[person.name].headline}
                     </h4>
@@ -221,14 +221,10 @@ export default function CouncilDisagreements({
             </div>
             <details className={styles.disagreementEvidence}>
               <summary>Read the decisions and reasons</summary>
-              <div className={styles.disagreementContext}>
-                <div className={styles.recordProof}>
-                  {(item.sources.length ? item.sources : [decision.source]).map(
-                    (source) => (
-                      <Proof source={source} key={source.url} />
-                    ),
-                  )}
-                </div>
+              <div className={styles.recordProof}>
+                {(item.sources.length ? item.sources : [decision.source]).map((source) => (
+                  <Proof source={source} key={source.url} />
+                ))}
               </div>
               <div className={styles.decisionTimeline}>
                 {decisions.map((entry) => (
@@ -270,13 +266,13 @@ export default function CouncilDisagreements({
               href={`#disagreement-${item.id}`}
               onClick={() => setActive(item.id)}
             >
-              {item.label} →
+              {item.label} <span aria-hidden="true">→</span>
             </a>
           ))}
         </div>
         <p>
           <Link href="/voters-guide/methodology#council-coverage">
-            How we checked topic coverage ↗
+            How we checked topic coverage <span aria-hidden="true">↗</span>
           </Link>
         </p>
       </details>
@@ -284,7 +280,9 @@ export default function CouncilDisagreements({
         Reviewed through September 18, 2026. A vote, a stated reason and our
         interpretation are distinct. “Not on committee” means the member had no
         vote in that committee; “Absent” means they missed that roll call.{" "}
-        <a href="#compare">Compare every candidate’s plans →</a>
+        <a href="#compare">
+          Compare every candidate’s plans <span aria-hidden="true">→</span>
+        </a>
       </p>
     </section>
   );

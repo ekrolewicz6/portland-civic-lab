@@ -19,6 +19,14 @@ import {
   councilDisagreements,
   decisionAccounts,
 } from "@/lib/voters-guide/council-record-accounts";
+import { raceSheetVersion, issues as raceSheetIssues } from "@/lib/voters-guide/race-sheet";
+import { featuredVotes } from "@/lib/voters-guide/race-sheet/featured";
+import { issueLines } from "@/lib/voters-guide/race-sheet/content/lines";
+import { choiceParagraphs } from "@/lib/voters-guide/race-sheet/content/choice";
+import { saidPlacements } from "@/lib/voters-guide/race-sheet/content/said";
+import { missingStates, primaryStatements, roleOverrides } from "@/lib/voters-guide/race-sheet/content/roles";
+import { ballotInstructions, districts } from "@/lib/voters-guide/race-sheet/content/districts";
+import { answers } from "@/lib/voters-guide/race-sheet/content/answers";
 
 export const dynamic = "force-static";
 
@@ -38,7 +46,26 @@ export function GET() {
       councilReaderVersion,
       councilReaderCopy,
       councilCoverageAudit,
+      raceSheet: {
+        version: raceSheetVersion,
+        status:
+          "Current presentation layer. Short lines are shortened from the named parent field and carry a review status; 'pending' means separate human review has not yet occurred.",
+        issues: raceSheetIssues,
+        featuredVotes,
+        choiceParagraphs,
+        issueLines,
+        saidPlacements,
+        roleOverrides,
+        missingStates,
+        primaryStatements,
+        districts,
+        ballotInstructions,
+        answers,
+        rules:
+          "Every candidate on the checked roster, alphabetical, one line each. A line may omit, never add. A dash is a research gap, not a position. Featured votes are chosen editorially and disclosed; challengers appear beneath a vote only for an explicit statement about that exact choice. The reader's list is never seeded, ordered, scored, shared or recorded.",
+      },
       explorer: {
+        status: "Retired September 19, 2026; replaced by the race sheet",
         version: explorerVersion,
         topics: explorerTopics,
         coverage: races.map((race) => ({

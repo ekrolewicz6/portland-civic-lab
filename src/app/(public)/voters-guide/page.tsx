@@ -1,154 +1,198 @@
+import Link from "next/link";
+import { CalendarDays } from "lucide-react";
 import { voterGuideMetadata } from "@/lib/voters-guide/metadata";
 import GuideStructuredData from "@/components/voters-guide/GuideStructuredData";
-import Link from "next/link";
-import { ArrowUpRight, BookOpen, CalendarDays } from "lucide-react";
-import {
-  races,
-  candidateCount,
-  profileCount,
-} from "@/lib/voters-guide/published";
+import { races } from "@/lib/voters-guide/published";
 import { officialSources, REVIEW_LABEL } from "@/lib/voters-guide/types";
-import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
-import GuideExplorer from "@/components/voters-guide/GuideExplorer";
-import styles from "./guide.module.css";
+import {
+  buildRaceSheet,
+  issues,
+  shortRaceTitle,
+  type RaceSheet,
+} from "@/lib/voters-guide/race-sheet";
+import styles from "./hub.module.css";
+
 export const metadata = voterGuideMetadata("guide");
-export default function VotersGuidePage() {
+
+/**
+ * Used only when the district overlay has not been authored yet. The
+ * authored line (content/districts.ts) always wins once it exists.
+ */
+const NEIGHBORHOOD_FALLBACK: Record<string, string> = {
+  "portland-district-3": "Inner Southeast Portland",
+  "portland-district-4": "West side and Sellwood",
+};
+
+const RANKED_CHOICE_GUIDE = "https://multco.us/info/ranked-choice-voting-rcv";
+
+function DistrictCard({ sheet }: { sheet: RaceSheet }) {
+  const { race } = sheet;
+  const short = shortRaceTitle(race);
+  const numeral = short.match(/\d+/)?.[0] ?? "";
+  const neighborhoods =
+    sheet.district?.neighborhoods ?? NEIGHBORHOOD_FALLBACK[race.id] ?? null;
+  const lookupUrl = sheet.district?.mapUrl ?? officialSources.myVote;
+  const count = sheet.rows.length;
+  const headingId = `district-${race.id}`;
+
   return (
-    <div className={styles.guide}>
+    <li className={styles.card}>
+      <article aria-labelledby={headingId}>
+        <div className={styles.cardHead}>
+          <span className={styles.numeral} aria-hidden="true">
+            {numeral}
+          </span>
+          <div className={styles.cardTitle}>
+            <p className={styles.cardEyebrow}>Portland City Council</p>
+            <h2 id={headingId}>
+              <Link
+                href={`/voters-guide/${race.id}`}
+                className={styles.cardLink}
+              >
+                {short}
+              </Link>
+            </h2>
+          </div>
+        </div>
+        {neighborhoods ? (
+          <p className={styles.neighborhoods}>{neighborhoods}</p>
+        ) : null}
+        <p className={styles.cardMeta}>
+          {count} candidates · {race.seats} seats · ranked choice
+        </p>
+        <p className={styles.choice}>
+          <span className={styles.choiceLabel}>Our reading:</span> {sheet.choice.text}
+        </p>
+        {!sheet.choice.reviewed && (
+          <p className={styles.draft}>Draft; human review pending.</p>
+        )}
+        <div className={styles.chipBlock}>
+          <p className={styles.chipLabel}>Jump straight to one issue</p>
+          <ul
+            className={styles.chips}
+            aria-label={`${short} candidates by issue`}
+          >
+            {issues.map((issue) => (
+              <li key={issue.id}>
+                <Link
+                  href={`/voters-guide/${race.id}#issue=${issue.id}`}
+                  className={styles.chip}
+                >
+                  {issue.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.cardFoot}>
+          <Link href={`/voters-guide/${race.id}`} className={styles.cta}>
+            See every candidate{" "}
+            <span className={styles.arrow} aria-hidden="true">
+              →
+            </span>
+          </Link>
+          <a
+            href={lookupUrl}
+            className={styles.lookup}
+            rel="noopener noreferrer"
+          >
+            Not sure? Look up your district{" "}
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </article>
+    </li>
+  );
+}
+
+export default function VotersGuidePage() {
+  const sheets = races.map(buildRaceSheet);
+  const districtList = sheets.map((s) => shortRaceTitle(s.race));
+  const districtsLabel =
+    districtList.length > 1
+      ? `${districtList.slice(0, -1).join(", ")} and ${districtList.at(-1)}`
+      : (districtList[0] ?? "");
+  const editionDistricts = districtsLabel.replace(/District /g, "").trim();
+
+  return (
+    <div className={styles.hub}>
       <GuideStructuredData card="guide" />
+
       <header className={styles.intro}>
-        <div className={styles.eyebrow}>Portland Civic Lab / Election 2026</div>
+        <p className={styles.eyebrow}>Portland Civic Lab / Election 2026</p>
         <div className={styles.titleRow}>
-          <h1>
+          <h1 className={styles.title}>
             Know the choice.
             <br />
             <span>Make your own.</span>
           </h1>
           <div className={styles.election}>
-            <CalendarDays aria-hidden="true" size={23} />
-            <strong>November 3, 2026</strong>
-            <span>Oregon general election</span>
-            <a href={officialSources.myVote}>
-              Check your registration <ArrowUpRight size={16} />
-            </a>
+            <CalendarDays aria-hidden="true" size={18} />
+            <div className={styles.electionText}>
+              <strong>November 3, 2026</strong>
+              <span>Oregon general election</span>
+              <a href={officialSources.myVote} rel="noopener noreferrer">
+                Check your registration <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </div>
         <p className={styles.lede}>
-          What candidates propose. What the record shows. What still needs an
-          answer. A nonpartisan voters’ guide to Portland City Council Districts
-          3 and 4.
+          Every City Council candidate on one page per district, what they
+          propose, how sitting councilors voted, and the sources behind all of
+          it.
         </p>
-        <div className={styles.meta}>
-          <span>Research reviewed {REVIEW_LABEL}</span>
-          <Link href="/voters-guide/methodology">
-            <BookOpen size={16} /> Our editorial standards
-          </Link>
-        </div>
       </header>
-      <div className={styles.edition}>
+
+      {/* Each segment carries its own separator (CSS), so a dot never ends a line alone. */}
+      <p className={styles.edition}>
         <strong>Working research edition</strong>
-        <p>
-          {races.length} races · {candidateCount} candidates listed ·{" "}
-          {profileCount} substantive briefs. Coverage is still being expanded
-          and independently checked. Regional and statewide guides are in
-          development. Missing research is labeled on each profile. This is not
-          yet a complete guide to every race or every candidate’s public record.
-        </p>
+        <span>Districts {editionDistricts}</span>
+        <span>reviewed {REVIEW_LABEL}</span>
+        <span className={styles.editionLong}>AI-assisted, human review not yet complete</span>
         <Link href="/voters-guide/methodology#coverage">
-          See coverage and gaps →
+          Coverage and gaps <span aria-hidden="true">→</span>
         </Link>
-      </div>
-      <section
-        className={styles.portlandFeature}
-        aria-labelledby="portland-feature-title"
-      >
-        <div className={styles.featureIntro}>
-          <div className={styles.eyebrow}>On the Portland ballot</div>
-          <h2 id="portland-feature-title">
-            A city council.
-            <br />
-            <em>A city’s direction.</em>
+      </p>
+
+      <section className={styles.districts} aria-labelledby="districts-title">
+        <div className={styles.sectionHead}>
+          <p className={styles.eyebrow}>On your ballot</p>
+          <h2 id="districts-title" className={styles.sectionTitle}>
+            Which district am I in?
           </h2>
-          <p>
-            Six seats. Two districts. Meet everyone asking to represent you, and
-            explore what their choices could mean for Portland.
-          </p>
-          <Link href="/voters-guide/methodology">
-            Evidence before endorsements ↗
-          </Link>
         </div>
-        <div className={styles.districtFeatures}>
-          {races
-            .filter(
-              (r) =>
-                r.id === "portland-district-3" ||
-                r.id === "portland-district-4",
-            )
-            .map((r) => (
-              <Link
-                key={r.id}
-                href={`/voters-guide/${r.id}`}
-                className={styles.districtFeature}
-              >
-                <div className={styles.districtFeatureHeading}>
-                  <span className={styles.districtNumber}>
-                    0{r.id.slice(-1)}
-                  </span>
-                  <div>
-                    <h3>District {r.id.slice(-1)}</h3>
-                    <p>{r.candidates.length} candidates · 3 seats</p>
-                  </div>
-                  <ArrowUpRight aria-hidden="true" />
-                </div>
-                <div className={styles.fieldMosaic} aria-hidden="true">
-                  {[...r.candidates]
-                    .sort((a, b) => a.name.localeCompare(b.name, "en"))
-                    .map((p) => (
-                      <CandidatePortrait person={p} compact key={p.id} />
-                    ))}
-                </div>
-                <span className={styles.districtCta}>
-                  Explore the complete field <span aria-hidden="true">→</span>
-                </span>
-              </Link>
-            ))}
-        </div>
+        <ul className={styles.cards}>
+          {sheets.map((sheet) => (
+            <DistrictCard key={sheet.race.id} sheet={sheet} />
+          ))}
+        </ul>
+        <p className={styles.alsoOnBallot}>
+          The uncontested City Auditor race is also on the Portland ballot.
+        </p>
       </section>
-      <GuideExplorer
-        races={races.map(
-          ({
-            id,
-            title,
-            geography,
-            jurisdiction,
-            method,
-            stakes,
-            candidates,
-          }) => ({
-            id,
-            title,
-            geography,
-            jurisdiction,
-            method,
-            stakes,
-            candidates: candidates.map(({ name }) => ({ name })),
-            profileCount: candidates.filter((c) => !c.missing).length,
-          }),
-        )}
-      />
+
       <section className={styles.voting} aria-labelledby="voting-title">
-        <div>
-          <div className={styles.eyebrow}>Before you vote</div>
-          <h2 id="voting-title">Your address determines your ballot.</h2>
-          <p>
-            A county filter helps you explore. It does not determine your
-            eligibility for a district or produce your official ballot.
+        <div className={styles.votingIntro}>
+          <p className={`${styles.eyebrow} ${styles.eyebrowOnCanopy}`}>
+            Before you vote
           </p>
-          <a href={officialSources.myVote}>
-            Find your voter information <ArrowUpRight size={16} />
+          <h2 id="voting-title" className={styles.votingTitle}>
+            Your address determines your ballot.
+          </h2>
+          <p className={styles.votingNote}>
+            This guide helps you explore. Only your county elections office can
+            confirm your district and produce your official ballot.
+          </p>
+          <a
+            href={officialSources.myVote}
+            className={styles.votingLink}
+            rel="noopener noreferrer"
+          >
+            Find your voter information <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <ol>
+        <ol className={styles.dates}>
           <li>
             <strong>October 13</strong>
             <span>Registration deadline</span>
@@ -163,15 +207,38 @@ export default function VotersGuidePage() {
           </li>
         </ol>
         <p className={styles.sourceNote}>
-          Dates: <a href={officialSources.state}>Oregon Secretary of State</a>.
-          For mail returns, follow the election office’s postmark and receipt
+          Dates:{" "}
+          <a href={officialSources.state} rel="noopener noreferrer">
+            Oregon Secretary of State
+          </a>
+          . For mail returns, follow the election office’s postmark and receipt
           requirements. Portland and Multnomah County contests use ranked
           choice; other contests may use different instructions.{" "}
-          <a href="https://multco.us/info/ranked-choice-voting-rcv">
+          <a href={RANKED_CHOICE_GUIDE} rel="noopener noreferrer">
             Read the official ranked-choice guide.
           </a>
         </p>
       </section>
+
+      <footer className={styles.foot} aria-label="About this guide">
+        <ul className={styles.footLinks}>
+          <li>
+            <Link href="/voters-guide/methodology">Our editorial standards</Link>
+          </li>
+          <li>
+            <Link href="/voters-guide/research-log">Research log</Link>
+          </li>
+          <li>
+            <Link href="/voters-guide/evidence" prefetch={false}>
+              Evidence export
+            </Link>
+          </li>
+        </ul>
+        <p className={styles.footNote}>
+          We do not endorse, rank or score. Every candidate is listed
+          alphabetically and answers the same questions.
+        </p>
+      </footer>
     </div>
   );
 }

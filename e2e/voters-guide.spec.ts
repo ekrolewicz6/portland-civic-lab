@@ -1,515 +1,133 @@
-import { expect, test } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
+import { races } from "../src/lib/voters-guide/published";
+import { buildRaceSheet, issues, type IssueId } from "../src/lib/voters-guide/race-sheet";
 
-test("directory searches names with accents and explains coverage", async ({
-  page,
-}) => {
-  await page.goto("/voters-guide");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Know the choice",
-  );
-  await expect(
-    page.getByText("Working research edition", { exact: true }),
-  ).toBeVisible();
-  await page
-    .getByRole("searchbox", { name: "Search races or candidates" })
-    .fill("esther leon");
-  await expect(page.getByRole("status")).toHaveText("1 race");
-  await expect(
-    page.getByRole("link", { name: /Portland Council · District 3/ }),
-  ).toBeVisible();
-  await page.getByRole("searchbox").fill("unpublished district");
-  await expect(
-    page.getByRole("heading", { name: "No matching race" }),
-  ).toBeVisible();
-  await page.getByRole("button", { name: "Clear filters" }).click();
-  await expect(page.getByRole("searchbox")).toHaveValue("");
-  await expect(page.getByRole("status")).toHaveText("2 races");
-});
+/** The race page: every name once, A–Z, one line each; chips swap the line in place. */
 
-test("comparison starts neutral, supports direct selection and prevents duplicates", async ({
-  page,
-}) => {
-  await page.goto("/voters-guide/portland-district-3#compare");
-  const first = page.getByRole("combobox", {
-    name: "Candidate 1",
-    exact: true,
-  });
-  const second = page.getByRole("combobox", {
-    name: "Candidate 2",
-    exact: true,
-  });
-  await expect(first).toHaveValue("");
-  await expect(second).toHaveValue("");
-  await expect(page.locator("input:checked")).toHaveCount(0);
-  await first.selectOption("steve-novick");
-  await second.selectOption("tiffany-koyama-lane");
-  await expect(second.locator('option[value="steve-novick"]')).toHaveJSProperty(
-    "disabled",
-    true,
-  );
-  await expect(
-    page.getByRole("region", { name: "Steve Novick comparison" }),
-  ).toContainText("Targeted enforcement");
-  await page.getByRole("button", { name: "+ Add a third candidate" }).click();
-  await page
-    .getByRole("combobox", { name: "Candidate 3", exact: true })
-    .selectOption("angelita-morillo");
-  await expect(
-    page.getByRole("checkbox", { name: "Compare Ali Beaudoin", exact: true, includeHidden: true }),
-  ).toBeDisabled();
-  await page.getByRole("button", { name: "Housing", exact: true }).click();
-  await expect(
-    page.getByRole("region", { name: "Steve Novick comparison" }),
-  ).toContainText("faster permitting");
-  await expect(
-    page.getByRole("region", { name: "Tiffany Koyama Lane comparison" }),
-  ).toContainText("publicly owned housing");
-  await expect(page.locator("article")).toHaveCount(21);
-  await page
-    .getByRole("button", { name: "Clear comparison", exact: true })
-    .click();
-  await expect(first).toHaveValue("");
-  await expect(page.locator("input:checked")).toHaveCount(0);
-});
+const sheets = races.map(buildRaceSheet);
+const nouns: Record<IssueId, string> = { housing: "housing", safety: "safety", money: "taxes and bills", climate: "streets and climate" };
+const rail = (page: Page) => page.getByRole("group", { name: "Show each candidate's line on" });
+const rows = (page: Page) => page.locator("#list article[data-candidate]");
+const fits = (page: Page) => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
 
-test("record comparison preserves absent votes, agreement and legislative limits", async ({
-  page,
-}) => {
-  await page.goto("/voters-guide/portland-district-4#compare");
-  await page
-    .getByRole("combobox", { name: "Candidate 1", exact: true })
-    .selectOption("eric-zimmerman");
-  await page
-    .getByRole("combobox", { name: "Candidate 2", exact: true })
-    .selectOption("olivia-clark");
-  await page.getByRole("button", { name: "Recorded decisions" }).click();
-  await page
-    .getByRole("combobox", { name: "Recorded decisions issue" })
-    .selectOption("rental-pricing");
-  const rental = page
-    .locator("#compare")
-    .locator("section")
-    .filter({
-      has: page.getByRole("heading", {
-        name: "Restrict algorithmic rent coordination",
-        exact: true,
-      }),
-    })
-    .last();
-  await expect(rental).toContainText("Absent");
-  await expect(rental).toContainText("No");
-  await expect(rental).toContainText("Absence is not a vote against");
-  await page
-    .getByRole("combobox", { name: "Recorded decisions issue" })
-    .selectOption("privacy");
-  const dataCenters = page
-    .locator("#compare")
-    .locator("section")
-    .filter({
-      has: page.getByRole("heading", {
-        name: "Seek transparency and future data-center restrictions",
-      }),
-    })
-    .last();
-  await expect(dataCenters.locator('strong[data-vote="Yes"]')).toHaveCount(2);
-  await expect(dataCenters).toContainText("did not itself enact a moratorium");
-  await page
-    .getByRole("combobox", { name: "Candidate 1", exact: true })
-    .selectOption("john-j-goldsmith");
-  await page
-    .getByRole("combobox", { name: "Recorded decisions issue" })
-    .selectOption("rental-pricing");
-  await expect(rental).toContainText("No vote in this record");
-  await page.getByRole("button", { name: "Housing", exact: true }).click();
-  await expect(
-    page.getByRole("region", { name: "John J Goldsmith comparison" }),
-  ).toContainText("Evidence gap");
-  await expect(
-    page.getByRole("region", { name: "John J Goldsmith comparison" }),
-  ).toContainText("not evidence of neutrality");
-});
-
-test("sources are attributed and printing opens then restores disclosure state", async ({
-  page,
-}) => {
-  await page.goto("/voters-guide/portland-district-4#eli-arnold");
-  await expect(page.locator("details[open]")).toHaveCount(0);
-  await page
-    .locator("article:visible details summary")
-    .filter({ hasText: "Sources behind this profile" })
-    .first()
-    .click();
-  await expect(page.locator("details[open]")).toHaveCount(1);
-  await expect(page.locator("details[open]")).toContainText(
-    "Candidate statement",
-  );
-  await page.evaluate(() => {
-    window.print = () => {};
-  });
-  await page.evaluate(() => { window.location.hash = "candidates"; });
-  await page.getByRole("button", { name: "Print this race" }).click();
-  expect(await page.locator("details[open]").count()).toBe(
-    await page.locator("details").count(),
-  );
-  await page.evaluate(() => window.dispatchEvent(new Event("afterprint")));
-  await expect(page.locator("details[open]")).toHaveCount(1);
-  await page.emulateMedia({ media: "print" });
-  await expect(
-    page.getByText(/candidates · Reviewed September 18, 2026/),
-  ).toBeVisible();
-});
-
-test("mobile comparisons fit the screen and show matched issue cards", async ({
-  page,
-}) => {
-  await page.setViewportSize({ width: 390, height: 844 });
-  const errors: string[] = [];
-  page.on("pageerror", (error) => errors.push(error.message));
-  await page.goto("/voters-guide");
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
-  await page.goto("/voters-guide/portland-district-4#candidates");
-  await page.getByRole("checkbox").nth(0).check();
-  await page.getByRole("checkbox").nth(1).check();
-  await page.getByRole("link", { name: "See comparison ↑" }).click();
-  await page.getByRole("button", { name: "Taxes & spending" }).click();
-  const cards = page
-    .locator("#compare")
-    .getByRole("region", { name: /comparison$/ });
-  await expect(cards).toHaveCount(2);
-  for (const card of await cards.all()) {
-    const box = await card.boundingBox();
-    expect(box!.x).toBeGreaterThanOrEqual(0);
-    expect(box!.x + box!.width).toBeLessThanOrEqual(390);
-  }
-  await expect(page.getByRole("table")).toHaveCount(0);
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
-  expect(errors).toEqual([]);
-});
-
-test("export preserves evidence, missing research and the full field", async ({
-  request,
-}) => {
-  const response = await request.get("/voters-guide/evidence");
-  expect(response.ok()).toBe(true);
-  expect(response.headers()["content-disposition"]).toContain("attachment");
-  const payload = await response.json();
-  expect(payload.reviewed).toBe("2026-09-18");
-  expect(payload.races).toHaveLength(2);
-  expect(payload.councilDecisions).toHaveLength(73);
-  for (const race of payload.races)
-    for (const candidate of race.candidates) {
-      expect(candidate.analysis.tradeoff.length).toBeGreaterThan(30);
-      for (const issue of Object.values(candidate.analysis.issues) as {
-        source: { url: string };
-      }[])
-        expect(issue.source.url).toMatch(/^https:/);
+for (const sheet of sheets) {
+  const { race } = sheet;
+  test(`${race.id}: every candidate on the checked roster, alphabetical, once, with Save and no numeral`, async ({ page }) => {
+    await page.goto(`/voters-guide/${race.id}`);
+    for (const width of [320, 390, 1280]) {
+      await page.setViewportSize({ width, height: width < 700 ? 844 : 900 });
+      const ids = await rows(page).evaluateAll((nodes) => nodes.map((n) => (n as HTMLElement).dataset.candidate));
+      expect(ids).toEqual(sheet.rows.map((r) => r.id));
+      expect(new Set(ids).size).toBe(race.candidates.length);
+      expect(sheet.rows.map((r) => r.name)).toEqual([...sheet.rows.map((r) => r.name)].sort((a, b) => a.localeCompare(b, "en")));
+      for (const row of sheet.rows) {
+        const article = page.locator(`#list article[data-candidate="${row.id}"]`);
+        await expect(article.getByRole("button", { name: `Save ${row.name}`, exact: true })).toHaveAttribute("aria-pressed", "false");
+        const text = (await article.locator("summary").innerText()).replace(/\s+/g, " ");
+        expect(text).toContain(row.name);
+        expect(text.slice(0, text.indexOf(row.name)), `numeral before ${row.name}`).not.toMatch(/\d/);
+      }
+      expect(await fits(page)).toBe(true);
     }
-  const people = payload.races.flatMap(
-    (r: { candidates: unknown[] }) => r.candidates,
-  );
-  expect(people).toHaveLength(33);
-  expect(people.some((p: { missing?: string }) => p.missing)).toBe(true);
-  expect(payload.status).toContain("human editorial review is incomplete");
-});
+  });
 
-test("unknown race fails closed and research log is reachable", async ({
-  page,
-  request,
-}) => {
-  const response = await request.get("/voters-guide/invented-race");
-  expect((await request.get("/voters-guide/oregon-governor")).status()).toBe(
-    404,
-  );
-  expect((await request.get("/voters-guide/portland-auditor")).status()).toBe(
-    404,
-  );
-  expect(response.status()).toBe(404);
-  await page.goto("/voters-guide/methodology");
-  await page
-    .getByRole("link", { name: "Read the research and corrections log" })
-    .click();
-  await expect(
-    page.getByRole("heading", { name: "The research log", exact: true }),
-  ).toBeVisible();
-});
-
-test("Portland portrait directory preserves the field, credits and comparison navigation", async ({
-  page,
-}) => {
-  await page.goto("/voters-guide/portland-district-3#candidates");
-  await expect(page.getByRole("checkbox")).toHaveCount(21);
-  const directory = page.getByRole("group", { name: "Candidates to compare" });
-  await expect(directory.locator("img")).toHaveCount(20);
-  await expect(directory.getByText("Portrait to come")).toHaveCount(1);
-  await expect(page.locator("article")).toHaveCount(21);
-  await page
-    .getByRole("checkbox", { name: "Compare Ali Beaudoin", exact: true })
-    .check();
-  await page
-    .getByRole("checkbox", { name: "Compare Angelita Morillo", exact: true })
-    .check();
-  await page.getByRole("link", { name: "See comparison ↑" }).click();
-  await expect(
-    page.locator("#compare").getByRole("region", { name: /comparison$/ }),
-  ).toHaveCount(2);
-  await page.evaluate(() => { window.location.hash = "candidates"; });
-  await directory.getByRole("link", { name: /Darren McCormick/ }).click();
-  await expect(page.locator("article")).toHaveCount(21);
-  await expect(page).toHaveURL(/#darren-mccormick$/);
-  await expect(page.locator("#darren-mccormick")).toBeInViewport();
-  await expect(page.locator("#darren-mccormick")).toContainText(
-    "limited policy statement",
-  );
-  await expect(page.locator("#heart-free-pham")).toContainText(
-    "historical, self-reported positions",
-  );
-  for (const article of await page.locator("article").all()) {
-    await page.evaluate((id) => { window.location.hash = id!; }, await article.getAttribute("id"));
-    await expect(article).toBeVisible();
-    const img = article.locator("img");
-    if (await img.count()) {
-      await img.scrollIntoViewIfNeeded();
-      await expect(img).toHaveJSProperty("complete", true);
-      expect(
-        await img.evaluate((el: HTMLImageElement) => el.naturalWidth),
-      ).toBeGreaterThan(0);
-      await expect(
-        article.getByRole("link", { name: /^Photo:/ }),
-      ).toHaveAttribute("href", /^https:\/\//);
-    }
-  }
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/voters-guide/portland-district-4#candidates");
-  await expect(page.getByRole("checkbox")).toHaveCount(12);
-  await expect(
-    page.getByRole("group", { name: "Candidates to compare" }).locator("img"),
-  ).toHaveCount(11);
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
-});
-
-test("disagreements explain both budget votes before any selection", async ({
-  page,
-}) => {
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/voters-guide/portland-district-3#disagreements");
-  const overview = page.getByRole("region", { name: "Where they disagree." });
-  await expect(overview).toBeVisible();
-  await expect(page.locator("input:checked")).toHaveCount(0);
-  const budget = overview.locator("#disagreement-supplemental-budget");
-  await expect(budget).toContainText(
-    "Favored restoring more services; rejected July’s smaller plan",
-  );
-  await expect(budget).toContainText(
-    "Favored restoring more services while keeping police-oversight money",
-  );
-  await expect(budget).toContainText(
-    "Supported several ways to pay for a smaller set of services",
-  );
-  await expect(
-    budget.getByRole("link", { name: /Tiffany Koyama Lane/ }),
-  ).toBeVisible();
-  await overview
-    .getByRole("combobox", { name: "Choose a Council issue" })
-    .selectOption("moda");
-  await expect(budget).not.toBeVisible();
-  const moda = overview.locator("#disagreement-moda");
-  await expect(moda).toContainText("Raised the proposed arena rent, then supported the terms");
-  await moda
-    .getByText("Read the decisions and reasons", { exact: true })
-    .click();
-  await expect(
-    moda.getByRole("heading", { name: "Her earlier stated concern · July 13" }),
-  ).toBeVisible();
-  await expect(moda).toContainText("Why she said no");
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
-  await page.emulateMedia({ media: "print" });
-  await expect(budget).toBeVisible();
-  await expect(overview.locator("#disagreement-rental-pricing")).toBeVisible();
-});
-
-test("individual record and export preserve reasons and amendment disagreements", async ({
-  page,
-  request,
-}) => {
-  await page.goto("/voters-guide/portland-district-4#disagreements");
-  const overview = page.getByRole("region", { name: "Where they disagree." });
-  await overview
-    .getByRole("combobox", { name: "Choose a Council issue" })
-    .selectOption("moda");
-  await expect(overview).toContainText("Rejected the arena cost; supported performing-arts planning");
-  await expect(
-    overview.getByRole("heading", {
-      name: "Supported the arena terms while opposing the higher proposed rent",
-    }),
-  ).toHaveCount(2);
-  await expect(overview).toContainText("His earlier stated case · April 30");
-  const green = page.locator("article#mitch-green");
-  await expect(green).toContainText("Why he said no");
-  await expect(green).toContainText("$275 million");
-  await expect(green).not.toContainText("a no vote does not prove opposition");
-  const payload = await (await request.get("/voters-guide/evidence")).json();
-  expect(payload.decisionAccounts.moda["Steve Novick"].reason.source.kind).toBe(
-    "Reporting",
-  );
-  expect(
-    payload.decisionAccounts.moda["Eric Zimmerman"].reason.source.date,
-  ).toBe("April 30, 2026");
-  expect(
-    payload.decisionAccounts["supplemental-budget"]["Tiffany Koyama Lane"]
-      .choice,
-  ).toBe("Larger plan only");
-  expect(payload.councilDisagreements).toHaveLength(29);
-});
-
-test("broader history preserves changing coalitions, amendment votes and pending Zenith status", async ({
-  page,
-  request,
-}) => {
-  const payload = await (await request.get("/voters-guide/evidence")).json();
-  const decision = (id: string) =>
-    payload.councilDecisions.find((d: { id: string }) => d.id === id);
-  expect(decision("parks-police").votes["Steve Novick"]).toBe("Yes");
-  expect(decision("services-first").votes["Steve Novick"]).toBe("No");
-  expect(decision("novick-restorations").votes["Steve Novick"]).toBe("Yes");
-  expect(decision("novick-restorations").votes["Olivia Clark"]).toBe("No");
-  expect(decision("oversight-funding").summary).toContain("5–6");
-  expect(decision("novick-restorations").summary).toContain("3–8");
-  expect(decision("camp-removal").votes["Olivia Clark"]).toBe("Absent");
-  expect(decision("camp-removal").votes["Eric Zimmerman"]).toBe("Absent");
-  expect(decision("performing-arts").votes["Mitch Green"]).toBe("Yes");
-  expect(decision("moda").votes["Mitch Green"]).toBe("No");
-  expect(decision("zenith-investigation").votes["Olivia Clark"]).toBe("Yes");
-  expect(decision("zenith-enforcement").votes["Olivia Clark"]).toBe("No");
-  expect(decision("zenith-transfer").summary).toContain("reconsider");
-  const ids = payload.councilDisagreements.flatMap(
-    (t: { decisionIds: string[] }) => t.decisionIds,
-  );
-  expect(new Set(ids).size).toBe(73);
-  for (const district of [3, 4]) {
+  test(`${race.id}: chips keep every row, swap lines, report coverage and mirror #issue=`, async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto(`/voters-guide/portland-district-${district}#disagreements`);
-    const overview = page.locator("#disagreements");
-    await overview.getByRole("button", { name: /Zenith & climate/ }).click();
-    const zenith = page.locator("#disagreement-zenith");
-    await expect(zenith).toBeVisible();
-    await zenith
-      .getByText("Read the decisions and reasons", { exact: true })
-      .click();
-    await expect(zenith).toContainText("no basis to revoke");
-    await expect(zenith).toContainText("September 23");
-    await expect(
-      zenith.getByText("Amendment vote", { exact: true }),
-    ).toHaveCount(3);
-    await expect(
-      zenith.getByText("September 16 vote", { exact: true }),
-    ).toHaveCount(3);
-    for (const button of await overview.getByRole("button").all()) {
-      await button.click();
-      expect(
-        await page.evaluate(
-          () => document.documentElement.scrollWidth <= innerWidth,
-        ),
-      ).toBe(true);
+    await page.goto(`/voters-guide/${race.id}`);
+    const status = page.locator("[data-race-sheet-rail] [role=status]");
+    await expect(status).toHaveText(`${sheet.rows.length} candidates, A–Z. Tap a name for more.`);
+    for (const issue of issues) {
+      await rail(page).getByRole("button", { name: issue.label, exact: true }).click();
+      await expect(page).toHaveURL(new RegExp(`#issue=${issue.id}$`));
+      expect(new URL(page.url()).search).toBe("");
+      await expect(rows(page)).toHaveCount(sheet.rows.length);
+      await expect(status).toHaveText(`${sheet.coverage[issue.id]} of ${sheet.rows.length} have a ${nouns[issue.id]} position in the sources we reviewed.`);
+      const gaps: string[] = [];
+      for (const row of sheet.rows) {
+        const summary = page.locator(`#list article[data-candidate="${row.id}"] summary`);
+        const cell = row.cells[issue.id];
+        if (cell.line) await expect(summary).toContainText(cell.line);
+        else if (row.missing) await expect(summary).toContainText(row.missing === "filing-only" ? "Filing statement only" : "No platform found");
+        else {
+          await expect(summary).toContainText("Not found in the sources we reviewed");
+          gaps.push(await summary.evaluate((el) => [...el.querySelectorAll("span[aria-hidden]")].find((s) => s.textContent === "—")!.parentElement!.outerHTML));
+        }
+      }
+      expect(gaps.length).toBe(sheet.rows.filter((r) => !r.cells[issue.id].line && !r.missing).length);
+      expect(new Set(gaps).size, "a dash row has identical markup for everyone").toBeLessThanOrEqual(1);
+      expect(await fits(page)).toBe(true);
+    }
+    await rail(page).getByRole("button", { name: "Summary", exact: true }).click();
+    expect(new URL(page.url()).hash).toBe("");
+    await expect(rows(page)).toHaveCount(sheet.rows.length);
+  });
+}
+
+test("the two missing states share one visual treatment on the row", async ({ page }) => {
+  const classes: string[] = [];
+  for (const [raceId, id, label] of [["portland-district-3", "darren-mccormick", "Filing statement only"], ["portland-district-4", "john-j-goldsmith", "No platform found"]]) {
+    await page.goto(`/voters-guide/${raceId}`);
+    const chip = page.locator(`#list article[data-candidate="${id}"] summary`).getByText(label, { exact: true });
+    await expect(chip).toBeVisible();
+    classes.push((await chip.getAttribute("class")) ?? "");
+    await page.getByRole("button", { name: "Rent and homes", exact: true }).click();
+    await expect(chip).toBeVisible();
+  }
+  expect(classes[0]).not.toBe("");
+  expect(classes[0]).toBe(classes[1]);
+});
+
+test("a card shows our reading with tags and tradeoff together, expands its source chip and links the brief", async ({ page }) => {
+  const sheet = sheets.find((s) => s.race.id === "portland-district-3")!;
+  const row = sheet.rows.find((r) => r.id === "esther-leon")!;
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/voters-guide/portland-district-3#issue=housing");
+  await expect(page.getByRole("button", { name: "Rent and homes", exact: true })).toHaveAttribute("aria-pressed", "true");
+  const article = page.locator('#list article[data-candidate="esther-leon"]');
+  await article.locator("summary").click();
+  const reading = article.locator('[data-layer="interpretation"]');
+  await expect(reading).toContainText("Our reading");
+  await expect(reading.getByRole("list", { name: "Values we read in their statements" }).locator("li")).toHaveText(row.values);
+  await expect(reading).toContainText(row.tradeoff);
+  await expect(article.locator('[data-layer="position"]')).toContainText(row.cells.housing.position!);
+  const chip = article.getByText("Primary source", { exact: true }).locator("..").getByRole("button", { name: row.primarySource.label });
+  await expect(chip).toHaveAttribute("aria-expanded", "false");
+  await chip.click();
+  await expect(chip).toHaveAttribute("aria-expanded", "true");
+  const detail = page.locator(`[id="${await chip.getAttribute("aria-controls")}"]`);
+  await expect(detail).toContainText(`${row.primarySource.evidence.kind} · ${row.primarySource.evidence.date}`);
+  if (row.primarySource.evidence.note) await expect(detail).toContainText(row.primarySource.evidence.note);
+  await expect(detail.getByRole("link")).toHaveAttribute("href", row.primarySource.url);
+  await expect(article.getByRole("link", { name: "Full brief" })).toHaveAttribute("href", "/voters-guide/portland-district-3/esther-leon");
+  expect(await fits(page)).toBe(true);
+});
+
+test("share yields a URL with no query string and at most #issue=", async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, "share", { value: undefined, configurable: true });
+    Object.defineProperty(navigator, "clipboard", { value: { writeText: async (value: string) => { (window as unknown as { copied: string }).copied = value; } }, configurable: true });
+  });
+  await page.goto("/voters-guide/portland-district-4");
+  await page.getByRole("button", { name: "Save Eli Arnold", exact: true }).click();
+  await page.getByRole("button", { name: "Share this list", exact: true }).click();
+  const copied = () => page.evaluate(() => (window as unknown as { copied: string }).copied);
+  let url = new URL(await copied());
+  expect(url.search).toBe("");
+  expect(url.hash).toBe("");
+  await page.getByRole("button", { name: "Your bills and taxes", exact: true }).click();
+  await page.getByRole("button", { name: "Share the money view", exact: true }).click();
+  url = new URL(await copied());
+  expect(url.search).toBe("");
+  expect(url.hash).toBe("#issue=money");
+  expect(url.href).not.toContain("eli-arnold");
+});
+
+test("no horizontal overflow at 320, 390, 768 and 1280 on the race page and a brief", async ({ page }) => {
+  for (const path of ["/voters-guide/portland-district-3#issue=safety", "/voters-guide/portland-district-3/heart-free-pham"]) {
+    await page.goto(path);
+    for (const width of [320, 390, 768, 1280]) {
+      await page.setViewportSize({ width, height: 844 });
+      expect(await fits(page), `${path} at ${width}`).toBe(true);
     }
   }
-});
-
-test("coverage audit reaches every indexed subject and distinguishes water votes", async ({
-  request,
-}) => {
-  const payload = await (await request.get("/voters-guide/evidence")).json();
-  expect(payload.councilCoverageAudit.dossiers).toHaveLength(24);
-  const topics = new Map(
-    payload.councilDisagreements.map(
-      (t: { id: string; decisionIds: string[] }) => [t.id, t.decisionIds],
-    ),
-  );
-  for (const item of payload.councilCoverageAudit.dossiers)
-    expect(topics.has(item.issueId)).toBe(true);
-  const decision = (id: string) =>
-    payload.councilDecisions.find((d: { id: string }) => d.id === id);
-  expect(decision("water-bonds").votes["Mitch Green"]).toBe("No");
-  expect(decision("water-rates").votes["Mitch Green"]).toBe("Yes");
-  expect(decision("water-bonds").votes["Tiffany Koyama Lane"]).toBe("Yes");
-  expect(decision("water-rates").votes["Tiffany Koyama Lane"]).toBe("No");
-  expect(decision("sewer-rates").votes["Angelita Morillo"]).toBe("Yes");
-  expect(decision("board-eligibility").votes["Steve Novick"]).toBe("Yes");
-  expect(decision("board-eligibility").votes["Angelita Morillo"]).toBe("No");
-  expect(decision("board-removal").votes["Steve Novick"]).toBe("Yes");
-  expect(decision("board-removal").votes["Angelita Morillo"]).toBe("Yes");
-});
-
-test("mobile issue navigation shows context, committee limits and direct links", async ({
-  page,
-}) => {
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/voters-guide/portland-district-4#disagreement-water");
-  const overview = page.locator("#disagreements");
-  const picker = overview.getByRole("combobox", {
-    name: "Choose a Council issue",
-  });
-  await expect(picker).toHaveValue("water");
-  await expect(page.locator("#disagreement-water")).toBeVisible();
-  await expect(page.locator("#water-question")).toBeInViewport();
-  await expect(
-    page
-      .locator("#disagreement-water")
-      .getByText(/Portland is building a filtration system/),
-  ).toBeVisible();
-  await picker.selectOption("firearms");
-  await expect(page).toHaveURL(/#disagreement-firearms$/);
-  const firearms = page.locator("#disagreement-firearms");
-  await expect(firearms).toContainText("Not a member of this committee");
-  await expect(
-    firearms.getByRole("heading", {
-      name: "Voted to put the gun proposal on hold",
-    }),
-  ).toBeVisible();
-  await firearms
-    .getByText("Read the decisions and reasons", { exact: true })
-    .click();
-  await expect(
-    firearms.locator('strong[data-vote="Not on committee"]'),
-  ).toHaveCount(2);
-  await expect(firearms.locator('strong[data-vote="Absent"]')).toHaveCount(0);
-  await picker.selectOption("psychedelics");
-  await expect(page.locator("#disagreement-psychedelics")).toContainText(
-    "pending proposal",
-  );
-  for (const option of await picker.locator("option").all()) {
-    await picker.selectOption((await option.getAttribute("value"))!);
-    expect(
-      await page.evaluate(
-        () => document.documentElement.scrollWidth <= innerWidth,
-      ),
-    ).toBe(true);
-    await expect(overview.locator('section[data-active="true"]')).toHaveCount(
-      1,
-    );
-  }
-  await page.evaluate(() => { window.location.hash = "mitch-green"; });
-  const green = page.locator("article#mitch-green");
-  await green
-    .getByRole("combobox", { name: "Record issue for Mitch Green" })
-    .selectOption("water");
-  const visibleRecords = green.locator('details[data-active="true"]');
-  await expect(visibleRecords).toHaveCount(3);
-  await visibleRecords.first().locator("summary").click();
-  await expect(visibleRecords.first()).toContainText("$525 million");
 });

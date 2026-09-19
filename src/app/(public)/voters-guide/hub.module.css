@@ -1,0 +1,640 @@
+/* The hub: ballot-first landing for the voters' guide.
+   Calm civic editorial. Warm paper, deep green, restrained.
+   Mobile-first: authored at 320 and 390, then 768 and 1200. */
+
+.hub {
+  --hub-gutter: 16px;
+  --hub-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px var(--hub-gutter) 48px;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.hub a {
+  color: inherit;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+/* Focus: a canopy ring on paper surfaces, a paper ring on the canopy panel. */
+.hub a:focus-visible,
+.hub button:focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.voting a:focus-visible {
+  outline-color: var(--color-paper);
+}
+
+/* ── Type primitives ──────────────────────────────────────────────── */
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+  margin: 0;
+}
+.eyebrowOnCanopy {
+  color: var(--color-lichen);
+}
+
+/* ── Header ───────────────────────────────────────────────────────── */
+
+.intro {
+  display: grid;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-parchment);
+}
+.titleRow {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+}
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 11vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  color: var(--color-canopy);
+  margin: 0;
+  text-wrap: balance;
+}
+.title span {
+  color: var(--color-fern);
+}
+.election {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--color-paper-warm);
+  border: 1px solid var(--color-parchment);
+  color: var(--color-ink-light);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.election svg {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: var(--color-fern);
+}
+.electionText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.electionText strong {
+  font-size: 16px;
+  color: var(--color-ink);
+  font-weight: 600;
+}
+.electionText a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  margin-top: 4px;
+  text-decoration: underline;
+  color: var(--color-canopy);
+}
+.lede {
+  font-size: 17px;
+  line-height: 1.5;
+  max-width: 38rem;
+  margin: 0;
+  color: var(--color-ink-light);
+  text-wrap: pretty;
+}
+
+/* ── Edition line ─────────────────────────────────────────────────── */
+
+.edition {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 4px;
+  align-items: baseline;
+  margin: 0;
+  padding: 12px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+  border-bottom: 1px solid var(--color-parchment);
+}
+/* Segments do not wrap internally, and each one carries the dot that
+   follows it, so a separator always travels with its text. */
+.edition > * {
+  white-space: nowrap;
+}
+.edition > .editionLong {
+  white-space: normal;
+}
+.edition > *:not(:last-child)::after {
+  content: " ·";
+  color: var(--color-ink-muted);
+  font-weight: 400;
+}
+.edition strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+.edition a {
+  color: var(--color-canopy);
+  text-decoration: underline;
+}
+
+/* ── District cards ───────────────────────────────────────────────── */
+
+.districts {
+  padding-top: 32px;
+}
+.sectionHead {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 7vw, 40px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  color: var(--color-canopy);
+  margin: 0;
+}
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+.card {
+  position: relative;
+  border-radius: 8px;
+  background: var(--color-paper-warm);
+  padding: 24px 16px;
+  min-width: 0;
+}
+.card article {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.cardHead {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+/* Decorative; the district name beside it is the heading. Kept smaller than
+   the card's own text block so the numeral does not carry the hierarchy. */
+.numeral {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 14vw, 96px);
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  font-weight: 700;
+  color: var(--color-canopy);
+  font-variant-numeric: lining-nums;
+  transition: transform 250ms var(--hub-ease);
+  will-change: transform;
+}
+.cardTitle {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.cardEyebrow {
+  composes: eyebrow;
+}
+.cardTitle h2 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 7vw, 34px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  color: var(--color-canopy);
+  margin: 0;
+}
+/* The heading link is stretched over the whole card so one tap opens the
+   race. Chips and the lookup link sit above it with their own targets. */
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+}
+.cardLink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+}
+.cardLink:focus-visible {
+  outline: none;
+}
+.cardLink:focus-visible::after {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+}
+.neighborhoods {
+  margin: -4px 0 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-ink-light);
+  max-width: 36rem;
+  text-wrap: pretty;
+}
+.cardMeta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+  margin: 0;
+}
+.choice {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-ink);
+  max-width: 36rem;
+  text-wrap: pretty;
+}
+.choiceLabel {
+  font-weight: 600;
+  color: var(--color-canopy);
+}
+.draft {
+  margin: -8px 0 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+/* On phones the paragraph is clamped so two cards do not become four screens;
+   the race page carries it in full. */
+@media (max-width: 768px) {
+  .choice {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+.chipBlock {
+  display: grid;
+  gap: 8px;
+}
+.chipLabel {
+  composes: eyebrow;
+}
+.chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--color-parchment);
+  color: var(--color-canopy);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  transition:
+    transform 200ms var(--hub-ease),
+    opacity 200ms var(--hub-ease);
+}
+.chip:hover {
+  background: var(--color-canopy);
+  color: var(--color-paper);
+}
+.chip:active {
+  transform: translateY(1px);
+}
+.cardFoot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-parchment);
+}
+/* A real link with the card's call to action; the stretched heading link
+   still covers the rest of the card, so the two share one destination. */
+.cta {
+  position: relative;
+  z-index: 1;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-canopy);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  text-decoration: none;
+}
+.cta:hover {
+  text-decoration: underline;
+}
+.arrow {
+  display: inline-block;
+  transition: transform 200ms var(--hub-ease);
+}
+.lookup {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  font-size: 14px;
+  color: var(--color-ink-light);
+  text-decoration: underline;
+}
+.lookup:hover {
+  color: var(--color-canopy);
+}
+.alsoOnBallot {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+}
+
+/* ── Before you vote ──────────────────────────────────────────────── */
+
+.voting {
+  margin-top: 48px;
+  padding: 24px 16px;
+  border-radius: 8px;
+  background: var(--color-canopy);
+  color: var(--color-paper);
+  display: grid;
+  gap: 24px;
+}
+.votingIntro {
+  display: grid;
+  gap: 8px;
+}
+.votingTitle {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 6vw, 32px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-paper);
+}
+.votingNote {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-lichen);
+  max-width: 34rem;
+}
+.votingLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  text-decoration: underline;
+  color: var(--color-paper);
+  justify-self: start;
+}
+.dates {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.dates li {
+  display: grid;
+  gap: 2px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-canopy-light);
+}
+.dates li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.dates strong {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-paper);
+}
+.dates span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-lichen);
+}
+.sourceNote {
+  margin: 0;
+  max-width: 60ch;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-lichen);
+}
+.sourceNote a {
+  color: var(--color-paper);
+  text-decoration: underline;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────── */
+
+.foot {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-parchment);
+  display: grid;
+  gap: 12px;
+}
+.footLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+.footLinks a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+  color: var(--color-canopy);
+  text-decoration: underline;
+}
+.footNote {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+  max-width: 36rem;
+}
+
+/* ── Hover motion (pointer devices only) ──────────────────────────── */
+
+@media (hover: hover) {
+  .card:has(.cardLink:hover) .numeral,
+  .card:has(.cta:hover) .numeral {
+    transform: translateY(-2px);
+  }
+  .card:has(.cardLink:hover) .arrow,
+  .card:has(.cta:hover) .arrow {
+    transform: translateX(4px);
+  }
+}
+
+/* ── Larger screens ───────────────────────────────────────────────── */
+
+@media (min-width: 480px) {
+  .hub {
+    --hub-gutter: 24px;
+  }
+  .card {
+    padding: 24px;
+  }
+  .voting {
+    padding: 32px 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hub {
+    padding-top: 32px;
+    padding-bottom: 64px;
+  }
+  .intro {
+    gap: 24px;
+    padding-bottom: 32px;
+  }
+  .titleRow {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+  .title {
+    font-size: clamp(48px, 6.4vw, 80px);
+  }
+  .election {
+    min-width: 240px;
+    padding: 16px 24px;
+  }
+  .lede {
+    font-size: 18px;
+  }
+  .edition {
+    padding: 16px 0;
+  }
+  .districts {
+    padding-top: 48px;
+  }
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .card {
+    padding: 32px 24px;
+  }
+  .card article {
+    gap: 24px;
+    height: 100%;
+  }
+  .cardFoot {
+    margin-top: auto;
+  }
+  .voting {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px 48px;
+    padding: 32px;
+  }
+  .sourceNote {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hub {
+    --hub-gutter: 32px;
+    padding-top: 48px;
+  }
+  .title {
+    font-size: 84px;
+  }
+  .card {
+    padding: 32px;
+  }
+  .numeral {
+    font-size: 112px;
+  }
+}
+
+/* ── Motion and print ─────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .numeral,
+  .chip,
+  .arrow {
+    transition: none;
+  }
+  .card:has(.cardLink:hover) .numeral,
+  .card:has(.cta:hover) .numeral,
+  .card:has(.cardLink:hover) .arrow,
+  .card:has(.cta:hover) .arrow {
+    transform: none;
+  }
+}
+
+@media print {
+  .hub {
+    padding: 0;
+  }
+  .voting {
+    background: none;
+    color: var(--color-ink);
+    border: 1px solid var(--color-parchment);
+  }
+  .votingTitle,
+  .dates strong,
+  .votingLink,
+  .sourceNote a {
+    color: var(--color-ink);
+  }
+  .votingNote,
+  .dates span,
+  .sourceNote,
+  .eyebrowOnCanopy {
+    color: var(--color-ink-light);
+  }
+  .chips,
+  .foot {
+    display: none;
+  }
+}

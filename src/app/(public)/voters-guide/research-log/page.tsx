@@ -19,6 +19,35 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2>September 19, 2026 · The race page becomes one screen per race</h2>
+        <p>
+          Rebuilt each race page around a single alphabetical list of every
+          candidate with one short line each, four issue views that swap the
+          line in place, four featured Council votes phrased as the question
+          Council decided, and a private, reader-ordered “My ballot.” Candidate
+          briefs and the full Council record moved to their own pages so a
+          phone no longer downloads the whole research edition to read one
+          screen. District 3 previously shipped about 48,800 words on one URL.
+        </p>
+        <p>
+          Added a versioned short-line layer over the unchanged research: one
+          short line per documented issue position, one choice paragraph per
+          race, and explicit-statement placements beneath each featured vote.
+          Every line names the field it was shortened from and is exported with
+          the evidence. These lines are AI-drafted and awaiting separate human
+          review; each carries a review status in the export. Owner decision,
+          September 19, 2026: the issue views (chips) shipped before human
+          review, with that status disclosed on the page; the design’s rule
+          that chips wait for a reviewer name was amended to record this.
+          Research objects, decisions and sources did not change; the
+          preservation baseline still applies.
+        </p>
+        <p>
+          Retired the paginated topic browser, the pairwise comparison studio
+          and the alignment-quiz remnants from the race page. We configure our
+          analytics not to receive URL fragments. Updated the editorial
+          standards to describe the new page and the reader-owned list.
+        </p>
         <h2>September 18, 2026 · Complete the Council topic audit</h2>
         <p>
           Expanded the comparison to 73 decisions across 29 issues, covering all
@@ -151,6 +180,23 @@ export default function ResearchLog() {
           not close the three candidates’ broader policy-research gaps.
         </p>
         <h2>Corrections</h2>
+        <p>
+          September 19, 2026, after an editorial audit of the new race page:
+          struck two “Said” placements that did not meet the explicit-statement
+          rule (Esther León under camp-removal funding rested on a general
+          position against sweeps, not on the $4.3 million amendment; Matthias
+          Hallett under the Moda term sheet concerned keeping the team, not
+          these starting terms). Reworded eight issue lines so a stated
+          preference or emphasis no longer reads as a commitment, and glossed
+          “social housing” as public or nonprofit to match the glossary.
+          Corrected the District 3 neighborhood heading from “Inner Southeast”
+          to “Southeast and inner Northeast,” since the City’s list for the
+          district includes Northeast neighborhoods such as Rose City Park.
+          Labeled the choice paragraph “Our reading” and marked it a draft
+          pending human review. Under each featured vote, replaced the block
+          presented as public record with one labeled “Our reading of the
+          record,” because several of its phrases were characterizations.
+        </p>
         <p>
           September 18, 2026: removed unsupported male pronouns from Jamey
           Evenstar’s interpretation; the text now uses the candidate’s name.

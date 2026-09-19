@@ -8,7 +8,7 @@ export function comparisonFragment(ids: string[], topic: string, issue?: string)
   if (topic === "record" && issue) params.set("issue", issue);
   return `compare?${params}`;
 }
-export function sharedComparison(hash: string, race: Race) {
+export function sharedComparison(hash: string, race: Pick<Race, "candidates"> | { candidates: { id: string }[] }) {
   if (!hash.startsWith("#compare?")) return null;
   const params = new URLSearchParams(hash.slice(hash.indexOf("?") + 1));
   const ids = [...new Set((params.get("people") ?? "").split(","))]

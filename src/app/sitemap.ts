@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { races } from "@/lib/voters-guide/published";
 import { REVIEW_DATE } from "@/lib/voters-guide/types";
+import { RACE_SHEET_MODIFIED, candidatePath, racePath, votesPath } from "@/lib/voters-guide/race-sheet/seo";
 import { bureauIds } from "@/lib/org/bureau";
 import { VALID_QUESTIONS } from "@/lib/questions";
 
@@ -138,13 +139,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const guidePages: MetadataRoute.Sitemap = [
-    "", "/methodology", "/research-log", ...races.map(r => `/${r.id}`),
-  ].map(path => ({
+  const guidePages: MetadataRoute.Sitemap = ["", "/methodology", "/research-log"].map(path => ({
     url: `${BASE_URL}/voters-guide${path}`,
     lastModified: new Date(`${REVIEW_DATE}T00:00:00Z`),
     changeFrequency: "weekly",
     priority: path ? 0.7 : 0.9,
   }));
-  return [...staticPages, ...dashboardPages, ...bureauPages, ...guidePages];
+
+  // The Race Sheet routes: one race page, one brief per candidate (every
+  // candidate listed, same priority) and the Council votes page. The print
+  // edition is noindex and deliberately absent.
+  const raceSheetModified = new Date(`${RACE_SHEET_MODIFIED}T00:00:00Z`);
+  const racePages: MetadataRoute.Sitemap = races.flatMap(race => [
+    { url: `${BASE_URL}${racePath(race)}`, lastModified: raceSheetModified, changeFrequency: "weekly" as const, priority: 0.8 },
+    { url: `${BASE_URL}${votesPath(race)}`, lastModified: raceSheetModified, changeFrequency: "weekly" as const, priority: 0.6 },
+    ...race.candidates.map(person => ({
+      url: `${BASE_URL}${candidatePath(race, person)}`,
+      lastModified: raceSheetModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
+  ]);
+  return [...staticPages, ...dashboardPages, ...bureauPages, ...guidePages, ...racePages];
 }

@@ -1,0 +1,582 @@
+/* Recorded votes: the four featured votes on the race sheet, the "Said"
+   strip beneath each, the split-sorted matrix on /votes, and the votes page
+   shell. Calm civic editorial: warm paper, deep green, hairlines not boxes.
+   Mobile-first; nothing here may overflow horizontally.
+
+   Glyphs and vote pills come from Glyph.tsx / glyph.module.css; nothing
+   here restyles them, so every surface shows the same object. */
+
+/* ── Shared ─────────────────────────────────────────────────────────── */
+
+.votes {
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.votes :is(a, summary, button):focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.votes a {
+  color: var(--color-canopy);
+  text-decoration: underline;
+  text-decoration-color: var(--color-lichen);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.votes a:hover {
+  text-decoration-color: var(--color-canopy);
+}
+.eyebrow,
+.label {
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  margin: 0 0 8px;
+}
+.heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  margin: 0 0 12px;
+  text-wrap: balance;
+}
+.title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin: 0 0 12px;
+  text-wrap: balance;
+}
+.intro,
+.note {
+  margin: 0;
+  max-width: 62ch;
+}
+.note {
+  font-size: 15px;
+  color: var(--color-ink-light);
+}
+.muted {
+  font-size: 14px;
+  color: var(--color-ink-muted);
+  margin: 0;
+}
+
+/* Disclosure rows: hairlines, no boxes. */
+.row {
+  border-top: 1px solid var(--color-parchment);
+  scroll-margin-top: 96px;
+}
+.row:last-of-type {
+  border-bottom: 1px solid var(--color-parchment);
+}
+.summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 44px;
+  padding: 16px 0;
+}
+.summary::-webkit-details-marker {
+  display: none;
+}
+.summaryHead {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+.summaryText {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+}
+.chevron {
+  flex: none;
+  color: var(--color-ink-muted);
+  margin-top: 3px;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.row[open] .chevron {
+  transform: rotate(180deg);
+}
+.question {
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-ink);
+  margin: 0;
+}
+.body {
+  padding: 0 0 24px 28px;
+  display: grid;
+  gap: 16px;
+}
+
+/* Three councilors: name over vote word, equal columns, same markup for all.
+   The name above the pill is the surname on phones and hidden at ≥600px,
+   where the shared header row carries the full names; the pill itself
+   announces the full name to assistive technology at every width. */
+.votesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding-left: 28px;
+}
+.cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+}
+.cellName {
+  font-family: var(--font-body);
+  font-size: max(12px, 0.75rem);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-ink-light);
+}
+.columns {
+  display: none;
+}
+
+/* The founder-conflict line for the Moda row. It sits inside the summary
+   so it is visible while the row is collapsed, and under the Moda decision
+   in the matrix. Same words in both places. */
+.disclosure {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-ink-light);
+}
+.disclosure a {
+  display: inline-block;
+  min-height: 24px;
+  font-weight: 500;
+}
+
+/* ── Four votes (race sheet) ────────────────────────────────────────── */
+
+.panel {
+  margin: 0;
+  padding: 32px 0 8px;
+  scroll-margin-top: 96px;
+}
+.panel .intro {
+  margin-bottom: 24px;
+}
+.reading {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.reading li {
+  font-size: 15px;
+  line-height: 1.5;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2px 8px;
+  align-items: baseline;
+}
+.reading b {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.limit {
+  font-size: 14px;
+  color: var(--color-ink-muted);
+  margin: 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--color-parchment);
+}
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-weight: 500;
+}
+
+/* ── Said strip ─────────────────────────────────────────────────────── */
+
+.strip {
+  display: grid;
+  gap: 8px;
+}
+.saidList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+.saidItem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 44px;
+  padding: 4px 0;
+}
+.saidItem > a:first-child {
+  font-weight: 600;
+  color: var(--color-ink);
+  text-decoration-color: var(--color-parchment);
+}
+.saidLine {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  color: var(--color-ink-light);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--color-parchment);
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-light);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chip:hover {
+  background: var(--color-lichen);
+  text-decoration: none;
+}
+
+/* ── Vote matrix (/votes) ───────────────────────────────────────────── */
+
+.matrix {
+  margin: 0;
+  padding: 24px 0 0;
+}
+.matrixHead {
+  margin-bottom: 16px;
+}
+.topicSummary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 44px;
+  padding: 16px 0;
+}
+.topicSummary::-webkit-details-marker {
+  display: none;
+}
+.topicLabel {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+.topicLabel b {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.topicLabel span {
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+.topicBody {
+  padding: 0 0 24px 28px;
+  display: grid;
+  gap: 16px;
+}
+.contrast {
+  margin: 0;
+  font-size: 15px;
+  color: var(--color-ink-light);
+  max-width: 62ch;
+}
+.contrast b {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.table {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+.headerRow {
+  display: none;
+}
+.decisionRow {
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-parchment);
+}
+.decisionRow:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+.decisionHead {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.decisionHead b {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.decisionMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+/* The City-record link is the one control in the row; give it the 44px
+   target without pushing the row apart. */
+.decisionMeta a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: -10px 0;
+  color: inherit;
+}
+.splitTag {
+  color: var(--color-fern);
+}
+.decisionVotes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.agreed {
+  margin: 32px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--color-parchment);
+}
+.agreedList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0;
+}
+.agreedList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  min-height: 44px;
+  padding: 10px 0;
+  border-top: 1px solid var(--color-parchment);
+  font-size: 15px;
+}
+.agreedList li:last-child {
+  border-bottom: 1px solid var(--color-parchment);
+}
+.agreedList span {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+/* ── Votes page shell ───────────────────────────────────────────────── */
+
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px 16px 64px;
+  color: var(--color-ink);
+}
+.pageHeader {
+  max-width: 880px;
+  padding: 8px 0 24px;
+  border-bottom: 1px solid var(--color-parchment);
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-size: 15px;
+  color: var(--color-ink-light);
+  text-decoration: none;
+}
+.back:hover {
+  color: var(--color-canopy);
+}
+.measure {
+  max-width: 880px;
+}
+.record {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-parchment);
+}
+.record .heading {
+  margin-bottom: 4px;
+}
+.record .note {
+  margin-bottom: 8px;
+}
+
+/* ── Breakpoints ────────────────────────────────────────────────────── */
+
+@media (min-width: 600px) {
+  .summary {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .summaryHead {
+    flex: 1 1 auto;
+  }
+  .votesGrid {
+    flex: none;
+    width: 348px;
+    padding-left: 0;
+    gap: 12px;
+  }
+  /* The shared header row above the panel carries the full names; the
+     pill still announces the name, so hiding the cell label loses nothing. */
+  .cellName {
+    display: none;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 348px;
+    gap: 16px;
+    padding: 0 0 8px;
+  }
+  .columnsInner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .columnsInner span {
+    font-family: var(--font-body);
+    font-size: max(12px, 0.75rem);
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--color-ink-light);
+  }
+  .body,
+  .topicBody {
+    padding-left: 28px;
+  }
+  .reading li {
+    grid-template-columns: 200px 1fr;
+  }
+  /* Matrix becomes a true grid: decision column plus one column per councilor. */
+  .table {
+    gap: 0;
+  }
+  .headerRow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) repeat(3, 120px);
+    gap: 12px;
+    padding: 0 0 8px;
+    border-bottom: 1px solid var(--color-parchment);
+  }
+  .headerRow > * {
+    font-family: var(--font-body);
+    font-size: max(12px, 0.75rem);
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--color-ink-light);
+    min-width: 0;
+  }
+  .decisionRow {
+    /* 3 × 120px columns + 2 × 12px gaps, so cells sit under the header names. */
+    grid-template-columns: minmax(0, 1fr) 384px;
+    gap: 12px;
+    padding: 12px 0;
+    align-items: start;
+  }
+  .decisionRow:first-of-type {
+    border-top: 0;
+    padding-top: 12px;
+  }
+  .decisionVotes {
+    grid-template-columns: repeat(3, 120px);
+    gap: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 28px;
+  }
+  .title {
+    font-size: 40px;
+  }
+  .page {
+    padding: 24px 24px 80px;
+  }
+  .panel {
+    padding-top: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page {
+    padding: 32px 32px 96px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron,
+  .chip,
+  .votes a {
+    transition: none;
+  }
+}
+
+@media print {
+  .row,
+  .topic {
+    break-inside: avoid;
+  }
+  .chevron,
+  .back,
+  .more {
+    display: none;
+  }
+}
