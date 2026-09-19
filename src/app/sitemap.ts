@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { races } from "@/lib/voters-guide/published";
+import { REVIEW_DATE } from "@/lib/voters-guide/types";
 import { bureauIds } from "@/lib/org/bureau";
 import { VALID_QUESTIONS } from "@/lib/questions";
 
@@ -136,5 +138,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...dashboardPages, ...bureauPages];
+  const guidePages: MetadataRoute.Sitemap = [
+    "", "/methodology", "/research-log", ...races.map(r => `/${r.id}`),
+  ].map(path => ({
+    url: `${BASE_URL}/voters-guide${path}`,
+    lastModified: new Date(`${REVIEW_DATE}T00:00:00Z`),
+    changeFrequency: "weekly",
+    priority: path ? 0.7 : 0.9,
+  }));
+  return [...staticPages, ...dashboardPages, ...bureauPages, ...guidePages];
 }

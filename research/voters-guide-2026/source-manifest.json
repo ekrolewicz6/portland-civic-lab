@@ -1,0 +1,600 @@
+{
+  "reviewed": "2026-09-18",
+  "note": "Acquisition inventory, not a claim that every retrieved page supports a published sentence. Working files are ignored; full source files can contain personal information and are not served. Only the narrowed public roster is retained here.",
+  "sources": [
+    {
+      "url": "https://GlennLancaster.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "5858450d9f3c.txt",
+      "sha256": "ec059202a988fe3a6136f5e2beda8b3dfdbd97196037d840297e913b2f148d3f"
+    },
+    {
+      "url": "https://cliffbentz.com/issues/",
+      "representation": "normalized extracted page text",
+      "workingFile": "bec8faac5048.txt",
+      "sha256": "fc4ed2281c9b33ab5cd0dcf9f2abf08bc2b9f83994aa80ea75be8ad1996e3ea4"
+    },
+    {
+      "url": "https://columbiacommunityconnection.com/the-dalles/hege-puts-experience-at-center-of-house-district-52-campaign",
+      "representation": "normalized extracted page text",
+      "workingFile": "e576d001277f.txt",
+      "sha256": "60e27e1a8a087525ac104d6edaeb8d48a3149a4c63c743eb1fae4057a2031d5c"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/people",
+      "representation": "normalized extracted page text",
+      "workingFile": "46a43e75ba67.txt",
+      "sha256": "550006c82c5b4f4a7f7aa696aed33b384efc3359b4eba615397bf5dc828b369e"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/people/7a321a0f-2652-4647-870f-e94a043ba75e",
+      "representation": "normalized extracted page text",
+      "workingFile": "b8afe294182a.txt",
+      "sha256": "07b9c2d5f270496cc4d67f2a9376b821759ea256d60e9d9c259321a27e7ea946"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/citywide-asset-management",
+      "representation": "normalized extracted page text",
+      "workingFile": "cd47d939a0f7.txt",
+      "sha256": "1f5bcf27f85a777264f3aa42061674b09805a19c17e8432bd64dcc626237c153"
+    },
+    {
+      "url": "https://council.portlandciviclab.org/topics/housing-homelessness-strategy",
+      "representation": "normalized extracted page text",
+      "workingFile": "f6528aaedd75.txt",
+      "sha256": "de8405a50c42041f9421dd6d6d0a100404181a27bc717bba226a9f983af4c115"
+    },
+    {
+      "url": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513",
+      "representation": "original download",
+      "workingFile": "clackamas.pdf",
+      "sha256": "43ab678ea022e98215a73afa2868c18317a366556164a8dcddc0882196eb125b"
+    },
+    {
+      "url": "https://garydye2020.wordpress.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "df103fcbf7fc.txt",
+      "sha256": "eda6a474cadf509610e18eafc1e410ffe94c2ab2ce85a891fc67d2219ef8489b"
+    },
+    {
+      "url": "https://glennlancaster.com/issues2/",
+      "representation": "normalized extracted page text",
+      "workingFile": "c5afe184adcf.txt",
+      "sha256": "9fd003b4477ed8e66700f21659045be322ab3e0c8b38ec97026cdbb4d49bc617"
+    },
+    {
+      "url": "https://hankfororegon.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "d7ce8b1a7ade.txt",
+      "sha256": "f4a2f8d91d413d5efe4318aeb5f5601a3b0d319dbaa004350aa35c9b3f8e807f"
+    },
+    {
+      "url": "https://hankfororegon.com/issues",
+      "representation": "normalized extracted page text",
+      "workingFile": "9fccc7283ea5.txt",
+      "sha256": "ff43464e3a115e38381588dc076fbeaa795a672b9014f372e56091a58dc552db"
+    },
+    {
+      "url": "https://hankfororegon.com/issues/restrictions-on-data-centers",
+      "representation": "normalized extracted page text",
+      "workingFile": "f425c8ecc74b.txt",
+      "sha256": "92e13d964bf93fe63ff9268eb31aa300afc30e95f2ef5c88587e4bd53809ef83"
+    },
+    {
+      "url": "https://haroldhutchison.carrd.co/",
+      "representation": "normalized extracted page text",
+      "workingFile": "b9a903ce1b0f.txt",
+      "sha256": "feb8baf8f68f4765aca205fa377f6ee23002bb39d0a400a6350c23fca7fce46b"
+    },
+    {
+      "url": "https://kimberlyforpdxd3.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "d96cb8a3cd71.txt",
+      "sha256": "1c013e943f6048f9ad0a133269d010d0fcdf5b284c7ae12f22123f91d7977565"
+    },
+    {
+      "url": "https://maxinefororegon.com/issue/fight-for-universal-affordable-healthcare/",
+      "representation": "normalized extracted page text",
+      "workingFile": "2273f941b78e.txt",
+      "sha256": "e5e95e5ae9cbb2ea0980a2ccedb0e6de629a4ab4809ed9e30247adc3396d7d9a"
+    },
+    {
+      "url": "https://maxinefororegon.com/issue/housing-and-homelessness/",
+      "representation": "normalized extracted page text",
+      "workingFile": "8fae02dba155.txt",
+      "sha256": "517f0cc605535e461b6a686f7669d62a2345e594e386d5e5fc3ae717af2682f5"
+    },
+    {
+      "url": "https://maxinefororegon.com/issues/",
+      "representation": "normalized extracted page text",
+      "workingFile": "23187e114298.txt",
+      "sha256": "e182b870bb823a3f9d51ed78f11783c7c0709065e67905c46462429c2d9e0575"
+    },
+    {
+      "url": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download",
+      "representation": "original download",
+      "workingFile": "multnomah.pdf",
+      "sha256": "0f1f036bd8b755ee33b385224b6d31544a53c04de4a7f246f741d16d8fa2461f"
+    },
+    {
+      "url": "https://multco.us/info/military-overseas-online-voters-guide-november-2026-election",
+      "representation": "normalized extracted page text",
+      "workingFile": "bc055b35e1ee.txt",
+      "sha256": "d501c3acb299fa8fb9b1a032e5dc103f6b6bd6721093f3cd082ad03a3f1bb6bd"
+    },
+    {
+      "url": "https://myrnaforsenate.com/issues",
+      "representation": "normalized extracted page text",
+      "workingFile": "93d841c7964c.txt",
+      "sha256": "f104e2fb36640a4cac1c84c3ee56f50c52c588b2427e50202e82c72c7bf71aed"
+    },
+    {
+      "url": "https://secure.sos.state.or.us/orestar/CFSearchPage.do",
+      "representation": "normalized extracted page text",
+      "workingFile": "a84880734a3b.txt",
+      "sha256": "5568836d2965384207fe27f31ff98265b460151b3cc3353675c7b7c38111904c"
+    },
+    {
+      "url": "https://secure.sos.state.or.us/orestar/XcelCFSearch?ut=2&srtOrder=asc&by=BALLOT_NAME&cfDisqualifiedCandidates=false&cfSearchButtonName=currentElection",
+      "representation": "original download",
+      "workingFile": "state-filings.xlsx",
+      "sha256": "24f00bbe85a97fe32ced9ba6e41e0ca54ef817a0f8f40e2a13be2ca64609265b"
+    },
+    {
+      "url": "https://secure.sos.state.or.us/orestar/cfFilings.do?cfSearchButtonName=currentElection",
+      "representation": "normalized extracted page text",
+      "workingFile": "d83449c061a2.txt",
+      "sha256": "889bf24eae056d0ffc9abc8bc6b859b57b1bb95446d8fe981a3e74f123540f01"
+    },
+    {
+      "url": "https://secure.sos.state.or.us/orestar/cfFilings.do?cfSearchButtonName=currentElection&cfOffice=GOV",
+      "representation": "normalized extracted page text",
+      "workingFile": "869879d6b71e.txt",
+      "sha256": "889bf24eae056d0ffc9abc8bc6b859b57b1bb95446d8fe981a3e74f123540f01"
+    },
+    {
+      "url": "https://secure.sos.state.or.us/orestar/cfFilings.do?cfSearchButtonName=currentElection&cfSearchPageIdx=1",
+      "representation": "normalized extracted page text",
+      "workingFile": "286170aa255b.txt",
+      "sha256": "4b21f9031851cc8429f342eb9b1b8d94ee273db89000f24c02a42a3e7ef35297"
+    },
+    {
+      "url": "https://sos.oregon.gov/elections/Pages/Candidate-Filings-Local-Measures.aspx",
+      "representation": "normalized extracted page text",
+      "workingFile": "d3c9acf52096.txt",
+      "sha256": "17d92c17bfdda62bcaf6a81f9e3c226d02a7454abdd75ee0e0b6d70d8c2e0fa0"
+    },
+    {
+      "url": "https://sos.oregon.gov/elections/Voters-Pamphlet/Pages/default.aspx",
+      "representation": "normalized extracted page text",
+      "workingFile": "7236ff3c7994.txt",
+      "sha256": "871f3e812c3d8f5f26d86a360202e74c97e08e6f502bc25c3fbe18afbf47304b"
+    },
+    {
+      "url": "https://voteadambaker.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "9f2ad8d2b455.txt",
+      "sha256": "8a80920b49ac9e922d038ac854a9db11820c9badbc25426746f203225833fd9c"
+    },
+    {
+      "url": "https://voteadambaker.com/issues/",
+      "representation": "normalized extracted page text",
+      "workingFile": "12c85142056e.txt",
+      "sha256": "bb198a4111f3201c896fb78d3ba7752d480149c916ed286b4e03c273aad947a9"
+    },
+    {
+      "url": "https://votemarkmeek.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "3c289d133715.txt",
+      "sha256": "8e86d498808c30f0f8b92a99b8a3d07e8c8789017106426b07056ce751df8fc5"
+    },
+    {
+      "url": "https://votestroh.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "ba5ac03ca2cf.txt",
+      "sha256": "a0e5ca92e1573f08832d2a69cc1620cec3fac2cd17b0ccea0657ce4a4b2ac9e9"
+    },
+    {
+      "url": "https://www.CourtneyBangs.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "727e5caed6f9.txt",
+      "sha256": "eb9d5a0e964c5270ab27a6c3f26584afd6956d605099d777df565c53fe0d7dfa"
+    },
+    {
+      "url": "https://www.CourtneyBangs.com/priorities",
+      "representation": "normalized extracted page text",
+      "workingFile": "c2a4257b4c23.txt",
+      "sha256": "4ebe8f1b844e04942485316c23344f15f45880e2b994a26f01f6fddffff3c099"
+    },
+    {
+      "url": "https://www.StephanieForOregon.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "4abff520370a.txt",
+      "sha256": "85813cbe98aecfb55911c0c602a6fec72dec190d9e9aed54ea9121849c036d64"
+    },
+    {
+      "url": "https://www.StephanieForOregon.com/issues",
+      "representation": "normalized extracted page text",
+      "workingFile": "8a1362838242.txt",
+      "sha256": "36bcb7b114d1bb7bbc09500e78aa62255a448b7a57128bb0560dab99acb64695"
+    },
+    {
+      "url": "https://www.andreasalinasfororegon.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "f956bfcfbaa2.txt",
+      "sha256": "0e3d45b92088a1a549c0f5d77f46f6506efa09dca44300e0fc1ada8da9014314"
+    },
+    {
+      "url": "https://www.andreasalinasfororegon.com/issues/",
+      "representation": "normalized extracted page text",
+      "workingFile": "71b2f28f9430.txt",
+      "sha256": "a5a29e0598f9311a5c792639a75b4b4a8839547ca825d81e37eb7acb64199b6c"
+    },
+    {
+      "url": "https://www.bonamiciforcongress.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "b8cc5f910f02.txt",
+      "sha256": "0040188876f184bd051180e33d9e11780be44af3d3d355951cef8278754c9d00"
+    },
+    {
+      "url": "https://www.bonamiciforcongress.com/priorities/",
+      "representation": "normalized extracted page text",
+      "workingFile": "1ca69fec1b6d.txt",
+      "sha256": "728a2015c97a2113d189ba9e67151d666ab8aa4beb15b7c2abc4fabd94db879c"
+    },
+    {
+      "url": "https://www.chrisbeckforcongress.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "866b272bc060.txt",
+      "sha256": "f1402207364cd8128f1317cd33db523f775ef087503ce31220e2bb0510769714"
+    },
+    {
+      "url": "https://www.chrisbeckforcongress.com/district2issues",
+      "representation": "normalized extracted page text",
+      "workingFile": "de1f8adb225a.txt",
+      "sha256": "685b6374c66b53522370460ff534215162070010fd882efe71c4f1945f1c538e"
+    },
+    {
+      "url": "https://www.clackamas.us/elections/november-3-2026-general-election",
+      "representation": "normalized extracted page text",
+      "workingFile": "8f584748fa1c.txt",
+      "sha256": "ccc76ff7dbcda0f53fbe10849f97e223082c28569448969767d9107e14dc29e4"
+    },
+    {
+      "url": "https://www.cliffbentz.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "ccf97bac12b9.txt",
+      "sha256": "d619a27da58c7ed5dcb0046902bbff82aa2091f8b93adb0aca8794ac477b7611"
+    },
+    {
+      "url": "https://www.courtneyfororegon.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "d3f3c7d2e2d8.txt",
+      "sha256": "d967a8bbffa717e1d33bdfc7be32e2369a6efee1d4913b42587492a03d126628"
+    },
+    {
+      "url": "https://www.courtneyfororegon.com/priorities",
+      "representation": "normalized extracted page text",
+      "workingFile": "594ce6a5d945.txt",
+      "sha256": "2bb8ced3c5659114df96aa5877db44029e33de0c29e3faf71fe4f67bac280f6b"
+    },
+    {
+      "url": "https://www.darlameadfororegon.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "338d656c4d42.txt",
+      "sha256": "784c387e0cc6539c924e7b04d3cae9cdc107dac724cf4e06540faf7cdfb2ec8d"
+    },
+    {
+      "url": "https://www.davidbrocksmithfororegon.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "acee2565cb76.txt",
+      "sha256": "d2b817997d46578add04bbf24fe783f0227825e4f831e8471042ff2b47584bc7"
+    },
+    {
+      "url": "https://www.davidbrocksmithfororegon.com/issues",
+      "representation": "normalized extracted page text",
+      "workingFile": "68a789891cda.txt",
+      "sha256": "e9f0f3780f28c1fdf4d24ff982057a6d402551fe1c480b55d9249b3a2eb7ad24"
+    },
+    {
+      "url": "https://www.drkahlforcongress.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "e4ff92d88cee.txt",
+      "sha256": "4a5bff93ee2b935d36c2e454742fa929d2f12dc3508b454beada89006ac38fd3"
+    },
+    {
+      "url": "https://www.greshamoregon.gov/government/elections/",
+      "representation": "normalized extracted page text",
+      "workingFile": "bdb0fda638b5.txt",
+      "sha256": "8da993189172d13c085134724639a6952562bd68ac0673873430cbc3784b4489"
+    },
+    {
+      "url": "https://www.guyfrankenstein.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "58924b44b5fd.txt",
+      "sha256": "4716aa7bc9673b0c558baa515a41a3e1cd22bfb71ff5fe53d0d6204e2f0587df"
+    },
+    {
+      "url": "https://www.helfrichfororegon.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "a4b68da74c7d.txt",
+      "sha256": "1a2c80eb9f55da55a1db3145f46a379b866615d08b09fba482c5a36f0b40f322"
+    },
+    {
+      "url": "https://www.helfrichfororegon.com/priorities",
+      "representation": "normalized extracted page text",
+      "workingFile": "167356977b3e.txt",
+      "sha256": "05919d535dd989aadc2045733334cfcf04cc82b9014963fa2cc56071929ffeb0"
+    },
+    {
+      "url": "https://www.janellebynum.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "338d73487c63.txt",
+      "sha256": "c9288e7b0d83246c8bc183ad5fd7a5cbc77dcf1b0c3d7ee66d4a4d735c5dc6ac"
+    },
+    {
+      "url": "https://www.janellebynum.com/issues",
+      "representation": "normalized extracted page text",
+      "workingFile": "b70122d41438.txt",
+      "sha256": "71f63e97ae49b235882b3abd50aa7bfc1f2ffdc69e8e920fb748ca09fcecf19f"
+    },
+    {
+      "url": "https://www.janellebynum.com/issues/lowering-cost-of-healthcare",
+      "representation": "normalized extracted page text",
+      "workingFile": "68fbb42be02b.txt",
+      "sha256": "09a6bb7a4b862ed576476ce4e5a9c25f6cf4a9b58dc8620e62421d3afb018f76"
+    },
+    {
+      "url": "https://www.janellebynum.com/issues/lowering-the-cost-of-housing",
+      "representation": "normalized extracted page text",
+      "workingFile": "5c90c6428899.txt",
+      "sha256": "5af872d301e91d6b1aa13cf446568bed4c4a279e9979a41235762e430bfb51ba"
+    },
+    {
+      "url": "https://www.jeffmerkley.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "6f5167954d73.txt",
+      "sha256": "2b60afa9caa882e6e99e233e0b41e4ac4680ff0012a92bc5b105319457ff11f6"
+    },
+    {
+      "url": "https://www.jeffmerkley.com/issues/",
+      "representation": "normalized extracted page text",
+      "workingFile": "11641b35b854.txt",
+      "sha256": "91900b6f9a218b24bbad90711681c815b5cd75409fc574e228648719b0b3c8c4"
+    },
+    {
+      "url": "https://www.justin4congress.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "fc75a4af060f.txt",
+      "sha256": "b66d46f03c484fbf9be98154f2a8b6df466621b4a62ae1b73128c880ccbf0e88"
+    },
+    {
+      "url": "https://www.justin4congress.com/our-platform",
+      "representation": "normalized extracted page text",
+      "workingFile": "30f727fcd249.txt",
+      "sha256": "b54ac2d99a475470d397acf9add7d11a70c1cbf5bda1871daf42ceee1c31b4fd"
+    },
+    {
+      "url": "https://www.kaysejama.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "6c1c7f1eb7c9.txt",
+      "sha256": "b09f9b58034fb058e961dd6beb8a86244d8bf10eff0ab5f7e123e98eb0c1bc55"
+    },
+    {
+      "url": "https://www.kaysejama.com/accomplishments",
+      "representation": "normalized extracted page text",
+      "workingFile": "1c78e1e2d70d.txt",
+      "sha256": "9b5624114c2162b7f1668f6b8551692d36b8f8f9dc49b79fc2da4273ad3a69d7"
+    },
+    {
+      "url": "https://www.linkedin.com/posts/ali-beaudoin-75b9558_meet-the-candidates-for-city-council-district-activity-7503657810526846979-aEnb",
+      "representation": "normalized extracted page text",
+      "workingFile": "bfcefc30b2df.txt",
+      "sha256": "d208fb5df89113a7e3255c395342a31aded1bd99ff7fda49f4f92df84427e259"
+    },
+    {
+      "url": "https://www.lisafororegon.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "581c675f7216.txt",
+      "sha256": "56fcdf14ff6a08c12a7b613c0d8ab5d7c5e3471fc8f3f35fb32f6b0fc7244b5a"
+    },
+    {
+      "url": "https://www.marydirksen.com",
+      "representation": "normalized extracted page text",
+      "workingFile": "5994d8d79e1e.txt",
+      "sha256": "49c879ae30770996dbe921f0f6e7f37adb9df79993dd7795e1a1031d36fe4e9e"
+    },
+    {
+      "url": "https://www.mattbunch51.com/issues",
+      "representation": "normalized extracted page text",
+      "workingFile": "79416d95759a.txt",
+      "sha256": "f3679d45e0bb76de247304e4be5a27770968540ee187f20dbd9ceea09a187028"
+    },
+    {
+      "url": "https://www.maxinefororegon.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "4324e27cd353.txt",
+      "sha256": "9f0c23139814ef4760ebadf4378234b8ae8318be5717248d9522814a7b384510"
+    },
+    {
+      "url": "https://www.moniqueforcongress.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "1ead29f583e4.txt",
+      "sha256": "b8e89bce2c60a5ffa6762b6534849098089f2ddebc56ef15848734095ae7bd1b"
+    },
+    {
+      "url": "https://www.moniqueforcongress.com/issues/",
+      "representation": "normalized extracted page text",
+      "workingFile": "88c9f5054fce.txt",
+      "sha256": "f71fadb7ca4db950a8f0d1696a2d017a61089a15611e300c7089110cbb7186fd"
+    },
+    {
+      "url": "https://www.opb.org/article/2026/09/17/kotek-oregon-governor-reelection-platform-policies/",
+      "representation": "normalized extracted page text",
+      "workingFile": "03a54d1c5754.txt",
+      "sha256": "54e9c46283bb3c64118223f677320fd9a1a812bc508fb803c3f3839044bb2d37"
+    },
+    {
+      "url": "https://www.orcity.org/254/Elections",
+      "representation": "normalized extracted page text",
+      "workingFile": "3f54fd4f7893.txt",
+      "sha256": "45ef79b19f5c5099f89eb2414cee676fedb04e60162c789f5bc4f501695ccda8"
+    },
+    {
+      "url": "https://www.orcity.org/3547/Current-Candidates",
+      "representation": "normalized extracted page text",
+      "workingFile": "6c042b351528.txt",
+      "sha256": "cbbea78d40b791ede2228fdaf23f68666895d836c59c06a456573b59ae529404"
+    },
+    {
+      "url": "https://www.pattiforcongress.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "4d8d2c4772a0.txt",
+      "sha256": "fe4327a8ac945eb392718ccb236ff5da15d91d0d0834835ff9e7f21a1868a88c"
+    },
+    {
+      "url": "https://www.pattiforcongress.com/priorities",
+      "representation": "normalized extracted page text",
+      "workingFile": "cbbc69700ff6.txt",
+      "sha256": "32cd579de69070c7867d186d5be44460239b76d9bd921983295837364c1dda6c"
+    },
+    {
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37750",
+      "representation": "normalized extracted page text",
+      "workingFile": "ebf69ffc6f34.txt",
+      "sha256": "d1f2dcb81d1e9e171a8903bdc2f429542e95a40201fdb2b11b24692d06c13395"
+    },
+    {
+      "url": "https://www.portlandmercury.com/news/meet-the-candidates-for-city-council-district-3/",
+      "representation": "normalized extracted page text",
+      "workingFile": "77d561a1d079.txt",
+      "sha256": "f288a7d9d8a3e4f0a8a9c2ec00a2e43c47c1d3467afa0a0122670dc340a7e57c"
+    },
+    {
+      "url": "https://www.robwagnerfororegon.com/priorities/",
+      "representation": "normalized extracted page text",
+      "workingFile": "2a35e33e75ca.txt",
+      "sha256": "b9c5aef090c7f366adfafdc3bbd30790bf28c6124485f22b178270fb25c2491e"
+    },
+    {
+      "url": "https://www.russisforus.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "11971ed61d27.txt",
+      "sha256": "30a90a0277703a830cc9b7f3d36656c0a3b7da1910cd90b6089e43c8dfafd884"
+    },
+    {
+      "url": "https://www.senatedistrict16.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "bfdd654b4798.txt",
+      "sha256": "fe426a580c8ec5a55f9bc5759764b03237317da895f12a348a4c608171e07679"
+    },
+    {
+      "url": "https://www.sugarfororegon.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "27b6612b3b3f.txt",
+      "sha256": "9863628e846d612e0681a14f9c2979717293bbfd83a8ce261fc5d967ad1a64a0"
+    },
+    {
+      "url": "https://www.sugarfororegon.com/priorities",
+      "representation": "normalized extracted page text",
+      "workingFile": "956471c4fc2f.txt",
+      "sha256": "020f0f777aad87257f9f732211931a51fe1170451901218201fc72548769f9a1"
+    },
+    {
+      "url": "https://www.susanmclain.org",
+      "representation": "normalized extracted page text",
+      "workingFile": "dd41d3e90ae8.txt",
+      "sha256": "8bd3aad812957a3b2f5eebbe4d4ae29c59ec400a25ffdc169cb46bbbcc4f3cea"
+    },
+    {
+      "url": "https://www.susanmclain.org/priorities/",
+      "representation": "normalized extracted page text",
+      "workingFile": "3382a1c856f5.txt",
+      "sha256": "525b1abb3a5e642e3202e574a441025d52d942e2b7d1576783a9b6e8db729264"
+    },
+    {
+      "url": "https://www.terrioforus.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "88195711fb9b.txt",
+      "sha256": "2bf972cc878a65b53ff5f2c5148e0b339559de6589f35b1f8db665a310125770"
+    },
+    {
+      "url": "https://www.thegreenpapers.com/G26/OR",
+      "representation": "normalized extracted page text",
+      "workingFile": "4752ee4a193a.txt",
+      "sha256": "466e497a1dddbf52b4407833beaa66e5e7c1f368506ab508fd24438c7f5e91c6"
+    },
+    {
+      "url": "https://www.tinafororegon.com/news/governor-tina-kotek-shares-second-term-vision/",
+      "representation": "normalized extracted page text",
+      "workingFile": "4a8bd7577ecc.txt",
+      "sha256": "1dec9a982b2db65df6cc43f7f1b9f981ebed176f8ef49a13f54ad8ca02c0f597"
+    },
+    {
+      "url": "https://www.tinafororegon.com/oregons-future/",
+      "representation": "normalized extracted page text",
+      "workingFile": "cfdc56d06c91.txt",
+      "sha256": "ace082e51b03ab6fbc786a909cca579332203fd8db553d095452f1351d1a2f97"
+    },
+    {
+      "url": "https://www.valhoyle.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "1b6872b97892.txt",
+      "sha256": "eb5abdb88192ca780859f2eddb1324495587ba6fa8173607283e1eeb3d6367eb"
+    },
+    {
+      "url": "https://www.valhoyle.com/issues/",
+      "representation": "normalized extracted page text",
+      "workingFile": "460c75d8738a.txt",
+      "sha256": "d341503992da1760b63028ce9e86d8eae8e53584b0900702a2b80590e19db397"
+    },
+    {
+      "url": "https://www.votesueriekesmith.com/",
+      "representation": "normalized extracted page text",
+      "workingFile": "27e9264c6c96.txt",
+      "sha256": "4171baf0f91ec49d49cb41c9b9643eb409a80216af6b6e95a3df1d9088e6d60f"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/elections/current-election",
+      "representation": "normalized extracted page text",
+      "workingFile": "e620b20bc271.txt",
+      "sha256": "5f84aca7a4970e8fd8fa1b0ab5a766116543ba96bf99fbf993aed8716417fb9c"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/elections/documents/city-hillsboro-certified-candidates-nov-2026/download?inline",
+      "representation": "original download",
+      "workingFile": "hillsboro-certified.pdf",
+      "sha256": "061070c9b590347d7c015dd62ca75e2d949b79a67e10b89465d4fa4bc8429537"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/elections/documents/city-lake-oswego-certified-candidates-nov-2026/download?inline",
+      "representation": "original download",
+      "workingFile": "lake-oswego-certified.pdf",
+      "sha256": "c6c932b10e13e54561c6bc7c8b7dfdaaa3875bfab23c5fb1a500d63fbb4e8d2a"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/elections/documents/city-sherwood-certified-candidates-nov-2026/download?inline",
+      "representation": "original download",
+      "workingFile": "sherwood-certified.pdf",
+      "sha256": "ea678d75d8800defcb12b89a8b3bef259c8ac3896f5092a04e66ff71bb0a1379"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/elections/documents/city-tigard-certified-candidates-nov-2026/download?inline",
+      "representation": "original download",
+      "workingFile": "tigard-certified.pdf",
+      "sha256": "2c9f39d043d549acc33f7dc7edbe1a1c799ed6146f516fd0414ab4cfd1f0c0bd"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/elections/documents/city-tualatin-certified-candidates-nov-2026/download?inline",
+      "representation": "original download",
+      "workingFile": "tualatin-certified.pdf",
+      "sha256": "72b121f632f8c09ba0e1ed6cd443a48fdcd9caced91020e448bf2265489d0761"
+    },
+    {
+      "url": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=",
+      "representation": "original download",
+      "workingFile": "washington.pdf",
+      "sha256": "77dea3ebacc6116bc74fc74641f536e5d83525effcab3ceee942793ff18bead2"
+    }
+  ]
+}

@@ -79,6 +79,7 @@ const PRIMARY = [
 ];
 
 const TOOLS: NavItem[] = [
+  { label: "2026 Voters’ Guide", href: "/voters-guide", desc: "Candidates, proposals and public records, without endorsements", icon: Vote },
   { label: "Portland Possible", href: DOWNTOWN_URL, desc: "Every downtown parcel, and what it could become", icon: Map, external: true },
   { label: "Parks Atlas", href: PARKS_URL, desc: "All 316 parks, searchable by what you want to do", icon: Trees, external: true },
   { label: "Oregon Governance Atlas", href: OREGON_GOVERNANCE_URL, desc: "Who controls the next step of every bill", icon: Vote, external: true },

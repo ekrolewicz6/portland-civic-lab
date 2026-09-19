@@ -1,0 +1,298 @@
+{
+  "reviewed": "2026-09-18",
+  "note": "Curated editorial asset provenance; attribution does not assert a public-domain license. PDF photographs extracted directly, then resized without enlargement and encoded as WebP. Source pixels are not synthetically altered. CSS frames may crop edges. Working originals are excluded from the repository.",
+  "assets": [
+    {
+      "id": "simone-rede",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=52",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/simone-rede.webp",
+      "sha256": "990bd6e12f9f110ef1900c5aa0df1b4f42053fbd132957b2c1b7a91c7aca94b4",
+      "sourceAssetSha256": "46d17880e67a9c4e6f043bd3e126d727dc4f6b3640343ac27f3fc7a4dfea900d"
+    },
+    {
+      "id": "john-sweeney",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=53",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/john-sweeney.webp",
+      "sha256": "99d168c0045f82e62bf549a1d82fb6e2b75e4543203640ab7945499637fde132",
+      "sourceAssetSha256": "203b121ec151286aed12e9c15e4c13ca34745ecc04389b0fe2feca930ebfd859"
+    },
+    {
+      "id": "tom-sollitt",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=53",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/tom-sollitt.webp",
+      "sha256": "63874d00eb3e354e0f8123fd26c222ece4e6631fd380feed7abaaf068a813411",
+      "sourceAssetSha256": "d512151ba25439b9b467d6db7f914a71abe8ce32c24011dbc43d8803101b0112"
+    },
+    {
+      "id": "larry-kelly",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=54",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/larry-kelly.webp",
+      "sha256": "11e41228ff11c3445d3e74e95d4ae604bf41b4d937ef4ad8719cb918d8433397",
+      "sourceAssetSha256": "78fd0d1e8abd8bff70e1f280c2b9e43f3ff0ccdcd2c90bdf80a86dc66be388d4"
+    },
+    {
+      "id": "tiffany-koyama-lane",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=54",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/tiffany-koyama-lane.webp",
+      "sha256": "5b25aa01752fbe64cdb3d22a22ea7ec2a9f8a444a6e71d286cec98ecae1e8d03",
+      "sourceAssetSha256": "f687e0491ba44f66071bdf63111ebada327d9b17f72951e280b5699da720c17a"
+    },
+    {
+      "id": "terry-parker",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=55",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/terry-parker.webp",
+      "sha256": "683931309c89c30d096fabb1ea8366c4b6678985e6efad7082b6cb5caf23e17a",
+      "sourceAssetSha256": "12955aa5cbbc50072346ff718c750f3423a8254c4b91c1c50c0b109370b2cca6"
+    },
+    {
+      "id": "martin-ward",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=55",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/martin-ward.webp",
+      "sha256": "b30af96f70dbe623bc05b3538f26681d695af3a7c979d84a148f9f02f00a0a06",
+      "sourceAssetSha256": "ed5446c39789bfabbd1fe920ad8c61c6ac86cc8f5a19cfdf43500d2397439b46"
+    },
+    {
+      "id": "joel-corcoran",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=56",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/joel-corcoran.webp",
+      "sha256": "92c04f0ac6539899d194fb6056af6cc7a91813cfe2e2d083e319b8c301491450",
+      "sourceAssetSha256": "29cec1e70af0ca7a1e8df25e169f4ade6f5399d9edf4d29ff3fd640608f46855"
+    },
+    {
+      "id": "angelita-morillo",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=56",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/angelita-morillo.webp",
+      "sha256": "0e843f11e00e00695ac07ea0e8daab6757908f3d9a330c599ae8dd3194fac5a9",
+      "sourceAssetSha256": "199ae5e9a6f11fde1015d35d5423672571db6f99d712041c9c3331aa72fa75c0"
+    },
+    {
+      "id": "steve-novick",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=57",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/steve-novick.webp",
+      "sha256": "480f781af7cee5cda647f184fbb6e28b3a1668b4f9bbf32a2bc4270b1c0ae293",
+      "sourceAssetSha256": "1e86514c122b1b5e2de3579975c80b5b85d5c8de7a5b736ed9ee80485d4de85b"
+    },
+    {
+      "id": "patrick-hilton",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=57",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/patrick-hilton.webp",
+      "sha256": "7ba472e6f3af77fed52c5903ebbd17a0a7e90693dde4053d71b2d798b65b6494",
+      "sourceAssetSha256": "d8ef420bf08ff7b7c66f31139e0a961349f8f9bddcba3c9088e8583a76ebc135"
+    },
+    {
+      "id": "matthias-hallett",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=58",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/matthias-hallett.webp",
+      "sha256": "5666a14eb476252ed08057ee8c7b09d7d376bd44f081becc8b6914fb67c272b4",
+      "sourceAssetSha256": "9fcfd8f54bf15f4c3cc63b9609c1e3f3fc03cc01334695ba37c61cedd025b17c"
+    },
+    {
+      "id": "kellie-torres",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=58",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/kellie-torres.webp",
+      "sha256": "061bed8e9d2ec127cc42d5504cb85701b6d60e241638b9c6c709e3083bf5d295",
+      "sourceAssetSha256": "02e4f131f18468fecf533d36765824237db31b4bda427dedf4aa5ea079d6f6e0"
+    },
+    {
+      "id": "cristal-otero",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=59",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/cristal-otero.webp",
+      "sha256": "7001591b9b91418cb0774da1d1bcf6669d5ae4c292d453b8ac786b1f303324f9",
+      "sourceAssetSha256": "4e123ec03a0818fae0a615b035aa68d736416d94e7ac64fe812c225665dea140"
+    },
+    {
+      "id": "keir-legree",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=59",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/keir-legree.webp",
+      "sha256": "6e619e49a26a9d3d9ada9d985b8eda623c0aa01d4829c7bf6acc7fa288359457",
+      "sourceAssetSha256": "de14fa06c8fb8f15b186b3ae6b9029525e0bb4350217031435e9c048f5b59c74"
+    },
+    {
+      "id": "esther-leon",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=60",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/esther-leon.webp",
+      "sha256": "5079d4cd8ec65d7de4b7b0188e931e6da23a0e8b8c829962675fc844b3298cc1",
+      "sourceAssetSha256": "b6bc44576800a0264d4a49bfbe5d41190ecb5ee44ec9b40e74f2ed84c0c172df"
+    },
+    {
+      "id": "kenneth-kent-r-landgraver-iii",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=60",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/kenneth-kent-r-landgraver-iii.webp",
+      "sha256": "0875dbdd48821f39e7320d6325b5e426c13f41c4da92fd5a67af8e6deb7857c3",
+      "sourceAssetSha256": "1275b0d9a778ea289c1a97757c7ec433f6edd72e55146d14d1a290d03f959762"
+    },
+    {
+      "id": "matt-schulte",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=61",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/matt-schulte.webp",
+      "sha256": "258d5f2ea6606ddba2ad901e051f28346dfbaca403f5a697397f1451fb48be6e",
+      "sourceAssetSha256": "768269947283614ebdb52de37610aba9a0e5901475af4ec31e1318fc815b0e3d"
+    },
+    {
+      "id": "jeremy-beausoleil-smith",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=61",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/jeremy-beausoleil-smith.webp",
+      "sha256": "de35786498dc4ae357b2025816192b6a762d98eae6c211e8e6eb894027e64be7",
+      "sourceAssetSha256": "3870a44599e415aad03126b8c3c498364e185eb52522625fdb4017a542961297"
+    },
+    {
+      "id": "mitch-green",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=62",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/mitch-green.webp",
+      "sha256": "9174ff1531109b041e837fa123858bd5114b886c20f88424144397f169aabb0e",
+      "sourceAssetSha256": "a8384d9eb6c6d1a5a8f1718180dc4d22d2b09f36d808c4013c992f36362bb856"
+    },
+    {
+      "id": "olivia-clark",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=62",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/olivia-clark.webp",
+      "sha256": "09710908cd2aa91e858149646eeb37dc2bec09d70a031a64c53dd02e8b4507fc",
+      "sourceAssetSha256": "4efcfc8321af7622d138ea48bd54550f0f464380a9a675a525f0b55e775895ad"
+    },
+    {
+      "id": "jayne-cronlund",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=63",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/jayne-cronlund.webp",
+      "sha256": "bd0fcf4184d0f54f3460d0f8af02ec3e47fc70d976857b92a8607b6f8f8b62c9",
+      "sourceAssetSha256": "9ef9c1ddd17686ee423975dd43ace10a24465c9357f65e3ddc9dac0ed60b9398"
+    },
+    {
+      "id": "john-mcdonald",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=63",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/john-mcdonald.webp",
+      "sha256": "e64d295710221a5d57badccc88adb78f07544d99e540d12cf028ac623e3dda2c",
+      "sourceAssetSha256": "b25888619fd9729b4e5c77f3c91fa419671a17d0b2e52bb56b3dd2dd6ba0c281"
+    },
+    {
+      "id": "eric-zimmerman",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=64",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/eric-zimmerman.webp",
+      "sha256": "163e068bc558fe3eac54b00a176c038412a62230a8f9abe4b8c07fec13f3665c",
+      "sourceAssetSha256": "2b2a512bfbaaa1da0920402c7f2c4eddfe9b4087a3ae84e531ce78fa426ff993"
+    },
+    {
+      "id": "jamey-evenstar",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=64",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/jamey-evenstar.webp",
+      "sha256": "fe9f7aecf9ea871cb2c80d33f48d7ebbd5e0e108e4ac24db6f134d5a7d3fbf5d",
+      "sourceAssetSha256": "2177b2ae671575366da11be3bd4e83822a212e340e2906879cae7fca6c418afc"
+    },
+    {
+      "id": "timothy-tj-anderson",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=65",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/timothy-tj-anderson.webp",
+      "sha256": "277412dcae33e4fee5396df6d8e19d132c6c754aadeb2500eee040162dd676d9",
+      "sourceAssetSha256": "b7b86fb2166f0574750c03e797c0ae2dcd25bbc8ee5ec5c22fa45b1d5a5253a9"
+    },
+    {
+      "id": "eli-arnold",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=65",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/eli-arnold.webp",
+      "sha256": "e37828bff77e579bced223752a698abb4689af056a9517a000dad75ba6808587",
+      "sourceAssetSha256": "00f9622074f3949e999c2ce9d0cb3aeba4fffdde9f43425ccb6cd1dcf13c8236"
+    },
+    {
+      "id": "josh-leake",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=66",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/josh-leake.webp",
+      "sha256": "6f7402db8606f47fc2df19eac995960efbdb511abdc79824dcb395826adcff3b",
+      "sourceAssetSha256": "f832889bc382e318f535d97201081aebf6a493e0df394466afa8dce8aa5b61e0"
+    },
+    {
+      "id": "kimberly-tucker",
+      "sourceUrl": "https://rosecityreform.org/candidates/kimberly-tucker/",
+      "assetUrl": "https://rosecityreform.org/wp-content/uploads/2026/07/Kimberly-Tucker.jpg",
+      "credit": "Portrait published by Rose City Reform",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/kimberly-tucker.webp",
+      "sha256": "63ad31047a991e9ca31a86eb5d4ebc34d07da99692fa013ebe71c3c7e01d6c95",
+      "sourceAssetSha256": "e5780b5cb215e39ad2c9544fce73b98521b0f9f6fde57b44ee7c0ddc96748182"
+    },
+    {
+      "id": "heart-free-pham",
+      "sourceUrl": "https://tomorrowtheater.org/movies/tough-shit-with-oregon-humanities-2/",
+      "assetUrl": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/02/03111054/Heart-Free-Pham.jpg",
+      "credit": "Speaker portrait \u00b7 Tomorrow Theater / Oregon Humanities",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/heart-free-pham.webp",
+      "sha256": "7fda287d44bca5ede7dfb531d806decf48600c1b4178a3bea3dd2587a95e76dd",
+      "sourceAssetSha256": "3c0a8acdb2181a5b3f7ef397c406496193507e0eacb461fa8e890b13046d931e"
+    },
+    {
+      "id": "ali-beaudoin",
+      "sourceUrl": "https://www.portlandmercury.com/news/meet-the-candidates-for-city-council-district-3/",
+      "assetUrl": "https://i0.wp.com/www.portlandmercury.com/wp-content/uploads/2026/09/Head-Shot.jpeg?resize=337%2C337&ssl=1",
+      "credit": "Portrait published by Portland Mercury",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/ali-beaudoin.webp",
+      "sha256": "5eddc9cfe8583b56c84c55be8c60109667f6622b8d4949611c39299099942a76",
+      "sourceAssetSha256": "63ea353ac85453b9bf9a88a7542cf9e83ea3a0c3214e05f0be8f737efe138334"
+    },
+    {
+      "id": "guy-frankenstein",
+      "sourceUrl": "https://www.portlandmercury.com/news/meet-the-candidates-for-city-council-district-3/",
+      "assetUrl": "https://i0.wp.com/www.portlandmercury.com/wp-content/uploads/2026/09/Guy-Frankenstein-edited.jpg?resize=780%2C769&ssl=1",
+      "credit": "Portrait published by Portland Mercury",
+      "reviewed": "2026-09-18",
+      "file": "public/images/voters-guide/2026/guy-frankenstein.webp",
+      "sha256": "b88b9ffd3dc8a95ede0496ece6b27579150e994497f541ad3a6cd8b700b48dd6",
+      "sourceAssetSha256": "74fb1c499a96c025f5ffb43f18b2c77648bc3d39cdfe2fa51c3b4f5d14e48e98"
+    }
+  ]
+}

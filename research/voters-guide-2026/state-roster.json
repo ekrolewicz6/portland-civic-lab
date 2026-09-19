@@ -1,0 +1,1573 @@
+{
+  "reviewed": "2026-09-18",
+  "source": "https://secure.sos.state.or.us/orestar/CFSearchPage.do",
+  "filter": "2026 General Election; qualified Y; no withdrawal date. Multiple party nominations retained.",
+  "candidates": [
+    {
+      "office": "State Representative, 13th District",
+      "name": "Jonathan T Abrahamsen",
+      "party": "Republican",
+      "filingId": "25492"
+    },
+    {
+      "office": "US Representative, 5th District",
+      "name": "Patti Adair",
+      "party": "Republican",
+      "filingId": "25392"
+    },
+    {
+      "office": "US Representative, 5th District",
+      "name": "Patti Adair",
+      "party": "Libertarian",
+      "filingId": "25842"
+    },
+    {
+      "office": "District Attorney, Lake County",
+      "name": "Rami Amaro",
+      "party": "Nonpartisan",
+      "filingId": "25901"
+    },
+    {
+      "office": "State Representative, 19th District",
+      "name": "Tom Andersen",
+      "party": "Democrat",
+      "filingId": "25401"
+    },
+    {
+      "office": "State Representative, 19th District",
+      "name": "Tom Andersen",
+      "party": "Independent",
+      "filingId": "25623"
+    },
+    {
+      "office": "State Representative, 19th District",
+      "name": "Tom Andersen",
+      "party": "Working Families",
+      "filingId": "25860"
+    },
+    {
+      "office": "State Senator, 16th District",
+      "name": "Rachel Armitage",
+      "party": "Democrat",
+      "filingId": "25437"
+    },
+    {
+      "office": "Judge of the Circuit Court, 11th District, Position 3",
+      "name": "Raun Atkinson",
+      "party": "Nonpartisan",
+      "filingId": "25720"
+    },
+    {
+      "office": "US Representative, 3rd District",
+      "name": "Loran Ayles",
+      "party": "Republican",
+      "filingId": "25472"
+    },
+    {
+      "office": "State Representative, 40th District",
+      "name": "Adam Baker",
+      "party": "Republican",
+      "filingId": "25386"
+    },
+    {
+      "office": "State Senator, 16th District",
+      "name": "Courtney Bangs",
+      "party": "Republican",
+      "filingId": "25493"
+    },
+    {
+      "office": "State Senator, 26th District",
+      "name": "Nicole Bassett",
+      "party": "Democrat",
+      "filingId": "25518"
+    },
+    {
+      "office": "State Senator, 26th District",
+      "name": "Nicole Bassett",
+      "party": "Independent",
+      "filingId": "25785"
+    },
+    {
+      "office": "State Senator, 26th District",
+      "name": "Nicole Bassett",
+      "party": "Working Families",
+      "filingId": "25861"
+    },
+    {
+      "office": "State Senator, 3rd District",
+      "name": "Clay Bearnson",
+      "party": "Independent",
+      "filingId": "25627"
+    },
+    {
+      "office": "State Senator, 3rd District",
+      "name": "Clay Bearnson",
+      "party": "Pacific Green",
+      "filingId": "25905"
+    },
+    {
+      "office": "US Representative, 2nd District",
+      "name": "Chris Beck",
+      "party": "Democrat",
+      "filingId": "25459"
+    },
+    {
+      "office": "US Representative, 2nd District",
+      "name": "Chris Beck",
+      "party": "Independent",
+      "filingId": "25700"
+    },
+    {
+      "office": "US Representative, 2nd District",
+      "name": "Cliff Bentz",
+      "party": "Republican",
+      "filingId": "25455"
+    },
+    {
+      "office": "Judge of the Circuit Court, 11th District, Position 3",
+      "name": "Thaddeus Betz",
+      "party": "Nonpartisan",
+      "filingId": "25783"
+    },
+    {
+      "office": "State Representative, 1st District",
+      "name": "Court Boice",
+      "party": "Republican",
+      "filingId": "25466"
+    },
+    {
+      "office": "US Representative, 1st District",
+      "name": "Suzanne Bonamici",
+      "party": "Democrat",
+      "filingId": "25502"
+    },
+    {
+      "office": "US Representative, 1st District",
+      "name": "Suzanne Bonamici",
+      "party": "Working Families",
+      "filingId": "25862"
+    },
+    {
+      "office": "State Representative, 15th District",
+      "name": "Shelly Boshart Davis",
+      "party": "Republican",
+      "filingId": "25397"
+    },
+    {
+      "office": "State Representative, 25th District",
+      "name": "Ben Bowman",
+      "party": "Democrat",
+      "filingId": "25528"
+    },
+    {
+      "office": "State Representative, 25th District",
+      "name": "Ben Bowman",
+      "party": "Working Families",
+      "filingId": "25863"
+    },
+    {
+      "office": "State Representative, 45th District",
+      "name": "Jason Boyce",
+      "party": "Republican",
+      "filingId": "25407"
+    },
+    {
+      "office": "State Representative, 59th District",
+      "name": "Vikki Breese-Iverson",
+      "party": "Republican",
+      "filingId": "25399"
+    },
+    {
+      "office": "Judge of the Circuit Court, 5th District, Position 5",
+      "name": "Kara A Brooks",
+      "party": "Nonpartisan",
+      "filingId": "25782"
+    },
+    {
+      "office": "State Representative, 51st District",
+      "name": "Matt Bunch",
+      "party": "Republican",
+      "filingId": "25463"
+    },
+    {
+      "office": "State Representative, 14th District",
+      "name": "Kevin T Burton",
+      "party": "Republican",
+      "filingId": "25461"
+    },
+    {
+      "office": "US Representative, 5th District",
+      "name": "Janelle S Bynum",
+      "party": "Democrat",
+      "filingId": "25421"
+    },
+    {
+      "office": "State Representative, 58th District",
+      "name": "Brian Campbell",
+      "party": "Democrat",
+      "filingId": "25475"
+    },
+    {
+      "office": "State Representative, 26th District",
+      "name": "Stephanie Carkin",
+      "party": "Republican",
+      "filingId": "25385"
+    },
+    {
+      "office": "State Representative, 26th District",
+      "name": "Stephanie Carkin",
+      "party": "Libertarian",
+      "filingId": "25896"
+    },
+    {
+      "office": "State Representative, 27th District",
+      "name": "Tammy Carpenter",
+      "party": "Democrat",
+      "filingId": "25506"
+    },
+    {
+      "office": "State Representative, 27th District",
+      "name": "Tammy Carpenter",
+      "party": "Working Families",
+      "filingId": "25864"
+    },
+    {
+      "office": "State Representative, 27th District",
+      "name": "Tammy Carpenter",
+      "party": "Progressive",
+      "filingId": "25899"
+    },
+    {
+      "office": "State Representative, 1st District",
+      "name": "Bret Cecil",
+      "party": "Democrat",
+      "filingId": "25465"
+    },
+    {
+      "office": "State Representative, 35th District",
+      "name": "Farrah Chaichi",
+      "party": "Democrat",
+      "filingId": "25434"
+    },
+    {
+      "office": "State Representative, 35th District",
+      "name": "Farrah Chaichi",
+      "party": "Working Families",
+      "filingId": "25866"
+    },
+    {
+      "office": "State Senator, 17th District",
+      "name": "John A N Chee",
+      "party": "Republican",
+      "filingId": "25388"
+    },
+    {
+      "office": "State Representative, 46th District",
+      "name": "Willy Chotzen",
+      "party": "Democrat",
+      "filingId": "25517"
+    },
+    {
+      "office": "State Representative, 46th District",
+      "name": "Willy Chotzen",
+      "party": "Working Families",
+      "filingId": "25867"
+    },
+    {
+      "office": "State Representative, 41st District",
+      "name": "Elvis Clark",
+      "party": "Republican",
+      "filingId": "25532"
+    },
+    {
+      "office": "State Representative, 34th District",
+      "name": "Shaunie Cousins",
+      "party": "Republican",
+      "filingId": "25500"
+    },
+    {
+      "office": "State Senator, 11th District",
+      "name": "Tracy M Cramer",
+      "party": "Republican",
+      "filingId": "25415"
+    },
+    {
+      "office": "State Representative, 57th District",
+      "name": "Josiah Dean",
+      "party": "Pacific Green",
+      "filingId": "25633"
+    },
+    {
+      "office": "US Representative, 4th District",
+      "name": "Monique DeSpain",
+      "party": "Republican",
+      "filingId": "25454"
+    },
+    {
+      "office": "US Representative, 4th District",
+      "name": "Monique DeSpain",
+      "party": "Libertarian",
+      "filingId": "25841"
+    },
+    {
+      "office": "US Representative, 3rd District",
+      "name": "Maxine E Dexter",
+      "party": "Democrat",
+      "filingId": "25431"
+    },
+    {
+      "office": "State Senator, 19th District",
+      "name": "Mary Dirksen",
+      "party": "Republican",
+      "filingId": "25530"
+    },
+    {
+      "office": "State Representative, 39th District",
+      "name": "April Dobson",
+      "party": "Democrat",
+      "filingId": "25428"
+    },
+    {
+      "office": "State Representative, 39th District",
+      "name": "April Dobson",
+      "party": "Republican",
+      "filingId": "25600"
+    },
+    {
+      "office": "State Representative, 39th District",
+      "name": "April Dobson",
+      "party": "Independent",
+      "filingId": "25631"
+    },
+    {
+      "office": "State Senator, 8th District",
+      "name": "Valerie Draper Woldeit",
+      "party": "Republican",
+      "filingId": "25513"
+    },
+    {
+      "office": "Governor",
+      "name": "Christine Drazan",
+      "party": "Republican",
+      "filingId": "25512"
+    },
+    {
+      "office": "Governor",
+      "name": "Christine Drazan",
+      "party": "Libertarian",
+      "filingId": "25843"
+    },
+    {
+      "office": "US Senator",
+      "name": "Gary Lyndon Dye",
+      "party": "Libertarian",
+      "filingId": "25840"
+    },
+    {
+      "office": "State Representative, 31st District",
+      "name": "Darcey Edwards",
+      "party": "Republican",
+      "filingId": "25526"
+    },
+    {
+      "office": "State Representative, 24th District",
+      "name": "Lucetta A Elmer",
+      "party": "Republican",
+      "filingId": "25447"
+    },
+    {
+      "office": "State Representative, 20th District",
+      "name": "Paul Evans",
+      "party": "Democrat",
+      "filingId": "25426"
+    },
+    {
+      "office": "State Representative, 20th District",
+      "name": "Paul Evans",
+      "party": "Working Families",
+      "filingId": "25868"
+    },
+    {
+      "office": "State Representative, 14th District",
+      "name": "Julie Fahey",
+      "party": "Democrat",
+      "filingId": "25469"
+    },
+    {
+      "office": "State Representative, 17th District",
+      "name": "Dan Farrington",
+      "party": "Republican",
+      "filingId": "25453"
+    },
+    {
+      "office": "US Representative, 4th District",
+      "name": "Justin Filip",
+      "party": "Pacific Green",
+      "filingId": "25616"
+    },
+    {
+      "office": "US Representative, 4th District",
+      "name": "Justin Filip",
+      "party": "Progressive",
+      "filingId": "25742"
+    },
+    {
+      "office": "State Senator, 16th District",
+      "name": "Melisa Finkle",
+      "party": "Independent",
+      "filingId": "25629"
+    },
+    {
+      "office": "State Representative, 3rd District",
+      "name": "Susan Fischer-Maki",
+      "party": "Democrat",
+      "filingId": "25406"
+    },
+    {
+      "office": "State Representative, 31st District",
+      "name": "Tom L Forest",
+      "party": "Democrat",
+      "filingId": "25424"
+    },
+    {
+      "office": "State Representative, 8th District",
+      "name": "Lisa Fragala",
+      "party": "Democrat",
+      "filingId": "25377"
+    },
+    {
+      "office": "State Representative, 28th District",
+      "name": "Randall Fryer",
+      "party": "Republican",
+      "filingId": "25503"
+    },
+    {
+      "office": "State Representative, 20th District",
+      "name": "Andrew Fudge",
+      "party": "Republican",
+      "filingId": "25510"
+    },
+    {
+      "office": "State Representative, 20th District",
+      "name": "Andrew Fudge",
+      "party": "Independent",
+      "filingId": "25676"
+    },
+    {
+      "office": "State Representative, 41st District",
+      "name": "Mark Gamba",
+      "party": "Democrat",
+      "filingId": "25430"
+    },
+    {
+      "office": "State Representative, 41st District",
+      "name": "Mark Gamba",
+      "party": "Working Families",
+      "filingId": "25869"
+    },
+    {
+      "office": "State Senator, 8th District",
+      "name": "Sara Gelser Blouin",
+      "party": "Democrat",
+      "filingId": "25405"
+    },
+    {
+      "office": "State Representative, 10th District",
+      "name": "David Gomberg",
+      "party": "Democrat",
+      "filingId": "25495"
+    },
+    {
+      "office": "State Representative, 10th District",
+      "name": "David Gomberg",
+      "party": "Republican",
+      "filingId": "25597"
+    },
+    {
+      "office": "State Representative, 10th District",
+      "name": "David Gomberg",
+      "party": "Independent",
+      "filingId": "25621"
+    },
+    {
+      "office": "State Representative, 28th District",
+      "name": "Dacia Grayber",
+      "party": "Democrat",
+      "filingId": "25476"
+    },
+    {
+      "office": "State Representative, 28th District",
+      "name": "Dacia Grayber",
+      "party": "Independent",
+      "filingId": "25787"
+    },
+    {
+      "office": "State Representative, 28th District",
+      "name": "Dacia Grayber",
+      "party": "Working Families",
+      "filingId": "25870"
+    },
+    {
+      "office": "State Representative, 50th District",
+      "name": "Brian Gray",
+      "party": "Republican",
+      "filingId": "25509"
+    },
+    {
+      "office": "Judge of the Circuit Court, 4th District, Position 14",
+      "name": "Joseph Hagedorn",
+      "party": "Nonpartisan",
+      "filingId": "25433"
+    },
+    {
+      "office": "State Representative, 12th District",
+      "name": "Darin Harbick",
+      "party": "Republican",
+      "filingId": "25443"
+    },
+    {
+      "office": "State Representative, 52nd District",
+      "name": "Scott C Hege",
+      "party": "Republican",
+      "filingId": "25410"
+    },
+    {
+      "office": "State Senator, 26th District",
+      "name": "Jeff Helfrich",
+      "party": "Republican",
+      "filingId": "25507"
+    },
+    {
+      "office": "US Senator",
+      "name": "Chris Henry",
+      "party": "Progressive",
+      "filingId": "25635"
+    },
+    {
+      "office": "US Senator",
+      "name": "Chris Henry",
+      "party": "Pacific Green",
+      "filingId": "25907"
+    },
+    {
+      "office": "State Senator, 3rd District",
+      "name": "Brad Hicks",
+      "party": "Republican",
+      "filingId": "25462"
+    },
+    {
+      "office": "State Senator, 3rd District",
+      "name": "Brad Hicks",
+      "party": "Libertarian",
+      "filingId": "25844"
+    },
+    {
+      "office": "State Representative, 6th District",
+      "name": "John P Holm",
+      "party": "Democrat",
+      "filingId": "25387"
+    },
+    {
+      "office": "US Representative, 4th District",
+      "name": "Val Hoyle",
+      "party": "Democrat",
+      "filingId": "25435"
+    },
+    {
+      "office": "US Representative, 4th District",
+      "name": "Val Hoyle",
+      "party": "Working Families",
+      "filingId": "25871"
+    },
+    {
+      "office": "State Representative, 40th District",
+      "name": "Pat Hubbell",
+      "party": "Independent",
+      "filingId": "25780"
+    },
+    {
+      "office": "State Representative, 49th District",
+      "name": "Zach Hudson",
+      "party": "Democrat",
+      "filingId": "25480"
+    },
+    {
+      "office": "State Representative, 49th District",
+      "name": "Zach Hudson",
+      "party": "Working Families",
+      "filingId": "25872"
+    },
+    {
+      "office": "State Senator, 7th District",
+      "name": "Jack (Jake) D Huff",
+      "party": "Republican",
+      "filingId": "25514"
+    },
+    {
+      "office": "Judge of the Circuit Court, 11th District, Position 3",
+      "name": "Sonia Huntsman",
+      "party": "Nonpartisan",
+      "filingId": "25781"
+    },
+    {
+      "office": "State Senator, 15th District",
+      "name": "Harold Hutchison",
+      "party": "Republican",
+      "filingId": "25477"
+    },
+    {
+      "office": "State Representative, 33rd District",
+      "name": "Shannon Jones Isadore",
+      "party": "Democrat",
+      "filingId": "25423"
+    },
+    {
+      "office": "State Representative, 11th District",
+      "name": "Ken Jackola",
+      "party": "Republican",
+      "filingId": "25441"
+    },
+    {
+      "office": "State Senator, 24th District",
+      "name": "Kayse Jama",
+      "party": "Democrat",
+      "filingId": "25489"
+    },
+    {
+      "office": "State Senator, 24th District",
+      "name": "Kayse Jama",
+      "party": "Working Families",
+      "filingId": "25873"
+    },
+    {
+      "office": "State Representative, 32nd District",
+      "name": "Cyrus Javadi",
+      "party": "Democrat",
+      "filingId": "25417"
+    },
+    {
+      "office": "State Representative, 32nd District",
+      "name": "Cyrus Javadi",
+      "party": "Independent",
+      "filingId": "25620"
+    },
+    {
+      "office": "State Representative, 59th District",
+      "name": "Lawrence Jones",
+      "party": "Democrat",
+      "filingId": "25478"
+    },
+    {
+      "office": "US Representative, 1st District",
+      "name": "Barbara J Kahl",
+      "party": "Republican",
+      "filingId": "25383"
+    },
+    {
+      "office": "State Representative, 18th District",
+      "name": "Roy Kaufmann",
+      "party": "Democrat",
+      "filingId": "25601"
+    },
+    {
+      "office": "State Representative, 18th District",
+      "name": "Roy Kaufmann",
+      "party": "Independent",
+      "filingId": "25617"
+    },
+    {
+      "office": "State Representative, 18th District",
+      "name": "Roy Kaufmann",
+      "party": "Working Families",
+      "filingId": "25874"
+    },
+    {
+      "office": "State Representative, 18th District",
+      "name": "Roy Kaufmann",
+      "party": "Progressive",
+      "filingId": "25903"
+    },
+    {
+      "office": "District Attorney, Curry County",
+      "name": "Kevin Kelley",
+      "party": "Nonpartisan",
+      "filingId": "25376"
+    },
+    {
+      "office": "Governor",
+      "name": "Tina Kotek",
+      "party": "Democrat",
+      "filingId": "25470"
+    },
+    {
+      "office": "Governor",
+      "name": "Tina Kotek",
+      "party": "Working Families",
+      "filingId": "25875"
+    },
+    {
+      "office": "State Senator, 3rd District",
+      "name": "Denise D Krause",
+      "party": "Democrat",
+      "filingId": "25403"
+    },
+    {
+      "office": "State Representative, 5th District",
+      "name": "Alexander Krigsvold",
+      "party": "Republican",
+      "filingId": "25458"
+    },
+    {
+      "office": "State Representative, 54th District",
+      "name": "Jason Kropf",
+      "party": "Democrat",
+      "filingId": "25525"
+    },
+    {
+      "office": "State Senator, 13th District",
+      "name": "Glenn Lancaster",
+      "party": "Republican",
+      "filingId": "25471"
+    },
+    {
+      "office": "State Representative, 22nd District",
+      "name": "Noemi Legaspi",
+      "party": "Republican",
+      "filingId": "25398"
+    },
+    {
+      "office": "State Representative, 22nd District",
+      "name": "Noemi Legaspi",
+      "party": "Libertarian",
+      "filingId": "25895"
+    },
+    {
+      "office": "Judge of the Circuit Court, 11th District, Position 3",
+      "name": "Keith A Leitz",
+      "party": "Nonpartisan",
+      "filingId": "25741"
+    },
+    {
+      "office": "State Representative, 43rd District",
+      "name": "Tim LeMaster",
+      "party": "Republican",
+      "filingId": "25460"
+    },
+    {
+      "office": "State Representative, 58th District",
+      "name": "Bobby Levy",
+      "party": "Republican",
+      "filingId": "25479"
+    },
+    {
+      "office": "State Representative, 53rd District",
+      "name": "Emerson Levy",
+      "party": "Democrat",
+      "filingId": "25411"
+    },
+    {
+      "office": "State Representative, 53rd District",
+      "name": "Emerson Levy",
+      "party": "Independent",
+      "filingId": "25625"
+    },
+    {
+      "office": "Judge of the Circuit Court, 2nd District, Position 14",
+      "name": "Nathan J Lichvarcik",
+      "party": "Nonpartisan",
+      "filingId": "25721"
+    },
+    {
+      "office": "State Representative, 44th District",
+      "name": "Margo Logan",
+      "party": "Republican",
+      "filingId": "25442"
+    },
+    {
+      "office": "State Representative, 9th District",
+      "name": "Claire Lynn",
+      "party": "Republican",
+      "filingId": "25429"
+    },
+    {
+      "office": "State Representative, 11th District",
+      "name": "Ivan Maluski",
+      "party": "Democrat",
+      "filingId": "25382"
+    },
+    {
+      "office": "State Representative, 11th District",
+      "name": "Ivan Maluski",
+      "party": "Independent",
+      "filingId": "25622"
+    },
+    {
+      "office": "State Representative, 11th District",
+      "name": "Ivan Maluski",
+      "party": "Working Families",
+      "filingId": "25876"
+    },
+    {
+      "office": "State Senator, 7th District",
+      "name": "James I Manning Jr",
+      "party": "Democrat",
+      "filingId": "25529"
+    },
+    {
+      "office": "State Senator, 7th District",
+      "name": "James I Manning Jr",
+      "party": "Independent",
+      "filingId": "25677"
+    },
+    {
+      "office": "State Senator, 7th District",
+      "name": "James I Manning Jr",
+      "party": "Working Families",
+      "filingId": "25877"
+    },
+    {
+      "office": "State Representative, 21st District",
+      "name": "Kevin L Mannix",
+      "party": "Republican",
+      "filingId": "25380"
+    },
+    {
+      "office": "State Representative, 18th District",
+      "name": "Patrick Marnell",
+      "party": "Libertarian",
+      "filingId": "25657"
+    },
+    {
+      "office": "State Representative, 5th District",
+      "name": "Pam Marsh",
+      "party": "Democrat",
+      "filingId": "25396"
+    },
+    {
+      "office": "State Representative, 5th District",
+      "name": "Pam Marsh",
+      "party": "Independent",
+      "filingId": "25626"
+    },
+    {
+      "office": "State Representative, 35th District",
+      "name": "Dan Martin",
+      "party": "Republican",
+      "filingId": "25501"
+    },
+    {
+      "office": "State Representative, 16th District",
+      "name": "Sarah Finger McDonald",
+      "party": "Democrat",
+      "filingId": "25468"
+    },
+    {
+      "office": "State Representative, 16th District",
+      "name": "Sarah Finger McDonald",
+      "party": "Republican",
+      "filingId": "25598"
+    },
+    {
+      "office": "State Representative, 56th District",
+      "name": "Emily G McIntire",
+      "party": "Republican",
+      "filingId": "25452"
+    },
+    {
+      "office": "State Representative, 29th District",
+      "name": "Susan McLain",
+      "party": "Democrat",
+      "filingId": "25464"
+    },
+    {
+      "office": "State Representative, 51st District",
+      "name": "Darla Mead",
+      "party": "Democrat",
+      "filingId": "25494"
+    },
+    {
+      "office": "State Representative, 51st District",
+      "name": "Darla Mead",
+      "party": "Working Families",
+      "filingId": "25878"
+    },
+    {
+      "office": "State Senator, 20th District",
+      "name": "Mark Meek",
+      "party": "Democrat",
+      "filingId": "25445"
+    },
+    {
+      "office": "US Senator",
+      "name": "Jeff Merkley",
+      "party": "Democrat",
+      "filingId": "25393"
+    },
+    {
+      "office": "US Senator",
+      "name": "Jeff Merkley",
+      "party": "Working Families",
+      "filingId": "25879"
+    },
+    {
+      "office": "Judge of the Circuit Court, 4th District, Position 6",
+      "name": "Sonia A Montalbano",
+      "party": "Nonpartisan",
+      "filingId": "25680"
+    },
+    {
+      "office": "State Representative, 46th District",
+      "name": "Leo Morley",
+      "party": "Republican",
+      "filingId": "25450"
+    },
+    {
+      "office": "State Representative, 48th District",
+      "name": "Andrew Morrison",
+      "party": "Republican",
+      "filingId": "25391"
+    },
+    {
+      "office": "State Representative, 22nd District",
+      "name": "Lesly M Munoz",
+      "party": "Democrat",
+      "filingId": "25427"
+    },
+    {
+      "office": "State Representative, 22nd District",
+      "name": "Lesly M Munoz",
+      "party": "Independent",
+      "filingId": "25760"
+    },
+    {
+      "office": "State Representative, 22nd District",
+      "name": "Lesly M Munoz",
+      "party": "Working Families",
+      "filingId": "25881"
+    },
+    {
+      "office": "State Senator, 15th District",
+      "name": "Myrna A Munoz",
+      "party": "Democrat",
+      "filingId": "25491"
+    },
+    {
+      "office": "State Senator, 15th District",
+      "name": "Myrna A Munoz",
+      "party": "Working Families",
+      "filingId": "25882"
+    },
+    {
+      "office": "State Representative, 19th District",
+      "name": "Anna Munson",
+      "party": "Republican",
+      "filingId": "25490"
+    },
+    {
+      "office": "State Representative, 19th District",
+      "name": "Anna Munson",
+      "party": "Libertarian",
+      "filingId": "25656"
+    },
+    {
+      "office": "State Representative, 13th District",
+      "name": "Nancy Nathanson",
+      "party": "Democrat",
+      "filingId": "25413"
+    },
+    {
+      "office": "State Representative, 17th District",
+      "name": "David Nelson",
+      "party": "Democrat",
+      "filingId": "25384"
+    },
+    {
+      "office": "State Senator, 13th District",
+      "name": "Tim E Nelson",
+      "party": "Libertarian",
+      "filingId": "25904"
+    },
+    {
+      "office": "State Representative, 44th District",
+      "name": "Travis Nelson",
+      "party": "Democrat",
+      "filingId": "25389"
+    },
+    {
+      "office": "State Representative, 44th District",
+      "name": "Travis Nelson",
+      "party": "Working Families",
+      "filingId": "25883"
+    },
+    {
+      "office": "State Senator, 13th District",
+      "name": "Courtney Neron Misslin",
+      "party": "Democrat",
+      "filingId": "25444"
+    },
+    {
+      "office": "State Senator, 13th District",
+      "name": "Courtney Neron Misslin",
+      "party": "Working Families",
+      "filingId": "25884"
+    },
+    {
+      "office": "State Representative, 38th District",
+      "name": "Daniel Loc Nguyen",
+      "party": "Democrat",
+      "filingId": "25515"
+    },
+    {
+      "office": "State Representative, 38th District",
+      "name": "Daniel Loc Nguyen",
+      "party": "Republican",
+      "filingId": "25599"
+    },
+    {
+      "office": "State Representative, 25th District",
+      "name": "Bob Niemeyer",
+      "party": "Republican",
+      "filingId": "25483"
+    },
+    {
+      "office": "District Attorney, Jefferson County",
+      "name": "Eric J Nisley",
+      "party": "Nonpartisan",
+      "filingId": "25375"
+    },
+    {
+      "office": "State Representative, 27th District",
+      "name": "G Mark Norman",
+      "party": "Republican",
+      "filingId": "25394"
+    },
+    {
+      "office": "State Representative, 42nd District",
+      "name": "Rob Nosse",
+      "party": "Democrat",
+      "filingId": "25422"
+    },
+    {
+      "office": "State Representative, 36th District",
+      "name": "Michael Orth",
+      "party": "Republican",
+      "filingId": "25533"
+    },
+    {
+      "office": "State Representative, 2nd District",
+      "name": "Virgle J Osborne",
+      "party": "Republican",
+      "filingId": "25400"
+    },
+    {
+      "office": "State Representative, 2nd District",
+      "name": "Virgle J Osborne",
+      "party": "Democrat",
+      "filingId": "25596"
+    },
+    {
+      "office": "State Representative, 60th District",
+      "name": "Mark Owens",
+      "party": "Republican",
+      "filingId": "25419"
+    },
+    {
+      "office": "State Representative, 37th District",
+      "name": "Chad Parker",
+      "party": "Republican",
+      "filingId": "25508"
+    },
+    {
+      "office": "State Senator, 10th District",
+      "name": "Deb Patterson",
+      "party": "Democrat",
+      "filingId": "25456"
+    },
+    {
+      "office": "State Senator, 10th District",
+      "name": "Deb Patterson",
+      "party": "Working Families",
+      "filingId": "25885"
+    },
+    {
+      "office": "State Representative, 36th District",
+      "name": "Hai Pham",
+      "party": "Democrat",
+      "filingId": "25522"
+    },
+    {
+      "office": "State Senator, 10th District",
+      "name": "Angela Plowhead",
+      "party": "Republican",
+      "filingId": "25474"
+    },
+    {
+      "office": "State Senator, 10th District",
+      "name": "Angela Plowhead",
+      "party": "Libertarian",
+      "filingId": "25880"
+    },
+    {
+      "office": "State Senator, 4th District",
+      "name": "Floyd Prozanski",
+      "party": "Democrat",
+      "filingId": "25519"
+    },
+    {
+      "office": "State Senator, 4th District",
+      "name": "Floyd Prozanski",
+      "party": "Republican",
+      "filingId": "25595"
+    },
+    {
+      "office": "State Representative, 55th District",
+      "name": "E Werner Reschke",
+      "party": "Republican",
+      "filingId": "25416"
+    },
+    {
+      "office": "State Senator, 17th District",
+      "name": "Lisa Reynolds",
+      "party": "Democrat",
+      "filingId": "25436"
+    },
+    {
+      "office": "State Representative, 20th District",
+      "name": "Taylor A Rickey",
+      "party": "Libertarian",
+      "filingId": "25900"
+    },
+    {
+      "office": "State Representative, 26th District",
+      "name": "Sue R Rieke Smith",
+      "party": "Democrat",
+      "filingId": "25505"
+    },
+    {
+      "office": "State Representative, 26th District",
+      "name": "Sue R Rieke Smith",
+      "party": "Independent",
+      "filingId": "25679"
+    },
+    {
+      "office": "State Representative, 15th District",
+      "name": "Joanna Robinson",
+      "party": "Democrat",
+      "filingId": "25379"
+    },
+    {
+      "office": "State Representative, 15th District",
+      "name": "Joanna Robinson",
+      "party": "Independent",
+      "filingId": "25624"
+    },
+    {
+      "office": "State Representative, 15th District",
+      "name": "Joanna Robinson",
+      "party": "Working Families",
+      "filingId": "25886"
+    },
+    {
+      "office": "State Representative, 7th District",
+      "name": "Kori Rodley",
+      "party": "Democrat",
+      "filingId": "25524"
+    },
+    {
+      "office": "State Representative, 7th District",
+      "name": "Kori Rodley",
+      "party": "Working Families",
+      "filingId": "25887"
+    },
+    {
+      "office": "State Representative, 30th District",
+      "name": "Charles A Ross",
+      "party": "Republican",
+      "filingId": "25531"
+    },
+    {
+      "office": "Judge of the Circuit Court, 4th District, Position 2",
+      "name": "Laura Maurer Rowan",
+      "party": "Nonpartisan",
+      "filingId": "25521"
+    },
+    {
+      "office": "State Representative, 50th District",
+      "name": "Ricki Ruiz",
+      "party": "Democrat",
+      "filingId": "25497"
+    },
+    {
+      "office": "State Representative, 50th District",
+      "name": "Ricki Ruiz",
+      "party": "Independent",
+      "filingId": "25630"
+    },
+    {
+      "office": "US Representative, 6th District",
+      "name": "David Russ",
+      "party": "Republican",
+      "filingId": "25473"
+    },
+    {
+      "office": "US Representative, 6th District",
+      "name": "Andrea Salinas",
+      "party": "Democrat",
+      "filingId": "25378"
+    },
+    {
+      "office": "US Representative, 6th District",
+      "name": "Andrea Salinas",
+      "party": "Independent",
+      "filingId": "25619"
+    },
+    {
+      "office": "State Representative, 43rd District",
+      "name": "Tawna Sanchez",
+      "party": "Democrat",
+      "filingId": "25482"
+    },
+    {
+      "office": "State Representative, 52nd District",
+      "name": "Hank Sanders",
+      "party": "Democrat",
+      "filingId": "25409"
+    },
+    {
+      "office": "State Representative, 52nd District",
+      "name": "Hank Sanders",
+      "party": "Independent",
+      "filingId": "25786"
+    },
+    {
+      "office": "Judge of the Circuit Court, 4th District, Position 14",
+      "name": "Elizabeth Savage",
+      "party": "Nonpartisan",
+      "filingId": "25486"
+    },
+    {
+      "office": "State Representative, 23rd District",
+      "name": "Anna M Scharf",
+      "party": "Republican",
+      "filingId": "25527"
+    },
+    {
+      "office": "State Representative, 9th District",
+      "name": "John Ezra Scheirman",
+      "party": "Democrat",
+      "filingId": "25414"
+    },
+    {
+      "office": "State Representative, 29th District",
+      "name": "Brian Schimmel",
+      "party": "Republican",
+      "filingId": "25602"
+    },
+    {
+      "office": "State Representative, 29th District",
+      "name": "Brian Schimmel",
+      "party": "Independent",
+      "filingId": "25678"
+    },
+    {
+      "office": "State Representative, 32nd District",
+      "name": "Max Sherman",
+      "party": "Republican",
+      "filingId": "25467"
+    },
+    {
+      "office": "State Representative, 55th District",
+      "name": "Colby M Simmons",
+      "party": "Democrat",
+      "filingId": "25511"
+    },
+    {
+      "office": "District Attorney, Lake County",
+      "name": "Lane W Simpson",
+      "party": "Nonpartisan",
+      "filingId": "25740"
+    },
+    {
+      "office": "State Representative, 4th District",
+      "name": "Alek Skarlatos",
+      "party": "Republican",
+      "filingId": "25498"
+    },
+    {
+      "office": "State Representative, 12th District",
+      "name": "Amber Smith",
+      "party": "Democrat",
+      "filingId": "25523"
+    },
+    {
+      "office": "Governor",
+      "name": "Brett Smith",
+      "party": "Pacific Green",
+      "filingId": "25615"
+    },
+    {
+      "office": "US Senator",
+      "name": "David Brock Smith",
+      "party": "Republican",
+      "filingId": "25449"
+    },
+    {
+      "office": "State Representative, 57th District",
+      "name": "Greg Smith",
+      "party": "Republican",
+      "filingId": "25408"
+    },
+    {
+      "office": "State Representative, 30th District",
+      "name": "Nathan Sosa",
+      "party": "Democrat",
+      "filingId": "25446"
+    },
+    {
+      "office": "State Representative, 60th District",
+      "name": "Beth Spell",
+      "party": "Democrat",
+      "filingId": "25499"
+    },
+    {
+      "office": "State Representative, 18th District",
+      "name": "Amanda Staehely",
+      "party": "Republican",
+      "filingId": "25485"
+    },
+    {
+      "office": "State Senator, 11th District",
+      "name": "Virginia Stapleton",
+      "party": "Democrat",
+      "filingId": "25481"
+    },
+    {
+      "office": "State Senator, 11th District",
+      "name": "Virginia Stapleton",
+      "party": "Working Families",
+      "filingId": "25888"
+    },
+    {
+      "office": "State Representative, 42nd District",
+      "name": "Morey Straus",
+      "party": "Libertarian",
+      "filingId": "25897"
+    },
+    {
+      "office": "State Senator, 20th District",
+      "name": "Michele Stroh",
+      "party": "Republican",
+      "filingId": "25425"
+    },
+    {
+      "office": "State Representative, 40th District",
+      "name": "Michael W Sugar",
+      "party": "Democrat",
+      "filingId": "25418"
+    },
+    {
+      "office": "State Representative, 40th District",
+      "name": "Michael W Sugar",
+      "party": "Working Families",
+      "filingId": "25889"
+    },
+    {
+      "office": "State Representative, 53rd District",
+      "name": "Michael Summers",
+      "party": "Republican",
+      "filingId": "25432"
+    },
+    {
+      "office": "State Representative, 53rd District",
+      "name": "Michael Summers",
+      "party": "Libertarian",
+      "filingId": "25898"
+    },
+    {
+      "office": "Judge of the Circuit Court, 4th District, Position 2",
+      "name": "Diane S Sykes",
+      "party": "Nonpartisan",
+      "filingId": "25404"
+    },
+    {
+      "office": "State Representative, 26th District",
+      "name": "Steph Terrio",
+      "party": "Progressive",
+      "filingId": "25618"
+    },
+    {
+      "office": "State Representative, 26th District",
+      "name": "Steph Terrio",
+      "party": "Pacific Green",
+      "filingId": "25634"
+    },
+    {
+      "office": "State Representative, 33rd District",
+      "name": "Ciatta R Thompson",
+      "party": "Republican",
+      "filingId": "25520"
+    },
+    {
+      "office": "State Senator, 6th District",
+      "name": "Jack Tibbetts",
+      "party": "Republican",
+      "filingId": "25390"
+    },
+    {
+      "office": "State Senator, 6th District",
+      "name": "Caleb Ticer",
+      "party": "Libertarian",
+      "filingId": "25655"
+    },
+    {
+      "office": "Judge of the Circuit Court, 20th District, Position 1",
+      "name": "Zohra Tourville",
+      "party": "Nonpartisan",
+      "filingId": "25762"
+    },
+    {
+      "office": "US Representative, 5th District",
+      "name": "Andrea Townsend",
+      "party": "Pacific Green",
+      "filingId": "25632"
+    },
+    {
+      "office": "State Representative, 45th District",
+      "name": "Thuy Tran",
+      "party": "Democrat",
+      "filingId": "25487"
+    },
+    {
+      "office": "State Representative, 45th District",
+      "name": "Thuy Tran",
+      "party": "Working Families",
+      "filingId": "25890"
+    },
+    {
+      "office": "State Representative, 45th District",
+      "name": "Thuy Tran",
+      "party": "Independent",
+      "filingId": "25906"
+    },
+    {
+      "office": "State Representative, 47th District",
+      "name": "Andrea Valderrama",
+      "party": "Democrat",
+      "filingId": "25496"
+    },
+    {
+      "office": "State Representative, 8th District",
+      "name": "Bill Vivian",
+      "party": "Republican",
+      "filingId": "25395"
+    },
+    {
+      "office": "State Senator, 19th District",
+      "name": "Rob Wagner",
+      "party": "Democrat",
+      "filingId": "25516"
+    },
+    {
+      "office": "State Representative, 49th District",
+      "name": "Ann Walker",
+      "party": "Republican",
+      "filingId": "25484"
+    },
+    {
+      "office": "State Representative, 6th District",
+      "name": "Kim Wallan",
+      "party": "Republican",
+      "filingId": "25420"
+    },
+    {
+      "office": "State Representative, 37th District",
+      "name": "Jules Walters",
+      "party": "Democrat",
+      "filingId": "25440"
+    },
+    {
+      "office": "State Representative, 37th District",
+      "name": "Jules Walters",
+      "party": "Independent",
+      "filingId": "25628"
+    },
+    {
+      "office": "State Representative, 37th District",
+      "name": "Jules Walters",
+      "party": "Working Families",
+      "filingId": "25891"
+    },
+    {
+      "office": "State Representative, 34th District",
+      "name": "Mari Watanabe",
+      "party": "Democrat",
+      "filingId": "25439"
+    },
+    {
+      "office": "State Representative, 21st District",
+      "name": "Michael Welsh",
+      "party": "Democrat",
+      "filingId": "25504"
+    },
+    {
+      "office": "State Representative, 21st District",
+      "name": "Michael Welsh",
+      "party": "Working Families",
+      "filingId": "25892"
+    },
+    {
+      "office": "State Senator, 6th District",
+      "name": "Sierrah Williams",
+      "party": "Democrat",
+      "filingId": "25448"
+    },
+    {
+      "office": "State Senator, 6th District",
+      "name": "Sierrah Williams",
+      "party": "Working Families",
+      "filingId": "25893"
+    },
+    {
+      "office": "State Representative, 7th District",
+      "name": "Adam Wilson",
+      "party": "Republican",
+      "filingId": "25457"
+    },
+    {
+      "office": "State Representative, 7th District",
+      "name": "Adam Wilson",
+      "party": "Libertarian",
+      "filingId": "25865"
+    },
+    {
+      "office": "State Representative, 48th District",
+      "name": "Lamar Wise",
+      "party": "Democrat",
+      "filingId": "25412"
+    },
+    {
+      "office": "State Representative, 48th District",
+      "name": "Lamar Wise",
+      "party": "Independent",
+      "filingId": "25675"
+    },
+    {
+      "office": "State Representative, 48th District",
+      "name": "Lamar Wise",
+      "party": "Working Families",
+      "filingId": "25894"
+    },
+    {
+      "office": "State Representative, 23rd District",
+      "name": "Kriss Wright",
+      "party": "Democrat",
+      "filingId": "25381"
+    },
+    {
+      "office": "State Representative, 3rd District",
+      "name": "Dwayne Yunker",
+      "party": "Republican",
+      "filingId": "25451"
+    }
+  ]
+}
