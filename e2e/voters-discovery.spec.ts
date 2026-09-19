@@ -105,7 +105,6 @@ for (const district of [3, 4])
       .click();
     await guide.getByRole("button", { name: /Continue/ }).click();
     await guide.getByRole("button", { name: /Yes —/ }).click();
-    await guide.getByRole("button", { name: /Next: experience/ }).click();
     await guide.getByRole("button", { name: "Explore candidates →" }).click();
     await expect(
       guide.getByRole("heading", {
@@ -210,7 +209,7 @@ test("three priorities take at most five screens; extra questions are optional",
   await guide.getByRole("button", { name: /Continue/ }).click();
   for (let i = 1; i <= 3; i++) {
     await expect(
-      guide.getByText(`Question ${i} of 3`, { exact: true }),
+      guide.getByText(new RegExp(`Question ${i} of 3`)),
     ).toBeVisible();
     if (i === 2) {
       await guide
@@ -219,11 +218,6 @@ test("three priorities take at most five screens; extra questions are optional",
       continue;
     }
     await guide.getByRole("button", { name: /^It depends$/ }).click();
-    await guide
-      .getByRole("button", {
-        name: i === 3 ? /Next: experience/ : /Next question/,
-      })
-      .click();
   }
   await expect(
     guide.getByRole("heading", { name: "What experience matters to you?" }),
@@ -243,8 +237,55 @@ test("three priorities take at most five screens; extra questions are optional",
     guide.getByText("Optional extra question", { exact: true }),
   ).toBeVisible();
   await guide.getByRole("button", { name: /No —/ }).click();
-  await guide.getByRole("button", { name: /Back to results/ }).click();
   await expect(
     guide.getByRole("heading", { name: "Candidates to explore", exact: true }),
   ).toBeVisible();
+});
+
+test("mobile multi-select actions stay in view and answers advance with Back support", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 700 });
+  await page.goto("/voters-guide/portland-district-4");
+  const guide = page.getByRole("region", {
+    name: "Find candidates to consider",
+    exact: true,
+  });
+  await guide
+    .getByRole("button", { name: "Find candidates to consider" })
+    .click();
+  await guide.getByRole("button", { name: "Homes people can afford" }).click();
+  const next = guide.getByRole("button", { name: "Continue with 1 question" });
+  await expect(next).toBeInViewport({ ratio: 1 });
+  await expect(
+    guide.getByRole("button", { name: "Homes people can afford" }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await next.click();
+  await guide.getByRole("button", { name: /Yes —/ }).click();
+  await expect(
+    guide.getByRole("heading", { name: "What experience matters to you?" }),
+  ).toBeVisible();
+  await expect(
+    guide.getByRole("button", { name: "Explore candidates →" }),
+  ).toBeInViewport({ ratio: 1 });
+  await guide.getByRole("button", { name: "Back", exact: true }).click();
+  await expect(guide.getByRole("button", { name: /Yes —/ })).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await guide.getByRole("button", { name: /No —/ }).click();
+  await guide.getByRole("button", { name: "Working with budgets" }).click();
+  await guide
+    .getByRole("button", { name: "Delivering projects or services" })
+    .click();
+  await expect(guide.getByRole("checkbox")).toHaveCount(2);
+  await expect(
+    guide.getByRole("button", { name: "Explore candidates →" }),
+  ).toBeInViewport({ ratio: 1 });
+  await guide.getByRole("button", { name: "Explore candidates →" }).click();
+  const stored = await page.evaluate(() =>
+    JSON.parse(sessionStorage.getItem("pcl-guide-portland-district-4")!),
+  );
+  expect(stored.answers["homebuyer-income"]).toBe("no");
+  await expect(guide.locator('[class*="floatingActions"]')).toHaveCount(0);
 });

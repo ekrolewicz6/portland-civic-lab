@@ -44,6 +44,16 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
   const [ready, setReady] = useState(false);
   const [storageAvailable, setStorageAvailable] = useState(true);
   const [compare, setCompare] = useState("homebuyer-income");
+  const region = useRef<HTMLElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    if (!region.current) return;
+    const observer = new IntersectionObserver(([entry]) =>
+      setInView(entry.isIntersecting),
+    );
+    observer.observe(region.current);
+    return () => observer.disconnect();
+  }, []);
   const heading = useRef<HTMLHeadingElement>(null);
   const key = `pcl-guide-${race.id}`;
   useEffect(() => {
@@ -287,6 +297,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
     <section
       className={styles.discovery}
       id="find-candidates"
+      ref={region}
       data-stage={stage}
       aria-label="Find candidates to consider"
     >
@@ -359,7 +370,9 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               ? "Three topics selected. To swap one, tap a selected topic first."
               : `${state.priorities.length} of 3 topics selected. You don’t need to fill all three.`}
           </p>
-          <div className={styles.actions}>
+          <div
+            className={`${styles.actions} ${inView ? styles.floatingActions : ""}`}
+          >
             <button onClick={() => go("intro")}>Back</button>
             <button
               className={styles.primary}
@@ -382,20 +395,22 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
           <p className={styles.note}>
             {extra
               ? "Optional extra question"
-              : `Question ${index + 1} of ${queue.length}`}
+              : `Question ${index + 1} of ${queue.length}`}{" "}
+            · Tap an answer to continue.
           </p>
           <p className={styles.lede}>{current.context}</p>
-          <div className={styles.choices}>
+          <div className={styles.choices} key={current.id}>
             {current.options.map((o) => (
               <button
                 key={o.id}
                 aria-pressed={state.answers[current.id] === o.id}
-                onClick={() =>
+                onClick={() => {
                   setState((s) => ({
                     ...s,
                     answers: { ...s.answers, [current.id]: o.id },
-                  }))
-                }
+                  }));
+                  nextQuestion();
+                }}
               >
                 {o.text}
               </button>
@@ -425,14 +440,6 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               }}
             >
               Back
-            </button>
-            <button className={styles.primary} onClick={nextQuestion}>
-              {extra
-                ? "Back to results"
-                : index === queue.length - 1
-                  ? "Next: experience"
-                  : "Next question"}{" "}
-              →
             </button>
           </div>
           <details className={styles.preferences} key={current.id}>
@@ -516,7 +523,9 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               );
             })}
           </div>
-          <div className={styles.actions}>
+          <div
+            className={`${styles.actions} ${inView ? styles.floatingActions : ""}`}
+          >
             <button
               onClick={() => {
                 setIndex(Math.max(0, queue.length - 1));

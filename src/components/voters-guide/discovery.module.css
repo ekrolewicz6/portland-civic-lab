@@ -292,6 +292,31 @@
     padding: 1rem;
   }
 }
+/* Multi-select screens keep their action reachable without ending selection early. */
+.discovery[data-stage="priorities"],
+.discovery[data-stage="experience"] {
+  padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
+}
+.discovery .floatingActions {
+  position: fixed;
+  z-index: 40;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 800px;
+  margin: 0;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  background: #f4f1e8;
+  border: 1px solid #ccd4c8;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -4px 20px #183d341a;
+}
+.floatingActions .primary {
+  flex: 1;
+  text-align: center;
+}
 @media print {
   .discovery {
     display: none;
