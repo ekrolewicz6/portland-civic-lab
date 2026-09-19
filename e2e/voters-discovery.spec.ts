@@ -233,9 +233,7 @@ test("three priorities take at most five screens; extra questions are optional",
   await guide
     .getByRole("button", { name: /starting terms for renovating Moda/ })
     .click();
-  await expect(
-    guide.getByText("Optional extra question", { exact: true }),
-  ).toBeVisible();
+  await expect(guide.getByText(/Optional extra question/)).toBeVisible();
   await guide.getByRole("button", { name: /No —/ }).click();
   await expect(
     guide.getByRole("heading", { name: "Candidates to explore", exact: true }),

@@ -399,7 +399,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
             · Tap an answer to continue.
           </p>
           <p className={styles.lede}>{current.context}</p>
-          <div className={styles.choices} key={current.id}>
+          <div className={styles.choices} key={`choices-${current.id}`}>
             {current.options.map((o) => (
               <button
                 key={o.id}
@@ -442,7 +442,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
               Back
             </button>
           </div>
-          <details className={styles.preferences} key={current.id}>
+          <details className={styles.preferences} key={`context-${current.id}`}>
             <summary>More context &amp; the vote we compare</summary>
             <p>{current.detail}</p>
             <p>
