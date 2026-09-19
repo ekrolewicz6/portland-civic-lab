@@ -258,9 +258,43 @@ export default function Methodology() {
         <p>
           Across the remaining profiles, campaign finance, complete roll-call
           histories, past-position changes, independent outcome verification and
-          full debate/interview review are not yet complete. No candidates have
-          been contacted for this edition. An open question is our research
-          question, not a claim that a candidate refused to answer it.
+          full debate/interview review are not yet complete. On September 19,
+          2026, we emailed all 33 candidates in the published District 3 and 4
+          races with individual research questions and an invitation to correct
+          or clarify their profiles. Sending does not establish delivery or a
+          response. An open question is our research question, not a claim that
+          a candidate refused to answer it.
+        </p>
+        <h2 id="guided-comparison">How the guided introduction works</h2>
+        <p>
+          The optional introduction starts with your priorities, concrete policy
+          choices and preferences about relevant experience. It gives no match
+          percentage, endorsement or ballot order. The complete research guide
+          remains available without answering any questions.
+        </p>
+        <p>
+          We manually map explicit, sourced candidate positions to the choices.
+          Support for one approach does not imply opposition to another. We
+          label unestablished positions as unknown, keep qualifications visible
+          and give every answered question equal treatment. Repeated votes do
+          not add weight. This introductory set is not a complete account of any
+          candidate’s beliefs.
+        </p>
+        <p>
+          Within each policy group, relevant experience you selected moves a
+          candidate forward; otherwise names appear alphabetically. An
+          experience requirement limits initial results, with everyone else
+          still accessible. Reported roles are labeled and do not establish
+          successful outcomes. A missing example does not establish a lack of
+          ability. The evidence export includes the question bank and candidate
+          mappings.
+        </p>
+        <p>
+          Your answers and shortlist stay in this browser tab’s session storage.
+          They are not sent to us or placed in the page address. Reset clears
+          your choices. Real first-time-voter usability testing and independent
+          editorial review remain outstanding; technical checks are not a
+          substitute.
         </p>
         <h2>Sources and reproducibility</h2>
         <p>

@@ -126,8 +126,11 @@ export default function ResearchLog() {
         </p>
         <p>
           Disclosed older campaign material and failed source retrievals. Left
-          unsupported policy summaries blank. No campaign has been contacted for
-          a response, and separate human editorial review remains incomplete.
+          unsupported policy summaries blank. At that research cutoff no
+          campaign had been contacted. On September 19, 2026, individual emails
+          were sent to all 33 candidates in the published Council races,
+          inviting corrections and asking about specific research gaps. Separate
+          human editorial review remains incomplete.
         </p>
         <p>
           Expanded legislative research to eight Senate and five House

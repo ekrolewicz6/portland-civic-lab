@@ -3,6 +3,12 @@ import { REVIEW_DATE } from "@/lib/voters-guide/types";
 import { councilDecisions } from "@/lib/voters-guide/council-decisions";
 import { councilCoverageAudit } from "@/lib/voters-guide/council-coverage-map";
 import {
+  discoveryVersion,
+  questions,
+  experienceOptions,
+  discoveryEvidence,
+} from "@/lib/voters-guide/discovery";
+import {
   councilDisagreements,
   decisionAccounts,
 } from "@/lib/voters-guide/council-record-accounts";
@@ -23,6 +29,16 @@ export function GET() {
       decisionAccounts,
       councilDisagreements,
       councilCoverageAudit,
+      discovery: {
+        version: discoveryVersion,
+        questions,
+        experienceOptions,
+        candidates: races.flatMap((r) =>
+          r.candidates.map((c) => ({ id: c.id, ...discoveryEvidence(c) })),
+        ),
+        rules:
+          "Explicit support establishes alignment. Only explicit opposition establishes disagreement. All other answers remain unknown. Within policy groups, selected experience preferences precede alphabetical order. Requirements are never silently relaxed. No overall score or ballot ranking.",
+      },
     },
     {
       headers: {

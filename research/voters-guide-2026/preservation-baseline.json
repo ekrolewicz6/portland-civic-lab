@@ -1,0 +1,612 @@
+{
+  "date": "2026-09-19",
+  "candidates": [
+    {
+      "id": "ali-beaudoin",
+      "hash": "1f3274c1ddb7a0c80082fedc24adfb746e7c84f7669d6d71ec38ae9edff278cf",
+      "location": "/voters-guide/portland-district-3#ali-beaudoin"
+    },
+    {
+      "id": "joel-corcoran",
+      "hash": "50c44442c58e52f3aab0f9e6b80ecb1fe106c581baf6c4b76a79cff1138c0473",
+      "location": "/voters-guide/portland-district-3#joel-corcoran"
+    },
+    {
+      "id": "guy-frankenstein",
+      "hash": "bbbe7705c7db886d380910727e8ee9704ac864470c87272facdc8730445fc53b",
+      "location": "/voters-guide/portland-district-3#guy-frankenstein"
+    },
+    {
+      "id": "matthias-hallett",
+      "hash": "a352506ed63a5bc6637f14694a3505ed9f976aedafab34aaf8a0fe32c18d59df",
+      "location": "/voters-guide/portland-district-3#matthias-hallett"
+    },
+    {
+      "id": "patrick-hilton",
+      "hash": "33fd722a6ca437e2c9fd28a58997c38efc497d08f59c2115ac6d78b5808389c7",
+      "location": "/voters-guide/portland-district-3#patrick-hilton"
+    },
+    {
+      "id": "larry-kelly",
+      "hash": "e45b0e9078b760c740317832f07cf4065988d4615971599739e2ca39b4f0561b",
+      "location": "/voters-guide/portland-district-3#larry-kelly"
+    },
+    {
+      "id": "tiffany-koyama-lane",
+      "hash": "0b1914f461de4bc6a86bec0fd51e997901f950a855278a72d583975b32eecfa6",
+      "location": "/voters-guide/portland-district-3#tiffany-koyama-lane"
+    },
+    {
+      "id": "kenneth-kent-r-landgraver-iii",
+      "hash": "d04a2387d6c6b3cc56420c7dc68f5c4ac2081efc88ba2cfaa8743f32f508009b",
+      "location": "/voters-guide/portland-district-3#kenneth-kent-r-landgraver-iii"
+    },
+    {
+      "id": "keir-legree",
+      "hash": "0a2eee2f9c8bb25ca5f3d3c8018232870828d79eb022380ef17efd8e4fa4ae90",
+      "location": "/voters-guide/portland-district-3#keir-legree"
+    },
+    {
+      "id": "esther-leon",
+      "hash": "690816438a26fdaa6687049f09f01712d70376848e4d661e915915758d3fa007",
+      "location": "/voters-guide/portland-district-3#esther-leon"
+    },
+    {
+      "id": "darren-mccormick",
+      "hash": "d4e37be97895545f7b77809f083d46e50da2418ccba743ff1f81493b47d269fe",
+      "location": "/voters-guide/portland-district-3#darren-mccormick"
+    },
+    {
+      "id": "angelita-morillo",
+      "hash": "bae991677e217ae06555847d56fcadff8c8330430dfc254971c562d78b4d05b0",
+      "location": "/voters-guide/portland-district-3#angelita-morillo"
+    },
+    {
+      "id": "steve-novick",
+      "hash": "1ca18239d36e0a9424cd7dcce542dadd8ebba05eedba93e8709f4c9c94e41798",
+      "location": "/voters-guide/portland-district-3#steve-novick"
+    },
+    {
+      "id": "cristal-otero",
+      "hash": "2fdd7375e76f4907af1d957809383c94cbdaacbe8fafca9955f9f4ac25bd1c70",
+      "location": "/voters-guide/portland-district-3#cristal-otero"
+    },
+    {
+      "id": "terry-parker",
+      "hash": "6c9b6974d07173830eae8a158be039e4389e90a4300c524c513d6c2de921cffd",
+      "location": "/voters-guide/portland-district-3#terry-parker"
+    },
+    {
+      "id": "heart-free-pham",
+      "hash": "9075da8d5dc8056b77b39aad52ebd96640e83758c1a42fdfae9729c618b211d1",
+      "location": "/voters-guide/portland-district-3#heart-free-pham"
+    },
+    {
+      "id": "tom-sollitt",
+      "hash": "6268d4d257de8512c2f1723ef51a474ad45a39df3f93b789585a1a4ee4dd47d3",
+      "location": "/voters-guide/portland-district-3#tom-sollitt"
+    },
+    {
+      "id": "john-sweeney",
+      "hash": "03bf54f27f9fd3e63c023e57fcdbc2d0169cc518c234e4523415ee68831d4149",
+      "location": "/voters-guide/portland-district-3#john-sweeney"
+    },
+    {
+      "id": "kellie-torres",
+      "hash": "4e12e4b623488981507d39d6f16513b8260fbafdf9a2d52e18b842b2301f72d3",
+      "location": "/voters-guide/portland-district-3#kellie-torres"
+    },
+    {
+      "id": "kimberly-tucker",
+      "hash": "08d0cc74a1bb0df974f558f9e823b42d218198d094d2ef2f935e08bbb6d29498",
+      "location": "/voters-guide/portland-district-3#kimberly-tucker"
+    },
+    {
+      "id": "martin-ward",
+      "hash": "97523725408f6809efb376cb02e0aa8c23fda9ee99f59ca1da33874f07df6f67",
+      "location": "/voters-guide/portland-district-3#martin-ward"
+    },
+    {
+      "id": "timothy-tj-anderson",
+      "hash": "9359d5ee413e6c4dbe0d84c30e0431a7ee1f2c0605774a7431fca25e8f464420",
+      "location": "/voters-guide/portland-district-4#timothy-tj-anderson"
+    },
+    {
+      "id": "eli-arnold",
+      "hash": "431e4fb708ad5680f4d061067e24750fb389d2c745003741b99e0b79500e1425",
+      "location": "/voters-guide/portland-district-4#eli-arnold"
+    },
+    {
+      "id": "olivia-clark",
+      "hash": "707d878450c621c7e85ee73e6e07a967b7ee21224886c946522452ac310e94ad",
+      "location": "/voters-guide/portland-district-4#olivia-clark"
+    },
+    {
+      "id": "jayne-cronlund",
+      "hash": "164f6d563ae414712985076019d560be9e2d05dc083404ae346b91327df86f66",
+      "location": "/voters-guide/portland-district-4#jayne-cronlund"
+    },
+    {
+      "id": "jamey-evenstar",
+      "hash": "00c89720dc83a5882c1fadaf412be032ed9e5d3c45af49407ae76a8bfd2aaeb9",
+      "location": "/voters-guide/portland-district-4#jamey-evenstar"
+    },
+    {
+      "id": "john-j-goldsmith",
+      "hash": "141b0895b92a6ec2a92125e1cdafab4282609aba9dc9d643001e766fe228f91e",
+      "location": "/voters-guide/portland-district-4#john-j-goldsmith"
+    },
+    {
+      "id": "mitch-green",
+      "hash": "d31bc7f75423dc68775bd298a472bd515d02d9cbf875cde715452bcc6afdba8f",
+      "location": "/voters-guide/portland-district-4#mitch-green"
+    },
+    {
+      "id": "josh-leake",
+      "hash": "071fb269ac13d033c7db24dc870b0dc37514c29cd26fb4f34bfe27079c69af12",
+      "location": "/voters-guide/portland-district-4#josh-leake"
+    },
+    {
+      "id": "john-mcdonald",
+      "hash": "223d03a0105b8ef4faffa421553cc503f65cb29d9ea3d9924596d52a4c439567",
+      "location": "/voters-guide/portland-district-4#john-mcdonald"
+    },
+    {
+      "id": "matt-schulte",
+      "hash": "2bf5c6257b9284c58622909f2a60bda208022303db8854028f5de820d0ce4f80",
+      "location": "/voters-guide/portland-district-4#matt-schulte"
+    },
+    {
+      "id": "jeremy-beausoleil-smith",
+      "hash": "d52a0a79976f019e59b490780147ca14c76ac20044d9eda8902239ac1ffe4a1c",
+      "location": "/voters-guide/portland-district-4#jeremy-beausoleil-smith"
+    },
+    {
+      "id": "eric-zimmerman",
+      "hash": "538ff628552b85bfe42cc54c698384d8d387816fb5ecfa97de7e6af4fa55d4ae",
+      "location": "/voters-guide/portland-district-4#eric-zimmerman"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "parks-police",
+      "hash": "a737e2a52ad2af2033e7802d70cc21549355a1bdd9ca3071d2a4ee17ed9a3811"
+    },
+    {
+      "id": "services-first",
+      "hash": "1df0d6b67589e01229979a4a2fdcd79efc4c701e2355c534e10fb4555e3a7c7c"
+    },
+    {
+      "id": "oversight-funding",
+      "hash": "2b60b6f0fde7df8980ec9003ee58c9340212fe687437bde43a76e5109c6ed396"
+    },
+    {
+      "id": "novick-restorations",
+      "hash": "eab0cd6d036a37d2d2939c2b573c1e980f7094767a7ad3c7559ce65a1c3aa93a"
+    },
+    {
+      "id": "annual-budget",
+      "hash": "e7d43c9954261d5b298122042a6f980c03aa2df95372a992230d5b00f9d23f43"
+    },
+    {
+      "id": "zenith-investigation",
+      "hash": "48f557ec9847dbc279c6f94c4e2cb3da4549b4b090c39fa8d6ee322a2dbcc738"
+    },
+    {
+      "id": "zenith-enforcement",
+      "hash": "a96dda18537d353cf288af2b64c3422ef2d326248bbc0dc470d95e54a4066383"
+    },
+    {
+      "id": "zenith-transfer",
+      "hash": "45bb9d0fb859735ae601acf91dc3d7208b019bac099438df5d5a1f57a38dce35"
+    },
+    {
+      "id": "camp-removal",
+      "hash": "5283f255b09149e1c3ffcfa3ff10ef1214e893ba5480a2eecc42fa321df24fde"
+    },
+    {
+      "id": "detention-fees",
+      "hash": "0d8dcd0a5486f101de992cb7fce4d21f29b1c4f8f5e51c5dc6968a72ec2df301"
+    },
+    {
+      "id": "housing-fees",
+      "hash": "71059da08a2190dfa9664572662090fd4768a52291f1d00afc1b7c8da3bb49ab"
+    },
+    {
+      "id": "business-tax",
+      "hash": "15de10a2a076f874086450202c2fe92eccecb650cc0116a777b2163fadcbd630"
+    },
+    {
+      "id": "performing-arts",
+      "hash": "49b2692982d665e0344c14899d8e4c472b8ebd0d4251d6a91e4bc849b31bc52a"
+    },
+    {
+      "id": "water-bonds",
+      "hash": "79f6020ee1b9b5f65bcf6d9585566d0348a08e3f79bcde85683b76d92b6366bb"
+    },
+    {
+      "id": "water-rates",
+      "hash": "20012b8814545a83239d13d8bf03c2a18844a6c31a069b103e0756def4ddd57b"
+    },
+    {
+      "id": "sewer-rates",
+      "hash": "fe501bced08122d750d9ab1df3d423c914a54373bd3fa9881b17a91422c5c29a"
+    },
+    {
+      "id": "street-fee",
+      "hash": "94f0f922f970d065613ff7d3d81f9e8e51edd0569f23809c1092ec5f01297727"
+    },
+    {
+      "id": "sidewalk-plan",
+      "hash": "f7b7b34bce7968a5c85f27d03ab9389172fe4c178eeeff13814a48cc59911640"
+    },
+    {
+      "id": "transport-rates",
+      "hash": "3130dab854d4bbf3b92b554794e930a797fa4a033ed83e1143b683accc8afc98"
+    },
+    {
+      "id": "arts-tax",
+      "hash": "f3fb3cb418ba0b0ed4753f39446f0cf6e52f008a8d136f11204b48bbc31885aa"
+    },
+    {
+      "id": "psr-framework",
+      "hash": "622cbb7094075f66b2788248d5463b1bb6b2ee3e03d8a304afc8590d12528f35"
+    },
+    {
+      "id": "psr-committee",
+      "hash": "91451371b9b33fe34fb50cbc4b5177952a443a312cb8c2190775ee7f65484a7b"
+    },
+    {
+      "id": "oversight-first-board",
+      "hash": "7d448a1c39e059f1426365296ac32cc31e5e14d564f728cbff03ca9ac31b80e1"
+    },
+    {
+      "id": "oversight-replacements",
+      "hash": "3d3296b0d79623fad6034ad5b0154f597050b2b32c03131534a6649bd861a278"
+    },
+    {
+      "id": "community-policing",
+      "hash": "e17ad5e20ce7ae91f26046b7826a0b69758eb66cb9e5443459ebb23805d4cc8b"
+    },
+    {
+      "id": "police-staffing",
+      "hash": "1f7bac23c135e8f4117b1dae61c4fb8d4fbe4095a558b84d916a25f4bb47b803"
+    },
+    {
+      "id": "nuisance-properties",
+      "hash": "79d91741ed3bcd530345d56c010d5cf933f39fae785b7d0fa7553d21fc369909"
+    },
+    {
+      "id": "firearms-table",
+      "hash": "79f76c6050bab7328fd2bb8f9a28a31a4f2d7f0c29e48cc29acd80cedc36e60c"
+    },
+    {
+      "id": "psychedelics-referral",
+      "hash": "5f03fe62cd6f0e2460bc98ba78258c7ed8c5ae86b7b401b327bd477a621f0dad"
+    },
+    {
+      "id": "climate-plan",
+      "hash": "7fe83d63bc3a59f776b287e47241d5083bc2646ca71b2d22fe63358be1de8869"
+    },
+    {
+      "id": "climate-interest",
+      "hash": "2c3a9d9197810b62379172f6ea8eae590d2d62d02f58435b03e6a80f6afc424b"
+    },
+    {
+      "id": "homebuyer-income",
+      "hash": "d7261909f4eeade7b3b5454c09e8af12d95aa89559998dc4ebb16b6d280ca25a"
+    },
+    {
+      "id": "housing-strategy",
+      "hash": "f78950e84dcf7c2f527c612d890af19bb04f5b037cab87f67568e669b52132ab"
+    },
+    {
+      "id": "homelessness-plan",
+      "hash": "be2d1ab8e801be3e9ec3bb1ee28bb4823c83ff7db13af9ab8b97a850238d2128"
+    },
+    {
+      "id": "permit-pause",
+      "hash": "e566e78211de8b7bed7d8e7043fc702f1e4a31d99cbcc8f1d861834cebf00a39"
+    },
+    {
+      "id": "permit-reform",
+      "hash": "e2ef808465f40edf205b861220f60079e8d2cc58bc930ceb238e9060165ca35f"
+    },
+    {
+      "id": "urban-forest-plan",
+      "hash": "f936a23e4b4ed6f2e840fdb991e119c08c259c054b03b71d88e7336ea539c214"
+    },
+    {
+      "id": "tree-responsibility",
+      "hash": "29d21fb638dbc5708ad044dff9bcb08c0494826b46cf451f238739cde07d813e"
+    },
+    {
+      "id": "forest-park",
+      "hash": "263df82fa8e01862dc7d7db34c7bcbf4a4a56b03b375ffc093df389e09c7b530"
+    },
+    {
+      "id": "parks-levy",
+      "hash": "9a8078eb73b83711b419006d8c283d9587d0df105686aca92d31bef2340f2a3c"
+    },
+    {
+      "id": "sellwood",
+      "hash": "7506f6776edc75f75f619adc83216bbe91b6d6f15dc451056abeeadb3c65cc14"
+    },
+    {
+      "id": "vision-zero",
+      "hash": "c3150e67367b917a9cb2729917b8e4699469ff31054d6b5ce594ddd095b3f751"
+    },
+    {
+      "id": "82nd-transit",
+      "hash": "f174e7ae6e7debbb32134fa034318ca74fb39ca8ba4923f52807ff11d76c3db5"
+    },
+    {
+      "id": "privacy-office",
+      "hash": "31a26728e433b964172902601f4f1cff8c35dffbdfbc8fa0b9bd4e992cbd19d0"
+    },
+    {
+      "id": "privacy-framework",
+      "hash": "d2b4cb9efde51b9e3c70281b4ed5dc149d0f530e26a4fdbb043a606b23d36581"
+    },
+    {
+      "id": "asset-strategy",
+      "hash": "3fc6aaf4db0c2a27d7036aed57d78918b8878217886a62089e251682d354651e"
+    },
+    {
+      "id": "committee-structure",
+      "hash": "e288fe52c3e4b07be9245bd9e029a9f356db7602e85e635b6f9628a1a2f4428f"
+    },
+    {
+      "id": "council-office-budget",
+      "hash": "82e760d225127bd4d009437a703960130b8840ee801735e9a7ae7b9d16194a25"
+    },
+    {
+      "id": "council-priorities",
+      "hash": "80c387d3463cefa0079a901e0916386ba0e3c6dc52194771a7d47e12e9c25503"
+    },
+    {
+      "id": "surplus-inquiry",
+      "hash": "315684e4e513d1763e0b7ab839db39a7a8f505472096c0daaa75705ac69b318d"
+    },
+    {
+      "id": "campaign-enforcement",
+      "hash": "d47370eb1a15742e159abbb7d146a6245fdace8af026bbf4e60ca009b2a2c09f"
+    },
+    {
+      "id": "small-donor",
+      "hash": "0473bc80636674183571eafebe4dc7a42665e464c5f06e48404f43d7d0d6d41f"
+    },
+    {
+      "id": "labor-complaint",
+      "hash": "2c80951beb333093da40137381f4d6a6d5d6fd925bdf676d760cb9de502da1a9"
+    },
+    {
+      "id": "professional-workers",
+      "hash": "5109201340d3b3bf988eb7f4f96859d0a7f54dd6acb256ec15a5fb2fbfa4cb5e"
+    },
+    {
+      "id": "afscme-contract",
+      "hash": "98a0f66f4e1b8e724153c1428ff8835157eba39be936127ac823358251b8204e"
+    },
+    {
+      "id": "trade-unions-contract",
+      "hash": "ce02e741ba0fcda91fd78f29fb9d668e69a046c151b454bb7c184676a30b036d"
+    },
+    {
+      "id": "review-staff-contract",
+      "hash": "9da841e54a7e2f1b73ed975536daf559d171aa5d17014ede3314f8c29f9511cc"
+    },
+    {
+      "id": "children-remand",
+      "hash": "ba61cb3517bacc42a2a032b3b6e0922026d5431beeffb7bd5639ffcdb14e3161"
+    },
+    {
+      "id": "children-grants",
+      "hash": "df956fa4a0bbe6f93742c70dc48bcb878994756607c5b45d11b94b921d6099ff"
+    },
+    {
+      "id": "sanctuary-code",
+      "hash": "3c72211b6a7bda62eecd5338b8424aa3696f13ab833050182afff9a93aad0bd2"
+    },
+    {
+      "id": "protect-portland",
+      "hash": "d7e05745f5b602666f8a26f0e5f17904a005350a08b54fd5264d8fa8042ec7af"
+    },
+    {
+      "id": "officer-identification",
+      "hash": "298cce7658611d959c66165effdad1eaa42d56aec932d60bb672279e8cee8fa7"
+    },
+    {
+      "id": "investment-policy",
+      "hash": "014c1a08f5584a9f3974bc83c470ea7932dc915af824175cf7d3a2ac049afe99"
+    },
+    {
+      "id": "storefront-plan",
+      "hash": "43559bd76b7b63c0d1910ad8ba011c5c0ffee521cb51ae35e1eec53f7fecd7eb"
+    },
+    {
+      "id": "cully-plan",
+      "hash": "bdd306eac398279ab5260d37fe09e6940fb184c70c57dcdae319f5f2ee5a1870"
+    },
+    {
+      "id": "campesinos",
+      "hash": "39b0e60d36411cbd9b74f1b3cbdc89b2c89d7839ca9672abc272da5d94ee8dee"
+    },
+    {
+      "id": "force-fed-poultry",
+      "hash": "8371e232973b072d1dfb453ee99a9ab2d02e96c0e1425dda9b8700df8806688c"
+    },
+    {
+      "id": "board-eligibility",
+      "hash": "ccc908bc608cbf2a69a58a25bc2d7187dbed9a4ec667f33e456ca5125581e0a3"
+    },
+    {
+      "id": "board-removal",
+      "hash": "605d24f1ffb904aae081057e0a6dd31e037846f8f21bdcd65b3f5ed4a3d33c36"
+    },
+    {
+      "id": "rental-pricing",
+      "hash": "d388e8ac69cb3fe8e11720bb7e00292daecb302052eafe8b137a1ddfe72427d7"
+    },
+    {
+      "id": "supplemental-budget",
+      "hash": "4254b1595d71295bd19b2f06248b6bf29689e49926987fff17a378d433df4df1"
+    },
+    {
+      "id": "moda",
+      "hash": "8f1409f754881c17de630ba1e0c06d65a465edb2b46492fd07ebfe09d3925cb8"
+    },
+    {
+      "id": "data-centers",
+      "hash": "a1cd5d4cb4ddd9ce809314c74e43c19ea1a4cde27de9a98ab9b01c7f861b186e"
+    }
+  ],
+  "issues": [
+    {
+      "id": "supplemental-budget",
+      "hash": "34c530f2f19863c2a2b267e7dd26339b351bc23a72f689941b983b4fec77f60e",
+      "location": "#disagreement-supplemental-budget"
+    },
+    {
+      "id": "zenith",
+      "hash": "bc832e3415433adf0ab7366f81e0a709d0cd50f2813e42d38e30caffad5cf9ec",
+      "location": "#disagreement-zenith"
+    },
+    {
+      "id": "camp-removal",
+      "hash": "1608e245ccb516c084f7e749535fa59dc351083725d1351e3aeca879739e6afe",
+      "location": "#disagreement-camp-removal"
+    },
+    {
+      "id": "rental-pricing",
+      "hash": "28d2b2d6ee39cea699da201b219774f9137802b8311db5560cce6158a6892824",
+      "location": "#disagreement-rental-pricing"
+    },
+    {
+      "id": "moda",
+      "hash": "30ce33853ea28628647c6b52ca30f3db9df87a1e65f03507331e31334b135371",
+      "location": "#disagreement-moda"
+    },
+    {
+      "id": "detention-fees",
+      "hash": "af81b577862280e3e29b6b7d76ad9f0cec1fe5f215af5b994b9cd5868f44f07d",
+      "location": "#disagreement-detention-fees"
+    },
+    {
+      "id": "shared-ground",
+      "hash": "d261f0b1b5f63d452ca8740e56fadd294183fbcb4c4356ee508bee05682565f1",
+      "location": "#disagreement-shared-ground"
+    },
+    {
+      "id": "water",
+      "hash": "780a7396c89a0a992b691e5bd43e11793ef8cff64091f15e60ce2d77f3bcd669",
+      "location": "#disagreement-water"
+    },
+    {
+      "id": "transportation",
+      "hash": "1b83c7105c0fea33c4f43ee78843dea53c554a72500724e7222b1c8bb870f009",
+      "location": "#disagreement-transportation"
+    },
+    {
+      "id": "arts-tax",
+      "hash": "3760b5f50062114d96d7eb9c98123473929364caf35299facc1eccf96cbe0f40",
+      "location": "#disagreement-arts-tax"
+    },
+    {
+      "id": "street-response",
+      "hash": "8819eaa8a3888e4a944559a1ad31ae246f6d6e29fff41cf2a7ed05746cffc7fe",
+      "location": "#disagreement-street-response"
+    },
+    {
+      "id": "police-accountability",
+      "hash": "c84e2510c73c73487e0a287f795ebf6bcbabaac9e1a6e0ea7a97367cace0d829",
+      "location": "#disagreement-police-accountability"
+    },
+    {
+      "id": "police-enforcement",
+      "hash": "45c508b7ce86ae22b32c5abb53f6f1449b8137bb176425ffb967ff1c862831c2",
+      "location": "#disagreement-police-enforcement"
+    },
+    {
+      "id": "firearms",
+      "hash": "4f21af7f86e1b919146b00c2334f5298ec12f14e0fb9c73973790fce90aed41b",
+      "location": "#disagreement-firearms"
+    },
+    {
+      "id": "psychedelics",
+      "hash": "6767f2aca3b0d5b50a9dd3369e164ecb21719c00f5da74ba53b15231a8033876",
+      "location": "#disagreement-psychedelics"
+    },
+    {
+      "id": "climate-fund",
+      "hash": "e79b93cb8156c4eaa1896e7bca3ca589c8a54586e32afccb62e87d11cfc587bb",
+      "location": "#disagreement-climate-fund"
+    },
+    {
+      "id": "permitting",
+      "hash": "617066bb434af2cce2390700b89221e08f9388875a03b6a822210eaa04f4d773",
+      "location": "#disagreement-permitting"
+    },
+    {
+      "id": "parks-trees",
+      "hash": "74bc6f359267ac75c8180e69f5e6c755f07a4e9eee567f9745ec8750905d5126",
+      "location": "#disagreement-parks-trees"
+    },
+    {
+      "id": "traffic-transit",
+      "hash": "53fd64c661cb795eade7a75f8ecbd5c076098c38a356d6e6a2e457ce2c787b08",
+      "location": "#disagreement-traffic-transit"
+    },
+    {
+      "id": "privacy",
+      "hash": "d5b29854ee509f91801d5e27fe693db9299b9f92b71dd0b36db872787f6526da",
+      "location": "#disagreement-privacy"
+    },
+    {
+      "id": "infrastructure",
+      "hash": "3e32522a8b2d2773aea1db663e289cf50aeba548f73315c593607bc744e5aaa7",
+      "location": "#disagreement-infrastructure"
+    },
+    {
+      "id": "governance",
+      "hash": "4452c525ff56abc2380c67ff919be6a313d6deebe33ef635f9f75ab67edfc535",
+      "location": "#disagreement-governance"
+    },
+    {
+      "id": "elections",
+      "hash": "e051a7c5f128ad55bb948b1d70338d209c83e923ba88327cf642bb8efea0b4a8",
+      "location": "#disagreement-elections"
+    },
+    {
+      "id": "labor",
+      "hash": "2df6ee64f58221c8fcb7dde479045c164e555db65175d36c90aa75c71c2dfc82",
+      "location": "#disagreement-labor"
+    },
+    {
+      "id": "children",
+      "hash": "ee6659df371a2c3dda5a15bb5688b1808248262c3470764588f3fe47da610ef4",
+      "location": "#disagreement-children"
+    },
+    {
+      "id": "sanctuary",
+      "hash": "40b0d294e716f8b24bd28345d8287b6e72ec6db92fbae187fd56e33ca9e72256",
+      "location": "#disagreement-sanctuary"
+    },
+    {
+      "id": "economy",
+      "hash": "f382dd001978c85604d95ba973c09de3b013390417fcd51949b9a46d9ba1ead9",
+      "location": "#disagreement-economy"
+    },
+    {
+      "id": "public-memory",
+      "hash": "a76aad49f4dd9c9081cf56bd90bf36f7f573ed12e63e97b12933664d8fb5d48e",
+      "location": "#disagreement-public-memory"
+    },
+    {
+      "id": "animal-welfare",
+      "hash": "067930a60707b69c25274642bc776a2f6659531013803a81e876e61d8887a88f",
+      "location": "#disagreement-animal-welfare"
+    }
+  ],
+  "accountsHash": "36e27c090ec825b747fc295d807d272c283fbb74eb9016618d5a66f3017a6249"
+}
