@@ -8,6 +8,15 @@ test("home page renders with hero and project cards", async ({ page }) => {
   await expect(page.getByText("Portland Parks Atlas")).toBeVisible();
 });
 
+test("election banner links the homepage to the voters guide", async ({ page }) => {
+  await page.goto("/");
+  const banner = page.getByTestId("election-banner");
+  await expect(banner).toBeVisible();
+  await expect(banner).toContainText(/until Election Day|Election Day is/);
+  await banner.click();
+  await expect(page).toHaveURL(/\/voters-guide$/);
+});
+
 test("dashboard hub lists topics", async ({ page }) => {
   await page.goto("/dashboard");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(

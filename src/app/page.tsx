@@ -9,6 +9,7 @@ import Footer from "@/components/layout/Footer";
 import SsoLink from "@/components/SsoLink";
 import { withPhotos } from "@/lib/team";
 import AudienceDoors, { type Door } from "@/components/home/AudienceDoors";
+import ElectionBanner from "@/components/home/ElectionBanner";
 import {
   ASK_PORTLAND_URL,
   COUNCIL_URL,
@@ -22,6 +23,10 @@ export const metadata: Metadata = {
   ...pageMeta({ title: HOME_TITLE, description: HOME_DESCRIPTION, path: "" }),
   title: { absolute: HOME_TITLE },
 };
+
+// Keep the election banner's day count current and let it retire itself
+// after polls close without a redeploy.
+export const revalidate = 3600;
 
 /**
  * The homepage has three readers: residents who use the free tools, the
@@ -390,6 +395,7 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col bg-[var(--color-paper)]">
       <Header />
+      <ElectionBanner />
 
       {/* ── Hero: the thesis on the left, the downtown map on the right ── */}
       <section className="relative z-10 overflow-x-clip bg-[var(--color-canopy)] noise-overlay">
