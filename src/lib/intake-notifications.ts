@@ -1,7 +1,7 @@
 import sql from "@/lib/db-query";
 import { sendEmailWithReceipt, type OutboundEmail } from "@/lib/email";
 
-export type IntakeSource = "contact_submissions" | "data_flags" | "topic_proposals" | "pcb_applications";
+export type IntakeSource = "contact_submissions" | "data_flags" | "topic_proposals" | "pcb_applications" | "members";
 
 export function buildIntakeEmail(source: IntakeSource, payload: Record<string, unknown>): OutboundEmail {
   const to = process.env.CONTACT_TO_EMAIL?.trim();
@@ -13,8 +13,10 @@ export function buildIntakeEmail(source: IntakeSource, payload: Record<string, u
     data_flags: "data correction",
     topic_proposals: "topic proposal",
     pcb_applications: "application",
+    members: "new member",
   };
-  const detail = payload.topic || payload.title || payload.question || payload.business_name;
+  const memberName = [payload.first_name, payload.last_name].filter(Boolean).join(" ");
+  const detail = payload.topic || payload.title || payload.question || payload.business_name || (source === "members" ? memberName || payload.email : undefined);
   const reply = payload.email || payload.reporter_email;
   const fields = Object.entries(payload).filter(([key, value]) =>
     !["client_ip", "user_agent", "raw_payload", "delivery", "_recovered"].includes(key) && value !== null,
@@ -29,7 +31,9 @@ export function buildIntakeEmail(source: IntakeSource, payload: Record<string, u
       "",
       ...fields.map(([key, value]) => `${key.replaceAll("_", " ")}: ${typeof value === "object" ? JSON.stringify(value, null, 2) : String(value)}`),
       "",
-      "This submission is saved in the Lab database. Reply to this email to contact the sender when a reply address was provided.",
+      source === "members"
+        ? "This member is saved in the Lab database. Reply to this email to welcome them."
+        : "This submission is saved in the Lab database. Reply to this email to contact the sender when a reply address was provided.",
     ].join("\n\n"),
   };
 }

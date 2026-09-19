@@ -141,10 +141,10 @@ export async function resolveMemberFromWorkOS(user: WorkOSUserLike): Promise<Mem
 }
 
 /**
- * Back-compat wrapper for the auth callback: resolve and discard the row.
+ * Auth-callback entry point: resolve and return the row.
  */
-export async function upsertMemberFromWorkOS(user: WorkOSUserLike): Promise<void> {
-  await resolveMemberFromWorkOS(user);
+export async function upsertMemberFromWorkOS(user: WorkOSUserLike): Promise<Member> {
+  return resolveMemberFromWorkOS(user);
 }
 
 /** Look up the local member row for a WorkOS user id. */

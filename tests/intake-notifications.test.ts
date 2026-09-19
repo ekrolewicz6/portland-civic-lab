@@ -33,18 +33,19 @@ async function rows(table = "intake_notifications") { return (await state.db.que
 beforeAll(async () => {
   state.db = new PGlite();
   await state.db.exec(`
-    CREATE TABLE members (id integer primary key, email text);
-    INSERT INTO members VALUES (1, 'member@example.com');
+    CREATE TABLE members (id serial primary key, workos_user_id text, email text, first_name text, last_name text, avatar_url text, role text default 'member', status text default 'active', neighborhood text, interests jsonb, joined_at timestamptz default now(), last_seen_at timestamptz default now());
+    INSERT INTO members (id, email) VALUES (1, 'member@example.com'); SELECT setval('members_id_seq', 1);
     CREATE TABLE data_flags (id serial primary key, question text, metric text, message text, reporter_email text, member_id integer);
     CREATE TABLE topic_proposals (id serial primary key, title text, description text, member_id integer);
     CREATE TABLE proposal_votes (proposal_id integer, member_id integer, primary key (proposal_id,member_id));
   `);
-  for (const file of ["0007_contact_submissions.sql", "0012_pcb_applications.sql", "0015_intake_notifications.sql"]) {
+  for (const file of ["0007_contact_submissions.sql", "0012_pcb_applications.sql", "0015_intake_notifications.sql", "0016_member_registration_notifications.sql"]) {
     await state.db.exec(readFileSync(`drizzle/${file}`, "utf8"));
   }
 });
 beforeEach(async () => {
   await state.db.exec("TRUNCATE contact_submissions, data_flags, topic_proposals, proposal_votes, pcb_applications, intake_notifications RESTART IDENTITY");
+  await state.db.exec("DELETE FROM members WHERE id <> 1");
   vi.stubEnv("DATABASE_URL", "postgres://test-only");
   vi.stubEnv("RESEND_API_KEY", "test-key");
   vi.stubEnv("CONTACT_FROM_EMAIL", "Lab <lab@example.com>");
@@ -135,5 +136,26 @@ describe("durable contact notifications", () => {
     await notifyIntake("contact_submissions", id);
     expect((await rows())[0].status).toBe("failed");
     expect(send).not.toHaveBeenCalled();
+  });
+});
+
+describe("member registration notifications", () => {
+  it("emails the inbox when a new member row is inserted, and not on later sign-ins", async () => {
+    const [{ id }] = (await state.db.query<{ id: number }>(
+      "insert into members (workos_user_id, email, first_name, last_name, avatar_url) values ('user_new', 'new@example.com', 'New', 'Member', 'https://img.example/x.png') returning id",
+    )).rows;
+    expect(await rows()).toHaveLength(1);
+    expect(await notifyIntake("members", String(id))).toEqual({ provider: "resend", id: "receipt-test" });
+    const body = JSON.parse(String(send.mock.calls[0][1]?.body));
+    expect(body.to).toBe("owner@example.com");
+    expect(body.subject).toBe("Portland Civic Lab new member: New Member");
+    expect(body.reply_to).toBe("new@example.com");
+    expect(body.text).toContain("email: new@example.com");
+    expect(body.text).not.toContain("user_new");
+    expect(body.text).not.toContain("img.example");
+    // A returning member's sign-in has nothing pending: no second email.
+    expect(await notifyIntake("members", String(id))).toBeNull();
+    expect(send).toHaveBeenCalledTimes(1);
+    expect((await rows())[0].status).toBe("sent");
   });
 });
