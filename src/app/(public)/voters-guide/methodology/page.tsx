@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import { voterGuideMetadata } from "@/lib/voters-guide/metadata";
+import GuideStructuredData from "@/components/voters-guide/GuideStructuredData";
 import Link from "next/link";
 import {
   races,
@@ -11,15 +12,14 @@ import {
   pamphlets,
 } from "@/lib/voters-guide/types";
 import styles from "../guide.module.css";
-export const metadata: Metadata = {
-  title: "Voters’ Guide · Editorial Standards & Coverage",
-};
+export const metadata = voterGuideMetadata("standards");
 export default function Methodology() {
   const recordCount = races
     .flatMap((r) => r.candidates)
     .filter((c) => c.record?.length).length;
   return (
     <div className={styles.guide}>
+      <GuideStructuredData card="standards" />
       <Link className={styles.back} href="/voters-guide">
         ← Back to the guide
       </Link>

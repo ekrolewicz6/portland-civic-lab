@@ -1,3 +1,5 @@
+import { voterGuideMetadata, type GuideCard } from "@/lib/voters-guide/metadata";
+import GuideStructuredData from "@/components/voters-guide/GuideStructuredData";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -18,10 +20,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { race: id } = await params;
   const race = findRace(id);
-  return {
-    title: race ? `${race.title} · 2026 Voters’ Guide` : "Race not found",
-    description: race?.stakes,
-  };
+  if (!race) notFound();
+  return voterGuideMetadata(`district-${race.id.slice(-1)}` as GuideCard);
 }
 export default async function RacePage({
   params,
@@ -33,6 +33,7 @@ export default async function RacePage({
   if (!race) notFound();
   return (
     <div className={styles.guide}>
+      <GuideStructuredData card={`district-${race.id.slice(-1)}` as GuideCard} />
       <Link className={styles.back} href="/voters-guide">
         <ArrowLeft size={16} /> All races
       </Link>

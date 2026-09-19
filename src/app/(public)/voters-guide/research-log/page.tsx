@@ -1,10 +1,12 @@
-import type { Metadata } from "next";
+import { voterGuideMetadata } from "@/lib/voters-guide/metadata";
+import GuideStructuredData from "@/components/voters-guide/GuideStructuredData";
 import Link from "next/link";
 import styles from "../guide.module.css";
-export const metadata: Metadata = { title: "Voters’ Guide · Research Log" };
+export const metadata = voterGuideMetadata("research");
 export default function ResearchLog() {
   return (
     <div className={styles.guide}>
+      <GuideStructuredData card="research" />
       <Link className={styles.back} href="/voters-guide">
         ← Back to the guide
       </Link>

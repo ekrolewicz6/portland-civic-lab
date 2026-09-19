@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import { voterGuideMetadata } from "@/lib/voters-guide/metadata";
+import GuideStructuredData from "@/components/voters-guide/GuideStructuredData";
 import Link from "next/link";
 import { ArrowUpRight, BookOpen, CalendarDays } from "lucide-react";
 import {
@@ -10,14 +11,11 @@ import { officialSources, REVIEW_LABEL } from "@/lib/voters-guide/types";
 import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import GuideExplorer from "@/components/voters-guide/GuideExplorer";
 import styles from "./guide.module.css";
-export const metadata: Metadata = {
-  title: "Portland Council Voters’ Guide · November 2026",
-  description:
-    "A nonpartisan, source-linked guide to all 33 candidates for Portland City Council Districts 3 and 4 in November 2026.",
-};
+export const metadata = voterGuideMetadata("guide");
 export default function VotersGuidePage() {
   return (
     <div className={styles.guide}>
+      <GuideStructuredData card="guide" />
       <header className={styles.intro}>
         <div className={styles.eyebrow}>Portland Civic Lab / Election 2026</div>
         <div className={styles.titleRow}>
