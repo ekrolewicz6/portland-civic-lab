@@ -22,6 +22,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
   const [storageAvailable, setStorageAvailable] = useState(true);
   const [inView, setInView] = useState(false);
   const region = useRef<HTMLElement>(null);
+  const selectionChanged = useRef(true);
   const heading = useRef<HTMLHeadingElement>(null);
   const key = `pcl-explore-${race.id}`;
   const people = [...race.candidates].sort((a, b) =>
@@ -71,6 +72,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
     function sync(event: Event) {
       const detail = (event as CustomEvent).detail;
       if (detail?.raceId !== race.id) return;
+      selectionChanged.current = false;
       if (Array.isArray(detail.selected)) {
         const ids = [
           ...new Set<string>(
@@ -101,6 +103,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
     });
   }
   function toggle(id: string) {
+    selectionChanged.current = true;
     setSelected((old) =>
       old.includes(id)
         ? old.filter((v) => v !== id)
@@ -111,6 +114,8 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
   }
   useEffect(() => {
     function shareSelection() {
+      if (!selectionChanged.current) return;
+      selectionChanged.current = false;
       window.dispatchEvent(new CustomEvent(comparisonEvent, { detail: {
         raceId: race.id, selected, topic: topic === "overview" ? "values" : topic,
       } }));
@@ -119,6 +124,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
     return () => window.removeEventListener("pcl:request-candidate-comparison", shareSelection);
   }, [race.id, selected, topic]);
   function openRecords() {
+    selectionChanged.current = false;
     window.dispatchEvent(
       new CustomEvent(comparisonEvent, {
         detail: {
@@ -226,6 +232,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
         <select
           value={topic}
           onChange={(event) => {
+            selectionChanged.current = true;
             setTopic(event.target.value as ExplorerTopic);
             setPage(0);
             requestAnimationFrame(() =>
@@ -295,7 +302,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
                   </li>
                 ))}
               </ul>
-              <button onClick={() => setTopic("overview")}>
+              <button onClick={() => { selectionChanged.current = true; setTopic("overview"); setPage(0); }}>
                 Show everyone at a glance
               </button>
             </details>
@@ -365,6 +372,7 @@ export default function CandidateDiscovery({ race }: { race: Race }) {
         {!!selected.length && (
           <button
             onClick={() => {
+              selectionChanged.current = true;
               setSelected([]);
               setPaired(false);
             }}

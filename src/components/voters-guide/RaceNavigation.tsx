@@ -51,7 +51,7 @@ export default function RaceNavigation({ race, children }: { race: Race; childre
     return () => { window.removeEventListener("hashchange", navigate); document.removeEventListener("click", remember, true); };
   }, [race.candidates]);
   function openCompare() {
-    if (view === "find-candidates") window.dispatchEvent(new Event("pcl:request-candidate-comparison"));
+    window.dispatchEvent(new Event("pcl:request-candidate-comparison"));
   }
   return <div ref={root} className={styles.experience} data-view={view}>
     <nav ref={navigation} className={styles.navigation} aria-label="Race guide sections">

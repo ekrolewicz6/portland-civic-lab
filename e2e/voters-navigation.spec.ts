@@ -54,11 +54,17 @@ test("persistent Compare carries selections without browser storage and controls
   const actionBox = (await action.boundingBox())!;
   const navBox = (await nav.boundingBox())!;
   expect(actionBox.y + actionBox.height).toBeLessThanOrEqual(navBox.y);
+  await nav.getByRole("link", { name: "About", exact: true }).click();
   await nav.getByRole("link", { name: "Compare", exact: true }).click();
   await expect(page.getByRole("combobox", { name: "Candidate 1", exact: true })).not.toHaveValue("");
   await expect(page.getByRole("combobox", { name: "Candidate 2", exact: true })).not.toHaveValue("");
   await expect(page.locator("#compare").getByRole("region", { name: /comparison$/ })).toHaveCount(2);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.getByRole("button", { name: "+ Add a third candidate" }).click();
+  await page.getByRole("combobox", { name: "Candidate 3", exact: true }).selectOption("olivia-clark");
+  await nav.getByRole("link", { name: "About", exact: true }).click();
+  await nav.getByRole("link", { name: "Compare", exact: true }).click();
+  await expect(page.getByRole("combobox", { name: "Candidate 3", exact: true })).toHaveValue("olivia-clark");
   await page.setViewportSize({ width: 1365, height: 900 });
   await expect(nav).toBeInViewport({ ratio: 1 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
