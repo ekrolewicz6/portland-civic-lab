@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CalendarDays } from "lucide-react";
+import { ArrowUpRight, CalendarDays } from "lucide-react";
 import { voterGuideMetadata } from "@/lib/voters-guide/metadata";
 import GuideStructuredData from "@/components/voters-guide/GuideStructuredData";
 import { races } from "@/lib/voters-guide/published";
@@ -16,14 +16,6 @@ import styles from "./hub.module.css";
 
 export const metadata = voterGuideMetadata("guide");
 
-/**
- * Used only when the district overlay has not been authored yet. The
- * authored line (content/districts.ts) always wins once it exists.
- */
-const NEIGHBORHOOD_FALLBACK: Record<string, string> = {
-  "portland-district-3": "Inner Southeast Portland",
-  "portland-district-4": "West side and Sellwood",
-};
 
 const RANKED_CHOICE_GUIDE = "https://multco.us/info/ranked-choice-voting-rcv";
 
@@ -31,78 +23,30 @@ function DistrictCard({ sheet }: { sheet: RaceSheet }) {
   const { race } = sheet;
   const short = shortRaceTitle(race);
   const numeral = short.match(/\d+/)?.[0] ?? "";
-  const neighborhoods =
-    sheet.district?.neighborhoods ?? NEIGHBORHOOD_FALLBACK[race.id] ?? null;
-  const lookupUrl = sheet.district?.mapUrl ?? officialSources.myVote;
-  const count = sheet.rows.length;
-  const headingId = `district-${race.id}`;
-
   return (
     <li className={styles.card}>
-      <article aria-labelledby={headingId}>
+      <Link href={`/voters-guide/${race.id}`} className={styles.cardLink}>
         <div className={styles.cardHead}>
           <span className={styles.numeral} aria-hidden="true">
-            {numeral}
+            0{numeral}
           </span>
-          <div className={styles.cardTitle}>
-            <p className={styles.cardEyebrow}>Portland City Council</p>
-            <h2 id={headingId}>
-              <Link
-                href={`/voters-guide/${race.id}`}
-                className={styles.cardLink}
-              >
-                {short}
-              </Link>
-            </h2>
+          <div>
+            <h3>{short}</h3>
+            <p>
+              {sheet.rows.length} candidates · {race.seats} seats
+            </p>
           </div>
+          <ArrowUpRight aria-hidden="true" />
         </div>
-        <p className={styles.cardMeta}>
-          {count} candidates · {race.seats} seats · ranked choice
-        </p>
-        <ul className={styles.mosaic} aria-label={`${short} candidates`}>
+        <div className={styles.mosaic} aria-hidden="true">
           {sheet.rows.map((row) => (
-            <li key={row.id} className={styles.mosaicItem} title={row.name}>
-              <CandidatePortrait person={{ id: row.id, name: row.name, portrait: row.portrait } as never} compact />
-              <span className={styles.srOnly}>{row.name}</span>
-            </li>
+            <CandidatePortrait key={row.id} person={{ id: row.id, name: row.name, portrait: row.portrait } as never} compact />
           ))}
-        </ul>
-        {neighborhoods ? <p className={styles.neighborhoods}>{neighborhoods}</p> : null}
-        <div className={styles.chipBlock}>
-          <p className={styles.chipLabel}>Jump straight to one issue</p>
-          <ul
-            className={styles.chips}
-            aria-label={`${short} candidates by issue`}
-          >
-            {issues.map((issue) => (
-              <li key={issue.id}>
-                <Link
-                  href={`/voters-guide/${race.id}#issue=${issue.id}`}
-                  className={styles.chip}
-                >
-                  {issue.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
-        <div className={styles.cardFoot}>
-          <Link href={`/voters-guide/${race.id}`} className={styles.cta}>
-            See every candidate{" "}
-            <span className={styles.arrow} aria-hidden="true">
-              →
-            </span>
-          </Link>
-          <a
-            href={lookupUrl}
-            className={styles.lookup}
-            rel="noopener noreferrer"
-          >
-            Not sure? Look up your district{" "}
-            <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </article>
+        <span className={styles.cta}>
+          Explore the complete field <span aria-hidden="true">→</span>
+        </span>
+      </Link>
     </li>
   );
 }
@@ -159,12 +103,17 @@ export default function VotersGuidePage() {
 
       <section className={styles.districts} aria-labelledby="districts-title">
         <div className={styles.sectionHead}>
-          <p className={styles.eyebrow}>On your ballot</p>
+          <p className={styles.eyebrow}>On the Portland ballot</p>
           <h2 id="districts-title" className={styles.sectionTitle}>
-            Which district am I in?
+            A city council. <em>A city’s direction.</em>
           </h2>
         </div>
-        <div className={styles.mapRow}>
+        <ul className={styles.cards}>
+          {sheets.map((sheet) => (
+            <DistrictCard key={sheet.race.id} sheet={sheet} />
+          ))}
+        </ul>
+        <div className={styles.mapBlock}>
           <div className={styles.mapCol}>
             <DistrictMap
               published={sheets.map((s) => Number(shortRaceTitle(s.race).match(/\d+/)?.[0]) as 1 | 2 | 3 | 4)}
@@ -173,15 +122,15 @@ export default function VotersGuidePage() {
             />
             <DistrictMapSource />
           </div>
-          <ul className={styles.cards}>
-            {sheets.map((sheet) => (
-              <DistrictCard key={sheet.race.id} sheet={sheet} />
-            ))}
-          </ul>
+          <div className={styles.mapText}>
+            <h3 className={styles.mapTitle}>Which district am I in?</h3>
+            <p>Tap your part of the map. Districts 1 and 2 are not yet covered.</p>
+            <a href={officialSources.myVote} rel="noopener noreferrer">
+              Not sure? Look up your district <span aria-hidden="true">↗</span>
+            </a>
+            <p className={styles.alsoOnBallot}>The uncontested City Auditor race is also on the Portland ballot.</p>
+          </div>
         </div>
-        <p className={styles.alsoOnBallot}>
-          The uncontested City Auditor race is also on the Portland ballot.
-        </p>
       </section>
 
       <section className={styles.voting} aria-labelledby="voting-title">

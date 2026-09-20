@@ -172,213 +172,6 @@
   color: var(--color-canopy);
   margin: 0;
 }
-.cards {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 16px;
-}
-.card {
-  position: relative;
-  border-radius: 8px;
-  background: var(--color-paper-warm);
-  padding: 24px 16px;
-  min-width: 0;
-}
-.card article {
-  display: grid;
-  gap: 16px;
-  min-width: 0;
-}
-.cardHead {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 16px;
-  align-items: center;
-}
-/* Decorative; the district name beside it is the heading. Kept smaller than
-   the card's own text block so the numeral does not carry the hierarchy. */
-.numeral {
-  font-family: var(--font-display);
-  font-size: clamp(56px, 14vw, 96px);
-  line-height: 0.82;
-  letter-spacing: -0.06em;
-  font-weight: 700;
-  color: var(--color-canopy);
-  font-variant-numeric: lining-nums;
-  transition: transform 250ms var(--hub-ease);
-  will-change: transform;
-}
-.cardTitle {
-  display: grid;
-  gap: 4px;
-  min-width: 0;
-}
-.cardEyebrow {
-  composes: eyebrow;
-}
-.cardTitle h2 {
-  font-family: var(--font-display);
-  font-size: clamp(26px, 7vw, 34px);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  font-weight: 600;
-  color: var(--color-canopy);
-  margin: 0;
-}
-/* The heading link is stretched over the whole card so one tap opens the
-   race. Chips and the lookup link sit above it with their own targets. */
-.cardLink {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  text-decoration: none;
-}
-.cardLink::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 8px;
-}
-.cardLink:focus-visible {
-  outline: none;
-}
-.cardLink:focus-visible::after {
-  outline: 2px solid var(--color-canopy);
-  outline-offset: 2px;
-}
-.neighborhoods {
-  margin: -4px 0 0;
-  font-size: 15px;
-  line-height: 1.45;
-  color: var(--color-ink-light);
-  max-width: 36rem;
-  text-wrap: pretty;
-}
-.cardMeta {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.5;
-  color: var(--color-ink-muted);
-  margin: 0;
-}
-.choice {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--color-ink);
-  max-width: 36rem;
-  text-wrap: pretty;
-}
-.choiceLabel {
-  font-weight: 600;
-  color: var(--color-canopy);
-}
-.draft {
-  margin: -8px 0 0;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-ink-muted);
-}
-/* On phones the paragraph is clamped so two cards do not become four screens;
-   the race page carries it in full. */
-@media (max-width: 768px) {
-  .choice {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-}
-.chipBlock {
-  display: grid;
-  gap: 8px;
-}
-.chipLabel {
-  composes: eyebrow;
-}
-.chips {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.chip {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 16px;
-  border-radius: 999px;
-  background: var(--color-parchment);
-  color: var(--color-canopy);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.2;
-  text-decoration: none;
-  transition:
-    transform 200ms var(--hub-ease),
-    opacity 200ms var(--hub-ease);
-}
-.chip:hover {
-  background: var(--color-canopy);
-  color: var(--color-paper);
-}
-.chip:active {
-  transform: translateY(1px);
-}
-.cardFoot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px 16px;
-  padding-top: 12px;
-  border-top: 1px solid var(--color-parchment);
-}
-/* A real link with the card's call to action; the stretched heading link
-   still covers the rest of the card, so the two share one destination. */
-.cta {
-  position: relative;
-  z-index: 1;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--color-canopy);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 44px;
-  text-decoration: none;
-}
-.cta:hover {
-  text-decoration: underline;
-}
-.arrow {
-  display: inline-block;
-  transition: transform 200ms var(--hub-ease);
-}
-.lookup {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  min-height: 44px;
-  font-size: 14px;
-  color: var(--color-ink-light);
-  text-decoration: underline;
-}
-.lookup:hover {
-  color: var(--color-canopy);
-}
 .alsoOnBallot {
   margin: 16px 0 0;
   font-size: 14px;
@@ -502,25 +295,12 @@
 
 /* ── Hover motion (pointer devices only) ──────────────────────────── */
 
-@media (hover: hover) {
-  .card:has(.cardLink:hover) .numeral,
-  .card:has(.cta:hover) .numeral {
-    transform: translateY(-2px);
-  }
-  .card:has(.cardLink:hover) .arrow,
-  .card:has(.cta:hover) .arrow {
-    transform: translateX(4px);
-  }
-}
 
 /* ── Larger screens ───────────────────────────────────────────────── */
 
 @media (min-width: 480px) {
   .hub {
     --hub-gutter: 24px;
-  }
-  .card {
-    padding: 24px;
   }
   .voting {
     padding: 32px 24px;
@@ -556,20 +336,6 @@
   .districts {
     padding-top: 48px;
   }
-  .cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-  }
-  .card {
-    padding: 32px 24px;
-  }
-  .card article {
-    gap: 24px;
-    height: 100%;
-  }
-  .cardFoot {
-    margin-top: auto;
-  }
   .voting {
     grid-template-columns: 1.2fr 1fr;
     gap: 32px 48px;
@@ -588,28 +354,11 @@
   .title {
     font-size: 84px;
   }
-  .card {
-    padding: 32px;
-  }
-  .numeral {
-    font-size: 112px;
-  }
 }
 
 /* ── Motion and print ─────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .numeral,
-  .chip,
-  .arrow {
-    transition: none;
-  }
-  .card:has(.cardLink:hover) .numeral,
-  .card:has(.cta:hover) .numeral,
-  .card:has(.cardLink:hover) .arrow,
-  .card:has(.cta:hover) .arrow {
-    transform: none;
-  }
 }
 
 @media print {
@@ -639,61 +388,143 @@
   }
 }
 
-/* ── Map beside the district cards ──────────────────────────────────── */
-.mapRow {
-  display: grid;
-  gap: 24px;
-}
-@media (min-width: 900px) {
-  .mapRow {
-    grid-template-columns: minmax(280px, 5fr) minmax(0, 7fr);
-    align-items: start;
-    gap: 32px;
-  }
-}
 .mapCol {
   display: flex;
   flex-direction: column;
   gap: 8px;
   max-width: 520px;
 }
-.mosaic {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin: 12px 0 0;
+
+/* ── District cards: the live design, restored ──────────────────────── */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
-.mosaicItem {
-  position: relative;
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  overflow: hidden;
-  border: 2px solid var(--color-paper-warm);
-  background: var(--color-parchment);
+@media (min-width: 760px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
 }
-.mosaicItem span {
+.card {
+  display: flex;
+}
+.cardLink {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+  background: #e9eee3;
+  border: 1px solid #b9c5b1;
+  color: var(--color-ink);
+  text-decoration: none;
+  transition:
+    background 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cardLink:hover {
+  background: #dce7d5;
+  border-color: var(--color-canopy);
+}
+.cardLink:focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+}
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.cardHead h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+.cardHead p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--color-ink-light);
+}
+.cardHead > svg {
+  width: 20px;
+  margin-left: auto;
+  color: var(--color-canopy);
+}
+.numeral {
+  font-family: Georgia, serif;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--color-canopy);
+}
+.mosaic {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 3px;
+  margin: 0 0 20px;
+}
+.mosaic > * {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+.mosaic span {
+  font-size: 11px !important;
   font-family: var(--font-mono);
-  font-size: 10px !important;
+}
+@media (max-width: 480px) {
+  .mosaic {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+.cta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #bcc8b3;
+  font-size: 15px;
   font-weight: 600;
 }
-.srOnly {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
+
+.mapBlock {
+  display: grid;
+  gap: 24px;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-parchment);
 }
-.neighborhoods {
-  margin: 12px 0 0;
-  font-size: 13px;
-  line-height: 1.45;
-  color: var(--color-ink-muted);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+@media (min-width: 900px) {
+  .mapBlock {
+    grid-template-columns: minmax(280px, 5fr) minmax(0, 6fr);
+    align-items: center;
+    gap: 48px;
+  }
+}
+.mapText h3 {
+  margin: 0 0 8px;
+}
+.mapText p {
+  margin: 0 0 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-ink-light);
+  max-width: 40ch;
+}
+.mapText a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--color-canopy);
+}
+.mapTitle {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: var(--color-canopy);
 }

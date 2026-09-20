@@ -6,48 +6,35 @@ import { guideCards, GUIDE_ORIGIN } from "../src/lib/voters-guide/metadata";
 
 /** The hub, the export, the crawler surface and the routes that must fail closed. */
 
-test("hub: two district cards with four issue deep links, no search box, no inline name lists", async ({ page }) => {
+test("hub: two district cards with portrait mosaics, a district map, no search box, no inline name lists", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/voters-guide");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Know the choice");
   await expect(page.getByRole("searchbox")).toHaveCount(0);
   await expect(page.getByRole("textbox")).toHaveCount(0);
-  const cards = page.getByRole("article");
-  await expect(cards).toHaveCount(races.length);
   for (const race of races) {
     const short = shortRaceTitle(race);
-    const card = cards.filter({ has: page.getByRole("heading", { name: short, exact: true }) });
-    await expect(card.getByRole("link", { name: short, exact: true })).toHaveAttribute("href", `/voters-guide/${race.id}`);
+    const card = page.locator(`a[href="/voters-guide/${race.id}"]`).filter({ hasText: "Explore the complete field" });
+    await expect(card).toHaveCount(1);
+    await expect(card.getByRole("heading", { name: short, exact: true })).toBeVisible();
     await expect(card).toContainText(`${race.candidates.length} candidates · ${race.seats} seats`);
-    const chips = card.getByRole("list", { name: `${short} candidates by issue` }).getByRole("link");
-    await expect(chips).toHaveCount(4);
-    for (const issue of issues) await expect(chips.filter({ hasText: issue.label })).toHaveAttribute("href", `/voters-guide/${race.id}#issue=${issue.id}`);
+    // The mosaic is decorative: one portrait tile per candidate, hidden from assistive tech, no names.
+    const mosaic = card.locator("div[aria-hidden='true']").first();
+    await expect(mosaic.locator(":scope > *")).toHaveCount(race.candidates.length);
   }
-  // Names live only in the portrait mosaic (as screen-reader text on each portrait), never as a visible inline list.
-  for (const race of races) {
-    const short = shortRaceTitle(race);
-    const mosaic = cards.filter({ has: page.getByRole("heading", { name: short, exact: true }) }).getByRole("list", { name: `${short} candidates`, exact: true });
-    await expect(mosaic.getByRole("listitem")).toHaveCount(race.candidates.length);
-    for (const person of race.candidates) {
-      const name = mosaic.getByRole("listitem").getByText(person.name, { exact: true });
-      await expect(name).toHaveCount(1);
-      expect(await name.evaluate((el) => el.getBoundingClientRect().width), `${person.name} is screen-reader only`).toBeLessThanOrEqual(1);
-    }
-  }
-  const text = await page.locator("main, body").first().evaluate((root) => {
-    const hidden = [...root.querySelectorAll<HTMLElement>("ul[aria-label$=' candidates']")];
-    const previous = hidden.map((el) => el.style.display);
-    hidden.forEach((el) => (el.style.display = "none"));
-    const value = (root as HTMLElement).innerText;
-    hidden.forEach((el, i) => (el.style.display = previous[i]));
-    return value;
-  });
+  const text = await page.locator("main").first().innerText();
   for (const person of races.flatMap((r) => r.candidates)) expect(text, person.name).not.toContain(person.name);
+  // The district map links only the published districts.
+  const map = page.getByRole("img", { name: /Council districts/i }).first();
+  await expect(map).toBeVisible();
+  for (const race of races) {
+    const district = shortRaceTitle(race).match(/\d+/)![0];
+    await expect(page.getByRole("link", { name: `District ${district} race page` })).toHaveAttribute("href", `/voters-guide/${race.id}`);
+  }
   await expect(page.getByText("City Auditor")).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await page.getByRole("link", { name: "Streets, buses and air" }).first().click();
-  await expect(page).toHaveURL(/\/voters-guide\/portland-district-3#issue=climate$/);
-  await expect(page.getByRole("button", { name: "Streets, buses and air", exact: true })).toHaveAttribute("aria-pressed", "true");
+  await page.locator(`a[href="/voters-guide/${races[0].id}"]`).filter({ hasText: "Explore the complete field" }).click();
+  await expect(page).toHaveURL(new RegExp(`/voters-guide/${races[0].id}$`));
 });
 
 test("evidence export carries the race-sheet overlay with its version, provenance and https-only sources", async ({ request }) => {
