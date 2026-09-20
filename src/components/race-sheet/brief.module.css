@@ -178,6 +178,7 @@
 .headActions {
   grid-column: 2;
   display: flex;
+  min-width: 0;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 16px;
@@ -524,6 +525,16 @@
 }
 .pager > a {
   justify-self: start;
+  white-space: normal;
+  text-align: left;
+}
+@media (max-width: 400px) {
+  .head > .portrait {
+    grid-row: auto;
+  }
+  .headActions {
+    grid-column: 1 / -1;
+  }
 }
 
 /* ── About strip ────────────────────────────────────────────────── */

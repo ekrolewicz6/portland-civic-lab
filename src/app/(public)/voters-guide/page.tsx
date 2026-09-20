@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, CalendarDays, SearchX } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, SearchX } from "lucide-react";
 import c from "@/components/race-sheet/controls.module.css";
 import { voterGuideMetadata } from "@/lib/voters-guide/metadata";
 import GuideStructuredData from "@/components/voters-guide/GuideStructuredData";
@@ -13,6 +13,7 @@ import {
 } from "@/lib/voters-guide/race-sheet";
 import DistrictMap, { DistrictMapSource } from "@/components/voters-guide/DistrictMap";
 import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
+import HeroMap from "@/components/voters-guide/HeroMap";
 import styles from "./hub.module.css";
 
 export const metadata = voterGuideMetadata("guide");
@@ -75,34 +76,77 @@ export default function VotersGuidePage() {
       : (districtList[0] ?? "");
   const editionDistricts = districtsLabel.replace(/District /g, "").trim();
 
+  const candidateCount = sheets.reduce((n, s) => n + s.rows.length, 0);
+  const seatCount = sheets.reduce((n, s) => n + s.race.seats, 0);
+  const fields = sheets.map((s) => ({
+    district: Number(shortRaceTitle(s.race).match(/\d+/)?.[0]) as 1 | 2 | 3 | 4,
+    rows: s.rows,
+  }));
+
   return (
     <div className={styles.hub}>
       <GuideStructuredData card="guide" />
 
-      <header className={styles.intro}>
-        <p className={styles.eyebrow}>Portland Civic Lab / Election 2026</p>
-        <div className={styles.titleRow}>
-          <h1 className={styles.title}>
-            Know the choice.
-            <br />
-            <span>Make your own.</span>
-          </h1>
-          <div className={styles.election}>
-            <CalendarDays aria-hidden="true" size={18} />
-            <div className={styles.electionText}>
-              <strong>November 3, 2026</strong>
-              <span>Oregon general election</span>
-              <a href={officialSources.myVote} rel="noopener noreferrer" className={`${c.btn} ${c.secondary} ${c.small} ${styles.electionLink}`}>
-                Check your registration <ArrowUpRight size={14} aria-hidden="true" />
+      <header className={styles.hero} aria-labelledby="hub-title">
+        <div className={styles.heroInner}>
+          <div className={styles.heroText}>
+            <p className={styles.heroEyebrow}>
+              <span>Portland City Council</span> · General election · November 3, 2026
+            </p>
+            <h1 id="hub-title" className={styles.heroTitle}>
+              Know the choice.
+              <br />
+              <span>Make your own.</span>
+            </h1>
+            <p className={styles.heroLede}>
+              Every candidate for {districtsLabel}, on one page per district: what they propose, how they would
+              deliver it, how sitting councilors voted, and the sources behind all of it. No endorsements, no
+              scores.
+            </p>
+            <div className={styles.heroActions}>
+              {sheets.map((sheet) => (
+                <Link key={sheet.race.id} href={`/voters-guide/${sheet.race.id}`} className={`${c.btn} ${styles.heroCta}`}>
+                  {shortRaceTitle(sheet.race)} <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+              ))}
+              <a href="#find-district" className={`${c.btn} ${styles.heroQuiet}`}>
+                <MapPin size={16} aria-hidden="true" /> Which district am I in?
               </a>
             </div>
+            <dl className={styles.heroFacts}>
+              <div>
+                <dt>Districts</dt>
+                <dd>{sheets.length}</dd>
+              </div>
+              <div>
+                <dt>Candidates</dt>
+                <dd>{candidateCount}</dd>
+              </div>
+              <div>
+                <dt>Seats</dt>
+                <dd>{seatCount}</dd>
+              </div>
+              <div>
+                <dt>Ballots mail</dt>
+                <dd>Oct 14</dd>
+              </div>
+              <div>
+                <dt>Due</dt>
+                <dd>Nov 3, 8 p.m.</dd>
+              </div>
+            </dl>
+            <p className={styles.heroRegister}>
+              Registration deadline October 13.{" "}
+              <a href={officialSources.myVote} rel="noopener noreferrer">
+                Check your registration <ArrowUpRight size={13} aria-hidden="true" />
+              </a>
+            </p>
+          </div>
+          <div className={styles.heroArt}>
+            <HeroMap fields={fields} />
+            <p className={styles.heroCaption}>Every candidate, standing on the district they want to represent.</p>
           </div>
         </div>
-        <p className={styles.lede}>
-          Every City Council candidate on one page per district, what they
-          propose, how sitting councilors voted, and the sources behind all of
-          it.
-        </p>
       </header>
 
       {/* Each segment carries its own separator (CSS), so a dot never ends a line alone. */}
@@ -128,7 +172,7 @@ export default function VotersGuidePage() {
             <DistrictCard key={sheet.race.id} sheet={sheet} />
           ))}
         </ul>
-        <div className={styles.mapBlock}>
+        <div className={styles.mapBlock} id="find-district">
           <div className={styles.mapCol}>
             <DistrictMap
               published={sheets.map((s) => Number(shortRaceTitle(s.race).match(/\d+/)?.[0]) as 1 | 2 | 3 | 4)}
