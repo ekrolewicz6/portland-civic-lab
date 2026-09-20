@@ -307,7 +307,7 @@ const d4: Candidate[] = [
       "Focus on whether city institutions work for residents.",
     ],
     "The reviewed statement is primarily biographical. It does not establish specific positions on major budget, housing or policing decisions.",
-    "Which three policies would you introduce, and what would each cost?",
+    "How would the $5 million audit be funded, and what would its findings change first?",
     statement(65),
   ),
   c(
