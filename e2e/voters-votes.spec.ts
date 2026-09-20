@@ -54,7 +54,7 @@ for (const race of races) {
       await expect(panel.locator(`summary a[href$="/${id}"]`)).toHaveCount(0);
   });
 
-  test(`${race.id}: the votes page lists the 16 split topics, the agreed list and the legacy panels`, async ({ page }) => {
+  test(`${race.id}: the votes page lists the 16 split topics, the agreed list and the full record`, async ({ page }) => {
     const { topics, agreed } = splitIssues(race);
     expect(topics).toHaveLength(16);
     await page.setViewportSize({ width: 390, height: 844 });
@@ -69,11 +69,23 @@ for (const race of races) {
     const agreedList = page.getByText("Agreed on every vote", { exact: true }).locator("..").getByRole("listitem");
     await expect(agreedList).toHaveCount(agreed.length);
     expect(topics.length + agreed.length).toBe(councilDisagreements.length);
-    const legacy = page.locator("#disagreements");
-    await expect(legacy).toBeVisible();
-    await expect(legacy.locator("section[id^=disagreement-]")).toHaveCount(councilDisagreements.length);
-    await expect(legacy.getByRole("combobox", { name: "Choose a Council issue" })).toBeVisible();
-    await expect(legacy.locator("[data-reader-candidate]")).toHaveCount(councilDisagreements.length * sheet.incumbents.length);
+    // The full record: one closed disclosure row per topic, in the matrix's idiom.
+    const record = page.locator("#disagreements");
+    await expect(record).toBeVisible();
+    const recordRows = record.locator("details[id^=disagreement-]");
+    await expect(recordRows).toHaveCount(councilDisagreements.length);
+    await expect(record.locator("details[id^=disagreement-][open]")).toHaveCount(0);
+    await expect(record.locator("[data-reader-candidate]")).toHaveCount(councilDisagreements.length * sheet.incumbents.length);
+    // Opening a row shows a reading per incumbent and the decisions beneath.
+    const budget = record.locator("#disagreement-supplemental-budget");
+    await budget.locator("summary").first().click();
+    await expect(budget.locator("[data-reader-candidate]")).toHaveCount(sheet.incumbents.length);
+    for (const p of sheet.incumbents) await expect(budget.locator(`[data-reader-candidate="${p.id}"]`)).toContainText(p.name);
+    await budget.getByRole("group").locator("summary").click();
+    await expect(budget.locator("strong[data-vote]").first()).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    // A brief's link to a topic opens that row.
+    await page.goto(`/voters-guide/${race.id}/votes#disagreement-moda`);
+    await expect(record.locator("#disagreement-moda")).toHaveAttribute("open", "");
   });
 }
