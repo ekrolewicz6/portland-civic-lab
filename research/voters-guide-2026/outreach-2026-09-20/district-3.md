@@ -12,7 +12,7 @@ Companion to `candidate-outreach-2026-09-19.md`. The first email asked every can
 |---|---:|---:|---:|---:|---:|---:|
 | Ali Beaudoin | 1 | 0 | 0 | 0 | 1 | 0 |
 | Angelita Morillo | 4 | 3 | 1 | 1 | 1 | 5 |
-| Cristal Otero | 4 | 1 | 2 | 0 | 1 | 2 |
+| Cristal Otero | 4 | 1 | 3 | 1 | 1 | 2 |
 | Darren McCormick | 1 | 0 | 0 | 0 | 1 | 1 |
 | Esther León | 4 | 4 | 1 | 1 | 0 | 5 |
 | Guy Frankenstein | 1 | 0 | 0 | 0 | 1 | 1 |
@@ -76,28 +76,25 @@ Contact: info@angelitaforportland.com
 
 ## Cristal Otero
 
-Contact: pamphlet has no email; site contact form: https://www.cristalforportland.com/your-priorities (Google Form) or https://www.cristalforportland.com/volunteer
+**Replied September 19, 2026** to the individual questions in the first round (resident ownership: which buildings, resident protections, who pays; government experience). Her housing position and ladder now come from that reply; see the research log entry `otero-2026-09-19`.
 
-### Ladder gaps
+Contact: reply to her September 19 email.
 
-- **Rent and homes** · on record: Supports more housing across incomes, anti-displacement protections, cooperative and shared-equity ownership.
-  - Measured by: How many buildings transitioned to resident ownership, or homes built across incomes, would show it worked?
-- **Camps, crime and who responds** · on record: Supports emergency response alongside prevention, behavioral health and housing stability; the page does not name a police staffing target.
-  - How: How would ending homelessness for people with intellectual disabilities and brain injuries be funded and staffed, and which agency would lead?
-- **Your bills and taxes** · on record: Would test program results and, when more revenue is necessary, favor taxes on the wealthiest households and largest corporations over working households and small businesses.
-  - How: If more revenue is needed, which specific tax on the wealthiest households or largest corporations would you propose?
-- **Streets, buses and air** · on record: Wants Portland Clean Energy Fund spending to remain tied to climate purposes.
-  - How: How would Clean Energy Fund dollars be steered toward lower bills, cleaner air and CEI Hub seismic risk: by rule change or by allocation?
-  - Measured by: What result would show climate money stayed on climate work?
+### Ladder gaps still open after her reply
+
+- **Camps, crime and who responds** · How: How would ending homelessness for people with intellectual disabilities and brain injuries be funded and staffed, and which agency would lead?
+- **Your bills and taxes** · How: If more revenue is needed, which specific tax on the wealthiest households or largest corporations would you propose?
+- **Streets, buses and air** · How: How would Clean Energy Fund dollars be steered toward lower bills, cleaner air and CEI Hub seismic risk: by rule change or by allocation? Measured by: What result would show climate money stayed on climate work?
+- **Rent and homes** · follow-up: Which partner would fund the ongoing subsidy for co-op households at 0–30% of area median income, and when would a first building convert?
 
 ### Extra topics without an explicit statement (yes/no)
 
-- **Moda Center deal**: Would you vote for public money toward renovating the Moda Center on the terms Council advanced in August 2026? (Context: Council approved non-binding negotiating terms in August 2026; a final deal and any public money need further votes.)
-- **Police staffing**: Your platform pairs emergency response with prevention. Would you vote to fund hiring toward a specific sworn-officer target? (Context: Council adopted a staffing assessment but has not funded a hiring target.)
-- **Clearing camps**: Would you keep funding camp removals at current levels? (Context: A 2025 amendment to move about $4.3 million from removals to services failed.)
-- **Data centers**: Would you support a moratorium or ban on new AI data centers in Portland? (Context: Several candidates propose a moratorium; data centers draw large amounts of power and water.)
-- **Street Response**: Would you fund Portland Street Response to a full 24/7 citywide role? (Context: The unarmed crisis team’s scope and funding have been contested at Council.)
-- **Street repair fee**: Would you keep the monthly street repair fee? (Context: Council created the transportation utility fee in 2026; some candidates would repeal or replace it.)
+- **Moda Center deal**: Would you vote for public money toward renovating the Moda Center on the terms Council advanced in August 2026?
+- **Police staffing**: Your platform pairs emergency response with prevention. Would you vote to fund hiring toward a specific sworn-officer target?
+- **Clearing camps**: Would you keep funding camp removals at current levels?
+- **Data centers**: Would you support a moratorium or ban on new AI data centers in Portland?
+- **Street Response**: Would you fund Portland Street Response to a full 24/7 citywide role?
+- **Street repair fee**: Would you keep the monthly street repair fee?
 
 ## Darren McCormick
 

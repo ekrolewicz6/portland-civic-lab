@@ -148,7 +148,7 @@ const rows: Record<string, AnalysisRow> = {
   ],
   "Cristal Otero": [
     ["Household affordability", "Worker power"],
-    "She evaluates affordability through wages, ownership and monthly bills together. Shared-equity housing can change who owns an asset, but its financing and resident risk need examination alongside the purchase price.",
+    "She evaluates affordability through wages, ownership and monthly bills together. Her emailed reply fills in the cooperative model: the co-op carries the financing, residents buy a subsidized membership share, resale follows an affordability formula, and buildings get capital-needs assessments before conversion. Not yet settled: which partner funds the ongoing subsidy for the lowest-income households, and when a first building would convert.",
     {
       housing:
         "Proposes stable housing for people with intellectual disabilities and brain injuries and paths to resident ownership.",
@@ -358,7 +358,7 @@ const campaign = (label: string, url: string): Evidence => ({
   date: "Website reviewed September 18, 2026",
   note: "Campaign position. Claimed results and numerical premises have not automatically been independently verified.",
 });
-const supplements: Record<string, { source: Evidence; issues: Issues }> = {
+const supplements: Record<string, { source: Evidence; issues: Issues; issueSources?: Partial<Record<keyof Issues, Evidence>> }> = {
   "Timothy (TJ) Anderson": {
     // Emailed reply to the individual questions the Lab sent him on September 19, 2026.
     source: {
@@ -459,9 +459,19 @@ const supplements: Record<string, { source: Evidence; issues: Issues }> = {
       "Otero · policy platform",
       "https://www.cristalforportland.com/my-platform",
     ),
+    // Her housing position adds the detail from her emailed reply of September 19, 2026.
+    issueSources: {
+      housing: {
+        label: "Otero · emailed response to the Lab’s questions",
+        url: "https://www.portlandciviclab.org/voters-guide/research-log#otero-2026-09-19",
+        kind: "Candidate statement",
+        date: "Received September 19, 2026",
+        note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on her brief. Receipt does not verify the claims.",
+      },
+    },
     issues: {
       housing:
-        "Supports more housing across incomes, anti-displacement protections, cooperative and shared-equity ownership.",
+        "Supports more housing across incomes and anti-displacement protections, and proposes a pathway for roughly 5–20% of the Housing Bureau’s affordable rental portfolio (about 950 to 3,800 homes at today’s scale) to move to limited-equity cooperative ownership over time, aimed at households at 0–30% of area median income, starting with publicly owned or financed buildings whose residents want it.",
       safety:
         "Supports emergency response alongside prevention, behavioral health and housing stability; the page does not name a police staffing target.",
       money:
@@ -573,7 +583,7 @@ export function withCouncilAnalysis(person: Candidate): Candidate {
     issues[key as keyof Issues] = { position, source: baseSource };
   }
   for (const [key, position] of Object.entries(extra?.issues ?? {})) {
-    issues[key as keyof Issues] = { position, source: extra!.source };
+    issues[key as keyof Issues] = { position, source: extra!.issueSources?.[key as keyof Issues] ?? extra!.source };
   }
   if (person.name === "Heart Free Pham") {
     for (const [topic, path] of [
@@ -591,7 +601,7 @@ export function withCouncilAnalysis(person: Candidate): Candidate {
   }
   return {
     ...person,
-    sources: extra ? [...person.sources, extra.source] : person.sources,
+    sources: extra ? [...person.sources, extra.source, ...Object.values(extra.issueSources ?? {})] : person.sources,
     analysis: {
       values: row[0],
       tradeoff: row[1],

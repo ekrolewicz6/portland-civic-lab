@@ -206,7 +206,7 @@ const d3: Candidate[] = [
       "Keep PCEF spending tied to climate and support labor standards.",
     ],
     "Her affordability argument includes utility financing, not just rent. Proposed transitions to resident ownership would need a financing and management model.",
-    "Which buildings could transition to resident ownership, and how would residents be protected from financial risk?",
+    "Which partner would fund the ongoing subsidy for co-op households at 0–30% of area median income, and when would a first building convert?",
     statement(59),
   ),
   c(

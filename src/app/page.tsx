@@ -2,7 +2,7 @@ import { pageMeta } from "@/lib/page-meta";
 import { HOME_TITLE, HOME_DESCRIPTION } from "@/lib/home-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/home/SafeImage";
 import { ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -361,7 +361,7 @@ function ShowcaseTile({ t }: { t: Tile }) {
       <div
         className={`relative overflow-hidden rounded-sm border border-[var(--color-parchment)] bg-white ${t.aspect}`}
       >
-        <Image
+        <SafeImage
           src={t.img.src}
           alt={t.img.alt}
           fill
@@ -463,7 +463,7 @@ export default function HomePage() {
                 aria-label="Open Portland Possible, the downtown parcel map"
               >
                 <div className="relative overflow-hidden rounded-sm ring-1 ring-white/15 shadow-[0_2px_4px_rgba(0,0,0,0.25),0_40px_90px_-20px_rgba(0,0,0,0.6)]">
-                  <Image
+                  <SafeImage
                     src="/images/home/downtown.jpg"
                     alt="Interactive parcel map of downtown Portland with a selected area panel showing urgency-to-act scores and modeled capacity"
                     width={2648}
@@ -749,7 +749,7 @@ export default function HomePage() {
                 <li key={p.name} className="flex items-center gap-3">
                   <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-sm bg-[var(--color-canopy)]">
                     {p.hasPhoto && p.photo ? (
-                      <Image src={p.photo} alt={p.name} fill sizes="36px" className="object-cover object-top" />
+                      <SafeImage src={p.photo} alt={p.name} fill sizes="36px" className="object-cover object-top" />
                     ) : (
                       <span className="flex h-full w-full items-center justify-center font-editorial text-[13px] text-[var(--color-ember-bright)]">
                         {p.initials}

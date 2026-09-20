@@ -83,6 +83,13 @@ const hallettAudit = site(
 );
 const hiltonAction = site("Hilton · Take action (housing)", "https://patrickhilton4pdx.org/take-action");
 const koyamaLane = site("Koyama Lane · policy and track record", "https://teachertiffanyforthepeople.com/policy-track-record/");
+const oteroEmail: Evidence = {
+  label: "Otero · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#otero-2026-09-19",
+  kind: "Candidate statement",
+  date: "Received September 19, 2026",
+  note: NOTE,
+};
 const legreeEmail: Evidence = {
   label: "Legree · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#legree-2026-09-19",
@@ -328,10 +335,14 @@ export const deliveriesD3: DeliveryEntry[] = [
   }),
 
   /* ── Cristal Otero ────────────────────────────────────────────────── */
-  entry("cristal-otero", "housing", "pamphlet", {
+  entry("cristal-otero", "housing", "emailed response", {
     how: [
-      "Would transition some publicly supported apartment buildings to resident ownership and management, for predictable costs on fixed incomes.",
-      pamphlet(59),
+      "Start with publicly owned or financed buildings whose residents want it; the co-op owns the property and carries the financing, residents buy a subsidized membership share, and City, County, Metro, Home Forward and State money shares the cost.",
+      oteroEmail,
+    ],
+    measure: [
+      "Roughly 5–20% of the Housing Bureau’s 19,000-plus regulated affordable units, about 950 to 3,800 homes, moved to limited-equity co-ops over time, with monthly costs affordable to income and no loss of housing assistance.",
+      oteroEmail,
     ],
   }),
   entry("cristal-otero", "safety", "pamphlet", {

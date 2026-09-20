@@ -19,6 +19,31 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="otero-2026-09-19">September 19, 2026 · Candidate response: Cristal Otero (District 3)</h2>
+        <p>
+          Cristal Otero replied to the individual questions the Lab emailed
+          her on September 19, 2026. Her response specifies the resident
+          ownership proposal her pamphlet statement sketched: a pathway for
+          roughly 5–20% of the Housing Bureau’s regulated affordable rentals
+          (about 950 to 3,800 homes today) to move to limited-equity
+          cooperatives over time, aimed at households at 0–30% of area median
+          income, beginning with publicly owned or financed buildings whose
+          residents want it; the co-op carries the financing, residents buy a
+          subsidized membership share, resale follows an affordability formula,
+          and buildings get capital-needs assessments first. She also described
+          her government work: Fairview’s pandemic small-business grants, early
+          implementation of the Metro Supportive Housing Services measure at
+          Multnomah County, the first tri-county joint social-services
+          procurement, and cross-department Supportive Housing Services
+          agreements since 2024.
+        </p>
+        <p>
+          Her housing position, chip and ladder rungs now cite the reply; her
+          brief shows excerpts under “Their answers to our questions.” The
+          reply answers her open question, which was replaced with the one it
+          leaves open. The response is kept on file and cited with this entry;
+          her preservation hash was re-recorded.
+        </p>
         <h2 id="anderson-2026-09-19">September 19, 2026 · Candidate response: Timothy (TJ) Anderson (District 4)</h2>
         <p>
           T.J. Anderson replied to the individual questions the Lab emailed him

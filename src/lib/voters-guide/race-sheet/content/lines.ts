@@ -81,7 +81,7 @@ export const issueLines: IssueLine[] = [
   line("steve-novick", "money", "Wants lower Council office budgets, fair Moda deal, Arts Tax replacement preserving arts funding."),
   line("steve-novick", "climate", "Supports using PCEF (clean-energy fund) for transit and possibly water filtration, offsetting rate increases."),
 
-  line("cristal-otero", "housing", "Supports more housing across incomes, anti-displacement protections, cooperative and shared-equity ownership."),
+  line("cristal-otero", "housing", "Supports homes across incomes; would move 5–20% of city-regulated affordable rentals to co-ops."),
   line("cristal-otero", "safety", "Supports emergency response alongside prevention, behavioral health and housing stability."),
   line("cristal-otero", "money", "Would test program results; for new revenue, prefers taxing wealthiest households and largest corporations."),
   line("cristal-otero", "climate", "Wants Portland Clean Energy Fund spending to remain tied to climate purposes."),

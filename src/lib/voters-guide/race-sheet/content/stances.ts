@@ -73,7 +73,7 @@ export const stanceChips: StanceChip[] = [
   chip("steve-novick", "money", "Cut Council office budgets"),
   chip("steve-novick", "climate", "Clean-energy fund transit"),
 
-  chip("cristal-otero", "housing", "Homes across all incomes"),
+  chip("cristal-otero", "housing", "Rentals into co-ops"),
   chip("cristal-otero", "safety", "Response plus prevention"),
   chip("cristal-otero", "money", "Measure results first"),
   chip("cristal-otero", "climate", "Climate fund for climate"),
