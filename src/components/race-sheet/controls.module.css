@@ -1,0 +1,245 @@
+/*
+ * The race sheet's control vocabulary. Every action a reader can take is one
+ * of these shapes, so nothing interactive reads as bare text:
+ *
+ *   primary    one per view, filled canopy: the thing to do next
+ *   secondary  outlined pill: a real destination or action
+ *   quiet      tinted pill: lower-emphasis actions and in-page navigation
+ *   small      the same shapes at 36px for dense rows (still a 44px target
+ *              on touch via padding on the wrapper where it matters)
+ *   icon       a 44px round button whose label is aria-only (close, dismiss)
+ *   gapPill    the dashed "not found" cell, the same shape as a chip
+ *   source     a source citation that expands: venue icon, label, caret
+ *
+ * States are designed once here: hover one step, active scale, focus ring,
+ * disabled at 40%. Motion is transform/opacity/color only.
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  font: 600 15px/1.2 var(--font-body);
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  color: var(--color-canopy);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 150ms var(--ease, ease-out),
+    border-color 150ms var(--ease, ease-out),
+    color 150ms var(--ease, ease-out),
+    transform 100ms var(--ease, ease-out);
+}
+.btn svg {
+  flex: none;
+}
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+}
+.btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.primary {
+  background: var(--color-canopy);
+  border-color: var(--color-canopy);
+  color: var(--color-paper);
+}
+.primary:hover:not(:disabled) {
+  background: var(--color-canopy-mid);
+  border-color: var(--color-canopy-mid);
+}
+
+.secondary {
+  background: var(--color-paper-warm);
+  border-color: var(--color-canopy);
+  color: var(--color-canopy);
+}
+.secondary:hover:not(:disabled) {
+  background: var(--color-canopy);
+  color: var(--color-paper);
+}
+
+.quiet {
+  background: color-mix(in oklab, var(--color-canopy) 8%, var(--color-paper));
+  color: var(--color-canopy);
+}
+.quiet:hover:not(:disabled) {
+  background: color-mix(in oklab, var(--color-canopy) 15%, var(--color-paper));
+}
+.quiet[aria-pressed="true"],
+.quiet[aria-expanded="true"] {
+  background: var(--color-canopy);
+  color: var(--color-paper);
+}
+
+.small {
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: 13px;
+  gap: 6px;
+}
+
+.icon {
+  width: 44px;
+  padding: 0;
+  color: var(--color-ink-light);
+}
+.icon:hover:not(:disabled) {
+  background: var(--color-parchment);
+  color: var(--color-ink);
+}
+
+/* Save: a labeled bookmark; saved state fills with ember. */
+.save {
+  background: color-mix(in oklab, var(--color-canopy) 8%, var(--color-paper));
+  color: var(--color-canopy);
+}
+.save:hover:not(:disabled) {
+  background: color-mix(in oklab, var(--color-canopy) 15%, var(--color-paper));
+}
+.save[aria-pressed="true"] {
+  background: color-mix(in oklab, var(--color-ember) 30%, var(--color-paper));
+  border-color: color-mix(in oklab, var(--color-ember) 70%, var(--color-ink));
+  color: color-mix(in oklab, var(--color-ember) 40%, var(--color-ink));
+}
+
+/* Danger-adjacent quiet (remove, clear): same shape, clay on hover. */
+.remove:hover:not(:disabled) {
+  background: var(--color-clay-tint);
+  color: var(--color-clay);
+}
+
+/* The gap cell: a chip-shaped dashed pill, never a bare dash. */
+.gapPill {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 5px 12px;
+  border: 1.5px dashed var(--color-lichen);
+  border-radius: 999px;
+  background: transparent;
+  font: 500 13.5px/1.25 var(--font-body);
+  color: var(--color-ink-muted);
+  cursor: pointer;
+  transition: background-color 150ms var(--ease, ease-out), border-color 150ms var(--ease, ease-out), color 150ms var(--ease, ease-out);
+}
+.gapPill:hover,
+.gapPill[aria-expanded="true"] {
+  border-color: var(--color-storm);
+  background: var(--color-parchment);
+  color: var(--color-ink-light);
+}
+.gapPill:focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+}
+.gapPill svg {
+  flex: none;
+  opacity: 0.8;
+}
+/* A gap inside prose (a ladder rung): the same pill, static. */
+.gapNote {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1.5px dashed var(--color-lichen);
+  border-radius: 999px;
+  font: 500 13px/1.2 var(--font-body);
+  color: var(--color-ink-muted);
+}
+
+/* Source citation. */
+.source {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 10px 0 9px;
+  border: 1px solid color-mix(in oklab, var(--color-ink) 14%, var(--color-paper));
+  border-radius: 8px;
+  background: var(--color-paper-warm);
+  font: 500 13px/1.2 var(--font-body);
+  color: var(--color-ink-light);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 150ms var(--ease, ease-out), border-color 150ms var(--ease, ease-out), color 150ms var(--ease, ease-out);
+  list-style: none;
+}
+.source::-webkit-details-marker {
+  display: none;
+}
+.source svg {
+  flex: none;
+}
+.source .sourceVenueIcon {
+  color: var(--color-canopy);
+}
+.source .sourceCaret {
+  color: var(--color-ink-muted);
+  transition: transform 200ms var(--ease, ease-out);
+}
+.source:hover,
+.source[aria-expanded="true"],
+details[open] > .source {
+  border-color: var(--color-sage);
+  background: var(--color-sage-tint);
+  color: var(--color-ink);
+}
+.source[aria-expanded="true"] .sourceCaret,
+details[open] > .source .sourceCaret {
+  transform: rotate(180deg);
+}
+.source:focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+}
+
+/* A row of actions. */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+}
+
+/* An inline text link inside prose keeps an underline so it reads as a link. */
+.inlineLink {
+  color: var(--color-canopy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+.inlineLink:hover {
+  color: var(--color-fern);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .gapPill,
+  .source,
+  .source .sourceCaret {
+    transition: none;
+  }
+  .btn:active:not(:disabled) {
+    transform: none;
+  }
+}

@@ -19,6 +19,19 @@ import {
   councilDisagreements,
   decisionAccounts,
 } from "@/lib/voters-guide/council-record-accounts";
+import { raceSheetVersion, issues as raceSheetIssues } from "@/lib/voters-guide/race-sheet";
+import { featuredVotes } from "@/lib/voters-guide/race-sheet/featured";
+import { issueLines } from "@/lib/voters-guide/race-sheet/content/lines";
+import { stanceChips } from "@/lib/voters-guide/race-sheet/content/stances";
+import { choiceParagraphs } from "@/lib/voters-guide/race-sheet/content/choice";
+import { saidPlacements } from "@/lib/voters-guide/race-sheet/content/said";
+import { missingStates, primaryStatements, roleOverrides } from "@/lib/voters-guide/race-sheet/content/roles";
+import { ballotInstructions, districts } from "@/lib/voters-guide/race-sheet/content/districts";
+import { answers } from "@/lib/voters-guide/race-sheet/content/answers";
+import { deliveries } from "@/lib/voters-guide/race-sheet/content/delivery";
+import { topicStances } from "@/lib/voters-guide/race-sheet/content/topic-stances";
+import { extraTopics } from "@/lib/voters-guide/race-sheet/topics";
+import { ownWords } from "@/lib/voters-guide/race-sheet/content/own-words";
 
 export const dynamic = "force-static";
 
@@ -38,7 +51,31 @@ export function GET() {
       councilReaderVersion,
       councilReaderCopy,
       councilCoverageAudit,
+      raceSheet: {
+        version: raceSheetVersion,
+        status:
+          "Current presentation layer. Short lines are shortened from the named parent field and carry a review status; 'pending' means separate human review has not yet occurred.",
+        issues: raceSheetIssues,
+        featuredVotes,
+        choiceParagraphs,
+        issueLines,
+        stanceChips,
+        saidPlacements,
+        roleOverrides,
+        missingStates,
+        primaryStatements,
+        districts,
+        ballotInstructions,
+        answers,
+        extraTopics,
+        topicStances,
+        deliveries,
+        ownWords,
+        rules:
+          "Every candidate on the checked roster, alphabetical, one line each. A line may omit, never add. A dash is a research gap, not a position. Featured votes are chosen editorially and disclosed; challengers appear beneath a vote only for an explicit statement about that exact choice. Extra topics are the same for every candidate: an incumbent's recorded vote where a topic matches a Council decision, otherwise only an explicit, sourced statement about that choice; nothing is inferred from silence, party or broad goals. Each brief opens with the verbatim opening of the candidate's own statement under one mechanical rule (ownWords), so the guide never chooses which sentence to feature. The ladder (what, how, measured by) shows only rungs the candidate has stated, each with its own source; a missing rung is a gap, and where the Lab has asked the candidate the date is recorded. The reader's list is never seeded, ordered, scored, shared or recorded.",
+      },
       explorer: {
+        status: "Retired September 19, 2026; replaced by the race sheet",
         version: explorerVersion,
         topics: explorerTopics,
         coverage: races.map((race) => ({

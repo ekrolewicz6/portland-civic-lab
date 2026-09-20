@@ -12,7 +12,8 @@
   --color-parchment: #ebe5da;
   --color-ink: #1c1917;
   --color-ink-light: #44403c;
-  --color-ink-muted: #78716c;
+  /* 5.8:1 on paper-warm, 4.9:1 on parchment: AA for small text on every surface. */
+  --color-ink-muted: #66605b;
   --color-ember: #c8956c;
   --color-ember-bright: #e0a870;
   --color-clay: #b85c3a;

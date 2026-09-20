@@ -25,8 +25,8 @@ for (const viewport of [
         page.getByText("By Edan Krolewicz & Dominic Kuklawood"),
       ).toBeVisible();
       await expect(
-        page.locator(".fire-explorer").getByRole("alert"),
-      ).toContainText("Records temporarily unavailable");
+        page.locator(".fire-explorer").getByRole("alert").filter({ hasText: "Records temporarily unavailable" }),
+      ).toHaveCount(1);
       const planned = page.getByRole("button", {
         name: "Plans & permits",
         exact: true,

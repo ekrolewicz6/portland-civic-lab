@@ -19,6 +19,106 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="otero-2026-09-19">September 19, 2026 · Candidate response: Cristal Otero (District 3)</h2>
+        <p>
+          Cristal Otero replied to the individual questions the Lab emailed
+          her on September 19, 2026. Her response specifies the resident
+          ownership proposal her pamphlet statement sketched: a pathway for
+          roughly 5–20% of the Housing Bureau’s regulated affordable rentals
+          (about 950 to 3,800 homes today) to move to limited-equity
+          cooperatives over time, aimed at households at 0–30% of area median
+          income, beginning with publicly owned or financed buildings whose
+          residents want it; the co-op carries the financing, residents buy a
+          subsidized membership share, resale follows an affordability formula,
+          and buildings get capital-needs assessments first. She also described
+          her government work: Fairview’s pandemic small-business grants, early
+          implementation of the Metro Supportive Housing Services measure at
+          Multnomah County, the first tri-county joint social-services
+          procurement, and cross-department Supportive Housing Services
+          agreements since 2024.
+        </p>
+        <p>
+          Her housing position, chip and ladder rungs now cite the reply; her
+          brief shows excerpts under “Their answers to our questions.” The
+          reply answers her open question, which was replaced with the one it
+          leaves open. The response is kept on file and cited with this entry;
+          her preservation hash was re-recorded.
+        </p>
+        <h2 id="anderson-2026-09-19">September 19, 2026 · Candidate response: Timothy (TJ) Anderson (District 4)</h2>
+        <p>
+          T.J. Anderson replied to the individual questions the Lab emailed him
+          on September 19, 2026. His response names three policies with cost
+          estimates (a value-based audit of city spending and assets capped at
+          $5 million, with no new taxes or fees until it is done; 100 hours of
+          volunteer work a year per councilor; a Council pay-and-benefits freeze
+          until average salaries and jobs have grown for two full years) and
+          gives positions on housing, public safety, homelessness, city spending
+          and revenue, climate and transportation that his pamphlet statement
+          did not cover. He also described his committee work and attached
+          documents in support: the Multnomah County Department of County
+          Assets and Management community budget advisory committee reports for
+          FY26 (listing him as a member) and FY27 (listing him as co-chair), the
+          Central CBAC FY26 report, the Portland State tuition recommendation
+          flyer for 2026–27, and the TriMet Committee on Accessible
+          Transportation 2026 annual report (listing him as a member).
+        </p>
+        <p>
+          His grid row now has four documented positions instead of none, with
+          ladder rungs and two topic stances drawn only from the reply; his
+          brief shows excerpts under “Their answers to our questions.” The
+          response and attachments are kept on file and are not republished;
+          the site cites them with this entry. Because his research object
+          changed, the preservation baseline was re-recorded for his profile
+          only.
+        </p>
+        <h2 id="legree-2026-09-19">September 19, 2026 · Candidate response: Keir Legree (District 3)</h2>
+        <p>
+          Keir Legree replied to the identical questions the Lab emailed every
+          candidate on September 19, 2026. His response adds positions his
+          pamphlet statement did not cover (housing production and preservation;
+          transportation and emissions) and detail on infrastructure costs
+          (competitive bidding, independent estimates, scope control, peer-city
+          comparisons) and homelessness (shelter and treatment capacity,
+          accountability for spending, and a proposed one-year pause on cash
+          bottle redemptions as a measured experiment). It also answers his open
+          question about cutting costs without deferring maintenance.
+        </p>
+        <p>
+          His brief now shows excerpts under “In their words,” his grid row has
+          four documented positions instead of two, and our reading was updated
+          to reflect the mechanisms he named. The response is kept on file; the
+          site cites it with this entry. Because his research object changed,
+          the preservation baseline was re-recorded for his profile only.
+        </p>
+        <h2>September 19, 2026 · The race page becomes one screen per race</h2>
+        <p>
+          Rebuilt each race page around a single alphabetical list of every
+          candidate with one short line each, four issue views that swap the
+          line in place, four featured Council votes phrased as the question
+          Council decided, and a private, reader-ordered “My ballot.” Candidate
+          briefs and the full Council record moved to their own pages so a
+          phone no longer downloads the whole research edition to read one
+          screen. District 3 previously shipped about 48,800 words on one URL.
+        </p>
+        <p>
+          Added a versioned short-line layer over the unchanged research: one
+          short line per documented issue position, one choice paragraph per
+          race, and explicit-statement placements beneath each featured vote.
+          Every line names the field it was shortened from and is exported with
+          the evidence. These lines are AI-drafted and awaiting separate human
+          review; each carries a review status in the export. Owner decision,
+          September 19, 2026: the issue views (chips) shipped before human
+          review, with that status disclosed on the page; the design’s rule
+          that chips wait for a reviewer name was amended to record this.
+          Research objects, decisions and sources did not change; the
+          preservation baseline still applies.
+        </p>
+        <p>
+          Retired the paginated topic browser, the pairwise comparison studio
+          and the alignment-quiz remnants from the race page. We configure our
+          analytics not to receive URL fragments. Updated the editorial
+          standards to describe the new page and the reader-owned list.
+        </p>
         <h2>September 18, 2026 · Complete the Council topic audit</h2>
         <p>
           Expanded the comparison to 73 decisions across 29 issues, covering all
@@ -152,17 +252,15 @@ export default function ResearchLog() {
         </p>
         <h2>Corrections</h2>
         <p>
-          September 18, 2026: removed unsupported male pronouns from Jamey
-          Evenstar’s interpretation; the text now uses the candidate’s name.
-          Expanded the brief using the{" "}
-          <a href="https://evenstarforportland.com/platform">
-            current platform
-          </a>{" "}
-          and <a href="https://evenstarforportland.com">campaign biography</a>.
-          Also replaced the assertion that Guy Frankenstein prioritizes
-          confrontation over coalition-building: the reviewed questionnaire
-          supports his policy targets but does not establish his approach to
-          assembling a legislative coalition.
+          What candidates tell us is logged above under the date we received
+          it. This section records additions or removals of important content
+          after publication, not drafting changes made before a page went live.
+        </p>
+        <p>
+          September 19, 2026: corrected the District 3 neighborhood heading
+          from “Inner Southeast” to “Southeast and inner Northeast,” since the
+          City’s list for the district includes Northeast neighborhoods such
+          as Rose City Park.
         </p>
         <p>
           <Link href="/voters-guide/methodology#corrections">

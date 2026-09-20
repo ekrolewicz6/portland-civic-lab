@@ -90,7 +90,7 @@ const rows: Record<string, AnalysisRow> = {
   ],
   "Keir Legree": [
     ["Operational delivery", "Household costs"],
-    "His stated goals connect city performance to safety and utility bills. Lower bills are not yet a financed commitment: the reviewed statement does not identify savings or how to preserve necessary maintenance.",
+    "His stated goals connect city performance to safety and utility bills. His September 19, 2026 response adds the mechanisms: competitive bidding, independent cost estimates and scope control for projects; more shelter and treatment capacity with accountability for spending; and a proposed one-year pause on cash bottle redemptions as a measured experiment. Savings are still not quantified.",
     {
       safety:
         "Wants more police and 911 dispatchers and a different approach to street homelessness. The reviewed pamphlet does not detail that homelessness plan.",
@@ -148,7 +148,7 @@ const rows: Record<string, AnalysisRow> = {
   ],
   "Cristal Otero": [
     ["Household affordability", "Worker power"],
-    "She evaluates affordability through wages, ownership and monthly bills together. Shared-equity housing can change who owns an asset, but its financing and resident risk need examination alongside the purchase price.",
+    "She evaluates affordability through wages, ownership and monthly bills together. Her emailed reply fills in the cooperative model: the co-op carries the financing, residents buy a subsidized membership share, resale follows an affordability formula, and buildings get capital-needs assessments before conversion. Not yet settled: which partner funds the ongoing subsidy for the lowest-income households, and when a first building would convert.",
     {
       housing:
         "Proposes stable housing for people with intellectual disabilities and brain injuries and paths to resident ownership.",
@@ -229,8 +229,8 @@ const rows: Record<string, AnalysisRow> = {
     },
   ],
   "Timothy (TJ) Anderson": [
-    ["Lived experience", "Responsive government"],
-    "The statement makes a case for representation informed by homelessness and disability. It does not establish a legislative program, so those experiences should not be used to infer unspoken housing, policing or tax positions.",
+    ["Lived experience", "Audit first"],
+    "His pamphlet statement makes a case for representation informed by homelessness and disability; his emailed answers add an audit-first program: map city spending and assets before any new tax or fee, more officers with lower-cost responders for routine calls, and housing growth through investability and reuse of city assets. Beyond the audit’s $5 million cap, the costs and the mechanics of a Council pay freeze are not yet specified.",
     {},
   ],
   "Eli Arnold": [
@@ -358,7 +358,47 @@ const campaign = (label: string, url: string): Evidence => ({
   date: "Website reviewed September 18, 2026",
   note: "Campaign position. Claimed results and numerical premises have not automatically been independently verified.",
 });
-const supplements: Record<string, { source: Evidence; issues: Issues }> = {
+const supplements: Record<string, { source: Evidence; issues: Issues; issueSources?: Partial<Record<keyof Issues, Evidence>> }> = {
+  "Timothy (TJ) Anderson": {
+    // Emailed reply to the individual questions the Lab sent him on September 19, 2026.
+    source: {
+      label: "Anderson · emailed response to the Lab’s questions",
+      url: "https://www.portlandciviclab.org/voters-guide/research-log#anderson-2026-09-19",
+      kind: "Candidate statement",
+      date: "Received September 19, 2026",
+      note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on his brief. Receipt does not verify the claims.",
+    },
+    issues: {
+      housing:
+        "Wants more housing and says the fastest route may be making the city more investable, for large accounts and for people who want to make Portland home, alongside reusing city assets at lower cost for short-term help; opposes committing to a single plan.",
+      safety:
+        "Wants police response times down and says more officers will be needed, with cadets, volunteers and other programs handling calls that do not need the most highly trained officers. On homelessness, would first establish what has worked, a timeline of people’s needs and how to work with others in the city before spending more.",
+      money:
+        "Would start with a value-based audit of where city money went this year and the past two, plus a public list of city assets, at a cost he puts at no more than $5 million, with no new taxes or fees until it is done. Would freeze Council pay and benefits until average salaries and jobs have grown for two full years, and ask each councilor for 100 hours of volunteer work a year.",
+      climate:
+        "Would favor climate measures that also improve business investability, and wants more public transit and better train systems while leaving cars to those who want or need them, without burning future finances for what is wanted now.",
+    },
+  },
+  "Keir Legree": {
+    // Emailed reply to the identical questions the Lab sent every candidate on September 19, 2026.
+    source: {
+      label: "Legree · emailed response to the Lab’s questions",
+      url: "https://www.portlandciviclab.org/voters-guide/research-log#legree-2026-09-19",
+      kind: "Candidate statement",
+      date: "Received September 19, 2026",
+      note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on his brief. Receipt does not verify the claims.",
+    },
+    issues: {
+      housing:
+        "Supports increasing housing supply, faster permitting and fewer construction barriers, plus expanding government-owned affordable housing, preserving existing affordable homes and filling vacant subsidized units.",
+      safety:
+        "Wants more police officers and 911 dispatchers, and a homelessness approach judged by measurable results: more shelter and treatment capacity, expected progress toward stability in exchange for publicly funded services, and accountability for City and County spending. Proposes seeking state authorization for a one-year pause on cash bottle and can redemptions in Portland as a measured experiment.",
+      money:
+        "Would lower the cost of delivering infrastructure rather than defer maintenance: stronger competitive bidding, independent cost estimates, tighter control of scope and change orders, cost comparisons with peer cities, and a public-benefit test before major projects begin.",
+      climate:
+        "Supports reducing emissions and a balanced transportation system for walking, biking, transit and driving, with pedestrian and bicycle improvements where safety or transportation need is demonstrated and major projects evaluated for use, safety, cost and system impacts.",
+    },
+  },
   "Matthias Hallett": {
     source: campaign(
       "Hallett · Re-Vision platform",
@@ -419,9 +459,19 @@ const supplements: Record<string, { source: Evidence; issues: Issues }> = {
       "Otero · policy platform",
       "https://www.cristalforportland.com/my-platform",
     ),
+    // Her housing position adds the detail from her emailed reply of September 19, 2026.
+    issueSources: {
+      housing: {
+        label: "Otero · emailed response to the Lab’s questions",
+        url: "https://www.portlandciviclab.org/voters-guide/research-log#otero-2026-09-19",
+        kind: "Candidate statement",
+        date: "Received September 19, 2026",
+        note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on her brief. Receipt does not verify the claims.",
+      },
+    },
     issues: {
       housing:
-        "Supports more housing across incomes, anti-displacement protections, cooperative and shared-equity ownership.",
+        "Supports more housing across incomes and anti-displacement protections, and proposes a pathway for roughly 5–20% of the Housing Bureau’s affordable rental portfolio (about 950 to 3,800 homes at today’s scale) to move to limited-equity cooperative ownership over time, aimed at households at 0–30% of area median income, starting with publicly owned or financed buildings whose residents want it.",
       safety:
         "Supports emergency response alongside prevention, behavioral health and housing stability; the page does not name a police staffing target.",
       money:
@@ -533,7 +583,7 @@ export function withCouncilAnalysis(person: Candidate): Candidate {
     issues[key as keyof Issues] = { position, source: baseSource };
   }
   for (const [key, position] of Object.entries(extra?.issues ?? {})) {
-    issues[key as keyof Issues] = { position, source: extra!.source };
+    issues[key as keyof Issues] = { position, source: extra!.issueSources?.[key as keyof Issues] ?? extra!.source };
   }
   if (person.name === "Heart Free Pham") {
     for (const [topic, path] of [
@@ -551,7 +601,7 @@ export function withCouncilAnalysis(person: Candidate): Candidate {
   }
   return {
     ...person,
-    sources: extra ? [...person.sources, extra.source] : person.sources,
+    sources: extra ? [...person.sources, extra.source, ...Object.values(extra.issueSources ?? {})] : person.sources,
     analysis: {
       values: row[0],
       tradeoff: row[1],

@@ -102,8 +102,9 @@ export default function Methodology() {
           identifies the speaker. Earlier statements keep their dates. A
           documented action is labeled as an action when we have not established
           an individual explanation; we do not turn a vote into an inferred
-          motive. The opening disagreement view covers incumbents; the issue
-          comparison includes every candidate.
+          motive. The four featured votes on each race page cover the district’s
+          sitting councilors; the candidate list and issue lines include every
+          candidate.
         </p>
         <h3 id="council-coverage">How we checked Council topic coverage</h3>
         <p>
@@ -265,36 +266,81 @@ export default function Methodology() {
           response. An open question is our research question, not a claim that
           a candidate refused to answer it.
         </p>
-        <h2 id="guided-comparison">How the quick comparison works</h2>
+        <h2 id="guided-comparison">How the race page works</h2>
         <p>
-          Choose a topic to read candidates’ documented positions, then select
-          two to compare. Candidates appear alphabetically. There is no quiz,
-          match score or recommendation. Campaign statements and recorded
-          actions are identified by their sources; our interpretation appears
-          under “Background &amp; context.”
+          Each race is one grid: every candidate on the checked roster,
+          alphabetical by displayed name, against the same four issues (rent
+          and homes; camps, crime and who responds; your bills and taxes;
+          streets, buses and air). Each cell is a chip of two to four words:
+          our short reading of that candidate’s documented position. Tapping a
+          chip shows the sentence it was shortened from, the full position with
+          any qualifier, and the source. A dash means we have not established
+          a position from the sources we reviewed; it is a research gap, not a
+          position, and each column header says how many candidates have a
+          documented position. Columns are colored by topic, never by side.
         </p>
         <p>
-          Topic views show the positions established in our research. Candidates
-          without a documented position are listed together, with links to their
-          profiles. “At a glance” and “Experience” include everyone. If a
-          selected candidate lacks a topic position, the comparison says so and
-          shows their broader platform rather than inventing an answer. Reported
-          experience does not establish successful outcomes.
+          Beneath each chip is the same three-rung ladder for every candidate:
+          what they say they would do, how they say they would do it, and how
+          they say we would know it worked. Each rung has its own source. A
+          rung we could not find in a candidate’s pamphlet, website,
+          questionnaires or reporting is shown as a gap, and where we have
+          emailed the candidate to ask, the date of that request is shown
+          beside it. We never fill a rung for a candidate.
         </p>
         <p>
-          Your topic and two comparison selections stay in this browser tab.
-          They carry into the full comparison when you choose “Compare full
-          records.” Clear selection removes the selected names. The earlier
-          alignment quiz is retired: too few candidates had documented answers
-          to its exact proposals to produce useful comparisons. Its data remains
-          marked as retired in the evidence export; it does not determine the
-          current candidate display.
+          Readers can add up to two more columns from a fixed list of concrete
+          choices (the Moda Center terms, new taxes or fees, police staffing,
+          camp removals, data centers, Portland Street Response, the street
+          repair fee, water rates). The list and its order are editorial and
+          the same for every race. Where a topic matches a recorded Council
+          decision, sitting councilors’ votes appear as pills. Every other cell
+          is either an explicit, sourced statement about that exact choice or a
+          gap; we never infer a stance from party, silence or a broad goal, and
+          each column header counts how many candidates are on record.
         </p>
         <p>
-          Every original profile, decision and issue analysis remains available.
-          Technical tests check coverage, navigation and preservation.
-          Independent editorial review and first-time-voter usability testing
-          remain outstanding.
+          Chips and short lines are written by us, shortened from the full
+          position, and each names the field it was shortened from. They may omit; they never
+          add. The full position, its source and any qualifier are one tap away
+          on the candidate’s card and brief. Candidate statements carry a
+          quotation glyph; the source chip is on the card and brief. Recorded
+          votes carry a ballot glyph. Our interpretation is always labeled
+          “Our reading.”
+        </p>
+        <p>
+          Four featured votes appear on each race page: the most reported and
+          most divided decisions among that district’s sitting councilors,
+          phrased as the question Council decided, with each councilor’s
+          recorded vote (Yes, No, Absent or Not on committee) and the decision’s
+          limits. Beneath each, challengers who have made an explicit statement
+          about that exact choice are listed alphabetically with a short
+          attributed paraphrase and its source; candidates without such a
+          statement are counted, not characterized. The full record of every topic remains on the Votes
+          page. Challengers have no Council votes; that is not a judgment.
+        </p>
+        <p>
+          “My ballot” is the reader’s own list. You choose which names to save
+          and in what order, and you may add a private note. The site never
+          fills, sorts, scores or shares that list; it is stored only in this
+          browser tab and never appears in a link, a screenshot label or our
+          analytics. A shared link can open a view of named candidates, but it
+          never writes to your list. There is no quiz, match score or
+          recommendation. The earlier alignment quiz remains retired and marked
+          as such in the evidence export.
+        </p>
+        <p>
+          Page views, including candidate brief pages, are recorded by our
+          site analytics; we configure our analytics not to receive URL
+          fragments, and your saved list and issue choice are not recorded.
+          Every original profile, decision and issue analysis
+          remains available on the brief, Votes and print pages and in the
+          evidence export, which now includes the short-line layer with its
+          version so reviewers can compare it with the underlying research.
+          Independent editorial review of the short lines and first-time-voter
+          usability testing remain outstanding. The issue views went live on
+          September 19, 2026 before that review, and each race page says so
+          until a reviewer signs the lines.
         </p>
         <h2>Sources and reproducibility</h2>
         <p>

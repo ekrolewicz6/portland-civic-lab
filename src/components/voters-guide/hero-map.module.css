@@ -1,0 +1,93 @@
+/* The hub's opening map: districts on a dark ground, the river lit, the
+   candidates standing on their district. Portrait markers are positioned in
+   percentages of the 600-unit viewBox so they track the SVG at any size. */
+.frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+.map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  font-family: var(--font-display);
+}
+.field {
+  fill: color-mix(in oklab, var(--color-sage) 22%, transparent);
+  stroke: var(--color-lichen);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.rest {
+  fill: color-mix(in oklab, var(--color-paper) 4%, transparent);
+  stroke: color-mix(in oklab, var(--color-lichen) 45%, transparent);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.river {
+  fill: color-mix(in oklab, var(--color-river) 85%, var(--color-paper));
+  opacity: 0.95;
+}
+.numeral,
+.numeralRest {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 64px;
+  letter-spacing: -0.03em;
+  user-select: none;
+}
+.numeral {
+  fill: var(--color-paper);
+  opacity: 0.92;
+}
+.numeralRest {
+  fill: color-mix(in oklab, var(--color-lichen) 40%, transparent);
+  font-size: 44px;
+}
+.marker {
+  position: absolute;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--color-canopy-mid);
+  box-shadow:
+    0 0 0 2px var(--color-paper),
+    0 6px 14px rgba(0, 0, 0, 0.45);
+  animation: hero-marker-in 700ms var(--hub-ease, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+.marker img {
+  object-fit: cover;
+  object-position: top;
+}
+.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-lichen);
+}
+@keyframes hero-marker-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30%) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marker {
+    animation: none;
+  }
+}

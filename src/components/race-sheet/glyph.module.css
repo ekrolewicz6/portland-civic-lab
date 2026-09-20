@@ -1,0 +1,107 @@
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Icons are CSS masks on currentColor: no SVG in the DOM per glyph. */
+.icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  flex: none;
+  background-color: currentColor;
+  -webkit-mask: var(--glyph) center / contain no-repeat;
+  mask: var(--glyph) center / contain no-repeat;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+/* Ballot box with a check (lucide "vote"). */
+.iconVoted {
+  --glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3Cpath d='M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z'/%3E%3Cpath d='M22 19H2'/%3E%3C/svg%3E");
+}
+/* Quotation marks (lucide "quote"). */
+.iconSaid {
+  --glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 2 2 0 0 1 2 2 1 1 0 0 0 1 1 1 1 0 0 0 1-1v-5a2 2 0 0 0-2-2 2 2 0 0 1-2-2V5a2 2 0 0 0-2-2z'/%3E%3Cpath d='M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 2 2 0 0 1 2 2 1 1 0 0 0 1 1 1 1 0 0 0 1-1v-5a2 2 0 0 0-2-2 2 2 0 0 1-2-2V5a2 2 0 0 0-2-2z'/%3E%3C/svg%3E");
+}
+
+.said,
+.voted,
+.gap {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: -2px;
+}
+.said {
+  color: var(--color-ink-muted);
+  margin-right: 6px;
+}
+.voted {
+  color: var(--color-fern);
+  margin-right: 6px;
+}
+.gap {
+  color: var(--color-ink-muted);
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* Vote words: Yes filled, No outlined, Absent dotted, Not on committee plain. */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid var(--color-canopy);
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--color-canopy);
+  background: transparent;
+  white-space: nowrap;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+.pill[data-vote="Yes"] {
+  background: var(--color-canopy);
+  color: var(--color-paper);
+}
+.pill[data-vote="Yes"] .icon {
+  background-color: var(--color-lichen);
+}
+.pill[data-vote="No"] .icon {
+  background-color: var(--color-fern);
+}
+.pill[data-vote="Absent"] {
+  border-style: dotted;
+  color: var(--color-ink-light);
+}
+.pill[data-vote="Not on committee"] {
+  border-color: transparent;
+  padding: 0;
+  font-weight: 500;
+  color: var(--color-ink-light);
+}
+.pill[data-vote="Not on committee"] .icon {
+  display: none;
+}
+@media print {
+  .pill[data-vote="Yes"] {
+    background: #000;
+    color: #fff;
+  }
+  .pill[data-vote="Yes"] .icon {
+    background-color: #fff;
+  }
+}

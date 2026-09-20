@@ -1,0 +1,1220 @@
+/* The Race Sheet. Calm civic editorial: warm paper, deep green, restrained.
+   Tokens come from globals.css; sizes use the 4/8/12/16/24/32/48 scale;
+   px sizes are deliberate because the html font-size is fluid. */
+
+.sheet {
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --indent: 52px;
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+}
+/* Focus rings: canopy on paper; a paper ring where the control itself is canopy. */
+.sheet :is(a, button, input, summary):focus-visible,
+.trayWrap :is(button):focus-visible,
+.panel :is(a, button, input, summary):focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+}
+.chip[aria-pressed="true"]:focus-visible,
+.chipGroup[data-active] .chipInfo:focus-visible,
+.trayButton:focus-visible {
+  outline-color: var(--color-canopy);
+  box-shadow: 0 0 0 2px var(--color-paper);
+}
+/* Zero-specificity reset so any control class (here or in controls.module.css) wins regardless of load order. */
+:where(.sheet button) {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.eyebrow {
+  margin: 0 0 4px;
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+.meta,
+.metaLabel {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+.metaLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  color: var(--color-ink-muted);
+  transition: background-color 150ms var(--ease), color 150ms var(--ease);
+}
+.iconButton:hover {
+  background: var(--color-parchment);
+  color: var(--color-ink);
+}
+
+/* ── Glyphs live in Glyph.tsx / glyph.module.css; only the rail key's dash is here. */
+.dash {
+  color: var(--color-ink-muted);
+  font-weight: 500;
+}
+
+/* ── Chip rail (only the 44px rail sticks under the site header) ────── */
+.railRoot {
+  margin: 0 0 8px;
+}
+.railWrap {
+  position: sticky;
+  top: var(--site-header-height, 80px);
+  z-index: 30;
+  padding: 4px 0;
+  background: var(--color-paper);
+  border-bottom: 1px solid var(--color-parchment);
+}
+.rail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px;
+  margin: -4px;
+  /* A right fade cues that more chips follow. */
+  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 769px) {
+  .rail {
+    flex-wrap: wrap;
+    overflow: visible;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+.chipGroup {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  border-radius: 999px;
+  background: var(--color-parchment);
+}
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--color-parchment);
+  color: var(--color-ink);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color 150ms var(--ease), color 150ms var(--ease);
+}
+.chip::before {
+  content: "";
+  position: absolute;
+  inset: -4px 0;
+}
+.chip:hover {
+  background: color-mix(in oklab, var(--color-parchment), var(--color-ink) 8%);
+}
+.chip[aria-pressed="true"] {
+  background: var(--color-canopy);
+  color: var(--color-paper);
+}
+.chipGroup .chip {
+  padding-right: 8px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.chipInfo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 36px;
+  padding-right: 6px;
+  border-radius: 0 999px 999px 0;
+  color: var(--color-ink-muted);
+  transition: background-color 150ms var(--ease), color 150ms var(--ease);
+}
+.chipInfo::before {
+  content: "";
+  position: absolute;
+  inset: -4px 0;
+}
+.chipGroup[data-active] .chipInfo {
+  background: var(--color-canopy);
+  color: var(--color-lichen);
+}
+.chipInfo:hover,
+.chipInfo[aria-expanded="true"] {
+  color: var(--color-ink);
+}
+.chipGroup[data-active] .chipInfo:hover,
+.chipGroup[data-active] .chipInfo[aria-expanded="true"] {
+  color: var(--color-paper);
+}
+/* Below the rail, in normal flow: (i) panel, status line, key. */
+.railBelow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "info info"
+    "status key";
+  align-items: baseline;
+  column-gap: 16px;
+  padding: 4px 0 0;
+}
+.railKey {
+  grid-area: key;
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-ink-muted);
+  white-space: nowrap;
+}
+.infoPanel {
+  grid-area: info;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 8px;
+  margin: 8px 0 4px;
+  padding: 12px 8px 12px 16px;
+  border-radius: 8px;
+  background: var(--color-paper-warm);
+  border: 1px solid var(--color-parchment);
+  animation: rise 200ms var(--ease);
+}
+.infoBody {
+  min-width: 0;
+}
+.infoQuestion {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.infoContext {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink-light);
+}
+.status {
+  grid-area: status;
+  margin: 4px 0 0;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+}
+@media (max-width: 768px) {
+  .railRoot {
+    margin-bottom: 4px;
+  }
+  .railBelow {
+    grid-template-areas:
+      "info info"
+      "status status";
+    padding-top: 2px;
+  }
+  .status {
+    margin-top: 0;
+  }
+  .railKey {
+    display: none;
+  }
+  /* One short line; the sentence tail hides visually (still in the DOM text). */
+  .status {
+    font-size: 13px;
+    line-height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .statusTail {
+    display: none;
+  }
+}
+/* Short viewports (landscape phones): nothing sticks. */
+@media (max-height: 520px) {
+  .railWrap {
+    position: static;
+  }
+}
+
+/* ── Four ways in: inline on desktop, fixed on phones ───────────────── */
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0 0 16px;
+}
+.barItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  color: var(--color-ink-light);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 150ms var(--ease), color 150ms var(--ease);
+}
+.barItem:hover {
+  background: var(--color-parchment);
+  color: var(--color-ink);
+}
+.barItem span {
+  white-space: nowrap;
+}
+.barCount {
+  color: var(--color-ember);
+  font-weight: 600;
+}
+/* From 769px up the tray is the way into My ballot; the bar is phone chrome. */
+@media (min-width: 769px) {
+  .bar {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 0;
+    padding: 4px 8px calc(4px + env(safe-area-inset-bottom, 0px));
+    background: var(--color-paper);
+    border-top: 1px solid var(--color-parchment);
+  }
+  .barItem {
+    flex-direction: column;
+    gap: 2px;
+    min-height: 48px;
+    padding: 4px 2px;
+    border-radius: 8px;
+    font-size: max(11px, 0.7rem);
+    line-height: 1.2;
+  }
+}
+@media (max-height: 520px) and (max-width: 768px) {
+  .bar {
+    position: static;
+    margin: 0 0 16px;
+  }
+}
+/* The site footer clears the fixed bar. */
+:global(body):has(.sheet) :global(footer) {
+  padding-bottom: calc(2.5rem + var(--race-sheet-bar-height, 0px));
+}
+
+/* ── Shared (legacy) view ───────────────────────────────────────────── */
+.sharedView {
+  margin: 0 0 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--color-paper-warm);
+  border: 1px solid var(--color-parchment);
+}
+.sharedHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.sharedTitle {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.sharedList {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+.sharedList li {
+  display: grid;
+  gap: 2px;
+}
+.sharedNote {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+
+/* ── The list ───────────────────────────────────────────────────────── */
+.list {
+  scroll-margin-top: calc(var(--site-header-height, 80px) + 60px);
+  margin: 0;
+}
+.row {
+  position: relative;
+  border-bottom: 1px solid var(--color-parchment);
+  scroll-margin-top: calc(var(--site-header-height, 80px) + 60px);
+  scroll-margin-bottom: calc(var(--race-sheet-bar-height, 0px) + 72px);
+}
+.row:first-child {
+  border-top: 1px solid var(--color-parchment);
+}
+.save {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  color: var(--color-ink-muted);
+  transition: color 150ms var(--ease), background-color 150ms var(--ease), transform 150ms var(--ease);
+}
+.save:hover {
+  background: var(--color-parchment);
+  color: var(--color-ink);
+}
+.save:active {
+  transform: scale(0.94);
+}
+.save[aria-pressed="true"] {
+  color: var(--color-ember);
+}
+.details {
+  min-width: 0;
+}
+.summary {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) 16px;
+  grid-template-areas:
+    "avatar who chevron"
+    "avatar line chevron";
+  column-gap: 12px;
+  row-gap: 4px;
+  align-items: start;
+  min-height: 60px;
+  padding: 12px 0 12px var(--indent);
+  list-style: none;
+  cursor: pointer;
+}
+.summary::-webkit-details-marker {
+  display: none;
+}
+.summary:hover .name {
+  text-decoration: underline;
+  text-decoration-color: var(--color-lichen);
+  text-underline-offset: 3px;
+}
+.avatar {
+  grid-area: avatar;
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--color-parchment);
+}
+.avatar > div,
+.cardPortrait > div {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+.avatar div span {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-ink-light);
+}
+.who {
+  grid-area: who;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 8px;
+  min-width: 0;
+  padding-top: 6px;
+}
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-ink);
+}
+.role {
+  display: block;
+  flex: 0 1 100%;
+  min-width: 0;
+  max-width: 100%;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-ink-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lineCell {
+  grid-area: line;
+  min-width: 0;
+}
+.line {
+  display: block;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-ink-light);
+  /* Clamps end on a word, never inside one. */
+  overflow-wrap: normal;
+  hyphens: manual;
+}
+.lineClamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.missingChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--color-parchment);
+  color: var(--color-ink-light);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.chevron {
+  grid-area: chevron;
+  align-self: center;
+  color: var(--color-ink-muted);
+  transition: transform 200ms var(--ease);
+}
+.details[open] .chevron {
+  transform: rotate(180deg);
+}
+@media (min-width: 768px) {
+  .summary {
+    grid-template-columns: 36px minmax(200px, 260px) minmax(0, 1fr) 16px;
+    grid-template-areas: "avatar who line chevron";
+    column-gap: 16px;
+    align-items: center;
+  }
+  .who {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-top: 0;
+  }
+}
+/* Phones: the line runs the full width under the avatar for a longer measure. */
+@media (max-width: 480px) {
+  .sheet {
+    --indent: 44px;
+  }
+  .summary {
+    grid-template-columns: 36px minmax(0, 1fr) 16px;
+    grid-template-areas:
+      "avatar who chevron"
+      "line line line";
+    row-gap: 6px;
+  }
+  .who {
+    padding-top: 6px;
+  }
+}
+
+/* ── Card: the open body of a row ───────────────────────────────────── */
+.card {
+  display: grid;
+  gap: 16px;
+  padding: 4px 0 24px var(--indent);
+  animation: rise 200ms var(--ease);
+}
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cardPortrait {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-parchment);
+}
+.cardPortrait div span {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-ink-light);
+}
+.cardWho {
+  min-width: 0;
+}
+.cardName {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.cardBackground {
+  margin: 2px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink-light);
+}
+.cardBlock {
+  display: grid;
+  gap: 4px;
+}
+.cardSummary,
+.cardMissing,
+.tradeoff,
+.position,
+.positionGap,
+.answerText {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-ink);
+}
+.cardMissing,
+.positionGap {
+  color: var(--color-ink-light);
+}
+.priorities {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+.priorities li {
+  position: relative;
+  padding-left: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.priorities li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-fern);
+}
+.values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin: 0 0 4px;
+  padding: 0;
+  list-style: none;
+}
+/* Interpretation tags are outlined; the filled pill is reserved for a missing state. */
+.values li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--color-parchment);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-ink-light);
+}
+.tradeoff {
+  color: var(--color-ink-light);
+}
+.answer {
+  display: grid;
+  gap: 4px;
+  padding: 8px 0;
+}
+.answerQuestion {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.cardSource {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+.cardActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding-top: 4px;
+}
+@media (max-width: 480px) {
+  .card {
+    padding-left: 0;
+  }
+}
+
+/* ── Source chips ───────────────────────────────────────────────────── */
+.sourceWrap {
+  display: inline-grid;
+  gap: 8px;
+  max-width: 100%;
+}
+.sourceDetail {
+  display: grid;
+  gap: 4px;
+  padding: 0 0 4px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-ink-light);
+  animation: rise 200ms var(--ease);
+}
+.sourceMeta {
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+.sourceNote {
+  color: var(--color-ink-light);
+}
+.sourceLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  color: var(--color-canopy);
+  font-weight: 500;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+/* ── Share ──────────────────────────────────────────────────────────── */
+.shareWrap {
+  margin: 24px 0 0;
+}
+.shareWrap div button {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--color-canopy);
+  background: transparent;
+  color: var(--color-canopy);
+  font-size: 14px;
+  font-weight: 600;
+}
+.shareWrap div button:hover {
+  background: var(--color-canopy);
+  color: var(--color-paper);
+}
+.shareWrap div button:focus-visible,
+.shareWrap div input:focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+}
+.shareWrap div span {
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+
+/* ── My ballot: tray ────────────────────────────────────────────────── */
+/* The wrapper is always mounted (its live region must exist before it has
+   text) and lets pointer events through when empty. */
+.trayWrap {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--race-sheet-bar-height, 0px) + 12px);
+  z-index: 41;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.trayWrap > * {
+  pointer-events: auto;
+}
+.tray {
+  animation: trayIn 250ms var(--ease);
+}
+.trayButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: var(--color-canopy);
+  color: var(--color-paper);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow:
+    0 1px 2px rgba(15, 36, 25, 0.12),
+    0 8px 24px rgba(15, 36, 25, 0.18);
+  transition: transform 150ms var(--ease), background-color 150ms var(--ease);
+}
+.trayButton:hover {
+  background: var(--color-canopy-mid);
+}
+.trayButton:active {
+  transform: scale(0.98);
+}
+.trayButton svg {
+  color: var(--color-ember);
+}
+.trayNotice {
+  margin: 0;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: var(--color-clay-tint);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-ink);
+  text-align: center;
+}
+@media (min-width: 769px) {
+  .trayWrap {
+    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  }
+}
+/* Phones: the bottom bar's My ballot item carries the count; no second control. */
+@media (max-width: 768px) {
+  .tray {
+    display: none;
+  }
+}
+
+/* ── My ballot: panel ───────────────────────────────────────────────── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 59;
+  background: rgba(15, 36, 25, 0.4);
+  animation: fade 200ms var(--ease);
+}
+.panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  max-height: min(88dvh, 100vh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 8px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+  border-radius: 8px 8px 0 0;
+  background: var(--color-paper-warm);
+  border-top: 1px solid var(--color-parchment);
+  animation: sheetIn 250ms var(--ease);
+}
+.panelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.panelTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.panelTitle:focus {
+  outline: none;
+}
+.panelNote {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink-light);
+}
+.storageNotice {
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: var(--color-clay-tint);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-ink);
+}
+.slots {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+.slot,
+.slotEmpty {
+  border-radius: 8px;
+  background: var(--color-paper);
+}
+.slot {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+}
+.slotEmpty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px dashed var(--color-parchment);
+  background: transparent;
+}
+.ordinal {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--color-parchment);
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+.slotHint {
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+.slotTop {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+.slotBody {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.slotName {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.slotRole {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+.slotLine {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink-light);
+}
+.slotVotes {
+  display: grid;
+  gap: 4px;
+  padding-top: 4px;
+}
+.voteList {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.voteList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-ink-light);
+}
+.noteLabel {
+  display: block;
+  padding-top: 4px;
+}
+.noteInput {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 4px;
+  border: 1px solid var(--color-parchment);
+  background: var(--color-paper-warm);
+  font: inherit;
+  font-size: 14px;
+  color: var(--color-ink);
+}
+.noteInput::placeholder {
+  color: var(--color-ink-muted);
+}
+.noteInput:focus {
+  border-color: var(--color-sage);
+}
+.slotActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+/* Narrow phones: one-line summary. */
+@media (max-width: 480px) {
+  .slotLine {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+.panelActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.confirm {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+.panelFoot {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+@media (min-width: 769px) {
+  .panel {
+    left: auto;
+    right: 24px;
+    bottom: 24px;
+    width: min(460px, calc(100vw - 48px));
+    max-height: min(80vh, 760px);
+    padding: 8px 20px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--color-parchment);
+  }
+}
+
+/* ── Print-only ballot card (portalled to <body>) ───────────────────── */
+.printCard {
+  display: none;
+}
+
+/* ── Motion ─────────────────────────────────────────────────────────── */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes trayIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes sheetIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sheet *,
+  .sheet *::before,
+  .sheet *::after,
+  .trayWrap,
+  .tray,
+  .panel,
+  .backdrop {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Print ──────────────────────────────────────────────────────────── */
+@media print {
+  .railRoot,
+  .bar,
+  .trayWrap,
+  .tray,
+  .backdrop,
+  .panel,
+  .save,
+  .shareWrap,
+  .chevron,
+  .sharedView,
+  .cardActions {
+    display: none !important;
+  }
+  .row {
+    break-inside: avoid;
+  }
+  .summary,
+  .card {
+    padding-left: 0;
+  }
+  .lineClamp {
+    display: block;
+    overflow: visible;
+  }
+  .sheet {
+    color: #000;
+  }
+
+  /* "Print ballot card": only the card, nothing else on the page. */
+  :global(body[data-print-ballot]) > *:not(.printCard) {
+    display: none !important;
+  }
+  :global(body[data-print-ballot]) .printCard {
+    display: block;
+    padding: 24px;
+    font-family: var(--font-body), system-ui, sans-serif;
+    color: #000;
+  }
+  .printEyebrow {
+    margin: 0 0 4px;
+    font-family: var(--font-mono), monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .printDistrict {
+    margin: 0 0 24px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .printSlots {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 32px;
+    padding: 0;
+    list-style: none;
+  }
+  .printSlots li {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: baseline;
+    column-gap: 12px;
+    min-height: 32px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #999;
+  }
+  .printOrdinal {
+    font-family: var(--font-mono), monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .printName {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .printNote {
+    grid-column: 2;
+    font-size: 13px;
+    color: #333;
+  }
+  .printReturn {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+/* The chip rail is the phone's column legend; on desktop the grid's own headers highlight a column. */
+@media (min-width: 769px) {
+  .phoneOnly {
+    display: none;
+  }
+}

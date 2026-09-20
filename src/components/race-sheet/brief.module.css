@@ -1,0 +1,907 @@
+/* Race Sheet depth layers: the candidate brief (L2), the About strip, the
+   Term toggle and the print edition. Same tokens as the sheet so the pages
+   read as one object: warm paper, deep green, a canopy ring for focus.
+   Long URLs may break anywhere; prose and names never break mid-word. */
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.page a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-lichen);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.page a:hover {
+  text-decoration-color: currentColor;
+}
+.page :is(a, button, summary, input):focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.page p {
+  margin: 0 0 12px;
+}
+.page ul,
+.page ol {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+.page li {
+  margin: 4px 0;
+}
+.page summary {
+  cursor: pointer;
+  list-style: none;
+}
+.page summary::-webkit-details-marker {
+  display: none;
+}
+@media (min-width: 768px) {
+  .page {
+    padding: 32px 24px 96px;
+  }
+}
+
+/* ── Shared type ─────────────────────────────────────────────────── */
+
+.eyebrow,
+.label,
+.meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+/* Section titles are the article's second level of hierarchy, so they are
+   set in the display face, not the 11px mono of the eyebrows and labels. */
+.sectionTitle {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+.label {
+  display: block;
+  margin: 0 0 8px;
+}
+/* Reading measure for the brief's prose; the print grid is outside it. */
+.brief p,
+.brief li,
+.brief blockquote {
+  max-width: 62ch;
+}
+.muted {
+  color: var(--color-ink-muted);
+  font-size: 14px;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ── Breadcrumb and header ───────────────────────────────────────── */
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+.crumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  min-height: 44px;
+}
+.crumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+  color: var(--color-ink-light);
+}
+.crumbs a:hover {
+  text-decoration: underline;
+}
+.crumbs li::after {
+  content: "/";
+  color: var(--color-lichen);
+}
+.crumbs li:last-child::after {
+  content: none;
+}
+.crumbs [aria-current] {
+  color: var(--color-ink);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: 12px 16px;
+  align-items: start;
+  margin-top: 8px;
+}
+.head > .portrait {
+  grid-row: 1 / span 2;
+}
+.portrait {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.head h1,
+.head h2.name {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-canopy);
+  margin: 8px 0;
+}
+.role {
+  margin: 0;
+  font-weight: 500;
+}
+.background {
+  margin: 4px 0 0;
+  color: var(--color-ink-light);
+}
+.headActions {
+  grid-column: 2;
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+.headActions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+/* Share is the secondary action beside the name: an outline button, quieter
+   than the candidate's name. The selector outranks ShareGuide's own styles. */
+.page .brief .headActions button {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--color-canopy);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-canopy);
+  font-size: 14px;
+  font-weight: 500;
+}
+.page .brief .headActions button:hover {
+  background: var(--color-paper-warm);
+  color: var(--color-canopy);
+}
+.page .brief .headActions button:focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+}
+.credit {
+  font-size: 12px;
+  color: var(--color-ink-muted);
+}
+.page .credit {
+  text-decoration: none;
+}
+.page a.credit:hover {
+  text-decoration: underline;
+}
+@media (min-width: 768px) {
+  .head {
+    grid-template-columns: 144px minmax(0, 1fr);
+    gap: 24px;
+  }
+  .head h1,
+  .head h2.name {
+    font-size: 40px;
+  }
+  .headActions {
+    grid-column: 2;
+  }
+}
+
+/* ── Sections ───────────────────────────────────────────────────── */
+
+.section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-parchment);
+}
+.section:target {
+  scroll-margin-top: 96px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+.tags li {
+  margin: 0;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--color-parchment);
+  font-size: 14px;
+  line-height: 20px;
+}
+.inlineSources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-size: 14px;
+}
+.inlineSources a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.issue {
+  margin-top: 16px;
+}
+.issue h3,
+.issue h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.issue p {
+  margin: 0 0 8px;
+}
+
+/* "—" is the one missing-state glyph: same markup and color for everyone. */
+.gap {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+  margin: 0;
+}
+.gapText {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+  max-width: 62ch;
+}
+.dash {
+  flex: 0 0 auto;
+  color: var(--color-ink-muted);
+}
+
+/* ── Source chips ───────────────────────────────────────────────── */
+
+.source {
+  margin: 0 0 4px;
+}
+.source summary {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  min-height: 44px;
+  font-size: 14px;
+  color: var(--color-ink-light);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--color-parchment);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+.source[open] .chip {
+  background: var(--color-canopy);
+  color: var(--color-paper);
+}
+.sourceBody {
+  padding: 0 0 8px 4px;
+  font-size: 14px;
+  color: var(--color-ink-light);
+}
+.sourceBody a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  overflow-wrap: anywhere;
+}
+.sourceBody p {
+  margin: 4px 0 0;
+  color: var(--color-ink-muted);
+}
+
+/* The Said / Voted glyphs and vote pills come from Glyph.tsx (glyph.module.css). */
+
+/* ── Council votes in the brief ─────────────────────────────────── */
+
+.voteList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.voteRow {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-parchment);
+}
+.voteRow:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.voteRow h3,
+.voteRow h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+.voteLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.headline {
+  font-size: 15px;
+  color: var(--color-ink-light);
+}
+.headlineLabel {
+  display: block;
+  margin: 0 0 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+.disclosure {
+  font-size: 14px;
+  color: var(--color-ink-light);
+}
+.voteRow details {
+  font-size: 14px;
+  color: var(--color-ink-light);
+}
+.voteRow summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  color: var(--color-ink-muted);
+}
+.voteRow summary svg {
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.voteRow details[open] summary svg {
+  transform: rotate(180deg);
+}
+.voteRow details p {
+  margin: 0 0 8px;
+}
+.moreLink {
+  margin-top: 4px;
+}
+
+.quote {
+  margin: 0 0 12px;
+  padding: 0 0 0 16px;
+  border-left: 2px solid var(--color-parchment);
+}
+.quote p {
+  margin: 0 0 4px;
+}
+
+.statement {
+  margin: 0 0 16px;
+}
+.statement p {
+  margin: 0 0 4px;
+}
+
+.sources ol {
+  padding-left: 20px;
+  font-size: 14px;
+}
+.sources li {
+  margin: 0;
+}
+.sourceLink {
+  display: inline;
+  padding: 10px 0;
+  line-height: 1.6;
+  color: var(--color-canopy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+.sourceLink svg {
+  display: inline;
+  vertical-align: -2px;
+  margin-left: 2px;
+}
+.sourceLink:hover {
+  color: var(--color-fern);
+}
+.sources small {
+  display: block;
+  max-width: 62ch;
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+
+/* ── Prev / next ────────────────────────────────────────────────── */
+
+.pager {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-parchment);
+  display: grid;
+  gap: 12px;
+}
+.pagerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 16px;
+  min-width: 0;
+}
+.pagerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  padding: 8px 16px;
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--color-canopy) 8%, var(--color-paper));
+  color: var(--color-canopy);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pagerLink:hover {
+  background: color-mix(in oklab, var(--color-canopy) 15%, var(--color-paper));
+}
+.pagerLink:focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+}
+.pagerLinks .pagerLink:last-child {
+  text-align: right;
+  margin-left: auto;
+}
+.pagerLinks span {
+  display: block;
+}
+.pagerLinks small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+.pager > a {
+  justify-self: start;
+  white-space: normal;
+  text-align: left;
+}
+@media (max-width: 400px) {
+  .head > .portrait {
+    grid-row: auto;
+  }
+  .headActions {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ── About strip ────────────────────────────────────────────────── */
+
+.about {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-parchment);
+  font-size: 15px;
+  color: var(--color-ink-light);
+}
+.about p {
+  max-width: 60ch;
+}
+.aboutLinks {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.aboutLinks li {
+  margin: 0;
+}
+.terms {
+  margin-top: 12px;
+}
+.terms summary {
+  list-style: none;
+}
+.terms summary::-webkit-details-marker {
+  display: none;
+}
+.termsCaret {
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.terms[open] .termsCaret {
+  transform: rotate(180deg);
+}
+.terms dl {
+  margin: 0 0 8px;
+}
+.terms dt {
+  margin-top: 12px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.terms dd {
+  margin: 2px 0 0;
+}
+
+/* ── Term (dfn + toggle) ────────────────────────────────────────── */
+
+.term {
+  font-style: normal;
+}
+.termButton {
+  all: unset;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--color-ink-muted);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.termButton:hover,
+.termButton[aria-expanded="true"] {
+  text-decoration-style: solid;
+  text-decoration-color: var(--color-canopy);
+}
+.termButton:focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.termDefinition {
+  display: block;
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-left: 2px solid var(--color-parchment);
+  background: var(--color-paper-warm);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink-light);
+}
+.termDefinition[hidden] {
+  display: none;
+}
+.termDefinition strong {
+  color: var(--color-ink);
+}
+
+/* ── Print edition ──────────────────────────────────────────────── */
+
+.printPage {
+  max-width: 960px;
+}
+.printHead h1 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-canopy);
+  margin: 8px 0;
+}
+.printActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 12px;
+}
+.printButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--color-canopy);
+  color: #fff;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.printButton:hover {
+  transform: translateY(-1px);
+}
+.printActions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.key {
+  display: grid;
+  gap: 8px 24px;
+  margin: 0;
+  font-size: 14px;
+}
+.key > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.key dt {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+  min-width: 120px;
+}
+.key dd {
+  margin: 0;
+  color: var(--color-ink-light);
+}
+@media (min-width: 768px) {
+  .key {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Fixed layout with the page's <colgroup> widths, so a name column is never
+   squeezed until words break; text wraps on spaces only. */
+.grid {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.grid th,
+.grid td {
+  text-align: left;
+  vertical-align: top;
+  padding: 8px 8px 8px 0;
+  border-top: 1px solid var(--color-parchment);
+  overflow-wrap: normal;
+  hyphens: manual;
+}
+.grid thead th {
+  border-top: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+.grid th[scope="row"] {
+  font-weight: 600;
+}
+.grid td[data-label]::before {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .grid thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .grid colgroup {
+    display: none;
+  }
+  .grid,
+  .grid tbody,
+  .grid tr,
+  .grid th,
+  .grid td {
+    display: block;
+    padding-right: 0;
+  }
+  .grid tr {
+    padding: 12px 0;
+    border-top: 1px solid var(--color-parchment);
+  }
+  .grid th,
+  .grid td {
+    border-top: 0;
+    padding: 2px 0;
+  }
+  .grid td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+  }
+}
+
+.featured {
+  margin: 0 0 24px;
+  padding: 0 0 16px;
+  border-bottom: 1px solid var(--color-parchment);
+}
+.featured h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.featuredVotes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 8px 0 12px;
+  padding: 0;
+  list-style: none;
+}
+.featuredVotes li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+.saidList {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+.saidList li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  margin: 4px 0;
+}
+
+.brief {
+  margin-top: 16px;
+}
+.printPage .brief + .brief {
+  padding-top: 48px;
+  border-top: 1px solid var(--color-parchment);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page * {
+    transition: none !important;
+  }
+}
+
+@media print {
+  /* The site frame around the page: nothing fixed or sticky on paper. */
+  :global(body):has(.printPage) > :global(div) > :global(header),
+  :global(body):has(.printPage) > :global(div) > :global(footer) {
+    display: none !important;
+  }
+  .page {
+    max-width: none;
+    padding: 0;
+    font-size: 11pt;
+    color: #000;
+  }
+  .page a {
+    text-decoration: none;
+    color: #000;
+  }
+  .noPrint,
+  .printActions,
+  .crumbs,
+  .pager {
+    display: none !important;
+  }
+  .section,
+  .featured,
+  .voteRow {
+    break-inside: avoid;
+  }
+  /* The A–Z table may span pages; only its rows stay whole. */
+  .section:has(.grid) {
+    break-inside: auto;
+  }
+  .grid tr {
+    break-inside: avoid;
+  }
+  .printPage .brief {
+    break-before: page;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+  .page details {
+    display: block;
+  }
+  .page summary {
+    display: block;
+  }
+  .grid thead {
+    position: static;
+    width: auto;
+    height: auto;
+    clip: auto;
+  }
+}
+
+/* Ladder rows inherit the issue hue from the grid stylesheet's data-issue rules. */
+.ladderWrap {
+  margin-top: 4px;
+}
+.ladderWhat {
+  display: inline;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-ink);
+}
+
+/* In their words: the verbatim opening leads the brief. */
+.opening {
+  border-left: 3px solid var(--color-accent, #b4532a);
+  padding-left: 16px;
+}
+.openingQuote {
+  margin: 0 0 8px;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--color-ink);
+}
+.openingQuote p {
+  margin: 0;
+}

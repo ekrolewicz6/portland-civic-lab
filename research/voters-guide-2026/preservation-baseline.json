@@ -43,7 +43,7 @@
     },
     {
       "id": "keir-legree",
-      "hash": "0a2eee2f9c8bb25ca5f3d3c8018232870828d79eb022380ef17efd8e4fa4ae90",
+      "hash": "6a1e2f334b04cfc666cde0dfa462e24866b95a38621d4a730cb93a06f5e21fef",
       "location": "/voters-guide/portland-district-3#keir-legree"
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "id": "cristal-otero",
-      "hash": "2fdd7375e76f4907af1d957809383c94cbdaacbe8fafca9955f9f4ac25bd1c70",
+      "hash": "a3b912a7b3872c79edd9bc9e756fe12af38567f4c059917a53ace72c65273a5e",
       "location": "/voters-guide/portland-district-3#cristal-otero"
     },
     {
@@ -108,7 +108,7 @@
     },
     {
       "id": "timothy-tj-anderson",
-      "hash": "9359d5ee413e6c4dbe0d84c30e0431a7ee1f2c0605774a7431fca25e8f464420",
+      "hash": "563f613925c8ec94fd2d30a1c2255dfcb63707bdd8c0946d7444663ca9fe0f51",
       "location": "/voters-guide/portland-district-4#timothy-tj-anderson"
     },
     {
@@ -608,5 +608,6 @@
       "location": "#disagreement-animal-welfare"
     }
   ],
-  "accountsHash": "36e27c090ec825b747fc295d807d272c283fbb74eb9016618d5a66f3017a6249"
+  "accountsHash": "36e27c090ec825b747fc295d807d272c283fbb74eb9016618d5a66f3017a6249",
+  "note": "2026-09-19: keir-legree re-recorded after his emailed response added sourced positions (research log, legree-2026-09-19). 2026-09-19: timothy-tj-anderson re-recorded after his emailed response added sourced positions (research log, anderson-2026-09-19). 2026-09-19: cristal-otero re-recorded after her emailed response detailed her housing position (research log, otero-2026-09-19)."
 }

@@ -1,0 +1,116 @@
+/* District map: four tappable council districts on paper, river on top.
+   The viewBox is 600 units; in a 320px viewport with 16px gutters the map is
+   288px wide, one unit is 0.48px, and the smallest type here (26 units)
+   renders at about 12.5px. */
+
+.map {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1;
+  height: auto;
+  overflow: visible;
+  font-family: var(--font-display);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shape {
+  stroke: var(--color-canopy);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  transition: fill 160ms ease;
+}
+
+/* Published districts: a link wrapping the path and its label. */
+.link {
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+.link .shape {
+  fill: var(--color-sage-tint);
+}
+.link:hover .shape,
+.link:focus-visible .shape {
+  fill: var(--color-lichen);
+}
+/* Focus ring drawn on the district outline itself, since an SVG <a> cannot
+   take a box outline reliably across browsers. The stroke is centred on the
+   edge and later siblings cover its outer half, so 4px guarantees a 2px
+   canopy ring inside the district whatever the paint order. */
+.link:focus-visible .shape {
+  stroke-width: 4px;
+  stroke: var(--color-canopy);
+}
+@media (forced-colors: active) {
+  .link:focus-visible .shape {
+    stroke: Highlight;
+    stroke-width: 6px;
+  }
+}
+
+/* Districts without a race page yet. */
+.pending .shape {
+  fill: var(--color-parchment);
+}
+.pending .numeral,
+.pending .caption {
+  fill: var(--color-ink-muted);
+}
+
+.labels {
+  pointer-events: none;
+}
+.numeral {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 56px; /* viewBox units */
+  fill: var(--color-canopy);
+  pointer-events: none;
+  user-select: none;
+}
+.caption {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 26px; /* viewBox units: ~12.5px when the map is 288px wide */
+  letter-spacing: 0.01em;
+  fill: var(--color-canopy-mid);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Opaque water so district outlines that run to the state line mid-Columbia
+   stay hidden under the river; the hex is a fallback for the color-mix tint. */
+.river {
+  fill: #c5d9e3;
+  fill: color-mix(in srgb, var(--color-river) 30%, var(--color-paper));
+  stroke: var(--color-river);
+  stroke-opacity: 0.5;
+  stroke-width: 0.75;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.source {
+  margin: 8px 0 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+}
+.source a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+.source a:focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shape {
+    transition: none;
+  }
+}

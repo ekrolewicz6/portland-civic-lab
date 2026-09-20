@@ -63,8 +63,10 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
 ];
 
 function FooterLinkItem({ link }: { link: FooterLink }) {
+  // py-3 lifts each 13px link to a 44px target; the list spacing below is
+  // reduced to match so the columns keep their rhythm.
   const cls =
-    "group inline-flex items-center gap-1 text-[13px] text-white/60 hover:text-white transition-colors";
+    "group inline-flex min-h-[44px] items-center gap-1 py-3 text-[13px] text-white/60 hover:text-white transition-colors";
   const inner = (
     <>
       {link.label}
@@ -127,7 +129,7 @@ export default function Footer() {
               <h4 className="text-[10px] font-mono font-semibold text-[var(--color-ember)] uppercase tracking-[0.2em] mb-4">
                 {col.title}
               </h4>
-              <ul className="space-y-2.5">
+              <ul className="-my-2 space-y-0">
                 {col.links.map((l) => (
                   <FooterLinkItem key={l.label} link={l} />
                 ))}
@@ -142,8 +144,8 @@ export default function Footer() {
             &copy; {year} {LEGAL_ENTITY} &middot; Free, public civic tools, not affiliated with the City of Portland or any government agency.
           </p>
           <div className="flex items-center gap-5 text-[12px] text-white/45">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+            <Link href="/privacy" className="inline-flex min-h-[44px] items-center py-3 hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms" className="inline-flex min-h-[44px] items-center py-3 hover:text-white transition-colors">Terms</Link>
           </div>
         </div>
       </div>

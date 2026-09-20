@@ -1,7 +1,30 @@
 import type { Metadata } from "next";
+import { findRace } from "./published";
+import { GUIDE_ORIGIN, raceDescription, raceTitle } from "./race-sheet/seo";
 
-export const GUIDE_ORIGIN = "https://www.portlandciviclab.org";
+export { GUIDE_ORIGIN };
 export const GUIDE_IMAGE_VERSION = "20260919-1";
+
+/**
+ * A district's share card copies its title and description from the race
+ * page's own templates, so the crawler surface (share images, structured
+ * data) and the page never drift apart. The fallback strings apply only if
+ * the race is missing from the published set.
+ */
+function districtCard(district: "3" | "4") {
+  const race = findRace(`portland-district-${district}`);
+  return {
+    path: `/voters-guide/portland-district-${district}`,
+    title: race ? raceTitle(race) : `Portland City Council District ${district} Voter Guide 2026`,
+    description: race
+      ? raceDescription(race)
+      : `Every Portland City Council District ${district} candidate on one page for November 3, 2026, with sources and no endorsements.`,
+    eyebrow: `CITY COUNCIL · DISTRICT ${district}`,
+    label: `Portland District ${district} voter guide`,
+    district,
+  } as const;
+}
+
 export const guideCards = {
   guide: {
     path: "/voters-guide",
@@ -11,22 +34,8 @@ export const guideCards = {
     label: "Portland voter guide",
     district: "",
   },
-  "district-3": {
-    path: "/voters-guide/portland-district-3",
-    title: "Portland District 3 Voter Guide 2026 | Compare Candidates",
-    description: "Meet Portland District 3 City Council candidates for November 3, 2026. Compare their plans, experience and public records, with sources and no endorsements.",
-    eyebrow: "CITY COUNCIL · DISTRICT 3",
-    label: "Portland District 3 voter guide",
-    district: "3",
-  },
-  "district-4": {
-    path: "/voters-guide/portland-district-4",
-    title: "Portland District 4 Voter Guide 2026 | Compare Candidates",
-    description: "Meet Portland District 4 City Council candidates for November 3, 2026. Compare their plans, experience and public records, with sources and no endorsements.",
-    eyebrow: "CITY COUNCIL · DISTRICT 4",
-    label: "Portland District 4 voter guide",
-    district: "4",
-  },
+  "district-3": districtCard("3"),
+  "district-4": districtCard("4"),
   standards: {
     path: "/voters-guide/methodology",
     title: "Portland Voter Guide | Editorial Standards & Coverage",
