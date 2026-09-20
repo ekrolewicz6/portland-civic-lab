@@ -377,7 +377,7 @@ test("desktop: the picker adds up to two topic columns, incumbents show their re
   await expect(open).toHaveAttribute("data-issue", "topic");
   await expect(open).toContainText(`${incumbent.name} on ${moda.label}`);
   await expect(open).toContainText(moda.question);
-  await expect(open).toContainText("Recorded Council vote.");
+  await expect(open).toContainText("Recorded Council vote");
   await expect(open).toContainText(moda.context);
   await expect(open.getByRole("link", { name: "Full brief" })).toHaveAttribute("href", `/voters-guide/portland-district-4/${incumbent.id}`);
   await open.getByRole("button", { name: "Close", exact: true }).click();

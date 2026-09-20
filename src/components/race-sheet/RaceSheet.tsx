@@ -235,6 +235,7 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
         coverage={sheet.coverage}
         extra={extraTopicsSelected}
         topicCoverage={sheet.topicCoverage}
+        topicDecisions={sheet.topicDecisions}
         saved={savedSet}
         onToggleSave={toggleSave}
         onHighlight={changeIssue}

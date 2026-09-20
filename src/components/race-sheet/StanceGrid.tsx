@@ -2,7 +2,7 @@
 import { Fragment, useCallback, useState } from "react";
 import Link from "next/link";
 import { Bookmark, BookmarkCheck } from "lucide-react";
-import type { SheetRow } from "@/lib/voters-guide/race-sheet";
+import type { SheetRow, TopicDecision } from "@/lib/voters-guide/race-sheet";
 import { issues, type IssueId } from "@/lib/voters-guide/race-sheet/issues";
 import type { ExtraTopic } from "@/lib/voters-guide/race-sheet/types";
 import { VotePill } from "./Glyph";
@@ -38,6 +38,7 @@ export default function StanceGrid({
   coverage,
   extra,
   topicCoverage,
+  topicDecisions,
   saved,
   onToggleSave,
   onHighlight,
@@ -48,6 +49,7 @@ export default function StanceGrid({
   coverage: Record<IssueId, number>;
   extra: ExtraTopic[];
   topicCoverage: Record<string, number>;
+  topicDecisions: Record<string, TopicDecision>;
   saved: Set<string>;
   onToggleSave: (id: string) => void;
   onHighlight: (issue: IssueId | null) => void;
@@ -165,6 +167,7 @@ export default function StanceGrid({
                         <button
                           type="button"
                           className={has ? styles.chip : c.gapPill}
+                          data-vote={tc.vote ?? undefined}
                           aria-expanded={cellOpen}
                           aria-controls={cellOpen ? detailId : undefined}
                           aria-label={has ? undefined : `${row.name} on ${topic.label.toLowerCase()}: no statement in the sources we reviewed`}
@@ -195,6 +198,7 @@ export default function StanceGrid({
                         row={row}
                         issue={issues.find((i) => i.id === open.key) ?? null}
                         topic={open.key.startsWith("topic:") ? (extra.find((t) => `topic:${t.id}` === open.key) ?? null) : null}
+                        decision={open.key.startsWith("topic:") ? (topicDecisions[open.key.slice("topic:".length)] ?? null) : null}
                         raceId={raceId}
                         id={detailId}
                         onClose={() => setOpen(null)}

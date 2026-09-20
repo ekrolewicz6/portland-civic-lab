@@ -76,6 +76,8 @@ export type SheetRow = {
 
 export type VoteWord = "Yes" | "No" | "Absent" | "Not on committee";
 
+export type TopicDecision = { title: string; voteLabel: string | null; source: SourceChip };
+
 export type FeaturedRow = {
   questionId: string;
   /** The plain question Council decided. */
@@ -280,6 +282,8 @@ export type ClientSheet = {
   coverage: Record<IssueId, number>;
   topics: ExtraTopic[];
   topicCoverage: Record<string, number>;
+  /** For topics that match a Council decision: what was decided, for the vote card. */
+  topicDecisions: Record<string, TopicDecision>;
   featured: { questionId: string; title: string; votes: { id: string; name: string; vote: VoteWord }[] }[];
 };
 
@@ -294,6 +298,12 @@ export function clientSheet(sheet: RaceSheet): ClientSheet {
     topics: extraTopics,
     topicCoverage: Object.fromEntries(
       extraTopics.map((t) => [t.id, sheet.rows.filter((r) => r.topicCells[t.id].vote || r.topicCells[t.id].chip).length]),
+    ),
+    topicDecisions: Object.fromEntries(
+      extraTopics.flatMap((t) => {
+        const d = t.decisionId ? councilDecisions.find((x) => x.id === t.decisionId) : undefined;
+        return d ? [[t.id, { title: d.title, voteLabel: d.voteLabel ?? null, source: sourceChip(d.source) } satisfies TopicDecision]] : [];
+      }),
     ),
     featured: sheet.featured.map((f) => ({
       questionId: f.questionId,
