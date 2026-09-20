@@ -88,7 +88,8 @@ export default function StanceGrid({
                   <span className={styles.issueLong}>{issue.label}</span>
                 </button>
                 <span className={styles.count}>
-                  {coverage[issue.id]} of {rows.length} documented
+                  {coverage[issue.id]} of {rows.length}
+                  <span className={styles.countWord}> documented</span>
                 </span>
               </th>
             ))}
@@ -96,7 +97,8 @@ export default function StanceGrid({
               <th key={topic.id} scope="col" className={`${styles.issueHead} ${styles.topicHead}`} data-issue="topic">
                 <span className={styles.headButton}>{topic.label}</span>
                 <span className={styles.count}>
-                  {topicCoverage[topic.id] ?? 0} of {rows.length} on record
+                  {topicCoverage[topic.id] ?? 0} of {rows.length}
+                  <span className={styles.countWord}> on record</span>
                 </span>
               </th>
             ))}
@@ -130,7 +132,7 @@ export default function StanceGrid({
                     const chip = cell.chip ?? fallbackChip(cell.line, cell.position);
                     const cellOpen = isOpen && open?.key === issue.id;
                     return (
-                      <td key={issue.id} className={styles.cell} data-issue={issue.id}>
+                      <td key={issue.id} className={styles.cell} data-issue={issue.id} data-state={chip ? "chip" : "gap"}>
                         <span className={styles.cellLabel}>{issue.short}</span>
                         {chip ? (
                           <button
@@ -162,7 +164,7 @@ export default function StanceGrid({
                     const cellOpen = isOpen && open?.key === `topic:${topic.id}`;
                     const has = Boolean(tc.vote || tc.chip);
                     return (
-                      <td key={topic.id} className={styles.cell} data-issue="topic">
+                      <td key={topic.id} className={styles.cell} data-issue="topic" data-state={tc.vote ? "vote" : has ? "chip" : "gap"}>
                         <span className={styles.cellLabel}>{topic.short}</span>
                         <button
                           type="button"

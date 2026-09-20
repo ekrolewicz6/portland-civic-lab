@@ -10,8 +10,9 @@ const OPEN_BY_DEFAULT = "supplemental-budget";
 const MODA_DECISION_ID = "moda";
 
 /* Opens the <details> a hash points at (e.g. /votes#moda from the race
-   sheet), then scrolls to it. No framework needed for a static page. */
-const openTargeted = `(function(){function go(){var h=location.hash.slice(1);if(!h)return;var el=document.getElementById(h);if(el&&el.tagName==="DETAILS"&&el.hasAttribute("data-topic")){el.open=true;el.scrollIntoView({block:"start"});}}go();addEventListener("hashchange",go);})();`;
+   sheet, or /votes#disagreement-moda from a brief), then scrolls to it.
+   No framework needed for a static page. */
+const openTargeted = `(function(){function go(){var h=location.hash.slice(1);if(!h)return;var el=document.getElementById(h);if(el&&el.tagName==="DETAILS"&&(el.hasAttribute("data-topic")||el.hasAttribute("data-record"))){el.open=true;el.scrollIntoView({block:"start"});}}go();addEventListener("hashchange",go);})();`;
 
 function countLine(topic: SplitTopic) {
   const n = topic.decisions.length;

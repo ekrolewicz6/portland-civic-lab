@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { Bookmark, X } from "lucide-react";
 import type { ClientSheet } from "@/lib/voters-guide/race-sheet";
 import { isIssueId, issueById, type IssueId } from "@/lib/voters-guide/race-sheet/issues";
@@ -61,6 +61,8 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
   const [ballot, setBallot] = useState<BallotState>(emptyBallot);
   const [persistent, setPersistent] = useState(true);
   const [ballotOpen, setBallotOpen] = useState(false);
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const pickerId = useId();
   const [notice, setNotice] = useState<string | null>(null);
   const [shared, setShared] = useState<string[] | null>(null);
   const noticeTimer = useRef<number | null>(null);
@@ -193,9 +195,16 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
 
   return (
     <div className={styles.sheet} data-race-sheet data-issue={active ?? "summary"}>
-      <div className={styles.phoneOnly}>
-        <ChipRail active={active} onChange={changeIssue} coverage={sheet.coverage} total={sheet.rows.length} />
-      </div>
+      <ChipRail
+        active={active}
+        onChange={changeIssue}
+        coverage={sheet.coverage}
+        total={sheet.rows.length}
+        pickerOpen={pickerOpen}
+        pickerId={pickerId}
+        selectedTopics={extra.length}
+        onTogglePicker={() => setPickerOpen((v) => !v)}
+      />
 
       <BottomBar raceId={raceId} savedCount={ballot.order.length} onOpenBallot={(opener) => openBallot(true, opener)} />
 
@@ -226,7 +235,15 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
         </section>
       )}
 
-      <TopicPicker topics={sheet.topics} coverage={sheet.topicCoverage} total={sheet.rows.length} selected={extra} onChange={changeTopics} />
+      <TopicPicker
+        id={pickerId}
+        open={pickerOpen}
+        topics={sheet.topics}
+        coverage={sheet.topicCoverage}
+        total={sheet.rows.length}
+        selected={extra}
+        onChange={changeTopics}
+      />
 
       <StanceGrid
         rows={sheet.rows}

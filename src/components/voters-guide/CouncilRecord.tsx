@@ -1,289 +1,148 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  councilDecisions,
-  type CouncilDecision,
-} from "@/lib/voters-guide/council-decisions";
-import {
-  councilDisagreements,
-  decisionAccounts,
-} from "@/lib/voters-guide/council-record-accounts";
+import { ChevronDown } from "lucide-react";
+import { councilDecisions, type CouncilDecision } from "@/lib/voters-guide/council-decisions";
+import { councilDisagreements, decisionAccounts } from "@/lib/voters-guide/council-record-accounts";
 import type { Candidate, Evidence } from "@/lib/voters-guide/types";
 import { councilReaderCopy } from "@/lib/voters-guide/council-reader-copy";
 import { SrOnly, VotePill } from "@/components/race-sheet/Glyph";
-import styles from "@/app/(public)/voters-guide/guide.module.css";
+import { ModaDisclosure } from "@/components/race-sheet/FourVotes";
+import styles from "@/components/race-sheet/votes.module.css";
+
+const MODA_DECISION_ID = "moda";
 
 function Proof({ source }: { source: Evidence }) {
   return (
-    <a href={source.url} title={`${source.kind} · ${source.date}`}>
+    <a href={source.url} className={styles.proof} title={`${source.kind} · ${source.date}`}>
       {source.label} <span aria-hidden="true">↗</span>
       <SrOnly> (external)</SrOnly>
     </a>
   );
 }
 
-export function DecisionExplanation({
-  person,
-  decision,
-  identity = false,
-}: {
-  person: Candidate;
-  decision: CouncilDecision;
-  identity?: boolean;
-}) {
+/** One councilor's recorded action on one decision, with the stated reason and its proof. */
+export function DecisionExplanation({ person, decision }: { person: Candidate; decision: CouncilDecision }) {
   const account = decisionAccounts[decision.id]?.[person.name];
   const vote = decision.votes[person.name];
   return (
-    <div className={styles.recordAccount}>
-      {identity && (
-        <header className={styles.recordIdentity}>
-          <b>{person.name}</b>
-        </header>
-      )}
-      <div className={styles.recordVote}>
-        <span>{decision.voteLabel ?? "Final vote"}</span>
-        {vote ? (
-          <span>
-            <VotePill vote={vote} name={person.name} />
-          </span>
-        ) : (
-          <span>No vote in this record</span>
-        )}
-      </div>
+    <div className={styles.account}>
+      <p className={styles.accountHead}>
+        <b>{person.name}</b>
+        {vote ? <VotePill vote={vote} name={person.name} /> : <span className={styles.muted}>No vote in this record</span>}
+      </p>
       {account ? (
         <>
-          <h4>{account.choice}</h4>
-          <p>{account.action}</p>
+          <p className={styles.accountChoice}>{account.choice}</p>
+          <p className={styles.accountText}>{account.action}</p>
           {account.reason && (
-            <div className={styles.statedReason}>
-              <h5>{account.reason.label}</h5>
-              <p>{account.reason.text}</p>
-            </div>
+            <p className={styles.accountText}>
+              <span className={styles.accountReasonLabel}>{account.reason.label}.</span> {account.reason.text}
+            </p>
           )}
-          <div className={styles.recordProof}>
+          <p className={styles.proofs}>
             <Proof source={decision.source} />
-            {account.actionSource &&
-              account.actionSource.url !== decision.source.url && (
-                <Proof source={account.actionSource} />
-              )}
+            {account.actionSource && account.actionSource.url !== decision.source.url && <Proof source={account.actionSource} />}
             {account.reason && <Proof source={account.reason.source} />}
-          </div>
+          </p>
         </>
       ) : (
-        <p>
-          Compare this candidate’s stated plans using the issue buttons above.
-        </p>
+        <p className={styles.muted}>No account of this vote in the record.</p>
       )}
     </div>
   );
 }
 
-export function CouncilIssuePicker({
-  value,
-  onChange,
-  label = "Choose a Council issue",
-}: {
-  value: string;
-  onChange: (id: string) => void;
-  label?: string;
-}) {
+/**
+ * The full record: every Council topic since January 2025 as one disclosure
+ * row, in the same idiom as the split matrix above it. Open a row for the
+ * question Council faced, the context, our reading of each sitting
+ * councilor's record, and beneath that every matched decision with the
+ * recorded vote, the stated reason and the City record. A hash of
+ * `#disagreement-{topic}` (from a brief or the race sheet) opens that row.
+ */
+export default function CouncilDisagreements({ people }: { people: Candidate[] }) {
   return (
-    <label className={styles.councilIssuePicker}>
-      <span>{label}</span>
-      <select value={value} onChange={(event) => onChange(event.target.value)}>
-        {councilDisagreements.map((item) => (
-          <option key={item.id} value={item.id}>
-            {item.label}
-          </option>
-        ))}
-      </select>
-    </label>
-  );
-}
-
-export default function CouncilDisagreements({
-  people,
-}: {
-  people: Candidate[];
-}) {
-  const [active, setActive] = useState("supplemental-budget");
-  useEffect(() => {
-    let frame = 0;
-    const restore = () => {
-      const id = window.location.hash.replace("#disagreement-", "");
-      if (councilDisagreements.some((item) => item.id === id)) {
-        setActive(id);
-        // The target starts hidden in server HTML. Scroll after React reveals it.
-        window.cancelAnimationFrame(frame);
-        frame = window.requestAnimationFrame(() => {
-          document.getElementById(`disagreement-${id}`)?.scrollIntoView();
-        });
-      }
-    };
-    restore();
-    window.addEventListener("hashchange", restore);
-    return () => {
-      window.removeEventListener("hashchange", restore);
-      window.cancelAnimationFrame(frame);
-    };
-  }, []);
-  function choose(id: string) {
-    setActive(id);
-    window.history.replaceState(null, "", `#disagreement-${id}`);
-  }
-  return (
-    <section
-      className={styles.disagreements}
-      aria-labelledby="disagreement-heading"
-      id="disagreements"
-    >
-      <div className={styles.disagreementHeading}>
-        <div>
-          <div className={styles.eyebrow}>
-            Start with the choices that divided Council
-          </div>
-          <h2 id="disagreement-heading">
-            Where they <em>disagree.</em>
-          </h2>
-        </div>
-        <p>
-          {councilDisagreements.length} issues. {councilDecisions.length}{" "}
-          matched decisions since January 2025. Understand the proposal, compare
-          your incumbents’ choices, then read the votes and their explanations.
-        </p>
-      </div>
-      <div className={styles.issueNavigation}>
-        <CouncilIssuePicker value={active} onChange={choose} />
-        <div
-          className={styles.disagreementPicker}
-          role="group"
-          aria-label="Key Council issues"
-        >
-          {["supplemental-budget", "zenith", "water", "transportation"].map(
-            (id) => {
-              const item = councilDisagreements.find(
-                (entry) => entry.id === id,
-              )!;
-              return (
-                <button
-                  key={id}
-                  onClick={() => choose(id)}
-                  aria-pressed={active === id}
-                  aria-controls={`disagreement-${id}`}
-                >
-                  {item.label}
-                </button>
-              );
-            },
-          )}
-        </div>
-      </div>
+    <div className={styles.record} id="disagreements">
       {councilDisagreements.map((item) => {
         const copy = councilReaderCopy[item.id];
-        const decisions = item.decisionIds.map((id) =>
-          councilDecisions.find((d) => d.id === id)!,
-        );
-        const decision = decisions[0];
-        const incumbents = people.filter((p) => decision.votes[p.name]);
+        const decisions = item.decisionIds.map((id) => councilDecisions.find((d) => d.id === id)!).filter(Boolean);
+        const first = decisions[0];
+        const incumbents = people.filter((p) => first && first.votes[p.name]);
+        const n = decisions.length;
         return (
-          <section
-            key={item.id}
-            id={`disagreement-${item.id}`}
-            aria-labelledby={`${item.id}-question`}
-            data-active={active === item.id}
-            className={styles.disagreementPanel}
-          >
-            <div className={styles.disagreementContext}>
-              <h3 id={`${item.id}-question`}>{item.question}</h3>
-              <p className={styles.issueContrast}>{copy.contrast}</p>
-              <p>{copy.context}</p>
-            </div>
-            {copy.readings && (
-              <p className={styles.readingLabel}>
-                What the record shows · our interpretation
-              </p>
-            )}
-            <div className={styles.choiceOverview}>
-              {incumbents.map((person) => (
-                <div key={person.id} className={styles.choiceSummary} data-reader-candidate={person.id}>
-                  <div>
-                    {/* The legacy stylesheet reserves a portrait column; the name spans it. */}
-                    <b style={{ gridColumn: "1 / -1" }}>{person.name}</b>
-                    <h4>
-                      {copy.readings[person.name].headline}
-                    </h4>
-                    {copy.readings[person.name].text.split("\n\n").map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+          <details key={item.id} id={`disagreement-${item.id}`} className={`${styles.row} ${styles.topic}`} data-record>
+            <summary className={styles.topicSummary}>
+              <ChevronDown className={styles.chevron} size={16} aria-hidden="true" />
+              <span className={styles.topicLabel}>
+                <b>{item.label}</b>
+                <span className={styles.recordQuestion}>
+                  {item.question} <span className={styles.recordCount}>· {n} {n === 1 ? "decision" : "decisions"}</span>
+                </span>
+              </span>
+            </summary>
+            <div className={styles.recordBody}>
+              <p className={styles.recordContrast}>{copy?.contrast ?? item.contrast}</p>
+              <p className={styles.note}>{copy?.context ?? item.context}</p>
+
+              {copy?.readings && incumbents.length > 0 && (
+                <div>
+                  <p className={styles.label}>Our reading of the record</p>
+                  <div className={styles.readingCards}>
+                    {incumbents.map((person) => {
+                      const reading = copy.readings[person.name];
+                      return (
+                        <div key={person.id} className={styles.readingCard} data-reader-candidate={person.id}>
+                          <b>{person.name}</b>
+                          <h4>{reading.headline}</h4>
+                          {reading.text.split("\n\n").map((paragraph, i) => (
+                            <p key={i}>{paragraph}</p>
+                          ))}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-              ))}
-            </div>
-            <details className={styles.disagreementEvidence}>
-              <summary>Read the decisions and reasons</summary>
-              <div className={styles.recordProof}>
-                {(item.sources.length ? item.sources : [decision.source]).map((source) => (
-                  <Proof source={source} key={source.url} />
-                ))}
-              </div>
-              <div className={styles.decisionTimeline}>
-                {decisions.map((entry) => (
-                  <section key={entry.id} className={styles.timelineDecision}>
-                    <div className={styles.eyebrow}>{entry.source.date}</div>
-                    <h4>{entry.title}</h4>
-                    <p>{entry.summary}</p>
-                    <div className={styles.disagreementGrid}>
-                      {incumbents.map((person) => (
-                        <DecisionExplanation
-                          key={person.id}
-                          person={person}
-                          decision={entry}
-                          identity
-                        />
+              )}
+
+              <details className={styles.decisions}>
+                <summary>
+                  <ChevronDown size={14} aria-hidden="true" className={styles.decisionsCaret} />
+                  {n === 1 ? "The decision, the votes and the stated reasons" : `The ${n} decisions, the votes and the stated reasons`}
+                </summary>
+                <div className={styles.decisionList}>
+                  {decisions.map((entry) => (
+                    <section key={entry.id} className={styles.decision} aria-label={entry.title}>
+                      <p className={styles.decisionDate}>{entry.source.date}</p>
+                      <h4 className={styles.decisionTitle}>{entry.title}</h4>
+                      <p className={styles.note}>{entry.summary}</p>
+                      {entry.id === MODA_DECISION_ID && <ModaDisclosure />}
+                      <div className={styles.accounts}>
+                        {incumbents.map((person) => (
+                          <DecisionExplanation key={person.id} person={person} decision={entry} />
+                        ))}
+                      </div>
+                      <p className={styles.limit}>{entry.limit}</p>
+                    </section>
+                  ))}
+                  {item.sources.length > 0 && (
+                    <p className={styles.proofs}>
+                      {item.sources.map((source) => (
+                        <Proof source={source} key={source.url} />
                       ))}
-                    </div>
-                    <p className={styles.decisionLimit}>{entry.limit}</p>
-                  </section>
-                ))}
-              </div>
-            </details>
-            <p className={styles.disagreementTakeaway}>{copy.takeaway}</p>
-          </section>
+                    </p>
+                  )}
+                </div>
+              </details>
+
+              {copy?.takeaway && <p className={styles.takeaway}>{copy.takeaway}</p>}
+            </div>
+          </details>
         );
       })}
-      <details className={styles.coverageMap}>
-        <summary>Browse all {councilDisagreements.length} issues</summary>
-        <p>
-          The comparison covers every subject in the Council site’s 24-topic
-          index, plus major decisions on labor, children’s services, policing,
-          campaign finance and other City responsibilities. Select an issue to
-          read its matched accounts here.
-        </p>
-        <div className={styles.coverageLinks}>
-          {councilDisagreements.map((item) => (
-            <a
-              key={item.id}
-              href={`#disagreement-${item.id}`}
-              onClick={() => setActive(item.id)}
-            >
-              {item.label} <span aria-hidden="true">→</span>
-            </a>
-          ))}
-        </div>
-        <p>
-          <Link href="/voters-guide/methodology#council-coverage">
-            How we checked topic coverage <span aria-hidden="true">↗</span>
-          </Link>
-        </p>
-      </details>
-      <p className={styles.disagreementFootnote}>
-        Reviewed through September 18, 2026. A vote, a stated reason and our
-        interpretation are distinct. “Not on committee” means the member had no
-        vote in that committee; “Absent” means they missed that roll call.{" "}
-        <a href="#compare">
-          Compare every candidate’s plans <span aria-hidden="true">→</span>
-        </a>
+      <p className={styles.recordFoot}>
+        Reviewed through September 18, 2026. A vote, a stated reason and our interpretation are distinct. “Not on
+        committee” means the member had no vote in that committee; “Absent” means they missed that roll call.{" "}
+        <Link href="/voters-guide/methodology#council-coverage">How we checked topic coverage</Link>
       </p>
-    </section>
+    </div>
   );
 }

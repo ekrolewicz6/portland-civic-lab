@@ -19,7 +19,6 @@
   outline-offset: 2px;
 }
 .chip[aria-pressed="true"]:focus-visible,
-.chipGroup[data-active] .chipInfo:focus-visible,
 .trayButton:focus-visible {
   outline-color: var(--color-canopy);
   box-shadow: 0 0 0 2px var(--color-paper);
@@ -87,7 +86,10 @@
   font-weight: 500;
 }
 
-/* ── Chip rail (only the 44px rail sticks under the site header) ────── */
+/* ── Rail and toolbar ───────────────────────────────────────────────── */
+/* Phones: five chips stick under the site header and pick the column the
+   cards show. All widths: a toolbar beneath with the question, the
+   coverage line and the one control that adds columns. */
 .railRoot {
   margin: 0 0 8px;
 }
@@ -95,55 +97,42 @@
   position: sticky;
   top: var(--site-header-height, 80px);
   z-index: 30;
-  padding: 4px 0;
-  background: var(--color-paper);
+  margin: 0 calc(-1 * var(--page-gutter, 16px));
+  padding: 6px var(--page-gutter, 16px);
+  background: color-mix(in oklab, var(--color-paper) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-parchment);
 }
 .rail {
   display: flex;
   align-items: center;
-  gap: 8px;
-  min-height: 44px;
+  gap: 6px;
+  min-height: 40px;
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  padding: 4px;
-  margin: -4px;
-  /* A right fade cues that more chips follow. */
-  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
-  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  padding: 2px var(--page-gutter, 16px);
+  margin: -2px calc(-1 * var(--page-gutter, 16px));
+  scroll-padding: 0 var(--page-gutter, 16px);
 }
 .rail::-webkit-scrollbar {
   display: none;
-}
-@media (min-width: 769px) {
-  .rail {
-    flex-wrap: wrap;
-    overflow: visible;
-    mask-image: none;
-    -webkit-mask-image: none;
-  }
-}
-.chipGroup {
-  display: inline-flex;
-  align-items: center;
-  flex: none;
-  border-radius: 999px;
-  background: var(--color-parchment);
 }
 .chip {
   position: relative;
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   flex: none;
   height: 36px;
-  padding: 0 14px;
+  padding: 0 12px;
   border-radius: 999px;
   background: var(--color-parchment);
   color: var(--color-ink);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 13.5px;
+  font-weight: 600;
   line-height: 1;
   white-space: nowrap;
   transition: background-color 150ms var(--ease), color 150ms var(--ease);
@@ -160,110 +149,104 @@
   background: var(--color-canopy);
   color: var(--color-paper);
 }
-.chipGroup .chip {
-  padding-right: 8px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+.chip[aria-pressed="true"] .dot {
+  background: var(--color-paper);
 }
-.chipInfo {
-  position: relative;
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-ink-muted);
+}
+.chip[data-issue="housing"] .dot {
+  background: var(--color-fern);
+}
+.chip[data-issue="safety"] .dot {
+  background: var(--color-clay);
+}
+.chip[data-issue="money"] .dot {
+  background: #9a6a35;
+}
+.chip[data-issue="climate"] .dot {
+  background: var(--color-river-deep);
+}
+.chip[aria-pressed="true"][data-issue] .dot {
+  background: var(--color-paper);
+}
+
+/* The toolbar: text on the left, the columns control on the right. */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  min-height: 44px;
+  padding: 6px 0 0;
+}
+.toolbarText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.question {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  text-wrap: balance;
+  animation: rise 200ms var(--ease);
+}
+.status {
+  margin: 0;
+  min-width: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--color-ink-muted);
+}
+.moreButton {
+  flex: none;
+}
+.moreShort {
+  display: none;
+}
+.moreCount {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 36px;
-  padding-right: 6px;
-  border-radius: 0 999px 999px 0;
-  color: var(--color-ink-muted);
-  transition: background-color 150ms var(--ease), color 150ms var(--ease);
-}
-.chipInfo::before {
-  content: "";
-  position: absolute;
-  inset: -4px 0;
-}
-.chipGroup[data-active] .chipInfo {
-  background: var(--color-canopy);
-  color: var(--color-lichen);
-}
-.chipInfo:hover,
-.chipInfo[aria-expanded="true"] {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--color-violet-mist) 22%, var(--color-paper));
+  font-family: var(--font-mono);
+  font-size: max(10.5px, 0.66rem);
   color: var(--color-ink);
 }
-.chipGroup[data-active] .chipInfo:hover,
-.chipGroup[data-active] .chipInfo[aria-expanded="true"] {
+.moreButton[aria-expanded="true"] .moreCount {
+  background: color-mix(in oklab, var(--color-paper) 25%, transparent);
   color: var(--color-paper);
 }
-/* Below the rail, in normal flow: (i) panel, status line, key. */
-.railBelow {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-areas:
-    "info info"
-    "status key";
-  align-items: baseline;
-  column-gap: 16px;
-  padding: 4px 0 0;
-}
-.railKey {
-  grid-area: key;
-  margin: 4px 0 0;
-  font-size: 13px;
-  line-height: 1.4;
-  color: var(--color-ink-muted);
-  white-space: nowrap;
-}
-.infoPanel {
-  grid-area: info;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
-  gap: 8px;
-  margin: 8px 0 4px;
-  padding: 12px 8px 12px 16px;
-  border-radius: 8px;
-  background: var(--color-paper-warm);
-  border: 1px solid var(--color-parchment);
-  animation: rise 200ms var(--ease);
-}
-.infoBody {
-  min-width: 0;
-}
-.infoQuestion {
-  margin: 0 0 4px;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.4;
-}
-.infoContext {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--color-ink-light);
-}
-.status {
-  grid-area: status;
-  margin: 4px 0 0;
-  min-width: 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--color-ink-muted);
+@media (min-width: 769px) {
+  .railWrap {
+    display: none;
+  }
+  .toolbar {
+    padding-top: 0;
+  }
 }
 @media (max-width: 768px) {
   .railRoot {
     margin-bottom: 4px;
   }
-  .railBelow {
-    grid-template-areas:
-      "info info"
-      "status status";
-    padding-top: 2px;
+  .toolbar {
+    min-height: 40px;
+    padding-top: 8px;
   }
-  .status {
-    margin-top: 0;
-  }
-  .railKey {
-    display: none;
+  .question {
+    font-size: 16px;
   }
   /* One short line; the sentence tail hides visually (still in the DOM text). */
   .status {
@@ -275,6 +258,21 @@
   }
   .statusTail {
     display: none;
+  }
+  .moreLong {
+    display: none;
+  }
+  .moreShort {
+    display: inline;
+  }
+}
+/* Narrow phones: the five chips fit on one line without their dots. */
+@media (max-width: 430px) {
+  .dot {
+    display: none;
+  }
+  .chip {
+    padding: 0 11px;
   }
 }
 /* Short viewports (landscape phones): nothing sticks. */
@@ -1209,12 +1207,5 @@
     margin: 0;
     font-size: 14px;
     font-weight: 600;
-  }
-}
-
-/* The chip rail is the phone's column legend; on desktop the grid's own headers highlight a column. */
-@media (min-width: 769px) {
-  .phoneOnly {
-    display: none;
   }
 }

@@ -9,6 +9,7 @@ import { racePath, votesMetadata, votesStructuredData } from "@/lib/voters-guide
 import RaceSheetStructuredData from "@/components/race-sheet/RaceSheetStructuredData";
 import VoteMatrix from "@/components/race-sheet/VoteMatrix";
 import CouncilDisagreements from "@/components/voters-guide/CouncilRecord";
+import { councilDisagreements } from "@/lib/voters-guide/council-record-accounts";
 import styles from "@/components/race-sheet/votes.module.css";
 
 export function generateStaticParams() {
@@ -46,13 +47,14 @@ export default async function VotesPage({ params }: { params: Promise<{ race: st
         <VoteMatrix race={race} />
       </div>
 
-      <section className={styles.record} aria-labelledby="every-issue-heading">
+      <section className={styles.recordSection} aria-labelledby="every-issue-heading">
         <p className={styles.eyebrow}>The full record</p>
         <h2 id="every-issue-heading" className={styles.heading}>
           Every issue, with reasons
         </h2>
         <p className={styles.note}>
-          All Council topics since January 2025, each vote, the stated reasons and the City record.
+          All {councilDisagreements.length} Council topics since January 2025. Open one for the question, our reading of each
+          councilor’s record, and every matched vote with its stated reason and the City record.
         </p>
         <CouncilDisagreements people={race.candidates} />
       </section>

@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, ArrowUpRight, CheckSquare, ChevronDown, MapPin } from "lucide-react";
+import { ArrowLeft, ArrowRight, MapPin } from "lucide-react";
 import { findRace, races } from "@/lib/voters-guide/published";
 import { buildRaceSheet, clientSheet, shortRaceTitle } from "@/lib/voters-guide/race-sheet";
 import { raceMetadata, raceStructuredData } from "@/lib/voters-guide/race-sheet/seo";
 import RaceSheet from "@/components/race-sheet/RaceSheet";
 import FourVotes from "@/components/race-sheet/FourVotes";
 import AboutStrip from "@/components/race-sheet/AboutStrip";
+import Lede from "@/components/race-sheet/Lede";
 import RaceSheetStructuredData from "@/components/race-sheet/RaceSheetStructuredData";
 import styles from "./race-page.module.css";
 import c from "@/components/race-sheet/controls.module.css";
 
 /**
- * One screen per race. The reader sees every candidate at once with one
- * short line each; issue chips swap the line in place; four featured votes
- * show how the sitting councilors split; My ballot is the reader's own.
- * Briefs, the full record and the print edition live on their own routes.
- * See research/voters-guide-2026/design/race-sheet.md.
+ * One screen per race. The masthead is four facts and a district name; the
+ * grid of candidates is the page. Everything a reader might want to know
+ * before they scan (how ranked choice works, what Council can do, how the
+ * list was made) lives one screen down in the About strip, and the choice
+ * paragraph folds to two lines on a phone so names are visible on the first
+ * screen. See research/voters-guide-2026/design/race-sheet.md.
  */
 
 export function generateStaticParams() {
@@ -35,6 +37,21 @@ export async function generateMetadata({
   return raceMetadata(race);
 }
 
+const NUMBER_WORDS: Record<string, string> = {
+  one: "1", two: "2", three: "3", four: "4", five: "5", six: "6", seven: "7", eight: "8", nine: "9", ten: "10",
+};
+
+/**
+ * The ranking limit as a numeral, read from the sourced instruction ("You
+ * rank up to six candidates…"), never from the seat count. Null when the
+ * instruction does not state one; the facts strip then shows the method.
+ */
+function rankLimit(text: string | undefined): string | null {
+  const word = text?.match(/rank up to (\w+)/i)?.[1]?.toLowerCase();
+  if (!word) return null;
+  return NUMBER_WORDS[word] ?? (/^\d+$/.test(word) ? word : null);
+}
+
 export default async function RacePage({
   params,
 }: {
@@ -46,84 +63,69 @@ export default async function RacePage({
   const sheet = buildRaceSheet(race);
   const short = shortRaceTitle(race);
   const other = sheet.otherRaces[0];
-  // On phones only the first sentence of the sourced ranked-choice note shows.
-  const [noteFirst = "", ...noteMore] = (sheet.ballot?.note ?? "").split(/(?<=\.)\s+/);
-  const noteRest = noteMore.join(" ");
+  const limit = rankLimit(sheet.ballot?.text);
 
   return (
     <div className={styles.page}>
       <RaceSheetStructuredData data={raceStructuredData(race)} />
 
-      <div className={styles.top}>
-      <header className={styles.header}>
-        <Link className={`${c.btn} ${c.quiet} ${c.small} ${styles.back}`} href="/voters-guide" prefetch={false}>
-          <ArrowLeft size={15} aria-hidden="true" /> All races
-        </Link>
-        <p className={styles.eyebrow}>Portland City Council · November 3, 2026</p>
-        <div className={styles.titleRow}>
-          <h1 className={styles.title}>
-            <span className={styles.srOnly}>Portland City Council, </span>
-            {short}
-          </h1>
-          <p className={styles.titleCount}>
-            {sheet.rows.length} candidates · {race.seats} seats
-          </p>
+      <header className={styles.masthead}>
+        <div className={styles.mastTop}>
+          <Link className={`${c.btn} ${c.quiet} ${c.small} ${styles.back}`} href="/voters-guide" prefetch={false}>
+            <ArrowLeft size={15} aria-hidden="true" /> All races
+          </Link>
+          <p className={styles.eyebrow}>Portland City Council · November 3, 2026</p>
         </div>
 
-        {sheet.district && (
-          <p className={styles.district}>
-            <MapPin size={15} aria-hidden="true" />
-            <span className={styles.districtBody}>
-              <span className={styles.districtText}>{sheet.district.neighborhoods}</span>
-              {other && (
-                <Link href={`/voters-guide/${other.id}`} prefetch={false} className={`${c.btn} ${c.quiet} ${c.small} ${styles.otherRace}`}>
-                  Not your district? {other.short} <ArrowRight size={14} aria-hidden="true" />
-                </Link>
+        <div className={styles.mastGrid}>
+          <div className={styles.mastMain}>
+            <h1 className={styles.title}>
+              <span className={styles.srOnly}>Portland City Council, </span>
+              {short}
+            </h1>
+
+            <dl className={styles.facts} aria-label="This race at a glance">
+              <div>
+                <dd>{sheet.rows.length}</dd>
+                <dt>Candidates</dt>
+              </div>
+              <div>
+                <dd>{race.seats}</dd>
+                <dt>Seats</dt>
+              </div>
+              {limit ? (
+                <div>
+                  <dd>{limit}</dd>
+                  <dt>Rank up to</dt>
+                </div>
+              ) : (
+                <div>
+                  <dd className={styles.factWord}>{race.method.split(/[;·]/)[0].trim()}</dd>
+                  <dt>Method</dt>
+                </div>
               )}
-            </span>
-          </p>
-        )}
+              <div>
+                <dd>Nov 3</dd>
+                <dt>Due 8 p.m.</dt>
+              </div>
+            </dl>
 
-        <p className={styles.howToVote}>
-          <CheckSquare size={15} aria-hidden="true" />
-          <span>
-            {sheet.ballot ? (
-              <>
-                <strong>{sheet.ballot.text}</strong> {noteFirst}
-                {noteRest && <span className={styles.noteRest}> {noteRest}</span>}{" "}
-              </>
-            ) : (
-              <>
-                <strong>{race.method}.</strong>{" "}
-              </>
+            {sheet.district && (
+              <p className={styles.where}>
+                <MapPin size={15} aria-hidden="true" />
+                <span className={styles.whereText}>{sheet.district.neighborhoods}</span>
+                {other && (
+                  <Link href={`/voters-guide/${other.id}`} prefetch={false} className={styles.otherRace}>
+                    Not yours? {other.short} <ArrowRight size={13} aria-hidden="true" />
+                  </Link>
+                )}
+              </p>
             )}
-            <span className={styles.dates}>Ballots mail Oct 14; due 8 p.m. Nov 3.</span>{" "}
-            {sheet.ballot && (
-              <a href={sheet.ballot.source.url} className={`${c.btn} ${c.quiet} ${c.small} ${styles.sourceLink}`}>
-                How it works <ArrowUpRight size={14} aria-hidden="true" />
-              </a>
-            )}
-          </span>
-        </p>
+          </div>
+
+          <Lede text={sheet.choice.text} reviewed={sheet.choice.reviewed} />
+        </div>
       </header>
-
-      <section className={styles.choice} aria-labelledby="choice-title">
-        <h2 id="choice-title" className={styles.choiceLabel}>
-          <span className={styles.ourReading}>Our reading</span> · The choice in one paragraph
-        </h2>
-        <p className={styles.choiceText}>{sheet.choice.text}</p>
-        {!sheet.choice.reviewed && <p className={styles.draft}>Draft; human review pending.</p>}
-        <details className={styles.authority}>
-          <summary className={`${c.btn} ${c.quiet} ${c.small}`}>
-            What this Council can do <ChevronDown size={15} aria-hidden="true" className={styles.authorityCaret} />
-          </summary>
-          <p>{race.authority}</p>
-          <p>
-            <span className={styles.ourReading}>Our reading of the field.</span> {race.comparison}
-          </p>
-        </details>
-      </section>
-      </div>
 
       <RaceSheet sheet={clientSheet(sheet)} />
 

@@ -132,7 +132,7 @@ for (const sheet of sheets) {
     await page.setViewportSize({ width: 1280, height: 900 });
     await page.goto(`/voters-guide/${race.id}`);
     await expect(rows(page)).toHaveCount(total);
-    await expect(page.locator("[data-race-sheet-rail]")).toBeHidden();
+    await expect(rail(page)).toBeHidden();
     await expect(grid(page)).toHaveAttribute("data-active", "");
     const opacity = (id: string, issue: IssueId) => cell(page, id, issue).locator("button").evaluate((el) => getComputedStyle(el).opacity);
     for (const issue of issues) {
@@ -169,23 +169,32 @@ for (const sheet of sheets) {
     const status = page.locator("[data-race-sheet-rail] [role=status]");
     await expect(status).toHaveText(`${total} candidates, A–Z. Tap a chip for the sentence and its source.`);
     const chips = rail(page).locator("button[aria-pressed]");
-    await expect(chips.first()).toHaveText("All issues");
-    await expect(chips).toHaveText(["All issues", ...issues.map((i) => i.label)]);
-    await expect(rail(page).getByRole("button", { name: "All issues", exact: true })).toHaveAttribute("aria-pressed", "true");
+    await expect(chips.first()).toHaveText("All");
+    await expect(chips).toHaveText(["All", ...issues.map((i) => i.short)]);
+    await expect(rail(page).getByRole("button", { name: "All", exact: true })).toHaveAttribute("aria-pressed", "true");
     // The column headers are for the table's semantics only on phones.
     expect(await page.locator("#list thead").evaluate((el) => el.getBoundingClientRect().width)).toBeLessThanOrEqual(1);
     for (const issue of issues) {
-      await rail(page).getByRole("button", { name: issue.label, exact: true }).click();
-      await expect(rail(page).getByRole("button", { name: issue.label, exact: true })).toHaveAttribute("aria-pressed", "true");
+      await rail(page).getByRole("button", { name: issue.short, exact: true }).click();
+      await expect(rail(page).getByRole("button", { name: issue.short, exact: true })).toHaveAttribute("aria-pressed", "true");
       await expect(page).toHaveURL(new RegExp(`#issue=${issue.id}$`));
       expect(new URL(page.url()).search).toBe("");
       await expect(grid(page)).toHaveAttribute("data-active", issue.id);
       await expect(rows(page)).toHaveCount(total);
       await expect(status).toHaveText(coverageSentence(issue.id, sheet.coverage[issue.id], total));
+      // The question the chip asks sits above the coverage line.
+      await expect(page.locator("[data-race-sheet-rail]")).toContainText(issue.question);
       expect(sheet.coverage[issue.id]).toBe(sheet.rows.filter((r) => r.cells[issue.id].position !== null).length);
+      // A pressed chip shows one column: only that tile is visible on every card, full width.
+      const first = sheet.rows[0];
+      for (const other of issues) {
+        const td = cell(page, first.id, other.id);
+        if (other.id === issue.id) await expect(td).toBeVisible();
+        else await expect(td).toBeHidden();
+      }
       expect(await fits(page)).toBe(true);
     }
-    await rail(page).getByRole("button", { name: "All issues", exact: true }).click();
+    await rail(page).getByRole("button", { name: "All", exact: true }).click();
     expect(new URL(page.url()).hash).toBe("");
     await expect(grid(page)).toHaveAttribute("data-active", "");
     await expect(status).toHaveText(`${total} candidates, A–Z. Tap a chip for the sentence and its source.`);
@@ -247,6 +256,8 @@ for (const width of [390, 1280]) {
     expect(await fits(page)).toBe(true);
 
     // Another chip on the same row swaps the detail; only one is ever open.
+    // On a phone a pressed rail chip shows one column, so show all columns first.
+    if (width < 769) await rail(page).getByRole("button", { name: "All", exact: true }).click();
     const second = issues.find((i) => i.id !== "housing" && r.cells[i.id].position !== null)!;
     await cell(page, "esther-leon", second.id).getByRole("button").click();
     await expect(chip).toHaveAttribute("aria-expanded", "false");
@@ -316,7 +327,7 @@ test("share yields a URL with no query string and at most #issue=", async ({ pag
 });
 
 test("no horizontal overflow at 320, 390, 768 and 1280 on the race page, with a detail open, and on a brief", async ({ page }) => {
-  await page.goto("/voters-guide/portland-district-3#issue=safety");
+  await page.goto("/voters-guide/portland-district-3#issue=housing");
   await expect(rows(page)).not.toHaveCount(0);
   for (const width of [320, 390, 768, 1280]) {
     await page.setViewportSize({ width, height: 844 });
@@ -338,6 +349,12 @@ test("no horizontal overflow at 320, 390, 768 and 1280 on the race page, with a 
 /* ── Extra topics and the promise ladder ───────────────────────────── */
 
 const picker = (page: Page) => page.getByRole("group", { name: "Add a topic to compare" });
+/** The picker opens from the toolbar's one control; it is not in the DOM until then. */
+const openPicker = async (page: Page) => {
+  const more = page.locator("[data-race-sheet-rail]").getByRole("button", { name: /Compare on more|^More/ });
+  if ((await more.getAttribute("aria-expanded")) !== "true") await more.click();
+  await expect(picker(page)).toBeVisible();
+};
 const topicHeads = (page: Page) => page.locator('#list thead th[data-issue="topic"]');
 const topicCell = (page: Page, id: string, nth: number) => row(page, id).locator('td[data-issue="topic"]').nth(nth);
 
@@ -349,6 +366,8 @@ test("desktop: the picker adds up to two topic columns, incumbents show their re
   const decision = councilDecisions.find((d) => d.id === moda.decisionId)!;
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto("/voters-guide/portland-district-4");
+  await expect(picker(page)).toHaveCount(0);
+  await openPicker(page);
   await expect(picker(page).getByRole("button")).toHaveCount(extraTopics.length);
   for (const t of extraTopics) await expect(picker(page).getByRole("button", { name: new RegExp(`^${t.label}`) })).toHaveAttribute("aria-pressed", "false");
   await expect(topicHeads(page)).toHaveCount(0);
@@ -395,10 +414,12 @@ test("desktop: the picker adds up to two topic columns, incumbents show their re
   await expect(topicHeads(page)).toHaveCount(1);
   await expect(page).toHaveURL(/#issue=money&topics=new-taxes$/);
 
-  // The hash restores the view on load.
+  // The hash restores the view on load; the toolbar control carries the count.
   await page.goto("/voters-guide/portland-district-4#topics=moda,police-staffing");
   await expect(topicHeads(page)).toHaveCount(2);
   await expect(topicHeads(page).nth(1)).toContainText("Police staffing");
+  await expect(page.locator("[data-race-sheet-rail]").getByRole("button", { name: /Compare on more/ })).toContainText("2");
+  await openPicker(page);
   await expect(picker(page).getByRole("button", { name: /^Police staffing/ })).toHaveAttribute("aria-pressed", "true");
 });
 
