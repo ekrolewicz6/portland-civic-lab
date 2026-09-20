@@ -8,7 +8,8 @@ export type SourceVenue =
   | "Post"
   | "Record"
   | "Register"
-  | "Reporting";
+  | "Reporting"
+  | "Response";
 
 export type SourceChip = {
   venue: SourceVenue;
@@ -37,6 +38,7 @@ export function sourceChip(evidence: Evidence): SourceChip {
   }
   if (evidence.kind === "Reporting") return pick("Reporting", host || "Reporting");
   // Candidate statements
+  if (/portlandciviclab\.org$/i.test(host) && /research-log#/.test(url)) return pick("Response", "Emailed response");
   if (/multco\.us|washingtoncountyor\.gov|clackamas\.us|docs\.clackamas/i.test(host) && page)
     return pick("Pamphlet", `Pamphlet p. ${page}`);
   if (/multco\.us|washingtoncountyor\.gov|clackamas\.us|docs\.clackamas|sos\.oregon\.gov/i.test(host))

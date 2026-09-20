@@ -1332,3 +1332,10 @@
     font-weight: 600;
   }
 }
+
+/* The chip rail is the phone's column legend; on desktop the grid's own headers highlight a column. */
+@media (min-width: 769px) {
+  .phoneOnly {
+    display: none;
+  }
+}

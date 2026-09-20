@@ -17,7 +17,7 @@ import {
 import ShareGuide from "@/components/voters-guide/ShareGuide";
 import ChipRail from "./ChipRail";
 import BottomBar from "./BottomBar";
-import CandidateRow from "./CandidateRow";
+import StanceGrid from "./StanceGrid";
 import MyBallot from "./MyBallot";
 import styles from "./race-sheet.module.css";
 
@@ -163,7 +163,9 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
 
   return (
     <div className={styles.sheet} data-race-sheet data-issue={active ?? "summary"}>
-      <ChipRail active={active} onChange={changeIssue} coverage={sheet.coverage} total={sheet.rows.length} />
+      <div className={styles.phoneOnly}>
+        <ChipRail active={active} onChange={changeIssue} coverage={sheet.coverage} total={sheet.rows.length} />
+      </div>
 
       <BottomBar raceId={raceId} savedCount={ballot.order.length} onOpenBallot={(opener) => openBallot(true, opener)} />
 
@@ -194,18 +196,15 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
         </section>
       )}
 
-      <section id="list" className={styles.list} aria-label="Candidates, A to Z">
-        {sheet.rows.map((row) => (
-          <CandidateRow
-            key={row.id}
-            row={row}
-            raceId={raceId}
-            issue={issue}
-            saved={savedSet.has(row.id)}
-            onToggleSave={toggleSave}
-          />
-        ))}
-      </section>
+      <StanceGrid
+        rows={sheet.rows}
+        raceId={raceId}
+        active={active}
+        coverage={sheet.coverage}
+        saved={savedSet}
+        onToggleSave={toggleSave}
+        onHighlight={changeIssue}
+      />
 
       <div className={styles.shareWrap}>
         <ShareGuide

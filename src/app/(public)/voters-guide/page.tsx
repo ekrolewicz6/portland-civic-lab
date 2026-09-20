@@ -10,6 +10,8 @@ import {
   shortRaceTitle,
   type RaceSheet,
 } from "@/lib/voters-guide/race-sheet";
+import DistrictMap, { DistrictMapSource } from "@/components/voters-guide/DistrictMap";
+import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import styles from "./hub.module.css";
 
 export const metadata = voterGuideMetadata("guide");
@@ -54,18 +56,18 @@ function DistrictCard({ sheet }: { sheet: RaceSheet }) {
             </h2>
           </div>
         </div>
-        {neighborhoods ? (
-          <p className={styles.neighborhoods}>{neighborhoods}</p>
-        ) : null}
         <p className={styles.cardMeta}>
           {count} candidates · {race.seats} seats · ranked choice
         </p>
-        <p className={styles.choice}>
-          <span className={styles.choiceLabel}>Our reading:</span> {sheet.choice.text}
-        </p>
-        {!sheet.choice.reviewed && (
-          <p className={styles.draft}>Draft; human review pending.</p>
-        )}
+        <ul className={styles.mosaic} aria-label={`${short} candidates`}>
+          {sheet.rows.map((row) => (
+            <li key={row.id} className={styles.mosaicItem} title={row.name}>
+              <CandidatePortrait person={{ id: row.id, name: row.name, portrait: row.portrait } as never} compact />
+              <span className={styles.srOnly}>{row.name}</span>
+            </li>
+          ))}
+        </ul>
+        {neighborhoods ? <p className={styles.neighborhoods}>{neighborhoods}</p> : null}
         <div className={styles.chipBlock}>
           <p className={styles.chipLabel}>Jump straight to one issue</p>
           <ul
@@ -162,11 +164,21 @@ export default function VotersGuidePage() {
             Which district am I in?
           </h2>
         </div>
-        <ul className={styles.cards}>
-          {sheets.map((sheet) => (
-            <DistrictCard key={sheet.race.id} sheet={sheet} />
-          ))}
-        </ul>
+        <div className={styles.mapRow}>
+          <div className={styles.mapCol}>
+            <DistrictMap
+              published={sheets.map((s) => Number(shortRaceTitle(s.race).match(/\d+/)?.[0]) as 1 | 2 | 3 | 4)}
+              hrefFor={(d) => `/voters-guide/portland-district-${d}`}
+              labels={{ 3: "Inner SE", 4: "West side" }}
+            />
+            <DistrictMapSource />
+          </div>
+          <ul className={styles.cards}>
+            {sheets.map((sheet) => (
+              <DistrictCard key={sheet.race.id} sheet={sheet} />
+            ))}
+          </ul>
+        </div>
         <p className={styles.alsoOnBallot}>
           The uncontested City Auditor race is also on the Portland ballot.
         </p>

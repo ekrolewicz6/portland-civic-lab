@@ -186,3 +186,11 @@ Built as specified above with these deviations, all recorded in the evidence exp
 
 Still outstanding: human review of the overlay lines; the first-time-reader tasks in `voter-journey.md`; candidate replies to the September 19 outreach (an `answers` slot exists); county, city, state and legislative races on the same template.
 
+## Revised · September 19, 2026 (evening): visual first
+
+After the owner reviewed the first build ("too much to read; make everything visual first"), the race page's primary view changed from a list of sentences to a grid:
+
+- **Where they stand grid.** Rows are candidates (portrait, name, role); columns are the four issues; each cell is a two-to-four-word stance chip, our reading of the same sourced position the 14-word line was shortened from (`content/stances.ts`, 87 chips, `from` + `reviewedBy: "pending"`). Columns are tinted by topic, never by side. Tapping a chip opens the sentence, the full position with its qualifier, the source chip and the brief link. Gaps are one identical dash button. Column headers show "N of M documented" and, on desktop, highlight a column; on phones each row restyles into a portrait card and the chip rail highlights a column.
+- **Hub map.** An SVG of the four Council districts from the City's boundary layer (fetched September 19, 2026) with the Willamette, published districts clickable; district cards now show a portrait mosaic instead of the choice paragraph.
+- **Candidate responses.** Keir Legree's emailed reply (received September 19) is integrated as a sourced supplement for all four issues, five "In their words" answers, updated lines and chips, a research-log entry it cites, and a deliberate re-record of his preservation hash.
+

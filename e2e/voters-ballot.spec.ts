@@ -25,9 +25,9 @@ test("saving, ordering, noting, removing and clearing stay private to this tab",
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/voters-guide/portland-district-4");
   await expect(tray(page)).toHaveCount(0);
-  await page.getByRole("button", { name: "Save Olivia Clark", exact: true }).click();
+  await page.getByRole("button", { name: "Save Olivia Clark to my ballot", exact: true }).click();
   await expect(tray(page)).toContainText("1 saved · Open my ballot");
-  await page.getByRole("button", { name: "Save Eli Arnold", exact: true }).click();
+  await page.getByRole("button", { name: "Save Eli Arnold to my ballot", exact: true }).click();
   await expect(tray(page)).toContainText("2 saved · Open my ballot");
   expectCleanUrl(page);
   expect(await page.evaluate(() => Object.keys(localStorage))).toEqual([]);
@@ -67,7 +67,7 @@ test("saving still works when session storage throws, with a visible notice", as
     Storage.prototype.setItem = () => { throw new Error("Storage disabled"); };
   });
   await page.goto("/voters-guide/portland-district-4");
-  await page.getByRole("button", { name: "Save Eli Arnold", exact: true }).click();
+  await page.getByRole("button", { name: "Save Eli Arnold to my ballot", exact: true }).click();
   await expect(tray(page)).toContainText("1 saved");
   await openBallot(page);
   await expect(slots(page).nth(0)).toContainText("Eli Arnold");
@@ -82,7 +82,7 @@ test("a legacy #compare link opens a shared view that never fills the ballot", a
   await expect(shared).not.toContainText("Novick");
   await expect(tray(page)).toHaveCount(0);
   expect(await storedKeys(page)).toEqual([]);
-  await expect(page.getByRole("button", { name: "Save Eli Arnold", exact: true })).toHaveAttribute("aria-pressed", "false");
+  await expect(page.getByRole("button", { name: "Save Eli Arnold to my ballot", exact: true })).toHaveAttribute("aria-pressed", "false");
   await shared.getByRole("button", { name: "Save these to my ballot" }).click();
   await expect(shared).toHaveCount(0);
   await expect(tray(page)).toContainText("2 saved");

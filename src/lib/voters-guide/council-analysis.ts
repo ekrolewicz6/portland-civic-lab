@@ -90,7 +90,7 @@ const rows: Record<string, AnalysisRow> = {
   ],
   "Keir Legree": [
     ["Operational delivery", "Household costs"],
-    "His stated goals connect city performance to safety and utility bills. Lower bills are not yet a financed commitment: the reviewed statement does not identify savings or how to preserve necessary maintenance.",
+    "His stated goals connect city performance to safety and utility bills. His September 19, 2026 response adds the mechanisms: competitive bidding, independent cost estimates and scope control for projects; more shelter and treatment capacity with accountability for spending; and a proposed one-year pause on cash bottle redemptions as a measured experiment. Savings are still not quantified.",
     {
       safety:
         "Wants more police and 911 dispatchers and a different approach to street homelessness. The reviewed pamphlet does not detail that homelessness plan.",
@@ -359,6 +359,26 @@ const campaign = (label: string, url: string): Evidence => ({
   note: "Campaign position. Claimed results and numerical premises have not automatically been independently verified.",
 });
 const supplements: Record<string, { source: Evidence; issues: Issues }> = {
+  "Keir Legree": {
+    // Emailed reply to the identical questions the Lab sent every candidate on September 19, 2026.
+    source: {
+      label: "Legree · emailed response to the Lab’s questions",
+      url: "https://www.portlandciviclab.org/voters-guide/research-log#legree-2026-09-19",
+      kind: "Candidate statement",
+      date: "Received September 19, 2026",
+      note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on his brief. Receipt does not verify the claims.",
+    },
+    issues: {
+      housing:
+        "Supports increasing housing supply, faster permitting and fewer construction barriers, plus expanding government-owned affordable housing, preserving existing affordable homes and filling vacant subsidized units.",
+      safety:
+        "Wants more police officers and 911 dispatchers, and a homelessness approach judged by measurable results: more shelter and treatment capacity, expected progress toward stability in exchange for publicly funded services, and accountability for City and County spending. Proposes seeking state authorization for a one-year pause on cash bottle and can redemptions in Portland as a measured experiment.",
+      money:
+        "Would lower the cost of delivering infrastructure rather than defer maintenance: stronger competitive bidding, independent cost estimates, tighter control of scope and change orders, cost comparisons with peer cities, and a public-benefit test before major projects begin.",
+      climate:
+        "Supports reducing emissions and a balanced transportation system for walking, biking, transit and driving, with pedestrian and bicycle improvements where safety or transportation need is demonstrated and major projects evaluated for use, safety, cost and system impacts.",
+    },
+  },
   "Matthias Hallett": {
     source: campaign(
       "Hallett · Re-Vision platform",

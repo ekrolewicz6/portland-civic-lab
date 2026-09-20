@@ -268,20 +268,20 @@ export default function Methodology() {
         </p>
         <h2 id="guided-comparison">How the race page works</h2>
         <p>
-          Each race is one page: every candidate on the checked roster,
-          alphabetical by displayed name, with one short line each. The default
-          line is our one-sentence summary of what the candidate says. Choosing
-          an issue (rent and homes; camps, crime and who responds; your bills
-          and taxes; streets, buses and air) swaps every line for a short,
-          sourced summary of that candidate’s documented position on the same
-          issue, so the whole field can be read on one axis. A dash means we
-          have not established a position from the sources we reviewed; it is
-          a research gap, not a position, and the count above the list says how
-          many candidates have a documented position on that issue.
+          Each race is one grid: every candidate on the checked roster,
+          alphabetical by displayed name, against the same four issues (rent
+          and homes; camps, crime and who responds; your bills and taxes;
+          streets, buses and air). Each cell is a chip of two to four words:
+          our short reading of that candidate’s documented position. Tapping a
+          chip shows the sentence it was shortened from, the full position with
+          any qualifier, and the source. A dash means we have not established
+          a position from the sources we reviewed; it is a research gap, not a
+          position, and each column header says how many candidates have a
+          documented position. Columns are colored by topic, never by side.
         </p>
         <p>
-          Short lines are written by us, shortened from the full position, and
-          each names the field it was shortened from. They may omit; they never
+          Chips and short lines are written by us, shortened from the full
+          position, and each names the field it was shortened from. They may omit; they never
           add. The full position, its source and any qualifier are one tap away
           on the candidate’s card and brief. Candidate statements carry a
           quotation glyph; the source chip is on the card and brief. Recorded

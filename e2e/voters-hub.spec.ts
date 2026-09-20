@@ -23,7 +23,25 @@ test("hub: two district cards with four issue deep links, no search box, no inli
     await expect(chips).toHaveCount(4);
     for (const issue of issues) await expect(chips.filter({ hasText: issue.label })).toHaveAttribute("href", `/voters-guide/${race.id}#issue=${issue.id}`);
   }
-  const text = await page.locator("main, body").first().innerText();
+  // Names live only in the portrait mosaic (as screen-reader text on each portrait), never as a visible inline list.
+  for (const race of races) {
+    const short = shortRaceTitle(race);
+    const mosaic = cards.filter({ has: page.getByRole("heading", { name: short, exact: true }) }).getByRole("list", { name: `${short} candidates`, exact: true });
+    await expect(mosaic.getByRole("listitem")).toHaveCount(race.candidates.length);
+    for (const person of race.candidates) {
+      const name = mosaic.getByRole("listitem").getByText(person.name, { exact: true });
+      await expect(name).toHaveCount(1);
+      expect(await name.evaluate((el) => el.getBoundingClientRect().width), `${person.name} is screen-reader only`).toBeLessThanOrEqual(1);
+    }
+  }
+  const text = await page.locator("main, body").first().evaluate((root) => {
+    const hidden = [...root.querySelectorAll<HTMLElement>("ul[aria-label$=' candidates']")];
+    const previous = hidden.map((el) => el.style.display);
+    hidden.forEach((el) => (el.style.display = "none"));
+    const value = (root as HTMLElement).innerText;
+    hidden.forEach((el, i) => (el.style.display = previous[i]));
+    return value;
+  });
   for (const person of races.flatMap((r) => r.candidates)) expect(text, person.name).not.toContain(person.name);
   await expect(page.getByText("City Auditor")).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

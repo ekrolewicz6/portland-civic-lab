@@ -22,6 +22,7 @@ import {
 import { raceSheetVersion, issues as raceSheetIssues } from "@/lib/voters-guide/race-sheet";
 import { featuredVotes } from "@/lib/voters-guide/race-sheet/featured";
 import { issueLines } from "@/lib/voters-guide/race-sheet/content/lines";
+import { stanceChips } from "@/lib/voters-guide/race-sheet/content/stances";
 import { choiceParagraphs } from "@/lib/voters-guide/race-sheet/content/choice";
 import { saidPlacements } from "@/lib/voters-guide/race-sheet/content/said";
 import { missingStates, primaryStatements, roleOverrides } from "@/lib/voters-guide/race-sheet/content/roles";
@@ -54,6 +55,7 @@ export function GET() {
         featuredVotes,
         choiceParagraphs,
         issueLines,
+        stanceChips,
         saidPlacements,
         roleOverrides,
         missingStates,

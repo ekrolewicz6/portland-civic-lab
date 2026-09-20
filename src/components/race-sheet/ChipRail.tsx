@@ -83,7 +83,7 @@ export default function ChipRail({
   const current = info ? issues.find((i) => i.id === info) : null;
   const status = active
     ? coverageParts(active, coverage[active] ?? 0, total)
-    : { head: `${total} candidates, A–Z.`, tail: " Tap a name for more." };
+    : { head: `${total} candidates, A–Z.`, tail: " Tap a chip for the sentence and its source." };
 
   return (
     <div ref={root} className={styles.railRoot} data-race-sheet-rail>
@@ -91,7 +91,7 @@ export default function ChipRail({
       <div className={styles.railWrap}>
         <div ref={rail} className={styles.rail} role="group" aria-label="Show each candidate's line on">
           <button type="button" className={styles.chip} aria-pressed={active === null} onClick={() => onChange(null)}>
-            Summary
+            All issues
           </button>
           {issues.map((issue) => {
             const pressed = active === issue.id;

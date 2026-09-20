@@ -19,6 +19,25 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="legree-2026-09-19">September 19, 2026 · Candidate response: Keir Legree (District 3)</h2>
+        <p>
+          Keir Legree replied to the identical questions the Lab emailed every
+          candidate on September 19, 2026. His response adds positions his
+          pamphlet statement did not cover (housing production and preservation;
+          transportation and emissions) and detail on infrastructure costs
+          (competitive bidding, independent estimates, scope control, peer-city
+          comparisons) and homelessness (shelter and treatment capacity,
+          accountability for spending, and a proposed one-year pause on cash
+          bottle redemptions as a measured experiment). It also answers his open
+          question about cutting costs without deferring maintenance.
+        </p>
+        <p>
+          His brief now shows excerpts under “In their words,” his grid row has
+          four documented positions instead of two, and our reading was updated
+          to reflect the mechanisms he named. The response is kept on file; the
+          site cites it with this entry. Because his research object changed,
+          the preservation baseline was re-recorded for his profile only.
+        </p>
         <h2>September 19, 2026 · The race page becomes one screen per race</h2>
         <p>
           Rebuilt each race page around a single alphabetical list of every

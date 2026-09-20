@@ -87,3 +87,12 @@ export type CandidateAnswer = {
   text: string;
   received: string; // ISO date
 };
+
+/** A 2–4 word stance for the grid, shortened from the same sourced position as the issue line. */
+export type StanceChip = Review & {
+  candidateId: string;
+  issue: IssueId;
+  /** ≤4 words, no verbs of attribution, plain nouns/adjectives: "Build public housing", "Police first", "No new taxes". */
+  chip: string;
+  from: string;
+};

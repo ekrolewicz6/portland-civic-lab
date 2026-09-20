@@ -638,3 +638,62 @@
     display: none;
   }
 }
+
+/* ── Map beside the district cards ──────────────────────────────────── */
+.mapRow {
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 900px) {
+  .mapRow {
+    grid-template-columns: minmax(280px, 5fr) minmax(0, 7fr);
+    align-items: start;
+    gap: 32px;
+  }
+}
+.mapCol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 520px;
+}
+.mosaic {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.mosaicItem {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid var(--color-paper-warm);
+  background: var(--color-parchment);
+}
+.mosaicItem span {
+  font-family: var(--font-mono);
+  font-size: 10px !important;
+  font-weight: 600;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.neighborhoods {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-ink-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

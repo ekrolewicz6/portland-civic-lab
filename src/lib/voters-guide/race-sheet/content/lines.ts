@@ -59,8 +59,10 @@ export const issueLines: IssueLine[] = [
 
   line("kenneth-kent-r-landgraver-iii", "money", "Wants tax dollars to support public work."),
 
-  line("keir-legree", "safety", "Wants more police and 911 dispatchers and a different approach to street homelessness."),
-  line("keir-legree", "money", "Proposes reducing infrastructure-project costs and utility bills."),
+  line("keir-legree", "housing", "Supports more housing supply, faster permits, and more government-owned affordable homes."),
+  line("keir-legree", "safety", "Wants more police and dispatchers; shelter and treatment judged by measurable results."),
+  line("keir-legree", "money", "Would cut project delivery costs through competitive bidding, independent estimates, scope control."),
+  line("keir-legree", "climate", "Supports lower emissions and walking, biking, transit and driving improvements where need is shown."),
 
   line("esther-leon", "housing", "Would expand social (public or nonprofit) housing, simplify land-use rules, tax large landlords' vacancies."),
   line("esther-leon", "safety", "Would fund Street Response, expand unarmed (non-police) specialists, reduce armed responses; opposes camp sweeps."),

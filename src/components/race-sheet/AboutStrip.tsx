@@ -19,8 +19,8 @@ export default function AboutStrip({ sheet }: { sheet: RaceSheet }) {
         About this list
       </h2>
       <p>
-        Same questions, A–Z. Lines are our summaries of what candidates say; tap a name for their
-        statement and sources. We do not endorse, rank or score. The four featured votes are this
+        Same questions, A–Z. Each chip is our short reading of a sourced statement; tap it for the
+          sentence, the source and the brief. We do not endorse, rank or score. The four featured votes are this
         district’s most reported, most divided Council decisions, phrased as the question Council
         decided; the <Link href={votesPath}>Votes page</Link> has all {councilDisagreements.length}.
         Research reviewed {REVIEW_LABEL}; lines edition {sheet.version}, AI-assisted; human review pending.

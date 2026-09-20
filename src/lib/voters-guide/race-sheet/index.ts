@@ -8,6 +8,7 @@ import { ISSUE_IDS, issues, type IssueId } from "./issues";
 import { featuredVotes } from "./featured";
 import { sourceChip, type SourceChip } from "./source-chip";
 import { issueLines } from "./content/lines";
+import { stanceChips } from "./content/stances";
 import { choiceParagraphs } from "./content/choice";
 import { saidPlacements } from "./content/said";
 import { missingStates, primaryStatements, roleOverrides } from "./content/roles";
@@ -20,6 +21,8 @@ export const raceSheetVersion = "2026-09-19.1";
 /* ── View model ─────────────────────────────────────────────────────── */
 
 export type IssueCell = {
+  /** ≤4-word stance for the grid cell, or null. */
+  chip: string | null;
   /** Reviewed ≤14-word line for the row, or null (renders "—"). */
   line: string | null;
   /** Full authored position for the card, with its source chip. */
@@ -120,10 +123,12 @@ function buildRow(person: Candidate): SheetRow {
   const cells = Object.fromEntries(
     ISSUE_IDS.map((issue) => {
       const authored = issueLines.find((l) => l.candidateId === person.id && l.issue === issue);
+      const stance = stanceChips.find((c) => c.candidateId === person.id && c.issue === issue);
       const position = person.analysis?.issues[issue];
       return [
         issue,
         {
+          chip: stance?.chip ?? null,
           line: authored?.line ?? null,
           position: position?.position ?? null,
           source: position ? sourceChip(position.source) : null,
