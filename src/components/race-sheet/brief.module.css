@@ -272,13 +272,61 @@
 }
 
 .issue {
-  margin-top: 16px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-parchment);
+}
+.issue:first-of-type {
+  margin-top: 4px;
+  padding-top: 0;
+  border-top: 0;
+}
+.issue[data-issue="housing"] {
+  --hue: var(--color-fern);
+  --tint: color-mix(in oklab, var(--color-fern) 13%, var(--color-paper));
+}
+.issue[data-issue="safety"] {
+  --hue: var(--color-clay);
+  --tint: color-mix(in oklab, var(--color-clay) 11%, var(--color-paper));
+}
+.issue[data-issue="money"] {
+  --hue: #9a6a35;
+  --tint: color-mix(in oklab, var(--color-ember) 24%, var(--color-paper));
+}
+.issue[data-issue="climate"] {
+  --hue: var(--color-river-deep);
+  --tint: color-mix(in oklab, var(--color-river) 14%, var(--color-paper));
+}
+/* The issue head: hue dot, label, and the same stance chip the grid shows. */
+.issueHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 0 0 6px;
+}
+.issueDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--hue, var(--color-ink-muted));
 }
 .issue h3,
 .issue h4 {
   font-size: 16px;
   font-weight: 600;
-  margin: 0 0 4px;
+  margin: 0;
+}
+.issueChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--tint, var(--color-parchment));
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-ink);
 }
 .issue p {
   margin: 0 0 8px;
@@ -361,9 +409,9 @@
 }
 .voteRow {
   display: grid;
-  gap: 4px;
+  gap: 2px;
   margin: 0;
-  padding: 12px 0;
+  padding: 10px 0;
   border-top: 1px solid var(--color-parchment);
 }
 .voteRow:first-child {
@@ -376,25 +424,30 @@
   font-weight: 500;
   margin: 0;
 }
+/* The question and the vote on one line; the vote never wraps away from it. */
 .voteLine {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px 12px;
+}
+.voteLine > :first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.voteLine > strong {
+  flex: none;
+  margin-top: 1px;
 }
 .headline {
-  font-size: 15px;
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
   color: var(--color-ink-light);
 }
 .headlineLabel {
-  display: block;
-  margin: 0 0 2px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-ink-muted);
+  font-weight: 600;
+  color: var(--color-ink);
 }
 .disclosure {
   font-size: 14px;
@@ -408,8 +461,11 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  min-height: 44px;
+  min-height: 36px;
+  font-size: 13.5px;
+  font-weight: 500;
   color: var(--color-ink-muted);
+  cursor: pointer;
 }
 .voteRow summary svg {
   transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -840,8 +896,8 @@
 }
 .ladderWhat {
   display: inline;
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 15.5px;
+  line-height: 1.5;
   color: var(--color-ink);
 }
 

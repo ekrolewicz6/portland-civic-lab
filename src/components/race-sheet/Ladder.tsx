@@ -9,7 +9,7 @@ import c from "./controls.module.css";
  * every issue. A missing rung is a gap; if the Lab has asked the candidate,
  * the date shows so a reader knows the question is in their court.
  */
-function Rung({ label, rung, askedOn }: { label: string; rung: LadderModel["how"]; askedOn: string | null }) {
+function Rung({ label, rung, askedOn, compact }: { label: string; rung: LadderModel["how"]; askedOn: string | null; compact?: boolean }) {
   return (
     <div className={styles.rung} data-gap={rung ? undefined : ""}>
       <dt className={styles.rungLabel}>{label}</dt>
@@ -20,7 +20,7 @@ function Rung({ label, rung, askedOn }: { label: string; rung: LadderModel["how"
               <SaidGlyph />
               {rung.text}
             </span>
-            <SourceChipButton chip={rung.source} />
+            <SourceChipButton chip={rung.source} compact={compact} />
           </>
         ) : (
           <span className={styles.rungGap}>
@@ -40,15 +40,16 @@ function formatDate(iso: string) {
   return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-US", { month: "long", day: "numeric", timeZone: "UTC" });
 }
 
-export default function Ladder({ what, ladder }: { what: React.ReactNode; ladder: LadderModel }) {
+/** `compact` is the brief's setting: smaller rungs and source chips, so four ladders read as one column. */
+export default function Ladder({ what, ladder, compact = false }: { what: React.ReactNode; ladder: LadderModel; compact?: boolean }) {
   return (
-    <dl className={styles.ladder}>
+    <dl className={styles.ladder} data-compact={compact || undefined}>
       <div className={styles.rung}>
         <dt className={styles.rungLabel}>What</dt>
         <dd className={styles.rungBody}>{what}</dd>
       </div>
-      <Rung label="How" rung={ladder.how} askedOn={ladder.askedOn} />
-      <Rung label="Measured by" rung={ladder.measure} askedOn={ladder.askedOn} />
+      <Rung label="How" rung={ladder.how} askedOn={ladder.askedOn} compact={compact} />
+      <Rung label="Measured by" rung={ladder.measure} askedOn={ladder.askedOn} compact={compact} />
     </dl>
   );
 }

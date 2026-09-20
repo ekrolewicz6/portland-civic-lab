@@ -253,18 +253,23 @@ export default function CandidateBrief({
         {issues.map((issue) => {
           const cell = row.cells[issue.id];
           return (
-            <div key={issue.id} className={styles.issue}>
-              <Item>{issue.label}</Item>
+            <div key={issue.id} className={styles.issue} data-issue={issue.id}>
+              <div className={styles.issueHead}>
+                <span className={styles.issueDot} aria-hidden="true" />
+                <Item>{issue.label}</Item>
+                {cell.chip && <span className={styles.issueChip}>{cell.chip}</span>}
+              </div>
               {cell.position ? (
                 <div data-issue={issue.id} className={styles.ladderWrap}>
                   <Ladder
+                    compact
                     ladder={row.ladder[issue.id]}
                     what={
                       <>
                         <span className={styles.ladderWhat}>
                           <SaidGlyph /> {cell.position}
                         </span>
-                        {cell.source && <SourceChipButton chip={cell.source} />}
+                        {cell.source && <SourceChipButton chip={cell.source} compact />}
                       </>
                     }
                   />
@@ -307,14 +312,13 @@ export default function CandidateBrief({
               <ol className={styles.voteList} aria-describedby={heading("votes-label")}>
                 {featured.map(({ row: f, vote }) => (
                   <li key={f.questionId} className={styles.voteRow}>
-                    <Item>{f.title}</Item>
                     <div className={styles.voteLine}>
+                      <Item>{f.title}</Item>
                       <VotePill vote={vote.vote} />
                     </div>
                     {vote.headline && (
                       <p className={styles.headline}>
-                        <span className={styles.headlineLabel}>Our reading of the record</span>
-                        {vote.headline}
+                        <span className={styles.headlineLabel}>Our reading:</span> {vote.headline}
                       </p>
                     )}
                     <details>
