@@ -1,0 +1,102 @@
+/* The About strip at the foot of the race page: three short blocks under a
+   hairline, then the standards links and the glossary. */
+
+.about {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-parchment);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-ink-light);
+  scroll-margin-top: calc(var(--site-header-height, 80px) + 16px);
+}
+.title {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+.blocks {
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 900px) {
+  .blocks {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+  }
+}
+.block {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  justify-items: start;
+  min-width: 0;
+}
+.block p {
+  margin: 0;
+  max-width: 52ch;
+}
+.block strong {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.blockTitle {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+.dates {
+  color: var(--color-ink);
+}
+.edition {
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+.links {
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.links li {
+  margin: 0;
+}
+.terms {
+  margin-top: 12px;
+}
+.terms summary {
+  list-style: none;
+}
+.terms summary::-webkit-details-marker {
+  display: none;
+}
+.termsCaret {
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.terms[open] .termsCaret {
+  transform: rotate(180deg);
+}
+.terms dl {
+  margin: 8px 0;
+  max-width: 62ch;
+}
+.terms dt {
+  margin-top: 12px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.terms dd {
+  margin: 2px 0 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .termsCaret {
+    transition: none;
+  }
+}

@@ -1,32 +1,72 @@
 import Link from "next/link";
-import { BookOpen, ChevronDown, Download, MessageSquareWarning, Printer, SearchX } from "lucide-react";
+import { ArrowUpRight, BookOpen, ChevronDown, Download, MessageSquareWarning, Printer, SearchX } from "lucide-react";
 import type { RaceSheet } from "@/lib/voters-guide/race-sheet";
 import { glossary } from "@/lib/voters-guide/race-sheet/glossary";
 import { councilDisagreements } from "@/lib/voters-guide/council-record-accounts";
 import { REVIEW_LABEL } from "@/lib/voters-guide/types";
-import styles from "./brief.module.css";
+import styles from "./about.module.css";
 import c from "./controls.module.css";
 
 /**
- * The About strip: ≤60 words, the featured-vote rule disclosed, and the
- * glossary. Two dates are printed on purpose: the research was reviewed on
- * one day and the overlay lines carry their own edition stamp.
+ * The About strip: three short blocks a reader may want before or after
+ * scanning (how to vote, what this Council can do, how the list was made),
+ * then the standards links and the glossary. Two dates are printed on
+ * purpose: the research was reviewed on one day and the overlay lines carry
+ * their own edition stamp.
  */
 export default function AboutStrip({ sheet }: { sheet: RaceSheet }) {
-  const votesPath = `/voters-guide/${sheet.race.id}/votes`;
+  const { race, ballot } = sheet;
+  const votesPath = `/voters-guide/${race.id}/votes`;
   return (
     <section id="about" className={styles.about} aria-labelledby="about-title">
-      <h2 id="about-title" className={styles.sectionTitle}>
-        About this list
+      <h2 id="about-title" className={styles.title}>
+        About this race
       </h2>
-      <p>
-        Same questions, A–Z. Each chip is our short reading of a sourced statement; tap it for the
-          sentence, the source and the brief. We do not endorse, rank or score. The four featured votes are this
-        district’s most reported, most divided Council decisions, phrased as the question Council
-        decided; the <Link href={votesPath} className={c.inlineLink}>Votes page</Link> has all {councilDisagreements.length}.
-        Research reviewed {REVIEW_LABEL}; lines edition {sheet.version}, AI-assisted; human review pending.
-      </p>
-      <ul className={`${c.row} ${styles.aboutLinks}`}>
+
+      <div className={styles.blocks}>
+        <div className={styles.block}>
+          <h3 className={styles.blockTitle}>How to vote</h3>
+          {ballot ? (
+            <p>
+              <strong>{ballot.text}</strong> {ballot.note}{" "}
+              <span className={styles.dates}>Ballots mail October 14; return by 8 p.m. November 3.</span>
+            </p>
+          ) : (
+            <p>
+              <strong>{race.method}.</strong> Follow the instructions on your official ballot.{" "}
+              <span className={styles.dates}>Ballots mail October 14; return by 8 p.m. November 3.</span>
+            </p>
+          )}
+          {ballot && (
+            <a href={ballot.source.url} className={`${c.btn} ${c.quiet} ${c.small}`}>
+              How ranked choice works <ArrowUpRight size={14} aria-hidden="true" />
+            </a>
+          )}
+        </div>
+
+        <div className={styles.block}>
+          <h3 className={styles.blockTitle}>What this Council can do</h3>
+          <p>{race.authority}</p>
+        </div>
+
+        <div className={styles.block}>
+          <h3 className={styles.blockTitle}>How this list was made</h3>
+          <p>
+            Same questions for everyone, A–Z. Each chip is our short reading of a sourced statement; tap it for the
+            sentence and the source. We do not endorse, rank or score. The four featured votes are this district’s
+            most reported, most divided Council decisions; the{" "}
+            <Link href={votesPath} className={c.inlineLink}>
+              Votes page
+            </Link>{" "}
+            has all {councilDisagreements.length}.
+          </p>
+          <p className={styles.edition}>
+            Research reviewed {REVIEW_LABEL} · lines edition {sheet.version} · AI-assisted, human review pending.
+          </p>
+        </div>
+      </div>
+
+      <ul className={`${c.row} ${styles.links}`}>
         <li>
           <Link href="/voters-guide/methodology" className={`${c.btn} ${c.quiet} ${c.small}`}>
             <BookOpen size={15} aria-hidden="true" /> Standards
@@ -43,7 +83,7 @@ export default function AboutStrip({ sheet }: { sheet: RaceSheet }) {
           </Link>
         </li>
         <li>
-          <Link href={`/voters-guide/${sheet.race.id}/print`} prefetch={false} className={`${c.btn} ${c.quiet} ${c.small}`}>
+          <Link href={`/voters-guide/${race.id}/print`} prefetch={false} className={`${c.btn} ${c.quiet} ${c.small}`}>
             <Printer size={15} aria-hidden="true" /> Print everything
           </Link>
         </li>
@@ -53,6 +93,7 @@ export default function AboutStrip({ sheet }: { sheet: RaceSheet }) {
           </Link>
         </li>
       </ul>
+
       <details className={styles.terms}>
         <summary className={`${c.btn} ${c.quiet} ${c.small}`}>
           Terms explained <ChevronDown size={16} aria-hidden="true" className={styles.termsCaret} />

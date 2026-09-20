@@ -105,12 +105,11 @@ export default function FourVotes({ sheet }: { sheet: RaceSheet }) {
   const others = rows.length - incumbents.length;
   const intro =
     incumbents.length > 0
-      ? `Only ${joinNames(incumbents.map((p) => p.name))} ${incumbents.length === 1 ? "sits" : "sit"} on Council today. The other ${others} candidate${others === 1 ? "" : "s"} ${others === 1 ? "has" : "have"} no votes yet; that is not a judgment.`
+      ? `Only ${joinNames(incumbents.map((p) => surname(p.name)))} ${incumbents.length === 1 ? "sits" : "sit"} on Council today. The other ${others} ${others === 1 ? "has" : "have"} no votes yet; that is not a judgment.`
       : `None of the ${rows.length} candidates sits on Council today, so none has a Council vote yet; that is not a judgment.`;
 
   return (
     <section id="votes-panel" className={`${styles.votes} ${styles.panel}`} aria-labelledby="votes-panel-heading">
-      <p className={styles.eyebrow}>Recorded votes</p>
       <h2 id="votes-panel-heading" className={styles.heading}>
         Four votes that split this Council
       </h2>

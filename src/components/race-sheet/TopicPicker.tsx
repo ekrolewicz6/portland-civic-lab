@@ -8,26 +8,34 @@ export const MAX_EXTRA = 2;
 
 /**
  * Add up to two concrete choices as grid columns beside the four issues.
- * Coverage is shown on each control so a sparse column is never a surprise:
- * a recorded vote or an explicit statement counts; silence never does.
+ * Opens from the toolbar's one control and closes with it. Coverage is
+ * shown on each chip so a sparse column is never a surprise: a recorded
+ * vote or an explicit statement counts; silence never does.
  */
 export default function TopicPicker({
+  id,
+  open,
   topics,
   coverage,
   total,
   selected,
   onChange,
 }: {
+  id: string;
+  open: boolean;
   topics: ExtraTopic[];
   coverage: Record<string, number>;
   total: number;
   selected: string[];
   onChange: (next: string[]) => void;
 }) {
+  if (!open) return null;
   const full = selected.length >= MAX_EXTRA;
   return (
-    <div className={styles.picker} role="group" aria-label="Add a topic to compare">
-      <span className={styles.pickerLabel}>Compare on more</span>
+    <div id={id} className={styles.picker} role="group" aria-label="Add a topic to compare">
+      <p className={styles.pickerLabel}>
+        Add up to two columns. The count is how many of {total} are on record.
+      </p>
       <div className={styles.pickerChips}>
         {topics.map((topic) => {
           const on = selected.includes(topic.id);
@@ -44,9 +52,7 @@ export default function TopicPicker({
             >
               {on ? <Check size={14} aria-hidden="true" /> : <Plus size={14} aria-hidden="true" />}
               <span>{topic.label}</span>
-              <span className={styles.pickerCount}>
-                {coverage[topic.id] ?? 0}/{total}
-              </span>
+              <span className={styles.pickerCount}>{coverage[topic.id] ?? 0}</span>
             </button>
           );
         })}
