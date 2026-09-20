@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Bookmark } from "lucide-react";
 import type { SheetRow } from "@/lib/voters-guide/race-sheet";
 import { issues, type IssueId } from "@/lib/voters-guide/race-sheet/issues";
+import type { ExtraTopic } from "@/lib/voters-guide/race-sheet/types";
+import { VotePill } from "./Glyph";
 import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import { portraitPerson } from "./CandidateCard";
 import { missingLabel } from "./CandidateRow";
@@ -33,6 +35,8 @@ export default function StanceGrid({
   raceId,
   active,
   coverage,
+  extra,
+  topicCoverage,
   saved,
   onToggleSave,
   onHighlight,
@@ -41,19 +45,22 @@ export default function StanceGrid({
   raceId: string;
   active: IssueId | null;
   coverage: Record<IssueId, number>;
+  extra: ExtraTopic[];
+  topicCoverage: Record<string, number>;
   saved: Set<string>;
   onToggleSave: (id: string) => void;
   onHighlight: (issue: IssueId | null) => void;
 }) {
-  const [open, setOpen] = useState<{ id: string; issue: IssueId } | null>(null);
+  const [open, setOpen] = useState<{ id: string; key: string } | null>(null);
   const toggle = useCallback(
-    (id: string, issue: IssueId) =>
-      setOpen((current) => (current && current.id === id && current.issue === issue ? null : { id, issue })),
+    (id: string, key: string) =>
+      setOpen((current) => (current && current.id === id && current.key === key ? null : { id, key })),
     [],
   );
+  const columns = issues.length + extra.length + 2;
 
   return (
-    <div className={styles.wrap} id="list">
+    <div className={styles.wrap} id="list" data-extra={extra.length || undefined}>
       <table className={styles.grid} data-active={active ?? ""}>
         <caption className={styles.srOnly}>
           Where each candidate stands on four issues, in our short reading of their statements. Activate a cell to read
@@ -79,6 +86,14 @@ export default function StanceGrid({
                 </button>
                 <span className={styles.count}>
                   {coverage[issue.id]} of {rows.length} documented
+                </span>
+              </th>
+            ))}
+            {extra.map((topic) => (
+              <th key={topic.id} scope="col" className={`${styles.issueHead} ${styles.topicHead}`} data-issue="topic">
+                <span className={styles.headButton}>{topic.label}</span>
+                <span className={styles.count}>
+                  {topicCoverage[topic.id] ?? 0} of {rows.length} on record
                 </span>
               </th>
             ))}
@@ -110,7 +125,7 @@ export default function StanceGrid({
                   {issues.map((issue) => {
                     const cell = row.cells[issue.id];
                     const chip = cell.chip ?? fallbackChip(cell.line, cell.position);
-                    const cellOpen = isOpen && open?.issue === issue.id;
+                    const cellOpen = isOpen && open?.key === issue.id;
                     return (
                       <td key={issue.id} className={styles.cell} data-issue={issue.id}>
                         <span className={styles.cellLabel}>{issue.short}</span>
@@ -139,6 +154,26 @@ export default function StanceGrid({
                       </td>
                     );
                   })}
+                  {extra.map((topic) => {
+                    const tc = row.topicCells[topic.id];
+                    const cellOpen = isOpen && open?.key === `topic:${topic.id}`;
+                    const has = Boolean(tc.vote || tc.chip);
+                    return (
+                      <td key={topic.id} className={styles.cell} data-issue="topic">
+                        <span className={styles.cellLabel}>{topic.short}</span>
+                        <button
+                          type="button"
+                          className={has ? styles.chip : styles.gapButton}
+                          aria-expanded={cellOpen}
+                          aria-controls={cellOpen ? detailId : undefined}
+                          aria-label={has ? undefined : `${row.name} on ${topic.label.toLowerCase()}: no statement in the sources we reviewed`}
+                          onClick={() => toggle(row.id, `topic:${topic.id}`)}
+                        >
+                          {tc.vote ? <VotePill vote={tc.vote} /> : tc.chip ? tc.chip : tc.askedOn ? <span className={styles.asked}>Asked</span> : <Gap text="" />}
+                        </button>
+                      </td>
+                    );
+                  })}
                   <td className={styles.saveCell}>
                     <button
                       type="button"
@@ -153,10 +188,11 @@ export default function StanceGrid({
                 </tr>
                 {isOpen && open && (
                   <tr className={styles.detailRow}>
-                    <td colSpan={issues.length + 2}>
+                    <td colSpan={columns}>
                       <StanceDetail
                         row={row}
-                        issue={issues.find((i) => i.id === open.issue)!}
+                        issue={issues.find((i) => i.id === open.key) ?? null}
+                        topic={open.key.startsWith("topic:") ? (extra.find((t) => `topic:${t.id}` === open.key) ?? null) : null}
                         raceId={raceId}
                         id={detailId}
                         onClose={() => setOpen(null)}

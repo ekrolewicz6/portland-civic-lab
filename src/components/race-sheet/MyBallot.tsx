@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useId, useRef, useState, type RefObject } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import MiniChips from "./MiniChips";
 import { ArrowDown, ArrowUp, Bookmark, Printer, Trash2, X } from "lucide-react";
 import type { ClientSheet, SheetRow } from "@/lib/voters-guide/race-sheet";
 import {
@@ -264,7 +265,7 @@ export default function MyBallot({
                         </Link>
                       </p>
                       <p className={styles.slotRole}>{row.role}</p>
-                      <p className={styles.slotLine}>{row.summary}</p>
+                      <MiniChips row={row} />
                       {votes.length > 0 && (
                         <div className={styles.slotVotes}>
                           <p className={styles.metaLabel}>

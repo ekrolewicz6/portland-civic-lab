@@ -1,4 +1,4 @@
-import type { Candidate, Race } from "../types";
+import type { Candidate, Evidence, Race } from "../types";
 import { races } from "../published";
 import { councilDecisions, type CouncilDecision } from "../council-decisions";
 import { councilDisagreements, decisionAccounts, type DecisionAccount } from "../council-record-accounts";
@@ -9,12 +9,16 @@ import { featuredVotes } from "./featured";
 import { sourceChip, type SourceChip } from "./source-chip";
 import { issueLines } from "./content/lines";
 import { stanceChips } from "./content/stances";
+import { deliveries } from "./content/delivery";
+import { topicStances } from "./content/topic-stances";
+import { extraTopics } from "./topics";
 import { choiceParagraphs } from "./content/choice";
 import { saidPlacements } from "./content/said";
 import { missingStates, primaryStatements, roleOverrides } from "./content/roles";
 import { ballotInstructions, districts } from "./content/districts";
 import { answers } from "./content/answers";
-import type { BallotInstruction, CandidateAnswer, DistrictInfo, MissingState, Review } from "./types";
+import { ownWords, type OwnWordsRule } from "./content/own-words";
+import type { BallotInstruction, CandidateAnswer, DistrictInfo, ExtraTopic, MissingState, Review } from "./types";
 
 export const raceSheetVersion = "2026-09-19.1";
 
@@ -29,6 +33,20 @@ export type IssueCell = {
   position: string | null;
   source: SourceChip | null;
   review: Review | null;
+};
+
+/** One rung of the promise ladder, ready to render. */
+export type Rung = { text: string; source: SourceChip } | null;
+export type Ladder = { how: Rung; measure: Rung; askedOn: string | null; review: Review | null };
+
+/** A cell in an extra-topic column: a recorded vote, an explicit stance, or a gap. */
+export type TopicCell = {
+  vote: VoteWord | null;
+  stance: "supports" | "opposes" | "mixed" | null;
+  chip: string | null;
+  text: string | null;
+  source: SourceChip | null;
+  askedOn: string | null;
 };
 
 export type SheetRow = {
@@ -49,7 +67,11 @@ export type SheetRow = {
   missingText: string | null;
   primarySource: SourceChip;
   cells: Record<IssueId, IssueCell>;
+  ladder: Record<IssueId, Ladder>;
+  topicCells: Record<string, TopicCell>;
   answers: CandidateAnswer[];
+  /** The verbatim opening of their own statement, captured by one rule for everyone. */
+  ownWords: { text: string; source: SourceChip; rule: OwnWordsRule } | null;
 };
 
 export type VoteWord = "Yes" | "No" | "Absent" | "Not on committee";
@@ -137,6 +159,39 @@ function buildRow(person: Candidate): SheetRow {
       ];
     }),
   ) as Record<IssueId, IssueCell>;
+  const ladder = Object.fromEntries(
+    ISSUE_IDS.map((issue) => {
+      const d = deliveries.find((x) => x.candidateId === person.id && x.issue === issue);
+      const rung = (step?: { text: string; source: Evidence }): Rung => (step ? { text: step.text, source: sourceChip(step.source) } : null);
+      return [
+        issue,
+        {
+          how: rung(d?.how),
+          measure: rung(d?.measure),
+          askedOn: d?.askedOn ?? null,
+          review: d ? { reviewedBy: d.reviewedBy, reviewedOn: d.reviewedOn } : null,
+        } satisfies Ladder,
+      ];
+    }),
+  ) as Record<IssueId, Ladder>;
+  const topicCells = Object.fromEntries(
+    extraTopics.map((topic) => {
+      const decision = topic.decisionId ? councilDecisions.find((d) => d.id === topic.decisionId) : undefined;
+      const vote = decision && isIncumbent(person) ? (decision.votes[person.name] ?? null) : null;
+      const st = topicStances.find((x) => x.candidateId === person.id && x.topicId === topic.id);
+      return [
+        topic.id,
+        {
+          vote: (vote as VoteWord | null) ?? null,
+          stance: st?.stance ?? null,
+          chip: st?.chip ?? null,
+          text: st?.text ?? null,
+          source: st ? sourceChip(st.source) : null,
+          askedOn: st?.askedOn ?? null,
+        } satisfies TopicCell,
+      ];
+    }),
+  ) as Record<string, TopicCell>;
   const override = roleOverrides.find((r) => r.candidateId === person.id)?.role;
   return {
     id: person.id,
@@ -154,7 +209,13 @@ function buildRow(person: Candidate): SheetRow {
     missingText: person.missing ?? null,
     primarySource: primarySource(person),
     cells,
+    ladder,
+    topicCells,
     answers: answers.filter((a) => a.candidateId === person.id),
+    ownWords: (() => {
+      const own = ownWords.find((o) => o.candidateId === person.id);
+      return own ? { text: own.text, source: sourceChip(own.source), rule: own.rule } : null;
+    })(),
   };
 }
 
@@ -217,6 +278,8 @@ export type ClientSheet = {
   candidateIds: string[];
   rows: SheetRow[];
   coverage: Record<IssueId, number>;
+  topics: ExtraTopic[];
+  topicCoverage: Record<string, number>;
   featured: { questionId: string; title: string; votes: { id: string; name: string; vote: VoteWord }[] }[];
 };
 
@@ -228,6 +291,10 @@ export function clientSheet(sheet: RaceSheet): ClientSheet {
     candidateIds: sheet.rows.map((r) => r.id),
     rows: sheet.rows,
     coverage: sheet.coverage,
+    topics: extraTopics,
+    topicCoverage: Object.fromEntries(
+      extraTopics.map((t) => [t.id, sheet.rows.filter((r) => r.topicCells[t.id].vote || r.topicCells[t.id].chip).length]),
+    ),
     featured: sheet.featured.map((f) => ({
       questionId: f.questionId,
       title: f.title,

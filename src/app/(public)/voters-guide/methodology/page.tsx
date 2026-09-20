@@ -280,6 +280,26 @@ export default function Methodology() {
           documented position. Columns are colored by topic, never by side.
         </p>
         <p>
+          Beneath each chip is the same three-rung ladder for every candidate:
+          what they say they would do, how they say they would do it, and how
+          they say we would know it worked. Each rung has its own source. A
+          rung we could not find in a candidate’s pamphlet, website,
+          questionnaires or reporting is shown as a gap, and where we have
+          emailed the candidate to ask, the date of that request is shown
+          beside it. We never fill a rung for a candidate.
+        </p>
+        <p>
+          Readers can add up to two more columns from a fixed list of concrete
+          choices (the Moda Center terms, new taxes or fees, police staffing,
+          camp removals, data centers, Portland Street Response, the street
+          repair fee, water rates). The list and its order are editorial and
+          the same for every race. Where a topic matches a recorded Council
+          decision, sitting councilors’ votes appear as pills. Every other cell
+          is either an explicit, sourced statement about that exact choice or a
+          gap; we never infer a stance from party, silence or a broad goal, and
+          each column header counts how many candidates are on record.
+        </p>
+        <p>
           Chips and short lines are written by us, shortened from the full
           position, and each names the field it was shortened from. They may omit; they never
           add. The full position, its source and any qualifier are one tap away

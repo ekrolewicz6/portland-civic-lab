@@ -229,8 +229,8 @@ const rows: Record<string, AnalysisRow> = {
     },
   ],
   "Timothy (TJ) Anderson": [
-    ["Lived experience", "Responsive government"],
-    "The statement makes a case for representation informed by homelessness and disability. It does not establish a legislative program, so those experiences should not be used to infer unspoken housing, policing or tax positions.",
+    ["Lived experience", "Audit first"],
+    "His pamphlet statement makes a case for representation informed by homelessness and disability; his emailed answers add an audit-first program: map city spending and assets before any new tax or fee, more officers with lower-cost responders for routine calls, and housing growth through investability and reuse of city assets. Beyond the audit’s $5 million cap, the costs and the mechanics of a Council pay freeze are not yet specified.",
     {},
   ],
   "Eli Arnold": [
@@ -359,6 +359,26 @@ const campaign = (label: string, url: string): Evidence => ({
   note: "Campaign position. Claimed results and numerical premises have not automatically been independently verified.",
 });
 const supplements: Record<string, { source: Evidence; issues: Issues }> = {
+  "Timothy (TJ) Anderson": {
+    // Emailed reply to the individual questions the Lab sent him on September 19, 2026.
+    source: {
+      label: "Anderson · emailed response to the Lab’s questions",
+      url: "https://www.portlandciviclab.org/voters-guide/research-log#anderson-2026-09-19",
+      kind: "Candidate statement",
+      date: "Received September 19, 2026",
+      note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on his brief. Receipt does not verify the claims.",
+    },
+    issues: {
+      housing:
+        "Wants more housing and says the fastest route may be making the city more investable, for large accounts and for people who want to make Portland home, alongside reusing city assets at lower cost for short-term help; opposes committing to a single plan.",
+      safety:
+        "Wants police response times down and says more officers will be needed, with cadets, volunteers and other programs handling calls that do not need the most highly trained officers. On homelessness, would first establish what has worked, a timeline of people’s needs and how to work with others in the city before spending more.",
+      money:
+        "Would start with a value-based audit of where city money went this year and the past two, plus a public list of city assets, at a cost he puts at no more than $5 million, with no new taxes or fees until it is done. Would freeze Council pay and benefits until average salaries and jobs have grown for two full years, and ask each councilor for 100 hours of volunteer work a year.",
+      climate:
+        "Would favor climate measures that also improve business investability, and wants more public transit and better train systems while leaving cars to those who want or need them, without burning future finances for what is wanted now.",
+    },
+  },
   "Keir Legree": {
     // Emailed reply to the identical questions the Lab sent every candidate on September 19, 2026.
     source: {

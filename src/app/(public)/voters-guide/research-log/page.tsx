@@ -19,6 +19,33 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="anderson-2026-09-19">September 19, 2026 · Candidate response: Timothy (TJ) Anderson (District 4)</h2>
+        <p>
+          T.J. Anderson replied to the individual questions the Lab emailed him
+          on September 19, 2026. His response names three policies with cost
+          estimates (a value-based audit of city spending and assets capped at
+          $5 million, with no new taxes or fees until it is done; 100 hours of
+          volunteer work a year per councilor; a Council pay-and-benefits freeze
+          until average salaries and jobs have grown for two full years) and
+          gives positions on housing, public safety, homelessness, city spending
+          and revenue, climate and transportation that his pamphlet statement
+          did not cover. He also described his committee work and attached
+          documents in support: the Multnomah County Department of County
+          Assets and Management community budget advisory committee reports for
+          FY26 (listing him as a member) and FY27 (listing him as co-chair), the
+          Central CBAC FY26 report, the Portland State tuition recommendation
+          flyer for 2026–27, and the TriMet Committee on Accessible
+          Transportation 2026 annual report (listing him as a member).
+        </p>
+        <p>
+          His grid row now has four documented positions instead of none, with
+          ladder rungs and two topic stances drawn only from the reply; his
+          brief shows excerpts under “Their answers to our questions.” The
+          response and attachments are kept on file and are not republished;
+          the site cites them with this entry. Because his research object
+          changed, the preservation baseline was re-recorded for his profile
+          only.
+        </p>
         <h2 id="legree-2026-09-19">September 19, 2026 · Candidate response: Keir Legree (District 3)</h2>
         <p>
           Keir Legree replied to the identical questions the Lab emailed every

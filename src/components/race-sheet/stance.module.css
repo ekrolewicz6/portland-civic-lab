@@ -17,6 +17,20 @@
 .wrap {
   margin-top: 8px;
 }
+/* With extra columns the grid breaks out of the 1040px page to keep chips readable. */
+@media (min-width: 1100px) {
+  .wrap[data-extra] {
+    --wide: min(1320px, 100vw - 48px);
+    width: var(--wide);
+    margin-left: calc((100% - var(--wide)) / 2);
+  }
+}
+@media (min-width: 769px) and (max-width: 1099px) {
+  .wrap[data-extra] .chip {
+    font-size: 12.5px;
+    padding: 5px 9px;
+  }
+}
 
 .grid {
   width: 100%;
@@ -29,30 +43,49 @@
 .cell[data-issue="housing"],
 .issueHead[data-issue="housing"],
 .issueIcon[data-issue="housing"],
-.detail[data-issue="housing"] {
+.detail[data-issue="housing"],
+.miniChip[data-issue="housing"] {
   --hue: var(--color-fern);
   --tint: color-mix(in oklab, var(--color-fern) 14%, var(--color-paper));
 }
 .cell[data-issue="safety"],
 .issueHead[data-issue="safety"],
 .issueIcon[data-issue="safety"],
-.detail[data-issue="safety"] {
+.detail[data-issue="safety"],
+.miniChip[data-issue="safety"] {
   --hue: var(--color-clay);
   --tint: color-mix(in oklab, var(--color-clay) 11%, var(--color-paper));
 }
 .cell[data-issue="money"],
 .issueHead[data-issue="money"],
 .issueIcon[data-issue="money"],
-.detail[data-issue="money"] {
+.detail[data-issue="money"],
+.miniChip[data-issue="money"] {
   --hue: #9a6a35;
   --tint: color-mix(in oklab, var(--color-ember) 24%, var(--color-paper));
 }
 .cell[data-issue="climate"],
 .issueHead[data-issue="climate"],
 .issueIcon[data-issue="climate"],
-.detail[data-issue="climate"] {
+.detail[data-issue="climate"],
+.miniChip[data-issue="climate"] {
   --hue: var(--color-river-deep);
   --tint: color-mix(in oklab, var(--color-river) 14%, var(--color-paper));
+}
+
+/* Extra-topic columns share one neutral hue: they are choices, not sides. */
+.cell[data-issue="topic"],
+.issueHead[data-issue="topic"],
+.detail[data-issue="topic"] {
+  --hue: var(--color-violet-mist);
+  --tint: color-mix(in oklab, var(--color-violet-mist) 14%, var(--color-paper));
+}
+.asked {
+  font-family: var(--font-mono);
+  font-size: max(10.5px, 0.66rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
 }
 
 .issueIcon {
@@ -430,10 +463,7 @@
     position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-areas:
-      "who who"
-      "housing safety"
-      "money climate";
+    grid-auto-flow: row;
     gap: 10px 8px;
     padding: 14px 0 16px;
     border-bottom: 1px solid var(--color-parchment);
@@ -444,7 +474,7 @@
     border-bottom: 0;
   }
   .who {
-    grid-area: who;
+    grid-column: 1 / -1;
     padding-right: 48px;
   }
   .portrait {
@@ -459,18 +489,6 @@
     flex-direction: column;
     gap: 4px;
     min-width: 0;
-  }
-  .cell[data-issue="housing"] {
-    grid-area: housing;
-  }
-  .cell[data-issue="safety"] {
-    grid-area: safety;
-  }
-  .cell[data-issue="money"] {
-    grid-area: money;
-  }
-  .cell[data-issue="climate"] {
-    grid-area: climate;
   }
   .cellLabel {
     display: flex;
@@ -540,4 +558,172 @@
   .detailRow {
     display: none !important;
   }
+}
+
+/* ── Mini chip strip (ballot slots, shared view) ────────────────────── */
+.miniChips {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 480px) {
+  .miniChips {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.miniChip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--tint);
+}
+.miniLabel {
+  font-family: var(--font-mono);
+  font-size: max(10px, 0.62rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hue);
+}
+.miniText {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-ink);
+}
+
+/* ── Topic picker ───────────────────────────────────────────────────── */
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 12px 0 4px;
+}
+.pickerLabel {
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+.pickerChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.pickerChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 4px 12px 4px 10px;
+  border: 1px dashed var(--color-lichen);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-ink-light);
+  font: 500 13px/1.2 var(--font-body);
+  cursor: pointer;
+}
+.pickerChip:hover:not(:disabled) {
+  border-style: solid;
+  border-color: var(--color-canopy);
+  color: var(--color-ink);
+}
+.pickerChip[aria-pressed="true"] {
+  border: 1px solid var(--color-violet-mist);
+  background: color-mix(in oklab, var(--color-violet-mist) 14%, var(--color-paper));
+  color: var(--color-ink);
+}
+.pickerChip:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.pickerChip:focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+}
+.pickerCount {
+  font-family: var(--font-mono);
+  font-size: max(10.5px, 0.66rem);
+  color: var(--color-ink-muted);
+}
+
+/* ── The ladder: what → how → measured by ───────────────────────────── */
+.ladder {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0 0;
+}
+.rung {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 8px 12px;
+  align-items: start;
+}
+@media (max-width: 480px) {
+  .rung {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+.rungLabel {
+  margin: 0;
+  padding-top: 3px;
+  font-family: var(--font-mono);
+  font-size: max(11px, 0.7rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hue, var(--color-ink-muted));
+}
+.rungBody {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 0;
+  min-width: 0;
+}
+.rungText {
+  display: flex;
+  align-items: flex-start;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--color-ink);
+  max-width: 62ch;
+}
+.rungGap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-ink-light);
+}
+.detailQuestion {
+  margin: 10px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.detailContext {
+  margin: 10px 0 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+  max-width: 62ch;
+}
+.detailVoteNote {
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+.topicHead {
+  border-bottom-color: var(--tint) !important;
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Candidate, Race } from "../types";
 import { missingStates, roleOverrides } from "./content/roles";
+import { ownWords } from "./content/own-words";
 import { byName, shortRaceTitle } from "./index";
 import type { MissingState } from "./types";
 
@@ -141,11 +142,13 @@ export function candidateDescription(race: Race, person: Candidate) {
         : "No platform found in the sources we reviewed; a gap, not a position.";
     return `${lead}${state}${tail}`;
   }
-  const lead = `${person.name} for Portland City Council ${raceFacts(race).short} (2026). Our summary: `;
-  const room = DESCRIPTION_MAX - lead.length - tail.length;
-  let quote = clip(person.summary, Math.min(SUMMARY_QUOTE_MAX, room));
+  const own = ownWords.find((o) => o.candidateId === person.id);
+  const lead = `${person.name} for Portland City Council ${raceFacts(race).short} (2026). ${own ? "In their words: “" : "Our summary: "}`;
+  const close = own ? "”" : "";
+  const room = DESCRIPTION_MAX - lead.length - close.length - tail.length;
+  let quote = clip(own ? own.text : person.summary, Math.min(SUMMARY_QUOTE_MAX, room));
   if (!/[.!?…]$/.test(quote)) quote = `${quote}.`;
-  let text = `${lead}${quote}${tail}`;
+  let text = `${lead}${quote}${close}${tail}`;
   if (text.length < DESCRIPTION_MIN) text = `${text.slice(0, -tail.length)} Sources included; no endorsements.`;
   return text;
 }

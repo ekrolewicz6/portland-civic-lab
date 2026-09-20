@@ -848,3 +848,30 @@
     clip: auto;
   }
 }
+
+/* Ladder rows inherit the issue hue from the grid stylesheet's data-issue rules. */
+.ladderWrap {
+  margin-top: 4px;
+}
+.ladderWhat {
+  display: inline;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-ink);
+}
+
+/* In their words: the verbatim opening leads the brief. */
+.opening {
+  border-left: 3px solid var(--color-accent, #b4532a);
+  padding-left: 16px;
+}
+.openingQuote {
+  margin: 0 0 8px;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--color-ink);
+}
+.openingQuote p {
+  margin: 0;
+}

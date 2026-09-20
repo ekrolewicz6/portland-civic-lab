@@ -194,3 +194,14 @@ After the owner reviewed the first build ("too much to read; make everything vis
 - **Hub map.** An SVG of the four Council districts from the City's boundary layer (fetched September 19, 2026) with the Willamette, published districts clickable; district cards now show a portrait mosaic instead of the choice paragraph.
 - **Candidate responses.** Keir Legree's emailed reply (received September 19) is integrated as a sourced supplement for all four issues, five "In their words" answers, updated lines and chips, a research-log entry it cites, and a deliberate re-record of his preservation hash.
 
+
+
+## Revised September 20: the ladder, extra topics, and the candidate's own words
+
+Three changes after the owner's review of the visual-first grid.
+
+**The promise ladder.** Every issue cell, on the grid detail and on the brief, now asks the same three questions of every candidate: *what* they say they would do, *how* they say they would deliver it (the mechanism they name: money, rules, staffing, sequencing, a partner), and *measured by* what result. Each rung carries its own source. A rung the candidate has not stated is a gap, shown as the same dash; once the Lab has emailed the candidate, `askedOn` turns the dash into "asked on <date>". Rungs are never filled from the position itself or from a broad goal. Content lives in `content/delivery-d3.ts` and `content/delivery-d4.ts`; the outreach drafts that ask for the missing rungs are in `research/voters-guide-2026/outreach-2026-09-20/`. Nothing has been sent.
+
+**Extra topics.** Readers can add up to two columns from a fixed list of eight concrete choices (`topics.ts`). Where a topic matches a Council decision, incumbents' recorded votes render as pills; every other cell is an explicit, sourced statement about that exact choice or a gap. Stances are never inferred from party, silence or a broad goal. Two agent-drafted stances were removed on review for not answering the column's question (McDonald on Moda, Evenstar on Street Response); both are asked in the outreach drafts instead. The hash carries `#issue=<id>&topics=<a,b>` and nothing else.
+
+**In their words.** To remove the cherry-picking risk in our summaries, every brief now opens with the verbatim opening of the candidate's own statement under one mechanical rule (first complete sentence of the pamphlet statement; two sentences if under 12 words; ≤60 words; six fallbacks documented in `content/own-words.ts`). The rule is disclosed under each quote. Our one-line summary stays, now labeled as ours, and My ballot and the shared view introduce a candidate by their four chips rather than by a sentence we chose. The search description quotes the same opening.

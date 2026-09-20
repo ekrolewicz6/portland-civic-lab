@@ -10,6 +10,9 @@ import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import ShareGuide from "@/components/voters-guide/ShareGuide";
 import { SaidGlyph, VotePill } from "./Glyph";
 import Term from "./Term";
+import Ladder from "./Ladder";
+import { SourceChipButton } from "./CandidateCard";
+import type { OwnWordsRule } from "@/lib/voters-guide/race-sheet/content/own-words";
 import styles from "./brief.module.css";
 
 /* ── Shared pieces (the glyph vocabulary itself lives in Glyph.tsx) ── */
@@ -87,6 +90,15 @@ type Level = 1 | 2;
  * `embedded` (the print edition) drops the breadcrumb, share and pager and
  * steps every heading down one level under the page's own H1.
  */
+/** The same disclosure for everyone: which mechanical rule picked the opening. */
+const OPENING_RULE: Record<OwnWordsRule, string> = {
+  "pamphlet-opening": "The verbatim opening of their voters’ pamphlet statement, the same rule for every candidate. We chose nothing.",
+  "filing-opening": "No pamphlet statement was published; this is the verbatim opening of their City filing statement.",
+  "site-opening": "No pamphlet statement was published; this is the verbatim opening of their campaign site’s About page.",
+  "questionnaire-opening": "No pamphlet statement was published; this is the verbatim opening of their written questionnaire answer.",
+  "announcement-opening": "No pamphlet statement was published; this is the verbatim opening of their campaign announcement.",
+};
+
 export default function CandidateBrief({
   race,
   person,
@@ -175,13 +187,27 @@ export default function CandidateBrief({
         )}
       </header>
 
+      {row.ownWords && (
+        <section className={`${styles.section} ${styles.opening}`} aria-labelledby={heading("opening")}>
+          <Section id={heading("opening")} className={styles.sectionTitle}>
+            In their words
+          </Section>
+          <blockquote className={styles.openingQuote}>
+            <p>
+              <SaidGlyph /> {row.ownWords.text}
+            </p>
+          </blockquote>
+          <SourceLine chip={row.ownWords.source} />
+          <p className={styles.muted}>{OPENING_RULE[row.ownWords.rule]}</p>
+        </section>
+      )}
+
       <section className={styles.section} aria-labelledby={heading("say")}>
         <Section id={heading("say")} className={styles.sectionTitle}>
           What they say they would do
         </Section>
-        <p>
-          <SaidGlyph /> {row.summary}
-        </p>
+        <span className={styles.label}>Our summary of their platform, in our words</span>
+        <p>{row.summary}</p>
         {row.priorities.length > 0 && (
           <ul>
             {row.priorities.map((priority) => (
@@ -226,12 +252,19 @@ export default function CandidateBrief({
             <div key={issue.id} className={styles.issue}>
               <Item>{issue.label}</Item>
               {cell.position ? (
-                <>
-                  <p>
-                    <SaidGlyph /> {cell.position}
-                  </p>
-                  {cell.source && <SourceLine chip={cell.source} />}
-                </>
+                <div data-issue={issue.id} className={styles.ladderWrap}>
+                  <Ladder
+                    ladder={row.ladder[issue.id]}
+                    what={
+                      <>
+                        <span className={styles.ladderWhat}>
+                          <SaidGlyph /> {cell.position}
+                        </span>
+                        {cell.source && <SourceChipButton chip={cell.source} />}
+                      </>
+                    }
+                  />
+                </div>
               ) : (
                 <NotFound />
               )}
@@ -243,7 +276,7 @@ export default function CandidateBrief({
       {row.answers.length > 0 && (
         <section className={styles.section} aria-labelledby={heading("words")}>
           <Section id={heading("words")} className={styles.sectionTitle}>
-            In their words
+            Their answers to our questions
           </Section>
           {row.answers.map((answer) => (
             <blockquote key={`${answer.question}-${answer.received}`} className={styles.quote}>

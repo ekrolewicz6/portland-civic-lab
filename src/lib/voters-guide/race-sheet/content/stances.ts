@@ -113,6 +113,10 @@ export const stanceChips: StanceChip[] = [
 
   /* ── Portland City Council, District 4 ─────────────────────────────── */
 
+  chip("timothy-tj-anderson", "housing", "Investment, reused assets"),
+  chip("timothy-tj-anderson", "safety", "Officers plus cadets"),
+  chip("timothy-tj-anderson", "money", "Audit first, no taxes"),
+  chip("timothy-tj-anderson", "climate", "Green tech, more transit"),
   chip("eli-arnold", "housing", "Fill subsidized vacancies"),
   chip("eli-arnold", "safety", "Police-clinician teams"),
   chip("eli-arnold", "money", "Small-business tax relief"),

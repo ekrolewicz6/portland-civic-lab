@@ -2,6 +2,12 @@ import { describe, expect, it } from "vitest";
 import { races } from "@/lib/voters-guide/published";
 import { buildRaceSheet, ISSUE_IDS } from "@/lib/voters-guide/race-sheet";
 import { issueLines } from "@/lib/voters-guide/race-sheet/content/lines";
+import { stanceChips } from "@/lib/voters-guide/race-sheet/content/stances";
+import { deliveries } from "@/lib/voters-guide/race-sheet/content/delivery";
+import { topicStances } from "@/lib/voters-guide/race-sheet/content/topic-stances";
+import { extraTopics } from "@/lib/voters-guide/race-sheet/topics";
+import { ownWords } from "@/lib/voters-guide/race-sheet/content/own-words";
+import { candidateDescription } from "@/lib/voters-guide/race-sheet/seo";
 import { choiceParagraphs } from "@/lib/voters-guide/race-sheet/content/choice";
 import { saidPlacements } from "@/lib/voters-guide/race-sheet/content/said";
 import { primaryStatements, roleOverrides } from "@/lib/voters-guide/race-sheet/content/roles";
@@ -44,6 +50,128 @@ describe("issue lines (the row layer)", () => {
     expect(line.reviewedOn).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     const jargon = line.line.match(JARGON);
     if (jargon) expect(line.line, `jargon "${jargon[0]}" needs a gloss in parentheses`).toMatch(/\(/);
+  });
+});
+
+describe("stance chips (the grid layer)", () => {
+  it("has exactly one chip per documented position, none without a parent, none duplicated", () => {
+    const filled = people.flatMap(({ person }) =>
+      ISSUE_IDS.filter((issue) => person.analysis?.issues[issue]).map((issue) => `${person.id}/${issue}`),
+    );
+    const authored = stanceChips.map((c) => `${c.candidateId}/${c.issue}`);
+    expect(new Set(authored).size, "duplicate chips").toBe(authored.length);
+    expect(authored.filter((k) => !filled.includes(k)), "chips with no parent position").toEqual([]);
+    expect(filled.filter((k) => !authored.includes(k)), "documented positions with no chip").toEqual([]);
+  });
+  it.each(stanceChips.map((c) => [`${c.candidateId}/${c.issue}`, c] as const))("%s is 2–4 plain words, no attribution verbs, no side label", (_key, chip) => {
+    expect(words(chip.chip), chip.chip).toBeGreaterThanOrEqual(2);
+    expect(words(chip.chip), chip.chip).toBeLessThanOrEqual(4);
+    expect(chip.chip.length, chip.chip).toBeLessThanOrEqual(26);
+    expect(chip.chip, "attribution verb").not.toMatch(/\b(says|said|supports|wants|would|will|calls for)\b/i);
+    expect(chip.chip, "side label").not.toMatch(/\b(progressive|conservative|left|right|moderate|liberal)\b/i);
+    expect(chip.from).toBe(`analysis.issues.${chip.issue}.position`);
+    expect(chip.reviewedOn).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  });
+});
+
+const HTTPS = /^https:\/\//;
+const INFERENCE = /\b(likely|probably|presumably|would likely|seems to|appears to|as a (democrat|republican|progressive|conservative))\b/i;
+
+describe("the promise ladder (how, measured by)", () => {
+  it("names each candidate and issue once, and only where that issue has a documented position", () => {
+    const keys = deliveries.map((d) => `${d.candidateId}/${d.issue}`);
+    expect(new Set(keys).size, "duplicate ladders").toBe(keys.length);
+    for (const d of deliveries) {
+      const entry = find(d.candidateId);
+      expect(entry, `${d.candidateId}: unknown candidate`).toBeTruthy();
+      expect(entry!.person.analysis?.issues[d.issue], `${d.candidateId}/${d.issue}: a ladder needs a documented position beneath it`).toBeTruthy();
+    }
+  });
+  it.each(deliveries.map((d) => [`${d.candidateId}/${d.issue}`, d] as const))("%s: every rung is short, sourced over https, and not an inference", (_k, d) => {
+    // An entry with neither rung is allowed: it records that the sources were reviewed and nothing was found.
+    for (const rung of [d.how, d.measure]) {
+      if (!rung) continue;
+      expect(words(rung.text), rung.text).toBeLessThanOrEqual(40);
+      expect(rung.text, "inference language").not.toMatch(INFERENCE);
+      expect(rung.source.url, rung.source.url).toMatch(HTTPS);
+      expect(rung.source.kind).toBeTruthy();
+      expect(rung.source.date).toBeTruthy();
+    }
+    if (d.askedOn) expect(d.askedOn).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(d.reviewedOn).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(d.reviewedBy.length).toBeGreaterThan(0);
+  });
+});
+
+describe("extra topics", () => {
+  it("are a fixed, deduplicated list with a plain question, and any decisionId resolves", () => {
+    const ids = extraTopics.map((t) => t.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    for (const t of extraTopics) {
+      expect(t.question.trim().endsWith("?"), `${t.id}: question should be a question`).toBe(true);
+      expect(words(t.short)).toBeLessThanOrEqual(2);
+      if (t.decisionId) expect(councilDecisions.some((d) => d.id === t.decisionId), `${t.id}: decision ${t.decisionId}`).toBe(true);
+    }
+  });
+  it("stances name a known candidate and topic once each, with a short chip, a sourced sentence and no inference", () => {
+    const keys = topicStances.map((s) => `${s.candidateId}/${s.topicId}`);
+    expect(new Set(keys).size, "duplicate stances").toBe(keys.length);
+    for (const s of topicStances) {
+      const where = `${s.candidateId}/${s.topicId}`;
+      expect(find(s.candidateId), `${where}: unknown candidate`).toBeTruthy();
+      expect(extraTopics.some((t) => t.id === s.topicId), `${where}: unknown topic`).toBe(true);
+      expect(["supports", "opposes", "mixed"]).toContain(s.stance);
+      expect(words(s.chip), `${where}: "${s.chip}"`).toBeLessThanOrEqual(4);
+      expect(words(s.text), `${where}: ${s.text}`).toBeLessThanOrEqual(40);
+      expect(s.text, `${where}: inference language`).not.toMatch(INFERENCE);
+      expect(s.source.url, where).toMatch(HTTPS);
+      expect(s.reviewedOn).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    }
+  });
+  for (const race of races) {
+    it(`${race.id}: incumbents' topic cells carry their recorded vote where the topic is a decision; nobody else gets a vote`, () => {
+      const sheet = buildRaceSheet(race);
+      for (const row of sheet.rows) {
+        for (const topic of extraTopics) {
+          const cell = row.topicCells[topic.id];
+          const decision = topic.decisionId ? councilDecisions.find((d) => d.id === topic.decisionId) : undefined;
+          if (row.incumbent && decision) expect(cell.vote, `${row.id}/${topic.id}`).toBe(decision.votes[row.name] ?? null);
+          else expect(cell.vote, `${row.id}/${topic.id}`).toBeNull();
+          if (cell.chip) expect(cell.text && cell.source, `${row.id}/${topic.id}: a chip needs its sentence and source`).toBeTruthy();
+        }
+      }
+      for (const topic of extraTopics) {
+        const onRecord = sheet.rows.filter((r) => r.topicCells[topic.id].vote || r.topicCells[topic.id].chip).length;
+        expect(onRecord).toBeLessThanOrEqual(sheet.rows.length);
+      }
+    });
+  }
+});
+
+describe("in their words (the verbatim opening)", () => {
+  it("covers every published candidate exactly once", () => {
+    const ids = ownWords.map((o) => o.candidateId);
+    expect(new Set(ids).size).toBe(ids.length);
+    expect([...ids].sort()).toEqual(people.map((p) => p.person.id).sort());
+  });
+  it.each(ownWords.map((o) => [o.candidateId, o] as const))("%s: ≤60 words, ends at a sentence boundary, nothing elided, sourced", (_id, o) => {
+    expect(words(o.text)).toBeLessThanOrEqual(60);
+    expect(o.text, "ends mid-sentence").toMatch(/[.!?…”"]$/);
+    expect(o.text, "an ellipsis means something was cut inside the quote").not.toMatch(/\.\.\.|…/);
+    expect(o.text, "a bracketed insertion is not verbatim").not.toMatch(/\[/);
+    expect(o.source.url).toMatch(HTTPS);
+    expect(o.source.kind).toBe("Candidate statement");
+    if (o.rule === "pamphlet-opening") expect(o.source.url).toMatch(/multco\.us.*#page=\d+$/);
+  });
+  it("leads every non-missing candidate's search description with their own words, never ours", () => {
+    for (const { race, person } of people) {
+      const d = candidateDescription(race, person);
+      expect(d.length).toBeLessThanOrEqual(160);
+      if (ownWords.some((o) => o.candidateId === person.id) && !person.missing) {
+        expect(d, person.id).toContain("In their words: “");
+        expect(d, person.id).not.toContain("Our summary:");
+      }
+    }
   });
 });
 

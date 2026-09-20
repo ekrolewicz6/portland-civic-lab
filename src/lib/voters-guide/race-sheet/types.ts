@@ -96,3 +96,48 @@ export type StanceChip = Review & {
   chip: string;
   from: string;
 };
+
+/* ── Promise ladder and extra topics ─────────────────────────────────── */
+
+/** One rung of the ladder, always with its own source. */
+export type DeliveryStep = { text: string; source: Evidence };
+
+/**
+ * What → how → measured by, per candidate per issue. `how` is the mechanism
+ * the candidate names (money, rules, staffing, sequencing); `measure` is the
+ * result or metric they say would show it worked. Missing rungs are gaps; if
+ * the Lab has asked the candidate, `askedOn` records the date so the page can
+ * say so instead of showing a bare dash.
+ */
+export type Delivery = Review & {
+  candidateId: string;
+  issue: IssueId;
+  how?: DeliveryStep;
+  measure?: DeliveryStep;
+  askedOn?: string;
+};
+
+/** A concrete choice readers can add as a grid column beyond the four issues. */
+export type ExtraTopic = {
+  id: string;
+  label: string;
+  short: string;
+  /** The plain question, e.g. "Public money for the Moda Center deal?" */
+  question: string;
+  context: string;
+  /** When the topic matches a Council decision, incumbents' votes render as pills. */
+  decisionId?: string;
+};
+
+/** A candidate's explicit, sourced stance on an extra topic. Never inferred. */
+export type TopicStance = Review & {
+  candidateId: string;
+  topicId: string;
+  stance: "supports" | "opposes" | "mixed";
+  /** ≤4 words for the cell. */
+  chip: string;
+  /** The sentence behind the chip, our paraphrase. */
+  text: string;
+  source: Evidence;
+  askedOn?: string;
+};

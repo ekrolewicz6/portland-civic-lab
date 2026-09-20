@@ -18,10 +18,26 @@ import ShareGuide from "@/components/voters-guide/ShareGuide";
 import ChipRail from "./ChipRail";
 import BottomBar from "./BottomBar";
 import StanceGrid from "./StanceGrid";
+import TopicPicker, { MAX_EXTRA } from "./TopicPicker";
+import MiniChips from "./MiniChips";
 import MyBallot from "./MyBallot";
 import styles from "./race-sheet.module.css";
 
 const ISSUE_HASH = "#issue=";
+
+/** The hash carries only public view state: #issue=<id>&topics=<id,id>. */
+function readViewHash(hash: string, validTopics: string[]) {
+  const params = new URLSearchParams(hash.replace(/^#/, ""));
+  const issue = params.get("issue");
+  const topics = (params.get("topics") ?? "").split(",").filter((t) => validTopics.includes(t)).slice(0, MAX_EXTRA);
+  return { issue: issue && isIssueId(issue) ? issue : null, topics };
+}
+function writeViewHash(issue: IssueId | null, topics: string[]) {
+  // Ids are known slugs, so the fragment is written by hand and stays readable (a bare comma, not %2C).
+  const q = [issue ? `issue=${issue}` : "", topics.length ? `topics=${topics.join(",")}` : ""].filter(Boolean).join("&");
+  const { pathname, search } = window.location;
+  window.history.replaceState(window.history.state, "", q ? `${pathname}${search}#${q}` : `${pathname}${search}`);
+}
 
 /** The site's sticky header: the first <header> that is sticky or fixed. */
 function siteHeader(): HTMLElement | null {
@@ -39,6 +55,8 @@ function siteHeader(): HTMLElement | null {
 export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
   const raceId = sheet.raceId;
   const [active, setActive] = useState<IssueId | null>(null);
+  const [extra, setExtra] = useState<string[]>([]);
+  const topicIds = useMemo(() => sheet.topics.map((t) => t.id), [sheet.topics]);
   const [ballot, setBallot] = useState<BallotState>(emptyBallot);
   const [persistent, setPersistent] = useState(true);
   const [ballotOpen, setBallotOpen] = useState(false);
@@ -72,9 +90,10 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
   useEffect(() => {
     function readIssueHash() {
       const hash = window.location.hash;
-      if (!hash.startsWith(ISSUE_HASH)) return false;
-      const id = decodeURIComponent(hash.slice(ISSUE_HASH.length));
-      if (isIssueId(id)) setActive(id);
+      if (!hash.startsWith(ISSUE_HASH) && !hash.startsWith("#topics=")) return false;
+      const view = readViewHash(hash, topicIds);
+      setActive(view.issue);
+      setExtra(view.topics);
       return true;
     }
     const hash = window.location.hash;
@@ -94,14 +113,24 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
     }
     window.addEventListener("hashchange", readIssueHash);
     return () => window.removeEventListener("hashchange", readIssueHash);
-  }, [raceId, sheet.candidateIds]);
+  }, [raceId, sheet.candidateIds, topicIds]);
 
   /* Chip change mirrors into the hash, never pushing history. */
-  const changeIssue = useCallback((issue: IssueId | null) => {
-    setActive(issue);
-    const { pathname, search } = window.location;
-    window.history.replaceState(window.history.state, "", issue ? `${pathname}${search}${ISSUE_HASH}${issue}` : `${pathname}${search}`);
-  }, []);
+  const changeIssue = useCallback(
+    (issue: IssueId | null) => {
+      setActive(issue);
+      writeViewHash(issue, extra);
+    },
+    [extra],
+  );
+  const changeTopics = useCallback(
+    (next: string[]) => {
+      setExtra(next);
+      writeViewHash(active, next);
+    },
+    [active],
+  );
+  const extraTopicsSelected = useMemo(() => extra.map((id) => sheet.topics.find((t) => t.id === id)).filter((t): t is NonNullable<typeof t> => Boolean(t)), [extra, sheet.topics]);
 
   /* Ballot writes: storage first, in-memory fallback with a visible notice. */
   const commit = useCallback(
@@ -184,7 +213,7 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
             {sharedRows.map((r) => (
               <li key={r.id}>
                 <span className={styles.name}>{r.name}</span>
-                <span className={styles.line}>{r.summary}</span>
+                <MiniChips row={r} />
               </li>
             ))}
           </ul>
@@ -196,11 +225,15 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
         </section>
       )}
 
+      <TopicPicker topics={sheet.topics} coverage={sheet.topicCoverage} total={sheet.rows.length} selected={extra} onChange={changeTopics} />
+
       <StanceGrid
         rows={sheet.rows}
         raceId={raceId}
         active={active}
         coverage={sheet.coverage}
+        extra={extraTopicsSelected}
+        topicCoverage={sheet.topicCoverage}
         saved={savedSet}
         onToggleSave={toggleSave}
         onHighlight={changeIssue}
@@ -209,7 +242,7 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
       <div className={styles.shareWrap}>
         <ShareGuide
           title={`${sheet.raceTitle} · Voter guide`}
-          fragment={active ? `issue=${active}` : ""}
+          fragment={[active ? `issue=${active}` : "", extra.length ? `topics=${extra.join(",")}` : ""].filter(Boolean).join("&")}
           label={active && issue ? `Share the ${issue.short.toLowerCase()} view` : "Share this list"}
         />
       </div>

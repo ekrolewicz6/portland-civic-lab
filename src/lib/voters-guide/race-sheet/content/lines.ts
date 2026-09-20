@@ -113,6 +113,10 @@ export const issueLines: IssueLine[] = [
 
   /* ── Portland City Council, District 4 ─────────────────────────────── */
 
+  line("timothy-tj-anderson", "housing", "Wants more housing through a more investable city and reuse of city assets."),
+  line("timothy-tj-anderson", "safety", "Wants faster police response: more officers, with cadets and volunteers on lesser calls."),
+  line("timothy-tj-anderson", "money", "Would audit city spending and assets first; no new taxes or fees until done."),
+  line("timothy-tj-anderson", "climate", "Wants climate steps that also help business, plus more transit and trains."),
   line("eli-arnold", "housing", "Proposes filling subsidized vacancies faster, incentives for small builders, deferring development charges until occupancy."),
   line("eli-arnold", "safety", "Would add police-clinician behavioral-health units, more detective and traffic staffing, expand neighborhood response teams."),
   line("eli-arnold", "money", "Proposes raising the small-business exemption to $150,000, a tax holiday for new small businesses."),

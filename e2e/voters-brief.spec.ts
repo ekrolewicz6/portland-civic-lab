@@ -17,7 +17,12 @@ for (const id of ["esther-leon", "tiffany-koyama-lane"]) {
     await expect(crumbs.getByRole("link", { name: "District 3" })).toHaveAttribute("href", "/voters-guide/portland-district-3");
     await expect(crumbs.locator("[aria-current=page]")).toHaveText(row.name);
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(row.name);
-    await expect(page.getByRole("heading", { level: 2 })).toContainText(["What they say they would do", "Our reading", "Where they stand", "Council votes", /^Sources \(\d+\)$/]);
+    await expect(page.getByRole("heading", { level: 2 })).toContainText(["In their words", "What they say they would do", "Our reading", "Where they stand", "Council votes", /^Sources \(\d+\)$/]);
+    const opening = page.locator(`section[aria-labelledby="${id}-opening"]`);
+    await expect(opening.locator("blockquote")).toContainText(row.ownWords!.text);
+    await expect(opening).toContainText("verbatim opening");
+    await expect(opening.locator("details summary")).toHaveText(row.ownWords!.source.label);
+    await expect(opening.locator("details a[rel=noopener]")).toHaveAttribute("href", row.ownWords!.source.url);
     const stand = page.locator(`section[aria-labelledby="${id}-stand"]`);
     await expect(stand.getByRole("heading", { level: 3 })).toHaveText(issues.map((i) => i.label));
     for (const issue of issues) {
