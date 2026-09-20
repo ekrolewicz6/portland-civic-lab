@@ -63,8 +63,6 @@
 .note {
   margin: 0;
   max-width: 62ch;
-}
-.note {
   font-size: 15px;
   color: var(--color-ink-light);
 }

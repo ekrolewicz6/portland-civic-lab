@@ -1,19 +1,20 @@
 /* The About strip at the foot of the race page: three short blocks under a
-   hairline, then the standards links and the glossary. */
+   hairline, one line of links, the glossary. One body size (14.5px), one
+   label size (mono 11px), one heading; nothing else. */
 
 .about {
   margin-top: 40px;
   padding-top: 24px;
   border-top: 1px solid var(--color-parchment);
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: 14.5px;
+  line-height: 1.5;
   color: var(--color-ink-light);
   scroll-margin-top: calc(var(--site-header-height, 80px) + 16px);
 }
 .title {
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -31,21 +32,20 @@
 }
 .block {
   display: grid;
-  gap: 8px;
+  gap: 6px;
   align-content: start;
-  justify-items: start;
   min-width: 0;
 }
 .block p {
   margin: 0;
-  max-width: 52ch;
+  max-width: 48ch;
 }
 .block strong {
   font-weight: 600;
   color: var(--color-ink);
 }
 .blockTitle {
-  margin: 0;
+  margin: 0 0 2px;
   font-family: var(--font-mono);
   font-size: max(11px, 0.7rem);
   font-weight: 600;
@@ -55,21 +55,65 @@
 }
 .dates {
   color: var(--color-ink);
+  font-weight: 500;
 }
 .edition {
-  font-size: 13px;
+  font-family: var(--font-mono);
+  font-size: max(10.5px, 0.66rem);
+  letter-spacing: 0.02em;
   color: var(--color-ink-muted);
 }
+
+/* One line of links, dots between, wrapping at narrow widths. */
 .links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 0;
   margin: 24px 0 0;
   padding: 0;
   list-style: none;
 }
 .links li {
+  display: inline-flex;
+  align-items: center;
   margin: 0;
 }
+.links li + li::before {
+  content: "·";
+  margin: 0 10px;
+  color: var(--color-ink-muted);
+}
+.links a,
+.terms summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 32px;
+  font-weight: 600;
+  color: var(--color-canopy);
+  text-decoration: none;
+  cursor: pointer;
+}
+.links a:hover,
+.terms summary:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+/* Phones: two tidy columns instead of a wrapping dotted line. */
+@media (max-width: 600px) {
+  .links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 16px;
+  }
+  .links li + li::before {
+    content: none;
+  }
+}
 .terms {
-  margin-top: 12px;
+  margin-top: 2px;
 }
 .terms summary {
   list-style: none;
