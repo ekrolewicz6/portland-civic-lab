@@ -431,7 +431,7 @@ test("the ladder asks the same three questions of every candidate, on the grid d
       await expect(body).toContainText(rung.text);
       await expect(body.getByRole("button", { name: rung.source.label })).toBeVisible();
     } else {
-      await expect(body).toContainText("Not in their sources.");
+      await expect(body).toContainText("Not in their sources");
     }
   }
   // The brief carries the identical ladder under each documented position.

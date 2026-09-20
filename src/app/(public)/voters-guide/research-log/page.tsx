@@ -227,34 +227,15 @@ export default function ResearchLog() {
         </p>
         <h2>Corrections</h2>
         <p>
-          September 19, 2026, after an editorial audit of the new race page:
-          struck two “Said” placements that did not meet the explicit-statement
-          rule (Esther León under camp-removal funding rested on a general
-          position against sweeps, not on the $4.3 million amendment; Matthias
-          Hallett under the Moda term sheet concerned keeping the team, not
-          these starting terms). Reworded eight issue lines so a stated
-          preference or emphasis no longer reads as a commitment, and glossed
-          “social housing” as public or nonprofit to match the glossary.
-          Corrected the District 3 neighborhood heading from “Inner Southeast”
-          to “Southeast and inner Northeast,” since the City’s list for the
-          district includes Northeast neighborhoods such as Rose City Park.
-          Labeled the choice paragraph “Our reading” and marked it a draft
-          pending human review. Under each featured vote, replaced the block
-          presented as public record with one labeled “Our reading of the
-          record,” because several of its phrases were characterizations.
+          What candidates tell us is logged above under the date we received
+          it. This section records additions or removals of important content
+          after publication, not drafting changes made before a page went live.
         </p>
         <p>
-          September 18, 2026: removed unsupported male pronouns from Jamey
-          Evenstar’s interpretation; the text now uses the candidate’s name.
-          Expanded the brief using the{" "}
-          <a href="https://evenstarforportland.com/platform">
-            current platform
-          </a>{" "}
-          and <a href="https://evenstarforportland.com">campaign biography</a>.
-          Also replaced the assertion that Guy Frankenstein prioritizes
-          confrontation over coalition-building: the reviewed questionnaire
-          supports his policy targets but does not establish his approach to
-          assembling a legislative coalition.
+          September 19, 2026: corrected the District 3 neighborhood heading
+          from “Inner Southeast” to “Southeast and inner Northeast,” since the
+          City’s list for the district includes Northeast neighborhoods such
+          as Rose City Park.
         </p>
         <p>
           <Link href="/voters-guide/methodology#corrections">

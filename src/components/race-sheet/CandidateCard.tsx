@@ -1,7 +1,7 @@
 "use client";
 import { useId, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ArrowDown, ExternalLink } from "lucide-react";
+import { ArrowRight, ArrowDown, ChevronDown, ExternalLink } from "lucide-react";
 import type { Candidate } from "@/lib/voters-guide/types";
 import type { SheetRow } from "@/lib/voters-guide/race-sheet";
 import type { SourceChip } from "@/lib/voters-guide/race-sheet/source-chip";
@@ -9,6 +9,8 @@ import type { Issue } from "@/lib/voters-guide/race-sheet/issues";
 import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import { Gap, SaidGlyph, SrOnly } from "./Glyph";
 import styles from "./race-sheet.module.css";
+import c from "./controls.module.css";
+import { SourceIcon } from "./SourceIcon";
 
 /** CandidatePortrait wants a Candidate; a row has just the two fields it reads. */
 export function portraitPerson(row: Pick<SheetRow, "name" | "portrait" | "id">): Candidate {
@@ -32,21 +34,19 @@ export function SourceChipButton({ chip, label }: { chip: SourceChip; label?: st
   const id = useId();
   const e = chip.evidence;
   const text = label ?? chip.label;
-  // "Pamphlet · Pamphlet p. 56" would read the venue twice; hide the repeat from AT.
-  const venueRepeats = text.toLowerCase().includes(chip.venue.toLowerCase());
   return (
     <span className={styles.sourceWrap}>
       <button
         type="button"
-        className={styles.sourceChip}
+        className={c.source}
         aria-expanded={open}
         aria-controls={id}
         onClick={() => setOpen((v) => !v)}
       >
-        <span className={styles.sourceVenue} aria-hidden={venueRepeats || undefined}>
-          {chip.venue}
-        </span>
+        <SourceIcon venue={chip.venue} className={c.sourceVenueIcon} />
         <span>{text}</span>
+        <SrOnly>, {chip.venue.toLowerCase()} source</SrOnly>
+        <ChevronDown size={14} aria-hidden="true" className={c.sourceCaret} />
       </button>
       {open && (
         <span id={id} className={styles.sourceDetail}>
@@ -171,12 +171,12 @@ export default function CandidateCard({
 
       <div className={styles.cardActions}>
         {row.incumbent && (
-          <a href="#votes-panel" className={styles.textLink}>
+          <a href="#votes-panel" className={`${c.btn} ${c.quiet} ${c.small}`}>
             See their Council votes
             <ArrowDown size={16} aria-hidden="true" />
           </a>
         )}
-        <Link href={`/voters-guide/${raceId}/${row.id}`} prefetch={false} className={styles.briefLink}>
+        <Link href={`/voters-guide/${raceId}/${row.id}`} prefetch={false} className={`${c.btn} ${c.secondary} ${c.small}`}>
           Full brief
           <ArrowRight size={16} aria-hidden="true" />
         </Link>

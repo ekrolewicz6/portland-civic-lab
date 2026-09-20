@@ -2,6 +2,7 @@
 import { Plus, Check } from "lucide-react";
 import type { ExtraTopic } from "@/lib/voters-guide/race-sheet/types";
 import styles from "./stance.module.css";
+import c from "./controls.module.css";
 
 export const MAX_EXTRA = 2;
 
@@ -35,7 +36,7 @@ export default function TopicPicker({
             <button
               key={topic.id}
               type="button"
-              className={styles.pickerChip}
+              className={`${c.btn} ${c.small} ${styles.pickerChip}`}
               aria-pressed={on}
               disabled={disabled}
               title={disabled ? `Remove a topic to add ${topic.label}` : topic.question}

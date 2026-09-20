@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, CheckSquare, MapPin } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, CheckSquare, ChevronDown, MapPin } from "lucide-react";
 import { findRace, races } from "@/lib/voters-guide/published";
 import { buildRaceSheet, clientSheet, shortRaceTitle } from "@/lib/voters-guide/race-sheet";
 import { raceMetadata, raceStructuredData } from "@/lib/voters-guide/race-sheet/seo";
@@ -10,6 +10,7 @@ import FourVotes from "@/components/race-sheet/FourVotes";
 import AboutStrip from "@/components/race-sheet/AboutStrip";
 import RaceSheetStructuredData from "@/components/race-sheet/RaceSheetStructuredData";
 import styles from "./race-page.module.css";
+import c from "@/components/race-sheet/controls.module.css";
 
 /**
  * One screen per race. The reader sees every candidate at once with one
@@ -55,8 +56,8 @@ export default async function RacePage({
 
       <div className={styles.top}>
       <header className={styles.header}>
-        <Link className={styles.back} href="/voters-guide" prefetch={false}>
-          <ArrowLeft size={16} aria-hidden="true" /> All races
+        <Link className={`${c.btn} ${c.quiet} ${c.small} ${styles.back}`} href="/voters-guide" prefetch={false}>
+          <ArrowLeft size={15} aria-hidden="true" /> All races
         </Link>
         <p className={styles.eyebrow}>Portland City Council · November 3, 2026</p>
         <div className={styles.titleRow}>
@@ -75,8 +76,8 @@ export default async function RacePage({
             <span className={styles.districtBody}>
               <span className={styles.districtText}>{sheet.district.neighborhoods}</span>
               {other && (
-                <Link href={`/voters-guide/${other.id}`} prefetch={false} className={styles.otherRace}>
-                  Not your district? {other.short} →
+                <Link href={`/voters-guide/${other.id}`} prefetch={false} className={`${c.btn} ${c.quiet} ${c.small} ${styles.otherRace}`}>
+                  Not your district? {other.short} <ArrowRight size={14} aria-hidden="true" />
                 </Link>
               )}
             </span>
@@ -98,8 +99,8 @@ export default async function RacePage({
             )}
             <span className={styles.dates}>Ballots mail Oct 14; due 8 p.m. Nov 3.</span>{" "}
             {sheet.ballot && (
-              <a href={sheet.ballot.source.url} className={styles.sourceLink}>
-                How it works <ArrowUpRight size={12} aria-hidden="true" />
+              <a href={sheet.ballot.source.url} className={`${c.btn} ${c.quiet} ${c.small} ${styles.sourceLink}`}>
+                How it works <ArrowUpRight size={14} aria-hidden="true" />
               </a>
             )}
           </span>
@@ -113,7 +114,9 @@ export default async function RacePage({
         <p className={styles.choiceText}>{sheet.choice.text}</p>
         {!sheet.choice.reviewed && <p className={styles.draft}>Draft; human review pending.</p>}
         <details className={styles.authority}>
-          <summary>What this Council can do</summary>
+          <summary className={`${c.btn} ${c.quiet} ${c.small}`}>
+            What this Council can do <ChevronDown size={15} aria-hidden="true" className={styles.authorityCaret} />
+          </summary>
           <p>{race.authority}</p>
           <p>
             <span className={styles.ourReading}>Our reading of the field.</span> {race.comparison}

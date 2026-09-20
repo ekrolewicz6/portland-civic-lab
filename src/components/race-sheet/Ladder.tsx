@@ -2,6 +2,7 @@ import type { Ladder as LadderModel } from "@/lib/voters-guide/race-sheet";
 import { SourceChipButton } from "./CandidateCard";
 import { Gap, SaidGlyph } from "./Glyph";
 import styles from "./stance.module.css";
+import c from "./controls.module.css";
 
 /**
  * What → how → measured by. The same three questions for every candidate on
@@ -10,7 +11,7 @@ import styles from "./stance.module.css";
  */
 function Rung({ label, rung, askedOn }: { label: string; rung: LadderModel["how"]; askedOn: string | null }) {
   return (
-    <div className={styles.rung}>
+    <div className={styles.rung} data-gap={rung ? undefined : ""}>
       <dt className={styles.rungLabel}>{label}</dt>
       <dd className={styles.rungBody}>
         {rung ? (
@@ -23,8 +24,10 @@ function Rung({ label, rung, askedOn }: { label: string; rung: LadderModel["how"
           </>
         ) : (
           <span className={styles.rungGap}>
-            <Gap />{" "}
-            {askedOn ? `Not in their sources. We asked the candidate on ${formatDate(askedOn)}; no reply yet.` : "Not in their sources."}
+            <span className={c.gapNote}>
+              <Gap text="" /> {askedOn ? "Asked, no reply yet" : "Not in their sources"}
+            </span>
+            {askedOn && <span className={styles.rungGapText}>Not in their sources. We asked the candidate on {formatDate(askedOn)}.</span>}
           </span>
         )}
       </dd>

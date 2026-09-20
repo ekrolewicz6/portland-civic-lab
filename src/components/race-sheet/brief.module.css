@@ -281,12 +281,16 @@
 
 /* "—" is the one missing-state glyph: same markup and color for everyone. */
 .gap {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
+  display: grid;
+  justify-items: start;
+  gap: 6px;
   margin: 0;
+}
+.gapText {
   font-size: 14px;
+  line-height: 1.5;
   color: var(--color-ink-muted);
+  max-width: 62ch;
 }
 .dash {
   flex: 0 0 auto;
@@ -412,10 +416,6 @@
   margin: 0 0 8px;
 }
 .moreLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  min-height: 44px;
   margin-top: 4px;
 }
 
@@ -442,11 +442,24 @@
 .sources li {
   margin: 0;
 }
-.sources li a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
+.sourceLink {
+  display: inline;
+  padding: 10px 0;
+  line-height: 1.6;
+  color: var(--color-canopy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
   overflow-wrap: anywhere;
+}
+.sourceLink svg {
+  display: inline;
+  vertical-align: -2px;
+  margin-left: 2px;
+}
+.sourceLink:hover {
+  color: var(--color-fern);
 }
 .sources small {
   display: block;
@@ -469,18 +482,28 @@
   justify-content: space-between;
   gap: 16px;
 }
-.pagerLinks a {
+.pagerLink {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  min-height: 44px;
+  gap: 10px;
+  min-height: 56px;
   min-width: 0;
+  padding: 8px 16px;
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--color-canopy) 8%, var(--color-paper));
+  color: var(--color-canopy);
+  font-weight: 600;
   text-decoration: none;
+  transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-.pagerLinks a:hover span {
-  text-decoration: underline;
+.pagerLink:hover {
+  background: color-mix(in oklab, var(--color-canopy) 15%, var(--color-paper));
 }
-.pagerLinks a:last-child {
+.pagerLink:focus-visible {
+  outline: 2px solid var(--color-canopy);
+  outline-offset: 2px;
+}
+.pagerLinks .pagerLink:last-child {
   text-align: right;
   margin-left: auto;
 }
@@ -496,10 +519,6 @@
   color: var(--color-ink-muted);
 }
 .pager > a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
   justify-self: start;
 }
 
@@ -516,34 +535,26 @@
   max-width: 60ch;
 }
 .aboutLinks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 16px;
-  margin: 0;
+  margin: 4px 0 0;
   padding: 0;
   list-style: none;
 }
 .aboutLinks li {
   margin: 0;
 }
-.aboutLinks a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-}
 .terms {
-  margin-top: 8px;
+  margin-top: 12px;
 }
 .terms summary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
+  list-style: none;
 }
-.terms summary svg {
+.terms summary::-webkit-details-marker {
+  display: none;
+}
+.termsCaret {
   transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-.terms[open] summary svg {
+.terms[open] .termsCaret {
   transform: rotate(180deg);
 }
 .terms dl {

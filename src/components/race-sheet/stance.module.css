@@ -118,7 +118,7 @@
   padding-left: 0 !important;
 }
 .saveHead {
-  width: 48px;
+  width: 92px;
 }
 .issueHead {
   border-bottom-color: var(--tint) !important;
@@ -129,10 +129,11 @@
 }
 .headButton {
   display: inline;
-  padding: 4px 6px 4px 0;
-  margin: 0;
+  padding: 4px 8px 4px 6px;
+  margin: 0 0 0 -6px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 8px;
+  transition: background-color 150ms var(--ease, ease-out), color 150ms var(--ease, ease-out);
   background: none;
   font: inherit;
   letter-spacing: inherit;
@@ -143,9 +144,11 @@
 }
 .headButton:hover {
   color: var(--hue);
+  background: color-mix(in oklab, var(--hue) 10%, var(--color-paper));
 }
 .headButton[aria-pressed="true"] {
   color: var(--hue);
+  background: color-mix(in oklab, var(--hue) 16%, var(--color-paper));
 }
 .headButton:focus-visible {
   outline: 2px solid var(--color-canopy);
@@ -272,56 +275,20 @@
   border-color: var(--hue);
   color: var(--color-paper);
 }
-.chip:focus-visible,
-.gapButton:focus-visible,
-.save:focus-visible,
-.detailClose:focus-visible,
-.detailBrief:focus-visible,
-.detailVotes:focus-visible {
+.chip:focus-visible {
   outline: 2px solid var(--color-canopy);
   outline-offset: 2px;
 }
 
-.gapButton {
-  display: inline-flex;
-  align-items: center;
-  min-width: 34px;
-  min-height: 34px;
-  padding: 0 8px;
-  border: 0;
-  border-radius: 999px;
-  background: none;
-  color: var(--color-ink-muted);
-  cursor: pointer;
-}
-.gapButton:hover {
-  background: var(--color-parchment);
-}
-.gapButton[aria-expanded="true"] {
-  background: var(--color-parchment);
-}
 
 .saveCell {
   text-align: right;
+  white-space: nowrap;
   padding-right: 0 !important;
 }
+/* Save: the control shape lives in controls.module.css; only placement here. */
 .save {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: 0;
-  border-radius: 999px;
-  background: none;
-  color: var(--color-ink-light);
-  cursor: pointer;
-}
-.save:hover {
-  background: var(--color-parchment);
-}
-.save[aria-pressed="true"] {
-  color: var(--color-ember);
+  flex: none;
 }
 
 /* A highlighted column (from the chip rail or a #issue= deep link). */
@@ -369,21 +336,8 @@
   color: var(--color-ink);
 }
 .detailClose {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   flex: none;
-  width: 36px;
-  height: 36px;
   margin: -8px -8px 0 0;
-  border: 0;
-  border-radius: 999px;
-  background: none;
-  color: var(--color-ink-light);
-  cursor: pointer;
-}
-.detailClose:hover {
-  background: var(--color-parchment);
 }
 .detailLine {
   display: flex;
@@ -402,11 +356,14 @@
   max-width: 62ch;
 }
 .detailGap {
-  display: flex;
-  align-items: center;
+  display: grid;
+  justify-items: start;
   gap: 8px;
   margin: 10px 0 0;
-  font-size: 14.5px;
+}
+.detailGapText {
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--color-ink-light);
 }
 .detailMeta {
@@ -421,29 +378,9 @@
   color: var(--color-ink-muted);
 }
 .detailActions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 20px;
-  margin-top: 6px;
+  margin-top: 14px;
 }
-.detailBrief,
-.detailVotes {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  min-height: 44px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--color-canopy);
-}
-.detailVotes {
-  color: var(--color-fern);
-}
-.detailBrief:hover,
-.detailVotes:hover {
-  text-decoration: underline;
-}
+
 
 /* ── Phones: each row becomes a portrait card ───────────────────────── */
 @media (max-width: 768px) {
@@ -508,8 +445,7 @@
     border-radius: 999px;
     background: var(--hue);
   }
-  .chip,
-  .gapButton {
+  .cell > button {
     width: 100%;
     min-height: 44px;
     justify-content: flex-start;
@@ -620,31 +556,26 @@
   gap: 6px;
 }
 .pickerChip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 36px;
-  padding: 4px 12px 4px 10px;
-  border: 1px dashed var(--color-lichen);
-  border-radius: 999px;
-  background: transparent;
+  border-color: color-mix(in oklab, var(--color-ink) 14%, var(--color-paper));
+  background: var(--color-paper-warm);
   color: var(--color-ink-light);
-  font: 500 13px/1.2 var(--font-body);
-  cursor: pointer;
+  font-weight: 500;
 }
 .pickerChip:hover:not(:disabled) {
-  border-style: solid;
   border-color: var(--color-canopy);
   color: var(--color-ink);
 }
 .pickerChip[aria-pressed="true"] {
-  border: 1px solid var(--color-violet-mist);
+  border-color: var(--color-violet-mist);
   background: color-mix(in oklab, var(--color-violet-mist) 14%, var(--color-paper));
   color: var(--color-ink);
 }
 .pickerChip:disabled {
   opacity: 0.45;
   cursor: not-allowed;
+}
+.pickerChip[aria-pressed="true"]:hover {
+  border-color: var(--color-violet-mist);
 }
 .pickerChip:focus-visible {
   outline: 2px solid var(--color-canopy);
@@ -658,15 +589,45 @@
 
 /* ── The ladder: what → how → measured by ───────────────────────────── */
 .ladder {
+  position: relative;
   display: grid;
-  gap: 10px;
-  margin: 12px 0 0;
+  gap: 14px;
+  margin: 12px 0 0 6px;
+  padding-left: 18px;
+  border-left: 2px solid color-mix(in oklab, var(--hue, var(--color-storm)) 28%, var(--color-paper));
+}
+.rungLabel {
+  position: relative;
+}
+.rungLabel::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--hue, var(--color-storm));
+  box-shadow: 0 0 0 3px var(--color-paper);
+}
+.rung[data-gap] .rungLabel::before {
+  background: var(--color-paper);
+  border: 2px solid var(--color-lichen);
+}
+.rung[data-gap] .rungLabel {
+  color: var(--color-ink-muted);
 }
 .rung {
   display: grid;
   grid-template-columns: 96px minmax(0, 1fr);
   gap: 8px 12px;
   align-items: start;
+}
+@media (max-width: 480px) {
+  .rung {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
 }
 @media (max-width: 480px) {
   .rung {
@@ -702,10 +663,13 @@
 }
 .rungGap {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: var(--color-ink-light);
+  gap: 6px 10px;
+}
+.rungGapText {
+  font-size: 13px;
+  color: var(--color-ink-muted);
 }
 .detailQuestion {
   margin: 10px 0 0;

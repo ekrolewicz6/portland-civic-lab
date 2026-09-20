@@ -15,6 +15,7 @@ import {
 } from "@/lib/voters-guide/race-sheet/ballot-store";
 import { SrOnly, VotePill, VotedGlyph } from "./Glyph";
 import styles from "./race-sheet.module.css";
+import c from "./controls.module.css";
 
 const ORDINALS = ["1st", "2nd", "3rd", "4th", "5th", "6th"];
 export const RETURN_BY = "Return your ballot by 8 p.m. November 3, 2026";
@@ -224,7 +225,7 @@ export default function MyBallot({
             <h2 id={titleId} ref={heading} tabIndex={-1} className={styles.panelTitle}>
               My ballot
             </h2>
-            <button type="button" className={styles.iconButton} aria-label="Close my ballot" onClick={() => onOpenChange(false)}>
+            <button type="button" className={`${c.btn} ${c.icon}`} aria-label="Close my ballot" onClick={() => onOpenChange(false)}>
               <X size={18} aria-hidden="true" />
             </button>
           </div>
@@ -301,33 +302,33 @@ export default function MyBallot({
                     <button
                       type="button"
                       id={controlId("up", row.id)}
-                      className={styles.smallButton}
+                      className={`${c.btn} ${c.quiet} ${c.small} ${styles.smallButton}`}
                       disabled={i === 0}
                       aria-label={`Move ${row.name} up`}
                       onClick={() => move(row, -1)}
                     >
-                      <ArrowUp size={16} aria-hidden="true" />
-                      <span>Move up</span>
+                      <ArrowUp size={15} aria-hidden="true" />
+                      <span>Up</span>
                     </button>
                     <button
                       type="button"
                       id={controlId("down", row.id)}
-                      className={styles.smallButton}
+                      className={`${c.btn} ${c.quiet} ${c.small} ${styles.smallButton}`}
                       disabled={i === count - 1}
                       aria-label={`Move ${row.name} down`}
                       onClick={() => move(row, 1)}
                     >
-                      <ArrowDown size={16} aria-hidden="true" />
-                      <span>Move down</span>
+                      <ArrowDown size={15} aria-hidden="true" />
+                      <span>Down</span>
                     </button>
                     <button
                       type="button"
                       id={controlId("remove", row.id)}
-                      className={styles.smallButton}
+                      className={`${c.btn} ${c.quiet} ${c.small} ${c.remove} ${styles.smallButton}`}
                       aria-label={`Remove ${row.name}`}
                       onClick={() => remove(row, i)}
                     >
-                      <X size={16} aria-hidden="true" />
+                      <X size={15} aria-hidden="true" />
                       <span>Remove</span>
                     </button>
                   </div>
@@ -337,7 +338,7 @@ export default function MyBallot({
           </ol>
 
           <div className={styles.panelActions}>
-            <button type="button" className={styles.primaryButton} onClick={printCard} disabled={count === 0}>
+            <button type="button" className={`${c.btn} ${c.primary}`} onClick={printCard} disabled={count === 0}>
               <Printer size={16} aria-hidden="true" />
               Print ballot card
             </button>
@@ -346,7 +347,7 @@ export default function MyBallot({
                 <span>Clear all saved names?</span>
                 <button
                   type="button"
-                  className={styles.smallButton}
+                  className={`${c.btn} ${c.secondary} ${c.small} ${c.remove}`}
                   onClick={() => {
                     onClear();
                     setConfirmClear(false);
@@ -356,12 +357,12 @@ export default function MyBallot({
                 >
                   Yes, clear
                 </button>
-                <button type="button" className={styles.smallButton} onClick={() => setConfirmClear(false)}>
+                <button type="button" className={`${c.btn} ${c.quiet} ${c.small}`} onClick={() => setConfirmClear(false)}>
                   Keep
                 </button>
               </span>
             ) : (
-              <button type="button" className={styles.secondaryButton} onClick={() => setConfirmClear(true)} disabled={count === 0}>
+              <button type="button" className={`${c.btn} ${c.quiet} ${c.remove}`} onClick={() => setConfirmClear(true)} disabled={count === 0}>
                 <Trash2 size={16} aria-hidden="true" />
                 Clear
               </button>

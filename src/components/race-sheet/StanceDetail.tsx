@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, Vote, X } from "lucide-react";
 import type { SheetRow } from "@/lib/voters-guide/race-sheet";
 import type { Issue } from "@/lib/voters-guide/race-sheet/issues";
 import type { ExtraTopic } from "@/lib/voters-guide/race-sheet/types";
@@ -10,6 +10,7 @@ import { SourceChipButton } from "./CandidateCard";
 import { Gap, SaidGlyph } from "./Glyph";
 import { IssueIcon } from "./IssueIcon";
 import styles from "./stance.module.css";
+import c from "./controls.module.css";
 
 /**
  * What opens under a grid cell: the sourced sentence behind the chip, the
@@ -46,8 +47,8 @@ export default function StanceDetail({
             on {issue ? issue.label.toLowerCase() : topic?.label}
           </span>
         </p>
-        <button type="button" className={styles.detailClose} onClick={onClose} aria-label="Close">
-          <X size={16} aria-hidden="true" />
+        <button type="button" className={`${c.btn} ${c.icon} ${styles.detailClose}`} onClick={onClose} aria-label="Close">
+          <X size={18} aria-hidden="true" />
         </button>
       </div>
 
@@ -72,10 +73,14 @@ export default function StanceDetail({
             </>
           ) : !tc.vote ? (
             <p className={styles.detailGap}>
-              <Gap />{" "}
-              {tc.askedOn
-                ? `No statement on this choice in their sources. We asked the candidate on ${tc.askedOn}; no reply yet.`
-                : "No statement on this exact choice in the sources we reviewed. That is a research gap, not a position."}
+              <span className={c.gapNote}>
+                <Gap text="" /> {tc.askedOn ? "Asked, no reply yet" : "Not in their sources"}
+              </span>
+              <span className={styles.detailGapText}>
+                {tc.askedOn
+                  ? `No statement on this choice in their sources. We asked the candidate on ${tc.askedOn}.`
+                  : "No statement on this exact choice in the sources we reviewed. That is a research gap, not a position."}
+              </span>
             </p>
           ) : null}
           <p className={styles.detailContext}>{topic.context}</p>
@@ -95,19 +100,22 @@ export default function StanceDetail({
         />
       ) : (
         <p className={styles.detailGap}>
-          <Gap /> Not found in the sources we reviewed. That is a research gap, not a position.
+          <span className={c.gapNote}>
+            <Gap text="" /> Not found
+          </span>
+          <span className={styles.detailGapText}>Not found in the sources we reviewed. That is a research gap, not a position.</span>
         </p>
       )}
 
       {row.missingText && <p className={styles.detailFull}>{row.missingText}</p>}
 
-      <div className={styles.detailActions}>
-        <Link href={`/voters-guide/${raceId}/${row.id}`} prefetch={false} className={styles.detailBrief}>
-          Full brief <ArrowRight size={14} aria-hidden="true" />
+      <div className={`${c.row} ${styles.detailActions}`}>
+        <Link href={`/voters-guide/${raceId}/${row.id}`} prefetch={false} className={`${c.btn} ${c.secondary} ${c.small}`}>
+          Full brief <ArrowRight size={15} aria-hidden="true" />
         </Link>
         {row.incumbent && (
-          <a href="#votes-panel" className={styles.detailVotes}>
-            See their Council votes ↓
+          <a href="#votes-panel" className={`${c.btn} ${c.quiet} ${c.small}`}>
+            <Vote size={15} aria-hidden="true" /> Their Council votes
           </a>
         )}
       </div>

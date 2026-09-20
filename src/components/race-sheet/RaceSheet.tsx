@@ -15,6 +15,7 @@ import {
   type BallotState,
 } from "@/lib/voters-guide/race-sheet/ballot-store";
 import ShareGuide from "@/components/voters-guide/ShareGuide";
+import c from "./controls.module.css";
 import ChipRail from "./ChipRail";
 import BottomBar from "./BottomBar";
 import StanceGrid from "./StanceGrid";
@@ -202,7 +203,7 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
         <section className={styles.sharedView} aria-labelledby="shared-view-title">
           <div className={styles.sharedHead}>
             <p className={styles.eyebrow}>Shared view · sent to you</p>
-            <button type="button" className={styles.iconButton} aria-label="Dismiss shared view" onClick={() => setShared(null)}>
+            <button type="button" className={`${c.btn} ${c.icon}`} aria-label="Dismiss shared view" onClick={() => setShared(null)}>
               <X size={16} aria-hidden="true" />
             </button>
           </div>
@@ -218,7 +219,7 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
             ))}
           </ul>
           <p className={styles.sharedNote}>Nothing here is saved unless you choose to. Saved A–Z; reorder below.</p>
-          <button type="button" className={styles.secondaryButton} onClick={saveShared}>
+          <button type="button" className={`${c.btn} ${c.primary}`} onClick={saveShared}>
             <Bookmark size={16} aria-hidden="true" />
             Save these to my ballot
           </button>

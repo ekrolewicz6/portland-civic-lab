@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import type { Candidate, Evidence, Race } from "@/lib/voters-guide/types";
 import { ELECTION_DATE } from "@/lib/voters-guide/types";
 import { issues, shortRaceTitle, type FeaturedRow, type RaceSheet, type SheetRow } from "@/lib/voters-guide/race-sheet";
@@ -10,6 +10,8 @@ import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import ShareGuide from "@/components/voters-guide/ShareGuide";
 import { SaidGlyph, VotePill } from "./Glyph";
 import Term from "./Term";
+import c from "./controls.module.css";
+import { SourceIcon } from "./SourceIcon";
 import Ladder from "./Ladder";
 import { SourceChipButton } from "./CandidateCard";
 import type { OwnWordsRule } from "@/lib/voters-guide/race-sheet/content/own-words";
@@ -21,10 +23,10 @@ import styles from "./brief.module.css";
 export function NotFound({ text = "Not found in the sources we reviewed. That is a research gap, not a position." }: { text?: string }) {
   return (
     <p className={styles.gap}>
-      <span className={styles.dash} aria-hidden="true">
-        —
+      <span className={c.gapNote}>
+        <span aria-hidden="true">—</span> Not found
       </span>
-      <span>{text}</span>
+      <span className={styles.gapText}>{text}</span>
     </p>
   );
 }
@@ -34,8 +36,10 @@ export function SourceLine({ chip }: { chip: SourceChip }) {
   const { evidence } = chip;
   return (
     <details className={styles.source}>
-      <summary>
-        <span className={styles.chip}>{chip.label}</span>
+      <summary className={c.source}>
+        <SourceIcon venue={chip.venue} className={c.sourceVenueIcon} />
+        <span>{chip.label}</span>
+        <ChevronDown size={14} aria-hidden="true" className={c.sourceCaret} />
       </summary>
       <div className={styles.sourceBody}>
         <p>
@@ -323,7 +327,7 @@ export default function CandidateBrief({
                         <p>
                           A <Term id="term-sheet">term sheet</Term>, not a final contract. Disclosure: the Lab’s founder
                           runs an advocacy campaign about the Moda deal.{" "}
-                          <Link href="/independence">Read our independence policy →</Link>
+                          <Link href="/independence" className={c.inlineLink}>Read our independence policy</Link>
                         </p>
                       )}
                       <p>
@@ -338,8 +342,8 @@ export default function CandidateBrief({
             ) : (
               <p className={styles.muted}>No featured votes are selected for this race yet.</p>
             )}
-            <Link className={styles.moreLink} href={votesHref(race)} prefetch={false}>
-              All {councilDisagreements.length} topics <ArrowRight size={16} aria-hidden="true" />
+            <Link className={`${c.btn} ${c.secondary} ${c.small}`} href={votesHref(race)} prefetch={false}>
+              All {councilDisagreements.length} topics <ArrowRight size={15} aria-hidden="true" />
             </Link>
           </>
         ) : (
@@ -378,8 +382,9 @@ export default function CandidateBrief({
         <ol>
           {sources.map((source) => (
             <li key={source.url}>
-              <a href={source.url} rel="noopener">
-                {source.label} ↗
+              <a href={source.url} rel="noopener" className={styles.sourceLink}>
+                <span>{source.label}</span>
+                <ArrowUpRight size={14} aria-hidden="true" />
               </a>
               <small>
                 {source.kind} · {source.date}
@@ -394,7 +399,7 @@ export default function CandidateBrief({
         <footer className={styles.pager}>
           <nav className={styles.pagerLinks} aria-label="Other candidates, alphabetical">
             {previous && (
-              <Link href={candidatePath(race, previous)} prefetch={false} rel="prev">
+              <Link href={candidatePath(race, previous)} prefetch={false} rel="prev" className={styles.pagerLink}>
                 <ArrowLeft size={16} aria-hidden="true" />
                 <span>
                   <small>Previous</small>
@@ -403,7 +408,7 @@ export default function CandidateBrief({
               </Link>
             )}
             {next && (
-              <Link href={candidatePath(race, next)} prefetch={false} rel="next">
+              <Link href={candidatePath(race, next)} prefetch={false} rel="next" className={styles.pagerLink}>
                 <span>
                   <small>Next</small>
                   {next.name}
@@ -412,7 +417,7 @@ export default function CandidateBrief({
               </Link>
             )}
           </nav>
-          <Link href={racePath(race)} prefetch={false}>
+          <Link href={racePath(race)} prefetch={false} className={`${c.btn} ${c.secondary}`}>
             <ArrowLeft size={16} aria-hidden="true" /> Back to the {districtLabel} list
           </Link>
         </footer>

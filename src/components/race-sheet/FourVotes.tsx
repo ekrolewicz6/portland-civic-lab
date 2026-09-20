@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import type { FeaturedRow, RaceSheet } from "@/lib/voters-guide/race-sheet";
 import { surname } from "@/lib/voters-guide/race-sheet/council-splits";
 import { VotePill } from "./Glyph";
 import SaidStrip from "./SaidStrip";
 import styles from "./votes.module.css";
+import c from "./controls.module.css";
 
 /* ── Helpers ────────────────────────────────────────────────────────── */
 
@@ -22,8 +23,8 @@ export function ModaDisclosure() {
   return (
     <p className={styles.disclosure}>
       Disclosure: the Lab’s founder runs an advocacy campaign about the Moda deal.{" "}
-      <Link href="/independence" prefetch={false}>
-        Read our independence policy →
+      <Link href="/independence" prefetch={false} className={c.inlineLink}>
+        Read our independence policy
       </Link>
     </p>
   );
@@ -91,8 +92,8 @@ function FeaturedVote({ row, raceId, open }: { row: FeaturedRow; raceId: string;
 
         <SaidStrip row={row} raceId={raceId} />
 
-        <Link className={styles.more} href={votesHref} prefetch={false}>
-          Read the votes and their reasons →
+        <Link className={`${c.btn} ${c.secondary} ${c.small}`} href={votesHref} prefetch={false}>
+          Read the votes and their reasons <ArrowRight size={15} aria-hidden="true" />
         </Link>
       </div>
     </details>

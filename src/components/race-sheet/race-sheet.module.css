@@ -20,13 +20,12 @@
 }
 .chip[aria-pressed="true"]:focus-visible,
 .chipGroup[data-active] .chipInfo:focus-visible,
-.primaryButton:focus-visible,
 .trayButton:focus-visible {
   outline-color: var(--color-canopy);
   box-shadow: 0 0 0 2px var(--color-paper);
 }
-/* Zero-specificity reset so every single-class button rule below wins. */
-.sheet :where(button) {
+/* Zero-specificity reset so any control class (here or in controls.module.css) wins regardless of load order. */
+:where(.sheet button) {
   font: inherit;
   color: inherit;
   background: none;
@@ -710,33 +709,6 @@
   gap: 8px 16px;
   padding-top: 4px;
 }
-.textLink,
-.briefLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 44px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-canopy);
-  text-decoration: none;
-  text-underline-offset: 3px;
-}
-.textLink:hover,
-.briefLink:hover {
-  text-decoration: underline;
-}
-.briefLink {
-  padding: 0 16px;
-  border-radius: 999px;
-  border: 1px solid var(--color-canopy);
-  transition: background-color 150ms var(--ease), color 150ms var(--ease);
-}
-.briefLink:hover {
-  background: var(--color-canopy);
-  color: var(--color-paper);
-  text-decoration: none;
-}
 @media (max-width: 480px) {
   .card {
     padding-left: 0;
@@ -748,31 +720,6 @@
   display: inline-grid;
   gap: 8px;
   max-width: 100%;
-}
-.sourceChip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 0 10px;
-  border-radius: 4px;
-  border: 1px solid var(--color-parchment);
-  background: var(--color-paper-warm);
-  font-size: 13px;
-  color: var(--color-ink-light);
-  transition: border-color 150ms var(--ease), background-color 150ms var(--ease);
-}
-.sourceChip:hover,
-.sourceChip[aria-expanded="true"] {
-  border-color: var(--color-sage);
-  background: var(--color-sage-tint);
-}
-.sourceVenue {
-  font-family: var(--font-mono);
-  font-size: max(11px, 0.7rem);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-canopy);
 }
 .sourceDetail {
   display: grid;
@@ -1075,29 +1022,9 @@
 .slotActions {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
-}
-.smallButton {
-  display: inline-flex;
-  align-items: center;
   gap: 6px;
-  min-height: 44px;
-  padding: 0 12px;
-  border-radius: 999px;
-  color: var(--color-ink-light);
-  font-size: 13px;
-  font-weight: 500;
-  transition: background-color 150ms var(--ease), color 150ms var(--ease);
 }
-.smallButton:hover:not(:disabled) {
-  background: var(--color-parchment);
-  color: var(--color-ink);
-}
-.smallButton:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-/* Narrow phones: one-line summary, icon-only 44px actions (aria-labels carry the names). */
+/* Narrow phones: one-line summary. */
 @media (max-width: 480px) {
   .slotLine {
     display: -webkit-box;
@@ -1105,59 +1032,12 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .slotActions .smallButton {
-    position: relative;
-    width: 44px;
-    padding: 0;
-    justify-content: center;
-    gap: 0;
-  }
-  .slotActions .smallButton span {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-  }
 }
 .panelActions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-}
-.primaryButton,
-.secondaryButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 0 16px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  transition: background-color 150ms var(--ease), color 150ms var(--ease);
-}
-.primaryButton {
-  background: var(--color-canopy);
-  color: var(--color-paper);
-}
-.primaryButton:hover:not(:disabled) {
-  background: var(--color-canopy-mid);
-}
-.secondaryButton {
-  border: 1px solid var(--color-canopy);
-  color: var(--color-canopy);
-}
-.secondaryButton:hover:not(:disabled) {
-  background: var(--color-canopy);
-  color: var(--color-paper);
-}
-.primaryButton:disabled,
-.secondaryButton:disabled {
-  opacity: 0.4;
-  cursor: default;
 }
 .confirm {
   display: inline-flex;
@@ -1253,8 +1133,7 @@
   .shareWrap,
   .chevron,
   .sharedView,
-  .cardActions,
-  .sourceChip {
+  .cardActions {
     display: none !important;
   }
   .row {

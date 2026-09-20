@@ -1,7 +1,7 @@
 "use client";
 import { Fragment, useCallback, useState } from "react";
 import Link from "next/link";
-import { Bookmark } from "lucide-react";
+import { Bookmark, BookmarkCheck } from "lucide-react";
 import type { SheetRow } from "@/lib/voters-guide/race-sheet";
 import { issues, type IssueId } from "@/lib/voters-guide/race-sheet/issues";
 import type { ExtraTopic } from "@/lib/voters-guide/race-sheet/types";
@@ -13,6 +13,7 @@ import { Gap, SrOnly } from "./Glyph";
 import { IssueIcon } from "./IssueIcon";
 import StanceDetail from "./StanceDetail";
 import styles from "./stance.module.css";
+import c from "./controls.module.css";
 
 /**
  * Where they stand: every candidate × every issue in one grid. On desktop a
@@ -142,13 +143,13 @@ export default function StanceGrid({
                         ) : (
                           <button
                             type="button"
-                            className={styles.gapButton}
+                            className={c.gapPill}
                             aria-expanded={cellOpen}
                             aria-controls={cellOpen ? detailId : undefined}
                             aria-label={`${row.name} on ${issue.label.toLowerCase()}: not found in the sources we reviewed`}
                             onClick={() => toggle(row.id, issue.id)}
                           >
-                            <Gap text="" />
+                            <Gap text="" /> Not found
                           </button>
                         )}
                       </td>
@@ -163,13 +164,13 @@ export default function StanceGrid({
                         <span className={styles.cellLabel}>{topic.short}</span>
                         <button
                           type="button"
-                          className={has ? styles.chip : styles.gapButton}
+                          className={has ? styles.chip : c.gapPill}
                           aria-expanded={cellOpen}
                           aria-controls={cellOpen ? detailId : undefined}
                           aria-label={has ? undefined : `${row.name} on ${topic.label.toLowerCase()}: no statement in the sources we reviewed`}
                           onClick={() => toggle(row.id, `topic:${topic.id}`)}
                         >
-                          {tc.vote ? <VotePill vote={tc.vote} /> : tc.chip ? tc.chip : tc.askedOn ? <span className={styles.asked}>Asked</span> : <Gap text="" />}
+                          {tc.vote ? <VotePill vote={tc.vote} /> : tc.chip ? tc.chip : tc.askedOn ? <><Gap text="" /> Asked</> : <><Gap text="" /> Not found</>}
                         </button>
                       </td>
                     );
@@ -177,12 +178,13 @@ export default function StanceGrid({
                   <td className={styles.saveCell}>
                     <button
                       type="button"
-                      className={styles.save}
+                      className={`${c.btn} ${c.small} ${c.save} ${styles.save}`}
                       aria-pressed={isSaved}
                       aria-label={`${isSaved ? "Remove" : "Save"} ${row.name}${isSaved ? " from" : " to"} my ballot`}
                       onClick={() => onToggleSave(row.id)}
                     >
-                      <Bookmark size={18} aria-hidden="true" fill={isSaved ? "currentColor" : "none"} />
+                      {isSaved ? <BookmarkCheck size={16} aria-hidden="true" /> : <Bookmark size={16} aria-hidden="true" />}
+                      <span className={styles.saveWord}>{isSaved ? "Saved" : "Save"}</span>
                     </button>
                   </td>
                 </tr>
