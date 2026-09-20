@@ -984,6 +984,38 @@
   font-size: 13px;
   color: var(--color-ink-muted);
 }
+/* The brief's compact ladder: What at reading size, How and Measured by a step down. */
+.ladder[data-compact] {
+  gap: 10px;
+  margin-top: 8px;
+}
+.ladder[data-compact] .rung {
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 4px 10px;
+}
+.ladder[data-compact] .rungLabel {
+  padding-top: 2px;
+  font-size: max(10.5px, 0.66rem);
+}
+.ladder[data-compact] .rungLabel::before {
+  width: 10px;
+  height: 10px;
+  top: 4px;
+  left: -24px;
+}
+.ladder[data-compact] .rung:not(:first-child) .rungText {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink-light);
+}
+.ladder[data-compact] .rungBody {
+  gap: 6px 10px;
+}
+@media (max-width: 480px) {
+  .ladder[data-compact] .rung {
+    grid-template-columns: 1fr;
+  }
+}
 .detailContext {
   display: flex;
   align-items: flex-start;

@@ -29,7 +29,7 @@ export function portraitPerson(row: Pick<SheetRow, "name" | "portrait" | "id">):
 }
 
 /** A source chip: a button that expands kind · date · note, then the link. */
-export function SourceChipButton({ chip, label }: { chip: SourceChip; label?: string }) {
+export function SourceChipButton({ chip, label, compact = false }: { chip: SourceChip; label?: string; compact?: boolean }) {
   const [open, setOpen] = useState(false);
   const id = useId();
   const e = chip.evidence;
@@ -38,7 +38,7 @@ export function SourceChipButton({ chip, label }: { chip: SourceChip; label?: st
     <span className={styles.sourceWrap}>
       <button
         type="button"
-        className={c.source}
+        className={compact ? `${c.source} ${c.sourceCompact}` : c.source}
         aria-expanded={open}
         aria-controls={id}
         onClick={() => setOpen((v) => !v)}
