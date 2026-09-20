@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowUpRight, CalendarDays } from "lucide-react";
+import { ArrowUpRight, CalendarDays, SearchX } from "lucide-react";
+import c from "@/components/race-sheet/controls.module.css";
 import { voterGuideMetadata } from "@/lib/voters-guide/metadata";
 import GuideStructuredData from "@/components/voters-guide/GuideStructuredData";
 import { races } from "@/lib/voters-guide/published";
@@ -15,6 +16,20 @@ import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import styles from "./hub.module.css";
 
 export const metadata = voterGuideMetadata("guide");
+
+/**
+ * Mosaic column counts that leave no ragged last row: the widest count that
+ * divides the field evenly (21 candidates → 7 columns; 12 → 6 on desktop,
+ * 6 on phones). Falls back to 7 on desktop and 5 on phones when nothing
+ * from the allowed range divides.
+ */
+function mosaicColumns(count: number) {
+  const pick = (options: number[], fallback: number) => options.find((n) => count % n === 0) ?? fallback;
+  return {
+    "--mosaic-cols": pick([8, 7, 6, 5], 7),
+    "--mosaic-cols-phone": pick([7, 6, 5, 4], 5),
+  } as React.CSSProperties;
+}
 
 
 const RANKED_CHOICE_GUIDE = "https://multco.us/info/ranked-choice-voting-rcv";
@@ -38,7 +53,7 @@ function DistrictCard({ sheet }: { sheet: RaceSheet }) {
           </div>
           <ArrowUpRight aria-hidden="true" />
         </div>
-        <div className={styles.mosaic} aria-hidden="true">
+        <div className={styles.mosaic} aria-hidden="true" style={mosaicColumns(sheet.rows.length)}>
           {sheet.rows.map((row) => (
             <CandidatePortrait key={row.id} person={{ id: row.id, name: row.name, portrait: row.portrait } as never} compact />
           ))}
@@ -77,8 +92,8 @@ export default function VotersGuidePage() {
             <div className={styles.electionText}>
               <strong>November 3, 2026</strong>
               <span>Oregon general election</span>
-              <a href={officialSources.myVote} rel="noopener noreferrer">
-                Check your registration <span aria-hidden="true">↗</span>
+              <a href={officialSources.myVote} rel="noopener noreferrer" className={`${c.btn} ${c.secondary} ${c.small} ${styles.electionLink}`}>
+                Check your registration <ArrowUpRight size={14} aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -96,8 +111,8 @@ export default function VotersGuidePage() {
         <span>Districts {editionDistricts}</span>
         <span>reviewed {REVIEW_LABEL}</span>
         <span className={styles.editionLong}>AI-assisted, human review not yet complete</span>
-        <Link href="/voters-guide/methodology#coverage">
-          Coverage and gaps <span aria-hidden="true">→</span>
+        <Link href="/voters-guide/methodology#coverage" className={`${c.btn} ${c.quiet} ${c.small} ${styles.editionLink}`}>
+          <SearchX size={14} aria-hidden="true" /> Coverage and gaps
         </Link>
       </p>
 
