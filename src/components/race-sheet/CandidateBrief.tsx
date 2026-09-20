@@ -33,11 +33,11 @@ export function SourceLine({ chip }: { chip: SourceChip }) {
     <details className={styles.source}>
       <summary>
         <span className={styles.chip}>{chip.label}</span>
-        <span>
-          {evidence.kind} · {evidence.date}
-        </span>
       </summary>
       <div className={styles.sourceBody}>
+        <p>
+          {evidence.kind} · {evidence.date}
+        </p>
         <a href={evidence.url} rel="noopener">
           {evidence.label} ↗
         </a>

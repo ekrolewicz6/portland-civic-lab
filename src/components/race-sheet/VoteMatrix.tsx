@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import type { Race } from "@/lib/voters-guide/types";
 import { splitIssues, surname, type SplitDecision, type SplitTopic } from "@/lib/voters-guide/race-sheet/council-splits";
@@ -46,7 +47,7 @@ function DecisionRow({ entry }: { entry: SplitDecision }) {
   );
 }
 
-function Topic({ topic, incumbents, open }: { topic: SplitTopic; incumbents: { id: string; name: string }[]; open: boolean }) {
+function Topic({ topic, incumbents, open, raceId }: { topic: SplitTopic; incumbents: { id: string; name: string }[]; open: boolean; raceId: string }) {
   return (
     <details className={`${styles.row} ${styles.topic}`} id={topic.id} data-topic open={open || undefined}>
       <summary className={styles.topicSummary}>
@@ -62,7 +63,9 @@ function Topic({ topic, incumbents, open }: { topic: SplitTopic; incumbents: { i
             <span role="columnheader">Decision</span>
             {incumbents.map((p) => (
               <span key={p.id} role="columnheader">
-                {p.name}
+                <Link href={`/voters-guide/${raceId}/${p.id}`} prefetch={false}>
+                  {p.name}
+                </Link>
               </span>
             ))}
           </div>
@@ -108,7 +111,7 @@ export default function VoteMatrix({ race }: { race: Race }) {
           topic={topic}
           incumbents={incumbents}
           open={hasBudget ? topic.id === OPEN_BY_DEFAULT : i === 0}
-        />
+         raceId={race.id}/>
       ))}
 
       {agreed.length > 0 && (

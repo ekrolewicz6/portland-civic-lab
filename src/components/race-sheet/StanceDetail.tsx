@@ -27,15 +27,17 @@ export default function StanceDetail({
   onClose: () => void;
 }) {
   const cell = row.cells[issue.id];
-  const line = cell.line ?? cell.position;
-  const showFull = Boolean(cell.position && cell.line && cell.position !== cell.line);
+  const position = cell.position ?? cell.line;
   return (
     <div className={styles.detail} id={id} data-issue={issue.id}>
       <div className={styles.detailHead}>
         <p className={styles.detailTitle}>
           <IssueIcon issue={issue.id} />
           <span>
-            <strong>{row.name}</strong> on {issue.label.toLowerCase()}
+            <Link href={`/voters-guide/${raceId}/${row.id}`} prefetch={false} className={styles.detailName}>
+              {row.name}
+            </Link>{" "}
+            on {issue.label.toLowerCase()}
           </span>
         </p>
         <button type="button" className={styles.detailClose} onClick={onClose} aria-label="Close">
@@ -43,16 +45,15 @@ export default function StanceDetail({
         </button>
       </div>
 
-      {line ? (
+      {position ? (
         <>
           <p className={styles.detailLine}>
             <SaidGlyph />
-            {line}
+            {position}
           </p>
-          {showFull && <p className={styles.detailFull}>{cell.position}</p>}
           <div className={styles.detailMeta}>
             {cell.source && <SourceChipButton chip={cell.source} />}
-            <span className={styles.detailNote}>Our short reading of the candidate’s statement; the source is theirs.</span>
+            <span className={styles.detailNote}>Our paraphrase of the candidate’s statement.</span>
           </div>
         </>
       ) : (

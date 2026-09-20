@@ -1,5 +1,6 @@
 "use client";
 import { Fragment, useCallback, useState } from "react";
+import Link from "next/link";
 import { Bookmark } from "lucide-react";
 import type { SheetRow } from "@/lib/voters-guide/race-sheet";
 import { issues, type IssueId } from "@/lib/voters-guide/race-sheet/issues";
@@ -99,9 +100,9 @@ export default function StanceGrid({
                       <CandidatePortrait person={portraitPerson(row)} compact />
                     </span>
                     <span className={styles.identity}>
-                      <span className={styles.name} id={`name-${row.id}`}>
+                      <Link href={`/voters-guide/${raceId}/${row.id}`} prefetch={false} className={styles.name} id={`name-${row.id}`}>
                         {row.name}
-                      </span>
+                      </Link>
                       <span className={styles.role}>{row.role}</span>
                       {row.missing && <span className={styles.missing}>{missingLabel(row.missing)}</span>}
                     </span>

@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useId, useRef, useState, type RefObject } from "react";
 import { createPortal } from "react-dom";
+import Link from "next/link";
 import { ArrowDown, ArrowUp, Bookmark, Printer, Trash2, X } from "lucide-react";
 import type { ClientSheet, SheetRow } from "@/lib/voters-guide/race-sheet";
 import {
@@ -257,7 +258,11 @@ export default function MyBallot({
                   <div className={styles.slotTop}>
                     <span className={styles.ordinal}>{ORDINALS[i]}</span>
                     <div className={styles.slotBody}>
-                      <p className={styles.slotName}>{row.name}</p>
+                      <p className={styles.slotName}>
+                        <Link href={`/voters-guide/${sheet.raceId}/${row.id}`} prefetch={false}>
+                          {row.name}
+                        </Link>
+                      </p>
                       <p className={styles.slotRole}>{row.role}</p>
                       <p className={styles.slotLine}>{row.summary}</p>
                       {votes.length > 0 && (

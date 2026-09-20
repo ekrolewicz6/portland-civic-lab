@@ -75,7 +75,11 @@ function FeaturedVote({ row, raceId, open }: { row: FeaturedRow; raceId: string;
             <ul className={styles.reading}>
               {withReading.map((vote) => (
                 <li key={vote.id}>
-                  <b>{vote.name}</b>
+                  <b>
+                    <Link href={`/voters-guide/${raceId}/${vote.id}`} prefetch={false}>
+                      {vote.name}
+                    </Link>
+                  </b>
                   <span>{vote.headline}</span>
                 </li>
               ))}
@@ -117,7 +121,9 @@ export default function FourVotes({ sheet }: { sheet: RaceSheet }) {
             <span />
             <div className={styles.columnsInner}>
               {incumbents.map((p) => (
-                <span key={p.id}>{p.name}</span>
+                <Link key={p.id} href={`/voters-guide/${race.id}/${p.id}`} prefetch={false}>
+                  {p.name}
+                </Link>
               ))}
             </div>
           </div>
