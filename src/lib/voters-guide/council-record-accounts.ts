@@ -133,6 +133,17 @@ export const decisionAccounts: Record<
       action:
         "Co-sponsored the smaller service-restoration package. Voted against the larger alternative, then for the smaller package.",
       actionSource: julyAgenda,
+      reason: {
+        label: "Why he opposed the larger plan",
+        text: "Said Services First spent money the city should be counting on to balance next year’s already tough budget, and that restoring cuts to police training, such as de-escalation and emergency driving, was essential.",
+        source: {
+          label: "Novick · emailed response to the Lab’s questions",
+          url: "https://www.portlandciviclab.org/voters-guide/research-log#novick-2026-09-21",
+          kind: "Candidate statement",
+          date: "Received September 21, 2026",
+          note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on his brief. Receipt does not verify the claims.",
+        },
+      },
     },
     "Olivia Clark": {
       choice: "Smaller package only",

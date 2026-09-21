@@ -395,6 +395,8 @@ Contact: patrickhilton4d3pdx@outlook.com
 
 ## Steve Novick
 
+**Replied September 21, 2026** to the individual questions in the first round (July budget reasoning; accomplishments with public sources). His July restoration vote now carries his own reason, and the reports and records he cited are on his brief; see the research log entry `novick-2026-09-21`. He did not understand question 1; the clarified two-part question is in `novick-reply-draft.md` beside this file, not yet sent.
+
 Contact: vote@novickforportland.com
 
 ### Ladder gaps

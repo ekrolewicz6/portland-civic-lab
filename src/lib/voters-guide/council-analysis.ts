@@ -430,6 +430,58 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
       "Novick · second-term priorities",
       "https://NovickForPortland.com",
     ),
+    // His emailed reply of September 21, 2026 explains his July budget votes and names past work with public sources.
+    also: [
+      {
+        label: "Novick · emailed response to the Lab’s questions",
+        url: "https://www.portlandciviclab.org/voters-guide/research-log#novick-2026-09-21",
+        kind: "Candidate statement",
+        date: "Received September 21, 2026",
+        note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on his brief. Receipt does not verify the claims.",
+      },
+      {
+        label: "City of Portland · red flag law presentation (placed file 2026-230)",
+        url: "https://www.portland.gov/council/documents/presentation/placed-file/2026-230",
+        kind: "Public record",
+        date: "2026",
+        note: "Cited by the candidate for the red flag law he says he led.",
+      },
+      {
+        label: "OPB · Portland gas tax passes (2016)",
+        url: "https://www.opb.org/news/series/election-2016/oregon-portland-gas-tax-passes/",
+        kind: "Reporting",
+        date: "May 2016",
+        note: "Cited by the candidate for the 10-cent city gas tax he proposed as commissioner.",
+      },
+      {
+        label: "Portland Tribune · Novick wants 10-cent city gas tax on May 2016 ballot",
+        url: "https://portlandtribune.com/2015/10/05/novick-wants-10-cent-city-gas-tax-on-may-2016-ballot/",
+        kind: "Reporting",
+        date: "October 5, 2015",
+        note: "Cited by the candidate for the same measure.",
+      },
+      {
+        label: "U.S. District Court · Superfund cost-recovery decision, 750 F. Supp. 1460",
+        url: "https://law.justia.com/cases/federal/district-courts/FSupp/750/1460/1473496/",
+        kind: "Public record",
+        date: "1990",
+        note: "Cited by the candidate as one of the decisions from the Superfund cost-recovery litigation he says he led as a Justice Department lawyer.",
+      },
+      {
+        label: "U.S. District Court · Superfund cost-recovery decision, 733 F. Supp. 1424",
+        url: "https://law.justia.com/cases/federal/district-courts/FSupp/733/1424/1516926/",
+        kind: "Public record",
+        date: "1990",
+        note: "Cited by the candidate for the same litigation.",
+      },
+      {
+        label: "The Oregonian · Measures 66 and 67 tax debate (2010)",
+        url: "https://www.oregonlive.com/politics/2010/01/measures_66_67_tax_debate_heat.html",
+        kind: "Reporting",
+        date: "January 2010",
+        note: "Cited by the candidate for his policy-research and communications role in the 2010 campaign.",
+      },
+    ],
     issues: {
       housing:
         "Supports faster permitting and attracting housing investment, alongside stronger state and county mental-health and addiction services.",
