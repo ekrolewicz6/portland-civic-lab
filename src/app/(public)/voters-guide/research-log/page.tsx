@@ -19,6 +19,28 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="arnold-2026-09-20">September 20, 2026 · Candidate response: Eli Arnold (District 4)</h2>
+        <p>
+          Eli Arnold replied to the individual questions the Lab emailed him
+          on September 19, 2026. On revenue, he says there would be no
+          immediate increase to police funding, that he would seek more
+          authorized positions once vacancies are filled if the budget can
+          accommodate it, and that fareless transit would draw on a portion of
+          future Clean Energy Fund revenue (he notes TriMet’s fares are about
+          $60 million a year, only part of it Portland). For his policing work
+          he described a 2023 partnership with federal prosecutors against
+          high-volume downtown fentanyl dealers and the Provider Police Joint
+          Connection Program with the Bike Squad and MHAAO, and pointed to
+          reporting in The Oregonian, KATU and OPB, now listed among his
+          sources with a note on what each report does and does not establish.
+        </p>
+        <p>
+          His police-staffing stance now cites the reply for its sequencing;
+          his brief shows the excerpts under “Their answers to our questions.”
+          No issue position changed. The response is kept on file and cited
+          with this entry; his preservation hash was re-recorded because his
+          source list grew.
+        </p>
         <h2 id="otero-2026-09-19">September 19, 2026 · Candidate response: Cristal Otero (District 3)</h2>
         <p>
           Cristal Otero replied to the individual questions the Lab emailed
