@@ -209,6 +209,11 @@
 .moreButton {
   flex: none;
 }
+.moreButton[aria-expanded="true"] {
+  background: var(--color-canopy);
+  border-color: var(--color-canopy);
+  color: var(--color-paper);
+}
 .moreShort {
   display: none;
 }

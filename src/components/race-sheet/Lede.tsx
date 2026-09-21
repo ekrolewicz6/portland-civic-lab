@@ -5,7 +5,7 @@ import styles from "./lede.module.css";
 
 /**
  * The choice in one paragraph: our reading, ≤45 words, no names. On a phone
- * it folds to two lines so the candidates stay on the first screen; "More"
+ * it folds to two lines so the candidates stay on the first screen; "Read more"
  * unfolds it in place. From 769px up it always shows in full. The draft tag
  * stays beside the label until a human has reviewed the paragraph.
  */
@@ -32,7 +32,7 @@ export default function Lede({ text, reviewed }: { text: string; reviewed: boole
         aria-controls={`${id}-text`}
         onClick={() => setOpen((v) => !v)}
       >
-        {open ? "Less" : "More"}
+        {open ? "Read less" : "Read more"}
         <ChevronDown size={14} aria-hidden="true" />
       </button>
     </section>

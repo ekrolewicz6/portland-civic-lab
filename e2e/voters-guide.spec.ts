@@ -348,10 +348,10 @@ test("no horizontal overflow at 320, 390, 768 and 1280 on the race page, with a 
 
 /* ── Extra topics and the promise ladder ───────────────────────────── */
 
-const picker = (page: Page) => page.getByRole("group", { name: "Add a topic to compare" });
+const picker = (page: Page) => page.getByRole("group", { name: "Add topics to compare" });
 /** The picker opens from the toolbar's one control; it is not in the DOM until then. */
 const openPicker = async (page: Page) => {
-  const more = page.locator("[data-race-sheet-rail]").getByRole("button", { name: /Compare on more|^More/ });
+  const more = page.locator("[data-race-sheet-rail]").getByRole("button", { name: /Compare on more topics|^Topics/ });
   if ((await more.getAttribute("aria-expanded")) !== "true") await more.click();
   await expect(picker(page)).toBeVisible();
 };
@@ -368,7 +368,8 @@ test("desktop: the picker adds up to two topic columns, incumbents show their re
   await page.goto("/voters-guide/portland-district-4");
   await expect(picker(page)).toHaveCount(0);
   await openPicker(page);
-  await expect(picker(page).getByRole("button")).toHaveCount(extraTopics.length);
+  // One chip per topic plus the All/None control.
+  await expect(picker(page).getByRole("button")).toHaveCount(extraTopics.length + 1);
   for (const t of extraTopics) await expect(picker(page).getByRole("button", { name: new RegExp(`^${t.label}`) })).toHaveAttribute("aria-pressed", "false");
   await expect(topicHeads(page)).toHaveCount(0);
 
@@ -404,7 +405,16 @@ test("desktop: the picker adds up to two topic columns, incumbents show their re
   await picker(page).getByRole("button", { name: new RegExp(`^${taxes.label}`) }).click();
   await expect(topicHeads(page)).toHaveCount(2);
   await expect(page).toHaveURL(/#topics=moda,new-taxes$/);
-  await expect(picker(page).getByRole("button", { name: new RegExp(`^${third.label}`) })).toBeDisabled();
+  // No cap: every topic can be a column; "All" adds the rest and turns into "None".
+  await expect(picker(page).getByRole("button", { name: new RegExp(`^${third.label}`) })).toBeEnabled();
+  await picker(page).getByRole("button", { name: /^All \d+$/ }).click();
+  await expect(topicHeads(page)).toHaveCount(extraTopics.length);
+  await expect(page).toHaveURL(new RegExp(`#topics=${extraTopics.map((t) => t.id).join(",")}$`));
+  await picker(page).getByRole("button", { name: "None", exact: true }).click();
+  await expect(topicHeads(page)).toHaveCount(0);
+  await picker(page).getByRole("button", { name: new RegExp(`^${moda.label}`) }).click();
+  await picker(page).getByRole("button", { name: new RegExp(`^${taxes.label}`) }).click();
+  await expect(topicHeads(page)).toHaveCount(2);
   expect(await fits(page)).toBe(true);
 
   // Highlighting an issue keeps the topics; the share fragment carries both and nothing else.
@@ -418,7 +428,7 @@ test("desktop: the picker adds up to two topic columns, incumbents show their re
   await page.goto("/voters-guide/portland-district-4#topics=moda,police-staffing");
   await expect(topicHeads(page)).toHaveCount(2);
   await expect(topicHeads(page).nth(1)).toContainText("Police staffing");
-  await expect(page.locator("[data-race-sheet-rail]").getByRole("button", { name: /Compare on more/ })).toContainText("2");
+  await expect(page.locator("[data-race-sheet-rail]").getByRole("button", { name: /Compare on more topics/ })).toContainText("2");
   await openPicker(page);
   await expect(picker(page).getByRole("button", { name: /^Police staffing/ })).toHaveAttribute("aria-pressed", "true");
 });
