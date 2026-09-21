@@ -81,7 +81,9 @@
   background: color-mix(in oklab, var(--color-canopy) 15%, var(--color-paper));
 }
 .quiet[aria-pressed="true"],
-.quiet[aria-expanded="true"] {
+.quiet[aria-expanded="true"],
+.quiet[aria-pressed="true"]:hover:not(:disabled),
+.quiet[aria-expanded="true"]:hover:not(:disabled) {
   background: var(--color-canopy);
   color: var(--color-paper);
 }
@@ -111,7 +113,8 @@
 .save:hover:not(:disabled) {
   background: color-mix(in oklab, var(--color-canopy) 15%, var(--color-paper));
 }
-.save[aria-pressed="true"] {
+.save[aria-pressed="true"],
+.save[aria-pressed="true"]:hover:not(:disabled) {
   background: color-mix(in oklab, var(--color-ember) 30%, var(--color-paper));
   border-color: color-mix(in oklab, var(--color-ember) 70%, var(--color-ink));
   color: color-mix(in oklab, var(--color-ember) 40%, var(--color-ink));

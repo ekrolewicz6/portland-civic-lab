@@ -141,3 +141,33 @@ export type TopicStance = Review & {
   source: Evidence;
   askedOn?: string;
 };
+
+/* ── Reaching the campaign ───────────────────────────────────────────── */
+
+/**
+ * The channels a candidate has published for their campaign, and nothing
+ * else: what their pamphlet statement prints, what their campaign site's
+ * contact page or footer lists, or the campaign email on their own public
+ * filing or announcement. Every channel names where it was found. No
+ * personal numbers or addresses that the candidate did not publish for the
+ * campaign, and nothing scraped from third parties.
+ */
+export type ContactChannel = {
+  /** e.g. "https://…", "mailto:…", "tel:+1971…", or a social profile URL. */
+  url: string;
+  /** Short visible label: "eliforportland.com", "info@…", "971-…", "Instagram". */
+  label: string;
+  kind: "website" | "email" | "phone" | "form" | "social";
+  /** Where the candidate published it. */
+  from: "pamphlet" | "site" | "filing" | "announcement" | "questionnaire";
+};
+
+export type CandidateContact = {
+  candidateId: string;
+  channels: ContactChannel[];
+  /** When none: the plain reason, e.g. "No campaign site or email in the pamphlet or the City filing." */
+  none?: string;
+  /** The page(s) these were read from. */
+  sources: Evidence[];
+  reviewedOn: string;
+};

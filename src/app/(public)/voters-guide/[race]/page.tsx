@@ -114,9 +114,11 @@ export default async function RacePage({
               <p className={styles.where}>
                 <MapPin size={15} aria-hidden="true" />
                 <span className={styles.whereText}>{sheet.district.neighborhoods}</span>
+                <span className={styles.whereShort}>{sheet.district.neighborhoods.split(":")[0]}</span>
                 {other && (
                   <Link href={`/voters-guide/${other.id}`} prefetch={false} className={styles.otherRace}>
-                    Not yours? {other.short} <ArrowRight size={13} aria-hidden="true" />
+                    <span className={styles.otherLong}>Not yours? </span>
+                    {other.short} <ArrowRight size={13} aria-hidden="true" />
                   </Link>
                 )}
               </p>

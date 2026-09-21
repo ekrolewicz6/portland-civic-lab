@@ -94,7 +94,7 @@ export default function VotersGuidePage() {
               <span>Portland City Council</span> · General election · November 3, 2026
             </p>
             <h1 id="hub-title" className={styles.heroTitle}>
-              Know the choice.
+              Know their choices.
               <br />
               <span>Make your own.</span>
             </h1>

@@ -7,6 +7,7 @@ import { deliveries } from "@/lib/voters-guide/race-sheet/content/delivery";
 import { topicStances } from "@/lib/voters-guide/race-sheet/content/topic-stances";
 import { extraTopics } from "@/lib/voters-guide/race-sheet/topics";
 import { ownWords } from "@/lib/voters-guide/race-sheet/content/own-words";
+import { contacts } from "@/lib/voters-guide/race-sheet/content/contacts";
 import { candidateDescription } from "@/lib/voters-guide/race-sheet/seo";
 import { choiceParagraphs } from "@/lib/voters-guide/race-sheet/content/choice";
 import { saidPlacements } from "@/lib/voters-guide/race-sheet/content/said";
@@ -172,6 +173,34 @@ describe("in their words (the verbatim opening)", () => {
         expect(d, person.id).not.toContain("Our summary:");
       }
     }
+  });
+});
+
+describe("reaching the campaign", () => {
+  it("covers every published candidate exactly once", () => {
+    const ids = contacts.map((o) => o.candidateId);
+    expect(new Set(ids).size).toBe(ids.length);
+    expect([...ids].sort()).toEqual(people.map((p) => p.person.id).sort());
+  });
+  it.each(contacts.map((o) => [o.candidateId, o] as const))("%s: only published channels, well-formed, sourced, or a stated reason", (_id, o) => {
+    if (o.channels.length === 0) {
+      expect(o.none, "no channels needs a reason").toBeTruthy();
+      expect(o.none!.length).toBeGreaterThan(20);
+    } else {
+      expect(o.sources.length, "channels need the page they came from").toBeGreaterThan(0);
+    }
+    for (const s of o.sources) expect(s.url).toMatch(HTTPS);
+    const kinds = o.channels.map((ch) => ch.kind);
+    expect(kinds.filter((k) => k === "website").length, "at most one website").toBeLessThanOrEqual(1);
+    for (const ch of o.channels) {
+      if (ch.kind === "email") expect(ch.url).toMatch(/^mailto:[^@\s]+@[^@\s]+\.[a-z]+$/i);
+      else if (ch.kind === "phone") expect(ch.url).toMatch(/^tel:\+1\d{10}$/);
+      else expect(ch.url, `${ch.kind} must be https`).toMatch(HTTPS);
+      expect(ch.label.length).toBeGreaterThan(0);
+      expect(ch.label, "labels are plain, no protocol").not.toMatch(/^https?:/);
+      expect(["pamphlet", "site", "filing", "announcement", "questionnaire"]).toContain(ch.from);
+    }
+    expect(o.reviewedOn).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   });
 });
 
