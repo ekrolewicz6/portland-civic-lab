@@ -21,8 +21,8 @@ export default function ResearchLog() {
       <div className={styles.prose}>
         <h2 id="novick-2026-09-21">September 21, 2026 · Candidate response: Steve Novick (District 3)</h2>
         <p>
-          Steve Novick replied to the individual questions the Lab emailed him
-          on September 19, 2026. On the July budget votes, he says Services
+          Steve Novick’s campaign replied on his behalf, with his answers, to
+          the individual questions the Lab emailed him on September 19, 2026. On the July budget votes, he says Services
           First spent money the city should be counting on to balance next
           year’s already tough budget, and that restoring cuts to police
           training, such as de-escalation and emergency driving, was
