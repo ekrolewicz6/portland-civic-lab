@@ -18,7 +18,8 @@ import { missingStates, primaryStatements, roleOverrides } from "./content/roles
 import { ballotInstructions, districts } from "./content/districts";
 import { answers } from "./content/answers";
 import { ownWords, type OwnWordsRule } from "./content/own-words";
-import type { BallotInstruction, CandidateAnswer, DistrictInfo, ExtraTopic, MissingState, Review } from "./types";
+import { contacts } from "./content/contacts";
+import type { BallotInstruction, CandidateAnswer, ContactChannel, DistrictInfo, ExtraTopic, MissingState, Review } from "./types";
 
 export const raceSheetVersion = "2026-09-19.1";
 
@@ -72,6 +73,8 @@ export type SheetRow = {
   answers: CandidateAnswer[];
   /** The verbatim opening of their own statement, captured by one rule for everyone. */
   ownWords: { text: string; source: SourceChip; rule: OwnWordsRule } | null;
+  /** Channels the candidate published for the campaign; `none` states why when there are none. */
+  contact: { channels: ContactChannel[]; none: string | null; sources: SourceChip[] };
 };
 
 export type VoteWord = "Yes" | "No" | "Absent" | "Not on committee";
@@ -217,6 +220,12 @@ function buildRow(person: Candidate): SheetRow {
     ownWords: (() => {
       const own = ownWords.find((o) => o.candidateId === person.id);
       return own ? { text: own.text, source: sourceChip(own.source), rule: own.rule } : null;
+    })(),
+    contact: (() => {
+      const found = contacts.find((x) => x.candidateId === person.id);
+      return found
+        ? { channels: found.channels, none: found.none ?? null, sources: found.sources.map(sourceChip) }
+        : { channels: [], none: "Contact research for this candidate is not complete yet.", sources: [] };
     })(),
   };
 }

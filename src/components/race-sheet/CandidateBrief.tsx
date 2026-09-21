@@ -10,6 +10,7 @@ import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import ShareGuide from "@/components/voters-guide/ShareGuide";
 import { SaidGlyph, VotePill } from "./Glyph";
 import Term from "./Term";
+import ReachCampaign from "./ReachCampaign";
 import c from "./controls.module.css";
 import { SourceIcon } from "./SourceIcon";
 import Ladder from "./Ladder";
@@ -184,6 +185,14 @@ export default function CandidateBrief({
                 Photo: {person.portrait.credit} ↗
               </a>
             )}
+          </div>
+        )}
+        {!embedded && (
+          <div className={styles.headReach} aria-labelledby={heading("reach")}>
+            <p id={heading("reach")} className={styles.label}>
+              Reach the campaign
+            </p>
+            <ReachCampaign channels={row.contact.channels} none={row.contact.none} />
           </div>
         )}
         {embedded && person.portrait && (

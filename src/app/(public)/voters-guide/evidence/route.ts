@@ -32,6 +32,7 @@ import { deliveries } from "@/lib/voters-guide/race-sheet/content/delivery";
 import { topicStances } from "@/lib/voters-guide/race-sheet/content/topic-stances";
 import { extraTopics } from "@/lib/voters-guide/race-sheet/topics";
 import { ownWords } from "@/lib/voters-guide/race-sheet/content/own-words";
+import { contacts } from "@/lib/voters-guide/race-sheet/content/contacts";
 
 export const dynamic = "force-static";
 
@@ -71,8 +72,9 @@ export function GET() {
         topicStances,
         deliveries,
         ownWords,
+        contacts,
         rules:
-          "Every candidate on the checked roster, alphabetical, one line each. A line may omit, never add. A dash is a research gap, not a position. Featured votes are chosen editorially and disclosed; challengers appear beneath a vote only for an explicit statement about that exact choice. Extra topics are the same for every candidate: an incumbent's recorded vote where a topic matches a Council decision, otherwise only an explicit, sourced statement about that choice; nothing is inferred from silence, party or broad goals. Each brief opens with the verbatim opening of the candidate's own statement under one mechanical rule (ownWords), so the guide never chooses which sentence to feature. The ladder (what, how, measured by) shows only rungs the candidate has stated, each with its own source; a missing rung is a gap, and where the Lab has asked the candidate the date is recorded. The reader's list is never seeded, ordered, scored, shared or recorded.",
+          "Every candidate on the checked roster, alphabetical, one line each. A line may omit, never add. A dash is a research gap, not a position. Featured votes are chosen editorially and disclosed; challengers appear beneath a vote only for an explicit statement about that exact choice. Extra topics are the same for every candidate: an incumbent's recorded vote where a topic matches a Council decision, otherwise only an explicit, sourced statement about that choice; nothing is inferred from silence, party or broad goals. Contact channels are only those the candidate published for the campaign (pamphlet statement, campaign site, their own filing or announcement); a candidate with none gets a stated reason, never a guessed address. Each brief opens with the verbatim opening of the candidate's own statement under one mechanical rule (ownWords), so the guide never chooses which sentence to feature. The ladder (what, how, measured by) shows only rungs the candidate has stated, each with its own source; a missing rung is a gap, and where the Lab has asked the candidate the date is recorded. The reader's list is never seeded, ordered, scored, shared or recorded.",
       },
       explorer: {
         status: "Retired September 19, 2026; replaced by the race sheet",

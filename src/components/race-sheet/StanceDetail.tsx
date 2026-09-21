@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ArrowRight, Info, Vote, X } from "lucide-react";
+import { ArrowRight, ExternalLink, Globe, Info, Vote, X } from "lucide-react";
 import type { SheetRow, TopicDecision } from "@/lib/voters-guide/race-sheet";
 import type { Issue } from "@/lib/voters-guide/race-sheet/issues";
 import type { ExtraTopic } from "@/lib/voters-guide/race-sheet/types";
@@ -42,6 +42,7 @@ export default function StanceDetail({
   const tc = topic ? row.topicCells[topic.id] : null;
   const briefHref = `/voters-guide/${raceId}/${row.id}`;
   const question = topic ? topic.question : issue ? issue.question : null;
+  const website = row.contact.channels.find((ch) => ch.kind === "website") ?? null;
 
   return (
     <div className={styles.detail} id={id} data-issue={issue?.id ?? "topic"}>
@@ -62,6 +63,12 @@ export default function StanceDetail({
           <p className={styles.detailRole}>{row.role}</p>
         </div>
         <div className={styles.detailHeadActions}>
+          {website && (
+            <a href={website.url} className={`${c.btn} ${c.quiet} ${c.small}`} rel="noopener noreferrer" target="_blank">
+              <Globe size={15} aria-hidden="true" /> Site <ExternalLink size={12} aria-hidden="true" />
+              <span className={styles.srOnly}> (opens in a new tab)</span>
+            </a>
+          )}
           <Link href={briefHref} prefetch={false} className={`${c.btn} ${c.secondary} ${c.small}`}>
             Full brief <ArrowRight size={15} aria-hidden="true" />
           </Link>
