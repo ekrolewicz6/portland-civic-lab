@@ -797,7 +797,7 @@
   padding: 0;
   list-style: none;
 }
-@media (min-width: 480px) {
+@media (min-width: 640px) {
   .miniChips {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -807,9 +807,12 @@
   flex-direction: column;
   gap: 2px;
   min-width: 0;
-  padding: 6px 10px;
+  padding: 8px 10px;
   border-radius: 8px;
   background: var(--tint);
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: manual;
 }
 .miniLabel {
   font-family: var(--font-mono);
