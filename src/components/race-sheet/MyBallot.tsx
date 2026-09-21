@@ -3,6 +3,8 @@ import { useCallback, useEffect, useId, useRef, useState, type RefObject } from 
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import MiniChips from "./MiniChips";
+import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
+import { portraitPerson } from "./CandidateCard";
 import { ArrowDown, ArrowUp, Bookmark, Printer, Trash2, X } from "lucide-react";
 import type { ClientSheet, SheetRow } from "@/lib/voters-guide/race-sheet";
 import {
@@ -248,7 +250,10 @@ export default function MyBallot({
               if (!row) {
                 return (
                   <li key={`empty-${i}`} className={styles.slotEmpty}>
-                    <span className={styles.ordinal}>{ORDINALS[i]}</span>
+                    <span className={styles.ordinal} aria-hidden="true">
+                      {i + 1}
+                    </span>
+                    <SrOnly>{ORDINALS[i]} choice: </SrOnly>
                     <span className={styles.slotHint}>{i === 0 ? "Tap Save beside a name" : "Empty"}</span>
                   </li>
                 );
@@ -257,15 +262,25 @@ export default function MyBallot({
               const noteId = `${titleId}-note-${row.id}`;
               return (
                 <li key={row.id} className={styles.slot}>
-                  <div className={styles.slotTop}>
-                    <span className={styles.ordinal}>{ORDINALS[i]}</span>
-                    <div className={styles.slotBody}>
+                  <div className={styles.slotHead}>
+                    <span className={styles.ordinal} aria-hidden="true">
+                      {i + 1}
+                    </span>
+                    <span className={styles.slotPortrait}>
+                      <CandidatePortrait person={portraitPerson(row)} compact />
+                    </span>
+                    <div className={styles.slotWho}>
                       <p className={styles.slotName}>
+                        <SrOnly>{ORDINALS[i]} choice: </SrOnly>
                         <Link href={`/voters-guide/${sheet.raceId}/${row.id}`} prefetch={false}>
                           {row.name}
                         </Link>
                       </p>
                       <p className={styles.slotRole}>{row.role}</p>
+                    </div>
+                  </div>
+                  <div className={styles.slotTop}>
+                    <div className={styles.slotBody}>
                       <MiniChips row={row} />
                       {votes.length > 0 && (
                         <div className={styles.slotVotes}>
@@ -290,7 +305,7 @@ export default function MyBallot({
                           className={styles.noteInput}
                           type="text"
                           maxLength={NOTE_MAX}
-                          placeholder="Why (private)"
+                          placeholder="Why this candidate? (private note)"
                           autoComplete="off"
                           value={state.notes[row.id] ?? ""}
                           onChange={(event) => onChange(noteInBallot(state, row.id, event.target.value))}
