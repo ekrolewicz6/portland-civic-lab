@@ -916,3 +916,42 @@
 .openingQuote p {
   margin: 0;
 }
+
+/* Reach the campaign: published channels as controls, under the header. */
+.headReach {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-parchment);
+}
+.reach {
+  display: grid;
+  gap: 6px;
+}
+.page .reachList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.page .reachList li {
+  margin: 0;
+  max-width: 100%;
+}
+.page .reachList a {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: left;
+  text-decoration: none;
+}
+.reachExt {
+  opacity: 0.7;
+}
+.reachFrom,
+.reachNone {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+}

@@ -23,6 +23,19 @@ for (const id of ["esther-leon", "tiffany-koyama-lane"]) {
     await expect(opening).toContainText("verbatim opening");
     await expect(opening.locator("details summary")).toHaveText(row.ownWords!.source.label);
     await expect(opening.locator("details a[rel=noopener]")).toHaveAttribute("href", row.ownWords!.source.url);
+    // Reach the campaign: every published channel is a control; none means a stated reason.
+    const reach = page.locator(`[aria-labelledby="${id}-reach"]`);
+    await expect(reach).toContainText("Reach the campaign");
+    if (row.contact.channels.length > 0) {
+      const list = reach.getByRole("list", { name: "Ways to reach the campaign" });
+      await expect(list.getByRole("link")).toHaveCount(row.contact.channels.length);
+      const byLabel = (label: string) => list.locator(`a[href]`).filter({ has: page.locator(`span:text-is("${label}")`) });
+      for (const ch of row.contact.channels) await expect(byLabel(ch.label)).toHaveAttribute("href", ch.url);
+      const site = row.contact.channels.find((ch) => ch.kind === "website");
+      if (site) await expect(byLabel(site.label)).toHaveAttribute("target", "_blank");
+    } else {
+      await expect(reach).toContainText(row.contact.none!);
+    }
     const stand = page.locator(`section[aria-labelledby="${id}-stand"]`);
     await expect(stand.getByRole("heading", { level: 3 })).toHaveText(issues.map((i) => i.label));
     for (const issue of issues) {

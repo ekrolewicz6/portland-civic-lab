@@ -266,6 +266,16 @@ export default function Methodology() {
           response. An open question is our research question, not a claim that
           a candidate refused to answer it.
         </p>
+        <h2 id="reach">Reaching a campaign</h2>
+        <p>
+          Each brief lists how to reach the campaign: the website, email,
+          phone, contact form and social profiles the candidate published in
+          their voters’ pamphlet statement or on their campaign site, or the
+          campaign email on their own City filing or announcement. We publish
+          nothing a candidate did not publish for the campaign, never a home
+          address, and nothing from third-party directories. When a candidate
+          has published no channel, the brief says what we checked.
+        </p>
         <h2 id="guided-comparison">How the race page works</h2>
         <p>
           Each race is one grid: every candidate on the checked roster,
