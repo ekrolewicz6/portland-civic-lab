@@ -19,6 +19,30 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="novick-2026-09-21">September 21, 2026 · Candidate response: Steve Novick (District 3)</h2>
+        <p>
+          Steve Novick replied to the individual questions the Lab emailed him
+          on September 19, 2026. On the July budget votes, he says Services
+          First spent money the city should be counting on to balance next
+          year’s already tough budget, and that restoring cuts to police
+          training, such as de-escalation and emergency driving, was
+          essential; that explanation now appears in his own words on the
+          July restoration decision, where our reading of the record stood
+          before. For his past work he pointed to the red flag law (a City
+          presentation file), the 2016 city gas tax (OPB and the Portland
+          Tribune), two federal Superfund cost-recovery decisions he says he
+          led as a lawyer, and the 2010 Measures 66 and 67 campaign (The
+          Oregonian); those are now listed among his sources with notes on
+          what each establishes. He did not understand our first question,
+          which read as a choice between unarmed response and camp removal;
+          we have restated it as two questions and await his answer.
+        </p>
+        <p>
+          His brief shows the excerpts under “Their answers to our questions.”
+          No issue position changed. The response is kept on file and cited
+          with this entry; his preservation hash was re-recorded because his
+          source list grew.
+        </p>
         <h2 id="arnold-2026-09-20">September 20, 2026 · Candidate response: Eli Arnold (District 4)</h2>
         <p>
           Eli Arnold replied to the individual questions the Lab emailed him
