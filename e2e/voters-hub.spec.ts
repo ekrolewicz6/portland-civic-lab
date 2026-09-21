@@ -9,7 +9,7 @@ import { guideCards, GUIDE_ORIGIN } from "../src/lib/voters-guide/metadata";
 test("hub: two district cards with portrait mosaics, a district map, no search box, no inline name lists", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/voters-guide");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Know the choice");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Know their choices");
   await expect(page.getByRole("searchbox")).toHaveCount(0);
   await expect(page.getByRole("textbox")).toHaveCount(0);
   for (const race of races) {

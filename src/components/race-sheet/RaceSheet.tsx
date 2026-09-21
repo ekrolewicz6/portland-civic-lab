@@ -19,7 +19,7 @@ import c from "./controls.module.css";
 import ChipRail from "./ChipRail";
 import BottomBar from "./BottomBar";
 import StanceGrid from "./StanceGrid";
-import TopicPicker, { MAX_EXTRA } from "./TopicPicker";
+import TopicPicker from "./TopicPicker";
 import MiniChips from "./MiniChips";
 import MyBallot from "./MyBallot";
 import styles from "./race-sheet.module.css";
@@ -30,7 +30,7 @@ const ISSUE_HASH = "#issue=";
 function readViewHash(hash: string, validTopics: string[]) {
   const params = new URLSearchParams(hash.replace(/^#/, ""));
   const issue = params.get("issue");
-  const topics = (params.get("topics") ?? "").split(",").filter((t) => validTopics.includes(t)).slice(0, MAX_EXTRA);
+  const topics = (params.get("topics") ?? "").split(",").filter((t) => validTopics.includes(t));
   return { issue: issue && isIssueId(issue) ? issue : null, topics };
 }
 function writeViewHash(issue: IssueId | null, topics: string[]) {

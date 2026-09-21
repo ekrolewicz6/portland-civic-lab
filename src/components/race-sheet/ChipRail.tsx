@@ -120,8 +120,8 @@ export default function ChipRail({
           onClick={onTogglePicker}
         >
           <Plus size={15} aria-hidden="true" />
-          <span className={styles.moreLong}>Compare on more</span>
-          <span className={styles.moreShort}>More</span>
+          <span className={styles.moreLong}>Compare on more topics</span>
+          <span className={styles.moreShort}>Topics</span>
           {selectedTopics > 0 && <span className={styles.moreCount}>{selectedTopics}</span>}
         </button>
       </div>

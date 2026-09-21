@@ -63,7 +63,13 @@ export default function StanceGrid({
   const columns = issues.length + extra.length + 2;
 
   return (
-    <div className={styles.wrap} id="list" data-extra={extra.length || undefined}>
+    <div
+      className={styles.wrap}
+      id="list"
+      data-extra={extra.length || undefined}
+      data-scroll={extra.length > 2 || undefined}
+      style={{ "--extra": extra.length } as React.CSSProperties}
+    >
       <table className={styles.grid} data-active={active ?? ""}>
         <caption className={styles.srOnly}>
           Where each candidate stands on four issues, in our short reading of their statements. Activate a cell to read
