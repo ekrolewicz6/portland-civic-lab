@@ -1,9 +1,9 @@
-.figure { margin: 0 0 40px; padding: 28px 0 0; border-top: 2px solid var(--color-canopy); font-family: var(--font-body), sans-serif; font-size: 14px; line-height: 1.5; color: var(--color-ink); }
+.figure { margin: 0 0 40px; padding: 28px 0 0; border-top: 2px solid var(--color-canopy); font-family: var(--font-body), sans-serif; font-size: 15px; line-height: 1.5; color: var(--color-ink); }
 .figureHeading { margin-bottom: 28px; }
-.figure .eyebrow { font-family: var(--font-mono), monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--color-fern); }
+.figure .eyebrow { font-family: var(--font-mono), monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--color-fern); }
 .figure .figureHeading h3 { font-family: var(--font-display); font-size: clamp(26px, 3vw, 38px); line-height: 1.12; font-weight: 500; letter-spacing: -.015em; margin: 10px 0; max-width: 720px; text-wrap: balance; }
-.figure .figureHeading p { color: var(--color-ink-light); font-size: 15px; line-height: 1.6; max-width: 640px; margin: 0; }
-.caption { padding: 16px 0 0; margin-top: 24px; border-top: 1px solid var(--color-parchment); color: var(--color-ink-light); font-size: 12px; line-height: 1.7; max-width: 760px; }
+.figure .figureHeading p { color: var(--color-ink-light); font-size: 17px; line-height: 1.6; max-width: 680px; margin: 0; }
+.caption { padding: 16px 0 0; margin-top: 24px; border-top: 1px solid var(--color-parchment); color: var(--color-ink-light); font-size: 14px; line-height: 1.65; max-width: 780px; }
 .figure a { color: var(--color-canopy); text-decoration: underline; text-decoration-color: var(--color-sage); text-underline-offset: 3px; }
 .figure a:hover { text-decoration-color: currentColor; }
 .positive { color: var(--color-fern); } .negative { color: #a75432; }
@@ -14,36 +14,36 @@
 .networkList li { display: grid; grid-template-columns: 12px 1fr auto; gap: 14px; align-items: center; padding: 12px 0; border-top: 1px solid var(--color-parchment); }
 .networkList li:first-child { border-top: 0; padding-top: 0; }
 .networkList i { width: 12px; height: 12px; border-radius: 50%; }
-.networkList small { display: block; font-size: 11px; color: var(--color-ink-light); margin-top: 2px; }
-.networkList strong { font-family: var(--font-display); font-size: 26px; font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.networkList small { display: block; font-size: 13.5px; color: var(--color-ink-light); margin-top: 2px; }
+.networkList strong { font-family: var(--font-display); font-size: 30px; font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
 .explorer { margin-top: 28px; background: #fff; padding: 22px; border: 1px solid var(--color-parchment); }
 .explorerHeading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
-.explorerHeading h4 { font-size: 16px; font-weight: 600; margin: 0; }
-.explorerHeading a { font-size: 11px; }
+.explorerHeading h4 { font-size: 18px; font-weight: 600; margin: 0; }
+.explorerHeading a { font-size: 14px; }
 .controls { display: grid; grid-template-columns: 1.2fr 1fr; gap: 14px; }
-.figure label { display: flex; flex-direction: column; gap: 7px; font-size: 12px; font-weight: 600; }
+.figure label { display: flex; flex-direction: column; gap: 7px; font-size: 14px; font-weight: 600; }
 .figure input, .figure select { width: 100%; min-width: 0; min-height: 44px; border: 1px solid #b6bbae; border-radius: 2px; padding: 10px; background: #fff; color: var(--color-ink); font-weight: 400; font-size: 16px; }
 .figure input:focus-visible, .figure select:focus-visible, .figure button:focus-visible, .figure summary:focus-visible { outline: 2px solid var(--color-fern); outline-offset: 2px; }
-.figure .resultCount { font-size: 11px; color: var(--color-ink-light); margin: 14px 0; }
+.figure .resultCount { font-size: 13.5px; color: var(--color-ink-light); margin: 14px 0; }
 .figure .results { list-style: none; margin: 0; padding: 0; }
 .figure .results li { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; padding: 15px 0; margin: 0; border-top: 1px solid var(--color-parchment); }
-.results strong { display: block; font-size: 14px; font-weight: 600; }
-.results span { display: block; margin-top: 4px; font-size: 11px; color: var(--color-ink-light); }
-.profileSources { font-size: 11px; }
+.results strong { display: block; font-size: 16px; font-weight: 600; }
+.results span { display: block; margin-top: 4px; font-size: 13.5px; color: var(--color-ink-light); }
+.profileSources { font-size: 13.5px; }
 .profileSources a { display: flex; align-items: center; gap: 6px; }
 .profileSources a i { width: 8px; height: 8px; border-radius: 50%; flex: none; }
-.profileSources small { display: block; font-size: 10px; margin-top: 5px; color: var(--color-ink-light); }
-.more { border: 1px solid var(--color-canopy); padding: 9px 16px; background: #fff; color: var(--color-canopy); margin-top: 14px; cursor: pointer; font-size: 12px; min-height: 44px; }
+.profileSources small { display: block; font-size: 12.5px; margin-top: 5px; color: var(--color-ink-light); }
+.more { border: 1px solid var(--color-canopy); padding: 9px 18px; background: #fff; color: var(--color-canopy); margin-top: 14px; cursor: pointer; font-size: 14px; min-height: 44px; }
 .more:hover { background: var(--color-sage-tint); }
 
 /* ── Treemap ───────────────────────────────────────────────────────────── */
 .treemap { position: relative; width: 100%; aspect-ratio: 1000 / 440; background: var(--color-paper); }
 .tile { position: absolute; box-sizing: border-box; border: 2px solid var(--color-paper); padding: 10px 12px; overflow: hidden; color: var(--color-ink); display: flex; flex-direction: column; justify-content: space-between; }
 .tileLight { color: #fff; }
-.tileLabel { font-size: 13px; font-weight: 600; line-height: 1.2; }
+.tileLabel { font-size: 15px; font-weight: 600; line-height: 1.2; }
 .tileValue { font-family: var(--font-display); font-size: clamp(18px, 2.4vw, 30px); font-weight: 500; line-height: 1; letter-spacing: -.02em; }
-.tileValue small { display: block; font-family: var(--font-body); font-size: 11px; font-weight: 400; letter-spacing: 0; margin-top: 6px; opacity: .85; }
-.tileKey { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 24px; font-size: 12px; }
+.tileValue small { display: block; font-family: var(--font-body); font-size: 13px; font-weight: 400; letter-spacing: 0; margin-top: 6px; opacity: .85; }
+.tileKey { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 28px; font-size: 14px; }
 .tileKey li { display: grid; grid-template-columns: 10px 1fr auto auto; gap: 8px; align-items: center; padding: 4px 0; border-bottom: 1px solid var(--color-parchment); }
 .tileKey i { width: 10px; height: 10px; }
 .tileKey b { font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -54,13 +54,13 @@
 
 /* ── Slope chart ───────────────────────────────────────────────────────── */
 .slope { margin-top: 8px; }
-.slopeAxis { display: grid; grid-template-columns: 90px 1fr 250px; font-family: var(--font-mono), monospace; font-size: 11px; color: var(--color-ink-light); margin-bottom: 6px; }
+.slopeAxis { display: grid; grid-template-columns: 90px 1fr 280px; font-family: var(--font-mono), monospace; font-size: 13px; color: var(--color-ink-light); margin-bottom: 6px; }
 .slopeAxis span:first-child { text-align: right; padding-right: 14px; }
 .slopeAxis span:last-child { grid-column: 3; padding-left: 14px; }
-.slopeBody { display: grid; grid-template-columns: 90px 1fr 250px; grid-template-rows: 100%; height: 380px; position: relative; }
+.slopeBody { display: grid; grid-template-columns: 90px 1fr 280px; grid-template-rows: 100%; height: 400px; position: relative; }
 .slopeLeft, .slopeRight { position: relative; }
 .slopeLeft span { position: absolute; right: 14px; transform: translateY(-50%); font-size: 12px; font-variant-numeric: tabular-nums; color: var(--color-ink-light); background: var(--color-paper); padding: 1px 4px; }
-.slopeLeft span { font-family: var(--font-mono), monospace; font-size: 11px; white-space: nowrap; }
+.slopeLeft span { font-family: var(--font-mono), monospace; font-size: 13px; white-space: nowrap; }
 .slopeSvg { width: 100%; height: 100%; min-height: 0; display: block; overflow: visible; }
 .slopeSvg line { vector-effect: non-scaling-stroke; }
 .slopeGrid { stroke: var(--color-parchment); stroke-width: 1; }
@@ -68,15 +68,15 @@
 .slopeUp { stroke: var(--color-fern); stroke-width: 2.5; stroke-linecap: round; }
 .slopeDown { stroke: #a75432; stroke-width: 2.5; stroke-linecap: round; }
 .slopeCountyLine { stroke: #8a857d; stroke-width: 2; stroke-dasharray: 5 5; }
-.slopeDots { position: absolute; left: calc(90px + (100% - 340px)); top: 0; bottom: 0; width: 0; }
+.slopeDots { position: absolute; left: calc(90px + (100% - 370px)); top: 0; bottom: 0; width: 0; }
 .slopeDots i, .slopeTable i { display: block; width: 10px; height: 10px; border-radius: 50%; box-shadow: 0 0 0 2px var(--color-paper); }
 .slopeDots i { position: absolute; transform: translate(-50%, -50%); }
 .dotUp { background: var(--color-fern); } .dotDown { background: #a75432; } .dotCounty { background: #8a857d; }
-.slopeLabel { position: absolute; left: 14px; right: 0; transform: translateY(-50%); display: grid; grid-template-columns: 52px 1fr; gap: 8px; align-items: baseline; font-size: 11.5px; line-height: 1.25; color: var(--color-ink-light); }
-.slopeLabel strong { font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.slopeLabel { position: absolute; left: 14px; right: 0; transform: translateY(-50%); display: grid; grid-template-columns: 58px 1fr; gap: 8px; align-items: baseline; font-size: 13px; line-height: 1.25; color: var(--color-ink-light); }
+.slopeLabel strong { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .slopeCounty strong { color: var(--color-ink-light); }
-.slopeTable { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 28px; font-size: 12px; }
-.slopeTable li { display: grid; grid-template-columns: 10px 1fr auto 52px; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--color-parchment); }
+.slopeTable { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 32px; font-size: 14px; }
+.slopeTable li { display: grid; grid-template-columns: 10px 1fr auto 60px; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--color-parchment); }
 .slopeTable b { font-weight: 500; font-variant-numeric: tabular-nums; color: var(--color-ink-light); white-space: nowrap; }
 .slopeTable em { font-style: normal; font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
 
@@ -84,17 +84,17 @@
 .historical { background: var(--color-paper-warm); padding: 28px; border-top-color: #a75432; }
 .histogram { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; margin-top: 12px; text-align: center; }
 .histogram > div { display: flex; flex-direction: column; align-items: stretch; }
-.histogram strong { font-family: var(--font-display); font-size: 24px; font-weight: 500; }
-.histogram > div > span { font-size: 11px; margin-top: 10px; white-space: nowrap; color: var(--color-ink-light); }
+.histogram strong { font-family: var(--font-display); font-size: 28px; font-weight: 500; }
+.histogram > div > span { font-size: 13.5px; margin-top: 10px; white-space: nowrap; color: var(--color-ink-light); }
 .histColumn { display: flex; align-items: flex-end; height: 200px; border-bottom: 1px solid #b2a895; padding: 0 12%; margin-top: 6px; }
 .histColumn span { width: 100%; background: #a86a46; border-radius: 4px 4px 0 0; }
-.histNote { margin: 20px 0 0; font-size: 14px; color: var(--color-ink-light); }
+.histNote { margin: 20px 0 0; font-size: 16px; color: var(--color-ink-light); }
 
 /* ── Workspace offers ──────────────────────────────────────────────────── */
-.offerRows > div { display: grid; grid-template-columns: 150px 1fr 190px; gap: 8px 18px; padding: 14px 0; border-top: 1px solid var(--color-parchment); align-items: center; }
+.offerRows > div { display: grid; grid-template-columns: 170px 1fr 210px; gap: 8px 18px; padding: 14px 0; border-top: 1px solid var(--color-parchment); align-items: center; }
 .offerRows > div:first-child { border-top: 0; }
 .offerRows strong { font-weight: 500; font-variant-numeric: tabular-nums; }
-.offerRows > div > span { grid-column: 2 / -1; color: var(--color-ink-light); font-size: 12px; margin-top: -4px; }
+.offerRows > div > span { grid-column: 2 / -1; color: var(--color-ink-light); font-size: 14px; margin-top: -4px; }
 .offerTrack { height: 18px; background: #e6e8df; }
 .offerTrack > span { display: block; height: 100%; background: var(--color-fern); border-radius: 0 4px 4px 0; }
 .offerDashed { width: 30%; background: repeating-linear-gradient(90deg, #a4af9e 0 6px, transparent 6px 10px) !important; }
@@ -110,35 +110,35 @@
 .wfCost { background: #c9a58a; }
 .wfResult { background: var(--color-fern); }
 .wfLoss { background: #a75432; }
-.wfCol strong { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
-.wfCol span { font-size: 11px; color: var(--color-ink-light); line-height: 1.3; }
+.wfCol strong { font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.wfCol span { font-size: 13px; color: var(--color-ink-light); line-height: 1.3; }
 .calcGrid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 28px; align-items: start; }
 .calcInputs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 12px; }
-.figure .assumptionNote { font-size: 11px; margin-top: 16px; line-height: 1.7; color: var(--color-ink-light); }
+.figure .assumptionNote { font-size: 13.5px; margin-top: 16px; line-height: 1.6; color: var(--color-ink-light); }
 .receipt { background: #fffef9; padding: 22px; box-shadow: 0 1px 2px #243b2418, 0 8px 24px #243b240f; border-top: 3px solid var(--color-canopy); }
-.receiptLabel { font-family: var(--font-mono), monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; margin-bottom: 18px; }
-.receipt dl { margin: 0; } .receipt dl > div { display: flex; gap: 15px; justify-content: space-between; padding: 7px 0; font-size: 12px; }
+.receiptLabel { font-family: var(--font-mono), monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .09em; margin-bottom: 18px; }
+.receipt dl { margin: 0; } .receipt dl > div { display: flex; gap: 15px; justify-content: space-between; padding: 8px 0; font-size: 14.5px; }
 .receipt dd { margin: 0; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.receipt .receiptTotal { border-top: 1px dashed #b3b6a6; padding-top: 15px; margin-top: 8px; font-size: 22px; color: var(--color-canopy); font-family: var(--font-display); }
-.figure .receipt p { font-size: 11px; margin: 15px 0 0; padding-top: 12px; border-top: 1px solid #e3e3d6; line-height: 1.7; }
-.receipt p strong { font-size: 17px; font-weight: 500; }
-.rules { font-size: 12px; margin-top: 22px; } .rules summary { cursor: pointer; font-weight: 600; min-height: 24px; } .figure .rules p { margin: 14px 0 0; }
+.receipt .receiptTotal { border-top: 1px dashed #b3b6a6; padding-top: 15px; margin-top: 8px; font-size: 26px; color: var(--color-canopy); font-family: var(--font-display); }
+.figure .receipt p { font-size: 13.5px; margin: 15px 0 0; padding-top: 12px; border-top: 1px solid #e3e3d6; line-height: 1.6; }
+.receipt p strong { font-size: 20px; font-weight: 500; }
+.rules { font-size: 14.5px; margin-top: 22px; } .rules summary { cursor: pointer; font-weight: 600; min-height: 24px; } .figure .rules p { margin: 14px 0 0; }
 
 /* ── Responsive ────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .registerGrid { grid-template-columns: 1fr; gap: 20px; }
-  .slopeAxis, .slopeBody { grid-template-columns: 60px 1fr 190px; }
-  .slopeDots { left: calc(60px + (100% - 250px)); }
-  .slopeLabel { grid-template-columns: 46px 1fr; font-size: 11px; }
+  .slopeAxis, .slopeBody { grid-template-columns: 60px 1fr 200px; }
+  .slopeDots { left: calc(60px + (100% - 260px)); }
+  .slopeLabel { grid-template-columns: 50px 1fr; font-size: 12.5px; }
   .slopeTable { grid-template-columns: 1fr; }
   .tileKey { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
   .calcGrid { grid-template-columns: 1fr; } .calculator { padding: 20px; }
   .controls { grid-template-columns: 1fr; } .explorer { padding: 16px; }
-  .historical { padding: 20px 12px; } .histogram { gap: 6px; } .histColumn { height: 130px; padding: 0 10%; } .histogram > div > span { font-size: 9px; } .histogram strong { font-size: 18px; }
+  .historical { padding: 20px 12px; } .histogram { gap: 6px; } .histColumn { height: 130px; padding: 0 10%; } .histogram > div > span { font-size: 11px; } .histogram strong { font-size: 20px; }
   .offerRows > div { grid-template-columns: 1fr 1fr; gap: 6px 12px; } .offerTrack { grid-column: 1 / -1; order: 2; } .offerRows > div > span { grid-column: 1 / -1; order: 3; }
-  .waterfall { gap: 4px; } .wfTrack { height: 130px; } .wfCol strong { font-size: 11px; } .wfCol span { font-size: 9.5px; }
+  .waterfall { gap: 4px; } .wfTrack { height: 130px; } .wfCol strong { font-size: 12.5px; } .wfCol span { font-size: 11px; }
   .treemap { aspect-ratio: 1000 / 700; }
   .tileValue { font-size: 18px; }
   .tileMd .tileLabel, .tileTight .tileLabel, .tileNarrow .tileValue { display: none; }
@@ -148,10 +148,10 @@
   .slopeAxis, .slopeBody { grid-template-columns: 44px 1fr 140px; }
   .slopeBody { height: 360px; }
   .slopeDots { left: calc(44px + (100% - 184px)); }
-  .slopeLabel { grid-template-columns: 1fr; gap: 0; font-size: 10.5px; }
-  .slopeLabel strong { font-size: 13px; }
+  .slopeLabel { grid-template-columns: 1fr; gap: 0; font-size: 12px; }
+  .slopeLabel strong { font-size: 14px; }
   .slopeLabel span { display: none; }
-  .slopeLeft span { right: 8px; font-size: 11px; }
+  .slopeLeft span { right: 8px; font-size: 12px; }
   .tileKey { grid-template-columns: 1fr; }
 }
 @media (max-width: 430px) {
