@@ -2,12 +2,11 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import type { Race } from "@/lib/voters-guide/types";
 import { splitIssues, surname, type SplitDecision, type SplitTopic } from "@/lib/voters-guide/race-sheet/council-splits";
-import { joinNames, ModaDisclosure } from "./FourVotes";
+import { joinNames } from "./FourVotes";
 import { VotePill } from "./Glyph";
 import styles from "./votes.module.css";
 
 const OPEN_BY_DEFAULT = "supplemental-budget";
-const MODA_DECISION_ID = "moda";
 
 /* Opens the <details> a hash points at (e.g. /votes#moda from the race
    sheet, or /votes#disagreement-moda from a brief), then scrolls to it.
@@ -32,7 +31,6 @@ function DecisionRow({ entry }: { entry: SplitDecision }) {
           </a>
           {split && <span className={styles.splitTag}>Split</span>}
         </span>
-        {decision.id === MODA_DECISION_ID && <ModaDisclosure />}
       </div>
       <div className={styles.decisionVotes}>
         {votes.map((vote) => (

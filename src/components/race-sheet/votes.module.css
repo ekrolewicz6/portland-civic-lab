@@ -169,22 +169,6 @@
   display: none;
 }
 
-/* The founder-conflict line for the Moda row. It sits inside the summary
-   so it is visible while the row is collapsed, and under the Moda decision
-   in the matrix. Same words in both places. */
-.disclosure {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-  font-weight: 400;
-  color: var(--color-ink-light);
-}
-.disclosure a {
-  display: inline-block;
-  min-height: 24px;
-  font-weight: 500;
-}
-
 /* ── Four votes (race sheet) ────────────────────────────────────────── */
 
 .panel {

@@ -24,16 +24,6 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   return printMetadata(race);
 }
 
-/** The founder-conflict disclosure, printed wherever a Moda vote appears. */
-function ModaDisclosure() {
-  return (
-    <p className={styles.disclosure}>
-      Disclosure: the Lab’s founder runs an advocacy campaign about the Moda deal.{" "}
-      <Link href="/independence">Read our independence policy →</Link>
-    </p>
-  );
-}
-
 /**
  * Table column widths for the A–Z grid: Name 14, Role 12, Summary 26, four
  * issues at 12 each. With `table-layout: fixed` the browser keeps these on
@@ -68,7 +58,6 @@ function FeaturedVote({ row }: { row: FeaturedRow }) {
       )}
       <p className={styles.muted}>Not addressed in their sources ({row.notAddressed}).</p>
       <p className={styles.muted}>{row.decision.limit}</p>
-      {row.isModa && <ModaDisclosure />}
       <p className={styles.meta}>
         {row.decision.source.label} · {row.decision.source.date}
       </p>
@@ -83,7 +72,6 @@ export default async function PrintPage({ params }: { params: Params }) {
   const sheet = buildRaceSheet(race);
   const short = shortRaceTitle(race);
   const people = new Map(race.candidates.map((person) => [person.id, person]));
-  const featuresModa = sheet.featured.some((row) => row.isModa);
   return (
     <div className={`${styles.page} ${styles.printPage}`}>
       <header className={styles.printHead}>
@@ -159,7 +147,6 @@ export default async function PrintPage({ params }: { params: Params }) {
             <dd>Had no vote in that committee.</dd>
           </div>
         </dl>
-        {featuresModa && <ModaDisclosure />}
       </section>
 
       <section className={styles.section} aria-labelledby="print-list">

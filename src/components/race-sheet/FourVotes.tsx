@@ -16,21 +16,6 @@ export function joinNames(names: string[]) {
 }
 
 /**
- * The founder-conflict line for any Moda row. It lives inside the
- * <summary> so a reader sees it while the row is still collapsed.
- */
-export function ModaDisclosure() {
-  return (
-    <p className={styles.disclosure}>
-      Disclosure: the Lab’s founder runs an advocacy campaign about the Moda deal.{" "}
-      <Link href="/independence" prefetch={false} className={c.inlineLink}>
-        Read our independence policy
-      </Link>
-    </p>
-  );
-}
-
-/**
  * One councilor's vote. On phones the surname sits above the word; at
  * ≥600px the shared column header carries the full names. The pill itself
  * always announces the full name, so the visible label is decorative.
@@ -58,7 +43,6 @@ function FeaturedVote({ row, raceId, open }: { row: FeaturedRow; raceId: string;
           <ChevronDown className={styles.chevron} size={16} aria-hidden="true" />
           <div className={styles.summaryText}>
             <h3 className={styles.question}>{row.title}</h3>
-            {row.isModa && <ModaDisclosure />}
           </div>
         </div>
         <div className={styles.votesGrid}>

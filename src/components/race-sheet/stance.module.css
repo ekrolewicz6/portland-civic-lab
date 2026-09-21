@@ -53,6 +53,18 @@
   .wrap[data-scroll] .head .whoHead {
     z-index: 6;
   }
+  /* Inside a scroller, sticky offsets are measured from the scroller, not the
+     viewport: a header kept at the site-header offset would sit 67px down,
+     over the first row. The column headers stay in flow here; only the name
+     column sticks (sideways). */
+  .wrap[data-scroll] .head th {
+    top: 0;
+  }
+  /* The fade must not eat the Save column: keep the mask on, but give the
+     table room past its last column so the fade lands on padding. */
+  .wrap[data-scroll] .grid {
+    padding-right: 32px;
+  }
 }
 @media (min-width: 769px) and (max-width: 1099px) {
   .wrap[data-extra] .chip {

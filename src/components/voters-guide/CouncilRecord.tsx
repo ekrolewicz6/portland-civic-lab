@@ -5,10 +5,7 @@ import { councilDisagreements, decisionAccounts } from "@/lib/voters-guide/counc
 import type { Candidate, Evidence } from "@/lib/voters-guide/types";
 import { councilReaderCopy } from "@/lib/voters-guide/council-reader-copy";
 import { SrOnly, VotePill } from "@/components/race-sheet/Glyph";
-import { ModaDisclosure } from "@/components/race-sheet/FourVotes";
 import styles from "@/components/race-sheet/votes.module.css";
-
-const MODA_DECISION_ID = "moda";
 
 function Proof({ source }: { source: Evidence }) {
   return (
@@ -114,7 +111,6 @@ export default function CouncilDisagreements({ people }: { people: Candidate[] }
                       <p className={styles.decisionDate}>{entry.source.date}</p>
                       <h4 className={styles.decisionTitle}>{entry.title}</h4>
                       <p className={styles.note}>{entry.summary}</p>
-                      {entry.id === MODA_DECISION_ID && <ModaDisclosure />}
                       <div className={styles.accounts}>
                         {incumbents.map((person) => (
                           <DecisionExplanation key={person.id} person={person} decision={entry} />

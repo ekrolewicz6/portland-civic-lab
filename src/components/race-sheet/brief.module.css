@@ -449,10 +449,6 @@
   font-weight: 600;
   color: var(--color-ink);
 }
-.disclosure {
-  font-size: 14px;
-  color: var(--color-ink-light);
-}
 .voteRow details {
   font-size: 14px;
   color: var(--color-ink-light);
