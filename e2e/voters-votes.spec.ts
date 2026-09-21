@@ -47,7 +47,6 @@ for (const race of races) {
         await expect(strip).toContainText(`Not addressed in their sources (${challengers - row.said.length})`);
       }
       await expect(details.getByRole("link", { name: /Read the votes and their reasons/ })).toHaveAttribute("href", new RegExp(`^/voters-guide/${race.id}/votes`));
-      if (row.isModa) await expect(details.locator("summary").getByRole("link", { name: /independence policy/ })).toHaveAttribute("href", "/independence");
     }
     expect(sheet.featured.some((r) => r.isModa)).toBe(true);
     for (const id of sheet.rows.filter((r) => !incumbentIds.has(r.id)).map((r) => r.id))

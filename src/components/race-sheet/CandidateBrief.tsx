@@ -329,9 +329,7 @@ export default function CandidateBrief({
                       <p>{f.decision.limit}</p>
                       {f.isModa && (
                         <p>
-                          A <Term id="term-sheet">term sheet</Term>, not a final contract. Disclosure: the Lab’s founder
-                          runs an advocacy campaign about the Moda deal.{" "}
-                          <Link href="/independence" className={c.inlineLink}>Read our independence policy</Link>
+                          A <Term id="term-sheet">term sheet</Term>, not a final contract.
                         </p>
                       )}
                       <p>
