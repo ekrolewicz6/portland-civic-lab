@@ -1,12 +1,12 @@
 /* ── Listing mural ─────────────────────────────────────────────────────── */
 .mural { margin: 0; }
 .muralSvg { display: block; width: 100%; height: auto; }
-.muralLegend { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; font-size: 12px; line-height: 1.5; }
+.muralLegend { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; font-size: 14px; line-height: 1.5; }
 .muralLegend ul { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; margin: 0; padding: 0; }
 .muralLegend li { display: flex; align-items: center; gap: 7px; white-space: nowrap; }
 .muralLegend li i { width: 10px; height: 10px; border-radius: 50%; flex: none; }
 .muralLegend li b { font-weight: 600; font-variant-numeric: tabular-nums; }
-.muralTotal strong { font-family: var(--font-display); font-size: 18px; font-weight: 600; margin-right: 4px; }
+.muralTotal strong { font-family: var(--font-display); font-size: 22px; font-weight: 600; margin-right: 4px; }
 .muralDark { color: rgba(255,255,255,.82); }
 .muralDark .muralTotal strong { color: #fff; }
 .muralLight { color: var(--color-ink-light); }
@@ -18,20 +18,20 @@
 .objectCard { display: flex; flex-direction: column; gap: 12px; padding: 24px 22px 22px; background: #fff; border-top: 3px solid var(--color-canopy); }
 .objectIcon { width: 72px; height: 72px; color: var(--color-canopy); }
 .objectIcon svg { width: 100%; height: 100%; }
-.objectCard h3 { font-family: var(--font-display); font-size: 21px; line-height: 1.2; font-weight: 500; letter-spacing: -.01em; text-wrap: balance; margin: 4px 0 0; }
-.objectMaker { font-family: var(--font-mono), monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--color-fern); margin: -4px 0 0; }
-.route { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; font-size: 13px; line-height: 1.45; color: var(--color-ink); }
+.objectCard h3 { font-family: var(--font-display); font-size: 23px; line-height: 1.2; font-weight: 500; letter-spacing: -.01em; text-wrap: balance; margin: 4px 0 0; }
+.objectMaker { font-family: var(--font-mono), monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--color-fern); margin: -4px 0 0; }
+.route { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; font-size: 15px; line-height: 1.45; color: var(--color-ink); }
 .route li { position: relative; display: grid; grid-template-columns: 22px 1fr; gap: 10px; padding: 0 0 14px; }
-.route li span { width: 22px; height: 22px; border-radius: 50%; background: var(--color-sage-tint); border: 1px solid var(--color-lichen); color: var(--color-canopy); font-family: var(--font-mono), monospace; font-size: 10px; display: grid; place-items: center; }
+.route li span { width: 22px; height: 22px; border-radius: 50%; background: var(--color-sage-tint); border: 1px solid var(--color-lichen); color: var(--color-canopy); font-family: var(--font-mono), monospace; font-size: 11px; display: grid; place-items: center; }
 .route li:not(:last-child)::before { content: ""; position: absolute; left: 10.5px; top: 22px; bottom: 0; border-left: 1px solid var(--color-lichen); }
 .route li:last-child { padding-bottom: 0; }
-.objectFacts { margin: 8px 0 0; padding-top: 12px; border-top: 1px solid var(--color-parchment); display: flex; flex-direction: column; gap: 8px; font-size: 12.5px; line-height: 1.5; }
-.objectFacts dt { font-family: var(--font-mono), monospace; font-size: 9.5px; text-transform: uppercase; letter-spacing: .1em; color: var(--color-ink-muted); }
+.objectFacts { margin: 8px 0 0; padding-top: 12px; border-top: 1px solid var(--color-parchment); display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; line-height: 1.5; }
+.objectFacts dt { font-family: var(--font-mono), monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--color-ink-muted); }
 .objectFacts dd { margin: 2px 0 0; color: var(--color-ink-light); }
 .objectFacts div:last-child dd { color: var(--color-clay); }
-.objectLink { margin-top: auto; padding-top: 12px; font-size: 12px; font-weight: 600; color: var(--color-canopy); text-decoration: underline; text-decoration-color: var(--color-sage); text-underline-offset: 3px; }
+.objectLink { margin-top: auto; padding-top: 12px; font-size: 14px; font-weight: 600; color: var(--color-canopy); text-decoration: underline; text-decoration-color: var(--color-sage); text-underline-offset: 3px; }
 .objectLink:hover { text-decoration-color: currentColor; }
-.objectsNote { margin: 28px auto 0; max-width: 680px; text-align: center; font-size: clamp(17px, 1.8vw, 21px); line-height: 1.55; color: var(--color-ink-light); }
+.objectsNote { margin: 28px auto 0; max-width: 720px; text-align: center; font-size: clamp(18px, 1.9vw, 23px); line-height: 1.55; color: var(--color-ink-light); }
 .objectsNote strong { color: var(--color-canopy); font-weight: 600; }
 
 /* ── Roles ─────────────────────────────────────────────────────────────── */
@@ -41,10 +41,10 @@
 .roleHead { display: flex; justify-content: space-between; align-items: center; }
 .roleIcon { width: 40px; height: 40px; border-radius: 50%; background: var(--color-canopy); color: #fff; display: grid; place-items: center; }
 .roleIcon svg { width: 20px; height: 20px; }
-.roleIndex { font-family: var(--font-mono), monospace; font-size: 10px; color: var(--color-ink-muted); }
-.roleCard h3 { font-family: var(--font-display); font-size: 17px; line-height: 1.25; font-weight: 500; margin: 4px 0 0; text-wrap: balance; }
-.roleCard dl { margin: 4px 0 0; display: flex; flex-direction: column; gap: 10px; font-size: 12.5px; line-height: 1.5; }
-.roleCard dt { font-family: var(--font-mono), monospace; font-size: 9.5px; text-transform: uppercase; letter-spacing: .1em; color: var(--color-ink-muted); }
+.roleIndex { font-family: var(--font-mono), monospace; font-size: 12px; color: var(--color-ink-muted); }
+.roleCard h3 { font-family: var(--font-display); font-size: 19px; line-height: 1.25; font-weight: 500; margin: 4px 0 0; text-wrap: balance; }
+.roleCard dl { margin: 4px 0 0; display: flex; flex-direction: column; gap: 12px; font-size: 14.5px; line-height: 1.5; }
+.roleCard dt { font-family: var(--font-mono), monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--color-ink-muted); }
 .roleCard dd { margin: 2px 0 0; color: var(--color-ink-light); }
 .roleCard div:last-child dd { color: var(--color-canopy); font-weight: 500; }
 
@@ -55,10 +55,10 @@
 .step { position: relative; padding: 0 16px 0 0; }
 .stepMarker { position: relative; width: 48px; height: 48px; border-radius: 50%; background: var(--color-canopy); color: #fff; display: grid; place-items: center; box-shadow: 0 0 0 6px var(--color-paper); }
 .stepIcon svg { width: 22px; height: 22px; }
-.stepIndex { margin: 16px 0 4px; font-family: var(--font-mono), monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: var(--color-fern); }
-.step h3 { font-family: var(--font-display); font-size: 18px; line-height: 1.2; font-weight: 500; margin: 0 0 8px; text-wrap: balance; }
-.step p:last-child { margin: 0; font-size: 13px; line-height: 1.55; color: var(--color-ink-light); }
-.roadmapNote { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--color-parchment); font-size: 13px; line-height: 1.6; color: var(--color-ink-light); }
+.stepIndex { margin: 16px 0 4px; font-family: var(--font-mono), monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; color: var(--color-fern); }
+.step h3 { font-family: var(--font-display); font-size: 20px; line-height: 1.2; font-weight: 500; margin: 0 0 8px; text-wrap: balance; }
+.step p:last-child { margin: 0; font-size: 15px; line-height: 1.55; color: var(--color-ink-light); }
+.roadmapNote { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--color-parchment); font-size: 14.5px; line-height: 1.6; color: var(--color-ink-light); }
 .roadmapNote a { color: var(--color-canopy); text-decoration: underline; text-decoration-color: var(--color-sage); text-underline-offset: 3px; }
 
 /* ── Responsive ────────────────────────────────────────────────────────── */

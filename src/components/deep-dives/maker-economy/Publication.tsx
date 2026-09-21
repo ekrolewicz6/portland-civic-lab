@@ -87,7 +87,7 @@ export default function MakerPublication({ document }: { document: typeof makerD
         </header>
       )}
       <nav aria-label="Maker economy research" className={styles.docNav}>
-        <div className={`${DIVE_CONTAINER} flex flex-wrap gap-x-6 gap-y-3 py-4 text-xs`}>
+        <div className={`${DIVE_CONTAINER} flex flex-wrap gap-x-7 gap-y-3 py-4 text-sm`}>
           {makerDocuments.map(item => <Link key={item.slug} href={`${MAKER_PATH}${item.slug ? `/${item.slug}` : ''}`} aria-current={item.slug === document.slug ? 'page' : undefined} className={`underline-offset-4 hover:underline ${item.slug === document.slug ? 'font-semibold text-[var(--color-canopy)] underline' : 'text-[var(--color-ink-light)]'}`}>{item.label}</Link>)}
         </div>
       </nav>
