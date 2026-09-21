@@ -358,7 +358,7 @@ const campaign = (label: string, url: string): Evidence => ({
   date: "Website reviewed September 18, 2026",
   note: "Campaign position. Claimed results and numerical premises have not automatically been independently verified.",
 });
-const supplements: Record<string, { source: Evidence; issues: Issues; issueSources?: Partial<Record<keyof Issues, Evidence>> }> = {
+const supplements: Record<string, { source: Evidence; issues: Issues; issueSources?: Partial<Record<keyof Issues, Evidence>>; also?: Evidence[] }> = {
   "Timothy (TJ) Anderson": {
     // Emailed reply to the individual questions the Lab sent him on September 19, 2026.
     source: {
@@ -539,6 +539,38 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
       climate:
         "Supports phased fareless transit and incremental CEI Hub safety improvements, including easier decommissioning of unused petroleum tanks.",
     },
+    // His emailed reply of September 20, 2026 adds no issue position; it explains how staffing and transit
+    // fit existing revenue and documents two programs, with the reporting he cited listed beside it.
+    also: [
+      {
+        label: "Arnold · emailed response to the Lab’s questions",
+        url: "https://www.portlandciviclab.org/voters-guide/research-log#arnold-2026-09-20",
+        kind: "Candidate statement",
+        date: "Received September 20, 2026",
+        note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on his brief. Receipt does not verify the claims.",
+      },
+      {
+        label: "The Oregonian · Portland police and FBI target fentanyl dealers",
+        url: "https://www.oregonlive.com/crime/2026/08/portland-police-fbi-to-target-fentanyl-dealers-in-public-housing-outside-treatment-clinics.html",
+        kind: "Reporting",
+        date: "August 2026",
+        note: "Cited by the candidate for the downtown fentanyl enforcement partnership he says he developed in 2023.",
+      },
+      {
+        label: "KATU · Federal officials detail a three-year downtown fentanyl crackdown",
+        url: "https://katu.com/news/local/feds-detail-3-year-downtown-portland-fentanyl-crackdown-100-charged-100-kg-seized-oregon-portland-dealing-police-bueau-fbi-federal-bureau-of-investigations-us-attorneys-office-special-agent-drugs-trafficking-prosecution",
+        kind: "Reporting",
+        date: "2026",
+        note: "Cited by the candidate for the same partnership; the report describes the crackdown, not his individual role.",
+      },
+      {
+        label: "OPB · Police and drug-treatment providers’ pilot program will continue",
+        url: "https://www.opb.org/article/2024/04/10/pilot-program-that-has-police-drug-treatment-providers-work-together-in-portland-will-continue/",
+        kind: "Reporting",
+        date: "April 10, 2024",
+        note: "Cited by the candidate for the Provider Police Joint Connection Program with the Bike Squad and MHAAO.",
+      },
+    ],
   },
   "Olivia Clark": {
     source: campaign(
@@ -601,7 +633,7 @@ export function withCouncilAnalysis(person: Candidate): Candidate {
   }
   return {
     ...person,
-    sources: extra ? [...person.sources, extra.source, ...Object.values(extra.issueSources ?? {})] : person.sources,
+    sources: extra ? [...person.sources, extra.source, ...Object.values(extra.issueSources ?? {}), ...(extra.also ?? [])] : person.sources,
     analysis: {
       values: row[0],
       tradeoff: row[1],

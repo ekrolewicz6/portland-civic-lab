@@ -54,19 +54,20 @@ Extra topics without an explicit statement:
 
 ## Eli Arnold
 
+**Replied September 20, 2026** to the individual questions in the first round (fitting staffing and transit within revenue; two policing programs with public sources). His police-staffing stance and brief excerpts now cite the reply; see the research log entry `arnold-2026-09-20`.
+
 Contact: info@eliforportland.com · contact page https://www.eliforportland.com/contact
 
-Issue gaps (housing, safety and climate carry both rungs from his site):
+Issue gap still open after his reply:
 
 - **Money.** What number or result would show that raising the small-business exemption to $150,000 and the three-to-five-year tax holiday worked, and by when?
 
-Extra topics without an explicit statement (he states: no tax or fee increases; about 1.5 officers per 1,000; scale Street Response citywide):
+Extra topics without an explicit statement (he states: no tax or fee increases; police growth only after vacancies are filled; scale Street Response citywide):
 
-- **Moda Center.** Your transit plan would draw on PCEF's unspent balance. Would you vote for public money in a final Moda Center deal?
+- **Moda Center.** Your transit plan would draw on future PCEF revenue. Would you vote for public money in a final Moda Center deal?
 - **Clearing camps.** You would expand Neighborhood Response Teams to target street camping. Would you keep camp-removal funding at current levels?
 - **Data centers.** Would you vote for a moratorium or ban on new AI data centers in the city?
 - **Street repair fee.** You will not support raising fees. Would you vote to repeal the monthly street repair fee Council created in 2026, or keep it?
-- **Water rates.** Would you vote for further water-rate increases to pay for the Bull Run filtration plant?
 
 ## Jeremy Beausoleil Smith
 

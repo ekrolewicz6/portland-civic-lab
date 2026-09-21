@@ -56,6 +56,13 @@ const schulteDataCenters = site("Schulte · data centers and megawatts", "https:
 const zimmermanHomelessness = site("Zimmerman · homelessness", "https://ez4pdx.com/issue/homelessness/");
 const zimmermanSafety = site("Zimmerman · public safety", "https://ez4pdx.com/issue/public-safety/");
 
+const arnoldEmail: Evidence = {
+  label: "Arnold · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#arnold-2026-09-20",
+  kind: "Candidate statement",
+  date: "Received September 20, 2026",
+  note: NOTE,
+};
 const andersonEmail: Evidence = {
   label: "Anderson · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#anderson-2026-09-19",
@@ -77,9 +84,9 @@ export const topicStancesD4: TopicStance[] = [
   stance("eli-arnold", "new-taxes", "opposes", "No new taxes, fees",
     "Says he will not support raising taxes and fees; his transit plan is framed as using existing PCEF revenue without new taxes.",
     pamphlet(65)),
-  stance("eli-arnold", "police-staffing", "supports", "1.5 officers per 1,000",
-    "Proposes a phased path from about 1.27 to about 1.5 sworn officers per 1,000 residents, alongside fire/EMS staffing and alternative response.",
-    arnoldSafety),
+  stance("eli-arnold", "police-staffing", "supports", "Fill vacancies, then grow",
+    "Says there would be no immediate increase to police funding; once vacancies are filled he would seek more authorized positions if the budget can accommodate it, toward the roughly 1.5 officers per 1,000 residents on his site.",
+    arnoldEmail),
   stance("eli-arnold", "street-response", "supports", "Scale PSR citywide",
     "Would expand Street Response scope in 2027–2028 and citywide by 2029–2031 so calls go to the right responder; 24/7 is not stated.",
     arnoldSafety),
