@@ -1,42 +1,46 @@
 # Oregon fire map: outreach drafts
 
-Prepared September 10; revised September 11, 2026. Nothing has been sent. Each draft says who it is for and what it asks. Fill in the bracketed parts. Keep the emails short; the detail belongs in the follow-up call.
+Prepared September 10; revised September 11 and 22, 2026. Drafts 1 (ODF) and 6 (ODA) were sent on September 22, 2026 from edan@portlandciviclab.org; their sent text is preserved below. Everything else is still unsent. Each draft says who it is for and what it asks. Keep the emails short; the detail belongs in the follow-up call.
 
-Ask for existing records through the program’s preferred route. Request a fee estimate before any chargeable work; discuss scope and any available public-interest fee reduction before committing. No fees, sends, calls or introductions have been authorized by these drafts.
+Ask for existing records through the program’s preferred route. Request a fee estimate before any chargeable work; discuss scope and any available public-interest fee reduction before committing. No fees have been committed. Sends are recorded per draft and in outreach-ledger.csv.
 
 ---
 
-## 1. ODF Smoke Management: the data request (send first)
+## 1. ODF Smoke Management: the data request — SENT September 22, 2026
 
+**Sent from:** edan@portlandciviclab.org (Gmail message 1a0c847479988cfd)
 **To:** Stacy McCarter, Mitigation Program Manager, stacy.mccarter@odf.oregon.gov
 **Cc:** forestryinformation@odf.oregon.gov
-**Subject:** Request for Smoke Data System export for a public prescribed fire map
+**Subject:** Smoke Data System export for a public prescribed fire map
 
 Hi Stacy,
 
-I'm Edan Krolewicz, working with Dominic Kuklawood on a public map of fire in Oregon. The goal is to show, in one place, where prescribed burns have happened, why each unit was burned, and how that sits alongside the state's wildfire history. We want people to be able to click on a burn and see the acres, the burn type, the reason, and the conditions on the day.
+I run Portland Civic Lab, and with my co-author Dominic Kuklawood I'm building a public map of prescribed fire and wildfire in Oregon: https://www.portlandciviclab.org/oregon-fire. The goal is that anyone can click on a burn and see where it was, what was burned, why, and the conditions that day, alongside the state's wildfire history.
 
-Your program already collects most of this. The prescribed fire map and the daily PDFs show today's units, and the annual reports give the totals, but the history lives in the Smoke Data System. We'd like to ask for an export.
+A lot of what we need already exists in your program. We're archiving the public Fire_Smoke_Management feed every six hours and using the annual reports for the totals, but the per-unit history lives in the Smoke Data System, so I'd like to ask for an export.
 
-Could we start with a 2025 sample and schema, then expand to every available year? Please distinguish registered units from individual ignitions and accomplishments, and include:
+Could we start with a 2025 sample and the schema, and expand to all available years from there? Keeping registered units, individual ignitions and accomplishments as separate tables, we're hoping for:
 
-1. Registered units: registration number, date registered, district, ownership code, county, township/range/section, latitude, longitude, unit acres, elevation, slope, burn type, burn reason, fuel species, planned acres and tons by burn method, and the unit comments.
+1. Registered units: registration number, date registered, district, ownership code, county, township/range/section, latitude/longitude, unit acres, elevation, slope, burn type, burn reason, fuel species, planned acres and tons by method, and unit comments.
 2. Accomplishments: registration number, actual burn date and ignition time, acres burned, tons burned by method, fuel moistures, days since significant rain, and wind speed as recorded.
-3. Authorizations, permit decisions, cancellations and status history, with IDs linking these to units and individual ignitions. Existing polygons or diagrams, source coordinate reference system, accuracy and date precision would help.
-4. The code lists for burn type, burn reason, ownership, and district.
-5. The smoke intrusion records that feed Table 2 of the annual report.
+3. Status history (registered, planned, accomplished, cancelled) with the IDs that link it to units and ignitions, plus any unit polygons or diagrams and their coordinate system.
+4. The code lists for burn type, burn reason, ownership and district.
+5. The intrusion records behind Table 2 of the annual report.
 
-A CSV or Excel export of the underlying tables is ideal. For private landowners we do not need names, addresses, or phone numbers; business names for commercial operators and the agency for public units are enough. If it is easier to strip those fields before sending, please do.
+CSV or Excel is ideal. For private landowners we don't need names, addresses or phone numbers; business names for operators and the agency for public units are enough, so if it's easier to leave those fields out entirely, please do.
 
-We understand this may be a public records request under ORS 192.311 and are glad to file it through the portal if that's the right route. If fees apply, we'd ask you to consider a waiver since the map will be free and public, and we'll happily share what we build with the program and with the Smoke Management Advisory Committee.
+If this needs to go through the public records portal I'm glad to file it there; just let me know, and please send a fee estimate before any chargeable work. We'd also welcome any public-interest fee reduction, since the map is free and will credit ODF as the source.
 
-Could you also describe reporting delays, retention, known omissions and jurisdictions outside this system? We understand registrations are not a complete statewide permit inventory. Is there a GIS contact for the Fire_Smoke_Management feature service, and would you be willing to point us to a few Certified Burn Managers or burn associations who might want to help explain their burns?
+Two smaller questions: is there a GIS contact for the Fire_Smoke_Management service, and are there known reporting delays, retention limits, or jurisdictions that don't register in the system? We want to label coverage gaps honestly rather than imply the map is complete.
 
-Thanks for your time. Happy to talk by phone if that's quicker.
+Happy to talk by phone if that's easier. Thanks for your time.
 
 Edan Krolewicz
-[phone]
-[project page, if any]
+Portland Civic Lab
+https://www.portlandciviclab.org/oregon-fire
+edan@portlandciviclab.org
+
+**Follow-up if no reply by October 6:** one short nudge; if none by October 13, file draft 2 through the portal.
 
 ---
 
@@ -67,14 +71,16 @@ Send individually. Change the first line for each person.
 
 Hi [name],
 
-I found you through ODF's Certified Burn Manager directory [or: through the OSU Extension PBA page / through Stacy McCarter]. I'm working with co-author Dominic Kuklawood, on a public map of fire in Oregon: every prescribed burn we can document, with the reason it was done, alongside the state's wildfire history. The goal is to help readers understand documented burns, their purposes and outcomes, with uncertainty and source coverage made visible.
+I found you through ODF's Certified Burn Manager directory [or: through the OSU Extension PBA page / through Stacy McCarter]. I run Portland Civic Lab, and with my co-author Dominic Kuklawood I'm building a public map of fire in Oregon (https://www.portlandciviclab.org/oregon-fire): every prescribed burn we can document, with the reason it was done, alongside the state's wildfire history. The goal is to help readers understand documented burns, their purposes and outcomes, with uncertainty and source coverage made visible.
 
 The state and federal records give us the where and the acres. They don't give us the why in plain language, and that's the part the public needs. You've planned and run these burns, so I'd like to ask for 20 minutes on the phone to learn how you'd want your burns shown, what would make the map useful to you, and what would make it wrong. If you keep burn plans or photos you'd be willing to share for units you've led, that would be a bonus, but the conversation is the ask.
 
 Would any time in the next two weeks work?
 
 Edan Krolewicz
-[phone]
+Portland Civic Lab
+https://www.portlandciviclab.org/oregon-fire
+edan@portlandciviclab.org
 
 ---
 
@@ -85,13 +91,15 @@ Edan Krolewicz
 
 Hi Carrie,
 
-I'm Edan Krolewicz, working with Dominic Kuklawood on a public map of prescribed fire and wildfire in Oregon. We are preparing a request to ODF for a Smoke Data System export and importing the BLM and Forest Service treatment records. What we can't get from records is the landowner's side: why a unit was burned, in words a neighbor would understand.
+I run Portland Civic Lab, and with my co-author Dominic Kuklawood I'm building a public map of prescribed fire and wildfire in Oregon: https://www.portlandciviclab.org/oregon-fire. We've asked ODF for a Smoke Data System export and have imported the BLM and Forest Service treatment records. What we can't get from records is the landowner's side: why a unit was burned, in words a neighbor would understand.
 
 The Extension Fire Program sits closest to that. Could we ask you for a short call to get your read on the project, and, if you think it's worthwhile, introductions to the regional fire specialists and the prescribed burn associations? We'd also like to know how you'd want Extension's guides credited or linked from the map.
 
 Thanks,
 Edan Krolewicz
-[phone]
+Portland Civic Lab
+https://www.portlandciviclab.org/oregon-fire
+edan@portlandciviclab.org
 
 ---
 
@@ -104,25 +112,33 @@ Edan Krolewicz
 
 Hello,
 
-I'm building a public map of prescribed fire in Oregon and using [dataset name] from [hub URL]. Could you point me to the code lists for [REASON, REASON2, INITIATIVE, and BURN_TYPE / purpose_code, treatment_type, and method], and to how [PLANID / nepa_doc_name] can be matched to the planning documents on [ePlanning / forest project pages]? Could you also share stable identifier definitions, reporting rules, project-to-unit crosswalks, and a few burn plans or accomplishment reports? Does another activity dataset contain burns omitted from hazardous-fuels reporting? Many BLM PLANID values are missing, and FACTS includes treatments consumed by wildfire; we want to classify these correctly. Any notes on update cadence and known gaps would help too. The map will credit the dataset by name.
+I run Portland Civic Lab and we're building a public map of prescribed fire in Oregon (https://www.portlandciviclab.org/oregon-fire) using [dataset name] from [hub URL]. Could you point me to the code lists for [REASON, REASON2, INITIATIVE, and BURN_TYPE / purpose_code, treatment_type, and method], and to how [PLANID / nepa_doc_name] can be matched to the planning documents on [ePlanning / forest project pages]? Could you also share stable identifier definitions, reporting rules, project-to-unit crosswalks, and a few burn plans or accomplishment reports? Does another activity dataset contain burns omitted from hazardous-fuels reporting? Many BLM PLANID values are missing, and FACTS includes treatments consumed by wildfire; we want to classify these correctly. Any notes on update cadence and known gaps would help too. The map will credit the dataset by name.
 
 Thanks,
 Edan Krolewicz
 
 ---
 
-## 6. ODA field burning
+## 6. ODA field burning — SENT September 22, 2026
 
+**Sent from:** edan@portlandciviclab.org (Gmail message 1a0c84755330137d)
 **To:** Jason Eck, jason.eck@oda.oregon.gov; 503-986-4794
-**Subject:** Request for Willamette Valley field burning registration and accomplishment records
+**Subject:** Willamette Valley field burning records for a public fire map
 
-Hello,
+Hi Jason,
 
-I'm working on a public map of fire in Oregon that includes agricultural field burning alongside forestland prescribed fire and wildfire. For the Willamette Valley field burning program, could you provide, for each year available, the registered fields (location, acres, crop or residue type, grower business name) daily field-specific permit decisions, and actual burn accomplishments (date, fields burned, acres), with linking IDs and boundaries? Tabular exports are ideal. We do not need individual growers' personal contact information. If this should be filed as a public records request under ORS 192.311, please let me know and I'll do so; we’d welcome any available public-interest fee reduction. Please provide an estimate before chargeable work.
+I run Portland Civic Lab, and with my co-author Dominic Kuklawood I'm building a public map of fire in Oregon (https://www.portlandciviclab.org/oregon-fire) that will include agricultural field burning alongside forestland prescribed fire and wildfire. ODA's grower resources page lists you as the field burning registration contact, so I hope you're the right person to ask.
+
+For the Willamette Valley field burning program, could you share, for each year you have, the registered fields (location or boundaries, acres, crop or residue type, grower business name), the daily field-specific burn decisions, and the actual accomplishments (date, fields burned, acres), with whatever IDs link them together? CSV or Excel is ideal. We don't need growers' personal contact information. We'd keep registered fields separate from confirmed burns and credit ODA as the source.
+
+If this should go through a public records request under ORS 192.311, tell me and I'll file it that way. Please send a fee estimate before any chargeable work; we'd welcome any public-interest fee reduction that's available.
 
 Thanks,
+
 Edan Krolewicz
-[phone]
+Portland Civic Lab
+https://www.portlandciviclab.org/oregon-fire
+edan@portlandciviclab.org
 
 ---
 
@@ -146,11 +162,13 @@ Do this by phone or in person where possible. If email is the first step, keep i
 
 Hello,
 
-My name is Edan Krolewicz. With my co-author I'm building a public map of prescribed and cultural fire and wildfire in Oregon. Before anything about [tribe]'s burning appears on it, we want to ask whether you'd want it there, and if so, how it should be described and credited. If the answer is no, we'll leave it out. If you'd be open to a conversation, we'd be glad to come to you.
+My name is Edan Krolewicz. I run Portland Civic Lab, and with my co-author I'm building a public map of prescribed and cultural fire and wildfire in Oregon. Before anything about [tribe]'s burning appears on it, we want to ask whether you'd want it there, and if so, how it should be described and credited. If the answer is no, we'll leave it out. If you'd be open to a conversation, we'd be glad to come to you.
 
 Respectfully,
 Edan Krolewicz
-[phone]
+Portland Civic Lab
+https://www.portlandciviclab.org/oregon-fire
+edan@portlandciviclab.org
 
 ---
 
@@ -218,4 +236,4 @@ Thanks, Edan Krolewicz, with Dominic Kuklawood
 
 We’re building a free public map showing documented burns in Oregon, their purposes, and their relationship to wildfire history. Could you help us obtain the existing records your program holds and review a few examples for accuracy? We would distinguish plans from completed burns and attribute explanations to their sources.
 
-All drafts remain unsent. No published prototype, contact, reply or partner agreement should be inferred from a template.
+Drafts 1 and 6 were sent September 22, 2026; the rest remain unsent. No reply or partner agreement should be inferred from a template. The prototype is live at https://www.portlandciviclab.org/oregon-fire.

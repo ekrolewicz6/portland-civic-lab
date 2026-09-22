@@ -1,6 +1,6 @@
 # Oregon Fire Map — current sourcebook
 
-Updated September 12, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public data exists for an initial map; comprehensive coverage and a site-selection explanation for every burn remain goals, not established facts.
+Updated September 22, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public data exists for an initial map; comprehensive coverage and a site-selection explanation for every burn remain goals, not established facts.
 
 Start with [the dated audit](audit-2026-09-11.md) and [implementation notes](implementation.md). The working page is `/oregon-fire` in Portland Civic Lab. Original research is preserved in `archive-2026-09-10/`, which contains superseded claims and is not the current sourcebook.
 
@@ -12,8 +12,8 @@ Start with [the dated audit](audit-2026-09-11.md) and [implementation notes](imp
 | [Endpoints](endpoints.csv) | Original 50 leads retained and corrected, plus new entries; verification stages explicit |
 | [Coverage](coverage-matrix.csv) | Source, jurisdiction, actual imported years, status, limitations and acquisition route |
 | [Contacts](contacts.md) | Roles, named contacts and recommended order |
-| [Outreach drafts](outreach-drafts.md) | Specific sample/export/review requests; all unsent |
-| [Outreach ledger](outreach-ledger.csv) | Owners, priorities, status, next action and empty sent/reply fields |
+| [Outreach drafts](outreach-drafts.md) | Specific sample/export/review requests; ODF and ODA sent Sept 22, rest unsent |
+| [Outreach ledger](outreach-ledger.csv) | Owners, priorities, status, next action, sent dates and reply fields |
 | [CBM directory](cbm-directory.csv) | Original practitioner directory with the verified Punches correction; internal outreach reference |
 | [Sources](sources.md) | Original citations plus dated audit additions |
 | [Import evidence](import-evidence.json) | Sanitized import-run IDs, timestamps, counts, failures and source metadata |
@@ -26,7 +26,7 @@ Start with [the dated audit](audit-2026-09-11.md) and [implementation notes](imp
 3. Ask federal stewards for identifiers and document crosswalks, and district/practitioner hubs for a few site-specific explanations. Obtain ODA, refuge/park and LTDL data next.
 4. Edan authorized production release on September 11, 2026. Representative-record review remains an editorial follow-up. Six-hour archival configuration activates with the production deployment; see verification.md for release results.
 
-No emails have been sent, no fees committed, and no steward has confirmed complete coverage. The old Claude artifact is a separate hosted copy and has not been updated by editing this repository.
+Two emails were sent on September 22, 2026 (ODF Smoke Management and ODA field burning; see outreach-ledger.csv). No fees have been committed and no steward has confirmed complete coverage. The old Claude artifact is a separate hosted copy and has not been updated by editing this repository.
 
 [September 12 feedback and next research questions](feedback-2026-09-12.md) records the forest-condition and fire-effects workstream. See [the September 12 implementation and evidence](recent-fire-release-2026-09-12.md) for the recent-scar overlay, MTBS severity display, verified forest-area estimate, and remaining evidence gaps.
 
