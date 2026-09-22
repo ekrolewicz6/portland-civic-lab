@@ -21,7 +21,7 @@ import c from "./controls.module.css";
  * sideways: a topic is one question and N answers, which is a list.
  */
 
-const NUMBER = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"];
+const NUMBER = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"];
 const numberWord = (n: number) => NUMBER[n] ?? String(n);
 
 /** Who is on record, and the sentence that says so at a glance. */
