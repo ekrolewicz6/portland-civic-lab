@@ -72,7 +72,7 @@ export function officeOf(race: Race): Office {
     const rest = race.title.replace(/^.*?(Chair|Commissioner|Auditor|Sheriff|Clerk|Treasurer).*$/, "$1");
     const district = m(/District (\d+)/);
     const position = m(/Position (\d+)/);
-    const short = district ? `Commissioner · District ${district}` : position ? `Commissioner · Position ${position}` : rest === "Chair" ? "County Chair" : rest;
+    const short = district ? `District ${district} Commissioner` : position ? `Commissioner, Position ${position}` : rest === "Chair" ? "County Chair" : rest;
     const seat = district ? `${County} Commissioner, District ${district}` : position ? `${County} Commissioner, Position ${position}` : `${County} ${rest}`;
     const mark = district ? `D${district}` : position ? `P${position}` : rest === "Chair" ? "CHAIR" : rest === "Auditor" ? "AUD" : rest === "Sheriff" ? "SHF" : rest === "Clerk" ? "CLK" : rest === "Treasurer" ? "TRS" : rest.slice(0, 3).toUpperCase();
     return { group: "county", body: County, short, seat, mark, district: null, hasCouncilRecord: false, memberWord: rest === "Chair" ? "chair" : rest.toLowerCase() };

@@ -66,7 +66,7 @@ export default function HeroMap({
             style={{ left: `${(point.x / 600) * 100}%`, top: `${(point.y / 600) * 100}%`, width: `${(size / 600) * 100}%` }}
           >
             {row.portrait ? (
-              <Image src={row.portrait.src} alt="" fill sizes="40px" />
+              <Image src={row.portrait.src} alt="" width={48} height={48} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
             ) : (
               <span className={styles.initials}>
                 {row.name
