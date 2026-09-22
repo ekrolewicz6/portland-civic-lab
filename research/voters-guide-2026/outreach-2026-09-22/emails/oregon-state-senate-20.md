@@ -1,0 +1,67 @@
+# Oregon Senate District 20: follow-up emails (drafted September 22, 2026; nothing sent)
+
+Race page: https://www.portlandciviclab.org/voters-guide/oregon-state-senate-20 · boards: https://www.portlandciviclab.org/voters-guide/oregon-state-senate-20#topics
+
+## Mark Meek
+
+Send via: email info@votemarkmeek.com
+
+```text
+Subject: Portland Civic Lab voters guide: Mark Meek, Oregon Senate District 20
+
+Hi Mark,
+
+I run Portland Civic Lab, a nonpartisan, volunteer research project publishing a voters guide for every race on the November 3 ballot. Your page is at https://www.portlandciviclab.org/voters-guide/oregon-state-senate-20/mark-meek. It is built only from your published words (your filed statement, your site and public statements) and the public record, the same way for every candidate, with a source on every line. It carries no endorsements, rankings or scores. The race page also has a board for each live choice the 2027 Legislature faces, with every candidate’s statement or a gap: https://www.portlandciviclab.org/voters-guide/oregon-state-senate-20#topics.
+
+Right now the page shows 6 of 8 choices on record for you. A gap on a page is a research gap, not a position, and it says so, but readers do compare. The questions below are the gaps. A sentence or two on any of them is enough; we quote or paraphrase with a date and attribute it to your campaign, and we never fill a gap from a general goal.
+
+The four issues every race page tracks
+1. Housing and homelessness. Your page shows “Homes, shelter, treatment.” We could not find how you would deliver it (the funding source, rule change, staffing, sequencing or partner), or what number, deadline or visible result would show it worked.
+2. Crime, drugs and who responds. Your page shows “Police plus gun safety.” We could not find how you would deliver it (the funding source, rule change, staffing, sequencing or partner), or what number, deadline or visible result would show it worked.
+3. Roads, transit and climate. Where would you invest, and what would you restrict?
+
+Choices we found no statement on
+4. Kicker refund. Let the state keep part of a future kicker refund for wildfire or other one-time needs?
+5. Wildfire money. Spend more state money on wildfire prevention and firefighting?
+
+If any line on your page is wrong, out of date or unfair, say so and I will correct it and note the change in the research log. Anything you send on the record we treat the same as we treat every campaign’s statements. Thanks for your time.
+
+Edan Krolewicz
+Portland Civic Lab
+edan@portlandciviclab.org
+```
+
+## Michele Stroh
+
+Send via: contact form https://votestroh.com/
+
+```text
+Subject: Portland Civic Lab voters guide: Michele Stroh, Oregon Senate District 20
+
+Hi Michele,
+
+I run Portland Civic Lab, a nonpartisan, volunteer research project publishing a voters guide for every race on the November 3 ballot. Your page is at https://www.portlandciviclab.org/voters-guide/oregon-state-senate-20/michele-stroh. It is built only from your published words (your filed statement, your site and public statements) and the public record, the same way for every candidate, with a source on every line. It carries no endorsements, rankings or scores. The race page also has a board for each live choice the 2027 Legislature faces, with every candidate’s statement or a gap: https://www.portlandciviclab.org/voters-guide/oregon-state-senate-20#topics.
+
+Right now the page shows 4 of 8 choices on record for you. A gap on a page is a research gap, not a position, and it says so, but readers do compare. The questions below are the gaps. A sentence or two on any of them is enough; we quote or paraphrase with a date and attribute it to your campaign, and we never fill a gap from a general goal.
+
+The four issues every race page tracks
+1. Housing and homelessness. Your page shows “Cut shelter red tape.” We could not find how you would deliver it (the funding source, rule change, staffing, sequencing or partner), or what number, deadline or visible result would show it worked.
+2. Crime, drugs and who responds. Your page shows “Fully staffed police.” We could not find how you would deliver it (the funding source, rule change, staffing, sequencing or partner), or what number, deadline or visible result would show it worked.
+3. Taxes, the kicker and the budget. Your page shows “No taxes until accountable.” We could not find how you would deliver it (the funding source, rule change, staffing, sequencing or partner), or what number, deadline or visible result would show it worked.
+4. Roads, transit and climate. Where would you invest, and what would you restrict?
+
+Choices your published statements come close to
+5. Shelter funding. Keep paying for state-funded shelter beds and the homelessness emergency after June 2027? (Your page carries “Accountability for spending” from your published statement; it does not say which way you come down on this choice.)
+
+Choices we found no statement on
+6. Kicker refund. Let the state keep part of a future kicker refund for wildfire or other one-time needs?
+7. Data-center limits. Make data centers pay their own way: separate power rates, an end to tax breaks, or a pause on new ones?
+8. Wildfire money. Spend more state money on wildfire prevention and firefighting?
+9. Sanctuary law. Keep adding state limits on federal immigration enforcement, on top of Oregon's sanctuary law?
+
+If any line on your page is wrong, out of date or unfair, say so and I will correct it and note the change in the research log. Anything you send on the record we treat the same as we treat every campaign’s statements. Thanks for your time.
+
+Edan Krolewicz
+Portland Civic Lab
+edan@portlandciviclab.org
+```
