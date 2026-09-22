@@ -12,7 +12,7 @@ import { candidateDescription } from "@/lib/voters-guide/race-sheet/seo";
 import { officeOf } from "@/lib/voters-guide/race-sheet/office";
 import { choiceParagraphs } from "@/lib/voters-guide/race-sheet/content/choice";
 import { saidPlacements } from "@/lib/voters-guide/race-sheet/content/said";
-import { primaryStatements, roleOverrides } from "@/lib/voters-guide/race-sheet/content/roles";
+import { missingStates, primaryStatements, roleOverrides } from "@/lib/voters-guide/race-sheet/content/roles";
 import { featuredVotes } from "@/lib/voters-guide/race-sheet/featured";
 import { questions } from "@/lib/voters-guide/discovery";
 import { councilDecisions } from "@/lib/voters-guide/council-decisions";
@@ -151,10 +151,13 @@ describe("extra topics", () => {
 });
 
 describe("in their words (the verbatim opening)", () => {
-  it("covers every published candidate exactly once", () => {
+  it("covers every published candidate exactly once, except those with no published statement at all", () => {
     const ids = ownWords.map((o) => o.candidateId);
     expect(new Set(ids).size).toBe(ids.length);
-    expect([...ids].sort()).toEqual(people.map((p) => p.person.id).sort());
+    // A candidate with nothing published (a filing and nothing else) has no words to quote; the row says so.
+    const expected = people.filter(({ person }) => !(person.missing && (missingStates[person.id] ?? "no-platform") === "no-platform" && !ids.includes(person.id))).map((p) => p.person.id);
+    expect([...ids].sort()).toEqual(expected.sort());
+    for (const { person } of people) if (!ids.includes(person.id)) expect(person.missing, `${person.id} has no opening and no missing state`).toBeTruthy();
   });
   it.each(ownWords.map((o) => [o.candidateId, o] as const))("%s: ≤60 words, ends at a sentence boundary, nothing elided, sourced", (_id, o) => {
     expect(words(o.text)).toBeLessThanOrEqual(60);
@@ -163,7 +166,8 @@ describe("in their words (the verbatim opening)", () => {
     expect(o.text, "a bracketed insertion is not verbatim").not.toMatch(/\[/);
     expect(o.source.url).toMatch(HTTPS);
     expect(o.source.kind).toBe("Candidate statement");
-    if (o.rule === "pamphlet-opening") expect(o.source.url).toMatch(/multco\.us.*#page=\d+$/);
+    // A pamphlet opening cites an official pamphlet page: a county elections office or the Secretary of State's filed statements.
+    if (o.rule === "pamphlet-opening") expect(o.source.url).toMatch(/^https:\/\/(multco\.us|www\.washingtoncountyor\.gov|docs\.clackamas\.us|sos\.oregon\.gov)\/.*#page=\d+$/);
   });
   it("leads every non-missing candidate's search description with their own words, never ours", () => {
     for (const { race, person } of people) {

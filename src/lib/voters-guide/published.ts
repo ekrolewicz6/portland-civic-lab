@@ -5,6 +5,7 @@ import { withCouncilDecisions } from "./council-decisions";
 import { packs } from "./race-sheet/content/packs";
 import { officeOf } from "./race-sheet/office";
 import type { Candidate, Race } from "./types";
+import type { RacePack } from "./race-sheet/types";
 
 /**
  * Explicit publication boundary. A race is public only when its id is
@@ -69,13 +70,17 @@ export const PUBLISHED_RACE_IDS = [
 
 const packAnalysis = Object.assign({}, ...packs.map((p) => p.analysis)) as Record<string, Candidate["analysis"]>;
 const packPortraits = Object.assign({}, ...packs.map((p) => p.portraits)) as typeof portraits;
+const packProfiles = Object.assign({}, ...packs.map((p) => p.profiles)) as RacePack["profiles"];
 
 /** Non-council candidates: the pack's analysis and portrait, when research has landed them. */
 function withRaceAnalysis(person: Candidate): Candidate {
   const analysis = packAnalysis[person.id];
   const portrait = packPortraits[person.id] ?? person.portrait;
+  const profile = packProfiles[person.id];
+  const { missing: _closedGap, ...rest } = person;
+  const base = profile ? { ...rest, ...profile } : person;
   return {
-    ...person,
+    ...base,
     portrait,
     ...(analysis ? { analysis, sources: [...person.sources, ...analysis.sources.filter((s) => !person.sources.some((x) => x.url === s.url))] } : {}),
   };

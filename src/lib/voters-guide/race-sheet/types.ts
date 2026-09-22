@@ -200,6 +200,14 @@ export type RacePack = {
   portraits: Record<string, CandidatePortrait>;
   /** Candidates whose research object is a filing only, by id, with the state the row should show. */
   missing: Record<string, MissingState>;
+  /**
+   * Closes a research gap: the September 18 research object marked the
+   * candidate `missing`, and research since found their own statement
+   * (a pamphlet page, their site, their questionnaire). The profile replaces
+   * the placeholder background, summary and priorities and clears `missing`;
+   * the research log records each one.
+   */
+  profiles: Record<string, { background: string; summary: string; priorities: string[]; question?: string }>;
 };
 
 export const emptyPack = (): RacePack => ({
@@ -216,4 +224,5 @@ export const emptyPack = (): RacePack => ({
   choice: [],
   portraits: {},
   missing: {},
+  profiles: {},
 });
