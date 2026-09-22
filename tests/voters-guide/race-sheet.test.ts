@@ -107,7 +107,8 @@ describe("the promise ladder (how, measured by)", () => {
   });
 });
 
-const allTopics = [...extraTopics, ...packs.flatMap((p) => p.topics.flatMap((t) => t.topics))];
+/** Every topic once: a pack may list the same topic object for several of its races (a subset for a sheriff or auditor). */
+const allTopics = Array.from(new Set([...extraTopics, ...packs.flatMap((p) => p.topics.flatMap((t) => t.topics))]));
 
 describe("extra topics", () => {
   it("are a fixed, deduplicated list with a plain question, and any decisionId resolves", () => {
@@ -126,7 +127,7 @@ describe("extra topics", () => {
       const where = `${s.candidateId}/${s.topicId}`;
       expect(find(s.candidateId), `${where}: unknown candidate`).toBeTruthy();
       expect(allTopics.some((t) => t.id === s.topicId), `${where}: unknown topic`).toBe(true);
-      expect(["supports", "opposes", "mixed"]).toContain(s.stance);
+      expect(["supports", "opposes", "mixed", "partial"]).toContain(s.stance);
       expect(words(s.chip), `${where}: "${s.chip}"`).toBeLessThanOrEqual(4);
       expect(words(s.text), `${where}: ${s.text}`).toBeLessThanOrEqual(40);
       expect(s.text, `${where}: inference language`).not.toMatch(INFERENCE);

@@ -10,12 +10,16 @@ import {
   type Delivery,
   type DeliveryStep,
   type DistrictInfo,
+  type ExtraTopic,
   type IssueLine,
   type MissingState,
   type PrimaryStatement,
   type RacePack,
+  type RaceStakes,
+  type RaceTopics,
   type RoleOverride,
   type StanceChip,
+  type TopicStance,
 } from "../../types";
 import type { IssueId } from "../../issues";
 
@@ -133,6 +137,9 @@ const districts: DistrictInfo[] = [];
 const choice: ChoiceParagraph[] = [];
 const portraits: Record<string, CandidatePortrait> = {};
 const missing: Record<string, MissingState> = {};
+const topics: RaceTopics[] = [];
+const topicStances: TopicStance[] = [];
+const stakes: RaceStakes[] = [];
 
 /** Research gaps closed since September 18 by the candidate's own statement; see the research log. */
 const profiles: RacePack["profiles"] = {
@@ -159,7 +166,7 @@ const profiles: RacePack["profiles"] = {
 };
 
 export const pack: RacePack = {
-  ...emptyPack(), analysis, lines, chips, deliveries, ownWords: ownWordsEntries, contacts, roles, primary, ballots, districts, choice, portraits, missing, profiles,
+  ...emptyPack(), analysis, lines, chips, deliveries, ownWords: ownWordsEntries, contacts, roles, primary, ballots, districts, choice, portraits, missing, profiles, topics, topicStances, stakes,
 };
 
 /* ══ U.S. Senate ═══════════════════════════════════════════════════════ */
@@ -893,3 +900,461 @@ districts.push(district("oregon-house-6", "Salem and Keizer, Yamhill County (McM
 choice.push(choiceOf("oregon-house-6", "One favors targeted federal investment and healthcare protections. The other proposes a much smaller federal role in several policy areas and stricter immigration enforcement."));
 portraits["andrea-salinas"] = portrait("andrea-salinas", "https://www.andreasalinasfororegon.com/", "andreasalinasfororegon.com");
 portraits["david-russ"] = portrait("david-russ", "https://russisforus.com/about-me/", "russisforus.com");
+
+/* ══ Topics, stances and stakes: the congressional record first ═══════════ */
+/*
+ * Researched September 22, 2026. Eight choices Oregon's members of Congress
+ * voted on or that candidates addressed in September 2026, shared by all seven
+ * federal races. An incumbent's recorded vote is cited from the House Clerk or
+ * the Senate's roll-call pages and is the stance ("Public record"); challengers'
+ * stances come from their own filed statement, site or questionnaire. Nothing
+ * is inferred from party, endorsements or silence; a gap is a gap.
+ */
+
+const TOPIC_REVIEWED_ON = "2026-09-22";
+const topicReviewed = { reviewedBy: "pending", reviewedOn: TOPIC_REVIEWED_ON } as const;
+const record = (label: string, url: string, date: string, note?: string): Evidence => ({
+  label, url, kind: "Public record", date, ...(note ? { note } : {}),
+});
+const reporting = (label: string, url: string, date: string, note?: string): Evidence => ({
+  label, url, kind: "Reporting", date, ...(note ? { note } : {}),
+});
+const stance = (candidateId: string, topicId: string, s: TopicStance["stance"], chipText: string, text: string, source: Evidence): TopicStance => ({
+  candidateId, topicId, stance: s, chip: chipText, text, source, ...topicReviewed,
+});
+const houseRoll = (year: number, roll: number, label: string, date: string, note: string): Evidence =>
+  record(`House Clerk · roll call ${roll} (${year}), ${label}`, `https://clerk.house.gov/Votes/${year}${roll}`, `${date}; reviewed September 22, 2026`, note);
+const senateRoll = (session: 1 | 2, vote: number, label: string, date: string, note: string): Evidence =>
+  record(`U.S. Senate · roll call vote ${vote} (${session === 1 ? "2025" : "2026"}), ${label}`,
+    `https://www.senate.gov/legislative/LIS/roll_call_votes/vote119${session}/vote_119_${session}_${String(vote).padStart(5, "0")}.htm`,
+    `${date}; reviewed September 22, 2026`, note);
+
+/* The votes. One package vote records a position on the whole bill, not on each provision. */
+const hr1House = houseRoll(2025, 190, "final House passage of H.R. 1 (motion to concur in the Senate amendment)", "July 3, 2025",
+  "Passed 218–214. H.R. 1 carried the tax cuts, the Medicaid work rules and six-month renewals, the SNAP changes and $75 billion for immigration enforcement together; this is a vote on the whole package.");
+const hr1Senate = senateRoll(1, 372, "passage of H.R. 1 as amended", "July 1, 2025",
+  "Passed 50–50 with the vice president breaking the tie. A vote on the whole package, not on each provision.");
+const acaHouse = houseRoll(2026, 11, "passage of H.R. 1834, a three-year restoration of the enhanced ACA premium tax credits", "January 8, 2026",
+  "Passed 230–196 after a discharge petition; 17 Republicans joined every Democrat. The Senate had not taken the bill up as of September 22, 2026 (GovTrack).");
+const acaSenate = senateRoll(1, 644, "cloture on S. 3385, the Democrats’ three-year premium tax credit extension", "December 11, 2025",
+  "Cloture failed 51–48 (60 needed); the enhanced credits expired December 31, 2025.");
+const tariffHouse = houseRoll(2026, 65, "passage of H.J.Res. 72, ending the national emergency behind the Canada tariffs", "February 11, 2026",
+  "Passed 219–211; six Republicans joined all but one Democrat. Nine days later the Supreme Court held the emergency-powers tariffs unlawful (Learning Resources v. Trump, 6–3).");
+const tariffSenate = senateRoll(1, 600, "passage of S.J.Res. 88, ending the national emergency behind the global tariffs", "October 30, 2025",
+  "Passed 51–47. The Senate also voted to end the Brazil (S.J.Res. 81, October 28) and Canada (S.J.Res. 77, October 29) tariff emergencies that week.");
+const iceHouse = houseRoll(2026, 214, "passage of S. 2, the Secure America Act", "June 9, 2026",
+  "Passed 214–212; signed June 10, 2026 (Public Law 119-98). About $70 billion through September 2029: $38.5 billion for ICE, $26 billion for Customs and Border Protection and $5 billion for the department, per the CRS summary and the American Immigration Council.");
+const iceSenate = senateRoll(2, 163, "passage of S. 2, the Secure America Act, as amended", "June 5, 2026",
+  "Passed 52–47 under budget reconciliation after an overnight amendment series.");
+const iranHouse = houseRoll(2026, 282, "agreeing to H.Con.Res. 89, directing the removal of U.S. forces from hostilities with Iran", "July 23, 2026",
+  "Passed 214–208, thirteen days after the president notified Congress that fighting had resumed. The same members voted the same way on H.Con.Res. 86 (roll call 199, June 3, 2026, 215–208).");
+const iranSenate = senateRoll(2, 184, "agreeing to H.Con.Res. 86, directing the removal of U.S. forces from hostilities with Iran", "June 23, 2026",
+  "Agreed to 50–48, the first Iran war-powers measure adopted by both chambers. A binding joint resolution (S.J.Res. 180) failed 47–49 on July 23, 2026.");
+const fofaHouse = houseRoll(2025, 25, "passage of H.R. 471, the Fix Our Forests Act", "January 23, 2025",
+  "Passed 279–141 with 64 Democrats. The Senate Agriculture Committee advanced its version (S. 1462) 18–5 in October 2025; the full Senate had not voted as of September 22, 2026.");
+const housingHouse = houseRoll(2026, 224, "final passage of H.R. 6644, the 21st Century ROAD to Housing Act", "June 23, 2026",
+  "Passed 358–32; became Public Law 119-101 on July 11, 2026. The first House vote (roll call 57, February 9, 2026) was 390–9.");
+const housingSenate = senateRoll(2, 182, "final passage of H.R. 6644, the 21st Century ROAD to Housing Act", "June 22, 2026",
+  "Agreed to 85–5; became Public Law 119-101 on July 11, 2026.");
+const crHouse = houseRoll(2026, 286, "concurring in the Senate amendment to H.R. 6500, the stopgap funding bill through December 11, 2026", "September 1, 2026",
+  "Passed 370–48; signed September 2, 2026 (Public Law 119-103). Five of Oregon's six representatives voted yes; Rep. Dexter voted no.");
+const crSenate = senateRoll(2, 228, "passage of H.R. 6500, the stopgap funding bill through December 11, 2026", "August 8, 2026",
+  "Passed 90–6.");
+
+/* Candidates' own words beyond the pamphlet, and incumbents' official actions short of a vote. */
+const merkleyDataCenters: Evidence = {
+  label: "Sen. Merkley · letter with Sen. Wyden to Oregon’s data center advisory committee",
+  url: "https://www.merkley.senate.gov/wyden-merkley-ask-state-data-center-advisory-committee-to-consider-multiple-issues-raised-by-oregonians/",
+  kind: "Candidate statement", date: "July 2, 2026; reviewed September 22, 2026", note: NOTE,
+};
+const merkleyBiomass: Evidence = {
+  label: "Sen. Merkley · Wildfire Reduction Market Expansion Act, introduced with Rep. Bentz",
+  url: "https://www.merkley.senate.gov/merkley-hyde-smith-bentz-thompson-launch-new-bipartisan-effort-to-promote-renewable-fuels-boost-wildfire-resiliency/",
+  kind: "Candidate statement", date: "July 22, 2026; reviewed September 22, 2026", note: NOTE,
+};
+const bynumBillDrivers: Evidence = {
+  label: "Rep. Bynum · BILL Drivers Act press release (electricity price transparency)",
+  url: "https://bynum.house.gov/media/press-releases/congresswoman-bynum-introduces-legislation-improve-electricity-price",
+  kind: "Candidate statement", date: "July 10, 2026; reviewed September 22, 2026", note: NOTE,
+};
+const adairShutdown = site("Adair · statement on the February 3, 2026 funding vote", "https://www.pattiforcongress.com/post/patti-adair-denounces-janelle-bynum-s-vote-to-shutdown-the-government");
+const kahlSurvey: Evidence = {
+  label: "Kahl · Ballotpedia Candidate Connection survey, 2026",
+  url: "https://ballotpedia.org/Barbara_Kahl", kind: "Candidate statement", date: "2026 survey; reviewed September 22, 2026", note: NOTE,
+};
+
+/* Context and stakes sources: official pages and reporting read September 22, 2026. */
+const ohaFederalChanges = record("Oregon Health Authority · OHP work or activity rules and federal changes to the Oregon Health Plan",
+  "https://www.oregon.gov/oha/hsd/ohp/pages/federal-changes.aspx", "Reviewed September 22, 2026",
+  "Work or activity rules for adults 19–64 start in 2027 (80 hours a month or $580 a month in earnings); six-month renewals begin in late 2027. Coverage-loss and funding estimates are from OHA officials as reported by OPB (July 29, 2026) and Willamette Week (September 14, 2026).");
+const opbOhp = reporting("OPB · Big changes coming for people on Oregon Health Plan", "https://www.opb.org/article/2026/07/29/think-out-loud-oregon-health-plan/", "July 29, 2026; reviewed September 22, 2026",
+  "OHA: about 600,000 adults will be checked against the new rules from January 2027; 100,000 to 200,000 could lose coverage; $718 million to $1.4 billion a year in federal funds at the upper estimate.");
+const kffMarketplace = reporting("KFF State Health Facts · marketplace plan selections by state, 2014–2026 (CMS open-enrollment files)",
+  "https://www.kff.org/affordable-care-act/state-indicator/marketplace-enrollment/", "2026 open enrollment; reviewed September 22, 2026",
+  "Oregon: 139,688 plan selections for 2025 and 118,372 for 2026, the first year without the enhanced credits.");
+const scotusTariffs = reporting("Wikipedia · Learning Resources, Inc. v. Trump (decision and the tariffs that followed)", "https://en.wikipedia.org/wiki/Learning_Resources,_Inc._v._Trump", "Decided February 20, 2026; reviewed September 22, 2026",
+  "6–3: the International Emergency Economic Powers Act does not authorize tariffs. IEEPA tariffs ended February 24; a 10% Section 122 surcharge ran to July 24, 2026; Section 301 duties of 10–12.5% on about 60 countries followed.");
+const aicSecureAmerica = reporting("American Immigration Council · What’s in the Secure America Act?", "https://www.americanimmigrationcouncil.org/fact-sheet/whats-in-the-secure-america-act/", "June 10, 2026; reviewed September 22, 2026",
+  "$69.5 billion through September 30, 2029: $38.5 billion for ICE (about four times its 2025 budget), $26 billion for CBP, $5 billion for DHS.");
+const dhsShutdown = reporting("Wikipedia · 2026 United States federal government shutdowns", "https://en.wikipedia.org/wiki/2026_United_States_federal_government_shutdowns", "Reviewed September 22, 2026",
+  "A four-day lapse January 31–February 3, 2026, then a 76-day lapse in Homeland Security funding February 14–April 30, 2026, over immigration-enforcement rules.");
+const portlandTroops = record("City of Portland · Portland and federal troops", "https://www.portland.gov/federal/federal-troops", "Reviewed September 22, 2026",
+  "Judge Immergut permanently blocked the Portland deployment on November 7, 2025; the president announced troop withdrawals from Portland and other cities December 31, 2025.");
+const rollCallIran = reporting("Roll Call · Congress splits on two war powers resolution votes", "https://rollcall.com/2026/07/23/23warpowersvote/", "July 23, 2026; reviewed September 22, 2026",
+  "House adopted H.Con.Res. 89 214–208; a binding S.J.Res. 180 failed 47–49. The president notified Congress July 10 that fighting had resumed.");
+const fofaWiki = reporting("Wikipedia · Fix Our Forests Act (provisions and status)", "https://en.wikipedia.org/wiki/Fix_Our_Forests_Act", "Reviewed September 22, 2026",
+  "Raises the categorical exclusion for fireshed projects to 10,000 acres and sets a 120-day limit on lawsuits (150 in the Senate bill); no Senate floor vote as of the page’s July 2026 update.");
+const roadAct = record("GovTrack · H.R. 6644, the 21st Century ROAD to Housing Act (status and CRS summary)", "https://www.govtrack.us/congress/bills/119/hr6644", "Enacted July 11, 2026; reviewed September 22, 2026",
+  "Public Law 119-101. Permitting and NEPA changes for housing, a permanent Rental Assistance Demonstration with a 555,000-unit cap, HOME conversions of vacant buildings (FY2027–31); it authorizes programs but appropriates no money.");
+const dcOrder = record("White House · Executive Order 14318, Accelerating Federal Permitting of Data Center Infrastructure", "https://www.whitehouse.gov/presidential-actions/2025/07/accelerating-federal-permitting-of-data-center-infrastructure/", "July 23, 2025; reviewed September 22, 2026",
+  "Expedited reviews, categorical exclusions, federal and military land, and loans, grants and tax incentives for AI data centers over 100 megawatts or $500 million.");
+const jprDataCenters = reporting("Oregon Capital Chronicle, via Jefferson Public Radio · Kotek pauses data centers on state land", "https://www.ijpr.org/politics-government/2026-09-09/gov-kotek-pauses-data-centers-on-state-land-capitol-demonstrators-want-her-to-go-further", "September 9, 2026; reviewed September 22, 2026",
+  "An estimated 144 data centers in Oregon; at least $450 million in property tax breaks this year; state-land deals paused through July 1, 2027.");
+const ibrCost = record("Interstate Bridge Replacement Program · Cost estimate and funding", "https://interstatebridge.org/CostEstimate", "2026 estimate; reviewed September 22, 2026",
+  "$14.4 billion likely corridor cost; $7.09 billion first phase; $5.7 billion committed including $2.1 billion in federal grants and $650 million of Washington’s federal money; $1 billion FTA Capital Investment Grant still sought; tolling as early as 2028.");
+const ballotpediaResults = (district: number, note: string): Evidence => reporting(
+  `Ballotpedia · Oregon’s ${district}${district === 1 ? "st" : district === 2 ? "nd" : district === 3 ? "rd" : "th"} Congressional District (certified 2024 results)`,
+  `https://ballotpedia.org/Oregon%27s_${district}${district === 1 ? "st" : district === 2 ? "nd" : district === 3 ? "rd" : "th"}_Congressional_District`,
+  "Reviewed September 22, 2026", note);
+
+/* ── Topics: the choices Congress faces this term, shared by all seven races ── */
+
+const federalTopics: ExtraTopic[] = [
+  {
+    id: "fed-hr1-medicaid",
+    label: "Medicaid and SNAP cuts",
+    short: "H.R. 1",
+    question: "Keep H.R. 1’s Medicaid work rules, six-month renewals and SNAP cuts, or repeal them?",
+    context:
+      "H.R. 1, signed July 4, 2025, requires adults 19–64 on the Oregon Health Plan to show 80 hours a month of work, school or volunteering from 2027 and to renew every six months. The Oregon Health Authority expects to check about 600,000 adults, says 100,000 to 200,000 could lose coverage, and puts the federal funding loss at $718 million to $1.4 billion a year.",
+  },
+  {
+    id: "fed-aca-credits",
+    label: "ACA premium credits",
+    short: "ACA credits",
+    question: "Restore the enhanced Affordable Care Act premium tax credits that expired December 31, 2025?",
+    context:
+      "The House passed a three-year restoration (H.R. 1834) 230–196 on January 8, 2026; the Senate has not taken it up, after a 51–48 cloture vote on the Democrats’ S. 3385 failed on December 11, 2025. Oregon marketplace plan selections fell from 139,688 for 2025 to 118,372 for 2026, the first year without the enhanced credits.",
+  },
+  {
+    id: "fed-tariffs",
+    label: "Tariffs",
+    short: "Tariffs",
+    question: "End the tariffs and take tariff power back from the president?",
+    context:
+      "The Supreme Court held 6–3 on February 20, 2026 that the emergency-powers law does not authorize tariffs; the administration ended those tariffs February 24, ran a 10% surcharge to July 24, then set 10–12.5% duties on about 60 countries. The House voted 219–211 on February 11, 2026 to end the Canada tariff emergency; the Senate voted 51–47 on October 30, 2025 to end the global one.",
+  },
+  {
+    id: "fed-ice-funding",
+    label: "ICE and border money",
+    short: "ICE funding",
+    question: "Fund the $70 billion expansion of ICE and Border Patrol through 2029 (the Secure America Act)?",
+    context:
+      "The Secure America Act, signed June 10, 2026, adds $38.5 billion for ICE and $26 billion for Customs and Border Protection through September 2029, on top of H.R. 1’s 2025 money; it passed 52–47 and 214–212. It followed a 76-day lapse in Homeland Security funding (February 14–April 30, 2026) over enforcement rules, and a judge’s November 7, 2025 order blocking federal troops in Portland.",
+  },
+  {
+    id: "fed-iran-war",
+    label: "Iran war powers",
+    short: "Iran war",
+    question: "Direct the president to end U.S. military involvement in the war with Iran?",
+    context:
+      "U.S. strikes on Iran began February 28, 2026. Both chambers adopted H.Con.Res. 86 directing withdrawal (House 215–208 on June 3; Senate 50–48 on June 23). After the president told Congress on July 10 that fighting had resumed, the House passed H.Con.Res. 89 214–208 on July 23 and a binding Senate resolution failed 47–49 the same day.",
+  },
+  {
+    id: "fed-fix-our-forests",
+    label: "Fix Our Forests Act",
+    short: "Forests",
+    question: "Pass the Fix Our Forests Act: faster thinning and logging on federal forests with shorter windows to sue?",
+    context:
+      "H.R. 471 passed the House 279–141 on January 23, 2025; it lets fireshed projects up to 10,000 acres skip full environmental review and gives challengers 120 days to sue. The Senate Agriculture Committee advanced S. 1462 18–5 in October 2025, but the full Senate has not voted. The administration separately repealed the 2001 Roadless Rule in August 2026, covering 58.5 million acres.",
+  },
+  {
+    id: "fed-housing-aid",
+    label: "Federal housing programs",
+    short: "Housing aid",
+    question: "Expand the federal role in housing, from the new ROAD to Housing law to more vouchers and tax credits?",
+    context:
+      "The 21st Century ROAD to Housing Act became law July 11, 2026 (Public Law 119-101) after votes of 358–32 and 85–5; it changes permitting and environmental review, makes the voucher-conversion program permanent and authorizes new grants, but money still depends on the annual HUD budget, now on a stopgap through December 11, 2026. Oregon permitted 14,839 homes in 2025 against a state target of 29,359.",
+  },
+  {
+    id: "fed-data-centers",
+    label: "Data-center costs",
+    short: "Data centers",
+    question: "Should federal policy rein in data centers’ power, water and cost impacts, or keep fast-tracking them?",
+    context:
+      "Executive Order 14318 (July 23, 2025) fast-tracks federal permits, land and financing for AI data centers over 100 megawatts. Oregon has an estimated 144 data centers receiving at least $450 million in property tax breaks this year,, and the governor paused data-center deals on state land through July 1, 2027 while a state advisory committee writes recommendations for the 2027 session.",
+  },
+];
+
+topics.push({
+  raceIds: ["oregon-us-senate", "oregon-house-1", "oregon-house-2", "oregon-house-3", "oregon-house-4", "oregon-house-5", "oregon-house-6"],
+  topics: federalTopics,
+});
+
+/* ── Topic stances: explicit, sourced, never inferred; alphabetical within each race ── */
+
+/* The incumbents' package votes read the same way on every board: a vote on the whole bill. */
+const HR1_HOUSE_NO = "Voted no on final House passage of H.R. 1 on July 3, 2025 (218–214), a vote on the whole package, including the Medicaid work rules, six-month renewals and SNAP cuts.";
+const ACA_HOUSE_YES = "Voted yes on January 8, 2026 on H.R. 1834, a three-year restoration of the enhanced premium tax credits; it passed 230–196 and awaits the Senate.";
+const TARIFF_HOUSE_YES = "Voted yes on February 11, 2026 on H.J.Res. 72 to end the national emergency behind the Canada tariffs; it passed 219–211.";
+const ICE_HOUSE_NO = "Voted no on June 9, 2026 on the Secure America Act’s $70 billion for ICE and Border Patrol through 2029; it passed 214–212.";
+const IRAN_HOUSE_YES = "Voted yes on July 23, 2026 on H.Con.Res. 89 directing the president to remove U.S. forces from hostilities with Iran (214–208), as on June 3.";
+const FOFA_HOUSE_NO = "Voted no on January 23, 2025 on the Fix Our Forests Act (H.R. 471), which passed 279–141.";
+const FOFA_HOUSE_YES = "Voted yes on January 23, 2025 on the Fix Our Forests Act (H.R. 471), which passed 279–141.";
+const ROAD_HOUSE_YES = "Voted yes on June 23, 2026 on final passage of the 21st Century ROAD to Housing Act (358–32), now Public Law 119-101.";
+
+topicStances.push(
+  /* ── U.S. Senate ── */
+  stance("david-brock-smith", "fed-fix-our-forests", "partial", "Active forest management",
+    "Says he has led and will keep leading on active forest management, fuel reduction and landowner partnerships; he does not say whether he would vote for the Fix Our Forests Act.", dbsIssues),
+  stance("david-brock-smith", "fed-data-centers", "supports", "Data centers pay costs",
+    "Would ensure data centers are accountable, protect natural resources and prevent their costs from being shifted onto Oregon households, citing strain on water, farmland and energy costs.", dbsStatement),
+  stance("chris-henry", "fed-hr1-medicaid", "partial", "End billionaire tax breaks",
+    "Would end what he calls amazing tax breaks for billionaires, saying 40% of the latest Trump tax breaks go to the top 1%; he does not address H.R. 1’s Medicaid or SNAP changes.", henryStatement),
+  stance("chris-henry", "fed-aca-credits", "partial", "Medicare for All",
+    "Backs Medicare for All, noting over 30 million Americans have no insurance; he does not say whether he would restore the expired premium tax credits in the meantime.", henryStatement),
+  stance("chris-henry", "fed-tariffs", "supports", "Stop ludicrous tariffs",
+    "Would stop what he calls ludicrous tariffs and the free-trade deals that let corporations override labor, consumer and environmental protections.", henryStatement),
+  stance("chris-henry", "fed-iran-war", "partial", "End pointless wars",
+    "Calls for ending pointless wars and cutting a military he says takes 50% of discretionary spending, and would tax oil companies’ excess profits from the Iran war; he does not address the war-powers resolutions.", henryStatement),
+  stance("jeff-merkley", "fed-hr1-medicaid", "opposes", "Voted no",
+    "Voted no on passage of H.R. 1 on July 1, 2025 (50–50, tie broken by the vice president), a vote on the whole package, including the Medicaid work rules and SNAP cuts.", hr1Senate),
+  stance("jeff-merkley", "fed-aca-credits", "supports", "Voted to extend",
+    "Voted yes on December 11, 2025 to advance S. 3385, a three-year extension of the enhanced premium tax credits; cloture failed 51–48.", acaSenate),
+  stance("jeff-merkley", "fed-tariffs", "supports", "Voted to end tariffs",
+    "Voted yes on October 30, 2025 on S.J.Res. 88 to end the national emergency behind the global tariffs; it passed 51–47.", tariffSenate),
+  stance("jeff-merkley", "fed-ice-funding", "opposes", "Voted no",
+    "Voted no on June 5, 2026 on the Secure America Act’s $70 billion for ICE and Border Patrol through 2029; it passed 52–47.", iceSenate),
+  stance("jeff-merkley", "fed-iran-war", "supports", "Voted to end involvement",
+    "Voted yes on June 23, 2026 on H.Con.Res. 86 directing the president to remove U.S. forces from hostilities with Iran; it was agreed to 50–48.", iranSenate),
+  stance("jeff-merkley", "fed-fix-our-forests", "partial", "Biomass markets bill",
+    "Introduced the Wildfire Reduction Market Expansion Act with Rep. Bentz on July 22, 2026, paying for hazardous-fuel removal through the Renewable Fuel Standard; the Senate has not voted on the Fix Our Forests Act.", merkleyBiomass),
+  stance("jeff-merkley", "fed-housing-aid", "supports", "Voted for ROAD Act",
+    "Voted yes on June 22, 2026 on final passage of the 21st Century ROAD to Housing Act (85–5), which became law July 11, 2026.", housingSenate),
+  stance("jeff-merkley", "fed-data-centers", "partial", "Asked state to act",
+    "With Sen. Wyden, asked Oregon’s data center advisory committee on July 2, 2026 to weigh rising electricity costs, water use, farmland rezoning and tribal rights; the letter proposes no federal action.", merkleyDataCenters),
+
+  /* ── District 1 ── */
+  stance("barbara-j-kahl", "fed-hr1-medicaid", "partial", "Spending constraints",
+    "Wants real spending constraints, cuts to redundant federal offices and removal from benefits of people who do not qualify; she does not say whether she would keep or repeal H.R. 1’s Medicaid and SNAP changes.", kahlSurvey),
+    // Not a stance: general stewardship language that names no bill; left as a gap.
+  stance("barbara-j-kahl", "fed-housing-aid", "partial", "Federal buyer incentives",
+    "Would use federal incentives to reduce financing barriers for first-time buyers and working families and streamline permitting; she does not address vouchers or the housing tax credit.", kahlHome),
+  stance("suzanne-bonamici", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
+  stance("suzanne-bonamici", "fed-aca-credits", "supports", "Voted to restore", ACA_HOUSE_YES, acaHouse),
+  stance("suzanne-bonamici", "fed-tariffs", "supports", "Voted to end tariffs", TARIFF_HOUSE_YES, tariffHouse),
+  stance("suzanne-bonamici", "fed-ice-funding", "opposes", "Voted no", ICE_HOUSE_NO, iceHouse),
+  stance("suzanne-bonamici", "fed-iran-war", "supports", "Voted to end involvement", IRAN_HOUSE_YES, iranHouse),
+  stance("suzanne-bonamici", "fed-fix-our-forests", "opposes", "Voted no", FOFA_HOUSE_NO, fofaHouse),
+  stance("suzanne-bonamici", "fed-housing-aid", "supports", "Voted for ROAD Act", ROAD_HOUSE_YES, housingHouse),
+  stance("suzanne-bonamici", "fed-data-centers", "supports", "No cost-shifting",
+    "Says data centers should not be able to raise costs or exploit Oregon’s natural resources for profit, and will keep fighting for clean, renewable energy; she names no federal bill.", bonamiciStatement),
+
+  /* ── District 2 ── */
+  stance("chris-beck", "fed-hr1-medicaid", "opposes", "Repeal H.R. 1",
+    "Would repeal H.R. 1 to restore what he calls the mountain of funding it stripped from Medicaid and SNAP, saying Medicaid covers nearly 40% of District 2 residents and 55% of its children.", beckIssues),
+  stance("chris-beck", "fed-aca-credits", "partial", "Premiums skyrocketing",
+    "Says premiums for everybody with Marketplace plans have skyrocketed and would expand rural health-care access; he does not say whether he would restore the expired enhanced premium tax credits.", beckIssues),
+  stance("chris-beck", "fed-tariffs", "supports", "End the tariffs",
+    "Would repeal the tariffs, which he says cost rural Oregon wheat and fruit markets abroad, and seek a bipartisan approach to trade and legal immigration.", beckIssues),
+  stance("chris-beck", "fed-iran-war", "supports", "End the Iran war",
+    "Would end the Iran war, counting 18 American lives lost, 600-plus wounded and more than $100 billion spent, and blames it for high gas and diesel prices; he does not name the war-powers resolutions.", beckIssues),
+  stance("chris-beck", "fed-fix-our-forests", "partial", "Restore Forest Service cuts",
+    "Would reverse what he calls the 40% cut to Forest Service wildfire prevention and restore the thousands of staff lost in 2025; he does not say whether he would vote for the Fix Our Forests Act.", beckIssues),
+  stance("chris-beck", "fed-housing-aid", "partial", "Rural housing programs",
+    "Would steer USDA rural housing and Community Facilities lending toward Main Street districts and fund low-interest loans for first-time rural buyers by trimming vacation-home tax breaks; vouchers and the housing tax credit go unmentioned.", beckIssues),
+  stance("chris-beck", "fed-data-centers", "supports", "Pause new data centers",
+    "Would pause new data-center construction, saying data centers in some communities pollute the water and raise energy prices, so everyone pays.", beckIssues),
+  stance("cliff-bentz", "fed-hr1-medicaid", "supports", "Voted yes",
+    "Voted yes on final House passage of H.R. 1 on July 3, 2025 (218–214), a vote on the whole package, including the Medicaid work rules, six-month renewals and SNAP cuts.", hr1House),
+  stance("cliff-bentz", "fed-aca-credits", "opposes", "Voted no",
+    "Voted no on January 8, 2026 on H.R. 1834, the three-year restoration of the enhanced premium tax credits, which passed 230–196.", acaHouse),
+  stance("cliff-bentz", "fed-tariffs", "opposes", "Voted to keep tariffs",
+    "Voted no on February 11, 2026 on H.J.Res. 72, which ended the national emergency behind the Canada tariffs (219–211).", tariffHouse),
+  stance("cliff-bentz", "fed-ice-funding", "supports", "Voted yes",
+    "Voted yes on June 9, 2026 on the Secure America Act’s $70 billion for ICE and Border Patrol through 2029; it passed 214–212.", iceHouse),
+  stance("cliff-bentz", "fed-iran-war", "opposes", "Voted no",
+    "Voted no on July 23, 2026 on H.Con.Res. 89 directing the president to remove U.S. forces from hostilities with Iran (214–208), as on June 3.", iranHouse),
+  stance("cliff-bentz", "fed-fix-our-forests", "supports", "Voted yes", FOFA_HOUSE_YES, fofaHouse),
+  stance("cliff-bentz", "fed-housing-aid", "supports", "Voted for ROAD Act", ROAD_HOUSE_YES, housingHouse),
+);
+
+topicStances.push(
+  /* ── District 3 ── */
+  stance("maxine-e-dexter", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
+  stance("maxine-e-dexter", "fed-aca-credits", "supports", "Voted to restore", ACA_HOUSE_YES, acaHouse),
+  stance("maxine-e-dexter", "fed-tariffs", "supports", "Voted to end tariffs", TARIFF_HOUSE_YES, tariffHouse),
+  stance("maxine-e-dexter", "fed-ice-funding", "opposes", "Voted no", ICE_HOUSE_NO, iceHouse),
+  stance("maxine-e-dexter", "fed-iran-war", "supports", "Voted to end involvement", IRAN_HOUSE_YES, iranHouse),
+  stance("maxine-e-dexter", "fed-fix-our-forests", "opposes", "Voted no", FOFA_HOUSE_NO, fofaHouse),
+  stance("maxine-e-dexter", "fed-housing-aid", "supports", "Voted for ROAD Act", ROAD_HOUSE_YES, housingHouse),
+
+  /* ── District 4 ── */
+  stance("monique-despain", "fed-ice-funding", "partial", "Fund border security",
+    "Would fund an all-of-the-above border toolkit of barriers, sensors and drones and remove noncitizens who commit serious crimes, with a one-time earned path for long-settled residents; she does not address the $70 billion ICE package.", despainIssues),
+  stance("monique-despain", "fed-fix-our-forests", "supports", "Supported from the start",
+    "Says she supported the Fix Our Forests Act from the beginning and has filed public comment backing rescission of the 2001 Roadless Rule; wants thinning, salvage harvests and rapid fire suppression.", despainIssues),
+  stance("monique-despain", "fed-housing-aid", "partial", "Lift federal restrictions",
+    "Would have the federal government lift housing restrictions and encourage workforce housing, ending permitting costs and land-use rules she says stifle construction; she does not address vouchers or tax credits.", despainIssues),
+  stance("justin-filip", "fed-aca-credits", "partial", "Medicare for All",
+    "Would implement a national improved Medicare for All program guaranteeing universal access; he does not say whether he would restore the expired premium tax credits in the meantime.", filipPlatform),
+  stance("justin-filip", "fed-tariffs", "partial", "Fair trade agreements",
+    "Would establish global fair-trade agreements to protect workers and communities; he does not say whether the current tariffs should end.", filipPlatform),
+  stance("justin-filip", "fed-ice-funding", "opposes", "Abolish ICE",
+    "Would abolish ICE and replace it with an Office of Citizenship, Refugees and Immigration Services, with amnesty and a path to citizenship.", filipPlatform),
+    // Not a stance: a military-spending goal that names neither the war nor the resolutions; left as a gap.
+  stance("justin-filip", "fed-fix-our-forests", "opposes", "A trojan horse",
+    "Calls the Fix Our Forests Act a trojan horse for gutting bedrock environmental laws under the guise of wildfire management, and asks the Senate to reject it.", filipHome),
+  stance("justin-filip", "fed-housing-aid", "partial", "Federal housing dollars",
+    "Wants federal dollars brought back to the district for the housing and unhoused crisis and involuntary homelessness abolished; he does not address the ROAD Act, vouchers or tax credits.", filipMeet),
+  stance("justin-filip", "fed-data-centers", "supports", "Ban private data centers",
+    "Would ban privately built data centers, saying they strain the grid, drive up rates and consume massive amounts of water, and calls for public ownership of such infrastructure.", filipHome),
+  stance("val-hoyle", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
+  stance("val-hoyle", "fed-aca-credits", "supports", "Voted to restore", ACA_HOUSE_YES, acaHouse),
+  stance("val-hoyle", "fed-tariffs", "supports", "Voted to end tariffs", TARIFF_HOUSE_YES, tariffHouse),
+  stance("val-hoyle", "fed-ice-funding", "opposes", "Voted no", ICE_HOUSE_NO, iceHouse),
+  stance("val-hoyle", "fed-iran-war", "supports", "Voted to end involvement", IRAN_HOUSE_YES, iranHouse),
+  stance("val-hoyle", "fed-fix-our-forests", "supports", "Voted yes", FOFA_HOUSE_YES, fofaHouse),
+  stance("val-hoyle", "fed-housing-aid", "supports", "Voted for ROAD Act", ROAD_HOUSE_YES, housingHouse),
+
+  /* ── District 5 ── */
+  stance("patti-adair", "fed-hr1-medicaid", "partial", "Make tax cuts permanent",
+    "Would make no tax on tips, overtime and Social Security permanent and raise the limits, and increase the child tax credit; she does not address Medicaid or SNAP.", adairStatement),
+  stance("patti-adair", "fed-ice-funding", "partial", "Backed funding compromise",
+    "Criticized Rep. Bynum’s February 3, 2026 vote against a bipartisan funding package that included a short Homeland Security extension; she has not said whether she would fund the $70 billion ICE expansion.", adairShutdown),
+  stance("patti-adair", "fed-data-centers", "supports", "Data-center disclosure",
+    "Would propose legislation requiring Big Tech to be transparent about the impacts data centers have on air quality, water quality and electricity costs.", adairStatement),
+  stance("janelle-s-bynum", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
+  stance("janelle-s-bynum", "fed-aca-credits", "supports", "Voted to restore", ACA_HOUSE_YES, acaHouse),
+  stance("janelle-s-bynum", "fed-tariffs", "supports", "Voted to end tariffs", TARIFF_HOUSE_YES, tariffHouse),
+  stance("janelle-s-bynum", "fed-ice-funding", "opposes", "Voted no", ICE_HOUSE_NO, iceHouse),
+  stance("janelle-s-bynum", "fed-iran-war", "supports", "Voted to end involvement", IRAN_HOUSE_YES, iranHouse),
+  stance("janelle-s-bynum", "fed-fix-our-forests", "supports", "Voted yes", FOFA_HOUSE_YES, fofaHouse),
+  stance("janelle-s-bynum", "fed-housing-aid", "supports", "Voted for ROAD Act", ROAD_HOUSE_YES, housingHouse),
+  stance("janelle-s-bynum", "fed-data-centers", "partial", "Study bill drivers",
+    "Introduced the BILL Drivers Act on July 10, 2026 to have the Energy Information Administration report what is driving electricity bills, including data centers; it takes no position on fast-tracking or who pays.", bynumBillDrivers),
+  stance("andrea-townsend", "fed-iran-war", "partial", "End war spending",
+    "Would end war and redirect resources toward human and ecological needs; her questionnaire does not name the Iran war or the war-powers resolutions.", townsendQuestionnaire),
+  stance("andrea-townsend", "fed-housing-aid", "partial", "Social housing",
+    "Would address the housing crisis through deeply affordable social housing and tenant protections; she does not address the ROAD Act, vouchers or tax credits.", townsendQuestionnaire),
+
+  /* ── District 6 ── */
+  stance("david-russ", "fed-ice-funding", "partial", "Secure border, removals",
+    "Would immediately secure the borders and remove those he calls invaders, and make aiding illegal border crossers a federal felony; he does not address funding levels for ICE or Border Patrol.", russHome),
+  stance("david-russ", "fed-fix-our-forests", "partial", "Return lands to states",
+    "Would return federal public lands to state and local control; he does not say whether he would vote for the Fix Our Forests Act.", russHome),
+  stance("andrea-salinas", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
+  stance("andrea-salinas", "fed-aca-credits", "supports", "Voted to restore", ACA_HOUSE_YES, acaHouse),
+  stance("andrea-salinas", "fed-tariffs", "supports", "Voted to end tariffs", TARIFF_HOUSE_YES, tariffHouse),
+  stance("andrea-salinas", "fed-ice-funding", "opposes", "Voted no", ICE_HOUSE_NO, iceHouse),
+  stance("andrea-salinas", "fed-iran-war", "supports", "Voted to end involvement", IRAN_HOUSE_YES, iranHouse),
+  stance("andrea-salinas", "fed-fix-our-forests", "opposes", "Voted no", FOFA_HOUSE_NO, fofaHouse),
+  stance("andrea-salinas", "fed-housing-aid", "supports", "Voted for ROAD Act", ROAD_HOUSE_YES, housingHouse),
+  stance("andrea-salinas", "fed-data-centers", "partial", "Public infrastructure first",
+    "Says she prioritized public infrastructure over corporate-owned data centers; her statement does not say what federal rule or funding choice that involved.", salinasStatement),
+);
+
+/* ── Stakes: what Congress decides this term, in sourced facts ─────────── */
+
+type StakeItem = RaceStakes["items"][number];
+const medicaidItem: StakeItem = {
+  label: "Medicaid work rules",
+  text: "H.R. 1’s work-or-activity rules for adults 19–64 on the Oregon Health Plan start in 2027, with renewals every six months. OHA expects to check about 600,000 adults, says 100,000 to 200,000 could lose coverage, and puts the federal funding loss at $718 million to $1.4 billion a year.",
+  source: opbOhp,
+};
+const acaItem: StakeItem = {
+  label: "ACA premium credits",
+  text: "The enhanced premium tax credits expired December 31, 2025; the House-passed three-year restoration (230–196 on January 8, 2026) awaits the Senate. Oregon marketplace plan selections fell from 139,688 for 2025 to 118,372 for 2026.",
+  source: kffMarketplace,
+};
+const fundingItem: StakeItem = {
+  label: "December 11 deadline",
+  text: "The stopgap signed September 2, 2026 funds the government only through December 11 (House 370–48, Senate 90–6). The full-year 2027 bills for HUD, the Forest Service and Homeland Security, and any shutdown, fall to the members elected in November.",
+  source: crHouse,
+};
+const iceItem: StakeItem = {
+  label: "ICE expansion",
+  text: "The Secure America Act, signed June 10, 2026, gives ICE $38.5 billion and Customs and Border Protection $26 billion through September 2029, without the detention and oversight conditions carried in annual spending bills. It followed a 76-day lapse in Homeland Security funding over enforcement rules.",
+  source: aicSecureAmerica,
+};
+const iranItem: StakeItem = {
+  label: "Iran war",
+  text: "U.S. strikes on Iran began February 28, 2026. Both chambers adopted a withdrawal resolution in June; the president told Congress on July 10 that fighting had resumed, the House passed a second resolution 214–208 on July 23, and a binding Senate measure failed 47–49. Any authorization or funding vote comes to the next Congress.",
+  source: rollCallIran,
+};
+const tariffItem: StakeItem = {
+  label: "Tariff power",
+  text: "The Supreme Court ruled 6–3 on February 20, 2026 that the emergency-powers law does not authorize tariffs. The administration ran a 10% surcharge to July 24 and then set 10–12.5% duties on about 60 countries under trade law; Congress can end, extend or rewrite those tariffs itself.",
+  source: scotusTariffs,
+};
+const forestsItem: StakeItem = {
+  label: "Fix Our Forests Act",
+  text: "The bill passed the House 279–141 in January 2025 and a Senate committee 18–5 in October 2025 but has had no Senate floor vote; it would let 10,000-acre fireshed projects skip full review and give challengers 120 days to sue. The 2001 Roadless Rule was repealed in August 2026.",
+  source: fofaWiki,
+};
+const housingItem: StakeItem = {
+  label: "Housing law to fund",
+  text: "The 21st Century ROAD to Housing Act (Public Law 119-101, July 11, 2026) rewrites permitting and environmental-review rules, makes the voucher-conversion program permanent with a 555,000-unit cap and authorizes new grants, but appropriates no money; the next Congress decides what it funds.",
+  source: roadAct,
+};
+const dataCenterItem: StakeItem = {
+  label: "Data centers",
+  text: "Oregon has an estimated 144 data centers receiving at least $450 million in property tax breaks this year. The governor paused data-center deals on state land through July 1, 2027, while federal policy since July 2025 fast-tracks permits and financing for large AI data centers.",
+  source: jprDataCenters,
+};
+const bridgeItem: StakeItem = {
+  label: "Interstate Bridge",
+  text: "The 2026 estimate puts the I-5 corridor at $14.4 billion and the first phase at $7.09 billion, with $5.7 billion committed, including $2.1 billion in federal grants. The program still seeks a $1 billion federal transit grant, and tolling could start in 2028.",
+  source: ibrCost,
+};
+const portlandItem: StakeItem = {
+  label: "Federal troops in Portland",
+  text: "A federal judge permanently blocked the National Guard deployment to Portland on November 7, 2025, and the president announced withdrawals December 31. The South Portland ICE facility was the focus of protests from September 2025; the city says it plays no role in immigration enforcement.",
+  source: portlandTroops,
+};
+const HOUSE_ROLE = "A representative votes on federal taxes, spending, war powers and every bill the House takes up, and the two-year term puts the winner in the Congress that faces the December 11 funding deadline and the 2027 budget.";
+
+stakes.push(
+  {
+    raceId: "oregon-us-senate",
+    intro:
+      "A senator votes on every federal law, budget and treaty, confirms judges and cabinet officers, and under the Senate’s 60-vote rules can hold or move bills the House has passed. The seat is statewide for a six-year term running to January 2033. The next Senate decides whether the House-passed premium-credit restoration, the Fix Our Forests Act and any Iran authorization get a vote, and writes the 2027 spending bills after the December 11 stopgap runs out.",
+    items: [medicaidItem, acaItem, fundingItem, iceItem, iranItem, tariffItem, forestsItem, dataCenterItem],
+  },
+  {
+    raceId: "oregon-house-1",
+    intro:
+      `${HOUSE_ROLE} District 1 covers Clatsop, Columbia, Tillamook and Washington counties and northwest Portland, including Hillsboro’s data-center corridor and the Oregon side of the Interstate Bridge’s I-5 traffic. The seat was decided 68.6% to 28.1% in 2024.`,
+    items: [medicaidItem, acaItem, fundingItem, iceItem, portlandItem, tariffItem, bridgeItem, dataCenterItem],
+  },
+  {
+    raceId: "oregon-house-2",
+    intro:
+      `${HOUSE_ROLE} District 2 is eastern Oregon and the southern Cascades, from Medford, Grants Pass and Klamath Falls to Pendleton, Hermiston, Ontario and Baker City, the state’s most federal-forest-dependent and Medicaid-dependent district. The seat was decided 63.9% to 32.8% in 2024.`,
+    items: [medicaidItem, acaItem, fundingItem, forestsItem, tariffItem, iranItem, iceItem, dataCenterItem],
+  },
+  {
+    raceId: "oregon-house-3",
+    intro:
+      `${HOUSE_ROLE} District 3 is Portland east of the Willamette, Gresham, Troutdale and Fairview, Hood River County and part of Clackamas County, and it holds the South Portland ICE facility. The open seat was decided 67.7% to 25.2% in 2024.`,
+    items: [medicaidItem, acaItem, fundingItem, iceItem, portlandItem, iranItem, tariffItem, bridgeItem],
+  },
+  {
+    raceId: "oregon-house-4",
+    intro:
+      `${HOUSE_ROLE} District 4 is the south coast and southern Willamette Valley: Eugene, Springfield, Corvallis, Roseburg, Coos Bay, Florence and Newport, with federal forests and O&C lands across its southern counties. The seat was decided 51.7% to 43.9% in 2024, with 2.7% to a third candidate.`,
+    items: [medicaidItem, acaItem, fundingItem, forestsItem, iceItem, iranItem, tariffItem, housingItem],
+  },
+  {
+    raceId: "oregon-house-5",
+    intro:
+      `${HOUSE_ROLE} District 5 runs from the Clackamas County suburbs and part of southeast Portland over the Cascades to Bend and Redmond, with parts of Marion and Linn counties along I-5. The seat was decided 47.7% to 45.0% in 2024, with 7.2% split among three other candidates.`,
+    items: [medicaidItem, acaItem, fundingItem, iceItem, iranItem, forestsItem, tariffItem, dataCenterItem],
+  },
+  {
+    raceId: "oregon-house-6",
+    intro:
+      `${HOUSE_ROLE} District 6 is Salem and Keizer, Yamhill and Polk counties, Tigard and Tualatin, and part of Marion County including Woodburn, a district of farms, nurseries and state workers. The seat was decided 53.3% to 46.5% in 2024.`,
+    items: [medicaidItem, acaItem, fundingItem, iceItem, iranItem, tariffItem, housingItem, forestsItem],
+  },
+);

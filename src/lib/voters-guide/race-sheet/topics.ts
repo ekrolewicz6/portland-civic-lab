@@ -1,10 +1,10 @@
 import type { ExtraTopic } from "./types";
 
 /**
- * Extra columns a reader can add to the grid: the concrete choices this
- * Council has faced or will face. Where a topic matches a decision,
- * incumbents' recorded votes render as pills; every other cell is an
- * explicit, sourced statement or a gap. Order is editorial and disclosed.
+ * The boards beneath the grid: the concrete choices this Council has faced
+ * or will face. Where a topic matches a decision, incumbents' recorded votes
+ * render as pills; every other row is an explicit, sourced statement or a
+ * gap. Order is editorial and disclosed.
  */
 export const extraTopics: ExtraTopic[] = [
   {

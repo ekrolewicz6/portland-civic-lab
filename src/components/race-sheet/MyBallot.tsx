@@ -281,7 +281,7 @@ export default function MyBallot({
                   </div>
                   <div className={styles.slotTop}>
                     <div className={styles.slotBody}>
-                      <MiniChips row={row} />
+                      <MiniChips row={row} issues={sheet.issues} />
                       {votes.length > 0 && (
                         <div className={styles.slotVotes}>
                           <p className={styles.metaLabel}>

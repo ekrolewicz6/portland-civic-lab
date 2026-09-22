@@ -132,9 +132,7 @@ export default async function RacePage({
         </div>
       </header>
 
-      <RaceSheet sheet={clientSheet(sheet)} />
-
-      <Stakes sheet={sheet} />
+      <RaceSheet sheet={clientSheet(sheet)} stakes={<Stakes sheet={sheet} />} />
 
       {sheet.office.hasCouncilRecord && <FourVotes sheet={sheet} />}
 

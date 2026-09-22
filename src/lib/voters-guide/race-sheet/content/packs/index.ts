@@ -8,6 +8,7 @@ import { pack as legislature } from "./legislature";
 import { pack as cityMultnomah } from "./city-multnomah";
 import { pack as cityWashington } from "./city-washington";
 import { pack as cityClackamas } from "./city-clackamas";
+import { pack as council } from "./council";
 
-/** Every non-council pack, in hub order. The council races keep their original content files. */
-export const packs: RacePack[] = [countyMultnomah, countyWashington, countyClackamas, state, federal, legislature, cityMultnomah, cityWashington, cityClackamas];
+/** Every pack, in hub order. The council races keep their original content files; their pack carries only the stakes block. */
+export const packs: RacePack[] = [council, countyMultnomah, countyWashington, countyClackamas, state, federal, legislature, cityMultnomah, cityWashington, cityClackamas];

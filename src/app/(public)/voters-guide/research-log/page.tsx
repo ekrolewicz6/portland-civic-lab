@@ -19,6 +19,56 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="topic-boards-2026-09-22">September 22, 2026 · Every race: what it decides, and where each candidate stands on it</h2>
+        <p>
+          Readers told us the topic columns were unusable: with every topic
+          added, the governor’s grid ran to 2,472 pixels, half of it
+          off-screen, and an opened chip showed an empty panel whose text sat
+          a screen to the left. Each topic is now a board beneath the grid:
+          the question, who is on record, and, open, every candidate A–Z with
+          the recorded vote or our short reading, the sentence and the source.
+          The four grid columns keep their ids for every race but are worded
+          for the office (the county’s “Homelessness and housing” and “Crisis
+          care, jail and deflection”; the state’s “Taxes, the kicker and the
+          budget”), and “What’s at stake” now sits between the grid and the
+          boards on every race, including the two Council districts, which had
+          none.
+        </p>
+        <p>
+          The same day we swept every candidate in every race for statements
+          on those choices: campaign sites and pamphlet statements, the
+          Secretary of State’s filed statements, questionnaires (OPB,
+          Willamette Week, Portland Mercury, City Club, 350PDX, Ballotpedia),
+          forums and podcasts with readable transcripts, board and council
+          minutes, floor and roll-call votes for sitting officials, and
+          reported quotes. Before the sweep, 40 of the 48 races had no topics
+          and no stakes block. After it, every race has both: 106 topics across
+          the six kinds of office, 556 explicit stances (170 of them recorded
+          votes or actions cited to the official record, 33 reported quotes,
+          the rest the candidate’s own published words), and sourced stakes
+          for all 48 races. Multnomah County’s list grew from nine topics to
+          thirteen and now leads with the shelter cuts, the city-county
+          agreement, the supportive housing tax and homeless-services
+          oversight.
+        </p>
+        <p>
+          A new label, “partial,” records a statement that speaks to a topic
+          but not to the exact choice the topic asks; its sentence says what it
+          leaves unsaid, and the board marks it. John McDonald’s “Modernize
+          Moda Center” is the model: his statement wants the arena modernized
+          and the Blazers kept but says nothing about public money, so it had
+          been left as a gap under the strict rule while the same words sat in
+          his money column. 186 stances carry the label. Statements that named
+          only a value or a broad goal (“restore public order,” “manage money
+          like a household”) were not recorded, and seventeen such entries were
+          removed in review. Where a candidate’s only statement on a topic is
+          a 2024 questionnaire, the sentence says “in 2024.” Every entry is
+          reviewedBy pending. The nine sweep reports, with the venues checked
+          for each candidate, the questions left for each campaign and each
+          agent’s “least sure” list, are in the repository under
+          research/voters-guide-2026/outreach-2026-09-22; nothing has been
+          sent to any campaign.
+        </p>
         <h2 id="all-races-2026-09-22">September 22, 2026 · Every researched race, in the Council format</h2>
         <p>
           Published the 46 races researched on September 18 that had stayed

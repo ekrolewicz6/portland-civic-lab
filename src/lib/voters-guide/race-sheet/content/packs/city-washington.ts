@@ -10,11 +10,15 @@ import {
   type Delivery,
   type DeliveryStep,
   type DistrictInfo,
+  type ExtraTopic,
   type IssueLine,
   type PrimaryStatement,
   type RacePack,
+  type RaceStakes,
+  type RaceTopics,
   type RoleOverride,
   type StanceChip,
+  type TopicStance,
 } from "../../types";
 import type { OwnWords, OwnWordsRule } from "../own-words";
 
@@ -1298,6 +1302,756 @@ const choice: ChoiceParagraph[] = [
   ),
 ];
 
+/* ── Topics, stances and stakes: the official record (September 22, 2026) ── */
+
+/**
+ * Live choices for each city, each candidate's explicit stance on them, and
+ * what the seat decides this term. A sitting official's recorded vote or
+ * official action is "Public record" (cited to the agenda or minutes and
+ * dated); a news outlet's quote is "Reporting"; the candidate's own words
+ * are "Candidate statement". Nothing is inferred from party, endorsements
+ * or silence; a missing cell is a research gap.
+ */
+const TOPICS_REVIEWED = { reviewedBy: "pending", reviewedOn: "2026-09-22" } as const;
+const record = (label: string, url: string, date: string, note?: string): Evidence => ({
+  label,
+  url,
+  kind: "Public record",
+  date,
+  ...(note ? { note } : {}),
+});
+const reporting = (label: string, url: string, date: string, note?: string): Evidence => ({
+  label,
+  url,
+  kind: "Reporting",
+  date,
+  ...(note ? { note } : {}),
+});
+const stance = (
+  candidateId: string,
+  topicId: string,
+  s: TopicStance["stance"],
+  chipText: string,
+  text: string,
+  source: Evidence,
+): TopicStance => ({ candidateId, topicId, stance: s, chip: chipText, text, source, ...TOPICS_REVIEWED });
+
+/* Beaverton: council packets on the city's Diligent Community portal, the Beaverton Valley Times and the candidates' own pages */
+const BVT_DOC = "https://beaverton.community.highbond.com/document";
+const bvtJul7 = record(
+  "Beaverton City Council · July 7, 2026 agenda packet (Agenda Bills 26134 and 26135: General Services Fee and Street Maintenance Fee; January 20, February 3 and May 5, 2026 minutes)",
+  `${BVT_DOC}/20914`,
+  "July 7, 2026; read September 22, 2026",
+  "Ordinance 4881: $9.50 a month per single-family equivalent, rising 8% a year, about $5.3 million a year; staff’s alternative was “the elimination of 22-40 positions.” Ordinance 4882: a street fee ramping up $5 a year over three years. Both billed from August 1, 2026.",
+);
+const bvtSep8 = record(
+  "Beaverton City Council · September 8, 2026 agenda packet (Agenda Bill 26151: Fiscal Sustainability update)",
+  `${BVT_DOC}/22148`,
+  "September 8, 2026; read September 22, 2026",
+  "FY 2026–27 closed a $16.2 million general-fund gap with $13.5 million in new revenue, $2.7 million in cuts (6.6 positions) and $2.5 million one-time; FY 2027–28 potential deficit $6–9 million; two $1.8 million reduction packages; levy and no-levy scenarios.",
+);
+const bvtJun16 = record(
+  "Beaverton City Council · June 16, 2026 agenda packet (Agenda Bill 26110, Resolution 4957 adopting the FY 2026–27 budget)",
+  `${BVT_DOC}/20040`,
+  "June 16, 2026; read September 22, 2026",
+  "Total budget $514,218,807; tax levy at the $4.6180 permanent rate.",
+);
+const bvtBura = record(
+  "Beaverton Urban Redevelopment Agency · September 22, 2026 packet (project updates: the Loop, Beaverdam Road, BUILD grant)",
+  `${BVT_DOC}/22523`,
+  "September 22, 2026; read September 22, 2026",
+);
+const bvtSep15 = record(
+  "Beaverton City Council · September 15, 2026 agenda packet (Agenda Bill 26154: city manager recruitment; May 5, 2026 minutes)",
+  `${BVT_DOC}/22310`,
+  "September 15, 2026; read September 22, 2026",
+);
+const bvtShelter = record(
+  "City of Beaverton · The Beaverton Shelter",
+  "https://beavertonoregon.gov/the-beaverton-shelter",
+  "City page; read September 22, 2026",
+);
+const vtKocher = reporting(
+  "Beaverton Valley Times · Evelyn Kocher seeks Beaverton City Council Position 1 seat",
+  "https://beavertonvalleytimes.com/2026/04/16/evelyn-kocher-seeks-beaverton-city-council-position-1-seat/",
+  "April 16, 2026; read September 22, 2026",
+  "Reported statement; quote as printed by the Beaverton Valley Times.",
+);
+const philipAbout = site("Philip · about Rachel", "https://www.rachelforbeaverton.com/about-rachel");
+const philipSurvey = site(
+  "Philip · Ballotpedia Candidate Connection survey (her own answers)",
+  "https://ballotpedia.org/Rachel_Philip_(Beaverton_City_Council_Position_1,_Oregon,_candidate_2026)",
+);
+
+const beavertonTopics: ExtraTopic[] = [
+  {
+    id: "beaverton-utility-fees",
+    label: "Utility-bill fees",
+    short: "New fees",
+    question: "Keep the new $14.50-a-month general-services and street fees on utility bills, or repeal them or send them to voters?",
+    context:
+      "On July 7, 2026 the council adopted a $9.50-a-month general services fee rising 8% a year (about $5.3 million a year for the general fund, 6–1) and a street maintenance fee starting at $5 a month and rising $5 a year for three years (7–0), both billed from August 1; staff’s alternative was cutting 22–40 positions. The rate resolutions can be changed by future councils, and the city’s permanent tax rate is already at its $4.6180 maximum.",
+  },
+  {
+    id: "beaverton-levy-or-cuts",
+    label: "Levy or cuts",
+    short: "Safety levy",
+    question: "Refer a $0.40-per-$1,000 public-safety levy in May 2027, cut $1.8 million more from services, or both?",
+    context:
+      "The FY 2026–27 budget closed a $16.2 million general-fund gap with $13.5 million in new revenue, $2.7 million in cuts and $2.5 million one-time; in February 2026 the council delayed a $0.40 levy (about $5.3 million a year, 42% support in polling) to May 2027. On September 8, 2026 staff previewed a $6–9 million deficit for FY 2027–28 and two $1.8 million cut packages: the mediation center and downpayment aid, or police victim services and five officers.",
+  },
+  {
+    id: "beaverton-flock-ban",
+    label: "Flock camera ban",
+    short: "Flock ban",
+    question: "Adopt an ordinance banning Flock-style license-plate readers in Beaverton?",
+    context:
+      "No council item exists. Beaverton police told The Oregonian in November 2025 they do not use Flock, while the Washington County Sheriff runs seven Flock cameras bought with a $396,000 grant; a resident asked the council for a surveillance policy January 20, 2026. Oregon’s SB 1516, signed March 31, 2026, limits plate-reader data retention to 30 days statewide.",
+  },
+  {
+    id: "beaverton-ice-response",
+    label: "ICE response",
+    short: "ICE response",
+    question: "Go further than the July 2026 sanctuary resolution: bar ICE staging on city property, publish a log, let police stop federal vehicles?",
+    context:
+      "Ordinance 4877 codified the Sanctuary Promise on January 20, 2026, 7–0; the same night an amendment package letting police pull over federal vehicles, publishing a monthly log and referring excessive force failed 2–5 and a subcommittee was formed. On July 7, 2026 Resolution 4967 set identity checks of suspected impersonators and body-camera rules; the mayor called it “not final work.”",
+  },
+  {
+    id: "beaverton-loop",
+    label: "Downtown Loop",
+    short: "The Loop",
+    question: "Keep funding the downtown Loop, including a $20 million federal grant bid in 2027, and put the agency’s Beaverdam sites out to developers?",
+    context:
+      "The Hall Boulevard 1st-to-3rd segment is estimated at $11.6 million with $5.6 million in federal earmarks and bids in December 2026; BUILD grant applications lost in 2025 and 2026, so the city must decide on a $20 million request in 2027 with a $13 million county match. The redevelopment agency closed on 12775 SW Beaverdam Road (5.38 acres) on August 31, 2026 and was told to seek a developer by year’s end.",
+  },
+  {
+    id: "beaverton-transportation-plan",
+    label: "Transportation priorities",
+    short: "TSP",
+    question: "What should the 20-year Transportation System Plan fund first, and how do South Cooper Mountain residents get transit?",
+    context:
+      "The council reviewed draft plan policies July 7, 2026; investment scenarios come in December 2026 and adoption in December 2027. On February 3, 2026 it adopted an $11,800 supplemental transportation charge per new Cooper Mountain house, and an on-demand SPOT bus for South Cooper Mountain launched January 29, 2026 with county and state money through the 2027 school year; the nearest TriMet stop to Mountainside High is about two miles away.",
+  },
+];
+
+const beavertonStances: TopicStance[] = [
+  /* ── Evelyn Kocher ─────────────────────────────────────────────── */
+  stance("evelyn-kocher", "beaverton-utility-fees", "opposes", "Voters decide, not fees",
+    "Says raising taxes as a flat fee is inequitable and “undemocratic–and un-Oregonian,” and that if politicians want to raise taxes “they have to put it up to a vote”; testified May 5, 2026 on the proposed transportation fee.",
+    kocherPriorities),
+  stance("evelyn-kocher", "beaverton-levy-or-cuts", "partial", "Public vote, corporate reform",
+    "Wants every new tax proposal voted on by the people and corporate tax reform so big business pays more for infrastructure; whether she would back the May 2027 levy or which cut package she would accept is unsaid.",
+    pamphlet(9)),
+  stance("evelyn-kocher", "beaverton-flock-ban", "supports", "Ordinance banning Flock",
+    "Would introduce an ordinance mirroring Woodburn’s and Eugene’s to ban Flock from operating in the city, calling the cameras data-harvesting.",
+    kocherPriorities),
+  stance("evelyn-kocher", "beaverton-ice-response", "supports", "Log calls, film ICE",
+    "Told the Valley Times she wants 911 calls about enforcement tracked and labeled and officers sent to film interactions, and would codify protections in local ordinance; testified for the sanctuary ordinance and amendments January 20, 2026.",
+    vtKocher),
+  stance("evelyn-kocher", "beaverton-loop", "partial", "Prioritize the Loop",
+    "Would prioritize projects in progress such as the Beaverton Loop and the TV Highway redevelopment, with transit-oriented density downtown; the Beaverdam developer solicitation and the 2027 BUILD bid are unsaid.",
+    kocherPriorities),
+  stance("evelyn-kocher", "beaverton-transportation-plan", "partial", "Buses for Cooper Mountain",
+    "Wants bus lines in South Cooper Mountain, TriMet expansion in the southwest, physical barriers for bike lanes on Murray, Scholls Ferry and Lombard, and zoning streamlined near MAX stations; which plan projects come first is unsaid.",
+    kocherPriorities),
+
+  /* ── Rachel Philip ─────────────────────────────────────────────── */
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  stance("rachel-philip", "beaverton-ice-response", "partial", "Defend from overreach",
+    "Would defend the city from federal overreach and keep local resources focused on protecting neighbors and services; the staging ban, public log and traffic stops are unsaid.",
+    pamphlet(9)),
+  stance("rachel-philip", "beaverton-loop", "partial", "Walkable downtown crossings",
+    "On the Loop’s community advisory committee she pushed to improve the downtown walking experience, citing the difficulty of crossing Farmington and Canyon with children; the Beaverdam solicitation and the BUILD bid are unsaid.",
+    philipAbout),
+  stance("rachel-philip", "beaverton-transportation-plan", "partial", "Safety first, slower streets",
+    "Says the city is about to set 20-year transportation priorities and wants that plan to put safety first, slowing traffic near schools and parks; South Cooper Mountain transit is unsaid.",
+    philipSurvey),
+];
+
+const beavertonStakes: RaceStakes[] = [
+  {
+    raceId: "beaverton-position-1",
+    intro:
+      "A Beaverton councilor is one of six votes beside the mayor on the budget, on the fees the council now bills through utility accounts, on whether to send a public-safety levy to voters, on police policy toward federal agents and cameras, and on the redevelopment agency’s downtown projects. The FY 2026–27 budget is $514,218,807; the term opens with a structural general-fund gap, a levy decision due by May 2027 and a city manager to hire.",
+    items: [
+      {
+        label: "Structural gap",
+        text:
+          "FY 2026–27 closed a $16.2 million general-fund gap with $13.5 million in new revenue, $2.7 million in cuts (6.6 positions) and $2.5 million one-time; staff’s September 8, 2026 preview puts the FY 2027–28 deficit at $6–9 million and lists $1.8 million cut packages. Since 2022 the city has cut $11 million and 42 positions, including police officers, the bike team and crisis response.",
+        source: bvtSep8,
+      },
+      {
+        label: "$514 million budget",
+        text:
+          "Resolution 4957 adopted the FY 2026–27 budget at $514,218,807 on June 16, 2026 with the tax levy at the $4.6180 permanent rate, the maximum; the general fund is $124.3 million with 333.72 positions, down from 340.15 the year before.",
+        source: bvtJun16,
+      },
+      {
+        label: "Fees and a levy",
+        text:
+          "The general services fee ($9.50 a month, rising 8% a year) is budgeted at about $5.3 million and the street fee at about $3.3 million in its first year; on February 3, 2026 the council supported delaying a $0.40-per-$1,000 public-safety levy, projected at $5.3 million a year, from May 2026 to May 2027 after polling “does not show support” for a May 2026 vote.",
+        source: bvtJul7,
+      },
+      {
+        label: "Downtown Loop",
+        text:
+          "Hall Boulevard from 1st to 3rd is estimated at $11.6 million with $5.6 million in federal earmarks and construction in 2027; the promenade planning project is $2.67 million with $2 million federal; after losing BUILD grants in 2025 and 2026, the city must decide whether to ask for $20 million in 2027 with a $13 million county match.",
+        source: bvtBura,
+      },
+      {
+        label: "The shelter",
+        text:
+          "The Beaverton Shelter at 11390 SW Beaverton-Hillsdale Highway has 60 beds and opened in November 2024, built with about $4.8 million in regional supportive-housing money and $9 million in state and federal funds; operations are paid by Metro’s supportive housing tax through Washington County, not the city general fund.",
+        source: bvtShelter,
+      },
+      {
+        label: "City manager to hire",
+        text:
+          "The council adopted a city-manager recruitment process on September 15, 2026 (Resolution 4971) with Elizabeth Coffey serving as interim; the winner of this seat will join a council choosing the administrator who writes the FY 2027–28 budget.",
+        source: bvtSep15,
+      },
+    ],
+  },
+];
+
+/* Hillsboro: council packets on CivicWeb (which carry the approved minutes), the city’s data-center page and the Hillsboro News-Times */
+const HB_DOC = "https://hillsboro-oregon.civicweb.net/document";
+const hbSep1 = record(
+  "Hillsboro City Council · September 1, 2026 agenda packet (approved minutes of June 23, July 7, July 21 and July 27, 2026)",
+  `${HB_DOC}/263233/City%20Council%20-%2001%20Sep%202026.pdf?handle=5718828DA0784DE4AF2E7E9D192013E3`,
+  "September 1, 2026; read September 22, 2026",
+  "July 27: Resolution 2932 (data-center moratorium) carried 6–0. July 7: Ordinance 6519 and Order 33 (Synopsys East) carried 4–2, Alcaire and Salgado no; Order 35 initiating the data-storage code amendment 6–0. June 23: Ordinance 6518 carried 4–1; Resolution 2923 (solid-waste rates) 6–0.",
+);
+const hbTestimony: Evidence = {
+  label: "Hillsboro City Council · approved minutes of June 23 and July 27, 2026 (public testimony summaries), in the September 1, 2026 packet",
+  url: `${HB_DOC}/263233/City%20Council%20-%2001%20Sep%202026.pdf?handle=5718828DA0784DE4AF2E7E9D192013E3`,
+  kind: "Candidate statement",
+  date: "June 23 and July 27, 2026; read September 22, 2026",
+  note: "The candidate’s own testimony to the council, as summarized in the approved minutes.",
+};
+const hbJul27 = record(
+  "Hillsboro City Council · July 27, 2026 special meeting packet (Resolution 2932 and the data-center inventory)",
+  `${HB_DOC}/262111/City%20Council%20Special%20Meeting%20-%2027%20Jul%202026.pdf?handle=24C9E75157324A69B363BB7B1252D317`,
+  "July 27, 2026; read September 22, 2026",
+  "Inventory as of July 21, 2026: 23 data-center sites on about 570 acres, 16 built on 346 acres; the moratorium must be reviewed within 120 days.",
+);
+const hbJul21 = record(
+  "Hillsboro City Council · July 21, 2026 agenda packet (June 9, 2026 work-session minutes on enterprise-zone policy)",
+  `${HB_DOC}/261816/City%20Council%20-%2021%20Jul%202026.pdf?handle=BE2874B9337342C89DB963EFEA432535`,
+  "July 21, 2026; read September 22, 2026",
+  "Staff: the Enterprise Zone fund balance had grown to about $55 million.",
+);
+const hbFeb3 = record(
+  "Hillsboro City Council · February 3, 2026 agenda packet (January 20, 2026 work-session minutes on a Human Rights Office)",
+  `${HB_DOC}/256303/City%20Council%20-%2003%20Feb%202026.pdf?handle=36759EE862DB4E29AEA9C3550A076239`,
+  "February 3, 2026; read September 22, 2026",
+  "Estimated annual cost $321,000–$553,000; “Councilors Salgado and Sinclair strongly supported creating the HRO,” others favored a phased approach starting with an advisory committee.",
+);
+const hbOct6 = record(
+  "Hillsboro City Council · October 6, 2026 agenda packet (Planning Commission minutes of May 27, 2026 on DR-044-25, Sky Harbour hangars)",
+  `${HB_DOC}/263202/City%20Council%20-%2006%20Oct%202026.pdf?handle=17CB86AA13134C009338773C1DEB5F97`,
+  "Posted September 2026; read September 22, 2026",
+  "The commission approved 5–0 with Jackson abstaining; the item is marked withdrawn on the October 6 agenda.",
+);
+const hbJun2025 = record(
+  "Hillsboro City Council · June 17, 2025 agenda packet (Ordinance 6503, police headquarters borrowing)",
+  `${HB_DOC}/249562/City%20Council%20-%2017%20Jun%202025.pdf?handle=0AF9CECBDEED4D5287C5E7FEB5C97670`,
+  "June 17, 2025; read September 22, 2026",
+);
+const hbJun16 = record(
+  "Hillsboro City Council · June 16, 2026 agenda packet (Ordinance 6520, supplemental budget staff report)",
+  `${HB_DOC}/260655/City%20Council%20-%2016%20Jun%202026.pdf?handle=A97384567AA34F81B341B86B146B448C`,
+  "June 16, 2026; adopted June 23, 2026, 6–0; read September 22, 2026",
+  "Revised 2025–27 budget excluding the economic-development council funds: $1,851,790,204 plus $25,419,230, for $1,877,209,434.",
+);
+const hbDataCenters = record(
+  "City of Hillsboro · Data centers in Hillsboro (moratorium status, tax and water facts)",
+  "https://www.hillsboro-oregon.gov/community/data-centers",
+  "Updated September 10, 2026; read in a browser September 22, 2026",
+  "12 abated data-center entities held about $7.2 billion of exempt real market value in 2025 and paid about $61.1 million in taxes; data centers used about 111 million gallons, 1.76% of the city’s water, in 2025.",
+);
+const hbBudget = record(
+  "City of Hillsboro · 2025–2027 Adopted Biennial Budget, p. 51: total city requirements $1,946,850,001",
+  "https://www.hillsboro-oregon.gov/home/showpublisheddocument/31919/639102077343430000",
+  "Adopted June 17, 2025; document checked September 21, 2026",
+);
+const ntShelter = reporting(
+  "Hillsboro News-Times · Hillsboro opens doors to first year-round shelter",
+  "https://hillsboronewstimes.com/2025/11/14/hillsboro-opens-doors-to-first-year-round-shelter/",
+  "November 14, 2025; read September 22, 2026",
+);
+
+const hillsboroTopics: ExtraTopic[] = [
+  {
+    id: "hillsboro-dc-moratorium",
+    label: "Data-center moratorium",
+    short: "Moratorium",
+    question: "Adopt the new data-center zoning limits on October 6 and extend the 120-day moratorium past November 24?",
+    context:
+      "On July 27, 2026 the council adopted Resolution 2932, a 120-day moratorium on new or expanded data-center and battery-storage applications, 6–0; it must be reviewed by November 24. The city counts 23 data-center sites on about 570 acres, 16 of them built. On September 9 the Planning Commission approved a code amendment limiting data centers to two industrial zones and 1,000 feet from schools and capping accessory data centers at 25% of a site; the council hearing is October 6.",
+  },
+  {
+    id: "hillsboro-dc-tax-breaks",
+    label: "Data-center tax breaks",
+    short: "Abatements",
+    question: "Raise the fees data centers pay on abated taxes and set stricter terms on new abatements?",
+    context:
+      "The council sets the enterprise-zone community service fee (up to 33% of abated tax in years one to three, 50% in years four and five) and, with the school district, the 15% school support fee. Twelve abated data-center companies held about $7.2 billion of exempt property value in 2025 and still paid about $61.1 million in taxes; the enterprise-zone fund holds about $55 million. On July 21, 2026 the council paused new Strategic Investment Program deals with stand-alone data centers for 180 days, 4–0, a month after a lawsuit over 17 applications.",
+  },
+  {
+    id: "hillsboro-utility-fees",
+    label: "Utility fees",
+    short: "Utility fees",
+    question: "Raise the transportation utility fee to $11.64 a month and sewer and stormwater rates about 5% from January 1?",
+    context:
+      "On July 21, 2026 staff recommended raising the transportation utility fee to $11.64 a month for a home: the pavement program needs about $8.5 million a year and revenue allows about $4.5 million. On July 7 staff proposed roughly 5% sewer and stormwater increases, about $4.18 a month in the first year. Hearings are set for November with new rates January 1, 2027; drinking-water rates are set separately by the Utilities Commission, which is weighing 4–4.5% for 2027.",
+  },
+  {
+    id: "hillsboro-human-rights-office",
+    label: "Human Rights Office",
+    short: "Rights office",
+    question: "Fund a Human Rights Office ($321,000–$553,000 a year) and more legal aid on top of the sanctuary ordinance?",
+    context:
+      "The council declared a local emergency over federal immigration enforcement November 18, 2025 (5–0) and codified the Sanctuary Promise Act as Ordinance 6513 on March 3, 2026 (6–0). On January 20, 2026 staff costed a Human Rights Office at $321,000–$553,000 a year; the council chose to form a community advisory committee first and lists the office as “to be revisited.” The June 23 supplemental budget carried $726,000 for immigration-response programs already approved.",
+  },
+  {
+    id: "hillsboro-housing-displacement",
+    label: "Housing and displacement",
+    short: "Displacement",
+    question: "Add local tenant protections and a downtown anti-displacement strategy, or focus on loosening rules to build more?",
+    context:
+      "On June 23, 2026 the council updated its code to match new state housing-application laws, 4–1; on July 7 it redesignated 4.54 industrial acres (Synopsys East) for medium-density housing, 4–2. On August 18 staff presented the draft Avenida Diez equitable development strategy for the downtown urban-renewal area, 20 actions including a preference policy for long-time renters and tailored tax exemptions; adoption is pending, and the 398-home SoHi Central subdivision is before the council.",
+  },
+  {
+    id: "hillsboro-jet-hangars",
+    label: "Private-jet hangars",
+    short: "Jet hangars",
+    question: "Approve Sky Harbour’s seven private-jet hangars at the airport when it refiles?",
+    context:
+      "The Planning Commission approved seven hangars (about 189,000 square feet on 13.7 acres, room for about 30 jets) on May 27, 2026, 5–0 with one abstention. Two appeals brought the case to the council on August 18 with a decision set for October 6, until Sky Harbour withdrew on September 9 saying it needs time to address comments and plans to resubmit; a refiling restarts review before the next council.",
+  },
+];
+
+const hillsboroStances: TopicStance[] = [
+  /* ── Cristian Salgado (sitting Ward 1 councilor, appointed January 2025; the record first) ── */
+  stance("cristian-salgado", "hillsboro-dc-moratorium", "supports", "Voted for moratorium",
+    "Voted yes July 27, 2026 on Resolution 2932, calling the moratorium a needed pause to develop structure and understanding, and yes July 7 to start the data-storage code amendment; his statement asks for thoughtful data-center growth weighing neighborhood impacts.",
+    hbSep1),
+  stance("cristian-salgado", "hillsboro-dc-tax-breaks", "partial", "Categories by impact",
+    "At the June 9, 2026 work session raised concerns that phased abatements advantage companies already in Hillsboro and asked for data-center categories by size and environmental impact; was excused from the July 21 vote pausing new agreements. Fee levels unsaid.",
+    hbJul21),
+  stance("cristian-salgado", "hillsboro-utility-fees", "partial", "Who pays, affordability",
+    "Voted yes June 23, 2026 on the 5.1% solid-waste increase; at the July 7 session asked about commercial, industrial and data-center customers and who pays for infrastructure; excused from the July 21 transportation-fee session. Names utility affordability in his statement.",
+    hbSep1),
+  stance("cristian-salgado", "hillsboro-human-rights-office", "supports", "Strongly backed the office",
+    "Strongly supported creating the Human Rights Office at the January 20, 2026 work session, voted for the emergency declaration November 18, 2025, the sanctuary ordinance March 3, 2026 and the June 23 supplemental budget with $726,000 for immigration response.",
+    hbFeb3),
+  stance("cristian-salgado", "hillsboro-housing-displacement", "mixed", "Yes code, no rezone",
+    "Voted yes June 23, 2026 on the state-conformance housing code (4–1) and no July 7 on redesignating 4.54 industrial acres at Synopsys East for housing (4–2); the minutes record no reason, and tenant protections are unsaid.",
+    hbSep1),
+
+  /* ── Kimberly Culbertson ───────────────────────────────────────── */
+  stance("kimberly-culbertson", "hillsboro-dc-moratorium", "supports", "Longer moratoria",
+    "Told the council July 27, 2026 she supported the moratorium but that 120 days is insufficient, calling for multiple consecutive moratoria to study the impacts properly.",
+    hbTestimony),
+
+  /* ── Karim Delgado ─────────────────────────────────────────────── */
+  stance("karim-delgado", "hillsboro-dc-moratorium", "supports", "Backed the moratorium",
+    "Testified July 27, 2026 in support of the moratorium, arguing Hillsboro is overly dependent on one industry; on June 23 told the council its enterprise-zone criteria produced massive tax breaks with minimal job creation.",
+    hbTestimony),
+  stance("karim-delgado", "hillsboro-dc-tax-breaks", "supports", "Raise fees to 30%",
+    "Would move the school support fee from the 15% floor toward 30% and raise the community service fee ceiling on new abatements, require job and wage disclosure and a council briefing before any subsidy, and claw back unmet commitments.",
+    delgadoIssues),
+  stance("karim-delgado", "hillsboro-utility-fees", "partial", "Data-center power class",
+    "Would have the city study a data-center electricity class within its franchise fee so the load it zoned pays; the transportation-fee and sewer proposals are unsaid.",
+    delgadoIssues),
+  stance("karim-delgado", "hillsboro-human-rights-office", "supports", "Establish the office",
+    "Would fund legal and emergency aid, enforce the sanctuary law and establish a Human Rights Office, finishing what he says the council tabled in January 2026.",
+    pamphlet(17)),
+  stance("karim-delgado", "hillsboro-housing-displacement", "supports", "Notice, counsel, land trusts",
+    "Would push mandatory notice before rent increases, a right to counsel in eviction court, anti-displacement protections and community land trusts, and tie public support for business to housing people can afford.",
+    delgadoIssues),
+
+  /* ── Luis Garcia ───────────────────────────────────────────────── */
+  stance("luis-garcia", "hillsboro-dc-moratorium", "partial", "Farmland over data centers",
+    "Would protect farmland from the impacts of semiconductors and data centers and make decisions on science and data; the moratorium and the October code amendment are unsaid.",
+    pamphlet(15)),
+
+  /* ── Diana Jackson (Planning Commission member) ────────────────── */
+  stance("diana-jackson", "hillsboro-dc-moratorium", "partial", "Concern near schools",
+    "Told the council June 23, 2026 she questioned whether proposed data centers support local economic goals and worried about data centers near schools, asking what protections the city will adopt; the moratorium’s extension is unsaid.",
+    hbTestimony),
+  stance("diana-jackson", "hillsboro-dc-tax-breaks", "supports", "No data-center breaks",
+    "Says the city should grow small businesses rather than give tax breaks to data centers, and that being singularly focused on one industry is detrimental.",
+    pamphlet(16)),
+  stance("diana-jackson", "hillsboro-human-rights-office", "partial", "ICE out, continue work",
+    "Says “ICE out of Hillsboro” and would continue the work Councilor Sinclair started to protect vulnerable neighbors; the Human Rights Office and its cost are unsaid.",
+    jacksonPlatform),
+  stance("diana-jackson", "hillsboro-housing-displacement", "partial", "Build up downtown",
+    "Says Hillsboro cannot keep building out and should build up its downtown corridor with workforce housing tied to small-business support; tenant protections and the Avenida Diez preference policy are unsaid.",
+    jacksonPlatform),
+  stance("diana-jackson", "hillsboro-jet-hangars", "partial", "Abstained, noise concern",
+    "Abstained on the hangars May 27, 2026 as a planning commissioner, citing uncertainty about one approval criterion and saying 3,800 added flights a year seemed like a lot for nearby residents; how she would vote on a refiling is unsaid.",
+    hbOct6),
+
+  /* ── Sarah Marugg ──────────────────────────────────────────────── */
+  stance("sarah-marugg", "hillsboro-dc-moratorium", "supports", "Stop the buildout",
+    "Says Hillsboro should not continue expanding data centers at the expense of land, water, power, neighborhoods and quality of life, with strict oversight and wastewater testing for permitted facilities.",
+    maruggHome),
+  stance("sarah-marugg", "hillsboro-dc-tax-breaks", "supports", "Pay fair share",
+    "Would make data centers pay their fair share for the infrastructure and services they use and hold major polluters accountable.",
+    pamphlet(16)),
+  stance("sarah-marugg", "hillsboro-utility-fees", "partial", "Utility bills count",
+    "Says affordability includes the utility bills families pay every month; the transportation-fee and sewer proposals are unsaid.",
+    pamphlet(16)),
+  stance("sarah-marugg", "hillsboro-human-rights-office", "partial", "Civil rights, sanctuary",
+    "Would defend civil rights and uphold Hillsboro’s sanctuary-city values; the Human Rights Office and legal-aid funding are unsaid.",
+    pamphlet(16)),
+  stance("sarah-marugg", "hillsboro-jet-hangars", "opposes", "No luxury jet hub",
+    "Opposes turning Hillsboro into a luxury private-jet hub at the expense of nearby neighborhoods, clean air, quiet open spaces, wetlands and wildlife.",
+    maruggHome),
+
+  /* ── Ivette Pantoja ────────────────────────────────────────────── */
+  stance("ivette-pantoja", "hillsboro-housing-displacement", "partial", "Missing-middle to multifamily",
+    "Wants balanced development from missing-middle to multifamily housing matched to neighborhood infrastructure so residents are not priced out; tenant protections and the downtown strategy are unsaid.",
+    pantojaPriorities),
+
+  /* ── Dorian Russell ────────────────────────────────────────────── */
+  stance("dorian-russell", "hillsboro-dc-moratorium", "partial", "Expansion harms air, water",
+    "Says unchecked data-center expansion makes the rich richer at the expense of air, water, land and jobs; the moratorium’s extension and the October code amendment are unsaid.",
+    pamphlet(18)),
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  stance("dorian-russell", "hillsboro-human-rights-office", "partial", "Resist ICE actions",
+    "Says local governments must follow community priorities rather than what they call illegal ICE kidnappings and unconstitutional executive orders; the Human Rights Office is unsaid.",
+    pamphlet(18)),
+  stance("dorian-russell", "hillsboro-housing-displacement", "partial", "Prevent evictions, gentrification",
+    "Wants safe, stable housing with public and private efforts to prevent gentrification and evictions; the specific tenant rules and the Avenida Diez strategy are unsaid.",
+    russellIssues),
+
+  /* ── Titonian Wallace Sr. ──────────────────────────────────────── */
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  stance("titonian-wallace-sr", "hillsboro-housing-displacement", "mixed", "Supply and stability",
+    "Says Hillsboro needs more housing supply and would remove barriers that slow production, but growth must deliver affordability, stability and protection from displacement for renters and owners alike.",
+    wallacePriorities),
+];
+
+const HILLSBORO_INTRO = (ward: string) =>
+  `Hillsboro’s Ward ${ward} councilor is one of six votes beside the mayor on the two-year budget ($1.95 billion for 2025–27), the enterprise-zone fees data centers pay, the moratorium and zoning that govern where they go, utility fees, the sanctuary ordinance’s follow-through and downtown housing rules. The term opens with the moratorium up for review in November, an October zoning hearing, fee hearings in November and a $90 million police headquarters under construction.`;
+const hillsboroItems: RaceStakes["items"] = [
+  {
+    label: "$1.95 billion biennium",
+    text:
+      "The 2025–27 adopted budget totals $1,946,850,001 for two years across the city’s funds; the next council writes the 2027–29 budget in spring 2027, with the enterprise-zone and Strategic Investment Program funds that data-center agreements feed among its largest discretionary sources.",
+    source: hbBudget,
+  },
+  {
+    label: "Intel abatement windfall",
+    text:
+      "The June 23, 2026 supplemental budget added $25.4 million, including $10.2 million in unexpected property tax as Intel’s 2005 abatement expired; $9.5 million of it went to a Strategic Investment Program reserve and $726,000 to immigration-response programs the council had approved without budgeting.",
+    source: hbJun16,
+  },
+  {
+    label: "Data-center tax base",
+    text:
+      "Twelve abated data-center companies held about $7.2 billion in exempt property value in 2025 and still paid about $61.1 million in taxes; 33 of the city’s 50 enterprise-zone agreements are data-center sites, the enterprise-zone fund holds about $55 million, and data centers used 111 million gallons of water in 2025, 1.76% of the city’s total.",
+    source: hbDataCenters,
+  },
+  {
+    label: "Moratorium clock",
+    text:
+      "Resolution 2932 (July 27, 2026, 6–0) bars new or expanded data-center and battery-storage applications for 120 days and must be reviewed for extension or repeal by November 24; the city counts 23 data-center sites on about 570 acres, and the governor’s task-force report is due in October.",
+    source: hbJul27,
+  },
+  {
+    label: "$90 million police HQ",
+    text:
+      "A new police headquarters consolidating the East and West precincts is estimated at about $90 million; in June 2025 the council raised its authorized full-faith-and-credit borrowing from $70 million to $95 million (Ordinance 6503), with debt service paid from the Strategic Investment Program fund rather than the general fund.",
+    source: hbJun2025,
+  },
+  {
+    label: "Streets short $4 million",
+    text:
+      "The pavement program needs about $8.5 million a year but the transportation utility fee yields about $4.5 million, and transportation spending outruns revenue by about $2 million a year; staff recommend raising the fee to $11.64 a month for a home, with a public hearing in November and new rates January 1, 2027.",
+    source: hbSep1,
+  },
+  {
+    label: "First year-round shelter",
+    text:
+      "The city’s first year-round shelter at 345 SW 17th Avenue opened November 14, 2025 with 75 sleeping spaces (35 congregate beds and 40 pods), built for $17 million including $8.3 million of Metro supportive-housing money through the county and run by Project Homeless Connect.",
+    source: ntShelter,
+  },
+];
+const hillsboroStakes: RaceStakes[] = [
+  { raceId: "hillsboro-ward-1", intro: HILLSBORO_INTRO("1"), items: hillsboroItems },
+  { raceId: "hillsboro-ward-2", intro: HILLSBORO_INTRO("2"), items: hillsboroItems },
+  { raceId: "hillsboro-ward-3", intro: HILLSBORO_INTRO("3"), items: hillsboroItems },
+];
+
+/* Tigard: staff memos and minutes on the city's Destiny Hosted meeting portal, the county's certified results, Tigard Life and the Valley Times */
+const TG_MEMO = (seq: number) => `https://public.destinyhosted.com/agenda_publish.cfm?dsp=agm&seq=${seq}&rev=0&id=84427&form_type=AG_MEMO&mt=ALL`;
+const tgFacility = record(
+  "Tigard City Council · July 28, 2026 staff memo: facilities next steps after Measure 34-349",
+  TG_MEMO(6203),
+  "July 28, 2026; read September 22, 2026",
+  "The 9.5-acre Wall Street site “will not be large enough to accommodate two separate Public Works and Police facilities”; public works could be built with revenue bonds (council rate decision July 2027, construction by August 2029); a $0.32-per-$1,000 bond “could raise $48M”; the police levy must be renewed by the end of 2029; evidence storage is about 160 square feet against roughly 4,500 needed.",
+);
+const tgMinFeb17 = record(
+  "Tigard City Council · minutes, February 17, 2026 (Resolution 26-08 referring the $150 million public-safety bond)",
+  "https://public.destinyhosted.com/tigardocs/2026/CCBSNS/20260324_2626/6124%5F260217%5FMeeting%5FMinutes%5F%2D%5FDraft%2Epdf",
+  "February 17, 2026; read September 22, 2026",
+  "Passed unanimously: Robbins, Schlack, Shaw, Wolf, Anderson, Ghoddusi and Hu all yes.",
+);
+const tgMinJun9 = record(
+  "Tigard City Council · minutes, June 9, 2026 (Resolution 26-22 adopting the FY 2026–27 budget)",
+  "https://public.destinyhosted.com/tigardocs/2026/CCBSNS/20260811_2700/6264%5F260609%5FMeeting%5FMinutes%5F%2D%5FDraft%2Epdf",
+  "June 9, 2026; read September 22, 2026",
+  "Passed 5–1: Schlack, Shaw, Wolf, Robbins and Hu yes; Ghoddusi no; Anderson absent. The mayor said the budget preserves library hours “while responding to a General Fund shortfall of more than $6M.”",
+);
+const tgParks = record(
+  "Tigard City Council · April 21, 2026 staff memo: Parks Utility Fund outlook",
+  TG_MEMO(6111),
+  "April 21, 2026; read September 22, 2026",
+  "“The fund’s forecast shows that it will go negative in FY28 under current revenue streams”; it needs about $1,000,000 more a year.",
+);
+const tgSdc = record(
+  "Tigard City Council · September 1, 2026 staff memo: River Terrace 2.0 and citywide system development charge policy",
+  TG_MEMO(6230),
+  "September 1, 2026; read September 22, 2026",
+);
+const tgPolice = record(
+  "Tigard City Council · September 22, 2026 staff memo: police levy and levels of service report",
+  TG_MEMO(6277),
+  "September 22, 2026; read September 22, 2026",
+  "42,461 calls for service in 2025, up 20.2% in five years; the levy renewed in May 2024 funds 11.0 positions.",
+);
+const tgBudget = record(
+  "City of Tigard · Adopted Budget FY 2026–27 (budget book), Budget in Brief and General Fund forecast",
+  "https://tigard-or.openbook.questica.com/#/budget-book/FY2027ADOPTED",
+  "Adopted June 9, 2026; read September 22, 2026",
+  "Total requirements $471,938,721; general-fund reserves of about $30.9 million (67% of operating) forecast to fall to about $23.6 million by FY 2031 as revenue grows 2.5% a year against 4% expense growth.",
+);
+const tlHu = reporting(
+  "Tigard Life · Mayor Hu: “They are just like my neighbors”",
+  "https://tigardlife.com/featured/mayor-hu-they-are-just-like-my-neighbors/",
+  "July 8, 2026; read September 22, 2026",
+  "Reported statement; quote as printed by Tigard Life.",
+);
+const tlParks = reporting(
+  "Tigard Life · Council triages Tigard parks’ looming shortfall",
+  "https://tigardlife.com/featured/council-triages-tigard-parks-looming-shortfall/",
+  "April 29, 2026; read September 22, 2026",
+  "Reported statement; quote as printed by Tigard Life.",
+);
+const tlField = reporting(
+  "Tigard Life · Field of eight vies for three Tigard City Council seats (candidate questionnaire)",
+  "https://tigardlife.com/local-news/field-of-eight-vies-for-three-tigard-city-council-seats/",
+  "September 12, 2026; read September 22, 2026",
+  "Reported statement; quote as printed by Tigard Life.",
+);
+const vtHu = reporting(
+  "Valley Times · As Tigard’s first Asian American mayor, Yi-Kang Hu joins ranks of continuing diverse council",
+  "https://valleytimes.news/2025/10/08/as-tigards-first-asian-american-mayor-yi-kang-hu-joins-ranks-of-continuing-diverse-council/",
+  "October 8, 2025; read September 22, 2026",
+);
+const velasquezOpEd = site(
+  "Velásquez · op-ed, “Plan ahead for the future of Tigard: approve public safety levy” (Valley Times)",
+  "https://valleytimes.news/2026/04/20/opinion-plan-ahead-for-the-future-of-tigard-approve-public-safety-levy/",
+  `${NOTE} His own op-ed, published April 20, 2026.`,
+);
+const monahanOpEd = site(
+  "Monahan · op-ed, “Vote no on Tigard Measure 34-349, avoid a huge mistake” (Valley Times)",
+  "https://valleytimes.news/2026/05/12/opinion-vote-no-on-tigard-measure-34-349-avoid-a-huge-mistake/",
+  `${NOTE} His own op-ed, published May 12, 2026.`,
+);
+const andersonIssues = site("Anderson · on the issues", "https://www.tomandersontigard.com/issues");
+
+const tigardTopics: ExtraTopic[] = [
+  {
+    id: "tigard-facility",
+    label: "Police facility next",
+    short: "Police facility",
+    question: "After voters rejected the $150 million bond, build a public-works building first with rate-backed bonds and a smaller police bond later, or sell the Wall Street site?",
+    context:
+      "Measure 34-349, a $150 million bond at about $0.77 per $1,000 (about $263 a year on the average home), failed May 19, 2026, 62% to 38%. The city bought the 9.5-acre SW Wall Street site in 2024 for $13,950,848 from utility funds. On July 28, 2026 staff told the council the site cannot hold two separate buildings and proposed public works first, financed by utility-rate-backed bonds with a rate decision in July 2027, and a smaller police bond later; a $0.32 levy could raise $48 million. No measure was filed for November.",
+  },
+  {
+    id: "tigard-budget-gap",
+    label: "General-fund gap",
+    short: "Budget gap",
+    question: "Close a general-fund shortfall of more than $6 million by cutting library staff and city events and drawing reserves, or raise new revenue?",
+    context:
+      "Resolution 26-22 adopted the FY 2026–27 budget June 9, 2026, 5–1, balancing the general fund with a one-time draw on reserves of about $30.9 million that are forecast to fall to $23.6 million by 2031 as revenue grows 2.5% a year against 4% costs. The budget left two library positions unfunded (about $400,000) while preserving hours, cut positions 3% citywide, and ends city-run events such as the Fourth of July and Pride from 2027.",
+  },
+  {
+    id: "tigard-parks-funding",
+    label: "Parks funding",
+    short: "Parks money",
+    question: "Cover a $1 million-a-year parks shortfall by raising the parks fee, shifting general-fund money, or asking voters for a parks levy?",
+    context:
+      "On April 21, 2026 staff told the council the Parks Utility Fund goes negative in FY 2028 without about $1 million more a year, listing the parks and recreation fee, general-fund support or a parks operations and maintenance levy as options. The FY 2026–27 budget used the last $2.2 million of parks-bond balance, and the 2010 parks bond’s debt levy ends this year, dropping the city’s rate from $3.1361 to $2.8031.",
+  },
+  {
+    id: "tigard-rt2-sdcs",
+    label: "River Terrace charges",
+    short: "SDCs",
+    question: "Tier development charges by home size, discounting smaller and middle homes, for River Terrace 2.0 and citywide, with a decision October 13?",
+    context:
+      "On September 1, 2026 the council supported a tiered system-development-charge structure with a redistributed discount citywide and a flat option for apartments; dollar figures come October 13. River Terrace 2.0, up to 4,000 homes, is planned at an average of 18 units an acre with community-plan adoption targeted for May 2027, and the budget forecast counts on its development revenue.",
+  },
+  {
+    id: "tigard-surveillance",
+    label: "Police cameras",
+    short: "Cameras",
+    question: "Approve activating Axon’s Fusus live-camera network for police and expand red-light photo enforcement?",
+    context:
+      "On September 23, 2025 the council awarded Axon a $1,986,780 five-year contract for body cameras, tasers and evidence storage; activating the Fusus module, which lets police view live public and private camera feeds (about $100,000 a year from asset forfeiture), was conditioned on a later council vote that has not come. On September 8, 2026 police recommended expanding the three-intersection red-light program, which is $715,000 behind its revenue projections.",
+  },
+  {
+    id: "tigard-camping-buffer",
+    label: "Camping buffer",
+    short: "Camping",
+    question: "Expand the no-camping buffer around shelters and service sites from 500 to 1,000 feet and restrict vehicle camping?",
+    context:
+      "A public hearing set for September 22, 2026 takes up amendments to city code chapter 7.80, with staff recommending approval; the council tightened camping hours and sidewalk clearance in December 2025 and barred leaving camp materials on city property in April 2026. Washington County’s first homeless access center, run by Just Compassion, opened in Tigard in 2026.",
+  },
+];
+
+const tigardStances: TopicStance[] = [
+  /* ── Yi-Kang Hu (mayor; the record first) ──────────────────────── */
+  stance("yi-kang-hu", "tigard-facility", "mixed", "Bond yes, now listen",
+    "Voted February 17, 2026 to refer the $150 million bond; after its defeat told Tigard Life “I’m not going to support anything until we have a robust engagement process,” wanting a citizens committee and a plan for the existing buildings.",
+    tlHu),
+  stance("yi-kang-hu", "tigard-budget-gap", "supports", "Voted for budget",
+    "Voted yes June 9, 2026 on Resolution 26-22, saying the budget preserves library hours and core services while responding to a general-fund shortfall of more than $6 million, with a one-time draw on reserves rather than new revenue.",
+    tgMinJun9),
+  stance("yi-kang-hu", "tigard-parks-funding", "partial", "Levy later, maybe",
+    "Told Tigard Life in April 2026, “Down the road, we may look at a levy for extra, but we’re not there yet”; a fee increase or general-fund shift is unsaid.",
+    tlParks),
+
+  /* ── Tom Anderson (appointed councilor; the record first) ──────── */
+  stance("tom-anderson", "tigard-facility", "partial", "Voted to refer bond",
+    "Voted February 17, 2026 to refer the $150 million bond and would improve facility conditions for police and emergency responders; what to build first, or whether to sell the site, is unsaid.",
+    tgMinFeb17),
+  stance("tom-anderson", "tigard-budget-gap", "partial", "Balanced budgeting",
+    "Was absent for the June 9, 2026 budget vote; told Tigard Life he would protect essential city services through balanced budgeting. Which cuts or revenue he would choose is unsaid.",
+    tlField),
+  stance("tom-anderson", "tigard-parks-funding", "partial", "Sustainable parks funding",
+    "Would maintain service levels and secure sustainable funding for parks, trails and ballfields; whether by fee, general fund or levy is unsaid.",
+    andersonIssues),
+  stance("tom-anderson", "tigard-rt2-sdcs", "partial", "Guide River Terrace",
+    "Says he would guide the River Terrace 2.0 development; tiered development charges are unsaid.",
+    tlField),
+
+  /* ── Challengers, alphabetical ─────────────────────────────────── */
+  stance("yousef-k-allouzi", "tigard-budget-gap", "opposes", "No library cuts",
+    "Says the library and city events keep taking disproportionate budget cuts and that as a budget committee member he “voted no on these cuts to the library”; new revenue is unsaid.",
+    allouziPriorities),
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  stance("yousef-k-allouzi", "tigard-surveillance", "partial", "Against plate readers",
+    "Says automated license-plate readers and ICE hunt residents and disregard due process; the Fusus camera network and photo enforcement are unsaid.",
+    allouziPriorities),
+  stance("jeff-darland", "tigard-rt2-sdcs", "partial", "Updated SDCs, no subsidy",
+    "Would ensure development pays for itself through updated system development charges so existing ratepayers do not subsidize pipes, roads, water and sewer; discounts for smaller homes are unsaid.",
+    tlField),
+  stance("sue-garino", "tigard-budget-gap", "partial", "No one-time money",
+    "Would limit the growth of taxes, fees and spending, stop using one-time money for ongoing programs and require measurable results from new spending; which cuts, and whether to draw reserves, are unsaid.",
+    pamphlet(36)),
+  stance("john-goodhouse", "tigard-budget-gap", "partial", "More private events",
+    "Would support the process for more private events in Tigard as the city ends its own; the library cuts and new revenue are unsaid.",
+    pamphlet(36)),
+  stance("john-goodhouse", "tigard-rt2-sdcs", "partial", "Streamline for builders",
+    "Would work with builders and city planning to streamline the process and make housing more affordable; tiered development charges are unsaid.",
+    pamphlet(36)),
+  stance("shawne-martinez", "tigard-rt2-sdcs", "partial", "Build up, not out",
+    "Wants Tigard to build up rather than out, with infill housing and rezoning near existing services; charges for River Terrace 2.0 are unsaid.",
+    martinezHome),
+  stance("bill-monahan", "tigard-facility", "mixed", "Separate sites, account costs",
+    "Wrote in May 2026 that “there is no need for placing both police and public works on the same site” but the city “already overpaid for a site,” and wants consultant costs accounted for before choosing between it and alternatives.",
+    monahanOpEd),
+  stance("bill-monahan", "tigard-budget-gap", "partial", "Restore library services",
+    "Would restore and retain library services and focus on core services residents need and can afford; which cuts to reverse and any new revenue are unsaid.",
+    monahanHome),
+  stance("bill-monahan", "tigard-parks-funding", "partial", "Parkland outran funding",
+    "Says the parks bond added parkland the city now admits it cannot maintain without more money; a fee, general-fund shift or levy is unsaid.",
+    monahanOpEd),
+  stance("kate-ristau", "tigard-budget-gap", "partial", "Invest in library",
+    "Would protect community services by investing in the library, recreation programs and child nutrition; the FY 2026–27 cuts and new revenue are unsaid.",
+    pamphlet(39)),
+  stance("kate-ristau", "tigard-parks-funding", "partial", "Invest in parks",
+    "Would invest in parks, trails and public spaces; whether by fee, general fund or levy is unsaid.",
+    pamphlet(39)),
+  stance("kate-ristau", "tigard-rt2-sdcs", "partial", "Growth pays its way",
+    "Wants smart land-use decisions from the Tigard Triangle to River Terrace 2.0 and new growth that pays its own way; tiered charges are unsaid.",
+    tlField),
+  stance("gabriel-elijio-velasquez", "tigard-facility", "partial", "Backed bond, new plan",
+    "Wrote in April 2026 he would vote yes on the $150 million bond, calling it responsible and proactive; his site now calls for an alternative public-safety building plan with in-house evidence storage. Sequencing or selling the site is unsaid.",
+    velasquezOpEd),
+  stance("gabriel-elijio-velasquez", "tigard-camping-buffer", "partial", "Regional shelter strategy",
+    "Would work with municipal, state and federal leaders on a single strategy so everyone has shelter and no one sleeps on Tigard’s streets; the 1,000-foot buffer and vehicle-camping rules are unsaid.",
+    pamphlet(37)),
+];
+
+const tigardItems: RaceStakes["items"] = [
+  {
+    label: "Facilities after the bond",
+    text:
+      "Voters rejected the $150 million police and public-works bond 9,959 to 6,039 on May 19, 2026. The city already owns the 9.5-acre Wall Street site ($13,950,848, paid from utility funds); staff’s fallback is a public-works building financed by utility-rate bonds, with a rate decision in July 2027, and a smaller police bond later, while police evidence storage sits at about 160 square feet against roughly 4,500 needed.",
+    source: tgFacility,
+  },
+  {
+    label: "Reserves running down",
+    text:
+      "The FY 2026–27 budget of $471,938,721 is balanced in the general fund by a one-time draw on reserves of about $30.9 million (67% of operating costs), which the forecast takes to about $23.6 million by FY 2031 as revenue grows 2.5% a year against 4% for expenses; a moderate recession would cut revenue by about $2 million in a year.",
+    source: tgBudget,
+  },
+  {
+    label: "Levy renewal by 2029",
+    text:
+      "Police answered 42,461 calls for service in 2025, up 20.2% in five years. The $0.29-per-$1,000 police levy voters renewed in May 2024 funds 11 positions, eight of them patrol officers, and must go back to voters by the end of 2029, the same window in which the city would ask for any new facility bond.",
+    source: tgPolice,
+  },
+  {
+    label: "Parks fund goes negative",
+    text:
+      "The Parks Utility Fund is forecast to go negative in FY 2028 without about $1 million more a year; the options staff listed on April 21, 2026 are a higher parks and recreation fee, general-fund support or a parks operations and maintenance levy, and the last $2.2 million of parks-bond balance was spent in this year’s budget.",
+    source: tgParks,
+  },
+  {
+    label: "River Terrace 2.0",
+    text:
+      "Up to 4,000 homes are planned at an average of 18 units an acre; the council set housing policy direction September 1, 2026, decides system-development-charge tiers on October 13, and targets community-plan adoption in May 2027, with the budget forecast counting on the development revenue.",
+    source: tgSdc,
+  },
+  {
+    label: "Leadership turnover",
+    text:
+      "Mayor Heidi Lueb resigned in September 2025 after an investigation substantiated claims she bullied colleagues; the council appointed Yi-Kang Hu mayor 5–1 on October 7, 2025, then filled his council seat with Tom Anderson in December, and named a permanent city manager, Brian Rager, only in July 2026 after the previous manager left in November.",
+    source: vtHu,
+  },
+];
+const tigardStakes: RaceStakes[] = [
+  {
+    raceId: "tigard-mayor",
+    intro:
+      "Tigard’s mayor presides over a seven-member council that adopts the budget ($471,938,721 for FY 2026–27), sets utility and parks fees, refers bonds and levies to voters, writes the camping and development codes and directs the city manager. The next term must find a way to house police and public works after voters said no to $150 million, renew the police levy by 2029, and stop drawing down general-fund reserves.",
+    items: tigardItems,
+  },
+  {
+    raceId: "tigard-council",
+    intro:
+      "A Tigard councilor is one of six votes beside the mayor on the budget ($471,938,721 for FY 2026–27), utility and parks fees, bond and levy referrals, the camping and development codes and the city manager. Three seats are open at once, so the winners will decide together how to house police and public works after voters rejected $150 million, whether to renew the police levy by 2029, and how to stop drawing down general-fund reserves.",
+    items: tigardItems,
+  },
+];
+
+const topics: RaceTopics[] = [
+  { raceIds: ["beaverton-position-1"], topics: beavertonTopics },
+  { raceIds: ["hillsboro-ward-1", "hillsboro-ward-2", "hillsboro-ward-3"], topics: hillsboroTopics },
+  { raceIds: ["tigard-mayor", "tigard-council"], topics: tigardTopics },
+];
+const topicStances: TopicStance[] = [...beavertonStances, ...hillsboroStances, ...tigardStances];
+const stakes: RaceStakes[] = [...beavertonStakes, ...hillsboroStakes, ...tigardStakes];
+
 export const pack: RacePack = {
   ...emptyPack(),
   analysis,
@@ -1311,6 +2065,9 @@ export const pack: RacePack = {
   ballots,
   districts,
   choice,
+  topics,
+  topicStances,
+  stakes,
   portraits: portraits([
     ["evelyn-kocher", 9],
     ["rachel-philip", 9],

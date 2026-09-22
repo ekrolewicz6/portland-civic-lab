@@ -11,6 +11,7 @@ import type { TopicStance } from "../types";
  * where their sites or pamphlet statements make one.
  *
  * Venues reviewed September 20, 2026: the same list as delivery-d4.ts.
+ * Topic sweep September 22, 2026: see research/voters-guide-2026/outreach-2026-09-22/topic-sweep-d4.md.
  */
 
 const PAMPHLET =
@@ -46,6 +47,47 @@ const stance = (
   source: Evidence,
 ): TopicStance => ({ candidateId, topicId, stance: s, chip, text, source, ...reviewed });
 
+/* September 22, 2026 topic sweep: the same eight topics searched for every
+ * candidate across campaign sites, the pamphlet, questionnaires, social
+ * posts and reported quotes. Method and gaps: research/voters-guide-2026/
+ * outreach-2026-09-22/topic-sweep-d4.md. */
+const reviewed22 = { reviewedBy: "pending", reviewedOn: "2026-09-22" } as const;
+
+const swept = (
+  candidateId: string,
+  topicId: string,
+  s: TopicStance["stance"],
+  chip: string,
+  text: string,
+  source: Evidence,
+): TopicStance => ({ ...stance(candidateId, topicId, s, chip, text, source), ...reviewed22 });
+
+const site22 = (label: string, url: string): Evidence => ({
+  label,
+  url,
+  kind: "Candidate statement",
+  date: "Website reviewed September 22, 2026",
+  note: NOTE,
+});
+
+/** The candidate's own public post (Bluesky), read at the linked URL. */
+const post = (label: string, url: string, posted: string): Evidence => ({
+  label,
+  url,
+  kind: "Candidate statement",
+  date: `Posted ${posted}; reviewed September 22, 2026`,
+  note: NOTE,
+});
+
+/** A quote reported by a news outlet, not the candidate's own page. */
+const reported = (label: string, url: string, date: string, outlet: string): Evidence => ({
+  label,
+  url,
+  kind: "Reporting",
+  date,
+  note: `Reported statement; quote as printed by ${outlet}. ${NOTE}`,
+});
+
 const arnoldSafety = site("Arnold · public safety plan", "https://www.eliforportland.com/public-safety");
 const clarkPriorities = site("Clark · priorities", "https://www.oliviaforportland.com/priorities");
 const evenstarHousingPlan = site("Evenstar · Portland Community Housing Plan", "https://evenstarforportland.com/portland-community-housing-plan");
@@ -71,6 +113,52 @@ const andersonEmail: Evidence = {
   note: NOTE,
 };
 
+/* Sources found in the September 22 sweep. */
+const MERCURY_D4 = "https://www.portlandmercury.com/news/meet-the-candidates-for-city-council-district-4/";
+const schulteQuestionnaire: Evidence = {
+  label: "Schulte · Mercury candidate questionnaire, quoted in “Meet the Candidates for City Council District 4”",
+  url: MERCURY_D4,
+  kind: "Candidate statement",
+  date: "Published September 11, 2026 (updated September 15); reviewed September 22, 2026",
+  note: `His questionnaire answer as quoted by the Portland Mercury. ${NOTE}`,
+};
+const leakeMercury = reported(
+  "Leake · priorities as summarized by the Portland Mercury from his questionnaire",
+  MERCURY_D4,
+  "September 11, 2026 (updated September 15)",
+  "the Portland Mercury (paraphrase of his questionnaire answer)",
+);
+const arnoldNwExaminer = reported(
+  "Arnold · “Eli Arnold stakes out campaign issues,” NW Examiner",
+  "https://nwexaminer.com/p/eli-arnold-stakes-out-campaign-issues",
+  "August 18, 2026",
+  "the NW Examiner",
+);
+const schulteHomelessness = site22(
+  "Schulte · Homelessness, the Last Mile, and ReBoot Portland",
+  "https://mattschulte.wordpress.com/2026/09/10/homelessness-and-the-last-mile/",
+);
+const jbsWaterPost = post(
+  "Beausoleil Smith · Bluesky post on the Bull Run filtration plant",
+  "https://bsky.app/profile/jeremy4pdx.bsky.social/post/3mlmg4g7yfc23",
+  "May 11, 2026",
+);
+const jbsTaxPost = post(
+  "Beausoleil Smith · Bluesky post, “Should we Tax the Rich in Portland? Yes”",
+  "https://bsky.app/profile/jeremy4pdx.bsky.social/post/3mnfery6dv22g",
+  "June 3, 2026",
+);
+const evenstarModaPost = post(
+  "Evenstar · Bluesky post on the Moda term sheet amendments",
+  "https://bsky.app/profile/jameyevenstar.bsky.social/post/3msvpe6cdlc2t",
+  "August 12, 2026",
+);
+const clarkStaffingPost = post(
+  "Clark · Bluesky post on Police Bureau staffing (official councilor account)",
+  "https://bsky.app/profile/councilorclark.bsky.social/post/3mjniuw7cuc2c",
+  "April 16, 2026",
+);
+
 export const topicStancesD4: TopicStance[] = [
   /* ── Timothy (TJ) Anderson ──────────────────────────────────────────── */
   stance("timothy-tj-anderson", "new-taxes", "opposes", "None until audit done",
@@ -90,18 +178,28 @@ export const topicStancesD4: TopicStance[] = [
   stance("eli-arnold", "street-response", "supports", "Scale PSR citywide",
     "Would expand Street Response scope in 2027–2028 and citywide by 2029–2031 so calls go to the right responder; 24/7 is not stated.",
     arnoldSafety),
+  swept("eli-arnold", "moda", "supports", "Best deal, but proceed",
+    "Told the NW Examiner that securing the best possible deal with public funds is important but moving forward on the renovation is also crucial, to keep Moda’s economic activity, tourism and jobs.",
+    arnoldNwExaminer),
 
   /* ── Olivia Clark ───────────────────────────────────────────────────── */
   stance("olivia-clark", "camp-removal", "supports", "Remove street camping",
     "Would make the city safe by removing street camping and public drug use while adding shelter beds, sobering stations and treatment.",
     clarkPriorities),
+  swept("olivia-clark", "police-staffing", "supports", "Understaffed police unacceptable",
+    "Says the Police Bureau is one of the nation’s most understaffed and calls that unacceptable; her site says she acted to protect core police funding against proposed cuts.",
+    clarkStaffingPost),
 
   /* ── Jamey Evenstar ─────────────────────────────────────────────────── */
   stance("jamey-evenstar", "new-taxes", "supports", "Fee on empty homes",
     "Proposes a Housing Supply Impact Fee on homes not used as a primary residence, with revenue building permanently affordable homes.",
     evenstarHousingPlan),
-  // Not a stance: her FAQ backs "unarmed crisis response" without naming Street Response or its 24/7 role.
-  // Left as a gap and asked in the September 20 outreach draft.
+  swept("jamey-evenstar", "moda", "partial", "Terrible deal; amendments better",
+    "Called the original Moda term sheet a terrible deal and the August 12 amendments a big improvement; other posts ask for Albina community benefits and escalating rent; she does not say whether public money should go in.",
+    evenstarModaPost),
+  swept("jamey-evenstar", "street-response", "partial", "Unarmed response; 24/7 unsaid",
+    "Would expand unarmed crisis response for behavioral-health and quality-of-life calls and, in a July post, backed approving a lease for Portland Street Response; she does not say whether it should run 24/7 citywide.",
+    evenstarFaq),
 
   /* ── Mitch Green ────────────────────────────────────────────────────── */
   stance("mitch-green", "moda", "opposes", "Owners pay, not taxpayers",
@@ -117,19 +215,40 @@ export const topicStancesD4: TopicStance[] = [
     "Says he pushed for cost controls on the Bull Run project to prevent water rates from doubling; does not oppose the project itself.",
     pamphlet(62)),
 
+  /* ── Josh Leake ─────────────────────────────────────────────────────── */
+  swept("josh-leake", "street-response", "supports", "Street Response 24/7",
+    "Told the Mercury’s candidate questionnaire that expanding Portland Street Response to 24/7 service is one of his priorities; staffing or funding details are not given.",
+    leakeMercury),
+
   /* ── John McDonald ──────────────────────────────────────────────────── */
-  // Not a stance: his pamphlet statement wants the Blazers kept and the arena modernized but says nothing about public money,
-  // which is the question this column asks. Left as a gap and asked in the September 20 outreach draft.
+  swept("john-mcdonald", "moda", "partial", "Modernize arena; funding unsaid",
+    "Wants the Trail Blazers kept in Portland and the Moda Center modernized; his statement does not say whether public money should pay for the renovation or on what terms.",
+    pamphlet(63)),
 
   /* ── Matt Schulte ───────────────────────────────────────────────────── */
   stance("matt-schulte", "data-centers", "supports", "Ban until value standard",
     "Supports a ban on data centers until a Load-Value Standard measures public return per megawatt in jobs, tax revenue, infrastructure cost and environmental effects.",
     schulteDataCenters),
+  swept("matt-schulte", "moda", "partial", "Blazers’ turn; money unsaid",
+    "Says the city should not concede any more leverage to Dundon and the Blazers and its stance should be “it’s your turn to compromise”; he does not say whether public money should pay.",
+    schulteQuestionnaire),
+  swept("matt-schulte", "street-response", "supports", "24/7 Street Response coverage",
+    "Would institute 24/7 Street Response coverage and implement the 911 Call Allocation Working Group’s recommendations within one year, per his Mercury questionnaire answer.",
+    schulteQuestionnaire),
+  swept("matt-schulte", "camp-removal", "partial", "Sweeps disrupt; funding unsaid",
+    "Says when the city causes a disruption, as in a camp sweep, it has an obligation to fix it through continuous navigation; he does not say whether removal funding should stay at current levels.",
+    schulteHomelessness),
 
   /* ── Jeremy Beausoleil Smith ────────────────────────────────────────── */
   stance("jeremy-beausoleil-smith", "data-centers", "supports", "Four-year moratorium",
     "Supports a four-year moratorium on new data-center development, citing electricity rates, water use, pollution and grid reliability.",
     jbsPlatform),
+  swept("jeremy-beausoleil-smith", "water-rates", "opposes", "Pursue Bull Run alternatives",
+    "Says the $3 billion Bull Run filtration project will double water bills over a decade; asks Council for affordability, accountability and pursuit of alternatives to the plant.",
+    jbsWaterPost),
+  swept("jeremy-beausoleil-smith", "new-taxes", "supports", "Tax the rich",
+    "Answers “Yes” to “Should we Tax the Rich in Portland?” in a campaign post; his platform expects large corporations to contribute their fair share, with no specific tax named.",
+    jbsTaxPost),
   stance("jeremy-beausoleil-smith", "street-response", "supports", "PSR 24/7 citywide",
     "Supports expanding Portland Street Response to 24/7 citywide coverage with more staff and transport capacity.",
     jbsPlatform),

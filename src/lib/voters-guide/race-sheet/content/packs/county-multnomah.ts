@@ -1075,16 +1075,15 @@ const charterFaq = record(
   "Checked September 21, 2026",
 );
 
-/* The picker's extra columns: concrete choices the Board has made or faces this term. */
+/*
+ * The picker's extra columns: concrete choices the Board has made or faces
+ * this term, ordered homelessness first (the choices the county alone makes
+ * and the chair race turns on), then behavioral health, then money, then the
+ * rest. Reordered and widened September 22, 2026; every id is stable because
+ * deep links use them. Context facts are from the sources logged in
+ * research/voters-guide-2026/outreach-2026-09-22/topic-sweep-multnomah.md.
+ */
 const multnomahTopics: ExtraTopic[] = [
-  {
-    id: "mult-pfa-delay",
-    label: "Preschool tax delay",
-    short: "Preschool tax",
-    question: "Keep delaying the Preschool for All tax increase, now set for 2028?",
-    context:
-      "On August 27, 2026 the Board voted 5–0 to push the scheduled 0.8-point increase on high earners from January 2027 to January 2028, its second delay; the program reported a $610 million fund balance and 7,100 seats for 2026–27.",
-  },
   {
     id: "mult-shelter-cuts",
     label: "Shelter cuts",
@@ -1102,12 +1101,52 @@ const multnomahTopics: ExtraTopic[] = [
       "The agreement expires in July 2027. The city owes the county about $31 million a year, says the county owes it about $38 million for village shelters, and each government runs its own shelter system.",
   },
   {
+    id: "mult-shs-tax",
+    label: "Homeless-services tax",
+    short: "SHS tax",
+    question: "Back extending Metro's homeless-services tax past 2030 at a lower rate, with tighter spending rules?",
+    context:
+      "Metro's 1% tax on high incomes and business profits pays 61% of the county's homeless-services budget and expires in 2030. Metro shelved a 2025 draft that would have extended it to 2050 at 0.75% after polling 53% yes; the next chance is the 2028 ballot.",
+  },
+  {
+    id: "mult-hsd-oversight",
+    label: "Homeless Services oversight",
+    short: "HSD oversight",
+    question: "Tighter contract monitoring and outside audits of the Homeless Services Department after Sunstone Way?",
+    context:
+      "A county review found shelter contractor Sunstone Way billed $3.6 million in unallowable costs from July 2024 to February 2026, four years after an audit flagged $525,000 in overbilling by the same nonprofit; on April 9, 2026 the Board confirmed a new department director 3–2.",
+  },
+  {
     id: "mult-deflection",
     label: "Deflection center",
     short: "Deflection",
     question: "Keep and tighten the drug deflection center, or halt it?",
     context:
       "In its first year police made 606 referrals and 113 people completed deflection; 81% of those served at the center were homeless. A February 2026 Board resolution added stricter 90-day completion rules, and 78 people were referred in the first quarter of 2026.",
+  },
+  {
+    id: "mult-sobering",
+    label: "Sobering and treatment",
+    short: "Sobering",
+    question: "Keep the 2027 Recovery Pathways Center on schedule and fund more detox and treatment beds around it?",
+    context:
+      "On March 12, 2026 the Board voted 5–0 for the $29.8 million Recovery Pathways Center at 440 SE Stephens: 18 sobering stations and 29 withdrawal beds, $14.2 million from the General Fund, move-in October 1, 2027. Thirteen temporary sobering stations have run at the deflection center since April 2025.",
+  },
+  {
+    id: "mult-budget-gap",
+    label: "Closing the gap",
+    short: "Budget gap",
+    question: "Close the county's structural budget gap by cutting administration before services?",
+    context:
+      "The Budget Office projected a $10.5 million General Fund shortfall for FY 2027 growing to $33.8 million by FY 2030; the adopted FY 2027 budget eliminated at least 158 positions.",
+  },
+  {
+    id: "mult-pfa-delay",
+    label: "Preschool tax delay",
+    short: "Preschool tax",
+    question: "Keep delaying the Preschool for All tax increase, now set for 2028?",
+    context:
+      "On August 27, 2026 the Board voted 5–0 to push the scheduled 0.8-point increase on high earners from January 2027 to January 2028, its second delay; the program reported a $610 million fund balance and 7,100 seats for 2026–27.",
   },
   {
     id: "mult-moda",
@@ -1118,20 +1157,28 @@ const multnomahTopics: ExtraTopic[] = [
       "On August 6, 2026 the Board voted 4–1 to set terms for a contribution of up to $101.6 million, drawn first from rental-car and tourism taxes; a vote on the final agreement is expected in December 2026.",
   },
   {
-    id: "mult-ambulance",
-    label: "Ambulance staffing",
-    short: "Ambulances",
-    question: "Drop the two-paramedic ambulance rule for good?",
-    context:
-      "AMR has missed the county's eight-minute response target every month since March 2022; a 2024 settlement let some ambulances run with one paramedic and one EMT. A new Ambulance Service Plan goes to the Board in late 2026, before the AMR contract ends in 2028.",
-  },
-  {
     id: "mult-jail-capacity",
     label: "Jail capacity",
     short: "Jails",
     question: "Keep both jails at their current funded capacity as the General Fund shrinks?",
     context:
       "The sheriff's required 5% cut option would have removed 38.9 corrections deputies, about 300 of roughly 1,130 funded beds; the FY 2027 budget kept capacity while bookings in February 2026 ran 22% above a year earlier.",
+  },
+  {
+    id: "mult-sanctuary",
+    label: "Sanctuary under pressure",
+    short: "Sanctuary",
+    question: "Keep the county's sanctuary code and refuse ICE detainers under federal pressure?",
+    context:
+      "On April 9, 2026 the Board voted 5–0 to write sanctuary rules into county code, barring immigration agents from non-public county space without a judicial warrant; on June 23, 2026 the U.S. House Judiciary Committee demanded the sheriff's detainer records by July 7, calling the policy a threat to public safety.",
+  },
+  {
+    id: "mult-ambulance",
+    label: "Ambulance staffing",
+    short: "Ambulances",
+    question: "Drop the two-paramedic ambulance rule for good?",
+    context:
+      "AMR has missed the county's eight-minute response target every month since March 2022; a 2024 settlement let some ambulances run with one paramedic and one EMT. A new Ambulance Service Plan goes to the Board in late 2026, before the AMR contract ends in 2028.",
   },
   {
     id: "mult-county-administrator",
@@ -1141,17 +1188,13 @@ const multnomahTopics: ExtraTopic[] = [
     context:
       "The charter makes the chair both a board member and the chief executive who proposes the $4 billion budget and hires department heads. A Charter Review Committee convenes in March 2027 and any change it proposes goes to voters in 2028.",
   },
-  {
-    id: "mult-budget-gap",
-    label: "Closing the gap",
-    short: "Budget gap",
-    question: "Close the county's structural budget gap by cutting administration before services?",
-    context:
-      "The Budget Office projected a $10.5 million General Fund shortfall for FY 2027 growing to $33.8 million by FY 2030; the adopted FY 2027 budget eliminated at least 158 positions.",
-  },
 ];
+/* The Board's choices go to the Board seats in full; the sheriff and the auditor get the ones their office acts on. */
+const byId = (ids: string[]) => ids.map((id) => multnomahTopics.find((t) => t.id === id)!).filter(Boolean);
 const topics: RaceTopics[] = [
-  { raceIds: ["multnomah-chair", "multnomah-district-2", "multnomah-auditor", "multnomah-sheriff"], topics: multnomahTopics },
+  { raceIds: ["multnomah-chair", "multnomah-district-2"], topics: multnomahTopics },
+  { raceIds: ["multnomah-sheriff"], topics: byId(["mult-jail-capacity", "mult-sanctuary", "mult-deflection", "mult-sobering", "mult-budget-gap", "mult-ambulance"]) },
+  { raceIds: ["multnomah-auditor"], topics: byId(["mult-hsd-oversight", "mult-shs-tax", "mult-pfa-delay", "mult-budget-gap"]) },
 ];
 
 /* Candidate-statement sources used only for stances. */
@@ -1176,6 +1219,67 @@ const singletonShsRelease = record(
   "Published by her county office; the proposals are hers, not Board actions.",
 );
 
+/* Sources added in the September 22, 2026 sweep (see research/voters-guide-2026/outreach-2026-09-22/topic-sweep-multnomah.md). */
+const REPORTED = (outlet: string) => `Reported statement; quote as printed by ${outlet}.`;
+const jbeRaceInfo = site("Brim-Edwards · “Information About the Race” (media-resources PDF)", "https://www.juliabrim-edwards.com/s/Information-About-The-Race.pdf");
+const jbeLaunchRelease = site("Brim-Edwards · campaign launch release (May 5, 2026, PDF)", "https://www.juliabrim-edwards.com/s/Julia-Brim-Edwards-Press-Release-050526.pdf");
+const meieranSunstonePost = site("Meieran · “Sunstone scandal: Building accountability in Multnomah County” (June 30, 2026)", "https://www.sharonforchair.com/translating-the-news/sunstone");
+const meieranModaPodcast: Evidence = {
+  label: "NW Fresh Podcast · “Multnomah County CHOPPED | Chairmaxxing with Dr. Sharon Meieran on MODA Renovation” (YouTube)",
+  url: "https://www.youtube.com/watch?v=YCSJ3o_ZgdE",
+  kind: "Candidate statement",
+  date: "Premiered July 20, 2026 (per her campaign's media page); captions read September 22, 2026",
+  note: "Her own remarks on a podcast, read from YouTube's auto-generated captions (Moda from 07:18, Preschool for All from 22:58); not audited against the audio.",
+};
+const sanctuaryOrdinance = record(
+  "Multnomah County · Board unanimously approves enshrining sanctuary policies into County code",
+  "https://multco.us/news/news-release-multnomah-county-board-unanimously-approves-enshrining-sanctuary-policies-county",
+  "April 9, 2026",
+  "Adopted unanimously on April 9, 2026; co-sponsored by Chair Vega Pederson and Commissioner Singleton; carries statements from Singleton and Brim-Edwards.",
+);
+const soberingPlan = record(
+  "Multnomah County · Board approves construction plan for 24/7 Sobering and Crisis Stabilization Center",
+  "https://multco.us/news/board-approves-construction-plan-247-sobering-and-crisis-stabilization-center-facility-track",
+  "March 13, 2026",
+  "Project plan approved 5–0 on March 12, 2026 (Board minutes); carries statements from Brim-Edwards and Singleton.",
+);
+const soberingBriefing2024 = record(
+  "Multnomah County · Board briefed on plans to develop a 24/7 dropoff sobering center",
+  "https://multco.us/news/board-briefed-plans-develop-247-dropoff-sobering-center-new-center-would-fill-five-year-gap",
+  "April 18, 2024",
+  "Carries statements from then-Commissioner Meieran and Commissioner Brim-Edwards at the briefing.",
+);
+const vergowVote = reporting(
+  "KPTV · Commissioners divided on new Multnomah County Homeless Services director",
+  "https://www.kptv.com/2026/04/10/commissioners-divided-new-multnomah-county-homeless-services-director/",
+  "April 10, 2026",
+  "Reports the 3–2 confirmation vote of Thursday, April 9, 2026, naming Singleton and Jones-Dixon as the no votes on the five-member Board and her stated reason.",
+);
+const wwSunstone = reporting(
+  "Willamette Week · Homeless Services Nonprofit Misspent $3.6 Million of Public Money, Report Finds",
+  "https://www.wweek.com/news/county/2026/06/18/homeless-services-nonprofit-misspent-36-million-of-public-money-report-finds/",
+  "June 18, 2026",
+  REPORTED("Willamette Week"),
+);
+const katuShs2025 = reporting(
+  "KATU · Multnomah County proposes funding changes to build more homeless housing, faster",
+  "https://katu.com/news/local/multnomah-county-proposes-funding-changes-to-build-more-homeless-housing-faster",
+  "January 9, 2025",
+  `On Metro's January 2025 draft to extend the tax to 2050 and let it fund housing construction. ${REPORTED("KATU")}`,
+);
+const sheriffGrandJuryLetter = record(
+  "Multnomah County Sheriff's Office · response to the 2025 Corrections Grand Jury report (letter to the District Attorney)",
+  "https://katu.com/resources/pdf/d7ed45eb-4ac9-4bc7-8a13-effa1605fc46-2025CorrectionsGrandJury_SheriffResponseLetter.pdf",
+  "January 9, 2026",
+  "Signed by the sheriff; the PDF is hosted by KATU with its January 29, 2026 report on the grand jury.",
+);
+const katuSanctuaryInquiry = reporting(
+  "KATU · Congressional inquiry into sanctuary laws seeks records from Multnomah County leaders",
+  "https://katu.com/news/local/congressional-inquiry-into-sanctuary-laws-seeks-records-from-multnomah-county-leaders-ice-trump-administration-local-portland",
+  "June 24, 2026",
+  `Statement issued by the Sheriff's Office through its communications director, in response to the House Judiciary Committee's June 23, 2026 letter to the sheriff. ${REPORTED("KATU")}`,
+);
+
 const topicStances: TopicStance[] = [
   /* ── Julia Brim-Edwards (sitting commissioner, District 3) ─────────── */
   stance("julia-brim-edwards", "mult-pfa-delay", "supports", "Voted for 2028 delay",
@@ -1196,6 +1300,21 @@ const topicStances: TopicStance[] = [
   stance("julia-brim-edwards", "mult-budget-gap", "supports", "Cut administrative layers",
     "Says she voted against the FY 2027 budget because it missed the chance to reduce outgrown layers of administrative leadership and prioritize direct services with demonstrated results.",
     budgetFy27),
+  stance("julia-brim-edwards", "mult-shs-tax", "partial", "Wary of Metro's timing",
+    "Told KATU in January 2025 she was really concerned about the timing of Metro's draft to extend and broaden the tax, saying the county spends it as taxpayers want; she has not said whether to extend it past 2030.",
+    katuShs2025),
+  stance("julia-brim-edwards", "mult-hsd-oversight", "supports", "Heed the auditor",
+    "Said after the Sunstone Way findings that the public and Commission should not have to rely on whistleblowers to expose misused taxpayer dollars, faulting the chair for not heeding the auditor's earlier warnings.",
+    wwSunstone),
+  stance("julia-brim-edwards", "mult-sobering", "supports", "Led sobering-center effort",
+    "Her campaign says she led the effort to rebuild the 24/7 Sobering and Crisis Stabilization Center as the front door to addiction treatment instead of jail or the ER, and expanded recovery housing.",
+    jbeRaceInfo),
+  stance("julia-brim-edwards", "mult-jail-capacity", "partial", "Enough beds, no releases",
+    "Her launch release says she offered budget amendments to fund public-safety positions and keep enough jail beds for serious crimes without emergency releases; it does not say whether both jails should keep their current funded capacity.",
+    jbeLaunchRelease),
+  stance("julia-brim-edwards", "mult-sanctuary", "supports", "Voted for sanctuary code",
+    "Voted for the April 9, 2026 ordinance writing sanctuary rules into county code, saying the action sends a message that immigrants belong here and the county will keep protecting civil rights.",
+    sanctuaryOrdinance),
 
   /* ── Shannon Singleton (sitting commissioner, District 2) ──────────── */
   stance("shannon-singleton", "mult-pfa-delay", "supports", "One-year delay, hers",
@@ -1216,6 +1335,21 @@ const topicStances: TopicStance[] = [
   stance("shannon-singleton", "mult-budget-gap", "supports", "Admin review, core services",
     "In March 2025 proposed moving $22 million in homeless-services tax dollars out of administrative and other programs outside the Homeless Services Department, plus a review of that department's administrative structure to prioritize service dollars.",
     singletonShsRelease),
+  stance("shannon-singleton", "mult-shs-tax", "partial", "Let it build housing",
+    "In January 2025 backed Metro's proposal to let the tax buy and build housing, saying it would spare the city and state from finding gap financing; she has not said whether to extend the tax past 2030.",
+    katuShs2025),
+  stance("shannon-singleton", "mult-hsd-oversight", "partial", "No on new director",
+    "Voted no on confirming director Nathaniel VerGow on April 9, 2026, preferring to wait for the chair election, after proposing commissioner-led reviews of the department in 2025; she has not said whether outside audits should follow Sunstone Way.",
+    vergowVote),
+  stance("shannon-singleton", "mult-sobering", "partial", "Voted for center plan",
+    "Voted for the center's construction plan on March 12, 2026, saying she wants every opportunity for warm handoffs rather than referrals so care continues; she has not said whether to fund more detox beds beyond it.",
+    soberingPlan),
+  stance("shannon-singleton", "mult-jail-capacity", "partial", "Voted for the budget",
+    "Voted for the FY 2027 budget that keeps both jails at full funded capacity; her budget statement speaks to housing stability and immigrant services, not to the jails.",
+    budgetFy27),
+  stance("shannon-singleton", "mult-sanctuary", "supports", "Co-sponsored sanctuary code",
+    "Co-sponsored the April 9, 2026 ordinance writing sanctuary rules into county code, saying the county will stand up to bullies for immigrant and refugee neighbors and that restricted areas mean all county facilities.",
+    sanctuaryOrdinance),
 
   /* ── Sharon Meieran (commissioner 2017–2024) ───────────────────────── */
   stance("sharon-meieran", "mult-shelter-cuts", "opposes", "No closures without plan",
@@ -1236,14 +1370,41 @@ const topicStances: TopicStance[] = [
   stance("sharon-meieran", "mult-budget-gap", "supports", "Zero-based budgeting",
     "Would adopt zero-based budgeting so every program justifies its cost, redirect money from ineffective and redundant structures and contracts, and deliver more while spending less.",
     meieranBudgetPost),
+  stance("sharon-meieran", "mult-shs-tax", "partial", "Track every SHS dollar",
+    "Her plan says the county got nearly $1 billion in Metro homeless-services tax money over four years with no way to tell where it went, and would redraft the SHS implementation plan; it does not address extending the tax.",
+    meieranPlanPdf),
+  stance("sharon-meieran", "mult-hsd-oversight", "supports", "Independent forensic review",
+    "Would launch a public, independent performance and forensic review of county contracting on day one and adopt results-driven contracts, calling Sunstone Way a symptom of a system that spends first and asks questions later.",
+    meieranSunstonePost),
+  stance("sharon-meieran", "mult-sobering", "partial", "Center can stand alone",
+    "Told the Board in April 2024 that a sobering center can stand alone and make a difference from the day it opens; she has not said whether the 2027 center should add more detox and treatment beds.",
+    soberingBriefing2024),
+  stance("sharon-meieran", "mult-moda", "partial", "Economic decision, negotiate",
+    "On a July 2026 podcast called the Moda question an economic decision, said the Blazers' benefit is incontrovertible and the county should negotiate on costs and goals instead of a reset; she did not say whether to commit $101.6 million.",
+    meieranModaPodcast),
+  stance("sharon-meieran", "mult-pfa-delay", "partial", "Define goals before taxing",
+    "On a July 2026 podcast said Preschool for All must define its goal and forecast its money before raising taxes as promised while hundreds of millions sit unspent; she did not say whether the 2028 delay should stand.",
+    meieranModaPodcast),
 ];
 
 const norrisPledges = site("Ong Norris · pledges taken (Preschool for All pledge, July 2, 2026)", "https://www.nathanongnorris.com/pledges");
 const norrisModaTestimony = site("Ong Norris · testimony on the Climate Justice Plan and Moda Center (July 23, 2026)", "https://www.nathanongnorris.com/news-updates/testimony-climate-justice-plan-moda");
 topicStances.push(
   /* ── District 2 ────────────────────────────────────────────────────── */
-  // Broussard, Greene, Robertson and Williams: no statement on any of the nine choices in the pamphlet or on their sites.
-  // Robertson criticizes the $610 million Preschool for All reserve but takes no position on the tax delay; left as a gap.
+  // Broussard and Williams: no statement on any of the thirteen choices in the pamphlet, on their sites or in the
+  // venues logged in the September 22, 2026 sweep report. Ong Norris's pamphlet line on "resisting authoritarian
+  // attacks on our immigrant neighbors" is a value, not a position on the sanctuary code; left as a gap.
+  stance("serena-cruz", "mult-pfa-delay", "partial", "Full, stable funding",
+    "Would fight for full, stable funding and universal access by 2030, citing over 7,400 seats for 2026–27; her issues page does not say whether the scheduled tax increase should stay delayed to 2028.",
+    cruzIssues),
+  stance("serena-cruz", "mult-city-county", "partial", "Align County, City, Metro",
+    "Wants the County, City and Metro aligned around one coordinated response instead of finger-pointing; she does not say whether one government should run all shelters when the agreement expires.",
+    cruzIssues),
+  // Not a stance: her governance answer (budget notes, briefings, auditor findings) names no department and no
+  // homeless-services choice, so it is a general value and stays a gap here.
+  stance("serena-cruz", "mult-sobering", "partial", "Crisis to recovery housing",
+    "Wants behavioral-health support that connects crisis stabilization to recovery housing so the highest-need Medicaid patients stop cycling through ERs and jails; she does not mention the 2027 center or detox beds.",
+    cruzIssues),
   stance("serena-cruz", "mult-moda", "supports", "Yes, with conditions",
     "Supports public dollars to keep the Blazers and the Fire in Portland, conditioned on a project labor agreement, a community benefits agreement naming Albina Vision Trust, a 20-year commitment and an annual payment in lieu of taxes.",
     cruzIssues),
@@ -1262,11 +1423,38 @@ topicStances.push(
   stance("nabil-zaghloul", "mult-shelter-cuts", "mixed", "Treatment, not more shelters",
     "Notes many of the 600 beds being cut were already empty and says the answer for people who refuse shelter is sustained behavioral-health and addiction treatment, not more shelters, with prevention funded first.",
     zHomelessness),
+  stance("nabil-zaghloul", "mult-hsd-oversight", "partial", "Retention in every contract",
+    "Would require quarterly housing-retention reporting in every nonprofit contract and publish it; he does not address fiscal monitoring, outside audits or the department's leadership after Sunstone Way.",
+    zHomelessness),
+  stance("nabil-zaghloul", "mult-sobering", "partial", "Fund long-term rehab",
+    "Wants multi-year funding for 12-to-24-month programs combining housing, treatment and employment as the standard for people with overlapping needs; he does not mention the 2027 center or detox beds.",
+    zBehavioral),
+  stance("herman-greene", "mult-hsd-oversight", "partial", "Performance-based contracts",
+    "Wants performance-based contracts and published timelines, spending and results for housing programs; his pamphlet does not mention the Homeless Services Department's leadership, Sunstone Way or outside audits.",
+    pamphlet(34)),
+  stance("tony-robertson", "mult-pfa-delay", "partial", "Plan for $610M reserve",
+    "Demands a clear spending plan and measurable outcomes for the Preschool for All reserve, which he puts at $610 million; his site does not say whether the tax increase should stay delayed to 2028.",
+    robertsonHome),
+  stance("tony-robertson", "mult-city-county", "partial", "Clarify shared agreements",
+    "Would evaluate the county's shared formal agreements to clarify roles and responsibilities and rebuild fractured relationships with other governments; he does not say whether one government should run shelters.",
+    robertsonPriorities),
+  stance("tony-robertson", "mult-hsd-oversight", "partial", "Outcomes for every contract",
+    "Demands clear spending plans, measurable outcomes and transparency for every program the county funds, including housing contracts where placements lag; he does not mention outside audits or Sunstone Way.",
+    robertsonHome),
 
   /* ── Auditor and Sheriff ───────────────────────────────────────────── */
   // Pexton: her material is about audit practice, not the Board's choices; no stance on any column.
   stance("nicole-morrisey-o-donnell", "mult-jail-capacity", "supports", "Preserve jail capacity",
     "Her FY 2027 budget letter urges the chair and Board to preserve current jail capacity and the HR hiring unit, warning a 5% cut would remove about 300 beds and could force releases.",
+    mcsoLetter),
+  stance("nicole-morrisey-o-donnell", "mult-deflection", "supports", "Fund the center more",
+    "Wrote the District Attorney in January 2026 that her office fully agrees more support should go to the deflection center, adding that MCSO cannot be the county's default treatment provider.",
+    sheriffGrandJuryLetter),
+  stance("nicole-morrisey-o-donnell", "mult-sanctuary", "partial", "No ICE detainer holds",
+    "Her office told KATU in June 2026 it cannot hold people solely on ICE detainers and does not use its resources for civil immigration enforcement; it has not said whether the county's sanctuary code should stand.",
+    katuSanctuaryInquiry),
+  stance("nicole-morrisey-o-donnell", "mult-budget-gap", "partial", "Protect core services",
+    "Her FY 2027 budget letter says she does not support reductions that would affect core services and that budget decisions should not come at the expense of community safety; it does not address cutting administration first.",
     mcsoLetter),
 );
 
@@ -1351,18 +1539,29 @@ const stakeSobering: StakeItem = {
   ),
 };
 
+const stakeContractor: StakeItem = {
+  label: "Contractor oversight",
+  text: "A county fiscal review released June 2026 found shelter contractor Sunstone Way billed $3.6 million in unallowable costs from July 2024 to February 2026, $1.6 million of it recommended for recovery; the auditor had flagged $525,000 in overbilling by the same nonprofit in 2022 and says her monitoring recommendations were not followed.",
+  source: reporting(
+    "Willamette Week · Homeless Services Nonprofit Misspent $3.6 Million of Public Money, Report Finds",
+    "https://www.wweek.com/news/county/2026/06/18/homeless-services-nonprofit-misspent-36-million-of-public-money-report-finds/",
+    "June 18, 2026",
+    "The 2022 overbilling figure and the unfollowed monitoring recommendations are from Willamette Week, May 11, 2026, on the auditor's April 21 memorandum.",
+  ),
+};
+
 const stakes: RaceStakes[] = [
   {
     raceId: "multnomah-chair",
     intro:
-      "The chair proposes the county's $4 billion budget, hires every department head and runs the homeless, health and human-services systems. The next chair inherits a shrinking General Fund, falling homeless-services revenue and a city partnership that expires in 2027.",
-    items: [stakeGeneralFund, stakeHomelessCuts, stakeShsRevenue, stakeCityCounty, stakePreschool, stakeDeflection, stakeAmbulance, stakeBurnside],
+      "The chair proposes the county's $4 billion budget, hires every department head and runs the homeless, health and human-services systems. The next chair inherits shelter closures already in the budget, a city partnership that expires in 2027, a homeless-services tax that expires in 2030 and a shrinking General Fund.",
+    items: [stakeHomelessCuts, stakeCityCounty, stakeShsRevenue, stakeContractor, stakeGeneralFund, stakeDeflection, stakePreschool, stakeAmbulance, stakeBurnside],
   },
   {
     raceId: "multnomah-district-2",
     intro:
-      "Commissioners adopt and amend the chair's budget, set policy and hold departments to account by vote and budget note. This seat covers North and Northeast Portland, including the Rose Quarter, and it decides the same budget, shelter and Moda Center questions as the chair.",
-    items: [stakeGeneralFund, stakeHomelessCuts, stakeShelterResults, stakeCityCounty, stakePreschool, stakeDeflection, stakeModa, stakeSobering],
+      "Commissioners adopt and amend the chair's budget, set policy and hold departments to account by vote and budget note. This seat covers North and Northeast Portland, including the Rose Quarter, and it decides the same shelter, budget and Moda Center questions as the chair.",
+    items: [stakeHomelessCuts, stakeCityCounty, stakeShelterResults, stakeContractor, stakeGeneralFund, stakeDeflection, stakeSobering, stakePreschool, stakeModa],
   },
 ];
 

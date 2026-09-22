@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight, ChevronDown, ExternalLink, Globe } from "lucide-react";
 import type { Candidate, Evidence, Race } from "@/lib/voters-guide/types";
 import { ELECTION_DATE } from "@/lib/voters-guide/types";
-import { issues, shortRaceTitle, type FeaturedRow, type RaceSheet, type SheetRow } from "@/lib/voters-guide/race-sheet";
+import { issuesFor, shortRaceTitle, type FeaturedRow, type RaceSheet, type SheetRow } from "@/lib/voters-guide/race-sheet";
 import { sourceChip, type SourceChip } from "@/lib/voters-guide/race-sheet/source-chip";
 import { candidatePath, racePath } from "@/lib/voters-guide/race-sheet/seo";
 import { councilDisagreements } from "@/lib/voters-guide/council-record-accounts";
@@ -123,6 +123,7 @@ export default function CandidateBrief({
   const Item = level === 1 ? "h3" : "h4";
   const short = shortRaceTitle(race);
   const district = districtNumber(race);
+  const issues = issuesFor(sheet.office.group);
   const districtLabel = district ? `District ${district}` : short;
   const index = sheet.rows.findIndex((r) => r.id === row.id);
   const neighbour = (at: number) => {

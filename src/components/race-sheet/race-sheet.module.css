@@ -216,13 +216,9 @@
   font-weight: 600;
   color: var(--color-canopy);
 }
+/* The jump to the boards beneath the grid. */
 .moreButton {
   flex: none;
-}
-.moreButton[aria-expanded="true"] {
-  background: var(--color-canopy);
-  border-color: var(--color-canopy);
-  color: var(--color-paper);
 }
 .moreShort {
   display: none;
@@ -233,16 +229,13 @@
   justify-content: center;
   min-width: 20px;
   height: 20px;
-  padding: 0 6px;
+  padding: 0 7px;
   border-radius: 999px;
   background: color-mix(in oklab, var(--color-violet-mist) 22%, var(--color-paper));
   font-family: var(--font-mono);
   font-size: max(10.5px, 0.66rem);
   color: var(--color-ink);
-}
-.moreButton[aria-expanded="true"] .moreCount {
-  background: color-mix(in oklab, var(--color-paper) 25%, transparent);
-  color: var(--color-paper);
+  white-space: nowrap;
 }
 @media (min-width: 769px) {
   .railWrap {

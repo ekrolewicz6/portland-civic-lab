@@ -11,12 +11,16 @@ import {
   type Delivery,
   type DeliveryStep,
   type DistrictInfo,
+  type ExtraTopic,
   type IssueLine,
   type MissingState,
   type PrimaryStatement,
   type RacePack,
+  type RaceStakes,
+  type RaceTopics,
   type RoleOverride,
   type StanceChip,
+  type TopicStance,
 } from "../../types";
 
 /**
@@ -116,6 +120,10 @@ const districts: DistrictInfo[] = [];
 const choices: ChoiceParagraph[] = [];
 const portraits: Record<string, CandidatePortrait> = {};
 const missing: Record<string, MissingState> = {};
+/** Topic boards and stakes (researched September 22, 2026) are filled at the end of the file; see the note there. */
+const topics: RaceTopics[] = [];
+const topicStances: TopicStance[] = [];
+const stakes: RaceStakes[] = [];
 
 /** The arrays above are filled by the district blocks below; module order keeps them in the export. */
 /** Research gaps closed since September 18 by the candidate's own statement; see the research log. */
@@ -152,7 +160,7 @@ const profiles: RacePack["profiles"] = {
   },
 };
 
-export const pack: RacePack = { ...emptyPack(), analysis, lines, chips, deliveries, ownWords, contacts, roles, primary, ballots, districts, choice: choices, portraits, missing, profiles };
+export const pack: RacePack = { ...emptyPack(), analysis, lines, chips, deliveries, ownWords, contacts, roles, primary, ballots, districts, choice: choices, portraits, missing, profiles, topics, topicStances, stakes };
 
 /* ── Oregon Senate · District 13 ─────────────────────────────────────────── */
 const neronPriorities = site("Neron Misslin · priorities", "https://www.courtneyfororegon.com/priorities");
@@ -1022,3 +1030,508 @@ Object.assign(portraits, {
   "hank-sanders": portrait("hank-sanders", "https://www.hankfororegon.com/", "Campaign photo · hankfororegon.com"),
   "scott-c-hege": portrait("scott-c-hege", "https://www.hegefororegon.com/about", "Campaign photo · hegefororegon.com"),
 });
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * Topic boards and stakes for all thirteen races (researched September 22, 2026).
+ * Incumbents' cells are their recorded floor votes on OLIS (kind "Public record",
+ * the bill and date named); challengers' cells are their own published words or a
+ * quote as printed by a named outlet. Nothing is inferred from party, endorsements
+ * or silence; a candidate with no explicit statement on a topic has no cell.
+ * ══════════════════════════════════════════════════════════════════════════ */
+const TOPICS_REVIEWED_ON = "2026-09-22";
+const topicReviewed = { reviewedBy: "pending", reviewedOn: TOPICS_REVIEWED_ON } as const;
+const OLIS = "https://olis.oregonlegislature.gov/liz";
+const record = (label: string, url: string, date: string, note?: string): Evidence => ({
+  label, url, kind: "Public record", date, ...(note ? { note } : {}),
+});
+const reported = (label: string, url: string, date: string, outlet: string): Evidence => ({
+  label, url, kind: "Reporting", date, note: `Reported statement; quote as printed by ${outlet}.`,
+});
+const stance = (candidateId: string, topicId: string, s: TopicStance["stance"], chipText: string, text: string, source: Evidence): TopicStance =>
+  ({ candidateId, topicId, stance: s, chip: chipText, text, source, ...topicReviewed });
+
+/* Roll calls (OLIS measure histories, reviewed September 22, 2026) */
+const hb3991Senate = record("OLIS · HB 3991 (2025 special session) · Senate third reading", `${OLIS}/2025S1/Measures/Overview/HB3991`,
+  "September 29, 2025; signed November 7, 2025; reviewed September 22, 2026",
+  "Passed 18–11. The gas-tax and fee increases were repealed by voters as Measure 120 on May 19, 2026; the enrolled bill also repealed the mandatory toll program.");
+const hb3991House = record("OLIS · HB 3991 (2025 special session) · House third reading", `${OLIS}/2025S1/Measures/Overview/HB3991`,
+  "September 1, 2025; signed November 7, 2025; reviewed September 22, 2026",
+  "Passed 36–12, carried by McLain; Helfrich was excused. Rieke Smith filed a vote explanation. Voters repealed the tax and fee increases as Measure 120 on May 19, 2026.");
+const hb3546Senate = record("OLIS · HB 3546, the POWER Act (2025) · Senate third reading", `${OLIS}/2025R1/Measures/Overview/HB3546`,
+  "June 3, 2025; signed June 16, 2025; reviewed September 22, 2026",
+  "Passed 18–12. The law lets regulators put large-load customers such as data centers in their own electricity rate class.");
+const hb3546House = record("OLIS · HB 3546, the POWER Act (2025) · House votes", `${OLIS}/2025R1/Measures/Overview/HB3546`,
+  "April 22 and June 5, 2025; signed June 16, 2025; reviewed September 22, 2026",
+  "Third reading passed 41–16; the House concurred in Senate amendments 37–17. Helfrich is among the nays both times; McLain is among the ayes.");
+const hb3644Senate = record("OLIS · HB 3644, statewide shelter program (2025) · Senate third reading", `${OLIS}/2025R1/Measures/Overview/HB3644`,
+  "June 26, 2025; signed July 17, 2025; reviewed September 22, 2026",
+  "Passed 19–10, carried by Neron Misslin. The program is funded with $204,918,652 General Fund for 2025–27 in HB 5011, half of it one-time.");
+const hb3644House = record("OLIS · HB 3644, statewide shelter program (2025) · House third reading", `${OLIS}/2025R1/Measures/Overview/HB3644`,
+  "June 23, 2025; signed July 17, 2025; reviewed September 22, 2026",
+  "Passed 33–11. Helfrich is among the nays; McLain and Rieke Smith are among the ayes.");
+const hb4002Senate = record("OLIS · HB 4002, Measure 110 changes (2024) · Senate third reading", `${OLIS}/2024R1/Measures/Overview/HB4002`,
+  "March 1, 2024; signed April 1, 2024; reviewed September 22, 2026",
+  "Passed 21–8. Jama is among the nays and filed a vote explanation; Wagner and Meek are among the ayes.");
+const hb4002House = record("OLIS · HB 4002, Measure 110 changes (2024) · House third reading", `${OLIS}/2024R1/Measures/Overview/HB4002`,
+  "February 29, 2024; signed April 1, 2024; reviewed September 22, 2026",
+  "Passed 51–7. Helfrich, McLain, Neron and Reynolds (then House members) are among the ayes.");
+const hb3940Senate = record("OLIS · HB 3940, wildfire funding (2025) · Senate third reading", `${OLIS}/2025R1/Measures/Overview/HB3940`,
+  "June 26, 2025; signed July 24, 2025; reviewed September 22, 2026",
+  "Passed 20–8. Reynolds is among the nays; Meek was absent. The Legislative Revenue Office put the bill's wildfire funds at about $43 million for 2025–27 and $63 million for 2027–29.");
+const hb3940House = record("OLIS · HB 3940, wildfire funding (2025) · House third reading", `${OLIS}/2025R1/Measures/Overview/HB3940`,
+  "June 23, 2025; signed July 24, 2025; reviewed September 22, 2026",
+  "Passed 37–8. Helfrich is among the nays; McLain and Rieke Smith are among the ayes.");
+const sb1507Senate = record("OLIS · SB 1507, federal tax disconnect and Earned Income Tax Credit (2026) · Senate third reading", `${OLIS}/2026R1/Measures/Overview/SB1507`,
+  "February 16, 2026; signed April 9, 2026; reviewed September 22, 2026",
+  "Passed 17–13; Meek is the one Democrat among the nays. The Legislative Revenue Office estimated a net General Fund gain of $313.9 million in 2027–29.");
+const sb1507House = record("OLIS · SB 1507, federal tax disconnect and Earned Income Tax Credit (2026) · House third reading", `${OLIS}/2026R1/Measures/Overview/SB1507`,
+  "February 25, 2026; signed April 9, 2026; reviewed September 22, 2026",
+  "Passed 34–21. Bunch and Helfrich are among the nays; McLain and Rieke Smith are among the ayes.");
+const hb4138Senate = record("OLIS · HB 4138, officer identification and masks (2026) · Senate third reading", `${OLIS}/2026R1/Measures/Overview/HB4138`,
+  "March 5, 2026; signed March 31, 2026; reviewed September 22, 2026",
+  "Passed 18–10. One of eight immigrant-protection bills signed April 9, 2026.");
+const hb4138House = record("OLIS · HB 4138, officer identification and masks (2026) · House votes", `${OLIS}/2026R1/Measures/Overview/HB4138`,
+  "February 24 and March 6, 2026; signed March 31, 2026; reviewed September 22, 2026",
+  "Third reading passed 36–19; the House concurred 34–18. Bunch and Helfrich are among the nays both times; McLain and Rieke Smith are among the ayes.");
+
+/* Reported statements and remaining candidate pages used only by the boards */
+const armitageReported = reported("Tillamook Headlight Herald · Armitage interview", armitageInterview.url, "April 21, 2026; reviewed September 22, 2026", "the Tillamook Headlight Herald");
+const hegeReported = reported("Columbia Community Connection · Hege interview", hegeInterview.url, "September 16, 2026; reviewed September 22, 2026", "Columbia Community Connection");
+const strohRecordPage = site("Stroh · Michele’s Record", "https://votestroh.com/micheles-record/");
+const helfrichStatement: Evidence = { ...statement(92), note: `${statement(92).note} He was excused for the House vote on HB 3991 on September 1, 2025 (OLIS).` };
+
+/* ── Topics: the choices the 2027 Legislature will vote on ─────────────── */
+const LEG_RACES = [
+  "oregon-state-senate-13", "oregon-state-senate-15", "oregon-state-senate-16", "oregon-state-senate-17", "oregon-state-senate-19",
+  "oregon-state-senate-20", "oregon-state-senate-24", "oregon-state-senate-26",
+  "oregon-state-house-26", "oregon-state-house-29", "oregon-state-house-40", "oregon-state-house-51", "oregon-state-house-52",
+];
+const legislatureTopics: ExtraTopic[] = [
+  {
+    id: "leg-transportation-package",
+    label: "2027 road package",
+    short: "Road taxes",
+    question: "Vote for a 2027 transportation package that raises the gas tax and vehicle fees again?",
+    context:
+      "HB 3991, passed in a September 2025 special session, raised the gas tax and vehicle fees; voters repealed those increases as Measure 120 on May 19, 2026, 83% to 17%. The 2026 session redirected existing funds to close ODOT's $297 million gap through June 2027, and ODOT says it faces a $200 million gap and nearly 200 maintenance-job cuts in 2027–29.",
+  },
+  {
+    id: "leg-kicker",
+    label: "Kicker refund",
+    short: "Kicker",
+    question: "Let the state keep part of a future kicker refund for wildfire or other one-time needs?",
+    context:
+      "The 2026 kicker returned about $1.4 billion; holding any of it back takes a two-thirds vote of each chamber. The September 2026 forecast puts 2025–27 personal income taxes $526 million under the kicker threshold, so no refund is due on 2028 returns; a 2026 bill to change how the kicker is calculated (HB 4125) had a hearing February 2 and died in committee.",
+  },
+  {
+    id: "leg-new-revenue",
+    label: "Budget gap: taxes?",
+    short: "Budget gap",
+    question: "Close the 2027–29 budget gap with new revenue, or with cuts alone?",
+    context:
+      "The state's Chief Financial Office told agencies on February 10, 2026 that federal H.R. 1 opens a gap between current programs and revenue, and that 2027–29 requests must be revenue-neutral. In February 2026 the Legislature passed SB 1507, disconnecting from H.R. 1 business tax breaks to raise about $314 million for 2027–29 while enlarging the Earned Income Tax Credit; reserves stand at $3.46 billion.",
+  },
+  {
+    id: "leg-data-centers",
+    label: "Data-center limits",
+    short: "Data centers",
+    question: "Make data centers pay their own way: separate power rates, an end to tax breaks, or a pause on new ones?",
+    context:
+      "Oregon has about 144 data centers and roughly $450 million a year in property-tax breaks, a figure the Legislative Revenue Office called “pretty close” on September 8, 2026. The 2025 POWER Act (HB 3546) put them in their own electricity rate class; the governor paused data-center deals on state land through July 1, 2027 and will bring the 2027 session a statewide framework.",
+  },
+  {
+    id: "leg-shelter-funding",
+    label: "Shelter funding",
+    short: "Shelter",
+    question: "Keep paying for state-funded shelter beds and the homelessness emergency after June 2027?",
+    context:
+      "The statewide shelter program created by HB 3644 (2025) has $204.9 million for 2025–27, half of it one-time money that expires June 30, 2027; Executive Order 26-01 extends the homelessness emergency through January 10, 2027. The state counts 6,286 shelter beds added or kept and 5,539 people rehoused from January 2023 through September 2025.",
+  },
+  {
+    id: "leg-deflection",
+    label: "Drugs: deflection",
+    short: "Deflection",
+    question: "Keep the 2024 approach of recriminalized possession plus county deflection programs, and fund them in 2027–29?",
+    context:
+      "HB 4002 (2024) made drug possession a misdemeanor again on September 1, 2024 and created county deflection programs, run by 28 counties and six tribes in the first cycle and funded with $40 million for 2025–27. Through August 4, 2025 the state logged 2,096 deflection events: 1,308 people entered a program, 277 completed one and 630 did not.",
+  },
+  {
+    id: "leg-wildfire-funding",
+    label: "Wildfire money",
+    short: "Wildfire",
+    question: "Spend more state money on wildfire prevention and firefighting?",
+    context:
+      "Fires burned a record 2.5 million acres in Oregon in summer 2026. HB 3940 (2025) taxes oral nicotine and moves 20% of Rainy Day Fund interest into two wildfire funds, which the Legislative Revenue Office put at about $43 million for 2025–27 and $63 million for 2027–29, and raises the timber harvest tax; SB 83 (2025) repealed the statewide wildfire hazard map.",
+  },
+  {
+    id: "leg-sanctuary",
+    label: "Sanctuary law",
+    short: "Sanctuary",
+    question: "Keep adding state limits on federal immigration enforcement, on top of Oregon's sanctuary law?",
+    context:
+      "Oregon's 1987 sanctuary law and the 2021 Sanctuary Promise Act bar public resources for immigration enforcement without a judicial warrant. The 2026 session passed eight more bills, signed April 9, 2026, including HB 4138, which requires officers to identify themselves and limits masks (House 36–19, Senate 18–10), and SB 1570, which requires hospitals to set policies for law-enforcement visits.",
+  },
+];
+topics.push({ raceIds: LEG_RACES, topics: legislatureTopics });
+
+/* ── Topic stances: explicit and sourced; the record first for incumbents ── */
+topicStances.push(
+  /* Senate 13 */
+  stance("courtney-neron-misslin", "leg-transportation-package", "supports", "Voted for HB 3991",
+    "Voted yes on HB 3991 in the Senate on September 29, 2025, the gas-tax and fee package voters later repealed; the enrolled bill also repealed the mandatory toll program.", hb3991Senate),
+  stance("courtney-neron-misslin", "leg-new-revenue", "supports", "Voted to disconnect",
+    "Voted yes on SB 1507 on February 16, 2026, which disconnects Oregon from federal H.R. 1 business tax breaks, raising about $314 million for 2027–29, and enlarges the Earned Income Tax Credit.", sb1507Senate),
+  stance("courtney-neron-misslin", "leg-data-centers", "supports", "Voted for POWER Act",
+    "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it lets regulators put data centers in their own electricity rate class.", hb3546Senate),
+  stance("courtney-neron-misslin", "leg-shelter-funding", "supports", "Carried shelter bill",
+    "Carried HB 3644 on the Senate floor and voted yes on June 26, 2025; the law creates the statewide shelter program funded with $204.9 million through June 2027.", hb3644Senate),
+  stance("courtney-neron-misslin", "leg-deflection", "supports", "Voted for HB 4002",
+    "Voted yes on HB 4002 in the House on February 29, 2024, which recriminalized possession and created county deflection programs.", hb4002House),
+  stance("courtney-neron-misslin", "leg-wildfire-funding", "supports", "Voted for HB 3940",
+    "Voted yes on HB 3940 on June 26, 2025, which taxes oral nicotine, raises the timber harvest tax and moves Rainy Day Fund interest to wildfire funds.", hb3940Senate),
+  stance("courtney-neron-misslin", "leg-sanctuary", "supports", "Voted for HB 4138",
+    "Voted yes on HB 4138 on March 5, 2026, requiring officers to identify themselves and limiting masks; her site says she has worked to strengthen Oregon’s sanctuary protections.", hb4138Senate),
+  stance("glenn-lancaster", "leg-transportation-package", "opposes", "Stop the gas tax",
+    "Says his opponent voted for HB 3991’s six-cent gas tax and higher fees, which voters rejected by more than four to one, and that he will stop the next tax increase.", statement(66)),
+  stance("glenn-lancaster", "leg-kicker", "opposes", "Protect the kicker",
+    "Says he will stop the next tax increase and protect your kicker refund.", statement(67)),
+  stance("glenn-lancaster", "leg-new-revenue", "opposes", "Stop tax increases",
+    "Says Salem passed the largest tax increase in state history; he would stop tax increases and stop funding programs that grow even when they fail.", lancasterIssues),
+  stance("glenn-lancaster", "leg-shelter-funding", "partial", "Demand real solutions",
+    "Says addiction and homelessness are treated as permanent and demands real solutions with accountability and results; he does not say whether to keep funding state shelter beds.", lancasterIssues),
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  /* Senate 15 */
+  stance("myrna-a-munoz", "leg-new-revenue", "supports", "Close corporate loopholes",
+    "Would close tax loopholes and make large corporations pay their fair share to invest in schools, healthcare and affordable housing.", statement(68)),
+  stance("myrna-a-munoz", "leg-data-centers", "supports", "Safeguards, transparency",
+    "Calls the AI data-center build-out reckless and says it is driving up electricity bills; would require transparency, community input and environmental safeguards.", munozIssues),
+  stance("myrna-a-munoz", "leg-shelter-funding", "partial", "Plan to house all",
+    "Wants a strategic plan to house all Oregonians and state investment in affordable housing; she does not address shelter funding or the emergency order.", munozAbout),
+  stance("myrna-a-munoz", "leg-sanctuary", "supports", "Due process, no ICE",
+    "Would fight for laws that strengthen due process, prevent racial profiling and keep local resources on community safety; her About page calls for abolishing ICE.", munozIssues),
+  stance("harold-hutchison", "leg-transportation-package", "opposes", "No gas-tax increase",
+    "Told the Abigail Adams questionnaire that roads can be funded without gas-tax or fee increases by shrinking the administration behind DEQ and licensing, and backs voter approval of tolls.", hutchisonOAA),
+  stance("harold-hutchison", "leg-kicker", "opposes", "Kicker belongs to taxpayers",
+    "Answered the questionnaire’s kicker-repeal question with “The kicker belongs to the taxpayers.”", hutchisonOAA),
+  stance("harold-hutchison", "leg-new-revenue", "partial", "End property tax",
+    "Would eliminate assessment-based property tax, opposes a sales tax and calls income tax the fairest way to raise needed revenue; he does not say how to close the 2027–29 gap.", hutchisonOAA),
+  stance("harold-hutchison", "leg-wildfire-funding", "partial", "No routine prescribed burns",
+    "Told the questionnaire he does not support the Forestry Department doing prescribed burns every five years; he does not address wildfire funding.", hutchisonOAA),
+  stance("harold-hutchison", "leg-sanctuary", "opposes", "Repeal sanctuary law",
+    "Told the questionnaire he supports repealing Oregon’s sanctuary law and letting police ask about immigration status outside criminal investigations.", hutchisonOAA),
+  /* Senate 16 */
+  stance("courtney-bangs", "leg-transportation-package", "opposes", "Existing dollars, no hikes",
+    "Says she helped defeat the $4.3 billion gas-tax package and will fight new taxes and hidden fees, seeking the district’s share of existing dollars for Highways 30, 6 and 101.", bangsPriorities),
+  stance("courtney-bangs", "leg-new-revenue", "opposes", "No new taxes, fees",
+    "Will fight to stop new tax hikes and hidden fees and demand accountability for state spending.", bangsPriorities),
+  stance("rachel-armitage", "leg-transportation-package", "opposes", "Against gas-tax hike",
+    "Told the Headlight Herald in April 2026 she is generally opposed to raising the gas tax and DMV fees, and wants rural gas-tax dollars kept on rural roads with more ODOT oversight.", armitageReported),
+  stance("rachel-armitage", "leg-new-revenue", "opposes", "No new costs now",
+    "Told the Headlight Herald that now is not the time for the state to talk about increasing costs, and that she would review whether old bills and pandemic-era programs still work.", armitageReported),
+  stance("melisa-finkle", "leg-transportation-package", "partial", "Roads need more",
+    "Her filed statement calls for safer travel and roads that need more than another temporary patch; it does not say whether she would raise the gas tax or fees to pay for them.", statement(76)),
+  /* Senate 17 */
+  stance("lisa-reynolds", "leg-transportation-package", "supports", "Voted for HB 3991",
+    "Voted yes on HB 3991 in the Senate on September 29, 2025, the gas-tax and fee package voters later repealed.", hb3991Senate),
+  stance("lisa-reynolds", "leg-new-revenue", "supports", "Voted to disconnect",
+    "Voted yes on SB 1507 on February 16, 2026, which disconnects Oregon from federal H.R. 1 business tax breaks, raising about $314 million for 2027–29, and enlarges the Earned Income Tax Credit.", sb1507Senate),
+  stance("lisa-reynolds", "leg-data-centers", "supports", "Voted for POWER Act",
+    "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it lets regulators put data centers in their own electricity rate class.", hb3546Senate),
+  stance("lisa-reynolds", "leg-shelter-funding", "supports", "Voted for shelter bill",
+    "Voted yes on HB 3644 on June 26, 2025; her site says she voted for record shelter and housing funding and supported rent relief and eviction moratoriums.", hb3644Senate),
+  stance("lisa-reynolds", "leg-deflection", "supports", "Voted for HB 4002",
+    "Voted yes on HB 4002 in the House on February 29, 2024; her site calls for markedly more treatment and interrupting the fentanyl supply.", hb4002House),
+  stance("lisa-reynolds", "leg-wildfire-funding", "opposes", "Voted no: HB 3940",
+    "Voted no on HB 3940 on June 26, 2025, the bill that taxes oral nicotine products, raises the timber harvest tax and moves Rainy Day Fund interest to wildfire prevention funds.", hb3940Senate),
+  stance("lisa-reynolds", "leg-sanctuary", "supports", "Voted for HB 4138",
+    "Voted yes on HB 4138 on March 5, 2026; her statement cites policies protecting patients in hospitals, children in schools and people in their homes from the Trump administration.", hb4138Senate),
+  stance("john-a-n-chee", "leg-new-revenue", "opposes", "Cut taxes, no increases",
+    "Says Oregon families are devastated by endless broad-based tax increases; he would dramatically reduce property taxes and eliminate taxes on family inheritances.", cheeSurvey),
+  stance("john-a-n-chee", "leg-shelter-funding", "partial", "Prosecute vagrancy",
+    "Would prosecute vagrancy and open drug use; he does not say whether the state should keep funding shelter beds.", cheeSurvey),
+  stance("john-a-n-chee", "leg-deflection", "partial", "Prosecute open drug use",
+    "Would prosecute open drug use; he does not say whether counties should keep deflecting people to treatment before charges.", cheeSurvey),
+);
+topicStances.push(
+  /* Senate 19 */
+  stance("rob-wagner", "leg-transportation-package", "supports", "Voted for HB 3991",
+    "Voted yes on HB 3991 in the Senate on September 29, 2025, the gas-tax and fee package voters later repealed.", hb3991Senate),
+  stance("rob-wagner", "leg-new-revenue", "supports", "Voted to disconnect",
+    "Voted yes on SB 1507 on February 16, 2026, which disconnects Oregon from federal H.R. 1 business tax breaks, raising about $314 million for 2027–29, and enlarges the Earned Income Tax Credit.", sb1507Senate),
+  stance("rob-wagner", "leg-data-centers", "supports", "Voted for POWER Act",
+    "Voted yes on HB 3546 on June 3, 2025, putting data centers in their own electricity rate class; his site says he made data centers pay their fair share of energy costs.", hb3546Senate),
+  stance("rob-wagner", "leg-shelter-funding", "supports", "Voted for shelter bill",
+    "Voted yes on HB 3644 on June 26, 2025, creating the statewide shelter program funded with $204.9 million through June 2027.", hb3644Senate),
+  stance("rob-wagner", "leg-deflection", "supports", "Voted for HB 4002",
+    "Voted yes on HB 4002 in the Senate on March 1, 2024, which recriminalized possession and created county deflection programs.", hb4002Senate),
+  stance("rob-wagner", "leg-wildfire-funding", "supports", "Voted for HB 3940",
+    "Voted yes on HB 3940 on June 26, 2025; his statement says Oregon must build resilience amid wildfires and heat waves.", hb3940Senate),
+  stance("rob-wagner", "leg-sanctuary", "supports", "Voted for HB 4138",
+    "Voted yes on HB 4138 on March 5, 2026; his site says he strongly supported new laws protecting the constitutional rights of immigrant and refugee neighbors.", hb4138Senate),
+  stance("mary-dirksen", "leg-new-revenue", "opposes", "Tax relief, less waste",
+    "Would rein in wasteful spending, demand transparency for every tax dollar and pursue meaningful tax relief; her statement says taxes and the cost of living have soared under current Senate leadership.", dirksenHome),
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  /* Senate 20 */
+  stance("mark-meek", "leg-transportation-package", "supports", "Voted for HB 3991",
+    "Voted yes on HB 3991 in the Senate on September 29, 2025; the enrolled bill also repealed the mandatory toll program, and his site says he ended ODOT’s I-205 tolling plans.", hb3991Senate),
+  stance("mark-meek", "leg-new-revenue", "opposes", "Voted no on disconnect",
+    "Voted no on SB 1507 on February 16, 2026, the bill that disconnects Oregon from federal H.R. 1 business tax breaks to raise about $314 million for 2027–29 and enlarge the Earned Income Tax Credit.", sb1507Senate),
+  stance("mark-meek", "leg-data-centers", "supports", "Voted for POWER Act",
+    "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it lets regulators put data centers in their own electricity rate class.", hb3546Senate),
+  stance("mark-meek", "leg-shelter-funding", "supports", "Voted for shelter bill",
+    "Voted yes on HB 3644 on June 26, 2025; his site says he is working to expand shelter capacity and treatment programs.", hb3644Senate),
+  stance("mark-meek", "leg-deflection", "supports", "Voted for HB 4002",
+    "Voted yes on HB 4002 in the Senate on March 1, 2024; his site backs resources for police, offender accountability and expanded treatment.", hb4002Senate),
+  stance("mark-meek", "leg-sanctuary", "supports", "Voted for HB 4138",
+    "Voted yes on HB 4138 on March 5, 2026; his site says he stood firm against reckless federal policies.", hb4138Senate),
+  stance("michele-stroh", "leg-transportation-package", "opposes", "Voters said no",
+    "Her filed statement says the incumbent voted yes on a package to raise taxes that voters then rejected by more than 80 percent, and that Salem’s answer is always another tax.", statement(85)),
+  stance("michele-stroh", "leg-new-revenue", "opposes", "No new taxes",
+    "Pledges no new taxes: says Oregon does not have a revenue problem but a spending problem, and she will vote no on new taxes until Salem shows it can spend what it has.", statement(84)),
+  stance("michele-stroh", "leg-shelter-funding", "partial", "Accountability for spending",
+    "Says Oregon has spent billions while the crisis grew; wants treatment, accountability for spending and less red tape blocking shelters and housing, without saying whether to renew state shelter money.", strohHome),
+  stance("michele-stroh", "leg-deflection", "supports", "Backed Fix M110",
+    "Says she worked with the Fix M110 coalition on the bipartisan amendment giving police tools against dealers while getting people with addiction into treatment; wants prevention, treatment and consequences for dealers.", strohRecordPage),
+  /* Senate 24 */
+  stance("kayse-jama", "leg-transportation-package", "supports", "Voted for HB 3991",
+    "Voted yes on HB 3991 in the Senate on September 29, 2025, the gas-tax and fee package voters later repealed.", hb3991Senate),
+  stance("kayse-jama", "leg-new-revenue", "supports", "Voted to disconnect",
+    "Voted yes on SB 1507 on February 16, 2026, which disconnects Oregon from federal H.R. 1 business tax breaks, raising about $314 million for 2027–29, and enlarges the Earned Income Tax Credit.", sb1507Senate),
+  stance("kayse-jama", "leg-data-centers", "supports", "Voted for POWER Act",
+    "Voted yes on HB 3546 on June 3, 2025, putting data centers in their own electricity rate class; his statement says he fought to lower energy costs for Oregon families.", hb3546Senate),
+  stance("kayse-jama", "leg-shelter-funding", "supports", "Voted for shelter bill",
+    "Voted yes on HB 3644 on June 26, 2025; as Senate housing chair he says he led over $4.5 billion in housing investment over three years.", hb3644Senate),
+  stance("kayse-jama", "leg-deflection", "opposes", "Voted no: HB 4002",
+    "Voted no on HB 4002 in the Senate on March 1, 2024, the bill that recriminalized possession and created county deflection programs, and filed a vote explanation.", hb4002Senate),
+  stance("kayse-jama", "leg-wildfire-funding", "supports", "Voted for HB 3940",
+    "Voted yes on HB 3940 on June 26, 2025; his site cites a 2022 law protecting farmworkers during wildfire smoke and heat waves.", hb3940Senate),
+  stance("kayse-jama", "leg-sanctuary", "supports", "Voted for HB 4138",
+    "Voted yes on HB 4138 on March 5, 2026; his statement says he protected immigrant and refugee communities from federal overreach.", hb4138Senate),
+  /* Senate 26 */
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  stance("nicole-bassett", "leg-wildfire-funding", "supports", "Prioritize prevention",
+    "Would prioritize wildfire prevention, support first responders and invest in proven solutions that keep people, land and homes safe.", statement(91)),
+  stance("jeff-helfrich", "leg-transportation-package", "opposes", "Opposed the gas tax",
+    "Says he opposed major tax increases including the gas tax and fought policies that raise costs for working families; he was excused for the House vote on HB 3991.", helfrichStatement),
+  stance("jeff-helfrich", "leg-new-revenue", "opposes", "Voted no on disconnect",
+    "Voted no on SB 1507 in the House on February 25, 2026; his statement says government should live within a budget as families do.", sb1507House),
+  stance("jeff-helfrich", "leg-data-centers", "opposes", "Voted no: POWER Act",
+    "Voted no on HB 3546 on April 22 and June 5, 2025; his statement calls for balanced energy policies that lower costs and provide the power Oregon needs to grow.", hb3546House),
+  stance("jeff-helfrich", "leg-shelter-funding", "opposes", "Voted no: shelter bill",
+    "Voted no on HB 3644 in the House on June 23, 2025, the bill creating the statewide shelter program.", hb3644House),
+  stance("jeff-helfrich", "leg-deflection", "supports", "Voted for HB 4002",
+    "Voted yes on HB 4002 on February 29, 2024; his statement says he helped lead the bipartisan effort to recriminalize hard drugs and restore accountability.", hb4002House),
+  stance("jeff-helfrich", "leg-wildfire-funding", "opposes", "Voted no: HB 3940",
+    "Voted no on HB 3940 in the House on June 23, 2025, the bill that taxes oral nicotine, raises the timber harvest tax and moves Rainy Day Fund interest to wildfire funds.", hb3940House),
+  stance("jeff-helfrich", "leg-sanctuary", "opposes", "Voted no: HB 4138",
+    "Voted no on HB 4138 on February 24 and March 6, 2026, the bill requiring officers to identify themselves and limiting masks.", hb4138House),
+);
+topicStances.push(
+  /* House 26 */
+  stance("sue-r-rieke-smith", "leg-transportation-package", "supports", "Voted for HB 3991",
+    "Voted yes on HB 3991 in the House on September 1, 2025 and filed a vote explanation; voters later repealed the package’s gas-tax and fee increases.", hb3991House),
+  stance("sue-r-rieke-smith", "leg-new-revenue", "supports", "Voted to disconnect",
+    "Voted yes on SB 1507 on February 25, 2026; her statement describes it as standing up to Trump’s tax loopholes for the ultra wealthy and cutting taxes for over 200,000 working families.", sb1507House),
+  stance("sue-r-rieke-smith", "leg-data-centers", "supports", "Regulate data centers",
+    "Opposes the unchecked growth of AI data centers that use up water and raise utility costs; she was not yet in the House for the POWER Act votes.", statement(179)),
+  stance("sue-r-rieke-smith", "leg-shelter-funding", "supports", "Voted for shelter bill",
+    "Voted yes on HB 3644 on June 23, 2025, two weeks after taking office; her plan would partner with cities and nonprofits on root causes like mental illness and addiction.", hb3644House),
+  stance("sue-r-rieke-smith", "leg-deflection", "partial", "Integrate treatment",
+    "Would fully integrate mental-health and addiction treatment into the healthcare system; she was not in office for HB 4002 and does not address deflection funding.", rsPlan),
+  stance("sue-r-rieke-smith", "leg-wildfire-funding", "supports", "Voted for HB 3940",
+    "Voted yes on HB 3940 on June 23, 2025, the bill that taxes oral nicotine, raises the timber harvest tax and moves Rainy Day Fund interest to wildfire funds.", hb3940House),
+  stance("sue-r-rieke-smith", "leg-sanctuary", "supports", "Voted for HB 4138",
+    "Voted yes on HB 4138 on February 24 and March 6, 2026, the bill requiring officers to identify themselves and limiting masks.", hb4138House),
+  stance("stephanie-carkin", "leg-transportation-package", "opposes", "Families paying enough",
+    "Her statement welcomes the defeat of the transportation tax referendum, which she notes her opponent voted for, because families are already paying enough; she would spend existing dollars on essential infrastructure.", statement(175)),
+  stance("stephanie-carkin", "leg-new-revenue", "opposes", "Audit before taxing",
+    "Before asking taxpayers for more, government should show it uses existing money well: audits of underperforming programs, performance-based budgeting and a bigger tax base from a business-friendly Oregon.", carkinIssues),
+  stance("steph-terrio", "leg-new-revenue", "partial", "Corporate tax increase",
+    "Backs a 1.5% corporate tax increase and drug-price negotiation to fund coverage for uninsured and lower-income people; she frames it as Medicare reform and does not address the state’s 2027–29 gap.", terrioPolicy),
+  stance("steph-terrio", "leg-data-centers", "partial", "Regulate AI now",
+    "Wants AI regulated immediately, citing data centers’ fresh-water use and unchecked surveillance; she does not address tax breaks, rates or a pause.", terrioPolicy),
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  /* House 29 */
+  stance("susan-mclain", "leg-transportation-package", "supports", "Carried HB 3991",
+    "Carried HB 3991 on the House floor and voted yes on September 1, 2025; her site backs transit, road maintenance and a new earthquake-ready Columbia River bridge.", hb3991House),
+  stance("susan-mclain", "leg-new-revenue", "supports", "Voted to disconnect",
+    "Voted yes on SB 1507 on February 25, 2026; her site says she voted for the largest Earned Income Tax Credit increase in state history.", sb1507House),
+  stance("susan-mclain", "leg-data-centers", "supports", "Voted for POWER Act",
+    "Voted yes on HB 3546 on April 22 and June 5, 2025, and sponsored a bill banning data centers from passing energy costs to consumers.", hb3546House),
+  stance("susan-mclain", "leg-shelter-funding", "supports", "Voted for shelter bill",
+    "Voted yes on HB 3644 on June 23, 2025, the bill creating the statewide shelter program.", hb3644House),
+  stance("susan-mclain", "leg-deflection", "supports", "Voted for HB 4002",
+    "Voted yes on HB 4002 on February 29, 2024, which recriminalized possession and created county deflection programs.", hb4002House),
+  stance("susan-mclain", "leg-wildfire-funding", "supports", "Voted for HB 3940",
+    "Voted yes on HB 3940 on June 23, 2025, the bill that taxes oral nicotine, raises the timber harvest tax and moves Rainy Day Fund interest to wildfire funds.", hb3940House),
+  stance("susan-mclain", "leg-sanctuary", "supports", "Voted for HB 4138",
+    "Voted yes on HB 4138 on February 24 and March 6, 2026; her site says she fought this year to hold ICE and law-enforcement agents accountable.", hb4138House),
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  /* House 40 */
+  stance("adam-baker", "leg-transportation-package", "opposes", "Respect the vote",
+    "Would respect the May 2026 vote rejecting the gas-tax, payroll-tax and vehicle-fee increases: no new taxes without proof of efficiency and results, and no tolls on I-205.", bakerIssues),
+  stance("adam-baker", "leg-new-revenue", "opposes", "Audit before taxing",
+    "No new taxes until agencies prove efficiency and results; every agency should show measurable results before asking taxpayers for another dime.", bakerIssues),
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  stance("adam-baker", "leg-shelter-funding", "partial", "Compassion with accountability",
+    "Wants compassion with accountability: reduce encampments, expand recovery programs and fund inpatient mental-health capacity; he does not say whether to keep state shelter funding.", bakerIssues),
+  stance("adam-baker", "leg-deflection", "partial", "Enforcement plus treatment",
+    "Wants firm enforcement plus proven intervention: treat the opioid crisis as an emergency, expand recovery programs that work and pair treatment with responsibility; he does not name deflection.", bakerIssues),
+  stance("michael-w-sugar", "leg-transportation-package", "partial", "No tolls, on-time projects",
+    "Opposes tolling and wants projects delivered on time and on budget with union labor; he does not say whether he would vote for a gas-tax or fee increase.", sugarPriorities),
+  stance("michael-w-sugar", "leg-new-revenue", "supports", "Wealthy pay fair share",
+    "Would push major tax reform so billionaires and the wealthiest corporations pay their fair share while cutting the burden on working families.", sugarPriorities),
+  stance("michael-w-sugar", "leg-shelter-funding", "partial", "Get people off streets",
+    "Would expand mental-health and addiction services, address homelessness and get people off the streets; he does not say how shelter beds would be funded.", statement(225)),
+  // Not a stance: a general value or goal that does not reach this choice; left as a gap.
+  stance("michael-w-sugar", "leg-wildfire-funding", "supports", "Fund brush clearing",
+    "Would increase support for proactive wildfire prevention, including brush clearing, and invest now in earthquake-resistant bridges, water systems and emergency centers.", sugarPriorities),
+  stance("michael-w-sugar", "leg-sanctuary", "supports", "Protect from overreach",
+    "Would protect Oregonians and immigrants from federal overreach and ensure a justice system that treats everyone equally.", sugarPriorities),
+  stance("pat-hubbell", "leg-new-revenue", "opposes", "Audits, no tax hikes",
+    "Would balance the state budget without raising taxes on working families by auditing departments and eliminating waste and redundant programs.", hubbellPlatform),
+  stance("pat-hubbell", "leg-deflection", "partial", "Recovery plus enforcement",
+    "Would couple compassionate mental-health and addiction recovery with strict enforcement of public-safety laws; he does not address deflection funding.", hubbellHome),
+);
+topicStances.push(
+  /* House 51 */
+  stance("darla-mead", "leg-transportation-package", "partial", "Road budgets insufficient",
+    "Says rural roads are in disrepair and the budgets to fix them are insufficient; she does not say how she would raise the money.", meadEcon),
+  stance("darla-mead", "leg-new-revenue", "partial", "Find budget improvements",
+    "Would bring accounting skills to finding budget improvements and wants schools funded beyond federal dollars; she does not say whether she would raise revenue.", meadEcon),
+  stance("darla-mead", "leg-data-centers", "supports", "Rules insufficient now",
+    "Says data centers are being built in rural neighborhoods where they deplete fresh water and that existing regulations are insufficient to manage them.", meadEnv),
+  stance("darla-mead", "leg-shelter-funding", "partial", "Pathways to stable housing",
+    "Wants pathways from subsidized housing and rental assistance to long-term stable housing; she does not address shelter funding.", meadEcon),
+  stance("darla-mead", "leg-wildfire-funding", "partial", "Mitigate disasters",
+    "Says her family evacuated in the 2020 fires and she will fight for solutions that mitigate natural disasters; she does not say how much the state should spend or how to pay.", meadHome),
+  stance("matt-bunch", "leg-transportation-package", "opposes", "No transportation taxes",
+    "Opposes the transportation package’s gas-tax, vehicle-fee and payroll-tax increases; would cut waste and prioritize road maintenance and safety instead of new taxes.", bunchIssues),
+  stance("matt-bunch", "leg-new-revenue", "opposes", "Voted no on disconnect",
+    "Voted no on SB 1507 on February 25, 2026; his statement says he is fighting to protect tax relief, including eliminating state taxes on tips and overtime.", sb1507House),
+  stance("matt-bunch", "leg-shelter-funding", "partial", "Community-based, no bureaucracy",
+    "Calls growing homelessness a serious concern and wants community-based solutions without new bureaucracy; he does not say whether to renew state shelter money.", bunchIssues),
+  stance("matt-bunch", "leg-sanctuary", "opposes", "Voted no: HB 4138",
+    "Voted no on HB 4138 on February 24 and March 6, 2026, the bill requiring officers to identify themselves and limiting masks.", hb4138House),
+  /* House 52 */
+  stance("hank-sanders", "leg-data-centers", "supports", "No new data centers",
+    "Will not support any new data centers; would end their tax breaks and NDAs and require clarity on what they use and provide, calling $50 million and $100 million tax breaks unfair.", sandersDataCenters),
+  stance("hank-sanders", "leg-wildfire-funding", "supports", "10–20× more prevention",
+    "Says Oregon should spend 10 to 20 times more on fire prevention and would create a home-hardening team to lower insurance costs.", sandersWildfire),
+  stance("scott-c-hege", "leg-transportation-package", "partial", "Maintain what exists",
+    "Wants state infrastructure programs focused on maintaining existing roads and bridges with fair rural access; he does not say whether he would raise the gas tax or fees.", hegePriorities),
+  stance("scott-c-hege", "leg-new-revenue", "opposes", "Stop relying on taxes",
+    "Says Oregon should stop relying on higher taxes and take a hard look at how government spends the money it already has, prioritizing essential services and eliminating waste.", hegePriorities),
+  stance("scott-c-hege", "leg-data-centers", "mixed", "Local choice, transparency",
+    "Opposes a statewide moratorium and says local communities should decide; told Columbia Community Connection that water-use secrecy damaged trust and The Dalles does not need more data centers.", hegeReported),
+  stance("scott-c-hege", "leg-wildfire-funding", "supports", "Invest in initial attack",
+    "Told Columbia Community Connection that investing far more in initial attack and forest treatment can avoid enormously expensive fires; backs prescribed burning and says homeowners must harden their own homes.", hegeReported),
+);
+
+/* ── Stakes: what the 2027 session decides, in sourced facts ─────────────── */
+const oeaForecast = record("Oregon Office of Economic Analysis · September 2026 revenue forecast", "https://www.oregon.gov/das/oea/Documents/revenue0926.pdf",
+  "September 2026; reviewed September 22, 2026",
+  "The revenue-neutral instruction is the Chief Financial Office's 2027–29 policy-package guidance of February 10, 2026 (oregon.gov/das/Financial/Documents/2027-29 Budget POP Guidance - CFO.pdf).");
+const lroSb1507 = record("Legislative Revenue Office · revenue impact of SB 1507 A", `${OLIS}/2026R1/Downloads/CommitteeMeetingDocument/314766`, "February 9, 2026; reviewed September 22, 2026");
+const opbOdotCuts = { label: "OPB, from the Oregon Capital Chronicle · ODOT faces staff cuts as severe weather strains maintenance", url: "https://www.opb.org/article/2026/08/21/odot-staff-cuts-maintenance-weather/", kind: "Reporting" as const, date: "August 21, 2026; reviewed September 22, 2026",
+  note: "ODOT's own HB 3991 page (oregon.gov/odot/pages/hb3991.aspx) puts the 2025–27 gap closed by two 2026 bills at $297 million; KATU reported the Measure 120 result as 83% no on May 20, 2026." };
+const hb5011Report = record("Legislative Fiscal Office · HB 5011 budget report, Housing and Community Services Department 2025–27", `${OLIS}/2025R1/Downloads/CommitteeMeetingDocument/308817`,
+  "June 2025; reviewed September 22, 2026",
+  "Bed, rehousing and prevention counts are from the governor's January 9, 2026 release on Executive Order 26-01 (apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-issues-executive-order-to-extend-homelessness-emergency).");
+const jprDc = { label: "Oregon Capital Chronicle, via Jefferson Public Radio · Kotek pauses data centers on state land; demonstrators want more", url: "https://www.ijpr.org/politics-government/2026-09-09/gov-kotek-pauses-data-centers-on-state-land-capitol-demonstrators-want-her-to-go-further", kind: "Reporting" as const, date: "September 9, 2026; reviewed September 22, 2026",
+  note: "The pause and the advisory committee's year-end deadline are in the governor's September 8, 2026 release (apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-pauses-work-on-requests-for-state-land-to-support-new-data-centers)." };
+const cjcReport = record("Oregon Criminal Justice Commission · Behavioral Health Initiatives Report", "https://www.oregon.gov/cjc/CJC%20Document%20Library/2025_CJC_Behavioral_Health_Initiatives_Report.pdf", "November 1, 2025; reviewed September 22, 2026");
+const lroHb3940 = record("Legislative Revenue Office · revenue impact of HB 3940 -A24", `${OLIS}/2025R1/Downloads/CommitteeMeetingDocument/309208`,
+  "June 19, 2025; reviewed September 22, 2026",
+  "The 2.5 million acres figure is OPB's, from the Oregon Capital Chronicle, August 21, 2026 (opb.org/article/2026/08/21/odot-staff-cuts-maintenance-weather/); SB 83's repeal of the hazard map is on OLIS (2025R1, SB 83).");
+const govImmBills = record("Governor’s Office · Signs eight bills bolstering protections for immigrant and refugee communities", "https://apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-signs-bills-bolstering-protections-for-immigrant-and-refugee-communities", "April 9, 2026; reviewed September 22, 2026");
+const sb83Record = record("OLIS · SB 83 (2025), wildfire hazard map and building-code repeal", `${OLIS}/2025R1/Measures/Overview/SB83`, "Passed the Senate 29–0 on April 22, 2025 and the House 50–1 on June 24, 2025; signed July 24, 2025; reviewed September 22, 2026");
+const occOdotFeb = { label: "Oregon Capital Chronicle, via The Outlook · Layoffs or redirecting funding: lawmakers grapple with ODOT budget gap again", url: "https://theoutlookonline.com/2026/02/12/layoffs-or-redirecting-funding-oregon-lawmakers-grapple-with-odot-budget-gap-again/", kind: "Reporting" as const, date: "February 12, 2026; reviewed September 22, 2026" };
+const katuOdotUpdate = { label: "KATU · ODOT leaders provide an update on agency projects and finances", url: "https://katu.com/news/local/odot-leaders-provide-an-update-on-agency-projects-and-finances", kind: "Reporting" as const, date: "October 1, 2025; reviewed September 22, 2026", note: "HB 3991's repeal of the mandatory toll program is in its OLIS digest (2025S1, HB 3991)." };
+const opbHoodRiver = { label: "OPB · Oregon matches Washington’s $125 million to replace the Hood River–White Salmon bridge", url: "https://www.opb.org/article/2025/07/08/oregon-matches-washington-125-million-replace-hood-river-white-salmon-bridge/", kind: "Reporting" as const, date: "July 8, 2025; reviewed September 22, 2026",
+  note: "The $1.12 billion program cost, the November 2025 federal Record of Decision and the 2027 construction target are on the Bridge Authority's project page (hoodriverbridge.org/project-overview)." };
+const opbGrasshopper = { label: "OPB · The Grasshopper Fire destroyed homes and tested firefighters", url: "https://www.opb.org/article/2026/08/17/grasshopper-fire-what-comes-next/", kind: "Reporting" as const, date: "August 17, 2026; reviewed September 22, 2026" };
+const opbHillsboroDc = { label: "OPB · Hillsboro mayor’s absence looms large in heated data center discussions", url: "https://www.opb.org/article/2026/06/18/hillsboro-mayor-absence-looms-large-heated-data-center-discussions/", kind: "Reporting" as const, date: "June 18, 2026; reviewed September 22, 2026",
+  note: "The failed 2026 industrial-land bill is OPB's March 3, 2026 report (opb.org/article/2026/03/03/hillsboro-will-not-get-more-industrial-land-for-high-tech-data-centers/)." };
+const opbWlwv = { label: "OPB · After school closure vote, West Linn-Wilsonville school board faces recall", url: "https://www.opb.org/article/2026/03/09/school-closure-vote-west-linn-wilsonville-recall/", kind: "Reporting" as const, date: "March 9, 2026; reviewed September 22, 2026" };
+const opbBeaverton = { label: "OPB · Oregon’s second largest school district has a new leader", url: "https://www.opb.org/article/2026/07/09/beaverton-school-district-new-superintendent/", kind: "Reporting" as const, date: "July 9, 2026; reviewed September 22, 2026",
+  note: "Executive Order 26-06 (April 16, 2026) bars districts from cutting instructional time for budget reasons: apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-issues-executive-order-to-preserve-student-instructional-time." };
+const opbAstoria = { label: "KMUN, via OPB · ICE operations at Port of Astoria spark concerns", url: "https://www.opb.org/article/2026/06/08/astoria-oregon-ice-operations-spark-concerns-sanctuary-law/", kind: "Reporting" as const, date: "June 8, 2026; reviewed September 22, 2026" };
+const opbGresham = { label: "OPB · Gresham family detained by immigration officers while seeking medical care for their 7-year-old", url: "https://www.opb.org/article/2026/01/23/gresham-family-seeking-medical-care-child-detained-immigration-officers/", kind: "Reporting" as const, date: "January 23, 2026; reviewed September 22, 2026",
+  note: "SB 1570's hospital-policy requirement is described in the governor's April 9, 2026 release." };
+
+type StakeItem = RaceStakes["items"][number];
+const budgetGapItem: StakeItem = { label: "2027–29 budget gap", source: oeaForecast,
+  text: "Federal H.R. 1 is projected to open a gap between the cost of current programs and revenue, so the Chief Financial Office told agencies on February 10, 2026 that 2027–29 requests must be revenue-neutral. September’s forecast shows a $400 million 2025–27 ending balance, $3.46 billion in reserves (9.7% of the general fund) and no kicker due on 2028 returns." };
+const disconnectItem: StakeItem = { label: "Tax disconnect", source: lroSb1507,
+  text: "SB 1507 (2026) disconnected Oregon from federal H.R. 1 business tax breaks and enlarged the Earned Income Tax Credit, a net $314 million for the 2027–29 general fund by the Legislative Revenue Office’s estimate. Whether to go further, or to cut instead, is the 2027 session’s call." };
+const roadFundingItem: StakeItem = { label: "Road funding", source: opbOdotCuts,
+  text: "Voters repealed HB 3991’s gas-tax and fee increases in May 2026, and the 2026 session redirected existing money to close ODOT’s $297 million gap through June 2027. ODOT now projects a $200 million gap for 2027–29 and nearly 200 maintenance-job cuts; the governor’s workgroup owes recommendations for a 2027 package by year’s end." };
+const shelterCliffItem: StakeItem = { label: "Shelter money cliff", source: hb5011Report,
+  text: "The statewide shelter program has $204.9 million for 2025–27, $102.5 million of it one-time money that ends June 30, 2027, and the homelessness emergency runs through January 10, 2027. The state counts 6,286 shelter beds added or kept, 5,539 people rehoused and 25,942 households kept housed since January 2023." };
+const dataCenterItem: StakeItem = { label: "Data centers", source: jprDc,
+  text: "About 144 data centers get roughly $450 million a year in property-tax breaks, a figure the Legislative Revenue Office called “pretty close” on September 8, 2026. Data-center deals on state land are paused through July 1, 2027, and the governor’s advisory committee owes recommendations for a 2027 bill by the end of 2026." };
+const deflectionItem: StakeItem = { label: "Deflection funding", source: cjcReport,
+  text: "HB 4002’s county deflection programs, run by 28 counties and six tribes in the first cycle, have $40 million for 2025–27; through August 4, 2025 the state logged 2,096 deflection events, 1,308 program entries and 277 completions. The 2027–29 budget decides whether the grants continue." };
+const wildfireItem: StakeItem = { label: "Wildfire costs", source: lroHb3940,
+  text: "Fires burned a record 2.5 million acres in summer 2026. HB 3940’s nicotine tax and Rainy Day Fund interest put about $63 million into two wildfire funds in 2027–29 by the Legislative Revenue Office’s estimate, and SB 83 (2025) repealed the statewide hazard map that would have driven building and defensible-space rules." };
+const federalEnforcementItem: StakeItem = { label: "Federal enforcement", source: govImmBills,
+  text: "Eight immigrant-protection bills signed April 9, 2026 set rules for schools, hospitals, courts and data brokers and require officers to identify themselves; an interagency council created by Executive Order 26-04 coordinates the state’s response. The 2027 session decides what comes next." };
+const wlwvItem: StakeItem = { label: "West Linn-Wilsonville schools", source: opbWlwv,
+  text: "The West Linn-Wilsonville board voted December 18, 2025 to close Bolton and Stafford primary schools to help fill a $10 million gap as enrollment falls, two weeks after voters passed a $190 million bond. State school money follows enrollment per pupil, and the 2027–29 State School Fund sets the base." };
+const booneItem: StakeItem = { label: "Boone Bridge money", source: occOdotFeb,
+  text: "To avoid layoffs in February 2026, ODOT proposed redirecting $30 million designated for the Rose Quarter, Abernethy Bridge and I-5 Boone Bridge projects toward maintenance, along with $194 million for bridge and seismic work and $15 million for Safe Routes to School." };
+const hillsboroDcItem: StakeItem = { label: "Hillsboro data centers", source: opbHillsboroDc,
+  text: "Hillsboro has 34 data centers, more than any Oregon city, and in 2026 signed off on enterprise-zone tax exemptions for 15 developments tied to new or existing ones. A 2026 bill to add 373 acres to Hillsboro’s growth boundary for high-tech industry died after objections that it would allow more data centers." };
+const coastCrewsItem: StakeItem = { label: "Coastal road crews", source: occOdotFeb,
+  text: "An ODOT employee from the Astoria area told lawmakers in February 2026 that funding uncertainty had cut his crew in half, leaving eight people for 304 shoulder miles; the agency said closing a $242 million gap without new revenue meant up to 400 layoffs or redirecting money from bridges, Safe Routes to School and transit." };
+const astoriaIceItem: StakeItem = { label: "ICE at the Port", source: opbAstoria,
+  text: "On June 7, 2026 federal immigration officers staged an operation from fenced Port of Astoria property in which three people are believed to have been detained; advocates said it may have violated Oregon’s sanctuary law and planned a complaint to the Oregon Department of Justice." };
+const beavertonItem: StakeItem = { label: "Beaverton schools", source: opbBeaverton,
+  text: "The Beaverton School District closed McKay Elementary and cut 159 full-time positions to fill a $37 million gap, using $16.6 million in reserves for the rest. Executive Order 26-06 now bars districts from cutting instructional time to balance budgets and requires districts that did to restore it by 2027–28." };
+const abernethyItem: StakeItem = { label: "Abernethy Bridge", source: katuOdotUpdate,
+  text: "The I-205 Abernethy Bridge between West Linn and Oregon City is costing $672 million against an original $495 million authorization, ODOT reported in October 2025, with completion expected in 2026. HB 3991 repealed the mandatory toll program that had been planned for I-205." };
+const greshamItem: StakeItem = { label: "Hospital detention", source: opbGresham,
+  text: "On January 16, 2026 immigration officers detained a Gresham family, including a 7-year-old Alder Elementary student, in the parking lot of Portland Adventist Health as they sought care. SB 1570, signed April 9, 2026, now requires hospitals to set policies for law-enforcement visits and designate non-public areas." };
+const hoodRiverItem: StakeItem = { label: "Hood River bridge", source: opbHoodRiver,
+  text: "Replacing the 1924 Hood River–White Salmon bridge is estimated at $1.12 billion; SB 5531 (2025) committed $105 million from Oregon over six years, including $30 million the 2027–29 budget must deliver, and the Bridge Authority is seeking the last federal piece to start construction in 2027." };
+const grasshopperItem: StakeItem = { label: "Grasshopper Fire", source: opbGrasshopper,
+  text: "The Grasshopper Fire east of Mount Hood burned nearly 90,000 acres of Wasco County and destroyed six homes by August 16, 2026, with 12,000 acres burning in a single hour on August 10 as it ran through the community of Friend." };
+const sb83Item: StakeItem = { label: "Wildfire map repeal", source: sb83Record,
+  text: "SB 83 (2025), passed 29–0 in the Senate and 50–1 in the House, repealed the statewide wildfire hazard map and the building-code and defensible-space requirements tied to it. Any replacement rules for homes in the wildland-urban interface would have to come from the Legislature." };
+
+const senateIntro = (where: string, tail: string) =>
+  `${where} A state senator is one of 30 votes on the two-year budget, on any tax increase (three-fifths) and on holding back a kicker (two-thirds), and confirms the governor’s appointees. ${tail}`;
+const houseIntro = (where: string, tail: string) =>
+  `${where} A state representative is one of 60 votes on the two-year budget, on any tax increase (three-fifths) and on holding back a kicker (two-thirds). ${tail}`;
+const TAIL = "The 2027 session opens in January with a budget gap, no durable road-funding source and shelter money that runs out in June 2027.";
+stakes.push(
+  { raceId: "oregon-state-senate-13", intro: senateIntro("Senate District 13 runs from Tigard, King City and Sherwood through Wilsonville and the farm country toward Newberg.", TAIL),
+    items: [budgetGapItem, roadFundingItem, booneItem, wlwvItem, shelterCliffItem, dataCenterItem, deflectionItem] },
+  { raceId: "oregon-state-senate-15", intro: senateIntro("Senate District 15 covers Forest Grove, Cornelius and west and central Hillsboro, the center of Oregon’s data-center industry.", TAIL),
+    items: [budgetGapItem, hillsboroDcItem, dataCenterItem, roadFundingItem, shelterCliffItem, federalEnforcementItem, deflectionItem] },
+  { raceId: "oregon-state-senate-16", intro: senateIntro("Senate District 16 is the North Coast and lower Columbia, from Astoria and Tillamook to St. Helens and Scappoose.", TAIL),
+    items: [budgetGapItem, roadFundingItem, coastCrewsItem, astoriaIceItem, wildfireItem, shelterCliffItem, deflectionItem] },
+  { raceId: "oregon-state-senate-17", intro: senateIntro("Senate District 17 covers Bethany, Oak Hills and Cedar Mill in the Beaverton School District, plus Forest Park, Linnton and Northwest Portland.", TAIL),
+    items: [budgetGapItem, beavertonItem, roadFundingItem, shelterCliffItem, dataCenterItem, deflectionItem, federalEnforcementItem] },
+  { raceId: "oregon-state-senate-19", intro: senateIntro("Senate District 19 covers Lake Oswego, West Linn, Tualatin, Durham, Rivergrove, Stafford and part of Southwest Portland; its senator is the Senate President.", TAIL),
+    items: [budgetGapItem, disconnectItem, roadFundingItem, abernethyItem, wlwvItem, shelterCliffItem, dataCenterItem] },
+  { raceId: "oregon-state-senate-20", intro: senateIntro("Senate District 20 covers Oregon City, Gladstone, Johnson City, Happy Valley and unincorporated Clackamas County toward Damascus.", TAIL),
+    items: [budgetGapItem, disconnectItem, roadFundingItem, abernethyItem, shelterCliffItem, deflectionItem, dataCenterItem] },
+  { raceId: "oregon-state-senate-24", intro: senateIntro("Senate District 24 covers East Portland east of I-205, Gresham, Wood Village, Fairview and Troutdale.", TAIL),
+    items: [budgetGapItem, shelterCliffItem, roadFundingItem, greshamItem, federalEnforcementItem, dataCenterItem, deflectionItem] },
+  { raceId: "oregon-state-senate-26", intro: senateIntro("Senate District 26 runs from Hood River and The Dalles through Mount Hood country to Sandy, Estacada and Canby.", TAIL),
+    items: [budgetGapItem, hoodRiverItem, grasshopperItem, wildfireItem, roadFundingItem, dataCenterItem, shelterCliffItem] },
+  { raceId: "oregon-state-house-26", intro: houseIntro("House District 26 covers Sherwood, Wilsonville, King City and Bull Mountain, with rural Washington and Yamhill County land toward Newberg.", TAIL),
+    items: [budgetGapItem, roadFundingItem, booneItem, wlwvItem, shelterCliffItem, dataCenterItem, deflectionItem] },
+  { raceId: "oregon-state-house-29", intro: houseIntro("House District 29 covers Forest Grove, Cornelius, Dilley, Gaston and the western edge of Hillsboro.", TAIL),
+    items: [budgetGapItem, hillsboroDcItem, dataCenterItem, roadFundingItem, shelterCliffItem, federalEnforcementItem, deflectionItem] },
+  { raceId: "oregon-state-house-40", intro: houseIntro("House District 40 covers Oregon City, Gladstone, Jennings Lodge, Oatfield and Johnson City, at the Clackamas County end of the Abernethy Bridge.", TAIL),
+    items: [budgetGapItem, roadFundingItem, abernethyItem, shelterCliffItem, deflectionItem, dataCenterItem, disconnectItem] },
+  { raceId: "oregon-state-house-51", intro: houseIntro("House District 51 is rural Clackamas County: Sandy, Estacada, Beavercreek, Mulino and Canby, much of it in the wildland-urban interface.", TAIL),
+    items: [budgetGapItem, wildfireItem, sb83Item, roadFundingItem, shelterCliffItem, dataCenterItem, disconnectItem] },
+  { raceId: "oregon-state-house-52", intro: houseIntro("House District 52 runs from Hood River and The Dalles through Mount Hood Villages to Corbett and the Multnomah County side of the Gorge.", TAIL),
+    items: [budgetGapItem, hoodRiverItem, grasshopperItem, wildfireItem, dataCenterItem, roadFundingItem, shelterCliffItem] },
+);
