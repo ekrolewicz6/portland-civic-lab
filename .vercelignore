@@ -10,14 +10,14 @@
 
 # Committed research corpora and published report artifacts (~42 MB).
 # Nothing under src/ reads either directory at runtime: the only references
-# are provenance comments naming a file, plus a link in the libraries deep
-# dive to /reports/... which resolves against public/ and is already broken.
-# Runtime assets belong in public/.
+# are provenance comments naming a file. Runtime assets belong in public/.
 /reports
 /research
 
+# Do NOT add *.pdf here: every PDF outside /reports and /research lives in
+# public/ and is served (the deep-dive "full report" links). A blanket
+# *.pdf rule shipped 404s for all of them.
 *.dump
 *.sql.gz
-*.pdf
 *.log
 *.tsbuildinfo

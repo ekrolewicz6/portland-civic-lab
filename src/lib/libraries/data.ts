@@ -46,7 +46,7 @@ export const SOURCES = {
   // Served from public/reports/, not from the repo-root reports/ directory,
   // which is not deployed.
   pclReport: { org: "Portland Civic Lab, full report (PDF)", url: "/reports/portland-libraries-2026/Portland_Libraries_Deep_Dive_2026.pdf", kind: "analysis" },
-  districtPresentation: { org: "Multnomah County, FY2027 Library District budget presentation & May 2026 work-session follow-up", url: "https://www.multco.us/budget", kind: "primary" },
+  districtPresentation: { org: "Multnomah County, FY2027 Library District budget", url: "https://multco.us/file/fy_2027_proposed_library_district_budget/download", kind: "primary" },
 } satisfies Record<string, Source>;
 
 export const HEADLINE = {
