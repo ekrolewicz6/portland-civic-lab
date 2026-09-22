@@ -43,7 +43,7 @@ export type IssueCell = {
 export type Rung = { text: string; source: SourceChip } | null;
 export type Ladder = { how: Rung; measure: Rung; askedOn: string | null; review: Review | null };
 
-/** A cell in an extra-topic column: a recorded vote, an explicit stance, or a gap. */
+/** A candidate’s row on a topic board: a recorded vote, an explicit stance, or a gap. */
 export type TopicCell = {
   vote: VoteWord | null;
   stance: "supports" | "opposes" | "mixed" | "partial" | null;

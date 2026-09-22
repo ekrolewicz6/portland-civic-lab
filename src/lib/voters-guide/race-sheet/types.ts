@@ -118,7 +118,7 @@ export type Delivery = Review & {
   askedOn?: string;
 };
 
-/** A concrete choice readers can add as a grid column beyond the four issues. */
+/** A concrete choice the office faces: one topic board beneath the four-issue grid. */
 export type ExtraTopic = {
   id: string;
   label: string;
@@ -213,7 +213,7 @@ export type RacePack = {
    * the research log records each one.
    */
   profiles: Record<string, { background: string; summary: string; priorities: string[]; question?: string }>;
-  /** Office-specific comparison topics (the picker's columns) for the listed races, and each candidate's explicit stance. */
+  /** Office-specific topics (the boards beneath the grid) for the listed races, and each candidate's explicit stance. */
   topics: RaceTopics[];
   topicStances: TopicStance[];
   /** What is at stake in a race right now: sourced facts about the office's biggest current problems. */
