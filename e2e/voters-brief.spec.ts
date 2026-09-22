@@ -83,17 +83,18 @@ for (const race of races) {
 
 /* ── The office's choices on a brief: every question once, open ones named ── */
 
-test("every brief lists the office's choices, splitting what they answered from what is still open", async ({ page }) => {
-  for (const raceId of ["portland-district-4", "multnomah-chair", "oregon-governor"]) {
-    const sheet = buildRaceSheet(races.find((r) => r.id === raceId)!);
-    const topics = topicsFor(sheet.race);
-    for (const row of sheet.rows) {
+/* One test per candidate: a single page load each, so a slow runner never
+   pushes a whole race past the per-test timeout. */
+for (const raceId of ["portland-district-4", "multnomah-chair", "oregon-governor"]) {
+  const sheet = buildRaceSheet(races.find((r) => r.id === raceId)!);
+  const topics = topicsFor(sheet.race);
+  for (const row of sheet.rows) {
+    const answered = topics.filter((t) => row.topicCells[t.id].vote || row.topicCells[t.id].chip);
+    const open = topics.filter((t) => !(row.topicCells[t.id].vote || row.topicCells[t.id].chip));
+    test(`${raceId}/${row.id}: the brief lists all ${topics.length} choices, ${open.length} still open`, async ({ page }) => {
       await page.goto(`/voters-guide/${raceId}/${row.id}`);
       const section = page.locator(`section[aria-labelledby="${row.id}-choices"]`);
       await expect(section.getByRole("heading", { name: "The choices this office faces" })).toBeVisible();
-      const answered = topics.filter((t) => row.topicCells[t.id].vote || row.topicCells[t.id].chip);
-      const open = topics.filter((t) => !(row.topicCells[t.id].vote || row.topicCells[t.id].chip));
-      // Each question appears exactly once, in the right group.
       await expect(section.locator("li")).toHaveCount(topics.length);
       await expect(section.locator('li[data-state="open"]')).toHaveCount(open.length);
       await expect(section).toContainText(`is on record on ${answered.length}`);
@@ -110,6 +111,6 @@ test("every brief lists the office's choices, splitting what they answered from 
         if (cell.text) await expect(li).toContainText(cell.text);
       }
       await expect(section.getByRole("link", { name: /Compare every candidate/ })).toHaveAttribute("href", `/voters-guide/${raceId}#topics`);
-    }
+    });
   }
-});
+}
