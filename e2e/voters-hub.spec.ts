@@ -3,7 +3,7 @@ import { races } from "../src/lib/voters-guide/published";
 import { issues, raceSheetVersion, shortRaceTitle } from "../src/lib/voters-guide/race-sheet";
 import { candidateTitle, printTitle, raceTitle, votesTitle } from "../src/lib/voters-guide/race-sheet/seo";
 import { guideCards, GUIDE_ORIGIN } from "../src/lib/voters-guide/metadata";
-import { GROUP_ORDER, officeOf } from "../src/lib/voters-guide/race-sheet/office";
+import { officeOf } from "../src/lib/voters-guide/race-sheet/office";
 
 /** The hub, the export, the crawler surface and the routes that must fail closed. */
 
@@ -28,11 +28,15 @@ test("hub: a card with a portrait mosaic for every published race, grouped by of
   }
   const text = await page.locator("main").first().innerText();
   for (const person of races.flatMap((r) => r.candidates)) expect(text, person.name).not.toContain(person.name);
-  // Every office group with a published race has its own section heading.
-  for (const group of GROUP_ORDER.filter((g) => g !== "council")) {
-    const count = races.filter((r) => officeOf(r).group === group).length;
-    await expect(page.locator(`#group-${group}`)).toHaveCount(count ? 1 : 0);
-  }
+  // The ladder: one tier per level of government, one rung per body, biggest budget first.
+  await expect(page.locator("#tier-federal")).toHaveCount(1);
+  await expect(page.locator("#tier-state")).toHaveCount(1);
+  await expect(page.locator("#tier-county")).toHaveCount(1);
+  await expect(page.locator("#tier-city")).toHaveCount(1);
+  const tierOrder = await page.locator("[id^='tier-']").evaluateAll((els) => els.map((e) => e.id));
+  expect(tierOrder).toEqual(["tier-federal", "tier-state", "tier-county", "tier-city"]);
+  await expect(page.locator("#body-multnomah-county")).toHaveCount(1);
+  await expect(page.locator("#body-city-of-portland")).toHaveCount(1);
   // The district map links only the published districts.
   const map = page.getByRole("img", { name: /Council districts/i }).first();
   await expect(map).toBeVisible();

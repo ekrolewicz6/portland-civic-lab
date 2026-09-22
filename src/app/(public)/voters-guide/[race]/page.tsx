@@ -7,6 +7,7 @@ import { buildRaceSheet, clientSheet, shortRaceTitle } from "@/lib/voters-guide/
 import { raceMetadata, raceStructuredData } from "@/lib/voters-guide/race-sheet/seo";
 import RaceSheet from "@/components/race-sheet/RaceSheet";
 import FourVotes from "@/components/race-sheet/FourVotes";
+import Stakes from "@/components/race-sheet/Stakes";
 import AboutStrip from "@/components/race-sheet/AboutStrip";
 import Lede from "@/components/race-sheet/Lede";
 import RaceSheetStructuredData from "@/components/race-sheet/RaceSheetStructuredData";
@@ -132,6 +133,8 @@ export default async function RacePage({
       </header>
 
       <RaceSheet sheet={clientSheet(sheet)} />
+
+      <Stakes sheet={sheet} />
 
       {sheet.office.hasCouncilRecord && <FourVotes sheet={sheet} />}
 

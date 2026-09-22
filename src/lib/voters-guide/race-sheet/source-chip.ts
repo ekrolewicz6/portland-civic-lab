@@ -31,7 +31,15 @@ export function sourceChip(evidence: Evidence): SourceChip {
   const page = url.match(/#page=(\d+)/)?.[1];
   const pick = (venue: SourceVenue, label: string): SourceChip => ({ venue, label, url, evidence });
 
-  if (evidence.kind === "Public record") return pick("Record", "City record");
+  if (evidence.kind === "Public record") {
+    if (/(^|\.)(portland\.gov|portlandoregon\.gov|efiles\.portlandoregon\.gov)$/i.test(host)) return pick("Record", "City record");
+    if (/(^|\.)(multco\.us|washingtoncountyor\.gov|clackamas\.us|civicweb\.net|granicus\.com)$/i.test(host)) return pick("Record", "County record");
+    if (/(^|\.)(oregon\.gov|oregonlegislature\.gov|state\.or\.us|pdx\.edu|pers\.state\.or\.us|olis\.oregonlegislature\.gov)$/i.test(host)) return pick("Record", "State record");
+    if (/(^|\.)(gov|congress\.gov|house\.gov|senate\.gov|treasury\.gov|census\.gov|cbo\.gov|fiscaldata\.treasury\.gov)$/i.test(host)) return pick("Record", "Federal record");
+    if (/\.gov$/i.test(host) || /(^|\.)(greshamoregon\.gov|beavertonoregon\.gov|hillsboro-oregon\.gov|tigard-or\.gov|ci\.oswego\.or\.us|orcity\.org)$/i.test(host)) return pick("Record", "City record");
+    if (/justia\.com|courtlistener|uscourts\.gov/i.test(host)) return pick("Record", "Court record");
+    return pick("Record", "Official record");
+  }
   if (evidence.kind === "Election authority") {
     if (/orestar|cfDetail/i.test(url)) return pick("Filing", "State filing");
     return pick("Register", "Official list");
