@@ -13,6 +13,7 @@ import { deliveries } from "./content/delivery";
 import { topicStances } from "./content/topic-stances";
 import { extraTopics } from "./topics";
 import { officeOf, type Office } from "./office";
+import { packs } from "./content/packs";
 import { choiceParagraphs } from "./content/choice";
 import { saidPlacements } from "./content/said";
 import { missingStates, primaryStatements, roleOverrides } from "./content/roles";
@@ -20,7 +21,7 @@ import { ballotInstructions, districts } from "./content/districts";
 import { answers } from "./content/answers";
 import { ownWords, type OwnWordsRule } from "./content/own-words";
 import { contacts } from "./content/contacts";
-import type { BallotInstruction, CandidateAnswer, ContactChannel, DistrictInfo, ExtraTopic, MissingState, Review } from "./types";
+import type { BallotInstruction, CandidateAnswer, ContactChannel, DistrictInfo, ExtraTopic, MissingState, RaceStakes, Review } from "./types";
 
 export const raceSheetVersion = "2026-09-19.1";
 
@@ -103,6 +104,8 @@ export type RaceSheet = {
   race: Race;
   /** What kind of seat this is, and which parts of the sheet apply. */
   office: Office;
+  /** What is at stake this term, when research has written it. */
+  stakes: RaceStakes | null;
   district: DistrictInfo | null;
   ballot: BallotInstruction | null;
   /** The reviewed choice paragraph, or the race's own comparison sentence. */
@@ -127,9 +130,15 @@ export function shortRaceTitle(race: Race) {
   return officeOf(race).short;
 }
 
-/** The extra grid topics that apply to a race: the Council choices for council seats, none yet for other offices. */
-export function topicsFor(race: Race) {
-  return officeOf(race).group === "council" ? extraTopics : [];
+/** The extra grid topics that apply to a race: the Council choices for council seats, a pack's office-specific set for others. */
+export function topicsFor(race: Race): ExtraTopic[] {
+  if (officeOf(race).group === "council") return extraTopics;
+  return packs.flatMap((p) => p.topics).find((t) => t.raceIds.includes(race.id))?.topics ?? [];
+}
+
+/** Sourced facts about what the office decides right now, when research has written them. */
+export function stakesFor(race: Race) {
+  return packs.flatMap((p) => p.stakes).find((s) => s.raceId === race.id) ?? null;
 }
 
 function clampRole(background: string): string {
@@ -153,7 +162,7 @@ function missingState(person: Candidate): MissingState | null {
   return person.priorities.length || person.analysis?.values?.length ? "filing-only" : "no-platform";
 }
 
-function buildRow(person: Candidate): SheetRow {
+function buildRow(person: Candidate, topics: ExtraTopic[]): SheetRow {
   const cells = Object.fromEntries(
     ISSUE_IDS.map((issue) => {
       const authored = issueLines.find((l) => l.candidateId === person.id && l.issue === issue);
@@ -187,7 +196,7 @@ function buildRow(person: Candidate): SheetRow {
     }),
   ) as Record<IssueId, Ladder>;
   const topicCells = Object.fromEntries(
-    extraTopics.map((topic) => {
+    topics.map((topic) => {
       const decision = topic.decisionId ? councilDecisions.find((d) => d.id === topic.decisionId) : undefined;
       const vote = decision && isIncumbent(person) ? (decision.votes[person.name] ?? null) : null;
       const st = topicStances.find((x) => x.candidateId === person.id && x.topicId === topic.id);
@@ -339,7 +348,8 @@ export function clientSheet(sheet: RaceSheet): ClientSheet {
 export function buildRaceSheet(race: Race): RaceSheet {
   const office = officeOf(race);
   const people = [...race.candidates].sort(byName);
-  const rows = people.map(buildRow);
+  const topics = topicsFor(race);
+  const rows = people.map((p) => buildRow(p, topics));
   const paragraph = choiceParagraphs.find((c) => c.raceId === race.id);
   const coverage = Object.fromEntries(
     ISSUE_IDS.map((issue) => [issue, people.filter((p) => p.analysis?.issues[issue]).length]),
@@ -347,6 +357,7 @@ export function buildRaceSheet(race: Race): RaceSheet {
   return {
     race,
     office,
+    stakes: stakesFor(race),
     district: districts.find((d) => d.raceId === race.id) ?? null,
     ballot: ballotInstructions.find((b) => b.raceId === race.id) ?? null,
     choice: paragraph

@@ -208,6 +208,26 @@ export type RacePack = {
    * the research log records each one.
    */
   profiles: Record<string, { background: string; summary: string; priorities: string[]; question?: string }>;
+  /** Office-specific comparison topics (the picker's columns) for the listed races, and each candidate's explicit stance. */
+  topics: RaceTopics[];
+  topicStances: TopicStance[];
+  /** What is at stake in a race right now: sourced facts about the office's biggest current problems. */
+  stakes: RaceStakes[];
+};
+
+/** A set of extra topics shared by the listed races (e.g. one set for the governor, one for Multnomah County seats). */
+export type RaceTopics = { raceIds: string[]; topics: ExtraTopic[] };
+
+/**
+ * The office's biggest current problems, each a fact with a source: a
+ * budget gap, a deadline, a program's results, a decision pending. Facts,
+ * not characterizations; the same block for every candidate in the race.
+ */
+export type RaceStakes = {
+  raceId: string;
+  /** One or two sentences: what this office decides that matters most this term. */
+  intro: string;
+  items: { label: string; text: string; source: Evidence }[];
 };
 
 export const emptyPack = (): RacePack => ({
@@ -225,4 +245,7 @@ export const emptyPack = (): RacePack => ({
   portraits: {},
   missing: {},
   profiles: {},
+  topics: [],
+  topicStances: [],
+  stakes: [],
 });

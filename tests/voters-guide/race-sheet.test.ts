@@ -6,6 +6,8 @@ import { stanceChips } from "@/lib/voters-guide/race-sheet/content/stances";
 import { deliveries } from "@/lib/voters-guide/race-sheet/content/delivery";
 import { topicStances } from "@/lib/voters-guide/race-sheet/content/topic-stances";
 import { extraTopics } from "@/lib/voters-guide/race-sheet/topics";
+import { packs } from "@/lib/voters-guide/race-sheet/content/packs";
+import { topicsFor } from "@/lib/voters-guide/race-sheet";
 import { ownWords } from "@/lib/voters-guide/race-sheet/content/own-words";
 import { contacts } from "@/lib/voters-guide/race-sheet/content/contacts";
 import { candidateDescription } from "@/lib/voters-guide/race-sheet/seo";
@@ -105,11 +107,13 @@ describe("the promise ladder (how, measured by)", () => {
   });
 });
 
+const allTopics = [...extraTopics, ...packs.flatMap((p) => p.topics.flatMap((t) => t.topics))];
+
 describe("extra topics", () => {
   it("are a fixed, deduplicated list with a plain question, and any decisionId resolves", () => {
-    const ids = extraTopics.map((t) => t.id);
+    const ids = allTopics.map((t) => t.id);
     expect(new Set(ids).size).toBe(ids.length);
-    for (const t of extraTopics) {
+    for (const t of allTopics) {
       expect(t.question.trim().endsWith("?"), `${t.id}: question should be a question`).toBe(true);
       expect(words(t.short)).toBeLessThanOrEqual(2);
       if (t.decisionId) expect(councilDecisions.some((d) => d.id === t.decisionId), `${t.id}: decision ${t.decisionId}`).toBe(true);
@@ -121,7 +125,7 @@ describe("extra topics", () => {
     for (const s of topicStances) {
       const where = `${s.candidateId}/${s.topicId}`;
       expect(find(s.candidateId), `${where}: unknown candidate`).toBeTruthy();
-      expect(extraTopics.some((t) => t.id === s.topicId), `${where}: unknown topic`).toBe(true);
+      expect(allTopics.some((t) => t.id === s.topicId), `${where}: unknown topic`).toBe(true);
       expect(["supports", "opposes", "mixed"]).toContain(s.stance);
       expect(words(s.chip), `${where}: "${s.chip}"`).toBeLessThanOrEqual(4);
       expect(words(s.text), `${where}: ${s.text}`).toBeLessThanOrEqual(40);
@@ -134,7 +138,7 @@ describe("extra topics", () => {
     it(`${race.id}: incumbents' topic cells carry their recorded vote where the topic is a decision; nobody else gets a vote`, () => {
       const sheet = buildRaceSheet(race);
       for (const row of sheet.rows) {
-        for (const topic of extraTopics) {
+        for (const topic of topicsFor(race)) {
           const cell = row.topicCells[topic.id];
           const decision = topic.decisionId ? councilDecisions.find((d) => d.id === topic.decisionId) : undefined;
           if (row.incumbent && decision) expect(cell.vote, `${row.id}/${topic.id}`).toBe(decision.votes[row.name] ?? null);
@@ -142,7 +146,7 @@ describe("extra topics", () => {
           if (cell.chip) expect(cell.text && cell.source, `${row.id}/${topic.id}: a chip needs its sentence and source`).toBeTruthy();
         }
       }
-      for (const topic of extraTopics) {
+      for (const topic of topicsFor(race)) {
         const onRecord = sheet.rows.filter((r) => r.topicCells[topic.id].vote || r.topicCells[topic.id].chip).length;
         expect(onRecord).toBeLessThanOrEqual(sheet.rows.length);
       }
