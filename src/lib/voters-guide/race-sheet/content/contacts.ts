@@ -1,5 +1,6 @@
 import type { Evidence } from "../../types";
 import type { CandidateContact, ContactChannel } from "../types";
+import { packs } from "./packs";
 
 /**
  * How to reach each campaign, from what the candidate published: the
@@ -100,7 +101,7 @@ const entry = (
   reviewedOn: REVIEWED_ON,
 });
 
-export const contacts: CandidateContact[] = [
+const councilContacts: CandidateContact[] = [
   /* ── District 3 ─────────────────────────────────────────────────────── */
 
   entry(
@@ -645,3 +646,5 @@ export const contacts: CandidateContact[] = [
     ],
   ),
 ];
+
+export const contacts: CandidateContact[] = [...councilContacts, ...packs.flatMap((p) => p.contacts)];

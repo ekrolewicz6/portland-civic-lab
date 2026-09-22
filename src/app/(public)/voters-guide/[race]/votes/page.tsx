@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { findRace, races } from "@/lib/voters-guide/published";
 import { REVIEW_LABEL } from "@/lib/voters-guide/types";
 import { shortRaceTitle } from "@/lib/voters-guide/race-sheet";
+import { officeOf } from "@/lib/voters-guide/race-sheet/office";
 import { racePath, votesMetadata, votesStructuredData } from "@/lib/voters-guide/race-sheet/seo";
 import RaceSheetStructuredData from "@/components/race-sheet/RaceSheetStructuredData";
 import VoteMatrix from "@/components/race-sheet/VoteMatrix";
@@ -12,21 +13,24 @@ import CouncilDisagreements from "@/components/voters-guide/CouncilRecord";
 import { councilDisagreements } from "@/lib/voters-guide/council-record-accounts";
 import styles from "@/components/race-sheet/votes.module.css";
 
+/** Only seats whose sitting members have recorded Council votes in our research get a votes page. */
+const councilRaces = () => races.filter((r) => officeOf(r).hasCouncilRecord);
+
 export function generateStaticParams() {
-  return races.map((r) => ({ race: r.id }));
+  return councilRaces().map((r) => ({ race: r.id }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ race: string }> }): Promise<Metadata> {
   const { race: id } = await params;
   const race = findRace(id);
-  if (!race) notFound();
+  if (!race || !officeOf(race).hasCouncilRecord) notFound();
   return votesMetadata(race);
 }
 
 export default async function VotesPage({ params }: { params: Promise<{ race: string }> }) {
   const { race: id } = await params;
   const race = findRace(id);
-  if (!race) notFound();
+  if (!race || !officeOf(race).hasCouncilRecord) notFound();
   const short = shortRaceTitle(race);
 
   return (

@@ -1,5 +1,6 @@
-import type { Evidence } from "../types";
+import type { Candidate, CandidatePortrait, Evidence } from "../types";
 import type { IssueId } from "./issues";
+import type { OwnWords } from "./content/own-words";
 
 /**
  * The Race Sheet overlay: short, reviewed presentation lines over the
@@ -171,3 +172,48 @@ export type CandidateContact = {
   sources: Evidence[];
   reviewedOn: string;
 };
+
+/* ── Race packs: everything the race sheet needs for one group of offices ── */
+
+/** The analysis layer for one candidate: the same shape the council research carries. */
+export type CandidateAnalysis = NonNullable<Candidate["analysis"]>;
+
+/**
+ * One file per office group, written by research, read by the aggregators
+ * in `content/`. Every field is optional so a pack can land in stages, but
+ * the rule tests hold a published candidate to the full council standard:
+ * a line and a chip per documented position, an opening in their own words,
+ * a contact entry, and a portrait or a stated reason for none.
+ */
+export type RacePack = {
+  analysis: Record<string, CandidateAnalysis>;
+  lines: IssueLine[];
+  chips: StanceChip[];
+  deliveries: Delivery[];
+  ownWords: OwnWords[];
+  contacts: CandidateContact[];
+  roles: RoleOverride[];
+  primary: PrimaryStatement[];
+  ballots: BallotInstruction[];
+  districts: DistrictInfo[];
+  choice: ChoiceParagraph[];
+  portraits: Record<string, CandidatePortrait>;
+  /** Candidates whose research object is a filing only, by id, with the state the row should show. */
+  missing: Record<string, MissingState>;
+};
+
+export const emptyPack = (): RacePack => ({
+  analysis: {},
+  lines: [],
+  chips: [],
+  deliveries: [],
+  ownWords: [],
+  contacts: [],
+  roles: [],
+  primary: [],
+  ballots: [],
+  districts: [],
+  choice: [],
+  portraits: {},
+  missing: {},
+});

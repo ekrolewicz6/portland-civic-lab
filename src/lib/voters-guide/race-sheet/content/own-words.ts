@@ -1,3 +1,4 @@
+import { packs } from "./packs";
 /**
  * Each published candidate introduced in their own words: the verbatim
  * opening of their official statement, captured under one mechanical rule
@@ -69,7 +70,7 @@ const pamphletOpening = (page: number) =>
     note: "Verbatim opening of the candidate's own statement; publication by the county does not verify the claims.",
   }) as const;
 
-export const ownWords: OwnWords[] = [
+const councilOwnWords: OwnWords[] = [
   /* ── District 3 ─────────────────────────────────────────────────────── */
   {
     candidateId: "ali-beaudoin",
@@ -374,6 +375,8 @@ export const ownWords: OwnWords[] = [
     words: 15,
   },
 ];
+
+export const ownWords: OwnWords[] = [...councilOwnWords, ...packs.flatMap((p) => p.ownWords)];
 
 export const findOwnWords = (candidateId: string) =>
   ownWords.find((entry) => entry.candidateId === candidateId);

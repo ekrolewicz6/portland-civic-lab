@@ -3,6 +3,7 @@ import type { Candidate, Race } from "../types";
 import { missingStates, roleOverrides } from "./content/roles";
 import { ownWords } from "./content/own-words";
 import { byName, shortRaceTitle } from "./index";
+import { officeOf } from "./office";
 import type { MissingState } from "./types";
 
 /**
@@ -60,9 +61,15 @@ export function districtNumber(race: Race): string | null {
 /** The facts every Race Sheet artefact quotes, computed once from the race object. */
 export function raceFacts(race: Race) {
   const count = race.candidates.length;
+  const office = officeOf(race);
   return {
     short: shortRaceTitle(race),
-    district: districtNumber(race),
+    district: office.district ? String(office.district) : null,
+    /** "Portland City Council District 4", "Governor of Oregon", "Multnomah County Chair". */
+    seat: office.seat,
+    body: office.body,
+    mark: office.mark,
+    council: office.hasCouncilRecord,
     count,
     seats: race.seats,
     seatsWord: NUMBER_WORDS[race.seats] ?? String(race.seats),
@@ -99,17 +106,17 @@ const SUMMARY_QUOTE_MAX = 90;
 
 export function raceTitle(race: Race) {
   const { short, count } = raceFacts(race);
-  return `Portland City Council ${short} Voter Guide 2026: All ${count} Candidates`;
+  return `${raceFacts(race).seat} Voter Guide 2026: All ${count} Candidate${count === 1 ? "" : "s"}`;
 }
 
 /** 157 characters for a two-digit candidate count, so the whole sentence renders in search results. */
 export function raceDescription(race: Race) {
-  const { short, count } = raceFacts(race);
-  return `All ${count} Portland City Council ${short} candidates on one page: what they say on rent, safety, taxes and streets, how councilors voted, sources. Nonpartisan.`;
+  const { seat, count, council } = raceFacts(race);
+  return `All ${count} ${seat} candidate${count === 1 ? "" : "s"} on one page: what they say on rent, safety, taxes and streets, ${council ? "how councilors voted, " : ""}sources. Nonpartisan.`;
 }
 
 export function candidateTitle(race: Race, person: Candidate) {
-  return `${person.name} for Portland City Council ${raceFacts(race).short} | 2026 Voter Guide`;
+  return `${person.name} for ${raceFacts(race).seat} | 2026 Voter Guide`;
 }
 
 /**
@@ -135,7 +142,7 @@ export function candidateDescription(race: Race, person: Candidate) {
   const tail = " No endorsements.";
   const missing = candidateMissingState(person);
   if (missing) {
-    const lead = `${person.name} for Portland City Council ${raceFacts(race).short} (2026). `;
+    const lead = `${person.name} for ${raceFacts(race).seat} (2026). `;
     const state =
       missing === "filing-only"
         ? "Filing statement only in the sources we reviewed; a gap, not a position."
@@ -143,7 +150,7 @@ export function candidateDescription(race: Race, person: Candidate) {
     return `${lead}${state}${tail}`;
   }
   const own = ownWords.find((o) => o.candidateId === person.id);
-  const lead = `${person.name} for Portland City Council ${raceFacts(race).short} (2026). ${own ? "In their words: “" : "Our summary: "}`;
+  const lead = `${person.name} for ${raceFacts(race).seat} (2026). ${own ? "In their words: “" : "Our summary: "}`;
   const close = own ? "”" : "";
   const room = DESCRIPTION_MAX - lead.length - close.length - tail.length;
   let quote = clip(own ? own.text : person.summary, Math.min(SUMMARY_QUOTE_MAX, room));
@@ -163,12 +170,12 @@ export function votesDescription(race: Race) {
 }
 
 export function printTitle(race: Race) {
-  return `Print Edition: Portland City Council ${raceFacts(race).short} | 2026 Voter Guide`;
+  return `Print Edition: ${raceFacts(race).seat} | 2026 Voter Guide`;
 }
 
 export function printDescription(race: Race) {
   const { short } = raceFacts(race);
-  return `The complete Portland City Council ${short} research edition for printing: every candidate brief, every featured Council vote and every source, on paper.`;
+  return `The complete ${raceFacts(race).seat} research edition for printing: every candidate brief${raceFacts(race).council ? ", every featured Council vote" : ""} and every source, on paper.`;
 }
 
 /* ── Share-image alt text ───────────────────────────────────────────── */
@@ -188,7 +195,7 @@ export const VOTES_IMAGE_ALT =
 
 export function candidateImageAlt(race: Race, person: Candidate) {
   const { short } = raceFacts(race);
-  return `${person.name}, ${candidateRole(person)}. Candidate brief for Portland City Council ${short}, ${ELECTION_DAY}. Typographic card, no photograph. Free and nonpartisan, from Portland Civic Lab.`;
+  return `${person.name}, ${candidateRole(person)}. Candidate brief for ${raceFacts(race).seat}, ${ELECTION_DAY}. Typographic card, no photograph. Free and nonpartisan, from Portland Civic Lab.`;
 }
 
 /* ── Metadata ───────────────────────────────────────────────────────── */
@@ -242,7 +249,7 @@ function raceTrail(race: Race): Crumb[] {
   return [
     { name: SITE, item: GUIDE_ORIGIN },
     { name: HUB_LABEL, item: absoluteUrl(HUB_PATH) },
-    { name: `Portland City Council ${raceFacts(race).short}`, item: absoluteUrl(racePath(race)) },
+    { name: raceFacts(race).seat, item: absoluteUrl(racePath(race)) },
   ];
 }
 
@@ -268,7 +275,7 @@ function webPage(path: string, name: string, description: string, extra: Record<
 /** The same job title for every candidate in a race. */
 function candidateJobTitle(race: Race) {
   const { district } = raceFacts(race);
-  return district ? `Candidate for Portland City Council, District ${district}` : `Candidate for ${race.title}`;
+  return `Candidate for ${raceFacts(race).seat}`;
 }
 
 function personNode(race: Race, person: Candidate) {
@@ -291,8 +298,8 @@ export function raceStructuredData(race: Race) {
       {
         "@type": "ItemList",
         "@id": `${url}#candidates`,
-        name: `Candidates for Portland City Council ${short}, alphabetical`,
-        description: `Every certified candidate for Portland City Council ${short} on the ${ELECTION_DAY} ballot, listed alphabetically by displayed name. No ranking, score or endorsement.`,
+        name: `Candidates for ${raceFacts(race).seat}, alphabetical`,
+        description: `Every certified candidate for ${raceFacts(race).seat} on the ${ELECTION_DAY} ballot, listed alphabetically by displayed name. No ranking, score or endorsement.`,
         itemListOrder: "https://schema.org/ItemListUnordered",
         numberOfItems: people.length,
         itemListElement: people.map((person, i) => ({

@@ -52,7 +52,8 @@ export default function ChipRail({
   pickerOpen: boolean;
   pickerId: string;
   selectedTopics: number;
-  onTogglePicker: () => void;
+  /** Null when the race has no extra topics; the control is then omitted. */
+  onTogglePicker: (() => void) | null;
 }) {
   const rail = useRef<HTMLDivElement>(null);
   const chips = useRef<Partial<Record<IssueId, HTMLButtonElement | null>>>({});
@@ -112,6 +113,7 @@ export default function ChipRail({
             <span className={styles.statusTail}>{status.tail}</span>
           </p>
         </div>
+        {onTogglePicker && (
         <button
           type="button"
           className={`${c.btn} ${c.quiet} ${c.small} ${styles.moreButton}`}
@@ -124,6 +126,7 @@ export default function ChipRail({
           <span className={styles.moreShort}>Topics</span>
           {selectedTopics > 0 && <span className={styles.moreCount}>{selectedTopics}</span>}
         </button>
+        )}
       </div>
     </div>
   );

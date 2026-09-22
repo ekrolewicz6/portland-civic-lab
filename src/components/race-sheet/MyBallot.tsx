@@ -232,7 +232,7 @@ export default function MyBallot({
             </button>
           </div>
           <p id={descId} className={styles.panelNote}>
-            Your order. Stored only in this browser tab. The site never fills, sorts or shares it.
+            {sheet.ranked ? "Your order." : "Your shortlist."} Stored only in this browser tab. The site never fills, sorts or shares it.
           </p>
           {!persistent && (
             <p className={styles.storageNotice} role="status">

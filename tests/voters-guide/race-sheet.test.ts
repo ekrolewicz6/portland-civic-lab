@@ -9,6 +9,7 @@ import { extraTopics } from "@/lib/voters-guide/race-sheet/topics";
 import { ownWords } from "@/lib/voters-guide/race-sheet/content/own-words";
 import { contacts } from "@/lib/voters-guide/race-sheet/content/contacts";
 import { candidateDescription } from "@/lib/voters-guide/race-sheet/seo";
+import { officeOf } from "@/lib/voters-guide/race-sheet/office";
 import { choiceParagraphs } from "@/lib/voters-guide/race-sheet/content/choice";
 import { saidPlacements } from "@/lib/voters-guide/race-sheet/content/said";
 import { primaryStatements, roleOverrides } from "@/lib/voters-guide/race-sheet/content/roles";
@@ -252,8 +253,8 @@ describe("the built sheet", () => {
       for (const row of sheet.rows) expect(words(row.role), `${row.name}: ${row.role}`).toBeLessThanOrEqual(6);
       for (const row of sheet.rows) expect(row.role, `${row.name} falls back to a truncated background`).not.toMatch(/…$/);
     });
-    it(`${race.id}: four featured votes resolve to split decisions among this district's incumbents`, () => {
-      expect(sheet.featured).toHaveLength(4);
+    it(`${race.id}: ${officeOf(race).hasCouncilRecord ? "four featured votes resolve to split decisions among this district's incumbents" : "no featured votes and no council record"}`, () => {
+      expect(sheet.featured).toHaveLength(officeOf(race).hasCouncilRecord ? 4 : 0);
       for (const f of sheet.featured) {
         expect(councilDecisions.some((d) => d.id === f.decision.id)).toBe(true);
         const v = f.votes.map((x) => x.vote);

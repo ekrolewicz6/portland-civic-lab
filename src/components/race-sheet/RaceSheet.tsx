@@ -203,10 +203,10 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
         pickerOpen={pickerOpen}
         pickerId={pickerId}
         selectedTopics={extra.length}
-        onTogglePicker={() => setPickerOpen((v) => !v)}
+        onTogglePicker={sheet.topics.length ? () => setPickerOpen((v) => !v) : null}
       />
 
-      <BottomBar raceId={raceId} savedCount={ballot.order.length} onOpenBallot={(opener) => openBallot(true, opener)} />
+      <BottomBar raceId={raceId} hasVotes={sheet.office.hasCouncilRecord} savedCount={ballot.order.length} onOpenBallot={(opener) => openBallot(true, opener)} />
 
       {sharedRows.length > 0 && (
         <section className={styles.sharedView} aria-labelledby="shared-view-title">

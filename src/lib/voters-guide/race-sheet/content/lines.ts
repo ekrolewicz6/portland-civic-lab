@@ -1,4 +1,5 @@
 import type { IssueLine } from "../types";
+import { packs } from "./packs";
 
 /**
  * Authored ≤14-word issue lines, one per filled analysis.issues slot.
@@ -31,7 +32,7 @@ const line = (candidateId: string, issue: IssueLine["issue"], text: string): Iss
   ...reviewed,
 });
 
-export const issueLines: IssueLine[] = [
+const councilLines: IssueLine[] = [
   /* ── Portland City Council, District 3 ─────────────────────────────── */
 
   line("ali-beaudoin", "money", "Wants spending reviewed for waste and program results measured, before new policies."),
@@ -160,3 +161,6 @@ export const issueLines: IssueLine[] = [
   line("eric-zimmerman", "safety", "Would combine police, Street Response, camp cleanups, enforcement and treatment."),
   line("eric-zimmerman", "money", "Opposes several tax and fee increases; would put police, fire and maintenance first."),
 ];
+
+/** Council lines plus every published pack's lines. */
+export const issueLines: IssueLine[] = [...councilLines, ...packs.flatMap((p) => p.lines)];

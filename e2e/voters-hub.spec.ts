@@ -3,10 +3,13 @@ import { races } from "../src/lib/voters-guide/published";
 import { issues, raceSheetVersion, shortRaceTitle } from "../src/lib/voters-guide/race-sheet";
 import { candidateTitle, printTitle, raceTitle, votesTitle } from "../src/lib/voters-guide/race-sheet/seo";
 import { guideCards, GUIDE_ORIGIN } from "../src/lib/voters-guide/metadata";
+import { GROUP_ORDER, officeOf } from "../src/lib/voters-guide/race-sheet/office";
 
 /** The hub, the export, the crawler surface and the routes that must fail closed. */
 
-test("hub: two district cards with portrait mosaics, a district map, no search box, no inline name lists", async ({ page }) => {
+const councilRaces = races.filter((r) => officeOf(r).group === "council");
+
+test("hub: a card with a portrait mosaic for every published race, grouped by office, a district map, no search box, no inline name lists", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/voters-guide");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Know their choices");
@@ -16,22 +19,27 @@ test("hub: two district cards with portrait mosaics, a district map, no search b
     const short = shortRaceTitle(race);
     const card = page.locator(`a[href="/voters-guide/${race.id}"]`).filter({ hasText: "Explore the complete field" });
     await expect(card).toHaveCount(1);
-    await expect(card.getByRole("heading", { name: short, exact: true })).toBeVisible();
-    await expect(card).toContainText(`${race.candidates.length} candidates · ${race.seats} seats`);
+    await expect(card.getByRole("heading", { name: new RegExp(`${short.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`) })).toBeVisible();
+    const n = race.candidates.length;
+    await expect(card).toContainText(`${n} candidate${n === 1 ? "" : "s"} · ${race.seats} seat${race.seats === 1 ? "" : "s"}`);
     // The mosaic is decorative: one portrait tile per candidate, hidden from assistive tech, no names.
     const mosaic = card.locator("div[aria-hidden='true']").first();
     await expect(mosaic.locator(":scope > *")).toHaveCount(race.candidates.length);
   }
   const text = await page.locator("main").first().innerText();
   for (const person of races.flatMap((r) => r.candidates)) expect(text, person.name).not.toContain(person.name);
+  // Every office group with a published race has its own section heading.
+  for (const group of GROUP_ORDER.filter((g) => g !== "council")) {
+    const count = races.filter((r) => officeOf(r).group === group).length;
+    await expect(page.locator(`#group-${group}`)).toHaveCount(count ? 1 : 0);
+  }
   // The district map links only the published districts.
   const map = page.getByRole("img", { name: /Council districts/i }).first();
   await expect(map).toBeVisible();
-  for (const race of races) {
+  for (const race of councilRaces) {
     const district = shortRaceTitle(race).match(/\d+/)![0];
     await expect(page.getByRole("link", { name: `District ${district} race page` })).toHaveAttribute("href", `/voters-guide/${race.id}`);
   }
-  await expect(page.getByText("City Auditor")).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.locator(`a[href="/voters-guide/${races[0].id}"]`).filter({ hasText: "Explore the complete field" }).click();
   await expect(page).toHaveURL(new RegExp(`/voters-guide/${races[0].id}$`));
@@ -44,12 +52,12 @@ test("evidence export carries the race-sheet overlay with its version, provenanc
   const payload = await response.json();
   expect(payload.status).toContain("human editorial review is incomplete");
   expect(payload.note).toContain("Candidate statements, independent records and editorial interpretations are separate fields");
-  expect(payload.races).toHaveLength(2);
+  expect(payload.races).toHaveLength(races.length);
   expect(payload.councilDecisions).toHaveLength(73);
   const people = payload.races.flatMap((r: { candidates: unknown[] }) => r.candidates);
-  expect(people).toHaveLength(33);
-  for (const candidate of people as { sources: { url: string }[]; analysis: { sources: { url: string }[]; issues: Record<string, { source: { url: string } }> } }[]) {
-    const urls = [...candidate.sources, ...candidate.analysis.sources, ...Object.values(candidate.analysis.issues).map((i) => i.source)].map((s) => s.url);
+  expect(people).toHaveLength(races.reduce((n, r) => n + r.candidates.length, 0));
+  for (const candidate of people as { sources: { url: string }[]; analysis?: { sources: { url: string }[]; issues: Record<string, { source: { url: string } }> } }[]) {
+    const urls = [...candidate.sources, ...(candidate.analysis?.sources ?? []), ...Object.values(candidate.analysis?.issues ?? {}).map((i) => i.source)].map((s) => s.url);
     expect(urls.length).toBeGreaterThan(0);
     for (const url of urls) expect(url).toMatch(/^https:\/\//);
   }
@@ -66,10 +74,11 @@ test("evidence export carries the race-sheet overlay with its version, provenanc
   }
 });
 
-test("unknown races, candidates and share cards fail closed", async ({ request }) => {
-  for (const path of ["/voters-guide/invented-race", "/voters-guide/oregon-governor", "/voters-guide/portland-auditor", "/voters-guide/portland-district-3/not-a-person", "/voters-guide/portland-district-3/toString", "/voters-guide/share/not-a-card"])
+test("unknown races, candidates, share cards and votes pages for offices without a Council record fail closed", async ({ request }) => {
+  for (const path of ["/voters-guide/invented-race", "/voters-guide/portland-district-1", "/voters-guide/portland-district-3/not-a-person", "/voters-guide/portland-district-3/toString", "/voters-guide/share/not-a-card", "/voters-guide/oregon-governor/votes"])
     expect((await request.get(path)).status(), path).toBe(404);
   expect((await request.get("/voters-guide/portland-district-3/votes")).status()).toBe(200);
+  expect((await request.get("/voters-guide/oregon-governor")).status()).toBe(200);
   expect((await request.get("/voters-guide/portland-district-3/print")).status()).toBe(200);
 });
 
@@ -96,11 +105,12 @@ for (const [path, title, indexed] of pages) {
   });
 }
 
-test("the sitemap lists the hub, both races, their votes routes and every brief", async ({ request }) => {
+test("the sitemap lists the hub, every race, the council votes routes and every brief", async ({ request }) => {
   const sitemap = await (await request.get("/sitemap.xml")).text();
   for (const race of races) {
     expect(sitemap).toContain(`${GUIDE_ORIGIN}/voters-guide/${race.id}</loc>`);
-    expect(sitemap).toContain(`${GUIDE_ORIGIN}/voters-guide/${race.id}/votes</loc>`);
+    if (officeOf(race).hasCouncilRecord) expect(sitemap).toContain(`${GUIDE_ORIGIN}/voters-guide/${race.id}/votes</loc>`);
+    else expect(sitemap).not.toContain(`${GUIDE_ORIGIN}/voters-guide/${race.id}/votes</loc>`);
     for (const person of race.candidates) expect(sitemap).toContain(`${GUIDE_ORIGIN}/voters-guide/${race.id}/${person.id}</loc>`);
     expect(sitemap).not.toContain(`/voters-guide/${race.id}/print`);
   }

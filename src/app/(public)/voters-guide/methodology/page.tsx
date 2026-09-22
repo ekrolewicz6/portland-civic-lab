@@ -266,6 +266,27 @@ export default function Methodology() {
           response. An open question is our research question, not a claim that
           a candidate refused to answer it.
         </p>
+        <h2 id="offices">Beyond the Council: the same format for every office</h2>
+        <p>
+          Every race on a Portland ballot, and every race we have researched in
+          the metro area and the state, uses the same page: the same four
+          issues, the same chips, ladders, verbatim openings and campaign
+          contacts, alphabetical, with gaps shown as gaps. Two things differ by
+          office. Only Portland City Council seats carry the recorded-votes
+          panels, because that is the record our research checks vote by vote;
+          other incumbents’ recorded actions appear on their briefs under
+          “Public record” where our sources establish them. And the extra
+          comparison topics are Council choices, so they apply to Council races
+          only for now.
+        </p>
+        <p>
+          The state voters’ pamphlet is published on September 29, 2026. Until
+          then, governor, congressional and legislative candidates have no
+          pamphlet statement, so their openings come from their campaign sites
+          under the same rule, and their portraits are campaign photos credited
+          to the site. We will reconcile every statewide and legislative brief
+          against the pamphlet when it appears.
+        </p>
         <h2 id="reach">Reaching a campaign</h2>
         <p>
           Each brief lists how to reach the campaign: the website, email,
