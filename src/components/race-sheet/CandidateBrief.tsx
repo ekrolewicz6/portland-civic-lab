@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, ChevronDown, ExternalLink, Globe } from "lucide-react";
 import type { Candidate, Evidence, Race } from "@/lib/voters-guide/types";
 import { ELECTION_DATE } from "@/lib/voters-guide/types";
 import { issues, shortRaceTitle, type FeaturedRow, type RaceSheet, type SheetRow } from "@/lib/voters-guide/race-sheet";
@@ -143,6 +143,7 @@ export default function CandidateBrief({
     .filter((x): x is { row: FeaturedRow; vote: NonNullable<FeaturedRow["votes"][number]> } => Boolean(x.vote));
   const sources = allSources(person);
   const heading = (name: string) => `${row.id}-${name}`;
+  const website = row.contact.channels.find((ch) => ch.kind === "website") ?? null;
 
   return (
     <article className={styles.brief} id={embedded ? row.id : undefined} aria-labelledby={heading("name")}>
@@ -179,6 +180,12 @@ export default function CandidateBrief({
         </div>
         {!embedded && (
           <div className={styles.headActions}>
+            {website && (
+              <a href={website.url} className={`${c.btn} ${c.primary} ${styles.siteButton}`} rel="noopener noreferrer" target="_blank">
+                <Globe size={16} aria-hidden="true" /> Campaign website <ExternalLink size={13} aria-hidden="true" />
+                <span className={styles.srOnly}> (opens in a new tab)</span>
+              </a>
+            )}
             <ShareGuide title={`${person.name} · ${short} · Portland Civic Lab`} fragment="" label="Share this brief" />
             {person.portrait && (
               <a className={styles.credit} href={person.portrait.sourceUrl} rel="noopener">

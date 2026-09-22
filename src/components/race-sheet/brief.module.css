@@ -183,6 +183,13 @@
   align-items: center;
   gap: 8px 16px;
 }
+.page .headActions .siteButton {
+  text-decoration: none;
+  color: var(--color-paper);
+}
+.page .headActions .siteButton:hover {
+  color: var(--color-paper);
+}
 .headActions a {
   display: inline-flex;
   align-items: center;
