@@ -9,6 +9,7 @@ import { officeOf } from "@/lib/voters-guide/race-sheet/office";
 import { racePath, votesMetadata, votesStructuredData } from "@/lib/voters-guide/race-sheet/seo";
 import RaceSheetStructuredData from "@/components/race-sheet/RaceSheetStructuredData";
 import VoteMatrix from "@/components/race-sheet/VoteMatrix";
+import VotesBar from "@/components/race-sheet/VotesBar";
 import CouncilDisagreements from "@/components/voters-guide/CouncilRecord";
 import { councilDisagreements } from "@/lib/voters-guide/council-record-accounts";
 import styles from "@/components/race-sheet/votes.module.css";
@@ -36,7 +37,8 @@ export default async function VotesPage({ params }: { params: Promise<{ race: st
   return (
     <div className={`${styles.votes} ${styles.page}`}>
       <RaceSheetStructuredData data={votesStructuredData(race)} />
-      <header className={styles.pageHeader}>
+      <VotesBar raceId={race.id} candidateIds={race.candidates.map((p) => p.id)} />
+      <header className={styles.pageHeader} id="votes">
         <Link className={styles.back} href={racePath(race)} prefetch={false}>
           <ArrowLeft size={16} aria-hidden="true" /> {short} race sheet
         </Link>

@@ -1,7 +1,7 @@
 "use client";
 import { Fragment, useCallback, useState } from "react";
 import Link from "next/link";
-import { Bookmark, BookmarkCheck } from "lucide-react";
+import { Bookmark, BookmarkCheck, ChevronDown } from "lucide-react";
 import type { SheetRow, TopicDecision } from "@/lib/voters-guide/race-sheet";
 import { issues, type IssueId } from "@/lib/voters-guide/race-sheet/issues";
 import type { ExtraTopic } from "@/lib/voters-guide/race-sheet/types";
@@ -72,8 +72,9 @@ export default function StanceGrid({
     >
       <table className={styles.grid} data-active={active ?? ""}>
         <caption className={styles.srOnly}>
-          Where each candidate stands on four issues, in our short reading of their statements. Activate a cell to read
-          the sentence and its source. Candidates appear alphabetically.
+          Where each candidate stands on four issues, in our short reading of their statements. Each position is a
+          button; activate it to read the sentence, how they would deliver it, and the source. Candidates appear
+          alphabetically.
         </caption>
         <thead className={styles.head}>
           <tr>
@@ -148,7 +149,8 @@ export default function StanceGrid({
                             aria-controls={cellOpen ? detailId : undefined}
                             onClick={() => toggle(row.id, issue.id)}
                           >
-                            {chip}
+                            <span className={styles.chipText}>{chip}</span>
+                            <ChevronDown size={14} aria-hidden="true" className={styles.chipCaret} />
                           </button>
                         ) : (
                           <button
@@ -160,6 +162,7 @@ export default function StanceGrid({
                             onClick={() => toggle(row.id, issue.id)}
                           >
                             <Gap text="" /> Not found
+                            <ChevronDown size={13} aria-hidden="true" className={styles.chipCaret} />
                           </button>
                         )}
                       </td>
@@ -181,7 +184,8 @@ export default function StanceGrid({
                           aria-label={has ? undefined : `${row.name} on ${topic.label.toLowerCase()}: no statement in the sources we reviewed`}
                           onClick={() => toggle(row.id, `topic:${topic.id}`)}
                         >
-                          {tc.vote ? <VotePill vote={tc.vote} /> : tc.chip ? tc.chip : tc.askedOn ? <><Gap text="" /> Asked</> : <><Gap text="" /> Not found</>}
+                          {tc.vote ? <VotePill vote={tc.vote} /> : tc.chip ? <span className={styles.chipText}>{tc.chip}</span> : tc.askedOn ? <><Gap text="" /> Asked</> : <><Gap text="" /> Not found</>}
+                          <ChevronDown size={tc.vote ? 12 : 14} aria-hidden="true" className={styles.chipCaret} />
                         </button>
                       </td>
                     );

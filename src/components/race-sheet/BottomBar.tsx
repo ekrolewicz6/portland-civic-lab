@@ -10,19 +10,28 @@ import styles from "./race-sheet.module.css";
  * up the bar is hidden and the floating tray is the way into My ballot.
  * Publishes its height as --race-sheet-bar-height on the root element so the
  * page padding, the site footer and focus scroll margins clear it.
+ *
+ * The same bar stays put on the race's votes page: there Votes is the current
+ * item, List and About point back to the sheet, and My ballot opens the drawer
+ * on the sheet (the #ballot fragment), since the list lives on that page.
  */
 export default function BottomBar({
   raceId,
   hasVotes = true,
   savedCount,
   onOpenBallot,
+  current = "sheet",
 }: {
   raceId: string;
   hasVotes?: boolean;
   savedCount: number;
-  /** Receives the button that opened the dialog so focus can return to it. */
-  onOpenBallot: (opener: HTMLElement) => void;
+  /** Receives the button that opened the dialog so focus can return to it. On the votes page, absent. */
+  onOpenBallot?: (opener: HTMLElement) => void;
+  /** Which page the bar is on. */
+  current?: "sheet" | "votes";
 }) {
+  const sheetPath = `/voters-guide/${raceId}`;
+  const onSheet = current === "sheet";
   const bar = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -47,29 +56,45 @@ export default function BottomBar({
 
   return (
     <nav ref={bar} className={styles.bar} aria-label="Race guide sections" data-race-sheet-bar>
-      <a href="#list" className={styles.barItem}>
+      <a href={onSheet ? "#list" : `${sheetPath}#list`} className={styles.barItem}>
         <List size={18} aria-hidden="true" />
         <span>List</span>
       </a>
-      <button
-        type="button"
-        className={styles.barItem}
-        onClick={(event) => onOpenBallot(event.currentTarget)}
-        aria-haspopup="dialog"
-      >
-        <Bookmark size={18} aria-hidden="true" fill={savedCount > 0 ? "currentColor" : "none"} />
-        <span>
-          My ballot
-          {savedCount > 0 && <span className={styles.barCount}> · {savedCount}</span>}
-        </span>
-      </button>
-      {hasVotes && (
-        <Link href={`/voters-guide/${raceId}/votes`} prefetch={false} className={styles.barItem}>
-          <Landmark size={18} aria-hidden="true" />
-          <span>Votes</span>
-        </Link>
+      {onSheet && onOpenBallot ? (
+        <button
+          type="button"
+          className={styles.barItem}
+          onClick={(event) => onOpenBallot(event.currentTarget)}
+          aria-haspopup="dialog"
+        >
+          <Bookmark size={18} aria-hidden="true" fill={savedCount > 0 ? "currentColor" : "none"} />
+          <span>
+            My ballot
+            {savedCount > 0 && <span className={styles.barCount}> · {savedCount}</span>}
+          </span>
+        </button>
+      ) : (
+        <a href={`${sheetPath}#ballot`} className={styles.barItem}>
+          <Bookmark size={18} aria-hidden="true" fill={savedCount > 0 ? "currentColor" : "none"} />
+          <span>
+            My ballot
+            {savedCount > 0 && <span className={styles.barCount}> · {savedCount}</span>}
+          </span>
+        </a>
       )}
-      <a href="#about" className={styles.barItem}>
+      {hasVotes &&
+        (onSheet ? (
+          <Link href={`${sheetPath}/votes`} prefetch={false} className={styles.barItem}>
+            <Landmark size={18} aria-hidden="true" />
+            <span>Votes</span>
+          </Link>
+        ) : (
+          <a href="#votes" className={styles.barItem} aria-current="page">
+            <Landmark size={18} aria-hidden="true" />
+            <span>Votes</span>
+          </a>
+        ))}
+      <a href={onSheet ? "#about" : `${sheetPath}#about`} className={styles.barItem}>
         <Info size={18} aria-hidden="true" />
         <span>About</span>
       </a>

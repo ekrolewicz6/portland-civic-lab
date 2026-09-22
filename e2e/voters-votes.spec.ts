@@ -89,3 +89,23 @@ for (const race of races.filter((r) => officeOf(r).hasCouncilRecord)) {
     await expect(record.locator("#disagreement-moda")).toHaveAttribute("open", "");
   });
 }
+
+test("portland-district-4: the phone bar stays on the votes page; Votes is current and My ballot reopens the sheet's drawer", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/voters-guide/portland-district-4");
+  await page.getByRole("button", { name: "Save Olivia Clark to my ballot", exact: true }).click();
+  await page.locator("[data-race-sheet-bar]").getByRole("link", { name: "Votes" }).click();
+  await expect(page).toHaveURL(/\/voters-guide\/portland-district-4\/votes$/);
+  const bar = page.locator("[data-race-sheet-bar]");
+  await expect(bar).toBeVisible();
+  expect(await bar.evaluate((el) => getComputedStyle(el).position)).toBe("fixed");
+  await expect(bar.getByRole("link", { name: "Votes" })).toHaveAttribute("aria-current", "page");
+  await expect(bar.getByRole("link", { name: "List" })).toHaveAttribute("href", "/voters-guide/portland-district-4#list");
+  await expect(bar.getByRole("link", { name: "About" })).toHaveAttribute("href", "/voters-guide/portland-district-4#about");
+  const ballot = bar.getByRole("link", { name: /My ballot · 1/ });
+  await expect(ballot).toHaveAttribute("href", "/voters-guide/portland-district-4#ballot");
+  await ballot.click();
+  await expect(page.getByRole("dialog", { name: "My ballot" })).toBeVisible();
+  await expect(page).toHaveURL(/\/voters-guide\/portland-district-4$/);
+  await expect(page.getByRole("dialog", { name: "My ballot" })).toContainText("Olivia Clark");
+});
