@@ -19,6 +19,38 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="all-races-2026-09-22">September 22, 2026 · Every researched race, in the Council format</h2>
+        <p>
+          Published the 46 races researched on September 18 that had stayed
+          behind the allowlist: governor, U.S. Senate, all six U.S. House
+          districts, Multnomah, Washington and Clackamas county seats, the
+          Portland City Auditor, thirteen legislative districts and thirteen
+          city races. Each uses the same race page and brief as the Council
+          races. Research for these candidates was brought up to the Council
+          standard from the county pamphlets on file and the campaigns’ own
+          sites: four-issue positions with sources, chips and lines, how and
+          measured-by rungs, a verbatim opening under the same rule, campaign
+          contacts and portraits. Gaps remain gaps, and each pack’s outreach
+          draft lists them. The recorded-votes panels remain Council-only; other
+          incumbents’ recorded actions appear as public record on their briefs.
+          The Secretary of State posted every filed candidate statement on
+          September 9, ahead of the printed pamphlet, so statewide and
+          legislative openings quote those statements by page.
+        </p>
+        <p>
+          Seven September 18 research gaps closed on the candidate’s own
+          material and their profiles were rewritten from it: Patrick Walsh
+          (Lake Oswego; a Clackamas pamphlet statement the Multnomah-only
+          review had missed), Shawne Martinez (Tigard; campaign site), Chris
+          Henry (U.S. Senate; filed statement), Andrea Townsend (U.S. House 5;
+          her party’s questionnaire), John A N Chee and Brian Schimmel (Oregon
+          Senate 17 and House 29; Ballotpedia surveys they completed) and Pat
+          Hubbell (House 40; campaign site). Kimberly Culbertson (Hillsboro
+          Ward 3) keeps her research gap: her only site still presents an
+          earlier county candidacy, so nothing is quoted for this race. Four
+          candidates have no published statement anywhere (Gary Lyndon Dye,
+          Loran Ayles, Tim E Nelson, Daniel Miller); their rows say so.
+        </p>
         <h2 id="novick-2026-09-21">September 21, 2026 · Candidate response: Steve Novick (District 3)</h2>
         <p>
           Steve Novick’s campaign replied on his behalf, with his answers, to

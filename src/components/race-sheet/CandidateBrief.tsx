@@ -137,7 +137,9 @@ export default function CandidateBrief({
     Boolean(row.role) &&
     !row.background.replace(/\.$/, "").startsWith(row.role.replace(/…$/, "")) &&
     row.background.split(/\s+/).length > 10;
-  const earlier = (person.record ?? []).filter((entry) => !entry.decisionId);
+  const council = sheet.office.hasCouncilRecord;
+  const rollCalls = (person.record ?? []).filter((entry) => !entry.decisionId && entry.source.kind === "Public record");
+  const earlier = (person.record ?? []).filter((entry) => !entry.decisionId && entry.source.kind !== "Public record");
   const featured = sheet.featured
     .map((f) => ({ row: f, vote: f.votes.find((v) => v.id === person.id) }))
     .filter((x): x is { row: FeaturedRow; vote: NonNullable<FeaturedRow["votes"][number]> } => Boolean(x.vote));
@@ -170,7 +172,7 @@ export default function CandidateBrief({
         </div>
         <div>
           <p className={styles.eyebrow}>
-            {districtLabel} candidate · Portland City Council · {ELECTION_DATE}
+            {sheet.office.short} candidate · {sheet.office.body} · {ELECTION_DATE}
           </p>
           <Name id={heading("name")} className={embedded ? styles.name : undefined}>
             {person.name}
@@ -315,6 +317,7 @@ export default function CandidateBrief({
         </section>
       )}
 
+      {council && (
       <section className={styles.section} aria-labelledby={heading("votes")}>
         <Section id={heading("votes")} className={styles.sectionTitle}>
           Council votes
@@ -368,6 +371,22 @@ export default function CandidateBrief({
           <p>No Council vote yet. That is not a judgment about experience.</p>
         )}
       </section>
+      )}
+
+      {!council && rollCalls.length > 0 && (
+        <section className={styles.section} aria-labelledby={heading("record")}>
+          <Section id={heading("record")} className={styles.sectionTitle}>
+            Public record
+          </Section>
+          <span className={styles.label}>Recorded actions, from the official record</span>
+          {rollCalls.map((entry, i) => (
+            <div key={`${entry.source.url}-${i}`} className={styles.statement}>
+              <p>{entry.text}</p>
+              <SourceLine chip={sourceChip(entry.source)} />
+            </div>
+          ))}
+        </section>
+      )}
 
       {earlier.length > 0 && (
         <section className={styles.section} aria-labelledby={heading("earlier")}>
@@ -436,7 +455,7 @@ export default function CandidateBrief({
             )}
           </nav>
           <Link href={racePath(race)} prefetch={false} className={`${c.btn} ${c.secondary}`}>
-            <ArrowLeft size={16} aria-hidden="true" /> Back to the {districtLabel} list
+            <ArrowLeft size={16} aria-hidden="true" /> Back to the {districtLabel} {council ? "list" : "race"}
           </Link>
         </footer>
       )}

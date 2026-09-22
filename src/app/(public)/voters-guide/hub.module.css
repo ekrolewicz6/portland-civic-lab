@@ -570,6 +570,25 @@
   font-size: 48px;
   line-height: 1;
   color: var(--color-canopy);
+  white-space: nowrap;
+}
+.numeral.mark {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--color-canopy) 10%, var(--color-paper));
+}
+@media (min-width: 768px) {
+  .cards.cardsMany {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .cards.cardsMany .mosaic {
+    grid-template-columns: repeat(var(--mosaic-cols-phone, 5), minmax(0, 1fr));
+  }
 }
 .mosaic {
   display: grid;

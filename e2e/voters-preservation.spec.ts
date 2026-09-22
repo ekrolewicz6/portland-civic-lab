@@ -11,7 +11,7 @@ const hash = (value: unknown) =>
   createHash("sha256").update(JSON.stringify(value)).digest("hex");
 const people = races.flatMap((r) => r.candidates);
 test("all existing research and sources are preserved exactly", async () => {
-  expect(people).toHaveLength(33);
+  expect(people).toHaveLength(baseline.candidates.length);
   expect(councilDecisions).toHaveLength(73);
   expect(councilDisagreements).toHaveLength(29);
   for (const row of baseline.candidates)

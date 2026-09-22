@@ -1,4 +1,5 @@
 import type { BallotInstruction, DistrictInfo } from "../types";
+import { packs } from "./packs";
 
 const CHECKED = "Checked September 19, 2026";
 
@@ -17,7 +18,7 @@ const CHECKED = "Checked September 19, 2026";
  * them; each is listed only under the district whose page lists it first
  * by geography, and the lookup link covers the rest.
  */
-export const districts: DistrictInfo[] = [
+const councilDistricts: DistrictInfo[] = [
   {
     raceId: "portland-district-3",
     neighborhoods:
@@ -60,7 +61,7 @@ const rankedChoicePage = {
 const RANKED_CHOICE_NOTE =
   "Ranking more people never hurts your first choice. Later choices count only if an earlier one is eliminated or already elected.";
 
-export const ballotInstructions: BallotInstruction[] = [
+const councilBallots: BallotInstruction[] = [
   {
     raceId: "portland-district-3",
     text: "You rank up to six candidates for three seats.",
@@ -74,3 +75,6 @@ export const ballotInstructions: BallotInstruction[] = [
     source: rankedChoicePage,
   },
 ];
+
+export const districts: DistrictInfo[] = [...councilDistricts, ...packs.flatMap((p) => p.districts)];
+export const ballotInstructions: BallotInstruction[] = [...councilBallots, ...packs.flatMap((p) => p.ballots)];

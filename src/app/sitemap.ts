@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { races } from "@/lib/voters-guide/published";
 import { REVIEW_DATE } from "@/lib/voters-guide/types";
 import { RACE_SHEET_MODIFIED, candidatePath, racePath, votesPath } from "@/lib/voters-guide/race-sheet/seo";
+import { officeOf } from "@/lib/voters-guide/race-sheet/office";
 import { bureauIds } from "@/lib/org/bureau";
 import { VALID_QUESTIONS } from "@/lib/questions";
 
@@ -152,7 +153,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const raceSheetModified = new Date(`${RACE_SHEET_MODIFIED}T00:00:00Z`);
   const racePages: MetadataRoute.Sitemap = races.flatMap(race => [
     { url: `${BASE_URL}${racePath(race)}`, lastModified: raceSheetModified, changeFrequency: "weekly" as const, priority: 0.8 },
-    { url: `${BASE_URL}${votesPath(race)}`, lastModified: raceSheetModified, changeFrequency: "weekly" as const, priority: 0.6 },
+    ...(officeOf(race).hasCouncilRecord ? [{ url: `${BASE_URL}${votesPath(race)}`, lastModified: raceSheetModified, changeFrequency: "weekly" as const, priority: 0.6 }] : []),
     ...race.candidates.map(person => ({
       url: `${BASE_URL}${candidatePath(race, person)}`,
       lastModified: raceSheetModified,

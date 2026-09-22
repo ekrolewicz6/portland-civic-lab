@@ -1,4 +1,5 @@
 import type { MissingState, PrimaryStatement, RoleOverride } from "../types";
+import { packs } from "./packs";
 
 /**
  * Row roles (≤6 words) for every published candidate whose `background`
@@ -8,7 +9,7 @@ import type { MissingState, PrimaryStatement, RoleOverride } from "../types";
  * Incumbency is written as text ("Incumbent councilor") so every row has
  * the same shape; no badge, no numeral.
  */
-export const roleOverrides: RoleOverride[] = [
+const councilRoles: RoleOverride[] = [
   /* ── District 3 ─────────────────────────────────────────────────── */
   { candidateId: "ali-beaudoin", role: "Tax and business consultant", from: "background" },
   { candidateId: "cristal-otero", role: "Social-work and government-administration professional", from: "background" },
@@ -44,7 +45,7 @@ export const roleOverrides: RoleOverride[] = [
  * "no-platform": background only; the card carries the existing `missing` sentence.
  * Any other candidate with a `missing` field falls through to the builder's default.
  */
-export const missingStates: Record<string, MissingState> = {
+const councilMissing: Record<string, MissingState> = {
   "darren-mccormick": "filing-only",
   "john-j-goldsmith": "no-platform",
 };
@@ -59,7 +60,7 @@ export const missingStates: Record<string, MissingState> = {
 const pamphlet = (page: number) =>
   `https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=${page}`;
 
-export const primaryStatements: PrimaryStatement[] = [
+const councilPrimary: PrimaryStatement[] = [
   /* ── District 3 ─────────────────────────────────────────────────── */
   // Beaudoin's only statement in the pool is a public post (no pamphlet, site or questionnaire).
   {
@@ -119,3 +120,7 @@ export const primaryStatements: PrimaryStatement[] = [
   { candidateId: "olivia-clark", sourceUrl: pamphlet(62) },
   { candidateId: "timothy-tj-anderson", sourceUrl: pamphlet(65) },
 ];
+
+export const roleOverrides: RoleOverride[] = [...councilRoles, ...packs.flatMap((p) => p.roles)];
+export const missingStates: Record<string, MissingState> = Object.assign({}, councilMissing, ...packs.map((p) => p.missing));
+export const primaryStatements: PrimaryStatement[] = [...councilPrimary, ...packs.flatMap((p) => p.primary)];

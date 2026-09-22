@@ -13,10 +13,12 @@ import styles from "./race-sheet.module.css";
  */
 export default function BottomBar({
   raceId,
+  hasVotes = true,
   savedCount,
   onOpenBallot,
 }: {
   raceId: string;
+  hasVotes?: boolean;
   savedCount: number;
   /** Receives the button that opened the dialog so focus can return to it. */
   onOpenBallot: (opener: HTMLElement) => void;
@@ -61,10 +63,12 @@ export default function BottomBar({
           {savedCount > 0 && <span className={styles.barCount}> · {savedCount}</span>}
         </span>
       </button>
-      <Link href={`/voters-guide/${raceId}/votes`} prefetch={false} className={styles.barItem}>
-        <Landmark size={18} aria-hidden="true" />
-        <span>Votes</span>
-      </Link>
+      {hasVotes && (
+        <Link href={`/voters-guide/${raceId}/votes`} prefetch={false} className={styles.barItem}>
+          <Landmark size={18} aria-hidden="true" />
+          <span>Votes</span>
+        </Link>
+      )}
       <a href="#about" className={styles.barItem}>
         <Info size={18} aria-hidden="true" />
         <span>About</span>

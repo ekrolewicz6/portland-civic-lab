@@ -1,4 +1,5 @@
 import type { StanceChip } from "../types";
+import { packs } from "./packs";
 
 /**
  * Grid chips: one per filled analysis.issues slot, shortened from the same
@@ -28,7 +29,7 @@ const chip = (candidateId: string, issue: StanceChip["issue"], text: string): St
   ...reviewed,
 });
 
-export const stanceChips: StanceChip[] = [
+const councilChips: StanceChip[] = [
   /* ── Portland City Council, District 3 ─────────────────────────────── */
 
   chip("ali-beaudoin", "money", "Test programs first"),
@@ -160,3 +161,5 @@ export const stanceChips: StanceChip[] = [
   chip("eric-zimmerman", "safety", "Police and Street Response"),
   chip("eric-zimmerman", "money", "Against tax, fee increases"),
 ];
+
+export const stanceChips: StanceChip[] = [...councilChips, ...packs.flatMap((p) => p.chips)];

@@ -12,6 +12,7 @@ import { stanceChips } from "./content/stances";
 import { deliveries } from "./content/delivery";
 import { topicStances } from "./content/topic-stances";
 import { extraTopics } from "./topics";
+import { officeOf, type Office } from "./office";
 import { choiceParagraphs } from "./content/choice";
 import { saidPlacements } from "./content/said";
 import { missingStates, primaryStatements, roleOverrides } from "./content/roles";
@@ -100,6 +101,8 @@ export type FeaturedRow = {
 
 export type RaceSheet = {
   race: Race;
+  /** What kind of seat this is, and which parts of the sheet apply. */
+  office: Office;
   district: DistrictInfo | null;
   ballot: BallotInstruction | null;
   /** The reviewed choice paragraph, or the race's own comparison sentence. */
@@ -121,8 +124,12 @@ export const byName = (a: { name: string }, b: { name: string }) =>
   a.name.localeCompare(b.name, "en");
 
 export function shortRaceTitle(race: Race) {
-  const m = race.title.match(/District (\d+)/);
-  return m ? `District ${m[1]}` : race.title;
+  return officeOf(race).short;
+}
+
+/** The extra grid topics that apply to a race: the Council choices for council seats, none yet for other offices. */
+export function topicsFor(race: Race) {
+  return officeOf(race).group === "council" ? extraTopics : [];
 }
 
 function clampRole(background: string): string {
@@ -285,6 +292,9 @@ function buildFeatured(race: Race, people: Candidate[]): FeaturedRow[] {
 export type ClientSheet = {
   raceId: string;
   raceTitle: string;
+  office: Office;
+  /** True when the ballot ranks candidates; the reader's list then reads as an order, otherwise as a shortlist. */
+  ranked: boolean;
   district: string;
   candidateIds: string[];
   rows: SheetRow[];
@@ -300,16 +310,18 @@ export function clientSheet(sheet: RaceSheet): ClientSheet {
   return {
     raceId: sheet.race.id,
     raceTitle: sheet.race.title,
+    office: sheet.office,
+    ranked: /rank/i.test(sheet.race.method) || /rank/i.test(sheet.ballot?.text ?? ""),
     district: shortRaceTitle(sheet.race),
     candidateIds: sheet.rows.map((r) => r.id),
     rows: sheet.rows,
     coverage: sheet.coverage,
-    topics: extraTopics,
+    topics: topicsFor(sheet.race),
     topicCoverage: Object.fromEntries(
-      extraTopics.map((t) => [t.id, sheet.rows.filter((r) => r.topicCells[t.id].vote || r.topicCells[t.id].chip).length]),
+      topicsFor(sheet.race).map((t) => [t.id, sheet.rows.filter((r) => r.topicCells[t.id]?.vote || r.topicCells[t.id]?.chip).length]),
     ),
     topicDecisions: Object.fromEntries(
-      extraTopics.flatMap((t) => {
+      topicsFor(sheet.race).flatMap((t) => {
         const d = t.decisionId ? councilDecisions.find((x) => x.id === t.decisionId) : undefined;
         return d ? [[t.id, { title: d.title, voteLabel: d.voteLabel ?? null, source: sourceChip(d.source) } satisfies TopicDecision]] : [];
       }),
@@ -325,6 +337,7 @@ export function clientSheet(sheet: RaceSheet): ClientSheet {
 /* ── Builder ────────────────────────────────────────────────────────── */
 
 export function buildRaceSheet(race: Race): RaceSheet {
+  const office = officeOf(race);
   const people = [...race.candidates].sort(byName);
   const rows = people.map(buildRow);
   const paragraph = choiceParagraphs.find((c) => c.raceId === race.id);
@@ -333,6 +346,7 @@ export function buildRaceSheet(race: Race): RaceSheet {
   ) as Record<IssueId, number>;
   return {
     race,
+    office,
     district: districts.find((d) => d.raceId === race.id) ?? null,
     ballot: ballotInstructions.find((b) => b.raceId === race.id) ?? null,
     choice: paragraph
@@ -343,7 +357,7 @@ export function buildRaceSheet(race: Race): RaceSheet {
     coverage,
     featured: buildFeatured(race, people),
     otherRaces: races
-      .filter((r) => r.id !== race.id)
+      .filter((r) => r.id !== race.id && officeOf(r).group === office.group)
       .map((r) => ({ id: r.id, title: r.title, short: shortRaceTitle(r) })),
     version: raceSheetVersion,
   };

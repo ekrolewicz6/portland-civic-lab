@@ -1,4 +1,5 @@
 import type { ChoiceParagraph } from "../types";
+import { packs } from "./packs";
 
 /**
  * ≤45 words per race, no names, no forced binaries. Each paragraph is a
@@ -8,7 +9,7 @@ import type { ChoiceParagraph } from "../types";
  * plainly that many candidates propose some of each. Claims are no stronger
  * than the parent sentence makes them.
  */
-export const choiceParagraphs: ChoiceParagraph[] = [
+const councilChoice: ChoiceParagraph[] = [
   {
     raceId: "portland-district-3",
     text: "Candidates differ on how far to rely on building new homes versus protecting renters, on the mix of police and unarmed responders, and on how far to lean on taxes and utility bills versus trimming services. Many propose some of each.",
@@ -24,3 +25,5 @@ export const choiceParagraphs: ChoiceParagraph[] = [
     reviewedOn: "2026-09-19",
   },
 ];
+
+export const choiceParagraphs: ChoiceParagraph[] = [...councilChoice, ...packs.flatMap((p) => p.choice)];

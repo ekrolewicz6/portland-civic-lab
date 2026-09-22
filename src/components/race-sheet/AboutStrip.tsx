@@ -46,7 +46,7 @@ export default function AboutStrip({ sheet }: { sheet: RaceSheet }) {
         </div>
 
         <div className={styles.block}>
-          <h3 className={styles.blockTitle}>What this Council can do</h3>
+          <h3 className={styles.blockTitle}>{sheet.office.hasCouncilRecord ? "What this Council can do" : "What this office can do"}</h3>
           <p>{race.authority}</p>
         </div>
 
@@ -54,12 +54,17 @@ export default function AboutStrip({ sheet }: { sheet: RaceSheet }) {
           <h3 className={styles.blockTitle}>How this list was made</h3>
           <p>
             Same questions for everyone, A–Z. Each chip is our short reading of a sourced statement; we do not
-            endorse, rank or score. The four featured votes are this district’s most reported, most divided
-            decisions; the{" "}
-            <Link href={votesPath} className={c.inlineLink}>
-              Votes page
-            </Link>{" "}
-            has all {councilDisagreements.length}.
+            endorse, rank or score.
+            {sheet.office.hasCouncilRecord && (
+              <>
+                {" "}
+                The four featured votes are this district’s most reported, most divided decisions; the{" "}
+                <Link href={votesPath} className={c.inlineLink}>
+                  Votes page
+                </Link>{" "}
+                has all {councilDisagreements.length}.
+              </>
+            )}
           </p>
           <p className={styles.edition}>
             Reviewed {REVIEW_LABEL} · lines {sheet.version} · AI-assisted, human review pending

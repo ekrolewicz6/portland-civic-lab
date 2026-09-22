@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { races } from "../src/lib/voters-guide/published";
 import { buildRaceSheet } from "../src/lib/voters-guide/race-sheet";
+import { officeOf } from "../src/lib/voters-guide/race-sheet/office";
 import { splitIssues } from "../src/lib/voters-guide/race-sheet/council-splits";
 import { councilDisagreements } from "../src/lib/voters-guide/council-record-accounts";
 
@@ -8,7 +9,7 @@ import { councilDisagreements } from "../src/lib/voters-guide/council-record-acc
 
 const VOTE_WORDS = ["Yes", "No", "Absent", "Not on committee"];
 
-for (const race of races) {
+for (const race of races.filter((r) => officeOf(r).hasCouncilRecord)) {
   const sheet = buildRaceSheet(race);
   const incumbentIds = new Set(sheet.incumbents.map((p) => p.id));
 

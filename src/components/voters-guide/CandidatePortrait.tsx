@@ -19,13 +19,25 @@ export default function CandidatePortrait({
   return (
     <div className={styles.portrait}>
       {person.portrait ? (
-        <Image
-          src={person.portrait.src}
-          alt={compact ? "" : person.name}
-          fill
-          priority={priority}
-          sizes={compact ? "70px" : "(max-width: 600px) 45vw, 240px"}
-        />
+        compact ? (
+          // A fixed 96px source with no `sizes`: a 1x/2x srcSet instead of one entry per device
+          // width, since the hub alone draws every candidate and `fill` adds ~2 KB of URLs each.
+          <Image
+            src={person.portrait.src}
+            alt=""
+            width={96}
+            height={120}
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+          />
+        ) : (
+          <Image
+            src={person.portrait.src}
+            alt={person.name}
+            fill
+            priority={priority}
+            sizes="(max-width: 600px) 45vw, 240px"
+          />
+        )
       ) : (
         <div
           className={styles.portraitPlaceholder}

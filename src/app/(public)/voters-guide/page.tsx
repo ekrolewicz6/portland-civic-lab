@@ -11,6 +11,7 @@ import {
   shortRaceTitle,
   type RaceSheet,
 } from "@/lib/voters-guide/race-sheet";
+import { GROUP_ORDER, groupLabel, type OfficeGroup } from "@/lib/voters-guide/race-sheet/office";
 import DistrictMap, { DistrictMapSource } from "@/components/voters-guide/DistrictMap";
 import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import HeroMap from "@/components/voters-guide/HeroMap";
@@ -35,21 +36,31 @@ function mosaicColumns(count: number) {
 
 const RANKED_CHOICE_GUIDE = "https://multco.us/info/ranked-choice-voting-rcv";
 
+/** One line above each group of races, saying whose ballot it is on. */
+const GROUP_EYEBROW: Record<OfficeGroup, string> = {
+  council: "On the Portland ballot",
+  county: "On the Portland ballot · county and citywide seats",
+  state: "On every Oregon ballot",
+  federal: "On every Oregon ballot · by congressional district",
+  legislature: "By legislative district · metro area",
+  city: "Other cities in the metro area",
+};
+
 function DistrictCard({ sheet }: { sheet: RaceSheet }) {
-  const { race } = sheet;
+  const { race, office } = sheet;
   const short = shortRaceTitle(race);
-  const numeral = short.match(/\d+/)?.[0] ?? "";
+  const n = sheet.rows.length;
   return (
     <li className={styles.card}>
       <Link href={`/voters-guide/${race.id}`} className={styles.cardLink}>
         <div className={styles.cardHead}>
-          <span className={styles.numeral} aria-hidden="true">
-            0{numeral}
+          <span className={`${styles.numeral} ${office.group === "council" ? "" : styles.mark}`} aria-hidden="true">
+            {office.mark}
           </span>
           <div>
-            <h3>{short}</h3>
+            <h3>{office.group === "council" ? short : `${office.body === "Portland City Council" ? "" : `${office.body} · `}${short}`}</h3>
             <p>
-              {sheet.rows.length} candidates · {race.seats} seats
+              {n} candidate{n === 1 ? "" : "s"} · {race.seats} seat{race.seats === 1 ? "" : "s"}
             </p>
           </div>
           <ArrowUpRight aria-hidden="true" />
@@ -69,16 +80,12 @@ function DistrictCard({ sheet }: { sheet: RaceSheet }) {
 
 export default function VotersGuidePage() {
   const sheets = races.map(buildRaceSheet);
-  const districtList = sheets.map((s) => shortRaceTitle(s.race));
-  const districtsLabel =
-    districtList.length > 1
-      ? `${districtList.slice(0, -1).join(", ")} and ${districtList.at(-1)}`
-      : (districtList[0] ?? "");
-  const editionDistricts = districtsLabel.replace(/District /g, "").trim();
+  const councilSheets = sheets.filter((s) => s.office.group === "council");
+  const groups = GROUP_ORDER.filter((g) => g !== "council").map((g) => ({ group: g, sheets: sheets.filter((s) => s.office.group === g) })).filter((g) => g.sheets.length);
 
   const candidateCount = sheets.reduce((n, s) => n + s.rows.length, 0);
   const seatCount = sheets.reduce((n, s) => n + s.race.seats, 0);
-  const fields = sheets.map((s) => ({
+  const fields = councilSheets.map((s) => ({
     district: Number(shortRaceTitle(s.race).match(/\d+/)?.[0]) as 1 | 2 | 3 | 4,
     rows: s.rows,
   }));
@@ -99,9 +106,9 @@ export default function VotersGuidePage() {
               <span>Make your own.</span>
             </h1>
             <p className={styles.heroLede}>
-              Every candidate for {districtsLabel}, on one page per district: what they propose, how they would
-              deliver it, how sitting councilors voted, and the sources behind all of it. No endorsements, no
-              scores.
+              Every candidate on your ballot, from City Council to governor, one page per race: what they propose,
+              how they would deliver it, how sitting councilors voted, and the sources behind all of it. No
+              endorsements, no scores.
             </p>
             <div className={styles.heroActions}>
               {sheets.map((sheet) => (
@@ -112,10 +119,15 @@ export default function VotersGuidePage() {
               <a href="#find-district" className={`${c.btn} ${styles.heroQuiet}`}>
                 <MapPin size={16} aria-hidden="true" /> Which district am I in?
               </a>
+              {groups.length > 0 && (
+                <a href={`#group-${groups[0].group}`} className={`${c.btn} ${styles.heroQuiet}`}>
+                  Every race on the ballot ↓
+                </a>
+              )}
             </div>
             <dl className={styles.heroFacts}>
               <div>
-                <dt>Districts</dt>
+                <dt>Races</dt>
                 <dd>{sheets.length}</dd>
               </div>
               <div>
@@ -152,7 +164,7 @@ export default function VotersGuidePage() {
       {/* Each segment carries its own separator (CSS), so a dot never ends a line alone. */}
       <p className={styles.edition}>
         <strong>Working research edition</strong>
-        <span>Districts {editionDistricts}</span>
+        <span>{sheets.length} races · {sheets.reduce((n, s) => n + s.rows.length, 0)} candidates</span>
         <span>reviewed {REVIEW_LABEL}</span>
         <span className={styles.editionLong}>AI-assisted, human review not yet complete</span>
         <Link href="/voters-guide/methodology#coverage" className={`${c.btn} ${c.quiet} ${c.small} ${styles.editionLink}`}>
@@ -168,14 +180,14 @@ export default function VotersGuidePage() {
           </h2>
         </div>
         <ul className={styles.cards}>
-          {sheets.map((sheet) => (
+          {councilSheets.map((sheet) => (
             <DistrictCard key={sheet.race.id} sheet={sheet} />
           ))}
         </ul>
         <div className={styles.mapBlock} id="find-district">
           <div className={styles.mapCol}>
             <DistrictMap
-              published={sheets.map((s) => Number(shortRaceTitle(s.race).match(/\d+/)?.[0]) as 1 | 2 | 3 | 4)}
+              published={councilSheets.map((s) => s.office.district as 1 | 2 | 3 | 4)}
               hrefFor={(d) => `/voters-guide/portland-district-${d}`}
               labels={{ 3: "Inner SE", 4: "West side" }}
             />
@@ -187,10 +199,25 @@ export default function VotersGuidePage() {
             <a href={officialSources.myVote} rel="noopener noreferrer">
               Not sure? Look up your district <span aria-hidden="true">↗</span>
             </a>
-            <p className={styles.alsoOnBallot}>The uncontested City Auditor race is also on the Portland ballot.</p>
           </div>
         </div>
       </section>
+
+      {groups.map(({ group, sheets: gs }) => (
+        <section key={group} className={styles.districts} aria-labelledby={`group-${group}`}>
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>{GROUP_EYEBROW[group]}</p>
+            <h2 id={`group-${group}`} className={styles.sectionTitle}>
+              {groupLabel(group)}
+            </h2>
+          </div>
+          <ul className={`${styles.cards} ${styles.cardsMany}`}>
+            {gs.map((sheet) => (
+              <DistrictCard key={sheet.race.id} sheet={sheet} />
+            ))}
+          </ul>
+        </section>
+      ))}
 
       <section className={styles.voting} aria-labelledby="voting-title">
         <div className={styles.votingIntro}>
