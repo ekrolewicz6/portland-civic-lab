@@ -142,6 +142,90 @@
 .heroQuiet:focus-visible {
   outline-color: var(--color-paper);
 }
+.bodyBlock {
+  display: grid;
+  gap: 12px;
+}
+.bodyBlock + .bodyBlock {
+  margin-top: 28px;
+}
+.bodyTitle {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+/* The ballot index: one line per office, seats as underlined links, on the hero's dark ground. */
+.ballotIndex {
+  display: grid;
+  gap: 10px;
+  margin: 4px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid color-mix(in oklab, var(--color-lichen) 30%, transparent);
+}
+.ballotIndexTitle {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-lichen);
+}
+.ballotIndexList {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+.ballotIndexRow {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 4px 16px;
+  align-items: baseline;
+}
+@media (max-width: 480px) {
+  .ballotIndexRow {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+.ballotIndexRow dt {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ember-bright);
+}
+.ballotIndexRow dd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 0;
+}
+.hub .ballotIndexLink {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-paper);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--color-paper) 35%, transparent);
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+.hub .ballotIndexLink:hover {
+  text-decoration-color: var(--color-ember-bright);
+}
+.hub .ballotIndexMore {
+  justify-self: start;
+  margin-top: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-lichen);
+  text-decoration: none;
+}
+.hub .ballotIndexMore:hover {
+  color: var(--color-paper);
+}
 .heroFacts {
   display: flex;
   flex-wrap: wrap;

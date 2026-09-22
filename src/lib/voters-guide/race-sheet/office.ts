@@ -43,6 +43,24 @@ export function groupLabel(group: OfficeGroup) {
 /** Display order of groups on the hub: the offices a Portland voter sees first. */
 export const GROUP_ORDER: OfficeGroup[] = ["council", "county", "state", "federal", "legislature", "city"];
 
+/** True for the races a Portland voter sees on their own ballot: city, Multnomah County, statewide, and the congressional districts that cover the city. */
+export function onPortlandBallot(race: Race): boolean {
+  const o = officeOf(race);
+  if (o.group === "council" || o.group === "state") return true;
+  if (o.group === "city") return o.body === "City of Portland";
+  if (o.group === "county") return o.body === "Multnomah County";
+  if (o.group === "federal") return race.id === "oregon-us-senate" || ["oregon-house-1", "oregon-house-3", "oregon-house-5"].includes(race.id);
+  return false;
+}
+
+/** The short ballot-index label: the seat without the body, since the index prints the body once per line. */
+export function indexLabel(race: Race): string {
+  const o = officeOf(race);
+  if (o.group === "federal") return o.short.replace("U.S. House · ", "House ");
+  if (o.group === "legislature") return o.short.replace(" · ", " ");
+  return o.short;
+}
+
 export function officeOf(race: Race): Office {
   const id = race.id;
   const m = (re: RegExp) => race.title.match(re)?.[1] ?? null;
