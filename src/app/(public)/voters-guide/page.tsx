@@ -11,7 +11,7 @@ import {
   shortRaceTitle,
   type RaceSheet,
 } from "@/lib/voters-guide/race-sheet";
-import { GROUP_ORDER, groupLabel, type OfficeGroup } from "@/lib/voters-guide/race-sheet/office";
+import { GROUP_ORDER, groupLabel, indexLabel, onPortlandBallot, type OfficeGroup } from "@/lib/voters-guide/race-sheet/office";
 import DistrictMap, { DistrictMapSource } from "@/components/voters-guide/DistrictMap";
 import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import HeroMap from "@/components/voters-guide/HeroMap";
@@ -39,11 +39,11 @@ const RANKED_CHOICE_GUIDE = "https://multco.us/info/ranked-choice-voting-rcv";
 /** One line above each group of races, saying whose ballot it is on. */
 const GROUP_EYEBROW: Record<OfficeGroup, string> = {
   council: "On the Portland ballot",
-  county: "On the Portland ballot · county and citywide seats",
+  county: "Multnomah is on the Portland ballot · Washington and Clackamas for their residents",
   state: "On every Oregon ballot",
-  federal: "On every Oregon ballot · by congressional district",
+  federal: "By congressional district · Portland is in Districts 1, 3 and 5",
   legislature: "By legislative district · metro area",
-  city: "Other cities in the metro area",
+  city: "By city · Portland's auditor, then the metro area's cities",
 };
 
 function DistrictCard({ sheet }: { sheet: RaceSheet }) {
@@ -58,7 +58,7 @@ function DistrictCard({ sheet }: { sheet: RaceSheet }) {
             {office.mark}
           </span>
           <div>
-            <h3>{office.group === "council" ? short : `${office.body === "Portland City Council" ? "" : `${office.body} · `}${short}`}</h3>
+            <h3>{short}</h3>
             <p>
               {n} candidate{n === 1 ? "" : "s"} · {race.seats} seat{race.seats === 1 ? "" : "s"}
             </p>
@@ -81,8 +81,22 @@ function DistrictCard({ sheet }: { sheet: RaceSheet }) {
 export default function VotersGuidePage() {
   const sheets = races.map(buildRaceSheet);
   const councilSheets = sheets.filter((s) => s.office.group === "council");
-  const groups = GROUP_ORDER.filter((g) => g !== "council").map((g) => ({ group: g, sheets: sheets.filter((s) => s.office.group === g) })).filter((g) => g.sheets.length);
+  const raceNumber = (s: RaceSheet) => Number(s.race.id.match(/(\d+)$/)?.[1] ?? 0);
+  const groups = GROUP_ORDER.filter((g) => g !== "council")
+    .map((g) => {
+      const gs = sheets.filter((s) => s.office.group === g).sort((a, b) => (g === "federal" || g === "legislature" ? raceNumber(a) - raceNumber(b) : 0));
+      // Within a group, one sub-heading per body when there is more than one (three counties, six cities).
+      const bodies = [...new Set(gs.map((s) => s.office.body))];
+      return { group: g, bodies: bodies.map((body) => ({ body, sheets: gs.filter((s) => s.office.body === body) })) };
+    })
+    .filter((g) => g.bodies.length);
 
+  const ballotIndex = [
+    { label: "City of Portland", races: sheets.filter((s) => onPortlandBallot(s.race) && (s.office.group === "council" || s.office.group === "city")) },
+    { label: "Multnomah County", races: sheets.filter((s) => onPortlandBallot(s.race) && s.office.group === "county") },
+    { label: "Oregon", races: sheets.filter((s) => onPortlandBallot(s.race) && s.office.group === "state") },
+    { label: "U.S. Congress", races: sheets.filter((s) => onPortlandBallot(s.race) && s.office.group === "federal") },
+  ].filter((g) => g.races.length);
   const candidateCount = sheets.reduce((n, s) => n + s.rows.length, 0);
   const seatCount = sheets.reduce((n, s) => n + s.race.seats, 0);
   const fields = councilSheets.map((s) => ({
@@ -111,20 +125,39 @@ export default function VotersGuidePage() {
               endorsements, no scores.
             </p>
             <div className={styles.heroActions}>
-              {sheets.map((sheet) => (
+              {councilSheets.map((sheet) => (
                 <Link key={sheet.race.id} href={`/voters-guide/${sheet.race.id}`} className={`${c.btn} ${styles.heroCta}`}>
-                  {shortRaceTitle(sheet.race)} <ArrowRight size={16} aria-hidden="true" />
+                  Council {shortRaceTitle(sheet.race)} <ArrowRight size={16} aria-hidden="true" />
                 </Link>
               ))}
               <a href="#find-district" className={`${c.btn} ${styles.heroQuiet}`}>
                 <MapPin size={16} aria-hidden="true" /> Which district am I in?
               </a>
+            </div>
+
+            {/* The Portland ballot, top to bottom: one line per office, the seats as links. */}
+            <nav className={styles.ballotIndex} aria-label="Races on the Portland ballot">
+              <p className={styles.ballotIndexTitle}>On the Portland ballot</p>
+              <dl className={styles.ballotIndexList}>
+                {ballotIndex.map(({ label, races: rs }) => (
+                  <div key={label} className={styles.ballotIndexRow}>
+                    <dt>{label}</dt>
+                    <dd>
+                      {rs.map((sheet) => (
+                        <Link key={sheet.race.id} href={`/voters-guide/${sheet.race.id}`} className={styles.ballotIndexLink}>
+                          {indexLabel(sheet.race)}
+                        </Link>
+                      ))}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
               {groups.length > 0 && (
-                <a href={`#group-${groups[0].group}`} className={`${c.btn} ${styles.heroQuiet}`}>
-                  Every race on the ballot ↓
+                <a href={`#group-${groups[0].group}`} className={styles.ballotIndexMore}>
+                  All {sheets.length} races we cover, including the rest of the metro area ↓
                 </a>
               )}
-            </div>
+            </nav>
             <dl className={styles.heroFacts}>
               <div>
                 <dt>Races</dt>
@@ -203,7 +236,7 @@ export default function VotersGuidePage() {
         </div>
       </section>
 
-      {groups.map(({ group, sheets: gs }) => (
+      {groups.map(({ group, bodies }) => (
         <section key={group} className={styles.districts} aria-labelledby={`group-${group}`}>
           <div className={styles.sectionHead}>
             <p className={styles.eyebrow}>{GROUP_EYEBROW[group]}</p>
@@ -211,11 +244,16 @@ export default function VotersGuidePage() {
               {groupLabel(group)}
             </h2>
           </div>
-          <ul className={`${styles.cards} ${styles.cardsMany}`}>
-            {gs.map((sheet) => (
-              <DistrictCard key={sheet.race.id} sheet={sheet} />
-            ))}
-          </ul>
+          {bodies.map(({ body, sheets: bs }) => (
+            <div key={body} className={styles.bodyBlock}>
+              {bodies.length > 1 && <h3 className={styles.bodyTitle}>{body}</h3>}
+              <ul className={`${styles.cards} ${styles.cardsMany}`}>
+                {bs.map((sheet) => (
+                  <DistrictCard key={sheet.race.id} sheet={sheet} />
+                ))}
+              </ul>
+            </div>
+          ))}
         </section>
       ))}
 
