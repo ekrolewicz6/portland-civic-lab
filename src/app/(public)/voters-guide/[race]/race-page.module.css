@@ -203,9 +203,14 @@
   .back {
     min-height: 32px;
   }
-  /* The h1 carries "Portland City Council" for AT; the date is in About. */
+  /* The h1 carries "Portland City Council" for AT; the date is in About. Other offices keep
+     the line, since "County Chair" alone does not say which county. */
   .eyebrow {
     display: none;
+  }
+  .eyebrow.eyebrowKeep {
+    display: block;
+    width: 100%;
   }
   .mastGrid {
     gap: 16px;

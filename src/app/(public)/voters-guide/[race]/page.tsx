@@ -74,7 +74,9 @@ export default async function RacePage({
           <Link className={`${c.btn} ${c.quiet} ${c.small} ${styles.back}`} href="/voters-guide" prefetch={false}>
             <ArrowLeft size={15} aria-hidden="true" /> All races
           </Link>
-          <p className={styles.eyebrow}>{sheet.office.body} · November 3, 2026</p>
+          <p className={`${styles.eyebrow} ${sheet.office.group === "council" ? "" : styles.eyebrowKeep}`}>
+            {sheet.office.body} · November 3, 2026
+          </p>
         </div>
 
         <div className={styles.mastGrid}>
