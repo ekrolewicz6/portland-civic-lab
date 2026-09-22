@@ -107,7 +107,8 @@ describe("the promise ladder (how, measured by)", () => {
   });
 });
 
-const allTopics = [...extraTopics, ...packs.flatMap((p) => p.topics.flatMap((t) => t.topics))];
+/** Every topic once: a pack may list the same topic object for several of its races (a subset for a sheriff or auditor). */
+const allTopics = Array.from(new Set([...extraTopics, ...packs.flatMap((p) => p.topics.flatMap((t) => t.topics))]));
 
 describe("extra topics", () => {
   it("are a fixed, deduplicated list with a plain question, and any decisionId resolves", () => {

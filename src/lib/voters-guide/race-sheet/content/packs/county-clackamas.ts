@@ -1,5 +1,15 @@
 import type { Evidence } from "../../../types";
-import type { CandidateAnalysis, Delivery, DeliveryStep, IssueLine, StanceChip } from "../../types";
+import type {
+  CandidateAnalysis,
+  Delivery,
+  DeliveryStep,
+  ExtraTopic,
+  IssueLine,
+  RaceStakes,
+  RaceTopics,
+  StanceChip,
+  TopicStance,
+} from "../../types";
 import type { IssueId } from "../../issues";
 import type { OwnWords } from "../own-words";
 import { emptyPack, type RacePack } from "../../types";
@@ -123,6 +133,574 @@ const savasDataCenters = site(
 const smithPolicies = site("Smith · policies", "https://friendsofremysmith.org/policies/");
 const smithHome = site("Smith · home page", "https://friendsofremysmith.org/");
 const helmHome = site("Helm · home page", "https://www.votedianahelm.com/");
+
+/* ── Topics, stances and stakes ─────────────────────────────────────── */
+/*
+ * Office-specific comparison topics for the five Clackamas races, each
+ * candidate's explicit stance, and the sourced facts behind each office.
+ * Researched September 21–22, 2026. County facts come from policy-session
+ * worksheets and agendas on clackamas.us / docs.clackamas.us and the FY
+ * 2026-27 budget document; questionnaire answers are the candidates' own
+ * written replies to OPB (May 2026). A stance is recorded only where the
+ * candidate's own material speaks to the choice the topic asks about.
+ */
+const DEPTH_REVIEWED = { reviewedBy: "pending", reviewedOn: "2026-09-22" } as const;
+const record = (label: string, url: string, date: string, note?: string): Evidence => ({
+  label,
+  url,
+  kind: "Public record",
+  date,
+  ...(note ? { note } : {}),
+});
+const reporting = (label: string, url: string, date: string, note?: string): Evidence => ({
+  label,
+  url,
+  kind: "Reporting",
+  date,
+  ...(note ? { note } : {}),
+});
+const questionnaire = (name: string, url: string): Evidence => ({
+  label: `${name} · OPB candidate questionnaire (written answers, published May 2026)`,
+  url,
+  kind: "Candidate statement",
+  date: "Published by OPB in May 2026; read September 21, 2026",
+  note: "The candidate's own written answers to OPB's questions, published as a PDF alongside OPB's race preview.",
+});
+const stance = (
+  candidateId: string,
+  topicId: string,
+  s: TopicStance["stance"],
+  chipText: string,
+  text: string,
+  source: Evidence,
+): TopicStance => ({ candidateId, topicId, stance: s, chip: chipText, text, source, ...DEPTH_REVIEWED });
+
+/* Shared public-record and reporting sources. */
+const levyWorksheetJul23 = record(
+  "Clackamas County · Public Safety Levy Research & Next Steps (policy session memorandum)",
+  "https://docs.clackamas.us/documents/drupal/60e03697-d523-4d02-a260-bcfeeeed0b2c",
+  "July 23, 2026",
+  "Measure 3-633 failed 62.13% no to 37.87% yes on 44.86% turnout; the current levy expires at the end of 2026; options were a November 2026 or May 2027 referral.",
+);
+const dataCenterWorksheetAug11 = record(
+  "Clackamas County · Data Center Potential Policy Options (Issues & Updates memorandum)",
+  "https://docs.clackamas.us/documents/drupal/83d5a6c6-6bbe-492d-8458-1e179a92d53a",
+  "August 11, 2026",
+  "Staff recommended Option 5, waiting for the 2027 session; the memo sets out the moratorium process (45-day DLCD notice, 120-day limit, one six-month extension).",
+);
+const proposedBudget2627 = record(
+  "Clackamas County · FY 2026-27 Proposed Budget (budget message and department summaries)",
+  "https://docs.clackamas.us/documents/drupal/49cbf9fc-076e-4d24-afed-c05582f57b37",
+  "May 2026; read September 21, 2026",
+  "All-county total $1,996,903,715; General Fund Support $195.5 million; 2,495.3 FTE, down 20.5 from the FY 2025-26 adopted budget.",
+);
+const recoveryCampusNotice = record(
+  "Clackamas County · Notice of public hearing on a financing for the Recovery Campus",
+  "https://www.clackamas.us/news/2026-09-10/notice-of-public-hearing-with-respect-to-the-issuance-of-a-financing-by-clackamas-county-oregon",
+  "September 10, 2026 (hearing September 17, 2026)",
+);
+const businessAug13 = record(
+  "Clackamas County · Board of County Commissioners business meeting agenda, August 13, 2026",
+  "https://www.clackamas.us/meetings/bcc/business/2026-08-13",
+  "August 13, 2026",
+);
+const electionsNov2026 = record(
+  "Clackamas County Elections · November 3, 2026 General Election (candidates and measures)",
+  ELECTIONS + "/november-3-2026-general-election",
+  "Checked September 21, 2026",
+);
+const sosSecurity = record(
+  "Oregon Secretary of State · Election Integrity",
+  "https://sos.oregon.gov/elections/Pages/security.aspx",
+  "Checked September 21, 2026",
+);
+const treasurerPage = record("Clackamas County · Treasurer", "https://www.clackamas.us/treasurer", "Checked September 21, 2026");
+const reviewMay2027 = reporting(
+  "Milwaukie Review (Pamplin) · Clackamas County planning to wait until next May for public safety funding vote",
+  "https://milwaukiereview.com/2026/07/29/clackamas-county-planning-to-wait-until-next-may-for-public-safety-funding-vote/",
+  "July 29, 2026",
+);
+const yonLevyJune4 = reporting(
+  "Your Oregon News (Pamplin) · After failure of public safety levy, Clackamas County goes back to the drawing board",
+  "https://youroregonnews.com/2026/06/04/after-failure-of-public-safety-levy-clackamas-county-goes-back-to-the-drawing-board/",
+  "June 4, 2026",
+  "Reported statement; quotes as printed by Your Oregon News from the June 2, 2026 policy session.",
+);
+const opbSheriffAppointed = reporting(
+  "OPB · Clackamas County appoints interim sheriff in wake of surprise mid-term resignation",
+  "https://www.opb.org/article/2026/07/28/clackamas-county-sheriffs-office-rhodes/",
+  "July 28, 2026",
+);
+const opbBallots2022 = reporting(
+  "OPB · Clackamas County clerk blames multiple election mistakes on outside vendors",
+  "https://www.opb.org/article/2022/08/11/clackamas-county-oregon-clerk-sherry-hall-election-mistakes-blame/",
+  "August 11, 2022",
+);
+const dorDeferral = record(
+  "Oregon Department of Revenue · Senior and Disabled Property Tax Deferral Program",
+  "https://www.oregon.gov/dor/programs/property/pages/senior-and-disabled-property-tax-deferral-program.aspx",
+  "Checked September 21, 2026",
+);
+const budgetAdoptedJun17 = record(
+  "Clackamas County · Board of County Commissioners business meeting, June 17, 2026 (item 13.1, FY 2026-27 budget adoption; agenda, minutes and resolution)",
+  "https://www.clackamas.us/meetings/bcc/business/2026-06-17",
+  "June 17, 2026",
+  "Minutes: Commissioner Savas moved, Commissioner Helm seconded, passed 5–0. Resolution: total budget $1,528,305,199, appropriations $1,401,336,042, General Fund Support $198,116,517.",
+);
+const courthousePage = record("Clackamas County · Courthouse (project budget and payments)", "https://www.clackamas.us/courthouse", "Checked September 21, 2026");
+const recoveryGroundbreaking = record(
+  "Clackamas County · Clackamas County Recovery Campus breaks ground",
+  "https://www.clackamas.us/news/2026-07-29/clackamas-county-recovery-campus-breaks-ground",
+  "July 29, 2026",
+);
+const clerkCertifies = record(
+  "Clackamas County · Clerk McMullen certifies May 19, 2026 Primary Election",
+  "https://www.clackamas.us/news/2026-06-12/clerk-mcmullen-certifies-may-19-2026-primary-election",
+  "June 12, 2026",
+);
+const jailDashboard = record(
+  "Clackamas County Sheriff's Office · Forced Release Dashboard",
+  "https://www.clackcosheriff.us/forcedReleaseDashboard",
+  "Checked September 21, 2026",
+);
+const acfr2025 = record(
+  "Clackamas County · Annual Comprehensive Financial Report, fiscal year ended June 30, 2025 (notes 3 and on the courthouse financing)",
+  "https://docs.clackamas.us/documents/drupal/0089609e-9d67-4cae-8afc-1bd63f079055",
+  "Fiscal year ended June 30, 2025; read September 21, 2026",
+);
+const ocnLevyReferral = reporting(
+  "Oregon City News (Pamplin) · Clackamas County to move forward with public safety levy for May election",
+  "https://oregoncitynewsonline.com/2026/02/11/clackamas-county-to-move-forward-with-public-safety-levy-for-may-election/",
+  "February 11, 2026",
+  "Reported statement; quotes as printed by Oregon City News (Mac Larsen) from the February 10, 2026 session.",
+);
+const kptvLevy = reporting(
+  "KPTV · Sheriff releases statement after Clackamas County public safety levy fails",
+  "https://www.kptv.com/2026/05/20/sheriff-releases-statement-after-clackamas-county-public-safety-levy-fails/",
+  "May 20, 2026",
+);
+const kxlMoratorium = reporting(
+  "KXL · Clackamas County initiates process to enact moratorium on data centers",
+  "https://www.kxl.com/home/clackamas-county-initiates-process-to-enact-moratorium-on-data-centers/",
+  "August 11, 2026",
+);
+
+/* The boards. Commission topics first; the sheriff, clerk and treasurer get shorter lists their candidates have addressed. */
+const commissionTopics: ExtraTopic[] = [
+  {
+    id: "clack-levy-2027",
+    label: "Public safety levy retry",
+    short: "Levy retry",
+    question: "Ask voters again for a public safety levy in May 2027, and at what rate?",
+    context:
+      "Measure 3-633, which would have raised the levy from 36 to 53.4 cents per $1,000 of assessed value, failed 62.16% to 37.84% on May 19, 2026. The current levy, which funds 84 jail beds, 26 medical and mental-health beds, 36 jail deputies, 34 patrol deputies, five detectives and body cameras, expires December 31, 2026; on July 28 the Board chose a May 2027 referral over November 2026.",
+  },
+  {
+    id: "clack-data-centers",
+    label: "Data-center moratorium",
+    short: "Data centers",
+    question: "Adopt a county moratorium on data centers now, or wait for the 2027 Legislature as staff recommended?",
+    context:
+      "No data center has been built in unincorporated Clackamas County, where industrial and business-park zones allow them. On August 11, 2026 staff recommended waiting for the 2027 session; the Board voted unanimously to start a moratorium instead, which state law limits to 120 days plus one six-month extension after 45 days' notice to the state and a public hearing.",
+  },
+  {
+    id: "clack-sanctuary",
+    label: "Judicial-warrant rule",
+    short: "Sanctuary",
+    question: "Declare that county agencies will not help federal immigration enforcement without a judicial warrant?",
+    context:
+      "Oregon's 1987 sanctuary law and the 2021 Sanctuary Promise Act already bar public resources for immigration enforcement without a judicial warrant. In May 2026 OPB asked every Clackamas commission candidate whether the county should adopt its own declaration, as some Oregon counties have; the sheriff is separately elected and runs the jail.",
+  },
+  {
+    id: "clack-senior-tax",
+    label: "Senior tax relief",
+    short: "Senior taxes",
+    question: "Push for a property-tax freeze or new relief for older homeowners?",
+    context:
+      "The state's Senior and Disabled Property Tax Deferral program pays qualifying homeowners' county taxes each November 15 as a 6% lien, with a $70,000 household income limit for 2026; the county itself keeps about 18 cents of each property-tax dollar raised locally, and Oregon sets property-tax exemptions and deferrals in state law.",
+  },
+  {
+    id: "clack-recovery-campus",
+    label: "Recovery Campus",
+    short: "Recovery Campus",
+    question: "Back the Recovery Campus with county-issued bonds and operating money so it opens in fall 2027?",
+    context:
+      "The 76-bed Recovery Campus at 15301 SE 92nd Avenue broke ground July 29, 2026 for completion in late 2027, funded with $13.5 million from Metro's supportive housing services tax, $10 million directed by the governor, $5 million in state lottery bonds and $2.5 million in congressional spending. On September 17, 2026 the Board held the hearing on up to $10.3 million in tax-exempt bonds for two buildings that nonprofit Fora Health will operate.",
+  },
+];
+const sheriffTopics: ExtraTopic[] = [
+  {
+    id: "clack-sheriff-levy",
+    label: "Life after the levy",
+    short: "Levy fallback",
+    question: "If voters reject a levy again in May 2027, which levy-funded services go first?",
+    context:
+      "The public safety levy that funds 84 jail beds, 26 medical and mental-health beds, 36 jail deputies, 34 patrol deputies, five detectives, body cameras and two internal-affairs investigators expires December 31, 2026 after Measure 3-633 failed 62% to 38% in May 2026; the Board plans a new referral in May 2027, and the FY 2026-27 proposed budget books $28.4 million of levy money for 92 positions.",
+  },
+  {
+    id: "clack-sheriff-cuts",
+    label: "Cut administration first",
+    short: "Cuts order",
+    question: "When the Sheriff's Office budget shrinks, cut administration and programs before patrol and jail?",
+    context:
+      "The FY 2026-27 proposed budget gives the Sheriff's Office $155.8 million, including $28.4 million from the expiring levy, and $87.3 million in General Fund support, 44.7% of all such support countywide; it funds 607 positions, of which 73 were vacant, 16 of them on patrol.",
+  },
+  {
+    id: "clack-sheriff-rural",
+    label: "Rural response times",
+    short: "Rural patrol",
+    question: "Make response times in rural and unincorporated areas a measured priority?",
+    context:
+      "Patrol has 71.8 budgeted positions with 16 vacant in the FY 2026-27 proposed budget; another 45 deputies work under contract for Estacada, Happy Valley and Wilsonville, and the Enhanced Law Enforcement District pays for 36 positions in urban unincorporated areas.",
+  },
+];
+const clerkTopics: ExtraTopic[] = [
+  {
+    id: "clack-hand-count",
+    label: "Hand-count ballots",
+    short: "Hand count",
+    question: "Hand-count every ballot instead of machine tabulation?",
+    context:
+      "Oregon counts paper ballots on tabulators that are never connected to the internet, tests them three times per election and requires random-sample hand counts or risk-limiting audits after every primary, general and special election. In May 2022, under the previous clerk, more than half of Clackamas primary ballots were misprinted and had to be copied by hand at a cost of about $600,000.",
+  },
+  {
+    id: "clack-voter-rolls",
+    label: "County voter-roll checks",
+    short: "Voter rolls",
+    question: "Run county-level purges of voters who have moved or died, beyond the state's list maintenance?",
+    context:
+      "The Secretary of State maintains the statewide registration list through the ERIC data-sharing compact, postal change-of-address data, vital records and Oregon Motor Voter, removing people who have died or moved. Clackamas County had 318,500 registered voters for the May 2026 primary, and the clerk's Elections division has six positions in a $3.1 million FY 2026-27 budget.",
+  },
+  {
+    id: "clack-watermark",
+    label: "Watermarked ballots",
+    short: "Watermarks",
+    question: "Add watermarks to ballots to prove they are genuine?",
+    context:
+      "Oregon verifies each returned ballot by matching the envelope signature to the voter's signature on file; the Secretary of State says a ballot cast in a dead voter's name would be caught by that check. Ballots for November 3, 2026 go in the mail starting October 14.",
+  },
+];
+const treasurerTopics: ExtraTopic[] = [
+  {
+    id: "clack-treasury-priorities",
+    label: "Safety before yield",
+    short: "Investing",
+    question: "Keep safety and liquidity ahead of return when investing county cash?",
+    context:
+      "The treasurer is the county's chief investment officer over $827.5 million in cash and investments at June 30, 2025, including $163.1 million in the state's Local Government Investment Pool and $136.8 million in U.S. Treasuries, and distributes property taxes to more than 125 taxing districts; the FY 2026-27 proposed budget expects $15.3 million in interest income.",
+  },
+  {
+    id: "clack-cash-controls",
+    label: "Cash-control training",
+    short: "Cash controls",
+    question: "Keep offering free cash-control training to cities, districts and county staff?",
+    context:
+      "The Treasurer's Office draws $1.1 million in General Fund support in the FY 2026-27 proposed budget and its treasurer also serves as the county's internal audit administrator, with a channel for employees and volunteers to report suspected fraud, waste and abuse.",
+  },
+];
+const topics: RaceTopics[] = [
+  { raceIds: ["clackamas-position-2", "clackamas-position-4"], topics: commissionTopics },
+  { raceIds: ["clackamas-sheriff"], topics: sheriffTopics },
+  { raceIds: ["clackamas-clerk"], topics: clerkTopics },
+  { raceIds: ["clackamas-treasurer"], topics: treasurerTopics },
+];
+
+/* Candidate-statement sources used only for stances. */
+const savasQuestionnaire = questionnaire("Savas", "https://www.opb.org/pdf/Savas_clackamas%20county%20position%202_1777999802794.pdf");
+const shullQuestionnaire = questionnaire("Shull", "https://www.opb.org/pdf/Shull_clackamas%20county%20position%202_1777918550350.pdf");
+const helmQuestionnaire = questionnaire("Helm", "https://www.opb.org/pdf/Helm_Clackamas%20County%20position%204_1777936583069.pdf");
+const smithQuestionnaire = questionnaire("Smith", "https://www.opb.org/pdf/Smith_Clackamas%20County%20position%204_1777936706977.pdf");
+
+const topicStances: TopicStance[] = [
+  /* ── Diana Helm (Position 4, appointed commissioner) ────────────────── */
+  stance("diana-helm", "clack-levy-2027", "supports", "Get out in front",
+    "Told the June 2 policy session after the levy's defeat that there needs to be a real effort right now to get out in front of people before asking again; the rate is unsaid.",
+    yonLevyJune4),
+  stance("diana-helm", "clack-data-centers", "supports", "Led the pause",
+    "Says she led the effort for a moratorium on large data centers after learning the county had no ordinances addressing them, to gather facts, analyze impacts and involve the public before deciding.",
+    pamphlet(18)),
+  stance("diana-helm", "clack-sanctuary", "partial", "Follow state law",
+    "Says the county is following state law and defers to County Counsel on whether to adopt a judicial-warrant declaration.",
+    helmQuestionnaire),
+  stance("diana-helm", "clack-senior-tax", "supports", "Freeze for 65-plus",
+    "Would get ahead of senior homelessness, potentially by freezing property taxes for homeowners 65 and older within a certain income range, paired with senior services.",
+    helmQuestionnaire),
+  stance("diana-helm", "clack-recovery-campus", "supports", "Open it by 2027",
+    "Commits to addressing homelessness through completion and operation of the Recovery Campus by 2027.",
+    helmHome),
+
+  /* ── Catherine McMullen (Clerk, incumbent) ─────────────────────────── */
+  stance("catherine-mcmullen", "clack-hand-count", "partial", "Replaced aging equipment",
+    "Says she replaced aging equipment, secured ballot processes, trained staff and delivered timely, accurate results; hand counting itself is unsaid.",
+    pamphlet(14)),
+  stance("catherine-mcmullen", "clack-voter-rolls", "partial", "Records current, accurate",
+    "Says she increased voter-registration staffing, ensured eligible citizens can access ballots and kept records current and accurate; a county-level purge beyond state maintenance is unsaid.",
+    pamphlet(14)),
+
+  /* ── Brian T Nava (Treasurer, incumbent) ───────────────────────────── */
+  stance("brian-t-nava", "clack-treasury-priorities", "supports", "Safe, liquid, then return",
+    "Would continue prudent investing that keeps county funds safe and liquid first while achieving the best return possible.",
+    pamphlet(15)),
+  stance("brian-t-nava", "clack-cash-controls", "supports", "Free training continues",
+    "Says he set a strategy for good cash controls across the county by offering free training to all cities, districts and county employees, and would keep improving banking functions.",
+    pamphlet(15)),
+
+  /* ── Brad O'Neil (Sheriff) ─────────────────────────────────────────── */
+  stance("brad-o-neil", "clack-sheriff-levy", "partial", "Core services first",
+    "Says budget pressure is real and ongoing, and core public-safety services will be protected first with resources directed to the front line; which levy-funded services would go first is unsaid.",
+    oneilPriorities),
+  stance("brad-o-neil", "clack-sheriff-cuts", "supports", "Front line protected",
+    "Would protect core public-safety services first, direct resources to the front line, guide staffing and spending with data and eliminate waste so the office runs leaner.",
+    oneilPriorities),
+  stance("brad-o-neil", "clack-sheriff-rural", "supports", "Measured rural priority",
+    "Would make coverage and response times in rural and unincorporated communities a measured priority, saying families in outlying areas wait longer for a deputy than families in town.",
+    oneilPriorities),
+
+  /* ── Mark Reaksecker (Clerk) ───────────────────────────────────────── */
+  stance("mark-reaksecker", "clack-hand-count", "supports", "Hand count everything",
+    "Would hand-count ballots, calling it simple, accurate, expedient and cheaper than tabulating machines, with a provable paper trail.",
+    reaksSolutions),
+  stance("mark-reaksecker", "clack-voter-rolls", "supports", "County-level purge",
+    "Would verify voter rolls at the county level, removing people who have moved or died so only Clackamas County citizens vote in local elections.",
+    reaksSolutions),
+  stance("mark-reaksecker", "clack-watermark", "supports", "Watermark every ballot",
+    "Would watermark ballots so the clerk's office can tell genuine ballots from fraudulent ones.",
+    reaksSolutions),
+];
+
+topicStances.push(
+  /* ── James Rhodes (Sheriff, appointed July 28, 2026) ───────────────── */
+  stance("james-rhodes", "clack-sheriff-levy", "partial", "Start at the top",
+    "Says that when budgets are tight he starts with fourth-floor administration, discretionary spending and programs that must show value before cutting services residents depend on; which levy-funded services would go first is unsaid.",
+    rhodesPlan),
+  stance("james-rhodes", "clack-sheriff-cuts", "supports", "Fourth floor first",
+    "Would find savings in top administration, discretionary spending and programs before touching patrol, corrections, detectives and parole and probation, with quarterly public budget reports.",
+    rhodesPlan),
+  stance("james-rhodes", "clack-sheriff-rural", "partial", "Faster response, more patrols",
+    "Would improve response times with more visible patrols and restore traffic and DUII enforcement; rural and unincorporated areas are not singled out.",
+    rhodesPlan),
+
+  /* ── Paul Savas (Position 2, incumbent) ────────────────────────────── */
+  stance("paul-savas", "clack-levy-2027", "supports", "Work aggressively, retry",
+    "Told the June 2 policy session after the levy's defeat that the county has a lot of work to do and must do it aggressively before returning to voters; the rate is unsaid.",
+    yonLevyJune4),
+  stance("paul-savas", "clack-data-centers", "supports", "Helped advance pause",
+    "Says he supported and helped advance a proactive approach, with the Board unanimously directing staff to begin establishing a moratorium on new data-center applications, doing the homework now rather than reacting later.",
+    savasDataCenters),
+  stance("paul-savas", "clack-sanctuary", "mixed", "Follow both laws",
+    "Says the county should follow both state and federal law while sanctuary cases play out in court, noting the Sheriff's Office responds to judicial warrants after losing a past detainer lawsuit; a county declaration is not endorsed.",
+    savasQuestionnaire),
+  stance("paul-savas", "clack-senior-tax", "mixed", "Deferral, not county cuts",
+    "Says the state does not allow counties to reduce property taxes for seniors on their own; would keep advocating for relief and steer struggling households to the state deferral program.",
+    savasQuestionnaire),
+  stance("paul-savas", "clack-recovery-campus", "supports", "Deal for $10 million",
+    "Says the county reached a deal with Governor Kotek for $10 million in state resources to move the Recovery Campus forward so it can deliver treatment, stabilization and transitional housing under one system of care.",
+    savasHomeless),
+
+  /* ── Mark Shull (Position 2, former commissioner) ──────────────────── */
+  stance("mark-shull", "clack-levy-2027", "mixed", "Renew, no rate hike",
+    "Supports renewing the public safety levy at a responsible level to keep patrol, jail beds and body cameras, and would oppose unnecessary rate increases, funding core needs through disciplined budgeting instead.",
+    shullQuestionnaire),
+  stance("mark-shull", "clack-sanctuary", "opposes", "No county declaration",
+    "Opposes a county sanctuary declaration or judicial-warrant rule, supports repealing Oregon's sanctuary law, and would encourage the Sheriff's Office to honor lawful federal detainers where possible.",
+    shullQuestionnaire),
+  stance("mark-shull", "clack-senior-tax", "supports", "Push for relief",
+    "Would push for property-tax relief for seniors to offset annual increases so they can afford to stay in their homes.",
+    pamphlet(17)),
+  stance("mark-shull", "clack-recovery-campus", "partial", "Build on Stabilization Center",
+    "Would pair permanent supportive housing with better coordination of mental-health and addiction services, building on the Stabilization Center and Clackamas Village; the Recovery Campus and its bonds are unsaid.",
+    shullQuestionnaire),
+
+  /* ── R W Smith (Position 4) ────────────────────────────────────────── */
+  stance("r-w-smith", "clack-levy-2027", "partial", "Levy plus long-term plan",
+    "Says a five-year levy can stabilize services but is not a complete solution, and any request must come with transparent budgeting, regular reporting and a long-term plan; May 2027 and a rate are unsaid.",
+    smithQuestionnaire),
+  stance("r-w-smith", "clack-data-centers", "supports", "Keep them out",
+    "Opposes bringing large-scale data centers into the county at all, citing their electricity, water and land demands and the infrastructure they require; his position is a ban rather than a pause.",
+    pamphlet(18)),
+  stance("r-w-smith", "clack-sanctuary", "supports", "Judicial warrant only",
+    "Says the county should be clear that local agencies do not participate in federal immigration enforcement without a judicial warrant, calling it a clean legal standard that keeps trust in public safety.",
+    smithQuestionnaire),
+  stance("r-w-smith", "clack-recovery-campus", "partial", "Treatment beds, outcomes",
+    "Would expand addiction treatment and mental-health stabilization and add shelter capacity with case management, insisting on measurable outcomes; the Recovery Campus and its bonds are unsaid.",
+    smithPolicies),
+);
+
+/* What's at stake: sourced facts, the same block for every candidate in a race. */
+const helmAppointed = record(
+  "Clackamas County · Diana Helm appointed Clackamas County Commissioner",
+  "https://www.clackamas.us/news/2025-05-19/diana-helm-appointed-clackamas-county-commissioner",
+  "May 19, 2025",
+);
+const stakeBudget = {
+  label: "The adopted budget",
+  text: "On June 17, 2026 the Board adopted the FY 2026-27 county budget 5–0 on Savas's motion, seconded by Helm: $1,528,305,199 in total, $1,401,336,042 appropriated and $198,116,517 in General Fund Support, plus eight district budgets that bring the all-county figure to about $2.0 billion.",
+  source: budgetAdoptedJun17,
+};
+const stakePositions = {
+  label: "Fewer positions, thin margins",
+  text: "The FY 2026-27 budget funds 2,495.3 positions, 20.5 fewer than the adopted FY 2025-26 budget; Health, Housing and Human Services had already cut 38 as federal and state money fell, and the budget message says costs keep outpacing revenue while federal funds and Metro housing-tax dollars remain uncertain.",
+  source: proposedBudget2627,
+};
+const stakeLevyFailed = {
+  label: "Levy defeated, expiring",
+  text: "Measure 3-633 failed 62.13% to 37.87% on May 19, 2026 with 44.86% turnout. The levy, renewed every five years since 2006, expires at the end of 2026, and the county's consultant recommended a May 2027 referral with clearer messaging and a defined lead.",
+  source: levyWorksheetJul23,
+};
+const stakeLevyFunds = {
+  label: "What the levy pays for",
+  text: "Measure 3-633 would have set the levy at 53.4 cents per $1,000 and raised about $202.9 million over five years for 84 jail beds, 26 medical and mental-health beds, 36 jail deputies, 34 patrol deputies, five detectives, a drug-enforcement team, body cameras and two internal-affairs investigators; the current levy expires December 31, 2026.",
+  source: kptvLevy,
+};
+const stakeLevyReferral = {
+  label: "The February referral",
+  text: "On February 10, 2026 the Board sent the 53.4-cent levy to the May ballot on Commissioner Helm's motion, with Commissioner Savas saying he supported it and calling the Sheriff's Office's pattern of understaffing problematic; the sheriff said the office could manage inside the levy for five years through vacancy savings.",
+  source: ocnLevyReferral,
+};
+const stakeMay2027 = {
+  label: "Retry set for May 2027",
+  text: "On July 28, 2026 the Board chose to return to voters in May 2027 rather than November 2026; Chair Craig Roberts said the team is not quite ready, and the county's consultant noted the May electorate skews older and more skeptical of tax increases.",
+  source: reviewMay2027,
+};
+const stakeSheriffTurnover = {
+  label: "Sheriff resigned mid-term",
+  text: "Sheriff Angela Brandenburg resigned July 23, 2026 with two years left in her term. On July 28 the Board appointed James Rhodes over Chair Roberts's objection that candidates should be solicited publicly; Undersheriff Brad O'Neil, whom Roberts named as also interested, now runs against him.",
+  source: opbSheriffAppointed,
+};
+const stakeSheriffBudget = {
+  label: "Sheriff's budget and vacancies",
+  text: "The FY 2026-27 proposed budget gives the Sheriff's Office $155.8 million and 607 positions, 73 of them vacant, including 16 on patrol; the levy fund pays for 92 positions and the jail for 110, and the General Fund supplies $87.3 million, 56% of the office's budget.",
+  source: proposedBudget2627,
+};
+const stakeJailCapacity = {
+  label: "483 jail beds",
+  text: "The county jail's housing capacity is 483 beds under the Board-approved Capacity Management Plan; when the population nears it the sheriff makes forced releases of eligible adults under state law, tracked on a public dashboard, and those released still owe court appearances.",
+  source: jailDashboard,
+};
+const stakeDataCenters = {
+  label: "Moratorium under way",
+  text: "No data center has been built in unincorporated Clackamas County. Staff told the Board on August 11, 2026 that a moratorium needs 45 days' notice to the state, findings of compelling need and a correction program within 60 days, and that starting one would push other planning work off the two-year program.",
+  source: dataCenterWorksheetAug11,
+};
+const stakeMoratoriumVote = {
+  label: "Board overrode staff",
+  text: "On August 11, 2026 the Board voted unanimously to direct staff to begin adopting a data-center moratorium and a plan for the issues commissioners raised, rejecting staff's recommendation to wait for the 2027 legislative session; public hearings were on the Board's September 15 agenda.",
+  source: kxlMoratorium,
+};
+const stakeRecoveryCampus = {
+  label: "Recovery Campus bonds",
+  text: "The Board held a hearing September 17, 2026 on up to $10.3 million in tax-exempt bonds for two Recovery Campus buildings at 15301 SE 92nd Avenue, offering withdrawal management, residential treatment, transitional housing and outpatient care, to be run by nonprofit Fora Health with the county keeping ownership.",
+  source: recoveryCampusNotice,
+};
+const stakeRecoveryBuild = {
+  label: "76 beds by late 2027",
+  text: "The Recovery Campus broke ground July 29, 2026 with 76 beds for detox, residential treatment, medication-assisted treatment, transitional housing and outpatient care, funded with $13.5 million of Metro housing-tax money, $10 million directed by the governor, $5 million in lottery bonds and $2.5 million in congressional spending; completion is set for late 2027.",
+  source: recoveryGroundbreaking,
+};
+const stakeCourthouse = {
+  label: "Courthouse payments begin",
+  text: "The $345.1 million courthouse opened May 19, 2025 with 16 courtrooms; the state's share is capped at $139.1 million and the county's is $206 million, paid to Clackamas Progress Partners over 30 years at an average of about $15 million a year, roughly $620 million in all.",
+  source: courthousePage,
+};
+const stakeCourthouseFund = {
+  label: "Courthouse in the General Fund",
+  text: "The FY 2026-27 proposed budget carries a $17.5 million courthouse payment, $17.0 million of it General Fund support and 8.7% of all such support, second only to the Sheriff's Office; county code now requires a 30-year General Fund forecast to show the payments can be met.",
+  source: proposedBudget2627,
+};
+const stakeCourthouseLoan = {
+  label: "A $328 million, no-interest loan",
+  text: "The county's audited statements record the courthouse as a $327,812,939 loan from Clackamas Progress Partners repaid at $908,069 a month until April 2055 with no interest, after the state's $130 million was passed through; the partner's operations and renewal fee for FY 2026 was set at $3,495,374.",
+  source: acfr2025,
+};
+const stakeShs = {
+  label: "Housing tax money",
+  text: "The county expects to spend $78 million of Metro's supportive housing services tax in FY 2026-27 plus $67 million in one-time carryover; through mid-FY 2025-26 the tax had created or sustained 246 shelter beds, helped 9,299 people avoid eviction and placed 3,146 in housing, and the budget flags SHS as an uncertain revenue source.",
+  source: proposedBudget2627,
+};
+const stakeJailMedical = {
+  label: "Jail medical contract",
+  text: "The Board's August 13, 2026 consent agenda carried a five-year, $50.5 million contract with NaphCare for jail medical and mental-health care, funded partly by the public safety levy, alongside a $2.66 million state grant for shelter operations.",
+  source: businessAug13,
+};
+const stakeClerkBudget = {
+  label: "Clerk's office budget",
+  text: "The FY 2026-27 proposed budget gives the Clerk $6.2 million and 21 positions: $3.1 million and six positions for Elections, about $1.0 million and seven for Recording, and $844,000 and five for Records Management, with $2.7 million of the total from the General Fund.",
+  source: proposedBudget2627,
+};
+const stakeBallots2022 = {
+  label: "The 2022 misprint",
+  text: "In May 2022, under the previous clerk, more than half of the county's primary ballots were printed with blurry barcodes the tabulators could not read, costing about $600,000 and pulling hundreds of county employees into hand-copying votes; the Secretary of State faulted the office's lack of urgency.",
+  source: opbBallots2022,
+};
+const stakeSosRules = {
+  label: "State counting rules",
+  text: "Oregon's voting equipment is never connected to the internet, is tested and certified three times around each election, and state law requires random-sample hand counts or risk-limiting audits in every county after primary, general and special elections; signature matching screens every returned envelope.",
+  source: sosSecurity,
+};
+const stakeNovBallot = {
+  label: "This election's workload",
+  text: "The November 3, 2026 ballot carries five county races plus a justice of the peace, nine local measures from Estacada to Wilsonville, and the Portland charter measure for county voters inside that city; ballots go out starting October 14, and a voter without one by October 22 should call the office.",
+  source: electionsNov2026,
+};
+
+const stakeTreasurerDuties = {
+  label: "What the office holds",
+  text: "The treasurer is the county's chief investment officer, reconciles 20 county bank accounts, keeps about 50 county and public-trust accounts, distributes property tax to more than 125 taxing districts and doubles as internal audit director.",
+  source: treasurerPage,
+};
+const stakeTreasurerBudget = {
+  label: "Interest and reserves",
+  text: "The FY 2026-27 proposed budget expects $15.3 million in interest income and gives the Treasurer's Office $1.1 million in General Fund support; countywide contingency falls $10.4 million to $128.9 million after the courthouse payment, with General Fund contingency at $23.6 million and reserves at $21.3 million.",
+  source: proposedBudget2627,
+};
+const stakePortfolio = {
+  label: "$827 million in cash and investments",
+  text: "At June 30, 2025 the county held $827,470,054 in cash and investments: $302.1 million in money-market deposits, $163.1 million in the state's Local Government Investment Pool, $144.2 million in U.S. agency securities, $136.8 million in Treasuries, $19.3 million in municipal bonds and $37.5 million in demand deposits.",
+  source: acfr2025,
+};
+const stakeTurnout = {
+  label: "Record primary, one recount",
+  text: "The May 19, 2026 primary drew 44.87% turnout and 142,908 ballots, the highest for a gubernatorial primary since all-mail voting began in 1998; the Secretary of State ordered a full recount of Circuit Court Position 13, which began June 15.",
+  source: clerkCertifies,
+};
+const stakeHelmSeat = {
+  label: "A seat filled by appointment",
+  text: "Position 4 has been held by appointment since May 19, 2025, when the four sitting commissioners chose Diana Helm from 59 applicants to serve through December 2026; this election fills the rest of the term, January 2027 through December 2028.",
+  source: helmAppointed,
+};
+
+const stakes: RaceStakes[] = [
+  {
+    raceId: "clackamas-position-2",
+    intro:
+      "Commissioners share a five-member board that adopts the county's roughly $2.0 billion budget, funds the sheriff and courts, sets land-use rules for unincorporated areas and decides what goes to voters. The next term opens with the public safety levy expiring, a May 2027 levy vote to shape, courthouse payments now due every month and a data-center moratorium in motion.",
+    items: [stakeBudget, stakePositions, stakeLevyFailed, stakeLevyFunds, stakeMay2027, stakeCourthouse, stakeMoratoriumVote, stakeRecoveryBuild],
+  },
+  {
+    raceId: "clackamas-position-4",
+    intro:
+      "Commissioners share a five-member board that adopts the county's roughly $2.0 billion budget, funds the sheriff and courts, sets land-use rules for unincorporated areas and decides what goes to voters. This seat has been held by appointment since May 2025 and the winner serves the rest of the term through 2028, starting with the levy retry, courthouse payments and the data-center moratorium.",
+    items: [stakeHelmSeat, stakeBudget, stakeLevyReferral, stakeLevyFailed, stakeMay2027, stakeCourthouseFund, stakeDataCenters, stakeShs],
+  },
+  {
+    raceId: "clackamas-sheriff",
+    intro:
+      "The sheriff runs a 483-bed jail, patrol for unincorporated areas and three contract cities, investigations, civil process and parole and probation on a budget of about $156 million that the Board funds but does not direct. The office lost its elected sheriff in July, loses its five-year levy at the end of 2026, and will make its case to voters again in May 2027.",
+    items: [stakeSheriffTurnover, stakeSheriffBudget, stakeJailCapacity, stakeLevyFailed, stakeLevyFunds, stakeMay2027, stakeJailMedical],
+  },
+  {
+    raceId: "clackamas-clerk",
+    intro:
+      "The clerk runs every election in the county, keeps property records and marriage licenses, and certifies results to the Secretary of State under state rules on equipment, audits and signature checks. The next term includes the May 2027 public safety levy election and the 2028 presidential cycle, on a $6.2 million office budget.",
+    items: [stakeClerkBudget, stakeTurnout, stakeSosRules, stakeBallots2022, stakeNovBallot, stakeMay2027],
+  },
+  {
+    raceId: "clackamas-treasurer",
+    intro:
+      "The treasurer safeguards and invests county cash, runs the county's banking and distributes property taxes to more than 125 taxing districts; the Board sets appropriations. The next term manages reserves drawn down by courthouse payments and new tax-exempt bonds for the Recovery Campus.",
+    items: [stakePortfolio, stakeTreasurerDuties, stakeTreasurerBudget, stakeCourthouseLoan, stakeRecoveryCampus, stakeBudget],
+  },
+];
 
 const analysis: Record<string, CandidateAnalysis> = {
   /* ── Clerk ─────────────────────────────────────────────────────────── */
@@ -738,4 +1316,7 @@ export const pack: RacePack = {
   },
 
   missing: {},
+  topics,
+  topicStances,
+  stakes,
 };

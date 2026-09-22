@@ -193,9 +193,12 @@ const councilContacts: CandidateContact[] = [
 
   entry(
     "larry-kelly",
-    [],
-    [pamphlet(54)],
-    "No website, email or phone in the pamphlet statement, and no campaign site found.",
+    [
+      web("https://www.letlarrycook.com/", "site"),
+      email("larrykellyforcitycouncil@gmail.com", "site"),
+      social("Instagram", "https://www.instagram.com/larrykellyforcitycouncil/", "site"),
+    ],
+    [pamphlet(54), { label: "Kelly · campaign site", url: "https://www.letlarrycook.com/", kind: "Candidate statement", date: "Site reviewed September 22, 2026" }],
   ),
 
   entry(

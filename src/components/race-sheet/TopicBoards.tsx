@@ -186,9 +186,15 @@ export default function TopicBoards({
       ? "this Council has faced"
       : office.group === "state"
         ? `the next ${office.memberWord} faces`
-        : office.group === "county"
-          ? `${office.body} faces`
-          : "this office faces";
+        : office.group === "legislature"
+          ? "the 2027 Legislature faces"
+          : office.group === "federal"
+            ? "Congress faces"
+            : office.group === "county"
+              ? `${office.body} faces`
+              : office.group === "city"
+                ? `the ${office.body} faces`
+                : "this office faces";
 
   return (
     <section id="topics" className={styles.boards} aria-labelledby="topics-title">

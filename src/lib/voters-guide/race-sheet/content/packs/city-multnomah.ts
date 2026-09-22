@@ -11,12 +11,16 @@ import {
   type Delivery,
   type DeliveryStep,
   type DistrictInfo,
+  type ExtraTopic,
   type IssueLine,
   type MissingState,
   type PrimaryStatement,
   type RacePack,
+  type RaceStakes,
+  type RaceTopics,
   type RoleOverride,
   type StanceChip,
+  type TopicStance,
 } from "../../types";
 
 /**
@@ -795,4 +799,485 @@ choice.push({
   ...reviewed,
 });
 
-export const pack: RacePack = { ...emptyPack(), analysis, lines, chips, deliveries, ownWords, contacts, roles, primary, ballots, districts, choice, portraits, missing };
+/* ── Topics, stances and stakes: the official record (September 22, 2026) ── */
+
+/**
+ * Live choices for each office, each candidate's explicit stance on them,
+ * and what the office decides this term. The incumbent's own official
+ * actions (a council vote in the minutes, an auditor's memo or release)
+ * are "Public record"; a news outlet's quote is "Reporting"; the
+ * candidate's own words are "Candidate statement". Nothing is inferred
+ * from party, endorsements or silence.
+ */
+const TOPICS_REVIEWED = { reviewedBy: "pending", reviewedOn: "2026-09-22" } as const;
+const record = (label: string, url: string, date: string, note?: string): Evidence => ({
+  label,
+  url,
+  kind: "Public record",
+  date,
+  ...(note ? { note } : {}),
+});
+const reporting = (label: string, url: string, date: string, note?: string): Evidence => ({
+  label,
+  url,
+  kind: "Reporting",
+  date,
+  ...(note ? { note } : {}),
+});
+const stance = (
+  candidateId: string,
+  topicId: string,
+  s: TopicStance["stance"],
+  chipText: string,
+  text: string,
+  source: Evidence,
+): TopicStance => ({ candidateId, topicId, stance: s, chip: chipText, text, source, ...TOPICS_REVIEWED });
+
+/* Portland City Auditor: the office's own record */
+const AUDITOR = "https://www.portland.gov/auditor";
+const audSchedule = record(
+  "City Auditor · memo to City leaders: Audit Schedule for Fiscal Year 2026-27",
+  `${AUDITOR}/audit-services/documents/audit-schedule-2026-27/download`,
+  "June 18, 2026; read September 22, 2026",
+  "Nine topics by service area; “I have sole authority to select areas for review.” One fewer topic than last year after her requested budget cut a performance auditor position.",
+);
+const audBudget = record(
+  "City of Portland · FY 2026-27 Adopted Budget, Auditor’s Office extract (pp. 616–618)",
+  `${AUDITOR}/documents/auditors-office-adopted-budget-fy-2026-27/download`,
+  "Adopted June 2026; posted August 4, 2026; read September 22, 2026",
+  "Grand total $14,599,982 and 45.00 positions (47.00 in FY 2025-26 revised). Summary of budget decisions: −$367,479 for two eliminated positions, −$215,090 materials and services, $217,356 drawn from the Auditor’s Reserve Fund.",
+);
+const audCutsCommentary = record(
+  "City Auditor Simone Rede · “Unspent housing funds show accountability isn’t optional”",
+  `${AUDITOR}/news/2026/3/25/unspent-housing-funds-show-accountability-isnt-optional-portlands-next`,
+  "March 25, 2026; read September 22, 2026",
+);
+const audPetitionRebuttal = record(
+  "Auditor’s Office · Portland City Elections debunks inaccurate claims about the 1PDX2026 petition",
+  `${AUDITOR}/news/2026/7/29/portland-city-elections-debunks-inaccurate-claims-about-1pdx2026-petition`,
+  "July 29, 2026 (updated July 30); read September 22, 2026",
+  "The August 4, 2026 release (…/initiative-petition-1pdx2026-does-not-qualify-portlands-november-ballot) gives the final count: 63,315 submitted, 34,130 valid, 40,437 needed.",
+);
+const audZenith = record(
+  "Auditor’s Office · Response to City Council’s Zenith Energy resolution passed March 19, 2025",
+  `${AUDITOR}/news/2025/4/30/response-portland-city-councils-zenith-energy-resolution-passed-march-19`,
+  "April 30, 2025; read September 22, 2026",
+);
+const audImpact = record(
+  "Audit Services · 2024 Audit Impact Report: prioritization needed to implement outstanding audit recommendations",
+  `${AUDITOR}/audit-services/news/2025/10/1/2024-audit-impact-report-prioritization-needed-implement`,
+  "October 1, 2025; read September 22, 2026",
+);
+const aud911 = record(
+  "Audit Services · Emergency Communications has dramatically improved 911 staffing and wait times",
+  `${AUDITOR}/audit-services/news/2026/6/24/emergency-communications-has-dramatically-improved-911`,
+  "June 24, 2026; read September 22, 2026",
+);
+const iprReport = record(
+  "Independent Police Review · 2025 Annual Report",
+  "https://www.portland.gov/ipr/news/2026/8/12/2025-annual-report",
+  "August 12, 2026; read September 22, 2026",
+  "IPR is listed under City Operations, not the Auditor; the Auditor’s budget shows $0 for IPR from FY 2025-26.",
+);
+
+const auditorTopics: ExtraTopic[] = [
+  {
+    id: "aud-audit-picks",
+    label: "Which audits first",
+    short: "Audit picks",
+    question: "Which city programs should the auditor’s nine performance auditors examine this year?",
+    context:
+      "The auditor alone picks audit topics. Her June 18, 2026 schedule for FY 2026–27 lists nine: Portland Solutions, citywide equity, fund management, cybersecurity, Prosper Portland grants, gun-violence prevention, emergency management, police body-worn cameras and utility rates, one fewer than last year after a performance auditor position was cut.",
+  },
+  {
+    id: "aud-office-cuts",
+    label: "Auditor’s office cuts",
+    short: "Office cuts",
+    question: "Should the Auditor’s Office take the same budget cut as the rest of the city?",
+    context:
+      "With citywide cuts of up to 10% on the table, the auditor asked in March 2026 that her office’s cut be held to 3%. The FY 2026–27 adopted budget gives the office $14,599,982 and 45 positions, two fewer: a performance auditor and an administrative specialist ($367,479), plus $215,090 less for materials and a $217,356 draw on the Auditor’s Reserve Fund.",
+  },
+  {
+    id: "aud-petition-verification",
+    label: "Petition verification",
+    short: "Petitions",
+    question: "Stand by the Elections Division’s ruling that the community-safety initiative fell short of the ballot?",
+    context:
+      "The auditor’s Elections Division runs city elections. On August 4, 2026 it ruled Initiative Petition 1PDX2026, the “Portland Enhanced Community Safety Initiative,” did not qualify: 63,315 signatures submitted, 34,130 projected valid, 40,437 needed. Chief petitioners alleged changed totals, lost records and bias; the division answered each claim on July 29.",
+  },
+  {
+    id: "aud-council-requests",
+    label: "Council-requested investigations",
+    short: "Council requests",
+    question: "Take on investigations the City Council asks for, as it did over Zenith Energy?",
+    context:
+      "Council Resolution 37702 (March 19, 2025) urged the auditor to investigate the city’s handling of Zenith Energy’s land-use compatibility statements. She declined on April 30, 2025: the Ombudsman investigates unfair treatment of individuals, and the Council has its own charter power to compel testimony or can seek a performance audit.",
+  },
+];
+
+const auditorStances: TopicStance[] = [
+  stance("simone-rede", "aud-audit-picks", "supports", "Portland Solutions, body cameras",
+    "Chose the FY 2026–27 schedule herself on June 18, 2026: Portland Solutions, citywide equity, fund management, cybersecurity, Prosper Portland grants, gun-violence prevention, emergency management, police body-worn cameras and utility rates, one fewer topic after cutting an auditor position.",
+    audSchedule),
+  stance("simone-rede", "aud-office-cuts", "opposes", "Hold cut to 3%",
+    "Asked the mayor in March 2026 to hold her office’s cut to 3% while citywide cuts of up to 10% were weighed, writing that transparency and accountability are not optional; her own requested budget cut one performance auditor.",
+    audCutsCommentary),
+  stance("simone-rede", "aud-petition-verification", "supports", "Ruling stands",
+    "Said July 29, 2026 that “independent election administration cannot bend to political pressure — from petitioners, opponents, or elected officials,” and that her division administers elections with integrity and by the law.",
+    audPetitionRebuttal),
+  stance("simone-rede", "aud-council-requests", "opposes", "Declined Zenith request",
+    "Declined the Council’s March 2025 Zenith request, writing it was unclear how a report on past land-use decisions “will remedy harm or result in fairer treatment,” and pointed to the Council’s own powers or a performance audit.",
+    audZenith),
+];
+
+const auditorStakes: RaceStakes = {
+  raceId: "portland-auditor",
+  intro:
+    "The auditor is elected citywide and works independently of the mayor and council: she alone picks which city programs get performance audits, runs the ombudsman, hearings office, archives, council clerk and city elections, and manages the outside audit of the city’s financial statements. The next term starts with a smaller office, a city cutting budgets, and half of past audit recommendations still undone.",
+  items: [
+    {
+      label: "A smaller office",
+      text:
+        "The FY 2026–27 adopted budget gives the Auditor’s Office $14,599,982 and 45 positions, down from 47: a performance auditor and an administrative specialist were eliminated ($367,479), materials and services cut $215,090, and $217,356 drawn from the Auditor’s Reserve Fund created for emergencies.",
+      source: audBudget,
+    },
+    {
+      label: "Nine audits, one fewer",
+      text:
+        "The FY 2026–27 schedule names nine audits, including Portland Solutions, police body-worn cameras and utility rates, one fewer than last year to match the office’s reduced capacity. The auditor has sole authority over the list and can swap topics if higher-priority issues emerge.",
+      source: audSchedule,
+    },
+    {
+      label: "Recommendations undone",
+      text:
+        "Of 204 recommendations from 33 audits in FY 2019–24, 49% were implemented by the 2024 impact report, against a 64% average among peer cities; the report names prioritization by the administration and Council as the main obstacle.",
+      source: audImpact,
+    },
+    {
+      label: "Unbudgeted housing funds",
+      text:
+        "In February 2026 the City Administrator disclosed that over $100 million in housing funds had gone unbudgeted. The auditor’s financial audit verifies the city’s statements but does not assess how funds are used; her office had audited shelters and inclusionary housing and found monitoring gaps.",
+      source: audCutsCommentary,
+    },
+    {
+      label: "911 follow-through",
+      text:
+        "A June 24, 2026 audit found the average 911 wait fell from 77 seconds in July 2022 to 18 seconds in January 2026, with 91 senior dispatchers and 6 vacancies, but the bureau still missed the standard of answering 90% of calls within 15 seconds; 46% of trainees left or were let go.",
+      source: aud911,
+    },
+    {
+      label: "Police oversight moved out",
+      text:
+        "Independent Police Review, once the auditor’s division, now sits under City Operations with $0 in the auditor’s budget since FY 2025–26; it took 213 community complaints in 2025, up 19%, and will run until the 21-member Community Board for Police Accountability’s new office replaces it.",
+      source: iprReport,
+    },
+  ],
+};
+
+/* Gresham: council minutes on PrimeGov (scanned; read September 22, 2026), the FY 2026/27 adopted budget and The Outlook */
+const GRESHAM_MIN = "https://gresham.primegov.com/Public/CompiledDocument";
+const GRESHAM_BUDGET =
+  "https://www.greshamoregon.gov/globalassets/city-departments/budget-and-finance/budget-committee/fy26-27-adopted-budget-document.pdf";
+const greshamBudget = record(
+  "City of Gresham · Fiscal Year 2026/27 Adopted Budget (Resolution 3713, June 9, 2026)",
+  GRESHAM_BUDGET,
+  "Adopted June 9, 2026; read September 22, 2026",
+  "All-funds total $924,981,292 (p. 13); general-fund gap of about $10 million filled from fund balance and the $13.6 million levy (p. 13); levy renewal and the East County Fire Service Taskforce in the budget message (p. 5); police and fire staffing ratios (p. 310). The signed resolution (pp. 352–353) records Yes: Stovall, Brown, Gladfelter, Hinton; No: Keathley, Piazza; Absent: Morales.",
+);
+const greshamForecast = record(
+  "Gresham Budget Committee · April 16, 2026 meeting 1 presentation (general-fund forecast, slides 70–73)",
+  "https://www.greshamoregon.gov/globalassets/city-departments/budget-and-finance/budget-committee/2026-04-16-budget-committee-meeting-1-presentation.pdf",
+  "April 16, 2026; read September 22, 2026",
+);
+const minFeb17 = record(
+  "Gresham City Council · minutes, February 17, 2026 (consent: enactment of Council Bill 03-26 and Resolution 3684 setting the Police, Fire and Parks Fee at $15)",
+  `${GRESHAM_MIN}/5955`,
+  "February 17, 2026; read September 22, 2026",
+  "Passed 6–0 with Hinton absent; Gladfelter moved the consent agenda. First reading February 3, 2026 (minutes /5892) passed 7–0 on Stovall’s motion, seconded by Gladfelter.",
+);
+const minMay5 = record(
+  "Gresham City Council · minutes, May 5, 2026 (future of fire services: district models)",
+  `${GRESHAM_MIN}/6199`,
+  "May 5, 2026; read September 22, 2026",
+);
+const minJun9 = record(
+  "Gresham City Council · minutes, June 9, 2026 (Resolution 3713 adopting the FY 2026/27 budget, 4–2)",
+  `${GRESHAM_MIN}/6383`,
+  "June 9, 2026; read September 22, 2026",
+  "Yes: Stovall, Brown, Gladfelter, Hinton; No: Keathley, Piazza; Morales absent. The minutes record no stated reason for the no votes.",
+);
+const minJun2 = record(
+  "Gresham City Council · minutes, June 2, 2026 (Resolutions 3716–3718: wastewater, water and stormwater rates for 2028–2032; Lusted Water District agreement)",
+  `${GRESHAM_MIN}/6317`,
+  "June 2, 2026; read September 22, 2026",
+  "Consent, 6–0, Morales absent; Piazza moved. Percentages and monthly amounts are in the June 2 packet (/6251).",
+);
+const minSep1 = record(
+  "Gresham City Council · minutes, September 1, 2026 (water quality report)",
+  `${GRESHAM_MIN}/6619`,
+  "September 1, 2026; read September 22, 2026",
+);
+const minFeb3 = record(
+  "Gresham City Council · minutes, February 3, 2026 (first reading of Council Bill 02-26, temporary emergency shelter code)",
+  `${GRESHAM_MIN}/5892`,
+  "February 3, 2026; read September 22, 2026",
+  "Passed 7–0 on Piazza’s motion; enacted unanimously March 3, 2026 (action summary /5954), effective April 1, 2026.",
+);
+const minJan20 = record(
+  "Gresham City Council · minutes, January 20, 2026 (Resolution 3681 on the rule of law, public safety and federal immigration reform)",
+  `${GRESHAM_MIN}/5826`,
+  "January 20, 2026; read September 22, 2026",
+  "Adopted 7–0 in place of the emergency declaration residents requested on December 9, 2025 and January 6, 2026 (minutes /5686 and /5772).",
+);
+const outlookWater = reporting(
+  "The Outlook · Gresham raises a glass to new groundwater system",
+  "https://theoutlookonline.com/2026/04/17/gresham-raises-glass-to-new-groundwater-system/",
+  "April 17, 2026; read September 22, 2026",
+  "Reported statement; quote as printed by The Outlook.",
+);
+const outlookRamirez = reporting(
+  "The Outlook · Former Gresham employee seeks testimony on ICE encounters",
+  "https://theoutlookonline.com/2025/11/15/former-gresham-employee-seeks-testimony-on-ice-encounters/",
+  "November 15, 2025; read September 22, 2026",
+  "Reported statement; quote as printed by The Outlook.",
+);
+const outlookLevy = reporting(
+  "The Outlook · Gresham spotlights safety levy successes",
+  "https://theoutlookonline.com/2026/03/20/gresham-spotlights-safety-levy-successes/",
+  "March 20, 2026; read September 22, 2026",
+);
+const outlookUra = reporting(
+  "The Outlook · Gresham City Council approves $380 million urban renewal plan",
+  "https://theoutlookonline.com/2025/09/09/gresham-city-council-approves-380-million-urban-renewal-plan/",
+  "September 9, 2025; read September 22, 2026",
+  "Adopted September 2, 2025 (minutes /5337): Stovall, Piazza and Gladfelter yes, Brown abstaining, Hinton absent.",
+);
+const shelterReport = record(
+  "Gresham City Council · February 3, 2026 packet, Council Bill 02-26 staff report (Temporary Emergency Shelter code)",
+  `${GRESHAM_MIN}/5818`,
+  "February 3, 2026; read September 22, 2026",
+  "“Currently there are eight permanent shelters for people experiencing homelessness located in the City of Gresham and there are not currently any Temporary Emergency Shelter (pod-style shelters).”",
+);
+const greshamTopics: ExtraTopic[] = [
+  {
+    id: "gresham-safety-fee",
+    label: "Public-safety fee",
+    short: "Safety fee",
+    question: "Keep the Police, Fire and Parks Fee at $15 a month, now that the council can change it by resolution?",
+    context:
+      "The fee is $15 a month per home or business unit, 95% to police and fire and 5% to parks, budgeted at $8,507,000 for FY 2026/27. On February 17, 2026 the council moved the amount out of city code (Council Bill 03-26) so it can be changed by resolution rather than ordinance, and set it at $15 by Resolution 3684. No change has been proposed since.",
+  },
+  {
+    id: "gresham-levy-fire",
+    label: "Levy and fire district",
+    short: "Fire levy",
+    question: "Renew the $1.35 public-safety levy before it expires in 2029, and keep Gresham’s own fire department rather than join a district?",
+    context:
+      "Measure 26-247 (May 2024, 56% yes) levies $1.35 per $1,000 of assessed value through June 30, 2029, about $13.6 million in FY 2026/27, funding 40 police and 33 fire positions. The June 2026 budget message says the levy “will need to be renewed by the voters”; the East County Fire Service Taskforce is weighing district models, and on May 5, 2026 the council leaned against a Clackamas Fire District 1 model.",
+  },
+  {
+    id: "gresham-budget-gap",
+    label: "General-fund gap",
+    short: "Budget gap",
+    question: "Keep drawing reserves to cover a $10 million general-fund gap, or cut services or raise revenue?",
+    context:
+      "Resolution 3713 adopted the FY 2026/27 budget at $924,981,292 on June 9, 2026 by a 4–2 vote. General-fund spending exceeds revenue by about $10 million, covered from fund balance, and the April 2026 forecast shows the structural gap growing from $8.2 million to $30.8 million a year by FY 2030/31 even with the levy extended. Police and fire take more than 90% of general-fund revenue.",
+  },
+  {
+    id: "gresham-groundwater",
+    label: "Groundwater and rates",
+    short: "Water",
+    question: "Stay on the new groundwater system and fix the taste and hardness complaints, with water rates rising 5% a year from 2028?",
+    context:
+      "Gresham and Rockwood Water switched to 100% groundwater on March 30, 2026, ending Bull Run purchases, with Gresham’s roughly $34 million share financed by federal WIFIA loans. Chlorine-taste and hardness complaints followed, and on September 1 the city said it was hiring a water-quality consultant. On June 2, 2026 the council set water rates to rise 5% each January from 2028 to 2032, wastewater 6% and stormwater 6.75%.",
+  },
+  {
+    id: "gresham-camping-shelter",
+    label: "Camping and shelters",
+    short: "Shelters",
+    question: "Keep the camping ban with housing-focused outreach, and allow pod shelters only under the new permit code?",
+    context:
+      "City code bars camping on public property, with no penalty for a homeless person unless shelter was offered first. Council Bill 02-26, adopted unanimously March 3, 2026 and effective April 1, sets rules for pod-style shelters: up to 30 units, no tents, not within 1,000 feet of schools or parks. The city counts eight permanent shelters and no pod shelters; its outreach team housed 155 people last year.",
+  },
+  {
+    id: "gresham-ice-response",
+    label: "Immigration enforcement",
+    short: "ICE response",
+    question: "Go beyond the January 2026 rule-of-law resolution and declare an immigration-enforcement emergency, as residents asked?",
+    context:
+      "After 26 speakers on December 9, 2025 and 10 on January 6, 2026 asked for an emergency declaration, the council on January 20, 2026 unanimously adopted Resolution 3681 reaffirming the rule of law and calling for federal immigration reform instead. In February 2026 the mayor signed the Oregon mayors’ letter asking for a pause in federal enforcement.",
+  },
+];
+
+const greshamStances: TopicStance[] = [
+  /* ── Travis Stovall (mayor; the record first) ─────────────────────── */
+  stance("travis-stovall", "gresham-safety-fee", "supports", "Voted to keep $15",
+    "Moved the first reading of Council Bill 03-26 on February 3, 2026 and voted yes February 17 to move the fee into a resolution and keep it at $15 a month; his campaign is silent on changing it.",
+    minFeb17),
+  stance("travis-stovall", "gresham-levy-fire", "partial", "Levy results, no district",
+    "Says the levy funded 9 new officers and 12 firefighters and would keep supporting police and fire; said May 5, 2026 a Clackamas Fire District 1 model “does not appear to be a strong consideration for Gresham.” Renewal unsaid.",
+    minMay5),
+  stance("travis-stovall", "gresham-budget-gap", "supports", "Voted for budget",
+    "Voted yes June 9, 2026 to adopt the $924,981,292 budget, which covers a roughly $10 million general-fund gap from fund balance; told a September chamber forum the city must operate “at the speed of business.”",
+    minJun9),
+  stance("travis-stovall", "gresham-groundwater", "supports", "Groundwater, rates set",
+    "Voted yes June 2, 2026 on the 2028–32 rate schedule; said in April the groundwater project was “on time and on budget” and would bring “smaller rate increases, not larger ones,” and led July’s town hall on complaints.",
+    minJun2),
+  stance("travis-stovall", "gresham-camping-shelter", "supports", "Pod code, accountability",
+    "Voted for the pod-shelter code February 3 and March 3, 2026; would expand “compassionate, accountability-focused solutions” that connect people with shelter and mental-health care while keeping public spaces clean and safe.",
+    minFeb3),
+  stance("travis-stovall", "gresham-ice-response", "mixed", "Resolution plus pause letter",
+    "Recommended on January 6, 2026 that the council consider a resolution aligned with residents’ requests, voted for Resolution 3681 on January 20 rather than an emergency declaration, and in February signed the mayors’ letter seeking a pause in enforcement.",
+    minJan20),
+
+  /* ── Sue Piazza (councilor; the record first) ─────────────────────── */
+  stance("sue-piazza", "gresham-safety-fee", "mixed", "Kept $15, cut fees",
+    "Voted yes February 3 and 17, 2026 to move the fee into a resolution and keep it at $15; her campaign promises to lower “unnecessary costs and fees” without naming which ones.",
+    minFeb17),
+  stance("sue-piazza", "gresham-levy-fire", "partial", "Championed the levy",
+    "Says she championed the 2024 levy that put more officers and firefighters on the streets; nothing on renewal or a fire district, and the May 5, 2026 minutes do not record her speaking on the district models.",
+    pamphlet(41)),
+  stance("sue-piazza", "gresham-budget-gap", "opposes", "Voted no on budget",
+    "Voted no June 9, 2026 on Resolution 3713 adopting the FY 2026/27 budget (4–2); the minutes record no reason. Told a September chamber forum the city should operate with a responsible fiscal mindset.",
+    minJun9),
+  stance("sue-piazza", "gresham-groundwater", "mixed", "Rates yes, fix taste",
+    "Moved and voted for the 2028–32 rate increases June 2, 2026; on September 1 asked staff about chlorine odor, a return to chloramine and treatment costs, and has held listening sessions on water quality.",
+    minSep1),
+  stance("sue-piazza", "gresham-camping-shelter", "supports", "No tents, permitted pods",
+    "Moved the first reading of the pod-shelter code February 3, 2026 and voted for it; says she would address homelessness “without allowing tents and encampments to take over our streets and parks.”",
+    minFeb3),
+  stance("sue-piazza", "gresham-ice-response", "opposes", "Resolution, not emergency",
+    "Voted for Resolution 3681 January 20, 2026 after urging “careful consideration to avoid causing additional harm” and constructive talks with federal partners; in October 2025 asked whether sanctuary status could cost federal grants.",
+    minJan20),
+
+  /* ── Janine Gladfelter (councilor; the record first) ──────────────── */
+  stance("janine-gladfelter", "gresham-safety-fee", "supports", "Voted to keep $15",
+    "Seconded the first reading February 3, 2026 and moved the February 17 consent vote that kept the fee at $15 and made it changeable by resolution; no campaign statement on changing it.",
+    minFeb17),
+  stance("janine-gladfelter", "gresham-levy-fire", "partial", "Levy, no Clackamas model",
+    "Says she fought for the levy that funded 40 police and 33 fire positions and wants specialty teams restored; on May 5, 2026 opposed “any option that could reduce public safety,” including the Clackamas district model. Renewal unsaid.",
+    minMay5),
+  stance("janine-gladfelter", "gresham-budget-gap", "supports", "Moved the budget",
+    "Moved and voted for Resolution 3713 adopting the FY 2026/27 budget June 9, 2026, with its roughly $10 million draw on general-fund balance.",
+    minJun9),
+  stance("janine-gladfelter", "gresham-groundwater", "supports", "Voted for rates",
+    "Voted yes June 2, 2026 on the water, wastewater and stormwater rate schedule for 2028–32 and the Lusted Water District wholesale agreement; no statement found on the taste and hardness complaints.",
+    minJun2),
+  stance("janine-gladfelter", "gresham-camping-shelter", "supports", "Pod code, outreach",
+    "Voted for the pod-shelter code February 3 and March 3, 2026; wants the seven-day housing-focused outreach team strengthened “while enforcing codes so our streets and sidewalks stay clean and safe.”",
+    minFeb3),
+  stance("janine-gladfelter", "gresham-ice-response", "opposes", "Resolution, not emergency",
+    "Said January 6, 2026 she supported moving forward with a resolution, then seconded and voted for Resolution 3681 on January 20 in place of an emergency declaration.",
+    minJan20),
+
+  /* ── Challengers: only explicit statements; Schroeder and Miller have none on these choices ── */
+  stance("heather-coleman-cox", "gresham-levy-fire", "partial", "Track levy dollars",
+    "Chairs the levy advisory subcommittee that tracks how the levy is spent and would provide “transparent reporting on public safety funding and results” while maintaining strong police, fire and emergency response. Renewal and a fire district are unsaid.",
+    hccPriorities),
+  stance("heather-coleman-cox", "gresham-groundwater", "partial", "Smart move on wells",
+    "Told The Outlook at the April 2026 groundwater open house that the switch is “a smart move — it gives us more control over a natural resource”; nothing since on the complaints or the 2028–32 rates.",
+    outlookWater),
+  stance("will-delplato", "gresham-budget-gap", "opposes", "Small cuts now",
+    "Says the budget shortfall is growing and the city should “act now with small, early changes rather than waiting until we’re forced into painful ones,” reviewing spending for efficiencies rather than relying on reserves.",
+    pamphlet(42)),
+  stance("will-delplato", "gresham-groundwater", "partial", "Water a challenge",
+    "Calls “the current water issue” one of Gresham’s real challenges in his pamphlet statement; does not say whether to keep the groundwater system, change treatment or accept the 2028–32 rate schedule.",
+    pamphlet(42)),
+  stance("joshua-al-jaouni", "gresham-safety-fee", "partial", "Fees off residents",
+    "Would keep “unnecessary fees and costs off residents” while encouraging responsible growth; does not name the $15 Police, Fire and Parks Fee or say whether it should change.",
+    pamphlet(44)),
+  stance("joshua-al-jaouni", "gresham-groundwater", "partial", "Listen on water",
+    "Says he will always listen when issues arise, “like the current water concerns,” and work with the community on practical solutions; no position on the system, treatment or rates.",
+    pamphlet(44)),
+  stance("joshua-al-jaouni", "gresham-camping-shelter", "partial", "Treatment with expectations",
+    "Says compassion and accountability must go together: connect people to treatment, recovery, mental-health resources and stable housing “while maintaining clear expectations.” The camping code and pod-shelter permits are unsaid.",
+    aljaouniHome),
+  stance("krestina-aziz", "gresham-groundwater", "partial", "Accountability on wells",
+    "Lists accountability in city decisions, “including the transition to water wells,” under transparent government; no position on keeping the system, changing treatment or the 2028–32 rates.",
+    pamphlet(43)),
+  stance("teo-ramirez", "gresham-camping-shelter", "partial", "Regional housing pathways",
+    "Would connect people to addiction and mental-health support, shelter and long-term housing pathways with regional coordination and clear accountability; the camping code and pod-shelter permits are unsaid.",
+    ramirezAbout),
+  stance("teo-ramirez", "gresham-ice-response", "partial", "Reaffirm sanctuary promise",
+    "Organized residents’ testimony and asked the council to publicly reaffirm the Sanctuary Promise Act, fund bilingual rights education, expand staff training and set a communication process for federal operations; an emergency declaration is unsaid.",
+    outlookRamirez),
+];
+
+const greshamItems: RaceStakes["items"] = [
+  {
+    label: "General-fund gap",
+    text:
+      "FY 2026/27 general-fund spending exceeds revenue by about $10 million, covered from fund balance, which the April 2026 forecast shows falling from $30.4 million to $20.4 million this year; the structural gap grows from $8.2 million to $30.8 million a year by FY 2030/31 even if the levy is extended. Police and fire take more than 90% of general-fund revenue.",
+    source: greshamForecast,
+  },
+  {
+    label: "Levy expires 2029",
+    text:
+      "The five-year public-safety levy of $1.35 per $1,000 (about $13.6 million in FY 2026/27) sunsets June 30, 2029 unless voters renew it; it funds 40 of the city’s 183 budgeted police positions and 33 fire positions. The budget message says renewal must be decided “over the next couple of years,” while a regional task force weighs fire-district models.",
+    source: greshamBudget,
+  },
+  {
+    label: "Thin staffing",
+    text:
+      "Gresham budgets 134 sworn officers for 115,739 residents, 1.16 per 1,000, the lowest of its comparison cities except Salem, and 130 sworn firefighters serving 148,268 people. Fire’s 90th-percentile response time was 11 minutes 20 seconds against an 8-minute standard when the council reviewed fire-service options in October 2025.",
+    source: greshamBudget,
+  },
+  {
+    label: "Utility rates locked in",
+    text:
+      "On June 2, 2026 the council set water rates to rise 5% each January from 2028 through 2032, wastewater 6% and stormwater 6.75%, about $8.12 a month more combined for a typical single-family home in 2028, after the March 30 switch to groundwater financed by roughly $34 million in federal loans.",
+    source: minJun2,
+  },
+  {
+    label: "Eight shelters, no pods",
+    text:
+      "The city counts eight permanent homeless shelters and no pod-style shelters; the code adopted March 3, 2026 caps a pod site at 30 units and keeps it 1,000 feet from schools and parks. The outreach team housed 155 people last year and the latest point-in-time count found 20 people unsheltered in Gresham.",
+    source: shelterReport,
+  },
+  {
+    label: "$381 million urban renewal",
+    text:
+      "The council adopted a roughly 900-acre Downtown/Civic urban renewal area on September 2, 2025 that plans about $381 million of investment over 30 years from property-tax growth that would otherwise reach the general fund; the next council appoints the agency’s board and picks its first projects.",
+    source: outlookUra,
+  },
+];
+const GRESHAM_COUNCIL_INTRO =
+  "A Gresham councilor is one of seven votes on the budget, the $15 public-safety fee, utility rates, the camping and shelter codes and whether to send the police-and-fire levy back to voters, and the council hires and directs the city manager. The FY 2026/27 budget is $924,981,292; the term runs through the levy’s 2029 expiry, a widening general-fund gap and a decision on the fire department’s future.";
+const greshamStakes: RaceStakes[] = [
+  {
+    raceId: "gresham-mayor",
+    intro:
+      "Gresham’s mayor presides over the seven-member council that adopts the budget, sets the $15 public-safety fee and utility rates, writes the camping and shelter codes and decides whether to send the police-and-fire levy back to voters, and directs the new city manager. The FY 2026/27 budget is $924,981,292; the term runs through the levy’s 2029 expiry, a widening general-fund gap and a decision on the fire department’s future.",
+    items: greshamItems,
+  },
+  { raceId: "gresham-position-2", intro: GRESHAM_COUNCIL_INTRO, items: greshamItems },
+  { raceId: "gresham-position-4", intro: GRESHAM_COUNCIL_INTRO, items: greshamItems },
+  { raceId: "gresham-position-6", intro: GRESHAM_COUNCIL_INTRO, items: greshamItems },
+];
+
+const topics: RaceTopics[] = [
+  { raceIds: ["portland-auditor"], topics: auditorTopics },
+  { raceIds: ["gresham-mayor", "gresham-position-2", "gresham-position-4", "gresham-position-6"], topics: greshamTopics },
+];
+const topicStances: TopicStance[] = [...auditorStances, ...greshamStances];
+const stakes: RaceStakes[] = [auditorStakes, ...greshamStakes];
+
+export const pack: RacePack = {
+  ...emptyPack(),
+  analysis,
+  lines,
+  chips,
+  deliveries,
+  ownWords,
+  contacts,
+  roles,
+  primary,
+  ballots,
+  districts,
+  choice,
+  portraits,
+  missing,
+  topics,
+  topicStances,
+  stakes,
+};
