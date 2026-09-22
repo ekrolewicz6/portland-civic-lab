@@ -43,6 +43,8 @@ export default function StanceDetail({
   const briefHref = `/voters-guide/${raceId}/${row.id}`;
   const question = topic ? topic.question : issue ? issue.question : null;
   const website = row.contact.channels.find((ch) => ch.kind === "website") ?? null;
+  /** A topic stance sourced to the official record is an action taken, not a statement made. */
+  const acted = Boolean(tc?.source && tc.source.evidence.kind === "Public record");
 
   return (
     <div className={styles.detail} id={id} data-issue={issue?.id ?? "topic"}>
@@ -106,14 +108,14 @@ export default function StanceDetail({
               </section>
             )}
             {tc.text ? (
-              <section className={styles.detailCard} data-kind="said" aria-label="What the candidate said">
+              <section className={styles.detailCard} data-kind={acted ? "vote" : "said"} aria-label={acted ? "What the candidate did" : "What the candidate said"}>
                 <p className={styles.cardLabel}>
-                  <SaidGlyph /> What they said
+                  {acted ? <Vote size={14} aria-hidden="true" /> : <SaidGlyph />} {acted ? "What they did" : "What they said"}
                 </p>
                 <p className={styles.cardText}>{tc.text}</p>
                 <div className={styles.cardMeta}>
                   {tc.source && <SourceChipButton chip={tc.source} />}
-                  <span className={styles.detailNote}>Our paraphrase of the candidate’s statement.</span>
+                  <span className={styles.detailNote}>{acted ? "A recorded action; our summary of the official record." : "Our paraphrase of the candidate’s statement."}</span>
                 </div>
               </section>
             ) : (

@@ -33,7 +33,7 @@ export function sourceChip(evidence: Evidence): SourceChip {
 
   if (evidence.kind === "Public record") {
     if (/(^|\.)(portland\.gov|portlandoregon\.gov|efiles\.portlandoregon\.gov)$/i.test(host)) return pick("Record", "City record");
-    if (/(^|\.)(multco\.us|washingtoncountyor\.gov|clackamas\.us|civicweb\.net)$/i.test(host)) return pick("Record", "County record");
+    if (/(^|\.)(multco\.us|washingtoncountyor\.gov|clackamas\.us|civicweb\.net|granicus\.com)$/i.test(host)) return pick("Record", "County record");
     if (/(^|\.)(oregon\.gov|oregonlegislature\.gov|state\.or\.us|pdx\.edu|pers\.state\.or\.us|olis\.oregonlegislature\.gov)$/i.test(host)) return pick("Record", "State record");
     if (/(^|\.)(gov|congress\.gov|house\.gov|senate\.gov|treasury\.gov|census\.gov|cbo\.gov|fiscaldata\.treasury\.gov)$/i.test(host)) return pick("Record", "Federal record");
     if (/\.gov$/i.test(host) || /(^|\.)(greshamoregon\.gov|beavertonoregon\.gov|hillsboro-oregon\.gov|tigard-or\.gov|ci\.oswego\.or\.us|orcity\.org)$/i.test(host)) return pick("Record", "City record");

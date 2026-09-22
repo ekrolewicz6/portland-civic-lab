@@ -11,12 +11,16 @@ import {
   type Delivery,
   type DeliveryStep,
   type DistrictInfo,
+  type ExtraTopic,
   type IssueLine,
   type MissingState,
   type PrimaryStatement,
   type RacePack,
+  type RaceStakes,
+  type RaceTopics,
   type RoleOverride,
   type StanceChip,
+  type TopicStance,
 } from "../../types";
 
 /**
@@ -980,4 +984,495 @@ choice.push({
   ...reviewed,
 });
 
-export const pack: RacePack = { ...emptyPack(), analysis, lines, chips, deliveries, ownWords, contacts, roles, primary, ballots, districts, choice, portraits, missing };
+/* ── Topics, stances and stakes ─────────────────────────────────────── */
+/*
+ * Office-specific comparison topics for the four Multnomah races, each
+ * candidate's explicit stance on them, and the sourced facts behind each
+ * office. Researched September 21, 2026. Board votes are read from the
+ * Board Clerk's minutes on multnomah.granicus.com and the county's own
+ * releases; a stance is recorded only where the candidate's own material
+ * or recorded action speaks to the exact choice the column asks about.
+ * Auditor and sheriff candidates are mostly gaps on county-board topics,
+ * which is the honest state of their material.
+ */
+const record = (label: string, url: string, date: string, note?: string): Evidence => ({
+  label,
+  url,
+  kind: "Public record",
+  date,
+  ...(note ? { note } : {}),
+});
+const reporting = (label: string, url: string, date: string, note?: string): Evidence => ({
+  label,
+  url,
+  kind: "Reporting",
+  date,
+  ...(note ? { note } : {}),
+});
+const stance = (
+  candidateId: string,
+  topicId: string,
+  s: TopicStance["stance"],
+  chip: string,
+  text: string,
+  source: Evidence,
+): TopicStance => ({ candidateId, topicId, stance: s, chip, text, source, ...reviewed });
+
+/* Shared public-record sources. */
+const minutesAug27 = record(
+  "Board of County Commissioners · minutes, August 27, 2026 (R.2, Preschool for All ordinance)",
+  "https://multnomah.granicus.com/MinutesViewer.php?view_id=3&clip_id=3575&doc_id=9a3cebd8-a303-11f1-a028-005056a89546",
+  "Meeting of August 27, 2026; read September 21, 2026",
+  "Second reading adopted 5–0 as amended; the transcript records the chair describing the one-year delay as the Singleton–Moyer amendment.",
+);
+const budgetFy27 = record(
+  "Multnomah County · Board adopts balanced $4 billion budget for Fiscal Year 2027",
+  "https://multco.us/news/news-release-multnomah-county-board-commissioners-closes-significant-spending-gap-adopts",
+  "June 5, 2026",
+  "Adopted 4–1; the release carries each commissioner's statement and the roll of amendments.",
+);
+const budgetModOct2025 = record(
+  "Multnomah County · Board approves budget modification to partially fill homeless services funding gap",
+  "https://multco.us/news/board-approves-budget-modification-partially-fill-homeless-services-funding-gap",
+  "November 20, 2025",
+  "Vote of October 30, 2025, 3–2; Commissioners Moyer and Brim-Edwards voted no.",
+);
+const deflectionResolution = record(
+  "Multnomah County · Board adopts resolution recommending policies to strengthen drug deflection program",
+  "https://multco.us/news/multnomah-county-board-adopts-resolution-recommending-policies-aim-strengthen-drug-deflection",
+  "March 2, 2026",
+  "Adopted unanimously February 26, 2026; co-sponsored by Commissioners Brim-Edwards and Singleton.",
+);
+const deflectionReport = record(
+  "Multnomah County · Deflection Program 2024–2025 Annual Report",
+  "https://multco.us/file/deflection_program_2024-2025_annual_report/download",
+  "Program year September 1, 2024 – August 31, 2025",
+);
+const modaResolution = record(
+  "Multnomah County · Board advances framework for regional investment in Moda Center renovation",
+  "https://multco.us/news/news-release-board-commissioners-advances-framework-regional-investment-moda-center-renovation",
+  "August 6, 2026",
+  "Adopted 4–1 by the five-member Board; Commissioner Moyer cast the no vote, so the other four, Brim-Edwards and Singleton among them, voted aye.",
+);
+const emsBriefing = record(
+  "Multnomah County · Board receives briefing on future of County's Emergency Medical Services",
+  "https://multco.us/news/board-receives-briefing-future-countys-emergency-medical-services",
+  "April 22, 2026",
+);
+const mcsoLetter = record(
+  "Multnomah County Sheriff's Office · FY 2027 Requested Budget Transmittal Letter",
+  "https://multco.us/file/fy_2027_mcso_transmittal_letter_-_requested/download",
+  "February 6, 2026",
+);
+const forecastFy27 = record(
+  "Multnomah County Budget Office · projects $10.5 million shortfall for the FY 2026-27 budget",
+  "https://multco.us/news/budget-office-projects-105-million-shortfall-multnomah-countys-fy-2026-27-budget",
+  "November 14, 2025",
+);
+const charterFaq = record(
+  "Multnomah County · Charter Review Committee FAQs",
+  "https://multco.us/info/charter-review-committee-faqs",
+  "Checked September 21, 2026",
+);
+
+/* The picker's extra columns: concrete choices the Board has made or faces this term. */
+const multnomahTopics: ExtraTopic[] = [
+  {
+    id: "mult-pfa-delay",
+    label: "Preschool tax delay",
+    short: "Preschool tax",
+    question: "Keep delaying the Preschool for All tax increase, now set for 2028?",
+    context:
+      "On August 27, 2026 the Board voted 5–0 to push the scheduled 0.8-point increase on high earners from January 2027 to January 2028, its second delay; the program reported a $610 million fund balance and 7,100 seats for 2026–27.",
+  },
+  {
+    id: "mult-shelter-cuts",
+    label: "Shelter cuts",
+    short: "Shelter cuts",
+    question: "Close shelter beds to keep people in housing as homeless-services money falls?",
+    context:
+      "The FY 2027 budget, adopted 4–1 in June 2026, phases out 605 adult shelter units and 90 family vouchers so that about 9,000 formerly homeless people keep their rent assistance; the Homeless Services Department faced a $67 million gap.",
+  },
+  {
+    id: "mult-city-county",
+    label: "City-county agreement",
+    short: "City deal",
+    question: "Rewrite the city-county homelessness agreement so one government runs shelters?",
+    context:
+      "The agreement expires in July 2027. The city owes the county about $31 million a year, says the county owes it about $38 million for village shelters, and each government runs its own shelter system.",
+  },
+  {
+    id: "mult-deflection",
+    label: "Deflection center",
+    short: "Deflection",
+    question: "Keep and tighten the drug deflection center, or halt it?",
+    context:
+      "In its first year police made 606 referrals and 113 people completed deflection; 81% of those served at the center were homeless. A February 2026 Board resolution added stricter 90-day completion rules, and 78 people were referred in the first quarter of 2026.",
+  },
+  {
+    id: "mult-moda",
+    label: "Moda Center money",
+    short: "Moda",
+    question: "Up to $101.6 million in county money for the Moda Center renovation?",
+    context:
+      "On August 6, 2026 the Board voted 4–1 to set terms for a contribution of up to $101.6 million, drawn first from rental-car and tourism taxes; a vote on the final agreement is expected in December 2026.",
+  },
+  {
+    id: "mult-ambulance",
+    label: "Ambulance staffing",
+    short: "Ambulances",
+    question: "Drop the two-paramedic ambulance rule for good?",
+    context:
+      "AMR has missed the county's eight-minute response target every month since March 2022; a 2024 settlement let some ambulances run with one paramedic and one EMT. A new Ambulance Service Plan goes to the Board in late 2026, before the AMR contract ends in 2028.",
+  },
+  {
+    id: "mult-jail-capacity",
+    label: "Jail capacity",
+    short: "Jails",
+    question: "Keep both jails at their current funded capacity as the General Fund shrinks?",
+    context:
+      "The sheriff's required 5% cut option would have removed 38.9 corrections deputies, about 300 of roughly 1,130 funded beds; the FY 2027 budget kept capacity while bookings in February 2026 ran 22% above a year earlier.",
+  },
+  {
+    id: "mult-county-administrator",
+    label: "Appointed administrator",
+    short: "Administrator",
+    question: "Move day-to-day county management from the elected chair to an appointed administrator?",
+    context:
+      "The charter makes the chair both a board member and the chief executive who proposes the $4 billion budget and hires department heads. A Charter Review Committee convenes in March 2027 and any change it proposes goes to voters in 2028.",
+  },
+  {
+    id: "mult-budget-gap",
+    label: "Closing the gap",
+    short: "Budget gap",
+    question: "Close the county's structural budget gap by cutting administration before services?",
+    context:
+      "The Budget Office projected a $10.5 million General Fund shortfall for FY 2027 growing to $33.8 million by FY 2030; the adopted FY 2027 budget eliminated at least 158 positions.",
+  },
+];
+const topics: RaceTopics[] = [
+  { raceIds: ["multnomah-chair", "multnomah-district-2", "multnomah-auditor", "multnomah-sheriff"], topics: multnomahTopics },
+];
+
+/* Candidate-statement sources used only for stances. */
+const meieranBudgetPost = site("Meieran · “When Too Much Is Not Enough” (newsletter, June 3, 2026)", "https://www.sharonforchair.com/newsletter/1h48ur4ba3mp3ylokn7o5gaho21mbn");
+const meieranDeflectionPost = site("Meieran · “Multnomah County: Deflecting Responsibility” (newsletter, July 17, 2026)", "https://www.sharonforchair.com/newsletter/bxk3w0qbinlahsogwey6nkqvpvtaob");
+const meieranPlanPdf = site("Meieran · Comprehensive Multnomah County Turnaround Plan (February 6, 2026 update), section IV, Governance Reset", "https://www.sharonforchair.com/s/Comprehensive-Multnomah-County-Turnaround-Plan-2-6-26-update.pdf");
+const opbAmbulance2024 = reporting(
+  "OPB · Multnomah County officials reject vote on ambulance staffing as AMR mediation comes to an end",
+  "https://www.opb.org/article/2024/07/26/multnomah-county-officials-amr-mediation/",
+  "July 26, 2024",
+  "Reports the July 25, 2024 vote: Meieran's resolution, as amended, failed 3–1 with Brim-Edwards the only vote in support.",
+);
+const opbCityCounty = reporting(
+  "OPB · Behind Portland's homelessness data, a familiar political fight emerges",
+  "https://www.opb.org/article/2026/04/01/behind-portlands-homelessness-data-familial-political-fight-emerges/",
+  "April 1, 2026",
+);
+const singletonShsRelease = record(
+  "Commissioner Singleton · press release: proposes SHS reform; reallocation of $22 million",
+  "https://multco.us/file/march_2025_singleton-shs-press-release.pdf/download",
+  "March 3, 2025",
+  "Published by her county office; the proposals are hers, not Board actions.",
+);
+
+const topicStances: TopicStance[] = [
+  /* ── Julia Brim-Edwards (sitting commissioner, District 3) ─────────── */
+  stance("julia-brim-edwards", "mult-pfa-delay", "supports", "Voted for 2028 delay",
+    "Voted with the full Board on August 27, 2026 to push the scheduled 0.8-point increase to January 1, 2028, the ordinance's second reading.",
+    minutesAug27),
+  stance("julia-brim-edwards", "mult-shelter-cuts", "opposes", "Voted no on budget",
+    "Cast the lone no vote on the FY 2027 budget, saying it leaves too many gaps and will not reduce homelessness or deliver the change the community is asking for.",
+    budgetFy27),
+  stance("julia-brim-edwards", "mult-deflection", "supports", "Keep it, tighten rules",
+    "Co-sponsored the February 26, 2026 resolution that keeps the center with stricter 90-day completion rules and housing links, saying deflection cannot be a revolving door back to the streets.",
+    deflectionResolution),
+  stance("julia-brim-edwards", "mult-moda", "supports", "Voted for $101.6M terms",
+    "Voted for the August 6, 2026 resolution setting terms for up to $101.6 million, with a clawback, a 20-year Blazers commitment and a payment in lieu of taxes; Commissioner Moyer cast the only no vote.",
+    modaResolution),
+  stance("julia-brim-edwards", "mult-ambulance", "supports", "Backed one-paramedic model",
+    "Cast the only vote for Meieran's July 2024 resolution pressing the chair to let ambulances run with one paramedic and one EMT, a week before mediation with AMR settled on a hybrid-staffing pilot.",
+    opbAmbulance2024),
+  stance("julia-brim-edwards", "mult-budget-gap", "supports", "Cut administrative layers",
+    "Says she voted against the FY 2027 budget because it missed the chance to reduce outgrown layers of administrative leadership and prioritize direct services with demonstrated results.",
+    budgetFy27),
+
+  /* ── Shannon Singleton (sitting commissioner, District 2) ──────────── */
+  stance("shannon-singleton", "mult-pfa-delay", "supports", "One-year delay, hers",
+    "Moved the ordinance delaying the increase to January 2028 and voted for it on August 27, 2026; she and Commissioner Moyer had proposed the one-year delay in place of the chair's two-year plan.",
+    minutesAug27),
+  stance("shannon-singleton", "mult-shelter-cuts", "supports", "Voted for the budget",
+    "Voted for the FY 2027 budget and said she is proud that housing stability and placement out of shelter are now part of the county's commitment, while noting District 2's voices did not prevail on every vote.",
+    budgetFy27),
+  stance("shannon-singleton", "mult-city-county", "supports", "One shelter system",
+    "Told OPB she wants an end to both governments running shelters and other programs, saying the plan was written without a budget or clear roles and has too much duplication.",
+    opbCityCounty),
+  stance("shannon-singleton", "mult-deflection", "supports", "Link to housing, keep",
+    "Issued a November 2025 reform proposal tying the center to the by-name list, county sober shelters and outreach referrals, then co-sponsored the February 2026 resolution adopting stricter completion rules.",
+    deflectionResolution),
+  stance("shannon-singleton", "mult-moda", "supports", "Voted for $101.6M terms",
+    "Voted for the August 6, 2026 resolution setting terms for up to $101.6 million, with a clawback, a 20-year Blazers commitment and a payment in lieu of taxes; Commissioner Moyer cast the only no vote.",
+    modaResolution),
+  stance("shannon-singleton", "mult-budget-gap", "supports", "Admin review, core services",
+    "In March 2025 proposed moving $22 million in homeless-services tax dollars out of administrative and other programs outside the Homeless Services Department, plus a review of that department's administrative structure to prioritize service dollars.",
+    singletonShsRelease),
+
+  /* ── Sharon Meieran (commissioner 2017–2024) ───────────────────────── */
+  stance("sharon-meieran", "mult-shelter-cuts", "opposes", "No closures without plan",
+    "Called the FY 2027 budget's closure of hundreds of shelter beds with no plan for the people affected a profound moral failure that will push costs onto emergency rooms, crisis services and jails.",
+    meieranBudgetPost),
+  stance("sharon-meieran", "mult-city-county", "mixed", "Evaluate city-county merger",
+    "Her turnaround plan would lay the groundwork and evaluate mechanisms for city-county consolidation to address redundancies from separate oversight and funding of overlapping functions.",
+    meieranPlanPdf),
+  stance("sharon-meieran", "mult-deflection", "opposes", "Halt current program",
+    "Would halt the deflection program in its current form and replace the system that produced it, defining success by treatment completion and stable housing; says $20 million has not produced one such case.",
+    meieranDeflectionPost),
+  stance("sharon-meieran", "mult-ambulance", "supports", "One paramedic, one EMT",
+    "As a commissioner introduced the July 2024 resolution pressing the chair to let ambulances run with one paramedic and one EMT, saying speed to the emergency room matters most for survival.",
+    opbAmbulance2024),
+  stance("sharon-meieran", "mult-county-administrator", "mixed", "Charter reform; maybe manager",
+    "Her plan calls the chair's power outsized and proposes charter reform to redefine the chair's and commissioners' roles, potentially hiring a county manager or administrator, after immediate team-based governance changes.",
+    meieranPlanPdf),
+  stance("sharon-meieran", "mult-budget-gap", "supports", "Zero-based budgeting",
+    "Would adopt zero-based budgeting so every program justifies its cost, redirect money from ineffective and redundant structures and contracts, and deliver more while spending less.",
+    meieranBudgetPost),
+];
+
+const norrisPledges = site("Ong Norris · pledges taken (Preschool for All pledge, July 2, 2026)", "https://www.nathanongnorris.com/pledges");
+const norrisModaTestimony = site("Ong Norris · testimony on the Climate Justice Plan and Moda Center (July 23, 2026)", "https://www.nathanongnorris.com/news-updates/testimony-climate-justice-plan-moda");
+topicStances.push(
+  /* ── District 2 ────────────────────────────────────────────────────── */
+  // Broussard, Greene, Robertson and Williams: no statement on any of the nine choices in the pamphlet or on their sites.
+  // Robertson criticizes the $610 million Preschool for All reserve but takes no position on the tax delay; left as a gap.
+  stance("serena-cruz", "mult-moda", "supports", "Yes, with conditions",
+    "Supports public dollars to keep the Blazers and the Fire in Portland, conditioned on a project labor agreement, a community benefits agreement naming Albina Vision Trust, a 20-year commitment and an annual payment in lieu of taxes.",
+    cruzIssues),
+  stance("serena-cruz", "mult-county-administrator", "supports", "Appointed administrator",
+    "Supports a charter amendment creating an appointed county administrator, hired by the full Board through an open search, to run daily operations against performance measures while the elected chair and commissioners set policy.",
+    cruzIssues),
+  stance("serena-cruz", "mult-budget-gap", "mixed", "Grow tax base instead",
+    "Says the county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030; the fix is partnering in Portland's economy to grow the tax base.",
+    cruzIssues),
+  stance("nathan-ong-norris", "mult-pfa-delay", "opposes", "No more delays",
+    "Signed a pledge to reject any further delays in fully funding Preschool for All, support the full voter-approved tax rate and vote against any action that limits or reduces the program.",
+    norrisPledges),
+  stance("nathan-ong-norris", "mult-moda", "opposes", "No giveaway to billionaires",
+    "Testified in July 2026 that the county should not throw dollars at a billionaire-owned franchise without guarantees, backing AFSCME Local 88's call to stop the vote and hire a professional negotiator.",
+    norrisModaTestimony),
+  stance("nabil-zaghloul", "mult-shelter-cuts", "mixed", "Treatment, not more shelters",
+    "Notes many of the 600 beds being cut were already empty and says the answer for people who refuse shelter is sustained behavioral-health and addiction treatment, not more shelters, with prevention funded first.",
+    zHomelessness),
+
+  /* ── Auditor and Sheriff ───────────────────────────────────────────── */
+  // Pexton: her material is about audit practice, not the Board's choices; no stance on any column.
+  stance("nicole-morrisey-o-donnell", "mult-jail-capacity", "supports", "Preserve jail capacity",
+    "Her FY 2027 budget letter urges the chair and Board to preserve current jail capacity and the HR hiring unit, warning a 5% cut would remove about 300 beds and could force releases.",
+    mcsoLetter),
+);
+
+/* Stakes: the office's biggest current problems, each a fact with a source. Shared items are defined once. */
+type StakeItem = RaceStakes["items"][number];
+const stakeGeneralFund: StakeItem = {
+  label: "General Fund gap",
+  text: "The Budget Office projected a $10.5 million General Fund shortfall for FY 2027, growing to $33.8 million by FY 2030 as downtown property values fall and personnel costs rise; each one-point pay increase costs $4.1 million.",
+  source: forecastFy27,
+};
+const stakeHomelessCuts: StakeItem = {
+  label: "Homeless-services cuts",
+  text: "The FY 2027 budget closed a $67 million Homeless Services gap by phasing out 605 adult shelter units and 90 family vouchers, leaving 1,667 county-funded units, and eliminated at least 158 positions countywide.",
+  source: budgetFy27,
+};
+const stakeShelterResults: StakeItem = {
+  label: "Shelter results",
+  text: "The county's FY 2025 review of 31 adult shelters found they cost $98 million, about $47,000 per bed, served 6,731 people and sent 16% of those leaving to permanent housing.",
+  source: record(
+    "Multnomah County Homeless Services Department · Adult Shelter Review FY25",
+    "https://hsd.multco.us/wp-content/uploads/2026/01/Adult-Shelter-Review-FY25.pdf",
+    "January 2026",
+  ),
+};
+const stakeShsRevenue: StakeItem = {
+  label: "Homeless-services tax",
+  text: "Metro's supportive housing tax sent the county $560 million from July 2021 to June 2025 and was forecast at $145.9 million for FY 2026, held back by weak Multnomah County employment; the tax expires in 2030.",
+  source: reporting(
+    "Willamette Week · Weakness in Multnomah County economy will hold back homeless services tax collections, Metro says",
+    "https://www.wweek.com/news/2025/12/27/weakness-in-multnomah-county-economy-will-hold-back-homeless-service-tax-collections-metro-says/",
+    "December 27, 2025",
+    "The 2030 expiration is reported by OPB (July 1, 2025), when Metro decided not to seek renewal that year.",
+  ),
+};
+const stakeCityCounty: StakeItem = {
+  label: "City-county agreement",
+  text: "The city-county homeless services agreement expires in July 2027 amid a dispute over $31 million the city owes the county and $38 million the city says it is owed; the county counted about 18,000 people homeless, 8,800 unsheltered, in early 2026.",
+  source: opbCityCounty,
+};
+const stakePreschool: StakeItem = {
+  label: "Preschool for All",
+  text: "Preschool for All reported a $610 million fund balance and 7,100 seats for 2026–27 against more than 6,000 applications; on August 20, 2026 the Board unanimously advanced a second one-year delay of the scheduled 0.8-point tax increase, to January 2028.",
+  source: reporting(
+    "Willamette Week · County commissioners are on track to delay scheduled tax increase for Preschool for All",
+    "https://www.wweek.com/news/schools/2026/08/20/county-commission-on-track-to-delay-scheduled-tax-increase-for-preschool-for-all/",
+    "August 20, 2026",
+    "The second reading was adopted 5–0 on August 27, 2026 (Board minutes).",
+  ),
+};
+const stakeDeflection: StakeItem = {
+  label: "Deflection results",
+  text: "In the deflection program's first year, September 2024 to August 2025, police made 606 referrals for 520 people and 113 completed deflection; 81% of the 354 people served at the center were homeless.",
+  source: deflectionReport,
+};
+const stakeAmbulance: StakeItem = {
+  label: "Ambulance plan due",
+  text: "The AMR contract ends in 2028 and a new Ambulance Service Plan is due for a Board vote in late 2026; the county pays no direct subsidy, 77% of patients are on Medicare or Medicaid, and staff call the funding model fragile.",
+  source: emsBriefing,
+};
+const stakeBurnside: StakeItem = {
+  label: "Burnside Bridge cost",
+  text: "The Earthquake Ready Burnside Bridge is now estimated at $1.6 billion to $1.8 billion, with about $740 million secured and only $7 million federal; in October 2025 the county pushed construction past 2028 with no new date.",
+  source: reporting(
+    "OPB · Construction delayed again for earthquake-ready Burnside Bridge in Portland",
+    "https://www.opb.org/article/2025/10/20/burnside-bridge-portland-oregon-infrastructure-cascadia-big-one-earthquake/",
+    "October 21, 2025",
+  ),
+};
+const stakeModa: StakeItem = {
+  label: "Moda Center deal",
+  text: "The Board's August 6, 2026 resolution sets a county contribution of up to $101.6 million, paid first from rental-car and tourism taxes with no cost-overrun liability; a final agreement vote is expected in December 2026 and budget adoptions in June 2027 and 2028.",
+  source: modaResolution,
+};
+const stakeSobering: StakeItem = {
+  label: "Sobering center",
+  text: "The $29.8 million 24/7 Sobering and Crisis Stabilization Center, 47 stations and beds, uses $15.6 million in state money and $14.2 million from the General Fund over two budgets; move-in is targeted for October 1, 2027.",
+  source: record(
+    "Multnomah County · Board approves construction plan for 24/7 Sobering and Crisis Stabilization Center",
+    "https://multco.us/news/board-approves-construction-plan-247-sobering-and-crisis-stabilization-center-facility-track",
+    "March 13, 2026",
+    "Project plan approved 5–0 on March 12, 2026 (Board minutes).",
+  ),
+};
+
+const stakes: RaceStakes[] = [
+  {
+    raceId: "multnomah-chair",
+    intro:
+      "The chair proposes the county's $4 billion budget, hires every department head and runs the homeless, health and human-services systems. The next chair inherits a shrinking General Fund, falling homeless-services revenue and a city partnership that expires in 2027.",
+    items: [stakeGeneralFund, stakeHomelessCuts, stakeShsRevenue, stakeCityCounty, stakePreschool, stakeDeflection, stakeAmbulance, stakeBurnside],
+  },
+  {
+    raceId: "multnomah-district-2",
+    intro:
+      "Commissioners adopt and amend the chair's budget, set policy and hold departments to account by vote and budget note. This seat covers North and Northeast Portland, including the Rose Quarter, and it decides the same budget, shelter and Moda Center questions as the chair.",
+    items: [stakeGeneralFund, stakeHomelessCuts, stakeShelterResults, stakeCityCounty, stakePreschool, stakeDeflection, stakeModa, stakeSobering],
+  },
+];
+
+const jailFollowUp = record(
+  "Multnomah County Auditor · Recommendation Status Evaluation: Jail Conditions",
+  "https://multco.us/info/recommendation-status-evaluation-jail-conditions",
+  "July 2026",
+);
+stakes.push(
+  {
+    raceId: "multnomah-auditor",
+    intro:
+      "The auditor is independently elected, sets the office's own audit schedule and reports publicly on whether departments carry out its recommendations. Its findings are the Board's main outside check on a $4 billion budget.",
+    items: [
+      {
+        label: "Real estate overpayments",
+        text: "An August 2026 audit found no policy requiring Board approval to buy land or buildings and potential overpayments of $1.18 million on four properties, out of $50.4 million the county spent on real estate from 2019 to 2025.",
+        source: record("Multnomah County Auditor · Multnomah County Real Estate Purchases", "https://multco.us/info/multnomah-county-real-estate-purchases", "August 2026"),
+      },
+      {
+        label: "Jail recommendations open",
+        text: "A July 2026 follow-up found the Sheriff's Office had implemented five of the 2022 jail-conditions recommendations and not four, including ending isolation as discipline for people with mental illness; an independent jail-review function remains unimplemented by the Sheriff and Board.",
+        source: jailFollowUp,
+      },
+      {
+        label: "Contractor oversight",
+        text: "In April 2026 the auditor asked the Board to press for 2022 recommendations on monitoring county-funded startups after Sunstone Way, which the county advanced $377,456 and then gave another $1.1 million despite overbilling findings, announced it was closing.",
+        source: record(
+          "Multnomah County Auditor · Memorandum to the Board: request for advocacy to implement Auditor recommendations",
+          "https://multco.us/file/memorandum_to_board_of_county_commissioners:_request_for_advocacy_to_implement_auditor_recommendations/download",
+          "April 21, 2026",
+        ),
+      },
+      {
+        label: "Audits underway",
+        text: "As of September 9, 2026 the office lists five audits in progress: bridges, Corrections Health, gift cards, jail visits and supportive housing services.",
+        source: record("Multnomah County Auditor · Audits in Progress", "https://multco.us/info/audits-progress", "Last reviewed September 9, 2026"),
+      },
+      {
+        label: "Money flows to watch",
+        text: "The auditor's 2026 financial condition report notes FY 2025 Supportive Housing Fund spending rose more than $71 million, Preschool for All community-services spending more than $39 million, and the Health Department took in over $15 million in state deflection money.",
+        source: record("Multnomah County Auditor · Financial Condition Report 2026", "https://multco.us/info/financial-condition-report-2026", "May 2026"),
+      },
+      stakeGeneralFund,
+    ],
+  },
+  {
+    raceId: "multnomah-sheriff",
+    intro:
+      "The sheriff runs two jails funded for about 1,130 beds, patrols unincorporated areas, contract cities and transit, and manages roughly 800 employees on a $225 million budget that the Board funds but does not direct.",
+    items: [
+      {
+        label: "Jail beds at risk",
+        text: "The sheriff's FY 2027 budget letter said the required 5% General Fund cut of $9.7 million would include eliminating 38.9 corrections deputies, about 300 jail beds or 27% of budgeted capacity; the General Fund supplies 87% of the office's $225 million budget.",
+        source: mcsoLetter,
+      },
+      {
+        label: "Bookings and hiring",
+        text: "MCSO processed 1,721 standard jail bookings in February 2026, 22% more than a year earlier; it hired 114 people in 2025 for a net gain of 32 staff, the first year since 2022 that hires exceeded separations, while corrections deputies remain the highest-vacancy job.",
+        source: record(
+          "Multnomah County Sheriff's Office · Sheriff reports 50% increase in hiring; applauds county investments",
+          "https://www.mcso.us/public-information/sheriff-nicole-morrisey-odonnell-reports-50-increase-hiring-applauds-county",
+          "March 19, 2026",
+        ),
+      },
+      {
+        label: "Programs ending",
+        text: "The chair's FY 2027 proposal kept jail capacity, but the sheriff is ending the Close Street pretrial program and eliminated the two-deputy HOPE homeless outreach team to staff investigations, civil backlogs and gun dispossession; her request for more courthouse deputies went unfunded.",
+        source: record(
+          "Multnomah County Sheriff's Office · Sheriff shares community letter following release of Chair's proposed budget for FY 2027",
+          "https://www.mcso.us/public-information/multnomah-county-sheriff-nicole-morrisey-odonnell-shares-community-letter",
+          "April 20, 2026",
+        ),
+      },
+      {
+        label: "Pretrial shift",
+        text: "The adopted FY 2027 budget adds $728,000 in ongoing money to a $1 million plan moving pretrial monitoring from the Sheriff's Office and Department of Community Justice to the circuit court system.",
+        source: budgetFy27,
+      },
+      {
+        label: "In-custody deaths",
+        text: "Two adults in custody died in one week in August 2026: a 71-year-old at the Detention Center on August 18 and a 48-year-old at Inverness Jail on August 20, each under an ongoing death investigation.",
+        source: record("Multnomah County Sheriff's Office · News releases", "https://www.mcso.us/news-information", "Releases of August 18 and 20, 2026; checked September 21, 2026"),
+      },
+      { label: "Jail audit follow-up", text: "The county auditor's July 2026 follow-up found four 2022 jail-conditions recommendations not implemented, including ending isolation as a disciplinary sanction, and an independent jail-review function still unexplored by the Sheriff and Board.", source: jailFollowUp },
+      {
+        label: "Independent reviews",
+        text: "The Corrections Recommendations Project tracks findings from seven 2022–2024 reviews (National Institute of Corrections reports on contraband and suicide prevention, an Oregon State Police review of death investigations, jail standards inspections, the grand jury and the auditor) on a dashboard updated at least monthly.",
+        source: record("Multnomah County Sheriff's Office · Corrections Recommendations Project", "https://www.mcso.us/corrections-facilities-division/corrections-recommendations-project", "Checked September 21, 2026"),
+      },
+    ],
+  },
+);
+
+export const pack: RacePack = {
+  ...emptyPack(),
+  analysis,
+  lines,
+  chips,
+  deliveries,
+  ownWords,
+  contacts,
+  roles,
+  primary,
+  ballots,
+  districts,
+  choice,
+  portraits,
+  missing,
+  topics,
+  topicStances,
+  stakes,
+};

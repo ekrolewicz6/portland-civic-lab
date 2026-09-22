@@ -287,6 +287,20 @@ export default function Methodology() {
           to the site. We will reconcile every statewide and legislative brief
           against the pamphlet when it appears.
         </p>
+        <h2 id="stakes">What’s at stake, and the size of each seat</h2>
+        <p>
+          Each race page ends with “What’s at stake”: the office’s biggest
+          current problems and pending decisions as facts with a number or a
+          date and an official or reported source, the same block for every
+          candidate. For the governor and Multnomah County seats, the Topics
+          control adds the office’s own live choices as columns; a cell is
+          filled only by an explicit statement or, for a sitting official, a
+          recorded action cited to the record, and is labeled which. On the
+          hub, each body’s bar is its most recent adopted budget on a
+          logarithmic scale, with the population it serves and who decides,
+          each figure linked to the budget document or the Portland State
+          University population estimate it came from.
+        </p>
         <h2 id="reach">Reaching a campaign</h2>
         <p>
           Each brief lists how to reach the campaign: the website, email,
