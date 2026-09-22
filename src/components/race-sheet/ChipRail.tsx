@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { Plus } from "lucide-react";
+import { Plus, ChevronDown } from "lucide-react";
 import { issues, type IssueId } from "@/lib/voters-guide/race-sheet/issues";
 import styles from "./race-sheet.module.css";
 import c from "./controls.module.css";
@@ -74,7 +74,7 @@ export default function ChipRail({
   const current = active ? issues.find((i) => i.id === active) : null;
   const status = active
     ? coverageParts(active, coverage[active] ?? 0, total)
-    : { head: `${total} candidates, A–Z.`, tail: " Tap a chip for the sentence and its source." };
+    : { head: `${total} candidates, A–Z.`, tail: " Tap any position to read the sentence, how they would deliver it, and the source." };
 
   return (
     <div className={styles.railRoot} data-race-sheet-rail>
@@ -111,6 +111,9 @@ export default function ChipRail({
           <p className={styles.status} role="status" aria-live="polite">
             {status.head}
             <span className={styles.statusTail}>{status.tail}</span>
+          </p>
+          <p className={styles.tapHint} aria-hidden="true">
+            <ChevronDown size={13} /> Tap any position to open it
           </p>
         </div>
         {onTogglePicker && (

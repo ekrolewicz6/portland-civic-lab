@@ -167,7 +167,7 @@ for (const sheet of sheets) {
     await page.goto(`/voters-guide/${race.id}`);
     await expect(rows(page)).toHaveCount(total);
     const status = page.locator("[data-race-sheet-rail] [role=status]");
-    await expect(status).toHaveText(`${total} candidates, A–Z. Tap a chip for the sentence and its source.`);
+    await expect(status).toHaveText(`${total} candidates, A–Z. Tap any position to read the sentence, how they would deliver it, and the source.`);
     const chips = rail(page).locator("button[aria-pressed]");
     await expect(chips.first()).toHaveText("All");
     await expect(chips).toHaveText(["All", ...issues.map((i) => i.short)]);
@@ -197,7 +197,7 @@ for (const sheet of sheets) {
     await rail(page).getByRole("button", { name: "All", exact: true }).click();
     expect(new URL(page.url()).hash).toBe("");
     await expect(grid(page)).toHaveAttribute("data-active", "");
-    await expect(status).toHaveText(`${total} candidates, A–Z. Tap a chip for the sentence and its source.`);
+    await expect(status).toHaveText(`${total} candidates, A–Z. Tap any position to read the sentence, how they would deliver it, and the source.`);
     await expect(rows(page)).toHaveCount(total);
   });
 }

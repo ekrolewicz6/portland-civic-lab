@@ -107,6 +107,10 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
       } else if (hash.startsWith("#disagreement-")) {
         // Legacy CouncilRecord anchors live on the votes route (design §6).
         window.location.replace(`/voters-guide/${raceId}/votes#${hash.slice("#disagreement-".length)}`);
+      } else if (hash === "#ballot") {
+        // The votes page's bar sends My ballot here; open the drawer and drop the fragment.
+        setBallotOpen(true);
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
       } else {
         const id = decodeURIComponent(hash.slice(1)).split("?")[0];
         if (validIds.current.includes(id)) {

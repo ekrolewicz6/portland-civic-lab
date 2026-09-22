@@ -206,6 +206,16 @@
   line-height: 1.45;
   color: var(--color-ink-muted);
 }
+/* Phones hide the status tail; this short line takes its place. */
+.tapHint {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-canopy);
+}
 .moreButton {
   flex: none;
 }
@@ -264,6 +274,9 @@
   .statusTail {
     display: none;
   }
+  .tapHint {
+    display: inline-flex;
+  }
   .moreLong {
     display: none;
   }
@@ -312,6 +325,22 @@
   background: var(--color-parchment);
   color: var(--color-ink);
 }
+/* Scoped under .bar so a host page's own link styling (the votes page
+   underlines prose links) never reaches the bar. */
+.bar .barItem {
+  text-decoration: none;
+  color: var(--color-ink-light);
+  background: none;
+}
+.bar .barItem:hover {
+  background: var(--color-parchment);
+  color: var(--color-ink);
+}
+/* The item for the page the reader is on. */
+.bar .barItem[aria-current="page"] {
+  color: var(--color-canopy);
+  font-weight: 600;
+}
 .barItem span {
   white-space: nowrap;
 }
@@ -356,8 +385,8 @@
     margin: 0 0 16px;
   }
 }
-/* The site footer clears the fixed bar. */
-:global(body):has(.sheet) :global(footer) {
+/* The site footer clears the fixed bar, on the sheet and on the votes page. */
+:global(body):has(.bar) :global(footer) {
   padding-bottom: calc(2.5rem + var(--race-sheet-bar-height, 0px));
 }
 

@@ -156,6 +156,13 @@
   flex: none;
   opacity: 0.8;
 }
+.gapPill svg:last-child {
+  margin-left: auto;
+  transition: transform 200ms var(--ease, ease-out);
+}
+.gapPill[aria-expanded="true"] svg:last-child {
+  transform: rotate(180deg);
+}
 /* A gap inside prose (a ladder rung): the same pill, static. */
 .gapNote {
   display: inline-flex;
