@@ -1048,4 +1048,17 @@ export const pack: RacePack = {
   },
   /* Walsh’s brief carries a “missing” note from the Multnomah-only review; his Clackamas statement is used above, so no row state is set. */
   missing: {},
+  /** Research gap closed since September 18 by the candidate's pamphlet statement; see the research log. */
+  profiles: {
+    "patrick-walsh": {
+      background: "Nonprofit executive and library board chair; his statement appears in the Clackamas County pamphlet.",
+      summary: "His pamphlet statement runs on quiet, steady governance: balanced budgets with predictable costs, new homes directed to areas with existing infrastructure, well-equipped emergency services and protected tree canopy and watersheds.",
+      priorities: [
+        "Meet state housing requirements where infrastructure already exists, with design standards and tree preservation.",
+        "Keep budgets balanced, costs predictable and every fee, bond and levy explained.",
+        "Protect tree canopy and watersheds and calm cut-through traffic with data-driven fixes.",
+      ],
+      question: "What would you cut or defer if costs rise faster than revenue?",
+    },
+  },
 };

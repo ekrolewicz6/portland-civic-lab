@@ -937,13 +937,7 @@ const ownWords: OwnWords[] = [
   own("cristian-salgado", "Public service should be practical, accountable, and rooted in the people we serve.", "pamphlet-opening", pamphletOpening(15)),
   own("karim-delgado", "Hillsboro’s growth should serve the people who live here, not just the corporations that profit here.", "pamphlet-opening", pamphletOpening(17)),
   own("ivette-pantoja", "Ivette is the proud daughter of Mexican immigrants and the granddaughter of migrant farmworkers.", "pamphlet-opening", pamphletOpening(17, `${VERBATIM} Skips the heading “Born and Raised in Hillsboro”.`)),
-  own("kimberly-culbertson", "If you’re working hard, you should be able to build a stable life here.", "site-opening", {
-    label: "Culbertson · campaign site (home page)",
-    url: "https://www.kimberlyculbertson.org/",
-    kind: "Candidate statement",
-    date: "Website reviewed September 21, 2026",
-    note: "Verbatim opening of the candidate's own site text, after the heading “Washington County Should Work for You”. No pamphlet statement for this race; the site still presents her earlier 2026 candidacy for Washington County Commission District 4, not the Hillsboro council seat, and no statement for the council race was found.",
-  }),
+  // Culbertson: no statement for this race; her site still presents her earlier County Commission run, so no opening is quoted.
   own("dorian-russell", "As a teen in Hillsboro, Dorian got food from church pantries and showers at the Shute Park pool.", "pamphlet-opening", pamphletOpening(18, `${VERBATIM} Skips the heading “Make Our Government Work for the Working Class”.`)),
   own("titonian-wallace-sr", "As a father of four and small business owner, I’ll never stop working to uplift Hillsboro and support my family.", "pamphlet-opening", pamphletOpening(18, `${VERBATIM} Skips the run-in label “Statement:”.`)),
   own("yi-kang-hu", "Yi-Kang Hu is a tireless advocate for Tigard. He puts community voices first, brings people together, and solves problems.", "pamphlet-opening", pamphletOpening(35, `${VERBATIM} The first sentence is under 12 words, so two are used.`)),
@@ -1190,6 +1184,7 @@ const contacts: CandidateContact[] = [
 /* ── Roles (≤6 words, clipped from background), primary sources ── */
 const roles: RoleOverride[] = [
   { candidateId: "luis-garcia", role: "Health-information systems designer", from: "background" },
+  { candidateId: "shawne-martinez", role: "Tigard resident; climate advocate", from: "background" },
   { candidateId: "sarah-marugg", role: "Revenue and tax specialist", from: "background" },
   { candidateId: "ivette-pantoja", role: "Preschool owner; former school-board chair", from: "background" },
   { candidateId: "karim-delgado", role: "Business owner; Marine veteran", from: "background" },
@@ -1339,5 +1334,18 @@ export const pack: RacePack = {
   ]),
   // Culbertson: no statement for this seat anywhere. Martinez: no pamphlet statement, but his
   // campaign site states positions (captured above); the research object still carries `missing`.
-  missing: { "kimberly-culbertson": "no-platform", "shawne-martinez": "filing-only" },
+  missing: { "kimberly-culbertson": "no-platform" },
+  /** Research gap closed since September 18 by the candidate's own site; see the research log. */
+  profiles: {
+    "shawne-martinez": {
+      background: "Tigard resident running on climate and active transportation, with a campaign site.",
+      summary: "His site wants Tigard walkable, bikeable and denser near transit: infill housing and rezoning for energy-efficient homes near services, and fewer people driving alone on the way to net-zero emissions.",
+      priorities: [
+        "Infill housing and rezoning for dense, energy-efficient homes near transit and services.",
+        "A more walkable and bikeable Tigard so fewer people drive alone.",
+        "Net-zero emissions as soon as possible.",
+      ],
+      question: "Which areas would be rezoned first, and what would the changes cost the city?",
+    },
+  },
 };

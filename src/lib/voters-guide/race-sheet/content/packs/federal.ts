@@ -134,8 +134,32 @@ const choice: ChoiceParagraph[] = [];
 const portraits: Record<string, CandidatePortrait> = {};
 const missing: Record<string, MissingState> = {};
 
+/** Research gaps closed since September 18 by the candidate's own statement; see the research log. */
+const profiles: RacePack["profiles"] = {
+  "chris-henry": {
+    background: "Pacific Green and Progressive nominee; his filed statement runs on working people, public education and campaign finance reform.",
+    summary: "His filed candidate statement calls for ending tax breaks for billionaires, tripling the federal minimum wage, cutting military spending and expanding local wind and solar energy.",
+    priorities: [
+      "Triple the federal minimum wage and end tax breaks for billionaires and cryptocurrency.",
+      "Cut military spending and close foreign bases.",
+      "Expand local wind and solar energy and create a federal fund for Cascadia earthquake preparedness.",
+    ],
+    question: "Which of these changes would you introduce first in Congress, and how would the lost revenue or spending be replaced?",
+  },
+  "andrea-townsend": {
+    background: "Pacific Green nominee; answered her party’s 2026 candidate questionnaire.",
+    summary: "Her questionnaire answers put a Green alternative on the ballot: deeply affordable social housing, tenant protections, redirecting war spending to human and ecological needs, and climate action that protects land, water and biodiversity.",
+    priorities: [
+      "Deeply affordable social housing and tenant protections.",
+      "Redirect war spending toward human and ecological needs.",
+      "Confront climate change while protecting land, water and biodiversity.",
+    ],
+    question: "What federal bills or budget changes would carry these priorities, and what would each cost?",
+  },
+};
+
 export const pack: RacePack = {
-  ...emptyPack(), analysis, lines, chips, deliveries, ownWords: ownWordsEntries, contacts, roles, primary, ballots, districts, choice, portraits, missing,
+  ...emptyPack(), analysis, lines, chips, deliveries, ownWords: ownWordsEntries, contacts, roles, primary, ballots, districts, choice, portraits, missing, profiles,
 };
 
 /* ══ U.S. Senate ═══════════════════════════════════════════════════════ */
@@ -276,7 +300,6 @@ primary.push(
   { candidateId: "jeff-merkley", sourceUrl: `${STATEMENTS}#page=3` },
 );
 missing["gary-lyndon-dye"] = "no-platform";
-missing["chris-henry"] = "filing-only";
 ballots.push(ballot("oregon-us-senate"));
 choice.push(choiceOf("oregon-us-senate",
   "One candidate favors expanded federal social guarantees and climate action; another emphasizes spending restraint, public safety and resource industries. Research on the other two remains incomplete; do not treat that gap as agreement with either major-party candidate."));
@@ -770,7 +793,6 @@ primary.push(
   { candidateId: "patti-adair", sourceUrl: `${STATEMENTS}#page=25` },
   { candidateId: "andrea-townsend", sourceUrl: "https://www.pacificgreens.org/meet_the_candidates_for_nomination_andrea_townsend" },
 );
-missing["andrea-townsend"] = "filing-only";
 ballots.push(ballot("oregon-house-5"));
 districts.push(district("oregon-house-5", "Clackamas County suburbs such as Oregon City, Lake Oswego, West Linn and Happy Valley, part of southeast Portland, Bend and Redmond in Central Oregon, and parts of Marion and Linn counties along I-5. Use the lookup."));
 choice.push(choiceOf("oregon-house-5", "One emphasizes housing access and health coverage; another emphasizes affordability, law enforcement and congressional ethics. A current profile for the third candidate remains a research gap."));

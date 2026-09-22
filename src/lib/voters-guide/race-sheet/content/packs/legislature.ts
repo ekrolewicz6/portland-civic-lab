@@ -27,7 +27,7 @@ import {
  * sources already on the research object. Openings in the candidates' own words come
  * from the statements they filed with the Secretary of State for the state pamphlet
  * (the Elections Division's "2026 General Election, Candidate Statements" PDF, printed
- * September 9, 2026), recorded under the filing-opening rule; a candidate with no
+ * September 9, 2026), recorded under the pamphlet-opening rule; a candidate with no
  * filed statement uses the next rule in own-words.ts. Gaps stay gaps.
  */
 
@@ -88,7 +88,7 @@ const contact = (candidateId: string, channels: ContactChannel[], sources: Evide
   candidateId, channels, ...(none ? { none } : {}), sources, reviewedOn: REVIEWED_ON,
 });
 const own = (candidateId: string, text: string, page: number, note: string): OwnWords => ({
-  candidateId, text, rule: "filing-opening",
+  candidateId, text, rule: "pamphlet-opening",
   source: { label: `Oregon Secretary of State · filed candidate statement · PDF page ${page}`, url: `${STATEMENTS}#page=${page}`, kind: "Candidate statement", date: "Filed for the November 2026 state voters’ pamphlet; extracted September 21, 2026", note },
   words: text.split(/\s+/).filter((t) => /[A-Za-z0-9]/.test(t)).length,
 });
@@ -118,7 +118,41 @@ const portraits: Record<string, CandidatePortrait> = {};
 const missing: Record<string, MissingState> = {};
 
 /** The arrays above are filled by the district blocks below; module order keeps them in the export. */
-export const pack: RacePack = { ...emptyPack(), analysis, lines, chips, deliveries, ownWords, contacts, roles, primary, ballots, districts, choice: choices, portraits, missing };
+/** Research gaps closed since September 18 by the candidate's own statement; see the research log. */
+const profiles: RacePack["profiles"] = {
+  "john-a-n-chee": {
+    background: "Republican nominee raised in Portland’s Bethany neighborhood; answered the 2026 Ballotpedia candidate survey.",
+    summary: "His survey answers pair sharp property- and inheritance-tax cuts with prosecuting vagrancy and open drug use, fewer rules on home builders and support for young men entering the trades.",
+    priorities: [
+      "Dramatically reduce property taxes and eliminate taxes on family inheritances.",
+      "Prosecute vagrancy and open drug use.",
+      "Cut regulations on home builders and small businesses.",
+    ],
+    question: "Which state services would shrink to pay for the property- and inheritance-tax cuts, and by how much?",
+  },
+  "brian-schimmel": {
+    background: "City councilor; Republican and Independent nominee with a campaign site and a filed statement.",
+    summary: "He runs on making state policy work in practice: careful use of public money, measurable results, and adjusting programs that are not working, drawn from local housing and public-safety administration.",
+    priorities: [
+      "Use public resources carefully and require measurable results.",
+      "Align state policy with local implementation and funding realities.",
+      "Adjust or end programs that are not working.",
+    ],
+    question: "Which state programs would you change first, and what result would show the change worked?",
+  },
+  "pat-hubbell": {
+    background: "Pharmacist; Independent nominee with a campaign site and a filed statement.",
+    summary: "A pharmacist’s platform: balance the state budget through audits and cuts without raising taxes, take on pharmacy benefit managers, and pair addiction and mental-health treatment with strict enforcement.",
+    priorities: [
+      "Balance the budget by auditing departments and cutting waste, without new taxes.",
+      "Rein in pharmacy benefit managers to protect independent pharmacies.",
+      "Pair mental-health and addiction recovery with strict enforcement of public-safety laws.",
+    ],
+    question: "Which departments and programs would the audits cut, and by how much?",
+  },
+};
+
+export const pack: RacePack = { ...emptyPack(), analysis, lines, chips, deliveries, ownWords, contacts, roles, primary, ballots, districts, choice: choices, portraits, missing, profiles };
 
 /* ── Oregon Senate · District 13 ─────────────────────────────────────────── */
 const neronPriorities = site("Neron Misslin · priorities", "https://www.courtneyfororegon.com/priorities");
@@ -406,7 +440,6 @@ ballots.push(ballot("oregon-state-senate-17"));
 districts.push(district("oregon-state-senate-17", "SD17", "Bethany, Oak Hills, Cedar Mill, Forest Park, Linnton and Northwest Portland, including the Pearl District and the Northwest District."));
 choices.push(choice("oregon-state-senate-17", "One candidate frames the term around child poverty, healthcare access and gun-violence prevention; the other around lower property and inheritance taxes, prosecuting street disorder and support for young men in the trades. His fuller brief is still open."));
 Object.assign(portraits, { "lisa-reynolds": portrait("lisa-reynolds", "https://www.lisafororegon.com/", "Campaign photo · lisafororegon.com") });
-missing["john-a-n-chee"] = "filing-only";
 
 /* ── Oregon Senate · District 19 ─────────────────────────────────────────── */
 const wagnerPriorities = site("Wagner · priorities", "https://www.robwagnerfororegon.com/priorities/");
@@ -758,7 +791,6 @@ roles.push({ candidateId: "susan-mclain", role: "Incumbent representative; forme
 ballots.push(ballot("oregon-state-house-29"));
 districts.push(district("oregon-state-house-29", "HD29", "Forest Grove, Cornelius, Dilley, Gaston and the western edge of Hillsboro."));
 choices.push(choice("oregon-state-house-29", "One candidate leads with public education, infrastructure, civil rights and housing investment; the other with implementation, fiscal discipline and measurable results. His fuller brief is still open, so compare what each has actually published."));
-missing["brian-schimmel"] = "filing-only";
 
 /* ── Oregon House · District 40 ──────────────────────────────────────────── */
 const bakerIssues = site("Baker · issues", "https://voteadambaker.com/issues/");
@@ -842,7 +874,6 @@ roles.push({ candidateId: "adam-baker", role: "Retired police officer; real esta
 ballots.push(ballot("oregon-state-house-40"));
 districts.push(district("oregon-state-house-40", "HD40", "Oregon City, Gladstone, Jennings Lodge, Oatfield and Johnson City."));
 choices.push(choice("oregon-state-house-40", "Two candidates oppose tolls and stress affordability and safety: one specifies audits, permitting cuts and enforcement paired with treatment; another stresses services, housing help and reproductive rights. A third runs on budget discipline and pharmacy access."));
-missing["pat-hubbell"] = "filing-only";
 
 /* ── Oregon House · District 51 ──────────────────────────────────────────── */
 const meadHome = site("Mead · priorities", "https://www.darlameadfororegon.com/");

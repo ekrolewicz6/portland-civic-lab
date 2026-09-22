@@ -165,6 +165,606 @@
       "id": "eric-zimmerman",
       "hash": "538ff628552b85bfe42cc54c698384d8d387816fb5ecfa97de7e6af4fa55d4ae",
       "location": "/voters-guide/portland-district-4#eric-zimmerman"
+    },
+    {
+      "id": "simone-rede",
+      "hash": "997c9185849e746af399fa8eddfa2e54785f124dfd9bc285177c4f332b6566e5",
+      "location": "/voters-guide/portland-auditor#simone-rede"
+    },
+    {
+      "id": "julia-brim-edwards",
+      "hash": "dc4112ca385992066979ad9232cc860d34205278cadf1fd8a6d14cb087832124",
+      "location": "/voters-guide/multnomah-chair#julia-brim-edwards"
+    },
+    {
+      "id": "sharon-meieran",
+      "hash": "eae055c0afa29f727dc80c281f8a3695471f2278315e49ab7e792b64c5ff9e87",
+      "location": "/voters-guide/multnomah-chair#sharon-meieran"
+    },
+    {
+      "id": "shannon-singleton",
+      "hash": "27587f8fbafae5813a47f3425f4981963dd8dd4d02c2572a5f410a9e99ce6e88",
+      "location": "/voters-guide/multnomah-chair#shannon-singleton"
+    },
+    {
+      "id": "bruce-broussard",
+      "hash": "ebcefa0a1d5493af96677c52df2d493005865b637a37517cc768b2cddec33d54",
+      "location": "/voters-guide/multnomah-district-2#bruce-broussard"
+    },
+    {
+      "id": "serena-cruz",
+      "hash": "56d836aa1dc55b0eca04e0153b9ef391c3a1d2bb39328e004a6e9e5420df957b",
+      "location": "/voters-guide/multnomah-district-2#serena-cruz"
+    },
+    {
+      "id": "herman-greene",
+      "hash": "90caa7aec1f0f92fa69262b6c1c3f6a068020668907ee685db25543d05b7aa7e",
+      "location": "/voters-guide/multnomah-district-2#herman-greene"
+    },
+    {
+      "id": "nathan-ong-norris",
+      "hash": "6c12e6ab1318293bd8d32fd72cb6247b0e08d0ba88267f866172f986eb43fcba",
+      "location": "/voters-guide/multnomah-district-2#nathan-ong-norris"
+    },
+    {
+      "id": "tony-robertson",
+      "hash": "547a08e27a20968d3f29b1ab0ec9041528a7f05146237b1216a501433fe4ab03",
+      "location": "/voters-guide/multnomah-district-2#tony-robertson"
+    },
+    {
+      "id": "bri-williams",
+      "hash": "e0758c6180e11c288a5b8da462ebc69a45d7498054cb53d527d1d6a17cedfb59",
+      "location": "/voters-guide/multnomah-district-2#bri-williams"
+    },
+    {
+      "id": "nabil-zaghloul",
+      "hash": "bd11c3c9d8ae7b2aa4daa408be88bfb43ab9f6216a41cabe3c93ffe1aa5ac4f7",
+      "location": "/voters-guide/multnomah-district-2#nabil-zaghloul"
+    },
+    {
+      "id": "nicole-pexton",
+      "hash": "0a3f8007711f56347472064f80453316ee8fc78a6e7b2023eabdc74367b17f12",
+      "location": "/voters-guide/multnomah-auditor#nicole-pexton"
+    },
+    {
+      "id": "nicole-morrisey-o-donnell",
+      "hash": "236d533c98e976ee9139f54e4710d1cd6357be65342e1355b4be0cb9f91c6cb3",
+      "location": "/voters-guide/multnomah-sheriff#nicole-morrisey-o-donnell"
+    },
+    {
+      "id": "tina-kotek",
+      "hash": "f58f63f86e6be5d3bf82be1b0b39f053a8302e762bc0ab04b0b5529e0f745ba5",
+      "location": "/voters-guide/oregon-governor#tina-kotek"
+    },
+    {
+      "id": "christine-drazan",
+      "hash": "e686eac453168375633e74baad403d319be05153d0e35d79bb03c9b20ef39e02",
+      "location": "/voters-guide/oregon-governor#christine-drazan"
+    },
+    {
+      "id": "brett-smith",
+      "hash": "262628ae186ed6709812276ac8684f1b571b42ba3eb0631492650ed9bb87aee7",
+      "location": "/voters-guide/oregon-governor#brett-smith"
+    },
+    {
+      "id": "jeff-merkley",
+      "hash": "cb46087e30191ce810897b862899450117a6f743794ed2dbc48548e68dd2a87e",
+      "location": "/voters-guide/oregon-us-senate#jeff-merkley"
+    },
+    {
+      "id": "david-brock-smith",
+      "hash": "e4f8a8bb23a9b882b29adcdfb5754df8158cf1f2f032f3808a25009ef7bd2fe3",
+      "location": "/voters-guide/oregon-us-senate#david-brock-smith"
+    },
+    {
+      "id": "gary-lyndon-dye",
+      "hash": "5b3abb63bc7cf07747b5ce2f91153dcb9be3e2124a668814acf23d9c871170f8",
+      "location": "/voters-guide/oregon-us-senate#gary-lyndon-dye"
+    },
+    {
+      "id": "chris-henry",
+      "hash": "f48a3639667bf8f79375a1bc87b272be931a91d7278660e91d001ef1342467f8",
+      "location": "/voters-guide/oregon-us-senate#chris-henry"
+    },
+    {
+      "id": "suzanne-bonamici",
+      "hash": "134554423dda754cb25b50f550970badd5e31dc12ec88dcde24b38b09b14437b",
+      "location": "/voters-guide/oregon-house-1#suzanne-bonamici"
+    },
+    {
+      "id": "barbara-j-kahl",
+      "hash": "af568a07cab7783b9427ceed705ab8ebaa5f5ebb163372d5be60a85d886ad784",
+      "location": "/voters-guide/oregon-house-1#barbara-j-kahl"
+    },
+    {
+      "id": "maxine-e-dexter",
+      "hash": "21eb240644b8ad10224d23ddae479ed56031cbfcc575308ddfd1f54ec2f211df",
+      "location": "/voters-guide/oregon-house-3#maxine-e-dexter"
+    },
+    {
+      "id": "loran-ayles",
+      "hash": "3e58dfe9a5c771f02bff4d7f368a190c2aafd4e2772b97adfc8bc7b7a2f163ee",
+      "location": "/voters-guide/oregon-house-3#loran-ayles"
+    },
+    {
+      "id": "janelle-s-bynum",
+      "hash": "6265f7e2a338b36d98ea99c2f9a9fc5d546d8f1468f0b8d74770ef9eb9246245",
+      "location": "/voters-guide/oregon-house-5#janelle-s-bynum"
+    },
+    {
+      "id": "patti-adair",
+      "hash": "7da06b837b191935ad5fa37fa0f7b668b67d741c40ef037363cf89e7a629d67f",
+      "location": "/voters-guide/oregon-house-5#patti-adair"
+    },
+    {
+      "id": "andrea-townsend",
+      "hash": "4ba31865a0f90e96efbe63003b95e1f0870444a5f29ba798e37dc4c2e745d92f",
+      "location": "/voters-guide/oregon-house-5#andrea-townsend"
+    },
+    {
+      "id": "chris-beck",
+      "hash": "b02107af20f23d1bbe1eb726ea5ac06e10d809036dc30abfa64f7851931e4f94",
+      "location": "/voters-guide/oregon-house-2#chris-beck"
+    },
+    {
+      "id": "cliff-bentz",
+      "hash": "ace24167d7dbbbd0bb1981269197e918505fe311ac6699d1da2adb21f4a98bc3",
+      "location": "/voters-guide/oregon-house-2#cliff-bentz"
+    },
+    {
+      "id": "val-hoyle",
+      "hash": "725f6498a74359e2e25515651be447f86b3003aa594e7b1115dcb138e3bb12bf",
+      "location": "/voters-guide/oregon-house-4#val-hoyle"
+    },
+    {
+      "id": "monique-despain",
+      "hash": "e55db9516cc1731f34f2e83da1b8010bacd4b319a0e080008b98cbf1dff9d063",
+      "location": "/voters-guide/oregon-house-4#monique-despain"
+    },
+    {
+      "id": "justin-filip",
+      "hash": "3458a538f37281b1fefa7a1978ac738d22d24f0352c03a4ab97ebea812e3cdae",
+      "location": "/voters-guide/oregon-house-4#justin-filip"
+    },
+    {
+      "id": "andrea-salinas",
+      "hash": "3388c67da70511efa2b2307b5503a78c8de88e315db7b0a4d683b65eacf25990",
+      "location": "/voters-guide/oregon-house-6#andrea-salinas"
+    },
+    {
+      "id": "david-russ",
+      "hash": "d6942fddd70d35e4949ac2c6013bd5d0652493f138acf506f961b94c7f30680a",
+      "location": "/voters-guide/oregon-house-6#david-russ"
+    },
+    {
+      "id": "courtney-neron-misslin",
+      "hash": "4b3ffd8b37799e4808b1dd07f37ba7019913724ad55e574dbadce156f384e5b0",
+      "location": "/voters-guide/oregon-state-senate-13#courtney-neron-misslin"
+    },
+    {
+      "id": "glenn-lancaster",
+      "hash": "72e34e2207c559a9021ace3d99f0a776ca934d697477846d9e770db2f24a5707",
+      "location": "/voters-guide/oregon-state-senate-13#glenn-lancaster"
+    },
+    {
+      "id": "tim-e-nelson",
+      "hash": "5681df1c2c7874ea6b4034a5887eab02272a5124f8933459e25d7145cb6d13d3",
+      "location": "/voters-guide/oregon-state-senate-13#tim-e-nelson"
+    },
+    {
+      "id": "myrna-a-munoz",
+      "hash": "939bbb2008fe62b4893556a85afb1a019799a58e4ef9601b65efe18b31a85b18",
+      "location": "/voters-guide/oregon-state-senate-15#myrna-a-munoz"
+    },
+    {
+      "id": "harold-hutchison",
+      "hash": "dbb8489bec957638a4161d91b8171d61a3598a4162633ee38a821e8281444fb1",
+      "location": "/voters-guide/oregon-state-senate-15#harold-hutchison"
+    },
+    {
+      "id": "courtney-bangs",
+      "hash": "43a43423bbffbc67f82f990534fb549f96e6e012f2b4509dc19906f3b88cb26a",
+      "location": "/voters-guide/oregon-state-senate-16#courtney-bangs"
+    },
+    {
+      "id": "rachel-armitage",
+      "hash": "bac400514bd1b9ca93a4a1e7ee87385268f6d10cbbfdb4ff8c0650a57a0e9145",
+      "location": "/voters-guide/oregon-state-senate-16#rachel-armitage"
+    },
+    {
+      "id": "melisa-finkle",
+      "hash": "4df0ef061d1ce2c0542f18491ac6231ceed5dfa8f7d61fe7f25e1c76e0f9f82d",
+      "location": "/voters-guide/oregon-state-senate-16#melisa-finkle"
+    },
+    {
+      "id": "lisa-reynolds",
+      "hash": "b40d2e5c3b8f15a7472429e5f8e0585f36e34f29e16f9cc94ae2e5f78f5c3b17",
+      "location": "/voters-guide/oregon-state-senate-17#lisa-reynolds"
+    },
+    {
+      "id": "john-a-n-chee",
+      "hash": "babfebda4f1963eab342138434c049aa86a672c9d1eddd9257cc339b0fc67339",
+      "location": "/voters-guide/oregon-state-senate-17#john-a-n-chee"
+    },
+    {
+      "id": "rob-wagner",
+      "hash": "9a0e9402db568e82b80d2bd937540b5f8617e7933651234767280a90ff89a7a7",
+      "location": "/voters-guide/oregon-state-senate-19#rob-wagner"
+    },
+    {
+      "id": "mary-dirksen",
+      "hash": "48cb31a19e8a62a4efbafdb2f87c7e8045f2da43c3cb050ad7ec425726e7af8b",
+      "location": "/voters-guide/oregon-state-senate-19#mary-dirksen"
+    },
+    {
+      "id": "mark-meek",
+      "hash": "3132a48f82e189b74a56af7da89fe42780832dd14d39ac9ebd19dd24e804b4c1",
+      "location": "/voters-guide/oregon-state-senate-20#mark-meek"
+    },
+    {
+      "id": "michele-stroh",
+      "hash": "f50d34db11e2e25221eaa219087a3e245b1271313f1da14df82d43946e15d571",
+      "location": "/voters-guide/oregon-state-senate-20#michele-stroh"
+    },
+    {
+      "id": "kayse-jama",
+      "hash": "eef8e09218d951d10675807ab25a537c07d9f620f3d48875b1896bcbf54148b3",
+      "location": "/voters-guide/oregon-state-senate-24#kayse-jama"
+    },
+    {
+      "id": "nicole-bassett",
+      "hash": "de1f9692bcf6ed28b325ea5385fb9589dbe6ec3fb43f3c54593955cce46cdea0",
+      "location": "/voters-guide/oregon-state-senate-26#nicole-bassett"
+    },
+    {
+      "id": "jeff-helfrich",
+      "hash": "736877fcd57825e9cd69bb05a87d471cd8d9b20fd3c0df7ce7d113b51274a98d",
+      "location": "/voters-guide/oregon-state-senate-26#jeff-helfrich"
+    },
+    {
+      "id": "sue-r-rieke-smith",
+      "hash": "367796f2cee1e434dad637d3c9e0d92545137b643761b8f77de56989a5e17496",
+      "location": "/voters-guide/oregon-state-house-26#sue-r-rieke-smith"
+    },
+    {
+      "id": "stephanie-carkin",
+      "hash": "6b702cd9ef928ba25abd235390c7ff6336457c20f3db5769b3d2b157ceb9cd61",
+      "location": "/voters-guide/oregon-state-house-26#stephanie-carkin"
+    },
+    {
+      "id": "steph-terrio",
+      "hash": "7df73129bf2b081c223c289ba5c4d1992613ba7f151e3250630b55a8e2f6f6f5",
+      "location": "/voters-guide/oregon-state-house-26#steph-terrio"
+    },
+    {
+      "id": "susan-mclain",
+      "hash": "0031ce772b9d3e301eecbb54fb2d2ae8dd12dde41598dcaf9bc0d23daed257b7",
+      "location": "/voters-guide/oregon-state-house-29#susan-mclain"
+    },
+    {
+      "id": "brian-schimmel",
+      "hash": "666eb25e73b2b0721e46aab811e536b42347539986e261c66a62922e7cf36ae3",
+      "location": "/voters-guide/oregon-state-house-29#brian-schimmel"
+    },
+    {
+      "id": "adam-baker",
+      "hash": "dc9cbaa7423e5c8b1740e201045600874ad8848893946d9cdde6423692873264",
+      "location": "/voters-guide/oregon-state-house-40#adam-baker"
+    },
+    {
+      "id": "michael-w-sugar",
+      "hash": "3efc075dbde03438978813b4ee7b9af0c4a826ca9faf8771f0eeb6cc5d5ab2b7",
+      "location": "/voters-guide/oregon-state-house-40#michael-w-sugar"
+    },
+    {
+      "id": "pat-hubbell",
+      "hash": "4e9f6aeb25ebee02db4bef6f15af5a259387a0d3d245c203d99b2ab2622167a0",
+      "location": "/voters-guide/oregon-state-house-40#pat-hubbell"
+    },
+    {
+      "id": "darla-mead",
+      "hash": "2e2c522b4bb2185bef31fea95fe7294e266674fe72cba342236c5c54e871057c",
+      "location": "/voters-guide/oregon-state-house-51#darla-mead"
+    },
+    {
+      "id": "matt-bunch",
+      "hash": "6e5afa59806620ad01cfdf1c631560ec2c5d74bc46d948df64d472c4ada146a7",
+      "location": "/voters-guide/oregon-state-house-51#matt-bunch"
+    },
+    {
+      "id": "hank-sanders",
+      "hash": "c3851dac3b569277e3bd205a6ef77b1fdf0b9bc0dfa307167eaf3dc03e67e0a9",
+      "location": "/voters-guide/oregon-state-house-52#hank-sanders"
+    },
+    {
+      "id": "scott-c-hege",
+      "hash": "3fca81ca1988e1a09ee62d542d9325aa4f42a961d40f2550c31bca34ccdd7bef",
+      "location": "/voters-guide/oregon-state-house-52#scott-c-hege"
+    },
+    {
+      "id": "nafisa-fai",
+      "hash": "1093654d4bafe07780b35103bf9ab9a0600a224f32af186e7286c13aecc0b89f",
+      "location": "/voters-guide/washington-chair#nafisa-fai"
+    },
+    {
+      "id": "pam-treece",
+      "hash": "bfb2cd69c06bf09645be71ad3cdd9e99a6d25b06d8702ce77f27d43fe226f347",
+      "location": "/voters-guide/washington-chair#pam-treece"
+    },
+    {
+      "id": "steve-callaway",
+      "hash": "00de8b514f2963938f384a9f2f27f2e33a0c64980397fd7f01ebaffaad021af3",
+      "location": "/voters-guide/washington-district-4#steve-callaway"
+    },
+    {
+      "id": "kipperlyn-sinclair",
+      "hash": "96d803c6410ac7b74aa2fb270a7851e4fef76aa3179f34dedd183bba835e4cdd",
+      "location": "/voters-guide/washington-district-4#kipperlyn-sinclair"
+    },
+    {
+      "id": "paul-savas",
+      "hash": "9e286501719f7d82bbf34dd942662a42356167cc63b3dadd6777b432da2d3883",
+      "location": "/voters-guide/clackamas-position-2#paul-savas"
+    },
+    {
+      "id": "mark-shull",
+      "hash": "bf09d94814e3ddb77e4c6ca29edfc356bf4b141b00591e17227abfc2d2bedae5",
+      "location": "/voters-guide/clackamas-position-2#mark-shull"
+    },
+    {
+      "id": "diana-helm",
+      "hash": "a586afcf0e4fc01014dd6dedec3ca8beedf0136ede7d6f35914af16bfaff1aa7",
+      "location": "/voters-guide/clackamas-position-4#diana-helm"
+    },
+    {
+      "id": "r-w-smith",
+      "hash": "edd5d7feb82733692b6fba7c7855d8cdc891b4e999a436c56147b0a5579799a8",
+      "location": "/voters-guide/clackamas-position-4#r-w-smith"
+    },
+    {
+      "id": "brad-o-neil",
+      "hash": "803eec0f1803d9024b3da9fba5e87a1fa6c12e62fc150a22af139bf68e6caa76",
+      "location": "/voters-guide/clackamas-sheriff#brad-o-neil"
+    },
+    {
+      "id": "james-rhodes",
+      "hash": "d5123c0b1e92c8561b6c41de1981dfb5b7382f16fe7cb70f386034697dc0cb8c",
+      "location": "/voters-guide/clackamas-sheriff#james-rhodes"
+    },
+    {
+      "id": "catherine-mcmullen",
+      "hash": "648b551e74b9dc3bd0a1941222605e0a24acd03dfffcc134d2d1384b1dab1a36",
+      "location": "/voters-guide/clackamas-clerk#catherine-mcmullen"
+    },
+    {
+      "id": "mark-reaksecker",
+      "hash": "2794e0f0787fc5dc77e5dbc55684175a738e048a31c8b60e17ae0d6ca45519f3",
+      "location": "/voters-guide/clackamas-clerk#mark-reaksecker"
+    },
+    {
+      "id": "brian-t-nava",
+      "hash": "8d70c38dab37ff7886cfa113f8e73228fb31e6cf5913361348dd0e291724f647",
+      "location": "/voters-guide/clackamas-treasurer#brian-t-nava"
+    },
+    {
+      "id": "travis-stovall",
+      "hash": "9149af01f338df17139d90c2e5f638cb97eed0c9b1578874073efb68ee8b2618",
+      "location": "/voters-guide/gresham-mayor#travis-stovall"
+    },
+    {
+      "id": "sue-piazza",
+      "hash": "693b2f262144214eba5c76c2c404a775ea71b6d77f265e353b310885d09f87ab",
+      "location": "/voters-guide/gresham-mayor#sue-piazza"
+    },
+    {
+      "id": "heather-coleman-cox",
+      "hash": "8c42b6cd72cbe039ec3689bad432bc1ec623c9e0b8125ffa77223cecaf8b9ebc",
+      "location": "/voters-guide/gresham-position-2#heather-coleman-cox"
+    },
+    {
+      "id": "will-delplato",
+      "hash": "4009fb19976ee5200144c81bbf828d4b88abfccd4be68034ee249740368d7802",
+      "location": "/voters-guide/gresham-position-2#will-delplato"
+    },
+    {
+      "id": "gregory-schroeder",
+      "hash": "18a7e970d4f97e2a360a0691ed2530f49f810b86d5e18c6eba782594755c69d6",
+      "location": "/voters-guide/gresham-position-4#gregory-schroeder"
+    },
+    {
+      "id": "krestina-aziz",
+      "hash": "4e89fcbe3c6356b6c855806fe03baaffcb137b0e9c628a2d511b97275e265a91",
+      "location": "/voters-guide/gresham-position-4#krestina-aziz"
+    },
+    {
+      "id": "joshua-al-jaouni",
+      "hash": "1f7ab9cb90c82c8d4d775c2b33d189278b11f765db23436075c37c3012cdd38a",
+      "location": "/voters-guide/gresham-position-4#joshua-al-jaouni"
+    },
+    {
+      "id": "teo-ramirez",
+      "hash": "247b256c2d676cf1ae2ffbca47574748328fdc13424468225159ece698e40203",
+      "location": "/voters-guide/gresham-position-4#teo-ramirez"
+    },
+    {
+      "id": "janine-gladfelter",
+      "hash": "68913a8721c28366c61c3da91101f9e89e9aa9b0c618de776457121dd40900ef",
+      "location": "/voters-guide/gresham-position-6#janine-gladfelter"
+    },
+    {
+      "id": "daniel-miller",
+      "hash": "ff34b6c3edd89c06dc990d5e2409503f12d5309fdb63e5d8443bfae6e4f08c46",
+      "location": "/voters-guide/gresham-position-6#daniel-miller"
+    },
+    {
+      "id": "evelyn-kocher",
+      "hash": "60b620cccba0e031e6a8ad1a7e5340ec1c35a96bf68ebf6fe2e1862a5b9c4e86",
+      "location": "/voters-guide/beaverton-position-1#evelyn-kocher"
+    },
+    {
+      "id": "rachel-philip",
+      "hash": "56061edc0bda731854e6a7eae00aad63e07de702bc565860021b853e9370c3e9",
+      "location": "/voters-guide/beaverton-position-1#rachel-philip"
+    },
+    {
+      "id": "cristian-salgado",
+      "hash": "e9050bd5e570cd3f8b1b4842cf132b9edf24f26b22d4be4107bf8574528e9950",
+      "location": "/voters-guide/hillsboro-ward-1#cristian-salgado"
+    },
+    {
+      "id": "luis-garcia",
+      "hash": "e5da6109b51ed05bfabb5223a1dfc3c78a75d7b47eaeec243bb58b5d14c6b95e",
+      "location": "/voters-guide/hillsboro-ward-1#luis-garcia"
+    },
+    {
+      "id": "sarah-marugg",
+      "hash": "151b26c0856a39be79f16a2bae47d8c6ff389d7df9f77c5773d7f86172c7cc8c",
+      "location": "/voters-guide/hillsboro-ward-1#sarah-marugg"
+    },
+    {
+      "id": "diana-jackson",
+      "hash": "6277da9187821561634073c734ea0aed3168c0e1ee50830b83bd6f142fa4b805",
+      "location": "/voters-guide/hillsboro-ward-1#diana-jackson"
+    },
+    {
+      "id": "ivette-pantoja",
+      "hash": "cbeca3cf1cf6dd11446e0bded0e08fbc80639ba27a1d43df1bda4a5194040e22",
+      "location": "/voters-guide/hillsboro-ward-2#ivette-pantoja"
+    },
+    {
+      "id": "karim-delgado",
+      "hash": "89f7f369c9996e834c0cb7cb6d17f9e3e09743d4c976950dde8b1b967721bb03",
+      "location": "/voters-guide/hillsboro-ward-2#karim-delgado"
+    },
+    {
+      "id": "titonian-wallace-sr",
+      "hash": "07047e732625308a4053cba2e6ca10112e301bd72aca85fda8e1d43ffb32cff9",
+      "location": "/voters-guide/hillsboro-ward-3#titonian-wallace-sr"
+    },
+    {
+      "id": "dorian-russell",
+      "hash": "5b944aab0d06ecbf3b0cae1daa4b57344bb401dc5fbcd91cb22deb1c953ef6d5",
+      "location": "/voters-guide/hillsboro-ward-3#dorian-russell"
+    },
+    {
+      "id": "kimberly-culbertson",
+      "hash": "a6c8f4242557c0c886abeb1bcb5866ac827ff71a2229348b4ecebffc0580b348",
+      "location": "/voters-guide/hillsboro-ward-3#kimberly-culbertson"
+    },
+    {
+      "id": "yi-kang-hu",
+      "hash": "c301d86bd11a850ed52d36086e73a31bd0574484890c6bf2799acbeda9a12c0e",
+      "location": "/voters-guide/tigard-mayor#yi-kang-hu"
+    },
+    {
+      "id": "bill-monahan",
+      "hash": "6cfb38d75227849d841423eae36f56a63327c4b076533e7199d343ac5633dc24",
+      "location": "/voters-guide/tigard-mayor#bill-monahan"
+    },
+    {
+      "id": "john-goodhouse",
+      "hash": "e10569af93f91cac6dcb773995fdc56027e3f386392bf6cd80ad13bc0724dc8d",
+      "location": "/voters-guide/tigard-council#john-goodhouse"
+    },
+    {
+      "id": "sue-garino",
+      "hash": "2f50fb22d013ac336a6f1956c4d1511c2c70c6c743f08660b4e3b9328591c69f",
+      "location": "/voters-guide/tigard-council#sue-garino"
+    },
+    {
+      "id": "gabriel-elijio-velasquez",
+      "hash": "b1ada2c697e000581b36bfa2b5a9dbec08fa78eea78677ab3622bc280811806f",
+      "location": "/voters-guide/tigard-council#gabriel-elijio-velasquez"
+    },
+    {
+      "id": "jeff-darland",
+      "hash": "5e26036885a08ba5ae26910817cd19ab3a8ab2d6be84c0d2debbcbdf608944ec",
+      "location": "/voters-guide/tigard-council#jeff-darland"
+    },
+    {
+      "id": "tom-anderson",
+      "hash": "25a5144f24738f68c125cae7eaed36533fda41c1b97ed5cdb64d5d719315036c",
+      "location": "/voters-guide/tigard-council#tom-anderson"
+    },
+    {
+      "id": "yousef-k-allouzi",
+      "hash": "21e40440be3efeea5e2efc94e09e41956ca2342138240e707f06ff5cd4909a07",
+      "location": "/voters-guide/tigard-council#yousef-k-allouzi"
+    },
+    {
+      "id": "kate-ristau",
+      "hash": "8360152659ef948c2c4f9f9ba4ae880a68076a6e3caa5ae5f84a98be2f33aae8",
+      "location": "/voters-guide/tigard-council#kate-ristau"
+    },
+    {
+      "id": "shawne-martinez",
+      "hash": "12b1229a896eb626710787c28a29b1c76657263554a77f615267cd67b25c799d",
+      "location": "/voters-guide/tigard-council#shawne-martinez"
+    },
+    {
+      "id": "bryan-guiney",
+      "hash": "6e2e679415913dcb728fe5acff7f9404131e680278486e0a888eb9f2bf71607a",
+      "location": "/voters-guide/lake-oswego-council#bryan-guiney"
+    },
+    {
+      "id": "suzanne-miles",
+      "hash": "6f86446639fecdedd6ea2c0016119660693423c27345e07fa294479e6f51f2d2",
+      "location": "/voters-guide/lake-oswego-council#suzanne-miles"
+    },
+    {
+      "id": "peren-tiemann",
+      "hash": "b8d747bda15b588aadf912b78eac2739311ff62b831d5127a0ccba62de9b1cd6",
+      "location": "/voters-guide/lake-oswego-council#peren-tiemann"
+    },
+    {
+      "id": "neil-tunmore",
+      "hash": "153f9b4b239da8c4d00ced3f82764c3bf264384433247f4f869f34fdade710af",
+      "location": "/voters-guide/lake-oswego-council#neil-tunmore"
+    },
+    {
+      "id": "heather-ramsey",
+      "hash": "b0ee8ce6709627b05d707784691ed8e3835ba152e3df86f580636eac740b0ab2",
+      "location": "/voters-guide/lake-oswego-council#heather-ramsey"
+    },
+    {
+      "id": "patrick-walsh",
+      "hash": "9dade518ed164ed096c624d829da759ce127e1ba557b5c1b96fe959684e1c886",
+      "location": "/voters-guide/lake-oswego-council#patrick-walsh"
+    },
+    {
+      "id": "damon-mabee",
+      "hash": "c417d2992e276dbbd82a50ff74ce6024bb9721ba69ee19332153618d87f87b81",
+      "location": "/voters-guide/oregon-city-mayor#damon-mabee"
+    },
+    {
+      "id": "adam-marl",
+      "hash": "7c6918a1c39f7b59f06b47e1ba4c182959d48a7bc4cfaffe693a5db2fd1ec330",
+      "location": "/voters-guide/oregon-city-mayor#adam-marl"
+    },
+    {
+      "id": "rodney-la-barr",
+      "hash": "0c186d988dc59d30cb2ee0191c40d11fb0e5a429209134d4d18a64e3063a13d2",
+      "location": "/voters-guide/oregon-city-mayor#rodney-la-barr"
+    },
+    {
+      "id": "betty-mumm",
+      "hash": "dba54b07041356b44d44f823e8976b741b27b192f23acf472623efcf54ae55f6",
+      "location": "/voters-guide/oregon-city-commission#betty-mumm"
+    },
+    {
+      "id": "james-nicita",
+      "hash": "8a6f9eadddaee26c60bf438b1abe7d0c2e0aa6cc5858f070f4e56a0825355ed2",
+      "location": "/voters-guide/oregon-city-commission#james-nicita"
+    },
+    {
+      "id": "paul-espe",
+      "hash": "ba496a7f5e1247363ba144c8347f611d48bcec0044c8f26b09128a575da573f5",
+      "location": "/voters-guide/oregon-city-commission#paul-espe"
+    },
+    {
+      "id": "gordon-j-lawrence",
+      "hash": "ed6de29c69c24d5efa7aa5badc7b2c99672ac5cc74d0b9aa274933cb8ccc6387",
+      "location": "/voters-guide/oregon-city-commission#gordon-j-lawrence"
     }
   ],
   "decisions": [
@@ -609,5 +1209,5 @@
     }
   ],
   "accountsHash": "4d38372c94ca98adaccabe1775e7e3306024df43ff3218c9d1c4d13f28b62fca",
-  "note": "2026-09-19: keir-legree re-recorded after his emailed response added sourced positions (research log, legree-2026-09-19). 2026-09-19: timothy-tj-anderson re-recorded after his emailed response added sourced positions (research log, anderson-2026-09-19). 2026-09-19: cristal-otero re-recorded after her emailed response detailed her housing position (research log, otero-2026-09-19). 2026-09-20: eli-arnold re-recorded after his emailed response added the reply and the reporting he cited to his sources (research log, arnold-2026-09-20). 2026-09-21: steve-novick and the decision accounts re-recorded after his emailed response gave his July budget reasoning and cited public sources (research log, novick-2026-09-21)."
+  "note": "2026-09-19: keir-legree re-recorded after his emailed response added sourced positions (research log, legree-2026-09-19). 2026-09-19: timothy-tj-anderson re-recorded after his emailed response added sourced positions (research log, anderson-2026-09-19). 2026-09-19: cristal-otero re-recorded after her emailed response detailed her housing position (research log, otero-2026-09-19). 2026-09-20: eli-arnold re-recorded after his emailed response added the reply and the reporting he cited to his sources (research log, arnold-2026-09-20). 2026-09-21: steve-novick and the decision accounts re-recorded after his emailed response gave his July budget reasoning and cited public sources (research log, novick-2026-09-21). 2026-09-22: recorded the 120 candidates in the 46 races published in the Council format (research log, all-races-2026-09-22); the 33 council hashes are unchanged."
 }
