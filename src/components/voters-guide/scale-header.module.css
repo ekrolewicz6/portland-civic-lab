@@ -1,0 +1,115 @@
+/* A rung of the ladder: tier-colored hairline, the budget bar, three facts. */
+.rung {
+  --tier: var(--color-storm);
+  --tier-tint: color-mix(in oklab, var(--tier) 10%, var(--color-paper));
+  display: grid;
+  gap: 10px;
+  padding: 16px 0 18px;
+  border-top: 3px solid var(--tier);
+  scroll-margin-top: 96px;
+}
+.rung[data-tier="federal"] {
+  --tier: var(--color-violet-mist);
+}
+.rung[data-tier="state"] {
+  --tier: var(--color-river-deep);
+}
+.rung[data-tier="county"] {
+  --tier: #9a6a35;
+}
+.rung[data-tier="city"] {
+  --tier: var(--color-fern);
+}
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+}
+.body {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+}
+.count {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+.bar {
+  position: relative;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--tier-tint);
+  overflow: hidden;
+}
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--tier);
+}
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 28px;
+  margin: 0;
+}
+.facts > div {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+.facts dt {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+.facts dd {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-ink);
+  font-variant-numeric: tabular-nums;
+}
+.src {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-ink-muted);
+  text-decoration: none;
+}
+.src:hover {
+  color: var(--tier);
+}
+.decides {
+  margin: 0;
+  max-width: 72ch;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--color-ink-light);
+}
+.decidesLabel {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tier);
+  margin-right: 6px;
+}
+@media (max-width: 480px) {
+  .body {
+    font-size: 21px;
+  }
+  .facts {
+    gap: 8px 20px;
+  }
+}

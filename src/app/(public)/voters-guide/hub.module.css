@@ -142,12 +142,35 @@
 .heroQuiet:focus-visible {
   outline-color: var(--color-paper);
 }
+.ladderNote {
+  margin: 8px 0 0;
+  max-width: 60ch;
+  font-size: 14px;
+  color: var(--color-ink-muted);
+}
+.tier {
+  display: grid;
+  gap: 20px;
+  margin-top: 40px;
+}
+.tierHead {
+  display: grid;
+  gap: 4px;
+}
+.tierTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-canopy);
+}
 .bodyBlock {
   display: grid;
-  gap: 12px;
+  gap: 16px;
 }
 .bodyBlock + .bodyBlock {
-  margin-top: 28px;
+  margin-top: 12px;
 }
 .bodyTitle {
   margin: 0;

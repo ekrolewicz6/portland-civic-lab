@@ -11,7 +11,9 @@ import {
   shortRaceTitle,
   type RaceSheet,
 } from "@/lib/voters-guide/race-sheet";
-import { GROUP_ORDER, groupLabel, indexLabel, onPortlandBallot, type OfficeGroup } from "@/lib/voters-guide/race-sheet/office";
+import { indexLabel, onPortlandBallot } from "@/lib/voters-guide/race-sheet/office";
+import { scaleFor, type ScaleTier } from "@/lib/voters-guide/race-sheet/scale";
+import ScaleHeader from "@/components/voters-guide/ScaleHeader";
 import DistrictMap, { DistrictMapSource } from "@/components/voters-guide/DistrictMap";
 import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import HeroMap from "@/components/voters-guide/HeroMap";
@@ -35,16 +37,6 @@ function mosaicColumns(count: number) {
 
 
 const RANKED_CHOICE_GUIDE = "https://multco.us/info/ranked-choice-voting-rcv";
-
-/** One line above each group of races, saying whose ballot it is on. */
-const GROUP_EYEBROW: Record<OfficeGroup, string> = {
-  council: "On the Portland ballot",
-  county: "Multnomah is on the Portland ballot · Washington and Clackamas for their residents",
-  state: "On every Oregon ballot",
-  federal: "By congressional district · Portland is in Districts 1, 3 and 5",
-  legislature: "By legislative district · metro area",
-  city: "By city · Portland's auditor, then the metro area's cities",
-};
 
 function DistrictCard({ sheet }: { sheet: RaceSheet }) {
   const { race, office } = sheet;
@@ -82,14 +74,41 @@ export default function VotersGuidePage() {
   const sheets = races.map(buildRaceSheet);
   const councilSheets = sheets.filter((s) => s.office.group === "council");
   const raceNumber = (s: RaceSheet) => Number(s.race.id.match(/(\d+)$/)?.[1] ?? 0);
-  const groups = GROUP_ORDER.filter((g) => g !== "council")
-    .map((g) => {
-      const gs = sheets.filter((s) => s.office.group === g).sort((a, b) => (g === "federal" || g === "legislature" ? raceNumber(a) - raceNumber(b) : 0));
-      // Within a group, one sub-heading per body when there is more than one (three counties, six cities).
-      const bodies = [...new Set(gs.map((s) => s.office.body))];
-      return { group: g, bodies: bodies.map((body) => ({ body, sheets: gs.filter((s) => s.office.body === body) })) };
-    })
-    .filter((g) => g.bodies.length);
+  /* The ladder of government, biggest budget first, the reader's city last.
+     Each rung is one body; the Portland Council races and the City Auditor share the City of Portland rung. */
+  const bodyOf = (s: RaceSheet) => (s.office.body === "Portland City Council" ? "City of Portland" : s.office.body);
+  const tierOf = (s: RaceSheet): ScaleTier => (s.office.group === "federal" ? "federal" : s.office.group === "state" || s.office.group === "legislature" ? "state" : s.office.group === "county" ? "county" : "city");
+  const TIERS: { tier: ScaleTier; title: string; eyebrow: string }[] = [
+    { tier: "federal", title: "Washington, D.C.", eyebrow: "The biggest budget on your ballot" },
+    { tier: "state", title: "Salem", eyebrow: "Oregon’s laws, taxes and agencies" },
+    { tier: "county", title: "The counties", eyebrow: "Homeless services, health, jails, elections" },
+    { tier: "city", title: "The cities", eyebrow: "Closest to you: police, streets, water, permits" },
+  ];
+  /* Within a body: the executive seat, then district or position seats, then the other offices. */
+  const seatRank = (s: RaceSheet) => {
+    const m = s.office.mark;
+    if (s.office.group === "council") return 0;
+    if (m === "GOV" || m === "MAYOR" || m === "CHAIR" || m === "SEN") return 0;
+    if (/^(D|P|W|OR-|SD |HD )/.test(m)) return m.startsWith("HD") ? 2 : 1;
+    if (m === "CNCL") return 3;
+    return { SHF: 4, AUD: 5, CLK: 6, TRS: 7 }[m] ?? 8;
+  };
+  const BODY_ORDER = ["U.S. Congress", "State of Oregon", "Oregon Legislature", "Multnomah County", "Washington County", "Clackamas County", "City of Portland"];
+  const bodyRank = (b: string) => { const i = BODY_ORDER.indexOf(b); return i === -1 ? 99 : i; };
+  const ladder = TIERS.map(({ tier, title, eyebrow }) => {
+    const inTier = sheets.filter((s) => tierOf(s) === tier);
+    const bodies = [...new Set(inTier.map(bodyOf))].sort((a, b) => bodyRank(a) - bodyRank(b) || a.localeCompare(b));
+    return {
+      tier,
+      title,
+      eyebrow,
+      bodies: bodies.map((body) => ({
+        body,
+        scale: scaleFor(body),
+        sheets: inTier.filter((s) => bodyOf(s) === body).sort((a, b) => seatRank(a) - seatRank(b) || raceNumber(a) - raceNumber(b)),
+      })),
+    };
+  }).filter((t) => t.bodies.length);
 
   const ballotIndex = [
     { label: "City of Portland", races: sheets.filter((s) => onPortlandBallot(s.race) && (s.office.group === "council" || s.office.group === "city")) },
@@ -152,11 +171,9 @@ export default function VotersGuidePage() {
                   </div>
                 ))}
               </dl>
-              {groups.length > 0 && (
-                <a href={`#group-${groups[0].group}`} className={styles.ballotIndexMore}>
-                  All {sheets.length} races we cover, including the rest of the metro area ↓
-                </a>
-              )}
+              <a href="#ladder-title" className={styles.ballotIndexMore}>
+                All {sheets.length} races we cover, by level of government ↓
+              </a>
             </nav>
             <dl className={styles.heroFacts}>
               <div>
@@ -205,57 +222,56 @@ export default function VotersGuidePage() {
         </Link>
       </p>
 
-      <section className={styles.districts} aria-labelledby="districts-title">
+      <section className={styles.districts} aria-labelledby="ladder-title">
         <div className={styles.sectionHead}>
-          <p className={styles.eyebrow}>On the Portland ballot</p>
-          <h2 id="districts-title" className={styles.sectionTitle}>
-            A city council. <em>A city’s direction.</em>
+          <p className={styles.eyebrow}>Every race we cover, by the size of the seat</p>
+          <h2 id="ladder-title" className={styles.sectionTitle}>
+            Four levels of government. <em>One ballot.</em>
           </h2>
+          <p className={styles.ladderNote}>
+            Each bar is the body’s adopted budget on a log scale, with its source. Colors mark levels of government, never sides.
+          </p>
         </div>
-        <ul className={styles.cards}>
-          {councilSheets.map((sheet) => (
-            <DistrictCard key={sheet.race.id} sheet={sheet} />
-          ))}
-        </ul>
-        <div className={styles.mapBlock} id="find-district">
-          <div className={styles.mapCol}>
-            <DistrictMap
-              published={councilSheets.map((s) => s.office.district as 1 | 2 | 3 | 4)}
-              hrefFor={(d) => `/voters-guide/portland-district-${d}`}
-              labels={{ 3: "Inner SE", 4: "West side" }}
-            />
-            <DistrictMapSource />
+
+        {ladder.map(({ tier, title, eyebrow, bodies }) => (
+          <div key={tier} className={styles.tier} id={`tier-${tier}`} data-tier={tier}>
+            <div className={styles.tierHead}>
+              <p className={styles.eyebrow}>{eyebrow}</p>
+              <h3 className={styles.tierTitle}>{title}</h3>
+            </div>
+            {bodies.map(({ body, scale, sheets: bs }) => (
+              <div key={body} className={styles.bodyBlock} id={`body-${body.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                <ScaleHeader body={body} tier={tier} scale={scale} races={bs.length} candidates={bs.reduce((n, x) => n + x.rows.length, 0)} />
+                <ul className={`${styles.cards} ${body === "City of Portland" ? "" : styles.cardsMany}`}>
+                  {bs.map((sheet) => (
+                    <DistrictCard key={sheet.race.id} sheet={sheet} />
+                  ))}
+                </ul>
+                {body === "City of Portland" && (
+                  <div className={styles.mapBlock} id="find-district">
+                    <div className={styles.mapCol}>
+                      <DistrictMap
+                        published={councilSheets.map((s) => s.office.district as 1 | 2 | 3 | 4)}
+                        hrefFor={(d) => `/voters-guide/portland-district-${d}`}
+                        labels={{ 3: "Inner SE", 4: "West side" }}
+                      />
+                      <DistrictMapSource />
+                    </div>
+                    <div className={styles.mapText}>
+                      <h4 className={styles.mapTitle}>Which Council district am I in?</h4>
+                      <p>Tap your part of the map. Districts 1 and 2 are not yet covered.</p>
+                      <a href={officialSources.myVote} rel="noopener noreferrer">
+                        Not sure? Look up your district <span aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
-          <div className={styles.mapText}>
-            <h3 className={styles.mapTitle}>Which district am I in?</h3>
-            <p>Tap your part of the map. Districts 1 and 2 are not yet covered.</p>
-            <a href={officialSources.myVote} rel="noopener noreferrer">
-              Not sure? Look up your district <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </div>
+        ))}
       </section>
 
-      {groups.map(({ group, bodies }) => (
-        <section key={group} className={styles.districts} aria-labelledby={`group-${group}`}>
-          <div className={styles.sectionHead}>
-            <p className={styles.eyebrow}>{GROUP_EYEBROW[group]}</p>
-            <h2 id={`group-${group}`} className={styles.sectionTitle}>
-              {groupLabel(group)}
-            </h2>
-          </div>
-          {bodies.map(({ body, sheets: bs }) => (
-            <div key={body} className={styles.bodyBlock}>
-              {bodies.length > 1 && <h3 className={styles.bodyTitle}>{body}</h3>}
-              <ul className={`${styles.cards} ${styles.cardsMany}`}>
-                {bs.map((sheet) => (
-                  <DistrictCard key={sheet.race.id} sheet={sheet} />
-                ))}
-              </ul>
-            </div>
-          ))}
-        </section>
-      ))}
 
       <section className={styles.voting} aria-labelledby="voting-title">
         <div className={styles.votingIntro}>
