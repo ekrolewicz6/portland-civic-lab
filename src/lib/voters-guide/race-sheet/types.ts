@@ -130,11 +130,16 @@ export type ExtraTopic = {
   decisionId?: string;
 };
 
-/** A candidate's explicit, sourced stance on an extra topic. Never inferred. */
+/**
+ * A candidate's explicit, sourced stance on an extra topic. Never inferred.
+ * "partial" records a statement that speaks to the topic but not to the exact
+ * choice the topic asks (e.g. wants the arena modernized; public money unsaid),
+ * so the reader sees what exists and what it leaves unanswered.
+ */
 export type TopicStance = Review & {
   candidateId: string;
   topicId: string;
-  stance: "supports" | "opposes" | "mixed";
+  stance: "supports" | "opposes" | "mixed" | "partial";
   /** ≤4 words for the cell. */
   chip: string;
   /** The sentence behind the chip, our paraphrase. */

@@ -4,7 +4,8 @@ import { councilDecisions, type CouncilDecision } from "../council-decisions";
 import { councilDisagreements, decisionAccounts, type DecisionAccount } from "../council-record-accounts";
 import { councilReaderCopy } from "../council-reader-copy";
 import { questions } from "../discovery";
-import { ISSUE_IDS, issues, type IssueId } from "./issues";
+import { ISSUE_IDS, issues, type Issue, type IssueId } from "./issues";
+import { issuesFor } from "./issue-framing";
 import { featuredVotes } from "./featured";
 import { sourceChip, type SourceChip } from "./source-chip";
 import { issueLines } from "./content/lines";
@@ -45,7 +46,7 @@ export type Ladder = { how: Rung; measure: Rung; askedOn: string | null; review:
 /** A cell in an extra-topic column: a recorded vote, an explicit stance, or a gap. */
 export type TopicCell = {
   vote: VoteWord | null;
-  stance: "supports" | "opposes" | "mixed" | null;
+  stance: "supports" | "opposes" | "mixed" | "partial" | null;
   chip: string | null;
   text: string | null;
   source: SourceChip | null;
@@ -307,6 +308,8 @@ export type ClientSheet = {
   district: string;
   candidateIds: string[];
   rows: SheetRow[];
+  /** The four issues as this office frames them (labels, questions); ids are shared by every race. */
+  issues: Issue[];
   coverage: Record<IssueId, number>;
   topics: ExtraTopic[];
   topicCoverage: Record<string, number>;
@@ -324,6 +327,7 @@ export function clientSheet(sheet: RaceSheet): ClientSheet {
     district: shortRaceTitle(sheet.race),
     candidateIds: sheet.rows.map((r) => r.id),
     rows: sheet.rows,
+    issues: issuesFor(sheet.office.group),
     coverage: sheet.coverage,
     topics: topicsFor(sheet.race),
     topicCoverage: Object.fromEntries(
@@ -375,4 +379,5 @@ export function buildRaceSheet(race: Race): RaceSheet {
 }
 
 export { issues, ISSUE_IDS };
+export { issuesFor } from "./issue-framing";
 export type { IssueId };

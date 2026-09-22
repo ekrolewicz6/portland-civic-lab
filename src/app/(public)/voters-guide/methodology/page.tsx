@@ -289,13 +289,18 @@ export default function Methodology() {
         </p>
         <h2 id="stakes">What’s at stake, and the size of each seat</h2>
         <p>
-          Each race page ends with “What’s at stake”: the office’s biggest
+          Each race page carries “What’s at stake”: the office’s biggest
           current problems and pending decisions as facts with a number or a
           date and an official or reported source, the same block for every
-          candidate. For the governor and Multnomah County seats, the Topics
-          control adds the office’s own live choices as columns; a cell is
-          filled only by an explicit statement or, for a sitting official, a
-          recorded action cited to the record, and is labeled which. On the
+          candidate. Beneath it, each of the office’s own live choices is a
+          board: the question, then every candidate A–Z with a recorded vote,
+          an explicit statement or the gap. A board row is filled only by an
+          explicit statement or, for a sitting official, a recorded action
+          cited to the record, and is labeled which; a statement that speaks
+          to the topic but not the exact choice is shown and labeled as such.
+          The four columns of the grid keep the same four issues for every
+          race, worded for the office (the county’s “Crisis care, jail and
+          deflection” is the Council’s “Camps, crime and who responds”). On the
           hub, each body’s bar is its most recent adopted budget on a
           logarithmic scale, with the population it serves and who decides,
           each figure linked to the budget document or the Portland State
@@ -334,15 +339,18 @@ export default function Methodology() {
           beside it. We never fill a rung for a candidate.
         </p>
         <p>
-          Readers can add up to two more columns from a fixed list of concrete
-          choices (the Moda Center terms, new taxes or fees, police staffing,
-          camp removals, data centers, Portland Street Response, the street
-          repair fee, water rates). The list and its order are editorial and
-          the same for every race. Where a topic matches a recorded Council
-          decision, sitting councilors’ votes appear as pills. Every other cell
-          is either an explicit, sourced statement about that exact choice or a
-          gap; we never infer a stance from party, silence or a broad goal, and
-          each column header counts how many candidates are on record.
+          Beneath the grid, each concrete choice the Council has faced (the
+          Moda Center terms, new taxes or fees, police staffing, camp removals,
+          data centers, Portland Street Response, the street repair fee, water
+          rates) is a board of its own: the question, then every candidate
+          A–Z. The list and its order are editorial and the same for every
+          race. Where a topic matches a recorded Council decision, sitting
+          councilors’ votes appear as pills. Every other row is either an
+          explicit, sourced statement about that exact choice, a statement
+          that speaks to the topic but leaves the exact choice unsaid (shown
+          and labeled as partial), or a gap; we never infer a stance from
+          party, silence or a broad goal, and each board says how many
+          candidates are on record and, in a small field, who is not.
         </p>
         <p>
           Chips and short lines are written by us, shortened from the full

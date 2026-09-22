@@ -1,6 +1,8 @@
 import { test, expect, type Page } from "@playwright/test";
 import { races } from "../src/lib/voters-guide/published";
 import { buildRaceSheet, issues, type IssueId } from "../src/lib/voters-guide/race-sheet";
+import { issuesFor, coverageSentence as coverageFor } from "../src/lib/voters-guide/race-sheet/issue-framing";
+import { officeOf } from "../src/lib/voters-guide/race-sheet/office";
 import { councilDecisions } from "../src/lib/voters-guide/council-decisions";
 import { extraTopics } from "../src/lib/voters-guide/race-sheet/topics";
 
@@ -12,11 +14,12 @@ import { extraTopics } from "../src/lib/voters-guide/race-sheet/topics";
  */
 
 const sheets = races.map(buildRaceSheet);
-const nouns: Record<IssueId, string> = { housing: "housing", safety: "safety", money: "taxes and bills", climate: "streets and climate" };
-const coverageSentence = (issue: IssueId, count: number, total: number) =>
-  `${count} of ${total} have a ${nouns[issue]} position in the sources we reviewed.`;
-const gapName = (name: string, issue: IssueId) =>
-  `${name} on ${issues.find((i) => i.id === issue)!.label.toLowerCase()}: not found in the sources we reviewed`;
+/** The four issues as the race's office frames them: the words on the page, the same ids everywhere. */
+const framedFor = (raceId: string) => issuesFor(officeOf(races.find((r) => r.id === raceId)!).group);
+const coverageSentence = (raceId: string, issue: IssueId, count: number, total: number) =>
+  coverageFor(framedFor(raceId).find((i) => i.id === issue)!, count, total);
+const gapName = (raceId: string, name: string, issue: IssueId) =>
+  `${name} on ${framedFor(raceId).find((i) => i.id === issue)!.label.toLowerCase()}: not found in the sources we reviewed`;
 const words = (text: string) => text.trim().split(/\s+/).filter(Boolean).length;
 
 const rail = (page: Page) => page.locator("[data-race-sheet-rail]").getByRole("group", { name: "Show each candidate's line on" });
@@ -49,6 +52,7 @@ test("every authored chip sits over a documented position and is at most four wo
 for (const sheet of sheets) {
   const { race } = sheet;
   const total = sheet.rows.length;
+  const framed = issuesFor(sheet.office.group);
 
   test(`${race.id}: every candidate on the checked roster, alphabetical, one row each, with Save and no numeral`, async ({ page }) => {
     await page.goto(`/voters-guide/${race.id}`);
@@ -114,7 +118,7 @@ for (const sheet of sheets) {
         if (authored) expect(c.text, where).toBe(authored);
         else expect((r.cells[issue].line ?? r.cells[issue].position)!.startsWith(c.text.replace(/…$/, "")), `${where}: fallback "${c.text}"`).toBe(true);
       } else {
-        expect(c.label, where).toBe(gapName(r.name, issue));
+        expect(c.label, where).toBe(gapName(race.id, r.name, issue));
         expect(c.text, where).toContain("—");
         gapMarkup.add(c.inner);
       }
@@ -170,18 +174,18 @@ for (const sheet of sheets) {
     await expect(status).toHaveText(`${total} candidates, A–Z. Tap any position to read the sentence, how they would deliver it, and the source.`);
     const chips = rail(page).locator("button[aria-pressed]");
     await expect(chips.first()).toHaveText("All");
-    await expect(chips).toHaveText(["All", ...issues.map((i) => i.short)]);
+    await expect(chips).toHaveText(["All", ...framed.map((i) => i.short)]);
     await expect(rail(page).getByRole("button", { name: "All", exact: true })).toHaveAttribute("aria-pressed", "true");
     // The column headers are for the table's semantics only on phones.
     expect(await page.locator("#list thead").evaluate((el) => el.getBoundingClientRect().width)).toBeLessThanOrEqual(1);
-    for (const issue of issues) {
+    for (const issue of framed) {
       await rail(page).getByRole("button", { name: issue.short, exact: true }).click();
       await expect(rail(page).getByRole("button", { name: issue.short, exact: true })).toHaveAttribute("aria-pressed", "true");
       await expect(page).toHaveURL(new RegExp(`#issue=${issue.id}$`));
       expect(new URL(page.url()).search).toBe("");
       await expect(grid(page)).toHaveAttribute("data-active", issue.id);
       await expect(rows(page)).toHaveCount(total);
-      await expect(status).toHaveText(coverageSentence(issue.id, sheet.coverage[issue.id], total));
+      await expect(status).toHaveText(coverageSentence(race.id, issue.id, sheet.coverage[issue.id], total));
       // The question the chip asks sits above the coverage line.
       await expect(page.locator("[data-race-sheet-rail]")).toContainText(issue.question);
       expect(sheet.coverage[issue.id]).toBe(sheet.rows.filter((r) => r.cells[issue.id].position !== null).length);
@@ -211,7 +215,7 @@ test("the two missing states share one visual treatment on the row and four gap 
     classes.push((await tag.getAttribute("class")) ?? "");
     const sheet = sheets.find((s) => s.race.id === raceId)!;
     const r = sheet.rows.find((x) => x.id === id)!;
-    for (const issue of issues) if (!r.cells[issue.id].position) await expect(cell(page, id, issue.id).getByRole("button", { name: gapName(r.name, issue.id), exact: true })).toHaveCount(1);
+    for (const issue of issues) if (!r.cells[issue.id].position) await expect(cell(page, id, issue.id).getByRole("button", { name: gapName(raceId, r.name, issue.id), exact: true })).toHaveCount(1);
     await page.getByRole("button", { name: "Rent and homes", exact: true }).click();
     await expect(tag).toBeVisible();
   }
@@ -271,7 +275,7 @@ for (const width of [390, 1280]) {
     // A gap cell opens the same detail frame and names the gap as a gap.
     const gap = sheet.rows.flatMap((x) => issues.filter((i) => x.cells[i.id].position === null).map((i) => ({ row: x, issue: i })))[0];
     expect(gap).toBeDefined();
-    await cell(page, gap.row.id, gap.issue.id).getByRole("button", { name: gapName(gap.row.name, gap.issue.id), exact: true }).click();
+    await cell(page, gap.row.id, gap.issue.id).getByRole("button", { name: gapName("portland-district-3", gap.row.name, gap.issue.id), exact: true }).click();
     await expect(detail(page, gap.row.id)).toContainText("Not found in the sources we reviewed. That is a research gap, not a position.");
     await expect(detail(page, gap.row.id).getByRole("link", { name: "Full brief" })).toHaveAttribute("href", `/voters-guide/portland-district-3/${gap.row.id}`);
     expect(await fits(page)).toBe(true);
@@ -346,103 +350,111 @@ test("no horizontal overflow at 320, 390, 768 and 1280 on the race page, with a 
   }
 });
 
-/* ── Extra topics and the promise ladder ───────────────────────────── */
+/* ── Topic boards and the promise ladder ───────────────────────────── */
 
-const picker = (page: Page) => page.getByRole("group", { name: "Add topics to compare" });
-/** The picker opens from the toolbar's one control; it is not in the DOM until then. */
-const openPicker = async (page: Page) => {
-  const more = page.locator("[data-race-sheet-rail]").getByRole("button", { name: /Compare on more topics|^Topics/ });
-  if ((await more.getAttribute("aria-expanded")) !== "true") await more.click();
-  await expect(picker(page)).toBeVisible();
-};
-const topicHeads = (page: Page) => page.locator('#list thead th[data-issue="topic"]');
-const topicCell = (page: Page, id: string, nth: number) => row(page, id).locator('td[data-issue="topic"]').nth(nth);
+const boards = (page: Page) => page.locator("#topics");
+const board = (page: Page, id: string) => page.locator(`#topic-${id}`);
+const boardRow = (page: Page, topicId: string, id: string) => page.locator(`#topic-${topicId}-${id}`);
+const jump = (page: Page) => page.locator("[data-race-sheet-rail]").getByRole("link", { name: /more choices/ });
 
-test("desktop: the picker adds up to two topic columns, incumbents show their recorded vote, everyone else a sourced chip or the gap, and the hash mirrors it", async ({ page }) => {
+test("desktop: each Council choice is a board beneath the grid; opening one lists every candidate A–Z with a vote, a sourced reading or the gap, and the hash mirrors it", async ({ page }) => {
   const sheet = sheets.find((s) => s.race.id === "portland-district-4")!;
   const moda = extraTopics.find((t) => t.id === "moda")!;
   const taxes = extraTopics.find((t) => t.id === "new-taxes")!;
-  const third = extraTopics.find((t) => t.id !== "moda" && t.id !== "new-taxes")!;
   const decision = councilDecisions.find((d) => d.id === moda.decisionId)!;
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto("/voters-guide/portland-district-4");
-  await expect(picker(page)).toHaveCount(0);
-  await openPicker(page);
-  // One chip per topic plus the All/None control.
-  await expect(picker(page).getByRole("button")).toHaveCount(extraTopics.length + 1);
-  for (const t of extraTopics) await expect(picker(page).getByRole("button", { name: new RegExp(`^${t.label}`) })).toHaveAttribute("aria-pressed", "false");
-  await expect(topicHeads(page)).toHaveCount(0);
+  // The grid is four columns and never scrolls sideways; the boards sit beneath it.
+  await expect(page.locator('#list thead th[data-issue]')).toHaveCount(issues.length);
+  await expect(jump(page)).toHaveAttribute("href", "#topics");
+  await expect(jump(page)).toContainText(`${extraTopics.length} more choices`);
+  await expect(boards(page).getByRole("heading", { level: 2 })).toHaveText("Eight choices this Council has faced");
+  const all = boards(page).locator("details[data-topic]");
+  await expect(all).toHaveCount(extraTopics.length);
+  expect(await all.evaluateAll((nodes) => nodes.map((n) => n.getAttribute("data-topic")))).toEqual(extraTopics.map((t) => t.id));
+  await expect(boards(page).locator("details[data-topic][open]")).toHaveCount(0);
+  for (const t of extraTopics) {
+    await expect(board(page, t.id).locator("summary")).toContainText(t.label);
+    await expect(board(page, t.id).locator("summary")).toContainText(t.question);
+    const onRecord = sheet.rows.filter((x) => x.topicCells[t.id].vote || x.topicCells[t.id].chip).length;
+    await expect(board(page, t.id).locator("summary")).toContainText(`${onRecord} of ${sheet.rows.length} on record`);
+  }
 
-  await picker(page).getByRole("button", { name: new RegExp(`^${moda.label}`) }).click();
-  await expect(topicHeads(page)).toHaveCount(1);
-  await expect(topicHeads(page).first()).toContainText(moda.label);
-  await expect(topicHeads(page).first()).toContainText(`${sheet.rows.filter((x) => x.topicCells[moda.id].vote || x.topicCells[moda.id].chip).length} of ${sheet.rows.length} on record`);
+  await board(page, moda.id).locator("summary").click();
+  await expect(board(page, moda.id)).toHaveAttribute("open", "");
   await expect(page).toHaveURL(/#topics=moda$/);
+  await expect(board(page, moda.id)).toContainText(moda.context);
+  const ids = await board(page, moda.id).locator("li[id^='topic-moda-']").evaluateAll((nodes) => nodes.map((n) => n.id.replace(/^topic-moda-/, "")));
+  expect(ids).toEqual(sheet.rows.map((r) => r.id));
   for (const r of sheet.rows) {
-    const button = topicCell(page, r.id, 0).getByRole("button");
+    const li = boardRow(page, moda.id, r.id);
     const tc = r.topicCells[moda.id];
+    await expect(li.getByRole("link", { name: r.name, exact: true })).toHaveAttribute("href", `/voters-guide/portland-district-4/${r.id}`);
     if (r.incumbent) {
       expect(tc.vote, `${r.id} is an incumbent on a decision topic`).toBe(decision.votes[r.name] ?? null);
-      if (tc.vote) await expect(button).toContainText(tc.vote);
+      if (tc.vote) {
+        await expect(li).toContainText(tc.vote);
+        await expect(li).toContainText("Recorded vote");
+        await expect(li).toContainText(decision.voteLabel ?? decision.title);
+      }
     } else {
       expect(tc.vote, `${r.id} is a challenger and can hold no vote`).toBeNull();
-      if (tc.chip) await expect(button).toHaveText(tc.chip);
-      else await expect(button).toHaveAttribute("aria-label", `${r.name} on ${moda.label.toLowerCase()}: no statement in the sources we reviewed`);
+    }
+    if (tc.chip) {
+      await expect(li).toContainText(tc.chip);
+      await expect(li).toContainText(tc.text!);
+      await expect(li.getByRole("button", { name: new RegExp(`^${tc.source!.label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`) })).toBeVisible();
+      if (tc.stance === "partial") await expect(li).toContainText("the exact choice is unsaid");
+    } else if (!tc.vote) {
+      await expect(li).toContainText("Not found");
+      await expect(li).toContainText("a research gap, not a position");
     }
   }
-  // A topic cell opens the question, the vote or statement, and the context.
-  const incumbent = sheet.rows.find((r) => r.incumbent && r.topicCells[moda.id].vote)!;
-  await topicCell(page, incumbent.id, 0).getByRole("button").click();
-  const open = detail(page, incumbent.id);
-  await expect(open).toHaveAttribute("data-issue", "topic");
-  await expect(open).toContainText(`${incumbent.name} on ${moda.label}`);
-  await expect(open).toContainText(moda.question);
-  await expect(open).toContainText("Recorded Council vote");
-  await expect(open).toContainText(moda.context);
-  await expect(open.getByRole("link", { name: "Full brief" })).toHaveAttribute("href", `/voters-guide/portland-district-4/${incumbent.id}`);
-  await open.getByRole("button", { name: "Close", exact: true }).click();
-
-  await picker(page).getByRole("button", { name: new RegExp(`^${taxes.label}`) }).click();
-  await expect(topicHeads(page)).toHaveCount(2);
-  await expect(page).toHaveURL(/#topics=moda,new-taxes$/);
-  // No cap: every topic can be a column; "All" adds the rest and turns into "None".
-  await expect(picker(page).getByRole("button", { name: new RegExp(`^${third.label}`) })).toBeEnabled();
-  await picker(page).getByRole("button", { name: /^All \d+$/ }).click();
-  await expect(topicHeads(page)).toHaveCount(extraTopics.length);
-  await expect(page).toHaveURL(new RegExp(`#topics=${extraTopics.map((t) => t.id).join(",")}$`));
-  await picker(page).getByRole("button", { name: "None", exact: true }).click();
-  await expect(topicHeads(page)).toHaveCount(0);
-  await picker(page).getByRole("button", { name: new RegExp(`^${moda.label}`) }).click();
-  await picker(page).getByRole("button", { name: new RegExp(`^${taxes.label}`) }).click();
-  await expect(topicHeads(page)).toHaveCount(2);
   expect(await fits(page)).toBe(true);
 
-  // Highlighting an issue keeps the topics; the share fragment carries both and nothing else.
-  await head(page, "money").getByRole("button").click();
-  await expect(page).toHaveURL(/#issue=money&topics=moda,new-taxes$/);
-  await picker(page).getByRole("button", { name: new RegExp(`^${moda.label}`) }).click();
-  await expect(topicHeads(page)).toHaveCount(1);
-  await expect(page).toHaveURL(/#issue=money&topics=new-taxes$/);
+  // A second board opens beside the first; the hash carries both, in the order opened.
+  await board(page, taxes.id).locator("summary").click();
+  await expect(page).toHaveURL(/#topics=moda,new-taxes$/);
+  // Open all, then close all.
+  await boards(page).getByRole("button", { name: /^Open all \d+$/ }).click();
+  await expect(boards(page).locator("details[data-topic][open]")).toHaveCount(extraTopics.length);
+  await expect(jump(page)).toContainText(`${extraTopics.length} open`);
+  expect(await fits(page)).toBe(true);
+  await boards(page).getByRole("button", { name: "Close all", exact: true }).click();
+  await expect(boards(page).locator("details[data-topic][open]")).toHaveCount(0);
+  expect(new URL(page.url()).hash).toBe("");
 
-  // The hash restores the view on load; the toolbar control carries the count.
+  // Highlighting an issue keeps the open boards; the share fragment carries both and nothing else.
+  await board(page, moda.id).locator("summary").click();
+  await head(page, "money").getByRole("button").click();
+  await expect(page).toHaveURL(/#issue=money&topics=moda$/);
+  await board(page, moda.id).locator("summary").click();
+  await expect(page).toHaveURL(/#issue=money$/);
+
+  // The hash restores the view on load, and a board's own id opens it.
   await page.goto("/voters-guide/portland-district-4#topics=moda,police-staffing");
-  await expect(topicHeads(page)).toHaveCount(2);
-  await expect(topicHeads(page).nth(1)).toContainText("Police staffing");
-  await expect(page.locator("[data-race-sheet-rail]").getByRole("button", { name: /Compare on more topics/ })).toContainText("2");
-  await openPicker(page);
-  await expect(picker(page).getByRole("button", { name: /^Police staffing/ })).toHaveAttribute("aria-pressed", "true");
+  await expect(board(page, "moda")).toHaveAttribute("open", "");
+  await expect(board(page, "police-staffing")).toHaveAttribute("open", "");
+  await expect(boards(page).locator("details[data-topic][open]")).toHaveCount(2);
+  // A board's own id opens it: on a hash change it joins the open set; on a fresh load it is the only one.
+  await page.goto("/voters-guide/portland-district-4#topic-water-rates");
+  await expect(board(page, "water-rates")).toHaveAttribute("open", "");
+  await expect(boards(page).locator("details[data-topic][open]")).toHaveCount(3);
+  await page.reload();
+  await expect(board(page, "water-rates")).toHaveAttribute("open", "");
+  await expect(boards(page).locator("details[data-topic][open]")).toHaveCount(1);
 });
 
-test("phone: topic columns become labeled card cells without overflow", async ({ page }) => {
+test("phone: a board lists every candidate without overflow, and topics no longer sit inside the cards", async ({ page }) => {
+  const sheet = sheets.find((s) => s.race.id === "portland-district-3")!;
   const moda = extraTopics.find((t) => t.id === "moda")!;
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/voters-guide/portland-district-3#topics=moda");
-  await expect(rows(page)).not.toHaveCount(0);
-  await expect(topicCell(page, "esther-leon", 0)).toContainText(moda.short);
-  await expect(topicCell(page, "esther-leon", 0).getByRole("button")).toBeVisible();
-  expect(await fits(page)).toBe(true);
-  await topicCell(page, "esther-leon", 0).getByRole("button").click();
-  await expect(detail(page, "esther-leon")).toContainText(moda.question);
+  await expect(rows(page)).toHaveCount(sheet.rows.length);
+  await expect(page.locator('#list td[data-issue="topic"]')).toHaveCount(0);
+  await expect(board(page, moda.id)).toHaveAttribute("open", "");
+  await expect(board(page, moda.id)).toContainText(moda.question);
+  await expect(board(page, moda.id).locator("li[id^='topic-moda-']")).toHaveCount(sheet.rows.length);
   expect(await fits(page)).toBe(true);
 });
 

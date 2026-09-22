@@ -1,11 +1,9 @@
 "use client";
-import { Fragment, useCallback, useState } from "react";
+import { Fragment, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { Bookmark, BookmarkCheck, ChevronDown } from "lucide-react";
-import type { SheetRow, TopicDecision } from "@/lib/voters-guide/race-sheet";
-import { issues, type IssueId } from "@/lib/voters-guide/race-sheet/issues";
-import type { ExtraTopic } from "@/lib/voters-guide/race-sheet/types";
-import { VotePill } from "./Glyph";
+import type { SheetRow } from "@/lib/voters-guide/race-sheet";
+import type { Issue, IssueId } from "@/lib/voters-guide/race-sheet/issues";
 import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import { portraitPerson } from "./CandidateCard";
 import { missingLabel } from "./CandidateRow";
@@ -16,11 +14,13 @@ import styles from "./stance.module.css";
 import c from "./controls.module.css";
 
 /**
- * Where they stand: every candidate × every issue in one grid. On desktop a
- * real table with sticky column headers; on phones each row restyles into a
+ * Where they stand: every candidate × the four issues in one grid. On desktop
+ * a real table with sticky column headers; on phones each row restyles into a
  * portrait card with the four chips, same markup, same semantics. A chip is
  * our ≤4-word reading of a sourced statement; tapping it opens the sentence
- * and the source. Columns are tinted by topic, never by side. Order is A–Z.
+ * and the source beneath the row. Columns are tinted by topic, never by side.
+ * Order is A–Z. Four columns fit every screen, so the grid never scrolls
+ * sideways; the office's own choices are boards beneath it (TopicBoards).
  */
 
 /** Until a chip is authored, fall back to the first words of the line. */
@@ -32,24 +32,21 @@ function fallbackChip(line: string | null, position: string | null): string | nu
 }
 
 export default function StanceGrid({
+  issues,
   rows,
   raceId,
   active,
   coverage,
-  extra,
-  topicCoverage,
-  topicDecisions,
   saved,
   onToggleSave,
   onHighlight,
 }: {
+  /** The four issues as this office frames them. */
+  issues: Issue[];
   rows: SheetRow[];
   raceId: string;
   active: IssueId | null;
   coverage: Record<IssueId, number>;
-  extra: ExtraTopic[];
-  topicCoverage: Record<string, number>;
-  topicDecisions: Record<string, TopicDecision>;
   saved: Set<string>;
   onToggleSave: (id: string) => void;
   onHighlight: (issue: IssueId | null) => void;
@@ -60,16 +57,27 @@ export default function StanceGrid({
       setOpen((current) => (current && current.id === id && current.key === key ? null : { id, key })),
     [],
   );
-  const columns = issues.length + extra.length + 2;
+  const columns = issues.length + 2;
+
+  /* The opened detail lands on screen: scrolled the least distance that shows
+     it, under the sticky header and above the phone bar (scroll margins). */
+  useEffect(() => {
+    if (!open) return;
+    const el = document.getElementById(`stance-${open.id}`);
+    if (!el) return;
+    const frame = requestAnimationFrame(() => {
+      const r = el.getBoundingClientRect();
+      const header = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--site-header-height")) || 0;
+      if (r.top < header || r.bottom > window.innerHeight) {
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        el.scrollIntoView({ block: "nearest", behavior: reduce ? "auto" : "smooth" });
+      }
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [open]);
 
   return (
-    <div
-      className={styles.wrap}
-      id="list"
-      data-extra={extra.length || undefined}
-      data-scroll={extra.length > 2 || undefined}
-      style={{ "--extra": extra.length } as React.CSSProperties}
-    >
+    <div className={styles.wrap} id="list">
       <table className={styles.grid} data-active={active ?? ""}>
         <caption className={styles.srOnly}>
           Where each candidate stands on four issues, in our short reading of their statements. Each position is a
@@ -97,15 +105,6 @@ export default function StanceGrid({
                 <span className={styles.count}>
                   {coverage[issue.id]} of {rows.length}
                   <span className={styles.countWord}> documented</span>
-                </span>
-              </th>
-            ))}
-            {extra.map((topic) => (
-              <th key={topic.id} scope="col" className={`${styles.issueHead} ${styles.topicHead}`} data-issue="topic">
-                <span className={styles.headButton}>{topic.label}</span>
-                <span className={styles.count}>
-                  {topicCoverage[topic.id] ?? 0} of {rows.length}
-                  <span className={styles.countWord}> on record</span>
                 </span>
               </th>
             ))}
@@ -168,28 +167,6 @@ export default function StanceGrid({
                       </td>
                     );
                   })}
-                  {extra.map((topic) => {
-                    const tc = row.topicCells[topic.id];
-                    const cellOpen = isOpen && open?.key === `topic:${topic.id}`;
-                    const has = Boolean(tc.vote || tc.chip);
-                    return (
-                      <td key={topic.id} className={styles.cell} data-issue="topic" data-state={tc.vote ? "vote" : has ? "chip" : "gap"}>
-                        <span className={styles.cellLabel}>{topic.short}</span>
-                        <button
-                          type="button"
-                          className={has ? styles.chip : c.gapPill}
-                          data-vote={tc.vote ?? undefined}
-                          aria-expanded={cellOpen}
-                          aria-controls={cellOpen ? detailId : undefined}
-                          aria-label={has ? undefined : `${row.name} on ${topic.label.toLowerCase()}: no statement in the sources we reviewed`}
-                          onClick={() => toggle(row.id, `topic:${topic.id}`)}
-                        >
-                          {tc.vote ? <VotePill vote={tc.vote} /> : tc.chip ? <span className={styles.chipText}>{tc.chip}</span> : tc.askedOn ? <><Gap text="" /> Asked</> : <><Gap text="" /> Not found</>}
-                          <ChevronDown size={tc.vote ? 12 : 14} aria-hidden="true" className={styles.chipCaret} />
-                        </button>
-                      </td>
-                    );
-                  })}
                   <td className={styles.saveCell}>
                     <button
                       type="button"
@@ -209,8 +186,6 @@ export default function StanceGrid({
                       <StanceDetail
                         row={row}
                         issue={issues.find((i) => i.id === open.key) ?? null}
-                        topic={open.key.startsWith("topic:") ? (extra.find((t) => `topic:${t.id}` === open.key) ?? null) : null}
-                        decision={open.key.startsWith("topic:") ? (topicDecisions[open.key.slice("topic:".length)] ?? null) : null}
                         raceId={raceId}
                         id={detailId}
                         onClose={() => setOpen(null)}

@@ -1,8 +1,8 @@
 "use client";
-import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Bookmark, X } from "lucide-react";
 import type { ClientSheet } from "@/lib/voters-guide/race-sheet";
-import { isIssueId, issueById, type IssueId } from "@/lib/voters-guide/race-sheet/issues";
+import { isIssueId, type IssueId } from "@/lib/voters-guide/race-sheet/issues";
 import { sharedComparison } from "@/lib/voters-guide/journey";
 import {
   BALLOT_MAX,
@@ -19,14 +19,14 @@ import c from "./controls.module.css";
 import ChipRail from "./ChipRail";
 import BottomBar from "./BottomBar";
 import StanceGrid from "./StanceGrid";
-import TopicPicker from "./TopicPicker";
+import TopicBoards from "./TopicBoards";
 import MiniChips from "./MiniChips";
 import MyBallot from "./MyBallot";
 import styles from "./race-sheet.module.css";
 
 const ISSUE_HASH = "#issue=";
 
-/** The hash carries only public view state: #issue=<id>&topics=<id,id>. */
+/** The hash carries only public view state: #issue=<id>&topics=<id,id> (the open boards). */
 function readViewHash(hash: string, validTopics: string[]) {
   const params = new URLSearchParams(hash.replace(/^#/, ""));
   const issue = params.get("issue");
@@ -53,7 +53,7 @@ function siteHeader(): HTMLElement | null {
   );
 }
 
-export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
+export default function RaceSheet({ sheet, stakes }: { sheet: ClientSheet; stakes?: React.ReactNode }) {
   const raceId = sheet.raceId;
   const [active, setActive] = useState<IssueId | null>(null);
   const [extra, setExtra] = useState<string[]>([]);
@@ -61,8 +61,6 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
   const [ballot, setBallot] = useState<BallotState>(emptyBallot);
   const [persistent, setPersistent] = useState(true);
   const [ballotOpen, setBallotOpen] = useState(false);
-  const [pickerOpen, setPickerOpen] = useState(false);
-  const pickerId = useId();
   const [notice, setNotice] = useState<string | null>(null);
   const [shared, setShared] = useState<string[] | null>(null);
   const noticeTimer = useRef<number | null>(null);
@@ -93,6 +91,12 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
   useEffect(() => {
     function readIssueHash() {
       const hash = window.location.hash;
+      if (hash.startsWith("#topic-")) {
+        // A link to one board (its details id): open it; the browser scrolls there itself.
+        const id = hash.slice("#topic-".length);
+        if (topicIds.includes(id)) setExtra((open) => (open.includes(id) ? open : [...open, id]));
+        return true;
+      }
       if (!hash.startsWith(ISSUE_HASH) && !hash.startsWith("#topics=")) return false;
       const view = readViewHash(hash, topicIds);
       setActive(view.issue);
@@ -137,7 +141,6 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
     },
     [active],
   );
-  const extraTopicsSelected = useMemo(() => extra.map((id) => sheet.topics.find((t) => t.id === id)).filter((t): t is NonNullable<typeof t> => Boolean(t)), [extra, sheet.topics]);
 
   /* Ballot writes: storage first, in-memory fallback with a visible notice. */
   const commit = useCallback(
@@ -178,7 +181,7 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
     setBallotOpen(open);
   }, []);
 
-  const issue = active ? (issueById(active) ?? null) : null;
+  const issue = active ? (sheet.issues.find((i) => i.id === active) ?? null) : null;
   const savedSet = new Set(ballot.order);
   /* Shared names render and save in the site's A–Z order, never in the link author's order. */
   const sharedRows = useMemo(() => (shared ? sheet.rows.filter((r) => shared.includes(r.id)) : []), [shared, sheet.rows]);
@@ -200,14 +203,12 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
   return (
     <div className={styles.sheet} data-race-sheet data-issue={active ?? "summary"}>
       <ChipRail
+        issues={sheet.issues}
         active={active}
         onChange={changeIssue}
         coverage={sheet.coverage}
         total={sheet.rows.length}
-        pickerOpen={pickerOpen}
-        pickerId={pickerId}
-        selectedTopics={extra.length}
-        onTogglePicker={sheet.topics.length ? () => setPickerOpen((v) => !v) : null}
+        topics={sheet.topics.length ? { count: sheet.topics.length, open: extra.length } : null}
       />
 
       <BottomBar raceId={raceId} hasVotes={sheet.office.hasCouncilRecord} savedCount={ballot.order.length} onOpenBallot={(opener) => openBallot(true, opener)} />
@@ -227,7 +228,7 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
             {sharedRows.map((r) => (
               <li key={r.id}>
                 <span className={styles.name}>{r.name}</span>
-                <MiniChips row={r} />
+                <MiniChips row={r} issues={sheet.issues} />
               </li>
             ))}
           </ul>
@@ -239,27 +240,27 @@ export default function RaceSheet({ sheet }: { sheet: ClientSheet }) {
         </section>
       )}
 
-      <TopicPicker
-        id={pickerId}
-        open={pickerOpen}
-        topics={sheet.topics}
-        coverage={sheet.topicCoverage}
-        total={sheet.rows.length}
-        selected={extra}
-        onChange={changeTopics}
-      />
-
       <StanceGrid
+        issues={sheet.issues}
         rows={sheet.rows}
         raceId={raceId}
         active={active}
         coverage={sheet.coverage}
-        extra={extraTopicsSelected}
-        topicCoverage={sheet.topicCoverage}
-        topicDecisions={sheet.topicDecisions}
         saved={savedSet}
         onToggleSave={toggleSave}
         onHighlight={changeIssue}
+      />
+
+      {stakes}
+
+      <TopicBoards
+        topics={sheet.topics}
+        rows={sheet.rows}
+        raceId={raceId}
+        office={sheet.office}
+        decisions={sheet.topicDecisions}
+        open={extra}
+        onChange={changeTopics}
       />
 
       <div className={styles.shareWrap}>

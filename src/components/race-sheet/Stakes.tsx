@@ -7,14 +7,14 @@ import styles from "./stakes.module.css";
 /**
  * What this office decides right now: the biggest current problems and
  * pending decisions as sourced facts, the same block for every candidate.
- * It sits under the grid, so a reader meets the names first and the
- * stakes second, then the topic picker above can add the office's own
- * choices as columns.
+ * It sits between the grid and the topic boards, so a reader meets the
+ * names first, what the office decides second, and each choice with every
+ * answer third.
  */
 export default function Stakes({ sheet }: { sheet: RaceSheet }) {
   const stakes = sheet.stakes;
   if (!stakes) return null;
-  const topics = sheet.office.group === "council" ? 0 : sheet.rows.length ? Object.keys(sheet.rows[0].topicCells).length : 0;
+  const topics = sheet.rows.length ? Object.keys(sheet.rows[0].topicCells).length : 0;
   return (
     <section id="stakes" className={styles.stakes} aria-labelledby="stakes-title">
       <div className={styles.head}>
@@ -25,7 +25,7 @@ export default function Stakes({ sheet }: { sheet: RaceSheet }) {
         <p className={styles.intro}>{stakes.intro}</p>
         {topics > 0 && (
           <p className={styles.hint}>
-            The <a href="#list">Topics</a> control above adds this office’s {topics} live choices as columns, with each candidate’s stated position or a gap.
+            Each of this office’s {topics} live choices is a board <a href="#topics">below</a>, with every candidate’s stated position or the gap.
           </p>
         )}
       </div>
