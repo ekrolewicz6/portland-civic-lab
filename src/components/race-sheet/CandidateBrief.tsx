@@ -2,7 +2,8 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight, ChevronDown, ExternalLink, Globe } from "lucide-react";
 import type { Candidate, Evidence, Race } from "@/lib/voters-guide/types";
 import { ELECTION_DATE } from "@/lib/voters-guide/types";
-import { issuesFor, shortRaceTitle, type FeaturedRow, type RaceSheet, type SheetRow } from "@/lib/voters-guide/race-sheet";
+import { issuesFor, shortRaceTitle, topicsFor, type FeaturedRow, type RaceSheet, type SheetRow } from "@/lib/voters-guide/race-sheet";
+import { councilDecisions } from "@/lib/voters-guide/council-decisions";
 import { sourceChip, type SourceChip } from "@/lib/voters-guide/race-sheet/source-chip";
 import { candidatePath, racePath } from "@/lib/voters-guide/race-sheet/seo";
 import { councilDisagreements } from "@/lib/voters-guide/council-record-accounts";
@@ -146,6 +147,15 @@ export default function CandidateBrief({
     .filter((x): x is { row: FeaturedRow; vote: NonNullable<FeaturedRow["votes"][number]> } => Boolean(x.vote));
   const sources = allSources(person);
   const heading = (name: string) => `${row.id}-${name}`;
+  /* The office's own choices, split into what this candidate has answered and what is still open. */
+  const topics = topicsFor(race);
+  const answered = topics.filter((t) => row.topicCells[t.id]?.vote || row.topicCells[t.id]?.chip);
+  const open = topics.filter((t) => !(row.topicCells[t.id]?.vote || row.topicCells[t.id]?.chip));
+  const decisionFor = (topicId: string) => {
+    const t = topics.find((x) => x.id === topicId);
+    const d = t?.decisionId ? councilDecisions.find((x) => x.id === t.decisionId) : undefined;
+    return d ? { label: d.voteLabel ?? d.title, source: sourceChip(d.source) } : null;
+  };
   const website = row.contact.channels.find((ch) => ch.kind === "website") ?? null;
 
   return (
@@ -300,6 +310,85 @@ export default function CandidateBrief({
           );
         })}
       </section>
+
+      {topics.length > 0 && (
+        <section className={styles.section} aria-labelledby={heading("choices")}>
+          <Section id={heading("choices")} className={styles.sectionTitle}>
+            The choices this office faces
+          </Section>
+          <p className={styles.muted}>
+            Every candidate in this race is asked the same {topics.length} questions. {row.name} is on record on{" "}
+            {answered.length}
+            {open.length > 0 ? `, with ${open.length} still open` : ""}. A question without an answer is a research gap,
+            not a position.
+          </p>
+
+          {open.length > 0 && (
+            <>
+              <span className={styles.label}>No answer we could find</span>
+              <ul className={styles.choiceList}>
+                {open.map((topic) => {
+                  const cell = row.topicCells[topic.id];
+                  return (
+                    <li key={topic.id} className={styles.choice} data-state="open">
+                      <p className={styles.choiceQuestion}>{topic.question}</p>
+                      <p className={styles.gapText}>
+                        {cell?.askedOn
+                          ? `Asked of the campaign on ${cell.askedOn}; no reply yet.`
+                          : "Nothing on this exact choice in the sources we reviewed."}
+                      </p>
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          )}
+
+          {answered.length > 0 && (
+            <>
+              <span className={styles.label}>On record</span>
+              <ul className={styles.choiceList}>
+                {answered.map((topic) => {
+                  const cell = row.topicCells[topic.id];
+                  const decision = cell.vote ? decisionFor(topic.id) : null;
+                  const acted = Boolean(cell.source && cell.source.evidence.kind === "Public record");
+                  return (
+                    <li key={topic.id} className={styles.choice} data-state={cell.vote ? "vote" : "said"}>
+                      <p className={styles.choiceQuestion}>{topic.question}</p>
+                      {cell.vote && (
+                        <p className={styles.choiceVote}>
+                          <VotePill vote={cell.vote} name={row.name} />
+                          {decision && <span className={styles.choiceVoteOn}>{decision.label}</span>}
+                        </p>
+                      )}
+                      {cell.text ? (
+                        <p className={styles.choiceText}>
+                          <SaidGlyph /> {cell.text}
+                        </p>
+                      ) : (
+                        cell.vote && (
+                          <p className={styles.choiceNote}>No statement beyond the recorded {acted ? "action" : "vote"}.</p>
+                        )
+                      )}
+                      {cell.stance === "partial" && (
+                        <p className={styles.choiceNote}>On the topic; the exact choice is unsaid.</p>
+                      )}
+                      <div className={styles.choiceSources}>
+                        {cell.source && <SourceChipButton chip={cell.source} compact />}
+                        {decision && <SourceChipButton chip={decision.source} compact />}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          )}
+
+          <Link className={`${c.btn} ${c.secondary} ${c.small}`} href={`${racePath(race)}#topics`} prefetch={false}>
+            Compare every candidate <ArrowRight size={15} aria-hidden="true" />
+          </Link>
+        </section>
+      )}
 
       {row.answers.length > 0 && (
         <section className={styles.section} aria-labelledby={heading("words")}>

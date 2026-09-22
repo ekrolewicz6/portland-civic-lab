@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { races } from "../src/lib/voters-guide/published";
-import { buildRaceSheet, issues } from "../src/lib/voters-guide/race-sheet";
+import { buildRaceSheet, issues, topicsFor } from "../src/lib/voters-guide/race-sheet";
 
 /** The brief: one skeleton for everyone, on its own route; the print edition carries all of them. */
 
@@ -80,3 +80,36 @@ for (const race of races) {
     expect(await page.locator("details[open]").count()).toBeLessThan(total);
   });
 }
+
+/* ── The office's choices on a brief: every question once, open ones named ── */
+
+test("every brief lists the office's choices, splitting what they answered from what is still open", async ({ page }) => {
+  for (const raceId of ["portland-district-4", "multnomah-chair", "oregon-governor"]) {
+    const sheet = buildRaceSheet(races.find((r) => r.id === raceId)!);
+    const topics = topicsFor(sheet.race);
+    for (const row of sheet.rows) {
+      await page.goto(`/voters-guide/${raceId}/${row.id}`);
+      const section = page.locator(`section[aria-labelledby="${row.id}-choices"]`);
+      await expect(section.getByRole("heading", { name: "The choices this office faces" })).toBeVisible();
+      const answered = topics.filter((t) => row.topicCells[t.id].vote || row.topicCells[t.id].chip);
+      const open = topics.filter((t) => !(row.topicCells[t.id].vote || row.topicCells[t.id].chip));
+      // Each question appears exactly once, in the right group.
+      await expect(section.locator("li")).toHaveCount(topics.length);
+      await expect(section.locator('li[data-state="open"]')).toHaveCount(open.length);
+      await expect(section).toContainText(`is on record on ${answered.length}`);
+      if (open.length > 0) {
+        await expect(section).toContainText("No answer we could find");
+        await expect(section).toContainText("a research gap, not a position");
+        for (const t of open) await expect(section.locator('li[data-state="open"]').filter({ hasText: t.question })).toHaveCount(1);
+      }
+      for (const t of answered) {
+        const li = section.locator('li:not([data-state="open"])').filter({ hasText: t.question });
+        await expect(li).toHaveCount(1);
+        const cell = row.topicCells[t.id];
+        if (cell.vote) await expect(li).toContainText(cell.vote);
+        if (cell.text) await expect(li).toContainText(cell.text);
+      }
+      await expect(section.getByRole("link", { name: /Compare every candidate/ })).toHaveAttribute("href", `/voters-guide/${raceId}#topics`);
+    }
+  }
+});

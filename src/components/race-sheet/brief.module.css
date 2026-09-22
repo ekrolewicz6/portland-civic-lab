@@ -958,3 +958,68 @@
   line-height: 1.5;
   color: var(--color-ink-muted);
 }
+
+/* ── The office's own choices: what they answered, and what is still open ── */
+.choiceList {
+  display: grid;
+  gap: 0;
+  margin: 8px 0 20px;
+  padding: 0;
+  list-style: none;
+}
+.choice {
+  padding: 14px 0 14px 14px;
+  border-top: 1px solid var(--color-parchment);
+  border-left: 3px solid color-mix(in oklab, var(--color-violet-mist) 55%, var(--color-paper));
+}
+.choice:first-child {
+  border-top: 0;
+}
+.choice[data-state="open"] {
+  border-left-style: dashed;
+  border-left-color: var(--color-lichen);
+}
+.choiceQuestion {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-ink);
+  text-wrap: pretty;
+}
+.choice[data-state="open"] .choiceQuestion {
+  font-weight: 500;
+  color: var(--color-ink-light);
+}
+.choiceVote {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 8px 0 0 !important;
+}
+.choiceVoteOn {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--color-ink-light);
+}
+.choiceText {
+  margin: 8px 0 0 !important;
+  max-width: 62ch;
+}
+.choiceSources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin-top: 8px;
+}
+.choiceSources:empty {
+  display: none;
+}
+.choiceNote {
+  margin: 6px 0 0 !important;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+  max-width: 62ch;
+}
