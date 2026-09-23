@@ -121,6 +121,14 @@ const andersonEmail2: Evidence = {
   note: NOTE,
 };
 
+const mcdonaldEmail: Evidence = {
+  label: "McDonald · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#mcdonald-2026-09-23",
+  kind: "Candidate statement",
+  date: "Received September 23, 2026",
+  note: NOTE,
+};
+
 /* Sources found in the September 22 sweep. */
 const MERCURY_D4 = "https://www.portlandmercury.com/news/meet-the-candidates-for-city-council-district-4/";
 const schulteQuestionnaire: Evidence = {
@@ -245,9 +253,10 @@ export const topicStancesD4: TopicStance[] = [
     leakeMercury),
 
   /* ── John McDonald ──────────────────────────────────────────────────── */
-  swept("john-mcdonald", "moda", "partial", "Modernize arena; funding unsaid",
-    "Wants the Trail Blazers kept in Portland and the Moda Center modernized; his statement does not say whether public money should pay for the renovation or on what terms.",
-    pamphlet(63)),
+  // From his emailed reply of September 23, 2026; it replaces a partial reading of his pamphlet statement.
+  swept("john-mcdonald", "moda", "supports", "Backs the $120M plan",
+    "Fully supports the City’s current proposal of $120 million up front and $275 million in ongoing maintenance over a 20-year lease, and expects other revenue to come with the teams’ success.",
+    mcdonaldEmail),
 
   /* ── Matt Schulte ───────────────────────────────────────────────────── */
   stance("matt-schulte", "data-centers", "supports", "Ban until value standard",

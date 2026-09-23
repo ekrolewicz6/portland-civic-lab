@@ -120,6 +120,13 @@ const zimmermanHousing = site("Zimmerman · housing", "https://ez4pdx.com/issue/
 const zimmermanHomelessness = site("Zimmerman · homelessness", "https://ez4pdx.com/issue/homelessness/");
 const zimmermanSafety = site("Zimmerman · public safety", "https://ez4pdx.com/issue/public-safety/");
 
+const mcdonaldEmail: Evidence = {
+  label: "McDonald · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#mcdonald-2026-09-23",
+  kind: "Candidate statement",
+  date: "Received September 23, 2026",
+  note: NOTE,
+};
 export const deliveriesD4: Delivery[] = [
   /* ── Timothy (TJ) Anderson ──────────────────────────────────────────── */
   entry("timothy-tj-anderson", "housing", "emailed response", {
@@ -262,7 +269,9 @@ export const deliveriesD4: Delivery[] = [
 
   /* ── John McDonald ──────────────────────────────────────────────────── */
   entry("john-mcdonald", "safety", "pamphlet"),
-  entry("john-mcdonald", "money", "pamphlet"),
+  entry("john-mcdonald", "money", "emailed response", {
+    how: step("The City’s current proposal: $120 million up front and $275 million in ongoing maintenance over a 20-year lease, with other revenue expected to follow the teams’ success.", mcdonaldEmail),
+  }),
   entry("john-mcdonald", "climate", "pamphlet"),
 
   /* ── Matt Schulte ───────────────────────────────────────────────────── */

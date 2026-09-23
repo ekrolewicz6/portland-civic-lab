@@ -12,6 +12,8 @@ const novick = (question: string, text: string): CandidateAnswer => ({ candidate
 const sollitt = (question: string, text: string): CandidateAnswer => ({ candidateId: "tom-sollitt", question, text, received: "2026-09-22" });
 const sweeney = (question: string, text: string): CandidateAnswer => ({ candidateId: "john-sweeney", question, text, received: "2026-09-22" });
 const sollitt3 = (question: string, text: string): CandidateAnswer => ({ candidateId: "tom-sollitt", question, text, received: "2026-09-23" });
+const mcdonald = (question: string, text: string): CandidateAnswer => ({ candidateId: "john-mcdonald", question, text, received: "2026-09-23" });
+const colemanCox = (question: string, text: string): CandidateAnswer => ({ candidateId: "heather-coleman-cox", question, text, received: "2026-09-23" });
 
 export const answers: CandidateAnswer[] = [
   legree(
@@ -135,6 +137,50 @@ export const answers: CandidateAnswer[] = [
   anderson2(
     "The Council’s choices, in short",
     "I will say I’m not going to lock in to a lot with a full board view, so there is a lot I’m not going to see, but if we need the short list: [Moda Center] Yes, but no more than 60 million. [Clearing camps] Yes. [Data centers] Yes. [Street Response] No, not without additions. [Water rates] No. [Street repair fee] Need more info; not going to give a short answer.",
+  ),
+  mcdonald(
+    "Moda Center deal",
+    "I fully support the city’s current proposal of $120 million up front with $275 million in ongoing maintenance over a 20-year lease. I’m confident that other revenue streams will become available with the success of our teams.",
+  ),
+  colemanCox(
+    "Rent and homes",
+    "I serve as VChair on the City of Gresham Community Development and Housing Committee. In this role we identify programs that support pathways to homeownership, rental assistance, home mending, adapting and DIY programs. [...] I would like to support bringing the vacant storefronts back to life with thriving new business or the expansion of existing business.",
+  ),
+  colemanCox(
+    "Camps, crime and who responds",
+    "I strongly support equipping our first responders with all of the tools, resources and personnel they need to keep our city safe; in addition supporting community partners that work with law enforcement to identify what strategies work to decrease crime, and listen to the professionals combatting homelessness and understand what strategies they recommend to aid in housing our houseless residents.",
+  ),
+  colemanCox(
+    "Your bills and taxes",
+    "As Chair of the City of Gresham Public Safety Levy Committee it is the task of this committee to hold the city accountable for the tax dollars they are collecting to fund this levy. This is accomplished through quarterly meetings with city staff and first responder leaders. We then take this information and report out to the public. We ensure each dollar spent is directly tied to the language of the levy that voters passed.",
+  ),
+  colemanCox(
+    "Streets, buses and air",
+    "When I talk about sustainable growth, I mean bringing good jobs to Gresham while making sure our roads and other infrastructure can support that growth and our natural resources are protected.",
+  ),
+  colemanCox(
+    "Levy and fire district",
+    "I wholeheartedly support renewing the levy and beginning to make the case transparent for residents right now as to why we need to continually fund the public safety levy.",
+  ),
+  colemanCox(
+    "Groundwater and rates",
+    "The financial investment to move from Bull Run water to groundwater is much too great to retract. I encourage residents to sound the alarm if something is terribly off with their water (sight, smell, taste) so the city can remedy it. [...] The move to groundwater seems logical. Nonetheless, the notification of the switch should have come with a lot more noise and information.",
+  ),
+  colemanCox(
+    "Public-safety fee",
+    "I support keeping the Police, Fire and Parks Fee at $15 a month. Residents deserve to know what they are paying for and how this fee works alongside the fire and police levy. If Council considers changing the amount, I believe residents should have a chance to weigh in.",
+  ),
+  colemanCox(
+    "General-fund gap",
+    "I would not continue using reserves to cover a gap that comes back every year. That money will run out, and we still need it for unexpected needs. I also would not jump to cutting services residents rely on. I would want staff to walk us through what is causing the gap, where we can save money, and what other revenue options would mean for residents. Then Council needs to make those decisions in public and explain them clearly.",
+  ),
+  colemanCox(
+    "Camping and shelters",
+    "I support keeping our parks and public spaces safe and available for all residents. I also understand the need to keep reaching out to people experiencing homelessness and help connect them with shelter and a path to stable housing. I am open to pod shelters under the new permit process, but I would want to know who would run them, where they would go, how they would affect nearby residents, and whether they would help people move into housing.",
+  ),
+  colemanCox(
+    "Immigration enforcement",
+    "I am a part of one of the community groups that supported the mayor and city council to produce the rule of law resolution. I support our local police focusing on keeping our city safe. I am open to an emergency declaration if it would give the City a practical way to better protect our residents.",
   ),
   arnold(
     "How would expanded staffing and transit commitments fit within existing revenue?",
