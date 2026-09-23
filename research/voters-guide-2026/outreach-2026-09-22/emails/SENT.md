@@ -23,3 +23,11 @@ The follow-up emails in this folder went out from edan@portlandciviclab.org on t
 - Keir Legree answered all seven questions; folded into his page the same night (research log `legree-2026-09-22`).
 - Kellie Torres, John Goldsmith and Matt Schulte wrote that full answers are coming in the next day.
 - Sharon Meieran’s campaign (Corin) and Tiffany Koyama Lane (connecting us with Lydia on her team) acknowledged and said answers are coming.
+
+## Replies by 1 AM PDT, September 23
+
+- Cristal Otero answered all eight follow-up questions, TJ Anderson answered five of the Council’s choices in a word or two, and Tom Sollitt answered his three September 19 questions. All three were folded in (research log `otero-2026-09-22`, `anderson-2026-09-22`, `sollitt-2026-09-23`).
+- John McDonald asked that “former” come off “journalist”; corrected (`mcdonald-2026-09-22`). His answers are coming.
+- Barbara J Kahl (U.S. House, OR-1) will revise all twelve answers, objected to paraphrase and asked the deadline. Reply sent: no hard deadline; anything by October 7 is on the page before ballots mail October 14; answers appear in her own words on her brief.
+- Julia Brim-Edwards will answer next week (reply sent with the October 7 timing). The James Rhodes campaign will review its page. Tiffany Koyama Lane wrote that Lydia on her team would follow up, but Lydia was not copied; reply sent asking for her address.
+- Matt Schulte asked to send complete answers the next day; reply sent saying yes.

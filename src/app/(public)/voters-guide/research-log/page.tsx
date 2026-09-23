@@ -19,6 +19,80 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="sollitt-2026-09-23">September 23, 2026 · Third candidate response: Tom Sollitt (District 3)</h2>
+        <p>
+          Tom Sollitt answered the three questions the Lab emailed him on
+          September 19, completing his replies. On budget targets, he would
+          not set numbers before knowing what the City can afford and what
+          staffing is behind each service, but says every major service
+          should have a baseline, a target, an owner and a cost, and that any
+          request for more money should name the improvement residents should
+          expect. On climate and the environment, he supports continued Clean
+          Energy Fund investment in clean energy, efficiency, electrification
+          and resilience, less dependence on fossil fuels including the risks
+          of the Critical Energy Infrastructure Hub, tree canopy protection,
+          and public disclosure with no NDAs for energy-intensive projects such
+          as data centers. He describes founding the Legendary Makers Market
+          in 2023 and the I Hope You Get Rich pitch competition in 2025, each
+          started with no budget, with press coverage he cites.
+        </p>
+        <p>
+          The reply appears as three excerpts on his brief and is cited among
+          his sources; his grid positions, which already cited his September 22
+          reply, did not change. The Lab has not independently verified the
+          attendance and vendor figures. The reply is kept on file, and his
+          preservation hash was re-recorded.
+        </p>
+        <h2 id="otero-2026-09-22">September 22, 2026 · Second candidate response: Cristal Otero (District 3)</h2>
+        <p>
+          Cristal Otero answered all eight questions in the Lab’s follow-up.
+          On safety, she would focus resources on the smaller group of people
+          repeatedly cycling through the street, shelters, emergency rooms and
+          jail, assigning Street Response teams to high-contact areas and
+          strengthening jail-release handoffs. On bills, she would set a
+          five-year goal of cutting the inflation-adjusted cost of water
+          service at least 5%. On climate, she would tie Clean Energy Fund
+          reporting to the city’s transportation emissions goals. On the
+          Council’s choices, she supports renovating the Moda Center but would
+          seek Metro and private money before Portland fills the gap; she
+          would keep camp removals for serious hazards but shift some of that
+          program into Parks; she would put stronger conditions on large data
+          centers; she supports a 24-hour Street Response inside the county’s
+          existing crisis system; and she is skeptical of the street repair
+          fee, pointing to the General Fund first.
+        </p>
+        <p>
+          Her safety, money and climate columns now have “how” and “measured
+          by” steps citing this reply; the earlier pamphlet measures for safety
+          and money were replaced by the ones she gave us. Five topic boards,
+          empty before, now have entries. Excerpts appear on her brief, the
+          reply is kept on file, and her preservation hash was re-recorded.
+        </p>
+        <h2 id="mcdonald-2026-09-22">September 22, 2026 · Correction at the candidate’s request: John McDonald (District 4)</h2>
+        <p>
+          John McDonald asked that his page stop calling him a former
+          journalist, because he still works as one. His background now reads
+          “TriMet hydro technician and journalist.” He wrote that answers to
+          the Lab’s questions are coming. His preservation hash was
+          re-recorded.
+        </p>
+        <h2 id="anderson-2026-09-22">September 22, 2026 · Second candidate response: Timothy (TJ) Anderson (District 4)</h2>
+        <p>
+          TJ Anderson answered five of the Council’s choices in a word or two,
+          noting that he did not want to lock in positions from a full list.
+          He answered yes to public money for the Moda Center renovation at no
+          more than $60 million, yes to keeping camp-removal funding at current
+          levels, yes to restricting new AI data centers, no to a 24/7 Street
+          Response “not without additions,” and no to raising water bills for
+          the filtration plant. On the street repair fee, he wrote that he
+          needs more information and will not give a short answer.
+        </p>
+        <p>
+          Five topic boards, empty before, now carry those answers in his
+          words, and his reply appears as one excerpt on his brief. His “how”
+          and “measured by” steps did not change. The reply is kept on file,
+          and his preservation hash was re-recorded.
+        </p>
         <h2 id="legree-2026-09-22">September 22, 2026 · Second candidate response: Keir Legree (District 3)</h2>
         <p>
           Keir Legree answered all seven questions in the Lab’s follow-up. On

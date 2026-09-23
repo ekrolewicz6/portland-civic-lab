@@ -113,6 +113,14 @@ const andersonEmail: Evidence = {
   note: NOTE,
 };
 
+const andersonEmail2: Evidence = {
+  label: "Anderson · second emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#anderson-2026-09-22",
+  kind: "Candidate statement",
+  date: "Received September 22, 2026",
+  note: NOTE,
+};
+
 /* Sources found in the September 22 sweep. */
 const MERCURY_D4 = "https://www.portlandmercury.com/news/meet-the-candidates-for-city-council-district-4/";
 const schulteQuestionnaire: Evidence = {
@@ -167,6 +175,22 @@ export const topicStancesD4: TopicStance[] = [
   stance("timothy-tj-anderson", "police-staffing", "supports", "More officers, plus cadets",
     "Says more officers are “pretty much a given” to get response times down, with cadets, volunteers and other programs handling calls that do not need the most highly trained officers.",
     andersonEmail),
+  // Short answers from his second emailed reply of September 22, 2026; he asked to give a longer answer on the street fee.
+  swept("timothy-tj-anderson", "moda", "supports", "Yes, capped at $60M",
+    "Answered yes to public money for the Moda Center renovation, at no more than $60 million.",
+    andersonEmail2),
+  swept("timothy-tj-anderson", "camp-removal", "supports", "Keep current funding",
+    "Answered yes when asked whether to keep funding camp removals at current levels.",
+    andersonEmail2),
+  swept("timothy-tj-anderson", "data-centers", "supports", "Restrict new data centers",
+    "Answered yes when asked whether to restrict new AI data centers in the city.",
+    andersonEmail2),
+  swept("timothy-tj-anderson", "street-response", "mixed", "Not without additions",
+    "Answered no to a full 24/7 Street Response “not without additions,” without yet saying what those additions would be.",
+    andersonEmail2),
+  swept("timothy-tj-anderson", "water-rates", "opposes", "No rate increases",
+    "Answered no when asked whether to raise water bills to pay for the Bull Run filtration plant and system repairs.",
+    andersonEmail2),
 
   /* ── Eli Arnold ─────────────────────────────────────────────────────── */
   stance("eli-arnold", "new-taxes", "opposes", "No new taxes, fees",
