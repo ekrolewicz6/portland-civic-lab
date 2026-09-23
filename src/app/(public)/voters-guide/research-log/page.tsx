@@ -19,6 +19,37 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="legree-2026-09-22">September 22, 2026 · Second candidate response: Keir Legree (District 3)</h2>
+        <p>
+          Keir Legree answered all seven questions in the Lab’s follow-up. On
+          housing, he would explore letting Clean Energy Fund money acquire,
+          build or preserve affordable housing that meets strong energy and
+          carbon standards, and would buy existing apartment buildings when
+          that is faster and cheaper than building. On streets, he would judge
+          results by fewer traffic deaths and serious injuries, with reasonable
+          bus and car travel times and little diversion onto neighborhood
+          streets, and would have PBOT publish before-and-after results for
+          major redesigns. On the Council’s choices, he supports Street
+          Response but would add police officers before a 24/7 expansion; he
+          wants the Blazers kept but opposes spending hundreds of millions of
+          public dollars on the Moda Center, and would explore transferring the
+          arena to the team’s new owner for an agreement to stay at least 20
+          years; he would hold the line on new taxes and fees; he supports
+          restricting new AI data centers; and he would keep the street repair
+          fee only if PBOT shows it is necessary and effective.
+        </p>
+        <p>
+          His rent and homes column gained a “how” step and his streets column
+          a “measured by” step, both citing this reply. Five topic boards
+          changed: Moda, new taxes, data centers and the street fee, empty
+          before, now have entries, and his Street Response entry, a partial
+          reading of his platform, now records the conditional answer he gave
+          us. His reply also says the City acquired the arena for $1 in 2024;
+          the Lab has not verified that and does not repeat it on his page. His
+          open question now asks what would pay for more officers and
+          dispatchers if taxes and fees hold. Excerpts appear on his brief, the
+          reply is kept on file, and his preservation hash was re-recorded.
+        </p>
         <h2 id="sweeney-2026-09-22">September 22, 2026 · Candidate response: John Sweeney (District 3)</h2>
         <p>
           John Sweeney answered the three questions the Lab emailed him on

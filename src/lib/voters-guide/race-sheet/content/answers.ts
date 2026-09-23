@@ -2,6 +2,7 @@ import type { CandidateAnswer } from "../types";
 /** Replies to the identical questions sent to every candidate on September 19, 2026. */
 const received = "2026-09-19";
 const legree = (question: string, text: string): CandidateAnswer => ({ candidateId: "keir-legree", question, text, received });
+const legree2 = (question: string, text: string): CandidateAnswer => ({ candidateId: "keir-legree", question, text, received: "2026-09-22" });
 const anderson = (question: string, text: string): CandidateAnswer => ({ candidateId: "timothy-tj-anderson", question, text, received });
 const otero = (question: string, text: string): CandidateAnswer => ({ candidateId: "cristal-otero", question, text, received });
 const arnold = (question: string, text: string): CandidateAnswer => ({ candidateId: "eli-arnold", question, text, received: "2026-09-20" });
@@ -29,6 +30,28 @@ export const answers: CandidateAnswer[] = [
   legree(
     "Business experience",
     "I have spent approximately 30 years managing Savoy Studios, an architectural art-glass company, where I manage employees, budgets, contracts, vendors, schedules and complex projects in the U.S. and internationally. I also founded PlanXT, a project-management software company.",
+  ),
+  legree2(
+    "Rent and homes: how would you deliver it?",
+    "My approach would be a change in priorities. I would explore expanding the allowable use of PCEF funds so they can help acquire, build or preserve affordable housing when those projects also meet strong energy-efficiency and carbon-reduction standards. [...] I would also prioritize purchasing existing apartment buildings when that is faster and less expensive than building new housing.",
+  ),
+  legree2(
+    "Streets, buses and air: what would show it worked?",
+    "When we see fewer traffic deaths and serious injuries, while maintaining reasonable travel times for buses and cars and avoiding significant traffic diversion onto neighborhood streets. For major street redesigns, PBOT should publish before-and-after results so we can see whether the project actually worked. If it didn’t, we should be willing to modify it.",
+  ),
+  legree2(
+    "Street Response",
+    "I support Portland Street Response and believe it plays an important role. Before expanding PSR to 24/7, however, I would prioritize increasing the number of police officers available to respond to 911 calls and to situations where PSR needs police support. Once we have adequate police staffing, I would be open to expanding PSR.",
+  ),
+  legree2(
+    "Moda Center deal",
+    "I think it’s very important that we keep the Trail Blazers in Portland. But I don’t like the idea of spending hundreds of millions of public dollars on the Moda Center we don’t have. One option I’d want to explore is transferring ownership of the Moda Center to the Blazers’ new owner in exchange for an ironclad agreement to keep the Blazers in Portland for at least 20 years.",
+  ),
+  legree2("New taxes or fees", "My priority is to hold the line on new taxes and fees."),
+  legree2("Data centers", "I support restricting new AI data centers."),
+  legree2(
+    "Street repair fee",
+    "I would keep the street repair fee only if PBOT can clearly demonstrate that it is necessary and show measurable results. If they cannot demonstrate that the fee is necessary and effective, I would support repealing it.",
   ),
   anderson(
     "Three policies and what each would cost",

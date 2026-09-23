@@ -111,6 +111,13 @@ const legreeEmail: Evidence = {
   date: "Received September 19, 2026",
   note: NOTE,
 };
+const legreeEmail2: Evidence = {
+  label: "Legree · second emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#legree-2026-09-22",
+  kind: "Candidate statement",
+  date: "Received September 22, 2026",
+  note: NOTE,
+};
 const leon = site("León · issue platform", "https://EstherForPortland.com");
 const morilloPlatform = site("Morillo · platform", "https://www.angelitaforportland.com/platform");
 const novick = site("Novick · second-term priorities", "https://NovickForPortland.com");
@@ -232,6 +239,10 @@ export const deliveriesD3: DeliveryEntry[] = [
 
   /* ── Keir Legree ──────────────────────────────────────────────────── */
   entry("keir-legree", "housing", "emailed response", {
+    how: [
+      "Would explore letting Clean Energy Fund money acquire, build or preserve affordable housing that meets strong energy-efficiency and carbon standards, and would buy existing apartment buildings when that is faster and cheaper than building.",
+      legreeEmail2,
+    ],
     measure: [
       "Would watch whether subsidized units are actually affordable to lower-income residents and whether existing vacant affordable units get occupied.",
       legreeEmail,
@@ -261,6 +272,10 @@ export const deliveriesD3: DeliveryEntry[] = [
     how: [
       "Would fund pedestrian and bicycle improvements where a safety or transportation need is demonstrated, and evaluate major projects for use, safety, cost and system impacts before building.",
       legreeEmail,
+    ],
+    measure: [
+      "Fewer traffic deaths and serious injuries, with reasonable bus and car travel times and little diversion onto neighborhood streets; PBOT would publish before-and-after results for major redesigns and change projects that fall short.",
+      legreeEmail2,
     ],
   }),
 

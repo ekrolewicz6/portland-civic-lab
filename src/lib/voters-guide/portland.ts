@@ -153,7 +153,7 @@ const d3: Candidate[] = [
       "Change the approach to street homelessness.",
     ],
     "He stresses operational execution and costs. The reviewed statement does not describe the homelessness plan or a financed utility-rate reduction in detail.",
-    "Which infrastructure costs would you cut without deferring essential maintenance?",
+    "Holding the line on new taxes and fees, what would pay for more police officers and 911 dispatchers?",
     statement(59),
   ),
   c(

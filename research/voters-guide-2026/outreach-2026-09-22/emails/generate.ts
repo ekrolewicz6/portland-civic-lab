@@ -160,7 +160,9 @@ function email(row: SheetRow, raceId: string) {
 }
 
 const index: string[] = [];
-index.push("# Follow-up emails to every campaign (drafted September 22, 2026; nothing sent)");
+index.push("# Follow-up emails to every campaign (drafted September 22, 2026)");
+index.push("");
+index.push("Sent the evening of September 22; what went out, what was held and the replies so far are in [SENT.md](SENT.md).");
 index.push("");
 index.push("One draft per campaign, generated from the same data the race pages render, so each question is a gap the page shows today: a missing position on one of the four issues, a position without its how or measured-by rung, a choice with no statement, a statement that does not reach the exact choice (shown as partial), or a recorded vote without a statement.");
 index.push("");
