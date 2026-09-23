@@ -90,7 +90,7 @@ const rows: Record<string, AnalysisRow> = {
   ],
   "Keir Legree": [
     ["Operational delivery", "Household costs"],
-    "His stated goals connect city performance to safety and utility bills. His September 19, 2026 response adds the mechanisms: competitive bidding, independent cost estimates and scope control for projects; more shelter and treatment capacity with accountability for spending; and a proposed one-year pause on cash bottle redemptions as a measured experiment. Savings are still not quantified.",
+    "His stated goals connect city performance to safety and utility bills. His emailed replies of September 19 and 22, 2026 add the mechanisms: competitive bidding, independent cost estimates and scope control for projects; Clean Energy Fund money and building purchases for affordable housing; more shelter and treatment capacity; and a proposed one-year pause on cash bottle redemptions as a measured experiment. He would hold the line on new taxes and fees while hiring more officers and dispatchers; savings are not quantified, and what would pay for the new positions is open.",
     {
       safety:
         "Wants more police and 911 dispatchers and a different approach to street homelessness. The reviewed pamphlet does not detail that homelessness plan.",

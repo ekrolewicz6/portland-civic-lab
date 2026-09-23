@@ -129,11 +129,13 @@ const mercuryStreetFee: Evidence = {
 const mercuryFor = (name: string): Evidence => ({ ...mercury, label: `Mercury questionnaire · ${name}’s responses` });
 const corcoranValues = site("Corcoran · Values", "https://www.corcoranforportland.org/values", SWEEP_SITE_DATE);
 const legreePlan = site("Legree · Homelessness plan", "https://www.keir4pdx.com/homelessness-plan", SWEEP_SITE_DATE);
-const legreeSafer = site(
-  "Legree · Safer Communities (Policy Platform section of the home page)",
-  "https://www.keir4pdx.com/",
-  SWEEP_SITE_DATE,
-);
+const legreeEmail2: Evidence = {
+  label: "Legree · second emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#legree-2026-09-22",
+  kind: "Candidate statement",
+  date: "Received September 22, 2026",
+  note: NOTE,
+};
 const morilloCouncil2026: Evidence = {
   label: "Morillo · Councilor Morillo’s Work in 2026 (City of Portland council page)",
   url: "https://www.portland.gov/council/districts/3/angelita-morillo/2026-morillo-work",
@@ -370,6 +372,23 @@ export const topicStancesD3: TopicStance[] = [
   ),
 
   /* ── Keir Legree ────────────────────────────────────────────────────── */
+  // Moda, taxes, data centers, Street Response and the street fee come from his second emailed reply of September 22, 2026.
+  sweepStance(
+    "keir-legree",
+    "moda",
+    "opposes",
+    "Transfer arena, no cash",
+    "Wants the Blazers kept but opposes spending hundreds of millions of public dollars on the Moda Center; would explore transferring the arena to the team’s new owner for an ironclad agreement to stay at least 20 years.",
+    legreeEmail2,
+  ),
+  sweepStance(
+    "keir-legree",
+    "new-taxes",
+    "opposes",
+    "Hold the line",
+    "Says his priority is to hold the line on new taxes and fees.",
+    legreeEmail2,
+  ),
   stance(
     "keir-legree",
     "police-staffing",
@@ -388,11 +407,28 @@ export const topicStancesD3: TopicStance[] = [
   ),
   sweepStance(
     "keir-legree",
+    "data-centers",
+    "supports",
+    "Restrict new data centers",
+    "Supports restricting new AI data centers.",
+    legreeEmail2,
+  ),
+  // His second reply answers the 24/7 question his platform left open (it replaces a partial reading of the Safer Communities section).
+  sweepStance(
+    "keir-legree",
     "street-response",
-    "partial",
-    "Scale PSR, add specialists",
-    "Would fully support and scale Street Response for non-violent behavioral-health crises and expand unarmed Public Safety Support Specialists; his platform does not say whether Street Response should run 24/7.",
-    legreeSafer,
+    "mixed",
+    "Police staffing first",
+    "Supports Street Response, but before a 24/7 expansion would first add police officers for 911 calls and for situations where Street Response needs police support; open to expanding it once police staffing is adequate.",
+    legreeEmail2,
+  ),
+  sweepStance(
+    "keir-legree",
+    "street-fee",
+    "mixed",
+    "Keep only if proven",
+    "Would keep the street repair fee only if PBOT clearly shows it is necessary and produces measurable results; otherwise would support repealing it.",
+    legreeEmail2,
   ),
   stance(
     "keir-legree",
