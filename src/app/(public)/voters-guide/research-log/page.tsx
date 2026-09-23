@@ -19,6 +19,31 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="sweeney-2026-09-22">September 22, 2026 · Candidate response: John Sweeney (District 3)</h2>
+        <p>
+          John Sweeney answered the three questions the Lab emailed him on
+          September 19. On moving homeless services to Multnomah County, he
+          points to Resolution A of 1983, under which the County took over
+          jails, bridges and welfare services, and says federal and local
+          funding would follow the services so the transfer could be
+          seamless. On housing, he would start from the incomes of the people
+          to be housed and build to the price they can afford, pointing to
+          low-cost designs such as Quonset houses, which he says can cost under
+          $4,000. He describes 33 years with Portland Parks, where he says many
+          of his temporary employees became permanent, and 28 years in the
+          Army Guard and Reserve, rising from private to captain.
+        </p>
+        <p>
+          His rent and homes column, empty before, now has a position with a
+          “how” step citing the reply, and his background line reflects his
+          Parks and military service. His open question now asks which
+          agreement among the City, the County and Metro would carry out the
+          transfer, and on what timeline. Excerpts appear on his brief; they
+          correct spelling and punctuation only. His reply does not address
+          the Council’s eight choices, which the Lab asked about in a separate
+          follow-up the same evening. The reply is kept on file, and his
+          preservation hash was re-recorded.
+        </p>
         <h2 id="sollitt-2026-09-22">September 22, 2026 · Candidate response: Tom Sollitt (District 3)</h2>
         <p>
           Tom Sollitt replied to the Lab’s follow-up with an answer to every

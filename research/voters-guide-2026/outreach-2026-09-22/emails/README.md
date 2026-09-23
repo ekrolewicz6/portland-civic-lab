@@ -26,7 +26,7 @@ Before sending to a Council candidate, check the September 19 ledger (`runtime-d
 | Portland City Council District 3 | Steve Novick | reply to thread | 7/8 | 4 | [portland-district-3.md](portland-district-3.md) |
 | Portland City Council District 3 | Terry Parker | September 19 ledger address | 5/8 | 9 | [portland-district-3.md](portland-district-3.md) |
 | Portland City Council District 3 | Tiffany Koyama Lane | email info@teachertiffanyforthepeople.com | 8/8 | 6 | [portland-district-3.md](portland-district-3.md) |
-| Portland City Council District 3 | Tom Sollitt | email tomforpdx@gmail.com | 3/8 | 10 | [portland-district-3.md](portland-district-3.md) |
+| Portland City Council District 3 | Tom Sollitt | reply to thread | 8/8 | 0 | [portland-district-3.md](portland-district-3.md) |
 | Portland City Council District 4 | Eli Arnold | reply to thread | 4/8 | 5 | [portland-district-4.md](portland-district-4.md) |
 | Portland City Council District 4 | Eric Zimmerman | contact https://ez4pdx.com/join-us/ | 7/8 | 5 | [portland-district-4.md](portland-district-4.md) |
 | Portland City Council District 4 | Jamey Evenstar | email evenstarforportland@gmail.com | 3/8 | 11 | [portland-district-4.md](portland-district-4.md) |
@@ -160,4 +160,4 @@ Before sending to a Council candidate, check the September 19 ledger (`runtime-d
 | Oregon City Commission | James Nicita | email james.nicita@gmail.com | 4/6 | 8 | [oregon-city-commission.md](oregon-city-commission.md) |
 | Oregon City Commission | Paul Espe | email Commissionerespe@gmail.com | 1/6 | 10 | [oregon-city-commission.md](oregon-city-commission.md) |
 
-Totals: 153 campaigns, 1293 questions.
+Totals: 153 campaigns, 1283 questions.

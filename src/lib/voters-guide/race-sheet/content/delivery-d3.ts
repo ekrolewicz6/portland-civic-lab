@@ -97,6 +97,13 @@ const sollittEmail: Evidence = {
   date: "Received September 22, 2026",
   note: NOTE,
 };
+const sweeneyEmail: Evidence = {
+  label: "Sweeney · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#sweeney-2026-09-22",
+  kind: "Candidate statement",
+  date: "Received September 22, 2026",
+  note: NOTE,
+};
 const legreeEmail: Evidence = {
   label: "Legree · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#legree-2026-09-19",
@@ -442,6 +449,12 @@ export const deliveriesD3: DeliveryEntry[] = [
   }),
 
   /* ── John Sweeney ─────────────────────────────────────────────────── */
+  entry("john-sweeney", "housing", "emailed response", {
+    how: [
+      "Start from the incomes of the people to be housed and what they can afford, then build to that price with low-cost designs such as Quonset-style houses.",
+      sweeneyEmail,
+    ],
+  }),
   entry("john-sweeney", "safety", "pamphlet", {
     how: [
       "Would have the cities and Metro take back a third of the money given to Multnomah County, then leave homeless services to the County under the 1983 arrangement.",

@@ -100,6 +100,7 @@ const councilLines: IssueLine[] = [
   line("tom-sollitt", "money", "Would restore the Auditor’s performance audits before asking Portlanders for more money."),
   line("tom-sollitt", "climate", "Would maintain streets before new projects and restrict projects without funding or results."),
 
+  line("john-sweeney", "housing", "Would build homes to the price residents can afford, using low-cost designs."),
   line("john-sweeney", "safety", "Wants the County to assume primary responsibility for homelessness services."),
   line("john-sweeney", "money", "Opposes spending to keep the Blazers; puts preserving city services first as revenue declines."),
 

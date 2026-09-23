@@ -192,7 +192,7 @@ const rows: Record<string, AnalysisRow> = {
   ],
   "John Sweeney": [
     ["Service preservation", "Limits on arena spending"],
-    "He would free resources by rejecting arena spending and revisiting city-county responsibilities. Shifting responsibility does not itself eliminate service costs; a workable transition needs agreements and continuing provision.",
+    "He would free resources by rejecting arena spending and moving homeless services to the County, citing the 1983 Resolution A transfer of jails, bridges and welfare as the precedent. Shifting responsibility does not itself eliminate service costs; a workable transition still needs a named agreement and continuing provision.",
     {
       safety:
         "Wants the County to assume primary responsibility for homelessness services.",
@@ -393,6 +393,13 @@ const greenRecordPage: Evidence = {
   date: "Website reviewed September 22, 2026",
   note: "Campaign position. Claimed results and numerical premises have not automatically been independently verified.",
 };
+const sweeneyEmail: Evidence = {
+  label: "Sweeney · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#sweeney-2026-09-22",
+  kind: "Candidate statement",
+  date: "Received September 22, 2026",
+  note: replyNote,
+};
 const supplements: Record<string, { source: Evidence; issues: Issues; issueSources?: Partial<Record<keyof Issues, Evidence>>; also?: Evidence[] }> = {
   "Timothy (TJ) Anderson": {
     // Emailed reply to the individual questions the Lab sent him on September 19, 2026.
@@ -563,6 +570,14 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
         "Supports emergency response alongside prevention, behavioral health and housing stability; the page does not name a police staffing target.",
       money:
         "Would test program results and, when more revenue is necessary, favor taxes on the wealthiest households and largest corporations over working households and small businesses.",
+    },
+  },
+  "John Sweeney": {
+    // His housing position comes from his emailed reply of September 22, 2026.
+    source: sweeneyEmail,
+    issues: {
+      housing:
+        "Would build housing to the price the people being housed can afford, starting from their incomes, and points to low-cost designs such as Quonset-style houses, which he says can cost under $4,000 each.",
     },
   },
   "Kimberly Tucker": {
