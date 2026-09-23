@@ -51,6 +51,8 @@ export function sourceChip(evidence: Evidence): SourceChip {
     return pick("Pamphlet", `Pamphlet p. ${page}`);
   if (/multco\.us|washingtoncountyor\.gov|clackamas\.us|docs\.clackamas|sos\.oregon\.gov/i.test(host))
     return pick("Pamphlet", "Voters’ pamphlet");
+  // A councilor's own office page or statement on portland.gov is their statement, not a filing.
+  if (/portland\.gov/i.test(host) && /\/council\/districts\//.test(url)) return pick("Site", "Council office");
   if (/portland\.gov/i.test(host)) return pick("Filing", "City filing");
   if (/portlandmercury|wweek|oregonlive|opb\.org/i.test(host)) return pick("Questionnaire", "Questionnaire");
   if (/(^|\.)(linkedin\.com|facebook\.com|instagram\.com|x\.com|twitter\.com|bsky\.app|threads\.net)$/i.test(host)) return pick("Post", "Public post");

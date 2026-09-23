@@ -236,6 +236,12 @@ export const deliveriesD4: Delivery[] = [
       greenPriorities,
     ),
   }),
+  entry("mitch-green", "safety", "campaign site", {
+    how: step(
+      "Secured FY 2025–26 funding to restart an independent evaluation of Street Response and created a public-safety set-aside fund to add staff as the program moves to a 24/7 model.",
+      greenRecord,
+    ),
+  }),
   entry("mitch-green", "money", "pamphlet", {
     how: step(
       "Names larger contributions from the biggest corporations as the revenue source; no rate or amount is given.",

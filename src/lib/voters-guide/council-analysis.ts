@@ -184,7 +184,7 @@ const rows: Record<string, AnalysisRow> = {
   ],
   "Tom Sollitt": [
     ["Reliable public services", "Community participation"],
-    "His focus is making existing institutions respond and coordinate. That is a governing approach; voters still need to know which spending priorities would prevail when coordination alone cannot close a funding gap.",
+    "His focus is making existing institutions respond and coordinate, and his emailed reply attaches a measure to each issue: homes preserved and occupied, response times and repeat calls, audit findings acted on, street condition and transit reliability. What remains open is what would pay for street maintenance if the repair fee ends.",
     {
       money:
         "Calls for dependable basic services and stronger oversight of bureaus and contractors.",
@@ -226,6 +226,8 @@ const rows: Record<string, AnalysisRow> = {
         "Would test government-owned housing, build permanent shelter and oppose demolition of Lloyd Center.",
       money:
         "Rejects Moda renovations and proposes large spending cuts. The reviewed statement does not substantiate the claimed savings.",
+      safety:
+        "Would install video cameras at every intersection, buy non-lethal equipment such as tranquilizers, increase police training and add police officers.",
     },
   ],
   "Timothy (TJ) Anderson": [
@@ -358,6 +360,39 @@ const campaign = (label: string, url: string): Evidence => ({
   date: "Website reviewed September 18, 2026",
   note: "Campaign position. Claimed results and numerical premises have not automatically been independently verified.",
 });
+/* Candidate replies and council-office statements cited by the positions below (September 22, 2026). */
+const replyNote =
+  "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on the brief. Receipt does not verify the claims.";
+const officeNote =
+  "Published by the councilor’s own office. Claims in it have not automatically been independently verified.";
+const sollittEmail: Evidence = {
+  label: "Sollitt · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#sollitt-2026-09-22",
+  kind: "Candidate statement",
+  date: "Received September 22, 2026",
+  note: replyNote,
+};
+const greenStatement: Evidence = {
+  label: "Green · statement responding to The Oregonian and Chief Day (council office press release)",
+  url: "https://www.portland.gov/council/districts/4/mitch-green/news/2026/9/16/press-release-councilor-green-police-tweets",
+  kind: "Candidate statement",
+  date: "Councilor’s own office statement, September 16, 2026; read September 22, 2026",
+  note: officeNote,
+};
+const greenPolicy: Evidence = {
+  label: "Green · policy (City of Portland council office page)",
+  url: "https://www.portland.gov/council/districts/4/mitch-green/policy",
+  kind: "Candidate statement",
+  date: "Councilor’s own office page; read September 22, 2026",
+  note: officeNote,
+};
+const greenRecordPage: Evidence = {
+  label: "Green · record",
+  url: "https://www.mitch4portland.com/record",
+  kind: "Candidate statement",
+  date: "Website reviewed September 22, 2026",
+  note: "Campaign position. Claimed results and numerical premises have not automatically been independently verified.",
+};
 const supplements: Record<string, { source: Evidence; issues: Issues; issueSources?: Partial<Record<keyof Issues, Evidence>>; also?: Evidence[] }> = {
   "Timothy (TJ) Anderson": {
     // Emailed reply to the individual questions the Lab sent him on September 19, 2026.
@@ -530,18 +565,35 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
         "Would test program results and, when more revenue is necessary, favor taxes on the wealthiest households and largest corporations over working households and small businesses.",
     },
   },
+  "Kimberly Tucker": {
+    source: {
+      label: "Tucker · The other issues",
+      url: "https://kimberlyforpdxd3.com/the-other-issues",
+      kind: "Candidate statement",
+      date: "Website reviewed September 22, 2026",
+      note: "Campaign position. Claimed results and numerical premises have not automatically been independently verified.",
+    },
+    issues: {
+      safety:
+        "Says police response times are too long; would add armed officers and specialists for non-criminal calls, focus crisis-intervention training on mental health and de-escalation, and publish the police budget in plain language with a cost-benefit analysis.",
+    },
+  },
   "Tom Sollitt": {
     source: campaign(
       "Sollitt · platform and campaign case studies",
       "https://TomForPDX.com",
     ),
+    // Each position below comes from his emailed reply of September 22, 2026.
+    issueSources: { housing: sollittEmail, safety: sollittEmail, money: sollittEmail, climate: sollittEmail },
     issues: {
       housing:
-        "Describes supporting adaptive reuse and the Save Lloyd community’s preservation approach. A citywide production target or financing plan is not established in the reviewed page.",
+        "Would put preserving existing affordable housing first, using current Housing Bureau staff and pressing Metro, the County, Home Forward, state and federal programs, nonprofits and private partners to share costs; would ease adaptive reuse and keep the current relocation-assistance threshold.",
       safety:
-        "Would tie police staffing to demonstrated needs, particularly investigations, with accountability and a balance across agencies rather than a fixed officer total.",
+        "Would define who answers which calls: police where police authority or a safety threat is involved, Fire and EMS for medical emergencies, Street Response and CHAT for behavioral-health, welfare and non-emergency calls. Counts dispatch, technology and support capacity, not only frontline headcount, as public-safety staffing.",
       money:
-        "Would scrutinize contracts before raising taxes or fees, strengthen independent audits, and share or transfer responsibilities where another government can deliver them better.",
+        "Before asking for more money, would show existing money is used well: restore the Auditor’s performance-audit capacity in his first budget, have it examine high-risk contracts and programs, and report its recommendations and results quarterly.",
+      climate:
+        "Would maintain existing streets before committing to new projects until new funding is found, prioritizing maintenance, preservation and safety; would ask the Clean Energy Fund committee whether voter-approved climate money can go further toward transportation and air quality, and restrict projects without a clear public benefit, funding source and measurable outcome.",
     },
   },
   "Kellie Torres": {
@@ -643,7 +695,13 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
       "Green · priorities",
       "https://mitch4portland.com/priorities",
     ),
+    // His safety position comes from his office's September 16, 2026 statement; the campaign pointed us to it
+    // and to his record page on September 22, 2026, after the column had wrongly read "not found".
+    issueSources: { safety: greenStatement },
+    also: [greenRecordPage, greenPolicy],
     issues: {
+      safety:
+        "Would protect and expand Portland Street Response, defend unarmed first responders against budget cuts, and protect the Office for Community Police Accountability, pressing for police transparency and accountability.",
       housing:
         "Favors permanently affordable social housing with rents linked to income and tenant unions built into governance.",
       money:

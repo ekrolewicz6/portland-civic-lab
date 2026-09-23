@@ -73,11 +73,11 @@ const SWEEP_SITE_DATE = "Website reviewed September 22, 2026";
 const hiltonAction = site("Hilton · Working class and unhoused housing first", "https://www.patrickhilton4pdx.org/take-action", SWEEP_SITE_DATE);
 const tuckerIssues = site("Tucker · The other issues", "https://kimberlyforpdxd3.com/the-other-issues", SWEEP_SITE_DATE);
 const wardBudget = site("Ward · budget cuts", "https://www.theprinceofpeace.net/home/city-policy/budget-cuts", SWEEP_SITE_DATE);
-const sollittModaPost: Evidence = {
-  label: "Sollitt · Bluesky post on the Moda Center (May 11, 2026)",
-  url: "https://bsky.app/profile/tomforpdx.bsky.social/post/3mllrzludns2q",
+const sollittEmail: Evidence = {
+  label: "Sollitt · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#sollitt-2026-09-22",
   kind: "Candidate statement",
-  date: "Posted May 11, 2026; read September 22, 2026",
+  date: "Received September 22, 2026",
   note: NOTE,
 };
 const landgraver350: Evidence = {
@@ -690,13 +690,54 @@ export const topicStancesD3: TopicStance[] = [
     "If staffing must rise, would target investigations and specialized units; staffing should follow need, not a fixed officer total.",
     sollitt,
   ),
+  // From his emailed reply of September 22, 2026. It replaces a partial reading of his May 11 Bluesky post on Moda.
   sweepStance(
     "tom-sollitt",
     "moda",
-    "partial",
-    "Public say on Moda",
-    "Posted that Portlanders deserve a direct say in if, when and how tax dollars are used to renovate the Moda Center, negotiating from confidence rather than fear; the post does not say whether he supports public money.",
-    sollittModaPost,
+    "opposes",
+    "No on term sheet",
+    "Says he would have voted no on the Moda term sheet: he wants the Blazers kept but says the City started from a weak position and should have secured a clear return, accountability and remedies.",
+    sollittEmail,
+  ),
+  sweepStance(
+    "tom-sollitt",
+    "camp-removal",
+    "mixed",
+    "Account first, then decide",
+    "Answered no, but would pause any increase or cut until a clear accounting shows what the program spends and achieves; wants rights-of-way kept clear through a coordinated approach with the County and providers.",
+    sollittEmail,
+  ),
+  sweepStance(
+    "tom-sollitt",
+    "data-centers",
+    "supports",
+    "Restrict until standards",
+    "Supports restricting new AI data centers while the City sets standards for resource use, environmental impacts, infrastructure costs, community impacts and transparency; a facility meeting them with a public benefit could be considered.",
+    sollittEmail,
+  ),
+  sweepStance(
+    "tom-sollitt",
+    "street-response",
+    "mixed",
+    "24/7 later, overhaul first",
+    "Supports a 24/7 Street Response eventually, but first an operational overhaul of dispatch, coverage, recruitment and retention and a way to share the cost with the County; would consider temporarily reducing hours to relieve current staff.",
+    sollittEmail,
+  ),
+  sweepStance(
+    "tom-sollitt",
+    "street-fee",
+    "opposes",
+    "Eliminate the fee",
+    "Would eliminate the monthly street repair fee, citing the equity of its largely flat charge for renters, transit users and lower-income households; would audit transportation obligations and seek outside and fairer revenue, naming no single replacement.",
+    sollittEmail,
+  ),
+  sweepStance(
+    "tom-sollitt",
+    "water-rates",
+    "mixed",
+    "Alternatives before increases",
+    "Would not support more water-rate increases until alternatives are exhausted, through outside funding, scrutiny of remaining costs and independent oversight; says the plant is legally required and he cannot promise increases are avoidable.",
+    sollittEmail,
   ),
 
   /* ── John Sweeney ───────────────────────────────────────────────────── */

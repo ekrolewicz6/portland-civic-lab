@@ -233,7 +233,7 @@ const d3: Candidate[] = [
       "Use Council oversight to coordinate service delivery.",
     ],
     "He makes reliability the test of government. The statement offers a governing approach more than a detailed spending plan.",
-    "Which measurable service targets would you put in the next budget?",
+    "If the street repair fee ends, what would pay for street maintenance until other revenue is found?",
     statement(53),
   ),
   c(
