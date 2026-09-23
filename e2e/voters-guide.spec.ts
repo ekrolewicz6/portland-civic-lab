@@ -282,15 +282,17 @@ for (const width of [390, 1280]) {
   });
 }
 
-test("keir-legree: four documented chips on the grid, four positions and five answers on the brief", async ({ page }) => {
+test("keir-legree: four documented chips on the grid, four positions and both replies' answers on the brief", async ({ page }) => {
   const sheet = sheets.find((s) => s.rows.some((r) => r.id === "keir-legree"))!;
   const r = sheet.rows.find((x) => x.id === "keir-legree")!;
   for (const issue of issues) {
     expect(r.cells[issue.id].position, issue.id).not.toBeNull();
     expect(r.cells[issue.id].chip, issue.id).not.toBeNull();
   }
-  expect(r.answers).toHaveLength(5);
-  for (const a of r.answers) expect(a.received).toBe("2026-09-19");
+  // Five answers from his September 19 reply, seven from his September 22 reply.
+  expect(r.answers).toHaveLength(12);
+  expect(r.answers.filter((a) => a.received === "2026-09-19")).toHaveLength(5);
+  expect(r.answers.filter((a) => a.received === "2026-09-22")).toHaveLength(7);
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto(`/voters-guide/${sheet.race.id}`);
   for (const issue of issues) await expect(cell(page, "keir-legree", issue.id).getByRole("button")).toHaveText(r.cells[issue.id].chip!);
@@ -301,12 +303,13 @@ test("keir-legree: four documented chips on the grid, four positions and five an
   await expect(stand.getByText("Not found in the sources we reviewed. That is a research gap, not a position.")).toHaveCount(0);
   const wordsSection = page.locator('section[aria-labelledby="keir-legree-words"]');
   await expect(wordsSection.getByRole("heading", { level: 2 })).toHaveText("Their answers to our questions");
-  await expect(wordsSection.locator("blockquote")).toHaveCount(5);
+  await expect(wordsSection.locator("blockquote")).toHaveCount(12);
   for (const a of r.answers) {
     await expect(wordsSection).toContainText(a.question);
     await expect(wordsSection).toContainText(a.text);
   }
   await expect(wordsSection.getByText("Received 2026-09-19", { exact: true })).toHaveCount(5);
+  await expect(wordsSection.getByText("Received 2026-09-22", { exact: true })).toHaveCount(7);
 });
 
 test("share yields a URL with no query string and at most #issue=", async ({ page }) => {
