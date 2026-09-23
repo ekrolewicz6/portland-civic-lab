@@ -351,6 +351,13 @@ choice.push({
 
 /* ── Gresham Council, Position 2 ────────────────────────────────────── */
 const hccPriorities = site("Coleman-Cox · campaign priorities", "https://togetherwithheather.org/campaign-priorities");
+const hccEmail: Evidence = {
+  label: "Coleman-Cox · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#coleman-cox-2026-09-23",
+  kind: "Candidate statement",
+  date: "Received September 23, 2026",
+  note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on her brief. Receipt does not verify the claims.",
+};
 candidate("heather-coleman-cox", {
   values: ["Neighborhood revitalization", "Safety with trust"],
   tradeoff:
@@ -385,6 +392,10 @@ candidate("heather-coleman-cox", {
       source: pamphlet(42),
       line: "Wants accountability and transparency for taxpayer dollars, with investment in utilities and parks.",
       chip: "Accountable spending",
+      how: step(
+        "As chair of the Public Safety Levy Committee: quarterly meetings with city staff and police and fire leaders, public reports, and a check that each levy dollar matches the ballot language voters passed.",
+        hccEmail,
+      ),
     },
     climate: {
       position: "Growth should improve infrastructure, protect natural resources and promote environmentally responsible development.",
@@ -1029,12 +1040,6 @@ const minJan20 = record(
   "January 20, 2026; read September 22, 2026",
   "Adopted 7–0 in place of the emergency declaration residents requested on December 9, 2025 and January 6, 2026 (minutes /5686 and /5772).",
 );
-const outlookWater = reporting(
-  "The Outlook · Gresham raises a glass to new groundwater system",
-  "https://theoutlookonline.com/2026/04/17/gresham-raises-glass-to-new-groundwater-system/",
-  "April 17, 2026; read September 22, 2026",
-  "Reported statement; quote as printed by The Outlook.",
-);
 const outlookRamirez = reporting(
   "The Outlook · Former Gresham employee seeks testimony on ICE encounters",
   "https://theoutlookonline.com/2025/11/15/former-gresham-employee-seeks-testimony-on-ice-encounters/",
@@ -1171,12 +1176,25 @@ const greshamStances: TopicStance[] = [
     minJan20),
 
   /* ── Challengers: only explicit statements; Schroeder and Miller have none on these choices ── */
-  stance("heather-coleman-cox", "gresham-levy-fire", "partial", "Track levy dollars",
-    "Chairs the levy advisory subcommittee that tracks how the levy is spent and would provide “transparent reporting on public safety funding and results” while maintaining strong police, fire and emergency response. Renewal and a fire district are unsaid.",
-    hccPriorities),
-  stance("heather-coleman-cox", "gresham-groundwater", "partial", "Smart move on wells",
-    "Told The Outlook at the April 2026 groundwater open house that the switch is “a smart move — it gives us more control over a natural resource”; nothing since on the complaints or the 2028–32 rates.",
-    outlookWater),
+  // Her emailed reply of September 23, 2026 answers five choices and replaces the partial levy and groundwater readings.
+  stance("heather-coleman-cox", "gresham-levy-fire", "supports", "Renew the levy",
+    "Wholeheartedly supports renewing the levy and making the case to residents now for why it needs continued funding; she did not address joining a fire district.",
+    hccEmail),
+  stance("heather-coleman-cox", "gresham-groundwater", "supports", "Stay on groundwater",
+    "Says the investment in moving from Bull Run to groundwater is too great to reverse and the switch looks logical on cost; wants residents to report sight, smell or taste problems, and says the switch needed louder notice.",
+    hccEmail),
+  stance("heather-coleman-cox", "gresham-safety-fee", "supports", "Keep fee at $15",
+    "Supports keeping the Police, Fire and Parks Fee at $15 a month; if Council considers changing it, residents should get a say and see how it would affect bills and services.",
+    hccEmail),
+  stance("heather-coleman-cox", "gresham-budget-gap", "opposes", "Stop drawing reserves",
+    "Would not keep using reserves for a gap that returns every year, nor jump to cutting services; wants staff to lay out the causes, savings and revenue options, then decide in public.",
+    hccEmail),
+  stance("heather-coleman-cox", "gresham-camping-shelter", "mixed", "Pods, with conditions",
+    "Supports keeping parks and public spaces safe and available with continued outreach toward shelter and housing; open to pod shelters under the new permit code once operator, siting, neighbor impact and housing results are clear.",
+    hccEmail),
+  stance("heather-coleman-cox", "gresham-ice-response", "mixed", "Open to an emergency",
+    "Was part of a community group that backed the rule-of-law resolution; open to an emergency declaration if it would give the City a practical way to better protect residents.",
+    hccEmail),
   stance("will-delplato", "gresham-budget-gap", "opposes", "Small cuts now",
     "Says the budget shortfall is growing and the city should “act now with small, early changes rather than waiting until we’re forced into painful ones,” reviewing spending for efficiencies rather than relying on reserves.",
     pamphlet(42)),

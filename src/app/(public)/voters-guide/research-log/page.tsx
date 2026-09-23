@@ -19,6 +19,39 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="coleman-cox-2026-09-23">September 23, 2026 · Candidate response: Heather Coleman-Cox (Gresham Council, Position 2)</h2>
+        <p>
+          Heather Coleman-Cox answered all ten questions the Lab emailed her
+          on September 22. She supports renewing the public-safety levy,
+          staying on the groundwater system (while saying residents deserved
+          louder notice of the switch) and keeping the Police, Fire and Parks
+          Fee at $15. She would stop covering the recurring budget gap from
+          reserves without jumping to service cuts, is open to pod shelters
+          under the new permit code once operator, siting and results are
+          clear, and is open to an immigration-enforcement emergency
+          declaration if it gives the City a practical way to protect
+          residents. She describes her roles as vice chair of the Community
+          Development and Housing Committee and chair of the Public Safety
+          Levy Committee.
+        </p>
+        <p>
+          Her bills column gained a “how” step citing this reply. Six topic
+          boards changed: the fee, the budget gap, camping and immigration,
+          empty before, now have entries, and her levy and groundwater
+          entries, partial readings of her platform and a 2026 Outlook quote,
+          now record the answers she gave us. She did not address joining a
+          fire district. Excerpts appear on her brief, and the reply is kept
+          on file.
+        </p>
+        <h2 id="mcdonald-2026-09-23">September 23, 2026 · Candidate response: John McDonald (District 4)</h2>
+        <p>
+          John McDonald wrote that he fully supports the City’s current Moda
+          Center proposal, which he describes as $120 million up front and $275
+          million in ongoing maintenance over a 20-year lease, and expects
+          other revenue to follow the teams’ success. His Moda board entry, a
+          partial reading of his pamphlet statement, now records that support,
+          and his bills column gained a “how” step. The reply is kept on file.
+        </p>
         <h2 id="sollitt-2026-09-23">September 23, 2026 · Third candidate response: Tom Sollitt (District 3)</h2>
         <p>
           Tom Sollitt answered the three questions the Lab emailed him on
