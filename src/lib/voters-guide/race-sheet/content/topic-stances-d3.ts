@@ -129,6 +129,13 @@ const mercuryStreetFee: Evidence = {
 const mercuryFor = (name: string): Evidence => ({ ...mercury, label: `Mercury questionnaire · ${name}’s responses` });
 const corcoranValues = site("Corcoran · Values", "https://www.corcoranforportland.org/values", SWEEP_SITE_DATE);
 const legreePlan = site("Legree · Homelessness plan", "https://www.keir4pdx.com/homelessness-plan", SWEEP_SITE_DATE);
+const oteroEmail2: Evidence = {
+  label: "Otero · second emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#otero-2026-09-22",
+  kind: "Candidate statement",
+  date: "Received September 22, 2026",
+  note: NOTE,
+};
 const legreeEmail2: Evidence = {
   label: "Legree · second emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#legree-2026-09-22",
@@ -624,6 +631,47 @@ export const topicStancesD3: TopicStance[] = [
   ),
 
   /* ── Cristal Otero ──────────────────────────────────────────────────── */
+  // Moda, camps, data centers, Street Response and the street fee come from her second emailed reply of September 22, 2026.
+  sweepStance(
+    "cristal-otero",
+    "moda",
+    "mixed",
+    "Metro and private money",
+    "Supports renovating the Moda Center and keeping the Blazers, but before Portland fills the remaining gap would explore a Metro investment or ownership role and private philanthropy, sponsorship and naming rights to cut Portland taxpayers’ share.",
+    oteroEmail2,
+  ),
+  sweepStance(
+    "cristal-otero",
+    "camp-removal",
+    "mixed",
+    "Shift some to Parks",
+    "Not in its current form: would keep removals for camps posing serious health, safety or access problems, but shift some Impact Reduction Program capacity into an embedded team in Parks and other front-line bureaus.",
+    oteroEmail2,
+  ),
+  sweepStance(
+    "cristal-otero",
+    "data-centers",
+    "supports",
+    "Conditions on big centers",
+    "Would put stronger conditions on large new data centers: transparency on resource use, recovery of infrastructure costs from the companies, and strong energy-efficiency, water-use and labor standards, so residents do not subsidize them.",
+    oteroEmail2,
+  ),
+  sweepStance(
+    "cristal-otero",
+    "street-response",
+    "supports",
+    "24/7 in crisis system",
+    "Would expand Street Response to 24 hours inside the existing behavioral-health system, with clearer roles alongside Project Respond’s 24-hour crisis teams and Tri-County 911’s frequent-caller work, and sustained follow-up for repeated crises.",
+    oteroEmail2,
+  ),
+  sweepStance(
+    "cristal-otero",
+    "street-fee",
+    "mixed",
+    "General Fund first",
+    "Skeptical that street maintenance needs another monthly fee; notes under 2% of PBOT funding comes from the General Fund and would look there for more maintenance money before adding $12 a month to household bills.",
+    oteroEmail2,
+  ),
   stance(
     "cristal-otero",
     "new-taxes",

@@ -5,10 +5,13 @@ const legree = (question: string, text: string): CandidateAnswer => ({ candidate
 const legree2 = (question: string, text: string): CandidateAnswer => ({ candidateId: "keir-legree", question, text, received: "2026-09-22" });
 const anderson = (question: string, text: string): CandidateAnswer => ({ candidateId: "timothy-tj-anderson", question, text, received });
 const otero = (question: string, text: string): CandidateAnswer => ({ candidateId: "cristal-otero", question, text, received });
+const otero2 = (question: string, text: string): CandidateAnswer => ({ candidateId: "cristal-otero", question, text, received: "2026-09-22" });
+const anderson2 = (question: string, text: string): CandidateAnswer => ({ candidateId: "timothy-tj-anderson", question, text, received: "2026-09-22" });
 const arnold = (question: string, text: string): CandidateAnswer => ({ candidateId: "eli-arnold", question, text, received: "2026-09-20" });
 const novick = (question: string, text: string): CandidateAnswer => ({ candidateId: "steve-novick", question, text, received: "2026-09-21" });
 const sollitt = (question: string, text: string): CandidateAnswer => ({ candidateId: "tom-sollitt", question, text, received: "2026-09-22" });
 const sweeney = (question: string, text: string): CandidateAnswer => ({ candidateId: "john-sweeney", question, text, received: "2026-09-22" });
+const sollitt3 = (question: string, text: string): CandidateAnswer => ({ candidateId: "tom-sollitt", question, text, received: "2026-09-23" });
 
 export const answers: CandidateAnswer[] = [
   legree(
@@ -97,6 +100,42 @@ export const answers: CandidateAnswer[] = [
     "Government experience",
     "After my fellowship ended, Fairview hired me as its COVID-19 Response Specialist. One of the first major municipal programs I developed and implemented was an emergency assistance program for small businesses affected by the pandemic. [...] At Multnomah County, I joined the early implementation of the Metro Supportive Housing Services measure. [...] One project I am particularly proud of was helping develop the first joint social-services procurement undertaken by Multnomah, Washington, and Clackamas counties. [...] Since 2024, much of my work has focused on Supportive Housing Services-funded programs operating in other Multnomah County departments.",
   ),
+  otero2(
+    "Camps, crime and who responds",
+    "I would focus more intensive resources on the smaller group of people repeatedly cycling through the street, shelters, emergency rooms and jail, rather than treating homelessness as one undifferentiated problem. I would assign Portland Street Response teams to high-contact areas so the same responders can build relationships over time and connect people to shelter, treatment and housing. I would also strengthen jail-release handoffs with peer support, transportation and dedicated shelter or treatment capacity. [...] I would measure success by whether the people we are targeting are spending fewer nights outside, cycling through jail and emergency rooms less often, and entering shelter, treatment and permanent housing at higher rates.",
+  ),
+  otero2(
+    "Your bills and taxes",
+    "I would start with the bills the City directly controls. I would set a five-year goal of reducing the inflation-adjusted cost of water service by at least 5% while maintaining safe and reliable service. I would get there by scrutinizing major capital projects before costs are locked in, reducing reliance on expensive borrowing where lower-cost financing is available, pursuing more state and federal funding, reducing water loss, and reviewing the fees and overhead the City charges to the Water Bureau.",
+  ),
+  otero2(
+    "Streets, buses and air",
+    "I would make those results more visible by connecting project-level reporting to Portland’s overall emissions goals, particularly transportation. I want more of our clean-energy investments coordinated with transportation—reducing transportation emissions while making transit, biking and clean transportation more affordable and accessible. Success should be visible in measurable emissions reductions as well as what Portlanders actually experience in their transportation costs and choices.",
+  ),
+  otero2(
+    "Moda Center deal",
+    "I support renovating the Moda Center and keeping the Trail Blazers in their home, but I want us to be more creative about how we finance it. The State and Multnomah County are already making substantial commitments, so before Portland simply fills the remaining gap, I would explore whether Metro could take an investment or ownership role in this regional asset and pursue private philanthropy, sponsorship and naming opportunities.",
+  ),
+  otero2(
+    "Clearing camps",
+    "Not in its current form. We still need the ability to remove camps that create serious health, safety or accessibility problems, but I would shift some Impact Reduction Program capacity into bureaus that encounter unsheltered homelessness every day, particularly Parks. [...] I would rather invest in reducing repeat problems than continually clear the same camps from one location to another.",
+  ),
+  otero2(
+    "Data centers",
+    "I would put stronger conditions on large new data centers where their energy, water or infrastructure demands could shift costs onto Portland residents. At minimum, the City should require transparency about resource use, recover infrastructure costs from the companies creating them, and establish strong energy-efficiency, water-use and labor standards.",
+  ),
+  otero2(
+    "Street Response",
+    "Yes, but I would do it as part of the behavioral-health response system we already have rather than building another parallel system. [...] I would expand Portland Street Response to 24 hours while creating clearer roles and coordination among those programs so the right responder is dispatched and people with repeated crises receive sustained follow-up rather than another one-time intervention.",
+  ),
+  otero2(
+    "Street repair fee",
+    "I am skeptical that basic street maintenance should require another monthly utility fee. [...] Before adding $12 a month to a household’s utility bill, I would revisit how transportation is funded through the regular City budget and determine whether more ongoing revenue can be dedicated to basic maintenance. If we cannot fund a core responsibility within the existing budget, I want a clear explanation of why before asking Portlanders to pay another fee.",
+  ),
+  anderson2(
+    "The Council’s choices, in short",
+    "I will say I’m not going to lock in to a lot with a full board view, so there is a lot I’m not going to see, but if we need the short list: [Moda Center] Yes, but no more than 60 million. [Clearing camps] Yes. [Data centers] Yes. [Street Response] No, not without additions. [Water rates] No. [Street repair fee] Need more info; not going to give a short answer.",
+  ),
   arnold(
     "How would expanded staffing and transit commitments fit within existing revenue?",
     "No immediate increase to police funding. When vacancies are filled I would seek to increase authorized staffing if the city budget can accommodate. For fareless transit I would seek to use PCEF as a stable funding source. Total TriMet fare revenues are about $60 million, but only a portion of that is Portland. I would be seeking to redirect a portion of future revenue.",
@@ -156,6 +195,18 @@ export const answers: CandidateAnswer[] = [
   sollitt(
     "Street repair fee",
     "I would eliminate the monthly street repair fee. [...] I don't want to pretend I have a single replacement funding source that solves this overnight. [...] This is exactly why I would want to undertake the hard work of auditing our transportation obligations, finding efficiencies, pursuing outside funding and partnerships, and identifying more equitable revenue options rather than defaulting to another fee.",
+  ),
+  sollitt3(
+    "Which measurable service targets would you put in the next budget?",
+    "Before we can consider measurable service targets we need to know what we can actually afford. I can identify general areas where the city should measure, such as permitting timelines, call and response times, street and sidewalk maintenance, 311, housing and homelessness outcomes, infrastructure condition, and major project delivery. [...] Every major service should have a credible baseline, a measurable target, an accountable owner, and an identified cost. [...] Requests for additional funding should identify the capacity it would restore or add and the measurable improvement residents should expect in return.",
+  ),
+  sollitt3(
+    "Climate, transportation and environmental health",
+    "I support continued investment in clean energy, energy efficiency, building electrification and climate resilience, including through the Portland Clean Energy Community Benefits Fund. [...] I support reducing our dependence on fossil fuels and addressing the risks of the Critical Energy Infrastructure Hub, especially given Portland’s earthquake risk. I also support protecting our tree canopy, restoring natural areas and waterways, including Portland Harbor, and preparing neighborhoods for extreme heat and other climate impacts. [...] Whether it is a data center or a facility like Zenith, the public should understand the energy and water use, environmental and safety risks, infrastructure costs and commitments being made. There should not be secret deals or NDAs that prevent meaningful public scrutiny.",
+  ),
+  sollitt3(
+    "Accomplishments",
+    "Legendary Makers Market: In 2023, I founded and produced the event through Asian American Town, leading the concept, partnerships, programming and production. The 2023 debut started with a $0 budget, brought together more than 100 AAPI vendors, and was presented in partnership with the Portland Night Market. The event grew substantially in its second year, more than 200 vendors and partners and an estimated 35,000 attendees with support from the City of Beaverton. [...] I Hope You Get Rich: In 2025, I founded and produced Oregon’s first Asian American pitch competition inspired by Pitch Black and Pitch Latino [...] It also started with a $0 budget.",
   ),
   sollitt(
     "Water rates",

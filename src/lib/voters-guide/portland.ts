@@ -391,7 +391,7 @@ const d4: Candidate[] = [
   ),
   c(
     "John McDonald",
-    "TriMet hydro technician and former journalist.",
+    "TriMet hydro technician and journalist.",
     "Supports major civic projects while calling for closer scrutiny of budgets and homelessness contracts.",
     [
       "Modernize Moda Center and retain the Trail Blazers.",

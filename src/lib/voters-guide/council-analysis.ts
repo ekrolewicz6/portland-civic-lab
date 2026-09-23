@@ -148,7 +148,7 @@ const rows: Record<string, AnalysisRow> = {
   ],
   "Cristal Otero": [
     ["Household affordability", "Worker power"],
-    "She evaluates affordability through wages, ownership and monthly bills together. Her emailed reply fills in the cooperative model: the co-op carries the financing, residents buy a subsidized membership share, resale follows an affordability formula, and buildings get capital-needs assessments before conversion. Not yet settled: which partner funds the ongoing subsidy for the lowest-income households, and when a first building would convert.",
+    "She evaluates affordability through wages, ownership and monthly bills together. Her emailed reply fills in the cooperative model: the co-op carries the financing, residents buy a subsidized membership share, resale follows an affordability formula, and buildings get capital-needs assessments before conversion. Her second reply adds targets elsewhere: a five-year goal of cutting the inflation-adjusted cost of water service at least 5%, and a 24-hour Street Response folded into the county’s crisis system. Not yet settled: which partner funds the ongoing co-op subsidy for the lowest-income households, and when a first building would convert.",
     {
       housing:
         "Proposes stable housing for people with intellectual disabilities and brain injuries and paths to resident ownership.",
@@ -232,7 +232,7 @@ const rows: Record<string, AnalysisRow> = {
   ],
   "Timothy (TJ) Anderson": [
     ["Lived experience", "Audit first"],
-    "His pamphlet statement makes a case for representation informed by homelessness and disability; his emailed answers add an audit-first program: map city spending and assets before any new tax or fee, more officers with lower-cost responders for routine calls, and housing growth through investability and reuse of city assets. Beyond the audit’s $5 million cap, the costs and the mechanics of a Council pay freeze are not yet specified.",
+    "His pamphlet statement makes a case for representation informed by homelessness and disability; his emailed answers add an audit-first program: map city spending and assets before any new tax or fee, more officers with lower-cost responders for routine calls, and housing growth through investability and reuse of city assets. His second reply answers most of the Council’s choices in a word or two, including public money for the Moda Center capped at $60 million. Beyond the audit’s $5 million cap, the costs and the mechanics of a Council pay freeze are not yet specified.",
     {},
   ],
   "Eli Arnold": [
@@ -370,6 +370,13 @@ const sollittEmail: Evidence = {
   url: "https://www.portlandciviclab.org/voters-guide/research-log#sollitt-2026-09-22",
   kind: "Candidate statement",
   date: "Received September 22, 2026",
+  note: replyNote,
+};
+const sollittEmail3: Evidence = {
+  label: "Sollitt · third emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#sollitt-2026-09-23",
+  kind: "Candidate statement",
+  date: "Received September 23, 2026",
   note: replyNote,
 };
 const greenStatement: Evidence = {
@@ -600,6 +607,8 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
     ),
     // Each position below comes from his emailed reply of September 22, 2026.
     issueSources: { housing: sollittEmail, safety: sollittEmail, money: sollittEmail, climate: sollittEmail },
+    // His September 23 reply (service targets, climate and environment, accomplishments) appears as excerpts on his brief.
+    also: [sollittEmail3],
     issues: {
       housing:
         "Would put preserving existing affordable housing first, using current Housing Bureau staff and pressing Metro, the County, Home Forward, state and federal programs, nonprofits and private partners to share costs; would ease adaptive reuse and keep the current relocation-assistance threshold.",

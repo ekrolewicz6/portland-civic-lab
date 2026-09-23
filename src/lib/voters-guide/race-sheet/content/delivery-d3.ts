@@ -90,6 +90,13 @@ const oteroEmail: Evidence = {
   date: "Received September 19, 2026",
   note: NOTE,
 };
+const oteroEmail2: Evidence = {
+  label: "Otero · second emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#otero-2026-09-22",
+  kind: "Candidate statement",
+  date: "Received September 22, 2026",
+  note: NOTE,
+};
 const sollittEmail: Evidence = {
   label: "Sollitt · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#sollitt-2026-09-22",
@@ -373,19 +380,37 @@ export const deliveriesD3: DeliveryEntry[] = [
       oteroEmail,
     ],
   }),
-  entry("cristal-otero", "safety", "pamphlet", {
+  // Safety, money and climate rungs come from her second emailed reply of September 22, 2026.
+  entry("cristal-otero", "safety", "emailed response", {
+    how: [
+      "Street Response teams assigned to high-contact areas and stronger jail-release handoffs (peer support, transportation, dedicated shelter or treatment capacity), aimed at people repeatedly cycling through streets, shelters, ERs and jail, with hospitals, Health Share, the Sheriff and providers.",
+      oteroEmail2,
+    ],
     measure: [
-      "Sets a concrete goal: end homelessness for people with intellectual disabilities and brain injuries through stable housing rather than repeated moves.",
-      pamphlet(59),
+      "Whether the people targeted spend fewer nights outside, cycle through jail and emergency rooms less often, and enter shelter, treatment and permanent housing at higher rates.",
+      oteroEmail2,
     ],
   }),
-  entry("cristal-otero", "money", "pamphlet", {
+  entry("cristal-otero", "money", "emailed response", {
+    how: [
+      "Scrutinize major water projects before costs are locked in, replace expensive borrowing with cheaper financing where available, pursue state and federal money, cut water loss, and review the fees and overhead the City charges the Water Bureau.",
+      oteroEmail2,
+    ],
     measure: [
-      "Would judge major projects and borrowing by what they cost Portlanders each month, and change course when evidence shows a policy failing.",
-      pamphlet(59),
+      "A five-year goal: the inflation-adjusted cost of water service down at least 5%, with safe, reliable service and a yearly public account of the savings.",
+      oteroEmail2,
     ],
   }),
-  entry("cristal-otero", "climate", "pamphlet"),
+  entry("cristal-otero", "climate", "emailed response", {
+    how: [
+      "Tie Clean Energy Fund project reporting to the city’s emissions goals, especially for transportation, and coordinate more clean-energy money with transit, biking and clean transportation to make them cheaper and easier to use.",
+      oteroEmail2,
+    ],
+    measure: [
+      "Measurable cuts in emissions, and what Portlanders experience in their transportation costs and choices.",
+      oteroEmail2,
+    ],
+  }),
 
   /* ── Terry Parker ─────────────────────────────────────────────────── */
   entry("terry-parker", "safety", "pamphlet"),
