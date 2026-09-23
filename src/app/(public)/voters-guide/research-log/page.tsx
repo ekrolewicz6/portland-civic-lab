@@ -118,11 +118,19 @@ export default function ResearchLog() {
           changed: Moda, new taxes, data centers and the street fee, empty
           before, now have entries, and his Street Response entry, a partial
           reading of his platform, now records the conditional answer he gave
-          us. His reply also says the City acquired the arena for $1 in 2024;
-          the Lab has not verified that and does not repeat it on his page. His
+          us. His reply also notes that the City acquired the arena for $1 in
+          2024, which the City’s August 2, 2024 fact sheet on the Moda Center
+          bridge agreement confirms; the City separately paid $7.13 million for
+          a parcel of land beneath part of the arena. His
           open question now asks what would pay for more officers and
           dispatchers if taxes and fees hold. Excerpts appear on his brief, the
           reply is kept on file, and his preservation hash was re-recorded.
+        </p>
+        <p>
+          Correction, September 23, 2026: an earlier version of this entry
+          said the Lab had not verified the $1 figure and left it off his
+          page. The City’s fact sheet confirms it, and his Moda entry and
+          excerpt now include it.
         </p>
         <h2 id="sweeney-2026-09-22">September 22, 2026 · Candidate response: John Sweeney (District 3)</h2>
         <p>

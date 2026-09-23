@@ -385,7 +385,7 @@ export const topicStancesD3: TopicStance[] = [
     "moda",
     "opposes",
     "Transfer arena, no cash",
-    "Wants the Blazers kept but opposes spending hundreds of millions of public dollars on the Moda Center; would explore transferring the arena to the team’s new owner for an ironclad agreement to stay at least 20 years.",
+    "Wants the Blazers kept but opposes spending hundreds of millions in public money on the Moda Center, which the City acquired for $1 in 2024; would explore giving it to the team’s new owner for an ironclad 20-year commitment.",
     legreeEmail2,
   ),
   sweepStance(

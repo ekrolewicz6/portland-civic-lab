@@ -48,7 +48,7 @@ export const answers: CandidateAnswer[] = [
   ),
   legree2(
     "Moda Center deal",
-    "I think it’s very important that we keep the Trail Blazers in Portland. But I don’t like the idea of spending hundreds of millions of public dollars on the Moda Center we don’t have. One option I’d want to explore is transferring ownership of the Moda Center to the Blazers’ new owner in exchange for an ironclad agreement to keep the Blazers in Portland for at least 20 years.",
+    "I think it’s very important that we keep the Trail Blazers in Portland. But I don’t like the idea of spending hundreds of millions of public dollars on the Moda Center we don’t have. One option I’d want to explore is transferring ownership of the Moda Center to the Blazers’ new owner in exchange for an ironclad agreement to keep the Blazers in Portland for at least 20 years. The City acquired the arena for $1 in 2024.",
   ),
   legree2("New taxes or fees", "My priority is to hold the line on new taxes and fees."),
   legree2("Data centers", "I support restricting new AI data centers."),
