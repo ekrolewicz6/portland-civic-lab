@@ -17,11 +17,11 @@ export const portraits: Record<string, CandidatePortrait> = {
     reviewed: "2026-09-18",
   },
   "tom-sollitt": {
+    // Replaced September 23, 2026 at the owner's request with the portrait on the candidate's campaign site.
     src: "/images/voters-guide/2026/tom-sollitt.webp",
-    sourceUrl:
-      "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=53",
-    credit: "Candidate-submitted photo · 2026 Multnomah voters’ pamphlet",
-    reviewed: "2026-09-18",
+    sourceUrl: "https://tomforpdx.com/",
+    credit: "Campaign photo · TomForPDX.com",
+    reviewed: "2026-09-23",
   },
   "larry-kelly": {
     src: "/images/voters-guide/2026/larry-kelly.webp",

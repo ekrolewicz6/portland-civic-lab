@@ -76,6 +76,10 @@ export default function ResearchLog() {
           attendance and vendor figures. The reply is kept on file, and his
           preservation hash was re-recorded.
         </p>
+        <p>
+          The same day, his portrait was replaced with the photo on his
+          campaign site, TomForPDX.com, in place of the voters’ pamphlet photo.
+        </p>
         <h2 id="otero-2026-09-22">September 22, 2026 · Second candidate response: Cristal Otero (District 3)</h2>
         <p>
           Cristal Otero answered all eight questions in the Lab’s follow-up.
