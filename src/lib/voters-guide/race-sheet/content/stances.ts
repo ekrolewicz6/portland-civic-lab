@@ -87,9 +87,10 @@ const councilChips: StanceChip[] = [
   chip("heart-free-pham", "safety", "Treatment and consequences"),
   chip("heart-free-pham", "money", "Cost-benefit before taxes"),
 
-  chip("tom-sollitt", "housing", "Convert existing buildings"),
-  chip("tom-sollitt", "safety", "Police staffing by need"),
-  chip("tom-sollitt", "money", "Audit contracts first"),
+  chip("tom-sollitt", "housing", "Preserve homes first"),
+  chip("tom-sollitt", "safety", "Match responder to call"),
+  chip("tom-sollitt", "money", "Audits before new taxes"),
+  chip("tom-sollitt", "climate", "Maintain before building"),
 
   chip("john-sweeney", "safety", "Homelessness to the County"),
   chip("john-sweeney", "money", "No Blazers spending"),
@@ -107,9 +108,11 @@ const councilChips: StanceChip[] = [
   chip("kellie-torres", "money", "Partnerships, philanthropy"),
   chip("kellie-torres", "climate", "Parks, trails and habitat"),
 
+  chip("kimberly-tucker", "safety", "More officers, specialists"),
   chip("kimberly-tucker", "money", "Cost-benefit analysis"),
 
   chip("martin-ward", "housing", "Test government housing"),
+  chip("martin-ward", "safety", "More officers, cameras"),
   chip("martin-ward", "money", "No Moda renovation, cuts"),
 
   /* ── Portland City Council, District 4 ─────────────────────────────── */
@@ -137,6 +140,7 @@ const councilChips: StanceChip[] = [
   chip("jamey-evenstar", "climate", "Cheaper youth transit"),
 
   chip("mitch-green", "housing", "Rents linked to income"),
+  chip("mitch-green", "safety", "Expand Street Response"),
   chip("mitch-green", "money", "Invest in public assets"),
   chip("mitch-green", "climate", "Expand clean-energy fund"),
 

@@ -19,6 +19,62 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="sollitt-2026-09-22">September 22, 2026 · Candidate response: Tom Sollitt (District 3)</h2>
+        <p>
+          Tom Sollitt replied to the Lab’s follow-up with an answer to every
+          gap on his page. On housing, he would put preserving existing
+          affordable housing first, use current Housing Bureau staff, press
+          other governments and partners to share costs, and score each major
+          Housing Bureau investment by its full City cost and results. On
+          safety, he would have Council adopt a plan in his first year setting
+          which calls go to police, Fire and EMS, Street Response, CHAT or the
+          County. He would restore the Auditor’s performance-audit capacity in
+          his first budget before asking for new revenue, and would maintain
+          streets before starting new projects. On the Council’s choices, he
+          says he would have voted no on the Moda Center term sheet, supports
+          restricting new AI data centers and would eliminate the street
+          repair fee. His answers on camp-removal funding, a 24/7 Street
+          Response and water rates each come with conditions, and the page
+          records them as mixed.
+        </p>
+        <p>
+          His four issue positions and their “how” and “measured by” steps now
+          cite the reply, and his streets, buses and air column, empty before,
+          has a position. Six topic boards changed. His Moda entry had been a
+          partial reading of a May 11 post; it now records the no he gave us.
+          His police-staffing and new-taxes entries still cite his campaign
+          site, which the reply does not contradict. Excerpts appear on his
+          brief, and the reply is kept on file. He wrote that more answers will
+          follow. His preservation hash was re-recorded.
+        </p>
+        <h2 id="green-2026-09-22">September 22, 2026 · Campaign correction: Mitch Green (District 4)</h2>
+        <p>
+          Leslie McCollom Fontaine, Mitch Green’s campaign manager, wrote that
+          his “Camps, crime and who responds” column read “Not found in the
+          sources we reviewed” although his support for Portland Street
+          Response appears on his campaign’s record page and on his City
+          council office pages. She was right. His Street Response work was
+          already on the Street Response board, cited to that record page,
+          while the column beside it stayed blank. The column now carries the
+          position from his office’s September 16, 2026 statement: protect and
+          expand Street Response, defend unarmed first responders against
+          budget cuts, and protect the Office for Community Police
+          Accountability. Its “how” step cites his record page, which describes
+          funding to restart an independent evaluation of Street Response and
+          a set-aside fund to add staff as the program moves to 24/7.
+        </p>
+        <p>
+          We then checked every Council candidate for the same mismatch. Two
+          more District 3 columns were blank while a board carried a
+          police-staffing statement from the candidate’s own 2026 material:
+          Kimberly Tucker’s, from her campaign site, and Martin Ward’s, from his
+          pamphlet statement. Both columns now show those statements. Kent
+          Landgraver’s safety statements come from a 2024 questionnaire, so
+          they stay on the boards and out of his column, which tracks positions
+          for this election. Council office pages on portland.gov now carry the
+          label “Council office” rather than “City filing.” The three
+          candidates’ preservation hashes were re-recorded.
+        </p>
         <h2 id="topic-boards-2026-09-22">September 22, 2026 · Every race: what it decides, and where each candidate stands on it</h2>
         <p>
           Readers told us the topic columns were unusable: with every topic
@@ -383,6 +439,14 @@ export default function ResearchLog() {
           What candidates tell us is logged above under the date we received
           it. This section records additions or removals of important content
           after publication, not drafting changes made before a page went live.
+        </p>
+        <p>
+          September 22, 2026: Mitch Green’s “Camps, crime and who responds”
+          column wrongly read “Not found” while his Street Response position
+          was on the page’s own board; the column now shows it, and the same
+          check filled Kimberly Tucker’s and Martin Ward’s safety columns from
+          statements already on the page. Details are in the entry for that
+          date above.
         </p>
         <p>
           September 19, 2026: corrected the District 3 neighborhood heading

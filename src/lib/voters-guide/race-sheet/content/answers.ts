@@ -6,6 +6,7 @@ const anderson = (question: string, text: string): CandidateAnswer => ({ candida
 const otero = (question: string, text: string): CandidateAnswer => ({ candidateId: "cristal-otero", question, text, received });
 const arnold = (question: string, text: string): CandidateAnswer => ({ candidateId: "eli-arnold", question, text, received: "2026-09-20" });
 const novick = (question: string, text: string): CandidateAnswer => ({ candidateId: "steve-novick", question, text, received: "2026-09-21" });
+const sollitt = (question: string, text: string): CandidateAnswer => ({ candidateId: "tom-sollitt", question, text, received: "2026-09-22" });
 
 export const answers: CandidateAnswer[] = [
   legree(
@@ -95,5 +96,45 @@ export const answers: CandidateAnswer[] = [
   novick(
     "What evidence would determine when an unarmed response or camp removal is appropriate?",
     "I don’t understand the question — when is there a choice between unarmed response and camp removal? [The Lab has since clarified that it asked two separate questions: what should decide when an unarmed response is the right call, and what should decide when a camp removal is; his answer is pending.]",
+  ),
+  sollitt(
+    "Rent and homes",
+    "On housing, I would focus first on preserving existing naturally occurring affordable housing and making better use of the resources we already have. [...] I would introduce a standardized fiscal scorecard for significant PHB investments showing the City's full contribution including direct funding, land and waived fees alongside outside funding, cost per unit, affordability and delivery schedule. [...] We should measure success through units preserved or created, units occupied, time from completion to occupancy, City contribution per occupied and/or preserved unit, outside dollars leveraged, permitting time, and actual versus projected project cost and schedule.",
+  ),
+  sollitt(
+    "Camps, crime and who responds",
+    "My approach is to clearly define who responds to what. Police should handle situations that require police authority or present a public-safety threat. Fire/EMS should handle medical emergencies. Portland Street Response and CHAT should handle appropriate behavioral-health, welfare and non-emergency calls. [...] Recent budget decisions preserved visible police and fire staffing while reducing administrative, dispatch, technology and support capacity that those responders rely on. [...] Within my first year, I would want Council to have a clear response-allocation plan identifying which calls should be handled by police, Fire/EMS, PSR, CHAT or County resources, the staffing and support capacity required to provide those services reliably, and the cost of each response.",
+  ),
+  sollitt(
+    "Your bills and taxes",
+    "Before asking Portlanders for more money, I want to demonstrate that we are using what they already give us wisely. Within my first budget, I would introduce a budget amendment to restore the Auditor's performance-audit capacity that was reduced because of the City's financial crisis. [...] I would not set an arbitrary savings target for the Auditor. [...] My first-year benchmark would be restoring the lost audit capacity and establishing a clear process for Council and the public to see what happens with the Auditor's findings.",
+  ),
+  sollitt(
+    "Streets, buses and air",
+    "My priority after becoming elected is maintaining what we already have before committing to new projects until new funding sources can be identified. [...] I would also work with the PCEF Committee to determine whether existing voter-approved climate funding can be more strategically allocated, within its approved purpose, toward transportation and air-quality needs. If the public's direction needs to change, I would take that question back to voters rather than have Council circumvent it. I would restrict spending on projects without a clear public benefit, sustainable funding source and measurable outcome.",
+  ),
+  sollitt(
+    "Moda Center deal",
+    "I would have voted no on adopting the proposed Moda Center renovation term sheet. I support keeping the Trail Blazers in Portland, but I believe the City should have started from a much stronger negotiating position. [...] Given the scale of the public investment, we should have secured a clear, material return for Portland, along with stronger accountability and remedies.",
+  ),
+  sollitt(
+    "Clearing camps",
+    "No. I would pause any discussion about increasing or reducing funding until we have a clear accounting of the program in order to right-size funding. [...] I agree that we need to keep rights-of-way clear, but this has become a contentious point for our community that has raised some legitimate concerns.",
+  ),
+  sollitt(
+    "Data centers",
+    "I support restricting new AI data centers in Portland. [...] I would support restrictions while we develop clear standards around resource use, environmental impacts, infrastructure costs, community impacts, and transparency. If a proposed facility can demonstrate that it meets those standards and provides a meaningful public benefit, that should be part of the conversation.",
+  ),
+  sollitt(
+    "Street Response",
+    "I support eventually making Portland Street Response a 24/7 service, but simply adding City funding to the existing system isn't sustainable. PSR needs an operational overhaul, including dispatch, geographic coverage, recruitment, and retention. [...] I would also consider temporarily reducing hours to alleviate the burden on current staff rather than continuing to stretch the system beyond its capacity.",
+  ),
+  sollitt(
+    "Street repair fee",
+    "I would eliminate the monthly street repair fee. [...] I don't want to pretend I have a single replacement funding source that solves this overnight. [...] This is exactly why I would want to undertake the hard work of auditing our transportation obligations, finding efficiencies, pursuing outside funding and partnerships, and identifying more equitable revenue options rather than defaulting to another fee.",
+  ),
+  sollitt(
+    "Water rates",
+    "I would not support additional rate increases without first exhausting meaningful alternatives to reduce the burden on ratepayers. [...] I can't promise that rate increases can be avoided given the commitment the City has already made, but I can promise that I would treat reducing the burden on ratepayers as a priority and require clear, independent accountability for the remaining work.",
   ),
 ];

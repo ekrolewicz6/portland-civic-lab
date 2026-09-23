@@ -95,9 +95,10 @@ const councilLines: IssueLine[] = [
   line("heart-free-pham", "safety", "Supports civil-commitment (involuntary treatment) reform, consequences for refusing available services; opposes criminalizing homelessness itself."),
   line("heart-free-pham", "money", "Would require cost-benefit accounting before new taxes or spending; would examine the tax base."),
 
-  line("tom-sollitt", "housing", "Supports adaptive reuse (converting existing buildings) and the Save Lloyd preservation approach."),
-  line("tom-sollitt", "safety", "Would tie police staffing to demonstrated needs, especially investigations, not a fixed total."),
-  line("tom-sollitt", "money", "Wants contracts scrutinized before any tax or fee increase, and stronger independent audits."),
+  line("tom-sollitt", "housing", "Would preserve existing affordable housing first and score every major Housing Bureau investment."),
+  line("tom-sollitt", "safety", "Would assign each call type to police, Fire, Street Response or health teams."),
+  line("tom-sollitt", "money", "Would restore the Auditor’s performance audits before asking Portlanders for more money."),
+  line("tom-sollitt", "climate", "Would maintain streets before new projects and restrict projects without funding or results."),
 
   line("john-sweeney", "safety", "Wants the County to assume primary responsibility for homelessness services."),
   line("john-sweeney", "money", "Opposes spending to keep the Blazers; puts preserving city services first as revenue declines."),
@@ -107,9 +108,11 @@ const councilLines: IssueLine[] = [
   line("kellie-torres", "money", "Wants more public-private partnerships, philanthropy and sponsorships; proposes a reimagined Tom McCall Waterfront Bowl."),
   line("kellie-torres", "climate", "Wants parks, trails, river access and habitat restoration through public and private partnerships."),
 
+  line("kimberly-tucker", "safety", "Would add armed officers plus specialists for non-criminal calls, with a plain-language police budget."),
   line("kimberly-tucker", "money", "Wants stronger cost-benefit analysis and clearer explanations for program funding decisions."),
 
   line("martin-ward", "housing", "Would test government-owned housing, build permanent shelter, and oppose demolishing Lloyd Center."),
+  line("martin-ward", "safety", "Would add police officers, cameras at every intersection and non-lethal equipment."),
   line("martin-ward", "money", "Rejects Moda Center renovations and proposes large spending cuts."),
 
   /* ── Portland City Council, District 4 ─────────────────────────────── */
@@ -137,6 +140,7 @@ const councilLines: IssueLine[] = [
   line("jamey-evenstar", "climate", "Proposes lower-cost transit for people under 25, buses separated from traffic, more southwest transit."),
 
   line("mitch-green", "housing", "Supports permanently affordable social (public or nonprofit) housing, income-linked rents, tenant unions helping govern."),
+  line("mitch-green", "safety", "Would protect and expand Street Response and defend unarmed responders from budget cuts."),
   line("mitch-green", "money", "Wants public dollars in public assets and cooperative ownership; counts preschool as economic development."),
   line("mitch-green", "climate", "Would expand PCEF (clean-energy fund) for transit, not Moda or added policing."),
 

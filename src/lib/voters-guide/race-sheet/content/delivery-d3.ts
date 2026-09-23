@@ -90,6 +90,13 @@ const oteroEmail: Evidence = {
   date: "Received September 19, 2026",
   note: NOTE,
 };
+const sollittEmail: Evidence = {
+  label: "Sollitt · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#sollitt-2026-09-22",
+  kind: "Candidate statement",
+  date: "Received September 22, 2026",
+  note: NOTE,
+};
 const legreeEmail: Evidence = {
   label: "Legree · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#legree-2026-09-19",
@@ -103,7 +110,6 @@ const novick = site("Novick · second-term priorities", "https://NovickForPortla
 const phamHomelessness = site("Pham · Homelessness and recovery", "https://fightwithheartpdx.com/homelessness");
 const phamEconomics = site("Pham · Tax base and spending", "https://fightwithheartpdx.com/economics");
 const phamHousing = site("Pham · Housing construction", "https://fightwithheartpdx.com/housing");
-const sollitt = site("Sollitt · platform and campaign case studies", "https://TomForPDX.com");
 const torres = site("Torres · priorities", "https://www.KellieTorresForPortland.com/priorities");
 const wardHousing = site(
   "Ward · affordable housing policy",
@@ -394,12 +400,44 @@ export const deliveriesD3: DeliveryEntry[] = [
   }),
 
   /* ── Tom Sollitt ──────────────────────────────────────────────────── */
-  entry("tom-sollitt", "housing", "campaign site"),
-  entry("tom-sollitt", "safety", "campaign site"),
-  entry("tom-sollitt", "money", "campaign site", {
+  entry("tom-sollitt", "housing", "emailed response", {
     how: [
-      "Would give the Auditor’s Office capacity to find waste independently, scrutinize contracts before any tax or fee increase, and share costs or transfer services to better-placed agencies.",
-      sollitt,
+      "Use existing Housing Bureau staff; press Metro, the County, Home Forward, state, federal and private partners to share costs; a fiscal scorecard for major investments; targeted zoning and permitting fixes brought to Council.",
+      sollittEmail,
+    ],
+    measure: [
+      "Units preserved or created and occupied, time from completion to occupancy, City money per unit, outside dollars leveraged, permitting time, and actual versus projected cost and schedule.",
+      sollittEmail,
+    ],
+  }),
+  entry("tom-sollitt", "safety", "emailed response", {
+    how: [
+      "Within the first year, a response-allocation plan naming which calls go to police, Fire/EMS, Street Response, CHAT or County services, with the staffing, support and cost each requires; closer County work on follow-up care.",
+      sollittEmail,
+    ],
+    measure: [
+      "Response times, whether the right resource was sent, calls resolved in the field, connections to follow-up care, repeat calls, vacancies and turnover, and the cost of each response.",
+      sollittEmail,
+    ],
+  }),
+  entry("tom-sollitt", "money", "emailed response", {
+    how: [
+      "A budget amendment in his first budget restoring the Auditor’s performance-audit capacity reduced during the City’s financial crisis, aimed at high-risk contracts, programs and operations, with a quarterly public accounting of recommendations and results.",
+      sollittEmail,
+    ],
+    measure: [
+      "First-year benchmark: the lost audit capacity restored and a public process showing what happens to the Auditor’s findings; no fixed savings target, with savings and avoided costs reported quarterly.",
+      sollittEmail,
+    ],
+  }),
+  entry("tom-sollitt", "climate", "emailed response", {
+    how: [
+      "Within the first year, a regional transportation framework setting shared priorities, responsibilities, funding and measurable results, and work with the Clean Energy Fund committee on whether voter-approved climate money can go further toward transportation and air quality.",
+      sollittEmail,
+    ],
+    measure: [
+      "Street condition, transit reliability, traffic safety, air quality, user satisfaction, outside funding leveraged, and actual versus projected cost and schedule.",
+      sollittEmail,
     ],
   }),
 
@@ -431,6 +469,7 @@ export const deliveriesD3: DeliveryEntry[] = [
   entry("kellie-torres", "climate", "campaign site"),
 
   /* ── Kimberly Tucker ──────────────────────────────────────────────── */
+  entry("kimberly-tucker", "safety", "campaign site"),
   entry("kimberly-tucker", "money", "Mercury questionnaire"),
 
   /* ── Martin Ward ──────────────────────────────────────────────────── */
@@ -444,6 +483,7 @@ export const deliveriesD3: DeliveryEntry[] = [
       pamphlet(55),
     ],
   }),
+  entry("martin-ward", "safety", "pamphlet"),
   entry("martin-ward", "money", "campaign site", {
     how: [
       "Lists the cuts: the Burnside Bridge replacement, the Keller Auditorium project, the police oversight system, the Council structure, the Design Commission and Moda Center renovations.",

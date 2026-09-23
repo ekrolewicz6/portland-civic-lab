@@ -18,6 +18,7 @@ const REPLIED: Record<string, string> = {
   "cristal-otero": "your reply on September 19",
   "eli-arnold": "your reply on September 20",
   "steve-novick": "Katie Shriver’s reply with your answers on September 21",
+  "tom-sollitt": "your reply on September 22",
 };
 
 const SITE = "https://www.portlandciviclab.org";
