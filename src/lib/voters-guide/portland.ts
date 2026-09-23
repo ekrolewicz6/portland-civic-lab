@@ -238,7 +238,7 @@ const d3: Candidate[] = [
   ),
   c(
     "John Sweeney",
-    "Mechanical designer; former parks worker and military reservist.",
+    "Mechanical designer; 33 years with Portland Parks; Army Guard and Reserve captain.",
     "Prioritizes preserving city services, changing homelessness funding arrangements and opposing spending to retain the Trail Blazers.",
     [
       "Preserve services during declining revenue.",
@@ -246,7 +246,7 @@ const d3: Candidate[] = [
       "Oppose spending aimed at keeping the Blazers in Portland.",
     ],
     "He would redirect resources away from arena support and revisit city-county funding. His prediction that the team will leave is not an established fact.",
-    "What agreements would permit the homelessness funding changes, and what happens to services during a transition?",
+    "Which agreement among the City, the County and Metro would move homeless services and their funding, and on what timeline?",
     statement(53),
   ),
   c(

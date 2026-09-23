@@ -422,7 +422,7 @@ Right now the page shows 1 of 8 choices on record for you. A gap on a page is a 
 
 The four issues every race page tracks
 1. Rent and homes. How would you make housing more affordable?
-2. Camps, crime and who responds. What balance of enforcement, prevention and care do you propose?
+2. Camps, crime and who responds. Your page shows “More officers, specialists.” We could not find how you would deliver it (the funding source, rule change, staffing, sequencing or partner), or what number, deadline or visible result would show it worked.
 3. Your bills and taxes. Your page shows “Cost-benefit analysis.” We could not find how you would deliver it (the funding source, rule change, staffing, sequencing or partner), or what number, deadline or visible result would show it worked.
 4. Streets, buses and air. Where would you invest, and what would you restrict?
 
@@ -494,7 +494,7 @@ I emailed on September 19 with a first set of questions for your page in our non
 Right now the page shows 4 of 8 choices on record for you. A gap on a page is a research gap, not a position, and it says so, but readers do compare. The questions below are the gaps. A sentence or two on any of them is enough; we quote or paraphrase with a date and attribute it to your campaign, and we never fill a gap from a general goal.
 
 The four issues every race page tracks
-1. Camps, crime and who responds. What balance of enforcement, prevention and care do you propose?
+1. Camps, crime and who responds. Your page shows “More officers, cameras.” We could not find how you would deliver it (the funding source, rule change, staffing, sequencing or partner), or what number, deadline or visible result would show it worked.
 2. Streets, buses and air. Where would you invest, and what would you restrict?
 
 Choices your published statements come close to
@@ -678,32 +678,16 @@ edan@portlandciviclab.org
 
 ## Tom Sollitt
 
-Send via: email tomforpdx@gmail.com
+Send via: reply to the existing thread (your reply on September 22)
 
 ```text
 Subject: Portland Civic Lab voters guide: Tom Sollitt, Portland City Council District 3
 
 Hi Tom,
 
-I emailed on September 19 with a first set of questions for your page in our nonpartisan voters guide. Since then we have added every choice this Council has faced to the District 3 page, with each candidate’s statement or the gap beside it, so this is the shorter list that remains.
+Thank you for your reply on September 22; it is on your page in your own words, and the research log records it. Since then we have added every choice this Council has faced to the District 3 page, with each candidate’s statement or the gap beside it.
 
-Right now the page shows 3 of 8 choices on record for you. A gap on a page is a research gap, not a position, and it says so, but readers do compare. The questions below are the gaps. A sentence or two on any of them is enough; we quote or paraphrase with a date and attribute it to your campaign, and we never fill a gap from a general goal.
-
-The four issues every race page tracks
-1. Rent and homes. Your page shows “Convert existing buildings.” We could not find how you would deliver it (the funding source, rule change, staffing, sequencing or partner), or what number, deadline or visible result would show it worked.
-2. Camps, crime and who responds. Your page shows “Police staffing by need.” We could not find how you would deliver it (the funding source, rule change, staffing, sequencing or partner), or what number, deadline or visible result would show it worked.
-3. Your bills and taxes. Your page shows “Audit contracts first.” We could not find what number, deadline or visible result would show it worked.
-4. Streets, buses and air. Where would you invest, and what would you restrict?
-
-Choices your published statements come close to
-5. Moda Center deal. Public money and terms for renovating the Moda Center? (Your page carries “Public say on Moda” from your published statement; it does not say which way you come down on this choice.)
-
-Choices we found no statement on
-6. Clearing camps. Keep funding camp removals at current levels?
-7. Data centers. Restrict new AI data centers in the city?
-8. Street Response. Expand Portland Street Response to a full 24/7 role?
-9. Street repair fee. Keep the monthly street repair fee?
-10. Water rates. Raise water bills to pay for the Bull Run filtration plant and system repairs?
+Your page has a published position on each issue and a statement on every choice we track (8 of 8). If anything on it is wrong or out of date, tell me and I will fix it with a note in the research log.
 
 If any line on your page is wrong, out of date or unfair, say so and I will correct it and note the change in the research log. Thanks for your time.
 

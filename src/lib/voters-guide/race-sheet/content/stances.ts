@@ -92,6 +92,7 @@ const councilChips: StanceChip[] = [
   chip("tom-sollitt", "money", "Audits before new taxes"),
   chip("tom-sollitt", "climate", "Maintain before building"),
 
+  chip("john-sweeney", "housing", "Build to the price"),
   chip("john-sweeney", "safety", "Homelessness to the County"),
   chip("john-sweeney", "money", "No Blazers spending"),
 

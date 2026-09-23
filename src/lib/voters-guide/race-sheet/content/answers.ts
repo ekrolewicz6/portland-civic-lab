@@ -7,6 +7,7 @@ const otero = (question: string, text: string): CandidateAnswer => ({ candidateI
 const arnold = (question: string, text: string): CandidateAnswer => ({ candidateId: "eli-arnold", question, text, received: "2026-09-20" });
 const novick = (question: string, text: string): CandidateAnswer => ({ candidateId: "steve-novick", question, text, received: "2026-09-21" });
 const sollitt = (question: string, text: string): CandidateAnswer => ({ candidateId: "tom-sollitt", question, text, received: "2026-09-22" });
+const sweeney = (question: string, text: string): CandidateAnswer => ({ candidateId: "john-sweeney", question, text, received: "2026-09-22" });
 
 export const answers: CandidateAnswer[] = [
   legree(
@@ -136,5 +137,17 @@ export const answers: CandidateAnswer[] = [
   sollitt(
     "Water rates",
     "I would not support additional rate increases without first exhausting meaningful alternatives to reduce the burden on ratepayers. [...] I can't promise that rate increases can be avoided given the commitment the City has already made, but I can promise that I would treat reducing the burden on ratepayers as a priority and require clear, independent accountability for the remaining work.",
+  ),
+  sweeney(
+    "What agreements would permit the homelessness funding changes, and what happens to services during a transition?",
+    "Under Resolution “A” in 1983, Multnomah County took over the jails, bridges and welfare services in Multnomah County. Before that, Multnomah County was a full-service government like the City of Portland. I think that moving the homeless/houseless services to the county would be more effective in serving those in need. The funding is with both federal and local money. Shifting it to the county, the federal funds would follow the services. This should be seamless in both the services provided and the funds to support them.",
+  ),
+  sweeney(
+    "Housing",
+    "Let’s take a hint from IKEA: IKEA builds to the price. Let’s look at the people we are trying to house and what their income is, and what they can afford. Then build to the price! There are new plans out there. One of them is Quonset houses. New models run less than $4,000 for the house. This has a lot of possibilities.",
+  ),
+  sweeney(
+    "Parks and military work",
+    "I was with the Portland Parks for 33 years, and I pride myself on the fact that more of my temporary employees became permanent. They were making just above minimum wage and became permanent. Many got married and started families. [...] I served in the Army Guard and Army Reserve for 28 years. Started as a private and ended as a captain. Over the years I met many fine people and encouraged them to join the city or the Guard or Reserves.",
   ),
 ];

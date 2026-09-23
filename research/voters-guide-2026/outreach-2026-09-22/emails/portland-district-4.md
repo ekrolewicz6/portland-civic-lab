@@ -324,7 +324,7 @@ I emailed on September 19 with a first set of questions for your page in our non
 Right now the page shows 6 of 8 choices on record for you. A gap on a page is a research gap, not a position, and it says so, but readers do compare. The questions below are the gaps. A sentence or two on any of them is enough; we quote or paraphrase with a date and attribute it to your campaign, and we never fill a gap from a general goal.
 
 The four issues every race page tracks
-1. Camps, crime and who responds. What balance of enforcement, prevention and care do you propose?
+1. Camps, crime and who responds. Your page shows “Expand Street Response.” We could not find what number, deadline or visible result would show it worked.
 2. Your bills and taxes. Your page shows “Invest in public assets.” We could not find what number, deadline or visible result would show it worked.
 3. Streets, buses and air. Your page shows “Expand clean-energy fund.” We could not find how you would deliver it (the funding source, rule change, staffing, sequencing or partner), or what number, deadline or visible result would show it worked.
 
