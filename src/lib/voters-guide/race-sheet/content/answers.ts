@@ -14,6 +14,7 @@ const sweeney = (question: string, text: string): CandidateAnswer => ({ candidat
 const sollitt3 = (question: string, text: string): CandidateAnswer => ({ candidateId: "tom-sollitt", question, text, received: "2026-09-23" });
 const mcdonald = (question: string, text: string): CandidateAnswer => ({ candidateId: "john-mcdonald", question, text, received: "2026-09-23" });
 const colemanCox = (question: string, text: string): CandidateAnswer => ({ candidateId: "heather-coleman-cox", question, text, received: "2026-09-23" });
+const schroeder = (question: string, text: string): CandidateAnswer => ({ candidateId: "gregory-schroeder", question, text, received: "2026-09-24" });
 const beaudoin = (question: string, text: string): CandidateAnswer => ({ candidateId: "ali-beaudoin", question, text, received: "2026-09-23" });
 const cronlund = (question: string, text: string): CandidateAnswer => ({ candidateId: "jayne-cronlund", question, text, received: "2026-09-23" });
 
@@ -183,6 +184,46 @@ export const answers: CandidateAnswer[] = [
   colemanCox(
     "Keep Gresham’s own fire department, or join a district?",
     "I have met with Gresham Fire, who is currently outsourced to Fairview, Wood Village and Troutdale. I also met with the Mayor of Wood Village, Jairo Rios-Campos; I support moving toward a fire district. A committee is already formed with this endeavor in mind. I believe sharing the responsibilities across the communities being served will produce more sustainable funding while maintaining strong fire and emergency services.",
+  ),
+  schroeder(
+    "Rent and homes",
+    "As a Planning Commissioner, I have supported efforts to remove barriers to housing construction, and I would continue that work by looking for opportunities to reduce unnecessary City fees and streamline the development process so projects can move from conception to completion more quickly. Gresham cannot build its way out of a regional housing shortage by itself, so I also support expanding rehabilitation grants and down-payment assistance while measuring success by increased housing production, more opportunities for homeownership, preservation of existing housing, and fewer Gresham households that are housing-cost burdened.",
+  ),
+  schroeder(
+    "Camps, crime and who responds",
+    "I favor an individualized approach that combines accountability with a genuine path off the street. I would like Gresham to strengthen partnerships with nonprofits that can engage people experiencing homelessness, identify whether they need temporary shelter, housing assistance, addiction treatment, mental-health care, education or other support, but when appropriate services are available and someone refuses them while continuing to violate camping or other laws, I support enforcement of those laws and the legal consequences that may follow.",
+  ),
+  schroeder(
+    "Bills and taxes",
+    "My first priority is making sure the City is using the revenue it already receives efficiently and directing it toward core services and community needs; residents should not be asked to pay more simply to compensate for inefficiency. I also want to grow Gresham’s economy by attracting employers, supporting local businesses and encouraging investment because greater economic activity expands the tax base without automatically raising taxes.",
+  ),
+  schroeder(
+    "Streets, buses and air",
+    "Gresham already has the foundation of an excellent bicycle and pedestrian network, and I would prioritize connecting and improving separated routes such as the Springwater Corridor, Wy’East Way and Gresham-Fairview Trail and strengthening their connections to transit. I do not support expanding conventional on-street bike lanes where bicycles and vehicle traffic share the roadway; wherever practical, I prefer infrastructure that separates bicycles from cars. [...] I want to prioritize filling [sidewalk] gaps, improving safe street crossings, and creating better pedestrian connections between neighborhoods, schools, parks, businesses and transit.",
+  ),
+  schroeder(
+    "Public-safety fee",
+    "I would not expand the current $15 Police, Fire and Parks Fee, but because it currently provides significant funding for essential services, I would not eliminate it without a replacement. My preference would be to transition away from the Council-imposed fee toward voter-approved funding, with parks considered separately from police and fire so voters can make a clear choice about the level of funding they want for each.",
+  ),
+  schroeder(
+    "Levy and fire district",
+    "I am open to a regional fire district. Gresham already provides fire services to neighboring communities through service agreements, so before changing that system I would want an honest cost-benefit analysis showing what each community currently contributes and comparing that with a district model, including costs, response times, staffing, service levels, governance and accountability. I would support a district if the analysis demonstrated that it makes financial sense for Gresham without degrading services, and preferably improves them. I would then use those findings, along with the results of the current voter-approved public-safety levy, to determine what funding is actually needed before asking voters to consider any levy renewal.",
+  ),
+  schroeder(
+    "General-fund gap",
+    "A structural deficit that continues to grow is not sustainable, but I would need a much deeper understanding of the City’s budget and long-term forecasts before saying that the answer is simply cutting services or raising revenue. I would first look for operational efficiencies and opportunities to coordinate projects or funding where work overlaps, while making economic development a priority. Using reserves may be appropriate for one-time costs, but it cannot be the long-term solution to an ongoing structural deficit.",
+  ),
+  schroeder(
+    "Groundwater and rates",
+    "I support Gresham having a reliable and resilient water supply, although I would have preferred retaining Bull Run as our primary source and developing groundwater as a backup. [...] Many residents, including me, have experienced a noticeable decline in taste and the everyday quality of the water even though it continues to meet drinking-water standards. I do not believe individual households should simply be expected to purchase filtration systems to address a systemwide change in water quality. Before supporting additional rate increases, I want a clear accounting of what those increases are paying for, what obligations remain from the groundwater transition, and what the City can do systemwide to improve taste and hardness.",
+  ),
+  schroeder(
+    "Camping and shelters",
+    "I support maintaining Gresham’s camping restrictions while continuing housing-focused outreach and offering appropriate services and shelter before enforcement. I remain very wary of pod shelters in our community, although I am not categorically opposed to them. [...] Any proposal in Gresham would need careful scrutiny, particularly regarding its impact on the surrounding neighborhood, and I would want clear evidence that it provides a genuine path toward treatment, employment or stable housing rather than simply creating a more permanent place for homelessness.",
+  ),
+  schroeder(
+    "Immigration enforcement",
+    "I believe the City Attorney has correctly described Gresham’s limited role. State law restricts the City’s participation in federal immigration enforcement, while the City also cannot interfere with lawful federal enforcement activity. I do not support declaring a local emergency when doing so would not materially change the City’s legal authority or the situation on the ground.",
   ),
   beaudoin(
     "Rent and homes",

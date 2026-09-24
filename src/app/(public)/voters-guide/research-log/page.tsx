@@ -19,6 +19,33 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="schroeder-2026-09-24">September 24, 2026 · Candidate response: Gregory Schroeder (Gresham Council, Position 4)</h2>
+        <p>
+          Gregory Schroeder answered all ten questions the Lab emailed him on
+          September 22. He would cut unnecessary City fees and streamline
+          development review, expand rehabilitation grants and down-payment
+          help, and measure results by housing built, homeownership and fewer
+          cost-burdened households. He favors nonprofit outreach matched to
+          each person, with enforcement when available services are refused;
+          efficient use of existing revenue and economic growth before asking
+          residents to pay more; and separated bike routes, sidewalk gaps and
+          safer crossings rather than new shared on-street bike lanes. On
+          Gresham’s choices, he would move the $15 fee toward voter-approved
+          funding rather than raise or drop it, is open to a fire district if
+          a cost-benefit analysis supports it, would use reserves only for
+          one-time costs, wants an accounting and a systemwide taste fix
+          before more water-rate increases, supports the camping restrictions
+          while remaining wary of pod shelters, and opposes a local
+          immigration-enforcement emergency declaration.
+        </p>
+        <p>
+          His safety and bills columns, empty before, now have positions;
+          housing gained “how” and “measured by” steps and streets a “how”
+          step. All six Gresham topic boards, empty before, now have entries.
+          His campaign site, Greg4Gresham.com, and its email were added to his
+          contacts. Excerpts appear on his brief, and the reply is kept on
+          file.
+        </p>
         <h2 id="sinclair-callaway-portraits-2026-09-23">September 23, 2026 · Correction: swapped portraits (Washington County Commissioner, District 4)</h2>
         <p>
           Kipperlyn Sinclair’s campaign told us her page showed her

@@ -665,11 +665,18 @@ roles.push({ candidateId: "teo-ramirez", role: "Local-government analyst", from:
 primary.push({ candidateId: "teo-ramirez", sourceUrl: `${PAMPHLET}#page=44` });
 portraits["teo-ramirez"] = portrait("teo-ramirez", 44);
 
+const schroederEmail: Evidence = {
+  label: "Schroeder · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#schroeder-2026-09-24",
+  kind: "Candidate statement",
+  date: "Received September 24, 2026",
+  note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on his brief. Receipt does not verify the claims.",
+};
 candidate("gregory-schroeder", {
   values: ["Systems thinking", "Long-term planning"],
   tradeoff:
     "He emphasizes coordination across housing, transportation, parks and jobs and the twenty-year consequences of development decisions; the statement names no first investment or funding source.",
-  sources: [pamphlet(43)],
+  sources: [pamphlet(43), schroederEmail],
   issues: {
     housing: {
       position:
@@ -677,6 +684,32 @@ candidate("gregory-schroeder", {
       source: pamphlet(43),
       line: "Wants housing choices paired with investment in neighborhoods, transportation and parks.",
       chip: "Housing with planning",
+      how: step(
+        "Cut unnecessary City fees and streamline development review so projects finish sooner, and expand rehabilitation grants and down-payment assistance.",
+        schroederEmail,
+      ),
+      measure: step(
+        "More housing built, more homeownership, existing housing preserved, and fewer Gresham households burdened by housing costs.",
+        schroederEmail,
+      ),
+    },
+    safety: {
+      position:
+        "Favors an individualized approach: nonprofit partners engage people living outside and match them to shelter, housing help, addiction treatment, mental-health care or education; when services are available and refused while camping or other laws are broken, supports enforcement.",
+      source: schroederEmail,
+      line: "Nonprofit outreach matched to each person; enforcement when available services are refused.",
+      chip: "Services, then enforcement",
+      how: step(
+        "Stronger partnerships with nonprofits that assess whether each person needs shelter, housing help, addiction treatment, mental-health care or education, with enforcement when offered services are refused.",
+        schroederEmail,
+      ),
+    },
+    money: {
+      position:
+        "Would first make sure the City uses existing revenue efficiently for core services before asking residents to pay more, and grow the tax base by attracting employers, supporting local businesses and encouraging investment.",
+      source: schroederEmail,
+      line: "Spend existing revenue efficiently first; grow the tax base through jobs and investment.",
+      chip: "Efficiency, then growth",
     },
     climate: {
       position:
@@ -684,6 +717,10 @@ candidate("gregory-schroeder", {
       source: pamphlet(43),
       line: "Wants growth planned with transportation, parks and natural spaces, twenty years out.",
       chip: "Plan twenty years out",
+      how: step(
+        "Connect separated routes such as the Springwater Corridor, Wy’East Way and Gresham-Fairview Trail to transit, fill sidewalk gaps and improve crossings; no new shared on-street bike lanes.",
+        schroederEmail,
+      ),
     },
   },
 });
@@ -698,14 +735,15 @@ ownWords.push(
 );
 contact(
   "gregory-schroeder",
-  [email("pers.gregs@gmail.com", "filing")],
+  [web("https://greg4gresham.com/", "site"), email("Greg4Gresham@gmail.com", "site"), email("pers.gregs@gmail.com", "filing")],
   [
     ref("Multnomah County voters’ pamphlet · PDF page 43", `${PAMPHLET}#page=43`, "Prints no website, email or phone."),
     ref(
       "Gregory Schroeder · City of Gresham candidate filing packet",
       packet("gregory-schroeder-seat-4"),
-      "The handwritten SEL 101 email field reads pers.gregs@gmail.com (the reading of the handwriting is not certain); its website field is blank and its phone field is not reproduced. No campaign site was found.",
+      "The handwritten SEL 101 email field reads pers.gregs@gmail.com (the reading of the handwriting is not certain); its website field is blank and its phone field is not reproduced.",
     ),
+    ref("Greg4Gresham.com", "https://greg4gresham.com/", "Campaign site named in his September 24, 2026 reply; it prints Greg4Gresham@gmail.com."),
   ],
 );
 primary.push({ candidateId: "gregory-schroeder", sourceUrl: `${PAMPHLET}#page=43` });
@@ -1177,6 +1215,25 @@ const greshamStances: TopicStance[] = [
 
   /* ── Challengers: only explicit statements; Schroeder and Miller have none on these choices ── */
   // Her emailed reply of September 23, 2026 answers five choices and replaces the partial levy and groundwater readings.
+  // Gregory Schroeder: his emailed reply of September 24, 2026 answers all six choices.
+  stance("gregory-schroeder", "gresham-safety-fee", "mixed", "Move to voter approval",
+    "Would not raise the $15 fee or eliminate it without a replacement; prefers moving from the Council-imposed fee to voter-approved funding, with parks considered separately from police and fire.",
+    schroederEmail),
+  stance("gregory-schroeder", "gresham-levy-fire", "mixed", "Study district, then levy",
+    "Open to a regional fire district if an honest cost-benefit analysis shows it makes financial sense without degrading service; would use that and the current levy’s results to set any renewal request.",
+    schroederEmail),
+  stance("gregory-schroeder", "gresham-budget-gap", "opposes", "Reserves for one-time only",
+    "Says reserves may suit one-time costs but cannot be the long-term answer to a structural deficit; would look first for efficiencies and coordinated projects, and grow the revenue base through economic development.",
+    schroederEmail),
+  stance("gregory-schroeder", "gresham-groundwater", "mixed", "Accounting before rates",
+    "Would have kept Bull Run as the main source with groundwater as backup; before more rate increases wants an accounting of what they pay for and a systemwide fix for taste and hardness, not home filters.",
+    schroederEmail),
+  stance("gregory-schroeder", "gresham-camping-shelter", "mixed", "Keep ban, pods doubtful",
+    "Supports keeping the camping restrictions with housing-focused outreach and services before enforcement; very wary of pod shelters but not categorically opposed, if siting, management and a real path to housing are shown.",
+    schroederEmail),
+  stance("gregory-schroeder", "gresham-ice-response", "opposes", "No emergency declaration",
+    "Agrees with the City Attorney that Gresham’s role is limited by state and federal law; opposes a local emergency that would not change the City’s legal authority or conditions on the ground.",
+    schroederEmail),
   stance("heather-coleman-cox", "gresham-levy-fire", "mixed", "Renew; join a district",
     "Supports renewing the levy, and supports moving toward a fire district shared with Fairview, Wood Village and Troutdale, saying shared responsibility would make funding more sustainable while keeping strong fire service.",
     hccEmail),
