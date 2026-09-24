@@ -121,6 +121,13 @@ const andersonEmail2: Evidence = {
   note: NOTE,
 };
 
+const cronlundEmail: Evidence = {
+  label: "Cronlund · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#cronlund-2026-09-23",
+  kind: "Candidate statement",
+  date: "Received September 23, 2026",
+  note: NOTE,
+};
 const mcdonaldEmail: Evidence = {
   label: "McDonald · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#mcdonald-2026-09-23",
@@ -199,6 +206,14 @@ export const topicStancesD4: TopicStance[] = [
   swept("timothy-tj-anderson", "water-rates", "opposes", "No rate increases",
     "Answered no when asked whether to raise water bills to pay for the Bull Run filtration plant and system repairs.",
     andersonEmail2),
+
+  /* ── Jayne Cronlund (emailed reply of September 23, 2026) ───────────── */
+  swept("jayne-cronlund", "moda", "supports", "Renovate for jobs",
+    "Lists Moda Center renovations among spending she would prioritize, for short-term prevailing-wage construction jobs and as a centerpiece for the Albina Vision Trust’s restorative development.",
+    cronlundEmail),
+  swept("jayne-cronlund", "police-staffing", "supports", "Modest, tied to response",
+    "Supports a modest increase in police if it is tied to decreasing response times.",
+    cronlundEmail),
 
   /* ── Eli Arnold ─────────────────────────────────────────────────────── */
   stance("eli-arnold", "new-taxes", "opposes", "No new taxes, fees",

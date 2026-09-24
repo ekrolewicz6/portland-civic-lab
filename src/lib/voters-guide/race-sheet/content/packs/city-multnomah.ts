@@ -1177,8 +1177,8 @@ const greshamStances: TopicStance[] = [
 
   /* ── Challengers: only explicit statements; Schroeder and Miller have none on these choices ── */
   // Her emailed reply of September 23, 2026 answers five choices and replaces the partial levy and groundwater readings.
-  stance("heather-coleman-cox", "gresham-levy-fire", "supports", "Renew the levy",
-    "Wholeheartedly supports renewing the levy and making the case to residents now for why it needs continued funding; she did not address joining a fire district.",
+  stance("heather-coleman-cox", "gresham-levy-fire", "mixed", "Renew; join a district",
+    "Supports renewing the levy, and supports moving toward a fire district shared with Fairview, Wood Village and Troutdale, saying shared responsibility would make funding more sustainable while keeping strong fire service.",
     hccEmail),
   stance("heather-coleman-cox", "gresham-groundwater", "supports", "Stay on groundwater",
     "Says the investment in moving from Bull Run to groundwater is too great to reverse and the switch looks logical on cost; wants residents to report sight, smell or taste problems, and says the switch needed louder notice.",

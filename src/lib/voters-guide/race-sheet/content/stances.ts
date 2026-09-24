@@ -32,6 +32,9 @@ const chip = (candidateId: string, issue: StanceChip["issue"], text: string): St
 const councilChips: StanceChip[] = [
   /* ── Portland City Council, District 3 ─────────────────────────────── */
 
+  chip("ali-beaudoin", "housing", "Supply and buyer help"),
+  chip("ali-beaudoin", "safety", "Match response to problem"),
+  chip("ali-beaudoin", "climate", "Fix basics, keep bikes"),
   chip("ali-beaudoin", "money", "Test programs first"),
 
   chip("joel-corcoran", "money", "Independent budget office"),
@@ -132,6 +135,8 @@ const councilChips: StanceChip[] = [
   chip("olivia-clark", "money", "Core services first"),
   chip("olivia-clark", "climate", "Harden water and streets"),
 
+  chip("jayne-cronlund", "housing", "Offices into housing"),
+  chip("jayne-cronlund", "safety", "Modest police increase"),
   chip("jayne-cronlund", "money", "Living-wage jobs"),
   chip("jayne-cronlund", "climate", "Parks and natural areas"),
 

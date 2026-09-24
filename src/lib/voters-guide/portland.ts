@@ -35,7 +35,7 @@ const d3: Candidate[] = [
       "Make it easier to build and operate local businesses.",
     ],
     "Beaudoin’s approach stresses management and economic growth. The reviewed announcement does not yet identify specific spending cuts or changes to business rules.",
-    "Which spending and permitting changes would you propose first, and how would you measure their effects?",
+    "Which fees would you cut first as revenue grows, and what vacancy rate would show the plan is working?",
     [
       {
         label: "Beaudoin’s campaign announcement and priorities",
@@ -346,7 +346,7 @@ const d4: Candidate[] = [
       "Set shared government goals and regularly report results.",
     ],
     "Her statement focuses on coalition-building and common assets. It leaves major housing, safety and revenue decisions less specified.",
-    "What spending would you prioritize or reduce to sustain public-space investment?",
+    "How would the parks maintenance backlog shrink 35% without new taxes, and over what period?",
     statement(63),
   ),
   c(

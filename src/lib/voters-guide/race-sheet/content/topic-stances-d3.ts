@@ -129,6 +129,13 @@ const mercuryStreetFee: Evidence = {
 const mercuryFor = (name: string): Evidence => ({ ...mercury, label: `Mercury questionnaire · ${name}’s responses` });
 const corcoranValues = site("Corcoran · Values", "https://www.corcoranforportland.org/values", SWEEP_SITE_DATE);
 const legreePlan = site("Legree · Homelessness plan", "https://www.keir4pdx.com/homelessness-plan", SWEEP_SITE_DATE);
+const beaudoinEmail: Evidence = {
+  label: "Beaudoin · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#beaudoin-2026-09-23",
+  kind: "Candidate statement",
+  date: "Received September 23, 2026",
+  note: NOTE,
+};
 const oteroEmail2: Evidence = {
   label: "Otero · second emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#otero-2026-09-22",
@@ -195,6 +202,28 @@ export const topicStancesD3: TopicStance[] = [
     "Calls the packages the city offered a billionaire while cutting funds a lack of courage; would fight for deals where citizens and communities really benefit.",
     mercuryFor("Beaudoin"),
   ),
+  // The choices below come from her emailed reply of September 23, 2026.
+  sweepStance("ali-beaudoin", "new-taxes", "mixed", "Hold line until proven",
+    "Would generally hold the line on new taxes and fees until the city shows existing revenue is spent efficiently; any new source needs a clear purpose, a sunset or review, and accountability.",
+    beaudoinEmail),
+  sweepStance("ali-beaudoin", "police-staffing", "supports", "Rebuild where gaps",
+    "Supports rebuilding police staffing where there are documented service gaps, while investing in alternative responders, prevention and community services so police are not the default response.",
+    beaudoinEmail),
+  sweepStance("ali-beaudoin", "camp-removal", "partial", "Enforce, measure outcomes",
+    "Supports enforcing public-space rules with realistic paths to shelter and services, and would measure where people go, whether areas stay clear and the cost; she does not say whether to keep current funding.",
+    beaudoinEmail),
+  sweepStance("ali-beaudoin", "data-centers", "supports", "Temporary pause",
+    "Supports a temporary pause on new AI data centers while the city evaluates their effects on electricity, water, infrastructure, noise and neighborhoods, with large users paying their share.",
+    beaudoinEmail),
+  sweepStance("ali-beaudoin", "street-response", "mixed", "Toward 24/7, if data",
+    "Supports expanding Street Response toward 24/7 where data shows it can safely handle calls that do not need police, tied to measurable outcomes, response times and demand.",
+    beaudoinEmail),
+  sweepStance("ali-beaudoin", "street-fee", "mixed", "Only if proven",
+    "Would oppose keeping or adding fees without first showing they are necessary and that existing transportation dollars are used well; wants to be clear about what each fee delivers.",
+    beaudoinEmail),
+  sweepStance("ali-beaudoin", "water-rates", "supports", "Phased, with protections",
+    "Would support necessary, phased water-rate increases for filtration and aging pipes, but only with aggressive cost controls, outside funding and protections for households that cannot afford higher bills.",
+    beaudoinEmail),
 
   /* ── Joel Corcoran ──────────────────────────────────────────────────── */
   sweepStance(

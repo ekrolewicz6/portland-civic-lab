@@ -35,6 +35,9 @@ const line = (candidateId: string, issue: IssueLine["issue"], text: string): Iss
 const councilLines: IssueLine[] = [
   /* ── Portland City Council, District 3 ─────────────────────────────── */
 
+  line("ali-beaudoin", "housing", "More supply, simpler permits, workforce housing and rate help for first-time buyers."),
+  line("ali-beaudoin", "safety", "Enforcement for crime, prevention through services, non-police care where needed."),
+  line("ali-beaudoin", "climate", "Street maintenance, sidewalks, safer crossings and reliable buses first; keeps bike work."),
   line("ali-beaudoin", "money", "Wants spending reviewed for waste and program results measured, before new policies."),
 
   line("joel-corcoran", "money", "Proposes independent Council budget and legal offices, monthly budget reviews, contract audits."),
@@ -132,6 +135,8 @@ const councilLines: IssueLine[] = [
   line("olivia-clark", "money", "Wants core services and business recovery to come first."),
   line("olivia-clark", "climate", "Wants water, sewer and street systems that withstand heat, drought and extreme weather."),
 
+  line("jayne-cronlund", "housing", "Hold housing nonprofits accountable; speed downtown office-to-housing conversions."),
+  line("jayne-cronlund", "safety", "Modest police increase tied to response times; closer checks on housing nonprofits."),
   line("jayne-cronlund", "money", "Supports living-wage jobs, a creative and sustainable economy, and regular reporting on government goals."),
   line("jayne-cronlund", "climate", "Wants parks, trails, natural areas and business districts to come first."),
 

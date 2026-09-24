@@ -14,6 +14,8 @@ const sweeney = (question: string, text: string): CandidateAnswer => ({ candidat
 const sollitt3 = (question: string, text: string): CandidateAnswer => ({ candidateId: "tom-sollitt", question, text, received: "2026-09-23" });
 const mcdonald = (question: string, text: string): CandidateAnswer => ({ candidateId: "john-mcdonald", question, text, received: "2026-09-23" });
 const colemanCox = (question: string, text: string): CandidateAnswer => ({ candidateId: "heather-coleman-cox", question, text, received: "2026-09-23" });
+const beaudoin = (question: string, text: string): CandidateAnswer => ({ candidateId: "ali-beaudoin", question, text, received: "2026-09-23" });
+const cronlund = (question: string, text: string): CandidateAnswer => ({ candidateId: "jayne-cronlund", question, text, received: "2026-09-23" });
 
 export const answers: CandidateAnswer[] = [
   legree(
@@ -177,6 +179,66 @@ export const answers: CandidateAnswer[] = [
   colemanCox(
     "Camping and shelters",
     "I support keeping our parks and public spaces safe and available for all residents. I also understand the need to keep reaching out to people experiencing homelessness and help connect them with shelter and a path to stable housing. I am open to pod shelters under the new permit process, but I would want to know who would run them, where they would go, how they would affect nearby residents, and whether they would help people move into housing.",
+  ),
+  colemanCox(
+    "Keep Gresham’s own fire department, or join a district?",
+    "I have met with Gresham Fire, who is currently outsourced to Fairview, Wood Village and Troutdale. I also met with the Mayor of Wood Village, Jairo Rios-Campos; I support moving toward a fire district. A committee is already formed with this endeavor in mind. I believe sharing the responsibilities across the communities being served will produce more sustainable funding while maintaining strong fire and emergency services.",
+  ),
+  beaudoin(
+    "Rent and homes",
+    "I would focus on increasing the supply of housing, simplifying complex permitting processes, reducing unnecessary regulatory costs, and supporting more middle-income and workforce housing. I also want to expand pathways to homeownership and make better use of vacant or underutilized properties. On the financing side, I would explore working with the city and financial institutions to offer first-time homebuyers temporary interest-rate assistance to reduce their monthly costs while mortgage rates remain elevated.",
+  ),
+  beaudoin(
+    "Camps, crime and who responds",
+    "We need enforcement when there is violence, property crime, or unsafe behavior; prevention through housing and behavioral-health services; and a stronger non-police response for people who need care rather than enforcement. The goal should be matching the response to the problem instead of using one system for everything.",
+  ),
+  beaudoin(
+    "Your bills and taxes",
+    "I would focus on reducing the city’s commercial vacancy rate and bringing businesses back to downtown Portland and neighborhood commercial corridors. That would create jobs and expand the city’s tax base without raising taxes, and as revenues improve, we should look for opportunities to reduce the tax burden and eliminate unnecessary fees.",
+  ),
+  beaudoin(
+    "Streets, buses and air",
+    "I would prioritize investment in basic transportation infrastructure, including street maintenance, sidewalks, safer crossings, reliable buses, and neighborhood connectivity, while continuing to support biking and pedestrian improvements.",
+  ),
+  beaudoin(
+    "New taxes or fees",
+    "I would generally hold the line on new taxes and fees until the city demonstrates that existing revenue is being spent efficiently and programs are producing measurable results. If a new revenue source is proposed, it should have a clear purpose, a sunset or review mechanism, and strong accountability for how the money is spent.",
+  ),
+  beaudoin(
+    "Police staffing",
+    "Portland needs enough officers to provide timely responses to serious crime and emergencies, so I support rebuilding staffing where there are documented service gaps. At the same time, I would invest in alternative responders, prevention, and community-based services so police are not the default response to every problem.",
+  ),
+  beaudoin(
+    "Clearing camps",
+    "I support enforcing public-space rules while making sure there are realistic pathways to shelter, housing, and services. The city should measure what happens after a removal, including where people go, whether the area stays clear, and the cost, rather than measuring success simply by the number of camps cleared.",
+  ),
+  beaudoin(
+    "Data centers",
+    "I support a temporary pause on new AI data centers while the city evaluates their impacts on electricity, water, infrastructure, noise, and surrounding neighborhoods. Portland should pursue economic development while making sure large users pay their fair share of the infrastructure and resources they require.",
+  ),
+  beaudoin(
+    "Street Response",
+    "I support expanding Portland Street Response toward 24/7 coverage where the data shows it can safely and effectively handle calls that do not require police. Expansion should be tied to measurable outcomes, response times, and demonstrated demand.",
+  ),
+  beaudoin(
+    "Street repair fee",
+    "I would oppose adding or maintaining fees without first demonstrating that they are necessary and that existing transportation dollars are being used effectively. Portland should prioritize maintaining the infrastructure we already have and be transparent about exactly what each fee delivers.",
+  ),
+  beaudoin(
+    "Water rates",
+    "I recognize that Bull Run filtration and aging infrastructure require substantial investment, and I support making the necessary investments in Portland’s water system. I would support necessary, phased increases, but only alongside aggressive cost controls, outside funding opportunities, and clear protections for households that cannot afford higher bills.",
+  ),
+  cronlund(
+    "What spending would you prioritize or reduce to sustain public-space investment?",
+    "Sustain investment in our public parks and reduce the backlog of maintenance without reducing access. I propose a careful approach to achieving 35% reduction in the $800 million backlog without new taxes. I will advocate for clear reporting back to the voters on progress toward this goal. I support a modest increase in police if tied to decreasing response time. Moda Center renovations to secure short term, prevailing wage construction jobs and provide a centerpiece from which restorative development proposed in the Albina Vision Trust may succeed. [...] I will allocate funds from my office budget to support a City Hall led planning process.",
+  ),
+  cronlund(
+    "Housing affordability and production; public safety and homelessness",
+    "I will advocate for Portland Housing Bureau to exercise greater oversight and accountability for its nonprofit partners, including 1) ensuring that nonprofit expenses are legal and within budget, 2) existing housing is full to capacity, 3) residents are cared for and 4) neighbors feel safe around these affordable housing properties. I would direct Bureau of Development Services to explore how we could streamline downtown office vacancy to housing for willing property owners. Office vacancy downtown is at 37%.",
+  ),
+  cronlund(
+    "Accomplishments",
+    "While I was executive director of Three Rivers Land Conservancy, I championed and created the organizational foundation of the Backyard Habitat Certification program. The pilot program lasted for 4 years under Three Rivers before it was transferred to Audubon and Columbia Land Trust. [...] While working at Greenline Fine Woodworking with my husband on our small family business, I acted as business manager from 2010 through the end of 2023. [...] One of our significant accomplishments was restoring a private residence called Firehouse 17. This property and Greenline received a Restore Oregon DeMuro award in 2019.",
   ),
   colemanCox(
     "Immigration enforcement",
