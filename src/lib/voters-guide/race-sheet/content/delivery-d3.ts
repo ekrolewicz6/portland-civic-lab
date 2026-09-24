@@ -118,6 +118,13 @@ const legreeEmail: Evidence = {
   date: "Received September 19, 2026",
   note: NOTE,
 };
+const beaudoinEmail: Evidence = {
+  label: "Beaudoin · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#beaudoin-2026-09-23",
+  kind: "Candidate statement",
+  date: "Received September 23, 2026",
+  note: NOTE,
+};
 const legreeEmail2: Evidence = {
   label: "Legree · second emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#legree-2026-09-22",
@@ -154,7 +161,21 @@ const entry = (
 
 export const deliveriesD3: DeliveryEntry[] = [
   /* ── Ali Beaudoin ─────────────────────────────────────────────────── */
-  entry("ali-beaudoin", "money", "LinkedIn announcement"),
+  // Housing, safety, climate and the money "how" come from her emailed reply of September 23, 2026.
+  entry("ali-beaudoin", "housing", "emailed response", {
+    how: [
+      "Simplify permitting, cut unnecessary regulatory costs, reuse vacant or underused properties, and explore with the city and lenders temporary interest-rate help for first-time buyers while mortgage rates stay high.",
+      beaudoinEmail,
+    ],
+  }),
+  entry("ali-beaudoin", "safety", "emailed response"),
+  entry("ali-beaudoin", "money", "emailed response", {
+    how: [
+      "Cut the commercial vacancy rate and bring businesses back downtown and to neighborhood corridors, growing the tax base without raising taxes, then reduce taxes and unnecessary fees as revenue improves.",
+      beaudoinEmail,
+    ],
+  }),
+  entry("ali-beaudoin", "climate", "emailed response"),
 
   /* ── Joel Corcoran ────────────────────────────────────────────────── */
   entry("joel-corcoran", "money", "pamphlet", {

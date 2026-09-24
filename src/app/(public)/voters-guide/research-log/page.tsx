@@ -19,6 +19,63 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="sinclair-callaway-portraits-2026-09-23">September 23, 2026 · Correction: swapped portraits (Washington County Commissioner, District 4)</h2>
+        <p>
+          Kipperlyn Sinclair’s campaign told us her page showed her
+          opponent’s photo. The two portraits in this race were swapped when
+          they were cut from the voters’ pamphlet page they share: Sinclair’s
+          page showed Steve Callaway, and his showed her. Both are now
+          correct. The Lab checked the other pair taken from a shared
+          pamphlet page in this county’s race pack and found no other swap.
+        </p>
+        <h2 id="beaudoin-2026-09-23">September 23, 2026 · Candidate response: Ali Beaudoin (District 3)</h2>
+        <p>
+          Ali Beaudoin answered all eleven questions in the Lab’s follow-up.
+          She would increase housing supply, simplify permitting and explore
+          temporary interest-rate help for first-time buyers; match the
+          response to the problem, with enforcement for crime, prevention
+          through services and non-police care; grow the tax base by filling
+          commercial vacancies before raising taxes; and put street
+          maintenance, sidewalks, safer crossings and reliable buses first.
+          On the Council’s choices, she would generally hold the line on new
+          taxes and fees, rebuild police staffing where gaps are documented,
+          pause new AI data centers, expand Street Response toward 24/7 where
+          data supports it, keep fees only where shown necessary, and support
+          phased water-rate increases with cost controls and protections for
+          households that cannot pay. On camp removals she would enforce
+          public-space rules and measure outcomes but did not say whether to
+          keep current funding.
+        </p>
+        <p>
+          Her housing, safety and climate columns, empty before, now have
+          positions, and her bills column gained a “how” step. Seven topic
+          boards, empty before, now have entries. Excerpts appear on her
+          brief, and the reply is kept on file.
+        </p>
+        <h2 id="cronlund-2026-09-23">September 23, 2026 · Candidate response: Jayne Cronlund (District 4)</h2>
+        <p>
+          Jayne Cronlund answered the three questions the Lab emailed her on
+          September 19. She would cut the $800 million parks maintenance
+          backlog 35% without new taxes and report progress to voters,
+          supports a modest police increase tied to shorter response times,
+          lists Moda Center renovations among her spending priorities for
+          prevailing-wage jobs and the Albina Vision Trust’s development, and
+          would fund a City Hall–led planning process from her office budget.
+          On housing, she would have the Housing Bureau hold nonprofit
+          partners accountable and the permitting bureau speed conversions of
+          vacant downtown offices to housing. She describes founding the
+          Backyard Habitat Certification program at Three Rivers Land
+          Conservancy and the Restore Oregon award for her family business’s
+          Firehouse 17 restoration.
+        </p>
+        <p>
+          Her housing and safety columns, empty before, now have positions,
+          with a “how” step for housing and a parks-backlog measure under
+          streets, buses and air. Two topic boards, Moda and police staffing,
+          now have entries. Her open question now asks how the backlog would
+          shrink without new taxes and over what period. Excerpts appear on
+          her brief, and the reply is kept on file.
+        </p>
         <h2 id="coleman-cox-2026-09-23">September 23, 2026 · Candidate response: Heather Coleman-Cox (Gresham Council, Position 2)</h2>
         <p>
           Heather Coleman-Cox answered all ten questions the Lab emailed her
@@ -40,8 +97,10 @@ export default function ResearchLog() {
           empty before, now have entries, and her levy and groundwater
           entries, partial readings of her platform and a 2026 Outlook quote,
           now record the answers she gave us. She did not address joining a
-          fire district. Excerpts appear on her brief, and the reply is kept
-          on file.
+          fire district in that reply; a second note the same day said she
+          supports moving toward a fire district shared with Fairview, Wood
+          Village and Troutdale, and her levy entry now records both answers.
+          Excerpts appear on her brief, and the replies are kept on file.
         </p>
         <h2 id="mcdonald-2026-09-23">September 23, 2026 · Candidate response: John McDonald (District 4)</h2>
         <p>

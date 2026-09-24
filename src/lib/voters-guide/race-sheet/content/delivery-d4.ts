@@ -120,6 +120,13 @@ const zimmermanHousing = site("Zimmerman · housing", "https://ez4pdx.com/issue/
 const zimmermanHomelessness = site("Zimmerman · homelessness", "https://ez4pdx.com/issue/homelessness/");
 const zimmermanSafety = site("Zimmerman · public safety", "https://ez4pdx.com/issue/public-safety/");
 
+const cronlundEmail: Evidence = {
+  label: "Cronlund · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#cronlund-2026-09-23",
+  kind: "Candidate statement",
+  date: "Received September 23, 2026",
+  note: NOTE,
+};
 const mcdonaldEmail: Evidence = {
   label: "McDonald · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#mcdonald-2026-09-23",
@@ -213,8 +220,15 @@ export const deliveriesD4: Delivery[] = [
   }),
 
   /* ── Jayne Cronlund ─────────────────────────────────────────────────── */
+  // Housing, safety and the parks measure come from her emailed reply of September 23, 2026.
+  entry("jayne-cronlund", "housing", "emailed response", {
+    how: step("Direct the permitting bureau to streamline conversions of vacant downtown offices to housing for willing owners, and have the Housing Bureau check nonprofit partners’ spending, occupancy and resident care.", cronlundEmail),
+  }),
+  entry("jayne-cronlund", "safety", "emailed response"),
   entry("jayne-cronlund", "money", "pamphlet"),
-  entry("jayne-cronlund", "climate", "pamphlet"),
+  entry("jayne-cronlund", "climate", "emailed response", {
+    measure: step("A 35% cut in the $800 million parks maintenance backlog without new taxes or reduced access, with progress reported to voters.", cronlundEmail),
+  }),
 
   /* ── Jamey Evenstar ─────────────────────────────────────────────────── */
   entry("jamey-evenstar", "housing", "campaign site", {

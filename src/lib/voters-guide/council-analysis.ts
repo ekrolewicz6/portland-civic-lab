@@ -9,7 +9,7 @@ type AnalysisRow = [string[], string, Issues];
 const rows: Record<string, AnalysisRow> = {
   "Ali Beaudoin": [
     ["Financial discipline", "Small-business growth"],
-    "The test is whether operational changes produce enough savings and investment to support services. The reviewed announcement names neither specific cuts nor a revenue estimate.",
+    "The test is whether operational changes produce enough savings and investment to support services. Her emailed reply adds the mechanism, growing the tax base by filling commercial vacancies downtown and in neighborhood corridors, and would hold the line on new taxes and fees until programs show results; she names no vacancy target or specific cuts.",
     {
       money:
         "Emphasizes cost analysis, eliminating unnecessary spending and testing whether programs meet their goals. Specific cuts and tax changes are not established in the reviewed announcement.",
@@ -407,6 +407,20 @@ const sweeneyEmail: Evidence = {
   date: "Received September 22, 2026",
   note: replyNote,
 };
+const beaudoinEmail: Evidence = {
+  label: "Beaudoin · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#beaudoin-2026-09-23",
+  kind: "Candidate statement",
+  date: "Received September 23, 2026",
+  note: replyNote,
+};
+const cronlundEmail: Evidence = {
+  label: "Cronlund · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#cronlund-2026-09-23",
+  kind: "Candidate statement",
+  date: "Received September 23, 2026",
+  note: replyNote,
+};
 const supplements: Record<string, { source: Evidence; issues: Issues; issueSources?: Partial<Record<keyof Issues, Evidence>>; also?: Evidence[] }> = {
   "Timothy (TJ) Anderson": {
     // Emailed reply to the individual questions the Lab sent him on September 19, 2026.
@@ -577,6 +591,28 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
         "Supports emergency response alongside prevention, behavioral health and housing stability; the page does not name a police staffing target.",
       money:
         "Would test program results and, when more revenue is necessary, favor taxes on the wealthiest households and largest corporations over working households and small businesses.",
+    },
+  },
+  "Ali Beaudoin": {
+    // Housing, safety and climate positions from her emailed reply of September 23, 2026.
+    source: beaudoinEmail,
+    issues: {
+      housing:
+        "Would increase housing supply, simplify permitting, cut unnecessary regulatory costs, support middle-income and workforce housing, expand paths to homeownership and reuse vacant or underused properties; would explore temporary interest-rate help for first-time buyers with the city and lenders.",
+      safety:
+        "Would match the response to the problem: enforcement for violence, property crime and unsafe behavior; prevention through housing and behavioral-health services; and a stronger non-police response for people who need care rather than enforcement.",
+      climate:
+        "Would prioritize basic transportation infrastructure (street maintenance, sidewalks, safer crossings, reliable buses and neighborhood connectivity) while continuing to support biking and pedestrian improvements.",
+    },
+  },
+  "Jayne Cronlund": {
+    // Housing and safety positions from her emailed reply of September 23, 2026.
+    source: cronlundEmail,
+    issues: {
+      housing:
+        "Would have the Housing Bureau hold its nonprofit partners accountable (lawful spending within budget, existing housing full, residents cared for, neighbors safe) and the permitting bureau streamline conversions of vacant downtown offices to housing for willing owners, citing 37% office vacancy.",
+      safety:
+        "Supports a modest increase in police if it is tied to shorter response times, and wants homelessness addressed through the Housing Bureau and the permitting bureau, with stronger oversight of nonprofit housing providers.",
     },
   },
   "John Sweeney": {
