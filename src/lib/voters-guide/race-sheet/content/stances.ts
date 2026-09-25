@@ -108,7 +108,7 @@ const councilChips: StanceChip[] = [
 
   chip("keir-legree", "climate", "Balanced streets, measured"),
   chip("kellie-torres", "housing", "4,000 homes a year"),
-  chip("kellie-torres", "safety", "More police investigations"),
+  chip("kellie-torres", "safety", "Police follow-through"),
   chip("kellie-torres", "money", "Partnerships, philanthropy"),
   chip("kellie-torres", "climate", "Parks, trails and habitat"),
 

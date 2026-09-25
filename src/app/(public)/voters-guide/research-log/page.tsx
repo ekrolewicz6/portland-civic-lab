@@ -19,6 +19,18 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="torres-safety-2026-09-25">September 25, 2026 · Correction: Kellie Torres’s safety summary (District 3)</h2>
+        <p>
+          A reader on Reddit pointed out that Kellie Torres’s safety chip,
+          “More police investigations,” did not match her source. Her
+          priorities page supports “public safety staffing and resources that
+          allow police to follow through on investigations, fix emergency
+          response times, and make neighborhoods safe.” That is about
+          finishing the cases police already have and responding faster, and
+          the chip read as a call for more investigations. The chip now reads
+          “Police follow-through,” and her line and position quote her framing
+          more closely. The source did not change.
+        </p>
         <h2 id="mcdonald-2026-09-24">September 24, 2026 · Second candidate response: John McDonald (District 4)</h2>
         <p>
           John McDonald supports a 24/7 Portland Street Response, which he

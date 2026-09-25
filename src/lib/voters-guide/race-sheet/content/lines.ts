@@ -108,7 +108,7 @@ const councilLines: IssueLine[] = [
   line("john-sweeney", "money", "Opposes spending to keep the Blazers; puts preserving city services first as revenue declines."),
 
   line("kellie-torres", "housing", "Wants 4,000 homes a year through fewer code barriers and faster building permits."),
-  line("kellie-torres", "safety", "Supports police capacity for investigations, faster emergency responses, connecting people in crisis with services."),
+  line("kellie-torres", "safety", "Wants police staffed to follow through on investigations and respond faster, plus crisis services."),
   line("kellie-torres", "money", "Wants more public-private partnerships, philanthropy and sponsorships; proposes a reimagined Tom McCall Waterfront Bowl."),
   line("kellie-torres", "climate", "Wants parks, trails, river access and habitat restoration through public and private partnerships."),
 
