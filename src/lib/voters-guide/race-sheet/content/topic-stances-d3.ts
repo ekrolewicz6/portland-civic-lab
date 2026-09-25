@@ -209,7 +209,7 @@ export const topicStancesD3: TopicStance[] = [
     "Calls the packages the city offered a billionaire while cutting funds a lack of courage; would fight for deals where citizens and communities really benefit.",
     mercuryFor("Beaudoin"),
   ),
-  // The choices below come from her emailed reply of September 23, 2026.
+  // The choices below come from his emailed reply of September 23, 2026.
   sweepStance("ali-beaudoin", "new-taxes", "mixed", "Hold line until proven",
     "Would generally hold the line on new taxes and fees until the city shows existing revenue is spent efficiently; any new source needs a clear purpose, a sunset or review, and accountability.",
     beaudoinEmail),

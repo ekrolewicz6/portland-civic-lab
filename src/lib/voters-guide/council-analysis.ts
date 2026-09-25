@@ -9,7 +9,7 @@ type AnalysisRow = [string[], string, Issues];
 const rows: Record<string, AnalysisRow> = {
   "Ali Beaudoin": [
     ["Financial discipline", "Small-business growth"],
-    "The test is whether operational changes produce enough savings and investment to support services. Her emailed reply adds the mechanism, growing the tax base by filling commercial vacancies downtown and in neighborhood corridors, and would hold the line on new taxes and fees until programs show results; she names no vacancy target or specific cuts.",
+    "The test is whether operational changes produce enough savings and investment to support services. His emailed reply adds the mechanism, growing the tax base by filling commercial vacancies downtown and in neighborhood corridors, and would hold the line on new taxes and fees until programs show results; he names no vacancy target or specific cuts.",
     {
       money:
         "Emphasizes cost analysis, eliminating unnecessary spending and testing whether programs meet their goals. Specific cuts and tax changes are not established in the reviewed announcement.",
@@ -601,7 +601,7 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
     },
   },
   "Ali Beaudoin": {
-    // Housing, safety and climate positions from her emailed reply of September 23, 2026.
+    // Housing, safety and climate positions from his emailed reply of September 23, 2026.
     source: beaudoinEmail,
     issues: {
       housing:

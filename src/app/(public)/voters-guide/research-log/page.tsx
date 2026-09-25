@@ -19,6 +19,16 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="beaudoin-pronouns-ballot-2026-09-25">September 25, 2026 · Corrections: Ali Beaudoin’s pronouns, and the ballot header</h2>
+        <p>
+          A reader told us that Ali Beaudoin (District 3) is a man. The Lab
+          had used “she” and “her” for him in the September 23 entry below
+          and in one comparison on his District 3 page. Those now read “he” and
+          “his.” The same reader pointed out that the guide’s front page said
+          “One ballot,” when Multnomah County voters get a separate
+          ranked-choice ballot card alongside the standard one, as they did in
+          2024. The heading now reads “One election.”
+        </p>
         <h2 id="kahl-2026-09-25">September 25, 2026 · Candidate response: Barbara J Kahl (U.S. House, Oregon District 1)</h2>
         <p>
           Barbara J Kahl answered all twelve questions. All four of her issue
@@ -224,25 +234,25 @@ export default function ResearchLog() {
         <h2 id="beaudoin-2026-09-23">September 23, 2026 · Candidate response: Ali Beaudoin (District 3)</h2>
         <p>
           Ali Beaudoin answered all eleven questions in the Lab’s follow-up.
-          She would increase housing supply, simplify permitting and explore
+          He would increase housing supply, simplify permitting and explore
           temporary interest-rate help for first-time buyers; match the
           response to the problem, with enforcement for crime, prevention
           through services and non-police care; grow the tax base by filling
           commercial vacancies before raising taxes; and put street
           maintenance, sidewalks, safer crossings and reliable buses first.
-          On the Council’s choices, she would generally hold the line on new
+          On the Council’s choices, he would generally hold the line on new
           taxes and fees, rebuild police staffing where gaps are documented,
           pause new AI data centers, expand Street Response toward 24/7 where
           data supports it, keep fees only where shown necessary, and support
           phased water-rate increases with cost controls and protections for
-          households that cannot pay. On camp removals she would enforce
+          households that cannot pay. On camp removals he would enforce
           public-space rules and measure outcomes but did not say whether to
           keep current funding.
         </p>
         <p>
-          Her housing, safety and climate columns, empty before, now have
-          positions, and her bills column gained a “how” step. Seven topic
-          boards, empty before, now have entries. Excerpts appear on her
+          His housing, safety and climate columns, empty before, now have
+          positions, and his bills column gained a “how” step. Seven topic
+          boards, empty before, now have entries. Excerpts appear on his
           brief, and the reply is kept on file.
         </p>
         <h2 id="cronlund-2026-09-23">September 23, 2026 · Candidate response: Jayne Cronlund (District 4)</h2>
