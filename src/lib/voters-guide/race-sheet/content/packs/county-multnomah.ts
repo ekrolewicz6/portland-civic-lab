@@ -57,6 +57,16 @@ const site = (label: string, url: string): Evidence => ({
   note: NOTE,
 });
 const step = (text: string, source: Evidence): DeliveryStep => ({ text, source });
+/* City Club of Portland's District 2 debate (September 24, 2026, PCC Cascade). The Lab worked from a
+ * transcript without speaker labels and attributed each answer only where a self-reference or the
+ * moderator's rotation made the speaker certain; see research/voters-guide-2026/sources/city-club-d2-debate-2026-09-24.md. */
+const cityClubD2: Evidence = {
+  label: "City Club of Portland · Multnomah County District 2 debate (September 24, 2026)",
+  url: "https://pdxcityclub.org/event/multnomah-county-commission-district-2-debate/",
+  kind: "Candidate statement",
+  date: "September 24, 2026; transcript read September 25, 2026",
+  note: "The candidate's own remarks at a public debate, read from a transcript; speaker attribution is the Lab's, from self-references and the moderator's order. Claims are not independently verified.",
+};
 
 /* Contact channel helpers, matching content/contacts.ts. */
 type From = ContactChannel["from"];
@@ -606,6 +616,13 @@ candidate("nathan-ong-norris", {
       line: "Supports social housing (publicly owned), eviction prevention and anti-displacement measures.",
       chip: "Social housing",
     },
+    safety: {
+      position:
+        "Supports housing first without sobriety or other tests; would press the sheriff on jail conditions and the overuse of solitary confinement; counts ambulance response times, firefighters’ conditions and fuel and chemical storage as public safety.",
+      source: cityClubD2,
+      line: "Housing first without tests; press jails on solitary; ambulances and fuel risks count too.",
+      chip: "Housing first, no tests",
+    },
     money: {
       position:
         "The county cuts services while giving money and land to billionaires, which must stop; expand the common good instead: Preschool for All, social housing, public libraries and critical infrastructure, with affordable utilities.",
@@ -744,6 +761,13 @@ candidate("bri-williams", {
       line: "Wants budgets that put essential services and measurable results first.",
       chip: "Essential services first",
     },
+    climate: {
+      position:
+        "Supports moving the Burnside Bridge replacement forward with partners, staged to limit disruption; treats the CEI Hub (the riverside fuel-tank hub) as an environmental-justice and public-health issue, deferring to experts and affected neighbors; supports a data-center moratorium.",
+      source: cityClubD2,
+      line: "Build the Burnside Bridge in stages; community-led CEI Hub action; data-center moratorium.",
+      chip: "Burnside, community voice",
+    },
   },
 });
 ownWords.push(
@@ -814,6 +838,13 @@ candidate("nabil-zaghloul", {
       line: "Proposes a public county report card on spending and results, outcome-based funding.",
       chip: "Public report card",
       how: step("Prioritize and, when the budget permits, expand programs with strong retention rates; require quarterly outcome reporting in every nonprofit contract.", zHomelessness),
+    },
+    climate: {
+      position:
+        "Supports finishing the Burnside Bridge with federal, City, Metro and regional money; on the CEI Hub (the riverside fuel-tank hub) wants stronger safety measures, operators insured so taxpayers don’t pay, and emergency plans for nearby neighborhoods; supports a data-center moratorium.",
+      source: cityClubD2,
+      line: "Fund the Burnside Bridge; insure and secure the CEI Hub; data-center moratorium.",
+      chip: "Bridge, fuel-hub safety",
     },
   },
 });
@@ -1388,15 +1419,21 @@ const topicStances: TopicStance[] = [
 ];
 
 const norrisPledges = site("Ong Norris · pledges taken (Preschool for All pledge, July 2, 2026)", "https://www.nathanongnorris.com/pledges");
-const norrisModaTestimony = site("Ong Norris · testimony on the Climate Justice Plan and Moda Center (July 23, 2026)", "https://www.nathanongnorris.com/news-updates/testimony-climate-justice-plan-moda");
 topicStances.push(
   /* ── District 2 ────────────────────────────────────────────────────── */
   // Broussard and Williams: no statement on any of the thirteen choices in the pamphlet, on their sites or in the
   // venues logged in the September 22, 2026 sweep report. Ong Norris's pamphlet line on "resisting authoritarian
   // attacks on our immigrant neighbors" is a value, not a position on the sanctuary code; left as a gap.
-  stance("serena-cruz", "mult-pfa-delay", "partial", "Full, stable funding",
-    "Would fight for full, stable funding and universal access by 2030, citing over 7,400 seats for 2026–27; her issues page does not say whether the scheduled tax increase should stay delayed to 2028.",
-    cruzIssues),
+  // Cruz's Preschool for All entry now uses her fuller answer at the September 24, 2026 City Club debate.
+  stance("serena-cruz", "mult-pfa-delay", "partial", "Match seats to families",
+    "Not yet satisfied: says the program has more seats than enrolled children but not in the right places and hours, must cover children with special needs, and should explain its high reserves; she did not address the 2028 delay.",
+    cityClubD2),
+  stance("serena-cruz", "mult-sanctuary", "supports", "Protect sanctuary",
+    "Would protect the county’s sanctuary efforts and prepare employees for ICE arriving; as a commissioner she challenged the sheriff’s office over money from the U.S. Marshals Service, which ended.",
+    cityClubD2),
+  stance("serena-cruz", "mult-jail-capacity", "partial", "Fix jail staffing",
+    "Says the jails have a staffing challenge that must be fixed so families can visit and defense lawyers can meet clients; she does not say whether to keep both jails at current capacity.",
+    cityClubD2),
   stance("serena-cruz", "mult-city-county", "partial", "Align County, City, Metro",
     "Wants the County, City and Metro aligned around one coordinated response instead of finger-pointing; she does not say whether one government should run all shelters when the agreement expires.",
     cruzIssues),
@@ -1417,9 +1454,22 @@ topicStances.push(
   stance("nathan-ong-norris", "mult-pfa-delay", "opposes", "No more delays",
     "Signed a pledge to reject any further delays in fully funding Preschool for All, support the full voter-approved tax rate and vote against any action that limits or reduces the program.",
     norrisPledges),
-  stance("nathan-ong-norris", "mult-moda", "opposes", "No giveaway to billionaires",
-    "Testified in July 2026 that the county should not throw dollars at a billionaire-owned franchise without guarantees, backing AFSCME Local 88's call to stop the vote and hire a professional negotiator.",
-    norrisModaTestimony),
+  // From the September 24, 2026 City Club debate; Moda replaces his July testimony, which the debate answer extends.
+  stance("nathan-ong-norris", "mult-sanctuary", "supports", "Keep ICE out",
+    "Would keep ICE out of county buildings, off the streets and out of the county.",
+    cityClubD2),
+  stance("nathan-ong-norris", "mult-jail-capacity", "partial", "Audit standards first",
+    "Would first ask why the jails miss the standards in the county’s own audit and why solitary confinement is still overused; counts ambulance times and fuel storage as public safety; he does not address jail capacity.",
+    cityClubD2),
+  stance("nathan-ong-norris", "mult-shelter-cuts", "partial", "Keep people housed",
+    "Says the fastest way to cut homelessness is keeping people in their homes through eviction prevention and utility relief, with housing first; he does not say whether to close shelter beds.",
+    cityClubD2),
+  stance("nathan-ong-norris", "mult-budget-gap", "partial", "Revenue from the wealthy",
+    "Says billionaires and oil companies are not struggling and the county should go get what it needs from them; backs a downtown vacancy tax; he does not address cutting administration.",
+    cityClubD2),
+  stance("nathan-ong-norris", "mult-moda", "mixed", "Too little in return",
+    "Says the county belongs at the table on the renovation but promised too much for too little in return, leaving jobs, better streets or power-bill relief unsecured; says the arena should have been a community center first.",
+    cityClubD2),
   stance("nabil-zaghloul", "mult-shelter-cuts", "mixed", "Treatment, not more shelters",
     "Notes many of the 600 beds being cut were already empty and says the answer for people who refuse shelter is sustained behavioral-health and addiction treatment, not more shelters, with prevention funded first.",
     zHomelessness),
@@ -1429,6 +1479,40 @@ topicStances.push(
   stance("nabil-zaghloul", "mult-sobering", "partial", "Fund long-term rehab",
     "Wants multi-year funding for 12-to-24-month programs combining housing, treatment and employment as the standard for people with overlapping needs; he does not mention the 2027 center or detox beds.",
     zBehavioral),
+  // Zaghloul and Williams: from the September 24, 2026 City Club debate.
+  stance("nabil-zaghloul", "mult-moda", "mixed", "No blank check",
+    "Not in support of a blank check; with the City, County and state moving ahead, wants jobs, community investment and small-business benefit in return; cites a campaign door-knocking survey he says found 44% of District 2 opposed.",
+    cityClubD2),
+  stance("nabil-zaghloul", "mult-pfa-delay", "partial", "Index tax to inflation",
+    "Calls Preschool for All one of the county’s best investments but wants accountability, financial sustainability, better behavioral-health care, and the tax thresholds indexed to inflation so middle-income earners are not pulled in; he did not address the delay.",
+    cityClubD2),
+  stance("nabil-zaghloul", "mult-budget-gap", "partial", "Budget for outcomes",
+    "Would budget for outcomes instead of history, stop funding long-term obligations with one-time money, and move money to prevention that proves it cuts later costs; he does not say whether to cut administration first.",
+    cityClubD2),
+  stance("nabil-zaghloul", "mult-city-county", "partial", "Shared goals, consolidate",
+    "Says the City and County lack a strategic partnership with shared goals and metrics, and would consolidate overlapping homelessness, behavioral-health and public-safety services; he does not say which government should run shelters.",
+    cityClubD2),
+  stance("nabil-zaghloul", "mult-jail-capacity", "partial", "Corrections understaffed",
+    "Says public safety is underfunded and corrections understaffed, and wants accountability for crimes, youth violence prevention and reentry services; he does not say whether to keep both jails at current capacity.",
+    cityClubD2),
+  stance("bri-williams", "mult-moda", "mixed", "Opposed, now shape it",
+    "Personally disagreed with putting county money into the Moda Center but says that is past; now wants Albina Vision Trust and 1803 Fund benefits, minority contractors, and prevailing and living wages for builders and arena workers.",
+    cityClubD2),
+  stance("bri-williams", "mult-sanctuary", "supports", "Keep sanctuary laws",
+    "Would continue the county’s sanctuary laws and keep ICE out of county buildings, keep educating communities on immigration law, and work with state legislators and senators so immigrant neighbors are safe.",
+    cityClubD2),
+  stance("bri-williams", "mult-city-county", "partial", "County runs services",
+    "Wants the county to run services (transitional housing, hotel vouchers, utility help, wraparound care) and the city to handle infrastructure; she does not say whether the agreement should be rewritten so one government runs shelters.",
+    cityClubD2),
+  stance("bri-williams", "mult-shelter-cuts", "partial", "Stop one-time funding",
+    "Says shelters were lost because one-time money paid for long-term services; wants reliable funding and permanent housing for households at 0–30% of median income; she does not say whether to close shelter beds.",
+    cityClubD2),
+  stance("bri-williams", "mult-pfa-delay", "partial", "Expand inclusion supports",
+    "Would expand Preschool for All’s inclusion and culturally responsive mental-health supports, which she says lost their contract in the budget; she was the program’s first culturally specific consultant and did not address the tax delay.",
+    cityClubD2),
+  stance("bri-williams", "mult-budget-gap", "partial", "Protect core services",
+    "Would stretch existing dollars, keep core services intact and find new funding sources, including for prevention work; she does not say whether to cut administration first.",
+    cityClubD2),
   stance("herman-greene", "mult-hsd-oversight", "partial", "Performance-based contracts",
     "Wants performance-based contracts and published timelines, spending and results for housing programs; his pamphlet does not mention the Homeless Services Department's leadership, Sunstone Way or outside audits.",
     pamphlet(34)),

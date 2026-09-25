@@ -19,6 +19,31 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="d2-debate-2026-09-24">September 25, 2026 · Debate remarks: Multnomah County District 2 (City Club, September 24)</h2>
+        <p>
+          City Club of Portland’s District 2 debate on September 24 at PCC
+          Cascade featured four of the seven candidates: Bri Williams, Nabil
+          Zaghloul, Nathan Ong Norris and Serena Cruz. The Lab worked from a
+          transcript without speaker labels and used an answer only when a
+          self-reference or the moderator’s rotation made the speaker certain;
+          the attribution for every question is recorded with the research.
+        </p>
+        <p>
+          Nineteen topic-board entries changed. Williams now has entries on the
+          Moda Center, sanctuary, the city-county agreement, shelter funding,
+          Preschool for All and the budget gap; Zaghloul on the Moda Center,
+          Preschool for All (including indexing the tax thresholds to
+          inflation), the budget gap, the city-county agreement and jail
+          staffing; Ong Norris on sanctuary, jails, shelter and the budget
+          gap; and Cruz on sanctuary and jail staffing. Ong Norris’s Moda
+          entry moved from “opposes,” based on his July testimony, to
+          “mixed,” because at the debate he said the county belongs at the
+          table but got too little in return. Cruz’s Preschool for All entry
+          now uses her debate answer. Williams and Zaghloul gained positions
+          on roads, bridges and air, and Ong Norris on crisis care and jails.
+          Bruce Broussard, Herman Greene and Tony Robertson were not on the
+          stage, and their pages did not change.
+        </p>
         <h2 id="russ-2026-09-25">September 25, 2026 · Correction at the candidate’s request: David Russ (U.S. House, Oregon District 6)</h2>
         <p>
           David Russ wrote that his housing position misstated him. His reply
