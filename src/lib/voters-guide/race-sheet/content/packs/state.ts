@@ -604,11 +604,11 @@ const kotekSb1507Letter = record(
 );
 
 /* Stakes sources */
-const cfoGuidance = record(
-  "DAS Chief Financial Office · 2027–29 budget development, policy package guidance",
-  "https://www.oregon.gov/das/Financial/Documents/2027-29%20Budget%20POP%20Guidance%20-%20CFO.pdf",
-  "February 10, 2026; reviewed September 21, 2026",
-  "Reserve, ending-balance and kicker figures are from the Office of Economic Analysis September 2026 forecast (oregon.gov/das/oea/Documents/revenue0926.pdf).",
+const medicaidGap = record(
+  "Governor’s Advisory Group on Medicaid Sustainability · Final report to Governor Kotek",
+  "https://www.oregon.gov/oha/OHPB/MtgDocs/4.%20Advisory%20Group%20on%20Medicaid%20Sustainability%20Report%20to%20Governor%20Kotek%20Final.pdf",
+  "2026; reviewed September 25, 2026",
+  "Figure 1 and page 9: an estimated net $421 million 2027–29 General Fund gap created by H.R. 1, the cost of continuing the current Oregon Health Plan ($833 million lost minus $412 million saved from lower enrollment). It covers the health plan only; no all-in 2027–29 gap has been published. The 1% share is $421 million over $42.36 billion net 2027–29 General Fund revenue in the Office of Economic Analysis September 2026 forecast (oregon.gov/das/oea/Documents/revenue0926.pdf, Table R.2), which also gives the $3,463 million reserve total as 9.7% of General Fund revenues. The revenue-neutral instruction is from the DAS Chief Financial Office’s February 10, 2026 policy package guidance (oregon.gov/das/Financial/Documents/2027-29%20Budget%20POP%20Guidance%20-%20CFO.pdf).",
 );
 const odotHb3991 = record(
   "ODOT · House Bill 3991 and the 2026 funding update",
@@ -716,7 +716,7 @@ const governorTopics: ExtraTopic[] = [
     short: "State taxes",
     question: "Raise new state taxes to cover the 2027–29 budget gap, or hold to cuts?",
     context:
-      "The state's Chief Financial Office told agencies on February 10, 2026 that federal H.R. 1 is projected to open a gap between the cost of current programs and revenue, and that 2027–29 proposals must be revenue-neutral. The September 2026 forecast shows a $400 million 2025–27 ending balance and $3.46 billion in reserves.",
+      "The state's Chief Financial Office told agencies on February 10, 2026 that federal H.R. 1 is projected to open a gap between the cost of current programs and revenue, and that 2027–29 proposals must be revenue-neutral. The governor’s Medicaid advisory group puts H.R. 1’s 2027–29 General Fund gap for the Oregon Health Plan at $421 million, about 1% of forecast revenue. The September 2026 forecast expects $400 million left over at the end of 2025–27 and $3.46 billion in reserves.",
   },
   {
     id: "gov-interstate-bridge",
@@ -829,8 +829,8 @@ const stakes: RaceStakes[] = [
       {
         label: "2027–29 budget gap",
         text:
-          "Federal H.R. 1 is projected to open a gap between the cost of current programs and state revenue, so the Chief Financial Office told agencies on February 10, 2026 that 2027–29 proposals must be revenue-neutral. September’s forecast shows $3.46 billion in reserves (9.7% of the general fund) and no kicker due on 2028 returns.",
-        source: cfoGuidance,
+          "Federal H.R. 1 leaves the Oregon Health Plan about $421 million short in General Fund money for 2027–29, about 1% of the $42.4 billion the state expects to collect. The Chief Financial Office told agencies on February 10, 2026 that 2027–29 proposals must be revenue-neutral. September’s forecast shows $3.46 billion in reserves (9.7% of General Fund revenue) and no kicker due on 2028 returns. No full 2027–29 gap estimate is published yet.",
+        source: medicaidGap,
       },
       {
         label: "Transportation funding",

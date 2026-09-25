@@ -19,6 +19,21 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="state-budget-gap-2026-09-25">September 25, 2026 · Added context: the size of the 2027–29 state budget gap (Governor)</h2>
+        <p>
+          A reader asked how big the 2027–29 budget gap on the governor page
+          is in percentage terms. The page said federal H.R. 1 would open a
+          gap but gave no size. It now gives the one published figure: the
+          governor’s Medicaid advisory group estimates the Oregon Health Plan
+          will be $421 million short in General Fund money for 2027–29, about
+          1% of the $42.4 billion the September forecast expects the state to
+          collect. No all-in estimate has been published; the governor’s
+          recommended budget in December should be the first. The reserve
+          share now reads as 9.7% of General Fund revenue, the forecast’s own
+          wording, and the taxes board now calls the $400 million 2025–27
+          ending balance money left over, so it is not mistaken for the
+          Medicaid gap.
+        </p>
         <h2 id="beaudoin-pronouns-ballot-2026-09-25">September 25, 2026 · Corrections: Ali Beaudoin’s pronouns, and the ballot header</h2>
         <p>
           A reader told us that Ali Beaudoin (District 3) is a man. The Lab
