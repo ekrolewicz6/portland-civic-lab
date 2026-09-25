@@ -19,6 +19,19 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="russ-2026-09-25">September 25, 2026 · Correction at the candidate’s request: David Russ (U.S. House, Oregon District 6)</h2>
+        <p>
+          David Russ wrote that his housing position misstated him. His reply
+          of September 24 criticized federal money for NGOs; our summary said
+          “nonprofit organizations,” and he notes that many NGOs are
+          nonprofits but not all. The quoted excerpt had also dropped his
+          sentence on progressive policy. His housing position now says NGOs
+          and uses the clarification he sent, that these entities spend more
+          on staff, consulting and programs that keep homeless people
+          dependent than on helping them become independent. His full
+          original paragraph, including the dropped sentence, and his
+          clarification are quoted on his brief.
+        </p>
         <h2 id="torres-safety-2026-09-25">September 25, 2026 · Correction: Kellie Torres’s safety summary (District 3)</h2>
         <p>
           A reader on Reddit pointed out that Kellie Torres’s safety chip,
