@@ -30,3 +30,10 @@ A last check against the live site and this folder's research changed seven emai
 - Ken Boddie, KOIN: will look it over before Monday's county chair debate.
 - League of Women Voters of Portland asked how we sourced profiles; Edan answered. Alex Zielinski, OPB, will read it; Edan answered.
 - Auto-replies: Gresham Chamber (Lynn Snodgrass now runs Leadership Academy; other mail goes to the new CEO, Cori Johnson), Community Alliance of Tenants (Katrina McCarty is consulting through December; ED matters go to the board), KGW's John Tierney (out until September 28), OCBH's Heather (in Pendleton this week), NAMI Multnomah and SEIU 49 (acknowledgments).
+
+## Follow-ups sent after 3:45 PM PDT
+
+- Kevin Cronin, Housing Oregon (Brian copied): the specific figures to check on the governor page, which are 2025 permits (14,839) against the OHNA target (29,359) and the Executive Order 23-04 goal (36,000), and the shelter emergency figures ($204.9 million, 6,286 beds, 5,539 people rehoused). Also asked about affordable-housing money at stake in 2027-29.
+- Maja Harris, Rose City Reform: thanks, both corrections made (PR #45), the 2 Cents measure is coming.
+- Cori Johnson, the Gresham Area Chamber's new CEO (cori.ceo@greshamchamber.org): resent the Gresham email after Lynn Snodgrass's auto-reply.
+- Julia Shumway, Oregon Capital Chronicle: thanks; will watch for their mid-October general election guide and point readers to it. (Edan answered North Tabor himself.)
