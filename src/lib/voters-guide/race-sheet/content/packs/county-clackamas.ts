@@ -133,6 +133,13 @@ const savasDataCenters = site(
 const smithPolicies = site("Smith · policies", "https://friendsofremysmith.org/policies/");
 const smithHome = site("Smith · home page", "https://friendsofremysmith.org/");
 const helmHome = site("Helm · home page", "https://www.votedianahelm.com/");
+const helmEmail: Evidence = {
+  label: "Helm · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#helm-2026-09-25",
+  kind: "Candidate statement",
+  date: "Received September 25, 2026",
+  note: "Written by the candidate in reply to the Lab’s questions and kept on file; the answers are quoted on the brief. Receipt does not verify the claims.",
+};
 
 /* ── Topics, stances and stakes ─────────────────────────────────────── */
 /*
@@ -851,8 +858,18 @@ const analysis: Record<string, CandidateAnalysis> = {
           "Led a moratorium on large data centers so the county can gather facts and hear the public before deciding, and would advocate for the Sunrise Corridor freight route.",
         source: pamphlet(18),
       },
+      safety: {
+        position:
+          "Says the deflection program is working, with the Milwaukie Stabilization Center taking people in mental-health, substance-use or other crises and the Recovery Campus opening in fall 2027; says the county needs a new jail and will study its cost and site.",
+        source: helmEmail,
+      },
+      money: {
+        position:
+          "Every department must present a balanced budget each cycle, and with revenue trailing inflation some cuts are necessary; General Fund priority goes to public safety, health, housing and human services (including seniors and people with disabilities) and transportation.",
+        source: helmEmail,
+      },
     },
-    sources: [pamphlet(18), helmHome],
+    sources: [pamphlet(18), helmHome, helmEmail],
   },
   "r-w-smith": {
     values: ["No large data centers", "Transparent contracts"],
@@ -904,6 +921,8 @@ export const pack: RacePack = {
     line("mark-shull", "money", "Seeks senior property-tax relief, cuts unnecessary programs, opposes any new taxes."),
     line("mark-shull", "climate", "Opposes I-205 tolls; fixes roads without charging daily drivers."),
     line("diana-helm", "housing", "Speeds permitting (building approvals) and cuts rules to build affordable homes; keeps shelters."),
+    line("diana-helm", "safety", "Deflection and a stabilization center now; recovery campus in 2027; new jail studied."),
+    line("diana-helm", "money", "Balanced department budgets; General Fund goes first to safety, health, housing, services."),
     line("diana-helm", "climate", "Pauses large data centers to study impacts; backs the Sunrise Corridor freight route."),
     line("r-w-smith", "housing", "Faster permitting (building approvals), limits on corporate home buying, more shelter beds."),
     line("r-w-smith", "safety", "Resources police and first responders; expands treatment with measurable outcomes."),
@@ -927,6 +946,8 @@ export const pack: RacePack = {
     chip("mark-shull", "money", "Senior tax relief, cuts"),
     chip("mark-shull", "climate", "No I-205 tolls"),
     chip("diana-helm", "housing", "Faster permitting"),
+    chip("diana-helm", "safety", "Deflection, recovery"),
+    chip("diana-helm", "money", "Balanced, safety first"),
     chip("diana-helm", "climate", "Data-center pause"),
     chip("r-w-smith", "housing", "Permitting, shelter beds"),
     chip("r-w-smith", "safety", "Treatment with outcomes"),
@@ -1006,7 +1027,21 @@ export const pack: RacePack = {
         helmHome,
       ),
     }),
-    delivery("diana-helm", "climate"),
+    delivery("diana-helm", "safety", {
+      how: step(
+        "The Stabilization Center in Milwaukie for people in crisis, the Recovery Campus (fall 2027) for substance use, mental health, homelessness, job training and transitional housing, and a Strategic Plan study of a new jail’s cost and site.",
+        helmEmail,
+      ),
+    }),
+    delivery("diana-helm", "money", {
+      how: step("Each department presents a balanced budget every cycle, with cuts where revenue trails inflation.", helmEmail),
+    }),
+    delivery("diana-helm", "climate", {
+      how: step(
+        "Keep the moratorium in unincorporated Clackamas County until the county codifies a policy on water use, energy use, sound and air quality; cities set their own.",
+        helmEmail,
+      ),
+    }),
     delivery("r-w-smith", "housing", {
       how: step(
         "Streamlined permitting so builders avoid repeated design revisions; limits on speculative corporate ownership; shelter capacity paired with case management; partnerships with nonprofits and Community Action Board programs.",

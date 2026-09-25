@@ -19,6 +19,45 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="kahl-2026-09-25">September 25, 2026 · Candidate response: Barbara J Kahl (U.S. House, Oregon District 1)</h2>
+        <p>
+          Barbara J Kahl answered all twelve questions. All four of her issue
+          columns now have “how” steps, three with a measure: HUD grants for
+          construction and rehabilitation and HHS-funded recovery networks;
+          federal COPS and SAFER grants with task forces on cybercrime,
+          narcotics and trafficking; a larger federal audit team, fewer
+          duplicate regulations and no tax increases; and Columbia River
+          dredging, hydropower and small modular reactors. Eight topic boards
+          changed: she supports H.R. 1’s work and verification rules, funding
+          ICE with caveats, the Fix Our Forests Act, existing federal housing
+          programs and reining in data centers; opposes restoring the ACA
+          credits in favor of price and antitrust reform; would phase in any
+          tariffs with income-tax cuts; and says Congress should decide on Iran
+          after consulting people with military experience there. She asked
+          that her answers not lose detail to paraphrase, so her brief quotes
+          them nearly in full. The reply is kept on file.
+        </p>
+        <h2 id="helm-2026-09-25">September 25, 2026 · Candidate response: Diana Helm (Clackamas County Commissioner, Position 4)</h2>
+        <p>
+          Diana Helm answered the four questions the Lab sent. Her crisis-care
+          and budget columns, empty before, now have positions: the deflection
+          program and the Milwaukie Stabilization Center now, the Recovery
+          Campus in fall 2027 and a study of a new jail’s cost and site; and
+          balanced department budgets with General Fund priority for public
+          safety, health, housing, human services and transportation. Her
+          data-center entry gains a “how” step: the moratorium holds until the
+          county codifies rules on water, energy, sound and air quality. On
+          the judicial-warrant question she repeated that County Counsel
+          recommends following state law, so that entry stays partial. The
+          reply is kept on file.
+        </p>
+        <h2 id="beaudoin-2026-09-25">September 25, 2026 · Candidate response: Ali Beaudoin (District 3)</h2>
+        <p>
+          Ali Beaudoin added that clearing unsafe camping areas has support
+          when stable housing and appropriate support come with it. The
+          camp-removal entry now says so; it stays partial because the answer
+          does not say whether removal funding should stay at current levels.
+        </p>
         <h2 id="d2-debate-2026-09-24">September 25, 2026 · Debate remarks: Multnomah County District 2 (City Club, September 24)</h2>
         <p>
           City Club of Portland’s District 2 debate on September 24 at PCC

@@ -136,6 +136,13 @@ const beaudoinEmail: Evidence = {
   date: "Received September 23, 2026",
   note: NOTE,
 };
+const beaudoinEmail2: Evidence = {
+  label: "Beaudoin · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#beaudoin-2026-09-25",
+  kind: "Candidate statement",
+  date: "Received September 25, 2026",
+  note: "Written by the candidate in reply to the Lab’s questions and kept on file; the answer is quoted on the brief. Receipt does not verify the claims.",
+};
 const oteroEmail2: Evidence = {
   label: "Otero · second emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#otero-2026-09-22",
@@ -209,9 +216,9 @@ export const topicStancesD3: TopicStance[] = [
   sweepStance("ali-beaudoin", "police-staffing", "supports", "Rebuild where gaps",
     "Supports rebuilding police staffing where there are documented service gaps, while investing in alternative responders, prevention and community services so police are not the default response.",
     beaudoinEmail),
-  sweepStance("ali-beaudoin", "camp-removal", "partial", "Enforce, measure outcomes",
-    "Supports enforcing public-space rules with realistic paths to shelter and services, and would measure where people go, whether areas stay clear and the cost; she does not say whether to keep current funding.",
-    beaudoinEmail),
+  sweepStance("ali-beaudoin", "camp-removal", "partial", "Clear unsafe camps",
+    "Would support clearing unsafe camping areas while providing stable housing and support for the people living there, and would measure where people go, whether areas stay clear and the cost; current funding levels unsaid.",
+    beaudoinEmail2),
   sweepStance("ali-beaudoin", "data-centers", "supports", "Temporary pause",
     "Supports a temporary pause on new AI data centers while the city evaluates their effects on electricity, water, infrastructure, noise and neighborhoods, with large users paying their share.",
     beaudoinEmail),
