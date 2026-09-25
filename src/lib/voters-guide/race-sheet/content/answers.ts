@@ -13,6 +13,7 @@ const sollitt = (question: string, text: string): CandidateAnswer => ({ candidat
 const sweeney = (question: string, text: string): CandidateAnswer => ({ candidateId: "john-sweeney", question, text, received: "2026-09-22" });
 const sollitt3 = (question: string, text: string): CandidateAnswer => ({ candidateId: "tom-sollitt", question, text, received: "2026-09-23" });
 const mcdonald = (question: string, text: string): CandidateAnswer => ({ candidateId: "john-mcdonald", question, text, received: "2026-09-23" });
+const mcdonald2 = (question: string, text: string): CandidateAnswer => ({ candidateId: "john-mcdonald", question, text, received: "2026-09-24" });
 const colemanCox = (question: string, text: string): CandidateAnswer => ({ candidateId: "heather-coleman-cox", question, text, received: "2026-09-23" });
 const schroeder = (question: string, text: string): CandidateAnswer => ({ candidateId: "gregory-schroeder", question, text, received: "2026-09-24" });
 const schulte = (question: string, text: string): CandidateAnswer => ({ candidateId: "matt-schulte", question, text, received: "2026-09-24" });
@@ -147,6 +148,14 @@ export const answers: CandidateAnswer[] = [
   mcdonald(
     "Moda Center deal",
     "I fully support the city’s current proposal of $120 million up front with $275 million in ongoing maintenance over a 20-year lease. I’m confident that other revenue streams will become available with the success of our teams.",
+  ),
+  mcdonald2(
+    "Street Response",
+    "I support making PSR a 24/7 operation (68 FTEs / $10.5 million annually) primarily funded through the general fund while also pursuing partnerships with the VA, TriMet and Central City Concern. Additionally, we must collaborate with healthcare agencies at an executive level to understand upcoming changes to Medicaid under H.R. 1. Shifting funds from the city’s share of the Oregon Opioid Settlement could fill gaps in years when general funds are needed elsewhere.",
+  ),
+  mcdonald2(
+    "Journalism",
+    "Here’s some of my most recent journalism: “Commuter rail’s price of protection” (Trains) and “In Vancouver, Pride Became An Answer To Fear” (OutSFL, August 26, 2026).",
   ),
   colemanCox(
     "Rent and homes",

@@ -135,6 +135,13 @@ const schulteEmail: Evidence = {
   date: "Received September 24, 2026",
   note: NOTE,
 };
+const mcdonaldEmail2: Evidence = {
+  label: "McDonald · second emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#mcdonald-2026-09-24",
+  kind: "Candidate statement",
+  date: "Received September 24, 2026",
+  note: NOTE,
+};
 const mcdonaldEmail: Evidence = {
   label: "McDonald · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#mcdonald-2026-09-23",
@@ -276,6 +283,9 @@ export const topicStancesD4: TopicStance[] = [
 
   /* ── John McDonald ──────────────────────────────────────────────────── */
   // From his emailed reply of September 23, 2026; it replaces a partial reading of his pamphlet statement.
+  swept("john-mcdonald", "street-response", "supports", "24/7, General Fund",
+    "Supports a 24/7 Street Response (he puts it at 68 full-time staff and $10.5 million a year) paid mainly from the General Fund, with VA, TriMet and Central City Concern partners and opioid-settlement money in lean years.",
+    mcdonaldEmail2),
   swept("john-mcdonald", "moda", "supports", "Backs the $120M plan",
     "Fully supports the City’s current proposal of $120 million up front and $275 million in ongoing maintenance over a 20-year lease, and expects other revenue to come with the teams’ success.",
     mcdonaldEmail),
