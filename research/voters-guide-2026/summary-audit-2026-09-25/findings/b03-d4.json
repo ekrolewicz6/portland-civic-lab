@@ -1,0 +1,384 @@
+{
+ "batch": "b03-d4",
+ "checked": {
+  "issueSlots": 41,
+  "topicStances": 43,
+  "sourcesFetched": 32
+ },
+ "unreachable": [],
+ "findings": [
+  {
+   "candidateId": "timothy-tj-anderson",
+   "race": "portland-district-4",
+   "item": "issue/safety",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Wants police response times down and says more officers will be needed, with cadets, volunteers and other programs handling calls that do not need the most highly trained officers. On homelessness, would first establish what has worked, a timeline of people’s needs and how to work with others in the city before spending more."
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#anderson-2026-09-19",
+   "sourceQuote": "Homelessness: Spending money without thought is not helping. We need to figure out what has been working, what has not, and work with urgency because there are people who need help. But there are also citizens who do not want to see their taxes wasted, so first a clear understanding of what got us hear, a timeline of peoples needs through homelessness and a method to best work with others in the city to accelerate it",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "He objects to spending without thought, not to spending more; our 'before spending more' adds a hold he never states, and we drop his 'work with urgency because there are people who need help.'",
+   "proposed": {
+    "position": "Wants police response times down and says more officers will be needed, with cadets, volunteers and other programs handling calls that do not need the most highly trained officers. On homelessness, says spending without thought is not helping and the city must act with urgency, starting with a clear understanding of what has worked, a timeline of people’s needs and a way to work with others in the city."
+   }
+  },
+  {
+   "candidateId": "timothy-tj-anderson",
+   "race": "portland-district-4",
+   "item": "issue/money",
+   "fields": [
+    "chip"
+   ],
+   "current": {
+    "chip": "Audit first, no taxes"
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#anderson-2026-09-19",
+   "sourceQuote": "Also, as a caveat, while this is going on, no additional taxes or fees would be passed until we figure out where everything is going.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "'No taxes' drops 'additional' and the time limit; 'Audit first' carries the sequence, so a reader may still get it right, but the chip literally reads as no taxes at all.",
+   "proposed": {
+    "chip": "Audit before new taxes"
+   }
+  },
+  {
+   "candidateId": "eli-arnold",
+   "race": "portland-district-4",
+   "item": "topic/new-taxes",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Says he will not support raising taxes and fees; his transit plan is framed as using existing PCEF revenue without new taxes."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=65",
+   "sourceQuote": "I support using existing clean energy resources to move toward fareless transit, making it easier to get around without added cost. [...] I will not support raising taxes and fees.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "'Without added cost' refers to what riders pay, and the pamphlet does not name PCEF; the transit clause is recast as a no-new-taxes pledge, though his separate 'I will not support raising taxes and fees' keeps the stance correct.",
+   "proposed": {
+    "text": "Says he will not support raising taxes and fees, and would use existing clean energy resources to move toward fareless transit."
+   }
+  },
+  {
+   "candidateId": "eli-arnold",
+   "race": "portland-district-4",
+   "item": "topic/street-response",
+   "fields": [
+    "stance"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Would expand Street Response scope in 2027–2028 and citywide by 2029–2031 so calls go to the right responder; 24/7 is not stated."
+   },
+   "sourceUrl": "https://www.eliforportland.com/public-safety",
+   "sourceQuote": "This requires first fixing the model and then scaling Portland Street Response and strengthening 911 triage so calls are routed correctly the first time. [...] Phase 1 (2027–2028): Stabilize [...] Expand PSR scope [...] Phase 2 (2029–2031): Scale [...] Expand PSR citywide",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "The question is a full 24/7 role and our own text says 24/7 is not stated, which the guide defines as partial; Evenstar's comparable entry is already marked partial.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Would expand Street Response scope in 2027–2028 and citywide by 2029–2031 so calls go to the right responder; he does not say whether it should run 24/7."
+   }
+  },
+  {
+   "candidateId": "olivia-clark",
+   "race": "portland-district-4",
+   "item": "issue/money",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Core services first",
+    "line": "Wants core services and business recovery to come first.",
+    "position": "Prioritizes core services and business recovery."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=62",
+   "sourceQuote": "My Priorities: *improve 9-1-1 response times *End street camping and open-air drug use *Support small business and economic development *Clear obstacles to housing production My Results: *Protected funding for police & fire *Passed Storefront Support Program for small business",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The pamphlet never says 'core services' or 'business recovery'; the gloss is close to her police, fire and small-business items but the words and the 'first' ranking are ours.",
+   "proposed": {
+    "chip": "Small business support",
+    "line": "Supports small business and economic development; cites protected police and fire funding.",
+    "position": "Lists support for small business and economic development among her priorities, and cites protecting police and fire funding and passing a Storefront Support Program for small business."
+   }
+  },
+  {
+   "candidateId": "olivia-clark",
+   "race": "portland-district-4",
+   "item": "topic/camp-removal",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Would make the city safe by removing street camping and public drug use while adding shelter beds, sobering stations and treatment."
+   },
+   "sourceUrl": "https://www.oliviaforportland.com/priorities",
+   "sourceQuote": "Make our City safe by removing street camping and public drug use while providing more emergency shelter beds, mental health services, sobering stations and drug treatment.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "She clearly backs removing camping, but the cited source says nothing about funding removals at current levels; supports holds only if a budget vote is cited (Zimmerman's 'YES to Camp Cleanups' is closer to an explicit yes).",
+   "proposed": {
+    "stance": "partial",
+    "text": "Would make the city safe by removing street camping and public drug use while adding shelter beds, sobering stations and treatment; she does not say whether to keep removal funding at current levels."
+   }
+  },
+  {
+   "candidateId": "jayne-cronlund",
+   "race": "portland-district-4",
+   "item": "issue/housing",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Hold housing nonprofits accountable; speed downtown office-to-housing conversions.",
+    "position": "Would have the Housing Bureau hold its nonprofit partners accountable (lawful spending within budget, existing housing full, residents cared for, neighbors safe) and the permitting bureau streamline conversions of vacant downtown offices to housing for willing owners, citing 37% office vacancy."
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#cronlund-2026-09-23",
+   "sourceQuote": "I will advocate for Portland Housing Bureau to exercise greater oversight and accountability for its nonprofit partners [...] I would direct Bureau of Development Services to explore how we could streamline downtown office vacancy to housing for willing property owners. Office vacancy downtown is at 37%. Let's explore how we can expedite a transition through permitting.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "She says 'explore' twice; our line and position turn exploring a streamlined path into a commitment to speed conversions.",
+   "proposed": {
+    "line": "Hold housing nonprofits accountable; explore faster downtown office-to-housing conversions.",
+    "position": "Would advocate for the Housing Bureau to hold its nonprofit partners accountable (lawful spending within budget, existing housing full, residents cared for, neighbors safe) and would have the permitting bureau explore streamlining conversions of vacant downtown offices to housing for willing owners, citing 37% office vacancy."
+   }
+  },
+  {
+   "candidateId": "jamey-evenstar",
+   "race": "portland-district-4",
+   "item": "topic/new-taxes",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Fee on empty homes"
+   },
+   "sourceUrl": "https://evenstarforportland.com/portland-community-housing-plan",
+   "sourceQuote": "Vacant and vacation properties returned to the market. Charge a Housing Supply Impact Fee for homes not used as a primary residence, and use the revenue to build permanently affordable homes",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The fee covers any home not used as a primary residence, including second and vacation homes; 'empty homes' narrows its reach and makes it sound milder.",
+   "proposed": {
+    "topicChip": "Fee on non-primary homes"
+   }
+  },
+  {
+   "candidateId": "mitch-green",
+   "race": "portland-district-4",
+   "item": "issue/climate",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Would expand PCEF (clean-energy fund) for transit, not Moda or added policing.",
+    "position": "Would preserve and expand PCEF for clean energy and transit; opposes its use for Moda renovations and additional policing. Supports walkable, transit-oriented neighborhoods and car-free spaces."
+   },
+   "sourceUrl": "https://mitch4portland.com/priorities",
+   "sourceQuote": "PCEF—a pioneering national model—is one of our crown jewels. We need to preserve it, expand it, get creative with it, and make it more effective in supporting clean energy development. [...] he is defending PCEF from improper allocations like the Moda Center renovations and increased police funding.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "He ties PCEF to clean energy development; transit appears in separate sentences, so 'PCEF for transit' (the line's only stated purpose) is not in the source.",
+   "proposed": {
+    "line": "Would expand PCEF (clean-energy fund) for clean energy, not Moda or added policing.",
+    "position": "Would preserve and expand PCEF and make it more effective at supporting clean energy development; opposes its use for Moda renovations and increased police funding. Supports walkable, transit-oriented neighborhoods and car-free spaces."
+   }
+  },
+  {
+   "candidateId": "mitch-green",
+   "race": "portland-district-4",
+   "item": "topic/water-rates",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "mixed",
+    "text": "Says he pushed for cost controls on the Bull Run project to prevent water rates from doubling; does not oppose the project itself."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=62",
+   "sourceQuote": "Pushed for cost controls on Bull Run to prevent water rates doubling",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The pamphlet is silent on the plant itself; 'does not oppose the project' states a position from that silence.",
+   "proposed": {
+    "text": "Says he pushed for cost controls on the Bull Run project to prevent water rates from doubling; he does not say whether he opposes the plant or any rate increase."
+   }
+  },
+  {
+   "candidateId": "josh-leake",
+   "race": "portland-district-4",
+   "item": "issue/safety",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Enforcement plus services",
+    "line": "Would combine crime and disorder responses with behavioral-health services and dignity for unhoused people.",
+    "position": "Combines responses to crime and disorder with behavioral-health services and dignity for unhoused people."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=66",
+   "sourceQuote": "Public Safety and Behavioral Health: Portlanders deserve results. We must address property crime and public disorder through effective, data-informed enforcement while treating our unsheltered neighbors with dignity and recognizing that poverty is not a crime.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "He proposes no behavioral-health services here (the phrase is only his heading), and the position softens his 'data-informed enforcement' to 'responses'.",
+   "proposed": {
+    "chip": "Enforcement with dignity",
+    "line": "Would pair data-informed enforcement on property crime and disorder with dignity for unsheltered people.",
+    "position": "Would address property crime and public disorder through data-informed enforcement while treating unsheltered neighbors with dignity, saying poverty is not a crime."
+   }
+  },
+  {
+   "candidateId": "matt-schulte",
+   "race": "portland-district-4",
+   "item": "topic/new-taxes",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "No new City taxes",
+    "stance": "opposes"
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#schulte-2026-09-24",
+   "sourceQuote": "Portland’s tax burden is too high. He would not begin with new City business taxes or fees. Through Schulte’s Portland Affordability Rule, the City would have to look at the combined effect of its taxes, fees and utility rates and keep their growth below the three-year average growth in Portland median household income.",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "He says he would not begin with new business taxes or fees and would cap growth, not that there would be no new City taxes; the chip turns a sequencing statement into a pledge.",
+   "proposed": {
+    "topicChip": "New taxes not first"
+   }
+  },
+  {
+   "candidateId": "jeremy-beausoleil-smith",
+   "race": "portland-district-4",
+   "item": "issue/housing",
+   "fields": [
+    "chip"
+   ],
+   "current": {
+    "chip": "Build public housing"
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=61",
+   "sourceQuote": "Housing for All: A Renters’ Bill of Rights will keep Portlanders in their homes as we further invest in housing with mental health and addiction services while rapidly building affordable Social Housing.",
+   "category": [
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "He says 'affordable Social Housing'; 'public housing' swaps in a term with a narrower, more charged meaning in U.S. usage, though the line's gloss 'public or nonprofit' shows it was meant as shorthand.",
+   "proposed": {
+    "chip": "Build social housing"
+   }
+  },
+  {
+   "candidateId": "jeremy-beausoleil-smith",
+   "race": "portland-district-4",
+   "item": "issue/money",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Protect clean-energy fund",
+    "line": "Would protect the Portland Clean Energy Fund.",
+    "position": "Would protect the Portland Clean Energy Fund."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=61",
+   "sourceQuote": "Portland is way too expensive. I’ll fight to lower costs and make life easier. I’ve managed millions of dollars in taxpayer money at PSU [...] I know what it takes to be a good steward of the taxpayer dollar. [...] Infrastructure for All: A Green New Deal for Portland includes [...] protecting PCEF.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The bills slot uses a sub-item from his infrastructure bullet and omits the cost-of-living pledge he leads with, so a reader sees a fund defender rather than a candidate running on lower costs.",
+   "proposed": {
+    "chip": "Lower costs, protect PCEF",
+    "line": "Would fight to lower costs and protect PCEF (clean-energy fund).",
+    "position": "Says Portland is way too expensive and he will fight to lower costs; would protect the Portland Clean Energy Fund."
+   }
+  },
+  {
+   "candidateId": "eric-zimmerman",
+   "race": "portland-district-4",
+   "item": "topic/police-staffing",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Would expand the Police Bureau to 1,000 sworn officers, growing patrol and investigations and trimming other support roles until fully staffed."
+   },
+   "sourceUrl": "https://ez4pdx.com/issue/public-safety/",
+   "sourceQuote": "Expand patrol and investigation units & consider a short-term reduction in other support roles until full staffing is achieved. Expand Portland Police Bureau to 1000 sworn officers.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "He would 'consider a short-term reduction' in support roles; 'trimming' turns that into a commitment and drops 'short-term'.",
+   "proposed": {
+    "text": "Would expand the Police Bureau to 1,000 sworn officers and grow patrol and investigations, and would consider a short-term reduction in other support roles until fully staffed."
+   }
+  },
+  {
+   "candidateId": "eric-zimmerman",
+   "race": "portland-district-4",
+   "item": "topic/street-response",
+   "fields": [
+    "stance"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Would let Street Response transport people to sobering centers and psychiatric emergency care; 24/7 coverage is not addressed."
+   },
+   "sourceUrl": "https://ez4pdx.com/issue/public-safety/",
+   "sourceQuote": "Allow Portland Street Response (PSR) to transport patients, particularly to Sobering Centers and Psychiatric Emergency Care",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "The question is a full 24/7 role and our text says 24/7 is not addressed, which the guide defines as partial (his pamphlet's 'I increased Portland Street Response' is a funding record, not a 24/7 position).",
+   "proposed": {
+    "stance": "partial",
+    "text": "Would let Street Response transport people to sobering centers and psychiatric emergency care; he does not say whether it should run 24/7."
+   }
+  }
+ ]
+}

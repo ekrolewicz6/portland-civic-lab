@@ -9,7 +9,7 @@ type AnalysisRow = [string[], string, Issues];
 const rows: Record<string, AnalysisRow> = {
   "Ali Beaudoin": [
     ["Financial discipline", "Small-business growth"],
-    "The test is whether operational changes produce enough savings and investment to support services. Her emailed reply adds the mechanism, growing the tax base by filling commercial vacancies downtown and in neighborhood corridors, and would hold the line on new taxes and fees until programs show results; she names no vacancy target or specific cuts.",
+    "The test is whether operational changes produce enough savings and investment to support services. The emailed reply adds the mechanism, growing the tax base by filling commercial vacancies downtown and in neighborhood corridors, and would hold the line on new taxes and fees until programs show results; it names no vacancy target or specific cuts.",
     {
       money:
         "Emphasizes cost analysis, eliminating unnecessary spending and testing whether programs meet their goals. Specific cuts and tax changes are not established in the reviewed announcement.",
@@ -30,7 +30,7 @@ const rows: Record<string, AnalysisRow> = {
     "His responses identify who he wants city government to challenge. They do not establish which city powers, budget changes or legal mechanisms would deliver those goals.",
     {
       money:
-        "Calls for larger contributions from billion-dollar companies. A particular tax instrument or projected revenue is not established in the reviewed response.",
+        "Says he is running to “bleed every billion dollar company operating within this city.” A particular tax instrument or projected revenue is not established in the reviewed response.",
     },
   ],
   "Matthias Hallett": [
@@ -50,9 +50,9 @@ const rows: Record<string, AnalysisRow> = {
     "Adaptive reuse and shared ownership seek to protect people and places from displacement. The unresolved comparison is how quickly those tools would add affordable homes relative to redevelopment.",
     {
       housing:
-        "Prioritizes adaptive reuse, community land trusts and co-housing, with pathways to ownership.",
+        "Would champion adaptive reuse and historic preservation, and pilot community land trusts and co-housing with pathways to ownership.",
       safety:
-        "Supports safe-sleeping infrastructure alongside consistent rules for public space.",
+        "Would expand safe-sleeping infrastructure and safety ambassadors and enforce consistent public-space rules.",
       money:
         "Proposes taxes on vacant units and polluters, and shifting money away from consultants.",
     },
@@ -85,7 +85,7 @@ const rows: Record<string, AnalysisRow> = {
     "Seeking unanimity may build broader buy-in, but can also prolong decisions when interests conflict. His statement does not explain when he would accept a majority decision or which policy compromises he would make.",
     {
       money:
-        "Says tax dollars should support public work. Specific budget reallocations or revenue proposals are not established in the reviewed statement.",
+        "Says every tax dollar should go to doing the people’s work. Specific budget reallocations or revenue proposals are not established in the reviewed statement.",
     },
   ],
   "Keir Legree": [
@@ -117,7 +117,7 @@ const rows: Record<string, AnalysisRow> = {
     "His filing establishes a preference for more police and detention. It does not specify offenses, detention standards, treatment capacity or costs. A broader account of his priorities remains a research gap.",
     {
       safety:
-        "His July 2026 filing calls for additional police and incarceration of people he characterizes as dangerous and affected by drugs. The filing does not explain the legal criteria or treatment component.",
+        "His July 2026 filing reads, in full: “More cops. Lock up the dangerously unstable drug zombies.” The filing does not explain the legal criteria or any treatment component.",
     },
   ],
   "Angelita Morillo": [
@@ -125,13 +125,13 @@ const rows: Record<string, AnalysisRow> = {
     "She favors expanding public alternatives and constraining institutional power. The practical questions are which protections Council can enforce and how to fund housing, transport and services together.",
     {
       housing:
-        "Supports stronger tenant rights and shelter design involving unhoused residents.",
+        "Supports tenant rights and expanded homeownership, and would push to create shelters by and for unhoused people.",
       safety:
         "Supports Street Response, violence prevention and police accountability.",
       money:
-        "Prioritizes public investment and opposed the amended Moda term sheet; that vote does not by itself establish opposition to retaining the team.",
+        "Lists fighting for a fair Moda deal for Portland and leading the first investigation into millions of undisclosed taxpayer dollars. Opposed the amended Moda term sheet; that vote does not by itself establish opposition to retaining the team.",
       climate:
-        "Supports transit, bike lanes and sidewalks; opposes oil-train and data-center expansion.",
+        "Prioritizes investments in transit, bike lanes and sidewalks, and says she is working to shut down oil trains and data-center expansion.",
     },
   ],
   "Steve Novick": [
@@ -163,7 +163,7 @@ const rows: Record<string, AnalysisRow> = {
     "He puts upkeep and motor-vehicle access ahead of some new transport projects. That leaves a concrete tradeoff over street space: how to improve bus reliability and safety without the dedicated lanes he opposes.",
     {
       safety:
-        "Supports police and fire staffing and long-term support for unhoused people.",
+        "Would increase funding to add police officers and fully staff every fire station, and would help unhoused people reach long-term stability through wraparound services that support self-sufficiency.",
       money:
         "Would prioritize maintaining streets and parks before new projects.",
       climate:
@@ -255,7 +255,7 @@ const rows: Record<string, AnalysisRow> = {
       housing: "Supports reducing barriers to housing production.",
       safety:
         "Wants to end street camping and open-air drug use, improve 911 response and protect police and fire funding.",
-      money: "Prioritizes core services and business recovery.",
+      money: "Lists support for small business and economic development as a priority, and cites protecting police and fire funding and passing a Storefront Support Program for small business.",
       climate: "Supports maintenance of public assets, sidewalks and pavement.",
     },
   ],
@@ -300,7 +300,7 @@ const rows: Record<string, AnalysisRow> = {
       housing:
         "Would combine public, private and federal resources to develop housing.",
       safety:
-        "Combines responses to crime and disorder with behavioral-health services and dignity for unhoused people.",
+        "Would address property crime and public disorder through data-informed enforcement while treating unsheltered neighbors with dignity, saying poverty is not a crime.",
       money:
         "Supports creative and technology industries and activating public spaces.",
     },
@@ -442,7 +442,7 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
       housing:
         "Wants more housing and says the fastest route may be making the city more investable, for large accounts and for people who want to make Portland home, alongside reusing city assets at lower cost for short-term help; opposes committing to a single plan.",
       safety:
-        "Wants police response times down and says more officers will be needed, with cadets, volunteers and other programs handling calls that do not need the most highly trained officers. On homelessness, would first establish what has worked, a timeline of people’s needs and how to work with others in the city before spending more.",
+        "Wants police response times down and says more officers will be needed, with cadets, volunteers and other programs handling calls that do not need the most highly trained officers. On homelessness, says spending without thought is not helping and the city must act with urgency, starting with a clear understanding of what has worked, a timeline of people’s needs and a way to work with others in the city.",
       money:
         "Would start with a value-based audit of where city money went this year and the past two, plus a public list of city assets, at a cost he puts at no more than $5 million, with no new taxes or fees until it is done. Would freeze Council pay and benefits until average salaries and jobs have grown for two full years, and ask each councilor for 100 hours of volunteer work a year.",
       climate:
@@ -478,7 +478,7 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
       safety:
         "Supports a goal of two police officers per 1,000 residents without raising taxes; emphasizes recruitment and street presence.",
       money:
-        "Calls for audits and limits on unaccountable spending, lighter burdens on businesses, and an agreement to retain the Blazers. His critique of ranked-choice voting is a campaign position, not evidence the count is unreliable.",
+        "Calls for audits and limits on unaccountable spending, lighter burdens on businesses, and an agreement to retain the Blazers.",
     },
   },
   "Tiffany Koyama Lane": {
@@ -560,7 +560,7 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
       money:
         "Wants lower Council office budgets, a financially fair Moda agreement, Medicaid reimbursement for Street Response, and replacing the Arts Tax while preserving arts funding.",
       climate:
-        "Supports using PCEF for transit and potentially part of the water-filtration project to offset water-rate increases. That differs from reserving the fund for its existing program mix.",
+        "Supports greater PCEF investment in transportation, including public transit, and possibly using it to pay part of the water-filtration project to offset water-rate increases.",
     },
   },
   "Esther León": {
@@ -569,7 +569,7 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
       housing:
         "Would expand social housing and simplify zoning; proposes vacancy taxes aimed at large landlords, with residential proceeds helping formerly unhoused tenants enter rentals.",
       safety:
-        "Would fund citywide 24/7 Street Response, expand unarmed support specialists and reduce armed responses; opposes sweeps and favors housing with health or addiction support.",
+        "Would fund citywide 24/7 Street Response, expand the Police Bureau’s unarmed public safety support specialists and reduce armed responses; opposes sweeps and favors housing with health or addiction support.",
       money:
         "Proposes land-value taxation, targeted vacancy taxes and exploration of basic income for artists. These are proposals, not established city revenue authority or costed programs.",
       climate:
@@ -595,13 +595,13 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
       housing:
         "Supports more housing across incomes and anti-displacement protections, and proposes a pathway for roughly 5–20% of the Housing Bureau’s affordable rental portfolio (about 950 to 3,800 homes at today’s scale) to move to limited-equity cooperative ownership over time, aimed at households at 0–30% of area median income, starting with publicly owned or financed buildings whose residents want it.",
       safety:
-        "Supports emergency response alongside prevention, behavioral health and housing stability; the page does not name a police staffing target.",
+        "Would maintain a strong emergency response system while investing in prevention, behavioral health and housing stability; the page does not name a police staffing target.",
       money:
         "Would test program results and, when more revenue is necessary, favor taxes on the wealthiest households and largest corporations over working households and small businesses.",
     },
   },
   "Ali Beaudoin": {
-    // Housing, safety and climate positions from her emailed reply of September 23, 2026.
+    // Housing, safety and climate positions from Beaudoin’s emailed reply of September 23, 2026.
     source: beaudoinEmail,
     issues: {
       housing:
@@ -617,7 +617,7 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
     source: cronlundEmail,
     issues: {
       housing:
-        "Would have the Housing Bureau hold its nonprofit partners accountable (lawful spending within budget, existing housing full, residents cared for, neighbors safe) and the permitting bureau streamline conversions of vacant downtown offices to housing for willing owners, citing 37% office vacancy.",
+        "Would advocate for the Housing Bureau to hold its nonprofit partners accountable (lawful spending within budget, existing housing full, residents cared for, neighbors safe) and would have the permitting bureau explore streamlining conversions of vacant downtown offices to housing for willing owners, citing 37% office vacancy.",
       safety:
         "Supports a modest increase in police if it is tied to shorter response times, and wants homelessness addressed through the Housing Bureau and the permitting bureau, with stronger oversight of nonprofit housing providers.",
     },
@@ -674,7 +674,7 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
       money:
         "Before asking for more money, would show existing money is used well: restore the Auditor’s performance-audit capacity in his first budget, have it examine high-risk contracts and programs, and report its recommendations and results quarterly.",
       climate:
-        "Would maintain existing streets before committing to new projects until new funding is found, prioritizing maintenance, preservation and safety; would ask the Clean Energy Fund committee whether voter-approved climate money can go further toward transportation and air quality, and restrict projects without a clear public benefit, funding source and measurable outcome.",
+        "Would maintain existing streets before committing to new projects until new funding is found, prioritizing maintenance, preservation and safety; would work with the Clean Energy Fund committee on whether voter-approved climate money can go further, within its approved purpose, toward transportation and air quality, and would take any change in direction back to voters; would restrict projects without a clear public benefit, funding source and measurable outcome.",
     },
   },
   "Kellie Torres": {
@@ -684,9 +684,9 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
     ),
     issues: {
       housing:
-        "Sets a goal of enabling 4,000 homes annually through fewer code barriers, faster permitting and a mix of rental and ownership housing. This is a campaign target, not a forecast.",
+        "Sets a goal of enabling 4,000 homes annually through fewer code barriers, faster permitting and a mix of housing types, including affordable homeownership and multi-unit housing, balanced with neighborhood stability. This is a campaign target, not a forecast.",
       safety:
-        "Supports public-safety staffing and resources so police can follow through on investigations and fix emergency response times, plus cleaner, better-lit public spaces and connecting people in crisis with lifesaving services.",
+        "Supports public-safety staffing and resources so police can follow through on investigations and fix emergency response times, plus cleaner, better-lit public spaces, upholding community standards and connecting people in crisis with lifesaving services.",
       money:
         "Would expand public-private partnerships, philanthropy and sponsorships; proposes a reimagined Tom McCall Waterfront Bowl. Costs and committed funding are not established on the reviewed page.",
       climate:
@@ -788,7 +788,7 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
       money:
         "Favors public dollars invested in public assets and cooperative ownership. Describes preschool and support for working families as economic development.",
       climate:
-        "Would preserve and expand PCEF for clean energy and transit; opposes its use for Moda renovations and additional policing. Supports walkable, transit-oriented neighborhoods and car-free spaces.",
+        "Would preserve and expand PCEF and make it more effective at supporting clean energy development; opposes its use for Moda renovations and increased police funding. Supports walkable, transit-oriented neighborhoods and car-free spaces.",
     },
   },
 };

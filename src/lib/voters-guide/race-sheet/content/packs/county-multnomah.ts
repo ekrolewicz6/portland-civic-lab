@@ -245,7 +245,7 @@ candidate("sharon-meieran", {
     },
     safety: {
       position:
-        "Get people with serious addiction and mental illness off the streets through an actual plan implemented by a chief executive who acts; she cites ending the county’s ambulance-response crisis as a commissioner.",
+        "Get people with serious addiction and mental illness off the streets through an actual plan implemented by a leader driven to act.",
       source: meieranHome,
       line: "Wants a plan moving people with serious addiction and mental illness off streets.",
       chip: "Crisis-system reset",
@@ -257,9 +257,9 @@ candidate("sharon-meieran", {
     },
     money: {
       position:
-        "The county spends more per person than almost anywhere yet gets the worst results; she would budget for results, account for every dollar, redirect money from ineffective programs and deliver more while spending less.",
-      source: pamphlet(33),
-      line: "Wants budgets tied to results, every dollar accounted for, less spending overall.",
+        "She says the county spends $4 billion a year while its systems fail; she would budget for results, account for every dollar and redirect funding from ineffective programs, improving results by doing its core work well instead of spending more.",
+      source: meieranPlan,
+      line: "Wants budgets tied to results, every dollar tracked, and money moved from ineffective programs.",
       chip: "Budget for results",
       how: step(
         "A real-time, validated baseline of need across departments and budgets aligned with measurable outcomes, with ineffective programs identified and their funding redirected.",
@@ -313,7 +313,7 @@ candidate("shannon-singleton", {
   issues: {
     housing: {
       position:
-        "Find lasting solutions to the homelessness crisis by building better systems with the people closest to the problem; she says she realigned county funds toward shelter, outreach and housing and cut duplicated services in the Homeless Services Department.",
+        "Find real, lasting solutions to the homelessness crisis by building better systems with the people closest to the problem: service providers, small business owners, neighbors and people who disagree with her.",
       source: pamphlet(32),
       line: "Wants homelessness systems rebuilt with providers, businesses and neighbors at the table.",
       chip: "Rebuild homeless services",
@@ -331,9 +331,9 @@ candidate("shannon-singleton", {
     },
     money: {
       position:
-        "Lower costs and make more effective use of taxpayers’ dollars; she cites coauthoring the county’s first lobbyist disclosure rules and finding money in the budget to close a homeless-services shortfall while pushing for sustainable funding.",
+        "Push for more effective use of taxpayers’ dollars; she cites coauthoring the county’s first lobbyist disclosure rules and Deflection Center reforms meant to save money.",
       source: singletonRecord,
-      line: "Wants taxpayer dollars used more effectively, with lobbyist disclosure and sustainable funding.",
+      line: "Wants taxpayer dollars used more effectively; cites coauthoring lobbyist disclosure rules.",
       chip: "Effective use of dollars",
     },
     climate: {
@@ -406,7 +406,7 @@ candidate("bruce-broussard", {
     },
     money: {
       position:
-        "Living costs have greatly outpaced wages and low-income residents need better resources; he says owning businesses and volunteering gave him a different perspective on spending tax dollars, which are the public’s money.",
+        "Living costs have greatly outpaced wage increases, and low-income residents need better resources.",
       source: pamphlet(34),
       line: "Wants better resources for low-income residents as living costs outpace wages.",
       chip: "Resources for low-income",
@@ -474,7 +474,7 @@ candidate("serena-cruz", {
     },
     money: {
       position:
-        "The county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030; grow the tax base by partnering in Portland’s economy, require project labor and community benefits agreements on County-funded projects, and condition Moda Center money on a payment in lieu of taxes.",
+        "The county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030; grow the tax base by partnering in Portland’s economy, require project labor and community benefits agreements on County-funded projects, and seek an annual payment in lieu of taxes in the Moda Center deal.",
       source: cruzIssues,
       line: "Wants the county to grow its tax base rather than cut or tax more.",
       chip: "Grow the tax base",
@@ -489,7 +489,7 @@ candidate("serena-cruz", {
     },
     climate: {
       position:
-        "Give every Climate Justice Plan goal a named owner, a cost and milestones; protect rental assistance, expand renter access to heat pumps, send cooling and clean-air money first to low-canopy neighborhoods, hold the county to its fossil-fuel-free building resolution, and press DEQ and the City on the fuel hub and Zenith’s 2027 deadline.",
+        "Give every Climate Justice Plan goal a named owner, a cost and milestones; protect rent assistance, expand renter access to heat pumps, send cooling and clean-air money first to low-canopy neighborhoods, hold the county to its fossil-fuel-free building resolution, press DEQ to keep permitted emissions low in Cully, Sumner and Parkrose, and hold Zenith to its 2027 deadline to stop handling crude oil while opposing any fuel-hub expansion.",
       source: cruzIssues,
       line: "Wants Climate Justice Plan goals owned, costed and scheduled, and heat pumps for renters.",
       chip: "Costed climate plan",
@@ -532,7 +532,7 @@ candidate("herman-greene", {
   issues: {
     housing: {
       position:
-        "Set measurable housing-retention goals, use performance-based contracts, publish timelines, spending and results, and connect housing placements to mental-health, addiction-recovery and workforce services so fewer people return to the streets.",
+        "Set measurable housing-retention goals, use performance-based contracts, and publish timelines, spending and results.",
       source: pamphlet(34),
       line: "Wants measurable housing-retention goals and performance-based contracts, with results published.",
       chip: "Housing-retention targets",
@@ -610,12 +610,12 @@ candidate("nathan-ong-norris", {
       position:
         "The county cuts services while giving money and land to billionaires, which must stop; expand the common good instead: Preschool for All, social housing, public libraries and critical infrastructure, with affordable utilities.",
       source: pamphlet(36),
-      line: "Wants service cuts and giveaways to billionaires stopped, public services expanded.",
+      line: "Wants county service cuts and money and land for billionaires stopped; more public services.",
       chip: "Expand public services",
     },
     climate: {
       position:
-        "Implement the county’s Climate Justice Plan, hold polluters accountable, keep utilities affordable with oversight of private utility companies, cut greenhouse-gas emissions, and mitigate the risks of the CEI Hub (the riverside fuel-tank hub) while preventing its expansion.",
+        "Implement the county’s Climate Justice Plan, hold polluters accountable, keep utilities affordable, support clean energy, and mitigate the risks of the CEI Hub (the riverside fuel-tank hub) while preventing its expansion.",
       source: pamphlet(36),
       line: "Wants the Climate Justice Plan implemented, polluters held accountable, no CEI Hub expansion.",
       chip: "Climate Justice Plan",
@@ -663,9 +663,9 @@ candidate("tony-robertson", {
   issues: {
     housing: {
       position:
-        "Partner with property owners so vacant housing is not left empty while neighbors are on the street, remove barriers that slow placements, protect money for rent assistance, outreach and placement, and hold housing programs accountable for results rather than processes.",
+        "Partner with property owners so housing is not left empty while neighbors are on the street, evaluate county rules that may be getting in the way of help, and protect money for rent assistance, street outreach and housing placement.",
       source: robertsonPriorities,
-      line: "Wants vacant units filled through property-owner partnerships and faster housing placements.",
+      line: "Wants vacant units filled through property-owner partnerships and rent-assistance money protected.",
       chip: "Fill vacant units",
       how: step(
         "Expand technical assistance to contracted providers, evaluate county rules that get in the way of help, and protect dollars for rent assistance, street outreach and housing placement.",
@@ -687,7 +687,7 @@ candidate("tony-robertson", {
       position:
         "Demand clear spending plans, measurable outcomes and real transparency for every program the county funds, including the Preschool for All reserve (he puts it at $610 million) and housing contracts where placements lag; explore local tax relief across jurisdictions.",
       source: robertsonHome,
-      line: "Wants public spending dashboards, clear spending plans and options for local tax relief.",
+      line: "Wants clear spending plans, measurable outcomes and options for local tax relief.",
       chip: "Open the county books",
       how: step(
         "More frequent public spending dashboards and budget information, earlier public input in the budget process, and a cross-jurisdiction review of the local tax structure for relief options.",
@@ -735,7 +735,7 @@ candidate("bri-williams", {
         "Safer neighborhoods through investment in restorative justice, holistic health, prevention, youth, community-based solutions and services for survivors, plus behavioral-health and culturally specific services that meet people where they are.",
       source: pamphlet(35),
       line: "Supports prevention, restorative justice, youth investment and survivor services for safer neighborhoods.",
-      chip: "Prevention-first safety",
+      chip: "Community-based safety",
     },
     money: {
       position:
@@ -782,7 +782,7 @@ candidate("nabil-zaghloul", {
   issues: {
     housing: {
       position:
-        "Introduce a Multnomah County Homelessness Reduction Act that puts prevention first, publicly report housing retention at three, six, nine and twelve months for every County-funded program, and expand the county’s master-lease model with landlords.",
+        "Introduce a Multnomah County Homelessness Reduction Act that puts prevention first, and publicly report housing retention at three, six, nine and twelve months for every County-funded program.",
       source: pamphlet(36),
       line: "Wants housing retention reported at 3, 6, 9 and 12 months for every program.",
       chip: "Track housing retention",
@@ -797,9 +797,9 @@ candidate("nabil-zaghloul", {
     },
     safety: {
       position:
-        "Track whether people leaving the justice system actually reintegrate (find work, stay housed, stay out), invest in what Cully residents asked for (cameras, community safety networks, youth programs), and add behavioral-health professionals so police stop responding to mental-health crises.",
+        "Track whether people leaving the justice system actually reintegrate (find work, stay housed, stay out), invest in what Cully residents asked for (cameras, community safety networks, youth programs), and have enough behavioral-health professionals that police are not left handling mental-health crises they are not trained for.",
       source: zSafety,
-      line: "Wants reintegration tracked, neighborhood safety networks funded, clinicians instead of police for crises.",
+      line: "Wants reintegration tracked, neighborhood safety networks funded, more behavioral-health staff for crises.",
       chip: "Track reentry, fund youth",
       how: step(
         "Rebuild addiction treatment around 12-to-24-month programs combining housing, treatment and employment, and expand youth programs like the one he says he runs in Cully on redirected funds and volunteers.",
@@ -809,9 +809,9 @@ candidate("nabil-zaghloul", {
     },
     money: {
       position:
-        "Introduce a Multnomah County Accountability and Results Act: a public County Report Card showing what the county spends, what works, what doesn’t and where it must improve, with programs funded by measured outcomes and county wages that keep up with Portland’s cost of living.",
+        "Introduce a Multnomah County Accountability and Results Act: a public County Report Card showing what the county spends, what works, what doesn’t and where it must improve.",
       source: pamphlet(36),
-      line: "Proposes a public county report card on spending and results, outcome-based funding.",
+      line: "Proposes a public county report card on what the county spends and what works.",
       chip: "Public report card",
       how: step("Prioritize and, when the budget permits, expand programs with strong retention rates; require quarterly outcome reporting in every nonprofit contract.", zHomelessness),
     },
@@ -929,7 +929,7 @@ candidate("nicole-morrisey-o-donnell", {
     safety: {
       position:
         "Keep reducing crime through visible, proactive presence focused on violent crime and repeat offenders; run a safe, accountable corrections system with behavioral-health, education and job-readiness services; and expand behavioral-health and reentry work so law enforcement is not the only response.",
-      source: pamphlet(38),
+      source: sheriffSite,
       line: "Wants visible policing, accountable jails and expanded behavioral-health and reentry services.",
       chip: "Visible presence, reentry",
       how: step(
@@ -1285,8 +1285,8 @@ const topicStances: TopicStance[] = [
   stance("julia-brim-edwards", "mult-pfa-delay", "supports", "Voted for 2028 delay",
     "Voted with the full Board on August 27, 2026 to push the scheduled 0.8-point increase to January 1, 2028, the ordinance's second reading.",
     minutesAug27),
-  stance("julia-brim-edwards", "mult-shelter-cuts", "opposes", "Voted no on budget",
-    "Cast the lone no vote on the FY 2027 budget, saying it leaves too many gaps and will not reduce homelessness or deliver the change the community is asking for.",
+  stance("julia-brim-edwards", "mult-shelter-cuts", "partial", "Voted no on budget",
+    "Cast the lone no vote on the FY 2027 budget, saying it leaves too many gaps and will not reduce homelessness; she did not name the shelter closures as a reason and co-sponsored money to house people from closing shelters.",
     budgetFy27),
   stance("julia-brim-edwards", "mult-deflection", "supports", "Keep it, tighten rules",
     "Co-sponsored the February 26, 2026 resolution that keeps the center with stricter 90-day completion rules and housing links, saying deflection cannot be a revolving door back to the streets.",
@@ -1295,7 +1295,7 @@ const topicStances: TopicStance[] = [
     "Voted for the August 6, 2026 resolution setting terms for up to $101.6 million, with a clawback, a 20-year Blazers commitment and a payment in lieu of taxes; Commissioner Moyer cast the only no vote.",
     modaResolution),
   stance("julia-brim-edwards", "mult-ambulance", "supports", "Backed one-paramedic model",
-    "Cast the only vote for Meieran's July 2024 resolution pressing the chair to let ambulances run with one paramedic and one EMT, a week before mediation with AMR settled on a hybrid-staffing pilot.",
+    "Cast the only vote for Meieran's July 2024 ambulance-staffing resolution, as amended to temporarily adopt the county's final offer to AMR if mediation did not end by August 1.",
     opbAmbulance2024),
   stance("julia-brim-edwards", "mult-budget-gap", "supports", "Cut administrative layers",
     "Says she voted against the FY 2027 budget because it missed the chance to reduce outgrown layers of administrative leadership and prioritize direct services with demonstrated results.",
@@ -1306,10 +1306,10 @@ const topicStances: TopicStance[] = [
   stance("julia-brim-edwards", "mult-hsd-oversight", "supports", "Heed the auditor",
     "Said after the Sunstone Way findings that the public and Commission should not have to rely on whistleblowers to expose misused taxpayer dollars, faulting the chair for not heeding the auditor's earlier warnings.",
     wwSunstone),
-  stance("julia-brim-edwards", "mult-sobering", "supports", "Led sobering-center effort",
-    "Her campaign says she led the effort to rebuild the 24/7 Sobering and Crisis Stabilization Center as the front door to addiction treatment instead of jail or the ER, and expanded recovery housing.",
+  stance("julia-brim-edwards", "mult-sobering", "partial", "Led sobering-center effort",
+    "Her campaign says she led the effort to rebuild the 24/7 Sobering and Crisis Stabilization Center to provide addiction treatment instead of jail or the ER; it does not say whether to fund more detox and treatment beds around it.",
     jbeRaceInfo),
-  stance("julia-brim-edwards", "mult-jail-capacity", "partial", "Enough beds, no releases",
+  stance("julia-brim-edwards", "mult-jail-capacity", "partial", "No emergency jail releases",
     "Her launch release says she offered budget amendments to fund public-safety positions and keep enough jail beds for serious crimes without emergency releases; it does not say whether both jails should keep their current funded capacity.",
     jbeLaunchRelease),
   stance("julia-brim-edwards", "mult-sanctuary", "supports", "Voted for sanctuary code",
@@ -1327,7 +1327,7 @@ const topicStances: TopicStance[] = [
     "Told OPB she wants an end to both governments running shelters and other programs, saying the plan was written without a budget or clear roles and has too much duplication.",
     opbCityCounty),
   stance("shannon-singleton", "mult-deflection", "supports", "Link to housing, keep",
-    "Issued a November 2025 reform proposal tying the center to the by-name list, county sober shelters and outreach referrals, then co-sponsored the February 2026 resolution adopting stricter completion rules.",
+    "Issued a November 2025 reform proposal for the deflection program, then co-sponsored the February 2026 resolution adopting stricter completion rules, saying behavioral health and homeless services must break down silos.",
     deflectionResolution),
   stance("shannon-singleton", "mult-moda", "supports", "Voted for $101.6M terms",
     "Voted for the August 6, 2026 resolution setting terms for up to $101.6 million, with a clawback, a 20-year Blazers commitment and a payment in lieu of taxes; Commissioner Moyer cast the only no vote.",
@@ -1348,18 +1348,18 @@ const topicStances: TopicStance[] = [
     "Voted for the FY 2027 budget that keeps both jails at full funded capacity; her budget statement speaks to housing stability and immigrant services, not to the jails.",
     budgetFy27),
   stance("shannon-singleton", "mult-sanctuary", "supports", "Co-sponsored sanctuary code",
-    "Co-sponsored the April 9, 2026 ordinance writing sanctuary rules into county code, saying the county will stand up to bullies for immigrant and refugee neighbors and that restricted areas mean all county facilities.",
+    "Co-sponsored the April 9, 2026 ordinance writing sanctuary rules into county code, saying the county will stand up to bullies for immigrant and refugee neighbors and that the rules cover all county facilities.",
     sanctuaryOrdinance),
 
   /* ── Sharon Meieran (commissioner 2017–2024) ───────────────────────── */
   stance("sharon-meieran", "mult-shelter-cuts", "opposes", "No closures without plan",
     "Called the FY 2027 budget's closure of hundreds of shelter beds with no plan for the people affected a profound moral failure that will push costs onto emergency rooms, crisis services and jails.",
     meieranBudgetPost),
-  stance("sharon-meieran", "mult-city-county", "mixed", "Evaluate city-county merger",
-    "Her turnaround plan would lay the groundwork and evaluate mechanisms for city-county consolidation to address redundancies from separate oversight and funding of overlapping functions.",
+  stance("sharon-meieran", "mult-city-county", "partial", "Evaluate consolidation",
+    "Her turnaround plan would lay the groundwork and evaluate mechanisms for city-county consolidation to address redundancies in overlapping functions; it does not say whether one government should run shelters.",
     meieranPlanPdf),
   stance("sharon-meieran", "mult-deflection", "opposes", "Halt current program",
-    "Would halt the deflection program in its current form and replace the system that produced it, defining success by treatment completion and stable housing; says $20 million has not produced one such case.",
+    "Would halt the deflection program in its current form and replace the system that produced it, defining success by treatment completion and stable housing; says after more than $20 million the county cannot point to one such case.",
     meieranDeflectionPost),
   stance("sharon-meieran", "mult-ambulance", "supports", "One paramedic, one EMT",
     "As a commissioner introduced the July 2024 resolution pressing the chair to let ambulances run with one paramedic and one EMT, saying speed to the emergency room matters most for survival.",
@@ -1368,7 +1368,7 @@ const topicStances: TopicStance[] = [
     "Her plan calls the chair's power outsized and proposes charter reform to redefine the chair's and commissioners' roles, potentially hiring a county manager or administrator, after immediate team-based governance changes.",
     meieranPlanPdf),
   stance("sharon-meieran", "mult-budget-gap", "supports", "Zero-based budgeting",
-    "Would adopt zero-based budgeting so every program justifies its cost, redirect money from ineffective and redundant structures and contracts, and deliver more while spending less.",
+    "Would adopt zero-based budgeting so every program justifies its cost, and redirect money from ineffective structures and redundant contracts while preserving essential services.",
     meieranBudgetPost),
   stance("sharon-meieran", "mult-shs-tax", "partial", "Track every SHS dollar",
     "Her plan says the county got nearly $1 billion in Metro homeless-services tax money over four years with no way to tell where it went, and would redraft the SHS implementation plan; it does not address extending the tax.",
@@ -1383,7 +1383,7 @@ const topicStances: TopicStance[] = [
     "On a July 2026 podcast called the Moda question an economic decision, said the Blazers' benefit is incontrovertible and the county should negotiate on costs and goals instead of a reset; she did not say whether to commit $101.6 million.",
     meieranModaPodcast),
   stance("sharon-meieran", "mult-pfa-delay", "partial", "Define goals before taxing",
-    "On a July 2026 podcast said Preschool for All must define its goal and forecast its money before raising taxes as promised while hundreds of millions sit unspent; she did not say whether the 2028 delay should stand.",
+    "On a July 2026 podcast said Preschool for All must define its goal and forecast its money, asking whether to raise taxes as promised when it has more than expected; she did not say whether the 2028 delay should stand.",
     meieranModaPodcast),
 ];
 
@@ -1405,23 +1405,23 @@ topicStances.push(
   stance("serena-cruz", "mult-sobering", "partial", "Crisis to recovery housing",
     "Wants behavioral-health support that connects crisis stabilization to recovery housing so the highest-need Medicaid patients stop cycling through ERs and jails; she does not mention the 2027 center or detox beds.",
     cruzIssues),
-  stance("serena-cruz", "mult-moda", "supports", "Yes, with conditions",
-    "Supports public dollars to keep the Blazers and the Fire in Portland, conditioned on a project labor agreement, a community benefits agreement naming Albina Vision Trust, a 20-year commitment and an annual payment in lieu of taxes.",
+  stance("serena-cruz", "mult-moda", "supports", "Yes, would seek terms",
+    "Supports public dollars to keep the Blazers and the Fire and would seek a project labor agreement, a community benefits agreement naming Albina Vision Trust, at least a 20-year commitment and an annual payment in lieu of taxes.",
     cruzIssues),
   stance("serena-cruz", "mult-county-administrator", "supports", "Appointed administrator",
     "Supports a charter amendment creating an appointed county administrator, hired by the full Board through an open search, to run daily operations against performance measures while the elected chair and commissioners set policy.",
     cruzIssues),
-  stance("serena-cruz", "mult-budget-gap", "mixed", "Grow tax base instead",
-    "Says the county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030; the fix is partnering in Portland's economy to grow the tax base.",
+  stance("serena-cruz", "mult-budget-gap", "partial", "Grow the tax base",
+    "Says the county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030 and should partner in Portland's economy; she does not say whether to cut administration before services.",
     cruzIssues),
   stance("nathan-ong-norris", "mult-pfa-delay", "opposes", "No more delays",
     "Signed a pledge to reject any further delays in fully funding Preschool for All, support the full voter-approved tax rate and vote against any action that limits or reduces the program.",
     norrisPledges),
-  stance("nathan-ong-norris", "mult-moda", "opposes", "No giveaway to billionaires",
+  stance("nathan-ong-norris", "mult-moda", "opposes", "No deal without guarantees",
     "Testified in July 2026 that the county should not throw dollars at a billionaire-owned franchise without guarantees, backing AFSCME Local 88's call to stop the vote and hire a professional negotiator.",
     norrisModaTestimony),
-  stance("nabil-zaghloul", "mult-shelter-cuts", "mixed", "Treatment, not more shelters",
-    "Notes many of the 600 beds being cut were already empty and says the answer for people who refuse shelter is sustained behavioral-health and addiction treatment, not more shelters, with prevention funded first.",
+  stance("nabil-zaghloul", "mult-shelter-cuts", "partial", "Treatment, not more shelters",
+    "Notes many of the 600 beds being cut were already empty and says the answer for people who refuse shelter is sustained behavioral-health and addiction treatment, not more shelters; he does not say whether the beds should close.",
     zHomelessness),
   stance("nabil-zaghloul", "mult-hsd-oversight", "partial", "Retention in every contract",
     "Would require quarterly housing-retention reporting in every nonprofit contract and publish it; he does not address fiscal monitoring, outside audits or the department's leadership after Sunstone Way.",
@@ -1450,7 +1450,7 @@ topicStances.push(
   stance("nicole-morrisey-o-donnell", "mult-deflection", "supports", "Fund the center more",
     "Wrote the District Attorney in January 2026 that her office fully agrees more support should go to the deflection center, adding that MCSO cannot be the county's default treatment provider.",
     sheriffGrandJuryLetter),
-  stance("nicole-morrisey-o-donnell", "mult-sanctuary", "partial", "No ICE detainer holds",
+  stance("nicole-morrisey-o-donnell", "mult-sanctuary", "partial", "No detainer-only holds",
     "Her office told KATU in June 2026 it cannot hold people solely on ICE detainers and does not use its resources for civil immigration enforcement; it has not said whether the county's sanctuary code should stand.",
     katuSanctuaryInquiry),
   stance("nicole-morrisey-o-donnell", "mult-budget-gap", "partial", "Protect core services",

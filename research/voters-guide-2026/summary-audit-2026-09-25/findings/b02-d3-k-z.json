@@ -1,0 +1,644 @@
+{
+ "batch": "b02-d3-k-z",
+ "checked": {
+  "issueSlots": 37,
+  "topicStances": 51,
+  "sourcesFetched": 20
+ },
+ "unreachable": [
+  {
+   "url": "https://www.portlandciviclab.org/voters-guide/research-log#legree-2026-09-19",
+   "items": [
+    "keir-legree/issue/money",
+    "keir-legree/issue/climate"
+   ],
+   "note": "Full reply is kept off-repo; only the excerpts in candidateReplies and the log summary were available. \"A public-benefit test before major projects begin\" (money) and \"major projects evaluated for use, safety, cost and system impacts\" (climate) could not be matched to any available text. The one-year bottle-redemption pilot in his safety position is confirmed on keir4pdx.com/homelessness-plan."
+  }
+ ],
+ "notes": [
+  "Sollitt's full replies were read from the PDF he posts on TomForPDX.com (sources/sollitt-published-replies.txt); all Sollitt items were checked against it.",
+  "Pamphlet pages read from pamphlets/multnomah/p54, p55, p57, p58, p59, p60 .cols.txt.",
+  "Kellie Torres: the corrected safety chip \"Police follow-through\" matches her source; money and climate items are faithful; housing, safety line/position and the police-staffing stance are borderline (see findings).",
+  "Items checked and found faithful include all Kelly, Tucker and Ward topic items, Hallett safety/housing/police-staffing/moda, Hilton money/topics, Koyama Lane housing/money/climate/new-taxes/data-centers/street-fee/water/police, Landgraver topics, Legree issues and remaining topics, Novick housing/safety/money/police/street-fee, Parker money/police/camp/street-response/street-fee, Sollitt money/housing/safety and remaining topics."
+ ],
+ "findings": [
+  {
+   "candidateId": "matthias-hallett",
+   "race": "portland-district-3",
+   "item": "issue/money",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Calls for audits and limits on unaccountable spending, lighter burdens on businesses, and an agreement to retain the Blazers. His critique of ranked-choice voting is a campaign position, not evidence the count is unreliable."
+   },
+   "sourceUrl": "https://www.matthiashallett.com/revision",
+   "sourceQuote": "Ranked Choice Voting has made our elections more complicated, less transparent, and harder for ordinary voters to understand and trust. [...] My Re-Vision includes restoring clarity and confidence to how we elect our leaders so that every Portlander’s voice counts simply and clearly.",
+   "category": [
+    "a",
+    "c"
+   ],
+   "verdict": "confirmed",
+   "why": "The second sentence rebuts a claim he never makes (that the count is unreliable) and adds our own judgment to his money column; his page says only that ranked-choice voting is complicated and hard to trust.",
+   "proposed": {
+    "position": "Calls for audits and limits on unaccountable spending, lighter burdens on businesses, and an agreement to retain the Blazers."
+   }
+  },
+  {
+   "candidateId": "tiffany-koyama-lane",
+   "race": "portland-district-3",
+   "item": "topic/moda",
+   "fields": [
+    "topic-text",
+    "topic-chip",
+    "stance"
+   ],
+   "current": {
+    "chip": "Fair deal for taxpayers",
+    "stance": "mixed",
+    "text": "Says she fought for a fair deal for Portlanders in the Moda Center negotiations and will make sure it is fair for taxpayers."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=54",
+   "sourceQuote": "Pamphlet: \"Fought for a fair deal for Portlanders in the Moda Center negotiations.\" The words \"we will make sure the Moda Center is a fair deal for taxpayers\" appear only in Councilor Mitch Green's endorsement quote on teachertiffanyforthepeople.com.",
+   "category": [
+    "a",
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "The forward-looking promise and the chip's \"for taxpayers\" come from an endorser's quote on her home page, not from her cited statement, which only says she fought for a fair deal for Portlanders and does not point both ways on public money.",
+   "proposed": {
+    "topicChip": "Fair deal for Portlanders",
+    "stance": "partial",
+    "text": "Says she fought for a fair deal for Portlanders in the Moda Center negotiations; her statement does not say how much public money the renovation should get."
+   }
+  },
+  {
+   "candidateId": "steve-novick",
+   "race": "portland-district-3",
+   "item": "topic/street-response",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Is working to move 911 welfare-check calls to unarmed responders and to get Medicaid to reimburse Street Response."
+   },
+   "sourceUrl": "https://NovickForPortland.com",
+   "sourceQuote": "Steve is working with the State to get Medicaid to reimburse the costs of Portland Street Response. Steve is working to ensure that unarmed responders, instead of more expensive armed police, take over responses to “welfare check” calls.",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "Nothing on his page speaks to a 24/7 Street Response; the guide marks Hilton and Kelly \"partial\" for comparable non-24/7 statements, so \"supports\" here overstates him.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Is working to move 911 welfare-check calls to unarmed responders and to get Medicaid to reimburse Street Response; his page does not say whether Street Response should expand to a 24/7 role."
+   }
+  },
+  {
+   "candidateId": "steve-novick",
+   "race": "portland-district-3",
+   "item": "topic/water-rates",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "mixed",
+    "text": "Would use Clean Energy Fund money to pay part of the water filtration plant and offset water-rate increases."
+   },
+   "sourceUrl": "https://NovickForPortland.com",
+   "sourceQuote": "Another possible investment that would benefit all Portlanders would be to use PCEF to help offset water rate increases by paying part of the cost of the water filtration plant",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "His page floats this as \"another possible investment\"; \"Would use\" turns an idea into a commitment (his issue position and line correctly say \"potentially\" and \"possibly\").",
+   "proposed": {
+    "text": "Suggests Clean Energy Fund money could pay part of the water filtration plant and help offset water-rate increases."
+   }
+  },
+  {
+   "candidateId": "terry-parker",
+   "race": "portland-district-3",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Supports police and fire staffing and long-term support for unhoused people.",
+    "line": "Supports police and fire staffing and long-term support for unhoused people.",
+    "chip": "Police and fire staffing"
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=55",
+   "sourceQuote": "EMERGENCY PREPAREDNESS/PUBLIC SAFETY: Increase funding to add police officers and ensure every fire station is fully staffed. [...] HOMELESSNESS: The priority should be helping people achieve long-term stability through wraparound services that support self-sufficiency. Housing is only a piece of the solution.",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "\"Long-term support\" reverses his framing (stability and self-sufficiency; in 2024 he contrasted this with \"everlasting handouts\"), and \"police staffing\" drops his actual ask, more funding to add officers.",
+   "proposed": {
+    "position": "Would increase funding to add police officers and fully staff every fire station, and would help unhoused people reach long-term stability through wraparound services that support self-sufficiency.",
+    "line": "Would fund more police officers, fully staffed fire stations, and wraparound services for self-sufficiency."
+   }
+  },
+  {
+   "candidateId": "terry-parker",
+   "race": "portland-district-3",
+   "item": "topic/new-taxes",
+   "fields": [
+    "topic-text",
+    "stance"
+   ],
+   "current": {
+    "stance": "opposes",
+    "text": "Told OPB in 2024 he would eliminate the $35 Arts Tax on individuals, which charges low and high earners the same amount; he named no tax or levy he would create."
+   },
+   "sourceUrl": "https://www.opb.org/article/2024/09/30/meet-terry-parker-candidate-for-portland-city-council-district-3/",
+   "sourceQuote": "OPB: \"I would eliminate the annual $35.00 arts tax on individuals.\" City Club 2024 (cited by the guide for his Street Response stance): \"the City should consider purchasing existing apartment buildings that are on the market at bargain prices, and establish a tax on rental units that are vacant for extended periods of time.\" Also: \"replace the one size fits all arts tax as part of another variable tax.\"",
+   "category": [
+    "b",
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "\"He named no tax or levy he would create\" is true only of the OPB answer; the same season he told City Club he wants a tax on long-vacant rental units and a variable tax replacing the Arts Tax, so a flat \"opposes\" overstates him.",
+   "proposed": {
+    "stance": "mixed",
+    "text": "Told OPB in 2024 he would eliminate the $35 Arts Tax on individuals, which charges low and high earners the same; told City Club that year the City should tax rental units left vacant for long periods."
+   }
+  },
+  {
+   "candidateId": "keir-legree",
+   "race": "portland-district-3",
+   "item": "topic/camp-removal",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Would consistently enforce clear boundaries citywide: when shelter is available, camping should not be allowed indefinitely in rights-of-way, parks or on private property, with camps near schools first."
+   },
+   "sourceUrl": "https://www.keir4pdx.com/homelessness-plan",
+   "sourceQuote": "Portland must establish and consistently enforce clear boundaries for the use of public spaces. When appropriate shelter is available, camping should not be allowed indefinitely in public rights-of-way, city parks, or on private property without permission. Encampments near schools and youth centers should receive especially urgent attention.",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "His page says nothing about removal funding levels; the guide marks Parker, Hilton and Ward \"partial\" for comparable enforcement statements, so \"supports\" is inconsistent.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Would consistently enforce clear boundaries citywide: when appropriate shelter is available, camping should not be allowed indefinitely in rights-of-way, parks or on private property; his page does not say whether removal funding should stay at current levels."
+   }
+  },
+  {
+   "candidateId": "tom-sollitt",
+   "race": "portland-district-3",
+   "item": "topic/police-staffing",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "mixed",
+    "chip": "Needs, not a number",
+    "text": "If staffing must rise, would target investigations and specialized units; staffing should follow need, not a fixed officer total."
+   },
+   "sourceUrl": "https://TomForPDX.com",
+   "sourceQuote": "If Portland needs to increase police staffing we should be intentional about where those positions go. It needs to start with public demand for police accountability to restore trust in that office for public safety. [...] I have also heard some compelling evidence to consider strengthening detectives and specialized units [...] Staffing should follow public safety needs and not an attempt to reach a certain number and be in alignment with the very clear public desire for police accountability.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "\"Would target\" hardens \"evidence to consider strengthening,\" and the text drops his stated precondition that any increase start with police accountability.",
+   "proposed": {
+    "text": "If Portland needs more police, says it should start with police accountability and be intentional about where positions go, and would consider strengthening detectives and specialized units; staffing should follow need, not a set number."
+   }
+  },
+  {
+   "candidateId": "tom-sollitt",
+   "race": "portland-district-3",
+   "item": "issue/climate",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Would maintain existing streets before committing to new projects until new funding is found, prioritizing maintenance, preservation and safety; would ask the Clean Energy Fund committee whether voter-approved climate money can go further toward transportation and air quality, and restrict projects without a clear public benefit, funding source and measurable outcome."
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#sollitt-2026-09-22",
+   "sourceQuote": "I would also work with the PCEF Committee to determine whether existing voter-approved climate funding can be more strategically allocated, within its approved purpose, toward transportation and air-quality needs. If the public's direction needs to change, I would take that question back to voters rather than have Council circumvent it.",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "The position drops \"within its approved purpose\" and his pledge to take any change back to voters, the two limits that separate his idea from redirecting the fund.",
+   "proposed": {
+    "position": "Would maintain existing streets before committing to new projects until new funding is found, prioritizing maintenance, preservation and safety; would work with the Clean Energy Fund committee on whether voter-approved climate money can go further, within its approved purpose, toward transportation and air quality, and would take any change in direction back to voters; would restrict projects without a clear public benefit, funding source and measurable outcome."
+   }
+  },
+  {
+   "candidateId": "matthias-hallett",
+   "race": "portland-district-3",
+   "item": "topic/new-taxes",
+   "fields": [
+    "topic-text",
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "opposes",
+    "chip": "No new taxes",
+    "text": "Says Portland cannot tax its way out of a shrinking base and must grow it back; backs police funding with no new taxes."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=58",
+   "sourceQuote": "We cannot tax our way out of a shrinking base; we must grow it back. I will set strict permitting timelines with automatic escalation when projects stall, right-size the business tax structure to keep us competitive",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The pamphlet never ties police funding to taxes (that is on his Re-Vision page), and \"No new taxes\" reads as a pledge; arguable because his Re-Vision page does say \"without raising taxes\" for police.",
+   "proposed": {
+    "topicChip": "Grow the tax base",
+    "text": "Says Portland cannot tax its way out of a shrinking base and must grow it back, and would right-size the business tax structure to stay competitive."
+   }
+  },
+  {
+   "candidateId": "patrick-hilton",
+   "race": "portland-district-3",
+   "item": "issue/housing",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Prioritizes adaptive reuse, community land trusts and co-housing, with pathways to ownership.",
+    "line": "Wants adaptive reuse (converting existing buildings), community land trusts and co-housing, with ownership pathways."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=57",
+   "sourceQuote": "Preserve, don’t demolish. Champion adaptive reuse and historic preservation, and pilot community land trusts and co-housing that can turn renters like me into owners",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "He proposes to \"pilot\" land trusts and co-housing; dropping \"pilot\" makes a trial sound like a program. Arguable because the core direction is right.",
+   "proposed": {
+    "position": "Would champion adaptive reuse and historic preservation, and pilot community land trusts and co-housing with pathways to ownership.",
+    "line": "Wants adaptive reuse (converting existing buildings) and pilot land trusts and co-housing."
+   }
+  },
+  {
+   "candidateId": "patrick-hilton",
+   "race": "portland-district-3",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Supports safe-sleeping infrastructure alongside consistent rules for public space.",
+    "line": "Supports safe-sleeping infrastructure alongside consistent rules for public space."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=57",
+   "sourceQuote": "Accountability. Expand safe-sleeping infrastructure and safety ambassadors on corridors like Grand Avenue, enforce consistent public-space rules",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "His verbs are \"expand\" and \"enforce\"; \"consistent rules for public space\" drops the enforcement he names, softening him for one side of the camping debate.",
+   "proposed": {
+    "position": "Would expand safe-sleeping infrastructure and safety ambassadors and enforce consistent public-space rules.",
+    "line": "Would expand safe-sleeping infrastructure and enforce consistent public-space rules."
+   }
+  },
+  {
+   "candidateId": "steve-novick",
+   "race": "portland-district-3",
+   "item": "topic/moda",
+   "fields": [
+    "topic-text",
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "mixed",
+    "chip": "City must break even",
+    "text": "Wants to keep the Blazers, but only under a deal where the city gets as much money out of the Moda Center as it puts in."
+   },
+   "sourceUrl": "https://NovickForPortland.com",
+   "sourceQuote": "Steve wants to keep the Blazers, but is fighting for a fair deal, where we get as much money out of the Moda Center as we put in.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "\"Only under\" and \"must\" turn \"fighting for a fair deal\" into a hard condition; he voted yes on the term sheet (Resolution 37750), so the added condition may mislead.",
+   "proposed": {
+    "topicChip": "Fair deal, break even",
+    "text": "Wants to keep the Blazers and says he is fighting for a fair deal in which the city gets as much money out of the Moda Center as it puts in."
+   }
+  },
+  {
+   "candidateId": "steve-novick",
+   "race": "portland-district-3",
+   "item": "topic/new-taxes",
+   "fields": [
+    "stance",
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "opposes",
+    "chip": "No Arts Tax increase",
+    "text": "Voted against increasing the Arts Tax and wants to replace it without cutting arts funding, possibly by folding it into the Children’s Levy."
+   },
+   "sourceUrl": "https://NovickForPortland.com",
+   "sourceQuote": "Steve voted against an increase to the Arts Tax, an incredibly inefficient tax with huge administrative costs. [...] He is also pursuing ways to get rid of the Arts Tax without reducing critical support for arts programming, possibly by folding it into the Children’s Levy.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "One vote against one increase plus a revenue swap is not an explicit hold-the-line position, and the same sheet marks him \"supports\" on the new street fee; arguable because his page also promises parks without another tax increase.",
+   "proposed": {
+    "stance": "mixed",
+    "topicChip": "Replace the Arts Tax",
+    "text": "Voted against increasing the Arts Tax and wants to replace it without cutting arts funding, possibly by folding it into the Children’s Levy; hopes to sustain parks without another tax increase."
+   }
+  },
+  {
+   "candidateId": "steve-novick",
+   "race": "portland-district-3",
+   "item": "issue/climate",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Supports using PCEF for transit and potentially part of the water-filtration project to offset water-rate increases. That differs from reserving the fund for its existing program mix."
+   },
+   "sourceUrl": "https://NovickForPortland.com",
+   "sourceQuote": "Steve supports greater PCEF investment in the largest contributor to climate change - transportation. That should include investments in improving and preserving public transportation. Another possible investment that would benefit all Portlanders would be to use PCEF to help offset water rate increases",
+   "category": [
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "The second sentence is our commentary framing him as departing from the fund; he frames it as more investment in transportation, which PCEF already funds. Arguable because the water-plant idea is a real departure.",
+   "proposed": {
+    "position": "Supports greater PCEF investment in transportation, including public transit, and possibly using it to pay part of the water-filtration project to offset water-rate increases."
+   }
+  },
+  {
+   "candidateId": "steve-novick",
+   "race": "portland-district-3",
+   "item": "topic/camp-removal",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Says he protected funding for removing the most hazardous camps when others tried to cut it; opposes indiscriminate sweeps."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=57",
+   "sourceQuote": "When some councilors tried to slash funding for removal of the most hazardous homeless camps, Steve successfully protected it.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Sourcing only: \"opposes indiscriminate sweeps\" is not in the cited pamphlet page; it is on NovickForPortland.com (\"Steve does not support indiscriminate 'sweeps'\"). Either cite the site or drop the clause.",
+   "proposed": {
+    "text": "Says he protected funding for removing the most hazardous camps when some councilors tried to cut it."
+   }
+  },
+  {
+   "candidateId": "terry-parker",
+   "race": "portland-district-3",
+   "item": "issue/climate",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Opposes business-access-and-transit lanes on 82nd Avenue. His predicted traffic effects are campaign claims, not independently established findings in this guide."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=55",
+   "sourceQuote": "JUST SAY NO TO BAT LANES ON 82nd AVENUE: Replacing curb travel lanes with BAT lanes could divert as many as 5000 vehicles a day and increase travel times for up to 20,000 cars and trucks per day.",
+   "category": [
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "The caveat is accurate, but inline debunk-style caveats appear on Parker, Ward and Hallett while comparable numeric claims (Legree's \"four times Las Vegas,\" Novick's \"$1.45 million apiece\") carry none; the Evidence note already covers unverified premises.",
+   "proposed": {
+    "position": "Opposes business-access-and-transit lanes on 82nd Avenue."
+   }
+  },
+  {
+   "candidateId": "martin-ward",
+   "race": "portland-district-3",
+   "item": "issue/money",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Rejects Moda renovations and proposes large spending cuts. The reviewed statement does not substantiate the claimed savings."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=55",
+   "sourceQuote": "Budget Cuts - Have an estimated 1-1.5 billion dollars of budget cuts, mainly by cutting construction projects that have no significant value, and that have costs that are often 10-20 times the market rate due to corruption. [...] No renovations on the Moda Center – None.",
+   "category": [
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "Same uneven-caveat pattern as Parker; attributing the figure to him does the same work without a verdict sentence. Arguable because his corruption claim is extraordinary.",
+   "proposed": {
+    "position": "Rejects Moda renovations and proposes an estimated $1 billion to $1.5 billion in budget cuts, mainly by cutting construction projects he calls overpriced."
+   }
+  },
+  {
+   "candidateId": "keir-legree",
+   "race": "portland-district-3",
+   "item": "topic/moda",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "opposes",
+    "chip": "Transfer arena, no cash"
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#legree-2026-09-22",
+   "sourceQuote": "But I don’t like the idea of spending hundreds of millions of public dollars on the Moda Center we don’t have. One option I’d want to explore is transferring ownership of the Moda Center to the Blazers’ new owner in exchange for an ironclad agreement to keep the Blazers in Portland for at least 20 years.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "He names the transfer as one option to explore and objects to hundreds of millions, not to any public cash; the text beside it is accurate, so only the chip overstates.",
+   "proposed": {
+    "topicChip": "Explore arena transfer"
+   }
+  },
+  {
+   "candidateId": "keir-legree",
+   "race": "portland-district-3",
+   "item": "topic/water-rates",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "opposes",
+    "chip": "Lower water bills",
+    "text": "Says water and sewer bills are over four times Las Vegas’s and rising; would cut project costs to lower bills."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=59",
+   "sourceQuote": "Lower Utility Bills: Our water and sewer bills are more than four times what Las Vegas pays... With that, rates are projected to continue rising. I will work to reduce ongoing infrastructure project costs and lower our bills.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "He never mentions the filtration plant or opposing rate increases, and his Sept. 19 reply says he is not proposing to defer necessary infrastructure; arguable because \"lower our bills\" does point against increases.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Says water and sewer bills are over four times Las Vegas’s and rising, and would work to reduce infrastructure project costs to lower bills; he does not say whether bills should rise to pay for the filtration plant."
+   }
+  },
+  {
+   "candidateId": "tom-sollitt",
+   "race": "portland-district-3",
+   "item": "topic/camp-removal",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "mixed",
+    "text": "Answered no, but would pause any increase or cut until a clear accounting shows what the program spends and achieves; wants rights-of-way kept clear through a coordinated approach with the County and providers."
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#sollitt-2026-09-22",
+   "sourceQuote": "I agree that we need to keep rights-of-way clear, but this has become a contentious point for our community that has raised some legitimate concerns. I want a more compassionate, coordinated approach with the City, Multnomah County, and service providers that protect people's property, connect them to the appropriate next step",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The text fuses \"keep rights-of-way clear\" with the coordinated approach and drops \"more compassionate\" and protecting people's property, tilting him toward enforcement.",
+   "proposed": {
+    "text": "Answered no, but would pause any increase or cut until a clear accounting shows what the program spends and achieves; agrees rights-of-way must stay clear and wants a more compassionate, coordinated approach with the County and providers."
+   }
+  },
+  {
+   "candidateId": "tom-sollitt",
+   "race": "portland-district-3",
+   "item": "issue/climate",
+   "fields": [
+    "line",
+    "chip"
+   ],
+   "current": {
+    "line": "Would maintain streets before new projects and restrict projects without funding or results.",
+    "chip": "Maintain before building"
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#sollitt-2026-09-23",
+   "sourceQuote": "I support continued investment in clean energy, energy efficiency, building electrification and climate resilience, including through the Portland Clean Energy Community Benefits Fund. [...] I support reducing our dependence on fossil fuels and addressing the risks of the Critical Energy Infrastructure Hub",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "His climate column shows only his streets-budget answer; the climate answer he sent on Sept. 23 (at our request, to fill this gap) is not reflected, so the column reads as spending restraint only. An omission, not a misstatement.",
+   "proposed": {
+    "line": "Supports continued clean-energy investment and maintaining streets before new projects.",
+    "chip": "Clean energy, fix streets"
+   }
+  },
+  {
+   "candidateId": "kellie-torres",
+   "race": "portland-district-3",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Supports public-safety staffing and resources so police can follow through on investigations and fix emergency response times, plus cleaner, better-lit public spaces and connecting people in crisis with lifesaving services.",
+    "line": "Wants police staffed to follow through on investigations and respond faster, plus crisis services."
+   },
+   "sourceUrl": "https://www.KellieTorresForPortland.com/priorities",
+   "sourceQuote": "Support public safety staffing and resources that allow police to follow through on investigations, fix emergency response times, and make neighborhoods safe. [...] Address livability concerns by upholding community standards and connecting people in crisis with lifesaving services.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "Her livability bullet pairs \"upholding community standards\" with crisis services; keeping only the services half softens her. The corrected chip \"Police follow-through\" is accurate. Arguable because \"community standards\" is vague.",
+   "proposed": {
+    "position": "Supports public-safety staffing and resources so police can follow through on investigations and fix emergency response times, plus cleaner, better-lit public spaces, upholding community standards and connecting people in crisis with lifesaving services.",
+    "line": "Wants police staffed to follow through on investigations, plus community standards and crisis services."
+   }
+  },
+  {
+   "candidateId": "kellie-torres",
+   "race": "portland-district-3",
+   "item": "issue/housing",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Sets a goal of enabling 4,000 homes annually through fewer code barriers, faster permitting and a mix of rental and ownership housing. This is a campaign target, not a forecast.",
+    "line": "Wants 4,000 homes a year through fewer code barriers and faster building permits."
+   },
+   "sourceUrl": "https://www.KellieTorresForPortland.com/priorities",
+   "sourceQuote": "Create policies that make it easy to build more housing at the rate of 4,000 units per year. Expand housing choices by supporting a mix of housing types of all types, including affordable homeownership and multi-unit housing. [...] Promote responsible growth that balances affordability with neighborhood stability to helps families remain in their communities while preserving what makes each neighborhood unique",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The summary drops her balancing clause (growth weighed against neighborhood stability), and \"rental\" is our word for \"multi-unit\"; arguable because omitting a third bullet is usually allowed.",
+   "proposed": {
+    "position": "Sets a goal of enabling 4,000 homes annually through fewer code barriers, faster permitting and a mix of housing types, including affordable homeownership and multi-unit housing, while balancing growth with neighborhood stability. This is a campaign target, not a forecast.",
+    "line": "Wants 4,000 homes yearly through fewer code barriers and faster building permits, preserving neighborhoods."
+   }
+  },
+  {
+   "candidateId": "kellie-torres",
+   "race": "portland-district-3",
+   "item": "topic/police-staffing",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Staff for investigations",
+    "text": "Supports public safety staffing and resources that let police follow through on investigations and fix response times."
+   },
+   "sourceUrl": "https://www.KellieTorresForPortland.com/priorities",
+   "sourceQuote": "Support public safety staffing and resources that allow police to follow through on investigations, fix emergency response times, and make neighborhoods safe.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "\"Support public safety staffing\" never says hire more sworn officers, which the guide's rule requires for \"supports\"; arguable because fixing response times implies more staff.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Supports public safety staffing and resources that let police follow through on investigations and fix emergency response times; her page does not say whether that means hiring more sworn officers."
+   }
+  },
+  {
+   "candidateId": "kenneth-kent-r-landgraver-iii",
+   "race": "portland-district-3",
+   "item": "issue/money",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Taxes for public work",
+    "line": "Wants tax dollars to support public work.",
+    "position": "Says tax dollars should support public work. Specific budget reallocations or revenue proposals are not established in the reviewed statement."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=60",
+   "sourceQuote": "My goal is to ensure every tax dollar goes to doing the people’s work.",
+   "category": [
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "\"Taxes for public work\" can read as raising taxes for public works projects; he says every tax dollar should go to the people's work (and calls himself a fiscal conservative in 2024).",
+   "proposed": {
+    "chip": "Dollars for people’s work",
+    "line": "Wants every tax dollar to go to doing the people’s work.",
+    "position": "Says every tax dollar should go to doing the people’s work. Specific budget reallocations or revenue proposals are not established in the reviewed statement."
+   }
+  }
+ ]
+}

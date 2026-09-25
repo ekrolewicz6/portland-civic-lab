@@ -367,7 +367,7 @@ const clerkTopics: ExtraTopic[] = [
     id: "clack-voter-rolls",
     label: "County voter-roll checks",
     short: "Voter rolls",
-    question: "Run county-level purges of voters who have moved or died, beyond the state's list maintenance?",
+    question: "Run county-level checks that remove voters who have moved or died, beyond the state's list maintenance?",
     context:
       "The Secretary of State maintains the statewide registration list through the ERIC data-sharing compact, postal change-of-address data, vital records and Oregon Motor Voter, removing people who have died or moved. Clackamas County had 318,500 registered voters for the May 2026 primary, and the clerk's Elections division has six positions in a $3.1 million FY 2026-27 budget.",
   },
@@ -413,8 +413,8 @@ const smithQuestionnaire = questionnaire("Smith", "https://www.opb.org/pdf/Smith
 
 const topicStances: TopicStance[] = [
   /* ── Diana Helm (Position 4, appointed commissioner) ────────────────── */
-  stance("diana-helm", "clack-levy-2027", "supports", "Get out in front",
-    "Told the June 2 policy session after the levy's defeat that there needs to be a real effort right now to get out in front of people before asking again; the rate is unsaid.",
+  stance("diana-helm", "clack-levy-2027", "partial", "Get out in front",
+    "Told the June 2 policy session, as the board planned outreach before a possible new levy, that there needs to be a real effort right now to get out in front of people; the rate is unsaid.",
     yonLevyJune4),
   stance("diana-helm", "clack-data-centers", "supports", "Led the pause",
     "Says she led the effort for a moratorium on large data centers after learning the county had no ordinances addressing them, to gather facts, analyze impacts and involve the public before deciding.",
@@ -422,7 +422,7 @@ const topicStances: TopicStance[] = [
   stance("diana-helm", "clack-sanctuary", "partial", "Follow state law",
     "Says the county is following state law and defers to County Counsel on whether to adopt a judicial-warrant declaration.",
     helmQuestionnaire),
-  stance("diana-helm", "clack-senior-tax", "supports", "Freeze for 65-plus",
+  stance("diana-helm", "clack-senior-tax", "supports", "Possible 65-plus freeze",
     "Would get ahead of senior homelessness, potentially by freezing property taxes for homeowners 65 and older within a certain income range, paired with senior services.",
     helmQuestionnaire),
   stance("diana-helm", "clack-recovery-campus", "supports", "Open it by 2027",
@@ -434,15 +434,15 @@ const topicStances: TopicStance[] = [
     "Says she replaced aging equipment, secured ballot processes, trained staff and delivered timely, accurate results; hand counting itself is unsaid.",
     pamphlet(14)),
   stance("catherine-mcmullen", "clack-voter-rolls", "partial", "Records current, accurate",
-    "Says she increased voter-registration staffing, ensured eligible citizens can access ballots and kept records current and accurate; a county-level purge beyond state maintenance is unsaid.",
+    "Says she increased voter-registration staffing, ensured eligible citizens can access ballots and kept records current and accurate; county-level removals beyond state list maintenance are unsaid.",
     pamphlet(14)),
 
   /* ── Brian T Nava (Treasurer, incumbent) ───────────────────────────── */
   stance("brian-t-nava", "clack-treasury-priorities", "supports", "Safe, liquid, then return",
     "Would continue prudent investing that keeps county funds safe and liquid first while achieving the best return possible.",
     pamphlet(15)),
-  stance("brian-t-nava", "clack-cash-controls", "supports", "Free training continues",
-    "Says he set a strategy for good cash controls across the county by offering free training to all cities, districts and county employees, and would keep improving banking functions.",
+  stance("brian-t-nava", "clack-cash-controls", "supports", "Offered free training",
+    "Says he set a strategy for good cash controls across the county by offering free training to all cities, districts and county employees, and has introduced and improved banking functions.",
     pamphlet(15)),
 
   /* ── Brad O'Neil (Sheriff) ─────────────────────────────────────────── */
@@ -460,7 +460,7 @@ const topicStances: TopicStance[] = [
   stance("mark-reaksecker", "clack-hand-count", "supports", "Hand count everything",
     "Would hand-count ballots, calling it simple, accurate, expedient and cheaper than tabulating machines, with a provable paper trail.",
     reaksSolutions),
-  stance("mark-reaksecker", "clack-voter-rolls", "supports", "County-level purge",
+  stance("mark-reaksecker", "clack-voter-rolls", "supports", "County voter-roll checks",
     "Would verify voter rolls at the county level, removing people who have moved or died so only Clackamas County citizens vote in local elections.",
     reaksSolutions),
   stance("mark-reaksecker", "clack-watermark", "supports", "Watermark every ballot",
@@ -481,16 +481,16 @@ topicStances.push(
     rhodesPlan),
 
   /* ── Paul Savas (Position 2, incumbent) ────────────────────────────── */
-  stance("paul-savas", "clack-levy-2027", "supports", "Work aggressively, retry",
-    "Told the June 2 policy session after the levy's defeat that the county has a lot of work to do and must do it aggressively before returning to voters; the rate is unsaid.",
+  stance("paul-savas", "clack-levy-2027", "partial", "Work aggressively first",
+    "Told the June 2 policy session, as the board planned outreach before a possible new levy, that the county has a lot of work to do and must do it aggressively; the rate is unsaid.",
     yonLevyJune4),
   stance("paul-savas", "clack-data-centers", "supports", "Helped advance pause",
     "Says he supported and helped advance a proactive approach, with the Board unanimously directing staff to begin establishing a moratorium on new data-center applications, doing the homework now rather than reacting later.",
     savasDataCenters),
-  stance("paul-savas", "clack-sanctuary", "mixed", "Follow both laws",
-    "Says the county should follow both state and federal law while sanctuary cases play out in court, noting the Sheriff's Office responds to judicial warrants after losing a past detainer lawsuit; a county declaration is not endorsed.",
+  stance("paul-savas", "clack-sanctuary", "partial", "Follow both laws",
+    "Says the county complies with state law, which at times conflicts with federal law, and cannot afford to lose more taxpayer dollars; the Sheriff's Office responds to judicial warrants. A county declaration is unsaid.",
     savasQuestionnaire),
-  stance("paul-savas", "clack-senior-tax", "mixed", "Deferral, not county cuts",
+  stance("paul-savas", "clack-senior-tax", "supports", "Keep advocating for relief",
     "Says the state does not allow counties to reduce property taxes for seniors on their own; would keep advocating for relief and steer struggling households to the state deferral program.",
     savasQuestionnaire),
   stance("paul-savas", "clack-recovery-campus", "supports", "Deal for $10 million",
@@ -498,8 +498,8 @@ topicStances.push(
     savasHomeless),
 
   /* ── Mark Shull (Position 2, former commissioner) ──────────────────── */
-  stance("mark-shull", "clack-levy-2027", "mixed", "Renew, no rate hike",
-    "Supports renewing the public safety levy at a responsible level to keep patrol, jail beds and body cameras, and would oppose unnecessary rate increases, funding core needs through disciplined budgeting instead.",
+  stance("mark-shull", "clack-levy-2027", "mixed", "Renew at responsible level",
+    "Before the May 2026 vote, supported renewing the levy at a responsible level to keep patrol, jail beds and body cameras, and opposed unnecessary rate increases, funding core needs through disciplined budgeting and a growing tax base.",
     shullQuestionnaire),
   stance("mark-shull", "clack-sanctuary", "opposes", "No county declaration",
     "Opposes a county sanctuary declaration or judicial-warrant rule, supports repealing Oregon's sanctuary law, and would encourage the Sheriff's Office to honor lawful federal detainers where possible.",
@@ -515,8 +515,8 @@ topicStances.push(
   stance("r-w-smith", "clack-levy-2027", "partial", "Levy plus long-term plan",
     "Says a five-year levy can stabilize services but is not a complete solution, and any request must come with transparent budgeting, regular reporting and a long-term plan; May 2027 and a rate are unsaid.",
     smithQuestionnaire),
-  stance("r-w-smith", "clack-data-centers", "supports", "Keep them out",
-    "Opposes bringing large-scale data centers into the county at all, citing their electricity, water and land demands and the infrastructure they require; his position is a ban rather than a pause.",
+  stance("r-w-smith", "clack-data-centers", "partial", "Keep them out",
+    "Opposes bringing large-scale data centers into the county, citing their electricity, water and land demands and the infrastructure they require; whether to adopt the moratorium now or wait for the Legislature is unsaid.",
     pamphlet(18)),
   stance("r-w-smith", "clack-sanctuary", "supports", "Judicial warrant only",
     "Says the county should be clear that local agencies do not participate in federal immigration enforcement without a judicial warrant, calling it a clean legal standard that keeps trust in public safety.",
@@ -739,7 +739,7 @@ const analysis: Record<string, CandidateAnalysis> = {
     issues: {
       money: {
         position:
-          "Would keep county funds safe and liquid first while seeking the best return possible, and keep building cash controls across the county.",
+          "Would keep county funds safe and liquid first while seeking the best return possible; has built cash controls across the county through free training.",
         source: pamphlet(15),
       },
     },
@@ -792,7 +792,7 @@ const analysis: Record<string, CandidateAnalysis> = {
     issues: {
       housing: {
         position:
-          "Would keep expanding affordable housing of varied types and move people from homelessness into treatment and transitional housing through the county’s Recovery Campus.",
+          "Would keep expanding affordable housing of varied types and move people from homelessness to independence, building on Veterans Village and a recovery-oriented system of care.",
         source: savasIssues,
       },
       safety: {
@@ -806,7 +806,7 @@ const analysis: Record<string, CandidateAnalysis> = {
       },
       climate: {
         position:
-          "Opposes ODOT tolling and would add road capacity through the Sunrise Project and I-205 widening, while protecting farmland and open space.",
+          "Opposes ODOT’s regional tolling plans and supports the Sunrise Project and I-205 expansion to add road capacity, while protecting farmland and open space.",
         source: savasIssues,
       },
     },
@@ -843,12 +843,12 @@ const analysis: Record<string, CandidateAnalysis> = {
     issues: {
       housing: {
         position:
-          "Would increase affordable housing by cutting regulatory burdens and speeding up permitting, and keep shelter, recovery and support services available to people who are homeless.",
+          "Would increase affordable housing by reducing unnecessary regulatory burdens and improving the permitting process, and keep shelter, recovery and support services available to people who are homeless.",
         source: pamphlet(18),
       },
       climate: {
         position:
-          "Led a moratorium on large data centers so the county can gather facts and hear the public before deciding, and would advocate for the Sunrise Corridor freight route.",
+          "Led the effort for a moratorium on large data centers so the county can gather facts, analyze impacts and involve the public before deciding.",
         source: pamphlet(18),
       },
     },
@@ -861,22 +861,22 @@ const analysis: Record<string, CandidateAnalysis> = {
     issues: {
       housing: {
         position:
-          "Would encourage housing working families can afford, streamline permitting for small builders, limit corporate purchases of homes, and add shelter beds paired with case management.",
+          "Would encourage housing working families can afford, streamline permitting for small builders, protect housing supply from speculative corporate ownership, and add shelter beds paired with case management.",
         source: smithPolicies,
       },
       safety: {
         position:
-          "Would give police and first responders the resources they need, expand treatment for addiction and mental illness, and insist on measurable outcomes.",
+          "Supports treatment for addiction and mental illness but insists on measurable outcomes, with streamlined ways to get people into treatment beds while keeping communities safe.",
         source: pamphlet(18),
       },
       money: {
         position:
-          "Would put major public projects and long-term contracts through independent fiscal review, report budgets and obligations openly, and end subsidies to large data centers.",
+          "Would put major public projects and long-term financial agreements through independent fiscal review and report county budgets and long-term obligations openly.",
         source: smithPolicies,
       },
       climate: {
         position:
-          "Opposes bringing large-scale data centers into the county, citing their electricity, water and land demands, and would build new clean-energy capacity.",
+          "Opposes bringing large-scale data centers into the county, citing their electricity, water and land demands and the costly new infrastructure they require.",
         source: pamphlet(18),
       },
     },
@@ -899,16 +899,16 @@ export const pack: RacePack = {
     line("paul-savas", "housing", "Expands affordable housing and moves people into treatment through the Recovery Campus."),
     line("paul-savas", "safety", "Fully funds the Sheriff’s Office and emergency services."),
     line("paul-savas", "money", "Expands essential services without raising taxes; backs senior property-tax deferral."),
-    line("paul-savas", "climate", "Opposes tolling; widens I-205 and builds the Sunrise Project; protects farmland."),
+    line("paul-savas", "climate", "Opposes ODOT tolling; backs I-205 widening and the Sunrise Project; protects farmland."),
     line("mark-shull", "housing", "Seeks state land-use reform for affordable housing while protecting rural character."),
     line("mark-shull", "money", "Seeks senior property-tax relief, cuts unnecessary programs, opposes any new taxes."),
     line("mark-shull", "climate", "Opposes I-205 tolls; fixes roads without charging daily drivers."),
-    line("diana-helm", "housing", "Speeds permitting (building approvals) and cuts rules to build affordable homes; keeps shelters."),
-    line("diana-helm", "climate", "Pauses large data centers to study impacts; backs the Sunrise Corridor freight route."),
-    line("r-w-smith", "housing", "Faster permitting (building approvals), limits on corporate home buying, more shelter beds."),
-    line("r-w-smith", "safety", "Resources police and first responders; expands treatment with measurable outcomes."),
-    line("r-w-smith", "money", "Puts major projects through independent fiscal review; ends data-center subsidies."),
-    line("r-w-smith", "climate", "Opposes large data centers over electricity, water and land; builds clean energy."),
+    line("diana-helm", "housing", "Would reduce unnecessary rules and improve permitting (building approvals); keeps shelter services."),
+    line("diana-helm", "climate", "Led the push to pause large data centers while the county studies impacts."),
+    line("r-w-smith", "housing", "Faster permitting (building approvals), limits on large corporations buying homes, more shelter beds."),
+    line("r-w-smith", "safety", "Supports addiction and mental-health treatment with measurable outcomes; faster entry to treatment beds."),
+    line("r-w-smith", "money", "Puts major projects through independent fiscal review; reports budgets and obligations openly."),
+    line("r-w-smith", "climate", "Opposes large data centers over electricity, water, land and infrastructure costs."),
   ],
 
   chips: [
@@ -919,7 +919,7 @@ export const pack: RacePack = {
     chip("brad-o-neil", "money", "Data-driven, open books"),
     chip("james-rhodes", "safety", "Traffic and fentanyl focus"),
     chip("james-rhodes", "money", "Cut administration first"),
-    chip("paul-savas", "housing", "Recovery Campus, units"),
+    chip("paul-savas", "housing", "Housing, recovery care"),
     chip("paul-savas", "safety", "Fully fund the sheriff"),
     chip("paul-savas", "money", "Services, no new taxes"),
     chip("paul-savas", "climate", "No tolls, widen I-205"),

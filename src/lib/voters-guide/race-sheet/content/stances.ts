@@ -58,18 +58,18 @@ const councilChips: StanceChip[] = [
   chip("tiffany-koyama-lane", "money", "Fund public services"),
   chip("tiffany-koyama-lane", "climate", "Zero traffic deaths"),
 
-  chip("kenneth-kent-r-landgraver-iii", "money", "Taxes for public work"),
+  chip("kenneth-kent-r-landgraver-iii", "money", "Dollars for people’s work"),
 
-  chip("esther-leon", "housing", "Expand public housing"),
+  chip("esther-leon", "housing", "Accelerate social housing"),
   chip("esther-leon", "safety", "24/7 Street Response"),
   chip("esther-leon", "money", "Land-value, vacancy taxes"),
   chip("esther-leon", "climate", "Bikeways, car-free plazas"),
 
   chip("darren-mccormick", "safety", "More police and jail"),
 
-  chip("angelita-morillo", "housing", "Stronger tenant rights"),
+  chip("angelita-morillo", "housing", "Tenant rights"),
   chip("angelita-morillo", "safety", "Street Response, oversight"),
-  chip("angelita-morillo", "money", "Public investment first"),
+  chip("angelita-morillo", "money", "Fair Moda deal"),
   chip("angelita-morillo", "climate", "Transit, bikes, sidewalks"),
 
   chip("steve-novick", "housing", "Faster permits, investment"),
@@ -123,7 +123,7 @@ const councilChips: StanceChip[] = [
 
   chip("timothy-tj-anderson", "housing", "Investment, reused assets"),
   chip("timothy-tj-anderson", "safety", "Officers plus cadets"),
-  chip("timothy-tj-anderson", "money", "Audit first, no taxes"),
+  chip("timothy-tj-anderson", "money", "Audit before new taxes"),
   chip("timothy-tj-anderson", "climate", "Green tech, more transit"),
   chip("eli-arnold", "housing", "Fill subsidized vacancies"),
   chip("eli-arnold", "safety", "Police-clinician teams"),
@@ -132,7 +132,7 @@ const councilChips: StanceChip[] = [
 
   chip("olivia-clark", "housing", "Faster permits, lower fees"),
   chip("olivia-clark", "safety", "Remove camps, add shelter"),
-  chip("olivia-clark", "money", "Core services first"),
+  chip("olivia-clark", "money", "Small business support"),
   chip("olivia-clark", "climate", "Harden water and streets"),
 
   chip("jayne-cronlund", "housing", "Offices into housing"),
@@ -151,7 +151,7 @@ const councilChips: StanceChip[] = [
   chip("mitch-green", "climate", "Expand clean-energy fund"),
 
   chip("josh-leake", "housing", "Public and private funding"),
-  chip("josh-leake", "safety", "Enforcement plus services"),
+  chip("josh-leake", "safety", "Enforcement with dignity"),
   chip("josh-leake", "money", "Creative, tech industries"),
 
   chip("john-mcdonald", "safety", "Cap homelessness contracts"),
@@ -163,7 +163,7 @@ const councilChips: StanceChip[] = [
   chip("matt-schulte", "money", "Cap household costs"),
   chip("matt-schulte", "climate", "Safe Routes to schools"),
 
-  chip("jeremy-beausoleil-smith", "housing", "Build public housing"),
+  chip("jeremy-beausoleil-smith", "housing", "Build social housing"),
   chip("jeremy-beausoleil-smith", "safety", "Expand Street Response"),
   chip("jeremy-beausoleil-smith", "money", "Protect clean-energy fund"),
   chip("jeremy-beausoleil-smith", "climate", "Four-year data-center ban"),
