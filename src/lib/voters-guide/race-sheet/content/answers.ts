@@ -299,8 +299,14 @@ export const answers: CandidateAnswer[] = [
   ),
   russ(
     "Housing and homelessness",
-    "Nearly every one of my statements, proposed Bills, and proposed actions will lead to reduced homelessness. My goal is to return the country, and prosperity, to the people. When the economy soars, homelessness will drop dramatically. Giving money to NGO’s to over pay their bloated staff only exacerbates the problem.",
+    "Nearly every one of my statements, proposed Bills, and proposed actions will lead to reduced homelessness. My goal is to return the country, and prosperity, to the people. When the economy soars, homelessness will drop dramatically. Giving money to NGO’s to over pay their bloated staff only exacerbates the problem. We can not continue with the failed policies created by Progressive theology.",
   ),
+  {
+    candidateId: "david-russ",
+    question: "Housing and homelessness (his clarification)",
+    text: "My statement regarding distribution of federal funds was regarding NGO’s. I did not say “non-profits.” Many NGO’s are non-profit, but not all. [...] These entities spend more on their staff, consulting, and programs that actually make the homeless dependent on them than what they spend helping the homeless to become independent.",
+    received: "2026-09-25",
+  },
   russ(
     "Transportation, energy and climate",
     "I have not created a specific process by which I intend to make this happen, however, since the US Constitution does not provide for the Federal Government controlling large swaths of lands within state boundaries this should really not be a complicated issue. Removing lands that are not specifically National Parks Open to all, will also reduce the Federal Budget.",

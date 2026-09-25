@@ -834,11 +834,18 @@ const russEmail: Evidence = {
   date: "Received September 24, 2026",
   note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on the brief. Receipt does not verify the claims.",
 };
+const russEmail2: Evidence = {
+  label: "Russ · correction and clarification emailed to the Lab",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#russ-2026-09-25",
+  kind: "Candidate statement",
+  date: "Received September 25, 2026",
+  note: "Written by the candidate in reply to the Lab and kept on file; his words are quoted on his brief. Receipt does not verify the claims.",
+};
 analysis["david-russ"] = {
   values: ["Local control", "Smaller federal role"],
   tradeoff: "Returning lands, schools and utilities to state control and ending conditional federal grants would shift both authority and hundreds of billions of dollars; who funds those responsibilities afterward is not addressed in the reviewed pages.",
   issues: {
-    housing: { position: "Says nearly all his proposals would reduce homelessness by strengthening the economy, and opposes giving federal money to nonprofit organizations he says overpay their staff.", source: russEmail },
+    housing: { position: "Says nearly all his proposals would reduce homelessness by strengthening the economy, and opposes federal money for NGOs, which he says spend more on staff, consulting and programs that keep homeless people dependent than on helping them become independent.", source: russEmail2 },
     safety: { position: "Would secure the border and remove people who entered illegally, make aiding illegal border crossers a federal felony, and require U.S. attorneys to take roughly 98% of referred cases to trial.", source: russHome },
     money: { position: "Would end subsidies that benefit only large corporations and federal subsidy or loan programs for noncitizens, strip conditions from federal grants to states through a No Strings Act, and end what he calls the IRS manhunt of 1099 employers.", source: russHome },
     climate: { position: "Would return federal public lands to state and local control, end federal control of local utilities and infrastructure, and support responsible forest and agricultural management, reliable infrastructure and affordable energy decided locally.", source: russStatement },
@@ -846,7 +853,7 @@ analysis["david-russ"] = {
   sources: [russStatement, russHome, russBills],
 };
 lines.push(
-  line("david-russ", "housing", "Economic growth to cut homelessness; opposes funding nonprofits he says overpay staff."),
+  line("david-russ", "housing", "Growth to cut homelessness; opposes federal funds for NGOs he says keep people dependent."),
   line("david-russ", "safety", "Would secure the border, remove unauthorized entrants, make aiding illegal crossings a felony."),
   line("david-russ", "money", "Would end corporate subsidies and noncitizen loan programs, strip conditions from federal grants."),
   line("david-russ", "climate", "Would transfer federal public lands to state and local control; affordable energy decided locally."),
