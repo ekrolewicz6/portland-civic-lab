@@ -187,7 +187,7 @@ analysis["jeff-merkley"] = {
     housing: { position: "Would ban hedge funds from buying single-family homes and names housing, with affordable daycare, as one of four foundations for families to thrive.", source: merkleyStatement },
     safety: { position: "Wants an end to ICE agents operating as what he calls secret police: no operations at schools, no warrantless home raids, and full accountability for civil-rights violations.", source: merkleyStatement },
     money: { position: "Wants the rich to pay their fair share, an end to congressional stock trading and to drug-company price gouging; his site adds overturning Citizens United and ending secret campaign money.", source: merkleyStatement },
-    climate: { position: "Would rapidly shift from fossil fuels to cheaper renewables, toward 100% clean energy with a Green New Deal that creates jobs in front-line communities.", source: merkleyStatement },
+    climate: { position: "Would rapidly transition from dirty, expensive fossil fuels to cheaper, cleaner renewables.", source: merkleyStatement },
   },
   sources: [merkleyStatement, merkleyIssues],
 };
@@ -195,9 +195,9 @@ analysis["david-brock-smith"] = {
   values: ["Spending restraint", "Enforcement with treatment"],
   tradeoff: "No new taxes plus more treatment capacity and forest work means paying through cuts or growth the reviewed materials do not itemize; camping enforcement is mostly local and state authority, not the Senate's.",
   issues: {
-    safety: { position: "Wants drug and mental-health treatment paired with accountability, an end to permanent street camping, and support for law enforcement with consequences for repeat offenders.", source: dbsStatement },
-    money: { position: "Wants no new taxes, more support for local businesses, elimination of fraud and less unnecessary government spending; cites fighting the state gas tax and stopping tax hikes.", source: dbsStatement },
-    climate: { position: "Would hold data centers accountable for water, farmland and energy costs so those costs are not shifted onto households, and push active forest management, fuel reduction and landowner partnerships to cut wildfire risk.", source: dbsStatement },
+    safety: { position: "Wants drug and mental-health treatment paired with accountability, an end to permanent street camping, and support for law enforcement with consequences for repeat offenders.", source: dbsIssues},
+    money: { position: "Wants no new taxes, more support for local businesses, elimination of fraud and less unnecessary government spending.", source: dbsIssues},
+    climate: { position: "Would ensure data centers are accountable, protect natural resources and keep data-center costs for water, farmland and energy from being shifted onto Oregon households.", source: dbsStatement },
   },
   sources: [dbsStatement, dbsIssues],
 };
@@ -214,13 +214,13 @@ analysis["chris-henry"] = {
 lines.push(
   line("david-brock-smith", "safety", "Wants treatment with accountability, an end to permanent street camping, support for police."),
   line("david-brock-smith", "money", "Wants no new taxes, fraud eliminated and unnecessary government spending reduced."),
-  line("david-brock-smith", "climate", "Would keep data-center costs off households and expand forest fuel reduction against wildfire."),
+  line("david-brock-smith", "climate", "Would keep data-center costs off Oregon households and protect natural resources."),
   line("chris-henry", "money", "Would end billionaire tax breaks, tax oil windfalls, triple the federal minimum wage."),
   line("chris-henry", "climate", "Would expand local wind and solar and create a federal Cascadia earthquake fund."),
   line("jeff-merkley", "housing", "Would ban hedge funds from buying single-family homes."),
   line("jeff-merkley", "safety", "Wants no ICE operations at schools, no warrantless home raids, accountability for violations."),
   line("jeff-merkley", "money", "Wants the rich paying a fair share and an end to drug price gouging."),
-  line("jeff-merkley", "climate", "Would rapidly shift from fossil fuels to cheaper renewables, toward 100% clean energy."),
+  line("jeff-merkley", "climate", "Would rapidly shift from fossil fuels to cheaper, cleaner renewables."),
 );
 chips.push(
   chip("david-brock-smith", "safety", "End permanent camping"),
@@ -231,7 +231,7 @@ chips.push(
   chip("jeff-merkley", "housing", "No hedge-fund homebuying"),
   chip("jeff-merkley", "safety", "No warrantless ICE raids"),
   chip("jeff-merkley", "money", "Rich pay fair share"),
-  chip("jeff-merkley", "climate", "100% renewable energy"),
+  chip("jeff-merkley", "climate", "Rapid shift to renewables"),
 );
 deliveries.push(
   delivery("david-brock-smith", "safety"),
@@ -329,9 +329,9 @@ analysis["suzanne-bonamici"] = {
   tradeoff: "Expanding the housing tax credit, Medicare for All and debt-free college depend on repealing the 2017 tax cuts and on new majorities; the reviewed pages give direction and bills introduced, not a costed sequence.",
   issues: {
     housing: { position: "Would increase Low-Income Housing Tax Credit funding, convert unused buildings into affordable housing, fund housing paired with child-care centers, and expand transitional housing for people in recovery.", source: bonamiciHousing },
-    safety: { position: "Is leading legislation requiring clear identification of every ICE agent making immigration arrests and limiting when federal law enforcement, the armed forces or the National Guard can be sent into cities; wants humane immigration reform.", source: bonamiciImmigration },
-    money: { position: "Would repeal the Trump tax cuts in favor of progressive taxation, raise the federal minimum wage, enforce antitrust laws, end what she calls chaotic tariffs, and fight cuts to SNAP and Medicaid.", source: bonamiciEconomy },
-    climate: { position: "Would defend Inflation Reduction Act clean-energy programs and pursue the Select Committee plan for net-zero emissions by mid-century; opposes data centers raising costs or exploiting natural resources.", source: bonamiciClimate },
+    safety: { position: "Is leading legislation requiring clear identification of every ICE agent making immigration arrests and limiting when federal law enforcement, the armed forces or the National Guard can be sent into cities to carry out immigration policy; wants humane immigration reform.", source: bonamiciImmigration },
+    money: { position: "Would repeal the Trump tax cuts in favor of progressive taxation, raise the federal minimum wage, enforce antitrust laws and end what she calls chaotic and nonsensical trade policies.", source: bonamiciEconomy },
+    climate: { position: "Would defend Inflation Reduction Act clean-energy programs and pursue the Select Committee plan for net-zero emissions by mid-century.", source: bonamiciClimate },
   },
   sources: [bonamiciStatement, bonamiciHousing, bonamiciEconomy, bonamiciClimate, bonamiciImmigration],
 };
@@ -352,12 +352,12 @@ lines.push(
   line("barbara-j-kahl", "money", "Would cut redundant federal regulations and taxes; no blank checks for special interests."),
   line("barbara-j-kahl", "climate", "Wants forest management that sustains both the environment and timber communities."),
   line("suzanne-bonamici", "housing", "Would expand the low-income housing tax credit and convert unused buildings into homes."),
-  line("suzanne-bonamici", "safety", "Would require ICE agents to identify themselves and limit federal deployments into cities."),
+  line("suzanne-bonamici", "safety", "Would require ICE agents to identify themselves and limit deployments for immigration enforcement."),
   line("suzanne-bonamici", "money", "Would repeal Trump-era tax cuts, raise the federal minimum wage, end chaotic tariffs."),
   line("suzanne-bonamici", "climate", "Would defend clean-energy programs and pursue net-zero emissions by mid-century."),
 );
 chips.push(
-  chip("barbara-j-kahl", "housing", "Supply at every price"), chip("barbara-j-kahl", "safety", "Fund local police"),
+  chip("barbara-j-kahl", "housing", "Supply at every price"), chip("barbara-j-kahl", "safety", "Funded, accountable police"),
   chip("barbara-j-kahl", "money", "Cut regulations and taxes"), chip("barbara-j-kahl", "climate", "Timber and environment"),
   chip("suzanne-bonamici", "housing", "Expand housing tax credit"), chip("suzanne-bonamici", "safety", "ICE agent identification"),
   chip("suzanne-bonamici", "money", "Repeal Trump tax cuts"), chip("suzanne-bonamici", "climate", "Net-zero by mid-century"),
@@ -417,7 +417,7 @@ analysis["chris-beck"] = {
   issues: {
     housing: { position: "Would trim tax breaks on vacation and luxury homes to fund low-interest loans for first-time rural buyers, steer USDA rural housing programs toward small-town Main Streets rather than sprawl, and pilot senior housing on public university campuses.", source: beckIssues },
     money: { position: "Would repeal H.R. 1 to restore Medicaid and SNAP funding, end tariffs and the Iran war, balance the federal budget and reduce the national debt, and fortify Social Security and Medicare.", source: beckStatement },
-    climate: { position: "Would reverse the 40% cut to Forest Service wildfire prevention, pause new data-center construction, create a rural service corps in each county to restore forests and watersheds, and expand conservation easement programs.", source: beckStatement },
+    climate: { position: "Would reverse cuts to wildfire prevention and forest management, pause new data-center construction, create rural service corps jobs in each county and rehabilitate Oregon’s public lands, rivers and forests.", source: beckStatement },
   },
   sources: [beckStatement, beckIssues],
 };
@@ -426,8 +426,8 @@ analysis["cliff-bentz"] = {
   tradeoff: "More timber harvest, water storage and lower taxes with less regulation are a consistent program; the campaign's issue pages carry pandemic-era language, so which commitments are current for 2026 is the open question.",
   issues: {
     safety: { position: "Supports a secure border and stopping illegal immigration by improving border security and completing the wall.", source: bentzBorders },
-    money: { position: "Supports lower taxes, reduced regulation and directing investment toward rural Oregon.", source: bentzStatement },
-    climate: { position: "Wants more energy generation, reservoir storage, hydropower, retained dams, irrigation water and increased timber harvest; opposes carbon pricing and would reduce fuel loads on federal forests and change the Equal Access to Justice Act.", source: bentzStatement },
+    money: { position: "Supports lower taxes; his statement names no specific tax or spending change.", source: bentzStatement },
+    climate: { position: "Wants more energy generation, reservoir storage, hydropower, retained dams, irrigation water and increased timber harvest.", source: bentzStatement },
   },
   sources: [bentzStatement, bentzBorders, bentzForests],
 };
@@ -436,12 +436,12 @@ lines.push(
   line("chris-beck", "money", "Would restore Medicaid and food benefits, end tariffs, and balance the federal budget."),
   line("chris-beck", "climate", "Would restore wildfire-prevention funding, pause data centers, create rural forest service corps."),
   line("cliff-bentz", "safety", "Supports a secure border and completing the border wall."),
-  line("cliff-bentz", "money", "Supports lower taxes, less regulation and investment directed to rural Oregon."),
-  line("cliff-bentz", "climate", "Wants more hydropower, dams kept, more timber harvest; opposes carbon pricing."),
+  line("cliff-bentz", "money", "Supports lower taxes."),
+  line("cliff-bentz", "climate", "Wants more hydropower, dams kept, irrigation water and more timber harvest."),
 );
 chips.push(
   chip("chris-beck", "housing", "Rural first-buyer loans"), chip("chris-beck", "money", "Restore Medicaid funding"), chip("chris-beck", "climate", "Restore wildfire funding"),
-  chip("cliff-bentz", "safety", "Complete border wall"), chip("cliff-bentz", "money", "Lower taxes, fewer rules"), chip("cliff-bentz", "climate", "More timber and hydropower"),
+  chip("cliff-bentz", "safety", "Complete border wall"), chip("cliff-bentz", "money", "Lower taxes"), chip("cliff-bentz", "climate", "More timber and hydropower"),
 );
 deliveries.push(
   delivery("chris-beck", "housing", {
@@ -500,7 +500,7 @@ analysis["maxine-e-dexter"] = {
   tradeoff: "Expanding housing tax credits, a single-payer path and 100% clean electricity all rely on federal money and majorities; the reviewed pages set the direction and some bills, not the order or the cost.",
   issues: {
     housing: { position: "Would expand the Low-Income Housing Tax Credit, the HOME program and the National Housing Trust Fund, fund innovative and green construction, and support rental assistance and down-payment help for first-time buyers.", source: dexterHousing },
-    safety: { position: "Would abolish ICE, pass the CLEAR ID Act to end anonymous raids, oppose ICE and CBP funding until raids stop and due process is restored, and bring federal money for detox beds and treatment over punishment.", source: dexterImmigration },
+    safety: { position: "Would work to dismantle and abolish ICE, pass the CLEAR ID Act to end anonymous raids, and vote no on ICE and CBP funding until both agencies end unconstitutional raids and fully restore due process.", source: dexterImmigration },
     money: { position: "Would close corporate tax loopholes and make billionaires pay more, raise the federal minimum wage to $15 tied to inflation, and pass the PRO Act and nationwide paid leave.", source: dexterEconomy },
     climate: { position: "Would pass a Green New Deal, move to 100% clean electricity nationwide, ban new fossil-fuel infrastructure on public lands and offshore, bury power lines and expand EV charging.", source: dexterClimate },
   },
@@ -508,7 +508,7 @@ analysis["maxine-e-dexter"] = {
 };
 lines.push(
   line("maxine-e-dexter", "housing", "Would expand federal housing tax credits and trust funds, plus rental and down-payment aid."),
-  line("maxine-e-dexter", "safety", "Would abolish ICE and withhold its funding until raids stop; federal money for treatment."),
+  line("maxine-e-dexter", "safety", "Would abolish ICE and vote no on its funding until unconstitutional raids end."),
   line("maxine-e-dexter", "money", "Would close corporate loopholes, tax billionaires more, raise the minimum wage to $15."),
   line("maxine-e-dexter", "climate", "Would move to 100% clean electricity and ban new fossil-fuel projects on public lands."),
 );
@@ -571,7 +571,7 @@ analysis["val-hoyle"] = {
   tradeoff: "Vouchers, a renter tax credit and restored premium credits all cost recurring money; the reviewed pages list the supports and past wins, not how the continuing costs would be paid.",
   issues: {
     housing: { position: "Would invest in affordable and workforce housing, create a renter tax credit for high-cost areas, expand down-payment assistance for first-time buyers and public servants, and increase Housing Choice Vouchers.", source: hoyleIssues },
-    money: { position: "Would restore the Affordable Care Act's enhanced premium tax credits and clean-energy tax credits, expand and protect Social Security and Medicare, take on drug and grocery price-fixing, and fight tariffs she calls illegal.", source: hoyleIssues },
+    money: { position: "Would restore the Affordable Care Act's enhanced premium tax credits and clean-energy tax credits, expand and protect Social Security and Medicare, force lower drug prices, crack down on grocery price-fixing and refund small businesses for tariffs she calls illegal.", source: hoyleIssues },
     climate: { position: "Would push for billions in federal wildfire-risk investment, a constitutional amendment guaranteeing a right to a safe climate, new protections for Southwest Oregon rivers, and a transition off fossil fuels toward clean energy.", source: hoyleIssues },
   },
   sources: [hoyleStatement, hoyleIssues],
@@ -580,9 +580,9 @@ analysis["monique-despain"] = {
   values: ["Enforcement plus treatment", "Regulatory relief"],
   tradeoff: "Her immigration plan pairs tighter enforcement with a one-time route to legal status, and her homelessness plan pairs camping enforcement with more treatment; both need money her tax and spending cuts would have to leave in place.",
   issues: {
-    housing: { position: "Would end permitting costs, building regulations, local codes and land-use restrictions she says stifle construction, with the federal government lifting housing restrictions and encouraging workforce housing.", source: despainIssues },
+    housing: { position: "Would end what she calls prohibitive, inflationary policies that stifle construction, including excessive permitting costs, building regulations, local codes and outdated land-use restrictions, with the federal government lifting housing restrictions and encouraging workforce housing.", source: despainIssues },
     safety: { position: "Would expand shelter, treatment and recovery housing with measured outcomes, enforce laws against public camping and drug use, fund border security with barriers, sensors and staffing, remove noncitizens who commit serious crimes, and offer long-settled noncriminal residents a one-time earned path to lawful status.", source: despainIssues },
-    money: { position: "Would cut regulations, fix permitting systems and reduce what she calls punitive taxation, end tax-and-spend policies she says fuel inflation and the national debt, and root out fraud and failed programs.", source: despainIssues },
+    money: { position: "Would cut excessive regulations, fix broken permitting systems and reduce what she calls punitive taxation, and end tax-and-spend policies she says fuel inflation and the national debt.", source: despainIssues },
     climate: { position: "Would restore active forest management with thinning, salvage and prescribed fire, rescind the 2001 Roadless Rule, require rapid fire suppression, and pursue an all-of-the-above energy strategy without bans or forced transitions.", source: despainIssues },
   },
   sources: [despainStatement, despainIssues],
@@ -591,29 +591,29 @@ analysis["justin-filip"] = {
   values: ["Public ownership", "Demilitarized budgets"],
   tradeoff: "Nationalizing energy and rail, Medicare for All and a $25 minimum wage are financed in his plan by cutting the military budget by half or more; each is a major bill with no sequencing in the reviewed pages.",
   issues: {
-    housing: { position: "Wants federal dollars brought back to the district for the housing and unhoused crisis, and involuntary homelessness abolished.", source: filipMeet },
+    housing: { position: "Wants federal dollars brought back to the district to help address the housing and unhoused crisis.", source: filipMeet },
     safety: { position: "Would abolish ICE and replace it with an Office of Citizenship, Refugees and Immigration Services, grant amnesty with a path to citizenship, ban private prisons, end qualified immunity and put policing under community oversight boards.", source: filipPlatform },
     money: { position: "Would cut tax burdens for families under $75,000, lift the Social Security contribution cap and extend it to capital gains, raise taxes on the ultra-wealthy, set a $25 minimum wage and cut military spending 50 to 75 percent.", source: filipPlatform },
-    climate: { position: "Would declare a national climate emergency, pass a Green New Deal, ban fracking and fossil-fuel subsidies, nationalize energy and rail for renewable power and high-speed rail, and ban privately built data centers.", source: filipPlatform },
+    climate: { position: "Would declare a national climate emergency, pass a Green New Deal, ban fracking, eliminate fossil-fuel subsidies and nationalize energy and rail for renewable power and high-speed rail.", source: filipPlatform },
   },
   sources: [filipStatement, filipPlatform, filipMeet, filipHome],
 };
 lines.push(
   line("monique-despain", "housing", "Would cut permit costs, building rules and land-use limits to spur home construction."),
   line("monique-despain", "safety", "Would expand treatment, enforce camping laws, secure the border, and offer earned legal status."),
-  line("monique-despain", "money", "Would reduce taxes and regulations, end funding for failed programs, root out fraud."),
+  line("monique-despain", "money", "Would cut excessive regulations, reduce taxes and end what she calls tax-and-spend policies."),
   line("monique-despain", "climate", "Would thin and salvage federal forests, rescind the Roadless Rule, keep all energy options."),
-  line("justin-filip", "housing", "Wants federal dollars for the district’s housing crisis and involuntary homelessness abolished."),
+  line("justin-filip", "housing", "Wants federal dollars brought back to the district for the housing and unhoused crisis."),
   line("justin-filip", "safety", "Would abolish ICE, ban private prisons, end qualified immunity (police liability shield)."),
   line("justin-filip", "money", "Would cut taxes under $75,000, tax the ultra-wealthy, cut military spending 50–75%."),
   line("justin-filip", "climate", "Would declare a climate emergency, ban fracking, nationalize energy and rail systems."),
   line("val-hoyle", "housing", "Would add housing vouchers, a renter tax credit and down-payment help for first-time buyers."),
-  line("val-hoyle", "money", "Would restore health-insurance premium credits, protect Social Security and Medicare, fight tariffs."),
+  line("val-hoyle", "money", "Would restore health-insurance premium credits, protect Social Security and Medicare, refund tariff costs."),
   line("val-hoyle", "climate", "Would fund wildfire-risk reduction, protect Southwest Oregon rivers, move off fossil fuels."),
 );
 chips.push(
   chip("monique-despain", "housing", "Fewer building rules"), chip("monique-despain", "safety", "Enforcement plus treatment"),
-  chip("monique-despain", "money", "Lower taxes, cut fraud"), chip("monique-despain", "climate", "Active forest management"),
+  chip("monique-despain", "money", "Cut taxes and regulation"), chip("monique-despain", "climate", "Active forest management"),
   chip("justin-filip", "housing", "Federal housing dollars"), chip("justin-filip", "safety", "Abolish ICE"),
   chip("justin-filip", "money", "Cut military 50–75%"), chip("justin-filip", "climate", "Nationalize energy, rail"),
   chip("val-hoyle", "housing", "Vouchers and renter credit"), chip("val-hoyle", "money", "Restore premium credits"), chip("val-hoyle", "climate", "Fund wildfire prevention"),
@@ -715,10 +715,10 @@ analysis["janelle-s-bynum"] = {
   values: ["Housing supply", "Health-coverage protection"],
   tradeoff: "Her pages describe bills introduced and money brought home rather than a costed program; lowering housing and health costs through Congress depends on which of those bills can pass.",
   issues: {
-    housing: { position: "Would tackle housing shortages, construction-workforce gaps and financing barriers through legislation, expand pathways to homeownership and address youth homelessness.", source: bynumHousing },
-    safety: { position: "Wants people off the streets through homelessness prevention, more shelter capacity and mental-health services, and opposes what she calls a federal takeover of communities by ICE.", source: bynumStatement },
-    money: { position: "Would lower costs from groceries to housing to health care, protect Medicare, expand Medicaid, defend the Oregon Health Plan against federal cuts, and lower prescription prices.", source: bynumStatement },
-    climate: { position: "Would generate more clean energy, transition away from fossil fuels and protect communities and land from wildfires.", source: bynumClimate },
+    housing: { position: "Has introduced legislation to tackle housing shortages, workforce gaps and affordability barriers, expand pathways to homeownership and address youth homelessness.", source: bynumHousing },
+    safety: { position: "Opposes what she calls a federal takeover of communities by Trump’s ICE, which she accuses of rounding up people based on the color of their skin.", source: bynumStatement },
+    money: { position: "Would lower costs from groceries to housing to health care and push back against what she calls Trump administration efforts to gut the Oregon Health Plan.", source: bynumStatement },
+    climate: { position: "Supports efforts to generate more clean energy, transition away from fossil fuels and protect communities, property and land from wildfires.", source: bynumClimate },
   },
   sources: [bynumStatement, bynumHousing, bynumHomeless, bynumClimate],
 };
@@ -726,7 +726,7 @@ analysis["patti-adair"] = {
   values: ["Fiscal oversight", "Law-enforcement support"],
   tradeoff: "Permanent no-tax-on-tips, overtime and Social Security plus a larger child tax credit reduce revenue while she promises to eliminate waste; the reviewed pages do not size either side.",
   issues: {
-    safety: { position: "Would fully support law enforcement to keep communities safe; cites working with law enforcement and adding two circuit judges as a county commissioner.", source: adairPriorities },
+    safety: { position: "Would fully support law enforcement to keep communities safe; cites increasing law-enforcement funding and delivering new judgeships as a county commissioner.", source: adairPriorities },
     money: { position: "Would make no tax on tips, overtime and Social Security permanent and raise the limits, increase the child tax credit, ban congressional insider trading and pay during shutdowns, and eliminate wasteful spending.", source: adairStatement },
     climate: { position: "Would require Big Tech to disclose data centers' effects on air, water and electricity costs, address rising electricity costs, and support sustainable management of natural resources.", source: adairStatement },
   },
@@ -743,21 +743,21 @@ analysis["andrea-townsend"] = {
   sources: [townsendQuestionnaire],
 };
 lines.push(
-  line("patti-adair", "safety", "Supports fully funding law enforcement to keep communities safe."),
+  line("patti-adair", "safety", "Would fully support law enforcement to keep communities safe."),
   line("patti-adair", "money", "Would make no-tax-on-tips permanent, raise the child tax credit, ban congressional insider trading."),
   line("patti-adair", "climate", "Would require data-center disclosure of air, water and electricity impacts; sustainable resource management."),
-  line("janelle-s-bynum", "housing", "Would target housing shortages, construction-workforce gaps and financing barriers, with ownership pathways."),
-  line("janelle-s-bynum", "safety", "Wants more shelter capacity and mental-health services; opposes federal ICE takeover of communities."),
-  line("janelle-s-bynum", "money", "Wants Medicare protected, Medicaid expanded and prescription prices lowered against federal cuts."),
-  line("janelle-s-bynum", "climate", "Would expand clean energy, move off fossil fuels and protect communities from wildfire."),
+  line("janelle-s-bynum", "housing", "Would target housing shortages, workforce gaps and affordability barriers, with ownership pathways."),
+  line("janelle-s-bynum", "safety", "Opposes what she calls a federal takeover of communities by ICE."),
+  line("janelle-s-bynum", "money", "Would lower grocery, housing and health costs and defend the Oregon Health Plan."),
+  line("janelle-s-bynum", "climate", "Supports efforts to expand clean energy, move off fossil fuels and protect against wildfire."),
   line("andrea-townsend", "housing", "Wants deeply affordable social housing (publicly owned) and tenant protections."),
   line("andrea-townsend", "money", "Wants war spending redirected to human and ecological needs."),
   line("andrea-townsend", "climate", "Wants climate action protecting land, water and biodiversity; transportation and energy within planetary limits."),
 );
 chips.push(
   chip("patti-adair", "safety", "Fully support police"), chip("patti-adair", "money", "No tax on tips"), chip("patti-adair", "climate", "Data-center disclosure"),
-  chip("janelle-s-bynum", "housing", "Fix supply and financing"), chip("janelle-s-bynum", "safety", "Shelter and mental health"),
-  chip("janelle-s-bynum", "money", "Protect Medicaid, Medicare"), chip("janelle-s-bynum", "climate", "Clean energy, wildfire"),
+  chip("janelle-s-bynum", "housing", "Supply and affordability"), chip("janelle-s-bynum", "safety", "Oppose ICE takeover"),
+  chip("janelle-s-bynum", "money", "Defend Oregon Health Plan"), chip("janelle-s-bynum", "climate", "Clean energy, wildfire"),
   chip("andrea-townsend", "housing", "Deeply affordable housing"), chip("andrea-townsend", "money", "Redirect war spending"), chip("andrea-townsend", "climate", "Protect land and water"),
 );
 deliveries.push(
@@ -821,9 +821,9 @@ analysis["andrea-salinas"] = {
   tradeoff: "Federal housing money, mental-health bills and drug-price caps are incremental and bipartisan by design; the reviewed pages show bills and grants, not which would come first under a tight budget.",
   issues: {
     housing: { position: "Would invest in affordable housing and emergency shelters, support legislation for two million affordable homes over a decade, and prioritize housing for unhoused people and unaccompanied homeless youth.", source: salinasIssues },
-    safety: { position: "Would fund first responders and social services, keep working with police on fentanyl including stiffer trafficker penalties, invest in smart border security, streamline immigration courts and protect communities from what she calls ICE's violent overreach.", source: salinasIssues },
-    money: { position: "Would cap prescription drug costs and let Medicare negotiate prices, seek middle-class tax relief instead of billionaire tax breaks, and bring living-wage jobs to Oregon.", source: salinasStatement },
-    climate: { position: "Would put Oregon on a path to 100% green energy, stand up to corporate polluters, and protect air and waterways; prioritizes public infrastructure over corporate-owned data centers.", source: salinasIssues },
+    safety: { position: "Would fund first responders and social services, keep working with police on fentanyl including stiffer trafficker penalties, invest in smart border security, streamline immigration courts and deliver certainty for immigrants already living here.", source: salinasIssues },
+    money: { position: "Would cap prescription drug costs and strengthen hospital price transparency, and seeks middle-class tax relief instead of billionaire tax breaks.", source: salinasStatement },
+    climate: { position: "Would put Oregon on a path to 100% green energy, stand up to corporate polluters and protect air and waterways.", source: salinasIssues },
   },
   sources: [salinasStatement, salinasIssues],
 };
@@ -839,24 +839,24 @@ analysis["david-russ"] = {
   tradeoff: "Returning lands, schools and utilities to state control and ending conditional federal grants would shift both authority and hundreds of billions of dollars; who funds those responsibilities afterward is not addressed in the reviewed pages.",
   issues: {
     housing: { position: "Says nearly all his proposals would reduce homelessness by strengthening the economy, and opposes giving federal money to nonprofit organizations he says overpay their staff.", source: russEmail },
-    safety: { position: "Would secure the border and remove people who entered illegally, make aiding illegal border crossers a federal felony, and require U.S. attorneys to take roughly 98% of referred cases to trial.", source: russHome },
-    money: { position: "Would end subsidies that benefit only large corporations and federal subsidy or loan programs for noncitizens, strip conditions from federal grants to states through a No Strings Act, and end what he calls the IRS manhunt of 1099 employers.", source: russHome },
-    climate: { position: "Would return federal public lands to state and local control, end federal control of local utilities and infrastructure, and support responsible forest and agricultural management, reliable infrastructure and affordable energy decided locally.", source: russStatement },
+    safety: { position: "Would make it a federal felony to aid or abet illegal border crossers.", source: russHome },
+    money: { position: "Would end subsidies that benefit only large corporations and federal subsidy or loan programs for noncitizens, and end what he calls the IRS manhunt of 1099 employers.", source: russHome },
+    climate: { position: "Would return federal public lands to state and local control and end federal control of local schools, utilities, businesses and infrastructure.", source: russHome},
   },
   sources: [russStatement, russHome, russBills],
 };
 lines.push(
   line("david-russ", "housing", "Economic growth to cut homelessness; opposes funding nonprofits he says overpay staff."),
-  line("david-russ", "safety", "Would secure the border, remove unauthorized entrants, make aiding illegal crossings a felony."),
-  line("david-russ", "money", "Would end corporate subsidies and noncitizen loan programs, strip conditions from federal grants."),
-  line("david-russ", "climate", "Would transfer federal public lands to state and local control; affordable energy decided locally."),
+  line("david-russ", "safety", "Would make aiding or abetting illegal border crossers a federal felony."),
+  line("david-russ", "money", "Would end subsidies benefiting only large corporations and federal loan programs targeting noncitizens."),
+  line("david-russ", "climate", "Would return federal public lands to state and local control; end federal utility control."),
   line("andrea-salinas", "housing", "Would fund affordable housing and shelters, backing a two-million-home national plan."),
   line("andrea-salinas", "safety", "Would fund police and social services, tighten fentanyl penalties, streamline immigration courts."),
   line("andrea-salinas", "money", "Would cap prescription costs, seek middle-class tax relief over billionaire tax breaks."),
   line("andrea-salinas", "climate", "Would push toward 100% green energy and hold corporate polluters accountable."),
 );
 chips.push(
-  chip("david-russ", "housing", "Growth, not NGO funding"), chip("david-russ", "safety", "Secure border, removals"), chip("david-russ", "money", "End corporate subsidies"), chip("david-russ", "climate", "Local control of lands"),
+  chip("david-russ", "housing", "Growth, not NGO funding"), chip("david-russ", "safety", "Aiding crossings a felony"), chip("david-russ", "money", "End big-firm subsidies"), chip("david-russ", "climate", "Local control of lands"),
   chip("andrea-salinas", "housing", "Two million homes"), chip("andrea-salinas", "safety", "Fund police and services"),
   chip("andrea-salinas", "money", "Cap drug prices"), chip("andrea-salinas", "climate", "100% green energy"),
 );
@@ -1143,9 +1143,9 @@ topicStances.push(
   stance("jeff-merkley", "fed-fix-our-forests", "partial", "Biomass markets bill",
     "Introduced the Wildfire Reduction Market Expansion Act with Rep. Bentz on July 22, 2026, paying for hazardous-fuel removal through the Renewable Fuel Standard; the Senate has not voted on the Fix Our Forests Act.", merkleyBiomass),
   stance("jeff-merkley", "fed-housing-aid", "supports", "Voted for ROAD Act",
-    "Voted yes on June 22, 2026 on final passage of the 21st Century ROAD to Housing Act (85–5), which became law July 11, 2026.", housingSenate),
-  stance("jeff-merkley", "fed-data-centers", "partial", "Asked state to act",
-    "With Sen. Wyden, asked Oregon’s data center advisory committee on July 2, 2026 to weigh rising electricity costs, water use, farmland rezoning and tribal rights; the letter proposes no federal action.", merkleyDataCenters),
+    "Voted yes on June 22, 2026 to concur, with a further amendment, in the House changes to the 21st Century ROAD to Housing Act (85–5); it became law July 11, 2026.", housingSenate),
+  stance("jeff-merkley", "fed-data-centers", "partial", "Asked state to weigh",
+    "With Sen. Wyden, asked Oregon’s data center advisory committee on July 2, 2026 to weigh rising electricity costs, water use, farmland rezoning and tribal rights alongside data centers’ benefits; the letter proposes no federal action.", merkleyDataCenters),
 
   /* ── District 1 ── */
   stance("barbara-j-kahl", "fed-hr1-medicaid", "partial", "Spending constraints",
@@ -1155,7 +1155,7 @@ topicStances.push(
     "Would use federal incentives to reduce financing barriers for first-time buyers and working families and streamline permitting; she does not address vouchers or the housing tax credit.", kahlHome),
   stance("suzanne-bonamici", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
   stance("suzanne-bonamici", "fed-aca-credits", "supports", "Voted to restore", ACA_HOUSE_YES, acaHouse),
-  stance("suzanne-bonamici", "fed-tariffs", "supports", "Voted to end tariffs", TARIFF_HOUSE_YES, tariffHouse),
+  stance("suzanne-bonamici", "fed-tariffs", "supports", "Voted: end Canada tariffs", TARIFF_HOUSE_YES, tariffHouse),
   stance("suzanne-bonamici", "fed-ice-funding", "opposes", "Voted no", ICE_HOUSE_NO, iceHouse),
   stance("suzanne-bonamici", "fed-iran-war", "supports", "Voted to end involvement", IRAN_HOUSE_YES, iranHouse),
   stance("suzanne-bonamici", "fed-fix-our-forests", "opposes", "Voted no", FOFA_HOUSE_NO, fofaHouse),
@@ -1169,7 +1169,7 @@ topicStances.push(
   stance("chris-beck", "fed-aca-credits", "partial", "Premiums skyrocketing",
     "Says premiums for everybody with Marketplace plans have skyrocketed and would expand rural health-care access; he does not say whether he would restore the expired enhanced premium tax credits.", beckIssues),
   stance("chris-beck", "fed-tariffs", "supports", "End the tariffs",
-    "Would repeal the tariffs, which he says cost rural Oregon wheat and fruit markets abroad, and seek a bipartisan approach to trade and legal immigration.", beckIssues),
+    "Would repeal the tariffs, which he says cost rural Oregon wheat and fruit markets abroad, and seek a sensible, bipartisan approach to legal immigration.", beckIssues),
   stance("chris-beck", "fed-iran-war", "supports", "End the Iran war",
     "Would end the Iran war, counting 18 American lives lost, 600-plus wounded and more than $100 billion spent, and blames it for high gas and diesel prices; he does not name the war-powers resolutions.", beckIssues),
   stance("chris-beck", "fed-fix-our-forests", "partial", "Restore Forest Service cuts",
@@ -1177,13 +1177,13 @@ topicStances.push(
   stance("chris-beck", "fed-housing-aid", "partial", "Rural housing programs",
     "Would steer USDA rural housing and Community Facilities lending toward Main Street districts and fund low-interest loans for first-time rural buyers by trimming vacation-home tax breaks; vouchers and the housing tax credit go unmentioned.", beckIssues),
   stance("chris-beck", "fed-data-centers", "supports", "Pause new data centers",
-    "Would pause new data-center construction, saying data centers in some communities pollute the water and raise energy prices, so everyone pays.", beckIssues),
+    "Lists pausing new data-center construction among the things he will fight for in Congress.", beckStatement),
   stance("cliff-bentz", "fed-hr1-medicaid", "supports", "Voted yes",
     "Voted yes on final House passage of H.R. 1 on July 3, 2025 (218–214), a vote on the whole package, including the Medicaid work rules, six-month renewals and SNAP cuts.", hr1House),
   stance("cliff-bentz", "fed-aca-credits", "opposes", "Voted no",
     "Voted no on January 8, 2026 on H.R. 1834, the three-year restoration of the enhanced premium tax credits, which passed 230–196.", acaHouse),
-  stance("cliff-bentz", "fed-tariffs", "opposes", "Voted to keep tariffs",
-    "Voted no on February 11, 2026 on H.J.Res. 72, which ended the national emergency behind the Canada tariffs (219–211).", tariffHouse),
+  stance("cliff-bentz", "fed-tariffs", "opposes", "Voted: keep Canada tariffs",
+    "Voted no on February 11, 2026 on H.J.Res. 72 to end the national emergency behind the Canada tariffs; it passed the House 219–211.", tariffHouse),
   stance("cliff-bentz", "fed-ice-funding", "supports", "Voted yes",
     "Voted yes on June 9, 2026 on the Secure America Act’s $70 billion for ICE and Border Patrol through 2029; it passed 214–212.", iceHouse),
   stance("cliff-bentz", "fed-iran-war", "opposes", "Voted no",
@@ -1196,7 +1196,7 @@ topicStances.push(
   /* ── District 3 ── */
   stance("maxine-e-dexter", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
   stance("maxine-e-dexter", "fed-aca-credits", "supports", "Voted to restore", ACA_HOUSE_YES, acaHouse),
-  stance("maxine-e-dexter", "fed-tariffs", "supports", "Voted to end tariffs", TARIFF_HOUSE_YES, tariffHouse),
+  stance("maxine-e-dexter", "fed-tariffs", "supports", "Voted: end Canada tariffs", TARIFF_HOUSE_YES, tariffHouse),
   stance("maxine-e-dexter", "fed-ice-funding", "opposes", "Voted no", ICE_HOUSE_NO, iceHouse),
   stance("maxine-e-dexter", "fed-iran-war", "supports", "Voted to end involvement", IRAN_HOUSE_YES, iranHouse),
   stance("maxine-e-dexter", "fed-fix-our-forests", "opposes", "Voted no", FOFA_HOUSE_NO, fofaHouse),
@@ -1208,7 +1208,7 @@ topicStances.push(
   stance("monique-despain", "fed-fix-our-forests", "supports", "Supported from the start",
     "Says she supported the Fix Our Forests Act from the beginning and has filed public comment backing rescission of the 2001 Roadless Rule; wants thinning, salvage harvests and rapid fire suppression.", despainIssues),
   stance("monique-despain", "fed-housing-aid", "partial", "Lift federal restrictions",
-    "Would have the federal government lift housing restrictions and encourage workforce housing, ending permitting costs and land-use rules she says stifle construction; she does not address vouchers or tax credits.", despainIssues),
+    "Would have the federal government lift housing restrictions and encourage workforce housing, ending excessive permitting costs and outdated land-use rules she says stifle construction; she does not address vouchers or tax credits.", despainIssues),
   stance("justin-filip", "fed-aca-credits", "partial", "Medicare for All",
     "Would implement a national improved Medicare for All program guaranteeing universal access; he does not say whether he would restore the expired premium tax credits in the meantime.", filipPlatform),
   stance("justin-filip", "fed-tariffs", "partial", "Fair trade agreements",
@@ -1216,36 +1216,36 @@ topicStances.push(
   stance("justin-filip", "fed-ice-funding", "opposes", "Abolish ICE",
     "Would abolish ICE and replace it with an Office of Citizenship, Refugees and Immigration Services, with amnesty and a path to citizenship.", filipPlatform),
     // Not a stance: a military-spending goal that names neither the war nor the resolutions; left as a gap.
-  stance("justin-filip", "fed-fix-our-forests", "opposes", "A trojan horse",
-    "Calls the Fix Our Forests Act a trojan horse for gutting bedrock environmental laws under the guise of wildfire management, and asks the Senate to reject it.", filipHome),
+  stance("justin-filip", "fed-fix-our-forests", "opposes", "Faults Hoyle’s yes vote",
+    "Faults Rep. Hoyle’s yes vote on the Fix Our Forests Act, against the advice of more than 80 environmental groups, and quotes Earthjustice calling it a trojan horse for gutting bedrock environmental laws.", filipHome),
   stance("justin-filip", "fed-housing-aid", "partial", "Federal housing dollars",
-    "Wants federal dollars brought back to the district for the housing and unhoused crisis and involuntary homelessness abolished; he does not address the ROAD Act, vouchers or tax credits.", filipMeet),
+    "Wants federal dollars brought back to the district for the housing and unhoused crisis; he does not address the ROAD Act, vouchers or tax credits.", filipMeet),
   stance("justin-filip", "fed-data-centers", "supports", "Ban private data centers",
     "Would ban privately built data centers, saying they strain the grid, drive up rates and consume massive amounts of water, and calls for public ownership of such infrastructure.", filipHome),
   stance("val-hoyle", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
   stance("val-hoyle", "fed-aca-credits", "supports", "Voted to restore", ACA_HOUSE_YES, acaHouse),
-  stance("val-hoyle", "fed-tariffs", "supports", "Voted to end tariffs", TARIFF_HOUSE_YES, tariffHouse),
+  stance("val-hoyle", "fed-tariffs", "supports", "Voted: end Canada tariffs", TARIFF_HOUSE_YES, tariffHouse),
   stance("val-hoyle", "fed-ice-funding", "opposes", "Voted no", ICE_HOUSE_NO, iceHouse),
   stance("val-hoyle", "fed-iran-war", "supports", "Voted to end involvement", IRAN_HOUSE_YES, iranHouse),
   stance("val-hoyle", "fed-fix-our-forests", "supports", "Voted yes", FOFA_HOUSE_YES, fofaHouse),
   stance("val-hoyle", "fed-housing-aid", "supports", "Voted for ROAD Act", ROAD_HOUSE_YES, housingHouse),
 
   /* ── District 5 ── */
-  stance("patti-adair", "fed-hr1-medicaid", "partial", "Make tax cuts permanent",
-    "Would make no tax on tips, overtime and Social Security permanent and raise the limits, and increase the child tax credit; she does not address Medicaid or SNAP.", adairStatement),
+  stance("patti-adair", "fed-hr1-medicaid", "partial", "Keep tips, overtime breaks",
+    "Would make no tax on tips, overtime and Social Security permanent and raise the child tax credit; she faults Bynum for voting against SNAP funding but does not address H.R. 1’s Medicaid or SNAP changes.", adairStatement),
   stance("patti-adair", "fed-ice-funding", "partial", "Backed funding compromise",
     "Criticized Rep. Bynum’s February 3, 2026 vote against a bipartisan funding package that included a short Homeland Security extension; she has not said whether she would fund the $70 billion ICE expansion.", adairShutdown),
-  stance("patti-adair", "fed-data-centers", "supports", "Data-center disclosure",
-    "Would propose legislation requiring Big Tech to be transparent about the impacts data centers have on air quality, water quality and electricity costs.", adairStatement),
+  stance("patti-adair", "fed-data-centers", "partial", "Data-center disclosure",
+    "Would propose legislation requiring Big Tech to be transparent about data centers’ impacts on air quality, water quality and electricity costs; she does not say whether to limit or fast-track them.", adairStatement),
   stance("janelle-s-bynum", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
   stance("janelle-s-bynum", "fed-aca-credits", "supports", "Voted to restore", ACA_HOUSE_YES, acaHouse),
-  stance("janelle-s-bynum", "fed-tariffs", "supports", "Voted to end tariffs", TARIFF_HOUSE_YES, tariffHouse),
+  stance("janelle-s-bynum", "fed-tariffs", "supports", "Voted: end Canada tariffs", TARIFF_HOUSE_YES, tariffHouse),
   stance("janelle-s-bynum", "fed-ice-funding", "opposes", "Voted no", ICE_HOUSE_NO, iceHouse),
   stance("janelle-s-bynum", "fed-iran-war", "supports", "Voted to end involvement", IRAN_HOUSE_YES, iranHouse),
   stance("janelle-s-bynum", "fed-fix-our-forests", "supports", "Voted yes", FOFA_HOUSE_YES, fofaHouse),
   stance("janelle-s-bynum", "fed-housing-aid", "supports", "Voted for ROAD Act", ROAD_HOUSE_YES, housingHouse),
   stance("janelle-s-bynum", "fed-data-centers", "partial", "Study bill drivers",
-    "Introduced the BILL Drivers Act on July 10, 2026 to have the Energy Information Administration report what is driving electricity bills, including data centers; it takes no position on fast-tracking or who pays.", bynumBillDrivers),
+    "Introduced the BILL Drivers Act on July 9, 2026 to have the Energy Information Administration report what is driving electricity bills, including data centers; it takes no position on fast-tracking or who pays.", bynumBillDrivers),
   stance("andrea-townsend", "fed-iran-war", "partial", "End war spending",
     "Would end war and redirect resources toward human and ecological needs; her questionnaire does not name the Iran war or the war-powers resolutions.", townsendQuestionnaire),
   stance("andrea-townsend", "fed-housing-aid", "partial", "Social housing",
@@ -1253,8 +1253,8 @@ topicStances.push(
 
   /* ── District 6 ── */
   // From his emailed reply of September 24, 2026; ICE funding and Fix Our Forests replace partial readings.
-  stance("david-russ", "fed-ice-funding", "supports", "Fund enforcement",
-    "Fully supports giving federal law enforcement enough money to do its job efficiently; says the border is now secured.", russEmail),
+  stance("david-russ", "fed-ice-funding", "partial", "Fund enforcement",
+    "Fully supports giving federal law enforcement sufficient funding to do its job efficiently and says the border is currently secured; he does not say whether the $70 billion package is that amount.", russEmail),
   stance("david-russ", "fed-fix-our-forests", "mixed", "Stopgap only",
     "Calls the Fix Our Forests Act “OK” but a bureaucratic maze; would support it only as a stopgap, saying the states could run the same program for less after federal lands are returned.", russEmail),
   stance("david-russ", "fed-hr1-medicaid", "supports", "Keep the rules",
@@ -1271,7 +1271,7 @@ topicStances.push(
     "Opposes federal involvement, saying lobbying would tilt deals toward data centers; local officials should negotiate terms, as he says some cities have done to secure benefits such as free power.", russEmail),
   stance("andrea-salinas", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
   stance("andrea-salinas", "fed-aca-credits", "supports", "Voted to restore", ACA_HOUSE_YES, acaHouse),
-  stance("andrea-salinas", "fed-tariffs", "supports", "Voted to end tariffs", TARIFF_HOUSE_YES, tariffHouse),
+  stance("andrea-salinas", "fed-tariffs", "supports", "Voted: end Canada tariffs", TARIFF_HOUSE_YES, tariffHouse),
   stance("andrea-salinas", "fed-ice-funding", "opposes", "Voted no", ICE_HOUSE_NO, iceHouse),
   stance("andrea-salinas", "fed-iran-war", "supports", "Voted to end involvement", IRAN_HOUSE_YES, iranHouse),
   stance("andrea-salinas", "fed-fix-our-forests", "opposes", "Voted no", FOFA_HOUSE_NO, fofaHouse),

@@ -178,17 +178,17 @@ const analysis: Record<string, CandidateAnalysis> = {
     issues: {
       housing: {
         position:
-          "Would set a 120-day maximum decision period for qualifying housing projects, limit repetitive appeals, expand private plan review, simplify commercial-to-housing conversions, create a state Housing Permit Command Center, and expand first-time-buyer credits and down-payment help from existing funds.",
+          "Would pursue a 120-day maximum decision period for qualifying housing projects, limit repetitive appeals, expand private plan review when government backlogs are excessive, simplify commercial-to-housing conversions, create a state Housing Permit Command Center, and expand first-time-buyer credits and down-payment help from existing funds.",
         source: drazanPlan,
       },
       safety: {
         position:
-          "Would audit homelessness and addiction spending, shift state money to recovery-focused programs, end funding for programs she says enable addiction, fully fund state police, let local governments clear public spaces and raise penalties for drug traffickers.",
+          "Would audit homelessness and addiction spending, shift state money to recovery-focused programs and homeless services, end funding for programs she says enable addiction, fully fund state police, let local governments clean up public spaces and raise penalties for drug traffickers.",
         source: drazanPlan,
       },
       money: {
         position:
-          "Would order agencies on day one to repeal rules and fees that raise costs, veto new taxes and fees, raise the standard deduction, reform the corporate activity and estate taxes, cut property taxes for seniors and veterans, and protect the kicker.",
+          "Would order agencies on day one to identify rules and fees that raise costs, veto new taxes and fees, raise the standard deduction, reform the corporate activity and estate taxes, cut property taxes for seniors and veterans, and protect the kicker.",
         source: drazanPlan,
       },
       climate: {
@@ -206,8 +206,8 @@ const analysis: Record<string, CandidateAnalysis> = {
     issues: {
       housing: {
         position:
-          "Would cut red tape to speed construction, expand options for renters and first-time buyers, and grow starter-home development and down-payment assistance; cites the housing emergency she declared and added shelter and treatment beds.",
-        source: kotekStatement,
+          "Would expand housing options for renters and first-time buyers, cut red tape to speed new construction, and increase starter-home development and down-payment assistance.",
+        source: kotekPlatform,
       },
       safety: {
         position:
@@ -234,7 +234,7 @@ const analysis: Record<string, CandidateAnalysis> = {
     issues: {
       safety: {
         position:
-          "Would bolster the volunteer Oregon Civil Defense Force, which he describes as a way to respond when federal agents act without a judge's warrant and to help with wildfires, and bars what he calls unconstitutional surveillance.",
+          "Would bolster the Oregon Civil Defense Force and pledges no unconstitutional surveillance.",
         source: smithStatement,
       },
       money: {
@@ -254,19 +254,19 @@ const analysis: Record<string, CandidateAnalysis> = {
 /* ── Lines and chips (alphabetical by displayed name, then by issue) ──── */
 
 const lines: IssueLine[] = [
-  line("christine-drazan", "housing", "Would cap housing permit decisions at 120 days and allow private plan reviewers."),
-  line("christine-drazan", "safety", "Would audit homelessness spending, fund recovery over low-barrier shelter, let cities clear public spaces."),
+  line("christine-drazan", "housing", "Would pursue a 120-day decision limit for qualifying housing projects and fewer repeat appeals."),
+  line("christine-drazan", "safety", "Would audit homelessness spending, prioritize recovery, let cities clean up public spaces."),
   line("christine-drazan", "money", "Would veto new taxes, raise the standard deduction, reform corporate and estate taxes."),
   line("christine-drazan", "climate", "Would repeal the Climate Protection Program (state carbon limits) and seek lowest-cost power."),
 
   line("tina-kotek", "housing", "Would cut red tape to build homes faster, with starter homes and down-payment help."),
   line("tina-kotek", "safety", "Opposes ICE detention sites in Oregon; more treatment beds for addiction and mental health."),
-  line("tina-kotek", "money", "Would ban personal-data pricing and hidden fees, keep data-center power costs off household bills."),
+  line("tina-kotek", "money", "Would ban personal-data pricing, curb hidden fees, keep data-center power costs off bills."),
   line("tina-kotek", "climate", "Would pause new data centers until statewide standards protect ratepayers and require clean energy."),
 
-  line("brett-smith", "safety", "Would expand the volunteer Oregon Civil Defense Force and bar unconstitutional surveillance."),
+  line("brett-smith", "safety", "Would bolster the Oregon Civil Defense Force and bar unconstitutional surveillance."),
   line("brett-smith", "money", "Would charge large employers paying below a living wage, funding health and food aid."),
-  line("brett-smith", "climate", "Would permanently ban new data centers in Oregon."),
+  line("brett-smith", "climate", "Would impose a permanent moratorium on data centers."),
 ];
 
 const chips: StanceChip[] = [
@@ -277,12 +277,12 @@ const chips: StanceChip[] = [
 
   chip("tina-kotek", "housing", "Faster homebuilding"),
   chip("tina-kotek", "safety", "No ICE detention sites"),
-  chip("tina-kotek", "money", "Ban hidden fees"),
+  chip("tina-kotek", "money", "Ban personalized pricing"),
   chip("tina-kotek", "climate", "Pause new data centers"),
 
   chip("brett-smith", "safety", "Civil Defense Force"),
   chip("brett-smith", "money", "Wage-gap surcharge"),
-  chip("brett-smith", "climate", "Permanent data-center ban"),
+  chip("brett-smith", "climate", "Permanent moratorium"),
 ];
 
 /* ── Promise ladders ─────────────────────────────────────────────────── */
@@ -543,7 +543,7 @@ const hb3546Record = record(
   "OLIS · HB 3546, the POWER Act (2025) measure history",
   `${OLIS}/2025R1/Measures/Overview/HB3546`,
   "Final House vote June 5, 2025; signed June 16, 2025; reviewed September 21, 2026",
-  "Rep. Drazan is recorded among the 17 nays on final House passage. The governor’s September 8, 2026 release credits the law with a 29% rate increase on data-center corporations and decreases for other PGE customers.",
+  "Rep. Drazan voted yes when the House first passed the bill on April 22, 2025 (41 ayes; she is not among the 16 nays or 3 excused) and is recorded among the 17 nays when the House concurred in Senate amendments and repassed it on June 5, 2025. The governor’s September 8, 2026 release credits the law with a 29% rate increase on data-center corporations and decreases for other PGE customers.",
 );
 const drazanKatu = interview(
   "Drazan · KATU “Know Your Candidates” interview, transcript",
@@ -567,6 +567,12 @@ const opbDcTranscript = interview(
   "https://www.opb.org/article/2026/09/14/think-out-loud-data-centers-oregon-gubernatorial-race/",
   "Interview September 8, 2026; transcript September 14, 2026; reviewed September 21, 2026",
   `${NOTE} Her plan page adds community benefit agreements, a ban on blanket NDAs and farmland protection but does not use the word moratorium.`,
+);
+const opbDcTranscriptKotek = interview(
+  "Kotek · rally remarks quoted in OPB’s Think Out Loud transcript",
+  "https://www.opb.org/article/2026/09/14/think-out-loud-data-centers-oregon-gubernatorial-race/",
+  "Transcript September 14, 2026; reviewed September 25, 2026",
+  `${NOTE} On September 8, 2026 her office paused state-land requests for new data centers through July 1, 2027 and said she will introduce legislation for the 2027 session.`,
 );
 const govHomelessEo = record(
   "Governor’s Office · Executive Order 26-01 extends the homelessness emergency",
@@ -749,9 +755,9 @@ const topicStances: TopicStance[] = [
   stance("tina-kotek", "gov-kicker", "supports", "One-time wildfire hold-back",
     "Told reporters in May 2025 she would support withholding about $1 billion of the $1.64 billion kicker, one time and from high earners, for wildfire costs; her office later proposed Rainy Day Fund money instead.",
     opbKicker),
-  stance("tina-kotek", "gov-data-center-moratorium", "supports", "Moratorium, via Legislature",
-    "Said September 8, 2026 she supports a moratorium until development is “done on our terms,” paused state-land deals through July 1, 2027, and will bring the Legislature a statewide framework in 2027.",
-    govDcPause),
+  stance("tina-kotek", "gov-data-center-moratorium", "supports", "Moratorium on our terms",
+    "Told a Salem rally she supports a moratorium until any data center development is “done on our terms,” after directing the state to end a land sale for a proposed data center; says she supports local moratoriums.",
+    opbDcTranscriptKotek),
   stance("tina-kotek", "gov-power-act", "supports", "Signed the POWER Act",
     "Signed HB 3546 on June 16, 2025; her office credits it with a 29% rate increase on data-center corporations and rate decreases for other PGE customers.",
     hb3546Record),
@@ -764,34 +770,34 @@ const topicStances: TopicStance[] = [
   stance("tina-kotek", "gov-immigration-enforcement", "supports", "Keep sanctuary limits",
     "Created an interagency council on the state’s response to federal enforcement (EO 26-04, January 30, 2026), signed eight immigrant-protection bills April 9, 2026, and opposes ICE detention facilities in Oregon.",
     govImmBills),
-  stance("tina-kotek", "gov-school-time", "supports", "No cuts to hours",
-    "Executive Order 26-06 bars districts from cutting instructional time for budget reasons and ends waivers below the minimum; her platform sets a goal of reaching the national average by the end of a second term.",
+  stance("tina-kotek", "gov-school-time", "supports", "Protect class time",
+    "Executive Order 26-06 directs the state to prioritize rules stopping further budget-driven cuts to class time, requires districts that cut time to plan its restoration, and ends most waivers below the minimum.",
     govInstrEo),
   {
     ...stance("tina-kotek", "gov-new-revenue", "partial", "Signed H.R. 1 disconnect",
-      "Signed SB 1507 in April 2026, disconnecting Oregon from several H.R. 1 tax breaks because copying them was “neither fair nor responsible,” while keeping tips and overtime untaxed; she has not said whether she would seek new taxes for 2027–29.",
+      "Signed SB 1507 in April 2026, saying automatically copying every H.R. 1 tax break was neither fair nor responsible, while flagging its effect on small businesses; she has not said whether she would seek new taxes for 2027–29.",
       kotekSb1507Letter),
     ...reviewed22,
   },
-  stance("tina-kotek", "gov-interstate-bridge", "supports", "Build the core bridge",
-    "With Washington’s governor, said March 17, 2026 the states remain “fully committed” to replacing the bridge, starting with a core set of projects funded by committed federal, state and toll money.",
+  stance("tina-kotek", "gov-interstate-bridge", "mixed", "Build the core bridge",
+    "With Washington's governor, said March 17, 2026 the states remain “fully committed” to replacing the bridge, starting with a substantially funded core set of projects and adding the rest when funding is identified.",
     waJoint),
 
   /* ── Christine Drazan ─────────────────────────────────────────────── */
   stance("christine-drazan", "gov-transportation-taxes", "opposes", "No new road taxes",
     "Voted no on HB 3991 in the House on September 1, 2025, and told KATU in April 2026 she would “balance the budget without new taxes,” putting potholes, maintenance and preservation first.",
     drazanKatu),
-  stance("christine-drazan", "gov-kicker", "opposes", "Veto kicker grabs",
+  stance("christine-drazan", "gov-kicker", "opposes", "Protect the kicker",
     "Would “protect Oregon’s kicker” by vetoing legislative attempts to take it from taxpayers.",
     drazanPlan),
   stance("christine-drazan", "gov-data-center-moratorium", "supports", "Immediate moratorium",
     "Told KATU on September 8, 2026 that the governor “should issue a moratorium immediately” and that Oregon should have an immediate statewide moratorium; her plan adds community benefit agreements and a ban on blanket NDAs.",
     opbDcTranscript),
-  stance("christine-drazan", "gov-power-act", "opposes", "Voted no",
-    "Voted no on HB 3546’s final House passage on June 5, 2025; her plan does not say whether she would repeal the law.",
+  stance("christine-drazan", "gov-power-act", "mixed", "Voted yes, then no",
+    "Voted yes when the House first passed HB 3546 on April 22, 2025, then no when it concurred in Senate amendments on June 5, 2025; her plan does not say whether she would repeal the law.",
     hb3546Record),
   stance("christine-drazan", "gov-homelessness-emergency", "mixed", "Audit, shift to recovery",
-    "Would declare an emergency on addiction and mental health instead, audit homeless and addiction spending, and shift state money to recovery programs; says success should not be measured by low-barrier shelter beds.",
+    "Would declare an emergency on addiction and mental health, audit homeless spending and shift money to recovery programs and homeless services, not measuring success by low-barrier shelter beds; her plan does not address the homelessness emergency.",
     drazanPlan),
   stance("christine-drazan", "gov-climate-protection", "opposes", "Repeal the program",
     "Would repeal the Climate Protection Program, which she calls a costly executive order that raised utility and gas prices and threatened jobs.",
@@ -799,19 +805,19 @@ const topicStances: TopicStance[] = [
   stance("christine-drazan", "gov-immigration-enforcement", "opposes", "Sanctuary law too far",
     "Told KATU in April 2026 that Oregon’s sanctuary laws “have gone too far,” citing Corrections declining a U.S. attorney’s request about 30 people, and wants law enforcement able to work with federal law enforcement.",
     drazanKatu),
-  stance("christine-drazan", "gov-school-time", "supports", "School-day standard",
-    "Would increase classroom time by moving Oregon from an instructional-hours system to a school-day system with statewide standards for what counts as a school day.",
+  stance("christine-drazan", "gov-school-time", "partial", "School-day standard",
+    "Would increase classroom time by moving Oregon from an instructional-hours system to a school-day system with statewide standards for a school day; her plan does not say how districts should keep hours when budgets are short.",
     drazanPlan),
   stance("christine-drazan", "gov-new-revenue", "opposes", "Veto new taxes",
     "Would veto new tax and fee increases and cut taxes instead: a higher standard deduction, estate and Corporate Activity Tax reform, and property tax relief for seniors and veterans.",
     drazanPlan),
-  stance("christine-drazan", "gov-interstate-bridge", "mixed", "A cheaper bridge",
+  stance("christine-drazan", "gov-interstate-bridge", "opposes", "A cheaper bridge",
     "Says the state “can’t afford the I-5 bridge that they’re proposing,” objecting to the share of deck for biking, walking and transit, and would build a bridge Oregon can afford.",
     drazanKatu),
 
   /* ── Brett Smith ──────────────────────────────────────────────────── */
-  stance("brett-smith", "gov-data-center-moratorium", "supports", "Permanent ban",
-    "Pledges a permanent moratorium on data centers and calls himself the only anti-data-center candidate.",
+  stance("brett-smith", "gov-data-center-moratorium", "supports", "Permanent moratorium",
+    "Pledges a permanent moratorium on data centers.",
     smithStatement),
   stance("brett-smith", "gov-new-revenue", "supports", "Wage-gap surcharge",
     "Would impose a surcharge on employers with 50 or more workers paying below a living wage, which his campaign models at $700 million to $3.4 billion a year for the Oregon Health Plan and food aid.",

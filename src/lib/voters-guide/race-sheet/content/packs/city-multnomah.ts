@@ -166,7 +166,7 @@ candidate("simone-rede", {
   sources: [pamphlet(52), site("Rede · campaign home", "https://www.simoneforauditor.com/"), redeAbout, redeValues],
   issues: {
     safety: {
-      position: "Sustain the improvements to 911 call wait times that she says her office’s work helped produce.",
+      position: "Sustain improvements to 911 call wait times, which she lists as part of her record as auditor.",
       source: pamphlet(52),
       line: "Wants 911 call wait-time improvements sustained.",
       chip: "Sustain 911 gains",
@@ -187,7 +187,7 @@ candidate("simone-rede", {
       ),
     },
     climate: {
-      position: "Ensure the city follows through on its climate commitments, an audit area she says she chose because Portlanders raised it.",
+      position: "Ensure the city follows through on its climate commitments, which she lists as part of her record as auditor.",
       source: pamphlet(52),
       line: "Wants the city held to its climate commitments through audit follow-up.",
       chip: "Audit climate promises",
@@ -248,7 +248,7 @@ candidate("sue-piazza", {
         "Keep public safety the top priority: reduce crime and address homelessness without allowing tents and encampments to take over streets and parks; she cites championing the Public Safety Levy that put more police officers and firefighters on the streets.",
       source: pamphlet(41),
       line: "Wants crime reduced and no encampments in streets and parks, building on the levy.",
-      chip: "Police first, no tents",
+      chip: "Safety first, no tents",
       how: step(
         "Build on the police and fire levy she says she led, with smart investments in police and fire and drug addiction managed so neighborhoods are safe enough for businesses to invest.",
         piazzaSite,
@@ -468,7 +468,7 @@ candidate("will-delplato", {
         "Gresham’s budget shortfall is growing; act now with small, early changes rather than waiting for painful ones, review city spending for efficiencies, hold programs accountable, and streamline permitting so red tape does not deter entrepreneurs.",
       source: pamphlet(42),
       line: "Wants small, early budget changes now, spending reviewed, permitting (building approvals) streamlined.",
-      chip: "Small cuts early",
+      chip: "Small changes early",
       how: step("Review purchasing, contracts and technology for savings before new taxes or fees, review each major program’s cost against its results on a schedule, and pay ongoing costs with ongoing money.", delplatoEmail),
       measure: step("A smaller structural gap in each adopted budget; he puts this year’s at about $12 million, growing to $30.8 million by 2031.", delplatoEmail),
     },
@@ -711,7 +711,7 @@ candidate("gregory-schroeder", {
       position:
         "Favors an individualized approach: nonprofit partners engage people living outside and match them to shelter, housing help, addiction treatment, mental-health care or education; when services are available and refused while camping or other laws are broken, supports enforcement.",
       source: schroederEmail,
-      line: "Nonprofit outreach matched to each person; enforcement when available services are refused.",
+      line: "Nonprofit outreach matched to each person; enforcement if services are refused and laws broken.",
       chip: "Services, then enforcement",
       how: step(
         "Stronger partnerships with nonprofits that assess whether each person needs shelter, housing help, addiction treatment, mental-health care or education, with enforcement when offered services are refused.",
@@ -983,10 +983,10 @@ const auditorStances: TopicStance[] = [
     "Chose the FY 2026–27 schedule herself on June 18, 2026: Portland Solutions, citywide equity, fund management, cybersecurity, Prosper Portland grants, gun-violence prevention, emergency management, police body-worn cameras and utility rates, one fewer topic after cutting an auditor position.",
     audSchedule),
   stance("simone-rede", "aud-office-cuts", "opposes", "Hold cut to 3%",
-    "Asked the mayor in March 2026 to hold her office’s cut to 3% while citywide cuts of up to 10% were weighed, writing that transparency and accountability are not optional; her own requested budget cut one performance auditor.",
+    "Asked the mayor in March 2026 not to cut her office’s budget beyond 3% while citywide cuts of up to 10% were weighed, writing that transparency and accountability are not optional.",
     audCutsCommentary),
-  stance("simone-rede", "aud-petition-verification", "supports", "Ruling stands",
-    "Said July 29, 2026 that “independent election administration cannot bend to political pressure — from petitioners, opponents, or elected officials,” and that her division administers elections with integrity and by the law.",
+  stance("simone-rede", "aud-petition-verification", "supports", "Defends the process",
+    "Said July 29, 2026, while the second signature sample was still being checked, that “independent election administration cannot bend to political pressure,” and that her office administers elections with integrity and by the law.",
     audPetitionRebuttal),
   stance("simone-rede", "aud-council-requests", "opposes", "Declined Zenith request",
     "Declined the Council’s March 2025 Zenith request, writing it was unclear how a report on past land-use decisions “will remedy harm or result in fairer treatment,” and pointed to the Council’s own powers or a performance audit.",
@@ -1073,7 +1073,7 @@ const minJun2 = record(
   "Gresham City Council · minutes, June 2, 2026 (Resolutions 3716–3718: wastewater, water and stormwater rates for 2028–2032; Lusted Water District agreement)",
   `${GRESHAM_MIN}/6317`,
   "June 2, 2026; read September 22, 2026",
-  "Consent, 6–0, Morales absent; Piazza moved. Percentages and monthly amounts are in the June 2 packet (/6251).",
+  "Resolutions 3716–3718 each passed 6–0 with Morales absent, moved by Gladfelter, Keathley and Hinton; Piazza moved the consent agenda, which held the Lusted Water District agreement. Percentages and monthly amounts are in the June 2 packet (/6251).",
 );
 const minSep1 = record(
   "Gresham City Council · minutes, September 1, 2026 (water quality report)",
@@ -1090,7 +1090,7 @@ const minJan20 = record(
   "Gresham City Council · minutes, January 20, 2026 (Resolution 3681 on the rule of law, public safety and federal immigration reform)",
   `${GRESHAM_MIN}/5826`,
   "January 20, 2026; read September 22, 2026",
-  "Adopted 7–0 in place of the emergency declaration residents requested on December 9, 2025 and January 6, 2026 (minutes /5686 and /5772).",
+  "Adopted 7–0 in place of the emergency declaration residents requested on December 9, 2025 and January 6, 2026 (minutes /5686 and /5772). Councilor Piazza’s January 6 remarks are in the January 6 minutes (/5772).",
 );
 const outlookRamirez = reporting(
   "The Outlook · Former Gresham employee seeks testimony on ICE encounters",
@@ -1168,11 +1168,11 @@ const greshamTopics: ExtraTopic[] = [
 
 const greshamStances: TopicStance[] = [
   /* ── Travis Stovall (mayor; the record first) ─────────────────────── */
-  stance("travis-stovall", "gresham-safety-fee", "supports", "Voted to keep $15",
-    "Moved the first reading of Council Bill 03-26 on February 3, 2026 and voted yes February 17 to move the fee into a resolution and keep it at $15 a month; his campaign is silent on changing it.",
+  stance("travis-stovall", "gresham-safety-fee", "partial", "Moved fee to resolution",
+    "Moved the first reading February 3, 2026 and voted February 17 to set the $15 fee by resolution, a change staff called administrative; his campaign does not say whether the fee should change.",
     minFeb17),
-  stance("travis-stovall", "gresham-levy-fire", "partial", "Levy results, no district",
-    "Says the levy funded 9 new officers and 12 firefighters and would keep supporting police and fire; said May 5, 2026 a Clackamas Fire District 1 model “does not appear to be a strong consideration for Gresham.” Renewal unsaid.",
+  stance("travis-stovall", "gresham-levy-fire", "partial", "Clackamas model unlikely",
+    "Said May 5, 2026 that, based on current information, a Clackamas Fire District 1 model “does not appear to be a strong consideration for Gresham”; renewing the levy is unsaid.",
     minMay5),
   stance("travis-stovall", "gresham-budget-gap", "supports", "Voted for budget",
     "Voted yes June 9, 2026 to adopt the $924,981,292 budget, which covers a roughly $10 million general-fund gap from fund balance; told a September chamber forum the city must operate “at the speed of business.”",
@@ -1197,19 +1197,19 @@ const greshamStances: TopicStance[] = [
   stance("sue-piazza", "gresham-budget-gap", "opposes", "Voted no on budget",
     "Voted no June 9, 2026 on Resolution 3713 adopting the FY 2026/27 budget (4–2); the minutes record no reason. Told a September chamber forum the city should operate with a responsible fiscal mindset.",
     minJun9),
-  stance("sue-piazza", "gresham-groundwater", "mixed", "Rates yes, fix taste",
-    "Moved and voted for the 2028–32 rate increases June 2, 2026; on September 1 asked staff about chlorine odor, a return to chloramine and treatment costs, and has held listening sessions on water quality.",
+  stance("sue-piazza", "gresham-groundwater", "supports", "Rates yes, fix taste",
+    "Voted for the 2028–32 rate increases June 2, 2026; on September 1 asked staff about chlorine odor, a return to chloramine and treatment costs, and has held listening sessions on water quality.",
     minSep1),
   stance("sue-piazza", "gresham-camping-shelter", "supports", "No tents, permitted pods",
     "Moved the first reading of the pod-shelter code February 3, 2026 and voted for it; says she would address homelessness “without allowing tents and encampments to take over our streets and parks.”",
     minFeb3),
   stance("sue-piazza", "gresham-ice-response", "opposes", "Resolution, not emergency",
-    "Voted for Resolution 3681 January 20, 2026 after urging “careful consideration to avoid causing additional harm” and constructive talks with federal partners; in October 2025 asked whether sanctuary status could cost federal grants.",
+    "Voted for Resolution 3681 January 20, 2026; on January 6 asked whether emergency declarations could bring more ICE enforcement and urged “careful consideration to avoid causing additional harm” and constructive talks with federal partners.",
     minJan20),
 
   /* ── Janine Gladfelter (councilor; the record first) ──────────────── */
-  stance("janine-gladfelter", "gresham-safety-fee", "supports", "Voted to keep $15",
-    "Seconded the first reading February 3, 2026 and moved the February 17 consent vote that kept the fee at $15 and made it changeable by resolution; no campaign statement on changing it.",
+  stance("janine-gladfelter", "gresham-safety-fee", "partial", "Moved fee to resolution",
+    "Seconded the first reading February 3, 2026 and moved the February 17 consent vote setting the $15 fee by resolution, a change staff called administrative; no campaign statement on changing it.",
     minFeb17),
   stance("janine-gladfelter", "gresham-levy-fire", "partial", "Levy, no Clackamas model",
     "Says she fought for the levy that funded 40 police and 33 fire positions and wants specialty teams restored; on May 5, 2026 opposed “any option that could reduce public safety,” including the Clackamas district model. Renewal unsaid.",
@@ -1255,7 +1255,7 @@ const greshamStances: TopicStance[] = [
     "Says the investment in moving from Bull Run to groundwater is too great to reverse and the switch looks logical on cost; wants residents to report sight, smell or taste problems, and says the switch needed louder notice.",
     hccEmail),
   stance("heather-coleman-cox", "gresham-safety-fee", "supports", "Keep fee at $15",
-    "Supports keeping the Police, Fire and Parks Fee at $15 a month; if Council considers changing it, residents should get a say and see how it would affect bills and services.",
+    "Supports keeping the Police, Fire and Parks Fee at $15 a month; residents should know what they pay for and get a chance to weigh in if Council considers changing it.",
     hccEmail),
   stance("heather-coleman-cox", "gresham-budget-gap", "opposes", "Stop drawing reserves",
     "Would not keep using reserves for a gap that returns every year, nor jump to cutting services; wants staff to lay out the causes, savings and revenue options, then decide in public.",
@@ -1266,9 +1266,9 @@ const greshamStances: TopicStance[] = [
   stance("heather-coleman-cox", "gresham-ice-response", "mixed", "Open to an emergency",
     "Was part of a community group that backed the rule-of-law resolution; open to an emergency declaration if it would give the City a practical way to better protect residents.",
     hccEmail),
-  stance("will-delplato", "gresham-budget-gap", "opposes", "Small cuts now",
-    "Says the budget shortfall is growing and the city should “act now with small, early changes rather than waiting until we’re forced into painful ones,” reviewing spending for efficiencies rather than relying on reserves.",
-    pamphlet(42)),
+  stance("will-delplato", "gresham-budget-gap", "opposes", "Small changes now",
+    "Would act early, reviewing purchasing, contracts and technology for savings before new taxes or fees, and match ongoing costs with ongoing money instead of one-time funds.",
+    delplatoEmail),
   // From his emailed reply of September 24, 2026 (replaces a partial reading of his pamphlet on water).
   stance("will-delplato", "gresham-groundwater", "supports", "Keep groundwater",
     "Would keep the groundwater system, saying there is no viable alternative and costs will be better controlled than buying Portland’s water; wants honest answers on taste, odor and hardness, promotion of free testing and a responsive fix.",
@@ -1295,7 +1295,7 @@ const greshamStances: TopicStance[] = [
     "Would connect people to addiction and mental-health support, shelter and long-term housing pathways with regional coordination and clear accountability; the camping code and pod-shelter permits are unsaid.",
     ramirezAbout),
   stance("teo-ramirez", "gresham-ice-response", "partial", "Reaffirm sanctuary promise",
-    "Organized residents’ testimony and asked the council to publicly reaffirm the Sanctuary Promise Act, fund bilingual rights education, expand staff training and set a communication process for federal operations; an emergency declaration is unsaid.",
+    "Organized residents’ testimony and asked the council to publicly reaffirm the Sanctuary Promise Act, create bilingual rights education, expand staff training and set a communication process for federal operations; an emergency declaration is unsaid.",
     outlookRamirez),
 ];
 

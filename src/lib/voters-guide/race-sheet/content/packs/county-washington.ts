@@ -157,8 +157,8 @@ const analysis: Record<string, CandidateAnalysis> = {
     issues: {
       housing: {
         position:
-          "Wants more affordable homes and paths to ownership: public land turned into community-driven housing, faster permitting for affordable development, down-payment help for first-time buyers, more workforce housing and utility assistance to lower bills.",
-        source: faiPriorities,
+          "Wants more affordable homes and paths to ownership: public land turned into community-driven housing, faster permitting for affordable development and down-payment support.",
+        source: faiHome,
       },
       safety: {
         position:
@@ -167,7 +167,7 @@ const analysis: Record<string, CandidateAnalysis> = {
       },
       money: {
         position:
-          "Wants data centers to pay a fair share and would close the county’s budget gap by updating service fees and considering local option levies for public safety and libraries, while protecting funding for housing, transit and health care.",
+          "To close the county’s budget gap, would explore new revenue without overburdening taxpayers, including updated service fees and possible local option levies for public safety and libraries, while protecting funding for housing, transit and health care.",
         source: faiPriorities,
       },
       climate: {
@@ -185,7 +185,7 @@ const analysis: Record<string, CandidateAnalysis> = {
     issues: {
       housing: {
         position:
-          "Wants the county to hit the gas on building housing while braking on taxes; her site backs a range of housing types for all ages and incomes and preserving existing affordable homes.",
+          "Wants the county to hit the gas on building housing while putting the brakes on taxing residents.",
         source: pamphlet(4),
       },
       safety: {
@@ -223,7 +223,7 @@ const analysis: Record<string, CandidateAnalysis> = {
       },
       money: {
         position:
-          "Wants taxes kept in check and taxpayer dollars protected through responsible budgeting and accountability; no specific fee or tax change is named.",
+          "Wants taxpayers protected through responsible budgeting and accountability; no specific fee or tax change is named.",
         source: pamphlet(5),
       },
       climate: {
@@ -271,26 +271,26 @@ const lines: IssueLine[] = [
   line("steve-callaway", "climate", "Would protect farmland and natural resources and evaluate data-center impacts carefully."),
   line("nafisa-fai", "housing", "Wants public land for housing, faster affordable-housing permits and down-payment help."),
   line("nafisa-fai", "safety", "Supports county community-safety teams of mental-health workers, medics and peer responders."),
-  line("nafisa-fai", "money", "Wants data centers paying more, plus updated fees and possible levies for services."),
+  line("nafisa-fai", "money", "Would explore updated fees and possible levies without overburdening taxpayers."),
   line("nafisa-fai", "climate", "Wants safer roads, more bus routes and a countywide climate task force."),
   line("kipperlyn-sinclair", "housing", "Supports transit-oriented, affordable workforce housing."),
   line("kipperlyn-sinclair", "safety", "Would uphold due process, limit surveillance, protect public data, keep public safety transparent."),
   line("kipperlyn-sinclair", "money", "Would end data-center tax breaks and tax existing facilities to cut deficits."),
   line("kipperlyn-sinclair", "climate", "Would halt data-center growth onto farmland and back a county moratorium."),
   line("pam-treece", "housing", "Wants the county to speed up housing building while holding off new resident taxes."),
-  line("pam-treece", "safety", "Supports more public-safety investment, including safe schools, parks and trails, and protection from ICE."),
-  line("pam-treece", "money", "Opposes new taxes on residents; wants county operations stable, accountable and effective."),
+  line("pam-treece", "safety", "Supports real public-safety investment, including safe schools, parks and trails, and protection from ICE."),
+  line("pam-treece", "money", "Would put the brakes on taxing residents and keep county operations stable and accountable."),
   line("pam-treece", "climate", "Wants transportation infrastructure that reduces traffic congestion."),
 ];
 
 const chips: StanceChip[] = [
   chip("steve-callaway", "housing", "Thoughtful housing growth"),
   chip("steve-callaway", "safety", "Police and treatment"),
-  chip("steve-callaway", "money", "Keep taxes in check"),
+  chip("steve-callaway", "money", "Protect taxpayers"),
   chip("steve-callaway", "climate", "Protect farmland"),
   chip("nafisa-fai", "housing", "Public land for housing"),
   chip("nafisa-fai", "safety", "Crisis response teams"),
-  chip("nafisa-fai", "money", "Data centers pay more"),
+  chip("nafisa-fai", "money", "Explore fees and levies"),
   chip("nafisa-fai", "climate", "Buses, roads, climate plan"),
   chip("kipperlyn-sinclair", "housing", "Transit-oriented housing"),
   chip("kipperlyn-sinclair", "safety", "Privacy and due process"),
@@ -298,7 +298,7 @@ const chips: StanceChip[] = [
   chip("kipperlyn-sinclair", "climate", "Data-center moratorium"),
   chip("pam-treece", "housing", "Faster housing building"),
   chip("pam-treece", "safety", "Fund public safety"),
-  chip("pam-treece", "money", "No new resident taxes"),
+  chip("pam-treece", "money", "Brakes on resident taxes"),
   chip("pam-treece", "climate", "Cut traffic congestion"),
 ];
 
@@ -716,14 +716,14 @@ const topicStances: TopicStance[] = [
   stance("nafisa-fai", "wash-data-center-pause", "supports", "Proposed county pause",
     "Announced on August 25, 2026 a proposal to pause new data-center and AI-facility permits under county and Clean Water Services authority, saying the county should understand the complete picture before approving more.",
     kxlFaiPause),
-  stance("nafisa-fai", "wash-enterprise-zone", "partial", "Data centers pay more",
+  stance("nafisa-fai", "wash-enterprise-zone", "partial", "Data centers' fair share",
     "Says as chair she will make data centers pay their fair share and safeguard tax dollars; whether the enterprise-zone exemptions should end is unsaid.",
     pamphlet(4)),
   stance("nafisa-fai", "wash-vehicle-fee", "opposes", "Voted no on fee",
     "Cast the only no vote on August 25, 2026 against Ordinance 917, which phases the county fee from $30 to $60 a year by 2031; Treece, Snider and Willey voted yes and the chair abstained.",
     minutesAug25),
   stance("nafisa-fai", "wash-budget-gap", "supports", "Fees and levies",
-    "Would update service fees and consider local option levies for public safety and libraries to close a gap she puts at $20.5 million, while protecting funding for housing, transit and health care.",
+    "Would explore new revenue without overburdening taxpayers, including updated service fees and local option levies for public safety and libraries, to close a gap she puts at $20.5 million, while protecting housing, transit and health care.",
     faiPriorities),
   stance("nafisa-fai", "wash-ice-emergency", "supports", "Moved the declaration",
     "Moved and voted for the November 4, 2025 emergency declaration and $200,000 in contingency aid, telling the Board the amounts are not enough and she will keep pushing for additional measures.",
@@ -760,7 +760,7 @@ const topicStances: TopicStance[] = [
     "Says new taxes would be a last resort given economic strain, to be weighed against critical services that may have to be cut; puts past General Fund cuts at $98 million and would lean on economic development.",
     treeceQuestionnaire),
   stance("pam-treece", "wash-ice-emergency", "supports", "Voted for declaration",
-    "Voted for the November 4, 2025 declaration and $200,000 in aid, thanking the colleagues who drafted it and criticizing federal enforcement actions in the county.",
+    "Voted for the November 4, 2025 declaration and $200,000 in aid; the minutes record that she commented on ICE actions in the county and thanked commissioners for their efforts.",
     minutesNov4),
   stance("pam-treece", "wash-ugb-farmland", "partial", "Careful planning with Metro",
     "Says county land is precious and attracting high-paying jobs while protecting farms and forests will take careful planning with Metro and the cities, which set the boundary; takes no position on SB 1586's acreage.",

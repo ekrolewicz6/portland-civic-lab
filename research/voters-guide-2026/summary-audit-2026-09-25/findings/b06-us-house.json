@@ -1,0 +1,978 @@
+{
+ "batch": "b06-us-house",
+ "checked": {
+  "issueSlots": 47,
+  "topicStances": 76,
+  "sourcesFetched": 41
+ },
+ "unreachable": [],
+ "notes": [
+  "All seven House Clerk roll calls re-checked (page + XML): 2025-190 H.R. 1 concur 218-214 Jul 3 2025; 2026-11 H.R. 1834 230-196 Jan 8 2026; 2026-65 H.J.Res. 72 219-211 Feb 11 2026; 2026-214 S. 2 214-212 Jun 9 2026; 2026-282 H.Con.Res. 89 214-208 Jul 23 2026; 2025-25 H.R. 471 279-141 Jan 23 2025; 2026-224 H.R. 6644 358-32 Jun 23 2026. Every Oregon member's recorded vote matches the stance and chip (Bentz Aye/Nay opposite the five Democrats except FOFA, where Bynum and Hoyle voted Yea and ROAD, where all six voted Yea).",
+  "Bill content verified beyond the Clerk page: H.R. 1834 engrossed text extends the enhanced 36B credits through 2028 (three years) and sits on the Senate calendar (awaits the Senate: true); H.J.Res. 72 terminates EO 14193 (Canada); S. 2 CRS summary: $70 billion to DHS/CBP/ICE through FY2029, Public Law 119-98; H.R. 6644 is the 21st Century ROAD to Housing Act, Public Law 119-101. \"As on June 3\" checked: roll 2026-199, H.Con.Res. 86, 215-208, same six votes.",
+  "Adair's ICE item: the February 3, 2026 vote is roll 2026-53 (H.R. 7148, 217-214, Bynum Nay); Division H extended the CR to February 13, 2026, so \"short Homeland Security extension\" is accurate context though not in her post.",
+  "No lean found in Kahl, Townsend, Beck (other than tariffs text), Hoyle housing/climate, DeSpain safety/climate and topics other than housing, Filip safety/money and remaining topics, Salinas housing, or Russ's remaining topics. Citation-only mismatches (claim present in the candidate's own other page) are marked borderline.",
+  "Supplementary pages saved in sources/ for re-checking: b06-dexter-addiction, b06-bynum-ending-homelessness, b06-bynum-health-snapshot-2026-09-18, b06-bentz-issues-index, b06-russ-proposed-bills, b06-govinfo-*, b06-clerk-2026-199/201/53.xml, b06-russ-replies, b06-state-pamphlet-p*."
+ ],
+ "findings": [
+  {
+   "candidateId": "suzanne-bonamici",
+   "race": "oregon-house-1",
+   "item": "issue/money",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Would repeal the Trump tax cuts in favor of progressive taxation, raise the federal minimum wage, enforce antitrust laws, end what she calls chaotic tariffs, and fight cuts to SNAP and Medicaid."
+   },
+   "sourceUrl": "https://www.bonamiciforcongress.com/priorities/economy/",
+   "sourceQuote": "By protecting consumers, raising the federal minimum wage, supporting small businesses, ending chaotic and nonsensical trade policies, and enforcing antitrust laws, we can help make life more affordable for everyone. ... We must repeal Trump’s tax cuts and implement progressive rather than regressive tax policy",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The economy page never mentions SNAP or Medicaid (nor do her health-care, working-families, priorities index or pamphlet pages), so \"fight cuts to SNAP and Medicaid\" has no source; she also says trade policies, not tariffs.",
+   "proposed": {
+    "position": "Would repeal the Trump tax cuts in favor of progressive taxation, raise the federal minimum wage, enforce antitrust laws and end what she calls chaotic and nonsensical trade policies."
+   }
+  },
+  {
+   "candidateId": "barbara-j-kahl",
+   "race": "oregon-house-1",
+   "item": "issue/safety",
+   "fields": [
+    "chip"
+   ],
+   "current": {
+    "chip": "Fund local police",
+    "line": "Supports funding local law enforcement, paired with accountability."
+   },
+   "sourceUrl": "https://www.drkahlforcongress.com/",
+   "sourceQuote": "Public Safety: Supporting local law enforcement with funding and accountability — safe streets, real trust.",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "Her item is \"funding and accountability\"; the chip keeps funding and drops accountability, the same pattern as keeping enforcement and dropping services (the line is fine).",
+   "proposed": {
+    "chip": "Funded, accountable police"
+   }
+  },
+  {
+   "candidateId": "maxine-e-dexter",
+   "race": "oregon-house-3",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would abolish ICE, pass the CLEAR ID Act to end anonymous raids, oppose ICE and CBP funding until raids stop and due process is restored, and bring federal money for detox beds and treatment over punishment.",
+    "line": "Would abolish ICE and withhold its funding until raids stop; federal money for treatment."
+   },
+   "sourceUrl": "https://maxinefororegon.com/issue/immigration/",
+   "sourceQuote": "Work to dismantle and abolish ICE. ... Pass the CLEAR ID Act and pursue further legislation to bring accountability and transparency to ICE, including voting NO on funding for ICE and CBP until both agencies end unconstitutional raids and fully restore due process for all immigrants.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "The detox-beds and treatment-over-punishment clause comes from her separate addiction-and-mental-health page, not the cited immigration page, and \"until raids stop\" drops her qualifier \"unconstitutional\" raids.",
+   "proposed": {
+    "position": "Would work to dismantle and abolish ICE, pass the CLEAR ID Act to end anonymous raids, and vote no on ICE and CBP funding until both agencies end unconstitutional raids and fully restore due process.",
+    "line": "Would abolish ICE and vote no on its funding until unconstitutional raids end."
+   }
+  },
+  {
+   "candidateId": "janelle-s-bynum",
+   "race": "oregon-house-5",
+   "item": "issue/safety",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Shelter and mental health",
+    "line": "Wants more shelter capacity and mental-health services; opposes federal ICE takeover of communities.",
+    "position": "Wants people off the streets through homelessness prevention, more shelter capacity and mental-health services, and opposes what she calls a federal takeover of communities by ICE."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=23",
+   "sourceQuote": "Standing up to Trump and ICE – Janelle will not stand for a federal takeover of our communities. She was the loudest voice calling out Donald Trump’s version of ICE for what it is: a collection of goons who are rounding up people based on the color of their skin and kidnapping them off the streets.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The cited pamphlet page has nothing on shelter, homelessness prevention or mental health; that wording is on her ending-homelessness web page, where it describes measures she helped pass as a state legislator, not a federal plan. Alternative fix: keep the shelter wording but re-cite https://www.janellebynum.com/issues/ending-homelessness and describe it as her state-legislature record.",
+   "proposed": {
+    "chip": "Oppose ICE takeover",
+    "line": "Opposes what she calls a federal takeover of communities by ICE.",
+    "position": "Opposes what she calls a federal takeover of communities by Trump’s ICE, which she accuses of rounding up people based on the color of their skin."
+   }
+  },
+  {
+   "candidateId": "janelle-s-bynum",
+   "race": "oregon-house-5",
+   "item": "issue/money",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Protect Medicaid, Medicare",
+    "line": "Wants Medicare protected, Medicaid expanded and prescription prices lowered against federal cuts.",
+    "position": "Would lower costs from groceries to housing to health care, protect Medicare, expand Medicaid, defend the Oregon Health Plan against federal cuts, and lower prescription prices."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=23",
+   "sourceQuote": "Fighting for affordability – Janelle is focused on lowering costs, from groceries to housing to healthcare, and pushing back against the Trump administration’s efforts to gut the Oregon Health Plan.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Medicare, Medicaid expansion and prescription prices are not on the cited pamphlet page; they come from her health-care web page, which describes what she \"fought to\" do, so the chip and line rest on an uncited source.",
+   "proposed": {
+    "chip": "Defend Oregon Health Plan",
+    "line": "Would lower grocery, housing and health costs and defend the Oregon Health Plan.",
+    "position": "Would lower costs from groceries to housing to health care and push back against what she calls Trump administration efforts to gut the Oregon Health Plan."
+   }
+  },
+  {
+   "candidateId": "janelle-s-bynum",
+   "race": "oregon-house-5",
+   "item": "topic/fed-data-centers",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "partial",
+    "text": "Introduced the BILL Drivers Act on July 10, 2026 to have the Energy Information Administration report what is driving electricity bills, including data centers; it takes no position on fast-tracking or who pays."
+   },
+   "sourceUrl": "https://bynum.house.gov/media/press-releases/congresswoman-bynum-introduces-legislation-improve-electricity-price",
+   "sourceQuote": "[dated July 10, 2026] Yesterday, Congresswoman Janelle Bynum (OR-05) introduced the bipartisan Better Information through Line-item Labeling Drivers (BILL Drivers) Act alongside Congressman Ryan Mackenzie (PA-07).",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The release is dated July 10 and says she introduced the bill \"yesterday,\" so the introduction date is July 9, 2026; stance and the rest of the text match.",
+   "proposed": {
+    "text": "Introduced the BILL Drivers Act on July 9, 2026 to have the Energy Information Administration report what is driving electricity bills, including data centers; it takes no position on fast-tracking or who pays."
+   }
+  },
+  {
+   "candidateId": "patti-adair",
+   "race": "oregon-house-5",
+   "item": "issue/safety",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Supports fully funding law enforcement to keep communities safe.",
+    "position": "Would fully support law enforcement to keep communities safe; cites working with law enforcement and adding two circuit judges as a county commissioner."
+   },
+   "sourceUrl": "https://www.pattiforcongress.com/priorities",
+   "sourceQuote": "Patti's Proven Record: Increased funding for law enforcement ... Delivered new judgeships to keep criminals off the streets ... Patti's Priorities: ... Fully support law enforcement to keep our communities safe",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Her priority is to \"fully support\" law enforcement; \"fully funding\" is a stronger, specific commitment she did not make (her record says she increased funding), and the \"two circuit judges\" detail is from her pamphlet, not the cited page.",
+   "proposed": {
+    "line": "Would fully support law enforcement to keep communities safe.",
+    "position": "Would fully support law enforcement to keep communities safe; cites increasing law-enforcement funding and delivering new judgeships as a county commissioner."
+   }
+  },
+  {
+   "candidateId": "patti-adair",
+   "race": "oregon-house-5",
+   "item": "topic/fed-hr1-medicaid",
+   "fields": [
+    "topic-text",
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "partial",
+    "chip": "Make tax cuts permanent",
+    "text": "Would make no tax on tips, overtime and Social Security permanent and raise the limits, and increase the child tax credit; she does not address Medicaid or SNAP."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=25",
+   "sourceQuote": "Make no tax on tips, overtime, and Social Security permanent, and increase the limits ... Increase the Child Tax Credit limit [p.26:] Janelle Bynum’s Record: Voted against funding SNAP and Head Start",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Her statement (continued on PDF page 26) does mention SNAP, faulting Bynum for voting against SNAP funding, so \"does not address SNAP\" is wrong; the chip also widens three named tax breaks into \"tax cuts\" generally.",
+   "proposed": {
+    "topicChip": "Keep tips, overtime breaks",
+    "text": "Would make no tax on tips, overtime and Social Security permanent and raise the child tax credit; she faults Bynum for voting against SNAP funding but does not address H.R. 1’s Medicaid or SNAP changes."
+   }
+  },
+  {
+   "candidateId": "chris-beck",
+   "race": "oregon-house-2",
+   "item": "topic/fed-tariffs",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Would repeal the tariffs, which he says cost rural Oregon wheat and fruit markets abroad, and seek a bipartisan approach to trade and legal immigration."
+   },
+   "sourceUrl": "https://chrisbeckforcongress.com/district2issues",
+   "sourceQuote": "In addition to repealing the tariffs and seeking a sensible, bipartisan approach to legal immigration, I will put forward ideas that refocus existing federal programs.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "His bipartisan approach is to legal immigration only; \"trade\" is added (stance supports is right: he says repeal and cancel the tariffs).",
+   "proposed": {
+    "text": "Would repeal the tariffs, which he says cost rural Oregon wheat and fruit markets abroad, and seek a sensible, bipartisan approach to legal immigration."
+   }
+  },
+  {
+   "candidateId": "cliff-bentz",
+   "race": "oregon-house-2",
+   "item": "topic/fed-tariffs",
+   "fields": [
+    "topic-text",
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "opposes",
+    "chip": "Voted to keep tariffs",
+    "text": "Voted no on February 11, 2026 on H.J.Res. 72, which ended the national emergency behind the Canada tariffs (219–211)."
+   },
+   "sourceUrl": "https://clerk.house.gov/Votes/202665",
+   "sourceQuote": "Roll Call 65 | Bill Number: H. J. Res. 72 | Feb 11, 2026 | Vote Question: On Passage | Relating to a national emergency by the President on February 1, 2025 | Status: Passed | yea: 219 | nay: 211 ... Bentz Nay",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "His Nay is right, but H.J.Res. 72 only passed the House (it was referred to Senate Finance on February 12, 2026 and never became law), so it did not end the emergency; the chip also widens a Canada-only vote to tariffs in general.",
+   "proposed": {
+    "topicChip": "Voted no, Canada tariffs",
+    "text": "Voted no on February 11, 2026 on H.J.Res. 72 to end the national emergency behind the Canada tariffs; it passed the House 219–211."
+   }
+  },
+  {
+   "candidateId": "monique-despain",
+   "race": "oregon-house-4",
+   "item": "issue/money",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Lower taxes, cut fraud",
+    "line": "Would reduce taxes and regulations, end funding for failed programs, root out fraud.",
+    "position": "Would cut regulations, fix permitting systems and reduce what she calls punitive taxation, end tax-and-spend policies she says fuel inflation and the national debt, and root out fraud and failed programs."
+   },
+   "sourceUrl": "https://www.moniqueforcongress.com/issues/",
+   "sourceQuote": "Prosperity requires government to get out of the way. We must cut excessive regulations, fix broken permitting systems, and reduce punitive taxation ... In Congress, I will fight to end reckless, wasteful tax-and-spend policies coming out of Washington that fuel inflation, undermine affordability, increase the national debt",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "Her economic section never mentions fraud (the page uses the word only for asylum and visa fraud), and \"stop funding that failure\" refers to homelessness programs, so the chip and line add claims; the position also drops \"excessive\" from regulations.",
+   "proposed": {
+    "chip": "Cut taxes and regulation",
+    "line": "Would cut excessive regulations, reduce taxes and end what she calls tax-and-spend policies.",
+    "position": "Would cut excessive regulations, fix broken permitting systems and reduce what she calls punitive taxation, and end tax-and-spend policies she says fuel inflation and the national debt."
+   }
+  },
+  {
+   "candidateId": "justin-filip",
+   "race": "oregon-house-4",
+   "item": "topic/fed-fix-our-forests",
+   "fields": [
+    "topic-text",
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "opposes",
+    "chip": "A trojan horse",
+    "text": "Calls the Fix Our Forests Act a trojan horse for gutting bedrock environmental laws under the guise of wildfire management, and asks the Senate to reject it."
+   },
+   "sourceUrl": "https://www.justin4congress.com/",
+   "sourceQuote": "Against the advice of more than 80 environmental organizations, Rep. Hoyle voted YEA on the “Fix Our Forests Act” (HR 471). ... Regarding HR 471, Earthjustice Senior Legislative Representative Blaine Miller-McFeeley issued the following statement: “... this bill is nothing more than a trojan horse for gutting bedrock environmental laws ... We urge the Senate to reject this bill.”",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The \"trojan horse\" words and the plea to the Senate are Earthjustice's statement, which Filip quotes; his own words fault Hoyle's yes vote, so opposes stands but the text and chip misattribute the quote to him.",
+   "proposed": {
+    "topicChip": "Faults Hoyle’s yes vote",
+    "text": "Faults Rep. Hoyle’s yes vote on the Fix Our Forests Act, against the advice of more than 80 environmental groups, and quotes Earthjustice calling it a trojan horse for gutting bedrock environmental laws."
+   }
+  },
+  {
+   "candidateId": "david-russ",
+   "race": "oregon-house-6",
+   "item": "issue/safety",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Secure border, removals",
+    "line": "Would secure the border, remove unauthorized entrants, make aiding illegal crossings a felony.",
+    "position": "Would secure the border and remove people who entered illegally, make aiding illegal border crossers a federal felony, and require U.S. attorneys to take roughly 98% of referred cases to trial."
+   },
+   "sourceUrl": "https://russisforus.com/",
+   "sourceQuote": "Defend Constitutional Rights ... End Congressional 10th Amendment Violations ... Make it a federal felony to aide and/or abet illegal border crossers",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The cited home page (live and the September 18 snapshot) has only the felony bullet; \"secure the border\" and \"remove people who entered illegally\" appear on no Russ page checked (home, about, ask-david, resources, proposed-bills), and the 98% trial rule is on his proposed-bills page (https://russisforus.com/proposed-bills), which should be cited if that clause stays.",
+   "proposed": {
+    "chip": "Aiding crossings a felony",
+    "line": "Would make aiding or abetting illegal border crossers a federal felony.",
+    "position": "Would make it a federal felony to aid or abet illegal border crossers."
+   }
+  },
+  {
+   "candidateId": "david-russ",
+   "race": "oregon-house-6",
+   "item": "topic/fed-ice-funding",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Fully supports giving federal law enforcement enough money to do its job efficiently; says the border is now secured."
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#russ-2026-09-24",
+   "sourceQuote": "I fully support ensuring that Federal Law Enforcement has sufficient funding to efficiently perform their duties.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "His reply to this question is one sentence and says nothing about the border being secured (unless the full email has more than the stored reply).",
+   "proposed": {
+    "text": "Fully supports giving federal law enforcement enough money to do its job efficiently."
+   }
+  },
+  {
+   "candidateId": "david-russ",
+   "race": "oregon-house-6",
+   "item": "topic/fed-fix-our-forests",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "mixed",
+    "text": "Calls the Fix Our Forests Act “OK” but a bureaucratic maze; would support it only as a stopgap, saying the states could run the same program for less after federal lands are returned."
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#russ-2026-09-24",
+   "sourceQuote": "The Fix Our Forests act is OK. However, it is basically a bureaucratic maze ... I would support this legislation only as a gap stop. However, the fact is States could administrate exact same program for less.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "\"after federal lands are returned\" is not in his reply; mixed fits his conditional support.",
+   "proposed": {
+    "text": "Calls the Fix Our Forests Act “OK” but a bureaucratic maze; would support it only as a stopgap, saying the states could run the same program for less."
+   }
+  },
+  {
+   "candidateId": "suzanne-bonamici",
+   "race": "oregon-house-1",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Is leading legislation requiring clear identification of every ICE agent making immigration arrests and limiting when federal law enforcement, the armed forces or the National Guard can be sent into cities; wants humane immigration reform.",
+    "line": "Would require ICE agents to identify themselves and limit federal deployments into cities."
+   },
+   "sourceUrl": "https://www.bonamiciforcongress.com/priorities/immigration/",
+   "sourceQuote": "it places limitations on when the Executive branch can order federal law enforcement, Armed Forces, or the National Guard into cities to carry out immigration policies.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "Her limit is on deployments \"to carry out immigration policies\"; dropping that scope makes it read as a general limit on federal deployments, though the item's immigration context softens it.",
+   "proposed": {
+    "position": "Is leading legislation requiring clear identification of every ICE agent making immigration arrests and limiting when federal law enforcement, the armed forces or the National Guard can be sent into cities to carry out immigration policy; wants humane immigration reform.",
+    "line": "Would require ICE agents to identify themselves and limit deployments for immigration enforcement."
+   }
+  },
+  {
+   "candidateId": "suzanne-bonamici",
+   "race": "oregon-house-1",
+   "item": "issue/climate",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Would defend Inflation Reduction Act clean-energy programs and pursue the Select Committee plan for net-zero emissions by mid-century; opposes data centers raising costs or exploiting natural resources."
+   },
+   "sourceUrl": "https://www.bonamiciforcongress.com/priorities/climate-crisis/",
+   "sourceQuote": "we are now in defense and trying to save whatever programs we can to help with a just transition to renewable energy. ... a bold, comprehensive, science-based Climate Action Plan to achieve net-zero emissions no later than mid-century",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Citation only: the data-center clause is in her pamphlet statement (PDF page 9), not on the cited climate page.",
+   "proposed": {
+    "position": "Would defend Inflation Reduction Act clean-energy programs and pursue the Select Committee plan for net-zero emissions by mid-century."
+   }
+  },
+  {
+   "candidateId": "suzanne-bonamici",
+   "race": "oregon-house-1",
+   "item": "topic/fed-tariffs",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Voted to end tariffs"
+   },
+   "sourceUrl": "https://clerk.house.gov/Votes/202665",
+   "sourceQuote": "Roll Call 65 | H. J. Res. 72 | Relating to a national emergency by the President on February 1, 2025 [the joint resolution terminates the emergency declared in Executive Order 14193, the Canada order] | yea: 219 | nay: 211",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The vote (Yea) and text check out, but the vote ended only the Canada emergency; the grid chip reads as a vote on tariffs in general, while the text already says Canada.",
+   "proposed": {
+    "topicChip": "Voted yes, Canada tariffs"
+   }
+  },
+  {
+   "candidateId": "maxine-e-dexter",
+   "race": "oregon-house-3",
+   "item": "topic/fed-tariffs",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Voted to end tariffs"
+   },
+   "sourceUrl": "https://clerk.house.gov/Votes/202665",
+   "sourceQuote": "Roll Call 65 | H. J. Res. 72 | Relating to a national emergency by the President on February 1, 2025 [the joint resolution terminates the emergency declared in Executive Order 14193, the Canada order] | yea: 219 | nay: 211",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The vote (Yea) and text check out, but the vote ended only the Canada emergency; the grid chip reads as a vote on tariffs in general, while the text already says Canada.",
+   "proposed": {
+    "topicChip": "Voted yes, Canada tariffs"
+   }
+  },
+  {
+   "candidateId": "janelle-s-bynum",
+   "race": "oregon-house-5",
+   "item": "topic/fed-tariffs",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Voted to end tariffs"
+   },
+   "sourceUrl": "https://clerk.house.gov/Votes/202665",
+   "sourceQuote": "Roll Call 65 | H. J. Res. 72 | Relating to a national emergency by the President on February 1, 2025 [the joint resolution terminates the emergency declared in Executive Order 14193, the Canada order] | yea: 219 | nay: 211",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The vote (Yea) and text check out, but the vote ended only the Canada emergency; the grid chip reads as a vote on tariffs in general, while the text already says Canada.",
+   "proposed": {
+    "topicChip": "Voted yes, Canada tariffs"
+   }
+  },
+  {
+   "candidateId": "val-hoyle",
+   "race": "oregon-house-4",
+   "item": "topic/fed-tariffs",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Voted to end tariffs"
+   },
+   "sourceUrl": "https://clerk.house.gov/Votes/202665",
+   "sourceQuote": "Roll Call 65 | H. J. Res. 72 | Relating to a national emergency by the President on February 1, 2025 [the joint resolution terminates the emergency declared in Executive Order 14193, the Canada order] | yea: 219 | nay: 211",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The vote (Yea) and text check out, but the vote ended only the Canada emergency; the grid chip reads as a vote on tariffs in general, while the text already says Canada.",
+   "proposed": {
+    "topicChip": "Voted yes, Canada tariffs"
+   }
+  },
+  {
+   "candidateId": "andrea-salinas",
+   "race": "oregon-house-6",
+   "item": "topic/fed-tariffs",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Voted to end tariffs"
+   },
+   "sourceUrl": "https://clerk.house.gov/Votes/202665",
+   "sourceQuote": "Roll Call 65 | H. J. Res. 72 | Relating to a national emergency by the President on February 1, 2025 [the joint resolution terminates the emergency declared in Executive Order 14193, the Canada order] | yea: 219 | nay: 211",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The vote (Yea) and text check out, but the vote ended only the Canada emergency; the grid chip reads as a vote on tariffs in general, while the text already says Canada.",
+   "proposed": {
+    "topicChip": "Voted yes, Canada tariffs"
+   }
+  },
+  {
+   "candidateId": "janelle-s-bynum",
+   "race": "oregon-house-5",
+   "item": "issue/housing",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Fix supply and financing",
+    "line": "Would target housing shortages, construction-workforce gaps and financing barriers, with ownership pathways.",
+    "position": "Would tackle housing shortages, construction-workforce gaps and financing barriers through legislation, expand pathways to homeownership and address youth homelessness."
+   },
+   "sourceUrl": "https://www.janellebynum.com/issues/lowering-the-cost-of-housing",
+   "sourceQuote": "Janelle has worked with both parties on efforts to lower the cost of housing, including introducing legislation to tackle housing shortages, workforce gaps, and affordability barriers while expanding pathways to homeownership and addressing youth homelessness.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "She says \"affordability barriers\" and \"workforce gaps\"; \"financing barriers\" and \"construction-workforce\" narrow and specify her words, and the chip builds on the substituted word.",
+   "proposed": {
+    "chip": "Supply and affordability",
+    "line": "Would target housing shortages, workforce gaps and affordability barriers, with ownership pathways.",
+    "position": "Has introduced legislation to tackle housing shortages, workforce gaps and affordability barriers, expand pathways to homeownership and address youth homelessness."
+   }
+  },
+  {
+   "candidateId": "janelle-s-bynum",
+   "race": "oregon-house-5",
+   "item": "issue/climate",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Would expand clean energy, move off fossil fuels and protect communities from wildfire.",
+    "position": "Would generate more clean energy, transition away from fossil fuels and protect communities and land from wildfires."
+   },
+   "sourceUrl": "https://www.janellebynum.com/issues/taking-climate-action",
+   "sourceQuote": "She is supporting efforts to generate more clean energy – which creates good jobs – transition away from fossil fuels, and protect our communities, property, and land from wildfires.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "\"Supporting efforts to\" becomes a direct commitment (\"Would generate\"), the upgrade the audit rules list; mild, since the goals are the same.",
+   "proposed": {
+    "line": "Supports efforts to expand clean energy, move off fossil fuels and protect against wildfire.",
+    "position": "Supports efforts to generate more clean energy, transition away from fossil fuels and protect communities, property and land from wildfires."
+   }
+  },
+  {
+   "candidateId": "patti-adair",
+   "race": "oregon-house-5",
+   "item": "topic/fed-data-centers",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Data-center disclosure",
+    "text": "Would propose legislation requiring Big Tech to be transparent about the impacts data centers have on air quality, water quality and electricity costs."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=25",
+   "sourceQuote": "Propose legislation that requires Big Tech to be transparent about the impacts data centers have on air quality, water quality, and electricity costs",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "A disclosure requirement speaks to the topic without saying whether to limit or fast-track data centers; Bynum's comparable transparency bill (an EIA study) is marked partial, so supports here is uneven.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Would propose legislation requiring Big Tech to be transparent about data centers’ impacts on air quality, water quality and electricity costs; she does not say whether to limit or fast-track them."
+   }
+  },
+  {
+   "candidateId": "chris-beck",
+   "race": "oregon-house-2",
+   "item": "topic/fed-data-centers",
+   "fields": [
+    "topic-text",
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Pause new data centers",
+    "text": "Would pause new data-center construction, saying data centers in some communities pollute the water and raise energy prices, so everyone pays."
+   },
+   "sourceUrl": "https://chrisbeckforcongress.com/district2issues",
+   "sourceQuote": "When data centers in some communities pollute the water and raise energy prices, everyone pays.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Citation only: the cited district page has the pollution and prices sentence but no pause; \"Pausing new data center construction\" is in his pamphlet statement (PDF page 11), which should be the source.",
+   "proposed": {
+    "source": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=11"
+   }
+  },
+  {
+   "candidateId": "chris-beck",
+   "race": "oregon-house-2",
+   "item": "issue/climate",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Would reverse the 40% cut to Forest Service wildfire prevention, pause new data-center construction, create a rural service corps in each county to restore forests and watersheds, and expand conservation easement programs."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=11",
+   "sourceQuote": "Pausing new data center construction. Reversing cuts to wildfire prevention and forest land management. ... Rehabilitating and protecting Oregon’s public lands, rivers and forests. Creating rural service corps jobs in each county.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Citation only: the 40% figure and conservation easements come from his district-issues page, not the cited pamphlet page.",
+   "proposed": {
+    "position": "Would reverse cuts to wildfire prevention and forest management, pause new data-center construction, create rural service corps jobs in each county and rehabilitate Oregon’s public lands, rivers and forests."
+   }
+  },
+  {
+   "candidateId": "cliff-bentz",
+   "race": "oregon-house-2",
+   "item": "issue/money",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Lower taxes, fewer rules",
+    "line": "Supports lower taxes, less regulation and investment directed to rural Oregon.",
+    "position": "Supports lower taxes, reduced regulation and directing investment toward rural Oregon."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=13",
+   "sourceQuote": "Cliff Bentz: supports veterans, more energy generation, lower taxes, a secure border, private property rights, personal freedom and rural Healthcare.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Citation only: reduced regulation and rural investment are on his campaign page https://cliffbentz.com/2023/06/reduce-regulation-lower-taxes/, not in the cited pamphlet; re-cite that page.",
+   "proposed": {
+    "source": "https://cliffbentz.com/2023/06/reduce-regulation-lower-taxes/"
+   }
+  },
+  {
+   "candidateId": "cliff-bentz",
+   "race": "oregon-house-2",
+   "item": "issue/climate",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Wants more hydropower, dams kept, more timber harvest; opposes carbon pricing.",
+    "position": "Wants more energy generation, reservoir storage, hydropower, retained dams, irrigation water and increased timber harvest; opposes carbon pricing and would reduce fuel loads on federal forests and change the Equal Access to Justice Act."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=13",
+   "sourceQuote": "is fighting for reservoir storage, additional hydropower, retention of dams, water for irrigation, delisting of the wolf, and increased timber harvest. Cliff Bentz: supports veterans, more energy generation, lower taxes",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Citation only: carbon pricing, fuel loads and the Equal Access to Justice Act come from his 2023 campaign pages (cap-and-trade, fire-federal-forest-management), not the pamphlet; the carbon-pricing opposition there is to Oregon's 2019–2020 cap-and-trade bills.",
+   "proposed": {
+    "line": "Wants more hydropower, dams kept, irrigation water and more timber harvest.",
+    "position": "Wants more energy generation, reservoir storage, hydropower, retained dams, irrigation water and increased timber harvest."
+   }
+  },
+  {
+   "candidateId": "val-hoyle",
+   "race": "oregon-house-4",
+   "item": "issue/money",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Would restore health-insurance premium credits, protect Social Security and Medicare, fight tariffs.",
+    "position": "Would restore the Affordable Care Act's enhanced premium tax credits and clean-energy tax credits, expand and protect Social Security and Medicare, take on drug and grocery price-fixing, and fight tariffs she calls illegal."
+   },
+   "sourceUrl": "https://www.valhoyle.com/issues/",
+   "sourceQuote": "Forcing Big Pharma to reduce prescription drug prices; Cracking down on price fixing by big grocery store chains ... Passing legislation to refund small businesses for the costs of illegal tariffs",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Her tariff item is refunding small businesses for illegal tariffs, which \"fight tariffs\" broadens, and the price-fixing charge is aimed at grocery chains, not drug makers.",
+   "proposed": {
+    "line": "Would restore health-insurance premium credits, protect Social Security and Medicare, refund tariff costs.",
+    "position": "Would restore the Affordable Care Act's enhanced premium tax credits and clean-energy tax credits, expand and protect Social Security and Medicare, force lower drug prices, crack down on grocery price-fixing and refund small businesses for tariffs she calls illegal."
+   }
+  },
+  {
+   "candidateId": "monique-despain",
+   "race": "oregon-house-4",
+   "item": "issue/housing",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Would end permitting costs, building regulations, local codes and land-use restrictions she says stifle construction, with the federal government lifting housing restrictions and encouraging workforce housing."
+   },
+   "sourceUrl": "https://www.moniqueforcongress.com/issues/",
+   "sourceQuote": "I support ending prohibitive and inflationary policies that stifle new construction with excessive permitting costs, building regulations, city and county codes, bureaucratic red tape, and outdated land-use restrictions imposed by the government itself.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "She targets \"excessive\" permitting costs and \"outdated\" land-use restrictions; without those qualifiers the position can read as ending building codes and land-use rules outright (the line and chip are fine).",
+   "proposed": {
+    "position": "Would end what she calls prohibitive, inflationary policies that stifle construction, including excessive permitting costs, building regulations, local codes and outdated land-use restrictions, with the federal government lifting housing restrictions and encouraging workforce housing."
+   }
+  },
+  {
+   "candidateId": "monique-despain",
+   "race": "oregon-house-4",
+   "item": "topic/fed-housing-aid",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "partial",
+    "text": "Would have the federal government lift housing restrictions and encourage workforce housing, ending permitting costs and land-use rules she says stifle construction; she does not address vouchers or tax credits."
+   },
+   "sourceUrl": "https://www.moniqueforcongress.com/issues/",
+   "sourceQuote": "I support ending prohibitive and inflationary policies that stifle new construction with excessive permitting costs ... and outdated land-use restrictions imposed by the government itself.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "Same dropped qualifiers as her housing position (\"excessive\", \"outdated\").",
+   "proposed": {
+    "text": "Would have the federal government lift housing restrictions and encourage workforce housing, ending excessive permitting costs and outdated land-use rules she says stifle construction; she does not address vouchers or tax credits."
+   }
+  },
+  {
+   "candidateId": "justin-filip",
+   "race": "oregon-house-4",
+   "item": "issue/housing",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Wants federal dollars for the district’s housing crisis and involuntary homelessness abolished.",
+    "position": "Wants federal dollars brought back to the district for the housing and unhoused crisis, and involuntary homelessness abolished."
+   },
+   "sourceUrl": "https://www.justin4congress.com/meet-justin",
+   "sourceQuote": "Justin's top priorities include ending the genocide in Palestine and reining in our military spending, bringing federal dollars back to Oregon’s Congressional District 4 to help address the housing and unhoused crisis, and ensuring strong protections for our federal lands.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Citation only: \"homelessness as an involuntary condition must be abolished\" is on his home page, not the cited Meet Justin page; re-cite or drop the second clause.",
+   "proposed": {
+    "line": "Wants federal dollars brought back to the district for the housing and unhoused crisis.",
+    "position": "Wants federal dollars brought back to the district to help address the housing and unhoused crisis."
+   }
+  },
+  {
+   "candidateId": "justin-filip",
+   "race": "oregon-house-4",
+   "item": "topic/fed-housing-aid",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "partial",
+    "text": "Wants federal dollars brought back to the district for the housing and unhoused crisis and involuntary homelessness abolished; he does not address the ROAD Act, vouchers or tax credits."
+   },
+   "sourceUrl": "https://www.justin4congress.com/meet-justin",
+   "sourceQuote": "bringing federal dollars back to Oregon’s Congressional District 4 to help address the housing and unhoused crisis",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Citation only, as in his housing issue slot: the abolition clause is on his home page.",
+   "proposed": {
+    "text": "Wants federal dollars brought back to the district for the housing and unhoused crisis; he does not address the ROAD Act, vouchers or tax credits."
+   }
+  },
+  {
+   "candidateId": "justin-filip",
+   "race": "oregon-house-4",
+   "item": "issue/climate",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Would declare a national climate emergency, pass a Green New Deal, ban fracking and fossil-fuel subsidies, nationalize energy and rail for renewable power and high-speed rail, and ban privately built data centers."
+   },
+   "sourceUrl": "https://www.justin4congress.com/our-platform",
+   "sourceQuote": "A national climate emergency should be declared ... Fossil fuel extraction practices such as fracking should be banned, and all subsidies to the fossil fuel industry eliminated. ... The energy and railroad systems should be nationalized",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Citation only: the data-center ban is on his home page, not the cited platform page.",
+   "proposed": {
+    "position": "Would declare a national climate emergency, pass a Green New Deal, ban fracking, eliminate fossil-fuel subsidies and nationalize energy and rail for renewable power and high-speed rail."
+   }
+  },
+  {
+   "candidateId": "andrea-salinas",
+   "race": "oregon-house-6",
+   "item": "issue/safety",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Would fund first responders and social services, keep working with police on fentanyl including stiffer trafficker penalties, invest in smart border security, streamline immigration courts and protect communities from what she calls ICE's violent overreach."
+   },
+   "sourceUrl": "https://www.andreasalinasfororegon.com/issues/",
+   "sourceQuote": "creating safer communities means ensuring first responders have the resources they need ... She is fighting for policies that will increase investment in smart border security, streamline immigration courts, and deliver certainty for the millions of immigrants who already live here",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Citation only: the ICE clause is from her pamphlet (PDF page 27), not the cited issues page, which instead mentions certainty for immigrants already here.",
+   "proposed": {
+    "position": "Would fund first responders and social services, keep working with police on fentanyl including stiffer trafficker penalties, invest in smart border security, streamline immigration courts and deliver certainty for immigrants already living here."
+   }
+  },
+  {
+   "candidateId": "andrea-salinas",
+   "race": "oregon-house-6",
+   "item": "issue/climate",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Would put Oregon on a path to 100% green energy, stand up to corporate polluters, and protect air and waterways; prioritizes public infrastructure over corporate-owned data centers."
+   },
+   "sourceUrl": "https://www.andreasalinasfororegon.com/issues/",
+   "sourceQuote": "Andrea will always stand up to corporate polluters to reduce pollution, protect our air and waterways, and put Oregon on a path to 100% green energy.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Citation only: the data-center clause is from her pamphlet (PDF page 27), where it is past tense (\"prioritized\").",
+   "proposed": {
+    "position": "Would put Oregon on a path to 100% green energy, stand up to corporate polluters and protect air and waterways."
+   }
+  },
+  {
+   "candidateId": "andrea-salinas",
+   "race": "oregon-house-6",
+   "item": "issue/money",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Would cap prescription drug costs and let Medicare negotiate prices, seek middle-class tax relief instead of billionaire tax breaks, and bring living-wage jobs to Oregon."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=27",
+   "sourceQuote": "Instead of giving tax breaks to billionaires, she fought to secure federal funding for housing projects ... and fought for tax relief to middle-class families. ... Andrea is fighting to cap the cost of prescription drugs, strengthen price transparency at hospitals",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Citation only: Medicare negotiation and living-wage jobs are from her issues web page, not the cited pamphlet page.",
+   "proposed": {
+    "position": "Would cap prescription drug costs and strengthen hospital price transparency, and seeks middle-class tax relief instead of billionaire tax breaks."
+   }
+  },
+  {
+   "candidateId": "david-russ",
+   "race": "oregon-house-6",
+   "item": "issue/money",
+   "fields": [
+    "chip",
+    "line"
+   ],
+   "current": {
+    "chip": "End corporate subsidies",
+    "line": "Would end corporate subsidies and noncitizen loan programs, strip conditions from federal grants."
+   },
+   "sourceUrl": "https://russisforus.com/",
+   "sourceQuote": "Stop Subsidies that only benefit large Corps ... End Federal subsidy/loan programs targeting non-citizens ... End the IRS manhunt of 1099 employers and employees",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "He limits it to subsidies \"that only benefit large Corps\"; \"corporate subsidies\" widens the scope (the position keeps it), and the No Strings Act is on his proposed-bills page, not the cited home page.",
+   "proposed": {
+    "chip": "End big-firm subsidies",
+    "line": "Would end subsidies benefiting only large corporations, end noncitizen loan programs, strip grant conditions."
+   }
+  },
+  {
+   "candidateId": "david-russ",
+   "race": "oregon-house-6",
+   "item": "issue/climate",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Local control of lands",
+    "line": "Would transfer federal public lands to state and local control; affordable energy decided locally.",
+    "position": "Would return federal public lands to state and local control, end federal control of local utilities and infrastructure, and support responsible forest and agricultural management, reliable infrastructure and affordable energy decided locally."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=29",
+   "sourceQuote": "I support domestic manufacturing, responsible forest and agricultural management, fair markets, reliable infrastructure, and affordable energy. These things should be controlled locally, not by Washington, DC.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Citation only: the land transfer and utilities clauses (and so the chip) are from his home page https://russisforus.com/ and his emailed reply, not the cited pamphlet page; re-cite.",
+   "proposed": {
+    "source": "https://russisforus.com/"
+   }
+  },
+  {
+   "candidateId": "david-russ",
+   "race": "oregon-house-6",
+   "item": "topic/fed-ice-funding",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Fund enforcement",
+    "text": "Fully supports giving federal law enforcement enough money to do its job efficiently; says the border is now secured."
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#russ-2026-09-24",
+   "sourceQuote": "I fully support ensuring that Federal Law Enforcement has sufficient funding to efficiently perform their duties.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "He answered the $70 billion question with a general value (\"sufficient funding\") and never says the package is that amount; DeSpain's similar wish that CBP have \"the necessary authority and resources\" is marked partial.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Fully supports giving federal law enforcement enough money to do its job efficiently; he does not say whether the $70 billion package is that amount."
+   }
+  }
+ ]
+}

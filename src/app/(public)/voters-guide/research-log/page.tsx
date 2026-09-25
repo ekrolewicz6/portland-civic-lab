@@ -19,6 +19,196 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="summary-audit-2026-09-25">September 25, 2026 · Correction: every summary checked against its source (all races)</h2>
+        <p>
+          After the Torres correction, the same reader argued that our
+          summaries lean once you follow the citations. We checked every
+          summary in the guide against the source it cites: the position, row
+          line and grid chip for each of the 472 documented issue positions,
+          and all 607 stances on the topic boards, for 153 candidates. We read
+          each campaign page as it stands now, the cited page of each
+          pamphlet, the minutes and roll calls behind recorded votes, and the
+          replies candidates sent us.
+        </p>
+        <p>
+          We changed entries for 118 candidates. Most often a summary went
+          further than the candidate: “explore” became “would,” something a
+          candidate listed as a complaint became a pledge, or a limiting word
+          fell out, such as “unnecessary” regulations, the “growth” of taxes,
+          taxes “on working families” or “unconstitutional” raids. Some chips
+          used words the candidate did not, such as “clear” public spaces for
+          “clean up,” “public housing” for “social housing” and “ban” for
+          “moratorium.” Other summaries softened what a candidate said, by
+          dropping “data-informed enforcement” or turning a filing’s harsh
+          wording into a milder paraphrase. These errors ran in both
+          directions.
+        </p>
+        <p>
+          Forty-six topic stances changed label. Most moved to “partial,”
+          because the candidate’s words speak to the topic without reaching
+          its exact choice: whether Street Response should run 24/7, whether
+          to keep camp-removal funding at current levels, whether to pause
+          data centers, how to close a budget gap. A few moved the other way
+          where the answer was plainer than we had recorded. Where our wording
+          was right but came from a different page of the candidate’s own
+          materials than the one cited, we cited that page or cut the words
+          the cited page does not hold.
+        </p>
+        <p>
+          Four facts were wrong. Christine Drazan voted yes when the House
+          first passed the POWER Act in April 2025 and no when it passed the
+          House again in June; the board showed only the no. Sue Piazza voted
+          for Gresham’s 2028–32 rate increases but did not move them. Janelle
+          Bynum introduced the BILL Drivers Act on July 9, 2026, not July 10.
+          Evelyn Kocher’s transportation stance named TriMet and bike-lane
+          projects we could not find in any of her published materials; it
+          now follows her pamphlet statement.
+        </p>
+        <p>
+          Two other changes: the guide no longer uses a pronoun for Ali
+          Beaudoin, whose own materials do not state one, and the Clackamas
+          County clerk board’s question now asks about county-level checks
+          that remove voters, where it had said “purges.” The full list of
+          flagged items, with the source quote behind each change, is filed
+          with the research notes. Entries changed for these candidates:
+        </p>
+        <ul>
+          <li>
+            <strong>Portland Council · District 3.</strong> Ali Beaudoin (housing column; police staffing and water rates now “mixed”; clearing camps); Guy Frankenstein (bills column); Matthias Hallett (bills column; new taxes or fees); Patrick Hilton (housing and safety columns); Tiffany Koyama Lane (Moda Center deal now “partial”); Kenneth (Kent) R Landgraver III (bills column); Keir Legree (clearing camps and water rates now “partial”; Moda Center deal); Esther León (housing and safety columns; clearing camps); Darren McCormick (safety column); Angelita Morillo (bills, housing and climate columns; clearing camps); Steve Novick (climate column; Street Response now “partial”; new taxes or fees now “mixed”; water rates, Moda Center deal and clearing camps); Cristal Otero (housing and safety columns; water rates now “partial”; police staffing); Terry Parker (safety column; new taxes or fees now “mixed”); Tom Sollitt (climate column; police staffing and clearing camps); Kellie Torres (safety and housing columns; police staffing now “partial”).
+          </li>
+          <li>
+            <strong>Portland Council · District 4.</strong> Timothy (TJ) Anderson (safety and bills columns); Eli Arnold (Street Response now “partial”; new taxes or fees); Olivia Clark (bills column; clearing camps now “partial”); Jayne Cronlund (housing column); Jamey Evenstar (new taxes or fees); Mitch Green (climate column; water rates now “partial”); Josh Leake (safety column); Matt Schulte (new taxes or fees); Jeremy Beausoleil Smith (housing column); Eric Zimmerman (Street Response now “partial”; police staffing and clearing camps).
+          </li>
+          <li>
+            <strong>Portland City Auditor.</strong> Simone Rede (safety and climate columns; petition verification and auditor’s office cuts).
+          </li>
+          <li>
+            <strong>Multnomah County Chair.</strong> Julia Brim-Edwards (sobering center and shelter cuts now “partial”; jail capacity and ambulance staffing); Sharon Meieran (bills and safety columns; city-county agreement now “partial”; deflection center, Preschool tax delay and county budget gap); Shannon Singleton (housing and bills columns; deflection center and sanctuary policy).
+          </li>
+          <li>
+            <strong>Multnomah Commissioner · District 2.</strong> Bruce Broussard (bills column); Serena Cruz (bills and climate columns; county budget gap now “partial”; Moda Center money); Herman Greene (housing column); Nathan Ong Norris (climate and bills columns; Moda Center money); Tony Robertson (housing and bills columns); Bri Williams (safety column); Nabil Zaghloul (housing, bills and safety columns; shelter cuts now “partial”).
+          </li>
+          <li>
+            <strong>Multnomah County Sheriff.</strong> Nicole Morrisey O’Donnell (safety column; sanctuary policy).
+          </li>
+          <li>
+            <strong>Governor of Oregon.</strong> Tina Kotek (housing and bills columns; Interstate Bridge now “mixed”; school instructional time, new state taxes and data-center moratorium); Christine Drazan (safety, bills and housing columns; data-center power rates now “mixed”; school instructional time now “partial”; Interstate Bridge now “opposes”; homelessness emergency and kicker refund); Brett Smith (safety and climate columns; data-center moratorium).
+          </li>
+          <li>
+            <strong>U.S. Senate · Oregon.</strong> Jeff Merkley (climate column; federal housing programs and data-center costs); David Brock Smith (safety, bills and climate columns).
+          </li>
+          <li>
+            <strong>U.S. House · District 1.</strong> Suzanne Bonamici (bills, safety and climate columns; tariffs); Barbara J Kahl (safety column).
+          </li>
+          <li>
+            <strong>U.S. House · District 3.</strong> Maxine E Dexter (safety column; tariffs).
+          </li>
+          <li>
+            <strong>U.S. House · District 5.</strong> Janelle S Bynum (safety, bills, housing and climate columns; data-center costs and tariffs); Patti Adair (safety column; data-center costs now “partial”; Medicaid and SNAP cuts).
+          </li>
+          <li>
+            <strong>U.S. House · District 2.</strong> Chris Beck (climate column; tariffs and data-center costs); Cliff Bentz (bills and climate columns; tariffs).
+          </li>
+          <li>
+            <strong>U.S. House · District 4.</strong> Val Hoyle (bills column; tariffs); Monique DeSpain (bills and housing columns; federal housing programs); Justin Filip (housing and climate columns; Fix Our Forests Act and federal housing programs).
+          </li>
+          <li>
+            <strong>U.S. House · District 6.</strong> Andrea Salinas (safety, climate and bills columns; tariffs); David Russ (safety, bills and climate columns; ICE and border money now “partial”).
+          </li>
+          <li>
+            <strong>Oregon Senate · District 13.</strong> Courtney Neron Misslin (bills and safety columns; data-center limits); Glenn Lancaster (safety and bills columns; state budget gap).
+          </li>
+          <li>
+            <strong>Oregon Senate · District 15.</strong> Myrna A Munoz (bills column; data-center limits now “partial”); Harold Hutchison (safety, bills and climate columns; state budget gap).
+          </li>
+          <li>
+            <strong>Oregon Senate · District 16.</strong> Courtney Bangs (climate and bills columns; state budget gap); Rachel Armitage (bills and climate columns; 2027 road package); Melisa Finkle (2027 road package).
+          </li>
+          <li>
+            <strong>Oregon Senate · District 17.</strong> Lisa Reynolds (bills, housing and safety columns; data-center limits); John A N Chee (housing column).
+          </li>
+          <li>
+            <strong>Oregon Senate · District 19.</strong> Mary Dirksen (safety column).
+          </li>
+          <li>
+            <strong>Oregon Senate · District 20.</strong> Mark Meek (data-center limits and 2027 road package); Michele Stroh (2027 road package and state budget gap).
+          </li>
+          <li>
+            <strong>Oregon Senate · District 24.</strong> Kayse Jama (bills column).
+          </li>
+          <li>
+            <strong>Oregon Senate · District 26.</strong> Jeff Helfrich (state budget gap).
+          </li>
+          <li>
+            <strong>Oregon House · District 26.</strong> Sue R Rieke Smith (data-center limits now “partial”; 2027 road package); Stephanie Carkin (state budget gap now “mixed”); Steph Terrio (housing column).
+          </li>
+          <li>
+            <strong>Oregon House · District 29.</strong> Susan McLain (data-center limits).
+          </li>
+          <li>
+            <strong>Oregon House · District 40.</strong> Adam Baker (housing column); Michael W Sugar (state budget gap and sanctuary law now “partial”); Pat Hubbell (bills column; state budget gap).
+          </li>
+          <li>
+            <strong>Oregon House · District 51.</strong> Darla Mead (housing, bills and climate columns; data-center limits now “partial”; wildfire money).
+          </li>
+          <li>
+            <strong>Oregon House · District 52.</strong> Hank Sanders (climate and bills columns; data-center limits); Scott C Hege (housing and climate columns; data-center limits and state budget gap).
+          </li>
+          <li>
+            <strong>Washington County Chair · At-large.</strong> Nafisa Fai (bills and housing columns; county budget gap and data-center tax breaks); Pam Treece (bills, safety and housing columns; ICE emergency response).
+          </li>
+          <li>
+            <strong>Washington Commissioner · District 4.</strong> Steve Callaway (bills column).
+          </li>
+          <li>
+            <strong>Clackamas Commissioner · Position 2.</strong> Paul Savas (climate and housing columns; senior tax relief now “supports”; public safety levy retry and judicial-warrant rule now “partial”); Mark Shull (public safety levy retry).
+          </li>
+          <li>
+            <strong>Clackamas Commissioner · Position 4.</strong> Diana Helm (climate and housing columns; public safety levy retry now “partial”; senior tax relief); R W Smith (safety, bills, climate and housing columns; data-center moratorium now “partial”).
+          </li>
+          <li>
+            <strong>Clackamas County Clerk.</strong> Catherine McMullen (county voter-roll checks); Mark Reaksecker (county voter-roll checks).
+          </li>
+          <li>
+            <strong>Clackamas County Treasurer.</strong> Brian T Nava (bills column; cash-control training).
+          </li>
+          <li>
+            <strong>Gresham Mayor.</strong> Travis Stovall (public-safety fee now “partial”; levy and fire district); Sue Piazza (safety column; groundwater and rates now “supports”; immigration enforcement).
+          </li>
+          <li>
+            <strong>Gresham Council · Position 2.</strong> Heather Coleman-Cox (public-safety fee); Will DelPlato (bills column; general-fund gap).
+          </li>
+          <li>
+            <strong>Gresham Council · Position 4.</strong> Gregory Schroeder (safety column); Teo Ramirez (immigration enforcement).
+          </li>
+          <li>
+            <strong>Gresham Council · Position 6.</strong> Janine Gladfelter (public-safety fee now “partial”).
+          </li>
+          <li>
+            <strong>Beaverton Council · Position 1.</strong> Evelyn Kocher (transportation priorities); Rachel Philip (housing column).
+          </li>
+          <li>
+            <strong>Hillsboro Council · Ward 1, Position A.</strong> Cristian Salgado (bills column; data-center moratorium now “partial”); Sarah Marugg (data-center tax breaks now “partial”); Diana Jackson (private-jet hangars).
+          </li>
+          <li>
+            <strong>Hillsboro Council · Ward 2, Position A.</strong> Ivette Pantoja (housing column); Karim Delgado (housing column; data-center moratorium now “partial”; data-center tax breaks).
+          </li>
+          <li>
+            <strong>Tigard Mayor.</strong> Yi-Kang Hu (general-fund gap and parks funding); Bill Monahan (safety and bills columns; police facility now “partial”; parks funding).
+          </li>
+          <li>
+            <strong>Tigard City Council.</strong> John Goodhouse (safety column; general-fund gap); Sue Garino (bills column); Gabriel Elijio Velasquez (safety and housing columns); Tom Anderson (safety column).
+          </li>
+          <li>
+            <strong>Lake Oswego City Council.</strong> Bryan Guiney (housing and climate columns; state housing target, sewer plant rates and North Anchor hotel); Suzanne Miles (safety column); Peren Tiemann (housing, safety and climate columns; state housing target); Neil Tunmore (housing and bills columns; new library, sewer plant rates and North Anchor hotel); Patrick Walsh (bills and climate columns; state housing target now “partial”; sewer plant rates and new library).
+          </li>
+          <li>
+            <strong>Oregon City Mayor.</strong> Damon Mabee (bills column; budget and tax rate); Adam Marl (data-center moratorium and Caring Place); Rodney La Barr (housing and bills columns; budget and tax rate now “partial”; Abernethy Bridge and tolls).
+          </li>
+          <li>
+            <strong>Oregon City Commission.</strong> James Nicita (bills column; data-center moratorium now “partial”); Gordon J Lawrence (bills column).
+          </li>
+        </ul>
         <h2 id="torres-safety-2026-09-25">September 25, 2026 · Correction: Kellie Torres’s safety summary (District 3)</h2>
         <p>
           A reader on Reddit pointed out that Kellie Torres’s safety chip,
@@ -147,26 +337,26 @@ export default function ResearchLog() {
         <h2 id="beaudoin-2026-09-23">September 23, 2026 · Candidate response: Ali Beaudoin (District 3)</h2>
         <p>
           Ali Beaudoin answered all eleven questions in the Lab’s follow-up.
-          She would increase housing supply, simplify permitting and explore
+          Beaudoin would increase housing supply, simplify permitting and explore
           temporary interest-rate help for first-time buyers; match the
           response to the problem, with enforcement for crime, prevention
           through services and non-police care; grow the tax base by filling
           commercial vacancies before raising taxes; and put street
           maintenance, sidewalks, safer crossings and reliable buses first.
-          On the Council’s choices, she would generally hold the line on new
+          On the Council’s choices, Beaudoin would generally hold the line on new
           taxes and fees, rebuild police staffing where gaps are documented,
           pause new AI data centers, expand Street Response toward 24/7 where
           data supports it, keep fees only where shown necessary, and support
           phased water-rate increases with cost controls and protections for
-          households that cannot pay. On camp removals she would enforce
+          households that cannot pay. On camp removals, Beaudoin would enforce
           public-space rules and measure outcomes but did not say whether to
           keep current funding.
         </p>
         <p>
-          Her housing, safety and climate columns, empty before, now have
-          positions, and her bills column gained a “how” step. Seven topic
-          boards, empty before, now have entries. Excerpts appear on her
-          brief, and the reply is kept on file.
+          Beaudoin’s housing, safety and climate columns, empty before, now
+          have positions, and the bills column gained a “how” step. Seven
+          topic boards, empty before, now have entries. Excerpts appear on
+          the brief, and the reply is kept on file.
         </p>
         <h2 id="cronlund-2026-09-23">September 23, 2026 · Candidate response: Jayne Cronlund (District 4)</h2>
         <p>

@@ -1,0 +1,737 @@
+{
+ "batch": "b07-state-senate",
+ "checked": {
+  "issueSlots": 48,
+  "topicStances": 68,
+  "sourcesFetched": 34
+ },
+ "unreachable": [
+  {
+   "url": "https://www.bassettfororegon.com/",
+   "items": [
+    "nicole-bassett/issue/housing",
+    "nicole-bassett/issue/money",
+    "nicole-bassett/issue/climate"
+   ],
+   "note": "Live site fails TLS (curl: 'tlsv1 alert protocol version'; WebFetch: WRONG_VERSION_NUMBER), as it did Sept 22. No manifest snapshot. Checked instead against the Wayback capture of April 23, 2026 (http://web.archive.org/web/20260423220529/https://www.bassettfororegon.com/), saved as sources/b07/bassett-wayback-20260423.txt; all three rows match that capture."
+  },
+  {
+   "url": "https://olis.oregonlegislature.gov/liz/<session>/Measures/Overview/<bill>",
+   "items": [
+    "all OLIS-cited topic cells"
+   ],
+   "note": "The Overview pages return OLIS's generic 'An error occurred' page to curl. Votes were read from the GetHistory endpoint (/Measures/Overview/GetHistory/<bill>) and bill contents from /Downloads/MeasureDocument/<bill>/Enrolled; all saved under sources/b07/olis-*."
+  }
+ ],
+ "findings": [
+  {
+   "candidateId": "courtney-neron-misslin",
+   "race": "oregon-state-senate-13",
+   "item": "issue/money",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Lower household bills rather than raise them: she opposed tolling the I-5 bridge in Wilsonville, backs universal school meals as a family-budget saving, and wants lower prescription-drug costs."
+   },
+   "sourceUrl": "https://www.courtneyfororegon.com/priorities",
+   "sourceQuote": "When her district was at risk of paying an unfair share of interstate infrastructure costs, Courtney sounded the alarm to remove tolling from the I-5 Bridge over the Willamette in Wilsonville. ... we can count on her to keep fighting to make Oregon more affordable for everyone.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The page says she wants Oregon more affordable; 'rather than raise them' is our framing, and it flatters a senator who voted yes on the HB 3991 gas-tax and fee package.",
+   "proposed": {
+    "position": "Make Oregon more affordable: she pushed to remove tolling from the I-5 bridge in Wilsonville, backs universal school meals as a family-budget saving, and wants lower prescription-drug costs."
+   }
+  },
+  {
+   "candidateId": "courtney-neron-misslin",
+   "race": "oregon-state-senate-13",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Prevention-focused safety: expanded mental-health resources, full funding for the 9-8-8 crisis line, domestic-violence legislation, gun-safety measures such as safe storage, and police accountability, alongside money for Tigard’s police facility.",
+    "line": "Supports prevention-first safety: mental-health care, 9-8-8 funding, gun safe-storage rules."
+   },
+   "sourceUrl": "https://www.courtneyfororegon.com/priorities",
+   "sourceQuote": "She has supported expanded mental health resources, voted to fully fund the 9-8-8 mental health crisis line, and introduced legislation to address gaps in Oregon’s response to domestic violence. She supports common-sense gun safety measures, such as the Reduction of Gun Violence Act (IP 17, 2022)",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "In her safety section the gun measure she names is the 2022 Reduction of Gun Violence Act (IP 17, which became Measure 114); we swapped in safe storage, a past law she cites under education, so the row reads milder than her own example. Arguable because safe storage is also hers.",
+   "proposed": {
+    "position": "Prevention-focused safety: expanded mental-health resources, full funding for the 9-8-8 crisis line, domestic-violence legislation, gun-safety measures such as the 2022 Reduction of Gun Violence Act (IP 17), and police accountability, alongside money for Tigard’s police facility.",
+    "line": "Supports mental-health care, 9-8-8 funding and the 2022 Reduction of Gun Violence Act."
+   }
+  },
+  {
+   "candidateId": "courtney-neron-misslin",
+   "race": "oregon-state-senate-13",
+   "item": "topic/leg-data-centers",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it lets regulators put data centers in their own electricity rate class."
+   },
+   "sourceUrl": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3546",
+   "sourceQuote": "SECTION 2 ... (2) The Public Utility Commission shall provide for a classification of service under ORS 757.230 for retail electricity consumers that are large energy use facilities. The classification of service must be separate and distinct from classifications of service for other commercial or industrial retail electricity consumers and have its own tariff schedule. (enrolled HB 3546)",
+   "category": [
+    "factual"
+   ],
+   "verdict": "borderline",
+   "why": "The bill requires the PUC to create the separate class ('shall provide'); 'lets' understates it. The vote and stance are correct (Senate June 3, 2025: 18-12, not among the nays).",
+   "proposed": {
+    "text": "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it directs regulators to put data centers in their own electricity rate class."
+   }
+  },
+  {
+   "candidateId": "lisa-reynolds",
+   "race": "oregon-state-senate-17",
+   "item": "topic/leg-data-centers",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it lets regulators put data centers in their own electricity rate class."
+   },
+   "sourceUrl": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3546",
+   "sourceQuote": "SECTION 2 ... (2) The Public Utility Commission shall provide for a classification of service under ORS 757.230 for retail electricity consumers that are large energy use facilities. The classification of service must be separate and distinct from classifications of service for other commercial or industrial retail electricity consumers and have its own tariff schedule. (enrolled HB 3546)",
+   "category": [
+    "factual"
+   ],
+   "verdict": "borderline",
+   "why": "The bill requires the PUC to create the separate class ('shall provide'); 'lets' understates it. The vote and stance are correct (Senate June 3, 2025: 18-12, not among the nays).",
+   "proposed": {
+    "text": "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it directs regulators to put data centers in their own electricity rate class."
+   }
+  },
+  {
+   "candidateId": "mark-meek",
+   "race": "oregon-state-senate-20",
+   "item": "topic/leg-data-centers",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it lets regulators put data centers in their own electricity rate class."
+   },
+   "sourceUrl": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3546",
+   "sourceQuote": "SECTION 2 ... (2) The Public Utility Commission shall provide for a classification of service under ORS 757.230 for retail electricity consumers that are large energy use facilities. The classification of service must be separate and distinct from classifications of service for other commercial or industrial retail electricity consumers and have its own tariff schedule. (enrolled HB 3546)",
+   "category": [
+    "factual"
+   ],
+   "verdict": "borderline",
+   "why": "The bill requires the PUC to create the separate class ('shall provide'); 'lets' understates it. The vote and stance are correct (Senate June 3, 2025: 18-12, not among the nays).",
+   "proposed": {
+    "text": "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it directs regulators to put data centers in their own electricity rate class."
+   }
+  },
+  {
+   "candidateId": "glenn-lancaster",
+   "race": "oregon-state-senate-13",
+   "item": "issue/safety",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Would restore public order and enforce existing laws on addiction and homelessness."
+   },
+   "sourceUrl": "https://glennlancaster.com/issues2/",
+   "sourceQuote": "What’s not working • Laws that aren’t enforced • Addiction and homelessness treated as permanent ... Glenn’s approach • Restore public order and enforce the law • Demand real solutions to addiction and homelessness ... Compassion works best when there is accountability and results.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "He lists enforcement and 'real solutions to addiction and homelessness' as separate points; the line fuses them into enforcing laws on addiction and homelessness, which he does not say, and drops the 'real solutions' ask.",
+   "proposed": {
+    "line": "Would restore order, enforce the law and demand real solutions to addiction and homelessness."
+   }
+  },
+  {
+   "candidateId": "glenn-lancaster",
+   "race": "oregon-state-senate-13",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Stop the gas tax and stop tax increases; demand accountability for what works and stop funding programs that grow even when they fail.",
+    "line": "Opposes the gas tax and any tax increases; wants results-based accountability."
+   },
+   "sourceUrl": "https://glennlancaster.com/issues2/",
+   "sourceQuote": "Glenn’s approach • Stop the gas tax and stop tax increases ... What Oregonians see • High taxes paired with poor outcomes • Programs that grow even when they fail • Ideology prioritized over practical results Glenn’s approach • Demand accountability for what actually works • Challenge policies that protect the system instead of the people • Replace excuses with results",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "'Programs that grow even when they fail' is a complaint he lists, not a pledge to stop funding anything; 'any' in the line is our intensifier.",
+   "proposed": {
+    "position": "Stop the gas tax and stop tax increases; demand accountability for what actually works, since he says programs grow even when they fail.",
+    "line": "Opposes the gas tax and tax increases; wants results-based accountability."
+   }
+  },
+  {
+   "candidateId": "glenn-lancaster",
+   "race": "oregon-state-senate-13",
+   "item": "topic/leg-new-revenue",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Says Salem passed the largest tax increase in state history; he would stop tax increases and stop funding programs that grow even when they fail.",
+    "stance": "opposes"
+   },
+   "sourceUrl": "https://glennlancaster.com/issues2/",
+   "sourceQuote": "Oregon passed the largest tax increase in state history, including a major gas tax hike ... Glenn’s approach • Stop the gas tax and stop tax increases ... What Oregonians see ... • Programs that grow even when they fail ... Glenn’s approach • Demand accountability for what actually works",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Same added pledge as the money row: he criticizes programs that grow when they fail but never says he would stop funding them. The 'opposes' stance is fine.",
+   "proposed": {
+    "text": "Says Oregon passed the largest tax increase in state history; he would stop tax increases and demand accountability for what actually works."
+   }
+  },
+  {
+   "candidateId": "myrna-a-munoz",
+   "race": "oregon-state-senate-15",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Lower prescription-drug costs and stop the AI data-center build-out she says is driving up electricity bills.",
+    "line": "Wants lower prescription costs and a halt to data centers raising electricity bills."
+   },
+   "sourceUrl": "https://myrnaforsenate.com/issues",
+   "sourceQuote": "powerful corporate interests are threatening that model and driving up electricity bills with a reckless build-out of AI data centers. Our current leaders are letting it happen ... That’s why Myrna is committed to strengthening transparency, community input, and environmental safeguards.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "On the cited page her remedy is transparency, community input and safeguards, not stopping the build-out. Her filed statement (p. 68) says 'keeping us away from dangerous threats like data centers', which comes closer, so this is arguable.",
+   "proposed": {
+    "position": "Lower prescription-drug costs, and more transparency, community input and environmental safeguards on the AI data-center build-out she says is driving up electricity bills.",
+    "line": "Wants lower prescription costs and safeguards on data centers she says raise power bills."
+   }
+  },
+  {
+   "candidateId": "myrna-a-munoz",
+   "race": "oregon-state-senate-15",
+   "item": "topic/leg-data-centers",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Calls the AI data-center build-out reckless and says it is driving up electricity bills; would require transparency, community input and environmental safeguards."
+   },
+   "sourceUrl": "https://myrnaforsenate.com/issues",
+   "sourceQuote": "driving up electricity bills with a reckless build-out of AI data centers. Our current leaders are letting it happen ... That’s why Myrna is committed to strengthening transparency, community input, and environmental safeguards.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "She never picks separate rates, ending tax breaks or a pause on the cited page, which is the guide's 'partial'. If the cell cited her filed statement ('keeping us away from dangerous threats like data centers'), a pause reading becomes arguable.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Calls the AI data-center build-out reckless and says it is driving up electricity bills; she commits to transparency, community input and environmental safeguards and does not say whether she backs separate rates, ending tax breaks or a pause."
+   }
+  },
+  {
+   "candidateId": "harold-hutchison",
+   "race": "oregon-state-senate-15",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Repeal Oregon’s sanctuary-state law and let police ask about immigration status outside criminal investigations; restore respect for the rule of law.",
+    "line": "Supports repealing the sanctuary-state law and police immigration checks."
+   },
+   "sourceUrl": "https://survey.oregonabigailadams.org/AAP/candidate-survey-answer.cfm?State=OR&Q=state26&K=SS15-06",
+   "sourceQuote": "8 Do you think that law enforcement should be prohibited from inquiring about a person's immigration status unless conducting a criminal investigation? ... No ... 10 Do you support the repeal of Oregon's sanctuary state law to prevent the migration of illegal aliens? Yes. Oregon is one of these United States and has no right to harbor illegal aliens contrary to Federal law.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "'Restore respect for the rule of law' is his goal on p. 70 of the filed statement and his carrd site, not in the cited questionnaire; and he said police should not be barred from asking, which 'police immigration checks' makes sound like routine checks.",
+   "proposed": {
+    "position": "Repeal Oregon’s sanctuary-state law and let police ask about immigration status outside criminal investigations.",
+    "line": "Supports repealing the sanctuary-state law and letting police ask about immigration status."
+   }
+  },
+  {
+   "candidateId": "harold-hutchison",
+   "race": "oregon-state-senate-15",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line",
+    "chip"
+   ],
+   "current": {
+    "position": "Eliminate assessment-based property tax, keep the kicker with taxpayers, and oppose a sales tax; supports a mortgage-interest deduction.",
+    "line": "Would eliminate assessment-based property tax and keep the kicker; opposes a sales tax.",
+    "chip": "End property tax"
+   },
+   "sourceUrl": "https://survey.oregonabigailadams.org/AAP/candidate-survey-answer.cfm?State=OR&Q=state26&K=SS15-06",
+   "sourceQuote": "22 Do you support automatic annual increases to the property value base on a predetermined factor, such as 3% of COL? SB 712 (2025) No. Property tax is immoral.",
+   "category": [
+    "source-mismatch"
+   ],
+   "verdict": "borderline",
+   "why": "The wording is his, but not from the cited questionnaire: 'Eliminate Assessment-based Property Tax' is a listed goal in his filed statement (p. 70) and on haroldhutchison.carrd.co. No lean; cite p. 70 for that clause or add it as a second source.",
+   "proposed": {
+    "source": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=70"
+   }
+  },
+  {
+   "candidateId": "harold-hutchison",
+   "race": "oregon-state-senate-15",
+   "item": "topic/leg-new-revenue",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Would eliminate assessment-based property tax, opposes a sales tax and calls income tax the fairest way to raise needed revenue; he does not say how to close the 2027–29 gap.",
+    "stance": "partial"
+   },
+   "sourceUrl": "https://survey.oregonabigailadams.org/AAP/candidate-survey-answer.cfm?State=OR&Q=state26&K=SS15-06",
+   "sourceQuote": "18 Do you support imposing a sales tax that would replace personal income tax? No. Sales tax is regressive. Income tax is the fairest way to raise needed revenue. ... 22 ... No. Property tax is immoral.",
+   "category": [
+    "source-mismatch"
+   ],
+   "verdict": "borderline",
+   "why": "Sales-tax and income-tax clauses match the questionnaire; the 'eliminate assessment-based property tax' clause comes from his filed statement (p. 70), not this source. Stance 'partial' is right.",
+   "proposed": {
+    "source": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=70 (for the property-tax clause)"
+   }
+  },
+  {
+   "candidateId": "harold-hutchison",
+   "race": "oregon-state-senate-15",
+   "item": "issue/climate",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "No mandates, more nuclear",
+    "line": "Opposes gas-tax increases, emissions targets and electric-vehicle mandates; would revisit nuclear.",
+    "position": "Voter approval for highway tolls and no gas-tax increases; opposes the 2040 emissions target, electric-vehicle sales mandates and 100% carbon-free electricity standards, and favors another look at nuclear power."
+   },
+   "sourceUrl": "https://survey.oregonabigailadams.org/AAP/candidate-survey-answer.cfm?State=OR&Q=state26&K=SS15-06",
+   "sourceQuote": "13 Do you agree with reducing greenhouse gas emission levels back to 1995 levels by 2040, before an adequate power grid is built? ... No ... 15 Do you support public utility commission standards that 100% electricity sold be generated by renewable and carbon-free energy? ... No. I favor taking another look a nuclear energy.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "He favors 'taking another look' at nuclear, which the chip turns into 'more nuclear'; and he rejected one target framed 'before an adequate power grid is built', which the line widens to emissions targets in general. The qualifier came from the question, so this is arguable.",
+   "proposed": {
+    "chip": "No EV, power mandates",
+    "line": "Opposes electric-vehicle mandates and the 2040 emissions target; would take another look at nuclear.",
+    "position": "Voter approval for highway tolls and no gas-tax increases; opposes reaching the 2040 emissions target before an adequate power grid is built, electric-vehicle sales mandates and 100% carbon-free electricity standards, and favors another look at nuclear power."
+   }
+  },
+  {
+   "candidateId": "courtney-bangs",
+   "race": "oregon-state-senate-16",
+   "item": "issue/climate",
+   "fields": [
+    "chip",
+    "line"
+   ],
+   "current": {
+    "chip": "Roads, levees, no tolls",
+    "line": "Wants existing tax dollars for coastal highways and upgraded levees, without commuter taxes."
+   },
+   "sourceUrl": "https://www.courtneybangs.com/priorities",
+   "sourceQuote": "Courtney will fight for the district’s share of existing tax dollars and oppose tax schemes that hit commuting workers without fixing the roads they drive, and keep working with the Army Corps, the federal delegation, and local partners to ensure levees are studied, accredited, and upgraded.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "She never mentions tolls, and she opposes tax schemes that hit commuters 'without fixing the roads they drive', a condition the line drops.",
+   "proposed": {
+    "chip": "Roads and levees",
+    "line": "Wants existing tax dollars for coastal highways and levee upgrades."
+   }
+  },
+  {
+   "candidateId": "courtney-bangs",
+   "race": "oregon-state-senate-16",
+   "item": "issue/money",
+   "fields": [
+    "chip"
+   ],
+   "current": {
+    "chip": "No new taxes, fees"
+   },
+   "sourceUrl": "https://www.courtneybangs.com/priorities",
+   "sourceQuote": "She will fight to stop new tax hikes and hidden fees and cut regulatory burdens that drive up fuel and energy costs",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "She targets 'hidden fees'; the chip drops the qualifier and reads as opposing all fees. The line keeps it.",
+   "proposed": {
+    "chip": "Stop hikes, hidden fees"
+   }
+  },
+  {
+   "candidateId": "courtney-bangs",
+   "race": "oregon-state-senate-16",
+   "item": "topic/leg-new-revenue",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "No new taxes, fees"
+   },
+   "sourceUrl": "https://www.courtneybangs.com/priorities",
+   "sourceQuote": "She will fight to stop new tax hikes and hidden fees",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "Same dropped 'hidden' as the money chip; the cell text keeps it.",
+   "proposed": {
+    "topicChip": "Stop hikes, hidden fees"
+   }
+  },
+  {
+   "candidateId": "rachel-armitage",
+   "race": "oregon-state-senate-16",
+   "item": "issue/money",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Opposes gas-tax and DMV-fee increases; would review old rules and programs."
+   },
+   "sourceUrl": "https://bloximages.chicago2.vip.townnews.com/tillamookheadlightherald.com/content/tncms/assets/v3/editorial/b/5e/b5e85786-7bcd-4dfd-8653-96868d0c2f25/69e6cc94c66a0.pdf.pdf",
+   "sourceQuote": "Armitage said that she was also generally opposed to increasing the state’s gas tax and fees at the department of motor vehicles, as Democrats did during last year’s session in a bill that is being challenged by a voter referendum this May.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The paper reports her as 'generally opposed'; the position and topic cell keep the hedge, the line drops it.",
+   "proposed": {
+    "line": "Would generally oppose gas-tax and DMV-fee increases; would review old rules and programs."
+   }
+  },
+  {
+   "candidateId": "rachel-armitage",
+   "race": "oregon-state-senate-16",
+   "item": "issue/climate",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Wants closer ODOT spending scrutiny and rural gas-tax dollars kept on rural roads."
+   },
+   "sourceUrl": "https://bloximages.chicago2.vip.townnews.com/tillamookheadlightherald.com/content/tncms/assets/v3/editorial/b/5e/b5e85786-7bcd-4dfd-8653-96868d0c2f25/69e6cc94c66a0.pdf.pdf",
+   "sourceQuote": "to ensure that the gas tax dollars they generate help maintain the roads they rely on. “What I would say is that if my neighbor is paying a gas tax because he has to commute from Columbia County to north Portland every day and he’s paying for his own gas, we better make sure that the roads he is driving on are in good shape,”",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "She wants rural drivers' gas taxes to maintain the roads they rely on, and her example is a commute to north Portland; 'kept on rural roads' adds a geographic earmark she did not propose. The position row states it correctly.",
+   "proposed": {
+    "line": "Wants ODOT spending scrutiny and rural drivers' gas taxes spent on roads they use."
+   }
+  },
+  {
+   "candidateId": "rachel-armitage",
+   "race": "oregon-state-senate-16",
+   "item": "topic/leg-transportation-package",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Told the Headlight Herald in April 2026 she is generally opposed to raising the gas tax and DMV fees, and wants rural gas-tax dollars kept on rural roads with more ODOT oversight.",
+    "stance": "opposes"
+   },
+   "sourceUrl": "https://bloximages.chicago2.vip.townnews.com/tillamookheadlightherald.com/content/tncms/assets/v3/editorial/b/5e/b5e85786-7bcd-4dfd-8653-96868d0c2f25/69e6cc94c66a0.pdf.pdf",
+   "sourceQuote": "to ensure that the gas tax dollars they generate help maintain the roads they rely on. ... if my neighbor is paying a gas tax because he has to commute from Columbia County to north Portland every day ... we better make sure that the roads he is driving on are in good shape",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Same misreading as the climate line; stance 'opposes' is fine given 'generally opposed'.",
+   "proposed": {
+    "text": "Told the Headlight Herald in April 2026 she is generally opposed to raising the gas tax and DMV fees, and wants more ODOT oversight and rural drivers' gas taxes spent maintaining the roads they rely on."
+   }
+  },
+  {
+   "candidateId": "melisa-finkle",
+   "race": "oregon-state-senate-16",
+   "item": "topic/leg-transportation-package",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Roads need more"
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=76",
+   "sourceQuote": "We need practical work on the issues people talk about at the grocery store, at work, and on the drive home: safer travel, roads that need more than another temporary patch",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Cut short, 'Roads need more' can read as 'roads need more money', which she does not say; the text itself is accurate.",
+   "proposed": {
+    "topicChip": "Roads beyond patches"
+   }
+  },
+  {
+   "candidateId": "lisa-reynolds",
+   "race": "oregon-state-senate-17",
+   "item": "issue/money",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Upstream investment against child poverty (hunger, housing insecurity, childcare), including the refundable Child Tax Credit she helped pass, with a goal of halving child poverty."
+   },
+   "sourceUrl": "https://www.lisafororegon.com/priorities",
+   "sourceQuote": "End Child Poverty ... Lisa advocates for upstream investments to mitigate the stress of poverty (hunger, housing insecurity, childcare challenges). ... In 2023, Lisa helped pass the Child Tax Credit (HB 3235) which provides low-income families with a refundable tax credit of $1000/year",
+   "category": [
+    "a",
+    "factual"
+   ],
+   "verdict": "confirmed",
+   "why": "No halving goal appears on her priorities page or home page; the section heading is 'End Child Poverty'.",
+   "proposed": {
+    "position": "Upstream investment against child poverty (hunger, housing insecurity, childcare), including the refundable Child Tax Credit she helped pass."
+   }
+  },
+  {
+   "candidateId": "lisa-reynolds",
+   "race": "oregon-state-senate-17",
+   "item": "issue/housing",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Supports record shelter and housing funding, rent relief and eviction protections."
+   },
+   "sourceUrl": "https://www.lisafororegon.com/priorities",
+   "sourceQuote": "She voted for record funding for shelters and housing and supported rent relief and eviction moratoriums to keep families in their homes.",
+   "category": [
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "She names eviction moratoriums; 'eviction protections' is a broader, softer term. The position keeps her word.",
+   "proposed": {
+    "line": "Supports record shelter and housing funding, rent relief and eviction moratoriums."
+   }
+  },
+  {
+   "candidateId": "lisa-reynolds",
+   "race": "oregon-state-senate-17",
+   "item": "issue/safety",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Gun-violence prevention (safe-storage and ghost-gun laws, community-violence grants, expanded extreme-risk orders, a purchase age of 21) plus more addiction treatment and interrupting the fentanyl supply."
+   },
+   "sourceUrl": "https://www.lisafororegon.com/priorities",
+   "sourceQuote": "Next steps? Expand the use of Oregon’s lifesaving Extreme Risk Protection Orders, raise the age to 21 for the purchase of firearms, with a few exceptions for hunting rifles",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "Dropping 'with a few exceptions for hunting rifles' makes the age-21 proposal read as blanket.",
+   "proposed": {
+    "position": "Gun-violence prevention (safe-storage and ghost-gun laws, community-violence grants, expanded extreme-risk orders, a purchase age of 21 with a few exceptions for hunting rifles) plus more addiction treatment and interrupting the fentanyl supply."
+   }
+  },
+  {
+   "candidateId": "mark-meek",
+   "race": "oregon-state-senate-20",
+   "item": "topic/leg-transportation-package",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Voted yes on HB 3991 in the Senate on September 29, 2025; the enrolled bill also repealed the mandatory toll program, and his site says he ended ODOT’s I-205 tolling plans.",
+    "stance": "supports"
+   },
+   "sourceUrl": "https://olis.oregonlegislature.gov/liz/2025S1/Measures/Overview/HB3991",
+   "sourceQuote": "9-29 (S) Third reading. Carried by Pham. Passed. Ayes, 18; Nays, 11--Anderson, Bonham, Girod, Linthicum, McLane, Nash, Robinson, Smith DB, Starr, Thatcher, Weber; Excused, 1--Hayden. [enrolled text:] providing for revenue raising that requires approval by a three-fifths majority ... REPEAL OF TOLL PROGRAM SECTION 54. ORS 383.150 is repealed.",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "Every other incumbent's HB 3991 cell says it was the gas-tax and fee package voters rejected; Meek's describes only the toll repeal his site takes credit for, and its 'also' follows nothing. Vote and toll-repeal facts are correct.",
+   "proposed": {
+    "text": "Voted yes on HB 3991 in the Senate on September 29, 2025, the gas-tax and fee package voters later rejected; the bill also repealed the mandatory toll program, and his site says he ended ODOT’s I-205 tolling plans."
+   }
+  },
+  {
+   "candidateId": "mary-dirksen",
+   "race": "oregon-state-senate-19",
+   "item": "issue/safety",
+   "fields": [
+    "chip",
+    "position"
+   ],
+   "current": {
+    "chip": "Punish repeat offenders",
+    "position": "Support law enforcement, strengthen consequences for repeat offenders and put victims first, with accountability for crime, addiction and hazards on the streets."
+   },
+   "sourceUrl": "https://www.marydirksen.com/",
+   "sourceQuote": "I will support law enforcement, strengthen consequences for repeat offenders, and fight for policies that put victims first. I believe Oregon needs accountability and appropriate remedies to address crime, addiction, and hazards on our streets.",
+   "category": [
+    "c",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "'Punish' is our verb; she says 'strengthen consequences' and leads with supporting law enforcement and victims. The position (lesser issue) drops 'appropriate remedies', so 'accountability for ... addiction' reads more punitive than her sentence.",
+   "proposed": {
+    "chip": "Back police, victims first",
+    "position": "Support law enforcement, strengthen consequences for repeat offenders and put victims first, with accountability and appropriate remedies to address crime, addiction and hazards on the streets."
+   }
+  },
+  {
+   "candidateId": "michele-stroh",
+   "race": "oregon-state-senate-20",
+   "item": "topic/leg-transportation-package",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Her filed statement says the incumbent voted yes on a package to raise taxes that voters then rejected by more than 80 percent, and that Salem’s answer is always another tax.",
+    "stance": "opposes"
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=85",
+   "sourceQuote": "September 2025: Meek reverses and votes YES on a package to RAISE YOUR TAXES. May 2026: Voters get their say — and reject it, over 80% to less than 20%. [votestroh.com, not the statement:] Groceries, gas, housing, childcare — everything costs more, and Salem’s answer is always another tax.",
+   "category": [
+    "source-mismatch"
+   ],
+   "verdict": "borderline",
+   "why": "Her words, wrong venue: 'Salem's answer is always another tax' is on votestroh.com, not in the filed statement the text names. No lean.",
+   "proposed": {
+    "text": "Her filed statement says the incumbent voted yes on a package to raise taxes that voters then rejected by more than 80 percent; her site says Salem’s answer is always another tax."
+   }
+  },
+  {
+   "candidateId": "michele-stroh",
+   "race": "oregon-state-senate-20",
+   "item": "topic/leg-new-revenue",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Pledges no new taxes: says Oregon does not have a revenue problem but a spending problem, and she will vote no on new taxes until Salem shows it can spend what it has.",
+    "stance": "opposes"
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=84",
+   "sourceQuote": "NO NEW TAXES: Oregon is among the highest taxed states in the nation. Oregon doesn't have a revenue problem; it has a spending problem. [votestroh.com:] I’ll vote no on new taxes until Salem shows it can spend the money it already has– with accountability.",
+   "category": [
+    "source-mismatch"
+   ],
+   "verdict": "borderline",
+   "why": "The 'until Salem shows...' condition is from her site, not the cited p. 84; the text is fair (it even keeps her condition), only the attribution is blurred.",
+   "proposed": {
+    "text": "Her filed statement pledges no new taxes and says Oregon has a spending problem; her site says she will vote no on new taxes until Salem shows it can spend what it has."
+   }
+  },
+  {
+   "candidateId": "michele-stroh",
+   "race": "oregon-state-senate-20",
+   "item": "topic/leg-deflection",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Backed Fix M110",
+    "text": "Says she worked with the Fix M110 coalition on the bipartisan amendment giving police tools against dealers while getting people with addiction into treatment; wants prevention, treatment and consequences for dealers."
+   },
+   "sourceUrl": "https://votestroh.com/micheles-record/",
+   "sourceQuote": "Bipartisan Reform on Measure 110 Michele worked with the Fix M110 coalition to give law enforcement real tools against dealers while getting people struggling with addiction into treatment. ... In Salem, she’ll fight for prevention education, treatment that works, and consequences for the dealers bringing poison into our neighborhoods.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "Her words cover dealers and treatment, never possession penalties, county deflection or 2027–29 funding, which fits 'partial'. Arguable: incumbents' HB 4002 votes earn 'supports', and she claims a role in that reform.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Says she worked with the Fix M110 coalition to give police real tools against dealers while getting people with addiction into treatment; she does not say whether to keep possession a crime or fund county deflection."
+   }
+  },
+  {
+   "candidateId": "jeff-helfrich",
+   "race": "oregon-state-senate-26",
+   "item": "topic/leg-new-revenue",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Voted no on SB 1507 in the House on February 25, 2026; his statement says government should live within a budget as families do.",
+    "stance": "opposes"
+   },
+   "sourceUrl": "https://olis.oregonlegislature.gov/liz/2026R1/Measures/Overview/SB1507",
+   "sourceQuote": "2-25 (H) Passed. Ayes, 34; Nays, 21--Boice, Breese-Iverson, Bunch, Cate, Diehl, Edwards, Elmer, Harbick, Helfrich, ... [helfrichfororegon.com/priorities:] We need to balance our budget and provide tax relief for Oregon families. Oregon families live within a budget - so should our state government.",
+   "category": [
+    "source-mismatch"
+   ],
+   "verdict": "borderline",
+   "why": "Vote verified; the budget line is on his campaign site, not his filed statement (pp. 92–93 say 'I will continue fighting unnecessary tax increases, wasteful spending').",
+   "proposed": {
+    "text": "Voted no on SB 1507 in the House on February 25, 2026; his site says Oregon families live within a budget and so should state government."
+   }
+  },
+  {
+   "candidateId": "kayse-jama",
+   "race": "oregon-state-senate-24",
+   "item": "issue/money",
+   "fields": [
+    "line",
+    "chip"
+   ],
+   "current": {
+    "line": "Supports a $1,000 Oregon Kids Credit and childcare construction money.",
+    "chip": "$1,000 kids credit"
+   },
+   "sourceUrl": "https://www.kaysejama.com/childcare",
+   "sourceQuote": "$75 million to invest in the Oregon Kids Credit, a refundable tax credit for low-income Oregonians of up to $1000 per child aged 0 to 5",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The credit is 'up to' $1,000; line and chip drop the cap wording (the position keeps it).",
+   "proposed": {
+    "line": "Supports an Oregon Kids Credit of up to $1,000 and childcare construction money.",
+    "chip": "Oregon Kids Credit"
+   }
+  }
+ ],
+ "notes": [
+  "All 40 OLIS-cited vote cells in this batch check out against the measure histories (ayes inferred as Senate/House membership minus listed nays, excused and absent, which sum to 30 in the Senate): HB 3991 Senate 9/29/25 18-11 (Jama, Meek, Neron Misslin, Reynolds, Wagner aye; Helfrich excused on House 9/1); SB 1507 Senate 2/16/26 17-13 (Meek nay), House 2/25/26 (Helfrich nay); HB 3546 Senate 6/3/25 18-12, House 4/22 and 6/5/25 (Helfrich nay both); HB 3644 Senate 6/26/25 19-10 carried by Neron Misslin, House 6/23/25 (Helfrich nay); HB 4002 House 2/29/24 51-7 (Neron, Reynolds, Helfrich aye), Senate 3/1/24 21-8 (Jama nay with vote explanation; Meek, Wagner aye); HB 3940 Senate 6/26/25 20-8 (Reynolds nay, Meek absent), House 6/23/25 (Helfrich nay); HB 4138 Senate 3/5/26 18-10, House 2/24 and 3/6/26 (Helfrich nay both).",
+  "Bill descriptions verified in the enrolled texts: HB 3991 section 54 repeals ORS 383.150 (toll program); HB 3940 taxes oral nicotine, raises the forest products harvest tax from 62.5 cents to $1, and sends 20% of Rainy Day Fund interest to two wildfire funds ('moves Rainy Day Fund interest' is a fair compression); SB 1507 raises the Oregon EITC (9% to 14%, 12% to 17%) and disconnects from federal 168(k) bonus depreciation and the vehicle-loan-interest deduction; HB 4138 requires visible ID and bars most face coverings; HB 4002 makes possession a misdemeanor and sets up deflection programs.",
+  "Context figures not in the cited OLIS pages (accurate per the research log, not a lean): '$204.9 million through June 2027' in the Neron Misslin and Wagner shelter cells comes from the LFO HB 5011 budget report; '$314 million for 2027–29' in the SB 1507 cells comes from the LRO revenue impact statement.",
+  "Wording across the HB 3991 cells (Neron Misslin, Reynolds, Wagner, Jama): 'the gas-tax and fee package voters later repealed'. Referendum 120 referred only the tax and fee sections; the rest of HB 3991, including the toll repeal, took effect (search summary, sources/b07/measure120-scope-note.txt). 'voters later rejected' would be more exact.",
+  "Minor sourcing, no lean: Lancaster's transportation cell cites p. 66 but 'stop the next tax increase' is on p. 67; Muñoz's housing position cites /issues but 'reassess' and 'strategic plan to house all Oregonians' are on /about.",
+  "Reynolds and Helfrich 'opposes' on wildfire money and Meek 'opposes' on the budget gap each rest on a single no vote with no explanation on the record. This follows the guide's recorded-vote rule and is applied the same way across parties, so it is not listed as a finding."
+ ]
+}
