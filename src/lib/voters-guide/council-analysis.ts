@@ -686,7 +686,7 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
       housing:
         "Sets a goal of enabling 4,000 homes annually through fewer code barriers, faster permitting and a mix of rental and ownership housing. This is a campaign target, not a forecast.",
       safety:
-        "Supports police capacity for investigations, faster emergency responses, public-space maintenance and connecting people in crisis with services.",
+        "Supports public-safety staffing and resources so police can follow through on investigations and fix emergency response times, plus cleaner, better-lit public spaces and connecting people in crisis with lifesaving services.",
       money:
         "Would expand public-private partnerships, philanthropy and sponsorships; proposes a reimagined Tom McCall Waterfront Bowl. Costs and committed funding are not established on the reviewed page.",
       climate:
