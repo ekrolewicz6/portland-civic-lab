@@ -158,9 +158,10 @@ const councilChips: StanceChip[] = [
   chip("john-mcdonald", "money", "Modernize Moda Center"),
   chip("john-mcdonald", "climate", "Continue new I-5 bridge"),
 
+  chip("matt-schulte", "housing", "Conversions, home sharing"),
   chip("matt-schulte", "safety", "Help navigating services"),
-  chip("matt-schulte", "money", "Downtown owner partnership"),
-  chip("matt-schulte", "climate", "Buildings as energy assets"),
+  chip("matt-schulte", "money", "Cap household costs"),
+  chip("matt-schulte", "climate", "Safe Routes to schools"),
 
   chip("jeremy-beausoleil-smith", "housing", "Build public housing"),
   chip("jeremy-beausoleil-smith", "safety", "Expand Street Response"),

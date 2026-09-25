@@ -432,6 +432,13 @@ contact(
 primary.push({ candidateId: "heather-coleman-cox", sourceUrl: `${PAMPHLET}#page=42` });
 portraits["heather-coleman-cox"] = portrait("heather-coleman-cox", 42);
 
+const delplatoEmail: Evidence = {
+  label: "DelPlato · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#delplato-2026-09-24",
+  kind: "Candidate statement",
+  date: "Received September 24, 2026",
+  note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on the brief. Receipt does not verify the claims.",
+};
 const delplatoSite = site("DelPlato · campaign home and issues", "https://votedelplato.com/");
 candidate("will-delplato", {
   values: ["Early budget fixes", "Streamlined permitting"],
@@ -444,6 +451,8 @@ candidate("will-delplato", {
       source: delplatoSite,
       line: "Wants smart development and efficient management to keep housing more affordable.",
       chip: "Smart development",
+      how: step("Streamline permitting, add a business liaison to guide applicants, and adopt a pre-approved home design program modeled on Bend’s, which he says saves $5,000–$10,000 or more in design costs.", delplatoEmail),
+      measure: step("Shorter permit timelines and lower fees than neighboring cities.", delplatoEmail),
     },
     safety: {
       position:
@@ -451,6 +460,8 @@ candidate("will-delplato", {
       source: pamphlet(42),
       line: "Supports police and first responders plus neighborhood partnerships and prevention programs.",
       chip: "Police plus prevention",
+      how: step("Protect police and fire as core services with the tools they need; no Portland-style permissive camping policies.", delplatoEmail),
+      measure: step("Faster response times.", delplatoEmail),
     },
     money: {
       position:
@@ -458,12 +469,15 @@ candidate("will-delplato", {
       source: pamphlet(42),
       line: "Wants small, early budget changes now, spending reviewed, permitting (building approvals) streamlined.",
       chip: "Small cuts early",
+      how: step("Review purchasing, contracts and technology for savings before new taxes or fees, review each major program’s cost against its results on a schedule, and pay ongoing costs with ongoing money.", delplatoEmail),
+      measure: step("A smaller structural gap in each adopted budget; he puts this year’s at about $12 million, growing to $30.8 million by 2031.", delplatoEmail),
     },
     climate: {
       position: "Focus on road maintenance, public spaces and long-term planning to ensure safe and sustainable neighborhoods.",
       source: delplatoSite,
       line: "Wants road maintenance, public spaces and long-term planning prioritized.",
       chip: "Maintain roads",
+      how: step("Extend Gresham’s five-year Capital Improvement Program to a 10- to 20-year horizon so road and pipe replacement is budgeted before it becomes an emergency.", delplatoEmail),
     },
   },
 });
@@ -1255,9 +1269,16 @@ const greshamStances: TopicStance[] = [
   stance("will-delplato", "gresham-budget-gap", "opposes", "Small cuts now",
     "Says the budget shortfall is growing and the city should “act now with small, early changes rather than waiting until we’re forced into painful ones,” reviewing spending for efficiencies rather than relying on reserves.",
     pamphlet(42)),
-  stance("will-delplato", "gresham-groundwater", "partial", "Water a challenge",
-    "Calls “the current water issue” one of Gresham’s real challenges in his pamphlet statement; does not say whether to keep the groundwater system, change treatment or accept the 2028–32 rate schedule.",
-    pamphlet(42)),
+  // From his emailed reply of September 24, 2026 (replaces a partial reading of his pamphlet on water).
+  stance("will-delplato", "gresham-groundwater", "supports", "Keep groundwater",
+    "Would keep the groundwater system, saying there is no viable alternative and costs will be better controlled than buying Portland’s water; wants honest answers on taste, odor and hardness, promotion of free testing and a responsive fix.",
+    delplatoEmail),
+  stance("will-delplato", "gresham-camping-shelter", "partial", "No permissive camping",
+    "Does not support Portland-style permissive camping policies; he does not address outreach or the pod-shelter permit code.",
+    delplatoEmail),
+  stance("will-delplato", "gresham-ice-response", "partial", "Focus stays local",
+    "Says he is keeping his focus local, on Gresham’s budget, safety and services; he does not say whether to declare an immigration-enforcement emergency.",
+    delplatoEmail),
   stance("joshua-al-jaouni", "gresham-safety-fee", "partial", "Fees off residents",
     "Would keep “unnecessary fees and costs off residents” while encouraging responsible growth; does not name the $15 Police, Fire and Parks Fee or say whether it should change.",
     pamphlet(44)),

@@ -318,7 +318,7 @@ const rows: Record<string, AnalysisRow> = {
   ],
   "Matt Schulte": [
     ["Reuse of downtown assets", "Project-led recovery"],
-    "His energy proposal uses existing downtown buildings as an economic resource. Utility participation, engineering feasibility and private ownership arrangements determine whether the idea can become a deliverable city program.",
+    "His energy proposal uses existing downtown buildings as an economic resource, and his September 24, 2026 reply adds a household-cost cap (the Portland Affordability Rule), a service-navigation program and a Safe Routes deadline. Utility participation, engineering feasibility and private ownership arrangements still determine whether the downtown idea can become a deliverable city program.",
     {
       safety:
         "Proposes ReBoot, connecting volunteers and professionals to help people navigate services.",
@@ -419,6 +419,13 @@ const cronlundEmail: Evidence = {
   url: "https://www.portlandciviclab.org/voters-guide/research-log#cronlund-2026-09-23",
   kind: "Candidate statement",
   date: "Received September 23, 2026",
+  note: replyNote,
+};
+const schulteEmail: Evidence = {
+  label: "Schulte · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#schulte-2026-09-24",
+  kind: "Candidate statement",
+  date: "Received September 24, 2026",
   note: replyNote,
 };
 const supplements: Record<string, { source: Evidence; issues: Issues; issueSources?: Partial<Record<keyof Issues, Evidence>>; also?: Evidence[] }> = {
@@ -613,6 +620,20 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
         "Would have the Housing Bureau hold its nonprofit partners accountable (lawful spending within budget, existing housing full, residents cared for, neighbors safe) and the permitting bureau streamline conversions of vacant downtown offices to housing for willing owners, citing 37% office vacancy.",
       safety:
         "Supports a modest increase in police if it is tied to shorter response times, and wants homelessness addressed through the Housing Bureau and the permitting bureau, with stronger oversight of nonprofit housing providers.",
+    },
+  },
+  "Matt Schulte": {
+    // All four positions come from his emailed reply of September 24, 2026.
+    source: schulteEmail,
+    issues: {
+      housing:
+        "Would build more housing and convert suitable commercial buildings, relying on a busier downtown (his Grid-Connected Core) to make conversions pay, and would make the City’s Home Sharing Pilot work with a Home-Share Mitigation Fund protecting participating homeowners.",
+      safety:
+        "Proposes ReBoot, paid navigators, trained volunteers, a Navigation Center and an immediate-action fund working across contracted providers and City and County services so people keep contact with help through handoffs and sweeps.",
+      money:
+        "Says Council’s first job is to stop making Portland more expensive; his Portland Affordability Rule would keep growth in combined City-controlled household costs below the three-year average growth in median household income.",
+      climate:
+        "Would complete the Safe Routes priority network around every District 4 elementary school within one Council term, and rebuild downtown as a place people work, live and go out so transit has riders.",
     },
   },
   "John Sweeney": {

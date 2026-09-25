@@ -128,6 +128,13 @@ const cronlundEmail: Evidence = {
   date: "Received September 23, 2026",
   note: NOTE,
 };
+const schulteEmail: Evidence = {
+  label: "Schulte · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#schulte-2026-09-24",
+  kind: "Candidate statement",
+  date: "Received September 24, 2026",
+  note: NOTE,
+};
 const mcdonaldEmail: Evidence = {
   label: "McDonald · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#mcdonald-2026-09-23",
@@ -274,18 +281,31 @@ export const topicStancesD4: TopicStance[] = [
     mcdonaldEmail),
 
   /* ── Matt Schulte ───────────────────────────────────────────────────── */
+  // From his emailed reply of September 24, 2026; Moda, camps and Street Response replace earlier readings.
+  swept("matt-schulte", "moda", "mixed", "Back terms, demand more",
+    "Generally supports the term sheet and public funding as a starting position but not the City’s negotiating approach; would press for concessions like the $800 million private investment he says Dundon pledged in Raleigh and appeal to the NBA.",
+    schulteEmail),
+  swept("matt-schulte", "new-taxes", "opposes", "No new City taxes",
+    "Says Portland’s tax burden is too high and he would not begin with new City business taxes or fees; his Affordability Rule would hold combined taxes, fees and rates below household income growth.",
+    schulteEmail),
+  swept("matt-schulte", "police-staffing", "mixed", "Fill funded jobs first",
+    "Would fill the police positions already funded and, before expanding, move welfare checks, unattended deaths and repeat false alarms away from armed officers, shifting those hours to emergencies and investigations.",
+    schulteEmail),
+  swept("matt-schulte", "camp-removal", "mixed", "Not as structured",
+    "Not as currently structured: removal may be needed for an immediate safety or access problem, but people need somewhere real to go, and his ReBoot program would keep them connected to services.",
+    schulteEmail),
+  swept("matt-schulte", "street-response", "supports", "24/7 within a year",
+    "Would require a plan and budget within 60 days for a citywide 24/7 Street Response and finish the expansion within a year, alongside the 911 call-allocation recommendations.",
+    schulteEmail),
+  swept("matt-schulte", "street-fee", "supports", "Keep, add Safe Routes",
+    "Would keep the monthly street repair fee because the streets need fixing, and include completing the Safe Routes network around every District 4 elementary school.",
+    schulteEmail),
+  swept("matt-schulte", "water-rates", "mixed", "Under affordability cap",
+    "Would fold already-committed Bull Run costs into his Affordability Rule baseline but not accept doubled bills; future discretionary increases would count against the cap, with grants, cost scrutiny and automatic discounts.",
+    schulteEmail),
   stance("matt-schulte", "data-centers", "supports", "Ban until value standard",
     "Supports a ban on data centers until a Load-Value Standard measures public return per megawatt in jobs, tax revenue, infrastructure cost and environmental effects.",
     schulteDataCenters),
-  swept("matt-schulte", "moda", "partial", "Blazers’ turn; money unsaid",
-    "Says the city should not concede any more leverage to Dundon and the Blazers and its stance should be “it’s your turn to compromise”; he does not say whether public money should pay.",
-    schulteQuestionnaire),
-  swept("matt-schulte", "street-response", "supports", "24/7 Street Response coverage",
-    "Would institute 24/7 Street Response coverage and implement the 911 Call Allocation Working Group’s recommendations within one year, per his Mercury questionnaire answer.",
-    schulteQuestionnaire),
-  swept("matt-schulte", "camp-removal", "partial", "Sweeps disrupt; funding unsaid",
-    "Says when the city causes a disruption, as in a camp sweep, it has an obligation to fix it through continuous navigation; he does not say whether removal funding should stay at current levels.",
-    schulteHomelessness),
 
   /* ── Jeremy Beausoleil Smith ────────────────────────────────────────── */
   stance("jeremy-beausoleil-smith", "data-centers", "supports", "Four-year moratorium",

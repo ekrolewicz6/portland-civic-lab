@@ -134,6 +134,13 @@ const mcdonaldEmail: Evidence = {
   date: "Received September 23, 2026",
   note: NOTE,
 };
+const schulteEmail: Evidence = {
+  label: "Schulte · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#schulte-2026-09-24",
+  kind: "Candidate statement",
+  date: "Received September 24, 2026",
+  note: NOTE,
+};
 export const deliveriesD4: Delivery[] = [
   /* ── Timothy (TJ) Anderson ──────────────────────────────────────────── */
   entry("timothy-tj-anderson", "housing", "emailed response", {
@@ -289,18 +296,22 @@ export const deliveriesD4: Delivery[] = [
   entry("john-mcdonald", "climate", "pamphlet"),
 
   /* ── Matt Schulte ───────────────────────────────────────────────────── */
-  entry("matt-schulte", "safety", "campaign site"),
-  entry("matt-schulte", "money", "campaign site", {
-    how: step(
-      "Would finance building upgrades through PropertyFit, PCEF loans, Energy Trust and state and federal programs, not the General Fund, with PGE demand-response payments repaying PCEF; NSF’s FAST consortium as anchor tenant.",
-      schulteGrid,
-    ),
+  // All four ladders come from his emailed reply of September 24, 2026.
+  entry("matt-schulte", "housing", "emailed response", {
+    how: step("A busier downtown under the Grid-Connected Core to make office conversions pay, and a Home-Share Mitigation Fund from the pilot’s existing $500,000 budget protecting homeowners against damage or sudden vacancy.", schulteEmail),
+    measure: step("More housing downtown, more homeowners and renters in home sharing, housing costs relative to incomes, and whether people can afford to stay in Portland.", schulteEmail),
   }),
-  entry("matt-schulte", "climate", "campaign site", {
-    how: step(
-      "Would have PGE and Prosper Portland identify buildings and measure capacity, financing energy work through PropertyFit, PCEF, Energy Trust and state and federal programs rather than the General Fund.",
-      schulteGrid,
-    ),
+  entry("matt-schulte", "safety", "emailed response", {
+    how: step("ReBoot navigators working across contracted nonprofits and City and County services, with a Navigation Center and an immediate-action fund for medication, identification and transportation when a handoff fails.", schulteEmail),
+    measure: step("Whether people stay in contact, keep appointments, get medication, ID and transportation when needed, move from shelter into housing, and keep their progress through handoffs or City-directed displacement.", schulteEmail),
+  }),
+  entry("matt-schulte", "money", "emailed response", {
+    how: step("Put the combined effect of proposed City household costs before Council at once; if it outpaces income growth, reduce, delay or offset discretionary increases, and auto-enroll eligible households in utility discounts.", schulteEmail),
+    measure: step("Growth in combined City-controlled household costs against the three-year average growth in Portland median household income.", schulteEmail),
+  }),
+  entry("matt-schulte", "climate", "emailed response", {
+    how: step("Fund the Safe Routes projects already identified around District 4 elementary schools, and rebuild downtown as a place people work, live, shop and go out.", schulteEmail),
+    measure: step("The Safe Routes network finished around every District 4 elementary school, repaired streets, fewer serious crashes near schools, downtown visits and transit ridership into downtown.", schulteEmail),
   }),
 
   /* ── Jeremy Beausoleil Smith ────────────────────────────────────────── */
