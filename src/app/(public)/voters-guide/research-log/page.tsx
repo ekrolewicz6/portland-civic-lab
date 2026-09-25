@@ -19,6 +19,19 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="mcdonald-2026-09-24">September 24, 2026 · Second candidate response: John McDonald (District 4)</h2>
+        <p>
+          John McDonald supports a 24/7 Portland Street Response, which he
+          puts at 68 full-time positions and $10.5 million a year, paid mainly
+          from the General Fund, with partnerships with the VA, TriMet and
+          Central City Concern and the City’s share of the Oregon opioid
+          settlement to fill gaps in lean years. He also shared two recent
+          articles: “Commuter rail’s price of protection” in Trains and “In
+          Vancouver, Pride Became An Answer To Fear” in OutSFL, whose byline
+          the Lab confirmed. His Street Response board, empty before, now has
+          his answer; excerpts appear on his brief, and the reply is kept on
+          file. He wrote that more answers are coming.
+        </p>
         <h2 id="schulte-2026-09-24">September 24, 2026 · Candidate response: Matt Schulte (District 4)</h2>
         <p>
           Matt Schulte sent a document answering every gap on his page. It
