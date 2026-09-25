@@ -37,3 +37,4 @@ A last check against the live site and this folder's research changed seven emai
 - Maja Harris, Rose City Reform: thanks, both corrections made (PR #45), the 2 Cents measure is coming.
 - Cori Johnson, the Gresham Area Chamber's new CEO (cori.ceo@greshamchamber.org): resent the Gresham email after Lynn Snodgrass's auto-reply.
 - Julia Shumway, Oregon Capital Chronicle: thanks; will watch for their mid-October general election guide and point readers to it. (Edan answered North Tabor himself.)
+- John Tapogna, Oregon Business Council: asked how big the 2027-29 gap is in percentage terms; the governor page now gives the $421 million Health Plan gap, about 1% of forecast revenue (PR #46), and he was told so in his thread.
