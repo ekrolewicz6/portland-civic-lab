@@ -161,7 +161,7 @@ const entry = (
 
 export const deliveriesD3: DeliveryEntry[] = [
   /* ── Ali Beaudoin ─────────────────────────────────────────────────── */
-  // Housing, safety, climate and the money "how" come from her emailed reply of September 23, 2026.
+  // Housing, safety, climate and the money "how" come from his emailed reply of September 23, 2026.
   entry("ali-beaudoin", "housing", "emailed response", {
     how: [
       "Simplify permitting, cut unnecessary regulatory costs, reuse vacant or underused properties, and explore with the city and lenders temporary interest-rate help for first-time buyers while mortgage rates stay high.",

@@ -226,7 +226,7 @@ export default function VotersGuidePage() {
         <div className={styles.sectionHead}>
           <p className={styles.eyebrow}>Every race we cover, by the size of the seat</p>
           <h2 id="ladder-title" className={styles.sectionTitle}>
-            Four levels of government. <em>One ballot.</em>
+            Four levels of government. <em>One election.</em>
           </h2>
           <p className={styles.ladderNote}>
             Each bar is the body’s adopted budget on a log scale, with its source. Colors mark levels of government, never sides.
