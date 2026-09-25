@@ -19,6 +19,70 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="schulte-2026-09-24">September 24, 2026 · Candidate response: Matt Schulte (District 4)</h2>
+        <p>
+          Matt Schulte sent a document answering every gap on his page. It
+          proposes a Portland Affordability Rule keeping growth in combined
+          City-controlled household costs below household income growth; a
+          ReBoot service-navigation program; more housing and office
+          conversions, with a mitigation fund for the City’s home-sharing
+          pilot; and a finished Safe Routes network around every District 4
+          elementary school within one term. On the Council’s choices, he
+          would not start with new City taxes or fees, would fill funded
+          police positions and shift non-emergency calls before expanding,
+          would restructure camp removals, supports a citywide 24/7 Street
+          Response within a year, would keep the street repair fee, would
+          count water-rate increases against his affordability cap, and
+          generally supports the Moda term sheet while calling for more
+          concessions from the team’s owner.
+        </p>
+        <p>
+          All four of his columns now cite the reply, with “how” and
+          “measured by” steps; his housing column, empty before, has a
+          position, and his bills and streets columns now reflect the
+          proposals he named for them. Seven topic boards changed: four were
+          empty, and his Moda, camps and Street Response entries now record
+          his answers. His document also proposed biography and summary text;
+          the Lab’s own summary is written separately and was not replaced.
+          Excerpts appear on his brief, and the reply is kept on file.
+        </p>
+        <h2 id="delplato-2026-09-24">September 24, 2026 · Candidate response: Will DelPlato (Gresham Council, Position 2)</h2>
+        <p>
+          Will DelPlato answered most of the Lab’s questions. He would
+          streamline permitting with a business liaison and a pre-approved
+          home design program modeled on Bend’s; protect police and fire and
+          oppose permissive camping policies; review purchasing, contracts
+          and program results before new taxes or fees; and extend Gresham’s
+          capital plan to 10 to 20 years. He would keep the groundwater
+          system, is still reviewing the public-safety fee, and says his
+          focus on immigration is local.
+        </p>
+        <p>
+          All four of his columns gained “how” steps, three with a measure.
+          His groundwater entry, a partial reading of his pamphlet, now
+          records support; camping and immigration now carry partial entries
+          noting what he did not address. Excerpts appear on his brief, and
+          the reply is kept on file.
+        </p>
+        <h2 id="russ-2026-09-24">September 24, 2026 · Candidate response: David Russ (U.S. House, Oregon District 6)</h2>
+        <p>
+          David Russ answered all eleven questions. He says economic growth
+          will reduce homelessness and opposes funding nonprofit organizations
+          he says overpay staff; would fund federal enforcement; would support
+          the Fix Our Forests Act only as a stopgap; would keep H.R. 1’s
+          Medicaid and SNAP rules; would not restore the ACA credits or end
+          the tariffs; opposes an expanded federal housing role and federal
+          limits on data centers; and says the Iran decision belongs to those
+          with the highest-level security briefings.
+        </p>
+        <p>
+          His housing column, empty before, now has a position, with a
+          measure for safety and a “how” note for land transfers. Eight topic
+          boards changed; his ICE and forest entries had been partial
+          readings of his campaign site. His wording is paraphrased in
+          neutral terms on the boards and quoted on his brief. The reply is
+          kept on file.
+        </p>
         <h2 id="schroeder-2026-09-24">September 24, 2026 · Candidate response: Gregory Schroeder (Gresham Council, Position 4)</h2>
         <p>
           Gregory Schroeder answered all ten questions the Lab emailed him on

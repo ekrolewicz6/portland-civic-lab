@@ -15,6 +15,9 @@ const sollitt3 = (question: string, text: string): CandidateAnswer => ({ candida
 const mcdonald = (question: string, text: string): CandidateAnswer => ({ candidateId: "john-mcdonald", question, text, received: "2026-09-23" });
 const colemanCox = (question: string, text: string): CandidateAnswer => ({ candidateId: "heather-coleman-cox", question, text, received: "2026-09-23" });
 const schroeder = (question: string, text: string): CandidateAnswer => ({ candidateId: "gregory-schroeder", question, text, received: "2026-09-24" });
+const schulte = (question: string, text: string): CandidateAnswer => ({ candidateId: "matt-schulte", question, text, received: "2026-09-24" });
+const delplato = (question: string, text: string): CandidateAnswer => ({ candidateId: "will-delplato", question, text, received: "2026-09-24" });
+const russ = (question: string, text: string): CandidateAnswer => ({ candidateId: "david-russ", question, text, received: "2026-09-24" });
 const beaudoin = (question: string, text: string): CandidateAnswer => ({ candidateId: "ali-beaudoin", question, text, received: "2026-09-23" });
 const cronlund = (question: string, text: string): CandidateAnswer => ({ candidateId: "jayne-cronlund", question, text, received: "2026-09-23" });
 
@@ -224,6 +227,106 @@ export const answers: CandidateAnswer[] = [
   schroeder(
     "Immigration enforcement",
     "I believe the City Attorney has correctly described Gresham’s limited role. State law restricts the City’s participation in federal immigration enforcement, while the City also cannot interfere with lawful federal enforcement activity. I do not support declaring a local emergency when doing so would not materially change the City’s legal authority or the situation on the ground.",
+  ),
+  schulte(
+    "Rent and homes",
+    "Portland has to address both what it costs to live here and the potential for being able to earn here. Housing production is part of that, but the number of units is not the entire question. [...] The Home-Share Mitigation Fund would use part of the Home Sharing Pilot Program’s existing $500,000 budget to protect participating homeowners against property damage or sudden vacancy.",
+  ),
+  schulte(
+    "Camps, crime and who responds",
+    "ReBoot would provide continuing human connection through paid navigators, professional support, trained volunteers, a Navigation Center and an immediate-action fund. [...] If someone in a shelter bed needs medication but cannot get to the pharmacy, misses an appointment because a phone was lost, or loses contact during a handoff, ReBoot would act before that small failure becomes another disconnect.",
+  ),
+  schulte(
+    "Your bills and taxes",
+    "City Council’s first responsibility is to stop making Portland more expensive. [...] Put the combined effect of proposed City-controlled household costs in front of Council at the same time instead of approving increases separately. If the combined cost is growing faster than Portland household incomes, Council has to reduce, delay or offset discretionary increases.",
+  ),
+  schulte(
+    "Streets, buses and air",
+    "Complete the Safe Routes priority network around every District 4 elementary school within one Council term. [...] TriMet’s missing riders and downtown’s missing workers are basically the same missing trips.",
+  ),
+  schulte(
+    "Moda Center deal",
+    "Schulte would have been very hardline on requiring the Blazers to contribute. But the train has left the station on Portland’s approach. Now that we have committed, Schulte generally supports the term sheet and public funding as initial negotiating strategy, but not the City’s approach to negotiations. Portland should demand other concessions, such as what Dundon offered and agreed to in Raleigh. [...] Schulte would take Portland’s case directly and immediately to Commissioner Adam Silver and the NBA Board of Governors.",
+  ),
+  schulte(
+    "Police staffing",
+    "Fill the positions that are already funded. Before expanding police staffing, stop sending officers to thousands of calls that do not require them. Move appropriate welfare checks, unattended deaths and repeat false alarms away from armed officers. Reassign the officer hours that creates to emergency response and investigations.",
+  ),
+  schulte(
+    "Street repair fee",
+    "Yes. Portland’s streets need to be fixed. The fee should include completing the Safe Routes priority network around every District 4 elementary school.",
+  ),
+  schulte(
+    "What utility partners, engineering studies and financing would the energy proposal require?",
+    "The first phase of the Grid would have PGE, Pacific Power, participating building owners and Prosper Portland identify candidate buildings and measure what is actually there: electrical service, current loads, equipment, building conditions and local-grid capacity. [...] Upgrades could be financed through PropertyFit, PCEF loans, Energy Trust incentives, state and federal funding and private investment. The General Fund would not be the main source.",
+  ),
+  delplato(
+    "Rent and homes",
+    "Gresham has some of the slowest permit approvals and highest permit fees in the area. I would streamline permitting, create a business liaison to help applicants through city red tape, and adopt a pre-approved home design program modeled on Bend’s, which saves homeowners $5,000–$10,000+ in design costs. Success: shorter permit timelines and lower fees than neighboring cities.",
+  ),
+  delplato(
+    "Camps, crime and who responds",
+    "Police and Fire are core services I will protect, while making sure they have the tools and resources to do the job without red tape. I do not support Portland-style permissive camping policies. Success: faster response times.",
+  ),
+  delplato(
+    "Bills and taxes",
+    "Gresham’s real structural shortfall is about $12 million this year, growing to $30.8 million by 2031. I would act early: review purchasing, contracts and technology for savings before adding new taxes or fees; review each major program’s cost against its results on a regular schedule; and match ongoing costs with ongoing money rather than one-time funds. Success: a shrinking structural gap in each adopted budget.",
+  ),
+  delplato(
+    "Streets, buses and air",
+    "I would extend Gresham’s five-year Capital Improvement Program to a 10- to 20-year horizon, so we budget for road and pipe replacement before it becomes an emergency.",
+  ),
+  delplato(
+    "Groundwater and rates",
+    "Keep the current groundwater system. There is no viable alternative today, and costs will be better controlled than buying Portland’s water, which is expected to become much higher than current prices. Residents also deserve honest answers and accountability on taste, odor and hardness concerns, and I support promoting the city’s free water testing and pushing for a responsive fix.",
+  ),
+  delplato(
+    "Public-safety fee",
+    "Still reviewing.",
+  ),
+  delplato(
+    "Immigration enforcement",
+    "I’m keeping my focus local, on Gresham’s budget, safety and services.",
+  ),
+  russ(
+    "Housing and homelessness",
+    "Nearly every one of my statements, proposed Bills, and proposed actions will lead to reduced homelessness. My goal is to return the country, and prosperity, to the people. When the economy soars, homelessness will drop dramatically. Giving money to NGO’s to over pay their bloated staff only exacerbates the problem.",
+  ),
+  russ(
+    "Transportation, energy and climate",
+    "I have not created a specific process by which I intend to make this happen, however, since the US Constitution does not provide for the Federal Government controlling large swaths of lands within state boundaries this should really not be a complicated issue. Removing lands that are not specifically National Parks Open to all, will also reduce the Federal Budget.",
+  ),
+  russ(
+    "ICE and border money",
+    "I fully support ensuring that Federal Law Enforcement has sufficient funding to efficiently perform their duties.",
+  ),
+  russ(
+    "Fix Our Forests Act",
+    "The Fix Our Forests act is OK. However, it is basically a bureaucratic maze designed to give the bureaucrats a way to claim they are doing things right while simultaneously wasting huge amounts of money in consulting and administration. I would support this legislation only as a gap stop. However, the fact is States could administrate exact same program for less.",
+  ),
+  russ(
+    "Medicaid and SNAP cuts",
+    "Yes. Keep rules as long as the Federal Government is involved.",
+  ),
+  russ(
+    "ACA premium credits",
+    "The “Affordable Care Act” has clearly damaged healthcare affordability. The issue is complicated, and Federal Overreach. I would support another possibility while it is unwound.",
+  ),
+  russ(
+    "Tariffs",
+    "I do not support such a thing. That would require a re-write of The Constitution. This nation had no income tax and funded virtually everything via Tariffs until 1913 (137 years!).",
+  ),
+  russ(
+    "Iran war powers",
+    "Anyone who has not participated in the highest level of National Security meetings in the White House only “imagines” that they have sufficient information to make a call on this issue. I have not been in one of those meetings.",
+  ),
+  russ(
+    "Federal housing programs",
+    "The current level of Federal Involvement in housing is already a huge violation of the 10th Amendment. [...] If States believe that this type of program is important, they should institute them internally.",
+  ),
+  russ(
+    "Data-center costs",
+    "At this point, smart municipalities are cutting deals with data centers that are very favorable for the municipality. Some have even secured free power for their residents! If the Federal Government gets involved it will undoubtedly start to skew the deals toward the data centers due to federal lobbying. [...] Smart people in local areas need to cut the right deals for their constituents.",
   ),
   beaudoin(
     "Rent and homes",

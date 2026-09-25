@@ -827,10 +827,18 @@ analysis["andrea-salinas"] = {
   },
   sources: [salinasStatement, salinasIssues],
 };
+const russEmail: Evidence = {
+  label: "Russ · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#russ-2026-09-24",
+  kind: "Candidate statement",
+  date: "Received September 24, 2026",
+  note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on the brief. Receipt does not verify the claims.",
+};
 analysis["david-russ"] = {
   values: ["Local control", "Smaller federal role"],
   tradeoff: "Returning lands, schools and utilities to state control and ending conditional federal grants would shift both authority and hundreds of billions of dollars; who funds those responsibilities afterward is not addressed in the reviewed pages.",
   issues: {
+    housing: { position: "Says nearly all his proposals would reduce homelessness by strengthening the economy, and opposes giving federal money to nonprofit organizations he says overpay their staff.", source: russEmail },
     safety: { position: "Would secure the border and remove people who entered illegally, make aiding illegal border crossers a federal felony, and require U.S. attorneys to take roughly 98% of referred cases to trial.", source: russHome },
     money: { position: "Would end subsidies that benefit only large corporations and federal subsidy or loan programs for noncitizens, strip conditions from federal grants to states through a No Strings Act, and end what he calls the IRS manhunt of 1099 employers.", source: russHome },
     climate: { position: "Would return federal public lands to state and local control, end federal control of local utilities and infrastructure, and support responsible forest and agricultural management, reliable infrastructure and affordable energy decided locally.", source: russStatement },
@@ -838,6 +846,7 @@ analysis["david-russ"] = {
   sources: [russStatement, russHome, russBills],
 };
 lines.push(
+  line("david-russ", "housing", "Economic growth to cut homelessness; opposes funding nonprofits he says overpay staff."),
   line("david-russ", "safety", "Would secure the border, remove unauthorized entrants, make aiding illegal crossings a felony."),
   line("david-russ", "money", "Would end corporate subsidies and noncitizen loan programs, strip conditions from federal grants."),
   line("david-russ", "climate", "Would transfer federal public lands to state and local control; affordable energy decided locally."),
@@ -847,19 +856,23 @@ lines.push(
   line("andrea-salinas", "climate", "Would push toward 100% green energy and hold corporate polluters accountable."),
 );
 chips.push(
-  chip("david-russ", "safety", "Secure border, removals"), chip("david-russ", "money", "End corporate subsidies"), chip("david-russ", "climate", "Local control of lands"),
+  chip("david-russ", "housing", "Growth, not NGO funding"), chip("david-russ", "safety", "Secure border, removals"), chip("david-russ", "money", "End corporate subsidies"), chip("david-russ", "climate", "Local control of lands"),
   chip("andrea-salinas", "housing", "Two million homes"), chip("andrea-salinas", "safety", "Fund police and services"),
   chip("andrea-salinas", "money", "Cap drug prices"), chip("andrea-salinas", "climate", "100% green energy"),
 );
 deliveries.push(
+  delivery("david-russ", "housing"),
   delivery("david-russ", "safety", {
+    measure: step("Says the measure is a stronger economy and higher wages for citizens, which he attributes to fewer people in the country illegally.", russEmail),
     how: step("A Prosecutorial Requirements bill making U.S. attorneys try about 98% of cases referred by law enforcement or lose their jobs; a federal felony for aiding or abetting illegal border crossers.", russBills),
   }),
   delivery("david-russ", "money", {
     how: step("A No Strings Act voiding conditions on federal grants beyond a project’s scope and blocking federal funds to non-government agencies without audited contracts.", russBills),
     measure: step("Says the act would save hundreds of billions a year, possibly over $1 trillion, returned to local economies; no independent estimate is cited.", russBills),
   }),
-  delivery("david-russ", "climate"),
+  delivery("david-russ", "climate", {
+    how: step("Says he has no specific process yet; returning federal lands other than national parks to the states would, he says, also reduce the federal budget.", russEmail),
+  }),
   delivery("andrea-salinas", "housing", {
     how: step("Federal funding for affordable-housing projects (she cites Tigard and Newberg) and the Housing for the 21st Century Act, plus additional emergency-shelter funding for Oregon.", salinasIssues),
     measure: step("Two million affordable homes built nationally in the next decade under the legislation she supports.", salinasIssues),
@@ -1239,10 +1252,23 @@ topicStances.push(
     "Would address the housing crisis through deeply affordable social housing and tenant protections; she does not address the ROAD Act, vouchers or tax credits.", townsendQuestionnaire),
 
   /* ── District 6 ── */
-  stance("david-russ", "fed-ice-funding", "partial", "Secure border, removals",
-    "Would immediately secure the borders and remove those he calls invaders, and make aiding illegal border crossers a federal felony; he does not address funding levels for ICE or Border Patrol.", russHome),
-  stance("david-russ", "fed-fix-our-forests", "partial", "Return lands to states",
-    "Would return federal public lands to state and local control; he does not say whether he would vote for the Fix Our Forests Act.", russHome),
+  // From his emailed reply of September 24, 2026; ICE funding and Fix Our Forests replace partial readings.
+  stance("david-russ", "fed-ice-funding", "supports", "Fund enforcement",
+    "Fully supports giving federal law enforcement enough money to do its job efficiently; says the border is now secured.", russEmail),
+  stance("david-russ", "fed-fix-our-forests", "mixed", "Stopgap only",
+    "Calls the Fix Our Forests Act “OK” but a bureaucratic maze; would support it only as a stopgap, saying the states could run the same program for less after federal lands are returned.", russEmail),
+  stance("david-russ", "fed-hr1-medicaid", "supports", "Keep the rules",
+    "Would keep H.R. 1’s Medicaid and SNAP rules as long as the federal government is involved.", russEmail),
+  stance("david-russ", "fed-aca-credits", "opposes", "Unwind the ACA",
+    "Says the Affordable Care Act has damaged affordability and is federal overreach; would support another option while it is unwound rather than restoring the credits.", russEmail),
+  stance("david-russ", "fed-tariffs", "opposes", "Keep tariffs",
+    "Does not support ending the tariffs, noting the country funded itself largely through tariffs before the 1913 income tax.", russEmail),
+  stance("david-russ", "fed-iran-war", "partial", "Defers to briefings",
+    "Says only people in the highest-level national-security meetings can make this call and he has not been in one; he does not say whether to end U.S. involvement.", russEmail),
+  stance("david-russ", "fed-housing-aid", "opposes", "Leave it to states",
+    "Says current federal involvement in housing already violates the 10th Amendment; states that want such programs should run them.", russEmail),
+  stance("david-russ", "fed-data-centers", "opposes", "Local deals, not federal",
+    "Opposes federal involvement, saying lobbying would tilt deals toward data centers; local officials should negotiate terms, as he says some cities have done to secure benefits such as free power.", russEmail),
   stance("andrea-salinas", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
   stance("andrea-salinas", "fed-aca-credits", "supports", "Voted to restore", ACA_HOUSE_YES, acaHouse),
   stance("andrea-salinas", "fed-tariffs", "supports", "Voted to end tariffs", TARIFF_HOUSE_YES, tariffHouse),

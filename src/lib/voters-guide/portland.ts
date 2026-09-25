@@ -412,7 +412,7 @@ const d4: Candidate[] = [
       "Use existing buildings and electrical capacity to attract activity.",
     ],
     "His program is unusually focused on two initiatives. Their technical feasibility, ownership arrangements and costs remain to be demonstrated.",
-    "What utility partners, engineering studies and financing would the energy proposal require?",
+    "If combined City costs outpace incomes under your Affordability Rule, which increases would Council cut or delay first?",
     statement(61),
   ),
   c(

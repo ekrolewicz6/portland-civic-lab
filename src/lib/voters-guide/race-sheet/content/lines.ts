@@ -158,9 +158,10 @@ const councilLines: IssueLine[] = [
   line("john-mcdonald", "money", "Supports modernizing Moda Center and retaining the Trail Blazers."),
   line("john-mcdonald", "climate", "Supports continuing the Interstate Bridge Replacement (new I-5 bridge)."),
 
-  line("matt-schulte", "safety", "Proposes ReBoot, connecting volunteers and professionals to help people navigate services."),
-  line("matt-schulte", "money", "Proposes the Grid-Connected Core with downtown building owners to attract economic activity."),
-  line("matt-schulte", "climate", "Would reuse downtown buildings and electrical capacity as energy infrastructure."),
+  line("matt-schulte", "housing", "More housing and office conversions; a fund backing the City’s home-sharing pilot."),
+  line("matt-schulte", "safety", "ReBoot navigators keep people connected to services through handoffs and sweeps."),
+  line("matt-schulte", "money", "Cap growth in combined City household costs below income growth."),
+  line("matt-schulte", "climate", "Safe Routes around every District 4 school; a busier downtown for transit."),
 
   line("jeremy-beausoleil-smith", "housing", "Supports social (public or nonprofit) housing, a renters' bill of rights, treatment-linked housing."),
   line("jeremy-beausoleil-smith", "safety", "Supports expanded Portland Street Response."),
