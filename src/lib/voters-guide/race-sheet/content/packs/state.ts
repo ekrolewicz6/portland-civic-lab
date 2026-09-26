@@ -54,8 +54,8 @@ const NOTE =
 
 const REVIEWED_ON = "2026-09-21";
 const reviewed = { reviewedBy: "pending", reviewedOn: REVIEWED_ON } as const;
-/** Entries added in the September 22, 2026 topic sweep (research/voters-guide-2026/outreach-2026-09-22/topic-sweep-governor.md). */
-const reviewed22 = { reviewedBy: "pending", reviewedOn: "2026-09-22" } as const;
+/** Entries from the September 24, 2026 OBI/PBJ forum, read September 25. */
+const reviewed25 = { reviewedBy: "pending", reviewedOn: "2026-09-25" } as const;
 
 /** The candidate's voters' pamphlet statement as filed with the Secretary of State. */
 const statement = (page: number, note: string = NOTE): Evidence => ({
@@ -166,6 +166,17 @@ const smithInterview: Evidence = {
   kind: "Candidate statement",
   date: "August 7, 2026; reviewed September 21, 2026",
   note: NOTE,
+};
+
+/* Oregon Business & Industry and Portland Business Journal governor forum (September 24, 2026). The Lab
+ * worked from a transcript without speaker labels; with two candidates and the moderator naming the first
+ * speaker on each question, every turn is certain. See research/voters-guide-2026/sources/obi-pbj-governor-forum-2026-09-24.md. */
+const obiPbjForum: Evidence = {
+  label: "Oregon Business & Industry and Portland Business Journal · governor candidate forum (September 24, 2026)",
+  url: "https://www.avstream.me/pbj",
+  kind: "Candidate statement",
+  date: "September 24, 2026; transcript read September 25, 2026",
+  note: "The candidate's own remarks at a public forum, read from a transcript; speaker attribution is the Lab's, from the moderator's order. Claims are not independently verified.",
 };
 
 /* ── Analysis ────────────────────────────────────────────────────────── */
@@ -596,12 +607,6 @@ const waJoint = record(
   "https://governor.wa.gov/news/2026/interstate-bridge-replacement-program-joint-statement-governors-kotek-and-ferguson",
   "March 17, 2026; reviewed September 21, 2026",
 );
-const kotekSb1507Letter = record(
-  "Governor Kotek · SB 1507 signing letter to the Secretary of State",
-  "https://siliconflorist.com/wp-content/uploads/2026/04/2026.04.09_SB-1507-Signing-Letter-1.pdf",
-  "April 9, 2026; reviewed September 22, 2026",
-  "Scan of the signed two-page letter as posted by Silicon Florist; the Department of Revenue’s 2026 Summary of Legislation lists the letter by date, and OLIS records SB 1507 signed April 9, 2026 (Oregon Laws 2026, chapter 142). The letter also promises 2027 legislation to restore the small-business stock exemption. The Statesman Journal reported the disconnect is expected to raise more than $342 million; a referendum against it failed to qualify by the June 4, 2026 deadline.",
-);
 
 /* Stakes sources */
 const medicaidGap = record(
@@ -767,11 +772,12 @@ const topicStances: TopicStance[] = [
   stance("tina-kotek", "gov-school-time", "supports", "No cuts to hours",
     "Executive Order 26-06 bars districts from cutting instructional time for budget reasons and ends waivers below the minimum; her platform sets a goal of reaching the national average by the end of a second term.",
     govInstrEo),
+  // From the September 24, 2026 OBI/PBJ forum, which replaces her April 2026 SB 1507 signing letter as the source.
   {
-    ...stance("tina-kotek", "gov-new-revenue", "partial", "Signed H.R. 1 disconnect",
-      "Signed SB 1507 in April 2026, disconnecting Oregon from several H.R. 1 tax breaks because copying them was “neither fair nor responsible,” while keeping tips and overtime untaxed; she has not said whether she would seek new taxes for 2027–29.",
-      kotekSb1507Letter),
-    ...reviewed22,
+    ...stance("tina-kotek", "gov-new-revenue", "partial", "Offset any tax cuts",
+      "Open to raising the Corporate Activity Tax threshold for small businesses if trimming tax breaks that haven’t helped competitiveness pays for it; wants an outside-led tax review; did not say whether she would seek new taxes.",
+      obiPbjForum),
+    ...reviewed25,
   },
   stance("tina-kotek", "gov-interstate-bridge", "supports", "Build the core bridge",
     "With Washington’s governor, said March 17, 2026 the states remain “fully committed” to replacing the bridge, starting with a core set of projects funded by committed federal, state and toll money.",
@@ -802,9 +808,13 @@ const topicStances: TopicStance[] = [
   stance("christine-drazan", "gov-school-time", "supports", "School-day standard",
     "Would increase classroom time by moving Oregon from an instructional-hours system to a school-day system with statewide standards for what counts as a school day.",
     drazanPlan),
-  stance("christine-drazan", "gov-new-revenue", "opposes", "Veto new taxes",
-    "Would veto new tax and fee increases and cut taxes instead: a higher standard deduction, estate and Corporate Activity Tax reform, and property tax relief for seniors and veterans.",
-    drazanPlan),
+  // From the September 24, 2026 OBI/PBJ forum; her veto pledge stays in her money column.
+  {
+    ...stance("christine-drazan", "gov-new-revenue", "opposes", "Cut business taxes",
+      "Says business taxes are too high and Salem should tighten its belt; would raise the Corporate Activity Tax threshold past the $2 million the governor’s Prosperity Council suggested, reform the estate tax and selectively preempt local taxes.",
+      obiPbjForum),
+    ...reviewed25,
+  },
   stance("christine-drazan", "gov-interstate-bridge", "mixed", "A cheaper bridge",
     "Says the state “can’t afford the I-5 bridge that they’re proposing,” objecting to the share of deck for biking, walking and transit, and would build a bridge Oregon can afford.",
     drazanKatu),

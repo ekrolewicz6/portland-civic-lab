@@ -19,6 +19,25 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="obi-pbj-forum-2026-09-24">September 25, 2026 · Forum remarks: Governor (Oregon Business &amp; Industry and Portland Business Journal, September 24)</h2>
+        <p>
+          Tina Kotek and Christine Drazan answered the same questions on the
+          economy at a forum hosted by Oregon Business &amp; Industry and the
+          Portland Business Journal; Brett Smith was not on stage. The Lab
+          worked from a transcript without speaker labels, but with two
+          candidates and the moderator naming who answered first on every
+          question, each answer is certain. The state-taxes board now uses
+          both candidates’ forum answers. Kotek said she is open to raising
+          the Corporate Activity Tax threshold for small businesses if
+          trimming tax breaks that have not helped competitiveness pays for
+          it, and wants a tax review led by an outside party; this replaces
+          her April 2026 signing letter on the H.R. 1 tax disconnect as the
+          source. Drazan said business taxes are too high, would raise the
+          same threshold past $2 million, reform the estate tax and
+          selectively preempt local taxes; her pledge to veto new taxes stays
+          in her money column. Claims about each other and unsourced
+          statistics were not used.
+        </p>
         <h2 id="state-budget-gap-2026-09-25">September 25, 2026 · Added context: the size of the 2027–29 state budget gap (Governor)</h2>
         <p>
           A reader asked how big the 2027–29 budget gap on the governor page
