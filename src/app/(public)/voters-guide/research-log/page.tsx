@@ -25,11 +25,15 @@ export default function ResearchLog() {
           earlier answers. She would replace the Every Student Succeeds Act
           with what she calls the Student Teacher Empowerment Act, focused on
           measurable progress in core subjects with required yearly training
-          for teachers; remove tablets below ninth grade; make PE, music and
-          art core subjects through sixth grade; move administrative budgets
+          for teachers; remove tablets below ninth grade; add PE, music and
+          art through sixth grade; move administrative budgets
           to teacher pay and smaller classes; and let funding follow the
           student where public school is not the right fit. It appears in her
-          own words on her brief. The reply is kept on file.
+          own words on her brief. The reply is kept on file. On September 26
+          she clarified that math, reading, writing, civics and history are
+          the core subjects, with PE, music and art added; the Lab’s summary
+          above had called all three core, and her clarification is now on
+          her brief beside the answer.
         </p>
         <h2 id="obi-pbj-forum-2026-09-24">September 25, 2026 · Forum remarks: Governor (Oregon Business &amp; Industry and Portland Business Journal, September 24)</h2>
         <p>
