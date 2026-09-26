@@ -1,7 +1,28 @@
 /** Export sanitized, reviewable import evidence. No source downloads in Git. */
 import { writeFile, readFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import sql from "../../src/lib/db-query";
 import { coverage, csvCell } from "../../src/lib/oregon-fire/query";
+
+// Full ID inventories remain in Postgres. The review artifact records their
+// size and checksum instead of repeating thousands of IDs in every run.
+const metadataVersions: Record<string, unknown> = {};
+function reviewMetadata(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(reviewMetadata);
+  if (!value || typeof value !== "object") return value;
+  return Object.fromEntries(Object.entries(value).map(([key, child]) => {
+    if (key === "sourceMetadata" && child && typeof child === "object") {
+      const checksum = createHash("sha256").update(JSON.stringify(child)).digest("hex");
+      metadataVersions[checksum] = reviewMetadata(child);
+      return [key, { sha256: checksum, registry: "metadataVersions" }];
+    }
+    return [key,
+    ["ids", "objectIds"].includes(key) && Array.isArray(child)
+      ? { count: child.length, sha256: createHash("sha256").update(JSON.stringify(child)).digest("hex"), retainedIn: "Postgres import metadata/checkpoint" }
+      : reviewMetadata(child),
+    ];
+  }));
+}
 
 async function main() {
   const directory = "research/oregon-fire-map-2026-09-10/";
@@ -25,7 +46,8 @@ async function main() {
         capturedAt: new Date().toISOString(),
         stage: "downloaded; not confirmed by steward",
         sources,
-        runs,
+        runs: runs.map((run) => ({ ...run, metadata: reviewMetadata(run.metadata) })),
+        metadataVersions,
         recordSets,
         fod,
       },
