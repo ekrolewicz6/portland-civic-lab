@@ -38,3 +38,9 @@ A last check against the live site and this folder's research changed seven emai
 - Cori Johnson, the Gresham Area Chamber's new CEO (cori.ceo@greshamchamber.org): resent the Gresham email after Lynn Snodgrass's auto-reply.
 - Julia Shumway, Oregon Capital Chronicle: thanks; will watch for their mid-October general election guide and point readers to it. (Edan answered North Tabor himself.)
 - John Tapogna, Oregon Business Council: asked how big the 2027-29 gap is in percentage terms; the governor page now gives the $421 million Health Plan gap, about 1% of forecast revenue (PR #46), and he was told so in his thread.
+
+## Replies after 5 PM PDT
+
+- Nate Waas Shull, Foundation for a Better Oregon, Director of Policy and Advocacy: asked for the exact text to review. Sent the classroom-hours board context and both candidate entries with three questions (restore-by-2027-28 rule, the "all but a handful of states" comparison, how the new rules count hours). His pointer: the September 2026 State Board of Education meeting, agenda item 6.A, administrative rules implementing the instructional-time executive order, https://meetings.boardbook.org/Public/Agenda/2146?meeting=766536 (not yet read).
+- Brooke, Nafisa Fai's campaign manager (brooke@nafisaforwashingtoncounty.com): asked how to submit edits and the deadline. Told her: reply in plain text, quote the line and give the new wording; no hard deadline, October 7 to be on the page before ballots mail October 14; and the five specific asks (result measures for housing, safety teams and climate; yes or no on ending the Hillsboro data-center enterprise-zone exemptions; yes, no or conditions on SB 1586 farmland).
+- Barbara J Kahl sent an education and school-choice answer; added to her brief (PR #48).
