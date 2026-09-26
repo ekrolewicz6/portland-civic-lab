@@ -19,6 +19,18 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="kahl-education-2026-09-25">September 25, 2026 · Candidate response: Barbara J Kahl on education (U.S. House, Oregon District 1)</h2>
+        <p>
+          Barbara J Kahl sent an answer on education to go with her twelve
+          earlier answers. She would replace the Every Student Succeeds Act
+          with what she calls the Student Teacher Empowerment Act, focused on
+          measurable progress in core subjects with required yearly training
+          for teachers; remove tablets below ninth grade; make PE, music and
+          art core subjects through sixth grade; move administrative budgets
+          to teacher pay and smaller classes; and let funding follow the
+          student where public school is not the right fit. It appears in her
+          own words on her brief. The reply is kept on file.
+        </p>
         <h2 id="obi-pbj-forum-2026-09-24">September 25, 2026 · Forum remarks: Governor (Oregon Business &amp; Industry and Portland Business Journal, September 24)</h2>
         <p>
           Tina Kotek and Christine Drazan answered the same questions on the
