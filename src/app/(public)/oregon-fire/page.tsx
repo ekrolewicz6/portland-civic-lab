@@ -9,6 +9,7 @@ import {
   MapPin,
   Compass,
 } from "lucide-react";
+import FireEvidenceGuide from "@/components/oregon-fire/FireEvidenceGuide";
 import ForestContext from "@/components/oregon-fire/ForestContext";
 import FireExplorer from "@/components/oregon-fire/FireExplorer";
 import { coverage } from "@/lib/oregon-fire/query";
@@ -26,6 +27,7 @@ import {
 } from "@/lib/oregon-fire/metadata";
 import "./fire.css";
 import "./guide.css";
+import "./editorial.css";
 
 const editorial = localFont({
   src: "../../../lib/oregon-fire/fonts/CormorantGaramond-Medium.ttf",
@@ -90,10 +92,7 @@ export default async function OregonFirePage() {
               The records tell different stories.
             </p>
             <p>
-              Learn how fire shapes different Oregon landscapes. Find a place
-              you know, follow a documented story, or explore prescribed burns
-              and wildfire history. See what happened—and what the evidence
-              can tell us about better choices.
+              Follow a place from its restoration goals to the work and the evidence. Explore prescribed burns, wildfire history, and recent fire scars—with the gaps in the record visible.
             </p>
             <a href="#explore">
               Explore the map <ArrowDown size={16} />
@@ -106,22 +105,23 @@ export default async function OregonFirePage() {
         </div>
       </header>
       <div className="fire-shell">
+        <p className="fire-guide-note">Public treatment records, plans, and wildfire history; coverage remains incomplete. Latest successful imports and missing jurisdictions are listed in <a href="#sources">sources & coverage</a>.</p>
         <nav
           className="fire-entry-paths"
           aria-label="Choose your way into the atlas"
         >
-          <a href="#understand">
+          <Link href="/oregon-fire/stories/why-burn">
             <BookOpen size={23} />
             <span>
-              <strong>Understand fire</strong>
-              <small>A short guide to Oregon’s landscapes</small>
+              <strong>Understand the choices</strong>
+              <small>Why burn this place? A documented decision</small>
             </span>
             <ArrowDown size={17} />
-          </a>
+          </Link>
           <a href="#find-place">
             <MapPin size={23} />
             <span>
-              <strong>Find a place</strong>
+              <strong>Explore a place</strong>
               <small>Start with a community you know</small>
             </span>
             <ArrowDown size={17} />
@@ -129,7 +129,7 @@ export default async function OregonFirePage() {
           <a href="#explore">
             <Compass size={23} />
             <span>
-              <strong>Explore the records</strong>
+              <strong>Investigate the records</strong>
               <small>Go straight to the map and sources</small>
             </span>
             <ArrowDown size={17} />
@@ -142,6 +142,7 @@ export default async function OregonFirePage() {
         <PlaceFinder />
         <FireExplorer sources={sources} />
         <ForestContext />
+        <FireEvidenceGuide />
         <FireStories />
         <FireComparison />
         <FireDecisions />
@@ -176,6 +177,7 @@ export default async function OregonFirePage() {
                       <a href={s.url}>
                         {s.name} <ArrowUpRight size={12} />
                       </a>
+                      {!!s.unlocatedCount && <Link href={`/api/oregon-fire/unlocated?source=${s.id}`}>Unlocated records awaiting verification ↗</Link>}
                       <span>
                         {s.agency} ·{" "}
                         {s.role === "requested"

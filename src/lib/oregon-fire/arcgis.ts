@@ -20,10 +20,19 @@ export async function getJson<T>(
 ): Promise<T> {
   const target = new URL(url);
   Object.entries(params).forEach(([k, v]) => target.searchParams.set(k, v));
-  const response = await fetch(target, {
-    signal: AbortSignal.timeout(20000),
-    cache: "no-store",
-  });
+  let response: Response;
+  try {
+    response = await fetch(target, {
+      signal: AbortSignal.timeout(20000),
+      cache: "no-store",
+    });
+  } catch (error) {
+    if (attempt < 2 && error instanceof Error && ["TimeoutError", "AbortError", "TypeError"].includes(error.name)) {
+      await new Promise((resolve) => setTimeout(resolve, 1000 * (attempt + 1)));
+      return getJson<T>(url, params, attempt + 1);
+    }
+    throw error;
+  }
   if (!response.ok) {
     if (
       attempt < 2 &&

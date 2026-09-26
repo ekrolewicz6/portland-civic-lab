@@ -2,10 +2,11 @@
 import { Layers, ArrowUpRight } from "lucide-react";
 import {
   MTBS_LEGEND,
-  MTBS_VERIFIED_YEAR,
   scarColor,
   type LandscapeResult,
 } from "@/lib/oregon-fire/landscape";
+
+import { ASSESSMENT_MANIFEST, severityYears } from "@/lib/oregon-fire/assessment-availability";
 
 export interface ScarSettings {
   scars: string;
@@ -124,7 +125,7 @@ export default function LandscapeControls({
               { length: new Date().getFullYear() - 1999 },
               (_, i) => new Date().getFullYear() - i,
             )
-              .filter((y) => !severity || y <= MTBS_VERIFIED_YEAR)
+              .filter((y) => !severity || severityYears.includes(y))
               .map((y) => (
                 <option key={y}>{y}</option>
               ))}
@@ -153,16 +154,17 @@ export default function LandscapeControls({
           </div>
           <p>
             {severity
-              ? `MTBS ${end}: published assessments, including wildfire and prescribed fire. Colors show vegetation change, not ecological benefit. Unmapped ground is not necessarily unburned.`
+              ? `MTBS fire year ${end}: reviewed display assessments, including wildfire and prescribed fire. Colors show vegetation change, not ecological benefit. Unmapped ground is not necessarily unburned.`
               : "Perimeters can include unburned ground. Overview boundaries are simplified. Select an outline to read its source record. These time controls affect fire scars; record filters below affect the list."}
           </p>
           {severity && (
             <p className="fire-severity-state" role="status">
+              Display checked {ASSESSMENT_MANIFEST.checkedAt}. {ASSESSMENT_MANIFEST.assessmentDate}
               {severityState === "error"
                 ? "Some severity tiles could not load. Boundaries remain visible; retry by switching the layer off and on."
                 : severityState === "loading"
                   ? "Loading satellite burn-severity assessments…"
-                  : "MTBS generally maps western fires of at least 1,000 acres. Assessment coverage and publication dates vary."}{" "}
+                  : ASSESSMENT_MANIFEST.coverage}{" "}
               <a href="https://www.mtbs.gov/faqs">
                 Read the method <ArrowUpRight size={11} />
               </a>

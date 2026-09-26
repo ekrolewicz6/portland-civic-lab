@@ -1,0 +1,45 @@
+{
+  "reviewedAt": "2026-09-26",
+  "publicAssets": [
+    {
+      "id": "why-burn-decision-diagram",
+      "kind": "original explanatory graphic",
+      "location": "/oregon-fire/stories/why-burn#changed",
+      "rights": "Portland Civic Lab original",
+      "meaning": "Decision process only; not historical imagery, a measured ecological model or a project map",
+      "transforms": "Responsive HTML/CSS; text available to screen readers"
+    },
+    {
+      "id": "why-burn-social-card",
+      "kind": "original typography",
+      "location": "/api/oregon-fire/social",
+      "rights": "Portland Civic Lab original; bundled licensed editorial font",
+      "meaning": "Article social card; no simulated historical evidence"
+    }
+  ],
+  "heldAssets": [
+    {
+      "id": "pnw-gtr-315-figure-19cd",
+      "source": "https://research.fs.usda.gov/treesearch/25667",
+      "locator": "PDF page 46, printed page 41, figures 19c/d",
+      "dates": [
+        1924,
+        1992
+      ],
+      "credit": "1924 photo credited W. L. Dutton; repeat credit requires original-caption review",
+      "region": "Blue Mountains; exact viewpoint requires figure 19a/b context and original report",
+      "rights": "not established per image",
+      "publicationApproved": false,
+      "note": "Visually inspected paired views. Logging and fire are discussed in the caption; do not attribute all visible change to fire exclusion or imply Woodpecker history."
+    }
+  ],
+  "additionalPublicEvidence": [
+    {
+      "url": "https://extension.oregonstate.edu/catalog/pub/em-9343-planning-prescribed-burn",
+      "title": "Planning a Prescribed Burn | OSU Extension Service",
+      "checkedAt": "2026-09-26",
+      "status": 200,
+      "publicationUse": "linked planning guidance; not Woodpecker alternatives or an accomplishment record"
+    }
+  ]
+}

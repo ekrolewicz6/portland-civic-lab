@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { MTBS_WMS, MTBS_VERIFIED_YEAR } from "@/lib/oregon-fire/landscape";
+import { MTBS_WMS } from "@/lib/oregon-fire/landscape";
 
+import { severityProduct } from "@/lib/oregon-fire/assessment-availability";
 const query = z.object({
-  year: z.coerce.number().int().min(2000).max(MTBS_VERIFIED_YEAR),
+  year: z.coerce.number().int().min(2000).max(2200).refine((year) => !!severityProduct(year), "Assessment display not reviewed"),
   z: z.coerce.number().int().min(0).max(18),
   x: z.coerce.number().int().min(0),
   y: z.coerce.number().int().min(0),
@@ -37,7 +38,7 @@ export async function GET(request: Request) {
     service: "WMS",
     request: "GetMap",
     version: "1.1.1",
-    layers: `mtbs_CONUS_${year}`,
+    layers: severityProduct(year)!.layer,
     styles: "",
     format: "image/png",
     transparent: "true",

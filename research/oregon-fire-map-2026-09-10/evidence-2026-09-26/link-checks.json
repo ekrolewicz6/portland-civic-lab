@@ -1,0 +1,964 @@
+{
+  "capturedAt": "2026-09-26T22:57:32.704Z",
+  "method": "GET with redirects; HTTP and HTML-title checks. Working means reachable, not an editorial accuracy or geographic-coverage finding.",
+  "rows": [
+    {
+      "id": "b3b7850372a2",
+      "url": "http://www.odf.state.or.us/DIVISIONS/protection/fire_protection/Daily/rptAccomplishmentWeekly.pdf",
+      "finalUrl": "http://www.odf.state.or.us/DIVISIONS/protection/fire_protection/Daily/rptAccomplishmentWeekly.pdf",
+      "state": "working",
+      "status": 200,
+      "checkedAt": "2026-09-26T22:57:19.732Z"
+    },
+    {
+      "id": "6f06774e36f6",
+      "url": "http://www.odf.state.or.us/DIVISIONS/protection/fire_protection/Daily/rptAvailableUnitsWeekly.pdf",
+      "finalUrl": "http://www.odf.state.or.us/DIVISIONS/protection/fire_protection/Daily/rptAvailableUnitsWeekly.pdf",
+      "state": "working",
+      "status": 200,
+      "checkedAt": "2026-09-26T22:57:19.783Z"
+    },
+    {
+      "id": "c26122b95e02",
+      "url": "http://www.odf.state.or.us/DIVISIONS/protection/fire_protection/Daily/rptDailyAccomplishments6A.pdf",
+      "finalUrl": "http://www.odf.state.or.us/DIVISIONS/protection/fire_protection/Daily/rptDailyAccomplishments6A.pdf",
+      "state": "working",
+      "status": 200,
+      "checkedAt": "2026-09-26T22:57:19.744Z"
+    },
+    {
+      "id": "32d0a5849165",
+      "url": "http://www.odf.state.or.us/DIVISIONS/protection/fire_protection/Daily/rptDailyPlans7A.pdf",
+      "finalUrl": "http://www.odf.state.or.us/DIVISIONS/protection/fire_protection/Daily/rptDailyPlans7A.pdf",
+      "state": "working",
+      "status": 200,
+      "checkedAt": "2026-09-26T22:57:19.729Z"
+    },
+    {
+      "id": "usaspending",
+      "url": "https://api.usaspending.gov/docs/",
+      "finalUrl": "https://api.usaspending.gov/docs/",
+      "state": "working",
+      "status": 200,
+      "title": "USAspending API",
+      "checkedAt": "2026-09-26T22:57:28.100Z"
+    },
+    {
+      "id": "facts-common",
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_ActivityFactsCommonAttributes_01/MapServer/0",
+      "finalUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_ActivityFactsCommonAttributes_01/MapServer/0",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Activity FACTS Common Attribute (ID: 0)",
+      "checkedAt": "2026-09-26T22:57:26.786Z"
+    },
+    {
+      "id": "da5efaa36de6",
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_FireOccurrenceAndPerimeter_01/MapServer",
+      "finalUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_FireOccurrenceAndPerimeter_01/MapServer",
+      "state": "working",
+      "status": 200,
+      "title": "EDW/EDW_FireOccurrenceAndPerimeter_01 (MapServer)",
+      "checkedAt": "2026-09-26T22:57:20.625Z"
+    },
+    {
+      "id": "7adc897cd812",
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_HazardousFuelsTreatments_01/MapServer/3",
+      "finalUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_HazardousFuelsTreatments_01/MapServer/3",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Fire (ID: 3)",
+      "checkedAt": "2026-09-26T22:57:20.552Z"
+    },
+    {
+      "id": "facts-mechanical",
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_HazardousFuelsTreatments_01/MapServer/5",
+      "finalUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_HazardousFuelsTreatments_01/MapServer/5",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Mechanical (ID: 5)",
+      "checkedAt": "2026-09-26T22:57:26.471Z"
+    },
+    {
+      "id": "ravg-perimeters",
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RAVG_v2_01/MapServer/0",
+      "finalUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RAVG_v2_01/MapServer/0",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Fire_RAVG_Perimeters_PostfireVegChg (ID: 0)",
+      "checkedAt": "2026-09-26T22:57:26.892Z"
+    },
+    {
+      "id": "odf-request",
+      "url": "https://apps.odf.oregon.gov/publicrecords",
+      "finalUrl": "https://apps.odf.oregon.gov/publicrecords",
+      "state": "working",
+      "status": 200,
+      "title": "Welcome",
+      "checkedAt": "2026-09-26T22:57:32.692Z"
+    },
+    {
+      "id": "0fa44d007329",
+      "url": "https://apps.odf.oregon.gov/SmokeDataSystem/#/",
+      "finalUrl": "https://apps.odf.oregon.gov/SmokeDataSystem/",
+      "state": "access-blocked",
+      "status": 401,
+      "title": "401 - Unauthorized: Access is denied due to invalid credentials.",
+      "checkedAt": "2026-09-26T22:57:19.675Z"
+    },
+    {
+      "id": "50cd8b0f0aef",
+      "url": "https://aqi.oregon.gov/",
+      "finalUrl": "https://aqi.oregon.gov/",
+      "state": "working",
+      "status": 200,
+      "title": "Oregon Department of Environmental Quality",
+      "checkedAt": "2026-09-26T22:57:22.715Z"
+    },
+    {
+      "id": "aqs-api",
+      "url": "https://aqs.epa.gov/aqsweb/documents/data_api.html",
+      "finalUrl": "https://aqs.epa.gov/aqsweb/documents/data_api.html",
+      "state": "working",
+      "status": 200,
+      "title": "AQS API | AirData | US EPA",
+      "checkedAt": "2026-09-26T22:57:29.468Z"
+    },
+    {
+      "id": "ravg",
+      "url": "https://burnseverity.cr.usgs.gov/ravg/data-access",
+      "finalUrl": "https://burnseverity.cr.usgs.gov/ravg/data-access",
+      "state": "working",
+      "status": 200,
+      "title": "Data Access | RAVG",
+      "checkedAt": "2026-09-26T22:57:27.020Z"
+    },
+    {
+      "id": "3b041d71f7ce",
+      "url": "https://centraloregonfire.org/prescribed-fire-smoke-plans/",
+      "finalUrl": "https://centraloregonfire.org/prescribed-fire-smoke-plans/",
+      "state": "working",
+      "status": 200,
+      "title": "Prescribed Fire Plans | Central Oregon Fire Information",
+      "checkedAt": "2026-09-26T22:57:21.761Z"
+    },
+    {
+      "id": "68427bf2832d",
+      "url": "https://data-nifc.opendata.arcgis.com/",
+      "finalUrl": "https://data-nifc.opendata.arcgis.com/",
+      "state": "working",
+      "status": 200,
+      "title": "National Interagency Fire Center",
+      "checkedAt": "2026-09-26T22:57:21.226Z"
+    },
+    {
+      "id": "80fad3200688",
+      "url": "https://data-nifc.opendata.arcgis.com/datasets/nifc::interagencyfireperimeterhistory-all-years-view/about",
+      "finalUrl": "https://data-nifc.opendata.arcgis.com/datasets/nifc::interagencyfireperimeterhistory-all-years-view/about",
+      "state": "working",
+      "status": 200,
+      "title": "National Interagency Fire Center",
+      "checkedAt": "2026-09-26T22:57:21.199Z"
+    },
+    {
+      "id": "d094ab00e711",
+      "url": "https://data-usfs.hub.arcgis.com/datasets/usfs::hazardous-fuel-treatment-reduction-polygon-feature-layer",
+      "finalUrl": "https://data-usfs.hub.arcgis.com/datasets/usfs::hazardous-fuel-treatment-reduction-polygon-feature-layer",
+      "state": "working",
+      "status": 200,
+      "title": "Hazardous Fuel Treatment Reduction: Polygon (Feature Layer)",
+      "checkedAt": "2026-09-26T22:57:20.728Z"
+    },
+    {
+      "id": "lcms",
+      "url": "https://data.fs.usda.gov/geodata/rastergateway/LCMS/",
+      "finalUrl": "https://data.fs.usda.gov/geodata/rastergateway/LCMS/",
+      "state": "working",
+      "status": 200,
+      "title": "USDA Forest Service FSGeodata Clearinghouse - Landscape Change Monitoring System (LCMS)",
+      "checkedAt": "2026-09-26T22:57:27.834Z"
+    },
+    {
+      "id": "e8fc168c2bb7",
+      "url": "https://data.oregon.gov/Natural-Resources/ODF-Fire-Occurrence-2000-2025/fa7z-shhx",
+      "finalUrl": "https://data.oregon.gov/Natural-Resources/ODF-Fire-Occurrence-2000-2025/fa7z-shhx",
+      "state": "working",
+      "status": 200,
+      "checkedAt": "2026-09-26T22:57:20.796Z"
+    },
+    {
+      "id": "S17",
+      "url": "https://digitalcommons.usu.edu/aspen_bib/8091/",
+      "finalUrl": "https://digitalcommons.usu.edu/aspen_bib/8091/",
+      "state": "working",
+      "status": 200,
+      "title": "\"Changing Fire Regimes in the Great Basin USA\" by Eva K. Strand, Kori Blankenship et al.",
+      "checkedAt": "2026-09-26T22:57:25.736Z"
+    },
+    {
+      "id": "airnow",
+      "url": "https://docs.airnowapi.org/",
+      "finalUrl": "https://docs.airnowapi.org/",
+      "state": "working",
+      "status": 200,
+      "title": "AirNow API Documentation",
+      "checkedAt": "2026-09-26T22:57:28.364Z"
+    },
+    {
+      "id": "af3dae8fd6d6",
+      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSh74UdVSQFMfQbU0SDRnPNsx4kd3EEUPZuAOJw51CntuQEWFlx7k4XclCjfdgx96ILZSMSejgQ3AV_/pub?gid=301832331&single=true&output=csv",
+      "finalUrl": "https://doc-08-4s-sheets.googleusercontent.com/pub/f3kk9gtum31ktuqh54kn7i1e14/n1jq5ah48vsae477ph6it2bfho/1790463440000/106030050010246451346/*/e@2PACX-1vSh74UdVSQFMfQbU0SDRnPNsx4kd3EEUPZuAOJw51CntuQEWFlx7k4XclCjfdgx96ILZSMSejgQ3AV_?gid=301832331&single=true&output=csv",
+      "state": "redirected",
+      "status": 200,
+      "checkedAt": "2026-09-26T22:57:21.019Z"
+    },
+    {
+      "id": "S19",
+      "url": "https://doi.org/10.1038/s41597-025-05859-z",
+      "finalUrl": "https://www.nature.com/articles/s41597-025-05859-z?error=cookies_not_supported&code=80b864ef-503f-4abd-99b5-4e474732fd76",
+      "state": "redirected",
+      "status": 200,
+      "title": "A new geodatabase of fuel treatments across federal lands in the USA | Scientific Data",
+      "checkedAt": "2026-09-26T22:57:27.415Z"
+    },
+    {
+      "id": "landfire-events",
+      "url": "https://edcintl.cr.usgs.gov/geoserver/landfire/lf_events/ows?service=WMS&request=GetCapabilities",
+      "finalUrl": "https://edcintl.cr.usgs.gov/geoserver/landfire/lf_events/ows?service=WMS&request=GetCapabilities",
+      "state": "working",
+      "status": 200,
+      "checkedAt": "2026-09-26T22:57:27.588Z"
+    },
+    {
+      "id": "mtbs-capabilities",
+      "url": "https://edcintl.cr.usgs.gov/geoserver/mtbs/ows?service=WMS&request=GetCapabilities",
+      "finalUrl": "https://edcintl.cr.usgs.gov/geoserver/mtbs/ows?service=WMS&request=GetCapabilities",
+      "state": "working",
+      "status": 200,
+      "checkedAt": "2026-09-26T22:57:28.877Z"
+    },
+    {
+      "id": "blm-nepa",
+      "url": "https://eplanning.blm.gov/",
+      "finalUrl": "https://eplanning.blm.gov/",
+      "state": "working",
+      "status": 200,
+      "title": "BLM National NEPA Register",
+      "checkedAt": "2026-09-26T22:57:30.938Z"
+    },
+    {
+      "id": "1e251cebd4d1",
+      "url": "https://experience.arcgis.com/experience/55ce8bfdea4345b6a06ae81d67e7d411",
+      "finalUrl": "https://experience.arcgis.com/experience/55ce8bfdea4345b6a06ae81d67e7d411",
+      "state": "working",
+      "status": 200,
+      "title": "Experience",
+      "checkedAt": "2026-09-26T22:57:20.348Z"
+    },
+    {
+      "id": "858cec9c8716",
+      "url": "https://experience.arcgis.com/experience/79e14d6fbce649c2adbdadc9ef670244/",
+      "finalUrl": "https://experience.arcgis.com/experience/79e14d6fbce649c2adbdadc9ef670244/",
+      "state": "working",
+      "status": 200,
+      "title": "Experience",
+      "checkedAt": "2026-09-26T22:57:19.958Z"
+    },
+    {
+      "id": "89c2e99377d0",
+      "url": "https://experience.arcgis.com/experience/909972015b8c4bbaa4736d9fdeb55800",
+      "finalUrl": "https://experience.arcgis.com/experience/909972015b8c4bbaa4736d9fdeb55800",
+      "state": "working",
+      "status": 200,
+      "title": "Experience",
+      "checkedAt": "2026-09-26T22:57:19.861Z"
+    },
+    {
+      "id": "8cdc61c84646",
+      "url": "https://experience.arcgis.com/experience/de78333b0d2544f7a320142174aa20ae",
+      "finalUrl": "https://experience.arcgis.com/experience/de78333b0d2544f7a320142174aa20ae",
+      "state": "working",
+      "status": 200,
+      "title": "Experience",
+      "checkedAt": "2026-09-26T22:57:21.527Z"
+    },
+    {
+      "id": "S01",
+      "url": "https://extension.oregonstate.edu/catalog/pub/em-9340-ecological-effects-fire",
+      "finalUrl": "https://extension.oregonstate.edu/catalog/pub/em-9340-ecological-effects-fire",
+      "state": "working",
+      "status": 200,
+      "title": "The Ecological Effects of Fire | OSU Extension Service",
+      "checkedAt": "2026-09-26T22:57:25.912Z"
+    },
+    {
+      "id": "S06",
+      "url": "https://firenetworks.org/creating-a-more-complete-picture-of-fire-an-interview-with-fire-ecologist-kori-blankenship/",
+      "finalUrl": "https://firenetworks.org/creating-a-more-complete-picture-of-fire-an-interview-with-fire-ecologist-kori-blankenship/",
+      "state": "working",
+      "status": 200,
+      "title": "Creating a More Complete Picture of Fire: An Interview with Fire Ecologist Kori Blankenship - Fire Networks",
+      "checkedAt": "2026-09-26T22:57:25.803Z"
+    },
+    {
+      "id": "1589a3ae8828",
+      "url": "https://gacc.nifc.gov/nwcc/",
+      "finalUrl": "https://gacc.nifc.gov/nwcc/",
+      "state": "working",
+      "status": 200,
+      "title": "NWCC :: Home",
+      "checkedAt": "2026-09-26T22:57:21.588Z"
+    },
+    {
+      "id": "c9e7667591f6",
+      "url": "https://gis.odf.oregon.gov/odfags/rest/services/Fire/Fire_Smoke_Management/FeatureServer/0",
+      "finalUrl": "https://gis.odf.oregon.gov/odfags/rest/services/Fire/Fire_Smoke_Management/FeatureServer/0",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Smoke Daily Planned (ID: 0)",
+      "checkedAt": "2026-09-26T22:57:19.170Z"
+    },
+    {
+      "id": "5e8ce45aa030",
+      "url": "https://gis.odf.oregon.gov/odfags/rest/services/Fire/Fire_Smoke_Management/FeatureServer/1",
+      "finalUrl": "https://gis.odf.oregon.gov/odfags/rest/services/Fire/Fire_Smoke_Management/FeatureServer/1",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Smoke Daily Accomplished (ID: 1)",
+      "checkedAt": "2026-09-26T22:57:19.170Z"
+    },
+    {
+      "id": "0bf52e428474",
+      "url": "https://gis.odf.oregon.gov/odfags/rest/services/Fire/Fire_Smoke_Management/FeatureServer/2",
+      "finalUrl": "https://gis.odf.oregon.gov/odfags/rest/services/Fire/Fire_Smoke_Management/FeatureServer/2",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Smoke 3 Day Planned (ID: 2)",
+      "checkedAt": "2026-09-26T22:57:19.167Z"
+    },
+    {
+      "id": "3356d82e955a",
+      "url": "https://gis.odf.oregon.gov/odfags/rest/services/Fire/Fire_Smoke_Management/FeatureServer/3",
+      "finalUrl": "https://gis.odf.oregon.gov/odfags/rest/services/Fire/Fire_Smoke_Management/FeatureServer/3",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Smoke 3 Day Accomplished (ID: 3)",
+      "checkedAt": "2026-09-26T22:57:19.169Z"
+    },
+    {
+      "id": "ba40f5e7cf57",
+      "url": "https://gis.odf.oregon.gov/odfags/rest/services/Hosted/Fire_Danger_Level_View/FeatureServer",
+      "finalUrl": "https://gis.odf.oregon.gov/odfags/rest/services/Hosted/Fire_Danger_Level_View/FeatureServer",
+      "state": "working",
+      "status": 200,
+      "title": "Hosted/Fire_Danger_Level_View (FeatureServer)",
+      "checkedAt": "2026-09-26T22:57:20.104Z"
+    },
+    {
+      "id": "S08",
+      "url": "https://gis.reshapewildfire.org/arcgis/rest/services/Hosted/Treatment_Index_View/FeatureServer/0",
+      "finalUrl": "https://gis.reshapewildfire.org/arcgis/rest/services/Hosted/Treatment_Index_View/FeatureServer/0",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: treatment_index (ID: 0)",
+      "checkedAt": "2026-09-26T22:57:24.774Z"
+    },
+    {
+      "id": "166d1f99e840",
+      "url": "https://hazardmap.forestry.oregonstate.edu/",
+      "state": "unverified",
+      "checkedAt": "2026-09-26T22:57:21.848Z",
+      "reason": "TypeError"
+    },
+    {
+      "id": "bb4396a2479f",
+      "url": "https://hub.oregonexplorer.info/content/oregon-cwpp-planning-tool",
+      "finalUrl": "https://hub.oregonexplorer.info/content/oregon-cwpp-planning-tool",
+      "state": "working",
+      "status": 200,
+      "title": "Oregon CWPP Planning Tool",
+      "checkedAt": "2026-09-26T22:57:22.305Z"
+    },
+    {
+      "id": "ftem",
+      "url": "https://iftdss.firenet.gov/firenetHelp/help/pageHelp/content/10-ftem/ftemabout.htm",
+      "finalUrl": "https://iftdss.firenet.gov/firenetHelp/help/pageHelp/content/10-ftem/ftemabout.htm",
+      "state": "working",
+      "status": 200,
+      "title": "About FTEM",
+      "checkedAt": "2026-09-26T22:57:27.941Z"
+    },
+    {
+      "id": "ravg-basal-area",
+      "url": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RAVG_BasalAreaPercentChange/ImageServer",
+      "finalUrl": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RAVG_BasalAreaPercentChange/ImageServer",
+      "state": "working",
+      "status": 200,
+      "title": "Fire_Aviation/USFS_EDW_RAVG_BasalAreaPercentChange (ImageServer)",
+      "checkedAt": "2026-09-26T22:57:27.407Z"
+    },
+    {
+      "id": "landfire-2025",
+      "url": "https://lfps.usgs.gov/arcgis/rest/services/Landfire_LF2025?f=pjson",
+      "finalUrl": "https://lfps.usgs.gov/arcgis/rest/services/Landfire_LF2025?f=pjson",
+      "state": "working",
+      "status": 200,
+      "checkedAt": "2026-09-26T22:57:27.430Z"
+    },
+    {
+      "id": "landfire-products",
+      "url": "https://lfps.usgs.gov/products",
+      "finalUrl": "https://lfps.usgs.gov/products",
+      "state": "working",
+      "status": 200,
+      "title": "LANDFIRE Product Service",
+      "checkedAt": "2026-09-26T22:57:27.192Z"
+    },
+    {
+      "id": "S02",
+      "url": "https://news.oregonstate.edu/news/western-cascades-landscapes-oregon-historically-burned-more-often-previously-thought",
+      "finalUrl": "https://news.oregonstate.edu/news/western-cascades-landscapes-oregon-historically-burned-more-often-previously-thought",
+      "state": "working",
+      "status": 200,
+      "title": "Western Cascades landscapes in Oregon historically burned more often than previously thought | Newsroom | Oregon State University",
+      "checkedAt": "2026-09-26T22:57:23.658Z"
+    },
+    {
+      "id": "S09",
+      "url": "https://nft.garphub.org/",
+      "finalUrl": "https://nft.garphub.org/",
+      "state": "access-blocked",
+      "status": 403,
+      "title": "403 Forbidden",
+      "checkedAt": "2026-09-26T22:57:25.007Z"
+    },
+    {
+      "id": "63a21f4029eb",
+      "url": "https://oregonexplorer.info/topics/wildfire-risk",
+      "finalUrl": "https://hub.oregonexplorer.info/pages/wildfire",
+      "state": "redirected",
+      "status": 200,
+      "title": "Oregon Explorer",
+      "checkedAt": "2026-09-26T22:57:22.511Z"
+    },
+    {
+      "id": "1a2a3612da08",
+      "url": "https://osfminfo.org/",
+      "finalUrl": "https://www.oregon.gov/osfm/wildfire/Pages/info.aspx",
+      "state": "redirected",
+      "status": 200,
+      "title": "Oregon State Fire Marshal : OSFM Wildfire Info : Wildfire in Oregon : State of Oregon",
+      "checkedAt": "2026-09-26T22:57:22.364Z"
+    },
+    {
+      "id": "41abbcd11f87",
+      "url": "https://protect.genasys.com/",
+      "finalUrl": "https://protect.genasys.com/",
+      "state": "working",
+      "status": 200,
+      "title": "Genasys Protect",
+      "checkedAt": "2026-09-26T22:57:21.608Z"
+    },
+    {
+      "id": "S18",
+      "url": "https://research.fs.usda.gov/firelab/projects/globalfiredanger",
+      "finalUrl": "https://research.fs.usda.gov/firelab/projects/globalfiredanger",
+      "state": "working",
+      "status": 200,
+      "title": "Climate Change on Global Fire Danger | US Forest Service Research and Development",
+      "checkedAt": "2026-09-26T22:57:26.051Z"
+    },
+    {
+      "id": "S03",
+      "url": "https://research.fs.usda.gov/pnw/projects/reevaluatinghistoricalfireregimes",
+      "finalUrl": "https://research.fs.usda.gov/pnw/projects/reevaluatinghistoricalfireregimes",
+      "state": "working",
+      "status": 200,
+      "title": "Re-evaluating historical fire regimes in west-side forests of the Pacific Northwest | US Forest Service Research and Development",
+      "checkedAt": "2026-09-26T22:57:24.190Z"
+    },
+    {
+      "id": "fia",
+      "url": "https://research.fs.usda.gov/products/dataandtools/fia-datamart",
+      "finalUrl": "https://research.fs.usda.gov/products/dataandtools/fia-datamart",
+      "state": "working",
+      "status": 200,
+      "title": "FIA DataMart | US Forest Service Research and Development",
+      "checkedAt": "2026-09-26T22:57:27.673Z"
+    },
+    {
+      "id": "S04",
+      "url": "https://research.fs.usda.gov/treesearch/25667",
+      "finalUrl": "https://research.fs.usda.gov/treesearch/25667",
+      "state": "working",
+      "status": 200,
+      "title": "Interpreting long-term trends in Blue Mountain ecosystems from repeat photography. | US Forest Service Research and Development",
+      "checkedAt": "2026-09-26T22:57:25.228Z"
+    },
+    {
+      "id": "S05",
+      "url": "https://research.fs.usda.gov/treesearch/3079",
+      "finalUrl": "https://research.fs.usda.gov/treesearch/3079",
+      "state": "working",
+      "status": 200,
+      "title": "Interpreting landscape change in high mountains of northeastern Oregon from long-term repeat photography. | US Forest Service Research and Development",
+      "checkedAt": "2026-09-26T22:57:24.491Z"
+    },
+    {
+      "id": "S16",
+      "url": "https://research.fs.usda.gov/treesearch/49313",
+      "finalUrl": "https://research.fs.usda.gov/treesearch/49313",
+      "state": "working",
+      "status": 200,
+      "title": "The carbon balance of reducing wildfire risk and restoring process: an analysis of 10-year post-treatment carbon dynamics in a mixed-conifer forest | US Forest Service Research and Development",
+      "checkedAt": "2026-09-26T22:57:26.809Z"
+    },
+    {
+      "id": "S07",
+      "url": "https://reshapewildfire.org/resources/twig-data-resources/",
+      "finalUrl": "https://reshapewildfire.org/resources/twig-data-resources/",
+      "state": "working",
+      "status": 200,
+      "title": "TWIG Data Resources | ReSHAPE Fuel Treatment Index",
+      "checkedAt": "2026-09-26T22:57:24.604Z"
+    },
+    {
+      "id": "2edd691a51fe",
+      "url": "https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/20_Year_Strategy_Priority_Geographies/FeatureServer",
+      "finalUrl": "https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/20_Year_Strategy_Priority_Geographies/FeatureServer",
+      "state": "working",
+      "status": 200,
+      "title": "20_Year_Strategy_Priority_Geographies (FeatureServer)",
+      "checkedAt": "2026-09-26T22:57:20.304Z"
+    },
+    {
+      "id": "7e3b94b07ff3",
+      "url": "https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/2020_Oregon_Labor_Day_Fires_View/FeatureServer",
+      "finalUrl": "https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/2020_Oregon_Labor_Day_Fires_View/FeatureServer",
+      "state": "working",
+      "status": 200,
+      "title": "2020_Oregon_Labor_Day_Fires_View (FeatureServer)",
+      "checkedAt": "2026-09-26T22:57:20.129Z"
+    },
+    {
+      "id": "cc6b6652ae64",
+      "url": "https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/ODF_Fire/FeatureServer/1",
+      "finalUrl": "https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/ODF_Fire/FeatureServer/1",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: ODF Fire (ID:1)",
+      "checkedAt": "2026-09-26T22:57:20.075Z"
+    },
+    {
+      "id": "888d7fd5350b",
+      "url": "https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/Ownership_Land_Management/FeatureServer",
+      "finalUrl": "https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/Ownership_Land_Management/FeatureServer",
+      "state": "working",
+      "status": 200,
+      "title": "Ownership_Land_Management (FeatureServer)",
+      "checkedAt": "2026-09-26T22:57:20.295Z"
+    },
+    {
+      "id": "ownership",
+      "url": "https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/Ownership_Land_Management/FeatureServer/0",
+      "finalUrl": "https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/Ownership_Land_Management/FeatureServer/0",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Ownership_Land_Management (ID:0)",
+      "checkedAt": "2026-09-26T22:57:27.845Z"
+    },
+    {
+      "id": "711a8591d9fe",
+      "url": "https://services1.arcgis.com/CD5mKowwN6nIaqd8/arcgis/rest/services/library_env_or_wildfire_perimeter_history/FeatureServer",
+      "finalUrl": "https://services1.arcgis.com/CD5mKowwN6nIaqd8/arcgis/rest/services/library_env_or_wildfire_perimeter_history/FeatureServer",
+      "state": "working",
+      "status": 200,
+      "title": "library_env_or_wildfire_perimeter_history (FeatureServer)",
+      "checkedAt": "2026-09-26T22:57:21.259Z"
+    },
+    {
+      "id": "explorer-0",
+      "url": "https://services1.arcgis.com/CD5mKowwN6nIaqd8/arcgis/rest/services/library_env_or_wildfire_perimeter_history/FeatureServer/0",
+      "finalUrl": "https://services1.arcgis.com/CD5mKowwN6nIaqd8/arcgis/rest/services/library_env_or_wildfire_perimeter_history/FeatureServer/0",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Recent Fire Perimeters (2000-2025) (ID:0)",
+      "checkedAt": "2026-09-26T22:57:26.119Z"
+    },
+    {
+      "id": "explorer-1",
+      "url": "https://services1.arcgis.com/CD5mKowwN6nIaqd8/arcgis/rest/services/library_env_or_wildfire_perimeter_history/FeatureServer/1",
+      "finalUrl": "https://services1.arcgis.com/CD5mKowwN6nIaqd8/arcgis/rest/services/library_env_or_wildfire_perimeter_history/FeatureServer/1",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Historic Fires (pre 2000) (ID:1)",
+      "checkedAt": "2026-09-26T22:57:26.169Z"
+    },
+    {
+      "id": "9e20c38954a8",
+      "url": "https://services1.arcgis.com/gGHDlz6USftL5Pau/arcgis/rest/services/PNW_Planned_Rx_Polygon_Public/FeatureServer/1",
+      "finalUrl": "https://services1.arcgis.com/gGHDlz6USftL5Pau/arcgis/rest/services/PNW_Planned_Rx_Polygon_Public/FeatureServer/1",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Planned_Rx_Polygon (ID:1)",
+      "checkedAt": "2026-09-26T22:57:20.357Z"
+    },
+    {
+      "id": "c548ee47dbd6",
+      "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_OR_Prescribed_Fire_Treatments_Polygon_Hub/FeatureServer/1",
+      "finalUrl": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/BLM_OR_Prescribed_Fire_Treatments_Polygon_Hub/FeatureServer/1",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: BLM OR Prescribed Fire Treatments Polygon Hub (ID:1)",
+      "checkedAt": "2026-09-26T22:57:20.492Z"
+    },
+    {
+      "id": "8003ace1d074",
+      "url": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/NWCC_Fire_History/FeatureServer/0",
+      "finalUrl": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/NWCC_Fire_History/FeatureServer/0",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: NWCCFireHistory (ID:0)",
+      "checkedAt": "2026-09-26T22:57:21.082Z"
+    },
+    {
+      "id": "d82a1d4b5d8a",
+      "url": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Incident_Locations_YearToDate/FeatureServer/0",
+      "finalUrl": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Incident_Locations_YearToDate/FeatureServer/0",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Incidents (ID:0)",
+      "checkedAt": "2026-09-26T22:57:20.983Z"
+    },
+    {
+      "id": "wfigs-history",
+      "url": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Incident_Locations/FeatureServer/0",
+      "finalUrl": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Incident_Locations/FeatureServer/0",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Incidents (ID:0)",
+      "checkedAt": "2026-09-26T22:57:26.597Z"
+    },
+    {
+      "id": "wfigs-perimeters",
+      "url": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters_YearToDate/FeatureServer/0",
+      "finalUrl": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters_YearToDate/FeatureServer/0",
+      "state": "working",
+      "status": 200,
+      "title": "Layer: Perimeters (ID:0)",
+      "checkedAt": "2026-09-26T22:57:26.233Z"
+    },
+    {
+      "id": "1ef95198fe41",
+      "url": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters/FeatureServer",
+      "finalUrl": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters/FeatureServer",
+      "state": "working",
+      "status": 200,
+      "title": "WFIGS_Interagency_Perimeters (FeatureServer)",
+      "checkedAt": "2026-09-26T22:57:21.159Z"
+    },
+    {
+      "id": "odfw",
+      "url": "https://swap.oregon.gov/swap-help/",
+      "finalUrl": "https://swap.oregon.gov/swap-help/",
+      "state": "working",
+      "status": 200,
+      "title": "State Wildlife Action Plan Help &#8211; State Wildlife Action Plan",
+      "checkedAt": "2026-09-26T22:57:27.808Z"
+    },
+    {
+      "id": "S13",
+      "url": "https://treeringlab.forestry.oregonstate.edu/trl-projects",
+      "finalUrl": "https://treeringlab.forestry.oregonstate.edu/trl-projects",
+      "state": "working",
+      "status": 200,
+      "title": "TRL Projects: | Tree Ring Lab",
+      "checkedAt": "2026-09-26T22:57:25.476Z"
+    },
+    {
+      "id": "df7b124944fe",
+      "url": "https://utility.arcgis.com/usrsvcs/servers/bd5f2746f50c47f1922cbc3972c6d615/rest/services/Hosted/Fire_Smoke_Sensitive_Areas/FeatureServer/1",
+      "finalUrl": "https://utility.arcgis.com/usrsvcs/servers/bd5f2746f50c47f1922cbc3972c6d615/rest/services/Hosted/Fire_Smoke_Sensitive_Areas/FeatureServer/1",
+      "state": "access-blocked",
+      "status": 403,
+      "title": "Error: Services Directory has been disabled.",
+      "checkedAt": "2026-09-26T22:57:19.881Z"
+    },
+    {
+      "id": "4defab2520d5",
+      "url": "https://utility.arcgis.com/usrsvcs/servers/f811e4cf59b6416392013ee9e88a55dd/rest/services/Hosted/Boundary_Forest_Protection/FeatureServer/1",
+      "finalUrl": "https://utility.arcgis.com/usrsvcs/servers/f811e4cf59b6416392013ee9e88a55dd/rest/services/Hosted/Boundary_Forest_Protection/FeatureServer/1",
+      "state": "access-blocked",
+      "status": 403,
+      "title": "Error: Services Directory has been disabled.",
+      "checkedAt": "2026-09-26T22:57:19.987Z"
+    },
+    {
+      "id": "4efd3caeb366",
+      "url": "https://www.alertwest.live/",
+      "finalUrl": "https://www.alertwest.live/",
+      "state": "working",
+      "status": 200,
+      "title": "ALERTWest - Operations",
+      "checkedAt": "2026-09-26T22:57:21.686Z"
+    },
+    {
+      "id": "67142a6b70ae",
+      "url": "https://www.blm.gov/programs/fire/regional-info/oregon-washington/prescribed-fire",
+      "finalUrl": "https://www.blm.gov/programs/fire/regional-info/oregon-washington/prescribed-fire",
+      "state": "working",
+      "status": 200,
+      "title": "Prescribed Fire | Bureau of Land Management",
+      "checkedAt": "2026-09-26T22:57:20.723Z"
+    },
+    {
+      "id": "S14",
+      "url": "https://www.conservationgateway.org/collections/land/modifying-landfire-geospatial-data-local-applications/",
+      "finalUrl": "https://www.conservationgateway.org/collections/land/modifying-landfire-geospatial-data-local-applications/",
+      "state": "working",
+      "status": 200,
+      "title": "Modifying LANDFIRE Geospatial Data for Local Applications",
+      "checkedAt": "2026-09-26T22:57:25.856Z"
+    },
+    {
+      "id": "e9b5c4cda752",
+      "url": "https://www.epa.gov/aqs/obtaining-aqs-data",
+      "finalUrl": "https://www.epa.gov/aqs/obtaining-aqs-data",
+      "state": "working",
+      "status": 200,
+      "title": "Obtaining AQS Data | US EPA",
+      "checkedAt": "2026-09-26T22:57:23.456Z"
+    },
+    {
+      "id": "aqs-files",
+      "url": "https://www.epa.gov/outdoor-air-quality-data/download-daily-data",
+      "finalUrl": "https://www.epa.gov/outdoor-air-quality-data/download-daily-data",
+      "state": "working",
+      "status": 200,
+      "title": "Download Daily Data | US EPA",
+      "checkedAt": "2026-09-26T22:57:28.058Z"
+    },
+    {
+      "id": "1621785fb15f",
+      "url": "https://www.forestry.oregonstate.edu/news/fire-purpose",
+      "finalUrl": "https://www.forestry.oregonstate.edu/news/fire-purpose",
+      "state": "working",
+      "status": 200,
+      "title": "Fire on purpose: learning, restoration and the Woodpecker Harvest | News | College of Forestry",
+      "checkedAt": "2026-09-26T22:57:23.188Z"
+    },
+    {
+      "id": "osu-rings",
+      "url": "https://www.forestry.oregonstate.edu/news/story-hidden-rings",
+      "finalUrl": "https://www.forestry.oregonstate.edu/news/story-hidden-rings",
+      "state": "working",
+      "status": 200,
+      "title": "The story hidden in the rings | News | College of Forestry",
+      "checkedAt": "2026-09-26T22:57:28.731Z"
+    },
+    {
+      "id": "e6a501f9a746",
+      "url": "https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009.7",
+      "finalUrl": "https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009.7",
+      "state": "working",
+      "status": 200,
+      "title": "Forest Service Research Data Archive",
+      "checkedAt": "2026-09-26T22:57:24.230Z"
+    },
+    {
+      "id": "de9b4615d8ca",
+      "url": "https://www.fws.gov/refuge/william-l-finley/what-we-do",
+      "finalUrl": "https://www.fws.gov/refuge/william-l-finley/what-we-do",
+      "state": "working",
+      "status": 200,
+      "title": "William L. Finley National Wildlife Refuge | What We Do | U.S. Fish &amp; Wildlife Service",
+      "checkedAt": "2026-09-26T22:57:22.961Z"
+    },
+    {
+      "id": "landfire-fri",
+      "url": "https://www.landfire.gov/fire-regime/fri",
+      "finalUrl": "https://www.landfire.gov/fire-regime/fri",
+      "state": "working",
+      "status": 200,
+      "title": "Fire Return Interval | LANDFIRE",
+      "checkedAt": "2026-09-26T22:57:27.981Z"
+    },
+    {
+      "id": "1aea982b4285",
+      "url": "https://www.landfire.gov/getdata.php",
+      "finalUrl": "https://www.landfire.gov/data",
+      "state": "redirected",
+      "status": 200,
+      "title": "Data | LANDFIRE",
+      "checkedAt": "2026-09-26T22:57:22.921Z"
+    },
+    {
+      "id": "89227cd6e425",
+      "url": "https://www.lrapa-or.gov/air-quality-protection/community-center/prescribed-burns/",
+      "finalUrl": "https://www.lrapa-or.gov/air-quality-protection/community-center/prescribed-burns/",
+      "state": "working",
+      "status": 200,
+      "title": "Prescribed Burns | Lane Regional Air Protection Agency",
+      "checkedAt": "2026-09-26T22:57:24.852Z"
+    },
+    {
+      "id": "653081240582",
+      "url": "https://www.mtbs.gov/",
+      "finalUrl": "https://www.mtbs.gov/",
+      "state": "working",
+      "status": 200,
+      "title": "Home | MTBS",
+      "checkedAt": "2026-09-26T22:57:21.587Z"
+    },
+    {
+      "id": "S15",
+      "url": "https://www.nature.org/content/dam/tnc/nature/en/documents/ImpactReportScienceFinal2023.pdf",
+      "finalUrl": "https://www.nature.org/en-us/about-us/who-we-are/our-science/",
+      "state": "redirected",
+      "status": 200,
+      "title": "How Conservation Science Guides Us | The Nature Conservancy",
+      "checkedAt": "2026-09-26T22:57:26.042Z"
+    },
+    {
+      "id": "S10",
+      "url": "https://www.nifc.gov/fire-information/statistics/suppression-costs",
+      "finalUrl": "https://www.nifc.gov/fire-information/statistics/suppression-costs",
+      "state": "working",
+      "status": 200,
+      "title": "Suppression Costs | National Interagency Fire Center",
+      "checkedAt": "2026-09-26T22:57:25.331Z"
+    },
+    {
+      "id": "S11",
+      "url": "https://www.nifc.gov/nicc/predictive-services/intelligence",
+      "finalUrl": "https://www.nifc.gov/nicc/predictive-services/intelligence",
+      "state": "working",
+      "status": 200,
+      "title": "Intelligence | National Interagency Coordination Center",
+      "checkedAt": "2026-09-26T22:57:25.427Z"
+    },
+    {
+      "id": "S12",
+      "url": "https://www.nifc.gov/sites/default/files/NICC/2-Predictive%20Services/Intelligence/ICS%20209%20Fillable%20PDF%20Form.pdf",
+      "finalUrl": "https://www.nifc.gov/sites/default/files/NICC/2-Predictive%20Services/Intelligence/ICS%20209%20Fillable%20PDF%20Form.pdf",
+      "state": "working",
+      "status": 200,
+      "checkedAt": "2026-09-26T22:57:25.261Z"
+    },
+    {
+      "id": "8b73c41a34a4",
+      "url": "https://www.nps.gov/crla/learn/nature/fire-management.htm",
+      "finalUrl": "https://www.nps.gov/crla/learn/nature/fire-management.htm",
+      "state": "working",
+      "status": 200,
+      "title": "Fire Management - Crater Lake National Park (U.S. National Park Service)",
+      "checkedAt": "2026-09-26T22:57:22.994Z"
+    },
+    {
+      "id": "aa33d5916e4b",
+      "url": "https://www.oregon.gov/deq/aq/pages/burning-101.aspx",
+      "finalUrl": "https://www.oregon.gov/deq/aq/pages/burning-101.aspx",
+      "state": "working",
+      "status": 200,
+      "title": "Department of Environmental Quality : Burning 101 : Air Quality : State of Oregon",
+      "checkedAt": "2026-09-26T22:57:22.876Z"
+    },
+    {
+      "id": "88fb99f38e11",
+      "url": "https://www.oregon.gov/oda/agriculture-services/smoke-burning/pages/field-burning.aspx",
+      "finalUrl": "https://www.oregon.gov/oda/agriculture-services/smoke-burning/pages/field-burning.aspx",
+      "state": "working",
+      "status": 200,
+      "title": "ODA : Field Burning : Smoke and Field Burning : State of Oregon",
+      "checkedAt": "2026-09-26T22:57:22.733Z"
+    },
+    {
+      "id": "oda",
+      "url": "https://www.oregon.gov/oda/agriculture-services/smoke-burning/pages/grower-resources.aspx",
+      "finalUrl": "https://www.oregon.gov/oda/agriculture-services/smoke-burning/pages/grower-resources.aspx",
+      "state": "working",
+      "status": 200,
+      "title": "ODA : Grower Resources : Smoke and Field Burning : State of Oregon",
+      "checkedAt": "2026-09-26T22:57:26.558Z"
+    },
+    {
+      "id": "167b7ea8433c",
+      "url": "https://www.oregon.gov/odf/fire/Documents/smr2025.pdf",
+      "finalUrl": "https://www.oregon.gov/odf/fire/Documents/smr2025.pdf",
+      "state": "working",
+      "status": 200,
+      "checkedAt": "2026-09-26T22:57:20.108Z"
+    },
+    {
+      "id": "sds",
+      "url": "https://www.oregon.gov/odf/fire/pages/burn.aspx",
+      "finalUrl": "https://www.oregon.gov/odf/fire/pages/burn.aspx",
+      "state": "working",
+      "status": 200,
+      "title": "Oregon Department of Forestry : Burning &amp; smoke management : Fire : State of Oregon",
+      "checkedAt": "2026-09-26T22:57:26.524Z"
+    },
+    {
+      "id": "6761d142f233",
+      "url": "https://www.oregon.gov/puc/safety/pages/wildfire-mitigation.aspx",
+      "finalUrl": "https://www.oregon.gov/puc/safety/pages/wildfire-mitigation.aspx",
+      "state": "working",
+      "status": 200,
+      "title": "Public Utility Commission : Wildfire Mitigation : Safety : State of Oregon",
+      "checkedAt": "2026-09-26T22:57:22.223Z"
+    },
+    {
+      "id": "9ffb2d34749f",
+      "url": "https://www.oregonsmoke.org/",
+      "finalUrl": "https://www.oregonsmoke.org/",
+      "state": "working",
+      "status": 200,
+      "title": "Oregon Smoke Information",
+      "checkedAt": "2026-09-26T22:57:21.820Z"
+    },
+    {
+      "id": "9a120e52b5e9",
+      "url": "https://www.ospo.noaa.gov/products/land/hms.html",
+      "finalUrl": "https://www.ospo.noaa.gov/products/land/hms.html",
+      "state": "working",
+      "status": 200,
+      "title": "Hazard Mapping System | OSPO",
+      "checkedAt": "2026-09-26T22:57:23.618Z"
+    },
+    {
+      "id": "hms",
+      "url": "https://www.ospo.noaa.gov/pub/Land/HMS/Smoke_Polygons/Shapefile/",
+      "finalUrl": "https://www.ospo.noaa.gov/pub/Land/HMS/Smoke_Polygons/Shapefile/",
+      "state": "working",
+      "status": 200,
+      "title": "Index of /pub/Land/HMS/Smoke_Polygons/Shapefile",
+      "checkedAt": "2026-09-26T22:57:28.376Z"
+    },
+    {
+      "id": "ltdl-v7",
+      "url": "https://www.sciencebase.gov/catalog/item/66a3cf1dd34ef465b882210f?format=json",
+      "finalUrl": "https://www.sciencebase.gov/catalog/item/66a3cf1dd34ef465b882210f?format=json",
+      "state": "working",
+      "status": 200,
+      "checkedAt": "2026-09-26T22:57:26.783Z"
+    },
+    {
+      "id": "325d1e05f0e4",
+      "url": "https://www.usgs.gov/data/usgs-land-treatment-digital-library-data-release-a-centralized-archive-land-treatment-tabular",
+      "finalUrl": "https://www.usgs.gov/data/usgs-land-treatment-digital-library-data-release-a-centralized-archive-land-treatment-tabular",
+      "state": "working",
+      "status": 200,
+      "title": "USGS Land Treatment Digital Library Data Release: A centralized archive for land treatment tabular and spatial data (ver. 7.0, September 2024) | U.S. Geological Survey",
+      "checkedAt": "2026-09-26T22:57:24.276Z"
+    },
+    {
+      "id": "wbd",
+      "url": "https://www.usgs.gov/national-hydrography/watershed-boundary-dataset",
+      "finalUrl": "https://www.usgs.gov/national-hydrography/watershed-boundary-dataset",
+      "state": "working",
+      "status": 200,
+      "title": "Watershed Boundary Dataset | U.S. Geological Survey",
+      "checkedAt": "2026-09-26T22:57:29.355Z"
+    }
+  ]
+}

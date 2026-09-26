@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "incremental": false },
+  "include": ["ingest/oregon-fire/**/*.ts", "src/lib/oregon-fire/**/*.ts", "src/lib/db-query.ts"],
+  "exclude": ["node_modules"]
+}

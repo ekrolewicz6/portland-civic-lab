@@ -84,6 +84,7 @@ export default function ForestContext() {
             burn on the same schedule.
           </p>
         </details>
+        <details><summary>What happened afterward?</summary><p>Look for repeated observations with dates and methods. The Egley study revisited field sites one and nine years after wildfire; NASA imagery supplies a separate regional view of change. These examples do not establish an outcome for another project.</p><p><a href="/oregon-fire?story=egley#fire-stories">Read Egley’s field and satellite evidence →</a></p><p><a href="#through-time">Compare dated NASA imagery →</a></p><p><a href="https://burnseverity.cr.usgs.gov/ravg/data-access">RAVG: vegetation-condition assessments ↗</a></p><small>Case-specific RAVG/LCMS summaries require verified inputs. Unassessed ground, masked pixels and unavailable data are distinct from unburned/low severity.</small></details>
         <div className="fire-context-links">
           <a href="https://www.mtbs.gov/faqs">
             How to interpret severity <ArrowUpRight size={13} />

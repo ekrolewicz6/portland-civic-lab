@@ -27,12 +27,17 @@ const Map = dynamic(() => import("./FireMap"), {
     <div className="fire-map fire-map-loading">Loading the map…</div>
   ),
 });
+import type { CostObservation } from "@/lib/oregon-fire/costs";
+import { severityYears } from "@/lib/oregon-fire/assessment-availability";
 type Detail = {
   record: FireRecord;
   geometry: Geometry;
   observedAt: string;
   history: { status: string; observed_at: string }[];
   related: FireRecord[];
+  relatedNextCursor: string | null;
+  projects: {id: string; title: string}[];
+  costs: CostObservation[];
   explanations: {
     title: string;
     body: string;
@@ -159,7 +164,7 @@ export default function FireExplorer({
         Number(next.scarEnd) > Number(initial.scarEnd)
       )
         next.scarEnd = initial.scarEnd;
-      if (next.scarMode === "severity") next.scarYears = "1";
+      if (next.scarMode === "severity") { next.scarYears = "1"; if (!severityYears.includes(Number(next.scarEnd))) next.scarEnd = String(Math.max(...severityYears)); }
       setFilters(next);
       setReady(true);
       setMapGeneration((g) => g + 1);
@@ -282,6 +287,7 @@ export default function FireExplorer({
             ["prescribed", "Prescribed burns"],
             ["planned", "Plans & permits"],
             ["wildfire", "Wildfire context"],
+            ["mechanical", "Mechanical treatments"],
             ["all", "All records"],
           ].map(([v, label]) => (
             <button
@@ -582,7 +588,7 @@ export default function FireExplorer({
                     <dd>{area(detail.record.polygonAcres)}</dd>
                   </div>
                   <div>
-                    <dt>Burn method</dt>
+                    <dt>Activity / method</dt>
                     <dd>{detail.record.method}</dd>
                   </div>
                 </dl>
@@ -624,6 +630,11 @@ export default function FireExplorer({
                 </p>
               </div>
               <div className="fire-detail-bottom">
+                {detail.projects?.map((p) => <p key={p.id}><Link href={`/oregon-fire/projects/${p.id}`}>{p.title} →</Link></p>)}
+                <details><summary>What does this cost estimate pay for?</summary>
+                  {detail.costs?.length ? detail.costs.map((c,i) => <p key={i}><strong>{new Intl.NumberFormat("en-US", {style:"currency",currency:c.currency,maximumFractionDigits:0}).format(c.amount)}</strong> · {c.status.replaceAll("-"," ")}<br />{c.scope}. Report date: {c.reportedAt ?? "not reported"}. {c.flags.join(". ")}. <a href={c.sourceUrl}>Original source</a></p>) : <p>No reviewed incident-cost estimate is available in this record. Missing cost is not zero.</p>}
+                  <p>Keep incident response, treatment delivery, preparation, monitoring, losses, and funding separate. Cost per acre alone does not establish savings.</p>
+                </details>
                 <details>
                   <summary>Observed status history & related records</summary>
                   <ul>
@@ -647,6 +658,10 @@ export default function FireExplorer({
                   ) : (
                     <p>No verified cross-source links yet.</p>
                   )}
+                  {detail.relatedNextCursor && <button onClick={async () => {
+                    try { const r = await fetch(`/api/oregon-fire/records/${encodeURIComponent(detail.record.id)}?relatedCursor=${detail.relatedNextCursor}`); if (!r.ok) throw new Error("Related records unavailable"); const d: Detail = await r.json(); setDetail((current) => current?.record.id === d.record.id ? {...current, related: [...current.related, ...d.related], relatedNextCursor: d.relatedNextCursor} : current); }
+                    catch { setDetailError("Additional related records could not load. Retry by reopening this record."); }
+                  }}>Load more related records</button>}
                 </details>
                 <Link
                   className="fire-contribute"

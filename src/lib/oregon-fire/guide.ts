@@ -35,14 +35,14 @@ export const LANDSCAPES = [
     name: "Wetter western forests",
     eyebrow: "Coast Range & western Cascades",
     title: "A different forest. A different rhythm.",
-    body: "Wetter forests can have long intervals between fires. Some historically experienced severe fire that replaced much of the canopy. A dry-forest prescription does not automatically fit these places.",
+    body: "Western Oregon forests have varied fire histories. Some wet forests experienced long intervals and canopy-replacing fire; tree-ring research also documents frequent fire in parts of the western Cascades. Indigenous stewardship, local vegetation, and a changing climate matter when interpreting that history.",
     question:
       "How do this forest’s ecology, weather, and nearby communities shape the choices?",
     caution:
       "A historical pattern is context, not a forecast or a fixed schedule for a changing climate.",
     bbox: "-123.5,43.8,-122.2,45",
     mapLabel: "Explore the western Cascades",
-    source: GUIDE_SOURCES.ecology,
+    source: "https://news.oregonstate.edu/news/western-cascades-landscapes-oregon-historically-burned-more-often-previously-thought",
   },
   {
     id: "oak",

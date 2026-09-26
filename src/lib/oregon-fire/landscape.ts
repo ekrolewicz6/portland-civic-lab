@@ -1,7 +1,7 @@
 import type { MapItem } from "./types";
 
 export const MTBS_WMS = "https://edcintl.cr.usgs.gov/geoserver/mtbs/ows";
-export const MTBS_VERIFIED_YEAR = 2026;
+
 export const MTBS_LEGEND = [
   ["#008080", "Unburned to low"],
   ["#52CCCC", "Low"],

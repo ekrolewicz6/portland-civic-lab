@@ -1,0 +1,123 @@
+{
+  "version": "2026-09-26",
+  "scope": "Track missing packet items independently; publication rights and scientific review are separate from technical access. No request is sent by this file.",
+  "projects": [
+    {
+      "id": "woodpecker",
+      "publicAccount": "https://www.forestry.oregonstate.edu/news/fire-purpose",
+      "requestStatus": "targeted draft prepared; unsent",
+      "feePolicy": "Request an estimate before chargeable work",
+      "items": [
+        {
+          "id": "packet-01",
+          "request": "Project summary and native identifiers",
+          "status": "published-account-only; formal record not obtained",
+          "technicalStage": "discovered",
+          "publicationRights": "not established for requested assets",
+          "approval": "pending review",
+          "nextAction": "Request existing record through OSU Research Forests; accept partial responses and preserve original dates/precision"
+        },
+        {
+          "id": "packet-02",
+          "request": "Purpose-and-need and decision document",
+          "status": "published-account-only; formal record not obtained",
+          "technicalStage": "discovered",
+          "publicationRights": "not established for requested assets",
+          "approval": "pending review",
+          "nextAction": "Request existing record through OSU Research Forests; accept partial responses and preserve original dates/precision"
+        },
+        {
+          "id": "packet-03",
+          "request": "Documented alternatives",
+          "status": "not obtained",
+          "technicalStage": "discovered",
+          "publicationRights": "not established for requested assets",
+          "approval": "pending review",
+          "nextAction": "Request existing record through OSU Research Forests; accept partial responses and preserve original dates/precision"
+        },
+        {
+          "id": "packet-04",
+          "request": "Unit geometry, revisions, CRS and accuracy",
+          "status": "not obtained",
+          "technicalStage": "discovered",
+          "publicationRights": "not established for requested assets",
+          "approval": "pending review",
+          "nextAction": "Request existing record through OSU Research Forests; accept partial responses and preserve original dates/precision"
+        },
+        {
+          "id": "packet-05",
+          "request": "Burn plan and permits/authorizations",
+          "status": "not obtained",
+          "technicalStage": "discovered",
+          "publicationRights": "not established for requested assets",
+          "approval": "pending review",
+          "nextAction": "Request existing record through OSU Research Forests; accept partial responses and preserve original dates/precision"
+        },
+        {
+          "id": "packet-06",
+          "request": "Preparation and repeated activities",
+          "status": "published-account-only; formal record not obtained",
+          "technicalStage": "discovered",
+          "publicationRights": "not established for requested assets",
+          "approval": "pending review",
+          "nextAction": "Request existing record through OSU Research Forests; accept partial responses and preserve original dates/precision"
+        },
+        {
+          "id": "packet-07",
+          "request": "Individual ignitions and accomplishments",
+          "status": "published-account-only; formal record not obtained",
+          "technicalStage": "discovered",
+          "publicationRights": "not established for requested assets",
+          "approval": "pending review",
+          "nextAction": "Request existing record through OSU Research Forests; accept partial responses and preserve original dates/precision"
+        },
+        {
+          "id": "packet-08",
+          "request": "Smoke planning and documented intrusions",
+          "status": "published-account-only; formal record not obtained",
+          "technicalStage": "discovered",
+          "publicationRights": "not established for requested assets",
+          "approval": "pending review",
+          "nextAction": "Request existing record through OSU Research Forests; accept partial responses and preserve original dates/precision"
+        },
+        {
+          "id": "packet-09",
+          "request": "Monitoring protocol, baseline and follow-up",
+          "status": "not obtained",
+          "technicalStage": "discovered",
+          "publicationRights": "not established for requested assets",
+          "approval": "pending review",
+          "nextAction": "Request existing record through OSU Research Forests; accept partial responses and preserve original dates/precision"
+        },
+        {
+          "id": "packet-10",
+          "request": "Costs, funding and accounting definitions",
+          "status": "not obtained",
+          "technicalStage": "discovered",
+          "publicationRights": "not established for requested assets",
+          "approval": "pending review",
+          "nextAction": "Request existing record through OSU Research Forests; accept partial responses and preserve original dates/precision"
+        },
+        {
+          "id": "packet-11",
+          "request": "Dated photographs, captions, credits and rights",
+          "status": "not obtained",
+          "technicalStage": "discovered",
+          "publicationRights": "not established for requested assets",
+          "approval": "pending review",
+          "nextAction": "Request existing record through OSU Research Forests; accept partial responses and preserve original dates/precision"
+        },
+        {
+          "id": "packet-12",
+          "request": "Crosswalk among local, FACTS, NFPORS and IRWIN identifiers",
+          "status": "not obtained",
+          "technicalStage": "discovered",
+          "publicationRights": "not established for requested assets",
+          "approval": "pending review",
+          "nextAction": "Request existing record through OSU Research Forests; accept partial responses and preserve original dates/precision"
+        }
+      ]
+    }
+  ],
+  "existingRequests": "See outreach-ledger.csv and sent-log-2026-09-24.md before following up; do not duplicate sent requests."
+}

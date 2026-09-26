@@ -1,6 +1,6 @@
 import type { Geometry } from "geojson";
 
-export type FireKind = "prescribed" | "wildfire" | "planned";
+export type FireKind = "prescribed" | "wildfire" | "planned" | "mechanical";
 export type RecordKind =
   | "treatment"
   | "planning-unit"
@@ -49,6 +49,8 @@ export interface FireSource {
   where?: string;
   spatialEnvelope?: [number, number, number, number];
   fields?: string[];
+  publication?: "public" | "reconciliation";
+  scheduled?: boolean;
   cadenceHours?: number;
   coverage: string;
   limitations: string;

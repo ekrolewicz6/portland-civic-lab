@@ -16,7 +16,7 @@ export async function GET(request: Request) {
     await registerSources();
     // Short-lived sources first. Longer imports checkpoint and resume next run.
     for (const source of [...FIRE_SOURCES]
-      .filter((s) => s.endpoint)
+      .filter((s) => s.endpoint && s.scheduled !== false)
       .sort((a, b) => (a.cadenceHours ?? 0) - (b.cadenceHours ?? 0))) {
       if (Date.now() - start > 230000) break;
       try {

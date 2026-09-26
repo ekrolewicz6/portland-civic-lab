@@ -11,6 +11,7 @@ export default function FireComparison() {
     "2020-09-27",
   );
   const [split, setSplit] = useState(50);
+  const [sideBySide, setSideBySide] = useState(false);
   function reveal(e: PointerEvent<HTMLDivElement>) {
     const box = e.currentTarget.getBoundingClientRect();
     setSplit(
@@ -60,8 +61,11 @@ export default function FireComparison() {
           </button>
         </div>
       </div>
+      <button className="fire-guide-primary" aria-pressed={sideBySide} onClick={() => setSideBySide((v) => !v)}>{sideBySide ? "Use reveal slider" : "View images side by side"}</button>
       <figure>
+        {sideBySide && <div className="fire-side-by-side"><div><Image src="/images/oregon-fire/oregon-2020-07-19.webp" alt="Western Oregon before the September fires, July 19, 2020" width={700} height={700} sizes="(max-width:700px) 100vw, 50vw" /><p>July 19, 2020</p></div><div><Image src={`/images/oregon-fire/oregon-${later}.webp`} alt={`The same false-color western Oregon view, ${later}`} width={700} height={700} sizes="(max-width:700px) 100vw, 50vw" /><p>{later}</p></div></div>}
         <div
+          style={sideBySide ? { display: "none" } : undefined}
           className="fire-image-compare"
           onPointerDown={(e) => {
             e.currentTarget.setPointerCapture(e.pointerId);
@@ -106,7 +110,7 @@ export default function FireComparison() {
               : "September 27, 2025"}
           </div>
         </div>
-        <label className="fire-compare-slider">
+        <label className="fire-compare-slider" style={sideBySide ? { display: "none" } : undefined}>
           Reveal the earlier image
           <input
             type="range"

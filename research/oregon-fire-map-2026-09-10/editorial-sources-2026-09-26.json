@@ -1,0 +1,139 @@
+{
+  "checked_on": "2026-09-26",
+  "scope": "Targeted editorial fact-check and acquisition planning; no new dataset imported and no contact made.",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "OSU: The Ecological Effects of Fire",
+      "url": "https://extension.oregonstate.edu/catalog/pub/em-9340-ecological-effects-fire",
+      "verification": "Extension synthesis inspected",
+      "limits": "Regional ecology; do not substitute statewide rules for local evidence."
+    },
+    {
+      "id": "S02",
+      "title": "OSU: Western Cascades landscapes historically burned more often",
+      "url": "https://news.oregonstate.edu/news/western-cascades-landscapes-oregon-historically-burned-more-often-previously-thought",
+      "verification": "University study summary inspected",
+      "limits": "16 sites near Oakridge; site-average intervals span 6\u2013165 years. Not a statewide prescribed-burn schedule."
+    },
+    {
+      "id": "S03",
+      "title": "USFS: Re-evaluating historical fire regimes in west-side forests",
+      "url": "https://research.fs.usda.gov/pnw/projects/reevaluatinghistoricalfireregimes",
+      "verification": "Research project description inspected",
+      "limits": "Evidence of frequent fire in some western forests; geographic and sampling limits matter."
+    },
+    {
+      "id": "S04",
+      "title": "USFS: Blue Mountains repeat photography, PNW-GTR-315",
+      "url": "https://research.fs.usda.gov/treesearch/25667",
+      "verification": "Full 32 MB PDF downloaded, checksummed and text inspected September 26; per-image rights unresolved",
+      "limits": "Historical photographs before 1925 compared with observations through 1992; candidate asset collection. Front matter describes preparation under contract and photos by retired senior author; no blanket government-image reuse assumption."
+    },
+    {
+      "id": "S05",
+      "title": "USFS: Northeastern Oregon high-mountain repeat photography, PNW-GTR-505",
+      "url": "https://research.fs.usda.gov/treesearch/3079",
+      "verification": "Catalog and abstract inspected; full PDF and individual image rights not inspected",
+      "limits": "45 historical photographs compared with observations through 1999, including Wallowa Mountains. These are not present-day photographs."
+    },
+    {
+      "id": "S06",
+      "title": "Fire Networks: public interview with Kori Blankenship",
+      "url": "https://firenetworks.org/creating-a-more-complete-picture-of-fire-an-interview-with-fire-ecologist-kori-blankenship/",
+      "verification": "Published first-person interview inspected",
+      "limits": "Points to LANDFIRE Events, TWIG and GARP; describes gaps outside federal lands."
+    },
+    {
+      "id": "S07",
+      "title": "ReSHAPE: TWIG data resources",
+      "url": "https://reshapewildfire.org/resources/twig-data-resources/",
+      "verification": "Producer documentation inspected",
+      "limits": "CC BY 4.0 data; aggregates existing records. Documentation includes future-dated integration promises now in the past; verify delivered coverage directly."
+    },
+    {
+      "id": "S08",
+      "title": "TWIG treatment index ArcGIS layer",
+      "url": "https://gis.reshapewildfire.org/arcgis/rest/services/Hosted/Treatment_Index_View/FeatureServer/0",
+      "verification": "Oregon grouped count and three-record sample queried September 26; bounded reconciliation pilot scheduled during implementation",
+      "limits": "WGS84 polygons; pagination supported, maximum record count 1000; identifiers, costs, units and error fields visible. Live Oregon data includes IFPRS; wildfire-consumed treatments require explicit classification."
+    },
+    {
+      "id": "S09",
+      "title": "National Fuels Treatment Explorer / GARP",
+      "url": "https://nft.garphub.org/",
+      "verification": "Discovered in producer documentation; direct browser fetch returned 403",
+      "limits": "Do not infer Oregon coverage, accessibility or integration completion. Request authorized public export and documentation."
+    },
+    {
+      "id": "S10",
+      "title": "NIFC: Federal suppression costs",
+      "url": "https://www.nifc.gov/fire-information/statistics/suppression-costs",
+      "verification": "Table inspected",
+      "limits": "Federal suppression only; parsed table ended in 2023. Not an Oregon budget, total disaster loss, or current prevention ratio."
+    },
+    {
+      "id": "S11",
+      "title": "NICC intelligence reports and guides",
+      "url": "https://www.nifc.gov/nicc/predictive-services/intelligence",
+      "verification": "Index inspected",
+      "limits": "Annual reports through 2025 linked; tactical figures may differ from final agency accounting. Incident-level history not downloaded."
+    },
+    {
+      "id": "S12",
+      "title": "NICC ICS-209 form and instructions",
+      "url": "https://www.nifc.gov/sites/default/files/NICC/2-Predictive%20Services/Intelligence/ICS%20209%20Fillable%20PDF%20Form.pdf",
+      "verification": "Relevant cost fields/instructions inspected",
+      "limits": "Field 45 estimated cost to date; field 46 projected final cost. Instructions exclude damage assessments from these response costs."
+    },
+    {
+      "id": "S13",
+      "title": "OSU Tree Ring Lab projects",
+      "url": "https://treeringlab.forestry.oregonstate.edu/trl-projects",
+      "verification": "Public page search excerpt checked",
+      "limits": "Andrew Merschel contact published: andrew.merschel@oregonstate.edu. Request specific studies, site limits and reusable assets."
+    },
+    {
+      "id": "S14",
+      "title": "TNC / Conservation Gateway: LANDFIRE guidance and author contact",
+      "url": "https://www.conservationgateway.org/collections/land/modifying-landfire-geospatial-data-local-applications/",
+      "verification": "Publisher page checked",
+      "limits": "Kori Blankenship; kblankenship@tnc.org. Appropriate scale and local adaptation require attention."
+    },
+    {
+      "id": "S15",
+      "title": "TNC 2023 Science Impact Report",
+      "url": "https://www.nature.org/content/dam/tnc/nature/en/documents/ImpactReportScienceFinal2023.pdf",
+      "verification": "Relevant indexed report passage checked",
+      "limits": "Supports Thomas Stokely association with TNC Oregon in 2023; current role and contact not verified."
+    },
+    {
+      "id": "S16",
+      "title": "Carbon balance of reducing wildfire risk and restoring process",
+      "url": "https://research.fs.usda.gov/treesearch/49313",
+      "verification": "2015 study catalog/abstract inspected, not full paper or erratum",
+      "limits": "California mixed-conifer experiment; treatment carbon effects vary. Cannot transfer numeric results to all Oregon forests."
+    },
+    {
+      "id": "S17",
+      "title": "Changing Fire Regimes in the Great Basin USA",
+      "url": "https://digitalcommons.usu.edu/aspen_bib/8091/",
+      "verification": "2025 paper repository abstract inspected",
+      "limits": "Different plant communities show different contemporary departures; neither uniform fire deficit nor blanket no-fire conclusion."
+    },
+    {
+      "id": "S18",
+      "title": "USFS: Climate Change on Global Fire Danger",
+      "url": "https://research.fs.usda.gov/firelab/projects/globalfiredanger",
+      "verification": "Research project summary inspected",
+      "limits": "Weather, fuels and ignition interact. Ignition availability alone does not establish present-day fire behavior."
+    },
+    {
+      "id": "S19",
+      "title": "TWIG scientific data descriptor",
+      "url": "https://doi.org/10.1038/s41597-025-05859-z",
+      "verification": "Citation discovered in producer documentation; publisher fetch blocked by redirect",
+      "limits": "Not read as a full paper in this pass; do not attribute additional findings to it."
+    }
+  ]
+}

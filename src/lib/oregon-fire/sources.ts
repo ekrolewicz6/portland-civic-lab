@@ -48,7 +48,7 @@ export const FIRE_SOURCES: FireSource[] = [
       "TRT_ACRES",
       "GIS_ACRES",
       "COORD_SRC",
-      "ACCURACY_FT",
+      "ACCURACY_FT", "VMAP_TRT_ID", "NFPORS_TRTID", "NFPORS_PROJID",
     ],
     cadenceHours: 168,
     coverage:
@@ -65,7 +65,8 @@ export const FIRE_SOURCES: FireSource[] = [
     url: "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_HazardousFuelsTreatments_01/MapServer/3",
     endpoint:
       "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_HazardousFuelsTreatments_01/MapServer/3",
-    where: "state_abbr='OR'",
+    spatialEnvelope: [-124.9, 41.8, -116.3, 46.4],
+    where: "state_abbr IN ('OR','WA','CA','ID','NV')",
     fields: [
       "objectid",
       "suid",
@@ -86,7 +87,7 @@ export const FIRE_SOURCES: FireSource[] = [
       "gis_acres",
       "accuracy",
       "etl_modified_date_haz",
-      "ownership_code",
+      "ownership_code", "method", "equipment", "fund_code", "cost_per_uom", "implementation_project", "implementation_project_nbr", "nepa_project_cn", "suid_cn", "activity_code", "state_abbr",
     ],
     cadenceHours: 168,
     coverage:
@@ -208,7 +209,7 @@ export const FIRE_SOURCES: FireSource[] = [
       "IsValid",
       "IsQuarantined",
       "IsCpxChild",
-      "CpxID",
+      "CpxID", "UniqueFireIdentifier", "EstimatedCostToDate", "EstimatedFinalCost", "ICS209ReportDateTime", "ICS209ReportStatus",
     ],
     cadenceHours: 6,
     coverage:
@@ -265,6 +266,13 @@ export const FIRE_SOURCES: FireSource[] = [
     role: "requested",
   },
 ];
+// Pilot aggregations are archived for reconciliation and excluded from public records.
+const factsBase = FIRE_SOURCES.find((s) => s.id === "facts")!;
+FIRE_SOURCES.push({ ...factsBase, id: "facts-mechanical", name: "USFS FACTS mechanical treatments", url: factsBase.url.replace("/3", "/5"), endpoint: factsBase.endpoint!.replace("/3", "/5"), where: "state_abbr IN ('OR','WA','CA','ID','NV')", spatialEnvelope: [-124.9,41.8,-116.3,46.4], coverage: "Completed mechanical treatment units intersecting Oregon.", limitations: "Mechanical work is not prescribed burning. Acres describe treatment activity, not an observed burned footprint." });
+const wfigsBase = FIRE_SOURCES.find((s) => s.id === "wfigs")!;
+FIRE_SOURCES.push({ ...wfigsBase, id: "wfigs-history", name: "WFIGS 2025 wildfire occurrences", endpoint: wfigsBase.endpoint!.replace("_YearToDate", ""), where: "IncidentTypeCategory='WF' AND FireDiscoveryDateTime >= TIMESTAMP '2025-01-01 00:00:00' AND FireDiscoveryDateTime < TIMESTAMP '2026-01-01 00:00:00'", spatialEnvelope: [-124.9,41.8,-116.3,46.4], cadenceHours: 720, coverage: "2025 incident-location backfill, intersecting Oregon; reconciled by IRWIN identifier.", limitations: "Provisional occurrences, not perimeter coverage or a complete Oregon census. Reports without geometry require separate review." });
+FIRE_SOURCES.push({ ...factsBase, id: "facts-common", name: "FACTS Common Attributes reconciliation pilot", url: "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_ActivityFactsCommonAttributes_01/MapServer/0", endpoint: "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_ActivityFactsCommonAttributes_01/MapServer/0", fields: [...factsBase.fields!, "activity_code"], publication: "reconciliation", scheduled: false, role: "enrichment", coverage: "Bounded pilot of Oregon activity records; overlaps hazardous-fuels records.", limitations: "Not published until activity classification and native-ID crosswalks are reviewed." });
+FIRE_SOURCES.push({ id: "twig", name: "TWIG treatment reconciliation pilot", agency: "ReSHAPE / contributing agencies", url: "https://reshapewildfire.org/resources/twig-data-resources/", endpoint: "https://gis.reshapewildfire.org/arcgis/rest/services/Hosted/Treatment_Index_View/FeatureServer/0", where: "state='OR'", fields: ["objectid", "unique_id", "identifier_database", "name", "state", "acres", "treatment_date", "date_current", "activity_code", "activity", "method", "category", "type", "twig_category", "agency", "fund_source", "fund_code", "total_cost", "cost_per_uom", "uom", "error", "status"], cadenceHours: 168, publication: "reconciliation", scheduled: false, role: "enrichment", verification: "queried", coverage: "Oregon source records from FACTS, NFPORS and IFPRS observed September 26, 2026.", limitations: "Aggregation overlaps original source records; duplicate, shape and cost flags need reconciliation. Pilot records are held, not additional public burns." });
 export const SOURCE_BY_ID = Object.fromEntries(
   FIRE_SOURCES.map((s) => [s.id, s]),
 );

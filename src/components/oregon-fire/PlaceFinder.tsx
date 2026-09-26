@@ -2,6 +2,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Search, ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
 import places from "@/lib/oregon-fire/places.json";
+import { placeContext } from "@/lib/oregon-fire/projects";
+import Link from "next/link";
 import { GUIDE_SOURCES } from "@/lib/oregon-fire/guide";
 import { SOURCE_BY_ID } from "@/lib/oregon-fire/sources";
 import type { RecordResult } from "@/lib/oregon-fire/types";
@@ -200,6 +202,7 @@ export default function PlaceFinder() {
               Explore records around {place.name}
               <ArrowRight size={16} />
             </button>
+            {(placeContext(id).profile || placeContext(id).projects.length > 0) && <div className="fire-place-profile"><strong>Documented local context</strong><p>{placeContext(id).profile?.description}</p>{placeContext(id).projects.map((p) => <Link key={p.id} href={`/oregon-fire/projects/${p.id}`}>{p.title} →</Link>)}{placeContext(id).profile?.links.map((l) => <a key={l.url} href={l.url}>{l.title} ↗</a>)}<small>{placeContext(id).coverage}</small></div>}
             <small>
               View centered on a Census reference point; not a city boundary,
               parcel risk score, or evacuation area. Ecology varies within this

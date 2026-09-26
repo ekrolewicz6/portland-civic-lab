@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
+import { AsyncLocalStorage } from "node:async_hooks";
 import type { Feature, Polygon, MultiPolygon } from "geojson";
-import sql from "../db-query";
+import defaultSql, { createDedicatedClient } from "../db-query";
 import { FIRE_SOURCES, SOURCE_BY_ID } from "./sources";
 import {
   getJson,
@@ -10,6 +11,18 @@ import {
 } from "./arcgis";
 import { prepareFeature, type InputFeature } from "./normalize";
 
+// One import invocation owns its connection; the request client can recycle
+// while a long import is downloading its next batch. Async context keeps
+// concurrent sources isolated without changing the existing helpers.
+const importConnections = new AsyncLocalStorage<typeof defaultSql>();
+const sql = new Proxy(defaultSql, {
+  apply(_target, _thisArg, args) { return Reflect.apply(importConnections.getStore() ?? defaultSql, undefined, args); },
+  get(_target, property) {
+    const client = importConnections.getStore() ?? defaultSql;
+    const value = Reflect.get(client, property);
+    return typeof value === "function" ? value.bind(client) : value;
+  },
+});
 const json = (data: unknown) =>
   sql.json(data as Parameters<typeof sql.json>[0]);
 const boundaryUrl =
@@ -127,6 +140,18 @@ export async function failRun(runId: string, sourceId: string, error: unknown) {
   await sql`UPDATE fire.sources SET last_error=${message} WHERE id=${sourceId}`;
 }
 export async function syncSource(
+  sourceId: string,
+  budgetMs = 220000,
+  force = false,
+) {
+  const client = createDedicatedClient();
+  try {
+    return await importConnections.run(client, () => runSyncSource(sourceId, budgetMs, force));
+  } finally {
+    await client.end().catch(() => {});
+  }
+}
+async function runSyncSource(
   sourceId: string,
   budgetMs = 220000,
   force = false,

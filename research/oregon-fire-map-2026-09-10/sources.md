@@ -1,6 +1,14 @@
 # Sources consulted
 
-All accessed September 10, 2026.
+The original inventory was accessed September 10, 2026. Dated audits and the September 26 registry distinguish later metadata inspections, bounded queries and completed downloads; older counts are historical observations.
+
+## September 26 implementation and acquisition
+
+See [the master endpoint registry](endpoint-registry-2026-09-26.json), [implementation plan](implementation-2026-09-26.md), [query evidence](evidence-2026-09-26/endpoint-probes.json), [current completed imports](coverage-matrix.csv), and [unsent acquisition drafts](acquisition-queue-2026-09-26.md).
+
+TWIG's live sample contains IFPRS as well as FACTS and NFPORS records. A superseded integration roadmap does not describe current coverage. Native source database plus identifier is required for reconciliation; these are not independently corroborated distinct burns. Mechanical FACTS activities and the 2025 WFIGS backfill are handled separately from completed prescribed burning. Reported costs retain their date, scope and estimate status.
+
+Woodpecker's public OSU account supports objectives and a month-level implementation timeline. Its unit geometry, monitoring, itemized costs and alternatives remain unavailable. Historical repeat photography is a separate geographical example and is held pending image-specific reuse review. Public explanations use independent public documents.
 
 ## Oregon Department of Forestry
 - Burning and smoke management page: https://www.oregon.gov/odf/fire/pages/burn.aspx

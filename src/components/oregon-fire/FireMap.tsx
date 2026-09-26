@@ -22,6 +22,7 @@ import { scarColor, type ScarItem } from "@/lib/oregon-fire/landscape";
 import type { MapItem } from "@/lib/oregon-fire/types";
 
 const colors = {
+  mechanical: "#887242",
   mixed: "#536454",
   prescribed: "#27674c",
   wildfire: "#b44e2d",

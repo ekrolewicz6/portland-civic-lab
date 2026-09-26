@@ -2,6 +2,7 @@ import { pageMeta } from "@/lib/page-meta";
 import type { Metadata } from "next";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import ContactForm from "@/components/contact/ContactForm";
+import { projectById } from "@/lib/oregon-fire/projects";
 import { recordDetail } from "@/lib/oregon-fire/query";
 
 export const metadata: Metadata = pageMeta({
@@ -29,10 +30,14 @@ export default async function ContactPage({
     ? params.fireRecord[0]
     : params.fireRecord;
   const fire =
-    rawFireId && rawFireId.length <= 150
+    rawFireId && rawFireId.length <= 150 && !rawFireId.startsWith("project:") && !rawFireId.startsWith("story:")
       ? await recordDetail(rawFireId).catch(() => null)
       : null;
-  const defaultMessage = fire
+  const fireProject = rawFireId?.startsWith("project:") ? projectById(rawFireId.slice(8)) : null;
+  const story = rawFireId === "story:why-burn";
+  const defaultMessage = fireProject || story
+    ? `Oregon Fire Map contribution\nReference: ${rawFireId}\nSource: ${fireProject?.evidence[0]?.url ?? "https://www.portlandciviclab.org/oregon-fire/stories/why-burn"}\n\nProposed correction or explanation:\n\nSupporting evidence (document URLs and page numbers):\n\nPublication preference (private feedback / publish with agreed attribution):\n\nSubmissions stay private until reviewed.\n`
+    : fire
     ? `Oregon Fire Map contribution\nRecord: ${fire.record.id}\nName: ${fire.record.name}\nSource: ${fire.record.sourceUrl}\n\nProposed correction or explanation:\n\nSupporting evidence (document URLs and page numbers):\n\nMy connection to this burn:\n\nPublication preference (private feedback / publish explanation with agreed attribution):\n\nSubmissions stay private until reviewed; submission does not automatically authorize publication.\n`
     : project
       ? `I'd like to work on ${project}.\n\nWhat I can do (research, data, code, design, records requests, a professional skill):\n\nHow much time I have:\n`

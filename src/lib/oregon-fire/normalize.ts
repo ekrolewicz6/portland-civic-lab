@@ -41,7 +41,8 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
   if (s.startsWith("odf-") && !textValue(a, "RegistrationNumber"))
     throw new Error(`${s}: missing registration identifier`);
   const native =
-    s === "facts"
+    s === "twig" ? [a.identifier_database, a.unique_id].join(":") :
+    s.startsWith("facts")
       ? [a.activity_cn, a.activity_unit_cn, a.suid].join(":")
       : s.startsWith("odf-")
         ? [
@@ -59,7 +60,7 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
             "OBJECTID",
             "objectid",
           );
-  if (!native || native === "::")
+  if (!native || native === "::" || native === ":")
     throw new Error(`${s}: missing native identifier`);
   let date = isoDate(
     a.TRT_DATE ??
@@ -68,7 +69,7 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
       a.ActualIgnitionTime ??
       a.PlannedIgnitionTime ??
       a.Dateplanned ??
-      a.FireDiscoveryDateTime ?? a.attr_FireDiscoveryDateTime,
+      a.FireDiscoveryDateTime ?? a.attr_FireDiscoveryDateTime ?? a.treatment_date,
   );
   let year = date
     ? Number(date.slice(0, 4))
@@ -105,11 +106,18 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
     recordKind: FireRecord["recordKind"] = "treatment",
     status = "Completed treatment";
   const activity =
-    textValue(a, "activity", "BURN_TYPE", "BurnType", "ACTIVITY") ??
+    textValue(a, "activity", "BURN_TYPE", "BurnType", "ACTIVITY", "type") ??
     "Not reported";
-  if (s === "facts" && /burned in wildfire/i.test(activity)) {
+  if ((s.startsWith("facts") || s === "twig") && /burned in wildfire/i.test(activity)) {
     kind = "wildfire";
     status = "Treatment consumed by wildfire";
+  }
+  if (s === "facts-mechanical" && !/burned in wildfire/i.test(activity)) kind = "mechanical";
+  if (s === "twig" && !/burned in wildfire/i.test(activity)) {
+    const classification = `${a.category ?? ""} ${a.type ?? ""} ${a.activity ?? ""}`;
+    kind = /mechanical|thin|mastication/i.test(classification) ? "mechanical" : /fire|burn|ignition/i.test(classification) ? "prescribed" : "planned";
+    status = textValue(a, "status") ?? "Unknown";
+    if (/planned/i.test(status)) kind = "planned";
   }
   if (s === "blm") status = textValue(a, "TRT_STATUS") ?? "Unknown";
   if (s === "pnw") {
@@ -143,7 +151,7 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
     recordKind = "perimeter";
     status = a.attr_FireOutDateTime ? "Reported out — provisional perimeter" : "Provisional perimeter";
   }
-  if (s === "fod" || s === "wfigs") {
+  if (s === "fod" || (s === "wfigs" || s === "wfigs-history")) {
     kind = "wildfire";
     recordKind = "occurrence";
     status =
@@ -182,7 +190,7 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
         "fire_name",
         "FIRE_NAME",
         "IncidentName",
-        "poly_IncidentName",
+        "poly_IncidentName", "name",
       ) ?? "Unnamed record",
     kind,
     recordKind,
@@ -193,7 +201,7 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
         "AGENCY_NAME",
         "DistrictName",
         "POOProtectingAgency",
-        "SOURCE_REPORTING_UNIT_NAME",
+        "SOURCE_REPORTING_UNIT_NAME", "agency",
       ) ?? source.agency,
     county: textValue(a, "County", "POOCounty", "COUNTY"),
     method:
@@ -210,7 +218,7 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
     datePrecision: precision,
     year,
     treatmentAcres:
-      s === "facts" && a.uom === "ACRES"
+      s.startsWith("facts") && a.uom === "ACRES"
         ? numberValue(a, "nbr_units_accomplished")
         : s === "blm"
           ? numberValue(a, "TRT_ACRES")
@@ -218,7 +226,7 @@ export function normalize(source: FireSource, f: InputFeature): FireRecord {
     burnedAcres:
       s === "fod"
         ? numberValue(a, "FIRE_SIZE")
-        : s === "wfigs"
+        : (s === "wfigs" || s === "wfigs-history")
           ? numberValue(a, "IncidentSize", "DailyAcres")
           : null,
     polygonAcres: numberValue(a, "GIS_ACRES", "gis_acres", "poly_GISAcres"),
@@ -262,7 +270,7 @@ export function prepareFeature(
     throw new Error(`${source.id}: invalid WGS84 coordinates`);
   if (!booleanIntersects(feature(f.geometry), boundary)) return null;
   const data = normalize(source, f);
-  const held =
+  const held = source.publication === "reconciliation" ||
     data.kind !== "wildfire" &&
     Object.entries(f.properties).some(
       ([k, v]) =>

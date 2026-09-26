@@ -43,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: section ? 0.6 : 0.8,
     })),
+    ...["stories/why-burn", "projects/woodpecker"].map((path) => ({ url: `${BASE_URL}/oregon-fire/${path}`, lastModified: new Date("2026-09-26T00:00:00Z"), changeFrequency: "monthly" as const, priority: 0.7 })),
     { url: `${BASE_URL}/oregon-fire`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     {
       url: `${BASE_URL}/deep-dives/pps-budget`,

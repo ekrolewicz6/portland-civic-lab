@@ -149,7 +149,7 @@ test.describe("Oregon Fire live imported-data checks", () => {
       submission = route.request().postDataJSON();
       await route.fulfill({
         status: 200,
-        json: { ok: true, delivery: "database" },
+        json: { ok: true, delivery: "queued" },
       });
     });
     await page
@@ -159,7 +159,7 @@ test.describe("Oregon Fire live imported-data checks", () => {
       .getByRole("textbox", { name: "Reply email" })
       .fill("test@example.invalid");
     await page.getByRole("button", { name: "Send message" }).click();
-    await expect(page.getByText(/Your message is saved/)).toBeVisible();
+    await expect(page.getByText(/Your message has been received/)).toBeVisible();
     expect(submission).not.toBeNull();
     // Intercepted at the browser: no actual contact request or email is sent.
     const source = await (
@@ -212,7 +212,7 @@ test.describe('Recent fire scars',()=>{
     await page.getByRole('button',{name:'Burn severity',exact:true}).click();
     await expect(page.getByLabel('Severity fire year')).toHaveValue('2024');
     await expect(page.getByLabel('Burn severity legend')).toContainText('Moderate');
-    await expect.poll(async()=>page.locator('.fire-severity-state').innerText(),{timeout:45000}).toContain('generally maps');
+    await expect.poll(async()=>page.locator('.fire-severity-state').innerText(),{timeout:45000}).toContain('Selected assessed fires');
     expect(await page.locator('img[src*="/severity?"]').evaluateAll(images=>images.some(i=>(i as HTMLImageElement).naturalWidth===256))).toBeTruthy();
     await expect(page).toHaveURL(/scarMode=severity/);
     await page.reload(); await expect(page.getByRole('button',{name:'Burn severity',exact:true})).toHaveAttribute('aria-pressed','true');

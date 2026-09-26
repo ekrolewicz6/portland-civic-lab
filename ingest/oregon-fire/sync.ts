@@ -9,7 +9,7 @@ async function main() {
   const args = process.argv.slice(2),
     ids = args.flatMap((a, i) => (a === "--source" ? [args[i + 1]] : []));
   const sources = FIRE_SOURCES.filter(
-    (s) => s.endpoint && (!ids.length || ids.includes(s.id)),
+    (s) => s.endpoint && (ids.length ? ids.includes(s.id) : s.scheduled !== false),
   );
   if (!sources.length) throw new Error("No matching source");
   for (const source of sources) {

@@ -1,6 +1,6 @@
 # Oregon Fire Map — current sourcebook
 
-Updated September 22, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public data exists for an initial map; comprehensive coverage and a site-selection explanation for every burn remain goals, not established facts.
+Updated September 26, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public data exists for an initial map; comprehensive coverage and a site-selection explanation for every burn remain goals, not established facts.
 
 Start with [the dated audit](audit-2026-09-11.md) and [implementation notes](implementation.md). The working page is `/oregon-fire` in Portland Civic Lab. Original research is preserved in `archive-2026-09-10/`, which contains superseded claims and is not the current sourcebook.
 
@@ -26,10 +26,14 @@ Start with [the dated audit](audit-2026-09-11.md) and [implementation notes](imp
 3. Ask federal stewards for identifiers and document crosswalks, and district/practitioner hubs for a few site-specific explanations. Obtain ODA, refuge/park and LTDL data next.
 4. Edan authorized production release on September 11, 2026. Representative-record review remains an editorial follow-up. Six-hour archival configuration activates with the production deployment; see verification.md for release results.
 
-Two emails were sent on September 22, 2026 (ODF Smoke Management and ODA field burning; see outreach-ledger.csv). No fees have been committed and no steward has confirmed complete coverage. The old Claude artifact is a separate hosted copy and has not been updated by editing this repository.
+ODF and ODA emails were sent September 22; eleven further drafts were sent September 24 (see sent-log-2026-09-24.md). ODF replied September 23; Dominic submitted the requested portal form September 24. No fees have been committed and no steward has confirmed complete coverage. The old Claude artifact is a separate hosted copy and has not been updated by editing this repository.
 
 [September 12 feedback and next research questions](feedback-2026-09-12.md) records the forest-condition and fire-effects workstream. See [the September 12 implementation and evidence](recent-fire-release-2026-09-12.md) for the recent-scar overlay, MTBS severity display, verified forest-area estimate, and remaining evidence gaps.
 
 [September 12 link audit](link-audit-2026-09-12.md): page, source, navigation, map, export, and contribution destinations checked; the outdated emergency-management URL was corrected.
 
 [Public field guide release](public-guide-release-2026-09-12.md): guided landscapes, local place search, documented stories, dated NASA imagery, seasonal planning, and outcome evidence.
+
+[September 26 editorial plan](editorial-plan-2026-09-26.md): explain place-specific decisions, historical change, treatment sequences, costs and observed outcomes. Includes a [public source manifest](editorial-sources-2026-09-26.json); research and planning only, with no site deployment.
+
+[September 26 implementation](implementation-2026-09-26.md) links the source registry, acquisition queue, public evidence, tests, and remaining external dependencies.
