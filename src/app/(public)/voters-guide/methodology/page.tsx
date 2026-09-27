@@ -229,15 +229,16 @@ export default function Methodology() {
           </div>
         </div>
         <p>
-          The public edition covers Portland City Council Districts 3 and 4
-          only. Both elect three councilors in November 2026. Research for
-          Multnomah, Washington and Clackamas counties and major state and
-          federal races is in development and has not been published here.
+          The public edition covers {races.length} races on Portland-area
+          ballots, from Portland City Council Districts 3 and 4 (each elects
+          three councilors in November 2026) to Multnomah, Washington and
+          Clackamas county offices, suburban city councils, the Legislature,
+          Congress and governor.
         </p>
         <p>
           This is a working research edition, not a claim to have reviewed
-          everything every candidate has said. Ballot measures and other offices
-          are outside this first release. The coverage count describes published
+          everything every candidate has said. Ballot measures and some offices
+          are outside this edition. The coverage count describes published
           entries, not all races on your ballot. Pamphlets are not complete
           candidate rosters: candidates can decline to submit a statement.
         </p>

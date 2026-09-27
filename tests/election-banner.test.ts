@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { daysUntilElection, electionBannerLabel } from "@/lib/election";
+import { GUIDE_SCALE, daysUntilElection, electionBannerLabel, isElectionSeason } from "@/lib/election";
+import { races } from "@/lib/voters-guide/published";
 
 describe("election banner", () => {
   it("counts whole Pacific days to Election Day", () => {
@@ -13,5 +14,13 @@ describe("election banner", () => {
     expect(electionBannerLabel(new Date("2026-11-03T19:59:00-08:00"))).not.toBeNull();
     expect(electionBannerLabel(new Date("2026-11-03T20:00:00-08:00"))).toBeNull();
     expect(electionBannerLabel(new Date("2027-01-01T00:00:00Z"))).toBeNull();
+  });
+  it("ends election season when polls close", () => {
+    expect(isElectionSeason(new Date("2026-11-03T19:59:00-08:00"))).toBe(true);
+    expect(isElectionSeason(new Date("2026-11-03T20:00:00-08:00"))).toBe(false);
+  });
+  it("states the guide's size as published", () => {
+    expect(GUIDE_SCALE.races).toBe(races.length);
+    expect(GUIDE_SCALE.candidates).toBe(races.reduce((n, r) => n + r.candidates.length, 0));
   });
 });

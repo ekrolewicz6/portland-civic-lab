@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { findRace } from "./published";
+import { findRace, races } from "./published";
 import { GUIDE_ORIGIN, raceDescription, raceTitle } from "./race-sheet/seo";
 
 export { GUIDE_ORIGIN };
-export const GUIDE_IMAGE_VERSION = "20260919-1";
+export const GUIDE_IMAGE_VERSION = "20260926-1";
 
 /**
  * A district's share card copies its title and description from the race
@@ -25,12 +25,15 @@ function districtCard(district: "3" | "4") {
   } as const;
 }
 
+const raceCount = races.length;
+const candidateCount = races.reduce((n, r) => n + r.candidates.length, 0);
+
 export const guideCards = {
   guide: {
     path: "/voters-guide",
-    title: "Portland Voter Guide 2026 | Compare City Council Candidates",
-    description: "Compare Portland City Council candidates in Districts 3 and 4 for November 3, 2026. Explore their plans, experience and votes in a free, nonpartisan guide.",
-    eyebrow: "CITY COUNCIL · DISTRICTS 3 & 4",
+    title: "Portland Voter Guide 2026 | Every Candidate, City Council to Governor",
+    description: `Compare ${candidateCount} candidates in ${raceCount} races on Portland-area ballots for November 3, 2026, from City Council to governor. Plans, votes and sources in a free, nonpartisan guide.`,
+    eyebrow: `NOVEMBER 3, 2026 · ${raceCount} RACES`,
     label: "Portland voter guide",
     district: "",
   },

@@ -10,7 +10,7 @@ The follow-up emails in this folder went out from edan@portlandciviclab.org on t
 
 ## Not emailed
 
-- Held on purpose: Tom Sollitt (he had just answered every gap and wrote that more is coming), Steve Novick (his follow-up went September 21), Jayne Cronlund (she said on September 20 that answers are coming this week) and Ali Beaudoin (Edan sent her the current list by hand at 3:38 PM after her note that answers are coming).
+- Held on purpose: Tom Sollitt (he had just answered every gap and wrote that more is coming), Steve Novick (his follow-up went September 21), Jayne Cronlund (she said on September 20 that answers are coming this week) and Ali Beaudoin (Edan sent him the current list by hand at 3:38 PM after his note that answers are coming).
 - Contact form only: 30 campaigns publish a form and no email. Their drafts are in the race files here, ready to paste; nothing was submitted.
 - No public channel: 5 candidates (Tim E Nelson, Melisa Finkle, John A N Chee, Cristian Salgado, Luis Garcia).
 

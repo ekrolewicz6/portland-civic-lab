@@ -54,8 +54,8 @@ const NOTE =
 
 const REVIEWED_ON = "2026-09-21";
 const reviewed = { reviewedBy: "pending", reviewedOn: REVIEWED_ON } as const;
-/** Entries added in the September 22, 2026 topic sweep (research/voters-guide-2026/outreach-2026-09-22/topic-sweep-governor.md). */
-const reviewed22 = { reviewedBy: "pending", reviewedOn: "2026-09-22" } as const;
+/** Entries from the September 24, 2026 OBI/PBJ forum, read September 25. */
+const reviewed25 = { reviewedBy: "pending", reviewedOn: "2026-09-25" } as const;
 
 /** The candidate's voters' pamphlet statement as filed with the Secretary of State. */
 const statement = (page: number, note: string = NOTE): Evidence => ({
@@ -166,6 +166,17 @@ const smithInterview: Evidence = {
   kind: "Candidate statement",
   date: "August 7, 2026; reviewed September 21, 2026",
   note: NOTE,
+};
+
+/* Oregon Business & Industry and Portland Business Journal governor forum (September 24, 2026). The Lab
+ * worked from a transcript without speaker labels; with two candidates and the moderator naming the first
+ * speaker on each question, every turn is certain. See research/voters-guide-2026/sources/obi-pbj-governor-forum-2026-09-24.md. */
+const obiPbjForum: Evidence = {
+  label: "Oregon Business & Industry and Portland Business Journal · governor candidate forum (September 24, 2026)",
+  url: "https://www.avstream.me/pbj",
+  kind: "Candidate statement",
+  date: "September 24, 2026; transcript read September 25, 2026",
+  note: "The candidate's own remarks at a public forum, read from a transcript; speaker attribution is the Lab's, from the moderator's order. Claims are not independently verified.",
 };
 
 /* ── Analysis ────────────────────────────────────────────────────────── */
@@ -602,19 +613,13 @@ const waJoint = record(
   "https://governor.wa.gov/news/2026/interstate-bridge-replacement-program-joint-statement-governors-kotek-and-ferguson",
   "March 17, 2026; reviewed September 21, 2026",
 );
-const kotekSb1507Letter = record(
-  "Governor Kotek · SB 1507 signing letter to the Secretary of State",
-  "https://siliconflorist.com/wp-content/uploads/2026/04/2026.04.09_SB-1507-Signing-Letter-1.pdf",
-  "April 9, 2026; reviewed September 22, 2026",
-  "Scan of the signed two-page letter as posted by Silicon Florist; the Department of Revenue’s 2026 Summary of Legislation lists the letter by date, and OLIS records SB 1507 signed April 9, 2026 (Oregon Laws 2026, chapter 142). The letter also promises 2027 legislation to restore the small-business stock exemption. The Statesman Journal reported the disconnect is expected to raise more than $342 million; a referendum against it failed to qualify by the June 4, 2026 deadline.",
-);
 
 /* Stakes sources */
-const cfoGuidance = record(
-  "DAS Chief Financial Office · 2027–29 budget development, policy package guidance",
-  "https://www.oregon.gov/das/Financial/Documents/2027-29%20Budget%20POP%20Guidance%20-%20CFO.pdf",
-  "February 10, 2026; reviewed September 21, 2026",
-  "Reserve, ending-balance and kicker figures are from the Office of Economic Analysis September 2026 forecast (oregon.gov/das/oea/Documents/revenue0926.pdf).",
+const medicaidGap = record(
+  "Governor’s Advisory Group on Medicaid Sustainability · Final report to Governor Kotek",
+  "https://www.oregon.gov/oha/OHPB/MtgDocs/4.%20Advisory%20Group%20on%20Medicaid%20Sustainability%20Report%20to%20Governor%20Kotek%20Final.pdf",
+  "2026; reviewed September 25, 2026",
+  "Figure 1 and page 9: an estimated net $421 million 2027–29 General Fund gap created by H.R. 1, the cost of continuing the current Oregon Health Plan ($833 million lost minus $412 million saved from lower enrollment). It covers the health plan only; no all-in 2027–29 gap has been published. The 1% share is $421 million over $42.36 billion net 2027–29 General Fund revenue in the Office of Economic Analysis September 2026 forecast (oregon.gov/das/oea/Documents/revenue0926.pdf, Table R.2), which also gives the $3,463 million reserve total as 9.7% of General Fund revenues. The revenue-neutral instruction is from the DAS Chief Financial Office’s February 10, 2026 policy package guidance (oregon.gov/das/Financial/Documents/2027-29%20Budget%20POP%20Guidance%20-%20CFO.pdf).",
 );
 const odotHb3991 = record(
   "ODOT · House Bill 3991 and the 2026 funding update",
@@ -722,7 +727,7 @@ const governorTopics: ExtraTopic[] = [
     short: "State taxes",
     question: "Raise new state taxes to cover the 2027–29 budget gap, or hold to cuts?",
     context:
-      "The state's Chief Financial Office told agencies on February 10, 2026 that federal H.R. 1 is projected to open a gap between the cost of current programs and revenue, and that 2027–29 proposals must be revenue-neutral. The September 2026 forecast shows a $400 million 2025–27 ending balance and $3.46 billion in reserves.",
+      "The state's Chief Financial Office told agencies on February 10, 2026 that federal H.R. 1 is projected to open a gap between the cost of current programs and revenue, and that 2027–29 proposals must be revenue-neutral. The governor’s Medicaid advisory group puts H.R. 1’s 2027–29 General Fund gap for the Oregon Health Plan at $421 million, about 1% of forecast revenue. The September 2026 forecast expects $400 million left over at the end of 2025–27 and $3.46 billion in reserves.",
   },
   {
     id: "gov-interstate-bridge",
@@ -773,11 +778,12 @@ const topicStances: TopicStance[] = [
   stance("tina-kotek", "gov-school-time", "supports", "Protect class time",
     "Executive Order 26-06 directs the state to prioritize rules stopping further budget-driven cuts to class time, requires districts that cut time to plan its restoration, and ends most waivers below the minimum.",
     govInstrEo),
+  // From the September 24, 2026 OBI/PBJ forum, which replaces her April 2026 SB 1507 signing letter as the source.
   {
-    ...stance("tina-kotek", "gov-new-revenue", "partial", "Signed H.R. 1 disconnect",
-      "Signed SB 1507 in April 2026, saying automatically copying every H.R. 1 tax break was neither fair nor responsible, while flagging its effect on small businesses; she has not said whether she would seek new taxes for 2027–29.",
-      kotekSb1507Letter),
-    ...reviewed22,
+    ...stance("tina-kotek", "gov-new-revenue", "partial", "Offset any tax cuts",
+      "Open to raising the Corporate Activity Tax threshold for small businesses if trimming tax breaks that haven’t helped competitiveness pays for it; wants an outside-led tax review; did not say whether she would seek new taxes.",
+      obiPbjForum),
+    ...reviewed25,
   },
   stance("tina-kotek", "gov-interstate-bridge", "mixed", "Build the core bridge",
     "With Washington's governor, said March 17, 2026 the states remain “fully committed” to replacing the bridge, starting with a substantially funded core set of projects and adding the rest when funding is identified.",
@@ -808,9 +814,13 @@ const topicStances: TopicStance[] = [
   stance("christine-drazan", "gov-school-time", "partial", "School-day standard",
     "Would increase classroom time by moving Oregon from an instructional-hours system to a school-day system with statewide standards for a school day; her plan does not say how districts should keep hours when budgets are short.",
     drazanPlan),
-  stance("christine-drazan", "gov-new-revenue", "opposes", "Veto new taxes",
-    "Would veto new tax and fee increases and cut taxes instead: a higher standard deduction, estate and Corporate Activity Tax reform, and property tax relief for seniors and veterans.",
-    drazanPlan),
+  // From the September 24, 2026 OBI/PBJ forum; her veto pledge stays in her money column.
+  {
+    ...stance("christine-drazan", "gov-new-revenue", "opposes", "Cut business taxes",
+      "Says business taxes are too high and Salem should tighten its belt; would raise the Corporate Activity Tax threshold past the $2 million the governor’s Prosperity Council suggested, reform the estate tax and selectively preempt local taxes.",
+      obiPbjForum),
+    ...reviewed25,
+  },
   stance("christine-drazan", "gov-interstate-bridge", "opposes", "A cheaper bridge",
     "Says the state “can’t afford the I-5 bridge that they’re proposing,” objecting to the share of deck for biking, walking and transit, and would build a bridge Oregon can afford.",
     drazanKatu),
@@ -835,8 +845,8 @@ const stakes: RaceStakes[] = [
       {
         label: "2027–29 budget gap",
         text:
-          "Federal H.R. 1 is projected to open a gap between the cost of current programs and state revenue, so the Chief Financial Office told agencies on February 10, 2026 that 2027–29 proposals must be revenue-neutral. September’s forecast shows $3.46 billion in reserves (9.7% of the general fund) and no kicker due on 2028 returns.",
-        source: cfoGuidance,
+          "Federal H.R. 1 leaves the Oregon Health Plan about $421 million short in General Fund money for 2027–29, about 1% of the $42.4 billion the state expects to collect. The Chief Financial Office told agencies on February 10, 2026 that 2027–29 proposals must be revenue-neutral. September’s forecast shows $3.46 billion in reserves (9.7% of General Fund revenue) and no kicker due on 2028 returns. No full 2027–29 gap estimate is published yet.",
+        source: medicaidGap,
       },
       {
         label: "Transportation funding",

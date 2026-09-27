@@ -323,6 +323,13 @@ const bonamiciClimate = site("Bonamici · climate crisis", "https://www.bonamici
 const bonamiciImmigration = site("Bonamici · immigration", "https://www.bonamiciforcongress.com/priorities/immigration/");
 const kahlStatement = statement(7);
 const kahlHome = site("Kahl · platform (home page)", "https://www.drkahlforcongress.com/");
+const kahlEmail: Evidence = {
+  label: "Kahl · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#kahl-2026-09-25",
+  kind: "Candidate statement",
+  date: "Received September 25, 2026",
+  note: "Written by the candidate in reply to the Lab’s questions and kept on file; the answers are quoted on the brief. Receipt does not verify the claims.",
+};
 
 analysis["suzanne-bonamici"] = {
   values: ["Public investment", "Rights protections"],
@@ -344,7 +351,7 @@ analysis["barbara-j-kahl"] = {
     money: { position: "Would cut redundant federal regulations and taxes, track taxpayer dollars with no blank checks for NGOs or special interests, and revive the timber, tech, agriculture and maritime industries.", source: kahlStatement },
     climate: { position: "Wants forest and land management that sustains both the environment and timber-dependent communities.", source: kahlHome },
   },
-  sources: [kahlStatement, kahlHome],
+  sources: [kahlStatement, kahlHome, kahlEmail],
 };
 lines.push(
   line("barbara-j-kahl", "housing", "Would expand housing supply at every price and ease financing for first-time buyers."),
@@ -363,7 +370,22 @@ chips.push(
   chip("suzanne-bonamici", "money", "Repeal Trump tax cuts"), chip("suzanne-bonamici", "climate", "Net-zero by mid-century"),
 );
 deliveries.push(
-  delivery("barbara-j-kahl", "housing"), delivery("barbara-j-kahl", "safety"), delivery("barbara-j-kahl", "money"), delivery("barbara-j-kahl", "climate"),
+  // All four ladders come from her emailed answers of September 25, 2026, kept close to her wording.
+  delivery("barbara-j-kahl", "housing", {
+    how: step("HUD grants for new construction and rehabilitation, faster permitting and trades partnerships, with builds tracked publicly; HHS funds for addiction and mental-health recovery networks vetted through the Oregon Medical Board.", kahlEmail),
+    measure: step("Builds and rehabilitations tracked publicly, and patient outcomes measured from intake to self-sufficiency, targeting 2027–2028 project windows.", kahlEmail),
+  }),
+  delivery("barbara-j-kahl", "safety", {
+    how: step("Federal COPS and SAFER grants for police and fire payroll and equipment, with federal accountability standards she says would require addressing Oregon’s sanctuary laws; task forces on cybercrime, narcotics and trafficking.", kahlEmail),
+    measure: step("Audited 911 response times for police and fire, crimes curtailed, pounds of drugs removed and people freed from trafficking.", kahlEmail),
+  }),
+  delivery("barbara-j-kahl", "money", {
+    how: step("A larger federal audit team, with recovered waste applied to the debt; remove duplicate federal-state regulations and fees; then rebalance the tax code to ease payroll taxes on small businesses. She pledges no tax increases.", kahlEmail),
+    measure: step("Less regulatory duplication for builders and growing businesses, and more money left with taxpayers.", kahlEmail),
+  }),
+  delivery("barbara-j-kahl", "climate", {
+    how: step("With the Army Corps of Engineers, buy modern dredging equipment and build environmentally safe silt storage so the Columbia can take larger cargo ships; keep hydropower and add small modular reactors.", kahlEmail),
+  }),
   delivery("suzanne-bonamici", "housing", {
     how: step("Legislation to increase LIHTC funding, convert unused buildings into affordable housing, create funding for housing paired with child-care centers, and increase transitional housing for people in recovery.", bonamiciHousing),
     measure: step("Points to $6.25 million secured to build hundreds of affordable units in NW Oregon as the result so far; no target for the next term is given.", bonamiciHousing),
@@ -834,22 +856,29 @@ const russEmail: Evidence = {
   date: "Received September 24, 2026",
   note: "Written by the candidate in reply to the Lab’s questions and kept on file; excerpts appear on the brief. Receipt does not verify the claims.",
 };
+const russEmail2: Evidence = {
+  label: "Russ · correction and clarification emailed to the Lab",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#russ-2026-09-25",
+  kind: "Candidate statement",
+  date: "Received September 25, 2026",
+  note: "Written by the candidate in reply to the Lab and kept on file; his words are quoted on his brief. Receipt does not verify the claims.",
+};
 analysis["david-russ"] = {
   values: ["Local control", "Smaller federal role"],
   tradeoff: "Returning lands, schools and utilities to state control and ending conditional federal grants would shift both authority and hundreds of billions of dollars; who funds those responsibilities afterward is not addressed in the reviewed pages.",
   issues: {
-    housing: { position: "Says nearly all his proposals would reduce homelessness by strengthening the economy, and opposes giving federal money to nonprofit organizations he says overpay their staff.", source: russEmail },
-    safety: { position: "Would make it a federal felony to aid or abet illegal border crossers.", source: russHome },
-    money: { position: "Would end subsidies that benefit only large corporations and federal subsidy or loan programs for noncitizens, and end what he calls the IRS manhunt of 1099 employers.", source: russHome },
-    climate: { position: "Would return federal public lands to state and local control and end federal control of local schools, utilities, businesses and infrastructure.", source: russHome},
+    housing: { position: "Says nearly all his proposals would reduce homelessness by strengthening the economy, and opposes federal money for NGOs, which he says spend more on staff, consulting and programs that keep homeless people dependent than on helping them become independent.", source: russEmail2 },
+    safety: { position: "Would secure the border and remove people who entered illegally, make aiding illegal border crossers a federal felony, and require U.S. attorneys to take roughly 98% of referred cases to trial.", source: russHome },
+    money: { position: "Would end subsidies that benefit only large corporations and federal subsidy or loan programs for noncitizens, strip conditions from federal grants to states through a No Strings Act, and end what he calls the IRS manhunt of 1099 employers.", source: russHome },
+    climate: { position: "Would return federal public lands to state and local control, end federal control of local utilities and infrastructure, and support responsible forest and agricultural management, reliable infrastructure and affordable energy decided locally.", source: russStatement },
   },
   sources: [russStatement, russHome, russBills],
 };
 lines.push(
-  line("david-russ", "housing", "Economic growth to cut homelessness; opposes funding nonprofits he says overpay staff."),
-  line("david-russ", "safety", "Would make aiding or abetting illegal border crossers a federal felony."),
-  line("david-russ", "money", "Would end subsidies benefiting only large corporations and federal loan programs targeting noncitizens."),
-  line("david-russ", "climate", "Would return federal public lands to state and local control; end federal utility control."),
+  line("david-russ", "housing", "Growth to cut homelessness; opposes federal funds for NGOs he says keep people dependent."),
+  line("david-russ", "safety", "Would secure the border, remove unauthorized entrants, make aiding illegal crossings a felony."),
+  line("david-russ", "money", "Would end corporate subsidies and noncitizen loan programs, strip conditions from federal grants."),
+  line("david-russ", "climate", "Would transfer federal public lands to state and local control; affordable energy decided locally."),
   line("andrea-salinas", "housing", "Would fund affordable housing and shelters, backing a two-million-home national plan."),
   line("andrea-salinas", "safety", "Would fund police and social services, tighten fentanyl penalties, streamline immigration courts."),
   line("andrea-salinas", "money", "Would cap prescription costs, seek middle-class tax relief over billionaire tax breaks."),
@@ -991,10 +1020,6 @@ const bynumBillDrivers: Evidence = {
   kind: "Candidate statement", date: "July 10, 2026; reviewed September 22, 2026", note: NOTE,
 };
 const adairShutdown = site("Adair · statement on the February 3, 2026 funding vote", "https://www.pattiforcongress.com/post/patti-adair-denounces-janelle-bynum-s-vote-to-shutdown-the-government");
-const kahlSurvey: Evidence = {
-  label: "Kahl · Ballotpedia Candidate Connection survey, 2026",
-  url: "https://ballotpedia.org/Barbara_Kahl", kind: "Candidate statement", date: "2026 survey; reviewed September 22, 2026", note: NOTE,
-};
 
 /* Context and stakes sources: official pages and reporting read September 22, 2026. */
 const ohaFederalChanges = record("Oregon Health Authority · OHP work or activity rules and federal changes to the Oregon Health Plan",
@@ -1148,11 +1173,23 @@ topicStances.push(
     "With Sen. Wyden, asked Oregon’s data center advisory committee on July 2, 2026 to weigh rising electricity costs, water use, farmland rezoning and tribal rights alongside data centers’ benefits; the letter proposes no federal action.", merkleyDataCenters),
 
   /* ── District 1 ── */
-  stance("barbara-j-kahl", "fed-hr1-medicaid", "partial", "Spending constraints",
-    "Wants real spending constraints, cuts to redundant federal offices and removal from benefits of people who do not qualify; she does not say whether she would keep or repeal H.R. 1’s Medicaid and SNAP changes.", kahlSurvey),
-    // Not a stance: general stewardship language that names no bill; left as a gap.
-  stance("barbara-j-kahl", "fed-housing-aid", "partial", "Federal buyer incentives",
-    "Would use federal incentives to reduce financing barriers for first-time buyers and working families and streamline permitting; she does not address vouchers or the housing tax credit.", kahlHome),
+  // District 1, Barbara J Kahl: her emailed answers of September 25, 2026 (quoted in full on her brief).
+  stance("barbara-j-kahl", "fed-hr1-medicaid", "supports", "Work rules, verification",
+    "Supports work requirements and real eligibility verification as accountability for taxpayer dollars, while providing support to those who qualify; says a culture of government dependence is shrinking the workforce.", kahlEmail),
+  stance("barbara-j-kahl", "fed-aca-credits", "opposes", "Fix prices, not credits",
+    "Says the restored credits feed rising hospital prices; would revamp antitrust law with guardrails on private equity, standardize Medicare and Medicaid pricing, and require price transparency before care.", kahlEmail),
+  stance("barbara-j-kahl", "fed-tariffs", "mixed", "Phase in, cut taxes",
+    "Calls the tariffs well intentioned but poorly executed; any tariffs should be phased in, each phase paired with an income-tax cut, with large importers bound by agreements limiting costs passed to consumers.", kahlEmail),
+  stance("barbara-j-kahl", "fed-ice-funding", "supports", "Yes, with caveats",
+    "Would fund ICE with caveats: reassess annual immigration limits, speed citizenship processing and cut the legal-entry backlog, use AI tools for faster background checks, and enforce the law for people entering illegally.", kahlEmail),
+  stance("barbara-j-kahl", "fed-iran-war", "partial", "Congress, advised by veterans",
+    "Says Congress should decide whether the war continues, after consulting people with military experience in the region; she does not say which way she would vote.", kahlEmail),
+  stance("barbara-j-kahl", "fed-fix-our-forests", "supports", "Thin forests, reopen mills",
+    "Would vote to thin federal forests while enforcing riparian protections, and bring the timber home to reopen mills, supply homebuilding and fund rural schools and public safety.", kahlEmail),
+  stance("barbara-j-kahl", "fed-housing-aid", "supports", "Fund existing programs",
+    "Would keep HUD, USDA, FHA and VA housing programs well funded, calls the ROAD to Housing Act a great win, and would streamline federal permitting and hold the agencies to the new rules.", kahlEmail),
+  stance("barbara-j-kahl", "fed-data-centers", "supports", "Rein in, end breaks",
+    "Wants data centers controlled: tax breaks removed and returned to the public, their own power when they use more than similar businesses, enclosed cooling to protect water supplies, and stacked rather than sprawling designs.", kahlEmail),
   stance("suzanne-bonamici", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
   stance("suzanne-bonamici", "fed-aca-credits", "supports", "Voted to restore", ACA_HOUSE_YES, acaHouse),
   stance("suzanne-bonamici", "fed-tariffs", "supports", "Voted: end Canada tariffs", TARIFF_HOUSE_YES, tariffHouse),

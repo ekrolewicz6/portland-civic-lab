@@ -41,6 +41,7 @@ import {
   PERMITS_URL,
 } from "@/lib/site";
 import { withSsoHint } from "@/components/SsoLink";
+import { GUIDE_SCALE, isElectionSeason } from "@/lib/election";
 import type { HeaderMember } from "@/lib/member-nav";
 
 type NavItem = {
@@ -107,6 +108,16 @@ const ABOUT: NavItem[] = [
   { label: "Contact", href: "/contact", desc: "A note, a correction, or a project", icon: Mail },
 ];
 
+/* Until polls close, the voters' guide is the Tools menu's featured card. */
+const GUIDE_FEATURED: Featured = {
+  eyebrow: "Election 2026 · Nov 3",
+  title: "The 2026 Voters’ Guide",
+  body: `${GUIDE_SCALE.candidates} candidates in ${GUIDE_SCALE.races} races, from City Council to governor, side by side with their sources. No endorsements.`,
+  cta: "Open the guide",
+  href: "/voters-guide",
+  img: { src: "/images/home/voters-guide.jpg", alt: "The voters’ guide front page: the Portland council districts with every candidate’s portrait", position: "object-right" },
+};
+
 const MENUS: MenuDef[] = [
   {
     key: "tools",
@@ -167,12 +178,15 @@ function Wordmark() {
   );
 }
 
+/* Type scales with the viewport but the shell stops at 1400px until 3xl, so
+ * 2xl tightens tracking and gaps to keep the row inside the shell. */
 const TRIGGER =
-  "group relative flex items-center gap-1 whitespace-nowrap py-1 font-mono text-[11px] uppercase tracking-[0.16em] transition-colors";
+  "group relative flex items-center gap-1 whitespace-nowrap py-1 font-mono text-[11px] uppercase tracking-[0.16em] 2xl:tracking-[0.12em] 3xl:tracking-[0.16em] transition-colors";
 
-function NavLink({ label, href, active }: { label: string; href: string; active: boolean }) {
+function NavLink({ label, href, active, accent = false }: { label: string; href: string; active: boolean; accent?: boolean }) {
   return (
-    <Link href={href} className={`${TRIGGER} ${active ? "text-white" : "text-[var(--color-sage)] hover:text-white"}`}>
+    <Link href={href} className={`${TRIGGER} ${active ? "text-white" : accent ? "text-white/90 hover:text-white" : "text-[var(--color-sage)] hover:text-white"}`}>
+      {accent && <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-ember-bright)]" aria-hidden="true" />}
       {label}
       <span
         className={`absolute -bottom-0.5 left-0 h-px bg-[var(--color-ember)] transition-all duration-300 ${
@@ -277,7 +291,14 @@ function FeaturedCard({ f, onNavigate }: { f: Featured; onNavigate: () => void }
   );
 }
 
-export default function Header({ member: initialMember = null }: { member?: HeaderMember | null }) {
+export default function Header({
+  member: initialMember = null,
+  electionSeason: initialSeason = true,
+}: {
+  member?: HeaderMember | null;
+  /** Server's answer to "are polls still open?"; the browser rechecks on mount. */
+  electionSeason?: boolean;
+}) {
   const pathname = usePathname();
   const isFireAtlas = pathname === "/oregon-fire" || pathname.startsWith("/oregon-fire/");
   const shellClass = isFireAtlas
@@ -287,6 +308,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [member, setMember] = useState<HeaderMember | null>(initialMember);
+  const [electionSeason, setElectionSeason] = useState(initialSeason);
   const shellRef = useRef<HTMLDivElement>(null);
   const closeTimer = useRef<number | null>(null);
 
@@ -295,13 +317,11 @@ export default function Header({ member: initialMember = null }: { member?: Head
   // Portland Permits lives on a different domain, so the shared session
   // cookie can't reach it. Signed-in visitors get an sso=1 hint so Permits
   // can silently establish its own session on arrival.
-  const menus = member
-    ? MENUS.map((m) =>
-        m.key === "tools"
-          ? { ...m, items: m.items.map((t) => (t.href === PERMITS_URL ? { ...t, href: withSsoHint(t.href) } : t)) }
-          : m,
-      )
-    : MENUS;
+  const menus = MENUS.map((m) => {
+    if (m.key !== "tools") return m;
+    const items = member ? m.items.map((t) => (t.href === PERMITS_URL ? { ...t, href: withSsoHint(t.href) } : t)) : m.items;
+    return { ...m, items, featured: electionSeason ? GUIDE_FEATURED : m.featured };
+  });
   const tools = menus[0].items;
 
   const open = (key: MenuKey) => {
@@ -316,6 +336,11 @@ export default function Header({ member: initialMember = null }: { member?: Head
     if (closeTimer.current) window.clearTimeout(closeTimer.current);
     setOpenMenu(null);
   };
+
+  // A page built before polls closed still hides the election links once they have.
+  useEffect(() => {
+    setElectionSeason(isElectionSeason(new Date()));
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -379,11 +404,14 @@ export default function Header({ member: initialMember = null }: { member?: Head
           if (closeTimer.current) window.clearTimeout(closeTimer.current);
         }}
       >
-        <div className="flex h-14 items-center justify-between gap-4 xl:gap-10">
+        <div className="flex h-14 items-center justify-between gap-4 xl:gap-5 3xl:gap-10">
           <Wordmark />
 
           {/* Desktop nav */}
-          <nav className="ml-auto hidden shrink-0 items-center gap-5 xl:flex 2xl:gap-7" aria-label="Primary">
+          <nav className="ml-auto hidden shrink-0 items-center gap-4 xl:flex 2xl:gap-2.5 3xl:gap-7" aria-label="Primary">
+            {electionSeason && (
+              <NavLink label="Voters’ Guide" href="/voters-guide" active={isActive("/voters-guide")} accent />
+            )}
             {PRIMARY.map((l) => (
               <NavLink key={l.href} label={l.label} href={l.href} active={isActive(l.href)} />
             ))}
@@ -412,11 +440,11 @@ export default function Header({ member: initialMember = null }: { member?: Head
               );
             })}
 
-            <span className="h-4 w-px bg-white/15" />
+            <span className="h-4 w-px bg-white/15 2xl:hidden 3xl:block" />
 
             <Link
               href="/donate"
-              className={`rounded-sm px-3.5 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors ${
+              className={`rounded-sm px-3 py-1.5 3xl:px-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors ${
                 isActive("/donate")
                   ? "bg-white text-[var(--color-canopy)]"
                   : "bg-[var(--color-ember)] text-[var(--color-canopy)] hover:bg-[var(--color-ember-bright)]"
@@ -430,7 +458,7 @@ export default function Header({ member: initialMember = null }: { member?: Head
               <Link
                 href="/signup"
                 prefetch={false}
-                className={`font-mono text-[11px] uppercase tracking-[0.16em] transition-colors ${
+                className={`font-mono text-[11px] uppercase tracking-[0.16em] 2xl:tracking-[0.12em] 3xl:tracking-[0.16em] transition-colors ${
                   isActive("/signup") ? "text-white" : "text-white/55 hover:text-white"
                 }`}
               >
@@ -504,12 +532,21 @@ export default function Header({ member: initialMember = null }: { member?: Head
         <div className="border-t border-white/10 bg-[var(--color-canopy)] animate-slide-down xl:hidden">
           <div className={`${shellClass} space-y-6 py-5`}>
             <MobileGroup title="Explore">
+              {electionSeason && (
+                <MobileLink
+                  href="/voters-guide"
+                  label="2026 Voters’ Guide"
+                  desc={`${GUIDE_SCALE.candidates} candidates in ${GUIDE_SCALE.races} races, side by side · Nov 3`}
+                  active={isActive("/voters-guide")}
+                  accent
+                />
+              )}
               {PRIMARY.map((l) => (
                 <MobileLink key={l.href} href={l.href} label={l.label} active={isActive(l.href)} />
               ))}
             </MobileGroup>
             <MobileGroup title="Civic tools">
-              {tools.map((t) => (
+              {tools.filter((t) => !(electionSeason && t.href === "/voters-guide")).map((t) => (
                 <MobileLink key={t.label} href={t.href} label={t.label} desc={t.desc} external={t.external} active={!t.external && isActive(t.href)} />
               ))}
             </MobileGroup>
@@ -559,6 +596,7 @@ function MobileLink({
   active,
   external,
   prefetch,
+  accent,
 }: {
   href: string;
   label: string;
@@ -566,6 +604,7 @@ function MobileLink({
   active?: boolean;
   external?: boolean;
   prefetch?: boolean;
+  accent?: boolean;
 }) {
   const cls = `flex items-center justify-between rounded-sm px-3 py-2.5 transition-colors ${
     active ? "bg-white/[0.06]" : "hover:bg-white/[0.04]"
@@ -573,7 +612,7 @@ function MobileLink({
   const inner = (
     <>
       <span>
-        <span className={`block text-[15px] ${active ? "text-white" : "text-[var(--color-sage)]"}`}>{label}</span>
+        <span className={`block text-[15px] ${active ? "text-white" : accent ? "font-semibold text-[var(--color-ember-bright)]" : "text-[var(--color-sage)]"}`}>{label}</span>
         {desc && <span className="block text-[12px] text-white/45">{desc}</span>}
       </span>
       {external && <ArrowUpRight className="h-4 w-4 text-white/35" />}

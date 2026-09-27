@@ -19,6 +19,31 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="water-bonds-context-2026-09-26">September 26, 2026 · Added context: the Bull Run bond vote (Portland City Council, Districts 3 and 4)</h2>
+        <p>
+          A land-use reviewer pointed out that the Council’s deciding vote on
+          the Bull Run filtration plant was the May 20, 2026 authorization of
+          up to $525 million in water revenue bonds, which passed 9–3, rather
+          than the annual rate increase. The water-rates choice still asks
+          about the rate increase, which pays for the whole water system,
+          repairs included; its context now also names the bond vote. Each
+          councilor’s bond vote was already in the Council record.
+        </p>
+        <h2 id="pfa-universal-2026-09-26">September 26, 2026 · New choice: universal preschool (Multnomah County Chair and District 2)</h2>
+        <p>
+          At the suggestion of an early-childhood reviewer, the chair and
+          District 2 pages have a new choice beside the Preschool for All tax
+          delay: keep the program on track to a seat for every 3- and
+          4-year-old whose family wants one by 2030. The context uses the
+          county’s own definition of universal (about 8,000 seats) and the
+          auditor’s September 23 letter on empty seats and the waitlist.
+          Serena Cruz and Nathan Ong Norris are on record in support, from her
+          issues page and his July pledge. Shannon Singleton, Sharon Meieran,
+          Nabil Zaghloul, Bri Williams and Tony Robertson have spoken to the
+          program but not to the target, so their entries are partial. Julia
+          Brim-Edwards, Bruce Broussard and Herman Greene are open, and every
+          candidate in both races is being asked.
+        </p>
         <h2 id="summary-audit-2026-09-25">September 25, 2026 · Correction: every summary checked against its source (all races)</h2>
         <p>
           After the Torres correction, the same reader argued that our
@@ -65,12 +90,13 @@ export default function ResearchLog() {
           now follows her pamphlet statement.
         </p>
         <p>
-          Two other changes: the guide no longer uses a pronoun for Ali
-          Beaudoin, whose own materials do not state one, and the Clackamas
-          County clerk board’s question now asks about county-level checks
-          that remove voters, where it had said “purges.” The full list of
-          flagged items, with the source quote behind each change, is filed
-          with the research notes. Entries changed for these candidates:
+          One other change: the Clackamas County clerk board’s question now
+          asks about county-level checks that remove voters, where it had said
+          “purges.” The full list of flagged items, with the source quote
+          behind each change, is filed with the research notes. Some of the
+          entries below have since been updated again from candidates’ own
+          replies and forum remarks; those updates have their own entries in
+          this log. Entries changed for these candidates:
         </p>
         <ul>
           <li>
@@ -209,6 +235,143 @@ export default function ResearchLog() {
             <strong>Oregon City Commission.</strong> James Nicita (bills column; data-center moratorium now “partial”); Gordon J Lawrence (bills column).
           </li>
         </ul>
+        <h2 id="kahl-education-2026-09-25">September 25, 2026 · Candidate response: Barbara J Kahl on education (U.S. House, Oregon District 1)</h2>
+        <p>
+          Barbara J Kahl sent an answer on education to go with her twelve
+          earlier answers. She would replace the Every Student Succeeds Act
+          with what she calls the Student Teacher Empowerment Act, focused on
+          measurable progress in core subjects with required yearly training
+          for teachers; remove tablets below ninth grade; add PE, music and
+          art through sixth grade; move administrative budgets
+          to teacher pay and smaller classes; and let funding follow the
+          student where public school is not the right fit. It appears in her
+          own words on her brief. The reply is kept on file. On September 26
+          she clarified that math, reading, writing, civics and history are
+          the core subjects, with PE, music and art added; the Lab’s summary
+          above had called all three core, and her clarification is now on
+          her brief beside the answer.
+        </p>
+        <h2 id="obi-pbj-forum-2026-09-24">September 25, 2026 · Forum remarks: Governor (Oregon Business &amp; Industry and Portland Business Journal, September 24)</h2>
+        <p>
+          Tina Kotek and Christine Drazan answered the same questions on the
+          economy at a forum hosted by Oregon Business &amp; Industry and the
+          Portland Business Journal; Brett Smith was not on stage. The Lab
+          worked from a transcript without speaker labels, but with two
+          candidates and the moderator naming who answered first on every
+          question, each answer is certain. The state-taxes board now uses
+          both candidates’ forum answers. Kotek said she is open to raising
+          the Corporate Activity Tax threshold for small businesses if
+          trimming tax breaks that have not helped competitiveness pays for
+          it, and wants a tax review led by an outside party; this replaces
+          her April 2026 signing letter on the H.R. 1 tax disconnect as the
+          source. Drazan said business taxes are too high, would raise the
+          same threshold past $2 million, reform the estate tax and
+          selectively preempt local taxes; her pledge to veto new taxes stays
+          in her money column. Claims about each other and unsourced
+          statistics were not used.
+        </p>
+        <h2 id="state-budget-gap-2026-09-25">September 25, 2026 · Added context: the size of the 2027–29 state budget gap (Governor)</h2>
+        <p>
+          A reader asked how big the 2027–29 budget gap on the governor page
+          is in percentage terms. The page said federal H.R. 1 would open a
+          gap but gave no size. It now gives the one published figure: the
+          governor’s Medicaid advisory group estimates the Oregon Health Plan
+          will be $421 million short in General Fund money for 2027–29, about
+          1% of the $42.4 billion the September forecast expects the state to
+          collect. No all-in estimate has been published; the governor’s
+          recommended budget in December should be the first. The reserve
+          share now reads as 9.7% of General Fund revenue, the forecast’s own
+          wording, and the taxes board now calls the $400 million 2025–27
+          ending balance money left over, so it is not mistaken for the
+          Medicaid gap.
+        </p>
+        <h2 id="beaudoin-pronouns-ballot-2026-09-25">September 25, 2026 · Corrections: Ali Beaudoin’s pronouns, and the ballot header</h2>
+        <p>
+          A reader told us that Ali Beaudoin (District 3) is a man. The Lab
+          had used “she” and “her” for him in the September 23 entry below
+          and in one comparison on his District 3 page. Those now read “he” and
+          “his.” The same reader pointed out that the guide’s front page said
+          “One ballot,” when Multnomah County voters get a separate
+          ranked-choice ballot card alongside the standard one, as they did in
+          2024. The heading now reads “One election.”
+        </p>
+        <h2 id="kahl-2026-09-25">September 25, 2026 · Candidate response: Barbara J Kahl (U.S. House, Oregon District 1)</h2>
+        <p>
+          Barbara J Kahl answered all twelve questions. All four of her issue
+          columns now have “how” steps, three with a measure: HUD grants for
+          construction and rehabilitation and HHS-funded recovery networks;
+          federal COPS and SAFER grants with task forces on cybercrime,
+          narcotics and trafficking; a larger federal audit team, fewer
+          duplicate regulations and no tax increases; and Columbia River
+          dredging, hydropower and small modular reactors. Eight topic boards
+          changed: she supports H.R. 1’s work and verification rules, funding
+          ICE with caveats, the Fix Our Forests Act, existing federal housing
+          programs and reining in data centers; opposes restoring the ACA
+          credits in favor of price and antitrust reform; would phase in any
+          tariffs with income-tax cuts; and says Congress should decide on Iran
+          after consulting people with military experience there. She asked
+          that her answers not lose detail to paraphrase, so her brief quotes
+          them nearly in full. The reply is kept on file.
+        </p>
+        <h2 id="helm-2026-09-25">September 25, 2026 · Candidate response: Diana Helm (Clackamas County Commissioner, Position 4)</h2>
+        <p>
+          Diana Helm answered the four questions the Lab sent. Her crisis-care
+          and budget columns, empty before, now have positions: the deflection
+          program and the Milwaukie Stabilization Center now, the Recovery
+          Campus in fall 2027 and a study of a new jail’s cost and site; and
+          balanced department budgets with General Fund priority for public
+          safety, health, housing, human services and transportation. Her
+          data-center entry gains a “how” step: the moratorium holds until the
+          county codifies rules on water, energy, sound and air quality. On
+          the judicial-warrant question she repeated that County Counsel
+          recommends following state law, so that entry stays partial. The
+          reply is kept on file.
+        </p>
+        <h2 id="beaudoin-2026-09-25">September 25, 2026 · Candidate response: Ali Beaudoin (District 3)</h2>
+        <p>
+          Ali Beaudoin added that clearing unsafe camping areas has support
+          when stable housing and appropriate support come with it. The
+          camp-removal entry now says so; it stays partial because the answer
+          does not say whether removal funding should stay at current levels.
+        </p>
+        <h2 id="d2-debate-2026-09-24">September 25, 2026 · Debate remarks: Multnomah County District 2 (City Club, September 24)</h2>
+        <p>
+          City Club of Portland’s District 2 debate on September 24 at PCC
+          Cascade featured four of the seven candidates: Bri Williams, Nabil
+          Zaghloul, Nathan Ong Norris and Serena Cruz. The Lab worked from a
+          transcript without speaker labels and used an answer only when a
+          self-reference or the moderator’s rotation made the speaker certain;
+          the attribution for every question is recorded with the research.
+        </p>
+        <p>
+          Nineteen topic-board entries changed. Williams now has entries on the
+          Moda Center, sanctuary, the city-county agreement, shelter funding,
+          Preschool for All and the budget gap; Zaghloul on the Moda Center,
+          Preschool for All (including indexing the tax thresholds to
+          inflation), the budget gap, the city-county agreement and jail
+          staffing; Ong Norris on sanctuary, jails, shelter and the budget
+          gap; and Cruz on sanctuary and jail staffing. Ong Norris’s Moda
+          entry moved from “opposes,” based on his July testimony, to
+          “mixed,” because at the debate he said the county belongs at the
+          table but got too little in return. Cruz’s Preschool for All entry
+          now uses her debate answer. Williams and Zaghloul gained positions
+          on roads, bridges and air, and Ong Norris on crisis care and jails.
+          Bruce Broussard, Herman Greene and Tony Robertson were not on the
+          stage, and their pages did not change.
+        </p>
+        <h2 id="russ-2026-09-25">September 25, 2026 · Correction at the candidate’s request: David Russ (U.S. House, Oregon District 6)</h2>
+        <p>
+          David Russ wrote that his housing position misstated him. His reply
+          of September 24 criticized federal money for NGOs; our summary said
+          “nonprofit organizations,” and he notes that many NGOs are
+          nonprofits but not all. The quoted excerpt had also dropped his
+          sentence on progressive policy. His housing position now says NGOs
+          and uses the clarification he sent, that these entities spend more
+          on staff, consulting and programs that keep homeless people
+          dependent than on helping them become independent. His full
+          original paragraph, including the dropped sentence, and his
+          clarification are quoted on his brief.
+        </p>
         <h2 id="torres-safety-2026-09-25">September 25, 2026 · Correction: Kellie Torres’s safety summary (District 3)</h2>
         <p>
           A reader on Reddit pointed out that Kellie Torres’s safety chip,
@@ -337,26 +500,26 @@ export default function ResearchLog() {
         <h2 id="beaudoin-2026-09-23">September 23, 2026 · Candidate response: Ali Beaudoin (District 3)</h2>
         <p>
           Ali Beaudoin answered all eleven questions in the Lab’s follow-up.
-          Beaudoin would increase housing supply, simplify permitting and explore
+          He would increase housing supply, simplify permitting and explore
           temporary interest-rate help for first-time buyers; match the
           response to the problem, with enforcement for crime, prevention
           through services and non-police care; grow the tax base by filling
           commercial vacancies before raising taxes; and put street
           maintenance, sidewalks, safer crossings and reliable buses first.
-          On the Council’s choices, Beaudoin would generally hold the line on new
+          On the Council’s choices, he would generally hold the line on new
           taxes and fees, rebuild police staffing where gaps are documented,
           pause new AI data centers, expand Street Response toward 24/7 where
           data supports it, keep fees only where shown necessary, and support
           phased water-rate increases with cost controls and protections for
-          households that cannot pay. On camp removals, Beaudoin would enforce
+          households that cannot pay. On camp removals he would enforce
           public-space rules and measure outcomes but did not say whether to
           keep current funding.
         </p>
         <p>
-          Beaudoin’s housing, safety and climate columns, empty before, now
-          have positions, and the bills column gained a “how” step. Seven
-          topic boards, empty before, now have entries. Excerpts appear on
-          the brief, and the reply is kept on file.
+          His housing, safety and climate columns, empty before, now have
+          positions, and his bills column gained a “how” step. Seven topic
+          boards, empty before, now have entries. Excerpts appear on his
+          brief, and the reply is kept on file.
         </p>
         <h2 id="cronlund-2026-09-23">September 23, 2026 · Candidate response: Jayne Cronlund (District 4)</h2>
         <p>

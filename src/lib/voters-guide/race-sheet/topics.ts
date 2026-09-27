@@ -65,7 +65,7 @@ export const extraTopics: ExtraTopic[] = [
     label: "Water rates",
     short: "Water",
     question: "Raise water bills to pay for the Bull Run filtration plant and system repairs?",
-    context: "Rates rose about $5 a month in 2026; the filtration plant and borrowing drive future increases.",
+    context: "Rates rose about $5 a month in 2026 for the whole water system, repairs included. Separately, on May 20, 2026 Council voted 9–3 to borrow up to $525 million for the filtration plant, repaid from water bills.",
     decisionId: "water-rates",
   },
 ];
