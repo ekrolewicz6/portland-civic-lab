@@ -10,13 +10,18 @@ import styles from "./ElectionBanner.module.css";
 /**
  * Election banner: one full-width link to the voters' guide, under the header
  * on the homepage and on every interior page, until polls close on Election
- * Day. The server passes the countdown it computed; the browser recomputes it
- * on mount and every minute, so a page built days ago still shows the right
- * count and the banner retires itself at 8 p.m. on November 3 without a
- * deploy. Hidden on the guide itself and on the full-bleed fire atlas.
+ * Day. Its content sits on the header's own container, so the icon lines up
+ * with the wordmark and the button with the nav. The server passes the
+ * countdown it computed; the browser recomputes it on mount and every minute,
+ * so a page built days ago still shows the right count and the banner retires
+ * itself at 8 p.m. on November 3 without a deploy. Hidden on the guide itself
+ * and on the full-bleed fire atlas.
  */
 
 const HIDDEN_ON = ["/voters-guide", "/oregon-fire"];
+
+/* The header's shell, repeated so the two rows share one grid. */
+const SHELL = "mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12 3xl:max-w-[1800px]";
 
 export default function ElectionBanner({ initialLabel }: { initialLabel: string | null }) {
   const pathname = usePathname() ?? "/";
@@ -34,23 +39,24 @@ export default function ElectionBanner({ initialLabel }: { initialLabel: string 
 
   return (
     <Link href="/voters-guide" className={styles.banner} data-testid="election-banner">
-      <span className={styles.mark} aria-hidden="true">
-        <Vote size={17} strokeWidth={2} />
-      </span>
-      <span className={styles.copy}>
-        <span className={styles.eyebrow}>
-          <span className={styles.date}>
-            Nov 3, 2026 <span className={styles.dot} aria-hidden="true" />
+      <span className={`${styles.shell} ${SHELL}`}>
+        <span className={styles.mark} aria-hidden="true">
+          <Vote size={16} strokeWidth={2} />
+        </span>
+        <span className={styles.copy}>
+          <span className={styles.eyebrow}>
+            <span className={styles.date}>Nov 3, 2026</span>
+            <span className={styles.dot} aria-hidden="true" />
+            <span>{label}</span>
           </span>
-          {label}
+          <span className={styles.title}>
+            Compare {GUIDE_SCALE.candidates} candidates in {GUIDE_SCALE.races} races in our free, nonpartisan voters&rsquo; guide
+          </span>
         </span>
-        <span className={styles.title}>
-          Compare {GUIDE_SCALE.candidates} candidates in {GUIDE_SCALE.races} races in our free, nonpartisan voters&rsquo; guide
+        <span className={styles.cta}>
+          <span>Open the guide</span>
+          <ArrowRight size={15} aria-hidden="true" />
         </span>
-      </span>
-      <span className={styles.cta}>
-        <span>Open the guide</span>
-        <ArrowRight size={16} aria-hidden="true" />
       </span>
     </Link>
   );
