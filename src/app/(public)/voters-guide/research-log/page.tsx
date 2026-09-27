@@ -19,6 +19,31 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="water-bonds-context-2026-09-26">September 26, 2026 · Added context: the Bull Run bond vote (Portland City Council, Districts 3 and 4)</h2>
+        <p>
+          A land-use reviewer pointed out that the Council’s deciding vote on
+          the Bull Run filtration plant was the May 20, 2026 authorization of
+          up to $525 million in water revenue bonds, which passed 9–3, rather
+          than the annual rate increase. The water-rates choice still asks
+          about the rate increase, which pays for the whole water system,
+          repairs included; its context now also names the bond vote. Each
+          councilor’s bond vote was already in the Council record.
+        </p>
+        <h2 id="pfa-universal-2026-09-26">September 26, 2026 · New choice: universal preschool (Multnomah County Chair and District 2)</h2>
+        <p>
+          At the suggestion of an early-childhood reviewer, the chair and
+          District 2 pages have a new choice beside the Preschool for All tax
+          delay: keep the program on track to a seat for every 3- and
+          4-year-old whose family wants one by 2030. The context uses the
+          county’s own definition of universal (about 8,000 seats) and the
+          auditor’s September 23 letter on empty seats and the waitlist.
+          Serena Cruz and Nathan Ong Norris are on record in support, from her
+          issues page and his July pledge. Shannon Singleton, Sharon Meieran,
+          Nabil Zaghloul, Bri Williams and Tony Robertson have spoken to the
+          program but not to the target, so their entries are partial. Julia
+          Brim-Edwards, Bruce Broussard and Herman Greene are open, and every
+          candidate in both races is being asked.
+        </p>
         <h2 id="kahl-education-2026-09-25">September 25, 2026 · Candidate response: Barbara J Kahl on education (U.S. House, Oregon District 1)</h2>
         <p>
           Barbara J Kahl sent an answer on education to go with her twelve
