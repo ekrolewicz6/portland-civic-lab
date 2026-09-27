@@ -154,6 +154,7 @@ const councilLines: IssueLine[] = [
   line("josh-leake", "safety", "Would pair data-informed enforcement on property crime and disorder with dignity for unsheltered people."),
   line("josh-leake", "money", "Supports creative and technology industries and activating public spaces."),
 
+  line("john-mcdonald", "housing", "Supports more reasonably priced homes, renter protections and help for families facing homelessness."),
   line("john-mcdonald", "safety", "Would limit new homelessness contracts and scrutinize existing providers."),
   line("john-mcdonald", "money", "Supports modernizing Moda Center and retaining the Trail Blazers."),
   line("john-mcdonald", "climate", "Supports continuing the Interstate Bridge Replacement (new I-5 bridge)."),

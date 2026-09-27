@@ -429,6 +429,20 @@ const schulteEmail: Evidence = {
   note: replyNote,
 };
 const supplements: Record<string, { source: Evidence; issues: Issues; issueSources?: Partial<Record<keyof Issues, Evidence>>; also?: Evidence[] }> = {
+  "John McDonald": {
+    // His campaign site, which he sent the Lab on September 26, 2026; the pamphlet lists none.
+    source: {
+      label: "McDonald · campaign site, Campaign Focus Points",
+      url: "https://www.johnforportland.com/campaignfocuspoints",
+      kind: "Candidate statement",
+      date: "Sent by the candidate September 26, 2026; read the same day",
+      note: "Campaign position. Claimed results and numerical premises have not been independently verified.",
+    },
+    issues: {
+      housing:
+        "Would support policies that increase the supply of reasonably priced homes and apartments, protect renters from unfair practices and help families facing homelessness, and encourage investment in affordable housing programs and partnerships among communities, nonprofits and local governments.",
+    },
+  },
   "Timothy (TJ) Anderson": {
     // Emailed reply to the individual questions the Lab sent him on September 19, 2026.
     source: {
