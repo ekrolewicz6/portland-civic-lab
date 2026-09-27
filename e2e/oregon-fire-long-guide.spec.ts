@@ -41,10 +41,10 @@ test("mobile lesson, keyboard chapter navigation and cost assumptions",async({pa
     await page.locator(`#${lesson.anchor}`).scrollIntoViewIfNeeded();
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
   }
-  await page.getByRole("slider",{name:/Chance of a relevant wildfire/}).focus();
+  await page.getByRole("slider",{name:/What is the chance fire reaches the work/}).focus();
   await page.keyboard.press("Home");
   await page.keyboard.press("ArrowRight");
-  await expect(page.locator(".fire-cost-equation")).toHaveText("5% × $10M = $500K");
+  await expect(page.locator(".fire-cost-equation")).toHaveText("5% × $10 million = $500,000");
   const chapter=page.getByRole("navigation",{name:"Chapters in the fire guide"}).getByRole("link",{name:"03 What changed"});
   await chapter.focus();
   await page.keyboard.press("Enter");
@@ -64,7 +64,7 @@ test("essential story and real images are readable without JavaScript",async({br
   const image=page.locator(".fire-aftermath-images img").first();
   await expect.poll(()=>image.evaluate((el:HTMLImageElement)=>el.complete && el.naturalWidth>0)).toBeTruthy();
   await page.locator("#costs-and-choices").scrollIntoViewIfNeeded();
-  await expect(page.locator(".fire-cost-equation")).toHaveText("20% × $10M = $2M");
+  await expect(page.locator(".fire-cost-equation")).toHaveText("20% × $10 million = $2 million");
   await page.getByRole("link",{name:"Go deeper: the costs"}).click();
   await expect(page.getByRole("heading",{name:"First establish what was actually spent"})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
@@ -84,4 +84,31 @@ test("legacy guide views preserve all their query values in the atlas",async({pa
   await page.goto("/oregon-fire?place=4115800#explore");
   await expect(page).toHaveURL(/oregon-fire\?place=4115800/);
   await expect(page.locator(".fire-long-chapter")).toHaveCount(8);
+});
+
+
+test("the cost example distinguishes actual possibilities, their average, and break-even", async ({page}) => {
+  await page.goto("/oregon-fire");
+  const calculator=page.locator(".fire-cost-explorer");
+  await expect(calculator.getByRole("img",{name:/20 of 100 possible futures/})).toBeVisible();
+  await expect(calculator.locator(".fire-cost-outcomes")).toContainText("Avoid $0 in wildfire damage");
+  await expect(calculator.locator(".fire-cost-threshold")).toContainText("10%");
+  const chance=calculator.getByRole("slider",{name:/What is the chance fire reaches the work/});
+  await chance.focus();
+  await page.keyboard.press("Home");
+  await expect(calculator.locator(".fire-cost-verdict")).toContainText("falls short of project cost by $1 million");
+  await expect(calculator.getByRole("img",{name:/0 of 100 possible futures/})).toBeVisible();
+  await page.keyboard.press("ArrowRight");
+  await page.keyboard.press("ArrowRight");
+  await expect(calculator.locator(".fire-cost-verdict")).toContainText("breaks even");
+  await page.keyboard.press("End");
+  await expect(calculator.locator(".fire-cost-verdict")).toContainText("exceeds project cost by $9 million");
+  await calculator.getByRole("slider",{name:/What does the project cost/}).focus();
+  await page.keyboard.press("End");
+  await calculator.getByRole("slider",{name:/how much damage does the work prevent/}).focus();
+  await page.keyboard.press("Home");
+  await expect(calculator.locator(".fire-cost-threshold")).toContainText("Even a 100% chance would not cover");
+  await calculator.getByRole("button",{name:"Reset the example"}).click();
+  await expect(calculator.locator(".fire-cost-equation")).toHaveText("20% × $10 million = $2 million");
+  await expect(calculator.locator(".fire-cost-verdict")).toContainText("exceeds project cost by $1 million");
 });

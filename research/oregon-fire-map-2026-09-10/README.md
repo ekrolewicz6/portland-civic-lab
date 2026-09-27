@@ -47,3 +47,5 @@ ODF and ODA emails were sent September 22; eleven further drafts were sent Septe
 [Visual teaching-guide blueprint](teaching-guide-blueprint-2026-09-26.md): main-page audit, connected eight-chapter narrative, quantitative factbook, prevention/response accounting, representative case selection, school materials and implementation priorities. Includes newly inspected Southern Oregon FireWorks resources and an unresolved denominator discrepancy in the Egley paper. Editorial proposal; no public application change from this planning pass.
 
 [Continuous illustrated guide release](long-guide-release-2026-09-27.md): eight connected chapters, eight deeper articles, sourced visuals and treatment research, preserved atlas/shared settings, and browser/build verification.
+
+[Cost example clarity revision](calculator-clarity-2026-09-27.md): concrete possible outcomes, 100-future visual, plain dollar amounts, break-even threshold and focused behavioral verification.

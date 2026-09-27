@@ -51,13 +51,13 @@ test("visual story explains fire mechanics and lets readers change hypothetical 
   await expect(page.getByRole("heading", { name: "Where the flames go matters." })).toBeVisible();
   await expect(page.locator(".fire-mechanics svg")).toHaveCount(2);
   await expect(page.locator(".fire-habitat-pair svg")).toHaveCount(2);
-  await expect(page.locator(".fire-cost-explorer")).toContainText("Invented example");
-  await expect(page.locator(".fire-cost-equation")).toHaveText("20% × $10M = $2M");
-  await page.getByRole("slider", { name: /Chance of a relevant wildfire/ }).focus();
+  await expect(page.locator(".fire-cost-explorer")).toContainText("Made-up numbers");
+  await expect(page.locator(".fire-cost-equation")).toHaveText("20% × $10 million = $2 million");
+  await page.getByRole("slider", { name: /What is the chance fire reaches the work/ }).focus();
   await page.keyboard.press("Home");
   await page.keyboard.press("ArrowRight");
-  await expect(page.locator(".fire-cost-equation")).toHaveText("5% × $10M = $500K");
-  await expect(page.locator(".fire-cost-verdict")).toContainText("$500K below");
+  await expect(page.locator(".fire-cost-equation")).toHaveText("5% × $10 million = $500,000");
+  await expect(page.locator(".fire-cost-verdict")).toContainText("falls short of project cost by $500,000");
   await page.setViewportSize({width:390,height:844});
   await page.locator("#costs").scrollIntoViewIfNeeded();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
