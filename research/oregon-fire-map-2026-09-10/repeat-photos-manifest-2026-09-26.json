@@ -1,0 +1,122 @@
+{
+  "reviewedAt": "2026-09-26",
+  "sourceDoi": "10.5066/P13VCTOE",
+  "paperDoi": "10.1017/dry.2026.10019",
+  "catalogUrl": "https://www.sciencebase.gov/catalog/item/6941c24ed4be0266e9e22f56?format=json",
+  "stage": "downloaded; selected example reconciled",
+  "stewardConfirmed": false,
+  "geography": "Colorado Plateau, outside Oregon",
+  "use": "interpretation teaching example; excluded from Oregon burn inventories",
+  "files": [
+    {
+      "name": "repeat_photo_interpretation_data.csv",
+      "url": "https://www.sciencebase.gov/catalog/file/get/6941c24ed4be0266e9e22f56?f=__disk__c0%2F79%2Fa6%2Fc079a61b7e430d495831578e3dd1a3df414a7121",
+      "bytes": 136845,
+      "sha256": "6076e4ba45d36f70641834b64a357f0d9bcae1f85eb6b304e4e40e67c6593614"
+    },
+    {
+      "name": "dr photo.jpg",
+      "url": "https://www.sciencebase.gov/catalog/file/get/6941c24ed4be0266e9e22f56?f=__disk__f1%2F5a%2Fa7%2Ff15aa758761e22c6de4253e270a6145f7f535a73",
+      "bytes": 317067,
+      "sha256": "e178cf35c7e0538d569f75ac62a9d42886c89686db0fc9813b4d126526d8f616"
+    },
+    {
+      "name": "ColoradoPlateau_VegChange_Metadata.xml",
+      "url": "https://www.sciencebase.gov/catalog/file/get/6941c24ed4be0266e9e22f56?f=__disk__cc%2Ff2%2F8c%2Fccf28c159ca7016090d9c52a85a5838f0cae0b88",
+      "bytes": 46551,
+      "sha256": "a55d6511c6cb8b06ead0cd2df6f5d982b7eb0ce209a9ca53ae9bce90166de920"
+    }
+  ],
+  "paper": {
+    "localName": "paper-accepted.pdf",
+    "actualVersion": "typeset published paper, 15 pages",
+    "sha256": "2df3f155b41a02698580183c45579f4293041daa1a16a1f47103663574f765ab",
+    "rightsInspected": "CC BY 4.0 on page 1"
+  },
+  "csvChecks": {
+    "rows": 559,
+    "uniqueStakeLabels": 311,
+    "uniqueStakeDateTuples": 311,
+    "publishedPairs": 338,
+    "publishedStakes": 296,
+    "inventoryReconciled": false
+  },
+  "publicAsset": {
+    "path": "public/images/oregon-fire/usgs-horse-canyon-repeat-pair.jpg",
+    "rights": "CC0 per release landing and XML",
+    "locator": "Figure 4, page 7; CSV stake.id s6659",
+    "location": "Horse Canyon, Canyonlands National Park, Utah",
+    "dates": [
+      1965,
+      2015
+    ],
+    "transformations": "none; responsive browser display only",
+    "publicationStatus": "approved public-source editorial example",
+    "credits": [
+      "Brigham Young University archive collection",
+      "C. Shelz, National Park Service (as published in Figure 4)"
+    ]
+  },
+  "selectedRows": [
+    {
+      "centroid.id": "c6659_1",
+      "veg.class": "CP_PJ",
+      "stake.id": "s6659",
+      "park.group": "NEED",
+      "yr.obs.1": "1965",
+      "yr.obs.2": "2015",
+      "span": "50",
+      "veg.class.code": "S039/S052",
+      "patch.shift": "Yes",
+      "patch.size": "No Change",
+      "individ.cnt": "No Change",
+      "individ.size": "No Change",
+      "cover.density": "No Change",
+      "disturbance.types": "Foot traffic (humans or animals)",
+      "change.invasives": "Fewer Invasives",
+      "change.disturbance": "Recovery",
+      "human.disturbance": "yes",
+      "yrs.grazed": "40",
+      "last.yr.grazed": "1975",
+      "ANN.PPT.mean": "19.545",
+      "landform": "valley",
+      "TWI.NED10m.Band.1": "5.5144715",
+      "ASPECT.NED10m.Band.1": "226.865097",
+      "Curvature.NED10m.Band.1": "-0.0340198",
+      "SLOPE.NED10m.Band.1": "4.2666044"
+    },
+    {
+      "centroid.id": "c6659_1",
+      "veg.class": "IM_grassland",
+      "stake.id": "s6659",
+      "park.group": "NEED",
+      "yr.obs.1": "1965",
+      "yr.obs.2": "2015",
+      "span": "50",
+      "veg.class.code": "S090",
+      "patch.shift": "Yes",
+      "patch.size": "Increase",
+      "individ.cnt": "Increase",
+      "individ.size": "Larger",
+      "cover.density": "More Dense",
+      "disturbance.types": "Foot traffic (humans or animals)",
+      "change.invasives": "Fewer Invasives",
+      "change.disturbance": "Recovery",
+      "human.disturbance": "yes",
+      "yrs.grazed": "40",
+      "last.yr.grazed": "1975",
+      "ANN.PPT.mean": "19.545",
+      "landform": "valley",
+      "TWI.NED10m.Band.1": "5.5144715",
+      "ASPECT.NED10m.Band.1": "226.865097",
+      "Curvature.NED10m.Band.1": "-0.0340198",
+      "SLOPE.NED10m.Band.1": "4.2666044"
+    }
+  ],
+  "gaps": [
+    "Photo-pair/stake count crosswalk",
+    "Complete photo archive and viewpoint inventory",
+    "Precipitation units and aggregation definition"
+  ],
+  "generatedFigureExcluded": "Figure 3/graphical abstract disclose generative fill; not used as historical evidence"
+}

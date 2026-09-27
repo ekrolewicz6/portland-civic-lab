@@ -23,3 +23,24 @@ test("mobile chapters and SEO have meaningful content without map interaction", 
   await page.getByRole("link", { name:"05 Did it help?" }).click();
   await expect(page).toHaveURL(/#helped$/);
 });
+
+test("repeat photos retain place, dates, differing patch interpretations and evidence limits without JavaScript", async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  await page.goto("/oregon-fire/stories/why-burn#reading-landscape");
+  const evidence = page.locator("#reading-landscape");
+  await expect(evidence).toContainText("Canyonlands National Park, Utah—not Woodpecker");
+  await expect(evidence.locator("figcaption")).toContainText("1965");
+  await expect(evidence.locator("figcaption")).toContainText("2015");
+  await expect(evidence.getByRole("heading", { name: "More cover. A larger patch." })).toBeVisible();
+  await expect(evidence.getByRole("heading", { name: "Cover classified as unchanged." })).toBeVisible();
+  await expect(evidence).toContainText("This pair is not a test of prescribed fire.");
+  const image = evidence.locator("img");
+  await expect(image).toBeVisible();
+  await expect.poll(() => image.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBeTruthy();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
+  await evidence.locator("summary").focus();
+  await page.keyboard.press("Enter");
+  await expect(evidence.getByText("Did the vegetation’s location shift?", { exact: true })).toBeVisible();
+  await context.close();
+});

@@ -37,3 +37,7 @@ ODF and ODA emails were sent September 22; eleven further drafts were sent Septe
 [September 26 editorial plan](editorial-plan-2026-09-26.md): explain place-specific decisions, historical change, treatment sequences, costs and observed outcomes. Includes a [public source manifest](editorial-sources-2026-09-26.json); research and planning only, with no site deployment.
 
 [September 26 implementation](implementation-2026-09-26.md) links the source registry, acquisition queue, public evidence, tests, and remaining external dependencies.
+
+[Colorado Plateau repeat-photo assessment](repeat-photos-assessment-2026-09-26.md) and [acquisition/asset manifest](repeat-photos-manifest-2026-09-26.json): reviewed original Horse Canyon example, methods, rights, source checksums, unresolved inventory counts and Oregon photo-acquisition requirements.
+
+[Repeat-photo verification](repeat-photos-verification-2026-09-26.md): production build, typechecks, source lint, three focused browser tests, original image integrity and mobile/desktop review.
