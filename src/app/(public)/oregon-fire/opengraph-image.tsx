@@ -4,7 +4,7 @@ import { FIRE_AUTHORS } from "@/lib/oregon-fire/metadata";
 
 export const runtime = "edge";
 export const alt =
-  "Fire in Oregon — an atlas of prescribed burns, wildfire history, and the reasons behind them. An Oregon silhouette in forest green and warm gold.";
+  "Fire in Oregon — an illustrated guide to how fire works, why we burn, and what our choices cost. Oregon in forest green and warm gold.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -25,13 +25,13 @@ const sans = fetch(
           <svg width="22" height="28" viewBox="0 0 24 32"><path d="M13 1C15 10 3 10 3 21a9 9 0 0 0 18 0c0-6-5-9-5-13 0 6-4 7-4 10C5 12 17 9 13 1Z" fill="#b97540" /></svg>
           PORTLAND CIVIC LAB
         </div>
-        <div style={{ display: "flex", marginTop: 40, color: "#738264", fontSize: 15, letterSpacing: "0.22em" }}>A LIVING ATLAS</div>
+        <div style={{ display: "flex", marginTop: 40, color: "#738264", fontSize: 15, letterSpacing: "0.22em" }}>AN ILLUSTRATED GUIDE</div>
         <div style={{ display: "flex", flexDirection: "column", fontFamily: "Cormorant", fontSize: 113, lineHeight: 0.9, letterSpacing: "-0.045em", marginTop: 17 }}>
           <span>Fire in</span><span>Oregon</span>
         </div>
         <div style={{ display: "flex", flexDirection: "column", fontSize: 25, lineHeight: 1.4, marginTop: 29, color: "#52634e" }}>
-          <span>Prescribed burns. Wildfire history.</span>
-          <span>The reasons behind them.</span>
+          <span>How fire works. Why we burn.</span>
+          <span>What our choices cost.</span>
         </div>
         <div style={{ position: "absolute", left: 56, top: 531, width: 530, height: 1, background: "#cbd0bd" }} />
         <div style={{ position: "absolute", left: 56, top: 550, display: "flex", flexDirection: "column", fontSize: 17, lineHeight: 1.4, color: "#52634e" }}>
@@ -39,7 +39,7 @@ const sans = fetch(
           <span>{FIRE_AUTHORS.join(" · ")}</span>
         </div>
       </div>
-      <div style={{ position: "absolute", right: 44, top: 51, display: "flex", fontSize: 14, letterSpacing: "0.18em", color: "#b7c4a1" }}>WHERE IT HAPPENS. WHY IT MATTERS.</div>
+      <div style={{ position: "absolute", right: 44, top: 51, display: "flex", fontSize: 14, letterSpacing: "0.18em", color: "#b7c4a1" }}>ONE STATE. MANY RELATIONSHIPS WITH FIRE.</div>
       {/* Census-derived outline. Interior lines are decorative, not terrain or burn data. */}
       <svg width="500" height="440" viewBox="-10 -20 570 460" style={{ position: "absolute", left: 666, top: 113 }}>
         <defs><clipPath id="oregon"><path d={map.path} /></clipPath></defs>

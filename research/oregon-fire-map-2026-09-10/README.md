@@ -43,3 +43,7 @@ ODF and ODA emails were sent September 22; eleven further drafts were sent Septe
 [Repeat-photo verification](repeat-photos-verification-2026-09-26.md): production build, typechecks, source lint, three focused browser tests, original image integrity and mobile/desktop review.
 
 [Visual story rewrite](visual-story-rewrite-2026-09-26.md): plain-language explanation, original fire-mechanics and tree illustrations, reported burn timeline, and an explicitly hypothetical interactive cost comparison.
+
+[Visual teaching-guide blueprint](teaching-guide-blueprint-2026-09-26.md): main-page audit, connected eight-chapter narrative, quantitative factbook, prevention/response accounting, representative case selection, school materials and implementation priorities. Includes newly inspected Southern Oregon FireWorks resources and an unresolved denominator discrepancy in the Egley paper. Editorial proposal; no public application change from this planning pass.
+
+[Continuous illustrated guide release](long-guide-release-2026-09-27.md): eight connected chapters, eight deeper articles, sourced visuals and treatment research, preserved atlas/shared settings, and browser/build verification.

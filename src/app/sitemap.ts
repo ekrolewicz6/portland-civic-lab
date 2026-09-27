@@ -5,6 +5,7 @@ import { RACE_SHEET_MODIFIED, candidatePath, racePath, votesPath } from "@/lib/v
 import { officeOf } from "@/lib/voters-guide/race-sheet/office";
 import { bureauIds } from "@/lib/org/bureau";
 import { VALID_QUESTIONS } from "@/lib/questions";
+import { FIRE_LESSONS } from "@/lib/oregon-fire/lesson";
 
 const BASE_URL = "https://www.portlandciviclab.org";
 
@@ -45,6 +46,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...["stories/why-burn", "projects/woodpecker"].map((path) => ({ url: `${BASE_URL}/oregon-fire/${path}`, lastModified: new Date("2026-09-26T00:00:00Z"), changeFrequency: "monthly" as const, priority: 0.7 })),
     { url: `${BASE_URL}/oregon-fire`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
+    { url: `${BASE_URL}/oregon-fire/atlas`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
+    ...FIRE_LESSONS.map(({slug})=>({url:`${BASE_URL}/oregon-fire/learn/${slug}`,lastModified:new Date("2026-09-27T00:00:00Z"),changeFrequency:"monthly" as const,priority:0.7})),
     {
       url: `${BASE_URL}/deep-dives/pps-budget`,
       lastModified: now,

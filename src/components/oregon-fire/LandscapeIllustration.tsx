@@ -65,9 +65,6 @@ export default function LandscapeIllustration({ kind }: { kind: string }) {
           {kind === "sage" && <path d="M-12 8Q-8-12 0 0Q12-12 14 9" />}
         </g>
       ))}
-      <text x="18" y="306" fill="#ecebdc" fontSize="9" letterSpacing="2">
-        CONCEPTUAL LANDSCAPE · NOT A SITE ASSESSMENT
-      </text>
     </svg>
   );
 }

@@ -1,17 +1,20 @@
 export const FIRE_URL = "https://www.portlandciviclab.org/oregon-fire";
-export const FIRE_TITLE = "Oregon Fire Map: Prescribed Burns & Wildfire History";
+export const FIRE_TITLE = "Fire in Oregon: A Visual Guide to Wildfire & Prescribed Fire";
 export const FIRE_DESCRIPTION =
-  "Understand fire in Oregon. Explore local burns, wildfire scars, before-and-after imagery, and evidence about forest management in an interactive public atlas.";
+  "Learn how fire works in Oregon, why people use prescribed burns, what research shows, and what our choices cost. An illustrated story with deeper explanations and a public fire map.";
 export const FIRE_AUTHORS = [
   "Edan Krolewicz", "Dominic Kuklawood",
 ];
 
 export const fireStructuredData = {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
+  "@type": "Article",
   "@id": `${FIRE_URL}#page`,
   url: FIRE_URL,
   name: FIRE_TITLE,
+  headline: "Fire in Oregon: Why do we fight some fires and deliberately light others?",
+  datePublished: "2026-09-11",
+  dateModified: "2026-09-27",
   description: FIRE_DESCRIPTION,
   inLanguage: "en-US",
   isAccessibleForFree: true,

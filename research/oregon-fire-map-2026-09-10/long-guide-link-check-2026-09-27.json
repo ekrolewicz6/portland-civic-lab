@@ -1,0 +1,113 @@
+{
+  "checkedDate": "2026-09-27",
+  "method": "GET with redirect and soft-404 inspection; automated access restrictions kept separate from missing pages",
+  "sources": [
+    {
+      "url": "https://extension.oregonstate.edu/catalog/em-9340-ecological-effects-fire",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://extension.oregonstate.edu/catalog/em-9340-ecological-effects-fire"
+    },
+    {
+      "url": "https://extension.oregonstate.edu/catalog/em-9341-fire-behavior",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://extension.oregonstate.edu/catalog/em-9341-fire-behavior"
+    },
+    {
+      "url": "https://extension.oregonstate.edu/catalog/pub/em-9343-planning-prescribed-burn",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://extension.oregonstate.edu/catalog/pub/em-9343-planning-prescribed-burn"
+    },
+    {
+      "url": "https://hub.oregonexplorer.info/content/oregon-cwpp-planning-tool",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://hub.oregonexplorer.info/content/oregon-cwpp-planning-tool"
+    },
+    {
+      "url": "https://modis.gsfc.nasa.gov/gallery/individual.php?db_date=2020-09-29",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://modis.gsfc.nasa.gov/gallery/individual.php?db_date=2020-09-29"
+    },
+    {
+      "url": "https://news.oregonstate.edu/news/western-cascades-landscapes-oregon-historically-burned-more-often-previously-thought",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://news.oregonstate.edu/news/western-cascades-landscapes-oregon-historically-burned-more-often-previously-thought"
+    },
+    {
+      "url": "https://research.fs.usda.gov/download/treesearch/55535.pdf",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://research.fs.usda.gov/download/treesearch/55535.pdf"
+    },
+    {
+      "url": "https://research.fs.usda.gov/download/treesearch/59149.pdf",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://research.fs.usda.gov/download/treesearch/59149.pdf"
+    },
+    {
+      "url": "https://research.fs.usda.gov/download/treesearch/67659.pdf",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://research.fs.usda.gov/download/treesearch/67659.pdf"
+    },
+    {
+      "url": "https://research.fs.usda.gov/treesearch/63624",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://research.fs.usda.gov/treesearch/63624"
+    },
+    {
+      "url": "https://research.fs.usda.gov/treesearch/65524",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://research.fs.usda.gov/treesearch/65524"
+    },
+    {
+      "url": "https://research.fs.usda.gov/treesearch/67664",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://research.fs.usda.gov/treesearch/67664"
+    },
+    {
+      "url": "https://www.forestry.oregonstate.edu/news/fire-purpose",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://www.forestry.oregonstate.edu/news/fire-purpose"
+    },
+    {
+      "url": "https://www.fws.gov/refuge/william-l-finley/what-we-do",
+      "status": 403,
+      "state": "access-blocked"
+    },
+    {
+      "url": "https://www.mtbs.gov/faqs",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://www.mtbs.gov/faqs"
+    },
+    {
+      "url": "https://www.nist.gov/el/fire/resources/hazard-mitigation-methodology-hmm/how-fire-spreads-wui",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://www.nist.gov/el/fire/resources/hazard-mitigation-methodology-hmm/how-fire-spreads-wui"
+    },
+    {
+      "url": "https://www.oregon.gov/ode/educator-resources/standards/science/Pages/SB13_Science.aspx",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://www.oregon.gov/ode/educator-resources/standards/science/Pages/SB13_Science.aspx"
+    },
+    {
+      "url": "https://www.oregon.gov/odf/fire/Documents/smr2025.pdf",
+      "status": 200,
+      "state": "working",
+      "finalUrl": "https://www.oregon.gov/odf/fire/Documents/smr2025.pdf"
+    }
+  ]
+}
