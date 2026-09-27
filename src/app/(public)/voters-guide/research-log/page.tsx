@@ -19,6 +19,16 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="water-bonds-context-2026-09-26">September 26, 2026 · Added context: the Bull Run bond vote (Portland City Council, Districts 3 and 4)</h2>
+        <p>
+          A land-use reviewer pointed out that the Council’s deciding vote on
+          the Bull Run filtration plant was the May 20, 2026 authorization of
+          up to $525 million in water revenue bonds, which passed 9–3, rather
+          than the annual rate increase. The water-rates choice still asks
+          about the rate increase, which pays for the whole water system,
+          repairs included; its context now also names the bond vote. Each
+          councilor’s bond vote was already in the Council record.
+        </p>
         <h2 id="pfa-universal-2026-09-26">September 26, 2026 · New choice: universal preschool (Multnomah County Chair and District 2)</h2>
         <p>
           At the suggestion of an early-childhood reviewer, the chair and
