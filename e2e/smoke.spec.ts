@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { isElectionSeason } from "../src/lib/election";
 
 test("home page renders with hero and project cards", async ({ page }) => {
   await page.goto("/");
@@ -15,6 +16,18 @@ test("election banner links the homepage to the voters guide", async ({ page }) 
   await expect(banner).toContainText(/until Election Day|Election Day is/);
   await banner.click();
   await expect(page).toHaveURL(/\/voters-guide$/);
+});
+
+test("until polls close, interior pages lead to the voters guide from the nav, the banner and the footer", async ({ page }) => {
+  test.skip(!isElectionSeason(new Date()), "election-only entry points retire when polls close");
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await page.goto("/about");
+  await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Voters’ Guide" })).toHaveAttribute("href", "/voters-guide");
+  await expect(page.getByTestId("election-banner")).toBeVisible();
+  await expect(page.locator("footer").getByRole("link", { name: "2026 Voters’ Guide" })).toHaveAttribute("href", "/voters-guide");
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.goto("/voters-guide");
+  await expect(page.getByTestId("election-banner")).toHaveCount(0);
 });
 
 test("dashboard hub lists topics", async ({ page }) => {

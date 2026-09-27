@@ -10,6 +10,7 @@ import SsoLink from "@/components/SsoLink";
 import { withPhotos } from "@/lib/team";
 import AudienceDoors, { type Door } from "@/components/home/AudienceDoors";
 import ElectionBanner from "@/components/home/ElectionBanner";
+import { GUIDE_SCALE, electionBannerLabel, isElectionSeason } from "@/lib/election";
 import {
   ASK_PORTLAND_URL,
   COUNCIL_URL,
@@ -392,10 +393,12 @@ function ShowcaseTile({ t }: { t: Tile }) {
 
 export default function HomePage() {
   const team = withPhotos();
+  const now = new Date();
+  const electionSeason = isElectionSeason(now);
   return (
     <div className="flex min-h-screen flex-col bg-[var(--color-paper)]">
-      <Header />
-      <ElectionBanner />
+      <Header electionSeason={electionSeason} />
+      <ElectionBanner initialLabel={electionBannerLabel(now)} />
 
       {/* ── Hero: the thesis on the left, the downtown map on the right ── */}
       <section className="relative z-10 overflow-x-clip bg-[var(--color-canopy)] noise-overlay">
@@ -494,10 +497,85 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Election 2026: the voters' guide, until polls close ── */}
+      {electionSeason && (
+        <section
+          aria-labelledby="home-guide-title"
+          className="mx-auto w-full max-w-[1400px] px-5 pt-14 sm:px-8 lg:px-12 lg:pt-20 3xl:max-w-[1800px]"
+        >
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-12">
+            <Link
+              href="/voters-guide"
+              className="group relative block overflow-hidden rounded-sm ring-1 ring-[var(--color-parchment)] lg:col-span-7"
+              aria-label="Open the 2026 voters’ guide"
+            >
+              <div className="relative aspect-[16/10]">
+                <SafeImage
+                  src="/images/home/voters-guide.jpg"
+                  alt="The voters’ guide front page: a map of the Portland council districts with every candidate’s portrait, and the races on the Portland ballot"
+                  fill
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="object-cover object-left-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                />
+              </div>
+            </Link>
+            <div className="lg:col-span-5">
+              <Eyebrow>Election 2026 · November 3</Eyebrow>
+              <h2
+                id="home-guide-title"
+                className="font-editorial text-[32px] leading-tight text-[var(--color-ink)] [text-wrap:balance] sm:text-[44px]"
+              >
+                Who&rsquo;s on your ballot, and what they would do.
+              </h2>
+              <p className="mt-4 text-[16px] leading-relaxed text-[var(--color-ink-light)]">
+                Our free, nonpartisan voters&rsquo; guide puts {GUIDE_SCALE.candidates} candidates in{" "}
+                {GUIDE_SCALE.races} races side by side, from City Council to governor, with what each
+                one proposes and a source on every line. No endorsements.
+              </p>
+              <dl className="mt-6 grid grid-cols-3 gap-4 border-t border-[var(--color-parchment)] pt-5">
+                <div>
+                  <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">Register by</dt>
+                  <dd className="mt-1 text-[17px] font-semibold tabular-nums text-[var(--color-ink)]">Oct 13</dd>
+                </div>
+                <div>
+                  <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">Ballots mail</dt>
+                  <dd className="mt-1 text-[17px] font-semibold tabular-nums text-[var(--color-ink)]">Oct 14</dd>
+                </div>
+                <div>
+                  <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">Due</dt>
+                  <dd className="mt-1 text-[17px] font-semibold tabular-nums text-[var(--color-ink)]">Nov 3, 8 p.m.</dd>
+                </div>
+              </dl>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/voters-guide"
+                  className="inline-flex items-center justify-center gap-2 rounded-sm bg-[var(--color-canopy)] px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[var(--color-canopy-light)]"
+                >
+                  Open the voters&rsquo; guide
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/voters-guide/methodology"
+                  className="inline-flex items-center justify-center gap-2 rounded-sm border border-[var(--color-parchment)] bg-white px-5 py-3 text-[15px] font-semibold text-[var(--color-ink)] transition-colors hover:border-[var(--color-sage)]"
+                >
+                  How we research candidates
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── Pick your door ── */}
       <section className="mx-auto w-full max-w-[1400px] px-5 pb-16 pt-14 sm:px-8 sm:pb-20 lg:px-12 lg:pt-20 3xl:max-w-[1800px]">
         <SectionHead eyebrow="Who this is for" title="Start here." />
-        <AudienceDoors doors={DOORS} />
+        <AudienceDoors
+          doors={
+            electionSeason
+              ? DOORS.map((d) => (d.key === "residents" ? { ...d, secondary: { label: "Read the voters’ guide", href: "/voters-guide" } } : d))
+              : DOORS
+          }
+        />
       </section>
 
       {/* ── The work: eight tools, each shown ── */}
