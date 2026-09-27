@@ -27,7 +27,7 @@ export default function FireMechanicsVisual() {
       <div><span className="fire-visual-label">More connected fuel</span><Scene dense /><h3>Flames have a path upward.</h3><p>Shrubs and small trees can carry fire into higher branches. These are called <strong>ladder fuels</strong>.</p></div>
       <div><span className="fire-visual-label">Fewer connections</span><Scene dense={false} /><h3>More space below the crowns.</h3><p>Removing some small trees and burning surface fuel can reduce that path. Keeping flames low still depends on the conditions.</p></div>
     </div>
-    <figcaption>Illustration of a dry forest, not a prediction or a picture of Woodpecker. Wind, slope, and fuel moisture also affect fire behavior. <a href="https://extension.oregonstate.edu/catalog/em-9341-fire-behavior">How fire behaves: OSU Extension ↗</a></figcaption>
+    <figcaption>Wind, slope, and fuel moisture also affect fire behavior. <a href="https://extension.oregonstate.edu/catalog/em-9341-fire-behavior">How fire behaves: OSU Extension ↗</a></figcaption>
   </figure>;
 }
 export function HabitatTree({ kind }: { kind: "oak" | "pine" }) {
