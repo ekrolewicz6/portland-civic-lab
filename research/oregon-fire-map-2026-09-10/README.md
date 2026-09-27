@@ -41,3 +41,5 @@ ODF and ODA emails were sent September 22; eleven further drafts were sent Septe
 [Colorado Plateau repeat-photo assessment](repeat-photos-assessment-2026-09-26.md) and [acquisition/asset manifest](repeat-photos-manifest-2026-09-26.json): reviewed original Horse Canyon example, methods, rights, source checksums, unresolved inventory counts and Oregon photo-acquisition requirements.
 
 [Repeat-photo verification](repeat-photos-verification-2026-09-26.md): production build, typechecks, source lint, three focused browser tests, original image integrity and mobile/desktop review.
+
+[Visual story rewrite](visual-story-rewrite-2026-09-26.md): plain-language explanation, original fire-mechanics and tree illustrations, reported burn timeline, and an explicitly hypothetical interactive cost comparison.

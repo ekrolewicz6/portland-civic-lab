@@ -33,7 +33,7 @@ test("repeat photos retain place, dates, differing patch interpretations and evi
   await expect(evidence.locator("figcaption")).toContainText("1965");
   await expect(evidence.locator("figcaption")).toContainText("2015");
   await expect(evidence.getByRole("heading", { name: "More cover. A larger patch." })).toBeVisible();
-  await expect(evidence.getByRole("heading", { name: "Cover classified as unchanged." })).toBeVisible();
+  await expect(evidence.getByRole("heading", { name: "Woodland cover looked similar." })).toBeVisible();
   await expect(evidence).toContainText("This pair is not a test of prescribed fire.");
   const image = evidence.locator("img");
   await expect(image).toBeVisible();
@@ -43,4 +43,22 @@ test("repeat photos retain place, dates, differing patch interpretations and evi
   await page.keyboard.press("Enter");
   await expect(evidence.getByText("Did the vegetation’s location shift?", { exact: true })).toBeVisible();
   await context.close();
+});
+
+test("visual story explains fire mechanics and lets readers change hypothetical cost assumptions", async ({ page }) => {
+  await page.goto("/oregon-fire/stories/why-burn");
+  await expect(page.locator(".fire-story-diagram")).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Where the flames go matters." })).toBeVisible();
+  await expect(page.locator(".fire-mechanics svg")).toHaveCount(2);
+  await expect(page.locator(".fire-habitat-pair svg")).toHaveCount(2);
+  await expect(page.locator(".fire-cost-explorer")).toContainText("Invented example");
+  await expect(page.locator(".fire-cost-equation")).toHaveText("20% × $10M = $2M");
+  await page.getByRole("slider", { name: /Chance of a relevant wildfire/ }).focus();
+  await page.keyboard.press("Home");
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator(".fire-cost-equation")).toHaveText("5% × $10M = $500K");
+  await expect(page.locator(".fire-cost-verdict")).toContainText("$500K below");
+  await page.setViewportSize({width:390,height:844});
+  await page.locator("#costs").scrollIntoViewIfNeeded();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
 });
