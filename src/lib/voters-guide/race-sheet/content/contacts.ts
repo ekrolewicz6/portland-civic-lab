@@ -575,9 +575,17 @@ const councilContacts: CandidateContact[] = [
 
   entry(
     "john-mcdonald",
-    [],
-    [pamphlet(63)],
-    "No website, email or phone in the pamphlet statement, and no campaign site found.",
+    [web("https://www.johnforportland.com/", "questionnaire")],
+    [
+      pamphlet(63),
+      {
+        label: "McDonald · campaign site (sent by the candidate)",
+        url: "https://www.johnforportland.com/",
+        kind: "Candidate statement",
+        date: "Sent by the candidate September 26, 2026; read the same day",
+        note: "The candidate sent this address in reply to the Lab’s questions. The site lists a mailing address and no email or phone.",
+      },
+    ],
   ),
 
   entry(

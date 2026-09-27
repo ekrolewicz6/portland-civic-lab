@@ -54,7 +54,9 @@ import type { IssueId } from "../issues";
  *   https://mattschulte.wordpress.com/2026/09/14/no-strategic-plan/
  *   https://mattschulte.wordpress.com/contact/
  *   https://www.jayneforaflourishingportland.com/  (pamphlet prints jayneforaflourishingfuture.com, which does not resolve)
- * Not fetched: McDonald, Anderson and Goldsmith list no campaign site.
+ * Not fetched: Anderson and Goldsmith list no campaign site. McDonald sent his
+ * (johnforportland.com) on September 26, 2026; its housing statement names no
+ * mechanism or measure, so his housing ladder has no rungs.
  */
 
 const PAMPHLET =
@@ -289,6 +291,7 @@ export const deliveriesD4: Delivery[] = [
   entry("josh-leake", "money", "pamphlet"),
 
   /* ── John McDonald ──────────────────────────────────────────────────── */
+  entry("john-mcdonald", "housing", "campaign site"),
   entry("john-mcdonald", "safety", "pamphlet"),
   entry("john-mcdonald", "money", "emailed response", {
     how: step("The City’s current proposal: $120 million up front and $275 million in ongoing maintenance over a 20-year lease, with other revenue expected to follow the teams’ success.", mcdonaldEmail),

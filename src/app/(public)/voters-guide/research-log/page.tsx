@@ -19,6 +19,17 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="mcdonald-2026-09-26">September 26, 2026 · Candidate response: John McDonald (District 4)</h2>
+        <p>
+          John McDonald sent his campaign site, johnforportland.com. His page
+          had said no campaign site was found; it now lists the site. His
+          housing column, empty before, now has the position on the site’s
+          Campaign Focus Points page: policies that increase the supply of
+          reasonably priced homes and apartments, protect renters from unfair
+          practices and help families facing homelessness. He also answered
+          the street repair fee question; the Lab has asked him to confirm
+          which fee he meant before it goes on the page.
+        </p>
         <h2 id="water-bonds-context-2026-09-26">September 26, 2026 · Added context: the Bull Run bond vote (Portland City Council, Districts 3 and 4)</h2>
         <p>
           A land-use reviewer pointed out that the Council’s deciding vote on
