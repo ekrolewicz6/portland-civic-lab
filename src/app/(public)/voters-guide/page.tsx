@@ -12,7 +12,7 @@ import {
   type RaceSheet,
 } from "@/lib/voters-guide/race-sheet";
 import { indexLabel, onPortlandBallot } from "@/lib/voters-guide/race-sheet/office";
-import { scaleFor, type ScaleTier } from "@/lib/voters-guide/race-sheet/scale";
+import { scaleFor, type BodyScale, type ScaleTier } from "@/lib/voters-guide/race-sheet/scale";
 import ScaleHeader from "@/components/voters-guide/ScaleHeader";
 import DistrictMap, { DistrictMapSource } from "@/components/voters-guide/DistrictMap";
 import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
@@ -74,16 +74,11 @@ export default function VotersGuidePage() {
   const sheets = races.map(buildRaceSheet);
   const councilSheets = sheets.filter((s) => s.office.group === "council");
   const raceNumber = (s: RaceSheet) => Number(s.race.id.match(/(\d+)$/)?.[1] ?? 0);
-  /* The ladder of government, biggest budget first, the reader's city last.
-     Each rung is one body; the Portland Council races and the City Auditor share the City of Portland rung. */
+  /* Closest to home first: the Portland ballot, then the rest of the region, then the seats outside
+     the city. Each block is one body; Congress and the Legislature each split into the districts that
+     cover Portland and the rest. Every race lands in exactly one block; a body this list does not name
+     falls through to a final group rather than vanishing. */
   const bodyOf = (s: RaceSheet) => (s.office.body === "Portland City Council" ? "City of Portland" : s.office.body);
-  const tierOf = (s: RaceSheet): ScaleTier => (s.office.group === "federal" ? "federal" : s.office.group === "state" || s.office.group === "legislature" ? "state" : s.office.group === "county" ? "county" : "city");
-  const TIERS: { tier: ScaleTier; title: string; eyebrow: string }[] = [
-    { tier: "federal", title: "Washington, D.C.", eyebrow: "The biggest budget on your ballot" },
-    { tier: "state", title: "Salem", eyebrow: "Oregon’s laws, taxes and agencies" },
-    { tier: "county", title: "The counties", eyebrow: "Homeless services, health, jails, elections" },
-    { tier: "city", title: "The cities", eyebrow: "Closest to you: police, streets, water, permits" },
-  ];
   /* Within a body: the executive seat, then district or position seats, then the other offices. */
   const seatRank = (s: RaceSheet) => {
     const m = s.office.mark;
@@ -93,29 +88,83 @@ export default function VotersGuidePage() {
     if (m === "CNCL") return 3;
     return { SHF: 4, AUD: 5, CLK: 6, TRS: 7 }[m] ?? 8;
   };
-  const BODY_ORDER = ["U.S. Congress", "State of Oregon", "Oregon Legislature", "Multnomah County", "Washington County", "Clackamas County", "City of Portland"];
-  const bodyRank = (b: string) => { const i = BODY_ORDER.indexOf(b); return i === -1 ? 99 : i; };
-  const ladder = TIERS.map(({ tier, title, eyebrow }) => {
-    const inTier = sheets.filter((s) => tierOf(s) === tier);
-    const bodies = [...new Set(inTier.map(bodyOf))].sort((a, b) => bodyRank(a) - bodyRank(b) || a.localeCompare(b));
-    return {
-      tier,
-      title,
-      eyebrow,
-      bodies: bodies.map((body) => ({
-        body,
-        scale: scaleFor(body),
-        sheets: inTier.filter((s) => bodyOf(s) === body).sort((a, b) => seatRank(a) - seatRank(b) || raceNumber(a) - raceNumber(b)),
-      })),
-    };
-  }).filter((t) => t.bodies.length);
+  const bodySheets = (body: string) =>
+    sheets.filter((s) => bodyOf(s) === body).sort((a, b) => seatRank(a) - seatRank(b) || raceNumber(a) - raceNumber(b));
+  const byId = (ids: string[]) => ids.map((id) => sheets.find((s) => s.race.id === id)).filter((s): s is RaceSheet => Boolean(s));
+  /* The congressional seats on Portland ballots, the district that covers most of the city first. */
+  const PORTLAND_CONGRESS = ["oregon-us-senate", "oregon-house-3", "oregon-house-1", "oregon-house-5"];
+  /* The state Senate districts that reach into Portland (office.ts keeps the same list). */
+  const PORTLAND_SENATE = sheets.filter((s) => s.office.group === "legislature" && onPortlandBallot(s.race)).map((s) => s.race.id);
+  const outside = (ids: string[]) => (s: RaceSheet) => !ids.includes(s.race.id);
+  type Block = { id: string; body: string; label: string; tier: ScaleTier; scale: BodyScale | null; sheets: RaceSheet[] };
+  const block = (body: string, bs: RaceSheet[], opts: { id?: string; label?: string; scale?: boolean } = {}): Block => ({
+    id: opts.id ?? `body-${body.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+    body,
+    label: opts.label ?? body,
+    tier: scaleFor(body)?.tier ?? "city",
+    scale: opts.scale === false ? null : scaleFor(body),
+    sheets: bs,
+  });
+  type Group = { id: string; eyebrow: string; title: string; blocks: Block[] };
+  const groups: Group[] = [
+    {
+      id: "ballot-portland",
+      eyebrow: "Start here",
+      title: "The Portland ballot",
+      blocks: [
+        block("City of Portland", bodySheets("City of Portland")),
+        block("Multnomah County", bodySheets("Multnomah County")),
+        block("State of Oregon", bodySheets("State of Oregon")),
+        block("U.S. Congress", byId(PORTLAND_CONGRESS), { label: "U.S. Congress · the seats on Portland ballots" }),
+        block("Oregon Legislature", byId(PORTLAND_SENATE), { label: "Oregon Legislature · the Senate districts inside Portland" }),
+      ],
+    },
+    { id: "ballot-gresham", eyebrow: "East Multnomah County", title: "Gresham", blocks: [block("City of Gresham", bodySheets("City of Gresham"))] },
+    {
+      id: "ballot-washington-county",
+      eyebrow: "West of Portland",
+      title: "Washington County",
+      blocks: ["Washington County", "City of Beaverton", "City of Hillsboro", "City of Tigard"].map((b) => block(b, bodySheets(b))),
+    },
+    {
+      id: "ballot-clackamas-county",
+      eyebrow: "South and east of Portland",
+      title: "Clackamas County",
+      blocks: ["Clackamas County", "City of Lake Oswego", "City of Oregon City"].map((b) => block(b, bodySheets(b))),
+    },
+    {
+      id: "ballot-oregon",
+      eyebrow: "Beyond the city",
+      title: "The rest of the Legislature and the delegation",
+      blocks: [
+        block("Oregon Legislature", bodySheets("Oregon Legislature").filter(outside(PORTLAND_SENATE)), { id: "body-oregon-legislature-more", label: "Oregon Legislature · districts outside Portland", scale: false }),
+        block("U.S. Congress", bodySheets("U.S. Congress").filter(outside(PORTLAND_CONGRESS)), { id: "body-u-s-congress-more", label: "U.S. Congress · districts outside Portland", scale: false }),
+      ],
+    },
+  ];
+  const placed = new Set(groups.flatMap((g) => g.blocks.flatMap((b) => b.sheets.map((s) => s.race.id))));
+  const leftover = sheets.filter((s) => !placed.has(s.race.id));
+  if (leftover.length) {
+    groups.push({
+      id: "ballot-more",
+      eyebrow: "Also covered",
+      title: "More races",
+      blocks: [...new Set(leftover.map(bodyOf))].map((b) => block(b, leftover.filter((s) => bodyOf(s) === b))),
+    });
+  }
+  const shown = groups.map((g) => ({ ...g, blocks: g.blocks.filter((b) => b.sheets.length) })).filter((g) => g.blocks.length);
 
+  /* The Portland ballot, one line per office, the seats as links; then one line of jumps for everyone else. */
   const ballotIndex = [
-    { label: "City of Portland", races: sheets.filter((s) => onPortlandBallot(s.race) && (s.office.group === "council" || s.office.group === "city")) },
-    { label: "Multnomah County", races: sheets.filter((s) => onPortlandBallot(s.race) && s.office.group === "county") },
-    { label: "Oregon", races: sheets.filter((s) => onPortlandBallot(s.race) && s.office.group === "state") },
-    { label: "U.S. Congress", races: sheets.filter((s) => onPortlandBallot(s.race) && s.office.group === "federal") },
+    { label: "City of Portland", races: bodySheets("City of Portland") },
+    { label: "Multnomah County", races: bodySheets("Multnomah County") },
+    { label: "Oregon", races: bodySheets("State of Oregon") },
+    { label: "U.S. Congress", races: byId(PORTLAND_CONGRESS) },
+    { label: "Legislature", races: byId(PORTLAND_SENATE) },
   ].filter((g) => g.races.length);
+  /* The index row for everyone else: one short jump per group. */
+  const INDEX_LABEL: Record<string, string> = { "ballot-oregon": "Other districts", "ballot-more": "More races" };
+  const elsewhere = shown.filter((g) => g.id !== "ballot-portland").map((g) => ({ id: g.id, label: INDEX_LABEL[g.id] ?? g.title }));
   const candidateCount = sheets.reduce((n, s) => n + s.rows.length, 0);
   const seatCount = sheets.reduce((n, s) => n + s.race.seats, 0);
   const fields = councilSheets.map((s) => ({
@@ -154,9 +203,8 @@ export default function VotersGuidePage() {
               </a>
             </div>
 
-            {/* The Portland ballot, top to bottom: one line per office, the seats as links. */}
-            <nav className={styles.ballotIndex} aria-label="Races on the Portland ballot">
-              <p className={styles.ballotIndexTitle}>On the Portland ballot</p>
+            <nav className={styles.ballotIndex} aria-label="Jump to your ballot">
+              <p className={styles.ballotIndexTitle}>Jump to your ballot</p>
               <dl className={styles.ballotIndexList}>
                 {ballotIndex.map(({ label, races: rs }) => (
                   <div key={label} className={styles.ballotIndexRow}>
@@ -170,9 +218,21 @@ export default function VotersGuidePage() {
                     </dd>
                   </div>
                 ))}
+                {elsewhere.length > 0 && (
+                  <div className={styles.ballotIndexRow}>
+                    <dt>Elsewhere</dt>
+                    <dd>
+                      {elsewhere.map((g) => (
+                        <a key={g.id} href={`#${g.id}`} className={styles.ballotIndexLink}>
+                          {g.label}
+                        </a>
+                      ))}
+                    </dd>
+                  </div>
+                )}
               </dl>
               <a href="#ladder-title" className={styles.ballotIndexMore}>
-                All {sheets.length} races we cover, by level of government ↓
+                All {sheets.length} races we cover, closest to home first ↓
               </a>
             </nav>
             <dl className={styles.heroFacts}>
@@ -224,24 +284,24 @@ export default function VotersGuidePage() {
 
       <section className={styles.districts} aria-labelledby="ladder-title">
         <div className={styles.sectionHead}>
-          <p className={styles.eyebrow}>Every race we cover, by the size of the seat</p>
+          <p className={styles.eyebrow}>Every race we cover, closest to home first</p>
           <h2 id="ladder-title" className={styles.sectionTitle}>
-            Four levels of government. <em>One election.</em>
+            {sheets.length} races. <em>Start with yours.</em>
           </h2>
           <p className={styles.ladderNote}>
-            Each bar is the body’s adopted budget on a log scale, with its source. Colors mark levels of government, never sides.
+            Each body’s bar is its adopted budget on a log scale, with its source, so you can see how much money the seat controls. Colors mark levels of government, never sides.
           </p>
         </div>
 
-        {ladder.map(({ tier, title, eyebrow, bodies }) => (
-          <div key={tier} className={styles.tier} id={`tier-${tier}`} data-tier={tier}>
+        {shown.map(({ id, eyebrow, title, blocks }) => (
+          <div key={id} className={styles.tier} id={id}>
             <div className={styles.tierHead}>
               <p className={styles.eyebrow}>{eyebrow}</p>
               <h3 className={styles.tierTitle}>{title}</h3>
             </div>
-            {bodies.map(({ body, scale, sheets: bs }) => (
-              <div key={body} className={styles.bodyBlock} id={`body-${body.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
-                <ScaleHeader body={body} tier={tier} scale={scale} races={bs.length} candidates={bs.reduce((n, x) => n + x.rows.length, 0)} />
+            {blocks.map(({ id: blockId, body, label, tier, scale, sheets: bs }) => (
+              <div key={blockId} className={styles.bodyBlock} id={blockId}>
+                <ScaleHeader body={label} tier={tier} scale={scale} races={bs.length} candidates={bs.reduce((n, x) => n + x.rows.length, 0)} />
                 <ul className={`${styles.cards} ${body === "City of Portland" ? "" : styles.cardsMany}`}>
                   {bs.map((sheet) => (
                     <DistrictCard key={sheet.race.id} sheet={sheet} />
@@ -259,7 +319,7 @@ export default function VotersGuidePage() {
                     </div>
                     <div className={styles.mapText}>
                       <h4 className={styles.mapTitle}>Which Council district am I in?</h4>
-                      <p>Tap your part of the map. Districts 1 and 2 are not yet covered.</p>
+                      <p>Tap your part of the map. Districts 1 and 2 don’t elect councilors until 2028.</p>
                       <a href={officialSources.myVote} rel="noopener noreferrer">
                         Not sure? Look up your district <span aria-hidden="true">↗</span>
                       </a>

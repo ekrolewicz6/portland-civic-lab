@@ -43,13 +43,15 @@ export function groupLabel(group: OfficeGroup) {
 /** Display order of groups on the hub: the offices a Portland voter sees first. */
 export const GROUP_ORDER: OfficeGroup[] = ["council", "county", "state", "federal", "legislature", "city"];
 
-/** True for the races a Portland voter sees on their own ballot: city, Multnomah County, statewide, and the congressional districts that cover the city. */
+/** True for the races a Portland voter can see on their own ballot: city, Multnomah County, statewide, and the congressional and state Senate districts that cover part of the city. */
 export function onPortlandBallot(race: Race): boolean {
   const o = officeOf(race);
   if (o.group === "council" || o.group === "state") return true;
   if (o.group === "city") return o.body === "City of Portland";
   if (o.group === "county") return o.body === "Multnomah County";
   if (o.group === "federal") return race.id === "oregon-us-senate" || ["oregon-house-1", "oregon-house-3", "oregon-house-5"].includes(race.id);
+  // Senate District 17 (Northwest Portland), 19 (part of Southwest Portland) and 24 (East Portland) reach into the city.
+  if (o.group === "legislature") return ["oregon-state-senate-17", "oregon-state-senate-19", "oregon-state-senate-24"].includes(race.id);
   return false;
 }
 

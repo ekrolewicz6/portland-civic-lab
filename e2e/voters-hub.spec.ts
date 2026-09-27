@@ -28,15 +28,15 @@ test("hub: a card with a portrait mosaic for every published race, grouped by of
   }
   const text = await page.locator("main").first().innerText();
   for (const person of races.flatMap((r) => r.candidates)) expect(text, person.name).not.toContain(person.name);
-  // The ladder: one tier per level of government, one rung per body, biggest budget first.
-  await expect(page.locator("#tier-federal")).toHaveCount(1);
-  await expect(page.locator("#tier-state")).toHaveCount(1);
-  await expect(page.locator("#tier-county")).toHaveCount(1);
-  await expect(page.locator("#tier-city")).toHaveCount(1);
-  const tierOrder = await page.locator("[id^='tier-']").evaluateAll((els) => els.map((e) => e.id));
-  expect(tierOrder).toEqual(["tier-federal", "tier-state", "tier-county", "tier-city"]);
-  await expect(page.locator("#body-multnomah-county")).toHaveCount(1);
-  await expect(page.locator("#body-city-of-portland")).toHaveCount(1);
+  // Closest to home first: the Portland ballot, then Gresham, Washington County, Clackamas County, then the seats outside the city.
+  const groupOrder = await page.locator("[id^='ballot-']").evaluateAll((els) => els.map((e) => e.id));
+  expect(groupOrder).toEqual(["ballot-portland", "ballot-gresham", "ballot-washington-county", "ballot-clackamas-county", "ballot-oregon"]);
+  const portlandBodies = await page.locator("#ballot-portland [id^='body-']").evaluateAll((els) => els.map((e) => e.id));
+  expect(portlandBodies).toEqual(["body-city-of-portland", "body-multnomah-county", "body-state-of-oregon", "body-u-s-congress", "body-oregon-legislature"]);
+  // Every race is on the page exactly once (the cards are checked above), and the Portland index jumps to each block.
+  for (const id of ["ballot-gresham", "ballot-washington-county", "ballot-clackamas-county", "ballot-oregon"]) {
+    await expect(page.locator(`nav[aria-label="Jump to your ballot"] a[href="#${id}"]`)).toHaveCount(1);
+  }
   // The district map links only the published districts.
   const map = page.getByRole("img", { name: /Council districts/i }).first();
   await expect(map).toBeVisible();
