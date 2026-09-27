@@ -181,7 +181,7 @@ function Wordmark() {
 /* Type scales with the viewport but the shell stops at 1400px until 3xl, so
  * 2xl tightens tracking and gaps to keep the row inside the shell. */
 const TRIGGER =
-  "group relative flex items-center gap-1 whitespace-nowrap py-1 font-mono text-[11px] uppercase tracking-[0.16em] 2xl:tracking-[0.12em] 3xl:tracking-[0.16em] transition-colors";
+  "group relative flex items-center gap-1 whitespace-nowrap py-1 font-mono text-[11px] uppercase tracking-[0.16em] 2xl:tracking-[0.1em] 3xl:tracking-[0.16em] transition-colors";
 
 function NavLink({ label, href, active, accent = false }: { label: string; href: string; active: boolean; accent?: boolean }) {
   return (
@@ -408,7 +408,7 @@ export default function Header({
           <Wordmark />
 
           {/* Desktop nav */}
-          <nav className="ml-auto hidden shrink-0 items-center gap-4 xl:flex 2xl:gap-2.5 3xl:gap-7" aria-label="Primary">
+          <nav className="ml-auto hidden shrink-0 items-center gap-4 xl:flex 2xl:gap-3 3xl:gap-7" aria-label="Primary">
             {electionSeason && (
               <NavLink label="Voters’ Guide" href="/voters-guide" active={isActive("/voters-guide")} accent />
             )}
@@ -458,7 +458,7 @@ export default function Header({
               <Link
                 href="/signup"
                 prefetch={false}
-                className={`font-mono text-[11px] uppercase tracking-[0.16em] 2xl:tracking-[0.12em] 3xl:tracking-[0.16em] transition-colors ${
+                className={`font-mono text-[11px] uppercase tracking-[0.16em] 2xl:tracking-[0.1em] 3xl:tracking-[0.16em] transition-colors ${
                   isActive("/signup") ? "text-white" : "text-white/55 hover:text-white"
                 }`}
               >
