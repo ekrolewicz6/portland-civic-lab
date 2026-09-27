@@ -1,6 +1,8 @@
 /**
- * Oregon general election, November 3, 2026. Drives the homepage election
- * banner: the day count and the moment it retires itself.
+ * Oregon general election, November 3, 2026. Drives every way into the
+ * voters' guide that exists only for the election (the banner on the
+ * homepage and interior pages, the header link, the featured menu card and
+ * the homepage tile): the day count and the moment they all retire.
  */
 
 // Polls close 8 p.m. Pacific on November 3, 2026: 04:00 UTC November 4 (PST).
@@ -28,3 +30,15 @@ export function electionBannerLabel(now: Date): string | null {
   if (days === 1) return "Election Day is tomorrow";
   return `${days} days until Election Day`;
 }
+
+/** True until polls close; every election-only entry point checks this. */
+export function isElectionSeason(now: Date): boolean {
+  return now < POLLS_CLOSE;
+}
+
+/**
+ * The published guide's size, for copy outside the guide. Kept as constants so
+ * the header and banner never load the guide's data; tests/election-banner.test.ts
+ * fails if they drift from published.ts.
+ */
+export const GUIDE_SCALE = { races: 48, candidates: 153 } as const;
