@@ -19,6 +19,21 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="pfa-universal-2026-09-26">September 26, 2026 · New choice: universal preschool (Multnomah County Chair and District 2)</h2>
+        <p>
+          At the suggestion of an early-childhood reviewer, the chair and
+          District 2 pages have a new choice beside the Preschool for All tax
+          delay: keep the program on track to a seat for every 3- and
+          4-year-old whose family wants one by 2030. The context uses the
+          county’s own definition of universal (about 8,000 seats) and the
+          auditor’s September 23 letter on empty seats and the waitlist.
+          Serena Cruz and Nathan Ong Norris are on record in support, from her
+          issues page and his July pledge. Shannon Singleton, Sharon Meieran,
+          Nabil Zaghloul, Bri Williams and Tony Robertson have spoken to the
+          program but not to the target, so their entries are partial. Julia
+          Brim-Edwards, Bruce Broussard and Herman Greene are open, and every
+          candidate in both races is being asked.
+        </p>
         <h2 id="kahl-education-2026-09-25">September 25, 2026 · Candidate response: Barbara J Kahl on education (U.S. House, Oregon District 1)</h2>
         <p>
           Barbara J Kahl sent an answer on education to go with her twelve
