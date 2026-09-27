@@ -1,0 +1,697 @@
+{
+ "batch": "b09-wash-clack-county",
+ "checked": {
+  "issueSlots": 36,
+  "topicStances": 52,
+  "sourcesFetched": 29
+ },
+ "unreachable": [],
+ "notes": [
+  "All 29 cited sources were read live on 2026-09-24 (18 web pages, 7 OPB PDFs, 2 civicweb minutes packets, 2 county pamphlets, already extracted). Four uncited pages were also fetched to trace claims: friendsofremysmith.org home and about, and pamforwashingtoncounty.com home and priorities. Text is saved as scratchpad/sources/b09-*.txt.",
+  "Counts: 8 confirmed leans, 7 confirmed citation mismatches (claim missing from the cited source but found in the candidate's own words on another page), and 12 borderline items (10 leans, 2 citations).",
+  "Checked, not flagged: the Ordinance 917 vote (ayes Treece, Snider, Willey; nay Fai; Harrington abstained, 3-1) and the RO 25-72 vote (moved by Fai, 5-0, $200,000) match the minutes. The $30-to-$60-by-2031 fee schedule in the Fai and Treece vehicle-fee texts is not in the cited minutes packet; it comes from the topic's context line.",
+  "Topic question wording: clack-voter-rolls asks about county-level 'purges' while its label says 'County voter-roll checks'; the loaded word sits in the question as well as in Reaksecker's chip.",
+  "Fai's priorities page no longer carries the housing detail the guide quotes. That text is on her home page, so the priorities page may have been trimmed since the guide was written; no snapshot exists in source-manifest.json to confirm this.",
+  "Smith's policies page has a 'No Data Centers!' heading with an empty paragraph under it; his data-center subsidy and clean-energy lines are only on his home page."
+ ],
+ "findings": [
+  {
+   "candidateId": "pam-treece",
+   "race": "washington-chair",
+   "item": "issue/money",
+   "kind": "lean",
+   "fields": [
+    "chip",
+    "line"
+   ],
+   "current": {
+    "chip": "No new resident taxes",
+    "line": "Opposes new taxes on residents; wants county operations stable, accountable and effective."
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=4",
+   "sourceQuote": "Putting the brakes on taxing residents and hitting the gas on building housing.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "'Putting the brakes on' means slowing, not ruling out; her OPB answer calls new taxes 'a last resort,' and she voted for the Ordinance 917 fee increase, so 'No new resident taxes' overstates her.",
+   "proposed": {
+    "chip": "Brakes on resident taxes",
+    "line": "Would put the brakes on taxing residents and keep county operations stable and accountable."
+   }
+  },
+  {
+   "candidateId": "nafisa-fai",
+   "race": "washington-chair",
+   "item": "issue/money",
+   "kind": "lean",
+   "fields": [
+    "position",
+    "line",
+    "chip"
+   ],
+   "current": {
+    "position": "Wants data centers to pay a fair share and would close the county’s budget gap by updating service fees and considering local option levies for public safety and libraries, while protecting funding for housing, transit and health care.",
+    "line": "Wants data centers paying more, plus updated fees and possible levies for services.",
+    "chip": "Data centers pay more"
+   },
+   "sourceUrl": "https://www.nafisaforwashingtoncounty.com/priorities",
+   "sourceQuote": "Close the budget gap: Explore innovative solutions to increase revenue without overburdening taxpayers, including updating service fees and considering local option levies for critical services like public safety and libraries.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "The source says she would 'explore' revenue 'without overburdening taxpayers'; we turn that into a plan to update fees and drop the taxpayer qualifier. Separately, the data-center clause is not on the cited priorities page (it is in the pamphlet, p.4: 'make Data Centers pay fair share'), and 'pay more' is a step past 'fair share' (chip part is borderline).",
+   "proposed": {
+    "position": "Wants data centers to pay a fair share. To close the county’s budget gap she would explore new revenue without overburdening taxpayers, including updated service fees and possible local option levies for public safety and libraries, while protecting funding for housing, transit and health care.",
+    "line": "Wants data centers paying a fair share; would explore updated fees and possible levies.",
+    "chip": "Data centers' fair share",
+    "source": "add the Washington County pamphlet p.4 for the data-center clause"
+   }
+  },
+  {
+   "candidateId": "nafisa-fai",
+   "race": "washington-chair",
+   "item": "topic/wash-budget-gap",
+   "kind": "lean",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Would update service fees and consider local option levies for public safety and libraries to close a gap she puts at $20.5 million, while protecting funding for housing, transit and health care.",
+    "stance": "supports"
+   },
+   "sourceUrl": "https://www.nafisaforwashingtoncounty.com/priorities",
+   "sourceQuote": "Close the budget gap: Explore innovative solutions to increase revenue without overburdening taxpayers, including updating service fees and considering local option levies for critical services like public safety and libraries.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "Same drop as her money slot: 'explore ... without overburdening taxpayers' becomes 'would update service fees.' Stance 'supports' can stand once the text says 'explore,' since she names fees and levies as the tools for the gap.",
+   "proposed": {
+    "text": "Would explore new revenue without overburdening taxpayers, including updated service fees and local option levies for public safety and libraries, to close a gap she puts at $20.5 million, while protecting housing, transit and health care."
+   }
+  },
+  {
+   "candidateId": "paul-savas",
+   "race": "clackamas-position-2",
+   "item": "topic/clack-senior-tax",
+   "kind": "lean",
+   "fields": [
+    "stance",
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "mixed",
+    "chip": "Deferral, not county cuts"
+   },
+   "sourceUrl": "https://www.opb.org/pdf/Savas_clackamas%20county%20position%202_1777999802794.pdf",
+   "sourceQuote": "Over the years property tax relief for seniors has been of interest of mine, however the State does not allow Counties to independently reduce property taxes to seniors despite recent attempts by the state legislature. Nonetheless I will continue to advocate for property tax relief.",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "The question is whether he would push for relief, and he says plainly he will keep advocating for it; the state limit is a constraint, not a second direction. Shull gets 'supports' for a similar pledge, so 'mixed' understates Savas.",
+   "proposed": {
+    "stance": "supports",
+    "topicChip": "Keep advocating for relief"
+   }
+  },
+  {
+   "candidateId": "diana-helm",
+   "race": "clackamas-position-4",
+   "item": "topic/clack-senior-tax",
+   "kind": "lean",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Freeze for 65-plus",
+    "stance": "supports"
+   },
+   "sourceUrl": "https://www.opb.org/pdf/Helm_Clackamas%20County%20position%204_1777936583069.pdf",
+   "sourceQuote": "Getting ahead of it, potentially by freezing property taxes for those 65 and over within a certain income range, and partnering with senior services to ensure those fearing homelessness have the resources to stay in their homes is essential.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "The chip drops 'potentially' and the income limit, turning a floated option into a plan; the text keeps both. Stance 'supports' is borderline for a 'potentially' and fine only if the chip carries the hedge.",
+   "proposed": {
+    "topicChip": "Possible 65-plus freeze"
+   }
+  },
+  {
+   "candidateId": "mark-shull",
+   "race": "clackamas-position-2",
+   "item": "topic/clack-levy-2027",
+   "kind": "lean",
+   "fields": [
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "chip": "Renew, no rate hike",
+    "stance": "mixed",
+    "text": "Supports renewing the public safety levy at a responsible level to keep patrol, jail beds and body cameras, and would oppose unnecessary rate increases, funding core needs through disciplined budgeting instead."
+   },
+   "sourceUrl": "https://www.opb.org/pdf/Shull_clackamas%20county%20position%202_1777918550350.pdf",
+   "sourceQuote": "The current public safety levy expires at the end of 2026, and voters will decide on its renewal in May. I support renewing it at a responsible level to maintain critical services like patrol, jail beds, and body-worn cameras, but I'll oppose unnecessary rate increases. We should fund core safety needs through disciplined budgeting and economic growth that expands the tax base",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "The chip drops 'unnecessary' and 'responsible level,' turning a conditional into a flat no. The text also reads as a 2027 answer, but he wrote it before the May 2026 vote about that measure; 'mixed' is fine.",
+   "proposed": {
+    "topicChip": "Renew at responsible level",
+    "text": "Before the May 2026 vote, supported renewing the levy at a responsible level to keep patrol, jail beds and body cameras, and opposed unnecessary rate increases, funding core needs through disciplined budgeting and a growing tax base."
+   }
+  },
+  {
+   "candidateId": "mark-reaksecker",
+   "race": "clackamas-clerk",
+   "item": "topic/clack-voter-rolls",
+   "kind": "lean",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "County-level purge",
+    "stance": "supports"
+   },
+   "sourceUrl": "https://www.markforcountyclerk.com/solutions",
+   "sourceQuote": "Verify county voter rolls. Eliminate the deceased and out of county voter from the rolls. We don't want non-Clackamas County Citizens voting in our elections.",
+   "category": [
+    "c"
+   ],
+   "verdict": "confirmed",
+   "why": "He says 'verify' the rolls; 'purge' is his critics' word for it. Stance and text are fine. The topic question itself also says 'purges' while the topic label says 'County voter-roll checks'; the lead may want to align the question too.",
+   "proposed": {
+    "topicChip": "County voter-roll checks"
+   }
+  },
+  {
+   "candidateId": "r-w-smith",
+   "race": "clackamas-position-4",
+   "item": "topic/clack-data-centers",
+   "kind": "lean",
+   "fields": [
+    "topic-text",
+    "stance"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Keep them out",
+    "text": "Opposes bringing large-scale data centers into the county at all, citing their electricity, water and land demands and the infrastructure they require; his position is a ban rather than a pause."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=18",
+   "sourceQuote": "I oppose bringing large-scale data centers into Clackamas County. They consume enormous amounts of electricity, water, and land, while requiring costly new infrastructure.",
+   "category": [
+    "a",
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "He never proposes a ban or says anything about the moratorium or waiting for the Legislature; 'his position is a ban rather than a pause' supplies a policy he did not state. With the exact choice unaddressed, 'partial' fits the guide's rule (stance change is the arguable part).",
+   "proposed": {
+    "stance": "partial",
+    "text": "Opposes bringing large-scale data centers into the county, citing their electricity, water and land demands and the infrastructure they require; whether to adopt the moratorium now or wait for the Legislature is unsaid."
+   }
+  },
+  {
+   "candidateId": "diana-helm",
+   "race": "clackamas-position-4",
+   "item": "issue/climate",
+   "kind": "citation",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Led a moratorium on large data centers so the county can gather facts and hear the public before deciding, and would advocate for the Sunrise Corridor freight route.",
+    "line": "Pauses large data centers to study impacts; backs the Sunrise Corridor freight route."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=18",
+   "sourceQuote": "When Diana learned the County had no ordinances specifically addressing data center development, she led the effort for a moratorium on large data centers, giving the County time to gather facts, analyze impacts, and involve the public before making decisions.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The cited pamphlet page never mentions the Sunrise Corridor; that pledge is on votedianahelm.com ('I will continue to advocate for the Sunrise Corridor so freight can move safely through the county'). Wording is fine; add the home page as a source or drop the clause.",
+   "proposed": {
+    "source": "add https://www.votedianahelm.com/ for the Sunrise clause",
+    "line": "Led the push to pause large data centers while the county studies impacts.",
+    "position": "Led the effort for a moratorium on large data centers so the county can gather facts, analyze impacts and involve the public before deciding."
+   }
+  },
+  {
+   "candidateId": "r-w-smith",
+   "race": "clackamas-position-4",
+   "item": "issue/safety",
+   "kind": "citation",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would give police and first responders the resources they need, expand treatment for addiction and mental illness, and insist on measurable outcomes.",
+    "line": "Resources police and first responders; expands treatment with measurable outcomes."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=18",
+   "sourceQuote": "I support treatment for addiction and mental illness, but I also insist on measurable outcomes. We need streamlined ways to get people into treatment beds while keeping our communities safe. Public safety, accountability, and compassion must work together.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The pamphlet says nothing about police or first-responder resources and says 'support' treatment, not 'expand'; both are on his policies page ('Ensuring law enforcement, fire, and emergency responders have the resources they need'; 'Expanding treatment programs'). Cite that page too, or keep to the pamphlet.",
+   "proposed": {
+    "source": "add https://friendsofremysmith.org/policies/",
+    "position": "Supports treatment for addiction and mental illness but insists on measurable outcomes, with streamlined ways to get people into treatment beds while keeping communities safe.",
+    "line": "Supports addiction and mental-health treatment with measurable outcomes; faster entry to treatment beds."
+   }
+  },
+  {
+   "candidateId": "r-w-smith",
+   "race": "clackamas-position-4",
+   "item": "issue/money",
+   "kind": "citation",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would put major public projects and long-term contracts through independent fiscal review, report budgets and obligations openly, and end subsidies to large data centers.",
+    "line": "Puts major projects through independent fiscal review; ends data-center subsidies."
+   },
+   "sourceUrl": "https://friendsofremysmith.org/policies/",
+   "sourceQuote": "Independent fiscal review of major public projects and long-term financial agreements • Transparent reporting of county budgets and long-term obligations",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The policies page has only an empty 'No Data Centers!' heading; the subsidies pledge is on his home page ('we need to build new clean energy capacity while ending subsidies to massive data centers'). Add the home page as a source or drop the clause.",
+   "proposed": {
+    "source": "add https://friendsofremysmith.org/ for the subsidies clause",
+    "position": "Would put major public projects and long-term financial agreements through independent fiscal review and report county budgets and long-term obligations openly.",
+    "line": "Puts major projects through independent fiscal review; reports budgets and obligations openly."
+   }
+  },
+  {
+   "candidateId": "r-w-smith",
+   "race": "clackamas-position-4",
+   "item": "issue/climate",
+   "kind": "citation",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Opposes bringing large-scale data centers into the county, citing their electricity, water and land demands, and would build new clean-energy capacity.",
+    "line": "Opposes large data centers over electricity, water and land; builds clean energy."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=18",
+   "sourceQuote": "I oppose bringing large-scale data centers into Clackamas County. They consume enormous amounts of electricity, water, and land, while requiring costly new infrastructure.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Clean energy is not in the pamphlet; it is on his home page, framed as a way to lower utility rates. Add the home page as a source or drop the clause.",
+   "proposed": {
+    "source": "add https://friendsofremysmith.org/ for the clean-energy clause",
+    "position": "Opposes bringing large-scale data centers into the county, citing their electricity, water and land demands and the costly new infrastructure they require.",
+    "line": "Opposes large data centers over electricity, water, land and infrastructure costs."
+   }
+  },
+  {
+   "candidateId": "nafisa-fai",
+   "race": "washington-chair",
+   "item": "issue/housing",
+   "kind": "citation",
+   "fields": [
+    "position",
+    "line",
+    "chip"
+   ],
+   "current": {
+    "chip": "Public land for housing",
+    "line": "Wants public land for housing, faster affordable-housing permits and down-payment help."
+   },
+   "sourceUrl": "https://www.nafisaforwashingtoncounty.com/priorities",
+   "sourceQuote": "Nafisa will lead with common sense, increase housing supply by streamlining permitting and allowing more diverse housing options, expand workforce housing so essential workers can live where they work, and invest in energy efficiency and utility assistance to lower monthly bills.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The cited priorities page has no public land and no down-payment help; both are on her home page ('transforming public land into community-driven housing, fast-tracking permitting for affordable development, and investing in down payment support'). The wording is faithful, but the cite needs the home page.",
+   "proposed": {
+    "source": "cite https://www.nafisaforwashingtoncounty.com/ (home page), alone or with /priorities"
+   }
+  },
+  {
+   "candidateId": "steve-callaway",
+   "race": "washington-district-4",
+   "item": "issue/money",
+   "kind": "citation",
+   "fields": [
+    "chip",
+    "position"
+   ],
+   "current": {
+    "chip": "Keep taxes in check",
+    "position": "Wants taxes kept in check and taxpayer dollars protected through responsible budgeting and accountability; no specific fee or tax change is named."
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=5",
+   "sourceQuote": "Protect taxpayers through responsible budgeting and accountability.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "'Keep taxes in check' is on his issues page ('make smart decisions that keep taxes in check'), not in the cited pamphlet. Add the issues page as a source, or change the chip to match the pamphlet.",
+   "proposed": {
+    "source": "add https://electstevecallaway.com/issues/",
+    "chip": "Protect taxpayers"
+   }
+  },
+  {
+   "candidateId": "pam-treece",
+   "race": "washington-chair",
+   "item": "topic/wash-ice-emergency",
+   "kind": "citation",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Voted for the November 4, 2025 declaration and $200,000 in aid, thanking the colleagues who drafted it and criticizing federal enforcement actions in the county."
+   },
+   "sourceUrl": "https://washingtoncounty.civicweb.net/document/317404",
+   "sourceQuote": "Commissioner Treece commented on Immigration and Customs Enforcement (ICE) actions in Washington County. She commented and gave thanks to Commissioners for their efforts.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The minutes record only that she 'commented on' ICE actions. Her criticism is real but comes from her OPB answer ('The ICE activity our communities experienced last fall was horrific'), not the cited minutes.",
+   "proposed": {
+    "text": "Voted for the November 4, 2025 declaration and $200,000 in aid; the minutes record that she commented on ICE actions in the county and thanked commissioners for their efforts."
+   }
+  },
+  {
+   "candidateId": "pam-treece",
+   "race": "washington-chair",
+   "item": "issue/safety",
+   "kind": "lean",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Supports more public-safety investment, including safe schools, parks and trails, and protection from ICE."
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=4",
+   "sourceQuote": "Real investments in public safety, including safe schools, parks, and trails. • Protecting our residents from ICE.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "She says 'real' investments, not 'more'; the position already says 'real,' so only the line drifts.",
+   "proposed": {
+    "line": "Supports real public-safety investment, including safe schools, parks and trails, and protection from ICE."
+   }
+  },
+  {
+   "candidateId": "nafisa-fai",
+   "race": "washington-chair",
+   "item": "topic/wash-enterprise-zone",
+   "kind": "lean",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Data centers pay more"
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=4",
+   "sourceQuote": "As Chair, I will keep our communities safe, support economic and job growth, protect affordability, make Data Centers pay fair share and safeguard tax dollars.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "'Fair share' implies more but leaves the amount open; the text already uses her words, so only the chip goes further.",
+   "proposed": {
+    "topicChip": "Data centers' fair share"
+   }
+  },
+  {
+   "candidateId": "paul-savas",
+   "race": "clackamas-position-2",
+   "item": "issue/climate",
+   "kind": "lean",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Opposes tolling; widens I-205 and builds the Sunrise Project; protects farmland.",
+    "position": "Opposes ODOT tolling and would add road capacity through the Sunrise Project and I-205 widening, while protecting farmland and open space."
+   },
+   "sourceUrl": "https://electpaulsavas.com/issues/",
+   "sourceQuote": "Oppose ODOT’s regional tolling plans that divert traffic into local neighborhoods ... Support major infrastructure improvements like the Sunrise Project and I-205 expansion to add capacity and improve traffic flow",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "He says he supports these state-led projects; 'widens I-205 and builds the Sunrise Project' puts them in his hands.",
+   "proposed": {
+    "line": "Opposes ODOT tolling; backs I-205 widening and the Sunrise Project; protects farmland.",
+    "position": "Opposes ODOT’s regional tolling plans and supports the Sunrise Project and I-205 expansion to add road capacity, while protecting farmland and open space."
+   }
+  },
+  {
+   "candidateId": "diana-helm",
+   "race": "clackamas-position-4",
+   "item": "issue/housing",
+   "kind": "lean",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Speeds permitting (building approvals) and cuts rules to build affordable homes; keeps shelters.",
+    "position": "Would increase affordable housing by cutting regulatory burdens and speeding up permitting, and keep shelter, recovery and support services available to people who are homeless."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=18",
+   "sourceQuote": "Diana supports increasing affordable housing while reducing unnecessary regulatory burdens and improving the permitting process so homes can be built more efficiently and affordably.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "'Cuts rules' and 'cutting regulatory burdens' drop her limit to 'unnecessary' burdens.",
+   "proposed": {
+    "line": "Would reduce unnecessary rules and improve permitting (building approvals); keeps shelter services.",
+    "position": "Would increase affordable housing by reducing unnecessary regulatory burdens and improving the permitting process, and keep shelter, recovery and support services available to people who are homeless."
+   }
+  },
+  {
+   "candidateId": "r-w-smith",
+   "race": "clackamas-position-4",
+   "item": "issue/housing",
+   "kind": "lean",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Faster permitting (building approvals), limits on corporate home buying, more shelter beds.",
+    "position": "Would encourage housing working families can afford, streamline permitting for small builders, limit corporate purchases of homes, and add shelter beds paired with case management."
+   },
+   "sourceUrl": "https://friendsofremysmith.org/policies/",
+   "sourceQuote": "Protect housing supply from speculative corporate ownership that drives up prices",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The cited page targets 'speculative' corporate ownership, and his home page says 'large corporations'; 'corporate home buying' drops both limits.",
+   "proposed": {
+    "line": "Faster permitting (building approvals), limits on large corporations buying homes, more shelter beds.",
+    "position": "Would encourage housing working families can afford, streamline permitting for small builders, protect housing supply from speculative corporate ownership, and add shelter beds paired with case management."
+   }
+  },
+  {
+   "candidateId": "paul-savas",
+   "race": "clackamas-position-2",
+   "item": "topic/clack-levy-2027",
+   "kind": "lean",
+   "fields": [
+    "stance",
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Work aggressively, retry",
+    "text": "Told the June 2 policy session after the levy's defeat that the county has a lot of work to do and must do it aggressively before returning to voters; the rate is unsaid."
+   },
+   "sourceUrl": "https://youroregonnews.com/2026/06/04/after-failure-of-public-safety-levy-clackamas-county-goes-back-to-the-drawing-board/",
+   "sourceQuote": "the board agreed to initiate a public outreach campaign ... before potentially putting another levy ballot measure forward in November. ... “We have a lot of work to do and we have to do it aggressively,” Commissioner Paul Savas said.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "His quote backs outreach, not an explicit yes on asking again, and the board's plan was only 'potentially' another measure. 'Supports' holds only if the July 28 decision for a May 2027 referral is a recorded vote he cast; if so, cite it.",
+   "proposed": {
+    "stance": "partial",
+    "topicChip": "Work aggressively first",
+    "text": "Told the June 2 policy session, as the board planned outreach before a possible new levy, that the county has a lot of work to do and must do it aggressively; the rate is unsaid."
+   }
+  },
+  {
+   "candidateId": "diana-helm",
+   "race": "clackamas-position-4",
+   "item": "topic/clack-levy-2027",
+   "kind": "lean",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Told the June 2 policy session after the levy's defeat that there needs to be a real effort right now to get out in front of people before asking again; the rate is unsaid."
+   },
+   "sourceUrl": "https://youroregonnews.com/2026/06/04/after-failure-of-public-safety-levy-clackamas-county-goes-back-to-the-drawing-board/",
+   "sourceQuote": "Commissioner Diana Helm added: “There needs to be a real effort right now to get out in front of people.”",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "Same problem as Savas: her quote is about outreach, and 'before asking again' is the article's framing of a possible measure. Keep 'supports' only if a recorded July 28 vote is cited.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Told the June 2 policy session, as the board planned outreach before a possible new levy, that there needs to be a real effort right now to get out in front of people; the rate is unsaid."
+   }
+  },
+  {
+   "candidateId": "paul-savas",
+   "race": "clackamas-position-2",
+   "item": "topic/clack-sanctuary",
+   "kind": "lean",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "mixed",
+    "chip": "Follow both laws",
+    "text": "Says the county should follow both state and federal law while sanctuary cases play out in court, noting the Sheriff's Office responds to judicial warrants after losing a past detainer lawsuit; a county declaration is not endorsed."
+   },
+   "sourceUrl": "https://www.opb.org/pdf/Savas_clackamas%20county%20position%202_1777999802794.pdf",
+   "sourceQuote": "Because of interpretations of State law, and recent legal challenges we do our best to comply within the parameters of the law, which at times conflict with federal law. ... the Sheriffs office’s practice currently is to respond to judicial warrants ... In summary the County cannot afford to lose any more taxpayer dollars on this issue.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "He never answers yes or no on a declaration, which the guide calls 'partial' (Helm's similar non-answer is 'partial'). The text also drops his main reason, the cost of losing more lawsuits.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Says the county complies with state law, which at times conflicts with federal law, and cannot afford to lose more taxpayer dollars; the Sheriff's Office responds to judicial warrants. A county declaration is unsaid."
+   }
+  },
+  {
+   "candidateId": "brad-o-neil",
+   "race": "clackamas-sheriff",
+   "item": "topic/clack-sheriff-cuts",
+   "kind": "lean",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Front line protected",
+    "text": "Would protect core public-safety services first, direct resources to the front line, guide staffing and spending with data and eliminate waste so the office runs leaner."
+   },
+   "sourceUrl": "https://www.oneilforsheriff.com/brads-priorities/",
+   "sourceQuote": "Budget pressure is real and it isn’t going away. I’ll protect core public safety services first and make sure resources reach the front line, where they keep people safe. ... cut what wastes time and money so the office runs leaner and works better.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "He covers the 'protect patrol and jail' half but never says administration or programs go first. Rhodes, who does say so, gets the same 'supports.' The same quote earns only 'partial' on the levy topic.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Would protect core public-safety services first, direct resources to the front line, guide staffing and spending with data and cut waste; which programs or administrative costs he would cut first is unsaid."
+   }
+  },
+  {
+   "candidateId": "brian-t-nava",
+   "race": "clackamas-treasurer",
+   "item": "topic/clack-cash-controls",
+   "kind": "lean",
+   "fields": [
+    "topic-text",
+    "topic-chip",
+    "position"
+   ],
+   "current": {
+    "text": "Says he set a strategy for good cash controls across the county by offering free training to all cities, districts and county employees, and would keep improving banking functions.",
+    "chip": "Free training continues",
+    "position": "Would keep county funds safe and liquid first while seeking the best return possible, and keep building cash controls across the county."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=15",
+   "sourceQuote": "As Treasurer, Brian has implemented a strategy to ensure good cash controls throughout the County by offering free training to all cities, districts and county employees. ... Brian has led the Treasurer’s office to introduce and improve many banking functions.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The training and banking points are past accomplishments; the pamphlet's only forward pledge is about investing. 'Would keep improving' and 'continues' add a promise. His record makes 'supports' defensible.",
+   "proposed": {
+    "text": "Says he set a strategy for good cash controls across the county by offering free training to all cities, districts and county employees, and has introduced and improved banking functions.",
+    "topicChip": "Offered free training",
+    "position": "Would keep county funds safe and liquid first while seeking the best return possible; has built cash controls across the county through free training."
+   }
+  },
+  {
+   "candidateId": "paul-savas",
+   "race": "clackamas-position-2",
+   "item": "issue/housing",
+   "kind": "citation",
+   "fields": [
+    "position",
+    "chip"
+   ],
+   "current": {
+    "chip": "Recovery Campus, units",
+    "position": "Would keep expanding affordable housing of varied types and move people from homelessness into treatment and transitional housing through the county’s Recovery Campus."
+   },
+   "sourceUrl": "https://electpaulsavas.com/issues/",
+   "sourceQuote": "Expand affordable housing options across the county ... Invest in solutions that move people from homelessness to independence ... Build on proven successes like Veterans Village and a recovery-oriented system of care",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The cited issues page never names the Recovery Campus. His pamphlet (p.17) and his April 9 post do. Add one of them as a source.",
+   "proposed": {
+    "source": "add Clackamas pamphlet p.17 or https://electpaulsavas.com/real-solutions-on-homelessness-and-mental-health/"
+   }
+  },
+  {
+   "candidateId": "pam-treece",
+   "race": "washington-chair",
+   "item": "issue/housing",
+   "kind": "citation",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Wants the county to hit the gas on building housing while braking on taxes; her site backs a range of housing types for all ages and incomes and preserving existing affordable homes."
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=4",
+   "sourceQuote": "Putting the brakes on taxing residents and hitting the gas on building housing.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The 'her site' half is accurate but is on pamforwashingtoncounty.com/priorities/, which is not cited ('Pam supports a range of housing opportunities for all ages and income levels ... leading efforts to preserve existing affordable homes').",
+   "proposed": {
+    "source": "add https://www.pamforwashingtoncounty.com/priorities/"
+   }
+  }
+ ]
+}

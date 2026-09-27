@@ -35,7 +35,7 @@ const line = (candidateId: string, issue: IssueLine["issue"], text: string): Iss
 const councilLines: IssueLine[] = [
   /* ── Portland City Council, District 3 ─────────────────────────────── */
 
-  line("ali-beaudoin", "housing", "More supply, simpler permits, workforce housing and rate help for first-time buyers."),
+  line("ali-beaudoin", "housing", "More supply, simpler permits, workforce housing; would explore rate help for first-time buyers."),
   line("ali-beaudoin", "safety", "Enforcement for crime, prevention through services, non-police care where needed."),
   line("ali-beaudoin", "climate", "Street maintenance, sidewalks, safer crossings and reliable buses first; keeps bike work."),
   line("ali-beaudoin", "money", "Wants spending reviewed for waste and program results measured, before new policies."),
@@ -43,14 +43,14 @@ const councilLines: IssueLine[] = [
   line("joel-corcoran", "money", "Proposes independent Council budget and legal offices, monthly budget reviews, contract audits."),
   line("joel-corcoran", "climate", "Supports expanded public utility options."),
 
-  line("guy-frankenstein", "money", "Wants billion-dollar companies to contribute more."),
+  line("guy-frankenstein", "money", "Wants to “bleed every billion dollar company” in the city; names no tax."),
 
   line("matthias-hallett", "housing", "Supports faster building permits and deadlines when applications stall."),
   line("matthias-hallett", "safety", "Wants two police officers per 1,000 residents, without raising taxes."),
   line("matthias-hallett", "money", "Wants audits, limits on unaccountable spending, lighter business burdens, a deal keeping the Blazers."),
 
-  line("patrick-hilton", "housing", "Wants adaptive reuse (converting existing buildings), community land trusts and co-housing, with ownership pathways."),
-  line("patrick-hilton", "safety", "Supports safe-sleeping infrastructure alongside consistent rules for public space."),
+  line("patrick-hilton", "housing", "Wants adaptive reuse (converting existing buildings) and pilot land trusts and co-housing."),
+  line("patrick-hilton", "safety", "Would expand safe-sleeping infrastructure and enforce consistent public-space rules."),
   line("patrick-hilton", "money", "Proposes taxes on vacant units and polluters, and shifting money from consultants."),
 
   line("larry-kelly", "housing", "Supports expanding housing choices and removing unnecessary barriers."),
@@ -61,7 +61,7 @@ const councilLines: IssueLine[] = [
   line("tiffany-koyama-lane", "money", "Supports public services, stronger union contracts, regulating corporations, and lower burdens on working families."),
   line("tiffany-koyama-lane", "climate", "Wants Vision Zero (no traffic deaths), bike and transit infrastructure, trees, a data-center moratorium."),
 
-  line("kenneth-kent-r-landgraver-iii", "money", "Wants tax dollars to support public work."),
+  line("kenneth-kent-r-landgraver-iii", "money", "Wants every tax dollar to go to doing the people’s work."),
 
   line("keir-legree", "housing", "Supports more housing supply, faster permits, and more government-owned affordable homes."),
   line("keir-legree", "safety", "Wants more police and dispatchers; shelter and treatment judged by measurable results."),
@@ -69,28 +69,28 @@ const councilLines: IssueLine[] = [
   line("keir-legree", "climate", "Supports lower emissions and walking, biking, transit and driving improvements where need is shown."),
 
   line("esther-leon", "housing", "Would expand social (public or nonprofit) housing, simplify land-use rules, tax large landlords' vacancies."),
-  line("esther-leon", "safety", "Would fund Street Response, expand unarmed (non-police) specialists, reduce armed responses; opposes camp sweeps."),
+  line("esther-leon", "safety", "Would fund Street Response, expand Police Bureau's unarmed specialists, reduce armed responses; opposes sweeps."),
   line("esther-leon", "money", "Proposes land-value taxes, targeted taxes on vacant property, and exploring basic income for artists."),
   line("esther-leon", "climate", "Supports protected bikeways, car-free plazas, later transit service, regional transit funding; opposes Waymo robotaxis."),
 
-  line("darren-mccormick", "safety", "Wants more police and jail for people he calls dangerous and drug-affected."),
+  line("darren-mccormick", "safety", "Wants more police and jail for drug users he calls dangerously unstable."),
 
-  line("angelita-morillo", "housing", "Supports stronger tenant rights and shelter design involving unhoused residents."),
+  line("angelita-morillo", "housing", "Supports tenant rights, expanded homeownership and shelters by and for unhoused people."),
   line("angelita-morillo", "safety", "Supports Street Response, violence prevention and police accountability."),
-  line("angelita-morillo", "money", "Wants public investment to come first."),
-  line("angelita-morillo", "climate", "Supports transit, bike lanes and sidewalks; opposes oil-train and data-center expansion."),
+  line("angelita-morillo", "money", "Wants a fair Moda deal; led an investigation into undisclosed taxpayer dollars."),
+  line("angelita-morillo", "climate", "Supports transit, bike lanes, sidewalks; wants oil trains and data-center expansion shut down."),
 
   line("steve-novick", "housing", "Supports faster building permits, attracting housing investment, stronger mental-health and addiction services."),
   line("steve-novick", "safety", "Would add property-crime detectives, shift welfare checks to non-police responders, remove hazardous camps only."),
   line("steve-novick", "money", "Wants lower Council office budgets, fair Moda deal, Arts Tax replacement preserving arts funding."),
   line("steve-novick", "climate", "Supports using PCEF (clean-energy fund) for transit and possibly water filtration, offsetting rate increases."),
 
-  line("cristal-otero", "housing", "Supports homes across incomes; would move 5–20% of city-regulated affordable rentals to co-ops."),
-  line("cristal-otero", "safety", "Supports emergency response alongside prevention, behavioral health and housing stability."),
+  line("cristal-otero", "housing", "Proposes a gradual, resident-chosen path for 5–20% of city-regulated affordable rentals to become co-ops."),
+  line("cristal-otero", "safety", "Would maintain strong emergency response while investing in prevention, behavioral health, housing stability."),
   line("cristal-otero", "money", "Would test program results; for new revenue, prefers taxing wealthiest households and largest corporations."),
   line("cristal-otero", "climate", "Wants Portland Clean Energy Fund spending to remain tied to climate purposes."),
 
-  line("terry-parker", "safety", "Supports police and fire staffing and long-term support for unhoused people."),
+  line("terry-parker", "safety", "Would fund more police officers, fully staffed fire stations, and wraparound services for self-sufficiency."),
   line("terry-parker", "money", "Would maintain streets and parks before funding new projects."),
   line("terry-parker", "climate", "Opposes business-access-and-transit lanes on 82nd Avenue."),
 
@@ -132,10 +132,10 @@ const councilLines: IssueLine[] = [
 
   line("olivia-clark", "housing", "Would speed up permits, reduce development fees for affordable housing, and seek federal funding."),
   line("olivia-clark", "safety", "Would remove street camping and public drug use while adding shelter, treatment, sobering capacity."),
-  line("olivia-clark", "money", "Wants core services and business recovery to come first."),
+  line("olivia-clark", "money", "Supports small business and economic development; cites protected police and fire funding."),
   line("olivia-clark", "climate", "Wants water, sewer and street systems that withstand heat, drought and extreme weather."),
 
-  line("jayne-cronlund", "housing", "Hold housing nonprofits accountable; speed downtown office-to-housing conversions."),
+  line("jayne-cronlund", "housing", "Hold housing nonprofits accountable; explore faster downtown office-to-housing conversions."),
   line("jayne-cronlund", "safety", "Modest police increase tied to response times; closer checks on housing nonprofits."),
   line("jayne-cronlund", "money", "Supports living-wage jobs, a creative and sustainable economy, and regular reporting on government goals."),
   line("jayne-cronlund", "climate", "Wants parks, trails, natural areas and business districts to come first."),
@@ -148,10 +148,10 @@ const councilLines: IssueLine[] = [
   line("mitch-green", "housing", "Supports permanently affordable social (public or nonprofit) housing, income-linked rents, tenant unions helping govern."),
   line("mitch-green", "safety", "Would protect and expand Street Response and defend unarmed responders from budget cuts."),
   line("mitch-green", "money", "Wants public dollars in public assets and cooperative ownership; counts preschool as economic development."),
-  line("mitch-green", "climate", "Would expand PCEF (clean-energy fund) for transit, not Moda or added policing."),
+  line("mitch-green", "climate", "Would expand PCEF (clean-energy fund); opposes using it for Moda or added policing."),
 
   line("josh-leake", "housing", "Would combine public, private and federal resources to develop housing."),
-  line("josh-leake", "safety", "Would combine crime and disorder responses with behavioral-health services and dignity for unhoused people."),
+  line("josh-leake", "safety", "Would pair data-informed enforcement on property crime and disorder with dignity for unsheltered people."),
   line("josh-leake", "money", "Supports creative and technology industries and activating public spaces."),
 
   line("john-mcdonald", "safety", "Would limit new homelessness contracts and scrutinize existing providers."),

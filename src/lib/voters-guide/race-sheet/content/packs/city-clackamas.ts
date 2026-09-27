@@ -179,7 +179,7 @@ const loAnalysis: Record<string, CandidateAnalysis> = {
       },
       climate: {
         position:
-          "Would invest in infrastructure and mobility to improve traffic, safety and connectivity, with clean energy and environmental stewardship built into major decisions.",
+          "Would invest in infrastructure and mobility to improve traffic, safety and connectivity, and grow smart and sustainably while protecting neighborhoods and the environment.",
         source: pamphlet(29),
       },
     },
@@ -213,7 +213,7 @@ const loAnalysis: Record<string, CandidateAnalysis> = {
       },
       safety: {
         position:
-          "Would keep prioritizing mental-health first responders, build on community policing, and expand emergency preparedness.",
+          "Would keep prioritizing mental-health first responders, build on prior conversations about community policing, and expand access to emergency-preparedness resources.",
         source: tiemannIssues,
       },
       money: {
@@ -235,12 +235,12 @@ const loAnalysis: Record<string, CandidateAnalysis> = {
     issues: {
       housing: {
         position:
-          "Would implement state housing mandates in ways that conform to Lake Oswego’s building standards and keep neighborhood character.",
+          "Says Salem oversteps and would manage the state’s housing orders so they conform to Lake Oswego’s building standards and maintain neighborhood character.",
         source: pamphlet(31),
       },
       money: {
         position:
-          "Would spend tax dollars only where they add value and manage the money for the North Anchor, fire station, sewer plant and library so they land on budget and on time.",
+          "Would spend tax dollars only where they add value and manage taxpayer money so the North Anchor, fire station and sewer treatment facility land on budget and on time.",
         source: pamphlet(31),
       },
       climate: {
@@ -292,12 +292,12 @@ const loAnalysis: Record<string, CandidateAnalysis> = {
       },
       money: {
         position:
-          "Would keep budgets balanced and costs predictable, prioritize core infrastructure, and explain every fee, bond and levy clearly.",
-        source: pamphlet(30),
+          "Wants balanced budgets and predictable costs, investment in roads, water systems, wastewater and emergency services, and clear explanations for fees, bonds and levies.",
+        source: walshPlatform,
       },
       climate: {
         position:
-          "Would protect tree canopy and watersheds, invest in sustainable infrastructure, and calm cut-through traffic and speeding with data-driven fixes.",
+          "Would protect tree canopy and watersheds and make forward-looking investments in sustainable local infrastructure.",
         source: pamphlet(30),
       },
     },
@@ -306,17 +306,17 @@ const loAnalysis: Record<string, CandidateAnalysis> = {
 };
 
 const loLines: IssueLine[] = [
-  line("bryan-guiney", "housing", "Focuses new density in centers and corridors, not across established neighborhoods."),
+  line("bryan-guiney", "housing", "Would focus density in centers and corridors, not uniformly across established neighborhoods."),
   line("bryan-guiney", "money", "Keeps the budget balanced with long-range planning and controlled project scope."),
-  line("bryan-guiney", "climate", "Invests in mobility and infrastructure, with clean energy built into major decisions."),
+  line("bryan-guiney", "climate", "Would invest in infrastructure and mobility to improve traffic, safety and connectivity."),
   line("suzanne-miles", "safety", "Supports local police and firefighters to keep the community safe."),
   line("suzanne-miles", "climate", "Nurtures natural resources to keep Lake Oswego green."),
-  line("peren-tiemann", "housing", "Adds housing options for renters, seniors and first-time buyers via subsidies, incentives."),
-  line("peren-tiemann", "safety", "Keeps mental-health first responders a priority; builds on community policing."),
+  line("peren-tiemann", "housing", "Would explore subsidies, rental assistance and incentives for renters, seniors and first-time buyers."),
+  line("peren-tiemann", "safety", "Would keep mental-health first responders a priority and build on community-policing conversations."),
   line("peren-tiemann", "money", "Keeps city budgeting realistic and sound; keeps costs of living low."),
-  line("peren-tiemann", "climate", "Expands transit, bike and walking options with TriMet and community shuttles."),
-  line("neil-tunmore", "housing", "Implements state housing mandates within Lake Oswego’s building standards and character."),
-  line("neil-tunmore", "money", "Holds North Anchor, fire station, sewer plant and library to budget and schedule."),
+  line("peren-tiemann", "climate", "Would expand transit, bike and walking options with TriMet and explore community shuttles."),
+  line("neil-tunmore", "housing", "Would manage Salem’s housing orders to fit Lake Oswego building standards and character."),
+  line("neil-tunmore", "money", "Would keep North Anchor, fire station and sewer plant on budget, on time."),
   line("neil-tunmore", "climate", "Makes school walking routes safer; plans for growth, cars and new transportation."),
   line("heather-ramsey", "housing", "Balances state housing mandates with local needs and community character."),
   line("heather-ramsey", "safety", "Supports police, fire and emergency preparedness."),
@@ -324,15 +324,15 @@ const loLines: IssueLine[] = [
   line("heather-ramsey", "climate", "Safeguards parks and waterways through environmental stewardship."),
   line("patrick-walsh", "housing", "Directs new homes to areas with existing infrastructure; keeps design standards, trees."),
   line("patrick-walsh", "safety", "Gives police, fire and medical teams the staffing and equipment for rapid response."),
-  line("patrick-walsh", "money", "Keeps budgets balanced, costs predictable; explains every fee, bond and levy."),
-  line("patrick-walsh", "climate", "Protects tree canopy and watersheds; calms cut-through traffic with data."),
+  line("patrick-walsh", "money", "Wants balanced budgets, predictable costs and clear explanations of fees, bonds and levies."),
+  line("patrick-walsh", "climate", "Would protect tree canopy and watersheds and invest in sustainable local infrastructure."),
 ];
 
 const loChips: StanceChip[] = [
   chip("bryan-guiney", "housing", "Density in centers"),
   chip("bryan-guiney", "money", "Budget in the black"),
   chip("bryan-guiney", "climate", "Mobility, clean energy"),
-  chip("suzanne-miles", "safety", "Back police and fire"),
+  chip("suzanne-miles", "safety", "Support police and fire"),
   chip("suzanne-miles", "climate", "Keep LO green"),
   chip("peren-tiemann", "housing", "Renter, senior options"),
   chip("peren-tiemann", "safety", "Mental-health responders"),
@@ -348,7 +348,7 @@ const loChips: StanceChip[] = [
   chip("patrick-walsh", "housing", "Homes where services are"),
   chip("patrick-walsh", "safety", "Staff emergency services"),
   chip("patrick-walsh", "money", "Predictable costs"),
-  chip("patrick-walsh", "climate", "Tree canopy, calm traffic"),
+  chip("patrick-walsh", "climate", "Tree canopy, watersheds"),
 ];
 
 const loDeliveries: Delivery[] = [
@@ -569,7 +569,7 @@ const ocMayorAnalysis: Record<string, CandidateAnalysis> = {
       },
       money: {
         position:
-          "Would take a hard look at the city budget to find money to fix the park system, through cost savings rather than new revenue.",
+          "Would take a hard look at the city budget to find the money to fix the park system, as deliberate cost savings kept the pool open in 2004.",
         source: pamphlet(37),
       },
     },
@@ -610,7 +610,7 @@ const ocMayorAnalysis: Record<string, CandidateAnalysis> = {
     issues: {
       housing: {
         position:
-          "Would create affordable housing by cutting permits, fees and regulations so builders can produce homes of all types, from ADUs (backyard cottages) to apartments.",
+          "Would create affordable housing by reducing or eliminating unnecessary regulations, permits and fees so builders can produce homes of all types, from ADUs (backyard cottages) to apartments.",
         source: pamphlet(38),
       },
       safety: {
@@ -620,7 +620,7 @@ const ocMayorAnalysis: Record<string, CandidateAnalysis> = {
       },
       money: {
         position:
-          "Would cut permit and business fees, and fund parks from the growth revenue that follows, without raising taxes.",
+          "Would reduce or eliminate unnecessary permits and fees, and fund parks from the new revenue that follows, without raising taxes.",
         source: pamphlet(38),
       },
       climate: {
@@ -634,14 +634,14 @@ const ocMayorAnalysis: Record<string, CandidateAnalysis> = {
 
 const ocMayorLines: IssueLine[] = [
   line("damon-mabee", "safety", "Keeps parks active and maintained so they do not become camps."),
-  line("damon-mabee", "money", "Finds money for parks through budget cost savings, not new revenue."),
+  line("damon-mabee", "money", "Would take a hard look at the budget to find money to fix parks."),
   line("adam-marl", "housing", "Encourages starter homes for homeownership; works regionally to connect homeless people with services."),
   line("adam-marl", "safety", "Funds police, behavioral health and youth substance-abuse programs; keeps public spaces clean."),
   line("adam-marl", "money", "Holds the line on property taxes; pushes lower residential utility fees."),
   line("adam-marl", "climate", "Fixes potholes, builds safe routes to school, opposes tolling."),
-  line("rodney-la-barr", "housing", "Cuts permits, fees and regulations so builders produce homes of all types."),
+  line("rodney-la-barr", "housing", "Would cut unnecessary permits, fees and regulations so builders produce homes of all types."),
   line("rodney-la-barr", "safety", "Reduces crime and homelessness through growth: active areas, revenue for services."),
-  line("rodney-la-barr", "money", "Cuts permit and business fees; funds parks from growth revenue, no tax increase."),
+  line("rodney-la-barr", "money", "Would cut unnecessary permits and fees; funds parks from new revenue, no tax increase."),
   line("rodney-la-barr", "climate", "Opposes any tolling of I-205."),
 ];
 
@@ -652,7 +652,7 @@ const ocMayorChips: StanceChip[] = [
   chip("adam-marl", "safety", "Police, behavioral health"),
   chip("adam-marl", "money", "No property-tax increase"),
   chip("adam-marl", "climate", "Potholes, safe routes"),
-  chip("rodney-la-barr", "housing", "Cut fees and permits"),
+  chip("rodney-la-barr", "housing", "Cut unneeded fees, permits"),
   chip("rodney-la-barr", "safety", "Growth deters crime"),
   chip("rodney-la-barr", "money", "Growth funds parks"),
   chip("rodney-la-barr", "climate", "No I-205 tolls"),
@@ -789,7 +789,7 @@ const ocCommAnalysis: Record<string, CandidateAnalysis> = {
       },
       money: {
         position:
-          "Would redirect urban-renewal tax dollars to police or to small citizen-designed projects, and keep residents’ right to vote on urban renewal.",
+          "Would restore urban-renewal tax dollars to police and, if urban renewal continues, prioritize small projects citizens help design and build; defends residents’ right to vote on urban renewal.",
         source: pamphlet(39),
       },
       climate: {
@@ -832,7 +832,7 @@ const ocCommAnalysis: Record<string, CandidateAnalysis> = {
       },
       money: {
         position:
-          "Would fund services by growing the tax base, removing barriers to business and welcoming development rather than blocking it.",
+          "Would fund services by growing a tax base, which he says the city cannot build if it blocks every development opportunity.",
         source: lawrenceAbout,
       },
       climate: {
@@ -849,13 +849,13 @@ const ocCommLines: IssueLine[] = [
   line("betty-mumm", "money", "Reviews any proposal that raises residents’ costs; grows the tax base."),
   line("james-nicita", "housing", "Defends the Park Place Concept Plan; develops its North Village neighborhood."),
   line("james-nicita", "safety", "Fully funds police by restoring tax dollars diverted to urban renewal."),
-  line("james-nicita", "money", "Redirects urban-renewal money to police or small citizen-designed projects."),
+  line("james-nicita", "money", "Would return urban-renewal money to police; if renewal continues, favors small citizen-designed projects."),
   line("james-nicita", "climate", "Opposes data centers; creates a North End solar district; builds Holly Lane Connector."),
   line("paul-espe", "safety", "Strengthens the city’s existing disaster-preparedness program."),
   line("paul-espe", "money", "Grows the tax base with business incentives; fills vacant buildings with taxpaying businesses."),
   line("paul-espe", "climate", "Protects the city’s natural resources."),
   line("gordon-j-lawrence", "housing", "Pursues more housing opportunities and stronger services for homeless people."),
-  line("gordon-j-lawrence", "money", "Funds services by growing the tax base; removes barriers to business."),
+  line("gordon-j-lawrence", "money", "Would fund services by growing the tax base and not blocking every development opportunity."),
   line("gordon-j-lawrence", "climate", "Gives more attention to parks, recreation and natural assets."),
 ];
 
@@ -1143,17 +1143,17 @@ const loTopics: ExtraTopic[] = [
 
 const loStances: TopicStance[] = [
   /* ── Bryan Guiney (Planning Commission votes are his recorded actions) ── */
-  stance("bryan-guiney", "lo-sewer-rates", "partial", "Plant a sound investment",
-    "Points to the new wastewater plant as an example of a long-term project with benefits and says the city has little deferred maintenance; whether to raise sewer bills 28% at once or 8% a year is unsaid.",
+  stance("bryan-guiney", "lo-sewer-rates", "partial", "Plant has long-term benefits",
+    "Points to the new wastewater plant as a long-term project with benefits and wants the city to budget for upkeep so there isn’t a lot of deferred maintenance; the 28% or 8%-a-year choice is unsaid.",
     reviewGuiney),
-  stance("bryan-guiney", "lo-housing-mandate", "supports", "Rezone offices, not neighborhoods",
+  stance("bryan-guiney", "lo-housing-mandate", "supports", "Density in centers, corridors",
     "Says density belongs in centers and corridors, “not imposed uniformly across established neighborhoods,” and backs reuse of struggling office land; as a planning commissioner voted December 8, 2025 to recommend the Kruse Way office-to-housing rezoning, 7–0.",
     loPcDec8),
   stance("bryan-guiney", "lo-tree-code", "supports", "Voted for tree rules",
     "As a planning commissioner voted June 8 and June 22, 2026 to recommend the clear-and-objective tree rules, saying he did not want the city drawn into neighborhood disputes over dead trees; the fee amounts set in September are unsaid.",
     loPcJun8),
-  stance("bryan-guiney", "lo-north-anchor", "partial", "Move North Anchor forward",
-    "Wants major projects including North Anchor and Foothills to move forward; whether to hold the developer to the March 2027 hotel deadline or pivot the parcel is unsaid.",
+  stance("bryan-guiney", "lo-north-anchor", "partial", "Names North Anchor",
+    "Lists North Anchor and Foothills among major projects the city will see move forward in the next few years; whether to hold the developer to the March 2027 hotel deadline or pivot the parcel is unsaid.",
     site("Guiney · campaign home", "https://www.bryanguiney.com/")),
   stance("bryan-guiney", "lo-school-pathways", "partial", "Sidewalks on thoroughfares",
     "Says many of the city’s large thoroughfares lack sidewalks, which directly affects how children get to school, and would invest in mobility and connectivity; the five recommended projects are unsaid.",
@@ -1177,7 +1177,7 @@ const loStances: TopicStance[] = [
     "Says that as opportunities like a new library come into view the city should prioritize spaces where people gather, and wants longer library hours; site versus repair is unsaid.",
     tiemannIssues),
   stance("peren-tiemann", "lo-housing-mandate", "partial", "More affordable options",
-    "Wants more housing for lower-wage earners, renters, seniors and first-time buyers through subsidies, rental assistance and incentives; where the 4,850 homes should go is unsaid.",
+    "Wants more housing options for lower-wage earners, renters, seniors and first-time buyers and would look into subsidies, rental assistance and incentives; where the 4,850 homes should go is unsaid.",
     tiemannIssues),
   stance("peren-tiemann", "lo-school-pathways", "partial", "Build pathways, enforce",
     "Would keep expanding bike access, building pathways and enforcing crosswalk laws and speed limits, tracking collision data; the five recommended projects are unsaid.",
@@ -1186,29 +1186,29 @@ const loStances: TopicStance[] = [
   /* ── Neil Tunmore ──────────────────────────────────────────────── */
   stance("neil-tunmore", "lo-sewer-rates", "partial", "Plant on budget",
     "Names the sewer treatment facility among the projects he would manage so they land on budget and on time; whether to raise sewer bills 28% at once or 8% a year is unsaid.",
-    tunmorePriorities),
-  stance("neil-tunmore", "lo-library", "partial", "Library on budget",
-    "Names “the new library” among the projects to keep on budget and on time; a larger site versus repair is unsaid.",
+    pamphlet(31)),
+  stance("neil-tunmore", "lo-library", "partial", "Manage library spending",
+    "Names “the new library” among projects whose taxpayer money must be managed for future financial stability; a larger site versus repair is unsaid.",
     tunmorePriorities),
   stance("neil-tunmore", "lo-housing-mandate", "partial", "Salem oversteps, local standards",
     "Says Salem oversteps with housing mandates and the city should manage the state’s orders to conform to Lake Oswego’s building standards and keep neighborhood character; which land takes the 4,850 homes is unsaid.",
     tunmorePriorities),
   stance("neil-tunmore", "lo-north-anchor", "partial", "North Anchor on budget",
     "Names North Anchor among the projects to keep on budget and on time; the hotel deadline is unsaid.",
-    tunmorePriorities),
+    pamphlet(31)),
   stance("neil-tunmore", "lo-school-pathways", "partial", "Safer school walks",
     "Would keep identifying pathways and intersections around schools to create safer ways to walk; the five recommended projects are unsaid.",
     tunmorePriorities),
 
   /* ── Patrick Walsh ─────────────────────────────────────────────── */
   stance("patrick-walsh", "lo-sewer-rates", "partial", "Invest, explain fees",
-    "Would invest in roads, water systems, wastewater and emergency services and give clear explanations for every fee, bond and levy; whether to raise sewer bills 28% at once or 8% a year is unsaid.",
+    "Would invest in roads, water systems, wastewater and emergency services and give clear explanations for fees, bonds and levies; whether to raise sewer bills 28% at once or 8% a year is unsaid.",
     walshPlatform),
   stance("patrick-walsh", "lo-library", "supports", "New library, larger site",
-    "As library board chair told the council January 20, 2026 that a new library on a larger site in a better location is needed; his campaign says re-imagining the library fosters local innovation. Selling the current site is unsaid.",
+    "As library board chair, co-presented the board’s January 20, 2026 update to the council, which stressed the need for a new library on a larger site and a scope that fits fiscal realities. Selling the current site is unsaid.",
     loMinJan20),
-  stance("patrick-walsh", "lo-housing-mandate", "supports", "Homes where infrastructure is",
-    "Says the city must comply with state housing law but “how we comply matters”: direct new homes to areas with existing infrastructure and services, with design standards and tree preservation, and make sure the basics are solid before expanding density.",
+  stance("patrick-walsh", "lo-housing-mandate", "partial", "Homes where infrastructure is",
+    "Says the city must comply with state housing law but “how we comply matters,” directing new housing to areas with existing infrastructure and services; whether that means office land or single-family neighborhoods is unsaid.",
     walshPlatform),
   stance("patrick-walsh", "lo-tree-code", "partial", "Strong canopy protections",
     "Wants strong tree-canopy and urban-forestry protections and tree preservation with new housing; the 45% rule and the per-inch fee are unsaid.",
@@ -1376,13 +1376,13 @@ const ocTopics: ExtraTopic[] = [
 const ocStances: TopicStance[] = [
   /* ── Adam Marl (sitting commissioner running for mayor; the record first) ── */
   stance("adam-marl", "oc-data-center-moratorium", "supports", "Proposed the moratorium",
-    "Proposed a data-center moratorium at the September 8, 2026 work session to protect the city’s remaining employment land for living-wage jobs; his site says the commission agreed to move forward, though no ordinance has yet been published.",
+    "His site says he proposed a data-center moratorium so the city has strong protections that prioritize living-wage jobs on its remaining employment land; no moratorium ordinance has yet been published.",
     marlPriorities),
   stance("adam-marl", "oc-budget-gap", "mixed", "Moved budget, opposed rate",
     "Proposed a May 2025 framework to keep the tax rate flat by trimming DEI, adaptive-reuse and business-promotion budgets, then moved adoption of the budget at the higher $4.489 rate on June 4, 2025; his campaign says he opposed the increase.",
     ocMinJun4),
   stance("adam-marl", "oc-caring-place", "mixed", "Exclusion zone yes",
-    "Voted yes December 3, 2025 on the downtown civil exclusion zone; in September 2025 said the Caring Place had made no formal request and he had “a hard time” with it seeking collaboration so late. Caring Court move unsaid.",
+    "Voted yes December 3, 2025 on the downtown civil exclusion zone; in September 2025 said he was open to the city supporting the Caring Place but had “a hard time” with it seeking collaboration so late. Caring Court move unsaid.",
     ocDec3),
   stance("adam-marl", "oc-urban-renewal", "partial", "Sell agency houses",
     "Chairs the Urban Renewal Commission and voted January 7, 2026 to rezone two agency-owned houses so they can be sold; his site describes the agency’s focus as redeveloping underused public property. Charter Section 59 and closing the district are unsaid.",
@@ -1395,7 +1395,7 @@ const ocStances: TopicStance[] = [
     marlPriorities),
 
   /* ── Damon Mabee ───────────────────────────────────────────────── */
-  stance("damon-mabee", "oc-budget-gap", "partial", "Find savings first",
+  stance("damon-mabee", "oc-budget-gap", "partial", "Hard look at budget",
     "Says he feels tax and fee changes as a retiree on a fixed income and would take a hard look at the budget to find money for parks; raising the rate or fee, or what to cut, is unsaid.",
     pamphlet(37)),
   stance("damon-mabee", "oc-caring-place", "partial", "Active parks, no camps",
@@ -1406,13 +1406,13 @@ const ocStances: TopicStance[] = [
     pamphlet(37)),
 
   /* ── Rodney La Barr ────────────────────────────────────────────── */
-  stance("rodney-la-barr", "oc-budget-gap", "opposes", "No tax increase",
-    "Would cut permits, fees and regulations and fund parks from new growth revenue “without raising taxes”; the $6.50 public-safety fee is unsaid.",
+  stance("rodney-la-barr", "oc-budget-gap", "partial", "Parks without tax hikes",
+    "Would reduce or eliminate unnecessary permits, fees and regulations and fund parks from new growth revenue “without raising taxes”; the property-tax rate, the $6.50 public-safety fee and any cuts are unsaid.",
     pamphlet(38)),
   stance("rodney-la-barr", "oc-caring-place", "partial", "Growth funds services",
     "Says economic growth funds the services and transitional housing needed to reduce homelessness; the Caring Court move and the exclusion zone are unsaid.",
     pamphlet(38)),
-  stance("rodney-la-barr", "oc-abernethy-tolling", "partial", "Against tolling nonsense",
+  stance("rodney-la-barr", "oc-abernethy-tolling", "partial", "Against I-205 tolling",
     "Says everyone on both ends of I-5, in Oregon or Washington, should be against “any I-205 tolling nonsense”; the five-year park extension is unsaid.",
     pamphlet(38)),
   stance("rodney-la-barr", "oc-pool-parks-bond", "partial", "Fund parks, no taxes",
@@ -1428,8 +1428,8 @@ const ocStances: TopicStance[] = [
     ocMummTestimony),
 
   /* ── James Nicita ──────────────────────────────────────────────── */
-  stance("james-nicita", "oc-data-center-moratorium", "supports", "No to data centers",
-    "Says “No to data centers” alongside yes to historic preservation, and would make the North End a solar-generation district.",
+  stance("james-nicita", "oc-data-center-moratorium", "partial", "No to data centers",
+    "Says “No to data centers” alongside yes to historic preservation, and would make the North End a solar-generation district; a temporary moratorium while the code is rewritten is unsaid.",
     pamphlet(39)),
   stance("james-nicita", "oc-budget-gap", "partial", "Restore renewal dollars",
     "Would fully fund police by restoring tax dollars diverted to urban renewal; the tax rate, the $6.50 fee and any cuts are unsaid.",

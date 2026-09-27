@@ -1,0 +1,954 @@
+{
+ "batch": "b11-tigard-lo-oc",
+ "checked": {
+  "issueSlots": 76,
+  "topicStances": 66,
+  "sourcesFetched": 52
+ },
+ "unreachable": [
+  {
+   "url": "https://www.facebook.com/AdamMarlforMayor/posts/1394689122731152",
+   "items": [
+    "adam-marl/topic/oc-data-center-moratorium"
+   ],
+   "note": "Not a cited source; checked because the Sept 8 date and 'commission agreed' detail are not on the cited adammarl.com/priorities page. Facebook returns a login wall to curl."
+  },
+  {
+   "url": "https://oregoncityor.portal.civicclerk.com/event/3010/files",
+   "items": [
+    "adam-marl/topic/oc-budget-gap",
+    "adam-marl/topic/oc-pool-parks-bond"
+   ],
+   "note": "Marl's May 8, 2025 'Budget Stabilization Framework' is not in the extracted text of the May 8 Budget Committee packet (fileId 7949), so the framework clauses (flat rate by trimming DEI, adaptive-reuse and business-promotion budgets; parks bond as a coming topic) were not verified. The rest of those items checks out: fileId 8845 shows Marl moved Resolution 25-15 at $4.489, and the proposed budget in fileId 7949 kept $4.409."
+  }
+ ],
+ "findings": [
+  {
+   "candidateId": "yi-kang-hu",
+   "race": "tigard-mayor",
+   "item": "topic/tigard-budget-gap",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Voted yes June 9, 2026 on Resolution 26-22, saying the budget preserves library hours and core services while responding to a general-fund shortfall of more than $6 million, with a one-time draw on reserves rather than new revenue."
+   },
+   "sourceUrl": "https://public.destinyhosted.com/tigardocs/2026/CCBSNS/20260811_2700/6264%5F260609%5FMeeting%5FMinutes%5F%2D%5FDraft%2Epdf",
+   "sourceQuote": "Mayor Hu shared comments about this being a difficult budget year, and the need to focus on operational and core services, while responding to a General Fund shortfall of more than $6M. The budget that is being considered for adoption preserves current Library hours and avoids cuts to currently filled permanent positions.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The minutes record Hu's vote and his remarks but say nothing about a one-time reserve draw or new revenue, so the text attributes to him a framing the source lacks.",
+   "proposed": {
+    "text": "Voted yes June 9, 2026 on Resolution 26-22, the budget, saying it focuses on core services and preserves library hours while responding to a general-fund shortfall of more than $6 million."
+   }
+  },
+  {
+   "candidateId": "yi-kang-hu",
+   "race": "tigard-mayor",
+   "item": "topic/tigard-parks-funding",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Told Tigard Life in April 2026, “Down the road, we may look at a levy for extra, but we’re not there yet”; a fee increase or general-fund shift is unsaid."
+   },
+   "sourceUrl": "https://tigardlife.com/featured/council-triages-tigard-parks-looming-shortfall/",
+   "sourceQuote": "Hu couched the dialogue on April 21 as “the beginning of a conversation.” ... To conclude, Mayor Hu discounted the likelihood of a new bond levy. “Down the road, we may look at a levy for extra, but we’re not there yet,” Hu said.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Tigard Life reports the remark from the April 21 council work session; Hu did not say it to Tigard Life. The quote itself is exact, so this is a small venue error only.",
+   "proposed": {
+    "text": "Said at the April 21, 2026 council work session, “Down the road, we may look at a levy for extra, but we’re not there yet”; a fee increase or general-fund shift is unsaid."
+   }
+  },
+  {
+   "candidateId": "bill-monahan",
+   "race": "tigard-mayor",
+   "item": "topic/tigard-facility",
+   "fields": [
+    "topic-text",
+    "topic-chip",
+    "stance"
+   ],
+   "current": {
+    "stance": "mixed",
+    "chip": "Separate sites, account costs",
+    "text": "Wrote in May 2026 that “there is no need for placing both police and public works on the same site” but the city “already overpaid for a site,” and wants consultant costs accounted for before choosing between it and alternatives."
+   },
+   "sourceUrl": "https://valleytimes.news/2026/05/12/opinion-vote-no-on-tigard-measure-34-349-avoid-a-huge-mistake/",
+   "sourceQuote": "There is no need for placing both police and public works on the same site. But the city has already overpaid for a site more suitable for commercial use.",
+   "category": [
+    "a",
+    "b",
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "The cited op-ed never mentions consultant costs or a sequence; his Challenges & Opportunities page (citizenstoelectbillmonahan.com/new-page) raises consultant costs only as open questions, and the text cuts “more suitable for commercial use,” which bears on selling the site. Nothing in the op-ed points both ways, so partial fits better than mixed.",
+   "proposed": {
+    "stance": "partial",
+    "topicChip": "Separate sites, overpaid",
+    "text": "Wrote in May 2026 that “there is no need for placing both police and public works on the same site” and that the city “already overpaid for a site more suitable for commercial use”; whether to sell it is unsaid."
+   }
+  },
+  {
+   "candidateId": "bill-monahan",
+   "race": "tigard-mayor",
+   "item": "issue/safety",
+   "fields": [
+    "chip",
+    "line"
+   ],
+   "current": {
+    "chip": "Cheaper police facility",
+    "line": "Would pursue cheaper police-facility options while maintaining public-safety service levels."
+   },
+   "sourceUrl": "https://www.citizenstoelectbillmonahan.com/",
+   "sourceQuote": "Tigard still needs improved police and public works facilities, and those needs must be addressed through affordable options voters can support. ... Work to develop reasonable solutions to police facilities needs",
+   "category": [
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "His words are “affordable” and “reasonable”; “cheaper” is a fair gloss of his view that the bond was overpriced but carries a cut-rate connotation he did not use.",
+   "proposed": {
+    "chip": "Affordable police facility",
+    "line": "Would pursue affordable police-facility options while maintaining public-safety service levels."
+   }
+  },
+  {
+   "candidateId": "bill-monahan",
+   "race": "tigard-mayor",
+   "item": "issue/money",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Would tie project decisions to reliable needs and cost estimates, deliver affordable core services and restore transparency about the failed bond measure’s true cost."
+   },
+   "sourceUrl": "https://www.citizenstoelectbillmonahan.com/",
+   "sourceQuote": "Focus on delivery of core services that citizens need and can afford ... It is time to restore transparency and pursue affordable solutions to facility needs that voters can support.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "“The failed measure’s true cost” is on his Challenges & Opportunities page (/new-page), and “reliable numbers” is in his pamphlet statement; the cited home page has neither, so a reader following the link will not find them. Re-cite or trim.",
+   "proposed": {
+    "position": "Would focus on core services residents need and can afford, and restore transparency and pursue affordable solutions to the city’s facility needs."
+   }
+  },
+  {
+   "candidateId": "bill-monahan",
+   "race": "tigard-mayor",
+   "item": "topic/tigard-parks-funding",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Says the parks bond added parkland the city now admits it cannot maintain without more money; a fee, general-fund shift or levy is unsaid."
+   },
+   "sourceUrl": "https://valleytimes.news/2026/05/12/opinion-vote-no-on-tigard-measure-34-349-avoid-a-huge-mistake/",
+   "sourceQuote": "Consider the parks bond that added more parkland that the city now recognizes cannot be maintained without more funds.",
+   "category": [
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "He wrote “recognizes”; “admits” adds a note of confession that is sharper than his word.",
+   "proposed": {
+    "text": "Says the parks bond added parkland the city now recognizes cannot be maintained without more funds; a fee, general-fund shift or levy is unsaid."
+   }
+  },
+  {
+   "candidateId": "john-goodhouse",
+   "race": "tigard-council",
+   "item": "issue/safety",
+   "fields": [
+    "chip"
+   ],
+   "current": {
+    "chip": "Back the police"
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=36",
+   "sourceQuote": "-Supporting our Police Department to make our community a safer place to live, get around and raise our families",
+   "category": [
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "The meaning is right (Tigard Life quotes him as “fully supporting” the department), but “Back the police” echoes the “Back the Blue” slogan when he used the plain word “supporting.”",
+   "proposed": {
+    "chip": "Support Tigard police"
+   }
+  },
+  {
+   "candidateId": "john-goodhouse",
+   "race": "tigard-council",
+   "item": "topic/tigard-budget-gap",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Would support the process for more private events in Tigard as the city ends its own; the library cuts and new revenue are unsaid."
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=36",
+   "sourceQuote": "-Support the process for more private events in the City of Tigard to drive economic growth, support local small business and foster a deep sense of belonging for all residents",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "“As the city ends its own” is context from other reporting, not his statement, and ties his plank to the budget cuts in a way he did not; it may be what he meant, but the source does not say so.",
+   "proposed": {
+    "text": "Would support the process for more private events in Tigard to drive economic growth; the library cuts, the city’s own event cuts and new revenue are unsaid."
+   }
+  },
+  {
+   "candidateId": "sue-garino",
+   "race": "tigard-council",
+   "item": "issue/money",
+   "fields": [
+    "line",
+    "chip"
+   ],
+   "current": {
+    "line": "Would limit taxes, fees and spending; no one-time money for ongoing programs.",
+    "chip": "Limit taxes and spending"
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=36",
+   "sourceQuote": "Limit the growth of taxes, fees, and spending. Focus taxpayer dollars on essential services. Stop using one-time money for ongoing programs. Require measurable results from new spending.",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "She would limit the growth of taxes, fees and spending; the line and chip drop “growth,” which reads as capping or cutting them. The position already has it right.",
+   "proposed": {
+    "line": "Would limit growth of taxes, fees and spending; no one-time money for ongoing programs.",
+    "chip": "Limit tax, spending growth"
+   }
+  },
+  {
+   "candidateId": "gabriel-elijio-velasquez",
+   "race": "tigard-council",
+   "item": "issue/safety",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Would pursue one regional strategy so no one sleeps on Tigard’s streets."
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=37",
+   "sourceQuote": "Collaborate with municipal, state, and federal leaders on a single strategy to ensure everyone has shelter and no one sleeps on Tigard’s streets.",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "The line keeps “no one sleeps on Tigard’s streets” but drops “everyone has shelter,” which leaves a half that can read as enforcement; “regional” also misdescribes a municipal, state and federal strategy. His site confirms the shelter reading (navigation centers, transitional micro-housing).",
+   "proposed": {
+    "line": "Would pursue one strategy with city, state and federal leaders so everyone has shelter."
+   }
+  },
+  {
+   "candidateId": "gabriel-elijio-velasquez",
+   "race": "tigard-council",
+   "item": "issue/housing",
+   "fields": [
+    "chip"
+   ],
+   "current": {
+    "chip": "Ban corporate homebuyers"
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=37",
+   "sourceQuote": "Extend the ban on corporate single-family home buyers, as Tigard’s Homes are for families, not for investor portfolios.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The chip drops “extend” and “single-family,” so it reads as a new, broad ban; his site describes the plank as restricting corporate buyers for a home’s first two years on the market.",
+   "proposed": {
+    "chip": "Extend corporate-buyer ban"
+   }
+  },
+  {
+   "candidateId": "tom-anderson",
+   "race": "tigard-council",
+   "item": "issue/safety",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Fix police facilities",
+    "line": "Would improve facilities for police and emergency responders.",
+    "position": "Would improve facility conditions for police and emergency responders."
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=38",
+   "sourceQuote": "Enhance Public Safety: Improve facility conditions for emergency services and responders.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The cited pamphlet says “emergency services and responders,” not police; his site (tomandersontigard.com/issues) does say “police and emergency responders,” so the fix is either re-citing the site or matching the pamphlet's words.",
+   "proposed": {
+    "chip": "Fix responder facilities",
+    "line": "Would improve facility conditions for emergency services and responders.",
+    "position": "Would improve facility conditions for emergency services and responders."
+   }
+  },
+  {
+   "candidateId": "bryan-guiney",
+   "race": "lake-oswego-council",
+   "item": "issue/housing",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Focuses new density in centers and corridors, not across established neighborhoods."
+   },
+   "sourceUrl": "https://www.bryanguiney.com/priorities",
+   "sourceQuote": "Density belongs in centers and corridors, not imposed uniformly across established neighborhoods.",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "He rejects density imposed uniformly across neighborhoods; dropping “uniformly” makes him rule out neighborhood density altogether.",
+   "proposed": {
+    "line": "Would focus density in centers and corridors, not uniformly across established neighborhoods."
+   }
+  },
+  {
+   "candidateId": "bryan-guiney",
+   "race": "lake-oswego-council",
+   "item": "topic/lo-housing-mandate",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Rezone offices, not neighborhoods"
+   },
+   "sourceUrl": "https://www.bryanguiney.com/priorities",
+   "sourceQuote": "Density belongs in centers and corridors, not imposed uniformly across established neighborhoods. ... I support adaptive reuse and mixed-use redevelopment where older office inventory is struggling.",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "Same dropped qualifier: “not neighborhoods” overstates “not imposed uniformly across established neighborhoods.” The text quotes him correctly; only the chip leans.",
+   "proposed": {
+    "topicChip": "Density in centers, corridors"
+   }
+  },
+  {
+   "candidateId": "bryan-guiney",
+   "race": "lake-oswego-council",
+   "item": "issue/climate",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would invest in infrastructure and mobility to improve traffic, safety and connectivity, with clean energy and environmental stewardship built into major decisions.",
+    "line": "Invests in mobility and infrastructure, with clean energy built into major decisions."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=29",
+   "sourceQuote": "• Grow smart and sustainably while protecting neighborhoods and our environment. ... • Invest in infrastructure and mobility to improve traffic, safety, and connectivity.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The cited pamphlet page has nothing on clean energy or stewardship in decisions; those come from bryanguiney.com/priorities, which says “supporting clean energy” and “environmental stewardship is built into every major decision” (the line also merges the two). Re-cite that half or keep to the pamphlet.",
+   "proposed": {
+    "position": "Would invest in infrastructure and mobility to improve traffic, safety and connectivity, and grow smart and sustainably while protecting neighborhoods and the environment.",
+    "line": "Would invest in infrastructure and mobility to improve traffic, safety and connectivity."
+   }
+  },
+  {
+   "candidateId": "bryan-guiney",
+   "race": "lake-oswego-council",
+   "item": "topic/lo-sewer-rates",
+   "fields": [
+    "topic-text",
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Plant a sound investment",
+    "text": "Points to the new wastewater plant as an example of a long-term project with benefits and says the city has little deferred maintenance; whether to raise sewer bills 28% at once or 8% a year is unsaid."
+   },
+   "sourceUrl": "https://lakeoswegoreview.com/2026/09/05/candidate-profile-bryan-guiney-aims-to-lead-with-respect-in-lake-oswego/",
+   "sourceQuote": "Specifically, he pointed to the massive investment the community is making in a new wastewater treatment plant in the Foothills District as an example of a long-term project with benefits. ... “Making sure the city has the budget to maintain those capital projects and there isn’t a lot of deferred maintenance,” he said.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "He named avoiding deferred maintenance as a goal; he did not say the city has little of it. “Sound investment” is also a step past the Review's “long-term project with benefits.”",
+   "proposed": {
+    "topicChip": "Plant has long-term benefits",
+    "text": "Points to the new wastewater plant as a long-term project with benefits and wants the city to budget for upkeep so there isn’t a lot of deferred maintenance; the 28% or 8%-a-year choice is unsaid."
+   }
+  },
+  {
+   "candidateId": "bryan-guiney",
+   "race": "lake-oswego-council",
+   "item": "topic/lo-north-anchor",
+   "fields": [
+    "topic-text",
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Move North Anchor forward",
+    "text": "Wants major projects including North Anchor and Foothills to move forward; whether to hold the developer to the March 2027 hotel deadline or pivot the parcel is unsaid."
+   },
+   "sourceUrl": "https://www.bryanguiney.com/",
+   "sourceQuote": "Lake Oswego has a lot to be proud of, and the next few years will be pivotal for our city. ... We will see major projects move forward, including the North Anchor and Foothills developments, our wastewater treatment plant replacement, and the new South Shore Fire Station.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "He describes what the city will see in the next few years; he does not say he wants North Anchor to move forward, and the chip turns that description into a directive.",
+   "proposed": {
+    "topicChip": "Names North Anchor",
+    "text": "Lists North Anchor and Foothills among major projects the city will see move forward in the next few years; whether to hold the developer to the March 2027 hotel deadline or pivot the parcel is unsaid."
+   }
+  },
+  {
+   "candidateId": "peren-tiemann",
+   "race": "lake-oswego-council",
+   "item": "issue/housing",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Adds housing options for renters, seniors and first-time buyers via subsidies, incentives."
+   },
+   "sourceUrl": "https://www.perentiemann.com/issues",
+   "sourceQuote": "Looking into subsidized programs, rental assistance methods, and pathways to support all people who seek to live in Lake Oswego ... Through continued partnerships with community organizations and exploring further options to incentivize more affordable housing, our community can become more accessible to all.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "She is “looking into” subsidies and “exploring” incentives; the line states them as the method she would use. The position keeps “exploring”; the line drops it.",
+   "proposed": {
+    "line": "Would explore subsidies, rental assistance and incentives for renters, seniors and first-time buyers."
+   }
+  },
+  {
+   "candidateId": "peren-tiemann",
+   "race": "lake-oswego-council",
+   "item": "topic/lo-housing-mandate",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Wants more housing for lower-wage earners, renters, seniors and first-time buyers through subsidies, rental assistance and incentives; where the 4,850 homes should go is unsaid."
+   },
+   "sourceUrl": "https://www.perentiemann.com/issues",
+   "sourceQuote": "Lake Oswego needs more housing options for those who are lower wage earners, renters, people aging in place, or first-time home buyers. Looking into subsidized programs, rental assistance methods ... exploring further options to incentivize more affordable housing",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Same explore-to-commit shift as the housing line, softened here by “wants.”",
+   "proposed": {
+    "text": "Wants more housing options for lower-wage earners, renters, seniors and first-time buyers and would look into subsidies, rental assistance and incentives; where the 4,850 homes should go is unsaid."
+   }
+  },
+  {
+   "candidateId": "peren-tiemann",
+   "race": "lake-oswego-council",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would keep prioritizing mental-health first responders, build on community policing, and expand emergency preparedness.",
+    "line": "Keeps mental-health first responders a priority; builds on community policing."
+   },
+   "sourceUrl": "https://www.perentiemann.com/issues",
+   "sourceQuote": "by continuing to prioritize mental health first responders, building on prior conversations about community policing, and continuing to provide education and support to prevent individualized harms such as house fires and unsafe gun storage.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "She would build on “prior conversations about community policing”; “builds on community policing” implies a program she would expand, which is firmer than her words.",
+   "proposed": {
+    "position": "Would keep prioritizing mental-health first responders, build on prior conversations about community policing, and expand access to emergency-preparedness resources.",
+    "line": "Would keep mental-health first responders a priority and build on community-policing conversations."
+   }
+  },
+  {
+   "candidateId": "peren-tiemann",
+   "race": "lake-oswego-council",
+   "item": "issue/climate",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Expands transit, bike and walking options with TriMet and community shuttles."
+   },
+   "sourceUrl": "https://www.perentiemann.com/issues",
+   "sourceQuote": "By continuing to partner with regional organizations like Tri Met, and building out ideas around community shuttles or services like the Library’s home delivery program ... and exploring the feasibility of localized solutions.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Shuttles are an idea she would build out and test for feasibility; the position says “exploring community shuttles” but the line lists them as a delivered option.",
+   "proposed": {
+    "line": "Would expand transit, bike and walking options with TriMet and explore community shuttles."
+   }
+  },
+  {
+   "candidateId": "neil-tunmore",
+   "race": "lake-oswego-council",
+   "item": "issue/housing",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would implement state housing mandates in ways that conform to Lake Oswego’s building standards and keep neighborhood character.",
+    "line": "Implements state housing mandates within Lake Oswego’s building standards and character."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=31",
+   "sourceQuote": "• Salem oversteps. Let’s manage their orders to conform with LO building standards & maintain LO neighborhood character",
+   "category": [
+    "b",
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "He says Salem oversteps and would “manage” its orders; “implement” and the missing criticism make him sound more accepting of the mandates than he wrote (the topic text does keep “Salem oversteps”).",
+   "proposed": {
+    "position": "Says Salem oversteps and would manage the state’s housing orders so they conform to Lake Oswego’s building standards and maintain neighborhood character.",
+    "line": "Would manage Salem’s housing orders to fit Lake Oswego building standards and character."
+   }
+  },
+  {
+   "candidateId": "neil-tunmore",
+   "race": "lake-oswego-council",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would spend tax dollars only where they add value and manage the money for the North Anchor, fire station, sewer plant and library so they land on budget and on time.",
+    "line": "Holds North Anchor, fire station, sewer plant and library to budget and schedule."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=31",
+   "sourceQuote": "• Tax dollars spent should always add value to our city ... • Wisely manage taxpayer money so North Anchor, the fire station, the sewer treatment facility is on budget & on time",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The cited pamphlet lists North Anchor, the fire station and the sewer plant, not the library; the library appears only on his site, which lacks “on budget & on time.” Small, but the cite does not hold the whole claim.",
+   "proposed": {
+    "position": "Would spend tax dollars only where they add value and manage taxpayer money so the North Anchor, fire station and sewer treatment facility land on budget and on time.",
+    "line": "Would keep North Anchor, fire station and sewer plant on budget, on time."
+   }
+  },
+  {
+   "candidateId": "neil-tunmore",
+   "race": "lake-oswego-council",
+   "item": "topic/lo-library",
+   "fields": [
+    "topic-text",
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Library on budget",
+    "text": "Names “the new library” among the projects to keep on budget and on time; a larger site versus repair is unsaid."
+   },
+   "sourceUrl": "https://tunmoreforlo.com/priorities",
+   "sourceQuote": "Future financial stability depends on managing taxpayer money for projects like the North Anchor, the south shore fire station, the sewer treatment facility, the new library.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The site names the new library but says nothing about on budget and on time (that phrase is in his pamphlet, which omits the library). His sewer and North Anchor topic texts use the same phrase against this site; those two hold if re-cited to pamphlet page 31.",
+   "proposed": {
+    "topicChip": "Manage library spending",
+    "text": "Names “the new library” among projects whose taxpayer money must be managed for future financial stability; a larger site versus repair is unsaid."
+   }
+  },
+  {
+   "candidateId": "patrick-walsh",
+   "race": "lake-oswego-council",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would keep budgets balanced and costs predictable, prioritize core infrastructure, and explain every fee, bond and levy clearly.",
+    "line": "Keeps budgets balanced, costs predictable; explains every fee, bond and levy."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=30",
+   "sourceQuote": "Fiscal Responsibility & Core Services: Smart, transparent management of public funds. Prioritizing core infrastructure: smooth roads, clean water, pedestrian pathways, and emergency services.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The cited pamphlet has none of balanced budgets, predictable costs or fees, bonds and levies; his site (walsh4lo.com/why-im-running) has “Balanced budgets and predictable costs” and “Clear explanations for fees, bonds, and levies,” without “every.” Re-cite the site and drop “every.”",
+   "proposed": {
+    "position": "Would keep budgets balanced and costs predictable, prioritize core infrastructure, and give clear explanations for fees, bonds and levies.",
+    "line": "Wants balanced budgets, predictable costs and clear explanations of fees, bonds and levies."
+   }
+  },
+  {
+   "candidateId": "patrick-walsh",
+   "race": "lake-oswego-council",
+   "item": "topic/lo-sewer-rates",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Would invest in roads, water systems, wastewater and emergency services and give clear explanations for every fee, bond and levy; whether to raise sewer bills 28% at once or 8% a year is unsaid."
+   },
+   "sourceUrl": "https://walsh4lo.com/why-im-running/",
+   "sourceQuote": "Investment in roads, water systems, wastewater, and emergency services ... Clear explanations for fees, bonds, and levies",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "“Every” is ours; he wrote “clear explanations for fees, bonds, and levies.”",
+   "proposed": {
+    "text": "Would invest in roads, water systems, wastewater and emergency services and give clear explanations for fees, bonds and levies; whether to raise sewer bills 28% at once or 8% a year is unsaid."
+   }
+  },
+  {
+   "candidateId": "patrick-walsh",
+   "race": "lake-oswego-council",
+   "item": "issue/climate",
+   "fields": [
+    "position",
+    "line",
+    "chip"
+   ],
+   "current": {
+    "position": "Would protect tree canopy and watersheds, invest in sustainable infrastructure, and calm cut-through traffic and speeding with data-driven fixes.",
+    "line": "Protects tree canopy and watersheds; calms cut-through traffic with data.",
+    "chip": "Tree canopy, calm traffic"
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=30",
+   "sourceQuote": "Balanced Growth & Climate Resilience: Protecting neighborhood character, tree canopy, and watersheds while making smart, forward-looking investments in sustainable local infrastructure.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Traffic calming is real (his site: “data-driven solutions to reduce cut-through traffic and speeding”) but is not in the cited pamphlet page, and the site lacks “watersheds,” so no single cited source holds the whole item.",
+   "proposed": {
+    "position": "Would protect tree canopy and watersheds and make forward-looking investments in sustainable local infrastructure.",
+    "line": "Would protect tree canopy and watersheds and invest in sustainable local infrastructure.",
+    "chip": "Tree canopy, watersheds"
+   }
+  },
+  {
+   "candidateId": "patrick-walsh",
+   "race": "lake-oswego-council",
+   "item": "topic/lo-housing-mandate",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Homes where infrastructure is",
+    "text": "Says the city must comply with state housing law but “how we comply matters”: direct new homes to areas with existing infrastructure and services, with design standards and tree preservation, and make sure the basics are solid before expanding density."
+   },
+   "sourceUrl": "https://walsh4lo.com/why-im-running/",
+   "sourceQuote": "Lake Oswego must comply with state housing laws—but how we comply matters. I Support Meeting state requirements while preserving neighborhood character / Directing new housing to areas with existing infrastructure and services / Strong design standards, tree preservation, and compatibility with surrounding homes",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "The question asks office land versus single-family neighborhoods; “areas with existing infrastructure and services” picks neither, so “supports” has no side to attach to and the text never says what is left open.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Says the city must comply with state housing law but “how we comply matters,” directing new housing to areas with existing infrastructure and services; whether that means office land or single-family neighborhoods is unsaid."
+   }
+  },
+  {
+   "candidateId": "patrick-walsh",
+   "race": "lake-oswego-council",
+   "item": "topic/lo-library",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "As library board chair told the council January 20, 2026 that a new library on a larger site in a better location is needed; his campaign says re-imagining the library fosters local innovation. Selling the current site is unsaid."
+   },
+   "sourceUrl": "https://apps.lakeoswego.city/WebLink/ElectronicFile.aspx?docid=3293014&dbid=0&repo=CityOfLakeOswego",
+   "sourceQuote": "Library Director Melissa Kelly and Library Advisory Board Chair Patrick Walsh reported on the deteriorating state of the 1983 library facility ... There was an emphasis on the need to build a new library on a larger site in a more amenable location. The Library Advisory Board (LAB) recommended ... working with the community to ensure the scope aligns with fiscal realities.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The stance holds, but the minutes record a joint report with the library director, not Walsh alone, and the board's own caveat about fitting the scope to fiscal realities is dropped. (The “re-imagining” line is real, on walsh4lo.com/volunteer-work, not in this cite.)",
+   "proposed": {
+    "text": "As library board chair, co-presented the board’s January 20, 2026 update to the council, which stressed the need for a new library on a larger site and a scope that fits fiscal realities. Selling the current site is unsaid."
+   }
+  },
+  {
+   "candidateId": "suzanne-miles",
+   "race": "lake-oswego-council",
+   "item": "issue/safety",
+   "fields": [
+    "chip"
+   ],
+   "current": {
+    "chip": "Back police and fire"
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=30",
+   "sourceQuote": "SAFETY: Supporting our local police and firefighters to keep our community safe and welcoming",
+   "category": [
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "Same slogan echo as Goodhouse's chip; she wrote “supporting.”",
+   "proposed": {
+    "chip": "Support police and fire"
+   }
+  },
+  {
+   "candidateId": "damon-mabee",
+   "race": "oregon-city-mayor",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would take a hard look at the city budget to find money to fix the park system, through cost savings rather than new revenue.",
+    "line": "Finds money for parks through budget cost savings, not new revenue."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=37",
+   "sourceQuote": "Through deliberate cost savings we kept the Pool open and got the City back on the right foot. I believe it is time to once again take a hard look at the budget and find the money to fix our Park system.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "He never rules out new revenue; the cost-savings line describes 2004. Our own oc-budget-gap text for him says raising the rate or fee is unsaid, so the issue row contradicts it.",
+   "proposed": {
+    "position": "Would take a hard look at the city budget to find the money to fix the park system, as deliberate cost savings kept the pool open in 2004.",
+    "line": "Would take a hard look at the budget to find money to fix parks."
+   }
+  },
+  {
+   "candidateId": "damon-mabee",
+   "race": "oregon-city-mayor",
+   "item": "topic/oc-budget-gap",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Find savings first"
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=37",
+   "sourceQuote": "I believe it is time to once again take a hard look at the budget and find the money to fix our Park system. As a homeowner and a retiree on a fixed income, I feel the impact of taxes and fee changes.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "“First” implies an order (savings before revenue) he does not state; the text itself is accurate.",
+   "proposed": {
+    "topicChip": "Hard look at budget"
+   }
+  },
+  {
+   "candidateId": "rodney-la-barr",
+   "race": "oregon-city-mayor",
+   "item": "topic/oc-budget-gap",
+   "fields": [
+    "stance",
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "opposes",
+    "chip": "No tax increase",
+    "text": "Would cut permits, fees and regulations and fund parks from new growth revenue “without raising taxes”; the $6.50 public-safety fee is unsaid."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=38",
+   "sourceQuote": "I believe reducing or eliminating unnecessary regulations, permits and fees. ... • Create funding to Reinvigorate our City Parks / Use new revenue without raising taxes",
+   "category": [
+    "b",
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "“Without raising taxes” is about how he would fund parks, not a statement on the general fund's gap or the property-tax rate; the chip and “opposes” turn a parks-funding remark into a stand on the exact choice.",
+   "proposed": {
+    "stance": "partial",
+    "topicChip": "Parks without tax hikes",
+    "text": "Would reduce or eliminate unnecessary permits, fees and regulations and fund parks from new growth revenue “without raising taxes”; the property-tax rate, the $6.50 public-safety fee and any cuts are unsaid."
+   }
+  },
+  {
+   "candidateId": "rodney-la-barr",
+   "race": "oregon-city-mayor",
+   "item": "issue/housing",
+   "fields": [
+    "position",
+    "line",
+    "chip"
+   ],
+   "current": {
+    "position": "Would create affordable housing by cutting permits, fees and regulations so builders can produce homes of all types, from ADUs (backyard cottages) to apartments.",
+    "line": "Cuts permits, fees and regulations so builders produce homes of all types.",
+    "chip": "Cut fees and permits"
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=38",
+   "sourceQuote": "With this, I believe reducing or eliminating unnecessary regulations, permits and fees. Eliminate excess costs for contractors and developers to produce new living spaces of all types, from ADU’s to apartments to single family homes.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "He targets “unnecessary” regulations, permits and fees and “excess” costs; the unqualified version reads as sweeping deregulation. The same drop appears in his money item (“cut permit and business fees”).",
+   "proposed": {
+    "position": "Would create affordable housing by reducing or eliminating unnecessary regulations, permits and fees so builders can produce homes of all types, from ADUs (backyard cottages) to apartments.",
+    "line": "Would cut unnecessary permits, fees and regulations so builders produce homes of all types.",
+    "chip": "Cut unneeded fees, permits"
+   }
+  },
+  {
+   "candidateId": "rodney-la-barr",
+   "race": "oregon-city-mayor",
+   "item": "topic/oc-abernethy-tolling",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Against tolling nonsense"
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=38",
+   "sourceQuote": "Lastly, everyone, on both ends of 1-5, in every city and county, be it OR or WA, should be against any I-205 tolling nonsense.",
+   "category": [
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "“Nonsense” is his word and the text quotes it properly, but in an unquoted chip it reads as the guide's own judgment.",
+   "proposed": {
+    "topicChip": "Against I-205 tolling"
+   }
+  },
+  {
+   "candidateId": "james-nicita",
+   "race": "oregon-city-commission",
+   "item": "topic/oc-data-center-moratorium",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "No to data centers",
+    "text": "Says “No to data centers” alongside yes to historic preservation, and would make the North End a solar-generation district."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=39",
+   "sourceQuote": "• Preserve Oregon City’s character. Yes to historic preservation. No to data centers.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "A blanket “no to data centers” goes further than a temporary moratorium but never names one; under the guide's rule (explicit statement on the exact choice) this is partial, though an editor could reasonably read the moratorium as implied.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Says “No to data centers” alongside yes to historic preservation, and would make the North End a solar-generation district; a temporary moratorium while the code is rewritten is unsaid."
+   }
+  },
+  {
+   "candidateId": "james-nicita",
+   "race": "oregon-city-commission",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would redirect urban-renewal tax dollars to police or to small citizen-designed projects, and keep residents’ right to vote on urban renewal.",
+    "line": "Redirects urban-renewal money to police or small citizen-designed projects."
+   },
+   "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=39",
+   "sourceQuote": "• Fully funded police. Restore to police our tax dollars diverted to urban renewal. ... • Participatory urban renewal. If we maintain urban renewal, prioritize small-scale, high-impact urban design projects that citizens help design and construct.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The small projects are what he would prioritize if urban renewal continues, not a destination for money redirected out of it; the condition is dropped.",
+   "proposed": {
+    "position": "Would restore urban-renewal tax dollars to police and, if urban renewal continues, prioritize small projects citizens help design and build; defends residents’ right to vote on urban renewal.",
+    "line": "Would return urban-renewal money to police; if renewal continues, favors small citizen-designed projects."
+   }
+  },
+  {
+   "candidateId": "gordon-j-lawrence",
+   "race": "oregon-city-commission",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would fund services by growing the tax base, removing barriers to business and welcoming development rather than blocking it.",
+    "line": "Funds services by growing the tax base; removes barriers to business."
+   },
+   "sourceUrl": "https://gordonforoc.com/meet-gordon/",
+   "sourceQuote": "You can't fund services without a tax base, and you can't build a tax base if you kibosh every development opportunity.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "“Barriers to business” is from his pamphlet, where it is “unnecessary barriers,” not this interview; and he objects to blocking “every” development opportunity, which is milder than “welcoming development rather than blocking it.”",
+   "proposed": {
+    "position": "Would fund services by growing a tax base, which he says the city cannot build if it blocks every development opportunity.",
+    "line": "Would fund services by growing the tax base and not blocking every development opportunity."
+   }
+  },
+  {
+   "candidateId": "adam-marl",
+   "race": "oregon-city-mayor",
+   "item": "topic/oc-data-center-moratorium",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Proposed a data-center moratorium at the September 8, 2026 work session to protect the city’s remaining employment land for living-wage jobs; his site says the commission agreed to move forward, though no ordinance has yet been published."
+   },
+   "sourceUrl": "https://www.adammarl.com/priorities",
+   "sourceQuote": "He proposed a data center moratorium to ensure the city has strong protections in place that prioritize living-wage jobs on our remaining employment land.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The cited site gives no date and does not say the commission agreed to move forward; those details seem to come from his September 8 Facebook post (not the cited source, and not fetchable here). The stance itself is sound.",
+   "proposed": {
+    "text": "His site says he proposed a data-center moratorium so the city has strong protections that prioritize living-wage jobs on its remaining employment land; no moratorium ordinance has yet been published."
+   }
+  },
+  {
+   "candidateId": "adam-marl",
+   "race": "oregon-city-mayor",
+   "item": "topic/oc-caring-place",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "mixed",
+    "chip": "Exclusion zone yes",
+    "text": "Voted yes December 3, 2025 on the downtown civil exclusion zone; in September 2025 said the Caring Place had made no formal request and he had “a hard time” with it seeking collaboration so late. Caring Court move unsaid."
+   },
+   "sourceUrl": "https://oregoncityor.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=9149,plainText=false)",
+   "sourceQuote": "Commissioner Marl also noted that the Caring Place had not made any formal requests of the City. He was open to seeing how the City could support this project, but he had a hard time with the Caring Place asking to collaborate with the City now, past the point where meaningful changes could be made",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "The September 17, 2025 minutes pair his objection with “He was open to seeing how the City could support this project”; dropping that leaves only the negative half. (The exclusion-zone vote checks out in the cited December 3 draft minutes; the September remark is in fileId 9149, not the cited file.)",
+   "proposed": {
+    "text": "Voted yes December 3, 2025 on the downtown civil exclusion zone; in September 2025 said he was open to the city supporting the Caring Place but had “a hard time” with it seeking collaboration so late. Caring Court move unsaid."
+   }
+  }
+ ]
+}

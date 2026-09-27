@@ -1,0 +1,411 @@
+{
+ "batch": "b01-d3-a-k",
+ "checked": {
+  "issueSlots": 26,
+  "topicStances": 39,
+  "sourcesFetched": 22
+ },
+ "unreachable": [],
+ "notes": [
+  "Pham's three pages are JS-rendered; curl returned an empty shell, so they were read live in the browser pane on 2026-09-24 and match the Sept 18 snapshots word for word.",
+  "Research-log reply sources were checked against the reply text carried in the guide; Otero's full Sept 22 email (runtime-data/voters-guide-2026/outreach/replies-2026-09-23/cristal-otero.txt) confirms the elided parts her topic texts rely on (embedded Parks team, Project Respond, under 2% General Fund, reducing the burden on Portland taxpayers).",
+  "The Mercury URL /news/meet-the-candidates-for-city-council-district-3/ resolves to the September 9, 2026 article (canonical /election-2026/...).",
+  "Morillo's 'No' vote on Resolution 37750 is recorded in src/lib/voters-guide/council-decisions.ts; the finding only says the pamphlet cited for her money slot does not contain it."
+ ],
+ "findings": [
+  {
+   "candidateId": "ali-beaudoin",
+   "item": "issue/housing",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "More supply, simpler permits, workforce housing and rate help for first-time buyers."
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#beaudoin-2026-09-23",
+   "sourceQuote": "On the financing side, I would explore working with the city and financial institutions to offer first-time homebuyers temporary interest-rate assistance to reduce their monthly costs while mortgage rates remain elevated.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The line lists rate help as part of her plan, but she only said she would explore temporary rate assistance; the position keeps 'explore', the line drops it.",
+   "proposed": {
+    "line": "More supply, simpler permits, workforce housing; would explore rate help for first-time buyers."
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "ali-beaudoin",
+   "item": "topic/police-staffing",
+   "fields": [
+    "stance"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Rebuild where gaps"
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#beaudoin-2026-09-23",
+   "sourceQuote": "Portland needs enough officers to provide timely responses to serious crime and emergencies, so I support rebuilding staffing where there are documented service gaps. At the same time, I would invest in alternative responders, prevention, and community-based services so police are not the default response to every problem.",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "Her answer is conditional (only where gaps are documented) and points both ways on a hire-or-invest-elsewhere question, which the guide defines as mixed; her Street Response answer with the same 'I support X where Y' shape is already filed as mixed.",
+   "proposed": {
+    "stance": "mixed"
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "ali-beaudoin",
+   "item": "topic/water-rates",
+   "fields": [
+    "stance"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Phased, with protections"
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#beaudoin-2026-09-23",
+   "sourceQuote": "I would support necessary, phased increases, but only alongside aggressive cost controls, outside funding opportunities, and clear protections for households that cannot afford higher bills.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "Support is explicit but made conditional ('but only alongside'), which fits the guide's definition of mixed; arguable because she opens with 'I support making the necessary investments'. The text already carries the conditions.",
+   "proposed": {
+    "stance": "mixed"
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "ali-beaudoin",
+   "item": "topic/camp-removal",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Supports enforcing public-space rules with realistic paths to shelter and services, and would measure where people go, whether areas stay clear and the cost; she does not say whether to keep current funding."
+   },
+   "sourceUrl": "https://www.portlandmercury.com/news/meet-the-candidates-for-city-council-district-3/",
+   "sourceQuote": "Professional background: Beaudoin, 39, cites experience in the private sector, education, and small business. He holds an BA in economics and an MBA from the University of Portland.",
+   "category": [
+    "factual"
+   ],
+   "verdict": "borderline",
+   "why": "Factual check, not a lean: the guide calls Beaudoin 'she' while the Mercury profile uses 'he' throughout; neither Beaudoin's LinkedIn post nor the reply settles it, so a pronoun-free wording avoids the risk (the research log and brief also use 'she/her' and should be checked).",
+   "proposed": {
+    "text": "Supports enforcing public-space rules with realistic paths to shelter and services, and would measure where people go, whether areas stay clear and the cost; the reply does not say whether to keep current funding."
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "guy-frankenstein",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Calls for larger contributions from billion-dollar companies. A particular tax instrument or projected revenue is not established in the reviewed response.",
+    "line": "Wants billion-dollar companies to contribute more."
+   },
+   "sourceUrl": "https://www.portlandmercury.com/news/meet-the-candidates-for-city-council-district-3/",
+   "sourceQuote": "I'm not running for City Council to be an effective team player. I'm running to personally escort ICE agents to the county line, bleed every billion dollar company operating within this city, be an unmovable wall between City Council and Keith Wilson's performative bullshit, and to call for Tina Kotek to resign.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "'Larger contributions' and 'contribute more' soften 'bleed every billion dollar company' into a mild, almost voluntary ask, a lean that flatters; arguable because the guide may prefer not to echo combative language, and the topic entry already quotes him.",
+   "proposed": {
+    "position": "Says he is running to “bleed every billion dollar company operating within this city.” He names no tax instrument or projected revenue.",
+    "line": "Would bleed billion-dollar companies in the city; names no tax or amount."
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "esther-leon",
+   "item": "issue/housing",
+   "fields": [
+    "chip"
+   ],
+   "current": {
+    "chip": "Expand public housing"
+   },
+   "sourceUrl": "https://EstherForPortland.com",
+   "sourceQuote": "Expanding affordable housing development and accelerating Social Housing initiatives, establishing a bold timeline for making social housing a reality.",
+   "category": [
+    "c"
+   ],
+   "verdict": "confirmed",
+   "why": "She says 'social housing'; the chip swaps in 'public housing', a different term with its own baggage in the social-housing debate (the line and position use her word).",
+   "proposed": {
+    "chip": "Accelerate social housing"
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "esther-leon",
+   "item": "issue/safety",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Would fund Street Response, expand unarmed (non-police) specialists, reduce armed responses; opposes camp sweeps.",
+    "position": "Would fund citywide 24/7 Street Response, expand unarmed support specialists and reduce armed responses; opposes sweeps and favors housing with health or addiction support."
+   },
+   "sourceUrl": "https://EstherForPortland.com",
+   "sourceQuote": "Mandate officer training in de-escalation, nonviolent communication and self defense techniques, while simultaneously decreasing the number of lethally armed responses to calls. We can do this by increasing support for PPB's unarmed public safety support specialists.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The specialists she names are the Police Bureau's own unarmed staff, so the gloss '(non-police)' is wrong and makes her plan read as moving work out of the police bureau.",
+   "proposed": {
+    "line": "Would fund Street Response, expand Police Bureau's unarmed specialists, reduce armed responses; opposes sweeps.",
+    "position": "Would fund citywide 24/7 Street Response, expand the Police Bureau's unarmed support specialists and reduce armed responses; opposes sweeps and favors housing with health or addiction support."
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "esther-leon",
+   "item": "topic/camp-removal",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "End sweeps",
+    "stance": "opposes"
+   },
+   "sourceUrl": "https://EstherForPortland.com",
+   "sourceQuote": "Redirecting efforts away from practices like city sweeps and hostile architecture, which are inhumane, fail to address the root of the issue, and sow distrust.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "She would redirect efforts away from sweeps; 'End' is a stronger commitment than she makes. The stance and text are fine.",
+   "proposed": {
+    "topicChip": "Redirect from sweeps"
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "darren-mccormick",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "His July 2026 filing calls for additional police and incarceration of people he characterizes as dangerous and affected by drugs. The filing does not explain the legal criteria or treatment component.",
+    "line": "Wants more police and jail for people he calls dangerous and drug-affected."
+   },
+   "sourceUrl": "https://www.portland.gov/auditor/elections/documents/mccormick-darren-2026-aud-120/download#page=4",
+   "sourceQuote": "More cops. Lock up the dangerously unstable drug zombies.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The paraphrase drops 'unstable' and turns 'drug zombies' into 'affected by drugs', which makes his statement read milder than it is; arguable because avoiding a dehumanizing term may be a deliberate house choice (the topic text keeps 'dangerously unstable').",
+   "proposed": {
+    "position": "His July 2026 filing reads, in full: “More cops. Lock up the dangerously unstable drug zombies.” It does not explain legal criteria or any treatment component.",
+    "line": "Wants more cops and to lock up people he calls dangerously unstable drug users."
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "angelita-morillo",
+   "item": "issue/money",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Public investment first",
+    "line": "Wants public investment to come first.",
+    "position": "Prioritizes public investment and opposed the amended Moda term sheet; that vote does not by itself establish opposition to retaining the team."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=56",
+   "sourceQuote": "Fiscal Stewardship • Fighting for a fair Moda deal for Portland. • Led the first investigation on millions of undisclosed taxpayer dollars. ... Angelita prioritizes investments in public transit, bike lanes and sidewalks, while also working to shut down oil trains and Data Center expansion.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The cited pamphlet never says 'public investment first'; its only 'prioritizes' is about transit, bike lanes and sidewalks, and its fiscal items are a fair Moda deal and an investigation of undisclosed spending. The term-sheet vote (No on Resolution 37750) is accurate but comes from the council record, not this source.",
+   "proposed": {
+    "chip": "Fair Moda deal",
+    "line": "Wants a fair Moda deal; led an investigation into undisclosed taxpayer dollars.",
+    "position": "Lists fighting for a fair Moda deal for Portland and leading the first investigation into millions of undisclosed taxpayer dollars. She voted no on the amended, non-binding Moda term sheet (Resolution 37750, August 12, 2026); that vote does not by itself establish opposition to retaining the team."
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "angelita-morillo",
+   "item": "issue/housing",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Stronger tenant rights",
+    "line": "Supports stronger tenant rights and shelter design involving unhoused residents.",
+    "position": "Supports stronger tenant rights and shelter design involving unhoused residents."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=56",
+   "sourceQuote": "Angelita knows the affordable housing struggle firsthand. She supports tenant rights, and expanded homeownership opportunities. She'll push to create shelters by and for unhoused people.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "'Stronger' is added, and 'shelter design involving unhoused residents' shrinks her proposal to create shelters 'by and for unhoused people' into consultation on design.",
+   "proposed": {
+    "chip": "Tenant rights",
+    "line": "Supports tenant rights, expanded homeownership and shelters by and for unhoused people.",
+    "position": "Supports tenant rights and expanded homeownership, and would push to create shelters by and for unhoused people."
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "angelita-morillo",
+   "item": "issue/climate",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Supports transit, bike lanes and sidewalks; opposes oil-train and data-center expansion.",
+    "position": "Supports transit, bike lanes and sidewalks; opposes oil-train and data-center expansion."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=56",
+   "sourceQuote": "Angelita prioritizes investments in public transit, bike lanes and sidewalks, while also working to shut down oil trains and Data Center expansion.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The natural reading is 'shut down oil trains' and 'shut down data center expansion'; 'opposes oil-train expansion' narrows the first to new growth and softens 'working to shut down'. Arguable because the source sentence can be parsed either way.",
+   "proposed": {
+    "line": "Supports transit, bike lanes, sidewalks; wants oil trains and data-center expansion shut down.",
+    "position": "Prioritizes transit, bike lanes and sidewalks, and says she is working to shut down oil trains and data-center expansion."
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "angelita-morillo",
+   "item": "topic/camp-removal",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Says she prepared legislation supporting a shift away from costly homeless camp sweeps toward public bathrooms, sanitation and low-barrier jobs.",
+    "stance": "opposes"
+   },
+   "sourceUrl": "https://www.portland.gov/council/districts/3/angelita-morillo/2026-morillo-work",
+   "sourceQuote": "Prepared legislation to strengthen Councilor Green's oversight work of Urban Alchemy, helping ensure homelessness services are safe, humane, and accountable while supporting a shift away from costly homeless camp sweeps and toward proven investments like public bathrooms, sanitation, and low-barrier jobs.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The legislation was about oversight of Urban Alchemy; the shift away from sweeps is a clause attached to it, so the text makes it read like a sweeps bill. The stance itself is supported.",
+   "proposed": {
+    "text": "Says she prepared legislation strengthening oversight of the homelessness contractor Urban Alchemy while supporting a shift away from costly homeless camp sweeps toward public bathrooms, sanitation and low-barrier jobs."
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "cristal-otero",
+   "item": "issue/housing",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Supports homes across incomes; would move 5–20% of city-regulated affordable rentals to co-ops."
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#otero-2026-09-19",
+   "sourceQuote": "I have proposed creating a pathway for roughly 5–20% of the Portland Housing Bureau's affordable rental portfolio to transition to limited-equity cooperative ownership over time. ... I would begin with publicly owned or publicly financed affordable housing where residents are interested in cooperative ownership and where the building is financially and physically appropriate for conversion.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "'Would move' reads as a city-driven conversion; she proposes a gradual pathway limited to buildings whose residents want it and that suit conversion (the position gets this right, the line drops it).",
+   "proposed": {
+    "line": "Proposes a gradual, resident-chosen path for 5–20% of city-regulated affordable rentals to become co-ops."
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "cristal-otero",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Supports emergency response alongside prevention, behavioral health and housing stability; the page does not name a police staffing target.",
+    "line": "Supports emergency response alongside prevention, behavioral health and housing stability."
+   },
+   "sourceUrl": "https://www.cristalforportland.com/my-platform",
+   "sourceQuote": "That includes maintaining a strong emergency response system while investing in prevention, behavioral health, housing stability, and services that address problems before they become crises.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "Drops 'maintaining a strong', so her commitment to emergency response reads weaker than she states it; small, but it cuts against her.",
+   "proposed": {
+    "position": "Would maintain a strong emergency response system while investing in prevention, behavioral health and housing stability; the page does not name a police staffing target.",
+    "line": "Would maintain strong emergency response while investing in prevention, behavioral health, housing stability."
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "cristal-otero",
+   "item": "topic/police-staffing",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Outreach teams, not officers",
+    "stance": "opposes"
+   },
+   "sourceUrl": "https://www.opb.org/article/2024/09/30/meet-cristal-azul-otero-candidate-for-portland-city-council-district-3/",
+   "sourceQuote": "I would not vote to fund hundreds more police officers. Instead, I support investing in clinical outreach teams with expertise in behavioral health, alongside community-based safety solutions.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The chip drops 'more', so it can read as outreach teams instead of officers at all; she rejected funding hundreds more officers. The text keeps the qualifier.",
+   "proposed": {
+    "topicChip": "Outreach over more officers"
+   },
+   "race": "portland-district-3"
+  },
+  {
+   "candidateId": "cristal-otero",
+   "item": "topic/water-rates",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "mixed",
+    "text": "Notes rates rose 8.1 percent and the Water Bureau pays about $100 million a year in debt service; would judge borrowing by monthly household cost."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=59",
+   "sourceQuote": "The Water Bureau pays about $100 million a year in debt service; water rates rose 8.1% this year. Financing decisions become household costs. I will judge major projects and borrowing by what they cost Portlanders each month.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "The pamphlet speaks to water costs but never says whether to raise bills for the plant, which the guide defines as partial (with the text saying what is left unsaid); it is not conditional or two-sided.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Notes rates rose 8.1 percent and the Water Bureau pays about $100 million a year in debt service; would judge borrowing by monthly household cost. She does not say whether to raise rates for filtration."
+   },
+   "race": "portland-district-3"
+  }
+ ]
+}

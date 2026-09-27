@@ -1,0 +1,654 @@
+{
+ "batch": "b05-multco-auditors-senate",
+ "checked": {
+  "issueSlots": 37,
+  "topicStances": 37,
+  "sourcesFetched": 35
+ },
+ "notes": [
+  "All 35 cited sources were read in full: 27 fetched live with curl, 5 Multnomah pamphlet pages and 3 state pamphlet pages (plus continuation pages 2, 4 and 6) read from the local extracts.",
+  "serenacruz.com/issues is a Wix page with collapsed accordions; curl returned only headings, so it was rendered in the Browser pane and each panel expanded. Verbatim text saved to sources/cruz-issues-rendered.txt.",
+  "Context pages fetched only to trace where out-of-cite wording came from: hermangreene.com/priorities, electnabil.com home, simoneforauditor.com home, and the Sept 18 snapshot of jeffmerkley.com/issues (runtime-data 11641b35b854.txt).",
+  "Findings whose why starts with 'Cite mismatch, no lean' are accurate to another page the candidate published; the fix is to re-cite (proposedSourceUrl) or trim (proposed). The rest are real leans or stance errors.",
+  "Checked and clean: all six Merkley roll-call facts (dates, tallies, his votes) except the ROAD Act vote type; Rede audit schedule and Zenith letter; Morrisey O'Donnell jail-capacity, deflection and budget-gap items; all Henry, Pexton, Robertson topic, Greene topic and Ong Norris PFA items."
+ ],
+ "unreachable": [],
+ "findings": [
+  {
+   "candidateId": "simone-rede",
+   "race": "portland-auditor",
+   "item": "issue/safety",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Sustain the improvements to 911 call wait times that she says her office’s work helped produce."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=52",
+   "sourceQuote": "As your accountability champion I have worked to: • Sustain improvements to 911 call wait times for our community.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The pamphlet says she worked to sustain 911 wait-time improvements; it never says her office's work helped produce them, so the “she says” clause credits her with a claim she did not make (her campaign site does not make it either).",
+   "proposed": {
+    "position": "Sustain improvements to 911 call wait times, which she lists as part of her record as auditor."
+   }
+  },
+  {
+   "candidateId": "simone-rede",
+   "race": "portland-auditor",
+   "item": "issue/climate",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Ensure the city follows through on its climate commitments, an audit area she says she chose because Portlanders raised it."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=52",
+   "sourceQuote": "Strengthen oversight of the city’s Arts Access Fund and ensure the city follows through on climate commitments.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Neither the pamphlet nor her campaign site says she chose climate as an audit area because Portlanders raised it; the “she says” clause attributes words she did not use.",
+   "proposed": {
+    "position": "Ensure the city follows through on its climate commitments, which she lists as part of her record as auditor."
+   }
+  },
+  {
+   "candidateId": "simone-rede",
+   "race": "portland-auditor",
+   "item": "topic/aud-petition-verification",
+   "fields": [
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "chip": "Ruling stands",
+    "stance": "supports",
+    "text": "Said July 29, 2026 that “independent election administration cannot bend to political pressure — from petitioners, opponents, or elected officials,” and that her division administers elections with integrity and by the law."
+   },
+   "sourceUrl": "https://www.portland.gov/auditor/news/2026/7/29/portland-city-elections-debunks-inaccurate-claims-about-1pdx2026-petition",
+   "sourceQuote": "Elections officials are currently verifying a second statistical sample, as required by law. The process is expected to conclude by August 5 ... “Portlanders deserve a final determination based on the law and the evidence, not speculation or demands for a preferred outcome.”",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Her statement came while the second signature sample was still being checked, so it defends the process before any final ruling; “Ruling stands” reads as if she affirmed the final result. Supports is still arguable because she runs the office that made the ruling.",
+   "proposed": {
+    "topicChip": "Defends the process",
+    "text": "Said July 29, 2026, while the second signature sample was still being checked, that “independent election administration cannot bend to political pressure,” and that her office administers elections with integrity and by the law."
+   }
+  },
+  {
+   "candidateId": "simone-rede",
+   "race": "portland-auditor",
+   "item": "topic/aud-office-cuts",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "opposes",
+    "text": "Asked the mayor in March 2026 to hold her office’s cut to 3% while citywide cuts of up to 10% were weighed, writing that transparency and accountability are not optional; her own requested budget cut one performance auditor."
+   },
+   "sourceUrl": "https://www.portland.gov/auditor/news/2026/3/25/unspent-housing-funds-show-accountability-isnt-optional-portlands-next",
+   "sourceQuote": "These tradeoffs are clear as Mayor Wilson contemplates Citywide budget cuts of up to 10%. I’ve asked him not to cut my budget beyond 3%, and I eagerly await his response.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Cite mismatch, no lean: the fact that her requested budget cut one performance auditor is true but comes from her June 18, 2026 audit-schedule memo, not the cited March 25 post; drop it or cite the memo.",
+   "proposed": {
+    "text": "Asked the mayor in March 2026 not to cut her office’s budget beyond 3% while citywide cuts of up to 10% were weighed, writing that transparency and accountability are not optional."
+   },
+   "proposedSourceUrl": "https://www.portland.gov/auditor/audit-services/documents/audit-schedule-2026-27/download (for the auditor-position clause, if kept)"
+  },
+  {
+   "candidateId": "bruce-broussard",
+   "race": "multnomah-district-2",
+   "item": "issue/money",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Living costs have greatly outpaced wages and low-income residents need better resources; he says owning businesses and volunteering gave him a different perspective on spending tax dollars, which are the public’s money."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=34",
+   "sourceQuote": "Also, the rising cost of living has greatly outpaced wage increases and our low-income residents need better resources.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Cite mismatch, no lean: the pamphlet says nothing about owning businesses, volunteering or tax dollars; that sentence is on his campaign site (“It gives me a different perspective on spending our tax dollars. It’s OUR money, not THEIR money.”).",
+   "proposed": {
+    "position": "Living costs have greatly outpaced wage increases, and low-income residents need better resources."
+   },
+   "proposedSourceUrl": "https://www.broussardpdx.com/ (holds the tax-dollars sentence, if kept)"
+  },
+  {
+   "candidateId": "serena-cruz",
+   "race": "multnomah-district-2",
+   "item": "issue/money",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "The county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030; grow the tax base by partnering in Portland’s economy, require project labor and community benefits agreements on County-funded projects, and condition Moda Center money on a payment in lieu of taxes."
+   },
+   "sourceUrl": "https://www.serenacruz.com/issues",
+   "sourceQuote": "I support public dollars to keep the Blazers and the Fire in Portland ... As commissioner, I’ll focus on securing a strong project labor agreement, a community benefits agreement that names Albina Vision Trust as a partner, at least a 20-year commitment from the Blazers to stay in Portland, and an annual payment in lieu of taxes",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "She says she will “focus on securing” a payment in lieu of taxes; “condition Moda Center money on” turns a negotiating aim into a precondition she never states.",
+   "proposed": {
+    "position": "The county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030; grow the tax base by partnering in Portland’s economy, require project labor and community benefits agreements on County-funded projects, and seek an annual payment in lieu of taxes in the Moda Center deal."
+   }
+  },
+  {
+   "candidateId": "serena-cruz",
+   "race": "multnomah-district-2",
+   "item": "topic/mult-moda",
+   "fields": [
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "chip": "Yes, with conditions",
+    "stance": "supports",
+    "text": "Supports public dollars to keep the Blazers and the Fire in Portland, conditioned on a project labor agreement, a community benefits agreement naming Albina Vision Trust, a 20-year commitment and an annual payment in lieu of taxes."
+   },
+   "sourceUrl": "https://www.serenacruz.com/issues",
+   "sourceQuote": "I support public dollars to keep the Blazers and the Fire in Portland, because both are part of our region’s identity and economy. As commissioner, I’ll focus on securing a strong project labor agreement, a community benefits agreement that names Albina Vision Trust as a partner, at least a 20-year commitment from the Blazers to stay in Portland, and an annual payment in lieu of taxes",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Her support is stated flatly and the four items are things she will “focus on securing,” not conditions on her support; the text also drops “at least” from the 20-year commitment.",
+   "proposed": {
+    "topicChip": "Yes, would seek terms",
+    "text": "Supports public dollars to keep the Blazers and the Fire and would seek a project labor agreement, a community benefits agreement naming Albina Vision Trust, at least a 20-year commitment and an annual payment in lieu of taxes."
+   }
+  },
+  {
+   "candidateId": "serena-cruz",
+   "race": "multnomah-district-2",
+   "item": "issue/climate",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Give every Climate Justice Plan goal a named owner, a cost and milestones; protect rental assistance, expand renter access to heat pumps, send cooling and clean-air money first to low-canopy neighborhoods, hold the county to its fossil-fuel-free building resolution, and press DEQ and the City on the fuel hub and Zenith’s 2027 deadline."
+   },
+   "sourceUrl": "https://www.serenacruz.com/issues",
+   "sourceQuote": "I will push to lower the threshold for the County’s Clean Air Construction Standard and press DEQ to keep permitted emissions as low as possible in these communities. ... The County doesn’t permit or zone the site, but I will hold Zenith to its 2027 deadline to stop handling cruide oil, oppose any expansion, and push our state and federal legislators for stronger rules.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "She would press DEQ on emissions in Cully, Sumner and Parkrose and push state and federal legislators on the fuel hub; she never mentions pressing the City, and the position drops her stated opposition to any hub expansion.",
+   "proposed": {
+    "position": "Give every Climate Justice Plan goal a named owner, a cost and milestones; protect rent assistance, expand renter access to heat pumps, send cooling and clean-air money first to low-canopy neighborhoods, hold the county to its fossil-fuel-free building resolution, press DEQ to keep permitted emissions low in Cully, Sumner and Parkrose, and hold Zenith to its 2027 deadline to stop handling crude oil while opposing any fuel-hub expansion."
+   }
+  },
+  {
+   "candidateId": "serena-cruz",
+   "race": "multnomah-district-2",
+   "item": "topic/mult-budget-gap",
+   "fields": [
+    "stance",
+    "topic-text",
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Grow tax base instead",
+    "stance": "mixed",
+    "text": "Says the county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030; the fix is partnering in Portland's economy to grow the tax base."
+   },
+   "sourceUrl": "https://www.serenacruz.com/issues",
+   "sourceQuote": "Even after those cuts, the structural deficit will grow to $33 million by 2030. We can’t cut or tax our way out of this. The fix is for the County to partner in Portland’s economic engine.",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "Her statement is neither conditional nor two-sided and never reaches the administration-before-services choice, which the guide defines as partial; the text should say what is left unsaid, and “instead” implies she rejected that choice.",
+   "proposed": {
+    "stance": "partial",
+    "topicChip": "Grow the tax base",
+    "text": "Says the county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030 and should partner in Portland's economy; she does not say whether to cut administration before services."
+   }
+  },
+  {
+   "candidateId": "herman-greene",
+   "race": "multnomah-district-2",
+   "item": "issue/housing",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Set measurable housing-retention goals, use performance-based contracts, publish timelines, spending and results, and connect housing placements to mental-health, addiction-recovery and workforce services so fewer people return to the streets."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=34",
+   "sourceQuote": "Accountability & Affordability • Set measurable housing-retention goals • Use performance-based contracts • Publish timelines, spending and results",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Cite mismatch, no lean: connecting housing to mental-health, addiction-recovery and workforce services so fewer people return to the streets is on his campaign priorities page, not on pamphlet page 34.",
+   "proposed": {
+    "position": "Set measurable housing-retention goals, use performance-based contracts, and publish timelines, spending and results."
+   },
+   "proposedSourceUrl": "https://www.hermangreene.com/priorities (holds the services clause, if kept)"
+  },
+  {
+   "candidateId": "nathan-ong-norris",
+   "race": "multnomah-district-2",
+   "item": "issue/climate",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Implement the county’s Climate Justice Plan, hold polluters accountable, keep utilities affordable with oversight of private utility companies, cut greenhouse-gas emissions, and mitigate the risks of the CEI Hub (the riverside fuel-tank hub) while preventing its expansion."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=36",
+   "sourceQuote": "Climate Justice: Implementing the Climate Justice Plan; holding polluters accountable; affordable utilities; clean energy mitigate risks of CEI Hub and prevent expansion.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Cite mismatch, no lean: “oversight of private utility companies” and emissions cuts come from his platform page; the pamphlet lists “clean energy” instead.",
+   "proposed": {
+    "position": "Implement the county’s Climate Justice Plan, hold polluters accountable, keep utilities affordable, support clean energy, and mitigate the risks of the CEI Hub (the riverside fuel-tank hub) while preventing its expansion."
+   },
+   "proposedSourceUrl": "https://www.nathanongnorris.com/platform (holds utility oversight and emissions, if kept)"
+  },
+  {
+   "candidateId": "nathan-ong-norris",
+   "race": "multnomah-district-2",
+   "item": "topic/mult-moda",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "No giveaway to billionaires",
+    "stance": "opposes",
+    "text": "Testified in July 2026 that the county should not throw dollars at a billionaire-owned franchise without guarantees, backing AFSCME Local 88's call to stop the vote and hire a professional negotiator."
+   },
+   "sourceUrl": "https://www.nathanongnorris.com/news-updates/testimony-climate-justice-plan-moda",
+   "sourceQuote": "it is irresponsible to adopt this plan, which we sorely need, while simultaneously throwing away dollars to a billionaire-owned sports franchise, without any guarantees. ... I understand that these demands may seem radical, so I offer an alternative from my siblings at AFSCME 88: Stop the vote! Hire a professional negotiator.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The cited testimony objects to money “without any guarantees” and lists demands the Blazers could meet (transit, solar, battery backup); the chip drops that condition. His pamphlet (“gives money and land to billionaires. We have to stop it.”) supports a flatter reading, and stance could arguably be mixed.",
+   "proposed": {
+    "topicChip": "No deal without guarantees"
+   }
+  },
+  {
+   "candidateId": "tony-robertson",
+   "race": "multnomah-district-2",
+   "item": "issue/housing",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Partner with property owners so vacant housing is not left empty while neighbors are on the street, remove barriers that slow placements, protect money for rent assistance, outreach and placement, and hold housing programs accountable for results rather than processes.",
+    "line": "Wants vacant units filled through property-owner partnerships and faster housing placements."
+   },
+   "sourceUrl": "https://www.tonyrobertson.org/priorities",
+   "sourceQuote": "Working with property owners to see where we can partner to avoid letting housing sit empty while our neighbors are on the street ... Evaluate county rules and regulations that may be getting in the way of neighbors receiving help ... Protecting dollars for rent assistance, street outreach, and housing placement programs",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Mostly a cite mismatch: faster placements and “results rather than processes” come from his home page, which says “addressing barriers”; the cited priorities page only commits to evaluate rules that “may be getting in the way,” so “remove barriers” is a notch firmer than either.",
+   "proposed": {
+    "position": "Partner with property owners so housing is not left empty while neighbors are on the street, evaluate county rules that may be getting in the way of help, and protect money for rent assistance, street outreach and housing placement.",
+    "line": "Wants vacant units filled through property-owner partnerships and rent-assistance money protected."
+   }
+  },
+  {
+   "candidateId": "tony-robertson",
+   "race": "multnomah-district-2",
+   "item": "issue/money",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Wants public spending dashboards, clear spending plans and options for local tax relief."
+   },
+   "sourceUrl": "https://www.tonyrobertson.org/",
+   "sourceQuote": "That means demanding clear spending plans, measurable outcomes, and real transparency for every program Multnomah County funds.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Cite mismatch, no lean: “publicly facing spending dashboards” is on his priorities page, not the cited home page.",
+   "proposed": {
+    "line": "Wants clear spending plans, measurable outcomes and options for local tax relief."
+   }
+  },
+  {
+   "candidateId": "nabil-zaghloul",
+   "race": "multnomah-district-2",
+   "item": "issue/housing",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Introduce a Multnomah County Homelessness Reduction Act that puts prevention first, publicly report housing retention at three, six, nine and twelve months for every County-funded program, and expand the county’s master-lease model with landlords."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=36",
+   "sourceQuote": "I will introduce the Multnomah County Homelessness Reduction Act to disrupt the path to homelessness. Prevention first: ... Track and publicly report housing retention at three, six, nine and twelve months for every County-funded program.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Cite mismatch, no lean: expanding the master-lease model is on his homelessness web page, not pamphlet page 36.",
+   "proposed": {
+    "position": "Introduce a Multnomah County Homelessness Reduction Act that puts prevention first, and publicly report housing retention at three, six, nine and twelve months for every County-funded program."
+   },
+   "proposedSourceUrl": "https://electnabil.com/issues/homelessness (holds the master-lease clause, if kept)"
+  },
+  {
+   "candidateId": "nabil-zaghloul",
+   "race": "multnomah-district-2",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Introduce a Multnomah County Accountability and Results Act: a public County Report Card showing what the county spends, what works, what doesn’t and where it must improve, with programs funded by measured outcomes and county wages that keep up with Portland’s cost of living.",
+    "line": "Proposes a public county report card on spending and results, outcome-based funding."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=36",
+   "sourceQuote": "I will also introduce the Multnomah County Accountability and Results Act, a public County Report Card showing what we spend, what’s working, what’s not and where we need to improve. Government should be measured by whether people’s lives are getting better and taxpayers’ money is producing results.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The pamphlet proposes a report card but says nothing about funding programs by outcomes or county wages; those come from his website, where outcome funding is framed as prioritizing strong programs and expanding them “when the budget permits.”",
+   "proposed": {
+    "position": "Introduce a Multnomah County Accountability and Results Act: a public County Report Card showing what the county spends, what works, what doesn’t and where it must improve.",
+    "line": "Proposes a public county report card on what the county spends and what works."
+   }
+  },
+  {
+   "candidateId": "nabil-zaghloul",
+   "race": "multnomah-district-2",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Track whether people leaving the justice system actually reintegrate (find work, stay housed, stay out), invest in what Cully residents asked for (cameras, community safety networks, youth programs), and add behavioral-health professionals so police stop responding to mental-health crises.",
+    "line": "Wants reintegration tracked, neighborhood safety networks funded, clinicians instead of police for crises."
+   },
+   "sourceUrl": "https://electnabil.com/issues/public-safety",
+   "sourceQuote": "When the county doesn’t have enough behavioral health professionals, police end up responding to mental health crises. That’s not what they’re trained for, and the outcomes are worse for everyone, the person in crisis and the officer.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "He describes a staffing shortage that leaves police handling crises they are not trained for; “clinicians instead of police” and “so police stop responding” state a replacement policy more firmly than he does.",
+   "proposed": {
+    "position": "Track whether people leaving the justice system actually reintegrate (find work, stay housed, stay out), invest in what Cully residents asked for (cameras, community safety networks, youth programs), and have enough behavioral-health professionals that police are not left handling mental-health crises they are not trained for.",
+    "line": "Wants reintegration tracked, neighborhood safety networks funded, more behavioral-health staff for crises."
+   }
+  },
+  {
+   "candidateId": "nabil-zaghloul",
+   "race": "multnomah-district-2",
+   "item": "topic/mult-shelter-cuts",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "chip": "Treatment, not more shelters",
+    "stance": "mixed",
+    "text": "Notes many of the 600 beds being cut were already empty and says the answer for people who refuse shelter is sustained behavioral-health and addiction treatment, not more shelters, with prevention funded first."
+   },
+   "sourceUrl": "https://electnabil.com/issues/homelessness",
+   "sourceQuote": "The county is cutting 600 beds this budget cycle, but many of those beds were already empty. ... For this population, the answer is sustained behavioral health and addiction treatment, not more shelters. ... prevention needs to be treated as a frontline strategy, not as an afterthought.",
+   "category": [
+    "d",
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Nothing on the page points against the cuts and he never says whether the beds should close, so the guide's definition gives partial, not mixed; “with prevention funded first” also firms up “a frontline strategy.”",
+   "proposed": {
+    "stance": "partial",
+    "text": "Notes many of the 600 beds being cut were already empty and says the answer for people who refuse shelter is sustained behavioral-health and addiction treatment, not more shelters; he does not say whether the beds should close."
+   }
+  },
+  {
+   "candidateId": "nicole-morrisey-o-donnell",
+   "race": "multnomah-sheriff",
+   "item": "issue/safety",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Keep reducing crime through visible, proactive presence focused on violent crime and repeat offenders; run a safe, accountable corrections system with behavioral-health, education and job-readiness services; and expand behavioral-health and reentry work so law enforcement is not the only response."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=38",
+   "sourceQuote": "With your support, in the next 4 years, I will prioritize: • Continuing to reduce crime and strengthen community safety. • Ensuring a safe, accountable corrections system. • Expanding behavioral health and reentry efforts.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Cite mismatch, no lean: the violent-crime and repeat-offender focus, the education and job-readiness services, and “Law enforcement cannot be the only solution” are on her campaign site, not pamphlet page 38; re-citing the site (already her money cite) fixes it.",
+   "proposed": {
+    "position": "Keep reducing crime and strengthening community safety, ensure a safe, accountable corrections system, and expand behavioral-health and reentry efforts."
+   },
+   "proposedSourceUrl": "https://www.nicoleforsheriff2026.com/ (holds the full current wording)"
+  },
+  {
+   "candidateId": "nicole-morrisey-o-donnell",
+   "race": "multnomah-sheriff",
+   "item": "topic/mult-sanctuary",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "No ICE detainer holds",
+    "stance": "partial",
+    "text": "Her office told KATU in June 2026 it cannot hold people solely on ICE detainers and does not use its resources for civil immigration enforcement; it has not said whether the county's sanctuary code should stand."
+   },
+   "sourceUrl": "https://katu.com/news/local/congressional-inquiry-into-sanctuary-laws-seeks-records-from-multnomah-county-leaders-ice-trump-administration-local-portland",
+   "sourceQuote": "The sheriff's office said Oregon law requires it to maintain a distinction between local law enforcement responsibilities and federal civil immigration enforcement. According to the sheriff's office, it cannot hold individuals solely on the basis of ICE detainers",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The chip drops “solely,” and the office presents this as what Oregon law requires rather than its own choice; the text keeps both, so the fix is chip-only.",
+   "proposed": {
+    "topicChip": "No detainer-only holds"
+   }
+  },
+  {
+   "candidateId": "jeff-merkley",
+   "race": "oregon-us-senate",
+   "item": "issue/climate",
+   "fields": [
+    "position",
+    "line",
+    "chip"
+   ],
+   "current": {
+    "position": "Would rapidly shift from fossil fuels to cheaper renewables, toward 100% clean energy with a Green New Deal that creates jobs in front-line communities.",
+    "line": "Would rapidly shift from fossil fuels to cheaper renewables, toward 100% clean energy.",
+    "chip": "100% renewable energy"
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=3",
+   "sourceQuote": "Meet the climate chaos challenge: Rapidly transition from dirty, expensive fossils to cheaper, cleaner, renewables. (statement continues on PDF page 4)",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The pamphlet sets no 100% target and names no Green New Deal; both come from jeffmerkley.com/issues (“a shift to 100% clean and renewable energy sources”), so the line and chip add a number the cited source lacks. Re-cite or trim.",
+   "proposed": {
+    "position": "Would rapidly transition from dirty, expensive fossil fuels to cheaper, cleaner renewables.",
+    "line": "Would rapidly shift from fossil fuels to cheaper, cleaner renewables.",
+    "chip": "Rapid shift to renewables"
+   },
+   "proposedSourceUrl": "https://www.jeffmerkley.com/issues/ (holds the 100% and Green New Deal wording, if kept; Sept 18 snapshot 11641b35b854.txt)"
+  },
+  {
+   "candidateId": "jeff-merkley",
+   "race": "oregon-us-senate",
+   "item": "topic/fed-housing-aid",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "chip": "Voted for ROAD Act",
+    "stance": "supports",
+    "text": "Voted yes on June 22, 2026 on final passage of the 21st Century ROAD to Housing Act (85–5), which became law July 11, 2026."
+   },
+   "sourceUrl": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00182.htm",
+   "sourceQuote": "Question: On the Motion (Motion to Concur in the House Amendment to the Senate Amendment to H.R. 6644 with an Amendment (SA 5823)) ... Vote Result: Motion Agreed to ... YEAs 85 NAYs 5",
+   "category": [
+    "factual"
+   ],
+   "verdict": "borderline",
+   "why": "Roll call 182 was a motion to concur with a further amendment, which sent the bill back to the House (it cleared the House June 23), so “final passage” misnames the vote; the source label says the same. No effect on the stance.",
+   "proposed": {
+    "text": "Voted yes on June 22, 2026 to concur, with a further amendment, in the House changes to the 21st Century ROAD to Housing Act (85–5); it became law July 11, 2026."
+   }
+  },
+  {
+   "candidateId": "jeff-merkley",
+   "race": "oregon-us-senate",
+   "item": "topic/fed-data-centers",
+   "fields": [
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "chip": "Asked state to act",
+    "stance": "partial",
+    "text": "With Sen. Wyden, asked Oregon’s data center advisory committee on July 2, 2026 to weigh rising electricity costs, water use, farmland rezoning and tribal rights; the letter proposes no federal action."
+   },
+   "sourceUrl": "https://www.merkley.senate.gov/wyden-merkley-ask-state-data-center-advisory-committee-to-consider-multiple-issues-raised-by-oregonians/",
+   "sourceQuote": "While we acknowledge that data centers are critical to American national security, can help ensure technological advancement, and create good union jobs, your work to strike a balance ... is critical ... The Oregon senators asked the state data center advisory committee to consider the following concerns",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The letter asks the committee to “consider” concerns and credits data centers' benefits; “Asked state to act” firms up the request, and the text drops the balance the letter strikes.",
+   "proposed": {
+    "topicChip": "Asked state to weigh",
+    "text": "With Sen. Wyden, asked Oregon’s data center advisory committee on July 2, 2026 to weigh rising electricity costs, water use, farmland rezoning and tribal rights alongside data centers’ benefits; the letter proposes no federal action."
+   }
+  },
+  {
+   "candidateId": "david-brock-smith",
+   "race": "oregon-us-senate",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Wants drug and mental-health treatment paired with accountability, an end to permanent street camping, and support for law enforcement with consequences for repeat offenders.",
+    "line": "Wants treatment with accountability, an end to permanent street camping, support for police."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=1",
+   "sourceQuote": "We need drug and mental health treatment that works! David has and will continue to fight for treatment and accountability, and bring an end to permanent street camping.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Cite mismatch, no lean: support for law enforcement and consequences for repeat offenders appear on his issues page (“I support law enforcement, accountability for repeat offenders”), not in the pamphlet statement.",
+   "proposed": {
+    "position": "Wants drug and mental-health treatment that works, paired with accountability, and an end to permanent street camping.",
+    "line": "Wants treatment with accountability and an end to permanent street camping."
+   },
+   "proposedSourceUrl": "https://www.davidbrocksmithfororegon.com/issues (holds the full current wording)"
+  },
+  {
+   "candidateId": "david-brock-smith",
+   "race": "oregon-us-senate",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line",
+    "chip"
+   ],
+   "current": {
+    "position": "Wants no new taxes, more support for local businesses, elimination of fraud and less unnecessary government spending; cites fighting the state gas tax and stopping tax hikes.",
+    "line": "Wants no new taxes, fraud eliminated and unnecessary government spending reduced.",
+    "chip": "No new taxes"
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=1",
+   "sourceQuote": "We need common-sense solutions that incentivize job growth in our communities, supporting local small businesses. David fought Kotek’s-Gas-Tax, stopped new tax-hikes, and continues his work on eliminating fraud, while reducing unnecessary government spending.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Cite mismatch, no lean: the pamphlet reports that he stopped tax hikes, while the pledge “no new taxes” appears only on his issues page (“That means no new taxes”); re-citing the issues page keeps everything as written.",
+   "proposed": {
+    "position": "Wants job growth, support for local small businesses, fraud eliminated and unnecessary government spending reduced; cites fighting the state gas tax and stopping new tax hikes.",
+    "line": "Wants fraud eliminated and unnecessary government spending reduced; cites stopping tax hikes.",
+    "chip": "Stop tax hikes"
+   },
+   "proposedSourceUrl": "https://www.davidbrocksmithfororegon.com/issues (holds “no new taxes”; preferred fix)"
+  },
+  {
+   "candidateId": "david-brock-smith",
+   "race": "oregon-us-senate",
+   "item": "issue/climate",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would hold data centers accountable for water, farmland and energy costs so those costs are not shifted onto households, and push active forest management, fuel reduction and landowner partnerships to cut wildfire risk.",
+    "line": "Would keep data-center costs off households and expand forest fuel reduction against wildfire."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=1",
+   "sourceQuote": "David is concerned data centers strain Oregon’s water, farmland, energy costs, and communities. ... David will ensure data centers are accountable, protect natural resources, and prevent their costs from being shifted onto Oregon households. (PDF page 2)",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Cite mismatch, no lean: the forest-management, fuel-reduction and landowner language is on his issues page; the pamphlet statement covers only data centers.",
+   "proposed": {
+    "position": "Would ensure data centers are accountable, protect natural resources and keep data-center costs for water, farmland and energy from being shifted onto Oregon households.",
+    "line": "Would keep data-center costs off Oregon households and protect natural resources."
+   },
+   "proposedSourceUrl": "https://www.davidbrocksmithfororegon.com/issues (holds the wildfire clause, if kept)"
+  },
+  {
+   "candidateId": "bri-williams",
+   "race": "multnomah-district-2",
+   "item": "issue/safety",
+   "fields": [
+    "chip"
+   ],
+   "current": {
+    "chip": "Prevention-first safety"
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=35",
+   "sourceQuote": "Safer neighborhoods through investments in restorative justice, holistic health, prevention, youth, community-based solutions, and services for survivors.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "She lists prevention third among six investments; “Prevention-first” ranks it first and implies a priority over other approaches she never states.",
+   "proposed": {
+    "chip": "Community-based safety"
+   }
+  }
+ ]
+}

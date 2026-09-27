@@ -1,0 +1,860 @@
+{
+ "batch": "b04-chair-governor",
+ "checked": {
+  "issueSlots": 21,
+  "topicStances": 55,
+  "sourcesFetched": 41
+ },
+ "unreachable": [
+  {
+   "url": "https://olis.oregonlegislature.gov/liz/2025S1/Measures/Overview/HB3991",
+   "items": [
+    "tina-kotek/topic/gov-transportation-taxes"
+   ],
+   "note": "Overview page returned HTTP 500 on September 24, 2026; the same measure history was read from api.oregonlegislature.gov OData MeasureHistoryActions (saved as sources/b04-olis-hb3991-hb3546-history.txt). Signed November 7, 2025; Drazan among the 12 House nays on September 1, 2025. The repeal request and bipartisan-pledge clauses are not in OLIS; the pack's evidence note attributes them to KATU."
+  },
+  {
+   "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3546",
+   "items": [
+    "tina-kotek/topic/gov-power-act",
+    "christine-drazan/topic/gov-power-act"
+   ],
+   "note": "Overview page returned HTTP 500; read via the OData API instead (same file). Governor signed June 16, 2025."
+  }
+ ],
+ "notes": [
+  "Verified and fine: PFA delay votes (Aug 27, 2026 minutes: R.2 moved by Singleton, 5-0; one-year delay was the Singleton-Moyer amendment), Moda (4-1, Moyer the only no), sanctuary ordinance (unanimous April 9, 2026), deflection resolution (co-sponsored by Brim-Edwards and Singleton, Feb 26, 2026), FY 2027 budget (4-1, Brim-Edwards the no), VerGow confirmation (3-2, Singleton no), HB 3991 (Drazan no Sept 1, 2025), CPP quote, kicker quotes, EO 26-01 goals, SB 1507 quote.",
+  "Claims present in pack evidence notes but not in the cited URL (not flagged): Kotek kicker 'Rainy Day Fund instead', EO 26-01 'HB 3644 $204.9 million', EO 26-04 date, Singleton sobering-plan vote (note cites 5-0 minutes), Kotek POWER Act 29% (governor's release).",
+  "Meieran podcast items were checked against YouTube auto-captions read in the browser's transcript panel (excerpts saved as sources/b04-nwfresh-meieran-youtube-excerpts.txt); speaker turns are unlabeled.",
+  "Smith safety description verified against KEPW interview (sources/b04-kepw-brett-smith-2026-08-07.txt), a source outside the batch."
+ ],
+ "findings": [
+  {
+   "candidateId": "julia-brim-edwards",
+   "race": "multnomah-chair",
+   "item": "topic/mult-jail-capacity",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Enough beds, no releases",
+    "stance": "partial"
+   },
+   "sourceUrl": "https://www.juliabrim-edwards.com/s/Julia-Brim-Edwards-Press-Release-050526.pdf",
+   "sourceQuote": "successfully offered budget amendments to fund public safety positions to reduce auto theft, target organized retail theft against local businesses, prosecute domestic violence cases, and ensure enough jail beds for serious crimes were available without emergency releases.",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "The chip drops \"emergency\": she spoke of avoiding emergency (capacity) releases, not releases in general.",
+   "proposed": {
+    "topicChip": "No emergency jail releases"
+   }
+  },
+  {
+   "candidateId": "julia-brim-edwards",
+   "race": "multnomah-chair",
+   "item": "topic/mult-sobering",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Led sobering-center effort",
+    "text": "Her campaign says she led the effort to rebuild the 24/7 Sobering and Crisis Stabilization Center as the front door to addiction treatment instead of jail or the ER, and expanded recovery housing."
+   },
+   "sourceUrl": "https://www.juliabrim-edwards.com/s/Information-About-The-Race.pdf",
+   "sourceQuote": "Led the effort to rebuild the 24/7 Sobering and Crisis Stabilization Center that will expand access to those in crisis and provide needed drug addiction treatment services instead of sending them to jail or the ER. ... Expanded shelter beds and recovery housing.",
+   "category": [
+    "d",
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The source backs building the center but says nothing about funding more detox and treatment beds around it, the same gap that earns Singleton and Meieran \"partial\"; \"front door\" is our metaphor, not hers.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Her campaign says she led the effort to rebuild the 24/7 Sobering and Crisis Stabilization Center to provide addiction treatment instead of jail or the ER; it does not say whether to fund more detox and treatment beds around it.",
+    "note": "Alternative that keeps \"supports\": cite the February 26, 2026 deflection resolution she co-sponsored, which directs a strategic plan to increase access to withdrawal management, inpatient and intensive outpatient treatment. Singleton co-sponsored it too, so her entry would then also qualify."
+   }
+  },
+  {
+   "candidateId": "julia-brim-edwards",
+   "race": "multnomah-chair",
+   "item": "topic/mult-ambulance",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Backed one-paramedic model",
+    "text": "Cast the only vote for Meieran's July 2024 resolution pressing the chair to let ambulances run with one paramedic and one EMT, a week before mediation with AMR settled on a hybrid-staffing pilot."
+   },
+   "sourceUrl": "https://www.opb.org/article/2024/07/26/multnomah-county-officials-amr-mediation/",
+   "sourceQuote": "His amendment would have directed the county to temporarily change the ambulance staffing model to reflect the county's final offer to AMR in the mediation process, if negotiations did not conclude by Aug. 1. ... Her proposal, including Beason's amendment, failed 3-1, with Commissioner Julia Brim-Edwards casting the only vote in support.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The version she voted for had been amended to a temporary switch to the county's final mediation offer, and the article only says mediation was expected to end the next week; the \"hybrid-staffing pilot\" is not in it. Her own launch release does say she co-led the staffing change, which can carry \"supports\".",
+   "proposed": {
+    "text": "Cast the only vote for Meieran's July 2024 ambulance-staffing resolution, as amended to temporarily adopt the county's final offer to AMR if mediation did not end by August 1; her launch release says she co-led the staffing change.",
+    "note": "Keep stance \"supports\" only if the launch release (\"co-led the successful effort to modify the ambulance service staffing model\") is added as a source; the OPB vote alone was for a temporary change, not dropping the rule for good."
+   }
+  },
+  {
+   "candidateId": "julia-brim-edwards",
+   "race": "multnomah-chair",
+   "item": "topic/mult-shelter-cuts",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "opposes",
+    "chip": "Voted no on budget",
+    "text": "Cast the lone no vote on the FY 2027 budget, saying it leaves too many gaps and will not reduce homelessness or deliver the change the community is asking for."
+   },
+   "sourceUrl": "https://multco.us/news/news-release-multnomah-county-board-commissioners-closes-significant-spending-gap-adopts",
+   "sourceQuote": "\"But ultimately, I voted no on this budget as it leaves too many gaps and will not reduce homelessness ... I could not support a budget that misses an opportunity for course correction – to reduce outgrown layers of administrative leadership ...\" ... An amendment by Commissioners Brim-Edwards and Singleton, approved unanimously, also sets aside up to $1 million of those dollars to provide housing specifically for people in shelters that will close after July 1.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "\"Opposes\" reads as opposing the shelter closures, but the no vote was on the whole budget, her stated reasons were administration layers and results, and she co-sponsored money to house people leaving the closing shelters. (Singleton's \"supports\" is sounder: she voted yes and praised housing stability and placement out of shelter.)",
+   "proposed": {
+    "stance": "partial",
+    "text": "Cast the lone no vote on the FY 2027 budget, saying it leaves too many gaps and will not reduce homelessness; she did not name the shelter closures as a reason and co-sponsored money to house people from closing shelters."
+   }
+  },
+  {
+   "candidateId": "julia-brim-edwards",
+   "race": "multnomah-chair",
+   "item": "topic/mult-hsd-oversight",
+   "fields": [
+    "stance"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Heed the auditor",
+    "text": "Said after the Sunstone Way findings that the public and Commission should not have to rely on whistleblowers to expose misused taxpayer dollars, faulting the chair for not heeding the auditor's earlier warnings."
+   },
+   "sourceUrl": "https://www.wweek.com/news/county/2026/06/18/homeless-services-nonprofit-misspent-36-million-of-public-money-report-finds/",
+   "sourceQuote": "\"The public and the Commission should not have to rely on whistleblowers to expose misuses of taxpayers' dollars to light,\" Brim-Edwards said ... \"When additional allegations of misspent funds were raised, I called for greater transparency and accountability for public funds.\"",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "The quoted words are a general call for transparency and accountability and do not name contract monitoring or outside audits; her campaign PDF does (\"Will implement the independent auditor recommendations\"), so either cite that or mark it partial.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Said after the Sunstone Way findings that the public should not have to rely on whistleblowers to expose misused taxpayer dollars, faulting the chair for ignoring the auditor's warnings; she did not say whether to add outside audits or monitoring.",
+    "note": "Or keep \"supports\" and add jbeRaceInfo (\"Will implement the independent auditor recommendations to reduce waste and fraudulent transactions\") as the source."
+   }
+  },
+  {
+   "candidateId": "sharon-meieran",
+   "race": "multnomah-chair",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "The county spends more per person than almost anywhere yet gets the worst results; she would budget for results, account for every dollar, redirect money from ineffective programs and deliver more while spending less.",
+    "line": "Wants budgets tied to results, every dollar accounted for, less spending overall.",
+    "chip": "Budget for results"
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=33",
+   "sourceQuote": "Multnomah County is the reason Oregon ranks last in the nation for mental illness. Yet we spend more per person than almost anywhere else. Highest spending. Worst results. ... I learned Multnomah County reacts instead of plans, spends money without specific goals, and answers to no one.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Her pamphlet statement diagnoses the spending but contains none of the remedies (budget for results, account for every dollar, redirect money, spend less); those come from her plan page and home page.",
+   "proposed": {
+    "source": "https://www.sharonforchair.com/the-plan",
+    "position": "She says the county spends $4 billion a year while its systems fail; she would budget for results, account for every dollar and redirect funding from ineffective programs, improving results by doing its core work well instead of spending more.",
+    "line": "Wants budgets tied to results, every dollar tracked, and money moved from ineffective programs.",
+    "note": "Or keep the pamphlet and cut the position to its diagnosis (highest spending, worst results, money spent without specific goals)."
+   }
+  },
+  {
+   "candidateId": "sharon-meieran",
+   "race": "multnomah-chair",
+   "item": "issue/safety",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Get people with serious addiction and mental illness off the streets through an actual plan implemented by a chief executive who acts; she cites ending the county's ambulance-response crisis as a commissioner."
+   },
+   "sourceUrl": "https://www.sharonforchair.com/",
+   "sourceQuote": "We need an actual plan to get people with serious addiction and mental health issues off the streets, implemented by a leader who's driven to DO something, not just BE something.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The ambulance claim is not on the cited home page; it is in her pamphlet statement (\"I used bold, honest leadership to end our ambulance crisis\"). Accurate, but unsourced where cited.",
+   "proposed": {
+    "position": "Get people with serious addiction and mental illness off the streets through an actual plan implemented by a leader driven to act.",
+    "note": "Or keep the ambulance clause and add the pamphlet (PDF page 33) as its source."
+   }
+  },
+  {
+   "candidateId": "sharon-meieran",
+   "race": "multnomah-chair",
+   "item": "topic/mult-deflection",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "opposes",
+    "chip": "Halt current program",
+    "text": "Would halt the deflection program in its current form and replace the system that produced it, defining success by treatment completion and stable housing; says $20 million has not produced one such case."
+   },
+   "sourceUrl": "https://www.sharonforchair.com/newsletter/bxk3w0qbinlahsogwey6nkqvpvtaob",
+   "sourceQuote": "The fact is, after investing more than $20 million, the County cannot point to a single person who completed treatment and is in stable housing because of its deflection program.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "She says the county cannot point to a single success (a claim about missing evidence, echoed in her June 3 newsletter: \"It is impossible to know\"); our text turns it into a flat claim that there were none.",
+   "proposed": {
+    "text": "Would halt the deflection program in its current form and replace the system that produced it, defining success by treatment completion and stable housing; says after more than $20 million the county cannot point to one such case."
+   }
+  },
+  {
+   "candidateId": "sharon-meieran",
+   "race": "multnomah-chair",
+   "item": "topic/mult-pfa-delay",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "partial",
+    "chip": "Define goals before taxing",
+    "text": "On a July 2026 podcast said Preschool for All must define its goal and forecast its money before raising taxes as promised while hundreds of millions sit unspent; she did not say whether the 2028 delay should stand."
+   },
+   "sourceUrl": "https://www.youtube.com/watch?v=YCSJ3o_ZgdE",
+   "sourceQuote": "(auto-captions, 25:42-26:40) \"you also need to plan and forecast how much money you will have ... Do we raise taxes like we said we would even though we have more than we already than we bargained for.\" [host:] \"there's like hundreds of millions of dollars ... That is unspent as far as I know.\"",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "\"Hundreds of millions ... unspent\" is the host's line, not hers, and she posed raising the tax as promised as an open question given the surplus, not as the next step after defining goals.",
+   "proposed": {
+    "text": "On a July 2026 podcast said Preschool for All must define its goal and forecast its money, asking whether to raise taxes as promised when it has more than expected; she did not say whether the 2028 delay should stand."
+   }
+  },
+  {
+   "candidateId": "sharon-meieran",
+   "race": "multnomah-chair",
+   "item": "topic/mult-city-county",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "mixed",
+    "chip": "Evaluate city-county merger",
+    "text": "Her turnaround plan would lay the groundwork and evaluate mechanisms for city-county consolidation to address redundancies from separate oversight and funding of overlapping functions."
+   },
+   "sourceUrl": "https://www.sharonforchair.com/s/Comprehensive-Multnomah-County-Turnaround-Plan-2-6-26-update.pdf",
+   "sourceQuote": "Lay groundwork and evaluate mechanisms for City/County consolidation to address redundancies and inefficiencies resulting from separate oversight and funding for overlapping functions.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "\"Evaluate mechanisms\" is neither conditional nor two-sided; it speaks to the topic without reaching whether one government should run shelters, which is the guide's definition of partial, and the text should then say so.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Her turnaround plan would lay the groundwork and evaluate mechanisms for city-county consolidation to address redundancies in overlapping functions; it does not say whether one government should run shelters."
+   }
+  },
+  {
+   "candidateId": "sharon-meieran",
+   "race": "multnomah-chair",
+   "item": "topic/mult-budget-gap",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Zero-based budgeting",
+    "text": "Would adopt zero-based budgeting so every program justifies its cost, redirect money from ineffective and redundant structures and contracts, and deliver more while spending less."
+   },
+   "sourceUrl": "https://www.sharonforchair.com/newsletter/1h48ur4ba3mp3ylokn7o5gaho21mbn",
+   "sourceQuote": "Adopt zero-based budgeting. Every program should justify its existence, cost, and role in achieving County goals. ... ineffective structures, redundant contracts and performative initiatives remain embedded throughout the County's system, consuming resources that could be used elsewhere. ... It preserves essential services while ensuring that resources are aligned with results.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "\"Deliver more while spending less\" is not in the cited newsletter (a similar line is on her home page); the newsletter's own words, preserving essential services, fit this topic's \"administration before services\" choice better.",
+   "proposed": {
+    "text": "Would adopt zero-based budgeting so every program justifies its cost, and redirect money from ineffective structures and redundant contracts while preserving essential services."
+   }
+  },
+  {
+   "candidateId": "shannon-singleton",
+   "race": "multnomah-chair",
+   "item": "issue/housing",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Find lasting solutions to the homelessness crisis by building better systems with the people closest to the problem; she says she realigned county funds toward shelter, outreach and housing and cut duplicated services in the Homeless Services Department.",
+    "line": "Wants homelessness systems rebuilt with providers, businesses and neighbors at the table.",
+    "chip": "Rebuild homeless services"
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=32",
+   "sourceQuote": "As your next County Chair, I'll build better systems by drawing in people closest to the problem: service providers, small business owners, neighbors, and even people who don't always agree with me. That's how we find real, lasting solutions to our homelessness crisis, lower costs, and support families.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The record claims are not in her pamphlet statement; they come from her reform-record page, which says she \"increased efficiency and improved oversight\" of the department \"focused on reducing service duplication\", less than \"cut duplicated services\".",
+   "proposed": {
+    "position": "Find real, lasting solutions to the homelessness crisis by building better systems with the people closest to the problem: service providers, small business owners, neighbors and people who disagree with her.",
+    "note": "If the record claims stay, cite https://www.shannonsingleton.org/reformrecord and write \"worked to reduce duplicated services\" instead of \"cut duplicated services\"."
+   }
+  },
+  {
+   "candidateId": "shannon-singleton",
+   "race": "multnomah-chair",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Lower costs and make more effective use of taxpayers' dollars; she cites coauthoring the county's first lobbyist disclosure rules and finding money in the budget to close a homeless-services shortfall while pushing for sustainable funding.",
+    "line": "Wants taxpayer dollars used more effectively, with lobbyist disclosure and sustainable funding.",
+    "chip": "Effective use of dollars"
+   },
+   "sourceUrl": "https://www.shannonsingleton.org/reformrecord",
+   "sourceQuote": "Transparency and accountability: Coauthored the County's first disclosure requirements for lobbyists. Saving taxpayers millions: Pushed for more effective use of taxpayers' dollars by introducing reforms to the Multnomah County Deflection Center that would save money, connect addiction, housing, and behavioral health services, and drive outcomes.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "The shortfall and sustainable-funding claims are not on the cited page; they come from an endorser's quote in her pamphlet, which says she found money \"to help close the gap\", and our text drops \"help\".",
+   "proposed": {
+    "position": "Push for more effective use of taxpayers' dollars; she cites coauthoring the county's first lobbyist disclosure rules and Deflection Center reforms meant to save money.",
+    "line": "Wants taxpayer dollars used more effectively, with the county's first lobbyist disclosure rules."
+   }
+  },
+  {
+   "candidateId": "shannon-singleton",
+   "race": "multnomah-chair",
+   "item": "topic/mult-deflection",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Link to housing, keep",
+    "text": "Issued a November 2025 reform proposal tying the center to the by-name list, county sober shelters and outreach referrals, then co-sponsored the February 2026 resolution adopting stricter completion rules."
+   },
+   "sourceUrl": "https://multco.us/news/multnomah-county-board-adopts-resolution-recommending-policies-aim-strengthen-drug-deflection",
+   "sourceQuote": "\"In November, I issued a reform proposal for our deflection program,\" said Commissioner Shannon Singleton. \"We have to break down the silos between behavioral health and homeless services if we want to truly offer opportunities for people to be successful at recovering from both addiction and homelessness.\"",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The release confirms a November proposal but not its contents; the by-name list and shelter links it lists are provisions of the Board resolution, not described as hers.",
+   "proposed": {
+    "text": "Issued a November 2025 reform proposal for the deflection program, then co-sponsored the February 2026 resolution adopting stricter completion rules, saying behavioral health and homeless services must break down silos.",
+    "note": "Or cite the November 2025 reporting linked from her reform-record page for the proposal's contents."
+   }
+  },
+  {
+   "candidateId": "shannon-singleton",
+   "race": "multnomah-chair",
+   "item": "topic/mult-sanctuary",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Co-sponsored sanctuary code",
+    "text": "Co-sponsored the April 9, 2026 ordinance writing sanctuary rules into county code, saying the county will stand up to bullies for immigrant and refugee neighbors and that restricted areas mean all county facilities."
+   },
+   "sourceUrl": "https://multco.us/news/news-release-multnomah-county-board-unanimously-approves-enshrining-sanctuary-policies-county",
+   "sourceQuote": "\"When we say County facilities we mean all County facilities,\" said Commissioner Singleton. \"The visible signage, training, everything will be made available and translated on the same day to make sure everybody is able to see and understand the signage.\"",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "She said the policy (signage, training, exclusion rules) covers all county facilities; the ordinance defines restricted areas within buildings, so \"restricted areas mean all county facilities\" overstates what she said.",
+   "proposed": {
+    "text": "Co-sponsored the April 9, 2026 ordinance writing sanctuary rules into county code, saying the county will stand up to bullies for immigrant and refugee neighbors and that the rules cover all county facilities."
+   }
+  },
+  {
+   "candidateId": "tina-kotek",
+   "race": "oregon-governor",
+   "item": "issue/housing",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would cut red tape to speed construction, expand options for renters and first-time buyers, and grow starter-home development and down-payment assistance; cites the housing emergency she declared and added shelter and treatment beds.",
+    "line": "Would cut red tape to build homes faster, with starter homes and down-payment help.",
+    "chip": "Faster homebuilding"
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=33",
+   "sourceQuote": "Tina's fighting back against the rising cost of housing which is why she's cutting red tape to build more affordable homes and helped Oregon outpace the nation in new housing production. ... (p. 34) Tina declared a housing emergency, increased shelter and treatment beds, she will continue the fight to reduce homelessness.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Renters, first-time buyers, starter homes and down-payment help are not in her pamphlet statement; they are her platform page's words (\"Expand housing options for renters and first-time buyers, cut red tape to expedite new construction, and increase development of starter homes and down payment assistance programs\").",
+   "proposed": {
+    "position": "Would keep cutting red tape to build more affordable homes; she says Oregon has outpaced the nation in new housing production and cites the housing emergency she declared and added shelter and treatment beds.",
+    "line": "Would keep cutting red tape to build more affordable homes.",
+    "chip": "Cut housing red tape",
+    "note": "Alternative: keep the current position, line and chip and re-cite to https://www.tinafororegon.com/oregons-future/ (then drop or separately source the housing-emergency clause, which is only in the pamphlet)."
+   }
+  },
+  {
+   "candidateId": "tina-kotek",
+   "race": "oregon-governor",
+   "item": "issue/money",
+   "fields": [
+    "chip",
+    "line"
+   ],
+   "current": {
+    "chip": "Ban hidden fees",
+    "line": "Would ban personal-data pricing and hidden fees, keep data-center power costs off household bills."
+   },
+   "sourceUrl": "https://www.tinafororegon.com/oregons-future/",
+   "sourceQuote": "Put People Over Profits: Ban pricing schemes that let corporations charge people different prices based on their personal data, crack down on hidden fees to improve accountability protections in Oregon's insurance industry, and stop the practice of using AI to deny insurance claims.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "She would ban personal-data pricing but only \"crack down on\" hidden fees; the chip and line extend the ban to hidden fees. (The position already says \"crack down\".)",
+   "proposed": {
+    "chip": "Ban personalized pricing",
+    "line": "Would ban personal-data pricing, curb hidden fees, keep data-center power costs off bills."
+   }
+  },
+  {
+   "candidateId": "tina-kotek",
+   "race": "oregon-governor",
+   "item": "topic/gov-school-time",
+   "fields": [
+    "topic-text",
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "No cuts to hours",
+    "text": "Executive Order 26-06 bars districts from cutting instructional time for budget reasons and ends waivers below the minimum; her platform sets a goal of reaching the national average by the end of a second term."
+   },
+   "sourceUrl": "https://apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-issues-executive-order-to-preserve-student-instructional-time",
+   "sourceQuote": "The order directs the Oregon Department of Education (ODE) to request that the State Board of Education (SBE) immediately prioritize policies that prevent any further reductions in student instructional time due to budget or operational pressures. ... Effective immediately, ODE is prohibited from granting or renewing waivers that allow districts to fall below minimum hours of instructional time, except in cases of declared emergencies.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "The order does not itself bar districts from cutting time; it directs ODE to ask the State Board for rules preventing further cuts, requires restoration plans, and ends waivers except in declared emergencies. The national-average goal is from her platform, not this source.",
+   "proposed": {
+    "text": "Executive Order 26-06 directs the state to prioritize rules stopping further budget-driven cuts to class time, requires districts that cut time to plan its restoration, and ends most waivers below the minimum.",
+    "topicChip": "Protect class time"
+   }
+  },
+  {
+   "candidateId": "tina-kotek",
+   "race": "oregon-governor",
+   "item": "topic/gov-interstate-bridge",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Build the core bridge",
+    "text": "With Washington's governor, said March 17, 2026 the states remain “fully committed” to replacing the bridge, starting with a core set of projects funded by committed federal, state and toll money."
+   },
+   "sourceUrl": "https://governor.wa.gov/news/2026/interstate-bridge-replacement-program-joint-statement-governors-kotek-and-ferguson",
+   "sourceQuote": "we have the momentum to move forward and begin construction on the first, core set of projects ... This approach allows us to invest the available federal and state funds ... This approach also allows for future completion of the additional projects in the five-mile project corridor when funding is identified. This core set of projects is substantially funded",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The statement never mentions tolls, and it says \"available federal and state funds\" and \"substantially funded\", not \"committed ... toll money\"; the topic question is about building with tolls, so the addition matters.",
+   "proposed": {
+    "text": "With Washington's governor, said March 17, 2026 the states remain “fully committed” to replacing the bridge, starting with a substantially funded core set of projects and adding the rest when funding is identified."
+   }
+  },
+  {
+   "candidateId": "tina-kotek",
+   "race": "oregon-governor",
+   "item": "topic/gov-interstate-bridge",
+   "fields": [
+    "stance"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Build the core bridge"
+   },
+   "sourceUrl": "https://governor.wa.gov/news/2026/interstate-bridge-replacement-program-joint-statement-governors-kotek-and-ferguson",
+   "sourceQuote": "begin construction on the first, core set of projects that will allow us to deliver a safer, more earthquake-ready bridge, connect the bridge to Interstate 5, and extend light rail service to Vancouver ... This approach also allows for future completion of the additional projects in the five-mile project corridor when funding is identified.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "The question is \"as planned, with tolls, or scale it back\"; the statement commits to the bridge but phases the program to a core set and defers the rest until funding is found, and says nothing on tolls, which points both ways.",
+   "proposed": {
+    "stance": "mixed"
+   }
+  },
+  {
+   "candidateId": "tina-kotek",
+   "race": "oregon-governor",
+   "item": "topic/gov-new-revenue",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "partial",
+    "chip": "Signed H.R. 1 disconnect",
+    "text": "Signed SB 1507 in April 2026, disconnecting Oregon from several H.R. 1 tax breaks because copying them was “neither fair nor responsible,” while keeping tips and overtime untaxed; she has not said whether she would seek new taxes for 2027–29."
+   },
+   "sourceUrl": "https://siliconflorist.com/wp-content/uploads/2026/04/2026.04.09_SB-1507-Signing-Letter-1.pdf",
+   "sourceQuote": "Having Oregon magnify that damage by automatically copying every new tax break in H.R. 1 is neither fair nor responsible. ... But Senate Bill 1507 could affect Oregon's economic competitiveness, specifically disconnecting from Section 168(k) ... and ... the Qualified Small Business Stock (QSBS) exemption. ... I will work with the members of my Prosperity Council to help to propose legislation for the 2027 session that would address the QSBS exemption issue",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The letter signs the bill while flagging its hit to small businesses and promising a 2027 fix; dropping that hedge, and paraphrasing \"automatically copying every\" as \"copying them\", makes her sound more committed to the revenue than the letter does.",
+   "proposed": {
+    "text": "Signed SB 1507 in April 2026, saying automatically copying every H.R. 1 tax break was neither fair nor responsible, while flagging its effect on small businesses; she has not said whether she would seek new taxes for 2027–29."
+   }
+  },
+  {
+   "candidateId": "tina-kotek",
+   "race": "oregon-governor",
+   "item": "topic/gov-data-center-moratorium",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Moratorium, via Legislature",
+    "text": "Said September 8, 2026 she supports a moratorium until development is “done on our terms,” paused state-land deals through July 1, 2027, and will bring the Legislature a statewide framework in 2027."
+   },
+   "sourceUrl": "https://apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-pauses-work-on-requests-for-state-land-to-support-new-data-centers",
+   "sourceQuote": "The pause remains in effect through July 1, 2027 ... While the state currently lacks authority to enact a statewide moratorium on data center development, this action reflects the Governor's commitment to taking steps within the state's control immediately.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The quote and the statement of support are accurate but are not in the cited release; they are in OPB's September 14 Think Out Loud transcript of her rally remarks (\"I support a moratorium until we make sure that any data center development is done on our terms\").",
+   "proposed": {
+    "source": "https://www.opb.org/article/2026/09/14/think-out-loud-data-centers-oregon-gubernatorial-race/ (add alongside the governor's release)"
+   }
+  },
+  {
+   "candidateId": "christine-drazan",
+   "race": "oregon-governor",
+   "item": "topic/gov-power-act",
+   "fields": [
+    "stance",
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "opposes",
+    "chip": "Voted no",
+    "text": "Voted no on HB 3546's final House passage on June 5, 2025; her plan does not say whether she would repeal the law."
+   },
+   "sourceUrl": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3546",
+   "sourceQuote": "2025-04-22 H Third reading. Carried by Marsh. Passed. Ayes, 41; Nays, 16--Boice, Boshart Davis, Breese-Iverson, Cate, Edwards, Elmer, Harbick, Helfrich, Levy B, McIntire, Osborne, Reschke, Scharf, Skarlatos, Wallan, Yunker; Excused, 3--Nguyen H, Smith G, Valderrama. ... 2025-06-05 H House concurred in Senate amendments and repassed bill. Ayes, 37; Nays, 17--... Drazan ...",
+   "category": [
+    "b",
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "The OLIS history (read via the Legislature's OData API because the overview page returned HTTP 500) shows Drazan among the 41 ayes when the House first passed HB 3546 on April 22, 2025 (41+16+3 = all 60 members, and she is in neither the nays nor the excused); leaving out that yes vote turns a yes-then-no record into plain opposition.",
+   "proposed": {
+    "stance": "mixed",
+    "topicChip": "Voted yes, then no",
+    "text": "Voted yes when the House first passed HB 3546 on April 22, 2025, then no when it concurred in Senate amendments on June 5, 2025; her plan does not say whether she would repeal the law.",
+    "note": "The hb3546Record evidence note (\"recorded among the 17 nays on final House passage\") should also mention the April 22 aye."
+   }
+  },
+  {
+   "candidateId": "christine-drazan",
+   "race": "oregon-governor",
+   "item": "topic/gov-homelessness-emergency",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "mixed",
+    "chip": "Audit, shift to recovery",
+    "text": "Would declare an emergency on addiction and mental health instead, audit homeless and addiction spending, and shift state money to recovery programs; says success should not be measured by low-barrier shelter beds."
+   },
+   "sourceUrl": "https://www.christinefororegon.com/drazan-plan/",
+   "sourceQuote": "Reform rules and grant requirements to shift state investments to recovery-focused programs and homeless services. ... Declare a state of emergency on Oregon's addiction and mental health crises to bring greater urgency and coordination to the state's response. ... Success will be measured not by how much government spends on drug paraphernalia and low-barrier shelter beds, but by how many people move from homelessness into recovery, treatment and permanent stability.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "\"Instead\" is ours (the plan never mentions ending the homelessness emergency), and the text keeps \"recovery programs\" while dropping \"and homeless services\" from the same sentence, the exact enforcement-without-services pattern the audit rules name.",
+   "proposed": {
+    "text": "Would declare an emergency on addiction and mental health, audit homeless spending and shift money to recovery programs and homeless services, not measuring success by low-barrier shelter beds; her plan does not address the homelessness emergency."
+   }
+  },
+  {
+   "candidateId": "christine-drazan",
+   "race": "oregon-governor",
+   "item": "issue/safety",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "Would audit homelessness and addiction spending, shift state money to recovery-focused programs, end funding for programs she says enable addiction, fully fund state police, let local governments clear public spaces and raise penalties for drug traffickers.",
+    "line": "Would audit homelessness spending, fund recovery over low-barrier shelter, let cities clear public spaces.",
+    "chip": "Recovery first, audits"
+   },
+   "sourceUrl": "https://www.christinefororegon.com/drazan-plan/",
+   "sourceQuote": "Support law enforcement and restore public safety by fully funding state police and allowing local jurisdictions to clean up public spaces to help make Oregon's communities livable. ... Reform rules and grant requirements to shift state investments to recovery-focused programs and homeless services.",
+   "category": [
+    "c",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "She said \"clean up public spaces\"; \"clear\" is the encampment-sweep verb she did not use. The position also drops \"and homeless services\", and \"recovery over low-barrier shelter\" states as a funding rule what she framed as a measure of success.",
+   "proposed": {
+    "position": "Would audit homelessness and addiction spending, shift state money to recovery-focused programs and homeless services, end funding for programs she says enable addiction, fully fund state police, let local governments clean up public spaces and raise penalties for drug traffickers.",
+    "line": "Would audit homelessness spending, prioritize recovery, let cities clean up public spaces."
+   }
+  },
+  {
+   "candidateId": "christine-drazan",
+   "race": "oregon-governor",
+   "item": "issue/money",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Would order agencies on day one to repeal rules and fees that raise costs, veto new taxes and fees, raise the standard deduction, reform the corporate activity and estate taxes, cut property taxes for seniors and veterans, and protect the kicker."
+   },
+   "sourceUrl": "https://www.christinefororegon.com/drazan-plan/",
+   "sourceQuote": "Issue a Day One Affordability Executive Order directing every executive branch agency to identify rules, regulations, fees and procedures that materially increase the cost of housing, energy, food, transportation, childcare, healthcare or operating a business. Review unnecessary regulations by suspending or revising discretionary rules that exceed state or federal requirements.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Her day-one order tells agencies to identify cost-raising rules and fees, and her review would suspend or revise discretionary rules; \"repeal rules and fees\" is a stronger action than she proposes.",
+   "proposed": {
+    "position": "Would order agencies on day one to identify rules and fees that raise costs, veto new taxes and fees, raise the standard deduction, reform the corporate activity and estate taxes, cut property taxes for seniors and veterans, and protect the kicker."
+   }
+  },
+  {
+   "candidateId": "christine-drazan",
+   "race": "oregon-governor",
+   "item": "issue/housing",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Would cap housing permit decisions at 120 days and allow private plan reviewers.",
+    "position": "Would set a 120-day maximum decision period for qualifying housing projects, limit repetitive appeals, expand private plan review, ..."
+   },
+   "sourceUrl": "https://www.christinefororegon.com/drazan-plan/",
+   "sourceQuote": "Reduce costly construction delays by pursuing reforms that establish a 120-day maximum decision period for qualifying housing projects, limit repetitive appeals intended to delay construction and expand the use of private plan reviewers and inspectors when government backlogs become excessive.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The line drops two limits: the 120 days apply to \"qualifying\" projects, and private reviewers are for when \"government backlogs become excessive\".",
+   "proposed": {
+    "line": "Would pursue a 120-day decision limit for qualifying housing projects and fewer repeat appeals.",
+    "position": "Would pursue a 120-day maximum decision period for qualifying housing projects, limit repetitive appeals, expand private plan review when government backlogs are excessive, simplify commercial-to-housing conversions, create a state Housing Permit Command Center, and expand first-time-buyer credits and down-payment help from existing funds."
+   }
+  },
+  {
+   "candidateId": "christine-drazan",
+   "race": "oregon-governor",
+   "item": "topic/gov-kicker",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Veto kicker grabs",
+    "stance": "opposes"
+   },
+   "sourceUrl": "https://www.christinefororegon.com/drazan-plan/",
+   "sourceQuote": "Protect Oregon's Kicker by vetoing attempts by the Legislature to grow government by taking it from Oregonians.",
+   "category": [
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "\"Grabs\" is campaign-flavored vocabulary she did not use; her own phrase is neutral enough to use.",
+   "proposed": {
+    "topicChip": "Protect the kicker"
+   }
+  },
+  {
+   "candidateId": "christine-drazan",
+   "race": "oregon-governor",
+   "item": "topic/gov-school-time",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "School-day standard",
+    "text": "Would increase classroom time by moving Oregon from an instructional-hours system to a school-day system with statewide standards for what counts as a school day."
+   },
+   "sourceUrl": "https://www.christinefororegon.com/drazan-plan/",
+   "sourceQuote": "Increase classroom time by moving Oregon from an instructional hour-based system to a school day-based system with statewide standards for what constitutes a school day.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "The plank supports more classroom time but does not reach the question's actual choice, requiring districts to keep and add hours when budgets are short; Kotek's \"supports\" rests on an order aimed at budget-driven cuts.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Would increase classroom time by moving Oregon from an instructional-hours system to a school-day system with statewide standards for a school day; she has not said how districts should keep hours when budgets are short."
+   }
+  },
+  {
+   "candidateId": "christine-drazan",
+   "race": "oregon-governor",
+   "item": "topic/gov-interstate-bridge",
+   "fields": [
+    "stance"
+   ],
+   "current": {
+    "stance": "mixed",
+    "chip": "A cheaper bridge"
+   },
+   "sourceUrl": "https://katu.com/news/know-your-candidates/2026-christine-drazan-oregon-governor-republican",
+   "sourceQuote": "And at the same time, we have to rightsize these big projects. We can't afford the I-5 bridge that they're proposing. ... We need to have a bridge that we can afford. We need to build that bridge that we can afford.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "The question offers \"as planned\" or \"scale it back\"; she explicitly chooses to rightsize it, which is \"opposes\" on building as planned, so \"mixed\" softens a clear answer. (Arguable only because she still wants a bridge.)",
+   "proposed": {
+    "stance": "opposes"
+   }
+  },
+  {
+   "candidateId": "brett-smith",
+   "race": "oregon-governor",
+   "item": "issue/safety",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Would bolster the volunteer Oregon Civil Defense Force, which he describes as a way to respond when federal agents act without a judge's warrant and to help with wildfires, and bars what he calls unconstitutional surveillance.",
+    "line": "Would expand the volunteer Oregon Civil Defense Force and bar unconstitutional surveillance.",
+    "chip": "Civil Defense Force"
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=31",
+   "sourceQuote": "(p. 31) No unconstitutional surveillance ... (p. 32) Defend the guard / Bolster the Oregon Civil Defense Force",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The pamphlet has only the two pledges; the warrant and wildfire description is his, but from the KEPW interview of August 7, 2026 (\"when they decide that they don't have to get a warrant signed by a judge ... I would like to be able to respond to that ... help assist with the fires\"), which checks out.",
+   "proposed": {
+    "source": "Add https://kepw-wholecommunity.news/2026/08/07/meet-the-candidate-brett-smith-for-oregon-governor/ for the description, or trim",
+    "position": "Would bolster the Oregon Civil Defense Force and pledges no unconstitutional surveillance.",
+    "note": "Also \"bars\" should be \"would bar\"; it is a pledge."
+   }
+  },
+  {
+   "candidateId": "brett-smith",
+   "race": "oregon-governor",
+   "item": "issue/climate",
+   "fields": [
+    "chip",
+    "line"
+   ],
+   "current": {
+    "chip": "Permanent data-center ban",
+    "line": "Would permanently ban new data centers in Oregon.",
+    "position": "Would impose a permanent moratorium on data centers."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=31",
+   "sourceQuote": "A permanent moratorium on data centers",
+   "category": [
+    "a",
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "A permanent moratorium works like a ban, but he chose \"moratorium\", and \"new\" is our reading; the position already uses his word.",
+   "proposed": {
+    "chip": "Permanent moratorium",
+    "line": "Would impose a permanent moratorium on data centers."
+   }
+  },
+  {
+   "candidateId": "brett-smith",
+   "race": "oregon-governor",
+   "item": "topic/gov-data-center-moratorium",
+   "fields": [
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Permanent ban",
+    "text": "Pledges a permanent moratorium on data centers and calls himself the only anti-data-center candidate."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=31",
+   "sourceQuote": "A permanent moratorium on data centers",
+   "category": [
+    "a",
+    "c"
+   ],
+   "verdict": "borderline",
+   "why": "\"Only anti data center candidate\" is on his website, not the cited pamphlet page; the chip swaps his \"moratorium\" for \"ban\".",
+   "proposed": {
+    "topicChip": "Permanent moratorium",
+    "note": "Add https://brett-smith.us/ (\"Permanent Moratorium / I am the Only anti data center candidate.\") as a source, or drop the second clause."
+   }
+  },
+  {
+   "candidateId": "brett-smith",
+   "race": "oregon-governor",
+   "item": "topic/gov-new-revenue",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Wage-gap surcharge",
+    "text": "Would impose a surcharge on employers with 50 or more workers paying below a living wage, which his campaign models at $700 million to $3.4 billion a year for the Oregon Health Plan and food aid."
+   },
+   "sourceUrl": "https://brett-smith.us/",
+   "sourceQuote": "Impose a Wage Gap Public Cost Recovery Surcharge on every Oregon employer with 50 or more employees. ... Modeling projects the surcharge would recover between $700 million and $3.4 billion a year ... Direct 50% of surcharge revenue to the Oregon Health Plan ... 30% ... to SNAP administration and emergency food assistance ... 15% ... to wage support and workforce training grants",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "He proposes a new dedicated levy but never ties it to the 2027–29 budget gap; Kotek gets \"partial\" for the same kind of silence on the gap, though his is an explicit new tax.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Would impose a surcharge on employers with 50 or more workers paying below a living wage, which his campaign models at $700 million to $3.4 billion yearly for health, food and wage programs; he has not addressed the 2027–29 gap."
+   }
+  }
+ ]
+}

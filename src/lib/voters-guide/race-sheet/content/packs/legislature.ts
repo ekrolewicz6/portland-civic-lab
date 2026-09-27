@@ -171,8 +171,8 @@ Object.assign(analysis, {
     tradeoff: "She pairs building more homes with protecting the affordable homes that exist, and funds prevention-first safety and healthcare through state investment; the site lists past appropriations and bills rather than a costed next-term plan.",
     issues: {
       housing: { position: "Build more homes and protect existing affordable ones: eviction prevention, housing-first strategies, stronger tenant protections and rent-increase transparency (her HB 3042), and state money for sewer and water lines so towns can build.", source: neronPriorities },
-      safety: { position: "Prevention-focused safety: expanded mental-health resources, full funding for the 9-8-8 crisis line, domestic-violence legislation, gun-safety measures such as safe storage, and police accountability, alongside money for Tigard’s police facility.", source: neronPriorities },
-      money: { position: "Lower household bills rather than raise them: she opposed tolling the I-5 bridge in Wilsonville, backs universal school meals as a family-budget saving, and wants lower prescription-drug costs.", source: neronPriorities },
+      safety: { position: "Prevention-focused safety: expanded mental-health resources, full funding for the 9-8-8 crisis line, domestic-violence legislation, gun-safety measures such as the 2022 Reduction of Gun Violence Act (IP 17), and police accountability, alongside money for Tigard’s police facility.", source: neronPriorities },
+      money: { position: "Make Oregon more affordable: she pushed to remove tolling from the I-5 bridge in Wilsonville, backs universal school meals as a family-budget saving, and wants lower prescription-drug costs.", source: neronPriorities },
       climate: { position: "Stronger toxics standards, clean-energy job training, sustainable transportation, responsible land use and climate resilience, with district money for the Sherwood pedestrian bridge and transit-oriented workforce housing.", source: neronPriorities },
     },
     sources: [neronPriorities, site("Neron Misslin · Meet Courtney", "https://www.courtneyfororegon.com/meet-courtney"), statement(64)],
@@ -183,19 +183,19 @@ Object.assign(analysis, {
     issues: {
       housing: { position: "Change the housing and land-use policies he says restrict supply and drive up rent and home prices.", source: lancasterIssues },
       safety: { position: "Restore public order and enforce the law, and demand what he calls real solutions to addiction and homelessness rather than treating them as permanent.", source: lancasterIssues },
-      money: { position: "Stop the gas tax and stop tax increases; demand accountability for what works and stop funding programs that grow even when they fail.", source: lancasterIssues },
+      money: { position: "Stop the gas tax and stop tax increases; demand accountability for what actually works, since he says programs grow even when they fail.", source: lancasterIssues },
     },
     sources: [lancasterIssues, site("Lancaster · about", "https://glennlancaster.com/about/"), statement(66)],
   },
 } satisfies Record<string, CandidateAnalysis>);
 lines.push(
   line("courtney-neron-misslin", "housing", "Supports building more homes while protecting existing affordable ones and preventing evictions."),
-  line("courtney-neron-misslin", "safety", "Supports prevention-first safety: mental-health care, 9-8-8 funding, gun safe-storage rules."),
+  line("courtney-neron-misslin", "safety", "Supports mental-health care, 9-8-8 funding and the 2022 Reduction of Gun Violence Act."),
   line("courtney-neron-misslin", "money", "Opposes tolling Wilsonville’s I-5 bridge; backs school meals and lower drug costs."),
   line("courtney-neron-misslin", "climate", "Supports stronger toxics rules, clean-energy training, sustainable transportation and climate resilience."),
   line("glenn-lancaster", "housing", "Would change housing and land-use rules he says restrict supply."),
-  line("glenn-lancaster", "safety", "Would restore public order and enforce existing laws on addiction and homelessness."),
-  line("glenn-lancaster", "money", "Opposes the gas tax and any tax increases; wants results-based accountability."),
+  line("glenn-lancaster", "safety", "Would restore order, enforce the law and demand real solutions to addiction and homelessness."),
+  line("glenn-lancaster", "money", "Opposes the gas tax and tax increases; wants results-based accountability."),
 );
 chips.push(
   chip("courtney-neron-misslin", "housing", "Build and protect homes"),
@@ -250,7 +250,7 @@ Object.assign(analysis, {
     issues: {
       housing: { position: "Invest state money in affordable housing and reassess the systems that leave the most vulnerable unhoused, with a strategic plan to house all Oregonians.", source: munozIssues },
       safety: { position: "State laws that strengthen due process and prevent racial profiling, keeping local resources focused on community safety rather than federal immigration enforcement; her About page calls for abolishing ICE.", source: munozIssues },
-      money: { position: "Lower prescription-drug costs and stop the AI data-center build-out she says is driving up electricity bills.", source: munozIssues },
+      money: { position: "Lower prescription-drug costs, and more transparency, community input and environmental safeguards on the AI data-center build-out she says is driving up electricity bills.", source: munozIssues },
       climate: { position: "Defend Oregon’s land-use system for farms and forests, with transparency, community input and environmental safeguards on data centers.", source: munozIssues },
     },
     sources: [munozIssues, munozAbout, statement(68)],
@@ -260,9 +260,9 @@ Object.assign(analysis, {
     tradeoff: "He would end assessment-based property taxes, cut regulation and building codes, and reject climate and electric-vehicle mandates; his questionnaire names no replacement revenue for the services property taxes fund.",
     issues: {
       housing: { position: "Cut regulations and simplify building codes to address the housing shortage, even over community objections.", source: hutchisonOAA },
-      safety: { position: "Repeal Oregon’s sanctuary-state law and let police ask about immigration status outside criminal investigations; restore respect for the rule of law.", source: hutchisonOAA },
-      money: { position: "Eliminate assessment-based property tax, keep the kicker with taxpayers, and oppose a sales tax; supports a mortgage-interest deduction.", source: hutchisonOAA },
-      climate: { position: "Voter approval for highway tolls and no gas-tax increases; opposes the 2040 emissions target, electric-vehicle sales mandates and 100% carbon-free electricity standards, and favors another look at nuclear power.", source: hutchisonOAA },
+      safety: { position: "Repeal Oregon’s sanctuary-state law and let police ask about immigration status outside criminal investigations.", source: hutchisonOAA },
+      money: { position: "Keep the kicker with taxpayers and oppose a sales tax and automatic property-tax base increases, calling property tax immoral; supports a mortgage-interest deduction.", source: hutchisonOAA },
+      climate: { position: "Voter approval for highway tolls and no gas-tax increases; opposes reaching the 2040 emissions target before an adequate power grid is built, electric-vehicle sales mandates and 100% carbon-free electricity standards, and favors another look at nuclear power.", source: hutchisonOAA },
     },
     sources: [hutchisonSite, hutchisonOAA, statement(70)],
   },
@@ -270,12 +270,12 @@ Object.assign(analysis, {
 lines.push(
   line("myrna-a-munoz", "housing", "Supports state investment in affordable housing and a plan to house everyone."),
   line("myrna-a-munoz", "safety", "Supports due-process and anti-profiling laws; local resources for community safety, not ICE."),
-  line("myrna-a-munoz", "money", "Wants lower prescription costs and a halt to data centers raising electricity bills."),
+  line("myrna-a-munoz", "money", "Wants lower prescription costs and safeguards on data centers she says raise power bills."),
   line("myrna-a-munoz", "climate", "Supports land-use protections for farms and forests, with safeguards on data centers."),
   line("harold-hutchison", "housing", "Supports cutting regulations and simplifying building codes to add housing."),
-  line("harold-hutchison", "safety", "Supports repealing the sanctuary-state law and police immigration checks."),
-  line("harold-hutchison", "money", "Would eliminate assessment-based property tax and keep the kicker; opposes a sales tax."),
-  line("harold-hutchison", "climate", "Opposes gas-tax increases, emissions targets and electric-vehicle mandates; would revisit nuclear."),
+  line("harold-hutchison", "safety", "Supports repealing the sanctuary-state law and letting police ask about immigration status."),
+  line("harold-hutchison", "money", "Would keep the kicker and oppose a sales tax; calls property tax immoral."),
+  line("harold-hutchison", "climate", "Opposes electric-vehicle mandates and the 2040 emissions target; would take another look at nuclear."),
 );
 chips.push(
   chip("myrna-a-munoz", "housing", "Fund affordable housing"),
@@ -284,8 +284,8 @@ chips.push(
   chip("myrna-a-munoz", "climate", "Protect farms and forests"),
   chip("harold-hutchison", "housing", "Simplify building codes"),
   chip("harold-hutchison", "safety", "Repeal sanctuary law"),
-  chip("harold-hutchison", "money", "End property tax"),
-  chip("harold-hutchison", "climate", "No mandates, more nuclear"),
+  chip("harold-hutchison", "money", "Against property tax"),
+  chip("harold-hutchison", "climate", "No EV, power mandates"),
 );
 deliveries.push(
   ladder("myrna-a-munoz", "housing"), ladder("myrna-a-munoz", "safety"), ladder("myrna-a-munoz", "money"), ladder("myrna-a-munoz", "climate"),
@@ -350,13 +350,13 @@ lines.push(
   line("courtney-bangs", "housing", "Would cut state housing red tape and protect local control over growth."),
   line("courtney-bangs", "safety", "Supports full backing for deputies, police and sheriffs, plus school resource officers."),
   line("courtney-bangs", "money", "Opposes new taxes and hidden fees; cites helping defeat the gas-tax package."),
-  line("courtney-bangs", "climate", "Wants existing tax dollars for coastal highways and upgraded levees, without commuter taxes."),
+  line("courtney-bangs", "climate", "Wants existing tax dollars for coastal highways and levee upgrades."),
   line("rachel-armitage", "housing", "Would speed building approvals for builders and fund water and wastewater upgrades."),
-  line("rachel-armitage", "money", "Opposes gas-tax and DMV-fee increases; would review old rules and programs."),
-  line("rachel-armitage", "climate", "Wants closer ODOT spending scrutiny and rural gas-tax dollars kept on rural roads."),
+  line("rachel-armitage", "money", "Would generally oppose gas-tax and DMV-fee increases; would review old rules and programs."),
+  line("rachel-armitage", "climate", "Wants ODOT spending scrutiny and rural drivers' gas taxes spent on roads they use."),
 );
 chips.push(
-  chip("courtney-bangs", "housing", "Cut state red tape"), chip("courtney-bangs", "safety", "Police and school officers"), chip("courtney-bangs", "money", "No new taxes, fees"), chip("courtney-bangs", "climate", "Roads, levees, no tolls"),
+  chip("courtney-bangs", "housing", "Cut state red tape"), chip("courtney-bangs", "safety", "Police and school officers"), chip("courtney-bangs", "money", "Stop hikes, hidden fees"), chip("courtney-bangs", "climate", "Roads and levees"),
   chip("rachel-armitage", "housing", "Permits and water lines"), chip("rachel-armitage", "money", "Review rules, hold fees"), chip("rachel-armitage", "climate", "ODOT scrutiny, rural roads"),
 );
 deliveries.push(
@@ -398,8 +398,8 @@ Object.assign(analysis, {
     tradeoff: "A pediatrician’s prevention agenda: upstream spending against child poverty, gun-safety laws, and treatment plus supply interruption on fentanyl; the site sets a poverty target but not a next-term budget.",
     issues: {
       housing: { position: "Housing as a basic right: she voted for record shelter and housing funding and supported rent relief and eviction moratoriums to keep families housed.", source: reynoldsPriorities },
-      safety: { position: "Gun-violence prevention (safe-storage and ghost-gun laws, community-violence grants, expanded extreme-risk orders, a purchase age of 21) plus more addiction treatment and interrupting the fentanyl supply.", source: reynoldsPriorities },
-      money: { position: "Upstream investment against child poverty (hunger, housing insecurity, childcare), including the refundable Child Tax Credit she helped pass, with a goal of halving child poverty.", source: reynoldsPriorities },
+      safety: { position: "Gun-violence prevention (safe-storage and ghost-gun laws, community-violence grants, expanded extreme-risk orders, a purchase age of 21 with a few exceptions for hunting rifles) plus more addiction treatment and interrupting the fentanyl supply.", source: reynoldsPriorities },
+      money: { position: "Upstream investment against child poverty (hunger, housing insecurity, childcare), including the refundable Child Tax Credit she helped pass.", source: reynoldsPriorities },
     },
     sources: [reynoldsPriorities, reynoldsAbout, statement(78)],
   },
@@ -407,7 +407,7 @@ Object.assign(analysis, {
     values: ["Lower taxes", "Traditional family"],
     tradeoff: "His survey pairs sharp property- and inheritance-tax cuts with prosecuting vagrancy and open drug use and support for young men entering the trades; it does not say what state services would shrink to pay for the tax cuts.",
     issues: {
-      housing: { position: "Cut regulations that punish home builders and remove barriers for local builders and first-time buyers.", source: cheeSurvey },
+      housing: { position: "Cut burdensome regulations he says punish home builders, and remove barriers for local builders and first-time buyers.", source: cheeSurvey },
       safety: { position: "Prosecute vagrancy and open drug use.", source: cheeSurvey },
       money: { position: "Dramatically reduce property taxes, eliminate taxes on family inheritances, and cut regulations on small businesses.", source: cheeSurvey },
     },
@@ -415,7 +415,7 @@ Object.assign(analysis, {
   },
 } satisfies Record<string, CandidateAnalysis>);
 lines.push(
-  line("lisa-reynolds", "housing", "Supports record shelter and housing funding, rent relief and eviction protections."),
+  line("lisa-reynolds", "housing", "Supports record shelter and housing funding, rent relief and eviction moratoriums."),
   line("lisa-reynolds", "safety", "Supports safe-storage and ghost-gun laws, more addiction treatment, fentanyl interdiction."),
   line("lisa-reynolds", "money", "Wants upstream spending against child poverty, including the Child Tax Credit."),
   line("john-a-n-chee", "housing", "Would cut regulations on home builders and barriers for first-time buyers."),
@@ -468,7 +468,7 @@ Object.assign(analysis, {
     values: ["Tax relief", "Public safety"],
     tradeoff: "She promises tax relief and spending scrutiny alongside stronger consequences for repeat offenders and parental involvement in schools; the site does not name the tax changes or program cuts that would balance the budget.",
     issues: {
-      safety: { position: "Support law enforcement, strengthen consequences for repeat offenders and put victims first, with accountability for crime, addiction and hazards on the streets.", source: dirksenHome },
+      safety: { position: "Support law enforcement, strengthen consequences for repeat offenders and put victims first, with accountability and appropriate remedies to address crime, addiction and hazards on the streets.", source: dirksenHome },
       money: { position: "Rein in wasteful spending, demand transparency for every tax dollar and pursue meaningful tax relief.", source: dirksenHome },
     },
     sources: [dirksenHome, site("Dirksen · about", "https://www.marydirksen.com/about"), statement(82)],
@@ -484,7 +484,7 @@ lines.push(
 );
 chips.push(
   chip("rob-wagner", "housing", "Build through partnerships"), chip("rob-wagner", "safety", "Gun safety, due process"), chip("rob-wagner", "money", "Data centers pay share"), chip("rob-wagner", "climate", "Ongoing conservation money"),
-  chip("mary-dirksen", "safety", "Punish repeat offenders"), chip("mary-dirksen", "money", "Tax relief, less waste"),
+  chip("mary-dirksen", "safety", "Back police, victims first"), chip("mary-dirksen", "money", "Tax relief, less waste"),
 );
 deliveries.push(
   ladder("rob-wagner", "housing"),
@@ -590,10 +590,10 @@ Object.assign(analysis, {
 } satisfies Record<string, CandidateAnalysis>);
 lines.push(
   line("kayse-jama", "housing", "Supports continued state housing investment and easier approvals for dense affordable housing."),
-  line("kayse-jama", "money", "Supports a $1,000 Oregon Kids Credit and childcare construction money."),
+  line("kayse-jama", "money", "Supports an Oregon Kids Credit of up to $1,000 and childcare construction money."),
   line("kayse-jama", "climate", "Supports 100% clean electricity by 2040 and a renters’ right to cooling."),
 );
-chips.push(chip("kayse-jama", "housing", "Keep funding housing"), chip("kayse-jama", "money", "$1,000 kids credit"), chip("kayse-jama", "climate", "Clean power by 2040"));
+chips.push(chip("kayse-jama", "housing", "Keep funding housing"), chip("kayse-jama", "money", "Oregon Kids Credit"), chip("kayse-jama", "climate", "Clean power by 2040"));
 deliveries.push(
   ladder("kayse-jama", "housing", { how: step("SB 1537 (2024) eases cities’ costs, streamlines approvals and creates a revolving loan fund for moderate-income housing; SB 1530 targets stability, homeownership and recovery housing.", jamaHousing), measure: step("Cites over $4.5 billion invested in housing solutions over three years as committee chair.", jamaHousing) }),
   ladder("kayse-jama", "money", { how: step("$75 million for the Oregon Kids Credit and $50 million for a Child Care Infrastructure Fund in the early-childhood budget package he supported.", jamaChildcare) }),
@@ -692,7 +692,7 @@ Object.assign(analysis, {
     values: ["Human dignity", "Anti-corporate"],
     tradeoff: "A philosophy of representation (dignity, plain legislation, naming manipulation) with a few concrete proposals, several federal; the policy page names ideas rather than state bills or costs.",
     issues: {
-      housing: { position: "Every citizen should be afforded a place to live; she would back a program requiring timber companies to supply renewable plant material for temporary housing.", source: terrioPolicy },
+      housing: { position: "Every citizen should be afforded a place to live. She would support a program to boost building-supply production, which could require timber companies to supply renewable plant material for temporary housing.", source: terrioPolicy },
       money: { position: "Expansive social programs and publicly funded health care, financed in part by a 1.5% corporate tax increase and drug-price negotiation.", source: terrioPolicy },
       climate: { position: "Treat the climate crisis as an emergency now, and regulate AI immediately, citing data centers’ fresh-water use and unchecked surveillance.", source: terrioPolicy },
     },
@@ -810,7 +810,7 @@ Object.assign(analysis, {
     values: ["Audit before taxing", "Enforcement with treatment"],
     tradeoff: "Cost restraint (no new taxes without proven results, no tolls) alongside more treatment, inpatient mental-health capacity and police resources; the added services and the savings are separate commitments whose budgets need reconciling.",
     issues: {
-      housing: { position: "Cut the fees, permitting delays and red tape he says government adds to a home’s price, and support development that increases supply of all housing types, especially starter homes.", source: bakerIssues },
+      housing: { position: "Cut the excessive fees, permitting delays and red tape he says government adds to a home’s price, and support development that increases supply of all housing types, especially starter homes.", source: bakerIssues },
       safety: { position: "Back police and first responders with resources and training, hold chronic offenders accountable and reduce encampments, while expanding recovery programs and evidence-based mental-health care including inpatient capacity.", source: bakerIssues },
       money: { position: "No new taxes without proven efficiency and results, keep tolls off I-205, and protect ratepayers from utility bills that shift big users’ costs onto households.", source: bakerIssues },
     },
@@ -839,7 +839,7 @@ Object.assign(analysis, {
   },
 } satisfies Record<string, CandidateAnalysis>);
 lines.push(
-  line("adam-baker", "housing", "Would cut fees, approval delays and red tape; supports more starter homes."),
+  line("adam-baker", "housing", "Would cut excessive fees, approval delays and red tape; supports more starter homes."),
   line("adam-baker", "safety", "Supports police resources and offender accountability paired with treatment and inpatient care."),
   line("adam-baker", "money", "Opposes new taxes without proven results and I-205 tolls; wants ratepayer protection."),
   line("michael-w-sugar", "housing", "Supports housing options for first-time buyers with local input on state decisions."),
@@ -847,13 +847,13 @@ lines.push(
   line("michael-w-sugar", "money", "Wants tax reform shifting burden to billionaires and large corporations."),
   line("michael-w-sugar", "climate", "Supports toll-free roads, on-time projects, wildfire clearing and earthquake-ready infrastructure."),
   line("pat-hubbell", "safety", "Wants mental-health and addiction recovery paired with strict enforcement."),
-  line("pat-hubbell", "money", "Would balance the budget through audits and program cuts, not tax increases."),
+  line("pat-hubbell", "money", "Would balance the budget through audits and program cuts, without raising working families' taxes."),
   line("pat-hubbell", "climate", "Supports a Clackamas River pedestrian bridge and Gladstone streetscape work."),
 );
 chips.push(
   chip("adam-baker", "housing", "Cut fees and delays"), chip("adam-baker", "safety", "Enforcement plus treatment"), chip("adam-baker", "money", "Audit before taxing"),
   chip("michael-w-sugar", "housing", "First-time buyer options"), chip("michael-w-sugar", "safety", "Responders, prevention"), chip("michael-w-sugar", "money", "Wealthy pay fair share"), chip("michael-w-sugar", "climate", "Toll-free, on-time roads"),
-  chip("pat-hubbell", "safety", "Recovery plus enforcement"), chip("pat-hubbell", "money", "Audits, no tax hikes"), chip("pat-hubbell", "climate", "Clackamas River footbridge"),
+  chip("pat-hubbell", "safety", "Recovery plus enforcement"), chip("pat-hubbell", "money", "Audits, cut waste"), chip("pat-hubbell", "climate", "Clackamas River footbridge"),
 );
 deliveries.push(
   ladder("adam-baker", "housing", { how: step("Cut excessive fees, permitting delays and red tape that he says can add six figures to a new home, and back responsible development across housing types.", bakerIssues) }),
@@ -893,9 +893,9 @@ Object.assign(analysis, {
     values: ["Healthcare access", "Rural opportunity"],
     tradeoff: "Expanded care and rural development with environmental protection; separating health coverage from employment needs a financing and delivery model the site does not yet give.",
     issues: {
-      housing: { position: "New construction that fits community affordability standards rather than developer profit, staying within existing urban growth boundaries, reusing buildings, upgrading infrastructure, and pathways from subsidized housing to stable homes.", source: meadEcon },
-      money: { position: "Lower household health costs by making insurance access independent of employment, and bring accounting skills to finding budget improvements.", source: meadHome },
-      climate: { position: "Support Oregon’s clean-energy goals, keep incentives for the shift to clean-energy transportation, protect forests and watersheds, tighten rules on water-hungry data centers and reduce wildfire risk.", source: meadEnv },
+      housing: { position: "New construction that fits the community's affordability standards, not just profitability for developers; striving to stay within existing urban growth boundaries by balancing new construction with reusing buildings; upgrading infrastructure; and pathways from subsidized housing to stable homes.", source: meadEcon },
+      money: { position: "Lower household health costs by making insurance access independent of employment.", source: meadHome },
+      climate: { position: "Support Oregon’s clean-energy goals, preserve and expand incentives for the shift to clean-energy transportation, protect forests and watersheds, and reduce wildfire risk; she says existing rules are insufficient to manage data centers that deplete fresh water.", source: meadEnv },
     },
     sources: [meadHome, meadEcon, meadEnv, site("Mead · Meet Darla", "https://www.darlameadfororegon.com/meet_darla"), statement(263)],
   },
@@ -912,16 +912,16 @@ Object.assign(analysis, {
   },
 } satisfies Record<string, CandidateAnalysis>);
 lines.push(
-  line("darla-mead", "housing", "Wants new homes built to community affordability standards inside existing growth boundaries."),
-  line("darla-mead", "money", "Wants health coverage independent of employment and budgets reviewed for savings."),
-  line("darla-mead", "climate", "Supports clean-energy goals, forest and watershed protection, and data-center limits."),
+  line("darla-mead", "housing", "Wants new homes built to community affordability standards, ideally inside existing growth boundaries."),
+  line("darla-mead", "money", "Wants health coverage independent of employment."),
+  line("darla-mead", "climate", "Supports clean-energy goals, forest and watershed protection, and stronger data-center rules."),
   line("matt-bunch", "housing", "Would let local communities decide housing and growth, not state density rules."),
   line("matt-bunch", "safety", "Supports tools, training and support for law enforcement."),
   line("matt-bunch", "money", "Opposes the gas-tax, vehicle-fee and payroll-tax increases; cut waste first."),
   line("matt-bunch", "climate", "Would prioritize road maintenance and safety over new transportation taxes."),
 );
 chips.push(
-  chip("darla-mead", "housing", "Affordable, inside UGB"), chip("darla-mead", "money", "Coverage regardless of job"), chip("darla-mead", "climate", "Clean energy, forests"),
+  chip("darla-mead", "housing", "Community-affordable homes"), chip("darla-mead", "money", "Coverage regardless of job"), chip("darla-mead", "climate", "Clean energy, forests"),
   chip("matt-bunch", "housing", "Local control of growth"), chip("matt-bunch", "safety", "Tools for police"), chip("matt-bunch", "money", "No transportation taxes"), chip("matt-bunch", "climate", "Maintain roads first"),
 );
 deliveries.push(
@@ -960,8 +960,8 @@ Object.assign(analysis, {
     tradeoff: "New programs and targeted credits aimed at specific rural cost pressures, plus a hard line on data centers; the claimed savings and insurance effects need evidence and cost estimates.",
     issues: {
       housing: { position: "Keep housing affordable by lowering what homeowners pay, starting with wildfire home-hardening to bring down insurance costs.", source: sandersWildfire },
-      money: { position: "No more data-center tax breaks and full disclosure of what they use and provide; tax credits of up to $5,000 for rural childcare workers to cut families’ costs.", source: sandersDataCenters },
-      climate: { position: "No new data centers, and far more state spending on wildfire prevention, including a home-hardening strike team for rural families.", source: sandersWildfire },
+      money: { position: "Calls $50 million and $100 million data-center tax breaks unfair and wants an end to NDAs and clarity on what data centers use and provide.", source: sandersDataCenters },
+      climate: { position: "No new data centers, and far more state spending on wildfire prevention, including a home-hardening task force that teaches rural families how to harden their homes.", source: sandersWildfire },
     },
     sources: [site("Sanders · issues", "https://www.hankfororegon.com/issues"), sandersDataCenters, sandersWildfire, sandersChildcare, site("Sanders · about", "https://www.hankfororegon.com/about"), statement(265)],
   },
@@ -969,26 +969,26 @@ Object.assign(analysis, {
     values: ["Local control", "Cost scrutiny"],
     tradeoff: "Local discretion over data centers and a hard look at why publicly subsidized housing costs more, rather than a statewide pause or new spending; his account of data-center benefits is not an independent audit.",
     issues: {
-      housing: { position: "More supply through fewer unnecessary regulations and costs, and an examination of why publicly supported construction costs so much more than private projects.", source: hegePriorities },
+      housing: { position: "Reduce the unnecessary costs and regulations that drive up the price of housing.", source: hegePriorities },
       safety: { position: "Give law enforcement the resources and tools to protect communities, and give local responders the equipment and flexibility to handle wildfires, floods and other emergencies.", source: hegePriorities },
       money: { position: "Stop relying on higher taxes; prioritize essential services, eliminate waste and make sure taxpayer dollars deliver results.", source: hegePriorities },
-      climate: { position: "Maintain existing roads and bridges and fix rural water and sewer systems through state infrastructure programs; opposes a statewide data-center moratorium in favor of local decisions with resource-use transparency.", source: hegePriorities },
+      climate: { position: "Maintain existing roads and bridges and improve rural water and sewer systems through state infrastructure programs.", source: hegePriorities },
     },
     sources: [hegePriorities, site("Hege · about", "https://www.hegefororegon.com/about"), hegeInterview, questionnaire("Hege · Ballotpedia Candidate Connection survey", "https://ballotpedia.org/Scott_Hege", "2026 survey; reviewed September 21, 2026"), statement(267)],
   },
 } satisfies Record<string, CandidateAnalysis>);
 lines.push(
   line("hank-sanders", "housing", "Wants homeowner costs cut, starting with wildfire home-hardening to lower insurance."),
-  line("hank-sanders", "money", "Would end data-center tax breaks; proposes $5,000 rural childcare-worker credits."),
+  line("hank-sanders", "money", "Calls data-center tax breaks unfair; wants an end to NDAs and use disclosure."),
   line("hank-sanders", "climate", "Opposes new data centers; wants far more wildfire-prevention spending."),
-  line("scott-c-hege", "housing", "Would cut regulations raising home prices and examine subsidized construction costs."),
+  line("scott-c-hege", "housing", "Would cut unnecessary costs and regulations that drive up housing prices."),
   line("scott-c-hege", "safety", "Supports resources for law enforcement and local emergency responders."),
   line("scott-c-hege", "money", "Wants results from existing spending rather than higher taxes."),
-  line("scott-c-hege", "climate", "Would maintain rural roads, water and sewer; opposes a data-center moratorium."),
+  line("scott-c-hege", "climate", "Would maintain roads and bridges and improve rural water and sewer systems."),
 );
 chips.push(
-  chip("hank-sanders", "housing", "Home hardening, insurance"), chip("hank-sanders", "money", "End data-center breaks"), chip("hank-sanders", "climate", "No new data centers"),
-  chip("scott-c-hege", "housing", "Cut building costs"), chip("scott-c-hege", "safety", "Police and responders"), chip("scott-c-hege", "money", "Results before taxes"), chip("scott-c-hege", "climate", "Local data-center choice"),
+  chip("hank-sanders", "housing", "Home hardening, insurance"), chip("hank-sanders", "money", "Data-center breaks unfair"), chip("hank-sanders", "climate", "No new data centers"),
+  chip("scott-c-hege", "housing", "Cut building costs"), chip("scott-c-hege", "safety", "Police and responders"), chip("scott-c-hege", "money", "Results before taxes"), chip("scott-c-hege", "climate", "Roads, water and sewer"),
 );
 deliveries.push(
   ladder("hank-sanders", "housing", { how: step("Institute Oregon’s first home-hardening team to teach rural families defensible space, ladder fuels and vent coverings.", sandersWildfire), measure: step("Points to insurance-rate decreases after similar programs in California and Colorado, against home-insurance increases he puts at 30–40% a year.", sandersWildfire) }),
@@ -1182,7 +1182,7 @@ topicStances.push(
   stance("courtney-neron-misslin", "leg-new-revenue", "supports", "Voted to disconnect",
     "Voted yes on SB 1507 on February 16, 2026, which disconnects Oregon from federal H.R. 1 business tax breaks, raising about $314 million for 2027–29, and enlarges the Earned Income Tax Credit.", sb1507Senate),
   stance("courtney-neron-misslin", "leg-data-centers", "supports", "Voted for POWER Act",
-    "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it lets regulators put data centers in their own electricity rate class.", hb3546Senate),
+    "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it directs regulators to put data centers in their own electricity rate class.", hb3546Senate),
   stance("courtney-neron-misslin", "leg-shelter-funding", "supports", "Carried shelter bill",
     "Carried HB 3644 on the Senate floor and voted yes on June 26, 2025; the law creates the statewide shelter program funded with $204.9 million through June 2027.", hb3644Senate),
   stance("courtney-neron-misslin", "leg-deflection", "supports", "Voted for HB 4002",
@@ -1196,15 +1196,15 @@ topicStances.push(
   stance("glenn-lancaster", "leg-kicker", "opposes", "Protect the kicker",
     "Says he will stop the next tax increase and protect your kicker refund.", statement(67)),
   stance("glenn-lancaster", "leg-new-revenue", "opposes", "Stop tax increases",
-    "Says Salem passed the largest tax increase in state history; he would stop tax increases and stop funding programs that grow even when they fail.", lancasterIssues),
+    "Says Oregon passed the largest tax increase in state history; he would stop tax increases and demand accountability for what actually works.", lancasterIssues),
   stance("glenn-lancaster", "leg-shelter-funding", "partial", "Demand real solutions",
     "Says addiction and homelessness are treated as permanent and demands real solutions with accountability and results; he does not say whether to keep funding state shelter beds.", lancasterIssues),
   // Not a stance: a general value or goal that does not reach this choice; left as a gap.
   /* Senate 15 */
   stance("myrna-a-munoz", "leg-new-revenue", "supports", "Close corporate loopholes",
     "Would close tax loopholes and make large corporations pay their fair share to invest in schools, healthcare and affordable housing.", statement(68)),
-  stance("myrna-a-munoz", "leg-data-centers", "supports", "Safeguards, transparency",
-    "Calls the AI data-center build-out reckless and says it is driving up electricity bills; would require transparency, community input and environmental safeguards.", munozIssues),
+  stance("myrna-a-munoz", "leg-data-centers", "partial", "Safeguards, transparency",
+    "Calls the AI data-center build-out reckless and says it is driving up electricity bills; she commits to transparency, community input and environmental safeguards and does not say whether she backs separate rates, ending tax breaks or a pause.", munozIssues),
   stance("myrna-a-munoz", "leg-shelter-funding", "partial", "Plan to house all",
     "Wants a strategic plan to house all Oregonians and state investment in affordable housing; she does not address shelter funding or the emergency order.", munozAbout),
   stance("myrna-a-munoz", "leg-sanctuary", "supports", "Due process, no ICE",
@@ -1214,7 +1214,7 @@ topicStances.push(
   stance("harold-hutchison", "leg-kicker", "opposes", "Kicker belongs to taxpayers",
     "Answered the questionnaire’s kicker-repeal question with “The kicker belongs to the taxpayers.”", hutchisonOAA),
   stance("harold-hutchison", "leg-new-revenue", "partial", "End property tax",
-    "Would eliminate assessment-based property tax, opposes a sales tax and calls income tax the fairest way to raise needed revenue; he does not say how to close the 2027–29 gap.", hutchisonOAA),
+    "Calls property tax immoral, opposes a sales tax and calls income tax the fairest way to raise needed revenue; he does not say how to close the 2027–29 gap.", hutchisonOAA),
   stance("harold-hutchison", "leg-wildfire-funding", "partial", "No routine prescribed burns",
     "Told the questionnaire he does not support the Forestry Department doing prescribed burns every five years; he does not address wildfire funding.", hutchisonOAA),
   stance("harold-hutchison", "leg-sanctuary", "opposes", "Repeal sanctuary law",
@@ -1222,13 +1222,13 @@ topicStances.push(
   /* Senate 16 */
   stance("courtney-bangs", "leg-transportation-package", "opposes", "Existing dollars, no hikes",
     "Says she helped defeat the $4.3 billion gas-tax package and will fight new taxes and hidden fees, seeking the district’s share of existing dollars for Highways 30, 6 and 101.", bangsPriorities),
-  stance("courtney-bangs", "leg-new-revenue", "opposes", "No new taxes, fees",
+  stance("courtney-bangs", "leg-new-revenue", "opposes", "Stop hikes, hidden fees",
     "Will fight to stop new tax hikes and hidden fees and demand accountability for state spending.", bangsPriorities),
   stance("rachel-armitage", "leg-transportation-package", "opposes", "Against gas-tax hike",
-    "Told the Headlight Herald in April 2026 she is generally opposed to raising the gas tax and DMV fees, and wants rural gas-tax dollars kept on rural roads with more ODOT oversight.", armitageReported),
+    "Told the Headlight Herald in April 2026 she is generally opposed to raising the gas tax and DMV fees, and wants more ODOT oversight and rural drivers' gas taxes spent maintaining the roads they rely on.", armitageReported),
   stance("rachel-armitage", "leg-new-revenue", "opposes", "No new costs now",
     "Told the Headlight Herald that now is not the time for the state to talk about increasing costs, and that she would review whether old bills and pandemic-era programs still work.", armitageReported),
-  stance("melisa-finkle", "leg-transportation-package", "partial", "Roads need more",
+  stance("melisa-finkle", "leg-transportation-package", "partial", "Roads beyond patches",
     "Her filed statement calls for safer travel and roads that need more than another temporary patch; it does not say whether she would raise the gas tax or fees to pay for them.", statement(76)),
   /* Senate 17 */
   stance("lisa-reynolds", "leg-transportation-package", "supports", "Voted for HB 3991",
@@ -1236,7 +1236,7 @@ topicStances.push(
   stance("lisa-reynolds", "leg-new-revenue", "supports", "Voted to disconnect",
     "Voted yes on SB 1507 on February 16, 2026, which disconnects Oregon from federal H.R. 1 business tax breaks, raising about $314 million for 2027–29, and enlarges the Earned Income Tax Credit.", sb1507Senate),
   stance("lisa-reynolds", "leg-data-centers", "supports", "Voted for POWER Act",
-    "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it lets regulators put data centers in their own electricity rate class.", hb3546Senate),
+    "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it directs regulators to put data centers in their own electricity rate class.", hb3546Senate),
   stance("lisa-reynolds", "leg-shelter-funding", "supports", "Voted for shelter bill",
     "Voted yes on HB 3644 on June 26, 2025; her site says she voted for record shelter and housing funding and supported rent relief and eviction moratoriums.", hb3644Senate),
   stance("lisa-reynolds", "leg-deflection", "supports", "Voted for HB 4002",
@@ -1274,11 +1274,11 @@ topicStances.push(
   // Not a stance: a general value or goal that does not reach this choice; left as a gap.
   /* Senate 20 */
   stance("mark-meek", "leg-transportation-package", "supports", "Voted for HB 3991",
-    "Voted yes on HB 3991 in the Senate on September 29, 2025; the enrolled bill also repealed the mandatory toll program, and his site says he ended ODOT’s I-205 tolling plans.", hb3991Senate),
+    "Voted yes on HB 3991 in the Senate on September 29, 2025, the gas-tax and fee package voters later rejected; the bill also repealed the mandatory toll program, and his site says he ended ODOT’s I-205 tolling plans.", hb3991Senate),
   stance("mark-meek", "leg-new-revenue", "opposes", "Voted no on disconnect",
     "Voted no on SB 1507 on February 16, 2026, the bill that disconnects Oregon from federal H.R. 1 business tax breaks to raise about $314 million for 2027–29 and enlarge the Earned Income Tax Credit.", sb1507Senate),
   stance("mark-meek", "leg-data-centers", "supports", "Voted for POWER Act",
-    "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it lets regulators put data centers in their own electricity rate class.", hb3546Senate),
+    "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it directs regulators to put data centers in their own electricity rate class.", hb3546Senate),
   stance("mark-meek", "leg-shelter-funding", "supports", "Voted for shelter bill",
     "Voted yes on HB 3644 on June 26, 2025; his site says he is working to expand shelter capacity and treatment programs.", hb3644Senate),
   stance("mark-meek", "leg-deflection", "supports", "Voted for HB 4002",
@@ -1286,9 +1286,9 @@ topicStances.push(
   stance("mark-meek", "leg-sanctuary", "supports", "Voted for HB 4138",
     "Voted yes on HB 4138 on March 5, 2026; his site says he stood firm against reckless federal policies.", hb4138Senate),
   stance("michele-stroh", "leg-transportation-package", "opposes", "Voters said no",
-    "Her filed statement says the incumbent voted yes on a package to raise taxes that voters then rejected by more than 80 percent, and that Salem’s answer is always another tax.", statement(85)),
+    "Her filed statement says the incumbent voted yes on a package to raise taxes that voters then rejected by more than 80 percent.", statement(85)),
   stance("michele-stroh", "leg-new-revenue", "opposes", "No new taxes",
-    "Pledges no new taxes: says Oregon does not have a revenue problem but a spending problem, and she will vote no on new taxes until Salem shows it can spend what it has.", statement(84)),
+    "Her filed statement pledges no new taxes, saying Oregon is among the highest-taxed states and has a spending problem, not a revenue problem.", statement(84)),
   stance("michele-stroh", "leg-shelter-funding", "partial", "Accountability for spending",
     "Says Oregon has spent billions while the crisis grew; wants treatment, accountability for spending and less red tape blocking shelters and housing, without saying whether to renew state shelter money.", strohHome),
   stance("michele-stroh", "leg-deflection", "supports", "Backed Fix M110",
@@ -1316,7 +1316,7 @@ topicStances.push(
   stance("jeff-helfrich", "leg-transportation-package", "opposes", "Opposed the gas tax",
     "Says he opposed major tax increases including the gas tax and fought policies that raise costs for working families; he was excused for the House vote on HB 3991.", helfrichStatement),
   stance("jeff-helfrich", "leg-new-revenue", "opposes", "Voted no on disconnect",
-    "Voted no on SB 1507 in the House on February 25, 2026; his statement says government should live within a budget as families do.", sb1507House),
+    "Voted no on SB 1507, which disconnected Oregon from several federal tax breaks, in the House on February 25, 2026.", sb1507House),
   stance("jeff-helfrich", "leg-data-centers", "opposes", "Voted no: POWER Act",
     "Voted no on HB 3546 on April 22 and June 5, 2025; his statement calls for balanced energy policies that lower costs and provide the power Oregon needs to grow.", hb3546House),
   stance("jeff-helfrich", "leg-shelter-funding", "opposes", "Voted no: shelter bill",
@@ -1331,11 +1331,11 @@ topicStances.push(
 topicStances.push(
   /* House 26 */
   stance("sue-r-rieke-smith", "leg-transportation-package", "supports", "Voted for HB 3991",
-    "Voted yes on HB 3991 in the House on September 1, 2025 and filed a vote explanation; voters later repealed the package’s gas-tax and fee increases.", hb3991House),
+    "Voted yes on HB 3991 in the House on September 1, 2025; her vote explanation called it far from perfect and voiced concern about another tax burden. Voters later repealed its gas-tax and fee increases.", hb3991House),
   stance("sue-r-rieke-smith", "leg-new-revenue", "supports", "Voted to disconnect",
     "Voted yes on SB 1507 on February 25, 2026; her statement describes it as standing up to Trump’s tax loopholes for the ultra wealthy and cutting taxes for over 200,000 working families.", sb1507House),
-  stance("sue-r-rieke-smith", "leg-data-centers", "supports", "Regulate data centers",
-    "Opposes the unchecked growth of AI data centers that use up water and raise utility costs; she was not yet in the House for the POWER Act votes.", statement(179)),
+  stance("sue-r-rieke-smith", "leg-data-centers", "partial", "Regulate data centers",
+    "Opposes the unchecked growth of AI data centers that use up water and raise utility costs; she does not say whether she favors separate rates, ending tax breaks or a pause, and joined the House after the POWER Act votes.", statement(179)),
   stance("sue-r-rieke-smith", "leg-shelter-funding", "supports", "Voted for shelter bill",
     "Voted yes on HB 3644 on June 23, 2025, two weeks after taking office; her plan would partner with cities and nonprofits on root causes like mental illness and addiction.", hb3644House),
   stance("sue-r-rieke-smith", "leg-deflection", "partial", "Integrate treatment",
@@ -1346,7 +1346,7 @@ topicStances.push(
     "Voted yes on HB 4138 on February 24 and March 6, 2026, the bill requiring officers to identify themselves and limiting masks.", hb4138House),
   stance("stephanie-carkin", "leg-transportation-package", "opposes", "Families paying enough",
     "Her statement welcomes the defeat of the transportation tax referendum, which she notes her opponent voted for, because families are already paying enough; she would spend existing dollars on essential infrastructure.", statement(175)),
-  stance("stephanie-carkin", "leg-new-revenue", "opposes", "Audit before taxing",
+  stance("stephanie-carkin", "leg-new-revenue", "mixed", "Audit before taxing",
     "Before asking taxpayers for more, government should show it uses existing money well: audits of underperforming programs, performance-based budgeting and a bigger tax base from a business-friendly Oregon.", carkinIssues),
   stance("steph-terrio", "leg-new-revenue", "partial", "Corporate tax increase",
     "Backs a 1.5% corporate tax increase and drug-price negotiation to fund coverage for uninsured and lower-income people; she frames it as Medicare reform and does not address the state’s 2027–29 gap.", terrioPolicy),
@@ -1359,7 +1359,7 @@ topicStances.push(
   stance("susan-mclain", "leg-new-revenue", "supports", "Voted to disconnect",
     "Voted yes on SB 1507 on February 25, 2026; her site says she voted for the largest Earned Income Tax Credit increase in state history.", sb1507House),
   stance("susan-mclain", "leg-data-centers", "supports", "Voted for POWER Act",
-    "Voted yes on HB 3546 on April 22 and June 5, 2025, and sponsored a bill banning data centers from passing energy costs to consumers.", hb3546House),
+    "Voted yes on HB 3546 on April 22 and June 5, 2025, and co-sponsored it; the bill has the utility commission assign the cost of serving large energy users to those users.", hb3546House),
   stance("susan-mclain", "leg-shelter-funding", "supports", "Voted for shelter bill",
     "Voted yes on HB 3644 on June 23, 2025, the bill creating the statewide shelter program.", hb3644House),
   stance("susan-mclain", "leg-deflection", "supports", "Voted for HB 4002",
@@ -1381,16 +1381,16 @@ topicStances.push(
     "Wants firm enforcement plus proven intervention: treat the opioid crisis as an emergency, expand recovery programs that work and pair treatment with responsibility; he does not name deflection.", bakerIssues),
   stance("michael-w-sugar", "leg-transportation-package", "partial", "No tolls, on-time projects",
     "Opposes tolling and wants projects delivered on time and on budget with union labor; he does not say whether he would vote for a gas-tax or fee increase.", sugarPriorities),
-  stance("michael-w-sugar", "leg-new-revenue", "supports", "Wealthy pay fair share",
-    "Would push major tax reform so billionaires and the wealthiest corporations pay their fair share while cutting the burden on working families.", sugarPriorities),
+  stance("michael-w-sugar", "leg-new-revenue", "partial", "Wealthy pay fair share",
+    "Would push major tax reform so billionaires and the wealthiest corporations pay their fair share while reducing the burden on working families; he lists it under cutting taxes and does not address the 2027–29 budget gap.", sugarPriorities),
   stance("michael-w-sugar", "leg-shelter-funding", "partial", "Get people off streets",
     "Would expand mental-health and addiction services, address homelessness and get people off the streets; he does not say how shelter beds would be funded.", statement(225)),
   // Not a stance: a general value or goal that does not reach this choice; left as a gap.
   stance("michael-w-sugar", "leg-wildfire-funding", "supports", "Fund brush clearing",
     "Would increase support for proactive wildfire prevention, including brush clearing, and invest now in earthquake-resistant bridges, water systems and emergency centers.", sugarPriorities),
-  stance("michael-w-sugar", "leg-sanctuary", "supports", "Protect from overreach",
-    "Would protect Oregonians and immigrants from federal overreach and ensure a justice system that treats everyone equally.", sugarPriorities),
-  stance("pat-hubbell", "leg-new-revenue", "opposes", "Audits, no tax hikes",
+  stance("michael-w-sugar", "leg-sanctuary", "partial", "Protect from overreach",
+    "Would protect Oregonians and immigrants from federal overreach and ensure a justice system that treats everyone equally; he does not say whether he would add new state limits on federal immigration enforcement.", sugarPriorities),
+  stance("pat-hubbell", "leg-new-revenue", "opposes", "No family tax hikes",
     "Would balance the state budget without raising taxes on working families by auditing departments and eliminating waste and redundant programs.", hubbellPlatform),
   stance("pat-hubbell", "leg-deflection", "partial", "Recovery plus enforcement",
     "Would couple compassionate mental-health and addiction recovery with strict enforcement of public-safety laws; he does not address deflection funding.", hubbellHome),
@@ -1401,12 +1401,12 @@ topicStances.push(
     "Says rural roads are in disrepair and the budgets to fix them are insufficient; she does not say how she would raise the money.", meadEcon),
   stance("darla-mead", "leg-new-revenue", "partial", "Find budget improvements",
     "Would bring accounting skills to finding budget improvements and wants schools funded beyond federal dollars; she does not say whether she would raise revenue.", meadEcon),
-  stance("darla-mead", "leg-data-centers", "supports", "Rules insufficient now",
-    "Says data centers are being built in rural neighborhoods where they deplete fresh water and that existing regulations are insufficient to manage them.", meadEnv),
+  stance("darla-mead", "leg-data-centers", "partial", "Rules insufficient now",
+    "Says data centers are being built in rural neighborhoods where they deplete fresh water and that existing regulations are insufficient to manage them; she does not address power rates, tax breaks or a pause.", meadEnv),
   stance("darla-mead", "leg-shelter-funding", "partial", "Pathways to stable housing",
     "Wants pathways from subsidized housing and rental assistance to long-term stable housing; she does not address shelter funding.", meadEcon),
   stance("darla-mead", "leg-wildfire-funding", "partial", "Mitigate disasters",
-    "Says her family evacuated in the 2020 fires and she will fight for solutions that mitigate natural disasters; she does not say how much the state should spend or how to pay.", meadHome),
+    "Says she will fight for solutions that mitigate natural disasters; she does not say how much the state should spend or how to pay.", meadHome),
   stance("matt-bunch", "leg-transportation-package", "opposes", "No transportation taxes",
     "Opposes the transportation package’s gas-tax, vehicle-fee and payroll-tax increases; would cut waste and prioritize road maintenance and safety instead of new taxes.", bunchIssues),
   stance("matt-bunch", "leg-new-revenue", "opposes", "Voted no on disconnect",
@@ -1417,15 +1417,15 @@ topicStances.push(
     "Voted no on HB 4138 on February 24 and March 6, 2026, the bill requiring officers to identify themselves and limiting masks.", hb4138House),
   /* House 52 */
   stance("hank-sanders", "leg-data-centers", "supports", "No new data centers",
-    "Will not support any new data centers; would end their tax breaks and NDAs and require clarity on what they use and provide, calling $50 million and $100 million tax breaks unfair.", sandersDataCenters),
+    "Will not support any new data centers, calls $50 million and $100 million tax breaks unfair, and wants an end to NDAs and clarity on what data centers use and provide.", sandersDataCenters),
   stance("hank-sanders", "leg-wildfire-funding", "supports", "10–20× more prevention",
     "Says Oregon should spend 10 to 20 times more on fire prevention and would create a home-hardening team to lower insurance costs.", sandersWildfire),
   stance("scott-c-hege", "leg-transportation-package", "partial", "Maintain what exists",
     "Wants state infrastructure programs focused on maintaining existing roads and bridges with fair rural access; he does not say whether he would raise the gas tax or fees.", hegePriorities),
-  stance("scott-c-hege", "leg-new-revenue", "opposes", "Stop relying on taxes",
+  stance("scott-c-hege", "leg-new-revenue", "opposes", "Hard look at spending",
     "Says Oregon should stop relying on higher taxes and take a hard look at how government spends the money it already has, prioritizing essential services and eliminating waste.", hegePriorities),
   stance("scott-c-hege", "leg-data-centers", "mixed", "Local choice, transparency",
-    "Opposes a statewide moratorium and says local communities should decide; told Columbia Community Connection that water-use secrecy damaged trust and The Dalles does not need more data centers.", hegeReported),
+    "Opposes a statewide moratorium and says local communities should decide; told Columbia Community Connection that Google's confidential water use damaged public trust and that he doesn't necessarily want more data centers in The Dalles.", hegeReported),
   stance("scott-c-hege", "leg-wildfire-funding", "supports", "Invest in initial attack",
     "Told Columbia Community Connection that investing far more in initial attack and forest treatment can avoid enormously expensive fires; backs prescribed burning and says homeowners must harden their own homes.", hegeReported),
 );

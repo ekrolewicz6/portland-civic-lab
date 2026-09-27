@@ -1,0 +1,562 @@
+{
+ "batch": "b10-gresham-beav-hills",
+ "checked": {
+  "issueSlots": 65,
+  "topicStances": 76,
+  "sourcesFetched": 40
+ },
+ "unreachable": [],
+ "fetchNotes": [
+  "Gresham minutes (primegov CompiledDocument 5826, 5892, 5955, 6199, 6317, 6383, 6619, plus 5772 and 5686) are scanned images; OCR'd with tesseract into sources/gresham-minutes-<id>.txt.",
+  "togetherwithheather.org is a JS app; priorities text extracted from its bundle (assets/index-DNoVApH4.js) into sources/colemancox-priorities.txt.",
+  "votedorianrussell.com and titonianforhillsboro.com block curl (Cloudflare); read via WebFetch asking for verbatim text, saved to sources/russell-issues.txt and sources/wallace-priorities.txt.",
+  "Candidate replies checked against the published excerpts in the batch file and answers.ts; the full emailed replies are not on disk.",
+  "Hillsboro packets extracted with pdftotext to sources/hills-<docid>.txt (263202 is 5,339 pages; Planning Commission May 27 minutes near 'Page 790 of 5339')."
+ ],
+ "findings": [
+  {
+   "candidateId": "travis-stovall",
+   "race": "gresham-mayor",
+   "item": "topic/gresham-levy-fire",
+   "fields": [
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "chip": "Levy results, no district",
+    "text": "Says the levy funded 9 new officers and 12 firefighters and would keep supporting police and fire; said May 5, 2026 a Clackamas Fire District 1 model “does not appear to be a strong consideration for Gresham.” Renewal unsaid.",
+    "stance": "partial"
+   },
+   "sourceUrl": "https://gresham.primegov.com/Public/CompiledDocument/6199",
+   "sourceQuote": "Mayor Stovall: Expressed full agreement with prior Council comments ... Stated that, based on current information, Clackamas Fire District 1 does not appear to be a strong consideration for Gresham. [Pamphlet p41: “Funded 9 new sworn police officers and 12 firefighters”; no mention of the levy.]",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "He set aside one provider (Clackamas Fire District 1) “based on current information” while the East County task force still studies a district model, so “no district” widens his words; and neither his pamphlet nor his site credits the 9 officers and 12 firefighters to the levy (Gladfelter credits the levy with 40 police and 33 fire positions).",
+   "proposed": {
+    "topicChip": "Funded hires, not Clackamas",
+    "text": "Says he funded 9 new officers and 12 firefighters and would keep supporting police and fire; said May 5, 2026 a Clackamas Fire District 1 model “does not appear to be a strong consideration for Gresham.” Renewal unsaid."
+   }
+  },
+  {
+   "candidateId": "travis-stovall",
+   "race": "gresham-mayor",
+   "item": "topic/gresham-safety-fee",
+   "fields": [
+    "stance",
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Voted to keep $15",
+    "text": "Moved the first reading of Council Bill 03-26 on February 3, 2026 and voted yes February 17 to move the fee into a resolution and keep it at $15 a month; his campaign is silent on changing it."
+   },
+   "sourceUrl": "https://gresham.primegov.com/Public/CompiledDocument/5892",
+   "sourceQuote": "It was clarified that this action is administrative only and does not change the current fee amount. ... Council President Keathley: “I just want to clarify that we are only moving this so that, at some point, Council can have a conversation and a decision about whether or not to make any changes to the fee.”",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "The recorded vote moved the fee into a resolution at its existing amount, which staff called administrative and the council president said was a step toward deciding later whether to change it; calling it a vote “to keep $15” reads a choice into a procedural vote (Piazza cast the identical votes and is marked mixed).",
+   "proposed": {
+    "stance": "partial",
+    "topicChip": "Moved fee to resolution",
+    "text": "Moved the first reading February 3, 2026 and voted February 17 to set the $15 fee by resolution, a change staff called administrative; his campaign does not say whether the fee should change."
+   }
+  },
+  {
+   "candidateId": "travis-stovall",
+   "race": "gresham-mayor",
+   "item": "topic/gresham-ice-response",
+   "fields": [
+    "stance",
+    "topic-chip"
+   ],
+   "current": {
+    "stance": "mixed",
+    "chip": "Resolution plus pause letter"
+   },
+   "sourceUrl": "https://gresham.primegov.com/Public/CompiledDocument/5772",
+   "sourceQuote": "Mayor Stovall recommended that the Council consider a resolution and direct staff to draft a resolution aligned with community requests, to be prepared for consideration at the next Council meeting. [Jan 20, /5826: Resolution 3681 moved by Brown, seconded by Gladfelter, 7–0.]",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "On the exact choice (declare an emergency or not) his record matches Piazza’s and Gladfelter’s, which are marked opposes: he proposed the resolution route and voted for it; the mayors’ pause letter is a separate step and does not make his stance on the declaration mixed.",
+   "proposed": {
+    "stance": "opposes",
+    "topicChip": "Resolution, not emergency"
+   }
+  },
+  {
+   "candidateId": "sue-piazza",
+   "race": "gresham-mayor",
+   "item": "issue/safety",
+   "fields": [
+    "chip"
+   ],
+   "current": {
+    "chip": "Police first, no tents",
+    "line": "Wants crime reduced and no encampments in streets and parks, building on the levy."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=41",
+   "sourceQuote": "I’ll keep public safety my top priority - reducing crime and addressing homelessness without allowing tents and encampments to take over our streets and parks.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "She makes “public safety” her top priority, not police specifically; “no tents” has support on her site (“there aren’t tents and encampments on our streets”), so only “Police first” narrows her word.",
+   "proposed": {
+    "chip": "Safety first, no tents"
+   }
+  },
+  {
+   "candidateId": "sue-piazza",
+   "race": "gresham-mayor",
+   "item": "topic/gresham-groundwater",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Moved and voted for the 2028–32 rate increases June 2, 2026; on September 1 asked staff about chlorine odor, a return to chloramine and treatment costs, and has held listening sessions on water quality."
+   },
+   "sourceUrl": "https://gresham.primegov.com/Public/CompiledDocument/6317",
+   "sourceQuote": "A motion was made by Councilor Gladfelter, seconded by Councilor Brown, TO APPROVE RESOLUTION NO. 3716 ... A motion was made by Council President Keathley ... RESOLUTION NO. 3717 ... A motion was made by Councilor Hinton ... RESOLUTION NO. 3718 ... [Piazza moved only the consent agenda: minutes, Lusted Water District wholesale IGA, GPOA contract.]",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "Factual error: Piazza voted yes on the three rate resolutions but did not move them (Gladfelter, Keathley and Hinton did); she moved the consent agenda that held the Lusted agreement. The pack’s record note for /6317 (“Consent, 6–0 … Piazza moved”) repeats the error.",
+   "proposed": {
+    "text": "Voted for the 2028–32 rate increases June 2, 2026; on September 1 asked staff about chlorine odor, a return to chloramine and treatment costs, and has held listening sessions on water quality."
+   }
+  },
+  {
+   "candidateId": "sue-piazza",
+   "race": "gresham-mayor",
+   "item": "topic/gresham-groundwater",
+   "fields": [
+    "stance"
+   ],
+   "current": {
+    "stance": "mixed",
+    "chip": "Rates yes, fix taste"
+   },
+   "sourceUrl": "https://gresham.primegov.com/Public/CompiledDocument/6619",
+   "sourceQuote": "Councilor Piazza asked questions regarding the City’s water quality report, including chlorine odor, the potential to return to chloramine, chlorine residuals throughout the distribution system, silica deposits, and the tracking of customer complaints. ... Councilor Piazza encouraged the City to explore treatment options and costs.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "Nothing in her record points away from the groundwater system: she voted for the rates and pressed for a treatment fix, which is the question’s own package; Stovall and Gladfelter, with the same rate votes, are marked supports.",
+   "proposed": {
+    "stance": "supports"
+   }
+  },
+  {
+   "candidateId": "sue-piazza",
+   "race": "gresham-mayor",
+   "item": "topic/gresham-ice-response",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "opposes",
+    "text": "Voted for Resolution 3681 January 20, 2026 after urging “careful consideration to avoid causing additional harm” and constructive talks with federal partners; in October 2025 asked whether sanctuary status could cost federal grants."
+   },
+   "sourceUrl": "https://gresham.primegov.com/Public/CompiledDocument/5772",
+   "sourceQuote": "She asked for clarification regarding potential increased ICE enforcement following emergency declarations. ... Councilor Piazza stressed the need for careful consideration to avoid causing additional harm and recommended pursuing constructive discussions with federal partners.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The cited January 20 minutes (/5826) record only her yes vote; the quote comes from the January 6 minutes (/5772), and the October 2025 grants question is in neither, so the item’s source does not hold its main claims (the quote itself is accurate).",
+   "proposed": {
+    "text": "Voted for Resolution 3681 January 20, 2026; on January 6 asked whether emergency declarations could bring more ICE enforcement and urged “careful consideration to avoid causing additional harm” and constructive talks with federal partners."
+   }
+  },
+  {
+   "candidateId": "heather-coleman-cox",
+   "race": "gresham-position-2",
+   "item": "topic/gresham-safety-fee",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Supports keeping the Police, Fire and Parks Fee at $15 a month; if Council considers changing it, residents should get a say and see how it would affect bills and services."
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#coleman-cox-2026-09-23",
+   "sourceQuote": "I support keeping the Police, Fire and Parks Fee at $15 a month. Residents deserve to know what they are paying for and how this fee works alongside the fire and police levy. If Council considers changing the amount, I believe residents should have a chance to weigh in.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "“See how it would affect bills and services” is not in the published reply excerpt; she asks that residents know what they pay for and how the fee works with the levy (her full email may say more; it is not on disk).",
+   "proposed": {
+    "text": "Supports keeping the Police, Fire and Parks Fee at $15 a month; residents should know what they pay for and get a chance to weigh in if Council considers changing it."
+   }
+  },
+  {
+   "candidateId": "will-delplato",
+   "race": "gresham-position-2",
+   "item": "issue/money",
+   "fields": [
+    "chip"
+   ],
+   "current": {
+    "chip": "Small cuts early",
+    "line": "Wants small, early budget changes now, spending reviewed, permitting (building approvals) streamlined."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=42",
+   "sourceQuote": "Gresham’s budget shortfall is growing, and we should act now with small, early changes rather than waiting until we’re forced into painful ones. We should review city spending for efficiencies and hold programs accountable.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "He says “changes,” not cuts; his reply adds savings reviews “before adding new taxes or fees,” which leaves revenue open, so “cuts” adds a commitment.",
+   "proposed": {
+    "chip": "Small changes early"
+   }
+  },
+  {
+   "candidateId": "will-delplato",
+   "race": "gresham-position-2",
+   "item": "topic/gresham-budget-gap",
+   "fields": [
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "opposes",
+    "chip": "Small cuts now",
+    "text": "Says the budget shortfall is growing and the city should “act now with small, early changes rather than waiting until we’re forced into painful ones,” reviewing spending for efficiencies rather than relying on reserves."
+   },
+   "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=42",
+   "sourceQuote": "Gresham’s budget shortfall is growing, and we should act now with small, early changes rather than waiting until we’re forced into painful ones. [Reply, research-log#delplato-2026-09-24: “match ongoing costs with ongoing money rather than one-time funds.”]",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The chip turns “changes” into cuts, and the cited pamphlet never mentions reserves; the reserves point (and so the opposes stance) rests on his emailed reply, which should be the cited source.",
+   "proposed": {
+    "topicChip": "Small changes now",
+    "text": "Would act early, reviewing purchasing, contracts and technology for savings before new taxes or fees, and match ongoing costs with ongoing money instead of one-time funds."
+   },
+   "proposedSource": "Cite research-log#delplato-2026-09-24."
+  },
+  {
+   "candidateId": "gregory-schroeder",
+   "race": "gresham-position-4",
+   "item": "issue/safety",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Nonprofit outreach matched to each person; enforcement when available services are refused."
+   },
+   "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#schroeder-2026-09-24",
+   "sourceQuote": "but when appropriate services are available and someone refuses them while continuing to violate camping or other laws, I support enforcement of those laws and the legal consequences that may follow.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The line drops “while continuing to violate camping or other laws,” so it reads as enforcement for refusing services; he ties enforcement to law-breaking after an offer is refused (the position keeps this).",
+   "proposed": {
+    "line": "Nonprofit outreach matched to each person; enforcement if services are refused and laws broken."
+   }
+  },
+  {
+   "candidateId": "teo-ramirez",
+   "race": "gresham-position-4",
+   "item": "topic/gresham-ice-response",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "text": "Organized residents’ testimony and asked the council to publicly reaffirm the Sanctuary Promise Act, fund bilingual rights education, expand staff training and set a communication process for federal operations; an emergency declaration is unsaid."
+   },
+   "sourceUrl": "https://theoutlookonline.com/2025/11/15/former-gresham-employee-seeks-testimony-on-ice-encounters/",
+   "sourceQuote": "Create clear, bilingual education on constitutional rights in public spaces, as well as when/how to call 911.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "He asked the city to create the education; “fund” adds a spending ask he did not make.",
+   "proposed": {
+    "text": "Organized residents’ testimony and asked the council to publicly reaffirm the Sanctuary Promise Act, create bilingual rights education, expand staff training and set a communication process for federal operations; an emergency declaration is unsaid."
+   }
+  },
+  {
+   "candidateId": "janine-gladfelter",
+   "race": "gresham-position-6",
+   "item": "topic/gresham-safety-fee",
+   "fields": [
+    "stance",
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Voted to keep $15",
+    "text": "Seconded the first reading February 3, 2026 and moved the February 17 consent vote that kept the fee at $15 and made it changeable by resolution; no campaign statement on changing it."
+   },
+   "sourceUrl": "https://gresham.primegov.com/Public/CompiledDocument/5892",
+   "sourceQuote": "It was clarified that this action is administrative only and does not change the current fee amount. ... “we are only moving this so that, at some point, Council can have a conversation and a decision about whether or not to make any changes to the fee.”",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "Same issue as Stovall: an administrative vote that left the amount unchanged is read as a decision to keep $15.",
+   "proposed": {
+    "stance": "partial",
+    "topicChip": "Moved fee to resolution",
+    "text": "Seconded the first reading February 3, 2026 and moved the February 17 consent vote setting the $15 fee by resolution, a change staff called administrative; no campaign statement on changing it."
+   }
+  },
+  {
+   "candidateId": "evelyn-kocher",
+   "race": "beaverton-position-1",
+   "item": "topic/beaverton-transportation-plan",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "partial",
+    "text": "Wants bus lines in South Cooper Mountain, TriMet expansion in the southwest, physical barriers for bike lanes on Murray, Scholls Ferry and Lombard, and zoning streamlined near MAX stations; which plan projects come first is unsaid."
+   },
+   "sourceUrl": "https://evelynforbeaverton.com/priorities",
+   "sourceQuote": "Prioritizing projects in progress such as the Beaverton Loop and the redevelopment of TV Highway will go a long way towards making sure we can have a more extensive and equitable transportation system. Longer term, expanding the WES to Salem could make Beaverton the center of intercity rail transit in the state.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The cited priorities page (live, and Wayback copies of April 15, May 19 and August 14, 2026) has no TriMet southwest expansion, no bike-lane barriers on Murray, Scholls Ferry or Lombard, and no South Cooper Mountain buses (those are in her pamphlet); I found the bike and TriMet claims in no source.",
+   "proposed": {
+    "text": "Wants bus lines in South Cooper Mountain, priority for the Beaverton Loop and TV Highway projects, and transit-oriented density downtown; which plan projects come first is unsaid."
+   },
+   "proposedSource": "Add pamphlet p9 for South Cooper Mountain."
+  },
+  {
+   "candidateId": "rachel-philip",
+   "race": "beaverton-position-1",
+   "item": "issue/housing",
+   "fields": [
+    "chip"
+   ],
+   "current": {
+    "chip": "More starter homes",
+    "line": "Supports more apartments, townhomes and starter homes so people can stay in Beaverton."
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=9",
+   "sourceQuote": "Affordability: Expand housing choices, including apartments, townhomes, and starter homes, so families, seniors, and working people can stay in Beaverton.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The chip keeps the last of three items and drops apartments, which she lists first (and stresses on Ballotpedia), so the grid reads as ownership-only.",
+   "proposed": {
+    "chip": "Expand housing choices"
+   }
+  },
+  {
+   "candidateId": "cristian-salgado",
+   "race": "hillsboro-ward-1",
+   "item": "issue/money",
+   "fields": [
+    "chip",
+    "line",
+    "position"
+   ],
+   "current": {
+    "chip": "Conditions on data centers",
+    "line": "Wants data-center growth conditioned on utility affordability and measurable community benefit.",
+    "position": "Wants data-center growth weighed against neighborhood and infrastructure impacts and utility affordability, with measurable community benefit and public transparency as conditions."
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=15",
+   "sourceQuote": "I have pushed for thoughtful data center growth, stronger consideration of neighborhood and infrastructure impacts, utility affordability, small business support, public transparency ... Responsible Growth. Welcome investment while ensuring growth strengthens neighborhoods, protects critical infrastructure, and creates measurable community benefit.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "He lists things he has pushed for side by side; making utility affordability and transparency “conditions” on data-center growth adds a gatekeeping commitment he did not state.",
+   "proposed": {
+    "chip": "Weigh data-center impacts",
+    "line": "Wants thoughtful data-center growth that weighs neighborhood impacts and brings measurable community benefit.",
+    "position": "Says he has pushed for thoughtful data-center growth, stronger consideration of neighborhood and infrastructure impacts, utility affordability and public transparency, and wants growth to create measurable community benefit."
+   }
+  },
+  {
+   "candidateId": "cristian-salgado",
+   "race": "hillsboro-ward-1",
+   "item": "topic/hillsboro-dc-moratorium",
+   "fields": [
+    "stance"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Voted for moratorium",
+    "text": "Voted yes July 27, 2026 on Resolution 2932, calling the moratorium a needed pause to develop structure and understanding, and yes July 7 to start the data-storage code amendment; his statement asks for thoughtful data-center growth weighing neighborhood impacts."
+   },
+   "sourceUrl": "https://hillsboro-oregon.civicweb.net/document/263233/City%20Council%20-%2001%20Sep%202026.pdf?handle=5718828DA0784DE4AF2E7E9D192013E3",
+   "sourceQuote": "Salgado expressed support for the moratorium as a needed pause to develop structure and understanding. ... Rob Harris made a motion to adopt Resolution No. 2932, as amended. ... CARRIED. 6-0 ... Cristian Salgado voted yes.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "The question is whether to adopt the October 6 limits and extend past November 24; his votes were for the 120-day pause and for starting the code work, while Sinclair and Alcaire (not he) spoke for an extension.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Voted yes July 27, 2026 on Resolution 2932, calling the moratorium a needed pause to develop structure and understanding, and yes July 7 to start the data-storage code amendment; extending the moratorium past November 24 is unsaid."
+   }
+  },
+  {
+   "candidateId": "sarah-marugg",
+   "race": "hillsboro-ward-1",
+   "item": "topic/hillsboro-dc-tax-breaks",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Pay fair share",
+    "text": "Would make data centers pay their fair share for the infrastructure and services they use and hold major polluters accountable."
+   },
+   "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=16",
+   "sourceQuote": "I will protect farmland, hold major polluters accountable, and make sure data centers pay their fair share for the infrastructure and services they use.",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "“Fair share” is a general value that never names abatements, the community-service or school-support fees, or abatement terms; Salgado, who spoke to abatements directly, is marked partial on the same board.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Would make data centers pay their fair share for the infrastructure and services they use and hold major polluters accountable; abatement fees and terms are unsaid."
+   }
+  },
+  {
+   "candidateId": "diana-jackson",
+   "race": "hillsboro-ward-1",
+   "item": "topic/hillsboro-jet-hangars",
+   "fields": [
+    "topic-chip",
+    "topic-text"
+   ],
+   "current": {
+    "chip": "Abstained, noise concern",
+    "text": "Abstained on the hangars May 27, 2026 as a planning commissioner, citing uncertainty about one approval criterion and saying 3,800 added flights a year seemed like a lot for nearby residents; how she would vote on a refiling is unsaid."
+   },
+   "sourceUrl": "https://hillsboro-oregon.civicweb.net/document/263202/City%20Council%20-%2006%20Oct%202026.pdf?handle=17CB86AA13134C009338773C1DEB5F97",
+   "sourceQuote": "Although air quality was not within the Commission's purview, the proposal would impact people, including those outside the property, and that was a concern. ... noting that while 3,800 additional operations per year might seem small compared to the airport’s annual total, it seemed like a lot to someone living nearby and was concerning.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The minutes record her air-quality and neighbor-impact concern and “operations” (takeoffs and landings), not noise or flights; noise was the commission’s general concern.",
+   "proposed": {
+    "topicChip": "Abstained, neighbor concerns",
+    "text": "Abstained on the hangars May 27, 2026 as a planning commissioner, citing uncertainty about one approval criterion and saying 3,800 added operations a year seemed like a lot for nearby residents; how she would vote on a refiling is unsaid."
+   }
+  },
+  {
+   "candidateId": "ivette-pantoja",
+   "race": "hillsboro-ward-2",
+   "item": "issue/housing",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Wants more affordable homes, from missing-middle to multifamily, to reduce family displacement."
+   },
+   "sourceUrl": "https://www.ivettepantoja.com/priorities-1",
+   "sourceQuote": "When working to expand housing options, a key priority is fostering balanced, sustainable development — from missing-middle housing to multi-family options — that aligns with neighborhood infrastructure and preserves the distinct character of the community.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The line drops her limits (“balanced,” “aligns with neighborhood infrastructure,” “preserves the distinct character”), so it reads as more pro-density than she wrote; the position and topic text keep the infrastructure limit.",
+   "proposed": {
+    "line": "Wants balanced housing growth, missing-middle to multifamily, matched to neighborhood infrastructure."
+   }
+  },
+  {
+   "candidateId": "karim-delgado",
+   "race": "hillsboro-ward-2",
+   "item": "issue/housing",
+   "fields": [
+    "line"
+   ],
+   "current": {
+    "line": "Would require rent-increase notice, eviction right to counsel and community land trusts."
+   },
+   "sourceUrl": "https://www.karimdelgado.com/issues",
+   "sourceQuote": "Karim will fight for mandatory notice before rent increases, the right to counsel in eviction court, anti-displacement protections, and community land trusts",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "He says he will fight for these; “require … community land trusts” states a mandate he did not claim (the position correctly says “push”).",
+   "proposed": {
+    "line": "Would push for rent-increase notice, eviction right to counsel and community land trusts."
+   }
+  },
+  {
+   "candidateId": "karim-delgado",
+   "race": "hillsboro-ward-2",
+   "item": "topic/hillsboro-dc-tax-breaks",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Raise fees to 30%",
+    "stance": "supports"
+   },
+   "sourceUrl": "https://www.karimdelgado.com/issues",
+   "sourceQuote": "Hillsboro charges the 15% floor. Raising it toward the 30% ceiling on future data-center agreements would route money the city is already forgoing back to the schools ... The council can raise that ceiling or flatten that schedule with a vote.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Only the school support fee goes “toward” 30%; the community service fee ceiling is 33% to 50% already, so “fees to 30%” misstates both the number and which fee.",
+   "proposed": {
+    "topicChip": "School fee toward 30%"
+   }
+  },
+  {
+   "candidateId": "karim-delgado",
+   "race": "hillsboro-ward-2",
+   "item": "topic/hillsboro-dc-moratorium",
+   "fields": [
+    "stance"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Backed the moratorium",
+    "text": "Testified July 27, 2026 in support of the moratorium, arguing Hillsboro is overly dependent on one industry; on June 23 told the council its enterprise-zone criteria produced massive tax breaks with minimal job creation."
+   },
+   "sourceUrl": "https://hillsboro-oregon.civicweb.net/document/263233/City%20Council%20-%2001%20Sep%202026.pdf?handle=5718828DA0784DE4AF2E7E9D192013E3",
+   "sourceQuote": "Karim Delgado supported the moratorium and argued Hillsboro is overly dependent on one industry, urging union workers to reevaluate leadership’s stance and calling for greater investment in small businesses.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "He backed the 120-day moratorium; the question’s choice (adopt the October 6 limits and extend past November 24) is unsaid in the minutes and on his platform, unlike Culbertson, who asked for consecutive moratoria.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Testified July 27, 2026 in support of the moratorium, arguing Hillsboro is overly dependent on one industry; on June 23 criticized enterprise-zone tax breaks. Extension past November 24 is unsaid."
+   }
+  }
+ ],
+ "notes": [
+  "Citation-only gaps (claim true in another record or on the candidate's own site; no lean): Stovall issue/safety 'restoring specialty units' is on greshamtogether.org, not pamphlet p41. Stovall and Gladfelter ICE items and Stovall fee item draw on January 6 (/5772) and February 3 (/5892) minutes while citing /5826 and /5955. Piazza issue/money 'government can do more with less' is on votepiazza.com, not the pamphlet.",
+  "Unverified in the cited sources (could not confirm or refute): Stovall budget '$924,981,292' and the ~$10M fund-balance draw (not in /6383 minutes); Stovall 'speed of business' and Piazza 'responsible fiscal mindset' chamber-forum remarks; Stovall April 'on time and on budget' quote and July town hall (/6317 cited); Piazza 'listening sessions' and 'October 2025' grants question; Stovall/Gladfelter 'March 3' pod-code vote (in /5954 per the pack, not /5892); Kocher 'testified May 5' (utility fees) and 'testified ... January 20' (ICE); Salgado emergency-declaration, sanctuary-ordinance and '$726,000' votes (not in the cited Feb 3 packet; Delgado's site says about $730,000).",
+  "Kocher issue/money and topic/beaverton-levy-or-cuts: 'corporate tax reform so big business pays more' is on her homepage ('make big business and the wealthy pay their share for infrastructure maintenance'), not pamphlet p9. Kocher ICE 'codify protections in local ordinance' is on her homepage, not the Valley Times article.",
+  "Al-jaouni issue/safety (fully funding, restorative justice) and Delgado issue/safety (mobile crisis response) come from their sites, not the cited pamphlet pages. Jackson topic/dc-tax-breaks 'singularly focused on one industry' is from her platform page, not pamphlet p16; her HRO topic quote 'ICE out of Hillsboro' is from pamphlet p16, not the platform page.",
+  "Salgado topic/hillsboro-housing-displacement: he voted yes June 23 on the first reading of the Synopsys East comp-plan amendment (Ordinance 6519, 6-0) before voting no on second reading and the zone change July 7 (4-2); the text reports only the July 7 no.",
+  "Coleman-Cox topic/gresham-groundwater 'looks logical on cost': the published excerpt says the move 'seems logical' and the investment is 'too great to retract'; the cost link may be in the elided '[...]' part. Not flagged.",
+  "Checked and found faithful: all Aziz, Al-jaouni, Garcia, Wallace, Russell, Culbertson items; Coleman-Cox except the fee text; Schroeder except the safety line; Piazza budget, camping, fee, levy items; Gladfelter levy, budget, groundwater, camping, ICE items; Kocher Flock, utility-fee, Loop, ICE items; Philip items except the housing chip; Marugg items except tax-breaks (her 'Stop the buildout' matches 'should not continue expanding data centers')."
+ ]
+}

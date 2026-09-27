@@ -1,0 +1,556 @@
+{
+ "batch": "b08-state-house",
+ "checked": {
+  "issueSlots": 38,
+  "topicStances": 44,
+  "sourcesFetched": 27
+ },
+ "unreachable": [],
+ "notes": [
+  "All 13 OLIS-cited incumbent votes verified via the Legislature's OData API (olis.oregonlegislature.gov overview pages returned a server error); roll calls saved in sources/b08-olis-vote-checks.txt and sources/olis-*.txt. Every cited vote, date, chamber and stance value matched.",
+  "Sugar's priorities page renders from embedded JSON; text extracted to sources/sugar-priorities-rendered.txt.",
+  "Supplementary sources read: state pamphlet pp. 176, 180, 226, 261-268; Sanders childcare page; Rieke Smith HB 3991 vote explanation PDF; HB 3940 enrolled bill (harvest tax 62.5 cents to $1 per MBF confirms 'raises the timber harvest tax'; the Rainy Day Fund change moves 'a portion' of interest, which the text compresses to 'moves Rainy Day Fund interest').",
+  "Pattern: four Democratic candidates' general statements were scored supports (Rieke Smith and Mead on data centers, Sugar on new revenue and sanctuary) where the definitions call for partial; Terrio's similar statements were scored partial. On the other side, Republican chips/lines drop qualifiers that make no-tax pledges broader than stated (Hubbell, Hege) and Carkin's conditional is scored opposes."
+ ],
+ "findings": [
+  {
+   "candidateId": "sue-r-rieke-smith",
+   "race": "oregon-state-house-26",
+   "item": "topic/leg-data-centers",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Regulate data centers",
+    "text": "Opposes the unchecked growth of AI data centers that use up water and raise utility costs; she was not yet in the House for the POWER Act votes."
+   },
+   "sourceUrl": "https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=179",
+   "sourceQuote": "Regulating Data Centers: Dr. Sue opposes the unchecked growth of AI data centers that use up our water and raise utility costs.",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "Opposing \"unchecked growth\" is a general value that names none of the question's choices (separate rates, ending tax breaks, a pause), and she has no recorded vote; Terrio's similar \"regulate AI now\" is marked partial.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Opposes the unchecked growth of AI data centers that use up water and raise utility costs; she does not say whether she favors separate rates, ending tax breaks or a pause, and joined the House after the POWER Act votes."
+   }
+  },
+  {
+   "candidateId": "sue-r-rieke-smith",
+   "race": "oregon-state-house-26",
+   "item": "topic/leg-transportation-package",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Voted yes on HB 3991 in the House on September 1, 2025 and filed a vote explanation; voters later repealed the package’s gas-tax and fee increases."
+   },
+   "sourceUrl": "https://www.oregonlegislature.gov/pcive/HB%203991-A%20Rieke%20Smith%209-2-2025.pdf",
+   "sourceQuote": "I also heard from families struggling with rising costs. Federal tariffs and inflation are already driving up prices, and I had serious concerns about adding another tax burden. Legislators changed this bill to address those issues ... This bill is far from perfect, but it will: Keep neighborhood roads safer ...",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The vote (Aye, 2025-09-01) and the filed explanation check out on OLIS, but the text mentions the explanation without its content, which is her stated reservation about another tax burden; the stance stays supports on the recorded vote.",
+   "proposed": {
+    "text": "Voted yes on HB 3991 in the House on September 1, 2025; her vote explanation called it far from perfect and voiced concern about another tax burden. Voters later repealed its gas-tax and fee increases."
+   }
+  },
+  {
+   "candidateId": "stephanie-carkin",
+   "race": "oregon-state-house-26",
+   "item": "topic/leg-new-revenue",
+   "fields": [
+    "stance"
+   ],
+   "current": {
+    "stance": "opposes",
+    "chip": "Audit before taxing"
+   },
+   "sourceUrl": "https://www.stephaniefororegon.com/issues",
+   "sourceQuote": "She will advocate for audits of underperforming programs, performance-based budgeting, and greater oversight of state agencies. Before asking taxpayers for more money, government should demonstrate it is using existing resources effectively and efficiently.",
+   "category": [
+    "d"
+   ],
+   "verdict": "borderline",
+   "why": "Her words set a precondition (\"before asking taxpayers for more money\") and never reject new revenue outright, which the guide's definitions call mixed; Baker, by contrast, writes \"opposes new taxes\" himself, so his opposes holds.",
+   "proposed": {
+    "stance": "mixed"
+   }
+  },
+  {
+   "candidateId": "steph-terrio",
+   "race": "oregon-state-house-26",
+   "item": "issue/housing",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "Every citizen should be afforded a place to live; she would back a program requiring timber companies to supply renewable plant material for temporary housing."
+   },
+   "sourceUrl": "https://www.terrioforus.com/policy",
+   "sourceQuote": "A program to boost production of building supplies will always have my support. The program could look like a minimum requirement for timber companies and corporations to supply renewable plant material for temporary housing, or research.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "She commits to a building-supply program and offers the timber requirement only as one form it \"could look like\"; the position turns the example into the program.",
+   "proposed": {
+    "position": "Every citizen should be afforded a place to live. She would support a program to boost building-supply production, which could require timber companies to supply renewable plant material for temporary housing."
+   }
+  },
+  {
+   "candidateId": "susan-mclain",
+   "race": "oregon-state-house-29",
+   "item": "topic/leg-data-centers",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Voted yes on HB 3546 on April 22 and June 5, 2025, and sponsored a bill banning data centers from passing energy costs to consumers."
+   },
+   "sourceUrl": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3546",
+   "sourceQuote": "Directs the Public Utility Commission to provide for a classification of service for large energy use facilities. Requires any tariff schedule adopted for the class to allocate the costs of serving large energy use facilities to the facilities and mitigate the risks to other classes of retail electricity consumers.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Votes and her sponsorship check out on OLIS, but \"banning\" is her campaign site's verb stated in the guide's voice; the cited bill directs the PUC to assign large users' costs to them.",
+   "proposed": {
+    "text": "Voted yes on HB 3546 on April 22 and June 5, 2025, and co-sponsored it; the bill has the utility commission assign the cost of serving large energy users to those users."
+   }
+  },
+  {
+   "candidateId": "michael-w-sugar",
+   "race": "oregon-state-house-40",
+   "item": "topic/leg-new-revenue",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Wealthy pay fair share",
+    "text": "Would push major tax reform so billionaires and the wealthiest corporations pay their fair share while cutting the burden on working families."
+   },
+   "sourceUrl": "https://www.sugarfororegon.com/priorities",
+   "sourceQuote": "Cutting Taxes. Major tax reform. Fairer taxes. Less burden on working families. Michael will fight for major tax reform that makes Oregon’s tax system fairer and more sustainable. Billionaires and the wealthiest corporations should pay their fair share, while reducing the tax burden on working families.",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "He files this under \"Cutting Taxes\" and describes a shift in who pays, never new revenue for the budget gap; Terrio's corporate-tax plan is marked partial on the same question.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Would push major tax reform so billionaires and the wealthiest corporations pay their fair share while reducing the burden on working families; he lists it under cutting taxes and does not address the 2027–29 budget gap."
+   }
+  },
+  {
+   "candidateId": "michael-w-sugar",
+   "race": "oregon-state-house-40",
+   "item": "topic/leg-sanctuary",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Protect from overreach",
+    "text": "Would protect Oregonians and immigrants from federal overreach and ensure a justice system that treats everyone equally."
+   },
+   "sourceUrl": "https://www.sugarfororegon.com/priorities",
+   "sourceQuote": "Protecting reproductive rights, protecting voting rights, including mail-in voting, and protecting Oregonians and immigrants from federal overreach. Michael will ensure a fair justice system that treats everyone equally.",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "\"Protecting immigrants from federal overreach\" is a general value that does not reach the question's choice of adding new state limits, and he has no vote on it; by the guide's own rule that is partial.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Would protect Oregonians and immigrants from federal overreach and ensure a justice system that treats everyone equally; he does not say whether he would add new state limits on federal immigration enforcement."
+   }
+  },
+  {
+   "candidateId": "pat-hubbell",
+   "race": "oregon-state-house-40",
+   "item": "issue/money",
+   "fields": [
+    "line",
+    "chip"
+   ],
+   "current": {
+    "line": "Would balance the budget through audits and program cuts, not tax increases.",
+    "chip": "Audits, no tax hikes"
+   },
+   "sourceUrl": "https://hubbell4health.com/platform",
+   "sourceQuote": "Balance the state budget without raising taxes on working families. Eliminate wasteful spending and redundant programs ... Understand I am not slashing vital services, but audits are needed to eliminate administrative bloat.",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "The line and chip drop his scope limit \"on working families\" and turn it into a blanket no-tax pledge he did not make.",
+   "proposed": {
+    "line": "Would balance the budget through audits and program cuts, without raising working families' taxes.",
+    "chip": "Audits, cut waste"
+   }
+  },
+  {
+   "candidateId": "pat-hubbell",
+   "race": "oregon-state-house-40",
+   "item": "topic/leg-new-revenue",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Audits, no tax hikes",
+    "stance": "opposes"
+   },
+   "sourceUrl": "https://hubbell4health.com/platform",
+   "sourceQuote": "Balance the state budget without raising taxes on working families",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "Same dropped qualifier in the grid chip; the text keeps \"on working families\" correctly (opposes is defensible because his stated plan closes the gap with cuts).",
+   "proposed": {
+    "topicChip": "No family tax hikes"
+   }
+  },
+  {
+   "candidateId": "darla-mead",
+   "race": "oregon-state-house-51",
+   "item": "issue/housing",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "New construction that fits community affordability standards rather than developer profit, staying within existing urban growth boundaries, reusing buildings, upgrading infrastructure, and pathways from subsidized housing to stable homes."
+   },
+   "sourceUrl": "https://www.darlameadfororegon.com/issues/creating-local-economic-opportunity",
+   "sourceQuote": "New construction should focus on housing that fits the community’s affordability standards, not just profitability for developers. ... We should strive to stay within existing urban growth boundaries which means finding a balance between erecting new construction and repurposing existing buildings where possible.",
+   "category": [
+    "b",
+    "c"
+   ],
+   "verdict": "confirmed",
+   "why": "Dropping \"just\" turns \"not just profitability for developers\" into affordability versus profit, an anti-developer framing she did not use; \"strive to\" and \"where possible\" also fall away.",
+   "proposed": {
+    "position": "New construction that fits the community's affordability standards, not just profitability for developers; striving to stay within existing urban growth boundaries by balancing new construction with reusing buildings; upgrading infrastructure; and pathways from subsidized housing to stable homes."
+   }
+  },
+  {
+   "candidateId": "darla-mead",
+   "race": "oregon-state-house-51",
+   "item": "issue/housing",
+   "fields": [
+    "line",
+    "chip"
+   ],
+   "current": {
+    "line": "Wants new homes built to community affordability standards inside existing growth boundaries.",
+    "chip": "Affordable, inside UGB"
+   },
+   "sourceUrl": "https://www.darlameadfororegon.com/issues/creating-local-economic-opportunity",
+   "sourceQuote": "We should strive to stay within existing urban growth boundaries which means finding a balance between erecting new construction and repurposing existing buildings where possible.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "She says she would \"strive to\" stay inside the boundaries; the line and chip make it a firm condition.",
+   "proposed": {
+    "line": "Wants new homes built to community affordability standards, ideally inside existing growth boundaries.",
+    "chip": "Community-affordable homes"
+   }
+  },
+  {
+   "candidateId": "darla-mead",
+   "race": "oregon-state-house-51",
+   "item": "issue/money",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Wants health coverage independent of employment and budgets reviewed for savings.",
+    "position": "Lower household health costs by making insurance access independent of employment, and bring accounting skills to finding budget improvements."
+   },
+   "sourceUrl": "https://www.darlameadfororegon.com/",
+   "sourceQuote": "Health insurance should not depend on your employment status, job quality, or employer. (Accounting claim is on /issues/creating-local-economic-opportunity: \"I’ll bring my accounting expertise to help identify areas where our budgets could be improved\")",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "The accounting point is not on the cited home page (it is on her economic-opportunity page), and \"savings\" adds a direction to \"areas where our budgets could be improved\".",
+   "proposed": {
+    "line": "Wants health coverage independent of employment and an accountant's review of budgets."
+   },
+   "sourceFix": "Add https://www.darlameadfororegon.com/issues/creating-local-economic-opportunity for the accounting point"
+  },
+  {
+   "candidateId": "darla-mead",
+   "race": "oregon-state-house-51",
+   "item": "issue/climate",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Supports clean-energy goals, forest and watershed protection, and data-center limits.",
+    "position": "Support Oregon’s clean-energy goals, keep incentives for the shift to clean-energy transportation, protect forests and watersheds, tighten rules on water-hungry data centers and reduce wildfire risk."
+   },
+   "sourceUrl": "https://www.darlameadfororegon.com/issues/enforcing-environmental-protections",
+   "sourceQuote": "We must preserve and expand incentives aimed at facilitating the transition to clean energy alternatives ... Data centers are being built within rural neighborhoods where they deplete fresh water resources. Existing regulations designed to protect our communities and environment are insufficient to effectively manage this issue.",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "She says current data-center rules are insufficient but proposes no limits, and \"keep incentives\" drops her \"and expand\"; small drifts in both directions.",
+   "proposed": {
+    "line": "Supports clean-energy goals, forest and watershed protection, and stronger data-center rules.",
+    "position": "Support Oregon’s clean-energy goals, preserve and expand incentives for the shift to clean-energy transportation, protect forests and watersheds, and reduce wildfire risk; she says existing rules are insufficient to manage data centers that deplete fresh water."
+   }
+  },
+  {
+   "candidateId": "darla-mead",
+   "race": "oregon-state-house-51",
+   "item": "topic/leg-data-centers",
+   "fields": [
+    "stance",
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "chip": "Rules insufficient now",
+    "text": "Says data centers are being built in rural neighborhoods where they deplete fresh water and that existing regulations are insufficient to manage them."
+   },
+   "sourceUrl": "https://www.darlameadfororegon.com/issues/enforcing-environmental-protections",
+   "sourceQuote": "Protecting our communities from big tech. Data centers are being built within rural neighborhoods where they deplete fresh water resources. Existing regulations designed to protect our communities and environment are insufficient to effectively manage this issue.",
+   "category": [
+    "d"
+   ],
+   "verdict": "confirmed",
+   "why": "Her concern is water and she names no remedy; nothing reaches separate power rates, ending tax breaks or a pause, so supports is not earned.",
+   "proposed": {
+    "stance": "partial",
+    "text": "Says data centers are being built in rural neighborhoods where they deplete fresh water and that existing regulations are insufficient to manage them; she does not address power rates, tax breaks or a pause."
+   }
+  },
+  {
+   "candidateId": "darla-mead",
+   "race": "oregon-state-house-51",
+   "item": "topic/leg-wildfire-funding",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "partial",
+    "text": "Says her family evacuated in the 2020 fires and she will fight for solutions that mitigate natural disasters; she does not say how much the state should spend or how to pay."
+   },
+   "sourceUrl": "https://www.darlameadfororegon.com/",
+   "sourceQuote": "I'll fight for solutions that mitigate natural disasters and invest in clean energy so we can pair climate protections with strong jobs. (Evacuation is in the state pamphlet, PDF page 263: \"My family evacuated during the destructive wildfires of 2020\")",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Accurate, but the evacuation detail is not on the cited home page; a reader who clicks through will not find it. Add or switch the cite to the state pamphlet page 263.",
+   "proposed": {},
+   "sourceFix": "Cite (or add) the state pamphlet: https://sos.oregon.gov/elections/Voters-Pamphlet/Documents/Candidate-Statements.pdf#page=263"
+  },
+  {
+   "candidateId": "scott-c-hege",
+   "race": "oregon-state-house-52",
+   "item": "issue/housing",
+   "fields": [
+    "position",
+    "line"
+   ],
+   "current": {
+    "position": "More supply through fewer unnecessary regulations and costs, and an examination of why publicly supported construction costs so much more than private projects.",
+    "line": "Would cut regulations raising home prices and examine subsidized construction costs."
+   },
+   "sourceUrl": "https://www.hegefororegon.com/priorities",
+   "sourceQuote": "We can invest in the services Oregonians depend on while finding ways to reduce unnecessary costs and regulations that drive up the price of housing, energy, food, and other necessities. (Supply and subsidized-cost points appear only in the Columbia Community Connection interview: \"Oregon needs to determine why publicly supported construction can cost substantially more.\")",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "The cited priorities page has no supply or subsidized-construction claim; both come from the Sept. 16 Columbia Community Connection interview, so the cite needs to change or be added.",
+   "proposed": {
+    "position": "Fewer unnecessary costs and regulations that drive up housing prices. He told Columbia Community Connection that more supply is part of the answer and that Oregon must find out why publicly supported construction costs substantially more than private projects."
+   },
+   "sourceFix": "Cite (or add) https://columbiacommunityconnection.com/the-dalles/hege-puts-experience-at-center-of-house-district-52-campaign"
+  },
+  {
+   "candidateId": "scott-c-hege",
+   "race": "oregon-state-house-52",
+   "item": "issue/climate",
+   "fields": [
+    "position",
+    "line",
+    "chip"
+   ],
+   "current": {
+    "position": "Maintain existing roads and bridges and fix rural water and sewer systems through state infrastructure programs; opposes a statewide data-center moratorium in favor of local decisions with resource-use transparency.",
+    "line": "Would maintain rural roads, water and sewer; opposes a data-center moratorium.",
+    "chip": "Local data-center choice"
+   },
+   "sourceUrl": "https://www.hegefororegon.com/priorities",
+   "sourceQuote": "That means maintaining the roads and bridges we already have, improving water and sewer systems ... (Data centers are not on this page. CCC interview: \"I don't necessarily want more data centers in this community here,\" ... \"I really think local control is important.\")",
+   "category": [
+    "a",
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "The data-center half, including the chip, is not in the cited priorities page, and the position leaves out his own line that he does not necessarily want more data centers in The Dalles.",
+   "proposed": {
+    "position": "Maintain existing roads and bridges and improve rural water and sewer systems through state infrastructure programs. He told Columbia Community Connection he opposes a statewide data-center moratorium, favors local decisions and resource-use transparency, and does not necessarily want more data centers in The Dalles."
+   },
+   "sourceFix": "Add https://columbiacommunityconnection.com/the-dalles/hege-puts-experience-at-center-of-house-district-52-campaign for the data-center half and the chip"
+  },
+  {
+   "candidateId": "scott-c-hege",
+   "race": "oregon-state-house-52",
+   "item": "topic/leg-data-centers",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "mixed",
+    "text": "Opposes a statewide moratorium and says local communities should decide; told Columbia Community Connection that water-use secrecy damaged trust and The Dalles does not need more data centers."
+   },
+   "sourceUrl": "https://columbiacommunityconnection.com/the-dalles/hege-puts-experience-at-center-of-house-district-52-campaign",
+   "sourceQuote": "Hege said Google's effort to keep its water consumption confidential damaged public trust ... \"I don't necessarily want more data centers in this community here,\" Hege said. \"I want more diversification.\"",
+   "category": [
+    "b"
+   ],
+   "verdict": "confirmed",
+   "why": "\"Does not need more data centers\" drops his hedge \"necessarily\" and changes his verb; it makes him sound firmer against data centers than he was.",
+   "proposed": {
+    "text": "Opposes a statewide moratorium and says local communities should decide; told Columbia Community Connection that Google's confidential water use damaged public trust and that he doesn't necessarily want more data centers in The Dalles."
+   }
+  },
+  {
+   "candidateId": "scott-c-hege",
+   "race": "oregon-state-house-52",
+   "item": "topic/leg-new-revenue",
+   "fields": [
+    "topic-chip"
+   ],
+   "current": {
+    "chip": "Stop relying on taxes",
+    "stance": "opposes"
+   },
+   "sourceUrl": "https://www.hegefororegon.com/priorities",
+   "sourceQuote": "We need to stop relying on higher taxes and instead take a hard look at how government spends the money it already has.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "The chip drops \"higher\"; read literally it says he would stop relying on taxes at all.",
+   "proposed": {
+    "topicChip": "Hard look at spending"
+   }
+  },
+  {
+   "candidateId": "hank-sanders",
+   "race": "oregon-state-house-52",
+   "item": "issue/climate",
+   "fields": [
+    "position"
+   ],
+   "current": {
+    "position": "No new data centers, and far more state spending on wildfire prevention, including a home-hardening strike team for rural families."
+   },
+   "sourceUrl": "https://www.hankfororegon.com/issues/wildfire",
+   "sourceQuote": "I will institute Oregon’s first Home Hardening Task Force: a team that educates families in rural Oregon on how to harden their homes.",
+   "category": [
+    "a"
+   ],
+   "verdict": "confirmed",
+   "why": "He proposes a task force that educates families; \"strike team\" suggests crews doing the work, which he did not propose.",
+   "proposed": {
+    "position": "No new data centers, and far more state spending on wildfire prevention, including a home-hardening task force that teaches rural families how to harden their homes."
+   }
+  },
+  {
+   "candidateId": "hank-sanders",
+   "race": "oregon-state-house-52",
+   "item": "issue/money",
+   "fields": [
+    "position",
+    "line",
+    "chip"
+   ],
+   "current": {
+    "position": "No more data-center tax breaks and full disclosure of what they use and provide; tax credits of up to $5,000 for rural childcare workers to cut families’ costs.",
+    "line": "Would end data-center tax breaks; proposes $5,000 rural childcare-worker credits.",
+    "chip": "End data-center breaks"
+   },
+   "sourceUrl": "https://www.hankfororegon.com/issues/restrictions-on-data-centers",
+   "sourceQuote": "I will not support any new data centers. No more hiding behind NDAs. We need clarity on how much data centers are providing to us and what they are using. Tax breaks of $50 and $100 million are not fair when small businesses and working families actually move our economy.",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "He calls the breaks unfair and refuses new data centers, but \"no more\" in his text applies to NDAs, and he never says he would end existing breaks; the $5,000 childcare credit is real but sits on his childcare page, not the cited one.",
+   "proposed": {
+    "position": "Calls $50 million and $100 million data-center tax breaks unfair and wants an end to NDAs and clarity on what data centers use and provide; would sponsor tax credits of up to $5,000 for rural childcare workers.",
+    "line": "Opposes data-center tax breaks as unfair; proposes $5,000 rural childcare-worker credits.",
+    "chip": "Oppose data-center breaks"
+   },
+   "sourceFix": "Add https://www.hankfororegon.com/issues/childcare-g3wbr for the $5,000 childcare credit"
+  },
+  {
+   "candidateId": "hank-sanders",
+   "race": "oregon-state-house-52",
+   "item": "topic/leg-data-centers",
+   "fields": [
+    "topic-text"
+   ],
+   "current": {
+    "stance": "supports",
+    "text": "Will not support any new data centers; would end their tax breaks and NDAs and require clarity on what they use and provide, calling $50 million and $100 million tax breaks unfair."
+   },
+   "sourceUrl": "https://www.hankfororegon.com/issues/restrictions-on-data-centers",
+   "sourceQuote": "I will not support any new data centers. No more hiding behind NDAs. We need clarity on how much data centers are providing to us and what they are using. Tax breaks of $50 and $100 million are not fair",
+   "category": [
+    "a"
+   ],
+   "verdict": "borderline",
+   "why": "Same \"would end their tax breaks\" commitment; stance supports holds on \"no new data centers\".",
+   "proposed": {
+    "text": "Will not support any new data centers, calls $50 million and $100 million tax breaks unfair, and wants an end to NDAs and clarity on what data centers use and provide."
+   }
+  },
+  {
+   "candidateId": "adam-baker",
+   "race": "oregon-state-house-40",
+   "item": "issue/housing",
+   "fields": [
+    "line",
+    "position"
+   ],
+   "current": {
+    "line": "Would cut fees, approval delays and red tape; supports more starter homes.",
+    "position": "Cut the fees, permitting delays and red tape he says government adds to a home’s price, and support development that increases supply of all housing types, especially starter homes."
+   },
+   "sourceUrl": "https://voteadambaker.com/issues/",
+   "sourceQuote": "Excessive fees, permitting delays, and red tape can add six figures to the price of a new home. I’ll cut the costs government itself creates.",
+   "category": [
+    "b"
+   ],
+   "verdict": "borderline",
+   "why": "He targets \"excessive\" fees; \"cut fees\" reads as cutting fees generally, which matters because development fees fund infrastructure.",
+   "proposed": {
+    "line": "Would cut excessive fees, approval delays and red tape; supports more starter homes.",
+    "position": "Cut the excessive fees, permitting delays and red tape he says government adds to a home’s price, and support development that increases supply of all housing types, especially starter homes."
+   }
+  }
+ ]
+}

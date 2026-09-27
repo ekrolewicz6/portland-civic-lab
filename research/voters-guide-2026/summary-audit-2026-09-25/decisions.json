@@ -1,0 +1,3533 @@
+{
+ "applied": [
+  {
+   "kind": "tchip",
+   "candidateId": "julia-brim-edwards",
+   "key": "mult-jail-capacity",
+   "old": "Enough beds, no releases",
+   "new": "No emergency jail releases"
+  },
+  {
+   "kind": "stance",
+   "candidateId": "julia-brim-edwards",
+   "key": "mult-sobering",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "julia-brim-edwards",
+   "key": "mult-sobering",
+   "old": "Her campaign says she led the effort to rebuild the 24/7 Sobering and Crisis Stabilization Center as the front door to addiction treatment instead of jail or the ER, and expanded recovery housing.",
+   "new": "Her campaign says she led the effort to rebuild the 24/7 Sobering and Crisis Stabilization Center to provide addiction treatment instead of jail or the ER; it does not say whether to fund more detox and treatment beds around it."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "julia-brim-edwards",
+   "key": "mult-ambulance",
+   "old": "Cast the only vote for Meieran's July 2024 resolution pressing the chair to let ambulances run with one paramedic and one EMT, a week before mediation with AMR settled on a hybrid-staffing pilot.",
+   "new": "Cast the only vote for Meieran's July 2024 ambulance-staffing resolution, as amended to temporarily adopt the county's final offer to AMR if mediation did not end by August 1."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "julia-brim-edwards",
+   "key": "mult-shelter-cuts",
+   "old": "opposes",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "julia-brim-edwards",
+   "key": "mult-shelter-cuts",
+   "old": "Cast the lone no vote on the FY 2027 budget, saying it leaves too many gaps and will not reduce homelessness or deliver the change the community is asking for.",
+   "new": "Cast the lone no vote on the FY 2027 budget, saying it leaves too many gaps and will not reduce homelessness; she did not name the shelter closures as a reason and co-sponsored money to house people from closing shelters."
+  },
+  {
+   "kind": "position",
+   "candidateId": "sharon-meieran",
+   "key": "money",
+   "old": "The county spends more per person than almost anywhere yet gets the worst results; she would budget for results, account for every dollar, redirect money from ineffective programs and deliver more while spending less.",
+   "new": "She says the county spends $4 billion a year while its systems fail; she would budget for results, account for every dollar and redirect funding from ineffective programs, improving results by doing its core work well instead of spending more."
+  },
+  {
+   "kind": "line",
+   "candidateId": "sharon-meieran",
+   "key": "money",
+   "old": "Wants budgets tied to results, every dollar accounted for, less spending overall.",
+   "new": "Wants budgets tied to results, every dollar tracked, and money moved from ineffective programs."
+  },
+  {
+   "kind": "source",
+   "candidateId": "sharon-meieran",
+   "key": "money",
+   "old": "pamphlet(33)",
+   "new": "meieranPlan"
+  },
+  {
+   "kind": "position",
+   "candidateId": "sharon-meieran",
+   "key": "safety",
+   "old": "Get people with serious addiction and mental illness off the streets through an actual plan implemented by a chief executive who acts; she cites ending the county’s ambulance-response crisis as a commissioner.",
+   "new": "Get people with serious addiction and mental illness off the streets through an actual plan implemented by a leader driven to act."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "sharon-meieran",
+   "key": "mult-deflection",
+   "old": "Would halt the deflection program in its current form and replace the system that produced it, defining success by treatment completion and stable housing; says $20 million has not produced one such case.",
+   "new": "Would halt the deflection program in its current form and replace the system that produced it, defining success by treatment completion and stable housing; says after more than $20 million the county cannot point to one such case."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "sharon-meieran",
+   "key": "mult-pfa-delay",
+   "old": "On a July 2026 podcast said Preschool for All must define its goal and forecast its money before raising taxes as promised while hundreds of millions sit unspent; she did not say whether the 2028 delay should stand.",
+   "new": "On a July 2026 podcast said Preschool for All must define its goal and forecast its money, asking whether to raise taxes as promised when it has more than expected; she did not say whether the 2028 delay should stand."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "sharon-meieran",
+   "key": "mult-city-county",
+   "old": "mixed",
+   "new": "partial"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "sharon-meieran",
+   "key": "mult-city-county",
+   "old": "Evaluate city-county merger",
+   "new": "Evaluate consolidation"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "sharon-meieran",
+   "key": "mult-city-county",
+   "old": "Her turnaround plan would lay the groundwork and evaluate mechanisms for city-county consolidation to address redundancies from separate oversight and funding of overlapping functions.",
+   "new": "Her turnaround plan would lay the groundwork and evaluate mechanisms for city-county consolidation to address redundancies in overlapping functions; it does not say whether one government should run shelters."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "sharon-meieran",
+   "key": "mult-budget-gap",
+   "old": "Would adopt zero-based budgeting so every program justifies its cost, redirect money from ineffective and redundant structures and contracts, and deliver more while spending less.",
+   "new": "Would adopt zero-based budgeting so every program justifies its cost, and redirect money from ineffective structures and redundant contracts while preserving essential services."
+  },
+  {
+   "kind": "position",
+   "candidateId": "shannon-singleton",
+   "key": "housing",
+   "old": "Find lasting solutions to the homelessness crisis by building better systems with the people closest to the problem; she says she realigned county funds toward shelter, outreach and housing and cut duplicated services in the Homeless Services Department.",
+   "new": "Find real, lasting solutions to the homelessness crisis by building better systems with the people closest to the problem: service providers, small business owners, neighbors and people who disagree with her."
+  },
+  {
+   "kind": "position",
+   "candidateId": "shannon-singleton",
+   "key": "money",
+   "old": "Lower costs and make more effective use of taxpayers’ dollars; she cites coauthoring the county’s first lobbyist disclosure rules and finding money in the budget to close a homeless-services shortfall while pushing for sustainable funding.",
+   "new": "Push for more effective use of taxpayers’ dollars; she cites coauthoring the county’s first lobbyist disclosure rules and Deflection Center reforms meant to save money."
+  },
+  {
+   "kind": "line",
+   "candidateId": "shannon-singleton",
+   "key": "money",
+   "old": "Wants taxpayer dollars used more effectively, with lobbyist disclosure and sustainable funding.",
+   "new": "Wants taxpayer dollars used more effectively; cites coauthoring lobbyist disclosure rules."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "shannon-singleton",
+   "key": "mult-deflection",
+   "old": "Issued a November 2025 reform proposal tying the center to the by-name list, county sober shelters and outreach referrals, then co-sponsored the February 2026 resolution adopting stricter completion rules.",
+   "new": "Issued a November 2025 reform proposal for the deflection program, then co-sponsored the February 2026 resolution adopting stricter completion rules, saying behavioral health and homeless services must break down silos."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "shannon-singleton",
+   "key": "mult-sanctuary",
+   "old": "Co-sponsored the April 9, 2026 ordinance writing sanctuary rules into county code, saying the county will stand up to bullies for immigrant and refugee neighbors and that restricted areas mean all county facilities.",
+   "new": "Co-sponsored the April 9, 2026 ordinance writing sanctuary rules into county code, saying the county will stand up to bullies for immigrant and refugee neighbors and that the rules cover all county facilities."
+  },
+  {
+   "kind": "position",
+   "candidateId": "tina-kotek",
+   "key": "housing",
+   "old": "Would cut red tape to speed construction, expand options for renters and first-time buyers, and grow starter-home development and down-payment assistance; cites the housing emergency she declared and added shelter and treatment beds.",
+   "new": "Would expand housing options for renters and first-time buyers, cut red tape to speed new construction, and increase starter-home development and down-payment assistance."
+  },
+  {
+   "kind": "source",
+   "candidateId": "tina-kotek",
+   "key": "housing",
+   "old": "kotekStatement",
+   "new": "kotekPlatform"
+  },
+  {
+   "kind": "chip",
+   "candidateId": "tina-kotek",
+   "key": "money",
+   "old": "Ban hidden fees",
+   "new": "Ban personalized pricing"
+  },
+  {
+   "kind": "line",
+   "candidateId": "tina-kotek",
+   "key": "money",
+   "old": "Would ban personal-data pricing and hidden fees, keep data-center power costs off household bills.",
+   "new": "Would ban personal-data pricing, curb hidden fees, keep data-center power costs off bills."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "tina-kotek",
+   "key": "gov-school-time",
+   "old": "No cuts to hours",
+   "new": "Protect class time"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "tina-kotek",
+   "key": "gov-school-time",
+   "old": "Executive Order 26-06 bars districts from cutting instructional time for budget reasons and ends waivers below the minimum; her platform sets a goal of reaching the national average by the end of a second term.",
+   "new": "Executive Order 26-06 directs the state to prioritize rules stopping further budget-driven cuts to class time, requires districts that cut time to plan its restoration, and ends most waivers below the minimum."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "tina-kotek",
+   "key": "gov-interstate-bridge",
+   "old": "supports",
+   "new": "mixed"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "tina-kotek",
+   "key": "gov-interstate-bridge",
+   "old": "With Washington’s governor, said March 17, 2026 the states remain “fully committed” to replacing the bridge, starting with a core set of projects funded by committed federal, state and toll money.",
+   "new": "With Washington's governor, said March 17, 2026 the states remain “fully committed” to replacing the bridge, starting with a substantially funded core set of projects and adding the rest when funding is identified."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "tina-kotek",
+   "key": "gov-new-revenue",
+   "old": "Signed SB 1507 in April 2026, disconnecting Oregon from several H.R. 1 tax breaks because copying them was “neither fair nor responsible,” while keeping tips and overtime untaxed; she has not said whether she would seek new taxes for 2027–29.",
+   "new": "Signed SB 1507 in April 2026, saying automatically copying every H.R. 1 tax break was neither fair nor responsible, while flagging its effect on small businesses; she has not said whether she would seek new taxes for 2027–29."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "tina-kotek",
+   "key": "gov-data-center-moratorium",
+   "old": "Moratorium, via Legislature",
+   "new": "Moratorium on our terms"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "tina-kotek",
+   "key": "gov-data-center-moratorium",
+   "old": "Said September 8, 2026 she supports a moratorium until development is “done on our terms,” paused state-land deals through July 1, 2027, and will bring the Legislature a statewide framework in 2027.",
+   "new": "Told a Salem rally she supports a moratorium until any data center development is “done on our terms,” after directing the state to end a land sale for a proposed data center; says she supports local moratoriums."
+  },
+  {
+   "kind": "tsource",
+   "candidateId": "tina-kotek",
+   "key": "gov-data-center-moratorium",
+   "old": "govDcPause",
+   "new": "opbDcTranscriptKotek"
+  },
+  {
+   "kind": "stance",
+   "candidateId": "christine-drazan",
+   "key": "gov-power-act",
+   "old": "opposes",
+   "new": "mixed"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "christine-drazan",
+   "key": "gov-power-act",
+   "old": "Voted no",
+   "new": "Voted yes, then no"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "christine-drazan",
+   "key": "gov-power-act",
+   "old": "Voted no on HB 3546’s final House passage on June 5, 2025; her plan does not say whether she would repeal the law.",
+   "new": "Voted yes when the House first passed HB 3546 on April 22, 2025, then no when it concurred in Senate amendments on June 5, 2025; her plan does not say whether she would repeal the law."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "christine-drazan",
+   "key": "gov-homelessness-emergency",
+   "old": "Would declare an emergency on addiction and mental health instead, audit homeless and addiction spending, and shift state money to recovery programs; says success should not be measured by low-barrier shelter beds.",
+   "new": "Would declare an emergency on addiction and mental health, audit homeless spending and shift money to recovery programs and homeless services, not measuring success by low-barrier shelter beds; her plan does not address the homelessness emergency."
+  },
+  {
+   "kind": "position",
+   "candidateId": "christine-drazan",
+   "key": "safety",
+   "old": "Would audit homelessness and addiction spending, shift state money to recovery-focused programs, end funding for programs she says enable addiction, fully fund state police, let local governments clear public spaces and raise penalties for drug traffickers.",
+   "new": "Would audit homelessness and addiction spending, shift state money to recovery-focused programs and homeless services, end funding for programs she says enable addiction, fully fund state police, let local governments clean up public spaces and raise penalties for drug traffickers."
+  },
+  {
+   "kind": "line",
+   "candidateId": "christine-drazan",
+   "key": "safety",
+   "old": "Would audit homelessness spending, fund recovery over low-barrier shelter, let cities clear public spaces.",
+   "new": "Would audit homelessness spending, prioritize recovery, let cities clean up public spaces."
+  },
+  {
+   "kind": "position",
+   "candidateId": "christine-drazan",
+   "key": "money",
+   "old": "Would order agencies on day one to repeal rules and fees that raise costs, veto new taxes and fees, raise the standard deduction, reform the corporate activity and estate taxes, cut property taxes for seniors and veterans, and protect the kicker.",
+   "new": "Would order agencies on day one to identify rules and fees that raise costs, veto new taxes and fees, raise the standard deduction, reform the corporate activity and estate taxes, cut property taxes for seniors and veterans, and protect the kicker."
+  },
+  {
+   "kind": "line",
+   "candidateId": "christine-drazan",
+   "key": "housing",
+   "old": "Would cap housing permit decisions at 120 days and allow private plan reviewers.",
+   "new": "Would pursue a 120-day decision limit for qualifying housing projects and fewer repeat appeals."
+  },
+  {
+   "kind": "position",
+   "candidateId": "christine-drazan",
+   "key": "housing",
+   "old": "Would set a 120-day maximum decision period for qualifying housing projects, limit repetitive appeals, expand private plan review, simplify commercial-to-housing conversions, create a state Housing Permit Command Center, and expand first-time-buyer credits and down-payment help from existing funds.",
+   "new": "Would pursue a 120-day maximum decision period for qualifying housing projects, limit repetitive appeals, expand private plan review when government backlogs are excessive, simplify commercial-to-housing conversions, create a state Housing Permit Command Center, and expand first-time-buyer credits and down-payment help from existing funds."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "christine-drazan",
+   "key": "gov-kicker",
+   "old": "Veto kicker grabs",
+   "new": "Protect the kicker"
+  },
+  {
+   "kind": "stance",
+   "candidateId": "christine-drazan",
+   "key": "gov-school-time",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "christine-drazan",
+   "key": "gov-school-time",
+   "old": "Would increase classroom time by moving Oregon from an instructional-hours system to a school-day system with statewide standards for what counts as a school day.",
+   "new": "Would increase classroom time by moving Oregon from an instructional-hours system to a school-day system with statewide standards for a school day; her plan does not say how districts should keep hours when budgets are short."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "christine-drazan",
+   "key": "gov-interstate-bridge",
+   "old": "mixed",
+   "new": "opposes"
+  },
+  {
+   "kind": "position",
+   "candidateId": "brett-smith",
+   "key": "safety",
+   "old": "Would bolster the volunteer Oregon Civil Defense Force, which he describes as a way to respond when federal agents act without a judge's warrant and to help with wildfires, and bars what he calls unconstitutional surveillance.",
+   "new": "Would bolster the Oregon Civil Defense Force and pledges no unconstitutional surveillance."
+  },
+  {
+   "kind": "line",
+   "candidateId": "brett-smith",
+   "key": "safety",
+   "old": "Would expand the volunteer Oregon Civil Defense Force and bar unconstitutional surveillance.",
+   "new": "Would bolster the Oregon Civil Defense Force and bar unconstitutional surveillance."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "brett-smith",
+   "key": "climate",
+   "old": "Permanent data-center ban",
+   "new": "Permanent moratorium"
+  },
+  {
+   "kind": "line",
+   "candidateId": "brett-smith",
+   "key": "climate",
+   "old": "Would permanently ban new data centers in Oregon.",
+   "new": "Would impose a permanent moratorium on data centers."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "brett-smith",
+   "key": "gov-data-center-moratorium",
+   "old": "Permanent ban",
+   "new": "Permanent moratorium"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "brett-smith",
+   "key": "gov-data-center-moratorium",
+   "old": "Pledges a permanent moratorium on data centers and calls himself the only anti-data-center candidate.",
+   "new": "Pledges a permanent moratorium on data centers."
+  },
+  {
+   "kind": "position",
+   "candidateId": "simone-rede",
+   "key": "safety",
+   "old": "Sustain the improvements to 911 call wait times that she says her office’s work helped produce.",
+   "new": "Sustain improvements to 911 call wait times, which she lists as part of her record as auditor."
+  },
+  {
+   "kind": "position",
+   "candidateId": "simone-rede",
+   "key": "climate",
+   "old": "Ensure the city follows through on its climate commitments, an audit area she says she chose because Portlanders raised it.",
+   "new": "Ensure the city follows through on its climate commitments, which she lists as part of her record as auditor."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "simone-rede",
+   "key": "aud-petition-verification",
+   "old": "Ruling stands",
+   "new": "Defends the process"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "simone-rede",
+   "key": "aud-petition-verification",
+   "old": "Said July 29, 2026 that “independent election administration cannot bend to political pressure — from petitioners, opponents, or elected officials,” and that her division administers elections with integrity and by the law.",
+   "new": "Said July 29, 2026, while the second signature sample was still being checked, that “independent election administration cannot bend to political pressure,” and that her office administers elections with integrity and by the law."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "simone-rede",
+   "key": "aud-office-cuts",
+   "old": "Asked the mayor in March 2026 to hold her office’s cut to 3% while citywide cuts of up to 10% were weighed, writing that transparency and accountability are not optional; her own requested budget cut one performance auditor.",
+   "new": "Asked the mayor in March 2026 not to cut her office’s budget beyond 3% while citywide cuts of up to 10% were weighed, writing that transparency and accountability are not optional."
+  },
+  {
+   "kind": "position",
+   "candidateId": "bruce-broussard",
+   "key": "money",
+   "old": "Living costs have greatly outpaced wages and low-income residents need better resources; he says owning businesses and volunteering gave him a different perspective on spending tax dollars, which are the public’s money.",
+   "new": "Living costs have greatly outpaced wage increases, and low-income residents need better resources."
+  },
+  {
+   "kind": "position",
+   "candidateId": "serena-cruz",
+   "key": "money",
+   "old": "The county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030; grow the tax base by partnering in Portland’s economy, require project labor and community benefits agreements on County-funded projects, and condition Moda Center money on a payment in lieu of taxes.",
+   "new": "The county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030; grow the tax base by partnering in Portland’s economy, require project labor and community benefits agreements on County-funded projects, and seek an annual payment in lieu of taxes in the Moda Center deal."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "serena-cruz",
+   "key": "mult-moda",
+   "old": "Yes, with conditions",
+   "new": "Yes, would seek terms"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "serena-cruz",
+   "key": "mult-moda",
+   "old": "Supports public dollars to keep the Blazers and the Fire in Portland, conditioned on a project labor agreement, a community benefits agreement naming Albina Vision Trust, a 20-year commitment and an annual payment in lieu of taxes.",
+   "new": "Supports public dollars to keep the Blazers and the Fire and would seek a project labor agreement, a community benefits agreement naming Albina Vision Trust, at least a 20-year commitment and an annual payment in lieu of taxes."
+  },
+  {
+   "kind": "position",
+   "candidateId": "serena-cruz",
+   "key": "climate",
+   "old": "Give every Climate Justice Plan goal a named owner, a cost and milestones; protect rental assistance, expand renter access to heat pumps, send cooling and clean-air money first to low-canopy neighborhoods, hold the county to its fossil-fuel-free building resolution, and press DEQ and the City on the fuel hub and Zenith’s 2027 deadline.",
+   "new": "Give every Climate Justice Plan goal a named owner, a cost and milestones; protect rent assistance, expand renter access to heat pumps, send cooling and clean-air money first to low-canopy neighborhoods, hold the county to its fossil-fuel-free building resolution, press DEQ to keep permitted emissions low in Cully, Sumner and Parkrose, and hold Zenith to its 2027 deadline to stop handling crude oil while opposing any fuel-hub expansion."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "serena-cruz",
+   "key": "mult-budget-gap",
+   "old": "mixed",
+   "new": "partial"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "serena-cruz",
+   "key": "mult-budget-gap",
+   "old": "Grow tax base instead",
+   "new": "Grow the tax base"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "serena-cruz",
+   "key": "mult-budget-gap",
+   "old": "Says the county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030; the fix is partnering in Portland's economy to grow the tax base.",
+   "new": "Says the county cannot cut or tax its way out of a structural deficit she puts at $33 million by 2030 and should partner in Portland's economy; she does not say whether to cut administration before services."
+  },
+  {
+   "kind": "position",
+   "candidateId": "herman-greene",
+   "key": "housing",
+   "old": "Set measurable housing-retention goals, use performance-based contracts, publish timelines, spending and results, and connect housing placements to mental-health, addiction-recovery and workforce services so fewer people return to the streets.",
+   "new": "Set measurable housing-retention goals, use performance-based contracts, and publish timelines, spending and results."
+  },
+  {
+   "kind": "position",
+   "candidateId": "nathan-ong-norris",
+   "key": "climate",
+   "old": "Implement the county’s Climate Justice Plan, hold polluters accountable, keep utilities affordable with oversight of private utility companies, cut greenhouse-gas emissions, and mitigate the risks of the CEI Hub (the riverside fuel-tank hub) while preventing its expansion.",
+   "new": "Implement the county’s Climate Justice Plan, hold polluters accountable, keep utilities affordable, support clean energy, and mitigate the risks of the CEI Hub (the riverside fuel-tank hub) while preventing its expansion."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "nathan-ong-norris",
+   "key": "mult-moda",
+   "old": "No giveaway to billionaires",
+   "new": "No deal without guarantees"
+  },
+  {
+   "kind": "position",
+   "candidateId": "tony-robertson",
+   "key": "housing",
+   "old": "Partner with property owners so vacant housing is not left empty while neighbors are on the street, remove barriers that slow placements, protect money for rent assistance, outreach and placement, and hold housing programs accountable for results rather than processes.",
+   "new": "Partner with property owners so housing is not left empty while neighbors are on the street, evaluate county rules that may be getting in the way of help, and protect money for rent assistance, street outreach and housing placement."
+  },
+  {
+   "kind": "line",
+   "candidateId": "tony-robertson",
+   "key": "housing",
+   "old": "Wants vacant units filled through property-owner partnerships and faster housing placements.",
+   "new": "Wants vacant units filled through property-owner partnerships and rent-assistance money protected."
+  },
+  {
+   "kind": "line",
+   "candidateId": "tony-robertson",
+   "key": "money",
+   "old": "Wants public spending dashboards, clear spending plans and options for local tax relief.",
+   "new": "Wants clear spending plans, measurable outcomes and options for local tax relief."
+  },
+  {
+   "kind": "position",
+   "candidateId": "nabil-zaghloul",
+   "key": "housing",
+   "old": "Introduce a Multnomah County Homelessness Reduction Act that puts prevention first, publicly report housing retention at three, six, nine and twelve months for every County-funded program, and expand the county’s master-lease model with landlords.",
+   "new": "Introduce a Multnomah County Homelessness Reduction Act that puts prevention first, and publicly report housing retention at three, six, nine and twelve months for every County-funded program."
+  },
+  {
+   "kind": "position",
+   "candidateId": "nabil-zaghloul",
+   "key": "money",
+   "old": "Introduce a Multnomah County Accountability and Results Act: a public County Report Card showing what the county spends, what works, what doesn’t and where it must improve, with programs funded by measured outcomes and county wages that keep up with Portland’s cost of living.",
+   "new": "Introduce a Multnomah County Accountability and Results Act: a public County Report Card showing what the county spends, what works, what doesn’t and where it must improve."
+  },
+  {
+   "kind": "line",
+   "candidateId": "nabil-zaghloul",
+   "key": "money",
+   "old": "Proposes a public county report card on spending and results, outcome-based funding.",
+   "new": "Proposes a public county report card on what the county spends and what works."
+  },
+  {
+   "kind": "position",
+   "candidateId": "nabil-zaghloul",
+   "key": "safety",
+   "old": "Track whether people leaving the justice system actually reintegrate (find work, stay housed, stay out), invest in what Cully residents asked for (cameras, community safety networks, youth programs), and add behavioral-health professionals so police stop responding to mental-health crises.",
+   "new": "Track whether people leaving the justice system actually reintegrate (find work, stay housed, stay out), invest in what Cully residents asked for (cameras, community safety networks, youth programs), and have enough behavioral-health professionals that police are not left handling mental-health crises they are not trained for."
+  },
+  {
+   "kind": "line",
+   "candidateId": "nabil-zaghloul",
+   "key": "safety",
+   "old": "Wants reintegration tracked, neighborhood safety networks funded, clinicians instead of police for crises.",
+   "new": "Wants reintegration tracked, neighborhood safety networks funded, more behavioral-health staff for crises."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "nabil-zaghloul",
+   "key": "mult-shelter-cuts",
+   "old": "mixed",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "nabil-zaghloul",
+   "key": "mult-shelter-cuts",
+   "old": "Notes many of the 600 beds being cut were already empty and says the answer for people who refuse shelter is sustained behavioral-health and addiction treatment, not more shelters, with prevention funded first.",
+   "new": "Notes many of the 600 beds being cut were already empty and says the answer for people who refuse shelter is sustained behavioral-health and addiction treatment, not more shelters; he does not say whether the beds should close."
+  },
+  {
+   "kind": "source",
+   "candidateId": "nicole-morrisey-o-donnell",
+   "key": "safety",
+   "old": "pamphlet(38)",
+   "new": "sheriffSite"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "nicole-morrisey-o-donnell",
+   "key": "mult-sanctuary",
+   "old": "No ICE detainer holds",
+   "new": "No detainer-only holds"
+  },
+  {
+   "kind": "position",
+   "candidateId": "jeff-merkley",
+   "key": "climate",
+   "old": "Would rapidly shift from fossil fuels to cheaper renewables, toward 100% clean energy with a Green New Deal that creates jobs in front-line communities.",
+   "new": "Would rapidly transition from dirty, expensive fossil fuels to cheaper, cleaner renewables."
+  },
+  {
+   "kind": "line",
+   "candidateId": "jeff-merkley",
+   "key": "climate",
+   "old": "Would rapidly shift from fossil fuels to cheaper renewables, toward 100% clean energy.",
+   "new": "Would rapidly shift from fossil fuels to cheaper, cleaner renewables."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "jeff-merkley",
+   "key": "climate",
+   "old": "100% renewable energy",
+   "new": "Rapid shift to renewables"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "jeff-merkley",
+   "key": "fed-housing-aid",
+   "old": "Voted yes on June 22, 2026 on final passage of the 21st Century ROAD to Housing Act (85–5), which became law July 11, 2026.",
+   "new": "Voted yes on June 22, 2026 to concur, with a further amendment, in the House changes to the 21st Century ROAD to Housing Act (85–5); it became law July 11, 2026."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "jeff-merkley",
+   "key": "fed-data-centers",
+   "old": "Asked state to act",
+   "new": "Asked state to weigh"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "jeff-merkley",
+   "key": "fed-data-centers",
+   "old": "With Sen. Wyden, asked Oregon’s data center advisory committee on July 2, 2026 to weigh rising electricity costs, water use, farmland rezoning and tribal rights; the letter proposes no federal action.",
+   "new": "With Sen. Wyden, asked Oregon’s data center advisory committee on July 2, 2026 to weigh rising electricity costs, water use, farmland rezoning and tribal rights alongside data centers’ benefits; the letter proposes no federal action."
+  },
+  {
+   "kind": "source",
+   "candidateId": "david-brock-smith",
+   "key": "safety",
+   "old": "dbsStatement ",
+   "new": "dbsIssues"
+  },
+  {
+   "kind": "position",
+   "candidateId": "david-brock-smith",
+   "key": "money",
+   "old": "Wants no new taxes, more support for local businesses, elimination of fraud and less unnecessary government spending; cites fighting the state gas tax and stopping tax hikes.",
+   "new": "Wants no new taxes, more support for local businesses, elimination of fraud and less unnecessary government spending."
+  },
+  {
+   "kind": "source",
+   "candidateId": "david-brock-smith",
+   "key": "money",
+   "old": "dbsStatement ",
+   "new": "dbsIssues"
+  },
+  {
+   "kind": "position",
+   "candidateId": "david-brock-smith",
+   "key": "climate",
+   "old": "Would hold data centers accountable for water, farmland and energy costs so those costs are not shifted onto households, and push active forest management, fuel reduction and landowner partnerships to cut wildfire risk.",
+   "new": "Would ensure data centers are accountable, protect natural resources and keep data-center costs for water, farmland and energy from being shifted onto Oregon households."
+  },
+  {
+   "kind": "line",
+   "candidateId": "david-brock-smith",
+   "key": "climate",
+   "old": "Would keep data-center costs off households and expand forest fuel reduction against wildfire.",
+   "new": "Would keep data-center costs off Oregon households and protect natural resources."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "bri-williams",
+   "key": "safety",
+   "old": "Prevention-first safety",
+   "new": "Community-based safety"
+  },
+  {
+   "kind": "position",
+   "candidateId": "suzanne-bonamici",
+   "key": "money",
+   "old": "Would repeal the Trump tax cuts in favor of progressive taxation, raise the federal minimum wage, enforce antitrust laws, end what she calls chaotic tariffs, and fight cuts to SNAP and Medicaid.",
+   "new": "Would repeal the Trump tax cuts in favor of progressive taxation, raise the federal minimum wage, enforce antitrust laws and end what she calls chaotic and nonsensical trade policies."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "barbara-j-kahl",
+   "key": "safety",
+   "old": "Fund local police",
+   "new": "Funded, accountable police"
+  },
+  {
+   "kind": "position",
+   "candidateId": "maxine-e-dexter",
+   "key": "safety",
+   "old": "Would abolish ICE, pass the CLEAR ID Act to end anonymous raids, oppose ICE and CBP funding until raids stop and due process is restored, and bring federal money for detox beds and treatment over punishment.",
+   "new": "Would work to dismantle and abolish ICE, pass the CLEAR ID Act to end anonymous raids, and vote no on ICE and CBP funding until both agencies end unconstitutional raids and fully restore due process."
+  },
+  {
+   "kind": "line",
+   "candidateId": "maxine-e-dexter",
+   "key": "safety",
+   "old": "Would abolish ICE and withhold its funding until raids stop; federal money for treatment.",
+   "new": "Would abolish ICE and vote no on its funding until unconstitutional raids end."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "janelle-s-bynum",
+   "key": "safety",
+   "old": "Shelter and mental health",
+   "new": "Oppose ICE takeover"
+  },
+  {
+   "kind": "line",
+   "candidateId": "janelle-s-bynum",
+   "key": "safety",
+   "old": "Wants more shelter capacity and mental-health services; opposes federal ICE takeover of communities.",
+   "new": "Opposes what she calls a federal takeover of communities by ICE."
+  },
+  {
+   "kind": "position",
+   "candidateId": "janelle-s-bynum",
+   "key": "safety",
+   "old": "Wants people off the streets through homelessness prevention, more shelter capacity and mental-health services, and opposes what she calls a federal takeover of communities by ICE.",
+   "new": "Opposes what she calls a federal takeover of communities by Trump’s ICE, which she accuses of rounding up people based on the color of their skin."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "janelle-s-bynum",
+   "key": "money",
+   "old": "Protect Medicaid, Medicare",
+   "new": "Defend Oregon Health Plan"
+  },
+  {
+   "kind": "line",
+   "candidateId": "janelle-s-bynum",
+   "key": "money",
+   "old": "Wants Medicare protected, Medicaid expanded and prescription prices lowered against federal cuts.",
+   "new": "Would lower grocery, housing and health costs and defend the Oregon Health Plan."
+  },
+  {
+   "kind": "position",
+   "candidateId": "janelle-s-bynum",
+   "key": "money",
+   "old": "Would lower costs from groceries to housing to health care, protect Medicare, expand Medicaid, defend the Oregon Health Plan against federal cuts, and lower prescription prices.",
+   "new": "Would lower costs from groceries to housing to health care and push back against what she calls Trump administration efforts to gut the Oregon Health Plan."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "janelle-s-bynum",
+   "key": "fed-data-centers",
+   "old": "Introduced the BILL Drivers Act on July 10, 2026 to have the Energy Information Administration report what is driving electricity bills, including data centers; it takes no position on fast-tracking or who pays.",
+   "new": "Introduced the BILL Drivers Act on July 9, 2026 to have the Energy Information Administration report what is driving electricity bills, including data centers; it takes no position on fast-tracking or who pays."
+  },
+  {
+   "kind": "line",
+   "candidateId": "patti-adair",
+   "key": "safety",
+   "old": "Supports fully funding law enforcement to keep communities safe.",
+   "new": "Would fully support law enforcement to keep communities safe."
+  },
+  {
+   "kind": "position",
+   "candidateId": "patti-adair",
+   "key": "safety",
+   "old": "Would fully support law enforcement to keep communities safe; cites working with law enforcement and adding two circuit judges as a county commissioner.",
+   "new": "Would fully support law enforcement to keep communities safe; cites increasing law-enforcement funding and delivering new judgeships as a county commissioner."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "patti-adair",
+   "key": "fed-hr1-medicaid",
+   "old": "Make tax cuts permanent",
+   "new": "Keep tips, overtime breaks"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "patti-adair",
+   "key": "fed-hr1-medicaid",
+   "old": "Would make no tax on tips, overtime and Social Security permanent and raise the limits, and increase the child tax credit; she does not address Medicaid or SNAP.",
+   "new": "Would make no tax on tips, overtime and Social Security permanent and raise the child tax credit; she faults Bynum for voting against SNAP funding but does not address H.R. 1’s Medicaid or SNAP changes."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "chris-beck",
+   "key": "fed-tariffs",
+   "old": "Would repeal the tariffs, which he says cost rural Oregon wheat and fruit markets abroad, and seek a bipartisan approach to trade and legal immigration.",
+   "new": "Would repeal the tariffs, which he says cost rural Oregon wheat and fruit markets abroad, and seek a sensible, bipartisan approach to legal immigration."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "cliff-bentz",
+   "key": "fed-tariffs",
+   "old": "Voted to keep tariffs",
+   "new": "Voted: keep Canada tariffs"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "cliff-bentz",
+   "key": "fed-tariffs",
+   "old": "Voted no on February 11, 2026 on H.J.Res. 72, which ended the national emergency behind the Canada tariffs (219–211).",
+   "new": "Voted no on February 11, 2026 on H.J.Res. 72 to end the national emergency behind the Canada tariffs; it passed the House 219–211."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "monique-despain",
+   "key": "money",
+   "old": "Lower taxes, cut fraud",
+   "new": "Cut taxes and regulation"
+  },
+  {
+   "kind": "line",
+   "candidateId": "monique-despain",
+   "key": "money",
+   "old": "Would reduce taxes and regulations, end funding for failed programs, root out fraud.",
+   "new": "Would cut excessive regulations, reduce taxes and end what she calls tax-and-spend policies."
+  },
+  {
+   "kind": "position",
+   "candidateId": "monique-despain",
+   "key": "money",
+   "old": "Would cut regulations, fix permitting systems and reduce what she calls punitive taxation, end tax-and-spend policies she says fuel inflation and the national debt, and root out fraud and failed programs.",
+   "new": "Would cut excessive regulations, fix broken permitting systems and reduce what she calls punitive taxation, and end tax-and-spend policies she says fuel inflation and the national debt."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "justin-filip",
+   "key": "fed-fix-our-forests",
+   "old": "A trojan horse",
+   "new": "Faults Hoyle’s yes vote"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "justin-filip",
+   "key": "fed-fix-our-forests",
+   "old": "Calls the Fix Our Forests Act a trojan horse for gutting bedrock environmental laws under the guise of wildfire management, and asks the Senate to reject it.",
+   "new": "Faults Rep. Hoyle’s yes vote on the Fix Our Forests Act, against the advice of more than 80 environmental groups, and quotes Earthjustice calling it a trojan horse for gutting bedrock environmental laws."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "david-russ",
+   "key": "safety",
+   "old": "Secure border, removals",
+   "new": "Aiding crossings a felony"
+  },
+  {
+   "kind": "line",
+   "candidateId": "david-russ",
+   "key": "safety",
+   "old": "Would secure the border, remove unauthorized entrants, make aiding illegal crossings a felony.",
+   "new": "Would make aiding or abetting illegal border crossers a federal felony."
+  },
+  {
+   "kind": "position",
+   "candidateId": "david-russ",
+   "key": "safety",
+   "old": "Would secure the border and remove people who entered illegally, make aiding illegal border crossers a federal felony, and require U.S. attorneys to take roughly 98% of referred cases to trial.",
+   "new": "Would make it a federal felony to aid or abet illegal border crossers."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "david-russ",
+   "key": "fed-ice-funding",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "david-russ",
+   "key": "fed-ice-funding",
+   "old": "Fully supports giving federal law enforcement enough money to do its job efficiently; says the border is now secured.",
+   "new": "Fully supports giving federal law enforcement sufficient funding to do its job efficiently and says the border is currently secured; he does not say whether the $70 billion package is that amount."
+  },
+  {
+   "kind": "position",
+   "candidateId": "suzanne-bonamici",
+   "key": "safety",
+   "old": "Is leading legislation requiring clear identification of every ICE agent making immigration arrests and limiting when federal law enforcement, the armed forces or the National Guard can be sent into cities; wants humane immigration reform.",
+   "new": "Is leading legislation requiring clear identification of every ICE agent making immigration arrests and limiting when federal law enforcement, the armed forces or the National Guard can be sent into cities to carry out immigration policy; wants humane immigration reform."
+  },
+  {
+   "kind": "line",
+   "candidateId": "suzanne-bonamici",
+   "key": "safety",
+   "old": "Would require ICE agents to identify themselves and limit federal deployments into cities.",
+   "new": "Would require ICE agents to identify themselves and limit deployments for immigration enforcement."
+  },
+  {
+   "kind": "position",
+   "candidateId": "suzanne-bonamici",
+   "key": "climate",
+   "old": "Would defend Inflation Reduction Act clean-energy programs and pursue the Select Committee plan for net-zero emissions by mid-century; opposes data centers raising costs or exploiting natural resources.",
+   "new": "Would defend Inflation Reduction Act clean-energy programs and pursue the Select Committee plan for net-zero emissions by mid-century."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "suzanne-bonamici",
+   "key": "fed-tariffs",
+   "old": "Voted to end tariffs",
+   "new": "Voted: end Canada tariffs"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "maxine-e-dexter",
+   "key": "fed-tariffs",
+   "old": "Voted to end tariffs",
+   "new": "Voted: end Canada tariffs"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "janelle-s-bynum",
+   "key": "fed-tariffs",
+   "old": "Voted to end tariffs",
+   "new": "Voted: end Canada tariffs"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "val-hoyle",
+   "key": "fed-tariffs",
+   "old": "Voted to end tariffs",
+   "new": "Voted: end Canada tariffs"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "andrea-salinas",
+   "key": "fed-tariffs",
+   "old": "Voted to end tariffs",
+   "new": "Voted: end Canada tariffs"
+  },
+  {
+   "kind": "chip",
+   "candidateId": "janelle-s-bynum",
+   "key": "housing",
+   "old": "Fix supply and financing",
+   "new": "Supply and affordability"
+  },
+  {
+   "kind": "line",
+   "candidateId": "janelle-s-bynum",
+   "key": "housing",
+   "old": "Would target housing shortages, construction-workforce gaps and financing barriers, with ownership pathways.",
+   "new": "Would target housing shortages, workforce gaps and affordability barriers, with ownership pathways."
+  },
+  {
+   "kind": "position",
+   "candidateId": "janelle-s-bynum",
+   "key": "housing",
+   "old": "Would tackle housing shortages, construction-workforce gaps and financing barriers through legislation, expand pathways to homeownership and address youth homelessness.",
+   "new": "Has introduced legislation to tackle housing shortages, workforce gaps and affordability barriers, expand pathways to homeownership and address youth homelessness."
+  },
+  {
+   "kind": "line",
+   "candidateId": "janelle-s-bynum",
+   "key": "climate",
+   "old": "Would expand clean energy, move off fossil fuels and protect communities from wildfire.",
+   "new": "Supports efforts to expand clean energy, move off fossil fuels and protect against wildfire."
+  },
+  {
+   "kind": "position",
+   "candidateId": "janelle-s-bynum",
+   "key": "climate",
+   "old": "Would generate more clean energy, transition away from fossil fuels and protect communities and land from wildfires.",
+   "new": "Supports efforts to generate more clean energy, transition away from fossil fuels and protect communities, property and land from wildfires."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "patti-adair",
+   "key": "fed-data-centers",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "patti-adair",
+   "key": "fed-data-centers",
+   "old": "Would propose legislation requiring Big Tech to be transparent about the impacts data centers have on air quality, water quality and electricity costs.",
+   "new": "Would propose legislation requiring Big Tech to be transparent about data centers’ impacts on air quality, water quality and electricity costs; she does not say whether to limit or fast-track them."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "chris-beck",
+   "key": "fed-data-centers",
+   "old": "Would pause new data-center construction, saying data centers in some communities pollute the water and raise energy prices, so everyone pays.",
+   "new": "Lists pausing new data-center construction among the things he will fight for in Congress."
+  },
+  {
+   "kind": "tsource",
+   "candidateId": "chris-beck",
+   "key": "fed-data-centers",
+   "old": "beckIssues",
+   "new": "beckStatement"
+  },
+  {
+   "kind": "position",
+   "candidateId": "chris-beck",
+   "key": "climate",
+   "old": "Would reverse the 40% cut to Forest Service wildfire prevention, pause new data-center construction, create a rural service corps in each county to restore forests and watersheds, and expand conservation easement programs.",
+   "new": "Would reverse cuts to wildfire prevention and forest management, pause new data-center construction, create rural service corps jobs in each county and rehabilitate Oregon’s public lands, rivers and forests."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "cliff-bentz",
+   "key": "money",
+   "old": "Lower taxes, fewer rules",
+   "new": "Lower taxes"
+  },
+  {
+   "kind": "line",
+   "candidateId": "cliff-bentz",
+   "key": "money",
+   "old": "Supports lower taxes, less regulation and investment directed to rural Oregon.",
+   "new": "Supports lower taxes."
+  },
+  {
+   "kind": "position",
+   "candidateId": "cliff-bentz",
+   "key": "money",
+   "old": "Supports lower taxes, reduced regulation and directing investment toward rural Oregon.",
+   "new": "Supports lower taxes; his statement names no specific tax or spending change."
+  },
+  {
+   "kind": "line",
+   "candidateId": "cliff-bentz",
+   "key": "climate",
+   "old": "Wants more hydropower, dams kept, more timber harvest; opposes carbon pricing.",
+   "new": "Wants more hydropower, dams kept, irrigation water and more timber harvest."
+  },
+  {
+   "kind": "position",
+   "candidateId": "cliff-bentz",
+   "key": "climate",
+   "old": "Wants more energy generation, reservoir storage, hydropower, retained dams, irrigation water and increased timber harvest; opposes carbon pricing and would reduce fuel loads on federal forests and change the Equal Access to Justice Act.",
+   "new": "Wants more energy generation, reservoir storage, hydropower, retained dams, irrigation water and increased timber harvest."
+  },
+  {
+   "kind": "line",
+   "candidateId": "val-hoyle",
+   "key": "money",
+   "old": "Would restore health-insurance premium credits, protect Social Security and Medicare, fight tariffs.",
+   "new": "Would restore health-insurance premium credits, protect Social Security and Medicare, refund tariff costs."
+  },
+  {
+   "kind": "position",
+   "candidateId": "val-hoyle",
+   "key": "money",
+   "old": "Would restore the Affordable Care Act's enhanced premium tax credits and clean-energy tax credits, expand and protect Social Security and Medicare, take on drug and grocery price-fixing, and fight tariffs she calls illegal.",
+   "new": "Would restore the Affordable Care Act's enhanced premium tax credits and clean-energy tax credits, expand and protect Social Security and Medicare, force lower drug prices, crack down on grocery price-fixing and refund small businesses for tariffs she calls illegal."
+  },
+  {
+   "kind": "position",
+   "candidateId": "monique-despain",
+   "key": "housing",
+   "old": "Would end permitting costs, building regulations, local codes and land-use restrictions she says stifle construction, with the federal government lifting housing restrictions and encouraging workforce housing.",
+   "new": "Would end what she calls prohibitive, inflationary policies that stifle construction, including excessive permitting costs, building regulations, local codes and outdated land-use restrictions, with the federal government lifting housing restrictions and encouraging workforce housing."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "monique-despain",
+   "key": "fed-housing-aid",
+   "old": "Would have the federal government lift housing restrictions and encourage workforce housing, ending permitting costs and land-use rules she says stifle construction; she does not address vouchers or tax credits.",
+   "new": "Would have the federal government lift housing restrictions and encourage workforce housing, ending excessive permitting costs and outdated land-use rules she says stifle construction; she does not address vouchers or tax credits."
+  },
+  {
+   "kind": "line",
+   "candidateId": "justin-filip",
+   "key": "housing",
+   "old": "Wants federal dollars for the district’s housing crisis and involuntary homelessness abolished.",
+   "new": "Wants federal dollars brought back to the district for the housing and unhoused crisis."
+  },
+  {
+   "kind": "position",
+   "candidateId": "justin-filip",
+   "key": "housing",
+   "old": "Wants federal dollars brought back to the district for the housing and unhoused crisis, and involuntary homelessness abolished.",
+   "new": "Wants federal dollars brought back to the district to help address the housing and unhoused crisis."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "justin-filip",
+   "key": "fed-housing-aid",
+   "old": "Wants federal dollars brought back to the district for the housing and unhoused crisis and involuntary homelessness abolished; he does not address the ROAD Act, vouchers or tax credits.",
+   "new": "Wants federal dollars brought back to the district for the housing and unhoused crisis; he does not address the ROAD Act, vouchers or tax credits."
+  },
+  {
+   "kind": "position",
+   "candidateId": "justin-filip",
+   "key": "climate",
+   "old": "Would declare a national climate emergency, pass a Green New Deal, ban fracking and fossil-fuel subsidies, nationalize energy and rail for renewable power and high-speed rail, and ban privately built data centers.",
+   "new": "Would declare a national climate emergency, pass a Green New Deal, ban fracking, eliminate fossil-fuel subsidies and nationalize energy and rail for renewable power and high-speed rail."
+  },
+  {
+   "kind": "position",
+   "candidateId": "andrea-salinas",
+   "key": "safety",
+   "old": "Would fund first responders and social services, keep working with police on fentanyl including stiffer trafficker penalties, invest in smart border security, streamline immigration courts and protect communities from what she calls ICE's violent overreach.",
+   "new": "Would fund first responders and social services, keep working with police on fentanyl including stiffer trafficker penalties, invest in smart border security, streamline immigration courts and deliver certainty for immigrants already living here."
+  },
+  {
+   "kind": "position",
+   "candidateId": "andrea-salinas",
+   "key": "climate",
+   "old": "Would put Oregon on a path to 100% green energy, stand up to corporate polluters, and protect air and waterways; prioritizes public infrastructure over corporate-owned data centers.",
+   "new": "Would put Oregon on a path to 100% green energy, stand up to corporate polluters and protect air and waterways."
+  },
+  {
+   "kind": "position",
+   "candidateId": "andrea-salinas",
+   "key": "money",
+   "old": "Would cap prescription drug costs and let Medicare negotiate prices, seek middle-class tax relief instead of billionaire tax breaks, and bring living-wage jobs to Oregon.",
+   "new": "Would cap prescription drug costs and strengthen hospital price transparency, and seeks middle-class tax relief instead of billionaire tax breaks."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "david-russ",
+   "key": "money",
+   "old": "End corporate subsidies",
+   "new": "End big-firm subsidies"
+  },
+  {
+   "kind": "line",
+   "candidateId": "david-russ",
+   "key": "money",
+   "old": "Would end corporate subsidies and noncitizen loan programs, strip conditions from federal grants.",
+   "new": "Would end subsidies benefiting only large corporations and federal loan programs targeting noncitizens."
+  },
+  {
+   "kind": "position",
+   "candidateId": "david-russ",
+   "key": "money",
+   "old": "Would end subsidies that benefit only large corporations and federal subsidy or loan programs for noncitizens, strip conditions from federal grants to states through a No Strings Act, and end what he calls the IRS manhunt of 1099 employers.",
+   "new": "Would end subsidies that benefit only large corporations and federal subsidy or loan programs for noncitizens, and end what he calls the IRS manhunt of 1099 employers."
+  },
+  {
+   "kind": "position",
+   "candidateId": "david-russ",
+   "key": "climate",
+   "old": "Would return federal public lands to state and local control, end federal control of local utilities and infrastructure, and support responsible forest and agricultural management, reliable infrastructure and affordable energy decided locally.",
+   "new": "Would return federal public lands to state and local control and end federal control of local schools, utilities, businesses and infrastructure."
+  },
+  {
+   "kind": "line",
+   "candidateId": "david-russ",
+   "key": "climate",
+   "old": "Would transfer federal public lands to state and local control; affordable energy decided locally.",
+   "new": "Would return federal public lands to state and local control; end federal utility control."
+  },
+  {
+   "kind": "source",
+   "candidateId": "david-russ",
+   "key": "climate",
+   "old": "russStatement ",
+   "new": "russHome"
+  },
+  {
+   "kind": "position",
+   "candidateId": "courtney-neron-misslin",
+   "key": "money",
+   "old": "Lower household bills rather than raise them: she opposed tolling the I-5 bridge in Wilsonville, backs universal school meals as a family-budget saving, and wants lower prescription-drug costs.",
+   "new": "Make Oregon more affordable: she pushed to remove tolling from the I-5 bridge in Wilsonville, backs universal school meals as a family-budget saving, and wants lower prescription-drug costs."
+  },
+  {
+   "kind": "position",
+   "candidateId": "courtney-neron-misslin",
+   "key": "safety",
+   "old": "Prevention-focused safety: expanded mental-health resources, full funding for the 9-8-8 crisis line, domestic-violence legislation, gun-safety measures such as safe storage, and police accountability, alongside money for Tigard’s police facility.",
+   "new": "Prevention-focused safety: expanded mental-health resources, full funding for the 9-8-8 crisis line, domestic-violence legislation, gun-safety measures such as the 2022 Reduction of Gun Violence Act (IP 17), and police accountability, alongside money for Tigard’s police facility."
+  },
+  {
+   "kind": "line",
+   "candidateId": "courtney-neron-misslin",
+   "key": "safety",
+   "old": "Supports prevention-first safety: mental-health care, 9-8-8 funding, gun safe-storage rules.",
+   "new": "Supports mental-health care, 9-8-8 funding and the 2022 Reduction of Gun Violence Act."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "courtney-neron-misslin",
+   "key": "leg-data-centers",
+   "old": "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it lets regulators put data centers in their own electricity rate class.",
+   "new": "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it directs regulators to put data centers in their own electricity rate class."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "lisa-reynolds",
+   "key": "leg-data-centers",
+   "old": "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it lets regulators put data centers in their own electricity rate class.",
+   "new": "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it directs regulators to put data centers in their own electricity rate class."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "mark-meek",
+   "key": "leg-data-centers",
+   "old": "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it lets regulators put data centers in their own electricity rate class.",
+   "new": "Voted yes on HB 3546, the POWER Act, in the Senate on June 3, 2025; it directs regulators to put data centers in their own electricity rate class."
+  },
+  {
+   "kind": "line",
+   "candidateId": "glenn-lancaster",
+   "key": "safety",
+   "old": "Would restore public order and enforce existing laws on addiction and homelessness.",
+   "new": "Would restore order, enforce the law and demand real solutions to addiction and homelessness."
+  },
+  {
+   "kind": "position",
+   "candidateId": "glenn-lancaster",
+   "key": "money",
+   "old": "Stop the gas tax and stop tax increases; demand accountability for what works and stop funding programs that grow even when they fail.",
+   "new": "Stop the gas tax and stop tax increases; demand accountability for what actually works, since he says programs grow even when they fail."
+  },
+  {
+   "kind": "line",
+   "candidateId": "glenn-lancaster",
+   "key": "money",
+   "old": "Opposes the gas tax and any tax increases; wants results-based accountability.",
+   "new": "Opposes the gas tax and tax increases; wants results-based accountability."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "glenn-lancaster",
+   "key": "leg-new-revenue",
+   "old": "Says Salem passed the largest tax increase in state history; he would stop tax increases and stop funding programs that grow even when they fail.",
+   "new": "Says Oregon passed the largest tax increase in state history; he would stop tax increases and demand accountability for what actually works."
+  },
+  {
+   "kind": "position",
+   "candidateId": "myrna-a-munoz",
+   "key": "money",
+   "old": "Lower prescription-drug costs and stop the AI data-center build-out she says is driving up electricity bills.",
+   "new": "Lower prescription-drug costs, and more transparency, community input and environmental safeguards on the AI data-center build-out she says is driving up electricity bills."
+  },
+  {
+   "kind": "line",
+   "candidateId": "myrna-a-munoz",
+   "key": "money",
+   "old": "Wants lower prescription costs and a halt to data centers raising electricity bills.",
+   "new": "Wants lower prescription costs and safeguards on data centers she says raise power bills."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "myrna-a-munoz",
+   "key": "leg-data-centers",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "myrna-a-munoz",
+   "key": "leg-data-centers",
+   "old": "Calls the AI data-center build-out reckless and says it is driving up electricity bills; would require transparency, community input and environmental safeguards.",
+   "new": "Calls the AI data-center build-out reckless and says it is driving up electricity bills; she commits to transparency, community input and environmental safeguards and does not say whether she backs separate rates, ending tax breaks or a pause."
+  },
+  {
+   "kind": "position",
+   "candidateId": "harold-hutchison",
+   "key": "safety",
+   "old": "Repeal Oregon’s sanctuary-state law and let police ask about immigration status outside criminal investigations; restore respect for the rule of law.",
+   "new": "Repeal Oregon’s sanctuary-state law and let police ask about immigration status outside criminal investigations."
+  },
+  {
+   "kind": "line",
+   "candidateId": "harold-hutchison",
+   "key": "safety",
+   "old": "Supports repealing the sanctuary-state law and police immigration checks.",
+   "new": "Supports repealing the sanctuary-state law and letting police ask about immigration status."
+  },
+  {
+   "kind": "position",
+   "candidateId": "harold-hutchison",
+   "key": "money",
+   "old": "Eliminate assessment-based property tax, keep the kicker with taxpayers, and oppose a sales tax; supports a mortgage-interest deduction.",
+   "new": "Keep the kicker with taxpayers and oppose a sales tax and automatic property-tax base increases, calling property tax immoral; supports a mortgage-interest deduction."
+  },
+  {
+   "kind": "line",
+   "candidateId": "harold-hutchison",
+   "key": "money",
+   "old": "Would eliminate assessment-based property tax and keep the kicker; opposes a sales tax.",
+   "new": "Would keep the kicker and oppose a sales tax; calls property tax immoral."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "harold-hutchison",
+   "key": "money",
+   "old": "End property tax",
+   "new": "Against property tax"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "harold-hutchison",
+   "key": "leg-new-revenue",
+   "old": "Would eliminate assessment-based property tax, opposes a sales tax and calls income tax the fairest way to raise needed revenue; he does not say how to close the 2027–29 gap.",
+   "new": "Calls property tax immoral, opposes a sales tax and calls income tax the fairest way to raise needed revenue; he does not say how to close the 2027–29 gap."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "harold-hutchison",
+   "key": "climate",
+   "old": "No mandates, more nuclear",
+   "new": "No EV, power mandates"
+  },
+  {
+   "kind": "line",
+   "candidateId": "harold-hutchison",
+   "key": "climate",
+   "old": "Opposes gas-tax increases, emissions targets and electric-vehicle mandates; would revisit nuclear.",
+   "new": "Opposes electric-vehicle mandates and the 2040 emissions target; would take another look at nuclear."
+  },
+  {
+   "kind": "position",
+   "candidateId": "harold-hutchison",
+   "key": "climate",
+   "old": "Voter approval for highway tolls and no gas-tax increases; opposes the 2040 emissions target, electric-vehicle sales mandates and 100% carbon-free electricity standards, and favors another look at nuclear power.",
+   "new": "Voter approval for highway tolls and no gas-tax increases; opposes reaching the 2040 emissions target before an adequate power grid is built, electric-vehicle sales mandates and 100% carbon-free electricity standards, and favors another look at nuclear power."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "courtney-bangs",
+   "key": "climate",
+   "old": "Roads, levees, no tolls",
+   "new": "Roads and levees"
+  },
+  {
+   "kind": "line",
+   "candidateId": "courtney-bangs",
+   "key": "climate",
+   "old": "Wants existing tax dollars for coastal highways and upgraded levees, without commuter taxes.",
+   "new": "Wants existing tax dollars for coastal highways and levee upgrades."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "courtney-bangs",
+   "key": "money",
+   "old": "No new taxes, fees",
+   "new": "Stop hikes, hidden fees"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "courtney-bangs",
+   "key": "leg-new-revenue",
+   "old": "No new taxes, fees",
+   "new": "Stop hikes, hidden fees"
+  },
+  {
+   "kind": "line",
+   "candidateId": "rachel-armitage",
+   "key": "money",
+   "old": "Opposes gas-tax and DMV-fee increases; would review old rules and programs.",
+   "new": "Would generally oppose gas-tax and DMV-fee increases; would review old rules and programs."
+  },
+  {
+   "kind": "line",
+   "candidateId": "rachel-armitage",
+   "key": "climate",
+   "old": "Wants closer ODOT spending scrutiny and rural gas-tax dollars kept on rural roads.",
+   "new": "Wants ODOT spending scrutiny and rural drivers' gas taxes spent on roads they use."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "rachel-armitage",
+   "key": "leg-transportation-package",
+   "old": "Told the Headlight Herald in April 2026 she is generally opposed to raising the gas tax and DMV fees, and wants rural gas-tax dollars kept on rural roads with more ODOT oversight.",
+   "new": "Told the Headlight Herald in April 2026 she is generally opposed to raising the gas tax and DMV fees, and wants more ODOT oversight and rural drivers' gas taxes spent maintaining the roads they rely on."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "melisa-finkle",
+   "key": "leg-transportation-package",
+   "old": "Roads need more",
+   "new": "Roads beyond patches"
+  },
+  {
+   "kind": "position",
+   "candidateId": "lisa-reynolds",
+   "key": "money",
+   "old": "Upstream investment against child poverty (hunger, housing insecurity, childcare), including the refundable Child Tax Credit she helped pass, with a goal of halving child poverty.",
+   "new": "Upstream investment against child poverty (hunger, housing insecurity, childcare), including the refundable Child Tax Credit she helped pass."
+  },
+  {
+   "kind": "line",
+   "candidateId": "lisa-reynolds",
+   "key": "housing",
+   "old": "Supports record shelter and housing funding, rent relief and eviction protections.",
+   "new": "Supports record shelter and housing funding, rent relief and eviction moratoriums."
+  },
+  {
+   "kind": "position",
+   "candidateId": "lisa-reynolds",
+   "key": "safety",
+   "old": "Gun-violence prevention (safe-storage and ghost-gun laws, community-violence grants, expanded extreme-risk orders, a purchase age of 21) plus more addiction treatment and interrupting the fentanyl supply.",
+   "new": "Gun-violence prevention (safe-storage and ghost-gun laws, community-violence grants, expanded extreme-risk orders, a purchase age of 21 with a few exceptions for hunting rifles) plus more addiction treatment and interrupting the fentanyl supply."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "mark-meek",
+   "key": "leg-transportation-package",
+   "old": "Voted yes on HB 3991 in the Senate on September 29, 2025; the enrolled bill also repealed the mandatory toll program, and his site says he ended ODOT’s I-205 tolling plans.",
+   "new": "Voted yes on HB 3991 in the Senate on September 29, 2025, the gas-tax and fee package voters later rejected; the bill also repealed the mandatory toll program, and his site says he ended ODOT’s I-205 tolling plans."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "mary-dirksen",
+   "key": "safety",
+   "old": "Punish repeat offenders",
+   "new": "Back police, victims first"
+  },
+  {
+   "kind": "position",
+   "candidateId": "mary-dirksen",
+   "key": "safety",
+   "old": "Support law enforcement, strengthen consequences for repeat offenders and put victims first, with accountability for crime, addiction and hazards on the streets.",
+   "new": "Support law enforcement, strengthen consequences for repeat offenders and put victims first, with accountability and appropriate remedies to address crime, addiction and hazards on the streets."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "michele-stroh",
+   "key": "leg-transportation-package",
+   "old": "Her filed statement says the incumbent voted yes on a package to raise taxes that voters then rejected by more than 80 percent, and that Salem’s answer is always another tax.",
+   "new": "Her filed statement says the incumbent voted yes on a package to raise taxes that voters then rejected by more than 80 percent."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "michele-stroh",
+   "key": "leg-new-revenue",
+   "old": "Pledges no new taxes: says Oregon does not have a revenue problem but a spending problem, and she will vote no on new taxes until Salem shows it can spend what it has.",
+   "new": "Her filed statement pledges no new taxes, saying Oregon is among the highest-taxed states and has a spending problem, not a revenue problem."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "jeff-helfrich",
+   "key": "leg-new-revenue",
+   "old": "Voted no on SB 1507 in the House on February 25, 2026; his statement says government should live within a budget as families do.",
+   "new": "Voted no on SB 1507, which disconnected Oregon from several federal tax breaks, in the House on February 25, 2026."
+  },
+  {
+   "kind": "line",
+   "candidateId": "kayse-jama",
+   "key": "money",
+   "old": "Supports a $1,000 Oregon Kids Credit and childcare construction money.",
+   "new": "Supports an Oregon Kids Credit of up to $1,000 and childcare construction money."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "kayse-jama",
+   "key": "money",
+   "old": "$1,000 kids credit",
+   "new": "Oregon Kids Credit"
+  },
+  {
+   "kind": "stance",
+   "candidateId": "sue-r-rieke-smith",
+   "key": "leg-data-centers",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "sue-r-rieke-smith",
+   "key": "leg-data-centers",
+   "old": "Opposes the unchecked growth of AI data centers that use up water and raise utility costs; she was not yet in the House for the POWER Act votes.",
+   "new": "Opposes the unchecked growth of AI data centers that use up water and raise utility costs; she does not say whether she favors separate rates, ending tax breaks or a pause, and joined the House after the POWER Act votes."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "sue-r-rieke-smith",
+   "key": "leg-transportation-package",
+   "old": "Voted yes on HB 3991 in the House on September 1, 2025 and filed a vote explanation; voters later repealed the package’s gas-tax and fee increases.",
+   "new": "Voted yes on HB 3991 in the House on September 1, 2025; her vote explanation called it far from perfect and voiced concern about another tax burden. Voters later repealed its gas-tax and fee increases."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "stephanie-carkin",
+   "key": "leg-new-revenue",
+   "old": "opposes",
+   "new": "mixed"
+  },
+  {
+   "kind": "position",
+   "candidateId": "steph-terrio",
+   "key": "housing",
+   "old": "Every citizen should be afforded a place to live; she would back a program requiring timber companies to supply renewable plant material for temporary housing.",
+   "new": "Every citizen should be afforded a place to live. She would support a program to boost building-supply production, which could require timber companies to supply renewable plant material for temporary housing."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "susan-mclain",
+   "key": "leg-data-centers",
+   "old": "Voted yes on HB 3546 on April 22 and June 5, 2025, and sponsored a bill banning data centers from passing energy costs to consumers.",
+   "new": "Voted yes on HB 3546 on April 22 and June 5, 2025, and co-sponsored it; the bill has the utility commission assign the cost of serving large energy users to those users."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "michael-w-sugar",
+   "key": "leg-new-revenue",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "michael-w-sugar",
+   "key": "leg-new-revenue",
+   "old": "Would push major tax reform so billionaires and the wealthiest corporations pay their fair share while cutting the burden on working families.",
+   "new": "Would push major tax reform so billionaires and the wealthiest corporations pay their fair share while reducing the burden on working families; he lists it under cutting taxes and does not address the 2027–29 budget gap."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "michael-w-sugar",
+   "key": "leg-sanctuary",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "michael-w-sugar",
+   "key": "leg-sanctuary",
+   "old": "Would protect Oregonians and immigrants from federal overreach and ensure a justice system that treats everyone equally.",
+   "new": "Would protect Oregonians and immigrants from federal overreach and ensure a justice system that treats everyone equally; he does not say whether he would add new state limits on federal immigration enforcement."
+  },
+  {
+   "kind": "line",
+   "candidateId": "pat-hubbell",
+   "key": "money",
+   "old": "Would balance the budget through audits and program cuts, not tax increases.",
+   "new": "Would balance the budget through audits and program cuts, without raising working families' taxes."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "pat-hubbell",
+   "key": "money",
+   "old": "Audits, no tax hikes",
+   "new": "Audits, cut waste"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "pat-hubbell",
+   "key": "leg-new-revenue",
+   "old": "Audits, no tax hikes",
+   "new": "No family tax hikes"
+  },
+  {
+   "kind": "position",
+   "candidateId": "darla-mead",
+   "key": "housing",
+   "old": "New construction that fits community affordability standards rather than developer profit, staying within existing urban growth boundaries, reusing buildings, upgrading infrastructure, and pathways from subsidized housing to stable homes.",
+   "new": "New construction that fits the community's affordability standards, not just profitability for developers; striving to stay within existing urban growth boundaries by balancing new construction with reusing buildings; upgrading infrastructure; and pathways from subsidized housing to stable homes."
+  },
+  {
+   "kind": "line",
+   "candidateId": "darla-mead",
+   "key": "housing",
+   "old": "Wants new homes built to community affordability standards inside existing growth boundaries.",
+   "new": "Wants new homes built to community affordability standards, ideally inside existing growth boundaries."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "darla-mead",
+   "key": "housing",
+   "old": "Affordable, inside UGB",
+   "new": "Community-affordable homes"
+  },
+  {
+   "kind": "line",
+   "candidateId": "darla-mead",
+   "key": "money",
+   "old": "Wants health coverage independent of employment and budgets reviewed for savings.",
+   "new": "Wants health coverage independent of employment."
+  },
+  {
+   "kind": "position",
+   "candidateId": "darla-mead",
+   "key": "money",
+   "old": "Lower household health costs by making insurance access independent of employment, and bring accounting skills to finding budget improvements.",
+   "new": "Lower household health costs by making insurance access independent of employment."
+  },
+  {
+   "kind": "line",
+   "candidateId": "darla-mead",
+   "key": "climate",
+   "old": "Supports clean-energy goals, forest and watershed protection, and data-center limits.",
+   "new": "Supports clean-energy goals, forest and watershed protection, and stronger data-center rules."
+  },
+  {
+   "kind": "position",
+   "candidateId": "darla-mead",
+   "key": "climate",
+   "old": "Support Oregon’s clean-energy goals, keep incentives for the shift to clean-energy transportation, protect forests and watersheds, tighten rules on water-hungry data centers and reduce wildfire risk.",
+   "new": "Support Oregon’s clean-energy goals, preserve and expand incentives for the shift to clean-energy transportation, protect forests and watersheds, and reduce wildfire risk; she says existing rules are insufficient to manage data centers that deplete fresh water."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "darla-mead",
+   "key": "leg-data-centers",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "darla-mead",
+   "key": "leg-data-centers",
+   "old": "Says data centers are being built in rural neighborhoods where they deplete fresh water and that existing regulations are insufficient to manage them.",
+   "new": "Says data centers are being built in rural neighborhoods where they deplete fresh water and that existing regulations are insufficient to manage them; she does not address power rates, tax breaks or a pause."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "darla-mead",
+   "key": "leg-wildfire-funding",
+   "old": "Says her family evacuated in the 2020 fires and she will fight for solutions that mitigate natural disasters; she does not say how much the state should spend or how to pay.",
+   "new": "Says she will fight for solutions that mitigate natural disasters; she does not say how much the state should spend or how to pay."
+  },
+  {
+   "kind": "position",
+   "candidateId": "scott-c-hege",
+   "key": "housing",
+   "old": "More supply through fewer unnecessary regulations and costs, and an examination of why publicly supported construction costs so much more than private projects.",
+   "new": "Reduce the unnecessary costs and regulations that drive up the price of housing."
+  },
+  {
+   "kind": "line",
+   "candidateId": "scott-c-hege",
+   "key": "housing",
+   "old": "Would cut regulations raising home prices and examine subsidized construction costs.",
+   "new": "Would cut unnecessary costs and regulations that drive up housing prices."
+  },
+  {
+   "kind": "position",
+   "candidateId": "scott-c-hege",
+   "key": "climate",
+   "old": "Maintain existing roads and bridges and fix rural water and sewer systems through state infrastructure programs; opposes a statewide data-center moratorium in favor of local decisions with resource-use transparency.",
+   "new": "Maintain existing roads and bridges and improve rural water and sewer systems through state infrastructure programs."
+  },
+  {
+   "kind": "line",
+   "candidateId": "scott-c-hege",
+   "key": "climate",
+   "old": "Would maintain rural roads, water and sewer; opposes a data-center moratorium.",
+   "new": "Would maintain roads and bridges and improve rural water and sewer systems."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "scott-c-hege",
+   "key": "climate",
+   "old": "Local data-center choice",
+   "new": "Roads, water and sewer"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "scott-c-hege",
+   "key": "leg-data-centers",
+   "old": "Opposes a statewide moratorium and says local communities should decide; told Columbia Community Connection that water-use secrecy damaged trust and The Dalles does not need more data centers.",
+   "new": "Opposes a statewide moratorium and says local communities should decide; told Columbia Community Connection that Google's confidential water use damaged public trust and that he doesn't necessarily want more data centers in The Dalles."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "scott-c-hege",
+   "key": "leg-new-revenue",
+   "old": "Stop relying on taxes",
+   "new": "Hard look at spending"
+  },
+  {
+   "kind": "position",
+   "candidateId": "hank-sanders",
+   "key": "climate",
+   "old": "No new data centers, and far more state spending on wildfire prevention, including a home-hardening strike team for rural families.",
+   "new": "No new data centers, and far more state spending on wildfire prevention, including a home-hardening task force that teaches rural families how to harden their homes."
+  },
+  {
+   "kind": "position",
+   "candidateId": "hank-sanders",
+   "key": "money",
+   "old": "No more data-center tax breaks and full disclosure of what they use and provide; tax credits of up to $5,000 for rural childcare workers to cut families’ costs.",
+   "new": "Calls $50 million and $100 million data-center tax breaks unfair and wants an end to NDAs and clarity on what data centers use and provide."
+  },
+  {
+   "kind": "line",
+   "candidateId": "hank-sanders",
+   "key": "money",
+   "old": "Would end data-center tax breaks; proposes $5,000 rural childcare-worker credits.",
+   "new": "Calls data-center tax breaks unfair; wants an end to NDAs and use disclosure."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "hank-sanders",
+   "key": "money",
+   "old": "End data-center breaks",
+   "new": "Data-center breaks unfair"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "hank-sanders",
+   "key": "leg-data-centers",
+   "old": "Will not support any new data centers; would end their tax breaks and NDAs and require clarity on what they use and provide, calling $50 million and $100 million tax breaks unfair.",
+   "new": "Will not support any new data centers, calls $50 million and $100 million tax breaks unfair, and wants an end to NDAs and clarity on what data centers use and provide."
+  },
+  {
+   "kind": "line",
+   "candidateId": "adam-baker",
+   "key": "housing",
+   "old": "Would cut fees, approval delays and red tape; supports more starter homes.",
+   "new": "Would cut excessive fees, approval delays and red tape; supports more starter homes."
+  },
+  {
+   "kind": "position",
+   "candidateId": "adam-baker",
+   "key": "housing",
+   "old": "Cut the fees, permitting delays and red tape he says government adds to a home’s price, and support development that increases supply of all housing types, especially starter homes.",
+   "new": "Cut the excessive fees, permitting delays and red tape he says government adds to a home’s price, and support development that increases supply of all housing types, especially starter homes."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "pam-treece",
+   "key": "money",
+   "old": "No new resident taxes",
+   "new": "Brakes on resident taxes"
+  },
+  {
+   "kind": "line",
+   "candidateId": "pam-treece",
+   "key": "money",
+   "old": "Opposes new taxes on residents; wants county operations stable, accountable and effective.",
+   "new": "Would put the brakes on taxing residents and keep county operations stable and accountable."
+  },
+  {
+   "kind": "position",
+   "candidateId": "nafisa-fai",
+   "key": "money",
+   "old": "Wants data centers to pay a fair share and would close the county’s budget gap by updating service fees and considering local option levies for public safety and libraries, while protecting funding for housing, transit and health care.",
+   "new": "To close the county’s budget gap, would explore new revenue without overburdening taxpayers, including updated service fees and possible local option levies for public safety and libraries, while protecting funding for housing, transit and health care."
+  },
+  {
+   "kind": "line",
+   "candidateId": "nafisa-fai",
+   "key": "money",
+   "old": "Wants data centers paying more, plus updated fees and possible levies for services.",
+   "new": "Would explore updated fees and possible levies without overburdening taxpayers."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "nafisa-fai",
+   "key": "money",
+   "old": "Data centers pay more",
+   "new": "Explore fees and levies"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "nafisa-fai",
+   "key": "wash-budget-gap",
+   "old": "Would update service fees and consider local option levies for public safety and libraries to close a gap she puts at $20.5 million, while protecting funding for housing, transit and health care.",
+   "new": "Would explore new revenue without overburdening taxpayers, including updated service fees and local option levies for public safety and libraries, to close a gap she puts at $20.5 million, while protecting housing, transit and health care."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "paul-savas",
+   "key": "clack-senior-tax",
+   "old": "mixed",
+   "new": "supports"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "paul-savas",
+   "key": "clack-senior-tax",
+   "old": "Deferral, not county cuts",
+   "new": "Keep advocating for relief"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "diana-helm",
+   "key": "clack-senior-tax",
+   "old": "Freeze for 65-plus",
+   "new": "Possible 65-plus freeze"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "mark-shull",
+   "key": "clack-levy-2027",
+   "old": "Renew, no rate hike",
+   "new": "Renew at responsible level"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "mark-shull",
+   "key": "clack-levy-2027",
+   "old": "Supports renewing the public safety levy at a responsible level to keep patrol, jail beds and body cameras, and would oppose unnecessary rate increases, funding core needs through disciplined budgeting instead.",
+   "new": "Before the May 2026 vote, supported renewing the levy at a responsible level to keep patrol, jail beds and body cameras, and opposed unnecessary rate increases, funding core needs through disciplined budgeting and a growing tax base."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "mark-reaksecker",
+   "key": "clack-voter-rolls",
+   "old": "County-level purge",
+   "new": "County voter-roll checks"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "catherine-mcmullen",
+   "key": "clack-voter-rolls",
+   "old": "Says she increased voter-registration staffing, ensured eligible citizens can access ballots and kept records current and accurate; a county-level purge beyond state maintenance is unsaid.",
+   "new": "Says she increased voter-registration staffing, ensured eligible citizens can access ballots and kept records current and accurate; county-level removals beyond state list maintenance are unsaid."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "r-w-smith",
+   "key": "clack-data-centers",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "r-w-smith",
+   "key": "clack-data-centers",
+   "old": "Opposes bringing large-scale data centers into the county at all, citing their electricity, water and land demands and the infrastructure they require; his position is a ban rather than a pause.",
+   "new": "Opposes bringing large-scale data centers into the county, citing their electricity, water and land demands and the infrastructure they require; whether to adopt the moratorium now or wait for the Legislature is unsaid."
+  },
+  {
+   "kind": "position",
+   "candidateId": "diana-helm",
+   "key": "climate",
+   "old": "Led a moratorium on large data centers so the county can gather facts and hear the public before deciding, and would advocate for the Sunrise Corridor freight route.",
+   "new": "Led the effort for a moratorium on large data centers so the county can gather facts, analyze impacts and involve the public before deciding."
+  },
+  {
+   "kind": "line",
+   "candidateId": "diana-helm",
+   "key": "climate",
+   "old": "Pauses large data centers to study impacts; backs the Sunrise Corridor freight route.",
+   "new": "Led the push to pause large data centers while the county studies impacts."
+  },
+  {
+   "kind": "position",
+   "candidateId": "r-w-smith",
+   "key": "safety",
+   "old": "Would give police and first responders the resources they need, expand treatment for addiction and mental illness, and insist on measurable outcomes.",
+   "new": "Supports treatment for addiction and mental illness but insists on measurable outcomes, with streamlined ways to get people into treatment beds while keeping communities safe."
+  },
+  {
+   "kind": "line",
+   "candidateId": "r-w-smith",
+   "key": "safety",
+   "old": "Resources police and first responders; expands treatment with measurable outcomes.",
+   "new": "Supports addiction and mental-health treatment with measurable outcomes; faster entry to treatment beds."
+  },
+  {
+   "kind": "position",
+   "candidateId": "r-w-smith",
+   "key": "money",
+   "old": "Would put major public projects and long-term contracts through independent fiscal review, report budgets and obligations openly, and end subsidies to large data centers.",
+   "new": "Would put major public projects and long-term financial agreements through independent fiscal review and report county budgets and long-term obligations openly."
+  },
+  {
+   "kind": "line",
+   "candidateId": "r-w-smith",
+   "key": "money",
+   "old": "Puts major projects through independent fiscal review; ends data-center subsidies.",
+   "new": "Puts major projects through independent fiscal review; reports budgets and obligations openly."
+  },
+  {
+   "kind": "position",
+   "candidateId": "r-w-smith",
+   "key": "climate",
+   "old": "Opposes bringing large-scale data centers into the county, citing their electricity, water and land demands, and would build new clean-energy capacity.",
+   "new": "Opposes bringing large-scale data centers into the county, citing their electricity, water and land demands and the costly new infrastructure they require."
+  },
+  {
+   "kind": "line",
+   "candidateId": "r-w-smith",
+   "key": "climate",
+   "old": "Opposes large data centers over electricity, water and land; builds clean energy.",
+   "new": "Opposes large data centers over electricity, water, land and infrastructure costs."
+  },
+  {
+   "kind": "position",
+   "candidateId": "nafisa-fai",
+   "key": "housing",
+   "old": "Wants more affordable homes and paths to ownership: public land turned into community-driven housing, faster permitting for affordable development, down-payment help for first-time buyers, more workforce housing and utility assistance to lower bills.",
+   "new": "Wants more affordable homes and paths to ownership: public land turned into community-driven housing, faster permitting for affordable development and down-payment support."
+  },
+  {
+   "kind": "source",
+   "candidateId": "nafisa-fai",
+   "key": "housing",
+   "old": "faiPriorities",
+   "new": "faiHome"
+  },
+  {
+   "kind": "chip",
+   "candidateId": "steve-callaway",
+   "key": "money",
+   "old": "Keep taxes in check",
+   "new": "Protect taxpayers"
+  },
+  {
+   "kind": "position",
+   "candidateId": "steve-callaway",
+   "key": "money",
+   "old": "Wants taxes kept in check and taxpayer dollars protected through responsible budgeting and accountability; no specific fee or tax change is named.",
+   "new": "Wants taxpayers protected through responsible budgeting and accountability; no specific fee or tax change is named."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "pam-treece",
+   "key": "wash-ice-emergency",
+   "old": "Voted for the November 4, 2025 declaration and $200,000 in aid, thanking the colleagues who drafted it and criticizing federal enforcement actions in the county.",
+   "new": "Voted for the November 4, 2025 declaration and $200,000 in aid; the minutes record that she commented on ICE actions in the county and thanked commissioners for their efforts."
+  },
+  {
+   "kind": "line",
+   "candidateId": "pam-treece",
+   "key": "safety",
+   "old": "Supports more public-safety investment, including safe schools, parks and trails, and protection from ICE.",
+   "new": "Supports real public-safety investment, including safe schools, parks and trails, and protection from ICE."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "nafisa-fai",
+   "key": "wash-enterprise-zone",
+   "old": "Data centers pay more",
+   "new": "Data centers' fair share"
+  },
+  {
+   "kind": "line",
+   "candidateId": "paul-savas",
+   "key": "climate",
+   "old": "Opposes tolling; widens I-205 and builds the Sunrise Project; protects farmland.",
+   "new": "Opposes ODOT tolling; backs I-205 widening and the Sunrise Project; protects farmland."
+  },
+  {
+   "kind": "position",
+   "candidateId": "paul-savas",
+   "key": "climate",
+   "old": "Opposes ODOT tolling and would add road capacity through the Sunrise Project and I-205 widening, while protecting farmland and open space.",
+   "new": "Opposes ODOT’s regional tolling plans and supports the Sunrise Project and I-205 expansion to add road capacity, while protecting farmland and open space."
+  },
+  {
+   "kind": "line",
+   "candidateId": "diana-helm",
+   "key": "housing",
+   "old": "Speeds permitting (building approvals) and cuts rules to build affordable homes; keeps shelters.",
+   "new": "Would reduce unnecessary rules and improve permitting (building approvals); keeps shelter services."
+  },
+  {
+   "kind": "position",
+   "candidateId": "diana-helm",
+   "key": "housing",
+   "old": "Would increase affordable housing by cutting regulatory burdens and speeding up permitting, and keep shelter, recovery and support services available to people who are homeless.",
+   "new": "Would increase affordable housing by reducing unnecessary regulatory burdens and improving the permitting process, and keep shelter, recovery and support services available to people who are homeless."
+  },
+  {
+   "kind": "line",
+   "candidateId": "r-w-smith",
+   "key": "housing",
+   "old": "Faster permitting (building approvals), limits on corporate home buying, more shelter beds.",
+   "new": "Faster permitting (building approvals), limits on large corporations buying homes, more shelter beds."
+  },
+  {
+   "kind": "position",
+   "candidateId": "r-w-smith",
+   "key": "housing",
+   "old": "Would encourage housing working families can afford, streamline permitting for small builders, limit corporate purchases of homes, and add shelter beds paired with case management.",
+   "new": "Would encourage housing working families can afford, streamline permitting for small builders, protect housing supply from speculative corporate ownership, and add shelter beds paired with case management."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "paul-savas",
+   "key": "clack-levy-2027",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "paul-savas",
+   "key": "clack-levy-2027",
+   "old": "Work aggressively, retry",
+   "new": "Work aggressively first"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "paul-savas",
+   "key": "clack-levy-2027",
+   "old": "Told the June 2 policy session after the levy's defeat that the county has a lot of work to do and must do it aggressively before returning to voters; the rate is unsaid.",
+   "new": "Told the June 2 policy session, as the board planned outreach before a possible new levy, that the county has a lot of work to do and must do it aggressively; the rate is unsaid."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "diana-helm",
+   "key": "clack-levy-2027",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "diana-helm",
+   "key": "clack-levy-2027",
+   "old": "Told the June 2 policy session after the levy's defeat that there needs to be a real effort right now to get out in front of people before asking again; the rate is unsaid.",
+   "new": "Told the June 2 policy session, as the board planned outreach before a possible new levy, that there needs to be a real effort right now to get out in front of people; the rate is unsaid."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "paul-savas",
+   "key": "clack-sanctuary",
+   "old": "mixed",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "paul-savas",
+   "key": "clack-sanctuary",
+   "old": "Says the county should follow both state and federal law while sanctuary cases play out in court, noting the Sheriff's Office responds to judicial warrants after losing a past detainer lawsuit; a county declaration is not endorsed.",
+   "new": "Says the county complies with state law, which at times conflicts with federal law, and cannot afford to lose more taxpayer dollars; the Sheriff's Office responds to judicial warrants. A county declaration is unsaid."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "brian-t-nava",
+   "key": "clack-cash-controls",
+   "old": "Says he set a strategy for good cash controls across the county by offering free training to all cities, districts and county employees, and would keep improving banking functions.",
+   "new": "Says he set a strategy for good cash controls across the county by offering free training to all cities, districts and county employees, and has introduced and improved banking functions."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "brian-t-nava",
+   "key": "clack-cash-controls",
+   "old": "Free training continues",
+   "new": "Offered free training"
+  },
+  {
+   "kind": "position",
+   "candidateId": "brian-t-nava",
+   "key": "money",
+   "old": "Would keep county funds safe and liquid first while seeking the best return possible, and keep building cash controls across the county.",
+   "new": "Would keep county funds safe and liquid first while seeking the best return possible; has built cash controls across the county through free training."
+  },
+  {
+   "kind": "position",
+   "candidateId": "paul-savas",
+   "key": "housing",
+   "old": "Would keep expanding affordable housing of varied types and move people from homelessness into treatment and transitional housing through the county’s Recovery Campus.",
+   "new": "Would keep expanding affordable housing of varied types and move people from homelessness to independence, building on Veterans Village and a recovery-oriented system of care."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "paul-savas",
+   "key": "housing",
+   "old": "Recovery Campus, units",
+   "new": "Housing, recovery care"
+  },
+  {
+   "kind": "position",
+   "candidateId": "pam-treece",
+   "key": "housing",
+   "old": "Wants the county to hit the gas on building housing while braking on taxes; her site backs a range of housing types for all ages and incomes and preserving existing affordable homes.",
+   "new": "Wants the county to hit the gas on building housing while putting the brakes on taxing residents."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "travis-stovall",
+   "key": "gresham-levy-fire",
+   "old": "Levy results, no district",
+   "new": "Clackamas model unlikely"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "travis-stovall",
+   "key": "gresham-levy-fire",
+   "old": "Says the levy funded 9 new officers and 12 firefighters and would keep supporting police and fire; said May 5, 2026 a Clackamas Fire District 1 model “does not appear to be a strong consideration for Gresham.” Renewal unsaid.",
+   "new": "Said May 5, 2026 that, based on current information, a Clackamas Fire District 1 model “does not appear to be a strong consideration for Gresham”; renewing the levy is unsaid."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "travis-stovall",
+   "key": "gresham-safety-fee",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "travis-stovall",
+   "key": "gresham-safety-fee",
+   "old": "Voted to keep $15",
+   "new": "Moved fee to resolution"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "travis-stovall",
+   "key": "gresham-safety-fee",
+   "old": "Moved the first reading of Council Bill 03-26 on February 3, 2026 and voted yes February 17 to move the fee into a resolution and keep it at $15 a month; his campaign is silent on changing it.",
+   "new": "Moved the first reading February 3, 2026 and voted February 17 to set the $15 fee by resolution, a change staff called administrative; his campaign does not say whether the fee should change."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "janine-gladfelter",
+   "key": "gresham-safety-fee",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "janine-gladfelter",
+   "key": "gresham-safety-fee",
+   "old": "Voted to keep $15",
+   "new": "Moved fee to resolution"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "janine-gladfelter",
+   "key": "gresham-safety-fee",
+   "old": "Seconded the first reading February 3, 2026 and moved the February 17 consent vote that kept the fee at $15 and made it changeable by resolution; no campaign statement on changing it.",
+   "new": "Seconded the first reading February 3, 2026 and moved the February 17 consent vote setting the $15 fee by resolution, a change staff called administrative; no campaign statement on changing it."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "sue-piazza",
+   "key": "safety",
+   "old": "Police first, no tents",
+   "new": "Safety first, no tents"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "sue-piazza",
+   "key": "gresham-groundwater",
+   "old": "Moved and voted for the 2028–32 rate increases June 2, 2026; on September 1 asked staff about chlorine odor, a return to chloramine and treatment costs, and has held listening sessions on water quality.",
+   "new": "Voted for the 2028–32 rate increases June 2, 2026; on September 1 asked staff about chlorine odor, a return to chloramine and treatment costs, and has held listening sessions on water quality."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "sue-piazza",
+   "key": "gresham-groundwater",
+   "old": "mixed",
+   "new": "supports"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "sue-piazza",
+   "key": "gresham-ice-response",
+   "old": "Voted for Resolution 3681 January 20, 2026 after urging “careful consideration to avoid causing additional harm” and constructive talks with federal partners; in October 2025 asked whether sanctuary status could cost federal grants.",
+   "new": "Voted for Resolution 3681 January 20, 2026; on January 6 asked whether emergency declarations could bring more ICE enforcement and urged “careful consideration to avoid causing additional harm” and constructive talks with federal partners."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "heather-coleman-cox",
+   "key": "gresham-safety-fee",
+   "old": "Supports keeping the Police, Fire and Parks Fee at $15 a month; if Council considers changing it, residents should get a say and see how it would affect bills and services.",
+   "new": "Supports keeping the Police, Fire and Parks Fee at $15 a month; residents should know what they pay for and get a chance to weigh in if Council considers changing it."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "will-delplato",
+   "key": "money",
+   "old": "Small cuts early",
+   "new": "Small changes early"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "will-delplato",
+   "key": "gresham-budget-gap",
+   "old": "Small cuts now",
+   "new": "Small changes now"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "will-delplato",
+   "key": "gresham-budget-gap",
+   "old": "Says the budget shortfall is growing and the city should “act now with small, early changes rather than waiting until we’re forced into painful ones,” reviewing spending for efficiencies rather than relying on reserves.",
+   "new": "Would act early, reviewing purchasing, contracts and technology for savings before new taxes or fees, and match ongoing costs with ongoing money instead of one-time funds."
+  },
+  {
+   "kind": "tsource",
+   "candidateId": "will-delplato",
+   "key": "gresham-budget-gap",
+   "old": "pamphlet(42)",
+   "new": "delplatoEmail"
+  },
+  {
+   "kind": "line",
+   "candidateId": "gregory-schroeder",
+   "key": "safety",
+   "old": "Nonprofit outreach matched to each person; enforcement when available services are refused.",
+   "new": "Nonprofit outreach matched to each person; enforcement if services are refused and laws broken."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "teo-ramirez",
+   "key": "gresham-ice-response",
+   "old": "Organized residents’ testimony and asked the council to publicly reaffirm the Sanctuary Promise Act, fund bilingual rights education, expand staff training and set a communication process for federal operations; an emergency declaration is unsaid.",
+   "new": "Organized residents’ testimony and asked the council to publicly reaffirm the Sanctuary Promise Act, create bilingual rights education, expand staff training and set a communication process for federal operations; an emergency declaration is unsaid."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "evelyn-kocher",
+   "key": "beaverton-transportation-plan",
+   "old": "Wants bus lines in South Cooper Mountain, TriMet expansion in the southwest, physical barriers for bike lanes on Murray, Scholls Ferry and Lombard, and zoning streamlined near MAX stations; which plan projects come first is unsaid.",
+   "new": "Would expand bus lines in South Cooper Mountain and wants to “build our MAX stations” so everyone can live in walkable neighborhoods; which plan projects come first is unsaid."
+  },
+  {
+   "kind": "tsource",
+   "candidateId": "evelyn-kocher",
+   "key": "beaverton-transportation-plan",
+   "old": "kocherPriorities",
+   "new": "pamphlet(9)"
+  },
+  {
+   "kind": "chip",
+   "candidateId": "rachel-philip",
+   "key": "housing",
+   "old": "More starter homes",
+   "new": "Expand housing choices"
+  },
+  {
+   "kind": "chip",
+   "candidateId": "cristian-salgado",
+   "key": "money",
+   "old": "Conditions on data centers",
+   "new": "Weigh data-center impacts"
+  },
+  {
+   "kind": "line",
+   "candidateId": "cristian-salgado",
+   "key": "money",
+   "old": "Wants data-center growth conditioned on utility affordability and measurable community benefit.",
+   "new": "Wants thoughtful data-center growth that weighs neighborhood impacts and brings measurable community benefit."
+  },
+  {
+   "kind": "position",
+   "candidateId": "cristian-salgado",
+   "key": "money",
+   "old": "Wants data-center growth weighed against neighborhood and infrastructure impacts and utility affordability, with measurable community benefit and public transparency as conditions.",
+   "new": "Says he has pushed for thoughtful data-center growth, stronger consideration of neighborhood and infrastructure impacts, utility affordability and public transparency, and wants growth to create measurable community benefit."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "cristian-salgado",
+   "key": "hillsboro-dc-moratorium",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "cristian-salgado",
+   "key": "hillsboro-dc-moratorium",
+   "old": "Voted yes July 27, 2026 on Resolution 2932, calling the moratorium a needed pause to develop structure and understanding, and yes July 7 to start the data-storage code amendment; his statement asks for thoughtful data-center growth weighing neighborhood impacts.",
+   "new": "Voted yes July 27, 2026 on Resolution 2932, calling the moratorium a needed pause to develop structure and understanding, and yes July 7 to start the data-storage code amendment; extending the moratorium past November 24 is unsaid."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "sarah-marugg",
+   "key": "hillsboro-dc-tax-breaks",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "sarah-marugg",
+   "key": "hillsboro-dc-tax-breaks",
+   "old": "Would make data centers pay their fair share for the infrastructure and services they use and hold major polluters accountable.",
+   "new": "Would make data centers pay their fair share for the infrastructure and services they use and hold major polluters accountable; abatement fees and terms are unsaid."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "diana-jackson",
+   "key": "hillsboro-jet-hangars",
+   "old": "Abstained, noise concern",
+   "new": "Abstained, neighbor concerns"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "diana-jackson",
+   "key": "hillsboro-jet-hangars",
+   "old": "Abstained on the hangars May 27, 2026 as a planning commissioner, citing uncertainty about one approval criterion and saying 3,800 added flights a year seemed like a lot for nearby residents; how she would vote on a refiling is unsaid.",
+   "new": "Abstained on the hangars May 27, 2026 as a planning commissioner, citing uncertainty about one approval criterion and saying 3,800 added operations a year seemed like a lot for nearby residents; how she would vote on a refiling is unsaid."
+  },
+  {
+   "kind": "line",
+   "candidateId": "ivette-pantoja",
+   "key": "housing",
+   "old": "Wants more affordable homes, from missing-middle to multifamily, to reduce family displacement.",
+   "new": "Wants balanced housing growth, missing-middle to multifamily, matched to neighborhood infrastructure."
+  },
+  {
+   "kind": "line",
+   "candidateId": "karim-delgado",
+   "key": "housing",
+   "old": "Would require rent-increase notice, eviction right to counsel and community land trusts.",
+   "new": "Would push for rent-increase notice, eviction right to counsel and community land trusts."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "karim-delgado",
+   "key": "hillsboro-dc-tax-breaks",
+   "old": "Raise fees to 30%",
+   "new": "School fee toward 30%"
+  },
+  {
+   "kind": "stance",
+   "candidateId": "karim-delgado",
+   "key": "hillsboro-dc-moratorium",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "karim-delgado",
+   "key": "hillsboro-dc-moratorium",
+   "old": "Testified July 27, 2026 in support of the moratorium, arguing Hillsboro is overly dependent on one industry; on June 23 told the council its enterprise-zone criteria produced massive tax breaks with minimal job creation.",
+   "new": "Testified July 27, 2026 in support of the moratorium, arguing Hillsboro is overly dependent on one industry; on June 23 criticized enterprise-zone tax breaks. Extension past November 24 is unsaid."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "yi-kang-hu",
+   "key": "tigard-budget-gap",
+   "old": "Voted yes June 9, 2026 on Resolution 26-22, saying the budget preserves library hours and core services while responding to a general-fund shortfall of more than $6 million, with a one-time draw on reserves rather than new revenue.",
+   "new": "Voted yes June 9, 2026 on Resolution 26-22, the budget, saying it focuses on core services and preserves library hours while responding to a general-fund shortfall of more than $6 million."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "yi-kang-hu",
+   "key": "tigard-parks-funding",
+   "old": "Told Tigard Life in April 2026, “Down the road, we may look at a levy for extra, but we’re not there yet”; a fee increase or general-fund shift is unsaid.",
+   "new": "Said at the April 21, 2026 council work session, “Down the road, we may look at a levy for extra, but we’re not there yet”; a fee increase or general-fund shift is unsaid."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "bill-monahan",
+   "key": "tigard-facility",
+   "old": "mixed",
+   "new": "partial"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "bill-monahan",
+   "key": "tigard-facility",
+   "old": "Separate sites, account costs",
+   "new": "Separate sites, overpaid"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "bill-monahan",
+   "key": "tigard-facility",
+   "old": "Wrote in May 2026 that “there is no need for placing both police and public works on the same site” but the city “already overpaid for a site,” and wants consultant costs accounted for before choosing between it and alternatives.",
+   "new": "Wrote in May 2026 that “there is no need for placing both police and public works on the same site” and that the city “already overpaid for a site more suitable for commercial use”; whether to sell it is unsaid."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "bill-monahan",
+   "key": "safety",
+   "old": "Cheaper police facility",
+   "new": "Affordable police facility"
+  },
+  {
+   "kind": "line",
+   "candidateId": "bill-monahan",
+   "key": "safety",
+   "old": "Would pursue cheaper police-facility options while maintaining public-safety service levels.",
+   "new": "Would pursue affordable police-facility options while maintaining public-safety service levels."
+  },
+  {
+   "kind": "position",
+   "candidateId": "bill-monahan",
+   "key": "money",
+   "old": "Would tie project decisions to reliable needs and cost estimates, deliver affordable core services and restore transparency about the failed bond measure’s true cost.",
+   "new": "Would focus on core services residents need and can afford, and restore transparency and pursue affordable solutions to the city’s facility needs."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "bill-monahan",
+   "key": "tigard-parks-funding",
+   "old": "Says the parks bond added parkland the city now admits it cannot maintain without more money; a fee, general-fund shift or levy is unsaid.",
+   "new": "Says the parks bond added parkland the city now recognizes cannot be maintained without more funds; a fee, general-fund shift or levy is unsaid."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "john-goodhouse",
+   "key": "safety",
+   "old": "Back the police",
+   "new": "Support Tigard police"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "john-goodhouse",
+   "key": "tigard-budget-gap",
+   "old": "Would support the process for more private events in Tigard as the city ends its own; the library cuts and new revenue are unsaid.",
+   "new": "Would support the process for more private events in Tigard to drive economic growth; the library cuts, the city’s own event cuts and new revenue are unsaid."
+  },
+  {
+   "kind": "line",
+   "candidateId": "sue-garino",
+   "key": "money",
+   "old": "Would limit taxes, fees and spending; no one-time money for ongoing programs.",
+   "new": "Would limit growth of taxes, fees and spending; no one-time money for ongoing programs."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "sue-garino",
+   "key": "money",
+   "old": "Limit taxes and spending",
+   "new": "Limit tax, spending growth"
+  },
+  {
+   "kind": "line",
+   "candidateId": "gabriel-elijio-velasquez",
+   "key": "safety",
+   "old": "Would pursue one regional strategy so no one sleeps on Tigard’s streets.",
+   "new": "Would pursue one strategy with city, state and federal leaders so everyone has shelter."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "gabriel-elijio-velasquez",
+   "key": "housing",
+   "old": "Ban corporate homebuyers",
+   "new": "Extend corporate-buyer ban"
+  },
+  {
+   "kind": "chip",
+   "candidateId": "tom-anderson",
+   "key": "safety",
+   "old": "Fix police facilities",
+   "new": "Fix responder facilities"
+  },
+  {
+   "kind": "line",
+   "candidateId": "tom-anderson",
+   "key": "safety",
+   "old": "Would improve facilities for police and emergency responders.",
+   "new": "Would improve facility conditions for emergency services and responders."
+  },
+  {
+   "kind": "position",
+   "candidateId": "tom-anderson",
+   "key": "safety",
+   "old": "Would improve facility conditions for police and emergency responders.",
+   "new": "Would improve facility conditions for emergency services and responders."
+  },
+  {
+   "kind": "line",
+   "candidateId": "bryan-guiney",
+   "key": "housing",
+   "old": "Focuses new density in centers and corridors, not across established neighborhoods.",
+   "new": "Would focus density in centers and corridors, not uniformly across established neighborhoods."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "bryan-guiney",
+   "key": "lo-housing-mandate",
+   "old": "Rezone offices, not neighborhoods",
+   "new": "Density in centers, corridors"
+  },
+  {
+   "kind": "position",
+   "candidateId": "bryan-guiney",
+   "key": "climate",
+   "old": "Would invest in infrastructure and mobility to improve traffic, safety and connectivity, with clean energy and environmental stewardship built into major decisions.",
+   "new": "Would invest in infrastructure and mobility to improve traffic, safety and connectivity, and grow smart and sustainably while protecting neighborhoods and the environment."
+  },
+  {
+   "kind": "line",
+   "candidateId": "bryan-guiney",
+   "key": "climate",
+   "old": "Invests in mobility and infrastructure, with clean energy built into major decisions.",
+   "new": "Would invest in infrastructure and mobility to improve traffic, safety and connectivity."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "bryan-guiney",
+   "key": "lo-sewer-rates",
+   "old": "Plant a sound investment",
+   "new": "Plant has long-term benefits"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "bryan-guiney",
+   "key": "lo-sewer-rates",
+   "old": "Points to the new wastewater plant as an example of a long-term project with benefits and says the city has little deferred maintenance; whether to raise sewer bills 28% at once or 8% a year is unsaid.",
+   "new": "Points to the new wastewater plant as a long-term project with benefits and wants the city to budget for upkeep so there isn’t a lot of deferred maintenance; the 28% or 8%-a-year choice is unsaid."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "bryan-guiney",
+   "key": "lo-north-anchor",
+   "old": "Move North Anchor forward",
+   "new": "Names North Anchor"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "bryan-guiney",
+   "key": "lo-north-anchor",
+   "old": "Wants major projects including North Anchor and Foothills to move forward; whether to hold the developer to the March 2027 hotel deadline or pivot the parcel is unsaid.",
+   "new": "Lists North Anchor and Foothills among major projects the city will see move forward in the next few years; whether to hold the developer to the March 2027 hotel deadline or pivot the parcel is unsaid."
+  },
+  {
+   "kind": "line",
+   "candidateId": "peren-tiemann",
+   "key": "housing",
+   "old": "Adds housing options for renters, seniors and first-time buyers via subsidies, incentives.",
+   "new": "Would explore subsidies, rental assistance and incentives for renters, seniors and first-time buyers."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "peren-tiemann",
+   "key": "lo-housing-mandate",
+   "old": "Wants more housing for lower-wage earners, renters, seniors and first-time buyers through subsidies, rental assistance and incentives; where the 4,850 homes should go is unsaid.",
+   "new": "Wants more housing options for lower-wage earners, renters, seniors and first-time buyers and would look into subsidies, rental assistance and incentives; where the 4,850 homes should go is unsaid."
+  },
+  {
+   "kind": "position",
+   "candidateId": "peren-tiemann",
+   "key": "safety",
+   "old": "Would keep prioritizing mental-health first responders, build on community policing, and expand emergency preparedness.",
+   "new": "Would keep prioritizing mental-health first responders, build on prior conversations about community policing, and expand access to emergency-preparedness resources."
+  },
+  {
+   "kind": "line",
+   "candidateId": "peren-tiemann",
+   "key": "safety",
+   "old": "Keeps mental-health first responders a priority; builds on community policing.",
+   "new": "Would keep mental-health first responders a priority and build on community-policing conversations."
+  },
+  {
+   "kind": "line",
+   "candidateId": "peren-tiemann",
+   "key": "climate",
+   "old": "Expands transit, bike and walking options with TriMet and community shuttles.",
+   "new": "Would expand transit, bike and walking options with TriMet and explore community shuttles."
+  },
+  {
+   "kind": "position",
+   "candidateId": "neil-tunmore",
+   "key": "housing",
+   "old": "Would implement state housing mandates in ways that conform to Lake Oswego’s building standards and keep neighborhood character.",
+   "new": "Says Salem oversteps and would manage the state’s housing orders so they conform to Lake Oswego’s building standards and maintain neighborhood character."
+  },
+  {
+   "kind": "line",
+   "candidateId": "neil-tunmore",
+   "key": "housing",
+   "old": "Implements state housing mandates within Lake Oswego’s building standards and character.",
+   "new": "Would manage Salem’s housing orders to fit Lake Oswego building standards and character."
+  },
+  {
+   "kind": "position",
+   "candidateId": "neil-tunmore",
+   "key": "money",
+   "old": "Would spend tax dollars only where they add value and manage the money for the North Anchor, fire station, sewer plant and library so they land on budget and on time.",
+   "new": "Would spend tax dollars only where they add value and manage taxpayer money so the North Anchor, fire station and sewer treatment facility land on budget and on time."
+  },
+  {
+   "kind": "line",
+   "candidateId": "neil-tunmore",
+   "key": "money",
+   "old": "Holds North Anchor, fire station, sewer plant and library to budget and schedule.",
+   "new": "Would keep North Anchor, fire station and sewer plant on budget, on time."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "neil-tunmore",
+   "key": "lo-library",
+   "old": "Library on budget",
+   "new": "Manage library spending"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "neil-tunmore",
+   "key": "lo-library",
+   "old": "Names “the new library” among the projects to keep on budget and on time; a larger site versus repair is unsaid.",
+   "new": "Names “the new library” among projects whose taxpayer money must be managed for future financial stability; a larger site versus repair is unsaid."
+  },
+  {
+   "kind": "tsource",
+   "candidateId": "neil-tunmore",
+   "key": "lo-sewer-rates",
+   "old": "tunmorePriorities",
+   "new": "pamphlet(31)"
+  },
+  {
+   "kind": "tsource",
+   "candidateId": "neil-tunmore",
+   "key": "lo-north-anchor",
+   "old": "tunmorePriorities",
+   "new": "pamphlet(31)"
+  },
+  {
+   "kind": "position",
+   "candidateId": "patrick-walsh",
+   "key": "money",
+   "old": "Would keep budgets balanced and costs predictable, prioritize core infrastructure, and explain every fee, bond and levy clearly.",
+   "new": "Wants balanced budgets and predictable costs, investment in roads, water systems, wastewater and emergency services, and clear explanations for fees, bonds and levies."
+  },
+  {
+   "kind": "line",
+   "candidateId": "patrick-walsh",
+   "key": "money",
+   "old": "Keeps budgets balanced, costs predictable; explains every fee, bond and levy.",
+   "new": "Wants balanced budgets, predictable costs and clear explanations of fees, bonds and levies."
+  },
+  {
+   "kind": "source",
+   "candidateId": "patrick-walsh",
+   "key": "money",
+   "old": "pamphlet(30)",
+   "new": "walshPlatform"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "patrick-walsh",
+   "key": "lo-sewer-rates",
+   "old": "Would invest in roads, water systems, wastewater and emergency services and give clear explanations for every fee, bond and levy; whether to raise sewer bills 28% at once or 8% a year is unsaid.",
+   "new": "Would invest in roads, water systems, wastewater and emergency services and give clear explanations for fees, bonds and levies; whether to raise sewer bills 28% at once or 8% a year is unsaid."
+  },
+  {
+   "kind": "position",
+   "candidateId": "patrick-walsh",
+   "key": "climate",
+   "old": "Would protect tree canopy and watersheds, invest in sustainable infrastructure, and calm cut-through traffic and speeding with data-driven fixes.",
+   "new": "Would protect tree canopy and watersheds and make forward-looking investments in sustainable local infrastructure."
+  },
+  {
+   "kind": "line",
+   "candidateId": "patrick-walsh",
+   "key": "climate",
+   "old": "Protects tree canopy and watersheds; calms cut-through traffic with data.",
+   "new": "Would protect tree canopy and watersheds and invest in sustainable local infrastructure."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "patrick-walsh",
+   "key": "climate",
+   "old": "Tree canopy, calm traffic",
+   "new": "Tree canopy, watersheds"
+  },
+  {
+   "kind": "stance",
+   "candidateId": "patrick-walsh",
+   "key": "lo-housing-mandate",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "patrick-walsh",
+   "key": "lo-housing-mandate",
+   "old": "Says the city must comply with state housing law but “how we comply matters”: direct new homes to areas with existing infrastructure and services, with design standards and tree preservation, and make sure the basics are solid before expanding density.",
+   "new": "Says the city must comply with state housing law but “how we comply matters,” directing new housing to areas with existing infrastructure and services; whether that means office land or single-family neighborhoods is unsaid."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "patrick-walsh",
+   "key": "lo-library",
+   "old": "As library board chair told the council January 20, 2026 that a new library on a larger site in a better location is needed; his campaign says re-imagining the library fosters local innovation. Selling the current site is unsaid.",
+   "new": "As library board chair, co-presented the board’s January 20, 2026 update to the council, which stressed the need for a new library on a larger site and a scope that fits fiscal realities. Selling the current site is unsaid."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "suzanne-miles",
+   "key": "safety",
+   "old": "Back police and fire",
+   "new": "Support police and fire"
+  },
+  {
+   "kind": "position",
+   "candidateId": "damon-mabee",
+   "key": "money",
+   "old": "Would take a hard look at the city budget to find money to fix the park system, through cost savings rather than new revenue.",
+   "new": "Would take a hard look at the city budget to find the money to fix the park system, as deliberate cost savings kept the pool open in 2004."
+  },
+  {
+   "kind": "line",
+   "candidateId": "damon-mabee",
+   "key": "money",
+   "old": "Finds money for parks through budget cost savings, not new revenue.",
+   "new": "Would take a hard look at the budget to find money to fix parks."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "damon-mabee",
+   "key": "oc-budget-gap",
+   "old": "Find savings first",
+   "new": "Hard look at budget"
+  },
+  {
+   "kind": "stance",
+   "candidateId": "rodney-la-barr",
+   "key": "oc-budget-gap",
+   "old": "opposes",
+   "new": "partial"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "rodney-la-barr",
+   "key": "oc-budget-gap",
+   "old": "No tax increase",
+   "new": "Parks without tax hikes"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "rodney-la-barr",
+   "key": "oc-budget-gap",
+   "old": "Would cut permits, fees and regulations and fund parks from new growth revenue “without raising taxes”; the $6.50 public-safety fee is unsaid.",
+   "new": "Would reduce or eliminate unnecessary permits, fees and regulations and fund parks from new growth revenue “without raising taxes”; the property-tax rate, the $6.50 public-safety fee and any cuts are unsaid."
+  },
+  {
+   "kind": "position",
+   "candidateId": "rodney-la-barr",
+   "key": "housing",
+   "old": "Would create affordable housing by cutting permits, fees and regulations so builders can produce homes of all types, from ADUs (backyard cottages) to apartments.",
+   "new": "Would create affordable housing by reducing or eliminating unnecessary regulations, permits and fees so builders can produce homes of all types, from ADUs (backyard cottages) to apartments."
+  },
+  {
+   "kind": "line",
+   "candidateId": "rodney-la-barr",
+   "key": "housing",
+   "old": "Cuts permits, fees and regulations so builders produce homes of all types.",
+   "new": "Would cut unnecessary permits, fees and regulations so builders produce homes of all types."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "rodney-la-barr",
+   "key": "housing",
+   "old": "Cut fees and permits",
+   "new": "Cut unneeded fees, permits"
+  },
+  {
+   "kind": "position",
+   "candidateId": "rodney-la-barr",
+   "key": "money",
+   "old": "Would cut permit and business fees, and fund parks from the growth revenue that follows, without raising taxes.",
+   "new": "Would reduce or eliminate unnecessary permits and fees, and fund parks from the new revenue that follows, without raising taxes."
+  },
+  {
+   "kind": "line",
+   "candidateId": "rodney-la-barr",
+   "key": "money",
+   "old": "Cuts permit and business fees; funds parks from growth revenue, no tax increase.",
+   "new": "Would cut unnecessary permits and fees; funds parks from new revenue, no tax increase."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "rodney-la-barr",
+   "key": "oc-abernethy-tolling",
+   "old": "Against tolling nonsense",
+   "new": "Against I-205 tolling"
+  },
+  {
+   "kind": "stance",
+   "candidateId": "james-nicita",
+   "key": "oc-data-center-moratorium",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "james-nicita",
+   "key": "oc-data-center-moratorium",
+   "old": "Says “No to data centers” alongside yes to historic preservation, and would make the North End a solar-generation district.",
+   "new": "Says “No to data centers” alongside yes to historic preservation, and would make the North End a solar-generation district; a temporary moratorium while the code is rewritten is unsaid."
+  },
+  {
+   "kind": "position",
+   "candidateId": "james-nicita",
+   "key": "money",
+   "old": "Would redirect urban-renewal tax dollars to police or to small citizen-designed projects, and keep residents’ right to vote on urban renewal.",
+   "new": "Would restore urban-renewal tax dollars to police and, if urban renewal continues, prioritize small projects citizens help design and build; defends residents’ right to vote on urban renewal."
+  },
+  {
+   "kind": "line",
+   "candidateId": "james-nicita",
+   "key": "money",
+   "old": "Redirects urban-renewal money to police or small citizen-designed projects.",
+   "new": "Would return urban-renewal money to police; if renewal continues, favors small citizen-designed projects."
+  },
+  {
+   "kind": "position",
+   "candidateId": "gordon-j-lawrence",
+   "key": "money",
+   "old": "Would fund services by growing the tax base, removing barriers to business and welcoming development rather than blocking it.",
+   "new": "Would fund services by growing a tax base, which he says the city cannot build if it blocks every development opportunity."
+  },
+  {
+   "kind": "line",
+   "candidateId": "gordon-j-lawrence",
+   "key": "money",
+   "old": "Funds services by growing the tax base; removes barriers to business.",
+   "new": "Would fund services by growing the tax base and not blocking every development opportunity."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "adam-marl",
+   "key": "oc-data-center-moratorium",
+   "old": "Proposed a data-center moratorium at the September 8, 2026 work session to protect the city’s remaining employment land for living-wage jobs; his site says the commission agreed to move forward, though no ordinance has yet been published.",
+   "new": "His site says he proposed a data-center moratorium so the city has strong protections that prioritize living-wage jobs on its remaining employment land; no moratorium ordinance has yet been published."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "adam-marl",
+   "key": "oc-caring-place",
+   "old": "Voted yes December 3, 2025 on the downtown civil exclusion zone; in September 2025 said the Caring Place had made no formal request and he had “a hard time” with it seeking collaboration so late. Caring Court move unsaid.",
+   "new": "Voted yes December 3, 2025 on the downtown civil exclusion zone; in September 2025 said he was open to the city supporting the Caring Place but had “a hard time” with it seeking collaboration so late. Caring Court move unsaid."
+  },
+  {
+   "kind": "position",
+   "candidateId": "timothy-tj-anderson",
+   "key": "safety",
+   "old": "Wants police response times down and says more officers will be needed, with cadets, volunteers and other programs handling calls that do not need the most highly trained officers. On homelessness, would first establish what has worked, a timeline of people’s needs and how to work with others in the city before spending more.",
+   "new": "Wants police response times down and says more officers will be needed, with cadets, volunteers and other programs handling calls that do not need the most highly trained officers. On homelessness, says spending without thought is not helping and the city must act with urgency, starting with a clear understanding of what has worked, a timeline of people’s needs and a way to work with others in the city."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "timothy-tj-anderson",
+   "key": "money",
+   "old": "Audit first, no taxes",
+   "new": "Audit before new taxes"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "eli-arnold",
+   "key": "new-taxes",
+   "old": "Says he will not support raising taxes and fees; his transit plan is framed as using existing PCEF revenue without new taxes.",
+   "new": "Says he will not support raising taxes and fees, and would use existing clean energy resources to move toward fareless transit."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "eli-arnold",
+   "key": "street-response",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "eli-arnold",
+   "key": "street-response",
+   "old": "Would expand Street Response scope in 2027–2028 and citywide by 2029–2031 so calls go to the right responder; 24/7 is not stated.",
+   "new": "Would expand Street Response scope in 2027–2028 and citywide by 2029–2031 so calls go to the right responder; the plan does not say whether it should run 24/7."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "olivia-clark",
+   "key": "money",
+   "old": "Core services first",
+   "new": "Small business support"
+  },
+  {
+   "kind": "line",
+   "candidateId": "olivia-clark",
+   "key": "money",
+   "old": "Wants core services and business recovery to come first.",
+   "new": "Supports small business and economic development; cites protected police and fire funding."
+  },
+  {
+   "kind": "position",
+   "candidateId": "olivia-clark",
+   "key": "money",
+   "old": "Prioritizes core services and business recovery.",
+   "new": "Lists support for small business and economic development as a priority, and cites protecting police and fire funding and passing a Storefront Support Program for small business."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "olivia-clark",
+   "key": "camp-removal",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "olivia-clark",
+   "key": "camp-removal",
+   "old": "Would make the city safe by removing street camping and public drug use while adding shelter beds, sobering stations and treatment.",
+   "new": "Would make the city safe by removing street camping and public drug use while adding shelter beds, sobering stations and treatment; the page does not say whether to keep removal funding at current levels."
+  },
+  {
+   "kind": "line",
+   "candidateId": "jayne-cronlund",
+   "key": "housing",
+   "old": "Hold housing nonprofits accountable; speed downtown office-to-housing conversions.",
+   "new": "Hold housing nonprofits accountable; explore faster downtown office-to-housing conversions."
+  },
+  {
+   "kind": "position",
+   "candidateId": "jayne-cronlund",
+   "key": "housing",
+   "old": "Would have the Housing Bureau hold its nonprofit partners accountable (lawful spending within budget, existing housing full, residents cared for, neighbors safe) and the permitting bureau streamline conversions of vacant downtown offices to housing for willing owners, citing 37% office vacancy.",
+   "new": "Would advocate for the Housing Bureau to hold its nonprofit partners accountable (lawful spending within budget, existing housing full, residents cared for, neighbors safe) and would have the permitting bureau explore streamlining conversions of vacant downtown offices to housing for willing owners, citing 37% office vacancy."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "jamey-evenstar",
+   "key": "new-taxes",
+   "old": "Fee on empty homes",
+   "new": "Fee on non-primary homes"
+  },
+  {
+   "kind": "line",
+   "candidateId": "mitch-green",
+   "key": "climate",
+   "old": "Would expand PCEF (clean-energy fund) for transit, not Moda or added policing.",
+   "new": "Would expand PCEF (clean-energy fund); opposes using it for Moda or added policing."
+  },
+  {
+   "kind": "position",
+   "candidateId": "mitch-green",
+   "key": "climate",
+   "old": "Would preserve and expand PCEF for clean energy and transit; opposes its use for Moda renovations and additional policing. Supports walkable, transit-oriented neighborhoods and car-free spaces.",
+   "new": "Would preserve and expand PCEF and make it more effective at supporting clean energy development; opposes its use for Moda renovations and increased police funding. Supports walkable, transit-oriented neighborhoods and car-free spaces."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "mitch-green",
+   "key": "water-rates",
+   "old": "mixed",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "mitch-green",
+   "key": "water-rates",
+   "old": "Says he pushed for cost controls on the Bull Run project to prevent water rates from doubling; does not oppose the project itself.",
+   "new": "Says he pushed for cost controls on the Bull Run project to prevent water rates from doubling; the statement does not say whether bills should rise to pay for the plant."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "josh-leake",
+   "key": "safety",
+   "old": "Enforcement plus services",
+   "new": "Enforcement with dignity"
+  },
+  {
+   "kind": "line",
+   "candidateId": "josh-leake",
+   "key": "safety",
+   "old": "Would combine crime and disorder responses with behavioral-health services and dignity for unhoused people.",
+   "new": "Would pair data-informed enforcement on property crime and disorder with dignity for unsheltered people."
+  },
+  {
+   "kind": "position",
+   "candidateId": "josh-leake",
+   "key": "safety",
+   "old": "Combines responses to crime and disorder with behavioral-health services and dignity for unhoused people.",
+   "new": "Would address property crime and public disorder through data-informed enforcement while treating unsheltered neighbors with dignity, saying poverty is not a crime."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "matt-schulte",
+   "key": "new-taxes",
+   "old": "No new City taxes",
+   "new": "Business taxes not first"
+  },
+  {
+   "kind": "chip",
+   "candidateId": "jeremy-beausoleil-smith",
+   "key": "housing",
+   "old": "Build public housing",
+   "new": "Build social housing"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "eric-zimmerman",
+   "key": "police-staffing",
+   "old": "Would expand the Police Bureau to 1,000 sworn officers, growing patrol and investigations and trimming other support roles until fully staffed.",
+   "new": "Would expand the Police Bureau to 1,000 sworn officers and grow patrol and investigations, and would consider a short-term reduction in other support roles until fully staffed."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "eric-zimmerman",
+   "key": "street-response",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "eric-zimmerman",
+   "key": "street-response",
+   "old": "Would let Street Response transport people to sobering centers and psychiatric emergency care; 24/7 coverage is not addressed.",
+   "new": "Would let Street Response transport people to sobering centers and psychiatric emergency care; the page does not say whether it should run 24/7."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "eric-zimmerman",
+   "key": "camp-removal",
+   "old": "End unsanctioned camping",
+   "new": "Yes to camp cleanups"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "eric-zimmerman",
+   "key": "camp-removal",
+   "old": "Calls ending unsanctioned camping a must, with an enforceable time-place-manner ordinance, camp cleanups and more TASS shelter sites.",
+   "new": "His statement says “YES to Camp Cleanups” and calls shelters, enforcement, camp cleanups and mental-health and addiction treatment all important."
+  },
+  {
+   "kind": "line",
+   "candidateId": "ali-beaudoin",
+   "key": "housing",
+   "old": "More supply, simpler permits, workforce housing and rate help for first-time buyers.",
+   "new": "More supply, simpler permits, workforce housing; would explore rate help for first-time buyers."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "ali-beaudoin",
+   "key": "police-staffing",
+   "old": "supports",
+   "new": "mixed"
+  },
+  {
+   "kind": "stance",
+   "candidateId": "ali-beaudoin",
+   "key": "water-rates",
+   "old": "supports",
+   "new": "mixed"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "ali-beaudoin",
+   "key": "camp-removal",
+   "old": "Supports enforcing public-space rules with realistic paths to shelter and services, and would measure where people go, whether areas stay clear and the cost; she does not say whether to keep current funding.",
+   "new": "Supports enforcing public-space rules with realistic paths to shelter and services, and would measure where people go, whether areas stay clear and the cost; the reply does not say whether to keep current funding."
+  },
+  {
+   "kind": "position",
+   "candidateId": "guy-frankenstein",
+   "key": "money",
+   "old": "Calls for larger contributions from billion-dollar companies. A particular tax instrument or projected revenue is not established in the reviewed response.",
+   "new": "Says he is running to “bleed every billion dollar company operating within this city.” A particular tax instrument or projected revenue is not established in the reviewed response."
+  },
+  {
+   "kind": "line",
+   "candidateId": "guy-frankenstein",
+   "key": "money",
+   "old": "Wants billion-dollar companies to contribute more.",
+   "new": "Wants to “bleed every billion dollar company” in the city; names no tax."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "esther-leon",
+   "key": "housing",
+   "old": "Expand public housing",
+   "new": "Accelerate social housing"
+  },
+  {
+   "kind": "line",
+   "candidateId": "esther-leon",
+   "key": "safety",
+   "old": "Would fund Street Response, expand unarmed (non-police) specialists, reduce armed responses; opposes camp sweeps.",
+   "new": "Would fund Street Response, expand Police Bureau's unarmed specialists, reduce armed responses; opposes sweeps."
+  },
+  {
+   "kind": "position",
+   "candidateId": "esther-leon",
+   "key": "safety",
+   "old": "Would fund citywide 24/7 Street Response, expand unarmed support specialists and reduce armed responses; opposes sweeps and favors housing with health or addiction support.",
+   "new": "Would fund citywide 24/7 Street Response, expand the Police Bureau’s unarmed public safety support specialists and reduce armed responses; opposes sweeps and favors housing with health or addiction support."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "esther-leon",
+   "key": "camp-removal",
+   "old": "End sweeps",
+   "new": "Redirect from sweeps"
+  },
+  {
+   "kind": "position",
+   "candidateId": "darren-mccormick",
+   "key": "safety",
+   "old": "His July 2026 filing calls for additional police and incarceration of people he characterizes as dangerous and affected by drugs. The filing does not explain the legal criteria or treatment component.",
+   "new": "His July 2026 filing reads, in full: “More cops. Lock up the dangerously unstable drug zombies.” The filing does not explain the legal criteria or any treatment component."
+  },
+  {
+   "kind": "line",
+   "candidateId": "darren-mccormick",
+   "key": "safety",
+   "old": "Wants more police and jail for people he calls dangerous and drug-affected.",
+   "new": "Wants more police and jail for drug users he calls dangerously unstable."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "angelita-morillo",
+   "key": "money",
+   "old": "Public investment first",
+   "new": "Fair Moda deal"
+  },
+  {
+   "kind": "line",
+   "candidateId": "angelita-morillo",
+   "key": "money",
+   "old": "Wants public investment to come first.",
+   "new": "Wants a fair Moda deal; led an investigation into undisclosed taxpayer dollars."
+  },
+  {
+   "kind": "position",
+   "candidateId": "angelita-morillo",
+   "key": "money",
+   "old": "Prioritizes public investment and opposed the amended Moda term sheet; that vote does not by itself establish opposition to retaining the team.",
+   "new": "Lists fighting for a fair Moda deal for Portland and leading the first investigation into millions of undisclosed taxpayer dollars. Opposed the amended Moda term sheet; that vote does not by itself establish opposition to retaining the team."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "angelita-morillo",
+   "key": "housing",
+   "old": "Stronger tenant rights",
+   "new": "Tenant rights"
+  },
+  {
+   "kind": "line",
+   "candidateId": "angelita-morillo",
+   "key": "housing",
+   "old": "Supports stronger tenant rights and shelter design involving unhoused residents.",
+   "new": "Supports tenant rights, expanded homeownership and shelters by and for unhoused people."
+  },
+  {
+   "kind": "position",
+   "candidateId": "angelita-morillo",
+   "key": "housing",
+   "old": "Supports stronger tenant rights and shelter design involving unhoused residents.",
+   "new": "Supports tenant rights and expanded homeownership, and would push to create shelters by and for unhoused people."
+  },
+  {
+   "kind": "line",
+   "candidateId": "angelita-morillo",
+   "key": "climate",
+   "old": "Supports transit, bike lanes and sidewalks; opposes oil-train and data-center expansion.",
+   "new": "Supports transit, bike lanes, sidewalks; wants oil trains and data-center expansion shut down."
+  },
+  {
+   "kind": "position",
+   "candidateId": "angelita-morillo",
+   "key": "climate",
+   "old": "Supports transit, bike lanes and sidewalks; opposes oil-train and data-center expansion.",
+   "new": "Prioritizes investments in transit, bike lanes and sidewalks, and says she is working to shut down oil trains and data-center expansion."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "angelita-morillo",
+   "key": "camp-removal",
+   "old": "Says she prepared legislation supporting a shift away from costly homeless camp sweeps toward public bathrooms, sanitation and low-barrier jobs.",
+   "new": "Says she prepared legislation strengthening oversight of the homelessness contractor Urban Alchemy while supporting a shift away from costly homeless camp sweeps toward public bathrooms, sanitation and low-barrier jobs."
+  },
+  {
+   "kind": "line",
+   "candidateId": "cristal-otero",
+   "key": "housing",
+   "old": "Supports homes across incomes; would move 5–20% of city-regulated affordable rentals to co-ops.",
+   "new": "Proposes a gradual, resident-chosen path for 5–20% of city-regulated affordable rentals to become co-ops."
+  },
+  {
+   "kind": "position",
+   "candidateId": "cristal-otero",
+   "key": "safety",
+   "old": "Supports emergency response alongside prevention, behavioral health and housing stability; the page does not name a police staffing target.",
+   "new": "Would maintain a strong emergency response system while investing in prevention, behavioral health and housing stability; the page does not name a police staffing target."
+  },
+  {
+   "kind": "line",
+   "candidateId": "cristal-otero",
+   "key": "safety",
+   "old": "Supports emergency response alongside prevention, behavioral health and housing stability.",
+   "new": "Would maintain strong emergency response while investing in prevention, behavioral health, housing stability."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "cristal-otero",
+   "key": "police-staffing",
+   "old": "Outreach teams, not officers",
+   "new": "Outreach, not more officers"
+  },
+  {
+   "kind": "stance",
+   "candidateId": "cristal-otero",
+   "key": "water-rates",
+   "old": "mixed",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "cristal-otero",
+   "key": "water-rates",
+   "old": "Notes rates rose 8.1 percent and the Water Bureau pays about $100 million a year in debt service; would judge borrowing by monthly household cost.",
+   "new": "Notes rates rose 8.1 percent and the Water Bureau pays about $100 million a year in debt service; would judge borrowing by monthly household cost. The statement does not say whether to raise rates for filtration."
+  },
+  {
+   "kind": "position",
+   "candidateId": "matthias-hallett",
+   "key": "money",
+   "old": "Calls for audits and limits on unaccountable spending, lighter burdens on businesses, and an agreement to retain the Blazers. His critique of ranked-choice voting is a campaign position, not evidence the count is unreliable.",
+   "new": "Calls for audits and limits on unaccountable spending, lighter burdens on businesses, and an agreement to retain the Blazers."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "matthias-hallett",
+   "key": "new-taxes",
+   "old": "No new taxes",
+   "new": "Grow the tax base"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "matthias-hallett",
+   "key": "new-taxes",
+   "old": "Says Portland cannot tax its way out of a shrinking base and must grow it back; backs police funding with no new taxes.",
+   "new": "Says Portland cannot tax its way out of a shrinking base and must grow it back, and would right-size the business tax structure to stay competitive."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "tiffany-koyama-lane",
+   "key": "moda",
+   "old": "Fair deal for taxpayers",
+   "new": "Fair deal for Portlanders"
+  },
+  {
+   "kind": "stance",
+   "candidateId": "tiffany-koyama-lane",
+   "key": "moda",
+   "old": "mixed",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "tiffany-koyama-lane",
+   "key": "moda",
+   "old": "Says she fought for a fair deal for Portlanders in the Moda Center negotiations and will make sure it is fair for taxpayers.",
+   "new": "Says she fought for a fair deal for Portlanders in the Moda Center negotiations; the statement does not say how much public money the renovation should get."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "steve-novick",
+   "key": "street-response",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "steve-novick",
+   "key": "street-response",
+   "old": "Is working to move 911 welfare-check calls to unarmed responders and to get Medicaid to reimburse Street Response.",
+   "new": "Is working to move 911 welfare-check calls to unarmed responders and to get Medicaid to reimburse Street Response; the page does not say whether Street Response should expand to a 24/7 role."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "steve-novick",
+   "key": "water-rates",
+   "old": "Would use Clean Energy Fund money to pay part of the water filtration plant and offset water-rate increases.",
+   "new": "Suggests Clean Energy Fund money could pay part of the water filtration plant and help offset water-rate increases."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "steve-novick",
+   "key": "moda",
+   "old": "City must break even",
+   "new": "Fair deal, break even"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "steve-novick",
+   "key": "moda",
+   "old": "Wants to keep the Blazers, but only under a deal where the city gets as much money out of the Moda Center as it puts in.",
+   "new": "Wants to keep the Blazers and says he is fighting for a fair deal in which the city gets as much money out of the Moda Center as it puts in."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "steve-novick",
+   "key": "new-taxes",
+   "old": "opposes",
+   "new": "mixed"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "steve-novick",
+   "key": "new-taxes",
+   "old": "No Arts Tax increase",
+   "new": "Replace the Arts Tax"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "steve-novick",
+   "key": "new-taxes",
+   "old": "Voted against increasing the Arts Tax and wants to replace it without cutting arts funding, possibly by folding it into the Children’s Levy.",
+   "new": "Voted against increasing the Arts Tax and wants to replace it without cutting arts funding, possibly by folding it into the Children’s Levy; hopes to sustain parks without another tax increase."
+  },
+  {
+   "kind": "position",
+   "candidateId": "steve-novick",
+   "key": "climate",
+   "old": "Supports using PCEF for transit and potentially part of the water-filtration project to offset water-rate increases. That differs from reserving the fund for its existing program mix.",
+   "new": "Supports greater PCEF investment in transportation, including public transit, and possibly using it to pay part of the water-filtration project to offset water-rate increases."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "steve-novick",
+   "key": "camp-removal",
+   "old": "Says he protected funding for removing the most hazardous camps when others tried to cut it; opposes indiscriminate sweeps.",
+   "new": "Says he led the fight against a proposal to slash funding for removing the most hazardous camps; does not support indiscriminate sweeps."
+  },
+  {
+   "kind": "position",
+   "candidateId": "terry-parker",
+   "key": "safety",
+   "old": "Supports police and fire staffing and long-term support for unhoused people.",
+   "new": "Would increase funding to add police officers and fully staff every fire station, and would help unhoused people reach long-term stability through wraparound services that support self-sufficiency."
+  },
+  {
+   "kind": "line",
+   "candidateId": "terry-parker",
+   "key": "safety",
+   "old": "Supports police and fire staffing and long-term support for unhoused people.",
+   "new": "Would fund more police officers, fully staffed fire stations, and wraparound services for self-sufficiency."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "terry-parker",
+   "key": "new-taxes",
+   "old": "opposes",
+   "new": "mixed"
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "terry-parker",
+   "key": "new-taxes",
+   "old": "Eliminate the Arts Tax",
+   "new": "Tax long-vacant rentals"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "terry-parker",
+   "key": "new-taxes",
+   "old": "Told OPB in 2024 he would eliminate the $35 Arts Tax on individuals, which charges low and high earners the same amount; he named no tax or levy he would create.",
+   "new": "Told City Club in 2024 the City should tax rental units left vacant for long periods and replace the one-size-fits-all Arts Tax with a variable tax."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "keir-legree",
+   "key": "camp-removal",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "keir-legree",
+   "key": "camp-removal",
+   "old": "Would consistently enforce clear boundaries citywide: when shelter is available, camping should not be allowed indefinitely in rights-of-way, parks or on private property, with camps near schools first.",
+   "new": "Would consistently enforce clear boundaries citywide: when appropriate shelter is available, camping should not be allowed indefinitely in rights-of-way, parks or on private property; the page does not say whether removal funding should stay at current levels."
+  },
+  {
+   "kind": "tchip",
+   "candidateId": "keir-legree",
+   "key": "moda",
+   "old": "Transfer arena, no cash",
+   "new": "Explore arena transfer"
+  },
+  {
+   "kind": "stance",
+   "candidateId": "keir-legree",
+   "key": "water-rates",
+   "old": "opposes",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "keir-legree",
+   "key": "water-rates",
+   "old": "Says water and sewer bills are over four times Las Vegas’s and rising; would cut project costs to lower bills.",
+   "new": "Says water and sewer bills are over four times Las Vegas’s and rising, and would work to reduce infrastructure project costs to lower bills; the statement does not say whether bills should rise to pay for the filtration plant."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "tom-sollitt",
+   "key": "police-staffing",
+   "old": "If staffing must rise, would target investigations and specialized units; staffing should follow need, not a fixed officer total.",
+   "new": "If Portland needs more police, says it should start with police accountability and be intentional about where positions go, and would consider strengthening detectives and specialized units; staffing should follow need, not a set number."
+  },
+  {
+   "kind": "position",
+   "candidateId": "tom-sollitt",
+   "key": "climate",
+   "old": "Would maintain existing streets before committing to new projects until new funding is found, prioritizing maintenance, preservation and safety; would ask the Clean Energy Fund committee whether voter-approved climate money can go further toward transportation and air quality, and restrict projects without a clear public benefit, funding source and measurable outcome.",
+   "new": "Would maintain existing streets before committing to new projects until new funding is found, prioritizing maintenance, preservation and safety; would work with the Clean Energy Fund committee on whether voter-approved climate money can go further, within its approved purpose, toward transportation and air quality, and would take any change in direction back to voters; would restrict projects without a clear public benefit, funding source and measurable outcome."
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "tom-sollitt",
+   "key": "camp-removal",
+   "old": "Answered no, but would pause any increase or cut until a clear accounting shows what the program spends and achieves; wants rights-of-way kept clear through a coordinated approach with the County and providers.",
+   "new": "Answered no, but would pause any increase or cut until a clear accounting shows what the program spends and achieves; agrees rights-of-way must stay clear and wants a more compassionate, coordinated approach with the County and providers."
+  },
+  {
+   "kind": "position",
+   "candidateId": "kellie-torres",
+   "key": "safety",
+   "old": "Supports public-safety staffing and resources so police can follow through on investigations and fix emergency response times, plus cleaner, better-lit public spaces and connecting people in crisis with lifesaving services.",
+   "new": "Supports public-safety staffing and resources so police can follow through on investigations and fix emergency response times, plus cleaner, better-lit public spaces, upholding community standards and connecting people in crisis with lifesaving services."
+  },
+  {
+   "kind": "position",
+   "candidateId": "kellie-torres",
+   "key": "housing",
+   "old": "Sets a goal of enabling 4,000 homes annually through fewer code barriers, faster permitting and a mix of rental and ownership housing. This is a campaign target, not a forecast.",
+   "new": "Sets a goal of enabling 4,000 homes annually through fewer code barriers, faster permitting and a mix of housing types, including affordable homeownership and multi-unit housing, balanced with neighborhood stability. This is a campaign target, not a forecast."
+  },
+  {
+   "kind": "stance",
+   "candidateId": "kellie-torres",
+   "key": "police-staffing",
+   "old": "supports",
+   "new": "partial"
+  },
+  {
+   "kind": "ttext",
+   "candidateId": "kellie-torres",
+   "key": "police-staffing",
+   "old": "Supports public safety staffing and resources that let police follow through on investigations and fix response times.",
+   "new": "Supports public safety staffing and resources that let police follow through on investigations and fix emergency response times; the page does not say whether that means hiring more sworn officers."
+  },
+  {
+   "kind": "position",
+   "candidateId": "patrick-hilton",
+   "key": "housing",
+   "old": "Prioritizes adaptive reuse, community land trusts and co-housing, with pathways to ownership.",
+   "new": "Would champion adaptive reuse and historic preservation, and pilot community land trusts and co-housing with pathways to ownership."
+  },
+  {
+   "kind": "line",
+   "candidateId": "patrick-hilton",
+   "key": "housing",
+   "old": "Wants adaptive reuse (converting existing buildings), community land trusts and co-housing, with ownership pathways.",
+   "new": "Wants adaptive reuse (converting existing buildings) and pilot land trusts and co-housing."
+  },
+  {
+   "kind": "position",
+   "candidateId": "patrick-hilton",
+   "key": "safety",
+   "old": "Supports safe-sleeping infrastructure alongside consistent rules for public space.",
+   "new": "Would expand safe-sleeping infrastructure and safety ambassadors and enforce consistent public-space rules."
+  },
+  {
+   "kind": "line",
+   "candidateId": "patrick-hilton",
+   "key": "safety",
+   "old": "Supports safe-sleeping infrastructure alongside consistent rules for public space.",
+   "new": "Would expand safe-sleeping infrastructure and enforce consistent public-space rules."
+  },
+  {
+   "kind": "chip",
+   "candidateId": "kenneth-kent-r-landgraver-iii",
+   "key": "money",
+   "old": "Taxes for public work",
+   "new": "Dollars for people’s work"
+  },
+  {
+   "kind": "line",
+   "candidateId": "kenneth-kent-r-landgraver-iii",
+   "key": "money",
+   "old": "Wants tax dollars to support public work.",
+   "new": "Wants every tax dollar to go to doing the people’s work."
+  },
+  {
+   "kind": "position",
+   "candidateId": "kenneth-kent-r-landgraver-iii",
+   "key": "money",
+   "old": "Says tax dollars should support public work. Specific budget reallocations or revenue proposals are not established in the reviewed statement.",
+   "new": "Says every tax dollar should go to doing the people’s work. Specific budget reallocations or revenue proposals are not established in the reviewed statement."
+  },
+  {
+   "kind": "line",
+   "candidateId": "nathan-ong-norris",
+   "key": "money",
+   "old": "Wants service cuts and giveaways to billionaires stopped, public services expanded.",
+   "new": "Wants county service cuts and money and land for billionaires stopped; more public services."
+  },
+  {
+   "kind": "position",
+   "candidateId": "john-a-n-chee",
+   "key": "housing",
+   "old": "Cut regulations that punish home builders and remove barriers for local builders and first-time buyers.",
+   "new": "Cut burdensome regulations he says punish home builders, and remove barriers for local builders and first-time buyers."
+  },
+  {
+   "kind": "tsource",
+   "candidateId": "eric-zimmerman",
+   "key": "camp-removal",
+   "old": "zimmermanHomelessness",
+   "new": "pamphlet(64)"
+  },
+  {
+   "kind": "tsource",
+   "candidateId": "steve-novick",
+   "key": "camp-removal",
+   "old": "pamphlet(57)",
+   "new": "novick (NovickForPortland.com)"
+  },
+  {
+   "kind": "tsource",
+   "candidateId": "terry-parker",
+   "key": "new-taxes",
+   "old": "opbParker2024",
+   "new": "cityClub2024(\"Parker\")"
+  }
+ ],
+ "kept": [
+  {
+   "candidateId": "julia-brim-edwards",
+   "item": "topic/mult-hsd-oversight",
+   "reason": "Kept 'supports': her quote is specific to Sunstone Way and faults the chair for not heeding the auditor's warnings, which reaches outside audits."
+  },
+  {
+   "candidateId": "brett-smith",
+   "item": "topic/gov-new-revenue",
+   "reason": "Kept 'supports': he proposes an explicit new state surcharge; the gap framing is the topic's, and the text states what he proposes."
+  },
+  {
+   "candidateId": "david-russ",
+   "item": "topic/fed-fix-our-forests",
+   "reason": "His full September 24 email (checked in Gmail) says 'Returning those lands to the States will ensure that they are properly managed'; the auditor had only the stored excerpt."
+  },
+  {
+   "candidateId": "david-russ",
+   "item": "topic/fed-ice-funding (border clause)",
+   "reason": "His full email says 'The border is currently secured'; kept, stance moved to partial."
+  },
+  {
+   "candidateId": "michele-stroh",
+   "item": "topic/leg-deflection",
+   "reason": "Kept 'supports': she says she worked with the Fix M110 coalition, which drove the 2024 recriminalization and deflection law; incumbents' yes votes on that law are 'supports' and none of them address 2027–29 funding either."
+  },
+  {
+   "candidateId": "brad-o-neil",
+   "item": "topic/clack-sheriff-cuts",
+   "reason": "Kept 'supports': protecting core public-safety services first and sending resources to the front line answers the patrol-and-jail-first choice."
+  },
+  {
+   "candidateId": "travis-stovall",
+   "item": "topic/gresham-ice-response",
+   "reason": "Kept 'mixed': the question asks whether to go beyond the resolution, and besides proposing and voting for it he joined the mayors' letter asking for a pause, a step past the resolution that stops short of a declaration."
+  },
+  {
+   "candidateId": "jeremy-beausoleil-smith",
+   "item": "issue/money",
+   "reason": "He does lead with 'fight to lower costs', but that is a general value the guide does not record as a stance; protecting PCEF is his stated money item. Selection, not a lean."
+  },
+  {
+   "candidateId": "terry-parker",
+   "item": "issue/climate",
+   "reason": "The caveat on his traffic figures follows the house pattern used across candidates (Torres 'campaign target, not a forecast', Landgraver/Frankenstein 'not established'); left as is."
+  },
+  {
+   "candidateId": "martin-ward",
+   "item": "issue/money",
+   "reason": "Same house caveat pattern; attribution kept."
+  },
+  {
+   "candidateId": "tom-sollitt",
+   "item": "issue/climate line/chip",
+   "reason": "Omission, not a misstatement: his Sept 23 climate answer is recorded in the log but not folded into the column. Left for the replies session."
+  },
+  {
+   "candidateId": "kellie-torres",
+   "item": "issue/housing line",
+   "reason": "Line may omit; position now carries the neighborhood-stability clause."
+  },
+  {
+   "candidateId": "kellie-torres",
+   "item": "issue/safety line",
+   "reason": "Line was just corrected in PR #40; position now carries 'upholding community standards'."
+  },
+  {
+   "candidateId": "guy-frankenstein",
+   "item": "issue/money chip",
+   "reason": "Chip 'Large companies pay more' kept: plain words, no quote; the line and position now quote him."
+  }
+ ],
+ "other": [
+  "Ali Beaudoin: pronoun-free wording in council-analysis.ts (row comparison and comment), delivery-d3.ts and topic-stances-d3.ts comments, and the September 23 research-log entry. Beaudoin's own materials state no pronoun; the Mercury profile uses 'he'.",
+  "Clackamas clerk topic question: 'Run county-level purges of voters...' became 'Run county-level checks that remove voters...'.",
+  "state.ts: hb3546Record note now records Drazan's April 22, 2025 aye; new opbDcTranscriptKotek evidence for Kotek's rally quote.",
+  "city-multnomah.ts: minJun2 note corrected (rate resolutions moved by Gladfelter, Keathley and Hinton; Piazza moved the consent agenda); minJan20 note points to the January 6 minutes for Piazza's remarks."
+ ]
+}
