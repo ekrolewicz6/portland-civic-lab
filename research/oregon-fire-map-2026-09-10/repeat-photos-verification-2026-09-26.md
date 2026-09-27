@@ -14,3 +14,5 @@ Scope: server-rendered teaching example in the first chapter of “Why burn this
 - Privacy: feature and evidence derive solely from public USGS/Cambridge records. Original PDF/CSV/XML remain in ignored runtime acquisition storage. Only the approved photo pair enters public assets.
 
 Publication uses the existing production Git deployment. Live verification follows readiness; earlier production remains available until the new successful deployment replaces it. Independent scientific review and Oregon repeat-photo acquisition remain outstanding.
+
+Final readability adjustment: new evidence notes use 14px text and #455545 on the cream background rather than inheriting 12px muted text. Rebuilt successfully and repeated all three focused editorial tests; all passed.

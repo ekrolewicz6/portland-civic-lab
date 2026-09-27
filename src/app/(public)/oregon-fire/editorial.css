@@ -26,3 +26,4 @@
 .fire-repeat-oregon{margin-top:1.75rem;padding:1.5rem;border:1px solid #ccd0bf}
 .fire-repeat-oregon>a{display:inline-block;margin-top:.5rem}
 @media(max-width:700px){.fire-repeat-patches,.fire-repeat-reading{grid-template-columns:1fr}.fire-repeat-reading>div{border:0;padding:0}.fire-repeat-dates{padding:.8rem;font-size:1.3rem}.fire-repeat-dates small{font-size:.65rem}.fire-repeat-metrics>div{grid-template-columns:1fr;gap:.25rem}.fire-repeat-figure figcaption{padding:1rem}.fire-repeat-oregon{padding:1.1rem}}
+.fire-repeat-evidence .fire-guide-note{font-size:14px !important;color:#455545}
