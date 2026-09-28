@@ -288,9 +288,9 @@ export default function Methodology() {
           to the site. We will reconcile every statewide and legislative brief
           against the pamphlet when it appears.
         </p>
-        <h2 id="stakes">What’s at stake, and the size of each seat</h2>
+        <h2 id="stakes">Decisions ahead, and the size of each seat</h2>
         <p>
-          Each race page carries “What’s at stake”: the office’s biggest
+          Each race page carries “Decisions ahead”: the office’s biggest
           current problems and pending decisions as facts with a number or a
           date and an official or reported source, the same block for every
           candidate. Beneath it, each of the office’s own live choices is a

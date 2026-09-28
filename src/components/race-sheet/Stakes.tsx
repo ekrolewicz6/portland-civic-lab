@@ -20,7 +20,7 @@ export default function Stakes({ sheet }: { sheet: RaceSheet }) {
       <div className={styles.head}>
         <p className={styles.eyebrow}>What this office decides right now</p>
         <h2 id="stakes-title" className={styles.title}>
-          What’s at stake
+          Decisions ahead
         </h2>
         <p className={styles.intro}>{stakes.intro}</p>
         {topics > 0 && (

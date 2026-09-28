@@ -227,16 +227,16 @@ const analysis: Record<string, CandidateAnalysis> = {
       },
       money: {
         position:
-          "Would ban pricing schemes that charge people differently based on personal data, crack down on hidden fees, stop AI-based insurance claim denials, keep data-center energy costs off residential bills, and fight federal tariffs and SNAP cuts.",
-        source: kotekPlatform,
+          "Wants a tax system that is “adequate and fair”: would start with Prosperity Council ideas such as a larger research-and-development credit and a Corporate Activity Tax change for smaller businesses, paid for by trimming tax provisions that haven’t made Oregon more competitive rather than opening a hole in the budget, and wants a broader tax review led by an outside party.",
+        source: obiPbjForum,
       },
       climate: {
         position:
-          "Supports a moratorium on new data centers until statewide standards prevent rate hikes, require clean energy and protect air and water; would maintain the commitment to a clean-energy future and climate-resilience investment.",
+          "Would maintain the commitment to a clean-energy future and invest in climate resilience, and supports a moratorium on new data centers until statewide standards prevent rate hikes, require clean energy and protect air and water.",
         source: kotekPlatform,
       },
     },
-    sources: [kotekStatement, kotekPlatform],
+    sources: [kotekStatement, kotekPlatform, obiPbjForum],
   },
   "brett-smith": {
     values: ["Anti-corruption", "Limits on federal war powers"],
@@ -272,8 +272,8 @@ const lines: IssueLine[] = [
 
   line("tina-kotek", "housing", "Would cut red tape to build homes faster, with starter homes and down-payment help."),
   line("tina-kotek", "safety", "Opposes ICE detention sites in Oregon; more treatment beds for addiction and mental health."),
-  line("tina-kotek", "money", "Would ban personal-data pricing, curb hidden fees, keep data-center power costs off bills."),
-  line("tina-kotek", "climate", "Would pause new data centers until statewide standards protect ratepayers and require clean energy."),
+  line("tina-kotek", "money", "Would offset small-business tax relief by trimming less effective tax provisions; wants outside-led review."),
+  line("tina-kotek", "climate", "Would keep clean-energy commitments; pause new data centers until standards protect ratepayers."),
 
   line("brett-smith", "safety", "Would bolster the Oregon Civil Defense Force and bar unconstitutional surveillance."),
   line("brett-smith", "money", "Would charge large employers paying below a living wage, funding health and food aid."),
@@ -288,7 +288,7 @@ const chips: StanceChip[] = [
 
   chip("tina-kotek", "housing", "Faster homebuilding"),
   chip("tina-kotek", "safety", "No ICE detention sites"),
-  chip("tina-kotek", "money", "Ban personalized pricing"),
+  chip("tina-kotek", "money", "Paid-for tax relief"),
   chip("tina-kotek", "climate", "Pause new data centers"),
 
   chip("brett-smith", "safety", "Civil Defense Force"),
@@ -358,8 +358,8 @@ const deliveries: Delivery[] = [
   }),
   delivery("tina-kotek", "money", {
     how: step(
-      "Legislation banning data-based price discrimination and hidden fees and prohibiting AI-driven insurance denials; cites the POWER Act she signed to make data centers pay their share of energy costs.",
-      kotekPlatform,
+      "Start with Prosperity Council ideas, such as a larger research-and-development credit and a Corporate Activity Tax change for smaller businesses, offset by trimming tax provisions that haven’t made Oregon more competitive; then an outside-led tax review.",
+      obiPbjForum,
     ),
   }),
   delivery("tina-kotek", "climate", {

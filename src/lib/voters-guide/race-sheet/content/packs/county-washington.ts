@@ -720,7 +720,7 @@ const topicStances: TopicStance[] = [
     "Says as chair she will make data centers pay their fair share and safeguard tax dollars; whether the enterprise-zone exemptions should end is unsaid.",
     pamphlet(4)),
   stance("nafisa-fai", "wash-vehicle-fee", "opposes", "Voted no on fee",
-    "Cast the only no vote on August 25, 2026 against Ordinance 917, which phases the county fee from $30 to $60 a year by 2031; Treece, Snider and Willey voted yes and the chair abstained.",
+    "Cast the only no vote on August 25, 2026 against Ordinance 917, which phases the county fee from $30 to $60 a year by 2031; it passed 3–1.",
     minutesAug25),
   stance("nafisa-fai", "wash-budget-gap", "supports", "Fees and levies",
     "Would explore new revenue without overburdening taxpayers, including updated service fees and local option levies for public safety and libraries, to close a gap she puts at $20.5 million, while protecting housing, transit and health care.",
@@ -754,7 +754,7 @@ const topicStances: TopicStance[] = [
     "Told KGW she is not in favor of any more data centers in the county if that can be avoided, while noting the commission's land-use reach is unincorporated land and the major projects sit in Hillsboro.",
     kgwTreeceChair),
   stance("pam-treece", "wash-vehicle-fee", "supports", "Voted for fee increase",
-    "Voted on August 25, 2026 for Ordinance 917, phasing the county fee from $30 to $60 a year by 2031 for road projects, after declaring the fee would also apply to her own vehicles; Fai voted no.",
+    "Voted August 25, 2026 for Ordinance 917, which phases the county fee from $30 to $60 a year by 2031 for road projects, after declaring the fee would also apply to her own vehicles; it passed 3–1.",
     minutesAug25),
   stance("pam-treece", "wash-budget-gap", "mixed", "Taxes a last resort",
     "Says new taxes would be a last resort given economic strain, to be weighed against critical services that may have to be cut; puts past General Fund cuts at $98 million and would lean on economic development.",
@@ -767,7 +767,7 @@ const topicStances: TopicStance[] = [
     treeceQuestionnaire),
 ];
 
-/* What's at stake: sourced facts, the same block for every candidate in a race. */
+/* Decisions ahead: sourced facts, the same block for every candidate in a race. */
 const stakeBudget = {
   label: "Balanced on one-time growth",
   text: "The $2.1 billion FY 2026-27 budget approved June 16, 2026 needed only minimal cuts after five straight years of reductions, helped by about $6.2 million in General Fund savings and one-time 11% assessed-value growth from Hillsboro industrial property; the county expects growth to return to about 4.5%.",
@@ -805,7 +805,7 @@ const stakeLawsuit = {
 };
 const stakeVrf = {
   label: "Vehicle fee doubles",
-  text: "Ordinance 917, adopted 3–1 on August 25, 2026 with the chair abstaining, phases the county vehicle registration fee from $30 to $40 in July 2027, $50 in 2029 and $60 in 2031 for road projects; Fai cast the no vote and cities share 40% of the money.",
+  text: "Ordinance 917, adopted 3–1 on August 25, 2026 with the chair abstaining, phases the county vehicle registration fee from $30 to $40 in July 2027, $50 in 2029 and $60 in 2031 for road projects; cities share 40% of the money.",
   source: minutesAug25,
 };
 const stakeIce = {

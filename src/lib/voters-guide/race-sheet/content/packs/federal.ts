@@ -725,6 +725,14 @@ const bynumHomeless = site("Bynum · ending homelessness", "https://www.janelleb
 const bynumClimate = site("Bynum · taking climate action", "https://www.janellebynum.com/issues/taking-climate-action");
 const adairStatement = statement(25);
 const adairPriorities = site("Adair · record and priorities", "https://www.pattiforcongress.com/priorities");
+/* Her county record on homelessness, suggested by a Braver Angels reviewer (September 28, 2026). */
+const adairJuniperRidge: Evidence = {
+  label: "Bend Bulletin · Deschutes County to fund Juniper Ridge safe camp through June",
+  url: "https://bendbulletin.com/2026/09/15/deschutes-county-to-fund-juniper-ridge-safe-camp-through-june/",
+  kind: "Reporting",
+  date: "September 15, 2026; reviewed September 28, 2026",
+  note: "Commissioners Phil Chang and Patti Adair voted for $275,000 to keep the temporary safe stay area operating through June 2027; Commissioner Tony DeBone voted no.",
+};
 const townsendQuestionnaire: Evidence = {
   label: "Pacific Green Party · nomination questionnaire, Townsend’s answers",
   url: "https://www.pacificgreens.org/meet_the_candidates_for_nomination_andrea_townsend",
@@ -748,11 +756,12 @@ analysis["patti-adair"] = {
   values: ["Fiscal oversight", "Law-enforcement support"],
   tradeoff: "Permanent no-tax-on-tips, overtime and Social Security plus a larger child tax credit reduce revenue while she promises to eliminate waste; the reviewed pages do not size either side.",
   issues: {
+    housing: { position: "As a Deschutes County commissioner, voted on September 15, 2026 for $275,000 to keep the county’s temporary Juniper Ridge safe stay area open through June 2027; the funding passed 2–1.", source: adairJuniperRidge },
     safety: { position: "Would fully support law enforcement to keep communities safe; cites increasing law-enforcement funding and delivering new judgeships as a county commissioner.", source: adairPriorities },
     money: { position: "Would make no tax on tips, overtime and Social Security permanent and raise the limits, increase the child tax credit, ban congressional insider trading and pay during shutdowns, and eliminate wasteful spending.", source: adairStatement },
     climate: { position: "Would require Big Tech to disclose data centers' effects on air, water and electricity costs, address rising electricity costs, and support sustainable management of natural resources.", source: adairStatement },
   },
-  sources: [adairStatement, adairPriorities],
+  sources: [adairStatement, adairPriorities, adairJuniperRidge],
 };
 analysis["andrea-townsend"] = {
   values: ["Peace dividend", "Ecological limits"],
@@ -765,8 +774,9 @@ analysis["andrea-townsend"] = {
   sources: [townsendQuestionnaire],
 };
 lines.push(
+  line("patti-adair", "housing", "As commissioner, backed $275,000 to keep a county safe stay area open."),
   line("patti-adair", "safety", "Would fully support law enforcement to keep communities safe."),
-  line("patti-adair", "money", "Would make no-tax-on-tips permanent, raise the child tax credit, ban congressional insider trading."),
+  line("patti-adair", "money", "Would make no tax on tips, overtime and Social Security permanent."),
   line("patti-adair", "climate", "Would require data-center disclosure of air, water and electricity impacts; sustainable resource management."),
   line("janelle-s-bynum", "housing", "Would target housing shortages, workforce gaps and affordability barriers, with ownership pathways."),
   line("janelle-s-bynum", "safety", "Opposes what she calls a federal takeover of communities by ICE."),
@@ -777,13 +787,13 @@ lines.push(
   line("andrea-townsend", "climate", "Wants climate action protecting land, water and biodiversity; transportation and energy within planetary limits."),
 );
 chips.push(
-  chip("patti-adair", "safety", "Fully support police"), chip("patti-adair", "money", "No tax on tips"), chip("patti-adair", "climate", "Data-center disclosure"),
+  chip("patti-adair", "housing", "Backed safe stay funding"), chip("patti-adair", "safety", "Fully support police"), chip("patti-adair", "money", "No tax: tips, overtime"), chip("patti-adair", "climate", "Data-center disclosure"),
   chip("janelle-s-bynum", "housing", "Supply and affordability"), chip("janelle-s-bynum", "safety", "Oppose ICE takeover"),
   chip("janelle-s-bynum", "money", "Defend Oregon Health Plan"), chip("janelle-s-bynum", "climate", "Clean energy, wildfire"),
   chip("andrea-townsend", "housing", "Deeply affordable housing"), chip("andrea-townsend", "money", "Redirect war spending"), chip("andrea-townsend", "climate", "Protect land and water"),
 );
 deliveries.push(
-  delivery("patti-adair", "safety"), delivery("patti-adair", "money"), delivery("patti-adair", "climate"),
+  delivery("patti-adair", "housing"), delivery("patti-adair", "safety"), delivery("patti-adair", "money"), delivery("patti-adair", "climate"),
   delivery("janelle-s-bynum", "housing"), delivery("janelle-s-bynum", "safety"), delivery("janelle-s-bynum", "money"), delivery("janelle-s-bynum", "climate"),
   delivery("andrea-townsend", "housing"), delivery("andrea-townsend", "money"), delivery("andrea-townsend", "climate"),
 );
@@ -985,7 +995,7 @@ const tariffHouse = houseRoll(2026, 65, "passage of H.J.Res. 72, ending the nati
 const tariffSenate = senateRoll(1, 600, "passage of S.J.Res. 88, ending the national emergency behind the global tariffs", "October 30, 2025",
   "Passed 51–47. The Senate also voted to end the Brazil (S.J.Res. 81, October 28) and Canada (S.J.Res. 77, October 29) tariff emergencies that week.");
 const iceHouse = houseRoll(2026, 214, "passage of S. 2, the Secure America Act", "June 9, 2026",
-  "Passed 214–212; signed June 10, 2026 (Public Law 119-98). About $70 billion through September 2029: $38.5 billion for ICE, $26 billion for Customs and Border Protection and $5 billion for the department, per the CRS summary and the American Immigration Council.");
+  "Passed 214–212; signed June 10, 2026 (Public Law 119-98). About $70 billion through September 2029: $38.5 billion for ICE, $26 billion for Customs and Border Protection and $5 billion for the department, per the enrolled law and the CRS summary (R48874).");
 const iceSenate = senateRoll(2, 163, "passage of S. 2, the Secure America Act, as amended", "June 5, 2026",
   "Passed 52–47 under budget reconciliation after an overnight amendment series.");
 const iranHouse = houseRoll(2026, 282, "agreeing to H.Con.Res. 89, directing the removal of U.S. forces from hostilities with Iran", "July 23, 2026",
@@ -1025,23 +1035,21 @@ const adairShutdown = site("Adair · statement on the February 3, 2026 funding v
 const ohaFederalChanges = record("Oregon Health Authority · OHP work or activity rules and federal changes to the Oregon Health Plan",
   "https://www.oregon.gov/oha/hsd/ohp/pages/federal-changes.aspx", "Reviewed September 22, 2026",
   "Work or activity rules for adults 19–64 start in 2027 (80 hours a month or $580 a month in earnings); six-month renewals begin in late 2027. Coverage-loss and funding estimates are from OHA officials as reported by OPB (July 29, 2026) and Willamette Week (September 14, 2026).");
-const opbOhp = reporting("OPB · Big changes coming for people on Oregon Health Plan", "https://www.opb.org/article/2026/07/29/think-out-loud-oregon-health-plan/", "July 29, 2026; reviewed September 22, 2026",
-  "OHA: about 600,000 adults will be checked against the new rules from January 2027; 100,000 to 200,000 could lose coverage; $718 million to $1.4 billion a year in federal funds at the upper estimate.");
+const cboMedicaid = record("Congressional Budget Office · supplemental cost estimate for the Medicaid provisions of Public Law 119-21", "https://www.cbo.gov/publication/61837", "October 28, 2025; reviewed September 28, 2026",
+  "Section 71119, the work (community engagement) requirement: “CBO and JCT estimate that implementing section 71119 will decrease deficits by $317.0 billion over the 2025-2034 period,” with 5.3 million more people uninsured in 2034. Purpose, from CMS’s June 1, 2026 release on its implementing rule: “designed to promote economic stability, self-sufficiency, and independence.” Oregon figures are OHA officials’ estimates as reported by OPB (July 29, 2026); OHA’s rules page is oregon.gov/oha/hsd/ohp/pages/federal-changes.aspx.");
 const kffMarketplace = reporting("KFF State Health Facts · marketplace plan selections by state, 2014–2026 (CMS open-enrollment files)",
   "https://www.kff.org/affordable-care-act/state-indicator/marketplace-enrollment/", "2026 open enrollment; reviewed September 22, 2026",
   "Oregon: 139,688 plan selections for 2025 and 118,372 for 2026, the first year without the enhanced credits.");
-const scotusTariffs = reporting("Wikipedia · Learning Resources, Inc. v. Trump (decision and the tariffs that followed)", "https://en.wikipedia.org/wiki/Learning_Resources,_Inc._v._Trump", "Decided February 20, 2026; reviewed September 22, 2026",
-  "6–3: the International Emergency Economic Powers Act does not authorize tariffs. IEEPA tariffs ended February 24; a 10% Section 122 surcharge ran to July 24, 2026; Section 301 duties of 10–12.5% on about 60 countries followed.");
-const aicSecureAmerica = reporting("American Immigration Council · What’s in the Secure America Act?", "https://www.americanimmigrationcouncil.org/fact-sheet/whats-in-the-secure-america-act/", "June 10, 2026; reviewed September 22, 2026",
-  "$69.5 billion through September 30, 2029: $38.5 billion for ICE (about four times its 2025 budget), $26 billion for CBP, $5 billion for DHS.");
-const dhsShutdown = reporting("Wikipedia · 2026 United States federal government shutdowns", "https://en.wikipedia.org/wiki/2026_United_States_federal_government_shutdowns", "Reviewed September 22, 2026",
-  "A four-day lapse January 31–February 3, 2026, then a 76-day lapse in Homeland Security funding February 14–April 30, 2026, over immigration-enforcement rules.");
+const scotusLearning = record("Supreme Court · Learning Resources, Inc. v. Trump, No. 24-1287 (opinion)", "https://www.supremecourt.gov/opinions/25pdf/24-1287_4gcj.pdf", "Decided February 20, 2026; reviewed September 28, 2026",
+  "6–3: “IEEPA does not authorize the President to impose tariffs.” What followed: Proclamation 11012 (91 FR 9339) set a 10% Section 122 surcharge for 150 days, February 24 to July 24, 2026; the Trade Representative’s Section 301 action (91 FR 47318, July 28, 2026) set 10% to 12.5% tariffs on 60 trading partners from July 24.");
+const secureAmericaLaw = record("Public Law 119-98 (S. 2, the Secure America Act) · enrolled text on govinfo", "https://www.govinfo.gov/content/pkg/PLAW-119publ98/html/PLAW-119publ98.htm", "Approved June 10, 2026; reviewed September 28, 2026",
+  "Sec. 202: $31.075 billion for ICE operations, including hiring, removal transportation, information technology including body-worn cameras, facilities, fleet and 287(g) agreements; Sec. 102: $7.45 billion for Homeland Security Investigations, for work other than immigration enforcement; $26.02 billion for Customs and Border Protection and $5 billion for the department; all available until September 30, 2029. Senate vote 163 (June 5, 52–47); House roll call 214 (June 9, 214–212). The Congressional Research Service (R48874, June 24, 2026) notes that the annual Homeland Security law of April 30, 2026 (Public Law 119-86), which ended the funding lapse that began February 14, funded neither ICE nor the Border Patrol.");
 const portlandTroops = record("City of Portland · Portland and federal troops", "https://www.portland.gov/federal/federal-troops", "Reviewed September 22, 2026",
   "Judge Immergut permanently blocked the Portland deployment on November 7, 2025; the president announced troop withdrawals from Portland and other cities December 31, 2025.");
 const rollCallIran = reporting("Roll Call · Congress splits on two war powers resolution votes", "https://rollcall.com/2026/07/23/23warpowersvote/", "July 23, 2026; reviewed September 22, 2026",
   "House adopted H.Con.Res. 89 214–208; a binding S.J.Res. 180 failed 47–49. The president notified Congress July 10 that fighting had resumed.");
-const fofaWiki = reporting("Wikipedia · Fix Our Forests Act (provisions and status)", "https://en.wikipedia.org/wiki/Fix_Our_Forests_Act", "Reviewed September 22, 2026",
-  "Raises the categorical exclusion for fireshed projects to 10,000 acres and sets a 120-day limit on lawsuits (150 in the Senate bill); no Senate floor vote as of the page’s July 2026 update.");
+const fofaBill = record("Congress.gov · H.R. 471, Fix Our Forests Act (actions and text)", "https://www.congress.gov/bill/119th-congress/house-bill/471", "Passed the House January 23, 2025; reviewed September 28, 2026",
+  "House roll call 25, 279–141. Sec. 106 raises existing categorical-exclusion caps to 10,000 acres and applies them to fireshed projects; Sec. 121(d) sets a 120-day limit to sue (the Senate committee’s S. 1462, ordered reported October 21, 2025, says 150 days). No Senate floor vote on either bill as of September 28, 2026. Separately, the Agriculture Department proposed rescinding the 2001 Roadless Rule on August 20, 2026 (91 FR 53827); comments close October 6, 2026.");
 const roadAct = record("GovTrack · H.R. 6644, the 21st Century ROAD to Housing Act (status and CRS summary)", "https://www.govtrack.us/congress/bills/119/hr6644", "Enacted July 11, 2026; reviewed September 22, 2026",
   "Public Law 119-101. Permitting and NEPA changes for housing, a permanent Rental Assistance Demonstration with a 555,000-unit cap, HOME conversions of vacant buildings (FY2027–31); it authorizes programs but appropriates no money.");
 const dcOrder = record("White House · Executive Order 14318, Accelerating Federal Permitting of Data Center Infrastructure", "https://www.whitehouse.gov/presidential-actions/2025/07/accelerating-federal-permitting-of-data-center-infrastructure/", "July 23, 2025; reviewed September 22, 2026",
@@ -1064,7 +1072,7 @@ const federalTopics: ExtraTopic[] = [
     short: "H.R. 1",
     question: "Keep H.R. 1’s Medicaid work rules, six-month renewals and SNAP cuts, or repeal them?",
     context:
-      "H.R. 1, signed July 4, 2025, requires adults 19–64 on the Oregon Health Plan to show 80 hours a month of work, school or volunteering from 2027 and to renew every six months. The Oregon Health Authority expects to check about 600,000 adults, says 100,000 to 200,000 could lose coverage, and puts the federal funding loss at $718 million to $1.4 billion a year.",
+      "H.R. 1, signed July 4, 2025, requires adults 19–64 on the Oregon Health Plan to show 80 hours a month of work, school or volunteering from 2027 and to renew every six months. The Oregon Health Authority expects to check about 600,000 adults, says 100,000 to 200,000 could lose coverage, and puts the federal funding loss at $718 million to $1.4 billion a year. CBO estimates the work rule saves the federal government $317 billion over 2025–2034 and leaves 5.3 million more people uninsured nationally in 2034.",
   },
   {
     id: "fed-aca-credits",
@@ -1080,13 +1088,13 @@ const federalTopics: ExtraTopic[] = [
     short: "Tariffs",
     question: "End the tariffs and take tariff power back from the president?",
     context:
-      "The Supreme Court held 6–3 on February 20, 2026 that the emergency-powers law does not authorize tariffs; the administration ended those tariffs February 24, ran a 10% surcharge to July 24, then set 10–12.5% duties on about 60 countries. The House voted 219–211 on February 11, 2026 to end the Canada tariff emergency; the Senate voted 51–47 on October 30, 2025 to end the global one.",
+      "The Supreme Court held 6–3 on February 20, 2026 that the emergency-powers law does not authorize tariffs; the administration ended those tariffs February 24, ran a 10% surcharge to July 24, then set 10–12.5% tariffs on 60 trading partners. The House voted 219–211 on February 11, 2026 to end the Canada tariff emergency; the Senate voted 51–47 on October 30, 2025 to end the global one.",
   },
   {
     id: "fed-ice-funding",
     label: "ICE and border money",
     short: "ICE funding",
-    question: "Fund the $70 billion expansion of ICE and Border Patrol through 2029 (the Secure America Act)?",
+    question: "Fund ICE and Customs and Border Protection with $64.5 billion through 2029 (the Secure America Act)?",
     context:
       "The Secure America Act, signed June 10, 2026, adds $38.5 billion for ICE and $26 billion for Customs and Border Protection through September 2029, on top of H.R. 1’s 2025 money; it passed 52–47 and 214–212. It followed a 76-day lapse in Homeland Security funding (February 14–April 30, 2026) over enforcement rules, and a judge’s November 7, 2025 order blocking federal troops in Portland.",
   },
@@ -1104,7 +1112,7 @@ const federalTopics: ExtraTopic[] = [
     short: "Forests",
     question: "Pass the Fix Our Forests Act: faster thinning and logging on federal forests with shorter windows to sue?",
     context:
-      "H.R. 471 passed the House 279–141 on January 23, 2025; it lets fireshed projects up to 10,000 acres skip full environmental review and gives challengers 120 days to sue. The Senate Agriculture Committee advanced S. 1462 18–5 in October 2025, but the full Senate has not voted. The administration separately repealed the 2001 Roadless Rule in August 2026, covering 58.5 million acres.",
+      "H.R. 471 passed the House 279–141 on January 23, 2025; it lets fireshed projects up to 10,000 acres skip full environmental review and gives challengers 120 days to sue (the Senate version allows 150). The Senate Agriculture Committee advanced S. 1462 in October 2025, but the full Senate has not voted. The Agriculture Department separately proposed rescinding the 2001 Roadless Rule, which covers 58.5 million acres, on August 20, 2026; comments close October 6.",
   },
   {
     id: "fed-housing-aid",
@@ -1120,7 +1128,7 @@ const federalTopics: ExtraTopic[] = [
     short: "Data centers",
     question: "Should federal policy rein in data centers’ power, water and cost impacts, or keep fast-tracking them?",
     context:
-      "Executive Order 14318 (July 23, 2025) fast-tracks federal permits, land and financing for AI data centers over 100 megawatts. Oregon has an estimated 144 data centers receiving at least $450 million in property tax breaks this year,, and the governor paused data-center deals on state land through July 1, 2027 while a state advisory committee writes recommendations for the 2027 session.",
+      "Executive Order 14318 (July 23, 2025) fast-tracks federal permits, land and financing for AI data centers over 100 megawatts. Oregon has an estimated 144 data centers receiving at least $450 million in property tax breaks this year, and the governor paused data-center deals on state land through July 1, 2027 while a state advisory committee writes recommendations for the 2027 session.",
   },
 ];
 
@@ -1135,7 +1143,7 @@ topics.push({
 const HR1_HOUSE_NO = "Voted no on final House passage of H.R. 1 on July 3, 2025 (218–214), a vote on the whole package, including the Medicaid work rules, six-month renewals and SNAP cuts.";
 const ACA_HOUSE_YES = "Voted yes on January 8, 2026 on H.R. 1834, a three-year restoration of the enhanced premium tax credits; it passed 230–196 and awaits the Senate.";
 const TARIFF_HOUSE_YES = "Voted yes on February 11, 2026 on H.J.Res. 72 to end the national emergency behind the Canada tariffs; it passed 219–211.";
-const ICE_HOUSE_NO = "Voted no on June 9, 2026 on the Secure America Act’s $70 billion for ICE and Border Patrol through 2029; it passed 214–212.";
+const ICE_HOUSE_NO = "Voted no on June 9, 2026 on the Secure America Act, about $70 billion for ICE, Customs and Border Protection and the department through 2029; it passed 214–212.";
 const IRAN_HOUSE_YES = "Voted yes on July 23, 2026 on H.Con.Res. 89 directing the president to remove U.S. forces from hostilities with Iran (214–208), as on June 3.";
 const FOFA_HOUSE_NO = "Voted no on January 23, 2025 on the Fix Our Forests Act (H.R. 471), which passed 279–141.";
 const FOFA_HOUSE_YES = "Voted yes on January 23, 2025 on the Fix Our Forests Act (H.R. 471), which passed 279–141.";
@@ -1162,7 +1170,7 @@ topicStances.push(
   stance("jeff-merkley", "fed-tariffs", "supports", "Voted to end tariffs",
     "Voted yes on October 30, 2025 on S.J.Res. 88 to end the national emergency behind the global tariffs; it passed 51–47.", tariffSenate),
   stance("jeff-merkley", "fed-ice-funding", "opposes", "Voted no",
-    "Voted no on June 5, 2026 on the Secure America Act’s $70 billion for ICE and Border Patrol through 2029; it passed 52–47.", iceSenate),
+    "Voted no on June 5, 2026 on the Secure America Act, about $70 billion for ICE, Customs and Border Protection and the department through 2029; it passed 52–47.", iceSenate),
   stance("jeff-merkley", "fed-iran-war", "supports", "Voted to end involvement",
     "Voted yes on June 23, 2026 on H.Con.Res. 86 directing the president to remove U.S. forces from hostilities with Iran; it was agreed to 50–48.", iranSenate),
   stance("jeff-merkley", "fed-fix-our-forests", "partial", "Biomass markets bill",
@@ -1222,7 +1230,7 @@ topicStances.push(
   stance("cliff-bentz", "fed-tariffs", "opposes", "Voted: keep Canada tariffs",
     "Voted no on February 11, 2026 on H.J.Res. 72 to end the national emergency behind the Canada tariffs; it passed the House 219–211.", tariffHouse),
   stance("cliff-bentz", "fed-ice-funding", "supports", "Voted yes",
-    "Voted yes on June 9, 2026 on the Secure America Act’s $70 billion for ICE and Border Patrol through 2029; it passed 214–212.", iceHouse),
+    "Voted yes on June 9, 2026 on the Secure America Act, about $70 billion for ICE, Customs and Border Protection and the department through 2029; it passed 214–212.", iceHouse),
   stance("cliff-bentz", "fed-iran-war", "opposes", "Voted no",
     "Voted no on July 23, 2026 on H.Con.Res. 89 directing the president to remove U.S. forces from hostilities with Iran (214–208), as on June 3.", iranHouse),
   stance("cliff-bentz", "fed-fix-our-forests", "supports", "Voted yes", FOFA_HOUSE_YES, fofaHouse),
@@ -1271,7 +1279,7 @@ topicStances.push(
   stance("patti-adair", "fed-hr1-medicaid", "partial", "Keep tips, overtime breaks",
     "Would make no tax on tips, overtime and Social Security permanent and raise the child tax credit; she faults Bynum for voting against SNAP funding but does not address H.R. 1’s Medicaid or SNAP changes.", adairStatement),
   stance("patti-adair", "fed-ice-funding", "partial", "Backed funding compromise",
-    "Criticized Rep. Bynum’s February 3, 2026 vote against a bipartisan funding package that included a short Homeland Security extension; she has not said whether she would fund the $70 billion ICE expansion.", adairShutdown),
+    "Criticized Rep. Bynum’s February 3, 2026 vote against a bipartisan funding package that included a short Homeland Security extension; she has not said whether she would fund the $70 billion Secure America Act.", adairShutdown),
   stance("patti-adair", "fed-data-centers", "partial", "Data-center disclosure",
     "Would propose legislation requiring Big Tech to be transparent about data centers’ impacts on air quality, water quality and electricity costs; she does not say whether to limit or fast-track them.", adairStatement),
   stance("janelle-s-bynum", "fed-hr1-medicaid", "opposes", "Voted no", HR1_HOUSE_NO, hr1House),
@@ -1322,8 +1330,8 @@ topicStances.push(
 type StakeItem = RaceStakes["items"][number];
 const medicaidItem: StakeItem = {
   label: "Medicaid work rules",
-  text: "H.R. 1’s work-or-activity rules for adults 19–64 on the Oregon Health Plan start in 2027, with renewals every six months. OHA expects to check about 600,000 adults, says 100,000 to 200,000 could lose coverage, and puts the federal funding loss at $718 million to $1.4 billion a year.",
-  source: opbOhp,
+  text: "H.R. 1 requires adults 19–64 on the Oregon Health Plan to show 80 hours a month of work, school or volunteering from 2027 and to renew every six months. CMS says the rules are designed to promote self-sufficiency; CBO projects $317 billion in federal savings over ten years. OHA will check about 600,000 adults and says 100,000 to 200,000 could lose coverage.",
+  source: cboMedicaid,
 };
 const acaItem: StakeItem = {
   label: "ACA premium credits",
@@ -1336,9 +1344,9 @@ const fundingItem: StakeItem = {
   source: crHouse,
 };
 const iceItem: StakeItem = {
-  label: "ICE expansion",
-  text: "The Secure America Act, signed June 10, 2026, gives ICE $38.5 billion and Customs and Border Protection $26 billion through September 2029, without the detention and oversight conditions carried in annual spending bills. It followed a 76-day lapse in Homeland Security funding over enforcement rules.",
-  source: aicSecureAmerica,
+  label: "Immigration enforcement funding",
+  text: "Public Law 119-98, signed June 10, 2026, gives ICE $38.5 billion and Customs and Border Protection $26 billion through September 2029; ICE’s share covers hiring, removals, facilities and equipment including body-worn cameras. It passed the House 214–212 and the Senate 52–47, after the annual Homeland Security law that ended a funding lapse beginning February 14 left out ICE and the Border Patrol.",
+  source: secureAmericaLaw,
 };
 const iranItem: StakeItem = {
   label: "Iran war",
@@ -1347,13 +1355,13 @@ const iranItem: StakeItem = {
 };
 const tariffItem: StakeItem = {
   label: "Tariff power",
-  text: "The Supreme Court ruled 6–3 on February 20, 2026 that the emergency-powers law does not authorize tariffs. The administration ran a 10% surcharge to July 24 and then set 10–12.5% duties on about 60 countries under trade law; Congress can end, extend or rewrite those tariffs itself.",
-  source: scotusTariffs,
+  text: "The Supreme Court ruled 6–3 on February 20, 2026 that the emergency-powers law does not authorize tariffs. The administration ran a 10% surcharge to July 24 and then set 10–12.5% tariffs on 60 trading partners under trade law; Congress can end, extend or rewrite those tariffs itself.",
+  source: scotusLearning,
 };
 const forestsItem: StakeItem = {
   label: "Fix Our Forests Act",
-  text: "The bill passed the House 279–141 in January 2025 and a Senate committee 18–5 in October 2025 but has had no Senate floor vote; it would let 10,000-acre fireshed projects skip full review and give challengers 120 days to sue. The 2001 Roadless Rule was repealed in August 2026.",
-  source: fofaWiki,
+  text: "The bill passed the House 279–141 in January 2025 and cleared the Senate Agriculture Committee in October 2025 but has had no Senate floor vote; it would let fireshed projects up to 10,000 acres skip full review and give challengers 120 days to sue (150 in the Senate version). The Agriculture Department proposed rescinding the 2001 Roadless Rule on August 20, 2026.",
+  source: fofaBill,
 };
 const housingItem: StakeItem = {
   label: "Housing law to fund",
