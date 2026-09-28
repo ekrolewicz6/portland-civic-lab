@@ -19,6 +19,20 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="rcv-ranks-2026-09-28">September 28, 2026 · Correction: how many candidates you can rank (County Chair, Sheriff and both Auditors)</h2>
+        <p>
+          The guide said voters in every Multnomah County and Portland ranked
+          choice contest can rank up to six candidates. Six is the most the
+          county and city codes allow, but the ballot gives fewer ranks when
+          fewer candidates file. Leah Benson, the ranked choice voting project
+          manager at Multnomah County Elections, told the Lab that the County
+          Chair contest has four ranks, enough for its three filed candidates
+          plus one write-in, and that the 2024 Portland Auditor contest, with
+          one filed candidate, had two. The Chair page now says four. The
+          County Auditor, Sheriff and Portland Auditor contests each have one
+          filed candidate, so those pages now say two. County District 2,
+          with seven candidates, and Council Districts 3 and 4 still say six.
+        </p>
         <h2 id="cpp-context-2026-09-28">September 28, 2026 · Updated context: the Climate Protection Program case (Governor)</h2>
         <p>
           The governor page’s Climate Protection Program choice now explains
