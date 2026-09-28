@@ -19,6 +19,21 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="cpp-context-2026-09-28">September 28, 2026 · Updated context: the Climate Protection Program case (Governor)</h2>
+        <p>
+          The governor page’s Climate Protection Program choice now explains
+          what the program does, a cap on emissions from fossil fuels that
+          falls each year, and gives the case’s current status: the Court of
+          Appeals has let six environmental justice, climate and business
+          groups join the state in defending the program and agreed to
+          expedite the case, with briefing through December. The wording was
+          suggested by a climate group that is one of those six intervenors.
+          The Lab kept the facts that check against the court record and
+          independent reporting, dropped a line saying the program helps
+          Oregon meet its goals, which is what the two sides dispute, and did
+          not use the group’s date for its motion, which its own coalition
+          partners’ releases give differently.
+        </p>
         <h2 id="mcdonald-2026-09-27">September 27, 2026 · Candidate response: John McDonald (District 4)</h2>
         <p>
           John McDonald sent two more answers and his Facebook page. On the
