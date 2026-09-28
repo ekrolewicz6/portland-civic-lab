@@ -703,7 +703,7 @@ const governorTopics: ExtraTopic[] = [
     short: "Carbon cap",
     question: "Keep the Climate Protection Program's declining cap on fuel emissions?",
     context:
-      "The Environmental Quality Commission re-adopted the program November 21, 2024: emissions 50% below baseline by 2035 and 90% by 2050, with the first compliance period 2025–27. Nearly 30 business, utility and labor groups asked the Court of Appeals on April 16, 2026 to strike it down.",
+      "The program caps greenhouse gas emissions from fossil fuels used in Oregon and lowers the cap each year, to 50% below baseline by 2035 and 90% by 2050; the state re-adopted it in November 2024 after a court voided the first version on procedure. Nearly 30 business, utility and labor groups sued on April 16, 2026 to strike it down. The Court of Appeals has let six environmental justice, climate and business groups join the state’s defense and agreed to expedite the case, with briefing through December.",
   },
   {
     id: "gov-immigration-enforcement",
