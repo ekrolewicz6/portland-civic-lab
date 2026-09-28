@@ -19,6 +19,26 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="schimmel-2026-09-28">September 28, 2026 · Candidate response: Brian Schimmel (House District 29)</h2>
+        <p>
+          Brian Schimmel answered every question the Lab sent on September 22,
+          giving for each a goal, how he would get there and how he would
+          measure it. His housing, safety, taxes and roads columns now come
+          from those answers, each with its measures; the taxes column
+          previously showed only “Measurable results” from his Ballotpedia
+          survey. On the Legislature’s eight choices he now has four
+          positions (data-center rates, shelter funding, deflection and
+          wildfire) and four marked partial, because his answers set
+          conditions rather than a yes or no: another transportation tax
+          increase, holding back kicker money, new revenue for the budget gap
+          and new limits on federal immigration enforcement. At his request,
+          his background now says he is the Independent Party nominee and also
+          won the Republican nomination as a write-in, which the state and
+          county records confirm. He also asked the Lab to add education.
+          Because education is not one of the choices on any other
+          Legislature race, his answer on it appears on his page in his own
+          words rather than as a new board.
+        </p>
         <h2 id="braver-angels-2026-09-28">September 28, 2026 · Reader review: changes after a Braver Angels red-and-blue pair read the guide</h2>
         <p>
           Two readers from Braver Angels Oregon, one leaning right and one

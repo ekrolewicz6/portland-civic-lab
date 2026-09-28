@@ -414,7 +414,7 @@ export const legislativeRaces: Race[] = [
   race(
     "House",
     29,
-    "McLain emphasizes public education, infrastructure, civil rights and housing investment. Schimmel’s policy brief remains incomplete, so a full comparative conclusion would be premature.",
+    "McLain emphasizes public education, infrastructure, civil rights and housing investment. Schimmel emphasizes implementation, fiscal discipline and measurable results, and answered the Lab’s questions on each of the Legislature’s choices.",
     [
       c(
         "Susan McLain",
@@ -433,7 +433,7 @@ export const legislativeRaces: Race[] = [
         ),
         "Democrat",
       ),
-      pending("Brian Schimmel", "Republican · Independent"),
+      pending("Brian Schimmel", "Independent · Republican"),
     ],
   ),
   race(
