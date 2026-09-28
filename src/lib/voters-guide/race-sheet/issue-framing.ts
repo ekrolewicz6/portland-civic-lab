@@ -74,12 +74,12 @@ const state: Framing = {
       "The state budget is set every two years; the kicker, new taxes and cuts are the levers. A promise of better management is not a costed saving.",
   },
   climate: {
-    label: "Roads, transit and climate",
-    short: "Roads",
-    noun: "roads and climate",
+    label: "Roads, energy and climate",
+    short: "Roads, energy",
+    noun: "roads, energy and climate",
     question: "Where would they invest, and what would they restrict?",
     context:
-      "Transportation funding, the Climate Protection Program and the Interstate Bridge are state decisions with local effects.",
+      "Transportation funding, power rates and siting for large users such as data centers, the Climate Protection Program and the Interstate Bridge are state decisions with local effects.",
   },
 };
 

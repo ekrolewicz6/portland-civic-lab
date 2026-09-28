@@ -533,7 +533,7 @@ topicStances.push(
     smithPolicies),
 );
 
-/* What's at stake: sourced facts, the same block for every candidate in a race. */
+/* Decisions ahead: sourced facts, the same block for every candidate in a race. */
 const helmAppointed = record(
   "Clackamas County · Diana Helm appointed Clackamas County Commissioner",
   "https://www.clackamas.us/news/2025-05-19/diana-helm-appointed-clackamas-county-commissioner",

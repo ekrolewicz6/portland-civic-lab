@@ -19,6 +19,66 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="braver-angels-2026-09-28">September 28, 2026 · Reader review: changes after a Braver Angels red-and-blue pair read the guide</h2>
+        <p>
+          Two readers from Braver Angels Oregon, one leaning right and one
+          leaning left, read the governor, Senate, congressional and
+          Washington County pages looking for wording that takes a side. They
+          found the guide mostly balanced and pointed to specific places where
+          it was not. The Lab made these changes:
+        </p>
+        <ul>
+          <li>
+            “What’s at stake” is now “Decisions ahead” on every race page. The
+            old heading read as alarming.
+          </li>
+          <li>
+            Congressional District 5: Patti Adair’s tax button now reads “No
+            tax: tips, overtime,” and her line names Social Security too, as
+            her statement does. Her housing column now shows her September 15,
+            2026 vote as a Deschutes County commissioner for $275,000 to keep
+            the Juniper Ridge safe stay area open through June 2027.
+          </li>
+          <li>
+            Congressional pages: the Medicaid card now gives the purpose CMS
+            states for the work rules and CBO’s estimate of the federal
+            savings, next to Oregon’s coverage estimate, and cites CBO instead
+            of a news story. The “ICE expansion” card is now “Immigration
+            enforcement funding,” cites the law itself instead of an advocacy
+            group’s fact sheet, and no longer says what the law leaves out.
+            The immigration board’s question no longer calls the law an
+            expansion. The tariff and forests cards now cite the Supreme Court
+            opinion and the bill instead of Wikipedia.
+          </li>
+          <li>
+            Correction: the forests card and board said the 2001 Roadless Rule
+            was repealed in August 2026. The Agriculture Department proposed
+            rescinding it on August 20, 2026; comments close October 6, and no
+            final rule has been published. The card also now notes that the
+            120-day limit on lawsuits is in the House bill and the Senate
+            version allows 150.
+          </li>
+          <li>
+            Governor: Tina Kotek’s taxes column came from her platform’s
+            consumer-pricing items; it now comes from what she said about
+            taxes at the September 24 business forum. The state column
+            “Roads, transit and climate” is now “Roads, energy and climate,”
+            because candidates for governor and the Legislature discuss data
+            centers as a question of power supply and rates. Kotek’s line in
+            that column now leads with clean energy.
+          </li>
+          <li>
+            Washington County Chair: Pam Treece’s and Nafisa Fai’s entries on
+            the vehicle fee no longer name each other, and the fee card no
+            longer names who voted no. Each gives the 3–1 result.
+          </li>
+        </ul>
+        <p>
+          The Lab did not adopt a suggestion to pair left- and right-leaning
+          news sources on each card. It moves each card to the primary record
+          (the law, the court, the agency) and uses reporting only where no
+          primary record exists.
+        </p>
         <h2 id="rcv-ranks-2026-09-28">September 28, 2026 · Correction: how many candidates you can rank (County Chair, Sheriff and both Auditors)</h2>
         <p>
           The guide said voters in every Multnomah County and Portland ranked
