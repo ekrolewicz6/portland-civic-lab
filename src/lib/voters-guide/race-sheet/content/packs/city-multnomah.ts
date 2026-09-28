@@ -140,7 +140,7 @@ const cityRcv: Evidence = {
   url: "https://www.portland.gov/vote/ranked-choice-voting",
   kind: "Election authority",
   date: "Checked September 21, 2026",
-  note: "States that the auditor is elected citywide by single-winner ranked choice voting and that voters may rank up to six candidates.",
+  note: "States that the auditor is elected citywide by single-winner ranked choice voting and that voters may rank up to six candidates. Six is a maximum: Multnomah County Elections, which runs the City’s elections, told the Lab by email on September 28, 2026 that the ballot gives fewer ranks when fewer candidates file, as in the 2024 auditor contest, which had one filed candidate and two ranks.",
 };
 const greshamElections: Evidence = {
   label: "City of Gresham · Elections",
@@ -152,7 +152,7 @@ const greshamElections: Evidence = {
 const voteForOne = (raceId: string): BallotInstruction => ({ raceId, text: "You vote for one candidate.", source: greshamElections });
 const RANKED_NOTE =
   "Ranking more people never hurts your first choice. Later choices count only if an earlier one is eliminated.";
-const ranked = (raceId: string): BallotInstruction => ({ raceId, text: "You rank up to six candidates for one seat.", note: RANKED_NOTE, source: cityRcv });
+const ranked = (raceId: string, text = "You rank up to six candidates for one seat."): BallotInstruction => ({ raceId, text, note: RANKED_NOTE, source: cityRcv });
 /* Gresham filing packets: the City posts each candidate's SEL 101 and 100-word statement. */
 const packet = (slug: string): string => `https://www.greshamoregon.gov/globalassets/government/candidate-${slug}.pdf`;
 
@@ -220,7 +220,7 @@ contact(
 );
 primary.push({ candidateId: "simone-rede", sourceUrl: `${PAMPHLET}#page=52` });
 portraits["simone-rede"] = portrait("simone-rede", 52);
-ballots.push(ranked("portland-auditor"));
+ballots.push(ranked("portland-auditor", "You rank up to two: the one filed candidate, plus one write-in if you want."));
 choice.push({
   raceId: "portland-auditor",
   text: "One candidate appears on the city’s checked register. Even uncontested, the office’s choices matter: which audits come first, whether recommendations get done, and how the auditor keeps independence from the bureaus it reviews.",

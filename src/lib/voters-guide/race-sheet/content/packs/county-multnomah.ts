@@ -148,13 +148,13 @@ const countyRcv: Evidence = {
   url: "https://multco.us/info/ranked-choice-voting-rcv",
   kind: "Election authority",
   date: "Checked September 21, 2026",
-  note: "States that voters “can rank up to 6 candidates” and that the County Chair, Auditor, Sheriff and District 2 Commissioner contests use single-winner ranked choice voting in November 2026.",
+  note: "States that voters “can rank up to 6 candidates” and that the County Chair, Auditor, Sheriff and District 2 Commissioner contests use single-winner ranked choice voting in November 2026. Six is the most the county code allows: Leah Benson, the county’s ranked choice voting project manager, told the Lab by email on September 28, 2026 that the ballot gives fewer ranks when fewer candidates file, enough for every filed candidate plus one write-in, so the Chair contest has four.",
 };
 const RANKED_NOTE =
   "Ranking more people never hurts your first choice. Later choices count only if an earlier one is eliminated.";
-const ranked = (raceId: string): BallotInstruction => ({
+const ranked = (raceId: string, text = "You rank up to six candidates for one seat."): BallotInstruction => ({
   raceId,
-  text: "You rank up to six candidates for one seat.",
+  text,
   note: RANKED_NOTE,
   source: countyRcv,
 });
@@ -384,7 +384,7 @@ contact(
 );
 primary.push({ candidateId: "shannon-singleton", sourceUrl: `${PAMPHLET}#page=32` });
 portraits["shannon-singleton"] = portrait("shannon-singleton", 32);
-ballots.push(ranked("multnomah-chair"));
+ballots.push(ranked("multnomah-chair", "You rank up to four: all three filed candidates, plus one write-in if you want."));
 choice.push({
   raceId: "multnomah-chair",
   text: "All three criticize current county outcomes. The differences are in the remedy: one stresses service-system experience and collaboration, one implementation, contract accountability and tax relief, and one a more fundamental reset of how the county is managed.",
@@ -941,7 +941,7 @@ contact(
 roles.push({ candidateId: "nicole-pexton", role: "Chief audit executive", from: "background" });
 primary.push({ candidateId: "nicole-pexton", sourceUrl: `${PAMPHLET}#page=38` });
 portraits["nicole-pexton"] = portrait("nicole-pexton", 38);
-ballots.push(ranked("multnomah-auditor"));
+ballots.push(ranked("multnomah-auditor", "You rank up to two: the one filed candidate, plus one write-in if you want."));
 choice.push({
   raceId: "multnomah-auditor",
   text: "One candidate appears on the county’s checked filing list. An uncontested race still deserves a look at what the office would audit first, how fast reports would arrive and how open recommendations would be tracked.",
@@ -1007,7 +1007,7 @@ contact(
 );
 primary.push({ candidateId: "nicole-morrisey-o-donnell", sourceUrl: `${PAMPHLET}#page=38` });
 portraits["nicole-morrisey-o-donnell"] = portrait("nicole-morrisey-o-donnell", 38);
-ballots.push(ranked("multnomah-sheriff"));
+ballots.push(ranked("multnomah-sheriff", "You rank up to two: the one filed candidate, plus one write-in if you want."));
 choice.push({
   raceId: "multnomah-sheriff",
   text: "One candidate appears on the county’s checked filing list. An uncontested race still warrants scrutiny: which independent jail-review recommendations remain open, how staffing and crime trends are measured, and what the next term would change.",
