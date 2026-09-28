@@ -142,6 +142,13 @@ const mcdonaldEmail2: Evidence = {
   date: "Received September 24, 2026",
   note: NOTE,
 };
+const mcdonaldEmail3: Evidence = {
+  label: "McDonald · third emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#mcdonald-2026-09-27",
+  kind: "Candidate statement",
+  date: "Received September 26 and 27, 2026",
+  note: NOTE,
+};
 const mcdonaldEmail: Evidence = {
   label: "McDonald · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#mcdonald-2026-09-23",
@@ -289,6 +296,13 @@ export const topicStancesD4: TopicStance[] = [
   swept("john-mcdonald", "moda", "supports", "Backs the $120M plan",
     "Fully supports the City’s current proposal of $120 million up front and $275 million in ongoing maintenance over a 20-year lease, and expects other revenue to come with the teams’ success.",
     mcdonaldEmail),
+  // From his replies of September 26 and 27, 2026.
+  swept("john-mcdonald", "street-fee", "supports", "Keep the monthly fee",
+    "Says the City should keep the street repair fee; asked which fee he meant, he confirmed on September 26 that he supports keeping the monthly transportation utility fee.",
+    mcdonaldEmail3),
+  swept("john-mcdonald", "police-staffing", "supports", "Fill 68 vacancies now",
+    "Would fill the Police Bureau’s 68 vacant sworn positions immediately (his count) and push to hire more detectives to investigate graffiti and street racing.",
+    mcdonaldEmail3),
 
   /* ── Matt Schulte ───────────────────────────────────────────────────── */
   // From his emailed reply of September 24, 2026; Moda, camps and Street Response replace earlier readings.

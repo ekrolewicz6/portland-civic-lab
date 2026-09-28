@@ -19,6 +19,19 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="mcdonald-2026-09-27">September 27, 2026 · Candidate response: John McDonald (District 4)</h2>
+        <p>
+          John McDonald sent two more answers and his Facebook page. On the
+          street repair fee, he first wrote that the City should keep it and
+          described a per-square-foot charge on street-opening permits; asked
+          which fee he meant, he confirmed on September 26 that he supports
+          keeping the monthly transportation utility fee, and that entry is
+          now on record. On police staffing, he would fill the Police Bureau’s
+          68 vacant sworn positions immediately, by his count, and push to
+          hire more detectives for graffiti and street racing. Both appear on
+          his brief in his words; the Facebook page joins his contacts. The
+          replies are kept on file.
+        </p>
         <h2 id="mcdonald-2026-09-26">September 26, 2026 · Candidate response: John McDonald (District 4)</h2>
         <p>
           John McDonald sent his campaign site, johnforportland.com. His page

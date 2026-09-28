@@ -575,7 +575,10 @@ const councilContacts: CandidateContact[] = [
 
   entry(
     "john-mcdonald",
-    [web("https://www.johnforportland.com/", "questionnaire")],
+    [
+      web("https://www.johnforportland.com/", "questionnaire"),
+      social("Facebook", "https://www.facebook.com/profile.php?id=100094184755943", "questionnaire"),
+    ],
     [
       pamphlet(63),
       {
@@ -583,7 +586,7 @@ const councilContacts: CandidateContact[] = [
         url: "https://www.johnforportland.com/",
         kind: "Candidate statement",
         date: "Sent by the candidate September 26, 2026; read the same day",
-        note: "The candidate sent this address in reply to the Lab’s questions. The site lists a mailing address and no email or phone.",
+        note: "The candidate sent this address, and on September 27 his Facebook page, in reply to the Lab’s questions. The site lists a mailing address and no email or phone.",
       },
     ],
   ),
