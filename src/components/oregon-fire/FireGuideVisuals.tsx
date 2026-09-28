@@ -21,13 +21,13 @@ export function GuidePanorama() {
 }
 
 const landscapeExamples = [
-  { kind:"pine", name:"Dry pine forests", text:"Recurring surface fire can help keep space beneath large trees." },
-  { kind:"wet", name:"Western forests", text:"Local moisture and history shape very different fire patterns." },
-  { kind:"oak", name:"Oak & prairie", text:"Keeping habitat open can be the purpose of burning." },
-  { kind:"sage", name:"Sagebrush", text:"Repeated fire and invasive grasses can change the habitat." },
+  { kind:"pine", name:"Dry pine forests", question:"Keep large trees", text:"Lower surface fire can leave big trees standing. Connected fuels may carry flames upward." },
+  { kind:"wet", name:"Western forests", question:"Read the local history", text:"Some places burned often; others seldom did. Moisture and terrain make a difference." },
+  { kind:"oak", name:"Oak & prairie", question:"Keep habitat open", text:"Fire can hold back woody plants. More trees would not always be a better outcome." },
+  { kind:"sage", name:"Sagebrush", question:"Watch repeated fire", text:"Invasive annual grasses can feed more frequent fire and alter habitat." },
 ];
 export function LandscapeOverview() {
-  return <figure className="fire-landscape-overview"><div className="fire-landscape-strip">{landscapeExamples.map(l=><div key={l.kind}><LandscapeIllustration kind={l.kind} /><h3>{l.name}</h3><p>{l.text}</p></div>)}</div><figcaption>Four starting points for understanding the differences. Local vegetation and objectives determine the next questions.</figcaption></figure>;
+  return <figure className="fire-landscape-overview"><div className="fire-landscape-strip">{landscapeExamples.map((l,i)=><div key={l.kind}><LandscapeIllustration kind={l.kind} /><span className="fire-landscape-number">{String(i+1).padStart(2,"0")} / {l.question}</span><h3>{l.name}</h3><p>{l.text}</p></div>)}</div><figcaption>Four starting points. The right goal depends on the vegetation, history and people at the actual place.</figcaption></figure>;
 }
 
 export function HistoryVisual() {

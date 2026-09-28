@@ -24,8 +24,8 @@ function Scene({ dense }: { dense: boolean }) {
 export default function FireMechanicsVisual() {
   return <figure className="fire-mechanics">
     <div className="fire-mechanics-pair">
-      <div><span className="fire-visual-label">More connected fuel</span><Scene dense /><h3>Flames have a path upward.</h3><p>Shrubs and small trees can carry fire into higher branches. These are called <strong>ladder fuels</strong>.</p></div>
-      <div><span className="fire-visual-label">Fewer connections</span><Scene dense={false} /><h3>More space below the crowns.</h3><p>Removing some small trees and burning surface fuel can reduce that path. Keeping flames low still depends on the conditions.</p></div>
+      <div><span className="fire-visual-label">01 / Connected fuel</span><Scene dense /><div className="fire-fuel-sequence" aria-label="Surface fire may climb through shrubs and small trees into crowns"><span>Ground</span><b>→</b><span>Shrubs</span><b>→</b><span>Branches</span><b>→</b><span>Crown</span></div><h3>Flames have a path upward.</h3><p>Shrubs and small trees can carry fire into higher branches. These are called <strong>ladder fuels</strong>.</p></div>
+      <div><span className="fire-visual-label">02 / Fewer connections</span><Scene dense={false} /><div className="fire-fuel-sequence fire-fuel-separated" aria-label="A gap separates lower flames from tree crowns"><span>Ground fire</span><b>↛</b><span>Space</span><b>↛</b><span>Crown</span></div><h3>More space below the crowns.</h3><p>Removing some small trees and burning surface fuel can reduce that path. Keeping flames low still depends on the conditions.</p></div>
     </div>
     <figcaption>Wind, slope, and fuel moisture also affect fire behavior. <a href="https://extension.oregonstate.edu/catalog/em-9341-fire-behavior">How fire behaves: OSU Extension ↗</a></figcaption>
   </figure>;

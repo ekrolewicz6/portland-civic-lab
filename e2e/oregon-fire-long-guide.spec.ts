@@ -86,6 +86,28 @@ test("legacy guide views preserve all their query values in the atlas",async({pa
   await expect(page.locator(".fire-long-chapter")).toHaveCount(8);
 });
 
+test("the documentary visuals and videos support the story at desktop and mobile sizes", async ({page}) => {
+  await page.route("**/api/oregon-fire/records?*",route=>route.fulfill({status:503,json:{error:"Records temporarily unavailable"}}));
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto("/oregon-fire");
+  await expect(page.locator(".fire-hero-image-pair img")).toHaveCount(2);
+  await expect(page.locator(".fire-hero-evidence")).toContainText("NASA Terra MODIS");
+  expect(await page.locator(".fire-long-hero h1").evaluate(el=>parseFloat(getComputedStyle(el).fontSize))).toBeLessThan(100);
+  expect(await page.locator(".fire-long-chapter h2").first().evaluate(el=>parseFloat(getComputedStyle(el).fontSize))).toBeLessThan(65);
+  await expect(page.locator(".fire-video-feature")).toHaveCount(2);
+  await expect(page.locator(".fire-video-feature iframe")).toHaveCount(0);
+  await expect(page.getByRole("link",{name:"Watch on YouTube"})).toHaveCount(2);
+  await page.getByRole("button",{name:"Play Why wildfires have gotten worse—and what we can do about it"}).click();
+  await expect(page.locator(".fire-video-feature iframe")).toHaveCount(1);
+  await expect(page.locator(".fire-video-feature iframe")).toHaveAttribute("title",/Why wildfires have gotten worse/);
+  await page.setViewportSize({width:390,height:844});
+  await page.locator("#understand").scrollIntoViewIfNeeded();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+  await expect(page.locator(".fire-landscape-strip>div")).toHaveCount(4);
+  await page.locator("#burn-windows").scrollIntoViewIfNeeded();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+});
+
 
 test("the cost example distinguishes actual possibilities, their average, and break-even", async ({page}) => {
   await page.goto("/oregon-fire");

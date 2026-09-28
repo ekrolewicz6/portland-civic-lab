@@ -47,7 +47,7 @@ export const FIRE_LESSONS: FireLesson[] = [
   },
   {
     slug: "different-landscapes", anchor: "understand", label: "The place", title: "Oregon has more than one relationship with fire.",
-    paragraphs: ["In many dry pine forests, recurring surface fires helped keep stands open. In oak and prairie habitat, fire can help keep shrubs and trees from taking over. Some wetter forests have long fire intervals; western Oregon also contains places with much more frequent fire histories.", "Sagebrush adds another complication: invasive annual grasses can encourage repeated fire and change habitat. Choosing what to do starts with the plants, local history and conditions of the place—not a rule for the whole state."],
+    paragraphs: ["In many dry pine forests, recurring surface fires helped keep stands open. In oak and prairie habitat, fire can help keep shrubs and trees from taking over. Some wetter forests have long fire intervals; western Oregon also contains places with much more frequent fire histories.", "Across a landscape, patches with different vegetation, prior fires and treatments may respond differently to the next fire. Weather and terrain matter too. In sagebrush, invasive annual grasses can encourage repeated fire and change habitat. Choosing what to do starts with the plants, local history and conditions of the place—not a rule for the whole state."],
     takeaway: "Choose the habitat and the outcome before choosing the treatment.",
     transition: "To understand the conditions we see today, we also need to understand how they developed.",
     sources: ["ecology", "history", "finley", "sage"], question: "Why might keeping a prairie open and keeping a forest’s large trees alive call for different measures of success?",
