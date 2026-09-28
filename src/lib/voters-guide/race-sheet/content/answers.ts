@@ -157,6 +157,8 @@ export const answers: CandidateAnswer[] = [
     "Journalism",
     "Here’s some of my most recent journalism: “Commuter rail’s price of protection” (Trains) and “In Vancouver, Pride Became An Answer To Fear” (OutSFL, August 26, 2026).",
   ),
+  { candidateId: "john-mcdonald", question: "Street repair fee", text: "Yes, I support keeping the monthly fee.", received: "2026-09-26" },
+  { candidateId: "john-mcdonald", question: "Police staffing", text: "At last count, PPB had 68 vacant sworn officer positions. Those should be filled immediately. I would also push for hiring more detectives to investigate graffiti bandits and street racers.", received: "2026-09-27" },
   colemanCox(
     "Rent and homes",
     "I serve as VChair on the City of Gresham Community Development and Housing Committee. In this role we identify programs that support pathways to homeownership, rental assistance, home mending, adapting and DIY programs. [...] I would like to support bringing the vacant storefronts back to life with thriving new business or the expansion of existing business.",
