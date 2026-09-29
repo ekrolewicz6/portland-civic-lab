@@ -37,7 +37,8 @@ export default function ResearchLog() {
           county records confirm. He also asked the Lab to add education.
           Because education is not one of the choices on any other
           Legislature race, his answer on it appears on his page in his own
-          words rather than as a new board.
+          words rather than as a new board. On September 29 his photo was
+          replaced with the portrait he sent.
         </p>
         <h2 id="braver-angels-2026-09-28">September 28, 2026 · Reader review: changes after a Braver Angels red-and-blue pair read the guide</h2>
         <p>

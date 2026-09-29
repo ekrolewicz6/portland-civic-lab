@@ -32,3 +32,4 @@ Education is not a board for any Legislature race, so it is not added as a board
 ## No clarification requested
 Each answer was specific enough to place; conditional answers are recorded as "partial" with what he did not say.
 - Role on his card: "Forest Grove city councilor" (City of Forest Grove directory lists him as Councilor, term 2025–2029: https://www.forestgrove-or.gov/directory.aspx?EID=63).
+- Photo: "Personal image2.jpg" (1024x1203 JPEG, a painted-style portrait) reached the Lab on September 29 when Edan pasted it into the working session; resized to 480x564 WebP and credited "Portrait provided by the campaign". Manifest entry added.

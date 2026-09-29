@@ -293,6 +293,16 @@
       "file": "public/images/voters-guide/2026/guy-frankenstein.webp",
       "sha256": "b88b9ffd3dc8a95ede0496ece6b27579150e994497f541ad3a6cd8b700b48dd6",
       "sourceAssetSha256": "74fb1c499a96c025f5ffb43f18b2c77648bc3d39cdfe2fa51c3b4f5d14e48e98"
+    },
+    {
+      "id": "brian-schimmel",
+      "sourceUrl": "https://www.portlandciviclab.org/voters-guide/research-log#schimmel-2026-09-28",
+      "credit": "Portrait provided by the campaign \u00b7 September 28, 2026",
+      "reviewed": "2026-09-29",
+      "file": "public/images/voters-guide/2026/brian-schimmel.webp",
+      "sha256": "738ec4cc8f15c5670cca253eb1e812314e509a22c00e05ceeed032c3affbff0b",
+      "sourceAssetSha256": "33ed51090b7cde04896743f6027f92aa5d03c4fa5c828622adca82b933f95fa1",
+      "note": "Sent by the candidate as an email attachment (\"Personal image2.jpg\") on September 28, 2026 and forwarded by Edan; a painted-style portrait, resized to 480 px wide."
     }
   ]
 }
