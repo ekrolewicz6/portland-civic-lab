@@ -825,7 +825,7 @@ contacts.push(
     [site("Schimmel · campaign site", "https://brianschimmel.org/", "The “Get In Touch” button opens the campaign email; the header links five profiles.")]),
 );
 primary.push({ candidateId: "susan-mclain", sourceUrl: mclainPriorities.url }, { candidateId: "brian-schimmel", sourceUrl: schimmelEmail.url });
-roles.push({ candidateId: "susan-mclain", role: "Incumbent representative; former teacher", from: "background" }, { candidateId: "brian-schimmel", role: "Qualified general-election candidate", from: "background" });
+roles.push({ candidateId: "susan-mclain", role: "Incumbent representative; former teacher", from: "background" }, { candidateId: "brian-schimmel", role: "Forest Grove city councilor", from: "background" });
 ballots.push(ballot("oregon-state-house-29"));
 districts.push(district("oregon-state-house-29", "HD29", "Forest Grove, Cornelius, Dilley, Gaston and the western edge of Hillsboro."));
 choices.push(choice("oregon-state-house-29", "One candidate leads with public education, infrastructure, civil rights and housing investment; the other with implementation, fiscal discipline and measurable results. The boards below set her votes beside his written answers on the Legislature’s eight choices."));
