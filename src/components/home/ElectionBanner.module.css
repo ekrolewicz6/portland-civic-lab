@@ -6,7 +6,6 @@
   display: block;
   color: #fff;
   background: var(--color-canopy-mid);
-  text-decoration: none;
   transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .banner::before {
@@ -22,18 +21,46 @@
 .banner:active {
   transition-duration: 100ms;
 }
-.banner:focus-visible {
-  outline: 2px solid var(--color-ember-bright);
-  outline-offset: -4px;
-}
-
 .shell {
   display: flex;
   align-items: center;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 6px 12px;
   min-height: 56px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+.guideLink {
+  display: flex;
+  flex: 1 1 100%;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+.guideLink:focus-visible,
+.financeLink:focus-visible {
+  outline: 2px solid var(--color-ember-bright);
+  outline-offset: 3px;
+}
+.financeLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 12px;
+  color: var(--color-ember-bright);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: inset 0 0 0 1px rgba(224, 168, 112, 0.4);
+  transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.financeLink:hover {
+  background: rgba(224, 168, 112, 0.13);
 }
 
 .mark {
@@ -104,14 +131,14 @@
   white-space: nowrap;
   transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-.banner:hover .cta {
+.guideLink:hover .cta {
   background: rgba(255, 255, 255, 0.14);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
 }
 .cta svg {
   transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-.banner:hover .cta svg {
+.guideLink:hover .cta svg {
   transform: translateX(3px);
 }
 .cta span {
@@ -120,6 +147,11 @@
 
 @media (min-width: 640px) {
   .shell {
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+  .guideLink {
+    flex-basis: auto;
     gap: 16px;
   }
   .mark,
@@ -128,18 +160,21 @@
     display: inline-flex;
   }
   .copy {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 14px;
+    gap: 3px;
   }
   .cta {
     padding: 0 14px;
   }
+}
+@media (min-width: 1024px) {
+  .copy {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 14px;
+  }
   .cta span {
     display: inline;
   }
-}
-@media (min-width: 1024px) {
   .title {
     font-size: 16px;
   }
@@ -147,11 +182,12 @@
 
 @media (prefers-reduced-motion: reduce) {
   .banner,
+  .financeLink,
   .cta,
   .cta svg {
     transition: none;
   }
-  .banner:hover .cta svg {
+  .guideLink:hover .cta svg {
     transform: none;
   }
 }
