@@ -19,6 +19,27 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="chair-debate-2026-09-28">September 28, 2026 · Debate: Multnomah County Chair (City Club of Portland and KOIN 6)</h2>
+        <p>
+          The Lab worked from a transcript of the September 28 chair debate,
+          which had no speaker labels. Each answer was attributed from the
+          announced order, the moderators’ calls and the candidate’s own
+          references; the attribution table is in the Lab’s research files.
+          Julia Brim-Edwards now has positions on the city-county agreement
+          (partial: joint goals first, without saying whether one government
+          should run shelters) and universal preschool (supports). Sharon
+          Meieran’s Moda Center and preschool entries now use her debate
+          answers, which extend what she said on a July podcast; both stay
+          partial. Shannon Singleton’s preschool entry moves from partial to
+          supports, because at the debate she said the county must carry out
+          the voters’ promise of free universal preschool. The chair page has
+          a new board on full-time office attendance for county staff, which
+          the moderators asked all three candidates; the chair sets
+          workforce rules, so the board does not appear for District 2.
+          Brim-Edwards’s budget answer and two of Singleton’s answers add
+          “how” steps to their columns. Claims the candidates made about each
+          other were not used.
+        </p>
         <h2 id="schimmel-2026-09-28">September 28, 2026 · Candidate response: Brian Schimmel (House District 29)</h2>
         <p>
           Brian Schimmel answered every question the Lab sent on September 22,
