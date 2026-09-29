@@ -20,6 +20,7 @@ def run():
     data = json.loads(APP.read_text())
     assert digest(APP) == digest(BASE / 'data.json')
     payments = rows('cash-payments.csv')
+    assert not {'purpose_description', 'source_raw_file', 'street_address'} & set(payments[0])
     groups = rows('payee-record-groups.csv')
     relationships = rows('payee-candidate-ledger.csv')
     names = rows('reported-name-groups.csv')

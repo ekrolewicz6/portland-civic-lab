@@ -95,7 +95,8 @@ def run():
     hidden = [row for row in rows if row['disclosure']]
     assert cents(visible) + cents(hidden) == cents(rows)
 
-    ledger = [{key: row[key] for key in ['transaction_id','transaction_date','filed_date','committee_id','candidate','district','entity_id','entity_name','identity_status','is_disclosure_category','book_type','amount_cents','purpose_codes','purpose_description','purpose_group','city','state','source_raw_file','source_row']} for row in rows]
+    # Public evidence excludes unrestricted descriptions and private raw-file paths.
+    ledger = [{key: row[key] for key in ['transaction_id','transaction_date','filed_date','committee_id','candidate','district','entity_id','entity_name','identity_status','is_disclosure_category','book_type','amount_cents','purpose_codes','purpose_group','city','state','source_row']} for row in rows]
     ledger.sort(key=lambda row: (row['transaction_date'], row['transaction_id']))
 
     by_entity = defaultdict(list)

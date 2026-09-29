@@ -22,7 +22,7 @@ async function capture(page: Page, id: string, kind: string): Promise<Artifact> 
   const text = await page.locator('body').innerText();
   if (/access denied|request rejected|service unavailable/i.test(text) || text.length < 500) throw new Error('Public page unavailable or incomplete');
   const rows = await page.locator('tr').evaluateAll(trs => trs.map(tr => Array.from(tr.querySelectorAll(':scope > td, :scope > th')).map(td => td.textContent?.replace(/\s+/g, ' ').trim() ?? '')).filter(row => row.length));
-  const links = await page.locator('a').evaluateAll(anchors => anchors.map(a => ({ text: a.textContent?.trim(), href: a.href })));
+  const links = await page.locator('a').evaluateAll(anchors => anchors.map(a => ({ text: a.textContent?.trim(), href: (a as HTMLAnchorElement).href })));
   const retrievedAt = new Date().toISOString();
   const data = JSON.stringify({ committeeId: id, kind, source: cleanUrl(page.url()), retrievedAt, text, rows, links: links.map(l => ({ ...l, href: cleanUrl(l.href) })) }, null, 2);
   const checksum = hash(data);
@@ -70,7 +70,7 @@ async function run() {
           const profileText = await page.locator('body').innerText();
           if (!/Statement of Organization|Committee Information|Filer Information/.test(profileText) || !profileText.includes(id)) { writeFileSync(resolve(root, `failure-${id}.txt`), profileText); throw new Error('No unique profile returned for committee ID'); }
           item.artifacts.profile = await capture(page,id,'profile'); save(manifest);
-          const links = await page.locator('a').evaluateAll(anchors => anchors.map(a => ({ text: a.textContent?.trim(), href: a.href })));
+          const links = await page.locator('a').evaluateAll(anchors => anchors.map(a => ({ text: a.textContent?.trim(), href: (a as HTMLAnchorElement).href })));
           for (const [kind, token] of [['account2026','publicAccountSummary'],['history','committeeSearchSOOHistory'],['people','personAssocitedCommittee'],['elections','electionActivityLog']] as const) {
             if ((kind!=='account2026' || item.artifacts.account2025 || item.unavailable?.includes('account2025')) && item.artifacts[kind] && existsSync(resolve(root,item.artifacts[kind].path)) && hash(readFileSync(resolve(root,item.artifacts[kind].path)))===item.artifacts[kind].sha256) continue;
             const link = links.find(l => l.href.includes(token));

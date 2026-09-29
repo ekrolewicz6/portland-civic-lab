@@ -35,7 +35,7 @@ async function run(){
       await Promise.all([page.waitForNavigation({waitUntil:'load'}),page.locator('input[name=search]').first().click()]);await ready(page);
       const text=await page.locator('body').innerText();
       writeFileSync(root+'/search-result.txt',text);writeFileSync(root+'/search-result.html',await page.content());
-      const retained=await page.locator('a').evaluateAll(links=>links.some(a=>{try{return new URL(a.href).searchParams.get('cneSearchIndependentInd')==='I';}catch{return false;}}));
+      const retained=await page.locator('a').evaluateAll(links=>links.some(a=>{try{return new URL((a as HTMLAnchorElement).href).searchParams.get('cneSearchIndependentInd')==='I';}catch{return false;}}));
       if(!retained)throw Error('Independent-spending search criterion was not retained');
       const match=text.match(/Results\s*:\s*([\d,]+)\s+records found/i);if(!match)throw Error('Search count unavailable');
       p.count=Number(match[1].replaceAll(',',''));event({type:'search_count',start:p.start,end:p.end,count:p.count});
@@ -73,7 +73,7 @@ async function run(){
           if(text.includes('ORESTAR does not support multiple tabs'))throw Error('Single-tab requirement was not satisfied');
           if(!new RegExp('Transaction ID\\s*:\\s*'+id+'\\b').test(text))throw Error('Transaction detail identity mismatch');
           const tables=await detail.locator('tr').evaluateAll(rows=>rows.map(r=>Array.from(r.querySelectorAll(':scope > td,:scope > th')).map(c=>c.textContent?.replace(/\s+/g,' ').trim()??'')).filter(r=>r.length));
-          const links=await detail.locator('a').evaluateAll(a=>a.map(x=>({text:x.innerText,href:x.href})));
+          const links=await detail.locator('a').evaluateAll(a=>a.map(x=>({text:x.textContent??'',href:(x as HTMLAnchorElement).href})));
           const content=JSON.stringify({transactionId:id,retrievedAt:new Date().toISOString(),source:clean(detail.url()),text,rows:tables,links:links.map(l=>({...l,href:l.href.startsWith('http')?clean(l.href):l.href}))},null,2);
           const path=root+'/transaction-'+id+'-'+hash(content).slice(0,12)+'.json';writeFileSync(path,content);writeFileSync(path.replace('.json','.html'),await detail.content());
           item.path=path;item.sha256=hash(content);item.status='complete';delete item.error;save(m);event({type:'detail_complete',id,path,sha256:item.sha256});console.log(id+': complete');consecutiveFailures=0;break;

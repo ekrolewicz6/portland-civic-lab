@@ -13,7 +13,7 @@ async function run() {
     await page.locator('input[name=submit][value=Submit]').click();
     await page.waitForLoadState('domcontentloaded');
     const text = await page.locator('body').innerText();
-    const links = await page.locator('a').evaluateAll(elements => elements.map(a => ({ text: a.textContent?.trim(), href: a.href })));
+    const links = await page.locator('a').evaluateAll(elements => elements.map(a => ({ text: a.textContent?.trim(), href: (a as HTMLAnchorElement).href })));
     writeFileSync(resolve(out, 'profile.html'), await page.content());
     writeFileSync(resolve(out, 'profile.json'), JSON.stringify({ url: page.url(), text, links }, null, 2));
     console.log(JSON.stringify({ text, links }, null, 2));

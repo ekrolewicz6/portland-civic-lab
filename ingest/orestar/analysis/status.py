@@ -61,7 +61,12 @@ def run():
         'browserPolicy':'Headless by default; no automatic visible fallback. Pause source collection if headless is rejected.',
         'retryPolicy':'One ORESTAR collector and active page; at most three attempts with increasing delay; stop three consecutively failing detail workflows. Preserve immutable partitions and hashes. Do not bypass access controls.',
         'remainingProgramme':'Statewide profile/balance coverage, fully reviewed entity resolution and associations, certified outcomes, neighborhood denominators, public-payment-level reconciliation and governing-record investigations remain incomplete.'}
-    for path in [RESEARCH/'failure-register.json',PUBLIC/'failure-register.json']:write_json(path,register)
+    write_json(RESEARCH/'failure-register.json',register)
+    write_json(PUBLIC/'failure-register.json',{
+        'version':'public-failure-summary-v1','snapshot':SNAPSHOT,
+        'recordedAcquisitionFailures':len(events),
+        'gaps':json.loads((ROOT/'src/lib/campaign-finance/gaps.json').read_text()),
+        'note':'Detailed request traces, local verification logs and retry history are retained in the private research archive. Missing evidence is not treated as zero activity.'})
     print(json.dumps({'logged_failures_and_recoveries':len(events),'sourceRecovery':register['sourceRecovery'],'verification':verification['status']},indent=2))
 
 if __name__=='__main__':run()

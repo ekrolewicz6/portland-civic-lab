@@ -5,7 +5,7 @@ import {resolve} from 'node:path';
 import {spreadsheetRows,activeLeaves} from './download-contributions';
 const sources=['contributions','non-contributions'];
 const allIds=new Set<string>();
-const audits=[];
+const audits:{source:string;key:string;records:number;headers:number}[]=[];
 for(const source of sources){
   const dir=resolve(`runtime-data/orestar/${source}-2025-01-01_2026-09-27`);
   const manifest=JSON.parse(readFileSync(resolve(dir,'manifest.json'),'utf8'));

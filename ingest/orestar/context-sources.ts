@@ -24,7 +24,7 @@ async function run(){
           const response=await page.goto(url,{waitUntil:'networkidle',timeout:30000});
           if(!response?.ok())throw Error(`HTTP ${response?.status()}`);
           const text=await page.locator('body').innerText();
-          const links=await page.locator('a').evaluateAll(anchors=>anchors.map(a=>({label:a.textContent?.trim(),url:a.href})));
+          const links=await page.locator('a').evaluateAll(anchors=>anchors.map(a=>({label:a.textContent?.trim(),url:(a as HTMLAnchorElement).href})));
           const html=await page.content();
           const data={id,url,retrievedAt:new Date().toISOString(),sha256:createHash('sha256').update(html).digest('hex'),text,links,requests};
           writeFileSync(resolve(root,id+'.html'),html);writeFileSync(resolve(root,id+'.json'),JSON.stringify(data,null,2));
