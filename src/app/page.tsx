@@ -487,6 +487,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)]" aria-labelledby="finance-feature-title">
+        <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-5 px-5 py-9 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:px-12 3xl:max-w-[1800px]">
+          <div>
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-fern)]">New investigation · 2026 election</p>
+            <h2 id="finance-feature-title" className="mt-2 font-editorial text-[29px] leading-tight text-[var(--color-canopy)] sm:text-[36px]">
+              Who is funding Portland&rsquo;s council races?
+            </h2>
+            <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-[var(--color-ink-muted)] sm:text-[16px]">
+              Follow the donations, see where support comes from, and compare the candidates in Districts 3 and 4.
+            </p>
+          </div>
+          <Link href="/deep-dives/campaign-finance" className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 self-start rounded-sm bg-[var(--color-canopy)] px-5 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-[var(--color-fern)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-canopy)] lg:self-auto">
+            Explore campaign finance <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
       {/* ── Why now ── */}
       <section className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
         <div className="mx-auto w-full max-w-[1400px] px-5 py-12 sm:px-8 sm:py-14 lg:px-12 3xl:max-w-[1800px]">

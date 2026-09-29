@@ -202,6 +202,9 @@ export default function VotersGuidePage() {
                 <MapPin size={16} aria-hidden="true" /> Which district am I in?
               </a>
             </div>
+            <Link href="/deep-dives/campaign-finance" className={styles.heroFinance}>
+              Follow the money in the council races <ArrowRight size={16} aria-hidden="true" />
+            </Link>
 
             <nav className={styles.ballotIndex} aria-label="Jump to your ballot">
               <p className={styles.ballotIndexTitle}>Jump to your ballot</p>
@@ -281,6 +284,22 @@ export default function VotersGuidePage() {
           <SearchX size={14} aria-hidden="true" /> Coverage and gaps
         </Link>
       </p>
+
+      <aside className={styles.financeSpotlight} aria-labelledby="finance-spotlight-title">
+        <div>
+          <p className={styles.eyebrow}>Campaign finance · Districts 3 and 4</p>
+          <h2 id="finance-spotlight-title">Who is paying for these races?</h2>
+          <p>Compare what candidates raised, see who gave, and follow where the money went.</p>
+        </div>
+        <div className={styles.financeSpotlightLinks}>
+          <Link href="/deep-dives/campaign-finance" className={styles.financeSpotlightPrimary}>
+            Explore the money <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+          <Link href="/deep-dives/campaign-finance/suppliers" className={styles.financeSpotlightSecondary}>
+            Who campaigns paid <ArrowRight size={15} aria-hidden="true" />
+          </Link>
+        </div>
+      </aside>
 
       <section className={styles.districts} aria-labelledby="ladder-title">
         <div className={styles.sectionHead}>
