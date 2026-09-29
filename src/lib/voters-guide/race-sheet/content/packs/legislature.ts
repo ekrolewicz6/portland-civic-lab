@@ -146,7 +146,7 @@ const profiles: RacePack["profiles"] = {
       "Identify sustainable funding before the state commits.",
       "Establish measurable outcomes for each goal.",
     ],
-    question: "Which programs would your budget review shrink, and what revenue, if any, would you accept to close the 2027–29 gap?",
+    question: "Which programs would a performance review shrink, and how much would recovered corporate tax abatements and vehicle fees raise toward the 2027–29 gap?",
   },
   "pat-hubbell": {
     background: "Pharmacist; Independent nominee with a campaign site and a filed statement.",
@@ -753,6 +753,14 @@ const schimmelEmail: Evidence = {
   date: "Received September 28, 2026",
   note: `${NOTE} Sent on the record by the candidate, who wrote that the statements may be attributed to his campaign.`,
 };
+/* His September 29, 2026 corrections to how the page read his answers. */
+const schimmelEmail2: Evidence = {
+  label: "Schimmel · emailed clarifications to the Lab",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#replies-2026-09-29",
+  kind: "Candidate statement",
+  date: "Received September 29, 2026",
+  note: `${NOTE} Sent by the candidate to correct the page's reading of his September 28 answers.`,
+};
 const schimmelHome = site("Schimmel · campaign site", "https://brianschimmel.org/", `${NOTE} The platform section lists six headings (education, housing, local economy, infrastructure, land stewardship, civil liberties and public safety) without policy text.`);
 Object.assign(analysis, {
   "susan-mclain": {
@@ -768,7 +776,7 @@ Object.assign(analysis, {
   },
   "brian-schimmel": {
     values: ["Implementation", "Fiscal discipline"],
-    tradeoff: "He would keep the kicker refund and hold off on new transportation taxes until the need is shown, while sustaining shelter and deflection programs and strengthening wildfire prevention; his answers set conditions for new revenue rather than naming what would be cut.",
+    tradeoff: "He would keep the kicker refund and hold off on new transportation taxes until the need is shown and existing revenue is spent more effectively, while sustaining shelter and deflection programs and strengthening wildfire prevention; he looks to existing revenue before new revenue or cuts.",
     issues: {
       housing: { position: "Would increase housing production and preservation and move people from homelessness into stable housing by reducing unnecessary development barriers, modernizing the funding formula for affordable housing projects, reusing existing properties, aligning state funding with local housing plans and coordinating housing with resident services.", source: schimmelEmail },
       safety: { position: "Would improve community safety through coordinated enforcement and stronger treatment, prevention and accountability for drug use, with legal frameworks, specialized resources and clear responsibilities for law enforcement, behavioral-health providers and community partners, including resources to protect residents from ICE apprehension.", source: schimmelEmail },
@@ -828,7 +836,7 @@ primary.push({ candidateId: "susan-mclain", sourceUrl: mclainPriorities.url }, {
 roles.push({ candidateId: "susan-mclain", role: "Incumbent representative; former teacher", from: "background" }, { candidateId: "brian-schimmel", role: "Forest Grove city councilor", from: "background" });
 ballots.push(ballot("oregon-state-house-29"));
 districts.push(district("oregon-state-house-29", "HD29", "Forest Grove, Cornelius, Dilley, Gaston and the western edge of Hillsboro."));
-choices.push(choice("oregon-state-house-29", "One candidate leads with public education, infrastructure, civil rights and housing investment; the other with implementation, fiscal discipline and measurable results. The boards below set her votes beside his written answers on the Legislature’s eight choices."));
+choices.push(choice("oregon-state-house-29", "Both candidates focus on schools, infrastructure, civil rights and housing. One leads with public investment in them; the other with how programs are carried out, paid for and measured. The boards below set her votes beside his written answers on the Legislature’s eight choices."));
 
 /* ── Oregon House · District 40 ──────────────────────────────────────────── */
 const bakerIssues = site("Baker · issues", "https://voteadambaker.com/issues/");
@@ -1398,12 +1406,12 @@ topicStances.push(
     "Voted yes on HB 3940 on June 23, 2025, the bill that taxes oral nicotine, raises the timber harvest tax and moves Rainy Day Fund interest to wildfire funds.", hb3940House),
   stance("susan-mclain", "leg-sanctuary", "supports", "Voted for HB 4138",
     "Voted yes on HB 4138 on February 24 and March 6, 2026; her site says she fought this year to hold ICE and law-enforcement agents accountable.", hb4138House),
-  stance("brian-schimmel", "leg-transportation-package", "partial", "Not before need shown",
-    "Would not commit taxpayers to another transportation tax increase before its necessity and impacts are demonstrated, and would first review existing revenue, spending priorities, maintenance needs and cost controls; he does not say how he would vote.", schimmelEmail),
+  stance("brian-schimmel", "leg-transportation-package", "partial", "No if regressive",
+    "Would vote no if the taxes and fees fall disproportionately on low- and moderate-income households, which he says was the problem with the last package, and would first review existing revenue, maintenance needs and cost controls.", schimmelEmail2),
   stance("brian-schimmel", "leg-kicker", "partial", "Other funds first",
-    "Wants taxpayer refunds preserved and would examine reserves, dedicated revenues and other funding before considering any proposal to keep future kicker money; he does not rule it out.", schimmelEmail),
-  stance("brian-schimmel", "leg-new-revenue", "partial", "Review, then decide",
-    "Would review program effectiveness, administrative costs, statutory obligations and revenue options before adopting a full funding package, limiting new burdens on working families and small businesses; he does not choose between new revenue and cuts.", schimmelEmail),
+    "Wants taxpayer refunds preserved and would examine reserves, dedicated revenues and other funding first, and would put any proposal to keep kicker money to voters as a constitutional amendment; he does not rule one out.", schimmelEmail2),
+  stance("brian-schimmel", "leg-new-revenue", "partial", "Existing revenue first",
+    "Would spend existing revenue more effectively and measure program performance, recover tax abatements from large corporations and make them pay vehicle fees, citing Amazon’s electric vans; he names no broader tax or specific cuts.", schimmelEmail2),
   stance("brian-schimmel", "leg-data-centers", "supports", "Separate large-user rates",
     "Would make data centers pay their own way with separate large-user utility rates, stronger land-use and public-benefit requirements, and a review of Enterprise Zone incentives before any new tax abatements.", schimmelEmail),
   stance("brian-schimmel", "leg-shelter-funding", "supports", "Sustain effective shelter",
@@ -1412,8 +1420,8 @@ topicStances.push(
     "Would keep a response that pairs accountability for drug offenses with treatment and recovery: fund county implementation, set workable statewide standards and coordinate police, behavioral-health providers and treatment capacity.", schimmelEmail),
   stance("brian-schimmel", "leg-wildfire-funding", "supports", "Fund prevention, response",
     "Would strengthen wildfire prevention, community preparedness and firefighting capacity through sustainable funding, prioritizing fuel reduction, community protection, response readiness and coordinated state and local investment.", schimmelEmail),
-  stance("brian-schimmel", "leg-sanctuary", "partial", "State protocols for ICE",
-    "Would back compliance with Oregon law with clear agency roles, training, indemnification and deployment protocols for state and local resources, measured partly by fewer ICE apprehensions; he does not say whether to add new limits.", schimmelEmail),
+  stance("brian-schimmel", "leg-sanctuary", "supports", "Limits via state units",
+    "Would add limits by activating state-controlled specialized units with training, indemnification and deployment protocols, saying legislation with no enforcement mechanism does not limit federal immigration enforcement.", schimmelEmail2),
   // Not a stance: a general value or goal that does not reach this choice; left as a gap.
   /* House 40 */
   stance("adam-baker", "leg-transportation-package", "opposes", "Respect the vote",

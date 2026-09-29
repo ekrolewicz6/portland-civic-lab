@@ -136,12 +136,12 @@ const beaudoinEmail: Evidence = {
   date: "Received September 23, 2026",
   note: NOTE,
 };
-const beaudoinEmail2: Evidence = {
+const beaudoinEmail3: Evidence = {
   label: "Beaudoin · emailed response to the Lab’s questions",
-  url: "https://www.portlandciviclab.org/voters-guide/research-log#beaudoin-2026-09-25",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#replies-2026-09-29",
   kind: "Candidate statement",
-  date: "Received September 25, 2026",
-  note: "Written by the candidate in reply to the Lab’s questions and kept on file; the answer is quoted on the brief. Receipt does not verify the claims.",
+  date: "Received September 29, 2026",
+  note: "Written by the candidate in reply to the Lab’s question on camp-removal funding, which offered four options; he chose reducing it and moving the money to services or housing. The answer is quoted on the brief. Receipt does not verify the claims.",
 };
 const oteroEmail2: Evidence = {
   label: "Otero · second emailed response to the Lab’s questions",
@@ -216,9 +216,10 @@ export const topicStancesD3: TopicStance[] = [
   sweepStance("ali-beaudoin", "police-staffing", "mixed", "Rebuild where gaps",
     "Supports rebuilding police staffing where there are documented service gaps, while investing in alternative responders, prevention and community services so police are not the default response.",
     beaudoinEmail),
-  sweepStance("ali-beaudoin", "camp-removal", "partial", "Clear unsafe camps",
-    "Would support clearing unsafe camping areas while providing stable housing and support for the people living there, and would measure where people go, whether areas stay clear and the cost; current funding levels unsaid.",
-    beaudoinEmail2),
+  // September 29, 2026: asked to choose among keeping, raising or cutting removal funding, he chose cutting it.
+  sweepStance("ali-beaudoin", "camp-removal", "opposes", "Move it to housing",
+    "Would reduce camp-removal funding and redirect it to housing services, bringing the proposal back to voters; he also supports clearing unsafe camps while providing stable housing and support for the people there.",
+    beaudoinEmail3),
   sweepStance("ali-beaudoin", "data-centers", "supports", "Temporary pause",
     "Supports a temporary pause on new AI data centers while the city evaluates their effects on electricity, water, infrastructure, noise and neighborhoods, with large users paying their share.",
     beaudoinEmail),

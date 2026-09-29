@@ -19,6 +19,56 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="rcv-vote-for-one-2026-09-29">September 29, 2026 · Correction: County Auditor and Sheriff are vote-for-one, not ranked</h2>
+        <p>
+          The September 28 correction below said voters could rank two
+          candidates for County Auditor and Sheriff. That was wrong too.
+          Multnomah County Elections explained that county code uses ranked
+          choice only when two or more candidates file, and one candidate
+          filed for each of those offices, so the ballot asks voters to vote
+          for one. Both pages now say so. Portland’s code works differently:
+          the city uses ranked choice even with one filed candidate, so the
+          Portland Auditor contest still gives two ranks. The county’s sample
+          ballot for a Northeast Portland precinct shows all of these
+          contests.
+        </p>
+        <h2 id="replies-2026-09-29">September 29, 2026 · Candidate and reviewer replies</h2>
+        <ul>
+          <li>
+            Ali Beaudoin (District 3), asked to choose among keeping,
+            raising or cutting camp-removal funding, chose cutting it and
+            moving the money to housing services. His entry on that choice
+            moves from partial to a position.
+          </li>
+          <li>
+            Brian Schimmel (House District 29) corrected how the page read
+            his answers. On the road package he would vote no if the taxes
+            and fees fall hardest on low- and moderate-income households; he
+            would put any kicker proposal to voters as a constitutional
+            amendment; on the budget gap he would spend existing revenue more
+            effectively and recover tax abatements from large corporations;
+            and he would add limits on federal immigration enforcement
+            through state-controlled specialized units, so that entry is now
+            a position. He also asked that the race summary not set
+            “implementation” against education, infrastructure, civil rights
+            and housing, since his approach addresses those same systems; the
+            summary now says both candidates focus on them.
+          </li>
+          <li>
+            A housing nonprofit for older adults pointed out that renewing
+            Metro’s homeless-services tax at a lower rate is no longer on the
+            table. The county board’s question no longer mentions a lower
+            rate; its context already said the 2025 lower-rate draft was
+            shelved.
+          </li>
+          <li>
+            An education policy group noted that the State Board of
+            Education has not yet adopted permanent rules on instructional
+            time and that the draft lets a district justify a cut publicly
+            instead of restoring the time. The governor board’s context now
+            says so.
+          </li>
+        </ul>
         <h2 id="chair-debate-2026-09-28">September 28, 2026 · Debate: Multnomah County Chair (City Club of Portland and KOIN 6)</h2>
         <p>
           The Lab worked from a transcript of the September 28 chair debate,
