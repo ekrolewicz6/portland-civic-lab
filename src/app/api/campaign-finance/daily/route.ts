@@ -6,6 +6,7 @@ import { gzipSync } from 'node:zlib';
 import frozen from '@/lib/campaign-finance/campaign-dynamics.json';
 import { activeManifest } from '@/lib/campaign-finance/active';
 import { currentCashDaily } from '@/lib/campaign-finance/query';
+import { buildEventWindows, timelineCatalog, alignEvents } from '@/lib/campaign-finance/timeline';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -42,19 +43,12 @@ function currentTimeline() {
       }
       totals.set(id,{...cumulative});
     }
-    const events=frozen.events.map(event=>({...event,comparisons:ids.map(id=>{
-      let before=0,after=0;
-      for(let offset=1;offset<=7;offset++){
-        before+=value(id,dayAt(event.date,-offset),'nonmatching_cents');
-        after+=value(id,dayAt(event.date,offset),'nonmatching_cents');
-      }
-      return {committeeId:id,beforeCents:before,afterCents:dayAt(event.date,7)>active.end?null:after};
-    })}));
+    const events=buildEventWindows(ids,'2025-01-01',active.end,value);
     const candidates=frozen.candidates.map(candidate=>{
       const total=totals.get(candidate.committeeId)!;
       return {...candidate,cashCents:total.cash_cents,publicCents:total.public_cents,nonmatchingCents:total.nonmatching_cents};
     });
-    return {...frozen,snapshot:active.snapshot,end:active.end,candidates,weekly,events,
+    return {...frozen,snapshot:active.snapshot,end:active.end,candidates,weekly,events,eventCatalog:timelineCatalog.version,
       refresh:{status:active.source_files.some(source=>source.method==='user_supplied_manual_export')?'provisional':'validated',sourceRows:active.rows,
         scope:'Transaction-date curves and reviewed event windows; donor profiles, geography and editorial findings stay on their dated edition.'}};
   })();
@@ -105,10 +99,10 @@ export async function GET(request: Request) {
       const current = update.candidateTotals[candidate.committeeId];
       return current ? { ...candidate, cashCents: current.cash_cents, publicCents: current.public_cents, nonmatchingCents: current.nonmatching_cents } : candidate;
     });
-    const etag = `"${pointer.sha256}"`;
+    const etag = `"${pointer.sha256}-${timelineCatalog.version}"`;
     if (request.headers.get('if-none-match') === etag) return new Response(null, { status: 304, headers: { ETag: etag, 'Cache-Control': 'public, max-age=60, stale-while-revalidate=300' } });
     return chartResponse(request, { ...frozen, snapshot: update.snapshot, end: update.end, candidates,
-      weekly: update.weekly, events: update.events,
+      weekly: update.weekly, events: alignEvents(update.events), eventCatalog:timelineCatalog.version,
       refresh: { status: pointer.end < expectedEnd() ? 'stale' : 'validated', publishedAt: pointer.publishedAt, sourceRows: update.sourceRows,
         scope: 'Transaction-date curves and event windows only; the reviewed donor, geography and narrative sections remain on their dated edition.' }
     }, { 'Cache-Control': 'public, max-age=60, stale-while-revalidate=300', ETag: etag });

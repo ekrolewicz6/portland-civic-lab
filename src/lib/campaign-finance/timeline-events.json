@@ -1,0 +1,263 @@
+{
+  "version": "portland-events-20260929-v2",
+  "reviewedOn": "2026-09-29",
+  "selection": "Dated public decisions, campaign activity, election deadlines and funding-rule changes. Events are selected for relevance to the races, not the size or direction of nearby donations. This is a sourced selection, not a complete campaign calendar. Moda is limited to four public Council meetings or votes. Publication dates are labeled separately from event dates.",
+  "events": [
+    {
+      "date": "2025-03-20",
+      "label": "City announces reduced public-matching caps",
+      "category": "funding",
+      "dateKind": "official dated notice",
+      "sourceUrl": "https://www.portland.gov/smalldonorelections/program-notices",
+      "limitation": null
+    },
+    {
+      "date": "2025-08-06",
+      "label": "City partially restores public-matching caps",
+      "category": "funding",
+      "dateKind": "official dated notice, same day as first Peacock reporting",
+      "sourceUrl": "https://www.portland.gov/smalldonorelections/program-notices",
+      "limitation": null
+    },
+    {
+      "date": "2025-08-06",
+      "label": "First Peacock group-text investigation",
+      "category": "city",
+      "dateKind": "publication",
+      "sourceUrl": "https://www.wweek.com/news/2025/08/06/a-message-thread-among-progressive-city-councilors-reveals-theyre-tightly-coordinated/",
+      "limitation": null
+    },
+    {
+      "date": "2025-08-19",
+      "label": "City attorney response to group-text complaints",
+      "category": "city",
+      "dateKind": "publication",
+      "sourceUrl": "https://www.opb.org/article/2025/08/19/portland-city-council-group-chat-may-violate-state-laws-complaints-too-late/",
+      "limitation": null
+    },
+    {
+      "date": "2025-10-08",
+      "label": "Additional Peacock messages reported",
+      "category": "city",
+      "dateKind": "publication",
+      "sourceUrl": "https://www.wweek.com/news/2025/10/08/a-fresh-batch-of-messages-shows-how-progressive-councilors-spoke-about-the-mayor-and-some-constituents/",
+      "limitation": null
+    },
+    {
+      "date": "2026-04-08",
+      "label": "Council expands the small-business tax exemption",
+      "category": "city",
+      "sourceUrl": "https://www.portland.gov/council/documents/ordinance/passed/192163",
+      "dateKind": "official vote date",
+      "limitation": null
+    },
+    {
+      "date": "2026-04-20",
+      "label": "Mayor releases proposed city budget",
+      "category": "city",
+      "sourceUrl": "https://www.portland.gov/budget/2026-2027-budget/development",
+      "dateKind": "official budget calendar",
+      "limitation": null
+    },
+    {
+      "date": "2026-05-18",
+      "label": "Public testimony begins on the city budget",
+      "category": "city",
+      "sourceUrl": "https://www.portland.gov/budget/2026-2027-budget/development",
+      "dateKind": "official hearing date",
+      "limitation": null
+    },
+    {
+      "date": "2026-05-20",
+      "label": "Council approves a budget to close a shortfall",
+      "category": "city",
+      "dateKind": "official dated announcement",
+      "sourceUrl": "https://www.portland.gov/hello/news/2026/5/20/city-council-approves-85-billion-budget-close-historic-shortfall",
+      "limitation": null
+    },
+    {
+      "date": "2026-06-17",
+      "label": "Council adopts the final city budget",
+      "category": "city",
+      "sourceUrl": "https://www.portland.gov/budget/2026-2027-budget/development",
+      "dateKind": "official vote date",
+      "limitation": null
+    },
+    {
+      "date": "2026-06-24",
+      "label": "City announces full restoration of 2026 matching caps",
+      "category": "funding",
+      "dateKind": "official dated notice",
+      "sourceUrl": "https://www.portland.gov/smalldonorelections/program-notices",
+      "limitation": null
+    },
+    {
+      "date": "2026-06-24",
+      "label": "Council holds first Moda Center work session",
+      "category": "moda",
+      "dateKind": "official timeline date",
+      "sourceUrl": "https://www.portland.gov/auditor/council-clerk/events/2026/6/24/city-council-work-session",
+      "limitation": null
+    },
+    {
+      "date": "2026-07-06",
+      "label": "Building-trades endorsement withdrawals from Green reported",
+      "category": "campaign",
+      "dateKind": "publication; withdrawal dates not established",
+      "sourceUrl": "https://www.wweek.com/news/city/2026/07/06/two-portland-districts-have-strong-feelings-on-moda-center-both-will-elect-councilors-this-fall/",
+      "limitation": "The story names IBEW Local 48 and Ironworkers Local 29. Their exact withdrawal dates are not known."
+    },
+    {
+      "date": "2026-07-20",
+      "label": "District 3 challenger Mullen exit reported",
+      "category": "campaign",
+      "dateKind": "publication, not exact withdrawal date",
+      "sourceUrl": "https://www.wweek.com/news/city/2026/07/20/city-council-challenger-drops-out-of-race-after-learning-he-hasnt-lived-long-enough-in-his-district/",
+      "limitation": null
+    },
+    {
+      "date": "2026-07-22",
+      "label": "Council votes on restoring city jobs and services",
+      "category": "city",
+      "sourceUrl": "https://www.portland.gov/council/agenda/2026/7/22",
+      "dateKind": "official vote date",
+      "limitation": null
+    },
+    {
+      "date": "2026-07-30",
+      "label": "Council holds Moda Center work session",
+      "category": "moda",
+      "dateKind": "official timeline date",
+      "sourceUrl": "https://www.portland.gov/auditor/council-clerk/events/2026/7/30/city-council-work-session",
+      "limitation": null
+    },
+    {
+      "date": "2026-08-04",
+      "label": "Reporting on Green backyard fire",
+      "category": "city",
+      "dateKind": "publication, not fire date",
+      "sourceUrl": "https://www.wweek.com/news/city/2026/08/04/backyard-brush-fire-at-city-councilor-mitch-greens-home-violated-burn-ban/",
+      "limitation": null
+    },
+    {
+      "date": "2026-08-06",
+      "label": "Council hears Moda term-sheet amendments",
+      "category": "moda",
+      "dateKind": "official participant account",
+      "sourceUrl": "https://www.portland.gov/council/documents/resolution/adopted/37750",
+      "limitation": "Second day of the August 5–6 hearing. Comparison uses August 6 as its anchor; the hearings overlap the before window."
+    },
+    {
+      "date": "2026-08-12",
+      "label": "Council approves nonbinding Moda term sheet, 8–4",
+      "category": "moda",
+      "dateKind": "official vote and resolution",
+      "sourceUrl": "https://www.portland.gov/council/documents/resolution/adopted/37750",
+      "limitation": "A term sheet is not a final lease or a campaign contribution."
+    },
+    {
+      "date": "2026-08-12",
+      "label": "Wilson endorsement event for Torres",
+      "category": "campaign",
+      "dateKind": "Wednesday event reported August 14",
+      "sourceUrl": "https://hoodline.com/2026/08/portland-mayor-wilson-backs-kellie-torres-sets-up-fight-for-council-majority/",
+      "limitation": "Hoodline summarizes an Oregonian account. Other city and campaign events happened that week."
+    },
+    {
+      "date": "2026-08-18",
+      "label": "City filing deadline for incumbent candidates",
+      "category": "campaign",
+      "dateKind": "official deadline",
+      "sourceUrl": "https://www.portland.gov/auditor/elections/run4office",
+      "limitation": null
+    },
+    {
+      "date": "2026-08-25",
+      "label": "City filing deadline for new candidates",
+      "category": "campaign",
+      "dateKind": "official deadline",
+      "sourceUrl": "https://www.portland.gov/auditor/elections/run4office",
+      "limitation": null
+    },
+    {
+      "date": "2026-09-03",
+      "label": "City certifies November ballot",
+      "category": "campaign",
+      "dateKind": "official event",
+      "sourceUrl": "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates",
+      "limitation": null
+    },
+    {
+      "date": "2026-09-09",
+      "label": "Council approves renaming César Chávez Boulevard to Campesinos Boulevard",
+      "category": "city",
+      "sourceUrl": "https://www.portland.gov/council/agenda/2026/9/9",
+      "dateKind": "official vote date",
+      "limitation": null
+    },
+    {
+      "date": "2026-09-12",
+      "label": "Torres holds a canvass kickoff and campaign rally",
+      "category": "campaign",
+      "sourceUrl": "https://www.opb.org/article/2026/09/25/uncertainty-unknowns-candidates-portland-second-ranked-choice-city-council-election/",
+      "dateKind": "event date documented in OPB photo captions",
+      "limitation": null
+    },
+    {
+      "date": "2026-09-13",
+      "label": "Archived Green tweets republished",
+      "category": "campaign",
+      "dateKind": "publication",
+      "sourceUrl": "https://recalibrateportland.substack.com/p/mitch-green-between-the-tweets",
+      "limitation": "The source is commentary critical of Green. Its date marks when the posts were republished, not when they were written."
+    },
+    {
+      "date": "2026-09-15",
+      "label": "Green holds a Johnson Creek Park canvassing event",
+      "category": "campaign",
+      "sourceUrl": "https://www.opb.org/article/2026/09/25/uncertainty-unknowns-candidates-portland-second-ranked-choice-city-council-election/",
+      "dateKind": "event date documented in OPB photo captions",
+      "limitation": null
+    },
+    {
+      "date": "2026-09-16",
+      "label": "Police chief responds to Green tweets",
+      "category": "campaign",
+      "dateKind": "publication and reported statement",
+      "sourceUrl": "https://www.wweek.com/news/city/2026/09/16/police-chief-says-he-no-longer-has-confidence-in-councilors-judgment-after-old-tweets-resurface/",
+      "limitation": null
+    },
+    {
+      "date": "2026-09-18",
+      "label": "Anti-Green billboard reported",
+      "category": "campaign",
+      "dateKind": "publication; installed earlier that week, exact day unverified",
+      "sourceUrl": "https://www.wweek.com/news/city/2026/09/18/new-committee-funded-in-part-by-chamber-of-commerce-attacks-mitch-green/",
+      "limitation": "The billboard went up earlier that week. September 18 is the story date, not a verified installation date."
+    },
+    {
+      "date": "2026-09-18",
+      "label": "Candidate meet-and-greet at Oron Mor, with Arnold",
+      "category": "campaign",
+      "sourceUrl": "https://www.opb.org/article/2026/09/25/uncertainty-unknowns-candidates-portland-second-ranked-choice-city-council-election/",
+      "dateKind": "event date documented in OPB photo captions",
+      "limitation": null
+    },
+    {
+      "date": "2026-09-19",
+      "label": "Koyama Lane and Morillo campaign event",
+      "category": "campaign",
+      "sourceUrl": "https://www.opb.org/article/2026/09/25/uncertainty-unknowns-candidates-portland-second-ranked-choice-city-council-election/",
+      "dateKind": "event date documented in OPB photo captions",
+      "limitation": null
+    },
+    {
+      "date": "2026-09-23",
+      "label": "Zenith franchise-transfer council vote",
+      "category": "city",
+      "dateKind": "official agenda date",
+      "sourceUrl": "https://www.portland.gov/council/agenda/2026/9/23",
+      "limitation": "The full week after the vote is not yet in the September 28 data."
+    }
+  ]
+}
