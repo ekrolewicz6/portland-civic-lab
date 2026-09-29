@@ -1,0 +1,2 @@
+snapshot,transaction_id,committee_id,transaction_date,filed_date,amount_cents,funding_category,entity_id,reported_source,identity_status,book_type,reported_city,reported_state
+orestar-20250101-20260927-v1,5599571,24615,2026-03-05,2026-04-03,60000,self_family,record:f24d29068f024b213cc8e626,John Goldsmith,provisional_record_group,Candidate & Immediate Family,PORTLAND,OR

@@ -1,0 +1,102 @@
+{
+  "version": "sensitivity-v1",
+  "snapshot": "orestar-20250101-20260927-v1",
+  "concentrationScenarios": [
+    {
+      "scenario": "conservative_visible_groups",
+      "groups": 54551,
+      "total_cents": 10977218324,
+      "top1_share": 0.09109775996835681,
+      "top10_share": 0.21487152832180476,
+      "hhi": 0.011414496338009388,
+      "effective_groups": 87.60789529276711,
+      "gini": 0.9053656118193536,
+      "limitation": "Conservative fingerprint/authoritative committee groups; includes committee sources."
+    },
+    {
+      "scenario": "conservative_visible_groups_without_largest_group",
+      "groups": 54550,
+      "total_cents": 9977218324,
+      "top1_share": 0.030068501084952303,
+      "top10_share": 0.14658176562920724,
+      "hhi": 0.0037715556091979367,
+      "effective_groups": 265.1425840205658,
+      "gini": 0.8959171567542443,
+      "limitation": "Conservative fingerprint/authoritative committee groups; includes committee sources. Removes the single largest scenario group, not an estimated counterfactual campaign response."
+    },
+    {
+      "scenario": "same_name_type_stress_test",
+      "groups": 47574,
+      "total_cents": 10977218324,
+      "top1_share": 0.09109775996835681,
+      "top10_share": 0.21541355999361647,
+      "hhi": 0.011492088329850164,
+      "effective_groups": 87.01638651719607,
+      "gini": 0.9130068088564529,
+      "limitation": "Deliberately aggressive same-name/type grouping; not approved entity links. Can merge different people."
+    },
+    {
+      "scenario": "same_name_type_stress_test_without_largest_group",
+      "groups": 47573,
+      "total_cents": 9977218324,
+      "top1_share": 0.030268957758851984,
+      "top10_share": 0.14697766756015912,
+      "hhi": 0.0038654809010319974,
+      "effective_groups": 258.700023516614,
+      "gini": 0.9043297615625032,
+      "limitation": "Deliberately aggressive same-name/type grouping; not approved entity links. Can merge different people. Removes the single largest scenario group, not an estimated counterfactual campaign response."
+    },
+    {
+      "scenario": "exclude_reported_committee_sources",
+      "groups": 53522,
+      "total_cents": 7920666903,
+      "top1_share": 0.12625199522293307,
+      "top10_share": 0.2697862788789466,
+      "hhi": 0.019485809441950414,
+      "effective_groups": 51.319397481488764,
+      "gini": 0.8802903588925852,
+      "limitation": "Exclude all reported committee types and IDs. Remaining sources are not thereby proven external or private."
+    },
+    {
+      "scenario": "exclude_reported_committee_sources_without_largest_group",
+      "groups": 53521,
+      "total_cents": 6920666903,
+      "top1_share": 0.043348423526922635,
+      "top10_share": 0.1732329075800919,
+      "hhi": 0.004645111200407059,
+      "effective_groups": 215.28009919598227,
+      "gini": 0.863030453227448,
+      "limitation": "Exclude all reported committee types and IDs. Remaining sources are not thereby proven external or private. Removes the single largest scenario group, not an estimated counterfactual campaign response."
+    },
+    {
+      "scenario": "reported_individual_groups",
+      "groups": 47357,
+      "total_cents": 3165608253,
+      "top1_share": 0.09476851714538413,
+      "top10_share": 0.2183261303242502,
+      "hhi": 0.012481888017806538,
+      "effective_groups": 80.11608488823245,
+      "gini": 0.7978749889905232,
+      "limitation": "Reported individuals only; fingerprints are not verified people."
+    },
+    {
+      "scenario": "reported_individual_groups_without_largest_group",
+      "groups": 47356,
+      "total_cents": 2865608253,
+      "top1_share": 0.04676145103215544,
+      "top10_share": 0.14137836167098727,
+      "hhi": 0.004272184573254616,
+      "effective_groups": 234.0722838288292,
+      "gini": 0.776754287785373,
+      "limitation": "Reported individuals only; fingerprints are not verified people. Removes the single largest scenario group, not an estimated counterfactual campaign response."
+    }
+  ],
+  "transferScenario": {
+    "strict_same_day_cents": 779685320,
+    "maximum_candidate_matching_cents": 1792716551,
+    "maximum_candidate_pairs": 3847,
+    "method": "Maximum one-to-one bipartite matching across all reciprocal-ID, equal-amount, seven-day candidate pairs. Both sides retained.",
+    "limitation": "Maximum is a possible reconciliation within this candidate set, not a verified transfer total or a global upper bound on all internal transfers. One optimum may not be unique; unmatched transfers may have changed dates/amounts or missing IDs."
+  },
+  "findings": "Concentration persists across these scenarios; magnitudes depend on grouping and the source population. No fuzzy link is promoted by a sensitivity test."
+}

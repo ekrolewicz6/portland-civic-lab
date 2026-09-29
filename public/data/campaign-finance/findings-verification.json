@@ -1,0 +1,25 @@
+{
+  "snapshot": "orestar-20250101-20260927-v1",
+  "status": "passed",
+  "checks": {
+    "population": "316926 current rows; 1888 filers",
+    "cash_contributions_cents": 12179417002,
+    "september": {
+      "cents": 2005619492,
+      "without_specified_record_cents": 1005619492,
+      "record_share": 0.4985990632763555
+    },
+    "cash_positions": {
+      "ratio": 8.683634051918286,
+      "retained_payment_difference_cents": 80000
+    },
+    "public_matching": {
+      "committees": 13,
+      "numerator_cents": 136371300,
+      "denominator_cents": 206251081,
+      "share": 0.6611907163773847
+    },
+    "publication": "All finding evidence exists; public, research and application copies agree"
+  },
+  "limits": "Validates calculations and links, not independent truth of reported transactions or completion of the research programme."
+}

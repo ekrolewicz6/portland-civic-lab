@@ -21,3 +21,12 @@
 *.sql.gz
 *.log
 *.tsbuildinfo
+
+# Private working artifacts never belong in a deployment upload.
+/output
+/tmp
+/AGENTS.md
+/.next-campaign-finance
+/ingest/orestar/analysis/__pycache__
+/.env.local
+/.env.*.local

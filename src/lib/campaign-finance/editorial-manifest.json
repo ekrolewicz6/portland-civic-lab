@@ -1,0 +1,15 @@
+{
+  "snapshot": "orestar-20250101-20260927-v1",
+  "source_files": [
+    {
+      "name": "Contributions",
+      "rows": 217239,
+      "sha256": "af941a5a33884de19f47e56cfbaa04ad972062c67746da683f6679ed07a7bb53"
+    },
+    {
+      "name": "Other transactions",
+      "rows": 99687,
+      "sha256": "129c673acff441295b47e6e99f52d6e1f9e350a57d8ab0137aca364869546790"
+    }
+  ]
+}

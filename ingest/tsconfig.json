@@ -4,7 +4,8 @@
   // the npm scripts depend on. Run with: npx tsc -p ingest --noEmit
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2022"],
+    // ORESTAR collectors include browser-evaluated DOM callbacks.
+    "lib": ["ES2022", "DOM", "DOM.Iterable", "DOM.AsyncIterable"],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "esModuleInterop": true,

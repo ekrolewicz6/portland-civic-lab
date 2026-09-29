@@ -1,0 +1,12 @@
+snapshot,transaction_id,committee_id,transaction_date,filed_date,amount_cents,funding_category,entity_id,reported_source,identity_status,book_type,reported_city,reported_state
+orestar-20250101-20260927-v1,5804111,24979,2026-07-24,2026-09-10,12500,unidentified,disclosure:24979:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5804113,24979,2026-07-25,2026-09-10,4500,unidentified,disclosure:24979:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5804115,24979,2026-07-26,2026-09-10,35000,unidentified,disclosure:24979:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5804117,24979,2026-07-27,2026-09-10,23500,unidentified,disclosure:24979:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5804119,24979,2026-07-28,2026-09-10,13500,unidentified,disclosure:24979:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5804121,24979,2026-07-29,2026-09-10,2500,unidentified,disclosure:24979:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5804123,24979,2026-07-30,2026-09-10,500,unidentified,disclosure:24979:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5804125,24979,2026-08-06,2026-09-10,1000,unidentified,disclosure:24979:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5804127,24979,2026-08-14,2026-09-10,500,unidentified,disclosure:24979:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5804129,24979,2026-08-17,2026-09-10,500,unidentified,disclosure:24979:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5804088,24979,2026-08-29,2026-09-10,25000,individual,record:f1746c7c6615d165251890ef,Anne-Marie Oliver,provisional_record_group,Individual,CLARKESVILLE,GA

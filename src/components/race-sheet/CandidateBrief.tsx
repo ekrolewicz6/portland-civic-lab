@@ -219,6 +219,7 @@ export default function CandidateBrief({
           <p className={`${styles.credit} ${styles.headActions}`}>Photo: {person.portrait.credit}</p>
         )}
       </header>
+      {!embedded && <p><a href="#campaign-finance">Campaign finance: sources, amounts and timing ↓</a></p>}
 
       {row.ownWords && (
         <section className={`${styles.section} ${styles.opening}`} aria-labelledby={heading("opening")}>

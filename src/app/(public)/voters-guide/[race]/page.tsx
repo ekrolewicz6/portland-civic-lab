@@ -6,6 +6,7 @@ import { findRace, races } from "@/lib/voters-guide/published";
 import { buildRaceSheet, clientSheet, shortRaceTitle } from "@/lib/voters-guide/race-sheet";
 import { raceMetadata, raceStructuredData } from "@/lib/voters-guide/race-sheet/seo";
 import RaceSheet from "@/components/race-sheet/RaceSheet";
+import RaceFinance from "@/components/deep-dives/campaign-finance/RaceFinance";
 import FourVotes from "@/components/race-sheet/FourVotes";
 import Stakes from "@/components/race-sheet/Stakes";
 import AboutStrip from "@/components/race-sheet/AboutStrip";
@@ -13,6 +14,8 @@ import Lede from "@/components/race-sheet/Lede";
 import RaceSheetStructuredData from "@/components/race-sheet/RaceSheetStructuredData";
 import styles from "./race-page.module.css";
 import c from "@/components/race-sheet/controls.module.css";
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 /**
  * One screen per race. The masthead is four facts and a district name; the
@@ -113,6 +116,8 @@ export default async function RacePage({
               </div>
             </dl>
 
+            <p><a href="#race-fundraising" className={`${c.btn} ${c.quiet} ${c.small}`}>Fundraising facts and comparison ↓</a></p>
+
             {sheet.district && (
               <p className={styles.where}>
                 <MapPin size={15} aria-hidden="true" />
@@ -133,6 +138,8 @@ export default async function RacePage({
       </header>
 
       <RaceSheet sheet={clientSheet(sheet)} stakes={<Stakes sheet={sheet} />} />
+
+      <RaceFinance raceId={race.id} candidates={race.candidates} federal={sheet.office.group === "federal"} />
 
       {sheet.office.hasCouncilRecord && <FourVotes sheet={sheet} />}
 

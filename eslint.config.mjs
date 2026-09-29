@@ -16,6 +16,7 @@ const eslintConfig = [
   {
     ignores: [
       ".next/**",
+      ".next-campaign-finance/**",
       "out/**",
       "build/**",
       "node_modules/**",

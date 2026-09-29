@@ -1,3 +1,4 @@
+import CandidateFinance from "@/components/deep-dives/campaign-finance/CandidateFinance";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { findRace, races } from "@/lib/voters-guide/published";
@@ -6,6 +7,8 @@ import { candidateMetadata, candidateStructuredData } from "@/lib/voters-guide/r
 import CandidateBrief from "@/components/race-sheet/CandidateBrief";
 import RaceSheetStructuredData from "@/components/race-sheet/RaceSheetStructuredData";
 import styles from "@/components/race-sheet/brief.module.css";
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 /** Segments that belong to sibling routes, never a candidate id. */
 const reserved = new Set(["votes", "print"]);
@@ -44,6 +47,7 @@ export default async function CandidatePage({ params }: { params: Params }) {
     <div className={styles.page}>
       <RaceSheetStructuredData data={candidateStructuredData(race, person)} />
       <CandidateBrief race={race} person={person} row={row} sheet={sheet} />
+      <CandidateFinance raceId={raceId} candidateId={candidate} federal={sheet.office.group === "federal"} />
     </div>
   );
 }

@@ -1,0 +1,43 @@
+snapshot,transaction_id,committee_id,transaction_date,filed_date,amount_cents,funding_category,entity_id,reported_source,identity_status,book_type,reported_city,reported_state
+orestar-20250101-20260927-v1,5636304,24661,2026-01-06,2026-04-23,10000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5636307,24661,2026-01-17,2026-04-23,4000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5663093,24661,2026-01-25,2026-05-14,10000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5636310,24661,2026-01-28,2026-04-23,2500,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5636312,24661,2026-01-30,2026-04-23,1000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5636315,24661,2026-02-17,2026-04-23,4000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5636317,24661,2026-02-19,2026-04-23,5500,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5636319,24661,2026-02-20,2026-04-23,2500,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5636321,24661,2026-03-11,2026-04-23,2500,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5599193,24661,2026-03-17,2026-04-23,4000,individual,record:e3f3c396a2eba78d9cfe6eeb,Sylvia Choi,provisional_record_group,Individual,BEAVERTON,OR
+orestar-20250101-20260927-v1,5664496,24661,2026-04-12,2026-05-15,2000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5668387,24661,2026-04-19,2026-05-19,4000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5669081,24661,2026-05-02,2026-06-01,30000,self_family,record:6743e5f59eaf5d0cbea262ed,Tom Sollitt,provisional_record_group,Candidate & Immediate Family,PORTLAND,OR
+orestar-20250101-20260927-v1,5680419,24661,2026-05-03,2026-06-02,2500,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5684738,24661,2026-05-10,2026-06-09,11000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5669082,24661,2026-05-12,2026-06-11,10000,self_family,record:6743e5f59eaf5d0cbea262ed,Tom Sollitt,provisional_record_group,Candidate & Immediate Family,PORTLAND,OR
+orestar-20250101-20260927-v1,5684496,24661,2026-05-20,2026-06-09,6500,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5684498,24661,2026-05-28,2026-06-09,1000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5684486,24661,2026-05-31,2026-06-09,50000,self_family,record:de62207b6897a884af054450,Katherine Yoo Sollitt Koo,provisional_record_group,Candidate & Immediate Family,PORTLAND,OR
+orestar-20250101-20260927-v1,5727342,24661,2026-06-24,2026-07-17,4000,individual,record:e3f3c396a2eba78d9cfe6eeb,Sylvia Choi,provisional_record_group,Individual,BEAVERTON,OR
+orestar-20250101-20260927-v1,5727364,24661,2026-06-24,2026-07-17,51000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5727366,24661,2026-07-01,2026-07-17,28000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5727368,24661,2026-07-02,2026-07-17,500,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5727370,24661,2026-07-08,2026-07-17,500,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5727362,24661,2026-07-15,2026-07-17,20000,individual,record:8239f03ac8ff15eca36e2883,Jessie Maran,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5727373,24661,2026-07-15,2026-07-17,20000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5738940,24661,2026-07-19,2026-07-27,10000,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5732057,24661,2026-07-20,2026-07-20,25000,individual,record:b38d2d88807922e4210a0cce,Lisa Tran,provisional_record_group,Individual,HAPPY VALLEY,OR
+orestar-20250101-20260927-v1,5732058,24661,2026-07-20,2026-07-20,10000,individual,record:74558ffd1ed3e78d1cf39127,Daniel Brase,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5732059,24661,2026-07-20,2026-07-20,129200,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760350,24661,2026-07-20,2026-08-10,4000,individual,record:e3f3c396a2eba78d9cfe6eeb,Sylvia Choi,provisional_record_group,Individual,BEAVERTON,OR
+orestar-20250101-20260927-v1,5754814,24661,2026-07-29,2026-08-06,20000,individual,record:dbcb8ced43077c5e1e2de837,Tory Morseth,provisional_record_group,Individual,FUQUAY VARINA,NC
+orestar-20250101-20260927-v1,5754815,24661,2026-07-29,2026-08-06,20000,individual,record:aaa7338fe5767a60bc094f1e,Travis Baskerville,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5754844,24661,2026-07-29,2026-08-06,208300,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5754848,24661,2026-08-05,2026-08-06,148500,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5769195,24661,2026-08-12,2026-08-19,2500,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5801233,24661,2026-08-19,2026-09-09,20000,individual,record:c39783dd7a0585bc371ed075,Georgia Jack,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5801285,24661,2026-08-19,2026-09-09,7900,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5801230,24661,2026-08-21,2026-09-09,3278000,public,record:4cacb5c175eb7d9df68fb473,City of Portland Small Donor Elections,provisional_record_group,Other,PORTLAND,OR
+orestar-20250101-20260927-v1,5801239,24661,2026-08-26,2026-09-09,10800,individual,record:5cbc7adff2d182c1fd185e24,Kyle Prosen,provisional_record_group,Individual,FOSTER CITY,CA
+orestar-20250101-20260927-v1,5801287,24661,2026-08-26,2026-09-09,6500,unidentified,disclosure:24661:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5808214,24661,2026-08-26,2026-09-14,1500,individual,record:e3f3c396a2eba78d9cfe6eeb,Sylvia Choi,provisional_record_group,Individual,BEAVERTON,OR

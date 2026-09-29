@@ -1,0 +1,13 @@
+snapshot,race_id,reviewed_committees,rostered_candidates,category,gross_cash_cents,contribution_records
+orestar-20250101-20260927-v1,portland-district-3,9,21,mapped,14219681,709
+orestar-20250101-20260927-v1,portland-district-3,9,21,other_zip,1919482,89
+orestar-20250101-20260927-v1,portland-district-3,9,21,unidentified,16681749,908
+orestar-20250101-20260927-v1,portland-district-3,9,21,missing_zip,105000,3
+orestar-20250101-20260927-v1,portland-district-3,9,21,invalid_zip,30000,3
+orestar-20250101-20260927-v1,portland-district-3,9,21,public,63493200,18
+orestar-20250101-20260927-v1,portland-district-4,8,12,mapped,18168041,811
+orestar-20250101-20260927-v1,portland-district-4,8,12,other_zip,1782200,73
+orestar-20250101-20260927-v1,portland-district-4,8,12,unidentified,17843352,1302
+orestar-20250101-20260927-v1,portland-district-4,8,12,missing_zip,0,0
+orestar-20250101-20260927-v1,portland-district-4,8,12,invalid_zip,0,0
+orestar-20250101-20260927-v1,portland-district-4,8,12,public,72878100,24

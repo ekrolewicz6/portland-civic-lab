@@ -1,0 +1,137 @@
+[
+  {
+    "id": "G010",
+    "questionId": "Q010",
+    "track": "Small donors and participation",
+    "description": "Aggregate rows are not people. A total person count or retention rate covering those rows is not identifiable from this snapshot.",
+    "requiredEvidence": "Itemized source identities and longitudinal resolution; do not impute people from transaction counts.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G012",
+    "questionId": "Q012",
+    "track": "Businesses, labor, organizations and self-financing",
+    "description": "A complete reviewed organizational-affiliation crosswalk has not been established. Similar names or employment fields are insufficient to assign industry ownership.",
+    "requiredEvidence": "Official organizational records, effective dates and reviewed entity links.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G013",
+    "questionId": "Q013",
+    "track": "Businesses, labor, organizations and self-financing",
+    "description": "Employment fields alone do not establish direction, reimbursement or coordination; occupation/employer missingness is material.",
+    "requiredEvidence": "Separate individual giving from organizational funds; source-based case review and alternative explanations.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G015",
+    "questionId": "Q015",
+    "track": "Geography and representation",
+    "description": "City strings do not identify neighborhoods or districts. No population-normalized neighborhood measure is published without an audited geographic crosswalk.",
+    "requiredEvidence": "Official boundaries, Census denominators, validated geographic joins and missing-location sensitivity.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G022",
+    "questionId": "Q022",
+    "track": "Committee transfers and intermediaries",
+    "description": "Commingled funds do not identify dollar-level provenance. Financial paths can be possible without being uniquely attributable.",
+    "requiredEvidence": "Association-ledger review and bounded allocation scenarios; never present scenarios as tracing proof.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G025",
+    "questionId": "Q025",
+    "track": "Campaign services economy",
+    "description": "Campaign reports show committee payments, not the recipient’s cost structure or onward transfers.",
+    "requiredEvidence": "Invoices, association details, reimbursement review and recipient financial records.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G027",
+    "questionId": "Q027",
+    "track": "Independent spending",
+    "description": "This comparison requires complete target-to-race allocation and a reviewed candidate-committee crosswalk, not just expenditure names.",
+    "requiredEvidence": "Separate candidate-controlled spending from independent support/oppose allocations.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G029",
+    "questionId": "Q029",
+    "track": "Portland public financing",
+    "description": "Program participation is selected, not randomly assigned; the current matched race sample does not support a causal effect estimate.",
+    "requiredEvidence": "Comparable-campaign descriptive comparisons, selection analysis, validated local-donor definitions.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G032",
+    "questionId": "Q032",
+    "track": "Timing and campaign strategy",
+    "description": "A change point does not identify intention. Election alignment and sufficient comparable pre/post observations are needed before calling a change strategic.",
+    "requiredEvidence": "Prespecified event windows, reporting-lag checks and campaign-source corroboration.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G035",
+    "questionId": "Q035",
+    "track": "Elections and outcomes",
+    "description": "The election has not happened at the September 27 cutoff. No outcome or causal analysis is possible.",
+    "requiredEvidence": "No outcome model for pending elections.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G036",
+    "questionId": "Q036",
+    "track": "Elections and outcomes",
+    "description": "A sufficiently complete certified-result and race crosswalk with pre-election finance windows has not yet been validated for this edition. A multilevel model without that foundation would be misleading.",
+    "requiredEvidence": "Certified outcomes; race-appropriate single-seat versus multi-seat measures; grouped/temporal holdouts, regularization and uncertainty.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G039",
+    "questionId": "Q039",
+    "track": "Disclosure and visibility",
+    "description": "The current-version snapshot omits superseded amendments and deletions. Current Filed Date alone cannot reconstruct a past public view.",
+    "requiredEvidence": "Historical version retrieval with original disclosure and amendment timestamps.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G040",
+    "questionId": "Q040",
+    "track": "Connections to governing",
+    "description": "Official lobbying/consultant disclosure sources are located, but complete dated and reviewed entity joins have not been established. Name-only coincidences are not published as connections.",
+    "requiredEvidence": "Verified public-record joins, effective dates and case-specific source review.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G041",
+    "questionId": "Q041",
+    "track": "Connections to governing",
+    "description": "The transaction ledger cannot establish motive or causation. Even verified overlap needs plausible alternative explanations and defensible comparisons.",
+    "requiredEvidence": "Dated decision records, policy context and a credible identification strategy; otherwise descriptive case studies only.",
+    "status": "unresolved",
+    "notZero": true
+  },
+  {
+    "id": "G044",
+    "questionId": "Q044",
+    "track": "Unusual patterns and counterexamples",
+    "description": "No. Exploratory anomalies require peer comparisons, multiple-testing controls and original-source review; normal reporting conventions can generate them.",
+    "requiredEvidence": "Robust within-peer methods plus investigation log and counterevidence; no automated allegation labels.",
+    "status": "unresolved",
+    "notZero": true
+  }
+]

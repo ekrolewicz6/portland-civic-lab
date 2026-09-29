@@ -1,0 +1,6 @@
+import Link from 'next/link';
+import {portlandRaces} from '@/lib/voters-guide/portland';
+import {BASE} from '@/lib/campaign-finance/filters';
+import {reviewedLinks} from '@/lib/campaign-finance/query';
+import {Shell,Notice,styles} from '@/components/deep-dives/campaign-finance/Shared';
+export default function Races(){return <Shell><header className={styles.profileHeader}><h1>Compare campaigns within a race</h1><p>Start with the same election, office and rules—not a statewide fundraising leaderboard.</p></header><Notice/><div className={styles.grid}>{portlandRaces.map(race=><section key={race.id} className={styles.card}><h2><Link href={`${BASE}/races/${race.id}`}>{race.title}</Link></h2><p>{race.method} · November 3, 2026 · pending</p><p className={styles.muted}>{race.candidates.length} candidates in the existing voter guide; {new Set(reviewedLinks.filter(l=>l.raceId===race.id&&l.status==='reviewed').map(l=>l.candidateId)).size} with reviewed finance links.</p><p><Link href={`${BASE}/races/${race.id}`}>Open comparison →</Link></p></section>)}</div><p className={styles.notice}>A missing committee match is not zero fundraising. Candidate-linked committee totals can include earlier campaign activity and do not automatically become 2026-cycle totals.</p></Shell>;}

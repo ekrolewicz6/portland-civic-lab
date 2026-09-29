@@ -1,0 +1,2828 @@
+{
+  "version": "candidate-zip-map-v1",
+  "snapshot": "orestar-20250101-20260927-v1",
+  "start": "2025-01-01",
+  "end": "2026-09-27",
+  "sourceDatabaseSha256": "601bc3bbb5f8c8e3a2c0708a6183d33c9670ef402b6a1be8ff602cc4ded0b738",
+  "privateSourceSha256": "d26c65f17508a5c1ab97bc74097fe1908e46e8844203172c905e9b50a352d438",
+  "matchingReceiptSha256": "a04bc48dae8ac862571fd067860a9beb9f6a467c4ff21ab97ee6e6939a7add61",
+  "boundaryUrl": "https://tigerweb.geo.census.gov/arcgis/rest/services/Generalized_TAB2020/PUMA_TAD_TAZ_UGA_ZCTA/MapServer/3/query",
+  "boundaryBbox": "-123.15,45.2,-122.25,45.85",
+  "boundarySha256": "4472cb693e9f54a296ca1232b7a402178e74b945e3ba61ed6854d8d9b995a85a",
+  "boundaryPath": "/data/campaign-finance/zip-map/portland-metro-2020-zcta-500k.geojson",
+  "evidencePath": "/data/campaign-finance/zip-map/candidate-zip-totals.csv",
+  "evidenceSha256": "1f2cc7f89e564fb435a25e1b3be549a71970c683f48ba25ff96ce4c0d296321e",
+  "definition": "Gross cash contributions received outside reviewed City matching payments, grouped by valid reported contributor ZIP. Aggregate/unidentified records are not mapped. ZIPs are not donor residences or district eligibility; 2020 Census ZCTAs approximate postal ZIPs.",
+  "candidates": [
+    {
+      "committeeId": "15109",
+      "candidate": "Steve Novick",
+      "raceId": "portland-district-3",
+      "cashCents": 19089399,
+      "coverageCents": {
+        "mapped": 4631500,
+        "unidentified": 3520399,
+        "other_zip": 937500,
+        "public": 10000000
+      },
+      "coverageRecords": {
+        "mapped": 200,
+        "unidentified": 163,
+        "other_zip": 30,
+        "public": 1
+      },
+      "zipTotals": [
+        {
+          "zip5": "20005",
+          "cents": 70000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "20037",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "20814",
+          "cents": 50000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "21229",
+          "cents": 50000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "22101",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "22202",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "22204",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "74105",
+          "cents": 70000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "80305",
+          "cents": 70000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "85259",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "87110",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "91604",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "92130",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "94402",
+          "cents": 50000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97013",
+          "cents": 27500,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97034",
+          "cents": 225000,
+          "records": 6,
+          "mapped": true
+        },
+        {
+          "zip5": "97056",
+          "cents": 32500,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97124",
+          "cents": 10000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97201",
+          "cents": 422500,
+          "records": 15,
+          "mapped": true
+        },
+        {
+          "zip5": "97202",
+          "cents": 425000,
+          "records": 16,
+          "mapped": true
+        },
+        {
+          "zip5": "97203",
+          "cents": 2500,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97204",
+          "cents": 45000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97205",
+          "cents": 85000,
+          "records": 6,
+          "mapped": true
+        },
+        {
+          "zip5": "97206",
+          "cents": 283000,
+          "records": 15,
+          "mapped": true
+        },
+        {
+          "zip5": "97208",
+          "cents": 60000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97209",
+          "cents": 195000,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97210",
+          "cents": 422500,
+          "records": 20,
+          "mapped": true
+        },
+        {
+          "zip5": "97211",
+          "cents": 142500,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97212",
+          "cents": 450000,
+          "records": 17,
+          "mapped": true
+        },
+        {
+          "zip5": "97213",
+          "cents": 135000,
+          "records": 6,
+          "mapped": true
+        },
+        {
+          "zip5": "97214",
+          "cents": 282500,
+          "records": 19,
+          "mapped": true
+        },
+        {
+          "zip5": "97215",
+          "cents": 217500,
+          "records": 13,
+          "mapped": true
+        },
+        {
+          "zip5": "97216",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97217",
+          "cents": 50000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97219",
+          "cents": 355000,
+          "records": 16,
+          "mapped": true
+        },
+        {
+          "zip5": "97221",
+          "cents": 165000,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97222",
+          "cents": 45000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97225",
+          "cents": 141000,
+          "records": 6,
+          "mapped": true
+        },
+        {
+          "zip5": "97229",
+          "cents": 70000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97230",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97232",
+          "cents": 45000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97239",
+          "cents": 167500,
+          "records": 6,
+          "mapped": true
+        },
+        {
+          "zip5": "97267",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97282",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97330",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97333",
+          "cents": 25000,
+          "records": 3,
+          "mapped": false
+        },
+        {
+          "zip5": "97381",
+          "cents": 10000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97405",
+          "cents": 10000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97470",
+          "cents": 107500,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "97520",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97703",
+          "cents": 70000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "98660",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        }
+      ]
+    },
+    {
+      "committeeId": "17629",
+      "candidate": "Eric Zimmerman",
+      "raceId": "portland-district-4",
+      "cashCents": 17304300,
+      "coverageCents": {
+        "unidentified": 2400600,
+        "mapped": 5708700,
+        "other_zip": 385000,
+        "public": 8810000
+      },
+      "coverageRecords": {
+        "unidentified": 160,
+        "mapped": 200,
+        "other_zip": 13,
+        "public": 3
+      },
+      "zipTotals": [
+        {
+          "zip5": "60517",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "60660",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "87110",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "91604",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97015",
+          "cents": 70000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97020",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97045",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97053",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97056",
+          "cents": 32500,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97062",
+          "cents": 61300,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97086",
+          "cents": 55000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97201",
+          "cents": 907500,
+          "records": 28,
+          "mapped": true
+        },
+        {
+          "zip5": "97202",
+          "cents": 722200,
+          "records": 24,
+          "mapped": true
+        },
+        {
+          "zip5": "97204",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97205",
+          "cents": 295000,
+          "records": 9,
+          "mapped": true
+        },
+        {
+          "zip5": "97206",
+          "cents": 70000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97208",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97209",
+          "cents": 400000,
+          "records": 18,
+          "mapped": true
+        },
+        {
+          "zip5": "97210",
+          "cents": 582500,
+          "records": 24,
+          "mapped": true
+        },
+        {
+          "zip5": "97211",
+          "cents": 210200,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97212",
+          "cents": 60000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97213",
+          "cents": 5000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97214",
+          "cents": 125000,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97215",
+          "cents": 107500,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97216",
+          "cents": 90000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97217",
+          "cents": 52500,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97219",
+          "cents": 407500,
+          "records": 20,
+          "mapped": true
+        },
+        {
+          "zip5": "97220",
+          "cents": 50000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97221",
+          "cents": 215000,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97223",
+          "cents": 57500,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97224",
+          "cents": 70000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97225",
+          "cents": 205000,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97229",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97230",
+          "cents": 85000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97232",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97239",
+          "cents": 450000,
+          "records": 16,
+          "mapped": true
+        },
+        {
+          "zip5": "97242",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97302",
+          "cents": 15000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97304",
+          "cents": 30000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "97401",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97701",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97703",
+          "cents": 70000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "98666",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "98685",
+          "cents": 87500,
+          "records": 1,
+          "mapped": true
+        }
+      ]
+    },
+    {
+      "committeeId": "21777",
+      "candidate": "Simone Rede",
+      "raceId": "portland-auditor",
+      "cashCents": 660578,
+      "coverageCents": {
+        "mapped": 342500,
+        "unidentified": 258078,
+        "other_zip": 60000,
+        "public": 0
+      },
+      "coverageRecords": {
+        "mapped": 16,
+        "unidentified": 31,
+        "other_zip": 2
+      },
+      "zipTotals": [
+        {
+          "zip5": "90219",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "93110",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97060",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97202",
+          "cents": 20000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97212",
+          "cents": 80000,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97213",
+          "cents": 62500,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97214",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97219",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97221",
+          "cents": 15000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97222",
+          "cents": 20000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97225",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97232",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97239",
+          "cents": 20000,
+          "records": 1,
+          "mapped": true
+        }
+      ]
+    },
+    {
+      "committeeId": "23028",
+      "candidate": "Angelita Morillo",
+      "raceId": "portland-district-3",
+      "cashCents": 23961867,
+      "coverageCents": {
+        "unidentified": 3854627,
+        "mapped": 2399740,
+        "other_zip": 138000,
+        "public": 17464500,
+        "missing_zip": 105000
+      },
+      "coverageRecords": {
+        "unidentified": 214,
+        "mapped": 157,
+        "other_zip": 11,
+        "public": 6,
+        "missing_zip": 3
+      },
+      "zipTotals": [
+        {
+          "zip5": "11215",
+          "cents": 2500,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "25313",
+          "cents": 20000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "55413",
+          "cents": 20000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "80302",
+          "cents": 6500,
+          "records": 5,
+          "mapped": false
+        },
+        {
+          "zip5": "90660",
+          "cents": 19000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "94301",
+          "cents": 70000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "97003",
+          "cents": 10100,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97006",
+          "cents": 16100,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97034",
+          "cents": 40000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97045",
+          "cents": 11300,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97056",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97086",
+          "cents": 3976,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97140",
+          "cents": 11100,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97202",
+          "cents": 360000,
+          "records": 18,
+          "mapped": true
+        },
+        {
+          "zip5": "97203",
+          "cents": 41200,
+          "records": 6,
+          "mapped": true
+        },
+        {
+          "zip5": "97205",
+          "cents": 10000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97206",
+          "cents": 182766,
+          "records": 17,
+          "mapped": true
+        },
+        {
+          "zip5": "97208",
+          "cents": 60000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97209",
+          "cents": 118333,
+          "records": 6,
+          "mapped": true
+        },
+        {
+          "zip5": "97210",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97211",
+          "cents": 50000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97212",
+          "cents": 160000,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97213",
+          "cents": 69500,
+          "records": 8,
+          "mapped": true
+        },
+        {
+          "zip5": "97214",
+          "cents": 307532,
+          "records": 25,
+          "mapped": true
+        },
+        {
+          "zip5": "97215",
+          "cents": 179000,
+          "records": 14,
+          "mapped": true
+        },
+        {
+          "zip5": "97216",
+          "cents": 70000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97217",
+          "cents": 188833,
+          "records": 16,
+          "mapped": true
+        },
+        {
+          "zip5": "97218",
+          "cents": 100000,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97220",
+          "cents": 85000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97227",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97232",
+          "cents": 217500,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97233",
+          "cents": 2500,
+          "records": 1,
+          "mapped": true
+        }
+      ]
+    },
+    {
+      "committeeId": "23199",
+      "candidate": "Olivia Clark",
+      "raceId": "portland-district-4",
+      "cashCents": 17237645,
+      "coverageCents": {
+        "mapped": 3775145,
+        "unidentified": 3222500,
+        "other_zip": 240000,
+        "public": 10000000
+      },
+      "coverageRecords": {
+        "mapped": 136,
+        "unidentified": 256,
+        "other_zip": 8,
+        "public": 2
+      },
+      "zipTotals": [
+        {
+          "zip5": "20008",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "81323",
+          "cents": 60000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "87110",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97027",
+          "cents": 70000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97034",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97056",
+          "cents": 50000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97201",
+          "cents": 467445,
+          "records": 18,
+          "mapped": true
+        },
+        {
+          "zip5": "97202",
+          "cents": 560000,
+          "records": 18,
+          "mapped": true
+        },
+        {
+          "zip5": "97203",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97204",
+          "cents": 100000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97205",
+          "cents": 160000,
+          "records": 6,
+          "mapped": true
+        },
+        {
+          "zip5": "97209",
+          "cents": 45000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97210",
+          "cents": 205000,
+          "records": 8,
+          "mapped": true
+        },
+        {
+          "zip5": "97211",
+          "cents": 120000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97212",
+          "cents": 27700,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97214",
+          "cents": 70000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97216",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97219",
+          "cents": 355000,
+          "records": 13,
+          "mapped": true
+        },
+        {
+          "zip5": "97220",
+          "cents": 50000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97221",
+          "cents": 160000,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97222",
+          "cents": 110000,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97225",
+          "cents": 155000,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97227",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97229",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97239",
+          "cents": 837500,
+          "records": 32,
+          "mapped": true
+        },
+        {
+          "zip5": "97317",
+          "cents": 30000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97367",
+          "cents": 10000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97388",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "98117",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "98685",
+          "cents": 87500,
+          "records": 1,
+          "mapped": true
+        }
+      ]
+    },
+    {
+      "committeeId": "23208",
+      "candidate": "Tiffany Koyama Lane",
+      "raceId": "portland-district-3",
+      "cashCents": 27780922,
+      "coverageCents": {
+        "unidentified": 4809057,
+        "mapped": 2716161,
+        "public": 20000000,
+        "other_zip": 225704,
+        "invalid_zip": 30000
+      },
+      "coverageRecords": {
+        "unidentified": 346,
+        "mapped": 181,
+        "public": 6,
+        "other_zip": 18,
+        "invalid_zip": 3
+      },
+      "zipTotals": [
+        {
+          "zip5": "11215",
+          "cents": 5000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "20853",
+          "cents": 70000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "87508",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "92703",
+          "cents": 5000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "94010",
+          "cents": 8104,
+          "records": 4,
+          "mapped": false
+        },
+        {
+          "zip5": "94549",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97006",
+          "cents": 55200,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97034",
+          "cents": 59000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97035",
+          "cents": 25000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97071",
+          "cents": 22600,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97078",
+          "cents": 10000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97086",
+          "cents": 3976,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97130",
+          "cents": 24900,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97131",
+          "cents": 10100,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97202",
+          "cents": 309100,
+          "records": 18,
+          "mapped": true
+        },
+        {
+          "zip5": "97203",
+          "cents": 21000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97205",
+          "cents": 21000,
+          "records": 6,
+          "mapped": true
+        },
+        {
+          "zip5": "97206",
+          "cents": 101667,
+          "records": 8,
+          "mapped": true
+        },
+        {
+          "zip5": "97209",
+          "cents": 124750,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97210",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97211",
+          "cents": 76934,
+          "records": 9,
+          "mapped": true
+        },
+        {
+          "zip5": "97212",
+          "cents": 120000,
+          "records": 8,
+          "mapped": true
+        },
+        {
+          "zip5": "97213",
+          "cents": 152300,
+          "records": 11,
+          "mapped": true
+        },
+        {
+          "zip5": "97214",
+          "cents": 333734,
+          "records": 23,
+          "mapped": true
+        },
+        {
+          "zip5": "97215",
+          "cents": 215500,
+          "records": 17,
+          "mapped": true
+        },
+        {
+          "zip5": "97216",
+          "cents": 30000,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97217",
+          "cents": 237500,
+          "records": 14,
+          "mapped": true
+        },
+        {
+          "zip5": "97218",
+          "cents": 62500,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97219",
+          "cents": 20000,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97220",
+          "cents": 35000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97221",
+          "cents": 10000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97225",
+          "cents": 10100,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97227",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97229",
+          "cents": 150800,
+          "records": 8,
+          "mapped": true
+        },
+        {
+          "zip5": "97232",
+          "cents": 275000,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97233",
+          "cents": 2500,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97239",
+          "cents": 82000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97405",
+          "cents": 10100,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97828",
+          "cents": 15000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "98107",
+          "cents": 2500,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "98119",
+          "cents": 5000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "98661",
+          "cents": 19000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "98663",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "98682",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        }
+      ]
+    },
+    {
+      "committeeId": "23295",
+      "candidate": "Eli Arnold",
+      "raceId": "portland-district-4",
+      "cashCents": 28568115,
+      "coverageCents": {
+        "unidentified": 4567615,
+        "mapped": 3860500,
+        "other_zip": 140000,
+        "public": 20000000
+      },
+      "coverageRecords": {
+        "unidentified": 251,
+        "mapped": 192,
+        "other_zip": 5,
+        "public": 5
+      },
+      "zipTotals": [
+        {
+          "zip5": "11215",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "92637",
+          "cents": 2500,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97034",
+          "cents": 75000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97035",
+          "cents": 10000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97201",
+          "cents": 471000,
+          "records": 17,
+          "mapped": true
+        },
+        {
+          "zip5": "97202",
+          "cents": 368000,
+          "records": 17,
+          "mapped": true
+        },
+        {
+          "zip5": "97203",
+          "cents": 3500,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97205",
+          "cents": 332500,
+          "records": 16,
+          "mapped": true
+        },
+        {
+          "zip5": "97208",
+          "cents": 10000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97209",
+          "cents": 772500,
+          "records": 40,
+          "mapped": true
+        },
+        {
+          "zip5": "97210",
+          "cents": 298500,
+          "records": 20,
+          "mapped": true
+        },
+        {
+          "zip5": "97211",
+          "cents": 150000,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97212",
+          "cents": 40000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97214",
+          "cents": 60000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97215",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97217",
+          "cents": 70000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97218",
+          "cents": 10000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97219",
+          "cents": 291000,
+          "records": 17,
+          "mapped": true
+        },
+        {
+          "zip5": "97221",
+          "cents": 85000,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97222",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97223",
+          "cents": 50000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97225",
+          "cents": 105000,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97229",
+          "cents": 55000,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97230",
+          "cents": 2500,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97231",
+          "cents": 25000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97232",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97239",
+          "cents": 372500,
+          "records": 13,
+          "mapped": true
+        },
+        {
+          "zip5": "97242",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97267",
+          "cents": 21000,
+          "records": 9,
+          "mapped": true
+        },
+        {
+          "zip5": "97703",
+          "cents": 67500,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "98685",
+          "cents": 87500,
+          "records": 1,
+          "mapped": true
+        }
+      ]
+    },
+    {
+      "committeeId": "23365",
+      "candidate": "Mitch Green",
+      "raceId": "portland-district-4",
+      "cashCents": 24057786,
+      "coverageCents": {
+        "public": 16240100,
+        "unidentified": 4027390,
+        "mapped": 3407696,
+        "other_zip": 382600
+      },
+      "coverageRecords": {
+        "public": 5,
+        "unidentified": 307,
+        "mapped": 214,
+        "other_zip": 14
+      },
+      "zipTotals": [
+        {
+          "zip5": "11104",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "84014",
+          "cents": 15000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "90049",
+          "cents": 12600,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "94301",
+          "cents": 70000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "97006",
+          "cents": 10100,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97034",
+          "cents": 40000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97035",
+          "cents": 10000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97078",
+          "cents": 25000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97086",
+          "cents": 9642,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97201",
+          "cents": 80000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97202",
+          "cents": 458500,
+          "records": 23,
+          "mapped": true
+        },
+        {
+          "zip5": "97203",
+          "cents": 153000,
+          "records": 16,
+          "mapped": true
+        },
+        {
+          "zip5": "97205",
+          "cents": 35000,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97206",
+          "cents": 281667,
+          "records": 13,
+          "mapped": true
+        },
+        {
+          "zip5": "97208",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97209",
+          "cents": 152500,
+          "records": 8,
+          "mapped": true
+        },
+        {
+          "zip5": "97210",
+          "cents": 107500,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97211",
+          "cents": 110833,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97212",
+          "cents": 245000,
+          "records": 11,
+          "mapped": true
+        },
+        {
+          "zip5": "97213",
+          "cents": 82500,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97214",
+          "cents": 257034,
+          "records": 25,
+          "mapped": true
+        },
+        {
+          "zip5": "97215",
+          "cents": 106800,
+          "records": 8,
+          "mapped": true
+        },
+        {
+          "zip5": "97217",
+          "cents": 372500,
+          "records": 16,
+          "mapped": true
+        },
+        {
+          "zip5": "97218",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97219",
+          "cents": 35000,
+          "records": 8,
+          "mapped": true
+        },
+        {
+          "zip5": "97220",
+          "cents": 98120,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97221",
+          "cents": 290000,
+          "records": 13,
+          "mapped": true
+        },
+        {
+          "zip5": "97222",
+          "cents": 20000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97227",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97229",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97230",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97232",
+          "cents": 190000,
+          "records": 16,
+          "mapped": true
+        },
+        {
+          "zip5": "97233",
+          "cents": 22500,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97239",
+          "cents": 49500,
+          "records": 10,
+          "mapped": true
+        },
+        {
+          "zip5": "98370",
+          "cents": 10000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "99205",
+          "cents": 240000,
+          "records": 6,
+          "mapped": false
+        }
+      ]
+    },
+    {
+      "committeeId": "23411",
+      "candidate": "Jeremy Beausoleil Smith",
+      "raceId": "portland-district-4",
+      "cashCents": 10322700,
+      "coverageCents": {
+        "unidentified": 1660700,
+        "other_zip": 50000,
+        "mapped": 197000,
+        "public": 8415000
+      },
+      "coverageRecords": {
+        "unidentified": 187,
+        "other_zip": 6,
+        "mapped": 15,
+        "public": 5
+      },
+      "zipTotals": [
+        {
+          "zip5": "23223",
+          "cents": 10000,
+          "records": 4,
+          "mapped": false
+        },
+        {
+          "zip5": "23233",
+          "cents": 15000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "23901",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97015",
+          "cents": 5000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97086",
+          "cents": 25500,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97201",
+          "cents": 59500,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97202",
+          "cents": 7500,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97205",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97206",
+          "cents": 10000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97209",
+          "cents": 2000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97212",
+          "cents": 10000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97213",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97230",
+          "cents": 2500,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97233",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        }
+      ]
+    },
+    {
+      "committeeId": "24615",
+      "candidate": "John J Goldsmith",
+      "raceId": "portland-district-4",
+      "cashCents": 60000,
+      "coverageCents": {
+        "mapped": 60000,
+        "public": 0,
+        "unidentified": 0,
+        "other_zip": 0
+      },
+      "coverageRecords": {
+        "mapped": 1
+      },
+      "zipTotals": [
+        {
+          "zip5": "97209",
+          "cents": 60000,
+          "records": 1,
+          "mapped": true
+        }
+      ]
+    },
+    {
+      "committeeId": "24661",
+      "candidate": "Tom Sollitt",
+      "raceId": "portland-district-3",
+      "cashCents": 4189200,
+      "coverageCents": {
+        "unidentified": 681900,
+        "other_zip": 70800,
+        "mapped": 158500,
+        "public": 3278000
+      },
+      "coverageRecords": {
+        "unidentified": 27,
+        "other_zip": 4,
+        "mapped": 10,
+        "public": 1
+      },
+      "zipTotals": [
+        {
+          "zip5": "27526",
+          "cents": 20000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "94404",
+          "cents": 10800,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97007",
+          "cents": 13500,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97086",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97202",
+          "cents": 50000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97213",
+          "cents": 50000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97229",
+          "cents": 20000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97293",
+          "cents": 40000,
+          "records": 2,
+          "mapped": false
+        }
+      ]
+    },
+    {
+      "committeeId": "24897",
+      "candidate": "Kellie Torres",
+      "raceId": "portland-district-3",
+      "cashCents": 17036100,
+      "coverageCents": {
+        "mapped": 3979600,
+        "unidentified": 2849800,
+        "other_zip": 406700,
+        "public": 9800000
+      },
+      "coverageRecords": {
+        "mapped": 143,
+        "unidentified": 40,
+        "other_zip": 15,
+        "public": 2
+      },
+      "zipTotals": [
+        {
+          "zip5": "13653",
+          "cents": 2500,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "32803",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "48170",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "60010",
+          "cents": 10000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "83353",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "90045",
+          "cents": 60000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "94608",
+          "cents": 34200,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97008",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97015",
+          "cents": 50000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97020",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97027",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97034",
+          "cents": 62500,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97067",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97068",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97133",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97201",
+          "cents": 632500,
+          "records": 22,
+          "mapped": true
+        },
+        {
+          "zip5": "97202",
+          "cents": 220000,
+          "records": 10,
+          "mapped": true
+        },
+        {
+          "zip5": "97204",
+          "cents": 245000,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97205",
+          "cents": 187000,
+          "records": 6,
+          "mapped": true
+        },
+        {
+          "zip5": "97206",
+          "cents": 125000,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97208",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97209",
+          "cents": 200000,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97210",
+          "cents": 215000,
+          "records": 8,
+          "mapped": true
+        },
+        {
+          "zip5": "97211",
+          "cents": 155100,
+          "records": 5,
+          "mapped": true
+        },
+        {
+          "zip5": "97212",
+          "cents": 70000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97213",
+          "cents": 2500,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97214",
+          "cents": 187500,
+          "records": 8,
+          "mapped": true
+        },
+        {
+          "zip5": "97215",
+          "cents": 122500,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97217",
+          "cents": 90000,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97219",
+          "cents": 115000,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97220",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97221",
+          "cents": 370000,
+          "records": 12,
+          "mapped": true
+        },
+        {
+          "zip5": "97224",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97225",
+          "cents": 245000,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97229",
+          "cents": 105000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97231",
+          "cents": 70000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97232",
+          "cents": 85000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97239",
+          "cents": 95000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97467",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97504",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97703",
+          "cents": 70000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "97935",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "98660",
+          "cents": 70000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "98666",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        }
+      ]
+    },
+    {
+      "committeeId": "24966",
+      "candidate": "Matthias Hallett",
+      "raceId": "portland-district-3",
+      "cashCents": 281224,
+      "coverageCents": {
+        "unidentified": 132066,
+        "mapped": 103380,
+        "other_zip": 45778,
+        "public": 0
+      },
+      "coverageRecords": {
+        "unidentified": 17,
+        "mapped": 10,
+        "other_zip": 3
+      },
+      "zipTotals": [
+        {
+          "zip5": "83333",
+          "cents": 10448,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "92646",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97003",
+          "cents": 31344,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97124",
+          "cents": 15570,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97202",
+          "cents": 30330,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97210",
+          "cents": 10448,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97215",
+          "cents": 15688,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97304",
+          "cents": 10330,
+          "records": 1,
+          "mapped": false
+        }
+      ]
+    },
+    {
+      "committeeId": "24972",
+      "candidate": "Joel Corcoran",
+      "raceId": "portland-district-3",
+      "cashCents": 409500,
+      "coverageCents": {
+        "unidentified": 249500,
+        "mapped": 125000,
+        "other_zip": 35000,
+        "public": 0
+      },
+      "coverageRecords": {
+        "unidentified": 24,
+        "mapped": 4,
+        "other_zip": 2
+      },
+      "zipTotals": [
+        {
+          "zip5": "20008",
+          "cents": 15000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "33334",
+          "cents": 20000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97202",
+          "cents": 20000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97211",
+          "cents": 50000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97219",
+          "cents": 35000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97229",
+          "cents": 20000,
+          "records": 1,
+          "mapped": true
+        }
+      ]
+    },
+    {
+      "committeeId": "24973",
+      "candidate": "Esther León",
+      "raceId": "portland-district-3",
+      "cashCents": 3581900,
+      "coverageCents": {
+        "unidentified": 490400,
+        "other_zip": 35000,
+        "mapped": 105800,
+        "public": 2950700
+      },
+      "coverageRecords": {
+        "unidentified": 67,
+        "other_zip": 5,
+        "mapped": 4,
+        "public": 2
+      },
+      "zipTotals": [
+        {
+          "zip5": "78634",
+          "cents": 10000,
+          "records": 4,
+          "mapped": false
+        },
+        {
+          "zip5": "94901",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97206",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97213",
+          "cents": 22500,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97222",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97266",
+          "cents": 33300,
+          "records": 1,
+          "mapped": true
+        }
+      ]
+    },
+    {
+      "committeeId": "24979",
+      "candidate": "Cristal Otero",
+      "raceId": "portland-district-3",
+      "cashCents": 119000,
+      "coverageCents": {
+        "unidentified": 94000,
+        "other_zip": 25000,
+        "public": 0,
+        "mapped": 0
+      },
+      "coverageRecords": {
+        "unidentified": 10,
+        "other_zip": 1
+      },
+      "zipTotals": [
+        {
+          "zip5": "30523",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        }
+      ]
+    },
+    {
+      "committeeId": "25040",
+      "candidate": "Jamey Evenstar",
+      "raceId": "portland-district-4",
+      "cashCents": 7337447,
+      "coverageCents": {
+        "unidentified": 1090347,
+        "mapped": 629000,
+        "other_zip": 357100,
+        "public": 5261000
+      },
+      "coverageRecords": {
+        "unidentified": 95,
+        "mapped": 29,
+        "other_zip": 19,
+        "public": 2
+      },
+      "zipTotals": [
+        {
+          "zip5": "32796",
+          "cents": 50000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "33172",
+          "cents": 50000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "78108",
+          "cents": 2000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "78132",
+          "cents": 15000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "94103",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "94110",
+          "cents": 10000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97202",
+          "cents": 77500,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97203",
+          "cents": 5000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97206",
+          "cents": 80000,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97209",
+          "cents": 30000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97211",
+          "cents": 85500,
+          "records": 4,
+          "mapped": true
+        },
+        {
+          "zip5": "97213",
+          "cents": 10000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97214",
+          "cents": 20000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97215",
+          "cents": 20000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97216",
+          "cents": 30000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97217",
+          "cents": 40000,
+          "records": 3,
+          "mapped": true
+        },
+        {
+          "zip5": "97219",
+          "cents": 10000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97220",
+          "cents": 11000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97233",
+          "cents": 10000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97401",
+          "cents": 10100,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "98662",
+          "cents": 150000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "98682",
+          "cents": 50000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "99645",
+          "cents": 185000,
+          "records": 11,
+          "mapped": false
+        }
+      ]
+    },
+    {
+      "committeeId": "25103",
+      "candidate": "Jayne Cronlund",
+      "raceId": "portland-district-4",
+      "cashCents": 5783700,
+      "coverageCents": {
+        "unidentified": 874200,
+        "mapped": 530000,
+        "other_zip": 227500,
+        "public": 4152000
+      },
+      "coverageRecords": {
+        "unidentified": 46,
+        "mapped": 24,
+        "other_zip": 8,
+        "public": 2
+      },
+      "zipTotals": [
+        {
+          "zip5": "90026",
+          "cents": 100000,
+          "records": 2,
+          "mapped": false
+        },
+        {
+          "zip5": "94611",
+          "cents": 35000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "95476",
+          "cents": 10000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97034",
+          "cents": 45000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97202",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97210",
+          "cents": 2500,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97211",
+          "cents": 25000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97214",
+          "cents": 50000,
+          "records": 1,
+          "mapped": true
+        },
+        {
+          "zip5": "97219",
+          "cents": 145000,
+          "records": 8,
+          "mapped": true
+        },
+        {
+          "zip5": "97223",
+          "cents": 35000,
+          "records": 2,
+          "mapped": true
+        },
+        {
+          "zip5": "97239",
+          "cents": 115000,
+          "records": 7,
+          "mapped": true
+        },
+        {
+          "zip5": "97535",
+          "cents": 12500,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "97703",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "98033",
+          "cents": 25000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "98260",
+          "cents": 20000,
+          "records": 1,
+          "mapped": false
+        },
+        {
+          "zip5": "98642",
+          "cents": 87500,
+          "records": 1,
+          "mapped": true
+        }
+      ]
+    }
+  ]
+}
