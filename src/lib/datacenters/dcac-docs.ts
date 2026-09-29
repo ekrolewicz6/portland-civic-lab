@@ -1,6 +1,6 @@
 /**
  * The public record of Governor Kotek's Data Center Advisory Committee —
- * every document and recording posted to the Oregon Dept. of Energy's
+ * selected documents and recordings posted to the Oregon Dept. of Energy's
  * committee page, indexed August 3, 2026:
  * https://www.oregon.gov/energy/get-involved/pages/oregon-data-center-advisory-committee.aspx
  *
@@ -25,6 +25,7 @@ export interface DcacSession {
 }
 
 export const DCAC_FOUNDATIONAL: DcacDoc[] = [
+  { title: "Preliminary Learnings and Questions — September 10, 2026", org: "DCAC", url: "https://www.oregon.gov/energy/get-involved/Documents/2026-09-10-DCAC-Preliminary-Learnings.pdf", kind: "foundational" },
   {
     title: "Committee charge from Governor Kotek",
     org: "Governor's Office",

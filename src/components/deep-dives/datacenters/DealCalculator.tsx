@@ -1,284 +1,148 @@
 "use client";
-
 import { useState } from "react";
-import { Calculator } from "lucide-react";
-import { REGIONS } from "@/lib/datacenters/data";
-import { dealMath, ASSUMPTIONS, type DealInputs } from "@/lib/datacenters/engine";
+import { ArrowDownToLine, ArrowRight, RotateCcw, SlidersHorizontal, MapPin } from "lucide-react";
+import { dealMath, cashFlowCsv, DEFAULT_INPUTS, type DealInputs, type Ledger } from "@/lib/datacenters/engine";
+import { DEAL_EXAMPLES } from "@/lib/datacenters/examples";
+import { ReceiptBars, MoneyTimeline, money } from "./FiscalCharts";
 
-const fmtM = (m: number) =>
-  m >= 1000 ? `$${(m / 1000).toFixed(1)}B` : `$${m.toFixed(m < 10 ? 1 : 0)}M`;
-const fmtK = (n: number) => `$${Math.round(n / 1000).toLocaleString("en-US")}K`;
-
-function Slider({
-  label,
-  value,
-  display,
-  min,
-  max,
-  step,
-  onChange,
-  lo,
-  hi,
-}: {
-  label: string;
-  value: number;
-  display: string;
-  min: number;
-  max: number;
-  step: number;
-  onChange: (v: number) => void;
-  lo: string;
-  hi: string;
-}) {
-  return (
-    <div>
-      <div className="mb-1 flex items-baseline justify-between">
-        <span className="text-[11px] font-mono uppercase tracking-wide text-[var(--color-ink-muted)]">
-          {label}
-        </span>
-        <span className="font-mono text-[16px] font-bold text-[var(--color-canopy)] tabular-nums">
-          {display}
-        </span>
-      </div>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
-        className="w-full accent-[var(--color-ember)] cursor-pointer"
-        aria-label={label}
-      />
-      <div className="flex justify-between text-[10px] font-mono text-[var(--color-ink-muted)] mt-0.5">
-        <span>{lo}</span>
-        <span>{hi}</span>
-      </div>
-    </div>
-  );
-}
-
+type NumericKey = Exclude<keyof DealInputs, "paymentMode">;
+const INPUT_LABELS: Record<NumericKey, string> = {
+  taxableValueM: "Taxable value ($M)", taxRatePct: "Property tax rate (%)", abatementYears: "Years of tax break",
+  feeM: "Annual payment ($M)", paymentSharePct: "Share of full tax (%)", minimumPaymentM: "Annual payment floor ($M)",
+  laterPaymentSharePct: "Later share of full tax (%)", paymentStepYear: "Higher share starts in year",
+  upfrontM: "One-time deal payment ($M)", jobs: "Permanent jobs", wageK: "Annual wage ($K)", incomeTaxPct: "State income tax rate (%)",
+  buildWithoutPct: "Chance it gets built without a break (%)", buildWithPct: "Chance it gets built with a deal (%)",
+  horizonYears: "Years to compare", operatingYears: "Years the site operates", discountPct: "Discount rate (%)",
+  baselineM: "No-build land taxes per year ($M)", serviceCostM: "Public costs per year ($M)",
+  constructionLocalM: "Local construction tax receipts ($M)", constructionStateM: "State construction tax receipts ($M)"
+};
 export default function DealCalculator() {
-  const [regionId, setRegionId] = useState("columbia-east");
-  const region = REGIONS.find((r) => r.id === regionId) ?? REGIONS[2];
-  const [inp, setInp] = useState<DealInputs>({ ...REGIONS[2].preset });
+  const [exampleId, setExampleId] = useState(DEAL_EXAMPLES[0].id);
+  const [inp, setInp] = useState<DealInputs>({ ...DEAL_EXAMPLES[0].inputs });
+  const [ledger, setLedger] = useState<Ledger>("local");
+  const example = DEAL_EXAMPLES.find(e => e.id === exampleId);
+  const result = dealMath(inp, ledger);
+  const threshold = result.breakEvenP;
+  const inRange = threshold !== null && threshold >= 0 && threshold <= 1;
+  const tied = Math.abs(result.net) < .000001;
+  function change(key: NumericKey, value: number) { setInp(prev => ({ ...prev, [key]: value })); }
+  function choose(id: string) {
+    const chosen = DEAL_EXAMPLES.find(e => e.id === id);
+    setExampleId(id); setInp({ ...(chosen?.inputs ?? DEFAULT_INPUTS) }); setLedger("local");
+  }
+  function provenance(key: keyof DealInputs) {
+    if (example && inp[key] !== example.inputs[key]) return "Edited";
+    return example?.documented.includes(key) ? "Document-based" : "Assumption";
+  }
+  function field(key: NumericKey, min: number, max: number, step: number, help?: string) {
+    const kind = provenance(key);
+    return <label className="dc-field" key={key}>
+      <span className="dc-field-label">{INPUT_LABELS[key]}</span>
+      <span className="dc-input-wrap"><input type="number" aria-label={INPUT_LABELS[key]} value={inp[key]} min={min} max={max} step={step}
+        onChange={e => { const n = e.currentTarget.valueAsNumber; if (Number.isFinite(n)) change(key, Math.min(max, Math.max(min, step === 1 ? Math.round(n) : n))); }} /></span>
+      <span className={"dc-input-source " + (kind === "Document-based" ? "is-sourced" : "")}>{kind}</span>
+      {help && <span className="dc-input-help">{help}</span>}
+    </label>;
+  }
+  function download() {
+    const note = "# Example=" + (example?.title ?? "Custom") + "; scenario, not audited actual collections\n";
+    const url = URL.createObjectURL(new Blob([note + cashFlowCsv(inp, ledger)], { type: "text/csv;charset=utf-8" }));
+    const a = document.createElement("a"); a.href = url; a.download = "data-center-fiscal-scenario.csv"; a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  return <div className="dc-calculator" data-testid="deal-calculator">
+    <div className="dc-calc-start"><span className="dc-kicker">01 / Pick a starting point</span><p>Real terms. Editable assumptions. See what changes the answer.</p></div>
+    <div className="dc-examples" role="group" aria-label="Example agreements">
+      {DEAL_EXAMPLES.map(e => <button key={e.id} type="button" onClick={() => choose(e.id)} aria-pressed={e.id === exampleId} data-testid={"example-" + e.id} className="dc-example">
+        <span className="dc-example-place"><MapPin size={13} /> {e.place}<span className="dc-example-arrow"><ArrowRight size={18} /></span></span>
+        <strong>{e.title}</strong><span>{e.short}</span><small>{e.tag}</small>
+      </button>)}
+    </div>
+    <div className="dc-example-note"><span className="dc-note-marker">i</span><p>These are <strong>scenarios, not audited project returns.</strong> The Dalles examples use a signed agreement; Hillsboro uses published program rules. Unknowns are filled with visible assumptions.</p></div>
 
-  const set = (patch: Partial<DealInputs>) => setInp((prev) => ({ ...prev, ...patch }));
-  const pickRegion = (id: string) => {
-    const r = REGIONS.find((x) => x.id === id);
-    if (!r) return;
-    setRegionId(id);
-    setInp({ ...r.preset });
-  };
-
-  const res = dealMath(inp);
-  const p = inp.leveragePct / 100;
-  const signs = res.net >= 0;
-  const barMax = Math.max(res.pvFullTax, res.pvDealProperty, 1);
-
-  return (
-    <div className="rounded-sm border border-[var(--color-parchment)] bg-white overflow-hidden">
-      <div className="grid lg:grid-cols-2">
-        {/* ── Controls ── */}
-        <div className="p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-[var(--color-parchment)]">
-          <div className="flex items-center gap-2 mb-1">
-            <Calculator className="w-4 h-4 text-[var(--color-ember)]" />
-            <h3 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink-light)]">
-              Price the deal
-            </h3>
-          </div>
-          <p className="text-[13px] text-[var(--color-ink-muted)] mb-5 leading-relaxed">
-            Start from a region, then move the levers. Every input is a real deal term — the
-            presets track the public record for each region.
-          </p>
-
-          <div className="mb-6 grid grid-cols-2 sm:grid-cols-3 gap-2">
-            {REGIONS.map((r) => (
-              <button
-                key={r.id}
-                onClick={() => pickRegion(r.id)}
-                className={`rounded-sm border px-2 py-2 text-left text-[11px] font-medium transition-colors ${
-                  regionId === r.id
-                    ? "border-[var(--color-canopy)] bg-[var(--color-canopy)]/[0.04] text-[var(--color-canopy)]"
-                    : "border-[var(--color-parchment)] text-[var(--color-ink-light)] hover:border-[var(--color-sage)]"
-                }`}
-              >
-                {r.name}
-              </button>
-            ))}
-          </div>
-
-          <div className="space-y-5">
-            <Slider
-              label="On-site investment (bldg + servers)"
-              value={inp.investmentM}
-              display={fmtM(inp.investmentM)}
-              min={200}
-              max={5000}
-              step={100}
-              onChange={(v) => set({ investmentM: v })}
-              lo="$200M"
-              hi="$5B"
-            />
-            <Slider
-              label="Effective property tax rate"
-              value={inp.taxRatePct}
-              display={`${inp.taxRatePct.toFixed(2)}%`}
-              min={0.7}
-              max={1.4}
-              step={0.05}
-              onChange={(v) => set({ taxRatePct: v })}
-              lo="0.7%"
-              hi="1.4%"
-            />
-            <Slider
-              label="Abatement length"
-              value={inp.abatementYears}
-              display={`${inp.abatementYears} yrs`}
-              min={0}
-              max={15}
-              step={1}
-              onChange={(v) => set({ abatementYears: v })}
-              lo="none"
-              hi="15 yrs"
-            />
-            <Slider
-              label="Fee in lieu of taxes"
-              value={inp.feeM}
-              display={`${fmtM(inp.feeM)}/yr`}
-              min={0}
-              max={20}
-              step={0.5}
-              onChange={(v) => set({ feeM: v })}
-              lo="$0"
-              hi="$20M/yr"
-            />
-            <Slider
-              label="Permanent jobs"
-              value={inp.jobs}
-              display={String(inp.jobs)}
-              min={10}
-              max={500}
-              step={10}
-              onChange={(v) => set({ jobs: v })}
-              lo="10"
-              hi="500"
-            />
-            <Slider
-              label="Average wage"
-              value={inp.wageK}
-              display={`$${inp.wageK}K`}
-              min={50}
-              max={150}
-              step={5}
-              onChange={(v) => set({ wageK: v })}
-              lo="$50K"
-              hi="$150K"
-            />
-            <div className="rounded-sm border border-[var(--color-ember)]/40 bg-[#f6ecd9]/40 p-3">
-              <Slider
-                label="Leverage: would they build with NO break?"
-                value={inp.leveragePct}
-                display={`${inp.leveragePct}%`}
-                min={0}
-                max={100}
-                step={5}
-                onChange={(v) => set({ leveragePct: v })}
-                lo="never"
-                hi="certainly"
-              />
-              <p className="mt-1.5 text-[11px] text-[var(--color-ink-muted)] leading-snug">
-                {region.leverageNote}
-              </p>
-            </div>
-          </div>
+    <div className="dc-calc-grid">
+      <div className="dc-calc-controls" id="dc-assumptions">
+        <div className="dc-step-heading"><span className="dc-kicker">02 / Test the big unknown</span><button type="button" className="dc-text-button" onClick={() => choose("custom")}>Start custom</button></div>
+        <h3>Would it be built anyway?</h3>
+        <p className="dc-small">The more likely the project is without a tax break, the harder the break is to justify.</p>
+        <div className="dc-probability">
+          <div><label htmlFor="dc-build-chance">Chance of building without a break</label><output htmlFor="dc-build-chance">{inp.buildWithoutPct.toLocaleString("en-US", { maximumFractionDigits: 1 })}<span>%</span></output></div>
+          <input id="dc-build-chance" type="range" min="0" max="100" step="1" value={inp.buildWithoutPct} aria-label={INPUT_LABELS.buildWithoutPct} onChange={e => change("buildWithoutPct", Number(e.target.value))} />
+          <div className="dc-range-labels"><span>Needs the deal</span><span>Would build anyway</span></div>
+          <div className="dc-probability-options">{[[25, "Unlikely"], [50, "50 / 50"], [100, "Certain"]].map(([n, label]) => <button type="button" key={n} aria-pressed={inp.buildWithoutPct === n} onClick={() => change("buildWithoutPct", Number(n))}>{label}</button>)}</div>
+          <p className="dc-fine">An assumption you control. We do not know this probability for these sites.</p>
         </div>
-
-        {/* ── Results ── */}
-        <div className="p-6 sm:p-8 bg-[var(--color-paper-warm)] flex flex-col justify-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ember)]">
-            The deal pencils out only if leverage is below
-          </p>
-          <p className="mt-2 font-mono text-5xl sm:text-6xl font-bold text-[var(--color-canopy)] tabular-nums leading-none">
-            {(res.breakEvenP * 100).toFixed(0)}%
-          </p>
-          <p className="text-[13px] text-[var(--color-ink-muted)] mt-2 leading-relaxed">
-            At your estimate ({inp.leveragePct}%), signing{" "}
-            <strong className={signs ? "text-[var(--color-fern)]" : "text-[var(--color-clay)]"}>
-              {signs ? "beats" : "loses to"} holding firm by {fmtM(Math.abs(res.net))}
-            </strong>{" "}
-            in expected 15-year value.
-          </p>
-
-          {/* leverage vs break-even track */}
-          <div className="mt-5">
-            <div className="relative h-2.5 w-full rounded-sm bg-white border border-[var(--color-parchment)] overflow-hidden">
-              <div
-                className="absolute inset-y-0 left-0"
-                style={{ width: `${res.breakEvenP * 100}%`, backgroundColor: "#e3efe7" }}
-              />
-              <div
-                className="absolute inset-y-0 w-0.5 bg-[var(--color-canopy)]"
-                style={{ left: `calc(${Math.min(p * 100, 99.5)}% - 1px)` }}
-              />
-            </div>
-            <div className="mt-1 flex justify-between text-[10px] font-mono text-[var(--color-ink-muted)]">
-              <span>deal-friendly zone ends at {(res.breakEvenP * 100).toFixed(0)}%</span>
-              <span>▎= your leverage</span>
+        <a className="dc-mobile-jump" href="#dc-comparison">See the comparison <ArrowRight size={15}/></a>
+        <div className="dc-main-inputs">
+          {field("taxableValueM", 0, 20000, 10)}
+          {field("taxRatePct", 0, 5, .05)}
+          {field("abatementYears", 0, 30, 1)}
+          {field("horizonYears", 1, 50, 1)}
+        </div>
+        <details className="dc-disclosure">
+          <summary><SlidersHorizontal size={16} /> Payments, jobs and other assumptions</summary>
+          <div className="dc-detail-body">
+            <div className="dc-main-inputs">
+              <label className="dc-field"><span className="dc-field-label">Payment rule</span><select aria-label="Payment rule" value={inp.paymentMode} onChange={e => setInp(prev => ({ ...prev, paymentMode: e.target.value as DealInputs["paymentMode"] }))}><option value="fixed">Fixed annual payment</option><option value="share">Share of full property tax</option><option value="stepped-share">Share that changes later</option></select><span className="dc-input-source">{provenance("paymentMode")}</span></label>
+              {inp.paymentMode === "fixed" ? field("feeM", 0, 100, .1, "Total taxes and fees; count each payment once.") : field("paymentSharePct", 0, 100, 1)}
+              {inp.paymentMode === "stepped-share" && <>{field("laterPaymentSharePct", 0, 100, 1)}{field("paymentStepYear", 1, 50, 1)}</>}
+              {inp.paymentMode !== "fixed" && field("minimumPaymentM", 0, 100, .1, "A minimum total, not an extra fee.")}
+              {field("upfrontM", 0, 1000, .1, "Counted in year 1 if built.")}
+              {field("buildWithPct", 0, 100, 1)}
+              {field("operatingYears", 0, 50, 1)}
+              {field("discountPct", 0, 15, .5)}
+              {field("baselineM", 0, 100, .01)}
+              {field("serviceCostM", 0, 100, .1, "Zero means unpriced. Enter costs for the view selected.")}
+              {field("constructionLocalM", 0, 1000, .1)}
+              {field("constructionStateM", 0, 1000, .1, "Used in the Oregon view only.")}
+              {field("jobs", 0, 10000, 1)}
+              {field("wageK", 0, 1000, 1)}
+              {field("incomeTaxPct", 0, 100, .5, "Jobs, wages and income tax affect the Oregon view only.")}
             </div>
           </div>
+        </details>
+        <details className="dc-disclosure"><summary>Where these example numbers come from</summary><div className="dc-detail-body dc-small">
+          {example ? <><p>{example.basis}</p><p>{example.assumptions}</p><a href={example.source}>Read the original source ↗</a></> : <p>All custom starting values are illustrative assumptions.</p>}
+          <p>Every example starts with the same 50% chance without a break and 100% with a deal, 30 years of operation, a 4% discount rate and $50,000 in annual land receipts. Jobs, wages and tax rates in the Oregon view are illustrative. Costs and construction receipts start at zero because they are unpriced.</p>
+        </div></details>
+        <div className="dc-calc-tools"><button type="button" onClick={() => choose(exampleId)}><RotateCcw size={15} /> Reset example</button><button type="button" onClick={download}><ArrowDownToLine size={15} /> Download CSV</button></div>
+      </div>
 
-          <div className="mt-6 space-y-3">
-            {[
-              { l: "If fully taxed, 15-yr PV", v: res.pvFullTax, c: "#1a3a2a" },
-              { l: "What the deal pays, 15-yr PV", v: res.pvDealProperty, c: "#c8956c" },
-            ].map((b) => (
-              <div key={b.l}>
-                <div className="flex items-baseline justify-between">
-                  <span className="text-[12px] text-[var(--color-ink-light)]">{b.l}</span>
-                  <span className="font-mono text-[15px] font-bold tabular-nums text-[var(--color-ink)]">
-                    {fmtM(b.v)}
-                  </span>
-                </div>
-                <div className="mt-1 h-2 w-full rounded-sm bg-white border border-[var(--color-parchment)] overflow-hidden">
-                  <div
-                    className="h-full"
-                    style={{ width: `${(b.v / barMax) * 100}%`, backgroundColor: b.c }}
-                  />
-                </div>
-              </div>
-            ))}
+      <div className="dc-calc-results" id="dc-comparison">
+        <div className="dc-result-sticky">
+          <div className="dc-step-heading"><span className="dc-kicker">03 / Compare the outcomes</span><span className="dc-view-years">{inp.horizonYears} years</span></div>
+          <div className="dc-ledger-switch" role="group" aria-label="Fiscal perspective">
+            <button type="button" aria-pressed={ledger === "local"} onClick={() => setLedger("local")}>Local public money</button>
+            <button type="button" aria-pressed={ledger === "statewide"} onClick={() => setLedger("statewide")}>Local + Oregon</button>
           </div>
-
-          <div className="mt-6 grid grid-cols-2 gap-px bg-[var(--color-parchment)] rounded-sm overflow-hidden">
-            <div className="bg-white p-4">
-              <p className="font-mono text-[20px] font-bold text-[var(--color-ink)] tabular-nums">
-                {fmtK(res.forgonePerJobYear)}
-              </p>
-              <p className="text-[11px] text-[var(--color-ink-muted)] leading-snug mt-1">
-                taxes forgone per job, per year (state study range: $4.2K–$54.5K)
-              </p>
-            </div>
-            <div className="bg-white p-4">
-              <p className="font-mono text-[20px] font-bold text-[var(--color-ink)] tabular-nums">
-                {fmtM(res.pvIncomeTax)}
-              </p>
-              <p className="text-[11px] text-[var(--color-ink-muted)] leading-snug mt-1">
-                15-yr PV of income taxes from the jobs (goes to the state, not the county)
-              </p>
-            </div>
+          <p className="dc-fine">{ledger === "local" ? "Host-area public receipts, before school-funding transfers." : "Adds estimated state income tax and state construction receipts."}</p>
+          <div className={"dc-verdict " + (result.net < -.000001 ? "is-negative" : "")} aria-live="polite" aria-atomic="true">
+            <span className="dc-verdict-label">{tied ? "The options break even" : result.net > 0 ? "The deal comes out ahead" : "No tax break comes out ahead"}</span>
+            <strong data-testid="net-result">{money(result.net)}</strong>
+            <p>{tied ? "The two options bring in the same modeled public money." : "The deal brings in " + money(Math.abs(result.net)) + (result.net > 0 ? " more" : " less") + " than offering no break."} <span>With these assumptions, after entered costs.</span></p>
           </div>
-
-          <p className="mt-5 text-[11px] text-[var(--color-ink-muted)] leading-relaxed border-t border-[var(--color-parchment)] pt-4">
-            Teaching model, not a forecast: {ASSUMPTIONS.horizonYears}-yr horizon,{" "}
-            {(ASSUMPTIONS.discountRate * 100).toFixed(0)}% real discount, taxable value ≈{" "}
-            {(ASSUMPTIONS.taxableShare * 100).toFixed(0)}% of investment (server refresh vs.
-            depreciation), {(ASSUMPTIONS.effectiveIncomeTax * 100).toFixed(1)}% effective income
-            tax, baseline land revenue ≈ $0. Construction activity, utility fees, and service
-            costs are excluded on both sides.
-          </p>
+          <ReceiptBars result={result} />
+          <div className="dc-tipping-point">
+            <div><span>The break-even point</span><strong data-testid="break-even">{inRange ? (threshold! * 100).toFixed(1) + "%" : "Outside this range"}</strong></div>
+            {inRange ? <>
+              <div className="dc-threshold-track" aria-hidden="true"><span style={{ width: threshold! * 100 + "%" }} /><i style={{ left: threshold! * 100 + "%" }} /><b style={{ left: inp.buildWithoutPct + "%" }} /></div>
+              <div className="dc-range-labels"><span>Deal ahead</span><span>No break ahead</span></div>
+              <p>Below <strong>{(threshold! * 100).toFixed(1)}%</strong> chance of building anyway, the deal wins. Above it, no break wins. The dot is your assumption.</p>
+              <button type="button" className="dc-text-button" onClick={() => change("buildWithoutPct", threshold! * 100)}>Set to break-even <ArrowRight size={14} /></button>
+            </> : <p>{threshold === null ? "No standard threshold: the fully taxed project does not beat leaving the land as it is after entered costs." : threshold! > 1 ? "The deal leads throughout the 0–100% range under these inputs." : "The deal trails throughout the 0–100% range under these inputs."}</p>}
+          </div>
+          <MoneyTimeline result={result} abatementYears={inp.abatementYears} />
+          <a className="dc-mobile-jump" href="#dc-assumptions">Change the assumptions ↑</a>
+          <p className="dc-fine dc-model-limit">This is a money comparison. Water, pollution, alternative land uses and cleanup still need their own checks. Zero entered costs are unpriced, not proven to be zero.</p>
         </div>
       </div>
     </div>
-  );
+    <details className="dc-disclosure dc-calc-method"><summary>See the full numbers and calculation</summary><div className="dc-detail-body dc-method-grid">
+      <dl>{[["Expected deal value", result.evSign], ["Expected no-break value", result.evHold], ["Full property tax if built", result.pvFullTax], ["Deal property receipts if built", result.pvDealProperty], ["Included post-abatement property tax", result.pvPostAbatement], ["Included state income tax if built", result.pvIncomeTax], ["Included construction tax receipts if built", result.pvConstruction], ["Entered public costs if built", result.pvCosts]].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{money(value as number)}</dd></div>)}</dl>
+      <div className="dc-small"><p><strong>Compare like with like.</strong> Both options use the same facility, start year, operating life and constant taxable value. Full tax = taxable value × tax rate. The deal uses the entered payment rule during the break, then full tax.</p>
+      <p>Public costs are subtracted. Construction receipts and an upfront payment enter once in year 1. Each annual amount is divided by (1 + discount rate) to the power of that year, so future money is expressed in today&apos;s dollars.</p>
+      <p>Each outcome is weighted by its chance of being built; otherwise baseline land taxes apply. After closure only baseline land taxes remain. Break-even chance = (expected deal − baseline) ÷ (fully-taxed build − baseline), when that denominator is positive.</p>
+      <p>The Oregon view adds jobs × wage × effective income-tax rate, without accounting for displaced jobs or credits. School transfers, changing assessments, corporate taxes, utility franchise fees, alternative development and environmental effects are not fully modeled.</p></div>
+    </div></details>
+  </div>;
 }

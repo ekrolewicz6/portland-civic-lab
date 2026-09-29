@@ -1,950 +1,136 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
-import {
-  ArrowRight,
-  CircleDollarSign,
-  Clock,
-  Droplets,
-  Factory,
-  Gavel,
-  GraduationCap,
-  Landmark,
-  Leaf,
-  MapPin,
-  Scale,
-  Server,
-  Wheat,
-  Zap,
-} from "lucide-react";
-import { COMMITTEE, HEADLINE, SOURCES, WHATS_NEXT, fmtNum } from "@/lib/datacenters/data";
-import { DIVE_CONTAINER, Section } from "@/components/deep-dives/shared";
-import RateShift from "@/components/deep-dives/datacenters/RateShift";
-import SubsidyPerJob from "@/components/deep-dives/datacenters/SubsidyPerJob";
-import ConditionsScorecard from "@/components/deep-dives/datacenters/ConditionsScorecard";
+import { ArrowRight, Ban, Building2, Droplets, HardHat, Landmark, Leaf, PlugZap, Waves, Sun, BookOpen, PencilLine, Send } from "lucide-react";
+import { COMMITTEE, REVIEWED, SOURCES } from "@/lib/datacenters/data";
 import DealCalculator from "@/components/deep-dives/datacenters/DealCalculator";
+import ConditionsScorecard from "@/components/deep-dives/datacenters/ConditionsScorecard";
+import RateShift from "@/components/deep-dives/datacenters/RateShift";
 import SitingMap from "@/components/deep-dives/datacenters/SitingMap";
+import SubsidyPerJob from "@/components/deep-dives/datacenters/SubsidyPerJob";
 import CommitteeDetail from "@/components/deep-dives/datacenters/CommitteeDetail";
 import RecordFindings from "@/components/deep-dives/datacenters/RecordFindings";
 import WhoShowedUp from "@/components/deep-dives/datacenters/WhoShowedUp";
 import StructuralFactors from "@/components/deep-dives/datacenters/StructuralFactors";
 import DocumentLibrary from "@/components/deep-dives/datacenters/DocumentLibrary";
+import { BargainDiagram, CountyTaxVisual, ReturnsVisual } from "@/components/deep-dives/datacenters/StoryVisuals";
 import { DCAC_DOC_COUNT } from "@/lib/datacenters/dcac-docs";
 import { pageMeta } from "@/lib/page-meta";
+import "./data-centers.css";
 
 export const metadata: Metadata = pageMeta({
-  title: "Oregon's Data Center Bargain — the Case For, the Case Against, and the Win-Win Test",
-  description:
-    "Oregon hosts ~125 data centers and hands tech companies $450M+ a year in tax breaks. In 2026 the state hit pause. The strongest case for the deals, the strongest case against, and an honest test of when, if ever, a data center is a win-win.",
-  path: "/deep-dives/data-centers",
-  type: "article",
+  title: "Oregon's Data Center Bargain — Follow the Money",
+  description: "What does Oregon get from data-center tax deals? Explore real agreement terms, test the break-even point, and follow the money, power and water.",
+  path: "/deep-dives/data-centers", type: "article",
 });
-
-const NAV = [
-  { id: "fight", label: "The fight" },
-  { id: "case-for", label: "The case for" },
-  { id: "case-against", label: "The case against" },
-  { id: "evidence", label: "Where they collide" },
-  { id: "test", label: "The win-win test" },
-  { id: "price", label: "Pricing a deal" },
-  { id: "committee", label: "The committee" },
-  { id: "record", label: "The record" },
-  { id: "voices", label: "Who showed up" },
-  { id: "why", label: "Why it's shaped this way" },
-  { id: "library", label: "All documents" },
-  { id: "next", label: "What happens next" },
-  { id: "sources", label: "Sources" },
-];
-
-function Src({ id }: { id: keyof typeof SOURCES }) {
-  const s = SOURCES[id];
-  return (
-    <a
-      href={s.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[var(--color-river-deep)] underline decoration-[var(--color-river)]/40 underline-offset-2 hover:decoration-[var(--color-river)]"
-    >
-      {s.org}
-    </a>
-  );
+const NAV = [["fight","What changed"],["case-for","The tradeoff"],["price","Try the examples"],["evidence","Read the numbers"],["test","A better deal"],["committee","Take part"],["record","The record"],["sources","Sources"]];
+const SOURCE_IDS: (keyof typeof SOURCES)[] = ["advisoryCommittee","preliminary","businessOregonRoi","impactStudy","econw","pucImplementation","pgeRates","odeSchoolFunding","morrowAssessor","wascoAgreement","morrowMinutes","capitalChronicleLawsuit","hillsboroResponse","hillsboroMoratorium","taxFairness","awsWater","uecPresentation","tribalStatement","deqAir","audit2016"];
+function Src({ id, label }: { id: keyof typeof SOURCES; label?: string }) {
+  return <a className="dc-source" href={SOURCES[id].url}>{label ?? SOURCES[id].org} ↗</a>;
 }
-
+function Fold({ title, children }: { title: string; children: ReactNode }) {
+  return <details className="dc-disclosure"><summary>{title}</summary><div className="dc-detail-body">{children}</div></details>;
+}
+function Section({ id, kicker, title, lead, tone="", children }: { id: string; kicker: string; title: string; lead?: string; tone?: string; children: ReactNode }) {
+  return <section id={id} className={"dc-section "+(tone?"dc-section-"+tone:"")}><div className="dc-wrap">
+    <div className="dc-section-heading"><div><span className="dc-kicker">{kicker}</span><h2>{title}</h2></div>{lead&&<p>{lead}</p>}</div>{children}
+  </div></section>;
+}
 export default function DataCentersDeepDivePage() {
-  return (
-    <div className="bg-[var(--color-paper)]">
-      {/* ── Hero ── */}
-      <section className="relative bg-[var(--color-canopy)] text-white noise-overlay overflow-hidden">
-        <div className="absolute top-0 right-0 w-[720px] h-[720px] bg-[var(--color-canopy-light)] rounded-full blur-[190px] opacity-25 -translate-y-1/3 translate-x-1/4 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[460px] h-[460px] bg-[var(--color-river)] rounded-full blur-[160px] opacity-[0.08] translate-y-1/2 -translate-x-1/3 pointer-events-none" />
-        <div className={`relative z-10 ${DIVE_CONTAINER} py-16 sm:py-24`}>
-          <div className="grid xl:grid-cols-12 gap-10 xl:gap-16 items-end">
-            <div className="xl:col-span-8">
-              <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]/90">
-                <Link href="/deep-dives" className="hover:text-[var(--color-ember-bright)] transition-colors">
-                  Policy Deep-Dive
-                </Link>
-                <div className="w-8 h-px bg-[var(--color-ember)]/50" />
-                <span>Energy, water &amp; taxes</span>
-              </div>
-              <h1 className="mt-6 font-editorial-normal text-[40px] sm:text-[58px] lg:text-[70px] leading-[1.04] tracking-tight max-w-4xl 3xl:max-w-5xl">
-                Oregon built the cloud.
-                <span className="block font-editorial italic text-[var(--color-ember-bright)]">
-                  Was it worth the bill?
-                </span>
-              </h1>
-              <p className="mt-6 max-w-2xl text-[17px] sm:text-[20px] text-white/75 leading-relaxed">
-                Roughly {HEADLINE.facilities} data centers now run in Oregon, drawn by no sales tax,
-                cheap hydropower, and{" "}
-                <strong className="text-white">${HEADLINE.annualTaxBreaksM} million-plus a year</strong>{" "}
-                in tax breaks. In 2026 the bargain blew open: a moratorium, a lawsuit, a first-in-the-nation
-                rate overhaul, and a governor saying Oregon should &ldquo;stop being a cheap
-                date.&rdquo; This deep-dive argues both sides at full strength, then runs the test that
-                actually matters: under what conditions is a data center a win for the town next door?
-              </p>
-              <div className="mt-9 flex flex-col sm:flex-row gap-3">
-                <a
-                  href="#case-for"
-                  className="inline-flex items-center justify-center gap-2 rounded-sm bg-[var(--color-ember)] px-5 py-3 text-[15px] font-semibold text-[var(--color-canopy)] transition-colors hover:bg-[var(--color-ember-bright)]"
-                >
-                  Read both cases
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-                <a
-                  href="#test"
-                  className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/15 bg-white/[0.06] px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
-                >
-                  Skip to the win-win test
-                </a>
-              </div>
-            </div>
+  return <div className="dc-story">
+    <header className="dc-hero"><div className="dc-wrap dc-hero-grid"><div>
+      <Link className="dc-kicker" href="/deep-dives">Policy deep-dive / Energy, water & taxes</Link>
+      <h1>Oregon built the cloud.<em>Was it worth the bill?</em></h1>
+      <p className="dc-hero-deck">Data centers bring jobs and tax payments. They also get tax breaks and need power and water. A good deal depends on one big question: <strong>would the project come here anyway?</strong></p>
+      <div className="dc-actions"><a href="#price">Try a real-world example <ArrowRight size={17}/></a><a href="#case-for">Understand the tradeoff</a></div>
+      <p className="dc-hero-meta">Portland Civic Lab · Policy analysis<br /><time dateTime="2026-09-29">Updated {REVIEWED}</time></p>
+    </div><BargainDiagram /></div></header>
 
-            <aside className="hidden xl:block xl:col-span-4">
-              <div className="rounded-sm border border-white/12 bg-white/[0.05] p-6 backdrop-blur">
-                <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]">
-                  The short version
-                </div>
-                <dl className="mt-4 space-y-4">
-                  {[
-                    {
-                      t: "What they are",
-                      d: "Warehouse-scale computer buildings run by Amazon, Google, Meta, and Apple — the physical internet, and now the physical AI boom.",
-                    },
-                    {
-                      t: "The fight",
-                      d: "Whether $450M+ a year in tax breaks, surging power demand, and secretive water deals buy Oregon enough in return.",
-                    },
-                    {
-                      t: "Where it stands",
-                      d: "New tax deals frozen since June 2026. A governor's committee reports in October. The 2027 Legislature decides what replaces the pause.",
-                    },
-                  ].map((r) => (
-                    <div key={r.t}>
-                      <dt className="text-[13px] font-semibold text-white">{r.t}</dt>
-                      <dd className="text-[13px] text-white/65 leading-relaxed mt-0.5">{r.d}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </section>
+    <nav className="dc-nav" aria-label="Article sections"><div className="dc-wrap">{NAV.map(([id,label])=><a key={id} href={"#"+id}>{label}</a>)}</div></nav>
 
-      {/* ── 30-second stat band ── */}
-      <section className="bg-[var(--color-canopy-mid)] text-white border-t border-white/10">
-        <div className={`${DIVE_CONTAINER} py-10 grid grid-cols-2 lg:grid-cols-4 gap-6`}>
-          {[
-            {
-              v: `~${HEADLINE.facilities}`,
-              l: "data centers in Oregon",
-              s: "Hillsboro, the Columbia River, Central Oregon",
-            },
-            {
-              v: `$${HEADLINE.annualTaxBreaksM}M+`,
-              l: "yearly tax breaks to tech companies",
-              s: "the country's most generous data-center terms",
-            },
-            {
-              v: `$${HEADLINE.awsMorrowTaxesM}M`,
-              l: "AWS pays Morrow County anyway",
-              s: "more than the next 16 taxpayers combined",
-            },
-            {
-              v: "+30% / −1.3%",
-              l: "the 2026 rate split",
-              s: "data centers pay more, households pay less",
-            },
-          ].map((s) => (
-            <div key={s.l}>
-              <p className="font-mono text-[30px] sm:text-[38px] font-bold tabular-nums leading-none text-[var(--color-ember-bright)]">
-                {s.v}
-              </p>
-              <p className="text-[13px] font-semibold mt-2 leading-snug">{s.l}</p>
-              <p className="text-[12px] text-white/55 mt-0.5">{s.s}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Sticky nav ── */}
-      <nav className="sticky top-14 z-40 bg-[var(--color-paper)]/95 backdrop-blur border-b border-[var(--color-parchment)]">
-        <div className={DIVE_CONTAINER}>
-          <div className="flex gap-1 overflow-x-auto py-2 text-[12px] font-mono uppercase tracking-[0.08em] scrollbar-hide">
-            {NAV.map((n) => (
-              <a
-                key={n.id}
-                href={`#${n.id}`}
-                className="flex min-h-[44px] items-center whitespace-nowrap rounded-sm px-3 py-3 text-[var(--color-ink-muted)] hover:bg-[var(--color-paper-warm)] hover:text-[var(--color-canopy)] transition-colors"
-              >
-                {n.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
-
-      {/* ── The fight ── */}
-      <Section
-        id="fight"
-        eyebrow="2026: the year it broke open"
-        title="Why everyone is suddenly fighting about server farms"
-        lead={
-          <>
-            Data centers grew quietly in Oregon for twenty years. Then, in six months, the state froze
-            their tax breaks, a teachers&apos; union sued two governments, and regulators rewrote how
-            they pay for power. Three fights, one question: who&apos;s getting the better end of this?
-          </>
-        }
-        aside={
-          <p className="text-[12px] text-[var(--color-ink-muted)] leading-relaxed">
-            Why here at all? No sales tax on billions of dollars of servers, cheap Columbia River
-            hydropower, a cool dry climate that&apos;s free air-conditioning, and eight trans-Pacific
-            fiber cables landing at Hillsboro (<Src id="cubWhyOregon" />). Communities have zoned{" "}
-            {fmtNum(HEADLINE.envisionedAcres)} more acres for them — enough to quadruple the
-            industry&apos;s footprint (<Src id="lincolnAcres" />).
-          </p>
-        }
-      >
-        <div className="grid md:grid-cols-3 gap-5">
-          <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-6">
-            <div className="flex items-center justify-between mb-3">
-              <Landmark className="w-5 h-5 text-[var(--color-ember)]" />
-              <span className="font-mono text-[11px] uppercase tracking-wide text-[var(--color-ink-muted)]">
-                June 5
-              </span>
-            </div>
-            <h3 className="text-[16px] font-semibold text-[var(--color-canopy)] mb-1.5">
-              The state hit pause
-            </h3>
-            <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed">
-              House Bill 4084 barred new data centers from enterprise-zone property tax breaks, Oregon&apos;s largest incentive program, until after the 2027 session. Existing and
-              already-approved deals keep their terms (<Src id="dwtMoratorium" />). Gov. Kotek had cut
-              data centers from her own tax-break expansion three months earlier (<Src id="opbEzCut" />).
-            </p>
-          </div>
-          <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-6">
-            <div className="flex items-center justify-between mb-3">
-              <Gavel className="w-5 h-5 text-[var(--color-ember)]" />
-              <span className="font-mono text-[11px] uppercase tracking-wide text-[var(--color-ink-muted)]">
-                June 24
-              </span>
-            </div>
-            <h3 className="text-[16px] font-semibold text-[var(--color-canopy)] mb-1.5">
-              The lawsuit landed
-            </h3>
-            <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed">
-              1000 Friends of Oregon, Tax Fairness Oregon, Tualatin Riverkeepers, and the Oregon
-              Education Association sued Hillsboro and Washington County over ~17 tax-break
-              applications — tied to NVIDIA, CoreWeave, Adobe, Dropbox, QTS, and Flexential — rushed
-              through before the moratorium, allegedly without required public notice (
-              <Src id="capitalChronicleLawsuit" />).
-            </p>
-          </div>
-          <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-6">
-            <div className="flex items-center justify-between mb-3">
-              <Zap className="w-5 h-5 text-[var(--color-ember)]" />
-              <span className="font-mono text-[11px] uppercase tracking-wide text-[var(--color-ink-muted)]">
-                All year
-              </span>
-            </div>
-            <h3 className="text-[16px] font-semibold text-[var(--color-canopy)] mb-1.5">
-              The power bill got rewritten
-            </h3>
-            <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed">
-              Under 2025&apos;s POWER Act, the first law of its kind in the country, regulators moved
-              big data centers into their own rate class. PGE&apos;s version raised their bills ~30% and
-              cut household bills 1.3% (<Src id="opbPowerAct" />, <Src id="tomsHardwareRates" />). The
-              governor, in July: Oregon should &ldquo;stop being a cheap date&rdquo; (
-              <Src id="klccCheapDate" />).
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      {/* ── The case for ── */}
-      <Section
-        id="case-for"
-        tone="warm"
-        eyebrow="The strongest case for"
-        title="Rural Oregon's best deal in a generation"
-        lead={
-          <>
-            Set aside the metro fights for a moment and look at Boardman, Hermiston, and Prineville —
-            towns the timber economy left behind. This is the case data-center supporters actually
-            make, at its strongest.
-          </>
-        }
-        aside={
-          <p className="text-[12px] text-[var(--color-ink-muted)] leading-relaxed">
-            This is a steelman: the best honest version of the argument, built from what county
-            commissioners, chambers of commerce, and the companies themselves point to — not a
-            caricature of it. The counter-case follows.
-          </p>
-        }
-      >
-        <div className="grid md:grid-cols-2 gap-5">
-          <ForCard
-            icon={<Landmark className="w-5 h-5 text-[var(--color-fern)]" />}
-            title="Even with the breaks, they're the biggest taxpayer by far"
-          >
-            AWS pays Morrow County more than ${HEADLINE.awsMorrowTaxesM} million a year in property
-            taxes, more than the next 16 largest taxpayers combined, while three of its five sites
-            are still fully tax-exempt. Amazon&apos;s buildings are roughly half the county&apos;s
-            taxable value and a third of everything it levies. On top of that, fee-in-lieu agreements
-            send tens of millions to schools, housing, and emergency services (
-            <Src id="eastOregonianLeaders" />, <Src id="bakerCityAbatement" />).
-          </ForCard>
-          <ForCard
-            icon={<Factory className="w-5 h-5 text-[var(--color-fern)]" />}
-            title="Real jobs, in places that had lost theirs"
-          >
-            Local officials credit data centers with {fmtNum(HEADLINE.regionalJobsFte)} full-time-equivalent
-            jobs across Eastern Oregon and ${HEADLINE.easternOregonGdpB} billion in regional GDP (
-            <Src id="eastOregonianLeaders" />). The deals require wages at least 130% of the county
-            average (<Src id="bakerCityAbatement" />). Prineville — near 20% unemployment after the
-            mills closed and Les Schwab left — now anchors its budget on Meta and Apple (
-            <Src id="fortuneStudy" />).
-          </ForCard>
-          <ForCard
-            icon={<MapPin className="w-5 h-5 text-[var(--color-fern)]" />}
-            title="This is an industry Oregon actually wins"
-          >
-            Rural counties can&apos;t recruit chip fabs or biotech campuses. They can win data centers,
-            because the raw ingredients — cheap hydro, cool dry air, fiber landings, open land — are
-            already here (<Src id="cubWhyOregon" />). Washington, Idaho, and Arizona offer their own
-            incentives; the choice isn&apos;t between a data center with breaks and one without, but
-            between hosting the buildout or watching it cross the river.
-          </ForCard>
-          <ForCard
-            icon={<Wheat className="w-5 h-5 text-[var(--color-fern)]" />}
-            title="The honest counterfactual is a wheat field"
-          >
-            The abatements forgive taxes on buildings that otherwise wouldn&apos;t exist. Without the
-            deal, the land is dryland farm ground generating a few thousand dollars a year. With it, a
-            county of 12,000 people collects ${HEADLINE.awsMorrowTaxesM}M+ in taxes and ~$40M in
-            15-year fees (<Src id="bakerCityAbatement" />). Since the 2026 POWER Act rules, big users
-            also carry 100% of the grid costs they create — households&apos; bills went{" "}
-            <em>down</em> (<Src id="oecGuardrails" />).
-          </ForCard>
-        </div>
-      </Section>
-
-      {/* ── The case against ── */}
-      <Section
-        id="case-against"
-        eyebrow="The strongest case against"
-        title="You paid for buildings that employ almost no one"
-        lead={
-          <>
-            The opposition&apos;s case doesn&apos;t depend on hating tech. It depends on arithmetic:
-            what Oregon gives up per job, who absorbs the cost, and what the buildings consume that
-            never shows up on a tax ledger.
-          </>
-        }
-        aside={<SubsidyPerJob />}
-      >
-        <div className="grid md:grid-cols-2 gap-5">
-          <AgainstCard
-            icon={<CircleDollarSign className="w-5 h-5 text-[var(--color-clay)]" />}
-            title="The jobs math doesn't survive contact"
-          >
-            A typical facility runs on ~30 permanent staff across millions of square feet, many in
-            $35–50K security and maintenance roles (<Src id="ocppBoom" />). Oregon&apos;s own incentive
-            study: the 15-year rural deals lose 84 cents per dollar forgone and cost ~$
-            {fmtNum(HEADLINE.subsidyPerJobLongTerm)} per job — thirteen times the standard program (
-            <Src id="governingStudy" />). One Hillsboro deal penciled out near $520,000 per employee
-            per year (<Src id="ocppBoom" />).
-          </AgainstCard>
-          <AgainstCard
-            icon={<GraduationCap className="w-5 h-5 text-[var(--color-clay)]" />}
-            title="Every school in Oregon pays a little for each local deal"
-          >
-            The mechanic is subtler than &ldquo;the district loses money.&rdquo; Oregon equalizes
-            school funding, so when an abatement cuts local revenue the state backfills that
-            district, and the loss reappears as a thinner statewide pool, approximately $1.50 per
-            weighted student for every $1M removed (<Src id="odeSchoolFunding" />). Hermiston&apos;s
-            superintendent told the committee the enterprise-zone school fee is &ldquo;not additional
-            support to the local district&rdquo; (<Src id="dcacIncentives" />). Districts took
-            ${HEADLINE.schoolsLostM2024}M in abatements in 2024 alone (
-            <Src id="capitalChronicleLawsuit" />) — spread across everyone, felt sharply by no one.
-          </AgainstCard>
-          <AgainstCard
-            icon={<Scale className="w-5 h-5 text-[var(--color-clay)]" />}
-            title="They were coming anyway — the neighbors prove it"
-          >
-            Oregon stacks four subsidies: no sales tax (Amazon saved roughly $3B on $39.3B of eastern
-            Oregon investment), ~$450M/yr in property tax breaks, publicly funded infrastructure, and
-            a 10-year income tax exemption that let Meta pay about 1.3% instead of 7.6%. The decisive
-            fact Tax Fairness Oregon put before the committee:{" "}
-            <strong>California and Washington offer no data-center property tax break at all</strong>{" "}
-           , and still have data centers (<Src id="taxFairness" />). Even the governor concluded
-            Oregon was underpricing itself (<Src id="klccCheapDate" />).
-          </AgainstCard>
-          <AgainstCard
-            icon={<Leaf className="w-5 h-5 text-[var(--color-clay)]" />}
-            title="The climate ledger is going backwards"
-          >
-            Umatilla Electric, {fmtNum(HEADLINE.uecCustomers)} customers, now emits {HEADLINE.uecEmissionsTonsM}{" "}
-            million tons of CO₂ a year serving Amazon&apos;s buildout, making it Oregon&apos;s
-            third-largest utility emitter; its power is 2,000% more carbon-intensive than a decade ago (
-            <Src id="governingUec" />). Regional reports warn data-center gas demand could push Oregon
-            and Washington off their 2050 climate targets (<Src id="capitalChronicleGas" />).
-          </AgainstCard>
-          <AgainstCard
-            icon={<Droplets className="w-5 h-5 text-[var(--color-clay)]" />}
-            title="The water story only came out in court"
-          >
-            Google&apos;s The Dalles campuses drank {HEADLINE.googleWaterGallonsM2021} million gallons
-            in 2021 — over a quarter of the entire city&apos;s water, near 40% in recent reports — and
-            the public only knows because the city lost a 13-month fight to keep it secret (
-            <Src id="registerWater" />, <Src id="waterWatch" />). Statewide reporting requirements are
-            still virtually nonexistent, even as the boom reaches basins already in a nitrate
-            groundwater crisis (<Src id="rollingStoneWater" />).
-          </AgainstCard>
-          <AgainstCard
-            icon={<Gavel className="w-5 h-5 text-[var(--color-clay)]" />}
-            title="When the door was closing, they went around the public"
-          >
-            In the weeks before the moratorium took effect, companies filed a flurry of Hillsboro
-            applications, six from one firm in a single April day, and staff approved them, the
-            lawsuit alleges, without public notice or a vote of any elected body (
-            <Src id="capitalChronicleLawsuit" />). Whatever you think of the deals, that&apos;s not how
-            public money is supposed to move.
-          </AgainstCard>
-        </div>
-      </Section>
-
-      {/* ── Where they collide ── */}
-      <Section
-        id="evidence"
-        tone="dark"
-        eyebrow="Where the cases collide"
-        title="Three findings that decide the argument"
-        lead={
-          <>
-            Both sides are quoting real numbers. Put them side by side and the disagreement gets
-            smaller, and more useful. The evidence points to three conclusions neither campaign
-            leads with.
-          </>
-        }
-        aside={<RateShift />}
-      >
-        <div className="space-y-5">
-          <Finding n="01" title="Both jobs numbers are true, and that's the point">
-            Amazon directly employs roughly {fmtNum(HEADLINE.amazonDirectJobs)} people in its eastern
-            Oregon data centers; boosters&apos; {fmtNum(HEADLINE.regionalJobsFte)}-FTE figure adds
-            construction, contractors, and ripple effects (<Src id="governingUec" />,{" "}
-            <Src id="eastOregonianLeaders" />). A 2026 Georgia Tech study of the whole country splits
-            the difference: metro counties gain ~4.1% employment after a data center opens; rural
-            counties see &ldquo;negligible&rdquo; job spillover, but wages rise ~5% where clusters
-            form, and electricity prices rise ~5% too (<Src id="fortuneStudy" />). Data centers are
-            weak jobs programs everywhere. That was never their real value.
-          </Finding>
-          <Finding n="02" title="Geography flips the verdict">
-            The same deal that&apos;s hard to defend in Hillsboro is easy to defend in Boardman. Morrow
-            County traded taxes it could never have collected — the buildings wouldn&apos;t exist — for
-            payments that now carry a third of its levy (<Src id="eastOregonianLeaders" />). Washington
-            County traded real school revenue to companies drawn by fiber cables that were coming
-            ashore regardless (<Src id="ocppBoom" />). The question was never &ldquo;data centers, yes
-            or no&rdquo; — it&apos;s &ldquo;which county, at what price.&rdquo;
-          </Finding>
-          <Finding n="03" title="The POWER Act proved the win-win is buildable">
-            For years the debate assumed someone had to lose: either block the industry or let
-            households subsidize its grid. Then Oregon wrote the first law in the country making
-            &gt;{HEADLINE.powerActThresholdMw} MW users a separate rate class, and the industry
-            stayed, its bills went up ~30%, and household bills went <em>down</em> (
-            <Src id="opbPowerAct" />, <Src id="tomsHardwareRates" />). Priced correctly, the
-            arrangement survives. That&apos;s the template for every other term of the bargain.
-          </Finding>
-        </div>
-      </Section>
-
-      {/* ── The win-win test ── */}
-      <Section
-        id="test"
-        tone="warm"
-        eyebrow="Our honest read"
-        title="The win-win test: six conditions, and where Oregon stands"
-        lead={
-          <>
-            A data center deal is a genuine win-win when the host community keeps more than it gives
-            up — on taxes, power, water, and trust. That&apos;s testable. Here&apos;s the test, applied
-            to Oregon as of August 2026.
-          </>
-        }
-        aside={
-          <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
-            <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed">
-              Score today: <strong>1 met, 1 partial, 4 unmet</strong>. The met one, grid costs, was
-              considered impossible until 2025. None of the unmet four requires banning anything;
-              they require pricing, disclosure, and process. Scoring updated after reading the
-              committee&apos;s own record.
-            </p>
-          </div>
-        }
-      >
-        <ConditionsScorecard />
-
-        <div className="mt-8 rounded-sm border-2 border-[var(--color-canopy)]/20 bg-white p-7">
-          <div className="flex items-center gap-2.5 mb-3">
-            <Server className="w-5 h-5 text-[var(--color-ember)]" />
-            <h3 className="font-editorial-normal text-[20px] text-[var(--color-canopy)]">
-              So which way does it lean?
-            </h3>
-          </div>
-          <div className="space-y-3 text-[14px] text-[var(--color-ink-light)] leading-relaxed max-w-3xl">
-            <p>
-              <strong className="text-[var(--color-ink)]">
-                As signed before 2026, the bargain leaned toward the companies.
-              </strong>{" "}
-              That&apos;s not an activist&apos;s claim; it&apos;s the state&apos;s own math. The
-              15-year vehicle that built the boom loses 84 cents on the dollar, the buildings employ
-              dozens where the renderings implied thousands, and the costs that never hit a ledger —
-              carbon, water, school revenue — piled up in the dark.
-            </p>
-            <p>
-              <strong className="text-[var(--color-ink)]">
-                But &ldquo;bad deal&rdquo; is not the honest verdict either.
-              </strong>{" "}
-              In Morrow County, the alternative to an under-priced deal was no deal: the fees and taxes
-              are real, they reshape what a small county can afford, and they are bigger than anything else
-              that region could plausibly have recruited. And the POWER Act showed the terms are negotiable — Oregon raised the
-              industry&apos;s power bill 30% and the industry kept building.
-            </p>
-            <p>
-              <strong className="text-[var(--color-ink)]">
-                The win-win exists, under conditions Oregon has only started to enforce.
-              </strong>{" "}
-              Full-cost power pricing (done), clean-energy additionality everywhere including co-op
-              territory (half done), water disclosure with caps in stressed basins (not done),
-              abatements repriced toward fee-in-lieu deals that hold schools harmless (not done), and
-              approvals in public (not done). If the 2027 Legislature converts the current pause into
-              those terms, Oregon keeps the industry <em>and</em> the returns. If the moratorium simply
-              lapses, the pre-2026 pattern — private gain, socialized cost, discovered later — comes
-              back with the AI boom behind it.
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      {/* ── Pricing a deal ── */}
-      <Section
-        id="price"
-        eyebrow="The framework"
-        title="How to price a data center deal"
-        lead={
-          <>
-            The whole fight reduces to three numbers: what the site would pay fully taxed, what the
-            deal actually pays, and how likely the company was to build without a break. Get those
-            three, and &ldquo;good deal or giveaway&rdquo; stops being a matter of opinion.
-          </>
-        }
-        aside={
-          <p className="text-[12px] text-[var(--color-ink-muted)] leading-relaxed">
-            The model prices the deal from the host community&apos;s side. It deliberately excludes
-            construction activity (temporary, and present in every scenario where the facility is
-            built) and assumes bare land yields ~no revenue — both stated in the fine print, both
-            adjustable in spirit by moving the sliders.
-          </p>
-        }
-      >
-        <div className="grid md:grid-cols-3 gap-5 mb-6">
-          <StepCard n="01" title="What the site pays fully taxed">
-            Taxable value ≈ 70% of on-site investment — servers are most of the value and
-            depreciate fast, but they&apos;re refreshed continuously — times the county&apos;s rate,
-            over 15 years, discounted. A $2B campus at 1.1%: about $15M a year, or{" "}
-            <strong>$171M in present value</strong>.
-          </StepCard>
-          <StepCard n="02" title="What the deal actually pays">
-            Fees in lieu of taxes during the abatement, full taxes after it ends, plus state income
-            tax from the permanent jobs. A Morrow-style deal — ~$2.7M/yr in fees, 100 jobs — pays
-            about <strong>$37M in present value</strong>: roughly a fifth of full freight.
-          </StepCard>
-          <StepCard n="03" title="The break-even leverage">
-            Divide №2 by №1 (plus income taxes on both sides): the deal beats holding firm only if
-            the chance they&apos;d build <em>anyway</em> is below that ratio. The Morrow-style deal
-            breaks even at <strong>~21%</strong>; a Hillsboro-style deal at <strong>~64%</strong>, and the fiber cables put Hillsboro&apos;s true leverage well above that.
-          </StepCard>
-        </div>
-
-        <DealCalculator />
-
-        <p className="mt-4 text-[13px] text-[var(--color-ink-light)] leading-relaxed max-w-3xl">
-          This is the policy insight hiding in the arithmetic: <strong>the right abatement is not a
-          number, it&apos;s a curve.</strong> The scarcer a community&apos;s advantages, the more it
-          can afford to give; the more unique its advantages, the less it should. A statewide flat
-          program, which is what the enterprise-zone system was, prices Boardman and Hillsboro
-          identically, and therefore misprices both. Benchmarks for the cost-per-job readout come
-          from the state incentive study (<Src id="governingStudy" />).
-        </p>
-
-        <div className="mt-6 rounded-sm border-2 border-[var(--color-canopy)]/20 bg-white p-6">
-          <h4 className="text-[15px] font-semibold text-[var(--color-canopy)] mb-2">
-            Oregon already ran this calculation, and published the answer
-          </h4>
-          <p className="text-[13.5px] text-[var(--color-ink-light)] leading-relaxed max-w-3xl">
-            In June 2026, Business Oregon handed the advisory committee its own return figures by
-            program. The short-term standard enterprise zone returns{" "}
-            <strong className="text-[var(--color-fern)]">{HEADLINE.roiStandard}</strong> per dollar.
-            The Strategic Investment Program returns{" "}
-            <strong className="text-[var(--color-ink)]">{HEADLINE.roiSip}</strong>. The 15-year rural
-            enterprise zone, which carries <strong>$15.4B of the $15.8B</strong> in data-center
-            investment and <strong>$233.6M of the $240.9M</strong> in abated taxes — returns{" "}
-            <strong className="text-[var(--color-clay)]">{HEADLINE.roiLongTerm}</strong> (
-            <Src id="businessOregonRoi" />). The state&apos;s economic development agency is not
-            disputing the critics&apos; arithmetic. It supplied it.
-          </p>
-          <p className="mt-3 text-[13.5px] text-[var(--color-ink-light)] leading-relaxed max-w-3xl">
-            Morrow County&apos;s assessor put the same point in county terms: ${HEADLINE.morrowExemptTaxM}M
-            of property tax exempted against ${HEADLINE.morrowCollectedTaxM}M actually collected
-            countywide, with ${HEADLINE.morrowFeesM}M coming back as negotiated fees (
-            <Src id="morrowAssessor" />). The fees change what a county of 12,000 can pay for, and the exemption is larger than the entire tax base.
-          </p>
-        </div>
-
-        <div className="mt-6 rounded-sm border border-[var(--color-parchment)] bg-white p-6">
-          <h4 className="text-[15px] font-semibold text-[var(--color-canopy)] mb-2">
-            What a fully priced framework looks like — Minnesota, presented to Oregon in May
-          </h4>
-          <p className="text-[13.5px] text-[var(--color-ink-light)] leading-relaxed max-w-3xl">
-            Oregon&apos;s POWER Act allocates cost. Minnesota&apos;s 2025 bipartisan package,
-            presented to this committee by its Department of Commerce, also directs what gets built:
-            utilities must show a new data center won&apos;t raise other customers&apos; rates{" "}
-            <em>or</em> impede the state&apos;s 100%-clean-by-2040 standard; 15-year agreements run
-            at 80% take-or-pay with upfront collateral and exit fees; a large-user fee funds
-            low-income weatherization; rules reach down to 5 MW so projects can&apos;t shrink under
-            the threshold; and the electricity sales-tax exemption was repealed. Google — testifying
-            as the customer — called Oregon&apos;s law a missed opportunity by comparison (
-            <Src id="dcacIncentives" />).
-          </p>
-          <p className="mt-3 text-[13.5px] text-[var(--color-ink-light)] leading-relaxed max-w-3xl">
-            The transferable lesson for pricing: Minnesota converts every soft condition into a
-            contract term with a number attached. That is what makes a deal checkable rather than
-            promised, and it is why the same approach works for water disclosure and abatement
-            length, not just electricity.
-          </p>
-        </div>
-
-        <div className="mt-10">
-          <h3 className="font-editorial-normal text-[22px] text-[var(--color-canopy)] mb-2">
-            The same math, on a map
-          </h3>
-          <p className="text-[14px] text-[var(--color-ink-light)] leading-relaxed max-w-3xl mb-5">
-            Run the framework across Oregon&apos;s regions and a siting policy falls out: where
-            deals can pencil, where they can&apos;t, and where the answer isn&apos;t price at all.
-            The state has started acting on the same logic — in July 2026 the Governor pulled 32
-            state-owned acres in Salem from a proposed data center (<Src id="salemWithdrawal" />).
-          </p>
-          <SitingMap />
-        </div>
-      </Section>
-
-      {/* ── The committee ── */}
-      <Section
-        id="committee"
-        tone="dark"
-        eyebrow="Who writes the rulebook"
-        title="The seven people drafting Oregon's answer"
-        lead={
-          <>
-            Everything above — pricing, siting, water, power — lands on one desk: the Data Center
-            Advisory Committee Gov. Kotek convened in January 2026. Its recommendations, due by{" "}
-            {COMMITTEE.reportDue}, are the blueprint the 2027 Legislature will work from.
-          </>
-        }
-        aside={
-          <p className="text-[12px] text-white/55 leading-relaxed">
-            Charge, membership, and schedule from the Governor&apos;s announcement (
-            <Src id="govCommittee" />) and the Oregon Dept. of Energy&apos;s committee page (
-            <Src id="advisoryCommittee" />), where agendas, recordings, and materials are posted.
-          </p>
-        }
-      >
-        <div className="rounded-sm bg-[var(--color-paper)] p-5 sm:p-6 -m-1">
-          <CommitteeDetail />
-        </div>
-      </Section>
-
-      {/* ── What the record shows ── */}
-      <Section
-        id="record"
-        eyebrow="Inside the record"
-        title="Thirteen things the committee's own documents establish"
-        lead={
-          <>
-            We downloaded all {DCAC_DOC_COUNT} documents and recordings the committee has posted —
-            agency decks, industry slides, tribal testimony, and the facilitators&apos; summaries of
-            what was actually said in the room. The most useful findings aren&apos;t the contested
-            ones. They&apos;re the numbers the state produced about itself.
-          </>
-        }
-        aside={
-          <p className="text-[12px] text-[var(--color-ink-muted)] leading-relaxed">
-            Everything below is attributed to a specific presentation, all of them linked at the
-            bottom of this section. Where presenters disagree, both figures are kept — that
-            disagreement is usually the most informative part.
-          </p>
-        }
-      >
-        <RecordFindings />
-      </Section>
-
-      {/* ── Who showed up ── */}
-      <Section
-        id="voices"
-        tone="warm"
-        eyebrow="Who showed up"
-        title="Every camp that testified, and its hardest number"
-        lead={
-          <>
-            Seven months of hearings drew agencies, tribes, utilities, unions, county assessors, the
-            companies themselves, and the advocates suing them. Laid out by camp, the coalition
-            structure explains the politics better than any single argument does.
-          </>
-        }
-        aside={
-          <p className="text-[12px] text-[var(--color-ink-muted)] leading-relaxed">
-            Notice who is missing from the committee itself: no tribal member, no utility, no
-            operator, no ratepayer advocate. Those groups got a presenter&apos;s slot, not a seat at
-            the table where the report gets written.
-          </p>
-        }
-      >
-        <WhoShowedUp />
-      </Section>
-
-      {/* ── Why it's unfolding this way ── */}
-      <Section
-        id="why"
-        tone="darker"
-        eyebrow="The incentives behind the incentives"
-        title="Why the debate is shaped the way it is"
-        lead={
-          <>
-            Read the record and the alignments stop looking like opinions. They look like positions
-            people hold because of where they sit. Eight structural features of this process explain
-            most of what gets said, and what never comes up.
-          </>
-        }
-      >
-        <StructuralFactors />
-        <div className="mt-6 rounded-sm border border-white/12 bg-white/[0.05] p-6 backdrop-blur">
-          <p className="text-[13.5px] text-white/75 leading-relaxed max-w-3xl">
-            Put together, these push toward one destination. A moratorium has no constituency —
-            labor opposed it and the major land-use groups never asked for it. Abolition has no path
-            — the money is already committed and out of scope. What&apos;s left is repricing and
-            conditioning, which is exactly what the facilitator recorded in June:{" "}
-            <strong className="text-white">
-              the committee agreed incentives need to be reviewed and modernized
-            </strong>{" "}
-            (<Src id="dcacIncentives" />). The fight in 2027 will not be over whether to change the
-            deal. It will be over how much, and who gets to decide — the state, or 36 counties
-            negotiating one at a time.
-          </p>
-        </div>
-      </Section>
-
-      {/* ── Document library ── */}
-      <Section
-        id="library"
-        eyebrow="The primary record"
-        title="Every document, linked"
-        lead={
-          <>
-            The committee posts everything: agendas, presenter slides, facilitator summaries, and
-            full meeting recordings. This is the complete index as of August 2026 — the raw material
-            for anyone who wants to check our reading against the source.
-          </>
-        }
-        aside={
-          <p className="text-[12px] text-[var(--color-ink-muted)] leading-relaxed">
-            Hosted by the Oregon Department of Energy (<Src id="advisoryCommittee" />). Written
-            comment goes to{" "}
-            <span className="font-mono text-[11px] text-[var(--color-ink)]">{COMMITTEE.email}</span>.
-          </p>
-        }
-      >
-        <DocumentLibrary />
-      </Section>
-
-      {/* ── What happens next ── */}
-      <Section
-        id="next"
-        eyebrow="The decision points"
-        title="What happens next"
-        lead="The moratorium didn't settle the fight — it scheduled it. Beyond the committee's report, three places to watch."
-      >
-        <div className="grid md:grid-cols-3 gap-5">
-          {WHATS_NEXT.map((e) => (
-            <div key={e.what} className="rounded-sm border border-[var(--color-parchment)] bg-white p-6">
-              <div className="flex items-center gap-2 mb-2">
-                <Clock className="w-4 h-4 text-[var(--color-ember)]" />
-                <span className="font-mono text-[11px] uppercase tracking-wide text-[var(--color-ember)]">
-                  {e.when}
-                </span>
-              </div>
-              <h3 className="text-[15px] font-semibold text-[var(--color-ink)]">{e.what}</h3>
-              <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed mt-1">{e.why}</p>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 text-[13px] text-[var(--color-ink-light)] leading-relaxed max-w-2xl">
-          And if you live near a proposed site: the enterprise-zone sponsor, your city or county, is where the next deal actually gets decided. The committee section above has the dates
-          and the comment address.
-        </p>
-      </Section>
-
-      {/* ── Sources ── */}
-      <Section
-        id="sources"
-        tone="warm"
-        eyebrow="Sources & method"
-        title="Where these numbers come from"
-        lead="Every figure links to a public document, a named study, or on-the-record reporting, pulled in August 2026. Both cases were built from what each side's strongest advocates actually cite, and the committee sections come from reading all 77 documents and recordings it has published, indexed in full above."
-        aside={
-          <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
-            <div className="flex items-center gap-2 mb-1.5">
-              <Clock className="w-4 h-4 text-[var(--color-ember)]" />
-              <h3 className="text-[13px] font-semibold text-[var(--color-ink)]">A live story</h3>
-            </div>
-            <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed">
-              The advisory committee reports in {HEADLINE.committeeReportDue}, the Hillsboro lawsuit is
-              in early stages, and Pacific Power&apos;s rate case is pending. Time-sensitive figures
-              should be re-checked after each.
-            </p>
-          </div>
-        }
-      >
-        <div className="grid sm:grid-cols-2 2xl:grid-cols-3 gap-x-8 gap-y-3">
-          {Object.values(SOURCES).map((s) => (
-            <a
-              key={s.id}
-              href={s.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-start gap-3 rounded-sm border border-transparent hover:border-[var(--color-parchment)] hover:bg-white p-2 -m-2 transition-colors"
-            >
-              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-ember)]" />
-              <span>
-                <span className="block text-[13px] text-[var(--color-ink)] group-hover:text-[var(--color-canopy)] leading-snug">
-                  {s.title}
-                </span>
-                <span className="block text-[11px] text-[var(--color-ink-muted)] font-mono uppercase tracking-wide mt-0.5">
-                  {s.org} · {s.kind}
-                </span>
-              </span>
-            </a>
-          ))}
-        </div>
-      </Section>
-    </div>
-  );
-}
-
-// ── local helpers ─────────────────────────────────────────────────
-
-function ForCard({
-  icon,
-  title,
-  children,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="rounded-sm border-2 border-[var(--color-fern)]/30 bg-[#f1f7f3] p-6">
-      <div className="flex items-center gap-2.5 mb-2.5">
-        {icon}
-        <h3 className="text-[16px] font-semibold text-[var(--color-canopy)] leading-snug">{title}</h3>
+    <Section id="fight" kicker="First, the ground rules" title="Three decisions. Three different rulebooks." lead="A tax break, a power connection and permission to build are separate decisions. Oregon has changed some of the rules—not all of them.">
+      <div className="dc-policy-grid">
+        <article className="dc-policy"><Ban size={29}/><span className="dc-tag amber">New standard-zone approvals paused</span><h3>Tax breaks</h3><p>The June 5 state pause covers the standard enterprise-zone program. Long-term rural zones and the Strategic Investment Program remain separate routes.</p><Src id="businessOregonRoi" label="Business Oregon · program comparison"/></article>
+        <article className="dc-policy"><PlugZap size={29}/><span className="dc-tag">PGE rates changed July 8</span><h3>Electricity bills</h3><p>PGE created dedicated data-center rates. Protections elsewhere depend on the utility. One rate decision does not settle the entire state&apos;s power needs.</p><Src id="pgeRates" label="PGE · July 8 implementation"/></article>
+        <article className="dc-policy"><Building2 size={29}/><span className="dc-tag amber">Hillsboro land-use pause</span><h3>Where to build</h3><p>Hillsboro&apos;s July 27 pause covers new applications for data centers and battery storage as a primary use. Previously submitted projects may continue.</p><Src id="hillsboroMoratorium" label="Hillsboro · 120-day moratorium"/></article>
       </div>
-      <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed">{children}</p>
-    </div>
-  );
-}
+      <Fold title="Details: who is covered, the lawsuit and what comes next">
+        <p>HB 4084 pauses new standard-zone authorizations until 90 days after the 2027 legislative session adjourns. Existing authorizations are a separate category. Business Oregon lists data centers as eligible for long-term rural zones and SIP. The pause is not a freeze on every tax deal.</p>
+        <p>The POWER Act concerns investor-owned utility tariffs. PacifiCorp and Idaho Power have separate implementation processes; consumer-owned utilities have their own governing arrangements. The June PUC schedule anticipated a PacifiCorp order in October and compliance filing in November; check the docket for subsequent decisions. <Src id="pucImplementation"/></p>
+        <p>The June lawsuit challenges pre-pause approvals in Hillsboro and Washington County. Plaintiffs allege procedural failures; that is not a court finding. Hillsboro describes staff administration under existing program rules. This revision does not establish the current court disposition. <Src id="capitalChronicleLawsuit" label="Reporting on the complaint"/> <Src id="hillsboroResponse" label="The city’s explanation"/></p>
+      </Fold>
+    </Section>
 
-function AgainstCard({
-  icon,
-  title,
-  children,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="rounded-sm border-2 border-[var(--color-clay)]/30 bg-[#fbf4f0] p-6">
-      <div className="flex items-center gap-2.5 mb-2.5">
-        {icon}
-        <h3 className="text-[16px] font-semibold text-[var(--color-canopy)] leading-snug">{title}</h3>
+    <Section id="case-for" kicker="The central tradeoff" title="The same tax break can be a gain—or a giveaway." lead="The answer changes depending on what happens without it. Compare two possible futures, not just a big investment number." tone="warm">
+      <div className="dc-fork">
+        <article className="dc-fork-path"><span className="dc-tag">If the incentive changes the decision</span><h3>The deal brings something new.</h3><div className="dc-fork-flow"><span>Tax break</span><ArrowRight size={18}/><span>Project arrives</span><ArrowRight size={18}/><span>New receipts</span></div><p>Some tax revenue may beat an empty site—if the payments cover the public costs.</p></article>
+        <div className="dc-fork-middle">or</div>
+        <article className="dc-fork-path"><span className="dc-tag amber">If the project would arrive anyway</span><h3>The public gives up revenue.</h3><div className="dc-fork-flow"><span>Project arrives</span><ArrowRight size={18}/><span>Break still granted</span><ArrowRight size={18}/><span>Less paid</span></div><p>The same investment could have paid full tax. The subsidy needs a stronger justification.</p></article>
       </div>
-      <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed">{children}</p>
-    </div>
-  );
-}
+      <p className="dc-takeaway">We do not know which future applies just from the size of the building. Evidence about competing sites, costs and the company&apos;s decision matters.</p>
+      <div className="dc-two" style={{marginTop:36}}>
+        <article className="dc-panel"><span className="dc-kicker">Why communities say yes</span><h3>Even a reduced tax bill can matter.</h3><CountyTaxVisual />
+          <div className="dc-benefit-row"><HardHat size={25}/><div><strong>Work beyond permanent jobs</strong><p>Construction, suppliers and contractors count too. Ask how long the work lasts and who gets hired.</p></div></div>
+          <div className="dc-benefit-row"><Landmark size={25}/><div><strong>The terms are negotiable</strong><p>The Dalles tied payments to full taxes and a minimum floor. The calculator below lets you try those terms.</p></div></div>
+          <Fold title="What would make the case stronger?"><p>Documented competing sites, evidence that the incentive changes the decision, and audited local cash flows. An empty parcel today does not prove it would stay empty without this deal.</p><p>The $22.96M is collected across taxing jurisdictions, not simply available to the county government. Construction benefits should be assessed for duration, local hiring, wages and whether the incentive caused them. <Src id="econw"/></p></Fold>
+        </article>
+        <article id="case-against" className="dc-panel" style={{scrollMarginTop:140}}><span className="dc-kicker">Why others ask for restraint</span><h3>A local gain can shift costs elsewhere.</h3>
+          <p>School funding connects local tax decisions to the rest of Oregon.</p>
+          <div className="dc-school-flow" role="img" aria-label="In a typical formula-funded district, lower local school revenue can trigger more state aid, leaving less in the statewide funding pool if state funding stays fixed.">
+            <div><strong>↓</strong>Local school-tax revenue</div><ArrowRight/><div><strong>↑</strong>State aid fills the gap</div><ArrowRight/><div><strong>↓</strong>Less available statewide</div>
+          </div>
+          <p className="dc-fine">Typical formula-funded district; state funding held fixed. Exceptions matter.</p>
+          <Src id="odeSchoolFunding" label="Oregon Department of Education · school funding"/>
+          <Fold title="School-funding exceptions"><p>Eligible local operating revenues, including enterprise-zone school fees, enter the equalization formula. Districts whose local revenues already exceed formula funding do not receive the same backfill. Capital bonds and certain local-option receipts are treated separately. A site-level review must identify the affected levies.</p></Fold>
+          <h3 style={{marginTop:26}}>Water needs a local answer.</h3>
+          <div className="dc-water-row"><div><Droplets size={23}/><strong>How much is taken?</strong><p>Measure withdrawals from each source.</p></div><div><Waves size={23}/><strong>What comes back?</strong><p>Track consumption, discharge and quality.</p></div><div><Sun size={23}/><strong>When is it needed?</strong><p>Check summer peaks and drought limits.</p></div></div>
+          <Fold title="What the financial comparison leaves out"><p>A small annual share of city water use does not establish an acceptable seasonal impact. Power supply, backup generators, noise and cumulative basin impacts need their own evidence. The committee&apos;s preliminary report leaves important questions open. <Src id="preliminary"/></p><p>Credible evidence that an incentive is needed, verified net receipts, funded service costs and enforceable resource limits can strengthen a specific deal. A large exemption alone does not establish how much revenue was realistically available.</p><SubsidyPerJob/></Fold>
+        </article>
+      </div>
+    </Section>
 
-function StepCard({
-  n,
-  title,
-  children,
-}: {
-  n: string;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-6">
-      <div className="flex items-center justify-between mb-3">
-        <span className="font-mono text-[20px] font-bold text-[var(--color-parchment)] leading-none">
-          {n}
-        </span>
-      </div>
-      <h3 className="text-[15px] font-semibold text-[var(--color-canopy)] mb-1.5 leading-snug">
-        {title}
-      </h3>
-      <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed">{children}</p>
-    </div>
-  );
-}
+    <Section id="price" kicker="Try it yourself" title="Does the tax break pay off?" lead="Start with a real agreement or program. Move the big assumption. Watch the public-money comparison change.">
+      <DealCalculator />
+      <Fold title="Why these examples—and why no Morrow County forecast?"><p>The Dalles examples use terms from the signed 2021 Design LLC agreement. Project 1&apos;s illustration uses $600M at 1.10%: $6.6M in full tax and a $3.3M total payment at a 50% share. Project 2 uses 60%. Both have a $3M floor. Included taxes and community-service payments are not added twice. Escalators and actual assessment schedules are not modeled. <Src id="wascoAgreement" label="Signed agreement · definitions and Exhibit A"/></p><p>The Hillsboro example is a program illustration using the maximum city fees and school support, not a named project or proof of current eligibility. The annual share changes after year 3.</p><p>Morrow County&apos;s 2023 approval minutes describe a 15-year SIP exemption, an initial $100M taxable portion, a community-service fee up to $2.5M and additional obligations. That is not a flat payment. Without the complete schedules we cannot present a defensible project forecast. <Src id="morrowMinutes" label="Approval minutes · page 6"/></p></Fold>
+      <Fold title="What to ask about a site near you"><SitingMap /></Fold>
+    </Section>
 
-function Finding({
-  n,
-  title,
-  children,
-}: {
-  n: string;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="rounded-sm border border-white/12 bg-white/[0.05] p-6 backdrop-blur">
-      <div className="flex items-center gap-3 mb-2">
-        <span className="font-mono text-[20px] font-bold text-[var(--color-ember-bright)]/60 leading-none">
-          {n}
-        </span>
-        <h3 className="text-[16px] font-semibold text-white leading-snug">{title}</h3>
+    <Section id="evidence" kicker="Read the numbers carefully" title="Economic activity is not the same as taxpayer payback." lead="A project can generate business activity while the tax incentive returns less public revenue than it costs. And neither number tells us whether the incentive was necessary." tone="dark">
+      <ReturnsVisual />
+      <p className="dc-fine" style={{color:"#d0ddd4",marginTop:18}}>Historical results for whole incentive programs, not individual data centers. <Src id="impactStudy" label="February 2022 study · figures 17 and 20"/></p>
+      <Fold title="What these return ratios mean"><p>These are modified net ROI figures. Economic-output ROI compares modeled output with adjusted abatements; employee-income-tax ROI is a much narrower fiscal calculation. Several business taxes and environmental costs are excluded.</p><p>The rural income-tax calculation is $81.46M ÷ ($534.95M − $34.20M) − 1 ≈ −0.84. A +1.35 net ratio corresponds to $2.35 of gross receipts per adjusted dollar of abatement, not $1.35. These estimates do not establish how much activity was caused by the incentive. The June 2026 Business Oregon presentation repeats the economic-output figures; the income-tax figures come from the original study.</p></Fold>
+      <div className="dc-measure-grid">
+        <article className="dc-panel"><span className="dc-kicker">Investment / Know the denominator</span><h3>Almost all of one program&apos;s investment.</h3><div className="dc-investment-bar" role="img" aria-label="Data centers represent 15.4 billion dollars of 15.8 billion dollars within the long-term rural program, about 97.5 percent."><span/><span/></div><div className="dc-chart-legend"><span><i className="dc-dot dc-green"/> Data centers · $15.4B</span><span><i className="dc-dot" style={{background:"#d8b282"}}/> Other · $0.4B</span></div><p>This describes the <strong>long-term rural program</strong>. It does not describe all data-center investment in Oregon.</p><Src id="businessOregonRoi" label="Business Oregon · slide 4"/><Fold title="The other programs"><p>The same table separately lists $3.1B of data-center investment under standard zones and $11.2B under SIP. The $15.8B denominator belongs to the rural program only.</p></Fold></article>
+        <article className="dc-panel"><span className="dc-kicker">Jobs / Keep the definitions attached</span><h3>Two estimates we cannot simply combine.</h3><div className="dc-job-pair"><div><strong>7,600</strong><span>Business Oregon<br/>2025 · “direct contributions”</span></div><b>≠</b><div><strong>2,630</strong><span>ECONorthwest<br/>2024 data · on-site operations</span></div></div><p>Different years. Different coverage. The totals have not been reconciled.</p><Src id="businessOregonRoi" label="Business Oregon · slide 2"/>{" "}<Src id="econw" label="ECONorthwest · employment analysis"/><Fold title="What we can and cannot infer"><p>ECONorthwest separates operating employment from construction and other effects. The larger Business Oregon total is labeled direct, so it cannot simply be relabeled as construction and multiplier jobs to explain the gap. Both authors&apos; definitions need reconciliation.</p></Fold></article>
       </div>
-      <p className="text-[13px] text-white/70 leading-relaxed">{children}</p>
-    </div>
-  );
+      <div style={{marginTop:28}}><RateShift /></div>
+      <p className="dc-small" style={{color:"#d0ddd4",marginTop:18}}>PGE&apos;s change shows that costs can be allocated differently. It does not prove every utility has solved the problem, or that future investment will be unchanged.</p>
+    </Section>
+
+    <Section id="test" kicker="Our proposed standard" title="A better deal has to pass six tests." lead="Two have partial coverage in the reviewed record. Four remain open statewide. Each project still needs its own evidence." tone="warm">
+      <ConditionsScorecard />
+      <p className="dc-fine" style={{marginTop:24}}>These are proposed requirements, not universal current law or a finding that every project fails. More tax revenue does not excuse an unlawful water impact or a procedural violation.</p>
+    </Section>
+
+    <Section id="committee" kicker="Have a say" title="Bring a specific question to the public record." lead="The committee has released preliminary findings. Its September report expects final recommendations before the end of 2026.">
+      <div className="dc-action-banner"><div className="dc-date-block"><span>October</span><strong>24</strong><span>5 p.m. / 2026</span></div><div><h3>Written comments are open.</h3><p>Name the site, utility or agreement. Link the evidence. Explain which promise should be required—or which unanswered question matters.</p><a href={SOURCES.advisoryCommittee.url}>Open the official comment instructions <ArrowRight size={18}/></a></div></div>
+      <div className="dc-three" style={{marginTop:28}}>
+        <div className="dc-panel"><BookOpen size={24}/><h3>Read the questions</h3><p>Start with what the committee still wants to know.</p><Src id="preliminary" label="September preliminary findings"/></div>
+        <div className="dc-panel"><PencilLine size={24}/><h3>Make one point well</h3><p>Separate what you observed from what you estimated. Add a source and a concrete request.</p></div>
+        <div className="dc-panel"><Send size={24}/><h3>Use the current form</h3><p>The official committee page links the written-comment form and any schedule changes.</p><Src id="advisoryCommittee" label="Committee notice"/></div>
+      </div>
+      <div id="next" style={{scrollMarginTop:140}}><Fold title="Committee membership and upcoming decisions"><CommitteeDetail/><p style={{marginTop:20}}>The standard-zone pause runs through 90 days after the 2027 session adjourns. Other incentive programs and utility proceedings need separate decisions. For mailing-list updates, ODOE lists {COMMITTEE.email}. Hearing testimony does not replace government-to-government tribal consultation.</p></Fold></div>
+    </Section>
+
+    <Section id="record" kicker="Keep digging" title="The evidence is here when you need it." lead="Agency estimates, company positions and our judgments play different roles. A statement at a hearing is not independently verified just because it is in the record." tone="warm">
+      <div className="dc-record-grid"><Fold title="Selected findings and unanswered questions"><RecordFindings/></Fold><div id="voices"><Fold title="Stakeholder positions and published responses"><WhoShowedUp/></Fold></div><div id="why"><Fold title="How the decision process shapes the debate"><StructuralFactors/></Fold></div><div id="library"><Fold title={`Document index · ${DCAC_DOC_COUNT} linked items`}><DocumentLibrary/></Fold></div></div>
+    </Section>
+
+    <Section id="sources" kicker="Sources & method" title="Know what is fact, estimate or assumption." lead="A document-based analysis by Portland Civic Lab. Evidence checked September 29, 2026; historical numbers keep their original dates.">
+      <div className="dc-method-key">{[["Documented","A source reports a decision, number or term."],["Estimated","A study models an outcome from data."],["Assumed","An editable input fills a gap in a scenario."],["Our judgment","A proposed standard or interpretation."]].map(([t,d],i)=><div key={t}><span className="dc-tag">{String(i+1).padStart(2,"0")}</span><strong>{t}</strong><p>{d}</p></div>)}</div>
+      <Fold title="What this revision checked—and what remains unresolved"><p>Selected primary records were reviewed for fiscal definitions, program coverage, employment estimates and current participation guidance. The document index is a reading aid, not a claim that every recording was transcribed or every statement corroborated.</p><p>Stakeholder positions come from published material. No new interviews or responses were obtained. Remaining work includes complete project assessment and payment schedules, reconciliation of the jobs estimates, and subsequent court and utility decisions. Calculator examples use disclosed assumptions, not audited actual returns.</p><p><Link href="/contact">Send a correction or documented response</Link> with the claim, source page and proposed correction.</p></Fold>
+      <Fold title="Correction history · September 29, 2026"><ul><li>Separated economic-output ROI from limited fiscal ROI, corrected net versus gross interpretation and dated the historical cost-per-job comparison.</li><li>Corrected the investment denominator and removed an unsupported explanation of the jobs discrepancy.</li><li>Narrowed moratorium and utility claims to their actual coverage and added the separate Hillsboro land-use pause.</li><li>Replaced regional probabilities and categorical site verdicts with evidence questions and visibly assumed scenarios.</li><li>Rebuilt the calculator with separate fiscal views, longer horizons, public costs, uncertain construction, payment floors, stepped fees, example provenance and CSV exports.</li><li>Added school-funding exceptions, proposed enforcement terms, published positions and unresolved questions.</li><li>Updated the comment deadline and report expectation; removed unsupported claims of a complete review of recordings.</li></ul></Fold>
+      <Fold title={`Primary records and reporting · ${SOURCE_IDS.length} sources`}><div className="dc-sources-grid">{SOURCE_IDS.map(id=>{const s=SOURCES[id];return <a key={id} href={s.url}>{s.title}<span>{s.org} · {s.kind}</span></a>})}</div></Fold>
+    </Section>
+  </div>;
 }

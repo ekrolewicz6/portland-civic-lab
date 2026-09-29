@@ -1,67 +1,22 @@
-import { Check, Minus, X } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-import { WIN_WIN_CONDITIONS, type ConditionStatus } from "@/lib/datacenters/data";
-
-const STATUS: Record<
-  ConditionStatus,
-  { label: string; Icon: LucideIcon; badge: string; ring: string }
-> = {
-  met: {
-    label: "Met",
-    Icon: Check,
-    badge: "bg-[#e3efe7] text-[var(--color-fern)]",
-    ring: "border-[var(--color-fern)]/40",
-  },
-  partial: {
-    label: "Partial",
-    Icon: Minus,
-    badge: "bg-[#f6ecd9] text-[var(--color-ember)]",
-    ring: "border-[var(--color-ember)]/40",
-  },
-  unmet: {
-    label: "Unmet",
-    Icon: X,
-    badge: "bg-[#f6e7df] text-[var(--color-clay)]",
-    ring: "border-[var(--color-clay)]/50",
-  },
-};
-
-/**
- * The win-win test: each condition a data center deal must meet to be a net
- * gain for its host community, and where Oregon stands as of August 2026.
- */
+import { PlugZap, Leaf, Droplets, Coins, GraduationCap, ScanEye } from "lucide-react";
+import { SOURCES, WIN_WIN_CONDITIONS } from "@/lib/datacenters/data";
+const short = [
+  {title:"Protect other customers",text:"Make the project pay for its power needs—and the risk it closes.",icon:PlugZap},
+  {title:"Plan for clean power",text:"Show where new electricity will come from and when it can arrive.",icon:Leaf},
+  {title:"Set local resource limits",text:"Measure water, pollution and noise. Plan for drought and peak demand.",icon:Droplets},
+  {title:"Show the money works",text:"Compare the deal with no break, including costs and other uses of the land.",icon:Coins},
+  {title:"Account for schools",text:"Show which budgets gain, which lose and how services are paid for.",icon:GraduationCap},
+  {title:"Make the terms public",text:"Publish the agreement, the evidence and who enforces each promise.",icon:ScanEye}
+];
 export default function ConditionsScorecard() {
-  return (
-    <div className="space-y-3">
-      {WIN_WIN_CONDITIONS.map((c, i) => {
-        const S = STATUS[c.status];
-        return (
-          <div
-            key={c.condition}
-            className={`flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 rounded-sm border bg-white p-5 ${S.ring}`}
-          >
-            <div
-              className={`inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1.5 ${S.badge} flex-shrink-0 self-start sm:w-[92px]`}
-            >
-              <S.Icon className="w-3.5 h-3.5" />
-              <span className="text-[10px] font-semibold uppercase tracking-[0.08em] whitespace-nowrap">
-                {S.label}
-              </span>
-            </div>
-            <div>
-              <h4 className="text-[15px] font-semibold text-[var(--color-ink)]">
-                <span className="font-mono text-[13px] text-[var(--color-ink-muted)] mr-1.5">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                {c.condition}
-              </h4>
-              <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed mt-0.5">
-                {c.evidence}
-              </p>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
+  return <><div className="dc-condition-summary"><div className="dc-status-dots" aria-hidden="true">{short.map(c=><i key={c.title}/>)}</div><span><b>2</b> partly covered</span><span><b>4</b> not established statewide</span></div>
+    <div className="dc-condition-grid">{WIN_WIN_CONDITIONS.map((c,i)=>{const Icon=short[i].icon;return <article key={c.condition} className={"dc-condition "+(c.status==="partial"?"is-partial":"")}>
+      <div className="dc-condition-top"><Icon aria-hidden="true"/><span className={"dc-tag "+(c.status==="partial"?"amber":"slate")}>{c.status==="partial"?"Partial coverage":"Still an open test"}</span></div>
+      <h3>{short[i].title}</h3><p>{short[i].text}</p>
+      <details className="dc-disclosure"><summary>Evidence & enforcement</summary><div className="dc-detail-body">
+        <p>{c.evidence} <a href={SOURCES[c.sourceId].url}>Read the source ↗</a></p>
+        <dl>{[["Who is responsible",c.authority],["What to require",c.requirement],["What to report",c.reporting],["If a promise is missed",c.enforcement]].map(([t,v])=><div key={t}><dt>{t}</dt><dd>{v}</dd></div>)}</dl>
+      </div></details>
+    </article>})}</div>
+  </>;
 }

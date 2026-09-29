@@ -1,3 +1,4 @@
+import { SOURCES } from "@/lib/datacenters/data";
 import { VOICES, CAMP_LABEL, type Camp } from "@/lib/datacenters/dcac-findings";
 
 const CAMP_STYLE: Record<Camp, { color: string; bg: string }> = {
@@ -61,7 +62,7 @@ export default function WhoShowedUp() {
                     {v.position}
                   </p>
                   <p className="text-[12.5px] text-[var(--color-ink-light)] leading-relaxed mt-1.5">
-                    {v.evidence}
+                    {v.evidence} <a href={SOURCES[v.sourceId].url} className="underline text-[var(--color-river-deep)]">Published source</a>
                   </p>
                 </div>
               ))}

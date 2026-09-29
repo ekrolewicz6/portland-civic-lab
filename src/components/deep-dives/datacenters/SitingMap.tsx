@@ -1,109 +1,18 @@
-import { REGIONS, type SitingPosture } from "@/lib/datacenters/data";
-
-const POSTURE: Record<SitingPosture, { label: string; color: string; bg: string }> = {
-  "price-right": { label: "Good at the right price", color: "#3d7a5a", bg: "#e3efe7" },
-  conditional: { label: "Conditional", color: "#c8956c", bg: "#f6ecd9" },
-  "pull-back": { label: "Pull back", color: "#b85c3a", bg: "#f6e7df" },
-  "not-viable": { label: "Not viable", color: "#78716c", bg: "#f0eeec" },
-};
-
-/**
- * Schematic siting map: where a deal can pencil, where it can't, and why.
- * The outline is stylized — postures come from the same variables as the
- * calculator (leverage, water, grid), not from a GIS analysis.
- */
+import { REGIONS, SOURCES } from "@/lib/datacenters/data";
+/** Schematic geography supports questions; no unsupported probability or feasibility score. */
 export default function SitingMap() {
-  return (
-    <div className="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-6 items-start">
-      {/* ── Map ── */}
-      <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
-        <svg viewBox="0 0 440 320" className="w-full h-auto" role="img" aria-label="Schematic map of Oregon data center siting regions">
-          {/* stylized Oregon outline */}
-          <path
-            d="M 42,62 L 96,54 L 140,64 L 198,48 L 252,50 L 292,42 L 340,44 L 386,48
-               L 378,88 L 394,118 L 386,150 L 390,270 L 56,276 L 40,222 L 50,142 Z"
-            fill="#f7f3ed"
-            stroke="#1a3a2a"
-            strokeWidth="1.5"
-            strokeLinejoin="round"
-          />
-          {/* Columbia River hint */}
-          <path
-            d="M 42,62 L 96,54 L 140,64 L 198,48 L 252,50 L 292,42"
-            fill="none"
-            stroke="#4a7f9e"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            opacity="0.55"
-          />
-          {REGIONS.map((r) => {
-            const p = POSTURE[r.posture];
-            return (
-              <g key={r.id}>
-                <circle cx={r.x} cy={r.y} r="11" fill={p.color} opacity="0.18" />
-                <circle cx={r.x} cy={r.y} r="5" fill={p.color} />
-                <text
-                  x={r.x}
-                  y={r.y + 24}
-                  textAnchor="middle"
-                  fontSize="10"
-                  fontFamily="var(--font-mono)"
-                  fill="#44403c"
-                >
-                  {r.towns.split(",")[0]}
-                </text>
-              </g>
-            );
-          })}
-        </svg>
-        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">
-          {(Object.keys(POSTURE) as SitingPosture[]).map((k) => (
-            <span key={k} className="inline-flex items-center gap-1.5 text-[11px] text-[var(--color-ink-light)]">
-              <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: POSTURE[k].color }} />
-              {POSTURE[k].label}
-            </span>
-          ))}
-        </div>
-        <p className="mt-2 text-[11px] text-[var(--color-ink-muted)] leading-snug">
-          Schematic, not a survey — each verdict comes from the region&apos;s leverage, water, and
-          grid position. Same variables as the calculator.
-        </p>
-      </div>
-
-      {/* ── Region verdicts ── */}
-      <div className="space-y-3">
-        {REGIONS.map((r) => {
-          const p = POSTURE[r.posture];
-          return (
-            <div key={r.id} className="rounded-sm border border-[var(--color-parchment)] bg-white p-4">
-              <div className="flex flex-wrap items-center gap-2">
-                <h4 className="text-[14px] font-semibold text-[var(--color-ink)]">{r.name}</h4>
-                <span
-                  className="rounded-sm px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em]"
-                  style={{ color: p.color, backgroundColor: p.bg }}
-                >
-                  {p.label}
-                </span>
-              </div>
-              <p className="mt-1.5 text-[12.5px] text-[var(--color-ink-light)] leading-relaxed">
-                {r.verdict}
-              </p>
-              <div className="mt-2 flex flex-wrap gap-x-4 gap-y-0.5 text-[11px] text-[var(--color-ink-muted)]">
-                <span>
-                  <span className="font-mono uppercase tracking-wide">Leverage</span> ~
-                  {r.preset.leveragePct}%
-                </span>
-                <span>
-                  <span className="font-mono uppercase tracking-wide">Water</span> {r.water}
-                </span>
-                <span>
-                  <span className="font-mono uppercase tracking-wide">Grid</span> {r.grid}
-                </span>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+  return <div className="grid gap-6 lg:grid-cols-2">
+    <div>
+      <svg viewBox="0 0 440 320" className="w-full h-auto" role="img" aria-label="Schematic Oregon map locating six regions discussed below">
+        <path d="M42,62 L96,54 L140,64 L198,48 L252,50 L292,42 L340,44 L386,48 L378,88 L394,118 L386,150 L390,270 L56,276 L40,222 L50,142 Z" fill="#f7f3ed" stroke="#1a3a2a" strokeWidth="1.5" />
+        {REGIONS.map(r => <g key={r.id}><circle cx={r.x} cy={r.y} r="6" fill="#4a7f9e" /><text x={r.x} y={r.y + 22} textAnchor="middle" fontSize="11" fill="#44403c">{r.towns}</text></g>)}
+      </svg>
+      <p className="text-xs leading-relaxed text-[var(--color-ink-muted)]">Editorial questions by region. Markers are schematic. They do not rank sites, measure bargaining power or establish infrastructure availability.</p>
     </div>
-  );
+    <div className="space-y-3">{REGIONS.map(r => <article key={r.id} className="border border-[var(--color-parchment)] rounded-sm bg-white p-4">
+      <h4 className="font-semibold">{r.name}</h4><p className="mt-2 text-sm font-medium">{r.question}</p>
+      <p className="mt-2 text-sm leading-relaxed">{r.evidenceNeeded}</p>
+      <a className="mt-2 inline-block text-xs underline text-[var(--color-river-deep)]" href={SOURCES[r.sourceId].url}>{SOURCES[r.sourceId].org}</a>
+    </article>)}</div>
+  </div>;
 }

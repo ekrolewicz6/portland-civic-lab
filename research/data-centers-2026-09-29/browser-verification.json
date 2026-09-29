@@ -1,0 +1,30 @@
+{
+  "verifiedAt": "2026-09-29T23:02:36.767Z",
+  "route": "/deep-dives/data-centers",
+  "viewports": [
+    1440,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "examples": 3,
+  "errors": [],
+  "failures": [],
+  "checks": [
+    "all examples replace complete input sets",
+    "documented payment rules",
+    "positive and negative comparisons",
+    "exact break-even",
+    "CSV payment schedules",
+    "separate fiscal perspectives",
+    "keyboard slider",
+    "post-abatement years",
+    "high-cost edge case",
+    "reset and custom",
+    "all article anchors clear header",
+    "source and enforcement disclosures",
+    "responsive controls and no overflow",
+    "no-JavaScript article"
+  ]
+}

@@ -106,9 +106,9 @@ const DIVES: DeepDive[] = [
     eyebrow: "Energy, water & taxes",
     title: "Oregon built the cloud. Was it worth the bill?",
     blurb:
-      "Roughly 125 data centers, $450M+ a year in tax breaks, surging power demand, secretive water deals, and a state that just hit pause. The strongest case for the deals, the strongest case against, and an honest six-condition test of when a data center is truly a win-win.",
-    stat: "$450M+",
-    statLabel: "a year in tax breaks, and the state just hit pause",
+      "See what Oregon gets from data-center deals. Compare three examples, move the assumptions and find the break-even point—then follow the power, water and school-funding tradeoffs.",
+    stat: "3",
+    statLabel: "clickable examples with visible assumptions",
     icon: Server,
     available: true,
   },

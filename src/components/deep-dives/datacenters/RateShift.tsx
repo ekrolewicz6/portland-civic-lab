@@ -1,4 +1,4 @@
-import { RATE_SHIFT } from "@/lib/datacenters/data";
+import { RATE_SHIFT, SOURCES } from "@/lib/datacenters/data";
 
 /**
  * The POWER Act rate split, on a dark section: who pays more, who pays less.
@@ -12,7 +12,7 @@ export default function RateShift() {
         Who pays after the POWER Act
       </div>
       <p className="mt-1.5 text-[12px] text-white/55">
-        Change in electric bills under PGE&apos;s 2026 data-center rate class
+        Average rate changes under PGE&apos;s 2026 data-center rate class
       </p>
       <div className="mt-5 space-y-5">
         {RATE_SHIFT.map((r) => {
@@ -44,6 +44,7 @@ export default function RateShift() {
           );
         })}
       </div>
+      <a href={SOURCES.pgeRates.url} className="mt-5 inline-block text-xs text-white/75 underline underline-offset-2">Source: PGE SEC filing, July 8 implementation</a>
     </div>
   );
 }
