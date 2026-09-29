@@ -1,0 +1,139 @@
+.fire-whetstone {
+  padding: clamp(3rem, 7vw, 6rem) 0;
+  border-top: 1px solid #cbd1be;
+  scroll-margin-top: 96px;
+}
+
+.fire-whetstone-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+  align-items: end;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.fire-whetstone-heading h3 {
+  max-width: 850px;
+  margin: .7rem 0 0;
+  font: 500 clamp(2.5rem, 5vw, 5rem)/1.02 var(--font-editorial), Georgia, serif;
+  letter-spacing: -.035em;
+  color: #203e30;
+}
+
+.fire-whetstone-heading p {
+  max-width: 380px;
+  margin: 0 0 .2rem;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.6;
+  color: #405546;
+}
+
+.fire-whetstone-figure {
+  padding: clamp(1.4rem, 3.2vw, 2.6rem);
+  background: #203e30;
+  color: #f4f2e8;
+}
+
+.fire-whetstone-figure-top {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.fire-whetstone-figure-top>span,
+.fire-whetstone-unit-name {
+  font-size: .72rem;
+  font-weight: 650;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.fire-whetstone-figure-top strong {
+  font: 500 clamp(3.2rem, 6vw, 6rem)/.8 var(--font-editorial), Georgia, serif;
+  white-space: nowrap;
+}
+
+.fire-whetstone-figure-top small {
+  font: 500 .95rem/1.2 system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+.fire-whetstone-area-bar {
+  display: flex;
+  gap: 3px;
+  height: clamp(2.5rem, 5vw, 4.2rem);
+}
+
+.fire-whetstone-area-bar span { flex-basis: 0; min-width: 0; background: #c8a46d; }
+.fire-whetstone-area-bar span:nth-child(2) { background: #9fba9c; }
+.fire-whetstone-area-bar span:nth-child(3) { background: #698b78; }
+
+.fire-whetstone-units {
+  display: grid;
+  grid-template-columns: 21fr 33fr 33fr;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.fire-whetstone-units>div { min-width: 0; }
+.fire-whetstone-units>div:first-child .fire-whetstone-unit-name { color: #e3c08b; }
+.fire-whetstone-units>div:nth-child(2) .fire-whetstone-unit-name { color: #b8d1b4; }
+.fire-whetstone-units>div:nth-child(3) .fire-whetstone-unit-name { color: #a9c0af; }
+.fire-whetstone-units strong { display: block; margin: .45rem 0; font-size: clamp(1.3rem, 2vw, 2rem); }
+.fire-whetstone-units p { max-width: 340px; margin: 0; color: #d3ddcf; font-size: .94rem; line-height: 1.5; }
+
+.fire-whetstone-decision {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 5vw, 5rem);
+  padding: clamp(2rem, 4vw, 3.5rem) 0;
+  border-bottom: 1px solid #cbd1be;
+}
+
+.fire-whetstone-decision p { max-width: 520px; margin: .7rem 0 0; font-size: clamp(1.05rem, 1.5vw, 1.2rem); line-height: 1.65; }
+
+.fire-whetstone-sequence {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #cbd1be;
+  border-bottom: 1px solid #cbd1be;
+}
+
+.fire-whetstone-sequence li { padding: clamp(1.5rem, 3vw, 2.4rem); background: #e9eadf; }
+.fire-whetstone-sequence li:last-child { background: #e5ddd0; }
+.fire-whetstone-sequence span { color: #715636; font-size: .71rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.fire-whetstone-sequence strong { display: block; margin: .8rem 0; font: 500 clamp(1.5rem, 2.2vw, 2.2rem)/1.1 var(--font-editorial), Georgia, serif; color: #203e30; }
+.fire-whetstone-sequence p { margin: 0; line-height: 1.55; color: #3b5143; }
+
+.fire-whetstone-source {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 1.2rem;
+  color: #536452;
+  font-size: .81rem;
+  line-height: 1.55;
+}
+
+.fire-whetstone-source p { max-width: 780px; margin: 0; }
+.fire-whetstone-source a { display: inline-flex; align-items: center; gap: .3rem; color: #244a37; white-space: nowrap; text-underline-offset: 3px; }
+
+@media (max-width: 760px) {
+  .fire-whetstone-heading,
+  .fire-whetstone-decision,
+  .fire-whetstone-sequence { grid-template-columns: 1fr; }
+  .fire-whetstone-heading p { max-width: 620px; }
+  .fire-whetstone-units { grid-template-columns: 1fr; gap: 1.4rem; }
+  .fire-whetstone-units>div { padding-left: .8rem; border-left: 3px solid #c8a46d; }
+  .fire-whetstone-units>div:nth-child(2) { border-color: #9fba9c; }
+  .fire-whetstone-units>div:nth-child(3) { border-color: #698b78; }
+  .fire-whetstone-source { display: block; }
+  .fire-whetstone-source a { margin-top: .8rem; white-space: normal; }
+}

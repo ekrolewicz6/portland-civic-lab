@@ -10,6 +10,7 @@ import "./fire.css";
 import "./guide.css";
 import "./editorial.css";
 import "./long-guide.css";
+import "./whetstone.css";
 
 const editorial = localFont({ src: "../../../lib/oregon-fire/fonts/CormorantGaramond-Medium.ttf", variable: "--font-editorial", weight: "500", display: "swap" });
 export const dynamic = "force-dynamic";
