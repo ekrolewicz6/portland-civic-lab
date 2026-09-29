@@ -99,7 +99,6 @@ function CampaignBars({ candidates, district }: { candidates: Candidate[]; distr
 
 export default function Suppliers() {
   return <main className={s.page} data-supplier-snapshot={data.snapshot}><div className={s.wrap}>
-    <nav className={s.nav} aria-label="Campaign finance research"><Link href={BASE}>Portland Civic Lab / Campaign finance</Link><div><Link href={BASE + '/races'}>Race comparisons</Link><Link href={BASE + '/explorer'}>Transactions</Link><Link href={BASE + '/methodology'}>Methods</Link></div></nav>
 
     <header className={s.hero}>
       <div>
