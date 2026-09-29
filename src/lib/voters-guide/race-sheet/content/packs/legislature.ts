@@ -1051,7 +1051,7 @@ Object.assign(portraits, {
   "stephanie-carkin": portrait("stephanie-carkin", "https://www.stephaniefororegon.com/about", "Campaign photo · stephaniefororegon.com"),
   "steph-terrio": portrait("steph-terrio", "https://www.terrioforus.com/", "Campaign photo · terrioforus.com"),
   "susan-mclain": portrait("susan-mclain", "https://www.susanmclain.org/", "Campaign photo · susanmclain.org"),
-  "brian-schimmel": portrait("brian-schimmel", "https://brianschimmel.org/", "Campaign photo · brianschimmel.org"),
+  "brian-schimmel": portrait("brian-schimmel", "https://www.portlandciviclab.org/voters-guide/research-log#schimmel-2026-09-28", "Portrait provided by the campaign"),
   "adam-baker": portrait("adam-baker", "https://voteadambaker.com/meet/", "Campaign photo · voteadambaker.com"),
   "michael-w-sugar": portrait("michael-w-sugar", "https://www.sugarfororegon.com/", "Campaign photo · sugarfororegon.com"),
   "pat-hubbell": portrait("pat-hubbell", "https://hubbell4health.com/about", "Campaign photo · hubbell4health.com"),
