@@ -1,0 +1,766 @@
+event,event_date,window_days,committee_id,candidate,pre_cents,post_cents,pre_records,post_records,post_observed_days,full_post_window,mature_14_days,difference_cents,ratio,pre_unidentified_cents,post_unidentified_cents,pre_itemized_individual_cents,post_itemized_individual_cents
+City announces reduced public-matching caps,2025-03-20,7,23208,Tiffany Koyama Lane,2793,2500,1,1,7,True,True,-293,0.8950948800572861,2793,2500,0,0
+City announces reduced public-matching caps,2025-03-20,7,23028,Angelita Morillo,3192,2500,1,1,7,True,True,-692,0.7832080200501254,3192,2500,0,0
+City announces reduced public-matching caps,2025-03-20,7,15109,Steve Novick,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,24661,Tom Sollitt,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,24897,Kellie Torres,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,24973,Esther León,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,24972,Joel Corcoran,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,24966,Matthias Hallett,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,24979,Cristal Otero,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,23295,Eli Arnold,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,23365,Mitch Green,192,5000,1,1,7,True,True,4808,26.041666666666668,192,5000,0,0
+City announces reduced public-matching caps,2025-03-20,7,17629,Eric Zimmerman,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,23199,Olivia Clark,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,23411,Jeremy Beausoleil Smith,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,25040,Jamey Evenstar,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,25103,Jayne Cronlund,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,7,24615,John J Goldsmith,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,23208,Tiffany Koyama Lane,7678,3500,2,2,14,True,True,-4178,0.45584787705131546,7678,3500,0,0
+City announces reduced public-matching caps,2025-03-20,14,23028,Angelita Morillo,5577,3000,2,2,14,True,True,-2577,0.5379236148466918,5577,3000,0,0
+City announces reduced public-matching caps,2025-03-20,14,15109,Steve Novick,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,24661,Tom Sollitt,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,24897,Kellie Torres,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,24973,Esther León,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,24972,Joel Corcoran,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,24966,Matthias Hallett,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,24979,Cristal Otero,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,23295,Eli Arnold,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,23365,Mitch Green,2577,8500,2,3,14,True,True,5923,3.298409002716337,2577,6000,0,2500
+City announces reduced public-matching caps,2025-03-20,14,17629,Eric Zimmerman,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,23199,Olivia Clark,0,5000,0,1,14,True,True,5000,,0,5000,0,0
+City announces reduced public-matching caps,2025-03-20,14,23411,Jeremy Beausoleil Smith,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,25040,Jamey Evenstar,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,25103,Jayne Cronlund,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,14,24615,John J Goldsmith,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,23208,Tiffany Koyama Lane,11678,8000,4,4,28,True,True,-3678,0.6850488097276931,11678,8000,0,0
+City announces reduced public-matching caps,2025-03-20,28,23028,Angelita Morillo,11277,6200,4,4,28,True,True,-5077,0.5497916112441252,11277,6200,0,0
+City announces reduced public-matching caps,2025-03-20,28,15109,Steve Novick,2000,0,1,0,28,True,True,-2000,0.0,2000,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,24661,Tom Sollitt,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,24897,Kellie Torres,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,24973,Esther León,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,24972,Joel Corcoran,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,24966,Matthias Hallett,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,24979,Cristal Otero,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,23295,Eli Arnold,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,23365,Mitch Green,14269,11500,5,4,28,True,True,-2769,0.8059429532553087,14269,9000,0,2500
+City announces reduced public-matching caps,2025-03-20,28,17629,Eric Zimmerman,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,23199,Olivia Clark,2000,5000,1,1,28,True,True,3000,2.5,2000,5000,0,0
+City announces reduced public-matching caps,2025-03-20,28,23411,Jeremy Beausoleil Smith,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,25040,Jamey Evenstar,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,25103,Jayne Cronlund,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces reduced public-matching caps,2025-03-20,28,24615,John J Goldsmith,0,0,0,0,28,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,23208,Tiffany Koyama Lane,2000,0,1,0,7,True,True,-2000,0.0,2000,0,0,0
+First Peacock group-text investigation,2025-08-06,7,23028,Angelita Morillo,500,1000,1,1,7,True,True,500,2.0,500,1000,0,0
+First Peacock group-text investigation,2025-08-06,7,15109,Steve Novick,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,24661,Tom Sollitt,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,24897,Kellie Torres,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,24973,Esther León,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,24972,Joel Corcoran,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,24966,Matthias Hallett,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,24979,Cristal Otero,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,23295,Eli Arnold,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,23365,Mitch Green,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,17629,Eric Zimmerman,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,23199,Olivia Clark,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,23411,Jeremy Beausoleil Smith,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,25040,Jamey Evenstar,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,25103,Jayne Cronlund,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,7,24615,John J Goldsmith,0,0,0,0,7,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,23208,Tiffany Koyama Lane,37000,0,2,0,14,True,True,-37000,0.0,2000,0,35000,0
+First Peacock group-text investigation,2025-08-06,14,23028,Angelita Morillo,38000,1500,3,2,14,True,True,-36500,0.039473684210526314,500,1500,37500,0
+First Peacock group-text investigation,2025-08-06,14,15109,Steve Novick,0,0,0,0,14,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,24661,Tom Sollitt,0,0,0,0,14,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,24897,Kellie Torres,0,0,0,0,14,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,24973,Esther León,0,0,0,0,14,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,24972,Joel Corcoran,0,0,0,0,14,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,24966,Matthias Hallett,0,0,0,0,14,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,24979,Cristal Otero,0,0,0,0,14,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,23295,Eli Arnold,0,0,0,0,14,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,23365,Mitch Green,0,433112,0,6,14,True,True,433112,,0,258112,0,175000
+First Peacock group-text investigation,2025-08-06,14,17629,Eric Zimmerman,50000,0,1,0,14,True,True,-50000,0.0,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,23199,Olivia Clark,35000,87500,2,2,14,True,True,52500,2.5,5000,0,30000,87500
+First Peacock group-text investigation,2025-08-06,14,23411,Jeremy Beausoleil Smith,0,0,0,0,14,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,25040,Jamey Evenstar,0,0,0,0,14,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,25103,Jayne Cronlund,0,0,0,0,14,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,14,24615,John J Goldsmith,0,0,0,0,14,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,28,23208,Tiffany Koyama Lane,37000,36000,2,2,28,True,True,-1000,0.972972972972973,2000,1000,35000,35000
+First Peacock group-text investigation,2025-08-06,28,23028,Angelita Morillo,38500,40000,4,5,28,True,True,1500,1.0389610389610389,1000,2500,37500,37500
+First Peacock group-text investigation,2025-08-06,28,15109,Steve Novick,0,0,0,0,28,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,28,24661,Tom Sollitt,0,0,0,0,28,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,28,24897,Kellie Torres,0,0,0,0,28,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,28,24973,Esther León,0,0,0,0,28,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,28,24972,Joel Corcoran,0,0,0,0,28,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,28,24966,Matthias Hallett,0,0,0,0,28,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,28,24979,Cristal Otero,0,0,0,0,28,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,28,23295,Eli Arnold,0,0,0,0,28,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,28,23365,Mitch Green,0,785112,0,20,28,True,True,785112,,0,377612,0,407500
+First Peacock group-text investigation,2025-08-06,28,17629,Eric Zimmerman,50000,24500,1,1,28,True,True,-25500,0.49,0,24500,0,0
+First Peacock group-text investigation,2025-08-06,28,23199,Olivia Clark,65000,264500,3,9,28,True,True,199500,4.069230769230769,5000,37000,60000,227500
+First Peacock group-text investigation,2025-08-06,28,23411,Jeremy Beausoleil Smith,0,0,0,0,28,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,28,25040,Jamey Evenstar,0,0,0,0,28,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,28,25103,Jayne Cronlund,0,0,0,0,28,True,True,0,,0,0,0,0
+First Peacock group-text investigation,2025-08-06,28,24615,John J Goldsmith,0,0,0,0,28,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,23208,Tiffany Koyama Lane,2000,0,1,0,7,True,True,-2000,0.0,2000,0,0,0
+City partially restores public-matching caps,2025-08-06,7,23028,Angelita Morillo,500,1000,1,1,7,True,True,500,2.0,500,1000,0,0
+City partially restores public-matching caps,2025-08-06,7,15109,Steve Novick,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,24661,Tom Sollitt,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,24897,Kellie Torres,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,24973,Esther León,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,24972,Joel Corcoran,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,24966,Matthias Hallett,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,24979,Cristal Otero,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,23295,Eli Arnold,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,23365,Mitch Green,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,17629,Eric Zimmerman,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,23199,Olivia Clark,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,23411,Jeremy Beausoleil Smith,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,25040,Jamey Evenstar,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,25103,Jayne Cronlund,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,7,24615,John J Goldsmith,0,0,0,0,7,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,23208,Tiffany Koyama Lane,37000,0,2,0,14,True,True,-37000,0.0,2000,0,35000,0
+City partially restores public-matching caps,2025-08-06,14,23028,Angelita Morillo,38000,1500,3,2,14,True,True,-36500,0.039473684210526314,500,1500,37500,0
+City partially restores public-matching caps,2025-08-06,14,15109,Steve Novick,0,0,0,0,14,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,24661,Tom Sollitt,0,0,0,0,14,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,24897,Kellie Torres,0,0,0,0,14,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,24973,Esther León,0,0,0,0,14,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,24972,Joel Corcoran,0,0,0,0,14,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,24966,Matthias Hallett,0,0,0,0,14,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,24979,Cristal Otero,0,0,0,0,14,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,23295,Eli Arnold,0,0,0,0,14,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,23365,Mitch Green,0,433112,0,6,14,True,True,433112,,0,258112,0,175000
+City partially restores public-matching caps,2025-08-06,14,17629,Eric Zimmerman,50000,0,1,0,14,True,True,-50000,0.0,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,23199,Olivia Clark,35000,87500,2,2,14,True,True,52500,2.5,5000,0,30000,87500
+City partially restores public-matching caps,2025-08-06,14,23411,Jeremy Beausoleil Smith,0,0,0,0,14,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,25040,Jamey Evenstar,0,0,0,0,14,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,25103,Jayne Cronlund,0,0,0,0,14,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,14,24615,John J Goldsmith,0,0,0,0,14,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,28,23208,Tiffany Koyama Lane,37000,36000,2,2,28,True,True,-1000,0.972972972972973,2000,1000,35000,35000
+City partially restores public-matching caps,2025-08-06,28,23028,Angelita Morillo,38500,40000,4,5,28,True,True,1500,1.0389610389610389,1000,2500,37500,37500
+City partially restores public-matching caps,2025-08-06,28,15109,Steve Novick,0,0,0,0,28,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,28,24661,Tom Sollitt,0,0,0,0,28,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,28,24897,Kellie Torres,0,0,0,0,28,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,28,24973,Esther León,0,0,0,0,28,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,28,24972,Joel Corcoran,0,0,0,0,28,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,28,24966,Matthias Hallett,0,0,0,0,28,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,28,24979,Cristal Otero,0,0,0,0,28,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,28,23295,Eli Arnold,0,0,0,0,28,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,28,23365,Mitch Green,0,785112,0,20,28,True,True,785112,,0,377612,0,407500
+City partially restores public-matching caps,2025-08-06,28,17629,Eric Zimmerman,50000,24500,1,1,28,True,True,-25500,0.49,0,24500,0,0
+City partially restores public-matching caps,2025-08-06,28,23199,Olivia Clark,65000,264500,3,9,28,True,True,199500,4.069230769230769,5000,37000,60000,227500
+City partially restores public-matching caps,2025-08-06,28,23411,Jeremy Beausoleil Smith,0,0,0,0,28,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,28,25040,Jamey Evenstar,0,0,0,0,28,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,28,25103,Jayne Cronlund,0,0,0,0,28,True,True,0,,0,0,0,0
+City partially restores public-matching caps,2025-08-06,28,24615,John J Goldsmith,0,0,0,0,28,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,23208,Tiffany Koyama Lane,0,35000,0,1,7,True,True,35000,,0,0,0,35000
+City attorney response to group-text complaints,2025-08-19,7,23028,Angelita Morillo,500,37500,1,2,7,True,True,37000,75.0,500,0,0,37500
+City attorney response to group-text complaints,2025-08-19,7,15109,Steve Novick,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,24661,Tom Sollitt,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,24897,Kellie Torres,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,24973,Esther León,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,24972,Joel Corcoran,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,24966,Matthias Hallett,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,24979,Cristal Otero,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,23295,Eli Arnold,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,23365,Mitch Green,0,782612,0,19,7,True,True,782612,,0,375112,0,407500
+City attorney response to group-text complaints,2025-08-19,7,17629,Eric Zimmerman,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,23199,Olivia Clark,0,160000,0,5,7,True,True,160000,,0,2500,0,157500
+City attorney response to group-text complaints,2025-08-19,7,23411,Jeremy Beausoleil Smith,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,25040,Jamey Evenstar,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,25103,Jayne Cronlund,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,7,24615,John J Goldsmith,0,0,0,0,7,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,14,23208,Tiffany Koyama Lane,0,36000,0,2,14,True,True,36000,,0,1000,0,35000
+City attorney response to group-text complaints,2025-08-19,14,23028,Angelita Morillo,1500,38500,2,3,14,True,True,37000,25.666666666666668,1500,1000,0,37500
+City attorney response to group-text complaints,2025-08-19,14,15109,Steve Novick,0,0,0,0,14,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,14,24661,Tom Sollitt,0,0,0,0,14,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,14,24897,Kellie Torres,0,0,0,0,14,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,14,24973,Esther León,0,0,0,0,14,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,14,24972,Joel Corcoran,0,0,0,0,14,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,14,24966,Matthias Hallett,0,0,0,0,14,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,14,24979,Cristal Otero,0,0,0,0,14,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,14,23295,Eli Arnold,0,0,0,0,14,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,14,23365,Mitch Green,0,785112,0,20,14,True,True,785112,,0,377612,0,407500
+City attorney response to group-text complaints,2025-08-19,14,17629,Eric Zimmerman,0,24500,0,1,14,True,True,24500,,0,24500,0,0
+City attorney response to group-text complaints,2025-08-19,14,23199,Olivia Clark,35000,264500,1,9,14,True,True,229500,7.557142857142857,0,37000,35000,227500
+City attorney response to group-text complaints,2025-08-19,14,23411,Jeremy Beausoleil Smith,0,0,0,0,14,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,14,25040,Jamey Evenstar,0,0,0,0,14,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,14,25103,Jayne Cronlund,0,0,0,0,14,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,14,24615,John J Goldsmith,0,0,0,0,14,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,28,23208,Tiffany Koyama Lane,37000,541500,2,16,28,True,True,504500,14.635135135135135,2000,406500,35000,135000
+City attorney response to group-text complaints,2025-08-19,28,23028,Angelita Morillo,39500,40000,5,5,28,True,True,500,1.0126582278481013,2000,2500,37500,37500
+City attorney response to group-text complaints,2025-08-19,28,15109,Steve Novick,0,0,0,0,28,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,28,24661,Tom Sollitt,0,0,0,0,28,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,28,24897,Kellie Torres,0,0,0,0,28,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,28,24973,Esther León,0,0,0,0,28,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,28,24972,Joel Corcoran,0,0,0,0,28,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,28,24966,Matthias Hallett,0,0,0,0,28,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,28,24979,Cristal Otero,0,0,0,0,28,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,28,23295,Eli Arnold,0,0,0,0,28,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,28,23365,Mitch Green,0,807012,0,26,28,True,True,807012,,0,399512,0,407500
+City attorney response to group-text complaints,2025-08-19,28,17629,Eric Zimmerman,50000,39000,1,3,28,True,True,-11000,0.78,0,39000,0,0
+City attorney response to group-text complaints,2025-08-19,28,23199,Olivia Clark,70000,497000,3,21,28,True,True,427000,7.1,5000,89500,65000,407500
+City attorney response to group-text complaints,2025-08-19,28,23411,Jeremy Beausoleil Smith,0,0,0,0,28,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,28,25040,Jamey Evenstar,0,0,0,0,28,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,28,25103,Jayne Cronlund,0,0,0,0,28,True,True,0,,0,0,0,0
+City attorney response to group-text complaints,2025-08-19,28,24615,John J Goldsmith,0,0,0,0,28,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,7,23208,Tiffany Koyama Lane,47000,67000,6,3,7,True,True,20000,1.425531914893617,47000,32000,0,35000
+Additional Peacock messages reported,2025-10-08,7,23028,Angelita Morillo,1500,5100,1,1,7,True,True,3600,3.4,1500,5100,0,0
+Additional Peacock messages reported,2025-10-08,7,15109,Steve Novick,0,0,0,0,7,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,7,24661,Tom Sollitt,0,0,0,0,7,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,7,24897,Kellie Torres,0,0,0,0,7,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,7,24973,Esther León,0,0,0,0,7,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,7,24972,Joel Corcoran,0,0,0,0,7,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,7,24966,Matthias Hallett,0,0,0,0,7,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,7,24979,Cristal Otero,0,0,0,0,7,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,7,23295,Eli Arnold,0,0,0,0,7,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,7,23365,Mitch Green,3500,50000,1,1,7,True,True,46500,14.285714285714286,3500,0,0,50000
+Additional Peacock messages reported,2025-10-08,7,17629,Eric Zimmerman,50000,0,1,0,7,True,True,-50000,0.0,0,0,0,0
+Additional Peacock messages reported,2025-10-08,7,23199,Olivia Clark,135000,57500,5,4,7,True,True,-77500,0.42592592592592593,35000,32500,0,25000
+Additional Peacock messages reported,2025-10-08,7,23411,Jeremy Beausoleil Smith,0,15000,0,2,7,True,True,15000,,0,15000,0,0
+Additional Peacock messages reported,2025-10-08,7,25040,Jamey Evenstar,0,0,0,0,7,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,7,25103,Jayne Cronlund,0,0,0,0,7,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,7,24615,John J Goldsmith,0,0,0,0,7,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,14,23208,Tiffany Koyama Lane,152700,107000,11,6,14,True,True,-45700,0.7007203667321545,82700,72000,70000,35000
+Additional Peacock messages reported,2025-10-08,14,23028,Angelita Morillo,1500,15100,1,2,14,True,True,13600,10.066666666666666,1500,15100,0,0
+Additional Peacock messages reported,2025-10-08,14,15109,Steve Novick,0,0,0,0,14,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,14,24661,Tom Sollitt,0,0,0,0,14,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,14,24897,Kellie Torres,0,0,0,0,14,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,14,24973,Esther León,0,0,0,0,14,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,14,24972,Joel Corcoran,0,0,0,0,14,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,14,24966,Matthias Hallett,0,0,0,0,14,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,14,24979,Cristal Otero,0,0,0,0,14,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,14,23295,Eli Arnold,0,0,0,0,14,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,14,23365,Mitch Green,16500,70800,4,4,14,True,True,54300,4.290909090909091,16500,18300,0,52500
+Additional Peacock messages reported,2025-10-08,14,17629,Eric Zimmerman,120000,2500,3,1,14,True,True,-117500,0.020833333333333332,0,2500,70000,0
+Additional Peacock messages reported,2025-10-08,14,23199,Olivia Clark,240500,203500,11,11,14,True,True,-37000,0.8461538461538461,40500,78500,100000,75000
+Additional Peacock messages reported,2025-10-08,14,23411,Jeremy Beausoleil Smith,0,25500,0,5,14,True,True,25500,,0,25500,0,0
+Additional Peacock messages reported,2025-10-08,14,25040,Jamey Evenstar,0,0,0,0,14,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,14,25103,Jayne Cronlund,0,0,0,0,14,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,14,24615,John J Goldsmith,0,0,0,0,14,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,28,23208,Tiffany Koyama Lane,728700,357726,32,17,28,True,True,-370974,0.4909098394400988,538700,287726,190000,70000
+Additional Peacock messages reported,2025-10-08,28,23028,Angelita Morillo,2000,53100,2,4,28,True,True,51100,26.55,2000,18100,0,35000
+Additional Peacock messages reported,2025-10-08,28,15109,Steve Novick,0,0,0,0,28,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,28,24661,Tom Sollitt,0,0,0,0,28,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,28,24897,Kellie Torres,0,0,0,0,28,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,28,24973,Esther León,0,0,0,0,28,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,28,24972,Joel Corcoran,0,0,0,0,28,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,28,24966,Matthias Hallett,0,0,0,0,28,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,28,24979,Cristal Otero,0,0,0,0,28,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,28,23295,Eli Arnold,0,0,0,0,28,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,28,23365,Mitch Green,107800,109800,14,7,28,True,True,2000,1.018552875695733,55300,22300,52500,87500
+Additional Peacock messages reported,2025-10-08,28,17629,Eric Zimmerman,134500,2500,5,1,28,True,True,-132000,0.01858736059479554,14500,2500,70000,0
+Additional Peacock messages reported,2025-10-08,28,23199,Olivia Clark,575500,544000,27,28,28,True,True,-31500,0.945264986967854,135500,254000,290000,240000
+Additional Peacock messages reported,2025-10-08,28,23411,Jeremy Beausoleil Smith,0,58000,0,10,28,True,True,58000,,0,58000,0,0
+Additional Peacock messages reported,2025-10-08,28,25040,Jamey Evenstar,0,0,0,0,28,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,28,25103,Jayne Cronlund,0,0,0,0,28,True,True,0,,0,0,0,0
+Additional Peacock messages reported,2025-10-08,28,24615,John J Goldsmith,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,7,23208,Tiffany Koyama Lane,45600,180628,10,14,7,True,True,135028,3.961140350877193,33100,98902,12500,81726
+City announces full restoration of 2026 matching caps,2026-06-24,7,23028,Angelita Morillo,51500,674399,7,26,7,True,True,622899,13.095126213592232,49000,395299,2500,229100
+City announces full restoration of 2026 matching caps,2026-06-24,7,15109,Steve Novick,528300,161999,19,10,7,True,True,-366301,0.30664205943592654,273300,91999,255000,70000
+City announces full restoration of 2026 matching caps,2026-06-24,7,24661,Tom Sollitt,0,28000,0,1,7,True,True,28000,,0,28000,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,7,24897,Kellie Torres,90000,216000,4,6,7,True,True,126000,2.4,22500,141000,45000,75000
+City announces full restoration of 2026 matching caps,2026-06-24,7,24973,Esther León,71200,7500,8,3,7,True,True,-63700,0.10533707865168539,46200,7500,25000,0
+City announces full restoration of 2026 matching caps,2026-06-24,7,24972,Joel Corcoran,500,12500,1,1,7,True,True,12000,25.0,500,12500,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,7,24966,Matthias Hallett,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,7,24979,Cristal Otero,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,7,23295,Eli Arnold,255500,84999,12,10,7,True,True,-170501,0.3326771037181996,95500,39499,160000,45500
+City announces full restoration of 2026 matching caps,2026-06-24,7,23365,Mitch Green,141512,171599,17,13,7,True,True,30087,1.2126109446548703,65512,118299,76000,53300
+City announces full restoration of 2026 matching caps,2026-06-24,7,17629,Eric Zimmerman,174800,12500,6,4,7,True,True,-162300,0.07151029748283753,124800,12500,50000,0
+City announces full restoration of 2026 matching caps,2026-06-24,7,23199,Olivia Clark,134500,361500,8,13,7,True,True,227000,2.687732342007435,74500,206500,60000,155000
+City announces full restoration of 2026 matching caps,2026-06-24,7,23411,Jeremy Beausoleil Smith,51000,22200,8,4,7,True,True,-28800,0.43529411764705883,23500,22200,27500,0
+City announces full restoration of 2026 matching caps,2026-06-24,7,25040,Jamey Evenstar,57400,96000,5,9,7,True,True,38600,1.6724738675958188,47300,89000,10100,7000
+City announces full restoration of 2026 matching caps,2026-06-24,7,25103,Jayne Cronlund,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,7,24615,John J Goldsmith,0,0,0,0,7,True,True,0,,0,0,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,14,23208,Tiffany Koyama Lane,109567,274894,21,24,14,True,True,165327,2.508912354997399,64267,170002,45300,104892
+City announces full restoration of 2026 matching caps,2026-06-24,14,23028,Angelita Morillo,197566,844364,19,39,14,True,True,646798,4.273832542036585,106666,497898,90900,296466
+City announces full restoration of 2026 matching caps,2026-06-24,14,15109,Steve Novick,823300,351999,32,18,14,True,True,-471301,0.42754645937082475,313300,151999,510000,200000
+City announces full restoration of 2026 matching caps,2026-06-24,14,24661,Tom Sollitt,0,29000,0,3,14,True,True,29000,,0,29000,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,14,24897,Kellie Torres,233000,259000,8,9,14,True,True,26000,1.111587982832618,95500,184000,115000,75000
+City announces full restoration of 2026 matching caps,2026-06-24,14,24973,Esther León,77200,36500,10,9,14,True,True,-40700,0.4727979274611399,49700,36500,27500,0
+City announces full restoration of 2026 matching caps,2026-06-24,14,24972,Joel Corcoran,8000,15000,3,2,14,True,True,7000,1.875,8000,15000,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,14,24966,Matthias Hallett,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,14,24979,Cristal Otero,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,14,23295,Eli Arnold,451500,167499,24,16,14,True,True,-284001,0.37098338870431896,193500,91999,258000,75500
+City announces full restoration of 2026 matching caps,2026-06-24,14,23365,Mitch Green,201979,266064,27,25,14,True,True,64085,1.3172854603696424,80179,184998,121800,81066
+City announces full restoration of 2026 matching caps,2026-06-24,14,17629,Eric Zimmerman,304800,66500,14,10,14,True,True,-238300,0.2181758530183727,179800,26500,125000,40000
+City announces full restoration of 2026 matching caps,2026-06-24,14,23199,Olivia Clark,462500,397500,22,18,14,True,True,-65000,0.8594594594594595,182500,240000,280000,157500
+City announces full restoration of 2026 matching caps,2026-06-24,14,23411,Jeremy Beausoleil Smith,153800,48600,17,8,14,True,True,-105200,0.3159947984395319,113800,48600,40000,0
+City announces full restoration of 2026 matching caps,2026-06-24,14,25040,Jamey Evenstar,74400,236444,8,17,14,True,True,162044,3.1780107526881722,59300,209444,15100,27000
+City announces full restoration of 2026 matching caps,2026-06-24,14,25103,Jayne Cronlund,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,14,24615,John J Goldsmith,0,0,0,0,14,True,True,0,,0,0,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,28,23208,Tiffany Koyama Lane,719028,446895,54,45,28,True,True,-272133,0.6215265608571572,334336,296603,384692,150292
+City announces full restoration of 2026 matching caps,2026-06-24,28,23028,Angelita Morillo,344596,1164663,35,62,28,True,True,820067,3.3797925686891315,217197,671397,127399,408266
+City announces full restoration of 2026 matching caps,2026-06-24,28,15109,Steve Novick,1900800,980599,69,42,28,True,True,-920201,0.515887521043771,510800,500599,1390000,480000
+City announces full restoration of 2026 matching caps,2026-06-24,28,24661,Tom Sollitt,51000,247200,2,10,28,True,True,196200,4.847058823529411,1000,188200,0,59000
+City announces full restoration of 2026 matching caps,2026-06-24,28,24897,Kellie Torres,381500,422100,15,20,28,True,True,40600,1.1064220183486237,169000,257000,190000,165100
+City announces full restoration of 2026 matching caps,2026-06-24,28,24973,Esther León,111200,156100,15,21,28,True,True,44900,1.4037769784172662,83700,153600,27500,2500
+City announces full restoration of 2026 matching caps,2026-06-24,28,24972,Joel Corcoran,100500,55500,11,5,28,True,True,-45000,0.5522388059701493,65500,20500,35000,35000
+City announces full restoration of 2026 matching caps,2026-06-24,28,24966,Matthias Hallett,0,82973,0,5,28,True,True,82973,,0,51983,0,30990
+City announces full restoration of 2026 matching caps,2026-06-24,28,24979,Cristal Otero,0,0,0,0,28,True,True,0,,0,0,0,0
+City announces full restoration of 2026 matching caps,2026-06-24,28,23295,Eli Arnold,947400,599299,51,42,28,True,True,-348101,0.6325723031454507,485900,258799,461500,340500
+City announces full restoration of 2026 matching caps,2026-06-24,28,23365,Mitch Green,388210,545876,46,50,28,True,True,157666,1.4061358543056592,189944,365410,198266,180466
+City announces full restoration of 2026 matching caps,2026-06-24,28,17629,Eric Zimmerman,715800,95000,31,17,28,True,True,-620800,0.13271863649063984,288300,52500,427500,42500
+City announces full restoration of 2026 matching caps,2026-06-24,28,23199,Olivia Clark,716000,615100,36,34,28,True,True,-100900,0.8590782122905027,306000,407600,410000,207500
+City announces full restoration of 2026 matching caps,2026-06-24,28,23411,Jeremy Beausoleil Smith,413900,248000,33,24,28,True,True,-165900,0.5991785455424016,346400,243000,67500,5000
+City announces full restoration of 2026 matching caps,2026-06-24,28,25040,Jamey Evenstar,195900,616470,20,45,28,True,True,420570,3.1468606431852986,145800,361470,50100,255000
+City announces full restoration of 2026 matching caps,2026-06-24,28,25103,Jayne Cronlund,0,490000,0,15,28,True,True,490000,,0,277500,0,212500
+City announces full restoration of 2026 matching caps,2026-06-24,28,24615,John J Goldsmith,0,0,0,0,28,True,True,0,,0,0,0,0
+Moda Center funding protest and Chamber event,2026-06-25,7,23208,Tiffany Koyama Lane,123900,168628,12,12,7,True,True,44728,1.361000807102502,66400,88902,57500,79726
+Moda Center funding protest and Chamber event,2026-06-25,7,23028,Angelita Morillo,100800,306399,8,16,7,True,True,205599,3.039672619047619,63300,214799,37500,91600
+Moda Center funding protest and Chamber event,2026-06-25,7,15109,Steve Novick,454800,155499,16,10,7,True,True,-299301,0.34190633245382585,277300,75499,177500,80000
+Moda Center funding protest and Chamber event,2026-06-25,7,24661,Tom Sollitt,55000,28500,2,2,7,True,True,-26500,0.5181818181818182,51000,28500,4000,0
+Moda Center funding protest and Chamber event,2026-06-25,7,24897,Kellie Torres,90000,231000,4,7,7,True,True,141000,2.566666666666667,22500,156000,45000,75000
+Moda Center funding protest and Chamber event,2026-06-25,7,24973,Esther León,74700,11000,8,3,7,True,True,-63700,0.14725568942436412,49700,11000,25000,0
+Moda Center funding protest and Chamber event,2026-06-25,7,24972,Joel Corcoran,500,12500,1,1,7,True,True,12000,25.0,500,12500,0,0
+Moda Center funding protest and Chamber event,2026-06-25,7,24966,Matthias Hallett,0,0,0,0,7,True,True,0,,0,0,0,0
+Moda Center funding protest and Chamber event,2026-06-25,7,24979,Cristal Otero,0,0,0,0,7,True,True,0,,0,0,0,0
+Moda Center funding protest and Chamber event,2026-06-25,7,23295,Eli Arnold,218500,92999,10,11,7,True,True,-125501,0.4256247139588101,88500,42499,130000,50500
+Moda Center funding protest and Chamber event,2026-06-25,7,23365,Mitch Green,209912,146099,18,10,7,True,True,-63813,0.6960011814474637,98912,104799,111000,41300
+Moda Center funding protest and Chamber event,2026-06-25,7,17629,Eric Zimmerman,174800,17500,6,5,7,True,True,-157300,0.10011441647597254,124800,12500,50000,5000
+Moda Center funding protest and Chamber event,2026-06-25,7,23199,Olivia Clark,132000,365000,8,13,7,True,True,233000,2.765151515151515,72000,210000,60000,155000
+Moda Center funding protest and Chamber event,2026-06-25,7,23411,Jeremy Beausoleil Smith,39500,20200,7,4,7,True,True,-19300,0.5113924050632911,37000,20200,2500,0
+Moda Center funding protest and Chamber event,2026-06-25,7,25040,Jamey Evenstar,90900,101500,7,9,7,True,True,10600,1.1166116611661165,60800,94500,30100,7000
+Moda Center funding protest and Chamber event,2026-06-25,7,25103,Jayne Cronlund,0,0,0,0,7,True,True,0,,0,0,0,0
+Moda Center funding protest and Chamber event,2026-06-25,7,24615,John J Goldsmith,0,0,0,0,7,True,True,0,,0,0,0,0
+Moda Center funding protest and Chamber event,2026-06-25,14,23208,Tiffany Koyama Lane,198367,256894,23,22,14,True,True,58527,1.2950440345420358,108067,154002,90300,102892
+Moda Center funding protest and Chamber event,2026-06-25,14,23028,Angelita Morillo,212366,476864,19,29,14,True,True,264498,2.245481856794402,121466,317898,90900,158966
+Moda Center funding protest and Chamber event,2026-06-25,14,15109,Steve Novick,704800,368499,28,18,14,True,True,-336301,0.5228419409761634,319800,168499,385000,200000
+Moda Center funding protest and Chamber event,2026-06-25,14,24661,Tom Sollitt,55000,29000,2,3,14,True,True,-26000,0.5272727272727272,51000,29000,4000,0
+Moda Center funding protest and Chamber event,2026-06-25,14,24897,Kellie Torres,233000,259000,8,9,14,True,True,26000,1.111587982832618,95500,184000,115000,75000
+Moda Center funding protest and Chamber event,2026-06-25,14,24973,Esther León,83200,30000,11,8,14,True,True,-53200,0.3605769230769231,55700,30000,27500,0
+Moda Center funding protest and Chamber event,2026-06-25,14,24972,Joel Corcoran,5500,15000,2,2,14,True,True,9500,2.727272727272727,5500,15000,0,0
+Moda Center funding protest and Chamber event,2026-06-25,14,24966,Matthias Hallett,0,0,0,0,14,True,True,0,,0,0,0,0
+Moda Center funding protest and Chamber event,2026-06-25,14,24979,Cristal Otero,0,0,0,0,14,True,True,0,,0,0,0,0
+Moda Center funding protest and Chamber event,2026-06-25,14,23295,Eli Arnold,426000,262499,22,20,14,True,True,-163501,0.6161948356807512,193500,91999,232500,170500
+Moda Center funding protest and Chamber event,2026-06-25,14,23365,Mitch Green,277379,236064,28,22,14,True,True,-41315,0.851052170495964,120579,166998,156800,69066
+Moda Center funding protest and Chamber event,2026-06-25,14,17629,Eric Zimmerman,202300,76500,10,11,14,True,True,-125800,0.37815126050420167,152300,34000,50000,42500
+Moda Center funding protest and Chamber event,2026-06-25,14,23199,Olivia Clark,235000,399500,16,18,14,True,True,164500,1.7,125000,242000,110000,157500
+Moda Center funding protest and Chamber event,2026-06-25,14,23411,Jeremy Beausoleil Smith,145600,59100,17,8,14,True,True,-86500,0.4059065934065934,105600,59100,40000,0
+Moda Center funding protest and Chamber event,2026-06-25,14,25040,Jamey Evenstar,100900,237444,9,17,14,True,True,136544,2.353260654112983,65800,210444,35100,27000
+Moda Center funding protest and Chamber event,2026-06-25,14,25103,Jayne Cronlund,0,0,0,0,14,True,True,0,,0,0,0,0
+Moda Center funding protest and Chamber event,2026-06-25,14,24615,John J Goldsmith,0,0,0,0,14,True,True,0,,0,0,0,0
+Moda Center funding protest and Chamber event,2026-06-25,28,23208,Tiffany Koyama Lane,792828,427395,56,43,28,True,True,-365433,0.5390765714631673,363136,279103,429692,148292
+Moda Center funding protest and Chamber event,2026-06-25,28,23028,Angelita Morillo,394396,790663,36,52,28,True,True,396267,2.0047439629205166,231997,484897,162399,270766
+Moda Center funding protest and Chamber event,2026-06-25,28,15109,Steve Novick,1885800,1094099,69,48,28,True,True,-791701,0.5801776434404496,520800,539099,1365000,555000
+Moda Center funding protest and Chamber event,2026-06-25,28,24661,Tom Sollitt,106000,247200,4,10,28,True,True,141200,2.332075471698113,52000,188200,4000,59000
+Moda Center funding protest and Chamber event,2026-06-25,28,24897,Kellie Torres,316500,422100,12,20,28,True,True,105600,1.333649289099526,154000,257000,140000,165100
+Moda Center funding protest and Chamber event,2026-06-25,28,24973,Esther León,117200,172100,16,21,28,True,True,54900,1.4684300341296928,89700,169600,27500,2500
+Moda Center funding protest and Chamber event,2026-06-25,28,24972,Joel Corcoran,98000,55500,10,5,28,True,True,-42500,0.5663265306122449,63000,20500,35000,35000
+Moda Center funding protest and Chamber event,2026-06-25,28,24966,Matthias Hallett,0,86681,0,6,28,True,True,86681,,0,55691,0,30990
+Moda Center funding protest and Chamber event,2026-06-25,28,24979,Cristal Otero,0,0,0,0,28,True,True,0,,0,0,0,0
+Moda Center funding protest and Chamber event,2026-06-25,28,23295,Eli Arnold,935400,594299,48,42,28,True,True,-341101,0.6353420996365191,478900,253799,456500,340500
+Moda Center funding protest and Chamber event,2026-06-25,28,23365,Mitch Green,412610,531876,46,47,28,True,True,119266,1.2890526162720244,229344,363410,183266,168466
+Moda Center funding protest and Chamber event,2026-06-25,28,17629,Eric Zimmerman,645800,151700,29,18,28,True,True,-494100,0.2349024465778879,288300,50000,357500,101700
+Moda Center funding protest and Chamber event,2026-06-25,28,23199,Olivia Clark,698500,615600,36,34,28,True,True,-82900,0.8813171080887616,288500,408100,410000,207500
+Moda Center funding protest and Chamber event,2026-06-25,28,23411,Jeremy Beausoleil Smith,421400,268000,33,24,28,True,True,-153400,0.6359753203607024,353900,263000,67500,5000
+Moda Center funding protest and Chamber event,2026-06-25,28,25040,Jamey Evenstar,222400,635970,21,45,28,True,True,413570,2.859577338129496,152300,380970,70100,255000
+Moda Center funding protest and Chamber event,2026-06-25,28,25103,Jayne Cronlund,0,555000,0,16,28,True,True,555000,,0,342500,0,212500
+Moda Center funding protest and Chamber event,2026-06-25,28,24615,John J Goldsmith,0,0,0,0,28,True,True,0,,0,0,0,0
+Reporting on Green backyard fire,2026-08-04,7,23208,Tiffany Koyama Lane,464862,131932,21,13,7,True,True,-332930,0.28380895835753406,304735,93266,160127,38666
+Reporting on Green backyard fire,2026-08-04,7,23028,Angelita Morillo,344731,148332,21,14,7,True,True,-196399,0.4302833223585926,131465,89366,213266,58966
+Reporting on Green backyard fire,2026-08-04,7,15109,Steve Novick,417000,397000,17,15,7,True,True,-20000,0.9520383693045563,223500,212000,193500,185000
+Reporting on Green backyard fire,2026-08-04,7,24661,Tom Sollitt,248300,148500,3,1,7,True,True,-99800,0.5980668546113572,208300,148500,40000,0
+Reporting on Green backyard fire,2026-08-04,7,24897,Kellie Torres,259000,1968500,7,55,7,True,True,1709500,7.600386100386101,106500,158500,152500,1810000
+Reporting on Green backyard fire,2026-08-04,7,24973,Esther León,11300,2500,2,1,7,True,True,-8800,0.22123893805309736,11300,2500,0,0
+Reporting on Green backyard fire,2026-08-04,7,24972,Joel Corcoran,500,0,1,0,7,True,True,-500,0.0,500,0,0,0
+Reporting on Green backyard fire,2026-08-04,7,24966,Matthias Hallett,42948,32948,4,3,7,True,True,-10000,0.7671602868585266,7500,2500,35448,30448
+Reporting on Green backyard fire,2026-08-04,7,24979,Cristal Otero,16500,1000,3,1,7,True,True,-15500,0.06060606060606061,16500,1000,0,0
+Reporting on Green backyard fire,2026-08-04,7,23295,Eli Arnold,120000,119500,8,8,7,True,True,-500,0.9958333333333333,90000,64500,30000,55000
+Reporting on Green backyard fire,2026-08-04,7,23365,Mitch Green,394588,97932,20,11,7,True,True,-296656,0.24818798341561324,123988,92666,270600,5266
+Reporting on Green backyard fire,2026-08-04,7,17629,Eric Zimmerman,92000,57500,10,5,7,True,True,-34500,0.625,29500,30000,62500,27500
+Reporting on Green backyard fire,2026-08-04,7,23199,Olivia Clark,82500,46500,7,7,7,True,True,-36000,0.5636363636363636,32500,46500,50000,0
+Reporting on Green backyard fire,2026-08-04,7,23411,Jeremy Beausoleil Smith,107400,49800,7,7,7,True,True,-57600,0.46368715083798884,82400,49800,25000,0
+Reporting on Green backyard fire,2026-08-04,7,25040,Jamey Evenstar,16500,12500,4,2,7,True,True,-4000,0.7575757575757576,11500,12500,5000,0
+Reporting on Green backyard fire,2026-08-04,7,25103,Jayne Cronlund,296200,38500,10,4,7,True,True,-257700,0.1299797434166104,141200,13500,155000,25000
+Reporting on Green backyard fire,2026-08-04,7,24615,John J Goldsmith,0,0,0,0,7,True,True,0,,0,0,0,0
+Reporting on Green backyard fire,2026-08-04,14,23208,Tiffany Koyama Lane,542462,389632,28,30,14,True,True,-152830,0.7182659799211742,357335,261766,185127,117866
+Reporting on Green backyard fire,2026-08-04,14,23028,Angelita Morillo,449231,354632,30,28,14,True,True,-94599,0.7894201424211598,206965,272366,242266,82266
+Reporting on Green backyard fire,2026-08-04,14,15109,Steve Novick,901500,696000,37,30,14,True,True,-205500,0.7720465890183028,438000,311000,463500,385000
+Reporting on Green backyard fire,2026-08-04,14,24661,Tom Sollitt,248300,151000,3,2,14,True,True,-97300,0.608135320177205,208300,151000,40000,0
+Reporting on Green backyard fire,2026-08-04,14,24897,Kellie Torres,445800,2345500,16,65,14,True,True,1899700,5.261327949753253,194000,288000,251800,2057500
+Reporting on Green backyard fire,2026-08-04,14,24973,Esther León,139900,5500,10,3,14,True,True,-134400,0.039313795568263046,106600,3000,33300,2500
+Reporting on Green backyard fire,2026-08-04,14,24972,Joel Corcoran,4000,0,3,0,14,True,True,-4000,0.0,4000,0,0,0
+Reporting on Green backyard fire,2026-08-04,14,24966,Matthias Hallett,54426,59146,8,7,14,True,True,4720,1.0867232572667476,18978,13010,35448,46136
+Reporting on Green backyard fire,2026-08-04,14,24979,Cristal Otero,92000,2000,7,3,14,True,True,-90000,0.021739130434782608,92000,2000,0,0
+Reporting on Green backyard fire,2026-08-04,14,23295,Eli Arnold,304000,337000,20,21,14,True,True,33000,1.1085526315789473,170000,207000,134000,130000
+Reporting on Green backyard fire,2026-08-04,14,23365,Mitch Green,1285600,146182,56,21,14,True,True,-1139418,0.11370721841941506,389000,120116,896600,16066
+Reporting on Green backyard fire,2026-08-04,14,17629,Eric Zimmerman,172200,206300,16,15,14,True,True,34100,1.1980255516840883,50500,88800,121700,117500
+Reporting on Green backyard fire,2026-08-04,14,23199,Olivia Clark,149000,121900,14,14,14,True,True,-27100,0.8181208053691276,79000,91900,70000,30000
+Reporting on Green backyard fire,2026-08-04,14,23411,Jeremy Beausoleil Smith,184400,271700,15,19,14,True,True,87300,1.4734273318872018,156900,174200,27500,12500
+Reporting on Green backyard fire,2026-08-04,14,25040,Jamey Evenstar,133000,26250,12,5,14,True,True,-106750,0.19736842105263158,92000,26250,41000,0
+Reporting on Green backyard fire,2026-08-04,14,25103,Jayne Cronlund,705200,41500,19,8,14,True,True,-663700,0.05884855360181509,500200,16500,205000,25000
+Reporting on Green backyard fire,2026-08-04,14,24615,John J Goldsmith,0,0,0,0,14,True,True,0,,0,0,0,0
+Reporting on Green backyard fire,2026-08-04,28,23208,Tiffany Koyama Lane,711029,1036061,50,71,28,True,True,325032,1.4571290341181584,479836,575169,231193,450892
+Reporting on Green backyard fire,2026-08-04,28,23028,Angelita Morillo,810696,626629,55,55,28,True,True,-184067,0.7729518833200114,385964,422530,389732,204099
+Reporting on Green backyard fire,2026-08-04,28,15109,Steve Novick,1558600,1590300,61,70,28,True,True,31700,1.020338765558835,795100,666800,763500,888500
+Reporting on Green backyard fire,2026-08-04,28,24661,Tom Sollitt,467000,197700,11,7,28,True,True,-269300,0.42334047109207706,368000,165400,99000,32300
+Reporting on Green backyard fire,2026-08-04,28,24897,Kellie Torres,496300,2981800,20,80,28,True,True,2485500,6.00805964134596,219500,619300,276800,2362500
+Reporting on Green backyard fire,2026-08-04,28,24973,Esther León,255000,34500,22,7,28,True,True,-220500,0.13529411764705881,219200,9500,35800,25000
+Reporting on Green backyard fire,2026-08-04,28,24972,Joel Corcoran,42000,0,5,0,28,True,True,-42000,0.0,7000,0,35000,0
+Reporting on Green backyard fire,2026-08-04,28,24966,Matthias Hallett,134764,98397,12,12,28,True,True,-36367,0.7301430649134784,68326,31365,66438,67032
+Reporting on Green backyard fire,2026-08-04,28,24979,Cristal Otero,92000,27000,7,4,28,True,True,-65000,0.29347826086956524,92000,2000,0,25000
+Reporting on Green backyard fire,2026-08-04,28,23295,Eli Arnold,696800,894216,43,58,28,True,True,197416,1.2833180252583238,337800,389216,359000,505000
+Reporting on Green backyard fire,2026-08-04,28,23365,Mitch Green,1570766,440244,83,49,28,True,True,-1130522,0.280273446203954,570500,234178,1000266,161066
+Reporting on Green backyard fire,2026-08-04,28,17629,Eric Zimmerman,203200,1989800,22,79,28,True,True,1786600,9.792322834645669,79000,369800,124200,1550000
+Reporting on Green backyard fire,2026-08-04,28,23199,Olivia Clark,376600,337900,31,29,28,True,True,-38700,0.897238449283059,256600,182900,120000,155000
+Reporting on Green backyard fire,2026-08-04,28,23411,Jeremy Beausoleil Smith,386300,406400,30,32,28,True,True,20100,1.0520320994046077,356300,306400,30000,15000
+Reporting on Green backyard fire,2026-08-04,28,25040,Jamey Evenstar,487470,150500,39,20,28,True,True,-336970,0.3087369479147435,253470,110500,234000,40000
+Reporting on Green backyard fire,2026-08-04,28,25103,Jayne Cronlund,1100200,53000,32,12,28,True,True,-1047200,0.0481730594437375,682700,28000,417500,25000
+Reporting on Green backyard fire,2026-08-04,28,24615,John J Goldsmith,0,0,0,0,28,True,True,0,,0,0,0,0
+Moda Center deal becomes campaign issue,2026-08-11,7,23208,Tiffany Koyama Lane,142532,257700,14,17,7,True,True,115168,1.8080150422361294,98866,168500,43666,79200
+Moda Center deal becomes campaign issue,2026-08-11,7,23028,Angelita Morillo,121732,206300,14,14,7,True,True,84568,1.694706404232248,62766,183000,58966,23300
+Moda Center deal becomes campaign issue,2026-08-11,7,15109,Steve Novick,487000,299000,21,15,7,True,True,-188000,0.6139630390143738,252000,99000,235000,200000
+Moda Center deal becomes campaign issue,2026-08-11,7,24661,Tom Sollitt,148500,2500,1,1,7,True,True,-146000,0.016835016835016835,148500,2500,0,0
+Moda Center deal becomes campaign issue,2026-08-11,7,24897,Kellie Torres,1968500,377000,55,10,7,True,True,-1591500,0.19151638303276605,158500,129500,1810000,247500
+Moda Center deal becomes campaign issue,2026-08-11,7,24973,Esther León,5000,3000,2,2,7,True,True,-2000,0.6,5000,500,0,2500
+Moda Center deal becomes campaign issue,2026-08-11,7,24972,Joel Corcoran,0,0,0,0,7,True,True,0,,0,0,0,0
+Moda Center deal becomes campaign issue,2026-08-11,7,24966,Matthias Hallett,32948,26198,3,4,7,True,True,-6750,0.7951317227145805,2500,10510,30448,15688
+Moda Center deal becomes campaign issue,2026-08-11,7,24979,Cristal Otero,1000,1000,1,2,7,True,True,0,1.0,1000,1000,0,0
+Moda Center deal becomes campaign issue,2026-08-11,7,23295,Eli Arnold,189500,217500,10,13,7,True,True,28000,1.1477572559366755,99500,142500,90000,75000
+Moda Center deal becomes campaign issue,2026-08-11,7,23365,Mitch Green,111032,48250,11,10,7,True,True,-62782,0.4345594062972837,105766,27450,5266,10800
+Moda Center deal becomes campaign issue,2026-08-11,7,17629,Eric Zimmerman,89500,148800,7,10,7,True,True,59300,1.6625698324022347,42000,58800,47500,90000
+Moda Center deal becomes campaign issue,2026-08-11,7,23199,Olivia Clark,81500,75400,8,7,7,True,True,-6100,0.9251533742331288,41500,45400,40000,30000
+Moda Center deal becomes campaign issue,2026-08-11,7,23411,Jeremy Beausoleil Smith,31300,221900,6,12,7,True,True,190600,7.0894568690095845,31300,124400,0,12500
+Moda Center deal becomes campaign issue,2026-08-11,7,25040,Jamey Evenstar,12500,13750,2,3,7,True,True,1250,1.1,12500,13750,0,0
+Moda Center deal becomes campaign issue,2026-08-11,7,25103,Jayne Cronlund,37500,3000,3,4,7,True,True,-34500,0.08,12500,3000,25000,0
+Moda Center deal becomes campaign issue,2026-08-11,7,24615,John J Goldsmith,0,0,0,0,7,True,True,0,,0,0,0,0
+Moda Center deal becomes campaign issue,2026-08-11,14,23208,Tiffany Koyama Lane,607394,537202,35,37,14,True,True,-70192,0.8844374491680853,403601,282502,203793,244700
+Moda Center deal becomes campaign issue,2026-08-11,14,23028,Angelita Morillo,466463,310298,35,23,14,True,True,-156165,0.665214604373766,194231,246998,272232,63300
+Moda Center deal becomes campaign issue,2026-08-11,14,15109,Steve Novick,904000,770000,38,36,14,True,True,-134000,0.8517699115044248,475500,286500,428500,483500
+Moda Center deal becomes campaign issue,2026-08-11,14,24661,Tom Sollitt,396800,30400,4,3,14,True,True,-366400,0.07661290322580645,356800,10400,40000,20000
+Moda Center deal becomes campaign issue,2026-08-11,14,24897,Kellie Torres,2227500,652800,62,16,14,True,True,-1574700,0.2930639730639731,265000,312800,1962500,340000
+Moda Center deal becomes campaign issue,2026-08-11,14,24973,Esther León,16300,26500,4,4,14,True,True,10200,1.6257668711656441,16300,1500,0,25000
+Moda Center deal becomes campaign issue,2026-08-11,14,24972,Joel Corcoran,500,0,1,0,14,True,True,-500,0.0,500,0,0,0
+Moda Center deal becomes campaign issue,2026-08-11,14,24966,Matthias Hallett,75896,39313,7,6,14,True,True,-36583,0.5179851375566564,10000,23625,65896,15688
+Moda Center deal becomes campaign issue,2026-08-11,14,24979,Cristal Otero,17500,1000,4,2,14,True,True,-16500,0.05714285714285714,17500,1000,0,0
+Moda Center deal becomes campaign issue,2026-08-11,14,23295,Eli Arnold,309500,296500,18,22,14,True,True,-13000,0.9579967689822294,189500,204000,120000,92500
+Moda Center deal becomes campaign issue,2026-08-11,14,23365,Mitch Green,505620,193062,31,24,14,True,True,-312558,0.3818322060045093,229754,67262,275866,80800
+Moda Center deal becomes campaign issue,2026-08-11,14,17629,Eric Zimmerman,181500,1306300,17,52,14,True,True,1124800,7.197245179063361,71500,203800,110000,1067500
+Moda Center deal becomes campaign issue,2026-08-11,14,23199,Olivia Clark,164000,150400,15,14,14,True,True,-13600,0.9170731707317074,74000,100400,90000,50000
+Moda Center deal becomes campaign issue,2026-08-11,14,23411,Jeremy Beausoleil Smith,138700,255100,13,19,14,True,True,116400,1.8392213410237923,113700,155100,25000,15000
+Moda Center deal becomes campaign issue,2026-08-11,14,25040,Jamey Evenstar,29000,24250,6,8,14,True,True,-4750,0.8362068965517241,24000,24250,5000,0
+Moda Center deal becomes campaign issue,2026-08-11,14,25103,Jayne Cronlund,333700,11000,13,6,14,True,True,-322700,0.03296373988612526,153700,11000,180000,0
+Moda Center deal becomes campaign issue,2026-08-11,14,24615,John J Goldsmith,0,0,0,0,14,True,True,0,,0,0,0,0
+Moda Center deal becomes campaign issue,2026-08-11,28,23208,Tiffany Koyama Lane,788228,1012561,54,71,28,True,True,224333,1.2846042008149927,536035,571669,252193,430892
+Moda Center deal becomes campaign issue,2026-08-11,28,23028,Angelita Morillo,734096,574429,54,50,28,True,True,-159667,0.7824984743139862,397064,407930,337032,166499
+Moda Center deal becomes campaign issue,2026-08-11,28,15109,Steve Novick,1731500,1327300,70,64,28,True,True,-404200,0.7665607854461449,893000,518800,838500,773500
+Moda Center deal becomes campaign issue,2026-08-11,28,24661,Tom Sollitt,615000,49200,11,6,28,True,True,-565800,0.08,516000,16900,99000,32300
+Moda Center deal becomes campaign issue,2026-08-11,28,24897,Kellie Torres,2422300,1559800,72,40,28,True,True,-862500,0.6439334516781571,360500,709800,2061800,850000
+Moda Center deal becomes campaign issue,2026-08-11,28,24973,Esther León,229500,35000,19,7,28,True,True,-194500,0.15250544662309368,196200,10000,33300,25000
+Moda Center deal becomes campaign issue,2026-08-11,28,24972,Joel Corcoran,42000,0,5,0,28,True,True,-42000,0.0,7000,0,35000,0
+Moda Center deal becomes campaign issue,2026-08-11,28,24966,Matthias Hallett,167712,70689,15,10,28,True,True,-97023,0.4214904121350887,70826,34105,96886,36584
+Moda Center deal becomes campaign issue,2026-08-11,28,24979,Cristal Otero,93000,26000,8,3,28,True,True,-67000,0.27956989247311825,93000,1000,0,25000
+Moda Center deal becomes campaign issue,2026-08-11,28,23295,Eli Arnold,665800,1010716,42,68,28,True,True,344916,1.5180474617002102,336800,450716,329000,560000
+Moda Center deal becomes campaign issue,2026-08-11,28,23365,Mitch Green,1522765,448344,81,49,28,True,True,-1074421,0.2944275708989897,570099,224778,952666,178566
+Moda Center deal becomes campaign issue,2026-08-11,28,17629,Eric Zimmerman,266700,2191800,24,88,28,True,True,1925100,8.21822272215973,97500,446800,169200,1675000
+Moda Center deal becomes campaign issue,2026-08-11,28,23199,Olivia Clark,323500,346900,30,27,28,True,True,23400,1.0723338485316847,198500,156900,125000,190000
+Moda Center deal becomes campaign issue,2026-08-11,28,23411,Jeremy Beausoleil Smith,327500,486100,29,33,28,True,True,158600,1.4842748091603053,297500,383600,30000,17500
+Moda Center deal becomes campaign issue,2026-08-11,28,25040,Jamey Evenstar,406026,151000,34,22,28,True,True,-255026,0.3718973661785206,172026,111000,234000,40000
+Moda Center deal becomes campaign issue,2026-08-11,28,25103,Jayne Cronlund,1127700,24000,34,12,28,True,True,-1103700,0.021282255919127427,685200,24000,442500,0
+Moda Center deal becomes campaign issue,2026-08-11,28,24615,John J Goldsmith,0,0,0,0,28,True,True,0,,0,0,0,0
+Wilson endorsement event for Torres,2026-08-12,7,23208,Tiffany Koyama Lane,131932,246200,13,15,7,True,True,114268,1.8661128460115817,93266,164000,38666,72200
+Wilson endorsement event for Torres,2026-08-12,7,23028,Angelita Morillo,148332,185300,14,13,7,True,True,36968,1.249224712132244,89366,167000,58966,18300
+Wilson endorsement event for Torres,2026-08-12,7,15109,Steve Novick,397000,294000,15,14,7,True,True,-103000,0.7405541561712846,212000,104000,185000,190000
+Wilson endorsement event for Torres,2026-08-12,7,24661,Tom Sollitt,148500,27900,1,2,7,True,True,-120600,0.18787878787878787,148500,7900,0,20000
+Wilson endorsement event for Torres,2026-08-12,7,24897,Kellie Torres,1968500,377000,55,10,7,True,True,-1591500,0.19151638303276605,158500,129500,1810000,247500
+Wilson endorsement event for Torres,2026-08-12,7,24973,Esther León,2500,1500,1,2,7,True,True,-1000,0.6,2500,1500,0,0
+Wilson endorsement event for Torres,2026-08-12,7,24972,Joel Corcoran,0,0,0,0,7,True,True,0,,0,0,0,0
+Wilson endorsement event for Torres,2026-08-12,7,24966,Matthias Hallett,32948,15720,3,2,7,True,True,-17228,0.4771154546558213,2500,15720,30448,0
+Wilson endorsement event for Torres,2026-08-12,7,24979,Cristal Otero,1000,1000,1,2,7,True,True,0,1.0,1000,1000,0,0
+Wilson endorsement event for Torres,2026-08-12,7,23295,Eli Arnold,119500,210500,8,13,7,True,True,91000,1.7615062761506277,64500,135500,55000,75000
+Wilson endorsement event for Torres,2026-08-12,7,23365,Mitch Green,97932,35650,11,8,7,True,True,-62282,0.3640281011313973,92666,19850,5266,5800
+Wilson endorsement event for Torres,2026-08-12,7,17629,Eric Zimmerman,57500,186300,5,11,7,True,True,128800,3.24,30000,76300,27500,110000
+Wilson endorsement event for Torres,2026-08-12,7,23199,Olivia Clark,46500,74400,7,7,7,True,True,27900,1.6,46500,44400,0,30000
+Wilson endorsement event for Torres,2026-08-12,7,23411,Jeremy Beausoleil Smith,49800,194400,7,11,7,True,True,144600,3.9036144578313254,49800,96900,0,12500
+Wilson endorsement event for Torres,2026-08-12,7,25040,Jamey Evenstar,12500,8250,2,2,7,True,True,-4250,0.66,12500,8250,0,0
+Wilson endorsement event for Torres,2026-08-12,7,25103,Jayne Cronlund,38500,10500,4,5,7,True,True,-28000,0.2727272727272727,13500,10500,25000,0
+Wilson endorsement event for Torres,2026-08-12,7,24615,John J Goldsmith,0,0,0,0,7,True,True,0,,0,0,0,0
+Wilson endorsement event for Torres,2026-08-12,14,23208,Tiffany Koyama Lane,549894,585869,33,37,14,True,True,35975,1.065421699454804,378601,309669,171293,266200
+Wilson endorsement event for Torres,2026-08-12,14,23028,Angelita Morillo,464663,288964,32,22,14,True,True,-175699,0.6218786518401508,214431,230664,250232,58300
+Wilson endorsement event for Torres,2026-08-12,14,15109,Steve Novick,743000,777500,35,36,14,True,True,34500,1.0464333781965007,404500,279000,338500,498500
+Wilson endorsement event for Torres,2026-08-12,14,24661,Tom Sollitt,396800,46700,4,5,14,True,True,-350100,0.11769153225806452,356800,14400,40000,32300
+Wilson endorsement event for Torres,2026-08-12,14,24897,Kellie Torres,2227500,652800,62,16,14,True,True,-1574700,0.2930639730639731,265000,312800,1962500,340000
+Wilson endorsement event for Torres,2026-08-12,14,24973,Esther León,10000,29000,3,4,14,True,True,19000,2.9,10000,6500,0,22500
+Wilson endorsement event for Torres,2026-08-12,14,24972,Joel Corcoran,500,0,1,0,14,True,True,-500,0.0,500,0,0,0
+Wilson endorsement event for Torres,2026-08-12,14,24966,Matthias Hallett,50896,18355,6,3,14,True,True,-32541,0.3606373781829613,10000,18355,40896,0
+Wilson endorsement event for Torres,2026-08-12,14,24979,Cristal Otero,4000,1000,3,2,14,True,True,-3000,0.25,4000,1000,0,0
+Wilson endorsement event for Torres,2026-08-12,14,23295,Eli Arnold,309500,419716,18,28,14,True,True,110216,1.3561098546042003,189500,232216,120000,187500
+Wilson endorsement event for Torres,2026-08-12,14,23365,Mitch Green,483620,188129,30,23,14,True,True,-295491,0.38900169554608993,227754,67329,255866,75800
+Wilson endorsement event for Torres,2026-08-12,14,17629,Eric Zimmerman,204000,1416800,17,54,14,True,True,1212800,6.9450980392156865,69000,244300,135000,1137500
+Wilson endorsement event for Torres,2026-08-12,14,23199,Olivia Clark,144000,149400,15,14,14,True,True,5400,1.0375,79000,99400,65000,50000
+Wilson endorsement event for Torres,2026-08-12,14,23411,Jeremy Beausoleil Smith,134200,244200,13,19,14,True,True,110000,1.819672131147541,109200,144200,25000,15000
+Wilson endorsement event for Torres,2026-08-12,14,25040,Jamey Evenstar,29000,44750,6,8,14,True,True,15750,1.543103448275862,24000,44750,5000,0
+Wilson endorsement event for Torres,2026-08-12,14,25103,Jayne Cronlund,55500,12000,7,7,14,True,True,-43500,0.21621621621621623,30500,12000,25000,0
+Wilson endorsement event for Torres,2026-08-12,14,24615,John J Goldsmith,0,0,0,0,14,True,True,0,,0,0,0,0
+Wilson endorsement event for Torres,2026-08-12,28,23208,Tiffany Koyama Lane,777628,1001761,53,69,28,True,True,224133,1.288226504189664,535535,567869,242093,423892
+Wilson endorsement event for Torres,2026-08-12,28,23028,Angelita Morillo,750796,560629,54,51,28,True,True,-190167,0.7467128221247848,413764,395630,337032,164999
+Wilson endorsement event for Torres,2026-08-12,28,15109,Steve Novick,1764000,1312300,71,63,28,True,True,-451700,0.7439342403628117,920500,513800,843500,763500
+Wilson endorsement event for Torres,2026-08-12,28,24661,Tom Sollitt,615000,46700,11,5,28,True,True,-568300,0.07593495934959349,516000,14400,99000,32300
+Wilson endorsement event for Torres,2026-08-12,28,24897,Kellie Torres,2422300,1559800,72,40,28,True,True,-862500,0.6439334516781571,360500,709800,2061800,850000
+Wilson endorsement event for Torres,2026-08-12,28,24973,Esther León,214400,34000,18,7,28,True,True,-180400,0.15858208955223882,181100,11500,33300,22500
+Wilson endorsement event for Torres,2026-08-12,28,24972,Joel Corcoran,42000,0,5,0,28,True,True,-42000,0.0,7000,0,35000,0
+Wilson endorsement event for Torres,2026-08-12,28,24966,Matthias Hallett,167712,67231,15,8,28,True,True,-100481,0.40087173249379887,70826,46335,96886,20896
+Wilson endorsement event for Torres,2026-08-12,28,24979,Cristal Otero,93000,26000,8,3,28,True,True,-67000,0.27956989247311825,93000,1000,0,25000
+Wilson endorsement event for Torres,2026-08-12,28,23295,Eli Arnold,588800,1000716,39,68,28,True,True,411916,1.699585597826087,299800,440716,289000,560000
+Wilson endorsement event for Torres,2026-08-12,28,23365,Mitch Green,1503765,445444,81,48,28,True,True,-1058321,0.29621915658364173,551099,226878,952666,173566
+Wilson endorsement event for Torres,2026-08-12,28,17629,Eric Zimmerman,291700,2405800,25,94,28,True,True,2114100,8.247514569763455,97500,503300,194200,1832500
+Wilson endorsement event for Torres,2026-08-12,28,23199,Olivia Clark,306000,335900,30,26,28,True,True,29900,1.0977124183006537,181000,145900,125000,190000
+Wilson endorsement event for Torres,2026-08-12,28,23411,Jeremy Beausoleil Smith,331000,467100,29,33,28,True,True,136100,1.411178247734139,301000,364600,30000,17500
+Wilson endorsement event for Torres,2026-08-12,28,25040,Jamey Evenstar,406026,162500,34,22,28,True,True,-243526,0.40022067552324236,172026,122500,234000,40000
+Wilson endorsement event for Torres,2026-08-12,28,25103,Jayne Cronlund,1095200,82500,34,15,28,True,True,-1012700,0.07532870708546384,652700,55000,442500,27500
+Wilson endorsement event for Torres,2026-08-12,28,24615,John J Goldsmith,0,0,0,0,28,True,True,0,,0,0,0,0
+City certifies November ballot,2026-09-03,7,23208,Tiffany Koyama Lane,303260,111632,19,13,7,True,True,-191628,0.3681065752159863,164234,87966,139026,23666
+City certifies November ballot,2026-09-03,7,23028,Angelita Morillo,161333,142832,18,13,7,True,True,-18501,0.8853241432317009,79500,116466,81833,26366
+City certifies November ballot,2026-09-03,7,15109,Steve Novick,407800,157000,18,10,7,True,True,-250800,0.38499264345267287,177800,87000,195000,70000
+City certifies November ballot,2026-09-03,7,24661,Tom Sollitt,0,0,0,0,7,True,True,0,,0,0,0,0
+City certifies November ballot,2026-09-03,7,24897,Kellie Torres,360500,546500,9,15,7,True,True,186000,1.5159500693481276,148000,249000,212500,297500
+City certifies November ballot,2026-09-03,7,24973,Esther León,500,4500,1,2,7,True,True,4000,9.0,500,4500,0,0
+City certifies November ballot,2026-09-03,7,24972,Joel Corcoran,0,0,0,0,7,True,True,0,,0,0,0,0
+City certifies November ballot,2026-09-03,7,24966,Matthias Hallett,26136,22740,3,2,7,True,True,-3396,0.8700642791551882,5240,22740,20896,0
+City certifies November ballot,2026-09-03,7,24979,Cristal Otero,25000,0,1,0,7,True,True,-25000,0.0,0,0,25000,0
+City certifies November ballot,2026-09-03,7,23295,Eli Arnold,483000,165500,29,11,7,True,True,-317500,0.34265010351966874,145500,130500,337500,35000
+City certifies November ballot,2026-09-03,7,23365,Mitch Green,147083,116232,14,11,7,True,True,-30851,0.7902476832808686,72083,93466,75000,22766
+City certifies November ballot,2026-09-03,7,17629,Eric Zimmerman,592500,541500,21,23,7,True,True,-51000,0.9139240506329114,142500,131500,415000,410000
+City certifies November ballot,2026-09-03,7,23199,Olivia Clark,139500,47000,8,4,7,True,True,-92500,0.33691756272401435,34500,12000,105000,35000
+City certifies November ballot,2026-09-03,7,23411,Jeremy Beausoleil Smith,106400,102300,6,7,7,True,True,-4100,0.9614661654135338,106400,102300,0,0
+City certifies November ballot,2026-09-03,7,25040,Jamey Evenstar,88250,38500,10,4,7,True,True,-49750,0.43626062322946174,48250,38500,40000,0
+City certifies November ballot,2026-09-03,7,25103,Jayne Cronlund,5000,147000,2,9,7,True,True,142000,29.4,5000,54500,0,92500
+City certifies November ballot,2026-09-03,7,24615,John J Goldsmith,0,0,0,0,7,True,True,0,,0,0,0,0
+City certifies November ballot,2026-09-03,14,23208,Tiffany Koyama Lane,642929,369800,41,28,14,True,False,-273129,0.5751801520852224,309903,286634,333026,83166
+City certifies November ballot,2026-09-03,14,23028,Angelita Morillo,264997,337298,27,25,14,True,False,72301,1.272837050985483,143164,285632,121833,51666
+City certifies November ballot,2026-09-03,14,15109,Steve Novick,891300,514000,40,29,14,True,False,-377300,0.5766857399304387,352800,222500,503500,256500
+City certifies November ballot,2026-09-03,14,24661,Tom Sollitt,18800,0,3,0,14,True,False,-18800,0.0,6500,0,12300,0
+City certifies November ballot,2026-09-03,14,24897,Kellie Torres,636300,939000,15,20,14,True,False,302700,1.4757190004714758,331300,531500,305000,407500
+City certifies November ballot,2026-09-03,14,24973,Esther León,28000,7000,3,3,14,True,False,-21000,0.25,5500,7000,22500,0
+City certifies November ballot,2026-09-03,14,24972,Joel Corcoran,0,0,0,0,14,True,False,0,,0,0,0,0
+City certifies November ballot,2026-09-03,14,24966,Matthias Hallett,28771,27980,4,3,14,True,False,-791,0.9725070383372145,7875,22740,20896,5240
+City certifies November ballot,2026-09-03,14,24979,Cristal Otero,25000,0,1,0,14,True,False,-25000,0.0,0,0,25000,0
+City certifies November ballot,2026-09-03,14,23295,Eli Arnold,692216,972000,44,38,14,True,False,279784,1.4041859766315716,242216,608000,450000,364000
+City certifies November ballot,2026-09-03,14,23365,Mitch Green,299562,548988,29,31,14,True,False,249426,1.8326356480461474,119562,370322,145000,178666
+City certifies November ballot,2026-09-03,14,17629,Eric Zimmerman,1823000,1630000,64,59,14,True,False,-193000,0.8941305540318157,310500,362000,1442500,1268000
+City certifies November ballot,2026-09-03,14,23199,Olivia Clark,214500,47000,15,4,14,True,False,-167500,0.2191142191142191,89500,12000,125000,35000
+City certifies November ballot,2026-09-03,14,23411,Jeremy Beausoleil Smith,156200,127900,14,13,14,True,False,-28300,0.8188220230473752,153700,125900,2500,2000
+City certifies November ballot,2026-09-03,14,25040,Jamey Evenstar,124750,140277,16,11,14,True,False,15527,1.1244649298597194,84750,140277,40000,0
+City certifies November ballot,2026-09-03,14,25103,Jayne Cronlund,6500,419500,4,26,14,True,False,413000,64.53846153846153,6500,152000,0,267500
+City certifies November ballot,2026-09-03,14,24615,John J Goldsmith,0,0,0,0,14,True,False,0,,0,0,0,0
+City certifies November ballot,2026-09-03,28,23208,Tiffany Koyama Lane,1012895,487612,70,38,24,False,False,,,556003,388134,446892,99478
+City certifies November ballot,2026-09-03,28,23028,Angelita Morillo,613763,784110,54,38,24,False,False,,,410364,670132,203399,113978
+City certifies November ballot,2026-09-03,28,15109,Steve Novick,1482300,1080600,67,55,24,False,False,,,638800,508600,808500,537000
+City certifies November ballot,2026-09-03,28,24661,Tom Sollitt,49200,0,6,0,24,False,False,,,16900,0,32300,0
+City certifies November ballot,2026-09-03,28,24897,Kellie Torres,2981800,939000,80,20,24,False,False,,,619300,531500,2362500,407500
+City certifies November ballot,2026-09-03,28,24973,Esther León,32000,15100,6,8,24,False,False,,,7000,15100,25000,0
+City certifies November ballot,2026-09-03,28,24972,Joel Corcoran,0,0,0,0,24,False,False,,,0,0,0,0
+City certifies November ballot,2026-09-03,28,24966,Matthias Hallett,98397,48063,12,6,24,False,False,,,31365,32375,67032,15688
+City certifies November ballot,2026-09-03,28,24979,Cristal Otero,27000,0,4,0,24,False,False,,,2000,0,25000,0
+City certifies November ballot,2026-09-03,28,23295,Eli Arnold,1042216,1460000,65,58,24,False,False,,,462216,878000,580000,582000
+City certifies November ballot,2026-09-03,28,23365,Mitch Green,441578,1253725,49,57,24,False,False,,,235512,848127,161066,405598
+City certifies November ballot,2026-09-03,28,17629,Eric Zimmerman,2064300,2405600,80,85,24,False,False,,,414300,682500,1580000,1723100
+City certifies November ballot,2026-09-03,28,23199,Olivia Clark,341900,47000,29,4,24,False,False,,,186900,12000,155000,35000
+City certifies November ballot,2026-09-03,28,23411,Jeremy Beausoleil Smith,425400,148400,32,18,24,False,False,,,325400,143900,15000,4500
+City certifies November ballot,2026-09-03,28,25040,Jamey Evenstar,151000,182277,21,15,24,False,False,,,111000,182277,40000,0
+City certifies November ballot,2026-09-03,28,25103,Jayne Cronlund,55500,475000,13,32,24,False,False,,,30500,160000,25000,315000
+City certifies November ballot,2026-09-03,28,24615,John J Goldsmith,0,0,0,0,24,False,False,,,0,0,0,0
+Archived Green tweets republished,2026-09-13,7,23208,Tiffany Koyama Lane,143966,229780,14,14,7,True,False,85814,1.5960712946112277,111200,192668,32766,37112
+Archived Green tweets republished,2026-09-13,7,23028,Angelita Morillo,119366,302778,14,14,7,True,False,183412,2.5365514468106496,96200,239666,23166,63112
+Archived Green tweets republished,2026-09-13,7,15109,Steve Novick,236500,282500,13,16,7,True,False,46000,1.1945031712473573,89500,138000,112000,144500
+Archived Green tweets republished,2026-09-13,7,24661,Tom Sollitt,0,0,0,0,7,True,False,0,,0,0,0,0
+Archived Green tweets republished,2026-09-13,7,24897,Kellie Torres,546500,0,15,0,7,True,False,-546500,0.0,249000,0,297500,0
+Archived Green tweets republished,2026-09-13,7,24973,Esther León,1500,6100,1,4,7,True,False,4600,4.066666666666666,1500,6100,0,0
+Archived Green tweets republished,2026-09-13,7,24972,Joel Corcoran,0,0,0,0,7,True,False,0,,0,0,0,0
+Archived Green tweets republished,2026-09-13,7,24966,Matthias Hallett,17500,25323,1,4,7,True,False,7823,1.4470285714285713,17500,9635,0,15688
+Archived Green tweets republished,2026-09-13,7,24979,Cristal Otero,0,0,0,0,7,True,False,0,,0,0,0,0
+Archived Green tweets republished,2026-09-13,7,23295,Eli Arnold,174000,919000,11,29,7,True,False,745000,5.281609195402299,139000,529000,35000,390000
+Archived Green tweets republished,2026-09-13,7,23365,Mitch Green,171066,849148,13,31,7,True,False,678082,4.963861901254487,113300,608816,57766,240332
+Archived Green tweets republished,2026-09-13,7,17629,Eric Zimmerman,651000,1082500,25,35,7,True,False,431500,1.6628264208909371,158500,257000,492500,825500
+Archived Green tweets republished,2026-09-13,7,23199,Olivia Clark,37000,0,2,0,7,True,False,-37000,0.0,2000,0,35000,0
+Archived Green tweets republished,2026-09-13,7,23411,Jeremy Beausoleil Smith,55400,27000,7,7,7,True,False,-28400,0.48736462093862815,55400,22500,0,4500
+Archived Green tweets republished,2026-09-13,7,25040,Jamey Evenstar,37500,126277,5,7,7,True,False,88777,3.3673866666666665,37500,126277,0,0
+Archived Green tweets republished,2026-09-13,7,25103,Jayne Cronlund,197000,200500,13,14,7,True,False,3500,1.017766497461929,64500,78000,132500,122500
+Archived Green tweets republished,2026-09-13,7,24615,John J Goldsmith,0,0,0,0,7,True,False,0,,0,0,0,0
+Archived Green tweets republished,2026-09-13,14,23208,Tiffany Koyama Lane,297632,271780,30,17,14,True,False,-25852,0.9131410601010644,213366,234668,84266,37112
+Archived Green tweets republished,2026-09-13,14,23028,Angelita Morillo,245332,556778,26,18,14,True,False,311446,2.269487877651509,186466,488666,58866,68112
+Archived Green tweets republished,2026-09-13,14,15109,Steve Novick,367800,821600,21,39,14,True,False,453800,2.233822729744426,140800,396600,192000,425000
+Archived Green tweets republished,2026-09-13,14,24661,Tom Sollitt,0,0,0,0,14,True,False,0,,0,0,0,0
+Archived Green tweets republished,2026-09-13,14,24897,Kellie Torres,907000,0,24,0,14,True,False,-907000,0.0,397000,0,510000,0
+Archived Green tweets republished,2026-09-13,14,24973,Esther León,4500,10600,2,6,14,True,False,6100,2.3555555555555556,4500,10600,0,0
+Archived Green tweets republished,2026-09-13,14,24972,Joel Corcoran,0,0,0,0,14,True,False,0,,0,0,0,0
+Archived Green tweets republished,2026-09-13,14,24966,Matthias Hallett,43636,25323,4,4,14,True,False,-18313,0.5803235860298835,22740,9635,20896,15688
+Archived Green tweets republished,2026-09-13,14,24979,Cristal Otero,0,0,0,0,14,True,False,0,,0,0,0,0
+Archived Green tweets republished,2026-09-13,14,23295,Eli Arnold,514500,1235500,34,42,14,True,False,721000,2.401360544217687,252000,693500,262500,542000
+Archived Green tweets republished,2026-09-13,14,23365,Mitch Green,265832,1029393,24,40,14,True,False,763561,3.8723441873062687,178066,701561,87766,327832
+Archived Green tweets republished,2026-09-13,14,17629,Eric Zimmerman,1025500,1667100,41,53,14,True,False,641600,1.62564602632862,290500,481500,700000,1185600
+Archived Green tweets republished,2026-09-13,14,23199,Olivia Clark,129000,0,9,0,14,True,False,-129000,0.0,24000,0,105000,0
+Archived Green tweets republished,2026-09-13,14,23411,Jeremy Beausoleil Smith,213400,28000,15,8,14,True,False,-185400,0.13120899718837864,210900,23500,2500,4500
+Archived Green tweets republished,2026-09-13,14,25040,Jamey Evenstar,84000,128277,13,8,14,True,False,44277,1.5271071428571428,59000,128277,25000,0
+Archived Green tweets republished,2026-09-13,14,25103,Jayne Cronlund,200500,208000,15,16,14,True,False,7500,1.0374064837905237,68000,85500,132500,122500
+Archived Green tweets republished,2026-09-13,14,24615,John J Goldsmith,0,0,0,0,14,True,False,0,,0,0,0,0
+Archived Green tweets republished,2026-09-13,28,23208,Tiffany Koyama Lane,1018561,271780,70,17,14,False,False,,,588369,234668,420192,37112
+Archived Green tweets republished,2026-09-13,28,23028,Angelita Morillo,587329,556778,50,18,14,False,False,,,419130,488666,168199,68112
+Archived Green tweets republished,2026-09-13,28,15109,Steve Novick,1267800,821600,61,39,14,False,False,,,542300,396600,655500,425000
+Archived Green tweets republished,2026-09-13,28,24661,Tom Sollitt,46700,0,5,0,14,False,False,,,14400,0,32300,0
+Archived Green tweets republished,2026-09-13,28,24897,Kellie Torres,1559800,0,40,0,14,False,False,,,709800,0,850000,0
+Archived Green tweets republished,2026-09-13,28,24973,Esther León,34000,10600,7,6,14,False,False,,,11500,10600,22500,0
+Archived Green tweets republished,2026-09-13,28,24972,Joel Corcoran,0,0,0,0,14,False,False,,,0,0,0,0
+Archived Green tweets republished,2026-09-13,28,24966,Matthias Hallett,67231,25323,8,4,14,False,False,,,46335,9635,20896,15688
+Archived Green tweets republished,2026-09-13,28,24979,Cristal Otero,25500,0,2,0,14,False,False,,,500,0,25000,0
+Archived Green tweets republished,2026-09-13,28,23295,Eli Arnold,1072716,1235500,72,42,14,False,False,,,490216,693500,582500,542000
+Archived Green tweets republished,2026-09-13,28,23365,Mitch Green,536644,1029393,50,40,14,False,False,,,268878,701561,222766,327832
+Archived Green tweets republished,2026-09-13,28,17629,Eric Zimmerman,2629000,1667100,101,53,14,False,False,,,541500,481500,2017500,1185600
+Archived Green tweets republished,2026-09-13,28,23199,Olivia Clark,312400,0,23,0,14,False,False,,,132400,0,180000,0
+Archived Green tweets republished,2026-09-13,28,23411,Jeremy Beausoleil Smith,317100,28000,29,8,14,False,False,,,309600,23500,7500,4500
+Archived Green tweets republished,2026-09-13,28,25040,Jamey Evenstar,172000,128277,24,8,14,False,False,,,132000,128277,40000,0
+Archived Green tweets republished,2026-09-13,28,25103,Jayne Cronlund,214500,208000,22,16,14,False,False,,,82000,85500,132500,122500
+Archived Green tweets republished,2026-09-13,28,24615,John J Goldsmith,0,0,0,0,14,False,False,,,0,0,0,0
+Police chief responds to Green tweets,2026-09-16,7,23208,Tiffany Koyama Lane,225534,171146,15,12,7,True,False,-54388,0.758847889896867,161034,149834,64500,21312
+Police chief responds to Green tweets,2026-09-16,7,23028,Angelita Morillo,179833,493145,15,14,7,True,False,313312,2.74223863250905,149533,430833,30300,62312
+Police chief responds to Green tweets,2026-09-16,7,15109,Steve Novick,234500,482600,14,22,7,True,False,248100,2.057995735607676,102500,243100,97000,239500
+Police chief responds to Green tweets,2026-09-16,7,24661,Tom Sollitt,0,0,0,0,7,True,False,0,,0,0,0,0
+Police chief responds to Green tweets,2026-09-16,7,24897,Kellie Torres,392500,0,5,0,7,True,False,-392500,0.0,282500,0,110000,0
+Police chief responds to Green tweets,2026-09-16,7,24973,Esther León,1500,8600,1,5,7,True,False,7100,5.733333333333333,1500,8600,0,0
+Police chief responds to Green tweets,2026-09-16,7,24972,Joel Corcoran,0,0,0,0,7,True,False,0,,0,0,0,0
+Police chief responds to Green tweets,2026-09-16,7,24966,Matthias Hallett,17500,25323,1,4,7,True,False,7823,1.4470285714285713,17500,9635,0,15688
+Police chief responds to Green tweets,2026-09-16,7,24979,Cristal Otero,0,0,0,0,7,True,False,0,,0,0,0,0
+Police chief responds to Green tweets,2026-09-16,7,23295,Eli Arnold,306000,653500,14,24,7,True,False,347500,2.1356209150326797,211000,355500,95000,298000
+Police chief responds to Green tweets,2026-09-16,7,23365,Mitch Green,174933,885260,11,33,7,True,False,710327,5.06056604528591,114133,605728,60800,279532
+Police chief responds to Green tweets,2026-09-16,7,17629,Eric Zimmerman,1070500,807600,36,26,7,True,False,-262900,0.7544138253152732,263000,342500,807500,465100
+Police chief responds to Green tweets,2026-09-16,7,23199,Olivia Clark,0,0,0,0,7,True,False,0,,0,0,0,0
+Police chief responds to Green tweets,2026-09-16,7,23411,Jeremy Beausoleil Smith,28100,22500,5,6,7,True,False,-5600,0.800711743772242,28100,20000,0,2500
+Police chief responds to Green tweets,2026-09-16,7,25040,Jamey Evenstar,82500,80777,7,5,7,True,False,-1723,0.9791151515151515,82500,80777,0,0
+Police chief responds to Green tweets,2026-09-16,7,25103,Jayne Cronlund,327000,87000,17,7,7,True,False,-240000,0.26605504587155965,109500,29500,217500,57500
+Police chief responds to Green tweets,2026-09-16,7,24615,John J Goldsmith,0,0,0,0,7,True,False,0,,0,0,0,0
+Police chief responds to Green tweets,2026-09-16,14,23208,Tiffany Koyama Lane,333966,171146,28,12,11,False,False,,,250800,149834,83166,21312
+Police chief responds to Green tweets,2026-09-16,14,23028,Angelita Morillo,275965,493145,24,14,11,False,False,,,224299,430833,51666,62312
+Police chief responds to Green tweets,2026-09-16,14,15109,Steve Novick,368500,610100,23,29,11,False,False,,,166500,320100,167000,290000
+Police chief responds to Green tweets,2026-09-16,14,24661,Tom Sollitt,0,0,0,0,11,False,False,,,0,0,0,0
+Police chief responds to Green tweets,2026-09-16,14,24897,Kellie Torres,939000,0,20,0,11,False,False,,,531500,0,407500,0
+Police chief responds to Green tweets,2026-09-16,14,24973,Esther León,4500,10600,2,6,11,False,False,,,4500,10600,0,0
+Police chief responds to Green tweets,2026-09-16,14,24972,Joel Corcoran,0,0,0,0,11,False,False,,,0,0,0,0
+Police chief responds to Green tweets,2026-09-16,14,24966,Matthias Hallett,22740,25323,2,4,11,False,False,,,22740,9635,0,15688
+Police chief responds to Green tweets,2026-09-16,14,24979,Cristal Otero,0,0,0,0,11,False,False,,,0,0,0,0
+Police chief responds to Green tweets,2026-09-16,14,23295,Eli Arnold,542000,653500,32,24,11,False,False,,,337000,355500,205000,298000
+Police chief responds to Green tweets,2026-09-16,14,23365,Mitch Green,280965,885260,22,33,11,False,False,,,197399,605728,83566,279532
+Police chief responds to Green tweets,2026-09-16,14,17629,Eric Zimmerman,1330000,845100,50,28,11,False,False,,,370000,355000,960000,490100
+Police chief responds to Green tweets,2026-09-16,14,23199,Olivia Clark,55500,0,5,0,11,False,False,,,20500,0,35000,0
+Police chief responds to Green tweets,2026-09-16,14,23411,Jeremy Beausoleil Smith,157600,22500,13,6,11,False,False,,,155100,20000,2500,2500
+Police chief responds to Green tweets,2026-09-16,14,25040,Jamey Evenstar,95500,80777,11,5,11,False,False,,,95500,80777,0,0
+Police chief responds to Green tweets,2026-09-16,14,25103,Jayne Cronlund,336500,92000,21,8,11,False,False,,,119000,34500,217500,57500
+Police chief responds to Green tweets,2026-09-16,14,24615,John J Goldsmith,0,0,0,0,11,False,False,,,0,0,0,0
+Police chief responds to Green tweets,2026-09-16,28,23208,Tiffany Koyama Lane,980395,171146,69,12,11,False,False,,,564203,149834,416192,21312
+Police chief responds to Green tweets,2026-09-16,28,23028,Angelita Morillo,547962,493145,51,14,11,False,False,,,374463,430833,173499,62312
+Police chief responds to Green tweets,2026-09-16,28,15109,Steve Novick,1262800,610100,63,29,11,False,False,,,522300,320100,670500,290000
+Police chief responds to Green tweets,2026-09-16,28,24661,Tom Sollitt,46700,0,5,0,11,False,False,,,14400,0,32300,0
+Police chief responds to Green tweets,2026-09-16,28,24897,Kellie Torres,1575300,0,35,0,11,False,False,,,862800,0,712500,0
+Police chief responds to Green tweets,2026-09-16,28,24973,Esther León,33500,10600,6,6,11,False,False,,,11000,10600,22500,0
+Police chief responds to Green tweets,2026-09-16,28,24972,Joel Corcoran,0,0,0,0,11,False,False,,,0,0,0,0
+Police chief responds to Green tweets,2026-09-16,28,24966,Matthias Hallett,61991,25323,7,4,11,False,False,,,41095,9635,20896,15688
+Police chief responds to Green tweets,2026-09-16,28,24979,Cristal Otero,25000,0,1,0,11,False,False,,,0,0,25000,0
+Police chief responds to Green tweets,2026-09-16,28,23295,Eli Arnold,1099216,653500,69,24,11,False,False,,,519216,355500,580000,298000
+Police chief responds to Green tweets,2026-09-16,28,23365,Mitch Green,575027,885260,50,33,11,False,False,,,311461,605728,228566,279532
+Police chief responds to Green tweets,2026-09-16,28,17629,Eric Zimmerman,3113500,845100,114,28,11,False,False,,,651000,355000,2392500,490100
+Police chief responds to Green tweets,2026-09-16,28,23199,Olivia Clark,271500,0,20,0,11,False,False,,,111500,0,160000,0
+Police chief responds to Green tweets,2026-09-16,28,23411,Jeremy Beausoleil Smith,292300,22500,26,6,11,False,False,,,287300,20000,5000,2500
+Police chief responds to Green tweets,2026-09-16,28,25040,Jamey Evenstar,219750,80777,26,5,11,False,False,,,179750,80777,40000,0
+Police chief responds to Green tweets,2026-09-16,28,25103,Jayne Cronlund,348000,92000,25,8,11,False,False,,,130500,34500,217500,57500
+Police chief responds to Green tweets,2026-09-16,28,24615,John J Goldsmith,0,0,0,0,11,False,False,,,0,0,0,0
+Anti-Green billboard reported,2026-09-18,7,23208,Tiffany Koyama Lane,258168,88500,15,7,7,True,False,-169668,0.3428000371850888,198668,76000,59500,12500
+Anti-Green billboard reported,2026-09-18,7,23028,Angelita Morillo,194466,395500,12,9,7,True,False,201034,2.0337745415651063,169166,372000,25300,23500
+Anti-Green billboard reported,2026-09-18,7,15109,Steve Novick,357000,559100,19,25,7,True,False,202100,1.5661064425770308,135500,278600,186500,280500
+Anti-Green billboard reported,2026-09-18,7,24661,Tom Sollitt,0,0,0,0,7,True,False,0,,0,0,0,0
+Anti-Green billboard reported,2026-09-18,7,24897,Kellie Torres,392500,0,5,0,7,True,False,-392500,0.0,282500,0,110000,0
+Anti-Green billboard reported,2026-09-18,7,24973,Esther León,2500,7500,1,4,7,True,False,5000,3.0,2500,7500,0,0
+Anti-Green billboard reported,2026-09-18,7,24972,Joel Corcoran,0,0,0,0,7,True,False,0,,0,0,0,0
+Anti-Green billboard reported,2026-09-18,7,24966,Matthias Hallett,5240,20083,1,3,7,True,False,14843,3.8326335877862596,0,9635,5240,10448
+Anti-Green billboard reported,2026-09-18,7,24979,Cristal Otero,0,0,0,0,7,True,False,0,,0,0,0,0
+Anti-Green billboard reported,2026-09-18,7,23295,Eli Arnold,806500,405000,27,16,7,True,False,-401500,0.5021698698078115,477500,252000,329000,153000
+Anti-Green billboard reported,2026-09-18,7,23365,Mitch Green,432756,567369,20,21,7,True,False,134613,1.3110598119956742,276856,392369,155900,175000
+Anti-Green billboard reported,2026-09-18,7,17629,Eric Zimmerman,1088500,629600,36,20,7,True,False,-458900,0.5784106568672485,230500,269500,858000,360100
+Anti-Green billboard reported,2026-09-18,7,23199,Olivia Clark,0,0,0,0,7,True,False,0,,0,0,0,0
+Anti-Green billboard reported,2026-09-18,7,23411,Jeremy Beausoleil Smith,25600,12500,6,3,7,True,False,-13100,0.48828125,23600,12500,2000,0
+Anti-Green billboard reported,2026-09-18,7,25040,Jamey Evenstar,101777,37000,7,3,7,True,False,-64777,0.3635398960472405,101777,37000,0,0
+Anti-Green billboard reported,2026-09-18,7,25103,Jayne Cronlund,272500,2500,17,1,7,True,False,-270000,0.009174311926605505,97500,2500,175000,0
+Anti-Green billboard reported,2026-09-18,7,24615,John J Goldsmith,0,0,0,0,7,True,False,0,,0,0,0,0
+Anti-Green billboard reported,2026-09-18,14,23208,Tiffany Koyama Lane,369800,88500,28,7,9,False,False,,,286634,76000,83166,12500
+Anti-Green billboard reported,2026-09-18,14,23028,Angelita Morillo,337298,395500,25,9,9,False,False,,,285632,372000,51666,23500
+Anti-Green billboard reported,2026-09-18,14,15109,Steve Novick,514000,559100,29,25,9,False,False,,,222500,278600,256500,280500
+Anti-Green billboard reported,2026-09-18,14,24661,Tom Sollitt,0,0,0,0,9,False,False,,,0,0,0,0
+Anti-Green billboard reported,2026-09-18,14,24897,Kellie Torres,939000,0,20,0,9,False,False,,,531500,0,407500,0
+Anti-Green billboard reported,2026-09-18,14,24973,Esther León,7000,7500,3,4,9,False,False,,,7000,7500,0,0
+Anti-Green billboard reported,2026-09-18,14,24972,Joel Corcoran,0,0,0,0,9,False,False,,,0,0,0,0
+Anti-Green billboard reported,2026-09-18,14,24966,Matthias Hallett,27980,20083,3,3,9,False,False,,,22740,9635,5240,10448
+Anti-Green billboard reported,2026-09-18,14,24979,Cristal Otero,0,0,0,0,9,False,False,,,0,0,0,0
+Anti-Green billboard reported,2026-09-18,14,23295,Eli Arnold,972000,405000,38,16,9,False,False,,,608000,252000,364000,153000
+Anti-Green billboard reported,2026-09-18,14,23365,Mitch Green,548988,567369,31,21,9,False,False,,,370322,392369,178666,175000
+Anti-Green billboard reported,2026-09-18,14,17629,Eric Zimmerman,1630000,629600,59,20,9,False,False,,,362000,269500,1268000,360100
+Anti-Green billboard reported,2026-09-18,14,23199,Olivia Clark,47000,0,4,0,9,False,False,,,12000,0,35000,0
+Anti-Green billboard reported,2026-09-18,14,23411,Jeremy Beausoleil Smith,127900,12500,13,3,9,False,False,,,125900,12500,2000,0
+Anti-Green billboard reported,2026-09-18,14,25040,Jamey Evenstar,140277,37000,11,3,9,False,False,,,140277,37000,0,0
+Anti-Green billboard reported,2026-09-18,14,25103,Jayne Cronlund,419500,7500,26,2,9,False,False,,,152000,7500,267500,0
+Anti-Green billboard reported,2026-09-18,14,24615,John J Goldsmith,0,0,0,0,9,False,False,,,0,0,0,0
+Anti-Green billboard reported,2026-09-18,28,23208,Tiffany Koyama Lane,1025229,88500,69,7,9,False,False,,,606537,76000,418692,12500
+Anti-Green billboard reported,2026-09-18,28,23028,Angelita Morillo,602295,395500,52,9,9,False,False,,,428796,372000,173499,23500
+Anti-Green billboard reported,2026-09-18,28,15109,Steve Novick,1212800,559100,60,25,9,False,False,,,540300,278600,602500,280500
+Anti-Green billboard reported,2026-09-18,28,24661,Tom Sollitt,18800,0,3,0,9,False,False,,,6500,0,12300,0
+Anti-Green billboard reported,2026-09-18,28,24897,Kellie Torres,1575300,0,35,0,9,False,False,,,862800,0,712500,0
+Anti-Green billboard reported,2026-09-18,28,24973,Esther León,35000,7500,6,4,9,False,False,,,12500,7500,22500,0
+Anti-Green billboard reported,2026-09-18,28,24972,Joel Corcoran,0,0,0,0,9,False,False,,,0,0,0,0
+Anti-Green billboard reported,2026-09-18,28,24966,Matthias Hallett,54116,20083,6,3,9,False,False,,,27980,9635,26136,10448
+Anti-Green billboard reported,2026-09-18,28,24979,Cristal Otero,25000,0,1,0,9,False,False,,,0,0,25000,0
+Anti-Green billboard reported,2026-09-18,28,23295,Eli Arnold,1676716,405000,83,16,9,False,False,,,850216,252000,826500,153000
+Anti-Green billboard reported,2026-09-18,28,23365,Mitch Green,839550,567369,57,21,9,False,False,,,488384,392369,316166,175000
+Anti-Green billboard reported,2026-09-18,28,17629,Eric Zimmerman,3223000,629600,117,20,9,False,False,,,677500,269500,2475500,360100
+Anti-Green billboard reported,2026-09-18,28,23199,Olivia Clark,249000,0,18,0,9,False,False,,,89000,0,160000,0
+Anti-Green billboard reported,2026-09-18,28,23411,Jeremy Beausoleil Smith,297200,12500,28,3,9,False,False,,,290200,12500,7000,0
+Anti-Green billboard reported,2026-09-18,28,25040,Jamey Evenstar,264527,37000,27,3,9,False,False,,,224527,37000,40000,0
+Anti-Green billboard reported,2026-09-18,28,25103,Jayne Cronlund,427000,7500,31,2,9,False,False,,,159500,7500,267500,0
+Anti-Green billboard reported,2026-09-18,28,24615,John J Goldsmith,0,0,0,0,9,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,7,23208,Tiffany Koyama Lane,169146,0,12,0,4,False,False,,,147834,0,21312,0
+Zenith franchise-transfer council vote,2026-09-23,7,23028,Angelita Morillo,484145,0,14,0,4,False,False,,,421833,0,62312,0
+Zenith franchise-transfer council vote,2026-09-23,7,15109,Steve Novick,475500,127500,23,7,4,False,False,,,206000,77000,269500,50500
+Zenith franchise-transfer council vote,2026-09-23,7,24661,Tom Sollitt,0,0,0,0,4,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,7,24897,Kellie Torres,0,0,0,0,4,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,7,24973,Esther León,8600,2000,5,1,4,False,False,,,8600,2000,0,0
+Zenith franchise-transfer council vote,2026-09-23,7,24972,Joel Corcoran,0,0,0,0,4,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,7,24966,Matthias Hallett,25323,0,4,0,4,False,False,,,9635,0,15688,0
+Zenith franchise-transfer council vote,2026-09-23,7,24979,Cristal Otero,0,0,0,0,4,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,7,23295,Eli Arnold,1093500,0,37,0,4,False,False,,,621500,0,472000,0
+Zenith franchise-transfer council vote,2026-09-23,7,23365,Mitch Green,949760,0,36,0,4,False,False,,,627728,0,322032,0
+Zenith franchise-transfer council vote,2026-09-23,7,17629,Eric Zimmerman,1003000,37500,33,2,4,False,False,,,280000,12500,723000,25000
+Zenith franchise-transfer council vote,2026-09-23,7,23199,Olivia Clark,0,0,0,0,4,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,7,23411,Jeremy Beausoleil Smith,28000,0,8,0,4,False,False,,,23500,0,4500,0
+Zenith franchise-transfer council vote,2026-09-23,7,25040,Jamey Evenstar,88277,0,6,0,4,False,False,,,88277,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,7,25103,Jayne Cronlund,134500,5000,11,1,4,False,False,,,37000,5000,97500,0
+Zenith franchise-transfer council vote,2026-09-23,7,24615,John J Goldsmith,0,0,0,0,4,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,14,23208,Tiffany Koyama Lane,394680,0,27,0,4,False,False,,,308868,0,85812,0
+Zenith franchise-transfer council vote,2026-09-23,14,23028,Angelita Morillo,663978,0,29,0,4,False,False,,,571366,0,92612,0
+Zenith franchise-transfer council vote,2026-09-23,14,15109,Steve Novick,710000,127500,37,7,4,False,False,,,308500,77000,366500,50500
+Zenith franchise-transfer council vote,2026-09-23,14,24661,Tom Sollitt,0,0,0,0,4,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,14,24897,Kellie Torres,392500,0,5,0,4,False,False,,,282500,0,110000,0
+Zenith franchise-transfer council vote,2026-09-23,14,24973,Esther León,10100,2000,6,1,4,False,False,,,10100,2000,0,0
+Zenith franchise-transfer council vote,2026-09-23,14,24972,Joel Corcoran,0,0,0,0,4,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,14,24966,Matthias Hallett,42823,0,5,0,4,False,False,,,27135,0,15688,0
+Zenith franchise-transfer council vote,2026-09-23,14,24979,Cristal Otero,0,0,0,0,4,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,14,23295,Eli Arnold,1399500,0,51,0,4,False,False,,,832500,0,567000,0
+Zenith franchise-transfer council vote,2026-09-23,14,23365,Mitch Green,1124693,0,47,0,4,False,False,,,741861,0,382832,0
+Zenith franchise-transfer council vote,2026-09-23,14,17629,Eric Zimmerman,2073500,37500,69,2,4,False,False,,,543000,12500,1530500,25000
+Zenith franchise-transfer council vote,2026-09-23,14,23199,Olivia Clark,0,0,0,0,4,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,14,23411,Jeremy Beausoleil Smith,56100,0,13,0,4,False,False,,,51600,0,4500,0
+Zenith franchise-transfer council vote,2026-09-23,14,25040,Jamey Evenstar,170777,0,13,0,4,False,False,,,170777,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,14,25103,Jayne Cronlund,461500,5000,28,1,4,False,False,,,146500,5000,315000,0
+Zenith franchise-transfer council vote,2026-09-23,14,24615,John J Goldsmith,0,0,0,0,4,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,28,23208,Tiffany Koyama Lane,870039,0,61,0,4,False,False,,,598035,0,272004,0
+Zenith franchise-transfer council vote,2026-09-23,28,23028,Angelita Morillo,928109,0,56,0,4,False,False,,,732298,0,195811,0
+Zenith franchise-transfer council vote,2026-09-23,28,15109,Steve Novick,1267300,127500,65,7,4,False,False,,,540800,77000,656500,50500
+Zenith franchise-transfer council vote,2026-09-23,28,24661,Tom Sollitt,18800,0,3,0,4,False,False,,,6500,0,12300,0
+Zenith franchise-transfer council vote,2026-09-23,28,24897,Kellie Torres,1299500,0,29,0,4,False,False,,,679500,0,620000,0
+Zenith franchise-transfer council vote,2026-09-23,28,24973,Esther León,18600,2000,9,1,4,False,False,,,18600,2000,0,0
+Zenith franchise-transfer council vote,2026-09-23,28,24972,Joel Corcoran,0,0,0,0,4,False,False,,,0,0,0,0
+Zenith franchise-transfer council vote,2026-09-23,28,24966,Matthias Hallett,74199,0,9,0,4,False,False,,,37615,0,36584,0
+Zenith franchise-transfer council vote,2026-09-23,28,24979,Cristal Otero,25000,0,1,0,4,False,False,,,0,0,25000,0
+Zenith franchise-transfer council vote,2026-09-23,28,23295,Eli Arnold,2113716,0,97,0,4,False,False,,,1079216,0,1034500,0
+Zenith franchise-transfer council vote,2026-09-23,28,23365,Mitch Green,1379975,0,72,0,4,False,False,,,899377,0,480598,0
+Zenith franchise-transfer council vote,2026-09-23,28,17629,Eric Zimmerman,2959000,37500,105,2,4,False,False,,,786000,12500,2138000,25000
+Zenith franchise-transfer council vote,2026-09-23,28,23199,Olivia Clark,196500,0,13,0,4,False,False,,,56500,0,140000,0
+Zenith franchise-transfer council vote,2026-09-23,28,23411,Jeremy Beausoleil Smith,287100,0,27,0,4,False,False,,,280100,0,7000,0
+Zenith franchise-transfer council vote,2026-09-23,28,25040,Jamey Evenstar,297527,0,27,0,4,False,False,,,257527,0,40000,0
+Zenith franchise-transfer council vote,2026-09-23,28,25103,Jayne Cronlund,474500,5000,34,1,4,False,False,,,159500,5000,315000,0
+Zenith franchise-transfer council vote,2026-09-23,28,24615,John J Goldsmith,0,0,0,0,4,False,False,,,0,0,0,0

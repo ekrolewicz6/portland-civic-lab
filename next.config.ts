@@ -41,7 +41,15 @@ const EMBEDDABLE_HEADERS = SECURITY_HEADERS.filter(
 const nextConfig: NextConfig = {
   output: "standalone",
   outputFileTracingRoot: projectRoot,
-  serverExternalPackages: ["postgres"],
+  serverExternalPackages: ["postgres", "@duckdb/node-api", "@duckdb/node-bindings"],
+  outputFileTracingIncludes: {
+    "/deep-dives/campaign-finance": ["./server-data/campaign-finance/**", "./public/data/campaign-finance/public-matching-receipts.csv"],
+    "/deep-dives/campaign-finance/**": ["./server-data/campaign-finance/**"],
+    "/api/campaign-finance": ["./server-data/campaign-finance/**", "./public/data/campaign-finance/public-matching-receipts.csv"],
+    "/api/campaign-finance/**": ["./server-data/campaign-finance/**"],
+    "/voters-guide/**": ["./server-data/campaign-finance/**"],
+  },
+  distDir: process.env.CAMPAIGN_FINANCE_LOCAL_PREVIEW === "1" ? ".next-campaign-finance" : ".next",
   turbopack: {
     root: projectRoot,
   },

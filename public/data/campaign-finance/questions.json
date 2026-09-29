@@ -1,0 +1,698 @@
+{
+  "version": "question-catalogue-v1",
+  "snapshot": "orestar-20250101-20260927-v1",
+  "questions": [
+    {
+      "id": "Q001",
+      "track": "Overall financial system",
+      "question": "How much cash is reported as contributions?",
+      "status": "answered",
+      "answer": "$121,794,170.02",
+      "method": "Sum Cash Contribution Amount in integer cents.",
+      "evidence": [
+        "financial-bases"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q002",
+      "track": "Overall financial system",
+      "question": "How much is paid, supported in kind, borrowed or recorded as obligations?",
+      "status": "answered",
+      "answer": "Cash expenditures $91,270,955.55; in-kind support $10,947,490.20; loans received $1,267,729.83; new reported obligations $5,395,303.63. These are separate bases.",
+      "method": "Explicit 24-subtype accounting map.",
+      "evidence": [
+        "financial-bases"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q003",
+      "track": "Overall financial system",
+      "question": "How much money entered and left the observed network?",
+      "status": "qualified",
+      "answer": "Boundary tables separate observed committees, committees outside the filer set, unidentified categories and counterparties with no committee ID. The last group is not automatically outside money.",
+      "method": "Classify both sides by authoritative committee ID; do not sum reciprocal filings as economic inflows.",
+      "evidence": [
+        "network-boundary"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q004",
+      "track": "Overall financial system",
+      "question": "Where does money accumulate, and what is the complete closing balance?",
+      "status": "qualified",
+      "answer": "Official summaries cover 25 selected committees and 41 committee-years. 39 agree with snapshot cash flows; 2 retain differences. This is not statewide balance coverage.",
+      "method": "Verified opening balances, summary cash definitions, year roll-forward and unresolved differences.",
+      "evidence": [
+        "account-summaries"
+      ],
+      "limitation": "Targeted committee coverage only. Official summary observations are not independently audited bank statements. City disbursements and committee receipts are overlapping records, not additive funding.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q005",
+      "track": "Concentration and dependency",
+      "question": "How concentrated are visible sources of cash contributions?",
+      "status": "qualified",
+      "answer": "Across 54,551 visible record groups, Gini is 0.905366; the top ten provide 21.49% of identified cash dollars.",
+      "method": "Gini, HHI, top-source shares and effective number, conditional on positive visible groups.",
+      "evidence": [
+        "donor-record-groups",
+        "dependency"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q006",
+      "track": "Concentration and dependency",
+      "question": "Which committees depend most on a few visible sources?",
+      "status": "qualified",
+      "answer": "The dependency table gives every committee’s top-one/top-ten shares, HHI, Gini, effective group count and unidentified share; small denominators remain visible.",
+      "method": "Within-committee cumulative source amounts, with a separate total-cash denominator.",
+      "evidence": [
+        "dependency"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q007",
+      "track": "Concentration and dependency",
+      "question": "How do transfers and unidentified money change the picture?",
+      "status": "qualified",
+      "answer": "Strict reciprocal transfers total $7,796,853.20. Disclosure sensitivity reports a diffuse-source HHI infimum and an upper scenario attaching unidentified amounts to the largest visible source.",
+      "method": "Separate transfer basis; partial-identification scenarios, not estimated hidden identities.",
+      "evidence": [
+        "matched-transfers",
+        "dependency"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q008",
+      "track": "Small donors and participation",
+      "question": "Do small gifts imply small cumulative contributors?",
+      "status": "qualified",
+      "answer": "No. Gifts are accumulated by committee and conservative record group; visible cumulative totals can exceed any individual gift-size threshold. Prior unitemized gifts cannot be allocated back to people.",
+      "method": "Compare gift-size bands with cumulative donor–committee totals.",
+      "evidence": [
+        "gift-sizes",
+        "donor-committee",
+        "dependency"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q009",
+      "track": "Small donors and participation",
+      "question": "How common is repeat giving?",
+      "status": "qualified",
+      "answer": "The donor–committee evidence contains gift counts, first/last dates and cumulative giving; the dependency table reports each committee’s repeat-group share. These are record-group cohorts, not verified person counts.",
+      "method": "Repeat = more than one cash-contribution row in the observed interval.",
+      "evidence": [
+        "donor-committee",
+        "dependency"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q010",
+      "track": "Small donors and participation",
+      "question": "How many distinct people gave, including anonymous and miscellaneous activity?",
+      "status": "currently unanswerable",
+      "answer": "Aggregate rows are not people. A total person count or retention rate covering those rows is not identifiable from this snapshot.",
+      "method": "Itemized source identities and longitudinal resolution; do not impute people from transaction counts.",
+      "evidence": [],
+      "limitation": "Aggregate rows are not people. A total person count or retention rate covering those rows is not identifiable from this snapshot.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q011",
+      "track": "Businesses, labor, organizations and self-financing",
+      "question": "What do reported contributor types show?",
+      "status": "qualified",
+      "answer": "Separate totals are published for filer-classified individuals, business entities, labor organizations, candidate/family, political committees and unspecified types. These are reported classifications, not reviewed industries.",
+      "method": "Address-book type totals on cash-contribution basis.",
+      "evidence": [
+        "reported-contributor-types"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q012",
+      "track": "Businesses, labor, organizations and self-financing",
+      "question": "Which industries, corporate families or documented affiliations fund which races?",
+      "status": "currently unanswerable",
+      "answer": "A complete reviewed organizational-affiliation crosswalk has not been established. Similar names or employment fields are insufficient to assign industry ownership.",
+      "method": "Official organizational records, effective dates and reviewed entity links.",
+      "evidence": [],
+      "limitation": "A complete reviewed organizational-affiliation crosswalk has not been established. Similar names or employment fields are insufficient to assign industry ownership.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q013",
+      "track": "Businesses, labor, organizations and self-financing",
+      "question": "Are employee contributions organizational contributions or evidence of coordination?",
+      "status": "currently unanswerable",
+      "answer": "Employment fields alone do not establish direction, reimbursement or coordination; occupation/employer missingness is material.",
+      "method": "Separate individual giving from organizational funds; source-based case review and alternative explanations.",
+      "evidence": [],
+      "limitation": "Employment fields alone do not establish direction, reimbursement or coordination; occupation/employer missingness is material.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q014",
+      "track": "Geography and representation",
+      "question": "How much reported cash comes from Oregon, outside Oregon or an unknown state?",
+      "status": "qualified",
+      "answer": "The geographic evidence retains all three categories and exact dollar totals; unknown locations are not silently excluded from the overall denominator.",
+      "method": "Reported counterparty-state classification.",
+      "evidence": [
+        "geography",
+        "cities"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q015",
+      "track": "Geography and representation",
+      "question": "Which neighborhoods are underrepresented relative to population?",
+      "status": "currently unanswerable",
+      "answer": "City strings do not identify neighborhoods or districts. No population-normalized neighborhood measure is published without an audited geographic crosswalk.",
+      "method": "Official boundaries, Census denominators, validated geographic joins and missing-location sensitivity.",
+      "evidence": [],
+      "limitation": "City strings do not identify neighborhoods or districts. No population-normalized neighborhood measure is published without an audited geographic crosswalk.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q016",
+      "track": "Geography and representation",
+      "question": "How much giving comes from outside a candidate’s district?",
+      "status": "qualified",
+      "answer": "Across 17 reviewed Portland District 3/4 committees, reported nonmatching cash classifies as $140,703.32 from an address or whole ZIP area inside the candidate district, $186,902.12 outside, and $379,889.61 unresolved. The local City address-point join placed 954 transactions exactly. City matching receipts stay separate.",
+      "method": "Local exact street-address/ZIP join to public City address points and official council polygons; unmatched records use only whole-ZCTA inside/disjoint classifications; aggregate and boundary-crossing ZIPs stay uncertain.",
+      "evidence": [
+        "zip-map/candidate-district-address-summary"
+      ],
+      "limitation": "A reported source address is not verified residence or eligibility. ZIP proxies are approximate. Only 17 reviewed committees are covered, and transaction counts are not unique people.",
+      "population": "17 reviewed Portland District 3/4 candidate committees, 2025-01-01 through 2026-09-27",
+      "denominator": "Gross nonmatching cash contribution transactions; reviewed City matching payments are reported separately.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q017",
+      "track": "Political funding networks",
+      "question": "Which selected committees share visible individual donor groups?",
+      "status": "qualified",
+      "answer": "All 435 pairs among the 30 committees with most visible individual groups are tested. The underlying graph has 31,543 groups and 32,107 distinct committee links.",
+      "method": "Bipartite graph, Jaccard overlap, degree-preserving edge swaps, two fixed seeds, 398 null draws, Benjamini–Hochberg correction.",
+      "evidence": [
+        "shared-donor-tests"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q018",
+      "track": "Political funding networks",
+      "question": "Are shared-source patterns more pronounced than popularity alone predicts?",
+      "status": "qualified",
+      "answer": "The pair table reports observed overlap, null expectation, excess shared groups and adjusted exploratory p-values. The null preserves donor-group and committee degrees within the selected subgraph.",
+      "method": "Conditional MCMC permutation test; no coordination inference.",
+      "evidence": [
+        "shared-donor-tests"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q019",
+      "track": "Political funding networks",
+      "question": "Are detected communities stable or evidence of political coordination?",
+      "status": "qualified",
+      "answer": "The two fixed-seed community partitions agreed on the selected projection. That diagnostic does not establish stability under entity-resolution changes, missing donors or different populations, and does not establish coordination.",
+      "method": "Weighted projection and Louvain diagnostic; explicit scope limits.",
+      "evidence": [
+        "shared-donor-tests"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q020",
+      "track": "Committee transfers and intermediaries",
+      "question": "Which transfers can be reconciled on both sides?",
+      "status": "answered",
+      "answer": "1,454 unique same-day reciprocal pairs, totaling $7,796,853.20; both filings retained.",
+      "method": "Reciprocal authoritative IDs, exact cents, same day and uniqueness within a seven-day candidate window.",
+      "evidence": [
+        "matched-transfers"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q021",
+      "track": "Committee transfers and intermediaries",
+      "question": "Which plausible transfers remain ambiguous?",
+      "status": "qualified",
+      "answer": "2,419 candidate pairs fail strict same-day uniqueness; these are pair counts, not counts of distinct economic transfers.",
+      "method": "Seven-day candidate matching; no greedy one-to-one assignment.",
+      "evidence": [
+        "ambiguous-transfers"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q022",
+      "track": "Committee transfers and intermediaries",
+      "question": "Which donor’s dollar paid a particular vendor?",
+      "status": "currently unanswerable",
+      "answer": "Commingled funds do not identify dollar-level provenance. Financial paths can be possible without being uniquely attributable.",
+      "method": "Association-ledger review and bounded allocation scenarios; never present scenarios as tracing proof.",
+      "evidence": [],
+      "limitation": "Commingled funds do not identify dollar-level provenance. Financial paths can be possible without being uniquely attributable.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q023",
+      "track": "Campaign services economy",
+      "question": "Who receives the largest cash payments and serves many committees?",
+      "status": "qualified",
+      "answer": "The payee evidence ranks conservative noncommittee cash-payee groups and counts their filing-committee relationships. Payments are not necessarily vendor earnings.",
+      "method": "Group cash payments; exclude authoritative committee counterparties and disclosure categories.",
+      "evidence": [
+        "payee-record-groups"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q024",
+      "track": "Campaign services economy",
+      "question": "How is spending divided across advertising, management, staffing and other purposes?",
+      "status": "qualified",
+      "answer": "Exact reported purpose-code bundles are tabulated. A multi-code payment is counted once in its bundle, not fully attributed to every category.",
+      "method": "Mutually exclusive source-code combinations; no invented allocations.",
+      "evidence": [
+        "purpose-bundles"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q025",
+      "track": "Campaign services economy",
+      "question": "How much of each vendor’s receipts is profit, reimbursement or pass-through?",
+      "status": "currently unanswerable",
+      "answer": "Campaign reports show committee payments, not the recipient’s cost structure or onward transfers.",
+      "method": "Invoices, association details, reimbursement review and recipient financial records.",
+      "evidence": [],
+      "limitation": "Campaign reports show committee payments, not the recipient’s cost structure or onward transfers.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q026",
+      "track": "Independent spending",
+      "question": "Who spends to support or oppose each candidate or measure?",
+      "status": "qualified",
+      "answer": "77 of 137 records in the independent-checkbox search have parsed target details, yielding 227 allocation rows. 60 records remain gaps and 10 parsed records have allocation differences. Partial evidence is published; it is not a complete statewide total.",
+      "method": "Verify archived detail hashes and snapshot amounts; parse reported support/oppose labels and allocations; keep financial bases separate.",
+      "evidence": [
+        "independent-records",
+        "independent-allocations",
+        "detail-gaps"
+      ],
+      "limitation": "Target names are not reviewed race identities. Some records remain uncollected or fail validation. An allocation difference can reflect a partial expense allocation or another ordinary explanation; source review is required.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q027",
+      "track": "Independent spending",
+      "question": "How much outside spending does each race receive relative to candidate-controlled spending?",
+      "status": "currently unanswerable",
+      "answer": "This comparison requires complete target-to-race allocation and a reviewed candidate-committee crosswalk, not just expenditure names.",
+      "method": "Separate candidate-controlled spending from independent support/oppose allocations.",
+      "evidence": [],
+      "limitation": "This comparison requires complete target-to-race allocation and a reviewed candidate-committee crosswalk, not just expenditure names.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q028",
+      "track": "Portland public financing",
+      "question": "What is the official source for participation and matching funds?",
+      "status": "qualified",
+      "answer": "The City reports $1,542,435.00 distributed to 13 certified candidates; reviewed matching receipts in the snapshot total $1,363,713.00. These overlapping sources are not added. Differences remain visible by candidate.",
+      "method": "Archive City program records and reconcile payments by committee/date/amount.",
+      "evidence": [
+        "portland-public-financing",
+        "public-matching-receipts"
+      ],
+      "limitation": "Targeted committee coverage only. Official summary observations are not independently audited bank statements. City disbursements and committee receipts are overlapping records, not additive funding.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q029",
+      "track": "Portland public financing",
+      "question": "Does participation cause broader local support?",
+      "status": "currently unanswerable",
+      "answer": "Program participation is selected, not randomly assigned; the current matched race sample does not support a causal effect estimate.",
+      "method": "Comparable-campaign descriptive comparisons, selection analysis, validated local-donor definitions.",
+      "evidence": [],
+      "limitation": "Program participation is selected, not randomly assigned; the current matched race sample does not support a causal effect estimate.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q030",
+      "track": "Timing and campaign strategy",
+      "question": "When do reported cash and noncash resources arrive?",
+      "status": "answered",
+      "answer": "Monthly transaction-date measures are available for each financial basis. September 2026 contains only days 1–27 and remains subject to later filing.",
+      "method": "Inclusive monthly aggregation with basis separation.",
+      "evidence": [
+        "monthly"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q031",
+      "track": "Timing and campaign strategy",
+      "question": "Are apparent surges transaction activity or filing delays?",
+      "status": "qualified",
+      "answer": "Current-version filing lag and transaction-date activity are published separately. An amended row’s lag is not its original public-disclosure latency.",
+      "method": "Stratify by Original versus Amended status; no causal event attribution.",
+      "evidence": [
+        "filing-lag",
+        "amendments",
+        "monthly"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q032",
+      "track": "Timing and campaign strategy",
+      "question": "Do statistically detected breaks reveal a campaign strategy?",
+      "status": "currently unanswerable",
+      "answer": "A change point does not identify intention. Election alignment and sufficient comparable pre/post observations are needed before calling a change strategic.",
+      "method": "Prespecified event windows, reporting-lag checks and campaign-source corroboration.",
+      "evidence": [],
+      "limitation": "A change point does not identify intention. Election alignment and sufficient comparable pre/post observations are needed before calling a change strategic.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q033",
+      "track": "Financial resilience",
+      "question": "What if a committee lost its largest observed source?",
+      "status": "qualified",
+      "answer": "The dependency table subtracts the largest visible cash-source group from visible receipts. This is explicitly a forgone-receipts scenario, not a prediction of current liquidity.",
+      "method": "Within-committee top-source exclusion, no beginning-balance assumption.",
+      "evidence": [
+        "dependency"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q034",
+      "track": "Financial resilience",
+      "question": "What are current debt, reserves and runway?",
+      "status": "qualified",
+      "answer": "Selected committee profiles now show official opening/closing cash and reported outstanding debt, with source timestamps and snapshot reconciliation. Statewide coverage and runway estimates remain unavailable.",
+      "method": "Verified opening balances, repayment/forgiveness schedules, cancellations and operating-burn definitions.",
+      "evidence": [
+        "account-summaries"
+      ],
+      "limitation": "Targeted committee coverage only. Official summary observations are not independently audited bank statements. City disbursements and committee receipts are overlapping records, not additive funding.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q035",
+      "track": "Elections and outcomes",
+      "question": "Who will win the November 2026 election, and how did spending affect it?",
+      "status": "currently unanswerable",
+      "answer": "The election has not happened at the September 27 cutoff. No outcome or causal analysis is possible.",
+      "method": "No outcome model for pending elections.",
+      "evidence": [],
+      "limitation": "The election has not happened at the September 27 cutoff. No outcome or causal analysis is possible.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q036",
+      "track": "Elections and outcomes",
+      "question": "Across completed elections, does fundraising or spending composition explain results?",
+      "status": "currently unanswerable",
+      "answer": "A sufficiently complete certified-result and race crosswalk with pre-election finance windows has not yet been validated for this edition. A multilevel model without that foundation would be misleading.",
+      "method": "Certified outcomes; race-appropriate single-seat versus multi-seat measures; grouped/temporal holdouts, regularization and uncertainty.",
+      "evidence": [],
+      "limitation": "A sufficiently complete certified-result and race crosswalk with pre-election finance windows has not yet been validated for this edition. A multilevel model without that foundation would be misleading.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q037",
+      "track": "Disclosure and visibility",
+      "question": "How many current rows are amendments and where are fields missing?",
+      "status": "answered",
+      "answer": "Amendment and missingness tables preserve counts by transaction family and field. Missingness is not automatically a violation: field requirements differ by record type.",
+      "method": "Current-version status and explicit blank-field counts.",
+      "evidence": [
+        "amendments",
+        "missingness"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q038",
+      "track": "Disclosure and visibility",
+      "question": "What does aggregate reporting conceal?",
+      "status": "answered",
+      "answer": "32,258 contribution-family rows total $12,084,155.64. They cannot establish distinct donors, cross-campaign ties or person-level giving histories.",
+      "method": "Committee-scoped disclosure buckets, excluded from identity graph.",
+      "evidence": [
+        "disclosure"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q039",
+      "track": "Disclosure and visibility",
+      "question": "What exactly could a voter know on an earlier date?",
+      "status": "currently unanswerable",
+      "answer": "The current-version snapshot omits superseded amendments and deletions. Current Filed Date alone cannot reconstruct a past public view.",
+      "method": "Historical version retrieval with original disclosure and amendment timestamps.",
+      "evidence": [],
+      "limitation": "The current-version snapshot omits superseded amendments and deletions. Current Filed Date alone cannot reconstruct a past public view.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q040",
+      "track": "Connections to governing",
+      "question": "Do funders or vendors also lobby, hold public contracts or appear in policy proceedings?",
+      "status": "currently unanswerable",
+      "answer": "Official lobbying/consultant disclosure sources are located, but complete dated and reviewed entity joins have not been established. Name-only coincidences are not published as connections.",
+      "method": "Verified public-record joins, effective dates and case-specific source review.",
+      "evidence": [],
+      "limitation": "Official lobbying/consultant disclosure sources are located, but complete dated and reviewed entity joins have not been established. Name-only coincidences are not published as connections.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q041",
+      "track": "Connections to governing",
+      "question": "Did a contribution cause a vote, contract or government decision?",
+      "status": "currently unanswerable",
+      "answer": "The transaction ledger cannot establish motive or causation. Even verified overlap needs plausible alternative explanations and defensible comparisons.",
+      "method": "Dated decision records, policy context and a credible identification strategy; otherwise descriptive case studies only.",
+      "evidence": [],
+      "limitation": "The transaction ledger cannot establish motive or causation. Even verified overlap needs plausible alternative explanations and defensible comparisons.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q042",
+      "track": "Unusual patterns and counterexamples",
+      "question": "Which large records deserve closer source review?",
+      "status": "qualified",
+      "answer": "The 100 largest cash records are provided as magnitude-based leads, not a misconduct score. Legitimate committee transfers, media buys and aggregate records can be large.",
+      "method": "Absolute magnitude ranking with accounting basis and source transaction IDs.",
+      "evidence": [
+        "largest-cash-records"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q043",
+      "track": "Unusual patterns and counterexamples",
+      "question": "Could ordinary operations explain apparent anomalies?",
+      "status": "qualified",
+      "answer": "Yes: a $1,208,352.82 PAC payment and next-day receipt are outside the strict same-day transfer match. Repeated names can be separate identities or address variants. Both counterexamples remain visible.",
+      "method": "Review seven-day transfer candidates and same-name candidate groups rather than auto-merging.",
+      "evidence": [
+        "ambiguous-transfers",
+        "same-name-candidates"
+      ],
+      "limitation": "Current reported versions only; findings describe the fixed observation window, not complete election cycles.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    },
+    {
+      "id": "Q044",
+      "track": "Unusual patterns and counterexamples",
+      "question": "Do round amounts, synchronization or reciprocal ties establish misconduct?",
+      "status": "currently unanswerable",
+      "answer": "No. Exploratory anomalies require peer comparisons, multiple-testing controls and original-source review; normal reporting conventions can generate them.",
+      "method": "Robust within-peer methods plus investigation log and counterevidence; no automated allegation labels.",
+      "evidence": [],
+      "limitation": "No. Exploratory anomalies require peer comparisons, multiple-testing controls and original-source review; normal reporting conventions can generate them.",
+      "population": "ORESTAR snapshot, 2025-01-01 through 2026-09-27 unless explicitly narrowed",
+      "denominator": "As specified in the linked metric definition; dollar measures use Amount, not Aggregate Amount.",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "reviewStatus": "calculation checked; editorial and expanded source review pending"
+    }
+  ],
+  "counts": {
+    "answered": 6,
+    "qualified": 23,
+    "currently unanswerable": 15
+  }
+}

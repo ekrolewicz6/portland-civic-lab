@@ -1,0 +1,395 @@
+snapshot,transaction_id,committee_id,transaction_date,filed_date,amount_cents,funding_category,entity_id,reported_source,identity_status,book_type,reported_city,reported_state
+orestar-20250101-20260927-v1,5189720,15109,2025-01-02,2025-01-13,1000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5194455,15109,2025-01-14,2025-01-16,2000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5259563,15109,2025-02-28,2025-03-28,2000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5356807,15109,2025-07-07,2025-08-05,25000,labor,record:07d5af0f660568c8c8dd8856,Northwest Oregon Labor Council,provisional_record_group,Labor Organization,PORTLAND,OR
+orestar-20250101-20260927-v1,5459697,15109,2025-11-13,2025-12-11,2000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5459663,15109,2025-12-10,2025-12-11,25000,individual,record:ac850e67bf27e224d700101f,Jason Renaud,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5504440,15109,2025-12-15,2026-01-13,10000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5503296,15109,2025-12-22,2026-01-13,35000,individual,record:23986c3d9d3cfd98f967b1b5,Harold Goldstein,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5503301,15109,2025-12-22,2026-01-13,25000,individual,record:4bd9206d9b308d3183e3655c,Andrew Seaman,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5503304,15109,2025-12-22,2026-01-13,35000,individual,record:d3071c221e7323950efa87ed,Warren Rosenfeld,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5503307,15109,2025-12-22,2026-01-13,35000,individual,record:dc97968b2a4a1c756a518da7,Bernice Corman,provisional_record_group,Individual,WASHINGTON,DC
+orestar-20250101-20260927-v1,5503310,15109,2025-12-22,2026-01-13,35000,individual,record:d3071c221e7323950efa87ed,Warren Rosenfeld,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5503313,15109,2025-12-22,2026-01-13,17500,individual,record:d3071c221e7323950efa87ed,Warren Rosenfeld,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5503315,15109,2025-12-22,2026-01-13,35000,individual,record:8fa5b2383daafc74439b4b6b,Bonnie Serkin,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5503331,15109,2025-12-22,2026-01-13,35000,individual,record:e93b23b3ea3b155157c1ba18,Kalyn Free,provisional_record_group,Individual,TULSA,OK
+orestar-20250101-20260927-v1,5504442,15109,2025-12-22,2026-01-13,52000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5504443,15109,2025-12-23,2026-01-13,15000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5503347,15109,2025-12-26,2026-01-13,35000,individual,record:67f7ed9d1c9d487065ba829d,James Kelly,provisional_record_group,Individual,BEND,OR
+orestar-20250101-20260927-v1,5504444,15109,2025-12-27,2026-01-13,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5503353,15109,2025-12-28,2026-01-13,35000,individual,record:4d9bf0307e2d5e8c49bd775b,Jen Schuberth,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5504445,15109,2025-12-28,2026-01-13,9500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5503373,15109,2025-12-29,2026-01-13,30000,individual,record:1b1cdd30f692b36422b2984d,Laura Willimgham Milne,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5504446,15109,2025-12-29,2026-01-13,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5503378,15109,2025-12-30,2026-01-13,50000,individual,record:c796127b4c75478a03fc66cc,Karen Tosi,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5503397,15109,2025-12-30,2026-01-13,87500,individual,record:ae3803ccce65a2f57603c666,Paul Utz,provisional_record_group,Individual,ROSEBURG,OR
+orestar-20250101-20260927-v1,5504447,15109,2025-12-30,2026-01-13,30000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5504448,15109,2025-12-31,2026-01-13,22500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5504449,15109,2026-01-01,2026-01-13,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5503409,15109,2026-01-02,2026-01-13,35000,individual,record:86bec20ac6fa0496bd37a6c2,Jo Anne Trow,provisional_record_group,Individual,CORVALLIS,OR
+orestar-20250101-20260927-v1,5504450,15109,2026-01-02,2026-01-13,1000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5504451,15109,2026-01-04,2026-01-13,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5503410,15109,2026-01-05,2026-01-13,35000,individual,record:33ceb019f6ecfcbab7c71c44,Dan Saltzman,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5528653,15109,2026-01-05,2026-02-03,35000,individual,record:a0c719da15a6fa2e781f0391,Momoko Saunders,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5504452,15109,2026-01-07,2026-01-13,15000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5504453,15109,2026-01-10,2026-01-13,10000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5504454,15109,2026-01-12,2026-01-13,20000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5528717,15109,2026-01-14,2026-02-03,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5528670,15109,2026-01-15,2026-02-03,25000,individual,record:6385f96386490aaace9e3cc4,Randolph Miller,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5528718,15109,2026-01-15,2026-02-03,27500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5528719,15109,2026-01-16,2026-02-03,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5528720,15109,2026-01-19,2026-02-03,3500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5528721,15109,2026-01-21,2026-02-03,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5528722,15109,2026-01-22,2026-02-03,3500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5528723,15109,2026-01-26,2026-02-03,3500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5528691,15109,2026-01-27,2026-02-03,35000,individual,record:c148c5b5121f57a6697f07b0,TC Staton,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5534886,15109,2026-02-04,2026-02-10,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5534808,15109,2026-02-05,2026-02-10,35000,individual,record:f39013cb96cfe9f315be094c,William Scott,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5534843,15109,2026-02-05,2026-02-10,35000,individual,record:d8908983268496ef16e9585d,Roger Vrilakas,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5534844,15109,2026-02-05,2026-02-10,20000,individual,record:5a6bcd76c05bbafa00048200,CAROL TURNER,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5534845,15109,2026-02-05,2026-02-10,50000,individual,record:87e9ab5ead9032c07a905a30,Erik Szeto,provisional_record_group,Individual,LAKE OSWEGO,OR
+orestar-20250101-20260927-v1,5534846,15109,2026-02-05,2026-02-10,25000,individual,record:9efa476c1cbaf86badd296b0,Kent Snyder,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5534887,15109,2026-02-05,2026-02-10,80000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5563359,15109,2026-02-05,2026-03-06,25000,individual,record:63071f9b8fc21cc2dbc0d9f6,Rion Bourgeois,provisional_record_group,Individual,CANBY,OR
+orestar-20250101-20260927-v1,5534849,15109,2026-02-06,2026-02-10,35000,individual,record:72f6491acbce8c3223c96913,Steve Marsden,provisional_record_group,Individual,ASHLAND,OR
+orestar-20250101-20260927-v1,5534889,15109,2026-02-06,2026-02-10,10000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5534851,15109,2026-02-07,2026-02-10,10000,individual,record:7e6eadf8468ca2de2ec11c45,Jen Schuberth,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5534852,15109,2026-02-07,2026-02-10,42500,individual,record:7e6eadf8468ca2de2ec11c45,Jen Schuberth,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5534890,15109,2026-02-07,2026-02-10,32500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5534853,15109,2026-02-08,2026-02-10,35000,individual,record:4add0e194ac4c52653ea3ad3,Regina Cutler,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5534854,15109,2026-02-08,2026-02-10,20000,individual,record:12ab313295a0762f9d510736,Christine Vernier,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5534856,15109,2026-02-08,2026-02-10,25000,individual,record:0b3ac520109cba1734e0ea9d,Diane Rosenbaum,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5534891,15109,2026-02-08,2026-02-10,62600,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5534859,15109,2026-02-09,2026-02-10,20000,individual,record:ae9e6a4a30a8d706e5f62f67,Diana Bianco,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5534892,15109,2026-02-09,2026-02-10,67500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5534893,15109,2026-02-10,2026-02-10,20000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5563419,15109,2026-02-12,2026-03-06,12500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5563370,15109,2026-02-13,2026-03-06,35000,individual,record:341e9568dfb93ca001044a06,scott feldstein,provisional_record_group,Individual,WASHINGTON,DC
+orestar-20250101-20260927-v1,5563420,15109,2026-02-14,2026-03-06,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5563421,15109,2026-02-18,2026-03-06,1000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5563380,15109,2026-03-02,2026-03-06,35000,individual,record:890a7ba020ff7d5c6d3ab64f,Scott Goodman,provisional_record_group,Individual,ALBUQUERQUE,NM
+orestar-20250101-20260927-v1,5563422,15109,2026-03-04,2026-03-06,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5612586,15109,2026-03-13,2026-04-08,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5612590,15109,2026-03-17,2026-04-08,1000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5612576,15109,2026-03-19,2026-04-08,25000,individual,record:33f838bab2dbfd584adac2cf,Tom Walsh,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5612591,15109,2026-03-19,2026-04-08,10000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5612592,15109,2026-03-21,2026-04-08,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5612579,15109,2026-03-25,2026-04-08,50000,individual,record:9dc651128a8028a5b46cf01e,P Diane Mountain,provisional_record_group,Individual,BALTIMORE,MD
+orestar-20250101-20260927-v1,5612580,15109,2026-03-25,2026-04-08,25000,individual,record:469452fb8b8d10ffc16e03ed,Patricia Dost,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5612593,15109,2026-03-25,2026-04-08,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5612581,15109,2026-03-26,2026-04-08,30000,individual,record:895c9a29e0d1e0ba47ec16b6,Kathleen Pool,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5612594,15109,2026-03-29,2026-04-08,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5612583,15109,2026-04-06,2026-04-08,35000,individual,record:1ab969badeacd806ae36f6f7,Christopher Smith,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5657783,15109,2026-04-09,2026-05-08,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5657750,15109,2026-04-14,2026-05-08,10000,individual,record:cd8dc6075a39b80df0825abe,John Barlow,provisional_record_group,Individual,CORVALLIS,OR
+orestar-20250101-20260927-v1,5657751,15109,2026-04-14,2026-05-08,35000,individual,record:f66170c288c7fb1251115f56,Barry Stein,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5657753,15109,2026-04-14,2026-05-08,50000,individual,record:e6f115dbbb9d62c103cf8709,Nancy Spencer,provisional_record_group,Individual,SAN MATEO,CA
+orestar-20250101-20260927-v1,5657754,15109,2026-04-14,2026-05-08,10000,individual,record:78c1d94789fa63de41df9b54,Chris Dearth,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5657755,15109,2026-04-14,2026-05-08,25000,individual,record:3f0cb6962ead08e2ca53d8db,Tom Kelly,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5657756,15109,2026-04-14,2026-05-08,25000,individual,record:c80569db15b6628d7011302b,David Shaw,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5657784,15109,2026-04-14,2026-05-08,74500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5657758,15109,2026-04-15,2026-05-08,10000,individual,record:39d3b62057076925956f5fed,Mary Scurlock Adamson,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5657785,15109,2026-04-15,2026-05-08,25000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5657786,15109,2026-04-16,2026-05-08,10000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5657764,15109,2026-04-17,2026-05-08,20000,individual,record:1b1cdd30f692b36422b2984d,Laura Willimgham Milne,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5657787,15109,2026-04-17,2026-05-08,16000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5657788,15109,2026-04-18,2026-05-08,10000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5657767,15109,2026-04-20,2026-05-08,50000,business,record:d5ef259e1629d4afce857cd5,Jubitz Corporation,provisional_record_group,Business Entity,"PORTLAND, OR",OR
+orestar-20250101-20260927-v1,5657789,15109,2026-04-21,2026-05-08,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5657769,15109,2026-04-24,2026-05-08,25000,individual,record:916336b17a8d8dd87f088468,Thomas Chamberlain,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5657790,15109,2026-04-24,2026-05-08,22500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5657774,15109,2026-04-25,2026-05-08,25000,individual,record:378d2694c19ed3163ae3d0ad,Cathleen Kaufmann,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5657791,15109,2026-04-25,2026-05-08,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5657775,15109,2026-04-26,2026-05-08,2500,individual,record:2f85de622bc7f64d8045c914,Mary-Margaret Wheeler-Weber,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5657792,15109,2026-04-26,2026-05-08,2000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5657778,15109,2026-04-30,2026-05-08,25000,individual,record:47c80167a11707d7ed064509,Tim Tees,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5657793,15109,2026-04-30,2026-05-08,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685117,15109,2026-05-14,2026-06-10,8000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685118,15109,2026-05-17,2026-06-10,1000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685041,15109,2026-05-22,2026-06-10,35000,individual,record:6ccd89c3300b963eff92b540,Merri Wyatt,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685119,15109,2026-05-22,2026-06-10,29500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685120,15109,2026-05-25,2026-06-10,2000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685121,15109,2026-05-26,2026-06-10,12500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685046,15109,2026-05-27,2026-06-10,25000,individual,record:94f6a2d470ff4ba845de14c3,Martin Kehoe,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685122,15109,2026-05-28,2026-06-10,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685060,15109,2026-05-30,2026-06-10,35000,individual,record:30b42bae82f3265fd9b9f652,Michael Goodstein,provisional_record_group,Individual,BETHESDA,MD
+orestar-20250101-20260927-v1,5685061,15109,2026-05-30,2026-06-10,35000,individual,record:8c805736c1c4a302ce4c2703,Denise Frisbee,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685062,15109,2026-05-30,2026-06-10,35000,individual,record:7d2486336e074c617d02a03a,Jean Maurer,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685123,15109,2026-05-30,2026-06-10,41000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685063,15109,2026-05-31,2026-06-10,35000,individual,record:74c9727d85eaac61ce40a4bf,Misha Isaak,provisional_record_group,Individual,LAKE OSWEGO,OR
+orestar-20250101-20260927-v1,5685064,15109,2026-05-31,2026-06-10,35000,individual,record:9bdabe5380f443b5473c97cf,Steve Bruner,provisional_record_group,Individual,TULSA,OK
+orestar-20250101-20260927-v1,5685065,15109,2026-05-31,2026-06-10,25000,individual,record:26bf4254a8626962f5ba681e,Sandra Mcdonough,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685125,15109,2026-05-31,2026-06-10,18500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685126,15109,2026-06-01,2026-06-10,17500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685127,15109,2026-06-02,2026-06-10,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685076,15109,2026-06-04,2026-06-10,25000,individual,record:ca6e9d6443038329319b5e64,Macgregor Hall,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685078,15109,2026-06-04,2026-06-10,35000,individual,record:47ffe481c0d1c025987c7a5b,Jim Mark,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685079,15109,2026-06-04,2026-06-10,35000,individual,record:18c277f31076cff04b49e724,Tom Mulflur,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685080,15109,2026-06-04,2026-06-10,35000,individual,record:796062d1b73df1a469470432,Jim Morse,provisional_record_group,Individual,LAKE OSWEGO,OR
+orestar-20250101-20260927-v1,5685081,15109,2026-06-04,2026-06-10,35000,individual,record:837dd8b358f565791bca31f5,Ron Sauer,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685082,15109,2026-06-04,2026-06-10,35000,individual,record:195f5f1816c0a75c3bf0defb,Mardi Spitzer,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685083,15109,2026-06-04,2026-06-10,35000,individual,record:ead6db1e4599fbe3619193ee,John Russell,provisional_record_group,Individual,PORTLAND OR,OR
+orestar-20250101-20260927-v1,5685085,15109,2026-06-04,2026-06-10,35000,individual,record:1b8b9f043b906b0460fb94eb,Robert Maletis,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685093,15109,2026-06-04,2026-06-10,35000,individual,record:8f98e43faedf30f255d6ce3c,Debbie Geffrard,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685109,15109,2026-06-04,2026-06-10,35000,individual,record:38500f04f631bba0bc91e72d,William Gaylord,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685129,15109,2026-06-04,2026-06-10,57500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685094,15109,2026-06-05,2026-06-10,25000,individual,record:21e80ac6364a5347967f8cde,John Andrews,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685095,15109,2026-06-05,2026-06-10,35000,individual,record:5cfdb7e4a5325be6edb0694c,David Squire,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685096,15109,2026-06-05,2026-06-10,35000,individual,record:84e36db8344e4aae9a086543,Nancy Frisch,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685097,15109,2026-06-05,2026-06-10,35000,individual,record:6c9fec5e0398bbb41c8b0f73,Clyde Holland,provisional_record_group,Individual,VANCOUVER,WA
+orestar-20250101-20260927-v1,5685130,15109,2026-06-05,2026-06-10,27500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685101,15109,2026-06-07,2026-06-10,35000,individual,record:5f2d1422afe1309e7f7b0581,Steven Silverman,provisional_record_group,Individual,BOULDER,CO
+orestar-20250101-20260927-v1,5685131,15109,2026-06-07,2026-06-10,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685107,15109,2026-06-08,2026-06-10,35000,individual,record:4cf9e82278b834fd6f15d8ee,Robert Dixon,provisional_record_group,Individual,LAKE OSWEGO,OR
+orestar-20250101-20260927-v1,5685108,15109,2026-06-08,2026-06-10,35000,individual,record:9930a350becc97a612533b43,Alexander Tinker,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685110,15109,2026-06-08,2026-06-10,25000,individual,record:9d61bfa618ba0998fae2048a,Jonathan Bennett,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685132,15109,2026-06-08,2026-06-10,17500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685113,15109,2026-06-09,2026-06-10,35000,individual,record:2a66808a76ac1437d4fd8737,Kathryn Schmidt,provisional_record_group,Individual,BOULDER,CO
+orestar-20250101-20260927-v1,5685114,15109,2026-06-09,2026-06-10,20000,individual,record:0d1e1e6e8b2ac417e8fb3627,Tyler Frisbee,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5685133,15109,2026-06-09,2026-06-10,5500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5685116,15109,2026-06-10,2026-06-10,35000,individual,record:86e860a29f305f7737c6210f,Donald Singer,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717479,15109,2026-06-10,2026-07-10,20000,individual,record:340a69cd3ea0812402a3a81e,Angus Duncan,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717483,15109,2026-06-10,2026-07-10,35000,individual,record:5cd225dac1d8300fc221c765,Daniel Deutsch,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717605,15109,2026-06-10,2026-07-10,35000,individual,record:924ba16fbb6be12097116234,Robert Walsh,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717661,15109,2026-06-10,2026-07-10,3500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717485,15109,2026-06-12,2026-07-10,25000,individual,record:ae2e892c1712aa4aead8cf7b,Duncan Wyse,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717662,15109,2026-06-12,2026-07-10,5500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717500,15109,2026-06-13,2026-07-10,35000,individual,record:9dc5c356a4b978f72136c703,Eva Hamer,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717663,15109,2026-06-13,2026-07-10,13500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717501,15109,2026-06-14,2026-07-10,35000,individual,record:69b2abec1c02dbf274e2b631,Julia Winkler,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717664,15109,2026-06-15,2026-07-10,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717503,15109,2026-06-16,2026-07-10,35000,individual,record:3dacd69acf233a5c200c751d,Whitney Goodman,provisional_record_group,Individual,LOS ANGELES,CA
+orestar-20250101-20260927-v1,5717665,15109,2026-06-16,2026-07-10,15000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717508,15109,2026-06-17,2026-07-10,25000,individual,record:34da5a2a62cc299fa73f71fd,John Bennett,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717509,15109,2026-06-17,2026-07-10,35000,individual,record:a66231bca70398831567bcdb,Mark Goodman,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717511,15109,2026-06-17,2026-07-10,17500,individual,record:fbd37ef0afd4f32d2d27e430,Paul Balmer,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717666,15109,2026-06-17,2026-07-10,6000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717667,15109,2026-06-18,2026-07-10,10000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717668,15109,2026-06-19,2026-07-10,15000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5732244,15109,2026-06-19,2026-07-20,25000,individual,record:a0867024eef4c012b44d4d87,Brett Wilcox,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717669,15109,2026-06-21,2026-07-10,19800,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717585,15109,2026-06-22,2026-07-10,35000,individual,record:7fa984ec5c90e89e7de40ae2,Barbara Warner,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717586,15109,2026-06-22,2026-07-10,15000,individual,record:ac87eb3f01273c662692bb29,William Weinischke,provisional_record_group,Individual,BETHESDA,MD
+orestar-20250101-20260927-v1,5717670,15109,2026-06-22,2026-07-10,95000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717564,15109,2026-06-23,2026-07-10,35000,individual,record:160f7ba319ce357104d7a4e6,Samuel Metz,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717565,15109,2026-06-23,2026-07-10,10000,individual,record:6674ccf374eb70f1d38cf2ed,Janet Stein,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717566,15109,2026-06-23,2026-07-10,2500,individual,record:daebe4f2c6ceb64262d067a3,Michael Greenfield,provisional_record_group,Individual,"PORTLAND, OR",OR
+orestar-20250101-20260927-v1,5717567,15109,2026-06-23,2026-07-10,10000,individual,record:b52dbd36fd91a8fe522a6f09,Laura Graser,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717570,15109,2026-06-23,2026-07-10,25000,individual,record:f60f56c03e055b3ac703eb39,Patricia Frobes,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717572,15109,2026-06-23,2026-07-10,10000,individual,record:756f39c99c79751e8c36c6e0,Stephen Kafoury,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717573,15109,2026-06-23,2026-07-10,10000,individual,record:7493b1a6adba0c14f02163d7,Marilyn Couch,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717671,15109,2026-06-23,2026-07-10,127500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717672,15109,2026-06-24,2026-07-10,10000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717673,15109,2026-06-25,2026-07-10,16500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717674,15109,2026-06-26,2026-07-10,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717595,15109,2026-06-27,2026-07-10,25000,individual,record:863b48d45d25b8d1da34cf10,Todd Bradley,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717675,15109,2026-06-27,2026-07-10,3000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717596,15109,2026-06-28,2026-07-10,10000,individual,record:4ea5a6c2314b5802e26fbb5a,Edward Reckford,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717597,15109,2026-06-28,2026-07-10,35000,individual,record:edbcd9078e8ceaa844cafd27,Phillip Brooks,provisional_record_group,Individual,MCLEAN,VA
+orestar-20250101-20260927-v1,5717676,15109,2026-06-28,2026-07-10,12499,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717677,15109,2026-06-29,2026-07-10,30000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717678,15109,2026-06-30,2026-07-10,10000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717679,15109,2026-07-01,2026-07-10,15000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717616,15109,2026-07-02,2026-07-10,10000,individual,record:362f68aba509f1c0cb0ca721,Elliot Leonard,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717617,15109,2026-07-03,2026-07-10,35000,individual,record:552937a091a4c8b007dff8f6,Charles Swindells,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717618,15109,2026-07-03,2026-07-10,35000,individual,record:25f7cb39b771324f0df83de0,Rachel Jacobson,provisional_record_group,Individual,WASHINGTON,DC
+orestar-20250101-20260927-v1,5717680,15109,2026-07-05,2026-07-10,22500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717622,15109,2026-07-06,2026-07-10,25000,individual,record:786b090b5d95152823f462be,Kathleen Shriver,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717623,15109,2026-07-07,2026-07-10,25000,individual,record:47bd57a465dc88594f8c4d7e,Robert Bonaparte,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5717681,15109,2026-07-07,2026-07-10,32500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717682,15109,2026-07-08,2026-07-10,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717683,15109,2026-07-09,2026-07-10,33000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5717684,15109,2026-07-10,2026-07-10,17500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5732269,15109,2026-07-11,2026-07-20,25000,individual,record:64827a5142c26012325d5568,Marc Fenton,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5732272,15109,2026-07-12,2026-07-20,20000,individual,record:32f370104e35c1a41f4b1140,Philip Kalberer,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5732333,15109,2026-07-12,2026-07-20,41100,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5732274,15109,2026-07-13,2026-07-20,35000,individual,record:9153e1a96889bbf8aabbf5aa,Stephen Goodman,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5732275,15109,2026-07-13,2026-07-20,35000,individual,record:377c0451c679a75e59c99f9f,Gordon Keane,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5732283,15109,2026-07-13,2026-07-20,20000,individual,record:b4e11017676575f260ebeb2a,Patrick Aitchison,provisional_record_group,Individual,MILWAUKIE,OR
+orestar-20250101-20260927-v1,5732334,15109,2026-07-13,2026-07-20,25000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5732284,15109,2026-07-14,2026-07-20,25000,individual,record:3b8cd06b9553334d089bdcdd,Michael Mcnulty,provisional_record_group,Individual,ARLINGTON,VA
+orestar-20250101-20260927-v1,5732335,15109,2026-07-14,2026-07-20,30000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5732336,15109,2026-07-15,2026-07-20,15000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5732294,15109,2026-07-16,2026-07-20,35000,individual,record:857012c5d05d79319f5d7dfd,Michelle Giguere,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5732301,15109,2026-07-16,2026-07-20,35000,individual,record:45ee5f934fe74fad4dc945b1,Christopher Warner,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5732302,15109,2026-07-16,2026-07-20,20000,individual,record:a6331e6add4c6f8f50895d8a,James Barta,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5732303,15109,2026-07-16,2026-07-20,25000,individual,record:1387d78ea440c522ca2d4997,Norma Dulin,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5732337,15109,2026-07-16,2026-07-20,30000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5732338,15109,2026-07-17,2026-07-20,17500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5732339,15109,2026-07-18,2026-07-20,22500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5732340,15109,2026-07-19,2026-07-20,50500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5732341,15109,2026-07-20,2026-07-20,37500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760044,15109,2026-07-21,2026-08-10,5000,individual,record:48dff4a59fd1031a2993edab,Nancy Becker,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760222,15109,2026-07-21,2026-08-10,26000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760223,15109,2026-07-22,2026-08-10,3000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760054,15109,2026-07-23,2026-08-10,10000,individual,record:390ec497bda983823e5c77ae,John Barlow,provisional_record_group,Individual,CORVALLIS,OR
+orestar-20250101-20260927-v1,5760055,15109,2026-07-23,2026-08-10,5000,individual,record:14466646cb24b47b33f3cb71,Jeremy Sarant,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760065,15109,2026-07-23,2026-08-10,10000,individual,record:9efa476c1cbaf86badd296b0,Kent Snyder,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760066,15109,2026-07-23,2026-08-10,25000,individual,record:87be0b13925b4c348343274e,David Knowles,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760087,15109,2026-07-23,2026-08-10,22500,individual,record:3a42bd48cc05e9bbb2ee4775,Leslie Kay,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760088,15109,2026-07-23,2026-08-10,2500,individual,record:3a42bd48cc05e9bbb2ee4775,Leslie Kay,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760224,15109,2026-07-23,2026-08-10,55000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760068,15109,2026-07-24,2026-08-10,25000,individual,record:9759e0273d68b6eb0180097b,Milo Wadlin,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760225,15109,2026-07-24,2026-08-10,61000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760081,15109,2026-07-25,2026-08-10,15000,individual,record:d5b237cbdb06b80b2120a3fb,Zari Santner,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760082,15109,2026-07-25,2026-08-10,10000,individual,record:b8ce80a82de7a952d339de24,Steve Hanrahan,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760083,15109,2026-07-25,2026-08-10,35000,individual,record:9438af3ea613bd7cf401a823,John Tapogna,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760226,15109,2026-07-25,2026-08-10,32000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760084,15109,2026-07-26,2026-08-10,35000,individual,record:fc6420fd4335ab8bb0adccf5,Aisling Coghlan,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760085,15109,2026-07-26,2026-08-10,35000,individual,record:cd7cf49d5c573e5c62be0c0d,Mark Wiener,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760227,15109,2026-07-26,2026-08-10,37500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760089,15109,2026-07-27,2026-08-10,35000,individual,record:c78477ad3ac2bc85a91b7338,Marilyn Epstein,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760111,15109,2026-07-28,2026-08-10,10000,individual,record:c80569db15b6628d7011302b,David Shaw,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760113,15109,2026-07-28,2026-08-10,35000,individual,record:ada50fee3418e7e30b5c7854,Joe Finkbonner,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760119,15109,2026-07-28,2026-08-10,35000,individual,record:310217360ea460ecc2c68290,Joseph Piucci,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760120,15109,2026-07-28,2026-08-10,35000,individual,record:53f4949897477e7d148c1009,Gabriela Norona,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760121,15109,2026-07-28,2026-08-10,5000,individual,record:1d9c2d7bb63bc4028bf1482f,Jessica Mindlin,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760229,15109,2026-07-28,2026-08-10,128500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760128,15109,2026-07-29,2026-08-10,10000,individual,record:79a7a5bdf10c02644e8b7795,Amanda Fritz,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760230,15109,2026-07-29,2026-08-10,52500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760139,15109,2026-07-30,2026-08-10,2500,individual,record:bc41adb875e9be4a522475ff,Lew Bowers,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760231,15109,2026-07-30,2026-08-10,17500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760144,15109,2026-07-31,2026-08-10,25000,individual,record:b2dec29cc8ee148df797c810,Eric Lindauer,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760232,15109,2026-07-31,2026-08-10,15000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760170,15109,2026-08-01,2026-08-10,16000,individual,record:f57e2d792eff08d178ba66a1,Jill Eiland,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760233,15109,2026-08-01,2026-08-10,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760149,15109,2026-08-02,2026-08-10,10000,individual,record:78c1d94789fa63de41df9b54,Chris Dearth,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760171,15109,2026-08-02,2026-08-10,10000,individual,record:b622e86398339661cebb8570,Rosemary Furfey,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760165,15109,2026-08-03,2026-08-10,10000000,public,record:6cb89cf28e8f5016df3b8332,City of Portland,provisional_record_group,Other,PORTLAND,OR
+orestar-20250101-20260927-v1,5760234,15109,2026-08-03,2026-08-10,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760175,15109,2026-08-04,2026-08-10,10000,individual,record:c3f7b0695fe032533ea2dbf3,Adam Mcisaac,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760176,15109,2026-08-04,2026-08-10,10000,individual,record:9759e0273d68b6eb0180097b,Milo Wadlin,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760177,15109,2026-08-04,2026-08-10,2500,individual,record:36c5a02ea49da0cb49047ac6,Margaret Bolger,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760178,15109,2026-08-04,2026-08-10,25000,individual,record:d98998fb6f0b4f97bddd0d82,Mark Kaltenbach,provisional_record_group,Individual,SCOTTSDALE,AZ
+orestar-20250101-20260927-v1,5760179,15109,2026-08-04,2026-08-10,10000,individual,record:a6a9e5a4c7ee646b40521ff9,Bruce Goldberg,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760180,15109,2026-08-04,2026-08-10,2500,individual,record:6dd260680720dc8338548e9f,Rion Bourgeois,provisional_record_group,Individual,CANBY,OR
+orestar-20250101-20260927-v1,5760235,15109,2026-08-04,2026-08-10,97500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793152,15109,2026-08-04,2026-09-03,5000,individual,record:bcb4875c085f962f8df9f346,John Urang,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793154,15109,2026-08-04,2026-09-03,15000,individual,record:5d44e417f4acf59740521fc2,Deane Funk,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760201,15109,2026-08-05,2026-08-10,10000,individual,record:5434f7e3bbb70e468dc3fb6b,Richard Benner,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760202,15109,2026-08-05,2026-08-10,35000,individual,record:790f2195e9a7d15aa9b771ee,Daniel Yates,provisional_record_group,Individual,MILWAUKIE,OR
+orestar-20250101-20260927-v1,5760204,15109,2026-08-05,2026-08-10,35000,individual,record:870c0ebf23f3ef8aa6a8d321,Jon Ball,provisional_record_group,Individual,SAN DIEGO,CA
+orestar-20250101-20260927-v1,5760236,15109,2026-08-05,2026-08-10,47500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760237,15109,2026-08-06,2026-08-10,12500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760238,15109,2026-08-07,2026-08-10,30000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760239,15109,2026-08-08,2026-08-10,22500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760214,15109,2026-08-09,2026-08-10,25000,individual,record:ee933c56d2e3b80161fec307,Alice Powell,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5760240,15109,2026-08-09,2026-08-10,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5760241,15109,2026-08-10,2026-08-10,39500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793166,15109,2026-08-10,2026-09-03,25000,individual,record:89499f6cc3ed5b8f075602d3,Geoffrey Stuckart,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793167,15109,2026-08-10,2026-09-03,25000,individual,record:4fc5ec8e3e9a6d65f5e15871,Gloria Bennett,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793168,15109,2026-08-11,2026-09-03,10000,individual,record:b221ae65b6b7fc59ae2ccbba,Eugene Uphoff,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793182,15109,2026-08-11,2026-09-03,20000,individual,record:d77770a6e54462b4694cf82f,Lory Utz,provisional_record_group,Individual,ROSEBURG,OR
+orestar-20250101-20260927-v1,5793365,15109,2026-08-11,2026-09-03,57500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793187,15109,2026-08-12,2026-09-03,10000,individual,record:fdebc5aa256420783fe47685,Kristin Ohlson,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793366,15109,2026-08-12,2026-09-03,17500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793189,15109,2026-08-13,2026-09-03,10000,individual,record:658e34bbacc99eb940e45e9e,Donald Powell,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793190,15109,2026-08-13,2026-09-03,10000,individual,record:e64045b8626b0e88fd57a0ee,Chuck Sheketoff,provisional_record_group,Individual,SILVERTON,OR
+orestar-20250101-20260927-v1,5793191,15109,2026-08-13,2026-09-03,35000,individual,record:68b95de553e03ae143083ec8,Penny Dodge,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793192,15109,2026-08-13,2026-09-03,35000,individual,record:4a2df0c6830b57716efc2b9d,Al Niknabard,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793193,15109,2026-08-14,2026-09-03,25000,individual,record:da209d7c12901255e2dd0713,Elinor Gollay,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793215,15109,2026-08-14,2026-09-03,35000,individual,record:807df8bea660718fe38228bb,Blaise Scollard,provisional_record_group,Individual,PORTLADN,OR
+orestar-20250101-20260927-v1,5793367,15109,2026-08-14,2026-09-03,1500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793368,15109,2026-08-15,2026-09-03,20000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793369,15109,2026-08-16,2026-09-03,15000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793207,15109,2026-08-17,2026-09-03,15000,individual,record:5a6bcd76c05bbafa00048200,Carol Turner,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793208,15109,2026-08-17,2026-09-03,25000,individual,record:ab38952185cafb3766055cc7,Julia Brim-Edwards,provisional_record_group,Individual,"PORTLAND, OR, USA",OR
+orestar-20250101-20260927-v1,5793370,15109,2026-08-17,2026-09-03,28000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793371,15109,2026-08-18,2026-09-03,17000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793372,15109,2026-08-19,2026-09-03,22500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793232,15109,2026-08-20,2026-09-03,15000,individual,record:fdebc5aa256420783fe47685,Kristin Ohlson,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793236,15109,2026-08-20,2026-09-03,35000,individual,record:d9e2a068de08a8ca153748bf,Sonya Fischer,provisional_record_group,Individual,LAKE OSWEGO,OR
+orestar-20250101-20260927-v1,5793237,15109,2026-08-20,2026-09-03,25000,individual,record:8f16c9e3180cba389310f960,Jonathan Radmacher,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793238,15109,2026-08-20,2026-09-03,25000,individual,record:eba17c3c3279939dc848f14e,Charles Robinowitz,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793239,15109,2026-08-20,2026-09-03,2500,individual,record:d8f384dcef1640f034f815ba,John May,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793242,15109,2026-08-20,2026-09-03,10000,individual,record:24db6e92344eaa2c47a690b9,Robin Corrigan,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793244,15109,2026-08-20,2026-09-03,10000,individual,record:43e753a185513e6cd26785f5,Carla Kelley,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793246,15109,2026-08-20,2026-09-03,35000,individual,record:68acaa1b725499ff65098042,Dan Lavey,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793373,15109,2026-08-20,2026-09-03,35000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793230,15109,2026-08-21,2026-09-03,5000,individual,record:48dff4a59fd1031a2993edab,Nancy Becker,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793245,15109,2026-08-21,2026-09-03,25000,individual,record:4bbd28b1b289fde46c35b849,Ashley Henry,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793318,15109,2026-08-21,2026-09-03,35000,individual,record:a5e74ff6141643946c0592e4,Greg Goodman,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793374,15109,2026-08-21,2026-09-03,37500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793320,15109,2026-08-22,2026-09-03,35000,individual,record:f4897006f66c785064b28702,Pamela Knowles,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793321,15109,2026-08-22,2026-09-03,25000,individual,record:0eab65c5d88f1f20e8c41f4f,Jeff Smith,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793375,15109,2026-08-22,2026-09-03,10000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793376,15109,2026-08-23,2026-09-03,25000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793322,15109,2026-08-24,2026-09-03,1000,individual,record:650c42f956655826a6553911,Dale Lambert,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793377,15109,2026-08-24,2026-09-03,40000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793379,15109,2026-08-25,2026-09-03,17500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793324,15109,2026-08-26,2026-09-03,25000,individual,record:fac20cf3b6868904c60de817,Paul Gunderson,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793380,15109,2026-08-26,2026-09-03,10000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793281,15109,2026-08-27,2026-09-03,15000,individual,record:968e4201e47b34b4f1c08559,Mary Scurlock Adamson,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793326,15109,2026-08-27,2026-09-03,20000,individual,record:a45aeb154ab7a18f9fe17bba,David Vernier,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793327,15109,2026-08-27,2026-09-03,5000,individual,record:390ec497bda983823e5c77ae,John Barlow,provisional_record_group,Individual,CORVALLIS,OR
+orestar-20250101-20260927-v1,5793328,15109,2026-08-27,2026-09-03,10000,individual,record:b26c4f54423aa0532685f588,Gay Greger,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793330,15109,2026-08-27,2026-09-03,10000,individual,record:3df9b4ab794da1476bc2f8f3,Thomas Imeson,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793331,15109,2026-08-27,2026-09-03,10000,individual,record:1e4fa5872bad821ec956dc18,Patricia Greenfield,provisional_record_group,Individual,"PORTLAND, OR",OR
+orestar-20250101-20260927-v1,5793333,15109,2026-08-27,2026-09-03,10000,individual,record:650c42f956655826a6553911,Dale Lambert,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793335,15109,2026-08-27,2026-09-03,35000,individual,record:6bce10cdc2bdb5af8a6fbf20,Ross Lienhart,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793381,15109,2026-08-27,2026-09-03,103000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793382,15109,2026-08-28,2026-09-03,33500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830278,15109,2026-08-28,2026-09-25,35000,committee,committee:80,Joint Council of Teamsters No. 37 Political Fund (80),authoritative_committee_id,Political Committee,PORTLAND,OR
+orestar-20250101-20260927-v1,5793383,15109,2026-08-29,2026-09-03,7500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793338,15109,2026-08-30,2026-09-03,35000,individual,record:3cebc38aad11ac4ade095bd4,Sue Kelly,provisional_record_group,Individual,BEND,OR
+orestar-20250101-20260927-v1,5793384,15109,2026-08-30,2026-09-03,11800,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793340,15109,2026-08-31,2026-09-03,35000,individual,record:2439366f721be12a60951287,Anita Chan,provisional_record_group,Individual,LAKE OSWEGO,OR
+orestar-20250101-20260927-v1,5793385,15109,2026-08-31,2026-09-03,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5793345,15109,2026-09-01,2026-09-03,10000,individual,record:9a2df4e0f427509326360dd7,Susan Ferguson,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5793386,15109,2026-09-02,2026-09-03,19500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830569,15109,2026-09-04,2026-09-25,12500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830570,15109,2026-09-05,2026-09-25,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830571,15109,2026-09-06,2026-09-25,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830257,15109,2026-09-07,2026-09-25,25000,individual,record:7d8464b01ecac26d1268f2ea,Adam Davis,provisional_record_group,Individual,MILWAUKIE,OR
+orestar-20250101-20260927-v1,5830572,15109,2026-09-07,2026-09-25,10000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830259,15109,2026-09-08,2026-09-25,10000,individual,record:786b090b5d95152823f462be,Kathleen Shriver,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830261,15109,2026-09-08,2026-09-25,35000,individual,record:4cde395f3f3f068b691406c8,Keith Wilson,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830573,15109,2026-09-08,2026-09-25,12000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830574,15109,2026-09-09,2026-09-25,12500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830575,15109,2026-09-10,2026-09-25,30000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830284,15109,2026-09-11,2026-09-25,7000,individual,record:650c42f956655826a6553911,Dale Lambert,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830287,15109,2026-09-11,2026-09-25,35000,committee,committee:21625,IBEW Local 48 Small Donor PAC (21625),authoritative_committee_id,Political Committee,PORTLAND,OR
+orestar-20250101-20260927-v1,5830294,15109,2026-09-11,2026-09-25,35000,individual,record:7b5166203b323cc27714c26e,Mary (Mitzi) Scott,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830576,15109,2026-09-11,2026-09-25,17500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830577,15109,2026-09-12,2026-09-25,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830578,15109,2026-09-13,2026-09-25,5000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830579,15109,2026-09-14,2026-09-25,8000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830320,15109,2026-09-15,2026-09-25,10000,individual,record:658e34bbacc99eb940e45e9e,Donald Powell,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830323,15109,2026-09-15,2026-09-25,25000,individual,record:28c7f0ab292bb126a1c94a03,Rebecca Harmon,provisional_record_group,Individual,ARLINGTON,VA
+orestar-20250101-20260927-v1,5830326,15109,2026-09-15,2026-09-25,10000,individual,record:981f1928f0112bdde3fcd7a0,Henry Lazenby,provisional_record_group,Individual,HILLSBORO,OR
+orestar-20250101-20260927-v1,5830328,15109,2026-09-15,2026-09-25,10000,individual,record:83483f04b16f3a409320f8d2,Daniel Pope,provisional_record_group,Individual,EUGENE,OR
+orestar-20250101-20260927-v1,5830580,15109,2026-09-15,2026-09-25,27000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830348,15109,2026-09-16,2026-09-25,10000,individual,record:7d54aba0affd8214ad6298c9,Tim Sheils,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830353,15109,2026-09-16,2026-09-25,35000,individual,record:ac9a31592abb3ad5f9e54ef7,Michael Powell,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830354,15109,2026-09-16,2026-09-25,35000,individual,record:59230cb83899cadd978220d9,Jules Bailey,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830581,15109,2026-09-16,2026-09-25,41500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830358,15109,2026-09-17,2026-09-25,2500,individual,record:e8a4d0d98b9519a97ecaca53,Richard Peppers,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830360,15109,2026-09-17,2026-09-25,7000,individual,record:650c42f956655826a6553911,Dale Lambert,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830582,15109,2026-09-17,2026-09-25,34000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830583,15109,2026-09-18,2026-09-25,7500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830584,15109,2026-09-19,2026-09-25,2500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830585,15109,2026-09-20,2026-09-25,17500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830383,15109,2026-09-21,2026-09-25,5000,individual,record:48dff4a59fd1031a2993edab,Nancy Becker,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830477,15109,2026-09-21,2026-09-25,32500,individual,record:dad052b4dab049bd836ed3cb,Betsy Johnson,provisional_record_group,Individual,SCAPPOOSE,OR
+orestar-20250101-20260927-v1,5830586,15109,2026-09-21,2026-09-25,25000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830422,15109,2026-09-22,2026-09-25,20000,individual,record:aeed4217f652dc9fb71b93f6,Robert Bonaparte,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830437,15109,2026-09-22,2026-09-25,10000,individual,record:a78fb75fff5e4eafe20fd24d,Merilee Karr,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830443,15109,2026-09-22,2026-09-25,7500,individual,record:7d8ae718d5704566c113e5af,Bob Weinstein,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830445,15109,2026-09-22,2026-09-25,5000,individual,record:ad581621f748db2031354777,Elliot Leonard,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830447,15109,2026-09-22,2026-09-25,20000,individual,record:5f1ecfc3df8eb4a8f40fd64e,Jean Butcher,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830449,15109,2026-09-22,2026-09-25,10000,individual,record:73518f4f9131927d7cf3dc0e,Marc Parks,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830451,15109,2026-09-22,2026-09-25,25000,individual,record:eae67e03b132102962877a4b,Suzanne Bishop,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830453,15109,2026-09-22,2026-09-25,10000,individual,record:94f6a2d470ff4ba845de14c3,Martin Kehoe,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830457,15109,2026-09-22,2026-09-25,35000,individual,record:989f6db06b13cb1e62596283,Hala Gores,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830587,15109,2026-09-22,2026-09-25,78000,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830482,15109,2026-09-23,2026-09-25,25000,individual,record:682f830f843b2a8f29a6cb8a,Dan Rowan,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830522,15109,2026-09-23,2026-09-25,25000,individual,record:d12ddc874cf5040b04070bd4,Randall Edwards,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830588,15109,2026-09-23,2026-09-25,78600,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830517,15109,2026-09-24,2026-09-25,5000,individual,record:8f16c9e3180cba389310f960,Jonathan Radmacher,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830526,15109,2026-09-24,2026-09-25,5000,individual,record:27dfac4ec7d51f8875828060,Marsha Hanchrow,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830527,15109,2026-09-24,2026-09-25,5000,individual,record:956a356004ec11b4a03f80aa,Doug Klotz,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830532,15109,2026-09-24,2026-09-25,500,individual,record:650c42f956655826a6553911,Dale Lambert,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830533,15109,2026-09-24,2026-09-25,35000,individual,record:1d7dfc56556c9fa105c23abb,Homer Williams,provisional_record_group,Individual,PORTLAND,OR
+orestar-20250101-20260927-v1,5830589,15109,2026-09-24,2026-09-25,44500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,
+orestar-20250101-20260927-v1,5830590,15109,2026-09-25,2026-09-25,32500,unidentified,disclosure:15109:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,disclosure_category,Unspecified,,

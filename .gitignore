@@ -74,3 +74,10 @@ runtime-data/
 # (the published libraries deep-dive) stay tracked; add a new published
 # report deliberately with `git add -f`.
 /reports/
+
+# Campaign finance: only the reviewed, minimized server-data bundle is public.
+/research/campaign-finance/
+/output/
+/tmp/
+/.next-campaign-finance/
+ingest/orestar/analysis/__pycache__/

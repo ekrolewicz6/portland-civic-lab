@@ -1,0 +1,26 @@
+{
+  "snapshot": "orestar-20250101-20260928-787cf45dc908",
+  "start": "2025-01-01",
+  "end": "2026-09-28",
+  "rows": 317095,
+  "semantics_version": "financial-bases-v1",
+  "completeness_verified": false,
+  "database": "server-data/campaign-finance/finance.duckdb",
+  "database_sha256": "d292995b9c0703ea56080689219fdae6c716918d7a105b3c00c690120f48082b",
+  "source_files": [
+    {
+      "sha256": "af941a5a33884de19f47e56cfbaa04ad972062c67746da683f6679ed07a7bb53",
+      "retrieval_end": "2026-09-27T20:42:49.868Z"
+    },
+    {
+      "sha256": "129c673acff441295b47e6e99f52d6e1f9e350a57d8ab0137aca364869546790",
+      "retrieval_end": "2026-09-27T21:08:16.259Z"
+    },
+    {
+      "sha256": "71a07449b63563126ae66c2dc3a96b1219b56ac64a5b7ad7abade9d04d097140",
+      "retrieval_end": "2026-09-28T18:33:19.914Z",
+      "method": "user_supplied_manual_export",
+      "new_rows": 169
+    }
+  ]
+}

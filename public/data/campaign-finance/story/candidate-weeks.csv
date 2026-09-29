@@ -1,0 +1,1548 @@
+committee_id,candidate,district,week_start,cash_cents,public_cents,nonmatching_cents,unidentified_cents,individual_itemized_cents,cash_records,individual_records,visible_groups,cash_payment_cents,refund_cents,provisional,left_truncated
+23208,Tiffany Koyama Lane,3,2024-12-30,9600,0,9600,9600,0,1,0,0,7179,0,False,True
+23028,Angelita Morillo,3,2024-12-30,6200,0,6200,6200,0,1,0,0,6428,0,False,True
+15109,Steve Novick,3,2024-12-30,1000,0,1000,1000,0,1,0,0,8090,0,False,True
+24661,Tom Sollitt,3,2024-12-30,0,0,0,0,0,0,0,0,0,0,False,True
+24897,Kellie Torres,3,2024-12-30,0,0,0,0,0,0,0,0,0,0,False,True
+24973,Esther León,3,2024-12-30,0,0,0,0,0,0,0,0,0,0,False,True
+24972,Joel Corcoran,3,2024-12-30,0,0,0,0,0,0,0,0,0,0,False,True
+24966,Matthias Hallett,3,2024-12-30,0,0,0,0,0,0,0,0,0,0,False,True
+24979,Cristal Otero,3,2024-12-30,0,0,0,0,0,0,0,0,0,0,False,True
+23295,Eli Arnold,4,2024-12-30,0,0,0,0,0,0,0,0,24870,0,False,True
+23365,Mitch Green,4,2024-12-30,2100,0,2100,2100,0,1,0,0,84,0,False,True
+17629,Eric Zimmerman,4,2024-12-30,1000,0,1000,1000,0,1,0,0,0,0,False,True
+23199,Olivia Clark,4,2024-12-30,1000,0,1000,1000,0,1,0,0,0,0,False,True
+23411,Jeremy Beausoleil Smith,4,2024-12-30,0,0,0,0,0,0,0,0,0,0,False,True
+25040,Jamey Evenstar,4,2024-12-30,0,0,0,0,0,0,0,0,0,0,False,True
+25103,Jayne Cronlund,4,2024-12-30,0,0,0,0,0,0,0,0,0,0,False,True
+24615,John J Goldsmith,4,2024-12-30,0,0,0,0,0,0,0,0,0,0,False,True
+23208,Tiffany Koyama Lane,3,2025-01-06,6500,0,6500,6500,0,1,0,0,126725,0,False,False
+23028,Angelita Morillo,3,2025-01-06,1000,0,1000,1000,0,1,0,0,39681,0,False,False
+15109,Steve Novick,3,2025-01-06,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-01-06,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-01-06,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-01-06,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-01-06,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-01-06,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-01-06,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-01-06,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-01-06,131600,0,131600,26600,105000,6,3,3,5202,0,False,False
+17629,Eric Zimmerman,4,2025-01-06,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-01-06,50000,0,50000,0,0,1,0,1,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-01-06,0,0,0,0,0,0,0,0,1995,0,False,False
+25040,Jamey Evenstar,4,2025-01-06,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-01-06,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-01-06,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-01-13,600,0,600,600,0,1,0,0,3384,0,False,False
+23028,Angelita Morillo,3,2025-01-13,3000,0,3000,3000,0,1,0,0,11119,0,False,False
+15109,Steve Novick,3,2025-01-13,2000,0,2000,2000,0,1,0,0,39266,0,False,False
+24661,Tom Sollitt,3,2025-01-13,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-01-13,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-01-13,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-01-13,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-01-13,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-01-13,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-01-13,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-01-13,0,0,0,0,0,0,0,0,36500,0,False,False
+17629,Eric Zimmerman,4,2025-01-13,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-01-13,50000,0,50000,0,50000,2,2,1,5816,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-01-13,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-01-13,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-01-13,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-01-13,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-01-20,5150,0,5150,5150,0,1,0,0,10244,0,False,False
+23028,Angelita Morillo,3,2025-01-20,3500,0,3500,3500,0,1,0,0,139,0,False,False
+15109,Steve Novick,3,2025-01-20,0,0,0,0,0,0,0,0,4987,0,False,False
+24661,Tom Sollitt,3,2025-01-20,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-01-20,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-01-20,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-01-20,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-01-20,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-01-20,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-01-20,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-01-20,4500,0,4500,4500,0,1,0,0,15998,0,False,False
+17629,Eric Zimmerman,4,2025-01-20,0,0,0,0,0,0,0,0,35,0,False,False
+23199,Olivia Clark,4,2025-01-20,0,0,0,0,0,0,0,0,56785,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-01-20,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-01-20,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-01-20,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-01-20,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-01-27,500,0,500,500,0,1,0,0,66490,0,False,False
+23028,Angelita Morillo,3,2025-01-27,3700,0,3700,3700,0,1,0,0,28147,0,False,False
+15109,Steve Novick,3,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-01-27,5150,0,5150,5150,0,1,0,0,8017,0,False,False
+17629,Eric Zimmerman,4,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-01-27,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-02-03,6369,0,6369,6369,0,1,0,0,250998,0,False,False
+23028,Angelita Morillo,3,2025-02-03,2769,0,2769,2769,0,1,0,0,6305,0,False,False
+15109,Steve Novick,3,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-02-03,3500,0,3500,3500,0,1,0,0,139,0,False,False
+17629,Eric Zimmerman,4,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-02-03,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-02-10,2793,0,2793,2793,0,1,0,0,6784,0,False,False
+23028,Angelita Morillo,3,2025-02-10,3192,0,3192,3192,0,1,0,0,11127,0,False,False
+15109,Steve Novick,3,2025-02-10,0,0,0,0,0,0,0,0,14666,0,False,False
+24661,Tom Sollitt,3,2025-02-10,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-02-10,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-02-10,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-02-10,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-02-10,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-02-10,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-02-10,0,0,0,0,0,0,0,0,4583,0,False,False
+23365,Mitch Green,4,2025-02-10,18869,0,18869,18869,0,1,0,0,43247,0,False,False
+17629,Eric Zimmerman,4,2025-02-10,0,0,0,0,0,0,0,0,7000,0,False,False
+23199,Olivia Clark,4,2025-02-10,0,0,0,0,0,0,0,0,13000,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-02-10,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-02-10,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-02-10,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-02-10,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-02-17,2500,0,2500,2500,0,1,0,0,7779,0,False,False
+23028,Angelita Morillo,3,2025-02-17,3500,0,3500,3500,0,1,0,0,139,0,False,False
+15109,Steve Novick,3,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-02-17,192,0,192,192,0,1,0,0,8,0,False,False
+17629,Eric Zimmerman,4,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-02-17,2000,0,2000,2000,0,1,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-02-17,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-02-24,1500,0,1500,1500,0,1,0,0,8514,0,False,False
+23028,Angelita Morillo,3,2025-02-24,2200,0,2200,2200,0,1,0,0,2302,0,False,False
+15109,Steve Novick,3,2025-02-24,2000,0,2000,2000,0,1,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-02-24,7000,0,7000,7000,0,1,0,0,277,0,False,False
+17629,Eric Zimmerman,4,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-02-24,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-03-03,4885,0,4885,4885,0,1,0,0,10041,0,False,False
+23028,Angelita Morillo,3,2025-03-03,2385,0,2385,2385,0,1,0,0,6290,0,False,False
+15109,Steve Novick,3,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-03-03,4500,0,4500,4500,0,1,0,0,179,0,False,False
+17629,Eric Zimmerman,4,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-03-03,0,0,0,0,0,0,0,0,70,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-03-03,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-03-10,2793,0,2793,2793,0,1,0,0,112,0,False,False
+23028,Angelita Morillo,3,2025-03-10,3192,0,3192,3192,0,1,0,0,11127,0,False,False
+15109,Steve Novick,3,2025-03-10,0,0,0,0,0,0,0,0,70,0,False,False
+24661,Tom Sollitt,3,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-03-10,2385,0,2385,2385,0,1,0,0,95,0,False,False
+17629,Eric Zimmerman,4,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-03-10,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-03-17,2500,0,2500,2500,0,1,0,0,9140,0,False,False
+23028,Angelita Morillo,3,2025-03-17,2500,0,2500,2500,0,1,0,0,99,0,False,False
+15109,Steve Novick,3,2025-03-17,0,0,0,0,0,0,0,0,5500,0,False,False
+24661,Tom Sollitt,3,2025-03-17,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-03-17,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-03-17,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-03-17,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-03-17,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-03-17,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-03-17,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-03-17,192,0,192,192,0,1,0,0,19508,0,False,False
+17629,Eric Zimmerman,4,2025-03-17,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-03-17,0,0,0,0,0,0,0,0,5500,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-03-17,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-03-17,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-03-17,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-03-17,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-03-24,1000,0,1000,1000,0,1,0,0,88740,0,False,False
+23028,Angelita Morillo,3,2025-03-24,500,0,500,500,0,1,0,0,41320,0,False,False
+15109,Steve Novick,3,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-03-24,5000,0,5000,5000,0,1,0,0,198,0,False,False
+17629,Eric Zimmerman,4,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-03-24,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-03-31,2500,0,2500,2500,0,1,0,0,16490,0,False,False
+23028,Angelita Morillo,3,2025-03-31,2700,0,2700,2700,0,1,0,0,6302,0,False,False
+15109,Steve Novick,3,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-03-31,3500,0,3500,1000,2500,2,1,1,139,0,False,False
+17629,Eric Zimmerman,4,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-03-31,5000,0,5000,5000,0,1,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-03-31,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-04-07,2000,0,2000,2000,0,1,0,0,8833,0,False,False
+23028,Angelita Morillo,3,2025-04-07,500,0,500,500,0,1,0,0,20,0,False,False
+15109,Steve Novick,3,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-04-07,3000,0,3000,3000,0,1,0,0,119,8000,False,False
+17629,Eric Zimmerman,4,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-04-07,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-04-14,2500,0,2500,2500,0,1,0,0,4418,0,False,False
+23028,Angelita Morillo,3,2025-04-14,2500,0,2500,2500,0,1,0,0,11099,0,False,False
+15109,Steve Novick,3,2025-04-14,0,0,0,0,0,0,0,0,5500,0,False,False
+24661,Tom Sollitt,3,2025-04-14,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-04-14,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-04-14,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-04-14,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-04-14,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-04-14,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-04-14,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-04-14,0,0,0,0,0,0,0,0,19500,0,False,False
+17629,Eric Zimmerman,4,2025-04-14,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-04-14,0,0,0,0,0,0,0,0,175,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-04-14,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-04-14,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-04-14,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-04-14,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-04-21,1000,0,1000,1000,0,1,0,0,3638,0,False,False
+23028,Angelita Morillo,3,2025-04-21,2500,0,2500,2500,0,1,0,0,99,0,False,False
+15109,Steve Novick,3,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-04-21,5000,0,5000,5000,0,1,0,0,198,0,False,False
+17629,Eric Zimmerman,4,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-04-21,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-04-28,0,0,0,0,0,0,0,0,12970,0,False,False
+23028,Angelita Morillo,3,2025-04-28,1200,0,1200,1200,0,1,0,0,22244,0,False,False
+15109,Steve Novick,3,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-04-28,1000,0,1000,1000,0,1,0,0,40,0,False,False
+17629,Eric Zimmerman,4,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-04-28,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-05-05,2000,0,2000,2000,0,1,0,0,250,0,False,False
+23028,Angelita Morillo,3,2025-05-05,2000,0,2000,2000,0,1,0,0,80,0,False,False
+15109,Steve Novick,3,2025-05-05,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-05-05,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-05-05,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-05-05,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-05-05,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-05-05,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-05-05,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-05-05,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-05-05,0,0,0,0,0,0,0,0,19666,0,False,False
+17629,Eric Zimmerman,4,2025-05-05,50000,0,50000,0,0,1,0,1,0,0,False,False
+23199,Olivia Clark,4,2025-05-05,0,0,0,0,0,0,0,0,5500,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-05-05,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-05-05,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-05-05,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-05-05,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-05-12,170000,0,170000,0,170000,4,4,2,8939,0,False,False
+23028,Angelita Morillo,3,2025-05-12,500,0,500,500,0,1,0,0,11020,0,False,False
+15109,Steve Novick,3,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-05-12,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-05-19,0,0,0,0,0,0,0,0,9621,0,False,False
+23028,Angelita Morillo,3,2025-05-19,2500,0,2500,0,2500,1,1,1,99,0,False,False
+15109,Steve Novick,3,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-05-19,50000,0,50000,0,0,1,0,1,0,0,False,False
+23199,Olivia Clark,4,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-05-19,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-05-26,0,0,0,0,0,0,0,0,20000,0,False,False
+23028,Angelita Morillo,3,2025-05-26,500,0,500,500,0,1,0,0,20,0,False,False
+15109,Steve Novick,3,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-05-26,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-06-02,2000,0,2000,0,2000,1,1,1,16037,0,False,False
+23028,Angelita Morillo,3,2025-06-02,2700,0,2700,2700,0,1,0,0,13336,0,False,False
+15109,Steve Novick,3,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-06-02,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-06-09,0,0,0,0,0,0,0,0,250,0,False,False
+23028,Angelita Morillo,3,2025-06-09,500,0,500,500,0,1,0,0,27620,0,False,False
+15109,Steve Novick,3,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-06-09,0,0,0,0,0,0,0,0,5500,0,False,False
+17629,Eric Zimmerman,4,2025-06-09,0,0,0,0,0,0,0,0,5500,0,False,False
+23199,Olivia Clark,4,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-06-09,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-06-16,0,0,0,0,0,0,0,0,600,0,False,False
+23028,Angelita Morillo,3,2025-06-16,2500,0,2500,0,2500,1,1,1,11099,0,False,False
+15109,Steve Novick,3,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-06-16,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+23028,Angelita Morillo,3,2025-06-23,500,0,500,500,0,1,0,0,20,0,False,False
+15109,Steve Novick,3,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-06-23,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-06-30,2000,0,2000,2000,0,1,0,0,11559,0,False,False
+23028,Angelita Morillo,3,2025-06-30,2000,0,2000,2000,0,1,0,0,6272,0,False,False
+15109,Steve Novick,3,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-06-30,10000,0,10000,10000,0,1,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-06-30,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-07-07,0,0,0,0,0,0,0,0,250,0,False,False
+23028,Angelita Morillo,3,2025-07-07,500,0,500,500,0,1,0,0,20,0,False,False
+15109,Steve Novick,3,2025-07-07,25000,0,25000,0,0,1,0,1,0,0,False,False
+24661,Tom Sollitt,3,2025-07-07,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-07-07,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-07-07,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-07-07,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-07-07,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-07-07,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-07-07,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-07-07,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-07-07,50000,0,50000,0,0,1,0,1,0,0,False,False
+23199,Olivia Clark,4,2025-07-07,25000,0,25000,0,0,1,0,1,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-07-07,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-07-07,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-07-07,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-07-07,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+23028,Angelita Morillo,3,2025-07-14,0,0,0,0,0,0,0,0,25072,0,False,False
+15109,Steve Novick,3,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-07-14,0,0,0,0,0,0,0,0,0,2000,False,False
+17629,Eric Zimmerman,4,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-07-14,30000,0,30000,0,30000,1,1,1,350,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-07-14,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-07-21,35000,0,35000,0,35000,1,1,1,18818,0,False,False
+23028,Angelita Morillo,3,2025-07-21,37500,0,37500,0,37500,2,2,2,31482,0,False,False
+15109,Steve Novick,3,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-07-21,50000,0,50000,0,0,1,0,1,0,0,False,False
+23199,Olivia Clark,4,2025-07-21,30000,0,30000,0,30000,1,1,1,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-07-21,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-07-28,0,0,0,0,0,0,0,0,7548,0,False,False
+23028,Angelita Morillo,3,2025-07-28,500,0,500,500,0,1,0,0,20,0,False,False
+15109,Steve Novick,3,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-07-28,5000,0,5000,5000,0,1,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-07-28,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-08-04,2000,0,2000,2000,0,1,0,0,33829,0,False,False
+23028,Angelita Morillo,3,2025-08-04,1000,0,1000,1000,0,1,0,0,6232,0,False,False
+15109,Steve Novick,3,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-08-04,35000,0,35000,0,35000,1,1,1,2275,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-08-04,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-08-11,0,0,0,0,0,0,0,0,2685,0,False,False
+23028,Angelita Morillo,3,2025-08-11,500,0,500,500,0,1,0,0,11020,0,False,False
+15109,Steve Novick,3,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-08-11,0,0,0,0,0,0,0,0,5500,0,False,False
+23199,Olivia Clark,4,2025-08-11,0,0,0,0,0,0,0,0,11589,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-08-11,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-08-18,35000,0,35000,0,35000,1,1,1,0,0,False,False
+23028,Angelita Morillo,3,2025-08-18,37500,0,37500,0,37500,2,2,2,1482,0,False,False
+15109,Steve Novick,3,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-08-18,769112,0,769112,361612,407500,17,13,12,30421,0,False,False
+17629,Eric Zimmerman,4,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-08-18,125000,0,125000,2500,122500,4,3,2,1225,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-08-18,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-08-25,1000,0,1000,1000,0,1,0,0,585,0,False,False
+23028,Angelita Morillo,3,2025-08-25,1000,0,1000,1000,0,1,0,0,7076,0,False,False
+15109,Steve Novick,3,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-08-25,13500,0,13500,13500,0,2,0,0,17415,0,False,False
+17629,Eric Zimmerman,4,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-08-25,70000,0,70000,0,70000,2,2,2,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-08-25,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-09-01,2000,0,2000,2000,0,1,0,0,10398,0,False,False
+23028,Angelita Morillo,3,2025-09-01,1000,0,1000,1000,0,1,0,0,41237,0,False,False
+15109,Steve Novick,3,2025-09-01,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-09-01,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-09-01,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-09-01,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-09-01,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-09-01,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-09-01,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-09-01,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-09-01,15000,0,15000,15000,0,4,0,0,594,0,False,False
+17629,Eric Zimmerman,4,2025-09-01,24500,0,24500,24500,0,1,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-09-01,109500,0,109500,49500,60000,6,2,2,3762,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-09-01,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-09-01,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-09-01,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-09-01,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-09-08,478500,0,478500,378500,100000,11,7,6,27659,0,False,False
+23028,Angelita Morillo,3,2025-09-08,500,0,500,500,0,1,0,0,20,0,False,False
+15109,Steve Novick,3,2025-09-08,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-09-08,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-09-08,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-09-08,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-09-08,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-09-08,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-09-08,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-09-08,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-09-08,9400,0,9400,9400,0,3,0,0,372,0,False,False
+17629,Eric Zimmerman,4,2025-09-08,2000,0,2000,2000,0,1,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-09-08,85000,0,85000,25000,60000,4,2,2,13089,2500,False,False
+23411,Jeremy Beausoleil Smith,4,2025-09-08,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-09-08,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-09-08,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-09-08,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-09-15,77500,0,77500,72500,5000,7,1,1,28883,10000,False,False
+23028,Angelita Morillo,3,2025-09-15,0,0,0,0,0,0,0,0,19000,0,False,False
+15109,Steve Novick,3,2025-09-15,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-09-15,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-09-15,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-09-15,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-09-15,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-09-15,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-09-15,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-09-15,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-09-15,85700,0,85700,33200,52500,7,2,2,3391,0,False,False
+17629,Eric Zimmerman,4,2025-09-15,12500,0,12500,12500,0,1,0,0,927,0,False,False
+23199,Olivia Clark,4,2025-09-15,220000,0,220000,75000,95000,11,3,4,7332,35000,False,False
+23411,Jeremy Beausoleil Smith,4,2025-09-15,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-09-15,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-09-15,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-09-15,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-09-22,48700,0,48700,33700,15000,5,1,1,8983,0,False,False
+23028,Angelita Morillo,3,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+15109,Steve Novick,3,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-09-22,1600,0,1600,1600,0,2,0,0,64,0,False,False
+17629,Eric Zimmerman,4,2025-09-22,70000,0,70000,0,70000,2,2,2,0,0,False,False
+23199,Olivia Clark,4,2025-09-22,145000,0,145000,10000,135000,7,4,4,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-09-22,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-09-29,119000,0,119000,49000,70000,8,1,1,12759,2500,False,False
+23028,Angelita Morillo,3,2025-09-29,1500,0,1500,1500,0,1,0,0,6274,0,False,False
+15109,Steve Novick,3,2025-09-29,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-09-29,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-09-29,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-09-29,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-09-29,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-09-29,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-09-29,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-09-29,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-09-29,15500,0,15500,15500,0,3,0,0,613,0,False,False
+17629,Eric Zimmerman,4,2025-09-29,0,0,0,0,0,0,0,0,2887,0,False,False
+23199,Olivia Clark,4,2025-09-29,25500,0,25500,25500,0,3,0,0,8242,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-09-29,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-09-29,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-09-29,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-09-29,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-10-06,72000,0,72000,37000,35000,4,1,1,425317,0,False,False
+23028,Angelita Morillo,3,2025-10-06,5100,0,5100,5100,0,1,0,0,202,0,False,False
+15109,Steve Novick,3,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-10-06,50000,0,50000,0,0,1,0,1,0,0,False,False
+23199,Olivia Clark,4,2025-10-06,130000,0,130000,30000,0,6,0,2,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-10-06,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-10-13,2500,0,2500,2500,0,1,0,0,28249,0,False,False
+23028,Angelita Morillo,3,2025-10-13,10000,0,10000,10000,0,1,0,0,11815,0,False,False
+15109,Steve Novick,3,2025-10-13,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-10-13,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-10-13,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-10-13,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-10-13,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-10-13,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-10-13,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-10-13,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-10-13,50000,0,50000,0,50000,1,1,1,271975,0,False,False
+17629,Eric Zimmerman,4,2025-10-13,2500,0,2500,2500,0,1,0,0,11500,0,False,False
+23199,Olivia Clark,4,2025-10-13,111000,0,111000,61000,50000,6,2,2,59500,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-10-13,22500,0,22500,22500,0,4,0,0,890,0,False,False
+25040,Jamey Evenstar,4,2025-10-13,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-10-13,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-10-13,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-10-20,72500,0,72500,37500,35000,3,1,1,6787,0,False,False
+23028,Angelita Morillo,3,2025-10-20,35000,0,35000,0,35000,1,1,1,1383,0,False,False
+15109,Steve Novick,3,2025-10-20,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-10-20,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-10-20,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-10-20,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-10-20,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-10-20,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-10-20,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-10-20,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-10-20,55800,0,55800,18300,37500,4,2,2,2209,0,False,False
+17629,Eric Zimmerman,4,2025-10-20,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-10-20,115000,0,115000,40000,25000,6,1,2,2537,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-10-20,8000,0,8000,8000,0,2,0,0,317,0,False,False
+25040,Jamey Evenstar,4,2025-10-20,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-10-20,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-10-20,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-10-27,135226,0,135226,135226,0,7,0,0,23067,0,False,False
+23028,Angelita Morillo,3,2025-10-27,3000,0,3000,3000,0,1,0,0,119,0,False,False
+15109,Steve Novick,3,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+17629,Eric Zimmerman,4,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-10-27,168500,0,168500,63500,105000,9,4,4,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-10-27,27500,0,27500,27500,0,4,0,0,1090,0,False,False
+25040,Jamey Evenstar,4,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-10-27,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-11-03,102500,0,102500,102500,0,7,0,0,54231,0,False,False
+23028,Angelita Morillo,3,2025-11-03,3600,0,3600,2600,1000,2,1,1,27108,0,False,False
+15109,Steve Novick,3,2025-11-03,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-11-03,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-11-03,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-11-03,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-11-03,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-11-03,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-11-03,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-11-03,0,0,0,0,0,0,0,0,0,0,False,False
+23365,Mitch Green,4,2025-11-03,5500,0,5500,5500,0,3,0,0,219,0,False,False
+17629,Eric Zimmerman,4,2025-11-03,0,0,0,0,0,0,0,0,5587,0,False,False
+23199,Olivia Clark,4,2025-11-03,175000,0,175000,115000,60000,8,2,2,68232,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-11-03,2500,0,2500,2500,0,1,0,0,99,0,False,False
+25040,Jamey Evenstar,4,2025-11-03,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-11-03,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-11-03,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-11-10,130000,0,130000,105000,25000,7,1,1,146731,0,False,False
+23028,Angelita Morillo,3,2025-11-10,12000,0,12000,12000,0,1,0,0,618,0,False,False
+15109,Steve Novick,3,2025-11-10,2000,0,2000,2000,0,1,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-11-10,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-11-10,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-11-10,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-11-10,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-11-10,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-11-10,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-11-10,890600,0,890600,210600,645000,21,16,17,5600,0,False,False
+23365,Mitch Green,4,2025-11-10,11500,0,11500,11500,0,3,0,0,110456,0,False,False
+17629,Eric Zimmerman,4,2025-11-10,50000,0,50000,15000,35000,3,1,1,0,0,False,False
+23199,Olivia Clark,4,2025-11-10,290300,0,290300,120300,170000,11,5,5,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-11-10,5500,0,5500,5500,0,3,0,0,218,0,False,False
+25040,Jamey Evenstar,4,2025-11-10,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-11-10,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-11-10,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-11-17,222400,0,222400,87300,135100,12,6,6,23649,0,False,False
+23028,Angelita Morillo,3,2025-11-17,112600,0,112600,7500,105100,5,4,4,39850,0,False,False
+15109,Steve Novick,3,2025-11-17,0,0,0,0,0,0,0,0,70,0,False,False
+24661,Tom Sollitt,3,2025-11-17,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-11-17,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-11-17,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-11-17,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-11-17,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-11-17,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-11-17,253500,0,253500,88500,165000,12,5,5,22211,0,False,False
+23365,Mitch Green,4,2025-11-17,137300,0,137300,89700,47600,7,3,3,5432,0,False,False
+17629,Eric Zimmerman,4,2025-11-17,0,0,0,0,0,0,0,0,1750,0,False,False
+23199,Olivia Clark,4,2025-11-17,178500,0,178500,128500,50000,9,2,2,12827,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-11-17,7500,0,7500,7500,0,2,0,0,297,0,False,False
+25040,Jamey Evenstar,4,2025-11-17,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-11-17,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-11-17,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-11-24,30226,0,30226,30226,0,6,0,0,313499,0,False,False
+23028,Angelita Morillo,3,2025-11-24,19500,0,19500,4500,15000,2,1,1,3600,0,False,False
+15109,Steve Novick,3,2025-11-24,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-11-24,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-11-24,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-11-24,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-11-24,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-11-24,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-11-24,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-11-24,138500,0,138500,51000,87500,6,1,1,31900,0,False,False
+23365,Mitch Green,4,2025-11-24,19800,0,19800,4800,15000,4,1,1,784,0,False,False
+17629,Eric Zimmerman,4,2025-11-24,141000,0,141000,18500,122500,6,2,2,0,0,False,False
+23199,Olivia Clark,4,2025-11-24,162000,0,162000,39500,122500,7,2,2,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-11-24,31000,0,31000,6000,25000,2,1,1,1226,0,False,False
+25040,Jamey Evenstar,4,2025-11-24,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-11-24,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-11-24,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-12-01,23500,0,23500,21500,2000,6,1,1,29494,0,False,False
+23028,Angelita Morillo,3,2025-12-01,1100,0,1100,100,1000,2,1,1,6252,0,False,False
+15109,Steve Novick,3,2025-12-01,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2025-12-01,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-12-01,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-12-01,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-12-01,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-12-01,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-12-01,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-12-01,42000,0,42000,17000,25000,3,1,1,21717,0,False,False
+23365,Mitch Green,4,2025-12-01,183700,0,183700,141200,42500,7,3,3,34872,0,False,False
+17629,Eric Zimmerman,4,2025-12-01,10000,0,10000,10000,0,2,0,0,4935,0,False,False
+23199,Olivia Clark,4,2025-12-01,153700,0,153700,68500,85200,12,6,5,12757,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-12-01,12000,0,12000,12000,0,3,0,0,476,0,False,False
+25040,Jamey Evenstar,4,2025-12-01,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-12-01,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-12-01,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-12-08,131500,0,131500,34000,10000,6,1,2,10992,0,False,False
+23028,Angelita Morillo,3,2025-12-08,157100,0,157100,32000,125100,6,5,5,14365,0,False,False
+15109,Steve Novick,3,2025-12-08,25000,0,25000,0,25000,1,1,1,5500,0,False,False
+24661,Tom Sollitt,3,2025-12-08,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-12-08,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-12-08,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-12-08,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-12-08,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-12-08,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-12-08,318500,0,318500,248500,70000,8,3,3,125500,0,False,False
+23365,Mitch Green,4,2025-12-08,264200,0,264200,19200,157500,8,3,3,192143,2500,False,False
+17629,Eric Zimmerman,4,2025-12-08,2500,0,2500,2500,0,1,0,0,19500,0,False,False
+23199,Olivia Clark,4,2025-12-08,225945,0,225945,52000,173945,11,6,6,119500,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-12-08,7500,0,7500,7500,0,1,0,0,297,0,False,False
+25040,Jamey Evenstar,4,2025-12-08,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-12-08,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-12-08,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-12-15,34000,0,34000,34000,0,3,0,0,29505,0,False,False
+23028,Angelita Morillo,3,2025-12-15,27500,0,27500,7500,20000,2,1,1,11988,0,False,False
+15109,Steve Novick,3,2025-12-15,10000,0,10000,10000,0,1,0,0,1225,0,False,False
+24661,Tom Sollitt,3,2025-12-15,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-12-15,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-12-15,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-12-15,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-12-15,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-12-15,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-12-15,112500,0,112500,42500,70000,8,2,2,11760,0,False,False
+23365,Mitch Green,4,2025-12-15,24600,0,24600,7100,17500,9,7,7,976,0,False,False
+17629,Eric Zimmerman,4,2025-12-15,0,0,0,0,0,0,0,0,437,0,False,False
+23199,Olivia Clark,4,2025-12-15,238500,0,238500,178500,60000,7,2,2,13175,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-12-15,40500,0,40500,40500,0,4,0,0,1602,0,False,False
+25040,Jamey Evenstar,4,2025-12-15,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-12-15,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-12-15,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-12-22,88700,0,88700,16000,72700,5,3,3,355371,0,False,False
+23028,Angelita Morillo,3,2025-12-22,149000,0,149000,41500,20000,3,1,2,2435,0,False,False
+15109,Steve Novick,3,2025-12-22,401500,0,401500,79000,322500,14,10,8,0,0,False,False
+24661,Tom Sollitt,3,2025-12-22,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-12-22,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-12-22,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-12-22,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-12-22,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-12-22,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-12-22,30000,0,30000,30000,0,5,0,0,0,0,False,False
+23365,Mitch Green,4,2025-12-22,49500,0,49500,29500,20000,3,1,1,26351,0,False,False
+17629,Eric Zimmerman,4,2025-12-22,61300,0,61300,0,0,1,0,1,0,0,False,False
+23199,Olivia Clark,4,2025-12-22,30500,0,30500,15500,15000,4,1,1,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-12-22,500,0,500,500,0,1,0,0,20,0,False,False
+25040,Jamey Evenstar,4,2025-12-22,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-12-22,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-12-22,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2025-12-29,151226,0,151226,56226,95000,9,3,3,12387,0,False,False
+23028,Angelita Morillo,3,2025-12-29,228545,0,228545,88545,140000,7,4,4,15205,0,False,False
+15109,Steve Novick,3,2025-12-29,266000,0,266000,63500,202500,10,4,4,0,0,False,False
+24661,Tom Sollitt,3,2025-12-29,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2025-12-29,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2025-12-29,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2025-12-29,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2025-12-29,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2025-12-29,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2025-12-29,187000,0,187000,99500,87500,6,1,1,0,0,False,False
+23365,Mitch Green,4,2025-12-29,83500,0,83500,73500,10000,6,1,1,3210,0,False,False
+17629,Eric Zimmerman,4,2025-12-29,19500,0,19500,19500,0,3,0,0,0,0,False,False
+23199,Olivia Clark,4,2025-12-29,25000,0,25000,25000,0,4,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2025-12-29,15500,0,15500,15500,0,1,0,0,125613,0,False,False
+25040,Jamey Evenstar,4,2025-12-29,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2025-12-29,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2025-12-29,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-01-05,35000,0,35000,35000,0,5,0,0,11728,0,False,False
+23028,Angelita Morillo,3,2026-01-05,193100,0,193100,103100,90000,4,3,3,7637,0,False,False
+15109,Steve Novick,3,2026-01-05,95000,0,95000,25000,70000,4,2,2,80027,0,False,False
+24661,Tom Sollitt,3,2026-01-05,10000,0,10000,10000,0,1,0,0,0,0,False,False
+24897,Kellie Torres,3,2026-01-05,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2026-01-05,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-01-05,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-01-05,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-01-05,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-01-05,70500,0,70500,45500,25000,6,1,1,141520,0,False,False
+23365,Mitch Green,4,2026-01-05,150400,0,150400,50400,50000,7,1,2,115975,0,False,False
+17629,Eric Zimmerman,4,2026-01-05,0,0,0,0,0,0,0,0,20271,0,False,False
+23199,Olivia Clark,4,2026-01-05,5144500,5000000,144500,69500,75000,7,3,3,123264,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-01-05,33500,0,33500,33500,0,4,0,0,73323,0,False,False
+25040,Jamey Evenstar,4,2026-01-05,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-01-05,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-01-05,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-01-12,5094500,5000000,94500,39500,55000,10,2,2,35420,0,False,False
+23028,Angelita Morillo,3,2026-01-12,155500,0,155500,60500,45000,4,2,3,15176,0,False,False
+15109,Steve Novick,3,2026-01-12,80000,0,80000,55000,25000,5,1,1,0,0,False,False
+24661,Tom Sollitt,3,2026-01-12,4000,0,4000,4000,0,1,0,0,3987,0,False,False
+24897,Kellie Torres,3,2026-01-12,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2026-01-12,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-01-12,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-01-12,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-01-12,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-01-12,299500,0,299500,174500,125000,11,4,3,49600,10000,False,False
+23365,Mitch Green,4,2026-01-12,59500,0,59500,9500,50000,7,2,2,2353,50000,False,False
+17629,Eric Zimmerman,4,2026-01-12,37500,0,37500,2500,35000,2,1,1,0,0,False,False
+23199,Olivia Clark,4,2026-01-12,36000,0,36000,3500,32500,2,1,1,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-01-12,42000,0,42000,42000,0,6,0,0,1664,0,False,False
+25040,Jamey Evenstar,4,2026-01-12,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-01-12,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-01-12,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-01-19,57000,0,57000,42000,15000,7,1,1,6956,1500,False,False
+23028,Angelita Morillo,3,2026-01-19,10500,0,10500,10500,0,1,0,0,64416,0,False,False
+15109,Steve Novick,3,2026-01-19,12000,0,12000,12000,0,3,0,0,5285,0,False,False
+24661,Tom Sollitt,3,2026-01-19,10000,0,10000,10000,0,1,0,0,395,0,False,False
+24897,Kellie Torres,3,2026-01-19,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2026-01-19,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-01-19,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-01-19,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-01-19,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-01-19,195000,0,195000,170000,25000,8,1,1,126384,0,False,False
+23365,Mitch Green,4,2026-01-19,36100,0,36100,36100,0,5,0,0,1431,0,False,False
+17629,Eric Zimmerman,4,2026-01-19,18000,0,18000,18000,0,5,0,0,1225,0,False,False
+23199,Olivia Clark,4,2026-01-19,20500,0,20500,20500,0,5,0,0,3657,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-01-19,29500,0,29500,29500,0,3,0,0,71068,0,False,False
+25040,Jamey Evenstar,4,2026-01-19,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-01-19,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-01-19,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-01-26,40726,0,40726,40726,0,6,0,0,832350,0,False,False
+23028,Angelita Morillo,3,2026-01-26,32333,0,32333,32333,0,1,0,0,952,0,False,False
+15109,Steve Novick,3,2026-01-26,38500,0,38500,3500,35000,2,1,1,0,0,False,False
+24661,Tom Sollitt,3,2026-01-26,3500,0,3500,3500,0,2,0,0,139,0,False,False
+24897,Kellie Torres,3,2026-01-26,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2026-01-26,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-01-26,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-01-26,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-01-26,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-01-26,5254500,5000000,254500,219500,35000,9,1,1,0,0,False,False
+23365,Mitch Green,4,2026-01-26,5057300,5000000,57300,7300,0,4,0,1,110290,0,False,False
+17629,Eric Zimmerman,4,2026-01-26,155500,0,155500,68000,0,5,0,1,0,0,False,False
+23199,Olivia Clark,4,2026-01-26,195000,0,195000,97500,47500,9,3,3,0,15000,False,False
+23411,Jeremy Beausoleil Smith,4,2026-01-26,27500,0,27500,27500,0,4,0,0,1088,0,False,False
+25040,Jamey Evenstar,4,2026-01-26,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-01-26,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-01-26,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-02-02,107268,0,107268,67168,40100,10,3,3,313006,0,False,False
+23028,Angelita Morillo,3,2026-02-02,56133,0,56133,51133,5000,2,1,1,8764,0,False,False
+15109,Steve Novick,3,2026-02-02,545100,0,545100,187600,357500,17,12,11,1942,0,False,False
+24661,Tom Sollitt,3,2026-02-02,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2026-02-02,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2026-02-02,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-02-02,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-02-02,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-02-02,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-02-02,79000,0,79000,54000,25000,7,1,1,16345,0,False,False
+23365,Mitch Green,4,2026-02-02,93666,0,93666,58666,35000,7,1,1,3710,15000,False,False
+17629,Eric Zimmerman,4,2026-02-02,25500,0,25500,5500,20000,4,1,1,3097,0,False,False
+23199,Olivia Clark,4,2026-02-02,160500,0,160500,65500,95000,9,3,3,55302,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-02-02,20000,0,20000,20000,0,3,0,0,92322,0,False,False
+25040,Jamey Evenstar,4,2026-02-02,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-02-02,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-02-02,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-02-09,50667,0,50667,30667,20000,8,1,1,29003,0,False,False
+23028,Angelita Morillo,3,2026-02-09,29500,0,29500,9500,20000,6,1,1,11000,0,False,False
+15109,Steve Novick,3,2026-02-09,157500,0,157500,102500,55000,6,2,2,36500,0,False,False
+24661,Tom Sollitt,3,2026-02-09,0,0,0,0,0,0,0,0,2500,0,False,False
+24897,Kellie Torres,3,2026-02-09,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2026-02-09,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-02-09,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-02-09,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-02-09,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-02-09,80000,0,80000,45000,35000,5,1,1,149779,0,False,False
+23365,Mitch Green,4,2026-02-09,44167,0,44167,9167,35000,7,2,2,111749,0,False,False
+17629,Eric Zimmerman,4,2026-02-09,2500,0,2500,2500,0,1,0,0,36500,0,False,False
+23199,Olivia Clark,4,2026-02-09,133500,0,133500,38500,95000,8,3,3,79836,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-02-09,12000,0,12000,12000,0,3,0,0,70476,0,False,False
+25040,Jamey Evenstar,4,2026-02-09,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-02-09,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-02-09,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-02-16,32500,0,32500,32500,0,7,0,0,44164,0,False,False
+23028,Angelita Morillo,3,2026-02-16,41000,0,41000,21000,20000,2,1,1,1624,0,False,False
+15109,Steve Novick,3,2026-02-16,1000,0,1000,1000,0,1,0,0,24503,0,False,False
+24661,Tom Sollitt,3,2026-02-16,12000,0,12000,12000,0,3,0,0,475,0,False,False
+24897,Kellie Torres,3,2026-02-16,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2026-02-16,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-02-16,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-02-16,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-02-16,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-02-16,53500,0,53500,43500,10000,7,1,1,5477,0,False,False
+23365,Mitch Green,4,2026-02-16,36100,0,36100,36100,0,5,0,0,65933,5000,False,False
+17629,Eric Zimmerman,4,2026-02-16,57500,0,57500,32500,25000,6,1,1,980,0,False,False
+23199,Olivia Clark,4,2026-02-16,52500,0,52500,27500,25000,6,1,1,8540,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-02-16,13000,0,13000,13000,0,3,0,0,514,0,False,False
+25040,Jamey Evenstar,4,2026-02-16,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-02-16,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-02-16,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-02-23,52726,0,52726,52726,0,4,0,0,782382,0,False,False
+23028,Angelita Morillo,3,2026-02-23,13500,0,13500,13500,0,1,0,0,6764,0,False,False
+15109,Steve Novick,3,2026-02-23,0,0,0,0,0,0,0,0,0,0,False,False
+24661,Tom Sollitt,3,2026-02-23,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2026-02-23,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2026-02-23,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-02-23,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-02-23,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-02-23,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-02-23,95000,0,95000,92500,2500,6,1,1,0,0,False,False
+23365,Mitch Green,4,2026-02-23,83000,0,83000,13000,70000,6,2,2,517,0,False,False
+17629,Eric Zimmerman,4,2026-02-23,52000,0,52000,17000,35000,5,1,1,0,0,False,False
+23199,Olivia Clark,4,2026-02-23,22000,0,22000,22000,0,3,0,0,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-02-23,1500,0,1500,1500,0,1,0,0,70060,0,False,False
+25040,Jamey Evenstar,4,2026-02-23,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-02-23,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-02-23,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-03-02,78500,0,78500,38500,40000,8,2,2,144408,0,False,False
+23028,Angelita Morillo,3,2026-03-02,109299,0,109299,44299,65000,3,2,2,4327,0,False,False
+15109,Steve Novick,3,2026-03-02,37500,0,37500,2500,35000,2,1,1,35,0,False,False
+24661,Tom Sollitt,3,2026-03-02,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2026-03-02,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2026-03-02,5500,0,5500,5500,0,1,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-03-02,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-03-02,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-03-02,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-03-02,175100,0,175100,115100,60000,8,2,2,4935,0,False,False
+23365,Mitch Green,4,2026-03-02,158999,0,158999,63999,95000,10,4,4,6294,5000,False,False
+17629,Eric Zimmerman,4,2026-03-02,75000,0,75000,5000,70000,3,2,2,2432,0,False,False
+23199,Olivia Clark,4,2026-03-02,72500,0,72500,37500,35000,3,1,1,2082,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-03-02,2500,0,2500,2500,0,1,0,0,2019,0,False,False
+25040,Jamey Evenstar,4,2026-03-02,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-03-02,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-03-02,60000,0,60000,0,0,1,0,1,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-03-09,124534,0,124534,124534,0,7,0,0,12670,0,False,False
+23028,Angelita Morillo,3,2026-03-09,115332,0,115332,80332,35000,2,1,1,15647,0,False,False
+15109,Steve Novick,3,2026-03-09,2500,0,2500,2500,0,1,0,0,79500,0,False,False
+24661,Tom Sollitt,3,2026-03-09,2500,0,2500,2500,0,1,0,0,2599,0,False,False
+24897,Kellie Torres,3,2026-03-09,0,0,0,0,0,0,0,0,0,0,False,False
+24973,Esther León,3,2026-03-09,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-03-09,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-03-09,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-03-09,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-03-09,114500,0,114500,64500,50000,8,2,2,89222,0,False,False
+23365,Mitch Green,4,2026-03-09,90834,0,90834,90834,0,6,0,0,3600,0,False,False
+17629,Eric Zimmerman,4,2026-03-09,2500,0,2500,2500,0,1,0,0,36500,0,False,False
+23199,Olivia Clark,4,2026-03-09,143500,0,143500,73500,70000,8,3,3,59589,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-03-09,0,0,0,0,0,0,0,0,35000,0,False,False
+25040,Jamey Evenstar,4,2026-03-09,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-03-09,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-03-09,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-03-16,30000,0,30000,30000,0,6,0,0,36304,0,False,False
+23028,Angelita Morillo,3,2026-03-16,25700,0,25700,25700,0,1,0,0,86420,0,False,False
+15109,Steve Novick,3,2026-03-16,38500,0,38500,13500,25000,4,1,1,1400,0,False,False
+24661,Tom Sollitt,3,2026-03-16,4000,0,4000,0,4000,1,1,1,158,0,False,False
+24897,Kellie Torres,3,2026-03-16,25000,0,25000,0,25000,1,1,1,988,0,False,False
+24973,Esther León,3,2026-03-16,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-03-16,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-03-16,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-03-16,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-03-16,45500,0,45500,35500,10000,7,1,1,49101,0,False,False
+23365,Mitch Green,4,2026-03-16,79100,0,79100,44100,35000,8,1,1,3133,2500,False,False
+17629,Eric Zimmerman,4,2026-03-16,40000,0,40000,5000,35000,2,1,1,3937,0,False,False
+23199,Olivia Clark,4,2026-03-16,430000,0,430000,105000,325000,14,11,11,6650,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-03-16,8500,0,8500,8500,0,4,0,0,60337,0,False,False
+25040,Jamey Evenstar,4,2026-03-16,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-03-16,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-03-16,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-03-23,88226,0,88226,73226,15000,7,1,1,795095,0,False,False
+23028,Angelita Morillo,3,2026-03-23,279100,0,279100,221600,57500,4,3,3,12727,0,False,False
+15109,Steve Novick,3,2026-03-23,112500,0,112500,7500,105000,5,3,3,0,0,False,False
+24661,Tom Sollitt,3,2026-03-23,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2026-03-23,337500,0,337500,157500,180000,7,6,6,13341,0,False,False
+24973,Esther León,3,2026-03-23,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-03-23,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-03-23,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-03-23,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-03-23,124000,0,124000,74000,50000,9,3,3,0,0,False,False
+23365,Mitch Green,4,2026-03-23,51500,0,51500,16500,35000,8,1,1,109539,5000,False,False
+17629,Eric Zimmerman,4,2026-03-23,305000,0,305000,87500,130000,9,5,6,0,0,False,False
+23199,Olivia Clark,4,2026-03-23,89500,0,89500,19500,70000,6,2,2,0,15000,False,False
+23411,Jeremy Beausoleil Smith,4,2026-03-23,0,0,0,0,0,0,0,0,0,0,False,False
+25040,Jamey Evenstar,4,2026-03-23,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-03-23,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-03-23,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-03-30,67234,0,67234,37334,29900,9,2,2,165800,0,False,False
+23028,Angelita Morillo,3,2026-03-30,269433,0,269433,164533,104900,6,4,4,16893,0,False,False
+15109,Steve Novick,3,2026-03-30,0,0,0,0,0,0,0,0,5285,0,False,False
+24661,Tom Sollitt,3,2026-03-30,0,0,0,0,0,0,0,0,23,0,False,False
+24897,Kellie Torres,3,2026-03-30,746000,0,746000,473500,270000,13,10,11,29502,25000,False,False
+24973,Esther León,3,2026-03-30,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-03-30,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-03-30,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-03-30,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-03-30,46000,0,46000,21000,25000,6,1,1,28396,0,False,False
+23365,Mitch Green,4,2026-03-30,140033,0,140033,90133,49900,9,2,2,144533,0,False,False
+17629,Eric Zimmerman,4,2026-03-30,112500,0,112500,7500,105000,5,3,3,8837,0,False,False
+23199,Olivia Clark,4,2026-03-30,89200,0,89200,39200,50000,7,2,2,11357,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-03-30,2000,0,2000,2000,0,1,0,0,30079,0,False,False
+25040,Jamey Evenstar,4,2026-03-30,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-03-30,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-03-30,0,0,0,0,0,0,0,0,27500,0,False,False
+23208,Tiffany Koyama Lane,3,2026-04-06,292100,0,292100,174600,82500,12,4,5,19953,0,False,False
+23028,Angelita Morillo,3,2026-04-06,140499,0,140499,105499,35000,3,2,2,5568,0,False,False
+15109,Steve Novick,3,2026-04-06,37500,0,37500,2500,35000,2,1,1,20725,0,False,False
+24661,Tom Sollitt,3,2026-04-06,2000,0,2000,2000,0,1,0,0,15079,0,False,False
+24897,Kellie Torres,3,2026-04-06,168000,0,168000,108000,60000,3,2,2,6642,0,False,False
+24973,Esther León,3,2026-04-06,40500,0,40500,15500,25000,3,1,1,1601,0,False,False
+24972,Joel Corcoran,3,2026-04-06,20000,0,20000,20000,0,1,0,0,791,0,False,False
+24966,Matthias Hallett,3,2026-04-06,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-04-06,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-04-06,50500,0,50500,38000,12500,7,2,2,124791,0,False,False
+23365,Mitch Green,4,2026-04-06,170399,0,170399,90899,79500,13,6,5,348748,0,False,False
+17629,Eric Zimmerman,4,2026-04-06,347500,0,347500,122500,225000,13,9,9,37025,0,False,False
+23199,Olivia Clark,4,2026-04-06,166000,0,166000,55000,111000,8,4,4,83866,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-04-06,16500,0,16500,16500,0,2,0,0,27575,0,False,False
+25040,Jamey Evenstar,4,2026-04-06,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-04-06,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-04-06,0,0,0,0,0,0,0,0,5500,0,False,False
+23208,Tiffany Koyama Lane,3,2026-04-13,158501,0,158501,88501,70000,9,2,2,36112,0,False,False
+23028,Angelita Morillo,3,2026-04-13,78499,0,78499,53499,25000,5,1,1,66609,0,False,False
+15109,Steve Novick,3,2026-04-13,320500,0,320500,135500,185000,13,8,8,8120,0,False,False
+24661,Tom Sollitt,3,2026-04-13,4000,0,4000,4000,0,1,0,0,158,0,False,False
+24897,Kellie Torres,3,2026-04-13,178000,0,178000,71000,107000,6,4,4,7037,0,False,False
+24973,Esther León,3,2026-04-13,9000,0,9000,9000,0,2,0,0,357,0,False,False
+24972,Joel Corcoran,3,2026-04-13,5000,0,5000,5000,0,1,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-04-13,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-04-13,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-04-13,162000,0,162000,62000,100000,9,5,4,7957,0,False,False
+23365,Mitch Green,4,2026-04-13,45500,0,45500,45500,0,5,0,0,1803,0,False,False
+17629,Eric Zimmerman,4,2026-04-13,196500,0,196500,76500,120000,8,4,4,16275,0,False,False
+23199,Olivia Clark,4,2026-04-13,59500,0,59500,59500,0,5,0,0,2765,30000,False,False
+23411,Jeremy Beausoleil Smith,4,2026-04-13,19000,0,19000,4000,15000,4,1,1,159,0,False,False
+25040,Jamey Evenstar,4,2026-04-13,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-04-13,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-04-13,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-04-20,153951,0,153951,116701,37250,9,2,2,229001,2500,False,False
+23028,Angelita Morillo,3,2026-04-20,98799,0,98799,49999,48800,6,4,4,3914,0,False,False
+15109,Steve Novick,3,2026-04-20,132000,0,132000,29500,52500,8,3,4,2222,0,False,False
+24661,Tom Sollitt,3,2026-04-20,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2026-04-20,105000,0,105000,70000,35000,3,1,1,196455,0,False,False
+24973,Esther León,3,2026-04-20,0,0,0,0,0,0,0,0,0,0,False,False
+24972,Joel Corcoran,3,2026-04-20,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-04-20,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-04-20,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-04-20,99500,0,99500,74500,25000,5,1,1,6860,15000,False,False
+23365,Mitch Green,4,2026-04-20,90300,0,90300,81800,8500,10,3,3,400084,0,False,False
+17629,Eric Zimmerman,4,2026-04-20,93500,0,93500,33500,60000,6,2,2,3850,0,False,False
+23199,Olivia Clark,4,2026-04-20,77500,0,77500,77500,0,7,0,0,1400,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-04-20,2500,0,2500,2500,0,1,0,0,30099,0,False,False
+25040,Jamey Evenstar,4,2026-04-20,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-04-20,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-04-20,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-04-27,298860,0,298860,153360,120500,16,8,9,717610,2500,False,False
+23028,Angelita Morillo,3,2026-04-27,166333,0,166333,61333,80000,10,3,4,10520,0,False,False
+15109,Steve Novick,3,2026-04-27,30000,0,30000,5000,25000,2,1,1,2782,0,False,False
+24661,Tom Sollitt,3,2026-04-27,32500,0,32500,2500,0,2,0,1,42626,0,False,False
+24897,Kellie Torres,3,2026-04-27,264500,0,264500,62000,202500,8,7,7,10458,0,False,False
+24973,Esther León,3,2026-04-27,0,0,0,0,0,0,0,0,8400,0,False,False
+24972,Joel Corcoran,3,2026-04-27,0,0,0,0,0,0,0,0,988,0,False,False
+24966,Matthias Hallett,3,2026-04-27,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-04-27,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-04-27,51500,0,51500,49000,2500,8,1,1,62580,0,False,False
+23365,Mitch Green,4,2026-04-27,156633,0,156633,95333,36300,9,2,3,20117,0,False,False
+17629,Eric Zimmerman,4,2026-04-27,208500,0,208500,78500,130000,11,4,4,6212,0,False,False
+23199,Olivia Clark,4,2026-04-27,209500,0,209500,157000,52500,9,3,2,2345,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-04-27,14200,0,14200,14200,0,4,0,0,564,0,False,False
+25040,Jamey Evenstar,4,2026-04-27,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-04-27,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-04-27,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-05-04,101167,0,101167,87000,14167,9,2,2,41247,0,False,False
+23028,Angelita Morillo,3,2026-05-04,77365,0,77365,65699,11666,8,1,1,180669,0,False,False
+15109,Steve Novick,3,2026-05-04,0,0,0,0,0,0,0,0,60550,0,False,False
+24661,Tom Sollitt,3,2026-05-04,11000,0,11000,11000,0,1,0,0,436,0,False,False
+24897,Kellie Torres,3,2026-05-04,153500,0,153500,53500,50000,5,2,3,35591,0,False,False
+24973,Esther León,3,2026-05-04,85400,0,85400,85400,0,2,0,0,29335,0,False,False
+24972,Joel Corcoran,3,2026-05-04,75000,0,75000,35000,40000,4,2,2,0,0,False,False
+24966,Matthias Hallett,3,2026-05-04,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-05-04,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-05-04,49000,0,49000,24000,25000,4,1,1,103412,0,False,False
+23365,Mitch Green,4,2026-05-04,73766,0,73766,46433,27333,11,4,4,804219,0,False,False
+17629,Eric Zimmerman,4,2026-05-04,212000,0,212000,102000,110000,9,5,5,83630,0,False,False
+23199,Olivia Clark,4,2026-05-04,50000,0,50000,25000,25000,5,1,1,103514,2500,False,False
+23411,Jeremy Beausoleil Smith,4,2026-05-04,6500,0,6500,6500,0,4,0,0,2179,0,False,False
+25040,Jamey Evenstar,4,2026-05-04,0,0,0,0,0,0,0,0,0,0,False,False
+25103,Jayne Cronlund,4,2026-05-04,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-05-04,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-05-11,167268,0,167268,138768,28500,10,3,3,39841,25000,False,False
+23028,Angelita Morillo,3,2026-05-11,132865,0,132865,120365,12500,9,2,2,150372,0,False,False
+15109,Steve Novick,3,2026-05-11,9000,0,9000,9000,0,2,0,0,0,0,False,False
+24661,Tom Sollitt,3,2026-05-11,10000,0,10000,0,0,1,0,1,5899,0,False,False
+24897,Kellie Torres,3,2026-05-11,117500,0,117500,47500,70000,6,3,3,58645,0,False,False
+24973,Esther León,3,2026-05-11,30000,0,30000,2500,27500,3,2,2,2372,0,False,False
+24972,Joel Corcoran,3,2026-05-11,129500,0,129500,79500,50000,4,1,1,2948,10000,False,False
+24966,Matthias Hallett,3,2026-05-11,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-05-11,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-05-11,67000,0,67000,42000,25000,4,1,1,216433,0,False,False
+23365,Mitch Green,4,2026-05-11,45767,0,45767,45767,0,7,0,0,93611,0,False,False
+17629,Eric Zimmerman,4,2026-05-11,321100,0,321100,71000,250100,14,10,10,15053,0,False,False
+23199,Olivia Clark,4,2026-05-11,118500,0,118500,58500,60000,7,2,2,1925,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-05-11,12200,0,12200,12200,0,3,0,0,484,0,False,False
+25040,Jamey Evenstar,4,2026-05-11,353000,0,353000,63000,290000,13,11,6,12363,0,False,False
+25103,Jayne Cronlund,4,2026-05-11,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-05-11,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-05-18,157168,0,157168,78001,79167,11,6,6,114375,0,False,False
+23028,Angelita Morillo,3,2026-05-18,5146665,5000000,146665,82499,64166,10,3,3,6001,0,False,False
+15109,Steve Novick,3,2026-05-18,64500,0,64500,29500,35000,2,1,1,315,0,False,False
+24661,Tom Sollitt,3,2026-05-18,6500,0,6500,6500,0,1,0,0,257,0,False,False
+24897,Kellie Torres,3,2026-05-18,83500,0,83500,83500,0,2,0,0,18301,0,False,False
+24973,Esther León,3,2026-05-18,8500,0,8500,8500,0,3,0,0,2481,0,False,False
+24972,Joel Corcoran,3,2026-05-18,2500,0,2500,2500,0,1,0,0,99,0,False,False
+24966,Matthias Hallett,3,2026-05-18,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-05-18,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-05-18,85500,0,85500,50500,35000,6,1,1,2537,0,False,False
+23365,Mitch Green,4,2026-05-18,158179,0,158179,70512,87667,16,10,10,8236,0,False,False
+17629,Eric Zimmerman,4,2026-05-18,52500,0,52500,42500,10000,3,1,1,2310,0,False,False
+23199,Olivia Clark,4,2026-05-18,34500,0,34500,34500,0,4,0,0,2835,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-05-18,28000,0,28000,25500,2500,5,1,1,1111,0,False,False
+25040,Jamey Evenstar,4,2026-05-18,462300,0,462300,137300,175000,15,7,7,10141,0,False,False
+25103,Jayne Cronlund,4,2026-05-18,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-05-18,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-05-25,5423960,5000000,423960,140234,283726,21,14,13,1083322,53000,False,False
+23028,Angelita Morillo,3,2026-05-25,34333,0,34333,29333,5000,9,2,2,1364,15000,False,False
+15109,Steve Novick,3,2026-05-25,304000,0,304000,79000,225000,12,7,7,0,0,False,False
+24661,Tom Sollitt,3,2026-05-25,51000,0,51000,1000,0,2,0,1,20540,0,False,False
+24897,Kellie Torres,3,2026-05-25,106000,0,106000,31000,75000,5,3,3,252491,0,False,False
+24973,Esther León,3,2026-05-25,16500,0,16500,16500,0,2,0,0,22563,0,False,False
+24972,Joel Corcoran,3,2026-05-25,72500,0,72500,57500,15000,5,1,1,1878,0,False,False
+24966,Matthias Hallett,3,2026-05-25,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-05-25,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-05-25,267900,0,267900,189400,78500,17,10,8,0,0,False,False
+23365,Mitch Green,4,2026-05-25,83633,0,83633,32333,51300,9,2,2,1012535,20000,False,False
+17629,Eric Zimmerman,4,2026-05-25,107500,0,107500,2500,105000,4,3,3,0,0,False,False
+23199,Olivia Clark,4,2026-05-25,72500,0,72500,37500,35000,5,1,1,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-05-25,86100,0,86100,83600,2500,7,1,1,33315,0,False,False
+25040,Jamey Evenstar,4,2026-05-25,35500,0,35500,35500,0,6,0,0,33480,2500,False,False
+25103,Jayne Cronlund,4,2026-05-25,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-05-25,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-06-01,139167,0,139167,116001,23166,11,5,5,73625,0,False,False
+23028,Angelita Morillo,3,2026-06-01,96864,0,96864,62865,33999,8,4,3,594155,0,False,False
+15109,Steve Novick,3,2026-06-01,615000,0,615000,110000,505000,20,15,15,12897,0,False,False
+24661,Tom Sollitt,3,2026-06-01,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2026-06-01,42500,0,42500,42500,0,2,0,0,1682,0,False,False
+24973,Esther León,3,2026-06-01,16000,0,16000,16000,0,3,0,0,51816,0,False,False
+24972,Joel Corcoran,3,2026-06-01,40000,0,40000,20000,20000,4,1,1,29557,0,False,False
+24966,Matthias Hallett,3,2026-06-01,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-06-01,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-06-01,224500,0,224500,99500,125000,11,4,4,11826,15000,False,False
+23365,Mitch Green,4,2026-06-01,103665,0,103665,80999,22666,9,3,3,165322,0,False,False
+17629,Eric Zimmerman,4,2026-06-01,188500,0,188500,56000,132500,8,5,4,4900,0,False,False
+23199,Olivia Clark,4,2026-06-01,96000,0,96000,61000,35000,5,1,1,2607,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-06-01,93000,0,93000,93000,0,7,0,0,70424,0,False,False
+25040,Jamey Evenstar,4,2026-06-01,84000,0,84000,49000,35000,6,1,1,3325,0,False,False
+25103,Jayne Cronlund,4,2026-06-01,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-06-01,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-06-08,67501,0,67501,28001,39500,10,3,3,6300,0,False,False
+23028,Angelita Morillo,3,2026-06-08,110099,0,110099,62499,47600,10,3,3,426742,20000,False,False
+15109,Steve Novick,3,2026-06-08,415500,0,415500,45500,370000,17,12,12,36500,0,False,False
+24661,Tom Sollitt,3,2026-06-08,0,0,0,0,0,0,0,0,4420,0,False,False
+24897,Kellie Torres,3,2026-06-08,143000,0,143000,73000,70000,4,3,3,80970,0,False,False
+24973,Esther León,3,2026-06-08,4500,0,4500,2000,2500,2,1,1,178,0,False,False
+24972,Joel Corcoran,3,2026-06-08,7500,0,7500,7500,0,2,0,0,10796,0,False,False
+24966,Matthias Hallett,3,2026-06-08,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-06-08,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-06-08,178000,0,178000,90000,88000,10,5,5,273805,0,False,False
+23365,Mitch Green,4,2026-06-08,23100,0,23100,15600,7500,9,2,2,916,0,False,False
+17629,Eric Zimmerman,4,2026-06-08,230000,0,230000,90000,140000,11,6,6,204500,0,False,False
+23199,Olivia Clark,4,2026-06-08,323000,0,323000,93000,230000,13,8,8,99500,37500,False,False
+23411,Jeremy Beausoleil Smith,4,2026-06-08,181200,0,181200,143700,37500,10,3,3,17693,0,False,False
+25040,Jamey Evenstar,4,2026-06-08,19500,0,19500,19500,0,3,0,0,146942,0,False,False
+25103,Jayne Cronlund,4,2026-06-08,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-06-08,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-06-15,83900,0,83900,50600,33300,12,5,5,33533,0,False,False
+23028,Angelita Morillo,3,2026-06-15,77300,0,77300,34000,43300,9,3,3,116561,0,False,False
+15109,Steve Novick,3,2026-06-15,205800,0,205800,68300,137500,11,5,5,33705,0,False,False
+24661,Tom Sollitt,3,2026-06-15,0,0,0,0,0,0,0,0,12500,0,False,False
+24897,Kellie Torres,3,2026-06-15,90000,0,90000,22500,45000,4,2,3,3558,0,False,False
+24973,Esther León,3,2026-06-15,40700,0,40700,40700,0,6,0,0,9118,0,False,False
+24972,Joel Corcoran,3,2026-06-15,500,0,500,500,0,1,0,0,20,0,False,False
+24966,Matthias Hallett,3,2026-06-15,0,0,0,0,0,0,0,0,0,0,False,False
+24979,Cristal Otero,3,2026-06-15,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-06-15,147500,0,147500,47500,100000,10,4,4,11252,0,False,False
+23365,Mitch Green,4,2026-06-15,87900,0,87900,31100,56800,16,9,9,439741,0,False,False
+17629,Eric Zimmerman,4,2026-06-15,47000,0,47000,47000,0,4,0,0,14647,0,False,False
+23199,Olivia Clark,4,2026-06-15,130000,0,130000,55000,75000,9,4,3,15365,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-06-15,44100,0,44100,19100,25000,7,1,1,161995,0,False,False
+25040,Jamey Evenstar,4,2026-06-15,32600,0,32600,17500,15100,5,2,2,7788,0,False,False
+25103,Jayne Cronlund,4,2026-06-15,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-06-15,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-06-22,174934,0,174934,85234,89700,13,7,6,6925,0,False,False
+23028,Angelita Morillo,3,2026-06-22,675733,0,675733,390633,235100,23,14,15,142684,5000,False,False
+15109,Steve Novick,3,2026-06-22,491999,0,491999,269499,222500,19,12,12,0,0,False,False
+24661,Tom Sollitt,3,2026-06-22,55000,0,55000,51000,4000,2,1,1,2178,0,False,False
+24897,Kellie Torres,3,2026-06-22,182500,0,182500,107500,75000,5,3,3,23868,0,False,False
+24973,Esther León,3,2026-06-22,47000,0,47000,22000,25000,6,1,1,1861,0,False,False
+24972,Joel Corcoran,3,2026-06-22,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-06-22,0,0,0,0,0,0,0,0,5660,0,False,False
+24979,Cristal Otero,3,2026-06-22,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-06-22,207999,0,207999,97499,110500,12,7,7,0,12500,False,False
+23365,Mitch Green,4,2026-06-22,310645,0,310645,163645,147000,16,9,8,850416,10000,False,False
+17629,Eric Zimmerman,4,2026-06-22,145300,0,145300,95300,50000,5,2,2,0,0,False,False
+23199,Olivia Clark,4,2026-06-22,5356000,5000000,356000,233500,122500,14,6,6,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-06-22,33500,0,33500,31000,2500,6,1,1,1327,0,False,False
+25040,Jamey Evenstar,4,2026-06-22,82300,0,82300,62300,20000,8,1,1,73054,0,False,False
+25103,Jayne Cronlund,4,2026-06-22,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-06-22,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-06-29,7238694,7093600,145094,103068,42026,11,3,3,1375323,2800,False,False
+23028,Angelita Morillo,3,2026-06-29,5145765,5000000,145765,105065,40700,15,7,6,1515024,0,False,False
+15109,Steve Novick,3,2026-06-29,157500,0,157500,77500,80000,7,3,3,15000,0,False,False
+24661,Tom Sollitt,3,2026-06-29,28500,0,28500,28500,0,2,0,0,1128,0,False,False
+24897,Kellie Torres,3,2026-06-29,68500,0,68500,68500,0,3,0,0,71311,0,False,False
+24973,Esther León,3,2026-06-29,18500,0,18500,18500,0,4,0,0,712,0,False,False
+24972,Joel Corcoran,3,2026-06-29,15000,0,15000,15000,0,2,0,0,9921,0,False,False
+24966,Matthias Hallett,3,2026-06-29,0,0,0,0,0,0,0,0,3000,0,False,False
+24979,Cristal Otero,3,2026-06-29,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-06-29,41000,0,41000,31000,10000,6,2,2,155000,20000,False,False
+23365,Mitch Green,4,2026-06-29,5072965,5000000,72965,71665,1300,9,1,1,44857,0,False,False
+17629,Eric Zimmerman,4,2026-06-29,54000,0,54000,14000,40000,7,2,2,0,0,False,False
+23199,Olivia Clark,4,2026-06-29,116000,0,116000,48500,67500,7,2,2,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-06-29,4040700,4023000,17700,17700,0,4,0,0,196142,0,False,False
+25040,Jamey Evenstar,4,2026-06-29,163000,0,163000,136000,27000,10,3,3,6458,0,False,False
+25103,Jayne Cronlund,4,2026-06-29,0,0,0,0,0,0,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-06-29,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-07-06,72333,0,72333,47167,25166,11,4,4,51845,0,False,False
+23028,Angelita Morillo,3,2026-07-06,248832,0,248832,84166,129666,15,7,8,130599,0,False,False
+15109,Steve Novick,3,2026-07-06,224100,0,224100,129100,95000,9,4,4,163397,0,False,False
+24661,Tom Sollitt,3,2026-07-06,500,0,500,500,0,1,0,0,36609,0,False,False
+24897,Kellie Torres,3,2026-07-06,48000,0,48000,23000,25000,3,1,1,3233,2500,False,False
+24973,Esther León,3,2026-07-06,32500,0,32500,30000,2500,6,1,1,1761,0,False,False
+24972,Joel Corcoran,3,2026-07-06,0,0,0,0,0,0,0,0,78000,0,False,False
+24966,Matthias Hallett,3,2026-07-06,0,0,0,0,0,0,0,0,5786,0,False,False
+24979,Cristal Otero,3,2026-07-06,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-07-06,5224000,5000000,224000,104000,120000,12,5,5,134507,0,False,False
+23365,Mitch Green,4,2026-07-06,185033,0,185033,112167,72866,14,7,6,171234,0,False,False
+17629,Eric Zimmerman,4,2026-07-06,23500,0,23500,21000,2500,5,1,1,231494,0,False,False
+23199,Olivia Clark,4,2026-07-06,87100,0,87100,74600,12500,8,2,2,193780,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-07-06,67500,0,67500,67500,0,7,0,0,638596,0,False,False
+25040,Jamey Evenstar,4,2026-07-06,115444,0,115444,115444,0,7,0,0,86688,0,False,False
+25103,Jayne Cronlund,4,2026-07-06,10000,0,10000,10000,0,1,0,0,0,0,False,False
+24615,John J Goldsmith,4,2026-07-06,0,0,0,0,0,0,0,0,89,0,False,False
+23208,Tiffany Koyama Lane,3,2026-07-13,112734,0,112734,74334,38400,11,4,4,182362,0,False,False
+23028,Angelita Morillo,3,2026-07-13,164633,0,164633,126833,37800,11,4,4,47718,35000,False,False
+15109,Steve Novick,3,2026-07-13,420500,0,420500,190500,230000,15,8,8,18256,0,False,False
+24661,Tom Sollitt,3,2026-07-13,50000,0,50000,30000,20000,3,1,1,91539,0,False,False
+24897,Kellie Torres,3,2026-07-13,10500,0,10500,10500,0,2,0,0,461541,0,False,False
+24973,Esther León,3,2026-07-13,65600,0,65600,65600,0,6,0,0,50484,0,False,False
+24972,Joel Corcoran,3,2026-07-13,38000,0,38000,3000,35000,2,1,1,1502,0,False,False
+24966,Matthias Hallett,3,2026-07-13,80338,0,80338,49348,30990,4,3,3,3238,0,False,False
+24979,Cristal Otero,3,2026-07-13,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-07-13,183300,0,183300,73300,110000,12,5,5,520658,0,False,False
+23365,Mitch Green,4,2026-07-13,115133,0,115133,76833,38300,9,2,2,76712,7500,False,False
+17629,Eric Zimmerman,4,2026-07-13,10000,0,10000,10000,0,2,0,0,2275,0,False,False
+23199,Olivia Clark,4,2026-07-13,103000,0,103000,78000,25000,8,1,1,3433,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-07-13,250100,130000,120100,117600,2500,9,1,1,281469,0,False,False
+25040,Jamey Evenstar,4,2026-07-13,261526,0,261526,68526,193000,21,15,15,67797,0,False,False
+25103,Jayne Cronlund,4,2026-07-13,333500,0,333500,146000,187500,10,4,4,28762,0,False,False
+24615,John J Goldsmith,4,2026-07-13,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-07-20,1354700,1266600,88100,58100,30000,10,3,3,167956,2500,False,False
+23028,Angelita Morillo,3,2026-07-20,93500,0,93500,64500,29000,9,2,2,33782,0,False,False
+15109,Steve Novick,3,2026-07-20,487000,0,487000,252000,235000,20,13,12,25000,0,False,False
+24661,Tom Sollitt,3,2026-07-20,168200,0,168200,129200,39000,4,3,3,6665,0,False,False
+24897,Kellie Torres,3,2026-07-20,186800,0,186800,87500,99300,9,7,7,97071,0,False,False
+24973,Esther León,3,2026-07-20,139300,0,139300,106000,33300,8,1,1,7310,0,False,False
+24972,Joel Corcoran,3,2026-07-20,3500,0,3500,3500,0,2,0,0,25139,0,False,False
+24966,Matthias Hallett,3,2026-07-20,8978,0,8978,8978,0,3,0,0,26028,0,False,False
+24979,Cristal Otero,3,2026-07-20,52000,0,52000,52000,0,3,0,0,2680,0,False,False
+23295,Eli Arnold,4,2026-07-20,91000,0,91000,31000,60000,9,3,3,305846,0,False,False
+23365,Mitch Green,4,2026-07-20,903012,0,903012,264512,638500,41,34,33,830926,0,False,False
+17629,Eric Zimmerman,4,2026-07-20,6864700,6798000,66700,7500,59200,6,2,2,0,0,False,False
+23199,Olivia Clark,4,2026-07-20,93000,0,93000,58000,35000,8,3,3,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-07-20,82200,0,82200,79700,2500,8,1,1,556684,0,False,False
+25040,Jamey Evenstar,4,2026-07-20,116500,0,116500,80500,36000,8,2,2,151713,0,False,False
+25103,Jayne Cronlund,4,2026-07-20,383500,0,383500,308500,75000,10,3,3,0,0,False,False
+24615,John J Goldsmith,4,2026-07-20,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-07-27,406362,0,406362,251235,155127,20,14,13,1635429,0,False,False
+23028,Angelita Morillo,3,2026-07-27,353231,0,353231,139965,213266,21,14,13,1670021,50000,False,False
+15109,Steve Novick,3,2026-07-27,447000,0,447000,218500,228500,17,12,12,15000,0,False,False
+24661,Tom Sollitt,3,2026-07-27,248300,0,248300,208300,40000,3,2,2,9844,0,False,False
+24897,Kellie Torres,3,2026-07-27,259000,0,259000,106500,152500,7,6,6,100239,0,False,False
+24973,Esther León,3,2026-07-27,19600,0,19600,19600,0,3,0,0,1395,0,False,False
+24972,Joel Corcoran,3,2026-07-27,500,0,500,500,0,1,0,0,10580,0,False,False
+24966,Matthias Hallett,3,2026-07-27,42948,0,42948,7500,35448,4,2,2,29711,0,False,False
+24979,Cristal Otero,3,2026-07-27,40000,0,40000,40000,0,4,0,0,3040,0,False,False
+23295,Eli Arnold,4,2026-07-27,223500,0,223500,129500,94000,12,7,7,0,0,False,False
+23365,Mitch Green,4,2026-07-27,402088,0,402088,131488,270600,20,14,14,157266,85900,False,False
+17629,Eric Zimmerman,4,2026-07-27,103000,0,103000,40500,62500,10,5,5,0,0,False,False
+23199,Olivia Clark,4,2026-07-27,91000,0,91000,41000,50000,7,2,2,500000,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-07-27,118900,0,118900,93900,25000,8,1,1,710212,0,False,False
+25040,Jamey Evenstar,4,2026-07-27,15500,0,15500,10500,5000,3,1,1,125714,0,False,False
+25103,Jayne Cronlund,4,2026-07-27,373200,0,373200,218200,155000,11,6,5,0,0,False,False
+24615,John J Goldsmith,4,2026-07-27,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-08-03,678832,465300,213532,168866,44666,15,7,7,172292,0,False,False
+23028,Angelita Morillo,3,2026-08-03,4354032,4304800,49232,36766,12466,12,4,4,843750,2500,False,False
+15109,Steve Novick,3,2026-08-03,10402500,10000000,402500,217500,185000,20,12,12,190560,0,False,False
+24661,Tom Sollitt,3,2026-08-03,148500,0,148500,148500,0,1,0,0,5902,0,False,False
+24897,Kellie Torres,3,2026-08-03,9133500,7200000,1933500,158500,1775000,55,53,53,458220,0,False,False
+24973,Esther León,3,2026-08-03,5000,0,5000,5000,0,2,0,0,16387,0,False,False
+24972,Joel Corcoran,3,2026-08-03,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-08-03,22500,0,22500,2500,20000,2,1,1,39890,0,False,False
+24979,Cristal Otero,3,2026-08-03,1000,0,1000,1000,0,1,0,0,70,0,False,False
+23295,Eli Arnold,4,2026-08-03,137000,0,137000,77000,60000,9,3,3,11862,2500,False,False
+23365,Mitch Green,4,2026-08-03,110532,0,110532,105266,5266,11,4,4,1271592,1000,False,False
+17629,Eric Zimmerman,4,2026-08-03,79500,0,79500,32000,47500,7,3,3,140729,0,False,False
+23199,Olivia Clark,4,2026-08-03,67000,0,67000,27000,40000,8,2,2,5652,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-08-03,25800,0,25800,25800,0,5,0,0,418588,0,False,False
+25040,Jamey Evenstar,4,2026-08-03,4749500,4746000,3500,3500,0,3,0,0,123239,0,False,False
+25103,Jayne Cronlund,4,2026-08-03,35000,0,35000,10000,25000,2,1,1,221825,0,False,False
+24615,John J Goldsmith,4,2026-08-03,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-08-10,120800,0,120800,69000,51800,14,7,7,141477,15300,False,False
+23028,Angelita Morillo,3,2026-08-10,189000,0,189000,121700,67300,16,9,9,111106,300,False,False
+15109,Steve Novick,3,2026-08-10,391000,0,391000,151000,240000,17,11,11,139687,0,False,False
+24661,Tom Sollitt,3,2026-08-10,2500,0,2500,2500,0,1,0,0,122099,0,False,False
+24897,Kellie Torres,3,2026-08-10,412000,0,412000,129500,282500,11,10,10,17329,0,False,False
+24973,Esther León,3,2026-08-10,2500,0,2500,0,2500,1,1,1,104198,0,False,False
+24972,Joel Corcoran,3,2026-08-10,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-08-10,33906,0,33906,7770,26136,5,3,3,25736,0,False,False
+24979,Cristal Otero,3,2026-08-10,500,0,500,500,0,1,0,0,50,0,False,False
+23295,Eli Arnold,4,2026-08-10,154000,0,154000,109000,45000,7,2,2,182757,0,False,False
+23365,Mitch Green,4,2026-08-10,5181100,5149100,32000,21200,10800,10,2,2,1550985,300,False,False
+17629,Eric Zimmerman,4,2026-08-10,473800,320000,153800,53800,100000,10,4,4,36589,0,False,False
+23199,Olivia Clark,4,2026-08-10,79000,0,79000,49000,30000,7,2,2,79687,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-08-10,1493500,1276000,217500,122500,10000,12,1,4,455251,0,False,False
+25040,Jamey Evenstar,4,2026-08-10,21500,0,21500,21500,0,3,0,0,70567,0,False,False
+25103,Jayne Cronlund,4,2026-08-10,4500,0,4500,4500,0,4,0,0,171281,0,False,False
+24615,John J Goldsmith,4,2026-08-10,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-08-17,1432735,1174500,258235,167335,80900,15,6,7,346044,10000,False,False
+23028,Angelita Morillo,3,2026-08-17,214332,0,214332,176832,37500,9,3,3,162884,100,False,False
+15109,Steve Novick,3,2026-08-17,497500,0,497500,175000,322500,22,15,15,86845,0,False,False
+24661,Tom Sollitt,3,2026-08-17,3305900,3278000,27900,7900,20000,3,1,1,1103,0,False,False
+24897,Kellie Torres,3,2026-08-17,275800,0,275800,183300,92500,6,5,5,710810,0,False,False
+24973,Esther León,3,2026-08-17,1500,0,1500,1500,0,2,0,0,60,0,False,False
+24972,Joel Corcoran,3,2026-08-17,0,0,0,0,0,0,0,0,24800,0,False,False
+24966,Matthias Hallett,3,2026-08-17,18355,0,18355,18355,0,3,0,0,1405,0,False,False
+24979,Cristal Otero,3,2026-08-17,500,0,500,500,0,1,0,0,50,0,False,False
+23295,Eli Arnold,4,2026-08-17,187500,0,187500,110000,77500,15,8,8,182265,15000,False,False
+23365,Mitch Green,4,2026-08-17,552695,433800,118895,43895,65000,14,6,7,199548,100,False,False
+17629,Eric Zimmerman,4,2026-08-17,832500,0,832500,87500,710000,33,25,26,7238,40000,False,False
+23199,Olivia Clark,4,2026-08-17,88400,0,88400,68400,20000,8,2,2,288555,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-08-17,2144100,2090000,54100,49100,5000,9,2,2,481004,0,False,False
+25040,Jamey Evenstar,4,2026-08-17,10250,0,10250,10250,0,5,0,0,203907,0,False,False
+25103,Jayne Cronlund,4,2026-08-17,3982000,3972000,10000,10000,0,5,0,0,74277,0,False,False
+24615,John J Goldsmith,4,2026-08-17,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-08-24,489694,0,489694,221168,268526,30,23,21,860874,0,False,False
+23028,Angelita Morillo,3,2026-08-24,981165,830000,151165,66832,84333,19,11,9,1178214,5600,False,False
+15109,Steve Novick,3,2026-08-24,434300,0,434300,223300,176000,19,11,11,0,0,False,False
+24661,Tom Sollitt,3,2026-08-24,18800,0,18800,6500,12300,3,2,2,132495,0,False,False
+24897,Kellie Torres,3,2026-08-24,2960500,2600000,360500,148000,212500,10,8,8,514063,10000,False,False
+24973,Esther León,3,2026-08-24,2897700,2869700,28000,5500,22500,4,1,1,100000,0,False,False
+24972,Joel Corcoran,3,2026-08-24,0,0,0,0,0,0,0,0,30000,0,False,False
+24966,Matthias Hallett,3,2026-08-24,5240,0,5240,5240,0,1,0,0,30440,0,False,False
+24979,Cristal Otero,3,2026-08-24,25000,0,25000,0,25000,1,1,1,1030,0,False,False
+23295,Eli Arnold,4,2026-08-24,7903216,7500000,403216,130716,272500,25,17,17,37823,0,False,False
+23365,Mitch Green,4,2026-08-24,165417,0,165417,55417,75000,14,6,7,990825,0,False,False
+17629,Eric Zimmerman,4,2026-08-24,851000,0,851000,173500,677500,29,22,22,242669,17500,False,False
+23199,Olivia Clark,4,2026-08-24,75000,0,75000,40000,35000,5,1,1,0,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-08-24,76100,0,76100,76100,0,6,0,0,1088534,0,False,False
+25040,Jamey Evenstar,4,2026-08-24,102750,0,102750,67750,35000,8,2,2,148839,0,False,False
+25103,Jayne Cronlund,4,2026-08-24,3500,0,3500,3500,0,2,0,0,97022,0,False,False
+24615,John J Goldsmith,4,2026-08-24,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-08-31,124166,0,124166,91166,33000,13,6,6,1384543,0,False,False
+23028,Angelita Morillo,3,2026-08-31,101466,0,101466,78266,23200,9,3,3,58101,0,False,False
+15109,Steve Novick,3,2026-08-31,89500,0,89500,44500,45000,7,2,2,1207262,35000,False,False
+24661,Tom Sollitt,3,2026-08-31,0,0,0,0,0,0,0,0,399100,0,False,False
+24897,Kellie Torres,3,2026-08-31,546500,0,546500,249000,297500,15,14,13,102312,0,False,False
+24973,Esther León,3,2026-08-31,3000,0,3000,3000,0,1,0,0,293240,0,False,False
+24972,Joel Corcoran,3,2026-08-31,0,0,0,0,0,0,0,0,10560,0,False,False
+24966,Matthias Hallett,3,2026-08-31,26136,0,26136,5240,20896,3,2,2,12366,0,False,False
+24979,Cristal Otero,3,2026-08-31,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-08-31,301500,0,301500,109000,192500,22,15,15,1075062,0,False,False
+23365,Mitch Green,4,2026-08-31,104266,0,104266,79266,25000,10,3,3,601293,0,False,False
+17629,Eric Zimmerman,4,2026-08-31,262000,0,262000,124500,102500,13,5,6,58835,0,False,False
+23199,Olivia Clark,4,2026-08-31,92000,0,92000,22000,70000,7,2,2,8379,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-08-31,136400,0,136400,133900,2500,8,1,1,511763,0,False,False
+25040,Jamey Evenstar,4,2026-08-31,26500,0,26500,21500,5000,7,1,1,511581,0,False,False
+25103,Jayne Cronlund,4,2026-08-31,3500,0,3500,3500,0,2,0,0,230814,0,False,False
+24615,John J Goldsmith,4,2026-08-31,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-09-07,175066,0,175066,125700,49366,14,7,7,122866,2500,False,False
+23028,Angelita Morillo,3,2026-09-07,1015366,858000,157366,132200,25166,16,8,8,876855,0,False,False
+15109,Steve Novick,3,2026-09-07,236500,0,236500,89500,112000,13,5,6,304331,0,False,False
+24661,Tom Sollitt,3,2026-09-07,0,0,0,0,0,0,0,0,0,0,False,False
+24897,Kellie Torres,3,2026-09-07,392500,0,392500,282500,110000,5,4,4,132271,0,False,False
+24973,Esther León,3,2026-09-07,1500,0,1500,1500,0,1,0,0,156000,0,False,False
+24972,Joel Corcoran,3,2026-09-07,0,0,0,0,0,0,0,0,0,0,False,False
+24966,Matthias Hallett,3,2026-09-07,17500,0,17500,17500,0,1,0,0,885,0,False,False
+24979,Cristal Otero,3,2026-09-07,0,0,0,0,0,0,0,0,0,0,False,False
+23295,Eli Arnold,4,2026-09-07,2140900,1949900,191000,163500,27500,12,5,5,399850,0,False,False
+23365,Mitch Green,4,2026-09-07,813266,657200,156066,98300,57766,14,6,6,164424,0,False,False
+17629,Eric Zimmerman,4,2026-09-07,2403000,1692000,711000,176000,535000,29,21,21,240249,0,False,False
+23199,Olivia Clark,4,2026-09-07,37000,0,37000,2000,35000,2,1,1,500000,0,False,False
+23411,Jeremy Beausoleil Smith,4,2026-09-07,950100,896000,54100,54100,0,8,0,0,5493,0,False,False
+25040,Jamey Evenstar,4,2026-09-07,557500,515000,42500,42500,0,6,0,0,302643,0,False,False
+25103,Jayne Cronlund,4,2026-09-07,447000,180000,267000,74500,192500,17,9,9,836941,0,False,False
+24615,John J Goldsmith,4,2026-09-07,0,0,0,0,0,0,0,0,0,0,False,False
+23208,Tiffany Koyama Lane,3,2026-09-14,229780,0,229780,192668,37112,14,7,7,316208,0,True,False
+23028,Angelita Morillo,3,2026-09-14,1774478,1471700,302778,239666,63112,15,7,7,106150,0,True,False
+15109,Steve Novick,3,2026-09-14,282500,0,282500,138000,144500,16,9,9,9502,35000,True,False
+24661,Tom Sollitt,3,2026-09-14,0,0,0,0,0,0,0,0,0,0,True,False
+24897,Kellie Torres,3,2026-09-14,0,0,0,0,0,0,0,0,22473,0,True,False
+24973,Esther León,3,2026-09-14,6100,0,6100,6100,0,4,0,0,481000,0,True,False
+24972,Joel Corcoran,3,2026-09-14,0,0,0,0,0,0,0,0,0,0,True,False
+24966,Matthias Hallett,3,2026-09-14,25323,0,25323,9635,15688,4,2,2,1193,0,True,False
+24979,Cristal Otero,3,2026-09-14,0,0,0,0,0,0,0,0,0,0,True,False
+23295,Eli Arnold,4,2026-09-14,1469100,550100,919000,529000,390000,30,22,22,278381,0,True,False
+23365,Mitch Green,4,2026-09-14,849148,0,849148,608816,240332,31,24,21,1486923,25000,True,False
+17629,Eric Zimmerman,4,2026-09-14,1082500,0,1082500,257000,825500,35,28,28,229028,0,True,False
+23199,Olivia Clark,4,2026-09-14,0,0,0,0,0,0,0,0,0,0,True,False
+23411,Jeremy Beausoleil Smith,4,2026-09-14,27000,0,27000,22500,4500,7,2,2,73072,0,True,False
+25040,Jamey Evenstar,4,2026-09-14,126277,0,126277,126277,0,7,0,0,118461,0,True,False
+25103,Jayne Cronlund,4,2026-09-14,200500,0,200500,78000,122500,14,9,9,12742,0,True,False
+24615,John J Goldsmith,4,2026-09-14,0,0,0,0,0,0,0,0,0,0,True,False
+23208,Tiffany Koyama Lane,3,2026-09-21,42000,0,42000,42000,0,3,0,0,1089,0,True,False
+23028,Angelita Morillo,3,2026-09-21,254000,0,254000,249000,5000,4,1,1,8993,10000,True,False
+15109,Steve Novick,3,2026-09-21,539100,0,539100,258600,280500,23,18,18,256500,10000,True,False
+24661,Tom Sollitt,3,2026-09-21,0,0,0,0,0,0,0,0,0,0,True,False
+24897,Kellie Torres,3,2026-09-21,0,0,0,0,0,0,0,0,0,0,True,False
+24973,Esther León,3,2026-09-21,85500,81000,4500,4500,0,3,0,0,0,0,True,False
+24972,Joel Corcoran,3,2026-09-21,0,0,0,0,0,0,0,0,0,0,True,False
+24966,Matthias Hallett,3,2026-09-21,0,0,0,0,0,0,0,0,42126,0,True,False
+24979,Cristal Otero,3,2026-09-21,0,0,0,0,0,0,0,0,0,0,True,False
+23295,Eli Arnold,4,2026-09-21,316500,0,316500,164500,152000,13,11,11,552909,0,True,False
+23365,Mitch Green,4,2026-09-21,180245,0,180245,92745,87500,9,6,6,217465,16000,True,False
+17629,Eric Zimmerman,4,2026-09-21,584600,0,584600,224500,360100,18,14,14,25000,25000,True,False
+23199,Olivia Clark,4,2026-09-21,0,0,0,0,0,0,0,0,0,0,True,False
+23411,Jeremy Beausoleil Smith,4,2026-09-21,1000,0,1000,1000,0,1,0,0,0,0,True,False
+25040,Jamey Evenstar,4,2026-09-21,2000,0,2000,2000,0,1,0,0,0,0,True,False
+25103,Jayne Cronlund,4,2026-09-21,7500,0,7500,7500,0,2,0,0,363210,0,True,False
+24615,John J Goldsmith,4,2026-09-21,0,0,0,0,0,0,0,0,0,0,True,False

@@ -38,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/proposals`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: `${BASE_URL}/donate`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/deep-dives`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    ...["", "/suppliers", "/races", "/races/portland-district-3", "/races/portland-district-4", "/races/portland-auditor", "/statewide", "/methodology", "/evidence", "/questions"].map((section) => ({
+      url: `${BASE_URL}/deep-dives/campaign-finance${section}`,
+      lastModified: new Date("2026-09-29T00:00:00Z"),
+      changeFrequency: "weekly" as const,
+      priority: section ? 0.6 : 0.9,
+    })),
     ...["", "/case-studies", "/methodology", "/tables", "/community-research-kit", "/gaps", "/sources"].map((section) => ({
       url: `${BASE_URL}/deep-dives/maker-economy${section}`,
       lastModified: new Date("2026-09-15T00:00:00Z"),

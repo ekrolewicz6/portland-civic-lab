@@ -1,0 +1,120 @@
+snapshot,committee_id,candidate,district,category,cash_cents,transactions
+orestar-20250101-20260927-v1,23208,Tiffany Koyama Lane,3,address_inside,1084401,60
+orestar-20250101-20260927-v1,23208,Tiffany Koyama Lane,3,address_outside,933050,62
+orestar-20250101-20260927-v1,23208,Tiffany Koyama Lane,3,state_outside,274604,21
+orestar-20250101-20260927-v1,23208,Tiffany Koyama Lane,3,zip_inside,215500,17
+orestar-20250101-20260927-v1,23208,Tiffany Koyama Lane,3,zip_outside,404210,38
+orestar-20250101-20260927-v1,23208,Tiffany Koyama Lane,3,uncertain,4869157,350
+orestar-20250101-20260927-v1,23208,Tiffany Koyama Lane,3,public,20000000,6
+orestar-20250101-20260927-v1,23028,Angelita Morillo,3,address_inside,985298,59
+orestar-20250101-20260927-v1,23028,Angelita Morillo,3,address_outside,695766,46
+orestar-20250101-20260927-v1,23028,Angelita Morillo,3,state_outside,118000,10
+orestar-20250101-20260927-v1,23028,Angelita Morillo,3,zip_inside,179000,14
+orestar-20250101-20260927-v1,23028,Angelita Morillo,3,zip_outside,390176,28
+orestar-20250101-20260927-v1,23028,Angelita Morillo,3,uncertain,4129127,228
+orestar-20250101-20260927-v1,23028,Angelita Morillo,3,public,17464500,6
+orestar-20250101-20260927-v1,15109,Steve Novick,3,address_inside,780500,43
+orestar-20250101-20260927-v1,15109,Steve Novick,3,address_outside,1900000,76
+orestar-20250101-20260927-v1,15109,Steve Novick,3,state_outside,645000,19
+orestar-20250101-20260927-v1,15109,Steve Novick,3,zip_inside,217500,13
+orestar-20250101-20260927-v1,15109,Steve Novick,3,zip_outside,1518500,59
+orestar-20250101-20260927-v1,15109,Steve Novick,3,uncertain,4027899,183
+orestar-20250101-20260927-v1,15109,Steve Novick,3,public,10000000,1
+orestar-20250101-20260927-v1,24897,Kellie Torres,3,address_inside,405000,20
+orestar-20250101-20260927-v1,24897,Kellie Torres,3,address_outside,1805000,64
+orestar-20250101-20260927-v1,24897,Kellie Torres,3,state_outside,271700,10
+orestar-20250101-20260927-v1,24897,Kellie Torres,3,zip_inside,122500,7
+orestar-20250101-20260927-v1,24897,Kellie Torres,3,zip_outside,1132100,35
+orestar-20250101-20260927-v1,24897,Kellie Torres,3,uncertain,3499800,62
+orestar-20250101-20260927-v1,24897,Kellie Torres,3,public,9800000,2
+orestar-20250101-20260927-v1,24661,Tom Sollitt,3,address_inside,90000,3
+orestar-20250101-20260927-v1,24661,Tom Sollitt,3,address_outside,20000,1
+orestar-20250101-20260927-v1,24661,Tom Sollitt,3,state_outside,30800,2
+orestar-20250101-20260927-v1,24661,Tom Sollitt,3,zip_inside,0,0
+orestar-20250101-20260927-v1,24661,Tom Sollitt,3,zip_outside,38500,5
+orestar-20250101-20260927-v1,24661,Tom Sollitt,3,uncertain,731900,30
+orestar-20250101-20260927-v1,24661,Tom Sollitt,3,public,3278000,1
+orestar-20250101-20260927-v1,24973,Esther León,3,address_inside,47500,2
+orestar-20250101-20260927-v1,24973,Esther León,3,address_outside,58300,2
+orestar-20250101-20260927-v1,24973,Esther León,3,state_outside,35000,5
+orestar-20250101-20260927-v1,24973,Esther León,3,zip_inside,0,0
+orestar-20250101-20260927-v1,24973,Esther León,3,zip_outside,0,0
+orestar-20250101-20260927-v1,24973,Esther León,3,uncertain,490400,67
+orestar-20250101-20260927-v1,24973,Esther León,3,public,2950700,2
+orestar-20250101-20260927-v1,24972,Joel Corcoran,3,address_inside,0,0
+orestar-20250101-20260927-v1,24972,Joel Corcoran,3,address_outside,40000,2
+orestar-20250101-20260927-v1,24972,Joel Corcoran,3,state_outside,35000,2
+orestar-20250101-20260927-v1,24972,Joel Corcoran,3,zip_inside,0,0
+orestar-20250101-20260927-v1,24972,Joel Corcoran,3,zip_outside,85000,2
+orestar-20250101-20260927-v1,24972,Joel Corcoran,3,uncertain,249500,24
+orestar-20250101-20260927-v1,24972,Joel Corcoran,3,public,0,0
+orestar-20250101-20260927-v1,24966,Matthias Hallett,3,address_inside,0,0
+orestar-20250101-20260927-v1,24966,Matthias Hallett,3,address_outside,20000,1
+orestar-20250101-20260927-v1,24966,Matthias Hallett,3,state_outside,35448,2
+orestar-20250101-20260927-v1,24966,Matthias Hallett,3,zip_inside,15688,2
+orestar-20250101-20260927-v1,24966,Matthias Hallett,3,zip_outside,57362,6
+orestar-20250101-20260927-v1,24966,Matthias Hallett,3,uncertain,152726,19
+orestar-20250101-20260927-v1,24966,Matthias Hallett,3,public,0,0
+orestar-20250101-20260927-v1,24979,Cristal Otero,3,address_inside,0,0
+orestar-20250101-20260927-v1,24979,Cristal Otero,3,address_outside,0,0
+orestar-20250101-20260927-v1,24979,Cristal Otero,3,state_outside,25000,1
+orestar-20250101-20260927-v1,24979,Cristal Otero,3,zip_inside,0,0
+orestar-20250101-20260927-v1,24979,Cristal Otero,3,zip_outside,0,0
+orestar-20250101-20260927-v1,24979,Cristal Otero,3,uncertain,94000,10
+orestar-20250101-20260927-v1,24979,Cristal Otero,3,public,0,0
+orestar-20250101-20260927-v1,23295,Eli Arnold,4,address_inside,1917500,100
+orestar-20250101-20260927-v1,23295,Eli Arnold,4,address_outside,586000,25
+orestar-20250101-20260927-v1,23295,Eli Arnold,4,state_outside,125000,3
+orestar-20250101-20260927-v1,23295,Eli Arnold,4,zip_inside,715000,30
+orestar-20250101-20260927-v1,23295,Eli Arnold,4,zip_outside,238500,18
+orestar-20250101-20260927-v1,23295,Eli Arnold,4,uncertain,4986115,272
+orestar-20250101-20260927-v1,23295,Eli Arnold,4,public,20000000,5
+orestar-20250101-20260927-v1,23365,Mitch Green,4,address_inside,893500,50
+orestar-20250101-20260927-v1,23365,Mitch Green,4,address_outside,1647321,102
+orestar-20250101-20260927-v1,23365,Mitch Green,4,state_outside,382600,14
+orestar-20250101-20260927-v1,23365,Mitch Green,4,zip_inside,109500,15
+orestar-20250101-20260927-v1,23365,Mitch Green,4,zip_outside,634875,41
+orestar-20250101-20260927-v1,23365,Mitch Green,4,uncertain,4149890,313
+orestar-20250101-20260927-v1,23365,Mitch Green,4,public,16240100,5
+orestar-20250101-20260927-v1,17629,Eric Zimmerman,4,address_inside,2555500,100
+orestar-20250101-20260927-v1,17629,Eric Zimmerman,4,address_outside,769200,21
+orestar-20250101-20260927-v1,17629,Eric Zimmerman,4,state_outside,262500,6
+orestar-20250101-20260927-v1,17629,Eric Zimmerman,4,zip_inside,780000,26
+orestar-20250101-20260927-v1,17629,Eric Zimmerman,4,zip_outside,911500,28
+orestar-20250101-20260927-v1,17629,Eric Zimmerman,4,uncertain,3215600,192
+orestar-20250101-20260927-v1,17629,Eric Zimmerman,4,public,8810000,3
+orestar-20250101-20260927-v1,23199,Olivia Clark,4,address_inside,1469945,55
+orestar-20250101-20260927-v1,23199,Olivia Clark,4,address_outside,575000,19
+orestar-20250101-20260927-v1,23199,Olivia Clark,4,state_outside,252500,6
+orestar-20250101-20260927-v1,23199,Olivia Clark,4,zip_inside,997500,38
+orestar-20250101-20260927-v1,23199,Olivia Clark,4,zip_outside,317700,11
+orestar-20250101-20260927-v1,23199,Olivia Clark,4,uncertain,3625000,271
+orestar-20250101-20260927-v1,23199,Olivia Clark,4,public,10000000,2
+orestar-20250101-20260927-v1,23411,Jeremy Beausoleil Smith,4,address_inside,69000,6
+orestar-20250101-20260927-v1,23411,Jeremy Beausoleil Smith,4,address_outside,35000,2
+orestar-20250101-20260927-v1,23411,Jeremy Beausoleil Smith,4,state_outside,50000,6
+orestar-20250101-20260927-v1,23411,Jeremy Beausoleil Smith,4,zip_inside,25000,1
+orestar-20250101-20260927-v1,23411,Jeremy Beausoleil Smith,4,zip_outside,68000,6
+orestar-20250101-20260927-v1,23411,Jeremy Beausoleil Smith,4,uncertain,1660700,187
+orestar-20250101-20260927-v1,23411,Jeremy Beausoleil Smith,4,public,8415000,5
+orestar-20250101-20260927-v1,25040,Jamey Evenstar,4,address_inside,117500,6
+orestar-20250101-20260927-v1,25040,Jamey Evenstar,4,address_outside,196000,13
+orestar-20250101-20260927-v1,25040,Jamey Evenstar,4,state_outside,547000,22
+orestar-20250101-20260927-v1,25040,Jamey Evenstar,4,zip_inside,0,0
+orestar-20250101-20260927-v1,25040,Jamey Evenstar,4,zip_outside,115500,6
+orestar-20250101-20260927-v1,25040,Jamey Evenstar,4,uncertain,1100447,96
+orestar-20250101-20260927-v1,25040,Jamey Evenstar,4,public,5261000,2
+orestar-20250101-20260927-v1,25103,Jayne Cronlund,4,address_inside,162500,9
+orestar-20250101-20260927-v1,25103,Jayne Cronlund,4,address_outside,105000,5
+orestar-20250101-20260927-v1,25103,Jayne Cronlund,4,state_outside,277500,7
+orestar-20250101-20260927-v1,25103,Jayne Cronlund,4,zip_inside,115000,7
+orestar-20250101-20260927-v1,25103,Jayne Cronlund,4,zip_outside,25000,1
+orestar-20250101-20260927-v1,25103,Jayne Cronlund,4,uncertain,946700,49
+orestar-20250101-20260927-v1,25103,Jayne Cronlund,4,public,4152000,2
+orestar-20250101-20260927-v1,24615,John J Goldsmith,4,address_inside,0,0
+orestar-20250101-20260927-v1,24615,John J Goldsmith,4,address_outside,0,0
+orestar-20250101-20260927-v1,24615,John J Goldsmith,4,state_outside,0,0
+orestar-20250101-20260927-v1,24615,John J Goldsmith,4,zip_inside,0,0
+orestar-20250101-20260927-v1,24615,John J Goldsmith,4,zip_outside,0,0
+orestar-20250101-20260927-v1,24615,John J Goldsmith,4,uncertain,60000,1
+orestar-20250101-20260927-v1,24615,John J Goldsmith,4,public,0,0

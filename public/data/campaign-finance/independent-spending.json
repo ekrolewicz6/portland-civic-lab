@@ -1,0 +1,41 @@
+{
+  "version": "reported-target-allocations-v1",
+  "snapshot": "orestar-20250101-20260927-v1",
+  "searched_records": 137,
+  "parsed_records": 77,
+  "allocation_rows": 227,
+  "gap_records": 60,
+  "reconciliation_differences": 10,
+  "multi_target_records": 21,
+  "groups": [
+    {
+      "kind": "independent",
+      "position": "support",
+      "basis": "cash_payment",
+      "allocations": 176,
+      "allocated_cents": 21846888
+    },
+    {
+      "kind": "independent",
+      "position": "opposition",
+      "basis": "cash_payment",
+      "allocations": 40,
+      "allocated_cents": 8674518
+    },
+    {
+      "kind": "independent",
+      "position": "opposition",
+      "basis": "obligation",
+      "allocations": 3,
+      "allocated_cents": 492000
+    },
+    {
+      "kind": "independent",
+      "position": "support",
+      "basis": "obligation",
+      "allocations": 8,
+      "allocated_cents": 7798381
+    }
+  ],
+  "limitation": "ORESTAR independent-checkbox result population only, not proof all outside spending was disclosed or correctly flagged. Targets are reported labels, not reviewed race/entity identities. Cash, obligations and in-kind allocations remain separate; related payable/payment records cannot be summed as two purchases. Live details may postdate the fixed export."
+}

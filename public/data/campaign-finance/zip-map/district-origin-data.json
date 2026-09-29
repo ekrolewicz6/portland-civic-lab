@@ -1,0 +1,635 @@
+{
+  "version": "candidate-district-origin-v1",
+  "snapshot": "orestar-20250101-20260927-v1",
+  "start": "2025-01-01",
+  "end": "2026-09-27",
+  "sourceZipDataSha256": "761663786b0d22b2f9d654ff4a65af51671a06bab09a72e878883ea9133e6859",
+  "censusZctaSha256": "4472cb693e9f54a296ca1232b7a402178e74b945e3ba61ed6854d8d9b995a85a",
+  "officialDistrictUrl": "https://www.portlandmaps.com/od/rest/services/COP_OpenData_Boundary/MapServer/1413/query?where=1%3D1&outFields=DISTRICT&outSR=4326&f=geojson",
+  "officialDistrictSha256": "92ef85bc672f4101a5aa27de7327286695a04a3b6abbfc801333187029cb9557",
+  "districtBoundaryDate": "2023-08-21",
+  "basis": "Gross cash contributions. Reported source ZIP, not verified residence. Reviewed City matching payments are separate.",
+  "definitions": {
+    "within": "Reported ZIP has a 2020 Census ZCTA polygon wholly within the candidate district.",
+    "outside": "Reported ZIP has a local 2020 Census ZCTA polygon disjoint from the candidate district.",
+    "crosses": "The ZCTA touches or crosses the candidate district boundary; individual location is uncertain.",
+    "other_zip": "Valid reported ZIP has no polygon in the local Census map; district relationship is not classified.",
+    "unlocated": "Aggregate or unidentified source, missing ZIP, or invalid ZIP.",
+    "public": "Reviewed City matching receipt; not assigned to a contributor location."
+  },
+  "limitations": "Census ZCTAs approximate postal ZIP areas. A reported address can be a mailing address, workplace or PO box, and a transaction is not a unique donor. In/out are classifications of reported ZIP areas, not verified donor residency or eligibility. Split and absent ZIPs are never apportioned.",
+  "evidence": {
+    "summary": "/data/campaign-finance/zip-map/candidate-district-origin.csv",
+    "zipClassifications": "/data/campaign-finance/zip-map/candidate-zip-district-classification.csv"
+  },
+  "evidenceSha256": {
+    "summary": "c0e19060624c3a6872d99734015a034c8f711786435186e89f80a68cc18e20a6",
+    "zipClassifications": "64f123a6d5d7e2af070004d099c560a0563a758e72f7fe375066d26b8b5d05b9"
+  },
+  "totals": {
+    "within": {
+      "cents": 3492188,
+      "records": 170
+    },
+    "outside": {
+      "cents": 10040876,
+      "records": 470
+    },
+    "crosses": {
+      "cents": 18854658,
+      "records": 880
+    },
+    "other_zip": {
+      "cents": 3701682,
+      "records": 162
+    },
+    "unlocated": {
+      "cents": 34660101,
+      "records": 2216
+    },
+    "public": {
+      "cents": 136371300,
+      "records": 42
+    }
+  },
+  "candidates": [
+    {
+      "committeeId": "15109",
+      "candidate": "Steve Novick",
+      "raceId": "portland-district-3",
+      "district": 3,
+      "cashCents": 19089399,
+      "cashRecords": 394,
+      "categories": {
+        "within": {
+          "cents": 217500,
+          "records": 13
+        },
+        "outside": {
+          "cents": 2511000,
+          "records": 102
+        },
+        "crosses": {
+          "cents": 1903000,
+          "records": 85
+        },
+        "other_zip": {
+          "cents": 937500,
+          "records": 30
+        },
+        "unlocated": {
+          "cents": 3520399,
+          "records": 163
+        },
+        "public": {
+          "cents": 10000000,
+          "records": 1
+        }
+      }
+    },
+    {
+      "committeeId": "17629",
+      "candidate": "Eric Zimmerman",
+      "raceId": "portland-district-4",
+      "district": 4,
+      "cashCents": 17304300,
+      "cashRecords": 376,
+      "categories": {
+        "within": {
+          "cents": 780000,
+          "records": 26
+        },
+        "outside": {
+          "cents": 1114000,
+          "records": 33
+        },
+        "crosses": {
+          "cents": 3814700,
+          "records": 141
+        },
+        "other_zip": {
+          "cents": 385000,
+          "records": 13
+        },
+        "unlocated": {
+          "cents": 2400600,
+          "records": 160
+        },
+        "public": {
+          "cents": 8810000,
+          "records": 3
+        }
+      }
+    },
+    {
+      "committeeId": "23028",
+      "candidate": "Angelita Morillo",
+      "raceId": "portland-district-3",
+      "district": 3,
+      "cashCents": 23961867,
+      "cashRecords": 391,
+      "categories": {
+        "within": {
+          "cents": 179000,
+          "records": 14
+        },
+        "outside": {
+          "cents": 675109,
+          "records": 51
+        },
+        "crosses": {
+          "cents": 1545631,
+          "records": 92
+        },
+        "other_zip": {
+          "cents": 138000,
+          "records": 11
+        },
+        "unlocated": {
+          "cents": 3959627,
+          "records": 217
+        },
+        "public": {
+          "cents": 17464500,
+          "records": 6
+        }
+      }
+    },
+    {
+      "committeeId": "23199",
+      "candidate": "Olivia Clark",
+      "raceId": "portland-district-4",
+      "district": 4,
+      "cashCents": 17237645,
+      "cashRecords": 402,
+      "categories": {
+        "within": {
+          "cents": 997500,
+          "records": 38
+        },
+        "outside": {
+          "cents": 430200,
+          "records": 13
+        },
+        "crosses": {
+          "cents": 2347445,
+          "records": 85
+        },
+        "other_zip": {
+          "cents": 240000,
+          "records": 8
+        },
+        "unlocated": {
+          "cents": 3222500,
+          "records": 256
+        },
+        "public": {
+          "cents": 10000000,
+          "records": 2
+        }
+      }
+    },
+    {
+      "committeeId": "23208",
+      "candidate": "Tiffany Koyama Lane",
+      "raceId": "portland-district-3",
+      "district": 3,
+      "cashCents": 27780922,
+      "cashRecords": 554,
+      "categories": {
+        "within": {
+          "cents": 215500,
+          "records": 17
+        },
+        "outside": {
+          "cents": 1041610,
+          "records": 78
+        },
+        "crosses": {
+          "cents": 1459051,
+          "records": 86
+        },
+        "other_zip": {
+          "cents": 225704,
+          "records": 18
+        },
+        "unlocated": {
+          "cents": 4839057,
+          "records": 349
+        },
+        "public": {
+          "cents": 20000000,
+          "records": 6
+        }
+      }
+    },
+    {
+      "committeeId": "23295",
+      "candidate": "Eli Arnold",
+      "raceId": "portland-district-4",
+      "district": 4,
+      "cashCents": 28568115,
+      "cashRecords": 453,
+      "categories": {
+        "within": {
+          "cents": 715000,
+          "records": 30
+        },
+        "outside": {
+          "cents": 371000,
+          "records": 21
+        },
+        "crosses": {
+          "cents": 2774500,
+          "records": 141
+        },
+        "other_zip": {
+          "cents": 140000,
+          "records": 5
+        },
+        "unlocated": {
+          "cents": 4567615,
+          "records": 251
+        },
+        "public": {
+          "cents": 20000000,
+          "records": 5
+        }
+      }
+    },
+    {
+      "committeeId": "23365",
+      "candidate": "Mitch Green",
+      "raceId": "portland-district-4",
+      "district": 4,
+      "cashCents": 24057786,
+      "cashRecords": 540,
+      "categories": {
+        "within": {
+          "cents": 109500,
+          "records": 15
+        },
+        "outside": {
+          "cents": 970495,
+          "records": 64
+        },
+        "crosses": {
+          "cents": 2327701,
+          "records": 135
+        },
+        "other_zip": {
+          "cents": 382600,
+          "records": 14
+        },
+        "unlocated": {
+          "cents": 4027390,
+          "records": 307
+        },
+        "public": {
+          "cents": 16240100,
+          "records": 5
+        }
+      }
+    },
+    {
+      "committeeId": "23411",
+      "candidate": "Jeremy Beausoleil Smith",
+      "raceId": "portland-district-4",
+      "district": 4,
+      "cashCents": 10322700,
+      "cashRecords": 213,
+      "categories": {
+        "within": {
+          "cents": 25000,
+          "records": 1
+        },
+        "outside": {
+          "cents": 93000,
+          "records": 7
+        },
+        "crosses": {
+          "cents": 79000,
+          "records": 7
+        },
+        "other_zip": {
+          "cents": 50000,
+          "records": 6
+        },
+        "unlocated": {
+          "cents": 1660700,
+          "records": 187
+        },
+        "public": {
+          "cents": 8415000,
+          "records": 5
+        }
+      }
+    },
+    {
+      "committeeId": "24615",
+      "candidate": "John J Goldsmith",
+      "raceId": "portland-district-4",
+      "district": 4,
+      "cashCents": 60000,
+      "cashRecords": 1,
+      "categories": {
+        "within": {
+          "cents": 0,
+          "records": 0
+        },
+        "outside": {
+          "cents": 0,
+          "records": 0
+        },
+        "crosses": {
+          "cents": 60000,
+          "records": 1
+        },
+        "other_zip": {
+          "cents": 0,
+          "records": 0
+        },
+        "unlocated": {
+          "cents": 0,
+          "records": 0
+        },
+        "public": {
+          "cents": 0,
+          "records": 0
+        }
+      }
+    },
+    {
+      "committeeId": "24661",
+      "candidate": "Tom Sollitt",
+      "raceId": "portland-district-3",
+      "district": 3,
+      "cashCents": 4189200,
+      "cashRecords": 42,
+      "categories": {
+        "within": {
+          "cents": 0,
+          "records": 0
+        },
+        "outside": {
+          "cents": 58500,
+          "records": 6
+        },
+        "crosses": {
+          "cents": 100000,
+          "records": 4
+        },
+        "other_zip": {
+          "cents": 70800,
+          "records": 4
+        },
+        "unlocated": {
+          "cents": 681900,
+          "records": 27
+        },
+        "public": {
+          "cents": 3278000,
+          "records": 1
+        }
+      }
+    },
+    {
+      "committeeId": "24897",
+      "candidate": "Kellie Torres",
+      "raceId": "portland-district-3",
+      "district": 3,
+      "cashCents": 17036100,
+      "cashRecords": 200,
+      "categories": {
+        "within": {
+          "cents": 122500,
+          "records": 7
+        },
+        "outside": {
+          "cents": 2134600,
+          "records": 70
+        },
+        "crosses": {
+          "cents": 1722500,
+          "records": 66
+        },
+        "other_zip": {
+          "cents": 406700,
+          "records": 15
+        },
+        "unlocated": {
+          "cents": 2849800,
+          "records": 40
+        },
+        "public": {
+          "cents": 9800000,
+          "records": 2
+        }
+      }
+    },
+    {
+      "committeeId": "24966",
+      "candidate": "Matthias Hallett",
+      "raceId": "portland-district-3",
+      "district": 3,
+      "cashCents": 281224,
+      "cashRecords": 30,
+      "categories": {
+        "within": {
+          "cents": 15688,
+          "records": 2
+        },
+        "outside": {
+          "cents": 57362,
+          "records": 6
+        },
+        "crosses": {
+          "cents": 30330,
+          "records": 2
+        },
+        "other_zip": {
+          "cents": 45778,
+          "records": 3
+        },
+        "unlocated": {
+          "cents": 132066,
+          "records": 17
+        },
+        "public": {
+          "cents": 0,
+          "records": 0
+        }
+      }
+    },
+    {
+      "committeeId": "24972",
+      "candidate": "Joel Corcoran",
+      "raceId": "portland-district-3",
+      "district": 3,
+      "cashCents": 409500,
+      "cashRecords": 30,
+      "categories": {
+        "within": {
+          "cents": 0,
+          "records": 0
+        },
+        "outside": {
+          "cents": 105000,
+          "records": 3
+        },
+        "crosses": {
+          "cents": 20000,
+          "records": 1
+        },
+        "other_zip": {
+          "cents": 35000,
+          "records": 2
+        },
+        "unlocated": {
+          "cents": 249500,
+          "records": 24
+        },
+        "public": {
+          "cents": 0,
+          "records": 0
+        }
+      }
+    },
+    {
+      "committeeId": "24973",
+      "candidate": "Esther León",
+      "raceId": "portland-district-3",
+      "district": 3,
+      "cashCents": 3581900,
+      "cashRecords": 78,
+      "categories": {
+        "within": {
+          "cents": 0,
+          "records": 0
+        },
+        "outside": {
+          "cents": 0,
+          "records": 0
+        },
+        "crosses": {
+          "cents": 105800,
+          "records": 4
+        },
+        "other_zip": {
+          "cents": 35000,
+          "records": 5
+        },
+        "unlocated": {
+          "cents": 490400,
+          "records": 67
+        },
+        "public": {
+          "cents": 2950700,
+          "records": 2
+        }
+      }
+    },
+    {
+      "committeeId": "24979",
+      "candidate": "Cristal Otero",
+      "raceId": "portland-district-3",
+      "district": 3,
+      "cashCents": 119000,
+      "cashRecords": 11,
+      "categories": {
+        "within": {
+          "cents": 0,
+          "records": 0
+        },
+        "outside": {
+          "cents": 0,
+          "records": 0
+        },
+        "crosses": {
+          "cents": 0,
+          "records": 0
+        },
+        "other_zip": {
+          "cents": 25000,
+          "records": 1
+        },
+        "unlocated": {
+          "cents": 94000,
+          "records": 10
+        },
+        "public": {
+          "cents": 0,
+          "records": 0
+        }
+      }
+    },
+    {
+      "committeeId": "25040",
+      "candidate": "Jamey Evenstar",
+      "raceId": "portland-district-4",
+      "district": 4,
+      "cashCents": 7337447,
+      "cashRecords": 145,
+      "categories": {
+        "within": {
+          "cents": 0,
+          "records": 0
+        },
+        "outside": {
+          "cents": 366500,
+          "records": 14
+        },
+        "crosses": {
+          "cents": 262500,
+          "records": 15
+        },
+        "other_zip": {
+          "cents": 357100,
+          "records": 19
+        },
+        "unlocated": {
+          "cents": 1090347,
+          "records": 95
+        },
+        "public": {
+          "cents": 5261000,
+          "records": 2
+        }
+      }
+    },
+    {
+      "committeeId": "25103",
+      "candidate": "Jayne Cronlund",
+      "raceId": "portland-district-4",
+      "district": 4,
+      "cashCents": 5783700,
+      "cashRecords": 80,
+      "categories": {
+        "within": {
+          "cents": 115000,
+          "records": 7
+        },
+        "outside": {
+          "cents": 112500,
+          "records": 2
+        },
+        "crosses": {
+          "cents": 302500,
+          "records": 15
+        },
+        "other_zip": {
+          "cents": 227500,
+          "records": 8
+        },
+        "unlocated": {
+          "cents": 874200,
+          "records": 46
+        },
+        "public": {
+          "cents": 4152000,
+          "records": 2
+        }
+      }
+    }
+  ]
+}

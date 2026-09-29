@@ -1,0 +1,4255 @@
+{
+  "snapshot": "orestar-20250101-20260927-v1",
+  "metric_version": "financial-bases-v1",
+  "start": "2025-01-01",
+  "end": "2026-09-27",
+  "rows": 316926,
+  "filers": 1888,
+  "bases": [
+    {
+      "basis": "cash_adjustment",
+      "subtype": "Cash Balance Adjustment",
+      "direction": "adjustment",
+      "records": 170,
+      "amount_cents": 2695216
+    },
+    {
+      "basis": "cash_contribution",
+      "subtype": "Cash Contribution",
+      "direction": "in",
+      "records": 209809,
+      "amount_cents": 12179417002
+    },
+    {
+      "basis": "cash_payment",
+      "subtype": "Cash Expenditure",
+      "direction": "out",
+      "records": 79849,
+      "amount_cents": 9127095555
+    },
+    {
+      "basis": "cash_reversal",
+      "subtype": "Lost or Returned Check",
+      "direction": "adjustment",
+      "records": 458,
+      "amount_cents": 77673994
+    },
+    {
+      "basis": "contribution_refund",
+      "subtype": "Return or Refund of Contribution",
+      "direction": "out",
+      "records": 994,
+      "amount_cents": 113864863
+    },
+    {
+      "basis": "forgiven_obligation",
+      "subtype": "In-Kind/Forgiven Account Payable",
+      "direction": "in",
+      "records": 36,
+      "amount_cents": 11814888
+    },
+    {
+      "basis": "forgiven_obligation",
+      "subtype": "In-Kind/Forgiven Personal Expenditures",
+      "direction": "in",
+      "records": 202,
+      "amount_cents": 25238382
+    },
+    {
+      "basis": "loan_forgiven",
+      "subtype": "Loan Forgiven (Non-Exempt)",
+      "direction": "adjustment",
+      "records": 90,
+      "amount_cents": 84339290
+    },
+    {
+      "basis": "loan_payment",
+      "subtype": "Loan Payment (Exempt)",
+      "direction": "out",
+      "records": 5,
+      "amount_cents": 284970
+    },
+    {
+      "basis": "loan_payment",
+      "subtype": "Loan Payment (Non-Exempt)",
+      "direction": "out",
+      "records": 112,
+      "amount_cents": 37981917
+    },
+    {
+      "basis": "loan_received",
+      "subtype": "Loan Received (Exempt)",
+      "direction": "in",
+      "records": 4,
+      "amount_cents": 3441225
+    },
+    {
+      "basis": "loan_received",
+      "subtype": "Loan Received (Non-Exempt)",
+      "direction": "in",
+      "records": 334,
+      "amount_cents": 123331758
+    },
+    {
+      "basis": "noncash_support",
+      "subtype": "In-Kind Contribution",
+      "direction": "in",
+      "records": 6858,
+      "amount_cents": 1094749020
+    },
+    {
+      "basis": "obligation",
+      "subtype": "Account Payable",
+      "direction": "out",
+      "records": 1032,
+      "amount_cents": 342239178
+    },
+    {
+      "basis": "obligation",
+      "subtype": "Personal Expenditure for Reimbursement",
+      "direction": "out",
+      "records": 6252,
+      "amount_cents": 197291185
+    },
+    {
+      "basis": "obligation_adjustment",
+      "subtype": "Personal Expenditure Balance Adjustment",
+      "direction": "adjustment",
+      "records": 26,
+      "amount_cents": -423291
+    },
+    {
+      "basis": "obligation_cancellation",
+      "subtype": "Account Payable Rescinded",
+      "direction": "adjustment",
+      "records": 18,
+      "amount_cents": 10243486
+    },
+    {
+      "basis": "other_cash_payment",
+      "subtype": "Miscellaneous Other Disbursement",
+      "direction": "out",
+      "records": 1494,
+      "amount_cents": 126846107
+    },
+    {
+      "basis": "other_cash_payment",
+      "subtype": "Nonpartisan Activity",
+      "direction": "out",
+      "records": 3,
+      "amount_cents": 496065
+    },
+    {
+      "basis": "other_cash_receipt",
+      "subtype": "Interest/Investment Income",
+      "direction": "in",
+      "records": 1264,
+      "amount_cents": 28390196
+    },
+    {
+      "basis": "other_cash_receipt",
+      "subtype": "Items Sold at Fair Market Value",
+      "direction": "in",
+      "records": 5305,
+      "amount_cents": 189433173
+    },
+    {
+      "basis": "other_cash_receipt",
+      "subtype": "Miscellaneous Other Receipt",
+      "direction": "in",
+      "records": 1932,
+      "amount_cents": 166961096
+    },
+    {
+      "basis": "other_cash_receipt",
+      "subtype": "Refunds and Rebates",
+      "direction": "in",
+      "records": 672,
+      "amount_cents": 42723403
+    },
+    {
+      "basis": "receivable",
+      "subtype": "Miscellaneous Account Receivable",
+      "direction": "in",
+      "records": 7,
+      "amount_cents": 166211
+    }
+  ],
+  "disclosure": [
+    {
+      "family": "Contribution",
+      "subtype": "Cash Contribution",
+      "label": "Miscellaneous Cash Contributions $100 and under ",
+      "records": 31299,
+      "amount_cents": 1201713528
+    },
+    {
+      "family": "Expenditure",
+      "subtype": "Cash Expenditure",
+      "label": "Miscellaneous Cash Expenditures $100 and under",
+      "records": 19645,
+      "amount_cents": 52097276
+    },
+    {
+      "family": "Expenditure",
+      "subtype": "Personal Expenditure for Reimbursement",
+      "label": "Miscellaneous Personal Expenditures $100 and under",
+      "records": 2279,
+      "amount_cents": 10085148
+    },
+    {
+      "family": "Contribution",
+      "subtype": "In-Kind Contribution",
+      "label": "Miscellaneous In-Kind Contributions $100 and under",
+      "records": 875,
+      "amount_cents": 5944437
+    },
+    {
+      "family": "Other Disbursement",
+      "subtype": "Return or Refund of Contribution",
+      "label": "Miscellaneous Return/Refund of Contribution $100 and under",
+      "records": 184,
+      "amount_cents": 1311070
+    },
+    {
+      "family": "Contribution",
+      "subtype": "In-Kind/Forgiven Personal Expenditures",
+      "label": "Miscellaneous In-Kind Contributions $100 and under",
+      "records": 64,
+      "amount_cents": 214060
+    },
+    {
+      "family": "Other Receipt",
+      "subtype": "Lost or Returned Check",
+      "label": "Miscellaneous Lost or Returned Check $100 and under",
+      "records": 24,
+      "amount_cents": 154446
+    },
+    {
+      "family": "Contribution",
+      "subtype": "Cash Contribution",
+      "label": "Anonymous Contribution",
+      "records": 14,
+      "amount_cents": 485150
+    },
+    {
+      "family": "Contribution",
+      "subtype": "In-Kind/Forgiven Account Payable",
+      "label": "Miscellaneous In-Kind Contributions $100 and under",
+      "records": 6,
+      "amount_cents": 58389
+    }
+  ],
+  "geography": [
+    {
+      "geography": "Oregon",
+      "records": 158237,
+      "amount_cents": 8201765190,
+      "identified_cents": 8201765190
+    },
+    {
+      "geography": "Outside Oregon (reported)",
+      "records": 20106,
+      "amount_cents": 2767773596,
+      "identified_cents": 2767773596
+    },
+    {
+      "geography": "Unknown state",
+      "records": 31466,
+      "amount_cents": 1209878216,
+      "identified_cents": 7679538
+    }
+  ],
+  "contributor_types": [
+    {
+      "book_type": "Individual",
+      "records": 153810,
+      "amount_cents": 3165608253
+    },
+    {
+      "book_type": "Political Committee",
+      "records": 5771,
+      "amount_cents": 2620234924
+    },
+    {
+      "book_type": "Business Entity",
+      "records": 16045,
+      "amount_cents": 2387947420
+    },
+    {
+      "book_type": "Labor Organization",
+      "records": 636,
+      "amount_cents": 1262434179
+    },
+    {
+      "book_type": "Unspecified",
+      "records": 31313,
+      "amount_cents": 1202198678
+    },
+    {
+      "book_type": "Other",
+      "records": 980,
+      "amount_cents": 1057041684
+    },
+    {
+      "book_type": "Unregistered Committee",
+      "records": 574,
+      "amount_cents": 406783999
+    },
+    {
+      "book_type": "Candidate & Immediate Family",
+      "records": 524,
+      "amount_cents": 47735367
+    },
+    {
+      "book_type": "Political Party Committee",
+      "records": 156,
+      "amount_cents": 29432498
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2025-01",
+      "basis": "cash_adjustment",
+      "records": 7,
+      "amount_cents": 34033
+    },
+    {
+      "month": "2025-01",
+      "basis": "cash_contribution",
+      "records": 5031,
+      "amount_cents": 242466061
+    },
+    {
+      "month": "2025-01",
+      "basis": "cash_payment",
+      "records": 2817,
+      "amount_cents": 220686986
+    },
+    {
+      "month": "2025-01",
+      "basis": "cash_reversal",
+      "records": 39,
+      "amount_cents": 8458728
+    },
+    {
+      "month": "2025-01",
+      "basis": "contribution_refund",
+      "records": 244,
+      "amount_cents": 20417021
+    },
+    {
+      "month": "2025-01",
+      "basis": "forgiven_obligation",
+      "records": 8,
+      "amount_cents": 350753
+    },
+    {
+      "month": "2025-01",
+      "basis": "loan_forgiven",
+      "records": 7,
+      "amount_cents": 5292121
+    },
+    {
+      "month": "2025-01",
+      "basis": "loan_payment",
+      "records": 8,
+      "amount_cents": 2513928
+    },
+    {
+      "month": "2025-01",
+      "basis": "noncash_support",
+      "records": 76,
+      "amount_cents": 10997494
+    },
+    {
+      "month": "2025-01",
+      "basis": "obligation",
+      "records": 219,
+      "amount_cents": 5803703
+    },
+    {
+      "month": "2025-01",
+      "basis": "obligation_adjustment",
+      "records": 2,
+      "amount_cents": 23803
+    },
+    {
+      "month": "2025-01",
+      "basis": "obligation_cancellation",
+      "records": 1,
+      "amount_cents": 62138
+    },
+    {
+      "month": "2025-01",
+      "basis": "other_cash_payment",
+      "records": 49,
+      "amount_cents": 10100868
+    },
+    {
+      "month": "2025-01",
+      "basis": "other_cash_receipt",
+      "records": 506,
+      "amount_cents": 12383478
+    },
+    {
+      "month": "2025-02",
+      "basis": "cash_adjustment",
+      "records": 10,
+      "amount_cents": -22348
+    },
+    {
+      "month": "2025-02",
+      "basis": "cash_contribution",
+      "records": 5249,
+      "amount_cents": 210979324
+    },
+    {
+      "month": "2025-02",
+      "basis": "cash_payment",
+      "records": 2285,
+      "amount_cents": 123245863
+    },
+    {
+      "month": "2025-02",
+      "basis": "cash_reversal",
+      "records": 25,
+      "amount_cents": 2957973
+    },
+    {
+      "month": "2025-02",
+      "basis": "contribution_refund",
+      "records": 31,
+      "amount_cents": 8607053
+    },
+    {
+      "month": "2025-02",
+      "basis": "forgiven_obligation",
+      "records": 15,
+      "amount_cents": 1333846
+    },
+    {
+      "month": "2025-02",
+      "basis": "loan_forgiven",
+      "records": 5,
+      "amount_cents": 682015
+    },
+    {
+      "month": "2025-02",
+      "basis": "loan_payment",
+      "records": 5,
+      "amount_cents": 502514
+    },
+    {
+      "month": "2025-02",
+      "basis": "loan_received",
+      "records": 2,
+      "amount_cents": 800000
+    },
+    {
+      "month": "2025-02",
+      "basis": "noncash_support",
+      "records": 164,
+      "amount_cents": 8995381
+    },
+    {
+      "month": "2025-02",
+      "basis": "obligation",
+      "records": 200,
+      "amount_cents": 4611080
+    },
+    {
+      "month": "2025-02",
+      "basis": "obligation_adjustment",
+      "records": 1,
+      "amount_cents": 8645
+    },
+    {
+      "month": "2025-02",
+      "basis": "other_cash_payment",
+      "records": 42,
+      "amount_cents": 11567529
+    },
+    {
+      "month": "2025-02",
+      "basis": "other_cash_receipt",
+      "records": 318,
+      "amount_cents": 56264049
+    },
+    {
+      "month": "2025-03",
+      "basis": "cash_adjustment",
+      "records": 11,
+      "amount_cents": 358526
+    },
+    {
+      "month": "2025-03",
+      "basis": "cash_contribution",
+      "records": 4376,
+      "amount_cents": 176116837
+    },
+    {
+      "month": "2025-03",
+      "basis": "cash_payment",
+      "records": 2641,
+      "amount_cents": 261707575
+    },
+    {
+      "month": "2025-03",
+      "basis": "cash_reversal",
+      "records": 13,
+      "amount_cents": 1244918
+    },
+    {
+      "month": "2025-03",
+      "basis": "contribution_refund",
+      "records": 17,
+      "amount_cents": 1060157
+    },
+    {
+      "month": "2025-03",
+      "basis": "forgiven_obligation",
+      "records": 17,
+      "amount_cents": 3000521
+    },
+    {
+      "month": "2025-03",
+      "basis": "loan_forgiven",
+      "records": 5,
+      "amount_cents": 351320
+    },
+    {
+      "month": "2025-03",
+      "basis": "loan_payment",
+      "records": 5,
+      "amount_cents": 625530
+    },
+    {
+      "month": "2025-03",
+      "basis": "loan_received",
+      "records": 9,
+      "amount_cents": 488000
+    },
+    {
+      "month": "2025-03",
+      "basis": "noncash_support",
+      "records": 252,
+      "amount_cents": 15209025
+    },
+    {
+      "month": "2025-03",
+      "basis": "obligation",
+      "records": 308,
+      "amount_cents": 9131947
+    },
+    {
+      "month": "2025-03",
+      "basis": "obligation_cancellation",
+      "records": 1,
+      "amount_cents": 1500000
+    },
+    {
+      "month": "2025-03",
+      "basis": "other_cash_payment",
+      "records": 193,
+      "amount_cents": 23225717
+    },
+    {
+      "month": "2025-03",
+      "basis": "other_cash_receipt",
+      "records": 496,
+      "amount_cents": 28600838
+    },
+    {
+      "month": "2025-04",
+      "basis": "cash_adjustment",
+      "records": 11,
+      "amount_cents": -15428
+    },
+    {
+      "month": "2025-04",
+      "basis": "cash_contribution",
+      "records": 9835,
+      "amount_cents": 265131442
+    },
+    {
+      "month": "2025-04",
+      "basis": "cash_payment",
+      "records": 3336,
+      "amount_cents": 201621275
+    },
+    {
+      "month": "2025-04",
+      "basis": "cash_reversal",
+      "records": 19,
+      "amount_cents": 2060915
+    },
+    {
+      "month": "2025-04",
+      "basis": "contribution_refund",
+      "records": 9,
+      "amount_cents": 233092
+    },
+    {
+      "month": "2025-04",
+      "basis": "forgiven_obligation",
+      "records": 8,
+      "amount_cents": 850354
+    },
+    {
+      "month": "2025-04",
+      "basis": "loan_forgiven",
+      "records": 8,
+      "amount_cents": 3657054
+    },
+    {
+      "month": "2025-04",
+      "basis": "loan_payment",
+      "records": 7,
+      "amount_cents": 254796
+    },
+    {
+      "month": "2025-04",
+      "basis": "loan_received",
+      "records": 15,
+      "amount_cents": 864502
+    },
+    {
+      "month": "2025-04",
+      "basis": "noncash_support",
+      "records": 317,
+      "amount_cents": 32138758
+    },
+    {
+      "month": "2025-04",
+      "basis": "obligation",
+      "records": 350,
+      "amount_cents": 33606815
+    },
+    {
+      "month": "2025-04",
+      "basis": "obligation_cancellation",
+      "records": 1,
+      "amount_cents": 71200
+    },
+    {
+      "month": "2025-04",
+      "basis": "other_cash_payment",
+      "records": 77,
+      "amount_cents": 3129643
+    },
+    {
+      "month": "2025-04",
+      "basis": "other_cash_receipt",
+      "records": 393,
+      "amount_cents": 22206794
+    },
+    {
+      "month": "2025-05",
+      "basis": "cash_adjustment",
+      "records": 13,
+      "amount_cents": -238010
+    },
+    {
+      "month": "2025-05",
+      "basis": "cash_contribution",
+      "records": 3366,
+      "amount_cents": 293378864
+    },
+    {
+      "month": "2025-05",
+      "basis": "cash_payment",
+      "records": 3006,
+      "amount_cents": 350930079
+    },
+    {
+      "month": "2025-05",
+      "basis": "cash_reversal",
+      "records": 27,
+      "amount_cents": 2831816
+    },
+    {
+      "month": "2025-05",
+      "basis": "contribution_refund",
+      "records": 8,
+      "amount_cents": 951470
+    },
+    {
+      "month": "2025-05",
+      "basis": "forgiven_obligation",
+      "records": 8,
+      "amount_cents": 472956
+    },
+    {
+      "month": "2025-05",
+      "basis": "loan_forgiven",
+      "records": 3,
+      "amount_cents": 32069021
+    },
+    {
+      "month": "2025-05",
+      "basis": "loan_payment",
+      "records": 7,
+      "amount_cents": 747929
+    },
+    {
+      "month": "2025-05",
+      "basis": "loan_received",
+      "records": 10,
+      "amount_cents": 1595525
+    },
+    {
+      "month": "2025-05",
+      "basis": "noncash_support",
+      "records": 577,
+      "amount_cents": 64217134
+    },
+    {
+      "month": "2025-05",
+      "basis": "obligation",
+      "records": 401,
+      "amount_cents": 44324296
+    },
+    {
+      "month": "2025-05",
+      "basis": "obligation_adjustment",
+      "records": 1,
+      "amount_cents": 864
+    },
+    {
+      "month": "2025-05",
+      "basis": "other_cash_payment",
+      "records": 82,
+      "amount_cents": 5590125
+    },
+    {
+      "month": "2025-05",
+      "basis": "other_cash_receipt",
+      "records": 290,
+      "amount_cents": 15581654
+    },
+    {
+      "month": "2025-05",
+      "basis": "receivable",
+      "records": 1,
+      "amount_cents": 1245
+    },
+    {
+      "month": "2025-06",
+      "basis": "cash_adjustment",
+      "records": 16,
+      "amount_cents": 958023
+    },
+    {
+      "month": "2025-06",
+      "basis": "cash_contribution",
+      "records": 8569,
+      "amount_cents": 196997552
+    },
+    {
+      "month": "2025-06",
+      "basis": "cash_payment",
+      "records": 2245,
+      "amount_cents": 120304071
+    },
+    {
+      "month": "2025-06",
+      "basis": "cash_reversal",
+      "records": 41,
+      "amount_cents": 4636289
+    },
+    {
+      "month": "2025-06",
+      "basis": "contribution_refund",
+      "records": 13,
+      "amount_cents": 11621676
+    },
+    {
+      "month": "2025-06",
+      "basis": "forgiven_obligation",
+      "records": 12,
+      "amount_cents": 1615930
+    },
+    {
+      "month": "2025-06",
+      "basis": "loan_forgiven",
+      "records": 5,
+      "amount_cents": 134525
+    },
+    {
+      "month": "2025-06",
+      "basis": "loan_payment",
+      "records": 3,
+      "amount_cents": 210000
+    },
+    {
+      "month": "2025-06",
+      "basis": "loan_received",
+      "records": 11,
+      "amount_cents": 2304525
+    },
+    {
+      "month": "2025-06",
+      "basis": "noncash_support",
+      "records": 213,
+      "amount_cents": 22896007
+    },
+    {
+      "month": "2025-06",
+      "basis": "obligation",
+      "records": 226,
+      "amount_cents": 7900999
+    },
+    {
+      "month": "2025-06",
+      "basis": "obligation_adjustment",
+      "records": 3,
+      "amount_cents": -31830
+    },
+    {
+      "month": "2025-06",
+      "basis": "obligation_cancellation",
+      "records": 1,
+      "amount_cents": 2750000
+    },
+    {
+      "month": "2025-06",
+      "basis": "other_cash_payment",
+      "records": 43,
+      "amount_cents": 1346593
+    },
+    {
+      "month": "2025-06",
+      "basis": "other_cash_receipt",
+      "records": 484,
+      "amount_cents": 20425348
+    },
+    {
+      "month": "2025-06",
+      "basis": "receivable",
+      "records": 1,
+      "amount_cents": 100000
+    },
+    {
+      "month": "2025-07",
+      "basis": "cash_adjustment",
+      "records": 11,
+      "amount_cents": -126209
+    },
+    {
+      "month": "2025-07",
+      "basis": "cash_contribution",
+      "records": 7793,
+      "amount_cents": 132650339
+    },
+    {
+      "month": "2025-07",
+      "basis": "cash_payment",
+      "records": 2599,
+      "amount_cents": 112158588
+    },
+    {
+      "month": "2025-07",
+      "basis": "cash_reversal",
+      "records": 31,
+      "amount_cents": 6156416
+    },
+    {
+      "month": "2025-07",
+      "basis": "contribution_refund",
+      "records": 25,
+      "amount_cents": 11055950
+    },
+    {
+      "month": "2025-07",
+      "basis": "forgiven_obligation",
+      "records": 6,
+      "amount_cents": 740313
+    },
+    {
+      "month": "2025-07",
+      "basis": "loan_forgiven",
+      "records": 4,
+      "amount_cents": 229700
+    },
+    {
+      "month": "2025-07",
+      "basis": "loan_payment",
+      "records": 4,
+      "amount_cents": 595776
+    },
+    {
+      "month": "2025-07",
+      "basis": "loan_received",
+      "records": 6,
+      "amount_cents": 1352500
+    },
+    {
+      "month": "2025-07",
+      "basis": "noncash_support",
+      "records": 149,
+      "amount_cents": 20626233
+    },
+    {
+      "month": "2025-07",
+      "basis": "obligation",
+      "records": 174,
+      "amount_cents": 6511923
+    },
+    {
+      "month": "2025-07",
+      "basis": "obligation_adjustment",
+      "records": 1,
+      "amount_cents": 5902
+    },
+    {
+      "month": "2025-07",
+      "basis": "other_cash_payment",
+      "records": 51,
+      "amount_cents": 1578725
+    },
+    {
+      "month": "2025-07",
+      "basis": "other_cash_receipt",
+      "records": 548,
+      "amount_cents": 17696551
+    },
+    {
+      "month": "2025-08",
+      "basis": "cash_adjustment",
+      "records": 9,
+      "amount_cents": 117754
+    },
+    {
+      "month": "2025-08",
+      "basis": "cash_contribution",
+      "records": 8311,
+      "amount_cents": 232648109
+    },
+    {
+      "month": "2025-08",
+      "basis": "cash_payment",
+      "records": 2569,
+      "amount_cents": 120388014
+    },
+    {
+      "month": "2025-08",
+      "basis": "cash_reversal",
+      "records": 30,
+      "amount_cents": 2967191
+    },
+    {
+      "month": "2025-08",
+      "basis": "contribution_refund",
+      "records": 7,
+      "amount_cents": 5345750
+    },
+    {
+      "month": "2025-08",
+      "basis": "forgiven_obligation",
+      "records": 4,
+      "amount_cents": 1004884
+    },
+    {
+      "month": "2025-08",
+      "basis": "loan_payment",
+      "records": 3,
+      "amount_cents": 336600
+    },
+    {
+      "month": "2025-08",
+      "basis": "loan_received",
+      "records": 9,
+      "amount_cents": 3750000
+    },
+    {
+      "month": "2025-08",
+      "basis": "noncash_support",
+      "records": 165,
+      "amount_cents": 18123827
+    },
+    {
+      "month": "2025-08",
+      "basis": "obligation",
+      "records": 215,
+      "amount_cents": 10330792
+    },
+    {
+      "month": "2025-08",
+      "basis": "obligation_adjustment",
+      "records": 2,
+      "amount_cents": 8160
+    },
+    {
+      "month": "2025-08",
+      "basis": "obligation_cancellation",
+      "records": 3,
+      "amount_cents": 291700
+    },
+    {
+      "month": "2025-08",
+      "basis": "other_cash_payment",
+      "records": 41,
+      "amount_cents": 365182
+    },
+    {
+      "month": "2025-08",
+      "basis": "other_cash_receipt",
+      "records": 348,
+      "amount_cents": 13898227
+    },
+    {
+      "month": "2025-09",
+      "basis": "cash_adjustment",
+      "records": 7,
+      "amount_cents": -9580
+    },
+    {
+      "month": "2025-09",
+      "basis": "cash_contribution",
+      "records": 12187,
+      "amount_cents": 234634155
+    },
+    {
+      "month": "2025-09",
+      "basis": "cash_payment",
+      "records": 2932,
+      "amount_cents": 156361557
+    },
+    {
+      "month": "2025-09",
+      "basis": "cash_reversal",
+      "records": 17,
+      "amount_cents": 1180057
+    },
+    {
+      "month": "2025-09",
+      "basis": "contribution_refund",
+      "records": 13,
+      "amount_cents": 1806500
+    },
+    {
+      "month": "2025-09",
+      "basis": "forgiven_obligation",
+      "records": 10,
+      "amount_cents": 3197070
+    },
+    {
+      "month": "2025-09",
+      "basis": "loan_forgiven",
+      "records": 3,
+      "amount_cents": 1090000
+    },
+    {
+      "month": "2025-09",
+      "basis": "loan_payment",
+      "records": 3,
+      "amount_cents": 1480670
+    },
+    {
+      "month": "2025-09",
+      "basis": "loan_received",
+      "records": 6,
+      "amount_cents": 1755000
+    },
+    {
+      "month": "2025-09",
+      "basis": "noncash_support",
+      "records": 266,
+      "amount_cents": 21054904
+    },
+    {
+      "month": "2025-09",
+      "basis": "obligation",
+      "records": 265,
+      "amount_cents": 18577450
+    },
+    {
+      "month": "2025-09",
+      "basis": "other_cash_payment",
+      "records": 31,
+      "amount_cents": 523130
+    },
+    {
+      "month": "2025-09",
+      "basis": "other_cash_receipt",
+      "records": 395,
+      "amount_cents": 14091885
+    },
+    {
+      "month": "2025-10",
+      "basis": "cash_adjustment",
+      "records": 6,
+      "amount_cents": -325214
+    },
+    {
+      "month": "2025-10",
+      "basis": "cash_contribution",
+      "records": 14482,
+      "amount_cents": 805455718
+    },
+    {
+      "month": "2025-10",
+      "basis": "cash_payment",
+      "records": 3532,
+      "amount_cents": 283213881
+    },
+    {
+      "month": "2025-10",
+      "basis": "cash_reversal",
+      "records": 25,
+      "amount_cents": 4494497
+    },
+    {
+      "month": "2025-10",
+      "basis": "contribution_refund",
+      "records": 32,
+      "amount_cents": 2385217
+    },
+    {
+      "month": "2025-10",
+      "basis": "forgiven_obligation",
+      "records": 8,
+      "amount_cents": 1029878
+    },
+    {
+      "month": "2025-10",
+      "basis": "loan_forgiven",
+      "records": 5,
+      "amount_cents": 6260760
+    },
+    {
+      "month": "2025-10",
+      "basis": "loan_payment",
+      "records": 6,
+      "amount_cents": 3743420
+    },
+    {
+      "month": "2025-10",
+      "basis": "loan_received",
+      "records": 22,
+      "amount_cents": 2744724
+    },
+    {
+      "month": "2025-10",
+      "basis": "noncash_support",
+      "records": 289,
+      "amount_cents": 30387825
+    },
+    {
+      "month": "2025-10",
+      "basis": "obligation",
+      "records": 321,
+      "amount_cents": 20580246
+    },
+    {
+      "month": "2025-10",
+      "basis": "obligation_adjustment",
+      "records": 2,
+      "amount_cents": 20012
+    },
+    {
+      "month": "2025-10",
+      "basis": "obligation_cancellation",
+      "records": 1,
+      "amount_cents": 7499
+    },
+    {
+      "month": "2025-10",
+      "basis": "other_cash_payment",
+      "records": 35,
+      "amount_cents": 1162180
+    },
+    {
+      "month": "2025-10",
+      "basis": "other_cash_receipt",
+      "records": 432,
+      "amount_cents": 19852642
+    },
+    {
+      "month": "2025-11",
+      "basis": "cash_adjustment",
+      "records": 5,
+      "amount_cents": 244744
+    },
+    {
+      "month": "2025-11",
+      "basis": "cash_contribution",
+      "records": 14150,
+      "amount_cents": 342265904
+    },
+    {
+      "month": "2025-11",
+      "basis": "cash_payment",
+      "records": 3141,
+      "amount_cents": 170245530
+    },
+    {
+      "month": "2025-11",
+      "basis": "cash_reversal",
+      "records": 5,
+      "amount_cents": 1044330
+    },
+    {
+      "month": "2025-11",
+      "basis": "contribution_refund",
+      "records": 18,
+      "amount_cents": 604400
+    },
+    {
+      "month": "2025-11",
+      "basis": "forgiven_obligation",
+      "records": 11,
+      "amount_cents": 517844
+    },
+    {
+      "month": "2025-11",
+      "basis": "loan_payment",
+      "records": 6,
+      "amount_cents": 200348
+    },
+    {
+      "month": "2025-11",
+      "basis": "loan_received",
+      "records": 3,
+      "amount_cents": 2760000
+    },
+    {
+      "month": "2025-11",
+      "basis": "noncash_support",
+      "records": 221,
+      "amount_cents": 39267195
+    },
+    {
+      "month": "2025-11",
+      "basis": "obligation",
+      "records": 229,
+      "amount_cents": 6486735
+    },
+    {
+      "month": "2025-11",
+      "basis": "other_cash_payment",
+      "records": 52,
+      "amount_cents": 1260726
+    },
+    {
+      "month": "2025-11",
+      "basis": "other_cash_receipt",
+      "records": 450,
+      "amount_cents": 11812688
+    },
+    {
+      "month": "2025-12",
+      "basis": "cash_adjustment",
+      "records": 7,
+      "amount_cents": -3532
+    },
+    {
+      "month": "2025-12",
+      "basis": "cash_contribution",
+      "records": 15925,
+      "amount_cents": 597537098
+    },
+    {
+      "month": "2025-12",
+      "basis": "cash_payment",
+      "records": 3834,
+      "amount_cents": 284189740
+    },
+    {
+      "month": "2025-12",
+      "basis": "cash_reversal",
+      "records": 20,
+      "amount_cents": 4793640
+    },
+    {
+      "month": "2025-12",
+      "basis": "contribution_refund",
+      "records": 67,
+      "amount_cents": 3264800
+    },
+    {
+      "month": "2025-12",
+      "basis": "forgiven_obligation",
+      "records": 14,
+      "amount_cents": 7198897
+    },
+    {
+      "month": "2025-12",
+      "basis": "loan_forgiven",
+      "records": 1,
+      "amount_cents": 1700000
+    },
+    {
+      "month": "2025-12",
+      "basis": "loan_payment",
+      "records": 4,
+      "amount_cents": 2806850
+    },
+    {
+      "month": "2025-12",
+      "basis": "loan_received",
+      "records": 15,
+      "amount_cents": 2116000
+    },
+    {
+      "month": "2025-12",
+      "basis": "noncash_support",
+      "records": 203,
+      "amount_cents": 25563306
+    },
+    {
+      "month": "2025-12",
+      "basis": "obligation",
+      "records": 240,
+      "amount_cents": 13895574
+    },
+    {
+      "month": "2025-12",
+      "basis": "other_cash_payment",
+      "records": 71,
+      "amount_cents": 5180679
+    },
+    {
+      "month": "2025-12",
+      "basis": "other_cash_receipt",
+      "records": 568,
+      "amount_cents": 17655106
+    },
+    {
+      "month": "2026-01",
+      "basis": "cash_adjustment",
+      "records": 5,
+      "amount_cents": 203707
+    },
+    {
+      "month": "2026-01",
+      "basis": "cash_contribution",
+      "records": 5573,
+      "amount_cents": 599753153
+    },
+    {
+      "month": "2026-01",
+      "basis": "cash_payment",
+      "records": 3773,
+      "amount_cents": 298099178
+    },
+    {
+      "month": "2026-01",
+      "basis": "cash_reversal",
+      "records": 13,
+      "amount_cents": 1310900
+    },
+    {
+      "month": "2026-01",
+      "basis": "contribution_refund",
+      "records": 34,
+      "amount_cents": 382791
+    },
+    {
+      "month": "2026-01",
+      "basis": "forgiven_obligation",
+      "records": 9,
+      "amount_cents": 547981
+    },
+    {
+      "month": "2026-01",
+      "basis": "loan_payment",
+      "records": 3,
+      "amount_cents": 306850
+    },
+    {
+      "month": "2026-01",
+      "basis": "loan_received",
+      "records": 16,
+      "amount_cents": 8384910
+    },
+    {
+      "month": "2026-01",
+      "basis": "noncash_support",
+      "records": 248,
+      "amount_cents": 29839850
+    },
+    {
+      "month": "2026-01",
+      "basis": "obligation",
+      "records": 278,
+      "amount_cents": 13313642
+    },
+    {
+      "month": "2026-01",
+      "basis": "obligation_adjustment",
+      "records": 1,
+      "amount_cents": 45000
+    },
+    {
+      "month": "2026-01",
+      "basis": "other_cash_payment",
+      "records": 113,
+      "amount_cents": 12509008
+    },
+    {
+      "month": "2026-01",
+      "basis": "other_cash_receipt",
+      "records": 525,
+      "amount_cents": 13172572
+    },
+    {
+      "month": "2026-02",
+      "basis": "cash_adjustment",
+      "records": 8,
+      "amount_cents": 643468
+    },
+    {
+      "month": "2026-02",
+      "basis": "cash_contribution",
+      "records": 4975,
+      "amount_cents": 407404046
+    },
+    {
+      "month": "2026-02",
+      "basis": "cash_payment",
+      "records": 3613,
+      "amount_cents": 240567779
+    },
+    {
+      "month": "2026-02",
+      "basis": "cash_reversal",
+      "records": 14,
+      "amount_cents": 950166
+    },
+    {
+      "month": "2026-02",
+      "basis": "contribution_refund",
+      "records": 102,
+      "amount_cents": 2015741
+    },
+    {
+      "month": "2026-02",
+      "basis": "forgiven_obligation",
+      "records": 11,
+      "amount_cents": 400758
+    },
+    {
+      "month": "2026-02",
+      "basis": "loan_forgiven",
+      "records": 2,
+      "amount_cents": 1469463
+    },
+    {
+      "month": "2026-02",
+      "basis": "loan_payment",
+      "records": 3,
+      "amount_cents": 4430537
+    },
+    {
+      "month": "2026-02",
+      "basis": "loan_received",
+      "records": 24,
+      "amount_cents": 12180500
+    },
+    {
+      "month": "2026-02",
+      "basis": "noncash_support",
+      "records": 410,
+      "amount_cents": 27295380
+    },
+    {
+      "month": "2026-02",
+      "basis": "obligation",
+      "records": 372,
+      "amount_cents": 20228318
+    },
+    {
+      "month": "2026-02",
+      "basis": "obligation_adjustment",
+      "records": 3,
+      "amount_cents": 11501
+    },
+    {
+      "month": "2026-02",
+      "basis": "other_cash_payment",
+      "records": 55,
+      "amount_cents": 16774536
+    },
+    {
+      "month": "2026-02",
+      "basis": "other_cash_receipt",
+      "records": 446,
+      "amount_cents": 29335721
+    },
+    {
+      "month": "2026-02",
+      "basis": "receivable",
+      "records": 1,
+      "amount_cents": 13000
+    },
+    {
+      "month": "2026-03",
+      "basis": "cash_adjustment",
+      "records": 7,
+      "amount_cents": 413148
+    },
+    {
+      "month": "2026-03",
+      "basis": "cash_contribution",
+      "records": 8138,
+      "amount_cents": 742599008
+    },
+    {
+      "month": "2026-03",
+      "basis": "cash_payment",
+      "records": 5564,
+      "amount_cents": 498962926
+    },
+    {
+      "month": "2026-03",
+      "basis": "cash_reversal",
+      "records": 20,
+      "amount_cents": 2785534
+    },
+    {
+      "month": "2026-03",
+      "basis": "contribution_refund",
+      "records": 51,
+      "amount_cents": 3284870
+    },
+    {
+      "month": "2026-03",
+      "basis": "forgiven_obligation",
+      "records": 14,
+      "amount_cents": 774028
+    },
+    {
+      "month": "2026-03",
+      "basis": "loan_forgiven",
+      "records": 4,
+      "amount_cents": 4328064
+    },
+    {
+      "month": "2026-03",
+      "basis": "loan_payment",
+      "records": 6,
+      "amount_cents": 3341916
+    },
+    {
+      "month": "2026-03",
+      "basis": "loan_received",
+      "records": 43,
+      "amount_cents": 9769425
+    },
+    {
+      "month": "2026-03",
+      "basis": "noncash_support",
+      "records": 486,
+      "amount_cents": 42326568
+    },
+    {
+      "month": "2026-03",
+      "basis": "obligation",
+      "records": 529,
+      "amount_cents": 29913281
+    },
+    {
+      "month": "2026-03",
+      "basis": "obligation_adjustment",
+      "records": 1,
+      "amount_cents": 52244
+    },
+    {
+      "month": "2026-03",
+      "basis": "other_cash_payment",
+      "records": 174,
+      "amount_cents": 22771374
+    },
+    {
+      "month": "2026-03",
+      "basis": "other_cash_receipt",
+      "records": 612,
+      "amount_cents": 22606008
+    },
+    {
+      "month": "2026-03",
+      "basis": "receivable",
+      "records": 1,
+      "amount_cents": 13000
+    },
+    {
+      "month": "2026-04",
+      "basis": "cash_adjustment",
+      "records": 3,
+      "amount_cents": -65594
+    },
+    {
+      "month": "2026-04",
+      "basis": "cash_contribution",
+      "records": 12445,
+      "amount_cents": 919399321
+    },
+    {
+      "month": "2026-04",
+      "basis": "cash_payment",
+      "records": 7431,
+      "amount_cents": 1179356616
+    },
+    {
+      "month": "2026-04",
+      "basis": "cash_reversal",
+      "records": 28,
+      "amount_cents": 8050954
+    },
+    {
+      "month": "2026-04",
+      "basis": "contribution_refund",
+      "records": 45,
+      "amount_cents": 10623632
+    },
+    {
+      "month": "2026-04",
+      "basis": "forgiven_obligation",
+      "records": 14,
+      "amount_cents": 649366
+    },
+    {
+      "month": "2026-04",
+      "basis": "loan_forgiven",
+      "records": 2,
+      "amount_cents": 65000
+    },
+    {
+      "month": "2026-04",
+      "basis": "loan_payment",
+      "records": 7,
+      "amount_cents": 1317998
+    },
+    {
+      "month": "2026-04",
+      "basis": "loan_received",
+      "records": 38,
+      "amount_cents": 30209467
+    },
+    {
+      "month": "2026-04",
+      "basis": "noncash_support",
+      "records": 733,
+      "amount_cents": 80485153
+    },
+    {
+      "month": "2026-04",
+      "basis": "obligation",
+      "records": 658,
+      "amount_cents": 79959203
+    },
+    {
+      "month": "2026-04",
+      "basis": "obligation_cancellation",
+      "records": 1,
+      "amount_cents": 3925000
+    },
+    {
+      "month": "2026-04",
+      "basis": "other_cash_payment",
+      "records": 64,
+      "amount_cents": 2117376
+    },
+    {
+      "month": "2026-04",
+      "basis": "other_cash_receipt",
+      "records": 512,
+      "amount_cents": 26174193
+    },
+    {
+      "month": "2026-04",
+      "basis": "receivable",
+      "records": 1,
+      "amount_cents": 13000
+    },
+    {
+      "month": "2026-05",
+      "basis": "cash_adjustment",
+      "records": 5,
+      "amount_cents": 1372
+    },
+    {
+      "month": "2026-05",
+      "basis": "cash_contribution",
+      "records": 11217,
+      "amount_cents": 780984891
+    },
+    {
+      "month": "2026-05",
+      "basis": "cash_payment",
+      "records": 6170,
+      "amount_cents": 1061897801
+    },
+    {
+      "month": "2026-05",
+      "basis": "cash_reversal",
+      "records": 25,
+      "amount_cents": 12234219
+    },
+    {
+      "month": "2026-05",
+      "basis": "contribution_refund",
+      "records": 38,
+      "amount_cents": 1165356
+    },
+    {
+      "month": "2026-05",
+      "basis": "forgiven_obligation",
+      "records": 17,
+      "amount_cents": 2905524
+    },
+    {
+      "month": "2026-05",
+      "basis": "loan_forgiven",
+      "records": 6,
+      "amount_cents": 672351
+    },
+    {
+      "month": "2026-05",
+      "basis": "loan_payment",
+      "records": 6,
+      "amount_cents": 2734099
+    },
+    {
+      "month": "2026-05",
+      "basis": "loan_received",
+      "records": 30,
+      "amount_cents": 19935391
+    },
+    {
+      "month": "2026-05",
+      "basis": "noncash_support",
+      "records": 704,
+      "amount_cents": 181071953
+    },
+    {
+      "month": "2026-05",
+      "basis": "obligation",
+      "records": 612,
+      "amount_cents": 110026729
+    },
+    {
+      "month": "2026-05",
+      "basis": "obligation_adjustment",
+      "records": 1,
+      "amount_cents": -385068
+    },
+    {
+      "month": "2026-05",
+      "basis": "obligation_cancellation",
+      "records": 1,
+      "amount_cents": 19512
+    },
+    {
+      "month": "2026-05",
+      "basis": "other_cash_payment",
+      "records": 37,
+      "amount_cents": 2134556
+    },
+    {
+      "month": "2026-05",
+      "basis": "other_cash_receipt",
+      "records": 351,
+      "amount_cents": 14944792
+    },
+    {
+      "month": "2026-06",
+      "basis": "cash_adjustment",
+      "records": 8,
+      "amount_cents": 14429
+    },
+    {
+      "month": "2026-06",
+      "basis": "cash_contribution",
+      "records": 14864,
+      "amount_cents": 713407063
+    },
+    {
+      "month": "2026-06",
+      "basis": "cash_payment",
+      "records": 4238,
+      "amount_cents": 506507144
+    },
+    {
+      "month": "2026-06",
+      "basis": "cash_reversal",
+      "records": 12,
+      "amount_cents": 3163310
+    },
+    {
+      "month": "2026-06",
+      "basis": "contribution_refund",
+      "records": 44,
+      "amount_cents": 4553403
+    },
+    {
+      "month": "2026-06",
+      "basis": "forgiven_obligation",
+      "records": 17,
+      "amount_cents": 5517126
+    },
+    {
+      "month": "2026-06",
+      "basis": "loan_forgiven",
+      "records": 10,
+      "amount_cents": 16383579
+    },
+    {
+      "month": "2026-06",
+      "basis": "loan_payment",
+      "records": 13,
+      "amount_cents": 7721393
+    },
+    {
+      "month": "2026-06",
+      "basis": "loan_received",
+      "records": 23,
+      "amount_cents": 6812908
+    },
+    {
+      "month": "2026-06",
+      "basis": "noncash_support",
+      "records": 379,
+      "amount_cents": 144767460
+    },
+    {
+      "month": "2026-06",
+      "basis": "obligation",
+      "records": 425,
+      "amount_cents": 26671719
+    },
+    {
+      "month": "2026-06",
+      "basis": "obligation_adjustment",
+      "records": 1,
+      "amount_cents": -19156
+    },
+    {
+      "month": "2026-06",
+      "basis": "obligation_cancellation",
+      "records": 1,
+      "amount_cents": 19013
+    },
+    {
+      "month": "2026-06",
+      "basis": "other_cash_payment",
+      "records": 129,
+      "amount_cents": 1112457
+    },
+    {
+      "month": "2026-06",
+      "basis": "other_cash_receipt",
+      "records": 503,
+      "amount_cents": 21722209
+    },
+    {
+      "month": "2026-07",
+      "basis": "cash_adjustment",
+      "records": 6,
+      "amount_cents": -139072
+    },
+    {
+      "month": "2026-07",
+      "basis": "cash_contribution",
+      "records": 17506,
+      "amount_cents": 910261668
+    },
+    {
+      "month": "2026-07",
+      "basis": "cash_payment",
+      "records": 4776,
+      "amount_cents": 582994818
+    },
+    {
+      "month": "2026-07",
+      "basis": "cash_reversal",
+      "records": 30,
+      "amount_cents": 3616131
+    },
+    {
+      "month": "2026-07",
+      "basis": "contribution_refund",
+      "records": 65,
+      "amount_cents": 4075774
+    },
+    {
+      "month": "2026-07",
+      "basis": "forgiven_obligation",
+      "records": 8,
+      "amount_cents": 1866163
+    },
+    {
+      "month": "2026-07",
+      "basis": "loan_forgiven",
+      "records": 6,
+      "amount_cents": 3785913
+    },
+    {
+      "month": "2026-07",
+      "basis": "loan_payment",
+      "records": 7,
+      "amount_cents": 1711871
+    },
+    {
+      "month": "2026-07",
+      "basis": "loan_received",
+      "records": 18,
+      "amount_cents": 3785188
+    },
+    {
+      "month": "2026-07",
+      "basis": "noncash_support",
+      "records": 325,
+      "amount_cents": 65471121
+    },
+    {
+      "month": "2026-07",
+      "basis": "obligation",
+      "records": 436,
+      "amount_cents": 29777291
+    },
+    {
+      "month": "2026-07",
+      "basis": "obligation_adjustment",
+      "records": 1,
+      "amount_cents": -6031
+    },
+    {
+      "month": "2026-07",
+      "basis": "obligation_cancellation",
+      "records": 1,
+      "amount_cents": 583620
+    },
+    {
+      "month": "2026-07",
+      "basis": "other_cash_payment",
+      "records": 81,
+      "amount_cents": 3125850
+    },
+    {
+      "month": "2026-07",
+      "basis": "other_cash_receipt",
+      "records": 412,
+      "amount_cents": 20429347
+    },
+    {
+      "month": "2026-07",
+      "basis": "receivable",
+      "records": 2,
+      "amount_cents": 25966
+    },
+    {
+      "month": "2026-08",
+      "basis": "cash_adjustment",
+      "records": 8,
+      "amount_cents": 423501
+    },
+    {
+      "month": "2026-08",
+      "basis": "cash_contribution",
+      "records": 14439,
+      "amount_cents": 1369726957
+    },
+    {
+      "month": "2026-08",
+      "basis": "cash_payment",
+      "records": 5573,
+      "amount_cents": 1402591192
+    },
+    {
+      "month": "2026-08",
+      "basis": "cash_reversal",
+      "records": 10,
+      "amount_cents": 1257864
+    },
+    {
+      "month": "2026-08",
+      "basis": "contribution_refund",
+      "records": 84,
+      "amount_cents": 16858120
+    },
+    {
+      "month": "2026-08",
+      "basis": "forgiven_obligation",
+      "records": 14,
+      "amount_cents": 2850940
+    },
+    {
+      "month": "2026-08",
+      "basis": "loan_forgiven",
+      "records": 8,
+      "amount_cents": 4643445
+    },
+    {
+      "month": "2026-08",
+      "basis": "loan_payment",
+      "records": 4,
+      "amount_cents": 417383
+    },
+    {
+      "month": "2026-08",
+      "basis": "loan_received",
+      "records": 27,
+      "amount_cents": 10387036
+    },
+    {
+      "month": "2026-08",
+      "basis": "noncash_support",
+      "records": 397,
+      "amount_cents": 86572105
+    },
+    {
+      "month": "2026-08",
+      "basis": "obligation",
+      "records": 564,
+      "amount_cents": 32962379
+    },
+    {
+      "month": "2026-08",
+      "basis": "obligation_adjustment",
+      "records": 4,
+      "amount_cents": -94069
+    },
+    {
+      "month": "2026-08",
+      "basis": "obligation_cancellation",
+      "records": 1,
+      "amount_cents": 109500
+    },
+    {
+      "month": "2026-08",
+      "basis": "other_cash_payment",
+      "records": 61,
+      "amount_cents": 1658071
+    },
+    {
+      "month": "2026-08",
+      "basis": "other_cash_receipt",
+      "records": 387,
+      "amount_cents": 18981573
+    },
+    {
+      "month": "2026-09",
+      "basis": "cash_adjustment",
+      "records": 7,
+      "amount_cents": 227498
+    },
+    {
+      "month": "2026-09",
+      "basis": "cash_contribution",
+      "records": 11378,
+      "amount_cents": 2005619492
+    },
+    {
+      "month": "2026-09",
+      "basis": "cash_payment",
+      "records": 3774,
+      "amount_cents": 951064942
+    },
+    {
+      "month": "2026-09",
+      "basis": "cash_reversal",
+      "records": 14,
+      "amount_cents": 1478146
+    },
+    {
+      "month": "2026-09",
+      "basis": "contribution_refund",
+      "records": 47,
+      "amount_cents": 3552090
+    },
+    {
+      "month": "2026-09",
+      "basis": "forgiven_obligation",
+      "records": 13,
+      "amount_cents": 228138
+    },
+    {
+      "month": "2026-09",
+      "basis": "loan_forgiven",
+      "records": 6,
+      "amount_cents": 1524959
+    },
+    {
+      "month": "2026-09",
+      "basis": "loan_payment",
+      "records": 7,
+      "amount_cents": 2266479
+    },
+    {
+      "month": "2026-09",
+      "basis": "loan_received",
+      "records": 11,
+      "amount_cents": 4777382
+    },
+    {
+      "month": "2026-09",
+      "basis": "noncash_support",
+      "records": 284,
+      "amount_cents": 127442341
+    },
+    {
+      "month": "2026-09",
+      "basis": "obligation",
+      "records": 262,
+      "amount_cents": 14916241
+    },
+    {
+      "month": "2026-09",
+      "basis": "obligation_adjustment",
+      "records": 2,
+      "amount_cents": -63268
+    },
+    {
+      "month": "2026-09",
+      "basis": "obligation_cancellation",
+      "records": 5,
+      "amount_cents": 904304
+    },
+    {
+      "month": "2026-09",
+      "basis": "other_cash_payment",
+      "records": 16,
+      "amount_cents": 107847
+    },
+    {
+      "month": "2026-09",
+      "basis": "other_cash_receipt",
+      "records": 197,
+      "amount_cents": 9672193
+    }
+  ],
+  "lag": [
+    {
+      "status": "Original",
+      "records": 302761,
+      "minimum_days": 0,
+      "median_days": 7,
+      "p90_days": 29,
+      "p99_days": 39,
+      "negative_lags": 0
+    },
+    {
+      "status": "Amended",
+      "records": 14165,
+      "minimum_days": 0,
+      "median_days": 26,
+      "p90_days": 39,
+      "p99_days": 148,
+      "negative_lags": 0
+    }
+  ],
+  "network_boundary": [
+    {
+      "basis": "cash_contribution",
+      "boundary": "Committee outside observed filer set",
+      "records": 85,
+      "amount_cents": 17122496
+    },
+    {
+      "basis": "cash_contribution",
+      "boundary": "No committee ID reported",
+      "records": 172568,
+      "amount_cents": 8327450902
+    },
+    {
+      "basis": "cash_contribution",
+      "boundary": "Observed committee counterparty",
+      "records": 5843,
+      "amount_cents": 2632644926
+    },
+    {
+      "basis": "cash_contribution",
+      "boundary": "Unidentified disclosure",
+      "records": 31313,
+      "amount_cents": 1202198678
+    },
+    {
+      "basis": "cash_payment",
+      "boundary": "Committee outside observed filer set",
+      "records": 199,
+      "amount_cents": 51526425
+    },
+    {
+      "basis": "cash_payment",
+      "boundary": "No committee ID reported",
+      "records": 53412,
+      "amount_cents": 6479625327
+    },
+    {
+      "basis": "cash_payment",
+      "boundary": "Observed committee counterparty",
+      "records": 6593,
+      "amount_cents": 2543846527
+    },
+    {
+      "basis": "cash_payment",
+      "boundary": "Unidentified disclosure",
+      "records": 19645,
+      "amount_cents": 52097276
+    }
+  ],
+  "transfers": {
+    "strict_pairs": 1454,
+    "strict_circulation_cents": 779685320,
+    "ambiguous_candidate_pairs": 2419,
+    "cash_contributions_less_strict_matched_transfers_cents": 11399731682,
+    "warning": "Subtracting strict matched transfers is a conservative adjustment for observed internal circulation, not a verified total of outside money. Other internal transfers remain unmatched; origins may be unknown."
+  },
+  "concentration": {
+    "visible_source_groups_including_committees": {
+      "groups": 54551,
+      "total_cents": 10977218324,
+      "top1_share": 0.09109775996835681,
+      "top10_share": 0.21487152832180476,
+      "hhi": 0.011414496338009388,
+      "effective_groups": 87.60789529276711,
+      "gini": 0.9053656118193536
+    },
+    "reported_individual_groups": {
+      "groups": 47357,
+      "total_cents": 3165608253,
+      "top1_share": 0.09476851714538413,
+      "top10_share": 0.2183261303242502,
+      "hhi": 0.012481888017806538,
+      "effective_groups": 80.11608488823245,
+      "gini": 0.7978749889905232
+    }
+  },
+  "lorenz": [
+    {
+      "group_share": 0,
+      "cash_share": 0
+    },
+    {
+      "group_share": 1.8331469633920553e-05,
+      "cash_share": 2.732932799050704e-09
+    },
+    {
+      "group_share": 0.010027313889754542,
+      "cash_share": 3.8449358256564453e-05
+    },
+    {
+      "group_share": 0.020017964840241244,
+      "cash_share": 8.80976374393189e-05
+    },
+    {
+      "group_share": 0.030008615790727944,
+      "cash_share": 0.00013775010711903192
+    },
+    {
+      "group_share": 0.04001759821084856,
+      "cash_share": 0.00020338649866503283
+    },
+    {
+      "group_share": 0.05002658063096919,
+      "cash_share": 0.00028327759439760234
+    },
+    {
+      "group_share": 0.06001723158145589,
+      "cash_share": 0.0003813553558324946
+    },
+    {
+      "group_share": 0.0700262140015765,
+      "cash_share": 0.0004808341097179402
+    },
+    {
+      "group_share": 0.08001686495206321,
+      "cash_share": 0.0005801306680834491
+    },
+    {
+      "group_share": 0.09002584737218383,
+      "cash_share": 0.0006796094219688948
+    },
+    {
+      "group_share": 0.10001649832267052,
+      "cash_share": 0.0007789059803344037
+    },
+    {
+      "group_share": 0.11000714927315723,
+      "cash_share": 0.0008782025386999126
+    },
+    {
+      "group_share": 0.12001613169327785,
+      "cash_share": 0.0009776812925853583
+    },
+    {
+      "group_share": 0.13002511411339848,
+      "cash_share": 0.001077160046470804
+    },
+    {
+      "group_share": 0.14001576506388516,
+      "cash_share": 0.001177829174785756
+    },
+    {
+      "group_share": 0.15000641601437187,
+      "cash_share": 0.0012988294100726861
+    },
+    {
+      "group_share": 0.1600153984344925,
+      "cash_share": 0.001438148585009413
+    },
+    {
+      "group_share": 0.1700243808546131,
+      "cash_share": 0.0015913593484614746
+    },
+    {
+      "group_share": 0.1800150318050998,
+      "cash_share": 0.0017718028762784767
+    },
+    {
+      "group_share": 0.19000568275558652,
+      "cash_share": 0.0019852564972998527
+    },
+    {
+      "group_share": 0.20001466517570712,
+      "cash_share": 0.0022199436397034532
+    },
+    {
+      "group_share": 0.21002364759582776,
+      "cash_share": 0.0024682579138252
+    },
+    {
+      "group_share": 0.22001429854631446,
+      "cash_share": 0.0027223833140553287
+    },
+    {
+      "group_share": 0.23000494949680117,
+      "cash_share": 0.0030131129785116225
+    },
+    {
+      "group_share": 0.24001393191692177,
+      "cash_share": 0.0033283109547088572
+    },
+    {
+      "group_share": 0.2500229143370424,
+      "cash_share": 0.003681354128818546
+    },
+    {
+      "group_share": 0.2600135652875291,
+      "cash_share": 0.004066200350813028
+    },
+    {
+      "group_share": 0.2700225477076497,
+      "cash_share": 0.004454913581620407
+    },
+    {
+      "group_share": 0.2800131986581364,
+      "cash_share": 0.004842914883433633
+    },
+    {
+      "group_share": 0.29000384960862313,
+      "cash_share": 0.0052512754414266675
+    },
+    {
+      "group_share": 0.30001283202874374,
+      "cash_share": 0.005714262497891446
+    },
+    {
+      "group_share": 0.31000348297923047,
+      "cash_share": 0.006210745289718991
+    },
+    {
+      "group_share": 0.3200124653993511,
+      "cash_share": 0.006708139059146219
+    },
+    {
+      "group_share": 0.3300214478194717,
+      "cash_share": 0.007206917878916006
+    },
+    {
+      "group_share": 0.3400120987699584,
+      "cash_share": 0.007714071406857445
+    },
+    {
+      "group_share": 0.3500027497204451,
+      "cash_share": 0.00823300815675751
+    },
+    {
+      "group_share": 0.3600117321405657,
+      "cash_share": 0.00879096471908706
+    },
+    {
+      "group_share": 0.3700207145606863,
+      "cash_share": 0.009387837242399735
+    },
+    {
+      "group_share": 0.38001136551117304,
+      "cash_share": 0.010008359017493473
+    },
+    {
+      "group_share": 0.3900020164616597,
+      "cash_share": 0.01065894569521181
+    },
+    {
+      "group_share": 0.4000109988817804,
+      "cash_share": 0.01136952024786931
+    },
+    {
+      "group_share": 0.410019981301901,
+      "cash_share": 0.012115610902010151
+    },
+    {
+      "group_share": 0.42001063225238766,
+      "cash_share": 0.012864385478355181
+    },
+    {
+      "group_share": 0.4300012832028744,
+      "cash_share": 0.013685907172998302
+    },
+    {
+      "group_share": 0.440010265622995,
+      "cash_share": 0.014596842867712284
+    },
+    {
+      "group_share": 0.4500192480431156,
+      "cash_share": 0.015590358044153263
+    },
+    {
+      "group_share": 0.46000989899360234,
+      "cash_share": 0.01658332362780835
+    },
+    {
+      "group_share": 0.470000549944089,
+      "cash_share": 0.017576289211463442
+    },
+    {
+      "group_share": 0.4800095323642096,
+      "cash_share": 0.018571076750317897
+    },
+    {
+      "group_share": 0.4900185147843303,
+      "cash_share": 0.019568716560036965
+    },
+    {
+      "group_share": 0.5000091657348169,
+      "cash_share": 0.020632230526455547
+    },
+    {
+      "group_share": 0.5099998166853037,
+      "cash_share": 0.02181438165226748
+    },
+    {
+      "group_share": 0.5200087991054243,
+      "cash_share": 0.023057866075835553
+    },
+    {
+      "group_share": 0.5300177815255449,
+      "cash_share": 0.024301350499403622
+    },
+    {
+      "group_share": 0.5400084324760316,
+      "cash_share": 0.025542557478972484
+    },
+    {
+      "group_share": 0.5500174148961522,
+      "cash_share": 0.026786041902540556
+    },
+    {
+      "group_share": 0.560008065846639,
+      "cash_share": 0.028027248882109418
+    },
+    {
+      "group_share": 0.5700170482667596,
+      "cash_share": 0.029270733305677487
+    },
+    {
+      "group_share": 0.5800076992172463,
+      "cash_share": 0.03051194028524635
+    },
+    {
+      "group_share": 0.5899983501677329,
+      "cash_share": 0.03177885213754996
+    },
+    {
+      "group_share": 0.6000073325878535,
+      "cash_share": 0.03307230340916739
+    },
+    {
+      "group_share": 0.6100163150079742,
+      "cash_share": 0.03443796741962295
+    },
+    {
+      "group_share": 0.6200069659584609,
+      "cash_share": 0.035923334888752274
+    },
+    {
+      "group_share": 0.6299976169089476,
+      "cash_share": 0.037426099479298286
+    },
+    {
+      "group_share": 0.6400065993290682,
+      "cash_share": 0.03901276182725579
+    },
+    {
+      "group_share": 0.6500155817491888,
+      "cash_share": 0.0407403693540677
+    },
+    {
+      "group_share": 0.6600062326996755,
+      "cash_share": 0.04251503989673222
+    },
+    {
+      "group_share": 0.6699968836501622,
+      "cash_share": 0.0444678656825811
+    },
+    {
+      "group_share": 0.6800058660702829,
+      "cash_share": 0.046564353273584394
+    },
+    {
+      "group_share": 0.6900148484904035,
+      "cash_share": 0.048898192980861406
+    },
+    {
+      "group_share": 0.7000054994408902,
+      "cash_share": 0.0513803983261288
+    },
+    {
+      "group_share": 0.7099961503913769,
+      "cash_share": 0.05386281228526652
+    },
+    {
+      "group_share": 0.7200051328114975,
+      "cash_share": 0.05634978113240267
+    },
+    {
+      "group_share": 0.7300141152316181,
+      "cash_share": 0.058836749979538805
+    },
+    {
+      "group_share": 0.7400047661821049,
+      "cash_share": 0.06131916393867653
+    },
+    {
+      "group_share": 0.7499954171325915,
+      "cash_share": 0.06380157789781425
+    },
+    {
+      "group_share": 0.7600043995527122,
+      "cash_share": 0.06629709462996375
+    },
+    {
+      "group_share": 0.7700133819728328,
+      "cash_share": 0.06891545177215153
+    },
+    {
+      "group_share": 0.7800040329233194,
+      "cash_share": 0.07169072280173408
+    },
+    {
+      "group_share": 0.7899946838738061,
+      "cash_share": 0.07462982932651381
+    },
+    {
+      "group_share": 0.8000036662939268,
+      "cash_share": 0.0776718897114285
+    },
+    {
+      "group_share": 0.8100126487140474,
+      "cash_share": 0.08092725732326429
+    },
+    {
+      "group_share": 0.8200032996645341,
+      "cash_share": 0.08453102121247379
+    },
+    {
+      "group_share": 0.8300122820846547,
+      "cash_share": 0.088552032337259
+    },
+    {
+      "group_share": 0.8400029330351414,
+      "cash_share": 0.09339713875950419
+    },
+    {
+      "group_share": 0.850011915455262,
+      "cash_share": 0.09837107645377646
+    },
+    {
+      "group_share": 0.8600025664057488,
+      "cash_share": 0.10333590437205191
+    },
+    {
+      "group_share": 0.8699932173562355,
+      "cash_share": 0.10830073229032736
+    },
+    {
+      "group_share": 0.8800021997763561,
+      "cash_share": 0.11327466998459965
+    },
+    {
+      "group_share": 0.8900111821964767,
+      "cash_share": 0.11864619510686886
+    },
+    {
+      "group_share": 0.9000018331469634,
+      "cash_share": 0.12526246007093628
+    },
+    {
+      "group_share": 0.90999248409745,
+      "cash_share": 0.13276396851957156
+    },
+    {
+      "group_share": 0.9200014665175708,
+      "cash_share": 0.142063637523768
+    },
+    {
+      "group_share": 0.9300104489376914,
+      "cash_share": 0.15225504318756958
+    },
+    {
+      "group_share": 0.940001099888178,
+      "cash_share": 0.16458017939299574
+    },
+    {
+      "group_share": 0.9499917508386647,
+      "cash_share": 0.1788622160959764
+    },
+    {
+      "group_share": 0.9600007332587853,
+      "cash_share": 0.19947838690722938
+    },
+    {
+      "group_share": 0.9700097156789059,
+      "cash_share": 0.22459229845231235
+    },
+    {
+      "group_share": 0.9800003666293927,
+      "cash_share": 0.2638431143040824
+    },
+    {
+      "group_share": 0.9899910175798794,
+      "cash_share": 0.3339912987777795
+    },
+    {
+      "group_share": 1.0,
+      "cash_share": 1.0
+    }
+  ],
+  "top_committees": [
+    {
+      "committee_id": "4792",
+      "name": "Friends of Tina Kotek",
+      "records": 9386,
+      "cash_contributions_cents": 1279350447,
+      "cash_payments_cents": 531493916,
+      "unidentified_cash_cents": 60725639,
+      "committee_sourced_cash_cents": 374893215,
+      "loans_received_cents": 0,
+      "inkind_cents": 18151470
+    },
+    {
+      "committee_id": "19050",
+      "name": "Friends of Christine Drazan",
+      "records": 7318,
+      "cash_contributions_cents": 1092129312,
+      "cash_payments_cents": 1008943096,
+      "unidentified_cash_cents": 30701532,
+      "committee_sourced_cash_cents": 133498647,
+      "loans_received_cents": 0,
+      "inkind_cents": 12164580
+    },
+    {
+      "committee_id": "23285",
+      "name": "Building a Stronger Oregon",
+      "records": 22441,
+      "cash_contributions_cents": 1066859462,
+      "cash_payments_cents": 103796985,
+      "unidentified_cash_cents": 31946916,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "21717",
+      "name": "Bring Balance to Salem PAC",
+      "records": 184,
+      "cash_contributions_cents": 405128180,
+      "cash_payments_cents": 123066140,
+      "unidentified_cash_cents": 46129,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "1524",
+      "name": "Future PAC, House Builders",
+      "records": 957,
+      "cash_contributions_cents": 257336588,
+      "cash_payments_cents": 106100440,
+      "unidentified_cash_cents": 369748,
+      "committee_sourced_cash_cents": 233807840,
+      "loans_received_cents": 0,
+      "inkind_cents": 3704159
+    },
+    {
+      "committee_id": "24693",
+      "name": "Dudley for Oregon",
+      "records": 823,
+      "cash_contributions_cents": 248248157,
+      "cash_payments_cents": 244423346,
+      "unidentified_cash_cents": 1206107,
+      "committee_sourced_cash_cents": 150000,
+      "loans_received_cents": 0,
+      "inkind_cents": 7737655
+    },
+    {
+      "committee_id": "12986",
+      "name": "Oregon Nurses Political Action Committee",
+      "records": 203,
+      "cash_contributions_cents": 239238064,
+      "cash_payments_cents": 155040925,
+      "unidentified_cash_cents": 0,
+      "committee_sourced_cash_cents": 120835282,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "4572",
+      "name": "Local 48 Electricians PAC",
+      "records": 33353,
+      "cash_contributions_cents": 196580570,
+      "cash_payments_cents": 191763434,
+      "unidentified_cash_cents": 30334287,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "353",
+      "name": "Democratic Party of Oregon",
+      "records": 540,
+      "cash_contributions_cents": 188882331,
+      "cash_payments_cents": 144737906,
+      "unidentified_cash_cents": 58370,
+      "committee_sourced_cash_cents": 140381691,
+      "loans_received_cents": 0,
+      "inkind_cents": 8596770
+    },
+    {
+      "committee_id": "33",
+      "name": "Citizen Action for Political Education",
+      "records": 18714,
+      "cash_contributions_cents": 179872621,
+      "cash_payments_cents": 134235749,
+      "unidentified_cash_cents": 154120686,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "22185",
+      "name": "Community Safety Coalition",
+      "records": 240,
+      "cash_contributions_cents": 153691289,
+      "cash_payments_cents": 151457640,
+      "unidentified_cash_cents": 608000,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "1471",
+      "name": "SDLF",
+      "records": 807,
+      "cash_contributions_cents": 148776467,
+      "cash_payments_cents": 96623653,
+      "unidentified_cash_cents": 76397,
+      "committee_sourced_cash_cents": 130174070,
+      "loans_received_cents": 0,
+      "inkind_cents": 4357960
+    },
+    {
+      "committee_id": "23238",
+      "name": "Evergreen PAC",
+      "records": 596,
+      "cash_contributions_cents": 126961236,
+      "cash_payments_cents": 119462509,
+      "unidentified_cash_cents": 115320,
+      "committee_sourced_cash_cents": 76760000,
+      "loans_received_cents": 0,
+      "inkind_cents": 2194324
+    },
+    {
+      "committee_id": "5208",
+      "name": "Friends of Tobias Read",
+      "records": 2238,
+      "cash_contributions_cents": 119010678,
+      "cash_payments_cents": 69688895,
+      "unidentified_cash_cents": 30358429,
+      "committee_sourced_cash_cents": 11742500,
+      "loans_received_cents": 0,
+      "inkind_cents": 4989751
+    },
+    {
+      "committee_id": "24485",
+      "name": "Hicks for Senate",
+      "records": 634,
+      "cash_contributions_cents": 118939077,
+      "cash_payments_cents": 93825473,
+      "unidentified_cash_cents": 599033,
+      "committee_sourced_cash_cents": 84379249,
+      "loans_received_cents": 0,
+      "inkind_cents": 13091590
+    },
+    {
+      "committee_id": "4",
+      "name": "AGC Committee for Action",
+      "records": 230,
+      "cash_contributions_cents": 100678570,
+      "cash_payments_cents": 109233705,
+      "unidentified_cash_cents": 10000,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "191",
+      "name": "Oregon Realtors Political Action Committee",
+      "records": 2792,
+      "cash_contributions_cents": 91574574,
+      "cash_payments_cents": 72510931,
+      "unidentified_cash_cents": 68706178,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 7260300
+    },
+    {
+      "committee_id": "5207",
+      "name": "Stand for Children Oregon PAC",
+      "records": 112,
+      "cash_contributions_cents": 88618009,
+      "cash_payments_cents": 26445753,
+      "unidentified_cash_cents": 46000,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 3313138
+    },
+    {
+      "committee_id": "22032",
+      "name": "Tracy Cramer PAC",
+      "records": 331,
+      "cash_contributions_cents": 85272043,
+      "cash_payments_cents": 44380636,
+      "unidentified_cash_cents": 552067,
+      "committee_sourced_cash_cents": 77653500,
+      "loans_received_cents": 0,
+      "inkind_cents": 6459000
+    },
+    {
+      "committee_id": "275",
+      "name": "Oregon Health Care Association PAC",
+      "records": 5642,
+      "cash_contributions_cents": 85039978,
+      "cash_payments_cents": 44837330,
+      "unidentified_cash_cents": 5297127,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "126",
+      "name": "Oregon Beverage PAC",
+      "records": 371,
+      "cash_contributions_cents": 80583488,
+      "cash_payments_cents": 110725556,
+      "unidentified_cash_cents": 41800,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "142",
+      "name": "OEA-PAC",
+      "records": 4956,
+      "cash_contributions_cents": 74529671,
+      "cash_payments_cents": 31119632,
+      "unidentified_cash_cents": 66943777,
+      "committee_sourced_cash_cents": 136200,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "2690",
+      "name": "The Leadership Fund",
+      "records": 454,
+      "cash_contributions_cents": 73882953,
+      "cash_payments_cents": 58970268,
+      "unidentified_cash_cents": 187949,
+      "committee_sourced_cash_cents": 30978394,
+      "loans_received_cents": 0,
+      "inkind_cents": 4265411
+    },
+    {
+      "committee_id": "221",
+      "name": "Plumbers & Steamfitters PAC",
+      "records": 9007,
+      "cash_contributions_cents": 71856129,
+      "cash_payments_cents": 31345956,
+      "unidentified_cash_cents": 57236851,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "4213",
+      "name": "SEIU Local 49 COPE Fund",
+      "records": 7060,
+      "cash_contributions_cents": 70749999,
+      "cash_payments_cents": 48801014,
+      "unidentified_cash_cents": 61287003,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "23228",
+      "name": "Starr Leadership Fund",
+      "records": 497,
+      "cash_contributions_cents": 67386538,
+      "cash_payments_cents": 43142986,
+      "unidentified_cash_cents": 65000,
+      "committee_sourced_cash_cents": 29125000,
+      "loans_received_cents": 0,
+      "inkind_cents": 30000
+    },
+    {
+      "committee_id": "21823",
+      "name": "Ed Diehl for Oregon",
+      "records": 930,
+      "cash_contributions_cents": 65081080,
+      "cash_payments_cents": 81863145,
+      "unidentified_cash_cents": 4464600,
+      "committee_sourced_cash_cents": 7095580,
+      "loans_received_cents": 19000000,
+      "inkind_cents": 1487459
+    },
+    {
+      "committee_id": "18396",
+      "name": "Friends of Rob Wagner",
+      "records": 723,
+      "cash_contributions_cents": 63891700,
+      "cash_payments_cents": 84500678,
+      "unidentified_cash_cents": 270900,
+      "committee_sourced_cash_cents": 40564000,
+      "loans_received_cents": 0,
+      "inkind_cents": 525385
+    },
+    {
+      "committee_id": "161",
+      "name": "Oregon Hospital Political Action Committee",
+      "records": 477,
+      "cash_contributions_cents": 62705800,
+      "cash_payments_cents": 53404039,
+      "unidentified_cash_cents": 137400,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    },
+    {
+      "committee_id": "5677",
+      "name": "Libraries Yes! Committee",
+      "records": 11,
+      "cash_contributions_cents": 62000000,
+      "cash_payments_cents": 84500,
+      "unidentified_cash_cents": 0,
+      "committee_sourced_cash_cents": 0,
+      "loans_received_cents": 0,
+      "inkind_cents": 0
+    }
+  ],
+  "top_payees": [
+    {
+      "entity_id": "record:6dab6330687b398df69ee9bb",
+      "name": "Strategic Media Services, Inc.",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 1,
+      "records": 19,
+      "amount_cents": 577443092
+    },
+    {
+      "entity_id": "record:cbc730f39511e08d8003c90d",
+      "name": "Canal Partners Media",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 1,
+      "records": 4,
+      "amount_cents": 231640200
+    },
+    {
+      "entity_id": "record:53a511557af61bcad8fe67cc",
+      "name": "Majority Strategies, LLC",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 2,
+      "records": 30,
+      "amount_cents": 179810675
+    },
+    {
+      "entity_id": "record:68378ea642e3b70246bd3d37",
+      "name": "Fieldworks, LLC",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 1,
+      "records": 10,
+      "amount_cents": 137613754
+    },
+    {
+      "entity_id": "record:712d71ab91292fe0c6f4861a",
+      "name": "Grow Oregon",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 1,
+      "records": 1,
+      "amount_cents": 126694734
+    },
+    {
+      "entity_id": "record:1cfe1931869620a54638df68",
+      "name": "Ax Media",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 1,
+      "records": 5,
+      "amount_cents": 121011200
+    },
+    {
+      "entity_id": "record:1bb2be352bf803425cd21309",
+      "name": "C&E Systems",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 418,
+      "records": 2970,
+      "amount_cents": 96138581
+    },
+    {
+      "entity_id": "record:7513109e26f036aa0c2f35d5",
+      "name": "Democratic Party of Oregon Federal C00188367",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 2,
+      "records": 45,
+      "amount_cents": 96067021
+    },
+    {
+      "entity_id": "record:ad447a0129231c1ce7994fb0",
+      "name": "ADP",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 12,
+      "records": 420,
+      "amount_cents": 93942962
+    },
+    {
+      "entity_id": "record:970953b7e122e8b71103eabb",
+      "name": "Polity Staffing LLC",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 40,
+      "records": 244,
+      "amount_cents": 83155100
+    },
+    {
+      "entity_id": "record:22702e46a36b09a979369446",
+      "name": "Empirical Media LLC",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 14,
+      "records": 37,
+      "amount_cents": 64185996
+    },
+    {
+      "entity_id": "record:1c14a5741680e078dbe8cf51",
+      "name": "Morel Ink",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 73,
+      "records": 182,
+      "amount_cents": 48453877
+    },
+    {
+      "entity_id": "record:ce8e4bfb6fad7ea613d6a211",
+      "name": "Orion Digital Media LLC",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 1,
+      "records": 309,
+      "amount_cents": 46213848
+    },
+    {
+      "entity_id": "record:77015139e312f498179488f0",
+      "name": "Praxis Political LLC",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 9,
+      "records": 58,
+      "amount_cents": 45334795
+    },
+    {
+      "entity_id": "record:f63e7fd949ad9c32cf886489",
+      "name": "FlexPoint Campaigns",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 1,
+      "records": 6,
+      "amount_cents": 44948000
+    },
+    {
+      "entity_id": "record:fc607cf5114dcb8df861be42",
+      "name": "Untidy Origins LLC",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 18,
+      "records": 45,
+      "amount_cents": 44147755
+    },
+    {
+      "entity_id": "record:0a536e1b64fc0b12edc74ac5",
+      "name": "Oregon Right to Life (501 C-4 Org)",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 1,
+      "records": 230,
+      "amount_cents": 40821023
+    },
+    {
+      "entity_id": "record:44436ef5135aff9dff80060b",
+      "name": "Elevated Campaigns/Compass Media",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 2,
+      "records": 10,
+      "amount_cents": 39565200
+    },
+    {
+      "entity_id": "record:66e9da27e9a054ab487cd2e2",
+      "name": "Polity Staffing LLC",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 1,
+      "records": 13,
+      "amount_cents": 38029013
+    },
+    {
+      "entity_id": "record:4188da7b30ecb3d6f892b0c2",
+      "name": "Public Opinion Strategies",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 1,
+      "records": 10,
+      "amount_cents": 37249529
+    },
+    {
+      "entity_id": "record:f2b71d83dab06cb37a13164a",
+      "name": "Intisar Strategies, LLC",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 6,
+      "records": 30,
+      "amount_cents": 33123414
+    },
+    {
+      "entity_id": "record:f7876e2c8fc44f8a75f43894",
+      "name": "GoBigMedia LLC",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 2,
+      "records": 10,
+      "amount_cents": 30237425
+    },
+    {
+      "entity_id": "record:6ec33df7fb679fe93c5ca6eb",
+      "name": "Mountain View Consulting",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 1,
+      "records": 10,
+      "amount_cents": 30108822
+    },
+    {
+      "entity_id": "record:297834ed9e2366cb45ba58c0",
+      "name": "Digital Marketing Group",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 1,
+      "records": 5,
+      "amount_cents": 30000000
+    },
+    {
+      "entity_id": "record:c7a1a273f750ef95a1db1a65",
+      "name": "50 Plus 1 Strategies LLC",
+      "identity_status": "provisional_record_group",
+      "paying_committees": 4,
+      "records": 14,
+      "amount_cents": 29932964
+    }
+  ],
+  "top_source_groups": [
+    {
+      "entity_id": "record:62e98c8c7d0137af59ba2e3f",
+      "name": "North Coast States Regional Council of Carpenters ",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 1,
+      "amount_cents": 1000000000
+    },
+    {
+      "entity_id": "record:25a3b76674fbb981336b9435",
+      "name": "Philip Knight",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 1,
+      "amount_cents": 300000000
+    },
+    {
+      "entity_id": "committee:21717",
+      "name": "Bring Balance to Salem PAC (21717)",
+      "identity_status": "authoritative_committee_id",
+      "recipient_committees": 11,
+      "gifts": 30,
+      "amount_cents": 168335000
+    },
+    {
+      "entity_id": "record:e6f13f4213c33a407d5c8ccc",
+      "name": "Democratic Governors Association",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 1,
+      "amount_cents": 150000000
+    },
+    {
+      "entity_id": "record:4e23e351e05c2b2ee4722c2f",
+      "name": "Don H Jones, Jr.",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 8,
+      "amount_cents": 134000000
+    },
+    {
+      "entity_id": "committee:12986",
+      "name": "Oregon Nurses Political Action Committee (12986)",
+      "identity_status": "authoritative_committee_id",
+      "recipient_committees": 66,
+      "gifts": 124,
+      "amount_cents": 126567414
+    },
+    {
+      "entity_id": "record:16adb3ec666a5db78a64bcdb",
+      "name": "Democratic Governors Victory Fund",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 2,
+      "amount_cents": 125000000
+    },
+    {
+      "entity_id": "committee:12987",
+      "name": "Nurses United Political Action Committee (12987)",
+      "identity_status": "authoritative_committee_id",
+      "recipient_committees": 1,
+      "gifts": 1,
+      "amount_cents": 120835282
+    },
+    {
+      "entity_id": "record:8eabe88930f40da0e5d4b8a1",
+      "name": "Oregon Nurses Association",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 21,
+      "amount_cents": 118402782
+    },
+    {
+      "entity_id": "committee:33",
+      "name": "Citizen Action for Political Education (33)",
+      "identity_status": "authoritative_committee_id",
+      "recipient_committees": 33,
+      "gifts": 40,
+      "amount_cents": 115551200
+    },
+    {
+      "entity_id": "committee:4572",
+      "name": "Local 48 Electricians PAC (4572)",
+      "identity_status": "authoritative_committee_id",
+      "recipient_committees": 43,
+      "gifts": 69,
+      "amount_cents": 103786600
+    },
+    {
+      "entity_id": "record:2670cdd3ed6a214ead822a91",
+      "name": "AGC - Oregon Columbia Chapter",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 6,
+      "amount_cents": 100443570
+    },
+    {
+      "entity_id": "record:331093b80b8571e7698d651f",
+      "name": "Philip H Knight",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 1,
+      "amount_cents": 100000000
+    },
+    {
+      "entity_id": "committee:4",
+      "name": "AGC Committee for Action (4)",
+      "identity_status": "authoritative_committee_id",
+      "recipient_committees": 68,
+      "gifts": 147,
+      "amount_cents": 99200000
+    },
+    {
+      "entity_id": "record:78069adc4f5d98ee0cd43e09",
+      "name": "Stand for Children Inc. (non-profit)",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 12,
+      "amount_cents": 87307009
+    },
+    {
+      "entity_id": "record:3e752d5eb1924afbd129670e",
+      "name": "Portland Police Association",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 5,
+      "amount_cents": 79353289
+    },
+    {
+      "entity_id": "committee:23285",
+      "name": "Building a Stronger Oregon (23285)",
+      "identity_status": "authoritative_committee_id",
+      "recipient_committees": 72,
+      "gifts": 78,
+      "amount_cents": 69207800
+    },
+    {
+      "entity_id": "record:d0dcaacd9cd9837e4f8adbee",
+      "name": "City of Portland - Small Donor Elections",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 5,
+      "gifts": 24,
+      "amount_cents": 67380600
+    },
+    {
+      "entity_id": "record:8d94364c0bba2ad5a177cbaa",
+      "name": "The Library Foundation",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 2,
+      "amount_cents": 62000000
+    },
+    {
+      "entity_id": "committee:191",
+      "name": "Oregon Realtors Political Action Committee (191)",
+      "identity_status": "authoritative_committee_id",
+      "recipient_committees": 69,
+      "gifts": 126,
+      "amount_cents": 55403174
+    },
+    {
+      "entity_id": "committee:126",
+      "name": "Oregon Beverage PAC (126)",
+      "identity_status": "authoritative_committee_id",
+      "recipient_committees": 71,
+      "gifts": 138,
+      "amount_cents": 50200000
+    },
+    {
+      "entity_id": "record:c7a35e35e962852bae1541ab",
+      "name": "Oregon Healthcare Enterprises dba Apprise Health",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 16,
+      "amount_cents": 47000000
+    },
+    {
+      "entity_id": "record:2c0080bb17047c2b4e1ee62d",
+      "name": "Columbia Distributing",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 1,
+      "gifts": 6,
+      "amount_cents": 46371858
+    },
+    {
+      "entity_id": "committee:19763",
+      "name": "Friends of Ben Bowman (19763)",
+      "identity_status": "authoritative_committee_id",
+      "recipient_committees": 26,
+      "gifts": 35,
+      "amount_cents": 44982900
+    },
+    {
+      "entity_id": "record:27e7d7ab2e60e43f78e5c017",
+      "name": "Murphy Plywood",
+      "identity_status": "provisional_record_group",
+      "recipient_committees": 4,
+      "gifts": 5,
+      "amount_cents": 44500000
+    }
+  ],
+  "purpose_bundles": [
+    {
+      "purpose_bundle": "Cash Contribution",
+      "records": 6477,
+      "amount_cents": 2615845563
+    },
+    {
+      "purpose_bundle": "Broadcast Advertising (radio, tv)",
+      "records": 259,
+      "amount_cents": 1084899779
+    },
+    {
+      "purpose_bundle": "Not specified",
+      "records": 30419,
+      "amount_cents": 896990477
+    },
+    {
+      "purpose_bundle": "General Operational Expenses (need description)",
+      "records": 18612,
+      "amount_cents": 745945485
+    },
+    {
+      "purpose_bundle": "Management Services",
+      "records": 7060,
+      "amount_cents": 694011643
+    },
+    {
+      "purpose_bundle": "Online and Social Media Advertising",
+      "records": 2013,
+      "amount_cents": 503090520
+    },
+    {
+      "purpose_bundle": "Wages, Salaries, Benefits",
+      "records": 1290,
+      "amount_cents": 255378285
+    },
+    {
+      "purpose_bundle": "Literature, Brochures, Printing; Postage",
+      "records": 300,
+      "amount_cents": 220340003
+    },
+    {
+      "purpose_bundle": "Surveys and Polls",
+      "records": 154,
+      "amount_cents": 218879696
+    },
+    {
+      "purpose_bundle": "Literature, Brochures, Printing",
+      "records": 1323,
+      "amount_cents": 177825519
+    },
+    {
+      "purpose_bundle": "Fundraising Event Expenses",
+      "records": 3623,
+      "amount_cents": 156020410
+    },
+    {
+      "purpose_bundle": "Reimbursement for Personal Expenditures",
+      "records": 2107,
+      "amount_cents": 147833599
+    },
+    {
+      "purpose_bundle": "Petition Circulators; Management Services",
+      "records": 9,
+      "amount_cents": 130760465
+    },
+    {
+      "purpose_bundle": "Other Advertising (yard signs, buttons, etc.)",
+      "records": 1282,
+      "amount_cents": 129525064
+    },
+    {
+      "purpose_bundle": "General Operational Expenses (need description); Wages, Salaries, Benefits",
+      "records": 270,
+      "amount_cents": 120995370
+    },
+    {
+      "purpose_bundle": "Preparation and Production of Advertising",
+      "records": 281,
+      "amount_cents": 100691801
+    },
+    {
+      "purpose_bundle": "Online and Social Media Advertising; Preparation and Production of Advertising",
+      "records": 47,
+      "amount_cents": 62052412
+    },
+    {
+      "purpose_bundle": "Postage",
+      "records": 553,
+      "amount_cents": 52208370
+    },
+    {
+      "purpose_bundle": "Travel Expenses (need description)",
+      "records": 1730,
+      "amount_cents": 46694546
+    },
+    {
+      "purpose_bundle": "Literature, Brochures, Printing; Preparation and Production of Advertising; Postage",
+      "records": 46,
+      "amount_cents": 42962906
+    },
+    {
+      "purpose_bundle": "Management Services; General Operational Expenses (need description)",
+      "records": 122,
+      "amount_cents": 42960669
+    },
+    {
+      "purpose_bundle": "Petition Circulators",
+      "records": 69,
+      "amount_cents": 39608835
+    },
+    {
+      "purpose_bundle": "Online and Social Media Advertising; Management Services",
+      "records": 77,
+      "amount_cents": 34433279
+    },
+    {
+      "purpose_bundle": "Online and Social Media Advertising; Broadcast Advertising (radio, tv)",
+      "records": 14,
+      "amount_cents": 23288334
+    },
+    {
+      "purpose_bundle": "Newspaper and Other Periodical Advertising",
+      "records": 298,
+      "amount_cents": 22512471
+    }
+  ],
+  "gift_sizes": [
+    {
+      "band": "$25 or less",
+      "records": 85546,
+      "amount_cents": 135028985
+    },
+    {
+      "band": "$25.01–$100",
+      "records": 38577,
+      "amount_cents": 209543757
+    },
+    {
+      "band": "$100.01–$350",
+      "records": 29912,
+      "amount_cents": 556701213
+    },
+    {
+      "band": "$350.01–$1,000",
+      "records": 15644,
+      "amount_cents": 1112268117
+    },
+    {
+      "band": "Over $1,000",
+      "records": 8817,
+      "amount_cents": 8963676252
+    }
+  ],
+  "dependency": [
+    {
+      "committee_id": "5677",
+      "name": "Libraries Yes! Committee",
+      "groups": 1,
+      "total_cents": 62000000,
+      "top1_share": 1.0,
+      "top10_share": 1.0,
+      "hhi": 1.0,
+      "effective_groups": 1.0,
+      "gini": 0.0,
+      "unidentified_share": 0.0,
+      "top_visible_group_share_all_cash": 1.0,
+      "disclosure_hhi_infimum": 1.0,
+      "disclosure_hhi_upper": 1.0,
+      "repeat_group_share": 1.0,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 0
+    },
+    {
+      "committee_id": "22155",
+      "name": "Clean Energy for Oregon PAC",
+      "groups": 1,
+      "total_cents": 32500000,
+      "top1_share": 1.0,
+      "top10_share": 1.0,
+      "hhi": 1.0,
+      "effective_groups": 1.0,
+      "gini": 0.0,
+      "unidentified_share": 0.0,
+      "top_visible_group_share_all_cash": 1.0,
+      "disclosure_hhi_infimum": 1.0,
+      "disclosure_hhi_upper": 1.0,
+      "repeat_group_share": 1.0,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 0
+    },
+    {
+      "committee_id": "3816",
+      "name": "Iron Workers District Council of the Pacific Northwest",
+      "groups": 1,
+      "total_cents": 25992017,
+      "top1_share": 1.0,
+      "top10_share": 1.0,
+      "hhi": 1.0,
+      "effective_groups": 1.0,
+      "gini": 0.0,
+      "unidentified_share": 9.232751786662497e-05,
+      "top_visible_group_share_all_cash": 0.9999076724821334,
+      "disclosure_hhi_infimum": 0.9998153534886373,
+      "disclosure_hhi_upper": 1.0,
+      "repeat_group_share": 1.0,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 0
+    },
+    {
+      "committee_id": "2480",
+      "name": "Portland General Electric Employee Candidate Assistance Fund",
+      "groups": 1,
+      "total_cents": 21000000,
+      "top1_share": 1.0,
+      "top10_share": 1.0,
+      "hhi": 1.0,
+      "effective_groups": 1.0,
+      "gini": 0.0,
+      "unidentified_share": 0.0,
+      "top_visible_group_share_all_cash": 1.0,
+      "disclosure_hhi_infimum": 1.0,
+      "disclosure_hhi_upper": 1.0,
+      "repeat_group_share": 1.0,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 0
+    },
+    {
+      "committee_id": "16480",
+      "name": "Oregon Laborers Political Action Committee",
+      "groups": 1,
+      "total_cents": 19114082,
+      "top1_share": 1.0,
+      "top10_share": 1.0,
+      "hhi": 1.0,
+      "effective_groups": 1.0,
+      "gini": 0.0,
+      "unidentified_share": 1.0463488598250379e-07,
+      "top_visible_group_share_all_cash": 0.999999895365114,
+      "disclosure_hhi_infimum": 0.999999790730239,
+      "disclosure_hhi_upper": 1.0,
+      "repeat_group_share": 1.0,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 0
+    },
+    {
+      "committee_id": "2307",
+      "name": "Oregon School Employees Association - Voice of Involved Classified Employees",
+      "groups": 1,
+      "total_cents": 18600000,
+      "top1_share": 1.0,
+      "top10_share": 1.0,
+      "hhi": 1.0,
+      "effective_groups": 1.0,
+      "gini": 0.0,
+      "unidentified_share": 0.0,
+      "top_visible_group_share_all_cash": 1.0,
+      "disclosure_hhi_infimum": 1.0,
+      "disclosure_hhi_upper": 1.0,
+      "repeat_group_share": 0.0,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 0
+    },
+    {
+      "committee_id": "113",
+      "name": "American Federation of Teachers- Oregon Candidate Political Action Committee",
+      "groups": 1,
+      "total_cents": 16950000,
+      "top1_share": 1.0,
+      "top10_share": 1.0,
+      "hhi": 1.0,
+      "effective_groups": 1.0,
+      "gini": 0.0,
+      "unidentified_share": 0.0,
+      "top_visible_group_share_all_cash": 1.0,
+      "disclosure_hhi_infimum": 1.0,
+      "disclosure_hhi_upper": 1.0,
+      "repeat_group_share": 1.0,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 0
+    },
+    {
+      "committee_id": "24430",
+      "name": "Sober PDX Fund",
+      "groups": 1,
+      "total_cents": 11750000,
+      "top1_share": 1.0,
+      "top10_share": 1.0,
+      "hhi": 1.0,
+      "effective_groups": 1.0,
+      "gini": 0.0,
+      "unidentified_share": 0.0,
+      "top_visible_group_share_all_cash": 1.0,
+      "disclosure_hhi_infimum": 1.0,
+      "disclosure_hhi_upper": 1.0,
+      "repeat_group_share": 0.0,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 0
+    },
+    {
+      "committee_id": "102",
+      "name": "Natural Gas Political Action Committee",
+      "groups": 1,
+      "total_cents": 10000000,
+      "top1_share": 1.0,
+      "top10_share": 1.0,
+      "hhi": 1.0,
+      "effective_groups": 1.0,
+      "gini": 0.0,
+      "unidentified_share": 0.0,
+      "top_visible_group_share_all_cash": 1.0,
+      "disclosure_hhi_infimum": 1.0,
+      "disclosure_hhi_upper": 1.0,
+      "repeat_group_share": 0.0,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 0
+    },
+    {
+      "committee_id": "17638",
+      "name": "AllCare Physicians PAC",
+      "groups": 1,
+      "total_cents": 10000000,
+      "top1_share": 1.0,
+      "top10_share": 1.0,
+      "hhi": 1.0,
+      "effective_groups": 1.0,
+      "gini": 0.0,
+      "unidentified_share": 0.0,
+      "top_visible_group_share_all_cash": 1.0,
+      "disclosure_hhi_infimum": 1.0,
+      "disclosure_hhi_upper": 1.0,
+      "repeat_group_share": 0.0,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 0
+    },
+    {
+      "committee_id": "4",
+      "name": "AGC Committee for Action",
+      "groups": 5,
+      "total_cents": 100668570,
+      "top1_share": 0.9977649429211123,
+      "top10_share": 1.0,
+      "hhi": 0.9955364231372303,
+      "effective_groups": 1.0044835897100617,
+      "gini": 0.79821195433689,
+      "unidentified_share": 9.93260035377936e-05,
+      "top_visible_group_share_all_cash": 0.9976658389168619,
+      "disclosure_hhi_infimum": 0.9953386676502761,
+      "disclosure_hhi_upper": 0.9955368658372228,
+      "repeat_group_share": 0.2,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 225000
+    },
+    {
+      "committee_id": "5207",
+      "name": "Stand for Children Oregon PAC",
+      "groups": 14,
+      "total_cents": 88572009,
+      "top1_share": 0.9857178355297327,
+      "top10_share": 0.9989274263836558,
+      "hhi": 0.9716818724372069,
+      "effective_groups": 1.0291434144919926,
+      "gini": 0.9215230876640239,
+      "unidentified_share": 0.0005190818493789451,
+      "top_visible_group_share_all_cash": 0.9852061672927,
+      "disclosure_hhi_infimum": 0.9706733694062626,
+      "disclosure_hhi_upper": 0.9716964441309046,
+      "repeat_group_share": 0.21428571428571427,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 1265000
+    },
+    {
+      "committee_id": "17220",
+      "name": "OFNHP AFT 5017 Political Action Committee",
+      "groups": 18,
+      "total_cents": 12636270,
+      "top1_share": 0.9724206589444512,
+      "top10_share": 0.9976654503267183,
+      "hhi": 0.9457005333294509,
+      "effective_groups": 1.057417189434568,
+      "gini": 0.9312768808446725,
+      "unidentified_share": 0.03883814170216941,
+      "top_visible_group_share_all_cash": 0.9346536475982496,
+      "disclosure_hhi_infimum": 0.873668526554348,
+      "disclosure_hhi_upper": 0.9477773494209665,
+      "repeat_group_share": 1.0,
+      "visible_small_group_cash_cents": 17500,
+      "scenario_remove_top_group_cents": 348500
+    },
+    {
+      "committee_id": "23285",
+      "name": "Building a Stronger Oregon",
+      "groups": 3122,
+      "total_cents": 1034912546,
+      "top1_share": 0.96626522102284,
+      "top10_share": 0.9666880664136813,
+      "hhi": 0.933669074336552,
+      "effective_groups": 1.0710432930538922,
+      "gini": 0.9788839424750964,
+      "unidentified_share": 0.02994482135454876,
+      "top_visible_group_share_all_cash": 0.9373305815981974,
+      "disclosure_hhi_infimum": 0.878589180959942,
+      "disclosure_hhi_upper": 0.9356222669181244,
+      "repeat_group_share": 0.9426649583600256,
+      "visible_small_group_cash_cents": 14978076,
+      "scenario_remove_top_group_cents": 34912546
+    },
+    {
+      "committee_id": "14041",
+      "name": "Equitable Housing PAC",
+      "groups": 2,
+      "total_cents": 20760000,
+      "top1_share": 0.9277456647398844,
+      "top10_share": 1.0,
+      "hhi": 0.8659327074075311,
+      "effective_groups": 1.154824146779079,
+      "gini": 0.4277456647398843,
+      "unidentified_share": 0.0,
+      "top_visible_group_share_all_cash": 0.9277456647398844,
+      "disclosure_hhi_infimum": 0.8659327074075311,
+      "disclosure_hhi_upper": 0.8659327074075311,
+      "repeat_group_share": 0.5,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 1500000
+    },
+    {
+      "committee_id": "16428",
+      "name": "Jobs Political Action Committee",
+      "groups": 3,
+      "total_cents": 22525000,
+      "top1_share": 0.8879023307436182,
+      "top10_share": 1.0,
+      "hhi": 0.7969453104886542,
+      "effective_groups": 1.254791247076717,
+      "gini": 0.5771365149833518,
+      "unidentified_share": 0.0,
+      "top_visible_group_share_all_cash": 0.8879023307436182,
+      "disclosure_hhi_infimum": 0.7969453104886542,
+      "disclosure_hhi_upper": 0.7969453104886542,
+      "repeat_group_share": 0.0,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 2525000
+    },
+    {
+      "committee_id": "23208",
+      "name": "Teacher Tiffany for the People",
+      "groups": 135,
+      "total_cents": 22971865,
+      "top1_share": 0.8706302252777474,
+      "top10_share": 0.8988168788211144,
+      "hhi": 0.7582077062868776,
+      "effective_groups": 1.3188998103135041,
+      "gini": 0.915638926461017,
+      "unidentified_share": 0.1731064577338362,
+      "top_visible_group_share_all_cash": 0.7199185109839047,
+      "disclosure_hhi_infimum": 0.518426740905327,
+      "disclosure_hhi_upper": 0.7976376732013666,
+      "repeat_group_share": 0.31851851851851853,
+      "visible_small_group_cash_cents": 246380,
+      "scenario_remove_top_group_cents": 2971865
+    },
+    {
+      "committee_id": "23028",
+      "name": "Angelita for Portland",
+      "groups": 113,
+      "total_cents": 20107240,
+      "top1_share": 0.8685677397793033,
+      "top10_share": 0.8940560713454457,
+      "hhi": 0.7546365133878828,
+      "effective_groups": 1.3251412862473042,
+      "gini": 0.9054845951406787,
+      "unidentified_share": 0.16086505279409155,
+      "top_visible_group_share_all_cash": 0.7288455444644609,
+      "disclosure_hhi_infimum": 0.5313753838402795,
+      "disclosure_hhi_upper": 0.7917445030287531,
+      "repeat_group_share": 0.25663716814159293,
+      "visible_small_group_cash_cents": 182409,
+      "scenario_remove_top_group_cents": 2642740
+    },
+    {
+      "committee_id": "25186",
+      "name": "Yes for Eugene Clean Energy Fund",
+      "groups": 23,
+      "total_cents": 11661000,
+      "top1_share": 0.8575593859874796,
+      "top10_share": 0.9814767172626705,
+      "hhi": 0.743155038713684,
+      "effective_groups": 1.3456142364733004,
+      "gini": 0.9124618292860258,
+      "unidentified_share": 0.008418367346938776,
+      "top_visible_group_share_all_cash": 0.8503401360544217,
+      "disclosure_hhi_infimum": 0.7306954010770975,
+      "disclosure_hhi_upper": 0.7450832212561895,
+      "repeat_group_share": 0.043478260869565216,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 1661000
+    },
+    {
+      "committee_id": "23295",
+      "name": "Eli for Portland",
+      "groups": 164,
+      "total_cents": 24000500,
+      "top1_share": 0.8333159725839046,
+      "top10_share": 0.8596695902168705,
+      "hhi": 0.6946644099487764,
+      "effective_groups": 1.4395440239607764,
+      "gini": 0.8846138113992543,
+      "unidentified_share": 0.1598850676707231,
+      "top_visible_group_share_all_cash": 0.7000811919162325,
+      "disclosure_hhi_infimum": 0.49028934702580257,
+      "disclosure_hhi_upper": 0.7397176393789289,
+      "repeat_group_share": 0.12804878048780488,
+      "visible_small_group_cash_cents": 317500,
+      "scenario_remove_top_group_cents": 4000500
+    },
+    {
+      "committee_id": "23365",
+      "name": "Friends of Mitch Green",
+      "groups": 139,
+      "total_cents": 20030396,
+      "top1_share": 0.8107727875175309,
+      "top10_share": 0.844491541754841,
+      "hhi": 0.657720633719163,
+      "effective_groups": 1.5204023543329876,
+      "gini": 0.8641310375340479,
+      "unidentified_share": 0.16740484764475003,
+      "top_visible_group_share_all_cash": 0.6750454925486493,
+      "disclosure_hhi_infimum": 0.45594160371422243,
+      "disclosure_hhi_upper": 0.7099777623959481,
+      "repeat_group_share": 0.30935251798561153,
+      "visible_small_group_cash_cents": 176642,
+      "scenario_remove_top_group_cents": 3790296
+    },
+    {
+      "committee_id": "161",
+      "name": "Oregon Hospital Political Action Committee",
+      "groups": 60,
+      "total_cents": 62568400,
+      "top1_share": 0.7511779108943173,
+      "top10_share": 0.9612480101776616,
+      "hhi": 0.595402069942447,
+      "effective_groups": 1.6795373252509223,
+      "gini": 0.9373887883766674,
+      "unidentified_share": 0.002191184866471682,
+      "top_visible_group_share_all_cash": 0.7495319412239378,
+      "disclosure_hhi_infimum": 0.5927956566308701,
+      "disclosure_hhi_upper": 0.5960851840150833,
+      "repeat_group_share": 0.35,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 15568400
+    },
+    {
+      "committee_id": "21717",
+      "name": "Bring Balance to Salem PAC",
+      "groups": 23,
+      "total_cents": 405082051,
+      "top1_share": 0.7405907007220125,
+      "top10_share": 0.9886885854638867,
+      "hhi": 0.558829620908449,
+      "effective_groups": 1.7894541781346023,
+      "gini": 0.8740386385271515,
+      "unidentified_share": 0.00011386272858135912,
+      "top_visible_group_share_all_cash": 0.7405063750440662,
+      "disclosure_hhi_infimum": 0.5587023684226217,
+      "disclosure_hhi_upper": 0.5588710135401315,
+      "repeat_group_share": 0.13043478260869565,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 105082051
+    },
+    {
+      "committee_id": "23199",
+      "name": "Friends of Olivia",
+      "groups": 134,
+      "total_cents": 14015145,
+      "top1_share": 0.7135138452010308,
+      "top10_share": 0.7538273774548889,
+      "hhi": 0.5098432913959047,
+      "effective_groups": 1.9613869925837226,
+      "gini": 0.7702435925085585,
+      "unidentified_share": 0.18694549052379256,
+      "top_visible_group_share_all_cash": 0.5801256494144067,
+      "disclosure_hhi_infimum": 0.3370358006243272,
+      "disclosure_hhi_upper": 0.5888881652419286,
+      "repeat_group_share": 0.08208955223880597,
+      "visible_small_group_cash_cents": 92500,
+      "scenario_remove_top_group_cents": 4015145
+    },
+    {
+      "committee_id": "2352",
+      "name": "Oregon League of Conservation Voters PAC",
+      "groups": 77,
+      "total_cents": 31583269,
+      "top1_share": 0.696571339717874,
+      "top10_share": 0.9696589672209042,
+      "hhi": 0.5131938801574176,
+      "effective_groups": 1.9485813036064634,
+      "gini": 0.9449739074471082,
+      "unidentified_share": 0.04569144977279051,
+      "top_visible_group_share_all_cash": 0.6647439853359894,
+      "disclosure_hhi_infimum": 0.46736813462759413,
+      "disclosure_hhi_upper": 0.5302020760454215,
+      "repeat_group_share": 0.18181818181818182,
+      "visible_small_group_cash_cents": 47549,
+      "scenario_remove_top_group_cents": 9583269
+    },
+    {
+      "committee_id": "24897",
+      "name": "Kellie Torres for Portland",
+      "groups": 152,
+      "total_cents": 14186300,
+      "top1_share": 0.6908073281969224,
+      "top10_share": 0.7186510929558799,
+      "hhi": 0.47793206832013535,
+      "effective_groups": 2.0923475662866915,
+      "gini": 0.7384346814216978,
+      "unidentified_share": 0.1672800699690657,
+      "top_visible_group_share_all_cash": 0.5752490300009979,
+      "disclosure_hhi_infimum": 0.33140884098015677,
+      "disclosure_hhi_upper": 0.5518468587654205,
+      "repeat_group_share": 0.05263157894736842,
+      "visible_small_group_cash_cents": 112500,
+      "scenario_remove_top_group_cents": 4386300
+    },
+    {
+      "committee_id": "15109",
+      "name": "Novick for Portland",
+      "groups": 209,
+      "total_cents": 15569000,
+      "top1_share": 0.6423020104052926,
+      "top10_share": 0.6761834414541718,
+      "hhi": 0.4133075128942778,
+      "effective_groups": 2.419505982355069,
+      "gini": 0.7252551613883682,
+      "unidentified_share": 0.18441643972133434,
+      "top_visible_group_share_all_cash": 0.5238509604204931,
+      "disclosure_hhi_infimum": 0.27492246295227696,
+      "disclosure_hhi_upper": 0.5021453443224674,
+      "repeat_group_share": 0.08133971291866028,
+      "visible_small_group_cash_cents": 325000,
+      "scenario_remove_top_group_cents": 5569000
+    },
+    {
+      "committee_id": "19351",
+      "name": "Friends of Tom Kress",
+      "groups": 45,
+      "total_cents": 11882500,
+      "top1_share": 0.6311803071744162,
+      "top10_share": 0.858405217757206,
+      "hhi": 0.405665855827865,
+      "effective_groups": 2.4650829879661527,
+      "gini": 0.7988966033148654,
+      "unidentified_share": 0.007102569458951326,
+      "top_visible_group_share_all_cash": 0.6266973052015876,
+      "disclosure_hhi_infimum": 0.3999237804113039,
+      "disclosure_hhi_upper": 0.4088765491840869,
+      "repeat_group_share": 0.044444444444444446,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 4382500
+    },
+    {
+      "committee_id": "23302",
+      "name": "Oregon Moves",
+      "groups": 25,
+      "total_cents": 16100000,
+      "top1_share": 0.6211180124223602,
+      "top10_share": 0.9720496894409938,
+      "hhi": 0.4114746730450214,
+      "effective_groups": 2.4302832361460682,
+      "gini": 0.8474782608695652,
+      "unidentified_share": 0.017386881394690544,
+      "top_visible_group_share_all_cash": 0.6103187072082668,
+      "disclosure_hhi_infimum": 0.3972905406640514,
+      "disclosure_hhi_upper": 0.41881592225906644,
+      "repeat_group_share": 0.2,
+      "visible_small_group_cash_cents": 0,
+      "scenario_remove_top_group_cents": 6100000
+    },
+    {
+      "committee_id": "22032",
+      "name": "Tracy Cramer PAC",
+      "groups": 92,
+      "total_cents": 84719976,
+      "top1_share": 0.612016226255777,
+      "top10_share": 0.8652032668186781,
+      "hhi": 0.39495139977183863,
+      "effective_groups": 2.5319570979560897,
+      "gini": 0.8919982766160901,
+      "unidentified_share": 0.006474185214490522,
+      "top_visible_group_share_all_cash": 0.6080539198527236,
+      "disclosure_hhi_infimum": 0.3898539771633718,
+      "disclosure_hhi_upper": 0.3977691996326103,
+      "repeat_group_share": 0.16304347826086957,
+      "visible_small_group_cash_cents": 28329,
+      "scenario_remove_top_group_cents": 32869976
+    }
+  ],
+  "same_name_candidate_count": 6821,
+  "evidence": {
+    "financial-bases": {
+      "metric": "financial-bases-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Reported subtype amounts, not an additive grand total across accounting bases.",
+      "sql": "SELECT basis, subtype, direction, count(*) AS records, sum(amount_cents)::BIGINT AS amount_cents FROM transactions GROUP BY ALL ORDER BY basis, subtype",
+      "rows": 24,
+      "sha256": "38eb1af1314239ef9589810450f3e473ab097811e6c1042e457a29f4c67cb1c0",
+      "download": "/data/campaign-finance/financial-bases.csv"
+    },
+    "committees": {
+      "metric": "committees-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Committee-reported flows within the observed interval, not campaign-cycle totals or balances.",
+      "sql": "SELECT committee_id, any_value(committee_name) AS name, count(*) AS records, sum(CASE WHEN basis='cash_contribution' THEN amount_cents ELSE 0 END)::BIGINT AS cash_contributions_cents, sum(CASE WHEN basis='cash_payment' THEN amount_cents ELSE 0 END)::BIGINT AS cash_payments_cents, sum(CASE WHEN basis='cash_contribution' AND is_disclosure_category THEN amount_cents ELSE 0 END)::BIGINT AS unidentified_cash_cents, sum(CASE WHEN basis='cash_contribution' AND counterparty_committee_id IS NOT NULL THEN amount_cents ELSE 0 END)::BIGINT AS committee_sourced_cash_cents, sum(CASE WHEN basis='loan_received' THEN amount_cents ELSE 0 END)::BIGINT AS loans_received_cents, sum(CASE WHEN basis='noncash_support' THEN amount_cents ELSE 0 END)::BIGINT AS inkind_cents FROM transactions GROUP BY committee_id ORDER BY cash_contributions_cents DESC, committee_id",
+      "rows": 1888,
+      "sha256": "9cccea063f4a84d23acbbf07161467ccdd5e8d537fe4170cf4cf11311dbbef85",
+      "download": "/data/campaign-finance/committees.csv"
+    },
+    "disclosure": {
+      "metric": "disclosure-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Aggregate and anonymous categories remain amounts, never donor identities.",
+      "sql": "SELECT family, subtype, entity_name AS label, count(*) AS records, sum(amount_cents)::BIGINT AS amount_cents FROM transactions WHERE is_disclosure_category GROUP BY ALL ORDER BY records DESC",
+      "rows": 9,
+      "sha256": "2c6ce5f9d06ea386bd7d99c5ded74c5dde6ece05d05708fb35faa2b2ba7404c1",
+      "download": "/data/campaign-finance/disclosure.csv"
+    },
+    "donor-record-groups": {
+      "metric": "donor-record-groups-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Gross cash contribution totals for conservative record groups. Not verified unique people. Includes authoritative committee sources separately identifiable by ID.",
+      "sql": "SELECT entity_id, any_value(entity_name) AS name, any_value(identity_status) AS identity_status, count(DISTINCT committee_id) AS recipient_committees, count(*) AS gifts, sum(amount_cents)::BIGINT AS amount_cents FROM transactions WHERE basis='cash_contribution' AND NOT is_disclosure_category AND identity_status<>'unknown' GROUP BY entity_id ORDER BY amount_cents DESC, entity_id",
+      "rows": 54551,
+      "sha256": "aa7e9595f230423d561aa974f307c93573fcb58f6788a7a01ef1a2ba90482886",
+      "download": "/data/campaign-finance/donor-record-groups.csv"
+    },
+    "donor-committee": {
+      "metric": "donor-committee-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Within-committee cumulative cash giving. Aggregate dollars cannot be allocated back to identified donors.",
+      "sql": "SELECT committee_id, entity_id, any_value(identity_status) AS identity_status, any_value(book_type) AS book_type, count(*) AS gifts, sum(amount_cents)::BIGINT AS amount_cents, min(transaction_date) AS first_gift, max(transaction_date) AS last_gift FROM transactions WHERE basis='cash_contribution' AND NOT is_disclosure_category AND identity_status<>'unknown' GROUP BY committee_id, entity_id ORDER BY committee_id, entity_id",
+      "rows": 64617,
+      "sha256": "39c3298043af14688c81719db8a297ea3d50b32045e304319062cd8b7fc97267",
+      "download": "/data/campaign-finance/donor-committee.csv"
+    },
+    "dependency": {
+      "metric": "dependency-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "HHI, Gini and effective number among visible record groups; sensitivity bounds assign unidentified cash to infinitely diffuse sources or the largest visible source. Top-group removal is hypothetical forgone receipts, not cash runway.",
+      "calculation": "ingest/orestar/analysis/common.py:concentration and analyze.py",
+      "download": "/data/campaign-finance/dependency.csv",
+      "sha256": "4c02d2fef51da5b08f630ead7d999c1946d11a38af53fa833f8afe5d7bc4092a"
+    },
+    "geography": {
+      "metric": "geography-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Reported counterparty state, not donor residence verification or district location; unknown kept in denominator.",
+      "sql": "SELECT CASE WHEN state='' THEN 'Unknown state' WHEN state='OR' THEN 'Oregon' ELSE 'Outside Oregon (reported)' END AS geography, count(*) AS records, sum(amount_cents)::BIGINT AS amount_cents, sum(CASE WHEN NOT is_disclosure_category AND identity_status<>'unknown' THEN amount_cents ELSE 0 END)::BIGINT AS identified_cents FROM transactions WHERE basis='cash_contribution' GROUP BY 1 ORDER BY amount_cents DESC",
+      "rows": 3,
+      "sha256": "80af259ccc4beeba9700b25806cab3b4469e5b333a3249251f136b6e3b05680a",
+      "download": "/data/campaign-finance/geography.csv"
+    },
+    "cities": {
+      "metric": "cities-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Reported city/state text, not a geocoded neighborhood or legal residence.",
+      "sql": "SELECT city, state, count(*) AS records, sum(amount_cents)::BIGINT AS amount_cents FROM transactions WHERE basis='cash_contribution' GROUP BY ALL ORDER BY amount_cents DESC",
+      "rows": 2035,
+      "sha256": "606451a6c63c393d251384260c613b1b56c0e843ec7292016941e09c13096004",
+      "download": "/data/campaign-finance/cities.csv"
+    },
+    "reported-contributor-types": {
+      "metric": "reported-contributor-types-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Filer-reported address-book classifications, not independently reviewed industries or employer attribution.",
+      "sql": "SELECT book_type, count(*) AS records, sum(amount_cents)::BIGINT AS amount_cents FROM transactions WHERE basis='cash_contribution' GROUP BY book_type ORDER BY amount_cents DESC",
+      "rows": 9,
+      "sha256": "8f1081be0999a472054195e83f08baf843bc637524c795e6195b34b621c9519f",
+      "download": "/data/campaign-finance/reported-contributor-types.csv"
+    },
+    "payee-record-groups": {
+      "metric": "payee-record-groups-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Noncommittee cash payees; includes reimbursements, intermediaries and pass-throughs, not verified vendor earnings.",
+      "sql": "SELECT entity_id, any_value(entity_name) AS name, any_value(identity_status) AS identity_status, count(DISTINCT committee_id) AS paying_committees, count(*) AS records, sum(amount_cents)::BIGINT AS amount_cents FROM transactions WHERE basis='cash_payment' AND NOT is_disclosure_category AND identity_status<>'unknown' AND counterparty_committee_id IS NULL GROUP BY entity_id ORDER BY amount_cents DESC, entity_id",
+      "rows": 9111,
+      "sha256": "27062ea94866c28827ddcd351ce638e93a38b14e6845abb93de8b51722a556d6",
+      "download": "/data/campaign-finance/payee-record-groups.csv"
+    },
+    "purpose-bundles": {
+      "metric": "purpose-bundles-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Multivalued purpose-code combinations kept intact so a payment is not counted in several categories.",
+      "sql": "SELECT CASE WHEN purpose_codes='' THEN 'Not specified' ELSE purpose_codes END AS purpose_bundle, count(*) AS records, sum(amount_cents)::BIGINT AS amount_cents FROM transactions WHERE basis='cash_payment' GROUP BY 1 ORDER BY amount_cents DESC",
+      "rows": 248,
+      "sha256": "f456eef5dd9f6db00f95635b526b0f8e0976b5c47cad0d832e9d86321ffc19c7",
+      "download": "/data/campaign-finance/purpose-bundles.csv"
+    },
+    "monthly": {
+      "metric": "monthly-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Transaction-date activity, not filing-date arrivals. September 2026 ends on the 27th and is incomplete.",
+      "sql": "SELECT substr(transaction_date,1,7) AS month, basis, count(*) AS records, sum(amount_cents)::BIGINT AS amount_cents FROM transactions GROUP BY 1,2 ORDER BY 1,2",
+      "rows": 302,
+      "sha256": "d8204aa7c81e6492007e62c102bcf454dc462f0752edde61d8ba4dff627fe10f",
+      "download": "/data/campaign-finance/monthly.csv"
+    },
+    "filing-lag": {
+      "metric": "filing-lag-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Current-version filed date minus transaction date. Amended rows do not reveal the initial disclosure date. Neither distribution establishes statutory lateness.",
+      "sql": "SELECT status, count(*) AS records, min(filed_lag_days) AS minimum_days, quantile_disc(filed_lag_days,0.5) AS median_days, quantile_disc(filed_lag_days,0.9) AS p90_days, quantile_disc(filed_lag_days,0.99) AS p99_days, count(*) FILTER (WHERE filed_lag_days<0) AS negative_lags FROM transactions GROUP BY status",
+      "rows": 2,
+      "sha256": "f9deec29bee1e528b996812660230b423cb972d157c09eafa81e9a0e5337f822",
+      "download": "/data/campaign-finance/filing-lag.csv"
+    },
+    "matched-transfers": {
+      "metric": "matched-transfers-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Unique reciprocal committee IDs, equal positive amount and same date. Both transaction IDs retained; candidate matches are not proof of an association recorded by ORESTAR.",
+      "sql": "SELECT * FROM transfers WHERE match_status='strict_unique_same_day' ORDER BY amount_cents DESC, receipt_id",
+      "rows": 1454,
+      "sha256": "8f861e159d2f26a2e14f93fce882d1897e68193d1dcf94bec1cce452a8f7ed5b",
+      "download": "/data/campaign-finance/matched-transfers.csv"
+    },
+    "ambiguous-transfers": {
+      "metric": "ambiguous-transfers-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Reciprocal IDs and equal amount within seven days but not uniquely same-day matched; excluded from strict circulation deduction.",
+      "sql": "SELECT * FROM transfers WHERE match_status<>'strict_unique_same_day' ORDER BY receipt_id,payment_id",
+      "rows": 2419,
+      "sha256": "1c7a4b629a98e55b2d61f89e59389386f8ae9673f9af7b1c9482b8d83db43b5d",
+      "download": "/data/campaign-finance/ambiguous-transfers.csv"
+    },
+    "network-boundary": {
+      "metric": "network-boundary-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "An observed-network boundary classification, not ultimate donor attribution. No committee ID does not prove a noncommittee origin.",
+      "sql": "SELECT basis, CASE WHEN counterparty_committee_id IN (SELECT committee_id FROM committees) THEN 'Observed committee counterparty' WHEN counterparty_committee_id IS NOT NULL THEN 'Committee outside observed filer set' WHEN is_disclosure_category OR identity_status='unknown' THEN 'Unidentified disclosure' ELSE 'No committee ID reported' END AS boundary, count(*) AS records, sum(amount_cents)::BIGINT AS amount_cents FROM transactions WHERE basis IN ('cash_contribution','cash_payment') GROUP BY ALL ORDER BY basis,boundary",
+      "rows": 8,
+      "sha256": "d24d67e4b0faba2c56ce5514d0a59243c181eb234eb5e71461b0249fdb3b077d",
+      "download": "/data/campaign-finance/network-boundary.csv"
+    },
+    "gift-sizes": {
+      "metric": "gift-sizes-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Individual itemized transaction sizes, not cumulative donor sizes. Aggregate rows excluded.",
+      "sql": "SELECT CASE WHEN amount_cents<=2500 THEN '$25 or less' WHEN amount_cents<=10000 THEN '$25.01–$100' WHEN amount_cents<=35000 THEN '$100.01–$350' WHEN amount_cents<=100000 THEN '$350.01–$1,000' ELSE 'Over $1,000' END AS band, count(*) AS records, sum(amount_cents)::BIGINT AS amount_cents FROM transactions WHERE basis='cash_contribution' AND NOT is_disclosure_category GROUP BY 1 ORDER BY min(amount_cents)",
+      "rows": 5,
+      "sha256": "ff5963ee72e275cc5564fdbce4668f7635641a72e939c45f3d86159a36371931",
+      "download": "/data/campaign-finance/gift-sizes.csv"
+    },
+    "amendments": {
+      "metric": "amendments-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Latest available versions only. Dollar totals across families are not a combined financial measure.",
+      "sql": "SELECT family, status, count(*) AS records, sum(amount_cents)::BIGINT AS amount_cents FROM transactions GROUP BY ALL ORDER BY family,status",
+      "rows": 12,
+      "sha256": "6d23b859f937b69e5411d0e785f085a59d49c9b1cd70463bdd5d6d2c09eeec6d",
+      "download": "/data/campaign-finance/amendments.csv"
+    },
+    "missingness": {
+      "metric": "missingness-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Blank fields across transaction families; field applicability differs, so these are not violation counts.",
+      "sql": "SELECT family, count(*) AS records, count(*) FILTER(WHERE state='') AS missing_state, count(*) FILTER(WHERE city='') AS missing_city, count(*) FILTER(WHERE employer='') AS missing_employer, count(*) FILTER(WHERE occupation='') AS missing_occupation, count(*) FILTER(WHERE purpose_codes='') AS missing_purpose_codes, count(*) FILTER(WHERE purpose_description='') AS missing_description, count(*) FILTER(WHERE identity_status='unknown') AS missing_counterparty FROM transactions GROUP BY family",
+      "rows": 6,
+      "sha256": "00784c8c16eeb1f037878c7a6c8cd2dc6c199ba32994556128e89a835dc31ee8",
+      "download": "/data/campaign-finance/missingness.csv"
+    },
+    "largest-cash-records": {
+      "metric": "largest-cash-records-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Magnitude-based investigation leads, not findings of misconduct.",
+      "sql": "SELECT transaction_id, transaction_date, committee_id, committee_name, entity_id, entity_name, basis, amount_cents FROM transactions WHERE basis IN ('cash_contribution','cash_payment') ORDER BY amount_cents DESC,transaction_id LIMIT 100",
+      "rows": 100,
+      "sha256": "2d4c4023359a813ac4968bc4d7f9de3cc5dfdd3303ac7b91764cf1309ebc7b90",
+      "download": "/data/campaign-finance/largest-cash-records.csv"
+    },
+    "same-name-candidates": {
+      "metric": "same-name-candidates-v1",
+      "snapshot": "orestar-20250101-20260927-v1",
+      "description": "Possible entity-review candidates; never automatically merged on name.",
+      "sql": "SELECT upper(trim(entity_name)) AS name, count(DISTINCT entity_id) AS distinct_record_groups, count(*) AS records FROM transactions WHERE identity_status='provisional_record_group' GROUP BY 1 HAVING count(DISTINCT entity_id)>1 ORDER BY distinct_record_groups DESC, name",
+      "rows": 6821,
+      "sha256": "141cfd8112266b2ebad18bfed29fd2cb1eeb8cc4187f2e9ceb0c178003b597c9",
+      "download": "/data/campaign-finance/same-name-candidates.csv"
+    }
+  },
+  "review_status": "working local research edition; named committee IDs source-reviewed; broader identity/enrichment review incomplete"
+}

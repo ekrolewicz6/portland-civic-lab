@@ -1,0 +1,10 @@
+family,subtype,label,records,amount_cents
+Contribution,Cash Contribution,Miscellaneous Cash Contributions $100 and under ,31299,1201713528
+Expenditure,Cash Expenditure,Miscellaneous Cash Expenditures $100 and under,19645,52097276
+Expenditure,Personal Expenditure for Reimbursement,Miscellaneous Personal Expenditures $100 and under,2279,10085148
+Contribution,In-Kind Contribution,Miscellaneous In-Kind Contributions $100 and under,875,5944437
+Other Disbursement,Return or Refund of Contribution,Miscellaneous Return/Refund of Contribution $100 and under,184,1311070
+Contribution,In-Kind/Forgiven Personal Expenditures,Miscellaneous In-Kind Contributions $100 and under,64,214060
+Other Receipt,Lost or Returned Check,Miscellaneous Lost or Returned Check $100 and under,24,154446
+Contribution,Cash Contribution,Anonymous Contribution,14,485150
+Contribution,In-Kind/Forgiven Account Payable,Miscellaneous In-Kind Contributions $100 and under,6,58389

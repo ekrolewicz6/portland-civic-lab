@@ -1,0 +1,335 @@
+{
+  "version": "findings-v2",
+  "snapshot": "orestar-20250101-20260927-v1",
+  "status": "working-edition; broader research programme incomplete",
+  "findings": [
+    {
+      "id": "F010",
+      "questionIds": [
+        "Q030",
+        "Q005"
+      ],
+      "title": "One reported gift changes the September story",
+      "answer": "September 1–27 reports $20,056,194.92 in cash contributions. Transaction 5816290—the $10 million Carpenters contribution to Building a Stronger Oregon—is 49.9% of that total. Excluding that one record leaves $10,056,194.92, versus $13,697,269.57 in the full month of August.",
+      "population": "Fixed ORESTAR current-version snapshot; any narrower population is specified in the denominator.",
+      "dates": {
+        "start": "2025-01-01",
+        "end": "2026-09-27"
+      },
+      "snapshot": "orestar-20250101-20260927-v1",
+      "denominator": "All September 1–27 cash-contribution rows: 11,378; denominator 2005619492 cents.",
+      "calculation": "Single-record influence analysis: subtract the specified transaction from the September sum, retaining every other row and the same accounting basis.",
+      "evidence": [
+        "monthly.csv",
+        "largest-cash-records.csv"
+      ],
+      "sourceTransactionIds": [
+        "5816290"
+      ],
+      "whyItMatters": "An aggregate fundraising surge can reflect a single institutional funding event rather than a broad-based increase in participation.",
+      "uncertainty": "September is incomplete, reporting can arrive later, and the comparison is not seasonally adjusted. No claim about acceleration, spending, donor intent or electoral effect.",
+      "competingExplanations": "Other campaigns can accelerate even when an aggregate comparison is dominated by one receipt. Gross receipts still include committee transfers.",
+      "reviewStatus": "calculation-checked; working-edition editorial review pending",
+      "notCausal": true
+    },
+    {
+      "id": "F011",
+      "questionIds": [
+        "Q004",
+        "Q034"
+      ],
+      "title": "Similar 2026 fundraising masks sharply different reported cash positions",
+      "answer": "Kotek’s committee reports $10,293,083.12 in 2026 cash contributions and Drazan’s $9,764,922.48. Their retrieved official summaries report closing cash of $8,376,671.93 and $964,650.50, respectively—a 8.68-to-one ratio.",
+      "population": "Fixed ORESTAR current-version snapshot; any narrower population is specified in the denominator.",
+      "dates": {
+        "start": "2025-01-01",
+        "end": "2026-09-27"
+      },
+      "snapshot": "orestar-20250101-20260927-v1",
+      "denominator": "Two authoritative committees, 4792 and 19050; official 2026 account summaries retrieved September 27. A selected comparison, not a ranking of all candidates.",
+      "calculation": "Reconcile official opening cash + official net change = closing cash. Compare same-year contribution and payment bases; do not infer balances from receipts alone.",
+      "evidence": [
+        "account-summaries.csv",
+        "enrichment.json"
+      ],
+      "sourceTransactionIds": [],
+      "whyItMatters": "Kotek started 2026 with $2,432,342.22 and reports $4,353,542.97 in cash expenditures. Drazan started with $982,810.75 and reports $9,774,591.62. Both starting resources and spending distinguish their positions.",
+      "uncertainty": "These are reported—not bank-verified—balances. Drazan’s official cash payments exceed the fixed snapshot by $800.00; that unresolved difference is retained. Cash balances do not measure unpaid commitments, campaign quality or election probability.",
+      "competingExplanations": "Earlier spending may already have purchased advertising, organization or other useful capacity. A lower balance is not itself a weaker campaign or proof of poor management.",
+      "reviewStatus": "calculation-checked; working-edition editorial review pending",
+      "notCausal": true
+    },
+    {
+      "id": "F012",
+      "questionIds": [
+        "Q028",
+        "Q006"
+      ],
+      "title": "Public matching is the majority of reported cash for all 13 linked certified candidates",
+      "answer": "Classified matching-fund receipts supply 66.1% of the combined $2,062,510.81 in cash contributions reported by the 13 linked Portland certified candidates. Every one of the 13 is above half; individual shares range from 50.9% to 82.4%.",
+      "population": "Fixed ORESTAR current-version snapshot; any narrower population is specified in the denominator.",
+      "dates": {
+        "start": "2025-01-01",
+        "end": "2026-09-27"
+      },
+      "snapshot": "orestar-20250101-20260927-v1",
+      "denominator": "These 13 committees’ cash contributions across January 1, 2025–September 27, 2026: 206251081 cents. Reviewed matching receipt numerator: 136371300 cents.",
+      "calculation": "Sum reviewed public matching receipt classifications and divide by the same committees’ reported cash contributions. Do not add City distribution totals to committee receipts.",
+      "evidence": [
+        "portland-public-financing.csv",
+        "public-matching-receipts.csv",
+        "committee-race-crosswalk.json"
+      ],
+      "sourceTransactionIds": [],
+      "whyItMatters": "In this group, a gross fundraising ranking is substantially a public-financing ranking. It cannot be read as a ranking of private fundraising alone.",
+      "uncertainty": "Not all Portland candidates, not a causal comparison of participants with nonparticipants, and not an exact City disbursement-level match. Unclassified receipts are not certified private money.",
+      "competingExplanations": "The City and fixed ORESTAR observations differ in timing and coverage. Public matching may reflect qualifying participation, but these totals alone do not establish broader or more representative donor support.",
+      "reviewStatus": "calculation-checked; working-edition editorial review pending",
+      "notCausal": true
+    },
+    {
+      "id": "F001",
+      "questionIds": [
+        "Q001",
+        "Q002"
+      ],
+      "title": "Reported resources are not one additive pot",
+      "answer": "Cash contributions total $121,794,170.02; cash payments total $91,270,955.55. Loans, in-kind support, refunds and obligations remain separate.",
+      "population": "Fixed ORESTAR current-version snapshot; any narrower population is specified in the denominator.",
+      "dates": {
+        "start": "2025-01-01",
+        "end": "2026-09-27"
+      },
+      "snapshot": "orestar-20250101-20260927-v1",
+      "denominator": "All current rows in each explicitly defined financial basis; 316,926 rows overall.",
+      "calculation": "Sum exact integer-cent Amount within each subtype/basis; never add Aggregate Amount.",
+      "evidence": [
+        "financial-bases.csv"
+      ],
+      "sourceTransactionIds": [],
+      "whyItMatters": "This prevents circulation, debt and later settlement from masquerading as new purchasing power.",
+      "uncertainty": "Not outside-money totals, complete cycles, bank balances or an audit of whether filings are accurate.",
+      "competingExplanations": "A large expenditure can be a transfer, reimbursement or pass-through rather than a vendor earning.",
+      "reviewStatus": "calculation-checked; working-edition editorial review pending",
+      "notCausal": true
+    },
+    {
+      "id": "F002",
+      "questionIds": [
+        "Q005"
+      ],
+      "title": "The three largest recipients span different political roles",
+      "answer": "Friends of Tina Kotek, Friends of Christine Drazan and Building a Stronger Oregon report $34,383,392.21 combined cash contributions (28.2% of reported cash). A single September 16, 2026 Carpenters contribution to Building a Stronger Oregon is $10 million.",
+      "population": "Fixed ORESTAR current-version snapshot; any narrower population is specified in the denominator.",
+      "dates": {
+        "start": "2025-01-01",
+        "end": "2026-09-27"
+      },
+      "snapshot": "orestar-20250101-20260927-v1",
+      "denominator": "All reported cash contributions: 12179417002 cents.",
+      "calculation": "Order committee-own cash receipts; sum first three. Named committee type/candidate associations reviewed against official profiles.",
+      "evidence": [
+        "committees.csv",
+        "largest-cash-records.csv",
+        "enrichment.json"
+      ],
+      "sourceTransactionIds": [
+        "5816290"
+      ],
+      "whyItMatters": "Magnitude is concentrated, but a PAC is not equivalent to a candidate campaign in a same-race comparison.",
+      "uncertainty": "No conclusion about ultimate spending, obligations to a contributor or purchased influence.",
+      "competingExplanations": "Election stage, incumbent committees, PAC roles and pre-period resources make a pooled ranking an imperfect comparison.",
+      "reviewStatus": "calculation-checked; working-edition editorial review pending",
+      "notCausal": true
+    },
+    {
+      "id": "F003",
+      "questionIds": [
+        "Q005",
+        "Q007"
+      ],
+      "title": "Concentration survives several accounting and identity scenarios",
+      "answer": "Visible-source Gini is 0.905; removing the largest group leaves 0.896. Aggressive same-name/type grouping yields 0.913. Top-ten visible-source share is 21.5%, falling to 14.7% after removing the largest group.",
+      "population": "Fixed ORESTAR current-version snapshot; any narrower population is specified in the denominator.",
+      "dates": {
+        "start": "2025-01-01",
+        "end": "2026-09-27"
+      },
+      "snapshot": "orestar-20250101-20260927-v1",
+      "denominator": "54,551 positive visible source groups; $109,772,183.24. Includes committee sources; excludes disclosure/unknown groups.",
+      "calculation": "Gini, HHI, effective groups and top shares over positive cumulative group amounts. Separate committee-source exclusion and individual-only scenarios.",
+      "evidence": [
+        "donor-record-groups.csv",
+        "concentration-sensitivity.csv"
+      ],
+      "sourceTransactionIds": [],
+      "whyItMatters": "Unevenness is not solely an artifact of the single largest visible source, although its influence is substantial.",
+      "uncertainty": "Fingerprints are provisional. Sensitivity grouping is intentionally aggressive and is not an identity decision. Hidden activity remains unallocated.",
+      "competingExplanations": "Public funding and committee transfers differ from private individual giving, so the source population changes the substantive interpretation.",
+      "reviewStatus": "calculation-checked; working-edition editorial review pending",
+      "notCausal": true
+    },
+    {
+      "id": "F004",
+      "questionIds": [
+        "Q008"
+      ],
+      "title": "Most small transactions supply a small share of visible dollars",
+      "answer": "Transactions of $100 or less are 69.5% of nonaggregate cash rows but 3.1% of their dollars. Transactions over $1,000 are 4.9% of these rows and 81.7% of their dollars.",
+      "population": "Fixed ORESTAR current-version snapshot; any narrower population is specified in the denominator.",
+      "dates": {
+        "start": "2025-01-01",
+        "end": "2026-09-27"
+      },
+      "snapshot": "orestar-20250101-20260927-v1",
+      "denominator": "178,496 cash-contribution rows after excluding aggregate categories; 10977218324 cents.",
+      "calculation": "Mutually exclusive transaction-size bands; compare record share and dollar share. Cumulative source totals are separate.",
+      "evidence": [
+        "gift-sizes.csv",
+        "donor-committee.csv"
+      ],
+      "sourceTransactionIds": [],
+      "whyItMatters": "Transaction volume and financial weight tell different stories; neither counts unique people.",
+      "uncertainty": "Small gifts are not necessarily small cumulative donors. Prior unitemized giving is not recoverable.",
+      "competingExplanations": "Recurring giving raises the count of small transactions without increasing the number of identified sources.",
+      "reviewStatus": "calculation-checked; working-edition editorial review pending",
+      "notCausal": true
+    },
+    {
+      "id": "F005",
+      "questionIds": [
+        "Q038"
+      ],
+      "title": "Disclosure categories count money but cannot count people",
+      "answer": "32,258 contribution-family rows total $12,084,155.64 under miscellaneous or anonymous labels.",
+      "population": "Fixed ORESTAR current-version snapshot; any narrower population is specified in the denominator.",
+      "dates": {
+        "start": "2025-01-01",
+        "end": "2026-09-27"
+      },
+      "snapshot": "orestar-20250101-20260927-v1",
+      "denominator": "All 217,239 contribution-family records, across contribution subtypes; not solely cash.",
+      "calculation": "Explicit label rules create committee-scoped disclosure buckets, excluded from identity graphs.",
+      "evidence": [
+        "disclosure.csv"
+      ],
+      "sourceTransactionIds": [],
+      "whyItMatters": "Treating the same aggregate label as a donor would fabricate ties across unrelated committees.",
+      "uncertainty": "No full distinct-person count or cross-campaign donor attribution is identifiable for those amounts.",
+      "competingExplanations": "Aggregate reporting can be normal under disclosure rules; visibility gaps are not automatically violations.",
+      "reviewStatus": "calculation-checked; working-edition editorial review pending",
+      "notCausal": true
+    },
+    {
+      "id": "F006",
+      "questionIds": [
+        "Q020",
+        "Q021"
+      ],
+      "title": "The strict transfer count is deliberately conservative",
+      "answer": "1,454 strict same-day pairs total $7,796,853.20. A maximum one-to-one reconciliation within seven-day candidates can match $17,927,165.51 across 3,847 pairs.",
+      "population": "Fixed ORESTAR current-version snapshot; any narrower population is specified in the denominator.",
+      "dates": {
+        "start": "2025-01-01",
+        "end": "2026-09-27"
+      },
+      "snapshot": "orestar-20250101-20260927-v1",
+      "denominator": "Cash receipt/payment pairs with reciprocal authoritative committee IDs, equal positive cents and dates within seven days.",
+      "calculation": "Maximum one-to-one bipartite matching across all reciprocal-ID, equal-amount, seven-day candidate pairs. Both sides retained.",
+      "evidence": [
+        "matched-transfers.csv",
+        "ambiguous-transfers.csv",
+        "robustness.json"
+      ],
+      "sourceTransactionIds": [
+        "5305330",
+        "5309856"
+      ],
+      "whyItMatters": "Internal circulation is sensitive to matching rules; neither side of a paired transfer is a new external dollar.",
+      "uncertainty": "Maximum is a possible reconciliation within this candidate set, not a verified transfer total or a global upper bound on all internal transfers. One optimum may not be unique; unmatched transfers may have changed dates/amounts or missing IDs.",
+      "competingExplanations": "An ordinary $1,208,352.82 nurses’ PAC payment and next-day receipt fail the strict same-day test without implying misconduct.",
+      "reviewStatus": "calculation-checked; working-edition editorial review pending",
+      "notCausal": true
+    },
+    {
+      "id": "F007",
+      "questionIds": [
+        "Q014"
+      ],
+      "title": "Reported location is not district residency",
+      "answer": "Oregon: $82,017,651.90 (67.3%); Outside Oregon (reported): $27,677,735.96 (22.7%); Unknown state: $12,098,782.16 (9.9%)",
+      "population": "Fixed ORESTAR current-version snapshot; any narrower population is specified in the denominator.",
+      "dates": {
+        "start": "2025-01-01",
+        "end": "2026-09-27"
+      },
+      "snapshot": "orestar-20250101-20260927-v1",
+      "denominator": "All cash-contribution cents including unknown-state rows: 12179417002.",
+      "calculation": "Reported State equals OR, another code, or blank. Unknown remains in denominator.",
+      "evidence": [
+        "geography.csv",
+        "cities.csv"
+      ],
+      "sourceTransactionIds": [],
+      "whyItMatters": "An outside-Oregon comparison is available now; a neighborhood-representation claim needs boundaries and population denominators.",
+      "uncertainty": "No geocoded legal residence or district membership; aggregate records concentrate in unknown locations.",
+      "competingExplanations": "Employer/business mailing locations can differ from residence, and committees can have statewide constituencies.",
+      "reviewStatus": "calculation-checked; working-edition editorial review pending",
+      "notCausal": true
+    },
+    {
+      "id": "F008",
+      "questionIds": [
+        "Q028"
+      ],
+      "title": "Portland’s two funding records overlap and differ",
+      "answer": "The City reports $1,542,435.00 distributed to 13 certified candidates. Reviewed matching receipts in the fixed snapshot total $1,363,713.00; the difference is $178,722.00.",
+      "population": "Fixed ORESTAR current-version snapshot; any narrower population is specified in the denominator.",
+      "dates": {
+        "start": "2025-01-01",
+        "end": "2026-09-27"
+      },
+      "snapshot": "orestar-20250101-20260927-v1",
+      "denominator": "Thirteen certified 2026 Portland program candidates, linked to authoritative ORESTAR committees; source observations retrieved September 27.",
+      "calculation": "Compare City cumulative amount with classified ORESTAR receipts by reviewed committee. Do not combine the two sources.",
+      "evidence": [
+        "portland-public-financing.csv",
+        "public-matching-receipts.csv",
+        "committee-race-crosswalk.json"
+      ],
+      "sourceTransactionIds": [],
+      "whyItMatters": "Public matching must be distinguished from private giving before comparing campaign dependency or breadth.",
+      "uncertainty": "Aggregate reconciliation only, not City payment-level matching. The unclassified remainder is not verified private money.",
+      "competingExplanations": "Reporting timing, late filings, amendments and differing source coverage can explain differences. No allegation is made.",
+      "reviewStatus": "calculation-checked; working-edition editorial review pending",
+      "notCausal": true
+    },
+    {
+      "id": "F009",
+      "questionIds": [
+        "Q004",
+        "Q034"
+      ],
+      "title": "Balances require a starting point and an explicit reconciliation",
+      "answer": "Among 41 retrieved committee-year summaries, 39 agree with snapshot cash contributions, payments and net change; 2 retain discrepancies.",
+      "population": "Fixed ORESTAR current-version snapshot; any narrower population is specified in the denominator.",
+      "dates": {
+        "start": "2025-01-01",
+        "end": "2026-09-27"
+      },
+      "snapshot": "orestar-20250101-20260927-v1",
+      "denominator": "Targeted 25 of 1,888 filers, not a representative sample.",
+      "calculation": "Check official opening + official net = closing, adjacent-year roll-forward, and source-basis ledger reconciliation.",
+      "evidence": [
+        "account-summaries.csv",
+        "enrichment.json"
+      ],
+      "sourceTransactionIds": [],
+      "whyItMatters": "Reported flows alone cannot establish reserves, outstanding debt or runway.",
+      "uncertainty": "Official summaries are live observations, not independently audited bank statements. Statewide coverage remains incomplete.",
+      "competingExplanations": "Different retrieval times, future-dated records or amendments can create disagreement with an immutable snapshot.",
+      "reviewStatus": "calculation-checked; working-edition editorial review pending",
+      "notCausal": true
+    }
+  ]
+}

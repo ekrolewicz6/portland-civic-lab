@@ -1,0 +1,25 @@
+basis,subtype,direction,records,amount_cents
+cash_adjustment,Cash Balance Adjustment,adjustment,170,2695216
+cash_contribution,Cash Contribution,in,209809,12179417002
+cash_payment,Cash Expenditure,out,79849,9127095555
+cash_reversal,Lost or Returned Check,adjustment,458,77673994
+contribution_refund,Return or Refund of Contribution,out,994,113864863
+forgiven_obligation,In-Kind/Forgiven Account Payable,in,36,11814888
+forgiven_obligation,In-Kind/Forgiven Personal Expenditures,in,202,25238382
+loan_forgiven,Loan Forgiven (Non-Exempt),adjustment,90,84339290
+loan_payment,Loan Payment (Exempt),out,5,284970
+loan_payment,Loan Payment (Non-Exempt),out,112,37981917
+loan_received,Loan Received (Exempt),in,4,3441225
+loan_received,Loan Received (Non-Exempt),in,334,123331758
+noncash_support,In-Kind Contribution,in,6858,1094749020
+obligation,Account Payable,out,1032,342239178
+obligation,Personal Expenditure for Reimbursement,out,6252,197291185
+obligation_adjustment,Personal Expenditure Balance Adjustment,adjustment,26,-423291
+obligation_cancellation,Account Payable Rescinded,adjustment,18,10243486
+other_cash_payment,Miscellaneous Other Disbursement,out,1494,126846107
+other_cash_payment,Nonpartisan Activity,out,3,496065
+other_cash_receipt,Interest/Investment Income,in,1264,28390196
+other_cash_receipt,Items Sold at Fair Market Value,in,5305,189433173
+other_cash_receipt,Miscellaneous Other Receipt,in,1932,166961096
+other_cash_receipt,Refunds and Rebates,in,672,42723403
+receivable,Miscellaneous Account Receivable,in,7,166211

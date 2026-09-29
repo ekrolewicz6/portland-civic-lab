@@ -1,0 +1,314 @@
+{
+  "version": "committee-race-v2",
+  "snapshot": "orestar-20250101-20260927-v1",
+  "reviewedAt": "2026-09-27",
+  "links": [
+    {
+      "committeeId": "23208",
+      "raceId": "portland-district-3",
+      "candidateId": "tiffany-koyama-lane",
+      "candidateName": "Tiffany Koyama Lane",
+      "orestarCandidateName": "Tiffany Koyama Lane",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2025-09-15",
+      "sourceProfileSha256": "c7aeb2ddf2987c64e8497191d37f307dde6995aab7e1b87da1c0c603a475f1f3",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "23028",
+      "raceId": "portland-district-3",
+      "candidateId": "angelita-morillo",
+      "candidateName": "Angelita Morillo",
+      "orestarCandidateName": "Angelita Morillo",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-05-04",
+      "sourceProfileSha256": "12858e73197dbadb012232c5ca1ab0bcde3dc2c570123be1a4b06a2c80ef4e87",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "15109",
+      "raceId": "portland-district-3",
+      "candidateId": "steve-novick",
+      "candidateName": "Steve Novick",
+      "orestarCandidateName": "Steven Novick",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-09-24",
+      "sourceProfileSha256": "c6576b1f33f80c24de86ee3ffda2d2b26f3465c65f81dfb72204d5faa3f0081f",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "24661",
+      "raceId": "portland-district-3",
+      "candidateId": "tom-sollitt",
+      "candidateName": "Tom Sollitt",
+      "orestarCandidateName": "Thomas K Sollitt",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-05-12",
+      "sourceProfileSha256": "752849d1c20d72a99ee400f7b393c8fdfab8b53a6dabea65f410c13c36d06799",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "24897",
+      "raceId": "portland-district-3",
+      "candidateId": "kellie-torres",
+      "candidateName": "Kellie Torres",
+      "orestarCandidateName": "Kellie Torres",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-09-23",
+      "sourceProfileSha256": "60d69b1d6d1d14ab14d4048fb24ff38e9f5436190c1b6cb2881a49fb2144c7ac",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "24973",
+      "raceId": "portland-district-3",
+      "candidateId": "esther-leon",
+      "candidateName": "Esther León",
+      "orestarCandidateName": "Esther E Leon",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-04-07",
+      "sourceProfileSha256": "2b11b58f215f95b112e7f3f4cb65e6cc48d4ed5e0f272964c7b11bdd5328a832",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "24972",
+      "raceId": "portland-district-3",
+      "candidateId": "joel-corcoran",
+      "candidateName": "Joel Corcoran",
+      "orestarCandidateName": "Joel Corcoran",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-04-06",
+      "sourceProfileSha256": "e6b9d4325b32bad5c1d3d88c034cb0af8fe67a135b17ddc2c5a803154b822088",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "24966",
+      "raceId": "portland-district-3",
+      "candidateId": "matthias-hallett",
+      "candidateName": "Matthias Hallett",
+      "orestarCandidateName": "Matthias M Hallett",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-06-30",
+      "sourceProfileSha256": "01e2a234281ee506ea4a6e3dcc4070a32078806e09d68c15aebd3bd9f6af0f7d",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "24979",
+      "raceId": "portland-district-3",
+      "candidateId": "cristal-otero",
+      "candidateName": "Cristal Otero",
+      "orestarCandidateName": "Cristal Otero",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-08-02",
+      "sourceProfileSha256": "d0b7965d14517138abf4102d23aca8ad97567a6dddc3241831fb54955b628b90",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "23295",
+      "raceId": "portland-district-4",
+      "candidateId": "eli-arnold",
+      "candidateName": "Eli Arnold",
+      "orestarCandidateName": "Eli Arnold",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2025-11-12",
+      "sourceProfileSha256": "6559b51080ffa306e7b9d5099a042c6667604094ee87834b6a3364d0325f1c45",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "23365",
+      "raceId": "portland-district-4",
+      "candidateId": "mitch-green",
+      "candidateName": "Mitch Green",
+      "orestarCandidateName": "Mitch Green",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-08-06",
+      "sourceProfileSha256": "a62a6d61c1551432d22f5de58d9cd5b65e0790f3ad75276bca67a127aee9b32c",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "17629",
+      "raceId": "portland-district-4",
+      "candidateId": "eric-zimmerman",
+      "candidateName": "Eric Zimmerman",
+      "orestarCandidateName": "Eric Zimmerman",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2025-09-09",
+      "sourceProfileSha256": "5dccb5385ea799cb109fd0d2b8e1254ccff5ac89044754713ef841fae1059306",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "23199",
+      "raceId": "portland-district-4",
+      "candidateId": "olivia-clark",
+      "candidateName": "Olivia Clark",
+      "orestarCandidateName": "Olivia Clark",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2025-09-09",
+      "sourceProfileSha256": "a77c8bc6123c2ad36ea77999b67f2066d5c9ff5ada64cb77676f4f85176186ba",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "23411",
+      "raceId": "portland-district-4",
+      "candidateId": "jeremy-beausoleil-smith",
+      "candidateName": "Jeremy Beausoleil Smith",
+      "orestarCandidateName": "Jeremy B Smith",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2025-11-10",
+      "sourceProfileSha256": "93732a43f8f74c40ec9e7b2401c4d7ef7d9a3f677032351923ef0e77bc1b96a1",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "25040",
+      "raceId": "portland-district-4",
+      "candidateId": "jamey-evenstar",
+      "candidateName": "Jamey Evenstar",
+      "orestarCandidateName": "Jamey Evenstar",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-05-15",
+      "sourceProfileSha256": "c97ee028fcd67080899b2e5cf46eadbcee1c744be1b678dd5021fa11f53847e9",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "25103",
+      "raceId": "portland-district-4",
+      "candidateId": "jayne-cronlund",
+      "candidateName": "Jayne Cronlund",
+      "orestarCandidateName": "Jayne Cronlund",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-07-10",
+      "sourceProfileSha256": "e65af33b90be3cbdb6d22b5b31c495011bbc43fff923d1afa2af360813f07774",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "24615",
+      "raceId": "portland-district-4",
+      "candidateId": "john-j-goldsmith",
+      "candidateName": "John J Goldsmith",
+      "orestarCandidateName": "John Goldsmith",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-03-02",
+      "sourceProfileSha256": "ddd1844cd8580f61218fc9065b3a20436ac8de75d8d84271d94c6eaf87ae172e",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    },
+    {
+      "committeeId": "21777",
+      "raceId": "portland-auditor",
+      "candidateId": "simone-rede",
+      "candidateName": "Simone Rede",
+      "orestarCandidateName": "Simone D Rede",
+      "status": "reviewed",
+      "reviewedAt": "2026-09-27",
+      "effectiveFrom": "2026-04-03",
+      "sourceProfileSha256": "e0bee4ace1f90067b4796f81c03ed6476ef427d03c27a7c4cba8efbd0e07956d",
+      "sources": [
+        "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+        "https://www.portland.gov/auditor/elections/run4office/2026-city-candidates"
+      ],
+      "decision": "Manual candidate/committee identity and election/office comparison with official City roster. Name variants explicitly retained.",
+      "scope": "Current 2026 candidate association. Does not attribute every 2025–2026 committee transaction to this race."
+    }
+  ],
+  "note": "Missing link is not zero. Current official profiles do not establish historical race attribution."
+}

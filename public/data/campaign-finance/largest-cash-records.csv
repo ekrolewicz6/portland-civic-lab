@@ -1,0 +1,101 @@
+transaction_id,transaction_date,committee_id,committee_name,entity_id,entity_name,basis,amount_cents
+5816290,2026-09-16,23285,Building a Stronger Oregon,record:62e98c8c7d0137af59ba2e3f,North Coast States Regional Council of Carpenters ,cash_contribution,1000000000
+5422400,2025-10-22,21717,Bring Balance to Salem PAC,record:25a3b76674fbb981336b9435,Philip Knight,cash_contribution,300000000
+5745615,2026-07-27,4792,Friends of Tina Kotek,record:e6f13f4213c33a407d5c8ccc,Democratic Governors Association,cash_contribution,150000000
+5286470,2025-03-17,23799,Defeat the Costly Tax on Sales,record:712d71ab91292fe0c6f4861a,Grow Oregon,cash_payment,126694734
+5305330,2025-05-15,12987,Nurses United Political Action Committee,committee:12986,Oregon Nurses Political Action Committee (12986),cash_payment,120835282
+5309856,2025-05-16,12986,Oregon Nurses Political Action Committee,committee:12987,Nurses United Political Action Committee (12987),cash_contribution,120835282
+5573261,2026-03-10,24693,Dudley for Oregon,record:331093b80b8571e7698d651f,Philip H Knight,cash_contribution,100000000
+5701784,2026-06-26,4792,Friends of Tina Kotek,record:16adb3ec666a5db78a64bcdb,Democratic Governors Victory Fund,cash_contribution,100000000
+5786561,2026-08-31,19050,Friends of Christine Drazan,committee:4,AGC Committee for Action (4),cash_contribution,70000000
+5814069,2026-08-31,4,AGC Committee for Action,committee:19050,Friends of Christine Drazan (19050),cash_payment,70000000
+5829266,2026-08-25,4,AGC Committee for Action,record:2670cdd3ed6a214ead822a91,AGC - Oregon Columbia Chapter,cash_contribution,70000000
+5829591,2026-09-18,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,69502800
+5829574,2026-09-10,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,67056800
+5771822,2026-08-19,4792,Friends of Tina Kotek,record:cbc730f39511e08d8003c90d,Canal Partners Media,cash_payment,66193800
+5819715,2026-09-03,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,65022500
+5776228,2026-08-25,5207,Stand for Children Oregon PAC,record:78069adc4f5d98ee0cd43e09,Stand for Children Inc. (non-profit),cash_contribution,62000000
+5817232,2026-08-28,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,58522500
+5754880,2026-08-05,4792,Friends of Tina Kotek,record:cbc730f39511e08d8003c90d,Canal Partners Media,cash_payment,55918800
+5763759,2026-08-12,4792,Friends of Tina Kotek,record:cbc730f39511e08d8003c90d,Canal Partners Media,cash_payment,55918800
+5745612,2026-07-30,4792,Friends of Tina Kotek,record:cbc730f39511e08d8003c90d,Canal Partners Media,cash_payment,53608800
+5671939,2026-05-20,19050,Friends of Christine Drazan,record:4e23e351e05c2b2ee4722c2f,"Don H Jones, Jr.",cash_contribution,50000000
+5793443,2026-08-12,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,48940200
+5807101,2026-08-21,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,48877700
+5789826,2026-08-07,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,46487700
+5699899,2026-06-25,4572,Local 48 Electricians PAC,committee:4792,Friends of Tina Kotek (4792),cash_payment,40000000
+5701773,2026-06-26,4792,Friends of Tina Kotek,committee:4572,Local 48 Electricians PAC (4572),cash_contribution,40000000
+5831323,2026-09-25,22032,Tracy Cramer PAC,committee:21717,Bring Balance to Salem PAC (21717),cash_contribution,40000000
+5618008,2026-03-31,24693,Dudley for Oregon,record:1cfe1931869620a54638df68,Ax Media,cash_payment,37072000
+5710985,2026-06-26,5677,Libraries Yes! Committee,record:8d94364c0bba2ad5a177cbaa,The Library Foundation,cash_contribution,32000000
+5626777,2026-04-09,24693,Dudley for Oregon,record:1cfe1931869620a54638df68,Ax Media,cash_payment,31142000
+5283886,2025-04-07,22155,Clean Energy for Oregon PAC,record:8f295e2096658798565bcc23,NewSun Energy LLC,cash_contribution,30000000
+5319607,2025-06-05,5677,Libraries Yes! Committee,record:8d94364c0bba2ad5a177cbaa,The Library Foundation,cash_contribution,30000000
+5689266,2026-06-15,22185,Community Safety Coalition,record:3e752d5eb1924afbd129670e,Portland Police Association,cash_contribution,30000000
+5770107,2026-08-14,19050,Friends of Christine Drazan,record:27e7d7ab2e60e43f78e5c017,Murphy Plywood,cash_contribution,30000000
+5816230,2026-09-16,4792,Friends of Tina Kotek,committee:33,Citizen Action for Political Education (33),cash_contribution,30000000
+5829589,2026-09-24,19050,Friends of Christine Drazan,record:53a511557af61bcad8fe67cc,"Majority Strategies, LLC",cash_payment,30000000
+5645787,2026-04-24,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,27753912
+5656075,2026-05-01,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,27753912
+5831145,2026-09-25,18396,Friends of Rob Wagner,committee:1471,Senate Democratic Leadership Fund (1471),cash_payment,26500000
+5661889,2026-05-08,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,26372862
+5758194,2026-08-04,19050,Friends of Christine Drazan,record:53a511557af61bcad8fe67cc,"Majority Strategies, LLC",cash_payment,25350000
+5776191,2026-08-21,19050,Friends of Christine Drazan,record:53a511557af61bcad8fe67cc,"Majority Strategies, LLC",cash_payment,25350000
+5467738,2025-12-19,4792,Friends of Tina Kotek,record:16adb3ec666a5db78a64bcdb,Democratic Governors Victory Fund,cash_contribution,25000000
+5513111,2026-01-13,21717,Bring Balance to Salem PAC,record:844242b08d2f87ce344b6858,Murphy Company,cash_contribution,25000000
+5666807,2026-05-15,22185,Community Safety Coalition,record:c86a3cb7fa95ffa33a6d3701,Swickard Management Company,cash_contribution,25000000
+5699108,2026-06-24,12986,Oregon Nurses Political Action Committee,committee:4792,Friends of Tina Kotek (4792),cash_payment,25000000
+5700939,2026-06-24,22185,Community Safety Coalition,record:3e752d5eb1924afbd129670e,Portland Police Association,cash_contribution,25000000
+5701760,2026-06-25,4792,Friends of Tina Kotek,committee:12986,Oregon Nurses Political Action Committee (12986),cash_contribution,25000000
+5711492,2026-07-08,19050,Friends of Christine Drazan,record:4e23e351e05c2b2ee4722c2f,"Don H Jones, Jr.",cash_contribution,25000000
+5745623,2026-07-29,4792,Friends of Tina Kotek,committee:33,Citizen Action for Political Education (33),cash_contribution,25000000
+5757953,2026-08-04,23285,Building a Stronger Oregon,committee:4792,Friends of Tina Kotek (4792),cash_payment,25000000
+5766491,2026-07-28,33,Citizen Action for Political Education,committee:4792,Friends of Tina Kotek (4792),cash_payment,25000000
+5772857,2026-08-21,4792,Friends of Tina Kotek,committee:23285,Building a Stronger Oregon (23285),cash_contribution,25000000
+5819827,2026-09-22,23285,Building a Stronger Oregon,committee:4792,Friends of Tina Kotek (4792),cash_payment,25000000
+5828019,2026-09-23,19050,Friends of Christine Drazan,record:a893fc82de3951ae3e38ea05,"The Pape Group, Inc.",cash_contribution,25000000
+5831496,2026-09-26,24485,Hicks for Senate,committee:21717,Bring Balance to Salem PAC (21717),cash_contribution,25000000
+5366216,2025-08-18,4,AGC Committee for Action,record:2670cdd3ed6a214ead822a91,AGC - Oregon Columbia Chapter,cash_contribution,24834929
+5259327,2025-03-12,191,Oregon Realtors Political Action Committee,disclosure:191:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,cash_contribution,23102589
+5786560,2026-08-05,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,23022500
+5689257,2026-06-12,22185,Community Safety Coalition,record:68378ea642e3b70246bd3d37,"Fieldworks, LLC",cash_payment,22859556
+5697956,2026-06-22,22185,Community Safety Coalition,record:68378ea642e3b70246bd3d37,"Fieldworks, LLC",cash_payment,22859556
+5700933,2026-06-26,22185,Community Safety Coalition,record:68378ea642e3b70246bd3d37,"Fieldworks, LLC",cash_payment,22859556
+5572946,2026-02-24,24304,Oregon REALTORS Political Action Committee 2,disclosure:24304:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,cash_contribution,22571250
+5626964,2026-04-09,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,22412862
+5636349,2026-04-17,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,22412862
+5793657,2026-09-01,19050,Friends of Christine Drazan,record:53a511557af61bcad8fe67cc,"Majority Strategies, LLC",cash_payment,21850000
+5809682,2026-09-14,19050,Friends of Christine Drazan,record:53a511557af61bcad8fe67cc,"Majority Strategies, LLC",cash_payment,21850000
+5642959,2026-04-22,24693,Dudley for Oregon,record:1cfe1931869620a54638df68,Ax Media,cash_payment,21683100
+5636290,2026-04-17,24693,Dudley for Oregon,record:1cfe1931869620a54638df68,Ax Media,cash_payment,21114100
+5618036,2026-04-03,19050,Friends of Christine Drazan,record:6dab6330687b398df69ee9bb,"Strategic Media Services, Inc.",cash_payment,20166562
+5463126,2025-12-09,21717,Bring Balance to Salem PAC,record:9519e59b36ae01e173beb3be,Sierra Pacific Industries,cash_contribution,20000000
+5699872,2026-06-25,16428,Jobs Political Action Committee,record:6d02c16580c304080d77e256,Mountain West Investment Corp,cash_contribution,20000000
+5727309,2026-07-17,19050,Friends of Christine Drazan,record:6197f5c3a8c9521a494c4571,Wayne Von Borstel,cash_contribution,20000000
+5727311,2026-07-17,19050,Friends of Christine Drazan,record:130a2ca5a62e08141751f3e1,Marta Von Borstel,cash_contribution,20000000
+5745614,2026-07-27,4792,Friends of Tina Kotek,record:38b78e0678f4737d4c2ccec0,AFSCME International,cash_contribution,20000000
+5751805,2026-08-03,12986,Oregon Nurses Political Action Committee,committee:4792,Friends of Tina Kotek (4792),cash_payment,20000000
+5751954,2026-08-03,4792,Friends of Tina Kotek,committee:12986,Oregon Nurses Political Action Committee (12986),cash_contribution,20000000
+5754200,2026-08-05,2352,Oregon League of Conservation Voters PAC,record:b90378488b64bdc2f14077d1,League of Conservation Voters,cash_contribution,20000000
+5763327,2026-08-12,2352,Oregon League of Conservation Voters PAC,committee:4792,Friends of Tina Kotek (4792),cash_payment,20000000
+5764682,2026-08-12,4792,Friends of Tina Kotek,committee:2352,Oregon League of Conservation Voters PAC (2352),cash_contribution,20000000
+5785700,2026-08-27,12986,Oregon Nurses Political Action Committee,committee:4792,Friends of Tina Kotek (4792),cash_payment,20000000
+5803109,2026-09-09,4213,SEIU Local 49 COPE Fund,committee:4792,Friends of Tina Kotek (4792),cash_payment,20000000
+5804570,2026-09-04,4792,Friends of Tina Kotek,committee:12986,Oregon Nurses Political Action Committee (12986),cash_contribution,20000000
+5806463,2026-09-09,4792,Friends of Tina Kotek,committee:4213,SEIU Local 49 COPE Fund (4213),cash_contribution,20000000
+5824503,2026-09-23,19050,Friends of Christine Drazan,record:130a2ca5a62e08141751f3e1,Marta Von Borstel,cash_contribution,20000000
+5661099,2026-05-11,4572,Local 48 Electricians PAC,record:a827d3b76a6999d63f7374ff,PAC 48 of Washington,cash_payment,19208800
+5709626,2026-06-30,2307,Oregon School Employees Association - Voice of Involved Classified Employees,record:74b59373297c5b5f1c598218,Oregon School Employees Association,cash_contribution,18600000
+5704111,2026-06-29,22185,Community Safety Coalition,record:68378ea642e3b70246bd3d37,"Fieldworks, LLC",cash_payment,18509755
+5735637,2026-07-23,24485,Hicks for Senate,committee:21717,Bring Balance to Salem PAC (21717),cash_contribution,18000000
+5743678,2026-07-23,21717,Bring Balance to Salem PAC,committee:24485,Hicks for Senate (24485),cash_payment,18000000
+5706333,2026-06-29,23083,Transparent Elections for Grassroots Engagement 1,record:815913872ccebc63a56a7d9a,Our Oregon,cash_payment,17848466
+5235994,2025-02-27,191,Oregon Realtors Political Action Committee,disclosure:191:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,cash_contribution,17798506
+5546792,2026-02-13,24304,Oregon REALTORS Political Action Committee 2,disclosure:24304:99a8ace01adc,Miscellaneous Cash Contributions $100 and under ,cash_contribution,17412750
+5341088,2025-06-13,113,American Federation of Teachers- Oregon Candidate Political Action Committee,record:236833334447512d5ff1d12a,AFT-Oregon,cash_contribution,16792408
+5653072,2026-05-05,19050,Friends of Christine Drazan,record:4e23e351e05c2b2ee4722c2f,"Don H Jones, Jr.",cash_contribution,16500000
+5193133,2025-01-16,23799,Defeat the Costly Tax on Sales,committee:152,Grocery Retail PAC (152),cash_payment,16129400
+5219409,2025-01-24,152,Grocery Retail PAC,committee:23799,Defeat the Costly Tax on Sales (23799),cash_contribution,16129400
+5421824,2025-10-22,19050,Friends of Christine Drazan,record:c373d797b8070ede674fc4a2,Don H Jones,cash_contribution,16000000
+5640656,2026-04-26,19763,Friends of Ben Bowman,committee:1524,"Future PAC, House Builders (1524)",cash_payment,15500000
+5644056,2026-04-29,1524,"Future PAC, House Builders",committee:19763,Friends of Ben Bowman (19763),cash_contribution,15500000

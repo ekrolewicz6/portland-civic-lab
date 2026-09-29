@@ -26,6 +26,16 @@ interface DeepDive {
 
 const DIVES: DeepDive[] = [
   {
+    href: "/deep-dives/campaign-finance",
+    eyebrow: "Elections & campaign money",
+    title: "The money behind Portland’s next council.",
+    blurb: "Follow the money in Districts 3 and 4: who gives, where it comes from, when it arrives, and which firms campaigns pay. Compare candidates and explore the public records behind every chart.",
+    stat: "2 races",
+    statLabel: "17 linked council campaigns · missing records stay visible",
+    icon: Network,
+    available: true,
+  },
+  {
     href: "/deep-dives/maker-economy",
     eyebrow: "Work & the maker economy",
     title: "The work behind Portland’s handmade city.",
