@@ -22,7 +22,7 @@ const windows: { key: Window; label: string; start: string }[] = [
 const colors = ['#176b58', '#a45b31', '#315b97', '#8b4f85', '#8a751e', '#45575f', '#c06962', '#5b7661', '#6866a1'];
 const utc = (value: string) => Date.parse(`${value}T00:00:00Z`);
 const formatDate = (value: string) => new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }).format(utc(value));
-const formatMonth = (value: string) => new Intl.DateTimeFormat('en-US', { month: 'short', year: '2-digit', timeZone: 'UTC' }).format(utc(value));
+const formatMonth = (value: string) => `${new Intl.DateTimeFormat('en-US', { month: 'short', timeZone: 'UTC' }).format(utc(value))} ’${value.slice(2, 4)}`;
 const compact = (cents: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 }).format(cents / 100);
 
 export function CampaignTimeline() {
