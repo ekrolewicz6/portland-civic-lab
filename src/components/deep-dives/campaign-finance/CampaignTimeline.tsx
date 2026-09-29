@@ -41,7 +41,13 @@ export function CampaignTimeline() {
   const [activeKey, setActiveKey] = useState('');
   const [highlightWeek, setHighlightWeek] = useState('');
   const chartRef = useRef<HTMLDivElement>(null);
+  const detailRef = useRef<HTMLElement>(null);
   const [width, setWidth] = useState(1040);
+  useEffect(() => {
+    if (!activeKey && !highlightWeek) return;
+    detailRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
+    detailRef.current?.focus({ preventScroll: true });
+  }, [activeKey, highlightWeek]);
   useEffect(() => {
     const controller = new AbortController();
     fetch('/api/campaign-finance/daily', { signal: controller.signal }).then(async response => {
@@ -132,7 +138,7 @@ export function CampaignTimeline() {
         <small>Most: {candidates.find(candidate => candidate.committeeId === leader.committeeId)?.name}</small><span className={s.peakExplore}>Explore this week →</span>
       </button>;
     })}</div></section>
-    {(focusEvents.length > 0 || selectedWeek) && <section className={s.timelineDetail} aria-label="Timeline selection">
+    {(focusEvents.length > 0 || selectedWeek) && <section className={s.timelineDetail} ref={detailRef} tabIndex={-1} aria-label="Timeline selection">
       <div className={s.detailHeading}><h4>{selectedWeek ? `${dateLabel(selectedWeek.start)}–${dateLabel(selectedWeek.end)}` : 'What happened around then?'}</h4><button onClick={clearFocus} aria-label="Close timeline details">Close ×</button></div>
       {selectedWeek && <div className={s.weekBreakdown}>{selectedWeek.rows.sort((a, b) => b.weekly[basis] - a.weekly[basis]).map(row => <div key={row.committeeId}><span>{candidates.find(candidate => candidate.committeeId === row.committeeId)?.name}</span><strong>{money(row.weekly[basis])}</strong></div>)}<a href={`/deep-dives/campaign-finance/explorer?race=portland-district-${race}&start=${selectedWeek.start}&end=${selectedWeek.end}&basis=cash_contribution&family=contributions&matching=${basis === 'public_cents' ? 'only' : basis === 'cash_cents' ? 'all' : 'exclude'}`}>Browse this race’s cash contributions for the week →</a></div>}
       {focusEvents.length ? <ul className={s.focusEvents}>{focusEvents.map(event => <li key={eventKey(event)}><button aria-pressed={activeKey === eventKey(event)} onClick={() => chooseEvent(event)}><time>{dateLabel(event.date)}</time>{event.label}</button><a href={event.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={`Source: ${event.label}`}>Source ↗</a></li>)}</ul> : <p>No event in this selected calendar falls in that week.</p>}
