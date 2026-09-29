@@ -70,3 +70,39 @@
 .dossierDetails .tableScroll table{min-width:690px}
 @media(max-width:800px){.dossierGrid{grid-template-columns:1fr;gap:20px}.fundingLegend{grid-template-columns:1fr}.dossierHeading{align-items:start}}
 @media(max-width:600px){.fundingVisual{padding:22px 18px}.fundingTotal{display:block}.fundingTotal strong{display:block;margin-top:6px}.dossierHeading .selectLabel,.dossierHeading .selectLabel select{width:100%;min-width:0}.dossierBlock h4{font-size:18px}.concentrationNumber strong{font-size:54px}}
+
+/* The complete time range stays visible, at legible type sizes, on a phone. */
+.chartScroll{overflow:hidden;border:0;min-width:0}
+.chartScroll svg{min-width:0;width:100%;height:auto}
+.controls{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:end;margin:22px 0 12px}
+.compactSelect,.eventSelect{display:grid;gap:8px;font-size:14px;font-weight:650;min-width:0}
+.compactSelect select,.eventSelect select{width:100%;min-width:0;min-height:44px;padding:9px 30px 9px 10px;border:1px solid #83998a;background:#fffdf8;color:#234b38;font:inherit;line-height:1.3;border-radius:2px}
+.compactSelect select,.eventSelect select{font-family:inherit;font-size:16px;font-weight:400}
+.refresh{font-size:12px!important;color:#53675d;margin-top:9px!important}
+.candidatePicker{border-bottom:1px solid #d2ddd2;margin-bottom:14px;font-size:14px}
+.candidatePicker summary{cursor:pointer;padding:10px 0;min-height:44px;font-weight:600}
+.candidatePicker .candidates label{min-height:44px}
+.chartCaption{font-size:13px!important;color:#53675d;margin:14px 0 6px!important}
+.lineKey{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 20px}
+.lineKey span{font-size:13px;line-height:1.45;align-items:baseline}
+.lineKey i{width:16px;height:4px}
+.eventSelect{padding-top:18px;border-top:1px solid #cbd3c9}
+.eventFocus{margin:14px 0 20px;padding:16px;font-size:14px}
+.eventFocus strong{font-size:16px;line-height:1.4}
+.eventLedger li button{min-height:44px}
+.panel details:not([open])>:not(summary){display:none}
+@media(max-width:600px){
+ .controls{grid-template-columns:1fr;gap:12px}
+ .controls fieldset{grid-column:1/-1}
+ .controls legend{margin-bottom:5px}
+ .buttonRow button{min-height:44px;font-size:14px;padding:9px 16px}
+ .lineKey{grid-template-columns:1fr;gap:8px;margin:10px 0 18px}
+ .panel h3{font-size:27px}
+ .panel figcaption>p{font-size:15px}
+ .fundingLegend>div{grid-template-columns:12px minmax(0,1fr);gap:5px 8px}
+ .fundingLegend strong{grid-column:2;font-size:18px}
+ .locationRows>div{font-size:14px}
+ .concentrationNumber{display:block}
+ .concentrationNumber strong{display:block;margin-bottom:10px}
+ .concentrationNumber span{display:block;max-width:100%}
+}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import frozenData from '@/lib/campaign-finance/campaign-dynamics.json';
 const data = frozenData;
 import { money } from '@/lib/campaign-finance/filters';
@@ -9,10 +9,10 @@ import s from './campaign-dynamics.module.css';
 type Basis = 'nonmatching_cents' | 'cash_cents' | 'public_cents' | 'individual_itemized_cents';
 type Window = 'active' | 'year' | 'all';
 const bases: { key: Basis; label: string }[] = [
-  { key: 'nonmatching_cents', label: 'Cash excluding City matches' },
-  { key: 'cash_cents', label: 'All reported cash' },
-  { key: 'public_cents', label: 'City matches' },
-  { key: 'individual_itemized_cents', label: 'Named individual gifts' },
+  { key: 'nonmatching_cents', label: 'Without City matches' },
+  { key: 'cash_cents', label: 'All cash' },
+  { key: 'public_cents', label: 'City matching' },
+  { key: 'individual_itemized_cents', label: 'Named individuals' },
 ];
 const windows: { key: Window; label: string; start: string }[] = [
   { key: 'active', label: 'Since late March', start: frozenData.paceSegments[1].start },
@@ -20,15 +20,14 @@ const windows: { key: Window; label: string; start: string }[] = [
   { key: 'all', label: 'Since Jan. 2025', start: '2025-01-01' },
 ];
 const colors = ['#176b58', '#a45b31', '#315b97', '#8b4f85', '#8a751e', '#45575f', '#c06962', '#5b7661', '#6866a1'];
-const featuredDates = ['2026-06-24', '2026-07-06', '2026-07-16', '2026-08-12', '2026-09-13', '2026-09-18'];
 const utc = (value: string) => Date.parse(`${value}T00:00:00Z`);
 const formatDate = (value: string) => new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }).format(utc(value));
 const formatMonth = (value: string) => new Intl.DateTimeFormat('en-US', { month: 'short', year: '2-digit', timeZone: 'UTC' }).format(utc(value));
-const compact = (cents: number) => cents >= 100000000 ? `$${(cents / 100000000).toFixed(1)}m` : `$${Math.round(cents / 100000)}k`;
+const compact = (cents: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 }).format(cents / 100);
 
 export function CampaignTimeline() {
   const [data, setData] = useState(frozenData);
-  const [refresh, setRefresh] = useState('Showing the reviewed September 27 edition while checking for newer filings.');
+  const [refresh, setRefresh] = useState('Checking for newer filings…');
   useEffect(() => {
     const controller = new AbortController();
     fetch('/api/campaign-finance/daily', { signal: controller.signal })
@@ -40,9 +39,9 @@ export function CampaignTimeline() {
         if (controller.signal.aborted) return;
         setData(next as typeof frozenData);
         setRefresh(next.refresh?.status === 'validated'
-          ? `Timeline updated through ${next.end}. Other charts and reporting still use the September 27 research edition.`
+          ? `Updated through ${next.end}.`
           : next.refresh?.status === 'provisional'
-            ? `Timeline includes the manual export through ${next.end}. Late filings outside that export may be missing; other investigated charts stay on the September 27 edition.`
+            ? `Updated through ${next.end} · late filings may be missing.`
           : next.refresh?.status === 'stale'
             ? `Timeline last updated through ${next.end}; newer filings are not yet shown.`
             : 'No newer verified timeline is available; showing the September 27 edition.');
@@ -55,24 +54,29 @@ export function CampaignTimeline() {
   const [window, setWindow] = useState<Window>('active');
   const [selected, setSelected] = useState<string[]>(['23208', '23028', '15109', '24897']);
   const [selectedEventKey, setSelectedEventKey] = useState('2026-08-12|Council approves nonbinding Moda term sheet, 8–4');
+  const chartRef = useRef<HTMLDivElement>(null);
+  const [chartWidth, setChartWidth] = useState(1040);
+  useEffect(() => {
+    const element = chartRef.current;
+    if (!element) return;
+    const observer = new ResizeObserver(([entry]) => setChartWidth(Math.max(240, Math.round(entry.contentRect.width))));
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
   const candidates = data.candidates.filter(candidate => candidate.raceId === `portland-district-${race}`);
   const from = windows.find(item => item.key === window)!.start;
   const points = useMemo(() => data.weekly.filter(row => selected.includes(row.committeeId) && row.weekEnd >= from), [data, selected, from]);
   const events = data.events.filter(item => item.date >= from && item.date <= data.end);
-  const uniqueFeatured = featuredDates.filter(day => day >= from);
   const end = utc(data.end);
   const beginning = utc(from);
-  const width = 1040, height = 460, left = 74, right = 26, top = 44, bottom = 66;
+  const width = chartWidth, height = width < 600 ? 300 : 410, left = width < 600 ? 56 : 62, right = 16, top = 22, bottom = 38;
   const plotWidth = width - left - right, plotHeight = height - top - bottom;
   const max = Math.max(1, ...points.map(row => row.cumulative[basis]));
   const ceiling = Math.ceil(max / 1000000) * 1000000;
-  const x = (day: string) => left + (utc(day) - beginning) / (end - beginning) * plotWidth;
+  const x = (day: string) => left + (Math.min(utc(day), end) - beginning) / (end - beginning) * plotWidth;
   const y = (cents: number) => top + (1 - cents / ceiling) * plotHeight;
-  const months = [] as string[];
-  const d = new Date(beginning);
-  d.setUTCDate(1);
-  if (d.getTime() < beginning) d.setUTCMonth(d.getUTCMonth() + 1);
-  while (d.getTime() <= end) { months.push(d.toISOString().slice(0, 10)); d.setUTCMonth(d.getUTCMonth() + 1); }
+  const tickCount = width < 600 ? 3 : 6;
+  const months = Array.from({ length: tickCount }, (_, index) => new Date(beginning + (end - beginning) * index / (tickCount - 1)).toISOString().slice(0, 10));
   const activeEvent = data.events.find(item => `${item.date}|${item.label}` === selectedEventKey && item.date >= from);
   const before = activeEvent?.comparisons.filter(item => candidates.some(candidate => candidate.committeeId === item.committeeId)).reduce((sum, item) => sum + item.beforeCents, 0);
   const afterValues = activeEvent?.comparisons.filter(item => candidates.some(candidate => candidate.committeeId === item.committeeId));
@@ -87,21 +91,22 @@ export function CampaignTimeline() {
   const toggleCandidate = (id: string) => setSelected(current => current.includes(id) ? current.length > 1 ? current.filter(item => item !== id) : current : [...current, id]);
 
   return <figure className={s.panel} data-snapshot={data.snapshot} id="cumulative-fundraising">
-    <figcaption><span className={s.kicker}>17 reviewed campaigns · dates in the filings</span><h3>When did each campaign’s money come in?</h3><p>The lines add each week’s reported money to the total so far. Choose a district, candidates and type of money. The default leaves out City matching payments.</p><p role="status">{refresh}</p></figcaption>
-    <div className={s.controls}><fieldset><legend>Race</legend><div className={s.buttonRow}>{[3, 4].map(value => <button key={value} type="button" aria-pressed={race === value} onClick={() => changeRace(value)}>District {value}</button>)}</div></fieldset><fieldset><legend>Money shown</legend><div className={s.buttonRow}>{bases.map(item => <button key={item.key} type="button" aria-pressed={basis === item.key} onClick={() => setBasis(item.key)}>{item.label}</button>)}</div></fieldset><fieldset><legend>Time period</legend><div className={s.buttonRow}>{windows.map(item => <button key={item.key} type="button" aria-pressed={window === item.key} onClick={() => setWindow(item.key)}>{item.label}</button>)}</div></fieldset></div>
-    <fieldset className={s.candidates}><legend>Show candidates</legend>{candidates.map((candidate, index) => <label key={candidate.committeeId}><input type="checkbox" checked={selected.includes(candidate.committeeId)} onChange={() => toggleCandidate(candidate.committeeId)} /><i style={{ background: colors[index] }} aria-hidden="true" />{candidate.name}</label>)}</fieldset>
-    <div className={s.chartScroll} role="region" tabIndex={0} aria-label="Cumulative donation line chart; scroll horizontally if needed"><svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`Cumulative ${bases.find(item => item.key === basis)!.label.toLowerCase()} for selected District ${race} candidates, ${from} through ${data.end}`}>
+    <figcaption><span className={s.kicker}>Follow the pace of fundraising</span><h3>Steeper lines mean money arrived faster.</h3><p>Compare campaigns over time, then choose an event to see the week before and after.</p><p className={s.refresh} role="status">{refresh}</p></figcaption>
+    <div className={s.controls}><fieldset><legend>Race</legend><div className={s.buttonRow}>{[3, 4].map(value => <button key={value} type="button" aria-pressed={race === value} onClick={() => changeRace(value)}>District {value}</button>)}</div></fieldset><label className={s.compactSelect}>Money shown<select value={basis} onChange={event => setBasis(event.target.value as Basis)}>{bases.map(item => <option key={item.key} value={item.key}>{item.label}</option>)}</select></label><label className={s.compactSelect}>Time period<select value={window} onChange={event => setWindow(event.target.value as Window)}>{windows.map(item => <option key={item.key} value={item.key}>{item.label}</option>)}</select></label></div>
+    <details className={s.candidatePicker}><summary>Compare candidates · {selected.length} selected</summary><fieldset className={s.candidates}><legend>Show candidates</legend>{candidates.map((candidate, index) => <label key={candidate.committeeId}><input type="checkbox" checked={selected.includes(candidate.committeeId)} onChange={() => toggleCandidate(candidate.committeeId)} /><i style={{ background: colors[index] }} aria-hidden="true" />{candidate.name}</label>)}</fieldset></details>
+    <p className={s.chartCaption}>Cumulative cash · {bases.find(item => item.key === basis)!.label}. Totals include earlier gifts.</p>
+    <div className={s.chartScroll} ref={chartRef}><svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`Cumulative cash, ${bases.find(item => item.key === basis)!.label.toLowerCase()}, for selected District ${race} candidates, ${from} through ${data.end}`}>
       <rect x={left} y={top} width={plotWidth} height={plotHeight} fill="#fffdf8" />
       {Array.from({ length: 5 }, (_, index) => { const value = ceiling * index / 4; return <g key={index}><line x1={left} x2={width - right} y1={y(value)} y2={y(value)} stroke="#dce4dc" /><text x={left - 10} y={y(value) + 4} textAnchor="end" fontSize="13" fill="#53675d">{compact(value)}</text></g>; })}
-      {months.map(day => <g key={day}><line x1={x(day)} x2={x(day)} y1={top} y2={height - bottom} stroke="#edf0e9" /><text x={x(day)} y={height - bottom + 24} textAnchor="middle" fontSize="12" fill="#53675d">{formatMonth(day)}</text></g>)}
-      {uniqueFeatured.map((day, index) => <g key={day}><line x1={x(day)} x2={x(day)} y1={top} y2={height - bottom} stroke={selectedEventKey.startsWith(`${day}|`) ? '#ad5e2e' : '#b7a686'} strokeWidth={selectedEventKey.startsWith(`${day}|`) ? 2 : 1} strokeDasharray="5 4" /><circle cx={x(day)} cy={top - 16} r="13" fill={selectedEventKey.startsWith(`${day}|`) ? '#87491f' : '#e9dcbd'} /><text x={x(day)} y={top - 12} textAnchor="middle" fontSize="12" fontWeight="bold" fill={selectedEventKey.startsWith(`${day}|`) ? '#fff' : '#3b4b40'}>{index + 1}</text></g>)}
+      {months.map((day,index) => <g key={day}><line x1={x(day)} x2={x(day)} y1={top} y2={height - bottom} stroke="#edf0e9" /><text x={x(day)} y={height - bottom + 24} textAnchor={index===0?'start':index===months.length-1?'end':'middle'} fontSize="12" fill="#53675d">{formatMonth(day)}</text></g>)}
+      {activeEvent && <g><line x1={x(activeEvent.date)} x2={x(activeEvent.date)} y1={top} y2={height - bottom} stroke="#a76e20" strokeWidth="2" strokeDasharray="5 4"/><text x={Math.min(width-18,Math.max(left+65,x(activeEvent.date)))} y={14} textAnchor="end" fontSize="12" fill="#80521a">{formatDate(activeEvent.date)}</text></g>}
       {candidates.filter(candidate => selected.includes(candidate.committeeId)).map(candidate => { const candidatePoints = points.filter(row => row.committeeId === candidate.committeeId).sort((a, b) => a.weekEnd.localeCompare(b.weekEnd)); const color = colors[candidates.indexOf(candidate)]; return <g key={candidate.committeeId}><polyline fill="none" stroke={color} strokeWidth="3.5" strokeLinejoin="round" points={candidatePoints.map(row => `${x(row.weekEnd)},${y(row.cumulative[basis])}`).join(' ')} /><circle cx={x(candidatePoints.at(-1)?.weekEnd ?? data.end)} cy={y(candidatePoints.at(-1)?.cumulative[basis] ?? 0)} r="5" fill={color} /></g>; })}
-      <text x={left} y={height - 7} fontSize="12" fill="#53675d">Numbered lines mark dated events, not proven causes.</text>
     </svg></div>
     <div className={s.lineKey}>{candidates.filter(candidate => selected.includes(candidate.committeeId)).map(candidate => <span key={candidate.committeeId}><i style={{ background: colors[candidates.indexOf(candidate)] }} />{candidate.name}: {money(points.filter(row => row.committeeId === candidate.committeeId).at(-1)?.cumulative[basis] ?? 0)}</span>)}</div>
+    <label className={s.eventSelect}>Choose an event · marked by the gold line<select value={activeEvent ? selectedEventKey : ''} onChange={event=>setSelectedEventKey(event.target.value)}><option value="" disabled>Select an event</option>{events.map(item=><option key={item.date+'|'+item.label} value={item.date+'|'+item.label}>{formatDate(item.date)} · {item.label}</option>)}</select></label>
     <div className={s.eventFocus}><strong>{activeEvent ? `${formatDate(activeEvent.date)}: ${activeEvent.label}` : 'Select a date below'}</strong>{activeEvent && <><p>Cash excluding City matches across these {candidates.length} campaigns: {money(before ?? 0)} in the seven days before; {after === null ? 'not enough later data yet' : money(after)} in the seven days after. The event day is left out.</p><small>{activeEvent.dateKind}. {activeEvent.limitation || 'Other events, fundraising appeals and filing delays could also explain the change.'} <a href={activeEvent.sourceUrl} target="_blank" rel="noopener noreferrer">Dated source</a></small><details className={s.eventComparison}><summary>See each candidate’s amounts</summary><div className={s.tableScroll} role="region" tabIndex={0} aria-label="Candidate event-window comparison"><table><thead><tr><th scope="col">Candidate</th><th scope="col">Before</th><th scope="col">After</th><th scope="col">Difference</th></tr></thead><tbody>{eventCandidates?.map(item => <tr key={item.committeeId}><th scope="row">{item.name}</th><td>{money(item.beforeCents)}</td><td>{item.afterCents === null ? 'Incomplete' : money(item.afterCents)}</td><td>{item.afterCents === null ? '—' : money(item.afterCents - item.beforeCents)}</td></tr>)}</tbody></table></div><p>Based on the dates in filings. A missing later week is not filled in or guessed.</p></details></>}</div>
-    <details className={s.eventLedger} open><summary>Browse all {events.length} dated events</summary><ol>{events.map((item, index) => <li key={`${item.date}-${item.label}`}><button type="button" onClick={() => setSelectedEventKey(`${item.date}|${item.label}`)} aria-pressed={selectedEventKey === `${item.date}|${item.label}`}><time dateTime={item.date}>{formatDate(item.date)}</time> <strong>{item.label}</strong></button><span>{item.category === 'moda' ? 'Moda Center' : item.category === 'campaign' ? 'Campaign' : 'City'} · {item.dateKind} · <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">source</a></span>{index < 6 && uniqueFeatured.includes(item.date) && <small>Chart flag {uniqueFeatured.indexOf(item.date) + 1}</small>}</li>)}</ol></details>
-    <p className={s.note}>Across the reviewed campaigns, weekly cash outside City matches rose from about {money(data.paceSegments[0].meanWeeklyNonmatchingCents)} early in 2026 to {money(data.paceSegments[2].meanWeeklyNonmatchingCents)} after mid-July. These are patterns in reported receipts, not proof that an event caused the increase. Recent filings can change.</p>
+    <details className={s.eventLedger}><summary>All {events.length} events and sources</summary><ol>{events.map(item => <li key={`${item.date}-${item.label}`}><button type="button" onClick={() => setSelectedEventKey(`${item.date}|${item.label}`)} aria-pressed={selectedEventKey === `${item.date}|${item.label}`}><time dateTime={item.date}>{formatDate(item.date)}</time> <strong>{item.label}</strong></button><span>{item.category === 'moda' ? 'Moda Center' : item.category === 'campaign' ? 'Campaign' : 'City'} · {item.dateKind} · <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">source</a></span></li>)}</ol></details>
+    <p className={s.note}>Events provide context, not proof of what caused a gift. Recent filings may change. This timeline uses the latest imported data; other researched charts retain their September 27 date.</p>
     <p className={s.links}><a href="/data/campaign-finance/story/candidate-cumulative-weekly.csv" download>Download weekly totals</a><a href="/data/campaign-finance/story/active-campaign-events.csv" download>Download event list</a><a href="/api/campaign-finance/daily" download="campaign-timeline-current.json">Download latest checked timeline data</a></p>
   </figure>;
 }
