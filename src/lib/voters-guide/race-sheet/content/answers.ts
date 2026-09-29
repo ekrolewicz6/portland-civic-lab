@@ -21,6 +21,7 @@ const delplato = (question: string, text: string): CandidateAnswer => ({ candida
 const russ = (question: string, text: string): CandidateAnswer => ({ candidateId: "david-russ", question, text, received: "2026-09-24" });
 const beaudoin = (question: string, text: string): CandidateAnswer => ({ candidateId: "ali-beaudoin", question, text, received: "2026-09-23" });
 const cronlund = (question: string, text: string): CandidateAnswer => ({ candidateId: "jayne-cronlund", question, text, received: "2026-09-23" });
+const schimmel = (question: string, text: string): CandidateAnswer => ({ candidateId: "brian-schimmel", question, text, received: "2026-09-28" });
 
 export const answers: CandidateAnswer[] = [
   legree(
@@ -511,5 +512,20 @@ export const answers: CandidateAnswer[] = [
   sweeney(
     "Parks and military work",
     "I was with the Portland Parks for 33 years, and I pride myself on the fact that more of my temporary employees became permanent. They were making just above minimum wage and became permanent. Many got married and started families. [...] I served in the Army Guard and Army Reserve for 28 years. Started as a private and ended as a captain. Over the years I met many fine people and encouraged them to join the city or the Guard or Reserves.",
+  ),
+  // Brian Schimmel (House District 29), September 28, 2026. Education is not one of the Legislature boards, so his
+  // answer on it, the topic he asked the Lab to add, appears here in his words. The data-center answer keeps his
+  // Forest Grove reference, which the board sentence leaves out.
+  schimmel(
+    "Education (a topic he asked us to add): what and how",
+    "WHAT: Improve student achievement, eliminate unfunded mandates and districts structural deficits, restore confidence in public education, and ensure education funding produces measurable results. HOW: Reform the education funding formula, establish clear academic targets, strengthen attendance and early-literacy interventions, provide districts with local flexibility, and require transparent financial oversight and accountability for implementation.",
+  ),
+  schimmel(
+    "Education: how he would measure it",
+    "No unfunded mandates, improved standards for graduation and opt in to testing, improved reading and math proficiency, reduced chronic absenteeism, higher graduation rates, reduced district deficits, and demonstrated progress against publicly reported academic and financial targets.",
+  ),
+  schimmel(
+    "Data-center limits",
+    "Ensure data centers pay their own way and provide meaningful public benefit without shifting infrastructure and utility costs to residents. […] Establish separate large-user utility rates, strengthen land-use and public-benefit requirements, and review Enterprise Zone incentives before authorizing new abatements. […] As demonstrated by the City of Forest Grove.",
   ),
 ];

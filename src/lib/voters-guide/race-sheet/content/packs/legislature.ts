@@ -139,14 +139,14 @@ const profiles: RacePack["profiles"] = {
     question: "Which state services would shrink to pay for the property- and inheritance-tax cuts, and by how much?",
   },
   "brian-schimmel": {
-    background: "City councilor; Republican and Independent nominee with a campaign site and a filed statement.",
-    summary: "He runs on making state policy work in practice: careful use of public money, measurable results, and adjusting programs that are not working, drawn from local housing and public-safety administration.",
+    background: "City councilor; Independent Party nominee who also won the Republican nomination as a write-in, with a campaign site and a filed statement.",
+    summary: "He runs on making state policy work in practice: write policy with the people who carry it out, find sustainable funding and set a measure for each goal. His September 28 answers apply that to housing, treatment, the kicker and data centers.",
     priorities: [
-      "Use public resources carefully and require measurable results.",
-      "Align state policy with local implementation and funding realities.",
-      "Adjust or end programs that are not working.",
+      "Develop policy with the people expected to implement it.",
+      "Identify sustainable funding before the state commits.",
+      "Establish measurable outcomes for each goal.",
     ],
-    question: "Which state programs would you change first, and what result would show the change worked?",
+    question: "Which programs would your budget review shrink, and what revenue, if any, would you accept to close the 2027–29 gap?",
   },
   "pat-hubbell": {
     background: "Pharmacist; Independent nominee with a campaign site and a filed statement.",
@@ -745,6 +745,14 @@ choices.push(choice("oregon-state-house-26", "One candidate leads with public se
 /* ── Oregon House · District 29 ──────────────────────────────────────────── */
 const mclainPriorities = site("McLain · priorities", "https://www.susanmclain.org/priorities/");
 const schimmelSurvey = questionnaire("Schimmel · Ballotpedia Candidate Connection survey", "https://ballotpedia.org/Brian_Schimmel", "2026 survey; reviewed September 21, 2026");
+/* His emailed answers of September 28, 2026 to the questions sent September 22; each gives what, how and a measure. */
+const schimmelEmail: Evidence = {
+  label: "Schimmel · emailed answers to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#schimmel-2026-09-28",
+  kind: "Candidate statement",
+  date: "Received September 28, 2026",
+  note: `${NOTE} Sent on the record by the candidate, who wrote that the statements may be attributed to his campaign.`,
+};
 const schimmelHome = site("Schimmel · campaign site", "https://brianschimmel.org/", `${NOTE} The platform section lists six headings (education, housing, local economy, infrastructure, land stewardship, civil liberties and public safety) without policy text.`);
 Object.assign(analysis, {
   "susan-mclain": {
@@ -760,11 +768,14 @@ Object.assign(analysis, {
   },
   "brian-schimmel": {
     values: ["Implementation", "Fiscal discipline"],
-    tradeoff: "He runs on making state policy work in practice (funding, coordination, measurable results) from housing and public-safety administration experience; his site lists platform headings without positions, so most issues stay open.",
+    tradeoff: "He would keep the kicker refund and hold off on new transportation taxes until the need is shown, while sustaining shelter and deflection programs and strengthening wildfire prevention; his answers set conditions for new revenue rather than naming what would be cut.",
     issues: {
-      money: { position: "Public resources should be used carefully and produce measurable results, with transparency, oversight and a willingness to adjust programs that are not working.", source: schimmelSurvey },
+      housing: { position: "Would increase housing production and preservation and move people from homelessness into stable housing by reducing unnecessary development barriers, modernizing the funding formula for affordable housing projects, reusing existing properties, aligning state funding with local housing plans and coordinating housing with resident services.", source: schimmelEmail },
+      safety: { position: "Would improve community safety through coordinated enforcement and stronger treatment, prevention and accountability for drug use, with legal frameworks, specialized resources and clear responsibilities for law enforcement, behavioral-health providers and community partners, including resources to protect residents from ICE apprehension.", source: schimmelEmail },
+      money: { position: "Would reform Oregon’s revenue system to fund public services while easing the combined tax and utility burden on low- and moderate-income households: evaluate the Earned Income Tax Credit’s effectiveness, protect the kicker and require large energy users to pay their own infrastructure and service costs.", source: schimmelEmail },
+      climate: { position: "Would maintain reliable transportation infrastructure and improve safety, access and connections between communities, prioritizing preservation, targeted safety improvements and transit investments backed by lifecycle-cost analysis, sustainable funding and a smaller climate impact.", source: schimmelEmail },
     },
-    sources: [schimmelSurvey, schimmelHome, site("Schimmel · about", "https://brianschimmel.org/about-brian/"), statement(190)],
+    sources: [schimmelEmail, schimmelSurvey, schimmelHome, site("Schimmel · about", "https://brianschimmel.org/about-brian/"), statement(190)],
   },
 } satisfies Record<string, CandidateAnalysis>);
 lines.push(
@@ -772,17 +783,36 @@ lines.push(
   line("susan-mclain", "safety", "Supports ICE and police accountability, civil-rights protections and gun-safety laws."),
   line("susan-mclain", "money", "Supports the Earned Income Tax Credit; opposes data centers shifting energy costs."),
   line("susan-mclain", "climate", "Supports transit, bike-pedestrian facilities, road maintenance and a new Columbia bridge."),
-  line("brian-schimmel", "money", "Wants public money tied to measurable results, transparency and scrutiny."),
+  line("brian-schimmel", "housing", "Would cut development barriers, update affordable-housing funding and reuse existing properties."),
+  line("brian-schimmel", "safety", "Would pair enforcement with drug treatment and protect residents from ICE apprehension."),
+  line("brian-schimmel", "money", "Would protect the kicker and make large energy users pay their own costs."),
+  line("brian-schimmel", "climate", "Would fix existing roads and bridges first, with targeted safety and transit investments."),
 );
 chips.push(
   chip("susan-mclain", "housing", "Invest in production"), chip("susan-mclain", "safety", "ICE, police accountability"), chip("susan-mclain", "money", "Earned Income Tax Credit"), chip("susan-mclain", "climate", "Transit and new bridge"),
-  chip("brian-schimmel", "money", "Measurable results"),
+  chip("brian-schimmel", "housing", "Fewer building barriers"), chip("brian-schimmel", "safety", "Enforcement plus treatment"),
+  chip("brian-schimmel", "money", "Protect the kicker"), chip("brian-schimmel", "climate", "Preservation first"),
 );
 deliveries.push(
   ladder("susan-mclain", "housing"), ladder("susan-mclain", "safety"),
   ladder("susan-mclain", "money", { how: step("Voted for the largest Earned Income Tax Credit increase in state history and sponsored a bill banning data centers from passing energy costs to consumers.", mclainPriorities), measure: step("Says the credit increase lowered taxes for more than 200,000 low- and moderate-income families.", mclainPriorities) }),
   ladder("susan-mclain", "climate"),
-  ladder("brian-schimmel", "money"),
+  ladder("brian-schimmel", "housing", {
+    how: step("Reduce unnecessary development barriers, modernize the affordable-housing funding formula, reuse existing properties, align state funding with local housing plans and coordinate housing with resident services.", schimmelEmail),
+    measure: step("Homes delivered for low-income households, development time and cost, transitions into permanent housing and sustained housing stability; no target numbers are given.", schimmelEmail),
+  }),
+  ladder("brian-schimmel", "safety", {
+    how: step("Establish legal frameworks, specialized resources and clear responsibilities for law enforcement, behavioral-health providers and community partners, with adequate funding and consistent operating standards.", schimmelEmail),
+    measure: step("Fewer ICE apprehensions and repeat offenses, treatment engagement and completion, response times and community safety outcomes; no target numbers are given.", schimmelEmail),
+  }),
+  ladder("brian-schimmel", "money", {
+    how: step("Evaluate the Earned Income Tax Credit’s effectiveness, protect the kicker and strengthen requirements that large energy users pay their own infrastructure and service costs rather than shifting them to households.", schimmelEmail),
+    measure: step("Lower effective tax burdens for low- and moderate-income households, verified cost allocation to large energy users, refunds preserved and sustainable service funding with transparent performance measures.", schimmelEmail),
+  }),
+  ladder("brian-schimmel", "climate", {
+    how: step("Prioritize preservation, targeted safety improvements and transit investments supported by lifecycle-cost analysis, sustainable funding and a smaller climate impact.", schimmelEmail),
+    measure: step("Pavement and bridge condition, crash reduction, transit access and ridership, and project delivery against budget and schedule.", schimmelEmail),
+  }),
 );
 ownWords.push(
   own("susan-mclain", "Representative Susan McLain spent 42 years teaching students and raising her family in our community.", 192, "First sentence of the filed statement; two heading lines are skipped."),
@@ -794,11 +824,11 @@ contacts.push(
   contact("brian-schimmel", [web("https://brianschimmel.org/"), email("brian@brianschimmel.org"), social("Facebook", "https://www.facebook.com/brian.schimmel.35"), social("X", "https://x.com/BrianSchim19211"), social("LinkedIn", "https://www.linkedin.com/in/brianschimmel/"), social("TikTok", "https://www.tiktok.com/@brianhschimmel"), social("Instagram", "https://www.instagram.com/brian.schimmel.35/")],
     [site("Schimmel · campaign site", "https://brianschimmel.org/", "The “Get In Touch” button opens the campaign email; the header links five profiles.")]),
 );
-primary.push({ candidateId: "susan-mclain", sourceUrl: mclainPriorities.url }, { candidateId: "brian-schimmel", sourceUrl: schimmelSurvey.url });
-roles.push({ candidateId: "susan-mclain", role: "Incumbent representative; former teacher", from: "background" }, { candidateId: "brian-schimmel", role: "Qualified general-election candidate", from: "background" });
+primary.push({ candidateId: "susan-mclain", sourceUrl: mclainPriorities.url }, { candidateId: "brian-schimmel", sourceUrl: schimmelEmail.url });
+roles.push({ candidateId: "susan-mclain", role: "Incumbent representative; former teacher", from: "background" }, { candidateId: "brian-schimmel", role: "Forest Grove city councilor", from: "background" });
 ballots.push(ballot("oregon-state-house-29"));
 districts.push(district("oregon-state-house-29", "HD29", "Forest Grove, Cornelius, Dilley, Gaston and the western edge of Hillsboro."));
-choices.push(choice("oregon-state-house-29", "One candidate leads with public education, infrastructure, civil rights and housing investment; the other with implementation, fiscal discipline and measurable results. His fuller brief is still open, so compare what each has actually published."));
+choices.push(choice("oregon-state-house-29", "One candidate leads with public education, infrastructure, civil rights and housing investment; the other with implementation, fiscal discipline and measurable results. The boards below set her votes beside his written answers on the Legislature’s eight choices."));
 
 /* ── Oregon House · District 40 ──────────────────────────────────────────── */
 const bakerIssues = site("Baker · issues", "https://voteadambaker.com/issues/");
@@ -1368,6 +1398,22 @@ topicStances.push(
     "Voted yes on HB 3940 on June 23, 2025, the bill that taxes oral nicotine, raises the timber harvest tax and moves Rainy Day Fund interest to wildfire funds.", hb3940House),
   stance("susan-mclain", "leg-sanctuary", "supports", "Voted for HB 4138",
     "Voted yes on HB 4138 on February 24 and March 6, 2026; her site says she fought this year to hold ICE and law-enforcement agents accountable.", hb4138House),
+  stance("brian-schimmel", "leg-transportation-package", "partial", "Not before need shown",
+    "Would not commit taxpayers to another transportation tax increase before its necessity and impacts are demonstrated, and would first review existing revenue, spending priorities, maintenance needs and cost controls; he does not say how he would vote.", schimmelEmail),
+  stance("brian-schimmel", "leg-kicker", "partial", "Other funds first",
+    "Wants taxpayer refunds preserved and would examine reserves, dedicated revenues and other funding before considering any proposal to keep future kicker money; he does not rule it out.", schimmelEmail),
+  stance("brian-schimmel", "leg-new-revenue", "partial", "Review, then decide",
+    "Would review program effectiveness, administrative costs, statutory obligations and revenue options before adopting a full funding package, limiting new burdens on working families and small businesses; he does not choose between new revenue and cuts.", schimmelEmail),
+  stance("brian-schimmel", "leg-data-centers", "supports", "Separate large-user rates",
+    "Would make data centers pay their own way with separate large-user utility rates, stronger land-use and public-benefit requirements, and a review of Enterprise Zone incentives before any new tax abatements.", schimmelEmail),
+  stance("brian-schimmel", "leg-shelter-funding", "supports", "Sustain effective shelter",
+    "Would sustain effective shelter and housing-stability services while increasing moves into permanent housing, aligning state funding with local operating capacity; he does not address the emergency declaration.", schimmelEmail),
+  stance("brian-schimmel", "leg-deflection", "supports", "Fund county deflection",
+    "Would keep a response that pairs accountability for drug offenses with treatment and recovery: fund county implementation, set workable statewide standards and coordinate police, behavioral-health providers and treatment capacity.", schimmelEmail),
+  stance("brian-schimmel", "leg-wildfire-funding", "supports", "Fund prevention, response",
+    "Would strengthen wildfire prevention, community preparedness and firefighting capacity through sustainable funding, prioritizing fuel reduction, community protection, response readiness and coordinated state and local investment.", schimmelEmail),
+  stance("brian-schimmel", "leg-sanctuary", "partial", "State protocols for ICE",
+    "Would back compliance with Oregon law with clear agency roles, training, indemnification and deployment protocols for state and local resources, measured partly by fewer ICE apprehensions; he does not say whether to add new limits.", schimmelEmail),
   // Not a stance: a general value or goal that does not reach this choice; left as a gap.
   /* House 40 */
   stance("adam-baker", "leg-transportation-package", "opposes", "Respect the vote",
