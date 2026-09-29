@@ -24,7 +24,7 @@ export default function WhetstonePermitCase() {
       <div className="fire-whetstone-heading">
         <div>
           <span className="fire-eyebrow">Inside a real decision · Jackson County, 2023</span>
-          <h2 id="whetstone-title">The plan covered 87 acres. How much actually burned?</h2>
+          <h3 id="whetstone-title">The plan covered 87 acres. How much actually burned?</h3>
         </div>
         <p>
           At Whetstone Savanna near White City, a restoration burn was planned
