@@ -68,6 +68,17 @@ const cityClubD2: Evidence = {
   note: "The candidate's own remarks at a public debate, read from a transcript; speaker attribution is the Lab's, from self-references and the moderator's order. Claims are not independently verified.",
 };
 
+/* City Club of Portland and KOIN 6 chair debate (September 28, 2026, University Place). The Lab worked from a
+ * transcript of a room recording without speaker labels; every answer was attributed from the announced order,
+ * the moderators' calls and a self-reference; see research/voters-guide-2026/sources/city-club-chair-debate-2026-09-28.md. */
+const cityClubChair: Evidence = {
+  label: "City Club of Portland and KOIN 6 · Multnomah County Chair debate (September 28, 2026)",
+  url: "https://pdxcityclub.org/event/multnomah-county-chair-debate-2026/",
+  kind: "Candidate statement",
+  date: "September 28, 2026; transcript read September 29, 2026",
+  note: "The candidate's own remarks at a public debate broadcast on KOIN 6, read from a transcript; speaker attribution is the Lab's, from the announced order, the moderators' calls and self-references. Claims are not independently verified.",
+};
+
 /* Contact channel helpers, matching content/contacts.ts. */
 type From = ContactChannel["from"];
 const web = (url: string, from: From): ContactChannel => ({
@@ -196,6 +207,10 @@ candidate("julia-brim-edwards", {
       source: pamphlet(32),
       line: "Wants fewer layers of local taxes and fees, and contractors reporting results.",
       chip: "Fewer local taxes, fees",
+      how: step(
+        "Start the budget with core services (homelessness, mental health, addiction treatment and public safety), protect them from federal and state cuts, then look for savings in duplication and layers of administration.",
+        cityClubChair,
+      ),
     },
   },
 });
@@ -338,6 +353,10 @@ candidate("shannon-singleton", {
       source: singletonRecord,
       line: "Supports Deflection Center (arrest alternative) reforms linking addiction, housing and health services.",
       chip: "Reform Deflection Center",
+      how: step(
+        "Attach shelter beds to deflection so people who ask for treatment sleep inside and start it right away, instead of leaving with a referral list; she helped pass a resolution making that a priority.",
+        cityClubChair,
+      ),
     },
     money: {
       position:
@@ -345,6 +364,10 @@ candidate("shannon-singleton", {
       source: singletonRecord,
       line: "Wants taxpayer dollars used more effectively; cites coauthoring lobbyist disclosure rules.",
       chip: "Effective use of dollars",
+      how: step(
+        "Stop funding ongoing programs such as shelter with one-time money, and build the budget with a racial justice council of the people most affected by services before the chair proposes it.",
+        cityClubChair,
+      ),
     },
     climate: {
       position:
@@ -1114,6 +1137,17 @@ const charterFaq = record(
  * deep links use them. Context facts are from the sources logged in
  * research/voters-guide-2026/outreach-2026-09-22/topic-sweep-multnomah.md.
  */
+/* Chair-only: asked of all three chair candidates at the September 28, 2026 debate. Context from KOIN
+ * (August 11, 2026), https://www.koin.com/local/multnomah-county/hybrid-work-push-to-take-effect-for-multnomah-county-workers-by-july-2027/ */
+const officeTopic: ExtraTopic = {
+  id: "mult-return-to-office",
+  label: "Office attendance",
+  short: "Office",
+  question: "Require county office staff in person full time, beyond the hybrid rule that takes full effect in July 2027?",
+  context:
+    "The county’s Hybrid Workplace Initiative, announced to staff in August 2026, will require more employees to work in person at least three days a week by July 1, 2027; the county says about 75% of hires already work in person or hybrid. District Attorney Nathan Vasquez and Portland Mayor Keith Wilson have ordered their managers back full time.",
+};
+
 const multnomahTopics: ExtraTopic[] = [
   {
     id: "mult-shelter-cuts",
@@ -1231,7 +1265,9 @@ const multnomahTopics: ExtraTopic[] = [
 /* The Board's choices go to the Board seats in full; the sheriff and the auditor get the ones their office acts on. */
 const byId = (ids: string[]) => ids.map((id) => multnomahTopics.find((t) => t.id === id)!).filter(Boolean);
 const topics: RaceTopics[] = [
-  { raceIds: ["multnomah-chair", "multnomah-district-2"], topics: multnomahTopics },
+  // The chair, not a commissioner, sets county workforce rules, so the office board is the chair's alone.
+  { raceIds: ["multnomah-chair"], topics: [...multnomahTopics, officeTopic] },
+  { raceIds: ["multnomah-district-2"], topics: multnomahTopics },
   { raceIds: ["multnomah-sheriff"], topics: byId(["mult-jail-capacity", "mult-sanctuary", "mult-deflection", "mult-sobering", "mult-budget-gap", "mult-ambulance"]) },
   { raceIds: ["multnomah-auditor"], topics: byId(["mult-hsd-oversight", "mult-shs-tax", "mult-pfa-delay", "mult-budget-gap"]) },
 ];
@@ -1354,14 +1390,31 @@ const topicStances: TopicStance[] = [
   stance("julia-brim-edwards", "mult-sanctuary", "supports", "Voted for sanctuary code",
     "Voted for the April 9, 2026 ordinance writing sanctuary rules into county code, saying the action sends a message that immigrants belong here and the county will keep protecting civil rights.",
     sanctuaryOrdinance),
+  // From the September 28, 2026 City Club debate.
+  stance("julia-brim-edwards", "mult-city-county", "partial", "Joint goals first",
+    "Would change the city-county agreement so it starts from joint goals, then sets each government’s role and aligns both budgets behind them; she does not say whether one government should run shelters.",
+    cityClubChair),
+  stance("julia-brim-edwards", "mult-pfa-universal", "supports", "Keep the promise",
+    "Would keep Preschool for All with the county rather than the state and “keep the promise” of universal preschool; she calls the rollout seriously flawed and wants better data so no seats sit empty.",
+    cityClubChair),
+  stance("julia-brim-edwards", "mult-return-to-office", "mixed", "Depends on the job",
+    "Answered “a no plus with an explanation”: it depends on the job, thousands of county workers never left their work sites, and the county helps downtown most through mental-health, addiction, homeless and public-safety services.",
+    cityClubChair),
+  stance("shannon-singleton", "mult-return-to-office", "opposes", "No full-time mandate",
+    "Said no, saying the county’s rule ignored workers’ voices, some work needs privacy and mobility, there is not space for everyone, and frontline workers are not responsible for reviving downtown.",
+    cityClubChair),
+  stance("sharon-meieran", "mult-return-to-office", "partial", "Only if need shown",
+    "Said it is not a yes-or-no question: staff should be in the office full time only if the need is demonstrated, and the county’s rollout of its current rule was “horrible” for leaving out affected workers.",
+    cityClubChair),
 
   /* ── Shannon Singleton (sitting commissioner, District 2) ──────────── */
   stance("shannon-singleton", "mult-pfa-delay", "supports", "One-year delay, hers",
     "Moved the ordinance delaying the increase to January 2028 and voted for it on August 27, 2026; she and Commissioner Moyer had proposed the one-year delay in place of the chair's two-year plan.",
     minutesAug27),
-  stance("shannon-singleton", "mult-pfa-universal", "partial", "Sustainable, accountable program",
-    "Her record page says she fought for Preschool for All’s sustainability and accountability and for continuous improvement serving thousands of children; it does not say whether the program should reach every family that wants a seat by 2030.",
-    singletonRecord),
+  // Updated from her record page to her September 28, 2026 debate answer, which reaches the choice.
+  stance("shannon-singleton", "mult-pfa-universal", "supports", "Implement voters’ will",
+    "Says the county must implement the voters’ will of free universal preschool while fixing it: set the true cost of care, provide real inclusion support and give teachers a seat in its advisory structure.",
+    cityClubChair),
   stance("shannon-singleton", "mult-shelter-cuts", "supports", "Voted for the budget",
     "Voted for the FY 2027 budget and said she is proud that housing stability and placement out of shelter are now part of the county's commitment, while noting District 2's voices did not prevail on every vote.",
     budgetFy27),
@@ -1421,15 +1474,16 @@ const topicStances: TopicStance[] = [
   stance("sharon-meieran", "mult-sobering", "partial", "Center can stand alone",
     "Told the Board in April 2024 that a sobering center can stand alone and make a difference from the day it opens; she has not said whether the 2027 center should add more detox and treatment beds.",
     soberingBriefing2024),
-  stance("sharon-meieran", "mult-moda", "partial", "Economic decision, negotiate",
-    "On a July 2026 podcast called the Moda question an economic decision, said the Blazers' benefit is incontrovertible and the county should negotiate on costs and goals instead of a reset; she did not say whether to commit $101.6 million.",
-    meieranModaPodcast),
+  // Moda and universal preschool: her September 28, 2026 debate answers replace the July podcast, which they extend.
+  stance("sharon-meieran", "mult-moda", "partial", "Yes, if accountable",
+    "Says she “absolutely” supports a county contribution to the Moda Center if made responsibly and accountably, which she says the current deal was not, and asks where the $101 million will come from; she does not endorse that amount.",
+    cityClubChair),
   stance("sharon-meieran", "mult-pfa-delay", "partial", "Define goals before taxing",
     "On a July 2026 podcast said Preschool for All must define its goal and forecast its money, asking whether to raise taxes as promised when it has more than expected; she did not say whether the 2028 delay should stand.",
     meieranModaPodcast),
-  stance("sharon-meieran", "mult-pfa-universal", "partial", "Define the goal first",
-    "On a July 2026 podcast said Preschool for All must define its goal and forecast its money before raising taxes as promised; she did not say whether it should reach every family that wants a seat by 2030.",
-    meieranModaPodcast),
+  stance("sharon-meieran", "mult-pfa-universal", "partial", "Honor vote, fix rollout",
+    "Calls the rollout fatally flawed and says the county should pay only for filled seats and track children’s results; she doubts it belonged at the county but says it is the voters’ will, so it must be done right.",
+    cityClubChair),
 ];
 
 const norrisPledges = site("Ong Norris · pledges taken (Preschool for All pledge, July 2, 2026)", "https://www.nathanongnorris.com/pledges");
