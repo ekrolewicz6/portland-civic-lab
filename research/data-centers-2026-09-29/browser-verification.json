@@ -1,25 +1,30 @@
 {
-  "verifiedAt": "2026-09-29T22:35:36.176Z",
+  "verifiedAt": "2026-09-29T23:02:36.767Z",
   "route": "/deep-dives/data-centers",
-  "desktop": "1440x1000",
-  "mobileWidths": [
+  "viewports": [
+    1440,
+    1024,
+    768,
     390,
     320
   ],
+  "examples": 3,
   "errors": [],
   "failures": [],
   "checks": [
-    "article renders",
-    "two fiscal perspectives",
-    "probability sensitivity",
+    "all examples replace complete input sets",
+    "documented payment rules",
+    "positive and negative comparisons",
+    "exact break-even",
+    "CSV payment schedules",
+    "separate fiscal perspectives",
+    "keyboard slider",
     "post-abatement years",
-    "signed-contract annual arithmetic",
-    "CSV input and cash-flow parity",
-    "cost threshold edge case",
-    "reset",
-    "all nine article anchors",
-    "enforcement and source disclosures",
-    "mobile controls",
-    "no horizontal page overflow"
+    "high-cost edge case",
+    "reset and custom",
+    "all article anchors clear header",
+    "source and enforcement disclosures",
+    "responsive controls and no overflow",
+    "no-JavaScript article"
   ]
 }

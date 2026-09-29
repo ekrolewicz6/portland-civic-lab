@@ -106,9 +106,9 @@ const DIVES: DeepDive[] = [
     eyebrow: "Energy, water & taxes",
     title: "Oregon built the cloud. Was it worth the bill?",
     blurb:
-      "What Oregon receives from data-center deals, what the evidence cannot establish, and what stronger agreements should require. Read the competing cases, compare local and statewide fiscal assumptions, and explore the public record.",
-    stat: "6",
-    statLabel: "proposed conditions for a better agreement",
+      "See what Oregon gets from data-center deals. Compare three examples, move the assumptions and find the break-even point—then follow the power, water and school-funding tradeoffs.",
+    stat: "3",
+    statLabel: "clickable examples with visible assumptions",
     icon: Server,
     available: true,
   },

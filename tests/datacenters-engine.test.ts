@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { DEAL_EXAMPLES } from "../src/lib/datacenters/examples";
 import { annuity, cashFlowCsv, dealMath, DEFAULT_INPUTS } from "../src/lib/datacenters/engine";
 
 describe("data-center fiscal comparison", () => {
@@ -61,5 +62,40 @@ describe("data-center fiscal comparison", () => {
     expect(annuity(0, 30)).toBe(30);
     expect(() => dealMath({ ...DEFAULT_INPUTS, buildWithoutPct: 101 })).toThrow();
     expect(() => dealMath({ ...DEFAULT_INPUTS, feeM: Number.NaN })).toThrow();
+  });
+});
+
+
+describe("document-based examples and visual totals", () => {
+  it("applies the Hillsboro fee ceiling and school payment only in their specified years", () => {
+    const inp = DEAL_EXAMPLES.find(e => e.id === "hillsboro")!.inputs;
+    const r = dealMath(inp);
+    expect(r.rows[0].dealPropertyM).toBeCloseTo(6.6 * .33);
+    expect(r.rows[2].dealPropertyM).toBeCloseTo(6.6 * .33);
+    expect(r.rows[3].dealPropertyM).toBeCloseTo(6.6 * (.50 + .15));
+    expect(r.rows[4].dealPropertyM).toBeCloseTo(6.6 * .65);
+    expect(r.rows[5].dealPropertyM).toBeCloseTo(6.6);
+  });
+  it("keeps the two contract shares and upfront payments distinct", () => {
+    const first = dealMath(DEAL_EXAMPLES[0].inputs);
+    const second = dealMath(DEAL_EXAMPLES[1].inputs);
+    expect(first.rows[0].dealPropertyM).toBeCloseTo(3.3 + 3);
+    expect(second.rows[0].dealPropertyM).toBeCloseTo(3.96 + 3);
+    expect(first.rows[1].dealPropertyM).toBeCloseTo(3.3);
+    expect(second.rows[1].dealPropertyM).toBeCloseTo(3.96);
+  });
+  it("makes every chart endpoint agree with the comparison, including closure and costs", () => {
+    for (const example of DEAL_EXAMPLES) {
+      for (const ledger of ["local", "statewide"] as const) {
+        const inp = { ...example.inputs, operatingYears: 20, serviceCostM: .8, constructionLocalM: 5, constructionStateM: 10, buildWithPct: 80 };
+        const r = dealMath(inp, ledger);
+        const last = r.timeline.at(-1)!;
+        expect(last.deal).toBeCloseTo(r.evSign, 9);
+        expect(last.noBreak).toBeCloseTo(r.evHold, 9);
+        expect(dealMath({ ...inp, buildWithoutPct: r.breakEvenP! * 100 }, ledger).net).toBeCloseTo(0, 8);
+      }
+      expect(dealMath({ ...example.inputs, buildWithoutPct: 0 }).net).toBeGreaterThan(0);
+      expect(dealMath({ ...example.inputs, buildWithoutPct: 100 }).net).toBeLessThan(0);
+    }
   });
 });

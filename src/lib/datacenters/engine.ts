@@ -5,7 +5,7 @@
 export type Ledger = "local" | "statewide";
 export interface DealInputs {
   taxableValueM: number; taxRatePct: number; abatementYears: number;
-  paymentMode: "fixed" | "share"; feeM: number; paymentSharePct: number; minimumPaymentM: number; upfrontM: number;
+  paymentMode: "fixed" | "share" | "stepped-share"; laterPaymentSharePct: number; paymentStepYear: number; feeM: number; paymentSharePct: number; minimumPaymentM: number; upfrontM: number;
   jobs: number; wageK: number; incomeTaxPct: number;
   buildWithoutPct: number; buildWithPct: number;
   horizonYears: number; operatingYears: number; discountPct: number;
@@ -15,7 +15,7 @@ export interface DealInputs {
 /** Illustrative assumptions, not an assessed Oregon project. */
 export const DEFAULT_INPUTS: DealInputs = {
   taxableValueM: 1400, taxRatePct: 1.1, abatementYears: 15,
-  paymentMode: "fixed", feeM: 2.7, paymentSharePct: 50, minimumPaymentM: 0, upfrontM: 0,
+  paymentMode: "fixed", laterPaymentSharePct: 65, paymentStepYear: 4, feeM: 2.7, paymentSharePct: 50, minimumPaymentM: 0, upfrontM: 0,
   jobs: 100, wageK: 90, incomeTaxPct: 6.5,
   buildWithoutPct: 50, buildWithPct: 100,
   horizonYears: 30, operatingYears: 30, discountPct: 4,
@@ -29,7 +29,7 @@ export interface DealResult {
   pvFullTax: number; pvDealProperty: number; pvPostAbatement: number;
   pvIncomeTax: number; pvCosts: number; pvBaseline: number; pvConstruction: number;
   fullIfBuilt: number; dealIfBuilt: number; evSign: number; evHold: number; net: number;
-  breakEvenP: number | null; rows: CashFlow[];
+  breakEvenP: number | null; rows: CashFlow[]; timeline: { year: number; deal: number; noBreak: number }[];
 }
 export function annuity(rate: number, years: number): number {
   if (years <= 0) return 0;
@@ -41,10 +41,11 @@ export function dealMath(inp: DealInputs, ledger: Ledger = "local"): DealResult 
       throw new RangeError("Invalid input: " + key);
     }
   }
-  if ([inp.buildWithPct, inp.buildWithoutPct, inp.paymentSharePct, inp.incomeTaxPct].some(v => v > 100)) {
+  if ([inp.buildWithPct, inp.buildWithoutPct, inp.paymentSharePct, inp.laterPaymentSharePct, inp.incomeTaxPct].some(v => v > 100)) {
     throw new RangeError("Percentages must be between 0 and 100");
   }
   if (inp.horizonYears < 1 || inp.horizonYears > 50 || !Number.isInteger(inp.horizonYears)
+      || inp.paymentStepYear < 1 || !Number.isInteger(inp.paymentStepYear)
       || !Number.isInteger(inp.operatingYears) || !Number.isInteger(inp.abatementYears)) {
     throw new RangeError("Use whole years and a horizon of 1–50 years");
   }
@@ -54,7 +55,8 @@ export function dealMath(inp: DealInputs, ledger: Ledger = "local"): DealResult 
   const rows: CashFlow[] = Array.from({ length: inp.horizonYears }, (_, i) => {
     const year = i + 1;
     const operating = year <= inp.operatingYears;
-    const payment = inp.paymentMode === "fixed" ? inp.feeM : Math.max(inp.minimumPaymentM, fullTax * inp.paymentSharePct / 100);
+    const share = inp.paymentMode === "stepped-share" && year >= inp.paymentStepYear ? inp.laterPaymentSharePct : inp.paymentSharePct;
+    const payment = inp.paymentMode === "fixed" ? inp.feeM : Math.max(inp.minimumPaymentM, fullTax * share / 100);
     return {
       year, fullTaxM: operating ? fullTax : 0,
       dealPropertyM: operating ? (year <= inp.abatementYears ? payment : fullTax) + (year === 1 ? inp.upfrontM : 0) : 0,
@@ -81,11 +83,18 @@ export function dealMath(inp: DealInputs, ledger: Ledger = "local"): DealResult 
   const evSign = q * dealIfBuilt + (1 - q) * pvBaseline;
   const evHold = p * fullIfBuilt + (1 - p) * pvBaseline;
   const denominator = fullIfBuilt - pvBaseline;
+  let cumulativeDeal = 0, cumulativeNoBreak = 0;
+  const timeline = rows.map(r => {
+    const common = r.incomeTaxM + r.constructionM - r.serviceCostM + (r.year > inp.operatingYears ? r.baselineM : 0);
+    cumulativeDeal += (q * (r.dealPropertyM + common) + (1 - q) * r.baselineM) * r.discountFactor;
+    cumulativeNoBreak += (p * (r.fullTaxM + common) + (1 - p) * r.baselineM) * r.discountFactor;
+    return { year: r.year, deal: cumulativeDeal, noBreak: cumulativeNoBreak };
+  });
   return {
     pvFullTax, pvDealProperty, pvPostAbatement, pvIncomeTax, pvCosts, pvBaseline,
     pvConstruction, fullIfBuilt, dealIfBuilt, evSign, evHold, net: evSign - evHold,
     // Do not clip thresholds: outside 0–1 conveys dominance, not a probability.
-    breakEvenP: denominator > 0 ? (evSign - pvBaseline) / denominator : null, rows,
+    breakEvenP: denominator > 0 ? (evSign - pvBaseline) / denominator : null, rows, timeline,
   };
 }
 export function cashFlowCsv(inp: DealInputs, ledger: Ledger): string {

@@ -1,136 +1,148 @@
 "use client";
 import { useState } from "react";
+import { ArrowDownToLine, ArrowRight, RotateCcw, SlidersHorizontal, MapPin } from "lucide-react";
 import { dealMath, cashFlowCsv, DEFAULT_INPUTS, type DealInputs, type Ledger } from "@/lib/datacenters/engine";
+import { DEAL_EXAMPLES } from "@/lib/datacenters/examples";
+import { ReceiptBars, MoneyTimeline, money } from "./FiscalCharts";
 
 type NumericKey = Exclude<keyof DealInputs, "paymentMode">;
-const money = (m: number) => (m < 0 ? "−" : "") + "$" + Math.abs(m).toFixed(1) + "M";
-const inputClass = "mt-1 w-full rounded-sm border border-[var(--color-sage)] bg-white px-3 py-2 text-[var(--color-ink)] font-mono";
+const INPUT_LABELS: Record<NumericKey, string> = {
+  taxableValueM: "Taxable value ($M)", taxRatePct: "Property tax rate (%)", abatementYears: "Years of tax break",
+  feeM: "Annual payment ($M)", paymentSharePct: "Share of full tax (%)", minimumPaymentM: "Annual payment floor ($M)",
+  laterPaymentSharePct: "Later share of full tax (%)", paymentStepYear: "Higher share starts in year",
+  upfrontM: "One-time deal payment ($M)", jobs: "Permanent jobs", wageK: "Annual wage ($K)", incomeTaxPct: "State income tax rate (%)",
+  buildWithoutPct: "Chance it gets built without a break (%)", buildWithPct: "Chance it gets built with a deal (%)",
+  horizonYears: "Years to compare", operatingYears: "Years the site operates", discountPct: "Discount rate (%)",
+  baselineM: "No-build land taxes per year ($M)", serviceCostM: "Public costs per year ($M)",
+  constructionLocalM: "Local construction tax receipts ($M)", constructionStateM: "State construction tax receipts ($M)"
+};
 export default function DealCalculator() {
-  const [inp, setInp] = useState<DealInputs>({ ...DEFAULT_INPUTS });
+  const [exampleId, setExampleId] = useState(DEAL_EXAMPLES[0].id);
+  const [inp, setInp] = useState<DealInputs>({ ...DEAL_EXAMPLES[0].inputs });
   const [ledger, setLedger] = useState<Ledger>("local");
+  const example = DEAL_EXAMPLES.find(e => e.id === exampleId);
   const result = dealMath(inp, ledger);
-  function field(key: NumericKey, label: string, min: number, max: number, step: number, help?: string) {
-    return <label className="block text-sm" key={key}>
-      <span className="font-semibold">{label}</span>
-      <input type="number" className={inputClass} aria-label={label} value={inp[key]}
-        min={min} max={max} step={step}
-        onChange={e => {
-          const value = e.currentTarget.valueAsNumber;
-          if (Number.isFinite(value)) setInp(prev => ({ ...prev, [key]: Math.min(max, Math.max(min, step === 1 ? Math.round(value) : value)) }));
-        }} />
-      {help && <span className="mt-1 block text-xs text-[var(--color-ink-muted)]">{help}</span>}
+  const threshold = result.breakEvenP;
+  const inRange = threshold !== null && threshold >= 0 && threshold <= 1;
+  const tied = Math.abs(result.net) < .000001;
+  function change(key: NumericKey, value: number) { setInp(prev => ({ ...prev, [key]: value })); }
+  function choose(id: string) {
+    const chosen = DEAL_EXAMPLES.find(e => e.id === id);
+    setExampleId(id); setInp({ ...(chosen?.inputs ?? DEFAULT_INPUTS) }); setLedger("local");
+  }
+  function provenance(key: keyof DealInputs) {
+    if (example && inp[key] !== example.inputs[key]) return "Edited";
+    return example?.documented.includes(key) ? "Document-based" : "Assumption";
+  }
+  function field(key: NumericKey, min: number, max: number, step: number, help?: string) {
+    const kind = provenance(key);
+    return <label className="dc-field" key={key}>
+      <span className="dc-field-label">{INPUT_LABELS[key]}</span>
+      <span className="dc-input-wrap"><input type="number" aria-label={INPUT_LABELS[key]} value={inp[key]} min={min} max={max} step={step}
+        onChange={e => { const n = e.currentTarget.valueAsNumber; if (Number.isFinite(n)) change(key, Math.min(max, Math.max(min, step === 1 ? Math.round(n) : n))); }} /></span>
+      <span className={"dc-input-source " + (kind === "Document-based" ? "is-sourced" : "")}>{kind}</span>
+      {help && <span className="dc-input-help">{help}</span>}
     </label>;
   }
   function download() {
-    const url = URL.createObjectURL(new Blob([cashFlowCsv(inp, ledger)], { type: "text/csv;charset=utf-8" }));
-    const a = document.createElement("a");
-    a.href = url; a.download = "data-center-fiscal-scenario.csv"; a.click();
+    const note = "# Example=" + (example?.title ?? "Custom") + "; scenario, not audited actual collections\n";
+    const url = URL.createObjectURL(new Blob([note + cashFlowCsv(inp, ledger)], { type: "text/csv;charset=utf-8" }));
+    const a = document.createElement("a"); a.href = url; a.download = "data-center-fiscal-scenario.csv"; a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
-  const threshold = result.breakEvenP;
-  const thresholdText = threshold === null ? "No standard threshold" :
-    threshold < 0 ? "Deal below baseline at every probability" :
-    threshold > 1 ? "Deal ahead across 0–100%" : (threshold * 100).toFixed(1) + "%";
-  return <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5 sm:p-8" data-testid="deal-calculator">
-    <h3 className="font-editorial-normal text-2xl text-[var(--color-canopy)]">Explore a fiscal scenario</h3>
-    <p className="mt-2 text-sm leading-relaxed">Every starting value is an illustrative assumption. No regional build probability is measured here.
-      Replace the inputs with the agreement and assessor&apos;s estimates before applying this to a project.</p>
-    <div className="my-5 flex flex-wrap gap-2" role="group" aria-label="Fiscal perspective">
-      {([["local", "Local public receipts"], ["statewide", "Combined Oregon receipts"]] as const).map(([key, label]) =>
-        <button key={key} type="button" aria-pressed={ledger === key} onClick={() => setLedger(key)}
-          className={`rounded-sm border px-4 py-2 text-sm ${ledger === key ? "bg-[var(--color-canopy)] text-white border-[var(--color-canopy)]" : "border-[var(--color-sage)]"}`}>{label}</button>)}
+  return <div className="dc-calculator" data-testid="deal-calculator">
+    <div className="dc-calc-start"><span className="dc-kicker">01 / Pick a starting point</span><p>Real terms. Editable assumptions. See what changes the answer.</p></div>
+    <div className="dc-examples" role="group" aria-label="Example agreements">
+      {DEAL_EXAMPLES.map(e => <button key={e.id} type="button" onClick={() => choose(e.id)} aria-pressed={e.id === exampleId} data-testid={"example-" + e.id} className="dc-example">
+        <span className="dc-example-place"><MapPin size={13} /> {e.place}<span className="dc-example-arrow"><ArrowRight size={18} /></span></span>
+        <strong>{e.title}</strong><span>{e.short}</span><small>{e.tag}</small>
+      </button>)}
     </div>
-    <p className="mb-5 text-xs text-[var(--color-ink-muted)]">
-      Local combines the host area&apos;s public recipients before school equalization. Combined adds modeled state income taxes and state construction receipts.
-      Neither view allocates school-funding transfers, measures private income, or counts every tax.
-    </p>
-    <div className="grid gap-8 xl:grid-cols-2">
-      <div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {field("taxableValueM", "Assumed taxable value ($M)", 0, 20000, 10, "Held constant while operating; not a fixed share of investment.")}
-          {field("taxRatePct", "Effective property tax rate (%)", 0, 5, 0.05)}
-          {field("abatementYears", "Abatement years", 0, 30, 1)}
-          {field("horizonYears", "Analysis horizon (years)", 1, 50, 1, "Try 15, 30 and 40 years.")}
-          <label className="block text-sm"><span className="font-semibold">Payments during abatement</span>
-            <select aria-label="Payments during abatement" className={inputClass} value={inp.paymentMode}
-              onChange={e => setInp(prev => ({ ...prev, paymentMode: e.target.value as DealInputs["paymentMode"] }))}>
-              <option value="fixed">Fixed annual total</option><option value="share">Share of full property tax</option>
-            </select>
-          </label>
-          {inp.paymentMode === "fixed" ? field("feeM", "Annual public payment ($M)", 0, 100, 0.1, "All included property taxes and fees; do not add them twice.") :
-            field("paymentSharePct", "Annual payment share (%)", 0, 100, 1)}
-          {inp.paymentMode === "share" && field("minimumPaymentM", "Minimum annual payment ($M)", 0, 100, 0.1, "Floor applies to the total, not an additional fee.")}
-          {field("buildWithoutPct", "Build probability without break (%)", 0, 100, 1, "User assumption; 50% is not a research estimate.")}
-          {field("buildWithPct", "Build probability with deal (%)", 0, 100, 1, "An approved deal does not guarantee construction.")}
+    <div className="dc-example-note"><span className="dc-note-marker">i</span><p>These are <strong>scenarios, not audited project returns.</strong> The Dalles examples use a signed agreement; Hillsboro uses published program rules. Unknowns are filled with visible assumptions.</p></div>
+
+    <div className="dc-calc-grid">
+      <div className="dc-calc-controls" id="dc-assumptions">
+        <div className="dc-step-heading"><span className="dc-kicker">02 / Test the big unknown</span><button type="button" className="dc-text-button" onClick={() => choose("custom")}>Start custom</button></div>
+        <h3>Would it be built anyway?</h3>
+        <p className="dc-small">The more likely the project is without a tax break, the harder the break is to justify.</p>
+        <div className="dc-probability">
+          <div><label htmlFor="dc-build-chance">Chance of building without a break</label><output htmlFor="dc-build-chance">{inp.buildWithoutPct.toLocaleString("en-US", { maximumFractionDigits: 1 })}<span>%</span></output></div>
+          <input id="dc-build-chance" type="range" min="0" max="100" step="1" value={inp.buildWithoutPct} aria-label={INPUT_LABELS.buildWithoutPct} onChange={e => change("buildWithoutPct", Number(e.target.value))} />
+          <div className="dc-range-labels"><span>Needs the deal</span><span>Would build anyway</span></div>
+          <div className="dc-probability-options">{[[25, "Unlikely"], [50, "50 / 50"], [100, "Certain"]].map(([n, label]) => <button type="button" key={n} aria-pressed={inp.buildWithoutPct === n} onClick={() => change("buildWithoutPct", Number(n))}>{label}</button>)}</div>
+          <p className="dc-fine">An assumption you control. We do not know this probability for these sites.</p>
         </div>
-        <details className="mt-5 border-t border-[var(--color-parchment)] pt-4">
-          <summary className="cursor-pointer font-semibold text-sm py-2">Adjust costs, operating life and other receipts</summary>
-          <div className="mt-3 grid gap-4 sm:grid-cols-2">
-            {field("operatingYears", "Operating life (years)", 0, 50, 1, "Both build scenarios use this life; then only baseline receipts remain.")}
-            {field("discountPct", "Real discount rate (%)", 0, 15, 0.5)}
-            {field("baselineM", "Annual no-build land receipts ($M)", 0, 100, 0.01)}
-            {field("serviceCostM", "Annual incremental public costs ($M)", 0, 100, 0.1, "Enter costs for the selected perspective; zero means unpriced.")}
-            {field("upfrontM", "One-time deal payment ($M)", 0, 1000, 0.1, "Simplified to year 1, conditional on construction.")}
-            {field("constructionLocalM", "Local construction tax receipts ($M)", 0, 1000, 0.1, "One-time public receipts, not construction spending.")}
-            {field("constructionStateM", "State construction tax receipts ($M)", 0, 1000, 0.1, "Only used in combined Oregon view.")}
-            {field("jobs", "Permanent jobs", 0, 10000, 1)}
-            {field("wageK", "Average annual wage ($K)", 0, 1000, 1)}
-            {field("incomeTaxPct", "Effective state income tax (%)", 0, 100, 0.5, "Simplified payroll estimate; excludes displacement and tax credits.")}
+        <a className="dc-mobile-jump" href="#dc-comparison">See the comparison <ArrowRight size={15}/></a>
+        <div className="dc-main-inputs">
+          {field("taxableValueM", 0, 20000, 10)}
+          {field("taxRatePct", 0, 5, .05)}
+          {field("abatementYears", 0, 30, 1)}
+          {field("horizonYears", 1, 50, 1)}
+        </div>
+        <details className="dc-disclosure">
+          <summary><SlidersHorizontal size={16} /> Payments, jobs and other assumptions</summary>
+          <div className="dc-detail-body">
+            <div className="dc-main-inputs">
+              <label className="dc-field"><span className="dc-field-label">Payment rule</span><select aria-label="Payment rule" value={inp.paymentMode} onChange={e => setInp(prev => ({ ...prev, paymentMode: e.target.value as DealInputs["paymentMode"] }))}><option value="fixed">Fixed annual payment</option><option value="share">Share of full property tax</option><option value="stepped-share">Share that changes later</option></select><span className="dc-input-source">{provenance("paymentMode")}</span></label>
+              {inp.paymentMode === "fixed" ? field("feeM", 0, 100, .1, "Total taxes and fees; count each payment once.") : field("paymentSharePct", 0, 100, 1)}
+              {inp.paymentMode === "stepped-share" && <>{field("laterPaymentSharePct", 0, 100, 1)}{field("paymentStepYear", 1, 50, 1)}</>}
+              {inp.paymentMode !== "fixed" && field("minimumPaymentM", 0, 100, .1, "A minimum total, not an extra fee.")}
+              {field("upfrontM", 0, 1000, .1, "Counted in year 1 if built.")}
+              {field("buildWithPct", 0, 100, 1)}
+              {field("operatingYears", 0, 50, 1)}
+              {field("discountPct", 0, 15, .5)}
+              {field("baselineM", 0, 100, .01)}
+              {field("serviceCostM", 0, 100, .1, "Zero means unpriced. Enter costs for the view selected.")}
+              {field("constructionLocalM", 0, 1000, .1)}
+              {field("constructionStateM", 0, 1000, .1, "Used in the Oregon view only.")}
+              {field("jobs", 0, 10000, 1)}
+              {field("wageK", 0, 1000, 1)}
+              {field("incomeTaxPct", 0, 100, .5, "Jobs, wages and income tax affect the Oregon view only.")}
+            </div>
           </div>
         </details>
-        <div className="mt-5 flex flex-wrap gap-3">
-          <button type="button" onClick={() => { setInp({ ...DEFAULT_INPUTS }); setLedger("local"); }} className="rounded-sm border border-[var(--color-sage)] px-3 py-2 text-sm">Reset assumptions</button>
-          <button type="button" onClick={download} className="rounded-sm bg-[var(--color-canopy)] px-3 py-2 text-sm text-white">Download cash flows (CSV)</button>
-        </div>
+        <details className="dc-disclosure"><summary>Where these example numbers come from</summary><div className="dc-detail-body dc-small">
+          {example ? <><p>{example.basis}</p><p>{example.assumptions}</p><a href={example.source}>Read the original source ↗</a></> : <p>All custom starting values are illustrative assumptions.</p>}
+          <p>Every example starts with the same 50% chance without a break and 100% with a deal, 30 years of operation, a 4% discount rate and $50,000 in annual land receipts. Jobs, wages and tax rates in the Oregon view are illustrative. Costs and construction receipts start at zero because they are unpriced.</p>
+        </div></details>
+        <div className="dc-calc-tools"><button type="button" onClick={() => choose(exampleId)}><RotateCcw size={15} /> Reset example</button><button type="button" onClick={download}><ArrowDownToLine size={15} /> Download CSV</button></div>
       </div>
-      <div className="rounded-sm bg-[var(--color-paper-warm)] p-5 sm:p-6">
-        <div aria-live="polite" aria-atomic="true">
-          <p className="font-mono text-xs uppercase tracking-wide">Conditional fiscal comparison · {inp.horizonYears} years</p>
-          <p className="mt-3 text-3xl font-mono font-bold text-[var(--color-canopy)]" data-testid="net-result">{money(result.net)}</p>
-          <p className="mt-2 text-sm">Expected deal receipts minus expected receipts without a break, after entered public costs.
-            {Math.abs(result.net) < 0.000001 ? " The options tie under these assumptions." : result.net > 0 ? " The entered assumptions favor the deal." : " The entered assumptions favor offering no break."}</p>
-          <p className="mt-4 text-sm font-semibold">Break-even probability without a break: {thresholdText}</p>
-          <p className="mt-1 text-xs text-[var(--color-ink-muted)]">{threshold === null ?
-            "The fully taxed build does not exceed baseline receipts after entered costs. Compare the expected values directly; no normal cutoff applies." :
-            threshold >= 0 && threshold <= 1 ? "Below this cutoff the deal has the higher modeled value; above it, no break does. This is not an estimate of the actual probability." :
-            "The threshold lies outside the possible probability range. This is a property of the inputs, not a location forecast."}</p>
+
+      <div className="dc-calc-results" id="dc-comparison">
+        <div className="dc-result-sticky">
+          <div className="dc-step-heading"><span className="dc-kicker">03 / Compare the outcomes</span><span className="dc-view-years">{inp.horizonYears} years</span></div>
+          <div className="dc-ledger-switch" role="group" aria-label="Fiscal perspective">
+            <button type="button" aria-pressed={ledger === "local"} onClick={() => setLedger("local")}>Local public money</button>
+            <button type="button" aria-pressed={ledger === "statewide"} onClick={() => setLedger("statewide")}>Local + Oregon</button>
+          </div>
+          <p className="dc-fine">{ledger === "local" ? "Host-area public receipts, before school-funding transfers." : "Adds estimated state income tax and state construction receipts."}</p>
+          <div className={"dc-verdict " + (result.net < -.000001 ? "is-negative" : "")} aria-live="polite" aria-atomic="true">
+            <span className="dc-verdict-label">{tied ? "The options break even" : result.net > 0 ? "The deal comes out ahead" : "No tax break comes out ahead"}</span>
+            <strong data-testid="net-result">{money(result.net)}</strong>
+            <p>{tied ? "The two options bring in the same modeled public money." : "The deal brings in " + money(Math.abs(result.net)) + (result.net > 0 ? " more" : " less") + " than offering no break."} <span>With these assumptions, after entered costs.</span></p>
+          </div>
+          <ReceiptBars result={result} />
+          <div className="dc-tipping-point">
+            <div><span>The break-even point</span><strong data-testid="break-even">{inRange ? (threshold! * 100).toFixed(1) + "%" : "Outside this range"}</strong></div>
+            {inRange ? <>
+              <div className="dc-threshold-track" aria-hidden="true"><span style={{ width: threshold! * 100 + "%" }} /><i style={{ left: threshold! * 100 + "%" }} /><b style={{ left: inp.buildWithoutPct + "%" }} /></div>
+              <div className="dc-range-labels"><span>Deal ahead</span><span>No break ahead</span></div>
+              <p>Below <strong>{(threshold! * 100).toFixed(1)}%</strong> chance of building anyway, the deal wins. Above it, no break wins. The dot is your assumption.</p>
+              <button type="button" className="dc-text-button" onClick={() => change("buildWithoutPct", threshold! * 100)}>Set to break-even <ArrowRight size={14} /></button>
+            </> : <p>{threshold === null ? "No standard threshold: the fully taxed project does not beat leaving the land as it is after entered costs." : threshold! > 1 ? "The deal leads throughout the 0–100% range under these inputs." : "The deal trails throughout the 0–100% range under these inputs."}</p>}
+          </div>
+          <MoneyTimeline result={result} abatementYears={inp.abatementYears} />
+          <a className="dc-mobile-jump" href="#dc-assumptions">Change the assumptions ↑</a>
+          <p className="dc-fine dc-model-limit">This is a money comparison. Water, pollution, alternative land uses and cleanup still need their own checks. Zero entered costs are unpriced, not proven to be zero.</p>
         </div>
-        <dl className="mt-5 space-y-2 text-sm">
-          {[
-            ["Expected deal value", result.evSign], ["Expected no-break value", result.evHold],
-            ["Full property tax if built", result.pvFullTax], ["Deal property receipts if built", result.pvDealProperty],
-            ["Included post-abatement property tax", result.pvPostAbatement],
-            ["Included state income tax if built", result.pvIncomeTax],
-            ["Included construction tax receipts if built", result.pvConstruction],
-            ["Entered public costs if built", result.pvCosts],
-          ].map(([label, value]) => <div key={label} className="flex justify-between gap-3 border-b border-[var(--color-parchment)] pb-2">
-            <dt>{label}</dt><dd className="font-mono whitespace-nowrap">{money(value as number)}</dd></div>)}
-        </dl>
-        <p className="mt-3 text-xs">All results are discounted present values in real dollars. A 15-year horizon with a 15-year exemption includes no post-exemption operating revenue.</p>
-        <div className="mt-5 overflow-x-auto">
-          <table className="w-full text-sm text-left">
-            <caption className="text-left font-semibold mb-2">Sensitivity to the uncertain build probability</caption>
-            <thead><tr><th scope="col" className="py-2 pr-3">Without break</th><th scope="col">Deal minus no break</th></tr></thead>
-            <tbody>{[0, 25, 50, 75, 100].map(p => <tr key={p} className="border-t border-[var(--color-parchment)]">
-              <th scope="row" className="py-2 font-normal">{p}%</th><td className="font-mono">{money(dealMath({ ...inp, buildWithoutPct: p }, ledger).net)}</td>
-            </tr>)}</tbody>
-          </table>
-        </div>
-        <p className="mt-4 text-xs leading-relaxed border-t border-[var(--color-parchment)] pt-4">
-          Unpriced: environmental effects, alternative development, closure cleanup, changing assessments, corporate taxes and utility franchise fees.
-          Jobs, receipts and costs stay constant while operating. The model assumes the same facility and start year in both build scenarios.
-          A positive result cannot establish that a project passes the six conditions.
-        </p>
       </div>
     </div>
-    <details className="mt-6 border-t border-[var(--color-parchment)] pt-4">
-      <summary className="cursor-pointer font-semibold text-sm py-2">Read the calculation</summary>
-      <div className="mt-3 space-y-2 text-sm leading-relaxed">
-        <p>For each year: full property tax = taxable value × tax rate. During the exemption, the deal pays the entered total or the greater of the tax share and payment floor; afterward it pays full tax. State income tax = jobs × wages × effective rate, in the combined view only.</p>
-        <p>Subtract entered service costs, add construction receipts and the deal payment once in year 1, then discount each flow by (1 + discount rate) raised to that year. No-build land receipts apply if the project is not built and after assumed closure.</p>
-        <p>Expected deal = q × deal-if-built + (1 − q) × no-build baseline. Expected no-break = p × fully-taxed-if-built + (1 − p) × baseline. Here q and p are the two probabilities you enter.</p>
-        <p>Break-even p = (expected deal − baseline) / (fully-taxed-if-built − baseline), provided the denominator is positive. The CSV includes every input and annual flow.</p>
-      </div>
-    </details>
+    <details className="dc-disclosure dc-calc-method"><summary>See the full numbers and calculation</summary><div className="dc-detail-body dc-method-grid">
+      <dl>{[["Expected deal value", result.evSign], ["Expected no-break value", result.evHold], ["Full property tax if built", result.pvFullTax], ["Deal property receipts if built", result.pvDealProperty], ["Included post-abatement property tax", result.pvPostAbatement], ["Included state income tax if built", result.pvIncomeTax], ["Included construction tax receipts if built", result.pvConstruction], ["Entered public costs if built", result.pvCosts]].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{money(value as number)}</dd></div>)}</dl>
+      <div className="dc-small"><p><strong>Compare like with like.</strong> Both options use the same facility, start year, operating life and constant taxable value. Full tax = taxable value × tax rate. The deal uses the entered payment rule during the break, then full tax.</p>
+      <p>Public costs are subtracted. Construction receipts and an upfront payment enter once in year 1. Each annual amount is divided by (1 + discount rate) to the power of that year, so future money is expressed in today&apos;s dollars.</p>
+      <p>Each outcome is weighted by its chance of being built; otherwise baseline land taxes apply. After closure only baseline land taxes remain. Break-even chance = (expected deal − baseline) ÷ (fully-taxed build − baseline), when that denominator is positive.</p>
+      <p>The Oregon view adds jobs × wage × effective income-tax rate, without accounting for displaced jobs or credits. School transfers, changing assessments, corporate taxes, utility franchise fees, alternative development and environmental effects are not fully modeled.</p></div>
+    </div></details>
   </div>;
 }

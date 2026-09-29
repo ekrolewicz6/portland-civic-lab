@@ -1,6 +1,6 @@
 # Data-center article revision — September 29, 2026
 
-Scope: `/deep-dives/data-centers`, its article-specific components and model, plus its teaser on the deep-dive index. This is a local editorial and calculator revision. No deployment or outreach is included. Unrelated working-tree changes were preserved.
+Scope: `/deep-dives/data-centers`, its article-specific components and model, plus its teaser on the deep-dive index. This is a local editorial and calculator revision. Production publication is authorized and follows the final checks. No outreach is included. Unrelated working-tree changes were preserved.
 
 ## Editorial corrections and evidence
 
@@ -29,7 +29,7 @@ The [Morrow County April 5, 2023 minutes](https://www.morrowcountyor.gov/sites/d
 - Local public receipts exclude state income tax. Combined Oregon receipts add modeled employee income tax and state construction receipts.
 - Both outcomes have editable construction probabilities, a no-build land-revenue baseline and a common operating life.
 - Analysis can extend beyond abatement, with full property tax in later operating years.
-- Fixed annual total or tax-share payment with a floor; optional upfront payment.
+- Fixed annual total or tax-share payment with a floor; optional upfront payment and a share that changes in a later year.
 - Entered annual public costs and construction receipts are probability-weighted and discounted.
 - Results are real-dollar present values with constant assessments, receipts and costs. Year 1 simplifies construction and upfront timing.
 - School-funding redistribution, alternative development, assessment schedules, environmental costs, cleanup, corporate taxes and utility franchise fees are not fully modeled.
@@ -39,16 +39,27 @@ The [Morrow County April 5, 2023 minutes](https://www.morrowcountyor.gov/sites/d
 
 ## Verification
 
-- `npx vitest run tests/datacenters-engine.test.ts`: 10 meaningful calculation tests.
+- `npx vitest run tests/datacenters-engine.test.ts`: 13 meaningful calculation tests, including stepped payments and chart endpoints.
 - `npx tsc --noEmit`: project type check.
 - `npx eslint 'src/app/(public)/deep-dives/data-centers' src/components/deep-dives/datacenters src/lib/datacenters tests/datacenters-engine.test.ts`: scoped lint.
 - Initial headless `agent-browser` check: article loads with meaningful content, expected controls and no framework overlay.
-- `node research/data-centers-2026-09-29/verify-browser.cjs`: calculator perspectives, probability changes, post-abatement years, contract arithmetic, CSV parity, cost edge case, reset, all nine navigation anchors, disclosures and mobile layouts. The script asserts no page/console errors or same-origin HTTP errors.
-- Default preview: `http://127.0.0.1:3165`. Override with `DC_PREVIEW_URL`.
-- Browser evidence defaults to `/tmp/data-centers-verification`; override with `DC_VERIFY_OUTPUT`. Viewports: 1440px, 390px and 320px.
+- `node research/data-centers-2026-09-29/verify-browser.cjs`: calculator perspectives, probability changes, post-abatement years, contract arithmetic, CSV parity, cost edge case, reset, all article navigation anchors, disclosures and mobile layouts. The script asserts no page/console errors or same-origin HTTP errors.
+- Redesign preview: `http://127.0.0.1:3166`. Override with `DC_PREVIEW_URL`.
+- Browser evidence defaults to `/tmp/data-centers-redesign`; override with `DC_VERIFY_OUTPUT`. Viewports: 1440px, 1024px, 768px, 390px and 320px.
 - Generated social preview: exact metadata URL returned HTTP 200 with an image/png response; visually inspected.
 - Full production build and production deployment are outside this verification.
 
 ## Remaining reporting work
 
 Reconcile the employment estimates with their authors; obtain complete project valuation and payment schedules; check subsequent court dispositions and utility orders; obtain new responses if original reporting is commissioned. These gaps are disclosed in the article. No new responses or undocumented evidence were invented to fill them.
+
+
+## Visual redesign requested before publication
+
+The user asked for a more visual, easier-to-read article and clickable real-world examples. The page now uses an original bargain diagram, two possible-future paths, a sourced Morrow County revenue waffle, a school-funding flow, water questions, distinct ROI charts, an investment-share bar, jobs-definition comparisons and six concise agreement tests. Longer explanations remain in native disclosures.
+
+The calculator starts from the signed The Dalles agreement's Project 1 illustration, with Project 2 and a Hillsboro program illustration one click away. Each selection replaces the entire input set. Sourced terms, assumptions and user edits are labeled. All examples begin with the same build probabilities; they are not estimates of a site's bargaining power. No result is presented as an audited project return.
+
+The Hillsboro example uses the published maximum city fee of 33% in years 1–3, then 50% plus 15% school support in years 4–5. Value and rate are assumed and the application fee is omitted. The source is the City of Hillsboro's [data-center program explanation](https://www.hillsboro-oregon.gov/community/data-centers). These fee ceilings do not establish an actual project's payment or current eligibility.
+
+Results include expected-value comparison bars, a probability cutoff with an exact break-even control, and cumulative discounted receipts. The break-even point is a probability threshold, not a payback year. The shaded years identify the incentive period. Mobile links connect the assumptions and result panels. CSV downloads include every input and yearly payment, allowing the stepped rule and contract examples to be checked independently.
