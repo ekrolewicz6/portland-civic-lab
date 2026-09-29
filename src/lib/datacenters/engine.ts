@@ -1,118 +1,100 @@
-/**
- * The deal-pricing model for the data centers deep-dive.
- *
- * The core idea: an abatement only *costs* a community the forgone taxes if
- * the facility would have been built there anyway. So the honest way to price
- * a deal is expected value over the counterfactual:
- *
- *   EV(sign the deal)  = PV(fees during abatement)
- *                      + PV(full taxes after abatement)
- *                      + PV(income taxes from the jobs)          [state ledger]
- *
- *   EV(hold firm)      = p × [PV(full taxes) + PV(income taxes)]
- *                      + (1 − p) × PV(baseline land revenue ≈ 0)
- *
- * where p = the probability the company builds with NO tax break ("leverage").
- * The deal pencils out exactly when p is below the break-even probability
- *
- *   p* = EV(sign) / [PV(full taxes) + PV(income taxes)]
- *
- * High-leverage places (Hillsboro: the fiber cables are here) have high true p,
- * so almost no abatement clears the bar. Low-leverage places (Boardman: the
- * land across the river is just as good) have low p, so a deep abatement can
- * still beat holding firm. All flows are real (inflation-adjusted) and
- * discounted; see ASSUMPTIONS for what's simplified.
+/** Conditional fiscal comparison; all amounts are real $millions.
+ * Geography does not determine a build probability. State income taxes enter
+ * only the combined ledger. Construction receipts depend on whether built.
  */
-
-export const ASSUMPTIONS = {
-  /** Analysis horizon, years — matches the long-term rural enterprise-zone term. */
-  horizonYears: 15,
-  /** Real discount rate for public cash flows. */
-  discountRate: 0.04,
-  /**
-   * Steady-state taxable value as a share of stated on-site investment.
-   * Servers (most of the investment) depreciate over ~5 years but are
-   * continuously refreshed; buildings depreciate slowly. 0.7 approximates the
-   * long-run average of that cycle under Oregon assessment rules.
-   */
-  taxableShare: 0.7,
-  /** Effective Oregon personal income tax at data-center wages. */
-  effectiveIncomeTax: 0.065,
-} as const;
-
+export type Ledger = "local" | "statewide";
 export interface DealInputs {
-  investmentM: number; // total on-site investment, $M (building + equipment)
-  taxRatePct: number; // effective property tax rate, % of taxable value
-  abatementYears: number; // 0–15
-  feeM: number; // fee-in-lieu, $M/yr during the abatement
-  jobs: number; // permanent jobs
-  wageK: number; // average wage, $K/yr
-  leveragePct: number; // p: chance they build with NO break, 0–100
+  taxableValueM: number; taxRatePct: number; abatementYears: number;
+  paymentMode: "fixed" | "share"; feeM: number; paymentSharePct: number; minimumPaymentM: number; upfrontM: number;
+  jobs: number; wageK: number; incomeTaxPct: number;
+  buildWithoutPct: number; buildWithPct: number;
+  horizonYears: number; operatingYears: number; discountPct: number;
+  baselineM: number; serviceCostM: number;
+  constructionLocalM: number; constructionStateM: number;
 }
-
+/** Illustrative assumptions, not an assessed Oregon project. */
+export const DEFAULT_INPUTS: DealInputs = {
+  taxableValueM: 1400, taxRatePct: 1.1, abatementYears: 15,
+  paymentMode: "fixed", feeM: 2.7, paymentSharePct: 50, minimumPaymentM: 0, upfrontM: 0,
+  jobs: 100, wageK: 90, incomeTaxPct: 6.5,
+  buildWithoutPct: 50, buildWithPct: 100,
+  horizonYears: 30, operatingYears: 30, discountPct: 4,
+  baselineM: 0.05, serviceCostM: 0, constructionLocalM: 0, constructionStateM: 0,
+};
+export interface CashFlow {
+  year: number; fullTaxM: number; dealPropertyM: number; incomeTaxM: number;
+  serviceCostM: number; constructionM: number; baselineM: number; discountFactor: number;
+}
 export interface DealResult {
-  /** PV of property taxes if fully taxed for the whole horizon, $M. */
-  pvFullTax: number;
-  /** PV of what the deal actually pays (fees + post-abatement taxes), $M. */
-  pvDealProperty: number;
-  /** PV of state income taxes from the permanent jobs, $M. */
-  pvIncomeTax: number;
-  /** PV of property taxes forgone under the deal, $M. */
-  pvForgone: number;
-  /** EV of signing, $M. */
-  evSign: number;
-  /** EV of holding firm at the user's leverage, $M. */
-  evHold: number;
-  /** evSign − evHold, $M. Positive = signing beats holding firm. */
-  net: number;
-  /** Break-even leverage probability, 0–1. */
-  breakEvenP: number;
-  /** PV of forgone taxes per permanent job over the horizon, $. */
-  forgonePerJob: number;
-  /** Same, per job per year, $. */
-  forgonePerJobYear: number;
+  pvFullTax: number; pvDealProperty: number; pvPostAbatement: number;
+  pvIncomeTax: number; pvCosts: number; pvBaseline: number; pvConstruction: number;
+  fullIfBuilt: number; dealIfBuilt: number; evSign: number; evHold: number; net: number;
+  breakEvenP: number | null; rows: CashFlow[];
 }
-
-/** PV of $1/yr for n years at rate d (ordinary annuity). */
-export function annuity(d: number, n: number): number {
-  if (n <= 0) return 0;
-  return (1 - Math.pow(1 + d, -n)) / d;
+export function annuity(rate: number, years: number): number {
+  if (years <= 0) return 0;
+  return rate === 0 ? years : (1 - (1 + rate) ** -years) / rate;
 }
-
-export function dealMath(inp: DealInputs): DealResult {
-  const { horizonYears: N, discountRate: d, taxableShare, effectiveIncomeTax } = ASSUMPTIONS;
-  const abateYrs = Math.min(Math.max(inp.abatementYears, 0), N);
-
-  const fullTaxPerYear = inp.investmentM * taxableShare * (inp.taxRatePct / 100); // $M/yr
-  const pvFullTax = fullTaxPerYear * annuity(d, N);
-  const pvFees = inp.feeM * annuity(d, abateYrs);
-  const pvPostAbatement = fullTaxPerYear * (annuity(d, N) - annuity(d, abateYrs));
-  const pvDealProperty = pvFees + pvPostAbatement;
-
-  const incomeTaxPerYear = (inp.jobs * inp.wageK * 1000 * effectiveIncomeTax) / 1_000_000; // $M/yr
-  const pvIncomeTax = incomeTaxPerYear * annuity(d, N);
-
-  const evSign = pvDealProperty + pvIncomeTax;
-  const p = Math.min(Math.max(inp.leveragePct / 100, 0), 1);
-  // Baseline (no facility) land revenue is ~0 for dryland/industrial-zoned sites.
-  const evHold = p * (pvFullTax + pvIncomeTax);
-
-  const denominator = pvFullTax + pvIncomeTax;
-  const breakEvenP = denominator > 0 ? Math.min(evSign / denominator, 1) : 0;
-
-  const pvForgone = pvFullTax - pvDealProperty;
-  const forgonePerJob = inp.jobs > 0 ? (pvForgone * 1_000_000) / inp.jobs : 0;
-
+export function dealMath(inp: DealInputs, ledger: Ledger = "local"): DealResult {
+  for (const [key, value] of Object.entries(inp)) {
+    if (typeof value === "number" && (!Number.isFinite(value) || value < 0)) {
+      throw new RangeError("Invalid input: " + key);
+    }
+  }
+  if ([inp.buildWithPct, inp.buildWithoutPct, inp.paymentSharePct, inp.incomeTaxPct].some(v => v > 100)) {
+    throw new RangeError("Percentages must be between 0 and 100");
+  }
+  if (inp.horizonYears < 1 || inp.horizonYears > 50 || !Number.isInteger(inp.horizonYears)
+      || !Number.isInteger(inp.operatingYears) || !Number.isInteger(inp.abatementYears)) {
+    throw new RangeError("Use whole years and a horizon of 1–50 years");
+  }
+  const fullTax = inp.taxableValueM * inp.taxRatePct / 100;
+  const income = ledger === "statewide" ? inp.jobs * inp.wageK / 1000 * inp.incomeTaxPct / 100 : 0;
+  const construction = inp.constructionLocalM + (ledger === "statewide" ? inp.constructionStateM : 0);
+  const rows: CashFlow[] = Array.from({ length: inp.horizonYears }, (_, i) => {
+    const year = i + 1;
+    const operating = year <= inp.operatingYears;
+    const payment = inp.paymentMode === "fixed" ? inp.feeM : Math.max(inp.minimumPaymentM, fullTax * inp.paymentSharePct / 100);
+    return {
+      year, fullTaxM: operating ? fullTax : 0,
+      dealPropertyM: operating ? (year <= inp.abatementYears ? payment : fullTax) + (year === 1 ? inp.upfrontM : 0) : 0,
+      incomeTaxM: operating ? income : 0, serviceCostM: operating ? inp.serviceCostM : 0,
+      constructionM: operating && year === 1 ? construction : 0,
+      baselineM: inp.baselineM, discountFactor: (1 + inp.discountPct / 100) ** -year,
+    };
+  });
+  const sum = (select: (r: CashFlow) => number) => rows.reduce((t, r) => t + select(r) * r.discountFactor, 0);
+  const pvFullTax = sum(r => r.fullTaxM);
+  const pvDealProperty = sum(r => r.dealPropertyM);
+  const pvPostAbatement = sum(r => r.year > inp.abatementYears ? r.fullTaxM : 0);
+  const pvIncomeTax = sum(r => r.incomeTaxM);
+  const pvCosts = sum(r => r.serviceCostM);
+  const pvConstruction = sum(r => r.constructionM);
+  const pvBaseline = sum(r => r.baselineM);
+  // After closure only baseline land receipts remain. No resale value or
+  // residual facility tax is assumed; remediation costs remain unpriced.
+  const afterClosure = sum(r => r.year > inp.operatingYears ? r.baselineM : 0);
+  const fullIfBuilt = pvFullTax + pvIncomeTax + pvConstruction - pvCosts + afterClosure;
+  const dealIfBuilt = pvDealProperty + pvIncomeTax + pvConstruction - pvCosts + afterClosure;
+  const q = inp.buildWithPct / 100;
+  const p = inp.buildWithoutPct / 100;
+  const evSign = q * dealIfBuilt + (1 - q) * pvBaseline;
+  const evHold = p * fullIfBuilt + (1 - p) * pvBaseline;
+  const denominator = fullIfBuilt - pvBaseline;
   return {
-    pvFullTax,
-    pvDealProperty,
-    pvIncomeTax,
-    pvForgone,
-    evSign,
-    evHold,
-    net: evSign - evHold,
-    breakEvenP,
-    forgonePerJob,
-    forgonePerJobYear: forgonePerJob / N,
+    pvFullTax, pvDealProperty, pvPostAbatement, pvIncomeTax, pvCosts, pvBaseline,
+    pvConstruction, fullIfBuilt, dealIfBuilt, evSign, evHold, net: evSign - evHold,
+    // Do not clip thresholds: outside 0–1 conveys dominance, not a probability.
+    breakEvenP: denominator > 0 ? (evSign - pvBaseline) / denominator : null, rows,
   };
+}
+export function cashFlowCsv(inp: DealInputs, ledger: Ledger): string {
+  const result = dealMath(inp, ledger);
+  return [
+    "# Illustrative fiscal scenario; real USD millions; cash flows at year end",
+    "# ledger=" + ledger + "; inputs=" + JSON.stringify(inp),
+    "year,full_tax_if_built,deal_property_if_built,income_tax_if_built,service_cost_if_built,construction_revenue_if_built,no_build_land_revenue,discount_factor",
+    ...result.rows.map(r => [r.year, r.fullTaxM, r.dealPropertyM, r.incomeTaxM, r.serviceCostM, r.constructionM, r.baselineM, r.discountFactor].join(",")),
+    "# expected_deal_pv=" + result.evSign + "; expected_no_break_pv=" + result.evHold + "; difference=" + result.net,
+  ].join("\n");
 }

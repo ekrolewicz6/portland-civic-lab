@@ -2,15 +2,16 @@ import { FileText, Video } from "lucide-react";
 import { DCAC_FOUNDATIONAL, DCAC_SESSIONS } from "@/lib/datacenters/dcac-docs";
 
 /**
- * Every document and recording the committee has posted, session by session —
+ * Selected documents and recordings from the committee, session by session —
  * the primary record behind this deep-dive.
  */
 export default function DocumentLibrary() {
   return (
     <div className="space-y-4">
+      <p className="text-sm leading-relaxed">An index assembled in August 2026, with the September preliminary report added. For later materials or changed links, use the <a className="underline" href="https://www.oregon.gov/energy/get-involved/pages/oregon-data-center-advisory-committee.aspx">official committee index</a>.</p>
       <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
         <h4 className="text-[13px] font-semibold text-[var(--color-ink)] mb-2.5">
-          Founding documents
+          Committee documents
         </h4>
         <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5">
           {DCAC_FOUNDATIONAL.map((d) => (

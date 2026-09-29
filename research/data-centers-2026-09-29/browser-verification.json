@@ -1,0 +1,25 @@
+{
+  "verifiedAt": "2026-09-29T22:35:36.176Z",
+  "route": "/deep-dives/data-centers",
+  "desktop": "1440x1000",
+  "mobileWidths": [
+    390,
+    320
+  ],
+  "errors": [],
+  "failures": [],
+  "checks": [
+    "article renders",
+    "two fiscal perspectives",
+    "probability sensitivity",
+    "post-abatement years",
+    "signed-contract annual arithmetic",
+    "CSV input and cash-flow parity",
+    "cost threshold edge case",
+    "reset",
+    "all nine article anchors",
+    "enforcement and source disclosures",
+    "mobile controls",
+    "no horizontal page overflow"
+  ]
+}

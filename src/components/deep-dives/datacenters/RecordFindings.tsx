@@ -1,3 +1,4 @@
+import { SOURCES } from "@/lib/datacenters/data";
 import { RECORD_FINDINGS } from "@/lib/datacenters/dcac-findings";
 
 /** What the committee's own record establishes, with attribution to the deck. */
@@ -18,7 +19,7 @@ export default function RecordFindings() {
                 {f.detail}
               </p>
               <p className="text-[11px] font-mono uppercase tracking-wide text-[var(--color-ink-muted)] mt-2">
-                {f.attribution}
+                <a href={SOURCES[f.sourceId].url} className="underline">{f.attribution}</a>
               </p>
             </div>
           </div>

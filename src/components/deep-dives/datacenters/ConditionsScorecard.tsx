@@ -1,67 +1,16 @@
-import { Check, Minus, X } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-import { WIN_WIN_CONDITIONS, type ConditionStatus } from "@/lib/datacenters/data";
-
-const STATUS: Record<
-  ConditionStatus,
-  { label: string; Icon: LucideIcon; badge: string; ring: string }
-> = {
-  met: {
-    label: "Met",
-    Icon: Check,
-    badge: "bg-[#e3efe7] text-[var(--color-fern)]",
-    ring: "border-[var(--color-fern)]/40",
-  },
-  partial: {
-    label: "Partial",
-    Icon: Minus,
-    badge: "bg-[#f6ecd9] text-[var(--color-ember)]",
-    ring: "border-[var(--color-ember)]/40",
-  },
-  unmet: {
-    label: "Unmet",
-    Icon: X,
-    badge: "bg-[#f6e7df] text-[var(--color-clay)]",
-    ring: "border-[var(--color-clay)]/50",
-  },
-};
-
-/**
- * The win-win test: each condition a data center deal must meet to be a net
- * gain for its host community, and where Oregon stands as of August 2026.
- */
+import { SOURCES, WIN_WIN_CONDITIONS } from "@/lib/datacenters/data";
 export default function ConditionsScorecard() {
-  return (
-    <div className="space-y-3">
-      {WIN_WIN_CONDITIONS.map((c, i) => {
-        const S = STATUS[c.status];
-        return (
-          <div
-            key={c.condition}
-            className={`flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 rounded-sm border bg-white p-5 ${S.ring}`}
-          >
-            <div
-              className={`inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1.5 ${S.badge} flex-shrink-0 self-start sm:w-[92px]`}
-            >
-              <S.Icon className="w-3.5 h-3.5" />
-              <span className="text-[10px] font-semibold uppercase tracking-[0.08em] whitespace-nowrap">
-                {S.label}
-              </span>
-            </div>
-            <div>
-              <h4 className="text-[15px] font-semibold text-[var(--color-ink)]">
-                <span className="font-mono text-[13px] text-[var(--color-ink-muted)] mr-1.5">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                {c.condition}
-              </h4>
-              <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed mt-0.5">
-                {c.evidence}
-              </p>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
+  return <div className="space-y-4">{WIN_WIN_CONDITIONS.map((c, i) =>
+    <article key={c.condition} className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
+      <p className="text-xs font-mono uppercase text-[var(--color-river-deep)]">{c.status === "partial" ? "Partial coverage" : "Not established statewide"}</p>
+      <h3 className="mt-2 text-lg font-semibold text-[var(--color-canopy)]">{i + 1}. {c.condition}</h3>
+      <p className="mt-2 text-sm leading-relaxed">{c.evidence} <a className="underline text-[var(--color-river-deep)]" href={SOURCES[c.sourceId].url}>Source: {SOURCES[c.sourceId].org}</a></p>
+      <details className="mt-3">
+        <summary className="cursor-pointer py-2 text-sm font-semibold">Proposed requirement and enforcement</summary>
+        <dl className="mt-2 space-y-3 text-sm leading-relaxed">
+          {[["Responsible authority", c.authority], ["Before approval", c.requirement], ["Public reporting", c.reporting], ["If the commitment is missed", c.enforcement]].map(([title, value]) =>
+            <div key={title}><dt className="font-semibold">{title}</dt><dd>{value}</dd></div>)}
+        </dl>
+      </details>
+    </article>)}</div>;
 }

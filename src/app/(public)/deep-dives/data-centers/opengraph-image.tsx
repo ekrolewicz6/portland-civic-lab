@@ -11,6 +11,6 @@ export default function Image() {
       headline: "Oregon built the cloud. Was it worth the bill?",
       accent: "#4a7f9e",
       description:
-        "~125 data centers, $450M+ a year in tax breaks, and a state that just hit pause. The strongest case for, the strongest case against, and the win-win test.",
+        "The competing cases, six conditions for a better agreement, and a transparent calculator for Oregon’s data-center tax deals.",
     });
 }
