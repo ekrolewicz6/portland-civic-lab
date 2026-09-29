@@ -2,3 +2,8 @@
 @media(max-width:760px){.stats{grid-template-columns:1fr;gap:22px}.stats span{max-width:none}.hero{padding:38px 0}.dek{font-size:17px}.grid{grid-template-columns:1fr}.form{grid-template-columns:1fr 1fr;padding:16px}.nav{gap:15px;font-size:13px}.section{padding:32px 0}.prose{font-size:16px}.tableScroll{margin-left:0;margin-right:0}.barLabel{font-size:12px}.title{font-size:44px}}
 @media(max-width:420px){.form{grid-template-columns:1fr}.wrap{padding:0 18px}}
 @media print{.nav,.form,.actions{display:none}.hero{background:white;color:black}.dek,.eyebrow{color:black}.page{background:white}.tableScroll{overflow:visible}.section{break-inside:avoid}}
+.barLabel{align-items:baseline;line-height:1.4}
+.barLabel>span{min-width:0}
+.barLabel strong{white-space:nowrap;font-variant-numeric:tabular-nums;font-size:14px}
+.bars figcaption{font-size:16px;line-height:1.4;font-weight:600;color:#234b38;margin-bottom:22px}
+@media(max-width:600px){.barLabel{font-size:14px;gap:12px}.barRow{margin:22px 0}.track{height:18px}}

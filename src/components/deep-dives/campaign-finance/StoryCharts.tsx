@@ -11,7 +11,7 @@ export function Evidence({ file, children = 'Download chart evidence' }: { file:
 export function SeptemberChart() {
   const rows = ['23295', '17629', '23365'].map(id => story.september.find(r => r.committee_id === id)!);
   const max = Math.max(...rows.flatMap(r => [r.pre_cents, r.post_cents]));
-  return <figure className={s.figure} data-chart="september"><figcaption><span className={s.kicker}>District 4 · a seven-day comparison</span><h3>Receipts rose for Arnold, Zimmerman and Green.</h3></figcaption>
+  return <figure className={s.figure} data-chart="september"><figcaption><span className={s.kicker}>District 4 · a seven-day comparison</span><h3>All three raised more the following week.</h3></figcaption>
     <div className={s.legend}><span><i className={s.before} />Sept. 6–12</span><span><i className={s.after} />Sept. 14–20</span></div>
     {rows.map(r => <div className={s.pairRow} key={r.committee_id}><Link href={storyCandidate(r.committee_id).href}>{r.candidate}</Link><div>{[['Before', r.pre_cents, 'before'], ['After', r.post_cents, 'after']].map(([label, cents, color]) => <div className={s.pairBar} key={String(label)}><span className={s.srOnly}>{label}: </span><div aria-hidden="true" className={s[String(color)]} style={{ width: `${Number(cents) / max * 100}%` }} /><strong>{money(Number(cents))}</strong></div>)}</div></div>)}
     <p className={s.source}>Cash excluding City matching payments. Both weeks use the same scale; September 13 is left out. Recent filings may change. <Evidence file="event-windows.csv" />.</p>
@@ -20,23 +20,23 @@ export function SeptemberChart() {
 
 export function WeeklyChart({ ids, title }: { ids: string[]; title: string }) {
   const max = Math.max(...story.weeks.filter(w => ids.includes(w.committee_id)).map(w => w.nonmatching_cents), 1);
-  return <figure className={s.figure} data-chart="weekly"><figcaption><span className={s.kicker}>January–September 2026 · weekly cash excluding City matches</span><h3>{title}</h3></figcaption><p className={s.chartNote}>Every chart uses the same dollar scale. Gold marks the biggest week. The final two weeks may change as new filings arrive.</p>
+  return <figure className={s.figure} data-chart="weekly"><figcaption><span className={s.kicker}>Weekly contributions · 2026 · no City matches</span><h3>{title}</h3></figcaption><p className={s.chartNote}>Gold marks each campaign’s biggest week. All panels run from $0 to {shortMoney(max)} per week.</p>
     <div className={s.sparkGrid}>{ids.map(id => {
       const c = storyCandidate(id); const weeks = story.weeks.filter(w => w.committee_id === id); const best = Math.max(...weeks.map(w => w.nonmatching_cents));
       const peak = c.peak2026;
       const peakWeek = peak ? weeks.find(w => w.week_start === peak.start) : undefined;
       return <div className={s.sparkPanel} key={id}><Link href={c.href}>{c.name}</Link><p>{peak ? <>{shortDate(peak.start)}–{shortDate(peak.end)}: <strong>{money(peak.cents)}</strong></> : 'No peak in these records'}</p>
-        <svg viewBox="0 0 380 115" role="img" aria-label={`${c.name}, weekly cash excluding City matching. Peak ${money(best)}. Exact weeks downloadable below.`}>
-          <rect x={360} y={0} width={20} height={100} fill="#f0e0c5" /><line x1={0} y1={100} x2={380} y2={100} stroke="#bbc5bf" />
+        <svg viewBox={`0 0 ${weeks.length * 10} 115`} role="img" aria-label={`${c.name}, weekly cash excluding City matching. Peak ${money(best)}. Exact weeks downloadable below.`}>
+          <rect x={(weeks.length-2)*10} y={0} width={20} height={100} fill="#f0e0c5" /><line x1={0} y1={100} x2={weeks.length*10} y2={100} stroke="#bbc5bf" /><line x1={0} y1={8} x2={weeks.length*10} y2={8} stroke="#d6ddd2" strokeDasharray="3 4"/>
           {weeks.map((w, i) => <rect key={w.week_start} x={i * 10 + 1} y={100 - w.nonmatching_cents / max * 92} width={8} height={w.nonmatching_cents / max * 92} fill={w.nonmatching_cents === best ? '#bb8125' : '#286955'}><title>{`${shortDate(w.week_start)}: ${money(w.nonmatching_cents)}${w.provisional ? '; may change' : ''}`}</title></rect>)}
-        </svg><div className={s.axis}><span>Jan. 5</span><span>June</span><span>Sept. 21</span></div>
-        {peak && peakWeek && <div className={s.peakSources}>
+        </svg><div className={s.axis}><span>{shortDate(weeks[0].week_start)}</span><span>{shortDate(weeks[Math.floor(weeks.length/2)].week_start)}</span><span>{shortDate(weeks.at(-1)!.week_start)}</span></div>
+        {peak && peakWeek && <details className={s.peakSources}><summary>What made up this peak?</summary>
           <span>Named individual gifts <strong>{money(peakWeek.individual_itemized_cents)}</strong></span>
           {peakWeek.nonmatching_cents > peakWeek.individual_itemized_cents + peakWeek.unidentified_cents && <span>Other named sources <strong>{money(peakWeek.nonmatching_cents - peakWeek.individual_itemized_cents - peakWeek.unidentified_cents)}</strong></span>}
           <span>Unnamed or combined gifts <strong>{money(peakWeek.unidentified_cents)}</strong></span>
           {peakWeek.public_cents > 0 && <span>Separate City matching deposit <strong>{money(peakWeek.public_cents)}</strong></span>}
           <Link href={`${BASE}/explorer?snapshot=${SNAPSHOT}&committee=${id}&start=${peak.start}&end=${peak.end}&basis=cash_contribution&matching=exclude`}>See every contribution behind this peak</Link>
-        </div>}
+        </details>}
       </div>;
     })}</div><p className={s.source}>Weeks run Monday–Sunday, based on the dates reported in filings. Some small gifts are reported in a combined row, so their exact gift dates may differ. <Evidence file="candidate-weeks.csv">Download all weekly amounts</Evidence>.</p></figure>;
 }
@@ -54,7 +54,10 @@ export function OverlapChart() {
 
 export function EndorsementChart() {
   const ids = financeFacts.links.filter(link => link.status === 'reviewed' && (link.raceId === 'portland-district-3' || link.raceId === 'portland-district-4')).map(link => link.committeeId);
-  return <figure className={s.figure} data-chart="endorsements"><figcaption><span className={s.kicker}>Six organizations · all 17 reviewed candidates</span><h3>Endorsement lists do not form two sealed camps.</h3></figcaption><div className={s.tableWrap} role="region" tabIndex={0} aria-label="Endorsement matrix, horizontally scrollable"><table className={s.matrix}><thead><tr><th scope="col">Candidate</th>{story.endorsements.map(e => <th key={e.organization} scope="col"><a href={e.url}>{e.organization}</a></th>)}</tr></thead><tbody>{ids.map(id => { const c = storyCandidate(id); return <tr key={id}><th scope="row"><Link href={c.href}>{c.name}</Link></th>{story.endorsements.map(e => { const yes = e.candidates.includes(c.name); return <td key={e.organization} data-endorsed={yes}><span aria-hidden="true">{yes ? '●' : '—'}</span><span className={s.srOnly}>{yes ? 'Listed endorsement' : 'Not on this reviewed list'}</span></td>; })}</tr>; })}</tbody></table></div><p className={s.source}>A dot means the organization lists that candidate. A dash means the candidate is not on that list—not that the organization opposes them. This is not every endorsement. Sources are linked in the column headings; Portland for All’s <a href="https://www.portlandforall.org/district4">District 4 list</a> is separate. Reviewed September 27, 2026.</p></figure>;
+  return <figure className={s.figure} data-chart="endorsements"><figcaption><span className={s.kicker}>Six organizations · 17 reviewed candidates</span><h3>Labor endorsements cross the apparent divide.</h3><p className={s.chartNote}>Compare whom each organization backs. An endorsement is separate from a donation.</p></figcaption>
+    <div className={s.endorsementCards}>{story.endorsements.map(e=><div key={e.organization}><h4><a href={e.url}>{e.organization}</a></h4><ul>{ids.map(storyCandidate).filter(c=>e.candidates.includes(c.name)).map(c=><li key={c.committeeId}><Link href={c.href}>{c.name}</Link></li>)}</ul></div>)}</div>
+    <div className={`${s.tableWrap} ${s.endorsementTable}`} role="region" tabIndex={0} aria-label="Endorsement matrix, horizontally scrollable"><table className={s.matrix}><thead><tr><th scope="col">Candidate</th>{story.endorsements.map(e => <th key={e.organization} scope="col"><a href={e.url}>{e.organization}</a></th>)}</tr></thead><tbody>{ids.map(id => { const c = storyCandidate(id); return <tr key={id}><th scope="row"><Link href={c.href}>{c.name}</Link></th>{story.endorsements.map(e => { const yes = e.candidates.includes(c.name); return <td key={e.organization} data-endorsed={yes}><span aria-hidden="true">{yes ? '●' : '—'}</span><span className={s.srOnly}>{yes ? 'Listed endorsement' : 'Not on this reviewed list'}</span></td>; })}</tr>; })}</tbody></table></div>
+    <p className={s.source}>Reviewed September 27, 2026. These are selected lists, not every endorsement. An absent name does not mean opposition. Organization names link to sources; see also Portland for All’s <a href="https://www.portlandforall.org/district4">District 4 list</a>.</p></figure>;
 }
 
 export function ReservesChart() {
