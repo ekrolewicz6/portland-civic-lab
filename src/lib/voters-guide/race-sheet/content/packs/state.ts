@@ -719,7 +719,7 @@ const governorTopics: ExtraTopic[] = [
     short: "School hours",
     question: "Require districts to keep and add classroom hours even when budgets are short?",
     context:
-      "Executive Order 26-06 (April 16, 2026) bars districts from cutting instructional time to close budget gaps, ends waivers below the minimum hours, and requires districts that cut time in 2025–26 or 2026–27 to restore it by 2027–28. Oregon students get fewer hours than those in all but a handful of states, per the order.",
+      "Executive Order 26-06 (April 16, 2026) bars districts from cutting instructional time to close budget gaps, ends waivers below the minimum hours, and requires districts that cut time in 2025–26 or 2026–27 to restore it by 2027–28. Permanent rules, up for a State Board of Education vote in October 2026, would let a district that cuts time either justify the cut publicly or restore it within two school years. Oregon students get fewer hours than those in all but a handful of states, per the order.",
   },
   {
     id: "gov-new-revenue",

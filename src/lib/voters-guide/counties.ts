@@ -27,8 +27,11 @@ function race(
     geography,
     jurisdiction: `${geography} County`,
     seats: 1,
+    // Multnomah County code uses ranked choice only when two or more candidates
+    // file (Multnomah County Elections, September 28, 2026); a one-candidate
+    // county contest is vote-for-one.
     method:
-      geography === "Multnomah" ? "Ranked choice · one seat" : "Vote for one",
+      geography === "Multnomah" && candidates.length > 1 ? "Ranked choice · one seat" : "Vote for one",
     authority,
     stakes,
     comparison,

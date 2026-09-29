@@ -159,8 +159,22 @@ const countyRcv: Evidence = {
   url: "https://multco.us/info/ranked-choice-voting-rcv",
   kind: "Election authority",
   date: "Checked September 21, 2026",
-  note: "States that voters “can rank up to 6 candidates” and that the County Chair, Auditor, Sheriff and District 2 Commissioner contests use single-winner ranked choice voting in November 2026. Six is the most the county code allows: Leah Benson, the county’s ranked choice voting project manager, told the Lab by email on September 28, 2026 that the ballot gives fewer ranks when fewer candidates file, enough for every filed candidate plus one write-in, so the Chair contest has four.",
+  note: "States that voters “can rank up to 6 candidates” and lists the County Chair, Auditor, Sheriff and District 2 Commissioner contests as single-winner ranked choice in November 2026. Leah Benson, the county’s ranked choice voting project manager, told the Lab by email on September 28, 2026 that six is the most the code allows, that the ballot gives enough ranks for every filed candidate plus one write-in (four for Chair), and that county code uses ranked choice only when two or more candidates file.",
 };
+/* The two one-candidate county contests: vote for one, per county code (see countyRcv). */
+const countySampleBallot: Evidence = {
+  label: "Multnomah County Elections · November 2026 sample ballot, ranked-choice contests (NE Portland precinct)",
+  url: "https://multco.us/file/4508-1-rcv-non-en.pdf-0/download",
+  kind: "Election authority",
+  date: "Sent by Multnomah County Elections September 28, 2026",
+  note: "Leah Benson, the county’s ranked choice voting project manager, wrote that county code uses ranked choice only when two or more candidates file, so the County Auditor and Sheriff contests, with one filed candidate each, instruct voters to vote for one. Portland’s code uses ranked choice even with one filed candidate.",
+};
+const countyVoteForOne = (raceId: string): BallotInstruction => ({
+  raceId,
+  text: "You vote for one candidate.",
+  note: "County code uses ranked choice only when two or more candidates file; one did for this office.",
+  source: countySampleBallot,
+});
 const RANKED_NOTE =
   "Ranking more people never hurts your first choice. Later choices count only if an earlier one is eliminated.";
 const ranked = (raceId: string, text = "You rank up to six candidates for one seat."): BallotInstruction => ({
@@ -964,7 +978,7 @@ contact(
 roles.push({ candidateId: "nicole-pexton", role: "Chief audit executive", from: "background" });
 primary.push({ candidateId: "nicole-pexton", sourceUrl: `${PAMPHLET}#page=38` });
 portraits["nicole-pexton"] = portrait("nicole-pexton", 38);
-ballots.push(ranked("multnomah-auditor", "You rank up to two: the one filed candidate, plus one write-in if you want."));
+ballots.push(countyVoteForOne("multnomah-auditor"));
 choice.push({
   raceId: "multnomah-auditor",
   text: "One candidate appears on the county’s checked filing list. An uncontested race still deserves a look at what the office would audit first, how fast reports would arrive and how open recommendations would be tracked.",
@@ -1030,7 +1044,7 @@ contact(
 );
 primary.push({ candidateId: "nicole-morrisey-o-donnell", sourceUrl: `${PAMPHLET}#page=38` });
 portraits["nicole-morrisey-o-donnell"] = portrait("nicole-morrisey-o-donnell", 38);
-ballots.push(ranked("multnomah-sheriff", "You rank up to two: the one filed candidate, plus one write-in if you want."));
+ballots.push(countyVoteForOne("multnomah-sheriff"));
 choice.push({
   raceId: "multnomah-sheriff",
   text: "One candidate appears on the county’s checked filing list. An uncontested race still warrants scrutiny: which independent jail-review recommendations remain open, how staffing and crime trends are measured, and what the next term would change.",
@@ -1169,7 +1183,7 @@ const multnomahTopics: ExtraTopic[] = [
     id: "mult-shs-tax",
     label: "Homeless-services tax",
     short: "SHS tax",
-    question: "Back extending Metro's homeless-services tax past 2030 at a lower rate, with tighter spending rules?",
+    question: "Back extending Metro's homeless-services tax past 2030, with tighter spending rules?",
     context:
       "Metro's 1% tax on high incomes and business profits pays 61% of the county's homeless-services budget and expires in 2030. Metro shelved a 2025 draft that would have extended it to 2050 at 0.75% after polling 53% yes; the next chance is the 2028 ballot.",
   },

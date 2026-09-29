@@ -414,7 +414,7 @@ export const legislativeRaces: Race[] = [
   race(
     "House",
     29,
-    "McLain emphasizes public education, infrastructure, civil rights and housing investment. Schimmel emphasizes implementation, fiscal discipline and measurable results, and answered the Lab’s questions on each of the Legislature’s choices.",
+    "McLain emphasizes public education, infrastructure, civil rights and housing investment. Schimmel addresses the same systems through how programs are carried out, paid for and measured, and answered the Lab’s questions on each of the Legislature’s choices.",
     [
       c(
         "Susan McLain",
