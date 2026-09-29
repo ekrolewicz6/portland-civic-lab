@@ -18,6 +18,7 @@ from common import SEMANTICS, aggregate_label, cents, identity, iso
 ROOT = Path(__file__).resolve().parents[3]
 BASE = ROOT / "runtime-data/orestar-daily"
 FROZEN = ROOT / "src/lib/campaign-finance/campaign-dynamics.json"
+EVENTS = ROOT / "src/lib/campaign-finance/timeline-events.json"
 MATCHING = ROOT / "public/data/campaign-finance/public-matching-receipts.csv"
 START = date(2025, 1, 1)
 METRICS = ("cash_cents", "public_cents", "nonmatching_cents", "individual_itemized_cents", "unidentified_cents")
@@ -157,20 +158,26 @@ def build(end: str):
         if tally["cash_cents"] != tally["public_cents"] + tally["nonmatching_cents"]:
             raise ValueError(f"Cash categories do not reconcile: {cid}")
     events = []
-    for event in frozen["events"]:
+    catalog = json.loads(EVENTS.read_text())
+    for event in catalog["events"]:
         anchor = date.fromisoformat(event["date"])
+        if anchor > ending:
+            continue
         comparisons = []
         for cid in candidates:
-            before = sum(daily[(cid, (anchor - timedelta(days=n)).isoformat())]["nonmatching_cents"] for n in range(1, 8))
-            after = None if anchor + timedelta(days=7) > ending else sum(daily[(cid, (anchor + timedelta(days=n)).isoformat())]["nonmatching_cents"] for n in range(1, 8))
-            comparisons.append({"committeeId": cid, "beforeCents": before, "afterCents": after})
+            by_basis = {}
+            for key in METRICS:
+                before = None if anchor - timedelta(days=7) < START else sum(daily[(cid, (anchor - timedelta(days=n)).isoformat())][key] for n in range(1, 8))
+                after = None if anchor + timedelta(days=7) > ending else sum(daily[(cid, (anchor + timedelta(days=n)).isoformat())][key] for n in range(1, 8))
+                by_basis[key] = {"beforeCents": before, "afterCents": after}
+            comparisons.append({"committeeId": cid, **by_basis["nonmatching_cents"], "byBasis": by_basis})
         events.append({**event, "comparisons": comparisons})
-    hash_input = json.dumps({"end": end, "source_hashes": [item["sha256"] for item in source_info], "matching": digest(MATCHING), "frozen": digest(FROZEN), "code": digest(Path(__file__))}, sort_keys=True).encode()
+    hash_input = json.dumps({"end": end, "source_hashes": [item["sha256"] for item in source_info], "matching": digest(MATCHING), "frozen": digest(FROZEN), "events": digest(EVENTS), "code": digest(Path(__file__))}, sort_keys=True).encode()
     snapshot = f"orestar-20250101-{end.replace('-', '')}-{hashlib.sha256(hash_input).hexdigest()[:12]}"
     return {"version": "orestar-daily-timeline-v1", "snapshot": snapshot, "start": "2025-01-01", "end": end,
             "generatedAt": datetime.now(timezone.utc).isoformat(), "sourceRows": total_rows, "sourceFiles": source_info,
             "definitions": {"weekly": "Gross cash on reported transaction dates in Monday-Sunday weeks; final week may be partial. City matching uses previously reviewed ORESTAR payor record groups, not a new official City disbursement reconciliation.", "scope": "Only 17 previously reviewed candidate committees and previously reviewed event anchors. Geographic, donor identity, endorsement and editorial findings are not refreshed."},
-            "weekly": weekly, "events": events, "candidateTotals": candidate_totals}
+            "weekly": weekly, "events": events, "eventCatalog": catalog["version"], "candidateTotals": candidate_totals}
 
 
 def main():
