@@ -6,6 +6,7 @@ import { FIRE_LESSONS, LESSON_SOURCES } from "@/lib/oregon-fire/lesson";
 import FireMechanicsVisual from "./FireMechanicsVisual";
 import FireCostExplorer from "./FireCostExplorer";
 import FireVideoFeature from "./FireVideoFeature";
+import WhetstonePermitCase from "./WhetstonePermitCase";
 import { LandscapeOverview, HistoryVisual, WorkVisual, TreatmentEvidence, AftermathVisual, CommunityVisual } from "./FireGuideVisuals";
 
 const visuals = [<FireMechanicsVisual key="mechanics" />, <LandscapeOverview key="landscapes" />, <HistoryVisual key="history" />, <WorkVisual key="work" />, <TreatmentEvidence key="evidence" />, <AftermathVisual key="after" />, <FireCostExplorer key="cost" />, <CommunityVisual key="community" />];
@@ -53,6 +54,7 @@ export default function FireLongGuide() {
         {i===3 && <FireVideoFeature id="XpZemPMRkDw" kicker="In practice / US Forest Service" title="Prescribed fire in the Northwest" publisher="US Forest Service · Pacific Northwest Research Station" context="See the work behind a planned burn: the landscape goal, preparation, conditions and smoke planning. Woodpecker, below, gives one Oregon project a specific purpose." watchFor={["What crews decide before ignition.","Why conditions can postpone a burn without changing its purpose.","What records would show that work actually happened."]} sourceUrl="https://www.climatehubs.usda.gov/hubs/northwest/topic/prescribed-fire-northwest" />}
         {i===0 && <div className="fire-two-questions"><div><span>During the fire / intensity</span><p>How much energy does it release?</p></div><div><span>After the fire / severity</span><p>What happened to trees, soil and habitat?</p></div></div>}
         {i===3 && <p className="fire-long-case-link"><Link href="/oregon-fire/stories/why-burn">Follow Woodpecker’s planning and burn →</Link><a href={LESSON_SOURCES.woodpecker.url}>Read OSU’s account <ArrowUpRight size={13}/></a></p>}
+        {i===3 && <WhetstonePermitCase />}
         {i===5 && <p className="fire-long-case-link"><Link href="/oregon-fire/atlas?kind=wildfire&from=2020&to=2020&scarEnd=2020&scarYears=1#explore">Explore the 2020 fire boundaries →</Link><Link href="/oregon-fire/atlas?story=egley#fire-stories">Read Egley’s one- and nine-year observations →</Link></p>}
         <p className="fire-long-takeaway">{chapter.takeaway}</p>
         <div className="fire-long-chapter-foot"><Link className="fire-deeper-link" href={`/oregon-fire/learn/${chapter.slug}`}><BookOpen size={17}/><span>Go deeper: {shortLabels[i].toLowerCase()}</span><ArrowRight size={17}/></Link><details className="fire-chapter-sources"><summary>Sources for this chapter</summary><ul>{chapter.sources.map(key=><li key={key}><a href={LESSON_SOURCES[key].url}>{LESSON_SOURCES[key].title} ↗</a></li>)}</ul></details></div>
