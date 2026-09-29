@@ -10,8 +10,11 @@ try {
   page.on('pageerror', error => errors.push(error.message));
   for (const width of [320, 390, 430, 768, 1440]) {
     await page.setViewportSize({ width, height: 950 });
-    await page.goto(base + '/deep-dives/campaign-finance', { waitUntil: 'networkidle' });
+    const response = await page.goto(base + '/deep-dives/campaign-finance', { waitUntil: 'domcontentloaded', timeout: 90000 });
+    assert.equal(response.status(), 200);
     const timeline = page.locator('figure').filter({ has: page.getByRole('heading', { name: 'Steeper lines mean money arrived faster.' }) });
+    await timeline.getByText(/^(Updated through|Timeline last updated|No newer verified timeline|New filings could not be checked)/).waitFor();
+    await page.evaluate(() => document.fonts.ready);
     for (const race of [3, 4]) {
       await timeline.getByRole('button', { name: `District ${race}`, exact: true }).click();
       for (const basis of ['nonmatching_cents', 'cash_cents', 'public_cents', 'individual_itemized_cents']) {
