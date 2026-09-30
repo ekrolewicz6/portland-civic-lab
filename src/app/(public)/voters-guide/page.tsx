@@ -352,6 +352,17 @@ export default function VotersGuidePage() {
       </section>
 
 
+      <section className={styles.districts} aria-labelledby="pb-measure-title">
+        <div className={styles.sectionHead}>
+          <p className={styles.eyebrow}>Ballot measure · November 3</p>
+          <h2 id="pb-measure-title" className={styles.sectionTitle}>Measure 26-267: participatory budgeting.</h2>
+          <p>Binding resident budget power, a permanent funding floor, and real tradeoffs. Read the strongest cases for YES and NO, with sources.</p>
+          <Link href="/deep-dives/participatory-budgeting" className={styles.cta}>
+            Read the independent analysis <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </section>
+
       <section className={styles.voting} aria-labelledby="voting-title">
         <div className={styles.votingIntro}>
           <p className={`${styles.eyebrow} ${styles.eyebrowOnCanopy}`}>

@@ -1,283 +1,55 @@
 import type { Metadata } from "next";
-import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
-import { ArrowRight, Building2, GraduationCap, Hammer, Landmark, Library, Network, Scale, Server, Store, Theater, TreePine, Users, Route } from "lucide-react";
-import { HEADLINE } from "@/lib/fpdr/data";
-import { fmtMoney } from "@/lib/fpdr/engine";
-import { DIVE_CONTAINER } from "@/components/deep-dives/shared";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { pageMeta } from "@/lib/page-meta";
+import { DEEP_DIVES, diveDate, normalizeDiveTopic, selectDeepDives } from "@/lib/deep-dives";
+import DeepDiveLibrary from "@/components/deep-dives/discovery/DeepDiveLibrary";
+import StoryCover from "@/components/deep-dives/discovery/StoryCover";
+import s from "@/components/deep-dives/discovery/discovery.module.css";
 
 export const metadata: Metadata = pageMeta({
   title: "Policy Deep-Dives",
-  description:
-    "In-depth, plain-language explainers of the Portland policy issues that matter most, with the numbers, the people, and the trade-offs laid out so anyone can understand them.",
+  description: "Explore Portland’s biggest questions through visual stories, original research and interactive tools. Browse housing, public money, elections, work and the environment.",
   path: "/deep-dives",
 });
 
-interface DeepDive {
-  href: string;
-  eyebrow: string;
-  title: string;
-  blurb: string;
-  stat: string;
-  statLabel: string;
-  icon: React.ComponentType<{ className?: string }>;
-  available: boolean;
-}
-
-const DIVES: DeepDive[] = [
-  {
-    href: "/deep-dives/campaign-finance",
-    eyebrow: "Elections & campaign money",
-    title: "The money behind Portland’s next council.",
-    blurb: "Follow the money in Districts 3 and 4: who gives, where it comes from, when it arrives, and which firms campaigns pay. Compare candidates and explore the public records behind every chart.",
-    stat: "2 races",
-    statLabel: "17 linked council campaigns · missing records stay visible",
-    icon: Network,
-    available: true,
-  },
-  {
-    href: "/deep-dives/maker-economy",
-    eyebrow: "Work & the maker economy",
-    title: "The work behind Portland’s handmade city.",
-    blurb:
-      "Follow actual projects, explore 597 public artist and craft listings, and examine the business receipts, payroll jobs, and production costs behind Portland’s maker economy.",
-    stat: "597",
-    statLabel: "public listings across four artist and craft networks",
-    icon: Hammer,
-    available: true,
-  },
-  {
-    href: "/deep-dives/pps-budget",
-    eyebrow: "Schools & public money",
-    title: "Where the next dollar goes.",
-    blurb:
-      "Portland Public Schools cut 322 positions the same year its budget hit $2.77 billion, and both facts are true. Eleven years of budget books, every audit, and the district's own watchdogs, read so you don't have to. What actually decides whether a dollar reaches a student, where money is doing less than it could, and the ten decisions, red-teamed until they survived, that would change it.",
-    stat: "$1.51",
-    statLabel: "what the $1.99 teachers levy actually delivers",
-    icon: GraduationCap,
-    available: true,
-  },
-  {
-    href: "/deep-dives/libraries",
-    eyebrow: "Libraries & public knowledge infrastructure",
-    title: "Portland just rebuilt its libraries. Now it has to decide what they're for.",
-    blurb:
-      "A $459 million bond is finished and all nineteen locations are open at full capacity. The district that owns them runs a deficit every year through 2031, even at the maximum levy. Fewer than four in ten households have a card; one building generates half the incident reports. The gap to 2040 in one chart, a real map of every branch, who has to approve what, and the decisions that can actually be made this year.",
-    stat: "38%",
-    statLabel: "of households have an active card; the 2040 target is 70%",
-    icon: Library,
-    available: true,
-  },
-  {
-    href: "/deep-dives/venue-portfolio",
-    eyebrow: "Venues & public assets",
-    title: "Every big stage in Portland belongs to you. So do the bills.",
-    blurb:
-      "The arena, the sold-out stadium, five theaters, the raceway, the town square. The public owns them all. Their repairs could top a billion dollars over the next decade, and City Hall can't say what any of its buildings earn, cost, or need. An accounting of what you own, and a plan for running it well.",
-    stat: "$1B+",
-    statLabel: "in building bills coming due by 2036",
-    icon: Theater,
-    available: true,
-  },
-  {
-    href: "/deep-dives/i-5-rose-quarter",
-    eyebrow: "Freeways",
-    title: "Portland is about to run the experiment by accident",
-    blurb:
-      "On September 11 southbound I-5 closes for five weeks and the traffic goes to I-405 and I-205, nearly what freeway-removal advocates propose permanently. Both sides' predictions, and the test that decides them, published before the closure begins.",
-    stat: "$2.1B",
-    statLabel: "for 1.8 miles, up from $450M promised in 2017",
-    icon: Route,
-    available: true,
-  },
-  {
-    href: "/deep-dives/city-budget",
-    eyebrow: "City finances",
-    title: "Portland's $8.5 billion, line by line",
-    blurb:
-      "Every fund, every bureau, every program in the FY 2026-27 adopted budget, parsed from 1,478 pages of PDF and reconciled to the dollar. Trace where the money comes from, what it buys, and which 9% Council actually controls.",
-    stat: "$8.55B",
-    statLabel: "traced to the dollar",
-    icon: Landmark,
-    available: true,
-  },
-  {
-    href: "/deep-dives/data-centers",
-    eyebrow: "Energy, water & taxes",
-    title: "Oregon built the cloud. Was it worth the bill?",
-    blurb:
-      "See what Oregon gets from data-center deals. Compare three examples, move the assumptions and find the break-even point—then follow the power, water and school-funding tradeoffs.",
-    stat: "3",
-    statLabel: "clickable examples with visible assumptions",
-    icon: Server,
-    available: true,
-  },
-  {
-    href: "/deep-dives/lloyd",
-    eyebrow: "Housing & redevelopment",
-    title: "Lloyd Center: demolished on a promise",
-    blurb:
-      "Portland's dead mall is coming down for up to 5,141 homes. But the approval requires zero affordable units and no ice rink, and the city is building fewer homes than any year since 2009. Both sides, the fine print, and an interactive look at whether the homes actually get built.",
-    stat: "5,141",
-    statLabel: "homes promised, zero of them required",
-    icon: Store,
-    available: true,
-  },
-  {
-    href: "/deep-dives/oregon-economic-development",
-    eyebrow: "Economy & government",
-    title: "Is Oregon serious about its own economy?",
-    blurb:
-      "Governor Kotek's Prosperity Council wants to blow up Business Oregon and build a Department of Commerce. The case against the agency, and the asterisks the headline numbers hide, with the scorecard, the $1B decoded, the front door no CEO would use, and a four-state field test on whether a reorg actually works.",
-    stat: "1,200 → 800",
-    statLabel: "where the job target moved after years of missing it",
-    icon: Building2,
-    available: true,
-  },
-  {
-    href: "/deep-dives/portland-growth-politics",
-    eyebrow: "Housing & taxes",
-    title: "The hidden contradictions in Portland's growth politics",
-    blurb:
-      "Portland wants affordability, climate infill, stable neighborhoods, tenant protections, progressive taxes, and enough homes for the next generation. This deep dive shows where those goals collide, who benefits, who pays, and what changes when you move the levers.",
-    stat: "120,560",
-    statLabel: "homes Portland must plan for by 2045",
-    icon: Scale,
-    available: true,
-  },
-  {
-    href: "/deep-dives/who-runs-portland",
-    eyebrow: "Power map",
-    title: "Who actually runs Portland?",
-    blurb:
-      "Portland's biggest fights often happen because power is spread across the city, county, Metro, state, transit, schools, hospitals, providers, and funders. This is the map of who owns what - and the Street-to-Stability system Civic Lab is building first.",
-    stat: "9",
-    statLabel: "major layers of civic power",
-    icon: Network,
-    available: true,
-  },
-  {
-    href: "/deep-dives/fpdr",
-    eyebrow: "Budgets & pensions",
-    title: "The pension on your property tax bill",
-    blurb:
-      "What Portland’s police and fire pensions cost you, why the levy is growing, and the competing cases for prefunding and caution—with a household calculator and an interactive funding model.",
-    stat: fmtMoney(HEADLINE.liability),
-    statLabel: "pension liability at June 2025; 0.82% backed by plan assets",
-    icon: Landmark,
-    available: true,
-  },
-  {
-    href: "/deep-dives/mass-timber",
-    eyebrow: "Housing & industry",
-    title: "Mass timber: Oregon's big housing bet",
-    blurb:
-      "Can building homes out of wood in factories help fix the housing shortage? What mass timber is, what it's good for, how much housing it can provide and at what cost, with a factory-cost calculator, the success stories, and the long graveyard of failures.",
-    stat: "491,347",
-    statLabel: "homes Oregon needs in 20 years",
-    icon: TreePine,
-    available: true,
-  },
-  {
-    href: "/deep-dives/continuum",
-    eyebrow: "Homelessness · The continuum",
-    title: "From a bed to a home: where the system breaks.",
-    blurb:
-      "An interactive guide to the barriers between needing help and reaching a home that lasts. Follow three illustrative journeys, compare reported local costs, and see how housing, care and completed handoffs fit together—with the evidence and its limits in view.",
-    stat: "3",
-    statLabel: "illustrative journeys through housing and care",
-    icon: Route,
-    available: true,
-  },
-  {
-    href: "/deep-dives/homelessness",
-    eyebrow: "Homelessness",
-    title: "Why Portland can't end homelessness",
-    blurb:
-      "Portland spends more than ever and it keeps growing. The math that explains why: the inflow/outflow simulator, who's actually homeless, the true cost of doing nothing, why nobody can see the beds, and what would actually work.",
-    stat: "+~400",
-    statLabel: "net added to the list every month",
-    icon: Users,
-    available: true,
-  },
-];
-
-export default function DeepDivesIndex() {
-  return (
-    <div className="bg-[var(--color-paper)] min-h-screen">
-      {/* Hero */}
-      <section className="relative bg-[var(--color-canopy)] text-white noise-overlay overflow-hidden">
-        <div className="absolute top-0 right-0 w-[560px] h-[560px] bg-[var(--color-canopy-light)] rounded-full blur-[180px] opacity-25 -translate-y-1/3 translate-x-1/4 pointer-events-none" />
-        <div className={`relative z-10 ${DIVE_CONTAINER} py-16 sm:py-20`}>
-          <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember)]/90">
-            <span>Portland Civic Lab</span>
-            <div className="w-8 h-px bg-[var(--color-ember)]/50" />
-            <span>Policy Deep-Dives</span>
-          </div>
-          <h1 className="mt-6 font-editorial-normal text-[40px] sm:text-[56px] lg:text-[66px] leading-[1.05] tracking-tight max-w-3xl">
-            The big issues,
-            <span className="block font-editorial italic text-[var(--color-ember-bright)]">
-              explained for everyone
-            </span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-[17px] sm:text-[19px] text-white/75 leading-relaxed">
-            Some of Portland&apos;s most important policy questions are buried in actuarial reports and
-            budget footnotes. We pull them into the open (visuals first, plain language, real
-            numbers, and interactive tools) so anyone can understand what&apos;s at stake and why.
-          </p>
-        </div>
-      </section>
-
-      {/* Dives */}
-      <section className={`${DIVE_CONTAINER} py-14 sm:py-18`}>
-        <div className="grid gap-6">
-          {DIVES.map((d) => (
-            <Link
-              key={d.href}
-              href={d.href}
-              className="group grid md:grid-cols-[1fr_auto] gap-6 items-center rounded-sm border border-[var(--color-parchment)] bg-white p-7 sm:p-9 transition-all hover:border-[var(--color-sage)] hover:shadow-[0_8px_32px_rgba(15,36,25,0.06)] hover:-translate-y-0.5"
-            >
-              <div>
-                <div className="flex items-center gap-2.5 mb-3">
-                  <d.icon className="w-5 h-5 text-[var(--color-ember)]" />
-                  <span className="text-[10px] font-mono font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">
-                    {d.eyebrow}
-                  </span>
-                </div>
-                <h2 className="font-editorial text-[26px] sm:text-[32px] text-[var(--color-ink)] leading-tight group-hover:text-[var(--color-canopy)] transition-colors">
-                  {d.title}
-                </h2>
-                <p className="mt-3 max-w-2xl text-[15px] text-[var(--color-ink-light)] leading-relaxed">
-                  {d.blurb}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-[var(--color-canopy)]">
-                  Read the deep-dive
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </div>
-              <div className="md:border-l md:border-[var(--color-parchment)] md:pl-8 md:text-right">
-                <p className="font-mono text-[34px] sm:text-[40px] font-bold text-[var(--color-canopy)] tabular-nums leading-none">
-                  {d.stat}
-                </p>
-                <p className="text-[12px] text-[var(--color-ink-muted)] mt-2 max-w-[200px] md:ml-auto leading-snug">
-                  {d.statLabel}
-                </p>
-              </div>
+export default async function DeepDivesIndex({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const params = await searchParams;
+  const first = (value: string | string[] | undefined) => Array.isArray(value) ? value[0] : value;
+  const initialFilters = { topic: normalizeDiveTopic(first(params.topic)), query: (first(params.q) ?? "").slice(0,120), sort: first(params.sort) === "title" ? "title" as const : "updated" as const };
+  const featured = selectDeepDives("all", "", "updated")[0];
+  const picks = [
+    { dive: DEEP_DIVES.find(d=>d.slug === "campaign-finance")!, label: "Before you vote" },
+    { dive: DEEP_DIVES.find(d=>d.slug === "maker-economy")!, label: "Made in Portland" },
+    { dive: DEEP_DIVES.find(d=>d.slug === "fpdr")!, label: "On your tax bill" },
+  ].filter(pick => pick.dive.slug !== featured.slug).slice(0, 2);
+  return <div className={s.page}>
+    <div className={s.wrap}>
+      <header className={s.intro}>
+        <div><p className={s.eyebrow}><span className={s.smallLine}/> Portland Civic Lab / Deep dives</p><h1><span>The city,</span>{" "}<em>explained.</em></h1></div>
+        <div className={s.introRight}><p>Get beneath the headlines. Explore the decisions shaping Portland, with clear explanations, visual stories and tools you can try.</p><a className={s.browseLink} href="#collection">Find your next question <ArrowDown size={18} aria-hidden="true"/></a></div>
+      </header>
+      <section className={s.focus} aria-labelledby="focus-heading">
+        <div className={s.sectionRule}><h2 id="focus-heading">In focus</h2><span>Three places to start</span><span className={s.rule}/></div>
+        <div className={s.focusGrid}>
+          <article className={s.feature}>
+            <Link href={`/deep-dives/${featured.slug}`} aria-labelledby="featured-story-title">
+              <div className={s.featureArt}><StoryCover slug={featured.slug}/><span className={s.featureBadge}><span/> Latest update</span></div>
+              <div className={s.featureBody}><p className={s.featureSubject}>{featured.subject}</p><h3 id="featured-story-title">{featured.title}</h3><p>{featured.description}</p><div className={s.featureBottom}><span>Updated <time dateTime={featured.updated}>{diveDate(featured.updated)}</time></span><span className={s.featureCta}>Explore the story <ArrowUpRight size={19} aria-hidden="true"/></span></div></div>
             </Link>
-          ))}
-
-          {/* Coming soon hint */}
-          <div className="rounded-sm border border-dashed border-[var(--color-parchment)] p-7 text-center">
-            <p className="text-[14px] text-[var(--color-ink-muted)]">
-              More deep-dives coming: housing, public safety spending, and climate.{" "}
-              <Link href="/contact" className="text-[var(--color-canopy)] underline underline-offset-2">
-                Suggest a topic
+          </article>
+          <div className={s.picks}>
+            {picks.map(({dive,label})=><article className={s.pick} key={dive.slug}>
+              <Link href={`/deep-dives/${dive.slug}`} aria-labelledby={`pick-${dive.slug}`}>
+                <div className={s.pickArt}><StoryCover slug={dive.slug}/></div>
+                <div className={s.pickBody}><p className={s.subject}>{label}</p><h3 id={`pick-${dive.slug}`}>{dive.title}</h3><p>{dive.description}</p><div className={s.pickBottom}><time dateTime={dive.updated}>Updated {diveDate(dive.updated)}</time><ArrowUpRight size={20} aria-hidden="true"/></div></div>
               </Link>
-              .
-            </p>
+            </article>)}
           </div>
         </div>
       </section>
+      <DeepDiveLibrary initialFilters={initialFilters}/>
+      <aside className={s.invitation}><div><p className={s.eyebrow}>The next question could be yours</p><h2>What should we look into?</h2><p>A confusing policy, an unanswered question, a decision that deserves a closer look.</p></div><Link href="/proposals">Suggest a deep dive <ArrowUpRight size={19} aria-hidden="true"/></Link></aside>
     </div>
-  );
+  </div>;
 }

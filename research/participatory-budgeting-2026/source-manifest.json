@@ -209,5 +209,44 @@
       "bytes": 7293,
       "status": "captured"
     }
+  ],
+  "campaign_packet_review_date": "2026-09-20",
+  "campaign_packet": [
+    {
+      "file": "public/research/participatory-budgeting/campaign-three-pager.pdf",
+      "sha256": "1bc6f2801d855d69116946d86b7211a9a282d028c0818701d3f0193b479da08b",
+      "bytes": 2678449,
+      "status": "reviewed; original preserved"
+    },
+    {
+      "file": "public/research/participatory-budgeting/campaign-timeline.pdf",
+      "sha256": "e789f25a117a832c010c649fa923269cb5e81eb8f02545925b77a97db12c8f6e",
+      "bytes": 483568,
+      "status": "reviewed; original preserved"
+    },
+    {
+      "file": "public/research/participatory-budgeting/policy-fact-sheet.pdf",
+      "sha256": "38d779125efcb794b5dcf135a9c85473e431db4422c9ef36d00036c169131a51",
+      "bytes": 3309669,
+      "status": "reviewed; original preserved"
+    },
+    {
+      "file": "public/research/participatory-budgeting/proposed-charter-amendment.pdf",
+      "sha256": "4223e27f03bde6cc1b4767737a85eb0574105676555f2d84bc3fbdbecac1e436",
+      "bytes": 96452,
+      "status": "reviewed; original preserved"
+    },
+    {
+      "file": "public/research/participatory-budgeting/researchers-open-letter.pdf",
+      "sha256": "ce04a57fb83f7f82d1069c6cfa556534dbeb767a43cb34fb148aef6166d4b2b6",
+      "bytes": 100896,
+      "status": "reviewed; original preserved"
+    },
+    {
+      "url": "https://www.canva.com/design/DAHVlU7XMmA/pGKOcSxGdI4Fre3xfL4bqA/edit",
+      "slides": 59,
+      "status": "all slides reviewed in browser; not downloaded",
+      "access_date": "2026-09-20"
+    }
   ]
 }

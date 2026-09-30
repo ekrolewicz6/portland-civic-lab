@@ -43,6 +43,7 @@ const nextConfig: NextConfig = {
   outputFileTracingRoot: projectRoot,
   serverExternalPackages: ["postgres", "@duckdb/node-api", "@duckdb/node-bindings"],
   outputFileTracingIncludes: {
+    "/deep-dives/participatory-budgeting": ["./research/participatory-budgeting-2026/independent-analysis.md"],
     "/deep-dives/campaign-finance": ["./server-data/campaign-finance/**", "./public/data/campaign-finance/public-matching-receipts.csv"],
     "/deep-dives/campaign-finance/**": ["./server-data/campaign-finance/**"],
     "/api/campaign-finance": ["./server-data/campaign-finance/**", "./public/data/campaign-finance/public-matching-receipts.csv"],
