@@ -148,6 +148,14 @@ const portraits = (entries: [string, number][]): Record<string, CandidatePortrai
 const kocherPriorities = site("Kocher · priorities", "https://evelynforbeaverton.com/priorities");
 const jacksonPlatform = site("Jackson · priorities", "https://www.dianaforhillsboro.com/platform.html");
 const maruggHome = site("Marugg · what Sarah will fight for (home page)", "https://www.maruggforhillsboro.com/");
+/* Her emailed answers of September 30, 2026 to the Lab's September 22 questions. */
+const maruggEmail: Evidence = {
+  label: "Marugg · emailed answers to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#marugg-2026-09-30",
+  kind: "Candidate statement",
+  date: "Received September 30, 2026",
+  note: `${NOTE} Sent by the candidate in answer to the questions the Lab sends every campaign; quoted on the brief.`,
+};
 const pantojaPriorities = site("Pantoja · priorities", "https://www.ivettepantoja.com/priorities-1");
 const delgadoIssues = site("Delgado · platform, all nine positions", "https://www.karimdelgado.com/issues");
 const wallacePriorities = site("Wallace · priorities", "https://titonianforhillsboro.com/priorities/");
@@ -819,9 +827,24 @@ const deliveries: Delivery[] = [
   }),
   delivery("diana-jackson", "money"),
   delivery("diana-jackson", "climate"),
-  delivery("sarah-marugg", "housing"),
-  delivery("sarah-marugg", "safety"),
-  delivery("sarah-marugg", "money"),
+  delivery("sarah-marugg", "housing", {
+    how: step(
+      "Build more truly affordable housing through nonprofit partnerships, responsible infill and removing unnecessary barriers, while protecting residents from displacement.",
+      maruggEmail,
+    ),
+  }),
+  delivery("sarah-marugg", "safety", {
+    how: step(
+      "Add mental-health care, addiction treatment, outreach, shelter and supportive services so police and firefighters are not the only response to people in crisis, and keep city services safe for immigrants to use and to report crimes.",
+      maruggEmail,
+    ),
+  }),
+  delivery("sarah-marugg", "money", {
+    how: step(
+      "Require large industrial developments to pay the infrastructure and service costs they create rather than shifting them onto residents, with more transparency around incentives and development agreements.",
+      maruggEmail,
+    ),
+  }),
   delivery("sarah-marugg", "climate", {
     how: step(
       "Stop further data-center buildout; for permitted facilities require compliance with environmental standards, wastewater testing and public reporting; oppose luxury private-jet expansion with stronger oversight of corporate aviation land-use decisions.",
@@ -1701,12 +1724,16 @@ const hillsboroStances: TopicStance[] = [
   stance("sarah-marugg", "hillsboro-dc-tax-breaks", "partial", "Pay fair share",
     "Would make data centers pay their fair share for the infrastructure and services they use and hold major polluters accountable; abatement fees and terms are unsaid.",
     pamphlet(16)),
-  stance("sarah-marugg", "hillsboro-utility-fees", "partial", "Utility bills count",
-    "Says affordability includes the utility bills families pay every month; the transportation-fee and sewer proposals are unsaid.",
-    pamphlet(16)),
-  stance("sarah-marugg", "hillsboro-human-rights-office", "partial", "Civil rights, sanctuary",
-    "Would defend civil rights and uphold Hillsboro’s sanctuary-city values; the Human Rights Office and legal-aid funding are unsaid.",
-    pamphlet(16)),
+  // Utility fees, the Human Rights Office and displacement: her September 30, 2026 emailed answers.
+  stance("sarah-marugg", "hillsboro-utility-fees", "partial", "Show the need first",
+    "Before raising charges on residents, wants the city to demonstrate the need, examine alternatives, protect lower-income households and make sure large industrial users pay their share; a yes or no on the January increase is unsaid.",
+    maruggEmail),
+  stance("sarah-marugg", "hillsboro-human-rights-office", "supports", "Fund office, legal aid",
+    "Supports a Human Rights Office and additional legal assistance with meaningful, accessible services for immigrants, people with disabilities, LGBTQIA+ residents and culturally diverse communities.",
+    maruggEmail),
+  stance("sarah-marugg", "hillsboro-housing-displacement", "supports", "Protections plus supply",
+    "Supports reasonable tenant protections and an anti-displacement strategy alongside responsible housing development and infill, saying Hillsboro should both increase supply and protect residents from displacement.",
+    maruggEmail),
   stance("sarah-marugg", "hillsboro-jet-hangars", "opposes", "No luxury jet hub",
     "Opposes turning Hillsboro into a luxury private-jet hub at the expense of nearby neighborhoods, clean air, quiet open spaces, wetlands and wildlife.",
     maruggHome),
