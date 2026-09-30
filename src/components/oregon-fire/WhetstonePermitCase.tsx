@@ -27,7 +27,7 @@ export default function WhetstonePermitCase() {
           <h3 id="whetstone-title">An 87-acre burn was planned. It was likely canceled.</h3>
         </div>
         <p>
-          At Whetstone Savanna near White City, a habitat burn was planned
+          At the ODOT Whetstone site near White City, a habitat burn was planned
           for prairie and oak woodland. The DEQ coordinator later said she
           believes staffing prevented the burn. A permit cannot be counted
           as acres burned.
