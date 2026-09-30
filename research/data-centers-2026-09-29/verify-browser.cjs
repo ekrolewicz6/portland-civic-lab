@@ -105,6 +105,7 @@ const path = require("node:path");
       if ([1440,390,320].includes(width)) {
         await page.screenshot({path:path.join(output,width+"-hero.png")});
         await calculator.screenshot({path:path.join(output,width+"-calculator.png")});
+        await page.locator("#jobs").screenshot({path:path.join(output,width+"-jobs.png")});
         await page.locator("#evidence").screenshot({path:path.join(output,width+"-evidence.png")});
       }
       await calculator.getByTestId("example-hillsboro").click();
