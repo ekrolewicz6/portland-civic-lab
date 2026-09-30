@@ -8,7 +8,7 @@ import { DCAC_FOUNDATIONAL, DCAC_SESSIONS } from "@/lib/datacenters/dcac-docs";
 export default function DocumentLibrary() {
   return (
     <div className="space-y-4">
-      <p className="text-sm leading-relaxed">An index assembled in August 2026, with the September preliminary report added. For later materials or changed links, use the <a className="underline" href="https://www.oregon.gov/energy/get-involved/pages/oregon-data-center-advisory-committee.aspx">official committee index</a>.</p>
+      <p className="text-sm leading-relaxed">We assembled this reading list in August 2026 and added the committee’s September report. For newer material or updated links, use the <a className="underline" href="https://www.oregon.gov/energy/get-involved/pages/oregon-data-center-advisory-committee.aspx">official committee index</a>.</p>
       <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
         <h4 className="text-[13px] font-semibold text-[var(--color-ink)] mb-2.5">
           Committee documents
@@ -49,7 +49,7 @@ export default function DocumentLibrary() {
             </ul>
           ) : (
             <p className="text-[12px] text-[var(--color-ink-muted)]">
-              Recording only — no slides posted.
+              A recording is available; no slides were posted.
             </p>
           )}
         </div>
@@ -58,6 +58,16 @@ export default function DocumentLibrary() {
   );
 }
 
+const ORGANIZATIONS: Record<string, string> = {
+  ODOE: "Oregon Department of Energy",
+  DCAC: "Data Center Advisory Committee",
+  "Oregon DEQ": "Oregon Department of Environmental Quality",
+  "Oregon PUC": "Oregon Public Utility Commission",
+  CRITFC: "Columbia River Inter-Tribal Fish Commission",
+  DLCD: "Oregon Department of Land Conservation and Development",
+  "Northern Wasco County PUD": "Northern Wasco County People’s Utility District",
+  CTUIR: "Confederated Tribes of the Umatilla Indian Reservation",
+};
 function DocLink({ title, org, url }: { title: string; org: string; url: string }) {
   return (
     <li>
@@ -72,7 +82,7 @@ function DocLink({ title, org, url }: { title: string; org: string; url: string 
           <span className="block text-[12.5px] text-[var(--color-ink)] group-hover:text-[var(--color-canopy)] leading-snug">
             {title}
           </span>
-          <span className="block text-[11px] text-[var(--color-ink-muted)]">{org}</span>
+          <span className="block text-[11px] text-[var(--color-ink-muted)]">{ORGANIZATIONS[org] ?? org}</span>
         </span>
       </a>
     </li>

@@ -9,10 +9,10 @@ export default function RateShift() {
   return (
     <div className="rounded-sm border border-white/12 bg-white/[0.05] p-6 backdrop-blur">
       <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-ember-bright)]">
-        Who pays after the POWER Act
+        How PGE’s electricity rates changed
       </div>
       <p className="mt-1.5 text-[12px] text-white/55">
-        Average rate changes under PGE&apos;s 2026 data-center rate class
+        PGE’s new rates took effect July 8, 2026, under the POWER Act, Oregon’s law addressing large electricity users.
       </p>
       <div className="mt-5 space-y-5">
         {RATE_SHIFT.map((r) => {
@@ -44,7 +44,7 @@ export default function RateShift() {
           );
         })}
       </div>
-      <a href={SOURCES.pgeRates.url} className="mt-5 inline-block text-xs text-white/75 underline underline-offset-2">Source: PGE SEC filing, July 8 implementation</a>
+      <a href={SOURCES.pgeRates.url} className="mt-5 inline-block text-xs text-white/75 underline underline-offset-2">Source: PGE’s financial filing describing the July 8 changes</a>
     </div>
   );
 }
