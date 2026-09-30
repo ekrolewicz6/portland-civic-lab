@@ -111,6 +111,34 @@
 .fire-whetstone-sequence strong { display: block; margin: .8rem 0; font: 500 clamp(1.5rem, 2.2vw, 2.2rem)/1.1 var(--font-editorial), Georgia, serif; color: #203e30; }
 .fire-whetstone-sequence p { margin: 0; line-height: 1.55; color: #3b5143; }
 
+.fire-agate-companion {
+  display: grid;
+  grid-template-columns: minmax(250px, .7fr) minmax(0, 1.3fr);
+  column-gap: clamp(2rem, 5vw, 5rem);
+  row-gap: 1.8rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: clamp(1.6rem, 3.5vw, 3rem);
+  background: #f2ebda;
+  border-left: 5px solid #bc8950;
+}
+
+.fire-agate-companion h4 {
+  margin: .65rem 0 1rem;
+  font: 500 clamp(2rem, 3.2vw, 3.1rem)/1.08 var(--font-editorial), Georgia, serif;
+  letter-spacing: -.025em;
+  color: #203e30;
+}
+
+.fire-agate-companion-intro p,
+.fire-agate-companion-facts p { margin: 0; line-height: 1.55; color: #405546; }
+
+.fire-agate-companion-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); }
+.fire-agate-companion-facts>div { padding-top: .7rem; border-top: 2px solid #bc8950; }
+.fire-agate-companion-facts span { display: block; color: #715636; font-size: .71rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.fire-agate-companion-facts strong { display: block; margin: .8rem 0; font: 500 clamp(1.3rem, 1.8vw, 1.75rem)/1.15 var(--font-editorial), Georgia, serif; color: #203e30; }
+.fire-agate-companion-credit { grid-column: 1/-1; max-width: 950px; margin: 0; padding-top: 1rem; border-top: 1px solid #d1c7af; color: #536452; font-size: .81rem; line-height: 1.55; }
+.fire-agate-companion-credit a { color: #244a37; text-underline-offset: 3px; }
+
 .fire-whetstone-source {
   display: flex;
   align-items: start;
@@ -128,7 +156,9 @@
 @media (max-width: 760px) {
   .fire-whetstone-heading,
   .fire-whetstone-decision,
-  .fire-whetstone-sequence { grid-template-columns: 1fr; }
+  .fire-whetstone-sequence,
+  .fire-agate-companion { grid-template-columns: 1fr; }
+  .fire-agate-companion-facts { grid-template-columns: 1fr; }
   .fire-whetstone-heading p { max-width: 620px; }
   .fire-whetstone-units { grid-template-columns: 1fr; gap: 1.4rem; }
   .fire-whetstone-units>div { padding-left: .8rem; border-left: 3px solid #c8a46d; }

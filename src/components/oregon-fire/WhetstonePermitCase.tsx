@@ -24,12 +24,13 @@ export default function WhetstonePermitCase() {
       <div className="fire-whetstone-heading">
         <div>
           <span className="fire-eyebrow">Inside a real decision · Jackson County, 2023</span>
-          <h3 id="whetstone-title">The plan covered 87 acres. How much actually burned?</h3>
+          <h3 id="whetstone-title">An 87-acre burn was planned. It was likely canceled.</h3>
         </div>
         <p>
-          At Whetstone Savanna near White City, a restoration burn was planned
-          around the needs of prairie, oak woodland, nearby homes, and people
-          downwind. The records reveal the decision in unusual detail.
+          At the ODOT Whetstone site near White City, a habitat burn was planned
+          for prairie and oak woodland. The DEQ coordinator later said she
+          believes staffing prevented the burn. A permit cannot be counted
+          as acres burned.
         </p>
       </div>
 
@@ -75,7 +76,7 @@ export default function WhetstonePermitCase() {
         </div>
       </div>
 
-      <ol className="fire-whetstone-sequence" aria-label="From plan to observed outcome">
+      <ol className="fire-whetstone-sequence" aria-label="From plan to reported status">
         <li>
           <span>01 / Plan</span>
           <strong>Three units, different needs</strong>
@@ -87,19 +88,51 @@ export default function WhetstonePermitCase() {
           <p>Up to seven burn days during June 7–July 7, subject to other agency approvals and conditions.</p>
         </li>
         <li>
-          <span>03 / What happened</span>
-          <strong>The acreage is still unverified</strong>
-          <p>DEQ staff described a 2023 conservation burn as conducted. The supplied plan and permit do not say which units burned, on what dates, or with what results.</p>
+          <span>03 / Latest account</span>
+          <strong>Likely canceled</strong>
+          <p>On September 29, 2026, the DEQ coordinator corrected her earlier account: she believes the Whetstone burn was canceled because of staffing. We have not seen a final cancellation record.</p>
         </li>
       </ol>
+
+      <aside className="fire-agate-companion" aria-labelledby="agate-companion-title">
+        <div className="fire-agate-companion-intro">
+          <span className="fire-eyebrow">Nearby, a different outcome</span>
+          <h4 id="agate-companion-title">At Agate Desert, the burn did happen.</h4>
+          <p>
+            A separate plan targeted the dry grass and thatch that crowd native prairie
+            plants and vernal pools. Southern Oregon Land Conservancy reports that the
+            preserve and adjacent City of Medford land were burned in June 2023.
+          </p>
+        </div>
+        <div className="fire-agate-companion-facts">
+          <div>
+            <span>Planned</span>
+            <strong>Prairie restoration</strong>
+            <p>The plan set targets for removing standing vegetation and old thatch while protecting vernal pools.</p>
+          </div>
+          <div>
+            <span>Permitted</span>
+            <strong>Up to 105 acres</strong>
+            <p>DEQ approved a conditional seven-day letter permit for the June 7–July 7 window.</p>
+          </div>
+          <div>
+            <span>Reported afterward</span>
+            <strong>Burned in June</strong>
+            <p>The land conservancy confirms the event. The exact ignition date and a completed-acre record are not in the documents we have.</p>
+          </div>
+        </div>
+        <p className="fire-agate-companion-credit">
+          Sources: Southern Oregon Land Conservancy&apos;s <a href="https://www.landconserve.org/news/2023/agaterxburn">account of the burn</a>;
+          Agate Desert Preserve prescribed-fire plan (May 2023) and Oregon DEQ letter permit 15-OB-23-002 (June 6, 2023), supplied by Jennifer Horton.
+        </p>
+      </aside>
 
       <div className="fire-whetstone-source">
         <p>
           <strong>Source:</strong> The Nature Conservancy&apos;s <cite>ODOT Whetstone Burn</cite> plan (2023),
           unit, purpose, and smoke sections; Oregon DEQ open burn letter permit
           15-OB-23-001 (June 6, 2023). Jennifer Horton of Oregon DEQ supplied
-          both records. We have requested the burn accomplishment record and
-          clarification of a permit condition before describing the fuels it authorized.
+          both records and clarified the likely status in correspondence on September 29, 2026.
         </p>
         <a href="https://www.oregon.gov/deq/aq/pages/burning-101.aspx">
           How DEQ letter permits work <ArrowUpRight size={14} />
