@@ -1,6 +1,6 @@
 # Portland's participatory budgeting measure, explained
 
-**Measure 26-267 · November 3, 2026 · Independent analysis as of September 17, 2026**
+**Measure 26-267 · November 3, 2026 · Independent analysis updated September 20, 2026**
 
 **The choice:** Should Portland guarantee residents binding authority over a portion of public spending, with a permanent annual funding minimum, or retain the current budget process and consider alternatives without that mandate?
 
@@ -17,6 +17,8 @@ A NO vote leaves the existing process in place, including elected representative
 **People deserve some power to decide, not just opportunities to comment.** Residents can identify overlooked neighborhood needs, learn how budgets work, and see a direct connection between participation and public investment. Broad resident eligibility can include people excluded from ordinary elections. A protected allocation makes the program meaningful and harder to abandon.
 
 This is more than a theoretical idea. Cambridge reports 10,172 participants in its 2026 cycle. A New York study found evidence of increased subsequent election participation among PB participants, although its observational design does not establish what Portland would experience. [Cambridge results](https://www.cambridgema.gov/news/2026/03/city-of-cambridge-announces-winning-projects-for-12th-participatory-budgeting-cycle); [New York study](https://researchers.kean.edu/en/publications/testing-the-participation-hypothesis-evidence-from-participatory-/).
+
+The supplied researchers’ letter strengthens this case: it supports this specific amendment’s combination of charter protection, meaningful resources, and evaluation. It is expert judgment, not a Portland cost estimate or outcome guarantee. [Read the letter](/research/participatory-budgeting/researchers-open-letter.pdf).
 
 **The tradeoff:** residents would secure this authority before knowing the detailed local operating plan or its results.
 
@@ -41,4 +43,4 @@ The exact first-year calculation, funding sources, administrative budget, detail
 
 **A defensible YES prioritizes durable resident power and accepts the financial and implementation risks. A defensible NO prioritizes testing and flexibility, ideally with a concrete alternative.** The evidence supports PB's potential; it does not settle whether this particular commitment is best for Portland.
 
-Read the [full analysis](independent-analysis.md) and [research notes](research-notes.md) for the detailed arguments, comparison programs, claim checks, and sources. Both campaigns were reviewed: [Your 2 Cents Portland](https://your2centspdx.com/) and [Protect Our City Services](https://www.protectourcityservices.org/). Neither campaign was contacted or asked to approve this desk-research report.
+Read the [full analysis](independent-analysis.md) and [research notes](research-notes.md) for the detailed arguments, comparison programs, claim checks, and sources. Both campaigns were reviewed: [Your 2 Cents Portland](https://your2centspdx.com/) and [Protect Our City Services](https://www.protectourcityservices.org/). The September 20 update also reviews five supplied campaign PDFs and all 59 presentation slides. Neither campaign was asked to approve this analysis.

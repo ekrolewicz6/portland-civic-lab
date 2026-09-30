@@ -13,6 +13,7 @@ const md = fs.readFileSync(path.join(dir, 'independent-analysis.md'), 'utf8');
 const headings = [...md.matchAll(/^## (.+)$/gm)].map(m => m[1]);
 const body = renderToStaticMarkup(React.createElement(ReactMarkdown, {
   remarkPlugins: [remarkGfm],
+  urlTransform: url => url.startsWith("/research/") ? `../../public${url}` : url,
   components: {
     h2: ({children}) => React.createElement('h2', {id: slug(children)}, children),
     table: ({children}) => React.createElement('div', {className: 'table-wrap', tabIndex: 0}, React.createElement('table', {}, children)),
@@ -30,8 +31,8 @@ const html = `<!doctype html>
 @media(max-width:760px){body{font-size:17px}.layout{display:block;padding:28px 20px 60px}nav{position:static;max-height:none;border-bottom:1px solid var(--line);margin-bottom:32px;padding-bottom:22px}nav a{display:inline-block;padding:5px 12px 5px 0;font-size:12px}.masthead{padding:18px 20px;flex-wrap:wrap;font-size:10px}h1{font-size:40px}h2{font-size:26px;margin-top:42px}.edition{display:none}}
 @media print{@page{margin:18mm}body{font-size:10.5pt;line-height:1.5;background:white}.masthead{padding:0 0 12px}nav{display:none}.layout{display:block;padding:25px 0 0;max-width:none}h1{font-size:32pt}h2{font-size:19pt;margin-top:26px;padding-top:18px;break-after:avoid}h3{font-size:13pt;break-after:avoid}table{font-size:8pt;min-width:0}.table-wrap{overflow:visible;break-inside:auto}tr{break-inside:avoid}th,td{padding:7px}a{color:inherit;text-decoration:underline}footer{padding:15px 0}p{orphans:3;widows:3}}
 </style></head><body><a class="skip" href="#analysis">Skip to analysis</a>
-<header class="masthead"><span>Portland · Measure 26-267</span><span>Independent voter analysis · September 17, 2026</span></header>
+<header class="masthead"><span>Portland · Measure 26-267</span><span>Independent voter analysis · September 20, 2026</span></header>
 <div class="layout"><nav aria-label="Contents"><p>In this analysis</p>${toc}<div class="edition">Research edition<br>Not an endorsement<br>Sources linked throughout</div></nav><main id="analysis"><article>${body}</article></main></div>
-<footer>Prepared from public records, campaign materials, and research. No campaign reviewed or approved this analysis. Research cutoff: September 17, 2026. This file is a local reading copy, not a published website.</footer></body></html>`;
+<footer>Prepared from public records, campaign materials, and research. No campaign reviewed or approved this analysis. Original research: September 17, 2026. Campaign packet update: September 20, 2026. This file is a local reading copy, not a published website.</footer></body></html>`;
 fs.writeFileSync(path.join(dir, 'independent-analysis.html'), html);
 console.log(`Wrote independent-analysis.html (${html.length} characters); ${headings.length} navigation links.`);

@@ -8,11 +8,13 @@
 /test-results
 /coverage
 
-# Committed research corpora and published report artifacts (~42 MB).
-# Nothing under src/ reads either directory at runtime: the only references
-# are provenance comments naming a file. Runtime assets belong in public/.
+# Exclude working research and report artifacts. The participatory-budgeting
+# page shares this one editorial source with its research edition.
 /reports
-/research
+/research/*
+!/research/participatory-budgeting-2026
+/research/participatory-budgeting-2026/*
+!/research/participatory-budgeting-2026/independent-analysis.md
 
 # Do NOT add *.pdf here: every PDF outside /reports and /research lives in
 # public/ and is served (the deep-dive "full report" links). A blanket

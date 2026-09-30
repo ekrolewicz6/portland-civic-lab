@@ -1,7 +1,7 @@
 # Who should decide Portland's next public investments?
 
 **An independent voter analysis of Measure 26-267, participatory budgeting**  
-**November 3, 2026 election · Research current through September 17, 2026**
+**November 3, 2026 election · Updated September 20, 2026 · Budget and original web review: September 17**
 
 Portland voters face a consequential choice about sharing budget power. Measure 26-267 would guarantee residents a recurring opportunity to propose public projects and choose which receive funding. It would also commit the city to an annual funding floor before Portland has tested this particular citywide system.
 
@@ -137,6 +137,26 @@ A percentage-based floor can decline when its qualifying base declines. It is no
 
 Ten-year totals depend on assumptions. Starting at $16.4 million, a flat allocation totals $164 million over ten years; 3% annual growth totals about $188 million. Those are nominal scenarios, not forecasts. They include administration if it is paid from the same allocation. They represent spending under a different decision process, not necessarily an equal increase in total city spending.
 
+## Why supporters want a charter guarantee
+
+The campaign's history changes the strongest version of the debate. Supporters are not simply asking whether residents can run a small project-selection exercise. They are asking how to make that power survive changes in political leadership and annual budget priorities.
+
+The supplied timeline describes more than a decade of advocacy, abandoned funding proposals, and eventual use of the initiative process. It is a campaign account, not an independently audited chronology. Its most relevant milestones are:
+
+| Period | What the record shows | Why it matters to the decision |
+|---|---|---|
+| **2011–2018** | The campaign traces advocacy to Occupy Portland, a 2016 mayoral pledge, a reversed 2017 cannabis-tax allocation, and an East Portland community forum in 2018. These early details are reported by the campaign; this update did not independently verify every event. | Explains why supporters view another promise of a future pilot skeptically. [Campaign timeline][packet-timeline] |
+| **2020** | A city funding-reallocation record confirms **$1 million for a participatory budgeting process with the houseless community**. The campaign says the program did not launch and its funding was later withdrawn; the cited 2020 city record alone does not verify that later withdrawal. | Establishes that a prior funding commitment was real, while leaving the complete implementation history to be documented. [City record][history2020]; [campaign timeline][packet-timeline] |
+| **2021–2023** | Youth Voice, Youth Vote used federal recovery funding for a targeted youth process in East Portland and nearby communities. The campaign timeline reports **$690,000 secured**, while the program account describes roughly **$500,000 for winning projects**. These describe different funding categories; a full reconciliation was not supplied. | There is relevant local experience. A total grant and a project pool should not be treated as interchangeable amounts. [Timeline][packet-timeline]; [organizer's program account][youth] |
+| **2022–2023** | The Charter Commission developed a PB proposal and recommended it to Council after it did not meet the direct-referral threshold. Council formally received the recommendations in January 2023. That did not place this measure on the ballot. | The record supports a more nuanced history than either “the commission rejected PB” or “voters already approved this.” [Council record][history] |
+| **2025–2026** | The campaign timeline describes the initiative effort leading to this election. The official election log establishes qualification of **1PDX2025 / Measure 26-267**. The presentation reports 78,743 submitted signatures; submitted signatures are not the same as verified signatures or YES votes. | The November vote decides this charter amendment, not the earlier proposals. [Election log][election]; [presentation, slide 2][packet-deck] |
+
+**The strongest YES inference:** ordinary budget promises have not produced a durable citywide program, so a voter-approved guarantee may be necessary.
+
+**The strongest NO inference:** failed starts can also reveal practical capacity and funding problems that a charter obligation alone cannot solve. A credible alternative should explain how it will avoid another abandoned effort.
+
+The regional pilots narrow the uncertainty: Portland is not starting with no local knowledge of PB. They do not remove the uncertainty about this proposal's citywide scale, ongoing funding floor, delivery capacity, or recession performance. Metro's first community-choice round used a $2 million pool in its District 4; its 2026 round awarded $3 million for 23 projects. Those are parks-and-nature investments with restricted purposes, not a test of every provision in Measure 26-267. [Metro program][metroprogram]; [2026 awards][metro]
+
 ## The strongest case for voting YES
 
 These are the best versions of the affirmative arguments, reconstructed from the proposal and evidence. They are not promises about what Portland will achieve.
@@ -170,6 +190,8 @@ The proposal uses residency, rather than the ordinary registered electorate, as 
 ### Protected funding can prevent a token program
 
 A program with little money or uncertain continuation may struggle to earn people's time and trust. A charter requirement gives communities a reason to invest in repeated cycles, develop skills, and expect a continuing decision-making role.
+
+The campaign policy sheet adds an institutional argument: elected officials are being asked to share their own authority, so leaving the existence and size of PB entirely to their discretion can weaken it. Three experienced PB researchers support the specific amendment for combining a mandate, meaningful resources, and adaptation through evaluation. That is a substantive defense of the charter approach, not merely a claim that PB is popular elsewhere. [Policy sheet, pages 2–3][packet-policy]; [researchers’ letter][packet-letter]
 
 **Best objection:** the same protection can preserve a weak program during a fiscal crisis.
 
@@ -242,7 +264,16 @@ The most useful comparisons separate **program design, participation, project se
 | **Seattle, 2023 vote / 2025–26 implementation** | Over 4,000 people voted in 2023; eligibility included people over 15 who lived, worked, or played in Seattle. The city describes $30 million allocated, including $2.75 million for a third-party administrator and $27.25 million for projects. | Participation scale, process cost, and time to delivery deserve scrutiny. Dividing ballots by Seattle's total population is not a valid eligible-voter turnout rate because eligibility extended beyond residents. [Vote announcement][seattlevote]; [program record][seattleprogram] |
 | **Metro, 2026 Community Choice grants** | Metro reports 23 parks-and-nature projects receiving $3 million through a process involving community proposals and online selection. | Local experience shows that restricted funding and resident project selection can coexist. It does not establish performance for a permanent citywide General Fund-linked program. [Metro results][metro] |
 | **East Portland and nearby communities, Youth Voice, Youth Vote** | The program organizer reports more than 800 youth votes selecting five projects from a roughly $500,000 project pool backed by federal recovery money. | The region has practical PB experience. This was a targeted program, not an audited test of Portland's proposed funding model. The organizer is also a PB advocate. [Program account][youth] |
+| **Helsinki, 2024** | Official records show **41,962 voters**, **€8.8 million**, and the **third** round. The city reports turnout of **7.1% of eligible residents aged 13+**, with higher participation among school-age children and substantial variation across districts. | This supports the potential to engage youth and the need to measure unequal participation. It corrects the supplied deck’s 47,200 participants, €10 million, “sixth cycle,” and population-based description of 7.1%. [Official results][helsinki-results]; [city analysis][helsinki-analysis]; [deck, slide 55][packet-deck] |
 | **Cleveland, 2023** | A proposed PB charter amendment was narrowly rejected. The county's November 9 unofficial results were about 51% NO and 49% YES. | Voters elsewhere debated similar institutional questions. A rejected measure supplies no evidence about the performance of a program that was never implemented under it. [County result, page 42][cleveland] |
+
+### The presentation makes the service choices concrete
+
+The campaign's 59-slide presentation illustrates a wide range of possible investments: safe crossings, fire equipment, accessible pools, food access, childcare, mental-health response, public restrooms, housing support, and youth programs. These are examples from other places, not promises of eligible or winning Portland projects. [Campaign presentation, slides 19–44][packet-deck]
+
+Two examples can be checked against city announcements. **Somerville's 2023 selection included $55,000 for community food access and $250,000 to accelerate bike lanes.** **Seattle's 2023 winners included $7.2 million for public-restroom staffing and maintenance and $2 million for a crisis-response team.** These records establish selection and intended uses, not independently measured benefits or completion of every project. [Somerville results][somerville]; [Seattle results][seattlevote]
+
+This matters to both sides: PB can fund useful services, so its entire budget is not automatically lost to services. But selecting a service through PB does not establish that it meets the city's most urgent need, costs less, or avoids displacing another service.
 
 ### The research supports potential, not a universal promise
 
@@ -253,6 +284,23 @@ The most useful comparisons separate **program design, participation, project se
 **Design matters.** Urban Institute guidance recommends sufficient funding, intentionally inclusive outreach, paying people for their time, multiple participation methods, follow-up, and measurement. It also recommends securing continuity through legislation after a successful pilot. These recommendations support parts of both sides' strongest arguments. Guidance is not proof that Portland's exact design will work. [Urban Institute][urban]
 
 **Our assessment:** the evidence is reasonably persuasive that well-run PB can create meaningful participation and select useful projects. It is less decisive about durable citywide trust, net fiscal efficiency, or whether a permanent minimum linked to unrestricted spending is superior to a pilot or targeted program in Portland.
+
+### What the researchers' open letter contributes
+
+An **August 30, 2026 letter by Brian Wampler, Stephanie McNulty, and Michael Touchton**, supplied by Your 2 Cents, directly assesses Measure 26-267. The authors co-wrote *Participatory Budgeting in Global Perspective* (2021). Their letter supports the measure; it is an expert assessment taking a position, rather than a neutral fiscal review or a new Portland impact study. [Read the two-page letter][packet-letter]
+
+Their strongest points are specific to the design:
+
+- **Durability with adaptation.** They favor a charter mandate that preserves room to refine implementation. This fairly distinguishes changing process rules from eliminating the protected funding floor.
+- **Enough money to matter.** They argue that small allocations can make participation unrewarding, and identify at least $1 million per 100,000 residents as a useful benchmark.
+- **Evaluation as part of the program.** They credit the explicit requirement to evaluate and improve participation and outcomes.
+- **Local civic capacity.** They see Portland's civic organizations and social movements as an asset for recruitment and implementation.
+
+The funding benchmark has a traceable basis: the Participatory Budgeting Project's **2017 scoping toolkit, page 11**, recommends that starting scale for a city or district. It is practitioner guidance from a PB-promoting organization, not an experimentally established threshold or a demonstration that Portland's exact 2% formula is optimal. $1 million per 100,000 residents equals **$10 per resident**; evaluating a Portland comparison requires consistent population, year, and treatment of administrative costs. [Scoping toolkit][scoping]
+
+The letter strengthens the YES case that a mandate and a substantial budget can be features of a successful design. It does not supply a Portland staffing budget, identify the spending displaced, estimate likely turnout, or compare this measure against a fully specified pilot. Its judgment that Portland's civic networks are favorable conditions remains a prediction. Those same networks could broaden access through outreach or dominate it if safeguards are weak; their effects should be measured.
+
+**How this changes our assessment:** a charter mandate should not be dismissed as inherently incompatible with learning. This amendment explicitly requires learning and permits process changes. The unresolved tradeoff is whether that flexibility is enough when the annual funding obligation itself cannot be suspended by ordinary program rulemaking.
 
 ### Read City Club critically, too
 
@@ -270,6 +318,11 @@ The YES website is [Your 2 Cents Portland][yes]. The NO website is [Protect Our 
 | YES: PB's international reach proves this proposal will work. | **Inference exceeds the evidence.** | Number of adopters is not a measure of project quality or proof of this funding design. [YES homepage][yes]; [research review][review] |
 | YES-side FAQ: PB does not fund ongoing city programs. | **Not a restriction in this amendment.** | PB Oregon describes one-time or limited-duration spending, but the proposed charter text does not impose that rule. [PB Oregon FAQ, question 14][pbfaq]; [amendment][measure] |
 | YES-side FAQ: Organized insiders will not dominate. | **Not guaranteed.** | Inclusive outcomes depend on recruitment, design, and implementation. [PB Oregon FAQ, question 16][pbfaq]; [participation-interest study][intereststudy] |
+| YES presentation: Finding funds across the city budget means core services will not be affected. | **Not guaranteed by the amendment.** | Slide 9 makes this assurance, but the packet does not identify an eligible, uncommitted funding portfolio sufficient to meet the obligation. Flexible sourcing is real; freedom from tradeoffs is not established. [Presentation][packet-deck]; [amendment][measure] |
+| YES materials: The allocation will grow with population. | **A forecast, not the formula.** | The legal base is prior-year adopted discretionary ongoing expenses. There is no population index; the base can rise or fall. [Policy sheet, page 3][packet-policy]; [presentation, slide 58][packet-deck]; [amendment][measure] |
+| YES three-pager: The city must run the process every year, with the first full cycle by July 2028. | **Conflates separate requirements.** | Funding is annual; the text permits an “annual or bi-annual” process and requires the first process to **begin**, not finish, by July 2028. The policy sheet discusses alternating district cycles as a possibility, not a requirement. [Three-pager, page 2][packet-three]; [policy sheet, pages 3–5][packet-policy]; [amendment][measure] |
+| YES presentation: Funding begins in FY2028–29. | **An internal inconsistency.** | Slide 58 gives this later year, while slide 9 and the amendment specify funding beginning by FY2027–28. Use the amendment. [Presentation][packet-deck]; [amendment][measure] |
+| YES presentation: PB invariably narrows participation gaps. | **Too categorical.** | Slide 45 makes a universal claim. The reviewed evidence supports potential gains and strong dependence on design; it does not establish that every program reduces inequity. [Presentation][packet-deck]; [research review][review]; [Helsinki analysis][helsinki-analysis] |
 | NO: The entire allocation is necessarily removed from core services. | **Real opportunity cost; categorical wording overreaches.** | Sources and winners are not yet known. PB can itself fund public services and potentially use suitable restricted funds. [NO homepage][no]; [amendment][measure]; [Budget Office memo][budgetmemo] |
 | NO: Nothing about the process is defined. | **Contradicted by the text.** | Six process elements are specified. Many operational details remain unresolved. [NO measure page][nomeasure]; [amendment][measure] |
 | NO homepage: Guardrails are absent and the measure does not explain auditing. | **Overstated; audit detail is limited, not absent.** | The text includes budget-law compliance, feasibility review, evaluation, and independent performance audits. The opposition's own FAQ acknowledges the audit requirement and criticizes its lack of a schedule. [NO homepage][no]; [NO FAQ][nofaq]; [amendment][measure] |
@@ -326,13 +379,30 @@ Neither vote is a reliable proxy for caring about neighborhoods, trusting ordina
 
 The evidence establishes a real opportunity and a real constraint. The opportunity is to give more residents direct authority over public investments. The constraint is a continuing claim on scarce resources, with implementation choices still ahead. **The unresolved question is whether Portland's gains from that shift in power will justify what it costs and displaces.** That is the substantive choice voters are being asked to make.
 
+## Read the supplied campaign materials
+
+All six items below informed this update. The five PDFs are preserved as supplied. The presentation remains hosted by the campaign. **Campaign attribution identifies the source of a claim; it does not imply this analysis endorses the campaign.** The official filed amendment controls when a summary differs from it.
+
+| Document | Most important contribution | How to read it |
+|---|---|---|
+| **[Researchers' open letter — 2 pages][packet-letter]** · August 30, 2026 | Expert support for a charter mandate, meaningful funding, evaluation, and Portland's civic capacity. | A reasoned pro-measure assessment; not a Portland cost estimate or a guarantee of outcomes. |
+| **[Policy fact sheet — 6 pages][packet-policy]** | Explains why advocates prefer charter protection; distinguishes Council, administrator, committee, staff, residents, and Auditor roles. | Its proposed district rotations, rulebook approval, and greater allocations to less affluent districts are implementation possibilities, not charter requirements. |
+| **[Campaign three-pager — 3 pages][packet-three]** | Concise affirmative case, everyday project examples, FAQ, and campaign-reported endorsements. | Simplified budget and timing language needs the corrections above. Endorsements are expressions of support, not evidence of program performance. |
+| **[Proposed charter amendment — 1 page][packet-text]** | The funding formula and the six required process elements. | Its extracted text matches the official amendment reviewed for this report, after removing whitespace and PDF formatting characters. The [city-hosted copy][measure] remains the authoritative citation. |
+| **[Portland advocacy timeline — 1 graphic page][packet-timeline]** | Places the proposal in a history of advocacy, funding attempts, and local pilots from 2011–2026. | A campaign chronology. The history section above distinguishes independently corroborated events from campaign accounts. |
+| **[Campaign presentation — 59 slides][packet-deck]** · accessed September 20, 2026 | Gives the case for permanence and scale, responses to objections, project examples, and international comparisons. | All slides were reviewed, including the image-based charts. The shared version is titled “9-21-26 PV”; that label is not evidence a future presentation already occurred. Figures refer to different programs, years, and eligibility rules. |
+
+The fact sheet estimates roughly **150,000 residents cannot vote in ordinary elections**, and the deck describes stronger support among certain demographic groups. No population calculation or poll methodology was supplied in this packet, so those numbers and subgroup claims are not treated here as verified measurements. Broader resident eligibility is established by the amendment itself. [Policy sheet, page 2][packet-policy]; [presentation, slides 17–18][packet-deck]
+
+The presentation's global comparisons are a useful research lead, not a standardized ranking. They mix voters, project votes, participants, total populations, annual budgets, and multiyear programs. A chart showing both spending and participation growing cannot by itself isolate whether more funding caused higher turnout. We use the separately sourced city records above rather than repeat every slide statistic as fact. [Presentation, slides 6 and 52–59][packet-deck]
+
 ## Sources and scope
 
-This report reviewed both requested campaign sites and their substantive policy pages; the official measure text and final county filing; Portland budget materials including the July supplemental ordinance; local history; official PB records from other jurisdictions; and research with different methods and findings. Links appear beside the claims they support.
+The September 17 baseline reviewed both requested campaign sites and their substantive policy pages; the official measure text and final county filing; Portland budget materials including the July supplemental ordinance; local history; official PB records from other jurisdictions; and research with different methods and findings. The September 20 update adds all five supplied PDFs, the full 59-slide presentation, and targeted checks of the new claims. Links appear beside the claims they support.
 
 Official text is used to establish requirements. Campaign pages establish campaign positions. Government project announcements establish reported selections and process facts, not independent impact evaluations. Academic and civic research inform likely benefits and risks; their findings are not treated as guarantees for Portland.
 
-This is a substantial desk review, not an exhaustive or preregistered systematic review. It does not contain original interviews, a legal opinion on unresolved implementation questions, or a current transaction-level campaign-finance audit. No campaign was asked to approve the analysis. Meeting notes were not supplied and are not inferred. See the accompanying research notes for source coverage and outstanding verification needs.
+This is a substantial desk review, not an exhaustive or preregistered systematic review. It does not contain original interviews, a legal opinion on unresolved implementation questions, or a current transaction-level campaign-finance audit. No campaign was asked to approve the analysis. The supplied campaign documents are treated as source material; private correspondence is not reproduced or treated as an interview. The September 20 update is not a complete new audit of every earlier source. Research notes record source coverage and outstanding verification needs.
 
 [election]: https://www.portland.gov/auditor/elections/2026-november-general-election-petition-and-measure-log
 [ballot]: https://multco.us/file/measure_26-267/download
@@ -369,3 +439,16 @@ This is a substantial desk review, not an exhaustive or preregistered systematic
 [cityclub]: https://www.pdxcityclub.org/wp-content/uploads/2025/05/2025-03-14-Participatory-Budgeting-final.pdf
 [charter]: https://www.portland.gov/charter
 [history]: https://www.portland.gov/council/documents/report/accepted/66-2023
+
+[packet-letter]: /research/participatory-budgeting/researchers-open-letter.pdf
+[packet-policy]: /research/participatory-budgeting/policy-fact-sheet.pdf
+[packet-three]: /research/participatory-budgeting/campaign-three-pager.pdf
+[packet-text]: /research/participatory-budgeting/proposed-charter-amendment.pdf
+[packet-timeline]: /research/participatory-budgeting/campaign-timeline.pdf
+[packet-deck]: https://www.canva.com/design/DAHVlU7XMmA/pGKOcSxGdI4Fre3xfL4bqA/edit
+[scoping]: https://www.participatorybudgeting.org/wp-content/uploads/2023/05/ScopingToolkit2017_v1.1-1.pdf
+[history2020]: https://www.portland.gov/wheeler/news/2020/10/23/police-reform-tracking-funds-reallocated-portland-police-budget-fy-20-21
+[metroprogram]: https://www.oregonmetro.gov/grants/nature-neighborhoods-community-choice-grants
+[helsinki-results]: https://omastadi.hel.fi/processes/osbu-2023/f/190/results?locale=en
+[helsinki-analysis]: https://www.hel.fi/en/news/young-people-voted-most-actively-in-omastadi
+[somerville]: https://www.somervillema.gov/news/somerville-announcing-winning-ideas-citys-first-ever-participatory-budgeting-cycle

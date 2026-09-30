@@ -146,3 +146,8 @@ The entries below identify the material used for the report and what each can es
 - With 3% nominal annual growth, first year $16.4 million: sum of $16.4 million × 1.03^t for t = 0 through 9 = approximately $188.01 million.
 
 These are illustrations. They are not city forecasts, do not estimate inflation-adjusted costs, and do not assume that PB spending is entirely additional to existing city spending.
+
+
+## September 20, 2026 campaign packet update
+
+See [campaign-materials-review.md](campaign-materials-review.md) for all six supplied items, complete slide-group coverage, new primary-source checks, changes to the assessment, and remaining evidence gaps. Earlier web review and budget cutoff remain September 17. The public article adds the researchers’ design-specific support, policy implementation rationale, advocacy history, concrete project examples, and corrections to the deck. Private correspondence and personal source attribution are excluded. The five originals are served from `public/research/participatory-budgeting/`; their hashes are recorded in the manifest.
