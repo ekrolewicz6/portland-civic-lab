@@ -19,10 +19,29 @@ test('fundraising timeline: every event stays visible, filters agree, and phone 
     }).toBe(expected);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   }
+  const markers = chart.locator('[aria-label="All events on the chart timeline"] button');
+  const dateLine = chart.locator('svg line[stroke-dasharray="5 4"]');
+  for (const width of [390, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    const first = markers.first();
+    const second = markers.nth(1);
+    await chart.locator('[aria-label="All events on the chart timeline"]').scrollIntoViewIfNeeded();
+    const scrollBeforeClick = await page.evaluate(() => window.scrollY);
+    await first.click();
+    await expect(first).toHaveAttribute('aria-pressed', 'true');
+    await expect(dateLine).toHaveCount(1);
+    await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(scrollBeforeClick);
+    const firstDateX = await dateLine.getAttribute('x1');
+
+    await second.focus();
+    const scrollBeforeKey = await page.evaluate(() => window.scrollY);
+    await page.keyboard.press('Enter');
+    await expect(second).toHaveAttribute('aria-pressed', 'true');
+    await expect(second).toBeFocused();
+    await expect(dateLine).not.toHaveAttribute('x1', firstDateX!);
+    await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(scrollBeforeKey);
+  }
   await page.setViewportSize({ width: 390, height: 844 });
-  const marker = chart.locator('[aria-label="All events on the chart timeline"] button').first();
-  await marker.focus();
-  await page.keyboard.press('Enter');
   await expect(chart.getByRole('heading', { name: 'The week before & after' })).toBeVisible();
   await chart.getByLabel('Money shown', { exact: true }).selectOption('public_cents');
   await expect(chart.locator('[class*="windowComparison"]')).toContainText('$2,800.00');

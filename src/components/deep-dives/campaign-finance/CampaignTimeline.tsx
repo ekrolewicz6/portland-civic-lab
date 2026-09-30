@@ -44,10 +44,10 @@ export function CampaignTimeline() {
   const detailRef = useRef<HTMLElement>(null);
   const [width, setWidth] = useState(1040);
   useEffect(() => {
-    if (!activeKey && !highlightWeek) return;
+    if (!highlightWeek) return;
     detailRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
     detailRef.current?.focus({ preventScroll: true });
-  }, [activeKey, highlightWeek]);
+  }, [highlightWeek]);
   useEffect(() => {
     const controller = new AbortController();
     fetch('/api/campaign-finance/daily', { signal: controller.signal }).then(async response => {
