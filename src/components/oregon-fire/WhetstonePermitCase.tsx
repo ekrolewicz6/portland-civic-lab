@@ -94,14 +94,45 @@ export default function WhetstonePermitCase() {
         </li>
       </ol>
 
+      <aside className="fire-agate-companion" aria-labelledby="agate-companion-title">
+        <div className="fire-agate-companion-intro">
+          <span className="fire-eyebrow">Nearby, a different outcome</span>
+          <h4 id="agate-companion-title">At Agate Desert, the burn did happen.</h4>
+          <p>
+            A separate plan targeted the dry grass and thatch that crowd native prairie
+            plants and vernal pools. Southern Oregon Land Conservancy reports that the
+            preserve and adjacent City of Medford land were burned in June 2023.
+          </p>
+        </div>
+        <div className="fire-agate-companion-facts">
+          <div>
+            <span>Planned</span>
+            <strong>Prairie restoration</strong>
+            <p>The plan set targets for removing standing vegetation and old thatch while protecting vernal pools.</p>
+          </div>
+          <div>
+            <span>Permitted</span>
+            <strong>Up to 105 acres</strong>
+            <p>DEQ approved a conditional seven-day letter permit for the June 7–July 7 window.</p>
+          </div>
+          <div>
+            <span>Reported afterward</span>
+            <strong>Burned in June</strong>
+            <p>The land conservancy confirms the event. The exact ignition date and a completed-acre record are not in the documents we have.</p>
+          </div>
+        </div>
+        <p className="fire-agate-companion-credit">
+          Sources: Southern Oregon Land Conservancy&apos;s <a href="https://www.landconserve.org/news/2023/agaterxburn">account of the burn</a>;
+          Agate Desert Preserve prescribed-fire plan (May 2023) and Oregon DEQ letter permit 15-OB-23-002 (June 6, 2023), supplied by Jennifer Horton.
+        </p>
+      </aside>
+
       <div className="fire-whetstone-source">
         <p>
           <strong>Source:</strong> The Nature Conservancy&apos;s <cite>ODOT Whetstone Burn</cite> plan (2023),
           unit, purpose, and smoke sections; Oregon DEQ open burn letter permit
           15-OB-23-001 (June 6, 2023). Jennifer Horton of Oregon DEQ supplied
           both records and clarified the likely status in correspondence on September 29, 2026.
-          A <a href="https://www.landconserve.org/news/2023/agaterxburn">separate Agate Desert Preserve burn</a>
-          did go ahead nearby in June 2023.
         </p>
         <a href="https://www.oregon.gov/deq/aq/pages/burning-101.aspx">
           How DEQ letter permits work <ArrowUpRight size={14} />
