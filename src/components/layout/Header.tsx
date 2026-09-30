@@ -404,7 +404,7 @@ export default function Header({
           if (closeTimer.current) window.clearTimeout(closeTimer.current);
         }}
       >
-        <div className="flex h-14 items-center justify-between gap-4 xl:gap-5 3xl:gap-10">
+        <div className="site-header-row flex h-14 items-center justify-between gap-4 xl:gap-5 3xl:gap-10">
           <Wordmark />
 
           {/* Desktop nav */}

@@ -8,17 +8,17 @@ export default function RecordFindings() {
       {RECORD_FINDINGS.map((f, i) => (
         <div key={f.claim} className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
           <div className="flex items-baseline gap-3">
-            <span className="font-mono text-[13px] font-bold text-[var(--color-ember)] flex-shrink-0">
+            <span className="font-mono text-base font-bold text-[#795423] flex-shrink-0">
               {String(i + 1).padStart(2, "0")}
             </span>
             <div>
-              <h4 className="text-[15px] font-semibold text-[var(--color-canopy)] leading-snug">
+              <h4 className="text-base font-semibold text-[var(--color-canopy)] leading-snug">
                 {f.claim}
               </h4>
-              <p className="text-[13px] text-[var(--color-ink-light)] leading-relaxed mt-1">
+              <p className="text-base text-[var(--color-ink-light)] leading-relaxed mt-1">
                 {f.detail}
               </p>
-              <p className="text-[11px] font-mono uppercase tracking-wide text-[var(--color-ink-muted)] mt-2">
+              <p className="text-[.9375rem] font-mono uppercase tracking-wide text-[var(--color-ink-muted)] mt-2">
                 <a href={SOURCES[f.sourceId].url} className="underline">{f.attribution}</a>
               </p>
             </div>

@@ -8,9 +8,9 @@ import { DCAC_FOUNDATIONAL, DCAC_SESSIONS } from "@/lib/datacenters/dcac-docs";
 export default function DocumentLibrary() {
   return (
     <div className="space-y-4">
-      <p className="text-sm leading-relaxed">We assembled this reading list in August 2026 and added the committee’s September report. For newer material or updated links, use the <a className="underline" href="https://www.oregon.gov/energy/get-involved/pages/oregon-data-center-advisory-committee.aspx">official committee index</a>.</p>
+      <p className="text-base leading-relaxed">We assembled this reading list in August 2026 and added the committee’s September report. For newer material or updated links, use the <a className="underline" href="https://www.oregon.gov/energy/get-involved/pages/oregon-data-center-advisory-committee.aspx">official committee index</a>.</p>
       <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
-        <h4 className="text-[13px] font-semibold text-[var(--color-ink)] mb-2.5">
+        <h4 className="text-base font-semibold text-[var(--color-ink)] mb-2.5">
           Committee documents
         </h4>
         <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5">
@@ -23,8 +23,8 @@ export default function DocumentLibrary() {
       {DCAC_SESSIONS.map((s) => (
         <div key={s.id} className="rounded-sm border border-[var(--color-parchment)] bg-white p-5">
           <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2.5">
-            <h4 className="text-[13px] font-semibold text-[var(--color-ink)]">
-              <span className="font-mono text-[11px] uppercase tracking-wide text-[var(--color-ember)] mr-2">
+            <h4 className="text-base font-semibold text-[var(--color-ink)]">
+              <span className="font-mono text-[.9375rem] uppercase tracking-wide text-[#795423] mr-2">
                 {s.date}
               </span>
               {s.topic}
@@ -34,7 +34,7 @@ export default function DocumentLibrary() {
                 href={s.recording}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wide text-[var(--color-river-deep)] hover:underline"
+                className="inline-flex items-center gap-1.5 text-[.9375rem] font-mono uppercase tracking-wide text-[var(--color-river-deep)] hover:underline"
               >
                 <Video className="w-3.5 h-3.5" />
                 Recording
@@ -48,7 +48,7 @@ export default function DocumentLibrary() {
               ))}
             </ul>
           ) : (
-            <p className="text-[12px] text-[var(--color-ink-muted)]">
+            <p className="text-base text-[var(--color-ink-muted)]">
               A recording is available; no slides were posted.
             </p>
           )}
@@ -75,14 +75,14 @@ function DocLink({ title, org, url }: { title: string; org: string; url: string 
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-start gap-2 py-0.5"
+        className="group flex items-start gap-2 py-2"
       >
-        <FileText className="mt-0.5 w-3.5 h-3.5 flex-shrink-0 text-[var(--color-ink-muted)] group-hover:text-[var(--color-ember)]" />
+        <FileText className="mt-0.5 w-3.5 h-3.5 flex-shrink-0 text-[var(--color-ink-muted)] group-hover:text-[#795423]" />
         <span>
-          <span className="block text-[12.5px] text-[var(--color-ink)] group-hover:text-[var(--color-canopy)] leading-snug">
+          <span className="block text-base text-[var(--color-ink)] group-hover:text-[var(--color-canopy)] leading-relaxed">
             {title}
           </span>
-          <span className="block text-[11px] text-[var(--color-ink-muted)]">{ORGANIZATIONS[org] ?? org}</span>
+          <span className="block text-[.9375rem] text-[var(--color-ink-muted)]">{ORGANIZATIONS[org] ?? org}</span>
         </span>
       </a>
     </li>
