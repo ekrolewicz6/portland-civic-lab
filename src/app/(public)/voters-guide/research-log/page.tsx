@@ -19,6 +19,24 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="marugg-2026-09-30">September 30, 2026 · Candidate response: Sarah Marugg (Hillsboro Council, Ward 1, Position A)</h2>
+        <p>
+          Sarah Marugg answered all seven gaps from the Lab’s September 22
+          email. The housing, safety and taxes columns now show how each would
+          be delivered: nonprofit partnerships, infill and fewer barriers for
+          housing; mental-health, addiction and shelter services so police and
+          firefighters are not the only responders; and requiring large
+          industrial developments to pay the costs they create, with more
+          transparency around incentives. On the city’s choices, the Human
+          Rights Office entry moves from partial to support for the office and
+          more legal aid; housing and displacement gets a first entry, tenant
+          protections and an anti-displacement strategy alongside more
+          building; and utility fees stays partial, because the answer sets
+          conditions (show the need, examine alternatives, protect
+          lower-income households) rather than a yes or no. The answers give
+          no measures of success, so those stay open. All seven appear on the
+          candidate’s page verbatim.
+        </p>
         <h2 id="rcv-vote-for-one-2026-09-29">September 29, 2026 · Correction: County Auditor and Sheriff are vote-for-one, not ranked</h2>
         <p>
           The September 28 correction below said voters could rank two

@@ -22,6 +22,7 @@ const russ = (question: string, text: string): CandidateAnswer => ({ candidateId
 const beaudoin = (question: string, text: string): CandidateAnswer => ({ candidateId: "ali-beaudoin", question, text, received: "2026-09-23" });
 const cronlund = (question: string, text: string): CandidateAnswer => ({ candidateId: "jayne-cronlund", question, text, received: "2026-09-23" });
 const schimmel = (question: string, text: string): CandidateAnswer => ({ candidateId: "brian-schimmel", question, text, received: "2026-09-28" });
+const marugg = (question: string, text: string): CandidateAnswer => ({ candidateId: "sarah-marugg", question, text, received: "2026-09-30" });
 
 export const answers: CandidateAnswer[] = [
   legree(
@@ -529,4 +530,12 @@ export const answers: CandidateAnswer[] = [
     "Data-center limits",
     "Ensure data centers pay their own way and provide meaningful public benefit without shifting infrastructure and utility costs to residents. […] Establish separate large-user utility rates, strengthen land-use and public-benefit requirements, and review Enterprise Zone incentives before authorizing new abatements. […] As demonstrated by the City of Forest Grove.",
   ),
+  // Sarah Marugg (Hillsboro Ward 1, Position A), September 30, 2026: all seven gaps from the September 22 email.
+  marugg("Rent and homes", "I support building more truly affordable housing through nonprofit partnerships, responsible infill, and removing unnecessary barriers to housing, while also protecting residents from displacement."),
+  marugg("Camps, crime and who responds", "Public safety should include mental-health care, addiction treatment, outreach, shelter and supportive services so police and firefighters are not the only response to people in crisis. Hillsboro should also remain a community where immigrants feel safe accessing city services and reporting crimes."),
+  marugg("Your bills and taxes", "Large industrial developments should pay the infrastructure and service costs they create rather than shifting those costs onto residents. I also support greater transparency around incentives and development agreements."),
+  marugg("Streets, buses and air", "I support protecting wetlands, farmland, clean air and neighborhoods while improving sidewalks, crossings, bicycle routes, transit access and accessibility for people with disabilities."),
+  marugg("Utility fees", "Affordability includes utility bills. Before increasing charges on residents, I want the city to demonstrate the need, examine alternatives, protect lower-income households and ensure large industrial users are paying their appropriate share."),
+  marugg("Human Rights Office", "I support strengthening Hillsboro’s ability to protect civil rights and help residents experiencing discrimination. I support a Human Rights Office and additional legal assistance that provides meaningful, accessible services to immigrants, people with disabilities, LGBTQIA+ residents and culturally diverse communities."),
+  marugg("Housing and displacement", "Hillsboro should both increase housing supply and protect residents from displacement. I support reasonable tenant protections and an anti-displacement strategy alongside responsible housing development and infill."),
 ];
