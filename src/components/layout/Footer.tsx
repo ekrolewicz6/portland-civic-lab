@@ -106,7 +106,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-4 xl:grid-cols-[minmax(340px,1.6fr)_repeat(4,minmax(0,1fr))]">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 xl:col-span-1">
-            <div className="flex items-center gap-2.5">
+            <div className="site-footer-brand flex items-center gap-2.5">
               <BrandMark className="h-8 w-8" />
               <h3 className="shrink-0 whitespace-nowrap font-editorial-normal text-[18px] min-[380px]:text-[22px] text-white leading-none">Portland Civic Lab</h3>
               <span className="shrink-0 whitespace-nowrap text-[9px] min-[380px]:text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember)]/70">Est. 2026</span>
