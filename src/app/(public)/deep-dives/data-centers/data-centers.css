@@ -102,11 +102,30 @@ html:has(.dc-story){scroll-behavior:auto}
 .dc-investment-bar{display:flex;height:25px;border-radius:5px;overflow:hidden;margin:20px 0 10px}
 .dc-investment-bar span:first-child{background:#407a63;width:97.46835443%}
 .dc-investment-bar span:last-child{background:#d8b282;flex:1}
-.dc-job-pair{display:flex;gap:14px;align-items:center;margin:24px 0}
-.dc-job-pair>div{flex:1}
-.dc-job-pair strong{font-size:33px;line-height:1.3;font-weight:650;display:block}
-.dc-job-pair span{font-size:11px;line-height:1.5;display:block}
-.dc-job-pair>b{font-size:27px;color:#a88b65;font-weight:400}
+/* Employment estimates have different periods and coverage, so use separate cards rather than a combined total. */
+.dc-inline-link{text-decoration:underline;text-underline-offset:3px}
+.dc-job-card{display:flex;flex-direction:column;border-top:4px solid #407a63}
+.dc-job-construction{border-top-color:#a4713c}
+.dc-job-heading{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.dc-job-heading>svg{flex-shrink:0;color:#407a63}
+.dc-job-construction .dc-job-heading>svg{color:#956230}
+.dc-job-card h3{font-size:24px;margin:22px 0 15px}
+.dc-job-count{font-size:clamp(52px,6vw,76px);font-weight:600;line-height:1;letter-spacing:-3px;color:#245c45}
+.dc-job-construction .dc-job-count{color:#956230}
+.dc-job-card .dc-job-unit{font-size:16px;line-height:1.5;margin:12px 0 20px}
+.dc-job-unit>span{font-size:12px;color:#607066}
+.dc-job-card>p:not(.dc-job-unit){margin:0 0 24px}
+.dc-job-duration{margin-top:auto;padding:17px 0 0;border-top:1px solid var(--dc-line)}
+.dc-job-track{display:block;height:8px;position:relative;margin:0 14px 15px 0;border-radius:4px;background:#407a63}
+.dc-job-track-finite{background:#ae7c46}
+.dc-job-track-finite:after{content:"";position:absolute;right:0;top:-4px;width:3px;height:16px;background:#956230}
+.dc-job-track-continuing:after{content:"";position:absolute;right:-9px;top:-4px;border-left:12px solid #407a63;border-top:8px solid transparent;border-bottom:8px solid transparent}
+.dc-job-duration p{font-size:13px}
+.dc-jobs-note{display:grid;grid-template-columns:1fr 2fr;gap:28px;border-left:3px solid #a4713c;padding:8px 0 8px 22px;margin-top:30px}
+.dc-jobs-note h3{font-size:20px;font-weight:650;line-height:1.4}
+.dc-jobs-note p{font-size:15px;line-height:1.7}
+.dc-jobs-note .dc-source{margin-top:0}
+@media(max-width:760px){.dc-jobs-note{grid-template-columns:1fr;gap:9px}.dc-job-card h3{font-size:22px}.dc-job-card{padding:24px}}
 .dc-condition-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .dc-condition{border-top:3px solid #c1cbbe;background:#fff;border-radius:0 0 13px 13px;padding:24px}
 .dc-condition.is-partial{border-color:#c79b64}
@@ -224,7 +243,7 @@ html:has(.dc-story){scroll-behavior:auto}
 @media(min-width:1600px){.dc-wrap{max-width:1560px}.dc-calc-grid{grid-template-columns:1fr 1.08fr}}
 @media(max-width:1000px){.dc-hero-grid{gap:24px;grid-template-columns:1.1fr 1fr}.dc-hero h1{letter-spacing:-1.8px}.dc-hero-graphic{padding:14px}.dc-section-heading{grid-template-columns:1fr;gap:16px}.dc-condition-grid{grid-template-columns:repeat(2,1fr)}.dc-calc-grid{grid-template-columns:1fr 1fr}.dc-calc-controls,.dc-calc-results{padding:25px 22px}.dc-policy{padding:24px}.dc-examples{padding-left:22px;padding-right:22px}.dc-example{padding:14px}.dc-example strong{font-size:15px}}
 @media(max-width:760px){.dc-hero-grid,.dc-calc-grid,.dc-evidence-grid,.dc-measure-grid,.dc-two,.dc-waffle-layout{grid-template-columns:1fr}.dc-hero{padding:42px 0}.dc-hero-graphic{max-width:450px;margin:15px auto 0;width:100%}.dc-hero-graphic svg{max-height:330px}.dc-hero h1{max-width:570px}.dc-hero p.dc-hero-deck{font-size:17px}.dc-section{padding:52px 0}.dc-section-heading{margin-bottom:28px}.dc-section-heading>p{font-size:16px}.dc-panel{padding:23px}.dc-three{grid-template-columns:1fr}.dc-policy-grid{grid-template-columns:1fr}.dc-policy{border-right:0;border-bottom:1px solid var(--dc-line)}.dc-policy h3{margin:10px 0}.dc-policy>svg{float:right}.dc-fork{grid-template-columns:1fr;gap:8px}.dc-fork-middle{padding:4px}.dc-fork-path{padding:24px}.dc-waffle-layout{grid-template-columns:1fr 1fr}.dc-school-flow{gap:6px}.dc-school-flow>div{padding:16px 6px}.dc-calc-results{border-left:0;border-top:1px solid var(--dc-line)}.dc-result-sticky{position:static}.dc-calc-start{padding:23px 22px 9px;gap:6px}.dc-examples{gap:8px}.dc-example-place{font-size:9px;letter-spacing:0}.dc-example-arrow{display:none}.dc-example{padding:13px 10px}.dc-example strong{font-size:13px}.dc-example>span:not(:first-child){font-size:10px}.dc-example small{font-size:8px;line-height:1.4}.dc-example-note{padding:15px 22px 20px}.dc-calc-controls h3{font-size:25px}.dc-calc-results{padding-top:25px}.dc-verdict>strong{font-size:60px}.dc-method-grid{grid-template-columns:1fr}.dc-calc-method{padding:0 22px}.dc-condition{padding:22px}.dc-condition h3{font-size:19px}.dc-record-grid{grid-template-columns:1fr}.dc-method-key{grid-template-columns:repeat(2,1fr)}.dc-action-banner{grid-template-columns:100px 1fr;padding:24px;gap:22px}.dc-date-block{padding-right:20px}.dc-date-block strong{font-size:62px}.dc-action-banner h3{font-size:22px}}
-@media(max-width:440px){.dc-hero h1{font-size:43px}.dc-condition-grid{grid-template-columns:1fr}.dc-examples{grid-template-columns:1fr}.dc-example{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;padding:12px 14px}.dc-example-place{grid-column:1;font-size:9px}.dc-example strong{grid-column:1;grid-row:2;font-size:14px;margin:2px 0}.dc-example>span:not(:first-child){grid-column:2;grid-row:2;align-self:center;font-size:10px}.dc-example small{grid-column:2;grid-row:1;margin:0;font-size:8px}.dc-calc-start>p{font-size:12px}.dc-main-inputs{gap:16px 11px}.dc-field-label{font-size:11px}.dc-calc-controls,.dc-calc-results{padding:23px 18px}.dc-example-note{padding-left:18px;padding-right:18px}.dc-examples{padding-left:18px;padding-right:18px}.dc-calc-start{padding-left:18px;padding-right:18px}.dc-waffle-layout{gap:16px}.dc-waffle{gap:3px}.dc-stat-caption{font-size:12px}.dc-water-row{gap:10px}.dc-water-row strong{font-size:12px}.dc-water-row p{font-size:11px}.dc-job-pair strong{font-size:28px}.dc-action-banner{grid-template-columns:1fr;gap:20px}.dc-date-block{border-right:0;border-bottom:1px solid #bdcab5;padding:0 0 18px;display:flex;align-items:baseline;justify-content:center;gap:12px}.dc-date-block strong{font-size:55px}.dc-sources-grid{grid-template-columns:1fr}.dc-kicker{font-size:9px;letter-spacing:.12em}.dc-step-heading{align-items:center}.dc-step-heading>.dc-kicker{max-width:180px}.dc-calc-controls h3{font-size:23px}.dc-probability label{max-width:155px}}
+@media(max-width:440px){.dc-hero h1{font-size:43px}.dc-condition-grid{grid-template-columns:1fr}.dc-examples{grid-template-columns:1fr}.dc-example{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;padding:12px 14px}.dc-example-place{grid-column:1;font-size:9px}.dc-example strong{grid-column:1;grid-row:2;font-size:14px;margin:2px 0}.dc-example>span:not(:first-child){grid-column:2;grid-row:2;align-self:center;font-size:10px}.dc-example small{grid-column:2;grid-row:1;margin:0;font-size:8px}.dc-calc-start>p{font-size:12px}.dc-main-inputs{gap:16px 11px}.dc-field-label{font-size:11px}.dc-calc-controls,.dc-calc-results{padding:23px 18px}.dc-example-note{padding-left:18px;padding-right:18px}.dc-examples{padding-left:18px;padding-right:18px}.dc-calc-start{padding-left:18px;padding-right:18px}.dc-waffle-layout{gap:16px}.dc-waffle{gap:3px}.dc-stat-caption{font-size:12px}.dc-water-row{gap:10px}.dc-water-row strong{font-size:12px}.dc-water-row p{font-size:11px}.dc-action-banner{grid-template-columns:1fr;gap:20px}.dc-date-block{border-right:0;border-bottom:1px solid #bdcab5;padding:0 0 18px;display:flex;align-items:baseline;justify-content:center;gap:12px}.dc-date-block strong{font-size:55px}.dc-sources-grid{grid-template-columns:1fr}.dc-kicker{font-size:9px;letter-spacing:.12em}.dc-step-heading{align-items:center}.dc-step-heading>.dc-kicker{max-width:180px}.dc-calc-controls h3{font-size:23px}.dc-probability label{max-width:155px}}
 
 .dc-mobile-jump{display:none}#dc-assumptions,#dc-comparison{scroll-margin-top:125px}
 @media(max-width:760px){.dc-mobile-jump{display:flex;align-items:center;justify-content:space-between;border:1px solid #cbd6c5;padding:10px 12px;border-radius:7px;font-size:12px;font-weight:600;margin:0 0 21px}.dc-calc-results .dc-mobile-jump{margin-top:20px}}

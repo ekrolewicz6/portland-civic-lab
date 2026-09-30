@@ -63,3 +63,17 @@ The calculator starts from the signed The Dalles agreement's Project 1 illustrat
 The Hillsboro example uses the published maximum city fee of 33% in years 1–3, then 50% plus 15% school support in years 4–5. Value and rate are assumed and the application fee is omitted. The source is the City of Hillsboro's [data-center program explanation](https://www.hillsboro-oregon.gov/community/data-centers). These fee ceilings do not establish an actual project's payment or current eligibility.
 
 Results include expected-value comparison bars, a probability cutoff with an exact break-even control, and cumulative discounted receipts. The break-even point is a probability threshold, not a payback year. The shaded years identify the incentive period. Mobile links connect the assumptions and result panels. CSV downloads include every input and yearly payment, allowing the stepped rule and contract examples to be checked independently.
+
+
+## Employment breakdown added September 29, 2026
+
+The [September 2026 full study by ECONorthwest and the University of Virginia](https://econw.com/wp-content/uploads/ECOnorthwest_Understanding-Oregons-Data-Center-Industry_Full-Report.pdf), funded by the Lemelson Foundation (p. 4), now supplies the article’s prominent jobs comparison. The July preliminary source remains for separately dated material; its preliminary construction estimate is not used in the new section.
+
+- Operations: **2,629** wage-and-salary employees, annual average for **2024** (p. 80, footnote 67; table 6.1, p. 86). Definition on p. 73 excludes construction, supplier/service-company workers, off-site corporate staff, and uncaptured independent contractors. Employer records are checked against identified facilities (pp. 76–82).
+- Construction: **3,492** modeled direct jobs annually, averaged over **2023–2025** (table 6.6, p. 93). Includes employees and proprietors (p. 90); excludes server/IT-equipment installation (p. 91). Construction payrolls were not available (p. 89). It is not a count of unique people newly hired each year. Do not multiply by three and call the product unique workers.
+- Broader effects are separate: operations suppliers 4,187 + worker-spending effects 3,593 = **7,780**; construction 1,416 + 3,428 = **4,844**. These are not additional permanent on-site employees (tables 6.1 and 6.6).
+- The model includes full- and part-time work and is not an FTE measure (p. 84). [BLS explains](https://www.bls.gov/cew/questions-and-answers.htm) that the underlying employer data count filled full-/part-time and temporary/permanent jobs. The study does not publish a full-/part-time split. Job duration and weekly hours are different dimensions.
+- Business Oregon’s 7,600 figure is still presented as a different 2025 estimate, with its unresolved definition gap disclosed. No subtraction is used to invent a temporary-job count.
+- These figures describe work supported by the industry, not employment caused by tax incentives or a verified count of local residents hired. The article deliberately avoids a combined total or a temporary/permanent percentage.
+
+Verified the report’s operations and construction tables visually (printed/PDF pp. 80 and 93) as well as reading the definitions and model notes. Added a direct article navigation link and page-specific PDF citations. The browser verification captures the new jobs section at desktop and mobile widths.

@@ -200,6 +200,20 @@ export const SOURCES = {
     url: "https://www.oregon.gov/energy/get-involved/Documents/2026-07-31-ECONW-Understanding-Data-Center-Industry.pdf",
     kind: "analysis",
   },
+  econwFull: {
+    id: "econwFull",
+    title: "Understanding Oregon’s Data Center Industry (September 2026 full report)",
+    org: "ECONorthwest & University of Virginia",
+    url: "https://econw.com/wp-content/uploads/ECOnorthwest_Understanding-Oregons-Data-Center-Industry_Full-Report.pdf",
+    kind: "analysis",
+  },
+  employmentDefinitions: {
+    id: "employmentDefinitions",
+    title: "What employer job counts include",
+    org: "U.S. Bureau of Labor Statistics",
+    url: "https://www.bls.gov/cew/questions-and-answers.htm",
+    kind: "primary",
+  },
   odeSchoolFunding: {
     id: "odeSchoolFunding",
     title: "How property tax abatements move through school funding",
