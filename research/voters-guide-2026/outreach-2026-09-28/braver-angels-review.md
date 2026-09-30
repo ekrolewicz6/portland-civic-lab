@@ -1,6 +1,6 @@
 # Braver Angels reader review (September 26–28, 2026)
 
-Reviewers: Dimitra Giannakoulias (dgiannakoulias@braverangels.org, red-leaning) and Sue Staehli (sstaehli@braverangels.org, blue-leaning), Braver Angels Oregon. Thread: "Would a red and blue pair read our guide?" (Gmail thread 1a0dab8568062b21). Edan asked them to flag a word that takes a side, a question worded so one answer sounds right, context that gives one side's best fact but not the other's, or a summary kinder to one candidate.
+Reviewers: Dimitra Giannakoulias ([address on file], red-leaning) and Sue Staehli ([address on file], blue-leaning), Braver Angels Oregon. Thread: "Would a red and blue pair read our guide?" (Gmail thread 1a0dab8568062b21). Edan asked them to flag a word that takes a side, a question worded so one answer sounds right, context that gives one side's best fact but not the other's, or a summary kinder to one candidate.
 
 ## Their verdict
 - Dimitra (September 28): "With few exceptions, your summaries, language, and tone are balanced and neutral." Most notes concern Congressional District 5; some governor columns did not match their headings.

@@ -15,5 +15,5 @@
 - Nate Waas Shull, Foundations for a Better Oregon, thread 1a0daa5714aafe86: restore-by-2027-28 is right, but the State Board had only a first reading of permanent rules in September (vote in October), and the draft (division rule (10)(a)-(c)) lets a district either give public notice and written justification for a cut or restore the time within two school years. Also pointed to Stand for Children's instructional-time analysis (https://stand.org/oregon/policy/time-attendance/) and the State Board materials (https://meetings.boardbook.org/Public/Agenda/2146?meeting=766536, item 6.A). Governor board context updated.
 - Jason (Oregon Watchdog), thread 1a0daa718db2f683: noted Kotek's 2025 support for holding back the kicker (OPB, May 19, 2025). Already on the board from that same story; no change.
 - Juan Carlos Ordóñez, Oregon Center for Public Policy, thread 1a0daa6576be9066: asked what the question was; reply sent with the exact board text and one question.
-- Dana (dana@childinst.org), Children's Institute: the preschool choices and sources "look right." No change.
+- Dana, Children's Institute: the preschool choices and sources "look right." No change.
 - Abigail Smock, Laurelhurst Neighborhood Association: no notes from the D3 forum (10 candidates in breakouts); nothing to add.

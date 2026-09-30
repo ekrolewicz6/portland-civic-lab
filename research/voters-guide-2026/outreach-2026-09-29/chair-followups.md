@@ -34,7 +34,7 @@ Asked (10):
 10. Appointed administrator.
 No reply yet to the September 22 email or the September 26 preschool follow-up.
 
-## Sharon Meieran · corin@sharonforchair.com, cc info@sharonforchair.com · thread 1a0cbca8a731446d · message 1a0ef33be03c5d16
+## Sharon Meieran · [address on file], cc info@sharonforchair.com · thread 1a0cbca8a731446d · message 1a0ef33be03c5d16
 Added from debate: Moda (partial, "Yes, if accountable"), universal preschool (partial, "Honor vote, fix rollout"), office attendance ("Only if need shown").
 Asked (9):
 1. Roads, bridges and air.
