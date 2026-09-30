@@ -34,7 +34,7 @@ export const DEAL_EXAMPLES: DealExample[] = [
       laterPaymentSharePct: 65, paymentStepYear: 4, minimumPaymentM: 0, upfrontM: 0 },
     documented: ["abatementYears", "paymentMode", "paymentSharePct", "laterPaymentSharePct", "paymentStepYear"],
     source: "https://www.hillsboro-oregon.gov/community/data-centers",
-    basis: "The city’s published program allows tax breaks lasting three to five years. This five-year example uses the highest community-service fees allowed: 33% of the exempted tax bill in years 1–3, then 50% in years 4–5. A further 15% school-support payment applies in years 4–5, bringing the modeled share to 65%. Actual agreements may charge less.",
+    basis: "The city’s published program allows tax breaks lasting three to five years. This five-year example uses the highest community-service fees allowed: 33% of the taxes otherwise owed in years 1–3, then 50% in years 4–5. A further 15% school-support payment applies in years 4–5, bringing the modeled share to 65%. Actual agreements may charge less.",
     assumptions: "This example uses real program rules but does not represent a particular approved project. Property value, tax rate and the other inputs are assumptions. The calculation covers only property receiving the new tax break, holds its value steady and leaves out the application fee."
   }
 ];

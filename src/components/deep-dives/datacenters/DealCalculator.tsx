@@ -55,10 +55,10 @@ export default function DealCalculator() {
     const explanation = help ?? INPUT_HELP[key];
     return <label className="dc-field" key={key}>
       <span className="dc-field-label">{INPUT_LABELS[key]}</span>
-      <span className="dc-input-wrap"><input type="number" aria-label={INPUT_LABELS[key]} value={inp[key]} min={min} max={max} step={step}
+      <span className="dc-input-wrap"><input type="number" aria-label={INPUT_LABELS[key]} aria-describedby={explanation ? `dc-help-${key}` : undefined} value={inp[key]} min={min} max={max} step={step}
         onChange={e => { const n = e.currentTarget.valueAsNumber; if (Number.isFinite(n)) change(key, Math.min(max, Math.max(min, step === 1 ? Math.round(n) : n))); }} /></span>
       <span className={"dc-input-source " + (kind === "From source" ? "is-sourced" : "")}>{kind}</span>
-      {explanation && <span className="dc-input-help">{explanation}</span>}
+      {explanation && <span id={`dc-help-${key}`} className="dc-input-help">{explanation}</span>}
     </label>;
   }
   function download() {
