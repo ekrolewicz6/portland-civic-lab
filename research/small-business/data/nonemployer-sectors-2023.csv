@@ -1,0 +1,20 @@
+year,county_fips,naics,sector,establishments,receipts_usd,establishment_flag,receipts_noise,receipts_flag,source_id
+2023,41051,00,All nonemployers,77829,4271916000,,G,,nes-2023
+2023,41051,11,Agriculture,266,15521000,,G,,nes-2023
+2023,41051,21,Mining,14,3657000,,H,,nes-2023
+2023,41051,22,Utilities,16,4677000,,G,,nes-2023
+2023,41051,23,Construction,3931,309021000,,G,,nes-2023
+2023,41051,31-33,Manufacturing,1139,72596000,,G,,nes-2023
+2023,41051,42,Wholesale,812,96296000,,G,,nes-2023
+2023,41051,44-45,Retail,4171,294203000,,G,,nes-2023
+2023,41051,48-49,Transport,10637,443507000,,G,,nes-2023
+2023,41051,51,Information,2001,75753000,,G,,nes-2023
+2023,41051,52,Finance,999,89135000,,G,,nes-2023
+2023,41051,53,Real estate,7043,994451000,,G,,nes-2023
+2023,41051,54,Professional,15372,754842000,,G,,nes-2023
+2023,41051,56,Administrative,4333,136566000,,G,,nes-2023
+2023,41051,61,Education,3361,59234000,,G,,nes-2023
+2023,41051,62,Health care,7373,385458000,,G,,nes-2023
+2023,41051,71,Arts and recreation,9131,231804000,,G,,nes-2023
+2023,41051,72,Accommodation/food,1610,80494000,,G,,nes-2023
+2023,41051,81,Other services,5620,224701000,,G,,nes-2023

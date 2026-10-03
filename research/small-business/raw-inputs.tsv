@@ -1,0 +1,10 @@
+source_id	path	url	sha256	bytes
+susb-msa-2022	runtime-data/small-business/susb2022_msa.txt	https://www2.census.gov/programs-surveys/susb/datasets/2022/msa_3digitnaics_2022.txt	e90e9f9029af62b954d98e4bdad82f504f36aad2508e17d2240d53beb336230d	48041887
+susb-county-2022	runtime-data/small-business/susb2022_county.xlsx	https://www2.census.gov/programs-surveys/susb/tables/2022/county_3digitnaics_2022.xlsx	21ba2207f8bd76683945437e66091a5c84c80c1ef551b8ee2badd15afb1ea833	39810471
+osb-2026	runtime-data/small-business/osb_year_one.pdf	https://static1.squarespace.com/static/6801755ad7acc40d46586c99/t/6aa09dc0156a0f27de3f3e85/1788911040812/OSB+Year+One+Impact+Report+Accessible+1.pdf	bf3f83dd299ae9a39f6df33365bcaf0a93a5fc11420a585d8677fb25dd618002	2508820
+bds-msa-2023	runtime-data/small-business/bds2023_msa.csv	https://www2.census.gov/programs-surveys/bds/tables/time-series/2023/bds2023_msa.csv	1efaa54b3926fddd410719cb77dcb65a8f2f47eb5ba070d0037be60cc6fc3b79	5839428
+bds-msa-age-2023	runtime-data/small-business/bds2023_msa_fac.csv	https://www2.census.gov/programs-surveys/bds/tables/time-series/2023/bds2023_msa_fac.csv	b2b22253b0fd51569e79a800dccc9e17afbfaff7f7395738fa90d1cc4ffd6015	26725543
+qcew-2019	runtime-data/maker-economy/qcew2019.csv	https://data.bls.gov/cew/data/api/2019/a/area/41051.csv	b7692e311b2744c3e3ad35a3ce205a2b744096a3ddfa9c1500b43957025df142	381137
+qcew-2025	runtime-data/maker-economy/qcew2025.csv	https://data.bls.gov/cew/data/api/2025/a/area/41051.csv	04d3b9a1b4d79c6fec3de32045a0e5c18910ce8f1ed3febd52a3f1acc48a7bbb	382611
+nes-2023	runtime-data/maker-economy/nes2023.zip	https://www2.census.gov/programs-surveys/nonemployer-statistics/datasets/2023/historical-datasets/nonemp23co.zip	65030a96b0e5542ca7b52aa954c2c66cf1cff0f936e8b2b225375d3d186bac28	4420852
+prosper-insights	runtime-data/small-business/web/prosper-insights.pdf	https://prosperportland.us/wp-content/uploads/2026/02/Insights-Indicators-2025.pdf	aa21830664a1fa7faa4b7491b24a1b90a2450da249f017c506dca482c13b36c0	8026513

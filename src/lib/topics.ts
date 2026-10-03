@@ -32,6 +32,7 @@ export const TOOLS: Topic[] = [
 ];
 
 export const QUESTIONS: Topic[] = [
+  { name: "The state of small business in Portland", href: "/deep-dives/small-business" },
   { name: "Portland’s maker economy", href: "/deep-dives/maker-economy" },
   { name: "The homelessness continuum", href: "/deep-dives/continuum" },
   { name: "Homelessness", href: "/deep-dives/homelessness" },

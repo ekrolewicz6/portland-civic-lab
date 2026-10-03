@@ -23,6 +23,12 @@ export interface DeepDive {
 }
 export const DEEP_DIVES: DeepDive[] = [
   {
+    slug: "small-business", title: "Small business. Big questions.",
+    description: "What Portland’s businesses contribute, how we compare and what better support could achieve for owners and workers.",
+    subject: "The state of small business", topics: ["work", "money"], updated: "2026-10-03",
+    tool: "Explore 18 visual exhibits", keywords: "small business firms jobs payroll GDP Prosper Portland owners workers AI entrepreneurship peers economy",
+  },
+  {
     slug: "data-centers", title: "Are Oregon’s data-center tax breaks worth it?",
     description: "Follow the jobs, electricity and public money. Try the numbers behind a real deal.",
     subject: "Energy, water & taxes", topics: ["money", "work", "place"], updated: "2026-09-29",

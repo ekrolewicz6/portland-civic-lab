@@ -1,0 +1,134 @@
+{
+  "metros": 387,
+  "all_metro_weighted_under500_pct": 47.45701190510147,
+  "all_metro_weighted_under20_pct": 16.503992310046954,
+  "standardized_sector_coverage_pct": 99.99400664801044,
+  "adjusted": [
+    {
+      "msa": "38900",
+      "metro": "Portland",
+      "size_code": "05",
+      "adjusted_jobs_share": 18.765295489962842,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "38900",
+      "metro": "Portland",
+      "size_code": "08",
+      "adjusted_jobs_share": 50.23559895617213,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "42660",
+      "metro": "Seattle",
+      "size_code": "05",
+      "adjusted_jobs_share": 17.310395423912546,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "42660",
+      "metro": "Seattle",
+      "size_code": "08",
+      "adjusted_jobs_share": 46.659638797078166,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "19740",
+      "metro": "Denver",
+      "size_code": "05",
+      "adjusted_jobs_share": 16.144773698080225,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "19740",
+      "metro": "Denver",
+      "size_code": "08",
+      "adjusted_jobs_share": 45.813451248425146,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "33460",
+      "metro": "Minneapolis",
+      "size_code": "05",
+      "adjusted_jobs_share": 14.609304520756705,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "33460",
+      "metro": "Minneapolis",
+      "size_code": "08",
+      "adjusted_jobs_share": 48.36282707225048,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "40900",
+      "metro": "Sacramento",
+      "size_code": "05",
+      "adjusted_jobs_share": 18.152397241566945,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "40900",
+      "metro": "Sacramento",
+      "size_code": "08",
+      "adjusted_jobs_share": 49.48605983904963,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "41620",
+      "metro": "Salt Lake City",
+      "size_code": "05",
+      "adjusted_jobs_share": 14.082487910086389,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "41620",
+      "metro": "Salt Lake City",
+      "size_code": "08",
+      "adjusted_jobs_share": 43.27723237387402,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "38300",
+      "metro": "Pittsburgh",
+      "size_code": "05",
+      "adjusted_jobs_share": 16.026283206728497,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "38300",
+      "metro": "Pittsburgh",
+      "size_code": "08",
+      "adjusted_jobs_share": 47.992259293213586,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "26900",
+      "metro": "Indianapolis",
+      "size_code": "05",
+      "adjusted_jobs_share": 12.945686074703708,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "26900",
+      "metro": "Indianapolis",
+      "size_code": "08",
+      "adjusted_jobs_share": 43.538948805891366,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "12420",
+      "metro": "Austin",
+      "size_code": "05",
+      "adjusted_jobs_share": 15.901708774470094,
+      "portland_weight_jobs": 1084470
+    },
+    {
+      "msa": "12420",
+      "metro": "Austin",
+      "size_code": "08",
+      "adjusted_jobs_share": 47.54027453793302,
+      "portland_weight_jobs": 1084470
+    }
+  ]
+}
