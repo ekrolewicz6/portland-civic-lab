@@ -1,6 +1,6 @@
 # Oregon Fire Map — current sourcebook
 
-Updated October 2, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public data exists for an initial map; comprehensive coverage and a site-selection explanation for every burn remain goals, not established facts.
+Updated October 3, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public data exists for an initial map; comprehensive coverage and a site-selection explanation for every burn remain goals, not established facts.
 
 **Current direction:** [Fire in Oregon: project charter](TRUE-NORTH.md) defines the public guide and one evidence-led landscape investigation. The [one-page brief](TRUE-NORTH-ONE-PAGER.md), [reader-question and claim register](question-evidence-register-2026-09-30.json), [pilot screening](pilot-screening-2026-09-30.md), [acquisition and delivery register](true-north-work-register-2026-09-30.md), and [implementation and release record](true-north-implementation-2026-10-02.md) govern the next work. Earlier plans below remain dated history. The private September 30 interview, notes, and claim audit are stored outside this repository and every deployment input.
 
@@ -24,7 +24,7 @@ Start with [the dated audit](audit-2026-09-11.md) and [implementation notes](imp
 ## Use this now
 
 1. Review representative mapped records and the Woodpecker explanation with co-authors. The story has no invented map pin.
-2. Send individually reviewed requests first to ODF, DEQ, LRAPA and Oregon Explorer. Ask ODF for a 2025 sample/schema, registrations, authorizations and individual ignitions/accomplishments. Begin tribal partnership conversations alongside these requests.
+2. Continue the active ODF, DEQ, LRAPA and Oregon Explorer threads without duplicate requests. LRAPA's GIS custodian has offered roughly ten years of permitted-unit data, with a preliminary delivery expected the week of October 5 and an updated 2026 accomplishment file after permits expire October 31. Ask ODF for a 2025 sample/schema, registrations, authorizations and individual ignitions/accomplishments. Begin tribal partnership conversations alongside these requests.
 3. Ask federal stewards for identifiers and document crosswalks, and district/practitioner hubs for a few site-specific explanations. Obtain ODA, refuge/park and LTDL data next.
 4. Edan authorized production release on September 11, 2026. Representative-record review remains an editorial follow-up. Six-hour archival configuration activates with the production deployment; see verification.md for release results.
 

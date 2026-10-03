@@ -1,6 +1,6 @@
 # Fire in Oregon · acquisition and delivery register
 
-Updated September 30, 2026. This public register names decisions and sources, not private email bodies, recipient lists, interview notes, or restricted attachments. The [charter](TRUE-NORTH.md) defines the selection gate and editorial standard. The [question register](question-evidence-register-2026-09-30.json) holds proposed public claims.
+Updated October 3, 2026. This public register names decisions and sources, not private email bodies, recipient lists, interview notes, or restricted attachments. The [charter](TRUE-NORTH.md) defines the selection gate and editorial standard. The [question register](question-evidence-register-2026-09-30.json) holds proposed public claims.
 
 | Priority | Reader decision | Existing evidence | Smallest missing record | Status and next step |
 |---|---|---|---|---|
@@ -29,6 +29,8 @@ Updated September 30, 2026. This public register names decisions and sources, no
 ## Correspondence routing
 
 ODF smoke and data requests, DEQ ecological permits, and prior agency/practitioner requests already have active threads in the dated outreach ledger. Focused Ashland and Deschutes pilot-record requests were submitted September 30; delivery and response remain unconfirmed. Wallowa Resources has a separate October 2 meeting already arranged by Edan for a reporting trip; do not duplicate or hijack it with a broad new request. Any follow-up uses the existing thread, with the shared send gate when classified as outreach. Maintain the exact message list and receipts privately outside the repository.
+
+The Lane County Rivers to Ridges GIS custodian offered spatial and attribute records spanning roughly ten years. Edan accepted a preliminary delivery during the week of October 5 and a separate 2026 update after permits expire October 31; the latter should identify units actually burned and reported acreage. No file has been received or imported as of October 3. When received, inspect native IDs, geometry, year-specific permits, accomplished dates and acreage, status definitions, and geographic/reporting gaps before publication. A permitted unit must remain distinct from an accomplished burn. Do not send a duplicate request while the promised delivery is pending.
 
 ## Reconciliation fields for the selected pilot
 
