@@ -83,6 +83,13 @@ const hallettAudit = site(
 );
 const hiltonAction = site("Hilton · Take action (housing)", "https://patrickhilton4pdx.org/take-action");
 const koyamaLane = site("Koyama Lane · policy and track record", "https://teachertiffanyforthepeople.com/policy-track-record/");
+const koyamaLaneEmail: Evidence = {
+  label: "Koyama Lane · emailed answers to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#koyama-lane-2026-10-02",
+  kind: "Candidate statement",
+  date: "Received October 2, 2026",
+  note: NOTE,
+};
 const oteroEmail: Evidence = {
   label: "Otero · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#otero-2026-09-19",
@@ -239,16 +246,31 @@ export const deliveriesD3: DeliveryEntry[] = [
   entry("larry-kelly", "money", "pamphlet"),
 
   /* ── Tiffany Koyama Lane ──────────────────────────────────────────── */
+  // The housing and money measures, and the safety "how", come from the campaign's emailed answers of October 2, 2026.
   entry("tiffany-koyama-lane", "housing", "campaign site", {
     how: [
       "Points to the Keep Portland Housed ordinance’s revolving loan and social housing fund, rent aid and eviction defense, and a city study of how social housing could be implemented.",
       koyamaLane,
+    ],
+    measure: [
+      "Council turns the commissioned social-housing report into an actionable plan using existing city properties, with a date set to move from policy development to implementation; meanwhile, added tenant protections and rental assistance enshrined.",
+      koyamaLaneEmail,
+    ],
+  }),
+  entry("tiffany-koyama-lane", "safety", "emailed response", {
+    how: [
+      "Resource and coordinate Street Response, CHAT and the publicly funded housing and behavioral-health navigation programs; fully fund violence-interrupter programs and community centers; change the built environment, so police focus on violent crime.",
+      koyamaLaneEmail,
     ],
   }),
   entry("tiffany-koyama-lane", "money", "campaign site", {
     how: [
       "Names income-threshold relief as the tool: a higher Arts Tax income threshold and low-income relief, including multi-family households, under the Transportation Utility Fee.",
       koyamaLane,
+    ],
+    measure: [
+      "Clean, well-used parks and open, staffed community centers after restoring parks and community-program funds in the last budget; low-income Portlanders shielded from utility hikes.",
+      koyamaLaneEmail,
     ],
   }),
   entry("tiffany-koyama-lane", "climate", "campaign site", {

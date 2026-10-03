@@ -136,6 +136,13 @@ const beaudoinEmail: Evidence = {
   date: "Received September 23, 2026",
   note: NOTE,
 };
+const koyamaLaneEmail: Evidence = {
+  label: "Koyama Lane · emailed answers to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#koyama-lane-2026-10-02",
+  kind: "Candidate statement",
+  date: "Received October 2, 2026",
+  note: NOTE,
+};
 const beaudoinEmail3: Evidence = {
   label: "Beaudoin · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#replies-2026-09-29",
@@ -380,13 +387,30 @@ export const topicStancesD3: TopicStance[] = [
     "Says she reduced utility hikes for working-class Portlanders.",
     pamphlet(54),
   ),
-  sweepStance(
+  // Police staffing, clearing camps and Street Response: the campaign's emailed answers of October 2, 2026.
+  stance(
     "tiffany-koyama-lane",
     "police-staffing",
-    "partial",
-    "Free police for policing",
-    "Told OPB in 2024 she wants to free police to do the job they were trained for, not fill safety-net holes, and supports expanding Street Response; her answer does not say whether to hire more officers.",
-    opbKoyamaLane2024,
+    "opposes",
+    "Upstream before hiring",
+    "Prioritizes upstream community-safety interventions and says cities like Baltimore show crime can fall without inflated police hiring; Street Response and navigation programs let officers focus on violent crime.",
+    koyamaLaneEmail,
+  ),
+  stance(
+    "tiffany-koyama-lane",
+    "camp-removal",
+    "opposes",
+    "End sweeps, fund housing",
+    "Voted to move removal money toward rental assistance; calls current sweeps cruel and ineffective, destroying paperwork and medication and shuffling people between camps with no path to housing, and would send camp safety issues to the right response team.",
+    koyamaLaneEmail,
+  ),
+  stance(
+    "tiffany-koyama-lane",
+    "street-response",
+    "supports",
+    "Trained responders first",
+    "Calls Street Response an important part of public safety that meets people in crisis with trained professionals rather than an armed response, letting police focus on violent crime; a 24/7 role is unsaid.",
+    koyamaLaneEmail,
   ),
 
   /* ── Kenneth (Kent) R Landgraver III ────────────────────────────────── */
