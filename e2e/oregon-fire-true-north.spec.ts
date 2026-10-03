@@ -29,3 +29,16 @@ test("the main guide and landscape screen fit a narrow phone", async ({ page }) 
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
   }
 });
+
+test("the landscape investigation has a working social image and canonical URL", async ({ request }) => {
+  const page = await request.get("/oregon-fire/landscapes");
+  expect(page.ok()).toBeTruthy();
+  const html = await page.text();
+  expect(html).toContain('rel="canonical" href="https://www.portlandciviclab.org/oregon-fire/landscapes"');
+  const image = html.match(/<meta property="og:image" content="([^"]+)"/);
+  expect(image?.[1]).toBeTruthy();
+  const imageUrl = new URL(image![1]);
+  const response = await request.get(`${imageUrl.pathname}${imageUrl.search}`);
+  expect(response.ok()).toBeTruthy();
+  expect(response.headers()["content-type"]).toContain("image/png");
+});
