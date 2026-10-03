@@ -35,9 +35,9 @@ export const DEEP_DIVES: DeepDive[] = [
     tool: "Compare the campaigns", keywords: "election voting candidates donors district 3 district 4 ORESTAR contributions",
   },
   {
-    slug: "participatory-budgeting", title: "Who should decide Portland’s next public investments?",
+    slug: "participatory-budgeting", title: "Should Portland guarantee residents a vote on part of its budget?",
     description: "Understand Measure 26-267, the strongest cases for YES and NO, and the money left for projects.",
-    subject: "Resident power & spending", topics: ["money", "power"], updated: "2026-09-20",
+    subject: "Resident power & spending", topics: ["money", "power"], updated: "2026-10-02",
     tool: "Explore the budget tradeoffs", keywords: "participatory budgeting PB measure 26-267 ballot election voting residents administration",
   },
   {

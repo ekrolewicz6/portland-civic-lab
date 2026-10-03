@@ -1,0 +1,22 @@
+/** Source URLs shared by the visual guide and its one interactive graphic. */
+export const PB_SOURCES = {
+  amendment: "https://www.portland.gov/auditor/elections/documents/pdx25ol-01-text-proposed-charter-change/download",
+  ballot: "https://multco.us/file/measure_26-267/download",
+  yes: "https://your2centspdx.com/",
+  yesFaq: "https://your2centspdx.com/faq/",
+  advocateFaq: "https://www.pboregon.org/your2centspdx",
+  no: "https://www.protectourcityservices.org/",
+  noMeasure: "https://www.protectourcityservices.org/measure",
+  noFaq: "https://www.protectourcityservices.org/faq",
+  policy: "/research/participatory-budgeting/policy-fact-sheet.pdf",
+  letter: "/research/participatory-budgeting/researchers-open-letter.pdf",
+  timeline: "/research/participatory-budgeting/campaign-timeline.pdf",
+  threePager: "/research/participatory-budgeting/campaign-three-pager.pdf",
+  suppliedAmendment: "/research/participatory-budgeting/proposed-charter-amendment.pdf",
+  presentation: "https://www.canva.com/design/DAHVlU7XMmA/pGKOcSxGdI4Fre3xfL4bqA/edit",
+  metro: "https://www.oregonmetro.gov/stories/26-million-grants",
+  cambridge: "https://www.cambridgema.gov/news/2026/03/city-of-cambridge-announces-winning-projects-for-12th-participatory-budgeting-cycle",
+  seattle: "https://ocr.seattle.gov/seattles-2025-2026-budget-authorizes-27-25-million-to-implement-participatory-budgeting-projects/",
+  cityClub: "https://www.pdxcityclub.org/wp-content/uploads/2025/05/2025-03-14-Participatory-Budgeting-final.pdf",
+  research: "/deep-dives/participatory-budgeting/research",
+} as const;

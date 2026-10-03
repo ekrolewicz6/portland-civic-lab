@@ -81,9 +81,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/deep-dives/participatory-budgeting`,
-      lastModified: new Date("2026-09-20T00:00:00Z"),
+      lastModified: new Date("2026-10-02T00:00:00Z"),
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/deep-dives/participatory-budgeting/research`,
+      lastModified: new Date("2026-10-02T00:00:00Z"),
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${BASE_URL}/deep-dives/data-centers`,
