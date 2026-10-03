@@ -1,7 +1,7 @@
 export const FIRE_URL = "https://www.portlandciviclab.org/oregon-fire";
 export const FIRE_TITLE = "Fire in Oregon: A Visual Guide to Wildfire & Prescribed Fire";
 export const FIRE_DESCRIPTION =
-  "Learn how fire works in Oregon, why people use prescribed burns, what research shows, and what our choices cost. An illustrated story with deeper explanations and a public fire map.";
+  "An illustrated guide to fire in Oregon: why places burn differently, why people use prescribed fire, what the work costs, and how to tell whether it helped. Explore the public records and follow a landscape investigation.";
 export const FIRE_AUTHORS = [
   "Edan Krolewicz", "Dominic Kuklawood",
 ];
@@ -12,9 +12,9 @@ export const fireStructuredData = {
   "@id": `${FIRE_URL}#page`,
   url: FIRE_URL,
   name: FIRE_TITLE,
-  headline: "Fire in Oregon: Why do we fight some fires and deliberately light others?",
+  headline: "Fire in Oregon: How fire works, what we can change, and what the choices cost",
   datePublished: "2026-09-11",
-  dateModified: "2026-09-27",
+  dateModified: "2026-09-30",
   description: FIRE_DESCRIPTION,
   inLanguage: "en-US",
   isAccessibleForFree: true,

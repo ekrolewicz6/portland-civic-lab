@@ -5,7 +5,7 @@ import FireEditorialShell from "@/components/oregon-fire/FireEditorialShell";
 import FireMechanicsVisual from "@/components/oregon-fire/FireMechanicsVisual";
 import FireCostExplorer from "@/components/oregon-fire/FireCostExplorer";
 import { TreatmentEvidence, AftermathVisual, CommunityVisual, LandscapeOverview } from "@/components/oregon-fire/FireGuideVisuals";
-import { FIRE_LESSONS, LESSON_SOURCES, LESSON_DATE } from "@/lib/oregon-fire/lesson";
+import { FIRE_GUIDE_ORDER, FIRE_LESSONS, LESSON_SOURCES, LESSON_DATE } from "@/lib/oregon-fire/lesson";
 import { FIRE_AUTHORS, FIRE_URL } from "@/lib/oregon-fire/metadata";
 import { pageMeta } from "@/lib/page-meta";
 import "../../long-guide.css";
@@ -20,11 +20,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 export default async function FireLessonPage({params}:Props) {
   const {slug}=await params;
-  const index=FIRE_LESSONS.findIndex(l=>l.slug===slug);
+  const orderedLessons=FIRE_GUIDE_ORDER.map(key=>FIRE_LESSONS.find(l=>l.slug===key)!);
+  const index=orderedLessons.findIndex(l=>l.slug===slug);
   if(index<0) notFound();
-  const lesson=FIRE_LESSONS[index];
-  const previous=FIRE_LESSONS[index-1], next=FIRE_LESSONS[index+1];
-  const data={"@context":"https://schema.org","@type":"Article",headline:lesson.title,description:lesson.paragraphs[0],url:`${FIRE_URL}/learn/${slug}`,datePublished:LESSON_DATE,dateModified:"2026-09-27",author:FIRE_AUTHORS.map(name=>({"@type":"Person",name})),publisher:{"@type":"Organization",name:"Portland Civic Lab"},citation:lesson.sources.map(key=>LESSON_SOURCES[key].url)};
+  const lesson=orderedLessons[index];
+  const previous=orderedLessons[index-1], next=orderedLessons[index+1];
+  const data={"@context":"https://schema.org","@type":"Article",headline:lesson.title,description:lesson.paragraphs[0],url:`${FIRE_URL}/learn/${slug}`,datePublished:LESSON_DATE,dateModified:"2026-09-30",author:FIRE_AUTHORS.map(name=>({"@type":"Person",name})),publisher:{"@type":"Organization",name:"Portland Civic Lab"},citation:lesson.sources.map(key=>LESSON_SOURCES[key].url)};
   return <FireEditorialShell eyebrow={`Go deeper / ${String(index+1).padStart(2,"0")} / ${lesson.label}`} title={lesson.title} intro={lesson.paragraphs[0]}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(data).replace(/</g,"\\u003c")}}/>
     <nav className="fire-story-nav" aria-label="In this explanation">{lesson.detail.map((section,i)=><a key={section.title} href={`#detail-${i+1}`}>{section.title}</a>)}</nav>

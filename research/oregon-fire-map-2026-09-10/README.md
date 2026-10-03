@@ -1,6 +1,8 @@
 # Oregon Fire Map — current sourcebook
 
-Updated September 26, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public data exists for an initial map; comprehensive coverage and a site-selection explanation for every burn remain goals, not established facts.
+Updated October 2, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public data exists for an initial map; comprehensive coverage and a site-selection explanation for every burn remain goals, not established facts.
+
+**Current direction:** [Fire in Oregon: project charter](TRUE-NORTH.md) defines the public guide and one evidence-led landscape investigation. The [one-page brief](TRUE-NORTH-ONE-PAGER.md), [reader-question and claim register](question-evidence-register-2026-09-30.json), [pilot screening](pilot-screening-2026-09-30.md), [acquisition and delivery register](true-north-work-register-2026-09-30.md), and [implementation and release record](true-north-implementation-2026-10-02.md) govern the next work. Earlier plans below remain dated history. The private September 30 interview, notes, and claim audit are stored outside this repository and every deployment input.
 
 Start with [the dated audit](audit-2026-09-11.md) and [implementation notes](implementation.md). The working page is `/oregon-fire` in Portland Civic Lab. Original research is preserved in `archive-2026-09-10/`, which contains superseded claims and is not the current sourcebook.
 

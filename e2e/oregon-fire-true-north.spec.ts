@@ -1,0 +1,31 @@
+import { expect, test } from "@playwright/test";
+
+test("the guide answers questions in order and keeps the teaching calculator deeper", async ({ page }) => {
+  await page.route("**/api/oregon-fire/records?*", route => route.fulfill({
+    status: 503, json: { error: "Records temporarily unavailable" },
+  }));
+  await page.goto("/oregon-fire");
+  await expect(page.getByRole("heading", { level: 1, name: /Fire in Oregon/ })).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "Questions answered in the guide" })).toContainText("What does the money buy?");
+  await expect(page.locator(".fire-long-chapter")).toHaveCount(8);
+  await expect(page.locator("#actual-fire-spending")).toContainText("$50.98 million");
+  await expect(page.locator("#actual-fire-spending")).toContainText("Forest Legacy");
+  await expect(page.locator(".fire-cost-explorer")).toHaveCount(0);
+  await page.getByRole("navigation", { name: "Questions answered in the guide" })
+    .getByRole("link", { name: /What does the money buy/ }).click();
+  await expect(page).toHaveURL(/#costs-and-choices$/);
+  await expect(page.locator("#costs-and-choices")).toContainText("What does the money actually buy?");
+  await page.getByRole("link", { name: /Follow the landscape investigation/ }).click();
+  await expect(page).toHaveURL(/\/oregon-fire\/landscapes$/);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("turn a plan into work");
+  await expect(page.getByText(/no candidate has passed them yet/i)).toBeVisible();
+});
+
+test("the main guide and landscape screen fit a narrow phone", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const url of ["/oregon-fire", "/oregon-fire/landscapes"]) {
+    await page.goto(url);
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
+  }
+});

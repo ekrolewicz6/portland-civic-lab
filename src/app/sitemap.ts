@@ -52,8 +52,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...["stories/why-burn", "projects/woodpecker"].map((path) => ({ url: `${BASE_URL}/oregon-fire/${path}`, lastModified: new Date("2026-09-26T00:00:00Z"), changeFrequency: "monthly" as const, priority: 0.7 })),
     { url: `${BASE_URL}/oregon-fire`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
+    { url: `${BASE_URL}/oregon-fire/landscapes`, lastModified: new Date("2026-09-30T00:00:00Z"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/oregon-fire/atlas`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
-    ...FIRE_LESSONS.map(({slug})=>({url:`${BASE_URL}/oregon-fire/learn/${slug}`,lastModified:new Date("2026-09-27T00:00:00Z"),changeFrequency:"monthly" as const,priority:0.7})),
+    ...FIRE_LESSONS.map(({slug})=>({url:`${BASE_URL}/oregon-fire/learn/${slug}`,lastModified:new Date("2026-09-30T00:00:00Z"),changeFrequency:"monthly" as const,priority:0.7})),
     {
       url: `${BASE_URL}/deep-dives/pps-budget`,
       lastModified: now,
