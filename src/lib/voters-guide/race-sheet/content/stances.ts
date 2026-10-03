@@ -55,6 +55,7 @@ const councilChips: StanceChip[] = [
   chip("larry-kelly", "money", "Easier for small business"),
 
   chip("tiffany-koyama-lane", "housing", "Publicly owned housing"),
+  chip("tiffany-koyama-lane", "safety", "Fund care teams first"),
   chip("tiffany-koyama-lane", "money", "Fund public services"),
   chip("tiffany-koyama-lane", "climate", "Zero traffic deaths"),
 

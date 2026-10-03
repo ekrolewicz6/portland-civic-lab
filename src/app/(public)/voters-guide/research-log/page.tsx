@@ -19,6 +19,45 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="koyama-lane-2026-10-02">October 2, 2026 · Candidate response: Tiffany Koyama Lane (Portland Council, District 3)</h2>
+        <p>
+          Lydia Kiesling answered for the campaign all six questions the Lab
+          sent on September 23. The answers appear on the brief in the
+          candidate’s words. The safety column, previously a gap, now carries
+          a position from the email: keep Street Response, CHAT and the
+          publicly funded navigation programs resourced and coordinated, with
+          violence interrupters, community centers and built-environment
+          changes, so police focus on violent crime. The housing and money
+          ladders gain their measures: a Council-adopted social-housing plan
+          on city properties with an implementation date, and clean,
+          well-used parks and open, staffed community centers. On the
+          District 3 choices, police staffing moves from partial to a
+          position (upstream interventions before hiring); clearing camps and
+          Street Response, where her recorded votes already showed, now carry
+          her reasoning beside the vote. The campaign flagged that “her
+          recorded vote (Yes)” in the Lab’s question could be read two ways;
+          the vote is Yes on the amendment to shift money away from camp
+          removals, which is how the board’s decision card labels it. Her
+          September 19 questions on recurring revenue, the budget amendments
+          and accomplishments remain open.
+        </p>
+        <h2 id="cruz-2026-10-02">October 2, 2026 · Candidate response: Serena Cruz (Multnomah County Commissioner, District 2)</h2>
+        <p>
+          Serena Cruz answered the second half of the universal-preschool
+          question the Lab sent every District 2 campaign on September 26:
+          what changes she would expect over the next four years to the
+          program’s budget, seats or tax. Her answer appears on her page in
+          her own words. On the District 2 board, the universal-preschool
+          entry keeps its support and now carries her point that demographic
+          and program data, including families moving here for the program,
+          will drive those decisions, with performance tracked. The
+          preschool-tax entry now cites the same email: she would support the
+          tax increase when the data shows it is needed to reach
+          universality. It stays partial because the answer does not say
+          whether the 2028 delay itself should stand. Her September 24 debate
+          points (seats in the right places and hours, special needs, the
+          reserve) remain in that entry’s text.
+        </p>
         <h2 id="marugg-2026-09-30">September 30, 2026 · Candidate response: Sarah Marugg (Hillsboro Council, Ward 1, Position A)</h2>
         <p>
           Sarah Marugg answered all seven gaps from the Lab’s September 22

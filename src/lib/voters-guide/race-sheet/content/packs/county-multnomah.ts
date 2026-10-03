@@ -491,6 +491,14 @@ primary.push({ candidateId: "bruce-broussard", sourceUrl: `${PAMPHLET}#page=34` 
 portraits["bruce-broussard"] = portrait("bruce-broussard", 34);
 
 const cruzIssues = site("Cruz · issues", "https://www.serenacruz.com/issues");
+/* Her emailed answer of October 2, 2026 to the Lab's September 26 universal-preschool question. */
+const cruzEmail: Evidence = {
+  label: "Cruz · emailed answer to the Lab’s question",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#cruz-2026-10-02",
+  kind: "Candidate statement",
+  date: "Received October 2, 2026",
+  note: `${NOTE} Sent by the candidate in answer to the question the Lab sent every District 2 campaign; quoted on the brief.`,
+};
 candidate("serena-cruz", {
   values: ["Operational experience", "Integrated services"],
   tradeoff:
@@ -1506,13 +1514,14 @@ topicStances.push(
   // Broussard and Williams: no statement on any of the thirteen choices in the pamphlet, on their sites or in the
   // venues logged in the September 22, 2026 sweep report. Ong Norris's pamphlet line on "resisting authoritarian
   // attacks on our immigrant neighbors" is a value, not a position on the sanctuary code; left as a gap.
-  // Cruz's Preschool for All entry now uses her fuller answer at the September 24, 2026 City Club debate.
-  stance("serena-cruz", "mult-pfa-delay", "partial", "Match seats to families",
-    "Not yet satisfied: says the program has more seats than enrolled children but not in the right places and hours, must cover children with special needs, and should explain its high reserves; she did not address the 2028 delay.",
-    cityClubD2),
+  // Cruz's Preschool for All entries: her October 2, 2026 email answers the tax half of both questions and
+  // extends her September 24 City Club answer (seats in the right places and hours, special needs, the reserve).
+  stance("serena-cruz", "mult-pfa-delay", "partial", "Tax rise if needed",
+    "Would support the tax increase when demographic and program data show it is needed to reach universality; at the September 24 debate said seats are not in the right places and hours. Whether the 2028 delay should stand is unsaid.",
+    cruzEmail),
   stance("serena-cruz", "mult-pfa-universal", "supports", "Full funding, fair access",
-    "Names the 2030 goal of universal access and says she will fight for full, stable funding, more flexible hours and equitable access in District 2 so North and Northeast Portland families are not left waiting.",
-    cruzIssues),
+    "Promises full, stable funding, flexible hours and equitable access toward the 2030 goal; says demographic and program data, including families moving here for the program, will drive budget, seat and tax decisions over the next four years, with performance tracked.",
+    cruzEmail),
   stance("serena-cruz", "mult-sanctuary", "supports", "Protect sanctuary",
     "Would protect the county’s sanctuary efforts and prepare employees for ICE arriving; as a commissioner she challenged the sheriff’s office over money from the U.S. Marshals Service, which ended.",
     cityClubD2),

@@ -23,6 +23,8 @@ const beaudoin = (question: string, text: string): CandidateAnswer => ({ candida
 const cronlund = (question: string, text: string): CandidateAnswer => ({ candidateId: "jayne-cronlund", question, text, received: "2026-09-23" });
 const schimmel = (question: string, text: string): CandidateAnswer => ({ candidateId: "brian-schimmel", question, text, received: "2026-09-28" });
 const marugg = (question: string, text: string): CandidateAnswer => ({ candidateId: "sarah-marugg", question, text, received: "2026-09-30" });
+const cruz = (question: string, text: string): CandidateAnswer => ({ candidateId: "serena-cruz", question, text, received: "2026-10-02" });
+const koyamaLane = (question: string, text: string): CandidateAnswer => ({ candidateId: "tiffany-koyama-lane", question, text, received: "2026-10-02" });
 
 export const answers: CandidateAnswer[] = [
   legree(
@@ -538,4 +540,33 @@ export const answers: CandidateAnswer[] = [
   marugg("Utility fees", "Affordability includes utility bills. Before increasing charges on residents, I want the city to demonstrate the need, examine alternatives, protect lower-income households and ensure large industrial users are paying their appropriate share."),
   marugg("Human Rights Office", "I support strengthening Hillsboro’s ability to protect civil rights and help residents experiencing discrimination. I support a Human Rights Office and additional legal assistance that provides meaningful, accessible services to immigrants, people with disabilities, LGBTQIA+ residents and culturally diverse communities."),
   marugg("Housing and displacement", "Hillsboro should both increase housing supply and protect residents from displacement. I support reasonable tenant protections and an anti-displacement strategy alongside responsible housing development and infill."),
+  cruz(
+    "Universal preschool: what changes over the next four years to the budget, seats or the tax?",
+    "Demographic and program data will drive my decisions on budget, seats and the tax, including growth from families moving here for the program. I’ll support a tax increase when the data shows we need it to reach universality, and I’ll track performance to ensure we spend dollars wisely.",
+  ),
+  // Sent by Lydia Kiesling for the campaign on October 2, 2026, answering the six questions of September 23.
+  koyamaLane(
+    "Rent and homes: what would show it worked?",
+    "In my next term, I want to see Council take the report that was commissioned on Social Housing and turn it into an actionable plan leveraging existing city properties, setting a date to take the concept from policy development into the implementation stage. In the meantime, we need to see additional tenant protections and rental assistance enshrined to stop the inflow into homelessness.",
+  ),
+  koyamaLane(
+    "Camps, crime and who responds: what balance of enforcement, prevention and care?",
+    "Portland Street Response, CHAT, and the housing and behavioral health navigation programs that receive public dollars are critical to addressing the situation on our streets and should be well-resourced and well-coordinated. They are also part of an overall public safety strategy that allows police officers to focus on violent crime. Similarly, fully funded violence interrupter programs, community centers, and changes to our built environment are part of a robust public safety strategy.",
+  ),
+  koyamaLane(
+    "Your bills and taxes: what would show it worked?",
+    "In the last budget cycle, I prioritized restoring funds to parks, community programs that serve Portlanders of all ages. We measure success in this field by clean and well-utilized parks and open, staffed community centers. I have worked to shield low-income Portlanders from utility hikes and ensure that our budget is not balanced on the back of everyday people.",
+  ),
+  koyamaLane(
+    "Police staffing",
+    "I prioritize upstream community safety interventions. Cities like Baltimore show that crime reduction does not need to come with inflated police hiring. [She pointed to her September 26, 2026 statement on public safety for more.]",
+  ),
+  koyamaLane(
+    "Clearing camps: her Yes vote to move money from removals",
+    "The current policy of sweeps that destroy important paperwork, medication, and mementos and further destabilize people without homes is cruel and ineffective. People from swept encampments are not being routed into a clear path to stable housing, and are instead being shuffled into camps in different locations, increasingly traumatized with each move. As long as this is the situation, encampment sweeps are not a data-supported strategy to solve our homelessness crisis. Public safety issues arising from camps should be addressed by the correct response team.",
+  ),
+  koyamaLane(
+    "Street Response: her Yes vote",
+    "As stated previously, Portland Street Response is an important part of public safety, ensuring that people in crisis are met with trained professionals and not needlessly subjected to an armed response. Police officers are able to focus on violent crime.",
+  ),
 ];

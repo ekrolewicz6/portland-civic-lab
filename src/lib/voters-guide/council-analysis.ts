@@ -503,10 +503,22 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
     issues: {
       housing:
         "Supports publicly owned housing as an alternative to for-profit landlords and continued rental assistance.",
+      // Safety comes from the campaign's emailed answers of October 2, 2026 (sent by Lydia Kiesling).
+      safety:
+        "Would keep Portland Street Response, CHAT and publicly funded housing and behavioral-health navigation programs well-resourced and coordinated, with fully funded violence-interrupter programs, community centers and changes to the built environment, so police can focus on violent crime.",
       climate:
         "Prioritizes Vision Zero, bike and transit infrastructure, tree canopy and a data-center moratorium.",
       money:
         "Favors public services, stronger union contracts and regulating corporations while lowering the burden on working families. A fully costed next-term program is not established here.",
+    },
+    issueSources: {
+      safety: {
+        label: "Koyama Lane · emailed answers to the Lab’s questions",
+        url: "https://www.portlandciviclab.org/voters-guide/research-log#koyama-lane-2026-10-02",
+        kind: "Candidate statement",
+        date: "Received October 2, 2026",
+        note: "Sent for the campaign by Lydia Kiesling in reply to the Lab’s questions and kept on file; the answers appear on her brief. Receipt does not verify the claims.",
+      },
     },
   },
   "Steve Novick": {
