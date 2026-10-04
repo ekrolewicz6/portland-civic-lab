@@ -8,7 +8,9 @@ const fmt = (v: number | null, digits = 0) =>
     ? "Unavailable"
     : v.toLocaleString("en-US", { maximumFractionDigits: digits });
 const pct = (v: number) => `${v.toFixed(1)}%`;
-const money = (v: number) => `$${fmt(v)}`;
+const money = (v: number) => (v < 0 ? `−$${fmt(-v)}` : `$${fmt(v)}`);
+const signedPct = (v: number) =>
+  `${v > 0 ? "+" : v < 0 ? "−" : ""}${pct(Math.abs(v))}`;
 const palette = [
   "#b8d98b",
   "#86bba1",
@@ -20,6 +22,14 @@ const palette = [
 const sizeCodes = ["02", "03", "04", "06", "07", "09"];
 const sizeLabels = ["Under 5", "5–9", "10–19", "20–99", "100–499", "500+"];
 const portland = data.size.filter((r) => r.metro === "Portland");
+const industryNames: Record<string, string> = {
+  "Accommodation/food": "Hotels and restaurants",
+  Administrative: "Administrative services",
+  Management: "Corporate offices",
+  Professional: "Professional services",
+  Transport: "Transportation",
+};
+const industry = (name: string) => industryNames[name] || name;
 
 function Toggle<T extends string>({
   label,
@@ -50,7 +60,7 @@ function Toggle<T extends string>({
 function Table({
   headers,
   rows,
-  label = "Read the data table",
+  label = "See the numbers in a table",
 }: {
   headers: string[];
   rows: (string | number)[][];
@@ -102,22 +112,22 @@ export function ContributionChart() {
     <div>
       <div className="sb-controls">
         <Toggle
-          label="Small business size definition"
+          label="Company size cutoff"
           value={band}
           onChange={setBand}
           options={[
             { value: "08", label: "Fewer than 500 employees" },
-            { value: "05", label: "Fewer than 20" },
+            { value: "05", label: "Fewer than 20 employees" },
           ]}
         />
         <Toggle
-          label="Economic contribution measure"
+          label="What to measure"
           value={metric}
           onChange={setMetric}
           options={[
             { value: "jobs_share", label: "Jobs" },
-            { value: "payroll_share", label: "Payroll" },
-            { value: "receipts_share", label: "Receipts" },
+            { value: "payroll_share", label: "Pay" },
+            { value: "receipts_share", label: "Sales" },
           ]}
         />
       </div>
@@ -135,22 +145,24 @@ export function ContributionChart() {
         <div className="sb-number-story" aria-live="polite">
           <span className="sb-huge">{pct(share)}</span>
           <h4>
-            of metro employer{" "}
+            of all{" "}
             {metric === "jobs_share"
               ? "jobs"
               : metric === "payroll_share"
-                ? "payroll"
-                : "receipts"}
+                ? "pay"
+                : "sales"}{" "}
+            in the Portland area
           </h4>
           <p>
-            At enterprises with fewer than {band === "08" ? "500" : "20"}{" "}
-            employees across the entire enterprise.
+            {metric === "jobs_share" ? "are" : "is"} at companies with fewer
+            than {band === "08" ? "500" : "20"} employees, counting every
+            location the company has.
           </p>
           <div className="sb-mini-stats">
             {[
               ["Jobs", row.jobs_share],
-              ["Payroll", row.payroll_share],
-              ["Receipts", row.receipts_share],
+              ["Pay", row.payroll_share],
+              ["Sales", row.receipts_share],
             ].map(([label, value]) => (
               <div key={String(label)}>
                 <strong>{pct(Number(value) * 100)}</strong>
@@ -161,17 +173,16 @@ export function ContributionChart() {
         </div>
       </div>
       <p className="sb-chart-explainer">
-        One square is one percentage point. A local location of a national chain
-        is counted with its parent enterprise. Nonemployers are outside this
-        chart.
+        Each square is one percent of the total. Businesses with no employees
+        are not in this chart.
       </p>
       <Table
         headers={[
-          "Enterprise employees",
-          "Metro jobs",
-          "Jobs share",
-          "Payroll share",
-          "Receipts share",
+          "Company size (employees)",
+          "Jobs",
+          "Share of jobs",
+          "Share of pay",
+          "Share of sales",
         ]}
         rows={sizeCodes.map((code, i) => {
           const r = portland.find((r) => r.size_code === code)!;
@@ -196,7 +207,7 @@ export function SizeBands() {
     <div>
       <div
         className="sb-stacked"
-        aria-label="Metro jobs across six nonoverlapping enterprise size bands"
+        aria-label="Portland-area jobs divided into six company sizes"
       >
         {rows.map((r, i) => (
           <div
@@ -216,7 +227,9 @@ export function SizeBands() {
           <div key={r.size_code}>
             <i style={{ background: palette[i] }} />
             <span>{sizeLabels[i]} employees</span>
-            <strong>{fmt(r.jobs)} jobs</strong>
+            <strong>
+              {fmt(r.jobs)} jobs · {pct(r.jobs_share! * 100)}
+            </strong>
           </div>
         ))}
       </div>
@@ -240,23 +253,23 @@ export function IndustryExplorer() {
   return (
     <div>
       <Toggle
-        label="Industry composition metric"
+        label="What to measure"
         value={metric}
         onChange={setMetric}
         options={[
           { value: "jobs", label: "Jobs" },
-          { value: "firms", label: "Employer firms" },
-          { value: "payroll_usd", label: "Annual payroll" },
+          { value: "firms", label: "Companies" },
+          { value: "payroll_usd", label: "Total pay" },
         ]}
       />
       <div className="sb-legend">
         <span>
           <i className="sb-green-dot" />
-          Enterprise under 500
+          Companies with fewer than 500 employees
         </span>
         <span>
           <i className="sb-rust-dot" />
-          Enterprise 500+
+          Companies with 500 or more
         </span>
       </div>
       <div className="sb-bar-chart">
@@ -265,7 +278,7 @@ export function IndustryExplorer() {
           const part = small.get(r.naics)?.[metric] || 0;
           return (
             <div className="sb-bar-row" key={r.naics}>
-              <span>{r.sector}</span>
+              <span>{industry(r.sector)}</span>
               <div className="sb-bar-track">
                 <div
                   className="sb-split-bar"
@@ -281,20 +294,21 @@ export function IndustryExplorer() {
         })}
       </div>
       <p className="sb-chart-explainer">
-        Switching from jobs to firms changes the picture. Many small practices
-        can coexist with a few very large health systems. Enterprise counts may
-        recur across industries; do not add sector firm counts as unique firms.
+        Try switching from jobs to companies. Health care has many small
+        practices alongside a few very large health systems, so it looks
+        different each way. A company that works in two industries is counted in
+        both, so the company counts can’t be added up.
       </p>
       <Table
         headers={[
-          "Sector",
-          "All employer jobs",
-          "Under-500 jobs",
-          "All firms",
-          "Annual payroll",
+          "Industry",
+          "All jobs",
+          "Jobs at companies under 500",
+          "Companies",
+          "Total pay",
         ]}
         rows={rows.map((r) => [
-          r.sector,
+          industry(r.sector),
           fmt(r.jobs),
           fmt(small.get(r.naics)?.jobs ?? null),
           fmt(r.firms),
@@ -334,22 +348,22 @@ export function PeerComparison() {
     <div>
       <div className="sb-controls">
         <Toggle
-          label="Peer size threshold"
+          label="Company size cutoff"
           value={band}
           onChange={setBand}
           options={[
-            { value: "08", label: "Under 500" },
-            { value: "05", label: "Under 20" },
+            { value: "08", label: "Fewer than 500 employees" },
+            { value: "05", label: "Fewer than 20" },
           ]}
         />
         <Toggle
-          label="Peer metric"
+          label="What to measure"
           value={metric}
           onChange={setMetric}
           options={[
             { value: "jobs_share", label: "Jobs" },
-            { value: "payroll_share", label: "Payroll" },
-            { value: "receipts_share", label: "Receipts" },
+            { value: "payroll_share", label: "Pay" },
+            { value: "receipts_share", label: "Sales" },
           ]}
         />
       </div>
@@ -360,7 +374,8 @@ export function PeerComparison() {
           onChange={(e) => setAdjusted(e.target.checked)}
           disabled={metric !== "jobs_share"}
         />{" "}
-        Give every metro Portland’s broad industry mix <span>(jobs only)</span>
+        Give every metro Portland’s mix of industries{" "}
+        <span>(works for jobs only)</span>
       </label>
       <div className="sb-peer-bars" aria-live="polite">
         {rows.map((r) => (
@@ -381,16 +396,16 @@ export function PeerComparison() {
       </div>
       <p className="sb-chart-explainer">
         {adjusted && metric === "jobs_share"
-          ? "Standardized to Portland’s 19-sector employment mix. This removes one compositional difference, not differences in firm age, detailed specialization or policy. NAICS 99 is excluded (0.006% of Portland jobs)."
-          : `For context, the job-weighted share across all 387 metros is ${pct(benchmark)} at this threshold. The selected cities are comparisons, not a “best place” ranking.`}
+          ? "This version asks what each metro’s share would be if it had Portland’s mix of industries. It removes one difference between regions. Others remain, such as how old the companies are, what each region specializes in and local policy."
+          : `Across all 387 U.S. metro areas, ${pct(benchmark)} of ${metric === "jobs_share" ? "jobs" : metric === "payroll_share" ? "pay" : "sales"} ${metric === "jobs_share" ? "are" : "is"} at companies this size. The chart compares nine metros. It does not rank them from best to worst.`}
       </p>
       <Table
         headers={[
-          "Metro",
-          "Observed share",
+          "Metro area",
+          "Actual share",
           adjusted && metric === "jobs_share"
-            ? "Industry-standardized jobs share"
-            : "Displayed share",
+            ? "With Portland’s industry mix"
+            : "Share shown",
         ]}
         rows={rows.map((r) => [r.name, pct(r.raw), pct(r.value)])}
       />
@@ -413,14 +428,14 @@ export function MetroContext() {
         onChange={setMinimum}
         options={[
           { value: "0", label: "All 387 metros" },
-          { value: "500000", label: "500,000+ employer jobs" },
+          { value: "500000", label: "Large metros (500,000+ jobs)" },
         ]}
       />
       <svg
         className="sb-svg sb-context-svg"
         viewBox="0 0 780 205"
         role="img"
-        aria-label={`Distribution of under-500 job shares in ${dots.length} US metros; Portland is 50.2 percent.`}
+        aria-label={`Share of jobs at companies with fewer than 500 employees in ${dots.length} U.S. metro areas. Portland is 50.2 percent.`}
       >
         {[20, 30, 40, 50, 60, 70, 80].map((v) => (
           <g key={v}>
@@ -441,7 +456,7 @@ export function MetroContext() {
               fill="#71978b"
               opacity=".68"
             >
-              <title>{`${r.name}: ${pct(r.share)}; ${fmt(r.jobs)} jobs`}</title>
+              <title>{`${r.name}: ${pct(r.share)} of ${fmt(r.jobs)} jobs`}</title>
             </circle>
           ))}
         <line
@@ -457,17 +472,16 @@ export function MetroContext() {
         </text>
       </svg>
       <p className="sb-chart-explainer">
-        Each dot is one metro; rows separate overlapping dots and have no
-        economic meaning. Smaller metros often have high small-firm shares. The
-        comparison contains {dots.length} metros, excludes micropolitan and
-        rural areas, and counts jobs rather than unique firms.
+        Each dot is one metro area. The dots are stacked only to keep them from
+        overlapping. Smaller metros often have higher shares. This view shows{" "}
+        {dots.length} metro areas and leaves out small towns and rural areas.
       </p>
       <Table
-        headers={["Metro", "Employer jobs", "Under-500 share"]}
+        headers={["Metro area", "Jobs", "Share at companies under 500"]}
         rows={[...metros]
           .sort((a, b) => b.jobs - a.jobs)
           .map((r) => [r.name, fmt(r.jobs), pct(r.share)])}
-        label={`Explore all ${dots.length} metro values`}
+        label={`See all ${dots.length} metro areas in a table`}
       />
     </div>
   );
@@ -501,12 +515,12 @@ export function SectorMatrix() {
       <div className="sb-matrix-layout">
         <svg
           className="sb-svg"
-          viewBox="0 0 730 400"
+          viewBox="0 0 730 418"
           role="group"
-          aria-label="Sector employment change from 2019 to 2025 plotted against concentration relative to US employment. Use the sector selector or table for exact values."
+          aria-label="Each industry’s change in jobs from 2019 to 2025, plotted against how large a part of the local economy it is compared with the United States. Use the industry menu or the table for exact values."
         >
           <text x="75" y="27" className="sb-plot-note">
-            MORE CONCENTRATED THAN THE U.S.
+            ↑ Share of jobs here vs. U.S.
           </text>
           {[-30, -20, -10, 0, 10, 20, 30].map((n) => (
             <g key={n}>
@@ -544,7 +558,7 @@ export function SectorMatrix() {
               className="sb-matrix-bubble"
               tabIndex={0}
               role="button"
-              aria-label={`Explore ${a.sector}`}
+              aria-label={`Show ${industry(a.sector)}`}
               aria-pressed={selected === a.naics}
               onClick={() => setSelected(a.naics)}
               onKeyDown={(e) => {
@@ -562,15 +576,15 @@ export function SectorMatrix() {
               stroke={selected === a.naics ? "#152f26" : "#fff"}
               strokeWidth={selected === a.naics ? 3 : 1}
             >
-              <title>{`${a.sector}: ${pct(a.change)} job change; ${a.employment_lq}× US concentration; annual average pay ${money(a.average_pay_usd!)}`}</title>
+              <title>{`${industry(a.sector)}: jobs changed ${signedPct(a.change)}; ${a.employment_lq} times its share of U.S. jobs; average yearly pay ${money(a.average_pay_usd!)}`}</title>
             </circle>
           ))}
-          <text x="369" y="395" textAnchor="middle">
-            Change in private jobs, 2019–2025 →
+          <text x="369" y="410" textAnchor="middle">
+            Change in jobs, 2019 to 2025 →
           </text>
         </svg>
         <div className="sb-sector-detail">
-          <label htmlFor="sb-sector">Explore a sector</label>
+          <label htmlFor="sb-sector">Choose an industry</label>
           <select
             id="sb-sector"
             value={selected}
@@ -578,47 +592,47 @@ export function SectorMatrix() {
           >
             {rows.map((r) => (
               <option key={r.naics} value={r.naics}>
-                {r.sector}
+                {industry(r.sector)}
               </option>
             ))}
           </select>
           <div aria-live="polite">
             <strong className={r.change >= 0 ? "sb-positive" : "sb-negative"}>
-              {r.change > 0 ? "+" : ""}
-              {pct(r.change)}
+              {signedPct(r.change)}
             </strong>
             <p>
-              {fmt(r.before)} → {fmt(r.jobs)} jobs
+              {fmt(r.before)} jobs in 2019, {fmt(r.jobs)} in 2025
             </p>
             <dl>
-              <dt>Concentration</dt>
-              <dd>{r.employment_lq}× U.S.</dd>
-              <dt>Annual average pay</dt>
+              <dt>Share of jobs here vs. U.S.</dt>
+              <dd>{r.employment_lq}×</dd>
+              <dt>Average yearly pay</dt>
               <dd>{money(r.average_pay_usd!)}</dd>
             </dl>
           </div>
           <p>
-            Circle area = jobs. <span className="sb-positive">Green</span> = pay
-            above the county private-sector average;{" "}
-            <span className="sb-negative">rust</span> = below.
+            Bigger circles have more jobs.{" "}
+            <span className="sb-positive">Green</span> industries pay more than
+            the county’s private-sector average.{" "}
+            <span className="sb-negative">Rust</span> industries pay less.
           </p>
         </div>
       </div>
       <Table
         headers={[
-          "Sector",
+          "Industry",
           "2019 jobs",
           "2025 jobs",
           "Change",
-          "2025 location quotient",
-          "2025 average pay",
+          "Share of jobs vs. U.S.",
+          "Average pay, 2025",
         ]}
         rows={rows.map((r) => [
-          r.sector,
+          industry(r.sector),
           fmt(r.before),
           fmt(r.jobs),
-          pct(r.change),
-          r.employment_lq!,
+          signedPct(r.change),
+          `${r.employment_lq}×`,
           money(r.average_pay_usd!),
         ])}
       />
@@ -637,18 +651,18 @@ export function NonemployerChart() {
   return (
     <div>
       <Toggle
-        label="Nonemployer measure"
+        label="What to measure"
         value={metric}
         onChange={setMetric}
         options={[
-          { value: "establishments", label: "Businesses without payroll" },
-          { value: "receipts_usd", label: "Gross business receipts" },
+          { value: "establishments", label: "Number of businesses" },
+          { value: "receipts_usd", label: "Total sales" },
         ]}
       />
       <div className="sb-bar-chart">
         {rows.slice(0, 10).map((r) => (
           <div key={r.naics} className="sb-bar-row">
-            <span>{r.sector}</span>
+            <span>{industry(r.sector)}</span>
             <div className="sb-bar-track">
               <i style={{ width: `${(r[metric]! / max) * 100}%` }} />
             </div>
@@ -661,9 +675,9 @@ export function NonemployerChart() {
         ))}
       </div>
       <Table
-        headers={["Sector", "Nonemployer businesses", "Gross receipts"]}
+        headers={["Industry", "Businesses with no employees", "Total sales"]}
         rows={rows.map((r) => [
-          r.sector,
+          industry(r.sector),
           fmt(r.establishments),
           money(r.receipts_usd || 0),
         ])}
@@ -684,7 +698,7 @@ export function OwnerCalculator() {
         {[
           {
             id: "revenue",
-            label: "Monthly gross receipts",
+            label: "Monthly sales",
             value: revenue,
             set: setRevenue,
             min: 1000,
@@ -704,7 +718,7 @@ export function OwnerCalculator() {
           },
           {
             id: "hours",
-            label: "Owner hours per week",
+            label: "Owner’s hours per week",
             value: hours,
             set: setHours,
             min: 10,
@@ -731,18 +745,23 @@ export function OwnerCalculator() {
         ))}
       </div>
       <div className="sb-calculator-result" aria-live="polite">
-        <span>What remains before owner taxes, benefits and reinvestment</span>
+        <span>
+          Left over each month, before the owner’s taxes, benefits and money put
+          back into the business
+        </span>
         <strong>
           {money(remainder)}
           <small> / month</small>
         </strong>
-        <p>{money(Math.round(hourly * 100) / 100)} per owner hour</p>
+        <p>
+          {money(Math.round(hourly * 100) / 100)} for each hour the owner works
+        </p>
       </div>
       <p className="sb-chart-explainer">
-        Illustrative arithmetic, not a Portland earnings estimate. Monthly
-        receipts − business expenses; hours converted at 52 weeks ÷ 12. Debt
-        principal, capital replacement, unpaid family work and multiple owners
-        can change the result. Expenses here exclude owner compensation.
+        The math is monthly sales minus expenses, divided by the owner’s hours
+        in a month. Expenses here don’t include paying the owner. Loan payments,
+        replacing equipment, unpaid help from family and co-owners would all
+        change the answer.
       </p>
     </div>
   );
@@ -770,10 +789,9 @@ export function PayrollChart() {
         ))}
       </div>
       <p className="sb-chart-explainer">
-        This is annual payroll divided by mid-March employment. It is not the
-        median worker’s wage or full-time equivalent pay. Hours, occupation,
-        industry and employment changes affect the ratio; benefits are not
-        included.
+        This is a company-size group’s total pay divided by its jobs. It is not
+        the typical worker’s wage. Part-time hours, the kinds of jobs and the
+        industry all affect it, and benefits are left out.
       </p>
     </div>
   );
@@ -790,7 +808,7 @@ export function DynamicsChart() {
   return (
     <div>
       <label className="sb-select-label" htmlFor="sb-dynamics-metro">
-        Compare establishment turnover
+        Metro area
         <select
           id="sb-dynamics-metro"
           value={metro}
@@ -804,76 +822,78 @@ export function DynamicsChart() {
       <div className="sb-legend">
         <span>
           <i className="sb-green-dot" />
-          Entry rate
+          Opened
         </span>
         <span>
           <i className="sb-rust-dot" />
-          Exit rate
+          Closed
         </span>
       </div>
-      <svg
-        className="sb-svg"
-        viewBox="0 0 730 330"
-        role="img"
-        aria-label={`Entry and exit rates for ${metro}, 2019 to 2023`}
-      >
-        {[5, 8, 11, 14, 17].map((n) => (
-          <g key={n}>
-            <line x1="60" x2="665" y1={y(n)} y2={y(n)} stroke="#dce0d4" />
-            <text x="46" y={y(n) + 5} textAnchor="end">
-              {n}%
+      <div className="sb-dynamics-layout">
+        <svg
+          className="sb-svg"
+          viewBox="0 0 730 330"
+          role="img"
+          aria-label={`Share of business locations that opened and closed each year in ${metro}, 2019 to 2023`}
+        >
+          {[5, 8, 11, 14, 17].map((n) => (
+            <g key={n}>
+              <line x1="60" x2="665" y1={y(n)} y2={y(n)} stroke="#dce0d4" />
+              <text x="46" y={y(n) + 5} textAnchor="end">
+                {n}%
+              </text>
+            </g>
+          ))}
+          {rows.map((r) => (
+            <text x={x(r.year!)} y="315" key={r.year} textAnchor="middle">
+              {r.year}
             </text>
-          </g>
-        ))}
-        {rows.map((r) => (
-          <text x={x(r.year!)} y="315" key={r.year} textAnchor="middle">
-            {r.year}
-          </text>
-        ))}
-        {(["entry_rate_pct", "exit_rate_pct"] as const).map((field, i) => (
-          <g key={field}>
-            <polyline
-              fill="none"
-              stroke={i ? "#b86540" : "#24644f"}
-              strokeWidth="4"
-              points={rows
-                .map((r) => `${x(r.year!)},${y(r[field]!)}`)
-                .join(" ")}
-            />
-            {rows.map((r) => (
-              <circle
-                key={r.year}
-                cx={x(r.year!)}
-                cy={y(r[field]!)}
-                r="5"
-                fill={i ? "#b86540" : "#24644f"}
-              >
-                <title>{`${r.year} ${field === "entry_rate_pct" ? "entry" : "exit"}: ${pct(r[field]!)}`}</title>
-              </circle>
-            ))}
-          </g>
-        ))}
-      </svg>
-      <div className="sb-mini-stats" aria-live="polite">
-        <div>
-          <strong>{fmt(latest.establishments_entered)}</strong>
-          <span>establishments entered, 2023</span>
-        </div>
-        <div>
-          <strong>{fmt(latest.establishments_exited)}</strong>
-          <span>establishments exited, 2023</span>
-        </div>
-        <div>
-          <strong>
-            {fmt(
-              latest.establishments_entered! - latest.establishments_exited!,
-            )}
-          </strong>
-          <span>net difference</span>
+          ))}
+          {(["entry_rate_pct", "exit_rate_pct"] as const).map((field, i) => (
+            <g key={field}>
+              <polyline
+                fill="none"
+                stroke={i ? "#b86540" : "#24644f"}
+                strokeWidth="4"
+                points={rows
+                  .map((r) => `${x(r.year!)},${y(r[field]!)}`)
+                  .join(" ")}
+              />
+              {rows.map((r) => (
+                <circle
+                  key={r.year}
+                  cx={x(r.year!)}
+                  cy={y(r[field]!)}
+                  r="5"
+                  fill={i ? "#b86540" : "#24644f"}
+                >
+                  <title>{`${r.year}: ${pct(r[field]!)} of locations ${field === "entry_rate_pct" ? "opened" : "closed"}`}</title>
+                </circle>
+              ))}
+            </g>
+          ))}
+        </svg>
+        <div className="sb-mini-stats" aria-live="polite">
+          <div>
+            <strong>{fmt(latest.establishments_entered)}</strong>
+            <span>locations opened in 2023</span>
+          </div>
+          <div>
+            <strong>{fmt(latest.establishments_exited)}</strong>
+            <span>locations closed in 2023</span>
+          </div>
+          <div>
+            <strong>
+              {fmt(
+                latest.establishments_entered! - latest.establishments_exited!,
+              )}
+            </strong>
+            <span>net change</span>
+          </div>
         </div>
       </div>
       <Table
-        headers={["Year", "Entries", "Entry rate", "Exits", "Exit rate"]}
+        headers={["Year", "Opened", "Share opened", "Closed", "Share closed"]}
         rows={rows.map((r) => [
           r.year!,
           fmt(r.establishments_entered),
@@ -892,9 +912,9 @@ export function JobFlows() {
     <div>
       <div className="sb-flow-bars">
         {[
-          { label: "Jobs created", value: r.jobs_created!, type: "positive" },
+          { label: "Jobs added", value: r.jobs_created!, type: "positive" },
           {
-            label: "Jobs destroyed",
+            label: "Jobs cut",
             value: r.jobs_destroyed!,
             type: "negative",
           },
@@ -916,18 +936,20 @@ export function JobFlows() {
         ))}
       </div>
       <p className="sb-chart-explainer">
-        Job creation includes openings and expanding establishments; destruction
-        includes closures and contracting establishments. A positive net result
-        can coexist with substantial disruption.
+        Jobs added come from new and growing locations. Jobs cut come from
+        closed and shrinking ones. A net gain of about 20,000 jobs sat on top of
+        far more hiring and far more loss than that.
       </p>
       <Table
-        headers={["Firm age", "Metro jobs", "Net job change"]}
+        headers={["Company age (years)", "Jobs", "Net job change"]}
         rows={data.age.map((a) => [
-          a.firm_age_band.replace(/^[a-e]\) /, ""),
+          a.firm_age_band
+            .replace(/^[a-e]\) /, "")
+            .replace("Left Censored", "Founded before the records begin"),
           fmt(a.jobs),
           fmt(a.net_jobs),
         ])}
-        label="See how job change differs by firm age"
+        label="See job changes by company age"
       />
     </div>
   );
@@ -937,77 +959,83 @@ const journeys = {
   storefront: {
     title: "A food or retail storefront",
     stages: [
-      ["Test demand", "Customers, pricing, foot traffic and cash runway."],
       [
-        "Check the premises",
-        "Confirm legal use, accessibility, utility capacity and lease conditions before a commitment.",
+        "Test the idea",
+        "Are there enough customers at this price, and enough cash to last until they come?",
       ],
       [
-        "Build and license",
-        "Coordinate drawings, health requirements where applicable, permits and construction.",
+        "Check the space",
+        "Before signing a lease, confirm the use is legal there, the space is accessible and the utilities can handle it.",
       ],
       [
-        "Open and staff",
-        "Inspection, payroll, insurance and reliable scheduling.",
+        "Build and get licensed",
+        "Line up drawings, permits and construction, plus health approvals if you serve food.",
       ],
       [
-        "Survive and improve",
-        "Customer retention, repairs, working capital and owner compensation.",
+        "Open and hire",
+        "Pass inspection, set up payroll and insurance, and build a schedule staff can rely on.",
+      ],
+      [
+        "Stay open",
+        "Keep customers coming back, pay for repairs and still pay the owner.",
       ],
     ],
     issue:
-      "A navigation tool can organize requirements. It cannot make an unsuitable space compliant or supply the cash to carry an unfinished buildout.",
+      "A website can list the requirements. It can’t make the wrong space legal, or pay the bills while an unfinished buildout drags on.",
   },
   trades: {
     title: "A small construction firm",
     stages: [
       [
-        "Qualify",
-        "Licensing, insurance, certification where useful and estimating skills.",
+        "Get qualified",
+        "A license, insurance, any certification that helps, and the skill to estimate a job.",
       ],
       [
         "Find work",
-        "Public and private bid opportunities matched to realistic capacity.",
+        "Look for public and private bids the firm can realistically handle.",
       ],
       [
         "Price the job",
-        "Materials, labor, contingencies and subcontractor terms.",
+        "Cover materials, labor, surprises and subcontractors.",
       ],
       [
-        "Deliver",
-        "Crew availability, site coordination, documentation and change orders.",
+        "Do the work",
+        "Keep the crew staffed, the site coordinated and the paperwork and change orders current.",
       ],
       [
-        "Collect",
-        "Invoices, retainage and payment delays can create a financing gap.",
+        "Get paid",
+        "Slow invoices and money the customer holds back until the end can leave the firm short of cash.",
       ],
     ],
     issue:
-      "Winning a bigger contract can worsen cash flow if payroll and materials come due before the customer pays. Procurement assistance must connect to working capital and prompt payment.",
+      "Winning a bigger contract can make cash flow worse, because payroll and materials come due before the customer pays. Help with bidding has to come with working capital and prompt payment.",
   },
   solo: {
     title: "A solo service business",
     stages: [
-      ["Define the offer", "A service a reachable customer will pay for."],
+      [
+        "Decide what to sell",
+        "A service that customers you can reach will pay for.",
+      ],
       [
         "Set up",
-        "Registration, tax records, contracts and any occupational requirements.",
+        "Register, keep tax records, write contracts and meet any licensing rules for the occupation.",
       ],
       [
-        "Win customers",
-        "Referrals, sales, proposals and a credible portfolio.",
+        "Find customers",
+        "Referrals, proposals and a track record people can see.",
       ],
       [
-        "Deliver and invoice",
-        "Billable work competes with marketing, administration and care responsibilities.",
+        "Do the work and bill for it",
+        "Paid work competes with marketing, paperwork and caring for family.",
       ],
       [
-        "Choose the next step",
-        "Raise prices, hire, remain solo or move to employment.",
+        "Choose what comes next",
+        "Raise prices, hire, stay solo or take a job.",
       ],
     ],
     issue:
-      "A successful solo business may never hire. Evaluate net income, volatility and time, rather than treating employer status as the only legitimate destination.",
+      "A solo business that never hires can still be a success. Judge it by what the owner earns, how steady the income is and how many hours it takes.",
   },
 };
 export function BarrierJourney() {
@@ -1018,7 +1046,7 @@ export function BarrierJourney() {
   return (
     <div>
       <Toggle
-        label="Business journey"
+        label="Kind of business"
         value={kind}
         onChange={setKind}
         options={[
@@ -1039,10 +1067,10 @@ export function BarrierJourney() {
       <p className="sb-chart-explainer">{j.issue}</p>
       <div className="sb-delay">
         <div>
-          <h4>The price of waiting</h4>
+          <h4>What a delay costs</h4>
           <p>
-            Illustrative cash already committed before opening; excludes
-            foregone profit and one-time buildout.
+            An example of the bills an owner keeps paying before opening day.
+            Lost profit and construction costs would be on top of this.
           </p>
         </div>
         <label htmlFor="sb-delay-months">
@@ -1057,7 +1085,7 @@ export function BarrierJourney() {
           />
         </label>
         <label htmlFor="sb-delay-burn">
-          Monthly carrying costs <strong>{money(burn)}</strong>
+          Monthly bills while waiting <strong>{money(burn)}</strong>
           <input
             id="sb-delay-burn"
             type="range"
@@ -1070,7 +1098,7 @@ export function BarrierJourney() {
         </label>
         <div className="sb-delay-total" aria-live="polite">
           <strong>{money(months * burn)}</strong>
-          <span>additional cash needed</span>
+          <span>extra cash needed</span>
         </div>
       </div>
     </div>
@@ -1082,27 +1110,27 @@ export function SupportFunnel() {
     {
       label: "Businesses that need help",
       value: "?",
-      desc: "No citywide denominator that includes eligible nonusers.",
+      desc: "Nobody has counted them, including the ones that never ask.",
     },
     {
-      label: "Aware and able to apply",
+      label: "Know about the help and can apply",
       value: "?",
-      desc: "Awareness, language access and abandoned applications are not measured here.",
+      desc: "No data on who has heard of it, language access or applications people gave up on.",
     },
     {
-      label: "Unique OSB clients",
+      label: "Businesses the office served",
       value: "759",
-      desc: "Reported in the first-year report, May 2025–May 2026.",
+      desc: "From its first-year report, May 2025 to May 2026.",
     },
     {
-      label: "Problems resolved",
+      label: "Problems solved",
       value: "?",
-      desc: "A referral is not confirmation that the issue was resolved.",
+      desc: "Being referred somewhere does not mean the problem was fixed.",
     },
     {
-      label: "Better business outcomes",
+      label: "Better off afterward",
       value: "?",
-      desc: "Need comparable income, time, survival and job-quality measures.",
+      desc: "Would need income, hours, survival and job quality, measured the same way for everyone.",
     },
   ];
   return (
@@ -1118,12 +1146,12 @@ export function SupportFunnel() {
         ))}
       </div>
       <p className="sb-chart-explainer">
-        A measurement chain, not a scaled conversion funnel. Unknown values
-        remain unknown; 759 cannot be divided by a county or metro count to
-        obtain a valid city service rate.
+        These are five things to measure, and the boxes are not drawn to scale.
+        We can’t divide 759 by a county or metro count of businesses to get a
+        share served, because those counts cover different places.
       </p>
       <details className="sb-audit">
-        <summary>Open the OSB reconciliation check</summary>
+        <summary>The office’s own numbers don’t quite add up</summary>
         <div className="sb-audit-equation">
           <span>
             103<small>District 1</small>
@@ -1142,16 +1170,16 @@ export function SupportFunnel() {
           </span>
           <b>=</b>
           <span>
-            581<small>listed total</small>
+            581<small>total listed</small>
           </span>
         </div>
         <p>
-          The report also gives 759 unique businesses: an arithmetic difference
-          of 178. The reason is not stated, so these are not labeled
-          “unassigned” businesses. Page 2 reports 1,600 touchpoints; page 3 says
-          1,700+ interactions. Terminology or reporting windows may differ.
-          These are unresolved reporting questions, not proof of improper
-          conduct.
+          The report lists 581 businesses across the four council districts and
+          759 businesses overall, a difference of 178 that it does not explain.
+          It also reports 1,600 “touchpoints” on page 2 and “1,700+
+          interactions” on page 3. Those may be different terms or different
+          time periods. These are open questions about the reporting. They are
+          not evidence that anyone did anything wrong.
         </p>
       </details>
     </div>
@@ -1168,11 +1196,12 @@ const concepts = [
     evaluation: 100000,
     cases: 1000,
     description:
-      "Shared intake, named case owners, multilingual navigation, and a resolution deadline.",
-    owner: "OSB / Prosper, with named bureau counterparts",
+      "One intake shared by every program, a named person on each case, help in the owner’s language and a deadline for an answer.",
+    owner:
+      "The Office of Small Business and Prosper Portland, with a named contact in each bureau.",
     dependencies:
-      "A shared case definition, referral agreements, accessible intake and authority to escalate delays.",
-    test: "Randomized or phased rollout of case management; compare resolution rates, elapsed time, owner effort and repeat contacts.",
+      "An agreed definition of a case, referral agreements, intake that everyone can use and the authority to push on delays.",
+    test: "Roll it out in stages or assign cases at random. Compare how many problems get solved, how long it takes, how much effort it costs the owner and how often people have to come back.",
   },
   {
     id: "shared",
@@ -1183,11 +1212,11 @@ const concepts = [
     evaluation: 150000,
     cases: 750,
     description:
-      "Human advisors with AI-assisted document preparation, cash-flow workflows, and specialist review.",
-    owner: "Prosper and contracted community providers",
+      "Human advisors who use AI to help prepare documents and cash-flow plans, with specialists reviewing the work.",
+    owner: "Prosper Portland and community groups working under contract.",
     dependencies:
-      "Consent-based records, multilingual service, licensed expert review where required, secure tools and provider capacity.",
-    test: "Compare existing assistance, human assistance with AI, and simpler forms. Measure verified completed tasks, errors, time saved and six- and twelve-month outcomes.",
+      "Owners’ consent to share records, service in several languages, licensed experts where the law requires them, secure tools and enough staff at the provider groups.",
+    test: "Compare today’s help, human help with AI and simpler forms. Measure tasks verified as finished, errors, time saved and how businesses are doing after six and twelve months.",
   },
   {
     id: "structural",
@@ -1198,11 +1227,12 @@ const concepts = [
     evaluation: 315000,
     cases: 500,
     description:
-      "Coordinated permit cases, premises support, public purchasing and faster payment.",
-    owner: "Permitting & Development, Procurement, Revenue and Prosper",
+      "Permit cases coordinated from start to finish, help securing space, public purchasing from small firms and faster payment.",
+    owner:
+      "Portland Permitting & Development, Procurement, the Revenue Division and Prosper Portland.",
     dependencies:
-      "Bureau authority, legal and budget changes, usable premises, payment-system changes and targeted capital.",
-    test: "Use a phased process change or comparable permit cohorts. Track end-to-end opening time, cancellations, public cost, safety and displacement.",
+      "Authority for the bureaus, legal and budget changes, usable space, changes to payment systems and targeted capital.",
+    test: "Phase in the change, or compare similar groups of permit cases. Track time from start to opening, cancellations, public cost, safety and whether other businesses were pushed out.",
   },
 ];
 export function PolicyLab() {
@@ -1226,17 +1256,15 @@ export function PolicyLab() {
           value: c.id,
           label:
             c.id === "delivery"
-              ? "1 · Better delivery"
+              ? "1 · Make the current system work"
               : c.id === "shared"
-                ? "2 · Shared services"
-                : "3 · Structural reform",
+                ? "2 · A shared back office"
+                : "3 · Fix the recurring roadblocks",
         }))}
       />
       <div className="sb-policy-grid">
         <div>
-          <p className="sb-eyebrow">
-            Illustrative first-year operating scenario
-          </p>
+          <p className="sb-eyebrow">Example first-year budget</p>
           <h4>{c.title}</h4>
           <p>{c.description}</p>
           <dl className="sb-costs">
@@ -1244,11 +1272,11 @@ export function PolicyLab() {
               {c.people} staff × {money(loaded)}
             </dt>
             <dd>{money(c.people * loaded)}</dd>
-            <dt>Systems, tools & operations</dt>
+            <dt>Systems, tools and operations</dt>
             <dd>{money(c.systems)}</dd>
-            <dt>Language, quality / targeted support</dt>
+            <dt>Language help, quality checks and targeted support</dt>
             <dd>{money(c.services)}</dd>
-            <dt>Evaluation & accessibility</dt>
+            <dt>Evaluation and accessibility</dt>
             <dd>{money(c.evaluation)}</dd>
           </dl>
           <p className="sb-budget-total">
@@ -1258,7 +1286,8 @@ export function PolicyLab() {
         </div>
         <div className="sb-policy-inputs">
           <label htmlFor="sb-loaded">
-            Loaded annual staff cost <strong>{money(loaded)}</strong>
+            Yearly cost of one staff member, with benefits{" "}
+            <strong>{money(loaded)}</strong>
             <input
               id="sb-loaded"
               type="range"
@@ -1270,7 +1299,7 @@ export function PolicyLab() {
             />
           </label>
           <label htmlFor="sb-cases">
-            Businesses served in first year <strong>{fmt(cases)}</strong>
+            Businesses served in the first year <strong>{fmt(cases)}</strong>
             <input
               id="sb-cases"
               type="range"
@@ -1282,8 +1311,8 @@ export function PolicyLab() {
             />
           </label>
           <label htmlFor="sb-effect">
-            Additional resolution rate assumed{" "}
-            <strong>{effect} percentage points</strong>
+            Extra problems solved for every 100 businesses served{" "}
+            <strong>{effect}</strong>
             <input
               id="sb-effect"
               type="range"
@@ -1298,24 +1327,24 @@ export function PolicyLab() {
             <strong>
               {additional > 0
                 ? money(Math.round(total / additional))
-                : "Not defined"}
+                : "No answer"}
             </strong>
-            <span>cost per additional resolved case</span>
+            <span>cost for each extra problem solved</span>
             <p>
               {additional > 0
-                ? `${fmt(additional)} more cases resolved than without the intervention. This effect is assumed, not measured.`
-                : "If there is no additional effect, more activity does not establish value."}
+                ? `${fmt(additional)} more problems solved than would have been without the program. That effect is our assumption. Nobody has measured it.`
+                : "If the program solves no extra problems, serving more businesses does not show it was worth the money."}
             </p>
           </div>
         </div>
       </div>
       <div className="sb-policy-details">
         <p>
-          <strong>Responsible institutions</strong>
+          <strong>Who would run it</strong>
           {c.owner}
         </p>
         <p>
-          <strong>What must change</strong>
+          <strong>What has to be in place</strong>
           {c.dependencies}
         </p>
         <p>
@@ -1324,16 +1353,38 @@ export function PolicyLab() {
         </p>
       </div>
       <p className="sb-chart-explainer">
-        Planning assumptions, not appropriations, bids, proven effects or
-        benefit–cost ratios. Alternatives are not automatically additive. Loan
-        principal, major construction and agencywide overhead are outside these
-        operating scenarios. Cost per additional case = first-year cost ÷
-        (businesses served × assumed percentage-point effect ÷ 100).
+        These are planning numbers. They are not appropriations or bids, and
+        nobody has proven the effects. The three options overlap, so their
+        results can’t simply be added. Loans, major construction and agency
+        overhead are left out.
       </p>
     </div>
   );
 }
 
+const statusLabels: Record<string, string> = {
+  "archived-reviewed": "Reviewed and archived",
+  reviewed: "Reviewed",
+  screened: "Skimmed, not fully reviewed",
+  queued: "Not yet reviewed",
+};
+const familyLabels: Record<string, string> = {
+  accountability: "Audits",
+  ai: "AI",
+  barriers: "Barriers",
+  capital: "Capital",
+  "capital-demand-ai": "Capital, customers and AI",
+  dynamics: "Openings and closings",
+  gdp: "GDP",
+  geography: "Geography",
+  jobs: "Jobs",
+  local: "Local reports",
+  "operating-conditions": "Taxes and operating conditions",
+  policy: "Policy research",
+  procurement: "Public contracting",
+  programs: "Programs",
+  structure: "Company size and industry",
+};
 export function EvidenceLibrary() {
   const [query, setQuery] = useState("");
   const [family, setFamily] = useState("all");
@@ -1353,34 +1404,34 @@ export function EvidenceLibrary() {
     <div>
       <div className="sb-library-controls">
         <label htmlFor="sb-source-search">
-          Search the evidence
+          Search the sources
           <input
             id="sb-source-search"
             type="search"
-            placeholder="Try: permits, GDP, owners, Census…"
+            placeholder="Try permits, GDP, owners or Census"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
         </label>
         <label htmlFor="sb-source-family">
-          Source family
+          Type of source
           <select
             id="sb-source-family"
             value={family}
             onChange={(e) => setFamily(e.target.value)}
           >
-            <option value="all">All families</option>
+            <option value="all">All types</option>
             {[...new Set(sources.map((s) => s.family))].sort().map((f) => (
               <option key={f} value={f}>
-                {f.replaceAll("-", " ")}
+                {familyLabels[f] || f.replaceAll("-", " ")}
               </option>
             ))}
           </select>
         </label>
       </div>
       <p className="sb-library-count" role="status">
-        {rows.length} of {sources.length} registered sources · inclusion does
-        not mean every finding was validated
+        {rows.length} of {sources.length} sources. Being listed here does not
+        mean we verified every finding in a source.
       </p>
       <div className="sb-source-list">
         {rows.map((s) => (
@@ -1388,32 +1439,32 @@ export function EvidenceLibrary() {
             <summary>
               <span className="sb-source-publisher">{s.publisher}</span>
               <strong>{s.title}</strong>
-              <span className="sb-source-status">{s.status}</span>
+              <span className="sb-source-status">
+                {statusLabels[s.status] || s.status}
+              </span>
             </summary>
             <div>
               <p>{s.note}</p>
               <dl>
-                <dt>Geography</dt>
+                <dt>Place</dt>
                 <dd>{s.geography}</dd>
-                <dt>Measurement period</dt>
+                <dt>Period covered</dt>
                 <dd>{s.reference_period}</dd>
-                <dt>Publication</dt>
+                <dt>Published</dt>
                 <dd>{s.published}</dd>
-                <dt>Evidence location</dt>
+                <dt>Where in the source</dt>
                 <dd>{s.evidence_locations}</dd>
-                <dt>Method / limitation</dt>
+                <dt>Method and limits</dt>
                 <dd>{s.methodology_note}</dd>
               </dl>
               <a href={s.url} target="_blank" rel="noreferrer">
-                Open original source ↗
+                Open the source ↗
               </a>
             </div>
           </details>
         ))}
         {!rows.length && (
-          <p>
-            No sources match. Try a broader term or clear the family filter.
-          </p>
+          <p>No sources match. Try a broader word or clear the type filter.</p>
         )}
       </div>
     </div>

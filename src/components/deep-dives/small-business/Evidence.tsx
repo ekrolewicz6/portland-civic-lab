@@ -42,17 +42,18 @@ export function Figure({
       </div>
       {children}
       <figcaption>
-        <span>{note}</span>
-        <span className="sb-figure-links">
+        <p className="sb-figure-note">{note}</p>
+        <p className="sb-figure-links">
+          <span>{sources.length > 1 ? "Sources" : "Source"}</span>
           {sources.map((id) => (
             <Source key={id} id={id} />
           ))}
           {download && (
             <a href={`/data/small-business/${download}`} download>
-              Download data ↓
+              Download the data ↓
             </a>
           )}
-        </span>
+        </p>
       </figcaption>
     </figure>
   );

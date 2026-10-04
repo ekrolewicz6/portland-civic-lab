@@ -3,13 +3,13 @@ export const runtime = "edge";
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const alt =
-  "The state of small business in Portland: Small business. Big questions.";
+  "The state of small business in Portland: How well does Portland help its small businesses?";
 export default function Image() {
   return ogImage({
     eyebrow: "State of small business · Portland",
-    headline: "Small business. Big questions.",
+    headline: "How well does Portland help its small businesses?",
     accent: "#c5df99",
     description:
-      "The economy behind the storefront: jobs, livelihoods, public support, and what comes next.",
+      "What small businesses do, what they pay, what gets in their way and whether the help on offer is working.",
   });
 }

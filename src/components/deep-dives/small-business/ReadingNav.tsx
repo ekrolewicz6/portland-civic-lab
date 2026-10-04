@@ -61,13 +61,12 @@ export function ReadingNav({ chapters }: { chapters: string[][] }) {
       aria-label="Small business report chapters"
     >
       <div className="sb-nav-scroll">
-        {chapters.map(([id, label], i) => (
+        {chapters.map(([id, label]) => (
           <a
             href={`#${id}`}
             key={id}
             aria-current={active === id ? "location" : undefined}
           >
-            <span>{String(i + 1).padStart(2, "0")}</span>
             {label}
           </a>
         ))}
