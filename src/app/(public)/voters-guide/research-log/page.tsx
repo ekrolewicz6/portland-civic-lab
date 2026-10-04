@@ -19,6 +19,29 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="governor-debate-2026-10-01">October 3, 2026 · Debate: governor (October 1, University of Oregon)</h2>
+        <p>
+          The governor page now includes what Tina Kotek and Christine Drazan
+          said at their first general-election debate. The Lab read the full
+          KVAL News broadcast, attributed each answer from the moderator’s
+          calls, and links every entry to the moment the answer starts. Brett
+          Smith did not take part. On the Climate Protection Program, Kotek is
+          “100% supportive” and open to the Legislature weighing a link with
+          Washington, California and Quebec next year; Drazan would rescind it
+          on day one. On data centers, Kotek said there “has to be a
+          moratorium” until the state gets it right and described the bill
+          she would introduce on the first day of a second term; Drazan called
+          the POWER Act “window dressing,” and her yes and no votes on it stay
+          in the entry. On vote by mail, Kotek called the system trusted and
+          convenient; Drazan said she backed the 2025 in-person voting bill
+          over Postal Service concerns and wants people able to vote in person.
+          Two new boards come from questions both candidates answered:
+          farmworker overtime, which drops to 40 hours a week in 2027 (Kotek
+          defended it; Drazan says farms need relief), and unemployment pay
+          during strikes under SB 916 (Kotek signed and defended it; Drazan
+          voted no and says it weakens the unemployment fund). Claims the
+          candidates made about each other were not used.
+        </p>
         <h2 id="koyama-lane-2026-10-02">October 2, 2026 · Candidate response: Tiffany Koyama Lane (Portland Council, District 3)</h2>
         <p>
           Lydia Kiesling answered for the campaign all six questions the Lab
