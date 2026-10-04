@@ -31,11 +31,12 @@ export default function FireMechanicsVisual() {
   </figure>;
 }
 export function HabitatTree({ kind }: { kind: "oak" | "pine" }) {
-  return <svg viewBox="0 0 320 230" role="img" aria-label={kind === "oak" ? "Illustration of an oak with a broad spreading crown" : "Illustration of a ponderosa pine with space beneath its crown"}>
-    <rect width="320" height="230" fill={kind === "oak" ? "#e2e7d3" : "#e8e2d5"} />
-    <circle cx="254" cy="49" r="28" fill="#cfceb0" />
-    <path d="M0 203Q90 180 185 197T320 195V230H0Z" fill="#b6bea3" />
-    {kind === "oak" ? <><path d="M145 202L150 117L113 89M153 148l46-65M150 164l-48-41" fill="none" stroke="#80604a" strokeWidth="13" /><path d="M87 126C41 122 34 80 67 65C49 23 104 7 128 33C157 6 203 14 211 50C259 43 273 99 231 116C225 144 176 152 157 127C137 153 102 150 87 126Z" fill="#60754a" /><path d="M77 82Q144 37 209 78Q172 107 135 113" fill="#778852" /></> : <Pine x={162} y={14} scale={.99} />}
-    <path d="M28 207l5-14 6 14m54-3l5-13 4 13m126 1l5-15 5 15m31 0l5-10 3 10" fill="none" stroke="#738057" strokeWidth="2" />
+  return <svg viewBox="0 0 640 250" role="img" aria-label={kind === "oak" ? "Illustration of an oak with a broad spreading crown" : "Illustration of a ponderosa pine with space beneath its crown"}>
+    <rect width="640" height="250" fill={kind === "oak" ? "#e2e7d3" : "#e8e2d5"} />
+    <circle cx="512" cy="58" r="30" fill="#cfceb0" />
+    <path d="M0 196Q120 150 250 182T470 170T640 188V250H0Z" fill="#cdd5bf" />
+    <path d="M0 222Q160 196 330 216T640 212V250H0Z" fill="#b6bea3" />
+    <g transform="translate(160 14)">{kind === "oak" ? <><path d="M145 202L150 117L113 89M153 148l46-65M150 164l-48-41" fill="none" stroke="#80604a" strokeWidth="13" /><path d="M87 126C41 122 34 80 67 65C49 23 104 7 128 33C157 6 203 14 211 50C259 43 273 99 231 116C225 144 176 152 157 127C137 153 102 150 87 126Z" fill="#60754a" /><path d="M77 82Q144 37 209 78Q172 107 135 113" fill="#778852" /></> : <Pine x={162} y={10} scale={0.99} />}</g>
+    <path d="M38 226l5-14 6 14m70-3l5-13 4 13m96 2l5-12 5 12m176-1l5-15 5 15m62-2l5-11 4 11m66 2l5-13 5 13" fill="none" stroke="#738057" strokeWidth="2" />
   </svg>;
 }

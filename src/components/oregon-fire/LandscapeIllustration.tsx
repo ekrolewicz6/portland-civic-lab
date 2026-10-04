@@ -10,6 +10,7 @@ export default function LandscapeIllustration({ kind }: { kind: string }) {
   return (
     <svg
       viewBox="0 0 520 320"
+      preserveAspectRatio="xMidYMid slice"
       role="img"
       aria-label={`Conceptual illustration of ${kind === "wet" ? "a dense wet forest" : kind === "pine" ? "an open pine forest" : kind === "oak" ? "oak trees and prairie" : "sagebrush and grassland"}`}
     >
