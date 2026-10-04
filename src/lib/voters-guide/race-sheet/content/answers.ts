@@ -24,6 +24,7 @@ const cronlund = (question: string, text: string): CandidateAnswer => ({ candida
 const schimmel = (question: string, text: string): CandidateAnswer => ({ candidateId: "brian-schimmel", question, text, received: "2026-09-28" });
 const marugg = (question: string, text: string): CandidateAnswer => ({ candidateId: "sarah-marugg", question, text, received: "2026-09-30" });
 const cruz = (question: string, text: string): CandidateAnswer => ({ candidateId: "serena-cruz", question, text, received: "2026-10-02" });
+const cruz2 = (question: string, text: string): CandidateAnswer => ({ candidateId: "serena-cruz", question, text, received: "2026-10-03" });
 const koyamaLane = (question: string, text: string): CandidateAnswer => ({ candidateId: "tiffany-koyama-lane", question, text, received: "2026-10-02" });
 
 export const answers: CandidateAnswer[] = [
@@ -543,6 +544,10 @@ export const answers: CandidateAnswer[] = [
   cruz(
     "Universal preschool: what changes over the next four years to the budget, seats or the tax?",
     "Demographic and program data will drive my decisions on budget, seats and the tax, including growth from families moving here for the program. I’ll support a tax increase when the data shows we need it to reach universality, and I’ll track performance to ensure we spend dollars wisely.",
+  ),
+  cruz2(
+    "Preschool tax delay: should the 2028 delay stand?",
+    "I do not support any delay in achieving the goals of universality. The data does not demonstrate the need for increasing the tax at this time in order to stay on track to achieve this goal. That is why I support the Board’s decision to delay the increase.",
   ),
   // Sent by Lydia Kiesling for the campaign on October 2, 2026, answering the six questions of September 23.
   koyamaLane(
