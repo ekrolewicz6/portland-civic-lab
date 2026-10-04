@@ -285,6 +285,8 @@ describe("sourceChip", () => {
     expect(sourceChip(e("https://www.estherforportland.com/issues")).venue).toBe("Site");
     expect(sourceChip(e("https://www.portlandmercury.com/q")).venue).toBe("Questionnaire");
     expect(sourceChip(e("https://www.linkedin.com/posts/x")).venue).toBe("Post");
+    expect(sourceChip({ ...e("https://www.youtube.com/watch?v=x&t=60s"), label: "KVAL News · governor’s debate" }).label).toBe("Debate");
+    expect(sourceChip({ ...e("https://www.avstream.me/pbj"), label: "OBI and PBJ · governor candidate forum" }).venue).toBe("Forum");
     expect(sourceChip(e("https://www.portland.gov/council/documents/resolution/adopted/37750", "Public record")).venue).toBe("Record");
     expect(sourceChip(e("https://secure.sos.state.or.us/orestar/cfDetail.do?cfRsn=1", "Election authority")).venue).toBe("Filing");
   });

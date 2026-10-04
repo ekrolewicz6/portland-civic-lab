@@ -21,3 +21,6 @@
 - gov-climate-protection: both entries now cite the debate (Kotek keeps "supports," now with openness to legislative review; Drazan "opposes," "Rescind on day one"). The earlier Kotek source (her November 2024 statement on the program's re-adoption) is no longer cited.
 - Kotek climate "how" step: the day-one data-center bill (replaces the platform wording on a prohibition until standards are set; her moratorium remains on the data-center board).
 - New board gov-vote-by-mail: Kotek supports, Drazan opposes, Smith gap.
+
+## Superseded (October 3, 2026)
+The guide now cites KVAL's full broadcast of the debate, with a timestamp for each answer; see kval-governor-debate-2026-10-01.md. This article is no longer cited on the page.
