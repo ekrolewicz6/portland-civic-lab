@@ -171,6 +171,15 @@ const smithInterview: Evidence = {
 /* Oregon Business & Industry and Portland Business Journal governor forum (September 24, 2026). The Lab
  * worked from a transcript without speaker labels; with two candidates and the moderator naming the first
  * speaker on each question, every turn is certain. See research/voters-guide-2026/sources/obi-pbj-governor-forum-2026-09-24.md. */
+/* First governor debate, October 1, 2026 (University of Oregon; Oregon Journalism Project and Lookout
+ * Eugene-Springfield). Brett Smith did not take part. See research/voters-guide-2026/sources/ww-governor-debate-2026-10-01.md. */
+const wwDebate: Evidence = {
+  label: "Willamette Week · First Oregon governor’s debate gets feisty",
+  url: "https://www.wweek.com/news/state/2026/10/02/first-oregon-governors-debate-gets-feisty/",
+  kind: "Reporting",
+  date: "Debate October 1, 2026; article October 2, 2026; reviewed October 3, 2026",
+  note: "Kotek and Drazan at the first general-election debate, moderated by Nigel Jaquiss (Oregon Journalism Project), Ben Botkin (Lookout Eugene-Springfield) and Bayla Orton (UO student journalist). Quoted words are as the paper printed them; other wording is the paper's account of what each candidate said.",
+};
 const obiPbjForum: Evidence = {
   label: "Oregon Business & Industry and Portland Business Journal · governor candidate forum (September 24, 2026)",
   url: "https://www.avstream.me/pbj",
@@ -364,8 +373,8 @@ const deliveries: Delivery[] = [
   }),
   delivery("tina-kotek", "climate", {
     how: step(
-      "A statewide prohibition on new data-center development until standards prevent rate hikes, require clean-energy production and protect air and water; a Climate Resilience Investment Act she cites as signed.",
-      kotekPlatform,
+      "A bill on the first day of a second term requiring data centers to produce their own clean energy, be built with union labor and provide benefits to their communities, as she described it at the October 1 debate.",
+      wwDebate,
     ),
     measure: step(
       "A goal to protect 10% more of Oregon's most climate-resilient lands and waters over the next decade; no emissions or rate target is stated.",
@@ -591,11 +600,6 @@ const govHomelessEo = record(
   "January 9, 2026; reviewed September 21, 2026",
   "Order text at oregon.gov/gov/eo/eo-26-01.pdf; in force through January 10, 2027. Shelter funding: HB 3644 (2025), $204.9 million for 2025–27, signed July 17, 2025.",
 );
-const deqCpp = record(
-  "DEQ · Environmental Quality Commission adopts the Climate Protection Program, with the governor’s statement",
-  "https://apps.oregon.gov/oregon-newsroom/OR/DEQ/Posts/Post/EQC-adopts-climate-protection",
-  "November 21, 2024; reviewed September 21, 2026",
-);
 const govImmBills = record(
   "Governor’s Office · Signs eight bills bolstering protections for immigrant and refugee communities",
   `${GOV_NEWS}/governor-kotek-signs-bills-bolstering-protections-for-immigrant-and-refugee-communities`,
@@ -706,6 +710,14 @@ const governorTopics: ExtraTopic[] = [
       "The program caps greenhouse gas emissions from fossil fuels used in Oregon and lowers the cap each year, to 50% below baseline by 2035 and 90% by 2050; the state re-adopted it in November 2024 after a court voided the first version on procedure. Nearly 30 business, utility and labor groups sued on April 16, 2026 to strike it down. The Court of Appeals has let six environmental justice, climate and business groups join the state’s defense and agreed to expedite the case, with briefing through December.",
   },
   {
+    id: "gov-vote-by-mail",
+    label: "Vote by mail",
+    short: "Mail voting",
+    question: "Keep Oregon's vote-by-mail elections as they are?",
+    context:
+      "Oregon has run its elections by mail since voters approved Measure 60 in 1998. HB 3872 (2025) would have made in-person voting on election day the standard method, offered absentee ballots only to voters who could not get to the polls, required photo ID to vote or request a ballot and referred the change to voters; it never left the House Rules Committee.",
+  },
+  {
     id: "gov-immigration-enforcement",
     label: "Sanctuary law",
     short: "Sanctuary",
@@ -769,9 +781,10 @@ const topicStances: TopicStance[] = [
   stance("tina-kotek", "gov-homelessness-emergency", "supports", "Extended emergency to 2027",
     "Extended the homelessness emergency by Executive Order 26-01 through January 10, 2027, with goals of rehousing 1,400 more households and preventing homelessness for 8,000, after signing HB 3644’s $204.9 million shelter program.",
     govHomelessEo),
+  // October 1, 2026 debate: her current position, including openness to the Legislature reviewing the program.
   stance("tina-kotek", "gov-climate-protection", "supports", "Keep the carbon cap",
-    "Backed the Environmental Quality Commission’s re-adoption of the program on November 21, 2024, saying it “will keep polluters accountable and fund community investments” that cut emissions.",
-    deqCpp),
+    "Said at the October 1, 2026 debate she is “100% supportive of our current Climate Protection Program” and supports the Legislature taking it up next year “to figure out how we might be able to be more competitive.”",
+    wwDebate),
   stance("tina-kotek", "gov-immigration-enforcement", "supports", "Keep sanctuary limits",
     "Created an interagency council on the state’s response to federal enforcement (EO 26-04, January 30, 2026), signed eight immigrant-protection bills April 9, 2026, and opposes ICE detention facilities in Oregon.",
     govImmBills),
@@ -805,9 +818,16 @@ const topicStances: TopicStance[] = [
   stance("christine-drazan", "gov-homelessness-emergency", "mixed", "Audit, shift to recovery",
     "Would declare an emergency on addiction and mental health, audit homeless spending and shift money to recovery programs and homeless services, not measuring success by low-barrier shelter beds; her plan does not address the homelessness emergency.",
     drazanPlan),
-  stance("christine-drazan", "gov-climate-protection", "opposes", "Repeal the program",
-    "Would repeal the Climate Protection Program, which she calls a costly executive order that raised utility and gas prices and threatened jobs.",
-    drazanPlan),
+  stance("christine-drazan", "gov-climate-protection", "opposes", "Rescind on day one",
+    "Said at the October 1, 2026 debate she will rescind the Climate Protection Program on day one, calling it a political agenda that “harms families and makes us uniquely expensive.”",
+    wwDebate),
+  // Vote by mail, raised at the October 1, 2026 debate.
+  stance("tina-kotek", "gov-vote-by-mail", "supports", "Keep vote by mail",
+    "Said at the October 1, 2026 debate that she would not change the current vote-by-mail system.",
+    wwDebate),
+  stance("christine-drazan", "gov-vote-by-mail", "opposes", "Return polling booths",
+    "Said at the October 1, 2026 debate she wants to return polling booths to Oregon; in 2025 she sponsored HB 3872, which would have made in-person voting the normal method and required government ID.",
+    wwDebate),
   stance("christine-drazan", "gov-immigration-enforcement", "opposes", "Sanctuary law too far",
     "Told KATU in April 2026 that Oregon’s sanctuary laws “have gone too far,” citing Corrections declining a U.S. attorney’s request about 30 people, and wants law enforcement able to work with federal law enforcement.",
     drazanKatu),

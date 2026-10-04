@@ -19,6 +19,24 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="governor-debate-2026-10-01">October 3, 2026 · Debate: governor (October 1, University of Oregon)</h2>
+        <p>
+          The governor page now includes what Tina Kotek and Christine Drazan
+          said at their first general-election debate, as Willamette Week
+          reported it; Brett Smith did not take part. Both Climate Protection
+          Program entries now quote the debate: Kotek is “100% supportive” of
+          the current program and supports the Legislature taking it up next
+          year, and Drazan would rescind it on day one. Kotek’s plan for data
+          centers now includes the bill she said she would introduce on the
+          first day of a second term, requiring centers to produce their own
+          clean energy, be built with union labor and provide community
+          benefits. A new board asks whether to keep Oregon’s vote-by-mail
+          elections as they are: Kotek said she would not change the system,
+          and Drazan said she wants to return polling booths; in 2025 she
+          sponsored HB 3872, which would have made in-person voting the
+          standard method and required photo ID. Claims the candidates made
+          about each other were not used.
+        </p>
         <h2 id="koyama-lane-2026-10-02">October 2, 2026 · Candidate response: Tiffany Koyama Lane (Portland Council, District 3)</h2>
         <p>
           Lydia Kiesling answered for the campaign all six questions the Lab
