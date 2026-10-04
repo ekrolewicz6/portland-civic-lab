@@ -9,7 +9,7 @@ const choices = [
 
 export default function FireChoicesVisual() {
   return <figure className="fire-choices-visual">
-    <div className="fire-choices-header"><span className="fire-eyebrow">The tool follows the goal</span><h3>Four choices, four different jobs.</h3><p>A project may use several of these. The real question is which objective each step serves in a particular place.</p></div>
+    <div className="fire-choices-header fire-figure-head"><div><span className="fire-eyebrow">The tool follows the goal</span><h3>Four choices, four different jobs.</h3></div><p>A project may use several of these. The real question is which objective each step serves in a particular place.</p></div>
     <div className="fire-choices-grid">{choices.map((choice, index) => <div key={choice.kind} className={`fire-choice-${choice.kind}`}>
       <span className="fire-choice-number">0{index + 1}</span><h4>{choice.title}</h4><p>{choice.change}</p><small>{choice.limit}</small>
     </div>)}</div>
