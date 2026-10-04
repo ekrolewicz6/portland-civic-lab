@@ -1,0 +1,72 @@
+[
+  {
+    "mergeCommit": {
+      "oid": "8ab3a2c9fb7c23ee3385e99286a8f6500d00cf6e"
+    },
+    "mergedAt": "2026-09-29T23:15:19Z",
+    "number": 66,
+    "state": "MERGED",
+    "title": "Make data-center tradeoffs visual and add real agreement examples",
+    "url": "https://github.com/ekrolewicz6/portland-civic-lab/pull/66"
+  },
+  {
+    "mergeCommit": {
+      "oid": "0308c8dcc82ddc1ce4b5f8924138465341609165"
+    },
+    "mergedAt": "2026-09-30T05:18:29Z",
+    "number": 72,
+    "state": "MERGED",
+    "title": "Keep campaign timeline event clicks in place",
+    "url": "https://github.com/ekrolewicz6/portland-civic-lab/pull/72"
+  },
+  {
+    "mergeCommit": {
+      "oid": "e3bf50be1f408f95891306db04deded35fd4efe2"
+    },
+    "mergedAt": "2026-09-30T05:52:40Z",
+    "number": 73,
+    "state": "MERGED",
+    "title": "Rewrite the data-center article in plain language",
+    "url": "https://github.com/ekrolewicz6/portland-civic-lab/pull/73"
+  },
+  {
+    "mergeCommit": {
+      "oid": "a0769d7efb0a5eb0b08cc379a0bee43f8642b4dc"
+    },
+    "mergedAt": "2026-09-30T06:12:19Z",
+    "number": 74,
+    "state": "MERGED",
+    "title": "Show temporary construction and ongoing data-center jobs",
+    "url": "https://github.com/ekrolewicz6/portland-civic-lab/pull/74"
+  },
+  {
+    "mergeCommit": {
+      "oid": "165e79841fd48e29c8265ae81455029d2f989505"
+    },
+    "mergedAt": "2026-09-30T19:21:10Z",
+    "number": 76,
+    "state": "MERGED",
+    "title": "Publish the deep-dive library and participatory budgeting analysis",
+    "url": "https://github.com/ekrolewicz6/portland-civic-lab/pull/76"
+  },
+  {
+    "mergeCommit": {
+      "oid": "46f89a36495e3ed60fb71d9827256e3b70b39eb6"
+    },
+    "mergedAt": "2026-09-30T07:04:47Z",
+    "number": 77,
+    "state": "MERGED",
+    "title": "Improve data-center article readability on desktop and mobile",
+    "url": "https://github.com/ekrolewicz6/portland-civic-lab/pull/77"
+  },
+  {
+    "mergeCommit": {
+      "oid": "0fc4f1605bcae11c236b4bf9fb5d3ca068ed159a"
+    },
+    "mergedAt": "2026-10-03T06:53:43Z",
+    "number": 80,
+    "state": "MERGED",
+    "title": "Make the participatory-budgeting deep dive a visual voter guide",
+    "url": "https://github.com/ekrolewicz6/portland-civic-lab/pull/80"
+  }
+]

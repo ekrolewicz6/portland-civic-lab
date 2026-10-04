@@ -1,0 +1,48 @@
+{
+  "branch": "codex/publish-local-deep-dives",
+  "pullRequest": 76,
+  "head": "b4e48b9fe8fed8619f8742a33a68dd9145fdb124",
+  "base": "46f89a36495e3ed60fb71d9827256e3b70b39eb6",
+  "catalogCount": 17,
+  "localTests": {
+    "targetedPlaywright": 7,
+    "typescript": "passed",
+    "scopedLint": "passed",
+    "widths": [
+      320,
+      390,
+      768,
+      1024,
+      1440,
+      1800
+    ],
+    "textZoom": "200% at 390px"
+  },
+  "inventory": "/tmp/pcl-local-release-inventory.json",
+  "status": "published and verified",
+  "preview": {
+    "id": "dpl_HUhma8f5GRa76CFGeP4UJzVNLDxJ",
+    "url": "https://portland-dashboard-g8ny69lgi-ekrolewicz6s-projects.vercel.app",
+    "state": "READY",
+    "cards": 17,
+    "sections": 14,
+    "pdfsVerified": 5
+  },
+  "mainCommit": "165e79841fd48e29c8265ae81455029d2f989505",
+  "ci": {
+    "run": 36763671915,
+    "passed": 463,
+    "skipped": 5,
+    "failed": 7,
+    "baselineFailuresIdentical": true
+  },
+  "production": {
+    "id": "dpl_HVXuj9EkJaMHkSG7UmEVAKCNhXCG",
+    "state": "READY",
+    "domain": "https://www.portlandciviclab.org",
+    "mainCommit": "165e79841fd48e29c8265ae81455029d2f989505",
+    "browserTestsPassed": 7,
+    "dataCenterRegression": "passed",
+    "errorLogQuery": "no logs returned"
+  }
+}

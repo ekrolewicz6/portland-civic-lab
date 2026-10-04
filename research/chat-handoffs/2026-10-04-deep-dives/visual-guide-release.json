@@ -1,0 +1,41 @@
+{
+  "pullRequest": "https://github.com/ekrolewicz6/portland-civic-lab/pull/80",
+  "sourceCommit": "979c7fa8ffd41cb702c35794938c15e8cf6b694c",
+  "mergeCommit": "0fc4f1605bcae11c236b4bf9fb5d3ca068ed159a",
+  "preview": "https://portland-dashboard-4mfu4o8xd-ekrolewicz6s-projects.vercel.app",
+  "productionDeployment": "dpl_4XgatWtjF4wo1gupLNwuqHMJtcMG",
+  "localFocusedTests": 8,
+  "hostedGuideTests": 4,
+  "widths": [
+    320,
+    390,
+    768,
+    1024,
+    1440,
+    1920
+  ],
+  "textEnlargement": "200%",
+  "visibleWords": 1862,
+  "CI": {
+    "run": 37103878138,
+    "passed": 463,
+    "flakyPassed": 1,
+    "skipped": 5,
+    "failed": 7,
+    "baselineRun": 36911488433,
+    "sameFailureIdentities": true
+  },
+  "pdfs": {
+    "campaign-three-pager.pdf": "1bc6f2801d855d69116946d86b7211a9a282d028c0818701d3f0193b479da08b",
+    "campaign-timeline.pdf": "e789f25a117a832c010c649fa923269cb5e81eb8f02545925b77a97db12c8f6e",
+    "policy-fact-sheet.pdf": "38d779125efcb794b5dcf135a9c85473e431db4422c9ef36d00036c169131a51",
+    "proposed-charter-amendment.pdf": "4223e27f03bde6cc1b4767737a85eb0574105676555f2d84bc3fbdbecac1e436",
+    "researchers-open-letter.pdf": "ce04a57fb83f7f82d1069c6cfa556534dbeb767a43cb34fb148aef6166d4b2b6"
+  },
+  "livePdfHashesMatch": true,
+  "productionReady": true,
+  "productionAlias": "https://www.portlandciviclab.org",
+  "verifiedAt": "2026-10-03T06:58:39.843Z",
+  "productionFocusedTests": 8,
+  "runtimeErrorsObserved": 0
+}
