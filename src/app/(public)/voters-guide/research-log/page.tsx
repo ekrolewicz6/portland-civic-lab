@@ -41,20 +41,31 @@ export default function ResearchLog() {
           September 19 questions on recurring revenue, the budget amendments
           and accomplishments remain open.
         </p>
+        <h2 id="cruz-2026-10-03">October 3, 2026 · Candidate response: Serena Cruz (Multnomah County Commissioner, District 2)</h2>
+        <p>
+          Asked whether the 2028 delay of the Preschool for All tax increase
+          should stand, Serena Cruz answered that the data does not show the
+          increase is needed now to stay on track to universality, supports
+          the Board’s decision to delay it, and does not support any delay in
+          reaching universality itself. The preschool-tax entry on the
+          District 2 board moves from partial to a position and now quotes
+          only this answer. The answer appears on the candidate’s page
+          verbatim.
+        </p>
         <h2 id="cruz-2026-10-02">October 2, 2026 · Candidate response: Serena Cruz (Multnomah County Commissioner, District 2)</h2>
         <p>
           Serena Cruz answered the second half of the universal-preschool
           question the Lab sent every District 2 campaign on September 26:
-          what changes she would expect over the next four years to the
-          program’s budget, seats or tax. Her answer appears on her page in
-          her own words. On the District 2 board, the universal-preschool
-          entry keeps its support and now carries her point that demographic
+          what changes to the program’s budget, seats or tax to expect over
+          the next four years. The answer appears on the candidate’s page
+          verbatim. On the District 2 board, the universal-preschool entry
+          keeps its support and now carries the point that demographic
           and program data, including families moving here for the program,
           will drive those decisions, with performance tracked. The
-          preschool-tax entry now cites the same email: she would support the
-          tax increase when the data shows it is needed to reach
+          preschool-tax entry now cites the same email: support for the tax
+          increase when the data shows it is needed to reach
           universality. It stays partial because the answer does not say
-          whether the 2028 delay itself should stand. Her September 24 debate
+          whether the 2028 delay itself should stand. The September 24 debate
           points (seats in the right places and hours, special needs, the
           reserve) remain in that entry’s text.
         </p>
