@@ -47,6 +47,7 @@ export const QUESTIONS: Topic[] = [
   { name: "Data centers", href: "/deep-dives/data-centers" },
   { name: "Oregon economic development", href: "/deep-dives/oregon-economic-development" },
   { name: "Who runs Portland", href: "/deep-dives/who-runs-portland" },
+  { name: "Campaign money: Portland’s council and the governor’s race", href: "/deep-dives/campaign-finance" },
   { name: "FPDR, the police and fire pension", href: "/deep-dives/fpdr" },
 ];
 

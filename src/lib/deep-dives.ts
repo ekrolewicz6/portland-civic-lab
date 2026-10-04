@@ -38,7 +38,7 @@ export const DEEP_DIVES: DeepDive[] = [
     slug: "campaign-finance", title: "The money behind Portland’s next council.",
     description: "Who gives, where the money comes from and which businesses campaigns pay.",
     subject: "Elections & influence", topics: ["power", "money"], updated: "2026-09-29",
-    tool: "Compare the campaigns", keywords: "election voting candidates donors district 3 district 4 ORESTAR contributions",
+    tool: "Compare the campaigns", keywords: "election voting candidates donors district 3 district 4 ORESTAR contributions governor Kotek Drazan",
   },
   {
     slug: "participatory-budgeting", title: "Should Portland guarantee residents a vote on part of its budget?",

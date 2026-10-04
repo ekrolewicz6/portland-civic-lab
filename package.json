@@ -50,6 +50,7 @@
     "orestar:daily": "npx tsx ingest/orestar/daily-refresh.ts",
     "orestar:refresh:manual": "node ingest/orestar/manual-refresh.mjs",
     "orestar:package": "runtime-data/orestar-analysis/py312/bin/python ingest/orestar/analysis/package_publication.py",
+    "orestar:governor": "runtime-data/orestar-analysis/py312/bin/python ingest/orestar/analysis/publish_governor.py",
     "orestar:release:check": "node ingest/orestar/check-publication.mjs"
   },
   "dependencies": {

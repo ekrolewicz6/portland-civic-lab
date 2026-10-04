@@ -9,6 +9,7 @@ const sections = [
   { href: BASE, label: 'Overview' },
   { href: `${BASE}/races`, label: 'Compare races' },
   { href: `${BASE}/suppliers`, label: 'Who gets paid' },
+  { href: `${BASE}/governor`, label: 'Governor' },
   { href: `${BASE}/statewide`, label: 'Statewide' },
 ];
 const references = [
