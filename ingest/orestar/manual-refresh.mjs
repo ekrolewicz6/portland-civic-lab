@@ -5,8 +5,9 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(fileURLToPath(new URL('../..', import.meta.url)));
-const source = process.argv[2];
-if (!source) throw new Error('Usage: npm run orestar:refresh:manual -- /absolute/path/ORESTAR-export.xlsx');
+const holdConflicts = process.argv.slice(2).includes('--hold-conflicts');
+const source = process.argv.slice(2).find(argument => !argument.startsWith('--'));
+if (!source) throw new Error('Usage: npm run orestar:refresh:manual -- /absolute/path/ORESTAR-export.xlsx [--hold-conflicts]');
 const logDir = resolve(root, 'runtime-data/orestar-manual');
 mkdirSync(logDir, { recursive: true });
 const log = resolve(logDir, 'refresh-attempts.jsonl');
@@ -14,10 +15,11 @@ const python = resolve(root, 'runtime-data/orestar-analysis/py312/bin/python');
 const steps = [];
 let snapshot = null;
 try {
-  const imported = spawnSync(process.execPath, [resolve(root, 'ingest/orestar/import-manual-export.mjs'), source], { cwd: root, encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 });
+  const imported = spawnSync(process.execPath, [resolve(root, 'ingest/orestar/import-manual-export.mjs'), source, ...(holdConflicts ? ['--hold-conflicts'] : [])], { cwd: root, encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 });
   if (imported.status !== 0) throw new Error(`Workbook validation failed: ${imported.stderr.trim() || imported.stdout.trim()}`);
   const audit = JSON.parse(imported.stdout);
-  steps.push({ step: 'validate_and_archive', status: audit.status, newRows: audit.newRows ?? 0 });
+  steps.push({ step: 'validate_and_archive', status: audit.status, newRows: audit.newRows ?? 0,
+    ...(audit.heldForReview ? { heldForReview: audit.heldForReview.changedExisting.length + audit.heldForReview.superseding.length } : {}) });
   if (audit.status === 'validated') {
     const merged = spawnSync(python, [resolve(root, 'ingest/orestar/analysis/merge_manual_export.py'), audit.archive], { cwd: root, encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 });
     if (merged.status !== 0) throw new Error(`Database recomputation failed: ${merged.stderr.trim() || merged.stdout.trim()}`);
