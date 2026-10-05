@@ -1,10 +1,13 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import frozen from '@/lib/campaign-finance/campaign-dynamics.json';
 import { alignEvents, dayAt, eventAmounts, eventBins, eventKey, timelineCatalog, type CashKey, type TimelineEvent } from '@/lib/campaign-finance/timeline';
 import { money } from '@/lib/campaign-finance/filters';
+import { readingText, sameAmount } from '@/lib/campaign-finance/timeline-lines';
+import { useLineReading } from './useLineReading';
 import s from './campaign-dynamics.module.css';
+import m from './money-flow.module.css';
 
 type Timeline = Omit<typeof frozen, 'events'> & { events: TimelineEvent[] };
 const bases: { key: CashKey; label: string }[] = [
@@ -94,30 +97,74 @@ export function CampaignTimeline() {
   const chooseEvent = (event: TimelineEvent) => { setActiveKey(eventKey(event)); setHighlightWeek(''); };
   const comparison = activeEvent ? eventAmounts(activeEvent, selected, basis) : null;
   const comparisonMax = Math.max(1, comparison?.beforeCents ?? 0, comparison?.afterCents ?? 0);
+  const lines = shown.map(candidate => {
+    const rows = points.filter(row => row.committeeId === candidate.committeeId).sort((a, b) => a.weekEnd.localeCompare(b.weekEnd));
+    return { id: candidate.committeeId, name: candidate.name, color: colors[candidates.indexOf(candidate)], rows, at: rows.map(row => ({ x: x(row.weekEnd), y: y(row[mode][basis]) })) };
+  });
+  const drawn = lines.filter(line => line.rows.length);
+  const read = useLineReading(drawn, chartRef, { width, height });
+  const { active, held } = read;
+  const path = (line: typeof drawn[number]) => line.at.map(at => `${at.x},${at.y}`).join(' ');
+  const percent = (value: number) => Math.max(0, Math.min(100, value));
+  /** One point in words: whose it is, the exact amount, the week, and any other drawn line sitting on the same amount. */
+  const describe = ({ line, index, row }: NonNullable<typeof active>) => ({
+    text: readingText(mode, money(row[mode][basis]), row.weekStart, row.weekEnd),
+    tied: sameAmount(drawn.filter(other => other !== line && other.rows.find(item => item.weekStart === row.weekStart)?.[mode][basis] === row[mode][basis]).map(other => other.name)),
+    left: percent(100 * (line.at[index].x - left) / plotWidth), top: percent(100 * (line.at[index].y - top) / plotHeight),
+  });
+  const reading = active ? describe(active) : null;
+  // The reading sits above its point unless it would stick out of the chart there and has more room underneath.
+  const tipRef = useRef<HTMLDivElement>(null);
+  const [tipHeight, setTipHeight] = useState(0);
+  const tipWords = active && reading ? `${active.line.name} ${reading.text} ${basisLabel} ${reading.tied}` : '';
+  useLayoutEffect(() => setTipHeight(tipRef.current?.offsetHeight ?? 0), [tipWords, width]);
+  const markerY = active ? active.line.at[active.index].y : 0;
+  const tipBelow = markerY < tipHeight + 20 && height - markerY > markerY;
+  const pinnedReading = held ? describe(held) : null;
+  const spoken = read.said === 'all' ? 'All lines are shown.'
+    : read.said === 'reading' && held && pinnedReading ? `${held.line.name}: ${pinnedReading.text}. Money shown: ${basisLabel}.${pinnedReading.tied ? ` ${pinnedReading.tied}.` : ''}` : '';
 
   return <figure className={s.panel} data-snapshot={data.snapshot} id="cumulative-fundraising">
     <figcaption><span className={s.kicker}>Money & moments</span><h3>When did fundraising pick up?</h3><p>Follow the money above. See what was happening below.</p><p className={s.refresh} role="status">{refresh}</p></figcaption>
     <div className={s.controls}>
       <fieldset><legend>Race</legend><div className={s.buttonRow}>{[3, 4].map(value => <button key={value} type="button" aria-pressed={race === value} onClick={() => {
-        setRace(value); setSelected(data.candidates.filter(candidate => candidate.raceId === `portland-district-${value}`).sort((a, b) => b.nonmatchingCents - a.nonmatchingCents).slice(0, 4).map(candidate => candidate.committeeId)); clearFocus();
+        setRace(value); setSelected(data.candidates.filter(candidate => candidate.raceId === `portland-district-${value}`).sort((a, b) => b.nonmatchingCents - a.nonmatchingCents).slice(0, 4).map(candidate => candidate.committeeId)); clearFocus(); read.clear();
       }}>District {value}</button>)}</div></fieldset>
       <label className={s.compactSelect}>Money shown<select aria-label="Money shown" value={basis} onChange={event => setBasis(event.target.value as CashKey)}>{bases.map(item => <option key={item.key} value={item.key}>{item.label}</option>)}</select></label>
       <label className={s.compactSelect}>Time period<select aria-label="Time period" value={from} onChange={event => { setFrom(event.target.value); clearFocus(); }}>{windows.map(item => <option key={item.start} value={item.start}>{item.label}</option>)}</select></label>
     </div>
-    <details className={s.candidatePicker}><summary>Compare candidates · {selected.length} selected</summary><fieldset className={s.candidates}><legend>Show candidates</legend>{candidates.map((candidate, index) => <label key={candidate.committeeId}><input type="checkbox" checked={selected.includes(candidate.committeeId)} onChange={() => setSelected(current => current.includes(candidate.committeeId) ? current.length > 1 ? current.filter(id => id !== candidate.committeeId) : current : [...current, candidate.committeeId])} /><i style={{ background: colors[index] }} aria-hidden="true" />{candidate.name}</label>)}</fieldset></details>
+    <details className={s.candidatePicker}><summary>Compare candidates · {selected.length} selected</summary><fieldset className={s.candidates}><legend>Show candidates</legend>{candidates.map((candidate, index) => <label key={candidate.committeeId}><input type="checkbox" checked={selected.includes(candidate.committeeId)} onChange={() => { if (held?.line.id === candidate.committeeId) read.clear(); setSelected(current => current.includes(candidate.committeeId) ? current.length > 1 ? current.filter(id => id !== candidate.committeeId) : current : [...current, candidate.committeeId]); }} /><i style={{ background: colors[index] }} aria-hidden="true" />{candidate.name}</label>)}</fieldset></details>
     <div className={s.timelineMode}><div className={s.buttonRow} aria-label="Chart view">{(['cumulative', 'weekly'] as const).map(value => <button key={value} aria-pressed={mode === value} onClick={() => setMode(value)}>{value === 'cumulative' ? 'Running total' : 'Each week'}</button>)}</div><p>{mode === 'cumulative' ? 'Steeper lines = faster fundraising.' : 'Taller peaks = bigger fundraising weeks.'}</p></div>
-    <div className={s.chartScroll} ref={chartRef}><svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${mode === 'cumulative' ? 'Running total' : 'Weekly cash'} · ${basisLabel} · District ${race}, ${from} through ${data.end}`}>
+    <div className={`${s.chartScroll} ${s.linePlot}`} ref={chartRef} data-plot tabIndex={0} role="application" {...read.area}
+      aria-label={`${mode === 'cumulative' ? 'Running total' : 'Weekly cash'} · ${basisLabel} · District ${race}, ${from} through ${data.end}. Arrow keys: left and right move week by week, up and down change candidate, Escape shows every line.`}>
+      <svg viewBox={`0 0 ${width} ${height}`} aria-hidden="true">
       <rect x={left} y={top} width={plotWidth} height={plotHeight} fill="#fffdf8" />
       {selectedWeek && <rect x={x(selectedWeek.start)} y={top} width={Math.max(2, x(selectedWeek.end) - x(selectedWeek.start))} height={plotHeight} fill="#e8d9b8" opacity=".6" />}
       {Array.from({ length: 5 }, (_, i) => { const value = ceiling * i / 4; return <g key={i}><line x1={left} x2={width - right} y1={y(value)} y2={y(value)} stroke="#dce4dc" /><text x={left - 7} y={y(value) + 4} textAnchor="end" fontSize="12" fill="#53675d">{compact(value)}</text></g>; })}
       {ticks.map((date, i) => <text key={date} x={x(date)} y={height - 8} textAnchor={i === 0 ? 'start' : i === ticks.length - 1 ? 'end' : 'middle'} fontSize="12" fill="#53675d">{dateLabel(date)}</text>)}
       {events.map(event => <line key={eventKey(event)} x1={x(event.date)} x2={x(event.date)} y1={height - bottom - 7} y2={height - bottom} stroke={lanes.find(lane => lane.key === laneOf(event))?.color} strokeWidth="2"><title>{`${dateLabel(event.date)}: ${event.label}`}</title></line>)}
       {activeEvent && <line x1={x(activeEvent.date)} x2={x(activeEvent.date)} y1={top} y2={height - bottom} stroke="#a76e20" strokeWidth="2" strokeDasharray="5 4" />}
-      {shown.map(candidate => {
-        const rows = points.filter(row => row.committeeId === candidate.committeeId).sort((a, b) => a.weekEnd.localeCompare(b.weekEnd));
-        return <g key={candidate.committeeId}><polyline fill="none" stroke={colors[candidates.indexOf(candidate)]} strokeWidth="3" strokeLinejoin="round" points={rows.map(row => `${x(row.weekEnd)},${y(row[mode][basis])}`).join(' ')} />{rows.map(row => <circle key={row.weekStart} cx={x(row.weekEnd)} cy={y(row[mode][basis])} r={mode === 'weekly' ? 2.5 : row === rows.at(-1) ? 4 : 0} fill={colors[candidates.indexOf(candidate)]}><title>{`${candidate.name}: ${dateLabel(row.weekStart)}–${dateLabel(row.weekEnd)}, ${money(row[mode][basis])}`}</title></circle>)}</g>;
-      })}
-    </svg></div>
+      {drawn.map(line => <g key={line.id} data-series={line.id} className={active && active.line !== line ? m.dim : undefined}>
+        <polyline fill="none" stroke={line.color} strokeWidth="3" strokeLinejoin="round" points={path(line)} />
+        {line.at.map((at, index) => mode === 'weekly' || index === line.at.length - 1 ? <circle key={line.rows[index].weekStart} cx={at.x} cy={at.y} r={mode === 'weekly' ? 2.5 : 4} fill={line.color} /> : null)}
+      </g>)}
+      {active ? <g data-lifted={active.line.id}>
+        <polyline fill="none" stroke="#fffdf8" strokeWidth="9" strokeLinejoin="round" strokeLinecap="round" points={path(active.line)} />
+        <polyline fill="none" stroke={active.line.color} strokeWidth="5" strokeLinejoin="round" strokeLinecap="round" points={path(active.line)} />
+      </g> : null}
+      </svg>
+      {active && reading ? <div className={s.readingBox} style={{ left: `${100 * left / width}%`, top: `${100 * top / height}%`, width: `${100 * plotWidth / width}%`, height: `${100 * plotHeight / height}%` }} aria-hidden="true">
+        <span className={m.guide} style={{ left: `${reading.left}%` }} />
+        <span className={m.marker} style={{ left: `${reading.left}%`, top: `${reading.top}%`, background: active.line.color }} />
+        <div className={`${m.tip} ${tipBelow ? m.tipBelow : ''}`} data-tip ref={tipRef} style={{ left: `${reading.left.toFixed(2)}%`, '--slide': `${(-reading.left).toFixed(2)}%`, top: `${reading.top}%` } as React.CSSProperties}>
+          <b><i className={m.key} style={{ color: active.line.color }} />{active.line.name}</b>
+          <span className={s.tipText}>{reading.text}</span>
+          <span className={s.tipNote}>Money shown: {basisLabel}</span>
+          {reading.tied ? <span className={s.tipNote}>{reading.tied}</span> : null}
+        </div>
+      </div> : null}
+      <span className={m.spoken} aria-live="polite">{spoken}</span>
+    </div>
     <div className={s.eventRibbon} aria-label="All events on the chart timeline">
       <p className={s.ribbonIntro}>{events.length} events · tap a circle to explore nearby dates</p>
       {lanes.map(lane => <div className={s.eventLane} key={lane.key}>
@@ -128,7 +175,15 @@ export function CampaignTimeline() {
       </div>)}
     </div>
     <p className={s.chartCaption}>{basisLabel} · {mode === 'cumulative' ? 'Running totals include earlier gifts.' : 'Monday–Sunday weeks; the last week may be incomplete.'} Circles group nearby dates; small ticks above mark exact dates.</p>
-    <div className={s.lineKey}>{shown.map(candidate => <span key={candidate.committeeId}><i style={{ background: colors[candidates.indexOf(candidate)] }} />{candidate.name}: {money(points.filter(row => row.committeeId === candidate.committeeId).at(-1)?.cumulative[basis] ?? 0)} total</span>)}</div>
+    <p className={m.pick} data-pick>
+      {held ? <><span><i className={m.key} style={{ color: held.line.color }} aria-hidden="true" /><b>{held.line.name}</b><em>is highlighted.</em></span><button type="button" onClick={read.clear}>Show all lines</button></>
+        : read.keys ? <span>Left and right arrows move week by week. Up and down arrows change candidate.</span>
+        : drawn.length ? <><span className={m.forMouse}>Point at a line to see whose it is. Click a line or a name to keep it highlighted.</span><span className={m.forTouch}>Tap a line or a name to pick out one candidate.</span></>
+        : <span>No weekly totals are on file for these candidates in this period.</span>}
+    </p>
+    <div className={s.lineKey}>{lines.map(line => line.rows.length
+      ? <button key={line.id} type="button" data-series={line.id} className={active?.line === line ? s.lifted : undefined} aria-pressed={held?.line === line} {...read.name(line)}><i style={{ background: line.color }} aria-hidden="true" />{line.name}: {money(line.rows.at(-1)!.cumulative[basis])} total</button>
+      : <span key={line.id}><i style={{ background: '#c9d2c8' }} aria-hidden="true" />{line.name}: no weekly totals on file</span>)}</div>
     <section className={s.timelinePeaks}><h4>The three biggest weeks</h4><p>For the selected candidates and money type. Complete weeks only.</p><div className={s.peakCards}>{peaks.map((week, index) => {
       const leader = [...week.rows].sort((a, b) => b.weekly[basis] - a.weekly[basis])[0];
       const nearby = events.filter(event => event.date >= week.start && event.date <= week.end);
