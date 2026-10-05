@@ -43,7 +43,7 @@ export function GovernorRaceFinance({ raceId, candidates }: { raceId: string; ca
         </tr>;
       })}</tbody>
     </table></div>
-    <p>{longMonthDay(governor.commonPaymentDate)} is the last day both committees have payments on file, so it is the fairest date for comparing cash. Fundraising totals describe money and do not measure voter support.</p>
+    <p>{longMonthDay(governor.commonPaymentDate)} is the last day these records have payments for both committees, so it is the fairest date for comparing cash. Fundraising totals describe money and do not measure voter support.</p>
     <div className={styles.links}>
       <Link href={GOVERNOR_PATH}>Read the full investigation: who gave, when, where it came from and what it paid for</Link>
       {governorCandidates.map(candidate => <Link key={candidate.candidateId} href={explorerHref(candidate.committeeId, '&basis=cash_contribution')}>Inspect {candidate.name}’s contribution records</Link>)}

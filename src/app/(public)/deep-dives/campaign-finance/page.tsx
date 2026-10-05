@@ -13,6 +13,7 @@ import { activeManifest } from '@/lib/campaign-finance/active';
 import { currentCandidateFacts, currentMoneyFlows, currentMoneyTotals } from '@/lib/campaign-finance/query';
 import { buildPanel } from '@/lib/campaign-finance/money-flow';
 import { MoneyInOut, MoneyOverTime } from '@/components/deep-dives/campaign-finance/MoneyOverTime';
+import { governorMoney } from '@/lib/campaign-finance/money-lead';
 import s from '@/components/deep-dives/campaign-finance/story.module.css';
 
 export const metadata = pageMeta({ title: 'The money behind Portland’s next council', description: 'A chart-led investigation of Portland Districts 3 and 4: public matching, fundraising surges, shared donors, endorsements and cash reserves, with an auditor profile and statewide context.', path: BASE, type: 'article' });
@@ -43,9 +44,9 @@ const longDay = (day: string) => new Date(day+'T12:00:00Z').toLocaleDateString('
 /** Lead charts and totals, read from the live ledger on every request. */
 async function loadMoneyLead() {
   const ids=[...d3,...d4].map(row=>row.id);
-  const [flows,council,statewide]=await Promise.all([currentMoneyFlows(ids),currentMoneyTotals(ids),currentMoneyTotals('all')]);
+  const [flows,council,statewide,governorRace]=await Promise.all([currentMoneyFlows(ids),currentMoneyTotals(ids),currentMoneyTotals('all'),governorMoney()]);
   const panel=(key:string,title:string,rows:typeof d3)=>buildPanel(key,title,rows.map(row=>({id:row.id,name:row.name,href:row.href})),flows);
-  return {panels:[panel('district-3','District 3',d3),panel('district-4','District 4',d4)],council,statewide,campaigns:ids.length};
+  return {panels:[panel('district-3','District 3',d3),panel('district-4','District 4',d4)],council,statewide,governorRace,campaigns:ids.length};
 }
 function LatestFunding({data}:{data:Awaited<ReturnType<typeof loadLatestFunding>>}) {
   const {active,rows,ranked,max}=data;
@@ -135,6 +136,7 @@ export default async function Investigation() {
       howTo="Each bar is all of a group’s payments, split by the address of whoever was paid."
       rows={[
         { key: 'council', label: `These ${lead.campaigns} council campaigns`, totals: lead.council, note: <>{wholeMoney(lead.council.matchingCents)} of the money in is City matching funds.</> },
+        { key: 'governor', label: 'The two governor campaigns with records', totals: lead.governorRace.both, note: <>Christine Drazan and Tina Kotek. {lead.governorRace.staleNote} <Link href={`${BASE}/governor`}>See the governor’s race</Link>.</> },
         { key: 'statewide', label: 'Every committee in Oregon’s campaign records', totals: lead.statewide, note: <>{lead.statewide.committees.toLocaleString('en-US')} committees, including candidates, ballot measures, parties and political action committees. {wholeMoney(lead.statewide.fromCommitteesCents)} of the money in came from other committees, so that money is counted each time it moves.</> },
       ]}
       source={<>The address is the payee’s. A media firm in another state may spend what it is paid on Oregon stations, and filings do not show that second step. Records run through {through}, and late filings can be missing. <Link href={`${BASE}/explorer?basis=cash_payment`}>Check the payment records</Link>.</>} />

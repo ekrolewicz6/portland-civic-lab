@@ -73,8 +73,8 @@ describe("governor finance edition", () => {
     for (const c of governorCandidates) expect(large(c) * 2).toBeGreaterThan(c.totals.cashCents);
     expect(kotek.peaks[0].top[0].name).toBe("Democratic Governors Association");
     expect(drazan.peaks[0].top[0].name).toMatch(/^AGC Committee for Action/);
-    // "the last month of these records": every one of her three biggest weeks starts within 31 days of the end.
-    expect(drazan.peaks.every((peak) => Date.parse(governor.end) - Date.parse(peak.start) <= 31 * 86_400_000)).toBe(true);
+    // "have all come since the end of August"
+    expect(drazan.peaks.every((peak) => peak.start >= "2026-08-31")).toBe(true);
     expect(drazan.geography.oregonCents / drazan.totals.namedCents).toBeGreaterThan(0.9);
     const kotekOutside = kotek.geography.outsideCents / kotek.totals.namedCents;
     expect(kotekOutside).toBeGreaterThan(0.4);

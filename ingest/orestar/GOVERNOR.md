@@ -2,6 +2,14 @@
 
 The page at `/deep-dives/campaign-finance/governor` and the fundraising panels on `/voters-guide/oregon-governor` read one precomputed file, `src/lib/campaign-finance/governor-data.json`. It is a dated edition. It does not move when the active ledger is refreshed.
 
+## Two layers on the page
+
+The two lead charts (cash raised and cash paid out per candidate over time) and the block on money in, money out and where payments went are read from the published ledger on every request, through `governorMoney()` in `src/lib/campaign-finance/money-lead.ts`. They move whenever the ledger is refreshed and deployed.
+
+Everything below them is the dated edition in `governor-data.json`. Its headings state findings, so it changes only when it is rebuilt and reread.
+
+A candidate whose latest payment is more than three weeks older than the ledger is flagged on the page, so a spending line that stops early is read as a gap in the records.
+
 ## Rebuild
 
 From the research checkout, which holds the ledger under `runtime-data/`:

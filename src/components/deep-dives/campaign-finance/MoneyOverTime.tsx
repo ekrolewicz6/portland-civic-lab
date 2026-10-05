@@ -20,18 +20,23 @@ const pointsOf = (series: MoneySeries, measure: Measure): MoneyPoint[] => series
  * Each line starts on the candidate's first record and stops on the last, so a
  * line never implies a date the records do not cover.
  */
-export function MoneyOverTime({ measure, panels, end, kicker, title, howTo, source }: {
-  measure: Measure; panels: MoneyPanel[]; end: string; kicker: string; title: string; howTo: string; source: React.ReactNode;
+export type MoneyEvent = { id: string; date: string; label: string; source?: string };
+
+export function MoneyOverTime({ measure, panels, end, kicker, title, howTo, source, events = [], ranked: rankByValue = true }: {
+  measure: Measure; panels: MoneyPanel[]; end: string; kicker: string; title: string; howTo: string; source: React.ReactNode; events?: MoneyEvent[];
+  /** Legends follow the amounts by default. Pass false to keep the order the panel was given, such as alphabetical. */
+  ranked?: boolean;
 }) {
   const everyPoint = panels.flatMap(panel => panel.series.flatMap(series => pointsOf(series, measure)));
   const start = monthStart(everyPoint.reduce((earliest, [day]) => day < earliest ? day : earliest, end));
   const top = niceCeiling(Math.max(...panels.flatMap(panel => panel.series.map(series => lastValue(pointsOf(series, measure)))), 1));
   const ticks = quarterTicks(start, end);
   const gridlines = [0, top / 2, top];
+  const marked = events.filter(event => event.date >= start && event.date <= end);
   return <figure className={s.figure} data-chart={`lead-${measure}`}>
     <figcaption><span className={s.kicker}>{kicker}</span><h2 className={s.title}>{title}</h2><p className={s.howTo}>{howTo}</p></figcaption>
-    <div className={s.panels}>{panels.map(panel => {
-      const ranked = [...panel.series].sort((a, b) => lastValue(pointsOf(b, measure)) - lastValue(pointsOf(a, measure)) || a.name.localeCompare(b.name));
+    <div className={`${s.panels} ${panels.length === 1 ? s.wide : ''}`}>{panels.map(panel => {
+      const ranked = rankByValue ? [...panel.series].sort((a, b) => lastValue(pointsOf(b, measure)) - lastValue(pointsOf(a, measure)) || a.name.localeCompare(b.name)) : panel.series;
       const drawn = ranked.filter(series => pointsOf(series, measure).length);
       const total = ranked.reduce((sum, series) => sum + lastValue(pointsOf(series, measure)), 0);
       return <div className={s.panel} key={panel.key} data-panel={panel.key}>
@@ -42,8 +47,10 @@ export function MoneyOverTime({ measure, panels, end, kicker, title, howTo, sour
             <svg viewBox="0 0 1000 300" preserveAspectRatio="none" role="img" aria-label={`${panel.title}: ${measure === 'raised' ? 'cash raised' : 'cash paid out'} over time. ${drawn.slice(0, 4).map(series => `${series.name} ${dollars(lastValue(pointsOf(series, measure)))}`).join(', ')}. Every campaign's total is listed below the chart.`}>
               <line x1="0" x2="1000" y1="150" y2="150" stroke="#dde3db" vectorEffect="non-scaling-stroke" />
               <line x1="0" x2="1000" y1="0" y2="0" stroke="#dde3db" vectorEffect="non-scaling-stroke" />
+              {marked.map(event => <line key={event.id} x1={1000 * position(event.date, start, end)} x2={1000 * position(event.date, start, end)} y1="0" y2="300" stroke="#7d8f84" strokeDasharray="4 4" vectorEffect="non-scaling-stroke" />)}
               {[...drawn].reverse().map(series => <path key={series.id} data-series={series.id} d={stepPath(pointsOf(series, measure), start, end, top)} fill="none" stroke={series.color} strokeWidth="2.5" strokeDasharray={series.dashed ? '7 4' : undefined} strokeLinejoin="round" vectorEffect="non-scaling-stroke"><title>{`${series.name}: ${dollars(lastValue(pointsOf(series, measure)))}`}</title></path>)}
             </svg>
+            {marked.map((event, index) => <span key={event.id} className={s.flag} style={{ left: `${100 * position(event.date, start, end)}%` }} aria-hidden="true">{index + 1}</span>)}
             {drawn.map(series => { const [day, cents] = pointsOf(series, measure).at(-1)!; return <span key={series.id} className={s.dot} aria-hidden="true" style={{ left: `${100 * position(day, start, end)}%`, top: `${100 - 100 * cents / top}%`, background: series.color }} />; })}
           </div>
           <div className={s.xLabels} aria-hidden="true">{ticks.map(tick => <span key={tick.day} className={tick.minor ? s.xMinor : undefined} style={{ left: `${100 * position(tick.day, start, end)}%` }}>{tick.label}</span>)}</div>
@@ -62,6 +69,7 @@ export function MoneyOverTime({ measure, panels, end, kicker, title, howTo, sour
         })}</ol>
       </div>;
     })}</div>
+    {marked.length ? <ol className={s.events}>{marked.map((event, index) => <li key={event.id}><b aria-hidden="true">{index + 1}</b><span><time dateTime={event.date}>{shortDay(event.date)}</time>{event.source ? <a href={event.source}>{event.label}</a> : event.label}</span></li>)}</ol> : null}
     <p className={s.source}>{source}</p>
   </figure>;
 }

@@ -55,6 +55,7 @@
 .door small { display: block; font: 14px/1.5 var(--font-sans, Arial), sans-serif; color: var(--muted); margin-top: 4px; letter-spacing: 0; }
 .door > span:last-child { font: 22px/1 sans-serif; border: 1px solid #b7c7ba; border-radius: 50%; width: 40px; height: 40px; display: grid; place-items: center; flex: none; }
 .door:hover > span:last-child { background: #dde6d9; }
+.doorRow { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 44px; margin-top: 30px; }
 .doorNote { font-size: 14px; line-height: 1.6; color: var(--muted); margin-top: 14px !important; }
 .byline { font-size: 14px; color: var(--muted); margin-top: 22px !important; }
 .sectionNav { display: flex; flex-wrap: wrap; gap: 12px 24px; background: #eeeee4; border: 1px solid var(--rule); padding: 16px 20px; font-size: 14px; }
@@ -241,7 +242,7 @@
   .sectionNav a { padding: 9px 0; min-height: 40px; }
   .chapterHeader h2 { font-size: 32px; }
   .figure { padding: 20px 16px; margin: 24px 0 !important; }
-  .pair, .maps, .peakGrid, .gaps { grid-template-columns: 1fr; }
+  .pair, .maps, .peakGrid, .gaps, .doorRow { grid-template-columns: 1fr; }
   .mixHead strong { font-size: 22px; }
   .mixTrack { height: 30px; }
   .timeArea { height: 240px; margin-left: 46px; }

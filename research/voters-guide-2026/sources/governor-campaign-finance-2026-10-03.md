@@ -4,7 +4,7 @@ Supports `/deep-dives/campaign-finance/governor` and the fundraising panels on t
 
 ## Records
 
-- Ledger: active ORESTAR snapshot `orestar-20250101-20260928-787cf45dc908`, January 1, 2025 through September 28, 2026, 317,095 transactions. Completeness not verified (manual export).
+- Ledger: active ORESTAR snapshot `orestar-20250101-20261004-de091bba2ee3`, January 1, 2025 through October 4, 2026, 321,089 transactions. Completeness not verified (manual exports). First built October 3 on the September 28 snapshot; rebuilt October 5 after the October 4 import and five reviewed amendments.
 - Committees: Friends of Tina Kotek (ORESTAR 4792), Friends of Christine Drazan (ORESTAR 19050). Both confirmed against ORESTAR statements of organization retrieved September 27, 2026: candidate name, office of Governor, 2026 general election.
   - Kotek's committee has been registered for governor since September 2021.
   - Drazan's was registered for State Representative, 51st District, from March 2024 until it was amended to Governor on October 27, 2025.
@@ -17,27 +17,27 @@ Supports `/deep-dives/campaign-finance/governor` and the fundraising panels on t
 
 | | Christine Drazan | Tina Kotek |
 |---|---|---|
-| Cash contributions | $10,930,713.56 in 5,279 records | $12,793,504.47 in 8,351 records |
-| Named individuals | $5,419,930 (50%) | $3,063,266 (24%) |
-| Businesses, direct | $3,389,319 (31%) | $1,296,600 (10%) |
-| Unions and union committees (minimum) | $0 | $4,096,306 (32%) |
-| National governors' groups | $0 | $2,750,000 (21%) |
-| Business and trade committees (minimum) | $1,247,571 (11%) | $50,000 |
-| Combined gifts of $100 or less | $307,848 | $607,256 |
-| Sources giving $100,000 or more | 24 sources, 55% of cash | 18 sources, 58% of cash |
-| Named money with an Oregon address | 93% | 55% |
-| Cash payments on file | $10,097,435 through September 28 | $5,314,939 through August 26 |
+| Cash contributions | $11,990,998 in 5,744 records | $14,341,446 in 9,537 records |
+| Named individuals | $5,964,287 (50%) | $3,315,436 (23%) |
+| Businesses, direct | $3,707,122 (31%) | $1,308,600 (9%) |
+| Unions and union committees (minimum) | $0 | $4,346,306 (30%) |
+| National governors' groups | $0 | $3,250,000 (23%) |
+| Business and trade committees (minimum) | $1,332,571 | $50,000 |
+| Combined gifts of $100 or less | $328,773 | $683,528 |
+| Sources giving $100,000 or more | 26 sources, 55% of cash | 20 sources, 60% of cash |
+| Named money with an Oregon address | 94% | 55% |
+| Cash payments in these records | $10,175,820 through 2026-10-01 | $5,314,939 through 2026-08-26 |
 | Broadcast advertising | $5,781,541 | $2,316,402 |
-| Cash on August 26 (our calculation) | $1,504,707 | $6,462,123 |
+| Cash on 2026-08-26 (our calculation) | $1,504,707 | $6,462,123 |
 | Median days from payment to filing, since June | 1 | 30 |
 
-- Largest sources. Kotek: Democratic Governors Association $1,500,000; Democratic Governors Victory Fund $1,250,000; Citizen Action for Political Education $1,000,000; Oregon Nurses PAC $820,000; Local 48 Electricians PAC $500,000. Drazan: Don H Jones, Jr. (Ashland) $1,340,000; AGC Committee for Action $703,500; K & E Excavating $400,000; Marta Von Borstel $400,000; Murphy Plywood $350,000.
+- Largest sources. Kotek: Democratic Governors Association $2,000,000; Democratic Governors Victory Fund $1,250,000; Citizen Action for Political Education (33) $1,000,000; Oregon Nurses Political Action Committee (12986) $820,000; Building a Stronger Oregon (23285) $505,000; Local 48 Electricians PAC (4572) $500,000. Drazan: Don H Jones, Jr. $1,517,275; AGC Committee for Action (4) $703,500; K & E Excavating Inc. $400,000; Marta Von Borstel $400,000; Murphy Plywood $350,000.
 - No contribution from the Republican Governors Association appears in Drazan's records in this period.
-- Biggest weeks. Kotek: July 27 to August 2, 2026, $2,208,033 (DGA $1.5 million). Drazan: August 31 to September 6, 2026, $1,176,467 (AGC Committee for Action $700,000). All three of Drazan's biggest weeks began on or after August 31.
-- Under the 2027 rule's two-election total of $6,600: 79 individuals and 72 businesses gave Drazan more ($7.17 million together); 72 individuals and 52 businesses gave Kotek more ($2.45 million together).
-- Thirteen sources gave to both. Eleven gave more to Kotek, one more to Drazan (Hampton Lumber, $150,000 and $500), one the same to each (DaVita).
+- Biggest weeks. Kotek: 2026-07-27 week, $2,208,033 (Democratic Governors Association $1,500,000). Drazan: 2026-08-31 week, $1,176,467 (AGC Committee for Action (4) $700,000). All three of Drazan's biggest weeks began on or after August 31.
+- Under the 2027 rule's two-election total of $6,600: 86 individuals and 82 businesses gave Drazan more ($7,888,740 together); 77 individuals and 52 businesses gave Kotek more ($2,521,876 together).
+- 14 sources gave to both. 11 gave more to Kotek, 1 gave more to Drazan, 2 gave the same to each.
 - Committee funding one step up: union committees on Kotek's list are funded mostly by combined gifts of $100 or less (Citizen Action for Political Education $1,541,207 of $1,798,726). AGC Committee for Action received $1,004,436 of $1,006,786 from AGC Oregon-Columbia Chapter.
-- Building a Stronger Oregon (23285) received $10,000,000 from the North Coast States Regional Council of Carpenters on September 16, 2026. It had given Kotek $255,000 by the end of these records.
+- Building a Stronger Oregon (23285) received $10,000,000 from the North Coast States Regional Council of Carpenters on September 16, 2026. It has given Kotek $505,000 in these records, most recently on 2026-09-28.
 - One reviewed independent-expenditure allocation names a linked committee: Oregon Right to Life PAC, $2,500 in opposition to Kotek's committee, August 26, 2026 (transaction 5821511). The detail review covers 77 of 137 flagged records.
 
 ## The reporting-lag caveat
@@ -65,3 +65,9 @@ Kotek's committee had no payments on file dated after August 26 when the ledger 
 - The 2027-limits count covers individuals and businesses only. Committee limits depend on the kind of committee and are not estimated.
 - No sector labels beyond the reviewed sponsor groups. No claim about why anyone gave.
 - A complete, current ORESTAR export would bring in Kotek's September payments and should be followed by `npm run orestar:governor` and a reread of the page.
+
+## Update, October 5, 2026
+
+- The page now leads with two live charts (cash raised and cash paid out per candidate over time) and a block on money in, money out and where payments went. Those read the published ledger on each request; the chapters keep the edition's date.
+- Payments by payee address in these records: Drazan 92% to other states, 7% to Oregon addresses; Kotek 79% to other states, 16% to Oregon addresses, 5% to other committees. The address is the payee's, and media buyers can spend the money in Oregon.
+- Kotek's payments after August 26 are still missing. The October 4 download searched by transaction date from September 28, so payments dated August 27 to September 27 and filed after September 27 are not in it. The page says so in the spending chart, the spending chapter and the list of gaps.

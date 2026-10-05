@@ -1,17 +1,19 @@
 snapshot,donor_committee_id,donor_committee,gave_to_committee_id,gave_cents,own_cash_receipts_cents,combined_small_gift_cents,named_source_groups,largest_organization_source,largest_organization_source_cents
-orestar-20250101-20260928-787cf45dc908,33,Citizen Action for Political Education (33),4792,100000000,179872621,154120686,5195,,0
-orestar-20250101-20260928-787cf45dc908,12986,Oregon Nurses Political Action Committee (12986),4792,82000000,239238064,0,2,Nurses United Political Action Committee (12987),120835282
-orestar-20250101-20260928-787cf45dc908,4572,Local 48 Electricians PAC (4572),4792,50000000,196580570,30334287,5083,,0
-orestar-20250101-20260928-787cf45dc908,23285,Building a Stronger Oregon (23285),4792,25500000,1066859462,31946916,3122,North Coast States Regional Council of Carpenters,1000000000
-orestar-20250101-20260928-787cf45dc908,2352,Oregon League of Conservation Voters PAC (2352),4792,20000000,33095448,1512179,77,League of Conservation Voters,22000000
-orestar-20250101-20260928-787cf45dc908,4213,SEIU Local 49 COPE Fund (4213),4792,20000000,70749999,61287003,2052,,0
-orestar-20250101-20260928-787cf45dc908,221,Plumbers & Steamfitters PAC (221),4792,10029000,71856129,57236851,2751,,0
-orestar-20250101-20260928-787cf45dc908,16178,SMART Local 16 PAC (16178),4792,5001600,11066055,10773370,10,,0
-orestar-20250101-20260928-787cf45dc908,3816,Iron Workers District Council of the Pacific Northwest (3816),4792,5000000,25994417,2400,1,Pacific Northwest Ironworkers Voluntarily Vacation Fund,25992017
-orestar-20250101-20260928-787cf45dc908,161,Oregon Hospital Political Action Committee (161),4792,5000000,62705800,137400,60,Oregon Healthcare Enterprises dba Apprise Health,47000000
-orestar-20250101-20260928-787cf45dc908,21701,Care for our Seniors (21701),4792,5000000,8701342,2993180,416,,0
-orestar-20250101-20260928-787cf45dc908,4,AGC Committee for Action (4),19050,70350000,100678570,10000,5,AGC - Oregon Columbia Chapter,100443570
-orestar-20250101-20260928-787cf45dc908,19151,Friends of Shelly Boshart Davis (19151),19050,18500000,36562299,750959,181,Oregon Automobile Dealers Association - Political Action Committee (133),3030000
-orestar-20250101-20260928-787cf45dc908,3428,Oregon Neighborhood Store Association Political Action Committee (3428),19050,11200000,26790000,0,51,"Plaid Pantries, Inc.",3025000
-orestar-20250101-20260928-787cf45dc908,175,Oregon Nurseries Political Action Committee (175),19050,8107100,18327874,272386,83,Woodburn Nursery & Azaleas Inc.,6198132
-orestar-20250101-20260928-787cf45dc908,133,Oregon Automobile Dealers Association - Political Action Committee (133),19050,5100000,17572500,0,248,,0
+orestar-20250101-20261004-de091bba2ee3,33,Citizen Action for Political Education (33),4792,100000000,179872621,154120686,5195,,0
+orestar-20250101-20261004-de091bba2ee3,12986,Oregon Nurses Political Action Committee (12986),4792,82000000,239238064,0,2,Nurses United Political Action Committee (12987),120835282
+orestar-20250101-20261004-de091bba2ee3,23285,Building a Stronger Oregon (23285),4792,50500000,1066859462,31946916,3122,North Coast States Regional Council of Carpenters,1000000000
+orestar-20250101-20261004-de091bba2ee3,4572,Local 48 Electricians PAC (4572),4792,50000000,196580570,30334287,5083,,0
+orestar-20250101-20261004-de091bba2ee3,19181,SEIU 49 Political Action Fund (19181),4792,35000000,0,0,0,,0
+orestar-20250101-20261004-de091bba2ee3,2352,Oregon League of Conservation Voters PAC (2352),4792,20000000,33095448,1512179,77,League of Conservation Voters,22000000
+orestar-20250101-20261004-de091bba2ee3,4213,SEIU Local 49 COPE Fund (4213),4792,20000000,71188406,61637910,2053,,0
+orestar-20250101-20261004-de091bba2ee3,5207,Stand for Children Oregon PAC (5207),4792,10250000,100718009,46000,17,Stand for Children Inc. (non-profit),87307009
+orestar-20250101-20261004-de091bba2ee3,221,Plumbers & Steamfitters PAC (221),4792,10029000,71856129,57236851,2751,,0
+orestar-20250101-20261004-de091bba2ee3,16178,SMART Local 16 PAC (16178),4792,5001600,11066055,10773370,10,,0
+orestar-20250101-20261004-de091bba2ee3,3816,Iron Workers District Council of the Pacific Northwest (3816),4792,5000000,25994417,2400,1,Pacific Northwest Ironworkers Voluntarily Vacation Fund,25992017
+orestar-20250101-20261004-de091bba2ee3,161,Oregon Hospital Political Action Committee (161),4792,5000000,62895800,147400,62,Oregon Healthcare Enterprises dba Apprise Health,47000000
+orestar-20250101-20261004-de091bba2ee3,21701,Care for our Seniors (21701),4792,5000000,8701342,2993180,416,,0
+orestar-20250101-20261004-de091bba2ee3,4,AGC Committee for Action (4),19050,70350000,100678570,10000,5,AGC - Oregon Columbia Chapter,100443570
+orestar-20250101-20261004-de091bba2ee3,19151,Friends of Shelly Boshart Davis (19151),19050,23500000,36562299,750959,181,Oregon Automobile Dealers Association - Political Action Committee (133),3030000
+orestar-20250101-20261004-de091bba2ee3,133,Oregon Automobile Dealers Association - Political Action Committee (133),19050,13600000,24767050,0,268,Beaverton Toyota,1967250
+orestar-20250101-20261004-de091bba2ee3,3428,Oregon Neighborhood Store Association Political Action Committee (3428),19050,11200000,26790000,0,51,"Plaid Pantries, Inc.",3025000
+orestar-20250101-20261004-de091bba2ee3,175,Oregon Nurseries Political Action Committee (175),19050,8107100,18341074,272386,83,Woodburn Nursery & Azaleas Inc.,6198132

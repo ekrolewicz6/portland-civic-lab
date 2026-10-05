@@ -13,12 +13,21 @@ for (const width of [390, 1440]) {
     await expect(page.getByRole('heading', { level: 1 })).toContainText('The money behind');
     const nav = page.getByRole('navigation', { name: 'Campaign finance', exact: true });
     await expect(nav.getByRole('link', { name: 'Governor', exact: true })).toHaveAttribute('aria-current', 'page');
-    for (const chart of ['opening', 'source-mix', 'top-sources', 'gift-sizes', 'cumulative', 'weekly', 'states', 'counties', 'funders', 'both', 'spending', 'payees', 'position']) {
+    // The page leads with two line charts: money raised over time, then money spent over time.
+    expect(await page.locator('article [data-chart]').evaluateAll(nodes => nodes.slice(0, 3).map(node => node.getAttribute('data-chart')))).toEqual(['lead-raised', 'lead-paid', 'money-in-out']);
+    for (const chart of ['source-mix', 'top-sources', 'gift-sizes', 'weekly', 'states', 'counties', 'funders', 'both', 'spending', 'payees', 'position']) {
       await expect(page.locator(`[data-chart="${chart}"]`), chart).toHaveCount(1);
     }
-    // Candidates are listed alphabetically, never ranked by money.
+    for (const measure of ['raised', 'paid']) {
+      const figure = page.locator(`[data-chart="lead-${measure}"]`);
+      await expect(figure.locator('svg path[data-series]')).toHaveCount(2);
+      // Candidates are listed alphabetically, never ranked by money.
+      await expect(figure.locator('ol li[data-series]').first()).toContainText('Christine Drazan');
+    }
     await expect(page.locator('[data-chart="source-mix"] [data-candidate]').first()).toHaveAttribute('data-candidate', 'christine-drazan');
-    await expect(page.locator('[data-chart="opening"]')).toContainText('Brett Smith');
+    await expect(page.locator('[data-chart="lead-raised"]')).toContainText('Brett Smith');
+    await expect(page.locator('[data-money-row="christine-drazan"]')).toContainText('Paid to addresses in other states');
+    await expect(page.locator('[data-money-row="statewide"]')).toHaveCount(1);
     await expect(page.locator('[data-chart="counties"] svg path')).toHaveCount(72);
     await page.getByRole('button', { name: 'Number of gifts' }).click();
     await expect(page.locator('[data-county-maps]')).toHaveAttribute('data-county-maps', 'gifts');

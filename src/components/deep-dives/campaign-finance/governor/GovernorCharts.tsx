@@ -297,7 +297,7 @@ export function PositionChart() {
   const asOf = governor.commonPaymentDate;
   const top = Math.max(...candidates.flatMap(candidate => [candidate.likeForLike.raisedCents, candidate.likeForLike.paidCents, candidate.likeForLike.cashPositionCents]));
   return <figure className={s.figure} data-chart="position">
-    <figcaption><span className={s.kicker}>Through {longDate(asOf)}, the last day both campaigns have payments on file</span><h3>Raised, paid out and left on the same date</h3>
+    <figcaption><span className={s.kicker}>Through {longDate(asOf)}, the last day these records have payments for both campaigns</span><h3>Raised, paid out and left on the same date</h3>
       <p className={s.howTo}>All bars share one dollar scale. Cash left starts from each committee’s official opening balance for 2026 and adds the money in and out through {longMonthDay(asOf)}.</p></figcaption>
     <div className={s.legend}><span><i className={s.swatchRaised} aria-hidden="true" />Raised since January 2025</span><span><i className={s.swatchPaid} aria-hidden="true" />Paid out since January 2025</span><span><i className={s.swatchCash} aria-hidden="true" />Cash left on {longMonthDay(asOf)}</span></div>
     <div className={s.position}>{candidates.map(candidate => {
@@ -309,7 +309,7 @@ export function PositionChart() {
             <span>{label}</span><div className={s.positionTrack} aria-hidden="true"><span className={String(color)} style={{ width: width(Number(cents), top) }} /></div><strong>{wholeDollars(Number(cents))}</strong>
           </div>)}
         </div>
-        <p className={s.positionNote}>After {longMonthDay(asOf)}, the committee raised {wholeDollars(like.raisedAfterCents)} more through {longMonthDay(candidate.totals.latestCashDate)}. {like.paidAfterCents > 0 ? `It paid out ${wholeDollars(like.paidAfterCents)} more through ${longMonthDay(candidate.totals.latestPaymentDate)}.` : 'No later payments were on file when these records were collected.'}</p>
+        <p className={s.positionNote}>After {longMonthDay(asOf)}, the committee raised {wholeDollars(like.raisedAfterCents)} more through {longMonthDay(candidate.totals.latestCashDate)}. {like.paidAfterCents > 0 ? `It paid out ${wholeDollars(like.paidAfterCents)} more through ${longMonthDay(candidate.totals.latestPaymentDate)}.` : 'These records have no later payments for this committee.'}</p>
       </div>;
     })}</div>
     <p className={s.source}>Opening balances come from the official ORESTAR account summaries retrieved {longDate(candidates[0].account.retrievedAt)}. Cash left is our calculation from those balances and the filed transactions. <a href="/data/campaign-finance/account-summaries.csv" download>Download the official summaries</a>.</p>

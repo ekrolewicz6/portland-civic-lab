@@ -6,9 +6,12 @@ import {
   explorerHref, longDate, longMonthDay, nearestThousand, plural, roundMoney, share, wholeDollars, words, type GovernorCandidate,
 } from '@/lib/campaign-finance/governor';
 import {
-  BothTable, BreadthTiles, CumulativeChart, Evidence, FundersTable, GiftSizeChart, PayeesChart, PositionChart, SourceMixChart,
+  BothTable, BreadthTiles, Evidence, FundersTable, GiftSizeChart, PayeesChart, PositionChart, SourceMixChart,
   SpendingChart, StateChart, TopSourcesChart, WeeklyChart,
 } from '@/components/deep-dives/campaign-finance/governor/GovernorCharts';
+import { MoneyInOut, MoneyOverTime } from '@/components/deep-dives/campaign-finance/MoneyOverTime';
+import { governorMoney } from '@/lib/campaign-finance/money-lead';
+import { currentMoneyTotals } from '@/lib/campaign-finance/query';
 import CountyMaps from '@/components/deep-dives/campaign-finance/governor/CountyMaps';
 import s from '@/components/deep-dives/campaign-finance/governor/governor.module.css';
 
@@ -19,11 +22,13 @@ export const metadata = pageMeta({
   type: 'article',
 });
 
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 const drazan = governorCandidate('christine-drazan')!;
 const kotek = governorCandidate('tina-kotek')!;
 const smith = governorUnlinked[0];
 const total = governorCandidates.reduce((sum, candidate) => sum + candidate.totals.cashCents, 0);
-const maxCash = Math.max(...governorCandidates.map(candidate => candidate.totals.cashCents));
 const kind = (candidate: GovernorCandidate, key: string) => candidate.kinds.find(item => item.key === key)!.cents;
 const large = (candidate: GovernorCandidate) => candidate.bands.filter(band => band.key === '100k_1m' || band.key === '1m_plus');
 const largeCents = (candidate: GovernorCandidate) => large(candidate).reduce((sum, band) => sum + band.cents, 0);
@@ -43,7 +48,7 @@ const agc = governor.upstream.find(row => row.committeeId === '4')!;
 const laborIds = new Set(governor.context.reviewedSources.filter(source => source.kind === 'labor').map(source => source.id));
 const laborFunders = governor.upstream.filter(row => row.gaveTo === kotek.committeeId && laborIds.has(`committee:${row.committeeId}`));
 const laborSmall = laborFunders.filter(row => row.combinedSmallCents * 2 >= row.receiptsCents);
-const carpenters = governor.upstream.find(row => row.committeeId === governor.context.tenMillion.committeeId)!;
+const carpenters = kotek.topSources.find(source => source.id === `committee:${governor.context.tenMillion.committeeId}`)!;
 const bothMore = (candidate: GovernorCandidate, other: GovernorCandidate) => governor.both.filter(row => (row.cents as Record<string, number>)[candidate.committeeId] > (row.cents as Record<string, number>)[other.committeeId]).length;
 const bothEqual = governor.both.length - bothMore(kotek, drazan) - bothMore(drazan, kotek);
 const independent = governor.independent;
@@ -56,29 +61,37 @@ function ChapterHeading({ number, label, children }: { number: string; label: st
   return <header className={s.chapterHeader}><p className={s.kicker}>{number} / {label}</p><h2>{children}</h2></header>;
 }
 
-export default function GovernorInvestigation() {
+export default async function GovernorInvestigation() {
+  const [lead, statewide] = await Promise.all([governorMoney(), currentMoneyTotals('all')]);
+  const throughDay = longDate(lead.end);
   return <article className={s.story} data-governor-snapshot={governor.snapshot}><div className={s.wrap}>
     <header className={s.hero} id="story-top">
       <p className={s.kicker}>The 2026 election · Governor of Oregon</p>
       <h1>The money behind<br />the race for <em>governor.</em></h1>
       <p className={s.lead}>Christine Drazan and Tina Kotek have raised {roundMoney(total)} between them since January 2025, and their campaigns are funded in very different ways. These are the public records of who gave, when the money arrived and what it paid for.</p>
-      <div className={s.opening}>
-        <figure className={s.openingFigure} data-chart="opening">
-          <figcaption><span className={s.kicker}>Cash raised by the two campaigns with records on file</span><strong className={s.heroAmount}>{wholeDollars(total)}</strong><span className={s.heroCaption}>January 1, 2025 through {longDate(governor.end)}, before refunds.</span></figcaption>
-          <div className={s.heroBars}>{governorCandidates.map(candidate => <div className={s.heroBar} key={candidate.candidateId}>
-            <div><span>{candidate.name}</span><strong>{wholeDollars(candidate.totals.cashCents)}</strong></div>
-            <div className={s.heroTrack} role="img" aria-label={`${candidate.name}: ${wholeDollars(candidate.totals.cashCents)}`}><span style={{ width: `${100 * candidate.totals.cashCents / maxCash}%` }} /></div>
-          </div>)}</div>
-          <p className={s.source}>{smith.name}, the {smith.party} nominee, has no committee in these records. That is missing coverage, and it does not mean he raised nothing.</p>
-        </figure>
-        <aside className={s.doors} aria-label="Related pages">
-          <Link className={s.door} href="/voters-guide/oregon-governor"><span>Voter guide: Governor<small>Positions, records and the choices ahead</small></span><span aria-hidden="true">↗</span></Link>
-          {governorCandidates.map(candidate => <Link className={s.door} key={candidate.candidateId} href={explorerHref(candidate.committeeId, '&basis=cash_contribution')}><span>{last(candidate)}’s contributions<small>Every record, searchable</small></span><span aria-hidden="true">↗</span></Link>)}
-          <p className={s.doorNote}>Candidates are listed alphabetically. The newest filings can still change.</p>
-        </aside>
-      </div>
-      <p className={s.byline}>Portland Civic Lab · Analysis dated {longDate(governor.reviewedAt)} · Records through {longDate(governor.end)}</p>
     </header>
+    <MoneyOverTime measure="raised" panels={[lead.panel]} end={lead.end} events={governor.events} ranked={false}
+      kicker="Cash raised since January 1, 2025" title="How much each candidate has raised, and when"
+      howTo="Each line is one campaign’s running total. It steps up on the day money arrives and stops at the campaign’s latest contribution in the records. Numbered markers are the dated events listed under the chart."
+      source={<>Cash contributions before refunds, by the date on each filing, through {throughDay}. {smith.name}, the {smith.party} nominee, has no committee in these records, which is missing coverage and does not mean he raised nothing. {governorCandidates.map((candidate, index) => <span key={candidate.candidateId}>{index ? ' · ' : ''}<Link href={explorerHref(candidate.committeeId, '&basis=cash_contribution')}>{last(candidate)}’s contributions</Link></span>)}.</>} />
+    <MoneyOverTime measure="paid" panels={[lead.panel]} end={lead.end} events={governor.events} ranked={false}
+      kicker="Cash paid out since January 1, 2025" title="How much each candidate has spent, and when"
+      howTo="Each line starts at a campaign’s first payment and stops at its latest one in the records. A line that stops early has no later payments on file, either because none were made or because they have not reached these records."
+      source={<>Cash payments by the date paid, through {throughDay}. Bills owed and not yet paid are left out. {lead.staleNote} {governorCandidates.map((candidate, index) => <span key={candidate.candidateId}>{index ? ' · ' : ''}<Link href={explorerHref(candidate.committeeId, '&basis=cash_payment')}>{last(candidate)}’s payments</Link></span>)}.</>} />
+    <MoneyInOut kicker="Money in and money out since January 1, 2025" title="How much has moved, and where the payments went"
+      howTo="Each bar is all of one group’s payments, split by the address of whoever was paid."
+      rows={[
+        ...lead.candidates.map(({ candidate, totals, stale }) => ({ key: candidate.candidateId, label: candidate.name, totals,
+          note: stale ? <>These records have no payments by this committee after {longDate(totals.latestPayment!)}, so its money out is incomplete.</> : undefined })),
+        { key: 'statewide', label: 'Every committee in Oregon’s campaign records', totals: statewide, note: <>{statewide.committees.toLocaleString('en-US')} committees, including candidates, ballot measures, parties and political action committees. {wholeDollars(statewide.fromCommitteesCents)} of the money in came from other committees, so that money is counted each time it moves.</> },
+      ]}
+      source={<>The address is the payee’s. A media firm in another state may spend what it is paid on Oregon stations, and filings do not show that second step. Records run through {throughDay}, and late filings can be missing.</>} />
+    <div className={s.doorRow}>
+      <Link className={s.door} href="/voters-guide/oregon-governor"><span>Voter guide: Governor<small>Positions, records and the choices ahead</small></span><span aria-hidden="true">↗</span></Link>
+      <Link className={s.door} href={BASE}><span>Portland council money<small>The same charts for Districts 3 and 4</small></span><span aria-hidden="true">↗</span></Link>
+    </div>
+    <p className={s.doorNote}>Candidates are listed alphabetically. The charts above read the current records, and the chapters below use records through {longDate(governor.end)}.</p>
+    <p className={s.byline}>Portland Civic Lab · Analysis dated {longDate(governor.reviewedAt)} · Records through {longDate(governor.end)}</p>
     <nav className={s.sectionNav} aria-label="Chapters in this investigation">{CHAPTERS.map(([id, label], index) => <a key={id} href={`#${id}`}><span>0{index + 1}</span>{label}</a>)}</nav>
 
     <section className={s.chapter} id="who-gives"><ChapterHeading number="01" label="Who gives">Two campaigns built from different kinds of money.</ChapterHeading>
@@ -109,12 +122,11 @@ export default function GovernorInvestigation() {
       </aside>
     </section>
 
-    <section className={s.chapter} id="when"><ChapterHeading number="03" label="When">Kotek’s biggest weeks were built on a few very large checks. Drazan’s three biggest all came in the last month of these records.</ChapterHeading>
+    <section className={s.chapter} id="when"><ChapterHeading number="03" label="When">Kotek’s biggest weeks were built on a few large checks. Drazan’s three biggest have all come since the end of August.</ChapterHeading>
       <div className={s.body}>
         <p><strong>Kotek’s biggest week began {longMonthDay(kotek.peaks[0].start)}, when the {plain(kotek.peaks[0].top[0].name)} gave {roundMoney(kotek.peaks[0].top[0].cents)}. Drazan’s biggest week began {longMonthDay(drazan.peaks[0].start)}, when {plain(drazan.peaks[0].top[0].name)}, a contractors’ committee, gave {roundMoney(drazan.peaks[0].top[0].cents)}.</strong></p>
         <p>By the end of September 2025, before either had announced, Kotek’s committee had raised {roundMoney(through(kotek, '2025-09'))} since January and Drazan’s had raised {roundMoney(through(drazan, '2025-09'))}. Drazan’s committee was registered for a legislative seat until she <a href={drazan.announcedSource}>entered the race on {longDate(drazan.announced)}</a>. Kotek <a href={kotek.announcedSource}>announced on {longDate(kotek.announced)}</a>.</p>
       </div>
-      <CumulativeChart />
       <WeeklyChart />
       <div className={s.body}><p>Both won their primaries on May 19. Drazan took the Republican nomination with 41% of the vote in a contested field, and Kotek won the Democratic nomination with 84%, according to <a href={governor.context.primary.source}>results reported by the Oregon Capital Chronicle</a>.</p></div>
     </section>
@@ -146,7 +158,7 @@ export default function GovernorInvestigation() {
       </div>
       <FundersTable />
       <div className={s.body}>
-        <p>One committee on that list changed size during these records. On {longDate(governor.context.tenMillion.date)} the {governor.context.tenMillion.reportedSource} gave {roundMoney(governor.context.tenMillion.cents)} to {plain(carpenters.name)}, which had given Kotek {roundMoney(carpenters.gaveCents)} by then. Ron Rowlett, the union’s director of government relations, <a href={governor.context.tenMillion.source}>told OPB</a> the money “{governor.context.tenMillion.quote}.” These records cannot show how it will be spent.</p>
+        <p>One committee on that list changed size during these records. On {longDate(governor.context.tenMillion.date)} the {governor.context.tenMillion.reportedSource} gave {roundMoney(governor.context.tenMillion.cents)} to {plain(carpenters.name)}. That committee has given Kotek {roundMoney(carpenters.cents)} in these records, most recently on {longMonthDay(carpenters.lastDate)}. Ron Rowlett, the union’s director of government relations, <a href={governor.context.tenMillion.source}>told OPB</a> the money “{governor.context.tenMillion.quote}.” These records cannot show how it will be spent.</p>
         <p>{words(governor.both.length, true)} sources gave to both campaigns. {words(bothMore(kotek, drazan), true)} of them gave more to Kotek, {words(bothMore(drazan, kotek))} gave more to Drazan and {words(bothEqual)} gave the same amount to each.</p>
       </div>
       <BothTable />
@@ -154,7 +166,8 @@ export default function GovernorInvestigation() {
 
     <section className={s.chapter} id="what-it-bought"><ChapterHeading number="06" label="What it bought">Advertising is the largest expense for both campaigns.</ChapterHeading>
       <div className={s.body}>
-        <p><strong>Drazan’s committee has reported {roundMoney(drazan.totals.paidCents)} in payments, including {roundMoney(purpose(drazan, 'Broadcast advertising (radio, TV)'))} for broadcast advertising. Kotek’s has reported {roundMoney(kotek.totals.paidCents)}, including {roundMoney(purpose(kotek, 'Broadcast advertising (radio, TV)'))} for broadcast, with payments on file only through {longDate(kotek.totals.latestPaymentDate)}.</strong></p>
+        <p><strong>Drazan’s committee has reported {roundMoney(drazan.totals.paidCents)} in payments, including {roundMoney(purpose(drazan, 'Broadcast advertising (radio, TV)'))} for broadcast advertising. These records hold {roundMoney(kotek.totals.paidCents)} in payments by Kotek’s committee, including {roundMoney(purpose(kotek, 'Broadcast advertising (radio, TV)'))} for broadcast, and none dated after {longDate(kotek.totals.latestPaymentDate)}.</strong></p>
+        <p>Kotek’s later payments exist. <a href={governor.context.laterBalances.source}>OPB reported on {longDate(governor.context.laterBalances.date)}</a> that her cash on hand had fallen to {roundMoney(governor.context.laterBalances.kotekCents)}, well below the state’s September 27 figure. Her committee reports payments about 30 days after making them, and our latest download covered only transactions dated September 28 or later, so a month of her spending has not reached these records.</p>
       </div>
       <SpendingChart />
       <div className={s.body}>
@@ -166,7 +179,7 @@ export default function GovernorInvestigation() {
 
     <section className={s.chapter} id="money-left"><ChapterHeading number="07" label="Money left">How much each campaign has left depends on which day you ask.</ChapterHeading>
       <div className={s.body}>
-        <p><strong>On {longDate(asOf)}, the last day both campaigns have payments on file, Kotek had about {roundMoney(kotek.likeForLike.cashPositionCents)} in cash and Drazan about {roundMoney(drazan.likeForLike.cashPositionCents)}.</strong></p>
+        <p><strong>On {longDate(asOf)}, the last day these records have payments for both campaigns, Kotek had about {roundMoney(kotek.likeForLike.cashPositionCents)} in cash and Drazan about {roundMoney(drazan.likeForLike.cashPositionCents)}.</strong></p>
       </div>
       <PositionChart />
       <div className={s.body}>
@@ -180,7 +193,7 @@ export default function GovernorInvestigation() {
         <li><h3>{smith.name}</h3><p>The {smith.party} nominee has no committee in these records. <a href={smith.linkSource}>A candidate who expects to raise and spend $750 or less in a year</a> does not have to form one, so his absence here does not mean he raised nothing.</p></li>
         <li><h3>Outside spending</h3><p>Groups can spend on their own to support or oppose a candidate. The state’s export does not name the target of that spending, and our review of the detail records is incomplete, with {independent.parsedRecords} of {independent.searchedRecords} flagged records read so far. {independent.allocations.length === 1 ? <>One of them names a candidate in this race: a {wholeDollars(independent.allocations[0].cents)} payment by {independent.allocations[0].spender} in {independent.allocations[0].position} to {independent.allocations[0].target} on {longDate(independent.allocations[0].date)}.</> : <>{independent.allocations.length} of them name a candidate in this race.</>}</p></li>
         <li><h3>Earlier money</h3><p>The records start on January 1, 2025. Kotek’s committee opened that year with {wholeDollars(kotek.account.openingCash2025Cents)} already in the bank and Drazan’s with {wholeDollars(drazan.account.openingCash2025Cents)}, and both committees existed before this race.</p></li>
-        <li><h3>Late filings</h3><p>Campaigns can file or amend after the fact, so the newest weeks are the most likely to change. This copy of the records runs through {longDate(governor.end)} and has not been checked against a complete state export.</p></li>
+        <li><h3>Late filings</h3><p>This copy joins a complete pull on September 27 with two later downloads that searched by transaction date. A record dated before September 28 and filed after that pull can be missing, which is why Kotek’s payments stop on August 26. The newest days can also still change.</p></li>
         <li><h3>Names</h3><p>Donors are grouped by the exact name and address on each filing. One person reported two ways counts as two sources, so the donor counts are close estimates.</p></li>
         <li><h3>Goods and services</h3><p>Support given directly as goods or services is tracked separately from cash. Kotek reported {wholeDollars(kotek.totals.inKindCents)} of it and Drazan {wholeDollars(drazan.totals.inKindCents)}.</p></li>
       </ul>
