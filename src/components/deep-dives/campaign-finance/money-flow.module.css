@@ -1,0 +1,66 @@
+/* Lead charts shared by the campaign-finance stories. Nothing renders below 12px. */
+.figure { background: #fffdf8; border: 1px solid #cbd3c9; border-radius: 3px; padding: 28px; margin: 28px 0 0 !important; min-width: 0; color: #202e27; font-size: 16px; line-height: 1.6; }
+.figure * { box-sizing: border-box; }
+.figure a { text-decoration: underline; text-underline-offset: 0.2em; color: inherit; }
+.figure h2, .figure h3, .figure p, .figure ol, .figure ul, .figure figure { margin: 0; }
+.kicker { display: block; font: 600 13px/1.6 ui-monospace, SFMono-Regular, monospace; text-transform: uppercase; letter-spacing: 0.09em; color: #51645c; }
+.title { font-family: var(--font-editorial, Georgia), Georgia, serif; font-weight: 400; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.12; letter-spacing: -0.03em; margin-top: 6px !important; text-wrap: balance; }
+.howTo { font-size: 15px; line-height: 1.55; color: #51645c; margin-top: 10px !important; max-width: 880px; }
+.source { font-size: 14px; line-height: 1.6; color: #51645c; margin-top: 20px !important; max-width: 980px; }
+
+.panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 30px 44px; margin-top: 22px; }
+.panel { min-width: 0; }
+.panelHead { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-top: 2px solid #163b30; padding-top: 10px; margin-bottom: 12px; }
+.panelHead strong { font-size: 17px; font-weight: 650; }
+.panelHead span { font-size: 14px; color: #51645c; font-variant-numeric: tabular-nums; }
+
+.chart { position: relative; }
+.area { position: relative; height: 250px; margin-left: 54px; border-left: 1px solid #b8c4b9; border-bottom: 1px solid #b8c4b9; }
+.area svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; overflow: visible; }
+.yLabels { position: absolute; left: 0; top: 0; width: 48px; height: 250px; }
+.yLabels span { position: absolute; right: 0; transform: translateY(-50%); font-size: 13px; color: #51645c; font-variant-numeric: tabular-nums; }
+.xLabels { position: relative; height: 26px; margin-left: 54px; font-size: 13px; color: #51645c; }
+.xLabels span { position: absolute; top: 6px; transform: translateX(-50%); white-space: nowrap; }
+.xLabels span:first-child { transform: none; }
+.dot { position: absolute; width: 9px; height: 9px; border-radius: 50%; transform: translate(-50%, -50%); border: 2px solid #fffdf8; box-sizing: content-box; }
+
+.legend { list-style: none; padding: 0; margin-top: 14px !important; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 0 26px; }
+.legend li { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; gap: 2px 9px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid #e3e8df; font-size: 15px; line-height: 1.35; }
+.key { display: block; width: 26px; height: 0; border-top: 3px solid currentColor; align-self: center; }
+.keyDashed { border-top-style: dashed; }
+.legend strong { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.legend small { grid-column: 2 / -1; font-size: 13px; line-height: 1.4; color: #51645c; }
+.noRecords { color: #51645c; }
+
+/* Money in, money out and where payments went */
+.rows { display: grid; gap: 28px; margin-top: 24px; }
+.row { border-top: 2px solid #163b30; padding-top: 12px; min-width: 0; }
+.rowHead { display: flex; align-items: baseline; justify-content: space-between; gap: 6px 24px; flex-wrap: wrap; }
+.rowHead strong { font-size: 18px; font-weight: 650; }
+.rowHead span { font-size: 15px; font-variant-numeric: tabular-nums; }
+.rowHead b { font-weight: 650; }
+.rowNote { font-size: 14px; line-height: 1.5; color: #51645c; margin-top: 4px !important; }
+.bar { display: flex; height: 34px; margin-top: 12px; background: #e7ebe3; }
+.bar span { display: block; height: 100%; flex: none; min-width: 0; }
+.parts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 22px; margin-top: 12px; }
+.parts div { display: grid; grid-template-columns: 13px minmax(0, 1fr); gap: 2px 8px; font-size: 14px; line-height: 1.4; }
+.parts i { width: 13px; height: 13px; margin-top: 3px; }
+.parts b { display: block; font-weight: 600; font-variant-numeric: tabular-nums; }
+.parts small { display: block; font-size: 13px; color: #51645c; }
+.placeOregon { background: #2e715d; }
+.placeOther { background: #c08a2d; }
+.placeCommittee { background: #4f5d95; }
+.placeUnplaced { background: repeating-linear-gradient(135deg, #88938c 0, #88938c 3px, #b3bbb5 3px, #b3bbb5 5px); }
+.payees { font-size: 14px; line-height: 1.55; color: #33453c; margin-top: 10px !important; }
+
+@media (max-width: 700px) {
+  .figure { padding: 20px 16px; margin-top: 22px !important; font-size: 15px; }
+  .area { height: 210px; margin-left: 46px; }
+  .yLabels { height: 210px; width: 42px; }
+  .yLabels span, .xLabels { font-size: 12px; }
+  .xLabels { margin-left: 46px; }
+  .xMinor { display: none; }
+  .parts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bar { height: 28px; }
+}
+@media print { .figure { break-inside: avoid; } }

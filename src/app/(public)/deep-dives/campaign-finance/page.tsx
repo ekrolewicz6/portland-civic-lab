@@ -10,7 +10,9 @@ import MajorDonorMatrix from '@/components/deep-dives/campaign-finance/MajorDono
 import { CampaignTimeline, CandidateDonorDossier, CrossListSupport } from '@/components/deep-dives/campaign-finance/CampaignDynamics';
 import districtAddress from '@/lib/campaign-finance/district-address-data.json';
 import { activeManifest } from '@/lib/campaign-finance/active';
-import { currentCandidateFacts } from '@/lib/campaign-finance/query';
+import { currentCandidateFacts, currentMoneyFlows, currentMoneyTotals } from '@/lib/campaign-finance/query';
+import { buildPanel } from '@/lib/campaign-finance/money-flow';
+import { MoneyInOut, MoneyOverTime } from '@/components/deep-dives/campaign-finance/MoneyOverTime';
 import s from '@/components/deep-dives/campaign-finance/story.module.css';
 
 export const metadata = pageMeta({ title: 'The money behind Portland’s next council', description: 'A chart-led investigation of Portland Districts 3 and 4: public matching, fundraising surges, shared donors, endorsements and cash reserves, with an auditor profile and statewide context.', path: BASE, type: 'article' });
@@ -35,6 +37,15 @@ async function loadLatestFunding() {
   const ranked=rows.sort((a,b)=>b.facts!.cashCents-a.facts!.cashCents);
   const max=Math.max(1,...ranked.map(row=>row.facts!.cashCents));
   return {active,rows,ranked,cash,publicCash,max};
+}
+const wholeMoney = (cents: number) => new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(Math.round(cents/100));
+const longDay = (day: string) => new Date(day+'T12:00:00Z').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
+/** Lead charts and totals, read from the live ledger on every request. */
+async function loadMoneyLead() {
+  const ids=[...d3,...d4].map(row=>row.id);
+  const [flows,council,statewide]=await Promise.all([currentMoneyFlows(ids),currentMoneyTotals(ids),currentMoneyTotals('all')]);
+  const panel=(key:string,title:string,rows:typeof d3)=>buildPanel(key,title,rows.map(row=>({id:row.id,name:row.name,href:row.href})),flows);
+  return {panels:[panel('district-3','District 3',d3),panel('district-4','District 4',d4)],council,statewide,campaigns:ids.length};
 }
 function LatestFunding({data}:{data:Awaited<ReturnType<typeof loadLatestFunding>>}) {
   const {active,rows,ranked,max}=data;
@@ -107,13 +118,29 @@ function RepeatSupportChart() {
 
 
 export default async function Investigation() {
-  const latest=await loadLatestFunding();
+  const [latest,lead]=await Promise.all([loadLatestFunding(),loadMoneyLead()]);
+  const through=longDay(latest.active.end);
   return <article className={s.story} data-story-snapshot={SNAPSHOT}><div className={s.wrap}>
     <header className={s.hero} id="story-top"><p className={s.kicker}>The 2026 election · A visual investigation</p><h1>The money behind<br/>Portland’s <em>next council.</em></h1><p className={s.lead}>Who gives. Where it comes from. Who gets paid. <br/>Follow the money through Portland’s District 3 and 4 races.</p>
-      <div className={s.openingGrid}><figure className={s.openingFigure} data-chart="opening"><figcaption><span className={s.kicker}>Cash raised by 17 linked campaigns</span><strong className={s.heroAmount}>{money(latest.cash)}</strong><span className={s.heroCaption}>{percent(latest.publicCash, latest.cash)} comes from City matching funds.</span></figcaption><div className={s.fundingStrip} role="img" aria-label={`${money(latest.publicCash)} City matching funds; ${money(latest.cash-latest.publicCash)} other cash contributions`}><span className={s.public} style={{ width: percent(latest.publicCash, latest.cash) }} /><span className={s.individual} style={{ width: percent(latest.cash-latest.publicCash, latest.cash) }} /></div><div className={s.openingNumbers}><div><strong>{shortMoney(latest.publicCash)}</strong><span><i className={s.public}/>City matching funds</span></div><div><strong>{shortMoney(latest.cash-latest.publicCash)}</strong><span><i className={s.individual}/>Other cash contributions</span></div></div><p className={s.source}>Jan. 1, 2025–{new Date(latest.active.end+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'})} · Before refunds · <Link href={`${BASE}/explorer?basis=cash_contribution&race=portland-district-3`}>Explore the records</Link></p></figure>
-        <aside className={s.scope}><p className={s.kicker}>Start with your race</p><Link className={s.raceDoor} href={`${BASE}/races/portland-district-3`}><span>District 3<small>9 of 21 candidates linked</small></span><span aria-hidden="true">↗</span></Link><Link className={s.raceDoor} href={`${BASE}/races/portland-district-4`}><span>District 4<small>8 of 12 candidates linked</small></span><span aria-hidden="true">↗</span></Link><p className={s.coverageNote}>Missing records don’t mean $0 raised. Recent filings remain provisional; the latest manual export may not include every late filing.</p></aside></div>
-      <p className={s.byline}>Portland Civic Lab · Analysis dated September 27, 2026 · Latest transaction update {latest.active.end}</p>
     </header>
+    <MoneyOverTime measure="raised" panels={lead.panels} end={latest.active.end}
+      kicker="Cash raised since January 1, 2025" title="How much each candidate has raised, and when"
+      howTo="Each line is one campaign’s running total. It steps up on the day money arrives and stops at the campaign’s latest contribution in the records."
+      source={<>Cash contributions before refunds, by the date on each filing, through {through}. City matching payments count on the day a campaign reports receiving them. Candidates without reviewed records are left out, which does not mean they raised nothing. <Link href={`${BASE}/explorer?basis=cash_contribution`}>Check the contribution records</Link>.</>} />
+    <MoneyOverTime measure="paid" panels={lead.panels} end={latest.active.end}
+      kicker="Cash paid out since January 1, 2025" title="How much each candidate has spent, and when"
+      howTo="Each line starts at a campaign’s first payment and stops at its latest one in the records. A line that stops early has no later payments on file, either because none were made or because they have not been filed."
+      source={<>Cash payments by the date paid, through {through}. Bills owed and not yet paid are left out. A campaign has 30 days to report a payment for most of the year and seven days in the six weeks before an election. <Link href={`${BASE}/suppliers`}>See who was paid</Link>.</>} />
+    <MoneyInOut kicker="Money in and money out since January 1, 2025" title="How much has moved, and where the payments went"
+      howTo="Each bar is all of a group’s payments, split by the address of whoever was paid."
+      rows={[
+        { key: 'council', label: `These ${lead.campaigns} council campaigns`, totals: lead.council, note: <>{wholeMoney(lead.council.matchingCents)} of the money in is City matching funds.</> },
+        { key: 'statewide', label: 'Every committee in Oregon’s campaign records', totals: lead.statewide, note: <>{lead.statewide.committees.toLocaleString('en-US')} committees, including candidates, ballot measures, parties and political action committees. {wholeMoney(lead.statewide.fromCommitteesCents)} of the money in came from other committees, so that money is counted each time it moves.</> },
+      ]}
+      source={<>The address is the payee’s. A media firm in another state may spend what it is paid on Oregon stations, and filings do not show that second step. Records run through {through}, and late filings can be missing. <Link href={`${BASE}/explorer?basis=cash_payment`}>Check the payment records</Link>.</>} />
+    <div className={s.doorRow}><Link className={s.raceDoor} href={`${BASE}/races/portland-district-3`}><span>District 3<small>9 of 21 candidates linked</small></span><span aria-hidden="true">↗</span></Link><Link className={s.raceDoor} href={`${BASE}/races/portland-district-4`}><span>District 4<small>8 of 12 candidates linked</small></span><span aria-hidden="true">↗</span></Link></div>
+    <p className={s.coverageNote}>Missing records don’t mean $0 raised. Recent filings remain provisional; the latest manual export may not include every late filing.</p>
+    <p className={s.byline}>Portland Civic Lab · Analysis dated September 27, 2026 · Latest transaction update {latest.active.end}</p>
     <nav className={s.sectionNav} aria-label="Chapters in this investigation">{[['district-3', 'District 3'], ['district-4', 'District 4'], ['campaign-timeline', 'When money arrived'], ['zip-map', 'Where it came from'], ['shared-support', 'Donors & endorsements'], ['money-left', 'Money left'], ['auditor', 'Auditor'], ['statewide', 'Beyond Portland']].map(([id, label], i) => <a key={id} href={`#${id}`}><span>0{i + 1}</span>{label}</a>)}</nav>
     <LatestFunding data={latest}/>
 
