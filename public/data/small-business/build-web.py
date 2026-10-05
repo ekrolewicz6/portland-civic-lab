@@ -48,10 +48,11 @@ with (HERE/'sources.tsv').open() as f:sources=list(csv.DictReader(f,delimiter='\
 extra_path=HERE/'web-sources.json'
 extra=json.loads(extra_path.read_text()) if extra_path.exists() else []
 # Only reviewed sources support editorial claims; full register retains screened/queued labels.
+shutil.copyfile(HERE/'data/osb-year-one.json',OUT/'osb-year-one.json')
 payload=dict(size=size,sectors=sector,qcew=qcew,nes=nes,bds=bds,age=age,metros=metros,adjusted=adjusted,sources=sources+extra)
 (OUT/'evidence.json').write_text(json.dumps(payload,separators=(',',':'))+'\n')
 for p in (HERE/'data').glob('*.csv'):shutil.copyfile(p,PUB/p.name)
-for name in ['sources.tsv','claims.tsv','methodology.md','gdp-feasibility.md','fieldwork-kit.md','future-program.md','raw-inputs.tsv','web-claims.tsv','build-web.py']:shutil.copyfile(HERE/name,PUB/name)
+for name in ['sources.tsv','claims.tsv','methodology.md','gdp-feasibility.md','fieldwork-kit.md','future-program.md','raw-inputs.tsv','web-claims.tsv','build-web.py','osb-source-review.md']:shutil.copyfile(HERE/name,PUB/name)
 if extra_path.exists():shutil.copyfile(extra_path,PUB/'web-sources.json')
 shutil.copyfile(HERE/'notes/webpage-research.md',PUB/'webpage-methods.md')
 checks={'metros':len(metros),'all_metro_weighted_under500_pct':sum(m['smallJobs'] for m in metros)/sum(m['jobs'] for m in metros)*100,'all_metro_weighted_under20_pct':sum(m['microJobs'] for m in metros)/sum(m['jobs'] for m in metros)*100,'standardized_sector_coverage_pct':wt/1084535*100,'adjusted':adjusted}

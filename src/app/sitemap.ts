@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
-    { url: `${BASE_URL}/deep-dives/small-business`, lastModified: new Date("2026-10-03T00:00:00Z"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/deep-dives/small-business`, lastModified: new Date("2026-10-05T00:00:00Z"), changeFrequency: "monthly", priority: 0.9 },
     { url: BASE_URL, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${BASE_URL}/dashboard`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${BASE_URL}/org-chart`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },

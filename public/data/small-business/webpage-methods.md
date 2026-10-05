@@ -21,3 +21,7 @@ Peer industry standardization fixes each metro's weights to Portland's employmen
 This is a deeper visual investigation, not a claim to have crawled the entire web. Existing68-source library plus this supplement contains screened, reviewed and unresolved evidence with status labels. Proprietary CoStar aggregates and Chamber Infogram inputs remain independently unreproduced. City QCEW size-unit ambiguity, OSB geographic-total gap, Chamber20%versus28%, absent owner-profit/benefit data and causal program evaluation remain explicit.
 
 No interviews or records requests were sent. No program is portrayed as accepting applications without checking its current program page. The proposed policy costs are scenarios, not official budgets.
+
+## October 5 OSB source review
+
+The complete Year One PDF and its September 10 announcement were checked against the page. Two additional exhibits reproduce every reported industry, inquiry and service category and all district business/event counts. Four attributed business stories, three partner statements and the delivery model add context. The event map totals 126 against a 136 headline, an additional unresolved discrepancy. The announcement is the same evidence base, not independent confirmation. See [the coverage review](../osb-source-review.md), structured data and claims w17–w24. No interviews or outreach were conducted.

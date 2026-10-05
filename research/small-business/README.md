@@ -37,10 +37,14 @@ No records request was sent and no interviewee was contacted in this phase. The 
 
 ## Visual webpage — October 3 extension
 
-The research now supports a twelve-chapter Next.js report at `/deep-dives/small-business`, with 18 substantive figures, definition and metric switches, industry-standardized peer comparisons, all 387-metro context, business journeys, owner-cash scenarios, a costed policy lab, and a searchable source library. Publication route: `https://www.portlandciviclab.org/deep-dives/small-business`. The October 3 release includes the deep-dive library, About topic and sitemap. See the validation record for deployment status.
+The research now supports a twelve-chapter Next.js report at `/deep-dives/small-business`, with 20 substantive figures, definition and metric switches, industry-standardized peer comparisons, all 387-metro context, business journeys, owner-cash scenarios, a costed policy lab, and a searchable source library. Publication route: `https://www.portlandciviclab.org/deep-dives/small-business`. The October 3 release includes the deep-dive library, About topic and sitemap. See the validation record for deployment status.
 
 New source readings and methods are in [webpage research](notes/webpage-research.md), [web sources](web-sources.json), [web claims](web-claims.tsv), and [archive hashes](web-archive.json). Updated readings may share a URL with the original register; they are not additional unique documents. The original 68-source corpus and 16-figure standalone atlas remain intact.
 
 `python3 research/small-business/build-web.py` produces the bundled page data and public downloads from pinned raw/extracted files. `node research/small-business/verify-web.cjs` checks a running local preview (default localhost3014; override `SMALL_BUSINESS_PREVIEW`) using Playwright and axe. Browser screenshots and diagnostics go to ignored `runtime-data/small-business/`.
 
 Start the isolated preview with `npx tsx research/small-business/preview.ts`. It uses port3014 by default (`SMALL_BUSINESS_PORT` overrides it) and an ignored build cache under `runtime-data/small-business/.next`, preventing collisions with other running site previews. See [web validation](web-validation.md) for the checks and remaining evidence gaps.
+
+## October 5 OSB review
+
+The complete Year One report and its announcement now inform the page: two additional exhibits, all reported category shares and district counts, four business stories, three partner statements, the delivery model and a current help link. See [the page-by-page coverage review](osb-source-review.md). The original report hash is unchanged; a new 126-versus-136 event discrepancy is explicit. The original 16-figure standalone atlas remains unchanged.

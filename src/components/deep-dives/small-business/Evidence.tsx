@@ -1,11 +1,19 @@
 import type { ReactNode } from "react";
 import evidence from "@/data/small-business/evidence.json";
 
-export function Source({ id, children }: { id: string; children?: ReactNode }) {
+export function Source({
+  id,
+  children,
+  page,
+}: {
+  id: string;
+  children?: ReactNode;
+  page?: number;
+}) {
   const source = evidence.sources.find((s) => s.id === id);
   return source ? (
     <a
-      href={source.url}
+      href={page ? `${source.url.split("#")[0]}#page=${page}` : source.url}
       title={`${source.publisher}: ${source.title}`}
       target="_blank"
       rel="noreferrer"

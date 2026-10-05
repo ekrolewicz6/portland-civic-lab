@@ -32,6 +32,7 @@ import {
   SizeBands,
   SupportFunnel,
 } from "@/components/deep-dives/small-business/Charts";
+import { OSBReport } from "@/components/deep-dives/small-business/OSBReport";
 import "./small-business.css";
 import { ReadingNav } from "@/components/deep-dives/small-business/ReadingNav";
 
@@ -1158,12 +1159,13 @@ export default function SmallBusinessPage() {
           one program, and nobody has counted the eligible businesses that use
           none.
         </p>
+        <OSBReport />
         <Figure
-          number="16"
-          title="Of five numbers worth knowing, the public can see one."
+          number="18"
+          title="Activity is visible. The path to better outcomes is not."
           subtitle="What the Office of Small Business reported for its first year, next to what would need to be measured to judge it."
           sources={["osb-2026"]}
-          note="The 759 figure is from the office’s Year One report."
+          note="The report describes many activities. This chain asks whether they reached people who needed help, resolved their problems and improved business outcomes."
         >
           <SupportFunnel />
         </Figure>
@@ -1207,7 +1209,7 @@ export default function SmallBusinessPage() {
             </p>
             <p>
               Half of the services it recorded involved Prosper Portland’s
-              resources, and 7% involved access to capital. We don’t know what
+              resources, and 7% involved funding referrals outside Prosper. We don’t know what
               those referrals led to.
             </p>
             <Source id="osb-2026">Year One report, p. 4</Source>
@@ -1360,7 +1362,7 @@ export default function SmallBusinessPage() {
           </aside>
         </div>
         <Figure
-          number="17"
+          number="19"
           title="How the service would work, step by step."
           subtitle="Our proposal. A person stays responsible at every step."
           sources={[
@@ -1487,7 +1489,7 @@ export default function SmallBusinessPage() {
           </p>
         </Split>
         <Figure
-          number="18"
+          number="20"
           title="Three ways to spend the next dollar."
           subtitle="Three example programs with rough first-year costs. These are our scenarios and not a city budget. Move the sliders to change the assumptions."
           sources={["oecd-eval", "gate-eval"]}

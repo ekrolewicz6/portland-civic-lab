@@ -14,7 +14,7 @@ const base = process.env.SMALL_BUSINESS_PREVIEW || 'http://localhost:3014';
  const response=await page.goto(base+'/deep-dives/small-business',{waitUntil:'networkidle'});
  assert.equal(response.status(),200);
  await page.getByRole('heading',{name:'Portland loves its small businesses. How well does it help them?',exact:true}).waitFor();
- assert.equal(await page.locator('.sb-figure').count(),18);assert.equal(await page.locator('.sb-chapter').count(),12);
+ assert.equal(await page.locator('.sb-figure').count(),20);assert.equal(await page.locator('.sb-chapter').count(),12);
  const figure=(text)=>page.locator('.sb-figure').filter({has:page.getByRole('heading',{name:text,exact:true})});
  const size=figure('Small companies have half the jobs and a smaller share of the money.');
  assert.match(await size.locator('.sb-huge').innerText(),/50.2%/);
@@ -52,5 +52,5 @@ const base = process.env.SMALL_BUSINESS_PREVIEW || 'http://localhost:3014';
   if(width===390){await page.screenshot({path:path.join(out,'mobile-hero.png')});await figure('Thirteen of 18 industries had fewer jobs in 2025 than in 2019.').screenshot({path:path.join(out,'mobile-sectors.png'),style:'body header,.sb-nav,nextjs-portal{visibility:hidden!important}'});await figure('Three ways to spend the next dollar.').screenshot({path:path.join(out,'mobile-policy.png'),style:'body header,.sb-nav,nextjs-portal{visibility:hidden!important}'});}
  }
  assert.deepEqual(errors,[]);assert.deepEqual(consoleErrors,[]);
- const report={status:accessibility.violations.length?'needs-accessibility-fixes':'passed',figures:18,chapters:12,downloadChecks:files.length,responsive,accessibilityViolations:accessibility.violations.map(v=>({id:v.id,impact:v.impact,count:v.nodes.length})),errors,consoleErrors,screenshots};fs.writeFileSync(path.join(out,'browser-checks.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));await browser.close();if(accessibility.violations.length)process.exitCode=1;
+ const report={status:accessibility.violations.length?'needs-accessibility-fixes':'passed',figures:20,chapters:12,downloadChecks:files.length,responsive,accessibilityViolations:accessibility.violations.map(v=>({id:v.id,impact:v.impact,count:v.nodes.length})),errors,consoleErrors,screenshots};fs.writeFileSync(path.join(out,'browser-checks.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));await browser.close();if(accessibility.violations.length)process.exitCode=1;
 })().catch(e=>{console.error(e);process.exit(1);});
