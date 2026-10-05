@@ -130,7 +130,7 @@ export default async function Investigation() {
       source={<>Cash contributions before refunds, by the date on each filing, through {through}. City matching payments count on the day a campaign reports receiving them. Candidates without reviewed records are left out, which does not mean they raised nothing. <Link href={`${BASE}/explorer?basis=cash_contribution`}>Check the contribution records</Link>.</>} />
     <MoneyOverTime measure="paid" panels={lead.panels} end={latest.active.end}
       kicker="Cash paid out since January 1, 2025" title="How much each candidate has spent, and when"
-      howTo="Each line starts at a campaign’s first payment and stops at its latest one in the records. A line that stops early has no later payments on file, either because none were made or because they have not been filed."
+      howTo="Each line is one campaign’s running total of payments. It steps up on the day a payment is made and stops at the campaign’s latest payment in the records. A line that stops early has no later payments on file, either because none were made or because they have not been filed."
       source={<>Cash payments by the date paid, through {through}. Bills owed and not yet paid are left out. A campaign has 30 days to report a payment for most of the year and seven days in the six weeks before an election. <Link href={`${BASE}/suppliers`}>See who was paid</Link>.</>} />
     <MoneyInOut kicker="Money in and money out since January 1, 2025" title="How much has moved, and where the payments went"
       howTo="Each bar is all of a group’s payments, split by the address of whoever was paid."
