@@ -19,6 +19,22 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="mcdonald-2026-10-04">October 4, 2026 · Candidate response: John McDonald (District 4)</h2>
+        <p>
+          John McDonald answered the open question on the streets column: how
+          to deliver the new I-5 bridge, the Interstate Bridge Replacement the
+          page has carried from the pamphlet statement. The answer has the
+          City act as a partner in federal and state lobbying, with a unified
+          Council led by the mayor pressing Salem and Washington, D.C. to
+          earmark funds, and names USDOT Mega Program grants, Oregon
+          general-obligation bonds and toll revenue as the funding sources. It
+          cites construction starting in the third quarter of 2028 and puts
+          the project at $13.5 billion to $15.2 billion, with $5.7 billion
+          already committed; those figures are the candidate’s and have not
+          been independently verified. The streets ladder, which had no
+          rungs, now carries a how and a measure, and the answer appears on
+          the brief in the candidate’s words. The reply is kept on file.
+        </p>
         <h2 id="governor-debate-2026-10-01">October 3, 2026 · Debate: governor (October 1, University of Oregon)</h2>
         <p>
           The governor page now includes what Tina Kotek and Christine Drazan

@@ -1,0 +1,9 @@
+# John McDonald (Portland City Council, District 4): the I-5 bridge, October 4, 2026
+
+Thread 1a10a1b420c4f531, subject "I-5 Bridge Question". On Oct 4 (8:28 pm PT) John McDonald answered question 4 of the Lab's September 22 list (Streets, buses and air: how would you deliver "Continue new I-5 bridge," and what number, deadline or visible result would show it worked):
+
+"With construction scheduled to begin in Q3 of 2028, there is plenty of time for the city to be a good partner and assist with federal and state lobbying efforts. New estimates put the project's price range at $13.5 billion to $15.2B billion with $5.7 billion already committed. This is a great opportunity for a unified council, led by the mayor, to lobby Salem and Washington, D.C. legislators to earmark funding to make this long-awaited bridge a reality. Funding sources include: USDOT Mega Program grants, the sale of Oregon GO Bonds and revenue from tolls."
+
+The email reads "$15.2B billion"; the doubled unit is printed as "$15.2 billion" on the site. Nothing else is changed.
+
+Applied: answer added verbatim (received 2026-10-04); the streets (climate) ladder on the District 4 brief, pamphlet-sourced with no rungs until now, becomes an emailed-response entry with a how (City as lobbying partner; a unified Council led by the mayor; USDOT Mega Program grants, Oregon GO bonds, tolls) and a measure (construction start in Q3 2028; $13.5B to $15.2B with $5.7B committed), sourced only to this email; research-log entry mcdonald-2026-10-04. No topic board covers the bridge, so topic-stances-d4 is unchanged, and the pamphlet-sourced climate line and chip ("Continue new I-5 bridge") stand. The schedule and cost figures are the candidate's and were not independently verified. Still open from the September 22 list: new taxes or fees (6), camp removal funding (8), data centers (9) and water rates (12). No reply has been sent.
