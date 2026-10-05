@@ -24,6 +24,15 @@ for (const width of [390, 1440]) {
       // Candidates are listed alphabetically, never ranked by money.
       await expect(figure.locator('ol li[data-series]').first()).toContainText('Christine Drazan');
     }
+    // The two lead charts share one time axis, and every dated event still falls inside it.
+    const starts = await page.locator('[data-chart^="lead-"]').evaluateAll(nodes => nodes.map(node => node.getAttribute('data-start')));
+    expect(starts[0]).toBe(starts[1]);
+    expect(starts[0]! <= '2025-10-27').toBe(true);
+    const raisedPlot = page.locator('[data-chart="lead-raised"] [data-plot]');
+    await raisedPlot.focus();
+    await page.keyboard.press('ArrowDown');
+    await expect(page.locator('[data-chart="lead-raised"] [data-tip]')).toContainText(/Christine Drazan\s*\$[\d,]+ raised by/);
+    await page.keyboard.press('Escape');
     await expect(page.locator('[data-chart="source-mix"] [data-candidate]').first()).toHaveAttribute('data-candidate', 'christine-drazan');
     await expect(page.locator('[data-chart="lead-raised"]')).toContainText('Brett Smith');
     await expect(page.locator('[data-money-row="christine-drazan"]')).toContainText('Paid to addresses in other states');

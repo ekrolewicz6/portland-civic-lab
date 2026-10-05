@@ -10,6 +10,10 @@ Everything below them is the dated edition in `governor-data.json`. Its headings
 
 A candidate whose latest payment is more than three weeks older than the ledger is flagged on the page, so a spending line that stops early is read as a gap in the records.
 
+Both lead charts open on the same month: the first month in which money in plus money out reaches 2% of its final total (`activeStart` in `src/lib/campaign-finance/money-flow.ts`). A line that began earlier enters at the left edge holding what it had already reached, so its last point still equals the legend total. The caption names the month and the amount carried in. The council page's lead charts follow the same rule.
+
+Pointing at a line, tapping it, or stepping to it with the arrow keys shows the campaign's name and its running total on that date (`MoneyLines.tsx`). The reading always sits on a date the line covers.
+
 ## Rebuild
 
 From the research checkout, which holds the ledger under `runtime-data/`:
