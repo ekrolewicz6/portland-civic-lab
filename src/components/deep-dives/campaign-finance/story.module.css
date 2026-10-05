@@ -127,3 +127,8 @@
  .toggle button{padding:10px 8px;min-height:54px;line-height:1.3}
  .toggle button+button{border-top:1px solid #587762;border-left:0}
 }
+
+/* Race doors as a row under the lead charts. */
+.doorRow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 44px;margin-top:30px}
+.doorRow+.coverageNote{font-size:14px}
+@media(max-width:600px){.doorRow{grid-template-columns:1fr}}

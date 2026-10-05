@@ -7,7 +7,7 @@ import { coverage } from "@/lib/oregon-fire/query";
 /** The guide streams independently of the atlas's database query. */
 export default async function FireAtlasSection() {
   const sources = await coverage();
-  return <div className="fire-shell fire-guide-atlas">
+  return <div className="fire-guide-atlas">
     <PlaceFinder />
     <FireExplorer sources={sources} />
     <details id="sources" className="fire-coverage-disclosure">
