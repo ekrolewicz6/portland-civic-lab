@@ -42,6 +42,7 @@ const dashboardTopics = [
   { title: "Safety", href: "/dashboard/safety" },
   { title: "Fiscal health", href: "/dashboard/fiscal" },
   { title: "Performance", href: "/dashboard/performance" },
+  { title: "CED Portfolio Map", href: "/ced" },
   { title: "Climate", href: "/dashboard/climate" },
   { title: "Transportation", href: "/dashboard/transportation" },
   { title: "Accountability", href: "/dashboard/accountability" },

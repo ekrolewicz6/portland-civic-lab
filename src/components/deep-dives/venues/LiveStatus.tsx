@@ -7,7 +7,7 @@ import {
 } from "@/lib/performance/ced-initiatives";
 
 /**
- * Live-status bridge between the venue deep-dive and the CED cockpit.
+ * Live-status bridge between the venue deep-dive and the CED Portfolio Map.
  *
  * With a `slug`, renders that one initiative as a compact inline strip
  * (used beside an asset card). With no slug, renders all four venue
@@ -26,7 +26,7 @@ const VENUE_SLUGS = [
   "portland5-management-transition",
 ] as const;
 
-const COCKPIT_HREF = "/dashboard/performance/dcas/ced";
+const COCKPIT_HREF = "/ced";
 
 function stageChipClasses(stage: InitiativeStage): string {
   if (stage === "in-negotiation" || stage === "decision-pending") {
@@ -58,7 +58,7 @@ export default function LiveStatus({ slug, compact }: { slug?: string; compact?:
     return (
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 rounded-sm border border-[var(--color-parchment)] bg-[var(--color-paper-warm)] p-3">
         <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
-          Live status · CED cockpit
+          Public record · Oct. 3, 2026
         </span>
         <StageChip stage={init.stage} />
         {init.nextMilestone ? (
@@ -68,10 +68,10 @@ export default function LiveStatus({ slug, compact }: { slug?: string; compact?:
           </span>
         ) : null}
         <Link
-          href={COCKPIT_HREF}
+          href={slug ? `${COCKPIT_HREF}/initiatives/${slug}` : COCKPIT_HREF}
           className="-my-2 ml-auto inline-flex min-h-[44px] items-center whitespace-nowrap text-[12px] font-semibold text-[var(--color-canopy)] hover:text-[var(--color-canopy-light)]"
         >
-          Track live →
+          View current record →
         </Link>
       </div>
     );
@@ -146,10 +146,10 @@ export default function LiveStatus({ slug, compact }: { slug?: string; compact?:
 
       <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:gap-8">
         <Link
-          href={COCKPIT_HREF}
+          href={slug ? `${COCKPIT_HREF}/initiatives/${slug}` : COCKPIT_HREF}
           className="inline-flex min-h-[44px] items-center text-[13px] font-semibold text-[var(--color-canopy)] hover:text-[var(--color-canopy-light)]"
         >
-          The CED cockpit: every initiative, decision, and source →
+          The CED Portfolio Map: every initiative, decision, and source →
         </Link>
         <Link
           href="/decisions"
