@@ -8,6 +8,7 @@ const pages = [
   { path: '/races/portland-district-3', active: 'Compare races', nested: true },
   { path: '/entities/committee:23208', active: 'Explore records', nested: true },
   { path: '/suppliers', active: 'Who gets paid' },
+  { path: '/governor', active: 'Governor' },
   { path: '/statewide', active: 'Statewide' },
   { path: '/questions', active: 'Research questions', reference: true },
   { path: '/methodology', active: 'Methods & gaps', reference: true },
@@ -29,7 +30,7 @@ for (const width of [390, 1440]) {
         await expect(nav).toHaveCount(1);
         await expect(nav.getByRole('link', { name: 'Explore records', exact: true })).toBeVisible();
         await expect(nav.getByRole('link', { name: 'Explore records', exact: true })).toHaveAttribute('href', `${base}/explorer`);
-        for (const label of ['Overview', 'Compare races', 'Who gets paid', 'Statewide']) {
+        for (const label of ['Overview', 'Compare races', 'Who gets paid', 'Governor', 'Statewide']) {
           await expect(nav.getByRole('link', { name: label, exact: true })).toBeVisible();
         }
         await expect(page.getByRole('navigation', { name: 'Campaign finance research', exact: true })).toHaveCount(0);

@@ -6,6 +6,7 @@ import { activeManifest } from '@/lib/campaign-finance/active';
 import { currentCandidateFacts, currentContributionRecords } from '@/lib/campaign-finance/query';
 import styles from './candidate-finance.module.css';
 import ContributionMosaic from './ContributionMosaic';
+import { GovernorCandidateFinance, isGovernorRace } from './governor/GovernorGuide';
 
 export function FinanceWindow({ end }: { end: string }) {
   return <p className={styles.note}>January 1, 2025–{end} · Current transaction snapshot. November–December 2024 is missing; recent filings and manual-export coverage are provisional. Reviewed candidate–committee links do not make every transaction a 2026 campaign transaction. Official account balances and editorial findings are updated separately.</p>;
@@ -63,6 +64,7 @@ async function CommitteeBreakdown({ facts, snapshot }: { facts: CommitteeFacts; 
 }
 
 export default async function CandidateFinance({ raceId, candidateId, federal = false }: { raceId: string; candidateId: string; federal?: boolean }) {
+  if (isGovernorRace(raceId)) return <GovernorCandidateFinance candidateId={candidateId} />;
   const active=activeManifest();
   const ids=financeFacts.links.filter(link=>link.status==='reviewed'&&link.raceId===raceId&&link.candidateId===candidateId).map(link=>link.committeeId);
   const current=Object.fromEntries(await Promise.all(ids.map(async id=>[id,await currentCandidateFacts(id)] as const)).then(rows=>rows.filter((row):row is readonly [string,CommitteeFacts]=>Boolean(row[1]))));

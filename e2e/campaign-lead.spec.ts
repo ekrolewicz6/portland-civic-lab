@@ -29,7 +29,8 @@ for (const width of [390, 1440]) {
     expect(Math.abs(await legendTotal('paid') - moneyOut)).toBeLessThanOrEqual(1700);
 
     await expect(page.locator('[data-money-row="statewide"]')).toContainText('Paid to Oregon addresses');
-    for (const row of ['council', 'statewide']) {
+    await expect(page.locator('[data-money-row="governor"]').getByRole('link', { name: /governor’s race/ })).toHaveAttribute('href', '/deep-dives/campaign-finance/governor');
+    for (const row of ['council', 'governor', 'statewide']) {
       const widths = await page.locator(`[data-money-row="${row}"] [role="img"] span`).evaluateAll(nodes => nodes.map(node => parseFloat((node as HTMLElement).style.width)));
       expect(Math.abs(widths.reduce((sum, value) => sum + value, 0) - 100)).toBeLessThan(0.01);
     }

@@ -5,9 +5,12 @@ import { BASE, money } from '@/lib/campaign-finance/filters';
 import { activeManifest } from '@/lib/campaign-finance/active';
 import { currentCandidateFacts } from '@/lib/campaign-finance/query';
 import { FinanceWindow } from './CandidateFinance';
+import { GovernorRaceFinance, isGovernorRace } from './governor/GovernorGuide';
 import styles from './candidate-finance.module.css';
 
 export default async function RaceFinance({ raceId, candidates, federal = false }: { raceId: string; candidates: RaceCandidate[]; federal?: boolean }) {
+  // The governor's race has its own reviewed edition; see /deep-dives/campaign-finance/governor.
+  if (isGovernorRace(raceId)) return <GovernorRaceFinance raceId={raceId} candidates={candidates} />;
   const active=activeManifest();
   const ids=[...new Set(financeFacts.links.filter(link=>link.status==='reviewed'&&link.raceId===raceId).map(link=>link.committeeId))];
   const pairs=await Promise.all(ids.map(async id=>[id,await currentCandidateFacts(id)] as const));

@@ -1,0 +1,247 @@
+{
+  "version": "governor-review-v1",
+  "reviewedAt": "2026-10-05",
+  "raceId": "oregon-governor",
+  "election": "2026-11-03",
+  "candidates": [
+    {
+      "candidateId": "tina-kotek",
+      "name": "Tina Kotek",
+      "party": "Democrat",
+      "committeeId": "4792",
+      "committeeName": "Friends of Tina Kotek",
+      "linkStatus": "reviewed",
+      "linkBasis": "ORESTAR Statement of Organization for committee 4792 lists candidate Tina Kotek and the office of Governor for the 2026 general election. The committee has been registered for the office of Governor since September 2021.",
+      "linkSource": "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+      "linkRetrievedAt": "2026-09-27",
+      "linkArchiveSha256": "8003308cc908cbd477a17ffc3db3f3374fff7b0e5a7cd8805d97fb44b9ef4739",
+      "governorCommitteeFrom": "2021-09-01",
+      "announced": "2025-12-04",
+      "announcedSource": "https://oregoncapitalchronicle.com/2025/12/04/oregon-gov-tina-kotek-confirms-she-will-be-seeking-reelection-in-2026/"
+    },
+    {
+      "candidateId": "christine-drazan",
+      "name": "Christine Drazan",
+      "party": "Republican",
+      "committeeId": "19050",
+      "committeeName": "Friends of Christine Drazan",
+      "linkStatus": "reviewed",
+      "linkBasis": "ORESTAR Statement of Organization for committee 19050 lists candidate Christine Drazan and the office of Governor for the 2026 general election. The committee was registered for State Representative, 51st District, until October 27, 2025, when it was amended to Governor.",
+      "linkSource": "https://secure.sos.state.or.us/orestar/CommitteeSearchFirstPage.do",
+      "linkRetrievedAt": "2026-09-27",
+      "linkArchiveSha256": "56ec28b26d8bed09c638be72d42d2ffeaf20e98034d26911bb6f69cd9f5835e0",
+      "governorCommitteeFrom": "2025-10-27",
+      "announced": "2025-10-27",
+      "announcedSource": "https://oregoncapitalchronicle.com/2025/10/27/republican-christine-drazan-mounts-2026-bid-for-oregon-governor/"
+    },
+    {
+      "candidateId": "brett-smith",
+      "name": "Brett Smith",
+      "party": "Pacific Green",
+      "committeeId": null,
+      "committeeName": null,
+      "linkStatus": "not_found",
+      "linkBasis": "No committee naming Brett Smith appears among the filers with transactions in this snapshot. Under ORS 260.043 a candidate who expects to raise and spend no more than $750 in a calendar year does not have to form a committee or file transactions, so the absence of records is missing coverage and does not show that he raised nothing.",
+      "linkSource": "https://oregon.public.law/statutes/ors_260.043",
+      "linkRetrievedAt": "2026-10-03",
+      "linkArchiveSha256": null,
+      "governorCommitteeFrom": null,
+      "announced": null,
+      "announcedSource": "https://www.opb.org/article/2026/07/23/oregon-governor-race-third-party-candidate-brett-smith/"
+    }
+  ],
+  "sourceKinds": {
+    "note": "Committees and organizations that gave $50,000 or more to either candidate, grouped by sponsor where the sponsor is clear from the name, from the committee's own filings in this snapshot, or from the cited source. Everything else keeps the contributor type on the filing.",
+    "minimumCents": 5000000,
+    "entities": {
+      "record:e6f13f4213c33a407d5c8ccc": {
+        "name": "Democratic Governors Association",
+        "kind": "governors",
+        "basis": "National association of Democratic governors, by name."
+      },
+      "record:16adb3ec666a5db78a64bcdb": {
+        "name": "Democratic Governors Victory Fund",
+        "kind": "governors",
+        "basis": "Democratic governors' fund, by name."
+      },
+      "committee:33": {
+        "name": "Citizen Action for Political Education (33)",
+        "kind": "labor",
+        "basis": "SEIU Local 503's political action committee, per the union.",
+        "source": "https://seiu503.org/get-involved/cape-and-political-action/"
+      },
+      "committee:12986": {
+        "name": "Oregon Nurses Political Action Committee (12986)",
+        "kind": "labor",
+        "basis": "Funded in this snapshot by the Oregon Nurses Association and Nurses United PAC."
+      },
+      "committee:4572": {
+        "name": "Local 48 Electricians PAC (4572)",
+        "kind": "labor",
+        "basis": "Electricians' union local committee, by name."
+      },
+      "committee:23285": {
+        "name": "Building a Stronger Oregon (23285)",
+        "kind": "labor",
+        "basis": "Carpenters union committee: its largest receipt in this snapshot is $10 million from the North Coast States Regional Council of Carpenters.",
+        "source": "https://www.opb.org/article/2026/10/01/ten-million-dollar-political-check-oregon-election-carpenters-union/"
+      },
+      "record:a232a1eaed5d107736605e0e": {
+        "name": "Building a Stronger West",
+        "kind": "labor",
+        "basis": "Carpenters union committee: OPB reports the governor received $150,000 from the carpenters' union in January 2026, and the record of that date and amount in this snapshot is from Building a Stronger West.",
+        "source": "https://www.opb.org/article/2026/10/01/ten-million-dollar-political-check-oregon-election-carpenters-union/"
+      },
+      "record:000735d46ac9d734c5e646ba": {
+        "name": "American Federation of Teachers Commitee Federal",
+        "kind": "labor",
+        "basis": "Teachers' union committee, by name."
+      },
+      "record:e0e05615f231d645e542d686": {
+        "name": "UFCW Active Ballot Club General Fund",
+        "kind": "labor",
+        "basis": "United Food and Commercial Workers fund, by name."
+      },
+      "committee:4213": {
+        "name": "SEIU Local 49 COPE Fund (4213)",
+        "kind": "labor",
+        "basis": "SEIU Local 49 committee, by name."
+      },
+      "committee:221": {
+        "name": "Plumbers & Steamfitters PAC (221)",
+        "kind": "labor",
+        "basis": "Plumbers and steamfitters' union committee, by name."
+      },
+      "record:4f4fc188a2611df75e29e926": {
+        "name": "Northwest Regional Organizing Coalition PAC",
+        "kind": "labor",
+        "basis": "Committee of the Laborers' union regional organizing coalition (LIUNA-NROC), Seattle.",
+        "source": "https://www.idealist.org/en/nonprofit/4fc3d492da2e4c6b995a521cb4347702-liuna-nroc-seattle"
+      },
+      "committee:16178": {
+        "name": "SMART Local 16 PAC (16178)",
+        "kind": "labor",
+        "basis": "Sheet metal workers' union local committee, by name."
+      },
+      "record:6f4c42c17af25d345f9a1616": {
+        "name": "International Association of Fire Fighters",
+        "kind": "labor",
+        "basis": "Fire fighters' union, by name."
+      },
+      "committee:3816": {
+        "name": "Iron Workers District Council of the Pacific Northwest (3816)",
+        "kind": "labor",
+        "basis": "Iron workers' union committee, by name."
+      },
+      "committee:2352": {
+        "name": "Oregon League of Conservation Voters PAC (2352)",
+        "kind": "other",
+        "basis": "Environmental advocacy committee; kept with other committees."
+      },
+      "committee:161": {
+        "name": "Oregon Hospital Political Action Committee (161)",
+        "kind": "trade",
+        "basis": "Hospital industry committee, by name; funded in this snapshot by Oregon Healthcare Enterprises."
+      },
+      "committee:21701": {
+        "name": "Care for our Seniors (21701)",
+        "kind": "other",
+        "basis": "Sponsor not established from the name or filings; kept with other committees."
+      },
+      "committee:4": {
+        "name": "AGC Committee for Action (4)",
+        "kind": "trade",
+        "basis": "Funded in this snapshot by AGC Oregon-Columbia Chapter, the general contractors' association."
+      },
+      "record:bdc7eb63aae7583dadacabdc": {
+        "name": "AGC Union Contractor Group",
+        "kind": "trade",
+        "basis": "Contractors' association group, by name."
+      },
+      "committee:19151": {
+        "name": "Friends of Shelly Boshart Davis (19151)",
+        "kind": "candidates",
+        "basis": "Another candidate's committee."
+      },
+      "committee:3428": {
+        "name": "Oregon Neighborhood Store Association Political Action Committee (3428)",
+        "kind": "trade",
+        "basis": "Trade association committee, by name."
+      },
+      "committee:175": {
+        "name": "Oregon Nurseries Political Action Committee (175)",
+        "kind": "trade",
+        "basis": "Trade association committee, by name."
+      },
+      "committee:133": {
+        "name": "Oregon Automobile Dealers Association - Political Action Committee (133)",
+        "kind": "trade",
+        "basis": "Trade association committee, by name."
+      },
+      "record:d99ee88803977ede2f6e7472": {
+        "name": "Wilson Joint Trust",
+        "kind": "other",
+        "basis": "A trust; kept with other organizations."
+      }
+    }
+  },
+  "events": [
+    {
+      "id": "drazan-launch",
+      "date": "2025-10-27",
+      "label": "Drazan enters the race",
+      "source": "https://oregoncapitalchronicle.com/2025/10/27/republican-christine-drazan-mounts-2026-bid-for-oregon-governor/"
+    },
+    {
+      "id": "kotek-launch",
+      "date": "2025-12-04",
+      "label": "Kotek announces reelection run",
+      "source": "https://oregoncapitalchronicle.com/2025/12/04/oregon-gov-tina-kotek-confirms-she-will-be-seeking-reelection-in-2026/"
+    },
+    {
+      "id": "primary",
+      "date": "2026-05-19",
+      "label": "Primary election",
+      "source": "https://oregoncapitalchronicle.com/2026/05/19/oregon-2026-primary-governor-results/"
+    },
+    {
+      "id": "seven-day",
+      "date": "2026-09-22",
+      "label": "Seven-day reporting begins",
+      "source": "https://oregon.public.law/statutes/ors_260.057"
+    }
+  ],
+  "context": {
+    "limits": {
+      "personPerElectionCents": 330000,
+      "operative": "2027-01-01",
+      "basis": "ORS 260 as amended by chapter 9, Oregon Laws 2024 (HB 4024) and chapter 139, Oregon Laws 2026 (HB 4018): a candidate for governor may not accept more than $3,300 per election from a person. The law defines a person to include individuals, corporations, limited liability companies and labor organizations. The primary and general are separate elections.",
+      "source": "https://olis.oregonlegislature.gov/liz/2026R1/Downloads/MeasureDocument/HB4018/Enrolled"
+    },
+    "filingDeadlines": {
+      "basis": "ORS 260.057: transactions are due within 30 calendar days, or within seven calendar days during the 42 days before an election. Transactions from before that window that are still unfiled are due by the 35th day before the election.",
+      "source": "https://oregon.public.law/statutes/ors_260.057",
+      "sevenDayWindowStarts": "2026-09-22",
+      "catchUpDeadline": "2026-09-29"
+    },
+    "laterBalances": {
+      "date": "2026-10-01",
+      "kotekCents": 440000000,
+      "drazanCents": 160000000,
+      "basis": "OPB reported on October 1, 2026 that the governor had $4.4 million on hand as of that afternoon and Drazan roughly $1.6 million.",
+      "source": "https://www.opb.org/article/2026/10/01/ten-million-dollar-political-check-oregon-election-carpenters-union/"
+    },
+    "tenMillion": {
+      "committeeId": "23285",
+      "date": "2026-09-16",
+      "basis": "The North Coast States Regional Council of Carpenters gave $10 million to its Oregon committee, Building a Stronger Oregon, on September 16, 2026. The union's director of government relations told OPB the money is for several candidates and measures going forward and is not aimed at one race this year.",
+      "source": "https://www.opb.org/article/2026/10/01/ten-million-dollar-political-check-oregon-election-carpenters-union/",
+      "quote": "is to support multiple candidates and multiple measures from today moving forward",
+      "speaker": "Ron Rowlett, director of government relations for the carpenters union"
+    },
+    "primary": {
+      "basis": "May 19, 2026 primary: Drazan won the Republican nomination with 41% over Ed Diehl (31%) and Chris Dudley (16%); Kotek won the Democratic nomination with 84%.",
+      "source": "https://oregoncapitalchronicle.com/2026/05/19/oregon-2026-primary-governor-results/"
+    }
+  }
+}
