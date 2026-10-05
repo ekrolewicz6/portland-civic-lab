@@ -1,3 +1,4 @@
+import { portfolio as cedPortfolio } from "@/lib/ced/model";
 import type { MetadataRoute } from "next";
 import { races } from "@/lib/voters-guide/published";
 import { REVIEW_DATE } from "@/lib/voters-guide/types";
@@ -145,7 +146,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/institutions`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/independence`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE_URL}/decisions`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    ...["", "/initiatives", "/decisions", "/timeline", "/dependencies", "/money", "/outcomes", "/oversight", "/changes", "/methodology", "/briefing"].map(path => ({url: `${BASE_URL}/ced${path}`, lastModified: new Date(cedPortfolio.edition), changeFrequency: "weekly" as const, priority: 0.7})),
+    ...cedPortfolio.initiatives.map(i => ({url: `${BASE_URL}/ced/initiatives/${i.id}`, lastModified: new Date(i.checked), changeFrequency: "weekly" as const, priority: 0.6})),
   ];
 
   const dashboardPages: MetadataRoute.Sitemap = DASHBOARD_QUESTIONS.map(

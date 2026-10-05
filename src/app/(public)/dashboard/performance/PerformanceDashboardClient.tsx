@@ -64,9 +64,9 @@ const PRODUCT_LINKS = [
     copy: "Shared DCA tools and bureau/program drilldown pattern.",
   },
   {
-    title: "Community & Economic Development",
-    href: "/dashboard/performance/dcas/ced",
-    eyebrow: "CED vertical",
+    title: "CED Portfolio Map",
+    href: "/ced",
+    eyebrow: "Portfolio intelligence",
     copy: "Permitting, housing, PCEF, economy, arts, youth, venues.",
   },
   {

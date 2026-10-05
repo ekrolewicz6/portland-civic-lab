@@ -28,7 +28,8 @@ export const TOOLS: Topic[] = [
   { name: "Portland Permits", href: PERMITS_URL, external: true },
   { name: "The dashboards", href: "/dashboard" },
   { name: "The City org chart", href: "/org-chart" },
-  { name: "The decisions register", href: "/decisions" },
+  { name: "The CED Portfolio Map", href: "/ced" },
+  { name: "The CED decisions register", href: "/ced/decisions" },
 ];
 
 export const QUESTIONS: Topic[] = [

@@ -1,0 +1,318 @@
+{
+  "edition": "2026-10-03",
+  "status": "prepared-for-review-not-deployed",
+  "scope": "28 selected initiatives, including umbrella programs and individual projects; not an exhaustive City inventory",
+  "counts": {
+    "initiatives": 28,
+    "decisions": 48,
+    "funding": 12,
+    "changes": 8,
+    "sources": 124
+  },
+  "checkedSourceEntries": 37,
+  "sourceAccess": [
+    {
+      "id": "housing-production-strategy",
+      "url": "https://www.portland.gov/bps/planning/housing-production/progress",
+      "finalUrl": "https://www.portland.gov/bps/planning/housing-production/progress",
+      "status": 200,
+      "characters": 28766
+    },
+    {
+      "id": "affordable-housing-bond-pipeline",
+      "url": "https://www.portland.gov/phb/metro-housing-bond",
+      "finalUrl": "https://www.portland.gov/phb/metro-housing-bond",
+      "status": 200,
+      "characters": 5027
+    },
+    {
+      "id": "housing-bureau-fiscal-controls",
+      "url": "https://katu.com/news/local/portland-city-administrator-responds-to-revelation-of-106m-in-unspent-housing-funds-politics-money-investigation-oregon-council-rental-bureau-government-local-community",
+      "finalUrl": "https://katu.com/news/local/portland-city-administrator-responds-to-revelation-of-106m-in-unspent-housing-funds-politics-money-investigation-oregon-council-rental-bureau-government-local-community",
+      "status": 200,
+      "characters": 6875
+    },
+    {
+      "id": "ppd-permitting-consolidation-reform",
+      "url": "https://www.portland.gov/ppd/news/2024/7/1/portland-permitting-development-launches",
+      "finalUrl": "https://www.portland.gov/ppd/news/2024/7/1/portland-permitting-development-launches",
+      "status": 200,
+      "characters": 3645
+    },
+    {
+      "id": "ppd-fee-budget-stabilization",
+      "url": "https://www.portland.gov/ppd/news/2026/4/27/permitting-development-proposes-fee-changes-starting-july",
+      "finalUrl": "https://www.portland.gov/ppd/news/2026/4/27/permitting-development-proposes-fee-changes-starting-july",
+      "status": 200,
+      "characters": 9567
+    },
+    {
+      "id": "pcef-climate-investment-plan",
+      "url": "https://www.portland.gov/bps/cleanenergy/climate-investment-plan",
+      "finalUrl": "https://www.portland.gov/bps/cleanenergy/climate-investment-plan",
+      "status": 200,
+      "characters": 7387
+    },
+    {
+      "id": "clean-industry-initiative",
+      "url": "https://www.portland.gov/bps/climate-action/clean-industry/about-clean-industry",
+      "finalUrl": "https://www.portland.gov/bps/climate-action/clean-industry/about-clean-industry",
+      "status": 200,
+      "characters": 5080
+    },
+    {
+      "id": "climate-health-standards-existing-buildings",
+      "url": "https://www.portland.gov/bps/climate-action/building-standards",
+      "finalUrl": "https://www.portland.gov/bps/climate-action/building-standards",
+      "status": 200,
+      "characters": 1394
+    },
+    {
+      "id": "broadway-corridor-usps-redevelopment",
+      "url": "https://prosperportland.us/our-work/broadway-corridor-redevelopment/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "new-tif-districts",
+      "url": "https://www.portland.gov/rubio/news/2024/10/30/council-approves-generational-public-investments-east-portland-and-central",
+      "finalUrl": "https://www.portland.gov/rubio/news/2024/10/30/council-approves-generational-public-investments-east-portland-and-central",
+      "status": 200,
+      "characters": 11222
+    },
+    {
+      "id": "omsi-district",
+      "url": "https://www.opb.org/article/2024/09/04/portland-city-council-approves-15-million-advance-new-omsi-district/",
+      "finalUrl": "https://www.opb.org/article/2024/09/04/portland-city-council-approves-15-million-advance-new-omsi-district/",
+      "status": 200,
+      "characters": 7080
+    },
+    {
+      "id": "keller-psu-performing-arts-decision",
+      "url": "https://www.portland.gov/council/documents/resolution/accept-future-large-scale-performing-arts-recommendations",
+      "finalUrl": "https://www.portland.gov/council/documents/resolution/adopted/37752",
+      "status": 200,
+      "characters": 28085
+    },
+    {
+      "id": "portland5-management-transition",
+      "url": "https://www.portland.gov/community-economic-dev/news/2026/1/5/metro-and-city-portland-announce-next-steps-portland5",
+      "finalUrl": "https://www.portland.gov/community-economic-dev/news/2026/1/5/metro-and-city-portland-announce-next-steps-portland5",
+      "status": 200,
+      "characters": 4938
+    },
+    {
+      "id": "arts-education-access-tax-reform",
+      "url": "https://www.opb.org/article/2026/05/27/portland-votes-to-increase-arts-tax-allow-fewer-people-to-pay/",
+      "finalUrl": "https://www.opb.org/article/2026/05/27/portland-votes-to-increase-arts-tax-allow-fewer-people-to-pay/",
+      "status": 200,
+      "characters": 4317
+    },
+    {
+      "id": "moda-center-renovation-blazers-lease",
+      "url": "https://www.portland.gov/council/documents/resolution/moda-term-sheet-0",
+      "finalUrl": "https://www.portland.gov/council/documents/resolution/adopted/37750",
+      "status": 200,
+      "characters": 26638
+    },
+    {
+      "id": "rose-quarter-district-development-partner",
+      "url": "https://www.portland.gov/council/documents/resolution/moda-center-development-partner-resolution",
+      "finalUrl": "https://www.portland.gov/council/documents/resolution/adopted/37751",
+      "status": 200,
+      "characters": 9703
+    },
+    {
+      "id": "kpis",
+      "url": "https://www.portland.gov/community-economic-dev/how-we-measure-our-work",
+      "finalUrl": "https://www.portland.gov/community-economic-dev/how-we-measure-our-work",
+      "status": 200,
+      "characters": 4194
+    },
+    {
+      "id": "central-city",
+      "url": "https://www.portland.gov/bps/planning/central-city",
+      "finalUrl": "https://www.portland.gov/bps/planning/central-city",
+      "status": 200,
+      "characters": 3201
+    },
+    {
+      "id": "eoa",
+      "url": "https://www.portland.gov/bps/eoa",
+      "finalUrl": "https://www.portland.gov/bps/planning/eoa",
+      "status": 200,
+      "characters": 2632
+    },
+    {
+      "id": "preservation",
+      "url": "https://prosperportland.us/prosper-portland-board-approves-middle-income-housing-acquisition/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "inner-eastside",
+      "url": "https://www.portland.gov/bps/planning/inner-eastside-zoning-project/news/2026/9/23/share-your-thoughts-housing-priorities",
+      "finalUrl": "https://www.portland.gov/bps/planning/inner-eastside-zoning-project/news/2026/9/23/share-your-thoughts-housing-priorities",
+      "status": 200,
+      "characters": 3899
+    },
+    {
+      "id": "state-land-use",
+      "url": "https://www.portland.gov/bps/planning/state-land-use-compliance-project/news/2026/9/21/state-land-use-compliance-project",
+      "finalUrl": "https://www.portland.gov/bps/planning/state-land-use-compliance-project/news/2026/9/21/state-land-use-compliance-project",
+      "status": 200,
+      "characters": 4319
+    },
+    {
+      "id": "arts-grants",
+      "url": "https://www.portland.gov/arts/operating-grant-guidelines",
+      "finalUrl": "https://www.portland.gov/arts/operating-grant-guidelines",
+      "status": 200,
+      "characters": 25525
+    },
+    {
+      "id": "ezones",
+      "url": "https://www.portland.gov/bps/planning/environ-planning/industrial-ezones",
+      "finalUrl": "https://www.portland.gov/bps/planning/environ-planning/industrial-ezones",
+      "status": 200,
+      "characters": 2657
+    },
+    {
+      "id": "arts-audit",
+      "url": "https://www.portland.gov/arts/arts-access-fund-audit-progress-report",
+      "finalUrl": "https://www.portland.gov/arts/arts-access-fund-audit-progress-report",
+      "status": 200,
+      "characters": 16465
+    },
+    {
+      "id": "design-review",
+      "url": "https://www.portland.gov/bps/planning/design-review/about",
+      "finalUrl": "https://www.portland.gov/bps/planning/design-review/about",
+      "status": 200,
+      "characters": 4939
+    },
+    {
+      "id": "climate-hearing",
+      "url": "https://www.portland.gov/council/documents/presentation/climate-and-health-standards",
+      "finalUrl": "https://www.portland.gov/council/documents/presentation/climate-and-health-standards",
+      "status": 200,
+      "characters": 1304
+    },
+    {
+      "id": "fuels",
+      "url": "https://www.portland.gov/bps/climate-action/renewable-fuel-standard",
+      "finalUrl": "https://www.portland.gov/bps/climate-action/renewable-fuel-standard",
+      "status": 200,
+      "characters": 3027
+    },
+    {
+      "id": "children",
+      "url": "https://portlandchildrenslevy.org/grants/small-grants/",
+      "finalUrl": "https://portlandchildrenslevy.org/grants/small-grants/",
+      "status": 200,
+      "characters": 3454
+    },
+    {
+      "id": "grants",
+      "url": "https://www.portland.gov/bps/cleanenergy/community-grants/2026-community-grants-cycle",
+      "finalUrl": "https://www.portland.gov/bps/cleanenergy/community-grants/2026-community-grants-cycle",
+      "status": 200,
+      "characters": 12948
+    },
+    {
+      "id": "omsi-ordinance",
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/191884",
+      "finalUrl": "https://www.portland.gov/council/documents/ordinance/passed/191884",
+      "status": 200,
+      "characters": 9218
+    },
+    {
+      "id": "arts-ordinance",
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192185",
+      "finalUrl": "https://www.portland.gov/council/documents/ordinance/passed/192185",
+      "status": 200,
+      "characters": 23472
+    },
+    {
+      "id": "portland5-current",
+      "url": "https://www.portland.gov/arts/keller/future-portland5",
+      "finalUrl": "https://www.portland.gov/arts/keller/future-portland5",
+      "status": 200,
+      "characters": 6758
+    },
+    {
+      "id": "social-housing",
+      "url": "https://www.portland.gov/phb/news/2026/9/2/portland-housing-bureau-publishes-new-report-advancing-housing-stability-portland",
+      "finalUrl": "https://www.portland.gov/phb/news/2026/9/2/portland-housing-bureau-publishes-new-report-advancing-housing-stability-portland",
+      "status": 200,
+      "characters": 4092
+    },
+    {
+      "id": "broadway-streets",
+      "url": "https://www.portland.gov/transportation/pbot-projects/construction/nw-johnson-kearney-street-extension-project",
+      "finalUrl": "https://www.portland.gov/transportation/pbot-projects/construction/nw-johnson-kearney-street-extension-project",
+      "status": 200,
+      "characters": 6021
+    }
+  ],
+  "editorialNotes": [
+    "Adopted legislation is cited by its final resolution number: PSU/Keller 37752 and Rose Quarter 37751. Planning and negotiation authorizations are not construction funding.",
+    "Prosper pages returning 403 were reviewed through publicly indexed primary-source text. These access limits are also recorded in the public source ledger.",
+    "October 6 climate standards item is a presentation; Central City hearing moved to October 14.",
+    "Broadway Parcel 4A retains the original summer 2026 expected timing; review found no completion confirmation and does not invent a calendar deadline.",
+    "The September 30 arts Framework deadline is retained as a past expected date; no resolution was located.",
+    "Housing affordability KPI definition differs between the current CED framework and the existing cost-burden performance series; the product explicitly discloses the difference.",
+    "Financial records retain amount type, period, and overlap; no portfolio grand total is calculated.",
+    "Historical references remain dated August 17 unless separately reviewed. Event completion, source access, and editorial checks are separate.",
+    "Moda/Rose Quarter public-source records retain the existing conflict disclosure. No City partnership is implied."
+  ],
+  "maintenance": {
+    "data": "src/lib/ced/portfolio.json",
+    "rules": [
+      "Update the existing stable record when circumstances change; retain resolved and superseded decisions with resolution dates and sources.",
+      "Add an event to changes for a material government action or corrected expectation, separately recording the event date and incorporation date.",
+      "Do not infer completion from elapsed time. Exact days, month/quarter/year windows, and imprecise seasons must retain source precision.",
+      "For seasonal timing that has elapsed, reviewedPastOn records a human editorial check without inventing start/end dates.",
+      "Refresh source checked dates only after a source review. Re-reading an older plan does not establish delivery.",
+      "Update the edition and related sources, then run data tests, lint, type checking, browser checks and the normal build before release.",
+      "Publication requires authorization for that release."
+    ]
+  },
+  "validation": {
+    "unit": "npx vitest run tests/ced-portfolio.test.ts",
+    "browser": "npx playwright test --config playwright.ced.config.ts (local server required; CED_PREVIEW_URL overrides port 3157)",
+    "types": "npx tsc --noEmit --incremental false",
+    "production": "npm run build"
+  },
+  "localPreview": "http://127.0.0.1:3157/ced",
+  "verificationResult": {
+    "productionBuild": "passed, including the existing ORESTAR publication check",
+    "typecheck": "passed",
+    "scopedLint": "passed",
+    "unitTests": {
+      "passed": 16,
+      "failed": 0
+    },
+    "headlessProductionBrowserTests": {
+      "passed": 12,
+      "failed": 0,
+      "coverage": [
+        "All 28 initiative dossiers",
+        "Home and every portfolio surface",
+        "Search and shareable filters",
+        "Resolved and superseded history",
+        "Timeline horizons and domain filter",
+        "Interactive dependency selection",
+        "Money classification and outcome limits",
+        "Old routes and initiative fragments",
+        "JSON/CSV exports and actual browser download",
+        "Institutions and About/contact integration",
+        "390px mobile overflow checks and printed briefing"
+      ]
+    },
+    "visualReview": [
+      "Desktop home and dependency graph",
+      "Mobile dependency graph",
+      "Two-page A4 briefing"
+    ],
+    "deployed": false
+  }
+}
