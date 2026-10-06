@@ -429,6 +429,13 @@ portraits["barbara-j-kahl"] = portrait("barbara-j-kahl", "https://www.drkahlforc
 
 const beckStatement = statement(11);
 const beckIssues = site("Beck · district issues", "https://chrisbeckforcongress.com/district2issues");
+const beckEmail: Evidence = {
+  label: "Beck · emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#beck-2026-10-05",
+  kind: "Candidate statement",
+  date: "Received October 5, 2026",
+  note: "Written by the candidate in reply to the Lab’s questions and kept on file; the answers are quoted on the brief. Receipt does not verify the claims.",
+};
 const bentzStatement = statement(13);
 const bentzBorders = site("Bentz · secure our borders (undated issue page)", "https://cliffbentz.com/2023/06/secure-our-borders/");
 const bentzForests = site("Bentz · fire and federal forest management (undated issue page)", "https://cliffbentz.com/2023/06/fire-federal-forest-management/");
@@ -438,10 +445,11 @@ analysis["chris-beck"] = {
   tradeoff: "He would restore Medicaid, food and wildfire funding while also balancing the federal budget; the reviewed materials name a vacation-home tax change but not enough revenue to do both.",
   issues: {
     housing: { position: "Would trim tax breaks on vacation and luxury homes to fund low-interest loans for first-time rural buyers, steer USDA rural housing programs toward small-town Main Streets rather than sprawl, and pilot senior housing on public university campuses.", source: beckIssues },
+    safety: { position: "Supports what he calls reasonable, bipartisan border security and a much larger court system to process immigrants fairly; he would not fund the $70 billion ICE and Border Patrol expansion.", source: beckEmail },
     money: { position: "Would repeal H.R. 1 to restore Medicaid and SNAP funding, end tariffs and the Iran war, balance the federal budget and reduce the national debt, and fortify Social Security and Medicare.", source: beckStatement },
     climate: { position: "Would reverse cuts to wildfire prevention and forest management, pause new data-center construction, create rural service corps jobs in each county and rehabilitate Oregon’s public lands, rivers and forests.", source: beckStatement },
   },
-  sources: [beckStatement, beckIssues],
+  sources: [beckStatement, beckIssues, beckEmail],
 };
 analysis["cliff-bentz"] = {
   values: ["Resource use", "Border enforcement"],
@@ -455,6 +463,7 @@ analysis["cliff-bentz"] = {
 };
 lines.push(
   line("chris-beck", "housing", "Would trim vacation-home tax breaks to fund loans for first-time rural buyers."),
+  line("chris-beck", "safety", "Supports bipartisan border security and a bigger court system to process immigrants."),
   line("chris-beck", "money", "Would restore Medicaid and food benefits, end tariffs, and balance the federal budget."),
   line("chris-beck", "climate", "Would restore wildfire-prevention funding, pause data centers, create rural forest service corps."),
   line("cliff-bentz", "safety", "Supports a secure border and completing the border wall."),
@@ -462,7 +471,7 @@ lines.push(
   line("cliff-bentz", "climate", "Wants more hydropower, dams kept, irrigation water and more timber harvest."),
 );
 chips.push(
-  chip("chris-beck", "housing", "Rural first-buyer loans"), chip("chris-beck", "money", "Restore Medicaid funding"), chip("chris-beck", "climate", "Restore wildfire funding"),
+  chip("chris-beck", "housing", "Rural first-buyer loans"), chip("chris-beck", "safety", "Courts, not ICE money"), chip("chris-beck", "money", "Restore Medicaid funding"), chip("chris-beck", "climate", "Restore wildfire funding"),
   chip("cliff-bentz", "safety", "Complete border wall"), chip("cliff-bentz", "money", "Lower taxes"), chip("cliff-bentz", "climate", "More timber and hydropower"),
 );
 deliveries.push(
@@ -470,9 +479,16 @@ deliveries.push(
     how: step("Adjust excessive tax breaks on vacation and luxury homes, reform USDA Community Facilities and Rural Housing Services lending toward Main Street districts, and let land-grant universities fund senior housing on campus.", beckIssues),
     measure: step("Pilot senior housing at Eastern Oregon University, Southern Oregon University and one community college; no unit count or date is given.", beckIssues),
   }),
-  delivery("chris-beck", "money"),
+  delivery("chris-beck", "safety", {
+    how: step("Reasonable, bipartisan border security, and a greatly enlarged court system to process immigrants fairly.", beckEmail),
+  }),
+  delivery("chris-beck", "money", {
+    how: step("Repeal H.R. 1 immediately, then pass a national health plan modeled on the Oregon Health Plan, drafted by Senator Ron Wyden.", beckEmail),
+    measure: step("People in rural Oregon, and every American, have access to quality health care regardless of where they live or what they earn; no number or date is given.", beckEmail),
+  }),
   delivery("chris-beck", "climate", {
     how: step("Restore the 40% cut and the staff lost at the U.S. Forest Service in 2025; expand the Agricultural Conservation Easement Program and Land and Water Conservation Fund; fund county-based service corps jobs with benefits.", beckIssues),
+    measure: step("Significant, reasonable reduction of forest fuel within five years; no acreage or share is given.", beckEmail),
   }),
   delivery("cliff-bentz", "safety"),
   delivery("cliff-bentz", "money"),
@@ -1211,16 +1227,18 @@ topicStances.push(
   /* ── District 2 ── */
   stance("chris-beck", "fed-hr1-medicaid", "opposes", "Repeal H.R. 1",
     "Would repeal H.R. 1 to restore what he calls the mountain of funding it stripped from Medicaid and SNAP, saying Medicaid covers nearly 40% of District 2 residents and 55% of its children.", beckIssues),
-  stance("chris-beck", "fed-aca-credits", "partial", "Premiums skyrocketing",
-    "Says premiums for everybody with Marketplace plans have skyrocketed and would expand rural health-care access; he does not say whether he would restore the expired enhanced premium tax credits.", beckIssues),
+  stance("chris-beck", "fed-aca-credits", "supports", "Restore the credits",
+    "Says the ACA premium credits must be restored, and would then pass a national health-care bill drafted by Senator Ron Wyden.", beckEmail),
+  stance("chris-beck", "fed-ice-funding", "opposes", "No",
+    "Answers no to funding the expansion of ICE and Border Patrol through 2029.", beckEmail),
   stance("chris-beck", "fed-tariffs", "supports", "End the tariffs",
     "Would repeal the tariffs, which he says cost rural Oregon wheat and fruit markets abroad, and seek a sensible, bipartisan approach to legal immigration.", beckIssues),
   stance("chris-beck", "fed-iran-war", "supports", "End the Iran war",
     "Would end the Iran war, counting 18 American lives lost, 600-plus wounded and more than $100 billion spent, and blames it for high gas and diesel prices; he does not name the war-powers resolutions.", beckIssues),
-  stance("chris-beck", "fed-fix-our-forests", "partial", "Restore Forest Service cuts",
-    "Would reverse what he calls the 40% cut to Forest Service wildfire prevention and restore the thousands of staff lost in 2025; he does not say whether he would vote for the Fix Our Forests Act.", beckIssues),
-  stance("chris-beck", "fed-housing-aid", "partial", "Rural housing programs",
-    "Would steer USDA rural housing and Community Facilities lending toward Main Street districts and fund low-interest loans for first-time rural buyers by trimming vacation-home tax breaks; vouchers and the housing tax credit go unmentioned.", beckIssues),
+  stance("chris-beck", "fed-fix-our-forests", "opposes", "Wyden-Merkley bill instead",
+    "Answers no to the Fix Our Forests Act and supports instead the Wildfire and Grid Reliability Act from Senators Wyden and Merkley (S. 4193, introduced March 25, 2026), a grant program for power-line upgrades and vegetation management.", beckEmail),
+  stance("chris-beck", "fed-housing-aid", "supports", "ROAD a first step",
+    "Calls the ROAD to Housing law a modest first step toward more supply and supports vouchers and tax credits; in rural areas would reform USDA rural housing programs to back first-time buyers and Main Street housing.", beckEmail),
   stance("chris-beck", "fed-data-centers", "supports", "Pause new data centers",
     "Lists pausing new data-center construction among the things he will fight for in Congress.", beckStatement),
   stance("cliff-bentz", "fed-hr1-medicaid", "supports", "Voted yes",
