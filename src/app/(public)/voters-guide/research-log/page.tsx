@@ -19,6 +19,25 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="beck-2026-10-05">October 5, 2026 · Candidate response: Chris Beck (U.S. House, Oregon District 2)</h2>
+        <p>
+          Chris Beck answered all seven questions sent on September 22. His
+          page gains a public-safety line: bipartisan border security and a
+          much larger court system to process immigrants. The money ladder,
+          which had no rungs, now carries a how (repeal H.R. 1, then a
+          national health plan modeled on the Oregon Health Plan, which he
+          says Senator Wyden would draft) and a measure (access to care for
+          everyone in rural Oregon); the climate ladder gains a measure
+          (significant fuel reduction within five years). Four topic boards
+          changed: he would restore the ACA premium credits (was unstated),
+          opposes the Fix Our Forests Act in favor of the Wyden-Merkley
+          Wildfire and Grid Reliability Act, S. 4193 (was unstated), supports
+          the ROAD to Housing law as a first step with vouchers and tax
+          credits (was partial), and answers no to the ICE and Border Patrol
+          money (was a gap). His description of Senator Wyden as the next
+          Finance chairman is his own. Two typos in the reply were corrected
+          in the quoted text. The reply is kept on file.
+        </p>
         <h2 id="mcdonald-2026-10-04">October 4, 2026 · Candidate response: John McDonald (District 4)</h2>
         <p>
           John McDonald answered the open question on the streets column: how

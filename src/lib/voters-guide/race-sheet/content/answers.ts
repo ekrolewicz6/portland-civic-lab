@@ -26,6 +26,7 @@ const marugg = (question: string, text: string): CandidateAnswer => ({ candidate
 const cruz = (question: string, text: string): CandidateAnswer => ({ candidateId: "serena-cruz", question, text, received: "2026-10-02" });
 const cruz2 = (question: string, text: string): CandidateAnswer => ({ candidateId: "serena-cruz", question, text, received: "2026-10-03" });
 const koyamaLane = (question: string, text: string): CandidateAnswer => ({ candidateId: "tiffany-koyama-lane", question, text, received: "2026-10-02" });
+const beck = (question: string, text: string): CandidateAnswer => ({ candidateId: "chris-beck", question, text, received: "2026-10-05" });
 
 export const answers: CandidateAnswer[] = [
   legree(
@@ -575,4 +576,11 @@ export const answers: CandidateAnswer[] = [
     "Street Response: her Yes vote",
     "As stated previously, Portland Street Response is an important part of public safety, ensuring that people in crisis are met with trained professionals and not needlessly subjected to an armed response. Police officers are able to focus on violent crime.",
   ),
+  beck("Public safety and immigration", "I support reasonable and bi-partisan border security and greatly enhancing our court system to fairly process immigrants."),
+  beck("Medicaid and SNAP: how he would restore the funding, and what would show it worked", "I want to immediately repeal HR1, and then offer an OHP-style national healthcare plan drafted by soon-to-be Senate Finance Chairman Ron Wyden. Success would mean that the people of rural Oregon (and every American) have access to quality healthcare, no matter where they live or how much money they make."),
+  beck("Wildfire funding: what would show it worked", "I support significant, reasonable fuel reduction in forest fuel in 5 years. Oregon should not have to go bankrupt fighting local fires because prevention efforts have been neutered by the federal government."),
+  beck("ACA premium credits", "ACA premium credits must be restored, and we must pass a national healthcare bill drafted by soon-to-be Senate Finance Chairman Ron Wyden."),
+  beck("Fix Our Forests Act", "No. Instead, I support the Wildfire and Grid Reliability Act proposed by Senators Ron Wyden and Jeff Merkley."),
+  beck("Federal housing programs", "The ROAD to Housing law is a modest 1st step to increasing housing supply, and I support vouchers and tax credits. In rural communities, we need to reform and leverage rural housing service programs at USDA to support first-time home buyers and Main Street district housing."),
+  beck("ICE and border money", "NO."),
 ];
