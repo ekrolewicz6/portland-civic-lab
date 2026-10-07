@@ -222,7 +222,7 @@ export default function FlowSimulator() {
 
         <div className="flex min-w-0 flex-col divide-y divide-[var(--color-parchment)] border-t border-[var(--color-parchment)] xl:border-t-0">
           <div className="grid divide-x divide-[var(--color-parchment)] sm:grid-cols-3 xl:grid-cols-1 xl:divide-x-0 xl:divide-y">
-            <Tile label="Do nothing, year 4" value={fmtNum(sim.baselineEnd)} sub={`from ${fmtNum(FLOW.startTotal)} today`} cls="text-[var(--color-storm)]" />
+            <Tile label="Do nothing, year 4" value={fmtNum(sim.baselineEnd)} sub={`from about ${fmtNum(FLOW.startTotal)} in early 2026`} cls="text-[var(--color-storm)]" />
             <Tile label="Your scenario, year 4" value={fmtNum(sim.scenarioEnd)} sub={delta > 0 ? `${fmtNum(delta)} fewer people` : "same as doing nothing"} cls="text-[var(--color-canopy)]" />
             <Tile label="Does growth stop?" value={shrinking ? "Yes" : "No"} sub={shrinking ? `list shrinks ${fmtNum(-sim.scenarioNetMonthly)}/month` : `still +${fmtNum(sim.scenarioNetMonthly)}/month`} cls={shrinking ? "text-[var(--color-fern)]" : "text-[var(--color-clay)]"} />
           </div>

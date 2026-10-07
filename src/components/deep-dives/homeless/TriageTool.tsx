@@ -30,8 +30,8 @@ export default function TriageTool() {
       {/* Share bar */}
       <div className="border-b border-[var(--color-parchment)] px-5 pt-5 pb-4 sm:px-6">
         <div className="flex items-baseline justify-between gap-3">
-          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">Who is on the street</p>
-          <p className="font-mono text-[11px] tabular-nums text-[var(--color-ink-muted)]">Multnomah 2023 count · 6,297 people</p>
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ember)]">Who is homeless</p>
+          <p className="font-mono text-[11px] tabular-nums text-[var(--color-ink-muted)]">Multnomah Point-in-Time count, Jan. 2025 · {fmtNum(STATS.pitTotal)} people</p>
         </div>
         <div className="mt-3 flex h-9 w-full gap-[2px] overflow-hidden rounded-sm">
           <button

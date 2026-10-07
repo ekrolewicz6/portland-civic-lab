@@ -478,7 +478,7 @@ export const deliveriesD3: DeliveryEntry[] = [
       phamHomelessness,
     ],
     measure: [
-      "Would require pre-committed public metrics for any new homelessness policy; cites the county’s unsheltered count, nearly 9,000 and rising, as evidence the current strategy is failing.",
+      "Would require pre-committed public metrics for any new homelessness policy; says nearly 9,000 people are unsheltered in Multnomah County, about 2,700 more than when the current mayor took office, as evidence the current strategy is failing.",
       phamHomelessness,
     ],
   }),

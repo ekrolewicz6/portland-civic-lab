@@ -19,7 +19,24 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
-        <h2 id="hrac-2026-10-07">October 7, 2026 · Clarification: the county’s homelessness count (Multnomah County)</h2>
+        <h2 id="homelessness-figures-2026-10-07">October 7, 2026 · Correction: Gresham’s homelessness figures; wording on a District 3 page</h2>
+        <p>
+          A review of every homelessness figure in the guide found two errors.
+          The Gresham pages said the city’s outreach team housed 155 people
+          last year and that the latest point-in-time count found 20 people
+          unsheltered in Gresham, citing a February 2026 council packet that
+          contains neither figure. KPTV reported on November 12, 2025 that the
+          city’s homeless services team housed 156 people (88 households) in
+          fiscal 2025, and that Portland State’s 2025 Point-in-Time count found
+          fewer than 40 people unsheltered in Gresham, down from 138 in 2015.
+          Those figures and that source now replace the old ones; the shelter
+          count and pod rules still cite the packet. On the District 3 page,
+          Heart Free Pham’s measure had read “cites the county’s unsheltered
+          count, nearly 9,000”; her site says “Nearly 9,000 people are
+          unsheltered in Multnomah County today,” without calling it a count,
+          and the line now follows her wording.
+        </p>
+        <h2 id="hrac-2026-10-07">October 7, 2026 · Clarification: the county’s homelessness figures (Multnomah County)</h2>
         <p>
           Dr. Minji Cho of Portland State University’s Homelessness Research
           &amp; Action Collaborative reviewed the homelessness items on the

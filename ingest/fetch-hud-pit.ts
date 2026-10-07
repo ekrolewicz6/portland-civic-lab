@@ -44,31 +44,22 @@ interface PITCountRow {
 }
 
 const KNOWN_PIT_DATA: PITCountRow[] = [
-  {
-    year: 2024,
-    coc_code: "OR-501",
-    coc_name: "Portland, Gresham/Multnomah County CoC",
-    total_homeless: 6297,
-    sheltered: 2100,
-    unsheltered: 4197,
-    chronically_homeless: null,
-    veterans: null,
-    families: null,
-    unaccompanied_youth: null,
-    source: "HUD 2024 PIT Count",
-  },
+  // Corrected October 2026: Multnomah's 2023 count is 6,297 (HUD 2023 OR-501
+  // report, count night Jan. 24, 2023). It had been stored as 2024, beside an
+  // unsourced 2023 figure of 6,070. There was no 2024 count. The 2025 count
+  // (10,526) is seeded by seed-homelessness.ts.
   {
     year: 2023,
     coc_code: "OR-501",
     coc_name: "Portland, Gresham/Multnomah County CoC",
-    total_homeless: 6070,
-    sheltered: null,
-    unsheltered: null,
-    chronically_homeless: null,
+    total_homeless: 6297,
+    sheltered: 2353,
+    unsheltered: 3944,
+    chronically_homeless: 2610,
     veterans: null,
     families: null,
     unaccompanied_youth: null,
-    source: "HUD 2023 PIT Count",
+    source: "HUD 2023 PIT, OR-501 Homeless Populations and Subpopulations",
   },
   {
     year: 2022,
