@@ -23,6 +23,9 @@ export const SOURCES: Record<string, Source> = {
   byNameRelease: { id: "byNameRelease", title: "For the first time, Multnomah County shares a monthly count of people experiencing homelessness", org: "Multnomah County", url: "https://multco.us/news/news-release-first-time-ever-multnomah-county-shares-monthly-count-people-homelessness-name", kind: "primary" },
   opbByName2026: { id: "opbByName2026", title: "Behind Portland's homelessness data, a familial, political fight emerges", org: "OPB", url: "https://www.opb.org/article/2026/04/01/behind-portlands-homelessness-data-familial-political-fight-emerges/", kind: "news" },
   pitHic: { id: "pitHic", title: "2025 Tri-County Point-in-Time Count Report", org: "PSU Homelessness Research & Action Collaborative", url: "https://hsd.multco.us/wp-content/uploads/2025/11/2025-Tri-County-PITC-Report-11.04.25.pdf", kind: "research" },
+  hudPopSub2025: { id: "hudPopSub2025", title: "2025 Point-in-Time Count, Portland, Gresham/Multnomah County CoC (OR-501): Homeless Populations and Subpopulations", org: "U.S. Department of Housing and Urban Development", url: "https://files.hudexchange.info/reports/published/CoC_PopSub_CoC_OR-501-2025_OR_2025.pdf", kind: "primary" },
+  hudHic2025: { id: "hudHic2025", title: "2025 Housing Inventory Count, Portland, Gresham/Multnomah County CoC (OR-501)", org: "U.S. Department of Housing and Urban Development", url: "https://files.hudexchange.info/reports/published/CoC_HIC_CoC_OR-501-2025_OR_2025.pdf", kind: "primary" },
+  byNameMethodChange: { id: "byNameMethodChange", title: "Multnomah County adjusting the way it tracks homelessness (OregonLive, Sept. 25, 2026, via Yahoo News)", org: "OregonLive", url: "https://www.yahoo.com/news/us/articles/multnomah-county-adjusting-way-tracks-160109254.html", kind: "news" },
   pit2023: { id: "pit2023", title: "Chronic homelessness falls across tri-county region (2023 PIT)", org: "Multnomah County", url: "https://multco.us/news/news-release-chronic-homelessness-number-falls-across-tri-county-region-2023-point-time-count", kind: "primary" },
   shs: { id: "shs", title: "Supportive Housing Services — funding & financial reports", org: "Metro", url: "https://www.oregonmetro.gov/what-metro-does/housing-and-homelessness/supportive-housing-services/funding", kind: "primary" },
   shsRaised: { id: "shsRaised", title: "Metro-area homelessness persists despite $1.3 billion raised since 2021", org: "Willamette Week", url: "https://www.wweek.com/news/2025/11/06/metro-area-homelessness-persists-despite-13-billion-raised-since-2021-point-in-time-count-shows/", kind: "news" },
@@ -92,8 +95,10 @@ export const SOURCES: Record<string, Source> = {
 // ── Headline figures (verified) ───────────────────────────────────
 
 export const STATS = {
-  byNameTotal: 18_000, // ~Jan 2026
+  byNameTotal: 18_000, // January 2026, as reported by OPB (Apr. 1, 2026); the county dashboard was offline for maintenance as of Oct. 7, 2026
   byNameUnsheltered: 8_800,
+  byNameAsOf: "January 2026",
+  byNameRemovedByNewRule: 3_500, // county staff to OregonLive, Sept. 25, 2026: inactivity window shrinks from 90–180 to 60–90 days
   byNameTotalJan2025: 14_361,
   monthlyInflow: 1_277,
   monthlyOutflow: 865,
@@ -103,8 +108,14 @@ export const STATS = {
   pitTotal: 10_526,
   pitSheltered: 3_614,
   pitUnsheltered: 6_912,
-  pitChange2023to2025Pct: 0.67,
-  chronicSharePct: 0.41, // Multnomah 2023 PIT: 2,610 of 6,297
+  pitSurveyedUnsheltered: 1_822, // met on the street on count night
+  pitPresumedUnsheltered: 5_090, // added from the county's by-name list, a first for 2025
+  pitDate: "January 22, 2025",
+  pitChange2023to2025Pct: 0.67, // Multnomah only: 6,297 (2023) to 10,526 (2025)
+  chronicSharePct: 0.49, // HUD 2025 PIT for OR-501: 5,158 of 10,526 (2023 was 2,610 of 6,297, 41%)
+  chronic2025: 5_158,
+  chronicUnsheltered2025: 3_735,
+  shelterBeds2025: 4_187, // HUD 2025 HIC: 3,350 emergency + 20 safe haven + 817 transitional
   pshBeds: 6_973,
   rrhBeds: 2_663,
   esBeds: 3_350,
@@ -180,7 +191,7 @@ export const TRIAGE: TriageGroup[] = [
   {
     id: "chronic",
     label: "Chronic / severe",
-    share: "~4 in 10 of Multnomah's homeless",
+    share: "About half of the people in Multnomah's January 2025 count",
     who: "Long-term homeless with serious, co-occurring disability — the most visible on the street, and by far the most costly to the public when left there.",
     rightFix: "Permanent Supportive Housing + treatment — housing with intensive, indefinite services.",
     cost: "≈ $20,000 per household/year — expensive, but cheaper than the street (see the calculator).",

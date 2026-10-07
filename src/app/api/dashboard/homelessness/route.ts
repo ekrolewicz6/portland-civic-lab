@@ -110,7 +110,7 @@ export async function GET() {
       prevYear = Number(prev.year);
       if (prevTotal > 0) {
         yoyChange = Math.round(((latestTotal - prevTotal) / prevTotal) * 100);
-        yoyLabel = `up ${Math.abs(yoyChange)}% since ${prevYear}`;
+        yoyLabel = `${yoyChange >= 0 ? "up" : "down"} ${Math.abs(yoyChange)}% from ${prevYear}`;
       }
     }
 
@@ -118,8 +118,8 @@ export async function GET() {
       yoyChange > 1 ? "up" : yoyChange < -1 ? "down" : "flat";
 
     const headline =
-      `${latestTotal.toLocaleString()} people homeless in Multnomah County` +
-      (prevYear ? ` — ${yoyLabel}` : "");
+      `${latestTotal.toLocaleString()} people homeless in Multnomah County's ${latestYear} Point-in-Time count` +
+      (prevYear ? `, ${yoyLabel}` : "");
 
     const chartData = pitRows.map((r) => ({
       date: String(r.year),
@@ -128,7 +128,7 @@ export async function GET() {
 
     const insights: string[] = [];
     insights.push(
-      `${latestTotal.toLocaleString()} total homeless counted in ${latestYear} PIT count (${Number(latest.sheltered).toLocaleString()} sheltered, ${Number(latest.unsheltered).toLocaleString()} unsheltered).`,
+      `${latestTotal.toLocaleString()} people homeless in the ${latestYear} Point-in-Time count (${Number(latest.sheltered).toLocaleString()} sheltered, ${Number(latest.unsheltered).toLocaleString()} unsheltered).`,
     );
 
     if (shelter) {

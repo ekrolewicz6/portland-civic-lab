@@ -28,9 +28,10 @@ const PIT_2025 = {
   coc_code: "OR-501",
   coc_name: "Portland, Gresham/Multnomah County CoC",
   total_homeless: 10526,
-  sheltered: 4525,
-  unsheltered: 7509,
-  source: "PSU 2025 Tri-County PIT Count",
+  // Multnomah's own split (HUD 2025 OR-501). 4,525 / 7,509 were the tri-county figures.
+  sheltered: 3614,
+  unsheltered: 6912,
+  source: "HUD 2025 PIT, OR-501 Homeless Populations and Subpopulations; PSU 2025 Tri-County PIT Count",
 };
 
 // ── 2. Shelter Capacity ──────────────────────────────────────────────────

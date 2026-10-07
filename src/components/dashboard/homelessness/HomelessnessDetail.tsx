@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { STATS } from "@/lib/homeless/data";
 import StatGrid from "@/components/charts/StatGrid";
 import TrendChart from "@/components/charts/TrendChart";
 import MultiLineChart from "@/components/charts/MultiLineChart";
@@ -348,12 +349,12 @@ export default function HomelessnessDetail() {
           <div className="flex flex-wrap gap-4 mb-6">
             {/* Card 1: People Homeless */}
             <div className="flex-1 min-w-[140px]">
-              <p className="text-[12px] uppercase tracking-wider opacity-70 mb-1">People Homeless</p>
+              <p className="text-[12px] uppercase tracking-wider opacity-70 mb-1">People homeless, {latestPit?.year ?? ""} Point-in-Time count</p>
               <p className="text-[28px] font-mono font-bold leading-none">
                 {latestPit?.totalHomeless.toLocaleString() ?? "--"}
               </p>
               <p className="text-[13px] opacity-60 mt-1">
-                {pitChange !== 0 ? `${pitChange > 0 ? "+" : ""}${pitChange}% since ${prevPit?.year ?? "prior"}` : "latest PIT count"}
+                {pitChange !== 0 ? `${pitChange > 0 ? "+" : ""}${pitChange}% from ${prevPit?.year ?? "the prior count"}` : "latest PIT count"}
               </p>
             </div>
 
@@ -397,11 +398,11 @@ export default function HomelessnessDetail() {
           </div>
 
           <p className="text-[15px] leading-relaxed opacity-80">
-            Portland spends more on homelessness than ever before, yet the number of people on the
-            streets keeps climbing. Shelter utilization sits well below capacity while beds are being
+            Portland spends more on homelessness than ever before, yet the number of people homeless
+            keeps climbing. Shelter utilization sits well below capacity while beds are being
             cut. Only 16% of shelter exits lead to permanent housing -- the system absorbs people
-            without moving them forward. The Supportive Housing Services tax expires in 2030 and a
-            22% budget cut looms for FY 2026-27.
+            without moving them forward. The Supportive Housing Services tax expires in 2030, and the county&apos;s
+            2026-27 budget, adopted in June 2026, phases out 605 adult shelter units.
           </p>
           <p className="text-[11px] opacity-40 mt-4 font-mono">
             Source: HUD PIT Count &middot; JOHS Shelter Reports &middot; Metro SHS Year 4 Report &middot; MultCo Health
@@ -927,8 +928,9 @@ export default function HomelessnessDetail() {
               Prevalence Gap
             </p>
             <p className="text-[14px] text-[var(--color-ink)] leading-snug">
-              PIT: {latestPit?.totalHomeless.toLocaleString() ?? "--"}.
-              HRAC annual estimate: ~38,000. Actual scale is 3-4x the snapshot.
+              Point-in-Time count ({latestPit?.year ?? "latest"}): {latestPit?.totalHomeless.toLocaleString() ?? "--"} people on one night.
+              The county&apos;s by-name list, which covers everyone in contact with services over months, held about{" "}
+              {STATS.byNameTotal.toLocaleString()} in {STATS.byNameAsOf}. The two use different methods and are not directly comparable.
             </p>
           </div>
         </div>
@@ -991,7 +993,7 @@ export default function HomelessnessDetail() {
               <strong>SHS tax expiration (2030):</strong> The primary funding source expires unless reauthorized by voters. No campaign has begun.
             </li>
             <li>
-              <strong>City-county governance split:</strong> Portland and Multnomah County dispute the count, methodology, and responsibility. Partnership agreement expires July 2027.
+              <strong>City-county governance split:</strong> Portland and Multnomah County dispute the homelessness data, its methods, and who is responsible. Partnership agreement expires July 2027.
             </li>
           </ol>
           <p className="text-[11px] text-[var(--color-ink-muted)] mt-4 font-mono">
@@ -1062,14 +1064,18 @@ export default function HomelessnessDetail() {
           <Collapsible title="Data Sources & Methodology">
             <div className="space-y-2 text-[13px] text-[var(--color-ink-muted)] leading-relaxed">
               <p>
-                <strong>Point-in-Time Count:</strong> HUD-mandated count conducted
-                every 1-2 years by the Portland/Gresham/Multnomah County CoC.
-                Counts both sheltered and unsheltered on a single night.
+                <strong>Point-in-Time Count:</strong> A count of sheltered and unsheltered
+                people on one night in late January, which HUD requires at least every two
+                years. Multnomah County&apos;s latest was January 22, 2025; for the first time it
+                added 5,090 people from county records to the unsheltered total, so it is not
+                directly comparable with earlier years.
               </p>
               <p>
-                <strong>By-Name List:</strong> JOHS maintains a by-name list of
-                all known homeless individuals. Monthly snapshots show inflow (new
-                entries) vs outflow (exits to housing).
+                <strong>By-Name List:</strong> The county&apos;s monthly roster of everyone in its
+                homeless services database. Outflow counts people housed, people moved to
+                inactive after a stretch without contact, and deaths, so it is not a count of
+                housing exits. County staff said in September 2026 that a shorter inactivity
+                window will remove about 3,500 people and restate the list back to January 2024.
               </p>
               <p>
                 <strong>Eviction Filings:</strong> From Evicted in Oregon
