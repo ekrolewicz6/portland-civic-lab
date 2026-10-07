@@ -19,6 +19,23 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="mcdonald-2026-10-06">October 6, 2026 · Candidate response: John McDonald (District 4)</h2>
+        <p>
+          John McDonald answered the four topic questions still open on his
+          page, one on October 5 and three on October 6. On new taxes or fees
+          he would hold the line, except what he calls the roads repair tax on
+          water bills, and would raise revenue through business recruitment
+          led by the mayor’s office and a resized Prosper Portland while
+          auditing every department to cut costs. On clearing camps he would
+          sign no new removal contracts and audit existing contractors; he
+          does not say whether current funding should stay at its level, so
+          that board reads “partial.” On data centers he is not opposed
+          because they bring revenue, but wants Council to write rules for
+          their electrical loads (“mixed”). On water rates he is a no on the
+          Bull Run filtration plant until he has more information. All four
+          boards had been gaps. His answers appear on his brief in his own
+          words, and the replies are kept on file.
+        </p>
         <h2 id="novick-2026-10-07">October 7, 2026 · Source added: Steve Novick (District 3)</h2>
         <p>
           Steve Novick’s campaign sent the official record for the 2016 city
