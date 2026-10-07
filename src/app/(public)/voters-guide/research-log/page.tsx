@@ -19,6 +19,22 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="hrac-2026-10-07">October 7, 2026 · Clarification: the county’s homelessness count (Multnomah County)</h2>
+        <p>
+          Dr. Minji Cho of Portland State University’s Homelessness Research
+          &amp; Action Collaborative reviewed the homelessness items on the
+          County Chair page at our request. She pointed out that the figures
+          of about 18,000 people homeless and 8,800 unsheltered come from the
+          county’s by-name list, which draws on everyone in contact with
+          homeless services, and that its method differs from the federal
+          Point-in-Time count, whose most recent unsheltered survey was in
+          January 2025. The city-county agreement item had said “the county
+          counted,” which could be read as a Point-in-Time count. It now names
+          the by-name list and says the two methods are not comparable. The
+          figures themselves did not change. Her other point, that HRAC holds
+          only the Point-in-Time and Housing Inventory Count data, means the
+          remaining figures could not be checked against HRAC’s data.
+        </p>
         <h2 id="mcdonald-2026-10-06">October 6, 2026 · Candidate response: John McDonald (District 4)</h2>
         <p>
           John McDonald answered the four topic questions still open on his
