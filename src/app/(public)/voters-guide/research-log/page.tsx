@@ -19,6 +19,25 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="local88-2026-10-07">October 7, 2026 · Review: AFSCME Local 88 on the county budget board (Multnomah County)</h2>
+        <p>
+          Jackie Tate, president of AFSCME Local 88, which represents many
+          county workers and has endorsed Julia Brim-Edwards for chair,
+          checked the “Closing the gap” board on the County Chair page at our
+          request, for accuracy only. She said the shortfall figures and the
+          158 eliminated positions appear correct, though final numbers may
+          vary. On whether “administration before services” describes the
+          choice fairly, she said the FY 2027 budget eliminated some management
+          positions but mostly union-represented jobs, many of them unfilled
+          and some filled. The county’s June 5, 2026 release says the cuts
+          started “as much as possible with those already vacant” and gives no
+          breakdown of filled and vacant or management and represented
+          positions, and we found none published. The board’s context now
+          says that. She said the summaries of Julia Brim-Edwards and Shannon
+          Singleton are accurate; her other comments concerned the merits of
+          candidates’ plans, which the guide does not weigh, so no candidate’s
+          entry changed.
+        </p>
         <h2 id="homelessness-figures-2026-10-07">October 7, 2026 · Correction: Gresham’s homelessness figures; wording on a District 3 page</h2>
         <p>
           A review of every homelessness figure in the guide found two errors.
