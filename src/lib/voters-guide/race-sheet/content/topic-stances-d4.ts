@@ -149,6 +149,13 @@ const mcdonaldEmail3: Evidence = {
   date: "Received September 26 and 27, 2026",
   note: NOTE,
 };
+const mcdonaldEmail5: Evidence = {
+  label: "McDonald · emailed answers of October 5 and 6, 2026",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#mcdonald-2026-10-06",
+  kind: "Candidate statement",
+  date: "Received October 5 and 6, 2026",
+  note: NOTE,
+};
 const mcdonaldEmail: Evidence = {
   label: "McDonald · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#mcdonald-2026-09-23",
@@ -303,6 +310,19 @@ export const topicStancesD4: TopicStance[] = [
   swept("john-mcdonald", "police-staffing", "supports", "Fill 68 vacancies now",
     "Would fill the Police Bureau’s 68 vacant sworn positions immediately (his count) and push to hire more detectives to investigate graffiti and street racing.",
     mcdonaldEmail3),
+  // From his replies of October 5 (data centers) and October 6, 2026 (the other three).
+  swept("john-mcdonald", "new-taxes", "opposes", "Hold the line",
+    "Would hold the line on taxes and fees, except what he calls the roads repair tax on water bills; would recruit business through the mayor’s office and a resized Prosper Portland, and audit every department to cut costs.",
+    mcdonaldEmail5),
+  swept("john-mcdonald", "camp-removal", "partial", "No new contracts, audit",
+    "Would sign no new camp-removal contracts and audit existing contractors to make sure they do their jobs; he does not say whether current funding should stay at its level.",
+    mcdonaldEmail5),
+  swept("john-mcdonald", "data-centers", "mixed", "Allow, regulate power",
+    "Not opposed to data centers in the city because they bring needed revenue, but says Council must write new regulations to address their electrical loads.",
+    mcdonaldEmail5),
+  swept("john-mcdonald", "water-rates", "opposes", "No on Bull Run",
+    "Says he is a no on the Bull Run filtration plant because he needs more information to make an informed decision; he does not address the rate increases for system repairs.",
+    mcdonaldEmail5),
 
   /* ── Matt Schulte ───────────────────────────────────────────────────── */
   // From his emailed reply of September 24, 2026; Moda, camps and Street Response replace earlier readings.
