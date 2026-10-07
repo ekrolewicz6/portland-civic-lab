@@ -98,7 +98,7 @@ export const DATASETS: Dataset[] = [
     loadedThrough: "2026-08",
     refreshedOn: "2026-10-07",
     refresh: "script: npx tsx ingest/fetch-hsd-dashboard.ts --apply (dry run without --apply)",
-    notes: "Updated around the 15th of each month; recent months get revised, so each run rewrites the whole twelve-month window. Circuit courts only (about 90% of cases). The annual filing rate per 100 rental units is a separate chart (cbJjQ) and is not stored per month.",
+    notes: "Updated around the 15th of each month; recent months get revised, so each run rewrites the whole twelve-month window. Full calendar years: --calendar-year (chart vlDrt). Rows before Oct. 7, 2026 were one month late from a parsing bug; Jan. 2025 on were reloaded. Circuit courts only (about 90% of cases). The annual filing rate per 100 rental units is a separate chart (cbJjQ) and is not stored per month.",
   },
   {
     table: "homelessness.shelter_capacity",

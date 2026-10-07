@@ -18,16 +18,25 @@
  * quarters are fiscal, not calendar; shelter_capacity is now maintained by hand
  * (see ingest/homelessness/SOURCES.md).
  *
+ * Before October 7, 2026 this script trimmed the CSV's leading tab, which shifted
+ * every month one month late in the database (March's count stored as April's).
+ * Rows from January 2025 on were reloaded on that date.
+ *
  * Usage:
  *   npx tsx ingest/fetch-hsd-dashboard.ts            # dry run: prints what it would load
  *   npx tsx ingest/fetch-hsd-dashboard.ts --apply
+ *   npx tsx ingest/fetch-hsd-dashboard.ts --calendar-year 2025 --apply   # a full calendar year
  */
 
 import postgres from "postgres";
 import { requireDatabaseUrl } from "./lib/db-url";
 
 const APPLY = process.argv.includes("--apply");
-const CHART = "https://datawrapper.dwcdn.net/0Ofed/";
+const yearArg = process.argv.indexOf("--calendar-year");
+/** With --calendar-year YYYY, load Evicted in Oregon's full-year chart ("Eviction cases filed in Oregon in YYYY") instead. */
+const CALENDAR_YEAR = yearArg > 0 ? process.argv[yearArg + 1] : null;
+const CHART_ID = CALENDAR_YEAR ? "vlDrt" : "0Ofed";
+const CHART = `https://datawrapper.dwcdn.net/${CHART_ID}/`;
 const COUNTIES = ["Oregon", "Multnomah", "Washington", "Clackamas"];
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -72,26 +81,33 @@ export function parseEvictionCsv(csv: string, periodStart: string, periodEnd: st
 async function fetchLatest(): Promise<{ version: string; updated: string | null; rows: EvictionMonth[] }> {
   // The unversioned URL answers with a meta-refresh page naming the newest version.
   const pointer = await (await fetch(CHART)).text();
-  const version = pointer.match(/\/0Ofed\/(\d+)\//)?.[1];
+  const version = pointer.match(new RegExp(`/${CHART_ID}/(\\d+)/`))?.[1];
   if (!version) throw new Error(`No version in the page at ${CHART}`);
-  const html = await (await fetch(`https://datawrapper.dwcdn.net/0Ofed/${version}/`)).text();
-  const period = html.match(/filed between ([A-Z][a-z]+ \d{4}) and ([A-Z][a-z]+ \d{4})/);
-  if (!period) throw new Error("The chart page no longer states the period it covers; check it by hand");
+  const html = await (await fetch(`${CHART}${version}/`)).text();
+  let period: [string, string];
+  if (CALENDAR_YEAR) {
+    if (!html.includes(`in Oregon in ${CALENDAR_YEAR}`)) throw new Error(`Chart ${CHART_ID} v${version} is not the ${CALENDAR_YEAR} chart; check it by hand`);
+    period = [`January ${CALENDAR_YEAR}`, `December ${CALENDAR_YEAR}`];
+  } else {
+    const stated = html.match(/filed between ([A-Z][a-z]+ \d{4}) and ([A-Z][a-z]+ \d{4})/);
+    if (!stated) throw new Error("The chart page no longer states the period it covers; check it by hand");
+    period = [stated[1], stated[2]];
+  }
   const updated = html.match(/Updated on ([A-Z][a-z]+ \d{1,2}, \d{4})/)?.[1] ?? null;
-  const csv = await (await fetch(`https://datawrapper.dwcdn.net/0Ofed/${version}/dataset.csv`)).text();
-  return { version, updated, rows: parseEvictionCsv(csv, period[1], period[2]) };
+  const csv = await (await fetch(`${CHART}${version}/dataset.csv`)).text();
+  return { version, updated, rows: parseEvictionCsv(csv, period[0], period[1]) };
 }
 
 async function main() {
   const { version, updated, rows } = await fetchLatest();
   const months = [...new Set(rows.map((r) => r.month))].sort();
-  console.log(`Evicted in Oregon chart 0Ofed version ${version}${updated ? `, updated ${updated}` : ""}: ${months[0]} to ${months.at(-1)}, ${rows.length} rows`);
+  console.log(`Evicted in Oregon chart ${CHART_ID} version ${version}${updated ? `, updated ${updated}` : ""}: ${months[0]} to ${months.at(-1)}, ${rows.length} rows`);
   console.table(rows.filter((r) => r.county === "Multnomah").map((r) => ({ month: r.month, filings: r.filings })));
   if (!APPLY) { console.log("Dry run. Nothing written."); return; }
 
   const sql = postgres(requireDatabaseUrl(), { max: 1, prepare: false, onnotice: () => {} });
   try {
-    const source = `Evicted in Oregon (PSU), Datawrapper chart 0Ofed v${version}${updated ? `, updated ${updated}` : ""}: https://datawrapper.dwcdn.net/0Ofed/${version}/`;
+    const source = `Evicted in Oregon (PSU), Datawrapper chart ${CHART_ID} v${version}${updated ? `, updated ${updated}` : ""}: ${CHART}${version}/`;
     await sql.begin(async (transaction) => {
       // postgres.js types a transaction as non-callable; it is the same tagged template at runtime.
       const tx = transaction as unknown as postgres.Sql;

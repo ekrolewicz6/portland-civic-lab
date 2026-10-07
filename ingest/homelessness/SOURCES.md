@@ -44,6 +44,7 @@ Everything else is loaded by hand.
 ## Known gaps, October 2026
 
 - HRAC counts 4,008 shelter beds in Multnomah County for January 2025; HUD's Housing Inventory Count for the same night has 4,187. The dashboard's "38% coverage" uses HRAC's; the continuum page uses HUD's.
+- Until October 7, 2026 every eviction month in the database was one month late (an old parsing bug dropped the CSV's leading tab). January 2025 to August 2026 were reloaded that day; for a past calendar year use `npx tsx ingest/fetch-hsd-dashboard.ts --calendar-year <YEAR> --apply`.
 - The 51 `context_stats` rows have not all been rechecked. One held the city's 1,566-bed goal as if it were current beds until October 7, 2026.
 - Newer shelter figures (SHS-funded units, the county's post-cut 1,742 units or 1,667 beds) measure different things and are not mixed into `shelter_capacity`.
 
