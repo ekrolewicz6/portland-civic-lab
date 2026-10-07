@@ -1690,7 +1690,7 @@ const stakeShsRevenue: StakeItem = {
 };
 const stakeCityCounty: StakeItem = {
   label: "City-county agreement",
-  text: "The city-county homeless services agreement expires in July 2027 amid a dispute over $31 million the city owes the county and $38 million the city says it is owed; the county counted about 18,000 people homeless, 8,800 unsheltered, in early 2026.",
+  text: "The city-county homeless services agreement expires in July 2027 amid a dispute over $31 million the city owes the county and $38 million the city says it is owed; the county’s by-name list, which includes everyone in contact with homeless services, put the number at about 18,000 people homeless, 8,800 unsheltered, in early 2026, a method not comparable to the federal Point-in-Time count.",
   source: opbCityCounty,
 };
 const stakePreschool: StakeItem = {
