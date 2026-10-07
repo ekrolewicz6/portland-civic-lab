@@ -1233,7 +1233,7 @@ const multnomahTopics: ExtraTopic[] = [
     short: "Budget gap",
     question: "Close the county's structural budget gap by cutting administration before services?",
     context:
-      "The Budget Office projected a $10.5 million General Fund shortfall for FY 2027 growing to $33.8 million by FY 2030; the adopted FY 2027 budget eliminated at least 158 positions.",
+      "The Budget Office projected a $10.5 million General Fund shortfall for FY 2027 growing to $33.8 million by FY 2030. The adopted FY 2027 budget eliminated at least 158 positions, starting where possible with vacant ones; the county’s release did not say how many were filled or how many were management rather than union-represented jobs.",
   },
   {
     id: "mult-pfa-delay",
