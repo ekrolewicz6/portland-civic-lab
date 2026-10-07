@@ -45,9 +45,9 @@ interface PitYear {
 interface ShelterQuarter {
   quarter: string;
   totalBeds: number;
-  county24hrBeds: number;
-  cityOvernightBeds: number;
-  utilizationPct: number;
+  county24hrBeds: number | null;
+  cityOvernightBeds: number | null;
+  utilizationPct: number | null;
   /** Citation for this quarter's capacity report, when the row carries one. */
   source: string | null;
 }
@@ -111,10 +111,10 @@ interface SHSByCounty {
 interface AffordableVacancy {
   asOf: string;
   source: string;
-  totalUnits: number;
-  vacantUnits: number;
+  totalUnits: number | null;
+  vacantUnits: number | null;
   vacancyPct: number;
-  avgDaysToFill: number;
+  avgDaysToFill: number | null;
   notes: string;
 }
 
@@ -694,25 +694,34 @@ export default function HomelessnessDetail() {
             <p className="text-[36px] font-mono font-bold text-amber-700 leading-none">
               {cityBeds !== null ? cityBeds.toLocaleString() : "--"}
             </p>
-            <p className="text-[13px] text-amber-600/70 mt-1">beds</p>
+            <p className="text-[13px] text-amber-600/70 mt-1">
+              {latestShelter?.cityOvernightBeds == null && contextStats?.city_overnight_beds?.context
+                ? contextStats.city_overnight_beds.context
+                : "beds"}
+            </p>
           </div>
           <div className="bg-green-50 border border-green-200 rounded-sm p-5 text-center">
             <p className="text-[11px] font-semibold text-green-800/60 uppercase tracking-wider mb-1">
-              County 24-Hour Shelters
+              {countyBeds !== null && countyBeds > 0 ? "County 24-Hour Shelters" : "County-Funded Shelter Capacity"}
             </p>
             <p className="text-[36px] font-mono font-bold text-green-700 leading-none">
-              {countyBeds !== null && countyBeds > 0 ? countyBeds.toLocaleString() : "--"}
+              {countyBeds !== null && countyBeds > 0
+                ? countyBeds.toLocaleString()
+                : latestShelter
+                  ? latestShelter.totalBeds.toLocaleString()
+                  : "--"}
             </p>
-            <p className="text-[13px] text-green-600/70 mt-1">beds</p>
+            <p className="text-[13px] text-green-600/70 mt-1">
+              {countyBeds !== null && countyBeds > 0 ? "beds" : `average, ${latestShelter?.quarter ?? "latest quarter"}`}
+            </p>
           </div>
         </div>
         <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-4 mb-6">
           {shelterUtilizationPct !== null ? (
             <p className="text-[13px] text-[var(--color-ink)] leading-relaxed">
               <strong>System-wide occupancy: {shelterUtilizationPct}%</strong>{" "}
-              across all shelter types in {latestShelter?.quarter ?? "the latest quarter"}.
-              The source reports one occupancy rate for the whole system, so it
-              cannot be split between the two columns above.
+              of available beds in county-supported shelters, {latestShelter?.quarter ?? "the latest quarter"}.
+              The county reports one occupancy rate for the shelters it funds.
             </p>
           ) : (
             <p className="text-[13px] text-[var(--color-ink-muted)] leading-relaxed">
@@ -936,20 +945,22 @@ export default function HomelessnessDetail() {
         </div>
 
         {/* Home Forward vacancy callout */}
-        {affordableVacancy.length > 0 && affordableVacancy.some((v) => v.vacantUnits > 0) && (
-          <div className="bg-amber-50 border border-amber-200 rounded-sm p-4 mb-6">
-            <p className="text-[13px] text-amber-800">
-              <strong>Home Forward vacancy:</strong>{" "}
-              {affordableVacancy.filter((v) => v.vacantUnits > 0).map((v) =>
-                `${v.vacantUnits.toLocaleString()} empty units (${v.vacancyPct}% vacancy)`
-              ).join("; ")}
-              . Average unit takes 185 days to fill.
-            </p>
-            <p className="text-[11px] text-amber-700/60 mt-1">
-              Contested: Home Forward disputes some figures. Source: KATU/Willamette Week (Nov 2025).
-            </p>
-          </div>
-        )}
+        {affordableVacancy.length > 0 && (() => {
+          const fmtDate = (d: string) => new Date(`${d.slice(0, 10)}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+          const latest = affordableVacancy[affordableVacancy.length - 1];
+          const earlier = affordableVacancy.slice(0, -1);
+          const days = [...affordableVacancy].reverse().find((v) => v.avgDaysToFill !== null);
+          return (
+            <div className="bg-amber-50 border border-amber-200 rounded-sm p-4 mb-6">
+              <p className="text-[13px] text-amber-800">
+                <strong>Home Forward vacancy:</strong> {latest.vacancyPct}% of units empty as of {fmtDate(latest.asOf)}
+                .{earlier.length > 0 && <> Earlier: {earlier.map((v) => `${v.vacancyPct}% on ${fmtDate(v.asOf)}`).join("; ")}.</>}
+                {days && <> In 2025 a vacant unit took {days.avgDaysToFill} days on average to fill.</>}
+              </p>
+              <p className="text-[12px] text-amber-700/70 mt-1">Source: {latest.source}.</p>
+            </div>
+          );
+        })()}
 
         {/* Hidden homelessness callout */}
         <div className="bg-[var(--color-parchment)]/40 border border-[var(--color-parchment)] rounded-sm p-4">

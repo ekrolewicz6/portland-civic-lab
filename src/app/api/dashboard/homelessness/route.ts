@@ -133,7 +133,8 @@ export async function GET() {
 
     if (shelter) {
       insights.push(
-        `${Number(shelter.total_beds).toLocaleString()} shelter beds at ${Number(shelter.utilization_pct)}% utilization (${shelter.quarter}).`,
+        `${Number(shelter.total_beds).toLocaleString()} county-funded shelter beds on average in ${shelter.quarter}` +
+          (shelter.utilization_pct == null ? "." : `, ${Number(shelter.utilization_pct)}% occupied.`),
       );
     }
     if (placements) {
