@@ -19,6 +19,18 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="novick-2026-10-07">October 7, 2026 · Source added: Steve Novick (District 3)</h2>
+        <p>
+          Steve Novick’s campaign sent the official record for the 2016 city
+          gas tax he lists among his accomplishments: Resolution 37185, which
+          Council adopted 5–0 on January 27, 2016 to refer a temporary
+          10-cent-a-gallon tax for street repair and traffic safety to the May
+          17, 2016 ballot. The resolution’s cover sheet names him as the
+          sponsoring commissioner. The file the campaign sent is identical to
+          the copy in the City Auditor’s archive, which is now cited among his
+          sources beside the OPB and Portland Tribune stories. No position on
+          his page changed. His other answers are still pending.
+        </p>
         <h2 id="beck-2026-10-05">October 5, 2026 · Candidate response: Chris Beck (U.S. House, Oregon District 2)</h2>
         <p>
           Chris Beck answered all seven questions sent on September 22. His

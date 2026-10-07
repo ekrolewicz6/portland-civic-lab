@@ -557,6 +557,13 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
         note: "Cited by the candidate for the same measure.",
       },
       {
+        label: "City of Portland · Resolution 37185, referring the 10-cent gas tax to voters",
+        url: "https://efiles.portlandoregon.gov/record/8519330/file/document/",
+        kind: "Public record",
+        date: "January 27, 2016",
+        note: "The official record for the measure he cites. Its cover sheet names Commissioner Steve Novick as the sponsor, and Council adopted it 5–0, sending a temporary 10-cent-a-gallon tax for street repair and traffic safety, estimated at $64 million over four years, to the May 17, 2016 ballot. The campaign sent this file on October 7, 2026; it matches the City Auditor’s archive copy.",
+      },
+      {
         label: "U.S. District Court · Superfund cost-recovery decision, 750 F. Supp. 1460",
         url: "https://law.justia.com/cases/federal/district-courts/FSupp/750/1460/1473496/",
         kind: "Public record",
