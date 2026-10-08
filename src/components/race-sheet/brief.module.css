@@ -1002,6 +1002,10 @@
   line-height: 1.45;
   color: var(--color-ink-light);
 }
+.choiceVoteSubject {
+  font-weight: 600;
+  color: var(--color-ink);
+}
 .choiceText {
   margin: 8px 0 0 !important;
   max-width: 62ch;

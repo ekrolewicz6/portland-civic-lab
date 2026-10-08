@@ -19,6 +19,21 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="vote-labels-2026-10-08">October 8, 2026 · Correction: every recorded vote now says what it was cast on (Portland Council)</h2>
+        <p>
+          On the Council choices beneath each race grid, a sitting
+          councilor’s recorded vote appeared as a bare Yes or No under the
+          board’s own question. The two can point opposite ways. The Clearing
+          camps board asks “Keep funding camp removals at current levels?”,
+          while the vote behind it was on an amendment to shift money away
+          from camp removals, so a Yes read as the opposite of what the
+          councilor did. Opening the row did not settle it, because it named
+          only the kind of vote (“Budget amendment”). Each vote now reads, for
+          example, “Voted yes on Shift funding away from homeless-camp
+          removals”, on every board and in the “On record” list on each
+          brief. No vote, position or source changed. Tiffany Koyama Lane’s
+          campaign raised the problem on October 2.
+        </p>
         <h2 id="leake-2026-10-08">October 8, 2026 · Wording fix: what “No endorsements” meant (all candidates)</h2>
         <p>
           Josh Leake (District 4) wrote that his page was wrong because he has
