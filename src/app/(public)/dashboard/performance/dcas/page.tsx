@@ -9,6 +9,7 @@ import {
   priorityServiceAreaMetrics,
 } from "@/lib/performance/product-layers";
 import { EvidenceMetricCard, PageGuide } from "../_components/PageGuide";
+import PerformanceUnavailable from "../PerformanceUnavailable";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -50,7 +51,11 @@ const DCA_TOOLS = [
 ];
 
 export default async function DcaCockpitsPage() {
-  const snapshot = await getPerformanceSnapshot();
+  const snapshot = await getPerformanceSnapshot().catch((error) => {
+    console.error("[performance dcas]", error);
+    return null;
+  });
+  if (!snapshot) return <PerformanceUnavailable />;
   const dcaAreas = PERFORMANCE_SERVICE_AREAS.filter((area) => area.slug !== "city-administrator");
 
   return (
