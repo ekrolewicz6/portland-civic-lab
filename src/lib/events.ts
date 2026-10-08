@@ -5,8 +5,9 @@
  * embeds its Luma widget and links to the listing directly.
  *
  * Every event has a page at /events/<slug> (tests/events.test.ts checks).
- * Times carry their Pacific offset. Once an event ends it moves to "Past" on
- * the index and drops off the homepage without a deploy.
+ * Times carry their Pacific offset. The homepage banner runs from an event's
+ * announceFrom until it ends; once it ends the event moves to "Past" on the
+ * index. Both happen without a deploy.
  */
 
 export type LabEvent = {
@@ -18,6 +19,8 @@ export type LabEvent = {
   summary: string;
   start: string;
   end: string;
+  /** When the homepage banner for this event starts; it runs until the event ends. */
+  announceFrom: string;
   /** True while the listed start time is a placeholder. */
   timeTentative: boolean;
   /** Null until the venue is confirmed. */
@@ -38,6 +41,8 @@ export const EVENTS: LabEvent[] = [
       "A free screening of the documentary about Aaron Swartz on what would have been his 40th birthday.",
     start: "2026-11-08T17:00:00-08:00",
     end: "2026-11-08T19:30:00-08:00",
+    // The day after the Nov 3 election, once the election banner has retired.
+    announceFrom: "2026-11-04T00:00:00-08:00",
     timeTentative: true,
     venue: null,
     city: "Portland, Oregon",
@@ -75,9 +80,9 @@ export function pastEvents(now: Date): LabEvent[] {
   return EVENTS.filter((e) => isPast(e, now)).sort((a, b) => Date.parse(b.start) - Date.parse(a.start));
 }
 
-/** The event the homepage announces: the next one that has not ended. */
-export function nextEvent(now: Date): LabEvent | null {
-  return upcomingEvents(now)[0] ?? null;
+/** The event the homepage banner announces: the soonest one inside its announcement window. */
+export function announcedEvent(now: Date): LabEvent | null {
+  return upcomingEvents(now).find((e) => now >= new Date(e.announceFrom)) ?? null;
 }
 
 const LONG_DATE = new Intl.DateTimeFormat("en-US", { timeZone: TZ, weekday: "long", month: "long", day: "numeric", year: "numeric" });
