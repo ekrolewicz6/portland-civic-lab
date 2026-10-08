@@ -7,7 +7,7 @@ import type { ExtraTopic } from "@/lib/voters-guide/race-sheet/types";
 import type { Office } from "@/lib/voters-guide/race-sheet/office";
 import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import { portraitPerson, SourceChipButton } from "./CandidateCard";
-import { Gap, SaidGlyph, VotePill } from "./Glyph";
+import { Gap, SaidGlyph, VotePill, votedOn } from "./Glyph";
 import styles from "./boards.module.css";
 import c from "./controls.module.css";
 
@@ -108,12 +108,15 @@ function Board({
                 </div>
                 <div className={styles.answer}>
                   {tc.vote && decision && (
-                    <div className={styles.voteBlock}>
+                    <div className={styles.voteBlock} data-vote-on>
                       <p className={styles.answerLabel}>
                         <Vote size={13} aria-hidden="true" /> Recorded vote
+                        {decision.voteLabel && <span className={styles.voteKind}> · {decision.voteLabel}</span>}
                       </p>
                       <p className={styles.voteLine}>
-                        <span className={styles.voteOn}>{decision.voteLabel ?? decision.title}</span>
+                        <span className={styles.voteOn}>
+                          {votedOn(tc.vote)} <strong className={styles.voteSubject}>{decision.title}</strong>
+                        </span>
                         <SourceChipButton chip={decision.source} compact />
                       </p>
                     </div>

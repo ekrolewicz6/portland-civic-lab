@@ -9,7 +9,7 @@ import { candidatePath, racePath } from "@/lib/voters-guide/race-sheet/seo";
 import { councilDisagreements } from "@/lib/voters-guide/council-record-accounts";
 import CandidatePortrait from "@/components/voters-guide/CandidatePortrait";
 import ShareGuide from "@/components/voters-guide/ShareGuide";
-import { SaidGlyph, VotePill } from "./Glyph";
+import { SaidGlyph, VotePill, votedOn } from "./Glyph";
 import Term from "./Term";
 import ReachCampaign from "./ReachCampaign";
 import c from "./controls.module.css";
@@ -154,7 +154,7 @@ export default function CandidateBrief({
   const decisionFor = (topicId: string) => {
     const t = topics.find((x) => x.id === topicId);
     const d = t?.decisionId ? councilDecisions.find((x) => x.id === t.decisionId) : undefined;
-    return d ? { label: d.voteLabel ?? d.title, source: sourceChip(d.source) } : null;
+    return d ? { title: d.title, source: sourceChip(d.source) } : null;
   };
   const website = row.contact.channels.find((ch) => ch.kind === "website") ?? null;
 
@@ -359,7 +359,11 @@ export default function CandidateBrief({
                       {cell.vote && (
                         <p className={styles.choiceVote}>
                           <VotePill vote={cell.vote} name={row.name} />
-                          {decision && <span className={styles.choiceVoteOn}>{decision.label}</span>}
+                          {decision && (
+                            <span className={styles.choiceVoteOn} data-vote-on>
+                              {votedOn(cell.vote)} <strong className={styles.choiceVoteSubject}>{decision.title}</strong>
+                            </span>
+                          )}
                         </p>
                       )}
                       {cell.text ? (
