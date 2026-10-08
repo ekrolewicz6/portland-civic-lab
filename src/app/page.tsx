@@ -10,7 +10,9 @@ import SsoLink from "@/components/SsoLink";
 import { withPhotos } from "@/lib/team";
 import AudienceDoors, { type Door } from "@/components/home/AudienceDoors";
 import ElectionBanner from "@/components/home/ElectionBanner";
+import EventNotice from "@/components/home/EventNotice";
 import { GUIDE_SCALE, electionBannerLabel, isElectionSeason } from "@/lib/election";
+import { nextEvent } from "@/lib/events";
 import {
   ASK_PORTLAND_URL,
   COUNCIL_URL,
@@ -25,8 +27,8 @@ export const metadata: Metadata = {
   title: { absolute: HOME_TITLE },
 };
 
-// Keep the election banner's day count current and let it retire itself
-// after polls close without a redeploy.
+// Keep the election banner's day count current and let it and the event
+// notice retire themselves without a redeploy.
 export const revalidate = 3600;
 
 /**
@@ -396,6 +398,7 @@ export default function HomePage() {
   const team = withPhotos();
   const now = new Date();
   const electionSeason = isElectionSeason(now);
+  const upcomingEvent = nextEvent(now);
   return (
     <div className="flex min-h-screen flex-col bg-[var(--color-paper)]">
       <Header electionSeason={electionSeason} />
@@ -406,6 +409,7 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-[1400px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-24 3xl:max-w-[1800px]">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-start lg:gap-10">
             <div className="lg:col-span-6">
+              {upcomingEvent && <EventNotice event={upcomingEvent} />}
               <h1 className="font-editorial-normal text-[46px] leading-[0.98] tracking-tight text-white animate-fade-up sm:text-[62px] lg:text-[70px] xl:text-[84px]">
                 Portland,
                 <span className="block font-editorial italic text-[var(--color-ember-bright)]">

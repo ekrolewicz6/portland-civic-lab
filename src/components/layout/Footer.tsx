@@ -21,6 +21,7 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
       { label: "2026 Voters’ Guide", href: "/voters-guide" },
       { label: "Dashboards", href: "/dashboard" },
       { label: "Deep-Dives", href: "/deep-dives" },
+      { label: "Events", href: "/events" },
       { label: "Fire in Oregon", href: "/oregon-fire" },
       { label: "CED Portfolio Map", href: "/ced" },
       { label: "Org Chart", href: "/org-chart" },

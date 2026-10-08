@@ -7,6 +7,7 @@ import { officeOf } from "@/lib/voters-guide/race-sheet/office";
 import { bureauIds } from "@/lib/org/bureau";
 import { VALID_QUESTIONS } from "@/lib/questions";
 import { FIRE_LESSONS } from "@/lib/oregon-fire/lesson";
+import { EVENTS, eventPath } from "@/lib/events";
 
 const BASE_URL = "https://www.portlandciviclab.org";
 
@@ -35,6 +36,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/concierge`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/methodology`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${BASE_URL}/volunteer`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/events`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    ...EVENTS.map((e) => ({ url: `${BASE_URL}${eventPath(e)}`, lastModified: new Date("2026-10-07T00:00:00Z"), changeFrequency: "weekly" as const, priority: 0.7 })),
     { url: `${BASE_URL}/open-data`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/records`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE_URL}/proposals`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
