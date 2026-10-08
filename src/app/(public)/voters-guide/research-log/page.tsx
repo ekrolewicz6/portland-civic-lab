@@ -19,6 +19,28 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="hrac-2026-10-08">October 8, 2026 · Review: HRAC on comparing the county’s two homelessness counts (Multnomah County)</h2>
+        <p>
+          Dr. Minji Cho of Portland State University’s Homelessness Research
+          &amp; Action Collaborative answered two follow-up questions. The
+          federal figures for Multnomah County remain those of the January
+          2025 Point-in-Time count: 10,526 people homeless, 6,912 of them
+          unsheltered. Unsheltered counts are required only in odd-numbered
+          years and the county did not hold one in 2026, so those are the
+          latest official estimates. She said the by-name list figures and
+          the Point-in-Time figures should not be set side by side as
+          comparable or used to judge whether homelessness has grown, because
+          the gap between them may come from the counting methods alone. The
+          County Chair page already gives only the by-name figures and names
+          the list, so it did not change, and we will not add the 2025 count
+          beside them. She also sent HRAC’s 2025 Oregon Statewide
+          Homelessness Estimates. Checking the Lab’s homelessness dashboard
+          against it, outside the guide, found statewide shelter-bed and
+          student totals added up from incomplete county lists, two
+          racial-disparity ratios that were not HRAC’s, and a 47% rise in
+          the summary of the city-county dispute that was worked out from a
+          rounded starting figure; all are corrected.
+        </p>
         <h2 id="leake-2026-10-08">October 8, 2026 · Wording fix: what “No endorsements” meant (all candidates)</h2>
         <p>
           Josh Leake (District 4) wrote that his page was wrong because he has

@@ -330,7 +330,14 @@ export default function HomelessnessDetail() {
   // Hidden homelessness
   const duTyped = doubledUp as { county: string; estimate: number; marginOfError: number }[];
   const duStatewide = duTyped.find((d) => d.county === "Statewide");
+  const duMultco = duTyped.find((d) => d.county === "Multnomah");
+  // County student counts overlap (a student can be counted in two counties), so use
+  // the statewide row, which ODE deduplicates, rather than a sum of counties.
   const shTyped = studentHomelessness as { county: string; count202425: number; numericChange: number }[];
+  const shStatewide =
+    shTyped.find((r) => r.county === "Statewide")?.count202425 ??
+    shTyped.reduce((s, r) => s + r.count202425, 0);
+  const shMultco = shTyped.find((r) => r.county === "Multnomah");
 
   return (
     <div className="space-y-10">
@@ -494,8 +501,13 @@ export default function HomelessnessDetail() {
                   </div>
                 ))}
             </div>
-            <p className="mt-3 text-[11px] text-[var(--color-ink-muted)] font-mono">
-              Source: PSU HRAC 2025 Statewide Estimates. Population: Census ACS B03002.
+            <p className="mt-3 text-[13px] text-[var(--color-ink-muted)] leading-relaxed">
+              HRAC gives no ratio for Hispanic or Latino Oregonians, whose rate was slightly below their
+              population share statewide and varied by county, or for Asian Oregonians, whose rate was much lower.
+            </p>
+            <p className="mt-2 text-[11px] text-[var(--color-ink-muted)] font-mono">
+              Source: PSU HRAC, 2025 Oregon Statewide Homelessness Estimates, pp. 16-17 (January 2025
+              Point-in-Time count; population from Census ACS 2019-2023, Table B03002).
             </p>
           </div>
         )}
@@ -772,10 +784,17 @@ export default function HomelessnessDetail() {
               }
               return null;
             })()}
+            <p className="text-[13px] text-[var(--color-ink-muted)] mt-2 leading-relaxed">
+              The list counts everyone in contact with homeless services over months, a different measure
+              from the one-night Point-in-Time count. Some of its growth may come from wider reporting: most
+              day centers did not have to enter data into the county&apos;s system until fiscal 2026, which
+              began in July 2025. Each edition can revise earlier months, and the county plans to restate the
+              whole series about 20% lower under a shorter inactivity rule.
+            </p>
             <p className="text-[12px] text-[var(--color-ink-muted)]/60 mt-2">
               Source:{" "}
-              <a href="https://www.multco.us/johs" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">
-                JOHS By-Name List
+              <a href="https://hsd.multco.us/data-dashboard/" target="_blank" rel="noopener" className="underline hover:text-[var(--color-ink-muted)]">
+                Multnomah County Homeless Services Department data dashboard (by-name list)
               </a>, monthly.
             </p>
           </div>
@@ -805,6 +824,13 @@ export default function HomelessnessDetail() {
             ]}
           />
         )}
+        {sbiTyped.length > 0 && (
+          <p className="text-[13px] text-[var(--color-ink-muted)] mt-3 leading-relaxed">
+            Bed counts are from the January 2025 Housing Inventory Count as HRAC received it, so every county
+            is measured the same way. HUD&apos;s final inventory for Multnomah County, which includes updates
+            made after that, lists 4,187 emergency, Safe Haven and transitional beds (40% of the count).
+          </p>
+        )}
 
         <div className="mt-6">
           <DataNeeded
@@ -817,7 +843,8 @@ export default function HomelessnessDetail() {
           />
         </div>
         <p className="text-[11px] text-[var(--color-ink-muted)] mt-3 font-mono">
-          Source: JOHS Shelter Reports &middot; PSU HRAC 2025 HIC data (Table 17).
+          Source: JOHS Shelter Reports &middot; PSU HRAC 2025 Oregon Statewide Homelessness Estimates (Table 17)
+          &middot; HUD 2025 Housing Inventory Count, OR-501.
         </p>
       </section>
 
@@ -934,12 +961,12 @@ export default function HomelessnessDetail() {
           </div>
           <div className="bg-[var(--color-parchment)]/30 border border-[var(--color-parchment)] rounded-sm p-4">
             <p className="text-[11px] font-semibold text-[var(--color-ink-muted)] uppercase tracking-wider mb-1">
-              Prevalence Gap
+              Two Different Counts
             </p>
             <p className="text-[14px] text-[var(--color-ink)] leading-snug">
-              Point-in-Time count ({latestPit?.year ?? "latest"}): {latestPit?.totalHomeless.toLocaleString() ?? "--"} people on one night.
-              The county&apos;s by-name list, which covers everyone in contact with services over months, held about{" "}
-              {STATS.byNameTotal.toLocaleString()} in {STATS.byNameAsOf}. The two use different methods and are not directly comparable.
+              The federal Point-in-Time count ({latestPit?.year ?? "latest"}) found {latestPit?.totalHomeless.toLocaleString() ?? "--"} people
+              on one night. The county&apos;s by-name list counts everyone in contact with services over months. The methods
+              differ, so the larger by-name figure is not evidence that homelessness has risen since the count.
             </p>
           </div>
         </div>
@@ -965,18 +992,17 @@ export default function HomelessnessDetail() {
         {/* Hidden homelessness callout */}
         <div className="bg-[var(--color-parchment)]/40 border border-[var(--color-parchment)] rounded-sm p-4">
           <p className="text-[13px] text-[var(--color-ink)] leading-relaxed">
-            <strong>Hidden homelessness:</strong> The PIT count misses people
-            who are doubled up and students experiencing homelessness
-            statewide. Doubled up:{" "}
-            {duStatewide ? `~${duStatewide.estimate.toLocaleString()}` : "not available"}. Students:{" "}
-            {(() => {
-              const stateTotal = shTyped.reduce((s, r) => s + r.count202425, 0);
-              return stateTotal > 0 ? stateTotal.toLocaleString() : "not available";
-            })()}
-            .
+            <strong>Hidden homelessness:</strong> The Point-in-Time count leaves out people staying in
+            someone else&apos;s home out of necessity. HRAC estimates{" "}
+            {duStatewide ? `about ${duStatewide.estimate.toLocaleString()} Oregonians` : "an unknown number of Oregonians"}
+            {duMultco ? `, about ${duMultco.estimate.toLocaleString()} of them in Multnomah County (plus or minus ${duMultco.marginOfError.toLocaleString()}),` : ""}{" "}
+            were doubled up in 2024. Schools, which count doubled-up children too, reported{" "}
+            {shStatewide > 0 ? `${shStatewide.toLocaleString()} homeless K-12 students statewide` : "homeless K-12 students statewide"}
+            {shMultco ? ` and ${shMultco.count202425.toLocaleString()} in Multnomah County` : ""} in 2024-25.
           </p>
           <p className="text-[11px] text-[var(--color-ink-muted)] mt-2 font-mono">
-            Source: PSU HRAC 2025 Tables 19-20 &middot; ACS 2024 &middot; ODE Report Card 2024-25.
+            Source: PSU HRAC 2025 Oregon Statewide Homelessness Estimates, Tables 19-20 (ACS 2024 one-year
+            estimates; Oregon Department of Education counts, deduplicated statewide).
           </p>
         </div>
       </section>
@@ -1023,8 +1049,10 @@ export default function HomelessnessDetail() {
           {(statewideByCounty as { county: string; total: number; ratePer1000: number; unshelteredPct: number }[]).length > 0 && (
             <Collapsible title="Statewide Comparison by County">
               <p className="text-[13px] text-[var(--color-ink-muted)] mb-4 leading-relaxed">
-                Oregon recorded 27,119 people experiencing homelessness statewide in January 2025 -- a 34.9%
-                increase from 2023. Rates below are per 1,000 residents.
+                Oregon&apos;s Point-in-Time counts found 27,119 people experiencing homelessness statewide in
+                January 2025, 34.9% more than in 2023. HRAC attributes the rise partly to better counting and
+                changed methods, including Multnomah County&apos;s, as well as to more homelessness. Rates below
+                are per 1,000 residents.
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-[13px]">
