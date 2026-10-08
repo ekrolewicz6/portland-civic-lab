@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, ClipboardCheck, Map, TableProperties } from "lucide-react";
 import { getPerformanceSnapshot } from "@/lib/performance/service";
@@ -12,11 +13,13 @@ import { EvidenceMetricCard, PageGuide } from "../_components/PageGuide";
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-export const metadata: Metadata = {
-  title: "DCA Performance Cockpits | Portland Civic Lab",
+export const metadata: Metadata = pageMeta({
+  title: "DCA Performance Cockpits",
   description:
     "Service-area operating dashboards for Portland deputy city administrators using official Performance Portland metrics.",
-};
+  path: "/dashboard/performance/dcas",
+  sectionImage: true,
+});
 
 const DCA_TOOLS = [
   {

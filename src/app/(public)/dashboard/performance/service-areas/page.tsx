@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Gauge } from "lucide-react";
 import { getPerformanceSnapshot } from "@/lib/performance/service";
@@ -16,11 +17,13 @@ import {
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-export const metadata: Metadata = {
-  title: "Service Area Performance | Portland Civic Lab",
+export const metadata: Metadata = pageMeta({
+  title: "Service Area Performance",
   description:
     "Service-area views of official Performance Portland metrics for the City Administrator, DCAs, and City Council.",
-};
+  path: "/dashboard/performance/service-areas",
+  sectionImage: true,
+});
 
 export default async function ServiceAreasPage() {
   const snapshot = await getPerformanceSnapshot();

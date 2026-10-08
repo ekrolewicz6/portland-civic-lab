@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import {
   AlertTriangle,
@@ -30,11 +31,13 @@ import {
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-export const metadata: Metadata = {
-  title: "City Administrator Cockpit | Portland Civic Lab",
+export const metadata: Metadata = pageMeta({
+  title: "City Administrator Cockpit",
   description:
     "An executive operating view for the City Administrator's service delivery, risk, and Council readiness work.",
-};
+  path: "/dashboard/performance/city-administrator",
+  sectionImage: true,
+});
 
 function formatFetchedAt(value: string): string {
   const date = new Date(value);

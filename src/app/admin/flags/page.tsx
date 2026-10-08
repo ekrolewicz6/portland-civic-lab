@@ -7,7 +7,7 @@ import { requireAdmin } from "@/lib/admin";
 import { toHeaderMember } from "@/lib/member-nav";
 
 export const metadata: Metadata = {
-  title: "Data flag review | Portland Civic Lab",
+  title: "Data flag review",
   robots: { index: false, follow: false },
 };
 

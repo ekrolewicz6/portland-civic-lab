@@ -7,6 +7,7 @@ export const metadata: Metadata = pageMeta({
   description:
     "Portland's biggest small-business grants are gated on district boundaries no owner can see. Enter an address and find out which doors are open, which are closed, and why.",
   path: "/business/check",
+  sectionImage: true,
 });
 
 export default function BusinessCheckPage() {

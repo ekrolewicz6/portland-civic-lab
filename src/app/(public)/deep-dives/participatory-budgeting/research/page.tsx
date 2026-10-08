@@ -12,6 +12,7 @@ export const metadata = pageMeta({
     "An independent analysis of Portland’s 2026 participatory budgeting measure: the strongest YES and NO arguments, real budget tradeoffs, research, and both campaigns’ claims.",
   path: "/deep-dives/participatory-budgeting/research",
   type: "article",
+  sectionImage: true,
 });
 
 // Preserve the complete original report, including its introduction and reference links.

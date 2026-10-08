@@ -15,6 +15,7 @@ import { buildPanel } from '@/lib/campaign-finance/money-flow';
 import { MoneyInOut, MoneyOverTime } from '@/components/deep-dives/campaign-finance/MoneyOverTime';
 import { governorMoney } from '@/lib/campaign-finance/money-lead';
 import s from '@/components/deep-dives/campaign-finance/story.module.css';
+import DeepDiveSchema from "@/components/deep-dives/DeepDiveSchema";
 
 export const metadata = pageMeta({ title: 'The money behind Portland’s next council', description: 'A chart-led investigation of Portland Districts 3 and 4: public matching, fundraising surges, shared donors, endorsements and cash reserves, with an auditor profile and statewide context.', path: BASE, type: 'article' });
 export const runtime = 'nodejs';
@@ -121,7 +122,7 @@ function RepeatSupportChart() {
 export default async function Investigation() {
   const [latest,lead]=await Promise.all([loadLatestFunding(),loadMoneyLead()]);
   const through=longDay(latest.active.end);
-  return <article className={s.story} data-story-snapshot={SNAPSHOT}><div className={s.wrap}>
+  return <article className={s.story} data-story-snapshot={SNAPSHOT}><DeepDiveSchema slug="campaign-finance" /><div className={s.wrap}>
     <header className={s.hero} id="story-top"><p className={s.kicker}>The 2026 election · A visual investigation</p><h1>The money behind<br/>Portland’s <em>next council.</em></h1><p className={s.lead}>Who gives. Where it comes from. Who gets paid. <br/>Follow the money through Portland’s District 3 and 4 races.</p>
     </header>
     <MoneyOverTime measure="raised" panels={lead.panels} end={latest.active.end}

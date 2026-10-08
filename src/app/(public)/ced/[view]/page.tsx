@@ -16,6 +16,7 @@ import {
   Methodology,
   Briefing,
 } from "@/components/ced/StaticViews";
+import { metaDescription } from "@/lib/page-meta";
 export const dynamic = "force-dynamic";
 const views: Record<string, [string, string, string]> = {
   initiatives: [
@@ -77,6 +78,7 @@ export async function generateMetadata({
   const { view } = await params;
   return {
     title: views[view]?.[0] ?? "Not found",
+    description: views[view] ? metaDescription(`${views[view][2]} Part of the CED Portfolio Map of Portland’s community and economic development work.`) : undefined,
     alternates: { canonical: `/ced/${view}` },
   };
 }

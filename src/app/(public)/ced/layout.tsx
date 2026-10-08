@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     title: "CED Portfolio Map",
     description:
       "Portland’s initiatives, decisions, dependencies, public funding and outcomes, connected through public records.",
-    url: "/ced",
     type: "website",
   },
   twitter: {

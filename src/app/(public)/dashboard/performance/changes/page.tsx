@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Clock, FileWarning } from "lucide-react";
 import { buildPerformanceDecisionSuite } from "@/lib/performance/decision-tools";
@@ -8,11 +9,13 @@ import { PageGuide } from "../_components/PageGuide";
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-export const metadata: Metadata = {
-  title: "Performance Change Log | Portland Civic Lab",
+export const metadata: Metadata = pageMeta({
+  title: "Performance Change Log",
   description:
     "Changed values, stale or weak metrics, and update-risk tracking for the Performance Portland mirror.",
-};
+  path: "/dashboard/performance/changes",
+  sectionImage: true,
+});
 
 function ageLabel(period: string | null): string {
   if (!period) return "Unknown period";

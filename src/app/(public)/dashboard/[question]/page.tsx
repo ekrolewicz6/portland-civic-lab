@@ -21,6 +21,7 @@ import EducationDetail from "@/components/dashboard/education/EducationDetail";
 import QualityDetail from "@/components/dashboard/quality/QualityDetail";
 import AccountabilityDetail from "@/components/dashboard/accountability/AccountabilityDetail";
 import ClimateDetail from "@/components/dashboard/climate/ClimateDetail";
+import { metaDescription } from "@/lib/page-meta";
 
 // Reads request headers (getBaseUrl) and fetches with no-store, so render
 // per-request rather than attempting static generation at build time.
@@ -57,7 +58,7 @@ export async function generateMetadata({ params }: PageProps) {
   const meta = questionMeta[question];
   // Strong, declarative title: "{Section} — {Question}"
   const title = `${meta.shortTitle}: ${meta.title}`;
-  const description = `${meta.description} Real public data, updated automatically. Part of the Portland Civic Lab dashboard.`;
+  const description = metaDescription(`${meta.description} Real public data, updated automatically. Part of the Portland Civic Lab dashboard.`);
   const url = `https://www.portlandciviclab.org/dashboard/${question}`;
 
   return {

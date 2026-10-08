@@ -9,7 +9,7 @@ import sql from "@/lib/db-query";
 import { toHeaderMember } from "@/lib/member-nav";
 
 export const metadata: Metadata = {
-  title: "User management | Portland Civic Lab",
+  title: "User management",
   robots: { index: false, follow: false },
 };
 

@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { DM_Sans, JetBrains_Mono, Bricolage_Grotesque } from "next/font/google";
 
-import { LEGAL_ENTITY, TAGLINE } from "@/lib/site";
+import { ldJson, organizationNode, websiteNode } from "@/lib/structured-data";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-JRGVM4XLGV";
@@ -68,20 +68,16 @@ export const metadata: Metadata = {
   authors: [{ name: "Portland Civic Lab" }],
   creator: "Portland Civic Lab",
   publisher: "Portland Civic Lab",
+  // Only what is true of every page. Every route inherits these, so a URL,
+  // title or description here would be claimed by pages that set none of
+  // their own; the homepage sets its own through pageMeta.
   openGraph: {
-    title: HOME_TITLE,
-    description:
-      HOME_DESCRIPTION,
-    url: "https://www.portlandciviclab.org",
     siteName: "Portland Civic Lab",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: HOME_TITLE,
-    description:
-      HOME_DESCRIPTION,
     creator: "@portlandciviclab",
   },
   // index/follow is the default and is not declared, so a route's own
@@ -93,9 +89,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://www.portlandciviclab.org",
-  },
+  // No site-wide canonical: an inherited one told Google that pages without
+  // their own were copies of the homepage. Each page sets its own.
 };
 
 export default function RootLayout({
@@ -130,25 +125,7 @@ export default function RootLayout({
         </Script>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Portland Civic Lab",
-              legalName: LEGAL_ENTITY,
-              logo: "https://www.portlandciviclab.org/images/brand/logo-dark.png",
-              slogan: TAGLINE,
-              url: "https://www.portlandciviclab.org",
-              description:
-                "Free, public, source-linked civic tools for Portland, Oregon, and paid decision work for property owners and public institutions at published prices.",
-              areaServed: {
-                "@type": "City",
-                name: "Portland",
-                containedInPlace: { "@type": "State", name: "Oregon" },
-              },
-              sameAs: ["https://github.com/ekrolewicz6/portland-civic-lab"],
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: ldJson(organizationNode(), websiteNode()) }}
         />
         {children}
       </body>

@@ -8,6 +8,7 @@ import { bureauIds } from "@/lib/org/bureau";
 import { VALID_QUESTIONS } from "@/lib/questions";
 import { FIRE_LESSONS } from "@/lib/oregon-fire/lesson";
 import { EVENTS, eventPath } from "@/lib/events";
+import { DEEP_DIVES } from "@/lib/deep-dives";
 
 const BASE_URL = "https://www.portlandciviclab.org";
 
@@ -28,7 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
-    { url: `${BASE_URL}/deep-dives/small-business`, lastModified: new Date("2026-10-05T00:00:00Z"), changeFrequency: "monthly", priority: 0.9 },
     { url: BASE_URL, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${BASE_URL}/dashboard`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${BASE_URL}/org-chart`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
@@ -43,17 +43,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/proposals`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: `${BASE_URL}/donate`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/deep-dives`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    ...["", "/governor", "/suppliers", "/races", "/races/portland-district-3", "/races/portland-district-4", "/races/portland-auditor", "/statewide", "/methodology", "/evidence", "/questions"].map((section) => ({
+    ...["/governor", "/suppliers", "/races", "/races/portland-district-3", "/races/portland-district-4", "/races/portland-auditor", "/statewide", "/methodology", "/evidence", "/questions", "/explorer", "/api-reference"].map((section) => ({
       url: `${BASE_URL}/deep-dives/campaign-finance${section}`,
       lastModified: new Date("2026-09-29T00:00:00Z"),
       changeFrequency: "weekly" as const,
-      priority: section ? 0.6 : 0.9,
+      priority: 0.6,
     })),
-    ...["", "/case-studies", "/methodology", "/tables", "/community-research-kit", "/gaps", "/sources"].map((section) => ({
+    ...["/case-studies", "/methodology", "/tables", "/community-research-kit", "/gaps", "/sources"].map((section) => ({
       url: `${BASE_URL}/deep-dives/maker-economy${section}`,
       lastModified: new Date("2026-09-15T00:00:00Z"),
       changeFrequency: "monthly" as const,
-      priority: section ? 0.6 : 0.8,
+      priority: 0.6,
     })),
     ...["stories/why-burn", "projects/woodpecker"].map((path) => ({ url: `${BASE_URL}/oregon-fire/${path}`, lastModified: new Date("2026-09-26T00:00:00Z"), changeFrequency: "monthly" as const, priority: 0.7 })),
     { url: `${BASE_URL}/oregon-fire`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
@@ -61,89 +61,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/oregon-fire/atlas`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
     ...FIRE_LESSONS.map(({slug})=>({url:`${BASE_URL}/oregon-fire/learn/${slug}`,lastModified:new Date("2026-09-30T00:00:00Z"),changeFrequency:"monthly" as const,priority:0.7})),
     {
-      url: `${BASE_URL}/deep-dives/pps-budget`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/deep-dives/venue-portfolio`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/deep-dives/i-5-rose-quarter`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/deep-dives/city-budget`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/deep-dives/participatory-budgeting`,
-      lastModified: new Date("2026-10-02T00:00:00Z"),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
       url: `${BASE_URL}/deep-dives/participatory-budgeting/research`,
       lastModified: new Date("2026-10-02T00:00:00Z"),
       changeFrequency: "monthly",
       priority: 0.7,
     },
-    {
-      url: `${BASE_URL}/deep-dives/data-centers`,
+    // Every published deep-dive, from the same registry as the index page,
+    // dated by its own last update.
+    ...DEEP_DIVES.map((d) => ({
+      url: `${BASE_URL}/deep-dives/${d.slug}`,
+      lastModified: new Date(`${d.updated}T00:00:00Z`),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    })),
+    { url: `${BASE_URL}/business/check`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${BASE_URL}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${BASE_URL}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
+    ...["", "/changes", "/city-administrator", "/council", "/dcas", "/service-areas"].map((section) => ({
+      url: `${BASE_URL}/dashboard/performance${section}`,
       lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/deep-dives/portland-growth-politics`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/deep-dives/oregon-economic-development`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/deep-dives/fpdr`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/deep-dives/lloyd`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/deep-dives/mass-timber`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/deep-dives/homelessness`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/deep-dives/who-runs-portland`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+      changeFrequency: "weekly" as const,
+      priority: section ? 0.5 : 0.8,
+    })),
     { url: `${BASE_URL}/business`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE_URL}/property`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
@@ -190,5 +130,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
   ]);
-  return [...staticPages, ...dashboardPages, ...bureauPages, ...guidePages, ...racePages];
+  // One entry per URL: a section list and the deep-dive registry can overlap.
+  const seen = new Set<string>();
+  return [...staticPages, ...dashboardPages, ...bureauPages, ...guidePages, ...racePages].filter((e) => !seen.has(e.url) && !!seen.add(e.url));
 }
