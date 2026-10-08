@@ -11,6 +11,9 @@ test("the guide answers questions in order and keeps the teaching calculator dee
   await expect(page.locator("#actual-fire-spending")).toContainText("$50.98 million");
   await expect(page.locator("#actual-fire-spending")).toContainText("Forest Legacy");
   await expect(page.locator(".fire-cost-explorer")).toHaveCount(0);
+  // Just after load the router re-applies its own URL, dropping a hash set in
+  // the meantime. The explorer's alert appears once that has settled.
+  await expect(page.locator(".fire-explorer").getByRole("alert").filter({ hasText: "Records temporarily unavailable" })).toHaveCount(1);
   await page.getByRole("navigation", { name: "Questions answered in the guide" })
     .getByRole("link", { name: /What does the money buy/ }).click();
   await expect(page).toHaveURL(/#costs-and-choices$/);
