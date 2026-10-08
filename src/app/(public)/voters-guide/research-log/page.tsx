@@ -19,6 +19,17 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="leake-2026-10-08">October 8, 2026 · Wording fix: what “No endorsements” meant (all candidates)</h2>
+        <p>
+          Josh Leake (District 4) wrote that his page was wrong because he has
+          been endorsed by the Democratic Municipal Officials, as his website
+          shows. The guide does not list any candidate’s endorsements, but
+          every candidate’s description in search results and link previews
+          ended with “No endorsements.” That line was meant to say the Lab
+          endorses no one; it read as if the candidate had none. It now reads
+          “The Lab endorses no one,” and the District pages’ descriptions say
+          the same. No candidate’s positions changed.
+        </p>
         <h2 id="local88-2026-10-07">October 7, 2026 · Review: AFSCME Local 88 on the county budget board (Multnomah County)</h2>
         <p>
           Jackie Tate, president of AFSCME Local 88, which represents many

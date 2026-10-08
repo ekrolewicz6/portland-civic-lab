@@ -18,7 +18,7 @@ function districtCard(district: "3" | "4") {
     title: race ? raceTitle(race) : `Portland City Council District ${district} Voter Guide 2026`,
     description: race
       ? raceDescription(race)
-      : `Every Portland City Council District ${district} candidate on one page for November 3, 2026, with sources and no endorsements.`,
+      : `Every Portland City Council District ${district} candidate on one page for November 3, 2026, with sources. The Lab endorses no one.`,
     eyebrow: `CITY COUNCIL · DISTRICT ${district}`,
     label: `Portland District ${district} voter guide`,
     district,

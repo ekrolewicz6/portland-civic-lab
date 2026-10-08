@@ -35,7 +35,7 @@ export function GET() {
     lines.push(
       "## 2026 election",
       "",
-      `- [2026 Voters' Guide](${SITE}/voters-guide): ${GUIDE_SCALE.candidates} candidates in ${GUIDE_SCALE.races} races on the November 3, 2026 ballot in the Portland area, side by side with sources. No endorsements.`,
+      `- [2026 Voters' Guide](${SITE}/voters-guide): ${GUIDE_SCALE.candidates} candidates in ${GUIDE_SCALE.races} races on the November 3, 2026 ballot in the Portland area, side by side with sources. The Lab endorses no one.`,
       `- [How candidates are researched](${SITE}/voters-guide/methodology)`,
       `- [Campaign money in Portland's council races](${SITE}/deep-dives/campaign-finance)`,
       "",

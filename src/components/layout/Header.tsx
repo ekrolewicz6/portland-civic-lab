@@ -114,7 +114,7 @@ const ABOUT: NavItem[] = [
 const GUIDE_FEATURED: Featured = {
   eyebrow: "Election 2026 · Nov 3",
   title: "The 2026 Voters’ Guide",
-  body: `${GUIDE_SCALE.candidates} candidates in ${GUIDE_SCALE.races} races, from City Council to governor, side by side with their sources. No endorsements.`,
+  body: `${GUIDE_SCALE.candidates} candidates in ${GUIDE_SCALE.races} races, from City Council to governor, side by side with their sources. We endorse no one.`,
   cta: "Open the guide",
   href: "/voters-guide",
   img: { src: "/images/home/voters-guide.jpg", alt: "The voters’ guide front page: the Portland council districts with every candidate’s portrait", position: "object-right" },

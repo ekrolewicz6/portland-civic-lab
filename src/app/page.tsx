@@ -552,7 +552,7 @@ export default function HomePage() {
               <p className="mt-4 text-[16px] leading-relaxed text-[var(--color-ink-light)]">
                 Our free, nonpartisan voters&rsquo; guide puts {GUIDE_SCALE.candidates} candidates in{" "}
                 {GUIDE_SCALE.races} races side by side, from City Council to governor, with what each
-                one proposes and a source on every line. No endorsements.
+                one proposes and a source on every line. We endorse no one.
               </p>
               <dl className="mt-6 grid grid-cols-3 gap-4 border-t border-[var(--color-parchment)] pt-5">
                 <div>
