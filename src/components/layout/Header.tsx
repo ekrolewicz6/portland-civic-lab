@@ -29,6 +29,7 @@ import {
   FileSearch,
   Mail,
   CalendarClock,
+  CalendarDays,
   Users,
   type LucideIcon,
 } from "lucide-react";
@@ -101,6 +102,7 @@ const WORK: NavItem[] = [
 
 const ABOUT: NavItem[] = [
   { label: "About the Lab", href: "/about", desc: "The idea, the people, and four ways to join", icon: Users },
+  { label: "Events", href: "/events", desc: "Screenings and gatherings the Lab hosts", icon: CalendarDays },
   { label: "Independence & funding", href: "/independence", desc: "The rules, every contract we hold, where we're not neutral", icon: ShieldCheck },
   { label: "Methodology", href: "/methodology", desc: "How every number gets its source", icon: BookOpen },
   { label: "Open data & API", href: "/open-data", desc: "Download, embed, and build on the data", icon: Database },
