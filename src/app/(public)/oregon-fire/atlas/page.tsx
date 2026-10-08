@@ -9,7 +9,7 @@ import FireDecisions from "@/components/oregon-fire/FireDecisions";
 import { pageMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = pageMeta({ title: "Oregon Fire Atlas: Burns, Wildfire History & Recent Scars", description: "Investigate Oregon’s documented burns, planned work, wildfire perimeters and recent scars. Filter records by place, year, agency and method, with source links.", path: "/oregon-fire/atlas" });
+export const metadata: Metadata = pageMeta({ title: "Oregon Fire Atlas: Burns, Wildfire History & Recent Scars", description: "Investigate Oregon’s documented burns, planned work, wildfire perimeters and recent scars. Filter records by place, year, agency and method, with source links.", path: "/oregon-fire/atlas", sectionImage: true });
 
 export default function FireAtlasPage() {
   return <FireEditorialShell

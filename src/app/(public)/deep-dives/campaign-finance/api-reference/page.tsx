@@ -1,6 +1,8 @@
 import catalogue from '../../../../../../public/data/campaign-finance/api/endpoint-catalogue.json';
 import {BASE} from '@/lib/campaign-finance/filters';
 import {Shell,styles} from '@/components/deep-dives/campaign-finance/Shared';
+import {pageMeta} from '@/lib/page-meta';
+export const metadata=pageMeta({title:'ORESTAR public-interface reference',description:'Observed routes, methods, parameters and response types of Oregon’s ORESTAR campaign-finance website, reconstructed from public pages. Not an official API specification.',path:`${BASE}/api-reference`,sectionImage:true});
 export default async function ApiReference({searchParams}:{searchParams:Promise<{q?:string}>}){
   const params=await searchParams;const q=typeof params.q==='string'?params.q.slice(0,160):'';
   const endpoints=catalogue.endpoints.filter(e=>!e.path.includes('/js/')&&e.path.toLowerCase().includes(q.toLowerCase()));

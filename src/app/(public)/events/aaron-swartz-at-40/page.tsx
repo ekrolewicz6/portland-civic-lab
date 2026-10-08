@@ -5,6 +5,7 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 import { pageMeta } from "@/lib/page-meta";
 import { eventBySlug, isPast, longDate, timeRange } from "@/lib/events";
 import LumaRegistration from "@/components/events/LumaRegistration";
+import { eventNode, ldJson } from "@/lib/structured-data";
 
 const SLUG = "aaron-swartz-at-40";
 
@@ -28,6 +29,7 @@ export default function AaronSwartzAt40Page() {
 
   return (
     <div className="bg-[var(--color-paper)]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldJson(eventNode(event)) }} />
       <section className="relative overflow-hidden bg-[var(--color-canopy)] noise-overlay">
         <div className="absolute right-0 top-0 h-[420px] w-[520px] translate-x-1/4 -translate-y-1/3 rounded-full bg-[var(--color-canopy-light)] opacity-25 blur-[150px]" />
         <div className="relative mx-auto max-w-[1400px] 3xl:max-w-[1800px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12">

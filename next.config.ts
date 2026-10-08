@@ -38,8 +38,37 @@ const EMBEDDABLE_HEADERS = SECURITY_HEADERS.filter(
   (h) => h.key !== "X-Frame-Options" && h.key !== "Content-Security-Policy",
 );
 
+/**
+ * Crawlers that get each page's <title>, description and canonical in <head>.
+ *
+ * Next streams metadata for dynamic pages: anything it does not recognize as
+ * a bot gets the tags late, inside <body>. Its default list leaves out
+ * Googlebot (which renders JavaScript and copes) and every AI crawler (which
+ * mostly do not), so on 225 dynamic pages Googlebot, GPTBot and ClaudeBot saw
+ * no title or canonical in the head. This is Next's default list
+ * (next/dist/shared/lib/router/utils/html-bots.js) plus Google's own crawlers
+ * and the search and answer engines' crawlers. Real visitors keep streaming.
+ */
+const HTML_LIMITED_BOTS = new RegExp(
+  [
+    // Next 15.5 default
+    "[\\w-]+-Google", "Google-[\\w-]+", "Chrome-Lighthouse", "Slurp", "DuckDuckBot", "baiduspider", "yandex", "sogou",
+    "bitlybot", "tumblr", "vkShare", "quora link preview", "redditbot", "ia_archiver", "Bingbot", "BingPreview", "applebot",
+    "facebookexternalhit", "facebookcatalog", "Twitterbot", "LinkedInBot", "Slackbot", "Discordbot", "WhatsApp",
+    "SkypeUriPreview", "Yeti", "googleweblight",
+    // Google search
+    "Googlebot", "GoogleOther",
+    // AI search and answer engines
+    "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-User", "Claude-SearchBot", "anthropic-ai",
+    "PerplexityBot", "Perplexity-User", "CCBot", "Amazonbot", "meta-externalagent", "meta-externalfetcher",
+    "DuckAssistBot", "cohere-ai", "MistralAI-User", "YouBot", "Kagibot", "Diffbot", "Bytespider",
+  ].join("|"),
+  "i",
+);
+
 const nextConfig: NextConfig = {
   output: "standalone",
+  htmlLimitedBots: HTML_LIMITED_BOTS,
   outputFileTracingRoot: projectRoot,
   serverExternalPackages: ["postgres", "@duckdb/node-api", "@duckdb/node-bindings"],
   outputFileTracingIncludes: {

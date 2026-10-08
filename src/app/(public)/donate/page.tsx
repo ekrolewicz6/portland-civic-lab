@@ -7,7 +7,7 @@ import DonationForm from "@/components/donate/DonationForm";
 import { DOWNTOWN_URL, OREGON_GOVERNANCE_URL, PARKS_URL } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
-  title: 'Support Portland Civic Lab',
+  title: 'Support the Lab',
   description: 'Help keep Portland’s voter guides, public data tools and research free to use. Explore monthly, one-time and founding support. Contributions are not tax-deductible.',
   path: "/donate",
 });

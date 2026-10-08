@@ -56,7 +56,7 @@ export async function generateMetadata({
   const report = await fetchReport(baseUrl, issueId);
 
   if (!report) {
-    return { title: "Report Not Found | Portland Civic Lab" };
+    return { title: "Report not found" };
   }
 
   const url = `https://www.portlandciviclab.org/progress-report/${issueId}`;

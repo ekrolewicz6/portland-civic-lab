@@ -21,6 +21,7 @@ import {
   SourceLink,
 } from "@/components/ced/Shared";
 import { FundingCard } from "@/components/ced/Explorer";
+import { metaDescription } from "@/lib/page-meta";
 export const dynamic = "force-dynamic";
 export async function generateMetadata({
   params,
@@ -31,7 +32,7 @@ export async function generateMetadata({
   const i = initiatives.get(slug);
   return {
     title: i?.name ?? "Initiative not found",
-    description: i?.objective,
+    description: i ? metaDescription(`${i.objective} Decisions, money, dependencies and sources for ${i.name}, in the CED Portfolio Map.`) : undefined,
     alternates: { canonical: `/ced/initiatives/${slug}` },
   };
 }

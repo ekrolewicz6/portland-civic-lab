@@ -6,6 +6,7 @@ import { PB_SOURCES as sources } from "@/lib/participatory-budgeting";
 import BudgetIllustration from "@/components/deep-dives/participatory-budgeting/BudgetIllustration";
 import CivicIllustration from "@/components/deep-dives/participatory-budgeting/CivicIllustration";
 import s from "./participatory-budgeting.module.css";
+import DeepDiveSchema from "@/components/deep-dives/DeepDiveSchema";
 
 export const metadata = pageMeta({
   title: "Measure 26-267: a visual guide to Portland participatory budgeting",
@@ -29,7 +30,7 @@ const journey = [
 ] as const;
 
 export default function ParticipatoryBudgetingPage() {
-  return <article className={s.page}>
+  return <article className={s.page}><DeepDiveSchema slug="participatory-budgeting" />
     <header className={s.hero}><div className={s.wrap}>
       <Link href="/deep-dives" className={s.back}>← All deep dives</Link>
       <div className={s.heroGrid}>

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const lesson = FIRE_LESSONS.find(l => l.slug === slug);
   if (!lesson) return {};
-  return { ...pageMeta({ title: `${lesson.title} · Fire in Oregon`, description: lesson.paragraphs[0], path: `/oregon-fire/learn/${slug}`, type: "article" }), authors: FIRE_AUTHORS.map(name => ({ name })) };
+  return { ...pageMeta({ title: `${lesson.title} · Fire in Oregon`, description: lesson.paragraphs[0], path: `/oregon-fire/learn/${slug}`, type: "article", sectionImage: true }), authors: FIRE_AUTHORS.map(name => ({ name })) };
 }
 const pad = (n: number) => String(n).padStart(2, "0");
 

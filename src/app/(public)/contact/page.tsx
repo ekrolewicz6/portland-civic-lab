@@ -7,7 +7,7 @@ import { eventBySlug, longDate } from "@/lib/events";
 import { recordDetail } from "@/lib/oregon-fire/query";
 
 export const metadata: Metadata = pageMeta({
-  title: 'Contact Portland Civic Lab',
+  title: 'Contact us',
   description: 'Send a question, suggest a correction or discuss a research project with Portland Civic Lab. Help improve the public tools and evidence behind them.',
   path: "/contact",
 });
