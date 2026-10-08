@@ -6,15 +6,20 @@
  *   - homelessness.data_disputes (structured records of contested public claims)
  *
  * This is the foundation for surfacing the city-county data tension
- * in a non-partisan, methodology-aware way.
+ * in a non-partisan, methodology-aware way. The rows below are the live
+ * rows as of October 8, 2026 (including the October 7 refresh), so a reseed
+ * cannot bring back figures that were corrected.
  *
- * Usage: npx tsx ingest/seed-data-transparency.ts
+ * Usage:
+ *   npx tsx ingest/seed-data-transparency.ts           # dry run: prints what would change
+ *   npx tsx ingest/seed-data-transparency.ts --apply   # upserts the rows
  */
 
 import postgres from "postgres";
 import { requireDatabaseUrl } from "./lib/db-url";
 
 const DB_URL = requireDatabaseUrl();
+const APPLY = process.argv.includes("--apply");
 
 // ── 1. Data Sources (methodology cards) ──────────────────────────────────
 
@@ -22,16 +27,16 @@ const DATA_SOURCES = [
   {
     source_key: "pit_count",
     display_name: "Point-in-Time Count",
-    agency: "PSU HRAC (for Multnomah County)",
+    agency: "HUD, from Multnomah County's submission (PSU HRAC conducts the count)",
     methodology:
-      "A single-night census conducted by trained volunteers in late January, mandated by HUD. Counts people sleeping in shelters and visible unsheltered locations on one specific night.",
-    scope: "Tri-county region (Multnomah, Washington, Clackamas) on one night each year.",
+      "A single-night census in late January, mandated by HUD. Shelters report who slept there; trained volunteers and outreach workers survey people outside. In 2025 Multnomah County also added 5,090 people its service records showed as likely unsheltered that night.",
+    scope: "Multnomah County (HUD's Portland, Gresham/Multnomah County Continuum of Care) on one night in late January. Unsheltered people are counted in odd-numbered years; shelters every year.",
     what_it_misses:
       "People doubled-up with friends or family, couch-surfing, sleeping in cars hidden from view, and anyone who actively avoids enumerators. Considered a significant undercount.",
-    update_frequency: "annual",
+    update_frequency: "Full count every two years; shelters only in other years",
     last_updated: "2025-01-22",
     next_expected: "2027-01-31",
-    url: "https://www.pdx.edu/homelessness/2025-portland-tri-county-point-time-count",
+    url: "https://files.hudexchange.info/reports/published/CoC_PopSub_CoC_OR-501-2025_OR_2025.pdf",
     used_by: ["federal", "county", "city"],
   },
   {
@@ -39,14 +44,14 @@ const DATA_SOURCES = [
     display_name: "HMIS By-Name List",
     agency: "Multnomah County HSD",
     methodology:
-      "A continuously-updated, deduplicated roster of every individual known to the homeless services system. Built from intake data across all funded providers (HMIS = Homeless Management Information System).",
+      "A continuously-updated, deduplicated roster of every individual known to the homeless services system. Built from intake data across all funded providers (HMIS = Homeless Management Information System). A different measure from the Point-in-Time count; the two should not be compared to judge whether homelessness has grown.",
     scope: "Anyone who has been assessed by a Multnomah County funded homeless service provider.",
     what_it_misses:
       "People who never access services, who refuse intake, or who only use non-HMIS providers (e.g. some faith-based shelters). Can include people who have since become housed if not promptly updated.",
-    update_frequency: "monthly",
-    last_updated: "2026-03-15",
-    next_expected: "2026-04-15",
-    url: "https://hsd.multco.us/current-initiatives/built-for-zero/",
+    update_frequency: "monthly (dashboard offline for maintenance as of Oct. 2026)",
+    last_updated: "2026-03-31",
+    next_expected: "2026-10-31",
+    url: "https://hsd.multco.us/data-dashboard/",
     used_by: ["county"],
   },
   {
@@ -88,11 +93,26 @@ const DATA_SOURCES = [
     scope: "Households served by SHS-funded programs in Multnomah County.",
     what_it_misses:
       "Doesn't measure total homeless population. Counts placements, not whether people stayed housed long-term beyond the reporting window.",
-    update_frequency: "quarterly",
-    last_updated: "2026-02-15",
-    next_expected: "2026-05-15",
-    url: "https://hsd.multco.us/shs/",
+    update_frequency: "quarterly; annual report each November",
+    last_updated: "2026-06-30",
+    next_expected: "2026-11-30",
+    url: "https://hsd.multco.us/reports/",
     used_by: ["metro", "county"],
+  },
+  {
+    source_key: "hrac_statewide",
+    display_name: "Oregon Statewide Homelessness Estimates",
+    agency: "PSU Homelessness Research & Action Collaborative, for Oregon Housing and Community Services",
+    methodology:
+      "Compiles each Oregon Continuum of Care's Point-in-Time and Housing Inventory Counts by county, and adds school districts' counts of homeless students and a Census-based estimate of people living doubled up.",
+    scope: "All 36 Oregon counties on the January count night; students by school year; doubled-up estimates by Census area.",
+    what_it_misses:
+      "Each county's count keeps its own method, so counties and years are not strictly comparable. Figures are as first submitted to the state, so some differ slightly from HUD's final reports: Multnomah County's shelter beds are 4,008 here and 4,187 in HUD's inventory.",
+    update_frequency: "annual, each January",
+    last_updated: "2026-01-15",
+    next_expected: "2027-01-31",
+    url: "https://pdxscholar.library.pdx.edu/hrac_pub/53/",
+    used_by: ["state", "researchers"],
   },
 ];
 
@@ -114,20 +134,23 @@ const DATA_DISPUTES = [
       time_frame: "Jan 2025 - present",
     },
     claim_b_source: "Multnomah County HSD",
+    // OPB, Apr. 1, 2026: "about 8,800 people considered unsheltered ... When Wilson entered office,
+    // that number was roughly 6,000." The county's dashboard showed 6,275 for January 2025.
+    // Both figures are from the by-name list; until Oct. 8, 2026 this row described the basis as
+    // "by-name list and PIT count" and gave a 47% rise computed from the rounded 6,000.
     claim_b_summary:
-      "County HMIS and by-name list data show the unsheltered population has grown from approximately 6,000 to 8,800 since January 2025, a 47% increase. The county released a memo addressing the city's claims point by point.",
+      "The county's by-name list counted 6,275 people living unsheltered in January 2025, when Mayor Wilson took office, and about 8,800 in January 2026. The county released a memo addressing the city's claims point by point.",
     claim_b_data: {
-      metric: "unsheltered_count",
-      jan_2025: 6000,
-      current: 8800,
-      change_pct: 47,
-      basis: "HMIS by-name list and PIT count",
+      metric: "unsheltered_on_by_name_list",
+      jan_2025: 6275,
+      jan_2026: 8800,
+      basis: "Multnomah County by-name list (monthly); not the Point-in-Time count",
     },
     expert_assessment:
       "Marisa Zapata, director of PSU's Homelessness Research & Action Collaborative, called the city's allegations of double-counting \"completely unfounded.\" The county's methodology is consistent with HUD-required HMIS practices.",
     expert_source: "PSU HRAC",
     methodology_difference:
-      "These two numbers measure different things and can both be accurate at the same time. The city counts how many people are in city-operated shelter beds on a given night. The county counts every person known to the entire regional homeless services system — shelters, outreach, by-name list — across all providers. Because most people experiencing homelessness never enter a city shelter, the county's number will always be much larger. It is entirely possible for city shelters to be filling more beds while the total number of people experiencing homelessness countywide continues to grow.",
+      "The two sides measure different things. The city counts people in city-operated shelter beds on a given night. The county's by-name list counts everyone in contact with its homeless services over months, across all providers, so it will always be much larger, and city shelters can fill more beds while the list grows. Neither is the federal Point-in-Time count (10,526 people, 6,912 of them unsheltered, on January 22, 2025), and the by-name list should not be compared with that count to judge whether homelessness has grown. The county plans to restate the list about 20% lower under a shorter inactivity rule.",
     news_url:
       "https://www.opb.org/article/2026/04/01/behind-portlands-homelessness-data-familial-political-fight-emerges/",
   },
@@ -135,19 +158,53 @@ const DATA_DISPUTES = [
 
 // ── Main ─────────────────────────────────────────────────────────────────
 
+/** JSON with object keys sorted, since jsonb does not keep key order. */
+const canonical = (v: unknown): string =>
+  v && typeof v === "object" && !Array.isArray(v)
+    ? `{${Object.keys(v).sort().map((k) => `${JSON.stringify(k)}:${canonical((v as Record<string, unknown>)[k])}`).join(",")}}`
+    : JSON.stringify(v ?? null);
+const same = (a: unknown, b: unknown) => canonical(a) === canonical(b);
+
 async function main() {
-  const sql = postgres(DB_URL, { onnotice: () => {} });
+  const sql = postgres(DB_URL, { max: 1, prepare: false, onnotice: () => {} });
 
   try {
-    console.log("=============================================");
-    console.log("SEEDING DATA TRANSPARENCY LAYER");
-    console.log("=============================================\n");
+    // ── Compare with the live rows ──
+    const liveSources = await sql`SELECT source_key, display_name, agency, methodology, scope, what_it_misses,
+      update_frequency, last_updated::text AS last_updated, next_expected::text AS next_expected, url, used_by
+      FROM homelessness.data_sources`.catch(() => []);
+    const liveDisputes = await sql`SELECT slug, title, date_surfaced::text AS date_surfaced, status, claim_a_source,
+      claim_a_summary, claim_a_data, claim_b_source, claim_b_summary, claim_b_data, expert_assessment, expert_source,
+      methodology_difference, news_url FROM homelessness.data_disputes`.catch(() => []);
+    let changes = 0;
+    for (const [label, rows, live, key] of [
+      ["data_sources", DATA_SOURCES, liveSources, "source_key"],
+      ["data_disputes", DATA_DISPUTES, liveDisputes, "slug"],
+    ] as const) {
+      for (const row of rows as readonly Record<string, unknown>[]) {
+        const old = (live as readonly Record<string, unknown>[]).find((r) => r[key] === row[key]);
+        if (!old) {
+          console.log(`${label}: + ${row[key]}`);
+          changes++;
+          continue;
+        }
+        for (const [field, value] of Object.entries(row)) {
+          if (!same(old[field], value)) {
+            console.log(`${label}: ~ ${row[key]}.${field}\n    was: ${JSON.stringify(old[field])}\n    now: ${JSON.stringify(value)}`);
+            changes++;
+          }
+        }
+      }
+    }
+    if (!APPLY) {
+      console.log(`\nDry run: ${changes} changes. Nothing written. Re-run with --apply to upsert.`);
+      return;
+    }
 
     // Ensure schema exists
     await sql.unsafe(`CREATE SCHEMA IF NOT EXISTS homelessness`);
 
     // ── data_sources ──
-    console.log("1. Creating homelessness.data_sources...");
     await sql.unsafe(`
       CREATE TABLE IF NOT EXISTS homelessness.data_sources (
         id SERIAL PRIMARY KEY,
@@ -166,7 +223,6 @@ async function main() {
       )
     `);
 
-    let sourcesInserted = 0;
     for (const row of DATA_SOURCES) {
       await sql`
         INSERT INTO homelessness.data_sources
@@ -190,12 +246,10 @@ async function main() {
           url = EXCLUDED.url,
           used_by = EXCLUDED.used_by
       `;
-      sourcesInserted++;
     }
-    console.log(`   Inserted ${sourcesInserted} data source records.`);
+    console.log(`data_sources: ${DATA_SOURCES.length} rows upserted.`);
 
     // ── data_disputes ──
-    console.log("\n2. Creating homelessness.data_disputes...");
     await sql.unsafe(`
       CREATE TABLE IF NOT EXISTS homelessness.data_disputes (
         id SERIAL PRIMARY KEY,
@@ -217,7 +271,6 @@ async function main() {
       )
     `);
 
-    let disputesInserted = 0;
     for (const row of DATA_DISPUTES) {
       await sql`
         INSERT INTO homelessness.data_disputes
@@ -246,47 +299,18 @@ async function main() {
           methodology_difference = EXCLUDED.methodology_difference,
           news_url = EXCLUDED.news_url
       `;
-      disputesInserted++;
     }
-    console.log(`   Inserted ${disputesInserted} data dispute records.`);
+    console.log(`data_disputes: ${DATA_DISPUTES.length} rows upserted.`);
 
-    // ── Verification ──
-    console.log("\n=============================================");
-    console.log("VERIFICATION");
-    console.log("=============================================\n");
-
-    const sourceRows = await sql`
-      SELECT source_key, display_name, agency, update_frequency, last_updated
-      FROM homelessness.data_sources ORDER BY display_name
-    `;
-    console.log(`data_sources (${sourceRows.length} rows):`);
-    for (const r of sourceRows) {
-      console.log(`  ${r.source_key}: ${r.display_name} (${r.agency}) — updated ${r.last_updated}`);
-    }
-
-    const disputeRows = await sql`
-      SELECT slug, title, date_surfaced, status FROM homelessness.data_disputes ORDER BY date_surfaced DESC
-    `;
-    console.log(`\ndata_disputes (${disputeRows.length} rows):`);
-    for (const r of disputeRows) {
-      console.log(`  ${r.slug}: ${r.title} [${r.status}] — ${r.date_surfaced}`);
-    }
-
-    console.log("\n=============================================");
-    console.log("SEED COMPLETE");
-    console.log("=============================================");
-
+    // The dashboard serves a cached payload; clear it so the page reads the new rows.
+    await sql`DELETE FROM public.dashboard_cache WHERE question IN ('homelessness', 'homelessness_detail')`;
+    console.log("Applied.");
+  } finally {
     await sql.end();
-  } catch (err: any) {
-    console.error("Database error:", err.message);
-    await sql.end();
-    throw err;
   }
 }
 
-main()
-  .catch((err) => {
-    console.error("Fatal error:", err);
-    process.exit(1);
-  })
-  .then(() => process.exit(0));
+main().catch((err) => {
+  console.error("Fatal error:", err);
+  process.exit(1);
+});

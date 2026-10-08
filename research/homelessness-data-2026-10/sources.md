@@ -306,9 +306,9 @@ Note on frequency: the regulation and the HUD notice say "at least biennially" f
 
 ## 6. HRAC, "2025 Oregon Statewide Homelessness Estimates" (PDXScholar hrac_pub/53)
 
-### 6a. What could be opened
+### 6a. What could be opened (October 7)
 
-The report PDF was not opened, for two reasons:
+Superseded on October 8: Dr. Minji Cho sent the PDF; see 6c. On October 7 the report PDF was not opened, for two reasons:
 
 - PDXScholar's PDF link (https://pdxscholar.library.pdx.edu/cgi/viewcontent.cgi?article=1055&context=hrac_pub) is behind the Cloudflare check.
 - The persistent identifier https://archives.pdx.edu/ds/psu/44450 belongs to the same archive host as https://archives.pdx.edu/ds/psu/42985, which served a "Making sure you're not a bot!" page. I did not try to get past either check.
@@ -347,9 +347,37 @@ Source: KOIN, Amanda Rhoades, January 17, 2026 (UTC), read via Yahoo syndication
 
 These match HUD's OR-501 reports where they can be checked. Unsheltered rose from 3,944 (2023) to 6,912 (2025), a gain of 2,968 (+75.3%). Sheltered rose from 2,353 (1,821 + 532) to 3,614, a gain of 1,261 (+53.6%). KOIN's "more than 1,262" is one higher than the HUD arithmetic. The +859 bed figure does not match HUD's published HIC reports; see Conflicts.
 
+### 6c. The report itself (read October 8, 2026)
+
+Dr. Minji Cho (HRAC) sent the PDF on October 8, 2026. Archived as `runtime-data/source-archive/2026-10-08/hrac-2025-oregon-statewide-homelessness-estimates.pdf` (SHA-256 `a8d74612…6fae7b`; manifest `research/source-archive/2026-10-08.md`). Every table the dashboard uses is now in `ingest/homelessness/hrac-statewide-2025.ts` for all 36 counties and checked against the PDF by `ingest/homelessness/verify-hrac-statewide.ts`. Pages are the report's own numbers.
+
+| Figure | Value | Where | Quote or row |
+|---|---|---|---|
+| Multnomah, sheltered / unsheltered / total | 3,614 / 6,912 / 10,526 (65.7% unsheltered) | Table 1, p. 8 | "Multnomah Multnomah 3,614 6,912 10,526 65.7% 4,008" |
+| Multnomah shelter beds (ES, SH, TH) | 4,008, all year-round | Tables 1 and 17, pp. 8, 44 | "Multnomah Multnomah 0 4,008 4,008 10,526 38%" |
+| Why HRAC's beds differ from HUD's | Data as submitted to the state, before later updates | Table 1 note, p. 8 | "due to updates made after the data were submitted to OHCS and HRAC" |
+| Multnomah rates per 1,000 | 4.51 sheltered, 8.62 unsheltered, 13.13 total | Table 2, p. 9 | (row) |
+| Multnomah unsheltered, 2023 to 2025 | 3,944 to 6,912 (+2,968, +75%) | Table 3, p. 28 | "Multnomah County had, by far, the largest numerical increase" |
+| Multnomah sheltered, 2023 to 2025 | 2,353 to 3,614 (+1,261, +54%) | Table 10, p. 36 | "likely explained by a reported increase of 859 total shelter beds" |
+| Multnomah year-round beds, 2023 to 2025 | 3,149 to 4,008 (+859, +27.3%) | Table 18, p. 45 | "which added 859 new year-round beds (27.3% increase)" |
+| Multnomah K-12 students | 3,407 (2023-24) to 2,903 (2024-25) | Table 19, p. 47 | (row) |
+| Multnomah doubled up, 2024 | 3,477, plus or minus 960 | Table 20, p. 49 | (row) |
+| Oregon total, January 2025 | 27,119 (10,607 sheltered, 16,512 unsheltered) | p. 4 | "recorded 27,119 people (from 23,330 households)" |
+| Oregon change, 2023 to 2025 | +34.9% from 20,110, partly from method | p. 4 | "improved counting strategies and changes in methodology" |
+| Oregon shelter beds | 11,047 year-round, 12,607 with seasonal and overflow | p. 43, Table 17 | "the state had 12,607 shelter beds of all types" |
+| Oregon K-12 students, 2024-25 | 21,122 (4.0%), deduplicated statewide; counties sum to 21,386 | p. 46, Table 19 | "County-level totals do not sum to the same number as the statewide totals" |
+| Oregon doubled up, 2024 | 21,542, plus or minus 1,993 | p. 48 | "most likely between 19,549 and 23,535 people" |
+| Disparity ratios stated | AI/AN 6.92, NHPI 5.47, Black 5.08, White 0.89, multiracial "the same rate" | p. 16 | "at a rate 6.92 times higher than their proportion of the population" |
+| No ratio stated | Hispanic/Latino ("slightly lower", varies by county), Asian ("much lower") | p. 16 | "averaging out to a slightly lower rate than their proportion" |
+| People with known race (Chart 1 n) | 22,919 = Tables 5 and 12 minus "No Data" | pp. 18, 30, 38 | "Oregon Statewide (n=22,919)" (chart) |
+| Unsheltered counts required | Odd years; sheltered every year | p. 14 | "unsheltered counts at least every other year and sheltered counts every year" |
+| PIT data sources | Surveys, apps, by-name lists, observation | p. 15 | "by-name lists of individuals experiencing unsheltered homelessness" |
+
+What the check found in the database (October 8): `statewide_unsheltered_change` had 16 of 36 counties, `shelter_bed_inventory` 26 (so the dashboard's "Statewide Beds" read 12,579, not 12,607, and coverage 47%, not 46%), `student_homelessness` 29 with no statewide row (the dashboard summed 20,924, not 21,122), `doubled_up` stored the Crook-Deschutes-Jefferson and Polk-Lincoln Census areas as "Crook" and "Polk", and `racial_disparities` showed 0.77 (Hispanic) and 0.13 (Asian), which the report does not state; its population shares (for example 1.8% American Indian) and PIT shares (unsheltered only, with unknown race in the denominator) did not come from the report either. Every number that was in the tables matched the report.
+
 ### Could not find / could not open (item 6)
 
-- **The report PDF.** Bot-gated on PDXScholar and archives.pdx.edu, as above.
+- **The report PDF.** Bot-gated on PDXScholar and archives.pdx.edu, as above. Resolved October 8: HRAC sent it (6c).
 - **ResearchGate copy** (https://www.researchgate.net/publication/401255636_2025_Oregon_Statewide_Homelessness_Estimates). Not tried.
 - **Oregon Housing and Community Services (oregon.gov/ohcs).** No copy of the report found there by search.
 - **KGW's article on the report** (https://www.kgw.com/article/news/local/homeless/oregon-homeless-pit-count-psu-report-data-kotek-sheltered/283-a90de984-a6b6-46d2-aeab-1ceead5f1e43). Returned 403.
@@ -365,6 +393,7 @@ These match HUD's OR-501 reports where they can be checked. Unsheltered rose fro
    - The PIT report (p. 8) says the three counties together added 1,148 shelter beds since 2023, which is less than HUD's Multnomah-only difference.
    - HUD's HIC reports drop programs that lack enough detail, so the published 2023 baseline may be low.
    - Judgment: do not publish a bed-growth number until HRAC's table can be read. For the 2025 level, use HUD HIC 2025 (4,187 ES, SH and TH; 3,350 ES), the official HUD submission.
+   - **Resolved October 8, 2026.** HRAC's Table 18 compares 3,149 year-round beds (2023) with 4,008 (2025), both from the data as submitted to the state, which is where +859 comes from. Its Table 1 note says its totals can differ from HUD's because of updates made after submission. Use HUD's 4,187 for Multnomah's official 2025 level; use HRAC's 4,008 only beside other counties from the same table, and say so; cite +859 only as HRAC's like-for-like comparison.
 2. **Chronic count, 2025.**
    - The local report gives 5,154, which is 49% of the 10,434 people with known status.
    - HUD gives 5,158, which is 49.0% of 10,526.
@@ -401,3 +430,7 @@ These match HUD's OR-501 reports where they can be checked. Unsheltered rose fro
     - The dashboard shows 14,361 people (6,275 unsheltered, 4,849 sheltered, 3,237 unknown).
     - The PIT shows 10,526 (6,912 unsheltered, 3,614 sheltered) for the night of January 22.
     - The PIT's unsheltered figure combines the street survey (1,822) with a separate "PIT by-name list" pull (5,090), not the dashboard's monthly list.
+11. **What the by-name list contributed to the 2025 count.**
+    - Dr. Cho wrote on October 8, 2026 that the HUD figures came from the Point-in-Time survey and that the by-name list served only as a supplementary source for finding and removing duplicates.
+    - The Tri-County PIT report (HRAC, November 2025, p. 12) says Multnomah built a separate list from its by-name data of people "likely to be unsheltered the night of the count," and Table 3 (p. 22) counts 5,090 people from it (UNS-PITC-BNL), 48% of Multnomah's total.
+    - The two can both hold if "the By-Name List" in the email means the monthly list on the county dashboard rather than the count-night extract. Not resolved; asked in the reply drafted October 8. Until then the site follows the published report: 5,090 people "presumed unsheltered" from county records, a list distinct from the monthly by-name figures.

@@ -24,6 +24,7 @@ export const SOURCES: Record<string, Source> = {
   opbByName2026: { id: "opbByName2026", title: "Behind Portland's homelessness data, a familial, political fight emerges", org: "OPB", url: "https://www.opb.org/article/2026/04/01/behind-portlands-homelessness-data-familial-political-fight-emerges/", kind: "news" },
   pitHic: { id: "pitHic", title: "2025 Tri-County Point-in-Time Count Report", org: "PSU Homelessness Research & Action Collaborative", url: "https://hsd.multco.us/wp-content/uploads/2025/11/2025-Tri-County-PITC-Report-11.04.25.pdf", kind: "research" },
   hudPopSub2025: { id: "hudPopSub2025", title: "2025 Point-in-Time Count, Portland, Gresham/Multnomah County CoC (OR-501): Homeless Populations and Subpopulations", org: "U.S. Department of Housing and Urban Development", url: "https://files.hudexchange.info/reports/published/CoC_PopSub_CoC_OR-501-2025_OR_2025.pdf", kind: "primary" },
+  hracStatewide2025: { id: "hracStatewide2025", title: "2025 Oregon Statewide Homelessness Estimates", org: "PSU Homelessness Research & Action Collaborative", url: "https://pdxscholar.library.pdx.edu/hrac_pub/53/", kind: "research" },
   hudHic2025: { id: "hudHic2025", title: "2025 Housing Inventory Count, Portland, Gresham/Multnomah County CoC (OR-501)", org: "U.S. Department of Housing and Urban Development", url: "https://files.hudexchange.info/reports/published/CoC_HIC_CoC_OR-501-2025_OR_2025.pdf", kind: "primary" },
   byNameMethodChange: { id: "byNameMethodChange", title: "Multnomah County adjusting the way it tracks homelessness (OregonLive, Sept. 25, 2026, via Yahoo News)", org: "OregonLive", url: "https://www.yahoo.com/news/us/articles/multnomah-county-adjusting-way-tracks-160109254.html", kind: "news" },
   pit2023: { id: "pit2023", title: "Chronic homelessness falls across tri-county region (2023 PIT)", org: "Multnomah County", url: "https://multco.us/news/news-release-chronic-homelessness-number-falls-across-tri-county-region-2023-point-time-count", kind: "primary" },
@@ -109,13 +110,13 @@ export const STATS = {
   pitSheltered: 3_614,
   pitUnsheltered: 6_912,
   pitSurveyedUnsheltered: 1_822, // met on the street on count night
-  pitPresumedUnsheltered: 5_090, // added from the county's by-name list, a first for 2025
+  pitPresumedUnsheltered: 5_090, // a Point-in-Time extract of the county's by-name list (UNS-PITC-BNL), people presumed unsheltered that night; a first for 2025 (Tri-County PIT report, pp. 12, 22)
   pitDate: "January 22, 2025",
   pitChange2023to2025Pct: 0.67, // Multnomah only: 6,297 (2023) to 10,526 (2025)
   chronicSharePct: 0.49, // HUD 2025 PIT for OR-501: 5,158 of 10,526 (2023 was 2,610 of 6,297, 41%)
   chronic2025: 5_158,
   chronicUnsheltered2025: 3_735,
-  shelterBeds2025: 4_187, // HUD 2025 HIC: 3,350 emergency + 20 safe haven + 817 transitional
+  shelterBeds2025: 4_187, // HUD 2025 HIC: 3,350 emergency + 20 safe haven + 817 transitional (HRAC's statewide report lists 4,008, from the data as first submitted)
   pshBeds: 6_973,
   rrhBeds: 2_663,
   esBeds: 3_350,

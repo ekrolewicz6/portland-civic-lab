@@ -11,6 +11,7 @@ import {
   BedDouble,
   TrendingUp,
   FileBarChart,
+  Map as MapIcon,
 } from "lucide-react";
 
 export interface DataSource {
@@ -33,6 +34,7 @@ const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   city_shelter_census: BedDouble,
   hrac_prevalence: TrendingUp,
   shs_outcomes: FileBarChart,
+  hrac_statewide: MapIcon,
 };
 
 function MethodologyCard({ source }: { source: DataSource }) {

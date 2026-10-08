@@ -50,3 +50,26 @@ Open:
 - By-name list: the county dashboard was offline as of October 7, 2026 and the series will be restated about 20% lower. Recheck when it returns and update `STATS.byNameTotal`, `MEASURES` and the voter-guide item.
 - Data-transparency text in the database ("approximately 6,000 to 8,800 ... 47%") mixes editions; check against OPB and the county series.
 - Unused components that import `continuum.ts` still carry older wording ("the county list counted"); not shown on any page.
+
+## Status, October 8, 2026
+
+Dr. Cho answered both follow-up questions and sent the *2025 Oregon Statewide Homelessness Estimates* PDF (archived; `research/source-archive/2026-10-08.md`).
+
+What she said:
+- The official figures for Multnomah County remain the January 2025 Point-in-Time count: 10,526 homeless, 6,912 unsheltered. Unsheltered counts are required in odd years only, and the county did not hold one in 2026.
+- The by-name list figures (about 18,000; 8,800 unsheltered) and the Point-in-Time figures should not be set side by side as comparable or used to judge change over time; the gap may come from the methods alone. Writers may choose which figures to use.
+- She described the by-name list's role in the count as deduplication only, which does not match the Tri-County report's 5,090 presumed-unsheltered people (sources.md, conflict 11). Asked in a reply drafted for Edan.
+- HRAC runs Evicted in Oregon, the source of the dashboard's eviction data; Edan's meeting request is with her team.
+
+Done (PR to follow):
+- The County Chair item stays as it is (by-name figures only, named as such); no Point-in-Time figures added beside it. Research-log entry `hrac-2026-10-08`.
+- `ingest/homelessness/hrac-statewide-2025.ts` holds every HRAC table the dashboard uses, for all 36 counties; `verify-hrac-statewide.ts` checks it against the PDF (all match). `seed-statewide-homelessness.ts` now reads it, dry-runs by default, saves the current rows before `--apply` and clears the dashboard cache.
+- Dashboard: statewide beds and coverage come out right once all counties are loaded (12,607; 46%); the student figure uses the deduplicated statewide row (21,122) and adds Multnomah's 2,903; doubled-up adds Multnomah's 3,477 (plus or minus 960); racial disparities keep only HRAC's stated ratios and say why Hispanic and Asian Oregonians have none; HRAC's 4,008 beds sit beside HUD's 4,187; the 34.9% statewide rise carries HRAC's method caveat; "Prevalence Gap" became "Two Different Counts" without the by-name number; the by-name chart notes wider reporting and the coming restatement, and its source link points to HSD instead of the retired JOHS page.
+- Data transparency: the city-county dispute summary no longer gives a 47% rise from a rounded 6,000 (the county's list showed 6,275 in January 2025) or calls its basis "by-name list and PIT count"; a source card for HRAC's statewide estimates; the Point-in-Time card's scope says Multnomah and odd-year unsheltered counts. The seed now holds the live rows, so a reseed cannot undo the October 7 fixes.
+- `measures.ts`: the by-name caveat says the gap is not evidence of growth; the PIT caveat says 2025 stays the latest official figure until January 2027; the inventory card notes HRAC's 4,008.
+
+Needs Edan's approval: merge the PR, then run `seed-statewide-homelessness.ts --apply` and `seed-data-transparency.ts --apply` (both dry-run cleanly: 71 and 7 changes). Order matters: the old dashboard code would add the new statewide student row to the county rows.
+
+Open:
+- The deep dive's headline "+67%" tile (Multnomah PIT, 2023 to 2025) and the hero's "14,361 → ~18,000 in one year" both describe change across a method change. Each is labeled with its measure, but Dr. Cho's caution argues for leading with levels. Edan's call.
+- Reply to Dr. Cho about the 5,090 people and the meeting.
