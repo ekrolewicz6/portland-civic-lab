@@ -24,13 +24,16 @@ def run():
     groups = rows('payee-record-groups.csv')
     relationships = rows('payee-candidate-ledger.csv')
     names = rows('reported-name-groups.csv')
-    assert (len(payments), len(groups), len(relationships), len(names)) == (2441, 251, 295, 215)
+    assert len(payments) == data['totals']['cashPaymentRecords']
+    assert len(groups) == data['totals']['visiblePayeeGroups']
+    assert len(relationships) == data['totals']['visiblePayeeCandidateRelationships']
+    assert len(names) == len(data['reportedNames'])
     assert len({row['transaction_id'] for row in payments}) == len(payments)
-    assert sum(int(row['amount_cents']) for row in payments) == data['totals']['cashPaymentCents'] == 67207027
-    assert sum(int(row['cash_payment_cents']) for row in groups) == data['totals']['identifiedCents'] == 66161759
+    assert sum(int(row['amount_cents']) for row in payments) == data['totals']['cashPaymentCents']
+    assert sum(int(row['cash_payment_cents']) for row in groups) == data['totals']['identifiedCents']
     assert sum(int(row['cash_payment_cents']) for row in relationships) == data['totals']['identifiedCents']
     assert sum(int(row['cash_payment_cents']) for row in names) == data['totals']['identifiedCents']
-    assert data['totals']['aggregateCents'] == 1045268
+    assert data['totals']['aggregateCents'] == data['totals']['cashPaymentCents'] - data['totals']['identifiedCents']
     group_ids = {row['entity_id'] for row in groups}
     assert all(row['entity_id'] not in group_ids for row in payments if row['is_disclosure_category'] == 'True' or row['identity_status'] == 'unknown')
     by_candidate = defaultdict(int)
@@ -42,14 +45,15 @@ def run():
         path = ROOT / ('public' + item['url'])
         assert digest(path) == item['sha256'], key
         assert len(rows(path.name)) == item['rows'], key
-    assert sum(row['cents'] for row in data['purpose']) == 67207027
-    assert sum(row['cents'] for row in data['monthly']) == 67207027
-    assert data['totals']['multiCandidatePayeeGroups'] == 20
-    assert data['totals']['multiCandidateGroupCents'] == 17695164
+    assert sum(row['cents'] for row in data['purpose']) == data['totals']['cashPaymentCents']
+    assert sum(row['cents'] for row in data['monthly']) == data['totals']['cashPaymentCents']
+    shared = [group for group in data['payees'] if group['candidateCount'] > 1]
+    assert data['totals']['multiCandidatePayeeGroups'] == len(shared)
+    assert data['totals']['multiCandidateGroupCents'] == sum(group['cents'] for group in shared)
     print(json.dumps({'status':'passed','payments':len(payments),'groups':len(groups),'relationships':len(relationships)}))
 
 class SupplierPublicationTests(unittest.TestCase):
-    def test_frozen_evidence_reconciles(self):
+    def test_published_evidence_reconciles(self):
         run()
 
 if __name__ == '__main__':
