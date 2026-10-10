@@ -1698,6 +1698,13 @@ a.fire-long-transition:hover svg {
 .fire-reading-layers {
   margin-top: 1.5rem;
 }
+.fire-reading-source {
+  margin-top: 1rem;
+  max-width: 44rem;
+  color: var(--f-ink-2);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
 
 /* ---------- 08 The decisions ---------- */
 .fire-community-visual {

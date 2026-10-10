@@ -34,3 +34,7 @@ The central distinction for the public guide is between **a treatment record, a 
 5. Inspect one specific public RMA dashboard case only if it answers the guide's decision question and its model/inputs can be explained.
 
 This review creates no public counts, verified monitoring result, site-selection claim, or substantive statement attributed to the October 9 conversation. Those require data checks and, where appropriate, scientific review.
+
+## Implementation check, October 10
+
+The first website decision is implemented on the guide branch: the “After the fire” visual and deeper article now distinguish perimeter, mapped burned area, severity, and later observations, and cite USGS WFTT methods. No additional map layer, historical trend statistic, LTDL treatment, OWRI project, AIM observation, or RMA prediction was published from these links. Focused ESLint, TypeScript checking, and the production Next.js build passed. Publication status should be recorded separately when this branch is released.
