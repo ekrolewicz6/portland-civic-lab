@@ -1,4 +1,4 @@
-export const LESSON_DATE = "2026-10-10";
+export const LESSON_DATE = "2026-09-27";
 export const LESSON_SOURCES = {
   behavior: { title: "OSU Extension · Fire behavior", url: "https://extension.oregonstate.edu/catalog/em-9341-fire-behavior", locator: "What is fire behavior?; fuel, topography and weather" },
   ecology: { title: "OSU Extension · Ecological effects of fire", url: "https://extension.oregonstate.edu/catalog/em-9340-ecological-effects-fire", locator: "Fire regimes and ecosystem-specific effects" },

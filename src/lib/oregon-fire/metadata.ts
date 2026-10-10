@@ -14,7 +14,7 @@ export const fireStructuredData = {
   name: FIRE_TITLE,
   headline: "Fire in Oregon: How fire works, what we can change, and what the choices cost",
   datePublished: "2026-09-11",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-10",
   description: FIRE_DESCRIPTION,
   inLanguage: "en-US",
   isAccessibleForFree: true,
