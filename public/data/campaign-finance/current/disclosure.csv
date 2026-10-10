@@ -1,0 +1,11 @@
+family,basis,records,amount_cents
+Contribution,cash_contribution,31971,1228260430
+Contribution,forgiven_obligation,71,273776
+Contribution,noncash_support,895,6108535
+Expenditure,cash_payment,19895,52849045
+Expenditure,obligation,2312,10218007
+Other,cash_adjustment,168,1022721
+Other,obligation_adjustment,24,-398549
+Other Disbursement,contribution_refund,187,1353070
+Other Receipt,cash_reversal,24,154446
+Other Receipt,other_cash_receipt,2606,106805857

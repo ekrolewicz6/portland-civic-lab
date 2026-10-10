@@ -1,88 +1,89 @@
 {
   "version": "portland-suppliers-v1",
-  "snapshot": "orestar-20250101-20260927-v1",
+  "snapshot": "orestar-20250101-20261010-7737e46dfe34",
   "start": "2025-01-01",
-  "end": "2026-09-27",
-  "sourceTransactionsSha256": "4a26473ead2b78341379a3ad411aa91c92b75df6a2136e2d04b4150bf6142bff",
-  "reportDataSha256": "90779a88989a64ae2cceeab948b424efe08ebe35051636bd6900323cf001e8d4",
+  "end": "2026-10-10",
+  "sourceTransactionsSha256": "26d572552be5e34926841b2aa37b0637652cb7fe564dc772b726120bf0434a62",
+  "reportDataSha256": "3468960dc538dd76df9e56d495c1ae54e843dbf3bdd6d48631190027ced53fc4",
   "totals": {
-    "cashPaymentCents": 67207027,
-    "cashPaymentRecords": 2441,
-    "identifiedCents": 66161759,
-    "aggregateCents": 1045268,
-    "visiblePayeeGroups": 251,
-    "visiblePayeeCandidateRelationships": 295,
-    "multiCandidatePayeeGroups": 20,
-    "multiCandidateGroupCents": 17695164
+    "cashRaisedCents": 235012553,
+    "cashPaymentCents": 110358092,
+    "cashPaymentRecords": 2610,
+    "identifiedCents": 109266254,
+    "aggregateCents": 1091838,
+    "visiblePayeeGroups": 283,
+    "visiblePayeeCandidateRelationships": 331,
+    "multiCandidatePayeeGroups": 24,
+    "multiCandidateGroupCents": 28530297
   },
   "candidates": [
     {
       "committeeId": "23208",
       "candidate": "Tiffany Koyama Lane",
       "district": 3,
-      "cents": 14690849,
-      "records": 669,
-      "identifiedCents": 14369696,
+      "cents": 23493064,
+      "records": 688,
+      "identifiedCents": 23171911,
       "aggregateCents": 321153,
-      "visiblePayeeGroups": 45
+      "visiblePayeeGroups": 48
     },
     {
       "committeeId": "23028",
       "candidate": "Angelita Morillo",
       "district": 3,
-      "cents": 9258131,
-      "records": 355,
-      "identifiedCents": 9184073,
-      "aggregateCents": 74058,
-      "visiblePayeeGroups": 36
+      "cents": 11452093,
+      "records": 376,
+      "identifiedCents": 11368535,
+      "aggregateCents": 83558,
+      "visiblePayeeGroups": 38
     },
     {
       "committeeId": "24897",
       "candidate": "Kellie Torres",
       "district": 3,
-      "cents": 3430402,
-      "records": 79,
-      "identifiedCents": 3362670,
-      "aggregateCents": 67732,
-      "visiblePayeeGroups": 20
+      "cents": 8933676,
+      "records": 94,
+      "identifiedCents": 8863107,
+      "aggregateCents": 70569,
+      "visiblePayeeGroups": 26
     },
     {
       "committeeId": "15109",
       "candidate": "Steve Novick",
       "district": 3,
-      "cents": 2928507,
-      "records": 56,
-      "identifiedCents": 2918947,
+      "cents": 7859895,
+      "records": 65,
+      "identifiedCents": 7850335,
       "aggregateCents": 9560,
-      "visiblePayeeGroups": 11
-    },
-    {
-      "committeeId": "24973",
-      "candidate": "Esther León",
-      "district": 3,
-      "cents": 1342629,
-      "records": 56,
-      "identifiedCents": 1285876,
-      "aggregateCents": 56753,
-      "visiblePayeeGroups": 16
+      "visiblePayeeGroups": 13
     },
     {
       "committeeId": "24661",
       "candidate": "Tom Sollitt",
       "district": 3,
-      "cents": 920853,
-      "records": 52,
-      "identifiedCents": 855547,
-      "aggregateCents": 65306,
-      "visiblePayeeGroups": 11
+      "cents": 1515926,
+      "records": 65,
+      "identifiedCents": 1450533,
+      "aggregateCents": 65393,
+      "visiblePayeeGroups": 20
+    },
+    {
+      "committeeId": "24973",
+      "candidate": "Esther León",
+      "district": 3,
+      "cents": 1360129,
+      "records": 57,
+      "identifiedCents": 1285876,
+      "aggregateCents": 74253,
+      "visiblePayeeGroups": 16
     },
     {
       "committeeId": "24972",
       "candidate": "Joel Corcoran",
       "district": 3,
-      "cents": 237579,
-      "records": 25,
-      "identifiedCents": 222016,
+      "cents": 248139,
+      "records": 26,
+      "identifiedCents": 232576,
       "aggregateCents": 15563,
       "visiblePayeeGroups": 6
     },
@@ -90,11 +91,11 @@
       "committeeId": "24966",
       "candidate": "Matthias Hallett",
       "district": 3,
-      "cents": 227464,
-      "records": 49,
-      "identifiedCents": 180064,
+      "cents": 229964,
+      "records": 50,
+      "identifiedCents": 182564,
       "aggregateCents": 47400,
-      "visiblePayeeGroups": 7
+      "visiblePayeeGroups": 8
     },
     {
       "committeeId": "24979",
@@ -107,74 +108,74 @@
       "visiblePayeeGroups": 0
     },
     {
+      "committeeId": "23295",
+      "candidate": "Eli Arnold",
+      "district": 4,
+      "cents": 19340132,
+      "records": 133,
+      "identifiedCents": 19266460,
+      "aggregateCents": 73672,
+      "visiblePayeeGroups": 31
+    },
+    {
       "committeeId": "23365",
       "candidate": "Mitch Green",
       "district": 4,
-      "cents": 13464966,
-      "records": 438,
-      "identifiedCents": 13358126,
+      "cents": 16547028,
+      "records": 450,
+      "identifiedCents": 16440188,
       "aggregateCents": 106840,
-      "visiblePayeeGroups": 42
+      "visiblePayeeGroups": 43
     },
     {
       "committeeId": "23411",
       "candidate": "Jeremy Beausoleil Smith",
       "district": 4,
-      "cents": 6405823,
-      "records": 249,
-      "identifiedCents": 6347266,
-      "aggregateCents": 58557,
-      "visiblePayeeGroups": 25
-    },
-    {
-      "committeeId": "23295",
-      "candidate": "Eli Arnold",
-      "district": 4,
-      "cents": 5567273,
-      "records": 108,
-      "identifiedCents": 5503601,
-      "aggregateCents": 63672,
-      "visiblePayeeGroups": 26
-    },
-    {
-      "committeeId": "23199",
-      "candidate": "Olivia Clark",
-      "district": 4,
-      "cents": 2669123,
-      "records": 59,
-      "identifiedCents": 2644833,
-      "aggregateCents": 24290,
-      "visiblePayeeGroups": 7
-    },
-    {
-      "committeeId": "25040",
-      "candidate": "Jamey Evenstar",
-      "district": 4,
-      "cents": 2204700,
-      "records": 136,
-      "identifiedCents": 2154367,
-      "aggregateCents": 50333,
-      "visiblePayeeGroups": 18
+      "cents": 7522138,
+      "records": 271,
+      "identifiedCents": 7457485,
+      "aggregateCents": 64653,
+      "visiblePayeeGroups": 29
     },
     {
       "committeeId": "25103",
       "candidate": "Jayne Cronlund",
       "district": 4,
-      "cents": 2036874,
-      "records": 43,
-      "identifiedCents": 1987470,
-      "aggregateCents": 49404,
+      "cents": 3601509,
+      "records": 53,
+      "identifiedCents": 3551555,
+      "aggregateCents": 49954,
       "visiblePayeeGroups": 16
+    },
+    {
+      "committeeId": "23199",
+      "candidate": "Olivia Clark",
+      "district": 4,
+      "cents": 3576997,
+      "records": 65,
+      "identifiedCents": 3552707,
+      "aggregateCents": 24290,
+      "visiblePayeeGroups": 9
+    },
+    {
+      "committeeId": "25040",
+      "candidate": "Jamey Evenstar",
+      "district": 4,
+      "cents": 2321275,
+      "records": 145,
+      "identifiedCents": 2270942,
+      "aggregateCents": 50333,
+      "visiblePayeeGroups": 18
     },
     {
       "committeeId": "17629",
       "candidate": "Eric Zimmerman",
       "district": 4,
-      "cents": 1781845,
-      "records": 53,
-      "identifiedCents": 1754118,
+      "cents": 2316118,
+      "records": 58,
+      "identifiedCents": 2288391,
       "aggregateCents": 27727,
-      "visiblePayeeGroups": 8
+      "visiblePayeeGroups": 9
     },
     {
       "committeeId": "24615",
@@ -189,69 +190,69 @@
   ],
   "purpose": [
     {
+      "name": "Multiple reported codes",
+      "cents": 28180205,
+      "records": 32
+    },
+    {
       "name": "General operations",
-      "cents": 20200036,
-      "records": 438
+      "cents": 24045228,
+      "records": 486
     },
     {
       "name": "Management services",
-      "cents": 15546910,
-      "records": 106
-    },
-    {
-      "name": "Wages, salaries, benefits",
-      "cents": 8019408,
-      "records": 34
-    },
-    {
-      "name": "Multiple reported codes",
-      "cents": 5619845,
-      "records": 19
-    },
-    {
-      "name": "Unspecified code",
-      "cents": 4976510,
-      "records": 723
-    },
-    {
-      "name": "Advertising production",
-      "cents": 3311863,
-      "records": 19
-    },
-    {
-      "name": "Other advertising / signs",
-      "cents": 2433553,
-      "records": 26
-    },
-    {
-      "name": "Fundraising event code",
-      "cents": 2051101,
-      "records": 947
-    },
-    {
-      "name": "Literature and printing",
-      "cents": 1453891,
-      "records": 24
-    },
-    {
-      "name": "Personal-expense reimbursement",
-      "cents": 1403487,
-      "records": 34
+      "cents": 17566768,
+      "records": 114
     },
     {
       "name": "Online advertising",
-      "cents": 1336257,
-      "records": 19
+      "cents": 9615180,
+      "records": 32
+    },
+    {
+      "name": "Wages, salaries, benefits",
+      "cents": 8948079,
+      "records": 37
+    },
+    {
+      "name": "Unspecified code",
+      "cents": 5033640,
+      "records": 733
+    },
+    {
+      "name": "Advertising production",
+      "cents": 4424863,
+      "records": 21
+    },
+    {
+      "name": "Literature and printing",
+      "cents": 4013652,
+      "records": 29
+    },
+    {
+      "name": "Other advertising / signs",
+      "cents": 2677158,
+      "records": 30
+    },
+    {
+      "name": "Fundraising event code",
+      "cents": 2131204,
+      "records": 993
     },
     {
       "name": "Print-media advertising",
-      "cents": 693200,
-      "records": 7
+      "cents": 2118400,
+      "records": 18
+    },
+    {
+      "name": "Personal-expense reimbursement",
+      "cents": 1440230,
+      "records": 39
     },
     {
       "name": "Travel",
-      "cents": 109074,
-      "records": 39
+      "cents": 111593,
+      "records": 40
     },
     {
       "name": "Utilities",
@@ -367,11 +368,104 @@
     },
     {
       "month": "2026-09",
-      "cents": 12928801,
-      "records": 250
+      "cents": 25349295,
+      "records": 307
+    },
+    {
+      "month": "2026-10",
+      "cents": 30730571,
+      "records": 112
     }
   ],
   "payees": [
+    {
+      "entityId": "record:253c1b85cc69027448e153c7",
+      "reportedName": "Mission Control, Inc",
+      "nameVariants": [
+        "Mission Control, Inc"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 9617290,
+      "records": 3,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 9617290,
+          "records": 3
+        }
+      ],
+      "purposeCodes": [
+        "Literature, Brochures, Printing; Postage",
+        "Literature, Brochures, Printing; Preparation and Production of Advertising; Postage"
+      ],
+      "firstDate": "2026-09-29",
+      "lastDate": "2026-10-09"
+    },
+    {
+      "entityId": "record:7b0cdaf4056d04ec4eb46481",
+      "reportedName": "Ethos Campaigns LLC",
+      "nameVariants": [
+        "Ethos Campaigns LLC"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 7430600,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
+          "district": 3,
+          "cents": 7430600,
+          "records": 2
+        }
+      ],
+      "purposeCodes": [
+        "Literature, Brochures, Printing",
+        "Online and Social Media Advertising; Preparation and Production of Advertising"
+      ],
+      "firstDate": "2026-09-28",
+      "lastDate": "2026-10-06"
+    },
+    {
+      "entityId": "record:fc607cf5114dcb8df861be42",
+      "reportedName": "Untidy Origins LLC",
+      "nameVariants": [
+        "Untidy Origins LLC"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 7402500,
+      "records": 2,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 4402500,
+          "records": 1
+        },
+        {
+          "committeeId": "23365",
+          "name": "Mitch Green",
+          "district": 4,
+          "cents": 3000000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "Online and Social Media Advertising",
+        "Online and Social Media Advertising; Management Services; Broadcast Advertising (radio, tv); Preparation and Production of Advertising"
+      ],
+      "firstDate": "2026-10-01",
+      "lastDate": "2026-10-06"
+    },
     {
       "entityId": "record:1bb2be352bf803425cd21309",
       "reportedName": "C&E Systems",
@@ -380,23 +474,30 @@
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Business Entity",
-      "cents": 4214566,
-      "records": 68,
+      "cents": 5491924,
+      "records": 73,
       "candidateCount": 8,
       "candidates": [
         {
           "committeeId": "23295",
           "name": "Eli Arnold",
           "district": 4,
-          "cents": 1177067,
-          "records": 10
+          "cents": 1534141,
+          "records": 11
         },
         {
           "committeeId": "23199",
           "name": "Olivia Clark",
           "district": 4,
-          "cents": 1022912,
-          "records": 16
+          "cents": 1262786,
+          "records": 17
+        },
+        {
+          "committeeId": "17629",
+          "name": "Eric Zimmerman",
+          "district": 4,
+          "cents": 911834,
+          "records": 15
         },
         {
           "committeeId": "15109",
@@ -406,25 +507,18 @@
           "records": 14
         },
         {
-          "committeeId": "17629",
-          "name": "Eric Zimmerman",
-          "district": 4,
-          "cents": 612016,
-          "records": 14
-        },
-        {
           "committeeId": "25103",
           "name": "Jayne Cronlund",
           "district": 4,
-          "cents": 258877,
-          "records": 2
+          "cents": 479407,
+          "records": 3
         },
         {
           "committeeId": "24661",
           "name": "Tom Sollitt",
           "district": 3,
-          "cents": 210089,
-          "records": 3
+          "cents": 370151,
+          "records": 4
         },
         {
           "committeeId": "23365",
@@ -445,7 +539,33 @@
         "Management Services"
       ],
       "firstDate": "2025-01-14",
-      "lastDate": "2026-09-10"
+      "lastDate": "2026-10-07"
+    },
+    {
+      "entityId": "record:92a25fcbe3facb2f745ca98a",
+      "reportedName": "Springwater Partners",
+      "nameVariants": [
+        "Springwater Partners"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 5000000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 5000000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "Online and Social Media Advertising"
+      ],
+      "firstDate": "2026-10-07",
+      "lastDate": "2026-10-07"
     },
     {
       "entityId": "record:3c37d978f79677f4a6c49cde",
@@ -455,16 +575,16 @@
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Business Entity",
-      "cents": 4159645,
-      "records": 28,
+      "cents": 4451145,
+      "records": 30,
       "candidateCount": 4,
       "candidates": [
         {
           "committeeId": "23208",
           "name": "Tiffany Koyama Lane",
           "district": 3,
-          "cents": 1855210,
-          "records": 12
+          "cents": 2036710,
+          "records": 13
         },
         {
           "committeeId": "23365",
@@ -484,15 +604,15 @@
           "committeeId": "25040",
           "name": "Jamey Evenstar",
           "district": 4,
-          "cents": 366170,
-          "records": 3
+          "cents": 476170,
+          "records": 4
         }
       ],
       "purposeCodes": [
         "General Operational Expenses (need description)"
       ],
       "firstDate": "2025-10-06",
-      "lastDate": "2026-09-15"
+      "lastDate": "2026-10-05"
     },
     {
       "entityId": "record:adc2c298758fb308c2c28529",
@@ -551,6 +671,73 @@
       "lastDate": "2026-06-29"
     },
     {
+      "entityId": "record:cbd6dc09b4ef4075e87bd5ba",
+      "reportedName": "Gal Pal Productions",
+      "nameVariants": [
+        "Gal Pal Productions"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 3123800,
+      "records": 9,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 3103850,
+          "records": 8
+        },
+        {
+          "committeeId": "23365",
+          "name": "Mitch Green",
+          "district": 4,
+          "cents": 19950,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Literature, Brochures, Printing",
+        "Online and Social Media Advertising",
+        "Preparation and Production of Advertising",
+        "Reimbursement for Personal Expenditures"
+      ],
+      "firstDate": "2026-06-30",
+      "lastDate": "2026-10-05"
+    },
+    {
+      "entityId": "record:e1b7c42aeb117555130c720b",
+      "reportedName": "Team Mars Consulting",
+      "nameVariants": [
+        "Team Mars Consulting"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 2907132,
+      "records": 12,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 2907132,
+          "records": 12
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description); Travel Expenses (need description)",
+        "Management Services",
+        "Management Services; Travel Expenses (need description)",
+        "Reimbursement for Personal Expenditures",
+        "Travel Expenses (need description)"
+      ],
+      "firstDate": "2026-05-15",
+      "lastDate": "2026-10-05"
+    },
+    {
       "entityId": "record:0bd926a9c85d9f851966e0b7",
       "reportedName": "Leslie McCollom Fontaine",
       "nameVariants": [
@@ -580,100 +767,6 @@
       "lastDate": "2026-09-17"
     },
     {
-      "entityId": "record:e1b7c42aeb117555130c720b",
-      "reportedName": "Team Mars Consulting",
-      "nameVariants": [
-        "Team Mars Consulting"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 2331664,
-      "records": 9,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23028",
-          "name": "Angelita Morillo",
-          "district": 3,
-          "cents": 2331664,
-          "records": 9
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description); Travel Expenses (need description)",
-        "Management Services",
-        "Management Services; Travel Expenses (need description)",
-        "Reimbursement for Personal Expenditures",
-        "Travel Expenses (need description)"
-      ],
-      "firstDate": "2026-05-15",
-      "lastDate": "2026-09-11"
-    },
-    {
-      "entityId": "record:864917c852326fa655433ea9",
-      "reportedName": "Gusto",
-      "nameVariants": [
-        "Gusto"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 2281674,
-      "records": 17,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23208",
-          "name": "Tiffany Koyama Lane",
-          "district": 3,
-          "cents": 2281674,
-          "records": 17
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)",
-        "Wages, Salaries, Benefits"
-      ],
-      "firstDate": "2026-01-30",
-      "lastDate": "2026-09-03"
-    },
-    {
-      "entityId": "record:cbd6dc09b4ef4075e87bd5ba",
-      "reportedName": "Gal Pal Productions",
-      "nameVariants": [
-        "Gal Pal Productions"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 2238800,
-      "records": 8,
-      "candidateCount": 2,
-      "candidates": [
-        {
-          "committeeId": "23028",
-          "name": "Angelita Morillo",
-          "district": 3,
-          "cents": 2218850,
-          "records": 7
-        },
-        {
-          "committeeId": "23365",
-          "name": "Mitch Green",
-          "district": 4,
-          "cents": 19950,
-          "records": 1
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)",
-        "Literature, Brochures, Printing",
-        "Online and Social Media Advertising",
-        "Preparation and Production of Advertising",
-        "Reimbursement for Personal Expenditures"
-      ],
-      "firstDate": "2026-06-30",
-      "lastDate": "2026-09-11"
-    },
-    {
       "entityId": "record:047f6397562ce37a9ae50245",
       "reportedName": "Hollywood Impress Printing",
       "nameVariants": [
@@ -681,8 +774,8 @@
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Business Entity",
-      "cents": 2212100,
-      "records": 14,
+      "cents": 2426850,
+      "records": 16,
       "candidateCount": 4,
       "candidates": [
         {
@@ -710,8 +803,8 @@
           "committeeId": "23411",
           "name": "Jeremy Beausoleil Smith",
           "district": 4,
-          "cents": 126200,
-          "records": 2
+          "cents": 340950,
+          "records": 4
         }
       ],
       "purposeCodes": [
@@ -721,7 +814,34 @@
         "Other Advertising (yard signs, buttons, etc.)"
       ],
       "firstDate": "2026-07-09",
-      "lastDate": "2026-09-17"
+      "lastDate": "2026-09-27"
+    },
+    {
+      "entityId": "record:864917c852326fa655433ea9",
+      "reportedName": "Gusto",
+      "nameVariants": [
+        "Gusto"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 2281674,
+      "records": 17,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
+          "district": 3,
+          "cents": 2281674,
+          "records": 17
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Wages, Salaries, Benefits"
+      ],
+      "firstDate": "2026-01-30",
+      "lastDate": "2026-09-03"
     },
     {
       "entityId": "record:6ff55e9d23eac3f7ff03a674",
@@ -784,23 +904,162 @@
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Individual",
-      "cents": 1453245,
-      "records": 3,
+      "cents": 1744206,
+      "records": 4,
       "candidateCount": 1,
       "candidates": [
         {
           "committeeId": "23208",
           "name": "Tiffany Koyama Lane",
           "district": 3,
-          "cents": 1453245,
-          "records": 3
+          "cents": 1744206,
+          "records": 4
         }
       ],
       "purposeCodes": [
         "Wages, Salaries, Benefits"
       ],
       "firstDate": "2026-06-29",
-      "lastDate": "2026-08-31"
+      "lastDate": "2026-09-30"
+    },
+    {
+      "entityId": "record:074a4e0c468653262a4981d4",
+      "reportedName": "Portland Clean Air Fund",
+      "nameVariants": [
+        "Portland Clean Air Fund"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Other",
+      "cents": 1700000,
+      "records": 3,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 1700000,
+          "records": 3
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-07-15",
+      "lastDate": "2026-10-05"
+    },
+    {
+      "entityId": "record:bb5ba72e54089a637811a07a",
+      "reportedName": "Purple State Strategies, Inc.",
+      "nameVariants": [
+        "Purple State Strategies, Inc."
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 1634436,
+      "records": 7,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 1634436,
+          "records": 7
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Management Services",
+        "Online and Social Media Advertising; Management Services",
+        "Reimbursement for Personal Expenditures"
+      ],
+      "firstDate": "2026-04-01",
+      "lastDate": "2026-10-06"
+    },
+    {
+      "entityId": "record:55d42979fb2f0e3449f4e416",
+      "reportedName": "Sprout Chinn",
+      "nameVariants": [
+        "Sprout Chinn"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 1600683,
+      "records": 6,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 1600683,
+          "records": 6
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "General Operational Expenses (need description); Travel Expenses (need description)",
+        "Reimbursement for Personal Expenditures",
+        "Travel Expenses (need description); General Operational Expenses (need description)",
+        "Travel Expenses (need description); Wages, Salaries, Benefits"
+      ],
+      "firstDate": "2026-06-30",
+      "lastDate": "2026-10-06"
+    },
+    {
+      "entityId": "record:b850f89e8c61d8c467d0ff15",
+      "reportedName": "Deer Island Studio, Design & Media",
+      "nameVariants": [
+        "Deer Island Studio, Design & Media"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 1530263,
+      "records": 6,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "25103",
+          "name": "Jayne Cronlund",
+          "district": 4,
+          "cents": 1530263,
+          "records": 6
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Literature, Brochures, Printing; Postage",
+        "Preparation and Production of Advertising; General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-03",
+      "lastDate": "2026-10-05"
+    },
+    {
+      "entityId": "record:1d11cd44a94fc6e45a1d7655",
+      "reportedName": "Rebecca Stavenjord",
+      "nameVariants": [
+        "Rebecca Stavenjord"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 1500000,
+      "records": 3,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23199",
+          "name": "Olivia Clark",
+          "district": 4,
+          "cents": 1500000,
+          "records": 3
+        }
+      ],
+      "purposeCodes": [
+        "Management Services"
+      ],
+      "firstDate": "2026-07-27",
+      "lastDate": "2026-09-30"
     },
     {
       "entityId": "record:1c14a5741680e078dbe8cf51",
@@ -810,16 +1069,16 @@
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Business Entity",
-      "cents": 1195800,
-      "records": 5,
+      "cents": 1248600,
+      "records": 6,
       "candidateCount": 3,
       "candidates": [
         {
           "committeeId": "24897",
           "name": "Kellie Torres",
           "district": 3,
-          "cents": 616600,
-          "records": 2
+          "cents": 669400,
+          "records": 3
         },
         {
           "committeeId": "23208",
@@ -842,65 +1101,61 @@
         "Other Advertising (yard signs, buttons, etc.)"
       ],
       "firstDate": "2026-05-05",
-      "lastDate": "2026-09-18"
+      "lastDate": "2026-10-07"
     },
     {
-      "entityId": "record:bb5ba72e54089a637811a07a",
-      "reportedName": "Purple State Strategies, Inc.",
+      "entityId": "record:428b0fcd0ef60ebaed796da1",
+      "reportedName": "Worldpay- C&E Merchant Services",
       "nameVariants": [
-        "Purple State Strategies, Inc."
+        "Worldpay- C&E Merchant Services"
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Business Entity",
-      "cents": 1195649,
-      "records": 6,
-      "candidateCount": 1,
+      "cents": 1210520,
+      "records": 103,
+      "candidateCount": 5,
       "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 319034,
+          "records": 23
+        },
         {
           "committeeId": "23295",
           "name": "Eli Arnold",
           "district": 4,
-          "cents": 1195649,
-          "records": 6
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)",
-        "Management Services",
-        "Online and Social Media Advertising; Management Services",
-        "Reimbursement for Personal Expenditures"
-      ],
-      "firstDate": "2026-04-01",
-      "lastDate": "2026-09-22"
-    },
-    {
-      "entityId": "record:55d42979fb2f0e3449f4e416",
-      "reportedName": "Sprout Chinn",
-      "nameVariants": [
-        "Sprout Chinn"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Individual",
-      "cents": 1134876,
-      "records": 4,
-      "candidateCount": 1,
-      "candidates": [
+          "cents": 305402,
+          "records": 26
+        },
         {
-          "committeeId": "23028",
-          "name": "Angelita Morillo",
-          "district": 3,
-          "cents": 1134876,
-          "records": 4
+          "committeeId": "17629",
+          "name": "Eric Zimmerman",
+          "district": 4,
+          "cents": 304897,
+          "records": 21
+        },
+        {
+          "committeeId": "23199",
+          "name": "Olivia Clark",
+          "district": 4,
+          "cents": 233221,
+          "records": 28
+        },
+        {
+          "committeeId": "25103",
+          "name": "Jayne Cronlund",
+          "district": 4,
+          "cents": 47966,
+          "records": 5
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description); Travel Expenses (need description)",
-        "Reimbursement for Personal Expenditures",
-        "Travel Expenses (need description); General Operational Expenses (need description)",
-        "Travel Expenses (need description); Wages, Salaries, Benefits"
+        "General Operational Expenses (need description)"
       ],
-      "firstDate": "2026-06-30",
-      "lastDate": "2026-08-26"
+      "firstDate": "2025-09-17",
+      "lastDate": "2026-10-05"
     },
     {
       "entityId": "record:ef71b0070816502a8e905287",
@@ -930,30 +1185,32 @@
       "lastDate": "2026-08-24"
     },
     {
-      "entityId": "record:1d11cd44a94fc6e45a1d7655",
-      "reportedName": "Rebecca Stavenjord",
+      "entityId": "record:4eb9183a11432b63cf0fb71d",
+      "reportedName": "Spencer Mann",
       "nameVariants": [
-        "Rebecca Stavenjord"
+        "Spencer Mann"
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Individual",
-      "cents": 1000000,
-      "records": 2,
+      "cents": 1102784,
+      "records": 5,
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "23199",
-          "name": "Olivia Clark",
-          "district": 4,
-          "cents": 1000000,
-          "records": 2
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
+          "district": 3,
+          "cents": 1102784,
+          "records": 5
         }
       ],
       "purposeCodes": [
-        "Management Services"
+        "Reimbursement for Personal Expenditures",
+        "Travel Expenses (need description)",
+        "Wages, Salaries, Benefits"
       ],
-      "firstDate": "2026-07-27",
-      "lastDate": "2026-09-08"
+      "firstDate": "2026-07-30",
+      "lastDate": "2026-09-29"
     },
     {
       "entityId": "record:786b090b5d95152823f462be",
@@ -963,16 +1220,16 @@
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Individual",
-      "cents": 957569,
-      "records": 2,
+      "cents": 967819,
+      "records": 3,
       "candidateCount": 1,
       "candidates": [
         {
           "committeeId": "15109",
           "name": "Steve Novick",
           "district": 3,
-          "cents": 957569,
-          "records": 2
+          "cents": 967819,
+          "records": 3
         }
       ],
       "purposeCodes": [
@@ -980,61 +1237,35 @@
         "Reimbursement for Personal Expenditures"
       ],
       "firstDate": "2026-09-01",
-      "lastDate": "2026-09-01"
+      "lastDate": "2026-09-28"
     },
     {
-      "entityId": "record:428b0fcd0ef60ebaed796da1",
-      "reportedName": "Worldpay- C&E Merchant Services",
+      "entityId": "record:1881f8fe4169bab7e8fce1cf",
+      "reportedName": "Lindsey Montague",
       "nameVariants": [
-        "Worldpay- C&E Merchant Services"
+        "Lindsey Montague"
       ],
       "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 929815,
-      "records": 94,
-      "candidateCount": 5,
+      "bookType": "Individual",
+      "cents": 941000,
+      "records": 7,
+      "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "15109",
-          "name": "Steve Novick",
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
           "district": 3,
-          "cents": 268246,
-          "records": 21
-        },
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 231482,
-          "records": 24
-        },
-        {
-          "committeeId": "17629",
-          "name": "Eric Zimmerman",
-          "district": 4,
-          "cents": 208942,
-          "records": 19
-        },
-        {
-          "committeeId": "23199",
-          "name": "Olivia Clark",
-          "district": 4,
-          "cents": 173721,
-          "records": 26
-        },
-        {
-          "committeeId": "25103",
-          "name": "Jayne Cronlund",
-          "district": 4,
-          "cents": 47424,
-          "records": 4
+          "cents": 941000,
+          "records": 7
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description)"
+        "General Operational Expenses (need description)",
+        "Management Services",
+        "Preparation and Production of Advertising"
       ],
-      "firstDate": "2025-09-17",
-      "lastDate": "2026-09-17"
+      "firstDate": "2026-03-27",
+      "lastDate": "2026-10-05"
     },
     {
       "entityId": "record:bc27ed0a95732a264f35f6ca",
@@ -1068,106 +1299,159 @@
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Business Entity",
-      "cents": 794828,
-      "records": 921,
+      "cents": 874931,
+      "records": 967,
       "candidateCount": 5,
       "candidates": [
         {
           "committeeId": "23365",
           "name": "Mitch Green",
           "district": 4,
-          "cents": 269278,
-          "records": 273
+          "cents": 293172,
+          "records": 282
         },
         {
           "committeeId": "23208",
           "name": "Tiffany Koyama Lane",
           "district": 3,
-          "cents": 265996,
-          "records": 307
+          "cents": 281123,
+          "records": 316
         },
         {
           "committeeId": "23028",
           "name": "Angelita Morillo",
           "district": 3,
-          "cents": 143880,
-          "records": 139
+          "cents": 169567,
+          "records": 149
         },
         {
           "committeeId": "25040",
           "name": "Jamey Evenstar",
           "district": 4,
-          "cents": 71433,
-          "records": 94
+          "cents": 78008,
+          "records": 102
         },
         {
           "committeeId": "23411",
           "name": "Jeremy Beausoleil Smith",
           "district": 4,
-          "cents": 44241,
-          "records": 108
+          "cents": 53061,
+          "records": 118
         }
       ],
       "purposeCodes": [
         "Fundraising Event Expenses"
       ],
       "firstDate": "2025-08-20",
-      "lastDate": "2026-09-22"
+      "lastDate": "2026-10-08"
     },
     {
-      "entityId": "record:4eb9183a11432b63cf0fb71d",
-      "reportedName": "Spencer Mann",
+      "entityId": "record:d01eb013a9e2d301cd319f4f",
+      "reportedName": "CMG Oregon Newpapers",
       "nameVariants": [
-        "Spencer Mann"
+        "CMG Oregon Newpapers"
       ],
       "identityStatus": "provisional_record_group",
-      "bookType": "Individual",
-      "cents": 744623,
-      "records": 4,
+      "bookType": "Business Entity",
+      "cents": 807500,
+      "records": 2,
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "23208",
-          "name": "Tiffany Koyama Lane",
-          "district": 3,
-          "cents": 744623,
-          "records": 4
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 807500,
+          "records": 2
         }
       ],
       "purposeCodes": [
-        "Reimbursement for Personal Expenditures",
-        "Travel Expenses (need description)",
-        "Wages, Salaries, Benefits"
+        "Newspaper and Other Periodical Advertising",
+        "Online and Social Media Advertising; Newspaper and Other Periodical Advertising"
       ],
-      "firstDate": "2026-07-30",
-      "lastDate": "2026-08-31"
+      "firstDate": "2026-09-18",
+      "lastDate": "2026-09-28"
     },
     {
-      "entityId": "record:1881f8fe4169bab7e8fce1cf",
-      "reportedName": "Lindsey Montague",
+      "entityId": "record:18d577d4e47fed50eff3ccf3",
+      "reportedName": "Morel Ink",
       "nameVariants": [
-        "Lindsey Montague"
+        "Morel Ink"
       ],
       "identityStatus": "provisional_record_group",
-      "bookType": "Individual",
-      "cents": 713000,
+      "bookType": "Business Entity",
+      "cents": 766301,
       "records": 6,
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "23208",
-          "name": "Tiffany Koyama Lane",
-          "district": 3,
-          "cents": 713000,
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 766301,
           "records": 6
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description)",
-        "Management Services"
+        "Literature, Brochures, Printing",
+        "Other Advertising (yard signs, buttons, etc.)"
       ],
-      "firstDate": "2026-03-27",
-      "lastDate": "2026-08-24"
+      "firstDate": "2026-01-13",
+      "lastDate": "2026-10-09"
+    },
+    {
+      "entityId": "record:523975686b52371f16c39e9c",
+      "reportedName": "Hannah Corbin",
+      "nameVariants": [
+        "Hannah Corbin"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 643050,
+      "records": 4,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 643050,
+          "records": 4
+        }
+      ],
+      "purposeCodes": [
+        "Management Services",
+        "Management Services; General Operational Expenses (need description)",
+        "Reimbursement for Personal Expenditures"
+      ],
+      "firstDate": "2026-09-04",
+      "lastDate": "2026-10-06"
+    },
+    {
+      "entityId": "record:a2fa2fc6938271c9e744f5a8",
+      "reportedName": "CLR Publishing/Northwest Examiner",
+      "nameVariants": [
+        "CLR Publishing/Northwest Examiner"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 630000,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 630000,
+          "records": 2
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ],
+      "firstDate": "2026-08-31",
+      "lastDate": "2026-10-06"
     },
     {
       "entityId": "record:6713a16ed410f11946c4f32a",
@@ -1195,6 +1479,33 @@
       ],
       "firstDate": "2026-05-15",
       "lastDate": "2026-09-03"
+    },
+    {
+      "entityId": "record:b5e0da70e02731f56601a3d5",
+      "reportedName": "Hallie Frost",
+      "nameVariants": [
+        "Hallie Frost"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 580000,
+      "records": 6,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 580000,
+          "records": 6
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Preparation and Production of Advertising"
+      ],
+      "firstDate": "2025-12-30",
+      "lastDate": "2026-09-29"
     },
     {
       "entityId": "record:7e730c330a08ae1587dd5c98",
@@ -1230,33 +1541,6 @@
       "lastDate": "2026-08-19"
     },
     {
-      "entityId": "record:18d577d4e47fed50eff3ccf3",
-      "reportedName": "Morel Ink",
-      "nameVariants": [
-        "Morel Ink"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 518840,
-      "records": 5,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 518840,
-          "records": 5
-        }
-      ],
-      "purposeCodes": [
-        "Literature, Brochures, Printing",
-        "Other Advertising (yard signs, buttons, etc.)"
-      ],
-      "firstDate": "2026-01-13",
-      "lastDate": "2026-09-10"
-    },
-    {
       "entityId": "record:95e4131d6b8e66e5900b06b5",
       "reportedName": "Ashley Schofield",
       "nameVariants": [
@@ -1282,32 +1566,6 @@
       ],
       "firstDate": "2026-09-04",
       "lastDate": "2026-09-08"
-    },
-    {
-      "entityId": "record:074a4e0c468653262a4981d4",
-      "reportedName": "Portland Clean Air Fund",
-      "nameVariants": [
-        "Portland Clean Air Fund"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Other",
-      "cents": 500000,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 500000,
-          "records": 1
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ],
-      "firstDate": "2026-07-15",
-      "lastDate": "2026-07-15"
     },
     {
       "entityId": "record:d15e5d8264f99addf2560997",
@@ -1361,6 +1619,59 @@
       ],
       "firstDate": "2026-02-02",
       "lastDate": "2026-08-05"
+    },
+    {
+      "entityId": "record:b8b088e3f7ca42a6332ab430",
+      "reportedName": "Willamette Week",
+      "nameVariants": [
+        "Willamette Week"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 440000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 440000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ],
+      "firstDate": "2026-10-06",
+      "lastDate": "2026-10-06"
+    },
+    {
+      "entityId": "record:be5f24bf3d190cb4e9daf3db",
+      "reportedName": "Christopher Olson",
+      "nameVariants": [
+        "Christopher Olson"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 437234,
+      "records": 3,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 437234,
+          "records": 3
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Reimbursement for Personal Expenditures"
+      ],
+      "firstDate": "2026-08-31",
+      "lastDate": "2026-09-29"
     },
     {
       "entityId": "record:b5fc4be9a02a1842435b4b34",
@@ -1417,6 +1728,32 @@
       "lastDate": "2026-09-18"
     },
     {
+      "entityId": "record:b6e6b9ecdf5f90f23f2c50ad",
+      "reportedName": "Tiffany Breunig",
+      "nameVariants": [
+        "Tiffany Breunig"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 413000,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 413000,
+          "records": 2
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-01",
+      "lastDate": "2026-10-05"
+    },
+    {
       "entityId": "record:29d9bda096dc871c15b65fcb",
       "reportedName": "Mackenzie Gray",
       "nameVariants": [
@@ -1442,32 +1779,6 @@
       ],
       "firstDate": "2026-05-15",
       "lastDate": "2026-09-11"
-    },
-    {
-      "entityId": "record:b6e6b9ecdf5f90f23f2c50ad",
-      "reportedName": "Tiffany Breunig",
-      "nameVariants": [
-        "Tiffany Breunig"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Individual",
-      "cents": 400000,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 400000,
-          "records": 1
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ],
-      "firstDate": "2026-09-01",
-      "lastDate": "2026-09-01"
     },
     {
       "entityId": "record:834bcd557717bb52d7abbd74",
@@ -1520,33 +1831,6 @@
       "lastDate": "2026-08-19"
     },
     {
-      "entityId": "record:b5e0da70e02731f56601a3d5",
-      "reportedName": "Hallie Frost",
-      "nameVariants": [
-        "Hallie Frost"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Individual",
-      "cents": 355000,
-      "records": 5,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23411",
-          "name": "Jeremy Beausoleil Smith",
-          "district": 4,
-          "cents": 355000,
-          "records": 5
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)",
-        "Preparation and Production of Advertising"
-      ],
-      "firstDate": "2025-12-30",
-      "lastDate": "2026-08-13"
-    },
-    {
       "entityId": "record:5e5036c15c730a5e20efbb21",
       "reportedName": "Milne Inc",
       "nameVariants": [
@@ -1597,33 +1881,6 @@
       ],
       "firstDate": "2026-09-01",
       "lastDate": "2026-09-01"
-    },
-    {
-      "entityId": "record:523975686b52371f16c39e9c",
-      "reportedName": "Hannah Corbin",
-      "nameVariants": [
-        "Hannah Corbin"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Individual",
-      "cents": 340000,
-      "records": 2,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "15109",
-          "name": "Steve Novick",
-          "district": 3,
-          "cents": 340000,
-          "records": 2
-        }
-      ],
-      "purposeCodes": [
-        "Management Services",
-        "Management Services; General Operational Expenses (need description)"
-      ],
-      "firstDate": "2026-09-04",
-      "lastDate": "2026-09-22"
     },
     {
       "entityId": "record:3295a4cc0d6056c745043486",
@@ -1812,6 +2069,32 @@
       "lastDate": "2026-09-18"
     },
     {
+      "entityId": "record:6a83bcd24f064c196919061c",
+      "reportedName": "ZenPayroll Inc (dba Gusto)",
+      "nameVariants": [
+        "ZenPayroll Inc (dba Gusto)"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 279549,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
+          "district": 3,
+          "cents": 279549,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "Wages, Salaries, Benefits"
+      ],
+      "firstDate": "2026-09-30",
+      "lastDate": "2026-09-30"
+    },
+    {
       "entityId": "record:a87bba81b2bfcdffb48b900a",
       "reportedName": "Hunch Theory",
       "nameVariants": [
@@ -1924,15 +2207,15 @@
       "lastDate": "2026-09-09"
     },
     {
-      "entityId": "record:b850f89e8c61d8c467d0ff15",
-      "reportedName": "Deer Island Studio, Design & Media",
+      "entityId": "record:cecb6f624fc372953ef2777b",
+      "reportedName": "Lorraine Ortiz",
       "nameVariants": [
-        "Deer Island Studio, Design & Media"
+        "Lorraine Ortiz"
       ],
       "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
+      "bookType": "Individual",
       "cents": 265000,
-      "records": 2,
+      "records": 6,
       "candidateCount": 1,
       "candidates": [
         {
@@ -1940,14 +2223,40 @@
           "name": "Jayne Cronlund",
           "district": 4,
           "cents": 265000,
-          "records": 2
+          "records": 6
         }
       ],
       "purposeCodes": [
         "General Operational Expenses (need description)"
       ],
-      "firstDate": "2026-09-03",
-      "lastDate": "2026-09-23"
+      "firstDate": "2026-07-16",
+      "lastDate": "2026-10-06"
+    },
+    {
+      "entityId": "record:39bffc6fb2e886cf220117d2",
+      "reportedName": "ActBlue Technical Services",
+      "nameVariants": [
+        "ActBlue Technical Services"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 251582,
+      "records": 29,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 251582,
+          "records": 29
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-03-29",
+      "lastDate": "2026-10-07"
     },
     {
       "entityId": "record:af6482e89d8b2a0e93e6b1dd",
@@ -2002,10 +2311,36 @@
       "lastDate": "2026-08-31"
     },
     {
-      "entityId": "record:be5f24bf3d190cb4e9daf3db",
-      "reportedName": "Christopher Olson",
+      "entityId": "record:aebdebc7e702bef4370e3ac2",
+      "reportedName": "Level Headed Press",
       "nameVariants": [
-        "Christopher Olson"
+        "Level Headed Press"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 233500,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 233500,
+          "records": 2
+        }
+      ],
+      "purposeCodes": [
+        "Other Advertising (yard signs, buttons, etc.)"
+      ],
+      "firstDate": "2026-06-04",
+      "lastDate": "2026-10-05"
+    },
+    {
+      "entityId": "record:51290375bf88a1a35c92cf03",
+      "reportedName": "Eric Smith",
+      "nameVariants": [
+        "Eric Smith"
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Individual",
@@ -2014,44 +2349,45 @@
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "23411",
-          "name": "Jeremy Beausoleil Smith",
-          "district": 4,
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
           "cents": 225000,
           "records": 1
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description)"
+        "Management Services"
       ],
-      "firstDate": "2026-08-31",
-      "lastDate": "2026-08-31"
+      "firstDate": "2026-10-07",
+      "lastDate": "2026-10-07"
     },
     {
-      "entityId": "record:d01eb013a9e2d301cd319f4f",
-      "reportedName": "CMG Oregon Newpapers",
+      "entityId": "record:36ba51940575f397ae3bc8a6",
+      "reportedName": "UPRINTING",
       "nameVariants": [
-        "CMG Oregon Newpapers"
+        "UPRINTING"
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Business Entity",
-      "cents": 220000,
-      "records": 1,
+      "cents": 223866,
+      "records": 4,
       "candidateCount": 1,
       "candidates": [
         {
           "committeeId": "23295",
           "name": "Eli Arnold",
           "district": 4,
-          "cents": 220000,
-          "records": 1
+          "cents": 223866,
+          "records": 4
         }
       ],
       "purposeCodes": [
-        "Newspaper and Other Periodical Advertising"
+        "Literature, Brochures, Printing",
+        "Other Advertising (yard signs, buttons, etc.)"
       ],
-      "firstDate": "2026-09-18",
-      "lastDate": "2026-09-18"
+      "firstDate": "2026-09-09",
+      "lastDate": "2026-09-29"
     },
     {
       "entityId": "record:6695b9018a1cdc8577608ec6",
@@ -2146,32 +2482,6 @@
       "lastDate": "2026-09-09"
     },
     {
-      "entityId": "record:cecb6f624fc372953ef2777b",
-      "reportedName": "Lorraine Ortiz",
-      "nameVariants": [
-        "Lorraine Ortiz"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Individual",
-      "cents": 215000,
-      "records": 5,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "25103",
-          "name": "Jayne Cronlund",
-          "district": 4,
-          "cents": 215000,
-          "records": 5
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ],
-      "firstDate": "2026-07-16",
-      "lastDate": "2026-09-22"
-    },
-    {
       "entityId": "record:ac445c010f54cc8eae525904",
       "reportedName": "Copyman",
       "nameVariants": [
@@ -2223,82 +2533,6 @@
       "lastDate": "2025-03-28"
     },
     {
-      "entityId": "record:a2fa2fc6938271c9e744f5a8",
-      "reportedName": "CLR Publishing/Northwest Examiner",
-      "nameVariants": [
-        "CLR Publishing/Northwest Examiner"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 210000,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 210000,
-          "records": 1
-        }
-      ],
-      "purposeCodes": [
-        "Newspaper and Other Periodical Advertising"
-      ],
-      "firstDate": "2026-08-31",
-      "lastDate": "2026-08-31"
-    },
-    {
-      "entityId": "record:39bffc6fb2e886cf220117d2",
-      "reportedName": "ActBlue Technical Services",
-      "nameVariants": [
-        "ActBlue Technical Services"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 207445,
-      "records": 27,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "24897",
-          "name": "Kellie Torres",
-          "district": 3,
-          "cents": 207445,
-          "records": 27
-        }
-      ],
-      "purposeCodes": [],
-      "firstDate": "2026-03-29",
-      "lastDate": "2026-09-13"
-    },
-    {
-      "entityId": "record:36ba51940575f397ae3bc8a6",
-      "reportedName": "UPRINTING",
-      "nameVariants": [
-        "UPRINTING"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 205761,
-      "records": 3,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 205761,
-          "records": 3
-        }
-      ],
-      "purposeCodes": [
-        "Literature, Brochures, Printing"
-      ],
-      "firstDate": "2026-09-09",
-      "lastDate": "2026-09-21"
-    },
-    {
       "entityId": "record:c0792481a28ea241f99dd457",
       "reportedName": "Internal Revenue Service",
       "nameVariants": [
@@ -2321,6 +2555,32 @@
       "purposeCodes": [],
       "firstDate": "2025-02-03",
       "lastDate": "2025-02-03"
+    },
+    {
+      "entityId": "record:118a1b8ef5e3047d72112d6f",
+      "reportedName": "CLR PUBLISHING/Northwest Examiner",
+      "nameVariants": [
+        "CLR PUBLISHING/Northwest Examiner"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 200000,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "17629",
+          "name": "Eric Zimmerman",
+          "district": 4,
+          "cents": 200000,
+          "records": 2
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ],
+      "firstDate": "2026-09-09",
+      "lastDate": "2026-10-09"
     },
     {
       "entityId": "record:b900ff917db084c9ad0d6f9f",
@@ -2399,6 +2659,59 @@
       ],
       "firstDate": "2026-05-27",
       "lastDate": "2026-08-27"
+    },
+    {
+      "entityId": "record:d90b3553b7fd70efb412acfe",
+      "reportedName": "Morel Ink",
+      "nameVariants": [
+        "Morel Ink"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 189900,
+      "records": 3,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 189900,
+          "records": 3
+        }
+      ],
+      "purposeCodes": [
+        "Literature, Brochures, Printing",
+        "Other Advertising (yard signs, buttons, etc.)"
+      ],
+      "firstDate": "2026-08-07",
+      "lastDate": "2026-10-01"
+    },
+    {
+      "entityId": "record:5171e4aed166824cebf78784",
+      "reportedName": "Lindsey Gonzales",
+      "nameVariants": [
+        "Lindsey Gonzales"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 186000,
+      "records": 8,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "25103",
+          "name": "Jayne Cronlund",
+          "district": 4,
+          "cents": 186000,
+          "records": 8
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-08-17",
+      "lastDate": "2026-10-09"
     },
     {
       "entityId": "record:bdd39b4bfd9d42480aef5ebd",
@@ -2512,30 +2825,30 @@
       "lastDate": "2026-08-26"
     },
     {
-      "entityId": "record:5171e4aed166824cebf78784",
-      "reportedName": "Lindsey Gonzales",
+      "entityId": "record:5e0520a6613751bf5b0785fc",
+      "reportedName": "Facebook - FACEBK",
       "nameVariants": [
-        "Lindsey Gonzales"
+        "Facebook - FACEBK"
       ],
       "identityStatus": "provisional_record_group",
-      "bookType": "Individual",
-      "cents": 173250,
-      "records": 7,
+      "bookType": "Business Entity",
+      "cents": 159923,
+      "records": 4,
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "25103",
-          "name": "Jayne Cronlund",
+          "committeeId": "23295",
+          "name": "Eli Arnold",
           "district": 4,
-          "cents": 173250,
-          "records": 7
+          "cents": 159923,
+          "records": 4
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description)"
+        "Online and Social Media Advertising"
       ],
-      "firstDate": "2026-08-17",
-      "lastDate": "2026-09-25"
+      "firstDate": "2026-10-05",
+      "lastDate": "2026-10-08"
     },
     {
       "entityId": "record:0afcce6d604dd43c832a3240",
@@ -2586,6 +2899,58 @@
       "purposeCodes": [],
       "firstDate": "2026-08-07",
       "lastDate": "2026-08-07"
+    },
+    {
+      "entityId": "record:1869b99035c765606945a49c",
+      "reportedName": "Faith Bowman",
+      "nameVariants": [
+        "Faith Bowman"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 140000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 140000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-30",
+      "lastDate": "2026-09-30"
+    },
+    {
+      "entityId": "record:0a1fbcd908ac940aa1c79f50",
+      "reportedName": "Logan Kerbs",
+      "nameVariants": [
+        "Logan Kerbs"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 140000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 140000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-30",
+      "lastDate": "2026-09-30"
     },
     {
       "entityId": "record:367691ed84e4d7f3eb7dd0c8",
@@ -2726,6 +3091,65 @@
       "lastDate": "2026-06-30"
     },
     {
+      "entityId": "record:9d934beaf9655de887a13603",
+      "reportedName": "Electric Heights Publishing Company",
+      "nameVariants": [
+        "Electric Heights Publishing Company"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 130000,
+      "records": 2,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 82500,
+          "records": 1
+        },
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 47500,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ],
+      "firstDate": "2026-10-05",
+      "lastDate": "2026-10-06"
+    },
+    {
+      "entityId": "record:79b1c0c0291556cc7afdf136",
+      "reportedName": "INDUSTRIOUS PORTLAND",
+      "nameVariants": [
+        "INDUSTRIOUS PORTLAND"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 128600,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 128600,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-10-05",
+      "lastDate": "2026-10-05"
+    },
+    {
       "entityId": "record:16ac34121727e52e7b2bbdf4",
       "reportedName": "Artist Proof Collective",
       "nameVariants": [
@@ -2776,30 +3200,30 @@
       "lastDate": "2026-08-07"
     },
     {
-      "entityId": "record:d90b3553b7fd70efb412acfe",
-      "reportedName": "Morel Ink",
+      "entityId": "record:62bf14f04d31fed69c1df665",
+      "reportedName": "Noah Levinson",
       "nameVariants": [
-        "Morel Ink"
+        "Noah Levinson"
       ],
       "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 115800,
-      "records": 2,
+      "bookType": "Individual",
+      "cents": 120000,
+      "records": 1,
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "15109",
-          "name": "Steve Novick",
-          "district": 3,
-          "cents": 115800,
-          "records": 2
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 120000,
+          "records": 1
         }
       ],
       "purposeCodes": [
-        "Literature, Brochures, Printing"
+        "General Operational Expenses (need description)"
       ],
-      "firstDate": "2026-08-07",
-      "lastDate": "2026-09-24"
+      "firstDate": "2026-10-04",
+      "lastDate": "2026-10-04"
     },
     {
       "entityId": "record:3e8740be9c452d7298370bd4",
@@ -2852,32 +3276,6 @@
       ],
       "firstDate": "2026-08-18",
       "lastDate": "2026-08-18"
-    },
-    {
-      "entityId": "record:118a1b8ef5e3047d72112d6f",
-      "reportedName": "CLR PUBLISHING/Northwest Examiner",
-      "nameVariants": [
-        "CLR PUBLISHING/Northwest Examiner"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 100000,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "17629",
-          "name": "Eric Zimmerman",
-          "district": 4,
-          "cents": 100000,
-          "records": 1
-        }
-      ],
-      "purposeCodes": [
-        "Newspaper and Other Periodical Advertising"
-      ],
-      "firstDate": "2026-09-09",
-      "lastDate": "2026-09-09"
     },
     {
       "entityId": "record:65425f1fe302c322d9c210f8",
@@ -2958,32 +3356,6 @@
       "lastDate": "2026-08-25"
     },
     {
-      "entityId": "record:aebdebc7e702bef4370e3ac2",
-      "reportedName": "Level Headed Press",
-      "nameVariants": [
-        "Level Headed Press"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 99600,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23028",
-          "name": "Angelita Morillo",
-          "district": 3,
-          "cents": 99600,
-          "records": 1
-        }
-      ],
-      "purposeCodes": [
-        "Other Advertising (yard signs, buttons, etc.)"
-      ],
-      "firstDate": "2026-06-04",
-      "lastDate": "2026-06-04"
-    },
-    {
       "entityId": "record:1559636a39cabb8b2df7d33d",
       "reportedName": "PhoneBurner, Inc",
       "nameVariants": [
@@ -3062,6 +3434,39 @@
       "lastDate": "2026-04-02"
     },
     {
+      "entityId": "record:72733152eeb76daa5cc1ad0b",
+      "reportedName": "Google Ads",
+      "nameVariants": [
+        "Google Ads"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 91000,
+      "records": 6,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 55000,
+          "records": 2
+        },
+        {
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 36000,
+          "records": 4
+        }
+      ],
+      "purposeCodes": [
+        "Online and Social Media Advertising"
+      ],
+      "firstDate": "2026-10-07",
+      "lastDate": "2026-10-08"
+    },
+    {
       "entityId": "record:22863636967df0c3eb091ca1",
       "reportedName": "Kenneth Poirier",
       "nameVariants": [
@@ -3084,6 +3489,46 @@
       "purposeCodes": [],
       "firstDate": "2026-04-20",
       "lastDate": "2026-04-20"
+    },
+    {
+      "entityId": "record:fb5a29e820311b11c75b1257",
+      "reportedName": "Community Labor Administrative Services",
+      "nameVariants": [
+        "Community Labor Administrative Services"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 89898,
+      "records": 8,
+      "candidateCount": 3,
+      "candidates": [
+        {
+          "committeeId": "23365",
+          "name": "Mitch Green",
+          "district": 4,
+          "cents": 38168,
+          "records": 2
+        },
+        {
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
+          "district": 3,
+          "cents": 35730,
+          "records": 4
+        },
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 16000,
+          "records": 2
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-06-15",
+      "lastDate": "2026-10-05"
     },
     {
       "entityId": "record:6fe62a06d150ba62854ff585",
@@ -3119,16 +3564,16 @@
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Business Entity",
-      "cents": 84304,
-      "records": 41,
+      "cents": 86823,
+      "records": 42,
       "candidateCount": 2,
       "candidates": [
         {
           "committeeId": "23208",
           "name": "Tiffany Koyama Lane",
           "district": 3,
-          "cents": 73489,
-          "records": 33
+          "cents": 76008,
+          "records": 34
         },
         {
           "committeeId": "23028",
@@ -3143,7 +3588,59 @@
         "Travel Expenses (need description)"
       ],
       "firstDate": "2025-09-29",
-      "lastDate": "2026-09-08"
+      "lastDate": "2026-09-28"
+    },
+    {
+      "entityId": "record:1f64ca66ab5ec1f13776fdb8",
+      "reportedName": "Mary Rarick",
+      "nameVariants": [
+        "Mary Rarick"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 85000,
+      "records": 3,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "25103",
+          "name": "Jayne Cronlund",
+          "district": 4,
+          "cents": 85000,
+          "records": 3
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-21",
+      "lastDate": "2026-10-05"
+    },
+    {
+      "entityId": "record:f4426cb5adf1841affd0fecc",
+      "reportedName": "Schwab Creative",
+      "nameVariants": [
+        "Schwab Creative"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 85000,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 85000,
+          "records": 2
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-04",
+      "lastDate": "2026-10-05"
     },
     {
       "entityId": "record:1d5d9dfe27cb32ff11718b41",
@@ -3277,6 +3774,39 @@
       "lastDate": "2026-07-09"
     },
     {
+      "entityId": "record:4848465446bfdaac71a03b4a",
+      "reportedName": "North Peninsula Review",
+      "nameVariants": [
+        "North Peninsula Review"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 77000,
+      "records": 2,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "17629",
+          "name": "Eric Zimmerman",
+          "district": 4,
+          "cents": 38500,
+          "records": 1
+        },
+        {
+          "committeeId": "23199",
+          "name": "Olivia Clark",
+          "district": 4,
+          "cents": 38500,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ],
+      "firstDate": "2026-09-29",
+      "lastDate": "2026-09-29"
+    },
+    {
       "entityId": "record:0859d2e95f848e363d2ddbf2",
       "reportedName": "Costco",
       "nameVariants": [
@@ -3354,6 +3884,32 @@
       ],
       "firstDate": "2025-12-30",
       "lastDate": "2025-12-30"
+    },
+    {
+      "entityId": "record:0e40db3c56827a59775e3080",
+      "reportedName": "Northwest Labor Press",
+      "nameVariants": [
+        "Northwest Labor Press"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 75000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 75000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ],
+      "firstDate": "2026-10-05",
+      "lastDate": "2026-10-05"
     },
     {
       "entityId": "record:7eac60650366721860f1e904",
@@ -3500,30 +4056,30 @@
       "lastDate": "2026-06-01"
     },
     {
-      "entityId": "record:1f64ca66ab5ec1f13776fdb8",
-      "reportedName": "Mary Rarick",
+      "entityId": "record:5ce38d0ca0a5a75ccdcd8252",
+      "reportedName": "CMG Oregon Newspapers",
       "nameVariants": [
-        "Mary Rarick"
+        "CMG Oregon Newspapers"
       ],
       "identityStatus": "provisional_record_group",
-      "bookType": "Individual",
+      "bookType": "Business Entity",
       "cents": 70000,
-      "records": 2,
+      "records": 1,
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "25103",
-          "name": "Jayne Cronlund",
+          "committeeId": "23199",
+          "name": "Olivia Clark",
           "district": 4,
           "cents": 70000,
-          "records": 2
+          "records": 1
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description)"
+        "Newspaper and Other Periodical Advertising"
       ],
-      "firstDate": "2026-09-21",
-      "lastDate": "2026-09-24"
+      "firstDate": "2026-09-30",
+      "lastDate": "2026-09-30"
     },
     {
       "entityId": "record:bac9732d1bfaa7c853865440",
@@ -3600,6 +4156,59 @@
       "purposeCodes": [],
       "firstDate": "2026-07-31",
       "lastDate": "2026-07-31"
+    },
+    {
+      "entityId": "record:f49e0ce40aa2aa81d222d086",
+      "reportedName": "Katey Harris",
+      "nameVariants": [
+        "Katey Harris"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 64000,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23365",
+          "name": "Mitch Green",
+          "district": 4,
+          "cents": 64000,
+          "records": 2
+        }
+      ],
+      "purposeCodes": [
+        "Online and Social Media Advertising",
+        "Preparation and Production of Advertising"
+      ],
+      "firstDate": "2026-09-10",
+      "lastDate": "2026-09-28"
+    },
+    {
+      "entityId": "record:15eca8f7af11b5c6f2c7ac14",
+      "reportedName": "The Southeast Examiner",
+      "nameVariants": [
+        "The Southeast Examiner"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 63200,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 63200,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ],
+      "firstDate": "2026-09-30",
+      "lastDate": "2026-09-30"
     },
     {
       "entityId": "record:5221569a5133b906de32e4e0",
@@ -3765,32 +4374,6 @@
       ],
       "firstDate": "2026-06-02",
       "lastDate": "2026-07-02"
-    },
-    {
-      "entityId": "record:f4426cb5adf1841affd0fecc",
-      "reportedName": "Schwab Creative",
-      "nameVariants": [
-        "Schwab Creative"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 57500,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "15109",
-          "name": "Steve Novick",
-          "district": 3,
-          "cents": 57500,
-          "records": 1
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ],
-      "firstDate": "2026-09-04",
-      "lastDate": "2026-09-04"
     },
     {
       "entityId": "record:ec06484392494d6446d402cb",
@@ -3975,6 +4558,84 @@
       "lastDate": "2026-06-05"
     },
     {
+      "entityId": "record:7258269cd3343f9a7a2ed435",
+      "reportedName": "Ashley Lynn Blender",
+      "nameVariants": [
+        "Ashley Lynn Blender"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-29",
+      "lastDate": "2026-09-29"
+    },
+    {
+      "entityId": "record:2ad4f3f803747c8b840875b8",
+      "reportedName": "Asian Reporter Public",
+      "nameVariants": [
+        "Asian Reporter Public"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 50000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ],
+      "firstDate": "2026-10-05",
+      "lastDate": "2026-10-05"
+    },
+    {
+      "entityId": "record:6224b655e8c9657992a74b43",
+      "reportedName": "Carla McHattie",
+      "nameVariants": [
+        "Carla McHattie"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-10-06",
+      "lastDate": "2026-10-06"
+    },
+    {
       "entityId": "record:a5bbc6bb69607998dfd2ab67",
       "reportedName": "Joey Patton",
       "nameVariants": [
@@ -3999,6 +4660,58 @@
       ],
       "firstDate": "2026-09-03",
       "lastDate": "2026-09-03"
+    },
+    {
+      "entityId": "record:b8f116ea039b8a52cb94ce69",
+      "reportedName": "Jonah Leahy",
+      "nameVariants": [
+        "Jonah Leahy"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-10-06",
+      "lastDate": "2026-10-06"
+    },
+    {
+      "entityId": "record:07a0a0be1f1d6172d32e59b5",
+      "reportedName": "Kyra Watkins",
+      "nameVariants": [
+        "Kyra Watkins"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-29",
+      "lastDate": "2026-09-29"
     },
     {
       "entityId": "record:1d717b02852c4e72b0ecfa60",
@@ -4053,6 +4766,135 @@
       "lastDate": "2026-08-17"
     },
     {
+      "entityId": "record:b6f09a64663a67fea088698d",
+      "reportedName": "Nathan Elliott",
+      "nameVariants": [
+        "Nathan Elliott"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Individual",
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-29",
+      "lastDate": "2026-09-29"
+    },
+    {
+      "entityId": "record:52b51402e7a84bbd540e7c0d",
+      "reportedName": "Summers Faded",
+      "nameVariants": [
+        "Summers Faded"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-29",
+      "lastDate": "2026-09-29"
+    },
+    {
+      "entityId": "record:8761bccd1dc01a7380355c20",
+      "reportedName": "The Golden Goddess",
+      "nameVariants": [
+        "The Golden Goddess"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-28",
+      "lastDate": "2026-09-28"
+    },
+    {
+      "entityId": "record:8b1bd2ae2f30da9f2b9898fe",
+      "reportedName": "Google Workspace",
+      "nameVariants": [
+        "Google Workspace"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 48928,
+      "records": 5,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24972",
+          "name": "Joel Corcoran",
+          "district": 3,
+          "cents": 48928,
+          "records": 5
+        }
+      ],
+      "purposeCodes": [],
+      "firstDate": "2026-06-02",
+      "lastDate": "2026-10-01"
+    },
+    {
+      "entityId": "record:6aef753c4dc9d755ca837a90",
+      "reportedName": "Gabe Vogl",
+      "nameVariants": [
+        "Gabe Vogl"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 47500,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 47500,
+          "records": 2
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Other Advertising (yard signs, buttons, etc.)"
+      ],
+      "firstDate": "2026-09-28",
+      "lastDate": "2026-10-05"
+    },
+    {
       "entityId": "record:e1f2415ad94d4bc61e684c1a",
       "reportedName": "Peerspace, Inc",
       "nameVariants": [
@@ -4077,6 +4919,32 @@
       ],
       "firstDate": "2026-06-24",
       "lastDate": "2026-06-24"
+    },
+    {
+      "entityId": "record:3601baa99bbd451d77d112eb",
+      "reportedName": "NationBuilder",
+      "nameVariants": [
+        "NationBuilder"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 43100,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 43100,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-10-06",
+      "lastDate": "2026-10-06"
     },
     {
       "entityId": "record:20a86b38b3a0302e4b6a90bd",
@@ -4251,46 +5119,6 @@
       "lastDate": "2026-03-20"
     },
     {
-      "entityId": "record:fb5a29e820311b11c75b1257",
-      "reportedName": "Community Labor Administrative Services",
-      "nameVariants": [
-        "Community Labor Administrative Services"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 40000,
-      "records": 5,
-      "candidateCount": 3,
-      "candidates": [
-        {
-          "committeeId": "23208",
-          "name": "Tiffany Koyama Lane",
-          "district": 3,
-          "cents": 24000,
-          "records": 3
-        },
-        {
-          "committeeId": "23028",
-          "name": "Angelita Morillo",
-          "district": 3,
-          "cents": 8000,
-          "records": 1
-        },
-        {
-          "committeeId": "23365",
-          "name": "Mitch Green",
-          "district": 4,
-          "cents": 8000,
-          "records": 1
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ],
-      "firstDate": "2026-06-15",
-      "lastDate": "2026-08-12"
-    },
-    {
       "entityId": "record:195610642d60e55f0743ab06",
       "reportedName": "Laurin Hallett",
       "nameVariants": [
@@ -4393,56 +5221,6 @@
       "lastDate": "2025-07-01"
     },
     {
-      "entityId": "record:8b1bd2ae2f30da9f2b9898fe",
-      "reportedName": "Google Workspace",
-      "nameVariants": [
-        "Google Workspace"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 38368,
-      "records": 4,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "24972",
-          "name": "Joel Corcoran",
-          "district": 3,
-          "cents": 38368,
-          "records": 4
-        }
-      ],
-      "purposeCodes": [],
-      "firstDate": "2026-06-02",
-      "lastDate": "2026-09-01"
-    },
-    {
-      "entityId": "record:f49e0ce40aa2aa81d222d086",
-      "reportedName": "Katey Harris",
-      "nameVariants": [
-        "Katey Harris"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Individual",
-      "cents": 36000,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23365",
-          "name": "Mitch Green",
-          "district": 4,
-          "cents": 36000,
-          "records": 1
-        }
-      ],
-      "purposeCodes": [
-        "Preparation and Production of Advertising"
-      ],
-      "firstDate": "2026-09-10",
-      "lastDate": "2026-09-10"
-    },
-    {
       "entityId": "record:b1d73a49e2578c669b7ea820",
       "reportedName": "SquareSpace Inc",
       "nameVariants": [
@@ -4467,6 +5245,32 @@
       ],
       "firstDate": "2025-12-03",
       "lastDate": "2025-12-27"
+    },
+    {
+      "entityId": "record:c56e5baea9c887a7dbd76f0e",
+      "reportedName": "SquareSpace - SQSP",
+      "nameVariants": [
+        "SquareSpace - SQSP"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 35800,
+      "records": 4,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 35800,
+          "records": 4
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2025-11-24",
+      "lastDate": "2026-10-05"
     },
     {
       "entityId": "record:eafab82e639a5058b629902e",
@@ -4621,32 +5425,6 @@
       ],
       "firstDate": "2026-09-15",
       "lastDate": "2026-09-15"
-    },
-    {
-      "entityId": "record:c56e5baea9c887a7dbd76f0e",
-      "reportedName": "SquareSpace - SQSP",
-      "nameVariants": [
-        "SquareSpace - SQSP"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 31900,
-      "records": 3,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 31900,
-          "records": 3
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ],
-      "firstDate": "2025-11-24",
-      "lastDate": "2025-11-28"
     },
     {
       "entityId": "record:9957388aff7d81b775c25bf1",
@@ -5045,6 +5823,32 @@
       ],
       "firstDate": "2026-05-06",
       "lastDate": "2026-05-06"
+    },
+    {
+      "entityId": "record:c1a2b60c83ebbd9d8951b97a",
+      "reportedName": "ActBlue Technical Services",
+      "nameVariants": [
+        "ActBlue Technical Services"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 25032,
+      "records": 8,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 25032,
+          "records": 8
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-07-20",
+      "lastDate": "2026-10-07"
     },
     {
       "entityId": "record:9802fc60ff5b80746b85ca19",
@@ -5455,32 +6259,6 @@
       "purposeCodes": [],
       "firstDate": "2025-11-17",
       "lastDate": "2025-11-17"
-    },
-    {
-      "entityId": "record:c1a2b60c83ebbd9d8951b97a",
-      "reportedName": "ActBlue Technical Services",
-      "nameVariants": [
-        "ActBlue Technical Services"
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 24358,
-      "records": 6,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "24661",
-          "name": "Tom Sollitt",
-          "district": 3,
-          "cents": 24358,
-          "records": 6
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ],
-      "firstDate": "2026-07-20",
-      "lastDate": "2026-08-26"
     },
     {
       "entityId": "record:0a6d414e80692450909d1d34",
@@ -5967,6 +6745,32 @@
       ],
       "firstDate": "2026-09-01",
       "lastDate": "2026-09-01"
+    },
+    {
+      "entityId": "record:9e08ebfa1dce02a330e35bdb",
+      "reportedName": "C&E Systems",
+      "nameVariants": [
+        "C&E Systems"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 17500,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 17500,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "Management Services"
+      ],
+      "firstDate": "2026-10-07",
+      "lastDate": "2026-10-07"
     },
     {
       "entityId": "record:01f68e23c9703bb179462cab",
@@ -6639,6 +7443,32 @@
       "lastDate": "2026-06-12"
     },
     {
+      "entityId": "record:cca07c25c1586b50f2d29240",
+      "reportedName": "Adobe Inc.",
+      "nameVariants": [
+        "Adobe Inc."
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 11495,
+      "records": 5,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 11495,
+          "records": 5
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-06-08",
+      "lastDate": "2026-10-07"
+    },
+    {
       "entityId": "record:80d227852e1582b8c78566db",
       "reportedName": "Hobby Lobby",
       "nameVariants": [
@@ -6976,32 +7806,6 @@
       "lastDate": "2026-09-04"
     },
     {
-      "entityId": "record:cca07c25c1586b50f2d29240",
-      "reportedName": "Adobe Inc.",
-      "nameVariants": [
-        "Adobe Inc."
-      ],
-      "identityStatus": "provisional_record_group",
-      "bookType": "Business Entity",
-      "cents": 9196,
-      "records": 4,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 9196,
-          "records": 4
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ],
-      "firstDate": "2026-06-08",
-      "lastDate": "2026-09-08"
-    },
-    {
       "entityId": "record:9c306964860014e2ecdc34b0",
       "reportedName": "Community Labor Administrative Services",
       "nameVariants": [
@@ -7026,6 +7830,32 @@
       ],
       "firstDate": "2026-07-09",
       "lastDate": "2026-07-09"
+    },
+    {
+      "entityId": "record:5392a2499f527167e46d25e3",
+      "reportedName": "Google LLC",
+      "nameVariants": [
+        "Google LLC"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 6115,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 6115,
+          "records": 2
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-08",
+      "lastDate": "2026-10-01"
     },
     {
       "entityId": "record:11662c213a2f8ec3d7c292bb",
@@ -7080,30 +7910,30 @@
       "lastDate": "2025-01-23"
     },
     {
-      "entityId": "record:5392a2499f527167e46d25e3",
-      "reportedName": "Google LLC",
+      "entityId": "record:b5fae7b0ef2142388c977180",
+      "reportedName": "GoDaddy",
       "nameVariants": [
-        "Google LLC"
+        "GoDaddy"
       ],
       "identityStatus": "provisional_record_group",
       "bookType": "Business Entity",
-      "cents": 4200,
+      "cents": 4068,
       "records": 1,
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "23411",
-          "name": "Jeremy Beausoleil Smith",
-          "district": 4,
-          "cents": 4200,
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
+          "district": 3,
+          "cents": 4068,
           "records": 1
         }
       ],
       "purposeCodes": [
         "General Operational Expenses (need description)"
       ],
-      "firstDate": "2026-09-08",
-      "lastDate": "2026-09-08"
+      "firstDate": "2026-10-08",
+      "lastDate": "2026-10-08"
     },
     {
       "entityId": "record:f6da21fc3ec2ab9e4f9fd87e",
@@ -7182,6 +8012,58 @@
       "lastDate": "2026-09-10"
     },
     {
+      "entityId": "record:ad1b2f7d10c00c8c9f3aaa94",
+      "reportedName": "The UPS Store",
+      "nameVariants": [
+        "The UPS Store"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 2500,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24966",
+          "name": "Matthias Hallett",
+          "district": 3,
+          "cents": 2500,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "Literature, Brochures, Printing"
+      ],
+      "firstDate": "2026-10-06",
+      "lastDate": "2026-10-06"
+    },
+    {
+      "entityId": "record:e1bccd37f94603017bdfa4df",
+      "reportedName": "Columbia Bank",
+      "nameVariants": [
+        "Columbia Bank"
+      ],
+      "identityStatus": "provisional_record_group",
+      "bookType": "Business Entity",
+      "cents": 1750,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 1750,
+          "records": 1
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ],
+      "firstDate": "2026-09-28",
+      "lastDate": "2026-09-28"
+    },
+    {
       "entityId": "record:b8c9eddcca28f6a832ccbbbf",
       "reportedName": "ActBlue Technical Services",
       "nameVariants": [
@@ -7208,48 +8090,75 @@
   ],
   "reportedNames": [
     {
-      "reportedName": "Infused LLC",
+      "reportedName": "Mission Control, Inc",
       "nameVariants": [
-        "Infused LLC"
+        "Mission Control, Inc"
       ],
-      "identityGroups": 2,
-      "cents": 4619645,
-      "records": 35,
-      "candidateCount": 5,
+      "identityGroups": 1,
+      "cents": 9617290,
+      "records": 3,
+      "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "23028",
-          "name": "Angelita Morillo",
-          "district": 3,
-          "cents": 585715
-        },
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 9617290
+        }
+      ],
+      "purposeCodes": [
+        "Literature, Brochures, Printing; Postage",
+        "Literature, Brochures, Printing; Preparation and Production of Advertising; Postage"
+      ]
+    },
+    {
+      "reportedName": "Ethos Campaigns LLC",
+      "nameVariants": [
+        "Ethos Campaigns LLC"
+      ],
+      "identityGroups": 1,
+      "cents": 7430600,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
         {
           "committeeId": "23208",
           "name": "Tiffany Koyama Lane",
           "district": 3,
-          "cents": 1855210
+          "cents": 7430600
+        }
+      ],
+      "purposeCodes": [
+        "Literature, Brochures, Printing",
+        "Online and Social Media Advertising; Preparation and Production of Advertising"
+      ]
+    },
+    {
+      "reportedName": "Untidy Origins LLC",
+      "nameVariants": [
+        "Untidy Origins LLC"
+      ],
+      "identityGroups": 1,
+      "cents": 7402500,
+      "records": 2,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 4402500
         },
         {
           "committeeId": "23365",
           "name": "Mitch Green",
           "district": 4,
-          "cents": 1352550
-        },
-        {
-          "committeeId": "23411",
-          "name": "Jeremy Beausoleil Smith",
-          "district": 4,
-          "cents": 460000
-        },
-        {
-          "committeeId": "25040",
-          "name": "Jamey Evenstar",
-          "district": 4,
-          "cents": 366170
+          "cents": 3000000
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description)"
+        "Online and Social Media Advertising",
+        "Online and Social Media Advertising; Management Services; Broadcast Advertising (radio, tv); Preparation and Production of Advertising"
       ]
     },
     {
@@ -7257,10 +8166,10 @@
       "nameVariants": [
         "C&E Systems"
       ],
-      "identityGroups": 1,
-      "cents": 4214566,
-      "records": 68,
-      "candidateCount": 8,
+      "identityGroups": 2,
+      "cents": 5509424,
+      "records": 74,
+      "candidateCount": 9,
       "candidates": [
         {
           "committeeId": "15109",
@@ -7272,19 +8181,19 @@
           "committeeId": "17629",
           "name": "Eric Zimmerman",
           "district": 4,
-          "cents": 612016
+          "cents": 911834
         },
         {
           "committeeId": "23199",
           "name": "Olivia Clark",
           "district": 4,
-          "cents": 1022912
+          "cents": 1262786
         },
         {
           "committeeId": "23295",
           "name": "Eli Arnold",
           "district": 4,
-          "cents": 1177067
+          "cents": 1534141
         },
         {
           "committeeId": "23365",
@@ -7302,17 +8211,89 @@
           "committeeId": "24661",
           "name": "Tom Sollitt",
           "district": 3,
-          "cents": 210089
+          "cents": 370151
+        },
+        {
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 17500
         },
         {
           "committeeId": "25103",
           "name": "Jayne Cronlund",
           "district": 4,
-          "cents": 258877
+          "cents": 479407
         }
       ],
       "purposeCodes": [
         "Management Services"
+      ]
+    },
+    {
+      "reportedName": "Springwater Partners",
+      "nameVariants": [
+        "Springwater Partners"
+      ],
+      "identityGroups": 1,
+      "cents": 5000000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 5000000
+        }
+      ],
+      "purposeCodes": [
+        "Online and Social Media Advertising"
+      ]
+    },
+    {
+      "reportedName": "Infused LLC",
+      "nameVariants": [
+        "Infused LLC"
+      ],
+      "identityGroups": 2,
+      "cents": 4911145,
+      "records": 37,
+      "candidateCount": 5,
+      "candidates": [
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 585715
+        },
+        {
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
+          "district": 3,
+          "cents": 2036710
+        },
+        {
+          "committeeId": "23365",
+          "name": "Mitch Green",
+          "district": 4,
+          "cents": 1352550
+        },
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 460000
+        },
+        {
+          "committeeId": "25040",
+          "name": "Jamey Evenstar",
+          "district": 4,
+          "cents": 476170
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
       ]
     },
     {
@@ -7362,6 +8343,62 @@
       ]
     },
     {
+      "reportedName": "Gal Pal Productions",
+      "nameVariants": [
+        "Gal Pal Productions"
+      ],
+      "identityGroups": 1,
+      "cents": 3123800,
+      "records": 9,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 3103850
+        },
+        {
+          "committeeId": "23365",
+          "name": "Mitch Green",
+          "district": 4,
+          "cents": 19950
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Literature, Brochures, Printing",
+        "Online and Social Media Advertising",
+        "Preparation and Production of Advertising",
+        "Reimbursement for Personal Expenditures"
+      ]
+    },
+    {
+      "reportedName": "Team Mars Consulting",
+      "nameVariants": [
+        "Team Mars Consulting"
+      ],
+      "identityGroups": 1,
+      "cents": 2907132,
+      "records": 12,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 2907132
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description); Travel Expenses (need description)",
+        "Management Services",
+        "Management Services; Travel Expenses (need description)",
+        "Reimbursement for Personal Expenditures",
+        "Travel Expenses (need description)"
+      ]
+    },
+    {
       "reportedName": "Leslie McCollom Fontaine",
       "nameVariants": [
         "Leslie McCollom Fontaine"
@@ -7386,28 +8423,45 @@
       ]
     },
     {
-      "reportedName": "Team Mars Consulting",
+      "reportedName": "Hollywood Impress Printing",
       "nameVariants": [
-        "Team Mars Consulting"
+        "Hollywood Impress Printing"
       ],
       "identityGroups": 1,
-      "cents": 2331664,
-      "records": 9,
-      "candidateCount": 1,
+      "cents": 2426850,
+      "records": 16,
+      "candidateCount": 4,
       "candidates": [
         {
           "committeeId": "23028",
           "name": "Angelita Morillo",
           "district": 3,
-          "cents": 2331664
+          "cents": 835500
+        },
+        {
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
+          "district": 3,
+          "cents": 688500
+        },
+        {
+          "committeeId": "23365",
+          "name": "Mitch Green",
+          "district": 4,
+          "cents": 561900
+        },
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 340950
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description); Travel Expenses (need description)",
-        "Management Services",
-        "Management Services; Travel Expenses (need description)",
-        "Reimbursement for Personal Expenditures",
-        "Travel Expenses (need description)"
+        "General Operational Expenses (need description)",
+        "Literature, Brochures, Printing",
+        "Literature, Brochures, Printing; Other Advertising (yard signs, buttons, etc.)",
+        "Other Advertising (yard signs, buttons, etc.)"
       ]
     },
     {
@@ -7433,73 +8487,47 @@
       ]
     },
     {
-      "reportedName": "Gal Pal Productions",
+      "reportedName": "Morel Ink",
       "nameVariants": [
-        "Gal Pal Productions"
+        "Morel Ink"
       ],
-      "identityGroups": 1,
-      "cents": 2238800,
-      "records": 8,
-      "candidateCount": 2,
+      "identityGroups": 3,
+      "cents": 2204801,
+      "records": 15,
+      "candidateCount": 5,
       "candidates": [
         {
-          "committeeId": "23028",
-          "name": "Angelita Morillo",
+          "committeeId": "15109",
+          "name": "Steve Novick",
           "district": 3,
-          "cents": 2218850
+          "cents": 189900
         },
         {
-          "committeeId": "23365",
-          "name": "Mitch Green",
+          "committeeId": "23199",
+          "name": "Olivia Clark",
           "district": 4,
-          "cents": 19950
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)",
-        "Literature, Brochures, Printing",
-        "Online and Social Media Advertising",
-        "Preparation and Production of Advertising",
-        "Reimbursement for Personal Expenditures"
-      ]
-    },
-    {
-      "reportedName": "Hollywood Impress Printing",
-      "nameVariants": [
-        "Hollywood Impress Printing"
-      ],
-      "identityGroups": 1,
-      "cents": 2212100,
-      "records": 14,
-      "candidateCount": 4,
-      "candidates": [
-        {
-          "committeeId": "23028",
-          "name": "Angelita Morillo",
-          "district": 3,
-          "cents": 835500
+          "cents": 283200
         },
         {
           "committeeId": "23208",
           "name": "Tiffany Koyama Lane",
           "district": 3,
-          "cents": 688500
+          "cents": 296000
         },
         {
-          "committeeId": "23365",
-          "name": "Mitch Green",
+          "committeeId": "23295",
+          "name": "Eli Arnold",
           "district": 4,
-          "cents": 561900
+          "cents": 766301
         },
         {
-          "committeeId": "23411",
-          "name": "Jeremy Beausoleil Smith",
-          "district": 4,
-          "cents": 126200
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 669400
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description)",
         "Literature, Brochures, Printing",
         "Literature, Brochures, Printing; Other Advertising (yard signs, buttons, etc.)",
         "Other Advertising (yard signs, buttons, etc.)"
@@ -7549,71 +8577,45 @@
       ]
     },
     {
-      "reportedName": "Morel Ink",
-      "nameVariants": [
-        "Morel Ink"
-      ],
-      "identityGroups": 3,
-      "cents": 1830440,
-      "records": 12,
-      "candidateCount": 5,
-      "candidates": [
-        {
-          "committeeId": "15109",
-          "name": "Steve Novick",
-          "district": 3,
-          "cents": 115800
-        },
-        {
-          "committeeId": "23199",
-          "name": "Olivia Clark",
-          "district": 4,
-          "cents": 283200
-        },
-        {
-          "committeeId": "23208",
-          "name": "Tiffany Koyama Lane",
-          "district": 3,
-          "cents": 296000
-        },
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 518840
-        },
-        {
-          "committeeId": "24897",
-          "name": "Kellie Torres",
-          "district": 3,
-          "cents": 616600
-        }
-      ],
-      "purposeCodes": [
-        "Literature, Brochures, Printing",
-        "Literature, Brochures, Printing; Other Advertising (yard signs, buttons, etc.)",
-        "Other Advertising (yard signs, buttons, etc.)"
-      ]
-    },
-    {
       "reportedName": "Claire Culmer",
       "nameVariants": [
         "Claire Culmer"
       ],
       "identityGroups": 1,
-      "cents": 1453245,
-      "records": 3,
+      "cents": 1744206,
+      "records": 4,
       "candidateCount": 1,
       "candidates": [
         {
           "committeeId": "23208",
           "name": "Tiffany Koyama Lane",
           "district": 3,
-          "cents": 1453245
+          "cents": 1744206
         }
       ],
       "purposeCodes": [
         "Wages, Salaries, Benefits"
+      ]
+    },
+    {
+      "reportedName": "Portland Clean Air Fund",
+      "nameVariants": [
+        "Portland Clean Air Fund"
+      ],
+      "identityGroups": 1,
+      "cents": 1700000,
+      "records": 3,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 1700000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
       ]
     },
     {
@@ -7622,15 +8624,15 @@
         "Purple State Strategies, Inc."
       ],
       "identityGroups": 1,
-      "cents": 1195649,
-      "records": 6,
+      "cents": 1634436,
+      "records": 7,
       "candidateCount": 1,
       "candidates": [
         {
           "committeeId": "23295",
           "name": "Eli Arnold",
           "district": 4,
-          "cents": 1195649
+          "cents": 1634436
         }
       ],
       "purposeCodes": [
@@ -7646,22 +8648,112 @@
         "Sprout Chinn"
       ],
       "identityGroups": 1,
-      "cents": 1134876,
-      "records": 4,
+      "cents": 1600683,
+      "records": 6,
       "candidateCount": 1,
       "candidates": [
         {
           "committeeId": "23028",
           "name": "Angelita Morillo",
           "district": 3,
-          "cents": 1134876
+          "cents": 1600683
         }
       ],
       "purposeCodes": [
+        "General Operational Expenses (need description)",
         "General Operational Expenses (need description); Travel Expenses (need description)",
         "Reimbursement for Personal Expenditures",
         "Travel Expenses (need description); General Operational Expenses (need description)",
         "Travel Expenses (need description); Wages, Salaries, Benefits"
+      ]
+    },
+    {
+      "reportedName": "Deer Island Studio, Design & Media",
+      "nameVariants": [
+        "Deer Island Studio, Design & Media"
+      ],
+      "identityGroups": 1,
+      "cents": 1530263,
+      "records": 6,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "25103",
+          "name": "Jayne Cronlund",
+          "district": 4,
+          "cents": 1530263
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Literature, Brochures, Printing; Postage",
+        "Preparation and Production of Advertising; General Operational Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "Rebecca Stavenjord",
+      "nameVariants": [
+        "Rebecca Stavenjord"
+      ],
+      "identityGroups": 1,
+      "cents": 1500000,
+      "records": 3,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23199",
+          "name": "Olivia Clark",
+          "district": 4,
+          "cents": 1500000
+        }
+      ],
+      "purposeCodes": [
+        "Management Services"
+      ]
+    },
+    {
+      "reportedName": "Worldpay- C&E Merchant Services",
+      "nameVariants": [
+        "Worldpay- C&E Merchant Services"
+      ],
+      "identityGroups": 1,
+      "cents": 1210520,
+      "records": 103,
+      "candidateCount": 5,
+      "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 319034
+        },
+        {
+          "committeeId": "17629",
+          "name": "Eric Zimmerman",
+          "district": 4,
+          "cents": 304897
+        },
+        {
+          "committeeId": "23199",
+          "name": "Olivia Clark",
+          "district": 4,
+          "cents": 233221
+        },
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 305402
+        },
+        {
+          "committeeId": "25103",
+          "name": "Jayne Cronlund",
+          "district": 4,
+          "cents": 47966
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
       ]
     },
     {
@@ -7726,91 +8818,26 @@
       ]
     },
     {
-      "reportedName": "Rebecca Stavenjord",
+      "reportedName": "Spencer Mann",
       "nameVariants": [
-        "Rebecca Stavenjord"
+        "Spencer Mann"
       ],
       "identityGroups": 1,
-      "cents": 1000000,
-      "records": 2,
+      "cents": 1102784,
+      "records": 5,
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "23199",
-          "name": "Olivia Clark",
-          "district": 4,
-          "cents": 1000000
-        }
-      ],
-      "purposeCodes": [
-        "Management Services"
-      ]
-    },
-    {
-      "reportedName": "Kathleen Shriver",
-      "nameVariants": [
-        "Kathleen Shriver"
-      ],
-      "identityGroups": 1,
-      "cents": 957569,
-      "records": 2,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "15109",
-          "name": "Steve Novick",
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
           "district": 3,
-          "cents": 957569
+          "cents": 1102784
         }
       ],
       "purposeCodes": [
-        "Management Services",
-        "Reimbursement for Personal Expenditures"
-      ]
-    },
-    {
-      "reportedName": "Worldpay- C&E Merchant Services",
-      "nameVariants": [
-        "Worldpay- C&E Merchant Services"
-      ],
-      "identityGroups": 1,
-      "cents": 929815,
-      "records": 94,
-      "candidateCount": 5,
-      "candidates": [
-        {
-          "committeeId": "15109",
-          "name": "Steve Novick",
-          "district": 3,
-          "cents": 268246
-        },
-        {
-          "committeeId": "17629",
-          "name": "Eric Zimmerman",
-          "district": 4,
-          "cents": 208942
-        },
-        {
-          "committeeId": "23199",
-          "name": "Olivia Clark",
-          "district": 4,
-          "cents": 173721
-        },
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 231482
-        },
-        {
-          "committeeId": "25103",
-          "name": "Jayne Cronlund",
-          "district": 4,
-          "cents": 47424
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
+        "Reimbursement for Personal Expenditures",
+        "Travel Expenses (need description)",
+        "Wages, Salaries, Benefits"
       ]
     },
     {
@@ -7819,33 +8846,33 @@
         "ActBlue"
       ],
       "identityGroups": 3,
-      "cents": 901386,
-      "records": 961,
+      "cents": 981489,
+      "records": 1007,
       "candidateCount": 6,
       "candidates": [
         {
           "committeeId": "23028",
           "name": "Angelita Morillo",
           "district": 3,
-          "cents": 233317
+          "cents": 259004
         },
         {
           "committeeId": "23208",
           "name": "Tiffany Koyama Lane",
           "district": 3,
-          "cents": 265996
+          "cents": 281123
         },
         {
           "committeeId": "23365",
           "name": "Mitch Green",
           "district": 4,
-          "cents": 269278
+          "cents": 293172
         },
         {
           "committeeId": "23411",
           "name": "Jeremy Beausoleil Smith",
           "district": 4,
-          "cents": 44241
+          "cents": 53061
         },
         {
           "committeeId": "24973",
@@ -7857,13 +8884,58 @@
           "committeeId": "25040",
           "name": "Jamey Evenstar",
           "district": 4,
-          "cents": 71433
+          "cents": 78008
         }
       ],
       "purposeCodes": [
         "Fundraising Event Expenses",
         "General Operational Expenses (need description)",
         "Utilities"
+      ]
+    },
+    {
+      "reportedName": "Kathleen Shriver",
+      "nameVariants": [
+        "Kathleen Shriver"
+      ],
+      "identityGroups": 1,
+      "cents": 967819,
+      "records": 3,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 967819
+        }
+      ],
+      "purposeCodes": [
+        "Management Services",
+        "Reimbursement for Personal Expenditures"
+      ]
+    },
+    {
+      "reportedName": "Lindsey Montague",
+      "nameVariants": [
+        "Lindsey Montague"
+      ],
+      "identityGroups": 1,
+      "cents": 941000,
+      "records": 7,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
+          "district": 3,
+          "cents": 941000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Management Services",
+        "Preparation and Production of Advertising"
       ]
     },
     {
@@ -7886,48 +8958,53 @@
       "purposeCodes": []
     },
     {
-      "reportedName": "Spencer Mann",
+      "reportedName": "CLR PUBLISHING/Northwest Examiner",
       "nameVariants": [
-        "Spencer Mann"
+        "CLR PUBLISHING/Northwest Examiner",
+        "CLR Publishing/Northwest Examiner"
       ],
-      "identityGroups": 1,
-      "cents": 744623,
+      "identityGroups": 2,
+      "cents": 830000,
       "records": 4,
-      "candidateCount": 1,
+      "candidateCount": 2,
       "candidates": [
         {
-          "committeeId": "23208",
-          "name": "Tiffany Koyama Lane",
-          "district": 3,
-          "cents": 744623
+          "committeeId": "17629",
+          "name": "Eric Zimmerman",
+          "district": 4,
+          "cents": 200000
+        },
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 630000
         }
       ],
       "purposeCodes": [
-        "Reimbursement for Personal Expenditures",
-        "Travel Expenses (need description)",
-        "Wages, Salaries, Benefits"
+        "Newspaper and Other Periodical Advertising"
       ]
     },
     {
-      "reportedName": "Lindsey Montague",
+      "reportedName": "CMG Oregon Newpapers",
       "nameVariants": [
-        "Lindsey Montague"
+        "CMG Oregon Newpapers"
       ],
       "identityGroups": 1,
-      "cents": 713000,
-      "records": 6,
+      "cents": 807500,
+      "records": 2,
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "23208",
-          "name": "Tiffany Koyama Lane",
-          "district": 3,
-          "cents": 713000
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 807500
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description)",
-        "Management Services"
+        "Newspaper and Other Periodical Advertising",
+        "Online and Social Media Advertising; Newspaper and Other Periodical Advertising"
       ]
     },
     {
@@ -7950,6 +9027,29 @@
       "purposeCodes": [
         "General Operational Expenses (need description)",
         "Preparation and Production of Advertising"
+      ]
+    },
+    {
+      "reportedName": "Hannah Corbin",
+      "nameVariants": [
+        "Hannah Corbin"
+      ],
+      "identityGroups": 1,
+      "cents": 643050,
+      "records": 4,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 643050
+        }
+      ],
+      "purposeCodes": [
+        "Management Services",
+        "Management Services; General Operational Expenses (need description)",
+        "Reimbursement for Personal Expenditures"
       ]
     },
     {
@@ -7986,6 +9086,28 @@
       ]
     },
     {
+      "reportedName": "Hallie Frost",
+      "nameVariants": [
+        "Hallie Frost"
+      ],
+      "identityGroups": 1,
+      "cents": 580000,
+      "records": 6,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 580000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Preparation and Production of Advertising"
+      ]
+    },
+    {
       "reportedName": "Ashley Schofield",
       "nameVariants": [
         "Ashley Schofield"
@@ -8008,27 +9130,6 @@
       ]
     },
     {
-      "reportedName": "Portland Clean Air Fund",
-      "nameVariants": [
-        "Portland Clean Air Fund"
-      ],
-      "identityGroups": 1,
-      "cents": 500000,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 500000
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ]
-    },
-    {
       "reportedName": "Roseto Films",
       "nameVariants": [
         "Roseto Films"
@@ -8048,6 +9149,49 @@
       "purposeCodes": [
         "Online and Social Media Advertising",
         "Preparation and Production of Advertising"
+      ]
+    },
+    {
+      "reportedName": "Willamette Week",
+      "nameVariants": [
+        "Willamette Week"
+      ],
+      "identityGroups": 1,
+      "cents": 440000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 440000
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ]
+    },
+    {
+      "reportedName": "Christopher Olson",
+      "nameVariants": [
+        "Christopher Olson"
+      ],
+      "identityGroups": 1,
+      "cents": 437234,
+      "records": 3,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 437234
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Reimbursement for Personal Expenditures"
       ]
     },
     {
@@ -8128,6 +9272,27 @@
       ]
     },
     {
+      "reportedName": "Tiffany Breunig",
+      "nameVariants": [
+        "Tiffany Breunig"
+      ],
+      "identityGroups": 1,
+      "cents": 413000,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 413000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
       "reportedName": "Mackenzie Gray",
       "nameVariants": [
         "Mackenzie Gray"
@@ -8150,27 +9315,6 @@
       ]
     },
     {
-      "reportedName": "Tiffany Breunig",
-      "nameVariants": [
-        "Tiffany Breunig"
-      ],
-      "identityGroups": 1,
-      "cents": 400000,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 400000
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ]
-    },
-    {
       "reportedName": "John Carter",
       "nameVariants": [
         "John Carter"
@@ -8189,28 +9333,6 @@
       ],
       "purposeCodes": [
         "Wages, Salaries, Benefits"
-      ]
-    },
-    {
-      "reportedName": "Hallie Frost",
-      "nameVariants": [
-        "Hallie Frost"
-      ],
-      "identityGroups": 1,
-      "cents": 355000,
-      "records": 5,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23411",
-          "name": "Jeremy Beausoleil Smith",
-          "district": 4,
-          "cents": 355000
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)",
-        "Preparation and Production of Advertising"
       ]
     },
     {
@@ -8256,28 +9378,6 @@
       ]
     },
     {
-      "reportedName": "Hannah Corbin",
-      "nameVariants": [
-        "Hannah Corbin"
-      ],
-      "identityGroups": 1,
-      "cents": 340000,
-      "records": 2,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "15109",
-          "name": "Steve Novick",
-          "district": 3,
-          "cents": 340000
-        }
-      ],
-      "purposeCodes": [
-        "Management Services",
-        "Management Services; General Operational Expenses (need description)"
-      ]
-    },
-    {
       "reportedName": "Jonathan Pulvers",
       "nameVariants": [
         "Jonathan Pulvers"
@@ -8296,34 +9396,6 @@
       ],
       "purposeCodes": [
         "Management Services"
-      ]
-    },
-    {
-      "reportedName": "CLR PUBLISHING/Northwest Examiner",
-      "nameVariants": [
-        "CLR PUBLISHING/Northwest Examiner",
-        "CLR Publishing/Northwest Examiner"
-      ],
-      "identityGroups": 2,
-      "cents": 310000,
-      "records": 2,
-      "candidateCount": 2,
-      "candidates": [
-        {
-          "committeeId": "17629",
-          "name": "Eric Zimmerman",
-          "district": 4,
-          "cents": 100000
-        },
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 210000
-        }
-      ],
-      "purposeCodes": [
-        "Newspaper and Other Periodical Advertising"
       ]
     },
     {
@@ -8436,6 +9508,60 @@
       ]
     },
     {
+      "reportedName": "ZenPayroll Inc (dba Gusto)",
+      "nameVariants": [
+        "ZenPayroll Inc (dba Gusto)"
+      ],
+      "identityGroups": 1,
+      "cents": 279549,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
+          "district": 3,
+          "cents": 279549
+        }
+      ],
+      "purposeCodes": [
+        "Wages, Salaries, Benefits"
+      ]
+    },
+    {
+      "reportedName": "ActBlue Technical Services",
+      "nameVariants": [
+        "ActBlue Technical Services"
+      ],
+      "identityGroups": 3,
+      "cents": 278275,
+      "records": 40,
+      "candidateCount": 3,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 25032
+        },
+        {
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 251582
+        },
+        {
+          "committeeId": "24972",
+          "name": "Joel Corcoran",
+          "district": 3,
+          "cents": 1661
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
       "reportedName": "Google",
       "nameVariants": [
         "Google"
@@ -8528,13 +9654,13 @@
       ]
     },
     {
-      "reportedName": "Deer Island Studio, Design & Media",
+      "reportedName": "Lorraine Ortiz",
       "nameVariants": [
-        "Deer Island Studio, Design & Media"
+        "Lorraine Ortiz"
       ],
       "identityGroups": 1,
       "cents": 265000,
-      "records": 2,
+      "records": 6,
       "candidateCount": 1,
       "candidates": [
         {
@@ -8618,42 +9744,30 @@
       ]
     },
     {
-      "reportedName": "ActBlue Technical Services",
+      "reportedName": "Level Headed Press",
       "nameVariants": [
-        "ActBlue Technical Services"
+        "Level Headed Press"
       ],
-      "identityGroups": 3,
-      "cents": 233464,
-      "records": 36,
-      "candidateCount": 3,
+      "identityGroups": 1,
+      "cents": 233500,
+      "records": 2,
+      "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "24661",
-          "name": "Tom Sollitt",
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
           "district": 3,
-          "cents": 24358
-        },
-        {
-          "committeeId": "24897",
-          "name": "Kellie Torres",
-          "district": 3,
-          "cents": 207445
-        },
-        {
-          "committeeId": "24972",
-          "name": "Joel Corcoran",
-          "district": 3,
-          "cents": 1661
+          "cents": 233500
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description)"
+        "Other Advertising (yard signs, buttons, etc.)"
       ]
     },
     {
-      "reportedName": "Christopher Olson",
+      "reportedName": "Eric Smith",
       "nameVariants": [
-        "Christopher Olson"
+        "Eric Smith"
       ],
       "identityGroups": 1,
       "cents": 225000,
@@ -8661,35 +9775,36 @@
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "23411",
-          "name": "Jeremy Beausoleil Smith",
-          "district": 4,
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
           "cents": 225000
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description)"
+        "Management Services"
       ]
     },
     {
-      "reportedName": "CMG Oregon Newpapers",
+      "reportedName": "UPRINTING",
       "nameVariants": [
-        "CMG Oregon Newpapers"
+        "UPRINTING"
       ],
       "identityGroups": 1,
-      "cents": 220000,
-      "records": 1,
+      "cents": 223866,
+      "records": 4,
       "candidateCount": 1,
       "candidates": [
         {
           "committeeId": "23295",
           "name": "Eli Arnold",
           "district": 4,
-          "cents": 220000
+          "cents": 223866
         }
       ],
       "purposeCodes": [
-        "Newspaper and Other Periodical Advertising"
+        "Literature, Brochures, Printing",
+        "Other Advertising (yard signs, buttons, etc.)"
       ]
     },
     {
@@ -8768,27 +9883,6 @@
       ]
     },
     {
-      "reportedName": "Lorraine Ortiz",
-      "nameVariants": [
-        "Lorraine Ortiz"
-      ],
-      "identityGroups": 1,
-      "cents": 215000,
-      "records": 5,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "25103",
-          "name": "Jayne Cronlund",
-          "district": 4,
-          "cents": 215000
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ]
-    },
-    {
       "reportedName": "Copyman",
       "nameVariants": [
         "Copyman"
@@ -8807,27 +9901,6 @@
       ],
       "purposeCodes": [
         "General Operational Expenses (need description)",
-        "Literature, Brochures, Printing"
-      ]
-    },
-    {
-      "reportedName": "UPRINTING",
-      "nameVariants": [
-        "UPRINTING"
-      ],
-      "identityGroups": 1,
-      "cents": 205761,
-      "records": 3,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 205761
-        }
-      ],
-      "purposeCodes": [
         "Literature, Brochures, Printing"
       ]
     },
@@ -8914,6 +9987,27 @@
       ]
     },
     {
+      "reportedName": "Lindsey Gonzales",
+      "nameVariants": [
+        "Lindsey Gonzales"
+      ],
+      "identityGroups": 1,
+      "cents": 186000,
+      "records": 8,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "25103",
+          "name": "Jayne Cronlund",
+          "district": 4,
+          "cents": 186000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
       "reportedName": "Luna y Sol LLC",
       "nameVariants": [
         "Luna y Sol LLC"
@@ -8986,24 +10080,24 @@
       ]
     },
     {
-      "reportedName": "Lindsey Gonzales",
+      "reportedName": "Facebook - FACEBK",
       "nameVariants": [
-        "Lindsey Gonzales"
+        "Facebook - FACEBK"
       ],
       "identityGroups": 1,
-      "cents": 173250,
-      "records": 7,
+      "cents": 159923,
+      "records": 4,
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "25103",
-          "name": "Jayne Cronlund",
+          "committeeId": "23295",
+          "name": "Eli Arnold",
           "district": 4,
-          "cents": 173250
+          "cents": 159923
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description)"
+        "Online and Social Media Advertising"
       ]
     },
     {
@@ -9062,8 +10156,8 @@
         "Lyft"
       ],
       "identityGroups": 2,
-      "cents": 137592,
-      "records": 57,
+      "cents": 140111,
+      "records": 58,
       "candidateCount": 2,
       "candidates": [
         {
@@ -9076,12 +10170,54 @@
           "committeeId": "23208",
           "name": "Tiffany Koyama Lane",
           "district": 3,
-          "cents": 126777
+          "cents": 129296
         }
       ],
       "purposeCodes": [
         "General Operational Expenses (need description)",
         "Travel Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "Faith Bowman",
+      "nameVariants": [
+        "Faith Bowman"
+      ],
+      "identityGroups": 1,
+      "cents": 140000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 140000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "Logan Kerbs",
+      "nameVariants": [
+        "Logan Kerbs"
+      ],
+      "identityGroups": 1,
+      "cents": 140000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 140000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
       ]
     },
     {
@@ -9128,6 +10264,81 @@
       ]
     },
     {
+      "reportedName": "Electric Heights Publishing Company",
+      "nameVariants": [
+        "Electric Heights Publishing Company"
+      ],
+      "identityGroups": 1,
+      "cents": 130000,
+      "records": 2,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 47500
+        },
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 82500
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ]
+    },
+    {
+      "reportedName": "INDUSTRIOUS PORTLAND",
+      "nameVariants": [
+        "INDUSTRIOUS PORTLAND"
+      ],
+      "identityGroups": 1,
+      "cents": 128600,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 128600
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "The Southeast Examiner",
+      "nameVariants": [
+        "The Southeast Examiner"
+      ],
+      "identityGroups": 2,
+      "cents": 126400,
+      "records": 2,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 63200
+        },
+        {
+          "committeeId": "24973",
+          "name": "Esther León",
+          "district": 3,
+          "cents": 63200
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ]
+    },
+    {
       "reportedName": "Artist Proof Collective",
       "nameVariants": [
         "Artist Proof Collective"
@@ -9145,6 +10356,27 @@
         }
       ],
       "purposeCodes": []
+    },
+    {
+      "reportedName": "Noah Levinson",
+      "nameVariants": [
+        "Noah Levinson"
+      ],
+      "identityGroups": 1,
+      "cents": 120000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 120000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
     },
     {
       "reportedName": "Democratic Party of Oregon Federal",
@@ -9252,6 +10484,33 @@
       ]
     },
     {
+      "reportedName": "Northwest Labor Press",
+      "nameVariants": [
+        "Northwest Labor Press"
+      ],
+      "identityGroups": 2,
+      "cents": 100000,
+      "records": 2,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 25000
+        },
+        {
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 75000
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ]
+    },
+    {
       "reportedName": "Vance Daniel",
       "nameVariants": [
         "Vance Daniel"
@@ -9273,24 +10532,36 @@
       ]
     },
     {
-      "reportedName": "Level Headed Press",
+      "reportedName": "Community Labor Administrative Services",
       "nameVariants": [
-        "Level Headed Press"
+        "Community Labor Administrative Services"
       ],
-      "identityGroups": 1,
-      "cents": 99600,
-      "records": 1,
-      "candidateCount": 1,
+      "identityGroups": 2,
+      "cents": 97898,
+      "records": 9,
+      "candidateCount": 3,
       "candidates": [
         {
           "committeeId": "23028",
           "name": "Angelita Morillo",
           "district": 3,
-          "cents": 99600
+          "cents": 24000
+        },
+        {
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
+          "district": 3,
+          "cents": 35730
+        },
+        {
+          "committeeId": "23365",
+          "name": "Mitch Green",
+          "district": 4,
+          "cents": 38168
         }
       ],
       "purposeCodes": [
-        "Other Advertising (yard signs, buttons, etc.)"
+        "General Operational Expenses (need description)"
       ]
     },
     {
@@ -9333,6 +10604,33 @@
       ],
       "purposeCodes": [
         "General Operational Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "Google Ads",
+      "nameVariants": [
+        "Google Ads"
+      ],
+      "identityGroups": 1,
+      "cents": 91000,
+      "records": 6,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 55000
+        },
+        {
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 36000
+        }
+      ],
+      "purposeCodes": [
+        "Online and Social Media Advertising"
       ]
     },
     {
@@ -9425,6 +10723,48 @@
       ]
     },
     {
+      "reportedName": "Mary Rarick",
+      "nameVariants": [
+        "Mary Rarick"
+      ],
+      "identityGroups": 1,
+      "cents": 85000,
+      "records": 3,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "25103",
+          "name": "Jayne Cronlund",
+          "district": 4,
+          "cents": 85000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "Schwab Creative",
+      "nameVariants": [
+        "Schwab Creative"
+      ],
+      "identityGroups": 1,
+      "cents": 85000,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "15109",
+          "name": "Steve Novick",
+          "district": 3,
+          "cents": 85000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
       "reportedName": "EXPOPRINT",
       "nameVariants": [
         "EXPOPRINT"
@@ -9507,6 +10847,33 @@
       ],
       "purposeCodes": [
         "Fundraising Event Expenses"
+      ]
+    },
+    {
+      "reportedName": "North Peninsula Review",
+      "nameVariants": [
+        "North Peninsula Review"
+      ],
+      "identityGroups": 1,
+      "cents": 77000,
+      "records": 2,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "17629",
+          "name": "Eric Zimmerman",
+          "district": 4,
+          "cents": 38500
+        },
+        {
+          "committeeId": "23199",
+          "name": "Olivia Clark",
+          "district": 4,
+          "cents": 38500
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
       ]
     },
     {
@@ -9691,24 +11058,24 @@
       ]
     },
     {
-      "reportedName": "Mary Rarick",
+      "reportedName": "CMG Oregon Newspapers",
       "nameVariants": [
-        "Mary Rarick"
+        "CMG Oregon Newspapers"
       ],
       "identityGroups": 1,
       "cents": 70000,
-      "records": 2,
+      "records": 1,
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "25103",
-          "name": "Jayne Cronlund",
+          "committeeId": "23199",
+          "name": "Olivia Clark",
           "district": 4,
           "cents": 70000
         }
       ],
       "purposeCodes": [
-        "General Operational Expenses (need description)"
+        "Newspaper and Other Periodical Advertising"
       ]
     },
     {
@@ -9752,6 +11119,28 @@
       "purposeCodes": []
     },
     {
+      "reportedName": "Katey Harris",
+      "nameVariants": [
+        "Katey Harris"
+      ],
+      "identityGroups": 1,
+      "cents": 64000,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23365",
+          "name": "Mitch Green",
+          "district": 4,
+          "cents": 64000
+        }
+      ],
+      "purposeCodes": [
+        "Online and Social Media Advertising",
+        "Preparation and Production of Advertising"
+      ]
+    },
+    {
       "reportedName": "Canva",
       "nameVariants": [
         "Canva"
@@ -9776,27 +11165,6 @@
       ],
       "purposeCodes": [
         "General Operational Expenses (need description)"
-      ]
-    },
-    {
-      "reportedName": "The Southeast Examiner",
-      "nameVariants": [
-        "The Southeast Examiner"
-      ],
-      "identityGroups": 1,
-      "cents": 63200,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "24973",
-          "name": "Esther León",
-          "district": 3,
-          "cents": 63200
-        }
-      ],
-      "purposeCodes": [
-        "Newspaper and Other Periodical Advertising"
       ]
     },
     {
@@ -9911,27 +11279,6 @@
           "name": "Jeremy Beausoleil Smith",
           "district": 4,
           "cents": 11498
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ]
-    },
-    {
-      "reportedName": "Schwab Creative",
-      "nameVariants": [
-        "Schwab Creative"
-      ],
-      "identityGroups": 1,
-      "cents": 57500,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "15109",
-          "name": "Steve Novick",
-          "district": 3,
-          "cents": 57500
         }
       ],
       "purposeCodes": [
@@ -10065,9 +11412,114 @@
       ]
     },
     {
+      "reportedName": "Ashley Lynn Blender",
+      "nameVariants": [
+        "Ashley Lynn Blender"
+      ],
+      "identityGroups": 1,
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "Asian Reporter Public",
+      "nameVariants": [
+        "Asian Reporter Public"
+      ],
+      "identityGroups": 1,
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24897",
+          "name": "Kellie Torres",
+          "district": 3,
+          "cents": 50000
+        }
+      ],
+      "purposeCodes": [
+        "Newspaper and Other Periodical Advertising"
+      ]
+    },
+    {
+      "reportedName": "Carla McHattie",
+      "nameVariants": [
+        "Carla McHattie"
+      ],
+      "identityGroups": 1,
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
       "reportedName": "Joey Patton",
       "nameVariants": [
         "Joey Patton"
+      ],
+      "identityGroups": 1,
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "Jonah Leahy",
+      "nameVariants": [
+        "Jonah Leahy"
+      ],
+      "identityGroups": 1,
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "Kyra Watkins",
+      "nameVariants": [
+        "Kyra Watkins"
       ],
       "identityGroups": 1,
       "cents": 50000,
@@ -10128,6 +11580,27 @@
       ]
     },
     {
+      "reportedName": "Nathan Elliott",
+      "nameVariants": [
+        "Nathan Elliott"
+      ],
+      "identityGroups": 1,
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
       "reportedName": "RAISE MORE, INC.",
       "nameVariants": [
         "RAISE MORE, INC.",
@@ -10150,36 +11623,86 @@
       ]
     },
     {
-      "reportedName": "Community Labor Administrative Services",
+      "reportedName": "Summers Faded",
       "nameVariants": [
-        "Community Labor Administrative Services"
+        "Summers Faded"
       ],
-      "identityGroups": 2,
-      "cents": 48000,
-      "records": 6,
-      "candidateCount": 3,
+      "identityGroups": 1,
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "23028",
-          "name": "Angelita Morillo",
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
           "district": 3,
-          "cents": 16000
-        },
-        {
-          "committeeId": "23208",
-          "name": "Tiffany Koyama Lane",
-          "district": 3,
-          "cents": 24000
-        },
-        {
-          "committeeId": "23365",
-          "name": "Mitch Green",
-          "district": 4,
-          "cents": 8000
+          "cents": 50000
         }
       ],
       "purposeCodes": [
         "General Operational Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "The Golden Goddess",
+      "nameVariants": [
+        "The Golden Goddess"
+      ],
+      "identityGroups": 1,
+      "cents": 50000,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 50000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "Google Workspace",
+      "nameVariants": [
+        "Google Workspace"
+      ],
+      "identityGroups": 1,
+      "cents": 48928,
+      "records": 5,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24972",
+          "name": "Joel Corcoran",
+          "district": 3,
+          "cents": 48928
+        }
+      ],
+      "purposeCodes": []
+    },
+    {
+      "reportedName": "Gabe Vogl",
+      "nameVariants": [
+        "Gabe Vogl"
+      ],
+      "identityGroups": 1,
+      "cents": 47500,
+      "records": 2,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
+          "district": 4,
+          "cents": 47500
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)",
+        "Other Advertising (yard signs, buttons, etc.)"
       ]
     },
     {
@@ -10197,6 +11720,27 @@
           "name": "Jamey Evenstar",
           "district": 4,
           "cents": 47175
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "NationBuilder",
+      "nameVariants": [
+        "NationBuilder"
+      ],
+      "identityGroups": 1,
+      "cents": 43100,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 43100
         }
       ],
       "purposeCodes": [
@@ -10364,25 +11908,6 @@
       ]
     },
     {
-      "reportedName": "Google Workspace",
-      "nameVariants": [
-        "Google Workspace"
-      ],
-      "identityGroups": 1,
-      "cents": 38368,
-      "records": 4,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "24972",
-          "name": "Joel Corcoran",
-          "district": 3,
-          "cents": 38368
-        }
-      ],
-      "purposeCodes": []
-    },
-    {
       "reportedName": "TABORSPACE",
       "nameVariants": [
         "TABORSPACE"
@@ -10410,27 +11935,6 @@
       ]
     },
     {
-      "reportedName": "Katey Harris",
-      "nameVariants": [
-        "Katey Harris"
-      ],
-      "identityGroups": 1,
-      "cents": 36000,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23365",
-          "name": "Mitch Green",
-          "district": 4,
-          "cents": 36000
-        }
-      ],
-      "purposeCodes": [
-        "Preparation and Production of Advertising"
-      ]
-    },
-    {
       "reportedName": "SquareSpace Inc",
       "nameVariants": [
         "SquareSpace Inc"
@@ -10445,6 +11949,27 @@
           "name": "Mitch Green",
           "district": 4,
           "cents": 36000
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
+      "reportedName": "SquareSpace - SQSP",
+      "nameVariants": [
+        "SquareSpace - SQSP"
+      ],
+      "identityGroups": 1,
+      "cents": 35800,
+      "records": 4,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 35800
         }
       ],
       "purposeCodes": [
@@ -10513,6 +12038,33 @@
       ]
     },
     {
+      "reportedName": "GoDaddy",
+      "nameVariants": [
+        "GoDaddy"
+      ],
+      "identityGroups": 2,
+      "cents": 33232,
+      "records": 4,
+      "candidateCount": 2,
+      "candidates": [
+        {
+          "committeeId": "23028",
+          "name": "Angelita Morillo",
+          "district": 3,
+          "cents": 29164
+        },
+        {
+          "committeeId": "23208",
+          "name": "Tiffany Koyama Lane",
+          "district": 3,
+          "cents": 4068
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
       "reportedName": "Vistaprint",
       "nameVariants": [
         "Vistaprint"
@@ -10531,27 +12083,6 @@
       ],
       "purposeCodes": [
         "Other Advertising (yard signs, buttons, etc.)"
-      ]
-    },
-    {
-      "reportedName": "SquareSpace - SQSP",
-      "nameVariants": [
-        "SquareSpace - SQSP"
-      ],
-      "identityGroups": 1,
-      "cents": 31900,
-      "records": 3,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
-          "district": 4,
-          "cents": 31900
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
       ]
     },
     {
@@ -10637,25 +12168,6 @@
       "purposeCodes": [
         "Other Advertising (yard signs, buttons, etc.)"
       ]
-    },
-    {
-      "reportedName": "GoDaddy",
-      "nameVariants": [
-        "GoDaddy"
-      ],
-      "identityGroups": 1,
-      "cents": 29164,
-      "records": 3,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23028",
-          "name": "Angelita Morillo",
-          "district": 3,
-          "cents": 29164
-        }
-      ],
-      "purposeCodes": []
     },
     {
       "reportedName": "Parking NW",
@@ -10902,27 +12414,6 @@
       ],
       "purposeCodes": [
         "General Operational Expenses (need description)"
-      ]
-    },
-    {
-      "reportedName": "Northwest Labor Press",
-      "nameVariants": [
-        "Northwest Labor Press"
-      ],
-      "identityGroups": 1,
-      "cents": 25000,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "15109",
-          "name": "Steve Novick",
-          "district": 3,
-          "cents": 25000
-        }
-      ],
-      "purposeCodes": [
-        "Newspaper and Other Periodical Advertising"
       ]
     },
     {
@@ -11814,6 +13305,27 @@
       ]
     },
     {
+      "reportedName": "Adobe Inc.",
+      "nameVariants": [
+        "Adobe Inc."
+      ],
+      "identityGroups": 1,
+      "cents": 11495,
+      "records": 5,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "23295",
+          "name": "Eli Arnold",
+          "district": 4,
+          "cents": 11495
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
+    },
+    {
       "reportedName": "Hobby Lobby",
       "nameVariants": [
         "Hobby Lobby"
@@ -12023,20 +13535,20 @@
       ]
     },
     {
-      "reportedName": "Adobe Inc.",
+      "reportedName": "Google LLC",
       "nameVariants": [
-        "Adobe Inc."
+        "Google LLC"
       ],
       "identityGroups": 1,
-      "cents": 9196,
-      "records": 4,
+      "cents": 6115,
+      "records": 2,
       "candidateCount": 1,
       "candidates": [
         {
-          "committeeId": "23295",
-          "name": "Eli Arnold",
+          "committeeId": "23411",
+          "name": "Jeremy Beausoleil Smith",
           "district": 4,
-          "cents": 9196
+          "cents": 6115
         }
       ],
       "purposeCodes": [
@@ -12086,27 +13598,6 @@
       ]
     },
     {
-      "reportedName": "Google LLC",
-      "nameVariants": [
-        "Google LLC"
-      ],
-      "identityGroups": 1,
-      "cents": 4200,
-      "records": 1,
-      "candidateCount": 1,
-      "candidates": [
-        {
-          "committeeId": "23411",
-          "name": "Jeremy Beausoleil Smith",
-          "district": 4,
-          "cents": 4200
-        }
-      ],
-      "purposeCodes": [
-        "General Operational Expenses (need description)"
-      ]
-    },
-    {
       "reportedName": "Square space",
       "nameVariants": [
         "Square space"
@@ -12145,28 +13636,70 @@
       "purposeCodes": [
         "General Operational Expenses (need description)"
       ]
+    },
+    {
+      "reportedName": "The UPS Store",
+      "nameVariants": [
+        "The UPS Store"
+      ],
+      "identityGroups": 1,
+      "cents": 2500,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24966",
+          "name": "Matthias Hallett",
+          "district": 3,
+          "cents": 2500
+        }
+      ],
+      "purposeCodes": [
+        "Literature, Brochures, Printing"
+      ]
+    },
+    {
+      "reportedName": "Columbia Bank",
+      "nameVariants": [
+        "Columbia Bank"
+      ],
+      "identityGroups": 1,
+      "cents": 1750,
+      "records": 1,
+      "candidateCount": 1,
+      "candidates": [
+        {
+          "committeeId": "24661",
+          "name": "Tom Sollitt",
+          "district": 3,
+          "cents": 1750
+        }
+      ],
+      "purposeCodes": [
+        "General Operational Expenses (need description)"
+      ]
     }
   ],
   "evidence": {
     "payments": {
       "url": "/data/campaign-finance/suppliers/cash-payments.csv",
-      "sha256": "3c17c193e331ef0e64d3a37b151366206fe9b019bf9397ae3749cb9995369da9",
-      "rows": 2441
+      "sha256": "04efe4e16dd22c04fe5e57bdd25df9cf8f83e0858766317ae683380eac43787c",
+      "rows": 2610
     },
     "payeeGroups": {
       "url": "/data/campaign-finance/suppliers/payee-record-groups.csv",
-      "sha256": "60f98efda1dbd6748dbd61bb6ab0765b375f5c15a45a7ba1310fe8ab6c92eb07",
-      "rows": 251
+      "sha256": "21b05d9ff4fa82ed5ba32e6e05476637a8813e3c39f957990b2aa9f88ff4402b",
+      "rows": 283
     },
     "payeeCandidates": {
       "url": "/data/campaign-finance/suppliers/payee-candidate-ledger.csv",
-      "sha256": "07d3de96f04aab6ca0f2f641202f8a80391ebad7a7e925025a0a4dce56ee6189",
-      "rows": 295
+      "sha256": "15a1107be1a6ee0de417a4db84d91a469139ba150c466ebba54077a91346093c",
+      "rows": 331
     },
     "reportedNames": {
       "url": "/data/campaign-finance/suppliers/reported-name-groups.csv",
-      "sha256": "0028bb0f4bcd39de89b209fc54d2d11ede17a7a9b811a2daa374ee2a7c53cd22",
-      "rows": 215
+      "sha256": "4f79fc8b45320fc9035d5a0899788daa372fc4a26a4c9a805cc23b7f15afeace",
+      "rows": 243
     }
   },
   "definitions": {

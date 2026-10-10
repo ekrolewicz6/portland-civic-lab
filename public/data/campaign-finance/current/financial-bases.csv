@@ -1,0 +1,17 @@
+basis,records,amount_cents
+cash_adjustment,172,1067913
+cash_contribution,215435,13409257066
+cash_payment,82136,9975286724
+cash_reversal,470,86181448
+contribution_refund,1022,115280154
+forgiven_obligation,240,37086756
+loan_forgiven,90,84339290
+loan_payment,119,43485520
+loan_received,344,133677483
+noncash_support,7098,1264229499
+obligation,7412,551353799
+obligation_adjustment,26,-423291
+obligation_cancellation,19,12018103
+other_cash_payment,1500,127548150
+other_cash_receipt,9275,431902232
+receivable,7,166211
