@@ -1,10 +1,12 @@
 # Oregon Fire Map — current sourcebook
 
-Updated October 7, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public data exists for an initial map; comprehensive coverage and a site-selection explanation for every burn remain goals, not established facts.
+Updated October 10, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public data exists for an initial map; comprehensive coverage and a site-selection explanation for every burn remain goals, not established facts.
 
 **Current direction:** [Fire in Oregon: project charter](TRUE-NORTH.md) is the quick reference; the [full detailed true-north plan](TRUE-NORTH-DETAILED.md) preserves the original questions, research method, delivery sequence, and acceptance criteria. The [one-page brief](TRUE-NORTH-ONE-PAGER.md), [reader-question and claim register](question-evidence-register-2026-09-30.json), [pilot screening](pilot-screening-2026-09-30.md), [acquisition and delivery register](true-north-work-register-2026-09-30.md), and [implementation and release record](true-north-implementation-2026-10-02.md) govern the next work. Earlier plans below remain dated history. The private September 30 interview, notes, and claim audit are stored outside this repository and every deployment input.
 
 **New acquisition:** [Rivers to Ridges intake and integration plan](rivers-to-ridges-intake-2026-10-07.md) audits the October 6 GIS and historical-acreage attachments. They are received and inspected, but not imported or published. Mapped unit boundaries must remain separate from confirmed burn accomplishments; the files contain year/acreage mismatches, repeated polygons, a major boundary outlier, and contact fields to exclude from public outputs.
+
+**USGS source review:** [Michelle Jeffries's October 9 follow-up materials](usgs-jeffries-materials-2026-10-10.md) distinguishes treatment records, fire perimeters, observed burned area, severity, and field monitoring. It evaluates each public link for a named reader question and records what still needs download or reconciliation. The October 9 conversation is not documented in this repository.
 
 Start with [the dated audit](audit-2026-09-11.md) and [implementation notes](implementation.md). The working page is `/oregon-fire` in Portland Civic Lab. Original research is preserved in `archive-2026-09-10/`, which contains superseded claims and is not the current sourcebook.
 

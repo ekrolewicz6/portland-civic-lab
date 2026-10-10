@@ -1,6 +1,6 @@
 # Fire in Oregon · acquisition and delivery register
 
-Updated October 3, 2026. This public register names decisions and sources, not private email bodies, recipient lists, interview notes, or restricted attachments. The [charter](TRUE-NORTH.md) defines the selection gate and editorial standard. The [question register](question-evidence-register-2026-09-30.json) holds proposed public claims.
+Updated October 10, 2026. This public register names decisions and sources, not private email bodies, recipient lists, interview notes, or restricted attachments. The [charter](TRUE-NORTH.md) defines the selection gate and editorial standard. The [question register](question-evidence-register-2026-09-30.json) holds proposed public claims.
 
 | Priority | Reader decision | Existing evidence | Smallest missing record | Status and next step |
 |---|---|---|---|---|
@@ -12,6 +12,8 @@ Updated October 3, 2026. This public register names decisions and sources, not p
 | 2 | How often and at what cost does work recur? | [Davis and colleagues review](https://research.fs.usda.gov/download/treesearch/67659.pdf) gives a research context, not a local schedule | Pilot maintenance plan and historical repeat activities; funding or contract scope | Publish recurrence only for actual units and periods. |
 | 2 | Did this work help? | [Egley study](https://research.fs.usda.gov/treesearch/59149) demonstrates one study design | Pilot baseline, monitoring method, follow-up observations, and suitable comparison | Distinguish measured effect from modeled benefit and manager assessment. |
 | 3 | Can a dollar-benefit estimate be transferred here? | [Pacific Northwest suppression study](https://doi.org/10.1093/ej/ueag037), [western avoided-damage report](https://www.perc.org/2026/05/07/beyond-wildfire-suppression/), [replication repository](https://github.com/frederikstrabo/cost-effective-fuel-treatments) | Bounded reproduction of one published result, local cost inputs, assumptions, and qualified review | Do not publish a local multiplier or statewide savings-per-acre map. |
+| 2 | What exactly does a fire-history visual count? | [USGS WFTT methods](https://www.usgs.gov/centers/forest-and-rangeland-ecosystem-science-center/science/wildland-fire-trends-tool); [October 10 USGS materials review](usgs-jeffries-materials-2026-10-10.md) | Oregon-filtered and versioned perimeter-versus-observed-burned-area example, with years and size threshold | Clarify four different views in the public guide now; defer a numeric Oregon trend until methods and coverage are reproduced. |
+| 2 | Could a pilot's prior work and later conditions be linked? | [LTDL release](https://doi.org/10.5066/P98OBOLS), [TWIG](https://reshapewildfire.org/resources/twig-data-resources/), [OWRI](https://www.oregon.gov/oweb/data-reporting/pages/owri.aspx), [AIM](https://services1.arcgis.com/KbxwQRRfWyEYLgp4/ArcGIS/rest/services/BLM_Nat_AIM_Terrestrial_Indicators_Hub/FeatureServer/7) | A bounded Oregon extract, original identifiers, project/plot relationships, observation methods, and sample design | Source discovery only. Do not equate overlapping polygons, a nearby monitoring plot, or an aggregator cost with a verified project outcome or expense. |
 
 ## Delivery backlog
 
@@ -25,6 +27,7 @@ Updated October 3, 2026. This public register names decisions and sources, not p
 | Next | Landscape dossier, downloadable tables and API | Selected qualified pilot, reviewed evidence and versioned calculation | Public export contains no private correspondence; calculations reproduce from inputs. |
 | Later | Locally reviewed scenarios | Actual priorities, costs, crews, timing and review | Current funding, priority program and feasible expansion use consistent scopes. |
 | Later | Reader/educator trial | Stable first landscape report | Five newcomers tested; at least four can explain location, recurrence, permit/completion and estimate uncertainty. |
+| Next | Distinguish boundary, burned area, severity and follow-up in the guide | USGS WFTT methods and existing map legend | Reader can explain why perimeter area is not the same as satellite-classified burned area. |
 
 ## Correspondence routing
 
