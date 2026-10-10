@@ -6,7 +6,7 @@ import { costOfInaction, COST, fmtMoney, fmtNum } from "@/lib/homeless/engine";
 const PRESETS = [
   { label: "a city block", value: 50 },
   { label: "one neighborhood", value: 500 },
-  { label: "everyone unsheltered", value: 6912 },
+  { label: "everyone chronic and unsheltered, Jan. 2025", value: 3735 },
 ];
 
 export default function CostOfInactionCalculator() {

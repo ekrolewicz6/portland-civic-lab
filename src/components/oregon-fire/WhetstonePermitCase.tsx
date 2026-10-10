@@ -76,7 +76,7 @@ export default function WhetstonePermitCase() {
         </div>
       </div>
 
-      <ol className="fire-whetstone-sequence" aria-label="From plan to reported status">
+      <ol className="fire-whetstone-sequence fire-steps" aria-label="From plan to reported status">
         <li>
           <span>01 / Plan</span>
           <strong>Three units, different needs</strong>

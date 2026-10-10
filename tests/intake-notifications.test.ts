@@ -57,7 +57,7 @@ beforeEach(async () => {
 afterAll(async () => { vi.unstubAllGlobals(); vi.unstubAllEnvs(); await state.db.close(); });
 
 describe("durable contact notifications", () => {
-  it.each(["General note", "Commission research or a build", "Property screening", "Institutional work", "Founding support", "Backing the company", "Advising the Lab", "Work on a topic", "Partnership", "Data correction", "Volunteering", "Permitting tools", "Dashboard or analysis request"])("stores and emails the %s form", async (topic) => {
+  it.each(["General note", "Commission research or a build", "Property screening", "Institutional work", "Founding support", "Backing the company", "Advising the Lab", "Work on a topic", "Partnership", "Data correction", "Volunteering", "Events", "Permitting tools", "Dashboard or analysis request"])("stores and emails the %s form", async (topic) => {
     const response = await contact(request("/api/contact", { ...contactPayload, topic }));
     expect(response.status).toBe(200);
     expect((await response.json()).delivery).toBe("resend");

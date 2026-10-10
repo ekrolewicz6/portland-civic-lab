@@ -6,7 +6,7 @@ import enrichment from '@/lib/campaign-finance/enrichment.json';
 import data from '@/lib/campaign-finance/publication.json';
 import {BASE,SNAPSHOT,money,shortMoney} from '@/lib/campaign-finance/filters';
 import {Shell,Notice,Bars,styles} from '@/components/deep-dives/campaign-finance/Shared';
-export const metadata=pageMeta({title:'Who funds Oregon politics—and what the money trail can prove',description:'An evidence-led investigation of 316,926 campaign-finance records: concentrated funding, circulating money, disclosure gaps and Portland public financing.',path:BASE+'/statewide',type:'article'});
+export const metadata=pageMeta({title:'Who funds Oregon politics—and what the money trail can prove',description:'An evidence-led investigation of 316,926 campaign-finance records: concentrated funding, circulating money, disclosure gaps and Portland public financing.',path:BASE+'/statewide',type:'article',sectionImage:true});
 const total=(basis:string)=>data.bases.filter(r=>r.basis===basis).reduce((a,r)=>a+r.amount_cents,0);
 const cash=total('cash_contribution');
 const anonymous=data.disclosure.filter(r=>r.family==='Contribution').reduce((a,r)=>a+r.amount_cents,0);

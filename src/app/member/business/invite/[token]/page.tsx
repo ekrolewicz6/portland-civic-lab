@@ -9,7 +9,7 @@ import { getMemberByWorkOSId } from "@/lib/membership";
 import { acceptInvite, getInviteByToken } from "@/lib/business";
 
 export const metadata: Metadata = {
-  title: "Business invitation | Portland Civic Lab",
+  title: "Business invitation",
   robots: { index: false, follow: false },
 };
 

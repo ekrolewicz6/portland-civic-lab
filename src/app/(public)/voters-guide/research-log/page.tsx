@@ -19,6 +19,221 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="vote-labels-2026-10-08">October 8, 2026 · Correction: every recorded vote now says what it was cast on (Portland Council)</h2>
+        <p>
+          On the Council choices beneath each race grid, a sitting
+          councilor’s recorded vote appeared as a bare Yes or No under the
+          board’s own question. The two can point opposite ways. The Clearing
+          camps board asks “Keep funding camp removals at current levels?”,
+          while the vote behind it was on an amendment to shift money away
+          from camp removals, so a Yes read as the opposite of what the
+          councilor did. Opening the row did not settle it, because it named
+          only the kind of vote (“Budget amendment”). Each vote now reads, for
+          example, “Voted yes on Shift funding away from homeless-camp
+          removals”, on every board and in the “On record” list on each
+          brief. No vote, position or source changed. Tiffany Koyama Lane’s
+          campaign raised the problem on October 2.
+        </p>
+        <h2 id="leake-2026-10-08">October 8, 2026 · Wording fix: what “No endorsements” meant (all candidates)</h2>
+        <p>
+          Josh Leake (District 4) wrote that his page was wrong because he has
+          been endorsed by the Democratic Municipal Officials, as his website
+          shows. The guide does not list any candidate’s endorsements, but
+          every candidate’s description in search results and link previews
+          ended with “No endorsements.” That line was meant to say the Lab
+          endorses no one; it read as if the candidate had none. It now reads
+          “The Lab endorses no one,” and the District pages’ descriptions say
+          the same. No candidate’s positions changed.
+        </p>
+        <h2 id="local88-2026-10-07">October 7, 2026 · Review: AFSCME Local 88 on the county budget board (Multnomah County)</h2>
+        <p>
+          Jackie Tate, president of AFSCME Local 88, which represents many
+          county workers and has endorsed Julia Brim-Edwards for chair,
+          checked the “Closing the gap” board on the County Chair page at our
+          request, for accuracy only. She said the shortfall figures and the
+          158 eliminated positions appear correct, though final numbers may
+          vary. On whether “administration before services” describes the
+          choice fairly, she said the FY 2027 budget eliminated some management
+          positions but mostly union-represented jobs, many of them unfilled
+          and some filled. The county’s June 5, 2026 release says the cuts
+          started “as much as possible with those already vacant” and gives no
+          breakdown of filled and vacant or management and represented
+          positions, and we found none published. The board’s context now
+          says that. She said the summaries of Julia Brim-Edwards and Shannon
+          Singleton are accurate; her other comments concerned the merits of
+          candidates’ plans, which the guide does not weigh, so no candidate’s
+          entry changed.
+        </p>
+        <h2 id="homelessness-figures-2026-10-07">October 7, 2026 · Correction: Gresham’s homelessness figures; wording on a District 3 page</h2>
+        <p>
+          A review of every homelessness figure in the guide found two errors.
+          The Gresham pages said the city’s outreach team housed 155 people
+          last year and that the latest point-in-time count found 20 people
+          unsheltered in Gresham, citing a February 2026 council packet that
+          contains neither figure. KPTV reported on November 12, 2025 that the
+          city’s homeless services team housed 156 people (88 households) in
+          fiscal 2025, and that Portland State’s 2025 Point-in-Time count found
+          fewer than 40 people unsheltered in Gresham, down from 138 in 2015.
+          Those figures and that source now replace the old ones; the shelter
+          count and pod rules still cite the packet. On the District 3 page,
+          Heart Free Pham’s measure had read “cites the county’s unsheltered
+          count, nearly 9,000”; her site says “Nearly 9,000 people are
+          unsheltered in Multnomah County today,” without calling it a count,
+          and the line now follows her wording.
+        </p>
+        <h2 id="hrac-2026-10-07">October 7, 2026 · Clarification: the county’s homelessness figures (Multnomah County)</h2>
+        <p>
+          Dr. Minji Cho of Portland State University’s Homelessness Research
+          &amp; Action Collaborative reviewed the homelessness items on the
+          County Chair page at our request. She pointed out that the figures
+          of about 18,000 people homeless and 8,800 unsheltered come from the
+          county’s by-name list, which draws on everyone in contact with
+          homeless services, and that its method differs from the federal
+          Point-in-Time count, whose most recent unsheltered survey was in
+          January 2025. The city-county agreement item had said “the county
+          counted,” which could be read as a Point-in-Time count. It now names
+          the by-name list and says the two methods are not comparable. The
+          figures themselves did not change. Her other point, that HRAC holds
+          only the Point-in-Time and Housing Inventory Count data, means the
+          remaining figures could not be checked against HRAC’s data.
+        </p>
+        <h2 id="mcdonald-2026-10-06">October 6, 2026 · Candidate response: John McDonald (District 4)</h2>
+        <p>
+          John McDonald answered the four topic questions still open on his
+          page, one on October 5 and three on October 6. On new taxes or fees
+          he would hold the line, except what he calls the roads repair tax on
+          water bills, and would raise revenue through business recruitment
+          led by the mayor’s office and a resized Prosper Portland while
+          auditing every department to cut costs. On clearing camps he would
+          sign no new removal contracts and audit existing contractors; he
+          does not say whether current funding should stay at its level, so
+          that board reads “partial.” On data centers he is not opposed
+          because they bring revenue, but wants Council to write rules for
+          their electrical loads (“mixed”). On water rates he is a no on the
+          Bull Run filtration plant until he has more information. All four
+          boards had been gaps. His answers appear on his brief in his own
+          words, and the replies are kept on file.
+        </p>
+        <h2 id="novick-2026-10-07">October 7, 2026 · Source added: Steve Novick (District 3)</h2>
+        <p>
+          Steve Novick’s campaign sent the official record for the 2016 city
+          gas tax he lists among his accomplishments: Resolution 37185, which
+          Council adopted 5–0 on January 27, 2016 to refer a temporary
+          10-cent-a-gallon tax for street repair and traffic safety to the May
+          17, 2016 ballot. The resolution’s cover sheet names him as the
+          sponsoring commissioner. The file the campaign sent is identical to
+          the copy in the City Auditor’s archive, which is now cited among his
+          sources beside the OPB and Portland Tribune stories. No position on
+          his page changed. His other answers are still pending.
+        </p>
+        <h2 id="beck-2026-10-05">October 5, 2026 · Candidate response: Chris Beck (U.S. House, Oregon District 2)</h2>
+        <p>
+          Chris Beck answered all seven questions sent on September 22. His
+          page gains a public-safety line: bipartisan border security and a
+          much larger court system to process immigrants. The money ladder,
+          which had no rungs, now carries a how (repeal H.R. 1, then a
+          national health plan modeled on the Oregon Health Plan, which he
+          says Senator Wyden would draft) and a measure (access to care for
+          everyone in rural Oregon); the climate ladder gains a measure
+          (significant fuel reduction within five years). Four topic boards
+          changed: he would restore the ACA premium credits (was unstated),
+          opposes the Fix Our Forests Act in favor of the Wyden-Merkley
+          Wildfire and Grid Reliability Act, S. 4193 (was unstated), supports
+          the ROAD to Housing law as a first step with vouchers and tax
+          credits (was partial), and answers no to the ICE and Border Patrol
+          money (was a gap). His description of Senator Wyden as the next
+          Finance chairman is his own. Two typos in the reply were corrected
+          in the quoted text. The reply is kept on file.
+        </p>
+        <h2 id="mcdonald-2026-10-04">October 4, 2026 · Candidate response: John McDonald (District 4)</h2>
+        <p>
+          John McDonald answered the open question on the streets column: how
+          to deliver the new I-5 bridge, the Interstate Bridge Replacement the
+          page has carried from the pamphlet statement. The answer has the
+          City act as a partner in federal and state lobbying, with a unified
+          Council led by the mayor pressing Salem and Washington, D.C. to
+          earmark funds, and names USDOT Mega Program grants, Oregon
+          general-obligation bonds and toll revenue as the funding sources. It
+          cites construction starting in the third quarter of 2028 and puts
+          the project at $13.5 billion to $15.2 billion, with $5.7 billion
+          already committed; those figures are the candidate’s and have not
+          been independently verified. The streets ladder, which had no
+          rungs, now carries a how and a measure, and the answer appears on
+          the brief in the candidate’s words. The reply is kept on file.
+        </p>
+        <h2 id="governor-debate-2026-10-01">October 3, 2026 · Debate: governor (October 1, University of Oregon)</h2>
+        <p>
+          The governor page now includes what Tina Kotek and Christine Drazan
+          said at their first general-election debate. The Lab read the full
+          KVAL News broadcast, attributed each answer from the moderator’s
+          calls, and links every entry to the moment the answer starts. Brett
+          Smith did not take part. On the Climate Protection Program, Kotek is
+          “100% supportive” and open to the Legislature weighing a link with
+          Washington, California and Quebec next year; Drazan would rescind it
+          on day one. On data centers, Kotek said there “has to be a
+          moratorium” until the state gets it right and described the bill
+          she would introduce on the first day of a second term; Drazan called
+          the POWER Act “window dressing,” and her yes and no votes on it stay
+          in the entry. On vote by mail, Kotek called the system trusted and
+          convenient; Drazan said she backed the 2025 in-person voting bill
+          over Postal Service concerns and wants people able to vote in person.
+          Two new boards come from questions both candidates answered:
+          farmworker overtime, which drops to 40 hours a week in 2027 (Kotek
+          defended it; Drazan says farms need relief), and unemployment pay
+          during strikes under SB 916 (Kotek signed and defended it; Drazan
+          voted no and says it weakens the unemployment fund). Claims the
+          candidates made about each other were not used.
+        </p>
+        <h2 id="koyama-lane-2026-10-02">October 2, 2026 · Candidate response: Tiffany Koyama Lane (Portland Council, District 3)</h2>
+        <p>
+          Lydia Kiesling answered for the campaign all six questions the Lab
+          sent on September 23. The answers appear on the brief in the
+          candidate’s words. The safety column, previously a gap, now carries
+          a position from the email: keep Street Response, CHAT and the
+          publicly funded navigation programs resourced and coordinated, with
+          violence interrupters, community centers and built-environment
+          changes, so police focus on violent crime. The housing and money
+          ladders gain their measures: a Council-adopted social-housing plan
+          on city properties with an implementation date, and clean,
+          well-used parks and open, staffed community centers. On the
+          District 3 choices, police staffing moves from partial to a
+          position (upstream interventions before hiring); clearing camps and
+          Street Response, where her recorded votes already showed, now carry
+          her reasoning beside the vote. The campaign flagged that “her
+          recorded vote (Yes)” in the Lab’s question could be read two ways;
+          the vote is Yes on the amendment to shift money away from camp
+          removals, which is how the board’s decision card labels it. Her
+          September 19 questions on recurring revenue, the budget amendments
+          and accomplishments remain open.
+        </p>
+        <h2 id="cruz-2026-10-03">October 3, 2026 · Candidate response: Serena Cruz (Multnomah County Commissioner, District 2)</h2>
+        <p>
+          Asked whether the 2028 delay of the Preschool for All tax increase
+          should stand, Serena Cruz answered that the data does not show the
+          increase is needed now to stay on track to universality, supports
+          the Board’s decision to delay it, and does not support any delay in
+          reaching universality itself. The preschool-tax entry on the
+          District 2 board moves from partial to a position and now quotes
+          only this answer. The answer appears on the candidate’s page
+          verbatim.
+        </p>
+        <h2 id="cruz-2026-10-02">October 2, 2026 · Candidate response: Serena Cruz (Multnomah County Commissioner, District 2)</h2>
+        <p>
+          Serena Cruz answered the second half of the universal-preschool
+          question the Lab sent every District 2 campaign on September 26:
+          what changes to the program’s budget, seats or tax to expect over
+          the next four years. The answer appears on the candidate’s page
+          verbatim. On the District 2 board, the universal-preschool entry
+          keeps its support and now carries the point that demographic
+          and program data, including families moving here for the program,
+          will drive those decisions, with performance tracked. The
+          preschool-tax entry now cites the same email: support for the tax
+          increase when the data shows it is needed to reach
+          universality. It stays partial because the answer does not say
+          whether the 2028 delay itself should stand. The September 24 debate
+          points (seats in the right places and hours, special needs, the
+          reserve) remain in that entry’s text.
+        </p>
         <h2 id="marugg-2026-09-30">September 30, 2026 · Candidate response: Sarah Marugg (Hillsboro Council, Ward 1, Position A)</h2>
         <p>
           Sarah Marugg answered all seven gaps from the Lab’s September 22

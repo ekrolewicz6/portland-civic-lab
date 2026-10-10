@@ -43,6 +43,14 @@ export default function AboutStrip({ sheet }: { sheet: RaceSheet }) {
             )}
           </p>
           <p className={styles.dates}>Ballots mail Oct 14 · return by 8 p.m. Nov 3</p>
+          <p data-vote411>
+            The League of Women Voters&apos;{" "}
+            <a href="https://www.vote411.org/" className={c.inlineLink} rel="noopener noreferrer">
+              VOTE411.org
+            </a>{" "}
+            shows every race on your ballot from your address, in your choice of language, with candidates&apos; answers
+            to the League&apos;s questions where they gave them.
+          </p>
         </div>
 
         <div className={styles.block}>

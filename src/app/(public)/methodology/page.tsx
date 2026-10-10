@@ -167,7 +167,7 @@ const CATEGORIES: CategoryInfo[] = [
       {
         name: "HUD Point-in-Time Count",
         provider: "HUD Exchange",
-        frequency: "Annual XLSB",
+        frequency: "At least every two years (HUD XLSB)",
         status: "Periodic Download",
       },
       {

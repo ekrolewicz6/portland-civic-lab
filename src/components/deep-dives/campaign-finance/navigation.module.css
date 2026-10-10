@@ -33,8 +33,8 @@
 .referenceLinks span{display:block;font-size:12px;font-weight:400;color:#52665b;line-height:1.5;margin-top:6px}
 @media(max-width:760px){
  .wrap{padding:15px 20px 0}.title{font-size:20px}.explorer{padding:10px 12px;font-size:13px;gap:7px}
- .sections{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;gap:0;margin-right:0}
- .sections a,.sections a:first-child{justify-content:center;text-align:center;padding:10px 7px;font-size:12px;min-height:51px}
+ .sections{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));width:100%;gap:0;margin-right:0}
+ .sections a,.sections a:first-child{justify-content:center;text-align:center;padding:10px 4px;font-size:12px;min-height:51px}
  .references{width:100%;border-top:1px solid #dde2d8}.references summary{position:static;padding:11px 2px;min-height:44px;font-size:12px}
  .references[open]{padding-bottom:0}.referenceLinks{position:static;grid-template-columns:1fr 1fr;gap:8px;padding-top:0;border-top:0}.referenceLinks a{min-height:100px;padding:12px}.referenceLinks strong{font-size:13px}
 }

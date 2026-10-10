@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { HOME_TITLE, HOME_DESCRIPTION } from "../src/lib/home-metadata";
 
-const paths = ["/", "/dashboard", "/dashboard/performance", "/deep-dives", "/about", "/business", "/property", "/institutions", "/donate", "/contact", "/directory", "/org-chart", "/decisions", "/methodology", "/independence", "/open-data", "/records", "/proposals", "/volunteer", "/concierge", "/deep-dives/pps-budget", "/deep-dives/libraries", "/deep-dives/fpdr"];
+const paths = ["/", "/dashboard", "/dashboard/performance", "/deep-dives", "/about", "/business", "/property", "/institutions", "/donate", "/contact", "/directory", "/org-chart", "/decisions", "/methodology", "/independence", "/open-data", "/records", "/proposals", "/volunteer", "/events", "/events/aaron-swartz-at-40", "/concierge", "/deep-dives/pps-budget", "/deep-dives/libraries", "/deep-dives/fpdr"];
 
 test("dynamic dashboard and bureau images work in both image runtimes", async ({ request }) => {
   for (const path of ["/dashboard/housing", "/org-chart/water"]) {

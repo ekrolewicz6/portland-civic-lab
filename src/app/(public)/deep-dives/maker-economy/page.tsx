@@ -1,6 +1,7 @@
 import { pageMeta } from '@/lib/page-meta';
 import { makerDocuments, MAKER_PATH } from '@/lib/maker-economy/publication';
 import MakerPublication from '@/components/deep-dives/maker-economy/Publication';
+import DeepDiveSchema from "@/components/deep-dives/DeepDiveSchema";
 
 export const metadata = pageMeta({
   title: 'The work behind Portland’s handmade city',
@@ -10,5 +11,5 @@ export const metadata = pageMeta({
 });
 
 export default function MakerEconomyPage() {
-  return <MakerPublication document={makerDocuments[0]} />;
+  return <><MakerPublication document={makerDocuments[0]} /><DeepDiveSchema slug="maker-economy" /></>;
 }

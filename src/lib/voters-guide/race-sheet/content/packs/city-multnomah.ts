@@ -1109,6 +1109,12 @@ const outlookUra = reporting(
   "September 9, 2025; read September 22, 2026",
   "Adopted September 2, 2025 (minutes /5337): Stovall, Piazza and Gladfelter yes, Brown abstaining, Hinton absent.",
 );
+const greshamTeamKptv = reporting(
+  "KPTV · Small team drives Gresham homeless housing success",
+  "https://www.kptv.com/2025/11/12/small-team-drives-gresham-homeless-housing-success/",
+  "November 12, 2025",
+  "“The 2025 fiscal year was the team’s most successful yet, housing 88 households and 156 individuals.” The fewer-than-40 figure is the station’s report of Portland State’s 2025 Point-in-Time count.",
+);
 const shelterReport = record(
   "Gresham City Council · February 3, 2026 packet, Council Bill 02-26 staff report (Temporary Emergency Shelter code)",
   `${GRESHAM_MIN}/5818`,
@@ -1154,7 +1160,7 @@ const greshamTopics: ExtraTopic[] = [
     short: "Shelters",
     question: "Keep the camping ban with housing-focused outreach, and allow pod shelters only under the new permit code?",
     context:
-      "City code bars camping on public property, with no penalty for a homeless person unless shelter was offered first. Council Bill 02-26, adopted unanimously March 3, 2026 and effective April 1, sets rules for pod-style shelters: up to 30 units, no tents, not within 1,000 feet of schools or parks. The city counts eight permanent shelters and no pod shelters; its outreach team housed 155 people last year.",
+      "City code bars camping on public property, with no penalty for a homeless person unless shelter was offered first. Council Bill 02-26, adopted unanimously March 3, 2026 and effective April 1, sets rules for pod-style shelters: up to 30 units, no tents, not within 1,000 feet of schools or parks. The city counts eight permanent shelters and no pod shelters; its homeless services team housed 156 people in fiscal 2025.",
   },
   {
     id: "gresham-ice-response",
@@ -1327,8 +1333,14 @@ const greshamItems: RaceStakes["items"] = [
   {
     label: "Eight shelters, no pods",
     text:
-      "The city counts eight permanent homeless shelters and no pod-style shelters; the code adopted March 3, 2026 caps a pod site at 30 units and keeps it 1,000 feet from schools and parks. The outreach team housed 155 people last year and the latest point-in-time count found 20 people unsheltered in Gresham.",
+      "The city counts eight permanent homeless shelters and no pod-style shelters; the code adopted March 3, 2026 caps a pod site at 30 units and keeps it 1,000 feet from schools and parks.",
     source: shelterReport,
+  },
+  {
+    label: "Under 40 unsheltered",
+    text:
+      "The city’s four-person homeless services team housed 156 people (88 households) in fiscal 2025, and Portland State’s 2025 Point-in-Time count found fewer than 40 people unsheltered in Gresham, down from 138 in 2015.",
+    source: greshamTeamKptv,
   },
   {
     label: "$381 million urban renewal",

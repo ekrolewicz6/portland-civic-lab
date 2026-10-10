@@ -28,7 +28,7 @@ import {
 } from "@/lib/business";
 
 export const metadata: Metadata = {
-  title: "Funding dashboard | Portland Civic Lab",
+  title: "Funding dashboard",
   robots: { index: false, follow: false },
 };
 

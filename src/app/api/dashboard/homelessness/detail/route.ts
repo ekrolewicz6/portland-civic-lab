@@ -218,9 +218,10 @@ export async function GET() {
       shelterCapacity: shelterCapacity.map((r) => ({
         quarter: String(r.quarter),
         totalBeds: Number(r.total_beds),
-        county24hrBeds: Number(r.county_24hr_beds),
-        cityOvernightBeds: Number(r.city_overnight_beds),
-        utilizationPct: Number(r.utilization_pct),
+        // Null stays null: a missing split must read "--", not 0.
+        county24hrBeds: r.county_24hr_beds == null ? null : Number(r.county_24hr_beds),
+        cityOvernightBeds: r.city_overnight_beds == null ? null : Number(r.city_overnight_beds),
+        utilizationPct: r.utilization_pct == null ? null : Number(r.utilization_pct),
         source: r.source ? String(r.source) : null,
       })),
       housingPlacements: housingPlacements.map((r) => ({
@@ -281,10 +282,10 @@ export async function GET() {
       affordableVacancy: affordableVacancy.map((r) => ({
         asOf: String(r.as_of),
         source: String(r.source),
-        totalUnits: Number(r.total_units ?? 0),
-        vacantUnits: Number(r.vacant_units ?? 0),
+        totalUnits: r.total_units == null ? null : Number(r.total_units),
+        vacantUnits: r.vacant_units == null ? null : Number(r.vacant_units),
         vacancyPct: Number(r.vacancy_pct ?? 0),
-        avgDaysToFill: Number(r.avg_days_to_fill ?? 0),
+        avgDaysToFill: r.avg_days_to_fill == null ? null : Number(r.avg_days_to_fill),
         notes: String(r.notes ?? ""),
       })),
       dataSources: dataSources.map((r) => ({

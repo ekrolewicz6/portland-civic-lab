@@ -32,7 +32,7 @@ export default function CapacityDiagnosis() {
     <div className={styles.diagnosis}>
       <div className={styles.verdict}>
         <h3><span>No.</span> Shelter capacity was far below need.</h3>
-        <p className={styles.lead}>On the same January 2025 count, Multnomah County reported more than twice as many people experiencing homelessness as shelter and transitional beds. There were not enough of those beds for everyone at once.</p>
+        <p className={styles.lead}>On the same January 2025 Point-in-Time count, Multnomah County reported more than twice as many people experiencing homelessness as shelter and transitional beds. There were not enough of those beds for everyone at once.</p>
       </div>
 
       <figure className={styles.comparison}>

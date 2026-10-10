@@ -5,7 +5,7 @@ import { transactions,reviewedLinks } from '@/lib/campaign-finance/query';
 import { Shell,Records,styles } from '@/components/deep-dives/campaign-finance/Shared';
 import { activeManifest } from '@/lib/campaign-finance/active';
 export const runtime='nodejs';export const dynamic='force-dynamic';
-export const metadata=pageMeta({title:'Oregon campaign-finance explorer',description:'Search the current local ORESTAR transaction database by entity, financial basis, dates, geography and reviewed race links.',path:`${BASE}/explorer`});
+export const metadata=pageMeta({title:'Oregon campaign-finance explorer',description:'Search the current local ORESTAR transaction database by entity, financial basis, dates, geography and reviewed race links.',path:`${BASE}/explorer`,sectionImage:true});
 export default async function Explorer({searchParams}:{searchParams:Promise<Record<string,string|string[]|undefined>>}) {
   const active=activeManifest();
   const manualSource=active.source_files.some(source=>source.method==='user_supplied_manual_export');

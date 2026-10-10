@@ -4,7 +4,7 @@ import Stripe from "stripe";
 import { ArrowRight, CheckCircle2, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Thank you — Portland Civic Lab",
+  title: "Thank you",
   robots: { index: false, follow: false },
 };
 

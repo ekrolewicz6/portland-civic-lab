@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import {
   AlertTriangle,
@@ -29,11 +30,13 @@ import {
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-export const metadata: Metadata = {
-  title: "Council Budget Hearing Cockpit | Portland Civic Lab",
+export const metadata: Metadata = pageMeta({
+  title: "Council Budget Hearing Cockpit",
   description:
     "Source-backed budget hearing prep, amendment impact framing, and council question bank from official Performance Portland metrics.",
-};
+  path: "/dashboard/performance/council",
+  sectionImage: true,
+});
 
 const COUNCIL_TOOLS = [
   {

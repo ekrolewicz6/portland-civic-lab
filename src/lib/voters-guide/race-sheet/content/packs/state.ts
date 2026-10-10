@@ -171,6 +171,24 @@ const smithInterview: Evidence = {
 /* Oregon Business & Industry and Portland Business Journal governor forum (September 24, 2026). The Lab
  * worked from a transcript without speaker labels; with two candidates and the moderator naming the first
  * speaker on each question, every turn is certain. See research/voters-guide-2026/sources/obi-pbj-governor-forum-2026-09-24.md. */
+/* First governor debate, October 1, 2026, University of Oregon (KVAL News, with the Oregon Journalism Project,
+ * Lookout Eugene-Springfield and the UO School of Journalism and Communication). Brett Smith did not qualify.
+ * The Lab read YouTube's automatic captions of KVAL's full broadcast and attributed each turn from the
+ * moderator's calls; each citation links to the moment the answer starts. Claims the candidates made about
+ * each other are not used. See research/voters-guide-2026/sources/kval-governor-debate-2026-10-01.md. */
+const debate = (seconds: number, note?: string): Evidence => {
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const sec = String(seconds % 60).padStart(2, "0");
+  const at = h ? `${h}:${String(m).padStart(2, "0")}:${sec}` : `${m}:${sec}`;
+  return {
+    label: `KVAL News · Oregon governor’s debate, October 1, 2026 (answer at ${at})`,
+    url: `https://www.youtube.com/watch?v=WNCfGur9iwk&t=${seconds}s`,
+    kind: "Candidate statement",
+    date: "October 1, 2026; full broadcast read October 3, 2026",
+    note: `The candidate's own words in the broadcast, read from YouTube's automatic captions; speaker attribution is the Lab's, from the moderator's calls. Claims are not independently verified.${note ? ` ${note}` : ""}`,
+  };
+};
 const obiPbjForum: Evidence = {
   label: "Oregon Business & Industry and Portland Business Journal · governor candidate forum (September 24, 2026)",
   url: "https://www.avstream.me/pbj",
@@ -364,8 +382,8 @@ const deliveries: Delivery[] = [
   }),
   delivery("tina-kotek", "climate", {
     how: step(
-      "A statewide prohibition on new data-center development until standards prevent rate hikes, require clean-energy production and protect air and water; a Climate Resilience Investment Act she cites as signed.",
-      kotekPlatform,
+      "A bill on the first day of a second term requiring data centers to produce clean energy, be built with union labor, provide community benefits and treat workers fairly, as she described it at the October 1 debate.",
+      debate(3368),
     ),
     measure: step(
       "A goal to protect 10% more of Oregon's most climate-resilient lands and waters over the next decade; no emissions or rate target is stated.",
@@ -579,22 +597,11 @@ const opbDcTranscript = interview(
   "Interview September 8, 2026; transcript September 14, 2026; reviewed September 21, 2026",
   `${NOTE} Her plan page adds community benefit agreements, a ban on blanket NDAs and farmland protection but does not use the word moratorium.`,
 );
-const opbDcTranscriptKotek = interview(
-  "Kotek · rally remarks quoted in OPB’s Think Out Loud transcript",
-  "https://www.opb.org/article/2026/09/14/think-out-loud-data-centers-oregon-gubernatorial-race/",
-  "Transcript September 14, 2026; reviewed September 25, 2026",
-  `${NOTE} On September 8, 2026 her office paused state-land requests for new data centers through July 1, 2027 and said she will introduce legislation for the 2027 session.`,
-);
 const govHomelessEo = record(
   "Governor’s Office · Executive Order 26-01 extends the homelessness emergency",
   `${GOV_NEWS}/governor-kotek-issues-executive-order-to-extend-homelessness-emergency`,
   "January 9, 2026; reviewed September 21, 2026",
   "Order text at oregon.gov/gov/eo/eo-26-01.pdf; in force through January 10, 2027. Shelter funding: HB 3644 (2025), $204.9 million for 2025–27, signed July 17, 2025.",
-);
-const deqCpp = record(
-  "DEQ · Environmental Quality Commission adopts the Climate Protection Program, with the governor’s statement",
-  "https://apps.oregon.gov/oregon-newsroom/OR/DEQ/Posts/Post/EQC-adopts-climate-protection",
-  "November 21, 2024; reviewed September 21, 2026",
 );
 const govImmBills = record(
   "Governor’s Office · Signs eight bills bolstering protections for immigrant and refugee communities",
@@ -706,6 +713,14 @@ const governorTopics: ExtraTopic[] = [
       "The program caps greenhouse gas emissions from fossil fuels used in Oregon and lowers the cap each year, to 50% below baseline by 2035 and 90% by 2050; the state re-adopted it in November 2024 after a court voided the first version on procedure. Nearly 30 business, utility and labor groups sued on April 16, 2026 to strike it down. The Court of Appeals has let six environmental justice, climate and business groups join the state’s defense and agreed to expedite the case, with briefing through December.",
   },
   {
+    id: "gov-vote-by-mail",
+    label: "Vote by mail",
+    short: "Mail voting",
+    question: "Keep Oregon's vote-by-mail elections as they are?",
+    context:
+      "Oregon has run its elections by mail since voters approved Measure 60 in 1998. HB 3872 (2025) would have made in-person voting on election day the standard method, with a mail ballot for voters who ask at least 21 days ahead because they are “for any reason unable” to vote in person; it also required photo ID to vote or request a ballot and referred the change to voters. It never left the House Rules Committee.",
+  },
+  {
     id: "gov-immigration-enforcement",
     label: "Sanctuary law",
     short: "Sanctuary",
@@ -737,6 +752,22 @@ const governorTopics: ExtraTopic[] = [
     context:
       "The program's 2026 estimate puts the five-mile corridor at $14.4 billion and a core first phase at $7.09 billion, with $5.7 billion committed, including $1 billion from Oregon and $1.5 billion in projected tolls. Tolling could begin as early as 2028.",
   },
+  {
+    id: "gov-farm-overtime",
+    label: "Farmworker overtime",
+    short: "Farm overtime",
+    question: "Keep the farmworker overtime schedule, which drops to 40 hours a week in 2027?",
+    context:
+      "HB 4002 (2022) phased in overtime pay for farmworkers: after 55 hours a week in 2023–24, 48 in 2025–26 and 40 from January 1, 2027. Employers can claim a refundable tax credit for a share of the extra pay through 2028. It passed the House 37–23 and the Senate 17–10.",
+  },
+  {
+    id: "gov-strike-benefits",
+    label: "Unemployment pay during strikes",
+    short: "Strike pay",
+    question: "Keep unemployment benefits for workers on strike, public employees included?",
+    context:
+      "SB 916 (2025), in effect since January 1, 2026, lets striking workers collect unemployment after the first week of a strike, for up to 10 weeks, or 8 when the trust fund is on a higher tax schedule; it makes no exception for public employees. It passed the Senate 16–12 and the House 35–22 and was signed June 24, 2025.",
+  },
 ];
 
 const topics: RaceTopics[] = [{ raceIds: ["oregon-governor"], topics: governorTopics }];
@@ -760,18 +791,19 @@ const topicStances: TopicStance[] = [
   stance("tina-kotek", "gov-kicker", "supports", "One-time wildfire hold-back",
     "Told reporters in May 2025 she would support withholding about $1 billion of the $1.64 billion kicker, one time and from high earners, for wildfire costs; her office later proposed Rainy Day Fund money instead.",
     opbKicker),
-  stance("tina-kotek", "gov-data-center-moratorium", "supports", "Moratorium on our terms",
-    "Told a Salem rally she supports a moratorium until any data center development is “done on our terms,” after directing the state to end a land sale for a proposed data center; says she supports local moratoriums.",
-    opbDcTranscriptKotek),
+  stance("tina-kotek", "gov-data-center-moratorium", "supports", "Moratorium until rules",
+    "Said at the October 1, 2026 debate there “has to be a moratorium on new development of data centers” until the state gets it right, and she will introduce a bill on day one setting rules for them.",
+    debate(3347, "Her office paused state-land requests for new data centers through July 1, 2027 on September 8, 2026.")),
   stance("tina-kotek", "gov-power-act", "supports", "Signed the POWER Act",
     "Signed HB 3546 on June 16, 2025; her office credits it with a 29% rate increase on data-center corporations and rate decreases for other PGE customers.",
     hb3546Record),
   stance("tina-kotek", "gov-homelessness-emergency", "supports", "Extended emergency to 2027",
     "Extended the homelessness emergency by Executive Order 26-01 through January 10, 2027, with goals of rehousing 1,400 more households and preventing homelessness for 8,000, after signing HB 3644’s $204.9 million shelter program.",
     govHomelessEo),
+  // October 1, 2026 debate: asked about her Prosperity Council's advice to replace the program with a market-based system.
   stance("tina-kotek", "gov-climate-protection", "supports", "Keep the carbon cap",
-    "Backed the Environmental Quality Commission’s re-adoption of the program on November 21, 2024, saying it “will keep polluters accountable and fund community investments” that cut emissions.",
-    deqCpp),
+    "Said at the October 1, 2026 debate she is “100% supportive” of the program and supports the Legislature taking up next year how to align with Washington, California and Quebec; until then, she said, it stays.",
+    debate(4727)),
   stance("tina-kotek", "gov-immigration-enforcement", "supports", "Keep sanctuary limits",
     "Created an interagency council on the state’s response to federal enforcement (EO 26-04, January 30, 2026), signed eight immigrant-protection bills April 9, 2026, and opposes ICE detention facilities in Oregon.",
     govImmBills),
@@ -800,14 +832,21 @@ const topicStances: TopicStance[] = [
     "Told KATU on September 8, 2026 that the governor “should issue a moratorium immediately” and that Oregon should have an immediate statewide moratorium; her plan adds community benefit agreements and a ban on blanket NDAs.",
     opbDcTranscript),
   stance("christine-drazan", "gov-power-act", "mixed", "Voted yes, then no",
-    "Voted yes when the House first passed HB 3546 on April 22, 2025, then no when it concurred in Senate amendments on June 5, 2025; her plan does not say whether she would repeal the law.",
-    hb3546Record),
+    "Voted for HB 3546 in April 2025 and against it when it returned from the Senate in June; at the October 1, 2026 debate called it “window dressing,” saying regulators could already set large-user rates.",
+    debate(3413, "Her votes are on the OLIS record for HB 3546 (2025): yes on House passage April 22, 2025; no when the House concurred in Senate amendments June 5, 2025. She also said the law reaches small-town data centers serving schools and fire stations.")),
   stance("christine-drazan", "gov-homelessness-emergency", "mixed", "Audit, shift to recovery",
     "Would declare an emergency on addiction and mental health, audit homeless spending and shift money to recovery programs and homeless services, not measuring success by low-barrier shelter beds; her plan does not address the homelessness emergency.",
     drazanPlan),
-  stance("christine-drazan", "gov-climate-protection", "opposes", "Repeal the program",
-    "Would repeal the Climate Protection Program, which she calls a costly executive order that raised utility and gas prices and threatened jobs.",
-    drazanPlan),
+  stance("christine-drazan", "gov-climate-protection", "opposes", "Rescind on day one",
+    "Said at the October 1, 2026 debate she will rescind the program on day one, saying it will “drive up the cost of utilities and power” and calling it a political agenda that “harms families.”",
+    debate(2221)),
+  // Vote by mail, raised at the October 1, 2026 debate.
+  stance("tina-kotek", "gov-vote-by-mail", "supports", "Keep vote by mail",
+    "Said at the October 1, 2026 debate that vote by mail, used in Oregon for more than 25 years, “is trusted” and “convenient,” and urged voters to read the 2025 bill to return to polling places.",
+    debate(4431)),
+  stance("christine-drazan", "gov-vote-by-mail", "opposes", "Add in-person voting",
+    "Said at the October 1, 2026 debate she backed the 2025 in-person voting bill over Postal Service concerns, not distrust, and wants people able to vote in person; calls herself a “strong supporter” of vote by mail.",
+    debate(4348, "She was the chief sponsor of HB 3872 (2025), per OLIS.")),
   stance("christine-drazan", "gov-immigration-enforcement", "opposes", "Sanctuary law too far",
     "Told KATU in April 2026 that Oregon’s sanctuary laws “have gone too far,” citing Corrections declining a U.S. attorney’s request about 30 people, and wants law enforcement able to work with federal law enforcement.",
     drazanKatu),
@@ -824,6 +863,20 @@ const topicStances: TopicStance[] = [
   stance("christine-drazan", "gov-interstate-bridge", "opposes", "A cheaper bridge",
     "Says the state “can’t afford the I-5 bridge that they’re proposing,” objecting to the share of deck for biking, walking and transit, and would build a bridge Oregon can afford.",
     drazanKatu),
+
+  /* ── Farm overtime and strike pay: asked at the October 1, 2026 debate ── */
+  stance("tina-kotek", "gov-farm-overtime", "supports", "Keep farm overtime",
+    "Said at the October 1, 2026 debate it is “fair and moral” that people who work hard in the fields get paid overtime, and that supporting farms does not mean overlooking it.",
+    debate(3019)),
+  stance("christine-drazan", "gov-farm-overtime", "opposes", "Overtime relief for farms",
+    "Asked at the October 1, 2026 debate about raising the farm overtime threshold, said farmers need relief from the overtime rules to stay in business and that farm overtime clearly needs to be addressed.",
+    debate(2957)),
+  stance("tina-kotek", "gov-strike-benefits", "supports", "Signed strike benefits",
+    "Signed SB 916 in June 2025; said at the October 1, 2026 debate she stands with union workers “when they are out on strike, making sure that they can put food on the table.”",
+    debate(4514, "She signed SB 916 on June 24, 2025, per OLIS.")),
+  stance("christine-drazan", "gov-strike-benefits", "opposes", "Opposes strike benefits",
+    "Voted no on SB 916 in 2025; said at the October 1, 2026 debate that union members have strike funds and the law makes the unemployment insurance fund “less stable.”",
+    debate(4568, "Her House votes against SB 916 on June 4 and June 12, 2025 are on the OLIS record.")),
 
   /* ── Brett Smith ──────────────────────────────────────────────────── */
   stance("brett-smith", "gov-data-center-moratorium", "supports", "Permanent moratorium",

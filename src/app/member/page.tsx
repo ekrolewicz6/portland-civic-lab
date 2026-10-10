@@ -14,7 +14,7 @@ import {
 } from "@/lib/business";
 
 export const metadata: Metadata = {
-  title: "Member area | Portland Civic Lab",
+  title: "Member area",
   robots: { index: false, follow: false },
 };
 

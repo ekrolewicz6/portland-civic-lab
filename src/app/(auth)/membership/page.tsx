@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Membership | Portland Civic Lab",
+  title: "Membership",
 };
 
 /**

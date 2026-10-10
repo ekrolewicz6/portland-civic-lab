@@ -7,10 +7,6 @@ import FireAtlasSection from "@/components/oregon-fire/FireAtlasSection";
 import { pageMeta } from "@/lib/page-meta";
 import { FIRE_TITLE, FIRE_DESCRIPTION, FIRE_AUTHORS, fireStructuredData } from "@/lib/oregon-fire/metadata";
 import "./fire.css";
-import "./guide.css";
-import "./editorial.css";
-import "./long-guide.css";
-import "./whetstone.css";
 
 const editorial = localFont({ src: "../../../lib/oregon-fire/fonts/CormorantGaramond-Medium.ttf", variable: "--font-editorial", weight: "500", display: "swap" });
 export const dynamic = "force-dynamic";
@@ -32,6 +28,6 @@ export default async function OregonFirePage({searchParams}:{searchParams:Promis
   return <article className={`fire-page fire-long-guide ${editorial.variable}`}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(fireStructuredData).replace(/</g, "\\u003c") }} />
     <FireLongGuide />
-    <Suspense fallback={<div className="fire-shell fire-atlas-loading"><h2>Explore the records</h2><p>Loading source coverage for the atlas… The guide above is ready to read.</p></div>}><FireAtlasSection /></Suspense>
+    <Suspense fallback={<div className="fire-wrap fire-atlas-loading"><h2>Explore the records</h2><p>Loading source coverage for the atlas… The guide above is ready to read.</p></div>}><div className="fire-wrap"><FireAtlasSection /></div></Suspense>
   </article>;
 }

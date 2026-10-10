@@ -136,6 +136,13 @@ const mcdonaldEmail: Evidence = {
   date: "Received September 23, 2026",
   note: NOTE,
 };
+const mcdonaldEmail4: Evidence = {
+  label: "McDonald · fourth emailed response to the Lab’s questions",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#mcdonald-2026-10-04",
+  kind: "Candidate statement",
+  date: "Received October 4, 2026",
+  note: NOTE,
+};
 const schulteEmail: Evidence = {
   label: "Schulte · emailed response to the Lab’s questions",
   url: "https://www.portlandciviclab.org/voters-guide/research-log#schulte-2026-09-24",
@@ -296,7 +303,17 @@ export const deliveriesD4: Delivery[] = [
   entry("john-mcdonald", "money", "emailed response", {
     how: step("The City’s current proposal: $120 million up front and $275 million in ongoing maintenance over a 20-year lease, with other revenue expected to follow the teams’ success.", mcdonaldEmail),
   }),
-  entry("john-mcdonald", "climate", "pamphlet"),
+  // The streets rungs come from the emailed reply of October 4, 2026; the position itself is from the pamphlet.
+  entry("john-mcdonald", "climate", "emailed response", {
+    how: step(
+      "The City as a partner in federal and state lobbying: a unified Council, led by the mayor, pressing Salem and Washington, D.C. to earmark funds, drawing on USDOT Mega Program grants, Oregon general-obligation bonds and toll revenue.",
+      mcdonaldEmail4,
+    ),
+    measure: step(
+      "Construction starting in the third quarter of 2028, the schedule McDonald cites; the answer puts the project at $13.5 billion to $15.2 billion, with $5.7 billion already committed.",
+      mcdonaldEmail4,
+    ),
+  }),
 
   /* ── Matt Schulte ───────────────────────────────────────────────────── */
   // All four ladders come from his emailed reply of September 24, 2026.

@@ -9,6 +9,7 @@ import FlowHero from "@/components/deep-dives/homeless/FlowHero";
 import FlowSimulator from "@/components/deep-dives/homeless/FlowSimulator";
 import CostOfInactionCalculator from "@/components/deep-dives/homeless/CostOfInactionCalculator";
 import TriageTool from "@/components/deep-dives/homeless/TriageTool";
+import MeasureKey from "@/components/deep-dives/homeless/MeasureKey";
 import BedReality from "@/components/deep-dives/homeless/BedReality";
 import StreetTriageFlow from "@/components/deep-dives/homeless/StreetTriageFlow";
 import DeflectionReality from "@/components/deep-dives/homeless/DeflectionReality";
@@ -107,8 +108,8 @@ export default function HomelessnessDeepDive() {
       <section className="border-t border-white/10 bg-[var(--color-canopy-mid)] text-white">
         <div className={`${DIVE_CONTAINER} grid grid-cols-2 gap-6 py-9 lg:grid-cols-4`}>
           {[
-            { v: `~${fmtNum(STATS.byNameTotal)}`, l: "on the county's by-name list", s: `up from ${fmtNum(STATS.byNameTotalJan2025)} a year earlier` },
-            { v: `+${STATS.pitChange2023to2025Pct * 100 | 0}%`, l: "tri-county one-night count, 2023 → 2025", s: `${fmtNum(STATS.pitTotal)} counted in one night` },
+            { v: `~${fmtNum(STATS.byNameTotal)}`, l: `on the county's by-name list, ${STATS.byNameAsOf}`, s: `everyone in contact with services · ${fmtNum(STATS.byNameTotalJan2025)} a year earlier` },
+            { v: `+${STATS.pitChange2023to2025Pct * 100 | 0}%`, l: "Multnomah Point-in-Time count, 2023 → 2025", s: `${fmtNum(STATS.pitTotal)} in Jan. 2025 · ${fmtNum(STATS.pitPresumedUnsheltered)} added from county records` },
             { v: fmtMoney(STATS.shsRaisedSince2021), l: "raised by the homeless-services tax", s: "region-wide since 2021" },
             { v: fmtNum(STATS.deaths2024), l: "died homeless in 2024", s: `most from overdose · average age ${STATS.avgAgeAtDeath}` },
           ].map((s) => (
@@ -118,6 +119,13 @@ export default function HomelessnessDeepDive() {
               <p className="mt-0.5 text-[12px] text-white/55">{s.s}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── What the numbers measure ── */}
+      <section className="border-b border-[var(--color-parchment)] bg-[var(--color-paper-warm)]">
+        <div className={`${DIVE_CONTAINER} py-9`}>
+          <MeasureKey />
         </div>
       </section>
 
@@ -201,7 +209,7 @@ export default function HomelessnessDeepDive() {
       >
         <TriageTool />
         <Note>
-          The transitional / episodic / chronic typology is Kuhn &amp; Culhane (1998). Per-household costs are national averages (<Src id="naehTriageCost" />); the chronic share is Multnomah&apos;s 2023 count (<Src id="pit2023" />).
+          The transitional / episodic / chronic typology is Kuhn &amp; Culhane (1998). Per-household costs are national averages (<Src id="naehTriageCost" />); the chronic share is from Multnomah&apos;s January 2025 Point-in-Time count (<Src id="hudPopSub2025" />), up from 41% in 2023. The 2025 count was the first to add people from county records (5,090 to the unsheltered total), so the two years are not directly comparable.
         </Note>
       </Section>
 

@@ -618,7 +618,7 @@ export const irpCampsiteReportsInHomelessness = homelessness.table("irp_campsite
 	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).defaultNow(),
 }, (table) => [
 	index("idx_irp_incident_date").using("btree", table.incidentDate.asc().nullsLast().op("timestamptz_ops")),
-	unique("irp_campsite_reports_arcgis_object_id_key").on(table.arcgisObjectId),
+	uniqueIndex("irp_campsite_reports_report_id_key").using("btree", table.reportId.asc().nullsLast().op("text_ops")),
 ]);
 
 export const permitsInHousing = housing.table("permits", {

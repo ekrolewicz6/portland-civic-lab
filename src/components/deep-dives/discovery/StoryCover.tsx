@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 const colors: Record<string, [string, string, string, string]> = {
+  "small-business": ["#153c32", "#c9df85", "#f6f1df", "#e4a575"],
   "data-centers": ["#173e34", "#bed8b0", "#f2c38e", "#719b87"],
   "participatory-budgeting": ["#d8c9b7", "#425e54", "#fff1d4", "#bc7858"],
   "campaign-finance": ["#ebbb99", "#703c30", "#faf1d9", "#ba5d43"],
@@ -34,6 +35,18 @@ export default function StoryCover({ slug, className }: { slug: string; classNam
   </g>;
   let art: ReactNode;
   switch (slug) {
+    case "small-business": art=<>
+      <circle cx="453" cy="89" r="47" fill={ink}/>
+      <path d="M62 295h478" stroke={light} strokeWidth="3"/>
+      <path d="M85 284V149h134v135ZM240 284V78h117v206ZM379 284V179h136v105Z" fill={light}/>
+      <path d="m75 151 19-35h116l19 35Z" fill={accent}/>
+      {[0,1,2,3].map(n=><path key={n} d={`M${89+n*35} 151v17q17 18 34 0v-17Z`} fill={n%2?light:ink}/>)}
+      <path d="M104 195h47v56h-47ZM167 195h32v89h-32Z" fill={paper}/>
+      {[0,1,2].map(n=><g key={n}><path d={`M258 ${99+n*49}h27v27h-27ZM310 ${99+n*49}h27v27h-27Z`} fill={paper}/></g>)}
+      <path d="M381 179v-34l43 20v-20l45 20v-20l46 20v14Z" fill={accent}/>
+      <path d="M397 201h25v30h-25ZM445 201h25v30h-25Z" fill={paper}/>
+      <path d="M115 272h34M273 261h49M394 272h102" stroke={accent} strokeWidth="6"/>
+    </>;break;
     case "data-centers": art=<>
       <circle cx="443" cy="100" r="62" fill={light}/><circle cx="443" cy="100" r="84" fill="none" stroke={accent} opacity=".5"/>
       {[0,1,2,3,4].map(n=><path key={n} d={`M-20 ${250+n*16}h140q40 0 65-32l35-40q24-30 65-30h335`} fill="none" stroke={accent} opacity=".55" strokeWidth="2"/>)}

@@ -318,7 +318,15 @@
   line-height: 1.45;
 }
 .voteOn {
+  color: var(--color-ink-light);
+}
+.voteSubject {
+  font-weight: 600;
   color: var(--color-ink);
+}
+.voteKind {
+  color: var(--color-ink-muted);
+  font-weight: 500;
 }
 .text {
   margin: 0;

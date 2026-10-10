@@ -42,6 +42,26 @@ export function Gap({ text = "not found in the sources we reviewed" }: { text?: 
 }
 
 /**
+ * What a recorded vote was cast on, in words. A topic board asks its own
+ * question ("Keep funding camp removals?"), and the roll call answers the
+ * decision ("Shift funding away from camp removals"), which can point the
+ * other way; so a vote is always shown with the decision it was cast on,
+ * never as a bare Yes or No under the board's question.
+ */
+export function votedOn(vote: VoteWord): string {
+  switch (vote) {
+    case "Yes":
+      return "Voted yes on";
+    case "No":
+      return "Voted no on";
+    case "Absent":
+      return "Absent for the vote on";
+    default:
+      return "Not on the committee that voted on";
+  }
+}
+
+/**
  * A recorded vote as a word, never color alone. `name` is announced to
  * screen readers so a row of pills stays attributable when the visible
  * column header is decorative.

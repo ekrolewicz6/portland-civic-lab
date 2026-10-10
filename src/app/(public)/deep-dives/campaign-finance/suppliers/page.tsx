@@ -12,6 +12,7 @@ export const metadata = pageMeta({
   description: 'See what 17 Portland City Council campaigns paid, which suppliers they shared, and the records behind every figure.',
   path: BASE + '/suppliers',
   type: 'article',
+  sectionImage: true,
 });
 
 const percent = (part: number, whole: number) => whole ? (100 * part / whole).toFixed(1) + '%' : '0%';

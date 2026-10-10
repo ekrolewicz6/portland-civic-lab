@@ -28,10 +28,12 @@ export const TOOLS: Topic[] = [
   { name: "Portland Permits", href: PERMITS_URL, external: true },
   { name: "The dashboards", href: "/dashboard" },
   { name: "The City org chart", href: "/org-chart" },
-  { name: "The decisions register", href: "/decisions" },
+  { name: "The CED Portfolio Map", href: "/ced" },
+  { name: "The CED decisions register", href: "/ced/decisions" },
 ];
 
 export const QUESTIONS: Topic[] = [
+  { name: "The state of small business in Portland", href: "/deep-dives/small-business" },
   { name: "Portland’s maker economy", href: "/deep-dives/maker-economy" },
   { name: "The homelessness continuum", href: "/deep-dives/continuum" },
   { name: "Homelessness", href: "/deep-dives/homelessness" },
@@ -46,6 +48,7 @@ export const QUESTIONS: Topic[] = [
   { name: "Data centers", href: "/deep-dives/data-centers" },
   { name: "Oregon economic development", href: "/deep-dives/oregon-economic-development" },
   { name: "Who runs Portland", href: "/deep-dives/who-runs-portland" },
+  { name: "Campaign money: Portland’s council and the governor’s race", href: "/deep-dives/campaign-finance" },
   { name: "FPDR, the police and fire pension", href: "/deep-dives/fpdr" },
 ];
 

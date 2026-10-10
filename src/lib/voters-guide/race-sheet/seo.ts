@@ -139,14 +139,15 @@ export function candidateMissingState(person: Candidate): MissingState | null {
  * presented as a summary of the candidate.
  */
 export function candidateDescription(race: Race, person: Candidate) {
-  const tail = " No endorsements.";
+  // About the Lab, not the candidate: "No endorsements." read as if the candidate had none.
+  const tail = " The Lab endorses no one.";
   const missing = candidateMissingState(person);
   if (missing) {
     const lead = `${person.name} for ${raceFacts(race).seat} (2026). `;
     const state =
       missing === "filing-only"
-        ? "Filing statement only in the sources we reviewed; a gap, not a position."
-        : "No platform found in the sources we reviewed; a gap, not a position.";
+        ? "Filing statement only in sources we reviewed; a gap, not a position."
+        : "No platform found in sources we reviewed; a gap, not a position.";
     return `${lead}${state}${tail}`;
   }
   const own = ownWords.find((o) => o.candidateId === person.id);
@@ -156,7 +157,7 @@ export function candidateDescription(race: Race, person: Candidate) {
   let quote = clip(own ? own.text : person.summary, Math.min(SUMMARY_QUOTE_MAX, room));
   if (!/[.!?…]$/.test(quote)) quote = `${quote}.`;
   let text = `${lead}${quote}${close}${tail}`;
-  if (text.length < DESCRIPTION_MIN) text = `${text.slice(0, -tail.length)} Sources included; no endorsements.`;
+  if (text.length < DESCRIPTION_MIN) text = `${text.slice(0, -tail.length)} Sources included; the Lab endorses no one.`;
   return text;
 }
 

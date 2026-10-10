@@ -6,9 +6,9 @@ test("readers can combine topics and search, recover from no results, and share 
   const errors: string[] = [];
   page.on("pageerror", e => errors.push(e.message));
   await page.goto("/deep-dives");
-  await expect(cards(page)).toHaveCount(17);
+  await expect(cards(page)).toHaveCount(18);
   const links = await cards(page).locator("a").evaluateAll(elements => elements.map(a => a.getAttribute("href")));
-  expect(new Set(links).size).toBe(17);
+  expect(new Set(links).size).toBe(18);
   await page.getByRole("link", { name: "Find your next question" }).click();
   await page.getByRole("navigation", { name: "Filter stories by topic" }).getByRole("link", { name: "Housing & care 5", exact: true }).click();
   await expect(cards(page)).toHaveCount(5);
@@ -22,8 +22,8 @@ test("readers can combine topics and search, recover from no results, and share 
   await page.getByRole("searchbox").fill("no-such-story-xyz");
   await expect(cards(page)).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "No stories match that search yet." })).toBeVisible();
-  await page.getByRole("button", { name: "Show all 17 deep dives" }).click();
-  await expect(cards(page)).toHaveCount(17);
+  await page.getByRole("button", { name: "Show all 18 deep dives" }).click();
+  await expect(cards(page)).toHaveCount(18);
   await expect(page.getByRole("searchbox")).toHaveValue("");
   expect(errors).toEqual([]);
 });
@@ -31,17 +31,17 @@ test("readers can combine topics and search, recover from no results, and share 
 test("sort and browser history preserve the reader’s place and filters", async ({ page }) => {
   await page.goto("/deep-dives#collection");
   const topics = page.getByRole("navigation", { name: "Filter stories by topic" });
-  await topics.getByRole("link", { name: "Public money 10", exact: true }).click();
-  await expect(cards(page)).toHaveCount(10);
+  await topics.getByRole("link", { name: "Public money 11", exact: true }).click();
+  await expect(cards(page)).toHaveCount(11);
   const before = await page.evaluate(() => window.scrollY);
-  await topics.getByRole("link", { name: "Work & economy 4", exact: true }).click();
-  await expect(cards(page)).toHaveCount(4);
+  await topics.getByRole("link", { name: "Work & economy 5", exact: true }).click();
+  await expect(cards(page)).toHaveCount(5);
   expect(Math.abs(await page.evaluate(() => window.scrollY) - before)).toBeLessThan(3);
   await page.goBack();
-  await expect(topics.getByRole("link", { name: "Public money 10", exact: true })).toHaveAttribute("aria-current", "true");
-  await expect(cards(page)).toHaveCount(10);
+  await expect(topics.getByRole("link", { name: "Public money 11", exact: true })).toHaveAttribute("aria-current", "true");
+  await expect(cards(page)).toHaveCount(11);
   await page.goForward();
-  await expect(cards(page)).toHaveCount(4);
+  await expect(cards(page)).toHaveCount(5);
   await page.getByRole("combobox", { name: "Sort by" }).selectOption("title");
   const titles = await cards(page).getByRole("heading").allTextContents();
   expect(titles).toEqual([...titles].sort((a,b)=>a.localeCompare(b,"en")));
@@ -49,7 +49,7 @@ test("sort and browser history preserve the reader’s place and filters", async
   await expect(page).toHaveURL(/\/deep-dives\/data-centers$/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Oregon’s data centers");
   await page.goBack();
-  await expect(cards(page)).toHaveCount(4);
+  await expect(cards(page)).toHaveCount(5);
   await expect(page.getByRole("combobox", { name: "Sort by" })).toHaveValue("title");
 });
 
@@ -57,12 +57,12 @@ test("the whole collection is readable without JavaScript and direct query URLs 
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto("/deep-dives");
-  await expect(cards(page)).toHaveCount(17);
+  await expect(cards(page)).toHaveCount(18);
   await page.goto("/deep-dives?topic=money&q=schools#collection");
   await expect(cards(page)).toHaveCount(2);
   await expect(cards(page).getByRole("link", { name: "What gets a school dollar to a student?" })).toBeVisible();
   await page.goto("/deep-dives?topic=invalid&sort=invalid");
-  await expect(cards(page)).toHaveCount(17);
+  await expect(cards(page)).toHaveCount(18);
   await context.close();
 });
 
@@ -71,7 +71,7 @@ test("phone and wide layouts fit the screen, and filters work with a keyboard", 
   for (const width of [320, 390, 768, 1024, 1440, 1800]) {
     await page.setViewportSize({ width, height: 950 });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
-    await expect(cards(page)).toHaveCount(17);
+    await expect(cards(page)).toHaveCount(18);
   }
   await page.setViewportSize({ width: 390, height: 950 });
   await page.evaluate(() => { document.documentElement.style.fontSize = "200%"; });

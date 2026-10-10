@@ -9,7 +9,7 @@ import { toHeaderMember } from "@/lib/member-nav";
 import { createBusiness } from "@/lib/business";
 
 export const metadata: Metadata = {
-  title: "Register your business | Portland Civic Lab",
+  title: "Register your business",
   robots: { index: false, follow: false },
 };
 

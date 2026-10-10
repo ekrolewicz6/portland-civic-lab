@@ -1,0 +1,42 @@
+[
+  {
+    "id": "fed-employer-2026",
+    "url": "https://www.fedsmallbusiness.org/reports/survey/2026/2026-report-on-employer-firms",
+    "accessed_at": "2026-10-03T09:39:19.127106+00:00",
+    "path": "runtime-data/small-business/web/fed-employer-2026.html",
+    "sha256": "1d122d73761dd6a60a3b6a21c650b686dc8fe39b7545ad5041866e68cb30fb3d",
+    "bytes": 46403,
+    "content_type": "text/html; charset=utf-8",
+    "status": 200
+  },
+  {
+    "id": "city-tax-2026",
+    "url": "https://www.portland.gov/revenue/business-tax",
+    "accessed_at": "2026-10-03T09:39:19.328521+00:00",
+    "path": "runtime-data/small-business/web/city-tax-2026.html",
+    "sha256": "c055dbae13d5bbce51c125829e55c1a464e8f6a8ac5c2d1ae721296a9f071ee5",
+    "bytes": 105847,
+    "content_type": "text/html; charset=utf-8",
+    "status": 200
+  },
+  {
+    "id": "city-tax-adoption-2026",
+    "url": "https://www.portland.gov/mayor/keith-wilson/news/2026/4/8/small-businesses-get-tax-cut",
+    "accessed_at": "2026-10-03T09:39:20.601931+00:00",
+    "path": "runtime-data/small-business/web/city-tax-adoption-2026.html",
+    "sha256": "51883eceb0fe0db7a7a2a4c6730cd791c222112e50531be9ca6c66209a5279fa",
+    "bytes": 60959,
+    "content_type": "text/html; charset=utf-8",
+    "status": 200
+  },
+  {
+    "id": "census-ai-2026",
+    "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
+    "accessed_at": "2026-10-03T09:39:21.178674+00:00",
+    "path": "runtime-data/small-business/web/census-ai-2026.html",
+    "sha256": "e7c8c505ea0b3beb6206c79dbe86d5676de1adcee9137e87e8f13a57717025e5",
+    "bytes": 359545,
+    "content_type": "text/html; charset=UTF-8",
+    "status": 200
+  }
+]

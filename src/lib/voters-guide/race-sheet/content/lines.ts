@@ -58,6 +58,7 @@ const councilLines: IssueLine[] = [
   line("larry-kelly", "money", "Wants government to be easier for small businesses to work with."),
 
   line("tiffany-koyama-lane", "housing", "Supports publicly owned housing as an alternative to for-profit landlords, and rental assistance."),
+  line("tiffany-koyama-lane", "safety", "Would fund Street Response, CHAT and violence interrupters so police focus on violent crime."),
   line("tiffany-koyama-lane", "money", "Supports public services, stronger union contracts, regulating corporations, and lower burdens on working families."),
   line("tiffany-koyama-lane", "climate", "Wants Vision Zero (no traffic deaths), bike and transit infrastructure, trees, a data-center moratorium."),
 

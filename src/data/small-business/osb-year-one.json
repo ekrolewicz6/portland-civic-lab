@@ -1,0 +1,182 @@
+{
+  "source_id": "osb-2026",
+  "reference_period": "First year after May 2025 launch",
+  "reviewed": "2026-10-05",
+  "unique_businesses": 759,
+  "events_reported": 136,
+  "touchpoints_page2": 1600,
+  "interactions_page3": "1,700+",
+  "industry": [
+    {
+      "label": "Restaurants, bars, food carts & food service",
+      "percent": 33,
+      "display": "33%"
+    },
+    {
+      "label": "Retail / storefronts",
+      "percent": 15,
+      "display": "15%"
+    },
+    {
+      "label": "Personal services",
+      "percent": 9,
+      "display": "9%"
+    },
+    {
+      "label": "Professional services",
+      "percent": 8,
+      "display": "8%"
+    },
+    {
+      "label": "Arts, events & entertainment",
+      "percent": 7,
+      "display": "7%"
+    },
+    {
+      "label": "Healthcare",
+      "percent": 5,
+      "display": "5%"
+    },
+    {
+      "label": "Other industry",
+      "percent": 5,
+      "display": "5%"
+    },
+    {
+      "label": "Consumer products",
+      "percent": 5,
+      "display": "5%"
+    },
+    {
+      "label": "Construction",
+      "percent": 4,
+      "display": "4%"
+    },
+    {
+      "label": "Software / technology",
+      "percent": 3,
+      "display": "3%"
+    },
+    {
+      "label": "Childcare",
+      "percent": 2,
+      "display": "2%"
+    },
+    {
+      "label": "Manufacturing",
+      "percent": 2,
+      "display": "2%"
+    },
+    {
+      "label": "Transportation",
+      "percent": 2,
+      "display": "2%"
+    },
+    {
+      "label": "Cannabis / hemp",
+      "percent": 1,
+      "display": "1%"
+    },
+    {
+      "label": "Landscaping",
+      "percent": 1,
+      "display": "1%"
+    },
+    {
+      "label": "Agriculture",
+      "percent": null,
+      "display": "<1%"
+    }
+  ],
+  "intake": [
+    {
+      "label": "OSB liaison outreach",
+      "percent": 30,
+      "display": "30%"
+    },
+    {
+      "label": "OSB appointment",
+      "percent": 25,
+      "display": "25%"
+    },
+    {
+      "label": "Prosper Portland website",
+      "percent": 19,
+      "display": "19%"
+    },
+    {
+      "label": "Phone",
+      "percent": 10,
+      "display": "10%"
+    },
+    {
+      "label": "OSB website",
+      "percent": 9,
+      "display": "9%"
+    },
+    {
+      "label": "Partner referral",
+      "percent": 5,
+      "display": "5%"
+    },
+    {
+      "label": "Online chat",
+      "percent": 2,
+      "display": "2%"
+    }
+  ],
+  "services": [
+    {
+      "label": "Prosper Portland resources",
+      "percent": 50,
+      "display": "50%",
+      "description": "Referrals to grants, loans, technical assistance and OSB digital guides."
+    },
+    {
+      "label": "Community connections",
+      "percent": 18,
+      "display": "18%",
+      "description": "Referrals to local partners, including business associations."
+    },
+    {
+      "label": "Other resources",
+      "percent": 14,
+      "display": "14%",
+      "description": "Follow-ups and miscellaneous questions."
+    },
+    {
+      "label": "City bureau support",
+      "percent": 11,
+      "display": "11%",
+      "description": "Referrals to Permitting & Development, Transportation and Portland Solutions."
+    },
+    {
+      "label": "Access to capital",
+      "percent": 7,
+      "display": "7%",
+      "description": "Referrals to funding opportunities outside Prosper Portland."
+    }
+  ],
+  "districts": [
+    {
+      "district": 1,
+      "businesses": 103,
+      "events": 34
+    },
+    {
+      "district": 2,
+      "businesses": 182,
+      "events": 27
+    },
+    {
+      "district": 3,
+      "businesses": 154,
+      "events": 33
+    },
+    {
+      "district": 4,
+      "businesses": 142,
+      "events": 32
+    }
+  ]
+}

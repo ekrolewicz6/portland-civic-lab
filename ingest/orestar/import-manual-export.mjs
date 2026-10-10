@@ -7,8 +7,12 @@ import xlsx from 'xlsx';
 import { DuckDBInstance } from '@duckdb/node-api';
 
 const root = resolve(fileURLToPath(new URL('../..', import.meta.url)));
-const source = process.argv[2];
-if (!source) throw new Error('Usage: npm run orestar:refresh:manual -- /absolute/path/ORESTAR-export.xlsx');
+// --hold-conflicts keeps every existing record as it is and leaves out incoming
+// records that would change or supersede one. They are listed for review and are
+// never promoted by this script.
+const holdConflicts = process.argv.slice(2).includes('--hold-conflicts');
+const source = process.argv.slice(2).find(argument => !argument.startsWith('--'));
+if (!source) throw new Error('Usage: npm run orestar:refresh:manual -- /absolute/path/ORESTAR-export.xlsx [--hold-conflicts]');
 const input = resolve(source);
 const bytes = readFileSync(input);
 const sha256 = createHash('sha256').update(bytes).digest('hex');
@@ -63,21 +67,41 @@ for (let start = 0; start < rows.length; start += 500) {
   const found = await con.runAndReadAll(`SELECT transaction_id,original_id,transaction_date,filed_date,committee_id,subtype,amount_cents,status FROM transactions WHERE transaction_id IN (${batch.map(() => '?').join(',')})`, batch.map(row => row['Tran Id']));
   for (const row of found.getRowObjectsJson()) old.set(row.transaction_id, row);
 }
-const newRows = rows.filter(row => !old.has(row['Tran Id']));
+let newRows = rows.filter(row => !old.has(row['Tran Id']));
+const held = { changedExisting: [], superseding: [] };
 for (const row of rows.filter(row => old.has(row['Tran Id']))) {
   const previous = old.get(row['Tran Id']);
-  if (previous.transaction_date !== iso(row['Tran Date']) || previous.filed_date !== iso(row['Filed Date']) || previous.committee_id !== row['Filer Id'] || previous.subtype !== row['Sub Type'] || Number(previous.amount_cents) !== cents(row.Amount) || previous.status !== row['Tran Status'] || (previous.original_id ?? '') !== row['Original Id']) {
-    throw new Error(`Existing transaction ${row['Tran Id']} changed; manual amendment review required before promotion`);
-  }
+  const incoming = { transaction_date: iso(row['Tran Date']), filed_date: iso(row['Filed Date']), committee_id: row['Filer Id'], subtype: row['Sub Type'], amount_cents: cents(row.Amount), status: row['Tran Status'], original_id: row['Original Id'] };
+  const existing = { ...previous, amount_cents: Number(previous.amount_cents), original_id: previous.original_id ?? '' };
+  const differences = Object.keys(incoming).filter(field => existing[field] !== incoming[field]).map(field => ({ field, existing: existing[field], incoming: incoming[field] }));
+  if (!differences.length) continue;
+  if (!holdConflicts) throw new Error(`Existing transaction ${row['Tran Id']} changed; manual amendment review required before promotion`);
+  held.changedExisting.push({ transactionId: row['Tran Id'], filerId: row['Filer Id'], filer: row.Filer, subtype: row['Sub Type'], transactionDate: existing.transaction_date, differences });
 }
 const originalIds = newRows.map(row => row['Original Id']).filter(Boolean);
 if (new Set(originalIds).size !== originalIds.length) throw new Error('Two incoming records have the same Original Id');
+const collisions = [];
 for (let start = 0; start < originalIds.length; start += 500) {
   const batch = originalIds.slice(start, start + 500);
-  const conflicts = await con.runAndReadAll(`SELECT transaction_id,original_id FROM transactions WHERE original_id IN (${batch.map(() => '?').join(',')}) OR transaction_id IN (${batch.map(() => '?').join(',')})`, [...batch, ...batch]);
-  if (conflicts.getRowObjectsJson().length) throw new Error('Incoming amendment collides with an existing current Original Id; review required');
+  const conflicts = await con.runAndReadAll(`SELECT transaction_id,original_id,transaction_date,subtype,amount_cents FROM transactions WHERE original_id IN (${batch.map(() => '?').join(',')}) OR transaction_id IN (${batch.map(() => '?').join(',')})`, [...batch, ...batch]);
+  collisions.push(...conflicts.getRowObjectsJson());
 }
 con.closeSync();
+if (collisions.length) {
+  if (!holdConflicts) throw new Error('Incoming amendment collides with an existing current Original Id; review required');
+  for (const existing of collisions) {
+    const incoming = newRows.find(row => row['Original Id'] === existing.original_id || row['Original Id'] === existing.transaction_id);
+    if (!incoming) throw new Error(`Unmatched amendment collision for existing transaction ${existing.transaction_id}`);
+    held.superseding.push({
+      existingTransactionId: existing.transaction_id, existingTransactionDate: existing.transaction_date, existingAmountCents: Number(existing.amount_cents),
+      incomingTransactionId: incoming['Tran Id'], incomingTransactionDate: iso(incoming['Tran Date']), incomingAmountCents: cents(incoming.Amount),
+      filerId: incoming['Filer Id'], filer: incoming.Filer, subtype: incoming['Sub Type'],
+    });
+  }
+  const heldIds = new Set(held.superseding.map(item => item.incomingTransactionId));
+  newRows = newRows.filter(row => !heldIds.has(row['Tran Id']));
+}
+const heldCount = held.changedExisting.length + held.superseding.length;
 if (!newRows.length) {
   console.log(JSON.stringify({ status: 'no_new_records', snapshot: manifest.snapshot, sourceRows: rows.length, sha256 }));
   process.exit(0);
@@ -103,7 +127,9 @@ const audit = {
   sourceRows: rows.length, overlapRows: old.size, newRows: newRows.length, sourceColumns: expectedHeaders.length,
   transactionDateCounts: byDate, latestTransactionDate: Object.keys(byDate).at(-1),
   totalCountVerified: false, searchFiltersVerified: false, olderDatedLateFilingsCovered: false,
-  limits: ['The workbook contains no ORESTAR result count or search criteria.', 'Older-dated late filings and amendments outside this workbook are not ruled out.', 'Existing transaction changes and ambiguous public payors require review.', 'Street addresses and employer fields remain in the private archive.'],
+  limits: ['The workbook contains no ORESTAR result count or search criteria.', 'Older-dated late filings and amendments outside this workbook are not ruled out.', 'Existing transaction changes and ambiguous public payors require review.', 'Street addresses and employer fields remain in the private archive.',
+    ...(heldCount ? [`${heldCount} incoming record(s) that change or supersede an existing record were held for review and not applied; the existing versions remain.`] : [])],
+  ...(heldCount ? { heldForReview: held } : {}),
 };
 const archive = resolve(root, 'runtime-data/orestar-manual', sha256);
 mkdirSync(archive, { recursive: true });

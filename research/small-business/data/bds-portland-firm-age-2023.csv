@@ -1,0 +1,6 @@
+year,msa,firm_age_band,firms,establishments,jobs,jobs_created,jobs_destroyed,net_jobs,source_id
+2023,38900,a) 0,4472,4496,18724,18724,,18724,bds-msa-age-2023
+2023,38900,b) 1 to 5,14332,14550,97901,20366,18125,2241,bds-msa-age-2023
+2023,38900,c) 6 to 10,9345,9945,93820,14081,13647,434,bds-msa-age-2023
+2023,38900,d) 11+,22174,27459,448276,53493,63667,-10174,bds-msa-age-2023
+2023,38900,e) Left Censored,3275,9609,446178,42740,33750,8990,bds-msa-age-2023

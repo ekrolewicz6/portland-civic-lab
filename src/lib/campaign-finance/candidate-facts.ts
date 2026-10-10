@@ -76,7 +76,7 @@ export function raceFinance(raceId: string, candidates: RaceCandidate[], facts: 
     if (months.length && months[0][1].cash > 0) {
       const maximum = months[0][1].cash;
       const peaks = months.filter(([, amount]) => amount.cash === maximum);
-      sentences.push(`The largest combined monthly cash total in the observed part of 2026 was ${money(maximum)} in ${peaks.map(([month]) => month).join(' and ')}${peaks.length === 1 ? `, including ${money(peaks[0][1].publicCash)} in reviewed City matches` : ''}. September ends on the snapshot date and recent receipts remain provisional; this timing does not identify a cause.`);
+      sentences.push(`The largest combined monthly cash total in the observed part of 2026 was ${money(maximum)} in ${peaks.map(([month]) => month).join(' and ')}${peaks.length === 1 ? `, including ${money(peaks[0][1].publicCash)} in reviewed City matches` : ''}. The newest month is incomplete and recent receipts remain provisional; this timing does not identify a cause.`);
     }
     if (cash > publicCash) sentences.push(`Outside reviewed City matches, ${money(geography.get('portland') ?? 0)} is reported with a Portland, Oregon location, ${money(geography.get('other_oregon') ?? 0)} elsewhere in Oregon and ${money(geography.get('outside_oregon') ?? 0)} outside Oregon. Another ${money(geography.get('unknown') ?? 0)} has unknown or aggregate location. Reported postal locality is not verified city or district residency.`);
   }

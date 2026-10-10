@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "note": "ORESTAR amendments that the manual importer held because they change or supersede a record already in the ledger. Each was reviewed against the workbook it came from and approved before being applied. Nothing outside this list is changed after import.",
+  "amendments": [
+    {
+      "kind": "changed_existing",
+      "transactionId": "5833199",
+      "filerId": "23028",
+      "filer": "Angelita for Portland",
+      "subtype": "Cash Contribution",
+      "transactionDate": "2026-09-28",
+      "fromAmountCents": 1000,
+      "toAmountCents": 46000,
+      "reason": "Combined entry for contributions of $100 or less. The same transaction ID now carries a larger total in ORESTAR's current record.",
+      "approvedAt": "2026-10-05",
+      "appliedSnapshot": "orestar-20250101-20261004-de091bba2ee3"
+    },
+    {
+      "kind": "superseded",
+      "existingTransactionId": "5818603",
+      "incomingTransactionId": "5838594",
+      "filerId": "24888",
+      "filer": "Friends of Bri Williams",
+      "subtype": "Cash Expenditure",
+      "existingTransactionDate": "2026-09-15",
+      "existingAmountCents": 39317,
+      "incomingTransactionDate": "2026-09-28",
+      "incomingAmountCents": 78993,
+      "reason": "Filer amended the expenditure. The amended version replaces the original in ORESTAR's current records.",
+      "approvedAt": "2026-10-05",
+      "appliedSnapshot": "orestar-20250101-20261004-de091bba2ee3"
+    },
+    {
+      "kind": "superseded",
+      "existingTransactionId": "5819827",
+      "incomingTransactionId": "5847691",
+      "filerId": "23285",
+      "filer": "Building a Stronger Oregon",
+      "subtype": "Cash Expenditure",
+      "existingTransactionDate": "2026-09-22",
+      "existingAmountCents": 25000000,
+      "incomingTransactionDate": "2026-09-28",
+      "incomingAmountCents": 25000000,
+      "reason": "Filer amended the date of its payment to Friends of Tina Kotek. The amount is unchanged.",
+      "approvedAt": "2026-10-05",
+      "appliedSnapshot": "orestar-20250101-20261004-de091bba2ee3"
+    },
+    {
+      "kind": "superseded",
+      "existingTransactionId": "5832746",
+      "incomingTransactionId": "5851095",
+      "filerId": "21839",
+      "filer": "Mannix for Oregon PAC",
+      "subtype": "Cash Expenditure",
+      "existingTransactionDate": "2026-09-28",
+      "existingAmountCents": 20000,
+      "incomingTransactionDate": "2026-09-28",
+      "incomingAmountCents": 20000,
+      "reason": "Filer amended the payee. The date and amount are unchanged.",
+      "approvedAt": "2026-10-05",
+      "appliedSnapshot": "orestar-20250101-20261004-de091bba2ee3"
+    },
+    {
+      "kind": "superseded",
+      "existingTransactionId": "5833402",
+      "incomingTransactionId": "5852698",
+      "filerId": "22194",
+      "filer": "Citizens to Elect Yi-Kang Hu",
+      "subtype": "In-Kind Contribution",
+      "existingTransactionDate": "2026-09-28",
+      "existingAmountCents": 49090,
+      "incomingTransactionDate": "2026-09-28",
+      "incomingAmountCents": 49090,
+      "reason": "Filer amended the in-kind contribution record. The date and amount are unchanged.",
+      "approvedAt": "2026-10-05",
+      "appliedSnapshot": "orestar-20250101-20261004-de091bba2ee3"
+    }
+  ]
+}

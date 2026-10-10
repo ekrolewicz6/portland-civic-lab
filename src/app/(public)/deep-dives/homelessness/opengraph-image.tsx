@@ -11,6 +11,6 @@ export default function Image() {
       headline: "Why Portland can't end homelessness",
       accent: "#3f7f9f",
       description:
-        "Portland spends more than ever and the count keeps rising. The math that explains why — and what would actually work.",
+        "Portland spends more than ever and homelessness keeps rising. The math that explains why — and what would actually work.",
     });
 }

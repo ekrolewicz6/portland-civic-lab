@@ -17,6 +17,7 @@ const TOPICS = [
   "Partnership",
   "Data correction",
   "Volunteering",
+  "Events",
   "Permitting tools",
   "Dashboard or analysis request",
 ];

@@ -7,7 +7,7 @@ import sql from "@/lib/db-query";
 import { toHeaderMember } from "@/lib/member-nav";
 
 export const metadata: Metadata = {
-  title: "Admin portal | Portland Civic Lab",
+  title: "Admin portal",
   robots: { index: false, follow: false },
 };
 

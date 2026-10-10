@@ -23,6 +23,12 @@ export interface DeepDive {
 }
 export const DEEP_DIVES: DeepDive[] = [
   {
+    slug: "small-business", title: "How well does Portland help its small businesses?",
+    description: "What Portland’s businesses contribute, how we compare and what better support could achieve for owners and workers.",
+    subject: "The state of small business", topics: ["work", "money"], updated: "2026-10-05",
+    tool: "Explore 20 visual exhibits", keywords: "small business firms jobs payroll GDP Prosper Portland owners workers AI entrepreneurship peers economy",
+  },
+  {
     slug: "data-centers", title: "Are Oregon’s data-center tax breaks worth it?",
     description: "Follow the jobs, electricity and public money. Try the numbers behind a real deal.",
     subject: "Energy, water & taxes", topics: ["money", "work", "place"], updated: "2026-09-29",
@@ -32,7 +38,7 @@ export const DEEP_DIVES: DeepDive[] = [
     slug: "campaign-finance", title: "The money behind Portland’s next council.",
     description: "Who gives, where the money comes from and which businesses campaigns pay.",
     subject: "Elections & influence", topics: ["power", "money"], updated: "2026-09-29",
-    tool: "Compare the campaigns", keywords: "election voting candidates donors district 3 district 4 ORESTAR contributions",
+    tool: "Compare the campaigns", keywords: "election voting candidates donors district 3 district 4 ORESTAR contributions governor Kotek Drazan",
   },
   {
     slug: "participatory-budgeting", title: "Should Portland guarantee residents a vote on part of its budget?",

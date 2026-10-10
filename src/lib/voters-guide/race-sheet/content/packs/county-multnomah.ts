@@ -491,6 +491,22 @@ primary.push({ candidateId: "bruce-broussard", sourceUrl: `${PAMPHLET}#page=34` 
 portraits["bruce-broussard"] = portrait("bruce-broussard", 34);
 
 const cruzIssues = site("Cruz · issues", "https://www.serenacruz.com/issues");
+/* Her emailed answer of October 2, 2026 to the Lab's September 26 universal-preschool question. */
+const cruzEmail: Evidence = {
+  label: "Cruz · emailed answer to the Lab’s question",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#cruz-2026-10-02",
+  kind: "Candidate statement",
+  date: "Received October 2, 2026",
+  note: `${NOTE} Sent by the candidate in answer to the question the Lab sent every District 2 campaign; quoted on the brief.`,
+};
+/* Her October 3, 2026 answer on whether the 2028 preschool-tax delay should stand (her own rewrite of a first draft that morning). */
+const cruzEmail2: Evidence = {
+  label: "Cruz · emailed answer on the preschool-tax delay",
+  url: "https://www.portlandciviclab.org/voters-guide/research-log#cruz-2026-10-03",
+  kind: "Candidate statement",
+  date: "Received October 3, 2026",
+  note: `${NOTE} Sent by the candidate after the Lab asked whether the 2028 delay should stand; quoted on the brief.`,
+};
 candidate("serena-cruz", {
   values: ["Operational experience", "Integrated services"],
   tradeoff:
@@ -1217,7 +1233,7 @@ const multnomahTopics: ExtraTopic[] = [
     short: "Budget gap",
     question: "Close the county's structural budget gap by cutting administration before services?",
     context:
-      "The Budget Office projected a $10.5 million General Fund shortfall for FY 2027 growing to $33.8 million by FY 2030; the adopted FY 2027 budget eliminated at least 158 positions.",
+      "The Budget Office projected a $10.5 million General Fund shortfall for FY 2027 growing to $33.8 million by FY 2030. The adopted FY 2027 budget eliminated at least 158 positions, starting where possible with vacant ones; the county’s release did not say how many were filled or how many were management rather than union-represented jobs.",
   },
   {
     id: "mult-pfa-delay",
@@ -1506,13 +1522,15 @@ topicStances.push(
   // Broussard and Williams: no statement on any of the thirteen choices in the pamphlet, on their sites or in the
   // venues logged in the September 22, 2026 sweep report. Ong Norris's pamphlet line on "resisting authoritarian
   // attacks on our immigrant neighbors" is a value, not a position on the sanctuary code; left as a gap.
-  // Cruz's Preschool for All entry now uses her fuller answer at the September 24, 2026 City Club debate.
-  stance("serena-cruz", "mult-pfa-delay", "partial", "Match seats to families",
-    "Not yet satisfied: says the program has more seats than enrolled children but not in the right places and hours, must cover children with special needs, and should explain its high reserves; she did not address the 2028 delay.",
-    cityClubD2),
+  // Cruz's Preschool for All entries: her October 2, 2026 email answers the tax half of both questions and
+  // extends her September 24 City Club answer (seats in the right places and hours, special needs, the reserve).
+  // October 3, 2026: her rewrite answers whether the 2028 delay should stand; it replaces the October 2 reading.
+  stance("serena-cruz", "mult-pfa-delay", "supports", "Backs Board’s delay",
+    "Supports the Board’s decision to delay the increase, saying the data does not show the tax is needed now to stay on track to universality, and does not support any delay in reaching universality itself.",
+    cruzEmail2),
   stance("serena-cruz", "mult-pfa-universal", "supports", "Full funding, fair access",
-    "Names the 2030 goal of universal access and says she will fight for full, stable funding, more flexible hours and equitable access in District 2 so North and Northeast Portland families are not left waiting.",
-    cruzIssues),
+    "Promises full, stable funding, flexible hours and equitable access toward the 2030 goal; says demographic and program data, including families moving here for the program, will drive budget, seat and tax decisions over the next four years, with performance tracked.",
+    cruzEmail),
   stance("serena-cruz", "mult-sanctuary", "supports", "Protect sanctuary",
     "Would protect the county’s sanctuary efforts and prepare employees for ICE arriving; as a commissioner she challenged the sheriff’s office over money from the U.S. Marshals Service, which ended.",
     cityClubD2),
@@ -1672,7 +1690,7 @@ const stakeShsRevenue: StakeItem = {
 };
 const stakeCityCounty: StakeItem = {
   label: "City-county agreement",
-  text: "The city-county homeless services agreement expires in July 2027 amid a dispute over $31 million the city owes the county and $38 million the city says it is owed; the county counted about 18,000 people homeless, 8,800 unsheltered, in early 2026.",
+  text: "The city-county homeless services agreement expires in July 2027 amid a dispute over $31 million the city owes the county and $38 million the city says it is owed; the county’s by-name list, which includes everyone in contact with homeless services, put the number at about 18,000 people homeless, 8,800 unsheltered, in early 2026, a method not comparable to the federal Point-in-Time count.",
   source: opbCityCounty,
 };
 const stakePreschool: StakeItem = {

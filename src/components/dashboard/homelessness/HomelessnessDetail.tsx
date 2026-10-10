@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { STATS } from "@/lib/homeless/data";
 import StatGrid from "@/components/charts/StatGrid";
 import TrendChart from "@/components/charts/TrendChart";
 import MultiLineChart from "@/components/charts/MultiLineChart";
@@ -44,9 +45,9 @@ interface PitYear {
 interface ShelterQuarter {
   quarter: string;
   totalBeds: number;
-  county24hrBeds: number;
-  cityOvernightBeds: number;
-  utilizationPct: number;
+  county24hrBeds: number | null;
+  cityOvernightBeds: number | null;
+  utilizationPct: number | null;
   /** Citation for this quarter's capacity report, when the row carries one. */
   source: string | null;
 }
@@ -110,10 +111,10 @@ interface SHSByCounty {
 interface AffordableVacancy {
   asOf: string;
   source: string;
-  totalUnits: number;
-  vacantUnits: number;
+  totalUnits: number | null;
+  vacantUnits: number | null;
   vacancyPct: number;
-  avgDaysToFill: number;
+  avgDaysToFill: number | null;
   notes: string;
 }
 
@@ -348,12 +349,12 @@ export default function HomelessnessDetail() {
           <div className="flex flex-wrap gap-4 mb-6">
             {/* Card 1: People Homeless */}
             <div className="flex-1 min-w-[140px]">
-              <p className="text-[12px] uppercase tracking-wider opacity-70 mb-1">People Homeless</p>
+              <p className="text-[12px] uppercase tracking-wider opacity-70 mb-1">People homeless, {latestPit?.year ?? ""} Point-in-Time count</p>
               <p className="text-[28px] font-mono font-bold leading-none">
                 {latestPit?.totalHomeless.toLocaleString() ?? "--"}
               </p>
               <p className="text-[13px] opacity-60 mt-1">
-                {pitChange !== 0 ? `${pitChange > 0 ? "+" : ""}${pitChange}% since ${prevPit?.year ?? "prior"}` : "latest PIT count"}
+                {pitChange !== 0 ? `${pitChange > 0 ? "+" : ""}${pitChange}% from ${prevPit?.year ?? "the prior count"}` : "latest PIT count"}
               </p>
             </div>
 
@@ -397,11 +398,11 @@ export default function HomelessnessDetail() {
           </div>
 
           <p className="text-[15px] leading-relaxed opacity-80">
-            Portland spends more on homelessness than ever before, yet the number of people on the
-            streets keeps climbing. Shelter utilization sits well below capacity while beds are being
+            Portland spends more on homelessness than ever before, yet the number of people homeless
+            keeps climbing. Shelter utilization sits well below capacity while beds are being
             cut. Only 16% of shelter exits lead to permanent housing -- the system absorbs people
-            without moving them forward. The Supportive Housing Services tax expires in 2030 and a
-            22% budget cut looms for FY 2026-27.
+            without moving them forward. The Supportive Housing Services tax expires in 2030, and the county&apos;s
+            2026-27 budget, adopted in June 2026, phases out 605 adult shelter units.
           </p>
           <p className="text-[11px] opacity-40 mt-4 font-mono">
             Source: HUD PIT Count &middot; JOHS Shelter Reports &middot; Metro SHS Year 4 Report &middot; MultCo Health
@@ -693,25 +694,34 @@ export default function HomelessnessDetail() {
             <p className="text-[36px] font-mono font-bold text-amber-700 leading-none">
               {cityBeds !== null ? cityBeds.toLocaleString() : "--"}
             </p>
-            <p className="text-[13px] text-amber-600/70 mt-1">beds</p>
+            <p className="text-[13px] text-amber-600/70 mt-1">
+              {latestShelter?.cityOvernightBeds == null && contextStats?.city_overnight_beds?.context
+                ? contextStats.city_overnight_beds.context
+                : "beds"}
+            </p>
           </div>
           <div className="bg-green-50 border border-green-200 rounded-sm p-5 text-center">
             <p className="text-[11px] font-semibold text-green-800/60 uppercase tracking-wider mb-1">
-              County 24-Hour Shelters
+              {countyBeds !== null && countyBeds > 0 ? "County 24-Hour Shelters" : "County-Funded Shelter Capacity"}
             </p>
             <p className="text-[36px] font-mono font-bold text-green-700 leading-none">
-              {countyBeds !== null && countyBeds > 0 ? countyBeds.toLocaleString() : "--"}
+              {countyBeds !== null && countyBeds > 0
+                ? countyBeds.toLocaleString()
+                : latestShelter
+                  ? latestShelter.totalBeds.toLocaleString()
+                  : "--"}
             </p>
-            <p className="text-[13px] text-green-600/70 mt-1">beds</p>
+            <p className="text-[13px] text-green-600/70 mt-1">
+              {countyBeds !== null && countyBeds > 0 ? "beds" : `average, ${latestShelter?.quarter ?? "latest quarter"}`}
+            </p>
           </div>
         </div>
         <div className="bg-[var(--color-paper-warm)] border border-[var(--color-parchment)] rounded-sm p-4 mb-6">
           {shelterUtilizationPct !== null ? (
             <p className="text-[13px] text-[var(--color-ink)] leading-relaxed">
               <strong>System-wide occupancy: {shelterUtilizationPct}%</strong>{" "}
-              across all shelter types in {latestShelter?.quarter ?? "the latest quarter"}.
-              The source reports one occupancy rate for the whole system, so it
-              cannot be split between the two columns above.
+              of available beds in county-supported shelters, {latestShelter?.quarter ?? "the latest quarter"}.
+              The county reports one occupancy rate for the shelters it funds.
             </p>
           ) : (
             <p className="text-[13px] text-[var(--color-ink-muted)] leading-relaxed">
@@ -927,27 +937,30 @@ export default function HomelessnessDetail() {
               Prevalence Gap
             </p>
             <p className="text-[14px] text-[var(--color-ink)] leading-snug">
-              PIT: {latestPit?.totalHomeless.toLocaleString() ?? "--"}.
-              HRAC annual estimate: ~38,000. Actual scale is 3-4x the snapshot.
+              Point-in-Time count ({latestPit?.year ?? "latest"}): {latestPit?.totalHomeless.toLocaleString() ?? "--"} people on one night.
+              The county&apos;s by-name list, which covers everyone in contact with services over months, held about{" "}
+              {STATS.byNameTotal.toLocaleString()} in {STATS.byNameAsOf}. The two use different methods and are not directly comparable.
             </p>
           </div>
         </div>
 
         {/* Home Forward vacancy callout */}
-        {affordableVacancy.length > 0 && affordableVacancy.some((v) => v.vacantUnits > 0) && (
-          <div className="bg-amber-50 border border-amber-200 rounded-sm p-4 mb-6">
-            <p className="text-[13px] text-amber-800">
-              <strong>Home Forward vacancy:</strong>{" "}
-              {affordableVacancy.filter((v) => v.vacantUnits > 0).map((v) =>
-                `${v.vacantUnits.toLocaleString()} empty units (${v.vacancyPct}% vacancy)`
-              ).join("; ")}
-              . Average unit takes 185 days to fill.
-            </p>
-            <p className="text-[11px] text-amber-700/60 mt-1">
-              Contested: Home Forward disputes some figures. Source: KATU/Willamette Week (Nov 2025).
-            </p>
-          </div>
-        )}
+        {affordableVacancy.length > 0 && (() => {
+          const fmtDate = (d: string) => new Date(`${d.slice(0, 10)}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+          const latest = affordableVacancy[affordableVacancy.length - 1];
+          const earlier = affordableVacancy.slice(0, -1);
+          const days = [...affordableVacancy].reverse().find((v) => v.avgDaysToFill !== null);
+          return (
+            <div className="bg-amber-50 border border-amber-200 rounded-sm p-4 mb-6">
+              <p className="text-[13px] text-amber-800">
+                <strong>Home Forward vacancy:</strong> {latest.vacancyPct}% of units empty as of {fmtDate(latest.asOf)}
+                .{earlier.length > 0 && <> Earlier: {earlier.map((v) => `${v.vacancyPct}% on ${fmtDate(v.asOf)}`).join("; ")}.</>}
+                {days && <> In 2025 a vacant unit took {days.avgDaysToFill} days on average to fill.</>}
+              </p>
+              <p className="text-[12px] text-amber-700/70 mt-1">Source: {latest.source}.</p>
+            </div>
+          );
+        })()}
 
         {/* Hidden homelessness callout */}
         <div className="bg-[var(--color-parchment)]/40 border border-[var(--color-parchment)] rounded-sm p-4">
@@ -991,7 +1004,7 @@ export default function HomelessnessDetail() {
               <strong>SHS tax expiration (2030):</strong> The primary funding source expires unless reauthorized by voters. No campaign has begun.
             </li>
             <li>
-              <strong>City-county governance split:</strong> Portland and Multnomah County dispute the count, methodology, and responsibility. Partnership agreement expires July 2027.
+              <strong>City-county governance split:</strong> Portland and Multnomah County dispute the homelessness data, its methods, and who is responsible. Partnership agreement expires July 2027.
             </li>
           </ol>
           <p className="text-[11px] text-[var(--color-ink-muted)] mt-4 font-mono">
@@ -1062,14 +1075,18 @@ export default function HomelessnessDetail() {
           <Collapsible title="Data Sources & Methodology">
             <div className="space-y-2 text-[13px] text-[var(--color-ink-muted)] leading-relaxed">
               <p>
-                <strong>Point-in-Time Count:</strong> HUD-mandated count conducted
-                every 1-2 years by the Portland/Gresham/Multnomah County CoC.
-                Counts both sheltered and unsheltered on a single night.
+                <strong>Point-in-Time Count:</strong> A count of sheltered and unsheltered
+                people on one night in late January, which HUD requires at least every two
+                years. Multnomah County&apos;s latest was January 22, 2025; for the first time it
+                added 5,090 people from county records to the unsheltered total, so it is not
+                directly comparable with earlier years.
               </p>
               <p>
-                <strong>By-Name List:</strong> JOHS maintains a by-name list of
-                all known homeless individuals. Monthly snapshots show inflow (new
-                entries) vs outflow (exits to housing).
+                <strong>By-Name List:</strong> The county&apos;s monthly roster of everyone in its
+                homeless services database. Outflow counts people housed, people moved to
+                inactive after a stretch without contact, and deaths, so it is not a count of
+                housing exits. County staff said in September 2026 that a shorter inactivity
+                window will remove about 3,500 people and restate the list back to January 2024.
               </p>
               <p>
                 <strong>Eviction Filings:</strong> From Evicted in Oregon

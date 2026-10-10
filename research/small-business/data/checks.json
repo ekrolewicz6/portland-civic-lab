@@ -1,0 +1,22 @@
+{
+  "source_sha256": {
+    "susb2022_msa.txt": "e90e9f9029af62b954d98e4bdad82f504f36aad2508e17d2240d53beb336230d",
+    "susb2022_county.xlsx": "21ba2207f8bd76683945437e66091a5c84c80c1ef551b8ee2badd15afb1ea833",
+    "osb_year_one.pdf": "bf3f83dd299ae9a39f6df33365bcaf0a93a5fc11420a585d8677fb25dd618002",
+    "bds2023_msa.csv": "1efaa54b3926fddd410719cb77dcb65a8f2f47eb5ba070d0037be60cc6fc3b79",
+    "bds2023_msa_fac.csv": "b2b22253b0fd51569e79a800dccc9e17afbfaff7f7395738fa90d1cc4ffd6015",
+    "runtime-data/maker-economy/qcew2019.csv": "b7692e311b2744c3e3ad35a3ce205a2b744096a3ddfa9c1500b43957025df142",
+    "runtime-data/maker-economy/qcew2025.csv": "04d3b9a1b4d79c6fec3de32045a0e5c18910ce8f1ed3febd52a3f1acc48a7bbb",
+    "runtime-data/maker-economy/nes2023.zip": "65030a96b0e5542ca7b52aa954c2c66cf1cff0f936e8b2b225375d3d186bac28",
+    "runtime-data/small-business/web/prosper-insights.pdf": "aa21830664a1fa7faa4b7491b24a1b90a2450da249f017c506dca482c13b36c0"
+  },
+  "msa_portland_jobs_total": 1084535,
+  "msa_portland_under500_jobs": 544855,
+  "msa_portland_under500_job_share": 0.502386,
+  "county_jobs_total": 439591,
+  "county_under500_jobs": 216121,
+  "osb_unique_businesses_reported": 759,
+  "osb_district_businesses_sum": 581,
+  "osb_district_gap": 178,
+  "figures": 16
+}

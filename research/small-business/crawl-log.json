@@ -1,0 +1,503 @@
+{
+  "run_at_utc": "2026-10-03T06:46:42.949588+00:00",
+  "max_bytes_per_source": 10485760,
+  "results": [
+    {
+      "id": "abs",
+      "status": "queued",
+      "url": "https://www.census.gov/programs-surveys/abs.html"
+    },
+    {
+      "id": "bds",
+      "status": "archived",
+      "sha256": "cccd4b1f037acbb3e94015e095384fcc8c3104dad31e7f7e5638e0f624307527",
+      "bytes": 334349,
+      "file": "runtime-data/small-business/web/bds.html",
+      "url": "https://www.census.gov/programs-surveys/bds.html"
+    },
+    {
+      "id": "bds-data",
+      "status": "archived",
+      "sha256": "ee40070c9bd6e3cc1ccaed7933b631d213a1b0d0399fcd005c620a5690f19ae4",
+      "bytes": 504618,
+      "file": "runtime-data/small-business/web/bds-data.html",
+      "url": "https://www.census.gov/data/datasets/time-series/econ/bds/bds-datasets.html"
+    },
+    {
+      "id": "bds-method",
+      "status": "archived",
+      "sha256": "d6d3f0b2e13efc3165c2dc586598632d9247d95f2c395510d995902ca91269cb",
+      "bytes": 357379,
+      "file": "runtime-data/small-business/web/bds-method.html",
+      "url": "https://www.census.gov/programs-surveys/bds/documentation/methodology.html"
+    },
+    {
+      "id": "bds-msa-2023",
+      "status": "prior-archive",
+      "url": "https://www2.census.gov/programs-surveys/bds/tables/time-series/2023/bds2023_msa.csv"
+    },
+    {
+      "id": "bds-msa-age-2023",
+      "status": "prior-archive",
+      "url": "https://www2.census.gov/programs-surveys/bds/tables/time-series/2023/bds2023_msa_fac.csv"
+    },
+    {
+      "id": "bea-aggregate",
+      "status": "archived",
+      "sha256": "24ec217979ac8fef18fd9d910f9dbb1062972059ef3df8486dc89f3046aae3db",
+      "bytes": 306275,
+      "file": "runtime-data/small-business/web/bea-aggregate.pdf",
+      "url": "https://www.bea.gov/sites/default/files/2026-02/geo-aggregator-technical-document.pdf"
+    },
+    {
+      "id": "bea-county",
+      "status": "archived",
+      "sha256": "0a8c2050cd6af199ac383ef0ce80d1d562fa9d8700a78531b37535a2cc11a54d",
+      "bytes": 60482,
+      "file": "runtime-data/small-business/web/bea-county.html",
+      "url": "https://www.bea.gov/news/2026/gross-domestic-product-county-and-personal-income-county-2024"
+    },
+    {
+      "id": "bea-small",
+      "status": "archived",
+      "sha256": "c08c83ba14c1caf98c92d222f772c26beaf7e1468b5f98060edb3370b51d8720",
+      "bytes": 48062,
+      "file": "runtime-data/small-business/web/bea-small.html",
+      "url": "https://www.bea.gov/data/special-topics/small-business"
+    },
+    {
+      "id": "bfs",
+      "status": "queued",
+      "url": "https://www.census.gov/econ/bfs/index.html"
+    },
+    {
+      "id": "bricks-2025",
+      "status": "archived",
+      "sha256": "b40f30f4a1772f98f6571034610fad41d27afde9c20307aa35e2caa879511fc6",
+      "bytes": 171750,
+      "file": "runtime-data/small-business/web/bricks-2025.html",
+      "url": "https://bricks-need-mortar.com/2025/03/we-are-here-2025/"
+    },
+    {
+      "id": "cbp",
+      "status": "archived",
+      "sha256": "c5e7837983852141504f2378eede3a2afcf02aa098f1da748cea0b2291cc1a38",
+      "bytes": 342602,
+      "file": "runtime-data/small-business/web/cbp.html",
+      "url": "https://www.census.gov/programs-surveys/cbp.html"
+    },
+    {
+      "id": "census-btos",
+      "status": "archived",
+      "sha256": "3c8f2efcc77cf13587bd442f8d3610daf4012e1f1ade7bb65b78f8b564755794",
+      "bytes": 5412,
+      "file": "runtime-data/small-business/web/census-btos.html",
+      "url": "https://www.census.gov/hfp/btos/data_downloads"
+    },
+    {
+      "id": "chamber-2023",
+      "status": "archived",
+      "sha256": "7029267c80b78ad26d82b0cd8fdbf908348eeda9415cb022e1765700f135e1c3",
+      "bytes": 88132,
+      "file": "runtime-data/small-business/web/chamber-2023.html",
+      "url": "https://portlandmetrochamber.com/resources/2023-state-of-small-business/"
+    },
+    {
+      "id": "city-accepted-chamber",
+      "status": "archived",
+      "sha256": "b4bb1ec60e7c30599f037bdd8cffa26d00b84e33b7a2cf34667b31e5e399a672",
+      "bytes": 63910,
+      "file": "runtime-data/small-business/web/city-accepted-chamber.html",
+      "url": "https://www.portland.gov/council/documents/report/accepted/283-2024"
+    },
+    {
+      "id": "city-audit-grants",
+      "status": "archived",
+      "sha256": "42ea7f16fd26f118a0278f7cc00834b26da3b4b467798c0954624ce098c5a5f8",
+      "bytes": 81278,
+      "file": "runtime-data/small-business/web/city-audit-grants.html",
+      "url": "https://www.portland.gov/auditor/audit-services/news/2021/5/12/prosper-portland-emergency-grants-standards-needed-ensure"
+    },
+    {
+      "id": "city-audit-status",
+      "status": "archived",
+      "sha256": "d2f5a8abfb343cb65a0d15513b64f4a48f5f8d48a37aded879e19527c3c98650",
+      "bytes": 83061,
+      "file": "runtime-data/small-business/web/city-audit-status.html",
+      "url": "https://www.portland.gov/audit-services/reports-2022/prosper-portland"
+    },
+    {
+      "id": "city-audit-work",
+      "status": "archived",
+      "sha256": "2d3e7ed0f3895d583cfdee28352546160fefbfb605faae5b63ccf727014ec542",
+      "bytes": 59661,
+      "file": "runtime-data/small-business/web/city-audit-work.html",
+      "url": "https://www.portland.gov/auditor/audit-services/what-were-working"
+    },
+    {
+      "id": "city-business-tax",
+      "status": "archived",
+      "sha256": "fb18d6f68c939fac7537dc045f09afbfec4fd0a49c5b478b0e6ee0dc0f6358bc",
+      "bytes": 105847,
+      "file": "runtime-data/small-business/web/city-business-tax.html",
+      "url": "https://www.portland.gov/revenue/business-tax"
+    },
+    {
+      "id": "city-disparity",
+      "status": "archived",
+      "sha256": "b08782540d3b5fbb72cffd2b7895f50dd3c65abd1020a29eec814a96f4286f48",
+      "bytes": 61166,
+      "file": "runtime-data/small-business/web/city-disparity.html",
+      "url": "https://www.portland.gov/business-opportunities/2026-disparity-study"
+    },
+    {
+      "id": "city-maps",
+      "status": "archived",
+      "sha256": "f45ecd49a364912d11fa8c99b3599a99b28e14beec76e9291c91f5d84cbdcec0",
+      "bytes": 80304,
+      "file": "runtime-data/small-business/web/city-maps.html",
+      "url": "https://www.portland.gov/bps/planning/maps"
+    },
+    {
+      "id": "city-performance",
+      "status": "archived",
+      "sha256": "7ff65dd43f89a611c0873d4f008704d868f2dffc92d6e4be27f6fa54cfee42a2",
+      "bytes": 2030008,
+      "file": "runtime-data/small-business/web/city-performance.html",
+      "url": "https://www.portlandciviclab.org/dashboard/performance"
+    },
+    {
+      "id": "city-permit-metrics",
+      "status": "archived",
+      "sha256": "0d73da873835cc13564098062c6860de1afd642c729d001ed93f9e3715d1c5ea",
+      "bytes": 59608,
+      "file": "runtime-data/small-business/web/city-permit-metrics.html",
+      "url": "https://www.portland.gov/permitimprovement/data-metrics"
+    },
+    {
+      "id": "city-permits",
+      "status": "archived",
+      "sha256": "5382a817e739374c5bec63f34b75dd656a1db15f25dfc26dc93e562d9fded7f5",
+      "bytes": 77652,
+      "file": "runtime-data/small-business/web/city-permits.html",
+      "url": "https://www.portland.gov/ppd/how-get-building-permit/check-permit-timelines"
+    },
+    {
+      "id": "downtown-survey",
+      "status": "archived",
+      "sha256": "3181366553a72676b5cf646353d4892583e9e4ace104ce55caf0604df01b8f97",
+      "bytes": 235050,
+      "file": "runtime-data/small-business/web/downtown-survey.html",
+      "url": "https://downtownportland.org/research-reports/"
+    },
+    {
+      "id": "fed-ai",
+      "status": "archived",
+      "sha256": "f6dd8a9f6b4b2e1d75921721ebc79c23ebf20fff6558ea4eb1bf7efe7d36878f",
+      "bytes": 123552,
+      "file": "runtime-data/small-business/web/fed-ai.html",
+      "url": "https://www.frbsf.org/research-and-insights/publications/community-development-research-briefs/2026/07/ai-adoption-in-small-businesses-2024-sbcs/"
+    },
+    {
+      "id": "fed-survey",
+      "status": "archived",
+      "sha256": "63fea20051cf1f50bcfcba9d87d459a95721e82940022f4eaac4481d8691f5d8",
+      "bytes": 84337,
+      "file": "runtime-data/small-business/web/fed-survey.html",
+      "url": "https://www.fedsmallbusiness.org/reports/survey"
+    },
+    {
+      "id": "ffiec-cra",
+      "status": "archived",
+      "sha256": "ab933b545735866c9b4a65f9c47c98a064637e8e04863c59a621e01ff8bf4280",
+      "bytes": 48116,
+      "file": "runtime-data/small-business/web/ffiec-cra.html",
+      "url": "https://www.ffiec.gov/data/cra/data-products"
+    },
+    {
+      "id": "gate-eval",
+      "status": "http-error",
+      "code": 403,
+      "url": "https://www.dol.gov/agencies/eta/research/publications/growing-america-through-entrepreneurship-final-evaluation"
+    },
+    {
+      "id": "ibrn-2025",
+      "status": "http-error",
+      "code": 404,
+      "url": "https://prosperportland.us/wp-content/uploads/2025/01/Report-25-11.pdf"
+    },
+    {
+      "id": "legacy-2026",
+      "status": "archived",
+      "sha256": "b9c727aaa59a3bec2c3869a6f12330eed1ed40d6c394fec20db74b0ef0e68aaa",
+      "bytes": 73814,
+      "file": "runtime-data/small-business/web/legacy-2026.html",
+      "url": "https://www.portland.gov/bps/planning/historic-resources/legacy/news/2026/3/20/city-portland-releases-study-and"
+    },
+    {
+      "id": "livelihood-site",
+      "status": "archived",
+      "sha256": "75adabcffecb5e5e9b93bee62ee12b9d57c87261687a53f3c39a63e9ed74e957",
+      "bytes": 302221,
+      "file": "runtime-data/small-business/web/livelihood-site.html",
+      "url": "https://livelihoodnw.org/"
+    },
+    {
+      "id": "meso-site",
+      "status": "archived",
+      "sha256": "d9daec98fe0cf78e822789baf9cd59bce87b733d7a60378e25e532de54528d65",
+      "bytes": 263476,
+      "file": "runtime-data/small-business/web/meso-site.html",
+      "url": "https://www.mesopdx.org/"
+    },
+    {
+      "id": "metro-atlas",
+      "status": "fetch-error",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+      "url": "https://evatool.oregonmetro.gov/"
+    },
+    {
+      "id": "nes-2023",
+      "status": "prior-archive",
+      "url": "https://www2.census.gov/programs-surveys/nonemployer-statistics/datasets/2023/historical-datasets/nonemp23co.zip"
+    },
+    {
+      "id": "nes-demog",
+      "status": "archived",
+      "sha256": "d95df94f55c967e5c3d0998dfb8fadef2496ecb5b3cc7d1bf00a44cbf2257a89",
+      "bytes": 303877,
+      "file": "runtime-data/small-business/web/nes-demog.html",
+      "url": "https://www.census.gov/data/developers/data-sets/nesd.html"
+    },
+    {
+      "id": "nes-method",
+      "status": "archived",
+      "sha256": "f7a0a38f6722585af83e5c7a83d3d86b84257c89161878944ea11edbb6bc9e13",
+      "bytes": 376396,
+      "file": "runtime-data/small-business/web/nes-method.html",
+      "url": "https://www.census.gov/programs-surveys/nonemployer-statistics/technical-documentation/methodology.html"
+    },
+    {
+      "id": "nyc-mycity",
+      "status": "fetch-error",
+      "error": "The read operation timed out",
+      "url": "https://comptroller.nyc.gov/reports/audit-report-on-the-new-york-city-office-of-technology-and-innovations-mycity-system/"
+    },
+    {
+      "id": "oecd-eval",
+      "status": "http-error",
+      "code": 403,
+      "url": "https://www.oecd.org/en/publications/framework-for-the-evaluation-of-sme-and-entrepreneurship-policies-and-programmes-2023_a4c818d1-en.html"
+    },
+    {
+      "id": "oregon-osba",
+      "status": "archived",
+      "sha256": "64feedcde0c353f2b860b554a1b52764074ec0e0ebcb6373a2cb19e6baa6fd58",
+      "bytes": 97037,
+      "file": "runtime-data/small-business/web/oregon-osba.html",
+      "url": "https://sos.oregon.gov/business/small-business/Pages/default.aspx"
+    },
+    {
+      "id": "oregon-sos",
+      "status": "archived",
+      "sha256": "22069fae7b7a184a94c4bf053cd60d750d2e2a8f27873e46a3bc17bea390e265",
+      "bytes": 84928,
+      "file": "runtime-data/small-business/web/oregon-sos.html",
+      "url": "https://sos.oregon.gov/business/public-Information-data/Pages/oregon-business-statistics.aspx"
+    },
+    {
+      "id": "oregon-sos-api",
+      "status": "queued",
+      "url": "https://data.oregon.gov/resource/tckn-sxa6.json"
+    },
+    {
+      "id": "oregon-ssbci",
+      "status": "archived",
+      "sha256": "b8db078f2e33cf3c9db4286c4945a3d0c24b078d68a44e37693893b0c8782a0d",
+      "bytes": 191551,
+      "file": "runtime-data/small-business/web/oregon-ssbci.html",
+      "url": "https://www.oregon.gov/biz/programs/ssbci/pages/default.aspx"
+    },
+    {
+      "id": "osb-2026",
+      "status": "prior-archive",
+      "url": "https://static1.squarespace.com/static/6801755ad7acc40d46586c99/t/6aa09dc0156a0f27de3f3e85/1788911040812/OSB+Year+One+Impact+Report+Accessible+1.pdf"
+    },
+    {
+      "id": "osb-site",
+      "status": "archived",
+      "sha256": "39617877de1dfc0dee25a7abc43caf7d877571a38178a4b94257794f05b12b04",
+      "bytes": 346903,
+      "file": "runtime-data/small-business/web/osb-site.html",
+      "url": "https://pdxofficeofsmallbusiness.com/news/portland-office-of-small-business-year-one-impact-report"
+    },
+    {
+      "id": "owner-goals",
+      "status": "archived",
+      "sha256": "1917c610fad8a3eb1f87673cde93a6283f69c03558c0ebcc05232f8ce59d94e1",
+      "bytes": 93734,
+      "file": "runtime-data/small-business/web/owner-goals.html",
+      "url": "https://www.nber.org/papers/w17041"
+    },
+    {
+      "id": "port-procurement",
+      "status": "archived",
+      "sha256": "549478b221c0ef871bb61b97fcce212d28099dbce621a04680621ff8a03a006d",
+      "bytes": 30868,
+      "file": "runtime-data/small-business/web/port-procurement.html",
+      "url": "https://www.portofportland.com/SmallBusiness/Enterprise"
+    },
+    {
+      "id": "prosper-acfr",
+      "status": "archived",
+      "sha256": "fe471e1bf8e43b680ff896efb67eaf4e4394cd883151879cd0a579e99febf999",
+      "bytes": 8823660,
+      "file": "runtime-data/small-business/web/prosper-acfr.pdf",
+      "url": "https://prosperportland.us/wp-content/uploads/2025/11/Annual-Comprehensive-Financial-Report-FY2025.pdf"
+    },
+    {
+      "id": "prosper-budget",
+      "status": "archived",
+      "sha256": "622c3e347f6cd4f627c0969f2b1b85d2233930f85f71b12181ede24fbb9e78a1",
+      "bytes": 76874,
+      "file": "runtime-data/small-business/web/prosper-budget.html",
+      "url": "https://www.portland.gov/council/documents/report/placed-file/2026-163"
+    },
+    {
+      "id": "prosper-fy26-proposed",
+      "status": "archived",
+      "sha256": "3a4924fee81d2652a3abd8402f4f70ab15e410933d46f13f152b37abe9200db6",
+      "bytes": 86715,
+      "file": "runtime-data/small-business/web/prosper-fy26-proposed.html",
+      "url": "https://www.portland.gov/council/documents/report/placed-file/2025-209"
+    },
+    {
+      "id": "prosper-insights",
+      "status": "archived",
+      "sha256": "aa21830664a1fa7faa4b7491b24a1b90a2450da249f017c506dca482c13b36c0",
+      "bytes": 8026513,
+      "file": "runtime-data/small-business/web/prosper-insights.pdf",
+      "url": "https://prosperportland.us/wp-content/uploads/2026/02/Insights-Indicators-2025.pdf"
+    },
+    {
+      "id": "prosper-loans",
+      "status": "archived",
+      "sha256": "3de7ae13f0aa13b4e4d806222d0eff129ba1b21c67ab95574bb01ba6b9e52a7c",
+      "bytes": 507192,
+      "file": "runtime-data/small-business/web/prosper-loans.pdf",
+      "url": "https://www.portland.gov/budget/performance/documents/fy-2020-24-prosper-loan-and-grant-activity/download"
+    },
+    {
+      "id": "qcew-2019",
+      "status": "prior-archive",
+      "url": "https://www.bls.gov/cew/downloadable-data-files.htm"
+    },
+    {
+      "id": "qcew-2025",
+      "status": "prior-archive",
+      "url": "https://www.bls.gov/cew/downloadable-data-files.htm"
+    },
+    {
+      "id": "qcew-method",
+      "status": "http-error",
+      "code": 403,
+      "url": "https://www.bls.gov/cew/overview.htm"
+    },
+    {
+      "id": "qualityinfo",
+      "status": "archived",
+      "sha256": "91196a933a12c6a53abbbc912e42ccf9aa7a8281c48818ae5404e840964dc483",
+      "bytes": 247443,
+      "file": "runtime-data/small-business/web/qualityinfo.html",
+      "url": "https://qualityinfo.org/data"
+    },
+    {
+      "id": "qualityinfo-formation",
+      "status": "archived",
+      "sha256": "19838b16f4074afbe09fd070bccf1b5c222446220cb7bb6c2ac783d198496a12",
+      "bytes": 159507,
+      "file": "runtime-data/small-business/web/qualityinfo-formation.html",
+      "url": "https://www.qualityinfo.org/web/guest/-/business-formation-and-business-employment-dynamics-in-oregon"
+    },
+    {
+      "id": "sba-advocacy-gdp",
+      "status": "http-error",
+      "code": 403,
+      "url": "https://advocacy.sba.gov/2019/01/30/small-businesses-generate-44-percent-of-u-s-economic-activity/"
+    },
+    {
+      "id": "sba-loans",
+      "status": "archived",
+      "sha256": "7b623c93ec1b11fd4bec80dacd146c290a0890d0a181b9b30e810d9fa45cc124",
+      "bytes": 32511,
+      "file": "runtime-data/small-business/web/sba-loans.html",
+      "url": "https://data.sba.gov/dataset/7a-504-foia"
+    },
+    {
+      "id": "sbdc-site",
+      "status": "archived",
+      "sha256": "5147ff8593a1bb7a6ef89b5a07dcdd83bd3cccf6a3bd3da3eded9c838fbcb01d",
+      "bytes": 224153,
+      "file": "runtime-data/small-business/web/sbdc-site.html",
+      "url": "https://oregonsbdc.org/find-your-center/"
+    },
+    {
+      "id": "seattle-services",
+      "status": "archived",
+      "sha256": "84f6666287a665edf8438b2e9921cab9785ce6fc5b52a9ba27d9901cd82d4ba6",
+      "bytes": 75317,
+      "file": "runtime-data/small-business/web/seattle-services.html",
+      "url": "https://bottomline.seattle.gov/2026/01/15/helping-seattles-small-businesses-grow/"
+    },
+    {
+      "id": "singapore-cto",
+      "status": "archived",
+      "sha256": "c3f9474b551f52961fb8007cdb082a1fac9660758cb9157ba66fbac0aee288c6",
+      "bytes": 168511,
+      "file": "runtime-data/small-business/web/singapore-cto.pdf",
+      "url": "https://www.imda.gov.sg/-/media/Imda/Files/Programme/SMEs-Go-Digital/CTOaaS-Factsheet.pdf"
+    },
+    {
+      "id": "singapore-digital",
+      "status": "archived",
+      "sha256": "c06e3baa75c5d75bd32b8a47c09c9e253bb36989c28cd621a307d061339538f8",
+      "bytes": 136513,
+      "file": "runtime-data/small-business/web/singapore-digital.html",
+      "url": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2025/smes-go-digital-day"
+    },
+    {
+      "id": "susb-county-2022",
+      "status": "prior-archive",
+      "url": "https://www2.census.gov/programs-surveys/susb/tables/2022/county_3digitnaics_2022.xlsx"
+    },
+    {
+      "id": "susb-errata",
+      "status": "archived",
+      "sha256": "0a6040762f2282ae664690aae532a768afe6b7b1f991db953e5606ccc426347a",
+      "bytes": 342013,
+      "file": "runtime-data/small-business/web/susb-errata.html",
+      "url": "https://www.census.gov/data/datasets/2022/econ/susb/2022-susb.html"
+    },
+    {
+      "id": "susb-method",
+      "status": "archived",
+      "sha256": "a78b690b37da990d8dfe34a41d491a4b2998e24d73b71e39175f353cde83b755",
+      "bytes": 372572,
+      "file": "runtime-data/small-business/web/susb-method.html",
+      "url": "https://www.census.gov/programs-surveys/susb/technical-documentation/methodology.html"
+    },
+    {
+      "id": "susb-msa-2022",
+      "status": "prior-archive",
+      "url": "https://www2.census.gov/programs-surveys/susb/datasets/2022/msa_3digitnaics_2022.txt"
+    },
+    {
+      "id": "young-firms",
+      "status": "archived",
+      "sha256": "84b3453f12640038d4aa0df007de1a9567d2a10fe70432c1c8cd207c6e38bf6b",
+      "bytes": 93749,
+      "file": "runtime-data/small-business/web/young-firms.html",
+      "url": "https://www.nber.org/papers/w16300"
+    }
+  ]
+}

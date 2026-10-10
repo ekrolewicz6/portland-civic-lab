@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://static1.squarespace.com/static/6801755ad7acc40d46586c99/t/6aa09dc0156a0f27de3f3e85/1788911040812/OSB+Year+One+Impact+Report+Accessible+1.pdf",
+    "path": "runtime-data/small-business/osb-review-2026-10-05/report.pdf",
+    "sha256": "bf3f83dd299ae9a39f6df33365bcaf0a93a5fc11420a585d8677fb25dd618002",
+    "bytes": 2508820,
+    "accessed_at": "2026-10-05T08:41:21.619325+00:00"
+  },
+  {
+    "url": "https://pdxofficeofsmallbusiness.com/news/portland-office-of-small-business-year-one-impact-report",
+    "path": "runtime-data/small-business/osb-review-2026-10-05/announcement.html",
+    "sha256": "ea33aa78cd1f0dd260e52211251480e59b417c9bfdc94dbe14afc66ee9b78a19",
+    "bytes": 1483419,
+    "accessed_at": "2026-10-05T08:41:22.727746+00:00"
+  }
+]

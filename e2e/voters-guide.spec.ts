@@ -398,7 +398,8 @@ test("desktop: each Council choice is a board beneath the grid; opening one list
       if (tc.vote) {
         await expect(li).toContainText(tc.vote);
         await expect(li).toContainText("Recorded vote");
-        await expect(li).toContainText(decision.voteLabel ?? decision.title);
+        // The vote names the decision it was cast on, never a bare word under the board's question.
+        await expect(li.locator("[data-vote-on]")).toContainText(decision.title);
       }
     } else {
       expect(tc.vote, `${r.id} is a challenger and can hold no vote`).toBeNull();
@@ -447,6 +448,35 @@ test("desktop: each Council choice is a board beneath the grid; opening one list
   await expect(board(page, "water-rates")).toHaveAttribute("open", "");
   await expect(boards(page).locator("details[data-topic][open]")).toHaveCount(1);
 });
+
+/* A board's question and the decision behind it can point opposite ways ("Keep funding camp removals?" vs. a
+   vote to shift money away from them), so every recorded vote, on every decision-backed board and on the brief,
+   says in words what it was cast on: "Voted yes on <decision title>". */
+const VOTED_ON: Record<string, string> = { Yes: "Voted yes on", No: "Voted no on", Absent: "Absent for the vote on", "Not on committee": "Not on the committee that voted on" };
+for (const sheet of sheets) {
+  const decisionTopics = extraTopics.filter((t) => t.decisionId && sheet.rows.some((r) => r.topicCells[t.id]?.vote));
+  if (decisionTopics.length === 0) continue;
+  test(`${sheet.race.id}: every recorded vote on a board and on the brief names the decision it was cast on`, async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(`/voters-guide/${sheet.race.id}#topics=${decisionTopics.map((t) => t.id).join(",")}`);
+    for (const topic of decisionTopics) {
+      const decision = councilDecisions.find((d) => d.id === topic.decisionId)!;
+      for (const r of sheet.rows.filter((x) => x.topicCells[topic.id]?.vote)) {
+        const vote = r.topicCells[topic.id].vote!;
+        const on = boardRow(page, topic.id, r.id).locator("[data-vote-on]");
+        await expect(on, `${r.id}/${topic.id}`).toContainText(`${VOTED_ON[vote]} ${decision.title}`);
+      }
+    }
+    expect(await fits(page)).toBe(true);
+    const incumbent = sheet.rows.find((r) => decisionTopics.some((t) => r.topicCells[t.id]?.vote))!;
+    await page.goto(`/voters-guide/${sheet.race.id}/${incumbent.id}`);
+    for (const topic of decisionTopics.filter((t) => incumbent.topicCells[t.id]?.vote)) {
+      const decision = councilDecisions.find((d) => d.id === topic.decisionId)!;
+      await expect(page.locator("[data-vote-on]").filter({ hasText: decision.title })).toHaveCount(1);
+    }
+    expect(await fits(page)).toBe(true);
+  });
+}
 
 test("phone: a board lists every candidate without overflow, and topics no longer sit inside the cards", async ({ page }) => {
   const sheet = sheets.find((s) => s.race.id === "portland-district-3")!;

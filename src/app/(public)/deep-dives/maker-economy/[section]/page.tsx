@@ -2,6 +2,9 @@ import { notFound } from 'next/navigation';
 import { pageMeta } from '@/lib/page-meta';
 import { makerDocument, makerDocuments, MAKER_PATH } from '@/lib/maker-economy/publication';
 import MakerPublication from '@/components/deep-dives/maker-economy/Publication';
+import { DEEP_DIVES } from '@/lib/deep-dives';
+
+const MAKER_DIVE = DEEP_DIVES.find(d => d.slug === 'maker-economy');
 
 type Props = { params: Promise<{ section: string }> };
 export const dynamicParams = false;
@@ -14,7 +17,7 @@ export async function generateMetadata({ params }: Props) {
   const { section } = await params;
   const document = makerDocument(section);
   if (!document) notFound();
-  return pageMeta({ title: `${document.label}: Portland’s maker economy`, description: document.title, path: `${MAKER_PATH}/${section}`, type: 'article' });
+  return pageMeta({ title: `${document.label}: Portland’s maker economy`, description: `${document.title.replace(/[.:]$/, '')}. ${MAKER_DIVE?.description ?? ''}`.trim(), path: `${MAKER_PATH}/${section}`, type: 'article', sectionImage: true });
 }
 
 export default async function MakerResearchPage({ params }: Props) {

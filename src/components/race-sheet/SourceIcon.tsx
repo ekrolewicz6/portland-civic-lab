@@ -1,4 +1,4 @@
-import { BookOpen, ClipboardList, FileText, Globe, Landmark, Link2, Mail, MessageSquare, Newspaper, ScrollText } from "lucide-react";
+import { BookOpen, ClipboardList, FileText, Globe, Landmark, Link2, Mail, MessageSquare, Mic, Newspaper, ScrollText } from "lucide-react";
 import type { SourceVenue } from "@/lib/voters-guide/race-sheet/source-chip";
 
 /** One glyph per source venue, so a citation is recognizable before it is read. */
@@ -12,6 +12,7 @@ const ICONS: Record<SourceVenue, typeof BookOpen> = {
   Register: ScrollText,
   Reporting: Newspaper,
   Response: Mail,
+  Forum: Mic,
 };
 
 export function SourceIcon({ venue, size = 14, className }: { venue: SourceVenue; size?: number; className?: string }) {

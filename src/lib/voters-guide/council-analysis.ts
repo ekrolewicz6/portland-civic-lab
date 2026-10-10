@@ -503,10 +503,22 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
     issues: {
       housing:
         "Supports publicly owned housing as an alternative to for-profit landlords and continued rental assistance.",
+      // Safety comes from the campaign's emailed answers of October 2, 2026 (sent by Lydia Kiesling).
+      safety:
+        "Would keep Portland Street Response, CHAT and publicly funded housing and behavioral-health navigation programs well-resourced and coordinated, with fully funded violence-interrupter programs, community centers and changes to the built environment, so police can focus on violent crime.",
       climate:
         "Prioritizes Vision Zero, bike and transit infrastructure, tree canopy and a data-center moratorium.",
       money:
         "Favors public services, stronger union contracts and regulating corporations while lowering the burden on working families. A fully costed next-term program is not established here.",
+    },
+    issueSources: {
+      safety: {
+        label: "Koyama Lane · emailed answers to the Lab’s questions",
+        url: "https://www.portlandciviclab.org/voters-guide/research-log#koyama-lane-2026-10-02",
+        kind: "Candidate statement",
+        date: "Received October 2, 2026",
+        note: "Sent for the campaign by Lydia Kiesling in reply to the Lab’s questions and kept on file; the answers appear on her brief. Receipt does not verify the claims.",
+      },
     },
   },
   "Steve Novick": {
@@ -543,6 +555,13 @@ const supplements: Record<string, { source: Evidence; issues: Issues; issueSourc
         kind: "Reporting",
         date: "October 5, 2015",
         note: "Cited by the candidate for the same measure.",
+      },
+      {
+        label: "City of Portland · Resolution 37185, referring the 10-cent gas tax to voters",
+        url: "https://efiles.portlandoregon.gov/record/8519330/file/document/",
+        kind: "Public record",
+        date: "January 27, 2016",
+        note: "The official record for the measure he cites. Its cover sheet names Commissioner Steve Novick as the sponsor, and Council adopted it 5–0, sending a temporary 10-cent-a-gallon tax for street repair and traffic safety, estimated at $64 million over four years, to the May 17, 2016 ballot. The campaign sent this file on October 7, 2026; it matches the City Auditor’s archive copy.",
       },
       {
         label: "U.S. District Court · Superfund cost-recovery decision, 750 F. Supp. 1460",

@@ -29,6 +29,7 @@ import {
   FileSearch,
   Mail,
   CalendarClock,
+  CalendarDays,
   Users,
   type LucideIcon,
 } from "lucide-react";
@@ -88,7 +89,7 @@ const TOOLS: NavItem[] = [
   { label: "Ask Portland", href: ASK_PORTLAND_URL, desc: "Independent surveys, weighted to the whole city", icon: ClipboardList, external: true },
   { label: "Portland Permits", href: PERMITS_URL, desc: "Zoning, likely permits, fees, and timelines", icon: MapPinned, external: true },
   { label: "Org Chart", href: "/org-chart", desc: "Who runs what at the City, bureau by bureau", icon: Network },
-  { label: "Decisions register", href: "/decisions", desc: "Every open decision in the City's portfolio, dated and sourced", icon: CalendarClock },
+  { label: "CED Portfolio Map", href: "/ced", desc: "Initiatives, decisions, money and dependencies across bureau lines", icon: CalendarClock },
 ];
 
 const WORK: NavItem[] = [
@@ -101,6 +102,7 @@ const WORK: NavItem[] = [
 
 const ABOUT: NavItem[] = [
   { label: "About the Lab", href: "/about", desc: "The idea, the people, and four ways to join", icon: Users },
+  { label: "Events", href: "/events", desc: "Screenings and gatherings the Lab hosts", icon: CalendarDays },
   { label: "Independence & funding", href: "/independence", desc: "The rules, every contract we hold, where we're not neutral", icon: ShieldCheck },
   { label: "Methodology", href: "/methodology", desc: "How every number gets its source", icon: BookOpen },
   { label: "Open data & API", href: "/open-data", desc: "Download, embed, and build on the data", icon: Database },
@@ -112,7 +114,7 @@ const ABOUT: NavItem[] = [
 const GUIDE_FEATURED: Featured = {
   eyebrow: "Election 2026 · Nov 3",
   title: "The 2026 Voters’ Guide",
-  body: `${GUIDE_SCALE.candidates} candidates in ${GUIDE_SCALE.races} races, from City Council to governor, side by side with their sources. No endorsements.`,
+  body: `${GUIDE_SCALE.candidates} candidates in ${GUIDE_SCALE.races} races, from City Council to governor, side by side with their sources. We endorse no one.`,
   cta: "Open the guide",
   href: "/voters-guide",
   img: { src: "/images/home/voters-guide.jpg", alt: "The voters’ guide front page: the Portland council districts with every candidate’s portrait", position: "object-right" },

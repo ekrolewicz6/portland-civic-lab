@@ -1,0 +1,5 @@
+county_fips,county,size_code,size,firms,establishments,jobs,payroll_usd,receipts_usd,employment_noise,payroll_noise,receipts_noise,source_id
+41051,Multnomah County,2,2: <20 employees,18757,18872,76485,3764359000,16579763000,G,G,G,susb-county-2022
+41051,Multnomah County,3,3: 20-99 employees,2258,2726,75757,4359170000,17056191000,G,G,G,susb-county-2022
+41051,Multnomah County,4,4: 100-499 employees,806,1586,63879,4551259000,19713563000,G,G,G,susb-county-2022
+41051,Multnomah County,5,5: 500+ employees,1326,4250,223470,16879297000,112046058000,G,G,G,susb-county-2022

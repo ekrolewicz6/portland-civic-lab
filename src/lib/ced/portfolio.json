@@ -1,0 +1,4145 @@
+{
+  "edition": "2026-10-03",
+  "sources": [
+    {
+      "id": "ced-kpis",
+      "label": "CED: How we measure our work",
+      "url": "https://www.portland.gov/community-economic-dev/how-we-measure-our-work",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "ced-scope",
+      "label": "Community and Economic Development service area",
+      "url": "https://www.portland.gov/community-economic-dev",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "housing-production-strategy-legacy-1",
+      "label": "Housing Production Strategy progress tracker (Portland.gov)",
+      "url": "https://www.portland.gov/bps/planning/housing-production/progress",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "housing-production-strategy-legacy-2",
+      "label": "Housing Needs Analysis and Housing Production Strategy overview (Portland.gov)",
+      "url": "https://www.portland.gov/bps/planning/housing-production",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "housing-production-strategy-legacy-3",
+      "label": "Resolution 37673 (adoption record, Portland.gov)",
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37673",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "affordable-housing-bond-pipeline-legacy-1",
+      "label": "Metro Housing Bond in Portland - status page (Portland.gov)",
+      "url": "https://www.portland.gov/phb/metro-housing-bond",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "affordable-housing-bond-pipeline-legacy-2",
+      "label": "PHB: 928 affordable homes opened last year (Portland.gov, Jan 15, 2026)",
+      "url": "https://www.portland.gov/phb/news/2026/1/15/portland-housing-bureau-funds-helped-open-928-affordable-homes-last-year",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "affordable-housing-bond-pipeline-legacy-3",
+      "label": "73Foster opening announcement (Portland.gov, Aug 17, 2026)",
+      "url": "https://www.portland.gov/phb/news/2026/8/17/new-affordable-housing-now-open-73foster",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "affordable-housing-bond-pipeline-legacy-4",
+      "label": "Metro Housing Bond quarterly report, Jan-Mar 2026 (Metro)",
+      "url": "https://www.oregonmetro.gov/sites/default/files/2026-05/housing-bond-quarterly-progress-report_q1_jan_mar_2026.pdf",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "housing-bureau-fiscal-controls-legacy-1",
+      "label": "City Administrator announces independent audit of unspent funds (KATU, Feb 2026)",
+      "url": "https://katu.com/news/local/portland-city-administrator-responds-to-revelation-of-106m-in-unspent-housing-funds-politics-money-investigation-oregon-council-rental-bureau-government-local-community",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "housing-bureau-fiscal-controls-legacy-2",
+      "label": "Portland approves plan to spend $56 million of unbudgeted housing funds (OPB, Apr 8, 2026)",
+      "url": "https://www.opb.org/article/2026/04/08/portland-56-million-unbudgeted-housing-funds/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "housing-bureau-fiscal-controls-legacy-3",
+      "label": "Council holds oversight hearing over unspent housing funds (KPTV, Apr 24, 2026)",
+      "url": "https://www.kptv.com/2026/04/24/portland-city-council-holds-oversight-hearing-over-unspent-housing-funds/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "housing-bureau-fiscal-controls-legacy-4",
+      "label": "Additional $21M in unspent housing funds discovered (KOIN)",
+      "url": "https://www.koin.com/news/portland/deeply-troubled-portland-officials-discover-additional-21m-in-unspent-housing-funds/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "housing-bureau-fiscal-controls-legacy-5",
+      "label": "City Auditor commentary on unspent housing funds and accountability (Portland.gov, Mar 25, 2026)",
+      "url": "https://www.portland.gov/auditor/news/2026/3/25/unspent-housing-funds-show-accountability-isnt-optional-portlands-next",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-permitting-consolidation-reform-legacy-1",
+      "label": "Portland.gov: Portland Permitting & Development launches (July 1, 2024)",
+      "url": "https://www.portland.gov/ppd/news/2024/7/1/portland-permitting-development-launches",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-permitting-consolidation-reform-legacy-2",
+      "label": "Portland.gov: City Council gives green light to Portland Permitting & Development (May 29, 2024)",
+      "url": "https://www.portland.gov/permitimprovement/news/2024/5/29/city-council-gives-green-light-portland-permitting-development",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-permitting-consolidation-reform-legacy-3",
+      "label": "Portland.gov: Council unanimously commits to consolidate city permitting (Aug 30, 2023)",
+      "url": "https://www.portland.gov/permitimprovement/news/2023/8/30/portland-city-council-unanimously-commits-consolidate-city",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-permitting-consolidation-reform-legacy-4",
+      "label": "Portland.gov: New dashboards provide enhanced insights into building permit processes (July 21, 2025)",
+      "url": "https://www.portland.gov/ppd/news/2025/7/21/new-dashboards-provide-enhanced-insights-city-portlands-building-permit",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-permitting-consolidation-reform-legacy-5",
+      "label": "Portland.gov: Design Review Reform Report published (May 14, 2026)",
+      "url": "https://www.portland.gov/bps/planning/news/2026/5/14/city-portland-publishes-design-review-reform-report-outlining-options",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-permitting-consolidation-reform-legacy-6",
+      "label": "Portland.gov: Digital Services wraps up collaboration with Permitting & Development (Jan 2, 2026)",
+      "url": "https://www.portland.gov/digital-services/news/2026/1/2/digital-services-wraps-collaboration-permitting-development-builds",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-permitting-consolidation-reform-legacy-7",
+      "label": "Portland.gov: Background on the Permit Improvement Project",
+      "url": "https://www.portland.gov/permitimprovement/about",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-permitting-consolidation-reform-legacy-8",
+      "label": "Portland.gov: About Portland Permitting & Development (programs and leadership)",
+      "url": "https://www.portland.gov/ppd/about-portland-permitting-development",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-fee-budget-stabilization-legacy-1",
+      "label": "Portland.gov: Permitting & Development fee changes take effect July 10 (April 27, 2026)",
+      "url": "https://www.portland.gov/ppd/news/2026/4/27/permitting-development-proposes-fee-changes-starting-july",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-fee-budget-stabilization-legacy-2",
+      "label": "Portland.gov: Mayor's FY 2026-27 Proposed Budget highlights and key budget adjustments (PP&D section)",
+      "url": "https://www.portland.gov/budget/documents/mayors-proposed-budget-highlights-and-key-budget-adjustments/download",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-fee-budget-stabilization-legacy-3",
+      "label": "Portland.gov: Councilor Koyama Lane's budget amendments (May 17, 2026)",
+      "url": "https://www.portland.gov/council/districts/3/tiffany-koyama-lane/news/2026/5/17/councilor-koyama-lanes-budget-amendments",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-fee-budget-stabilization-legacy-4",
+      "label": "Portland.gov: Portland City Council adopts final budget for 2026-27 (June 18, 2026)",
+      "url": "https://www.portland.gov/hello/news/2026/6/18/portland-city-council-adopts-final-budget-2026-27",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-fee-budget-stabilization-legacy-5",
+      "label": "Portland.gov: Tree code permits and enforcement team joins Permitting & Development (Oct 1, 2025)",
+      "url": "https://www.portland.gov/ppd/news/2025/10/1/portlands-tree-code-permits-and-enforcement-team-joins-permitting-development",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-fee-budget-stabilization-legacy-6",
+      "label": "Willamette Week: After dozens of layoffs in Portland's permitting bureau, industry groups try to strike bargain with city (March 21, 2024)",
+      "url": "https://www.wweek.com/news/city/2024/03/21/after-dozens-of-layoffs-in-portlands-permitting-bureau-industry-groups-try-to-strike-bargain-with-city/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "ppd-fee-budget-stabilization-legacy-7",
+      "label": "Portland.gov: PP&D Financial Advisory Committee meeting notes, April 23, 2025 (cost recovery and reserve discussion)",
+      "url": "https://www.portland.gov/ppd/finance/documents/ppd-financial-advisory-committee-meeting-notes-april-23-2025/download",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "pcef-climate-investment-plan-legacy-1",
+      "label": "PCEF Climate Investment Plan (Portland.gov)",
+      "url": "https://www.portland.gov/bps/cleanenergy/climate-investment-plan",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "pcef-climate-investment-plan-legacy-2",
+      "label": "Ordinance 192005 — CIP amendment to $1.59B (Dec. 11, 2024)",
+      "url": "https://www.portland.gov/council/documents/ordinance/1052-pcef-cip-amendment",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "pcef-climate-investment-plan-legacy-3",
+      "label": "Ordinance 192154 — first annual CIP review amendment (Mar. 11, 2026)",
+      "url": "https://www.portland.gov/council/documents/ordinance/amend-portland-clean-energy-community-benefit-funds-climate-investment",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "pcef-climate-investment-plan-legacy-4",
+      "label": "OPB: Council approves Moda Center term sheet; PCEF proposed as a revenue source (Aug. 12, 2026)",
+      "url": "https://www.opb.org/article/2026/08/12/portland-city-council-approves-moda-center-renovations-term-sheet/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "pcef-climate-investment-plan-legacy-5",
+      "label": "Portland Mercury: PCEF awards nearly $64 million in community grants (Dec. 5, 2025)",
+      "url": "https://www.portlandmercury.com/news/2025/12/05/48169523/amid-grim-outlook-for-national-climate-investments-portlands-clean-energy-fund-doles-out-nearly-64-million",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "pcef-climate-investment-plan-legacy-6",
+      "label": "OPB: Judge rules PCEF-diversion initiative lacked required full text (Feb. 24, 2026)",
+      "url": "https://www.opb.org/article/2026/02/24/judge-rules-initiative-to-divert-portland-climate-funds-lacked-clear-language/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "pcef-climate-investment-plan-legacy-7",
+      "label": "PCEF 2026 Community Grants cycle (Portland.gov)",
+      "url": "https://www.portland.gov/bps/cleanenergy/community-grants/2026-community-grants-cycle",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "clean-industry-initiative-legacy-1",
+      "label": "About the Clean Industry Initiative (Portland.gov)",
+      "url": "https://www.portland.gov/bps/climate-action/clean-industry/about-clean-industry",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "clean-industry-initiative-legacy-2",
+      "label": "BPS news: third DOE Community Energy Innovation Prize awarded (Jan. 6, 2025)",
+      "url": "https://www.portland.gov/bps/climate-action/news/2025/1/6/bureau-planning-and-sustainability-and-area-partners-awarded-third",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "clean-industry-initiative-legacy-3",
+      "label": "PSU: Clean Industry Community Program to use $20 million in PCEF funds",
+      "url": "https://www.pdx.edu/sustainability/news/psu-power-portlands-clean-industry-community-program",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "clean-industry-initiative-legacy-4",
+      "label": "BPS-PSU Clean Industry partnership announcement (Jan. 8, 2024)",
+      "url": "https://www.portland.gov/bps/climate-action/clean-industry/news/2024/1/8/bureau-planning-and-sustainability-portland-state",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "climate-health-standards-existing-buildings-legacy-1",
+      "label": "Climate and Health Standards for Existing Buildings (Portland.gov)",
+      "url": "https://www.portland.gov/bps/climate-action/building-standards",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "climate-health-standards-existing-buildings-legacy-2",
+      "label": "Project overview and background (Portland.gov)",
+      "url": "https://www.portland.gov/bps/climate-action/building-standards/project-overview",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "climate-health-standards-existing-buildings-legacy-3",
+      "label": "HFO report on proposed carbon rules and Sept. 1, 2026 committee vote (July 28, 2026)",
+      "url": "https://www.hfore.com/new-portland-carbon-rules-would-reach-nearly-every-large-apartment-building/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "climate-health-standards-existing-buildings-legacy-4",
+      "label": "BPS news: cost analysis of climate and health policies for buildings (Jan. 17, 2025)",
+      "url": "https://portland.gov/bps/climate-action/news/2025/1/17/cost-analysis-climate-and-health-policies-buildings",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "broadway-corridor-usps-redevelopment-legacy-1",
+      "label": "Prosper Portland — Broadway Corridor Redevelopment",
+      "url": "https://prosperportland.us/our-work/broadway-corridor-redevelopment/",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "broadway-corridor-usps-redevelopment-legacy-2",
+      "label": "Prosper Portland Board Report 25-19 — Parcel 6 Predevelopment Loan (June 18, 2025)",
+      "url": "https://prosperportland.us/wp-content/uploads/2025/06/Report-25-19.pdf",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "broadway-corridor-usps-redevelopment-legacy-3",
+      "label": "Portland.gov — PHB awards over $40M to Home Forward and Urban League for 230-unit Parcel 4A development (Aug 8, 2024)",
+      "url": "https://www.portland.gov/phb/news/2024/8/8/portland-housing-bureau-awards-over-40m-home-forward-and-urban-league-230-unit",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "broadway-corridor-usps-redevelopment-legacy-4",
+      "label": "Next Portland — Broadway Corridor Parcel 6 receives Design Advice (May 29, 2026)",
+      "url": "https://www.nextportland.com/2026/05/29/broadway-corridor-parcel-6-receives-design-advice-images/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "broadway-corridor-usps-redevelopment-legacy-5",
+      "label": "Portland.gov — Final floodplain notice, Broadway Corridor Affordable Housing (June 12, 2026)",
+      "url": "https://www.portland.gov/phb/news/2026/6/12/final-floodplain-notice-broadway-corridor-affordable-housing-project",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "broadway-corridor-usps-redevelopment-legacy-6",
+      "label": "Portland.gov — NW Johnson & Kearney Street Extension Project (PBOT)",
+      "url": "https://www.portland.gov/transportation/pbot-projects/construction/nw-johnson-kearney-street-extension-project",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "new-tif-districts-legacy-1",
+      "label": "Portland.gov — Council approves six TIF districts, >$2.5B over 30 years (Oct 30, 2024)",
+      "url": "https://www.portland.gov/rubio/news/2024/10/30/council-approves-generational-public-investments-east-portland-and-central",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "new-tif-districts-legacy-2",
+      "label": "Portland.gov — Ordinance 191937, East 205 Urban Renewal Plan ($770M maximum indebtedness, Oct 30, 2024)",
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/191937",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "new-tif-districts-legacy-3",
+      "label": "Prosper Portland — City Council appoints Community Leadership Committees for East Portland TIF districts (Oct 29, 2025)",
+      "url": "http://prosperportland.us/eastpdx-clc-appointments/",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "new-tif-districts-legacy-4",
+      "label": "Prosper Portland — East 205 TIF District",
+      "url": "https://prosperportland.us/our-work/east-205-tif-district/",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "new-tif-districts-legacy-5",
+      "label": "Portland.gov — Cully TIF District Exploration Process Report, accepted Sept 28, 2022 ($350M maximum indebtedness)",
+      "url": "https://www.portland.gov/council/documents/report/accepted/819-2022",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "new-tif-districts-legacy-6",
+      "label": "Prosper Portland — Cully TIF District",
+      "url": "https://prosperportland.us/our-work/cully-tif-district/",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "omsi-district-legacy-1",
+      "label": "OPB — Portland City Council approves $15 million to advance new OMSI district (Sept 4, 2024)",
+      "url": "https://www.opb.org/article/2024/09/04/portland-city-council-approves-15-million-advance-new-omsi-district/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "omsi-district-legacy-2",
+      "label": "Portland.gov — Ordinance 191884 authorizing the Prosper Portland–PBOT IGA for the New Water Avenue project, up to $16.9M (Sept 4, 2024)",
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/191884",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "omsi-district-legacy-3",
+      "label": "Prosper Portland — OMSI District",
+      "url": "https://prosperportland.us/our-work/omsi-district/",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "omsi-district-legacy-4",
+      "label": "Hoodline — Feds kick in $850K for OMSI District as groundbreaking goal slides past 2025 (Feb 2026)",
+      "url": "https://hoodline.com/2026/02/feds-kick-in-850k-for-omsi-district-as-portland-groundbreaking-goal-slides-past-2025/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "omsi-district-legacy-5",
+      "label": "OMSI — Future OMSI District",
+      "url": "https://omsi.edu/future-omsi-district/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "keller-psu-performing-arts-decision-legacy-1",
+      "label": "Resolution 2026-270: Accept the Future of Large-Scale Performing Arts recommendations (Portland.gov)",
+      "url": "https://www.portland.gov/council/documents/resolution/accept-future-large-scale-performing-arts-recommendations",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "keller-psu-performing-arts-decision-legacy-2",
+      "label": "Future of Large-Scale Performing Arts program page (Portland.gov)",
+      "url": "https://www.portland.gov/arts/keller/future-large-scale-performing-arts",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "keller-psu-performing-arts-decision-legacy-3",
+      "label": "Oregon ArtsWatch: Portland committee advances PSU theater plan; Keller supporters object",
+      "url": "https://www.orartswatch.org/portland-committee-advances-psu-theater-plan-keller-supporters-complain/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "keller-psu-performing-arts-decision-legacy-4",
+      "label": "KPTV: Portland City Council committee approves proposal for new Broadway-style theater (Aug 12, 2026)",
+      "url": "https://www.kptv.com/2026/08/12/portland-city-council-committee-approves-proposal-new-broadway-style-theater/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "keller-psu-performing-arts-decision-legacy-5",
+      "label": "Willamette Week: Council Punts Performing Arts Center Vote as Mayor Proposes Two-Venue Solution (July 29, 2026)",
+      "url": "https://www.wweek.com/arts/2026/07/29/council-punts-performing-arts-center-vote-as-wilson-proposes-two-venue-solution/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "keller-psu-performing-arts-decision-legacy-6",
+      "label": "Oregon ArtsWatch: Debate on future of Keller Auditorium heats up (cost estimates $358M / $236M)",
+      "url": "https://www.orartswatch.org/debate-on-future-of-keller-auditorium-heats-up/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "keller-psu-performing-arts-decision-legacy-7",
+      "label": "KGW: Portland City Council committee delays vote on new PSU Broadway theater, Keller Auditorium downsizing",
+      "url": "https://www.kgw.com/article/money/business/portland-city-council-committee-vote-new-psu-broadway-theater-keller-auditorium-downsizing/283-6483e9d3-4f9f-46c2-845a-f59f00b6d08a",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "portland5-management-transition-legacy-1",
+      "label": "Metro and City of Portland Announce Next Steps in Portland'5 Management Transition (Portland.gov, Jan 5, 2026)",
+      "url": "https://www.portland.gov/community-economic-dev/news/2026/1/5/metro-and-city-portland-announce-next-steps-portland5",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "portland5-management-transition-legacy-2",
+      "label": "Future of Portland'5 program page (Portland.gov)",
+      "url": "https://www.portland.gov/arts/keller/future-portland5",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "portland5-management-transition-legacy-3",
+      "label": "City launches request for information to explore new operating models for Portland'5 (Portland.gov, Jan 26, 2026)",
+      "url": "https://www.portland.gov/arts/news/2026/1/26/city-launches-request-information-explore-new-operating-models-portland5",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "portland5-management-transition-legacy-4",
+      "label": "Request for Information: Venue Operations for Portland'5 Centers for the Arts (Portland.gov)",
+      "url": "https://www.portland.gov/arts/portland5-request-information",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "portland5-management-transition-legacy-5",
+      "label": "Oregon ArtsWatch: City will take back management of Portland'5 performance halls",
+      "url": "https://www.orartswatch.org/city-will-take-back-management-of-portland5-performance-halls/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "arts-education-access-tax-reform-legacy-1",
+      "label": "OPB: Portland votes to increase arts tax, allow fewer people to pay (May 27, 2026)",
+      "url": "https://www.opb.org/article/2026/05/27/portland-votes-to-increase-arts-tax-allow-fewer-people-to-pay/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "arts-education-access-tax-reform-legacy-2",
+      "label": "Ordinance 192185 (Portland.gov)",
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192185",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "arts-education-access-tax-reform-legacy-3",
+      "label": "Portland City Auditor: Arts Tax — City needs to make improvements to deliver on voter approved commitments (March 18, 2026)",
+      "url": "https://www.portland.gov/auditor/audit-services/news/2026/3/18/arts-tax-city-needs-make-improvements-deliver-voter-approved",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "arts-education-access-tax-reform-legacy-4",
+      "label": "About the Arts Access Fund (Portland.gov)",
+      "url": "https://www.portland.gov/arts/arts-access-fund/about-arts-access-fund",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "moda-center-renovation-blazers-lease-legacy-1",
+      "label": "Portland.gov — Resolution 2026-280 (Moda Center term sheet)",
+      "url": "https://www.portland.gov/council/documents/resolution/moda-term-sheet-0",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "moda-center-renovation-blazers-lease-legacy-2",
+      "label": "OPB — Portland City Council approves term sheet for Moda Center renovations (Aug 12, 2026)",
+      "url": "https://www.opb.org/article/2026/08/12/portland-city-council-approves-moda-center-renovations-term-sheet/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "moda-center-renovation-blazers-lease-legacy-3",
+      "label": "Willamette Week — Council Approves Moda Center Term Sheet to Kick Off Negotiations With Blazers (Aug 12, 2026)",
+      "url": "https://www.wweek.com/news/city/2026/08/12/council-approves-moda-center-term-sheet-to-kick-off-negotiations-with-blazers/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "moda-center-renovation-blazers-lease-legacy-4",
+      "label": "KTVZ/KGW — Portland City Council votes 8-4 to approve $120M Moda Center renovation term sheet",
+      "url": "https://ktvz.com/news/top-stories/2026/08/12/portland-city-council-votes-8-4-to-approve-120m-moda-center-renovation-term-sheet/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "moda-center-renovation-blazers-lease-legacy-5",
+      "label": "OPB — 5 things to know before Wednesday's vote on Moda Center negotiations (Aug 10, 2026)",
+      "url": "https://www.opb.org/article/2026/08/10/moda-center-portland-oregon-sports-baskeball-trail-blazers/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "moda-center-renovation-blazers-lease-legacy-6",
+      "label": "KGW — Oregon lawmakers pass $365M funding bill for Moda Center renovations (SB 1501)",
+      "url": "https://www.kgw.com/article/news/politics/oregon-house-legislature-pass-moda-center-fund-bill-365-million/283-3cbda423-a745-4d0a-86df-b0de2d8d8d4f",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "moda-center-renovation-blazers-lease-legacy-7",
+      "label": "Willamette Week — As County Passes Funding for Moda Center Renovation, City Tussles Over Term Sheet (Aug 6, 2026)",
+      "url": "https://www.wweek.com/news/city/2026/08/06/as-county-passes-funding-for-moda-center-renovation-city-tussles-over-term-sheet/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "moda-center-renovation-blazers-lease-legacy-8",
+      "label": "ESPN — NBA approves Trail Blazers' sale to group led by Tom Dundon (Mar 30, 2026)",
+      "url": "https://www.espn.com/nba/story/_/id/48350814/nba-board-governors-approves-portland-trail-blazers-sale-group-led-tom-dundon",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "rose-quarter-district-development-partner-legacy-1",
+      "label": "Portland.gov — Resolution 2026-285 (development partner for city-owned properties adjacent to Moda Center)",
+      "url": "https://www.portland.gov/council/documents/resolution/moda-center-development-partner-resolution",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "rose-quarter-district-development-partner-legacy-2",
+      "label": "OPB — Portland councilors advance plan to develop city land adjacent to Moda Center (Aug 12, 2026)",
+      "url": "https://www.opb.org/article/2026/08/12/portland-councilors-land-plan-moda-center/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "rose-quarter-district-development-partner-legacy-3",
+      "label": "Portland.gov — From Councilor Ryan's desk: August 14, 2026",
+      "url": "https://www.portland.gov/council/districts/2/dan-ryan/news/2026/8/14/councilor-ryans-desk-august-14-2026",
+      "kind": "primary",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "rose-quarter-district-development-partner-legacy-4",
+      "label": "KOIN — City considers Albina Vision Trust to revitalize Moda Center area",
+      "url": "https://www.koin.com/news/portland/nonprofit-albina-vision-trust-develop-moda-center/amp/",
+      "kind": "reported",
+      "checked": "2026-08-17",
+      "note": "Earlier research ledger; not every historical reference was rechecked in this edition."
+    },
+    {
+      "id": "hps",
+      "label": "Housing Production Strategy progress",
+      "url": "https://www.portland.gov/bps/planning/housing-production/progress",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "social-report",
+      "label": "PHB releases Advancing Housing Stability, September 2",
+      "url": "https://www.portland.gov/phb/news/2026/9/2/portland-housing-bureau-publishes-new-report-advancing-housing-stability-portland",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "bond",
+      "label": "Metro Housing Bond in Portland: September 2026 status",
+      "url": "https://www.portland.gov/phb/metro-housing-bond",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "phb-review",
+      "label": "City Administrator announces housing financial audit (KATU)",
+      "url": "https://katu.com/news/local/portland-city-administrator-responds-to-revelation-of-106m-in-unspent-housing-funds-politics-money-investigation-oregon-council-rental-bureau-government-local-community",
+      "kind": "reported",
+      "checked": "2026-10-03",
+      "note": "Announcement checked; a completed audit was not located in this review."
+    },
+    {
+      "id": "ppd",
+      "label": "PP&D launch and consolidated responsibilities",
+      "url": "https://www.portland.gov/ppd/news/2024/7/1/portland-permitting-development-launches",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "fees",
+      "label": "PP&D fee changes, updated June 18, 2026",
+      "url": "https://www.portland.gov/ppd/news/2026/4/27/permitting-development-proposes-fee-changes-starting-july",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "cip",
+      "label": "PCEF Climate Investment Plan and March 2026 amendment",
+      "url": "https://www.portland.gov/bps/cleanenergy/climate-investment-plan",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "pcef-grants",
+      "label": "PCEF 2026 Community Grants: funding and timeline",
+      "url": "https://www.portland.gov/bps/cleanenergy/community-grants/2026-community-grants-cycle",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "industry",
+      "label": "About the Clean Industry Initiative",
+      "url": "https://www.portland.gov/bps/climate-action/clean-industry/about-clean-industry",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "climate-hearing",
+      "label": "Climate and health standards: October 6 presentation, document 2026-353",
+      "url": "https://www.portland.gov/council/documents/presentation/climate-and-health-standards",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "broadway",
+      "label": "Prosper Portland: Broadway Corridor",
+      "url": "https://prosperportland.us/our-work/broadway-corridor-redevelopment/",
+      "kind": "primary",
+      "checked": "2026-10-03",
+      "note": "Read through the public search index; direct retrieval returned HTTP 403."
+    },
+    {
+      "id": "broadway-streets",
+      "label": "PBOT: NW Johnson & Kearney street extensions, August 2026 update",
+      "url": "https://www.portland.gov/transportation/pbot-projects/construction/nw-johnson-kearney-street-extension-project",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "tif",
+      "label": "Prosper Portland: East 205 TIF action planning",
+      "url": "https://prosperportland.us/our-work/east-205-tif-district/",
+      "kind": "primary",
+      "checked": "2026-10-03",
+      "note": "Read through the public search index."
+    },
+    {
+      "id": "tif-authority",
+      "label": "City approval of six TIF districts, October 30, 2024",
+      "url": "https://www.portland.gov/rubio/news/2024/10/30/council-approves-generational-public-investments-east-portland-and-central",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "omsi",
+      "label": "Prosper Portland: OMSI District",
+      "url": "https://prosperportland.us/our-work/omsi-district/",
+      "kind": "primary",
+      "checked": "2026-10-03",
+      "note": "Read through the public search index."
+    },
+    {
+      "id": "omsi-funds",
+      "label": "Ordinance 191884: Water Avenue funding authorization",
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/191884",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "psu",
+      "label": "Adopted Resolution 37752 (document 2026-270), September 9",
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37752",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "p5",
+      "label": "Future of Portland’5: operator RFP and transition",
+      "url": "https://www.portland.gov/arts/keller/future-portland5",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "arts-tax",
+      "label": "Ordinance 192185: Arts Education and Access Tax",
+      "url": "https://www.portland.gov/council/documents/ordinance/passed/192185",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "moda",
+      "label": "Adopted Resolution 37750: Moda term sheet",
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37750",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "albina",
+      "label": "Adopted Resolution 37751 (document 2026-285), September 3",
+      "url": "https://www.portland.gov/council/documents/resolution/adopted/37751",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "land-use",
+      "label": "State Land Use Compliance: September 21 hearing notice",
+      "url": "https://www.portland.gov/bps/planning/state-land-use-compliance-project/news/2026/9/21/state-land-use-compliance-project",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "central",
+      "label": "Central City Code Amendments: current hearing notice",
+      "url": "https://www.portland.gov/bps/planning/central-city",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "inner",
+      "label": "Inner Eastside: September 23 engagement update",
+      "url": "https://www.portland.gov/bps/planning/inner-eastside-zoning-project/news/2026/9/23/share-your-thoughts-housing-priorities",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "eoa",
+      "label": "Economic Opportunities Analysis: current project status",
+      "url": "https://www.portland.gov/bps/planning/eoa",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "preservation",
+      "label": "Prosper approves first middle-income acquisition, September 10 release",
+      "url": "https://prosperportland.us/prosper-portland-board-approves-middle-income-housing-acquisition/",
+      "kind": "primary",
+      "checked": "2026-10-03",
+      "note": "Read through the public search index; direct retrieval returned HTTP 403. Board action was September 9, not the release date."
+    },
+    {
+      "id": "conversion",
+      "label": "Prosper: building-conversion interest request, September 11",
+      "url": "https://prosperportland.us/request-for-interest-building-conversion-projects/",
+      "kind": "primary",
+      "checked": "2026-10-03",
+      "note": "Read through the public search index."
+    },
+    {
+      "id": "design",
+      "label": "Design Review Temporary Suspension: project and tentative timeline",
+      "url": "https://www.portland.gov/bps/planning/design-review/about",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "fuels",
+      "label": "Renewable Fuel Standard: current rules and comment period",
+      "url": "https://www.portland.gov/bps/climate-action/renewable-fuel-standard",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "children",
+      "label": "Children’s Levy: current small grants and review process",
+      "url": "https://portlandchildrenslevy.org/grants/small-grants/",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "arts-grants",
+      "label": "Operating Support Grant Guidelines FY 2026–2028",
+      "url": "https://www.portland.gov/arts/operating-grant-guidelines",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "ezones",
+      "label": "Columbia Corridor and Industrial Lands Environmental Overlay project",
+      "url": "https://www.portland.gov/bps/planning/environ-planning/industrial-ezones",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "arts-audit",
+      "label": "Arts Access Fund Audit: bureau progress report",
+      "url": "https://www.portland.gov/arts/arts-access-fund-audit-progress-report",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    },
+    {
+      "id": "broadway-housing",
+      "label": "PHB: Parcel 4A award and summer 2026 construction target",
+      "url": "https://www.portland.gov/phb/news/2024/8/8/portland-housing-bureau-awards-over-40m-home-forward-and-urban-league-230-unit",
+      "kind": "primary",
+      "checked": "2026-10-03",
+      "note": "Rechecked original target; current groundbreaking completion not located."
+    },
+    {
+      "id": "broadway-finance",
+      "label": "Prosper Report 25-19: Parcel 6 predevelopment and PCEF award",
+      "url": "https://prosperportland.us/wp-content/uploads/2025/06/Report-25-19.pdf",
+      "kind": "primary",
+      "checked": "2026-10-03"
+    }
+  ],
+  "initiatives": [
+    {
+      "id": "housing-production-strategy",
+      "name": "Housing Production Strategy",
+      "domain": "Housing",
+      "owner": "BPS",
+      "partners": ["PHB", "Prosper Portland", "PP&D", "PBOT"],
+      "stage": "Delivery",
+      "objective": "Turn the adopted housing strategy into homes and housing stability.",
+      "summary": "The adopted strategy contains 35 actions. PHB released its alternative housing models study on September 2; releasing a study does not implement its recommendations.",
+      "publicStatus": "Strategy implementation continues; the social-housing study is published.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "hps",
+      "next": {
+        "label": "Select and resource follow-through on the housing recommendations",
+        "expected": {
+          "label": "No public date found",
+          "precision": "unknown"
+        },
+        "source": "hps"
+      },
+      "latest": {
+        "date": "2026-09-02",
+        "label": "Social-housing report released",
+        "source": "social-report"
+      },
+      "analysis": "This is an umbrella strategy. Its linked projects also appear individually; initiative counts do not represent independent interventions.",
+      "success": "Completed actions, occupied homes and improved household affordability, measured separately.",
+      "inaction": "Existing production and affordability constraints remain.",
+      "unknowns": [
+        "Which recommendations will be funded, by whom, and on what schedule?"
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "Supply and tenant-stability actions could reduce housing pressure.",
+          "strength": "plausible-contribution",
+          "source": "hps"
+        },
+        {
+          "id": "affordable-housing",
+          "relationship": "Preservation and financing actions could expand regulated homes.",
+          "strength": "plausible-contribution",
+          "source": "hps"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "PHB",
+          "type": "coordination",
+          "description": "Co-implementation identified by the HPS tracker.",
+          "basis": "public-record",
+          "source": "hps",
+          "status": "required"
+        },
+        {
+          "target": "Prosper Portland",
+          "type": "coordination",
+          "description": "Co-implementation identified by the HPS tracker.",
+          "basis": "public-record",
+          "source": "hps",
+          "status": "required"
+        },
+        {
+          "target": "PP&D",
+          "type": "coordination",
+          "description": "Co-implementation identified by the HPS tracker.",
+          "basis": "public-record",
+          "source": "hps",
+          "status": "required"
+        },
+        {
+          "target": "PBOT",
+          "type": "coordination",
+          "description": "Co-implementation identified by the HPS tracker.",
+          "basis": "public-record",
+          "source": "hps",
+          "status": "required"
+        }
+      ],
+      "sources": [
+        "hps",
+        "social-report",
+        "housing-production-strategy-legacy-1",
+        "housing-production-strategy-legacy-2",
+        "housing-production-strategy-legacy-3"
+      ],
+      "progress": "Tracker: 2 complete · 26 underway · 7 not started",
+      "legacyId": "housing-production-strategy"
+    },
+    {
+      "id": "affordable-housing-bond-pipeline",
+      "name": "Affordable housing bond delivery",
+      "domain": "Housing",
+      "owner": "PHB",
+      "partners": ["Metro", "Housing providers"],
+      "stage": "Delivery",
+      "objective": "Deliver and occupy permanently affordable homes funded by housing bonds.",
+      "summary": "The September 2026 Metro bond status shows $219 million allocated to Portland, with all funding allocated or earmarked. It counts 2,177+ homes open or in development.",
+      "publicStatus": "1,495 homes open; 682 expected in 2027–2029.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "bond",
+      "next": {
+        "label": "Remaining Metro-funded completions",
+        "expected": {
+          "label": "2027–2029",
+          "precision": "window"
+        },
+        "source": "bond"
+      },
+      "latest": {
+        "date": "2026-09",
+        "label": "PHB publishes updated Metro bond portfolio",
+        "source": "bond"
+      },
+      "analysis": "Open, under construction and planned homes must stay separate. Allocation is not expenditure.",
+      "success": "Occupied homes, enforceable affordability and access for the households the bond is intended to serve.",
+      "inaction": "Unfinished projects do not add usable housing supply.",
+      "unknowns": [
+        "Project-level revised completion dates and actual disbursements are not reconciled here."
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "Occupied affordable homes can reduce rent burdens.",
+          "strength": "plausible-contribution",
+          "source": "bond"
+        },
+        {
+          "id": "affordable-housing",
+          "relationship": "Bond projects add regulated affordable units.",
+          "strength": "plausible-contribution",
+          "source": "bond"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "Metro",
+          "type": "delivery",
+          "description": "Regional funding and project delivery are necessary to finish the pipeline.",
+          "basis": "public-record",
+          "source": "bond",
+          "status": "required"
+        },
+        {
+          "target": "Housing providers",
+          "type": "delivery",
+          "description": "Regional funding and project delivery are necessary to finish the pipeline.",
+          "basis": "public-record",
+          "source": "bond",
+          "status": "required"
+        }
+      ],
+      "sources": [
+        "bond",
+        "affordable-housing-bond-pipeline-legacy-1",
+        "affordable-housing-bond-pipeline-legacy-2",
+        "affordable-housing-bond-pipeline-legacy-3",
+        "affordable-housing-bond-pipeline-legacy-4",
+        "hps"
+      ],
+      "progress": "1,495 open · 682 expected 2027–2029",
+      "legacyId": "affordable-housing-bond-pipeline"
+    },
+    {
+      "id": "housing-bureau-fiscal-controls",
+      "name": "Housing financial controls",
+      "domain": "Housing",
+      "owner": "Office of the City Administrator",
+      "partners": ["PHB", "City Budget Office", "Controller"],
+      "stage": "Delivery",
+      "objective": "Establish a reliable record of housing resources and financial controls.",
+      "summary": "The City Administrator announced an independent review after disclosure of substantial unspent housing balances. A completed independent audit was not located in this source review.",
+      "publicStatus": "Audit completion and current corrective-action status remain unconfirmed.",
+      "checked": "2026-10-03",
+      "reviewNote": "Announcement rechecked; targeted search did not establish audit completion. This entry is a public-record gap.",
+      "recordSource": "phb-review",
+      "next": {
+        "label": "Publish review findings and corrective actions",
+        "expected": {
+          "label": "No public date found",
+          "precision": "unknown"
+        },
+        "source": "phb-review"
+      },
+      "latest": {
+        "date": "2026-02",
+        "label": "Independent review announced",
+        "source": "phb-review"
+      },
+      "analysis": "The control issue is whether restricted balances, commitments and cash can be reconciled routinely. An announced audit is not a completed audit.",
+      "success": "Reconciled balances, named control owners and published findings with follow-through.",
+      "inaction": "Budget decisions continue with uncertainty about available and committed resources.",
+      "unknowns": [
+        "Audit delivery date, final report and corrective-action owners not located."
+      ],
+      "outcomes": [
+        {
+          "id": "affordable-housing",
+          "relationship": "Reliable financing controls can support affordable-housing delivery.",
+          "strength": "indirect",
+          "source": "phb-review"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "Financial controls",
+          "type": "delivery",
+          "description": "Independent findings and a reconciled ledger are needed to assess remediation.",
+          "basis": "pcl-synthesis",
+          "source": "phb-review",
+          "status": "unknown"
+        }
+      ],
+      "sources": [
+        "phb-review",
+        "housing-bureau-fiscal-controls-legacy-1",
+        "housing-bureau-fiscal-controls-legacy-2",
+        "housing-bureau-fiscal-controls-legacy-3",
+        "housing-bureau-fiscal-controls-legacy-4",
+        "housing-bureau-fiscal-controls-legacy-5"
+      ],
+      "legacyId": "housing-bureau-fiscal-controls"
+    },
+    {
+      "id": "ppd-permitting-consolidation-reform",
+      "name": "Permitting consolidation",
+      "domain": "Permitting & land use",
+      "owner": "PP&D",
+      "partners": ["BPS", "PBOT", "Water", "Environmental Services"],
+      "stage": "Delivery",
+      "objective": "Make development review easier to navigate and more predictable.",
+      "summary": "PP&D combined permitting functions in July 2024. Its operational reform and the separate design-review legislation affect different parts of the development process.",
+      "publicStatus": "Consolidated bureau is operating; throughput needs ongoing measurement.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "ppd",
+      "next": {
+        "label": "Document sustained improvements in review time and rework",
+        "expected": {
+          "label": "No public date found",
+          "precision": "unknown"
+        },
+        "source": "ppd"
+      },
+      "latest": {
+        "date": "2024-07-01",
+        "label": "Consolidated permitting bureau launched",
+        "source": "ppd"
+      },
+      "analysis": "Use consistent permit cohorts and review clocks; faster review does not alone make a development financially feasible.",
+      "success": "Shorter end-to-end review time and fewer repeat cycles, without weakened safety checks.",
+      "inaction": "Fragmented review and avoidable uncertainty can continue to add development costs.",
+      "unknowns": [
+        "A reconciled before/after permit cohort evaluation is not part of this public portfolio."
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "Predictable review could reduce preconstruction cost and uncertainty.",
+          "strength": "plausible-contribution",
+          "source": "ppd"
+        },
+        {
+          "id": "economic-growth",
+          "relationship": "Timely permitting can support investment.",
+          "strength": "plausible-contribution",
+          "source": "ppd"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "BPS",
+          "type": "coordination",
+          "description": "Review functions and standards cross the consolidated bureau’s boundaries.",
+          "basis": "pcl-synthesis",
+          "source": "ppd",
+          "status": "required"
+        },
+        {
+          "target": "PBOT",
+          "type": "coordination",
+          "description": "Review functions and standards cross the consolidated bureau’s boundaries.",
+          "basis": "pcl-synthesis",
+          "source": "ppd",
+          "status": "required"
+        },
+        {
+          "target": "Water",
+          "type": "coordination",
+          "description": "Review functions and standards cross the consolidated bureau’s boundaries.",
+          "basis": "pcl-synthesis",
+          "source": "ppd",
+          "status": "required"
+        },
+        {
+          "target": "Environmental Services",
+          "type": "coordination",
+          "description": "Review functions and standards cross the consolidated bureau’s boundaries.",
+          "basis": "pcl-synthesis",
+          "source": "ppd",
+          "status": "required"
+        }
+      ],
+      "sources": [
+        "ppd",
+        "ppd-permitting-consolidation-reform-legacy-1",
+        "ppd-permitting-consolidation-reform-legacy-2",
+        "ppd-permitting-consolidation-reform-legacy-3",
+        "ppd-permitting-consolidation-reform-legacy-4",
+        "ppd-permitting-consolidation-reform-legacy-5",
+        "ppd-permitting-consolidation-reform-legacy-6",
+        "ppd-permitting-consolidation-reform-legacy-7",
+        "ppd-permitting-consolidation-reform-legacy-8"
+      ],
+      "legacyId": "ppd-permitting-consolidation-reform"
+    },
+    {
+      "id": "ppd-fee-budget-stabilization",
+      "name": "Permitting fee stabilization",
+      "domain": "Permitting & land use",
+      "owner": "PP&D",
+      "partners": ["City Council", "Development Review Advisory Committee"],
+      "stage": "Operating",
+      "objective": "Recover permitting costs while sustaining service capacity.",
+      "summary": "Fees effective July 10, 2026 are projected to recover PP&D costs in FY 2026–27 without drawing on reserves. The projection is not a verified year-end result.",
+      "publicStatus": "New fee schedule in effect; cost recovery remains a forecast.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "fees",
+      "next": {
+        "label": "FY 2026–27 closes; assess cost recovery",
+        "expected": {
+          "label": "2027-06-30",
+          "start": "2027-06-30",
+          "end": "2027-06-30",
+          "precision": "day"
+        },
+        "source": "fees"
+      },
+      "latest": {
+        "date": "2026-07-10",
+        "label": "Updated permit fees take effect",
+        "source": "fees"
+      },
+      "analysis": "Fee revenue depends on development volume as well as rates. Service capacity and applicant cost must be reviewed together.",
+      "success": "Cost recovery with stable staffing and transparent service times.",
+      "inaction": "Reserve reliance or service reductions could recur.",
+      "unknowns": ["Actual FY 2026–27 cost recovery is not yet known."],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "Service stability may support housing delivery.",
+          "strength": "indirect",
+          "source": "fees"
+        },
+        {
+          "id": "economic-growth",
+          "relationship": "Predictable review capacity supports investment.",
+          "strength": "indirect",
+          "source": "fees"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "Development demand",
+          "type": "funding",
+          "description": "Fee receipts depend on the volume and mix of permit activity.",
+          "basis": "pcl-synthesis",
+          "source": "fees",
+          "status": "unknown"
+        }
+      ],
+      "sources": [
+        "fees",
+        "ppd-fee-budget-stabilization-legacy-1",
+        "ppd-fee-budget-stabilization-legacy-2",
+        "ppd-fee-budget-stabilization-legacy-3",
+        "ppd-fee-budget-stabilization-legacy-4",
+        "ppd-fee-budget-stabilization-legacy-5",
+        "ppd-fee-budget-stabilization-legacy-6",
+        "ppd-fee-budget-stabilization-legacy-7"
+      ],
+      "legacyId": "ppd-fee-budget-stabilization"
+    },
+    {
+      "id": "pcef-climate-investment-plan",
+      "name": "PCEF Climate Investment Plan",
+      "domain": "Climate",
+      "owner": "BPS / PCEF",
+      "partners": [
+        "City Council",
+        "Community organizations",
+        "Prosper Portland"
+      ],
+      "stage": "Delivery",
+      "objective": "Turn climate investment into lower emissions and greater resilience.",
+      "summary": "PCEF’s five-year investment plan was amended in March 2026. The 2026 community-grant cycle lists fall recommendations and award notifications.",
+      "publicStatus": "Program implementation and the 2026 grant selection cycle continue.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "cip",
+      "next": {
+        "label": "Community-grant recommendations and intent-to-award notices",
+        "expected": {
+          "label": "Fall 2026",
+          "precision": "window"
+        },
+        "source": "pcef-grants"
+      },
+      "latest": {
+        "date": "2026-03-11",
+        "label": "Council approves annual plan amendment",
+        "source": "cip"
+      },
+      "analysis": "A program envelope, an award and a paid invoice are different financial states. Project benefits also differ from citywide carbon trends.",
+      "success": "Verified emissions reductions, resilience benefits and equitable delivery.",
+      "inaction": "Unimplemented awards do not deliver the modeled climate benefits.",
+      "unknowns": [
+        "A current expenditure-to-outcome reconciliation is not assembled here."
+      ],
+      "outcomes": [
+        {
+          "id": "carbon",
+          "relationship": "Building and other investments aim to reduce emissions.",
+          "strength": "plausible-contribution",
+          "source": "cip"
+        },
+        {
+          "id": "quality-jobs",
+          "relationship": "Training and contractor development may support job quality.",
+          "strength": "plausible-contribution",
+          "source": "cip"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "City Administrator",
+          "type": "approval",
+          "description": "Community-grant recommendations go to the City Administrator for approval.",
+          "basis": "public-record",
+          "source": "pcef-grants",
+          "status": "required"
+        },
+        {
+          "target": "Community organizations",
+          "type": "delivery",
+          "description": "Grantees implement community-led climate investments.",
+          "basis": "public-record",
+          "source": "cip",
+          "status": "required"
+        }
+      ],
+      "sources": [
+        "cip",
+        "pcef-grants",
+        "pcef-climate-investment-plan-legacy-1",
+        "pcef-climate-investment-plan-legacy-2",
+        "pcef-climate-investment-plan-legacy-3",
+        "pcef-climate-investment-plan-legacy-4",
+        "pcef-climate-investment-plan-legacy-5",
+        "pcef-climate-investment-plan-legacy-6",
+        "pcef-climate-investment-plan-legacy-7"
+      ],
+      "legacyId": "pcef-climate-investment-plan"
+    },
+    {
+      "id": "clean-industry-initiative",
+      "name": "Clean Industry Initiative",
+      "domain": "Climate",
+      "owner": "BPS",
+      "partners": [
+        "Portland State University",
+        "PCEF",
+        "Industrial businesses"
+      ],
+      "stage": "Delivery",
+      "objective": "Help industrial businesses decarbonize while improving community benefits.",
+      "summary": "The program page describes a PCEF-supported funding opportunity originally planned for late 2025. A current award list was not located in the reviewed page.",
+      "publicStatus": "Partnership documented; award and delivery status need confirmation.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "industry",
+      "next": {
+        "label": "Confirm awards and a current delivery schedule",
+        "expected": {
+          "label": "No public date found",
+          "precision": "unknown"
+        },
+        "source": "industry"
+      },
+      "latest": {
+        "date": "2025-01-06",
+        "label": "DOE prize announced in the earlier research ledger",
+        "source": "clean-industry-initiative-legacy-2"
+      },
+      "analysis": "An industrial decarbonization program links capital upgrades, energy supply and workforce capacity.",
+      "success": "Verified industrial emissions reductions and benefits for nearby communities.",
+      "inaction": "Energy-intensive assets and local pollution can persist.",
+      "unknowns": [
+        "Which industrial projects have received awards and begun implementation?"
+      ],
+      "outcomes": [
+        {
+          "id": "carbon",
+          "relationship": "Industrial energy changes aim to reduce emissions.",
+          "strength": "plausible-contribution",
+          "source": "industry"
+        },
+        {
+          "id": "quality-jobs",
+          "relationship": "Workforce and community benefits are part of program intent.",
+          "strength": "plausible-contribution",
+          "source": "industry"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "PCEF",
+          "type": "coordination",
+          "description": "Program implementation involves this partner or funding program.",
+          "basis": "public-record",
+          "source": "industry",
+          "status": "required"
+        },
+        {
+          "target": "Portland State University",
+          "type": "coordination",
+          "description": "Program implementation involves this partner or funding program.",
+          "basis": "public-record",
+          "source": "industry",
+          "status": "required"
+        },
+        {
+          "target": "Industrial businesses",
+          "type": "coordination",
+          "description": "Program implementation involves this partner or funding program.",
+          "basis": "public-record",
+          "source": "industry",
+          "status": "required"
+        }
+      ],
+      "sources": [
+        "industry",
+        "clean-industry-initiative-legacy-1",
+        "clean-industry-initiative-legacy-2",
+        "clean-industry-initiative-legacy-3",
+        "clean-industry-initiative-legacy-4"
+      ],
+      "legacyId": "clean-industry-initiative"
+    },
+    {
+      "id": "climate-health-standards-existing-buildings",
+      "name": "Climate & health building standards",
+      "domain": "Climate",
+      "owner": "BPS",
+      "partners": [
+        "Housing and Permitting Committee",
+        "Building owners",
+        "Renters"
+      ],
+      "stage": "Decision",
+      "objective": "Improve building health, resilience and emissions performance.",
+      "summary": "The current Council record schedules a presentation on climate and health standards for October 6. It is not an adoption vote.",
+      "publicStatus": "Committee presentation scheduled; legislation is not shown as adopted.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "climate-hearing",
+      "next": {
+        "label": "Housing and Permitting Committee presentation",
+        "expected": {
+          "label": "2026-10-06",
+          "start": "2026-10-06",
+          "end": "2026-10-06",
+          "precision": "day"
+        },
+        "source": "climate-hearing"
+      },
+      "latest": {
+        "date": "2026-10-03",
+        "label": "October 6 presentation located in the Council agenda",
+        "source": "climate-hearing"
+      },
+      "analysis": "The earlier September 1 vote expectation is not a reliable current deadline. A presentation and an ordinance decision must be tracked separately.",
+      "success": "Reduced building emissions with workable compliance and tenant protections.",
+      "inaction": "Building emissions and heat vulnerability continue without additional measures.",
+      "unknowns": [
+        "Final ordinance text, adoption date and compliance funding remain unresolved in this review."
+      ],
+      "outcomes": [
+        {
+          "id": "carbon",
+          "relationship": "Standards would target building emissions.",
+          "strength": "plausible-contribution",
+          "source": "climate-hearing"
+        },
+        {
+          "id": "housing-costs",
+          "relationship": "Compliance design may affect tenant costs.",
+          "strength": "indirect",
+          "source": "climate-hearing"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "City Council",
+          "type": "approval",
+          "description": "Any final standards require legislative action.",
+          "basis": "pcl-synthesis",
+          "source": "climate-hearing",
+          "status": "required"
+        },
+        {
+          "target": "Building owners",
+          "type": "delivery",
+          "description": "Compliance would require changes to existing buildings.",
+          "basis": "pcl-synthesis",
+          "source": "climate-hearing",
+          "status": "required"
+        }
+      ],
+      "sources": [
+        "climate-hearing",
+        "climate-health-standards-existing-buildings-legacy-1",
+        "climate-health-standards-existing-buildings-legacy-2",
+        "climate-health-standards-existing-buildings-legacy-3",
+        "climate-health-standards-existing-buildings-legacy-4"
+      ],
+      "legacyId": "climate-health-standards-existing-buildings"
+    },
+    {
+      "id": "broadway-corridor-usps-redevelopment",
+      "name": "Broadway Corridor",
+      "domain": "Economic development",
+      "owner": "Prosper Portland",
+      "partners": ["PHB", "PP&D", "PBOT", "Housing developers"],
+      "stage": "Delivery",
+      "objective": "Turn the former USPS site into a connected mixed-use neighborhood.",
+      "summary": "Redevelopment combines housing parcels with new streets and utilities. PBOT’s August update describes curb, sidewalk and paving work on the Johnson and Kearney extensions.",
+      "publicStatus": "Street construction documented; parcel-level starts need separate confirmation.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "broadway",
+      "next": {
+        "label": "Finish street extension work",
+        "expected": {
+          "label": "Fall 2026",
+          "precision": "window"
+        },
+        "source": "broadway-streets"
+      },
+      "latest": {
+        "date": "2026-08",
+        "label": "PBOT updates street-construction progress",
+        "source": "broadway-streets"
+      },
+      "analysis": "Street delivery, affordable-housing finance and private development feasibility are distinct dependencies. Progress on one does not confirm the others.",
+      "success": "Completed public infrastructure and occupied housing with agreed public benefits.",
+      "inaction": "A serviced site can remain vacant if parcel financing and permits do not close.",
+      "unknowns": [
+        "The summer 2026 Parcel 4A groundbreaking target has passed; completion has not been confirmed in the reviewed sources.",
+        "Current Parcel 6 financing and final permit status need a project-level update."
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "Housing delivery could ease supply pressure.",
+          "strength": "plausible-contribution",
+          "source": "broadway"
+        },
+        {
+          "id": "affordable-housing",
+          "relationship": "The affordable-housing parcel would add regulated homes.",
+          "strength": "plausible-contribution",
+          "source": "broadway"
+        },
+        {
+          "id": "economic-growth",
+          "relationship": "Redevelopment could support Central City activity.",
+          "strength": "plausible-contribution",
+          "source": "broadway"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "Prosper Portland",
+          "type": "coordination",
+          "description": "Land, agreements and redevelopment coordination.",
+          "basis": "public-record",
+          "source": "broadway",
+          "status": "unknown"
+        },
+        {
+          "target": "PHB",
+          "type": "funding",
+          "description": "Affordable-housing delivery depends on housing finance.",
+          "basis": "public-record",
+          "source": "broadway-housing",
+          "status": "unknown"
+        },
+        {
+          "target": "PP&D",
+          "type": "approval",
+          "description": "Vertical construction requires development approvals.",
+          "basis": "pcl-synthesis",
+          "source": "broadway",
+          "status": "unknown"
+        },
+        {
+          "target": "PBOT",
+          "type": "delivery",
+          "description": "Street extensions serve redevelopment.",
+          "basis": "public-record",
+          "source": "broadway-streets",
+          "status": "underway"
+        },
+        {
+          "target": "Project financing",
+          "type": "funding",
+          "description": "Private parcels depend on financial feasibility.",
+          "basis": "public-record",
+          "source": "broadway-finance",
+          "status": "unknown"
+        }
+      ],
+      "sources": [
+        "broadway",
+        "broadway-streets",
+        "broadway-corridor-usps-redevelopment-legacy-1",
+        "broadway-corridor-usps-redevelopment-legacy-2",
+        "broadway-corridor-usps-redevelopment-legacy-3",
+        "broadway-corridor-usps-redevelopment-legacy-4",
+        "broadway-corridor-usps-redevelopment-legacy-5",
+        "broadway-corridor-usps-redevelopment-legacy-6",
+        "broadway-housing",
+        "broadway-finance"
+      ],
+      "legacyId": "broadway-corridor-usps-redevelopment"
+    },
+    {
+      "id": "new-tif-districts",
+      "name": "TIF district action plans",
+      "domain": "Economic development",
+      "owner": "Prosper Portland",
+      "partners": ["PHB", "Community Leadership Committees", "City Council"],
+      "stage": "Planning",
+      "objective": "Translate long-term district financing authority into community investment choices.",
+      "summary": "New district plans create a framework for housing, economic development and infrastructure. East Portland community committees are shaping first action plans.",
+      "publicStatus": "Action planning is underway; borrowing authority is not cash on hand.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "tif",
+      "next": {
+        "label": "First East Portland action plans",
+        "expected": {
+          "label": "Earlier target: end of 2026; firm adoption date not located",
+          "precision": "window"
+        },
+        "source": "tif"
+      },
+      "latest": {
+        "date": "2026",
+        "label": "District action planning continues",
+        "source": "tif"
+      },
+      "analysis": "A 30-year financing ceiling cannot be treated as committed project funding. Specific action plans determine the early priorities.",
+      "success": "Adopted investment plans, delivered projects and documented community benefits.",
+      "inaction": "District authority may remain disconnected from near-term delivery.",
+      "unknowns": [
+        "Final adoption dates and first project-level disbursements need confirmation."
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "District housing investments could support affordability.",
+          "strength": "plausible-contribution",
+          "source": "tif"
+        },
+        {
+          "id": "affordable-housing",
+          "relationship": "PHB investments may add or preserve regulated housing.",
+          "strength": "plausible-contribution",
+          "source": "tif"
+        },
+        {
+          "id": "economic-growth",
+          "relationship": "Place-based investment could support economic activity.",
+          "strength": "plausible-contribution",
+          "source": "tif"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "PHB",
+          "type": "coordination",
+          "description": "Action plans depend on coordinated community priorities and public approvals.",
+          "basis": "public-record",
+          "source": "tif",
+          "status": "required"
+        },
+        {
+          "target": "Community Leadership Committees",
+          "type": "coordination",
+          "description": "Action plans depend on coordinated community priorities and public approvals.",
+          "basis": "public-record",
+          "source": "tif",
+          "status": "required"
+        },
+        {
+          "target": "City Council",
+          "type": "approval",
+          "description": "Action plans depend on coordinated community priorities and public approvals.",
+          "basis": "public-record",
+          "source": "tif",
+          "status": "required"
+        }
+      ],
+      "sources": [
+        "tif",
+        "new-tif-districts-legacy-1",
+        "new-tif-districts-legacy-2",
+        "new-tif-districts-legacy-3",
+        "new-tif-districts-legacy-4",
+        "new-tif-districts-legacy-5",
+        "new-tif-districts-legacy-6"
+      ],
+      "legacyId": "new-tif-districts"
+    },
+    {
+      "id": "omsi-district",
+      "name": "OMSI District & Water Avenue",
+      "domain": "Economic development",
+      "owner": "Prosper Portland / OMSI",
+      "partners": ["PBOT", "State of Oregon", "Private development partners"],
+      "stage": "Planning",
+      "objective": "Create a mixed-use district supported by public streets and access.",
+      "summary": "Council authorized a Prosper–PBOT agreement of up to $16.9 million for Water Avenue. The wider district also requires development partners and infrastructure delivery.",
+      "publicStatus": "Infrastructure authorization documented; revised construction timing not confirmed.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "omsi",
+      "next": {
+        "label": "Publish a current infrastructure and district construction schedule",
+        "expected": {
+          "label": "No public date found",
+          "precision": "unknown"
+        },
+        "source": "omsi"
+      },
+      "latest": {
+        "date": "2024-09-04",
+        "label": "Water Avenue agreement authorized",
+        "source": "omsi-funds"
+      },
+      "analysis": "Water Avenue is a material delivery dependency for the broader district. An authorization ceiling does not establish spending or a fully funded district.",
+      "success": "Street infrastructure, connected public space and usable development sites.",
+      "inaction": "Vertical development can remain constrained by unresolved infrastructure and financing.",
+      "unknowns": [
+        "Current construction start and full infrastructure funding status need confirmation."
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "Planned housing could contribute to supply.",
+          "strength": "plausible-contribution",
+          "source": "omsi"
+        },
+        {
+          "id": "economic-growth",
+          "relationship": "District development could support activity and investment.",
+          "strength": "plausible-contribution",
+          "source": "omsi"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "PBOT",
+          "type": "delivery",
+          "description": "Water Avenue infrastructure is a separate public delivery project.",
+          "basis": "public-record",
+          "source": "omsi-funds",
+          "status": "required"
+        },
+        {
+          "target": "State of Oregon",
+          "type": "funding",
+          "description": "Ordinance includes conditional state funding.",
+          "basis": "public-record",
+          "source": "omsi-funds",
+          "status": "unknown"
+        },
+        {
+          "target": "Project financing",
+          "type": "funding",
+          "description": "Wider district delivery requires partner financing.",
+          "basis": "pcl-synthesis",
+          "source": "omsi",
+          "status": "unknown"
+        }
+      ],
+      "sources": [
+        "omsi",
+        "omsi-funds",
+        "omsi-district-legacy-1",
+        "omsi-district-legacy-2",
+        "omsi-district-legacy-3",
+        "omsi-district-legacy-4",
+        "omsi-district-legacy-5"
+      ],
+      "legacyId": "omsi-district"
+    },
+    {
+      "id": "keller-psu-performing-arts-decision",
+      "name": "PSU venue & Keller future",
+      "domain": "Arts & civic assets",
+      "owner": "CED Deputy City Administrator",
+      "partners": ["PSU", "Arts & Culture", "Prosper Portland", "City Council"],
+      "stage": "Planning",
+      "objective": "Plan the next generation of performing-arts venues while maintaining service.",
+      "summary": "Council adopted Resolution 37752 on September 9. It advances PSU predevelopment and Keller planning without newly committing City construction funding.",
+      "publicStatus": "Planning authorized; capital approval remains a future Council decision.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "psu",
+      "next": {
+        "label": "Develop the PSU Project Commitment Agreement",
+        "expected": {
+          "label": "2026-12-01",
+          "start": "2026-12-01",
+          "end": "2026-12-01",
+          "precision": "day"
+        },
+        "source": "psu"
+      },
+      "latest": {
+        "date": "2026-09-09",
+        "label": "Council adopts performing-arts planning direction",
+        "source": "psu"
+      },
+      "analysis": "Treat scope and governance, capital funding, Keller continuity and the venue operator as linked but distinct decisions.",
+      "success": "A feasible capital and operating plan with service continuity and explicit public obligations.",
+      "inaction": "The existing venue’s maintenance and seismic needs remain.",
+      "unknowns": [
+        "Final capital stack, City obligation and Keller implementation cost are not established."
+      ],
+      "outcomes": [
+        {
+          "id": "economic-growth",
+          "relationship": "Venue activity may support downtown spending.",
+          "strength": "indirect",
+          "source": "psu"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "PSU",
+          "type": "coordination",
+          "description": "Develop scope, schedule and governance agreement.",
+          "basis": "public-record",
+          "source": "psu",
+          "status": "required"
+        },
+        {
+          "target": "City Council",
+          "type": "approval",
+          "description": "Return for approval before new City financial obligations.",
+          "basis": "public-record",
+          "source": "psu",
+          "status": "required"
+        },
+        {
+          "target": "Project financing",
+          "type": "funding",
+          "description": "Develop a full capital stack.",
+          "basis": "public-record",
+          "source": "psu",
+          "status": "required"
+        },
+        {
+          "target": "Arts & Culture",
+          "type": "delivery",
+          "description": "Plan the future of Keller alongside PSU.",
+          "basis": "public-record",
+          "source": "psu",
+          "status": "required"
+        },
+        {
+          "target": "portland5-management-transition",
+          "type": "sequence",
+          "description": "Venue planning and the operator transition need compatible operating assumptions.",
+          "basis": "pcl-synthesis",
+          "source": "psu",
+          "status": "required"
+        }
+      ],
+      "sources": [
+        "psu",
+        "keller-psu-performing-arts-decision-legacy-1",
+        "keller-psu-performing-arts-decision-legacy-2",
+        "keller-psu-performing-arts-decision-legacy-3",
+        "keller-psu-performing-arts-decision-legacy-4",
+        "keller-psu-performing-arts-decision-legacy-5",
+        "keller-psu-performing-arts-decision-legacy-6",
+        "keller-psu-performing-arts-decision-legacy-7"
+      ],
+      "legacyId": "keller-psu-performing-arts-decision"
+    },
+    {
+      "id": "portland5-management-transition",
+      "name": "Portland’5 operator transition",
+      "domain": "Arts & civic assets",
+      "owner": "Arts & Culture / CED",
+      "partners": ["Metro", "Spectator Venues", "Prosper Portland"],
+      "stage": "Procurement",
+      "objective": "Maintain operations as Metro ends its management of five City-owned theaters.",
+      "summary": "The City chose to seek a single operator and issued an RFP September 10. Proposals are due October 14 at 3 p.m. PDT; Metro’s management ends June 30, 2027.",
+      "publicStatus": "Operator procurement underway.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "p5",
+      "next": {
+        "label": "Operator proposals due, 3 p.m. PDT",
+        "expected": {
+          "label": "2026-10-14",
+          "start": "2026-10-14",
+          "end": "2026-10-14",
+          "precision": "day"
+        },
+        "source": "p5"
+      },
+      "latest": {
+        "date": "2026-09-10",
+        "label": "City launches operator RFP",
+        "source": "p5"
+      },
+      "analysis": "Procurement, labor, maintenance and handover must align before the management transition.",
+      "success": "A funded operating model and uninterrupted service at handover.",
+      "inaction": "The City still needs an operating arrangement when Metro exits.",
+      "unknowns": [
+        "Selected operator, final contract and transition budget are not yet confirmed."
+      ],
+      "outcomes": [
+        {
+          "id": "economic-growth",
+          "relationship": "Continuity protects venue-related activity.",
+          "strength": "indirect",
+          "source": "p5"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "Metro",
+          "type": "coordination",
+          "description": "Transition team and existing operator must coordinate the handover.",
+          "basis": "public-record",
+          "source": "p5",
+          "status": "required"
+        },
+        {
+          "target": "Arts & Culture",
+          "type": "coordination",
+          "description": "Transition team and existing operator must coordinate the handover.",
+          "basis": "public-record",
+          "source": "p5",
+          "status": "required"
+        },
+        {
+          "target": "Prosper Portland",
+          "type": "coordination",
+          "description": "Transition team and existing operator must coordinate the handover.",
+          "basis": "public-record",
+          "source": "p5",
+          "status": "required"
+        },
+        {
+          "target": "Procurement",
+          "type": "approval",
+          "description": "Select and contract with an operator through the RFP process.",
+          "basis": "public-record",
+          "source": "p5",
+          "status": "required"
+        }
+      ],
+      "sources": [
+        "p5",
+        "portland5-management-transition-legacy-1",
+        "portland5-management-transition-legacy-2",
+        "portland5-management-transition-legacy-3",
+        "portland5-management-transition-legacy-4",
+        "portland5-management-transition-legacy-5"
+      ],
+      "legacyId": "portland5-management-transition"
+    },
+    {
+      "id": "arts-education-access-tax-reform",
+      "name": "Arts Tax reform",
+      "domain": "Arts & civic assets",
+      "owner": "Revenue Division / Arts & Culture",
+      "partners": ["City Council", "School districts"],
+      "stage": "Delivery",
+      "objective": "Stabilize arts funding and improve the tax’s administration.",
+      "summary": "Ordinance 192185 changed the Arts Education and Access Tax and requires follow-up work on grants, collection and fund management.",
+      "publicStatus": "Ordinance adopted; implementation and reporting continue.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "arts-tax",
+      "next": {
+        "label": "Locate the required Arts Education Framework report",
+        "expected": {
+          "label": "2026-09-30",
+          "start": "2026-09-30",
+          "end": "2026-09-30",
+          "precision": "day"
+        },
+        "source": "arts-tax"
+      },
+      "latest": {
+        "date": "2026-05-27",
+        "label": "Council passes Ordinance 192185",
+        "source": "arts-tax"
+      },
+      "analysis": "Revenue reform and grant accountability need their own measures. A tax change alone does not establish improved arts access.",
+      "success": "Predictable collections, clear rules and funded arts services.",
+      "inaction": "Funding pressure and administrative uncertainty continue.",
+      "unknowns": [
+        "Receipt of the September 30 Framework report was not located in this review."
+      ],
+      "outcomes": [
+        {
+          "id": "economic-growth",
+          "relationship": "Stable arts funding can support the cultural sector.",
+          "strength": "indirect",
+          "source": "arts-tax"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "Revenue Division",
+          "type": "coordination",
+          "description": "Tax administration and arts delivery span these institutions.",
+          "basis": "pcl-synthesis",
+          "source": "arts-tax",
+          "status": "required"
+        },
+        {
+          "target": "Arts & Culture",
+          "type": "coordination",
+          "description": "Tax administration and arts delivery span these institutions.",
+          "basis": "pcl-synthesis",
+          "source": "arts-tax",
+          "status": "required"
+        },
+        {
+          "target": "School districts",
+          "type": "coordination",
+          "description": "Tax administration and arts delivery span these institutions.",
+          "basis": "pcl-synthesis",
+          "source": "arts-tax",
+          "status": "required"
+        }
+      ],
+      "sources": [
+        "arts-tax",
+        "arts-education-access-tax-reform-legacy-1",
+        "arts-education-access-tax-reform-legacy-2",
+        "arts-education-access-tax-reform-legacy-3",
+        "arts-education-access-tax-reform-legacy-4"
+      ],
+      "legacyId": "arts-education-access-tax-reform"
+    },
+    {
+      "id": "moda-center-renovation-blazers-lease",
+      "name": "Moda renovation & lease",
+      "domain": "Arts & civic assets",
+      "owner": "Office of the City Administrator",
+      "partners": [
+        "City Council",
+        "State of Oregon",
+        "Multnomah County",
+        "Trail Blazers"
+      ],
+      "stage": "Planning",
+      "objective": "Define the City’s long-term arena agreement and financial obligations.",
+      "summary": "Council approved a non-binding term sheet in August. Final lease and renovation documents, financial commitments and enforceable public benefits require further decisions.",
+      "publicStatus": "Definitive agreements under negotiation; term sheet is non-binding.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "moda",
+      "next": {
+        "label": "Return definitive agreements to Council",
+        "expected": {
+          "label": "2026-12-31",
+          "start": "2026-12-31",
+          "end": "2026-12-31",
+          "precision": "day"
+        },
+        "source": "moda"
+      },
+      "latest": {
+        "date": "2026-08-12",
+        "label": "Council adopts non-binding term sheet",
+        "source": "moda"
+      },
+      "analysis": "Proposed contributions are conditional obligations, not confirmed expenditures. The public record entry is excluded from PCL paid advisory work on this negotiation.",
+      "success": "Transparent obligations and enforceable public benefits in final documents.",
+      "inaction": "Existing lease and facility requirements still need a long-term decision.",
+      "unknowns": [
+        "Final documents and a fully approved City funding-source breakdown are not verified."
+      ],
+      "outcomes": [
+        {
+          "id": "economic-growth",
+          "relationship": "Arena operations relate to visitor and event activity.",
+          "strength": "indirect",
+          "source": "moda"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "City Council",
+          "type": "approval",
+          "description": "Definitive agreements depend on coordinated public and team commitments.",
+          "basis": "public-record",
+          "source": "moda",
+          "status": "unknown"
+        },
+        {
+          "target": "State of Oregon",
+          "type": "funding",
+          "description": "Definitive agreements depend on coordinated public and team commitments.",
+          "basis": "public-record",
+          "source": "moda",
+          "status": "unknown"
+        },
+        {
+          "target": "Multnomah County",
+          "type": "funding",
+          "description": "Definitive agreements depend on coordinated public and team commitments.",
+          "basis": "public-record",
+          "source": "moda",
+          "status": "unknown"
+        },
+        {
+          "target": "Trail Blazers",
+          "type": "coordination",
+          "description": "Definitive agreements depend on coordinated public and team commitments.",
+          "basis": "public-record",
+          "source": "moda",
+          "status": "unknown"
+        }
+      ],
+      "sources": [
+        "moda",
+        "moda-center-renovation-blazers-lease-legacy-1",
+        "moda-center-renovation-blazers-lease-legacy-2",
+        "moda-center-renovation-blazers-lease-legacy-3",
+        "moda-center-renovation-blazers-lease-legacy-4",
+        "moda-center-renovation-blazers-lease-legacy-5",
+        "moda-center-renovation-blazers-lease-legacy-6",
+        "moda-center-renovation-blazers-lease-legacy-7",
+        "moda-center-renovation-blazers-lease-legacy-8"
+      ],
+      "legacyId": "moda-center-renovation-blazers-lease",
+      "conflict": true
+    },
+    {
+      "id": "rose-quarter-district-development-partner",
+      "name": "Rose Quarter / Albina redevelopment",
+      "domain": "Economic development",
+      "owner": "Office of the City Administrator",
+      "partners": ["Albina Vision Trust", "Prosper Portland", "City Council"],
+      "stage": "Planning",
+      "objective": "Define development arrangements for City-owned Rose Quarter parcels.",
+      "summary": "Council unanimously adopted Resolution 37751 on September 3, directing negotiations with Albina Vision Trust. Binding agreements return to Council.",
+      "publicStatus": "Development-partner negotiations authorized.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "albina",
+      "next": {
+        "label": "Return binding development agreements",
+        "expected": {
+          "label": "Concurrent with Moda lease; within 12 months of negotiation start",
+          "precision": "window"
+        },
+        "source": "albina"
+      },
+      "latest": {
+        "date": "2026-09-03",
+        "label": "Council adopts Resolution 37751",
+        "source": "albina"
+      },
+      "analysis": "Authorization to negotiate is distinct from selecting final terms, disposing of property or committing construction funds.",
+      "success": "Clear parcel agreements, public benefits, financing and accountable delivery.",
+      "inaction": "City parcels remain without a settled redevelopment path.",
+      "unknowns": [
+        "Negotiation start date, parcel terms and final financial obligations not located."
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "Potential residential development could increase supply.",
+          "strength": "plausible-contribution",
+          "source": "albina"
+        },
+        {
+          "id": "economic-growth",
+          "relationship": "Redevelopment could support district investment.",
+          "strength": "plausible-contribution",
+          "source": "albina"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "moda-center-renovation-blazers-lease",
+          "type": "sequence",
+          "description": "Binding agreements are to return on a concurrent timeline with the long-term lease.",
+          "basis": "public-record",
+          "source": "albina",
+          "status": "required"
+        },
+        {
+          "target": "City Council",
+          "type": "approval",
+          "description": "Binding agreements return for consideration.",
+          "basis": "public-record",
+          "source": "albina",
+          "status": "required"
+        },
+        {
+          "target": "Albina Vision Trust",
+          "type": "coordination",
+          "description": "Negotiate a development partnership.",
+          "basis": "public-record",
+          "source": "albina",
+          "status": "required"
+        },
+        {
+          "target": "Project financing",
+          "type": "funding",
+          "description": "Partner capacity and investment terms must be established.",
+          "basis": "public-record",
+          "source": "albina",
+          "status": "unknown"
+        }
+      ],
+      "sources": [
+        "albina",
+        "rose-quarter-district-development-partner-legacy-1",
+        "rose-quarter-district-development-partner-legacy-2",
+        "rose-quarter-district-development-partner-legacy-3",
+        "rose-quarter-district-development-partner-legacy-4"
+      ],
+      "legacyId": "rose-quarter-district-development-partner",
+      "conflict": true
+    },
+    {
+      "id": "state-land-use-compliance",
+      "name": "State land-use compliance",
+      "domain": "Permitting & land use",
+      "owner": "BPS",
+      "partners": ["PP&D", "Planning Commission", "City Council"],
+      "stage": "Decision",
+      "objective": "Bring Portland’s zoning rules into alignment with state legislation.",
+      "summary": "The Recommended Draft is scheduled for the Housing and Permitting Committee on October 6 at 2 p.m.",
+      "publicStatus": "Recommended Draft before Council committee.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "land-use",
+      "next": {
+        "label": "Committee hearing, 2 p.m.",
+        "expected": {
+          "label": "2026-10-06",
+          "start": "2026-10-06",
+          "end": "2026-10-06",
+          "precision": "day"
+        },
+        "source": "land-use"
+      },
+      "latest": {
+        "date": "2026-09-21",
+        "label": "City announces October 6 hearing",
+        "source": "land-use"
+      },
+      "analysis": "Code adoption is one step; implementation also depends on updated permitting practice and clear applicant guidance.",
+      "success": "Compliant code and consistent implementation for applicants.",
+      "inaction": "Conflicts between local code and state requirements remain unresolved.",
+      "unknowns": [
+        "Final Council adoption date and implementation guidance not confirmed."
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "Code alignment may remove housing barriers.",
+          "strength": "plausible-contribution",
+          "source": "land-use"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "City Council",
+          "type": "approval",
+          "description": "Council must consider the code amendments.",
+          "basis": "public-record",
+          "source": "land-use",
+          "status": "required"
+        },
+        {
+          "target": "PP&D",
+          "type": "delivery",
+          "description": "Permit administration must reflect adopted changes.",
+          "basis": "pcl-synthesis",
+          "source": "land-use",
+          "status": "required"
+        }
+      ],
+      "sources": ["land-use"]
+    },
+    {
+      "id": "central-city-code",
+      "name": "Central City code amendments",
+      "domain": "Permitting & land use",
+      "owner": "BPS",
+      "partners": ["PP&D", "City Council", "Central City communities"],
+      "stage": "Decision",
+      "objective": "Remove code barriers to housing and economic recovery in the Central City.",
+      "summary": "The City’s updated notice moves the Recommended Draft hearing from the previously planned October 6 committee date to full Council on October 14 at 9:50 a.m.",
+      "publicStatus": "Recommended Draft scheduled for Council.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "central",
+      "next": {
+        "label": "City Council public hearing, 9:50 a.m.",
+        "expected": {
+          "label": "2026-10-14",
+          "start": "2026-10-14",
+          "end": "2026-10-14",
+          "precision": "day"
+        },
+        "source": "central"
+      },
+      "latest": {
+        "date": "2026-09-29",
+        "label": "City updates hearing to October 14",
+        "source": "central"
+      },
+      "analysis": "Adopted capacity and financially feasible construction are separate steps. This reform intersects housing strategy and downtown recovery.",
+      "success": "Usable zoning changes followed by measurable housing and business delivery.",
+      "inaction": "Existing constraints may continue to limit adaptation to changed downtown demand.",
+      "unknowns": [
+        "The final amendment package and effective date await Council action."
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "Code changes could enable housing production.",
+          "strength": "plausible-contribution",
+          "source": "central"
+        },
+        {
+          "id": "economic-growth",
+          "relationship": "Flexible uses may support Central City recovery.",
+          "strength": "plausible-contribution",
+          "source": "central"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "City Council",
+          "type": "approval",
+          "description": "Consider the Recommended Draft.",
+          "basis": "public-record",
+          "source": "central",
+          "status": "required"
+        },
+        {
+          "target": "PP&D",
+          "type": "delivery",
+          "description": "Apply any adopted changes in project review.",
+          "basis": "pcl-synthesis",
+          "source": "central",
+          "status": "required"
+        },
+        {
+          "target": "housing-production-strategy",
+          "type": "coordination",
+          "description": "Part of the broader housing production policy program.",
+          "basis": "pcl-synthesis",
+          "source": "central",
+          "status": "required"
+        }
+      ],
+      "sources": ["central"]
+    },
+    {
+      "id": "inner-eastside-zoning",
+      "name": "Inner Eastside zoning",
+      "domain": "Permitting & land use",
+      "owner": "BPS",
+      "partners": ["Residents", "Small businesses", "City Council"],
+      "stage": "Planning",
+      "objective": "Expand housing choices while reflecting neighborhood and small-business needs.",
+      "summary": "Fall 2026 engagement will inform zoning concepts scheduled for public review in spring 2027.",
+      "publicStatus": "Community input underway; concepts are still being developed.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "inner",
+      "next": {
+        "label": "Publish zoning concepts for public review",
+        "expected": {
+          "label": "Spring 2027",
+          "precision": "window"
+        },
+        "source": "inner"
+      },
+      "latest": {
+        "date": "2026-09-23",
+        "label": "City opens housing-priorities engagement",
+        "source": "inner"
+      },
+      "analysis": "The project changes potential housing capacity. Realized homes depend on later rules, approvals and financing.",
+      "success": "More feasible housing choices with a transparent account of tradeoffs.",
+      "inaction": "Current restrictions and housing-choice gaps persist.",
+      "unknowns": [
+        "Final rezoning boundaries and Council adoption timing are not set in the reviewed notice."
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "More housing choices may improve access and affordability.",
+          "strength": "plausible-contribution",
+          "source": "inner"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "Community engagement",
+          "type": "coordination",
+          "description": "Fall input shapes future zoning concepts.",
+          "basis": "public-record",
+          "source": "inner",
+          "status": "required"
+        },
+        {
+          "target": "City Council",
+          "type": "approval",
+          "description": "Final zoning amendments require legislative consideration.",
+          "basis": "pcl-synthesis",
+          "source": "inner",
+          "status": "required"
+        }
+      ],
+      "sources": ["inner"]
+    },
+    {
+      "id": "economic-opportunities-analysis",
+      "name": "Economic Opportunities Analysis",
+      "domain": "Economic development",
+      "owner": "BPS",
+      "partners": ["Planning Commission", "Prosper Portland", "City Council"],
+      "stage": "Decision",
+      "objective": "Identify land needed for businesses and jobs over the next 20 years.",
+      "summary": "Planning Commission recommended an amended draft May 12. The project page anticipates Council consideration in late 2026 or early 2027.",
+      "publicStatus": "Planning Commission recommendation complete; Council review ahead.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "eoa",
+      "next": {
+        "label": "Council consideration",
+        "expected": {
+          "label": "Late 2026 or early 2027",
+          "precision": "window"
+        },
+        "source": "eoa"
+      },
+      "latest": {
+        "date": "2026-05-12",
+        "label": "Planning Commission recommends amended draft",
+        "source": "eoa"
+      },
+      "analysis": "Employment-land supply and environmental constraints must be understood together. Designated acreage is not the same as a development-ready site.",
+      "success": "An adopted analysis and a realistic supply of usable employment land.",
+      "inaction": "Land and infrastructure decisions may rely on an outdated needs assessment.",
+      "unknowns": ["A precise Council hearing date has not been located."],
+      "outcomes": [
+        {
+          "id": "quality-jobs",
+          "relationship": "Adequate employment land may support job access.",
+          "strength": "plausible-contribution",
+          "source": "eoa"
+        },
+        {
+          "id": "economic-growth",
+          "relationship": "Land supply can support business growth.",
+          "strength": "plausible-contribution",
+          "source": "eoa"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "industrial-environmental-overlays",
+          "type": "coordination",
+          "description": "The City identifies the environmental overlay project as related.",
+          "basis": "public-record",
+          "source": "eoa",
+          "status": "required"
+        },
+        {
+          "target": "City Council",
+          "type": "approval",
+          "description": "Council considers the recommended analysis.",
+          "basis": "public-record",
+          "source": "eoa",
+          "status": "required"
+        },
+        {
+          "target": "Prosper Portland",
+          "type": "coordination",
+          "description": "Economic implementation needs alignment with land policy.",
+          "basis": "pcl-synthesis",
+          "source": "eoa",
+          "status": "required"
+        }
+      ],
+      "sources": ["eoa"]
+    },
+    {
+      "id": "middle-income-preservation",
+      "name": "Middle-income housing preservation",
+      "domain": "Housing",
+      "owner": "Prosper Portland",
+      "partners": ["Property operator", "Residents"],
+      "stage": "Delivery",
+      "objective": "Preserve housing affordable to middle-income households.",
+      "summary": "Prosper’s September 10 release reports board approval the previous day to buy the 30-unit 30th & K Apartments, its first acquisition under the preservation strategy.",
+      "publicStatus": "Acquisition approved; closing and operating results not verified.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "preservation",
+      "next": {
+        "label": "Confirm closing and establish operating performance",
+        "expected": {
+          "label": "No public date found",
+          "precision": "unknown"
+        },
+        "source": "preservation"
+      },
+      "latest": {
+        "date": "2026-09-09",
+        "label": "Board approves first property acquisition",
+        "source": "preservation"
+      },
+      "analysis": "Approval, closing and stable rents are separate milestones. The cost-recovery model still needs property-level operating evidence.",
+      "success": "Durable affordability and financially sustainable property operations.",
+      "inaction": "Market rent changes can erode access for middle-income households.",
+      "unknowns": [
+        "Closing date, purchase price and first operating results are not established by the release."
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "Cost-recovery ownership aims to preserve middle-income affordability.",
+          "strength": "plausible-contribution",
+          "source": "preservation"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "Project financing",
+          "type": "funding",
+          "description": "Acquisition and operation need sustainable property-level finances.",
+          "basis": "pcl-synthesis",
+          "source": "preservation",
+          "status": "unknown"
+        },
+        {
+          "target": "Property operations",
+          "type": "delivery",
+          "description": "Preservation benefits depend on rents, maintenance and management.",
+          "basis": "pcl-synthesis",
+          "source": "preservation",
+          "status": "required"
+        }
+      ],
+      "sources": ["preservation"],
+      "progress": "30 apartments · first acquisition approved"
+    },
+    {
+      "id": "building-conversion",
+      "name": "Low-carbon building conversion",
+      "domain": "Housing",
+      "owner": "Prosper Portland",
+      "partners": ["Oregon DEQ", "Developers", "PP&D"],
+      "stage": "Procurement",
+      "objective": "Convert existing buildings into middle-income rental housing with less embodied carbon.",
+      "summary": "Prosper offered $495,000 through DEQ’s program, with interest forms due September 23. Eligible projects must be completed by January 31, 2029.",
+      "publicStatus": "Interest deadline passed; invited projects not located.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "conversion",
+      "next": {
+        "label": "Identify projects invited to formal application",
+        "expected": {
+          "label": "No public date found",
+          "precision": "unknown"
+        },
+        "source": "conversion"
+      },
+      "latest": {
+        "date": "2026-09-11",
+        "label": "Prosper publishes conversion interest request",
+        "source": "conversion"
+      },
+      "analysis": "This program links reuse, housing affordability and project readiness. A program budget is not an award to a selected building.",
+      "success": "Completed eligible homes and documented reuse benefits.",
+      "inaction": "Vacant or underused buildings may remain outside the housing supply.",
+      "unknowns": [
+        "Invited applicants and committed awards have not been located."
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "Conversion adds middle-income rental housing.",
+          "strength": "plausible-contribution",
+          "source": "conversion"
+        },
+        {
+          "id": "carbon",
+          "relationship": "Reuse aims to avoid embodied-carbon impacts.",
+          "strength": "plausible-contribution",
+          "source": "conversion"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "Oregon DEQ",
+          "type": "funding",
+          "description": "State program supplies the rebate resources.",
+          "basis": "public-record",
+          "source": "conversion",
+          "status": "required"
+        },
+        {
+          "target": "PP&D",
+          "type": "approval",
+          "description": "Project must have entitlements for its intended use.",
+          "basis": "public-record",
+          "source": "conversion",
+          "status": "required"
+        },
+        {
+          "target": "Project financing",
+          "type": "funding",
+          "description": "Rebate is paid after completion; up-front financing is needed.",
+          "basis": "pcl-synthesis",
+          "source": "conversion",
+          "status": "required"
+        }
+      ],
+      "sources": ["conversion"]
+    },
+    {
+      "id": "design-review-reform",
+      "name": "Design review reform",
+      "domain": "Permitting & land use",
+      "owner": "BPS / PP&D",
+      "partners": ["Planning Commission", "City Council", "Design Commission"],
+      "stage": "Decision",
+      "objective": "Reduce review uncertainty while retaining design-quality objectives.",
+      "summary": "The proposed temporary suspension was released August 18. The project timeline lists a September 22 Planning Commission hearing and a tentative Council hearing in early winter 2026–27.",
+      "publicStatus": "Proposal in legislative review; adoption not confirmed.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "design",
+      "next": {
+        "label": "Tentative City Council hearing",
+        "expected": {
+          "label": "Early winter 2026–2027",
+          "precision": "window"
+        },
+        "source": "design"
+      },
+      "latest": {
+        "date": "2026-08-18",
+        "label": "Temporary suspension proposal released",
+        "source": "design"
+      },
+      "analysis": "A temporary process change should be evaluated on time, rework and public-realm quality before becoming permanent.",
+      "success": "Lower review duration and fewer cycles with measured design outcomes.",
+      "inaction": "Existing discretionary-review costs and uncertainties continue.",
+      "unknowns": [
+        "Planning Commission disposition and a firm Council date need confirmation."
+      ],
+      "outcomes": [
+        {
+          "id": "housing-costs",
+          "relationship": "Reduced preconstruction uncertainty could improve feasibility.",
+          "strength": "plausible-contribution",
+          "source": "design"
+        },
+        {
+          "id": "economic-growth",
+          "relationship": "More predictable review may support investment.",
+          "strength": "plausible-contribution",
+          "source": "design"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "City Council",
+          "type": "approval",
+          "description": "Council must consider temporary code changes.",
+          "basis": "public-record",
+          "source": "design",
+          "status": "required"
+        },
+        {
+          "target": "PP&D",
+          "type": "delivery",
+          "description": "Implement any new review path.",
+          "basis": "public-record",
+          "source": "design",
+          "status": "required"
+        },
+        {
+          "target": "BPS",
+          "type": "delivery",
+          "description": "Develop longer-term design-review improvements.",
+          "basis": "public-record",
+          "source": "design",
+          "status": "required"
+        }
+      ],
+      "sources": ["design"]
+    },
+    {
+      "id": "renewable-fuel-standard",
+      "name": "Renewable Fuel Standard",
+      "domain": "Climate",
+      "owner": "BPS",
+      "partners": ["Fuel suppliers", "Technical Advisory Committee"],
+      "stage": "Operating",
+      "objective": "Reduce emissions from transportation fuels sold in Portland.",
+      "summary": "A 50% biofuel blend requirement began July 1. Public comment on proposed administrative-rule changes is open through October 6.",
+      "publicStatus": "Current standard in effect; rule amendments under review.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "fuels",
+      "next": {
+        "label": "Public comment closes at 11:59 p.m.",
+        "expected": {
+          "label": "2026-10-06",
+          "start": "2026-10-06",
+          "end": "2026-10-06",
+          "precision": "day"
+        },
+        "source": "fuels"
+      },
+      "latest": {
+        "date": "2026-09-15",
+        "label": "City opens proposed-rule comment period",
+        "source": "fuels"
+      },
+      "analysis": "Delivery depends on compliant fuel supply and usable reporting, not only the rule’s adoption.",
+      "success": "Verified fuel compliance and lower lifecycle emissions.",
+      "inaction": "Fossil-fuel emissions remain higher without substitution.",
+      "unknowns": [
+        "Final rule changes following public comment are not yet known."
+      ],
+      "outcomes": [
+        {
+          "id": "carbon",
+          "relationship": "Lower-carbon fuel aims to reduce transportation emissions.",
+          "strength": "plausible-contribution",
+          "source": "fuels"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "Fuel supply",
+          "type": "delivery",
+          "description": "Implementation requires compliant fuel availability.",
+          "basis": "public-record",
+          "source": "fuels",
+          "status": "required"
+        },
+        {
+          "target": "BPS",
+          "type": "approval",
+          "description": "Administer rules, compliance and reporting.",
+          "basis": "public-record",
+          "source": "fuels",
+          "status": "required"
+        }
+      ],
+      "sources": ["fuels"]
+    },
+    {
+      "id": "childrens-levy-small-grants",
+      "name": "Children’s Levy small grants",
+      "domain": "Children & families",
+      "owner": "Portland Children’s Levy",
+      "partners": ["Allocation Committee", "Community organizations"],
+      "stage": "Delivery",
+      "objective": "Fund community-led support for children and families.",
+      "summary": "Twelve small grants totaling $2.6 million began July 1, 2026, for three years. Staff are gathering grant-process feedback through late 2026.",
+      "publicStatus": "New grant cycle underway.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "children",
+      "next": {
+        "label": "Gather feedback for grantmaking improvement",
+        "expected": {
+          "label": "Through late 2026",
+          "precision": "window"
+        },
+        "source": "children"
+      },
+      "latest": {
+        "date": "2026-07-01",
+        "label": "Three-year small grants begin",
+        "source": "children"
+      },
+      "analysis": "Youth development is a direct public purpose even though it is not directly captured by the five CED headline indicators.",
+      "success": "Services reaching intended children and families, with program outcomes and accessible grantmaking.",
+      "inaction": "Small providers may lack resources to deliver these services.",
+      "unknowns": [
+        "Latest performance results for this new grant cohort are not yet established."
+      ],
+      "outcomes": [],
+      "dependencies": [
+        {
+          "target": "Community organizations",
+          "type": "delivery",
+          "description": "Funded organizations deliver direct services.",
+          "basis": "public-record",
+          "source": "children",
+          "status": "required"
+        },
+        {
+          "target": "Allocation Committee",
+          "type": "coordination",
+          "description": "Oversight and grant-process feedback inform subsequent decisions.",
+          "basis": "public-record",
+          "source": "children",
+          "status": "required"
+        }
+      ],
+      "sources": ["children"],
+      "progress": "12 grants · $2.6M over three years"
+    },
+    {
+      "id": "arts-operating-support",
+      "name": "Arts operating support",
+      "domain": "Arts & civic assets",
+      "owner": "Arts & Culture",
+      "partners": ["Nonprofit arts organizations", "Revenue Division"],
+      "stage": "Procurement",
+      "objective": "Sustain nonprofit arts organizations and widen public access.",
+      "summary": "FY 2026–28 grant guidelines set a September 11 application deadline and two-year awards of $25,000–$145,000 per year, contingent on available funding.",
+      "publicStatus": "Application deadline passed; current award decisions not verified.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "arts-grants",
+      "next": {
+        "label": "Confirm awards and agreements",
+        "expected": {
+          "label": "No public date found",
+          "precision": "unknown"
+        },
+        "source": "arts-grants"
+      },
+      "latest": {
+        "date": "2026-07-20",
+        "label": "Applications scheduled to open",
+        "source": "arts-grants"
+      },
+      "analysis": "Operating stability and audience access are separate outcomes. Attendance alone cannot demonstrate access for underserved communities.",
+      "success": "Sustainable organizations and measurable access for students and underserved communities.",
+      "inaction": "Organizations may reduce programming or access without stable support.",
+      "unknowns": [
+        "Award date, final recipients and actual award amounts not located."
+      ],
+      "outcomes": [
+        {
+          "id": "economic-growth",
+          "relationship": "Operating support may sustain cultural-sector activity.",
+          "strength": "indirect",
+          "source": "arts-grants"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "Arts & Culture",
+          "type": "approval",
+          "description": "Evaluate eligibility and issue awards.",
+          "basis": "public-record",
+          "source": "arts-grants",
+          "status": "required"
+        },
+        {
+          "target": "Revenue Division",
+          "type": "funding",
+          "description": "Arts Access Fund and General Fund resources support the grants.",
+          "basis": "pcl-synthesis",
+          "source": "arts-grants",
+          "status": "required"
+        },
+        {
+          "target": "Community organizations",
+          "type": "delivery",
+          "description": "Arts organizations deliver accessible programming.",
+          "basis": "public-record",
+          "source": "arts-grants",
+          "status": "required"
+        }
+      ],
+      "sources": ["arts-grants"]
+    },
+    {
+      "id": "industrial-environmental-overlays",
+      "name": "Industrial lands & environmental overlays",
+      "domain": "Economic development",
+      "owner": "BPS",
+      "partners": [
+        "Planning Commission",
+        "City Council",
+        "Industrial landowners"
+      ],
+      "stage": "Decision",
+      "objective": "Align environmental protections with mapped resources in industrial areas.",
+      "summary": "Planning Commission recommended the amended Columbia Corridor and Industrial Lands draft May 12. Council consideration is anticipated in late 2026 or early 2027.",
+      "publicStatus": "Recommended draft awaits Council review.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "ezones",
+      "next": {
+        "label": "Council consideration alongside employment-land planning",
+        "expected": {
+          "label": "Late 2026 or early 2027",
+          "precision": "window"
+        },
+        "source": "ezones"
+      },
+      "latest": {
+        "date": "2026-05-12",
+        "label": "Planning Commission recommends amended draft",
+        "source": "ezones"
+      },
+      "analysis": "Usable employment land and environmental protection are related planning decisions. Neither acreage nor overlay coverage alone establishes development feasibility.",
+      "success": "Accurate environmental mapping and clear development constraints.",
+      "inaction": "Outdated overlays leave uncertainty for landowners and resource protection.",
+      "unknowns": [
+        "A precise Council date and final map amendments are not confirmed."
+      ],
+      "outcomes": [
+        {
+          "id": "economic-growth",
+          "relationship": "Clear land constraints inform business siting.",
+          "strength": "indirect",
+          "source": "ezones"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "economic-opportunities-analysis",
+          "type": "coordination",
+          "description": "The City explicitly links employment-land and overlay work.",
+          "basis": "public-record",
+          "source": "ezones",
+          "status": "required"
+        },
+        {
+          "target": "City Council",
+          "type": "approval",
+          "description": "Council considers recommended map and code changes.",
+          "basis": "public-record",
+          "source": "ezones",
+          "status": "required"
+        }
+      ],
+      "sources": ["ezones"]
+    },
+    {
+      "id": "arts-access-accountability",
+      "name": "Arts Access Fund accountability",
+      "domain": "Arts & civic assets",
+      "owner": "Arts & Culture",
+      "partners": [
+        "Revenue Division",
+        "School districts",
+        "Arts Access Fund Oversight Committee"
+      ],
+      "stage": "Delivery",
+      "objective": "Connect arts funding to verifiable school and community access.",
+      "summary": "The bureau’s audit-response tracker describes school-district reporting, grant outcome measures and stronger financial oversight. It calls for building-level survey returns by December 1 each year.",
+      "publicStatus": "Corrective actions underway according to the bureau; independent completion not verified.",
+      "checked": "2026-10-03",
+      "reviewNote": "Named public sources reviewed for this edition. Internal status and a complete portfolio inventory are not available.",
+      "recordSource": "arts-audit",
+      "next": {
+        "label": "School-level Arts Education Framework surveys",
+        "expected": {
+          "label": "2026-12-01",
+          "start": "2026-12-01",
+          "end": "2026-12-01",
+          "precision": "day"
+        },
+        "source": "arts-audit"
+      },
+      "latest": {
+        "date": "2026-03-18",
+        "label": "Audit and City response establish corrective-action agenda",
+        "source": "arts-audit"
+      },
+      "analysis": "A bureau progress report is evidence of its stated work, not independent certification that every recommendation is complete.",
+      "success": "Consistent school and grant data, clear monitoring owners and public reporting of access.",
+      "inaction": "Spending can remain difficult to connect to the promised arts access.",
+      "unknowns": [
+        "Independent validation and the consolidated completion record remain needed."
+      ],
+      "outcomes": [],
+      "dependencies": [
+        {
+          "target": "School districts",
+          "type": "delivery",
+          "description": "Schools and districts supply Framework data.",
+          "basis": "public-record",
+          "source": "arts-audit",
+          "status": "required"
+        },
+        {
+          "target": "Revenue Division",
+          "type": "coordination",
+          "description": "Financial monitoring crosses divisions.",
+          "basis": "public-record",
+          "source": "arts-audit",
+          "status": "required"
+        },
+        {
+          "target": "Arts & Culture",
+          "type": "delivery",
+          "description": "Analyze and publicly report Framework results.",
+          "basis": "public-record",
+          "source": "arts-audit",
+          "status": "required"
+        }
+      ],
+      "sources": ["arts-audit"]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "hps-study",
+      "initiative": "housing-production-strategy",
+      "question": "Publish the alternative housing models study",
+      "authority": "PHB",
+      "kind": "milestone",
+      "expected": {
+        "label": "2026-08",
+        "start": "2026-08-01",
+        "end": "2026-08-31",
+        "precision": "month"
+      },
+      "state": "resolved",
+      "observed": "2026-08-17",
+      "checked": "2026-10-03",
+      "source": "hps",
+      "resolution": {
+        "date": "2026-09-02",
+        "text": "PHB published the study; implementation choices remain separate.",
+        "source": "social-report"
+      }
+    },
+    {
+      "id": "hps-implementation",
+      "initiative": "housing-production-strategy",
+      "question": "Select and fund actions following the social-housing report",
+      "authority": "PHB / City Council",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "social-report"
+    },
+    {
+      "id": "housing-revenue",
+      "initiative": "affordable-housing-bond-pipeline",
+      "question": "Identify replacement housing-bond revenue",
+      "authority": "PHB / City Council",
+      "kind": "decision",
+      "expected": {
+        "label": "2027",
+        "start": "2027-01-01",
+        "end": "2027-12-31",
+        "precision": "year"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "hps"
+    },
+    {
+      "id": "phb-audit",
+      "initiative": "housing-bureau-fiscal-controls",
+      "question": "Publish independent financial review findings",
+      "authority": "Office of the City Administrator",
+      "kind": "milestone",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "phb-review"
+    },
+    {
+      "id": "ppd-year-end",
+      "initiative": "ppd-fee-budget-stabilization",
+      "question": "Assess FY 2026–27 cost recovery",
+      "authority": "PP&D",
+      "kind": "milestone",
+      "expected": {
+        "label": "2027-06-30",
+        "start": "2027-06-30",
+        "end": "2027-06-30",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "fees"
+    },
+    {
+      "id": "pcef-grant-awards",
+      "initiative": "pcef-climate-investment-plan",
+      "question": "Approve 2026 community-grant recommendations",
+      "authority": "City Administrator / PCEF",
+      "kind": "decision",
+      "expected": {
+        "label": "Fall 2026",
+        "precision": "window"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "pcef-grants"
+    },
+    {
+      "id": "clean-industry-awards",
+      "initiative": "clean-industry-initiative",
+      "question": "Confirm selection of industrial decarbonization projects",
+      "authority": "BPS / PCEF",
+      "kind": "decision",
+      "expected": {
+        "label": "Launch originally announced for late 2025; award date not located",
+        "precision": "window"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "industry"
+    },
+    {
+      "id": "climate-sept-vote",
+      "initiative": "climate-health-standards-existing-buildings",
+      "question": "Previously reported September 1 committee vote",
+      "authority": "Housing and Permitting Committee",
+      "kind": "decision",
+      "expected": {
+        "label": "2026-09-01",
+        "start": "2026-09-01",
+        "end": "2026-09-01",
+        "precision": "day"
+      },
+      "state": "superseded",
+      "observed": "2026-08-17",
+      "checked": "2026-10-03",
+      "source": "climate-health-standards-existing-buildings-legacy-3",
+      "resolution": {
+        "date": "2026-10-03",
+        "text": "Current agenda identifies an October 6 presentation, not a confirmed September adoption vote.",
+        "source": "climate-hearing"
+      },
+      "successor": "climate-presentation"
+    },
+    {
+      "id": "climate-presentation",
+      "initiative": "climate-health-standards-existing-buildings",
+      "question": "Receive climate and health standards presentation",
+      "authority": "Housing and Permitting Committee",
+      "kind": "milestone",
+      "expected": {
+        "label": "2026-10-06",
+        "start": "2026-10-06",
+        "end": "2026-10-06",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "climate-hearing"
+    },
+    {
+      "id": "climate-adoption",
+      "initiative": "climate-health-standards-existing-buildings",
+      "question": "Consider final building standards and implementation requirements",
+      "authority": "City Council",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "climate-hearing"
+    },
+    {
+      "id": "broadway-4a-start",
+      "initiative": "broadway-corridor-usps-redevelopment",
+      "question": "Confirm the previously expected Parcel 4A groundbreaking",
+      "authority": "PHB / housing developers",
+      "kind": "milestone",
+      "expected": {
+        "label": "Summer 2026 (earlier target)",
+        "precision": "window",
+        "reviewedPastOn": "2026-10-03"
+      },
+      "state": "unresolved",
+      "observed": "2026-08-17",
+      "checked": "2026-10-03",
+      "source": "broadway-housing"
+    },
+    {
+      "id": "broadway-finance",
+      "initiative": "broadway-corridor-usps-redevelopment",
+      "question": "Confirm Parcel 6 construction financing and development feasibility",
+      "authority": "Prosper Portland / developer",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "broadway-finance"
+    },
+    {
+      "id": "tif-plans",
+      "initiative": "new-tif-districts",
+      "question": "Approve first East Portland five-year action plans",
+      "authority": "City Council",
+      "kind": "decision",
+      "expected": {
+        "label": "Earlier target: end of 2026; firm adoption date not located",
+        "precision": "window"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "new-tif-districts-legacy-3"
+    },
+    {
+      "id": "omsi-schedule",
+      "initiative": "omsi-district",
+      "question": "Publish the revised Water Avenue construction schedule",
+      "authority": "PBOT / Prosper Portland / OMSI",
+      "kind": "milestone",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "omsi"
+    },
+    {
+      "id": "omsi-state",
+      "initiative": "omsi-district",
+      "question": "Confirm receipt of conditional state infrastructure resources",
+      "authority": "State of Oregon / project partners",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "omsi-funds"
+    },
+    {
+      "id": "psu-direction",
+      "initiative": "keller-psu-performing-arts-decision",
+      "question": "Accept the performing-arts planning recommendations",
+      "authority": "City Council",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "resolved",
+      "observed": "2026-08-17",
+      "checked": "2026-10-03",
+      "source": "psu",
+      "resolution": {
+        "date": "2026-09-09",
+        "text": "Adopted as Resolution 37752, 8–4; planning approval does not commit new construction funding.",
+        "source": "psu"
+      }
+    },
+    {
+      "id": "psu-agreement",
+      "initiative": "keller-psu-performing-arts-decision",
+      "question": "Develop the Project Commitment Agreement with PSU",
+      "authority": "CED Deputy City Administrator / PSU",
+      "kind": "decision",
+      "expected": {
+        "label": "2026-12-01",
+        "start": "2026-12-01",
+        "end": "2026-12-01",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "psu"
+    },
+    {
+      "id": "psu-capital",
+      "initiative": "keller-psu-performing-arts-decision",
+      "question": "Approve a capital plan before financially obligating the City",
+      "authority": "City Council",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "psu"
+    },
+    {
+      "id": "keller-plan",
+      "initiative": "keller-psu-performing-arts-decision",
+      "question": "Determine a feasible future plan for Keller",
+      "authority": "CED Deputy City Administrator / Arts & Culture",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "psu"
+    },
+    {
+      "id": "p5-operating-model",
+      "initiative": "portland5-management-transition",
+      "question": "Decide whether to seek an outside operator",
+      "authority": "City of Portland",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "resolved",
+      "observed": "2026-08-17",
+      "checked": "2026-10-03",
+      "source": "p5",
+      "resolution": {
+        "date": "2026-09-10",
+        "text": "City issued an RFP seeking one operator for all five theaters.",
+        "source": "p5"
+      }
+    },
+    {
+      "id": "p5-rfp",
+      "initiative": "portland5-management-transition",
+      "question": "Issue a formal operator RFP",
+      "authority": "City of Portland",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "resolved",
+      "observed": "2026-08-17",
+      "checked": "2026-10-03",
+      "source": "p5",
+      "resolution": {
+        "date": "2026-09-10",
+        "text": "Operator RFP launched.",
+        "source": "p5"
+      }
+    },
+    {
+      "id": "p5-proposals",
+      "initiative": "portland5-management-transition",
+      "question": "Receive operator proposals",
+      "authority": "City procurement",
+      "kind": "milestone",
+      "expected": {
+        "label": "2026-10-14",
+        "start": "2026-10-14",
+        "end": "2026-10-14",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "p5"
+    },
+    {
+      "id": "p5-select",
+      "initiative": "portland5-management-transition",
+      "question": "Select operator and approve management agreement",
+      "authority": "City of Portland",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "p5"
+    },
+    {
+      "id": "p5-handover",
+      "initiative": "portland5-management-transition",
+      "question": "Transfer theater management after Metro exit",
+      "authority": "City of Portland / Metro",
+      "kind": "milestone",
+      "expected": {
+        "label": "2027-07-01",
+        "start": "2027-07-01",
+        "end": "2027-07-01",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "p5"
+    },
+    {
+      "id": "moda-final",
+      "initiative": "moda-center-renovation-blazers-lease",
+      "question": "Approve binding lease, renovation and operating agreements",
+      "authority": "City Council",
+      "kind": "decision",
+      "expected": {
+        "label": "2026-12-31",
+        "start": "2026-12-31",
+        "end": "2026-12-31",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "moda"
+    },
+    {
+      "id": "moda-funding",
+      "initiative": "moda-center-renovation-blazers-lease",
+      "question": "Approve the City funding sources and applicable program eligibility",
+      "authority": "City Council / funding authorities",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "moda"
+    },
+    {
+      "id": "moda-authority",
+      "initiative": "moda-center-renovation-blazers-lease",
+      "question": "Establish the required joint oversight arrangement",
+      "authority": "State of Oregon / City of Portland",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "moda"
+    },
+    {
+      "id": "albina-direction",
+      "initiative": "rose-quarter-district-development-partner",
+      "question": "Authorize the development-partner process",
+      "authority": "City Council",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "resolved",
+      "observed": "2026-08-17",
+      "checked": "2026-10-03",
+      "source": "albina",
+      "resolution": {
+        "date": "2026-09-03",
+        "text": "Adopted as Resolution 37751, 12–0.",
+        "source": "albina"
+      }
+    },
+    {
+      "id": "albina-agreements",
+      "initiative": "rose-quarter-district-development-partner",
+      "question": "Consider binding parcel development agreements",
+      "authority": "City Council / City Administrator",
+      "kind": "decision",
+      "expected": {
+        "label": "Concurrent with Moda lease; no more than 12 months after negotiations begin",
+        "precision": "window"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "albina"
+    },
+    {
+      "id": "land-use-hearing",
+      "initiative": "state-land-use-compliance",
+      "question": "Consider the State Land Use Compliance Recommended Draft",
+      "authority": "Housing and Permitting Committee",
+      "kind": "decision",
+      "expected": {
+        "label": "2026-10-06",
+        "start": "2026-10-06",
+        "end": "2026-10-06",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "land-use"
+    },
+    {
+      "id": "central-old-hearing",
+      "initiative": "central-city-code",
+      "question": "Previously planned October 6 committee hearing",
+      "authority": "Housing and Permitting Committee",
+      "kind": "milestone",
+      "expected": {
+        "label": "2026-10-06",
+        "start": "2026-10-06",
+        "end": "2026-10-06",
+        "precision": "day"
+      },
+      "state": "superseded",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "central",
+      "resolution": {
+        "date": "2026-09-29",
+        "text": "Hearing moved to City Council on October 14.",
+        "source": "central"
+      },
+      "successor": "central-hearing"
+    },
+    {
+      "id": "central-hearing",
+      "initiative": "central-city-code",
+      "question": "Consider Central City code recommendations",
+      "authority": "City Council",
+      "kind": "decision",
+      "expected": {
+        "label": "2026-10-14",
+        "start": "2026-10-14",
+        "end": "2026-10-14",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "central"
+    },
+    {
+      "id": "inner-concepts",
+      "initiative": "inner-eastside-zoning",
+      "question": "Release proposed zoning concepts",
+      "authority": "BPS",
+      "kind": "milestone",
+      "expected": {
+        "label": "Spring 2027",
+        "precision": "window"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "inner"
+    },
+    {
+      "id": "eoa-adoption",
+      "initiative": "economic-opportunities-analysis",
+      "question": "Consider the Economic Opportunities Analysis",
+      "authority": "City Council",
+      "kind": "decision",
+      "expected": {
+        "label": "Late 2026 or early 2027",
+        "precision": "window"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "eoa"
+    },
+    {
+      "id": "preservation-close",
+      "initiative": "middle-income-preservation",
+      "question": "Confirm acquisition closing and affordability terms",
+      "authority": "Prosper Portland",
+      "kind": "milestone",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "preservation"
+    },
+    {
+      "id": "conversion-invites",
+      "initiative": "building-conversion",
+      "question": "Invite eligible building conversions to apply",
+      "authority": "Prosper Portland",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "conversion"
+    },
+    {
+      "id": "conversion-completion",
+      "initiative": "building-conversion",
+      "question": "Place any funded conversion project in service",
+      "authority": "Selected developer",
+      "kind": "milestone",
+      "expected": {
+        "label": "2029-01-31",
+        "start": "2029-01-31",
+        "end": "2029-01-31",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "conversion"
+    },
+    {
+      "id": "design-council",
+      "initiative": "design-review-reform",
+      "question": "Consider temporary design-review suspension",
+      "authority": "City Council",
+      "kind": "decision",
+      "expected": {
+        "label": "Early winter 2026–2027 (tentative)",
+        "precision": "window"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "design"
+    },
+    {
+      "id": "fuels-comments",
+      "initiative": "renewable-fuel-standard",
+      "question": "Close comment period for administrative-rule changes",
+      "authority": "BPS",
+      "kind": "milestone",
+      "expected": {
+        "label": "2026-10-06",
+        "start": "2026-10-06",
+        "end": "2026-10-06",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "fuels"
+    },
+    {
+      "id": "fuels-rules",
+      "initiative": "renewable-fuel-standard",
+      "question": "Finalize administrative-rule changes after comment review",
+      "authority": "BPS",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "fuels"
+    },
+    {
+      "id": "children-feedback",
+      "initiative": "childrens-levy-small-grants",
+      "question": "Complete feedback for grantmaking improvement review",
+      "authority": "Children’s Levy",
+      "kind": "milestone",
+      "expected": {
+        "label": "Through late 2026",
+        "precision": "window"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "children"
+    },
+    {
+      "id": "arts-awards",
+      "initiative": "arts-operating-support",
+      "question": "Approve operating-support awards and agreements",
+      "authority": "Arts & Culture",
+      "kind": "decision",
+      "expected": {
+        "label": "No public date found",
+        "precision": "unknown"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "arts-grants"
+    },
+    {
+      "id": "ezones-adoption",
+      "initiative": "industrial-environmental-overlays",
+      "question": "Consider industrial environmental-overlay recommendations",
+      "authority": "City Council",
+      "kind": "decision",
+      "expected": {
+        "label": "Late 2026 or early 2027",
+        "precision": "window"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "ezones"
+    },
+    {
+      "id": "arts-survey",
+      "initiative": "arts-access-accountability",
+      "question": "Receive school-level Framework surveys",
+      "authority": "School districts / Arts & Culture",
+      "kind": "milestone",
+      "expected": {
+        "label": "2026-12-01",
+        "start": "2026-12-01",
+        "end": "2026-12-01",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "arts-audit"
+    },
+    {
+      "id": "arts-dashboard",
+      "initiative": "arts-access-accountability",
+      "question": "Publish the annual Arts Education Framework dashboard",
+      "authority": "Arts & Culture",
+      "kind": "milestone",
+      "expected": {
+        "label": "2027-06-30",
+        "start": "2027-06-30",
+        "end": "2027-06-30",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "arts-audit"
+    },
+    {
+      "id": "arts-framework-report",
+      "initiative": "arts-education-access-tax-reform",
+      "question": "Report on Arts Education Framework and school agreements",
+      "authority": "Arts & Culture",
+      "kind": "milestone",
+      "expected": {
+        "label": "2026-09-30",
+        "start": "2026-09-30",
+        "end": "2026-09-30",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "arts-tax"
+    },
+    {
+      "id": "arts-collection-report",
+      "initiative": "arts-education-access-tax-reform",
+      "question": "Report on filing reminders and pre-payment options",
+      "authority": "Revenue Division",
+      "kind": "milestone",
+      "expected": {
+        "label": "2026-12-30",
+        "start": "2026-12-30",
+        "end": "2026-12-30",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "arts-tax"
+    },
+    {
+      "id": "arts-program-report",
+      "initiative": "arts-education-access-tax-reform",
+      "question": "Report on sponsorships, teaching artists and fiscal demands",
+      "authority": "Arts & Culture",
+      "kind": "milestone",
+      "expected": {
+        "label": "2027-01-30",
+        "start": "2027-01-30",
+        "end": "2027-01-30",
+        "precision": "day"
+      },
+      "state": "unresolved",
+      "observed": "2026-10-03",
+      "checked": "2026-10-03",
+      "source": "arts-tax"
+    }
+  ],
+  "funding": [
+    {
+      "id": "pro-housing",
+      "initiative": "housing-production-strategy",
+      "label": "HUD PRO Housing grant",
+      "amount": 7000000,
+      "type": "allocation",
+      "payer": "Federal",
+      "period": "HPS implementation",
+      "status": "Grant cited by the HPS tracker",
+      "overlap": "Umbrella award; do not add suballocations to this amount.",
+      "source": "hps"
+    },
+    {
+      "id": "metro-bond",
+      "initiative": "affordable-housing-bond-pipeline",
+      "label": "Metro bond allocation to Portland",
+      "amount": 219000000,
+      "type": "allocation",
+      "payer": "Regional",
+      "period": "Bond program; September 2026 snapshot",
+      "status": "All funds allocated or earmarked",
+      "overlap": "Includes project-level bond awards; do not add those awards again.",
+      "source": "bond"
+    },
+    {
+      "id": "pcef-envelope",
+      "initiative": "pcef-climate-investment-plan",
+      "label": "Five-year climate investment plan",
+      "amount": 1600000000,
+      "type": "program-envelope",
+      "payer": "City",
+      "period": "Five-year CIP; rounded published figure",
+      "status": "Program envelope, amended March 2026",
+      "overlap": "Includes strategic programs and community grants; subprogram amounts overlap.",
+      "source": "cip"
+    },
+    {
+      "id": "pcef-2026-grants",
+      "initiative": "pcef-climate-investment-plan",
+      "label": "2026 Community Grants offering",
+      "amount": 60000000,
+      "type": "authorization-ceiling",
+      "payer": "City",
+      "period": "2026 grant cycle",
+      "status": "Up to $60M offered; final awards not verified",
+      "overlap": "Within the PCEF program envelope.",
+      "source": "pcef-grants"
+    },
+    {
+      "id": "water-avenue",
+      "initiative": "omsi-district",
+      "label": "Water Avenue intergovernmental agreement",
+      "amount": 16900000,
+      "type": "authorization-ceiling",
+      "payer": "Mixed",
+      "period": "Ordinance 191884",
+      "status": "Up to $16.9M authorized; includes conditional resources",
+      "overlap": "Not a total district construction cost.",
+      "source": "omsi-funds"
+    },
+    {
+      "id": "psu-estimate",
+      "initiative": "keller-psu-performing-arts-decision",
+      "label": "PSU venue consultant estimate",
+      "amount": 447000000,
+      "type": "estimate",
+      "payer": "Mixed",
+      "period": "May 2024 estimate cited in September 2026 resolution",
+      "status": "Planning estimate; funding is not secured by this resolution",
+      "overlap": "Exclude from committed-public-funding totals.",
+      "source": "psu"
+    },
+    {
+      "id": "moda-city",
+      "initiative": "moda-center-renovation-blazers-lease",
+      "label": "City contribution in non-binding term sheet",
+      "amount": 120000000,
+      "type": "proposal",
+      "payer": "City",
+      "period": "Proposed renovation agreement",
+      "status": "Conditional; final source approvals and agreements remain",
+      "overlap": "Potential PCEF or Prosper funding overlaps other public programs.",
+      "source": "moda"
+    },
+    {
+      "id": "deq-conversion",
+      "initiative": "building-conversion",
+      "label": "Low-embodied-carbon conversion rebates",
+      "amount": 495000,
+      "type": "program-envelope",
+      "payer": "State",
+      "period": "RFI September 2026; completion by January 2029",
+      "status": "Available program resources; up to $45,000 per unit",
+      "overlap": "Project awards would be within this envelope.",
+      "source": "conversion"
+    },
+    {
+      "id": "children-grants",
+      "initiative": "childrens-levy-small-grants",
+      "label": "Twelve Children’s Levy small grants",
+      "amount": 2600000,
+      "type": "allocation",
+      "payer": "City",
+      "period": "July 2026–June 2029",
+      "status": "Awarded for the three-year cycle",
+      "overlap": "Subset of the wider Children’s Levy budget.",
+      "source": "children"
+    },
+    {
+      "id": "broadway-metro",
+      "initiative": "broadway-corridor-usps-redevelopment",
+      "label": "Parcel 4A Metro housing-bond award ceiling",
+      "amount": 37500000,
+      "type": "authorization-ceiling",
+      "payer": "Regional",
+      "period": "2024 award announcement",
+      "status": "Award documented; current disbursement and final project cost not reconciled",
+      "overlap": "Within Portland’s Metro housing-bond allocation; do not add to that allocation.",
+      "source": "broadway-housing"
+    },
+    {
+      "id": "broadway-tif",
+      "initiative": "broadway-corridor-usps-redevelopment",
+      "label": "Parcel 4A River District TIF award",
+      "amount": 4500000,
+      "type": "allocation",
+      "payer": "City",
+      "period": "2024 award announcement",
+      "status": "Award documented; current disbursement and final project cost not reconciled",
+      "overlap": "Part of River District TIF resources; not an additional district budget.",
+      "source": "broadway-housing"
+    },
+    {
+      "id": "broadway-pcef",
+      "initiative": "broadway-corridor-usps-redevelopment",
+      "label": "Parcel 6 PCEF award",
+      "amount": 33500000,
+      "type": "allocation",
+      "payer": "City",
+      "period": "June 2025 board report",
+      "status": "Award documented; current disbursement and final project cost not reconciled",
+      "overlap": "Within the PCEF Climate Investment Plan; the predevelopment PCEF share is a subset.",
+      "source": "broadway-finance"
+    }
+  ],
+  "changes": [
+    {
+      "id": "climate-date",
+      "initiative": "climate-health-standards-existing-buildings",
+      "eventDate": "2026-10-03",
+      "recorded": "2026-10-03",
+      "before": "September vote expectation",
+      "after": "October 6 presentation",
+      "significance": "Corrected the type and date of the next documented event.",
+      "source": "climate-hearing"
+    },
+    {
+      "id": "central-date",
+      "initiative": "central-city-code",
+      "eventDate": "2026-09-29",
+      "recorded": "2026-10-03",
+      "before": "October 6 committee hearing",
+      "after": "October 14 Council hearing",
+      "significance": "Timing and decision authority both changed.",
+      "source": "central"
+    },
+    {
+      "id": "p5-rfp-issued",
+      "initiative": "portland5-management-transition",
+      "eventDate": "2026-09-10",
+      "recorded": "2026-10-03",
+      "before": "Operating model exploration",
+      "after": "Operator procurement",
+      "significance": "Two exploratory decisions move to history; proposals now have a deadline.",
+      "source": "p5"
+    },
+    {
+      "id": "psu-adopted",
+      "initiative": "keller-psu-performing-arts-decision",
+      "eventDate": "2026-09-09",
+      "recorded": "2026-10-03",
+      "before": "Decision pending",
+      "after": "Planning authorized",
+      "significance": "New capital commitments still require Council approval.",
+      "source": "psu"
+    },
+    {
+      "id": "preservation-first",
+      "initiative": "middle-income-preservation",
+      "eventDate": "2026-09-09",
+      "recorded": "2026-10-03",
+      "before": "Preservation framework",
+      "after": "First acquisition approved",
+      "significance": "Board approval is recorded separately from acquisition closing.",
+      "source": "preservation"
+    },
+    {
+      "id": "albina-adopted",
+      "initiative": "rose-quarter-district-development-partner",
+      "eventDate": "2026-09-03",
+      "recorded": "2026-10-03",
+      "before": "Council action pending",
+      "after": "Negotiations authorized",
+      "significance": "The authorization is complete; the development agreement is still a separate decision.",
+      "source": "albina"
+    },
+    {
+      "id": "hps-report",
+      "initiative": "housing-production-strategy",
+      "eventDate": "2026-09-02",
+      "recorded": "2026-10-03",
+      "before": "Report expected",
+      "after": "Report published",
+      "significance": "The study milestone is complete; implementation is not.",
+      "source": "social-report"
+    },
+    {
+      "id": "bond-update",
+      "initiative": "affordable-housing-bond-pipeline",
+      "eventDate": "2026-09",
+      "recorded": "2026-10-03",
+      "before": "July allocation: $211M",
+      "after": "September allocation: $219M",
+      "significance": "Portfolio counts and funding were refreshed from PHB’s status page.",
+      "source": "bond"
+    }
+  ]
+}

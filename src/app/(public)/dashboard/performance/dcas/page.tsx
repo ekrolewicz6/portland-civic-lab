@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, ClipboardCheck, Map, TableProperties } from "lucide-react";
 import { getPerformanceSnapshot } from "@/lib/performance/service";
@@ -12,11 +13,13 @@ import { EvidenceMetricCard, PageGuide } from "../_components/PageGuide";
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-export const metadata: Metadata = {
-  title: "DCA Performance Cockpits | Portland Civic Lab",
+export const metadata: Metadata = pageMeta({
+  title: "DCA Performance Cockpits",
   description:
     "Service-area operating dashboards for Portland deputy city administrators using official Performance Portland metrics.",
-};
+  path: "/dashboard/performance/dcas",
+  sectionImage: true,
+});
 
 const DCA_TOOLS = [
   {
@@ -79,7 +82,7 @@ export default async function DcaCockpitsPage() {
             start="Choose the DCA portfolio that matches the meeting, budget item, or council question."
             importance="DCA pages should answer what the portfolio owns, which metrics matter, and what is still missing from the official scorecard."
             scrollFor="Shared DCA tools, service-area evidence, and the CED operating vertical."
-            nextHref="/dashboard/performance/dcas/ced"
+            nextHref="/ced"
             nextLabel="Open CED first"
           />
         </div>
@@ -164,14 +167,14 @@ export default async function DcaCockpitsPage() {
                       </p>
                     )}
                     <Link
-                      href={isCed ? "/dashboard/performance/dcas/ced" : "/dashboard/performance/service-areas"}
+                      href={isCed ? "/ced" : "/dashboard/performance/service-areas"}
                       className={`inline-flex items-center gap-2 rounded-sm px-5 py-3 text-[15px] font-semibold ${
                         isCed
                           ? "bg-[var(--color-canopy)] text-white"
                           : "bg-[var(--color-paper-warm)] text-[var(--color-canopy)]"
                       }`}
                     >
-                      {isCed ? "Open CED cockpit" : "Service view"}
+                      {isCed ? "Open CED Portfolio Map" : "Service view"}
                       <ArrowUpRight className="h-4 w-4" />
                     </Link>
                   </div>

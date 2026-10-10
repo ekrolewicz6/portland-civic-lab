@@ -10,7 +10,9 @@ import SsoLink from "@/components/SsoLink";
 import { withPhotos } from "@/lib/team";
 import AudienceDoors, { type Door } from "@/components/home/AudienceDoors";
 import ElectionBanner from "@/components/home/ElectionBanner";
+import EventBanner from "@/components/home/EventBanner";
 import { GUIDE_SCALE, electionBannerLabel, isElectionSeason } from "@/lib/election";
+import { announcedEvent } from "@/lib/events";
 import {
   ASK_PORTLAND_URL,
   COUNCIL_URL,
@@ -25,8 +27,8 @@ export const metadata: Metadata = {
   title: { absolute: HOME_TITLE },
 };
 
-// Keep the election banner's day count current and let it retire itself
-// after polls close without a redeploy.
+// Keep the election banner's day count current, and start and retire it and
+// the event banner on schedule without a redeploy.
 export const revalidate = 3600;
 
 /**
@@ -42,6 +44,7 @@ const dashboardTopics = [
   { title: "Safety", href: "/dashboard/safety" },
   { title: "Fiscal health", href: "/dashboard/fiscal" },
   { title: "Performance", href: "/dashboard/performance" },
+  { title: "CED Portfolio Map", href: "/ced" },
   { title: "Climate", href: "/dashboard/climate" },
   { title: "Transportation", href: "/dashboard/transportation" },
   { title: "Accountability", href: "/dashboard/accountability" },
@@ -225,7 +228,7 @@ const CAPABILITIES = [
     ],
     price: "$5,000+ · deep-dives $15,000+",
     cta: { label: "Commission research", href: COMMISSION },
-    links: [{ label: "The public version: fifteen deep-dives", href: "/deep-dives" }],
+    links: [{ label: "The public version: the deep-dive library", href: "/deep-dives" }],
   },
   {
     key: "decisions",
@@ -395,10 +398,12 @@ export default function HomePage() {
   const team = withPhotos();
   const now = new Date();
   const electionSeason = isElectionSeason(now);
+  const announced = announcedEvent(now);
   return (
     <div className="flex min-h-screen flex-col bg-[var(--color-paper)]">
       <Header electionSeason={electionSeason} />
       <ElectionBanner initialLabel={electionBannerLabel(now)} />
+      {announced && <EventBanner event={announced} />}
 
       {/* ── Hero: the thesis on the left, the downtown map on the right ── */}
       <section className="relative z-10 overflow-x-clip bg-[var(--color-canopy)] noise-overlay">
@@ -547,7 +552,7 @@ export default function HomePage() {
               <p className="mt-4 text-[16px] leading-relaxed text-[var(--color-ink-light)]">
                 Our free, nonpartisan voters&rsquo; guide puts {GUIDE_SCALE.candidates} candidates in{" "}
                 {GUIDE_SCALE.races} races side by side, from City Council to governor, with what each
-                one proposes and a source on every line. No endorsements.
+                one proposes and a source on every line. We endorse no one.
               </p>
               <dl className="mt-6 grid grid-cols-3 gap-4 border-t border-[var(--color-parchment)] pt-5">
                 <div>

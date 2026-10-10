@@ -52,7 +52,7 @@ export function HistoryVisual() {
 export function WorkVisual() {
   return <div className="fire-work-visual">
     <figure className="fire-goal-pair"><div><HabitatTree kind="oak" /><span>Woodpecker / one unit</span><h3>Give oak and madrone room.</h3></div><div><HabitatTree kind="pine" /><span>Woodpecker / the other unit</span><h3>Support valley ponderosa pine.</h3></div><figcaption>Two objectives described in OSU’s account of the October 2025 burns.</figcaption></figure>
-    <ol className="fire-work-path" aria-label="Parts of a prescribed-fire project">{[
+    <ol className="fire-work-path fire-steps" aria-label="Parts of a prescribed-fire project">{[
       ["Choose", "Define what should change."], ["Prepare", "Arrange fuels and boundaries."], ["Wait", "Match weather, smoke and capacity."], ["Burn", "Record what actually happened."], ["Revisit", "Measure results and maintain."],
     ].map(([title,text],i)=><li key={title}><span>{String(i+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p></li>)}</ol>
     <details className="fire-unit-explanation"><summary>Why “units burned” and “ignitions” are different numbers</summary><p>ODF’s 2025 forestland smoke report lists <strong>2,717 burned units</strong> and <strong>3,941 ignitions</strong>. A unit can have more than one ignition. The report also records 179,230 acres; acreage and burn-method definitions matter when comparing work. <a href={LESSON_SOURCES.smoke.url}>Read the report, page 2 ↗</a></p></details>
@@ -73,7 +73,7 @@ export function AftermathVisual() {
     <div><Image src="/images/oregon-fire/oregon-2020-07-19.webp" width={700} height={700} sizes="(max-width: 700px) calc(100vw - 40px), 50vw" alt="Western Oregon in Terra MODIS false color on July 19, 2020, before the September fires" /><span>July 19, 2020 / before</span></div>
     <div><Image src="/images/oregon-fire/oregon-2020-09-27.webp" width={700} height={700} sizes="(max-width: 700px) calc(100vw - 40px), 50vw" alt="The same western Oregon extent on September 27, 2020, with newly visible dark and red fire scars and some clouds" /><span>September 27, 2020 / after</span></div>
     </div><figcaption>Same western Oregon extent · NASA GIBS / Terra MODIS, bands 7–2–1. Vegetation appears green; scars can appear dark or red. Clouds, other surfaces and the difference in seasons also affect the view. <a href={LESSON_SOURCES.nasa.url}>NASA’s 2020 explanation ↗</a></figcaption>
-    <div className="fire-reading-layers"><div><span>01 / Boundary</span><h3>Where was the event?</h3><p>A perimeter may include ground that did not burn.</p></div><div><span>02 / Severity</span><h3>What changed?</h3><p>Assessments describe effects using a particular method and date.</p></div><div><span>03 / Follow-up</span><h3>What came next?</h3><p>Field visits show which trees, plants and habitat remain.</p></div></div>
+    <div className="fire-reading-layers fire-steps"><div><span>01 / Boundary</span><h3>Where was the event?</h3><p>A perimeter may include ground that did not burn.</p></div><div><span>02 / Severity</span><h3>What changed?</h3><p>Assessments describe effects using a particular method and date.</p></div><div><span>03 / Follow-up</span><h3>What came next?</h3><p>Field visits show which trees, plants and habitat remain.</p></div></div>
   </figure>;
 }
 

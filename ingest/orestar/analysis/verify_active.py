@@ -11,6 +11,17 @@ ROOT = Path(__file__).resolve().parents[3]
 MANIFEST = ROOT / "research/campaign-finance/active-snapshot-manifest.json"
 
 
+REVIEWED = ROOT / "research/campaign-finance/reviewed-amendments.json"
+
+
+def reviewed_ids() -> set[str]:
+    """Records an approved amendment was allowed to change or replace."""
+    if not REVIEWED.exists():
+        return set()
+    approved = [item for item in json.loads(REVIEWED.read_text())["amendments"] if item["decision"] == "approved"]
+    return {item.get("transactionId") or item["existingTransactionId"] for item in approved}
+
+
 def verify(manifest_path: Path = MANIFEST) -> dict:
     manifest = json.loads(manifest_path.read_text())
     database = ROOT / manifest["database"]
@@ -47,9 +58,11 @@ def verify(manifest_path: Path = MANIFEST) -> dict:
             base = json.loads((ROOT / "research/campaign-finance/snapshot-manifest.json").read_text())
             base_path = ROOT / base["database"]
             con.execute(f"ATTACH '{str(base_path).replace(chr(39), chr(39)*2)}' AS prior (READ_ONLY)")
-            delta = con.execute("SELECT count(*) FROM (SELECT * FROM prior.transactions EXCEPT ALL SELECT * FROM transactions)").fetchone()[0]
-            if delta:
-                raise ValueError(f"{delta} frozen base rows changed or disappeared")
+            # Frozen base rows may differ only where a reviewed, approved amendment replaced or changed them.
+            changed = {row[0] for row in con.execute("SELECT transaction_id FROM (SELECT * FROM prior.transactions EXCEPT ALL SELECT * FROM transactions)").fetchall()}
+            unreviewed = changed - reviewed_ids()
+            if unreviewed:
+                raise ValueError(f"{len(unreviewed)} frozen base rows changed or disappeared without a reviewed amendment")
         return {"snapshot": manifest["snapshot"], "rows": count, "filers": filers, "candidate_facts": len(facts), "latest_transaction": latest,
                 "source_count_verified": manifest.get("source_count_verified", False),
                 "completeness_verified": manifest.get("completeness_verified", False)}

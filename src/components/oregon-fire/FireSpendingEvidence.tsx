@@ -12,7 +12,7 @@ const dollars = (amount: number) => `$${(amount / 1_000_000).toFixed(2)}m`;
 
 export default function FireSpendingEvidence() {
   return <figure className="fire-spending-evidence" id="actual-fire-spending">
-    <div className="fire-spending-heading">
+    <div className="fire-spending-heading fire-figure-head">
       <div><span className="fire-eyebrow">A real spending account / calendar 2025</span><h3>What did ODF&apos;s $50.98 million pay for?</h3></div>
       <p>Oregon&apos;s forestry department reported expenditures across 13 programs supporting its landscape strategy. The total covers different kinds of work, including land acquisition. It cannot be divided by acres burned to get a burn cost.</p>
     </div>

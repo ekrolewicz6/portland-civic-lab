@@ -163,3 +163,7 @@ Before sending to a Council candidate, check the September 19 ledger (`runtime-d
 | Oregon City Commission | Paul Espe | email Commissionerespe@gmail.com | 1/6 | 10 | [oregon-city-commission.md](oregon-city-commission.md) |
 
 Totals: 153 campaigns, 1283 questions.
+
+## Replies
+
+- Chris Beck (U.S. House, District 2), October 5: answered all seven questions by email. Added to his brief and four topic boards; logged at research-log#beck-2026-10-05. Edan heard him speak by Zoom at the Wallowa County elections forum; mention that in the reply.
