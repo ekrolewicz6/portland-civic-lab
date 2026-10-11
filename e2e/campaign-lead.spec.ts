@@ -86,6 +86,10 @@ test('a line names itself to a mouse, to the legend and to the arrow keys', asyn
     await panel.getByRole('button', { name: 'Show all lines' }).click();
     await expect(tip).toHaveCount(0);
 
+    // Legend interactions may scroll the plot offscreen. Center it before
+    // measuring viewport coordinates for a real pointer hover.
+    await plot.evaluate(node => node.scrollIntoView({ block: 'center', behavior: 'instant' }));
+    await expect(plot).toBeInViewport({ ratio: 1 });
     // Pointing at the chart itself, just left of where the leading line ends.
     const end = (await plot.locator('[data-end]').first().boundingBox())!;
     await page.mouse.move(end.x + end.width / 2 - 6, end.y + end.height / 2);
