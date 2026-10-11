@@ -90,9 +90,9 @@ test('a line names itself to a mouse, to the legend and to the arrow keys', asyn
     // measuring viewport coordinates for a real pointer hover.
     await plot.evaluate(node => node.scrollIntoView({ block: 'center', behavior: 'instant' }));
     await expect(plot).toBeInViewport({ ratio: 1 });
-    // Pointing at the chart itself, just left of where the leading line ends.
+    // Point at the leading line’s endpoint, which remains valid across new filing jumps.
     const end = (await plot.locator('[data-end]').first().boundingBox())!;
-    await page.mouse.move(end.x + end.width / 2 - 6, end.y + end.height / 2);
+    await page.mouse.move(end.x + end.width / 2, end.y + end.height / 2);
     await expect(tip).toContainText(names[0]);
     await expect(tip).toContainText(reading);
     await page.mouse.move(2, 2);
@@ -113,7 +113,7 @@ test.describe('on a phone', () => {
     // The site scrolls smoothly, so positions are only read after a jump that does not animate.
     await plot.scrollIntoViewIfNeeded();
     const end = (await plot.locator('[data-end]').first().boundingBox())!;
-    await page.touchscreen.tap(end.x + end.width / 2 - 6, end.y + end.height / 2);
+    await page.touchscreen.tap(end.x + end.width / 2, end.y + end.height / 2);
     await expect(tip).toContainText(names[0]);
     await expect(tip).toContainText(reading);
     // The reading stays inside the plot, so nothing scrolls sideways.
