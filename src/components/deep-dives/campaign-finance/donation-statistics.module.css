@@ -1,0 +1,30 @@
+.section { margin: 2rem 0; padding: 1.25rem 0; border-top: 1px solid #cbd5ce; }
+.section h3, .section h4 { margin: 0 0 1rem; }
+.note { font-size: .87rem; line-height: 1.65; color: #536158; max-width: 78ch; }
+.legend { display: flex; flex-wrap: wrap; gap: .6rem 1.1rem; font-size: .8rem; margin: 1rem 0; }
+.legend i { display: inline-block; width: .65rem; height: .65rem; margin-right: .35rem; }
+.row { margin: 1.1rem 0; }
+.rowHeading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .3rem; margin-bottom: .35rem; font-size: .92rem; }
+.funding { display: flex; height: 1.15rem; background: #e8ede7; overflow: hidden; }
+.funding span { min-width: 0; }
+.section [data-source="small_individual"] { background: #185644; }
+.section [data-source="medium_individual"] { background: #559575; }
+.section [data-source="large_individual"] { background: #9abe98; }
+.section [data-source="business"] { background: #9e542d; }
+.section [data-source="committee"] { background: #8667a2; }
+.section [data-source="labor"] { background: #355c9a; }
+.section [data-source="self_family"] { background: #b78b27; }
+.section [data-source="other"] { background: #507b85; }
+.section [data-source="unidentified"] { background: #a7ada9; }
+.scroll { overflow-x: auto; max-width: 100%; margin: 1.3rem 0; }
+.scroll table { border-collapse: collapse; width: 100%; font-size: .87rem; }
+.scroll th, .scroll td { padding: .6rem; border-bottom: 1px solid #d9dfd9; text-align: left; vertical-align: top; }
+.scroll td { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.scroll small { display: block; color: #536158; font-size: .75rem; }
+.scroll caption { text-align: left; margin-bottom: .7rem; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+.stats dt { font-size: .8rem; color: #536158; }
+.stats dd { margin: .3rem 0 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+.section details { margin: 1rem 0; }
+.section summary { cursor: pointer; }
+.section li { margin: .5rem 0; }

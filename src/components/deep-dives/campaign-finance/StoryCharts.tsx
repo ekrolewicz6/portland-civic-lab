@@ -4,6 +4,9 @@ import { BASE, SNAPSHOT, money, shortMoney } from '@/lib/campaign-finance/filter
 import { financeFacts } from '@/lib/campaign-finance/candidate-facts';
 import { story, storyCandidate, shortDate, STORY_EVIDENCE } from '@/lib/campaign-finance/story';
 import s from './story.module.css';
+import { currentTimeline } from '@/lib/campaign-finance/current-timeline';
+import { currentCandidateFacts, currentCashDaily } from '@/lib/campaign-finance/query';
+import { activeManifest } from '@/lib/campaign-finance/active';
 const percent = (part: number, whole: number) => whole ? (100 * part / whole).toFixed(1) + '%' : '0%';
 
 export function Evidence({ file, children = 'Download chart evidence' }: { file: string; children?: React.ReactNode }) { return <a href={STORY_EVIDENCE + file} download>{children}</a>; }
@@ -18,12 +21,24 @@ export function SeptemberChart() {
   </figure>;
 }
 
-export function WeeklyChart({ ids, title }: { ids: string[]; title: string }) {
-  const max = Math.max(...story.weeks.filter(w => ids.includes(w.committee_id)).map(w => w.nonmatching_cents), 1);
-  return <figure className={s.figure} data-chart="weekly"><figcaption><span className={s.kicker}>Weekly contributions · 2026 · no City matches</span><h3>{title}</h3></figcaption><p className={s.chartNote}>Gold marks each campaign’s biggest week. All panels run from $0 to {shortMoney(max)} per week.</p>
+export async function WeeklyChart({ ids, title }: { ids: string[]; title: string }) {
+  const current = await currentTimeline();
+  const daily2026 = await currentCashDaily(ids);
+  const weeksCurrent = current.weekly.filter(row => ids.includes(row.committeeId) && row.weekStart >= '2025-12-29').map(row => {
+    const first = row.weekStart < '2026-01-01' ? '2026-01-01' : row.weekStart;
+    const days = daily2026.filter(day => day.committee_id === row.committeeId && day.transaction_date >= first && day.transaction_date <= row.weekEnd);
+    const sum = (key: keyof typeof row.weekly) => days.reduce((total, day) => total + Number(day[key]), 0);
+    return { committee_id: row.committeeId, week_start: first, week_end: row.weekEnd,
+      cash_cents: sum('cash_cents'), public_cents: sum('public_cents'), nonmatching_cents: sum('nonmatching_cents'),
+      individual_itemized_cents: sum('individual_itemized_cents'), unidentified_cents: sum('unidentified_cents'),
+      provisional: row.weekEnd < new Date(Date.parse(row.weekStart + 'T00:00:00Z') + 6 * 86400000).toISOString().slice(0, 10) };
+  });
+  const max = Math.max(...weeksCurrent.filter(w => ids.includes(w.committee_id)).map(w => w.nonmatching_cents), 1);
+  return <figure className={s.figure} data-chart="weekly"><figcaption><span className={s.kicker}>Weekly contributions · 2026 · no City matches</span><h3>{title}</h3></figcaption><p className={s.chartNote}>Gold marks each campaign’s biggest reported week. The final week may be partial. All panels run from $0 to {shortMoney(max)} per week.</p>
     <div className={s.sparkGrid}>{ids.map(id => {
-      const c = storyCandidate(id); const weeks = story.weeks.filter(w => w.committee_id === id); const best = Math.max(...weeks.map(w => w.nonmatching_cents));
-      const peak = c.peak2026;
+      const c = storyCandidate(id); const weeks = weeksCurrent.filter(w => w.committee_id === id); const best = Math.max(...weeks.map(w => w.nonmatching_cents));
+      const bestWeek = [...weeks].sort((a,b) => b.nonmatching_cents - a.nonmatching_cents || a.week_start.localeCompare(b.week_start))[0];
+      const peak = best > 0 ? { start: bestWeek.week_start, end: bestWeek.week_end, cents: best } : null;
       const peakWeek = peak ? weeks.find(w => w.week_start === peak.start) : undefined;
       return <div className={s.sparkPanel} key={id}><Link href={c.href}>{c.name}</Link><p>{peak ? <>{shortDate(peak.start)}–{shortDate(peak.end)}: <strong>{money(peak.cents)}</strong></> : 'No peak in these records'}</p>
         <svg viewBox={`0 0 ${weeks.length * 10} 115`} role="img" aria-label={`${c.name}, weekly cash excluding City matching. Peak ${money(best)}. Exact weeks downloadable below.`}>
@@ -38,7 +53,7 @@ export function WeeklyChart({ ids, title }: { ids: string[]; title: string }) {
           <Link href={`${BASE}/explorer?snapshot=${SNAPSHOT}&committee=${id}&start=${peak.start}&end=${peak.end}&basis=cash_contribution&matching=exclude`}>See every contribution behind this peak</Link>
         </details>}
       </div>;
-    })}</div><p className={s.source}>Weeks run Monday–Sunday, based on the dates reported in filings. Some small gifts are reported in a combined row, so their exact gift dates may differ. <Evidence file="candidate-weeks.csv">Download all weekly amounts</Evidence>.</p></figure>;
+    })}</div><p className={s.source}>Through {current.end}. Weeks run Monday–Sunday, based on the dates reported in filings. The first 2026 panel includes January 1–4 only; earlier December dates are outside that panel. Some small gifts are reported in a combined row, so their exact gift dates may differ. <a href="/api/campaign-finance/daily" download>Download current weekly amounts</a>.</p></figure>;
 }
 
 export function OverlapChart() {
@@ -60,9 +75,10 @@ export function EndorsementChart() {
     <p className={s.source}>Reviewed September 27, 2026. These are selected lists, not every endorsement. An absent name does not mean opposition. Organization names link to sources; see also Portland for All’s <a href="https://www.portlandforall.org/district4">District 4 list</a>.</p></figure>;
 }
 
-export function ReservesChart() {
+export async function ReservesChart() {
   const ids = ['23208', '23028', '15109', '24897', '23295', '23365', '17629', '23199'];
-  const rows = ids.map(storyCandidate).sort((a, b) => (b.account?.endingCashCents ?? 0) - (a.account?.endingCashCents ?? 0));
+  const rows = (await Promise.all(ids.map(async id => { const archived = storyCandidate(id); const current = await currentCandidateFacts(id); if (!current) throw new Error('Missing current payments'); return { ...archived, bases: current.bases }; }))).sort((a, b) => (b.account?.endingCashCents ?? 0) - (a.account?.endingCashCents ?? 0));
+  const active = activeManifest();
   const max = Math.max(...rows.flatMap(row => [row.account?.endingCashCents ?? 0, row.bases.cash_payment.cents]), 1);
   return <figure className={s.figure} data-chart="reserves">
     <figcaption><span className={s.kicker}>Eight highest-receipt council committees</span><h3>How much has each campaign paid out—and how much cash is left?</h3><p className={s.chartNote}>Two separate reported measures on the same dollar scale. They are not pieces of one total.</p></figcaption>
@@ -75,6 +91,6 @@ export function ReservesChart() {
       </div>
       {candidate.account!.outstandingLoanCents > 0 && <p className={s.chartNote}>Also reports {money(candidate.account!.outstandingLoanCents)} in outstanding loans.</p>}
     </div>)}</div>
-    <p className={s.source}>Cash paid out covers January 2025–September 2026. Cash on hand comes from official 2026 account summaries retrieved September 27. Do not subtract one from the other: opening balances and other cash activity matter. <a href="/data/campaign-finance/account-summaries.csv" download>Check reported balances</a>.</p>
+    <p className={s.source}>Cash paid out covers January 1, 2025–{active.end}. Cash on hand comes from official 2026 account summaries retrieved September 27. Do not subtract one from the other: opening balances and other cash activity matter. <a href="/data/campaign-finance/account-summaries.csv" download>Check reported balances</a>.</p>
   </figure>;
 }

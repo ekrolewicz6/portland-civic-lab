@@ -1,3 +1,4 @@
+import { DonationComparison } from '@/components/deep-dives/campaign-finance/DonationStatistics';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {portlandRaces} from '@/lib/voters-guide/portland';
@@ -24,6 +25,7 @@ export default async function Race({params}:{params:Promise<{id:string}>}) {
   return <Shell>
     <header className={styles.profileHeader}><h1>{race.title}</h1><p>{race.method} · {race.candidates.length} candidates · November 3, 2026 (pending)</p></header>
     <RaceFinance raceId={id} candidates={race.candidates} />
+    <DonationComparison raceId={id} />
     <div className={styles.linkList}><Link href={`/voters-guide/${id}`}>Read the voter guide</Link><a href={race.rosterSource.url}>Official candidate register</a></div>
   </Shell>;
 }
