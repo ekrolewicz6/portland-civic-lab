@@ -50,7 +50,7 @@ export async function WeeklyChart({ ids, title }: { ids: string[]; title: string
           {peakWeek.nonmatching_cents > peakWeek.individual_itemized_cents + peakWeek.unidentified_cents && <span>Other named sources <strong>{money(peakWeek.nonmatching_cents - peakWeek.individual_itemized_cents - peakWeek.unidentified_cents)}</strong></span>}
           <span>Unnamed or combined gifts <strong>{money(peakWeek.unidentified_cents)}</strong></span>
           {peakWeek.public_cents > 0 && <span>Separate City matching deposit <strong>{money(peakWeek.public_cents)}</strong></span>}
-          <Link href={`${BASE}/explorer?snapshot=${SNAPSHOT}&committee=${id}&start=${peak.start}&end=${peak.end}&basis=cash_contribution&matching=exclude`}>See every contribution behind this peak</Link>
+          <a href={`${BASE}/explorer?snapshot=${current.snapshot}&committee=${id}&start=${peak.start}&end=${peak.end}&basis=cash_contribution&matching=exclude`}>See every contribution behind this peak</a>
         </details>}
       </div>;
     })}</div><p className={s.source}>Through {current.end}. Weeks run Monday–Sunday, based on the dates reported in filings. The first 2026 panel includes January 1–4 only; earlier December dates are outside that panel. Some small gifts are reported in a combined row, so their exact gift dates may differ. <a href="/api/campaign-finance/daily" download>Download current weekly amounts</a>.</p></figure>;
