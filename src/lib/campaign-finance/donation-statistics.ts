@@ -30,7 +30,12 @@ export function giftStatistics(amounts: number[]) {
     modesCents: frequency > 1 ? [...frequencies].filter(([, n]) => n === frequency).map(([cents]) => cents) : [], modeFrequency: frequency };
 }
 
-export function donationStatistics(rows: ContributionRecord[]) {
+export function donationStatistics(records: ContributionRecord[]) {
+  // Known committee IDs and explicit unregistered/party committee types are
+  // committee funding even when the generic adapter calls them "other".
+  const rows = records.map(row => row.category !== 'public' && row.category !== 'unidentified' &&
+    (row.entityId.startsWith('committee:') || ['Political Committee', 'Political Party Committee', 'Unregistered Committee'].includes(row.bookType))
+    ? { ...row, category: 'committee' } : row);
   const funding = Object.fromEntries(Object.keys(fundingLabels).map(key => [key, { cents: 0, records: 0 }])) as Record<FundingKey, { cents: number; records: number }>;
   const named = rows.filter(row => row.category !== 'public' && row.category !== 'unidentified');
   const individual = named.filter(row => row.category === 'individual');

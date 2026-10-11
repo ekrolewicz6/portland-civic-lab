@@ -3,6 +3,16 @@ import { giftStatistics, donationStatistics } from '../../src/lib/campaign-finan
 import type { ContributionRecord } from '../../src/lib/campaign-finance/donation-records';
 const gift = (cents: number, category = 'individual', entityId = 'person:1'): ContributionRecord => ({ id: String(cents), date: '2026-10-10', cents, category, entityId, source: 'Reported source', bookType: 'Individual' });
 describe('donation statistics', () => {
+  it('includes authoritative and unregistered committees without overriding combined entries', () => {
+    const unregistered = { ...gift(100000, 'other'), bookType: 'Unregistered Committee' };
+    const known = gift(250000, 'other', 'committee:33');
+    const aggregate = gift(50000, 'unidentified', 'committee:33');
+    const stats = donationStatistics([unregistered, known, aggregate]);
+    expect(stats.funding.committee.cents).toBe(350000);
+    expect(stats.funding.unidentified.cents).toBe(50000);
+    expect(stats.funding.other.cents).toBe(0);
+    expect(stats.topOrganizations).toHaveLength(2);
+  });
   it('retains even median fractions, interpolates quartiles and reports tied modes', () => {
     expect(giftStatistics([100,100,101,101])).toMatchObject({ medianCents:100.5,meanCents:100.5,q1Cents:100,q3Cents:101,modesCents:[100,101],modeFrequency:2 });
     expect(giftStatistics([100,200,300,1000])).toMatchObject({medianCents:250,q1Cents:175,q3Cents:475,modesCents:[]});
