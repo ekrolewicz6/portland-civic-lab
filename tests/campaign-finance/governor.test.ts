@@ -69,13 +69,15 @@ describe("governor finance edition", () => {
     expect(kind(drazan, "business")).toBeGreaterThan(kind(kotek, "business"));
     expect(kind(kotek, "labor")).toBeGreaterThan(Math.max(...kotek.kinds.filter((k) => k.key !== "labor").map((k) => k.cents)));
     expect(kotek.topSources.filter((s) => s.kind === "governors").map((s) => s.name)).toEqual(["Democratic Governors Association", "Democratic Governors Victory Fund"]);
-    expect(drazan.totals.republicanGovernorsCents).toBe(0);
+    expect(drazan.totals.republicanGovernorsCents).toBe(100_000_000);
+    expect(drazan.topSources.find((source) => source.name === "Republican Governors Association")?.kind).toBe("governors");
     for (const c of governorCandidates) expect(large(c) * 2).toBeGreaterThan(c.totals.cashCents);
     expect(kotek.peaks[0].top[0].name).toBe("Democratic Governors Association");
-    expect(drazan.peaks[0].top[0].name).toMatch(/^AGC Committee for Action/);
+    expect(drazan.peaks[0].top[0].name).toBe("Republican Governors Association");
     // "have all come since the end of August"
     expect(drazan.peaks.every((peak) => peak.start >= "2026-08-31")).toBe(true);
-    expect(drazan.geography.oregonCents / drazan.totals.namedCents).toBeGreaterThan(0.9);
+    // The heading says "most", while the body prints the current percentage.
+    expect(drazan.geography.oregonCents / drazan.totals.namedCents).toBeGreaterThan(0.5);
     const kotekOutside = kotek.geography.outsideCents / kotek.totals.namedCents;
     expect(kotekOutside).toBeGreaterThan(0.4);
     expect(kotekOutside).toBeLessThan(0.5);
