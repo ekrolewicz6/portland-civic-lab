@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { activeStart, addDays, axisTicks, buildPanel, clipToWindow, cumulative, daysBetween, lastValue, nearestLine, niceCeiling, position, stepPath, valueAt, SERIES_COLORS, type MoneyPoint, type PlotLine } from "@/lib/campaign-finance/money-flow";
+import { activeStart, addDays, axisDollars, axisTicks, buildPanel, clipToWindow, cumulative, daysBetween, lastValue, nearestLine, niceCeiling, position, stepPath, valueAt, SERIES_COLORS, type MoneyPoint, type PlotLine } from "@/lib/campaign-finance/money-flow";
 
 describe("money-over-time helpers", () => {
   it("accumulates in date order and skips days with no money", () => {
@@ -23,6 +23,13 @@ describe("money-over-time helpers", () => {
     expect(new Set(SERIES_COLORS).size).toBe(9);
     const fixed = buildPanel("g", "Governor", [{ id: "1", name: "Avery", color: "#000", dashed: true }], flows);
     expect(fixed.series[0]).toMatchObject({ color: "#000", dashed: true });
+  });
+
+  it("formats compact axes consistently across server and browser ICU versions", () => {
+    expect(axisDollars(0)).toBe("$0");
+    expect(axisDollars(20_000_000)).toBe("$200K");
+    expect(axisDollars(75_000_000)).toBe("$750K");
+    expect(axisDollars(1_000_000_000)).toBe("$10M");
   });
 
   it("rounds an axis up to a readable ceiling", () => {

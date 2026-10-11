@@ -6,6 +6,7 @@ except authoritative committee IDs; same-name groups are a separate view.
 """
 from collections import defaultdict
 from pathlib import Path
+import argparse
 import csv
 import hashlib
 import json
@@ -70,18 +71,36 @@ def clean_name(name):
 def cents(rows):
     return sum(int(row['amount_cents']) for row in rows)
 
-def run():
+def run(active_package=False):
+    global SNAPSHOT, START, END
     PUBLIC.mkdir(parents=True, exist_ok=True)
-    analysis = json.loads((SOURCE / 'analysis.json').read_text())
-    report = json.loads((SOURCE / 'report-data.json').read_text())
-    facts = json.loads((ROOT / 'src/lib/campaign-finance/candidate-facts.json').read_text())
-    assert analysis['snapshot'] == report['snapshot'] == facts['snapshot'] == SNAPSHOT
-    source_path = SOURCE / 'transactions.csv'
-    assert sha(source_path) == analysis['tables']['transactions']['sha256']
-    roster = {row['committee_id']: row for row in report['candidates']}
+    roster_path = ROOT / 'src/lib/campaign-finance/candidate-facts.json' if active_package else SOURCE / 'report-data.json'
+    report = json.loads(roster_path.read_text())
+    if active_package:
+        roster = {link['committeeId']: {'candidate': link['candidateName'], 'district': int(link['raceId'].rsplit('-', 1)[1])} for link in report['links'] if link['status'] == 'reviewed' and link['raceId'] in ('portland-district-3', 'portland-district-4')}
+    else:
+        roster = {row['committee_id']: row for row in report['candidates']}
     assert len(roster) == 17
-    rows = [row for row in read('transactions.csv') if row['basis'] == 'cash_payment']
-    assert len(rows) == 2441 and cents(rows) == 67207027
+    source_path = SOURCE / 'transactions.csv'
+    if active_package:
+        import duckdb
+        manifest = json.loads((ROOT / 'server-data/campaign-finance/manifest.json').read_text())
+        SNAPSHOT, START, END = manifest['snapshot'], manifest['start'], manifest['end']
+        source_path = ROOT / manifest['database']
+        assert sha(source_path) == manifest['database_sha256']
+        db = duckdb.connect(str(source_path), read_only=True)
+        facts = {'committees': {cid: json.loads(value) for cid, value in db.execute('SELECT committee_id,facts_json FROM candidate_finance_facts').fetchall()}}
+        columns = 'transaction_id transaction_date filed_date committee_id entity_id entity_name identity_status is_disclosure_category book_type amount_cents purpose_codes city state source_row basis'.split()
+        result = db.execute("SELECT " + ','.join(columns) + " FROM transactions WHERE basis='cash_payment' AND committee_id IN (" + ','.join('?' for _ in roster) + ')', list(roster)).fetchall()
+        rows = [{key: str(value) if value is not None else '' for key, value in zip(columns, values)} for values in result]
+        db.close()
+    else:
+        analysis = json.loads((SOURCE / 'analysis.json').read_text())
+        facts = json.loads((ROOT / 'src/lib/campaign-finance/candidate-facts.json').read_text())
+        assert analysis['snapshot'] == report['snapshot'] == facts['snapshot'] == SNAPSHOT
+        assert sha(source_path) == analysis['tables']['transactions']['sha256']
+        rows = [row for row in read('transactions.csv') if row['basis'] == 'cash_payment']
+        assert len(rows) == 2441 and cents(rows) == 67207027
     for row in rows:
         assert row['committee_id'] in roster
         assert START <= row['transaction_date'] <= END
@@ -111,7 +130,8 @@ def run():
         if not row['disclosure']:
             by_entity[row['entity_id']].append(row)
             by_name[clean_name(row['entity_name'])].append(row)
-    assert len(by_entity) == 251
+    if not active_package:
+        assert len(by_entity) == 251
 
     entity_groups = []
     relationships = []
@@ -134,7 +154,8 @@ def run():
                 'transaction_ids': '|'.join(row['transaction_id'] for row in sorted(rr, key=lambda row: row['transaction_id']))})
     entity_groups.sort(key=lambda group: (-group['cents'], group['reportedName'], group['entityId']))
     relationships.sort(key=lambda row: (row['committee_id'], -row['cash_payment_cents'], row['entity_id']))
-    assert len(relationships) == 295
+    if not active_package:
+        assert len(relationships) == 295
 
     name_groups = []
     for key, group in by_name.items():
@@ -163,7 +184,8 @@ def run():
     purpose.sort(key=lambda row: (-row['cents'], row['name']))
     monthly = [{'month': key, 'cents': cents(group), 'records': len(group)} for key, group in sorted(by_month.items())]
     multi = [group for group in entity_groups if group['candidateCount'] > 1]
-    assert len(multi) == 20
+    if not active_package:
+        assert len(multi) == 20
     assert sum(group['cents'] for group in entity_groups) == cents(visible)
     assert sum(row['cents'] for row in purpose) == sum(row['cents'] for row in monthly) == sum(row['cents'] for row in candidates) == cents(rows)
     assert sum(row['cash_payment_cents'] for row in relationships) == cents(visible)
@@ -183,8 +205,8 @@ def run():
         ('payeeCandidates', 'payee-candidate-ledger.csv', relationships),
         ('reportedNames', 'reported-name-groups.csv', csv_names)]}
     output = {'version': 'portland-suppliers-v1', 'snapshot': SNAPSHOT, 'start': START, 'end': END,
-        'sourceTransactionsSha256': sha(source_path), 'reportDataSha256': sha(SOURCE / 'report-data.json'),
-        'totals': {'cashPaymentCents': cents(rows), 'cashPaymentRecords': len(rows),
+        'sourceTransactionsSha256': sha(source_path), 'reportDataSha256': sha(roster_path),
+        'totals': {'cashRaisedCents': sum(facts['committees'][cid]['cashCents'] for cid in roster), 'cashPaymentCents': cents(rows), 'cashPaymentRecords': len(rows),
             'identifiedCents': cents(visible), 'aggregateCents': cents(hidden),
             'visiblePayeeGroups': len(entity_groups), 'visiblePayeeCandidateRelationships': len(relationships),
             'multiCandidatePayeeGroups': len(multi), 'multiCandidateGroupCents': sum(group['cents'] for group in multi)},
@@ -203,4 +225,6 @@ def run():
         'relationships': len(relationships), 'sharedGroups': len(multi), 'evidence': {key: item['rows'] for key, item in evidence.items()}}))
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--active-package', action='store_true', help='Rebuild from the verified minimized active ledger; retain reviewed roster and conservative identities')
+    run(parser.parse_args().active_package)

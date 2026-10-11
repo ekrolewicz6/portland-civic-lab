@@ -33,6 +33,8 @@ for (const width of [390, 1440]) {
     await page.keyboard.press('ArrowDown');
     await expect(page.locator('[data-chart="lead-raised"] [data-tip]')).toContainText(/Christine Drazan\s*\$[\d,]+ raised by/);
     await page.keyboard.press('Escape');
+    await page.getByText('How we grouped the sources', { exact: true }).click();
+    await expect(page.locator('[data-reviewed-sources]')).toContainText('Republican Governors Association');
     await expect(page.locator('[data-chart="source-mix"] [data-candidate]').first()).toHaveAttribute('data-candidate', 'christine-drazan');
     await expect(page.locator('[data-chart="lead-raised"]')).toContainText('Brett Smith');
     await expect(page.locator('[data-money-row="christine-drazan"]')).toContainText('Paid to addresses in other states');

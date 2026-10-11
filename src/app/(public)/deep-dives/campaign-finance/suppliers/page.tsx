@@ -51,7 +51,7 @@ if (otherPurposeCents < 0) throw new Error('Supplier purpose buckets exceed paym
 purposeRows.push({ label: 'Other, including reimbursements', cents: otherPurposeCents });
 purposeRows.sort((a, b) => b.cents - a.cents);
 
-if (data.snapshot !== financeFacts.snapshot) throw new Error('Supplier and receipt snapshots differ');
+const through = new Date(data.end+'T12:00:00Z').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
 const matchedFacts = data.candidates.map(candidate => {
   const facts = financeFacts.committees[candidate.committeeId];
   if (!facts?.account || facts.account.year !== 2026 || facts.account.reconciliation !== 'agrees') {
@@ -59,7 +59,7 @@ const matchedFacts = data.candidates.map(candidate => {
   }
   return facts;
 });
-const raisedCents = matchedFacts.reduce((sum, facts) => sum + facts.cashCents, 0);
+const raisedCents = data.totals.cashRaisedCents;
 const cashOnHandCents = matchedFacts.reduce((sum, facts) => sum + facts.account!.endingCashCents, 0);
 
 type Candidate = typeof data.candidates[number];
@@ -105,8 +105,8 @@ export default function Suppliers() {
       <div>
         <span className={s.eyebrow}>Portland City Council / Districts 3 and 4 / 2025–26</span>
         <h1>The other side<br />of campaign <em>money.</em></h1>
-        <p className={s.dek}>Seventeen campaigns have reported more than $672,000 in payments. Who received it—and which names appear across campaigns?</p>
-        <p className={s.meta}>September 27, 2026 snapshot · 17 reviewed candidate committees</p>
+        <p className={s.dek}>Seventeen campaigns have reported {money(data.totals.cashPaymentCents)} in payments. Who received it—and which names appear across campaigns?</p>
+        <p className={s.meta}>Through {through} · 17 reviewed candidate committees</p>
       </div>
       <aside className={s.heroLedger}>
         <p className={s.heroLedgerLabel}>Cash paid out / cash raised</p>
@@ -114,8 +114,8 @@ export default function Suppliers() {
         <p className={s.heroRaised}>/ <b>{money(raisedCents)}</b> raised</p>
         <div className={s.heroProgress} role="img" aria-label={'Payments equal ' + percent(data.totals.cashPaymentCents, raisedCents) + ' of gross cash raised'}><span style={{ width: percent(data.totals.cashPaymentCents, raisedCents) }} /></div>
         <p className={s.heroShare}>Payments equal {percent(data.totals.cashPaymentCents, raisedCents)} of cash raised</p>
-        <p className={s.heroBalance}><b>{money(cashOnHandCents)}</b><span>reported cash on hand</span></p>
-        <small>Raised includes City matching money. Cash on hand comes from account summaries, not simple subtraction, and may be needed for unpaid obligations.</small>
+        <p className={s.heroBalance}><b>{money(cashOnHandCents)}</b><span>cash on hand in the dated account summaries</span></p>
+        <small>Raised includes City matching money. Cash on hand preserves the September 27 edition’s account observations, not a balance as of this update, and may be needed for unpaid obligations. The latest manual export is provisional and may miss late filings, removals or superseding amendments.</small>
       </aside>
     </header>
 
@@ -144,11 +144,11 @@ export default function Suppliers() {
         <div className={s.purposeBars}>{purposeRows.map(row => <div className={s.purposeRow} key={row.label}>
           <span>{row.label}</span><div className={s.track} aria-hidden="true"><span style={{ width: percent(row.cents, data.totals.cashPaymentCents) }} /></div><strong>{money(row.cents)}</strong>
         </div>)}</div>
-        <figcaption className={s.source}>Each payment appears once. “Other” includes reimbursements, travel, utilities and other codes. <a href={data.evidence.payments.url} download>Check the filed descriptions and payment records</a>.</figcaption>
+        <figcaption className={s.source}>Each payment appears once. “Other” includes reimbursements, travel, utilities and other codes. <a href={data.evidence.payments.url} download>Check the filed codes and payment records</a>.</figcaption>
       </figure>
       <aside className={s.codeCase}>
         <span className={s.eyebrow}>Why filing codes need context</span>
-        <h3>961 ActBlue payments do not mean 961 fundraisers.</h3>
+        <h3>{actblue.records.toLocaleString()} ActBlue payments do not mean {actblue.records.toLocaleString()} fundraisers.</h3>
         <p>The filings show {actblue.records.toLocaleString()} payments totaling {money(actblue.cents)} under the payee name ActBlue. Some use a “Fundraising Event Expenses” code. <a href="https://help.actblue.com/hc/en-us/articles/16869086351895-How-does-ActBlue-work">ActBlue processes online donations</a> for Democratic and progressive campaigns; a fee coded this way does not prove an in-person event. <a href="https://www.actblue.com/solutions/">Using its platform is not an endorsement</a>.</p>
       </aside>
     </section>
@@ -167,17 +167,17 @@ export default function Suppliers() {
       </figure>
       <div className={s.portfolioIntro}><h3>Who paid the same named suppliers?</h3><p>Each bar compares payments to one reported name. Green bars are District 3; gold bars are District 4. Bars restart at each supplier’s largest candidate payment.</p></div>
       <div className={s.supplierGrid}>
-        <Portfolio group={cne} note="Management services · one payee entry in this snapshot" />
+        <Portfolio group={cne} note={`Management-service codes · ${cne.identityGroups} source entries share this name`} />
         <Portfolio group={infused} note="Treasury-related descriptions · two source entries share this name" />
         <Portfolio group={hollywood} note="Printing and signs · one payee entry" />
-        <Portfolio group={morel} note="Printing and signs · two source entries share this name" />
+        <Portfolio group={morel} note={`Printing and signs · ${morel.identityGroups} source entries share this name`} />
       </div>
       <p className={s.source}>A shared name does not establish common ownership, an endorsement or a political alliance. <a href={data.evidence.reportedNames.url} download>Download all same-name comparisons</a>.</p>
     </section>
 
     <section className={s.chapter} id="campaign-models">
       <Heading index="03" label="Campaign by campaign">Who spent the most—and to whom?</Heading>
-      <p className={s.sectionLead}>These are cash payments reported by 17 reviewed committees from January 1, 2025 to September 27, 2026. A longer bar means more money paid out, not a more effective campaign.</p>
+      <p className={s.sectionLead}>These are cash payments reported by 17 reviewed committees from January 1, 2025 to {through}. A longer bar means more money paid out, not a more effective campaign.</p>
       <figure className={s.viz}>
         <div className={s.two}><CampaignBars candidates={d3} district={3} /><CampaignBars candidates={d4} district={4} /></div>
         <figcaption className={s.source}>All candidate bars share one dollar scale. “Largest named payee” is the largest single payee entry we could identify, not necessarily the final beneficiary. District 3 has 21 candidates and District 4 has 12; unlinked campaigns are not shown as zero spending.</figcaption>
@@ -189,7 +189,7 @@ export default function Suppliers() {
     <section className={s.chapter} id="methods">
       <Heading index="04" label="Read the evidence">What these figures include.</Heading>
       <div className={s.methodCards}>
-        <div><h3>Time and money</h3><p>Cash payments by 17 linked candidate committees, dated January 1, 2025–September 27, 2026. Loans, unpaid bills, in-kind support and refunds are not counted as extra purchases. November–December 2024 is missing from this window.</p></div>
+        <div><h3>Time and money</h3><p>Cash payments by 17 linked candidate committees, dated January 1, 2025–{through}. Loans, unpaid bills, in-kind support and refunds are not counted as extra purchases. November–December 2024 is missing from this window.</p></div>
         <div><h3>What counts as a payee entry?</h3><p>We group filing records when names and other source fields strongly match. One real firm may still appear in more than one entry; a matching name alone is not proof of one legal entity. Aggregate or unnamed payments remain dollars, not invented suppliers.</p></div>
         <div><h3>What payments cannot prove</h3><p>A payment does not establish a vendor’s profit, final recipient, political preference or coordination between campaigns. Reimbursements, payroll processors and subcontracting need more tracing.</p></div>
       </div>
