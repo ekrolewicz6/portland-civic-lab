@@ -4,6 +4,6 @@ import FinanceNavigation, { FinanceNavigationFallback } from '@/components/deep-
 export default function CampaignFinanceLayout({ children }: { children: React.ReactNode }) {
   return <>
     <Suspense fallback={<FinanceNavigationFallback />}><FinanceNavigation /></Suspense>
-    {children}
+    <Suspense fallback={<p role="status">Loading campaign finance…</p>}>{children}</Suspense>
   </>;
 }
