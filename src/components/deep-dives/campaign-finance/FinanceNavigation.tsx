@@ -31,10 +31,10 @@ function Navigation({ pathname }: { pathname?: string }) {
           <Link className={s.parent} href="/deep-dives">Deep dives <span aria-hidden="true">/</span></Link>
           <Link className={s.title} href={BASE}>Campaign finance</Link>
         </div>
-        <Link className={s.explorer} href={`${BASE}/explorer`} aria-current={exploring ? (pathname === `${BASE}/explorer` ? 'page' : 'location') : undefined}>
+        <a className={s.explorer} href={`${BASE}/explorer`} aria-current={exploring ? (pathname === `${BASE}/explorer` ? 'page' : 'location') : undefined}>
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
           Explore records
-        </Link>
+        </a>
       </div>
       <div className={s.bottom}>
         <div className={s.sections}>
@@ -60,7 +60,9 @@ function Navigation({ pathname }: { pathname?: string }) {
 }
 
 export function FinanceNavigationFallback() {
-  return <Navigation />;
+  // A duplicate interactive menu can lose native <details> state when the
+  // Suspense fallback is replaced. Keep the loading state noninteractive.
+  return <div className={s.nav} role="status"><div className={s.wrap}>Loading campaign finance navigation…</div></div>;
 }
 
 export default function FinanceNavigation() {

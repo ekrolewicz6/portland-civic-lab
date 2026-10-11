@@ -1,3 +1,4 @@
+import { CandidateDonationStatistics } from './DonationStatistics';
 import 'server-only';
 import Link from 'next/link';
 import { candidateFinance, financeFacts, percentage, type CommitteeFacts } from '@/lib/campaign-finance/candidate-facts';
@@ -27,6 +28,7 @@ async function CommitteeBreakdown({ facts, snapshot }: { facts: CommitteeFacts; 
       <div><dt>Cash excluding reviewed matches</dt><dd>{money(facts.nonmatchingCents)}</dd></div>
       <div><dt>Cash-contribution records</dt><dd>{facts.cashRecords.toLocaleString('en-US')}</dd></div>
     </dl>
+    <CandidateDonationStatistics committeeId={facts.committeeId} />
     <ContributionMosaic committeeId={facts.committeeId} rows={contributions} topSources={facts.topSources} publicCents={facts.publicCents} />
     <p className={styles.note}>{facts.repeatIndividualGroups} of {facts.visibleIndividualGroups} matched individual donor entries appear on more than one reported date. These are not confirmed counts of people.</p>
 

@@ -1,3 +1,4 @@
+import { DonationComparison } from '@/components/deep-dives/campaign-finance/DonationStatistics';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import { pageMeta } from '@/lib/page-meta';
@@ -95,6 +96,8 @@ export default async function GovernorInvestigation() {
     <p className={s.byline}>Portland Civic Lab · Analysis dated {longDate(governor.reviewedAt)} · Records through {longDate(governor.end)}</p>
     <nav className={s.sectionNav} aria-label="Chapters in this investigation">{CHAPTERS.map(([id, label], index) => <a key={id} href={`#${id}`}><span>0{index + 1}</span>{label}</a>)}</nav>
 
+    <p className={s.links}><a href="#donation-amounts">Compare typical gifts and funding sources</a></p>
+    <section className={s.chapter} id="donation-amounts"><header className={s.chapterHeader}><p className={s.kicker}>Donation amounts</p><h2>Typical named gifts and funding sources.</h2></header><DonationComparison raceId="oregon-governor" /></section>
     <section className={s.chapter} id="who-gives"><ChapterHeading number="01" label="Who gives">Two campaigns built from different kinds of money.</ChapterHeading>
       <div className={s.body}>
         <p><strong>Named individuals supplied {share(kind(drazan, 'individual'), drazan.totals.cashCents)} of Drazan’s cash and businesses another {share(kind(drazan, 'business'), drazan.totals.cashCents)}. Kotek’s largest share, at least {share(kind(kotek, 'labor'), kotek.totals.cashCents)}, came from unions and their committees, and {share(kind(kotek, 'governors'), kotek.totals.cashCents)} came from two national Democratic governors’ groups.</strong></p>
