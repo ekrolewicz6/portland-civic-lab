@@ -60,7 +60,9 @@ function Navigation({ pathname }: { pathname?: string }) {
 }
 
 export function FinanceNavigationFallback() {
-  return <Navigation />;
+  // A duplicate interactive menu can lose native <details> state when the
+  // Suspense fallback is replaced. Keep the loading state noninteractive.
+  return <div className={s.nav} role="status"><div className={s.wrap}>Loading campaign finance navigation…</div></div>;
 }
 
 export default function FinanceNavigation() {
