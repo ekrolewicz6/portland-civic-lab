@@ -29,7 +29,7 @@ const lanes = [
 ];
 const utc = (date: string) => Date.parse(date + 'T00:00:00Z');
 const dateLabel = (date: string) => new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }).format(utc(date));
-const compact = (cents: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 }).format(cents / 100);
+const compact = (cents: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', minimumFractionDigits: 0, maximumFractionDigits: 1 }).format(cents / 100);
 const laneOf = (event: TimelineEvent) => event.category === 'moda' ? 'city' : event.category;
 
 export function CampaignTimeline() {

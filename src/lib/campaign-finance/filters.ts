@@ -44,5 +44,5 @@ export function filterParams(f: Filters) {
   return p;
 }
 export function money(cents: number | string | bigint) { return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(Number(cents)/100); }
-export function shortMoney(cents:number) { return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',maximumFractionDigits:2}).format(cents/100); }
+export function shortMoney(cents:number) { return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',minimumFractionDigits:0,maximumFractionDigits:2}).format(cents/100); }
 export function basisLabel(basis:string) { return basis.replaceAll('_',' '); }

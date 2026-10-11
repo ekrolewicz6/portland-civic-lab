@@ -6,7 +6,6 @@ import {
   type GovernorCandidate,
 } from '@/lib/campaign-finance/governor';
 import s from './governor.module.css';
-import ReviewedSources from './ReviewedSources';
 
 const candidates = governorCandidates;
 const maxCash = Math.max(...candidates.map(c => c.totals.cashCents));
@@ -40,7 +39,7 @@ export function SourceMixChart() {
     <details className={s.details}><summary>How we grouped the sources</summary>
       <p>Individuals, businesses and unions follow the contributor type on each filing. Committees and associations that gave $50,000 or more to either campaign are grouped by sponsor when the sponsor is clear from the name, from the committee’s own filings or from a cited source. Smaller committees stay under “other committees and organizations,” so the union and trade figures are minimums.</p>
       <p>Gifts of $100 or less can be reported in combined entries with no names. They are counted in the totals and cannot be traced to people.</p>
-      <ReviewedSources sources={governor.context.reviewedSources.filter(source => source.kind !== 'other').map(source => ({ id: source.id, name: plain(source.name), basis: source.basis }))} />
+      <ul data-reviewed-sources>{governor.context.reviewedSources.filter(source => source.kind !== 'other').map(source => <li key={source.id}>{plain(source.name)}: {source.basis}</li>)}</ul>
     </details>
     <p className={s.source}>Cash contributions from January 1, 2025 through {longDate(governor.end)}, before refunds. <Evidence file="source-groups.csv">Download every source and its group</Evidence>.</p>
   </figure>;
