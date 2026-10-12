@@ -1,0 +1,246 @@
+{
+  "snapshot": "orestar-20250101-20261010-7737e46dfe34",
+  "start": "2025-01-01",
+  "end": "2026-10-10",
+  "rows": 325365,
+  "completeness_verified": false,
+  "filers": 1916,
+  "bases": [
+    {
+      "basis": "cash_adjustment",
+      "records": 172,
+      "amount_cents": 1067913
+    },
+    {
+      "basis": "cash_contribution",
+      "records": 215435,
+      "amount_cents": 13409257066
+    },
+    {
+      "basis": "cash_payment",
+      "records": 82136,
+      "amount_cents": 9975286724
+    },
+    {
+      "basis": "cash_reversal",
+      "records": 470,
+      "amount_cents": 86181448
+    },
+    {
+      "basis": "contribution_refund",
+      "records": 1022,
+      "amount_cents": 115280154
+    },
+    {
+      "basis": "forgiven_obligation",
+      "records": 240,
+      "amount_cents": 37086756
+    },
+    {
+      "basis": "loan_forgiven",
+      "records": 90,
+      "amount_cents": 84339290
+    },
+    {
+      "basis": "loan_payment",
+      "records": 119,
+      "amount_cents": 43485520
+    },
+    {
+      "basis": "loan_received",
+      "records": 344,
+      "amount_cents": 133677483
+    },
+    {
+      "basis": "noncash_support",
+      "records": 7098,
+      "amount_cents": 1264229499
+    },
+    {
+      "basis": "obligation",
+      "records": 7412,
+      "amount_cents": 551353799
+    },
+    {
+      "basis": "obligation_adjustment",
+      "records": 26,
+      "amount_cents": -423291
+    },
+    {
+      "basis": "obligation_cancellation",
+      "records": 19,
+      "amount_cents": 12018103
+    },
+    {
+      "basis": "other_cash_payment",
+      "records": 1500,
+      "amount_cents": 127548150
+    },
+    {
+      "basis": "other_cash_receipt",
+      "records": 9275,
+      "amount_cents": 431902232
+    },
+    {
+      "basis": "receivable",
+      "records": 7,
+      "amount_cents": 166211
+    }
+  ],
+  "top_committees": [
+    {
+      "committee_id": "4792",
+      "name": "Friends of Tina Kotek",
+      "records": 11208,
+      "cash_contributions_cents": 1594126942,
+      "cash_payments_cents": 531493916
+    },
+    {
+      "committee_id": "19050",
+      "name": "Friends of Christine Drazan",
+      "records": 8487,
+      "cash_contributions_cents": 1434318486,
+      "cash_payments_cents": 1074180151
+    },
+    {
+      "committee_id": "23285",
+      "name": "Building a Stronger Oregon",
+      "records": 22450,
+      "cash_contributions_cents": 1066859462,
+      "cash_payments_cents": 155696985
+    },
+    {
+      "committee_id": "21717",
+      "name": "Bring Balance to Salem PAC",
+      "records": 184,
+      "cash_contributions_cents": 405128180,
+      "cash_payments_cents": 123066140
+    },
+    {
+      "committee_id": "353",
+      "name": "Democratic Party of Oregon",
+      "records": 628,
+      "cash_contributions_cents": 284582331,
+      "cash_payments_cents": 256571822
+    },
+    {
+      "committee_id": "1524",
+      "name": "Future PAC, House Builders",
+      "records": 974,
+      "cash_contributions_cents": 283021300,
+      "cash_payments_cents": 106100440
+    },
+    {
+      "committee_id": "24693",
+      "name": "Dudley for Oregon",
+      "records": 828,
+      "cash_contributions_cents": 248248157,
+      "cash_payments_cents": 245358461
+    },
+    {
+      "committee_id": "12986",
+      "name": "Oregon Nurses Political Action Committee",
+      "records": 214,
+      "cash_contributions_cents": 239238064,
+      "cash_payments_cents": 169137774
+    },
+    {
+      "committee_id": "4572",
+      "name": "Local 48 Electricians PAC",
+      "records": 33371,
+      "cash_contributions_cents": 196580570,
+      "cash_payments_cents": 211938234
+    },
+    {
+      "committee_id": "33",
+      "name": "Citizen Action for Political Education",
+      "records": 18748,
+      "cash_contributions_cents": 180102185,
+      "cash_payments_cents": 135235749
+    }
+  ],
+  "disclosure": [
+    {
+      "family": "Contribution",
+      "basis": "cash_contribution",
+      "records": 31971,
+      "amount_cents": 1228260430
+    },
+    {
+      "family": "Contribution",
+      "basis": "forgiven_obligation",
+      "records": 71,
+      "amount_cents": 273776
+    },
+    {
+      "family": "Contribution",
+      "basis": "noncash_support",
+      "records": 895,
+      "amount_cents": 6108535
+    },
+    {
+      "family": "Expenditure",
+      "basis": "cash_payment",
+      "records": 19895,
+      "amount_cents": 52849045
+    },
+    {
+      "family": "Expenditure",
+      "basis": "obligation",
+      "records": 2312,
+      "amount_cents": 10218007
+    },
+    {
+      "family": "Other",
+      "basis": "cash_adjustment",
+      "records": 168,
+      "amount_cents": 1022721
+    },
+    {
+      "family": "Other",
+      "basis": "obligation_adjustment",
+      "records": 24,
+      "amount_cents": -398549
+    },
+    {
+      "family": "Other Disbursement",
+      "basis": "contribution_refund",
+      "records": 187,
+      "amount_cents": 1353070
+    },
+    {
+      "family": "Other Receipt",
+      "basis": "cash_reversal",
+      "records": 24,
+      "amount_cents": 154446
+    },
+    {
+      "family": "Other Receipt",
+      "basis": "other_cash_receipt",
+      "records": 2606,
+      "amount_cents": 106805857
+    }
+  ],
+  "evidence": {
+    "bases": {
+      "url": "/data/campaign-finance/current/financial-bases.csv",
+      "rows": 16,
+      "sha256": "022a5bb9302906d021177b47dd1607d417a13e8c172d255949433ee1ee5a71fc"
+    },
+    "committees": {
+      "url": "/data/campaign-finance/current/committees.csv",
+      "rows": 1916,
+      "sha256": "11da95f7f91d76bede4e269ddf0b9ba5b3c6e3a12edd2ca9e805c4500243d530"
+    },
+    "disclosure": {
+      "url": "/data/campaign-finance/current/disclosure.csv",
+      "rows": 10,
+      "sha256": "4ac108a8233b6db9fe748208cbe804638fb366f8ee9e8f052fb272302785e8f3"
+    },
+    "candidates": {
+      "url": "/data/campaign-finance/current/candidate-funding.csv",
+      "rows": 18,
+      "sha256": "381ca069660f1bed96961e2c4682ed5e35851e823e809d5dbade26b5b961b98b"
+    }
+  }
+}

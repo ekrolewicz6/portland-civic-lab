@@ -1,3 +1,4 @@
+import { CandidateDonationStatistics, DonationComparison } from '../DonationStatistics';
 import 'server-only';
 import Link from 'next/link';
 import {
@@ -23,6 +24,7 @@ export function GovernorRaceFinance({ raceId, candidates }: { raceId: string; ca
   return <section id="race-fundraising" className={styles.section} aria-labelledby="race-finance-heading" data-finance-snapshot={governor.snapshot}>
     <h2 id="race-finance-heading">What the fundraising records show</h2>
     <Window />
+    <DonationComparison raceId="oregon-governor" />
     <div className={styles.story}>
       <p>{drazan.name} and {kotek.name} have reported {roundMoney(total)} in cash contributions between them. {governorUnlinked.map(candidate => candidate.name).join(' and ')} has no committee in these records, which is missing coverage and does not mean no money was raised.</p>
       <p>Named individuals supplied {share(kindCents(drazan.candidateId, 'individual'), drazan.totals.cashCents)} of Drazan’s cash and businesses {share(kindCents(drazan.candidateId, 'business'), drazan.totals.cashCents)}. Unions and their committees supplied at least {share(kindCents(kotek.candidateId, 'labor'), kotek.totals.cashCents)} of Kotek’s, and national Democratic governors’ groups {share(kindCents(kotek.candidateId, 'governors'), kotek.totals.cashCents)}.</p>
@@ -61,6 +63,7 @@ export function GovernorCandidateFinance({ candidateId }: { candidateId: string 
     {!facts ? <p className={styles.notice}>{missing?.linkBasis ?? 'No reviewed committee records are available for this candidate. This is missing coverage and does not mean no money was raised.'}</p> : <>
       <Window />
       <h3>{facts.committeeName}</h3>
+      <CandidateDonationStatistics committeeId={facts.committeeId} />
       <p className={styles.note}>ORESTAR committee {facts.committeeId} · Latest contribution on file: {longDate(facts.totals.latestCashDate)} · Latest payment on file: {longDate(facts.totals.latestPaymentDate)}</p>
       <dl className={styles.stats}>
         <div><dt>Cash contributions</dt><dd>{wholeDollars(facts.totals.cashCents)}</dd></div>

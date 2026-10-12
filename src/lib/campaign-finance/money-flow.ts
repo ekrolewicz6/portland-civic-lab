@@ -57,7 +57,7 @@ export const daysBetween = (from: string, to: string) => Math.round((utc(to) - u
 export const addDays = (day: string, days: number) => new Date(utc(day) + days * DAY).toISOString().slice(0, 10);
 
 export const wholeDollars = (cents: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Math.round(cents / 100));
-export const axisDollars = (cents: number) => cents === 0 ? '$0' : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 }).format(cents / 100);
+export const axisDollars = (cents: number) => cents === 0 ? '$0' : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', minimumFractionDigits: 0, maximumFractionDigits: 1 }).format(cents / 100);
 export const shortDay = (day: string) => new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${day}T12:00:00Z`));
 export const monthAndYear = (day: string) => new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${day}T12:00:00Z`));
 

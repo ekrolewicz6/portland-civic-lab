@@ -1,4 +1,6 @@
+import { DonationComparison } from '@/components/deep-dives/campaign-finance/DonationStatistics';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { pageMeta } from '@/lib/page-meta';
 import { BASE } from '@/lib/campaign-finance/filters';
 import {
@@ -94,25 +96,27 @@ export default async function GovernorInvestigation() {
     <p className={s.byline}>Portland Civic Lab · Analysis dated {longDate(governor.reviewedAt)} · Records through {longDate(governor.end)}</p>
     <nav className={s.sectionNav} aria-label="Chapters in this investigation">{CHAPTERS.map(([id, label], index) => <a key={id} href={`#${id}`}><span>0{index + 1}</span>{label}</a>)}</nav>
 
+    <p className={s.links}><a href="#donation-amounts">Compare typical gifts and funding sources</a></p>
+    <section className={s.chapter} id="donation-amounts"><header className={s.chapterHeader}><p className={s.kicker}>Donation amounts</p><h2>Typical named gifts and funding sources.</h2></header><DonationComparison raceId="oregon-governor" /></section>
     <section className={s.chapter} id="who-gives"><ChapterHeading number="01" label="Who gives">Two campaigns built from different kinds of money.</ChapterHeading>
       <div className={s.body}>
         <p><strong>Named individuals supplied {share(kind(drazan, 'individual'), drazan.totals.cashCents)} of Drazan’s cash and businesses another {share(kind(drazan, 'business'), drazan.totals.cashCents)}. Kotek’s largest share, at least {share(kind(kotek, 'labor'), kotek.totals.cashCents)}, came from unions and their committees, and {share(kind(kotek, 'governors'), kotek.totals.cashCents)} came from two national Democratic governors’ groups.</strong></p>
         <p>Kotek has raised more in total, {roundMoney(kotek.totals.cashCents)} to Drazan’s {roundMoney(drazan.totals.cashCents)}. Drazan has raised more from individuals, {roundMoney(kind(drazan, 'individual'))} to {roundMoney(kind(kotek, 'individual'))}, and more from businesses giving directly, {roundMoney(kind(drazan, 'business'))} to {roundMoney(kind(kotek, 'business'))}.</p>
       </div>
-      <SourceMixChart />
+      <Suspense fallback={null}><SourceMixChart /></Suspense>
       <div className={s.body}>
         <p>Kotek’s two largest sources are the {plain(dga[0].name)}, at {roundMoney(dga[0].cents)}, and the {plain(dga[1].name)}, at {roundMoney(dga[1].cents)}. Drazan’s filings show {drazan.totals.republicanGovernorsCents > 0 ? `${roundMoney(drazan.totals.republicanGovernorsCents)} from` : 'no contribution from'} the Republican Governors Association in this period. Her largest source is reported as {plain(drazan.topSources[0].name)} of {drazan.topSources[0].city}, at {roundMoney(drazan.topSources[0].cents)}.</p>
       </div>
-      <TopSourcesChart />
+      <Suspense fallback={null}><TopSourcesChart /></Suspense>
     </section>
 
     <section className={s.chapter} id="how-big"><ChapterHeading number="02" label="How big">More than half of each campaign’s money came from sources that gave $100,000 or more.</ChapterHeading>
       <div className={s.body}>
         <p><strong>Kotek received $100,000 or more from {largeCount(kotek)} sources, and together they account for {share(largeCents(kotek), kotek.totals.cashCents)} of her cash. Drazan received that much from {largeCount(drazan)} sources, who account for {share(largeCents(drazan), drazan.totals.cashCents)} of hers.</strong></p>
       </div>
-      <GiftSizeChart />
+      <Suspense fallback={null}><GiftSizeChart /></Suspense>
       <div className={s.body}><p>Both campaigns also have thousands of smaller donors. They are a large share of the names and a small share of the dollars.</p></div>
-      <BreadthTiles />
+      <Suspense fallback={null}><BreadthTiles /></Suspense>
       <aside className={s.callout} aria-labelledby="limits-heading">
         <p className={s.kicker} id="limits-heading">Starting in 2027</p>
         <div>
@@ -124,10 +128,10 @@ export default async function GovernorInvestigation() {
 
     <section className={s.chapter} id="when"><ChapterHeading number="03" label="When">Kotek’s biggest weeks were built on a few large checks. Drazan’s three biggest have all come since the end of August.</ChapterHeading>
       <div className={s.body}>
-        <p><strong>Kotek’s biggest week began {longMonthDay(kotek.peaks[0].start)}, when the {plain(kotek.peaks[0].top[0].name)} gave {roundMoney(kotek.peaks[0].top[0].cents)}. Drazan’s biggest week began {longMonthDay(drazan.peaks[0].start)}, when {plain(drazan.peaks[0].top[0].name)}, a contractors’ committee, gave {roundMoney(drazan.peaks[0].top[0].cents)}.</strong></p>
+        <p><strong>Kotek’s biggest week began {longMonthDay(kotek.peaks[0].start)}, when the {plain(kotek.peaks[0].top[0].name)} gave {roundMoney(kotek.peaks[0].top[0].cents)}. Drazan’s biggest week began {longMonthDay(drazan.peaks[0].start)}, when {plain(drazan.peaks[0].top[0].name)} gave {roundMoney(drazan.peaks[0].top[0].cents)}.</strong></p>
         <p>By the end of September 2025, before either had announced, Kotek’s committee had raised {roundMoney(through(kotek, '2025-09'))} since January and Drazan’s had raised {roundMoney(through(drazan, '2025-09'))}. Drazan’s committee was registered for a legislative seat until she <a href={drazan.announcedSource}>entered the race on {longDate(drazan.announced)}</a>. Kotek <a href={kotek.announcedSource}>announced on {longDate(kotek.announced)}</a>.</p>
       </div>
-      <WeeklyChart />
+      <Suspense fallback={null}><WeeklyChart /></Suspense>
       <div className={s.body}><p>Both won their primaries on May 19. Drazan took the Republican nomination with 41% of the vote in a contested field, and Kotek won the Democratic nomination with 84%, according to <a href={governor.context.primary.source}>results reported by the Oregon Capital Chronicle</a>.</p></div>
     </section>
 
@@ -135,7 +139,7 @@ export default async function GovernorInvestigation() {
       <div className={s.body}>
         <p><strong>Oregon addresses account for {share(drazan.geography.oregonCents, drazan.totals.namedCents)} of Drazan’s named money. For Kotek the share is {share(kotek.geography.oregonCents, kotek.totals.namedCents)}, and {roundMoney(state(kotek, 'DC'))} came from Washington, D.C., where national unions and the Democratic Governors Association have their offices.</strong></p>
       </div>
-      <StateChart />
+      <Suspense fallback={null}><StateChart /></Suspense>
       <div className={s.body}>
         <p>Counting only individual donors narrows the gap in where the money comes from. Oregonians gave Kotek {roundMoney(kotek.geography.individuals.oregon.cents)} in {kotek.geography.individuals.oregon.records.toLocaleString('en-US')} gifts, which is {share(kotek.geography.individuals.oregon.cents, kind(kotek, 'individual'))} of her money from individuals. They gave Drazan {roundMoney(drazan.geography.individuals.oregon.cents)} in {drazan.geography.individuals.oregon.records.toLocaleString('en-US')} gifts, or {share(drazan.geography.individuals.oregon.cents, kind(drazan, 'individual'))}.</p>
       </div>
@@ -156,24 +160,24 @@ export default async function GovernorInvestigation() {
         <p><strong>A committee’s name rarely says where its money started. Its own filings often do.</strong></p>
         <p>{words(laborSmall.length, true)} of the {words(laborFunders.length)} union committees on Kotek’s list took in most of their money as gifts of $100 or less, which are reported in combined entries without names. {plain(cape.name)}, the committee of SEIU Local 503, reported {roundMoney(cape.combinedSmallCents)} of its {roundMoney(cape.receiptsCents)} that way. The contractors’ committee that gave Drazan {roundMoney(agc.gaveCents)} received {wholeDollars(agc.topNamed[0].cents)} of its {wholeDollars(agc.receiptsCents)} from one trade association chapter.</p>
       </div>
-      <FundersTable />
+      <Suspense fallback={null}><FundersTable /></Suspense>
       <div className={s.body}>
         <p>One committee on that list changed size during these records. On {longDate(governor.context.tenMillion.date)} the {governor.context.tenMillion.reportedSource} gave {roundMoney(governor.context.tenMillion.cents)} to {plain(carpenters.name)}. That committee has given Kotek {roundMoney(carpenters.cents)} in these records, most recently on {longMonthDay(carpenters.lastDate)}. Ron Rowlett, the union’s director of government relations, <a href={governor.context.tenMillion.source}>told OPB</a> the money “{governor.context.tenMillion.quote}.” These records cannot show how it will be spent.</p>
         <p>{words(governor.both.length, true)} sources gave to both campaigns. {words(bothMore(kotek, drazan), true)} of them gave more to Kotek, {words(bothMore(drazan, kotek))} gave more to Drazan and {words(bothEqual)} gave the same amount to each.</p>
       </div>
-      <BothTable />
+      <Suspense fallback={null}><BothTable /></Suspense>
     </section>
 
     <section className={s.chapter} id="what-it-bought"><ChapterHeading number="06" label="What it bought">Advertising is the largest expense for both campaigns.</ChapterHeading>
       <div className={s.body}>
         <p><strong>Drazan’s committee has reported {roundMoney(drazan.totals.paidCents)} in payments, including {roundMoney(purpose(drazan, 'Broadcast advertising (radio, TV)'))} for broadcast advertising. These records hold {roundMoney(kotek.totals.paidCents)} in payments by Kotek’s committee, including {roundMoney(purpose(kotek, 'Broadcast advertising (radio, TV)'))} for broadcast, and none dated after {longDate(kotek.totals.latestPaymentDate)}.</strong></p>
-        <p>Kotek’s later payments exist. <a href={governor.context.laterBalances.source}>OPB reported on {longDate(governor.context.laterBalances.date)}</a> that her cash on hand had fallen to {roundMoney(governor.context.laterBalances.kotekCents)}, well below the state’s September 27 figure. Her committee reports payments about 30 days after making them, and our latest download covered only transactions dated September 28 or later, so a month of her spending has not reached these records.</p>
+        <p>Kotek’s later payments exist. <a href={governor.context.laterBalances.source}>OPB reported on {longDate(governor.context.laterBalances.date)}</a> that her cash on hand had fallen to {roundMoney(governor.context.laterBalances.kotekCents)}, well below the state’s September 27 figure. Her committee reports payments about 30 days after making them, and the latest export covers transactions dated October 4–10, so it does not fill the older payment gap in these records.</p>
       </div>
-      <SpendingChart />
+      <Suspense fallback={null}><SpendingChart /></Suspense>
       <div className={s.body}>
         <p>Drazan paid out {roundMoney(paidIn(drazan, ['2026-04', '2026-05']))} in April and May 2026, the two months around the primary. Kotek paid out {roundMoney(paidIn(kotek, ['2026-04', '2026-05']))} in the same months.</p>
       </div>
-      <PayeesChart />
+      <Suspense fallback={null}><PayeesChart /></Suspense>
       <div className={s.body}><p>A payment is dated when the campaign pays it. An advertising payment can cover airtime that runs weeks later, so the dates here show when money left the account and say less about when voters saw the ads.</p></div>
     </section>
 
@@ -181,7 +185,7 @@ export default async function GovernorInvestigation() {
       <div className={s.body}>
         <p><strong>On {longDate(asOf)}, the last day these records have payments for both campaigns, Kotek had about {roundMoney(kotek.likeForLike.cashPositionCents)} in cash and Drazan about {roundMoney(drazan.likeForLike.cashPositionCents)}.</strong></p>
       </div>
-      <PositionChart />
+      <Suspense fallback={null}><PositionChart /></Suspense>
       <div className={s.body}>
         <p>The two committees report on different schedules. Since June, Drazan’s has filed its payments a median of {plural(drazan.totals.medianPaymentFilingLagDays ?? 0, 'day')} after making them, and Kotek’s a median of {plural(kotek.totals.medianPaymentFilingLagDays ?? 0, 'day')} after. <a href={governor.context.filingDeadlines.source}>State law</a> allows 30 days for most of the year and seven days in the final six weeks before an election.</p>
         <p>That timing shaped the official balances. On {longDate(kotek.account.retrievedAt)} the state’s summaries showed {roundMoney(kotek.account.endingCashCents)} for Kotek and about {nearestThousand(drazan.account.endingCashCents)} for Drazan, at a point when Kotek’s September spending was not yet on file. <a href={governor.context.laterBalances.source}>OPB reported on {longDate(governor.context.laterBalances.date)}</a>, after more filings, that Kotek had {roundMoney(governor.context.laterBalances.kotekCents)} on hand and Drazan roughly {roundMoney(governor.context.laterBalances.drazanCents)}.</p>
@@ -193,7 +197,7 @@ export default async function GovernorInvestigation() {
         <li><h3>{smith.name}</h3><p>The {smith.party} nominee has no committee in these records. <a href={smith.linkSource}>A candidate who expects to raise and spend $750 or less in a year</a> does not have to form one, so his absence here does not mean he raised nothing.</p></li>
         <li><h3>Outside spending</h3><p>Groups can spend on their own to support or oppose a candidate. The state’s export does not name the target of that spending, and our review of the detail records is incomplete, with {independent.parsedRecords} of {independent.searchedRecords} flagged records read so far. {independent.allocations.length === 1 ? <>One of them names a candidate in this race: a {wholeDollars(independent.allocations[0].cents)} payment by {independent.allocations[0].spender} in {independent.allocations[0].position} to {independent.allocations[0].target} on {longDate(independent.allocations[0].date)}.</> : <>{independent.allocations.length} of them name a candidate in this race.</>}</p></li>
         <li><h3>Earlier money</h3><p>The records start on January 1, 2025. Kotek’s committee opened that year with {wholeDollars(kotek.account.openingCash2025Cents)} already in the bank and Drazan’s with {wholeDollars(drazan.account.openingCash2025Cents)}, and both committees existed before this race.</p></li>
-        <li><h3>Late filings</h3><p>This copy joins a complete pull on September 27 with two later downloads that searched by transaction date. A record dated before September 28 and filed after that pull can be missing, which is why Kotek’s payments stop on August 26. The newest days can also still change.</p></li>
+        <li><h3>Late filings</h3><p>This copy combines the September 27 collection with later user-provided exports, most recently transactions dated October 4–10. The latest workbook contains no source search filters or result count, so coverage remains provisional. Older-dated late filings, removals and amendments outside these exports can be missing. Kotek’s payments in these records still stop on {longDate(kotek.totals.latestPaymentDate)}. The newest days can also change.</p></li>
         <li><h3>Names</h3><p>Donors are grouped by the exact name and address on each filing. One person reported two ways counts as two sources, so the donor counts are close estimates.</p></li>
         <li><h3>Goods and services</h3><p>Support given directly as goods or services is tracked separately from cash. Kotek reported {wholeDollars(kotek.totals.inKindCents)} of it and Drazan {wholeDollars(drazan.totals.inKindCents)}.</p></li>
       </ul>

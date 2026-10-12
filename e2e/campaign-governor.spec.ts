@@ -33,6 +33,8 @@ for (const width of [390, 1440]) {
     await page.keyboard.press('ArrowDown');
     await expect(page.locator('[data-chart="lead-raised"] [data-tip]')).toContainText(/Christine Drazan\s*\$[\d,]+ raised by/);
     await page.keyboard.press('Escape');
+    await page.getByText('How we grouped the sources', { exact: true }).click();
+    await expect(page.locator('[data-reviewed-sources]')).toContainText('Republican Governors Association');
     await expect(page.locator('[data-chart="source-mix"] [data-candidate]').first()).toHaveAttribute('data-candidate', 'christine-drazan');
     await expect(page.locator('[data-chart="lead-raised"]')).toContainText('Brett Smith');
     await expect(page.locator('[data-money-row="christine-drazan"]')).toContainText('Paid to addresses in other states');
@@ -58,7 +60,7 @@ test('governor evidence downloads and the voter guide panel agree with the story
   await page.goto('/voters-guide/oregon-governor');
   const panel = page.locator('#race-fundraising');
   await expect(panel.getByRole('link', { name: /Read the full investigation/ })).toHaveAttribute('href', path);
-  const rows = panel.locator('tbody tr');
+  const rows = panel.locator('table').filter({ has: page.locator('caption', { hasText: 'The same dates and definitions for every candidate' }) }).locator('tbody tr');
   await expect(rows).toHaveCount(3);
   await expect(rows.nth(0)).toContainText('Brett Smith');
   await expect(rows.nth(0)).toContainText('No committee in these records');

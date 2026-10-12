@@ -1,7 +1,7 @@
 {
-  "snapshot": "orestar-20250101-20261004-de091bba2ee3",
+  "snapshot": "orestar-20250101-20261010-7737e46dfe34",
   "start": "2025-01-01",
-  "end": "2026-10-04",
-  "rows": 321089,
+  "end": "2026-10-10",
+  "rows": 325365,
   "completeness_verified": false
 }

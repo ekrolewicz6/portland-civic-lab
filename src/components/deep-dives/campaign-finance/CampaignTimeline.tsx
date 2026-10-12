@@ -29,11 +29,11 @@ const lanes = [
 ];
 const utc = (date: string) => Date.parse(date + 'T00:00:00Z');
 const dateLabel = (date: string) => new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }).format(utc(date));
-const compact = (cents: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 }).format(cents / 100);
+const compact = (cents: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', minimumFractionDigits: 0, maximumFractionDigits: 1 }).format(cents / 100);
 const laneOf = (event: TimelineEvent) => event.category === 'moda' ? 'city' : event.category;
 
-export function CampaignTimeline() {
-  const [data, setData] = useState<Timeline>({ ...frozen, events: alignEvents(frozen.events) });
+export function CampaignTimeline({ initialData }: { initialData?: Timeline }) {
+  const [data, setData] = useState<Timeline>(() => initialData ?? { ...frozen, events: alignEvents(frozen.events) });
   const [refresh, setRefresh] = useState('Checking for newer filings…');
   const [race, setRace] = useState(3);
   const [basis, setBasis] = useState<CashKey>('nonmatching_cents');
