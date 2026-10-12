@@ -10,6 +10,8 @@ Updated October 12, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public da
 
 **Audience and Extension-source review:** [October 12 editorial priorities](audience-and-extension-source-plan-2026-10-12.md) turn a private practitioner conversation into source-checked next steps: a clearer entry for newcomers, a place-specific learning path, one documented burn through time, and an ODF/OSFM funding account. The conversation and any unapproved attribution remain private.
 
+**Reader-path revision:** [October 12 release candidate](reader-path-release-2026-10-12.md) records the implemented guide entry paths, sourced regional contrast, distinct ODF/OSFM money stages, local record-reading exercise, and verification. Live publication status is tracked separately.
+
 Start with [the dated audit](audit-2026-09-11.md) and [implementation notes](implementation.md). The working page is `/oregon-fire` in Portland Civic Lab. Original research is preserved in `archive-2026-09-10/`, which contains superseded claims and is not the current sourcebook.
 
 | File | Purpose |
