@@ -74,6 +74,21 @@
       "reason": "Filer amended the in-kind contribution record. The date and amount are unchanged.",
       "approvedAt": "2026-10-05",
       "appliedSnapshot": "orestar-20250101-20261004-de091bba2ee3"
+    },
+    {
+      "kind": "superseded",
+      "existingTransactionId": "5849433",
+      "incomingTransactionId": "5862947",
+      "filerId": "23249",
+      "filer": "Alek for Oregon",
+      "subtype": "Cash Expenditure",
+      "existingTransactionDate": "2026-09-28",
+      "existingAmountCents": 70,
+      "incomingTransactionDate": "2026-10-05",
+      "incomingAmountCents": 203,
+      "reason": "Current ORESTAR workbook explicitly marks transaction 5862947 Amended with Original Id 5849433. Both versions are Alek for Oregon cash expenditures to Anedot, Inc for Transfer Fee. The reported expense changes from $0.70 on 2026-09-28 to $2.03 on 2026-10-05; replace the original rather than count both.",
+      "approvedAt": "2026-10-10",
+      "appliedSnapshot": "orestar-20250101-20261010-7737e46dfe34"
     }
   ]
 }

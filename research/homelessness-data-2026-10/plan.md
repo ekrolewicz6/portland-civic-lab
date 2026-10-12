@@ -73,3 +73,10 @@ Needs Edan's approval: merge the PR, then run `seed-statewide-homelessness.ts --
 Open:
 - The deep dive's headline "+67%" tile (Multnomah PIT, 2023 to 2025) and the hero's "14,361 → ~18,000 in one year" both describe change across a method change. Each is labeled with its measure, but Dr. Cho's caution argues for leading with levels. Edan's call.
 - Reply to Dr. Cho about the 5,090 people and the meeting.
+
+## Status, October 11, 2026
+
+- Edan sent the reply on October 10. Dr. Cho answered on October 11: Multnomah used its by-name list to identify people living unsheltered, then deduplicated those figures against the Point-in-Time survey (Tri-County report, p. 12). That settles conflict 11 in sources.md in favor of the published report and the site's current wording; no page changes.
+- She attached HRAC's PDXScholar copy of the Tri-County report; its text matches the county-hosted copy we cite (archived; `research/source-archive/2026-10-11.md`).
+- HRAC's team meets Wednesday, October 14; she will write after that about working together.
+- PR #114 is still open. Merged with main on October 11 (research-log conflict with the vote-labels entry; both kept). Still needs Edan's approval: merge, then the two `--apply` runs.

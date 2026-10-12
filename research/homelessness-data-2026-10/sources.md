@@ -197,7 +197,7 @@ On people who leave the county: the outflow categories the county lists (permane
 
 - **The "methodology report"** the PIT report cites (p. 12), which would give the number of days a person is presumed to stay unsheltered. Not found on hsd.multco.us/reports, pdx.edu, or by search.
 - **A Multnomah-only veteran count in the local report.** It gives only the tri-county figure, so use HUD's OR-501 figure of 626.
-- **PDXScholar copy of the PIT report** (https://pdxscholar.library.pdx.edu/hrac_pub/52). Not opened, because PDXScholar PDFs are behind a bot check. The county-hosted PDF was used instead. Its internal PDF title is "Suppressed Numbers Final - Nov 4 9:55am."
+- **PDXScholar copy of the PIT report** (https://pdxscholar.library.pdx.edu/hrac_pub/52). Not opened, because PDXScholar PDFs are behind a bot check. The county-hosted PDF was used instead. Its internal PDF title is "Suppressed Numbers Final - Nov 4 9:55am." Resolved October 11, 2026: Dr. Cho sent the PDXScholar copy (51 pages, PDF dated February 3, 2026; manifest `research/source-archive/2026-10-11.md`). Apart from the PDXScholar cover page its text is identical to the county-hosted file, so every page citation above holds.
 
 ---
 
@@ -433,4 +433,4 @@ What the check found in the database (October 8): `statewide_unsheltered_change`
 11. **What the by-name list contributed to the 2025 count.**
     - Dr. Cho wrote on October 8, 2026 that the HUD figures came from the Point-in-Time survey and that the by-name list served only as a supplementary source for finding and removing duplicates.
     - The Tri-County PIT report (HRAC, November 2025, p. 12) says Multnomah built a separate list from its by-name data of people "likely to be unsheltered the night of the count," and Table 3 (p. 22) counts 5,090 people from it (UNS-PITC-BNL), 48% of Multnomah's total.
-    - The two can both hold if "the By-Name List" in the email means the monthly list on the county dashboard rather than the count-night extract. Not resolved; asked in the reply drafted October 8. Until then the site follows the published report: 5,090 people "presumed unsheltered" from county records, a list distinct from the monthly by-name figures.
+    - **Resolved October 11, 2026.** Asked about it, Dr. Cho rechecked the Tri-County and statewide reports and wrote that Multnomah used its by-name list to identify people living unsheltered, then deduplicated those figures against the people found in the Point-in-Time survey, and pointed to p. 12. That matches the published report and the site's wording: 5,090 people presumed unsheltered, drawn from county records, added to the 1,822 found on the street after duplicates were removed. Her October 8 description (deduplication only) is superseded. No page changes.
