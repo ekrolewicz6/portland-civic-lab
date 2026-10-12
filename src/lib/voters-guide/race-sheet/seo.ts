@@ -5,6 +5,8 @@ import { ownWords } from "./content/own-words";
 import { byName, shortRaceTitle } from "./index";
 import { officeOf } from "./office";
 import type { MissingState } from "./types";
+import { contacts } from "./content/contacts";
+import { RESEARCH_LOG_UPDATED } from "../research-log";
 
 /**
  * Metadata, share-image copy and structured data for the Race Sheet routes.
@@ -26,9 +28,12 @@ const SITE = "Portland Civic Lab";
 const HUB_PATH = "/voters-guide";
 const HUB_LABEL = "2026 Portland Voter Guide";
 
-/** The Race Sheet's publication and last-modified dates, reported on every route. */
+/**
+ * The Race Sheet's publication date, and its last-modified date: the newest
+ * research-log entry, since every material change to a brief is logged there.
+ */
 export const RACE_SHEET_PUBLISHED = "2026-09-19";
-export const RACE_SHEET_MODIFIED = "2026-09-19";
+export const RACE_SHEET_MODIFIED = RESEARCH_LOG_UPDATED;
 
 /** Election day, as it appears in copy and in the share artwork. */
 export const ELECTION_DAY = "November 3, 2026";
@@ -218,7 +223,8 @@ export function raceMetadata(race: Race): Metadata {
 }
 
 export function candidateMetadata(race: Race, person: Candidate): Metadata {
-  return base(candidateTitle(race, person), candidateDescription(race, person), candidatePath(race, person));
+  const meta = base(candidateTitle(race, person), candidateDescription(race, person), candidatePath(race, person));
+  return { ...meta, openGraph: { ...meta.openGraph, type: "profile" } };
 }
 
 export function votesMetadata(race: Race): Metadata {
@@ -279,9 +285,27 @@ function candidateJobTitle(race: Race) {
   return `Candidate for ${raceFacts(race).seat}`;
 }
 
+/**
+ * The campaign's own published web addresses (site and social profiles, as
+ * the contacts research recorded them), so a search engine can tie the brief
+ * to the candidate's other pages. Email, phone and forms are not identities.
+ */
+export function candidateSameAs(person: Candidate): string[] {
+  const channels = contacts.find((x) => x.candidateId === person.id)?.channels ?? [];
+  return [...new Set(channels.filter((ch) => ch.kind === "website" || ch.kind === "social").map((ch) => ch.url))];
+}
+
 function personNode(race: Race, person: Candidate) {
   const url = absoluteUrl(candidatePath(race, person));
-  return { "@type": "Person", "@id": `${url}#person`, name: person.name, url, jobTitle: candidateJobTitle(race) };
+  const sameAs = candidateSameAs(person);
+  return {
+    "@type": "Person",
+    "@id": `${url}#person`,
+    name: person.name,
+    url,
+    jobTitle: candidateJobTitle(race),
+    ...(sameAs.length ? { sameAs } : {}),
+  };
 }
 
 /** Race page: WebPage + BreadcrumbList + an explicitly unordered ItemList of candidates, A–Z. */
@@ -328,9 +352,12 @@ export function candidateStructuredData(race: Race, person: Candidate) {
         description: person.summary,
         mainEntityOfPage: { "@id": `${url}#page` },
       },
-      webPage(candidatePath(race, person), candidateTitle(race, person), candidateDescription(race, person), {
-        mainEntity: { "@id": `${url}#person` },
-      }),
+      {
+        ...webPage(candidatePath(race, person), candidateTitle(race, person), candidateDescription(race, person), {
+          mainEntity: { "@id": `${url}#person` },
+        }),
+        "@type": "ProfilePage",
+      },
       breadcrumbList(`${url}#breadcrumb`, [...raceTrail(race), { name: person.name, item: url }]),
     ],
   };
