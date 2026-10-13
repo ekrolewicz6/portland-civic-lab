@@ -19,6 +19,25 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="neighbors-welcome-2026-10-12">October 12, 2026 · Review: Portland: Neighbors Welcome on housing (Portland Council)</h2>
+        <p>
+          Jesse Rawlins of Portland: Neighbors Welcome, a pro-housing group
+          that endorses candidates in these races, read the District 3 page
+          at our request. He said the summary’s “building new homes versus
+          protecting renters” set up a false choice, since his group and
+          others pursue both. The candidates’ own housing positions split
+          more on who builds, through faster permits for private builders or
+          through public and social housing, so the summary now says that,
+          and the race description no longer frames construction and tenant
+          protections as a balance. He said the candidates’ housing lines are
+          fine. Asked which housing decisions the next Council faces, he named
+          the Inner Eastside zoning project, which is his group’s current
+          campaign, along with social housing, money for affordable housing
+          now that the bond funds are committed, and tenant protections. The
+          District 3 and 4 pages now carry a “Housing” item under “Decisions
+          ahead” drawn from the City’s own records on each. No candidate’s
+          position changed.
+        </p>
         <h2 id="otero-2026-10-12">October 12, 2026 · Contact added: Cristal Otero (District 3)</h2>
         <p>
           Cristal Otero’s October 12 campaign update names the campaign’s

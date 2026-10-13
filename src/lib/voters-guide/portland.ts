@@ -460,7 +460,7 @@ export const portlandRaces: Race[] = [
     seats: 3,
     method: "Ranked choice · three seats",
     comparison:
-      "Compare how candidates would balance housing construction and tenant protections, police and unarmed response, and service commitments against taxes and utility bills. Candidates appear alphabetically; this is not a ranking.",
+      "Compare how candidates would get more homes built and protect renters, how they would mix police and unarmed response, and how they would weigh service commitments against taxes and utility bills. Candidates appear alphabetically; this is not a ranking.",
     candidates: d3,
   },
   {
