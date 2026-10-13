@@ -19,6 +19,16 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="otero-2026-10-12">October 12, 2026 · Contact added: Cristal Otero (District 3)</h2>
+        <p>
+          Cristal Otero’s October 12 campaign update names the campaign’s
+          Instagram account, @cristalforportland, which her page now lists
+          with her other contact channels. Her campaign site still links no
+          social profiles. The update also lists endorsements and online
+          drop-in sessions. The guide does not list endorsements for any
+          candidate and has no section for campaign events, so neither
+          appears. No position on her page changed.
+        </p>
         <h2 id="green-energy-institute-2026-10-12">October 12, 2026 · Review and correction: data-center figures (Governor, U.S. Senate and House, Legislature)</h2>
         <p>
           Carra Sahler, director and staff attorney of the Green Energy
