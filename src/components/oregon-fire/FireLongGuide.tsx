@@ -7,6 +7,8 @@ import FireMechanicsVisual from "./FireMechanicsVisual";
 import FireChoicesVisual from "./FireChoicesVisual";
 import FireSpendingEvidence from "./FireSpendingEvidence";
 import FireMaintenanceEvidence from "./FireMaintenanceEvidence";
+import FireRegionalContrast from "./FireRegionalContrast";
+import FireFundingPath from "./FireFundingPath";
 import FireVideoFeature from "./FireVideoFeature";
 import WhetstonePermitCase from "./WhetstonePermitCase";
 import FireRidge from "./FireRidge";
@@ -51,8 +53,8 @@ export default function FireLongGuide() {
           <div className="fire-long-hero-copy">
             <span className="fire-eyebrow">An Oregon field guide · Fire, land & choices</span>
             <h1>Fire in Oregon</h1>
-            <p className="fire-long-question">Fire is part of Oregon. The choices we make decide what happens next.</p>
-            <p className="fire-long-intro">Follow a fire across different landscapes. See why people burn some places on purpose, why other work stalls, what it costs, and how we can tell whether it helped.</p>
+            <p className="fire-long-question">Fire has shaped Oregon for thousands of years. Living with it takes different choices in different places.</p>
+            <p className="fire-long-intro">Start with how fire works. Then follow the choices people make—from a burn on the land to protecting a home—and the records that show what happened.</p>
             <div className="fire-hero-actions">
               <a className="fire-button fire-button-light fire-long-start" href="#how-fire-moves">Begin the story <ArrowDown size={18} aria-hidden="true" /></a>
               <a className="fire-text-link" href="#explore">Explore the atlas <ArrowUpRight size={16} aria-hidden="true" /></a>
@@ -72,6 +74,12 @@ export default function FireLongGuide() {
     </header>
     <FireSectionNav className="fire-long-nav" label="Chapters in the fire guide" items={orderedLessons.map((c, i) => ({ id: c.anchor, label: shortLabels[i], number: pad(i + 1) }))} />
     <div className="fire-wrap fire-long-body">
+      <nav className="fire-reader-routes" aria-label="Ways into the fire guide">
+        <div className="fire-reader-routes-intro"><span className="fire-eyebrow">Choose your starting point</span><h2>Begin with what you want to know.</h2><p>Read the whole story in order, or enter where your question begins.</p></div>
+        <a href="#how-fire-moves"><span>01 / Learn the basics</span><strong>How does fire change a place?</strong><small>Start with flames, embers and effects.</small><ArrowRight size={18} aria-hidden="true" /></a>
+        <a href="#what-success-means"><span>02 / Make a decision</span><strong>What can people do?</strong><small>See choices for land, homes and communities.</small><ArrowRight size={18} aria-hidden="true" /></a>
+        <a href="#find-place"><span>03 / Explore the evidence</span><strong>What happened near me?</strong><small>Find records around a place you know.</small><ArrowRight size={18} aria-hidden="true" /></a>
+      </nav>
       <nav className="fire-reader-questions" aria-label="Questions answered in the guide">
         <div><span className="fire-eyebrow">Start with a question</span><h2>What have you always wondered about fire?</h2></div>
         <div className="fire-reader-questions-grid">{readerQuestions.map((item, i) => <a key={item.text} href={`#${item.anchor}`}><span>{pad(i + 1)}</span>{item.text}<ArrowRight size={16} aria-hidden="true" /></a>)}</div>
@@ -85,11 +93,13 @@ export default function FireLongGuide() {
           <div className="fire-long-visual fire-wide">{visuals[i]}</div>
           <div className="fire-long-reading"><p className="fire-long-focus">{chapterQuestions[i]}</p>{chapter.paragraphs.map(p => <p key={p}>{p}</p>)}</div>
           {i === 0 && <div className="fire-two-questions"><div><span>During the fire / intensity</span><p>How much energy does it release?</p></div><div><span>After the fire / severity</span><p>What happened to trees, soil and habitat?</p></div></div>}
+          {i === 1 && <div className="fire-wide"><FireRegionalContrast /></div>}
           {i === 1 && <div className="fire-wide"><FireVideoFeature id="O6Vayv9FCLM" kicker="The big picture / 2017 talk" title="Why wildfires have gotten worse—and what we can do about it" publisher="Paul Hessburg · TEDxBend · 2017" context="A visual introduction to the patchwork of forests and past fires across western landscapes. The talk helps frame the question; the Oregon examples and current evidence on this page supply the local detail." watchFor={["How neighboring patches can carry different fire histories.", "Why thinning, planned fire, earlier wildfire and weather all matter.", "Where a landscape argument still needs a local objective and measured result."]} sourceUrl="https://www.ted.com/talks/paul_hessburg_why_wildfires_have_gotten_worse_and_what_we_can_do_about_it" /></div>}
           {i === 3 && <div className="fire-wide"><FireVideoFeature id="XpZemPMRkDw" kicker="In practice / US Forest Service" title="Prescribed fire in the Northwest" publisher="US Forest Service · Pacific Northwest Research Station" context="See the work behind a planned burn: the landscape goal, preparation, conditions and smoke planning. Woodpecker, below, gives one Oregon project a specific purpose." watchFor={["What crews decide before ignition.", "Why conditions can postpone a burn without changing its purpose.", "What records would show that work actually happened."]} sourceUrl="https://www.climatehubs.usda.gov/hubs/northwest/topic/prescribed-fire-northwest" /></div>}
           {i === 3 && <p className="fire-long-case-link"><Link href="/oregon-fire/stories/why-burn">Follow Woodpecker’s planning and burn <ArrowRight size={16} aria-hidden="true" /></Link><a href={LESSON_SOURCES.woodpecker.url}>Read OSU’s account <ArrowUpRight size={14} aria-hidden="true" /></a></p>}
           {i === 3 && <div className="fire-wide"><WhetstonePermitCase /></div>}
           {i === 4 && <>
+            <div className="fire-wide"><FireFundingPath /></div>
             <div className="fire-wide"><FireMaintenanceEvidence /></div>
             <div className="fire-cost-questions fire-wide">
               <div><h3>What would another million buy here?</h3><p>We need a place&apos;s ready projects, actual costs and available crews to answer that. Our <Link href="/oregon-fire/landscapes">landscape investigation</Link> is tracing those records.</p></div>
