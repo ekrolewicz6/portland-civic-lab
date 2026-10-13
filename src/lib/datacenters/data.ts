@@ -284,7 +284,7 @@ export const SOURCES = {
 } as const satisfies Record<string, Source>;
 
 /** Updated editorial review date; historical observations retain their own dates. */
-export const REVIEWED = "September 29, 2026";
+export const REVIEWED = "October 12, 2026";
 export const RATE_SHIFT = [
   { who: "Data centers served by PGE", changePct: 29.7, detail: "The new rates raised this group’s average electricity rate by 29.7% on July 8, 2026. The rules also use contracts to help keep data-center costs from falling on other PGE customers." },
   { who: "PGE residential customers", changePct: -1.3, detail: "This change lowered PGE’s average residential rate by 1.3%. A household’s bill still depends on how much electricity it uses and any other rate changes. These figures do not apply to every Oregon utility." },

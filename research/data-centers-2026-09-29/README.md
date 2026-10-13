@@ -77,3 +77,17 @@ The [September 2026 full study by ECONorthwest and the University of Virginia](h
 - These figures describe work supported by the industry, not employment caused by tax incentives or a verified count of local residents hired. The article deliberately avoids a combined total or a temporary/permanent percentage.
 
 Verified the report’s operations and construction tables visually (printed/PDF pp. 80 and 93) as well as reading the definitions and model notes. Added a direct article navigation link and page-specific PDF citations. The browser verification captures the new jobs section at desktop and mobile widths.
+
+
+## Facility count and property-tax figures added October 12, 2026
+
+Carra Sahler, director and staff attorney of the Green Energy Institute at Lewis & Clark Law School, reviewed the governor page's data-center moratorium board at the Lab's request (October 12, 2026), said it looks accurate, and pointed to the same September study for the number of data centers and the property-tax exemptions. She also noted the advisory committee's request for comments by October 24. Her reply is kept in the Lab's private correspondence, not in this repository.
+
+From the study (PDF re-saved October 5, 2026; archived in `research/source-archive/2026-10-12.md`):
+
+- **Facilities** (pp. 6, 22): 111 operating as of 2025 and 32 planned or under construction through 2030, from S&P Global 451 Research. S&P's source records number 144 operating and planned; one lacked data, leaving 143. Planned sites are only those S&P judged likely to be built. Washington, Morrow, Umatilla and Crook counties hold about 81% of operating sites (p. 7). The "about 144 data centers" in news reports of the September 8, 2026 hearing counts operating and planned together; the voters guide had repeated it as if all were operating.
+- **Property taxes levied** (Exhibit 7.3, p. 112): $60,246,774 on data-center property in FY 2025–26, likely an undercount (four sites had no matching tax account). Morrow $22,968,367 (31.9% of the county total); Washington $20,588,084 (1.2%).
+- **Exempted**: Business Oregon reports about $233 million in property taxes exempted for data-center projects in long-term rural enterprise zones in FY 2023–24 (p. 104). The Oregonian estimates more than $450 million in 2026 exemptions across all programs statewide (p. 128); the Legislative Revenue Office called that "pretty close" on September 8, 2026 (Oregon Capital Chronicle via JPR, September 9).
+- The study says the levied and exempted figures are not comparable and that an exemption is not automatically forgone revenue (pp. 13–14, 128).
+- **Electricity** (p. 8): about 14.05 TWh in 2025, about 23% of statewide retail sales; about 24.76 TWh in 2030 from operating and pipeline facilities. Replaces the July preliminary 14.0 and 24.8.
+- **Advisory committee**: preliminary learnings released September 10, 2026; written comments open until 5 p.m. October 24, 2026 (ODOE committee page, archived October 12).

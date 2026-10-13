@@ -19,6 +19,28 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="green-energy-institute-2026-10-12">October 12, 2026 · Review and correction: data-center figures (Governor, U.S. Senate and House, Legislature)</h2>
+        <p>
+          Carra Sahler, director and staff attorney of the Green Energy
+          Institute at Lewis &amp; Clark Law School, checked the data-center
+          moratorium board on the Governor page at our request and said it
+          looks accurate. She pointed us to a September 2026 study of
+          Oregon’s data-center industry by ECOnorthwest and the University of
+          Virginia, prepared for the Lemelson Foundation. Under “Decisions
+          ahead,” several race pages said Oregon has about 144 data centers
+          and about $450 million a year in property-tax breaks. The study
+          counts 111 data centers operating and 32 more planned or under
+          construction; the 144 reported at the September 8 legislative
+          hearing counted both. The $450 million is The Oregonian’s estimate
+          of this year’s breaks across all programs. Those items now give
+          both counts and name The Oregonian as the source of the estimate.
+          The Governor page also adds the study’s figures for property taxes
+          billed to data centers in 2025–26 (about $60 million) and for one
+          rural tax-break program’s exemptions in 2023–24 ($233 million). She
+          also noted that the governor’s advisory committee is taking public
+          comments on its preliminary findings until October 24, and the
+          moratorium board now says so. No candidate’s position changed.
+        </p>
         <h2 id="vote-labels-2026-10-08">October 8, 2026 · Correction: every recorded vote now says what it was cast on (Portland Council)</h2>
         <p>
           On the Council choices beneath each race grid, a sitting
