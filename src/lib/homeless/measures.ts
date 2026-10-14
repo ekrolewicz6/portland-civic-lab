@@ -36,7 +36,7 @@ export const MEASURES: Measure[] = [
     name: "By-name list",
     latest: "About 18,000 people in January 2026, about 8,800 of them unsheltered.",
     what: "The county’s monthly roster of everyone in its homeless services database: people who stayed in a shelter, met an outreach worker, signed up for housing or used certain day centers. People leave it when they are housed, after a stretch without contact, or when they die.",
-    caveat: "It covers everyone in contact with services over months, so it runs well above a one-night count and is a different measure; the gap between the two may come from the methods alone and is not evidence that homelessness grew. County staff said in September 2026 that people will drop off after 60 to 90 days without contact instead of 90 to 180, removing about 3,500 people and restating the list back to January 2024. The county’s dashboard was offline for maintenance as of October 7, 2026.",
+    caveat: "It covers everyone in contact with services over months, so it runs well above a one-night count and is a different measure; the gap between the two may come from the methods alone and is not evidence that homelessness grew. County staff said in September 2026 that people will drop off after 60 to 90 days without contact instead of 90 to 180, removing about 3,500 people and restating the list back to January 2024. The county took the dashboard down in September 2026 for quality work that will change its estimates and expects it back by the end of October 2026, updated monthly; each month is published over a month after it closes so providers can finish entering data (county data team, October 14, 2026).",
     sources: ["byName", "opbByName2026", "byNameMethodChange"],
   },
   {

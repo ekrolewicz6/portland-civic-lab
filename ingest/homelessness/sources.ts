@@ -56,7 +56,7 @@ export const DATASETS: Dataset[] = [
     loadedThrough: "2026-03",
     refreshedOn: "2026-10-07",
     refresh: "manual: transcribe the new edition's monthly totals into BY_NAME_TOTALS in ingest/fix-homelessness-pit-2026-10.ts and run with --apply",
-    notes: "January 2024 to October 2025 come from the county's October 2025 dashboard edition; March 2026 (18,480) from the county's June 2026 KPI deck (ingest/homelessness/refresh-2026-10-07.ts). Offline for maintenance as of 2026-10-07; HSD was asked on 2026-10-08 when it returns and how often it will update. The county will restate the series back to January 2024 under a 60-to-90-day inactivity rule (about 20% lower); replace every month when it returns. Each edition can change earlier months.",
+    notes: "January 2024 to October 2025 come from the county's October 2025 dashboard edition; March 2026 (18,480) from the county's June 2026 KPI deck (ingest/homelessness/refresh-2026-10-07.ts). Offline since September 2026 for quality work. The county's data team (Lori Kelley, 2026-10-14) expects the full dashboard back by the end of October 2026, updated monthly, each month published over a month after its final close date so providers can finish entering data and staff can review it; they said the changes will alter estimates and declined detail until it is republished. The county will restate the series back to January 2024 under a 60-to-90-day inactivity rule (about 20% lower); replace every month when it returns. Each edition can change earlier months.",
   },
   {
     table: "homelessness.statewide_pit_by_county",

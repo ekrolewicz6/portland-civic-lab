@@ -80,3 +80,11 @@ Open:
 - She attached HRAC's PDXScholar copy of the Tri-County report; its text matches the county-hosted copy we cite (archived; `research/source-archive/2026-10-11.md`).
 - HRAC's team meets Wednesday, October 14; she will write after that about working together.
 - PR #114 is still open. Merged with main on October 11 (research-log conflict with the vote-labels entry; both kept). Still needs Edan's approval: merge, then the two `--apply` runs.
+
+## Status, October 14, 2026
+
+Lori Kelley of the county's HSD data team answered the October 8 email: the full by-name dashboard should be back by the end of October 2026 and stay monthly; each month is published over a month after its final close date so providers can finish entering data and staff can review it; the quality work will change estimates, and they will not give details until it is republished. She pointed to the OregonLive article we already cite. Jenna Kıvanç, the data team's manager, forwarded the request to her.
+
+Done: `measures.ts`, the dashboard's method note, `sources.ts`, `SOURCES.md`, the transparency seed and the research notes now carry the county's schedule in place of "offline as of October 7". Added to PR #114.
+
+Next: when the dashboard returns (check from October 26), replace the whole `by_name_list` series under the new method, update `STATS.byNameTotal` / `byNameAsOf`, `MEASURES`, the voter guide's county items (about 18,000 and 8,800 will change) and the research log; save the new edition's image to the source archive first.

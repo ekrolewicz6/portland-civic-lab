@@ -27,7 +27,7 @@ Everything else is loaded by hand.
 
 - **Eviction filings**: `npx tsx ingest/fetch-hsd-dashboard.ts --apply`. Evicted in Oregon updates around the 15th. The script finds the newest chart version, reads the period printed on the chart page and dates the CSV's year-less month columns from it; it refuses to load if they disagree.
 - **Home Forward vacancy**: read https://www.homeforward.org/performance-dashboard/ in a browser (it shows only the current figure), save a screenshot to the archive, and add a row.
-- **By-name list**: the county's dashboard (https://hsd.multco.us/data-dashboard/) was offline for maintenance as of October 7, 2026. When it returns, the county will have restated every month back to January 2024 under a shorter inactivity rule (about 20% lower). Replace the whole series, not just the new months, and update `MEASURES` in `src/lib/homeless/measures.ts` and the voter guide's county items.
+- **By-name list**: the county's dashboard (https://hsd.multco.us/data-dashboard/) has been offline since September 2026 for quality work. The county's data team said on October 14, 2026 that it expects the full dashboard back by the end of October, updated monthly, each month published over a month after its final close date (so two to three months behind) to let providers finish entering data. When it returns, the county will have restated every month back to January 2024 under a shorter inactivity rule (about 20% lower). Replace the whole series, not just the new months, and update `MEASURES` in `src/lib/homeless/measures.ts` and the voter guide's county items.
 
 ## Each January: HRAC's statewide estimates
 

@@ -1114,7 +1114,9 @@ export default function HomelessnessDetail() {
                 homeless services database. Outflow counts people housed, people moved to
                 inactive after a stretch without contact, and deaths, so it is not a count of
                 housing exits. County staff said in September 2026 that a shorter inactivity
-                window will remove about 3,500 people and restate the list back to January 2024.
+                window will remove about 3,500 people and restate the list back to January 2024. The
+                county expects the dashboard back by the end of October 2026, updated monthly, with each
+                month published over a month after it closes so providers can finish entering data.
               </p>
               <p>
                 <strong>Eviction Filings:</strong> From Evicted in Oregon

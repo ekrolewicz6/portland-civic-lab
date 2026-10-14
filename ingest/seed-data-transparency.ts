@@ -48,7 +48,7 @@ const DATA_SOURCES = [
     scope: "Anyone who has been assessed by a Multnomah County funded homeless service provider.",
     what_it_misses:
       "People who never access services, who refuse intake, or who only use non-HMIS providers (e.g. some faith-based shelters). Can include people who have since become housed if not promptly updated.",
-    update_frequency: "monthly (dashboard offline for maintenance as of Oct. 2026)",
+    update_frequency: "monthly; each month published over a month after it closes (offline for quality work; county expects it back by end of Oct. 2026)",
     last_updated: "2026-03-31",
     next_expected: "2026-10-31",
     url: "https://hsd.multco.us/data-dashboard/",

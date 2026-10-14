@@ -22,6 +22,10 @@ The live dashboard is offline. The HSD page still embeds the same Tableau workbo
 | Dashboard status | Maintenance placeholder; no data shown | As of Oct 7, 2026 | https://public.tableau.com/static/images/Mu/MultnomahCountyHomelessServicesDepartmentDataDashboard_17447622060640/TotalPopulation/1.png (the image the HSD page embeds) | 2026-10-07 | "Status: Temporarily Unavailable" ... "Expected Return: October 2026" |
 | Workbook last republished | 2026-09-19 00:27 UTC (Sept 18, 2026, Pacific); now one sheet; data download disabled | Sept 2026 | https://public.tableau.com/profile/api/single_workbook/MultnomahCountyHomelessServicesDepartmentDataDashboard_17447622060640 | 2026-10-07 | "lastPublishDate":1789777625240 ... "allowDataAccess":false |
 | HSD page describing the dashboard | Monthly | Ongoing | https://hsd.multco.us/data-dashboard/ | 2026-10-07 | "a monthly view of data that helps us track our progress" |
+| Return date (county data team) | Full dashboard back by end of October 2026, then monthly | Oct 14, 2026 | Lori Kelley, Multnomah County HSD data team, email to the Lab (kept locally, not in the repo) | 2026-10-14 | "back up by end of October, and it will be updated regularly (monthly)" |
+| Publication lag (county data team) | Over a month after each month's final close date; reads as several months behind | Same | Same | 2026-10-14 | "to allow providers to fully enter data" |
+| Why it is down (county data team) | Quality improvements that will change estimates; no detail until republished | Same | Same | 2026-10-14 | "quality improvements, which will change estimates" |
+| County's own account of the change | The data team pointed to OregonLive's Sept. 25 article as describing the changes | Same | https://www.oregonlive.com/politics/2026/09/multnomah-county-is-adjusting-the-way-it-tracks-who-is-homeless-heres-why.html (original of the Yahoo copy cited in 1b; returns 403 to scripts) | 2026-10-14 | (link only) |
 
 ### 1b. Most recent months found
 
