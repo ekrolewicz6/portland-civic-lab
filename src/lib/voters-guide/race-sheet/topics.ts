@@ -8,6 +8,13 @@ import type { ExtraTopic } from "./types";
  */
 export const extraTopics: ExtraTopic[] = [
   {
+    id: "inner-eastside",
+    label: "Inner Eastside zoning",
+    short: "Zoning",
+    question: "Rezone the inner east side to allow apartment buildings off the main streets (the Inner Eastside Zoning Project)?",
+    context: "Resolution 37746, which set a goal of Council consideration by June 30, 2027, passed 12–0 on April 15, 2026 with every sitting councilor voting yes; planners schedule the zoning vote for 2028, and no draft zoning exists yet. The study area runs from NE Fremont Street to SE Powell Boulevard.",
+  },
+  {
     id: "moda",
     label: "Moda Center deal",
     short: "Moda",
