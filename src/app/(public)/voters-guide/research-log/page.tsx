@@ -19,6 +19,28 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="inner-eastside-2026-10-14">October 14, 2026 · New choice: Inner Eastside zoning (Portland Council, Districts 3 and 4)</h2>
+        <p>
+          Jesse Rawlins of Portland: Neighbors Welcome sent the public folder
+          of answers to the group’s 2026 endorsement questionnaire. Sixteen
+          of the 33 certified Council candidates answered it, including a
+          direct question: would they vote to approve the Inner Eastside
+          Zoning Project, which would allow apartment buildings off the main
+          streets between NE Fremont Street and SE Powell Boulevard. Both
+          district pages now carry that choice as a board. Fourteen of the
+          sixteen said yes. Kimberly Tucker’s answer depends on the timeline
+          and on completed risk assessments, and Patrick Hilton wants a long
+          investigation first, so both read as mixed. The other seventeen
+          candidates’ campaign home pages do not mention the project, so
+          their entries are gaps, not positions. The board’s context notes
+          that every sitting councilor voted for the April 15, 2026
+          resolution that set the project’s timeline; the zoning itself has
+          not come to a vote. The questionnaire now appears among each
+          respondent’s sources. The group endorses in these races; the
+          answers are the candidates’ own words, and the Lab adopted no
+          rating from them. One file in the folder is from a person who is
+          not on the certified candidate list and was not used.
+        </p>
         <h2 id="neighbors-welcome-2026-10-12">October 12, 2026 · Review: Portland: Neighbors Welcome on housing (Portland Council)</h2>
         <p>
           Jesse Rawlins of Portland: Neighbors Welcome, a pro-housing group

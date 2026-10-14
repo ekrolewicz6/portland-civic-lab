@@ -1,5 +1,6 @@
 import type { Evidence } from "../../types";
 import type { TopicStance } from "../types";
+import { pnwQuestionnaire } from "./pnw-questionnaire";
 
 /**
  * District 4: explicit, sourced stances on the extra topics. Never inferred.
@@ -210,6 +211,17 @@ const clarkStaffingPost = post(
   "April 16, 2026",
 );
 
+/** Stances read from Portland: Neighbors Welcome’s published questionnaire answers on October 14, 2026. */
+const reviewed14 = { reviewedBy: "pending", reviewedOn: "2026-10-14" } as const;
+const pnwStance = (
+  candidateId: string,
+  topicId: string,
+  s: TopicStance["stance"],
+  chip: string,
+  text: string,
+  source: Evidence,
+): TopicStance => ({ candidateId, topicId, stance: s, chip, text, source, ...reviewed14 });
+
 export const topicStancesD4: TopicStance[] = [
   /* ── Timothy (TJ) Anderson ──────────────────────────────────────────── */
   stance("timothy-tj-anderson", "new-taxes", "opposes", "None until audit done",
@@ -384,4 +396,24 @@ export const topicStancesD4: TopicStance[] = [
   stance("eric-zimmerman", "street-response", "partial", "PSR may transport patients",
     "Would let Street Response transport people to sobering centers and psychiatric emergency care; the page does not say whether it should run 24/7.",
     zimmermanSafety),
+
+  /* ── Inner Eastside zoning: Portland: Neighbors Welcome questionnaire, read October 14, 2026 ── */
+  pnwStance("eric-zimmerman", "inner-eastside", "supports", "Yes",
+    "Answered the question with one word: yes.",
+    pnwQuestionnaire("eric-zimmerman")),
+  pnwStance("jamey-evenstar", "inner-eastside", "supports", "Yes, ideal for density",
+    "Yes; calls the inner east side ideal for upzoning given its amenities, and says she was part of the council office that worked with the group on the April resolution that sped up the project.",
+    pnwQuestionnaire("jamey-evenstar")),
+  pnwStance("jeremy-beausoleil-smith", "inner-eastside", "supports", "Yes, build faster",
+    "Would vote to approve the project and re-legalize apartments, and would speed construction with modular and mass-timber building.",
+    pnwQuestionnaire("jeremy-beausoleil-smith")),
+  pnwStance("mitch-green", "inner-eastside", "supports", "Yes, co-sponsored timeline",
+    "Will vote yes when it reaches Council; co-sponsored the 2026 resolution that set the timeline, and calls legalizing apartments off corridors the fix for the city’s 1981 downzoning.",
+    pnwQuestionnaire("mitch-green")),
+  pnwStance("olivia-clark", "inner-eastside", "supports", "Yes",
+    "Answered yes; elsewhere in the questionnaire she says she has supported Council’s work on inner east side zoning, permit streamlining and the three-year waiver of system development charges.",
+    pnwQuestionnaire("olivia-clark")),
+  pnwStance("timothy-tj-anderson", "inner-eastside", "supports", "Yes",
+    "Answered the question with one word: yes.",
+    pnwQuestionnaire("timothy-tj-anderson")),
 ];
