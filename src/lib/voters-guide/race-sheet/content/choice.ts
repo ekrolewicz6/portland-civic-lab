@@ -12,7 +12,7 @@ import { packs } from "./packs";
 const councilChoice: ChoiceParagraph[] = [
   {
     raceId: "portland-district-3",
-    text: "Candidates differ on how far to rely on building new homes versus protecting renters, on the mix of police and unarmed responders, and on how far to lean on taxes and utility bills versus trimming services. Many propose some of each.",
+    text: "Candidates differ on how far to rely on faster permits for private builders versus public and social housing, on the mix of police and unarmed responders, and on how far to lean on taxes and utility bills versus trimming services. Many propose some of each.",
     from: "race.comparison",
     reviewedBy: "pending",
     reviewedOn: "2026-09-19",

@@ -1,8 +1,16 @@
 # Oregon Fire Map — current sourcebook
 
-Updated October 2, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public data exists for an initial map; comprehensive coverage and a site-selection explanation for every burn remain goals, not established facts.
+Updated October 12, 2026. Edan Krolewicz and Dominic Kuklawood. Enough public data exists for an initial map; comprehensive coverage and a site-selection explanation for every burn remain goals, not established facts.
 
-**Current direction:** [Fire in Oregon: project charter](TRUE-NORTH.md) defines the public guide and one evidence-led landscape investigation. The [one-page brief](TRUE-NORTH-ONE-PAGER.md), [reader-question and claim register](question-evidence-register-2026-09-30.json), [pilot screening](pilot-screening-2026-09-30.md), [acquisition and delivery register](true-north-work-register-2026-09-30.md), and [implementation and release record](true-north-implementation-2026-10-02.md) govern the next work. Earlier plans below remain dated history. The private September 30 interview, notes, and claim audit are stored outside this repository and every deployment input.
+**Current direction:** [Fire in Oregon: project charter](TRUE-NORTH.md) is the quick reference; the [full detailed true-north plan](TRUE-NORTH-DETAILED.md) preserves the original questions, research method, delivery sequence, and acceptance criteria. The [one-page brief](TRUE-NORTH-ONE-PAGER.md), [reader-question and claim register](question-evidence-register-2026-09-30.json), [pilot screening](pilot-screening-2026-09-30.md), [acquisition and delivery register](true-north-work-register-2026-09-30.md), and [implementation and release record](true-north-implementation-2026-10-02.md) govern the next work. Earlier plans below remain dated history. The private September 30 interview, notes, and claim audit are stored outside this repository and every deployment input.
+
+**New acquisition:** [Rivers to Ridges intake and integration plan](rivers-to-ridges-intake-2026-10-07.md) audits the October 6 GIS and historical-acreage attachments. They are received and inspected, but not imported or published. Mapped unit boundaries must remain separate from confirmed burn accomplishments; the files contain year/acreage mismatches, repeated polygons, a major boundary outlier, and contact fields to exclude from public outputs.
+
+**USGS source review:** [Michelle Jeffries's October 9 follow-up materials](usgs-jeffries-materials-2026-10-10.md) distinguishes treatment records, fire perimeters, observed burned area, severity, and field monitoring. It evaluates each public link for a named reader question and records what still needs download or reconciliation. The October 9 conversation is not documented in this repository.
+
+**Audience and Extension-source review:** [October 12 editorial priorities](audience-and-extension-source-plan-2026-10-12.md) turn a private practitioner conversation into source-checked next steps: a clearer entry for newcomers, a place-specific learning path, one documented burn through time, and an ODF/OSFM funding account. The conversation and any unapproved attribution remain private.
+
+**Reader-path revision:** [October 12 release candidate](reader-path-release-2026-10-12.md) records the implemented guide entry paths, sourced regional contrast, distinct ODF/OSFM money stages, local record-reading exercise, and verification. Live publication status is tracked separately.
 
 Start with [the dated audit](audit-2026-09-11.md) and [implementation notes](implementation.md). The working page is `/oregon-fire` in Portland Civic Lab. Original research is preserved in `archive-2026-09-10/`, which contains superseded claims and is not the current sourcebook.
 
@@ -24,7 +32,7 @@ Start with [the dated audit](audit-2026-09-11.md) and [implementation notes](imp
 ## Use this now
 
 1. Review representative mapped records and the Woodpecker explanation with co-authors. The story has no invented map pin.
-2. Send individually reviewed requests first to ODF, DEQ, LRAPA and Oregon Explorer. Ask ODF for a 2025 sample/schema, registrations, authorizations and individual ignitions/accomplishments. Begin tribal partnership conversations alongside these requests.
+2. Continue the active ODF, DEQ, LRAPA and Oregon Explorer threads without duplicate requests. The LRAPA/Rivers to Ridges files arrived October 6; see the intake audit before importing them, and await a separate 2026 accomplishment update after permits expire October 31. Ask ODF for a 2025 sample/schema, registrations, authorizations and individual ignitions/accomplishments. Begin tribal partnership conversations alongside these requests.
 3. Ask federal stewards for identifiers and document crosswalks, and district/practitioner hubs for a few site-specific explanations. Obtain ODA, refuge/park and LTDL data next.
 4. Edan authorized production release on September 11, 2026. Representative-record review remains an editorial follow-up. Six-hour archival configuration activates with the production deployment; see verification.md for release results.
 

@@ -317,6 +317,7 @@ const councilContacts: CandidateContact[] = [
     [
       web("https://www.cristalforportland.com/", "pamphlet"),
       form("https://www.cristalforportland.com/volunteer", "Volunteer form", "site"),
+      social("Instagram", "https://www.instagram.com/cristalforportland/", "announcement"),
     ],
     [
       pamphlet(59),
@@ -325,6 +326,13 @@ const councilContacts: CandidateContact[] = [
         "https://www.cristalforportland.com/volunteer",
         "The site lists no email, phone or social profiles; the volunteer page embeds a Google Form.",
       ),
+      {
+        label: "Otero · campaign update to supporters, October 12, 2026",
+        url: "https://www.instagram.com/cristalforportland/",
+        kind: "Candidate statement",
+        date: "October 12, 2026",
+        note: "Her campaign update, sent by email to supporters and the Lab and kept on file, names this Instagram account as the campaign’s. Her site still links no social profiles (checked October 12, 2026).",
+      },
     ],
   ),
 

@@ -182,6 +182,14 @@ export default function PlaceFinder() {
                 </>
               )
             )}
+            <div className="fire-place-reading-card">
+              <strong>Try one record, not just the count.</strong>
+              <ol>
+                <li>Was this a plan, a permit, a completed treatment, or a wildfire?</li>
+                <li>What did the source say about its purpose and location?</li>
+                <li>Is there a later observation—or is the result still unknown?</li>
+              </ol>
+            </div>
             <button
               className="fire-guide-primary"
               onClick={() =>

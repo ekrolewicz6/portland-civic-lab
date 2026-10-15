@@ -1175,7 +1175,7 @@ const legislatureTopics: ExtraTopic[] = [
     short: "Data centers",
     question: "Make data centers pay their own way: separate power rates, an end to tax breaks, or a pause on new ones?",
     context:
-      "Oregon has about 144 data centers and roughly $450 million a year in property-tax breaks, a figure the Legislative Revenue Office called “pretty close” on September 8, 2026. The 2025 POWER Act (HB 3546) put them in their own electricity rate class; the governor paused data-center deals on state land through July 1, 2027 and will bring the 2027 session a statewide framework.",
+      "Oregon has 111 operating data centers and 32 more planned or under construction, a September 2026 study found. The Oregonian reported they will get at least $450 million in property-tax breaks this year, a figure the Legislative Revenue Office called “pretty close” on September 8, 2026. The 2025 POWER Act (HB 3546) put them in their own electricity rate class; the governor paused data-center deals on state land through July 1, 2027 and will bring the 2027 session a statewide framework.",
   },
   {
     id: "leg-shelter-funding",
@@ -1494,8 +1494,6 @@ const opbOdotCuts = { label: "OPB, from the Oregon Capital Chronicle · ODOT fac
 const hb5011Report = record("Legislative Fiscal Office · HB 5011 budget report, Housing and Community Services Department 2025–27", `${OLIS}/2025R1/Downloads/CommitteeMeetingDocument/308817`,
   "June 2025; reviewed September 22, 2026",
   "Bed, rehousing and prevention counts are from the governor's January 9, 2026 release on Executive Order 26-01 (apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-issues-executive-order-to-extend-homelessness-emergency).");
-const jprDc = { label: "Oregon Capital Chronicle, via Jefferson Public Radio · Kotek pauses data centers on state land; demonstrators want more", url: "https://www.ijpr.org/politics-government/2026-09-09/gov-kotek-pauses-data-centers-on-state-land-capitol-demonstrators-want-her-to-go-further", kind: "Reporting" as const, date: "September 9, 2026; reviewed September 22, 2026",
-  note: "The pause and the advisory committee's year-end deadline are in the governor's September 8, 2026 release (apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-pauses-work-on-requests-for-state-land-to-support-new-data-centers)." };
 const cjcReport = record("Oregon Criminal Justice Commission · Behavioral Health Initiatives Report", "https://www.oregon.gov/cjc/CJC%20Document%20Library/2025_CJC_Behavioral_Health_Initiatives_Report.pdf", "November 1, 2025; reviewed September 22, 2026");
 const lroHb3940 = record("Legislative Revenue Office · revenue impact of HB 3940 -A24", `${OLIS}/2025R1/Downloads/CommitteeMeetingDocument/309208`,
   "June 19, 2025; reviewed September 22, 2026",
@@ -1517,6 +1515,8 @@ const opbGresham = { label: "OPB · Gresham family detained by immigration offic
   note: "SB 1570's hospital-policy requirement is described in the governor's April 9, 2026 release." };
 
 type StakeItem = RaceStakes["items"][number];
+const dcStudy: Evidence = { label: "ECOnorthwest and the University of Virginia · Understanding Oregon’s Data Center Industry (study for the Lemelson Foundation)", url: "https://econw.com/wp-content/uploads/ECOnorthwest_Understanding-Oregons-Data-Center-Industry_Full-Report.pdf", kind: "Reporting", date: "September 2026; reviewed October 12, 2026",
+  note: "Facility counts on page 22: 111 operating and 32 planned or under construction through 2030 (the 144 records reported at the September 8, 2026 hearing include both). The Oregonian’s $450 million estimate is on page 128. The Legislative Revenue Office’s “pretty close” is from Oregon Capital Chronicle reporting via Jefferson Public Radio, September 9, 2026 (ijpr.org/politics-government/2026-09-09/gov-kotek-pauses-data-centers-on-state-land-capitol-demonstrators-want-her-to-go-further). The pause and the advisory committee’s year-end deadline are in the governor’s September 8, 2026 release (apps.oregon.gov/oregon-newsroom/OR/GOV/Posts/Post/governor-kotek-pauses-work-on-requests-for-state-land-to-support-new-data-centers)." };
 const budgetGapItem: StakeItem = { label: "2027–29 budget gap", source: oeaForecast,
   text: "Federal H.R. 1 is projected to open a gap between the cost of current programs and revenue, so the Chief Financial Office told agencies on February 10, 2026 that 2027–29 requests must be revenue-neutral. September’s forecast shows a $400 million 2025–27 ending balance, $3.46 billion in reserves (9.7% of the general fund) and no kicker due on 2028 returns." };
 const disconnectItem: StakeItem = { label: "Tax disconnect", source: lroSb1507,
@@ -1525,8 +1525,8 @@ const roadFundingItem: StakeItem = { label: "Road funding", source: opbOdotCuts,
   text: "Voters repealed HB 3991’s gas-tax and fee increases in May 2026, and the 2026 session redirected existing money to close ODOT’s $297 million gap through June 2027. ODOT now projects a $200 million gap for 2027–29 and nearly 200 maintenance-job cuts; the governor’s workgroup owes recommendations for a 2027 package by year’s end." };
 const shelterCliffItem: StakeItem = { label: "Shelter money cliff", source: hb5011Report,
   text: "The statewide shelter program has $204.9 million for 2025–27, $102.5 million of it one-time money that ends June 30, 2027, and the homelessness emergency runs through January 10, 2027. The state counts 6,286 shelter beds added or kept, 5,539 people rehoused and 25,942 households kept housed since January 2023." };
-const dataCenterItem: StakeItem = { label: "Data centers", source: jprDc,
-  text: "About 144 data centers get roughly $450 million a year in property-tax breaks, a figure the Legislative Revenue Office called “pretty close” on September 8, 2026. Data-center deals on state land are paused through July 1, 2027, and the governor’s advisory committee owes recommendations for a 2027 bill by the end of 2026." };
+const dataCenterItem: StakeItem = { label: "Data centers", source: dcStudy,
+  text: "Oregon has 111 operating data centers and 32 more planned or under construction, a September 2026 study found. The Oregonian reported they will get at least $450 million in property-tax breaks this year, a figure the Legislative Revenue Office called “pretty close” on September 8, 2026. Data-center deals on state land are paused through July 1, 2027, and the governor’s advisory committee owes recommendations for a 2027 bill by the end of 2026." };
 const deflectionItem: StakeItem = { label: "Deflection funding", source: cjcReport,
   text: "HB 4002’s county deflection programs, run by 28 counties and six tribes in the first cycle, have $40 million for 2025–27; through August 4, 2025 the state logged 2,096 deflection events, 1,308 program entries and 277 completions. The 2027–29 budget decides whether the grants continue." };
 const wildfireItem: StakeItem = { label: "Wildfire costs", source: lroHb3940,

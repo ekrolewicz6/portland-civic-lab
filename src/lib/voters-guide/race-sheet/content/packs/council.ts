@@ -77,6 +77,12 @@ const shelterChanges = record(
   "July 21, 2026; updated August 24, 2026",
   "The FY 2026–27 budget cut shelter services by $18 million (31%) to $40 million (City release, June 18, 2026). Site capacities are as the page lists them; the Clinton Triangle shelter is at 1490 SE Gideon St in Hosford-Abernethy, and SE Grand Recovery (636 SE Grand Ave, 140 beds) and CityTeam Grand (526 SE Grand Ave, 80 beds) are recovery-oriented overnight shelters in Buckman.",
 );
+const housingPlans = record(
+  "Bureau of Planning and Sustainability · Inner Eastside Zoning Project status and timeline report",
+  "https://efiles.portlandoregon.gov/record/17978931/file/document",
+  "July 27, 2026; reviewed October 12, 2026",
+  "Schedules a proposed draft and Planning Commission review in fall 2027 and Council consideration in 2028 (winter in the schedule, spring in a section heading); the study area covers all or parts of 18 neighborhoods, 6,931 acres. Resolution 37746 (portland.gov/council/documents/resolution/adopted/37746) was adopted as amended 12–0 on April 15, 2026. The City’s 2016 bond is “fully committed in 15 projects” (Bond Oversight Committee expenditure report, June 24, 2026); Portland’s share of the Metro bond is “All funds allocated or earmarked” (portland.gov/phb/metro-housing-bond); the Housing Production Strategy progress page lists “Replace Housing Bonds revenue source” for 2027. The social housing study (portland.gov/phb/social-housing-study) was submitted August 31, 2026. The renter-protection evaluation is in the Housing Bureau’s September 15, 2026 briefing on relocation assistance (Council item 2026-322).",
+);
 const kellerPsu = record(
   "Resolution 37752 · a new PSU venue and the Keller Auditorium’s future, adopted text and roll call",
   `${COUNCIL_DOCS}/resolution/adopted/37752`,
@@ -93,6 +99,12 @@ const stakeBudget: StakeItem = {
   text:
     "Council balanced the $8.55 billion FY 2026–27 budget (about $803.4 million of it discretionary) against a $170 million General Fund gap with roughly 140 positions cut, $47 million from reserves and contingency and $27 million of Clean Energy Fund interest. A September 2026 workgroup report before Council on September 23 finds citywide assessed value growth below 2.2% for two years running and personnel at about 70% of ongoing General Fund bureau costs, and recommends biennial budgets, a defined list of core services and a new revenue strategy.",
   source: fsrpReport,
+};
+const stakeHousing: StakeItem = {
+  label: "Housing",
+  text:
+    "Resolution 37746 (12–0, April 15, 2026) set a goal of Council consideration by June 30, 2027 of zoning for more apartments and mixed-use buildings in the inner east side, from NE Fremont Street to SE Powell Boulevard; the planners’ schedule puts it before Council in 2028. Portland’s 2016 housing bond and its share of Metro’s 2018 bond are fully committed, and the City’s housing plan sets 2027 for a replacement source. A social housing study reached Council on August 31, 2026, and the Housing Bureau is evaluating renter protections, including relocation payments.",
+  source: housingPlans,
 };
 const stakeModa: StakeItem = {
   label: "Moda Center deal",
@@ -168,12 +180,12 @@ const stakes: RaceStakes[] = [
   {
     raceId: "portland-district-3",
     intro: `${ROLE} District 3 covers inner Southeast and a slice of inner Northeast, from Buckman and Kerns to Montavilla and Woodstock. ${TERM}`,
-    items: [stakeBudget, stakeModa, stakeCamping, stakeShelterD3, stakeStreetResponse, stakeBills, stakePolice, stakeDataCenters],
+    items: [stakeBudget, stakeHousing, stakeModa, stakeCamping, stakeShelterD3, stakeStreetResponse, stakeBills, stakePolice, stakeDataCenters],
   },
   {
     raceId: "portland-district-4",
     intro: `${ROLE} District 4 covers the west side, from Downtown, Old Town and the Pearl through Northwest and the Southwest hills to Multnomah, plus Sellwood-Moreland and Eastmoreland across the river. ${TERM}`,
-    items: [stakeBudget, stakeModa, stakeCamping, stakeStreetResponse, stakeBills, stakePolice, stakeDataCenters, stakeKellerD4],
+    items: [stakeBudget, stakeHousing, stakeModa, stakeCamping, stakeStreetResponse, stakeBills, stakePolice, stakeDataCenters, stakeKellerD4],
   },
 ];
 

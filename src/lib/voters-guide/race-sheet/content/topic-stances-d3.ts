@@ -1,5 +1,6 @@
 import type { Evidence } from "../../types";
 import type { TopicStance } from "../types";
+import { pnwQuestionnaire } from "./pnw-questionnaire";
 
 /**
  * District 3: explicit, sourced stances on the extra topics. Never inferred
@@ -205,6 +206,17 @@ const sweepStance = (
   text: string,
   source: Evidence,
 ): TopicStance => ({ ...stance(candidateId, topicId, value, chip, text, source), ...REVIEWED_SWEEP });
+
+/** Stances read from Portland: Neighbors Welcome’s published questionnaire answers on October 14, 2026. */
+const reviewed14 = { reviewedBy: "pending", reviewedOn: "2026-10-14" } as const;
+const pnwStance = (
+  candidateId: string,
+  topicId: string,
+  s: TopicStance["stance"],
+  chip: string,
+  text: string,
+  source: Evidence,
+): TopicStance => ({ candidateId, topicId, stance: s, chip, text, source, ...reviewed14 });
 
 export const topicStancesD3: TopicStance[] = [
   /* ── Ali Beaudoin ───────────────────────────────────────────────────── */
@@ -956,4 +968,36 @@ export const topicStancesD3: TopicStance[] = [
     "Says that until new shelters are built, people reported camping would return to their camp or a shelter as they prefer, then be moved into shelters; his page does not address current removal funding.",
     wardBudget,
   ),
+
+  /* ── Inner Eastside zoning: Portland: Neighbors Welcome questionnaire, read October 14, 2026 ── */
+  pnwStance("ali-beaudoin", "inner-eastside", "supports", "Yes, after learning more",
+    "Said yes, particularly if the goal is more housing, adding that he needs to understand the program better before forming a strong opinion on all of it.",
+    pnwQuestionnaire("ali-beaudoin")),
+  pnwStance("angelita-morillo", "inner-eastside", "supports", "Yes, co-sponsored timeline",
+    "Will vote yes. She co-sponsored Resolution 37746, which set the project’s accelerated timeline, and says off-corridor apartments near transit are the textbook answer to the housing crisis.",
+    pnwQuestionnaire("angelita-morillo")),
+  pnwStance("cristal-otero", "inner-eastside", "supports", "Yes, with resident role",
+    "Supports re-legalizing apartments on residential streets and moving the project forward; would vote for a plan that adds substantial capacity, lets displaced residents return, and gives renters, families and small businesses a meaningful role.",
+    pnwQuestionnaire("cristal-otero")),
+  pnwStance("esther-leon", "inner-eastside", "supports", "Yes, then expand it",
+    "Would vote to approve the project and then focus on expanding it around what she calls a “Holistic Zoning” plan.",
+    pnwQuestionnaire("esther-leon")),
+  pnwStance("john-sweeney", "inner-eastside", "supports", "Yes, courtyard apartments",
+    "Yes; the apartments should be built with inner courtyards and playgrounds for children.",
+    pnwQuestionnaire("john-sweeney")),
+  pnwStance("keir-legree", "inner-eastside", "supports", "Will vote yes",
+    "Supports the project’s goals and re-legalizing multi-family apartments, and will vote to approve the Inner Eastside Zoning Project.",
+    pnwQuestionnaire("keir-legree")),
+  pnwStance("kellie-torres", "inner-eastside", "supports", "Yes, appropriately scaled",
+    "Supports re-legalizing “appropriately scaled” apartments throughout inner Portland and would support the Inner Eastside Zoning Project.",
+    pnwQuestionnaire("kellie-torres")),
+  pnwStance("kimberly-tucker", "inner-eastside", "mixed", "Depends on timeline",
+    "Sees long-term benefits in more multifamily housing and rezoning parts of the inner east side, but has reservations about the expedited timeline; her answer depends on completed risk assessments and an informed say for each neighborhood.",
+    pnwQuestionnaire("kimberly-tucker")),
+  pnwStance("patrick-hilton", "inner-eastside", "mixed", "Needs long study",
+    "Calls the question vague and is open to a policy that weighs every factor, but says a project of this scale needs deep investigation and long debate to avoid losses the city could not recover from.",
+    pnwQuestionnaire("patrick-hilton")),
+  pnwStance("tiffany-koyama-lane", "inner-eastside", "supports", "Yes to both",
+    "Yes to re-legalizing apartments and to the project: the inner east side should be accessible to the working class, which means housing for more than homeowners, with apartments and transit everywhere in the city.",
+    pnwQuestionnaire("tiffany-koyama-lane")),
 ];

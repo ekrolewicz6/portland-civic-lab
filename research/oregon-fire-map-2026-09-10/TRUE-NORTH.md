@@ -2,6 +2,8 @@
 
 This is the working charter for the public guide and its first landscape investigation. Updated September 30, 2026.
 
+The [full detailed true-north plan](TRUE-NORTH-DETAILED.md) preserves the original scope, questions, research method, 90-day sequence, and acceptance criteria. This shorter charter is the quick reference.
+
 ## The question
 
 What would it take to carry out and maintain the documented priorities in one Oregon landscape, what would that work protect or improve, and how would we know whether it helped?
