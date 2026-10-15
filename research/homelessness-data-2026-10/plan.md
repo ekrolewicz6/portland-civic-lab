@@ -88,3 +88,5 @@ Lori Kelley of the county's HSD data team answered the October 8 email: the full
 Done: `measures.ts`, the dashboard's method note, `sources.ts`, `SOURCES.md`, the transparency seed and the research notes now carry the county's schedule in place of "offline as of October 7". Added to PR #114.
 
 Next: when the dashboard returns (check from October 26), replace the whole `by_name_list` series under the new method, update `STATS.byNameTotal` / `byNameAsOf`, `MEASURES`, the voter guide's county items (about 18,000 and 8,800 will change) and the research log; save the new edition's image to the source archive first.
+
+Applied on the evening of October 14, 2026 (Pacific), after PR #114 was merged and deployed: `seed-statewide-homelessness.ts --apply` (71 changes; pre-change export listed in `research/source-archive/2026-10-14.md`) and `seed-data-transparency.ts --apply` (8 changes). Production checked: 12,607 statewide beds, 46% coverage, 21,122 students, HRAC's five ratios only, corrected dispute summary. Lori Kelley (Oct 14, second reply): no downloadable or spreadsheet format planned; she will raise it as a future enhancement.
