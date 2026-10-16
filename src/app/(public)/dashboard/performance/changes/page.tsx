@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight, Clock, FileWarning } from "lucide-react";
 import { buildPerformanceDecisionSuite } from "@/lib/performance/decision-tools";
 import { getPerformanceSnapshot } from "@/lib/performance/service";
 import { PageGuide } from "../_components/PageGuide";
+import PerformanceUnavailable from "../PerformanceUnavailable";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -23,7 +24,11 @@ function ageLabel(period: string | null): string {
 }
 
 export default async function PerformanceChangeLogPage() {
-  const snapshot = await getPerformanceSnapshot();
+  const snapshot = await getPerformanceSnapshot().catch((error) => {
+    console.error("[performance changes]", error);
+    return null;
+  });
+  if (!snapshot) return <PerformanceUnavailable />;
   const decisionSuite = buildPerformanceDecisionSuite(snapshot);
   const weakMetrics = decisionSuite.staleOrWeakMetrics;
 

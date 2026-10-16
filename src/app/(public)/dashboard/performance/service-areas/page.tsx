@@ -13,6 +13,7 @@ import {
   EvidenceMetricCard,
   PageGuide,
 } from "../_components/PageGuide";
+import PerformanceUnavailable from "../PerformanceUnavailable";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -26,7 +27,11 @@ export const metadata: Metadata = pageMeta({
 });
 
 export default async function ServiceAreasPage() {
-  const snapshot = await getPerformanceSnapshot();
+  const snapshot = await getPerformanceSnapshot().catch((error) => {
+    console.error("[performance service areas]", error);
+    return null;
+  });
+  if (!snapshot) return <PerformanceUnavailable />;
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,var(--color-paper-warm)_0,var(--color-paper)_42%,var(--color-parchment)_100%)]">

@@ -26,6 +26,7 @@ import { getPerformanceSnapshot } from "@/lib/performance/service";
 import {
   PageGuide,
 } from "../_components/PageGuide";
+import PerformanceUnavailable from "../PerformanceUnavailable";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -426,7 +427,11 @@ function HearingAreaBrief({
 }
 
 export default async function CouncilCockpitPage() {
-  const snapshot = await getPerformanceSnapshot();
+  const snapshot = await getPerformanceSnapshot().catch((error) => {
+    console.error("[performance council]", error);
+    return null;
+  });
+  if (!snapshot) return <PerformanceUnavailable />;
   const hearingAreas = buildCouncilHearingAreas(snapshot);
   const issueMetricEntries = COUNCIL_BUDGET_HEARING_ISSUES.map(
     (issue) => [issue.slug, issueMetrics(snapshot, issue, 5)] as const,

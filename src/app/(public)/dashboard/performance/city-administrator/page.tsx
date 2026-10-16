@@ -27,6 +27,7 @@ import {
   PageGuide,
   SectionHeader,
 } from "../_components/PageGuide";
+import PerformanceUnavailable from "../PerformanceUnavailable";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -126,7 +127,11 @@ function MiniMetricLink({
 }
 
 export default async function CityAdministratorCockpitPage() {
-  const snapshot = await getPerformanceSnapshot();
+  const snapshot = await getPerformanceSnapshot().catch((error) => {
+    console.error("[performance city administrator]", error);
+    return null;
+  });
+  if (!snapshot) return <PerformanceUnavailable />;
   const suite = buildPerformanceDecisionSuite(snapshot);
   const cityAdminArea = PERFORMANCE_SERVICE_AREAS.find(
     (area) => area.slug === "city-administrator",
