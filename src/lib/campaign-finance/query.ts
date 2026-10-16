@@ -162,10 +162,13 @@ export async function currentMoneyFlows(committeeIds:string[]):Promise<FlowDay[]
  * Where a cash payment went, judged only by who was paid and the address on the filing.
  * A payment to another committee is money passed along, so it is kept apart from
  * payments to firms and people. The address is the payee's, which is not always
- * where the money is finally spent.
+ * where the money is finally spent. A payroll service such as ADP passes the money on
+ * as staff wages and payroll taxes, so its address says nothing about where the staff
+ * work, and those payments are kept apart too.
  */
-const PAYMENT_PLACE=`CASE WHEN entity_id LIKE 'committee:%' OR book_type IN ('Political Committee','Political Party Committee','Unregistered Committee') THEN 'committee' WHEN is_disclosure_category OR identity_status='unknown' OR NOT regexp_matches(upper(trim(coalesce(state,''))),'^[A-Z]{2}$') THEN 'unplaced' WHEN upper(trim(state))='OR' THEN 'oregon' ELSE 'other_state' END`;
-export type PaymentPlace = 'oregon'|'other_state'|'committee'|'unplaced';
+const PAYROLL_SERVICE=String.raw`regexp_matches(upper(trim(entity_name)),'^(ADP\b|ADVANCED DATA PROCESSING|AUTOMATIC DATA PROCESSING|GUSTO\b|ZENPAYROLL|PAYCHEX|SUREPAYROLL)|PAYROLL')`;
+const PAYMENT_PLACE=`CASE WHEN entity_id LIKE 'committee:%' OR book_type IN ('Political Committee','Political Party Committee','Unregistered Committee') THEN 'committee' WHEN ${PAYROLL_SERVICE} THEN 'payroll' WHEN is_disclosure_category OR identity_status='unknown' OR NOT regexp_matches(upper(trim(coalesce(state,''))),'^[A-Z]{2}$') THEN 'unplaced' WHEN upper(trim(state))='OR' THEN 'oregon' ELSE 'other_state' END`;
+export type PaymentPlace = 'oregon'|'other_state'|'payroll'|'committee'|'unplaced';
 export type MoneyTotals = {
   committees:number; inCents:number; inRecords:number; fromCommitteesCents:number; matchingCents:number;
   outCents:number; outRecords:number; firstPayment:string|null; latestPayment:string|null;
@@ -183,7 +186,7 @@ export async function currentMoneyTotals(committeeIds:string[]|'all'):Promise<Mo
     const money=(await rows(`SELECT coalesce(sum(t.amount_cents),0)::BIGINT AS cents,count(*)::BIGINT AS records,coalesce(sum(CASE WHEN t.entity_id LIKE 'committee:%' OR t.book_type IN ('Political Committee','Political Party Committee','Unregistered Committee') THEN t.amount_cents ELSE 0 END),0)::BIGINT AS committees,coalesce(sum(CASE WHEN m.transaction_id IS NOT NULL THEN t.amount_cents ELSE 0 END),0)::BIGINT AS matching FROM transactions t LEFT JOIN reviewed_matching_ids m ON t.transaction_id=m.transaction_id WHERE ${scope.replace('committee_id','t.committee_id')} AND t.basis='cash_contribution'`))[0];
     const paid=(await rows(`SELECT coalesce(sum(amount_cents),0)::BIGINT AS cents,count(*)::BIGINT AS records,min(transaction_date) AS first,max(transaction_date) AS latest FROM transactions WHERE ${scope} AND basis='cash_payment'`))[0];
     const committees=Number((await rows(`SELECT count(DISTINCT committee_id)::BIGINT AS committees FROM transactions WHERE ${scope}`))[0].committees);
-    const places:MoneyTotals['places']={oregon:{cents:0,records:0},other_state:{cents:0,records:0},committee:{cents:0,records:0},unplaced:{cents:0,records:0}};
+    const places:MoneyTotals['places']={oregon:{cents:0,records:0},other_state:{cents:0,records:0},payroll:{cents:0,records:0},committee:{cents:0,records:0},unplaced:{cents:0,records:0}};
     for(const row of await rows(`SELECT ${PAYMENT_PLACE} AS place,sum(amount_cents)::BIGINT AS cents,count(*)::BIGINT AS records FROM transactions WHERE ${scope} AND basis='cash_payment' GROUP BY 1`)) places[String(row.place) as PaymentPlace]={cents:Number(row.cents),records:Number(row.records)};
     const topStates=(await rows(`SELECT upper(trim(state)) AS state,sum(amount_cents)::BIGINT AS cents FROM transactions WHERE ${scope} AND basis='cash_payment' AND ${PAYMENT_PLACE}='other_state' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 4`)).map(row=>({state:String(row.state),cents:Number(row.cents)}));
     const topOutside=(await rows(`SELECT any_value(entity_name) AS name,any_value(city) AS city,upper(trim(state)) AS state,sum(amount_cents)::BIGINT AS cents FROM transactions WHERE ${scope} AND basis='cash_payment' AND ${PAYMENT_PLACE}='other_state' AND book_type<>'Individual' GROUP BY entity_id,upper(trim(state)) ORDER BY 4 DESC,1 LIMIT 4`)).map(row=>({name:String(row.name).trim(),city:String(row.city??''),state:String(row.state),cents:Number(row.cents)}));

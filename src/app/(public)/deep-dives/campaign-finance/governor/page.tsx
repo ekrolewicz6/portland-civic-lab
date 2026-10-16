@@ -87,7 +87,7 @@ export default async function GovernorInvestigation() {
           note: stale ? <>These records have no payments by this committee after {longDate(totals.latestPayment!)}, so its money out is incomplete.</> : undefined })),
         { key: 'statewide', label: 'Every committee in Oregon’s campaign records', totals: statewide, note: <>{statewide.committees.toLocaleString('en-US')} committees, including candidates, ballot measures, parties and political action committees. {wholeDollars(statewide.fromCommitteesCents)} of the money in came from other committees, so that money is counted each time it moves.</> },
       ]}
-      source={<>The address is the payee’s. A media firm in another state may spend what it is paid on Oregon stations, and filings do not show that second step. Records run through {throughDay}, and late filings can be missing.</>} />
+      source={<>The address is the payee’s. A media firm in another state may spend what it is paid on Oregon stations, and filings do not show that second step. Payments to payroll services such as ADP are staff wages and payroll taxes, so they are shown on their own: the service’s address is not where the staff work. Records run through {throughDay}, and late filings can be missing.</>} />
     <div className={s.doorRow}>
       <Link className={s.door} href="/voters-guide/oregon-governor"><span>Voter guide: Governor<small>Positions, records and the choices ahead</small></span><span aria-hidden="true">↗</span></Link>
       <Link className={s.door} href={BASE}><span>Portland council money<small>The same charts for Districts 3 and 4</small></span><span aria-hidden="true">↗</span></Link>

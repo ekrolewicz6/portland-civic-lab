@@ -89,6 +89,7 @@
 .parts small { display: block; font-size: 13px; color: #51645c; }
 .placeOregon { background: #2e715d; }
 .placeOther { background: #c08a2d; }
+.placePayroll { background: #8fb8a8; }
 .placeCommittee { background: #4f5d95; }
 .placeUnplaced { background: repeating-linear-gradient(135deg, #88938c 0, #88938c 3px, #b3bbb5 3px, #b3bbb5 5px); }
 .payees { font-size: 14px; line-height: 1.55; color: #33453c; margin-top: 10px !important; }
