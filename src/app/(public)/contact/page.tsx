@@ -102,6 +102,28 @@ export default async function ContactPage({
 
             <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-6">
               <div className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
+                Our office
+              </div>
+              <address className="mt-4 text-[15px] not-italic leading-relaxed text-[var(--color-ink)]" data-office-address>
+                Portland Civic Lab
+                <br />
+                620 SW Main St #302
+                <br />
+                Portland, OR 97205
+              </address>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=620+SW+Main+St+%23302+Portland+OR+97205"
+                className="mt-3 inline-flex items-center gap-2 text-[14px] font-medium text-[var(--color-canopy)] underline underline-offset-4"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Open in Google Maps
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div className="rounded-sm border border-[var(--color-parchment)] bg-white p-6">
+              <div className="text-[10px] font-mono font-semibold uppercase tracking-[0.22em] text-[var(--color-ember)]">
                 Useful context
               </div>
               <ul className="mt-4 space-y-3 text-[14px] leading-relaxed text-[var(--color-ink-light)]">
