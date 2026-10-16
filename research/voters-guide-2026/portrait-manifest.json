@@ -1,6 +1,6 @@
 {
-  "reviewed": "2026-09-18",
-  "note": "Curated editorial asset provenance; attribution does not assert a public-domain license. PDF photographs extracted directly, then resized without enlargement and encoded as WebP. Source pixels are not synthetically altered. CSS frames may crop edges. Working originals are excluded from the repository.",
+  "reviewed": "2026-10-08",
+  "note": "Curated editorial asset provenance; attribution does not assert a public-domain license. PDF photographs extracted directly, then resized without enlargement and encoded as WebP. Source pixels are not synthetically altered. CSS frames may crop edges. Working originals are excluded from the repository. Entries without sourceAssetSha256 are the race-pack portraits, added October 8, 2026 with the hash of the published file only. Their working originals were not matched to the published files, and the processing steps above were not re-verified for them.",
   "assets": [
     {
       "id": "simone-rede",
@@ -22,12 +22,13 @@
     },
     {
       "id": "tom-sollitt",
-      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=53",
-      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
-      "reviewed": "2026-09-18",
+      "sourceUrl": "https://tomforpdx.com/",
+      "assetUrl": "https://images.squarespace-cdn.com/content/v1/69643cefa588cb5e5c4a22ff/c14b837d-6add-405b-83c4-d28ea14fffbb/tom-sollitt-photo.jpg?format=1000w",
+      "credit": "Campaign photo \u00b7 TomForPDX.com",
+      "reviewed": "2026-09-23",
       "file": "public/images/voters-guide/2026/tom-sollitt.webp",
-      "sha256": "63874d00eb3e354e0f8123fd26c222ece4e6631fd380feed7abaaf068a813411",
-      "sourceAssetSha256": "d512151ba25439b9b467d6db7f914a71abe8ce32c24011dbc43d8803101b0112"
+      "sha256": "61893966dbe108176a825e478741838b9166b4a748e8ded80ae122390ff0fe4d",
+      "sourceAssetSha256": "a54421d2eb41a68558d2758e6618c4e55eae364a851f7fefe294970882e96abf"
     },
     {
       "id": "larry-kelly",
@@ -303,6 +304,848 @@
       "sha256": "738ec4cc8f15c5670cca253eb1e812314e509a22c00e05ceeed032c3affbff0b",
       "sourceAssetSha256": "33ed51090b7cde04896743f6027f92aa5d03c4fa5c828622adca82b933f95fa1",
       "note": "Sent by the candidate as an email attachment (\"Personal image2.jpg\") on September 28, 2026 and forwarded by Edan; a painted-style portrait, resized to 480 px wide."
+    },
+    {
+      "id": "julia-brim-edwards",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=32",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/julia-brim-edwards.webp",
+      "sha256": "62129ee292bcb262dd9c867f37bcfda88de28b027afeafb4df72f3f1ce30e916"
+    },
+    {
+      "id": "sharon-meieran",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=33",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/sharon-meieran.webp",
+      "sha256": "1dab7a43f70263ac897750be96a8d6910af424695d2da123a8a0b7d86a2ff757"
+    },
+    {
+      "id": "shannon-singleton",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=32",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/shannon-singleton.webp",
+      "sha256": "8d5cb2d8005205d3a8eeef73f02d31eaea8dfd1122e4e71c925419bb8e8cf49a"
+    },
+    {
+      "id": "bruce-broussard",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=34",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/bruce-broussard.webp",
+      "sha256": "5997e81f3b3b0bdbdf46d48c7abdf3faa53a5bcec19ff1a02d7ff1f2a6977ade"
+    },
+    {
+      "id": "serena-cruz",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=35",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/serena-cruz.webp",
+      "sha256": "0a623a1caadaf74193224ac2916e69c4aaa20fcb637ab6f3912e30d6aa8e4d06"
+    },
+    {
+      "id": "herman-greene",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=34",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/herman-greene.webp",
+      "sha256": "34191fcbae2675a4a7524cb70870b57afcb1756abd9201be6032557d5f875401"
+    },
+    {
+      "id": "nathan-ong-norris",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=36",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/nathan-ong-norris.webp",
+      "sha256": "ab21ac04ad675e466e8666d82279c3e761e3702a8d27232d2635afa1a403b884"
+    },
+    {
+      "id": "tony-robertson",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=37",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/tony-robertson.webp",
+      "sha256": "9261be5d7587c28c7faab1b0c858bdd80366d6b5db425c36dc669b3fd433ac99"
+    },
+    {
+      "id": "bri-williams",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=35",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/bri-williams.webp",
+      "sha256": "68b06a45dcd1734390cb4b860af74ab3464413c796ed653f6a876e03ff00f1ed"
+    },
+    {
+      "id": "nabil-zaghloul",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=36",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/nabil-zaghloul.webp",
+      "sha256": "1e079df3dc81075ff8e7e6392b3890339c1bb47bb4b84b63562a59f360cb62bf"
+    },
+    {
+      "id": "nicole-pexton",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=38",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/nicole-pexton.webp",
+      "sha256": "384c6067626d797059d9e31ce18c4e629712511b57787fbc9b3ba3e040ad1bb5"
+    },
+    {
+      "id": "nicole-morrisey-o-donnell",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=38",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/nicole-morrisey-o-donnell.webp",
+      "sha256": "f1c7a07f7450c8ccbf4092e84ee63aeebf0b59da61776d38d510b1a39e2e1df4"
+    },
+    {
+      "id": "tina-kotek",
+      "sourceUrl": "https://www.tinafororegon.com/meet-tina/",
+      "credit": "Campaign photo \u00b7 tinafororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/tina-kotek.webp",
+      "sha256": "147bdc60d9d3265625ebad7e81706d407ed1c6d0cb8c178a4742f46eed762284"
+    },
+    {
+      "id": "christine-drazan",
+      "sourceUrl": "https://www.christinefororegon.com/about/",
+      "credit": "Campaign photo \u00b7 christinefororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/christine-drazan.webp",
+      "sha256": "d273b5172944ee23d3f2a239bda5b0f4eb91776f2577cd1ab7d34d9804e4e489"
+    },
+    {
+      "id": "brett-smith",
+      "sourceUrl": "https://brett-smith.us/",
+      "credit": "Campaign photo \u00b7 brett-smith.us",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/brett-smith.webp",
+      "sha256": "953ca340a126c8130fa2c7d4ba0d62a305e66344cee7dafcfbc4b8aceb36203e"
+    },
+    {
+      "id": "jeff-merkley",
+      "sourceUrl": "https://www.jeffmerkley.com/",
+      "credit": "Campaign photo \u00b7 jeffmerkley.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/jeff-merkley.webp",
+      "sha256": "e11dc80393b17ba3bbfa503deae621a3b49272f1772885d2e56c8e20bf3f24b4"
+    },
+    {
+      "id": "suzanne-bonamici",
+      "sourceUrl": "https://www.bonamiciforcongress.com/",
+      "credit": "Campaign photo \u00b7 bonamiciforcongress.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/suzanne-bonamici.webp",
+      "sha256": "bab42b3fdf51d401b6c6621c694666df4712937bca79ab0065f5dc946d2f2cff"
+    },
+    {
+      "id": "barbara-j-kahl",
+      "sourceUrl": "https://www.drkahlforcongress.com/",
+      "credit": "Campaign photo \u00b7 drkahlforcongress.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/barbara-j-kahl.webp",
+      "sha256": "a872e386d986b369317cf495a2fe1cf1d17efd5e39ad29dbe14bd84afe398eec"
+    },
+    {
+      "id": "maxine-e-dexter",
+      "sourceUrl": "https://maxinefororegon.com/",
+      "credit": "Campaign photo \u00b7 maxinefororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/maxine-e-dexter.webp",
+      "sha256": "eafbc327f3f0a73f4a81083f1fb65cc5f21cb0664d3742dae39dc3401329a75f"
+    },
+    {
+      "id": "janelle-s-bynum",
+      "sourceUrl": "https://www.janellebynum.com/",
+      "credit": "Campaign photo \u00b7 janellebynum.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/janelle-s-bynum.webp",
+      "sha256": "9cb046ae4e507975ac80f85037d95df141b44040c4f971c60226463c42e10f82"
+    },
+    {
+      "id": "patti-adair",
+      "sourceUrl": "https://www.pattiforcongress.com/",
+      "credit": "Campaign photo \u00b7 pattiforcongress.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/patti-adair.webp",
+      "sha256": "49a5c6b2da64db624be2d2c8d3747287157afac98d4164b00626d3125ee0eb5b"
+    },
+    {
+      "id": "chris-beck",
+      "sourceUrl": "https://chrisbeckforcongress.com/",
+      "credit": "Campaign photo \u00b7 chrisbeckforcongress.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/chris-beck.webp",
+      "sha256": "3a4a321999edc0a58787388bd474a2f890bfa579334121b29f6771092115bff5"
+    },
+    {
+      "id": "val-hoyle",
+      "sourceUrl": "https://www.valhoyle.com/",
+      "credit": "Campaign photo \u00b7 valhoyle.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/val-hoyle.webp",
+      "sha256": "6621778b5eb008414cfbeee0485297038462081381892f480a2fc16f5d9bd72e"
+    },
+    {
+      "id": "monique-despain",
+      "sourceUrl": "https://www.moniqueforcongress.com/",
+      "credit": "Campaign photo \u00b7 moniqueforcongress.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/monique-despain.webp",
+      "sha256": "a7f47200ca112efeb788416e0917bb64e8ee1d7da7e42c6b9c439249fc877f4e"
+    },
+    {
+      "id": "andrea-salinas",
+      "sourceUrl": "https://www.andreasalinasfororegon.com/",
+      "credit": "Campaign photo \u00b7 andreasalinasfororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/andrea-salinas.webp",
+      "sha256": "db76331e3a6c8cf5e3756eb60e733e096c4808f07ac39da97e0110945b4538a0"
+    },
+    {
+      "id": "david-russ",
+      "sourceUrl": "https://russisforus.com/about-me/",
+      "credit": "Campaign photo \u00b7 russisforus.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/david-russ.webp",
+      "sha256": "81aada2ed11cf3d76902f433d1d53b4005fa1e792dacb1f16174aa2b597c53cc"
+    },
+    {
+      "id": "courtney-neron-misslin",
+      "sourceUrl": "https://www.courtneyfororegon.com/",
+      "credit": "Campaign photo \u00b7 courtneyfororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/courtney-neron-misslin.webp",
+      "sha256": "499d350bc05b70276cb8bd84520d10dbc24a313db66143f7503b23a63cb85776"
+    },
+    {
+      "id": "glenn-lancaster",
+      "sourceUrl": "https://glennlancaster.com/",
+      "credit": "Campaign photo \u00b7 glennlancaster.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/glenn-lancaster.webp",
+      "sha256": "c69a5ea9cd6d6c545a21f24db45890c82d59c308453c5f5c28f902c940b6aa6e"
+    },
+    {
+      "id": "myrna-a-munoz",
+      "sourceUrl": "https://myrnaforsenate.com/",
+      "credit": "Campaign photo \u00b7 myrnaforsenate.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/myrna-a-munoz.webp",
+      "sha256": "8ac22b51899684f622bd01567879399021d47843a46cb61e9ccbd64715f4dd3d"
+    },
+    {
+      "id": "harold-hutchison",
+      "sourceUrl": "https://haroldhutchison.carrd.co/",
+      "credit": "Campaign photo \u00b7 haroldhutchison.carrd.co",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/harold-hutchison.webp",
+      "sha256": "f3cb88b83fa23dda265117388161ee06becb5b52882a2978364209825d7b0269"
+    },
+    {
+      "id": "courtney-bangs",
+      "sourceUrl": "https://www.courtneybangs.com/",
+      "credit": "Campaign photo \u00b7 courtneybangs.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/courtney-bangs.webp",
+      "sha256": "bb5e2abe56fddd4360b22e9f6763c66479747091f36746634a9bfe3091d592ac"
+    },
+    {
+      "id": "rachel-armitage",
+      "sourceUrl": "https://www.senatedistrict16.com/",
+      "credit": "Campaign photo \u00b7 senatedistrict16.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/rachel-armitage.webp",
+      "sha256": "93c6a9dbd1b41b7330fd098b0227db7bd41fe6a3c59d630ec2ad95459ff36b09"
+    },
+    {
+      "id": "lisa-reynolds",
+      "sourceUrl": "https://www.lisafororegon.com/",
+      "credit": "Campaign photo \u00b7 lisafororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/lisa-reynolds.webp",
+      "sha256": "33edb4a67448298be9f74660a9e12eab94592659071ad1a4331ba7e250c6457a"
+    },
+    {
+      "id": "rob-wagner",
+      "sourceUrl": "https://www.robwagnerfororegon.com/",
+      "credit": "Campaign photo \u00b7 robwagnerfororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/rob-wagner.webp",
+      "sha256": "5099a69ca14e37b5b920fee4798a9a76650a96b33d764d7141d3b15ee1e9fbeb"
+    },
+    {
+      "id": "mary-dirksen",
+      "sourceUrl": "https://www.marydirksen.com/about",
+      "credit": "Campaign photo \u00b7 marydirksen.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/mary-dirksen.webp",
+      "sha256": "ef51d041ec7d4f39fb5dc6b9495043fe524a5dc33f0bf3bc1331b0a234b2ad15"
+    },
+    {
+      "id": "mark-meek",
+      "sourceUrl": "https://www.votemarkmeek.com/",
+      "credit": "Campaign photo \u00b7 votemarkmeek.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/mark-meek.webp",
+      "sha256": "a71db2a03f09aeb026675f39a301134053b607e94e2c820cee9819a79fb34369"
+    },
+    {
+      "id": "michele-stroh",
+      "sourceUrl": "https://votestroh.com/",
+      "credit": "Campaign photo \u00b7 votestroh.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/michele-stroh.webp",
+      "sha256": "a17de6381f85ef79d435bc3e0c40adc6f1d8cd98cd416ec00323826148dba7ba"
+    },
+    {
+      "id": "kayse-jama",
+      "sourceUrl": "https://www.kaysejama.com/meet_kayse",
+      "credit": "Campaign photo \u00b7 kaysejama.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/kayse-jama.webp",
+      "sha256": "0acc235eb25413d8109dfcd240e7967940451cdfa9c14fe1fec4c0fda870921d"
+    },
+    {
+      "id": "nicole-bassett",
+      "sourceUrl": "https://www.bassettfororegon.com/",
+      "credit": "Campaign photo \u00b7 bassettfororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/nicole-bassett.webp",
+      "sha256": "35dcea25211d90ade266412580cb0a57980f6ccbed4eb2220e1c139f432eb2b7"
+    },
+    {
+      "id": "jeff-helfrich",
+      "sourceUrl": "https://www.helfrichfororegon.com/",
+      "credit": "Campaign photo \u00b7 helfrichfororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/jeff-helfrich.webp",
+      "sha256": "5636976138d91f646484d64ce01f8729e8dea577b7526c3ca369f161bbc08fb4"
+    },
+    {
+      "id": "sue-r-rieke-smith",
+      "sourceUrl": "https://www.votesueriekesmith.com/",
+      "credit": "Campaign photo \u00b7 votesueriekesmith.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/sue-r-rieke-smith.webp",
+      "sha256": "f3af821b84774b08ee65aa451e78f40336ea65248824d348a1bcba5724505f9c"
+    },
+    {
+      "id": "stephanie-carkin",
+      "sourceUrl": "https://www.stephaniefororegon.com/about",
+      "credit": "Campaign photo \u00b7 stephaniefororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/stephanie-carkin.webp",
+      "sha256": "eb530baf0325364bb838c51b929a914c7c680561dab5b04c14b7d662d9011879"
+    },
+    {
+      "id": "steph-terrio",
+      "sourceUrl": "https://www.terrioforus.com/",
+      "credit": "Campaign photo \u00b7 terrioforus.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/steph-terrio.webp",
+      "sha256": "cb1a7c85fe6afa666011f232e65077059097b6f6a97274b1aea1d722324a7fb8"
+    },
+    {
+      "id": "susan-mclain",
+      "sourceUrl": "https://www.susanmclain.org/",
+      "credit": "Campaign photo \u00b7 susanmclain.org",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/susan-mclain.webp",
+      "sha256": "eb1182b6f57c24a7c9f35398bc549ac2a6e9bf1b566813daa15f5e9a9a326153"
+    },
+    {
+      "id": "adam-baker",
+      "sourceUrl": "https://voteadambaker.com/meet/",
+      "credit": "Campaign photo \u00b7 voteadambaker.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/adam-baker.webp",
+      "sha256": "5aa7ab001415474cb066d9a599bace08a8854349ef2a2952c94e443bef69c616"
+    },
+    {
+      "id": "michael-w-sugar",
+      "sourceUrl": "https://www.sugarfororegon.com/",
+      "credit": "Campaign photo \u00b7 sugarfororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/michael-w-sugar.webp",
+      "sha256": "88f44d440cb09140192e20189278a0e06ab545d498d2f6ca57aa0fbbb21cbf0e"
+    },
+    {
+      "id": "pat-hubbell",
+      "sourceUrl": "https://hubbell4health.com/about",
+      "credit": "Campaign photo \u00b7 hubbell4health.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/pat-hubbell.webp",
+      "sha256": "55a60506fe9288a9d269c32672e801d16c90f14bc0948c079cd60bd750caaa3c"
+    },
+    {
+      "id": "darla-mead",
+      "sourceUrl": "https://www.darlameadfororegon.com/",
+      "credit": "Campaign photo \u00b7 darlameadfororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/darla-mead.webp",
+      "sha256": "aac0dadce256618ca4e83ff7a3b5fd7a6446017fa3941a637804e0bb4230a5d6"
+    },
+    {
+      "id": "matt-bunch",
+      "sourceUrl": "https://www.mattbunch51.com/about",
+      "credit": "Campaign photo \u00b7 mattbunch51.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/matt-bunch.webp",
+      "sha256": "1f8583bc19aa0299c517893490191bd0ffe01a60a4b12be2a662d3c7c4b9d477"
+    },
+    {
+      "id": "hank-sanders",
+      "sourceUrl": "https://www.hankfororegon.com/",
+      "credit": "Campaign photo \u00b7 hankfororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/hank-sanders.webp",
+      "sha256": "c54b83b9c31cdaf6b35dd7155acb3e918941580592b6fe11ee34f1055709e9f9"
+    },
+    {
+      "id": "scott-c-hege",
+      "sourceUrl": "https://www.hegefororegon.com/about",
+      "credit": "Campaign photo \u00b7 hegefororegon.com",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/scott-c-hege.webp",
+      "sha256": "9c782697a7a4cc6c93db43e761b9210f7f2608389cfa4ef06dfd00e73ef77c51"
+    },
+    {
+      "id": "nafisa-fai",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=4",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/nafisa-fai.webp",
+      "sha256": "be8cdf2c8c5b60949b10a5309dedb30aa54ca94f58d6891c16c206d2aa467c93"
+    },
+    {
+      "id": "pam-treece",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=4",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/pam-treece.webp",
+      "sha256": "b4b02382de762a9f1ec58d0e66179adccb2c48033a6dfe79e954b807830e774d"
+    },
+    {
+      "id": "steve-callaway",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=5",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/steve-callaway.webp",
+      "sha256": "5ce216d750184456d2e55bb5ef061d57b99e8655a13c80fd2a4bfdfa06c44990",
+      "note": "Swapped with Kipperlyn Sinclair's portrait when the two were cut from their shared pamphlet page; corrected September 23, 2026 in commit f50b6bae (research log #sinclair-callaway-portraits-2026-09-23). The reviewed date is the race pack's and predates the correction."
+    },
+    {
+      "id": "kipperlyn-sinclair",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=5",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/kipperlyn-sinclair.webp",
+      "sha256": "9715ae190f8efc09025b7672494c0fefb681bf3e3f9e8e5c40bd7c1b537bac0b",
+      "note": "Swapped with Steve Callaway's portrait when the two were cut from their shared pamphlet page; corrected September 23, 2026 in commit f50b6bae (research log #sinclair-callaway-portraits-2026-09-23). The reviewed date is the race pack's and predates the correction."
+    },
+    {
+      "id": "paul-savas",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=17",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/paul-savas.webp",
+      "sha256": "18f7fd3031934a8a563be8c92c62e31f2a77bb3d3bf1899bb513f8c35e4a949d"
+    },
+    {
+      "id": "mark-shull",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=17",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/mark-shull.webp",
+      "sha256": "c03680af4e4131daf5ec9b696748e07dc9c14f667e439387821367ed616ded7a"
+    },
+    {
+      "id": "diana-helm",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=18",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/diana-helm.webp",
+      "sha256": "9306b01b0915d49a76a1950acbc7f9780ccb6711c24c6514835edb57a05a8958"
+    },
+    {
+      "id": "r-w-smith",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=18",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/r-w-smith.webp",
+      "sha256": "f809445492353bdc694892502f2c5f18044d2e0c34ce9abd0912bd4ad390ebcf"
+    },
+    {
+      "id": "brad-o-neil",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=16",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/brad-o-neil.webp",
+      "sha256": "b0eee17bf559175455f381b4a5cd28abcfea504eeb2aaba55803f196c38eda37"
+    },
+    {
+      "id": "james-rhodes",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=16",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/james-rhodes.webp",
+      "sha256": "66768ecf35713d86f98db8c476c4992b2f46c3f1d8ba6e954f074e745791cc8b"
+    },
+    {
+      "id": "catherine-mcmullen",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=14",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/catherine-mcmullen.webp",
+      "sha256": "99dde80ff661a7afac9a9b64d496e41d7a58144334310f1d6de3ca6dbcf3aff1"
+    },
+    {
+      "id": "mark-reaksecker",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=14",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/mark-reaksecker.webp",
+      "sha256": "5cc9723d6511be6ccbf4f2eec0ef144bf9652b115fa28768078bcc006b04f2bc"
+    },
+    {
+      "id": "brian-t-nava",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=15",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/brian-t-nava.webp",
+      "sha256": "fa0b5431cf3da2145fb64fc8ab4dc9ba6b383333577d68ea88e894eb768618ca"
+    },
+    {
+      "id": "travis-stovall",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=41",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/travis-stovall.webp",
+      "sha256": "7afd926c8f6da6ed4fed023fbc2ac5c38e1aade5ef76c465f706c337fd74e543"
+    },
+    {
+      "id": "sue-piazza",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=41",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/sue-piazza.webp",
+      "sha256": "095da50a7cabda7e828343b02e8afb373d2347ca140308ef981f2f92a960005d"
+    },
+    {
+      "id": "heather-coleman-cox",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=42",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/heather-coleman-cox.webp",
+      "sha256": "4a5b9ab4e5a9da17e2f80fd05a4c621eb42ff4f26e0f6a3b7eedc596c8db573e"
+    },
+    {
+      "id": "will-delplato",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=42",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/will-delplato.webp",
+      "sha256": "535cd89cf7f7d41e7111e4ad0a8d42606d02e9442d33d8adb194c81a16d4ba7a"
+    },
+    {
+      "id": "gregory-schroeder",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=43",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/gregory-schroeder.webp",
+      "sha256": "65147a5970b2f93c650493d5eb82f8d1e7bc532642fe98dda08a229e4cb1f772"
+    },
+    {
+      "id": "krestina-aziz",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=43",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/krestina-aziz.webp",
+      "sha256": "fb6bf6b24c15d02a5837f55735f452022a699d78d1c3a5ee6a519c63235c1cee"
+    },
+    {
+      "id": "joshua-al-jaouni",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=44",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/joshua-al-jaouni.webp",
+      "sha256": "96c50f8ec8c12dd1887d74cc982ba5e1ce7d3f1f592bd894d4765fbed2fd06ca"
+    },
+    {
+      "id": "teo-ramirez",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=44",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/teo-ramirez.webp",
+      "sha256": "6f76e7a9afbc4ac74e39d731cf40e2ee48a78c9300c1f60da56398fbf04c15f6"
+    },
+    {
+      "id": "janine-gladfelter",
+      "sourceUrl": "https://multco.us/file/multnomah_county_voters%27_pamphlet_-_november_2026_general_election/download#page=45",
+      "credit": "Candidate-submitted photo \u00b7 2026 Multnomah voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/janine-gladfelter.webp",
+      "sha256": "d5c22158506bb85b6f294c60823320a79d11ee5bb0b70e525b1546147317e027"
+    },
+    {
+      "id": "evelyn-kocher",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=9",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/evelyn-kocher.webp",
+      "sha256": "130e3635f09cf9a50dbf17e4c257de624cc0a5607a3f5e341b18412c0292ac18"
+    },
+    {
+      "id": "rachel-philip",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=9",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/rachel-philip.webp",
+      "sha256": "df90c991ef81565f1d996cf273d2fbf9830bedf1a2d8cd81517902e1680545d8"
+    },
+    {
+      "id": "cristian-salgado",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=15",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/cristian-salgado.webp",
+      "sha256": "83458551f2c873dd9e869f04d0a594d695949a484d62a667dcc8bc603f72b7f1"
+    },
+    {
+      "id": "luis-garcia",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=15",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/luis-garcia.webp",
+      "sha256": "1f423ca9a567aa0483552da4712c47bf71616f2b309b73d0ac66aafdef9ae491"
+    },
+    {
+      "id": "sarah-marugg",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=16",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/sarah-marugg.webp",
+      "sha256": "0975a447398a472870feaa58d922dea0b3ddeb849e1019e976ab63be5d377953"
+    },
+    {
+      "id": "diana-jackson",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=16",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/diana-jackson.webp",
+      "sha256": "eb746242baeb7228117c03310724bb6452c7bd93fd89f01bc58ed99f5802b6bd"
+    },
+    {
+      "id": "ivette-pantoja",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=17",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/ivette-pantoja.webp",
+      "sha256": "bfe28e278ee406a079bf2116241b5e148db589f13c1866fd537b75f501c9d6c0"
+    },
+    {
+      "id": "karim-delgado",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=17",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/karim-delgado.webp",
+      "sha256": "ec00349b7c2beb7449163bc4688b46712a70756661a3abdb088842156307f67e"
+    },
+    {
+      "id": "titonian-wallace-sr",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=18",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/titonian-wallace-sr.webp",
+      "sha256": "cde0285c233a13e126a8aab5999d34212ae50e496c498306e19f5c0ab3681a5e"
+    },
+    {
+      "id": "dorian-russell",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=18",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/dorian-russell.webp",
+      "sha256": "481b929749bd2b761783ffd5f1ebba29345066aceddf89efde80f913fe6a0701"
+    },
+    {
+      "id": "yi-kang-hu",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=35",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/yi-kang-hu.webp",
+      "sha256": "a3144ec5c17819f1c570d28444f67309a4f96792de53560e9749eda714f54ec3"
+    },
+    {
+      "id": "bill-monahan",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=35",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/bill-monahan.webp",
+      "sha256": "b93b37f731c25d99fb1dbe142cdacd24451f78c6312a244872e111ed093487a5"
+    },
+    {
+      "id": "john-goodhouse",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=36",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/john-goodhouse.webp",
+      "sha256": "19a32fcd837d32009e02b73367a439c5a23f34f4b90107de65e18e5248b63a4f"
+    },
+    {
+      "id": "sue-garino",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=36",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/sue-garino.webp",
+      "sha256": "33a24016041cb5d0408ddcddc7e4dcfe412c612757c3915f3ab4b2afdff37421"
+    },
+    {
+      "id": "gabriel-elijio-velasquez",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=37",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/gabriel-elijio-velasquez.webp",
+      "sha256": "6900a9ed21625ce05edf8a930a2f250a634d6c4faaf7e33cd6cf8c921e482a7e"
+    },
+    {
+      "id": "jeff-darland",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=37",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/jeff-darland.webp",
+      "sha256": "24ba5c9ad674be6a640d64585422bb739100b3cbe1ac904291e9e57c2fdf7e16"
+    },
+    {
+      "id": "tom-anderson",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=38",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/tom-anderson.webp",
+      "sha256": "c95d75d0d4c77deab9c8207b2bd41968439468573773b55d4014710d99beb0b1"
+    },
+    {
+      "id": "yousef-k-allouzi",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=38",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/yousef-k-allouzi.webp",
+      "sha256": "ca857e37a2e432fb5a44a1bfbba4211c1739d718436bf6f7ed9454549f8ea2d9"
+    },
+    {
+      "id": "kate-ristau",
+      "sourceUrl": "https://www.washingtoncountyor.gov/elections/documents/november-3-2026-voters-pamphlet/download?inline=#page=39",
+      "credit": "Candidate-submitted photo \u00b7 2026 Washington County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/kate-ristau.webp",
+      "sha256": "58ec475d2e91beafb8ce060474c1e0b1786ec7b3614549a238bc217c50207380"
+    },
+    {
+      "id": "bryan-guiney",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=29",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/bryan-guiney.webp",
+      "sha256": "cab2b4d0ad8d15c0debb65d0ebffbd766e5c1e7488f5617acbbbaa2ae8da5f2c"
+    },
+    {
+      "id": "suzanne-miles",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=30",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/suzanne-miles.webp",
+      "sha256": "161188dd04ea2bed48321d057106dc0c5ece8b25834db1c5ccd559c9d129c639"
+    },
+    {
+      "id": "peren-tiemann",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=31",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/peren-tiemann.webp",
+      "sha256": "d73e9f81b883d3d36ac9ca6f260e47f7d366b9c9ca8fc2099d3330a66ec9203d"
+    },
+    {
+      "id": "neil-tunmore",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=31",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/neil-tunmore.webp",
+      "sha256": "cc4cf4365bb932191b486a2ae952ea86430055d2f658502b604ceef83bba3e81"
+    },
+    {
+      "id": "heather-ramsey",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=32",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/heather-ramsey.webp",
+      "sha256": "e80e54abd26b2f44753fa52272f0e25d8e5ce7c2effed174e61ccf727f4f6958"
+    },
+    {
+      "id": "patrick-walsh",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=30",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/patrick-walsh.webp",
+      "sha256": "d81376b9e295aeb151cef527f3327a9e8b748477d3d8bc7a4dd926aa28297c29"
+    },
+    {
+      "id": "damon-mabee",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=37",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/damon-mabee.webp",
+      "sha256": "7b94259701a58760e3ca2cf4ec3699fe96826d92bbdf21e0f1810bf676de9c8f"
+    },
+    {
+      "id": "adam-marl",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=37",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/adam-marl.webp",
+      "sha256": "6aa2ce3b4ca561a1d2df468f99ae3357ad28c9307a0662e27e34f77c9590e3c5"
+    },
+    {
+      "id": "rodney-la-barr",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=38",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/rodney-la-barr.webp",
+      "sha256": "f459b789b7558975e603e9ef4977064874bafb644999a832e1a01b34a9c94a17"
+    },
+    {
+      "id": "betty-mumm",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=39",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/betty-mumm.webp",
+      "sha256": "179118358912b7b9dc958fbec512819f43c50726e7f35f3a2d3b1b575be9b6bd"
+    },
+    {
+      "id": "james-nicita",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=39",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/james-nicita.webp",
+      "sha256": "0238c4cf8c6d2ec3642a7bd941379b2f7e582b76603fb983e93b03de4a0f51bb"
+    },
+    {
+      "id": "paul-espe",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=40",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/paul-espe.webp",
+      "sha256": "3d468093eaf565d62439fbeffa64474449f688ea4225af429285f0e6c71bc0ee"
+    },
+    {
+      "id": "gordon-j-lawrence",
+      "sourceUrl": "https://docs.clackamas.us/documents/drupal/03f4f9db-a1ab-4a1f-9ce1-16059d49a513#page=40",
+      "credit": "Candidate-submitted photo \u00b7 2026 Clackamas County voters\u2019 pamphlet",
+      "reviewed": "2026-09-21",
+      "file": "public/images/voters-guide/2026/gordon-j-lawrence.webp",
+      "sha256": "32e6b6ff5e68de8c8b1328abd1c5b8e00dfa1a7670fa21f3713f0fbc4384abc7"
     }
   ]
 }
