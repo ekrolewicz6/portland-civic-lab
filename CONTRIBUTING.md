@@ -113,6 +113,12 @@ its comments so they are not re-broken. See
 
 ## Before you open a PR
 
+When publishing, renaming, moving, or retiring a public tool or deep dive,
+update the About page's catalog in `src/lib/topics.ts` in the same release.
+Check `/about#topics`, each destination, and its `Work on this` contact link.
+Review the About page's description of the Lab when the work changes; names,
+relationships, and funding claims still need confirmed evidence.
+
 ```bash
 npx tsc --noEmit             # typecheck the app
 npx tsc -p ingest --noEmit   # typecheck the ingest scripts (excluded from the root tsconfig)

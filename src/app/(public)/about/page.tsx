@@ -26,7 +26,7 @@ export const metadata: Metadata = pageMeta({
 });
 
 const LINES = [
-  { title: "Public program", body: "Free tools and deep-dives, every figure sourced." },
+  { title: "Public program", body: "Free tools and deep-dives, every figure sourced. Public events in Portland." },
   { title: "Property practice", body: "Screening and decision packets for owners and developers." },
   { title: "Institutional practice", body: "Portfolio intelligence for public bodies, competed." },
 ];
@@ -425,6 +425,9 @@ export default function AboutPage() {
           </Link>
           <Link href="/volunteer" className="inline-flex items-center gap-1 font-semibold text-[var(--color-canopy)] hover:underline">
             Volunteer without a topic in mind <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+          <Link href="/events" className="inline-flex items-center gap-1 font-semibold text-[var(--color-canopy)] hover:underline">
+            Come to a Lab event <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
       </section>
