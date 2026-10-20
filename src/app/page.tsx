@@ -12,6 +12,9 @@ import AudienceDoors, { type Door } from "@/components/home/AudienceDoors";
 import ElectionBanner from "@/components/home/ElectionBanner";
 import EventBanner from "@/components/home/EventBanner";
 import { GUIDE_SCALE, electionBannerLabel, isElectionSeason } from "@/lib/election";
+import { findRace } from "@/lib/voters-guide/published";
+import { racePath } from "@/lib/voters-guide/race-sheet/seo";
+import { officeOf } from "@/lib/voters-guide/race-sheet/office";
 import { announcedEvent } from "@/lib/events";
 import {
   ASK_PORTLAND_URL,
@@ -398,6 +401,10 @@ export default function HomePage() {
   const team = withPhotos();
   const now = new Date();
   const electionSeason = isElectionSeason(now);
+  /* The Portland races most searched for, each one click from the front page. */
+  const featuredRaces = ["portland-district-3", "portland-district-4", "portland-auditor", "oregon-governor"]
+    .map((id) => findRace(id))
+    .filter((race): race is NonNullable<typeof race> => Boolean(race));
   const announced = announcedEvent(now);
   return (
     <div className="flex min-h-screen flex-col bg-[var(--color-paper)]">
@@ -583,6 +590,26 @@ export default function HomePage() {
                   How we research candidates
                 </Link>
               </div>
+              {featuredRaces.length > 0 && (
+                <nav aria-label="Races on the Portland ballot" className="mt-6">
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+                    Start with a race
+                  </p>
+                  <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
+                    {featuredRaces.map((race) => (
+                      <li key={race.id}>
+                        <Link
+                          href={racePath(race)}
+                          className="text-[15px] font-semibold text-[var(--color-canopy)] underline decoration-[var(--color-parchment)] underline-offset-4 transition-colors hover:decoration-[var(--color-canopy)]"
+                        >
+                          {officeOf(race).seat}
+                          <span className="text-[var(--color-ink-muted)]"> · {race.candidates.length} candidate{race.candidates.length === 1 ? "" : "s"}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              )}
             </div>
           </div>
         </section>

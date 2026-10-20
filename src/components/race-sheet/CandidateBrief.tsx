@@ -549,6 +549,30 @@ export default function CandidateBrief({
               </Link>
             )}
           </nav>
+          {/* Every brief in the race, one link each, alphabetical: the same list on every candidate's page. */}
+          <nav className={styles.roster} aria-labelledby={heading("roster")}>
+            <h2 id={heading("roster")} className={styles.rosterTitle}>
+              All {sheet.rows.length} candidates for {sheet.office.seat}
+            </h2>
+            <ul className={styles.rosterList}>
+              {sheet.rows.map((other) => {
+                const candidate = race.candidates.find((x) => x.id === other.id);
+                if (!candidate) return null;
+                const current = other.id === row.id;
+                return (
+                  <li key={other.id}>
+                    {current ? (
+                      <span className={styles.rosterLink} aria-current="page">{candidate.name}</span>
+                    ) : (
+                      <Link href={candidatePath(race, candidate)} prefetch={false} className={styles.rosterLink}>
+                        {candidate.name}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
           <Link href={racePath(race)} prefetch={false} className={`${c.btn} ${c.secondary}`}>
             <ArrowLeft size={16} aria-hidden="true" /> Back to the {districtLabel} {council ? "list" : "race"}
           </Link>

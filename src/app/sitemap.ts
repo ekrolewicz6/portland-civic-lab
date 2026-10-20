@@ -1,7 +1,7 @@
 import { portfolio as cedPortfolio } from "@/lib/ced/model";
 import type { MetadataRoute } from "next";
 import { races } from "@/lib/voters-guide/published";
-import { REVIEW_DATE } from "@/lib/voters-guide/types";
+import { RESEARCH_LOG_UPDATED } from "@/lib/voters-guide/research-log";
 import { RACE_SHEET_MODIFIED, candidatePath, racePath, votesPath } from "@/lib/voters-guide/race-sheet/seo";
 import { officeOf } from "@/lib/voters-guide/race-sheet/office";
 import { bureauIds } from "@/lib/org/bureau";
@@ -111,7 +111,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const guidePages: MetadataRoute.Sitemap = ["", "/methodology", "/research-log"].map(path => ({
     url: `${BASE_URL}/voters-guide${path}`,
-    lastModified: new Date(`${REVIEW_DATE}T00:00:00Z`),
+    lastModified: new Date(`${RESEARCH_LOG_UPDATED}T00:00:00Z`),
     changeFrequency: "weekly",
     priority: path ? 0.7 : 0.9,
   }));

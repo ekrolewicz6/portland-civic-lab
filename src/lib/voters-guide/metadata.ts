@@ -107,6 +107,7 @@ export function guideStructuredData(card: GuideCard) {
     "@id": `${url}#page`,
     url,
     name: data.title,
+    ...(card === "guide" ? { alternateName: ["Portland Voters Guide 2026", "Portland Voters’ Guide 2026"] } : {}),
     description: data.description,
     inLanguage: "en-US",
     isAccessibleForFree: true,
