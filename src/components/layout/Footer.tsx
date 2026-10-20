@@ -43,8 +43,8 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
   {
     title: "Work with us",
     links: [
-      { label: "Property owners & developers", href: "/property" },
-      { label: "Public institutions", href: "/institutions" },
+      { label: "Fund a public tool", href: "/contact?topic=Fund%20a%20public%20tool" },
+      { label: "B2B software", href: "/contact?topic=B2B%20software" },
       { label: "Small businesses", href: "/business" },
       { label: "Founding support", href: "/donate" },
       { label: "Volunteer", href: "/volunteer" },
@@ -113,8 +113,8 @@ export default function Footer() {
               <span className="shrink-0 whitespace-nowrap text-[9px] min-[380px]:text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-ember)]/70">Est. 2026</span>
             </div>
             <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-white/55">
-              Free, source-linked tools for understanding Portland, and paid decision work for
-              the owners and institutions who run it, at published prices.
+              Free, source-linked civic tools and software for organizations. Our model combines
+              nonprofit partnerships, grants, philanthropy, and B2B software work.
             </p>
             <Link
               href="/donate"
