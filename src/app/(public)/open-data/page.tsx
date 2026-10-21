@@ -48,6 +48,7 @@ export default function OpenDataPage() {
 
       <section className="mx-auto max-w-[900px] px-5 py-12 sm:px-8 sm:py-16">
         <div className="space-y-10 text-[15px] leading-relaxed text-[var(--color-ink-light)]">
+          <section className="rounded border border-[var(--color-parchment)] p-6"><h2 className="font-editorial text-3xl mb-3">Campaign finance: the complete public ledger</h2><p>Download every published Oregon campaign-finance transaction with definitions, candidate links, evidence and example queries. One compact ZIP for independent analysis, with Parquet and compressed CSV alternatives.</p><p className="mt-4"><Link href="/deep-dives/campaign-finance/data" className="underline">Download the data or give your AI the analysis guide →</Link></p></section>
           <div>
             <h2 className="font-editorial text-[28px] sm:text-[34px] leading-tight text-[var(--color-ink)] mb-3">
               JSON endpoints

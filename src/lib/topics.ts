@@ -20,6 +20,7 @@ export type Topic = {
 };
 
 export const TOOLS: Topic[] = [
+  { name: "Campaign-finance data downloads and analysis kit", href: "/deep-dives/campaign-finance/data" },
   { name: "Portland Possible, the downtown map", href: DOWNTOWN_URL, external: true },
   { name: "The Parks Atlas", href: PARKS_URL, external: true },
   { name: "The Oregon Governance Atlas", href: OREGON_GOVERNANCE_URL, external: true },

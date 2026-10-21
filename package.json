@@ -52,7 +52,8 @@
     "orestar:amendments": "runtime-data/orestar-analysis/py312/bin/python ingest/orestar/analysis/apply_reviewed_amendments.py",
     "orestar:package": "runtime-data/orestar-analysis/py312/bin/python ingest/orestar/analysis/package_publication.py",
     "orestar:governor": "runtime-data/orestar-analysis/py312/bin/python ingest/orestar/analysis/publish_governor.py",
-    "orestar:release:check": "node ingest/orestar/check-publication.mjs"
+    "orestar:release:check": "node ingest/orestar/check-publication.mjs",
+    "orestar:downloads": "runtime-data/orestar-analysis/py312/bin/python ingest/orestar/analysis/publish_downloads.py"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
@@ -61,6 +62,7 @@
     "@workos-inc/authkit-nextjs": "^4.1.1",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.45.1",
+    "fflate": "0.8.2",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.475.0",
     "next": "^15.3.3",

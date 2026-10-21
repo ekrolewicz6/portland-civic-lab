@@ -1,0 +1,258 @@
+{
+  "version": 1,
+  "tables": {
+    "transactions": {
+      "file": "tables/transactions.parquet",
+      "rows": 332944,
+      "description": "All current-version transactions in the published ledger. One row per transaction_id; integer USD cents. Never add unlike accounting bases.",
+      "columns": [
+        {
+          "name": "transaction_id",
+          "type": "VARCHAR",
+          "description": "ORESTAR current transaction identifier, stored as text. Primary key."
+        },
+        {
+          "name": "original_id",
+          "type": "VARCHAR",
+          "description": "ORESTAR original-version identifier. Not a second transaction to count. Null means not supplied."
+        },
+        {
+          "name": "transaction_date",
+          "type": "VARCHAR",
+          "description": "Reported transaction date, ISO YYYY-MM-DD; not the download date."
+        },
+        {
+          "name": "filed_date",
+          "type": "VARCHAR",
+          "description": "Current version filing date, ISO YYYY-MM-DD; may differ from original disclosure date."
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR",
+          "description": "Reported current-version status, such as Original or Amended."
+        },
+        {
+          "name": "committee_id",
+          "type": "VARCHAR",
+          "description": "ORESTAR filing committee identifier, stored as text."
+        },
+        {
+          "name": "committee_name",
+          "type": "VARCHAR",
+          "description": "Reported filing committee name. Not a verified candidate/race link."
+        },
+        {
+          "name": "entity_id",
+          "type": "VARCHAR",
+          "description": "Conservative reported counterparty group. committee: is authoritative; record: is a fingerprint; disclosure: and unknown: are not donors."
+        },
+        {
+          "name": "entity_name",
+          "type": "VARCHAR",
+          "description": "Reported counterparty name, not an independently verified identity."
+        },
+        {
+          "name": "identity_status",
+          "type": "VARCHAR",
+          "description": "authoritative_committee_id, provisional_record_group, disclosure_category or unknown."
+        },
+        {
+          "name": "subtype",
+          "type": "VARCHAR",
+          "description": "Original ORESTAR accounting subtype."
+        },
+        {
+          "name": "basis",
+          "type": "VARCHAR",
+          "description": "Normalized accounting basis; use cash_contribution for gross cash raised and cash_payment for gross cash paid out."
+        },
+        {
+          "name": "direction",
+          "type": "VARCHAR",
+          "description": "in, out or adjustment relative to the filing committee. Not sufficient to calculate cash effect without subtype semantics."
+        },
+        {
+          "name": "amount_cents",
+          "type": "BIGINT",
+          "description": "Signed integer USD cents, exact; divide by 100 for dollars. Do not sum unrelated bases."
+        },
+        {
+          "name": "city",
+          "type": "VARCHAR",
+          "description": "Normalized reported counterparty city; may be blank."
+        },
+        {
+          "name": "state",
+          "type": "VARCHAR",
+          "description": "Normalized reported counterparty state; may be blank."
+        },
+        {
+          "name": "purpose_codes",
+          "type": "VARCHAR",
+          "description": "Reported purpose categories, not unrestricted free-text descriptions."
+        },
+        {
+          "name": "source_dataset",
+          "type": "VARCHAR",
+          "description": "Public acquisition batch label; not a download path."
+        },
+        {
+          "name": "source_row",
+          "type": "BIGINT",
+          "description": "Row locator within the private source batch, not an additional ID."
+        },
+        {
+          "name": "retrieved_at",
+          "type": "VARCHAR",
+          "description": "Source acquisition/file timestamp retained for provenance; not proof of source completeness."
+        },
+        {
+          "name": "family",
+          "type": "VARCHAR",
+          "description": "Acquisition family. For accounting, filter basis rather than family."
+        },
+        {
+          "name": "book_type",
+          "type": "VARCHAR",
+          "description": "Reported contributor/payee type. Business size, ownership and political affiliation are not inferred."
+        },
+        {
+          "name": "is_disclosure_category",
+          "type": "BOOLEAN",
+          "description": "True for combined or generic disclosure rows; do not count as an identified donor."
+        }
+      ]
+    },
+    "entities": {
+      "file": "tables/entities.parquet",
+      "rows": 78876,
+      "description": "Conservative counterparty record groups. Only committee: IDs identify an authoritative committee; other groups are not verified people or legal entities.",
+      "columns": [
+        {
+          "name": "entity_id",
+          "type": "VARCHAR",
+          "description": "Conservative reported counterparty group. committee: is authoritative; record: is a fingerprint; disclosure: and unknown: are not donors."
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR",
+          "description": "Reported name associated with this ID."
+        },
+        {
+          "name": "identity_status",
+          "type": "VARCHAR",
+          "description": "authoritative_committee_id, provisional_record_group, disclosure_category or unknown."
+        },
+        {
+          "name": "first_observed",
+          "type": "VARCHAR",
+          "description": "Earliest transaction date observed in this snapshot."
+        },
+        {
+          "name": "last_observed",
+          "type": "VARCHAR",
+          "description": "Latest transaction date observed in this snapshot."
+        },
+        {
+          "name": "records",
+          "type": "BIGINT",
+          "description": "Number of transaction records, not a count of unique people."
+        }
+      ]
+    },
+    "aliases": {
+      "file": "tables/aliases.parquet",
+      "rows": 79453,
+      "description": "Reported names for each conservative entity group.",
+      "columns": [
+        {
+          "name": "entity_id",
+          "type": "VARCHAR",
+          "description": "Conservative reported counterparty group. committee: is authoritative; record: is a fingerprint; disclosure: and unknown: are not donors."
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR",
+          "description": "Reported name associated with this ID."
+        },
+        {
+          "name": "first_observed",
+          "type": "VARCHAR",
+          "description": "Earliest transaction date observed in this snapshot."
+        },
+        {
+          "name": "last_observed",
+          "type": "VARCHAR",
+          "description": "Latest transaction date observed in this snapshot."
+        },
+        {
+          "name": "records",
+          "type": "BIGINT",
+          "description": "Number of transaction records, not a count of unique people."
+        }
+      ]
+    },
+    "committees": {
+      "file": "tables/committees.parquet",
+      "rows": 1929,
+      "description": "All filing committees observed in these records, including candidates, PACs, parties and ballot measures.",
+      "columns": [
+        {
+          "name": "committee_id",
+          "type": "VARCHAR",
+          "description": "ORESTAR filing committee identifier, stored as text."
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR",
+          "description": "Reported name associated with this ID."
+        },
+        {
+          "name": "first_observed",
+          "type": "VARCHAR",
+          "description": "Earliest transaction date observed in this snapshot."
+        },
+        {
+          "name": "last_observed",
+          "type": "VARCHAR",
+          "description": "Latest transaction date observed in this snapshot."
+        },
+        {
+          "name": "records",
+          "type": "BIGINT",
+          "description": "Number of transaction records, not a count of unique people."
+        }
+      ]
+    },
+    "reviewed_matching_ids": {
+      "file": "tables/reviewed_matching_ids.parquet",
+      "rows": 57,
+      "description": "Transaction IDs classified as City public matching receipts. Join by transaction_id to separate public from private contributions.",
+      "columns": [
+        {
+          "name": "transaction_id",
+          "type": "VARCHAR",
+          "description": "ORESTAR current transaction identifier, stored as text. Primary key."
+        }
+      ]
+    },
+    "candidate_finance_facts": {
+      "file": "tables/candidate_finance_facts.parquet",
+      "rows": 18,
+      "description": "Derived JSON facts for 18 reviewed council/auditor committees. Governor records are in transactions; governor interpretations are in evidence/governor/data.json.",
+      "columns": [
+        {
+          "name": "committee_id",
+          "type": "VARCHAR",
+          "description": "ORESTAR filing committee identifier, stored as text."
+        },
+        {
+          "name": "facts_json",
+          "type": "JSON",
+          "description": "JSON-encoded candidate facts; cash amounts are cents. Separately dated official balances are not refreshed by these facts."
+        }
+      ]
+    }
+  },
+  "nulls": "Parquet preserves nulls. CSV uses empty fields for null/blank values; IDs should be read as strings."
+}

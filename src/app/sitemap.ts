@@ -8,6 +8,7 @@ import { bureauIds } from "@/lib/org/bureau";
 import { VALID_QUESTIONS } from "@/lib/questions";
 import { FIRE_LESSONS } from "@/lib/oregon-fire/lesson";
 import { EVENTS, eventPath } from "@/lib/events";
+import financePublication from "@/lib/campaign-finance/active-publication.json";
 import { DEEP_DIVES } from "@/lib/deep-dives";
 
 const BASE_URL = "https://www.portlandciviclab.org";
@@ -43,9 +44,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/proposals`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: `${BASE_URL}/donate`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/deep-dives`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    ...["/governor", "/suppliers", "/races", "/races/portland-district-3", "/races/portland-district-4", "/races/portland-auditor", "/statewide", "/methodology", "/evidence", "/questions", "/explorer", "/api-reference"].map((section) => ({
+    ...["/data", "/governor", "/suppliers", "/races", "/races/portland-district-3", "/races/portland-district-4", "/races/portland-auditor", "/statewide", "/methodology", "/evidence", "/questions", "/explorer", "/api-reference"].map((section) => ({
       url: `${BASE_URL}/deep-dives/campaign-finance${section}`,
-      lastModified: new Date("2026-09-29T00:00:00Z"),
+      lastModified: new Date(`${financePublication.end}T00:00:00Z`),
       changeFrequency: "weekly" as const,
       priority: 0.6,
     })),

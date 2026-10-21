@@ -43,3 +43,7 @@ The active Codex heartbeat named **Daily ORESTAR campaign-finance refresh** invo
 ## Verification
 
 `npm run orestar:test` runs the campaign-finance regression suite. `npx tsc --noEmit` checks the API and chart types. The daily builder was reconciled against the existing 316,926-row September 27 source: all 17 candidate totals matched the frozen chart on five accounting measures, and the local endpoint returned the promoted versioned data. This is a pipeline backtest, not evidence that a subsequent date has already been downloaded.
+
+## Public analysis downloads
+
+The minimized publication packager rebuilds `public/data/campaign-finance/downloads/` from the public ledger and published evidence only. After separately rebuilding a reviewed governor/supplier/editorial edition, run `npm run orestar:downloads` again, then `npm run orestar:release:check`. The release gate rejects a download whose snapshot, table rows, source evidence, checksums or page metadata drift from the release. No private XLSX, full research database or handoff is an input. The stable public entry point is `/deep-dives/campaign-finance/data`; the manifest is `/data/campaign-finance/downloads/manifest.json`.

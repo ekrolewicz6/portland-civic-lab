@@ -1,5 +1,6 @@
 /** Release gate: public assets and the minimized, read-only server database. */
 import assert from 'node:assert/strict';
+import { checkDownloads } from './check-downloads.mjs';
 import { createHash } from 'node:crypto';
 import { readFileSync, readdirSync, lstatSync, existsSync } from 'node:fs';
 import { resolve, relative, extname } from 'node:path';
@@ -27,8 +28,9 @@ function walk(path) {
     assert(!stat.isSymbolicLink(), `Publication symlink: ${relative(root, file)}`);
     if (stat.isDirectory()) { walk(file); continue; }
     const extension = extname(file);
-    assert(!['.xlsx', '.xls', '.heic', '.parquet', '.log', '.ndjson'].includes(extension.toLowerCase()), `Unexpected raw artifact: ${relative(root, file)}`);
-    if (['.json', '.geojson', '.csv', '.ts', '.tsx', '.css', '.md', '.txt'].includes(extension)) {
+    if (['.zip', '.gz', '.parquet'].includes(extension.toLowerCase())) assert(['analysis.zip','transactions.csv.gz','transactions.parquet'].some(name => relative(root,file) === `public/data/campaign-finance/downloads/${name}`), `Unexpected binary download: ${relative(root,file)}`);
+    assert((extension === '.parquet' && relative(root, file) === 'public/data/campaign-finance/downloads/transactions.parquet') || !['.xlsx', '.xls', '.heic', '.parquet', '.log', '.ndjson'].includes(extension.toLowerCase()), `Unexpected raw artifact: ${relative(root, file)}`);
+    if (['.json', '.geojson', '.csv', '.ts', '.tsx', '.css', '.md', '.txt', '.sql'].includes(extension)) {
       const content = readFileSync(file, 'utf8');
       assert(!privateText.test(content), `Private path or credential: ${relative(root, file)}`);
       if (extension === '.json' || extension === '.geojson') inspect(JSON.parse(content), relative(root, file));
@@ -83,5 +85,6 @@ try {
   for (const artifact of Object.values(json('src/lib/campaign-finance/supplier-data.json').evidence)) {
     assert.equal(sha('public' + artifact.url), artifact.sha256, `Evidence checksum: ${artifact.url}`);
   }
-  console.log(JSON.stringify({ status: 'passed', filesChecked: checked, snapshot: manifest.snapshot, rows: manifest.rows, candidateProfilesReconciled: facts.length, privacy: 'allowlisted schema; no raw addresses, point locations, local paths or credentials' }, null, 2));
+  const downloads = await checkDownloads(root, manifest, allowed);
+  console.log(JSON.stringify({ status: 'passed', downloads, filesChecked: checked, snapshot: manifest.snapshot, rows: manifest.rows, candidateProfilesReconciled: facts.length, privacy: 'allowlisted schema; no raw addresses, point locations, local paths or credentials' }, null, 2));
 } finally { connection.closeSync(); db.closeSync(); }
