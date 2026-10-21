@@ -19,7 +19,7 @@ import s from '@/components/deep-dives/campaign-finance/governor/governor.module
 
 export const metadata = pageMeta({
   title: 'The money behind the race for governor',
-  description: 'Explore who funds Tina Kotek and Christine Drazan: small donors, business and PAC contributions, spending and donation statistics from Oregon’s campaign records.',
+  description: 'Compare who funds Tina Kotek and Christine Drazan: individual donors, businesses, PACs, campaign spending and donation statistics from Oregon public records.',
   path: GOVERNOR_PATH,
   type: 'article',
 });

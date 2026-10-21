@@ -21,7 +21,7 @@ import { governorMoney } from '@/lib/campaign-finance/money-lead';
 import s from '@/components/deep-dives/campaign-finance/story.module.css';
 import DeepDiveSchema from "@/components/deep-dives/DeepDiveSchema";
 
-export const metadata = pageMeta({ title: 'The money behind Portland’s next council', description: 'Follow the money in Portland’s council races: donations, public matching, major funders and spending. Explore the records and download the data for your own analysis.', path: BASE, type: 'article' });
+export const metadata = pageMeta({ title: 'The money behind Portland’s next council', description: 'Explore Portland council campaign finance: small donors, major funders, public matching and spending. Download the records for your own analysis.', path: BASE, type: 'article' });
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 const d3 = fundingRows('portland-district-3');
