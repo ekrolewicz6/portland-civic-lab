@@ -63,7 +63,7 @@ export default function ReachCampaign({
           </li>
         ))}
       </ul>
-      {!compact && <p className={styles.reachFrom}>As published in their {venues.join(" and ")}.</p>}
+      {!compact && <p className={styles.reachFrom}>As published in their {venues.length > 2 ? `${venues.slice(0, -1).join(", ")} and ${venues.at(-1)}` : venues.join(" and ")}.</p>}
     </div>
   );
 }

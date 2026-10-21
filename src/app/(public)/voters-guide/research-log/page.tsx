@@ -19,6 +19,101 @@ export default function ResearchLog() {
         </p>
       </header>
       <div className={styles.prose}>
+        <h2 id="inner-eastside-2026-10-14">October 14, 2026 · New choice: Inner Eastside zoning (Portland Council, Districts 3 and 4)</h2>
+        <p>
+          Jesse Rawlins of Portland: Neighbors Welcome sent the public folder
+          of answers to the group’s 2026 endorsement questionnaire. Sixteen
+          of the 33 certified Council candidates answered it, including a
+          direct question: would they vote to approve the Inner Eastside
+          Zoning Project, which would allow apartment buildings off the main
+          streets between NE Fremont Street and SE Powell Boulevard. Both
+          district pages now carry that choice as a board. Fourteen of the
+          sixteen said yes. Kimberly Tucker’s answer depends on the timeline
+          and on completed risk assessments, and Patrick Hilton wants a long
+          investigation first, so both read as mixed. The other seventeen
+          candidates’ campaign home pages do not mention the project, so
+          their entries are gaps, not positions. The board’s context notes
+          that every sitting councilor voted for the April 15, 2026
+          resolution that set the project’s timeline; the zoning itself has
+          not come to a vote. The questionnaire now appears among each
+          respondent’s sources. The group endorses in these races; the
+          answers are the candidates’ own words, and the Lab adopted no
+          rating from them. One file in the folder is from a person who is
+          not on the certified candidate list and was not used.
+        </p>
+        <h2 id="neighbors-welcome-2026-10-12">October 12, 2026 · Review: Portland: Neighbors Welcome on housing (Portland Council)</h2>
+        <p>
+          Jesse Rawlins of Portland: Neighbors Welcome, a pro-housing group
+          that endorses candidates in these races, read the District 3 page
+          at our request. He said the summary’s “building new homes versus
+          protecting renters” set up a false choice, since his group and
+          others pursue both. The candidates’ own housing positions split
+          more on who builds, through faster permits for private builders or
+          through public and social housing, so the summary now says that,
+          and the race description no longer frames construction and tenant
+          protections as a balance. He said the candidates’ housing lines are
+          fine. Asked which housing decisions the next Council faces, he named
+          the Inner Eastside zoning project, which is his group’s current
+          campaign, along with social housing, money for affordable housing
+          now that the bond funds are committed, and tenant protections. The
+          District 3 and 4 pages now carry a “Housing” item under “Decisions
+          ahead” drawn from the City’s own records on each. No candidate’s
+          position changed.
+        </p>
+        <h2 id="otero-2026-10-12">October 12, 2026 · Contact added: Cristal Otero (District 3)</h2>
+        <p>
+          Cristal Otero’s October 12 campaign update names the campaign’s
+          Instagram account, @cristalforportland, which her page now lists
+          with her other contact channels. Her campaign site still links no
+          social profiles. The update also lists endorsements and online
+          drop-in sessions. The guide does not list endorsements for any
+          candidate and has no section for campaign events, so neither
+          appears. No position on her page changed.
+        </p>
+        <h2 id="green-energy-institute-2026-10-12">October 12, 2026 · Review and correction: data-center figures (Governor, U.S. Senate and House, Legislature)</h2>
+        <p>
+          Carra Sahler, director and staff attorney of the Green Energy
+          Institute at Lewis &amp; Clark Law School, checked the data-center
+          moratorium board on the Governor page at our request and said it
+          looks accurate. She pointed us to a September 2026 study of
+          Oregon’s data-center industry by ECOnorthwest and the University of
+          Virginia, prepared for the Lemelson Foundation. Under “Decisions
+          ahead,” several race pages said Oregon has about 144 data centers
+          and about $450 million a year in property-tax breaks. The study
+          counts 111 data centers operating and 32 more planned or under
+          construction; the 144 reported at the September 8 legislative
+          hearing counted both. The $450 million is The Oregonian’s estimate
+          of this year’s breaks across all programs. Those items now give
+          both counts and name The Oregonian as the source of the estimate.
+          The Governor page also adds the study’s figures for property taxes
+          billed to data centers in 2025–26 (about $60 million) and for one
+          rural tax-break program’s exemptions in 2023–24 ($233 million). She
+          also noted that the governor’s advisory committee is taking public
+          comments on its preliminary findings until October 24, and the
+          moratorium board now says so. No candidate’s position changed.
+        </p>
+        <h2 id="hrac-2026-10-08">October 8, 2026 · Review: HRAC on comparing the county’s two homelessness counts (Multnomah County)</h2>
+        <p>
+          Dr. Minji Cho of Portland State University’s Homelessness Research
+          &amp; Action Collaborative answered two follow-up questions. The
+          federal figures for Multnomah County remain those of the January
+          2025 Point-in-Time count: 10,526 people homeless, 6,912 of them
+          unsheltered. Unsheltered counts are required only in odd-numbered
+          years and the county did not hold one in 2026, so those are the
+          latest official estimates. She said the by-name list figures and
+          the Point-in-Time figures should not be set side by side as
+          comparable or used to judge whether homelessness has grown, because
+          the gap between them may come from the counting methods alone. The
+          County Chair page already gives only the by-name figures and names
+          the list, so it did not change, and we will not add the 2025 count
+          beside them. She also sent HRAC’s 2025 Oregon Statewide
+          Homelessness Estimates. Checking the Lab’s homelessness dashboard
+          against it, outside the guide, found statewide shelter-bed and
+          student totals added up from incomplete county lists, two
+          racial-disparity ratios that were not HRAC’s, and a 47% rise in
+          the summary of the city-county dispute that was worked out from a
+          rounded starting figure; all are corrected.
+        </p>
         <h2 id="vote-labels-2026-10-08">October 8, 2026 · Correction: every recorded vote now says what it was cast on (Portland Council)</h2>
         <p>
           On the Council choices beneath each race grid, a sitting

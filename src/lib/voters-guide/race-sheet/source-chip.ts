@@ -51,6 +51,8 @@ export function sourceChip(evidence: Evidence): SourceChip {
   // Remarks at a public debate or candidate forum, named as such in the evidence label.
   if (/\bdebate\b/i.test(evidence.label)) return pick("Forum", "Debate");
   if (/\bforum\b/i.test(evidence.label)) return pick("Forum", "Candidate forum");
+  // A questionnaire's published answers, wherever they are hosted, named as such in the evidence label.
+  if (/\bquestionnaire\b/i.test(evidence.label)) return pick("Questionnaire", "Questionnaire");
   if (/multco\.us|washingtoncountyor\.gov|clackamas\.us|docs\.clackamas/i.test(host) && page)
     return pick("Pamphlet", `Pamphlet p. ${page}`);
   if (/multco\.us|washingtoncountyor\.gov|clackamas\.us|docs\.clackamas|sos\.oregon\.gov/i.test(host))

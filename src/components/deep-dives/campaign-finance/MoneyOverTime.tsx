@@ -64,7 +64,7 @@ export function MoneyOverTime({ measure, panels, end, kicker, title, howTo, sour
 }
 
 export type MoneyRow = { key: string; label: string; totals: MoneyTotals; note?: React.ReactNode };
-const PLACES = [['oregon', 'Paid to Oregon addresses', 'placeOregon'], ['other_state', 'Paid to addresses in other states', 'placeOther'], ['committee', 'Passed to other committees', 'placeCommittee'], ['unplaced', 'No address reported', 'placeUnplaced']] as const;
+const PLACES = [['oregon', 'Paid to Oregon addresses', 'placeOregon'], ['other_state', 'Paid to addresses in other states', 'placeOther'], ['payroll', 'Staff pay through payroll services', 'placePayroll'], ['committee', 'Passed to other committees', 'placeCommittee'], ['unplaced', 'No address reported', 'placeUnplaced']] as const;
 
 /** Money in, money out, and the share of payments that went to Oregon addresses, for one or more groups of committees. */
 export function MoneyInOut({ rows, kicker, title, howTo, source }: { rows: MoneyRow[]; kicker: string; title: string; howTo: string; source: React.ReactNode }) {

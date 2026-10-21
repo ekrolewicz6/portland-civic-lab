@@ -18,10 +18,10 @@ export function CountyTaxVisual() {
   return <figure>
     <div className="dc-waffle-layout">
       <div className="dc-waffle" aria-hidden="true">{Array.from({length:100},(_,i)=><i key={i} className={i<32?"filled":""} />)}</div>
-      <div><strong className="dc-big-number">32%</strong><p className="dc-stat-caption">of the property taxes collected in Morrow County came from data centers, according to ECONorthwest’s July 2026 analysis.</p></div>
+      <div><strong className="dc-big-number">32%</strong><p className="dc-stat-caption">of the property taxes levied in Morrow County in 2025–26 were on data-center property, according to the September 2026 study.</p></div>
     </div>
-    <figcaption className="dc-fine" style={{marginTop:17}}>That is about $22.96 million shared among local governments and public districts. Negotiated company fees are additional and are not included here. Each square represents roughly 1% of the taxes collected.</figcaption>
-    <a href={SOURCES.econw.url} className="dc-source">ECONorthwest · July 2026 preliminary analysis, slide 22 ↗</a>
+    <figcaption className="dc-fine" style={{marginTop:17}}>That is about $22.97 million, shared among local governments and public districts. Washington County’s data centers were billed a similar $20.6 million, but that is about 1.2% of the county’s much larger total. Negotiated company fees are additional and are not included here. Each square represents roughly 1% of the taxes levied.</figcaption>
+    <a href={`${SOURCES.econwFull.url}#page=112`} className="dc-source">ECONorthwest and University of Virginia · September 2026 study, page 112 ↗</a>
   </figure>;
 }
 export function ReturnsVisual() {

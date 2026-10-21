@@ -11,6 +11,8 @@ import {
  * Everything a person can pick up and work on: the live tools and the open
  * questions. The About page lists these so a volunteer, a researcher, or a
  * professional can point at one thing instead of offering "to help".
+ * Update this catalog when a tool or deep dive launches, moves, changes scope,
+ * or retires. See the publication checklist in CONTRIBUTING.md.
  */
 
 export type Topic = {
@@ -21,6 +23,7 @@ export type Topic = {
 
 export const TOOLS: Topic[] = [
   { name: "Campaign-finance data downloads and analysis kit", href: "/deep-dives/campaign-finance/data" },
+  { name: "The 2026 voters’ guide", href: "/voters-guide" },
   { name: "Portland Possible, the downtown map", href: DOWNTOWN_URL, external: true },
   { name: "The Parks Atlas", href: PARKS_URL, external: true },
   { name: "The Oregon Governance Atlas", href: OREGON_GOVERNANCE_URL, external: true },
@@ -31,9 +34,16 @@ export const TOOLS: Topic[] = [
   { name: "The City org chart", href: "/org-chart" },
   { name: "The CED Portfolio Map", href: "/ced" },
   { name: "The CED decisions register", href: "/ced/decisions" },
+  { name: "The business directory", href: "/directory" },
+  { name: "The small-business funding finder", href: "/business" },
+  { name: "The Civic Concierge", href: "/concierge" },
+  { name: "Open data and the API", href: "/open-data" },
+  { name: "The public records tracker", href: "/records" },
 ];
 
 export const QUESTIONS: Topic[] = [
+  { name: "Participatory budgeting", href: "/deep-dives/participatory-budgeting" },
+  { name: "Fire in Oregon: guide and atlas", href: "/oregon-fire" },
   { name: "The state of small business in Portland", href: "/deep-dives/small-business" },
   { name: "Portland’s maker economy", href: "/deep-dives/maker-economy" },
   { name: "The homelessness continuum", href: "/deep-dives/continuum" },

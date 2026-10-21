@@ -41,6 +41,14 @@ export function organizationNode(): Node {
       name: "Portland",
       containedInPlace: { "@type": "State", name: "Oregon" },
     },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "620 SW Main St #302",
+      addressLocality: "Portland",
+      addressRegion: "OR",
+      postalCode: "97205",
+      addressCountry: "US",
+    },
     contactPoint: { "@type": "ContactPoint", contactType: "general inquiries", url: `${SITE_URL}/contact` },
     knowsAbout: [
       "Portland city government",

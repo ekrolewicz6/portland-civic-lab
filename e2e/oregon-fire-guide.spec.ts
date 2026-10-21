@@ -4,9 +4,9 @@ test("guide choices survive map navigation, reload, and back", async ({
 }) => {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto("/oregon-fire#understand");
+  await page.goto("/oregon-fire/atlas#understand");
   await expect(
-    page.getByRole("navigation", { name: "Choose your way into the atlas" }),
+    page.getByRole("navigation", { name: "In the atlas" }),
   ).toBeAttached();
   const landscapes = page.getByRole("group", {
     name: "Oregon fire landscapes",
@@ -81,7 +81,7 @@ test("Egley evidence, historical map, imagery, and planning are addressable", as
   test.setTimeout(90000);
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto("/oregon-fire#fire-stories");
+  await page.goto("/oregon-fire/atlas#fire-stories");
   await page
     .getByRole("group", { name: "Documented Oregon stories" })
     .getByRole("button", { name: /Egley/ })

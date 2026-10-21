@@ -16,7 +16,6 @@ import {
   MapPinned,
   ArrowUpRight,
   ArrowRight,
-  Building2,
   Gauge,
   Store,
   HeartHandshake,
@@ -94,8 +93,8 @@ const TOOLS: NavItem[] = [
 
 const WORK: NavItem[] = [
   { label: "Commission research or a build", href: "/contact?topic=Commission%20research%20or%20a%20build", desc: "A question, a decision, or a tool, scoped from the record", icon: FileSearch },
-  { label: "Property owners & developers", href: "/property", desc: "Screening and decision packets, from $7,500", icon: Building2 },
-  { label: "Public institutions", href: "/institutions", desc: "Portfolio intelligence at published prices", icon: Gauge },
+  { label: "Fund a public tool", href: "/contact?topic=Fund%20a%20public%20tool", desc: "Nonprofit partnerships, grants, and philanthropic support", icon: HeartHandshake },
+  { label: "B2B software", href: "/contact?topic=B2B%20software", desc: "Custom software and data tools for organizations", icon: Gauge },
   { label: "Small businesses", href: "/business", desc: "Find the money your business qualifies for", icon: Store },
   { label: "Supporters", href: "/donate", desc: "Founding and monthly support for the public program", icon: HeartHandshake },
 ];
@@ -140,14 +139,14 @@ const MENUS: MenuDef[] = [
   {
     key: "work",
     label: "Work with us",
-    title: "Work with the Lab · published prices",
+    title: "Work with the Lab",
     items: WORK,
     notes: ["One side per matter", "Public work competed", "Every contract listed"],
     featured: {
-      eyebrow: "Published prices",
-      title: "Research, decisions, and builds.",
-      body: "Evidence reviews from $5,000, property screening from $7,500, diagnostics from $15,000, and builds priced by the day. If it can be answered from the public record, or built from it, we can probably do it.",
-      cta: "See the paid work",
+      eyebrow: "Tools and software",
+      title: "Build something useful with us.",
+      body: "Fund a public tool through a nonprofit partnership, grant, or philanthropy. Commission research or have us build software for your organization, with the scope and cost agreed before work starts.",
+      cta: "Explore ways to work together",
       href: "/#work-with-us",
       img: { src: "/images/home/dashboards-b.jpg", alt: "A performance dashboard", position: "object-left-top" },
     },

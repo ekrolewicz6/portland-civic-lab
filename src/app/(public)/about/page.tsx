@@ -26,9 +26,9 @@ export const metadata: Metadata = pageMeta({
 });
 
 const LINES = [
-  { title: "Public program", body: "Free tools and deep-dives, every figure sourced." },
-  { title: "Property practice", body: "Screening and decision packets for owners and developers." },
-  { title: "Institutional practice", body: "Portfolio intelligence for public bodies, competed." },
+  { title: "Public program", body: "Free tools and deep-dives, every figure sourced. Public events in Portland." },
+  { title: "Funded public tools", body: "Tools built with nonprofit partners, grants, and philanthropic support." },
+  { title: "B2B software", body: "Custom tools, dashboards, and software for organizations." },
 ];
 
 const PLUG_INS = ["Specialists", "Partners", "Advisors", "Supporters", "Volunteers"];
@@ -253,21 +253,19 @@ export default function AboutPage() {
             <p className="mt-7 max-w-2xl text-[17px] leading-relaxed text-[var(--color-ink-light)] sm:text-[19px]">
               Portland runs on budgets, audits, permit records, and legislative files that are
               public in theory and unreadable in practice. The Lab reads them, checks every figure
-              against its source, and turns them into tools a resident, a reporter, a building
-              owner, or a bureau director can use in an afternoon. Nobody in Oregon has that as
-              their job, so we took it.
+              against its source, and turns them into tools residents, reporters, nonprofits,
+              and public institutions can use in an afternoon.
             </p>
             <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-[var(--color-ink-light)] sm:text-[19px]">
               We run it like a studio. A small core starts the work, sets the standard, and keeps
               the archive, and each project brings in the specialists, partners, and advisors it
-              needs, with everyone&apos;s role written down and their name on the deliverable. The
-              paid work pays for the public work, and the public work is the reason anyone trusts
-              the paid work.
+              needs, with everyone&apos;s role written down and their name on the deliverable.
+              Our focus is building useful tools: public tools supported through nonprofit
+              partnerships, grants, and philanthropy, alongside B2B software for organizations.
             </p>
             <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-[var(--color-ink-light)]">
-              We chose to be a company rather than a nonprofit because we wanted the free tools to
-              run on our own earnings instead of on grant cycles. The downside is that support
-              isn&apos;t tax-deductible.
+              Portland Civic Lab is a company. Our funding model combines support for public
+              projects with revenue from software work. Support isn&apos;t tax-deductible.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -425,6 +423,9 @@ export default function AboutPage() {
           </Link>
           <Link href="/volunteer" className="inline-flex items-center gap-1 font-semibold text-[var(--color-canopy)] hover:underline">
             Volunteer without a topic in mind <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+          <Link href="/events" className="inline-flex items-center gap-1 font-semibold text-[var(--color-canopy)] hover:underline">
+            Come to a Lab event <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
       </section>

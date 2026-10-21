@@ -32,10 +32,9 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 /**
- * The homepage has three readers: residents who use the free tools, the
- * owners and institutions who hire the Lab, and the supporters who fund the
- * public program. The hero carries the thesis and the downtown map; the
- * three doors send each reader where they belong; the rest shows the work.
+ * The homepage serves residents, public-tool partners and funders, software
+ * clients, supporters, and builders. The audience doors connect each reader
+ * to the work they can use, commission, fund, or help build.
  */
 
 const dashboardTopics = [
@@ -172,22 +171,22 @@ const DOORS: Door[] = [
     img: { src: "/images/home/parks-b.jpg", alt: "The Parks Atlas map of Portland", caption: "Parks Atlas · 316 parks" },
   },
   {
-    key: "owners",
-    pill: "I own or develop property",
-    eyebrow: "For owners and developers",
-    title: "Find out which building is worth a closer look.",
-    body: "We check a property, or a whole portfolio, against the public record and tell you what is known, what isn't, and what to do next. It starts at $7,500 and takes about three weeks.",
-    cta: { label: "For property owners", href: "/property" },
-    secondary: { label: "See the downtown map", href: DOWNTOWN_URL, external: true },
-    img: { src: "/images/home/downtown.jpg", alt: "The downtown parcel map", position: "object-center", caption: "Portland Possible · 5,275 parcels" },
+    key: "partners",
+    pill: "I want to fund a public tool",
+    eyebrow: "For nonprofits and funders",
+    title: "Help build a tool people can use.",
+    body: "Bring us a community need or a question that deserves a public tool. We can scope a project for nonprofit funding, a grant, or philanthropic support, including what it takes to keep the tool useful over time.",
+    cta: { label: "Discuss a public tool", href: "/contact?topic=Fund%20a%20public%20tool" },
+    secondary: { label: "Explore the tools", href: "#work" },
+    img: { src: "/images/home/parks-b.jpg", alt: "The Parks Atlas map of Portland", caption: "Parks Atlas · 316 parks" },
   },
   {
-    key: "institutions",
-    pill: "I run a public institution",
-    eyebrow: "For public institutions",
-    title: "The decisions cross bureau lines. The information doesn't.",
-    body: "We keep one reliable record of what a bureau owns, has promised, and owes, and we run the monthly review from it, so your staff never have to feed a second system. We compete for the work through normal procurement. A diagnostic starts at $15,000.",
-    cta: { label: "For public institutions", href: "/institutions" },
+    key: "organizations",
+    pill: "My organization needs software",
+    eyebrow: "For organizations",
+    title: "Build software around the work you do.",
+    body: "We build B2B software, dashboards, and data tools for businesses, nonprofits, and public institutions. Bring us the problem your team needs to solve, and we will scope the build and ongoing support with you.",
+    cta: { label: "Discuss a software project", href: "/contact?topic=B2B%20software" },
     secondary: { label: "How we contract", href: "/independence" },
     img: { src: "/images/home/dashboards-b.jpg", alt: "A performance dashboard", position: "object-left-top", caption: "Dashboards · every source linked" },
   },
@@ -231,34 +230,33 @@ const CAPABILITIES = [
     links: [{ label: "The public version: the deep-dive library", href: "/deep-dives" }],
   },
   {
-    key: "decisions",
+    key: "public-tools",
     accent: "bg-[var(--color-sage)]",
-    eyebrow: "Decisions",
-    title: "Due diligence for a decision you are about to make.",
+    eyebrow: "Funded public tools",
+    title: "Turn a community need into a useful tool.",
     examples: [
-      "Which building or portfolio deserves the next dollar of diligence",
-      "Technical diligence on a project, a vendor, a model, or a plan",
-      "One kept record of what a bureau owns, promised, and owes",
+      "A public tool commissioned by a nonprofit",
+      "A project scoped for grant or philanthropic funding",
+      "A plan for keeping the tool useful after launch",
     ],
-    price: "$7,500+ · diagnostics $15,000+",
-    cta: { label: "Bring us the decision", href: COMMISSION },
+    price: "Build and upkeep scoped together",
+    cta: { label: "Discuss a public tool", href: "/contact?topic=Fund%20a%20public%20tool" },
     links: [
-      { label: "Owners and developers", href: "/property" },
-      { label: "Public institutions", href: "/institutions" },
+      { label: "Explore the public tools", href: "#work" },
     ],
   },
   {
     key: "builds",
     accent: "bg-[var(--color-river)]",
-    eyebrow: "Builds",
-    title: "Have us build the tool, the dataset, or the model.",
+    eyebrow: "B2B software",
+    title: "Get software that fits your organization.",
     examples: [
-      "An atlas or dashboard for your subject, built the same way as ours",
-      "A working model of a system: a budget, a pipeline, a continuum",
-      "A public tool, sponsored by a foundation and free to everyone",
+      "Custom software for the work your team does every day",
+      "Dashboards and data tools that make information usable",
+      "Maintenance and improvements as your needs change",
     ],
     price: "Scoped in days · upkeep $2,500+/mo",
-    cta: { label: "Scope a build", href: COMMISSION },
+    cta: { label: "Scope a software project", href: "/contact?topic=B2B%20software" },
     links: [{ label: "The public version: eight tools", href: "#work" }],
   },
 ];
@@ -320,7 +318,7 @@ const JOIN = [
   {
     eyebrow: "Partner",
     title: "Build a tool with us, or sponsor a question.",
-    body: "For institutions, firms, and foundations that want part of the public record made usable. Published prices, and the same rules as everyone else.",
+    body: "For nonprofits, foundations, businesses, and public institutions that want useful tools built around the people they serve.",
     href: "/contact?topic=Partnership",
     cta: "Propose a partnership",
   },
@@ -423,8 +421,8 @@ export default function HomePage() {
               >
                 Every decision Portland makes should start from facts anyone can check. We&apos;re
                 building the institution that makes that possible: we open up the public record,
-                source it, and turn it into tools anyone can use for free. Philanthropy and paid
-                work cover the cost, and all of it goes toward a better Portland.
+                source it, and turn it into tools anyone can use for free. Our funding model brings
+                together nonprofit partnerships, grants, philanthropy, and B2B software work.
               </p>
 
               <div
@@ -637,14 +635,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Work with the Lab: research, decisions, builds ── */}
+      {/* ── Work with the Lab: research, public tools, software ── */}
       <section id="work-with-us" className="scroll-mt-20 bg-[var(--color-canopy)] noise-overlay">
         <div className="relative z-10 mx-auto w-full max-w-[1400px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24 3xl:max-w-[1800px]">
           <SectionHead
             light
-            eyebrow="Work with the Lab · published prices"
-            title="Bring us a question, a decision, or a build."
-            lead="Every price is public, and you get the number in writing before anything starts."
+            eyebrow="Work with the Lab"
+            title="Build something useful with us."
+            lead="Fund a public tool, commission research, or hire us to build software for your organization. We agree on the scope, cost, and upkeep before work starts."
           />
 
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto_auto]">
@@ -816,9 +814,9 @@ export default function HomePage() {
               A different kind of civic institution.
             </h2>
             <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-[var(--color-ink-light)]">
-              Portland Civic Lab is a small company that gives its civic tools away, pays for them
-              with research and analysis work at published prices, and publishes the rules that keep
-              the two from mixing. Nobody in Oregon has this job, so we took it.
+              Portland Civic Lab builds free civic tools and software for organizations. Our model
+              combines nonprofit partnerships, grants, philanthropic support, and B2B software
+              revenue. We publish the rules that keep funding separate from our findings.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link

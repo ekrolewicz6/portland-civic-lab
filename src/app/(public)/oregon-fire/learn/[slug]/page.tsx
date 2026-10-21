@@ -27,7 +27,8 @@ export default async function FireLessonPage({ params }: Props) {
   if (index < 0) notFound();
   const lesson = orderedLessons[index];
   const previous = orderedLessons[index - 1], next = orderedLessons[index + 1];
-  const data = { "@context": "https://schema.org", "@type": "Article", headline: lesson.title, description: lesson.paragraphs[0], url: `${FIRE_URL}/learn/${slug}`, datePublished: LESSON_DATE, dateModified: "2026-09-30", author: FIRE_AUTHORS.map(name => ({ "@type": "Person", name })), publisher: { "@type": "Organization", name: "Portland Civic Lab" }, citation: lesson.sources.map(key => LESSON_SOURCES[key].url) };
+  const dateModified = slug === "different-landscapes" || slug === "costs-and-choices" ? "2026-10-12" : slug === "after-the-fire" ? "2026-10-10" : "2026-09-30";
+  const data = { "@context": "https://schema.org", "@type": "Article", headline: lesson.title, description: lesson.paragraphs[0], url: `${FIRE_URL}/learn/${slug}`, datePublished: LESSON_DATE, dateModified, author: FIRE_AUTHORS.map(name => ({ "@type": "Person", name })), publisher: { "@type": "Organization", name: "Portland Civic Lab" }, citation: lesson.sources.map(key => LESSON_SOURCES[key].url) };
   const visual =
     slug === "how-fire-moves" ? <FireMechanicsVisual /> :
     slug === "different-landscapes" ? <LandscapeOverview /> :

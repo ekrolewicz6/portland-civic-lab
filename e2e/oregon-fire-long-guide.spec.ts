@@ -1,5 +1,7 @@
 import { test, expect } from "@playwright/test";
-import { FIRE_LESSONS } from "../src/lib/oregon-fire/lesson";
+import { FIRE_GUIDE_ORDER, FIRE_LESSONS } from "../src/lib/oregon-fire/lesson";
+
+const orderedTitles = FIRE_GUIDE_ORDER.map(slug => FIRE_LESSONS.find(lesson => lesson.slug === slug)!.title);
 
 test("the full lesson precedes the atlas and deeper reading returns to its chapter",async({page})=>{
   const errors:string[]=[];
@@ -7,11 +9,11 @@ test("the full lesson precedes the atlas and deeper reading returns to its chapt
   await page.route("**/api/oregon-fire/records?*",route=>route.fulfill({status:503,json:{error:"Records temporarily unavailable"}}));
   await page.goto("/oregon-fire");
   await expect(page.locator(".fire-long-chapter")).toHaveCount(8);
-  await expect(page.locator(".fire-long-chapter h2")).toHaveText(FIRE_LESSONS.map(l=>l.title));
+  await expect(page.locator(".fire-long-chapter h2")).toHaveText(orderedTitles);
   await expect(page.locator(".fire-long-byline")).toContainText("Edan Krolewicz & Dominic Kuklawood");
   expect(await page.locator(".fire-guide-finish").evaluate(el=>Boolean(el.compareDocumentPosition(document.querySelector("#explore")!) & Node.DOCUMENT_POSITION_FOLLOWING))).toBeTruthy();
   await expect(page.locator(".fire-review-bars")).toContainText("72%");
-  await page.getByRole("link",{name:"Go deeper: the research"}).click();
+  await page.getByRole("link",{name:"Go deeper: what helped"}).click();
   await expect(page).toHaveURL(/learn\/does-treatment-work$/);
   await expect(page.getByRole("heading",{name:"Interpret the averages without turning them into a ranking"})).toBeVisible();
   await page.getByRole("link",{name:"Return to this chapter in the guide"}).click();
@@ -41,10 +43,6 @@ test("mobile lesson, keyboard chapter navigation and cost assumptions",async({pa
     await page.locator(`#${lesson.anchor}`).scrollIntoViewIfNeeded();
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
   }
-  await page.getByRole("slider",{name:/What is the chance fire reaches the work/}).focus();
-  await page.keyboard.press("Home");
-  await page.keyboard.press("ArrowRight");
-  await expect(page.locator(".fire-cost-equation")).toHaveText("5% × $10 million = $500,000");
   const chapter=page.getByRole("navigation",{name:"Chapters in the fire guide"}).getByRole("link",{name:"03 What changed"});
   await chapter.focus();
   await page.keyboard.press("Enter");
@@ -52,6 +50,11 @@ test("mobile lesson, keyboard chapter navigation and cost assumptions",async({pa
   await expect(page.locator("#landscape-history h2")).toBeInViewport();
   await page.getByRole("link",{name:"Go deeper: what changed"}).click();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+  await page.goto("/oregon-fire/learn/costs-and-choices");
+  await page.getByRole("slider",{name:/What is the chance fire reaches the work/}).focus();
+  await page.keyboard.press("Home");
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator(".fire-cost-equation")).toHaveText("5% × $10 million = $500,000");
 });
 
 test("essential story and real images are readable without JavaScript",async({browser})=>{
@@ -59,13 +62,13 @@ test("essential story and real images are readable without JavaScript",async({br
   const page=await context.newPage();
   await page.goto("/oregon-fire");
   await expect(page.locator(".fire-long-chapter")).toHaveCount(8);
-  await expect(page.locator(".fire-long-chapter h2")).toHaveText(FIRE_LESSONS.map(l=>l.title));
+  await expect(page.locator(".fire-long-chapter h2")).toHaveText(orderedTitles);
   await page.locator("#through-time").scrollIntoViewIfNeeded();
   const image=page.locator(".fire-aftermath-images img").first();
   await expect.poll(()=>image.evaluate((el:HTMLImageElement)=>el.complete && el.naturalWidth>0)).toBeTruthy();
   await page.locator("#costs-and-choices").scrollIntoViewIfNeeded();
+  await page.getByRole("link",{name:"Go deeper: the money"}).click();
   await expect(page.locator(".fire-cost-equation")).toHaveText("20% × $10 million = $2 million");
-  await page.getByRole("link",{name:"Go deeper: the costs"}).click();
   await expect(page.getByRole("heading",{name:"First establish what was actually spent"})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
   await context.close();
@@ -108,9 +111,27 @@ test("the documentary visuals and videos support the story at desktop and mobile
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
 });
 
-
-test("the cost example distinguishes actual possibilities, their average, and break-even", async ({page}) => {
+test("the guide gives different readers a path and distinguishes spending from announced investments", async ({page}) => {
+  await page.setViewportSize({width:390,height:844});
   await page.goto("/oregon-fire");
+  const paths=page.getByRole("navigation",{name:"Ways into the fire guide"});
+  await expect(paths.getByRole("link")).toHaveCount(3);
+  await paths.getByRole("link",{name:/What can people do/}).click();
+  await expect(page).toHaveURL(/#what-success-means$/);
+  await expect(page.locator("#what-success-means h2")).toBeInViewport();
+  await expect(page.locator(".fire-region-contrast")).toContainText("Valley floor");
+  await expect(page.locator(".fire-region-contrast")).toContainText("Higher Cascades");
+  await expect(page.locator(".fire-region-contrast a")).toHaveCount(2);
+  const funding=page.locator(".fire-funding-path");
+  await expect(funding).toContainText("ODF · calendar 2025 · expenditure");
+  await expect(funding).toContainText("OSFM · announced February 2023 · investment");
+  await expect(funding).toContainText("We do not add them into a statewide total.");
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+});
+
+
+test("the deeper cost example distinguishes actual possibilities, their average, and break-even", async ({page}) => {
+  await page.goto("/oregon-fire/learn/costs-and-choices");
   const calculator=page.locator(".fire-cost-explorer");
   await expect(calculator.getByRole("img",{name:/20 of 100 possible futures/})).toBeVisible();
   await expect(calculator.locator(".fire-cost-outcomes")).toContainText("Avoid $0 in wildfire damage");

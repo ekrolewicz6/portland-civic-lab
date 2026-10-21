@@ -1070,8 +1070,8 @@ const roadAct = record("GovTrack · H.R. 6644, the 21st Century ROAD to Housing 
   "Public Law 119-101. Permitting and NEPA changes for housing, a permanent Rental Assistance Demonstration with a 555,000-unit cap, HOME conversions of vacant buildings (FY2027–31); it authorizes programs but appropriates no money.");
 const dcOrder = record("White House · Executive Order 14318, Accelerating Federal Permitting of Data Center Infrastructure", "https://www.whitehouse.gov/presidential-actions/2025/07/accelerating-federal-permitting-of-data-center-infrastructure/", "July 23, 2025; reviewed September 22, 2026",
   "Expedited reviews, categorical exclusions, federal and military land, and loans, grants and tax incentives for AI data centers over 100 megawatts or $500 million.");
-const jprDataCenters = reporting("Oregon Capital Chronicle, via Jefferson Public Radio · Kotek pauses data centers on state land", "https://www.ijpr.org/politics-government/2026-09-09/gov-kotek-pauses-data-centers-on-state-land-capitol-demonstrators-want-her-to-go-further", "September 9, 2026; reviewed September 22, 2026",
-  "An estimated 144 data centers in Oregon; at least $450 million in property tax breaks this year; state-land deals paused through July 1, 2027.");
+const dcStudy = reporting("ECOnorthwest and the University of Virginia · Understanding Oregon’s Data Center Industry (study for the Lemelson Foundation)", "https://econw.com/wp-content/uploads/ECOnorthwest_Understanding-Oregons-Data-Center-Industry_Full-Report.pdf", "September 2026; reviewed October 12, 2026",
+  "Facility counts on page 22: 111 operating and 32 planned or under construction through 2030. The Oregonian’s $450 million estimate is on page 128. The state-land pause is from Oregon Capital Chronicle reporting via Jefferson Public Radio, September 9, 2026 (ijpr.org/politics-government/2026-09-09/gov-kotek-pauses-data-centers-on-state-land-capitol-demonstrators-want-her-to-go-further).");
 const ibrCost = record("Interstate Bridge Replacement Program · Cost estimate and funding", "https://interstatebridge.org/CostEstimate", "2026 estimate; reviewed September 22, 2026",
   "$14.4 billion likely corridor cost; $7.09 billion first phase; $5.7 billion committed including $2.1 billion in federal grants and $650 million of Washington’s federal money; $1 billion FTA Capital Investment Grant still sought; tolling as early as 2028.");
 const ballotpediaResults = (district: number, note: string): Evidence => reporting(
@@ -1388,8 +1388,8 @@ const housingItem: StakeItem = {
 };
 const dataCenterItem: StakeItem = {
   label: "Data centers",
-  text: "Oregon has an estimated 144 data centers receiving at least $450 million in property tax breaks this year. The governor paused data-center deals on state land through July 1, 2027, while federal policy since July 2025 fast-tracks permits and financing for large AI data centers.",
-  source: jprDataCenters,
+  text: "Oregon has 111 operating data centers and 32 more planned or under construction, a September 2026 study found, and The Oregonian reported they will get at least $450 million in property tax breaks this year. The governor paused data-center deals on state land through July 1, 2027, while federal policy since July 2025 fast-tracks permits and financing for large AI data centers.",
+  source: dcStudy,
 };
 const bridgeItem: StakeItem = {
   label: "Interstate Bridge",

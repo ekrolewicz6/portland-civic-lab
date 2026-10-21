@@ -640,10 +640,11 @@ const censusBps = record(
   "2025 annual file; reviewed September 21, 2026",
   "Oregon 2025: 9,215 single-family, 480 two-unit, 219 three-to-four-unit and 4,925 five-plus units authorized (14,839). The target is from the Oregon Housing Needs Analysis 2026 report (oregon.gov/das/oea/Documents/OHNA-2026-Results-Report.pdf); the 36,000 goal from Executive Order 23-04.",
 );
-const jprDc = reporting(
-  "Oregon Capital Chronicle, via Jefferson Public Radio · Kotek pauses data centers on state land; demonstrators want more",
-  "https://www.ijpr.org/politics-government/2026-09-09/gov-kotek-pauses-data-centers-on-state-land-capitol-demonstrators-want-her-to-go-further",
-  "September 9, 2026; reviewed September 21, 2026",
+const dcStudy = reporting(
+  "ECOnorthwest and the University of Virginia · Understanding Oregon’s Data Center Industry (study for the Lemelson Foundation)",
+  "https://econw.com/wp-content/uploads/ECOnorthwest_Understanding-Oregons-Data-Center-Industry_Full-Report.pdf",
+  "September 2026; reviewed October 12, 2026",
+  "Facility counts on page 22 (111 operating, 32 planned or under construction through 2030; the 144 records reported at the September 8, 2026 hearing include both). Property taxes levied on data-center property, about $60.2 million in FY 2025–26, on page 112; Business Oregon’s $233 million exempted under long-term rural enterprise zones in FY 2023–24 on page 104; The Oregonian’s estimate of more than $450 million in 2026 exemptions across all programs on page 128. The study says the three are not comparable and that an exemption is not necessarily revenue lost. The state-land pause is from the governor’s September 8, 2026 release.",
 );
 const persVal = record(
   "PERS · Milliman actuarial valuation as of December 31, 2024 (advisory for 2027–29 rates)",
@@ -686,7 +687,7 @@ const governorTopics: ExtraTopic[] = [
     short: "Moratorium",
     question: "Pause new data centers statewide until standards are set?",
     context:
-      "On September 8, 2026 the governor backed a moratorium and paused data-center deals on state land through July 1, 2027; her office says only the Legislature can pause private development. An advisory committee's recommendations are due by the end of 2026 for the 2027 session.",
+      "On September 8, 2026 the governor backed a moratorium and paused data-center deals on state land through July 1, 2027; her office says only the Legislature can pause private development. An advisory committee's recommendations are due by the end of 2026 for the 2027 session; its preliminary findings, released September 10, take public comments until October 24.",
   },
   {
     id: "gov-power-act",
@@ -922,8 +923,8 @@ const stakes: RaceStakes[] = [
       {
         label: "Data centers",
         text:
-          "The state has about 144 data centers; at a September 8, 2026 hearing the Legislative Revenue Office called reporting of at least $450 million in property tax breaks this year “pretty close.” State-land deals are paused through July 1, 2027, and the governor’s advisory committee owes recommendations by the end of 2026.",
-        source: jprDc,
+          "Oregon has 111 operating data centers and 32 more planned or under construction, a September 2026 study found. Their property was billed about $60 million in taxes for 2025–26; Business Oregon reports $233 million exempted under one rural program in 2023–24, and The Oregonian puts 2026 breaks above $450 million. State-land deals are paused through July 1, 2027, and the governor’s advisory committee owes recommendations by the end of 2026.",
+        source: dcStudy,
       },
       {
         label: "PERS",

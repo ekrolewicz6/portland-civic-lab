@@ -6,6 +6,7 @@ import {
   type Candidate,
   type Race,
 } from "./types";
+import { pnwQuestionnaire, pnwResponses } from "./race-sheet/content/pnw-questionnaire";
 const roster = electionSource(
   "Portland certified candidate register",
   officialSources.portland,
@@ -442,6 +443,10 @@ const d4: Candidate[] = [
     statement(64),
   ),
 ];
+/** Portland: Neighbors Welcome’s published questionnaire answers, a venue of the candidate’s own words for the sixteen who answered (research log, October 14, 2026). */
+for (const person of [...d3, ...d4]) {
+  if (pnwResponses[person.id]) person.sources.push(pnwQuestionnaire(person.id));
+}
 const base = {
   geography: "Portland" as const,
   jurisdiction: "City of Portland",
@@ -460,7 +465,7 @@ export const portlandRaces: Race[] = [
     seats: 3,
     method: "Ranked choice · three seats",
     comparison:
-      "Compare how candidates would balance housing construction and tenant protections, police and unarmed response, and service commitments against taxes and utility bills. Candidates appear alphabetically; this is not a ranking.",
+      "Compare how candidates would get more homes built and protect renters, how they would mix police and unarmed response, and how they would weigh service commitments against taxes and utility bills. Candidates appear alphabetically; this is not a ranking.",
     candidates: d3,
   },
   {
