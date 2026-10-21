@@ -1,11 +1,12 @@
 import { expect, test } from '@playwright/test';
+import publication from '../src/lib/campaign-finance/active-publication.json';
 
 test('current statistics cover reviewed council, auditor and governor candidates', async ({ request }) => {
   const response = await request.get('/api/campaign-finance/donations');
   expect(response.ok()).toBeTruthy();
   const data = await response.json();
   expect(data.candidates).toHaveLength(20);
-  expect(data.end).toBe('2026-10-10');
+  expect(data.end).toBe(publication.end);
   for (const candidate of data.candidates) {
     const stats = candidate.statistics;
     expect(Object.values(stats.funding).reduce((total: number, source: any) => total + source.cents, 0)).toBe(stats.nonmatchingCents);
@@ -30,11 +31,10 @@ for (const width of [1440, 390]) {
     await expect(page.locator('[data-donation-comparison="portland-district-3"] tbody tr')).toHaveCount(9);
     await expect(page.locator('[data-donation-comparison="portland-district-4"] tbody tr')).toHaveCount(8);
     const weekly = page.locator('[data-chart="weekly"]').first();
-    await expect(weekly).toContainText('Through 2026-10-10');
-    const district4 = page.locator('#district-4');
-    await expect(district4).toContainText('Sep 28–Oct 4');
+    await expect(weekly).toContainText(`Through ${publication.end}`);
+    await expect(page.locator('#district-4 [data-chart="weekly"]')).toContainText([`Through ${publication.end}`, `Through ${publication.end}`]);
     const timeline = page.locator('#campaign-timeline');
-    await expect(timeline).toContainText('2026-10-10');
+    await expect(timeline).toContainText(publication.end);
     await page.goto('/voters-guide/portland-district-3/tiffany-koyama-lane');
     const stats = page.locator('[data-donation-statistics="23208"]');
     await expect(stats).toContainText('Median individual gift');

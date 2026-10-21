@@ -113,7 +113,9 @@ const norm = value => value.normalize('NFKC').trim().replace(/\s+/g, ' ').toUppe
 const identity = row => {
   if (row['Contributor/Payee Committee ID'].trim()) return 'committee:' + row['Contributor/Payee Committee ID'].trim();
   const fields = ['Contributor/Payee', 'Book Type', 'Addr Line1', 'Addr Line2', 'City', 'State', 'Zip', 'Country'];
-  return 'record:' + createHash('sha256').update(JSON.stringify(fields.map(field => norm(row[field])))).digest('hex').slice(0, 24);
+  // Match common.identity's Python JSON serialization, including separator spaces.
+  const fingerprint = '[' + fields.map(field => JSON.stringify(norm(row[field]))).join(', ') + ']';
+  return 'record:' + createHash('sha256').update(fingerprint).digest('hex').slice(0, 24);
 };
 for (const row of newRows) {
   if (reviewed.has(row['Filer Id']) && row['Sub Type'] === 'Cash Contribution' && /SMALL DONOR ELECTION|CITY OF PORTLAND|OPEN AND ACCOUNTABLE ELECTION/i.test(row['Contributor/Payee']) && !knownPayorGroups.has(`${row['Filer Id']}|${identity(row)}`)) {
