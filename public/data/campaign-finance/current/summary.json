@@ -1,10 +1,10 @@
 {
-  "snapshot": "orestar-20250101-20261010-7737e46dfe34",
+  "snapshot": "orestar-20250101-20261020-5bdd1048615c",
   "start": "2025-01-01",
-  "end": "2026-10-10",
-  "rows": 325365,
+  "end": "2026-10-20",
+  "rows": 332944,
   "completeness_verified": false,
-  "filers": 1916,
+  "filers": 1929,
   "bases": [
     {
       "basis": "cash_adjustment",
@@ -13,28 +13,28 @@
     },
     {
       "basis": "cash_contribution",
-      "records": 215435,
-      "amount_cents": 13409257066
+      "records": 220354,
+      "amount_cents": 14184460773
     },
     {
       "basis": "cash_payment",
-      "records": 82136,
-      "amount_cents": 9975286724
+      "records": 84272,
+      "amount_cents": 10635838391
     },
     {
       "basis": "cash_reversal",
-      "records": 470,
-      "amount_cents": 86181448
+      "records": 482,
+      "amount_cents": 92960342
     },
     {
       "basis": "contribution_refund",
-      "records": 1022,
-      "amount_cents": 115280154
+      "records": 1035,
+      "amount_cents": 115451554
     },
     {
       "basis": "forgiven_obligation",
-      "records": 240,
-      "amount_cents": 37086756
+      "records": 243,
+      "amount_cents": 40628126
     },
     {
       "basis": "loan_forgiven",
@@ -43,23 +43,23 @@
     },
     {
       "basis": "loan_payment",
-      "records": 119,
-      "amount_cents": 43485520
+      "records": 120,
+      "amount_cents": 44117318
     },
     {
       "basis": "loan_received",
-      "records": 344,
-      "amount_cents": 133677483
+      "records": 348,
+      "amount_cents": 134827483
     },
     {
       "basis": "noncash_support",
-      "records": 7098,
-      "amount_cents": 1264229499
+      "records": 7343,
+      "amount_cents": 1370597997
     },
     {
       "basis": "obligation",
-      "records": 7412,
-      "amount_cents": 551353799
+      "records": 7550,
+      "amount_cents": 570561511
     },
     {
       "basis": "obligation_adjustment",
@@ -68,18 +68,18 @@
     },
     {
       "basis": "obligation_cancellation",
-      "records": 19,
-      "amount_cents": 12018103
+      "records": 20,
+      "amount_cents": 13015603
     },
     {
       "basis": "other_cash_payment",
-      "records": 1500,
-      "amount_cents": 127548150
+      "records": 1507,
+      "amount_cents": 128099728
     },
     {
       "basis": "other_cash_receipt",
-      "records": 9275,
-      "amount_cents": 431902232
+      "records": 9375,
+      "amount_cents": 435308618
     },
     {
       "basis": "receivable",
@@ -91,23 +91,23 @@
     {
       "committee_id": "4792",
       "name": "Friends of Tina Kotek",
-      "records": 11208,
-      "cash_contributions_cents": 1594126942,
-      "cash_payments_cents": 531493916
+      "records": 13016,
+      "cash_contributions_cents": 1782145006,
+      "cash_payments_cents": 531566833
     },
     {
       "committee_id": "19050",
       "name": "Friends of Christine Drazan",
-      "records": 8487,
-      "cash_contributions_cents": 1434318486,
-      "cash_payments_cents": 1074180151
+      "records": 9039,
+      "cash_contributions_cents": 1519447008,
+      "cash_payments_cents": 1128425841
     },
     {
       "committee_id": "23285",
       "name": "Building a Stronger Oregon",
-      "records": 22450,
+      "records": 22457,
       "cash_contributions_cents": 1066859462,
-      "cash_payments_cents": 155696985
+      "cash_payments_cents": 162246985
     },
     {
       "committee_id": "21717",
@@ -119,30 +119,30 @@
     {
       "committee_id": "353",
       "name": "Democratic Party of Oregon",
-      "records": 628,
-      "cash_contributions_cents": 284582331,
-      "cash_payments_cents": 256571822
+      "records": 695,
+      "cash_contributions_cents": 343132331,
+      "cash_payments_cents": 311743656
     },
     {
       "committee_id": "1524",
       "name": "Future PAC, House Builders",
-      "records": 974,
-      "cash_contributions_cents": 283021300,
+      "records": 977,
+      "cash_contributions_cents": 304021300,
       "cash_payments_cents": 106100440
     },
     {
       "committee_id": "24693",
       "name": "Dudley for Oregon",
-      "records": 828,
+      "records": 829,
       "cash_contributions_cents": 248248157,
-      "cash_payments_cents": 245358461
+      "cash_payments_cents": 245361111
     },
     {
       "committee_id": "12986",
       "name": "Oregon Nurses Political Action Committee",
-      "records": 214,
-      "cash_contributions_cents": 239238064,
-      "cash_payments_cents": 169137774
+      "records": 219,
+      "cash_contributions_cents": 245511982,
+      "cash_payments_cents": 190402841
     },
     {
       "committee_id": "4572",
@@ -154,8 +154,8 @@
     {
       "committee_id": "33",
       "name": "Citizen Action for Political Education",
-      "records": 18748,
-      "cash_contributions_cents": 180102185,
+      "records": 18780,
+      "cash_contributions_cents": 180162531,
       "cash_payments_cents": 135235749
     }
   ],
@@ -163,8 +163,8 @@
     {
       "family": "Contribution",
       "basis": "cash_contribution",
-      "records": 31971,
-      "amount_cents": 1228260430
+      "records": 32618,
+      "amount_cents": 1250840384
     },
     {
       "family": "Contribution",
@@ -175,20 +175,20 @@
     {
       "family": "Contribution",
       "basis": "noncash_support",
-      "records": 895,
-      "amount_cents": 6108535
+      "records": 906,
+      "amount_cents": 6209220
     },
     {
       "family": "Expenditure",
       "basis": "cash_payment",
-      "records": 19895,
-      "amount_cents": 52849045
+      "records": 20152,
+      "amount_cents": 53586262
     },
     {
       "family": "Expenditure",
       "basis": "obligation",
-      "records": 2312,
-      "amount_cents": 10218007
+      "records": 2339,
+      "amount_cents": 10318378
     },
     {
       "family": "Other",
@@ -217,30 +217,30 @@
     {
       "family": "Other Receipt",
       "basis": "other_cash_receipt",
-      "records": 2606,
-      "amount_cents": 106805857
+      "records": 2636,
+      "amount_cents": 107429206
     }
   ],
   "evidence": {
     "bases": {
       "url": "/data/campaign-finance/current/financial-bases.csv",
       "rows": 16,
-      "sha256": "022a5bb9302906d021177b47dd1607d417a13e8c172d255949433ee1ee5a71fc"
+      "sha256": "1e54f0138f442238e8291dbf75509c7f7462a3e02ef2ee9f900bbc15ef162680"
     },
     "committees": {
       "url": "/data/campaign-finance/current/committees.csv",
-      "rows": 1916,
-      "sha256": "11da95f7f91d76bede4e269ddf0b9ba5b3c6e3a12edd2ca9e805c4500243d530"
+      "rows": 1929,
+      "sha256": "1371914b238bcbdaaa6a38db2b28f9e7479096d3fedebb68aa6cb25dac7b894a"
     },
     "disclosure": {
       "url": "/data/campaign-finance/current/disclosure.csv",
       "rows": 10,
-      "sha256": "4ac108a8233b6db9fe748208cbe804638fb366f8ee9e8f052fb272302785e8f3"
+      "sha256": "54c03ffce5f6558ca2d2e072f934f12348ec7aa71e2b92a58961beea1f8781ec"
     },
     "candidates": {
       "url": "/data/campaign-finance/current/candidate-funding.csv",
       "rows": 18,
-      "sha256": "381ca069660f1bed96961e2c4682ed5e35851e823e809d5dbade26b5b961b98b"
+      "sha256": "9eb7c39da37a88de35657265c6f289dd7168be9399b08cf812dc9eaaba19fe45"
     }
   }
 }

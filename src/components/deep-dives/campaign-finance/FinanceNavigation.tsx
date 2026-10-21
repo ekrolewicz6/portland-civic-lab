@@ -31,10 +31,11 @@ function Navigation({ pathname }: { pathname?: string }) {
           <Link className={s.parent} href="/deep-dives">Deep dives <span aria-hidden="true">/</span></Link>
           <Link className={s.title} href={BASE}>Campaign finance</Link>
         </div>
+        <div className={s.actions}><a className={s.download} href={`${BASE}/data`} aria-current={active(`${BASE}/data`) ? 'page' : undefined}>Download data</a>
         <a className={s.explorer} href={`${BASE}/explorer`} aria-current={exploring ? (pathname === `${BASE}/explorer` ? 'page' : 'location') : undefined}>
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
           Explore records
-        </a>
+        </a></div>
       </div>
       <div className={s.bottom}>
         <div className={s.sections}>

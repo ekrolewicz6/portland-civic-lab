@@ -3,6 +3,7 @@ import { test, expect } from '@playwright/test';
 const base = '/deep-dives/campaign-finance';
 const pages = [
   { path: '', active: 'Overview' },
+  { path: '/data', active: 'Download data' },
   { path: '/explorer', active: 'Explore records' },
   { path: '/races', active: 'Compare races' },
   { path: '/races/portland-district-3', active: 'Compare races', nested: true },

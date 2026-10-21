@@ -1,0 +1,826 @@
+{
+  "snapshot": "orestar-20250101-20261020-5bdd1048615c",
+  "start": "2025-01-01",
+  "end": "2026-10-20",
+  "rows": 332944,
+  "completeness_verified": false,
+  "source_files": [
+    {
+      "sha256": "af941a5a33884de19f47e56cfbaa04ad972062c67746da683f6679ed07a7bb53",
+      "retrieval_end": "2026-09-27T20:42:49.868Z"
+    },
+    {
+      "sha256": "129c673acff441295b47e6e99f52d6e1f9e350a57d8ab0137aca364869546790",
+      "retrieval_end": "2026-09-27T21:08:16.259Z"
+    },
+    {
+      "sha256": "71a07449b63563126ae66c2dc3a96b1219b56ac64a5b7ad7abade9d04d097140",
+      "retrieval_end": "2026-09-28T18:33:19.914Z",
+      "method": "user_supplied_manual_export",
+      "new_rows": 169
+    },
+    {
+      "sha256": "954eee2d20e43381d20957fec04627985bd4deb051c1a5ec3bf5dacbfc7a7df1",
+      "retrieval_end": "2026-10-05T06:55:23.266Z",
+      "method": "user_supplied_manual_export",
+      "new_rows": 3994
+    },
+    {
+      "sha256": "18ddf36b3e9c6742efd192eb80c6a635442aa15e6ad378c234d190e321779778",
+      "retrieval_end": "2026-10-10T21:11:52.676Z",
+      "method": "user_supplied_manual_export",
+      "new_rows": 4276
+    },
+    {
+      "sha256": "ee09595d786b42caf371a163abaceff26d04f26564ba94686ad5a9a23ed2f0af",
+      "retrieval_end": "2026-10-21T05:31:20.279Z",
+      "method": "user_supplied_manual_export",
+      "new_rows": 4295
+    },
+    {
+      "sha256": "c3f75185cd3cf239b26cb77a656ae67990255ba2cc742e71d3ff05b2ce877770",
+      "retrieval_end": "2026-10-21T05:32:19.803Z",
+      "method": "user_supplied_manual_export",
+      "new_rows": 3284
+    }
+  ],
+  "version": 1,
+  "landingPage": "https://www.portlandciviclab.org/deep-dives/campaign-finance/data",
+  "readme": "https://www.portlandciviclab.org/data/campaign-finance/downloads/README.md",
+  "schema": "https://www.portlandciviclab.org/data/campaign-finance/downloads/schema.json",
+  "queries": "https://www.portlandciviclab.org/data/campaign-finance/downloads/analysis.sql",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "editorialLicense": "https://creativecommons.org/licenses/by-nd/4.0/",
+  "attribution": "Portland Civic Lab; underlying records: Oregon Secretary of State ORESTAR. Cite the snapshot and source dates.",
+  "coverage": "All current records held in our published Oregon ledger, not all ORESTAR history or a complete election cycle. Includes all observed filers, not only council/governor campaigns. Federal FEC records are excluded.",
+  "limitations": [
+    "Manual-export coverage is provisional; older-dated late filings, removals and amendments outside the supplied exports may be missing.",
+    "Archived maps, balances, event interpretations and network tests retain their individual dates.",
+    "No donor street addresses, donor-level ZIP codes, employer/occupation fields, unrestricted purpose descriptions or private research files are included."
+  ],
+  "downloads": {
+    "bundle": {
+      "url": "https://www.portlandciviclab.org/data/campaign-finance/downloads/analysis.zip",
+      "bytes": 13460323,
+      "sha256": "ee6de1590e95a43a31ce07deac5dc9a5e61f6a2ccf75d735a764e1a4027b5225",
+      "mediaType": "application/zip"
+    },
+    "parquet": {
+      "url": "https://www.portlandciviclab.org/data/campaign-finance/downloads/transactions.parquet",
+      "bytes": 5912392,
+      "sha256": "3cb98671882caa782d7d5bff4eaa7480a3d70e5e3ef97d8111fe03ed65a95c59",
+      "mediaType": "application/vnd.apache.parquet"
+    },
+    "csv": {
+      "url": "https://www.portlandciviclab.org/data/campaign-finance/downloads/transactions.csv.gz",
+      "bytes": 11761094,
+      "sha256": "73d03f5bd7410c8359956f83cc0cea6b08a20003adf0baff647711536b28ec32",
+      "mediaType": "application/gzip"
+    }
+  },
+  "uncompressedTransactionCsvBytes": 99583702,
+  "tables": {
+    "transactions": {
+      "file": "tables/transactions.parquet",
+      "rows": 332944,
+      "description": "All current-version transactions in the published ledger. One row per transaction_id; integer USD cents. Never add unlike accounting bases.",
+      "columns": [
+        {
+          "name": "transaction_id",
+          "type": "VARCHAR",
+          "description": "ORESTAR current transaction identifier, stored as text. Primary key."
+        },
+        {
+          "name": "original_id",
+          "type": "VARCHAR",
+          "description": "ORESTAR original-version identifier. Not a second transaction to count. Null means not supplied."
+        },
+        {
+          "name": "transaction_date",
+          "type": "VARCHAR",
+          "description": "Reported transaction date, ISO YYYY-MM-DD; not the download date."
+        },
+        {
+          "name": "filed_date",
+          "type": "VARCHAR",
+          "description": "Current version filing date, ISO YYYY-MM-DD; may differ from original disclosure date."
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR",
+          "description": "Reported current-version status, such as Original or Amended."
+        },
+        {
+          "name": "committee_id",
+          "type": "VARCHAR",
+          "description": "ORESTAR filing committee identifier, stored as text."
+        },
+        {
+          "name": "committee_name",
+          "type": "VARCHAR",
+          "description": "Reported filing committee name. Not a verified candidate/race link."
+        },
+        {
+          "name": "entity_id",
+          "type": "VARCHAR",
+          "description": "Conservative reported counterparty group. committee: is authoritative; record: is a fingerprint; disclosure: and unknown: are not donors."
+        },
+        {
+          "name": "entity_name",
+          "type": "VARCHAR",
+          "description": "Reported counterparty name, not an independently verified identity."
+        },
+        {
+          "name": "identity_status",
+          "type": "VARCHAR",
+          "description": "authoritative_committee_id, provisional_record_group, disclosure_category or unknown."
+        },
+        {
+          "name": "subtype",
+          "type": "VARCHAR",
+          "description": "Original ORESTAR accounting subtype."
+        },
+        {
+          "name": "basis",
+          "type": "VARCHAR",
+          "description": "Normalized accounting basis; use cash_contribution for gross cash raised and cash_payment for gross cash paid out."
+        },
+        {
+          "name": "direction",
+          "type": "VARCHAR",
+          "description": "in, out or adjustment relative to the filing committee. Not sufficient to calculate cash effect without subtype semantics."
+        },
+        {
+          "name": "amount_cents",
+          "type": "BIGINT",
+          "description": "Signed integer USD cents, exact; divide by 100 for dollars. Do not sum unrelated bases."
+        },
+        {
+          "name": "city",
+          "type": "VARCHAR",
+          "description": "Normalized reported counterparty city; may be blank."
+        },
+        {
+          "name": "state",
+          "type": "VARCHAR",
+          "description": "Normalized reported counterparty state; may be blank."
+        },
+        {
+          "name": "purpose_codes",
+          "type": "VARCHAR",
+          "description": "Reported purpose categories, not unrestricted free-text descriptions."
+        },
+        {
+          "name": "source_dataset",
+          "type": "VARCHAR",
+          "description": "Public acquisition batch label; not a download path."
+        },
+        {
+          "name": "source_row",
+          "type": "BIGINT",
+          "description": "Row locator within the private source batch, not an additional ID."
+        },
+        {
+          "name": "retrieved_at",
+          "type": "VARCHAR",
+          "description": "Source acquisition/file timestamp retained for provenance; not proof of source completeness."
+        },
+        {
+          "name": "family",
+          "type": "VARCHAR",
+          "description": "Acquisition family. For accounting, filter basis rather than family."
+        },
+        {
+          "name": "book_type",
+          "type": "VARCHAR",
+          "description": "Reported contributor/payee type. Business size, ownership and political affiliation are not inferred."
+        },
+        {
+          "name": "is_disclosure_category",
+          "type": "BOOLEAN",
+          "description": "True for combined or generic disclosure rows; do not count as an identified donor."
+        }
+      ]
+    },
+    "entities": {
+      "file": "tables/entities.parquet",
+      "rows": 78876,
+      "description": "Conservative counterparty record groups. Only committee: IDs identify an authoritative committee; other groups are not verified people or legal entities.",
+      "columns": [
+        {
+          "name": "entity_id",
+          "type": "VARCHAR",
+          "description": "Conservative reported counterparty group. committee: is authoritative; record: is a fingerprint; disclosure: and unknown: are not donors."
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR",
+          "description": "Reported name associated with this ID."
+        },
+        {
+          "name": "identity_status",
+          "type": "VARCHAR",
+          "description": "authoritative_committee_id, provisional_record_group, disclosure_category or unknown."
+        },
+        {
+          "name": "first_observed",
+          "type": "VARCHAR",
+          "description": "Earliest transaction date observed in this snapshot."
+        },
+        {
+          "name": "last_observed",
+          "type": "VARCHAR",
+          "description": "Latest transaction date observed in this snapshot."
+        },
+        {
+          "name": "records",
+          "type": "BIGINT",
+          "description": "Number of transaction records, not a count of unique people."
+        }
+      ]
+    },
+    "aliases": {
+      "file": "tables/aliases.parquet",
+      "rows": 79453,
+      "description": "Reported names for each conservative entity group.",
+      "columns": [
+        {
+          "name": "entity_id",
+          "type": "VARCHAR",
+          "description": "Conservative reported counterparty group. committee: is authoritative; record: is a fingerprint; disclosure: and unknown: are not donors."
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR",
+          "description": "Reported name associated with this ID."
+        },
+        {
+          "name": "first_observed",
+          "type": "VARCHAR",
+          "description": "Earliest transaction date observed in this snapshot."
+        },
+        {
+          "name": "last_observed",
+          "type": "VARCHAR",
+          "description": "Latest transaction date observed in this snapshot."
+        },
+        {
+          "name": "records",
+          "type": "BIGINT",
+          "description": "Number of transaction records, not a count of unique people."
+        }
+      ]
+    },
+    "committees": {
+      "file": "tables/committees.parquet",
+      "rows": 1929,
+      "description": "All filing committees observed in these records, including candidates, PACs, parties and ballot measures.",
+      "columns": [
+        {
+          "name": "committee_id",
+          "type": "VARCHAR",
+          "description": "ORESTAR filing committee identifier, stored as text."
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR",
+          "description": "Reported name associated with this ID."
+        },
+        {
+          "name": "first_observed",
+          "type": "VARCHAR",
+          "description": "Earliest transaction date observed in this snapshot."
+        },
+        {
+          "name": "last_observed",
+          "type": "VARCHAR",
+          "description": "Latest transaction date observed in this snapshot."
+        },
+        {
+          "name": "records",
+          "type": "BIGINT",
+          "description": "Number of transaction records, not a count of unique people."
+        }
+      ]
+    },
+    "reviewed_matching_ids": {
+      "file": "tables/reviewed_matching_ids.parquet",
+      "rows": 57,
+      "description": "Transaction IDs classified as City public matching receipts. Join by transaction_id to separate public from private contributions.",
+      "columns": [
+        {
+          "name": "transaction_id",
+          "type": "VARCHAR",
+          "description": "ORESTAR current transaction identifier, stored as text. Primary key."
+        }
+      ]
+    },
+    "candidate_finance_facts": {
+      "file": "tables/candidate_finance_facts.parquet",
+      "rows": 18,
+      "description": "Derived JSON facts for 18 reviewed council/auditor committees. Governor records are in transactions; governor interpretations are in evidence/governor/data.json.",
+      "columns": [
+        {
+          "name": "committee_id",
+          "type": "VARCHAR",
+          "description": "ORESTAR filing committee identifier, stored as text."
+        },
+        {
+          "name": "facts_json",
+          "type": "JSON",
+          "description": "JSON-encoded candidate facts; cash amounts are cents. Separately dated official balances are not refreshed by these facts."
+        }
+      ]
+    }
+  },
+  "bundleMembers": {
+    "LICENSE-CONTENT.md": {
+      "bytes": 1931,
+      "sha256": "1611c5a29f9171dcb6338d80992183989469fd28ab95d270848d4f2b85cccbd0"
+    },
+    "README.md": {
+      "bytes": 7133,
+      "sha256": "31e0b24cf69dbbefb8c0e0324e1c1c9ccef9f1803537f9bf6e8e44bfabfc81ff"
+    },
+    "analysis.sql": {
+      "bytes": 2364,
+      "sha256": "c1e0f0b085865be57a2dfcab4f3897f73c604d16e51f39fa93336ee321743431"
+    },
+    "checksums.json": {
+      "bytes": 17948,
+      "sha256": "80d902812764be7ac5ad16f7b69425b38f4b1dc636b234cf2a786fd8005544f7"
+    },
+    "evidence-index.json": {
+      "bytes": 5000,
+      "sha256": "b201d1a9f4cbba9e471865eeb436ce78d7d7bfa2392cc41442e4bd7b4d12d4d0"
+    },
+    "evidence/account-summaries.csv": {
+      "bytes": 11293,
+      "sha256": "04a28a20c1f2febe958bcba0f5bd6a2d8169cf330e19aaf02366e93e9ed67e60"
+    },
+    "evidence/ambiguous-transfers.csv": {
+      "bytes": 182834,
+      "sha256": "1c7a4b629a98e55b2d61f89e59389386f8ae9673f9af7b1c9482b8d83db43b5d"
+    },
+    "evidence/amendments.csv": {
+      "bytes": 491,
+      "sha256": "6d23b859f937b69e5411d0e785f085a59d49c9b1cd70463bdd5d6d2c09eeec6d"
+    },
+    "evidence/api/endpoint-catalogue.json": {
+      "bytes": 1391831,
+      "sha256": "7c64016ab81dd1eb1cecad7125d2a785d876b4310699bccc3b21e62c108e7933"
+    },
+    "evidence/api/openapi.reconstructed.json": {
+      "bytes": 564368,
+      "sha256": "112dd84ed10e6369c44bd5b41bc5f26513e7c7519241e07f80c1541d00ffc957"
+    },
+    "evidence/candidates/15109-cash-contributions.csv": {
+      "bytes": 73421,
+      "sha256": "ec8dca64cd7f974954696408e3a12af6d166ec236af285cff4850c638842f2e8"
+    },
+    "evidence/candidates/17629-cash-contributions.csv": {
+      "bytes": 70261,
+      "sha256": "81d881bcad6bec9887659ed52401659ff3784a5cd70e93b824c88a61784a3f79"
+    },
+    "evidence/candidates/21777-cash-contributions.csv": {
+      "bytes": 9535,
+      "sha256": "5ba5c9419658ce0cad7c006699c5573be042891e3fa3867f92133d59fcbf520b"
+    },
+    "evidence/candidates/23028-cash-contributions.csv": {
+      "bytes": 73989,
+      "sha256": "9dd1a2a3b646d4f08abab5a5bae17109aee279f5a40d950f7a0d4adb87e3431c"
+    },
+    "evidence/candidates/23199-cash-contributions.csv": {
+      "bytes": 76760,
+      "sha256": "9e4b6c43a1fdcf93360d28281fab4f93259c372f63a390d93abeb8a0cef87a20"
+    },
+    "evidence/candidates/23208-cash-contributions.csv": {
+      "bytes": 105437,
+      "sha256": "2de1b6cb599a0b388afde3f58622fc6df696927859fb63f41acde86ba798bc28"
+    },
+    "evidence/candidates/23295-cash-contributions.csv": {
+      "bytes": 85482,
+      "sha256": "1cfc6a3f16b6f3866366322a8528eac73719dc8e8d73bf51507f0d13a544f7eb"
+    },
+    "evidence/candidates/23365-cash-contributions.csv": {
+      "bytes": 102222,
+      "sha256": "260182afa93b875736ff030010eb3f854be279c20698d392b968b4a1e2809be5"
+    },
+    "evidence/candidates/23411-cash-contributions.csv": {
+      "bytes": 41843,
+      "sha256": "74d8635f54956f2e4c64190c06455ef79e905a56c497617e06a9e1c928a832df"
+    },
+    "evidence/candidates/24615-cash-contributions.csv": {
+      "bytes": 374,
+      "sha256": "426bb0da80dda7abeea207cfdee6fe9d47a3ec59062b79d61c465d0d1b316b99"
+    },
+    "evidence/candidates/24661-cash-contributions.csv": {
+      "bytes": 8244,
+      "sha256": "801e33af64db9a58d980166340c0fd8fa4d2e636b3c26963a02b46a551ee7072"
+    },
+    "evidence/candidates/24897-cash-contributions.csv": {
+      "bytes": 36569,
+      "sha256": "a4f3027a32e1784f8f08be0b439973a0f423adb9736790994cffae4c653984d7"
+    },
+    "evidence/candidates/24966-cash-contributions.csv": {
+      "bytes": 5814,
+      "sha256": "9cd8114c47d5ea7ed9b58e7700cde8572e461432a630258350bd75ec89d91c18"
+    },
+    "evidence/candidates/24972-cash-contributions.csv": {
+      "bytes": 5993,
+      "sha256": "7aa8dbac9fb030dcf740d4c9fc12a6eae03b4621fbbfa9597d06045e0f94b7d6"
+    },
+    "evidence/candidates/24973-cash-contributions.csv": {
+      "bytes": 15306,
+      "sha256": "e0fdde5bc66ba37c0132d0b6a44f69e432efdc6aa2208921dd719999a0a87a37"
+    },
+    "evidence/candidates/24979-cash-contributions.csv": {
+      "bytes": 2333,
+      "sha256": "dd0adbfc7189af6debc543d0a5ed33de0b47485baf05bcab7938e09eca59510f"
+    },
+    "evidence/candidates/25040-cash-contributions.csv": {
+      "bytes": 27876,
+      "sha256": "c437e4b147380bf1980d58dfc5468b71967db0c4533e435c7f4638fa3fe222ad"
+    },
+    "evidence/candidates/25103-cash-contributions.csv": {
+      "bytes": 15301,
+      "sha256": "d9f8ccfb5c758b4f423f66b2159a6f2de804a33fcb3d69c76d2a9dffbe910644"
+    },
+    "evidence/candidates/facts.json": {
+      "bytes": 208382,
+      "sha256": "3468960dc538dd76df9e56d495c1ae54e843dbf3bdd6d48631190027ced53fc4"
+    },
+    "evidence/cities.csv": {
+      "bytes": 46819,
+      "sha256": "606451a6c63c393d251384260c613b1b56c0e843ec7292016941e09c13096004"
+    },
+    "evidence/committee-race-crosswalk.json": {
+      "bytes": 15945,
+      "sha256": "79d75a657ba596243c010e516c5f30df070c20771721b8c4f85ea787c83f197c"
+    },
+    "evidence/committees.csv": {
+      "bytes": 120495,
+      "sha256": "9cccea063f4a84d23acbbf07161467ccdd5e8d537fe4170cf4cf11311dbbef85"
+    },
+    "evidence/concentration-sensitivity.csv": {
+      "bytes": 2450,
+      "sha256": "93f5084ad3eacba7ec48c501ef83813e06d906850181f7b09928b398d9d0b992"
+    },
+    "evidence/current/candidate-funding.csv": {
+      "bytes": 2627,
+      "sha256": "9eb7c39da37a88de35657265c6f289dd7168be9399b08cf812dc9eaaba19fe45"
+    },
+    "evidence/current/committees.csv": {
+      "bytes": 94662,
+      "sha256": "1371914b238bcbdaaa6a38db2b28f9e7479096d3fedebb68aa6cb25dac7b894a"
+    },
+    "evidence/current/disclosure.csv": {
+      "bytes": 464,
+      "sha256": "54c03ffce5f6558ca2d2e072f934f12348ec7aa71e2b92a58961beea1f8781ec"
+    },
+    "evidence/current/financial-bases.csv": {
+      "bytes": 530,
+      "sha256": "1e54f0138f442238e8291dbf75509c7f7462a3e02ef2ee9f900bbc15ef162680"
+    },
+    "evidence/current/summary.json": {
+      "bytes": 5929,
+      "sha256": "bdd3468098216453307df45954349211222bcb0b806f709b9e8f380232f95fd5"
+    },
+    "evidence/dependency.csv": {
+      "bytes": 295625,
+      "sha256": "4c02d2fef51da5b08f630ead7d999c1946d11a38af53fa833f8afe5d7bc4092a"
+    },
+    "evidence/detail-gaps.csv": {
+      "bytes": 4142,
+      "sha256": "eb1d77f3fa0b73b4b17f9ef1c2c081d9a885329a2f8772c4a6ca38a53719e4f1"
+    },
+    "evidence/disclosure.csv": {
+      "bytes": 957,
+      "sha256": "2c6ce5f9d06ea386bd7d99c5ded74c5dde6ece05d05708fb35faa2b2ba7404c1"
+    },
+    "evidence/donor-committee.csv": {
+      "bytes": 6751461,
+      "sha256": "39c3298043af14688c81719db8a297ea3d50b32045e304319062cd8b7fc97267"
+    },
+    "evidence/donor-record-groups.csv": {
+      "bytes": 4578293,
+      "sha256": "aa7e9595f230423d561aa974f307c93573fcb58f6788a7a01ef1a2ba90482886"
+    },
+    "evidence/enrichment.json": {
+      "bytes": 68683,
+      "sha256": "b086a1b890c904eccc145199cf2ea141ee083fbc6d827b4d8476f45ecfaabf31"
+    },
+    "evidence/failure-register.json": {
+      "bytes": 7115,
+      "sha256": "ddf59d9c6b73ab65b504b24398ba4254c346cc103ac1b97a329054630435b7b7"
+    },
+    "evidence/filing-lag.csv": {
+      "bytes": 131,
+      "sha256": "f9deec29bee1e528b996812660230b423cb972d157c09eafa81e9a0e5337f822"
+    },
+    "evidence/financial-bases.csv": {
+      "bytes": 1553,
+      "sha256": "38eb1af1314239ef9589810450f3e473ab097811e6c1042e457a29f4c67cb1c0"
+    },
+    "evidence/findings-verification.json": {
+      "bytes": 846,
+      "sha256": "758e13641ff44bffa1c11b1650f8dedcad91454d32886a8702b78fb648c31e5d"
+    },
+    "evidence/findings.json": {
+      "bytes": 19749,
+      "sha256": "e9f8c9ae02e825f6af4fd5a87bda031fa0887816c9bad6b0409c8a6b4671f6c5"
+    },
+    "evidence/gaps.json": {
+      "bytes": 6527,
+      "sha256": "0fe6fbb8d2b6bd3d058d0e685dc9084bd8f610b4dbee18b8ad8e6b7636fa2e91"
+    },
+    "evidence/geography.csv": {
+      "bytes": 181,
+      "sha256": "80af259ccc4beeba9700b25806cab3b4469e5b333a3249251f136b6e3b05680a"
+    },
+    "evidence/gift-sizes.csv": {
+      "bytes": 187,
+      "sha256": "ff5963ee72e275cc5564fdbce4668f7635641a72e939c45f3d86159a36371931"
+    },
+    "evidence/governor/both-candidates.csv": {
+      "bytes": 2152,
+      "sha256": "5cc2495ab57c12839dfd21f1a9a493aa5a3d51f62c903ebdc322b0778cb75cac"
+    },
+    "evidence/governor/committee-funders.csv": {
+      "bytes": 3119,
+      "sha256": "3ec504b9660c9e16478d9729c112b177abe2742c8b36047facbc33c629a54de4"
+    },
+    "evidence/governor/data.json": {
+      "bytes": 60964,
+      "sha256": "d517a28065cd903b61556958ae16bc0b1e8189b6ed3bbac203fbaf05225c5271"
+    },
+    "evidence/governor/monthly.csv": {
+      "bytes": 3778,
+      "sha256": "a5058b234f42e00a52449bc1115671a0bfb8ff9a096dfb4c64e7ff76c79e162f"
+    },
+    "evidence/governor/oregon-counties.csv": {
+      "bytes": 5901,
+      "sha256": "f14f4d7205c9de7237b41f59551ebbe394b365726613bcd808fcd09a71b8f892"
+    },
+    "evidence/governor/payees.csv": {
+      "bytes": 37284,
+      "sha256": "82379b6187aacfb06529fb6b352a5c0250a36929284644a433923101537a1e93"
+    },
+    "evidence/governor/source-groups.csv": {
+      "bytes": 1322684,
+      "sha256": "7b707938f918228ed4acf4dc7b95f9f46bb2d239d13cbfe9ef8932350ba002ec"
+    },
+    "evidence/governor/spending-purposes.csv": {
+      "bytes": 3607,
+      "sha256": "2260e21ee636de385a8584357892339a36d2795ca21cb1e38e91475d71c37635"
+    },
+    "evidence/governor/states.csv": {
+      "bytes": 6105,
+      "sha256": "c77f50790841d232c3d2819e7e0a923117f75d6556af5b190160b9f7e5e793a4"
+    },
+    "evidence/governor/weekly.csv": {
+      "bytes": 15466,
+      "sha256": "7afdb24a0a9730ad6253558624b29ca77326a31c96b5ee5b471e201ad34d9de1"
+    },
+    "evidence/independent-allocations.csv": {
+      "bytes": 76024,
+      "sha256": "85c919e1ad27f3107bdac4cbf174ff9610bc2222cf56423971dfb4912bdd1b54"
+    },
+    "evidence/independent-records.csv": {
+      "bytes": 15567,
+      "sha256": "d36d878e455f1b3bfde2823c46fcba6fd178431b6e92a79e03c3e2f14c19f463"
+    },
+    "evidence/independent-spending.json": {
+      "bytes": 1294,
+      "sha256": "acbfc4e8f476400868729474ef317d4fcbb86e71c0f15b8fd3c659b69334dd5d"
+    },
+    "evidence/largest-cash-records.csv": {
+      "bytes": 13531,
+      "sha256": "2d4c4023359a813ac4968bc4d7f9de3cc5dfdd3303ac7b91764cf1309ebc7b90"
+    },
+    "evidence/matched-transfers.csv": {
+      "bytes": 119134,
+      "sha256": "8f861e159d2f26a2e14f93fce882d1897e68193d1dcf94bec1cce452a8f7ed5b"
+    },
+    "evidence/missingness.csv": {
+      "bytes": 449,
+      "sha256": "00784c8c16eeb1f037878c7a6c8cd2dc6c199ba32994556128e89a835dc31ee8"
+    },
+    "evidence/monthly.csv": {
+      "bytes": 11157,
+      "sha256": "d8204aa7c81e6492007e62c102bcf454dc462f0752edde61d8ba4dff627fe10f"
+    },
+    "evidence/network-boundary.csv": {
+      "bytes": 529,
+      "sha256": "d24d67e4b0faba2c56ce5514d0a59243c181eb234eb5e71461b0249fdb3b077d"
+    },
+    "evidence/networks.json": {
+      "bytes": 12465,
+      "sha256": "220377915ddded0dfb8bc4bd7e326d2949d05396ebc9983a6d7c0b408be02126"
+    },
+    "evidence/payee-record-groups.csv": {
+      "bytes": 797978,
+      "sha256": "27062ea94866c28827ddcd351ce638e93a38b14e6845abb93de8b51722a556d6"
+    },
+    "evidence/portland-public-financing.csv": {
+      "bytes": 5799,
+      "sha256": "65fdec839c384ab84e9fa7e04b4dd942207643dcbe2dcab67feabb77f45e66f6"
+    },
+    "evidence/profile-queue.csv": {
+      "bytes": 12838,
+      "sha256": "04db123011c808982b99e6f2194b46482fd44c01a0afb393ecc4a66a3255e2d0"
+    },
+    "evidence/public-matching-receipts.csv": {
+      "bytes": 13862,
+      "sha256": "1e351f210b8af41536b6333aa6722e32229e28d75ee3ced8e169f700bdc99832"
+    },
+    "evidence/purpose-bundles.csv": {
+      "bytes": 26017,
+      "sha256": "f456eef5dd9f6db00f95635b526b0f8e0976b5c47cad0d832e9d86321ffc19c7"
+    },
+    "evidence/questions.json": {
+      "bytes": 46545,
+      "sha256": "edd683fe5cb5030a16c8df8b17d5d512ee590f77b0f51b3e015eb44f9de134ce"
+    },
+    "evidence/reported-contributor-types.csv": {
+      "bytes": 341,
+      "sha256": "8f1081be0999a472054195e83f08baf843bc637524c795e6195b34b621c9519f"
+    },
+    "evidence/reviewed-amendments.json": {
+      "bytes": 5617,
+      "sha256": "c5d8a95b640f06ca0057d14fb903d5ed931dd30f09ae59f2d14b4d18b79494e5"
+    },
+    "evidence/robustness.json": {
+      "bytes": 4745,
+      "sha256": "337c98243d38eacfab49d00d34a2165160cb95e622fa3b59b01f9d8d105a3bdc"
+    },
+    "evidence/same-name-candidates.csv": {
+      "bytes": 145487,
+      "sha256": "141cfd8112266b2ebad18bfed29fd2cb1eeb8cc4187f2e9ceb0c178003b597c9"
+    },
+    "evidence/shared-donor-tests.csv": {
+      "bytes": 66979,
+      "sha256": "cd81e642dcf9d3fc7241b1e94c4aa6dc53098b87435b008c6c784d7cb1dd8b07"
+    },
+    "evidence/story/active-campaign-events.csv": {
+      "bytes": 6209,
+      "sha256": "34e46ba0252c5d9e08b82c181602b1b7b6ccf5b4c643d8394f194cdaf38e623b"
+    },
+    "evidence/story/billboard-date-sensitivity.csv": {
+      "bytes": 4200,
+      "sha256": "1da78f52f8b171b52bf0a89f5c2c048b04db3b075c0e2afc431e73d7a3639731"
+    },
+    "evidence/story/campaign-dynamics.json": {
+      "bytes": 624460,
+      "sha256": "28cf0b53d47c9338883298e66730b4d1ed620100bf652ca1fc19e392cb51f61a"
+    },
+    "evidence/story/candidate-cumulative-weekly.csv": {
+      "bytes": 126314,
+      "sha256": "323fb478edef250236d2ed44ebd5775e9269fdb388b6c078de95f24d38205398"
+    },
+    "evidence/story/candidate-daily-nonmatching.csv": {
+      "bytes": 170972,
+      "sha256": "c3b45bddc992b76f9506984d27fdad7c47b4e18c6ddd8e19a91c708d12c3dfc5"
+    },
+    "evidence/story/candidate-report-metrics.csv": {
+      "bytes": 6743,
+      "sha256": "be9a158be0c4c10ba0cacc215a3f0945ae883164fcb7cd602b8f7891674f2ff6"
+    },
+    "evidence/story/candidate-weeks.csv": {
+      "bytes": 116048,
+      "sha256": "1cdd216bd89adacb1bf9b9b0f35f411851cde30eca4d70f9ce1fef82009d65ce"
+    },
+    "evidence/story/donor-candidate-complete-ledger.csv": {
+      "bytes": 284012,
+      "sha256": "3cecd368b288c8f0c9bcc9e1ef5943184ee71342b6802922a0815da495da97e0"
+    },
+    "evidence/story/donor-overlap-tests.csv": {
+      "bytes": 24614,
+      "sha256": "07e8da1e4026ba8600dc064abb21f553cfb3bb8da7746a493d3ffe4ef1e4ff10"
+    },
+    "evidence/story/donor-portfolios-complete.csv": {
+      "bytes": 222504,
+      "sha256": "5fc416f8d3f1b90d580228c11069c150f9d48d96536d4416af4f26f652653a8c"
+    },
+    "evidence/story/event-windows.csv": {
+      "bytes": 101170,
+      "sha256": "fc466162fcda0a1492c33aa5c278254e2d4090ecd56e246672755e0c2cbea8ac"
+    },
+    "evidence/story/major-donor-matrix.csv": {
+      "bytes": 27787,
+      "sha256": "cc6f90075a4a8d74369e1115f154d6c1d0ae3cf91c9053fc0fcd4c645b9aa565"
+    },
+    "evidence/story/major-donor-matrix.json": {
+      "bytes": 34773,
+      "sha256": "2cbb8ee0d98f451268a0d62f282dcd18a082809de9d2b8fdcf2a2f0364770909"
+    },
+    "evidence/story/shared-donor-pair-amounts.csv": {
+      "bytes": 15908,
+      "sha256": "fa813d55f1d127cfe0a17d7ebb9409f710336deaa773cce1e298a56549a003c7"
+    },
+    "evidence/story/story-data.json": {
+      "bytes": 180124,
+      "sha256": "60cf5ff1050edf45a486e09fbbcb559db6cf71ce036c809e072ad48cb389c2c1"
+    },
+    "evidence/summary.json": {
+      "bytes": 118906,
+      "sha256": "ce0054594a637c4027fcabf3c4c0e4b8042b190a4c1c6666d6bfaeaf4cbb032f"
+    },
+    "evidence/suppliers/cash-payments.csv": {
+      "bytes": 611707,
+      "sha256": "9c01820b363dea2ef747904e8fd478732525dd356890ee82449ab5211386b381"
+    },
+    "evidence/suppliers/data.json": {
+      "bytes": 377966,
+      "sha256": "34b2d6b642511b89de3d5459e026a5ac6022c07e874e90eed0133bed88c427b6"
+    },
+    "evidence/suppliers/payee-candidate-ledger.csv": {
+      "bytes": 81543,
+      "sha256": "540b4fecbcd8256567653316d91073c3fbd5cba39f57a62e7b1a5f97bc0a2c15"
+    },
+    "evidence/suppliers/payee-record-groups.csv": {
+      "bytes": 70482,
+      "sha256": "abacfbccf4956cfb3df86282545e6b044e85ff98c02b5b6a4774028cd0114178"
+    },
+    "evidence/suppliers/reported-name-groups.csv": {
+      "bytes": 48880,
+      "sha256": "6498975eea027e8282bcf5fe8eb7542e45f27bc0bc9880ac26d5b0e5b896f345"
+    },
+    "evidence/transaction-associations.csv": {
+      "bytes": 2567,
+      "sha256": "68a62cfedb38b4759b241bc26e048f1014de0f1015d36c16ad9f7baee9b8ed44"
+    },
+    "evidence/zip-map/candidate-district-address-summary.csv": {
+      "bytes": 8765,
+      "sha256": "10fca859c62373a60d96b93ca86f6dff8c6190050202fb59f3853c2f518e0748"
+    },
+    "evidence/zip-map/candidate-district-origin.csv": {
+      "bytes": 7153,
+      "sha256": "c0e19060624c3a6872d99734015a034c8f711786435186e89f80a68cc18e20a6"
+    },
+    "evidence/zip-map/candidate-zip-district-classification.csv": {
+      "bytes": 29639,
+      "sha256": "64f123a6d5d7e2af070004d099c560a0563a758e72f7fe375066d26b8b5d05b9"
+    },
+    "evidence/zip-map/candidate-zip-totals.csv": {
+      "bytes": 36994,
+      "sha256": "1f2cc7f89e564fb435a25e1b3be549a71970c683f48ba25ff96ce4c0d296321e"
+    },
+    "evidence/zip-map/data.json": {
+      "bytes": 59842,
+      "sha256": "761663786b0d22b2f9d654ff4a65af51671a06bab09a72e878883ea9133e6859"
+    },
+    "evidence/zip-map/district-address-data.json": {
+      "bytes": 17289,
+      "sha256": "c8c466a5d1b789aec74b3eb3854ae610a8ffef20552869114c425a0479b19403"
+    },
+    "evidence/zip-map/district-coverage.csv": {
+      "bytes": 998,
+      "sha256": "3477cd1b1632dd49675769031e7e49d21de2799b5b306ca7e861a6a2b58cc578"
+    },
+    "evidence/zip-map/district-origin-data.json": {
+      "bytes": 14761,
+      "sha256": "a59ae630cf9cfa45fe3a4d958b8ce15a6e3b6b5e4598d17ce26f417c75e98dc9"
+    },
+    "evidence/zip-map/district-zip-totals.csv": {
+      "bytes": 14882,
+      "sha256": "5163fe26d4b13d36a9859241d28dc319be09eebc76c18029d89ae6f9cf491008"
+    },
+    "evidence/zip-map/portland-metro-2020-zcta-500k.geojson": {
+      "bytes": 1178377,
+      "sha256": "4472cb693e9f54a296ca1232b7a402178e74b945e3ba61ed6854d8d9b995a85a"
+    },
+    "schema.json": {
+      "bytes": 9442,
+      "sha256": "6dae8dd6b07b14cd87f03c20898b319581a960fee5b3331e9c7fdea9103b6314"
+    },
+    "snapshot.json": {
+      "bytes": 1566,
+      "sha256": "dce66b617ad264648c2c19da55571e24b93ee42cfde217c1e5d6bf37d2d45cad"
+    },
+    "tables/aliases.parquet": {
+      "bytes": 1496469,
+      "sha256": "24d13b433c58b67c5f95416555b0ada97aa53d39132329fc4c829c844958fb21"
+    },
+    "tables/candidate_finance_facts.parquet": {
+      "bytes": 12053,
+      "sha256": "1255073656f890a463051a861d041c1fd1704d4055d0c4d381eb19d7e709a2aa"
+    },
+    "tables/committees.parquet": {
+      "bytes": 32094,
+      "sha256": "aa996ad68af5429a0204ae161a0f4a4c383fe2853f06895661950f033207f9b4"
+    },
+    "tables/entities.parquet": {
+      "bytes": 1490829,
+      "sha256": "f9884f7659f5cf32b41be80ecca15e034e927fa9c9d77bbb7db6c5cdad80b350"
+    },
+    "tables/reviewed_matching_ids.parquet": {
+      "bytes": 401,
+      "sha256": "4d66fc31bf96cc468b0dde277c36ea6b1f0bc9025d0f8344e22fd708f1d93e3c"
+    },
+    "tables/transactions.parquet": {
+      "bytes": 5912392,
+      "sha256": "3cb98671882caa782d7d5bff4eaa7480a3d70e5e3ef97d8111fe03ed65a95c59"
+    }
+  }
+}

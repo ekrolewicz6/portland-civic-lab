@@ -312,6 +312,6 @@ export function PositionChart() {
         <p className={s.positionNote}>After {longMonthDay(asOf)}, the committee raised {wholeDollars(like.raisedAfterCents)} more through {longMonthDay(candidate.totals.latestCashDate)}. {like.paidAfterCents > 0 ? `It paid out ${wholeDollars(like.paidAfterCents)} more through ${longMonthDay(candidate.totals.latestPaymentDate)}.` : 'These records have no later payments for this committee.'}</p>
       </div>;
     })}</div>
-    <p className={s.source}>Opening balances come from the official ORESTAR account summaries retrieved {longDate(candidates[0].account.retrievedAt)}. Cash left is our calculation from those balances and the filed transactions. <a href="/data/campaign-finance/account-summaries.csv" download>Download the official summaries</a>.</p>
+    <p className={s.source}>Opening balances come from the official ORESTAR account summaries retrieved {longDate(candidates[0].account.retrievedAt)}. Cash left is a provisional calculation from those balances and the filed transactions, not an updated official balance; missing late filings can overstate it. <a href="/data/campaign-finance/account-summaries.csv" download>Download the official summaries</a>.</p>
   </figure>;
 }

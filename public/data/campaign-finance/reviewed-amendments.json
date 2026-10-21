@@ -89,6 +89,36 @@
       "reason": "Current ORESTAR workbook explicitly marks transaction 5862947 Amended with Original Id 5849433. Both versions are Alek for Oregon cash expenditures to Anedot, Inc for Transfer Fee. The reported expense changes from $0.70 on 2026-09-28 to $2.03 on 2026-10-05; replace the original rather than count both.",
       "approvedAt": "2026-10-10",
       "appliedSnapshot": "orestar-20250101-20261010-7737e46dfe34"
+    },
+    {
+      "kind": "superseded",
+      "existingTransactionId": "5802077",
+      "incomingTransactionId": "5880950",
+      "filerId": "4572",
+      "filer": "Local 48 Electricians PAC",
+      "subtype": "Cash Expenditure",
+      "existingTransactionDate": "2026-09-10",
+      "existingAmountCents": 1000000,
+      "incomingTransactionDate": "2026-10-13",
+      "incomingAmountCents": 1000000,
+      "reason": "ORESTAR marks transaction 5880950 Amended with Original Id 5802077. The same Local 48 Electricians PAC payment to Energy Workers Coalition remains $10,000; its transaction date changes from September 10 to October 13, 2026. Replace the earlier version to avoid counting it twice.",
+      "approvedAt": "2026-10-20",
+      "appliedSnapshot": "orestar-20250101-20261014-28e476bff130"
+    },
+    {
+      "kind": "superseded",
+      "existingTransactionId": "5856979",
+      "incomingTransactionId": "5889904",
+      "filerId": "23238",
+      "filer": "Evergreen PAC",
+      "subtype": "Cash Expenditure",
+      "existingTransactionDate": "2026-10-05",
+      "existingAmountCents": 234585,
+      "incomingTransactionDate": "2026-10-15",
+      "incomingAmountCents": 234585,
+      "reason": "ORESTAR marks transaction 5889904 Amended with Original Id 5856979. The same Evergreen PAC payment to Lori Piercy remains $2,345.85; its transaction date changes from October 5 to October 15, 2026. Replace the earlier version to avoid counting it twice.",
+      "approvedAt": "2026-10-20",
+      "appliedSnapshot": "orestar-20250101-20261020-5bdd1048615c"
     }
   ]
 }

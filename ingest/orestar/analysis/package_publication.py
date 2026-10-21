@@ -91,6 +91,8 @@ def package(output):
         data = json.loads(path.read_text())
         data["evidence"]["payments"]["sha256"] = digest(ledger)
         write_json(path, data)
+    import subprocess, sys
+    subprocess.run([sys.executable, str(output / 'ingest/orestar/analysis/publish_downloads.py')], check=True, stdout=sys.stderr)
     print(json.dumps({"snapshot": manifest["snapshot"], "rows": manifest["rows"], "databaseBytes": target.stat().st_size, "tables": TABLE_COLUMNS, "output": str(output)}, indent=2))
 
 

@@ -1,0 +1,42 @@
+{
+  "snapshot": "orestar-20250101-20261020-5bdd1048615c",
+  "start": "2025-01-01",
+  "end": "2026-10-20",
+  "rows": 332944,
+  "completeness_verified": false,
+  "version": 1,
+  "landingPage": "https://www.portlandciviclab.org/deep-dives/campaign-finance/data",
+  "readme": "https://www.portlandciviclab.org/data/campaign-finance/downloads/README.md",
+  "schema": "https://www.portlandciviclab.org/data/campaign-finance/downloads/schema.json",
+  "queries": "https://www.portlandciviclab.org/data/campaign-finance/downloads/analysis.sql",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "editorialLicense": "https://creativecommons.org/licenses/by-nd/4.0/",
+  "attribution": "Portland Civic Lab; underlying records: Oregon Secretary of State ORESTAR. Cite the snapshot and source dates.",
+  "coverage": "All current records held in our published Oregon ledger, not all ORESTAR history or a complete election cycle. Includes all observed filers, not only council/governor campaigns. Federal FEC records are excluded.",
+  "limitations": [
+    "Manual-export coverage is provisional; older-dated late filings, removals and amendments outside the supplied exports may be missing.",
+    "Archived maps, balances, event interpretations and network tests retain their individual dates.",
+    "No donor street addresses, donor-level ZIP codes, employer/occupation fields, unrestricted purpose descriptions or private research files are included."
+  ],
+  "downloads": {
+    "bundle": {
+      "url": "https://www.portlandciviclab.org/data/campaign-finance/downloads/analysis.zip",
+      "bytes": 13460323,
+      "sha256": "ee6de1590e95a43a31ce07deac5dc9a5e61f6a2ccf75d735a764e1a4027b5225",
+      "mediaType": "application/zip"
+    },
+    "parquet": {
+      "url": "https://www.portlandciviclab.org/data/campaign-finance/downloads/transactions.parquet",
+      "bytes": 5912392,
+      "sha256": "3cb98671882caa782d7d5bff4eaa7480a3d70e5e3ef97d8111fe03ed65a95c59",
+      "mediaType": "application/vnd.apache.parquet"
+    },
+    "csv": {
+      "url": "https://www.portlandciviclab.org/data/campaign-finance/downloads/transactions.csv.gz",
+      "bytes": 11761094,
+      "sha256": "73d03f5bd7410c8359956f83cc0cea6b08a20003adf0baff647711536b28ec32",
+      "mediaType": "application/gzip"
+    }
+  },
+  "uncompressedTransactionCsvBytes": 99583702
+}

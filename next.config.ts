@@ -86,6 +86,10 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        source: "/data/campaign-finance/downloads/:path*",
+        headers: [{ key: "Access-Control-Allow-Origin", value: "*" }, { key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+      },
+      {
         // Embeds are meant to be framed anywhere. Listed first; Next applies
         // every matching entry, and the specific entry here simply omits the
         // framing headers rather than trying to override them.
